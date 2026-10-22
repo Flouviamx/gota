@@ -22,7 +22,8 @@ node scripts/sheet.mjs <cat|all>          # drawing sheet: 96 px with keylines, 
 node scripts/variants-sheet.mjs <cat|all> # variants sheet: fill, weights, circle, square, slash, true 16 px, mirror, levels, motion
 node scripts/transitions-sheet.mjs        # nine frames of every transition (--try "a>b" for candidates)
 node scripts/sheets.mjs                   # regenerates every sheet from scratch and writes previews/index.html
-node scripts/qa.mjs [cat]                 # automated QA: area, density, fill silhouette, near-duplicates
+node scripts/qa.mjs [cat]                 # automated QA: area, density, fill silhouette, near-duplicates, weights
+node scripts/weights-sheet.mjs <cat> [--all] # 0.9 · 1.5 · 2.1, outline and fill, with each weight's contours (default: what QA's weights flags)
 npm test                                  # engine and feature tests (node:test; features read dist/)
 node mcp/server.mjs                       # the MCP server over stdio (after the build)
 node scripts/native.mjs android           # Android vector drawables from checked outlines (after the build; npm ci first)

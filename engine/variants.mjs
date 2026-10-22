@@ -194,8 +194,11 @@ function samplesOf(d) {
   const pts = [];
   let [x, y, sx, sy] = [0, 0, 0, 0];
   for (const [c, a] of parse(transform(d, 1, 0, 0))) {
-    if (c === 'M') [x, y, sx, sy] = [a[0], a[1], a[0], a[1]];
-    else if (c === 'Z') {
+    if (c === 'M') {
+      // Where a path starts counts: a line that starts at the silhouette comes to it
+      [x, y, sx, sy] = [a[0], a[1], a[0], a[1]];
+      pts.push([x, y]);
+    } else if (c === 'Z') {
       // The closing side is an edge like any other
       for (let i = 1; i <= 4; i++) pts.push([x + ((sx - x) * i) / 4, y + ((sy - y) * i) / 4]);
       [x, y] = [sx, sy];
@@ -456,8 +459,9 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     const content = [];
     if (enc) content.push(`<path d="${enc.shape}" ${strokeAttrs(weight)}/>`);
     if (fill) {
-      // solid: filled, keeping its stroke · cut: knocked out at stroke width · lines: drawn on top
-      // with 1.5 of clearance · wire: drawn on top, flush, with no clearance (a padlock's shackle, a needle)
+      // solid: filled, keeping its stroke · cut: knocked out · lines: drawn on top with a clearance
+      // of paper, so a line and its clearance take 4.5 at every weight and the ink around them grows
+      // with the weight · wire: drawn on top, flush, with no clearance (a padlock's shackle, a needle)
       // A cut that comes to the silhouette (a stripe, a separator, a meridian) keeps the relation
       // to the edge it has at regular at every weight: it follows the ink's width, less a hair, so
       // what touches the edge at regular keeps a 0.05 rim and what runs past it still runs past.
@@ -465,7 +469,7 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       const cuts = fill.cut ?? [];
       const atEdge = cuts.filter((d) => edgeCut(d, fill.solid));
       const inner = cuts.filter((d) => !atEdge.includes(d));
-      defs.push(maskOf('f', `${split(g(inner), (ds) => black(ds, paper))}${split(g(atEdge), (ds) => black(ds, weight - 0.1))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 3))}`));
+      defs.push(maskOf('f', `${split(g(inner), (ds) => black(ds, paper))}${split(g(atEdge), (ds) => black(ds, weight - 0.1))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 2 * paper))}`));
       content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
       const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
       if (over.length) content.push(`<g ${strokeAttrs(weight)}>${split(g(over), paths)}</g>`);

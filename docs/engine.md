@@ -22,7 +22,7 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 `render(icon, options)` returns the contents of an `<svg viewBox="0 0 24 24">`; `svgFile(inner, icon)` wraps it (and adds `data-rtl="mirror"` if the icon is directional).
 | Option | Effect |
 |---|---|
-| `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with 1.5 of clearance (a stroke halo + 3), `wire` on top with no clearance |
+| `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with a clearance of paper (a stroke halo of weight + 2 × paper: 4.5 at every weight), `wire` on top with no clearance |
 | `weight` | **Continuous** weight (the named ones: `WEIGHTS` = light 1, regular 1.5, bold 2) |
 | `enclosure: 'circle' \| 'square'` | Enclosure: a circle of r 9 with the drawing at 58 %, or a square with the signature at 60 %. With `fill`, the container is solid and the drawing knocked out (the badge too; the base is not knocked out inside the badge's cutout) |
 | `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with 1.5 of clearance on each side (a stroke mask + 3). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |

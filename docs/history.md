@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — The core holds every weight; a fill's lines keep paper
+- **`scripts/weights-sheet.mjs <cat>`:** each variant QA's `weights` flags, at 0.9, 1.5, and 2.1, with its contours per weight (`--all` for the whole category). It is how the defects below were read.
+- **The person** (and every `person-*` that reuses it): head and shoulders 2.45 apart center to center, so they stay apart up to 2.1; the drawing looks the same.
+- **A fill's `lines` keep a clearance of paper** ([decision 60](./decisions.md#weights-22-oct-2026)): the halo grew with the ink and met the cuts beside it at bold (the calendar's rings closed its header off, the briefcase's band met its clasp). A line and its clearance now take 4.5 at every weight, as at regular.
+- **A cut that starts at the silhouette comes to it:** the edge test sampled every point of a cut but its first, so a line drawn from the edge inward (the briefcase's left band) was taken as interior and behaved unlike its mirror.
+- **Tried again and undone:** every cut as paper, moving the tips of those that come to the silhouette (`meet`): it had already failed (decision 55) and failed again where a cut runs along the edge.
+- QA's `weights`: 156 → 133 warnings (23 fills, the core's three among them, hold their structure with no redrawing; `video-call` and `calendar-day` move from a structural warning to an interpolation one). The core set is at zero. Tests: 42.
+
 ## 22 Oct 2026 — Every weight, one structure; compatible masters
 - **Compatible masters** (`scripts/masters.mjs`): each icon's outline at 0.9, 1.5, and 2.1 with the same structure point for point, for the variable font and Xcode's variable template ([build](./build.md#compatible-masters-scriptsmastersmjs)). The first method (corners and fractions of length) bent round caps when interpolating; following the regular master by nearest point fixed them. 1,634 of 1,865 variants (87.6 %) pass, masters and interpolations checked.
 - **Weight defects it found, fixed in the engine** ([decisions 53–57](./decisions.md#weights-22-oct-2026)): badge signs that filled their ring at bold; fills whose cuts grew with the ink (bold read lighter); dots that opened into rings at light weights; cut dots that left an island of ink; the notification dot as a ring. Regular is unchanged, compared pixel by pixel against the previous engine, except for 12 dots whose pinhole closed.

@@ -10,7 +10,7 @@
 - Observed pace: ~1,000 icons (9 categories × ~105, with a critic) in about 3 hours.
 - Agents work only in this repo, edit **only** their own file (`src/icons/<category>.mjs` or `src/i18n/<category>.json`), and don't commit or install anything. The main session reviews, runs QA, and commits.
 - Their cwd is usually another repo (`flouvia-web`): they're told explicitly to work in `~/Desktop/flouvia-icons` and that the startup steps of that other repo don't apply.
-- **Authorization:** agents read the owner's last message to know what was asked; if it's a question, they refuse to edit. Every assignment quotes the owner's explicit authorization (his message), and a round is launched right after he asks for it.
+- **Authorization:** agents read the owner's last message to know what was asked; if it's a question, they refuse to edit. Every assignment quotes the owner's explicit authorization (their message), and a round is launched right after they ask for it.
 - **Temporary files:** each agent uses its own folder (`mktemp -d`); never a shared one (in round 2 one agent overwrote another's prototype).
 
 ## What every drawing agent receives
@@ -18,7 +18,7 @@
 2. Apple level, original metaphors, nothing copied from other libraries, nothing translucent.
 3. The file format and the list of names already in use.
 4. Its category with an **explicit scope**, and the list of the other categories (so it doesn't step on them).
-5. A process in batches of ~20: draw → `build.mjs --check` → `sheet.mjs` → **open every PNG with Read** → fix.
+5. A process in batches of ~20: draw → `build.mjs --check` → `sheet.mjs` → **open every PNG with Read** → fix. Before returning, `qa.mjs <category>` and `weights-sheet.mjs <category>`: the structure holds from 0.9 to 2.1 ([`DESIGN.md`](../DESIGN.md#every-weight-one-structure)).
 6. Return a structured result: category, count, names, and notes.
 
 ## Round 1 — base drawing (21 Oct 2026)

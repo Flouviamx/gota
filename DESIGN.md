@@ -62,8 +62,8 @@ Every icon that has a body carries its filled version in `fill`, made from **its
 - `solid`: the shapes that get filled (they also keep their stroke, so the silhouette is identical).
 - `cut`: the details that sit inside the fill and are **knocked out** at stroke width (a
   document's lines, the envelope flap, the clock hands, a badge's sign).
-- `lines`: open strokes that stay lines and are separated from the fill by **1.5 of clearance**
-  (the calendar rings, the briefcase handle, the person at the back of a group).
+- `lines`: open strokes that stay lines and are separated from the fill by a **clearance of paper**
+  (1.5 at regular; the calendar rings, the briefcase handle, the person at the back of a group).
 - `wire`: open strokes that stay lines, **attached** to the fill with no clearance (the lock's
   shackle, the pushpin's needle, a route line, the bars of a set of sliders).
 - `solid` takes **only closed shapes** (ending in `Z`): an open stroke would fill as a wedge. If
@@ -94,7 +94,8 @@ An icon must keep **the same structure at every weight**: the same pieces, the s
 that merges or splits as the stroke widens. The engine takes care of what it can:
 - **Badges:** a status badge is a solid disc, so its sign (cut out, paper) never clogs a ring.
 - **Fill:** what is cut out is paper, and paper thins as the ink grows (1.75 at light, 1.5 at
-  regular, 1.25 at bold).
+  regular, 1.25 at bold). The clearance around a fill's `lines` is paper too: a line and its
+  clearance take 4.5 at every weight, so the ink around them grows with the weight.
 - **Cuts that reach the silhouette** (a stripe, a separator, a meridian) keep the relation to the
   edge they have at regular: they follow the ink's width instead of thinning.
 - **Dots** are solid discs of radius r + w/2 at every weight, in ink and in cuts (the engine draws them; never a stroked circle meant to look solid).

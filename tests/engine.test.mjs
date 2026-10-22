@@ -183,6 +183,15 @@ test('weights: a cut at the silhouette follows the ink less a hair; an interior 
   // The stripe runs to both edges (follows the ink); the number line is inside (paper)
   assert.deepEqual(widths(2), ['1.25', '1.9']);
   assert.deepEqual(widths(1), ['1.75', '0.9']);
+  // A line that only starts at the silhouette comes to it too
+  const starts = { d: ['M3 3h18v18H3Z'], fill: { solid: ['M3 3h18v18H3Z'], cut: ['M3 12h6'] } };
+  assert.match(render(starts, { style: 'fill', weight: 2 }), /<path d="M3 12h6" fill="none" stroke="black" stroke-width="1.9"/);
+});
+
+test('weights: a line on a fill keeps a clearance of paper, so it and its clearance take 4.5 at every weight', () => {
+  const icon = { d: ['M3 3h18v18H3Z'], fill: { solid: ['M3 3h18v18H3Z'], lines: ['M12 6v12'] } };
+  const halo = (w) => render(icon, { style: 'fill', weight: w }).match(/<path d="M12 6v12" fill="none" stroke="black" stroke-width="([\d.]+)"/)[1];
+  assert.deepEqual([halo(0.9), halo(1.5), halo(2.1)], ['4.5', '4.5', '4.5']);
 });
 
 test('dots are solid at every weight, cut-out dots too, and the notification dot is one disc', async () => {
