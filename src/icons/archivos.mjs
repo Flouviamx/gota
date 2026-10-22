@@ -5,7 +5,7 @@
 // núcleo sin renglones; la carpeta repite la del núcleo. Las insignias (más, check, reloj…) son
 // las del motor: `badge` despeja la base con aire exacto; nunca se recorta a mano.
 import { arc, badge, circ, dot, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
-import { snap } from '../../engine/variants.mjs';
+import { snapper } from '../../engine/variants.mjs';
 
 // ── Utilidades locales ────────────────────────────────────────────────────────────────────────
 const N = (v) => {
@@ -42,11 +42,16 @@ function roundline(pts, radius = 0) {
   return `${s}L${pt(pts[pts.length - 1])}`;
 }
 
-/** El mismo trazo de ida y vuelta: en `fill.solid` queda como línea (unida al cuerpo), sin área. */
-const thin = (pts, radius = 0) => {
-  const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
-  return `${roundline(pts, rr)}${roundline([...pts].reverse(), [...rr].reverse()).replace(/^M[^LA]*/, '')}`;
-};
+/**
+ * Cierra cada subtrazo abierto, para `fill.solid`: un contorno con hueco (la tabla bajo su pinza,
+ * la nube bajo su flecha) se rellena entero y el cierre queda dentro de lo que ya es sólido o de lo
+ * que la flecha despeja.
+ */
+const shut = (d) =>
+  d
+    .split(/(?=M)/)
+    .map((s) => (/Z\s*$/i.test(s) ? s : `${s}Z`))
+    .join('');
 
 /**
  * Contorno de un sq() con huecos. Cada hueco va de `from` a `to` en sentido horario, y cada
@@ -174,7 +179,24 @@ const file = () => sq(...F, { square: ['br'] });
 const BC = [17.25, 17.25];
 const BR = 4.25;
 const RING = circ(...BC, BR);
-const own = (d, knock, fill) => ({ d, knock, ...(fill && { fill }) });
+// La cuadrícula de 16 px: un pixel mide 1.5 del lienzo y sus centros caen en 0.75 + 1.5k.
+// g(columna, fila) es el centro de un pixel; at(dx, dy) cuenta desde el de la insignia (11, 11).
+const px = (k) => 0.75 + 1.5 * k;
+const g = (c, r) => [px(c), px(r)];
+const at = (dx, dy) => g(11 + dx, 11 + dy);
+/**
+ * Insignia propia, con su versión de 16 px (`d16`, `fill16`). El motor solo cambia a su versión de
+ * pixel las insignias estándar; una propia ajustada al pixel conserva su círculo de 5.7 px y se
+ * empasta (la pregunta y las flechas eran una mancha gris). Como las del motor, a 16 px va sin
+ * círculo, con el signo en la cuadrícula de pixel, y despeja el mismo círculo que a 24 más el signo
+ * con su aire. Ver «16 px».
+ */
+const PIXEL = new Map();
+const own = (d, knock, fill, d16, fill16) => {
+  const b = { d, knock, ...(fill && { fill }) };
+  PIXEL.set(b, { d: d16, knock: `${RING}${d16.join('')}`, ...(fill16 && { fill: fill16 }) });
+  return b;
+};
 
 /** Lápiz: punta en `tip`, cuerpo hacia `a` grados, largo `len` hasta el centro del remate. */
 function pencil(tip, a, len, hw = 1.5, tipLen = 3) {
@@ -213,50 +235,68 @@ function heart([cx, cy], r = 2.25, a = 1.6, h = 4.25) {
 }
 
 const OWN = {
-  // Pregunta: el gancho y su punto dentro del círculo.
+  // Pregunta: el gancho y su punto dentro del círculo. A 16 px, el gancho por centros de pixel y un
+  // punto de un pixel.
   question() {
     const [cx, cy] = BC;
     const hook = `M${pt([cx - 1.3, cy - 1.3])}${arcTo(cx, cy - 1.3, 1.3, 180, 400)}L${pt([cx, cy - 0.05])}`;
     const mark = circ(cx, cy + 2.15, 0.35);
-    return own([RING, hook, mark], RING, { solid: [RING], cut: [hook, mark] });
+    return own([RING, hook, mark], RING, { solid: [RING], cut: [hook, mark] }, [
+      line(at(-2, -2), at(-1, -3), at(1, -3), at(2, -2), at(0, 0), at(0, 1)),
+      circ(...at(0, 3), 0.1),
+    ]);
   },
   // Corazón, sin círculo: la figura misma es la insignia; despeja el círculo entero (así no
   // quedan pedazos de la base junto a su punta).
   heart() {
     const h = heart([BC[0], 16.25]);
-    return own([h], RING, { solid: [h] });
+    const h16 = roundpoly([at(-2, -1), at(-1, -2), at(0, -1), at(1, -2), at(2, -1), at(2, 0), at(0, 2), at(-2, 0)], 0.35);
+    return own([h], RING, { solid: [h] }, [h16], { solid: [h16] });
   },
-  // Lupa: el lente es el círculo de la insignia (r 3.25) y el mango sale hacia la esquina.
+  // Lupa: el lente es el círculo de la insignia (r 3.25) y el mango sale hacia la esquina. Rellena:
+  // el lente sólido y el mango sigue siendo línea, pegada a él.
   search() {
     const r = 3.25;
     const lensC = circ(...BC, r);
     const p = polar(...BC, r, 45);
     const end = [21.25, 21.25];
     const handle = line(p, end);
-    return own([lensC, handle], `${RING}M${pt(p)}L${pt(end)}Z`, { solid: [lensC, handle] });
+    const lens16 = circ(16.5, 16.5, 3);
+    const handle16 = line(at(1, 1), at(3, 3));
+    return own([lensC, handle], `${RING}M${pt(p)}L${pt(end)}Z`, { solid: [lensC], wire: [handle] }, [lens16, handle16], { solid: [lens16], wire: [handle16] });
   },
   // Sincronizar: las flechas de arco ocupan el círculo de la insignia (en relleno siguen siendo línea).
   sync() {
-    return own(syncGlyph(BC, 3.75, 2.4, 25, 35), RING);
+    return own(syncGlyph(BC, 3.75, 2.4, 25, 35), RING, null, [
+      `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${N(px(13))}`,
+      line(at(1, -3), at(2, -2), at(1, -1)),
+      `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${N(px(9))}`,
+      line(at(-1, 3), at(-2, 2), at(-1, 1)),
+    ]);
   },
   // Persona que se asoma por la esquina (compartir). Despeja también el círculo de la insignia: con
   // solo la cabeza y los hombros quedaba un trozo del borde de la base entre los dos.
   person() {
     const h = circ(BC[0], 14.75, 1.85);
     const s = `M${pt([BC[0] - 3.25, 21.75])}${arcTo(BC[0], 21.75, 3.25, 180, 360)}Z`;
-    return own([h, s], `${RING}${h}${s}`, { solid: [h, s] });
+    const d16 = [circ(17.25, 14.25, 1.5), 'M14.25 21.75A3 3 0 0 1 20.25 21.75Z'];
+    return own([h, s], `${RING}${h}${s}`, { solid: [h, s] }, d16, { solid: d16 });
   },
   // La nube del set a escala, sentada en la esquina.
   cloud() {
     const c = clip(cloudPrims(5.6, 0.45, 5.2), []);
-    return own([c], c, { solid: [c] });
+    const c16 = clip(cloudPrims(5.125, 0.5, 5.125), []);
+    return own([c], c, { solid: [c] }, [c16], { solid: [c16] });
   },
-  // Sello con su listón: el certificado.
+  // Sello con su listón: el certificado. Relleno: el listón se cierra contra el sello (su cierre
+  // queda dentro del sello sólido). A 16 px el listón son dos tiras, pegadas al sello en el relleno.
   seal() {
     const c = [BC[0], 15.25];
     const s = circ(...c, 3.25);
     const tail = roundline([[c[0] - 2, 17.8], [c[0] - 2, 22], [c[0], 20.75], [c[0] + 2, 22], [c[0] + 2, 17.8]], [0, 0.4, 0.4, 0.4, 0]);
-    return own([s, tail], `${s}${tail}Z`, { solid: [s, tail] });
+    const s16 = circ(17.25, 15.75, 3);
+    const tails16 = [line([15.75, 18.35], [15.75, 21.75]), line([18.75, 18.35], [18.75, 21.75])];
+    return own([s, tail], `${s}${tail}Z`, { solid: [s, `${tail}Z`] }, [s16, ...tails16], { solid: [s16], wire: tails16 });
   },
 };
 
@@ -513,7 +553,6 @@ add('folders', ['carpetas', 'varias carpetas', 'directorios', 'folders', 'direct
   `M2.75 14.65V7.35a2.85 2.85 0 0 1 2.85-2.85H15.4`,
 ]);
 // Árbol: una carpeta raíz y dos hijas colgadas de su tronco.
-const TRUNK = [[[5.75, 7.5], [5.75, 19.5], [12.25, 19.5]], [0, 2.25, 0]];
 {
   const s = 0.5;
   const small = (x, y) => folder({ x, y, w: 9, h: 4.75, s });
@@ -521,7 +560,7 @@ const TRUNK = [[[5.75, 7.5], [5.75, 19.5], [12.25, 19.5]], [0, 2.25, 0]];
     small(2.75, 2.75),
     small(12.25, 8.75),
     small(12.25, 16.5),
-    roundline(...TRUNK),
+    roundline([[5.75, 7.5], [5.75, 19.5], [12.25, 19.5]], [0, 2.25, 0]),
     line([5.75, 11.75], [12.25, 11.75]),
   ]);
 }
@@ -658,43 +697,48 @@ add('trash-restore', ['restaurar', 'recuperar de la papelera', 'deshacer borrado
 
 // ── Portapapeles ──────────────────────────────────────────────────────────────────────────────
 // La tabla se abre arriba y sus esquinas terminan justo en los costados de la pinza; misma
-// tabla y misma pinza (5.7 × 3.5) que `paste` y `clipboard-check` de Edición.
-function clipboard(x = 4.75, w = 14.5) {
+// tabla y misma pinza (5.7 × 3.5) que `paste` y `clipboard-check` de Edición. `side` abre además
+// un hueco en un costado (por donde entra la flecha de copiar).
+function clipboard(x = 4.75, w = 14.5, side) {
   const r = 2.75;
-  const y = 4.5;
   const p = 1.6 * r;
-  return [
-    box(x, y, w, 16.75, r, { square: ['br'], gaps: [{ from: ['t', x + p], to: ['t', x + w - p] }] }),
-    sq(x + p, 2.75, w - 2 * p, 3.5, 1.05),
-  ];
+  const [a, b] = [x + p, x + w - p];
+  const top = { from: ['t', a], to: ['t', b] };
+  const board = (gaps) => box(x, 4.5, w, 16.75, r, { square: ['br'], gaps });
+  return {
+    d: [board(side ? [side, top] : [top]), sq(a, 2.75, b - a, 3.5, 1.05)],
+    // Relleno, como en Edición: la tabla entera (se cierra bajo la pinza; el hueco del costado lo
+    // despeja el aire de la flecha) y la pinza, sólidas, y un canal calado que separa la mitad de
+    // abajo de la pinza del tablero: así se lee como pieza aparte y no como un frasco.
+    solid: shut(board([top])),
+    channel: roundline([[a, 4.5], [a, 6.25], [b, 6.25], [b, 4.5]], [0, 1.05, 1.05, 0]),
+  };
 }
-add('clipboard', ['portapapeles', 'tabla', 'notas', 'clipboard', 'board'], clipboard());
+const CLIP = clipboard();
+/** El portapapeles de cada ícono (el de copiar es más angosto y abre su costado). */
+const BOARD = {};
+add('clipboard', ['portapapeles', 'tabla', 'notas', 'clipboard', 'board'], CLIP.d);
 // Lista: viñeta y renglón con 1.5 de aire entre ellos (a 18 px no se juntan).
 add('clipboard-list', ['lista', 'pendientes', 'tareas', 'checklist', 'to-do'], [
-  ...clipboard(),
+  ...CLIP.d,
   ...[10.5, 14, 17.5].flatMap((y) => [dot(8.5, y), line([12.25, y], [16.25, y])]),
 ]);
-add('clipboard-plus', ['agregar', 'nueva lista', 'nueva nota', 'clipboard add', 'new list'], [...clipboard(), line([12, 11], [12, 16.5]), line([9.25, 13.75], [14.75, 13.75])]);
-add('clipboard-x', ['quitar', 'rechazado', 'vaciar', 'clipboard remove', 'rejected'], [...clipboard(), line([9.9, 11.65], [14.1, 15.85]), line([14.1, 11.65], [9.9, 15.85])]);
+add('clipboard-plus', ['agregar', 'nueva lista', 'nueva nota', 'clipboard add', 'new list'], [...CLIP.d, line([12, 11], [12, 16.5]), line([9.25, 13.75], [14.75, 13.75])]);
+add('clipboard-x', ['quitar', 'rechazado', 'vaciar', 'clipboard remove', 'rejected'], [...CLIP.d, line([9.9, 11.65], [14.1, 15.85]), line([14.1, 11.65], [9.9, 15.85])]);
 // Copiar al portapapeles: la flecha entra por el costado.
 {
-  const x = 8.25;
-  const w = 13;
   const y = 13.25;
-  const [, pinza] = clipboard(x, w);
-  const r = 2.75;
-  const p = 1.6 * r;
+  BOARD['clipboard-copy'] = clipboard(8.25, 13, { from: ['l', y + 3], to: ['l', y - 3] });
   add('clipboard-copy', ['copiar', 'al portapapeles', 'guardar copia', 'copy to clipboard', 'copy'], [
-    box(x, 4.5, w, 16.75, r, { square: ['br'], gaps: [{ from: ['l', y + 3], to: ['l', y - 3] }, { from: ['t', x + p], to: ['t', x + w - p] }] }),
-    pinza,
+    ...BOARD['clipboard-copy'].d,
     line([2.75, y], [15.25, y]),
     head([15.25, y], [1, 0], 3.75),
   ]);
 }
 // Hoja de horas: el reloj tan grande como cabe; las manecillas, a 3 de la carátula.
-add('clipboard-clock', ['hoja de horas', 'tiempo', 'registro de horas', 'timesheet', 'time log'], [...clipboard(), circ(12, 13.75, 4.25), line([12, 12.35], [12, 13.75], [13.2, 14.45])]);
-add('clipboard-person', ['expediente', 'ficha', 'registro', 'record', 'patient chart'], [...clipboard(), circ(12, 10.6, 2), `M8.25 18.25${arcTo(12, 18.25, 3.75, 180, 360)}Z`]);
-add('clipboard-edit', ['editar lista', 'lápiz', 'llenar formulario', 'edit clipboard', 'fill form'], [...clipboard(), ...pencil([8.75, 17.75], -45, 9.5, 1.5, 3)]);
+add('clipboard-clock', ['hoja de horas', 'tiempo', 'registro de horas', 'timesheet', 'time log'], [...CLIP.d, circ(12, 13.75, 4.25), line([12, 12.35], [12, 13.75], [13.2, 14.45])]);
+add('clipboard-person', ['expediente', 'ficha', 'registro', 'record', 'patient chart'], [...CLIP.d, circ(12, 10.6, 2), `M8.25 18.25${arcTo(12, 18.25, 3.75, 180, 360)}Z`]);
+add('clipboard-edit', ['editar lista', 'lápiz', 'llenar formulario', 'edit clipboard', 'fill form'], [...CLIP.d, ...pencil([8.75, 17.75], -45, 9.5, 1.5, 3)]);
 
 // ── Libros y publicaciones ────────────────────────────────────────────────────────────────────
 // Arco de una cuerda con flecha `sag`: sweep 1 se curva a la izquierda del avance en pantalla.
@@ -775,55 +819,57 @@ add('newspaper', ['periódico', 'noticias', 'prensa', 'revista', 'newspaper', 'n
 
 // ── Relleno (DESIGN.md › Relleno) ─────────────────────────────────────────────────────────────
 // Por índice de d: por omisión el cuerpo (el primer trazo) se rellena y los detalles se calan;
-// aquí van las excepciones. `lines` sigue siendo línea con 1.5 de aire alrededor; lo que toca al
-// cuerpo y debe seguir unido va en `solid` (si es un trazo abierto con quiebre, de ida y vuelta
-// con `thin()` para que no encierre área).
+// aquí van las excepciones. En `solid` solo van figuras cerradas: `close` cierra los contornos
+// que tienen un hueco (la flecha que cruza la nube o el archivo, la hoja que entra a la boca, los
+// libros sobre su estante, el doblez del periódico); su cierre queda dentro de lo sólido o del aire
+// de la flecha, así la silueta no cambia. `lines` sigue siendo línea con 1.5 de aire alrededor;
+// `wire`, línea pegada al relleno (las tiras que salen de la trituradora, el tronco del árbol, la
+// tapa de la papelera, que como en `trash` de Edición lleva el asa cerrada y sólida).
 const all = (name) => icons[name].d.map((_, i) => i);
 const FILL = {
   files: { solid: [0], lines: [1] },
   'file-scan': { solid: [0], lines: [1, 2, 3, 4] },
-  'file-shredder': { solid: all('file-shredder') },
-  'file-import': { solid: [0], lines: [1, 2] },
-  'file-export': { solid: [0], lines: [1, 2] },
+  'file-shredder': { solid: [0, 1], wire: [2, 3, 4, 5], close: true },
+  'file-import': { solid: [0], lines: [1, 2], close: true },
+  'file-export': { solid: [0], lines: [1, 2], close: true },
   folders: { solid: [0], cut: [1], lines: [2] },
-  'folder-tree': { solid: all('folder-tree') },
-  'cloud-upload': { solid: [0], lines: [1, 2] },
-  'cloud-download': { solid: [0], lines: [1, 2] },
-  'cloud-off': { solid: [0], lines: [1] },
+  'folder-tree': { solid: [0, 1, 2], wire: [3, 4] },
+  'cloud-upload': { solid: [0], lines: [1, 2], close: true },
+  'cloud-download': { solid: [0], lines: [1, 2], close: true },
+  'cloud-off': { solid: [0], lines: [1], close: true },
   'file-server': { solid: [0, 1], cut: [2, 3] },
   backup: { solid: [0], cut: [1, 2], lines: [3, 4] },
-  'trash-restore': { solid: [0, 1, 2], cut: [3, 4] },
+  'trash-restore': { solid: [1, 2], wire: [0], cut: [3, 4], close: true },
   'clipboard-copy': { solid: [0, 1], lines: [2, 3] },
-  notebook: { solid: all('notebook') },
-  bookshelf: { solid: [0, 2, 3], cut: [1] },
+  notebook: { solid: [0], wire: [1, 2, 3] },
+  bookshelf: { solid: [0, 2], cut: [1], wire: [3], close: true },
   books: { solid: [0, 1, 2], cut: [3, 4, 5] },
-  newspaper: { solid: [0, 1], cut: [2, 3, 4, 5] },
+  newspaper: { solid: [0, 1], cut: [2, 3, 4, 5], close: true },
   versions: { solid: [0], lines: [1, 2] },
 };
-// El portapapeles: la tabla y la pinza se rellenan; lo de adentro se cala.
-for (const name of Object.keys(icons)) if (name.startsWith('clipboard') && !FILL[name]) FILL[name] = { solid: [0, 1], cut: all(name).slice(2) };
 for (const [name, icon] of Object.entries(icons)) {
-  const spec = FILL[name] ?? { solid: [0], cut: all(name).slice(1) };
+  // El portapapeles rellena la tabla y la pinza (sus dos primeros trazos)
+  const n = name.startsWith('clipboard') ? 2 : 1;
+  const spec = FILL[name] ?? { solid: all(name).slice(0, n), cut: all(name).slice(n) };
   const pick = (ix) => ix.map((i) => icon.d[i]);
-  icon.fill = { solid: pick(spec.solid), ...(spec.cut?.length && { cut: pick(spec.cut) }), ...(spec.lines?.length && { lines: pick(spec.lines) }) };
+  icon.fill = { solid: pick(spec.solid).map(spec.close ? shut : (d) => d) };
+  for (const k of ['cut', 'lines', 'wire']) if (spec[k]?.length) icon.fill[k] = pick(spec[k]);
 }
 Object.assign(icons['folder-open'], { fill: FILL_EXTRA['folder-open'] });
 // La trituradora: la hoja y la máquina se separan por el canto de la boca; los libros apilados,
 // por los cantos que comparten (sus hojas no caben caladas en 4.5 de grueso).
 icons['file-shredder'].fill.cut = [line([4.75, 9.25], [19.25, 9.25])];
 icons.books.fill = { solid: icons.books.fill.solid, cut: [line([7.5, 12.25], [16.5, 12.25]), line([7.5, 16.75], [19, 16.75])] };
-// El tronco del árbol une la raíz con las hijas: línea, no área.
-icons['folder-tree'].fill.solid[3] = thin(...TRUNK);
-// La pinza (como `paste` y `clipboard-check` de Edición): un canal separa su mitad de abajo del
-// tablero, así se lee como pieza aparte y no como un frasco.
-const clipCut = (x = 4.75, w = 14.5) => {
-  const p = 1.6 * 2.75;
-  return roundline([[x + p, 4.5], [x + p, 6.25], [x + w - p, 6.25], [x + w - p, 4.5]], [0, 1.05, 1.05, 0]);
-};
+// El periódico: el doblez y la plana se separan por el canto que comparten, como en el contorno.
+icons.newspaper.fill.cut.unshift(line([6.25, 9.25], [6.25, 21]));
+// El portapapeles: la tabla entera y la pinza, sólidas, con el canal que separa la pinza (ver
+// `clipboard()`); lo de adentro se cala.
 for (const name of Object.keys(icons))
   if (name.startsWith('clipboard')) {
-    const icon = icons[name];
-    icon.fill.cut = [name === 'clipboard-copy' ? clipCut(8.25, 13) : clipCut(), ...(icon.fill.cut ?? [])];
+    const { fill } = icons[name];
+    const c = BOARD[name] ?? CLIP;
+    fill.solid[0] = c.solid;
+    fill.cut = [c.channel, ...(fill.cut ?? [])];
   }
 // Solo una línea abierta: su relleno es el mismo contorno.
 icons.paperclip.fill = false;
@@ -973,83 +1019,33 @@ off(['file-scan'], { circle: false, square: false });
 off(['cloud-off', 'cloud-x', 'clipboard-x'], { slash: false });
 
 // ── 16 px (DESIGN.md › 16 px) ─────────────────────────────────────────────────────────────────
-// El motor no ajusta al pixel un `small`: aquí se ajusta con `snap`. Los signos nuevos van de
-// centro a centro de pixel (0.75 + 1.5k) y sus diagonales a 45°, así salen nítidos.
-const px = (k) => 0.75 + 1.5 * k;
-const sharp = (list) => list.map((d) => snap(d));
-const sharpFill = (fill) => Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, sharp(v)]));
-
-// Insignias: el círculo de 5.7 px no deja lugar a su signo (la palomita, la x, la estrella y la
-// pregunta eran una mancha gris). A 16 px el signo va sin círculo, de 5 a 7 pixeles, centrado en
-// el pixel de la insignia (11, 11); el motor despeja el mismo círculo que a 24 más el signo con su
-// aire. El reloj conserva su aro (es la carátula) con las manecillas por centros de pixel. Los puntos
-// son de un pixel (r 0.1), con un pixel de aire al trazo que acompañan.
-const at = (dx, dy) => [px(11 + dx), px(11 + dy)];
-const SIGN16 = {
-  plus: () => [line(at(0, -2), at(0, 2)), line(at(-2, 0), at(2, 0))],
-  minus: () => [line(at(-2, 0), at(2, 0))],
-  check: () => [line(at(-2, 0), at(0, 2), at(3, -1))],
-  x: () => [line(at(-2, -2), at(2, 2)), line(at(2, -2), at(-2, 2))],
-  alert: () => [line(at(0, -3), at(0, 0)), circ(...at(0, 2), 0.1)],
-  question: () => [line(at(-2, -2), at(-1, -3), at(1, -3), at(2, -2), at(0, 0), at(0, 1)), circ(...at(0, 3), 0.1)],
-  'arrow-up': () => [line(at(0, 2), at(0, -2)), line(at(-2, 0), at(0, -2), at(2, 0))],
-  'arrow-down': () => [line(at(0, -2), at(0, 2)), line(at(-2, 0), at(0, 2), at(2, 0))],
-  'arrow-right': () => [line(at(-2, 0), at(2, 0)), line(at(0, -2), at(2, 0), at(0, 2))],
-  star: () => [roundpoly([at(0, -3), at(1, -1), at(3, -1), at(1.5, 0.5), at(2, 3), at(0, 1.5), at(-2, 3), at(-1.5, 0.5), at(-3, -1), at(-1, -1)], 0.3)],
-  heart: () => [roundpoly([at(-2, -1), at(-1, -2), at(0, -1), at(1, -2), at(2, -1), at(2, 0), at(0, 2), at(-2, 0)], 0.35)],
-  lock: () => [sq(px(9), px(11), 6, 4.5, 1.2, { square: ['br'] }), `M${N(px(10))} ${N(px(11))}V${N(px(10))}A1.5 1.5 0 0 1 ${N(px(12))} ${N(px(10))}V${N(px(11))}`],
-  search: () => [circ(16.5, 16.5, 3), line(at(1, 1), at(3, 3))],
-  sync: () => [
-    `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${N(px(13))}`,
-    line(at(1, -3), at(2, -2), at(1, -1)),
-    `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${N(px(9))}`,
-    line(at(-1, 3), at(-2, 2), at(-1, 1)),
-  ],
-  person: () => [circ(17.25, 14.25, 1.5), `M14.25 21.75A3 3 0 0 1 20.25 21.75Z`],
-  cloud: () => [clip(cloudPrims(5.125, 0.5, 5.125), [])],
-  seal: () => [circ(17.25, 15.75, 3), line([15.75, 18.35], [15.75, 21.75]), line([18.75, 18.35], [18.75, 21.75])],
-};
-// Relleno de cada signo: las figuras cerradas, sólidas; las líneas abiertas siguen siendo línea.
-const SIGN16_FILL = {
-  star: (d) => ({ solid: d }),
-  heart: (d) => ({ solid: d }),
-  lock: (d) => ({ solid: d }),
-  search: (d) => ({ solid: d }),
-  person: (d) => ({ solid: d }),
-  cloud: (d) => ({ solid: d }),
-  seal: (d) => ({ solid: d }),
-};
-function badge16(kind) {
-  if (kind === 'clock') {
-    const face = circ(...BC, 4.5);
-    const hands = line(at(0, -2), at(0, 0), at(1, 1));
-    return { d: [face, hands], knock: face, fill: { solid: [face], cut: [hands] } };
-  }
-  const d = SIGN16[kind]();
-  return { d, knock: `${RING}${d.join('')}`, ...(SIGN16_FILL[kind] && { fill: SIGN16_FILL[kind](d) }) };
-}
-// La carpeta ajustada: el ajuste lleva sus costados a 2.25 y 21.75 y dejaba el pliegue medio pixel
-// corto; aquí llega a ellos.
-const FOLDER16 = [snap(FOLDER[0]), line([2.25, 9.75], [21.75, 9.75])];
-// La insignia de cada ícono a 16 px.
-const KIND16 = {
-  plus: 'plus', minus: 'minus', check: 'check', x: 'x', alert: 'alert', clock: 'clock', star: 'star', move: 'arrow-right',
-  question: 'question', heart: 'heart', search: 'search', lock: 'lock', download: 'arrow-down', upload: 'arrow-up',
-  sync: 'sync', shared: 'person', cloud: 'cloud', certificate: 'seal',
-};
-for (const [name, icon] of Object.entries(icons)) {
-  if (!icon.badge) continue;
-  const kind = KIND16[name.split('-').slice(1).join('-')];
-  const base = name.startsWith('folder') ? { d: FOLDER16, fill: { solid: [FOLDER16[0]], cut: [FOLDER16[1]] } } : { d: sharp(icon.d), fill: sharpFill(icon.fill) };
-  icon.small = { ...base, badge: badge16(kind) };
-}
-
-// Glifos propios a 16 px. g(columna, fila) es el centro de un pixel. El archivo ajustado ocupa las
-// columnas 3–12 y las filas 1–14: su glifo vive en las columnas 5–10 y las filas 3–12 (1 px de aire
-// al borde). Las flechas llevan asta y punta en la misma columna (al ajustarse, el asta de 24 caía
-// en un pixel y la punta en otro), las palomitas y taches de 4 y 5 pixeles, como en Edición.
-const g = (c, r) => [px(c), px(r)];
+// El motor ajusta al pixel cada ícono con un solo ajuste para todos sus trazos (el pliegue de la
+// carpeta y el borde del portapapeles ya llegan a sus costados) y cambia solo las insignias
+// estándar a su versión de pixel. Aquí van solo los dibujos que aun así no se leen. A un `small` no
+// lo ajusta el motor: `set16` le aplica el mismo ajuste compartido. Los signos nuevos van de centro
+// a centro de pixel (g, en «Piezas base») y sus diagonales a 45°, así salen nítidos.
 const pl = (...pts) => line(...pts.map(([c, r]) => g(c, r)));
+// Punto de un pixel, en el centro de su pixel: el ajuste no lo toca (a los puntos de 24 los lleva a
+// 2 × 2 pixeles, que en una lista o un signo chico no dejan aire).
+const DOT16 = new Set();
+const dot16 = (c, r) => {
+  const d = circ(...g(c, r), 0.1);
+  DOT16.add(d);
+  return d;
+};
+const set16 = (name, d, fill, badge16) => {
+  const sn = snapper([...d, ...Object.values(fill ?? {}).flat()]);
+  const S = (p) => (DOT16.has(p) ? p : sn(p));
+  icons[name].small = {
+    d: d.map(S),
+    ...(fill && { fill: Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, v.map(S)])) }),
+    ...(badge16 && { badge: badge16 }),
+  };
+};
+// Con insignia propia: la base con el mismo ajuste que le daría el motor y la insignia de pixel.
+for (const [name, icon] of Object.entries(icons)) if (PIXEL.has(icon.badge)) set16(name, icon.d, icon.fill, PIXEL.get(icon.badge));
+/** Como el relleno de 24: el primer trazo se rellena y lo demás se cala. */
+const body16 = (name, d) => set16(name, d, { solid: [d[0]], cut: d.slice(1) });
 const plus16 = (c, r, n = 2) => [pl([c, r - n], [c, r + n]), pl([c - n, r], [c + n, r])];
 const cross16 = (c, r, n = 2) => [pl([c - n, r - n], [c + n, r + n]), pl([c + n, r - n], [c - n, r + n])];
 const arrowV = (c, from, to, n = 2) => {
@@ -1062,29 +1058,15 @@ const arrowH = (r, from, to, n = 2) => {
 };
 /** El lápiz de 24 con sus cantos sobre diagonales de pixel (medio ancho 1.59: x + y múltiplo de 1.5). */
 const pencil16 = (tip) => pencil(tip, -45, 8.5, 1.59, 2.25);
-const set16 = (name, d, fill) => {
-  icons[name].small = { d: sharp(d), ...(fill && { fill: sharpFill(fill) }) };
-};
-/** Como el relleno de 24: el primer trazo se rellena y lo demás se cala. */
-const body16 = (name, d) => set16(name, d, { solid: [d[0]], cut: d.slice(1) });
-const FILE16 = file();
-// El portapapeles ajustado: la pinza cae en 4 × 4 pixeles y el borde de la tabla llega justo a sus
-// costados (con la de 24 ajustada quedaba 0.6 corto); su canal, igual.
-const board16 = (x, w) => {
-  const [a, b] = [x + 1.6 * 2.75, x + w - 1.6 * 2.75].map((v) => px(Math.round((v - 0.75) / 1.5)));
-  return {
-    pinza: sq(a, 2.25, b - a, 4.5, 1.05),
-    cut: roundline([[a, 5.25], [a, 6.75], [b, 6.75], [b, 5.25]], [0, 1.05, 1.05, 0]),
-    gap: { from: ['t', a], to: ['t', b] },
-  };
-};
-const B16 = board16(4.75, 14.5);
-const BOARD16 = [box(4.75, 4.5, 14.5, 16.75, 2.75, { square: ['br'], gaps: [B16.gap] }), B16.pinza];
-const boardFill16 = (d) => ({ solid: d.slice(0, 2), cut: [B16.cut, ...d.slice(2)] });
 
-// Archivo: lápiz, video, comprimido (dientes de 3 px que se cruzan en la columna 8 y tirador de 5 × 4 con su hueco), presentación,
-// 3D, persona (cabeza y hombros separados por 1 px), firma, analítica, vista previa, sincronizar,
-// compartir, bajar, subir y comparar.
+// Archivo: el archivo ajustado ocupa las columnas 3–12 y las filas 1–14; su glifo vive en las
+// columnas 5–10 y las filas 3–12 (1 px de aire al borde). Las flechas llevan asta y punta en la
+// misma columna (al ajustarse, el asta de 24 caía en un pixel y la punta en otro), las palomitas y
+// taches de 4 y 5 pixeles, como en Edición. Lápiz, video, comprimido (dientes de 3 px que se cruzan
+// en la columna 8 y tirador de 5 × 4 con su hueco), presentación, 3D, persona (cabeza y hombros
+// separados por 1 px), firma, analítica, sincronizar, compartir, bajar, subir y comparar. La vista
+// previa ya no lo necesita: con el ajuste compartido su ojo conserva el hueco y la pupila.
+const FILE16 = file();
 body16('file-edit', [FILE16, ...pencil16([8.25, 16.5])]);
 body16('file-video', [FILE16, roundpoly([g(6, 5), g(10, 8), g(6, 11)], 0.6)]);
 body16('file-zip', [FILE16, pl([6, 3], [8, 3]), pl([8, 5], [10, 5]), pl([6, 7], [8, 7]), sq(px(6), px(9), 6, 4.5, 1.2)]);
@@ -1096,7 +1078,6 @@ body16('file-3d', [FILE16, roundpoly([g(5, 7), g(7, 5), g(10, 5), g(10, 8), g(8,
 body16('file-person', [FILE16, circ(12, 8.25, 2.25), 'M9 17.25A3 3 0 0 1 15 17.25Z']);
 body16('file-signature', [FILE16, pl([5, 9], [7, 7], [9, 9], [10, 8]), pl([5, 11], [10, 11])]);
 body16('file-analytics', [FILE16, pl([5, 11], [7, 9], [8, 10], [10, 8])]);
-body16('file-preview', [FILE16, roundpoly([g(5, 8), g(7, 6), g(8, 6), g(10, 8), g(8, 10), g(7, 10)], 0.4), circ(12, px(8), 0.4)]);
 body16('file-sync', [
   FILE16,
   `M${pt(g(5, 7))}A3 3 0 0 1 ${pt(g(7, 5))}H${N(px(9))}`,
@@ -1112,55 +1093,48 @@ body16('file-diff', [FILE16, ...plus16(8, 6), pl([6, 11], [10, 11])]);
 {
   const imp = box(8.25, 3.75, 13.5, 16.5, 3.25, { square: ['br'], gaps: [{ from: ['l', 15.75], to: ['l', 9.75] }] });
   const exp = box(2.25, 3.75, 13.5, 16.5, 3.25, { square: ['br'], gaps: [{ from: ['r', 9.75], to: ['r', 15.75] }] });
-  set16('file-import', [imp, ...arrowH(8, 1, 10)], { solid: [imp], lines: arrowH(8, 1, 10) });
-  set16('file-export', [exp, ...arrowH(8, 5, 14)], { solid: [exp], lines: arrowH(8, 5, 14) });
+  set16('file-import', [imp, ...arrowH(8, 1, 10)], { solid: [shut(imp)], lines: arrowH(8, 1, 10) });
+  set16('file-export', [exp, ...arrowH(8, 5, 14)], { solid: [shut(exp)], lines: arrowH(8, 5, 14) });
 }
 
 // Nube: los signos de pixel en el centro de su hueco, a 3 o más de su contorno (el tache de 3 × 3,
-// como el de 24 a escala); las flechas, con su base abierta.
+// como el de 24 a escala); las flechas, con su base abierta y centrada en ellas.
 {
   const c = cloud();
   body16('cloud-check', [c, pl([5, 9], [6, 10], [9, 7])]);
   body16('cloud-x', [c, ...cross16(8, 8, 1)]);
   body16('cloud-plus', [c, ...plus16(8, 8)]);
-  body16('cloud-alert', [c, pl([8, 5], [8, 8]), circ(px(8), px(10), 0.1)]);
+  body16('cloud-alert', [c, pl([8, 5], [8, 8]), dot16(8, 10)]);
   body16('cloud-search', [c, circ(12, 12, 2.25), line([13.5, 13.5], g(10, 10))]);
   body16('cloud-bolt', [c, pl([9, 6], [7, 8], [9, 8], [7, 10])]);
   const up = arrowV(8, 14, 5);
   const upCloud = cloud(-2.5, [cap(g(8, 5), g(8, 14))]);
-  set16('cloud-upload', [upCloud, ...up], { solid: [upCloud], lines: up });
+  set16('cloud-upload', [upCloud, ...up], { solid: [shut(upCloud)], lines: up });
   const down = arrowV(8, 6, 14);
   const downCloud = cloud(-2.5, [cap(g(8, 6), g(8, 14))]);
-  set16('cloud-download', [downCloud, ...down], { solid: [downCloud], lines: down });
+  set16('cloud-download', [downCloud, ...down], { solid: [shut(downCloud)], lines: down });
 }
 
-// Portapapeles: tache, más, lista, persona y lápiz por centros de pixel; copiar con su hueco
-// centrado en la flecha.
-set16('clipboard-x', [...BOARD16, ...cross16(8, 9)], boardFill16([...BOARD16, ...cross16(8, 9)]));
-set16('clipboard-plus', [...BOARD16, ...plus16(8, 9)], boardFill16([...BOARD16, ...plus16(8, 9)]));
+// Portapapeles: la tabla y la pinza son las de 24 (el ajuste compartido lleva el borde a los
+// costados de la pinza); tache, más, lista, persona y lápiz por centros de pixel; copiar, con el
+// hueco del costado centrado en la flecha.
+const clip16 = (name, glyph, c = CLIP) => set16(name, [...c.d, ...glyph], { solid: [c.solid, c.d[1]], cut: [c.channel, ...glyph] });
+clip16('clipboard-x', cross16(8, 9));
+clip16('clipboard-plus', plus16(8, 9));
+clip16('clipboard-list', [6, 9, 12].flatMap((r) => [dot16(5, r), pl([7, r], [10, r])]));
+clip16('clipboard-person', [circ(12, 11.5, 1.5), 'M9.5 18.75A2.5 2.5 0 0 1 14.5 18.75Z']);
+clip16('clipboard-edit', pencil16([8.25, 18]));
 {
-  const rows = [6, 9, 12].flatMap((r) => [circ(px(5), px(r), 0.1), pl([7, r], [10, r])]);
-  set16('clipboard-list', [...BOARD16, ...rows], boardFill16([...BOARD16, ...rows]));
-}
-{
-  const person = [circ(12, 11.5, 1.5), 'M9.5 18.75A2.5 2.5 0 0 1 14.5 18.75Z'];
-  set16('clipboard-person', [...BOARD16, ...person], boardFill16([...BOARD16, ...person]));
-}
-set16('clipboard-edit', [...BOARD16, ...pencil16([8.25, 18])], boardFill16([...BOARD16, ...pencil16([8.25, 18])]));
-{
-  const c = board16(8.25, 13);
-  const board = box(8.25, 4.5, 13, 16.75, 2.75, { square: ['br'], gaps: [{ from: ['l', 15.75], to: ['l', 9.75] }, c.gap] });
+  const c = clipboard(8.25, 13, { from: ['l', 15.75], to: ['l', 9.75] });
   const arrow = arrowH(8, 1, 10);
-  set16('clipboard-copy', [board, c.pinza, ...arrow], { solid: [board, c.pinza], cut: [c.cut], lines: arrow });
+  set16('clipboard-copy', [...c.d, ...arrow], { solid: [c.solid, c.d[1]], cut: [c.channel], lines: arrow });
 }
 
-// Papelera: la flecha de restaurar en la columna 8.
+// Papelera: la flecha de restaurar en la columna 8, asta y punta juntas.
 {
-  // El asa baja hasta la tapa ajustada (fila 4).
-  const [lid, , body] = icons['trash-restore'].d;
-  const handle = roundline([[9.75, 6.75], [9.75, 3.75], [14.25, 3.75], [14.25, 6.75]], [0, 1.25, 1.25, 0]);
+  const [lid, handle, body] = icons['trash-restore'].d;
   const arrow = arrowV(8, 12, 8);
-  set16('trash-restore', [lid, handle, body, ...arrow], { solid: [lid, handle, body], cut: arrow });
+  set16('trash-restore', [lid, handle, body, ...arrow], { solid: [shut(handle), body], wire: [lid], cut: arrow });
 }
 // Clip: a 45° sus tres rectas paralelas (a 3) se juntaban en una mancha; a 16 px va derecho, con
 // las rectas en columnas alternas (1 px de aire) y las mismas tres medias vueltas.

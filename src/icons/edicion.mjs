@@ -120,10 +120,8 @@ function spark(cx, cy, R, k = 0.9) {
 }
 
 // ── Trazos al revés (para el relleno) ──
-// Un trazo abierto en `fill.solid` se rellena hasta la cuerda que une sus extremos. `thin()` lo
-// recorre de ida y vuelta: queda como línea, unida al cuerpo, sin área que rellenar (el asa del
-// rodillo, el arco del compás). `hole()` junta un contorno con otro recorrido al revés: el de
-// adentro queda hueco (la ventana de la escuadra).
+// `hole()` junta un contorno con otro recorrido al revés: el de adentro queda hueco (la ventana
+// de la escuadra). Lo que en el relleno sigue siendo línea pegada al cuerpo va en `wire`.
 function segments(d) {
   const out = [];
   let p = [0, 0];
@@ -147,7 +145,6 @@ const back = ({ c, a, from }) => {
   if (c === 'A') return `A${a[0]} ${a[1]} ${a[2]} ${a[3]} ${1 - a[4]} ${xy(from)}`;
   return `L${xy(from)}`;
 };
-const thin = (d) => `${d}${segments(d).reverse().map(back).join('')}`;
 function hole(outer, inner) {
   const segs = segments(inner);
   return `${outer}M${xy(segs.at(-1).to)}${segs.reverse().map(back).join('')}Z`;
@@ -159,6 +156,8 @@ const CLIP = [
   rpath([[9.15, 4.5], [4.75, 4.5], [4.75, 21.25], [19.25, 21.25], [19.25, 4.5], [14.85, 4.5]], [0, 2.75, 2.75, 0, 2.75, 0]),
   sq(9.15, 2.75, 5.7, 3.5, 1.05),
 ];
+// En el relleno el tablero va cerrado: su cierre corre bajo la pinza, que lo tapa.
+const CLIP_SOLID = [`${CLIP[0]}Z`, CLIP[1]];
 
 // Copiar: la hoja de atrás termina en sus esquinas, a 1.5 de aire de la de enfrente.
 const COPY_BACK = rpath([[13.75, 7.25], [13.75, 3.25], [3.25, 3.25], [3.25, 13.75], [7.25, 13.75]], 2.5);
@@ -170,6 +169,8 @@ const TRASH_BODY = [box(5.25, 9, 13.5, 12.25, 3.25), vl(9.75, 12.75, 17.5), vl(1
 
 // Archivo: tapa ancha y cuerpo que cuelga de ella.
 const ARCHIVE = [sq(2.75, 3.5, 18.5, 4.75, 1.4), rpath([[5.25, 8.25], [5.25, 20.75], [18.75, 20.75], [18.75, 8.25]], [0, 3, 0, 0])];
+// En el relleno la caja va cerrada: su cierre corre por el canal que la separa de la tapa.
+const ARCHIVE_SOLID = [ARCHIVE[0], `${ARCHIVE[1]}Z`];
 
 // Encabezado: H compacta para acompañar un número.
 const H_SMALL = [vl(3.75, 5, 19), vl(11.75, 5, 19), hl(3.75, 11.75, 12)];
@@ -1019,38 +1020,33 @@ const icons = {
   },
 };
 
-// ── Relleno (DESIGN.md › Relleno), por índice de d: `solid` se rellena (y conserva su trazo),
-// `cut` se cala al ancho del trazo y `lines` sigue siendo línea con 1.5 de aire. Lo que solo es
-// línea abierta (letras, renglones, flechas) lleva `fill: false`.
+// ── Relleno (DESIGN.md › Relleno), por índice de d: `solid` se rellena (y conserva su trazo; solo
+// figuras cerradas), `cut` se cala al ancho del trazo, `lines` sigue siendo línea con 1.5 de aire y
+// `wire` sigue siendo línea pegada al relleno. Lo que solo es línea abierta (letras, renglones,
+// flechas) lleva `fill: false`.
 const all = (name) => icons[name].d.map((_, i) => i);
 const FILL = {
   'copy': { solid: [1], lines: [0] },
   'duplicate': { solid: [1], lines: [0], cut: [2, 3] },
   'copy-check': { solid: [1], lines: [0], cut: [2] },
-  // Los ojos de las tijeras rellenos; las hojas siguen siendo línea.
-  'scissors': { solid: all('scissors') },
-  // La tapa y su asa se rellenan juntas (el asa cierra contra la tapa); las ranuras se calan.
-  'trash': { solid: [0, 1, 2], cut: [3, 4] },
-  'trash-open': { solid: [0, 1, 2], cut: [3, 4] },
+  // Los ojos de las tijeras rellenos; las hojas siguen siendo línea, pegada a ellos.
+  'scissors': { solid: [0, 1], wire: [2, 3, 4] },
   'wastebasket': { solid: [0], cut: [1, 2] },
   'backspace': { solid: [0], cut: [1, 2] },
   'quote': { solid: [0, 1] },
   'text-box': { solid: [0], cut: [1, 2] },
-  'text-search': { solid: [4, 5], lines: [0, 1, 2, 3] },
+  'text-search': { solid: [4], wire: [5], lines: [0, 1, 2, 3] },
   'image-plus': { solid: [0], cut: [1, 2] },
   'rotate-right': { solid: [0], lines: [1, 2] },
   'rotate-left': { solid: [0], lines: [1, 2] },
   'flip-horizontal': { solid: [0, 4], lines: [1, 2, 3] },
   'flip-vertical': { solid: [0, 4], lines: [1, 2, 3] },
   'resize': { solid: [0], lines: [1, 2] },
-  'transform': { solid: all('transform') },
+  // Los tiradores rellenos; los cantos del marco los unen como línea.
+  'transform': { solid: [0, 1, 2, 3], wire: [4, 5, 6, 7] },
   'eraser': { solid: [0], cut: [1], lines: [2] },
-  'vector-path': { solid: all('vector-path') },
-  'highlighter': { solid: [0, 2], cut: [1], lines: [3] },
+  'vector-path': { solid: [0, 1, 2], wire: [3, 4] },
   'magic-wand': { solid: [0, 2, 3, 4], cut: [1] },
-  // La pipeta, el collar y la perilla se rellenan juntos: el collar asoma a los lados.
-  'eyedropper': { solid: all('eyedropper') },
-  'paint-bucket': { solid: all('paint-bucket') },
   'palette': { solid: [0], cut: [1, 2, 3, 4] },
   'shapes': { solid: all('shapes') },
   'pencil-plus': { solid: [0], cut: [1, 2] },
@@ -1063,9 +1059,8 @@ const FILL = {
   'bookmark-minus': { solid: [0], cut: [1] },
   'star': { solid: [0] },
   'heart': { solid: [0] },
-  'flag': { solid: [0, 1] },
-  'share': { solid: [0], lines: [1, 2] },
-  'share-nodes': { solid: all('share-nodes') },
+  'flag': { solid: [1], wire: [0] },
+  'share-nodes': { solid: [0, 1, 2], wire: [3, 4] },
   'select-all': { solid: [8], lines: [0, 1, 2, 3, 4, 5, 6, 7] },
   'group': { solid: [8, 9], lines: [0, 1, 2, 3, 4, 5, 6, 7] },
   'bring-forward': { solid: [0], lines: [1, 2, 3] },
@@ -1083,45 +1078,58 @@ const FILL = {
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
-  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
 }
 {
   const d = (name) => icons[name].d;
   // El portapapeles: la mitad de abajo de la pinza se separa del tablero con un canal.
   const clipCut = rpath([[9.15, 4.5], [9.15, 6.25], [14.85, 6.25], [14.85, 4.5]], [0, 1.05, 1.05, 0]);
-  icons.paste.fill = { solid: [d('paste')[0], d('paste')[1]], cut: [clipCut, d('paste')[2], d('paste')[3]] };
-  icons['clipboard-check'].fill = { solid: [d('clipboard-check')[0], d('clipboard-check')[1]], cut: [clipCut, d('clipboard-check')[2]] };
+  icons.paste.fill = { solid: CLIP_SOLID, cut: [clipCut, d('paste')[2], d('paste')[3]] };
+  icons['clipboard-check'].fill = { solid: CLIP_SOLID, cut: [clipCut, d('clipboard-check')[2]] };
   // El archivo: un canal de lado a lado separa la tapa de la caja.
-  icons.archive.fill = { solid: [d('archive')[0], d('archive')[1]], cut: [hl(1, 23, 8.25), d('archive')[2]] };
-  icons['archive-restore'].fill = { solid: [d('archive-restore')[0], d('archive-restore')[1]], cut: [hl(1, 23, 8.25), d('archive-restore')[2], d('archive-restore')[3]] };
-  // El calderón: la panza se cierra contra el asta y se rellena, como en la tipografía.
-  icons.paragraph.fill = { solid: ['M12 12.25H10A4 4 0 0 1 10 4.25H12Z', hl(12, 18, 4.25), d('paragraph')[1], d('paragraph')[2]] };
+  icons.archive.fill = { solid: ARCHIVE_SOLID, cut: [hl(1, 23, 8.25), d('archive')[2]] };
+  icons['archive-restore'].fill = { solid: ARCHIVE_SOLID, cut: [hl(1, 23, 8.25), d('archive-restore')[2], d('archive-restore')[3]] };
+  // La papelera: el asa se cierra contra la tapa y se rellena con ella; la tapa es una barra y las
+  // ranuras se calan.
+  for (const name of ['trash', 'trash-open']) icons[name].fill = { solid: [`${d(name)[1]}Z`, d(name)[2]], wire: [d(name)[0]], cut: [d(name)[3], d(name)[4]] };
+  // El calderón: la panza se cierra contra el asta y se rellena, como en la tipografía; el asta y
+  // la barra siguen siendo línea, pegadas a ella.
+  icons.paragraph.fill = { solid: ['M12 12.25H10A4 4 0 0 1 10 4.25H12Z'], wire: [hl(12, 18, 4.25), d('paragraph')[1], d('paragraph')[2]] };
   for (const name of ['text-direction-ltr', 'text-direction-rtl'])
-    icons[name].fill = { solid: ['M12.25 8.75H10.5A2.75 2.75 0 0 1 10.5 3.25H12.25Z', hl(12.25, 17.25, 3.25), d(name)[1], d(name)[2]], lines: [d(name)[3], d(name)[4]] };
+    icons[name].fill = { solid: ['M12.25 8.75H10.5A2.75 2.75 0 0 1 10.5 3.25H12.25Z'], wire: [hl(12.25, 17.25, 3.25), d(name)[1], d(name)[2]], lines: [d(name)[3], d(name)[4]] };
   // El salto de página: las dos hojas, cerradas, son dos bloques; el corte sigue punteado.
   icons['page-break'].fill = {
     solid: [rpath([[4.75, 3.25], [4.75, 8.75], [19.25, 8.75], [19.25, 3.25]], [0, 2.5, 0, 0], { closed: true }), rpath([[4.75, 20.75], [4.75, 15.25], [19.25, 15.25], [19.25, 20.75]], [0, 2.5, 2.5, 0], { closed: true })],
     lines: [1, 2, 3].map((i) => d('page-break')[i]),
   };
   // El brazo del rodillo une el rodillo con el mango: línea, no área.
-  icons['paint-roller'].fill = { solid: [d('paint-roller')[0], thin(d('paint-roller')[1]), d('paint-roller')[2]] };
-  // El pincel: un canal separa las cerdas de la virola.
+  icons['paint-roller'].fill = { solid: [d('paint-roller')[0], d('paint-roller')[2]], wire: [d('paint-roller')[1]] };
+  // El pincel: la virola se cierra contra las cerdas y un canal las separa; el mango es línea.
   {
     const P = axis([3.5, 20.5], -45);
-    icons.brush.fill = { solid: d('brush'), cut: [line(P(9, -2.25), P(9, 2.25))] };
+    icons.brush.fill = { solid: [d('brush')[0], `${d('brush')[1]}Z`], wire: [d('brush')[2]], cut: [line(P(9, -2.25), P(9, 2.25))] };
   }
+  // El resaltador: la punta biselada se cierra contra el canto del cuerpo.
+  icons.highlighter.fill = { solid: [d('highlighter')[0], `${d('highlighter')[2]}Z`], cut: [d('highlighter')[1]], lines: [d('highlighter')[3]] };
+  // El cuentagotas: la pipeta y la perilla se cierran contra el collar, que asoma a los lados como
+  // una barra.
+  icons.eyedropper.fill = { solid: [`${d('eyedropper')[0]}Z`, `${d('eyedropper')[2]}Z`], wire: [d('eyedropper')[1]] };
+  // La cubeta: el cuerpo se cierra por la boca, donde corre el labio, que sigue siendo barra.
+  icons['paint-bucket'].fill = { solid: [`${d('paint-bucket')[0]}Z`, d('paint-bucket')[2]], wire: [d('paint-bucket')[1]] };
+  // Compartir: la caja se cierra por arriba y la flecha la cala con su aire al salir.
+  icons.share.fill = { solid: [`${d('share')[0]}Z`], lines: [d('share')[1], d('share')[2]] };
   // La pluma: el ojo se abre entero (r 2) y la ranura sube a la punta.
   icons['pen-tool'].fill = { solid: [d('pen-tool')[0], d('pen-tool')[3]], cut: [d('pen-tool')[1], d('pen-tool')[2], circ(12, 11, 0.5)] };
   // La regla: las marcas se calan desde el canto (salen de él para no dejar astillas).
   icons.ruler.fill = { solid: [d('ruler')[0]], cut: [[6, 11.25], [9, 9.75], [12, 11.25], [15, 9.75], [18, 11.25]].map(([x, y]) => vl(x, 6, y)) };
   // La escuadra: la ventana queda hueca.
   icons['set-square'].fill = { solid: [hole(d('set-square')[0], d('set-square')[1])] };
-  // El compás: la bisagra rellena; el arco es línea.
-  icons['drafting-compass'].fill = { solid: [...d('drafting-compass').slice(0, 4), thin(d('drafting-compass')[4])] };
+  // El compás: la bisagra rellena; el mango, las patas y el arco siguen siendo línea.
+  icons['drafting-compass'].fill = { solid: [d('drafting-compass')[0]], wire: d('drafting-compass').slice(1) };
   // El lápiz tachado: cada mitad se cierra contra el corte.
   icons['pencil-off'].fill = { solid: [`${d('pencil-off')[0]}Z`, `${d('pencil-off')[2]}Z`], cut: [d('pencil-off')[1], d('pencil-off')[3]], lines: [d('pencil-off')[4]] };
   // La media estrella: la mitad rellena y el contorno de la otra, unido a ella.
-  icons['star-half'].fill = { solid: [d('star-half')[0], thin(d('star-half')[1])] };
+  icons['star-half'].fill = { solid: [d('star-half')[0]], wire: [d('star-half')[1]] };
   // El disquete: la ventanilla se cala desde el canto de arriba y la etiqueta queda aparte.
   icons.save.fill = { solid: [d('save')[0]], cut: [rpath([[9, 1.5], [9, 8], [15, 8], [15, 1.5]], [0, 1.25, 1.25, 0]), d('save')[2]] };
   // La nota: la esquina doblada se separa con un canal que cruza el canto.
@@ -1155,7 +1163,7 @@ const point = (tip, [dx, dy], n = 1) => {
 {
   const check = tick(11.25, 15.75, 2, 3);
   const clipCut = rpath([[9.15, 4.5], [9.15, 6.25], [14.85, 6.25], [14.85, 4.5]], [0, 1.05, 1.05, 0]);
-  icons['clipboard-check'].small = sharp([...CLIP, check], { solid: CLIP, cut: [clipCut, check] });
+  icons['clipboard-check'].small = sharp([...CLIP, check], { solid: CLIP_SOLID, cut: [clipCut, check] });
 }
 {
   const check = tick(11.25, 11.25, 2, 3);
@@ -1175,7 +1183,7 @@ icons.deselect.small = sharp([...MARQUEE, ...cross(8.25, 8.25, 4)]);
 // Las flechas cortas: asta en una columna de pixel y punta a 45° (la de 24 caía entre dos pixeles).
 {
   const arrow = [vl(12.75, 11.25, 17.25), point([12.75, 11.25], [0, -1], 2)];
-  icons['archive-restore'].small = sharp([...ARCHIVE, ...arrow], { solid: ARCHIVE, cut: [hl(1, 23, 8.25), ...arrow] });
+  icons['archive-restore'].small = sharp([...ARCHIVE, ...arrow], { solid: ARCHIVE_SOLID, cut: [hl(1, 23, 8.25), ...arrow] });
 }
 // La sangría: los dos renglones del medio se abren un pixel para que la flecha (punta de 2 pasos;
 // con 1 se leía como un más) quede centrada entre ellos.
@@ -1190,7 +1198,7 @@ icons['text-smaller'].small = sharp([...A_BIG, point([17.25, 6.75], [0, 1], 2)])
 // La papelera abierta: el asa girada se volvía una mancha; a 16 px la tapa se levanta derecha.
 {
   const lid = hl(3.5, 20.5, 3.75);
-  icons['trash-open'].small = sharp([lid, ...TRASH_BODY], { solid: [lid, TRASH_BODY[0]], cut: TRASH_BODY.slice(1) });
+  icons['trash-open'].small = sharp([lid, ...TRASH_BODY], { solid: [TRASH_BODY[0]], wire: [lid], cut: TRASH_BODY.slice(1) });
 }
 // El cesto: las ranuras inclinadas se emborronaban; a 16 px van verticales.
 {
