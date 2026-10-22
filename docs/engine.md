@@ -16,7 +16,7 @@ Todo trabaja en el lienzo de 24 y devuelve el `d` de un path con dos decimales c
 | `roundpoly(pts, radius)` | Polígono con esquinas redondeadas (radio por esquina o uno solo) |
 | `polar`, `line`, `rot` | Punto en un círculo, línea por puntos, giro de un punto |
 | `cursor(tip, s)` | El puntero del set: punta casi viva, canto vertical, diagonal a 45°, cola proporcionada (conserva 0.8 de aire por dentro al reducirse). Todo puntero sale de aquí |
-| `badge(kind, { size })` | Insignias estándar `{ kind, d, knock, fill }` (con `size` ≤ 18, su versión de pixel: sin anillo, el signo más grande): en círculo abajo a la derecha (centro 17.25, r 4.25) `plus`, `minus`, `check`, `x`, `alert`, `info`, `clock`, `arrow-up`, `arrow-down`, `arrow-right`, `star`; `lock` sin círculo; `dot` (aviso) arriba a la derecha |
+| `badge(kind, { size })` | Insignias estándar `{ kind, d, knock, fill }` (con `size` ≤ 18, su versión de pixel: sin anillo, el signo más grande; el candado, en la cuadrícula del pixel): en círculo abajo a la derecha (centro 17.25, r 4.25) `plus`, `minus`, `check`, `x`, `alert`, `info`, `clock`, `arrow-up`, `arrow-down`, `arrow-right`, `star`; `lock` sin círculo; `dot` (aviso) arriba a la derecha |
 
 ## Variantes (`engine/variants.mjs`)
 `render(icon, opciones)` devuelve el contenido de un `<svg viewBox="0 0 24 24">`; `svgFile(inner, icon)` lo envuelve (y agrega `data-rtl="mirror"` si el ícono es direccional).

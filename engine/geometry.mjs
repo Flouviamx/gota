@@ -226,7 +226,13 @@ function badge16(kind) {
     const hands = line(AT(0, -2), AT(0, 0), AT(1, 1));
     return { kind, d: [face, hands], knock: face, fill: { solid: [face], cut: [hands] } };
   }
-  if (kind === 'dot' || kind === 'lock') return { kind, ...badge24(kind) };
+  if (kind === 'dot') return { kind, ...badge24(kind) };
+  if (kind === 'lock') {
+    // El candado de pixel: cuerpo de 4 × 3 pixeles con la firma y arco de 2 pixeles
+    const body = sq(PX(9), PX(11), 6, 4.5, 1.2, { square: ['br'] });
+    const shackle = `M${f(PX(10))} ${f(PX(11))}V${f(PX(10))}A1.5 1.5 0 0 1 ${f(PX(12))} ${f(PX(10))}V${f(PX(11))}`;
+    return { kind, d: [body, shackle], knock: sq(13.5, 12.7, 7.5, 9.05, 2.4, { square: ['br'] }), fill: { solid: [body], wire: [shackle] } };
+  }
   if (!SIGN16[kind]) throw new Error(`Insignia desconocida: ${kind}`);
   const d = SIGN16[kind]();
   // Rellena: las figuras cerradas (la estrella) van sólidas; los signos de línea siguen siendo línea

@@ -14,10 +14,10 @@
 ## Fase 1 · Primeros ~1,000 completos (en curso)
 - [x] 1.1 Dibujo base y crítica por categoría — ronda 1 cerrada: 993 íconos (9 categorías + núcleo), 18 agentes, 1 h 47 min; 268 avisos de QA pendientes para la ronda 2.
 - [x] 1.2 Formato extendido: relleno, 16 px (`small` y ajuste al pixel), espejo, niveles, piezas con nombre, movimiento, 10 idiomas, metadatos `data-*`, hoja de variantes, QA automático y pruebas del motor.
-- [ ] 1.3 Auditoría de cobertura y dibujo de lo que falte (1 agente).
-- [ ] 1.4 Diseño por ícono: relleno, 16 px, variantes, espejo, niveles, piezas (`level`/`progress` en los de cantidad) y movimiento (10 agentes).
-- [ ] 1.5 Idiomas: etiquetas en 10 idiomas y palabras de búsqueda por significado (10 agentes, en paralelo con 1.4).
-- [ ] 1.6 QA completo y arreglos.
+- [x] 1.3 Auditoría de cobertura: ~400 conceptos revisados, +40 íconos comunes → 1,033.
+- [x] 1.4 Diseño por ícono: relleno, 16 px, variantes, espejo, niveles, piezas (`level`/`progress` en los de cantidad), movimiento e insignias del motor (9 agentes).
+- [x] 1.5 Idiomas: los 1,033 con etiquetas en 10 idiomas y palabras de búsqueda por significado (10 agentes).
+- [ ] 1.6 QA completo y arreglos — motor arreglado (insignias en el paquete, relleno encerrado, `wire`, insignias de 16 px, ajuste compartido, regla `abierto`); arreglos por categoría: archivos, comunicación y edición listos; las otras seis en curso.
 - [ ] 1.7 Revisión del dueño sobre una muestra y ajustes de rumbo.
 
 ## Fase 2 · Salidas, probadas con esos 1,000

@@ -62,3 +62,28 @@
   - Avisaron de los choques entre variantes automáticas y dibujadas. Se resolvió con una regla: **la dibujada a mano gana** (`arrow-right-circle`, `bell-off`…), en el build, en `toSvg` y en React (`resolveIcon`).
   - La densidad del QA pasó a un umbral fijo de 28 %.
   - Pendientes para la ronda 2: 268 avisos (la mayoría en comercio), relleno en casi todas las categorías, idiomas y etiquetas entre categorías (responder, organigrama, quitar enlace).
+
+## 22 oct 2026 — Ronda 2 y fase 1.6
+- **Ronda 2** (workflow `wf_72d40526-58d`: 20 agentes, 0 errores, ~3 h 40 min, ~6.6 M tokens).
+  - **Cobertura:** ~400 conceptos revisados y +40 comunes (menos, sincronizar, navegador, ©, ®, ™, café, puerta, reciclaje…). Descartados con motivo: urna, moto y desagrupar.
+  - **Diseño:** 834 íconos con relleno, 191 con dibujo de 16 px, 142 con espejo, 17 con niveles, 366 con movimiento y 700 con piezas con nombre; insignias y punteros pasaron al motor.
+  - **Idiomas:** los 1,033 en 10 idiomas, más las etiquetas entre categorías.
+  - QA en 0 avisos con las reglas de entonces. Commit `293849c`.
+- **Fallos del motor que encontraron los agentes** (commit `e24342b`):
+  - el paquete **no llevaba las insignias**;
+  - el relleno encerrado las omitía;
+  - a 16 px las insignias de anillo se empastaban, las puntas de flecha se desfasaban del asta y los puntos salían grises;
+  - los trazos abiertos dentro de `solid` se rellenaban como cuña (el arco del candado era una cúpula);
+  - la hoja de dibujo no mostraba insignias y el cuadro de movimiento no movía la insignia.
+
+  Se resolvieron con:
+  - export completo y relleno encerrado con insignia;
+  - el tipo `wire`;
+  - `badge(kind, { size })` con la versión de pixel que diseñaron las categorías, ya en el motor, incluido el candado;
+  - `snapper` (un ajuste por ícono) y puntos a esquina de pixel;
+  - quitar puntos por distancia real;
+  - estrella redibujada, hoja de dibujo con el render y regla `abierto` en el QA.
+  - 21 pruebas.
+- **Arreglos por categoría:** la primera pasada (`wf_8337a449-604`) dejó listas archivos, comunicación y edición (commit `308464a`).
+  - Las otras seis no editaron nada. El último mensaje del dueño era una pregunta («¿cuáles son las fases 2, 3 y 4?») y, por precaución, entendieron que nadie había pedido cambios.
+  - **Lección:** cada encargo de agentes cita la autorización explícita del dueño. Se relanzó con su «sigue» (`wf_4ddb4532-a93`).

@@ -10,6 +10,8 @@
 - Ritmo observado: ~1,000 íconos (9 categorías × ~105, con crítico) en unas 3 horas.
 - Los agentes trabajan solo en este repo, editan **únicamente** su archivo (`src/icons/<categoría>.mjs` o `src/i18n/<categoría>.json`), no hacen commit ni instalan nada. La sesión principal revisa, corre el QA y hace el commit.
 - Su cwd suele ser otro repo (`flouvia-web`): se les dice explícitamente que trabajen en `~/Desktop/flouvia-icons` y que los pasos de arranque de ese otro repo no aplican.
+- **Autorización:** los agentes leen el último mensaje del dueño para saber qué se pidió; si es una pregunta, se niegan a editar. Cada encargo cita la autorización explícita del dueño (su mensaje), y una ronda se lanza justo después de que él la pida.
+- **Temporales:** cada agente usa su propia carpeta (`mktemp -d`); nunca una compartida (en la ronda 2 un agente pisó el prototipo de otro).
 
 ## Lo que todo agente que dibuja recibe
 1. Leer completos `DESIGN.md`, `engine/geometry.mjs` y `src/icons/nucleo.mjs`, y mirar las hojas del núcleo: el núcleo es la vara.
