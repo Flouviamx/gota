@@ -95,8 +95,8 @@ that merges or splits as the stroke widens. The engine takes care of what it can
 - **Badges:** a status badge is a solid disc, so its sign (cut out, paper) never clogs a ring.
 - **Fill:** what is cut out is paper, and paper thins as the ink grows (1.75 at light, 1.5 at
   regular, 1.25 at bold).
-- **Cuts that meet the silhouette** keep meeting it the same way at every weight: their tips move
-  with the change of weight.
+- **Cuts that reach the silhouette** (a stripe, a separator, a meridian) keep the relation to the
+  edge they have at regular: they follow the ink's width instead of thinning.
 - **Dots** are solid discs at every weight, in ink and in cuts.
 
 What the drawing must take care of:

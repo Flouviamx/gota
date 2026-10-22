@@ -234,63 +234,12 @@ function samplesOf(d) {
   return pts;
 }
 /**
- * A cut that meets the silhouette meets it the same way at every weight: its round tip stops at
- * the ink's edge, a hair inside, as it does at regular. Paper and ink change width with the weight
- * (thinner paper at bold, thinner ink at light), so the open ends of a cut that lie on a solid's
- * outline (within 0.6) move along their own direction: out at bold, in at light. The silhouette
- * stays in one piece at every weight, and regular keeps the drawing as it was drawn.
+ * Does a cut come to a solid's silhouette (within 0.75 of its outline, anywhere along it)? Such a
+ * cut keeps, at every weight, the relation to the edge it has at regular (see render).
  */
-function meet(cuts, solids, weight, paper) {
-  if (!cuts?.length || !solids?.length) return cuts ?? [];
+function edgeCut(d, solids) {
   const edge = solids.flatMap(samplesOf);
-  const near = ([px, py]) => edge.some(([ex, ey]) => Math.hypot(ex - px, ey - py) < 0.6);
-  const move = (weight - paper) / 2 - 0.15;
-  return cuts.map((d) => {
-    if (/z\s*$/i.test(d.trim())) return d;
-    // Absolute commands, with H and V as L, so every end is a point
-    const cmds = [];
-    let [x, y] = [0, 0];
-    for (const [c, a] of parse(transform(d, 1, 0, 0))) {
-      if (c === 'H') cmds.push(['L', [a[0], y]]);
-      else if (c === 'V') cmds.push(['L', [x, a[0]]]);
-      else cmds.push([c, a.slice()]);
-      const last = cmds.at(-1)[1];
-      if (last.length >= 2) [x, y] = last.slice(-2);
-    }
-    if (cmds.length < 2 || cmds[0][0] !== 'M' || cmds.some(([c]) => c === 'A' || c === 'Z')) return d;
-    const shift = (pts, at, toward) => {
-      // Moves the end (and the control point next to it, so its direction holds) by `move`
-      const [ex, ey] = [pts[at], pts[at + 1]];
-      const [dx, dy] = [ex - toward[0], ey - toward[1]];
-      const l = Math.hypot(dx, dy);
-      if (!l || (move < 0 && -move >= l * 0.9)) return null;
-      return [(dx / l) * move, (dy / l) * move];
-    };
-    const first = cmds[1];
-    const next = first[1].slice(0, 2);
-    const start = cmds[0][1];
-    if (near(start)) {
-      const v = shift(start, 0, next);
-      if (v) {
-        start[0] += v[0];
-        start[1] += v[1];
-        if (first[0] === 'C' || first[0] === 'Q') [first[1][0], first[1][1]] = [first[1][0] + v[0], first[1][1] + v[1]];
-      }
-    }
-    const lastCmd = cmds.at(-1);
-    const a = lastCmd[1];
-    const end = a.length - 2;
-    const prev = a.length > 2 ? a.slice(end - 2, end) : cmds.at(-2)[1].slice(-2);
-    if (near(a.slice(end))) {
-      const v = shift(a, end, prev);
-      if (v) {
-        a[end] += v[0];
-        a[end + 1] += v[1];
-        if (lastCmd[0] === 'C' || lastCmd[0] === 'Q') [a[end - 2], a[end - 1]] = [a[end - 2] + v[0], a[end - 1] + v[1]];
-      }
-    }
-    return cmds.map(([c, args]) => `${c}${args.map(f).join(' ')}`).join('');
-  });
+  return samplesOf(d).some(([px, py]) => edge.some(([ex, ey]) => Math.hypot(ex - px, ey - py) <= 0.75));
 }
 
 /**
@@ -440,9 +389,10 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   const anim = (d) => (spec ? ` pathLength="1" style="--i:${order.get(d) ?? 0}${lvl(d) ? `;--l:${lvl(d)}` : ''}"` : '');
   // A dot (a circle of radius 1 at most) is filled as well as stroked: a stroke alone fills it at
   // regular, but at light weights it would open into a ring
+  // (measured at the drawing's own size: inside an enclosure a small ring is shrunk, not a dot)
   const solidDot = (d) => {
     const c = asCircle(d);
-    return c && c.r <= 1 ? ' fill="currentColor"' : '';
+    return c && c.r <= (enc ? enc.scale : 1) + 1e-6 ? ' fill="currentColor"' : '';
   };
   const paths = (ds) => ds.map((d) => `<path d="${d}"${solidDot(d)}${r.tags.get(d) ?? ''}${anim(d)}/>`).join('');
   const k = enc ? enc.scale : 1;
@@ -494,11 +444,14 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     if (fill) {
       // solid: filled, keeping its stroke · cut: knocked out at stroke width · lines: drawn on top
       // with 1.5 of clearance · wire: drawn on top, flush, with no clearance (a padlock's shackle, a needle)
+      // A cut that comes to the silhouette (a stripe, a separator, a meridian) keeps the relation
+      // to the edge it has at regular at every weight: it follows the ink's width, less a hair, so
+      // what touches the edge at regular keeps a 0.05 rim and what runs past it still runs past.
+      // Interior cuts (dots, signs, details) are paper and thin as the ink grows
       const cuts = fill.cut ?? [];
-      const reaching = meet(cuts, fill.solid, weight, paper);
-      // A moving cut keeps moving with its ends moved
-      reaching.forEach((d, i) => r.moved?.has(cuts[i]) && r.moved.add(d));
-      defs.push(maskOf('f', `${split(g(reaching), (ds) => black(ds, paper))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 3))}`));
+      const atEdge = cuts.filter((d) => edgeCut(d, fill.solid));
+      const inner = cuts.filter((d) => !atEdge.includes(d));
+      defs.push(maskOf('f', `${split(g(inner), (ds) => black(ds, paper))}${split(g(atEdge), (ds) => black(ds, weight - 0.1))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 3))}`));
       content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
       const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
       if (over.length) content.push(`<g ${strokeAttrs(weight)}>${split(g(over), paths)}</g>`);

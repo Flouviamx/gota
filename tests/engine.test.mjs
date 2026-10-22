@@ -175,11 +175,13 @@ test('weights: paper thins as ink grows (cuts 1.75 at light, 1.5 at regular, 1.2
   assert.deepEqual([cut(1), cut(1.5), cut(2)], ['1.75', '1.5', '1.25']);
 });
 
-test('weights: a cut that meets the silhouette keeps meeting it (the card stripe reaches out at bold)', async () => {
+test('weights: a cut at the silhouette follows the ink less a hair; an interior cut is paper', async () => {
   const { loadAll } = await import('../scripts/load.mjs');
   const icons = Object.assign({}, ...(await loadAll()).categories.map((c) => c.icons));
-  const start = (w) => Number(render(icons.card, { style: 'fill', weight: w }).match(/<mask[^]*?<path d="M([\d.]+)/)[1]);
-  assert.ok(start(2) < start(1.5) && start(1.5) < start(1));
+  const widths = (w) => [...render(icons.card, { style: 'fill', weight: w }).match(/<mask[^]*?<\/mask>/)[0].matchAll(/stroke-width="([\d.]+)"/g)].map((m) => m[1]);
+  // The stripe runs to both edges (follows the ink); the number line is inside (paper)
+  assert.deepEqual(widths(2), ['1.25', '1.9']);
+  assert.deepEqual(widths(1), ['1.75', '0.9']);
 });
 
 test('dots are solid at every weight, cut-out dots too, and the notification dot is one disc', async () => {
