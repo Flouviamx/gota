@@ -1,24 +1,24 @@
-// Datos y desarrollo: gráficas, tableros, código, git, infraestructura e IA. Todo se calcula con
-// engine/geometry.mjs sobre las reglas de DESIGN.md (trazo 1.5, keylines, esquinas continuas y la
-// esquina inferior derecha recta en los contenedores).
+// Data and development: charts, dashboards, code, git, infrastructure and AI. Everything is
+// computed with engine/geometry.mjs on the rules in DESIGN.md (1.5 stroke, keylines, continuous
+// corners and a square bottom-right corner on containers).
 import { arc, badge, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 
 // ---------------------------------------------------------------------------------------------
-// Auxiliares locales
+// Local helpers
 // ---------------------------------------------------------------------------------------------
 
-/** Número con dos decimales como máximo (igual que el motor). */
+/** Number with at most two decimals (same as the engine). */
 const n = (v) => {
   const s = (Math.round(v * 100) / 100).toFixed(2).replace(/\.?0+$/, '');
   return s === '-0' || s === '' ? '0' : s;
 };
 const pt = (p) => `${n(p[0])} ${n(p[1])}`;
 
-/** Contenedor con la firma: esquinas continuas y la inferior derecha recta. */
+/** Container with the signature: continuous corners and a square bottom-right one. */
 const box = (x, y, w, h, r) => sq(x, y, w, h, r, { square: ['br'] });
 
-/** Cápsula (extremos semicirculares), horizontal o vertical según el lado mayor. */
+/** Capsule (semicircular ends), horizontal or vertical depending on the longer side. */
 function pill(x, y, w, h) {
   if (w >= h) {
     const r = h / 2;
@@ -28,7 +28,7 @@ function pill(x, y, w, h) {
   return `M${pt([x, y + r])}A${n(r)} ${n(r)} 0 0 1 ${pt([x + w, y + r])}V${n(y + h - r)}A${n(r)} ${n(r)} 0 0 1 ${pt([x, y + h - r])}Z`;
 }
 
-/** Línea abierta por puntos con las esquinas interiores redondeadas (radio por vértice o uno). */
+/** Open line through points with rounded interior corners (one radius per vertex, or one for all). */
 function rline(pts, r = 0) {
   const rr = Array.isArray(r) ? r : pts.map(() => r);
   let d = `M${pt(pts[0])}`;
@@ -54,7 +54,7 @@ function rline(pts, r = 0) {
   return `${d}L${pt(pts[pts.length - 1])}`;
 }
 
-/** Path con puntos transformados (p. ej. girados): [['M', p], ['C', c1, c2, p], ['A', r, large, sweep, p], ['Z']]. */
+/** Path with transformed points (e.g. rotated): [['M', p], ['C', c1, c2, p], ['A', r, large, sweep, p], ['Z']]. */
 function tp(cmds, T = (p) => p) {
   return cmds
     .map(([c, ...a]) => {
@@ -65,7 +65,7 @@ function tp(cmds, T = (p) => p) {
     .join('');
 }
 
-/** Chispa de cuatro puntas con lados cóncavos (la chispa de IA). */
+/** Four-pointed sparkle with concave sides (the AI sparkle). */
 function star4(cx, cy, R) {
   const [a, b] = [0.065, 0.389];
   const P = (x, y) => [cx + x * R, cy + y * R];
@@ -79,7 +79,7 @@ function star4(cx, cy, R) {
   ]);
 }
 
-/** Intersección superior de dos círculos [cx, cy, r]. */
+/** Upper intersection of two circles [cx, cy, r]. */
 function meet(c1, c2) {
   const [x1, y1, r1] = c1;
   const [x2, y2, r2] = c2;
@@ -91,14 +91,14 @@ function meet(c1, c2) {
   const Q = [mx - (h * (y2 - y1)) / d, my + (h * (x2 - x1)) / d];
   return P[1] < Q[1] ? P : Q;
 }
-/** Arco horario sobre el círculo c de p0 a p1. */
+/** Clockwise arc on circle c from p0 to p1. */
 function cwArc(c, p0, p1) {
   const a0 = Math.atan2(p0[1] - c[1], p0[0] - c[0]);
   let span = Math.atan2(p1[1] - c[1], p1[0] - c[0]) - a0;
   while (span < 0) span += 2 * Math.PI;
   return `A${n(c[2])} ${n(c[2])} 0 ${span > Math.PI ? 1 : 0} 1 ${pt(p1)}`;
 }
-/** Nube: tres lóbulos (izquierdo, superior, derecho) sobre una base plana en `base`. */
+/** Cloud: three lobes (left, top, right) on a flat base at `base`. */
 function cloud(L, T, R, base) {
   const a = [L[0], base];
   const b = meet(L, T);
@@ -107,47 +107,47 @@ function cloud(L, T, R, base) {
   return `M${pt(a)}${cwArc(L, a, b)}${cwArc(T, b, c)}${cwArc(R, c, e)}Z`;
 }
 
-/** Elipse girada `deg` grados alrededor de su centro. */
+/** Ellipse rotated `deg` degrees around its center. */
 function rell(cx, cy, rx, ry, deg) {
   const p0 = rot([cx - rx, cy], [cx, cy], deg);
   const p1 = rot([cx + rx, cy], [cx, cy], deg);
   return `M${pt(p0)}A${n(rx)} ${n(ry)} ${n(deg)} 1 0 ${pt(p1)}A${n(rx)} ${n(ry)} ${n(deg)} 1 0 ${pt(p0)}Z`;
 }
 
-/** Arista entre dos nodos circulares de radio r1 y r2: toca los bordes, no entra. */
+/** Edge between two circular nodes of radius r1 and r2: it touches their borders without going in. */
 function edge(p, q, r1, r2 = r1) {
   const [dx, dy] = [q[0] - p[0], q[1] - p[1]];
   const L = Math.hypot(dx, dy);
   return line([p[0] + (dx / L) * r1, p[1] + (dy / L) * r1], [q[0] - (dx / L) * r2, q[1] - (dy / L) * r2]);
 }
 
-/** Anillo para el relleno: el círculo exterior y el interior en sentido contrario (el centro queda hueco). */
+/** Ring for the fill: the outer circle and the inner one in the opposite direction (the center stays hollow). */
 const ring = (cx, cy, R, r) => `${circ(cx, cy, R)}M${pt([cx - r, cy])}A${n(r)} ${n(r)} 0 1 1 ${pt([cx + r, cy])}A${n(r)} ${n(r)} 0 1 1 ${pt([cx - r, cy])}Z`;
 
-// La base de datos del núcleo, completa (las insignias la despejan con el motor).
+// The core database, complete (the badges clear it through the engine).
 const DB = {
   body: 'M3.6 6.1v11.8c0 1.66 3.76 3 8.4 3s8.4-1.34 8.4-3V6.1',
   lid: 'M3.6 6.1c0-1.66 3.76-3 8.4-3s8.4 1.34 8.4 3-3.76 3-8.4 3-8.4-1.34-8.4-3Z',
   band: 'M20.4 12c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3',
-  // El borde de la tapa, que en el relleno se cala (como en `database` del núcleo)
+  // The lid's edge, which is knocked out in the fill (as in the core `database`)
   rim: 'M20.4 6.1c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3',
 };
 const DB_D = [DB.body, DB.lid, DB.band];
 
-// Insignias propias, en el mismo lugar y con el mismo aro que las del motor (centro 17.25, r 4.25).
+// Custom badges, in the same place and with the same ring as the engine's (center 17.25, r 4.25).
 const BC = [17.25, 17.25];
 const RING = circ(...BC, 4.25);
 const OWN = {
-  // Lupa: el lente es el círculo de la insignia (r 3.25) y el mango sale hacia la esquina.
+  // Magnifier: the lens is the badge circle (r 3.25) and the handle runs toward the corner.
   search() {
     const lens = circ(...BC, 3.25);
     const p = polar(...BC, 3.25, 45);
     const end = [21.25, 21.25];
     const handle = line(p, end);
-    // Rellena: el lente sólido y el mango pegado a él, que sigue siendo línea
+    // Filled: the lens solid and the handle attached to it, still a line
     return { d: [lens, handle], knock: `${RING}M${pt(p)}L${pt(end)}Z`, fill: { solid: [lens], wire: [handle] } };
   },
-  // Sincronizar: dos flechas de arco que ocupan el círculo de la insignia (en relleno siguen siendo línea).
+  // Sync: two arc arrows that fill the badge circle (in the fill they stay lines).
   sync() {
     const a = arc(...BC, 3.75, 205, 325);
     const b = arc(...BC, 3.75, 25, 145);
@@ -158,38 +158,39 @@ const OWN = {
 // Keylines.
 const K0 = 3.25;
 const K1 = 20.75;
-/** Tarjeta cuadrada del set (17.5, radio 4.25, firma). */
+/** The set's square card (17.5, radius 4.25, signature). */
 const CARD = box(K0, K0, 17.5, 17.5, 4.25);
 
-// Barras: tres columnas de 3.75 con 3.13 de separación entre bordes.
+// Bars: three columns 3.75 wide with 3.13 between edges.
 const BW = 3.75;
 const BX = [3.25, 10.125, 17];
 const bar = (x, top, bottom = K1) => sq(x, top, BW, bottom - top, 1.15, { square: ['bl', 'br'] });
 
-// Líneas de datos: quiebres suaves (radio 2.5); las tendencias, más suaves aún (radio 3) y con
-// punta corta a lo largo del último tramo, para que se lean como un flujo y no como un zigzag.
+// Data lines: soft bends (radius 2.5); trends even softer (radius 3) and with a short arrowhead
+// along the last segment, so they read as a flow and not as a zigzag.
 const SOFT = 2.5;
 const TREND = 3;
 const UP = [[3, 17], [9.25, 10.75], [13, 14.5], [20.25, 7.25]];
 const DOWN = UP.map(([x, y]) => [x, 24 - y]);
 const FLAT = [[2.75, 13], [7.5, 8.25], [12, 12.75], [20.5, 12.75]];
 
-// Git: nodos de r 2.35 (los del roadmap del núcleo) y ramas que entran y salen del tronco como
-// un carril, con curvas tangentes en lugar de codos.
+// Git: nodes of r 2.35 (the ones from the core roadmap) and branches that leave and rejoin the
+// trunk like a lane change, with tangent curves instead of elbows.
 const GR = 2.35;
 
-// La lupa del núcleo (search), idéntica: aro de r 6.85 en 10.6 y mango de 15.6 a 20.5.
+// The core magnifier (search), identical: a ring of r 6.85 at 10.6 and a handle from 15.6 to 20.5.
 const SEARCH = [circ(10.6, 10.6, 6.85), line([15.6, 15.6], [20.5, 20.5])];
 
-// Un vértice de 90° de un `roundpoly` de radio r queda (√2 − 1)·r adentro: ahí tocan los conectores.
+// A 90° vertex of a `roundpoly` with radius r sits (√2 − 1)·r inside: that's where the connectors
+// touch.
 const INSET = (r) => (Math.SQRT2 - 1) * r;
 
 // ---------------------------------------------------------------------------------------------
-// Íconos
+// Icons
 // ---------------------------------------------------------------------------------------------
 
 const icons = {
-  // Gráficas -----------------------------------------------------------------------------------
+  // Charts -------------------------------------------------------------------------------------
   'chart-bar': {
     tags: ['gráfica de barras', 'barras', 'estadísticas', 'bar chart'],
     d: [bar(BX[0], 11.75), bar(BX[1], 3.25), bar(BX[2], 7.75)],
@@ -286,8 +287,8 @@ const icons = {
   'chart-radar': {
     tags: ['radar', 'araña', 'atributos', 'radar chart'],
     d: (() => {
-      // La red y el dato, sin radios: los radios cruzaban el polígono y a 18 px se volvían una
-      // estrella. Cada vértice del dato queda a 3 o más de la red (radio ≤ 9.3 − 3.71).
+      // The web and the data, without spokes: the spokes crossed the polygon and turned into a star
+      // at 18 px. Each data vertex sits 3 or more from the web (radius ≤ 9.3 − 3.71).
       const c = [12, 12.4];
       const A = [-90, -18, 54, 126, 198];
       const outer = A.map((a) => polar(c[0], c[1], 9.3, a));
@@ -298,8 +299,9 @@ const icons = {
   },
   'chart-waterfall': {
     tags: ['cascada', 'variación', 'puente', 'waterfall chart'],
-    // El inicio, la variación que flota y el total: la barra del medio nace a la altura de la
-    // primera y llega a la de la última, sin conectores (rozaban las esquinas de las barras).
+    // The start, the floating change and the total: the middle bar starts at the height of the
+    // first and reaches the height of the last, with no connectors (they grazed the corners of the
+    // bars).
     d: [bar(BX[0], 11.5), sq(BX[1], 4.25, BW, 7.25, 1.15), bar(BX[2], 4.25)],
   },
   'chart-gantt': {
@@ -320,7 +322,7 @@ const icons = {
   },
   'chart-distribution': {
     tags: ['distribución', 'curva normal', 'campana', 'distribution'],
-    // Sin la línea de la media: con ella la campana se leía como una carpa.
+    // No mean line: with it, the bell read as a tent.
     d: ['M2.75 17.25C7.5 17.25 8.25 4.5 12 4.5S16.5 17.25 21.25 17.25', line([K0, K1], [K1, K1])],
   },
   'trend-up': {
@@ -337,7 +339,7 @@ const icons = {
   },
   'dashboard': {
     tags: ['tablero', 'panel', 'resumen', 'dashboard'],
-    // Paneles a 3 entre sí (antes a 2.5: a 16 px se pegaban); el último lleva la firma.
+    // Panels 3 apart (2.5 before: they stuck together at 16 px); the last one has the signature.
     d: [
       sq(K0, K0, 7.25, 17.5, 2.25),
       sq(13.5, K0, 7.25, 7.25, 2.25),
@@ -347,19 +349,19 @@ const icons = {
   'gauge': {
     tags: ['medidor', 'velocidad', 'rendimiento', 'gauge'],
     d: (() => {
-      // Centro en 14: el arco (de 5 a 18.5) queda centrado en el lienzo. La aguja termina a 3 del
-      // arco (antes a 2.75: rozaba).
+      // Center at 14: the arc (from 5 to 18.5) is centered on the canvas. The needle ends 3 from
+      // the arc (2.75 before: it grazed it).
       const c = [12, 14];
       return [arc(c[0], c[1], 9, 150, 390).d, circ(c[0], c[1], 1.75), line(polar(c[0], c[1], 1.75, -45), polar(c[0], c[1], 6, -45))];
     })(),
   },
   'analytics': {
     tags: ['análisis', 'analítica', 'explorar datos', 'insights', 'analytics'],
-    // La lupa del núcleo (search) con tres barras a 3 entre sí, todas a 3 o más del aro.
+    // The core magnifier (search) with three bars 3 apart, all 3 or more from the ring.
     d: [...SEARCH, line([7.6, 10.6], [7.6, 12.85]), line([10.6, 7.35], [10.6, 12.85]), line([13.6, 9.1], [13.6, 12.85])],
   },
 
-  // Tablas y tableros --------------------------------------------------------------------------
+  // Tables and dashboards ----------------------------------------------------------------------
   'table': {
     tags: ['tabla', 'registros', 'filas', 'table'],
     d: [CARD, line([K0, 8.75], [K1, 8.75]), line([10.75, 8.75], [10.75, K1])],
@@ -379,7 +381,7 @@ const icons = {
     ],
   },
 
-  // Código -------------------------------------------------------------------------------------
+  // Code ---------------------------------------------------------------------------------------
   'braces': {
     tags: ['llaves', 'objeto', 'json', 'curly braces'],
     d: [
@@ -427,7 +429,8 @@ const icons = {
   },
   'code-window': {
     tags: ['ventana de código', 'editor', 'desarrollo', 'code editor'],
-    // Los chevrones a 3 de la barra y a 3.25 del borde de abajo (antes a 2.75 de la barra: rozaban).
+    // The chevrons 3 from the bar and 3.25 from the bottom edge (2.75 from the bar before: they
+    // grazed it).
     d: [
       box(2.5, 4, 19, 16, 4),
       line([2.5, 8.75], [21.5, 8.75]),
@@ -439,7 +442,8 @@ const icons = {
   // Git ----------------------------------------------------------------------------------------
   'git-branch': {
     tags: ['rama', 'git', 'bifurcación', 'nueva rama', 'branch'],
-    // El tiempo sube: la rama sale del tronco como un carril y termina arriba, en su nodo.
+    // Time runs upward: the branch leaves the trunk like a lane change and ends at the top, at its
+    // node.
     d: [circ(6.25, 18.4, GR), line([6.25, K0], [6.25, 16.05]), 'M6.25 15.25C6.25 11.25 17.75 12.75 17.75 8.75V7.95', circ(17.75, 5.6, GR)],
   },
   'git-commit': {
@@ -448,7 +452,8 @@ const icons = {
   },
   'git-merge': {
     tags: ['fusionar', 'merge', 'git', 'unir ramas', 'merge branch'],
-    // El espejo de git-branch: la rama nace abajo y se incorpora al tronco como un carril.
+    // The mirror of git-branch: the branch starts at the bottom and merges into the trunk like a
+    // lane change.
     d: [circ(6.25, 18.4, GR), line([6.25, 7.95], [6.25, 16.05]), circ(6.25, 5.6, GR), circ(17.75, 18.4, GR), 'M17.75 16.05V15C17.75 11.25 6.25 12.75 6.25 8.75'],
   },
   'git-pull-request': {
@@ -488,7 +493,7 @@ const icons = {
   },
   'git-fork': {
     tags: ['fork', 'bifurcar', 'copia del repositorio', 'git', 'repository fork'],
-    // Una Y de curvas tangentes: las dos copias salen del mismo tronco sin codos.
+    // A Y of tangent curves: the two copies leave the same trunk with no elbows.
     d: [
       circ(12, 18.4, GR),
       'M6.25 7.95C6.25 11.5 12 10.5 12 14.25V16.05',
@@ -509,11 +514,11 @@ const icons = {
     ],
   },
 
-  // Pruebas ------------------------------------------------------------------------------------
+  // Testing ------------------------------------------------------------------------------------
   'bug': {
     tags: ['error', 'bicho', 'falla', 'depurar', 'bug', 'debug'],
-    // El cuerpo lleva hombros redondos (antes eran esquinas vivas, ajenas al set). Las patas de
-    // abajo nacen sobre el arco del cuerpo (antes quedaban a 0.4: rozaban).
+    // The body has rounded shoulders (they used to be sharp corners, foreign to the set). The
+    // bottom legs start on the body's arc (they used to sit 0.4 away: they grazed it).
     d: (() => {
       const foot = (a) => polar(12, 14, 5.25, a);
       return [
@@ -547,7 +552,7 @@ const icons = {
     })(),
   },
 
-  // Conexiones e infraestructura -----------------------------------------------------------------
+  // Connections and infrastructure ---------------------------------------------------------------
   'api': {
     tags: ['api', 'conexión', 'integración', 'conector', 'endpoint', 'plug'],
     d: (() => {
@@ -563,8 +568,8 @@ const icons = {
   },
   'webhook': {
     tags: ['webhook', 'evento', 'notificación', 'callback'],
-    // Un gancho que devuelve la llamada: el nodo de git (r 2.35) y una U de r 5.25 que llena
-    // el área viva (antes pesaba menos que sus vecinos).
+    // A hook that calls back: the git node (r 2.35) and a U of r 5.25 that fills the live area (it
+    // used to weigh less than its neighbors).
     d: [circ(17, 5.6, GR), 'M17 7.95V14.5A5.25 5.25 0 0 1 6.5 14.5V11', head([6.5, 11], [0, -1], 3.4)],
   },
   'cpu': {
@@ -591,8 +596,8 @@ const icons = {
   },
   'server': {
     tags: ['servidor', 'hosting', 'infraestructura', 'server'],
-    // Dos unidades como las de Archivos (`external-drive`, `file-server`): la ranura a la izquierda y
-    // la luz a la derecha. De 16 × 6.5 y a 3 entre sí: con 17.5 × 7.25 pasaba del 28 % de tinta.
+    // Two units like the ones in `archivos` (`external-drive`, `file-server`): the slot on the left
+    // and the light on the right. 16 × 6.5 and 3 apart: at 17.5 × 7.25 it went over 28 % ink.
     d: [
       box(4, 4, 16, 6.5, 2),
       box(4, 13.5, 16, 6.5, 2),
@@ -604,8 +609,8 @@ const icons = {
   },
   'cloud-compute': {
     tags: ['nube', 'cómputo en la nube', 'servidor remoto', 'cloud computing'],
-    // La nube de archivos (mismos tres lóbulos y base en 18.25) con el prompt de la terminal, a 3 o
-    // más del contorno (antes la punta del chevrón quedaba a 2.4 del lóbulo izquierdo).
+    // The file cloud (same three lobes and base at 18.25) with the terminal prompt, 3 or more from
+    // the outline (the chevron's tip used to sit 2.4 from the left lobe).
     d: [
       cloud([7.25, 14.25, 4], [12.5, 10.75, 5.5], [17.25, 14.5, 3.75], 18.25),
       rline([[9.75, 11.25], [11.75, 13.25], [9.75, 15.25]], 0),
@@ -614,8 +619,8 @@ const icons = {
   },
   'container': {
     tags: ['contenedor', 'docker', 'imagen', 'despliegue', 'container'],
-    // Un contenedor de carga con sus costillas. Antes eran tres cajas apiladas que se tocaban
-    // (1.5 entre trazos) y a 18 px se fundían.
+    // A shipping container with its ribs. It used to be three stacked boxes that touched (1.5
+    // between strokes) and merged at 18 px.
     d: [box(2.5, 5, 19, 14, 4), ...[7.25, 12, 16.75].map((x) => line([x, 8.75], [x, 15.25]))],
   },
   'rocket': {
@@ -638,11 +643,11 @@ const icons = {
   },
   'log': {
     tags: ['registro', 'bitácora', 'eventos', 'log', 'logs', 'audit trail'],
-    // Renglones a 3.75 de su punto (a 3 rozaban: el borde del punto quedaba a 2.3 del renglón).
+    // Lines 3.75 from their dot (at 3 they grazed: the edge of the dot sat 2.3 from the line).
     d: [CARD, ...[8.5, 12, 15.5].flatMap((y) => [dot(7.75, y), line([11.5, y], [16.25, y])])],
   },
 
-  // Estructuras y flujos -------------------------------------------------------------------------
+  // Structures and flows -------------------------------------------------------------------------
   'network': {
     tags: ['red', 'nodos', 'conexiones', 'network'],
     d: (() => {
@@ -657,8 +662,8 @@ const icons = {
   },
   'node-graph': {
     tags: ['grafo', 'nodos', 'relaciones', 'grafo de conocimiento', 'graph', 'knowledge graph'],
-    // Un grafo de verdad: nodos de distinto peso y aristas irregulares. El anterior era un moño
-    // simétrico que a 18 px se leía como una X entre dos barras.
+    // A real graph: nodes of different weights and irregular edges. The old one was a symmetric bow
+    // tie that read as an X between two bars at 18 px.
     d: (() => {
       const N = [[5.75, 6.25, 2.25], [18, 5.5, 1.75], [16, 15.25, 2.75], [6, 18.25, 1.75]];
       const E = [[0, 1], [0, 2], [1, 2], [2, 3], [0, 3]];
@@ -677,8 +682,8 @@ const icons = {
   },
   'sitemap': {
     tags: ['mapa del sitio', 'estructura', 'páginas', 'sitemap'],
-    // Tres páginas hijas a lo ancho del apaisado (19), con 3 justos entre ellas: antes quedaban a
-    // 2.75 y a 18 px se pegaban.
+    // Three child pages across the landscape width (19), exactly 3 apart: they used to sit 2.75
+    // apart and stuck together at 18 px.
     d: (() => {
       const w = (19 - 6) / 3;
       const xs = [2.5, 2.5 + w + 3, 2.5 + 2 * (w + 3)];
@@ -692,7 +697,7 @@ const icons = {
   },
   'flowchart': {
     tags: ['diagrama de flujo', 'proceso', 'algoritmo', 'decisión', 'flowchart', 'algorithm'],
-    // El conector llega al vértice redondeado del rombo (antes terminaba a 0.4 de él).
+    // The connector reaches the diamond's rounded vertex (it used to end 0.4 short of it).
     d: [
       box(K0, K0, 8, 6, 1.85),
       rline([[7.25, 9.25], [7.25, 15.75], [11.75 + INSET(1), 15.75]], 2.5),
@@ -701,8 +706,8 @@ const icons = {
   },
   'workflow': {
     tags: ['flujo de trabajo', 'automatización', 'pasos', 'workflow'],
-    // Dos pasos de 6 en diagonal: así el último tramo del conector es largo para su punta y la punta
-    // queda a 3 de la segunda caja (antes a 2.25: casi la tocaba).
+    // Two diagonal steps of 6: that way the connector's last segment is long enough for its
+    // arrowhead, and the arrowhead sits 3 from the second box (2.25 before: it almost touched it).
     d: [sq(K0, K0, 6, 6, 1.85), rline([[9.25, 6.25], [17.75, 6.25], [17.75, 11.75]], 2), head([17.75, 11.75], [0, 1], 3), box(14.75, 14.75, 6, 6, 1.85)],
   },
   'automation': {
@@ -713,7 +718,7 @@ const icons = {
     })(),
   },
 
-  // Inteligencia artificial ----------------------------------------------------------------------
+  // Artificial intelligence ----------------------------------------------------------------------
   'sparkle': {
     tags: ['chispa', 'ia', 'mágico', 'sparkle'],
     d: [star4(12, 12, 9.25)],
@@ -756,8 +761,8 @@ const icons = {
   },
   'atom': {
     tags: ['átomo', 'ciencia', 'partículas', 'atom'],
-    // Órbitas de 8.75 (la vertical va justo del 3.25 al 20.75 del cuadrado del set) y 3.5 de alto, que
-    // dejan aire al núcleo: con 9.25 pasaba del 28 % de tinta.
+    // Orbits of 8.75 (the vertical one runs exactly from 3.25 to 20.75 of the set's square) and 3.5
+    // tall, which leave clearance around the nucleus: at 9.25 it went over 28 % ink.
     d: [dot(12, 12), ...[30, 90, 150].map((a) => rell(12, 12, 8.75, 3.5, a))],
   },
   'neural-network': {
@@ -773,11 +778,12 @@ const icons = {
   },
   'prompt': {
     tags: ['prompt', 'instrucción', 'pedir a la ia', 'ai prompt'],
-    // La chispa abre el campo y el texto la sigue: antes, «− ✦» simétrico parecía un control de juego.
+    // The sparkle opens the field and the text follows it: the old symmetrical "− ✦" looked like a
+    // game controller.
     d: [box(2.5, 6, 19, 12, 4), star4(7.5, 12, 2.75), line([13.25, 12], [17.75, 12])],
   },
 
-  // Componentes y 3D ---------------------------------------------------------------------------
+  // Components and 3D --------------------------------------------------------------------------
   'component': {
     tags: ['componente', 'bloque', 'módulo', 'component'],
     d: [box(K0, 8.5, 17.5, 10.75, 3.25), rline([[6.25, 8.5], [6.25, 5.25], [10.25, 5.25], [10.25, 8.5]], 1.25), rline([[13.75, 8.5], [13.75, 5.25], [17.75, 5.25], [17.75, 8.5]], 1.25)],
@@ -806,8 +812,8 @@ const icons = {
     ],
   },
 
-  // Bases de datos -----------------------------------------------------------------------------
-  // La base de datos del núcleo completa y la insignia encima: el motor la despeja con 1.5 de aire.
+  // Databases ----------------------------------------------------------------------------------
+  // The full core database with the badge on top: the engine clears it with 1.5 of clearance.
   'database-plus': {
     tags: ['nueva base de datos', 'agregar datos', 'crear tabla', 'add database'],
     d: DB_D,
@@ -829,7 +835,7 @@ const icons = {
     badge: OWN.sync(),
   },
 
-  // Filtros y experimentos -----------------------------------------------------------------------
+  // Filters and experiments ----------------------------------------------------------------------
   'data-filter': {
     tags: ['filtrar datos', 'filtro', 'segmentar', 'data filter', 'filter data'],
     d: [roundpoly([[K0, 7.25], [K1, 7.25], [13.75, 14.25], [13.75, K1], [10.25, K1], [10.25, 14.25]], [1.25, 1.25, 1, 0.6, 0.6, 1]), dot(7, 3.75), dot(12, 3.75), dot(17, 3.75)],
@@ -840,7 +846,8 @@ const icons = {
   },
   'tree-view': {
     tags: ['árbol', 'estructura', 'anidado', 'tree view'],
-    // Las dos hijas quedaban a 1.5 (se tocaban); ahora a 3, y todos los nodos con la firma.
+    // The two children used to sit 1.5 apart (they touched); now 3, and every node has the
+    // signature.
     d: [
       box(K0, K0, 6.5, 4, 1.25),
       rline([[6.5, 7.25], [6.5, 18.75], [12, 18.75]], 2.25),
@@ -851,7 +858,7 @@ const icons = {
   },
   'chart-progress': {
     tags: ['progreso', 'avance', 'barras de progreso', 'progress'],
-    // Cápsulas de 6: el avance queda a 3 del borde (antes a 2.5, sin aire).
+    // Capsules of 6: the progress sits 3 from the edge (2.5 before, with no clearance).
     d: [pill(2.5, 4.5, 19, 6), pill(2.5, 13.5, 19, 6), line([5.5, 7.5], [14.5, 7.5]), line([5.5, 16.5], [10, 16.5])],
   },
   'chart-forecast': {
@@ -888,7 +895,8 @@ const icons = {
   },
   'diff': {
     tags: ['diferencias', 'cambios', 'comparar versiones', 'diff'],
-    // Más y menos a 8.5 de ancho, centrados en el lienzo (antes pesaban menos que sus vecinos).
+    // Plus and minus 8.5 wide, centered on the canvas (they used to weigh less than their
+    // neighbors).
     d: [line([12, 4.75], [12, 13.25]), line([7.75, 9], [16.25, 9]), line([7.75, 19.25], [16.25, 19.25])],
   },
   'regex': {
@@ -914,7 +922,7 @@ const icons = {
   },
   'condition': {
     tags: ['condición', 'si no', 'decisión', 'algoritmo', 'if else', 'branching'],
-    // Las líneas llegan a los vértices redondeados del rombo (antes terminaban a 0.4 de ellos).
+    // The lines reach the diamond's rounded vertices (they used to end 0.4 short of them).
     d: [
       line([12, K0], [12, 7.5 + INSET(1)]),
       roundpoly([[12, 7.5], [16.5, 12], [12, 16.5], [7.5, 12]], 1),
@@ -943,9 +951,9 @@ const icons = {
   },
   'server-rack': {
     tags: ['rack', 'centro de datos', 'servidores', 'data center'],
-    // El gabinete con tres unidades y la luz de cada una a la derecha, como en `server`. Con luz y
-    // ranura pasaba del 28 % de tinta y la luz quedaba metida en la esquina; sin ranuras tampoco se
-    // confunde con `filing-cabinet` (jaladeras al centro).
+    // The rack with three units, each with its light on the right, as in `server`. With light and
+    // slot it went over 28 % ink and the light got tucked into the corner; without slots it isn't
+    // confused with `filing-cabinet` either (handles in the middle).
     d: [
       box(4.75, 2.75, 14.5, 18.5, 3.75),
       line([4.75, 8.92], [19.25, 8.92]),
@@ -955,7 +963,7 @@ const icons = {
   },
   'memory': {
     tags: ['memoria', 'ram', 'hardware', 'memory'],
-    // Chips y tarjeta a 3 exactos entre sí (antes a 2.5–2.75: se empastaban a 18 px).
+    // Chips and board exactly 3 apart (2.5–2.75 before: they clogged up at 18 px).
     d: [
       box(2.5, 5.5, 19, 10, 2.75),
       sq(5.5, 8.5, 5, 4, 1.2),
@@ -965,7 +973,7 @@ const icons = {
   },
   'load-balancer': {
     tags: ['balanceador', 'distribuir', 'tráfico', 'load balancer'],
-    // Las salidas a 7.25 entre sí: las puntas quedan a 3 (antes casi se tocaban).
+    // Outputs 7.25 apart: the arrowheads end up 3 apart (they used to almost touch).
     d: [
       circ(5, 12, GR),
       line([7.35, 12], [20.25, 12]),
@@ -987,19 +995,19 @@ const icons = {
     badge: badge('arrow-down'),
   },
 
-  // Cobertura (ronda 2) ------------------------------------------------------------------------
+  // Coverage (round 2) -------------------------------------------------------------------------
   'presentation': {
     tags: ['presentación', 'pizarra', 'exponer', 'junta', 'presentation', 'slides', 'pitch'],
-    // La pizarra apaisada (contenedor: la firma), la tendencia que sube y el caballete en Λ que
-    // nace del centro de su borde.
+    // The landscape whiteboard (a container: the signature), the rising trend and the Λ easel that
+    // comes out of the center of its bottom edge.
     d: [
       box(2.5, 3.25, 19, 12.75, 3),
       rline([[8, 21], [12, 16], [16, 21]], 0.6),
       rline([[6.5, 12], [9.75, 8.75], [12.75, 10.75], [17.25, 6.75]], 0.6),
     ],
   },
-  // Operadores sueltos: los mismos largos que `plus` del núcleo y `minus` de sistema; el igual,
-  // más corto que `menu-compact` para no confundirse con él.
+  // Standalone operators: the same lengths as the core `plus` and `minus` from `sistema`; the
+  // equals sign is shorter than `menu-compact` so the two aren't confused.
   'equals': {
     tags: ['igual', 'resultado', 'equivale', 'fórmula', 'equals', 'equal', 'result'],
     d: [line([5.5, 9.5], [18.5, 9.5]), line([5.5, 14.5], [18.5, 14.5])],
@@ -1011,61 +1019,61 @@ const icons = {
 };
 
 // ---------------------------------------------------------------------------------------------
-// Relleno (DESIGN.md › Relleno): por índice de d. `solid` se rellena y conserva su trazo (solo
-// figuras cerradas); `closed` también, pero es un trazo abierto del contorno que encierra un cuerpo
-// (la media cabeza del bicho, el vidrio del matraz, las aletas del cohete, los botones del bloque,
-// cada hemisferio del cerebro, el cuerpo de la base de datos) y se rellena cerrado con Z: su cierre
-// corre por un trazo que ya está ahí, así la silueta no cambia. `cut` se cala al ancho del trazo;
-// `lines` sigue siendo línea con 1.5 de aire y `wire` sigue siendo línea pegada al relleno, sin aire
-// (las ramas de git, las aristas de un grafo, las patas de un chip, los conectores de un flujo).
+// Fill (DESIGN.md › Fill): by index into d. `solid` is filled and keeps its stroke (closed shapes
+// only); `closed` too, but it is an open stroke of the outline that encloses a body (the bug's half
+// head, the flask's glass, the rocket's fins, the block's buttons, each brain hemisphere, the
+// database body) and is filled closed with Z: its closing segment runs along a stroke that is
+// already there, so the silhouette doesn't change. `cut` is knocked out at the stroke width;
+// `lines` stays a line with 1.5 of clearance and `wire` stays a line attached to the fill, with no
+// clearance (git branches, a graph's edges, a chip's pins, a flow's connectors).
 // ---------------------------------------------------------------------------------------------
 const all = (name) => icons[name].d.map((_, i) => i);
 const from = (name, i) => all(name).slice(i);
 const FILL = {
   'chart-bar': { solid: [0, 1, 2] },
   'chart-bar-horizontal': { solid: [0, 1, 2] },
-  // Las barras rellenas y los cortes de cada pila calados
+  // The bars filled and the cuts in each stack knocked out
   'chart-bar-stacked': { solid: [0, 1, 2], cut: [3, 4, 5] },
   'chart-histogram': { solid: [0], cut: [1, 2, 3, 4] },
   'chart-area': { solid: [0] },
   'chart-pie': { solid: [0, 1] },
   'chart-bubble': { solid: [0, 1, 2, 3] },
   'chart-funnel': { solid: [0, 1, 2] },
-  // El dato relleno dentro de la red, que sigue siendo línea
+  // The data filled inside the web, which stays a line
   'chart-radar': { solid: [1], lines: [0] },
   'chart-waterfall': { solid: [0, 1, 2] },
   'chart-gantt': { solid: [0, 1, 2] },
   'chart-treemap': { solid: [0], cut: [1, 2, 3, 4] },
-  // Las barras rellenas; la serie pasa por encima como línea
+  // The bars filled; the series runs over them as a line
   'chart-combo': { solid: [0, 1, 2], lines: [3] },
   dashboard: { solid: [0, 1, 2] },
-  // El eje del medidor sigue siendo línea; el centro relleno y la aguja pegada a él
+  // The gauge's axis stays a line; the center filled and the needle attached to it
   gauge: { solid: [1], wire: [2], lines: [0] },
-  // El lente con el mango pegado y las barras caladas
+  // The lens with the handle attached and the bars knocked out
   analytics: { solid: [0], wire: [1], cut: [2, 3, 4] },
   table: { solid: [0], cut: [1, 2] },
   kanban: { solid: [0, 1, 2] },
   schema: { solid: [0, 1], wire: [2], cut: [3, 4] },
   terminal: { solid: [0], cut: [1, 2] },
   'code-window': { solid: [0], cut: [1, 2, 3] },
-  // Git: los nodos rellenos y el tronco y las ramas como línea, pegados a ellos
+  // Git: the nodes filled, with the trunk and the branches as lines attached to them
   'git-branch': { solid: [0, 3], wire: [1, 2] },
   'git-commit': { solid: [0], wire: [1, 2] },
   'git-merge': { solid: [0, 2, 3], wire: [1, 4] },
   'git-pull-request': { solid: [0, 2, 3], wire: [1, 4, 5] },
-  // La x de cerrado no toca nada: sigue siendo línea
+  // The closed-state x touches nothing: it stays a line
   'git-pull-request-closed': { solid: [0, 2, 3], wire: [1, 4], lines: [5, 6] },
   'git-pull-request-draft': { solid: [0, 2, 3, 4, 5, 6], wire: [1] },
   'git-fork': { solid: [0, 3, 4], wire: [1, 2] },
   'git-compare': { solid: [0, 3], wire: [1, 2, 4, 5] },
   'git-graph': { solid: [0, 2, 4, 6], wire: [1, 3, 5, 7] },
-  // El cuerpo y la cabeza rellenos (la cabeza cierra contra el cuerpo), la línea del élitro calada;
-  // las patas siguen unidas al cuerpo
+  // The body and the head filled (the head closes against the body), the wing-case line knocked
+  // out; the legs stay joined to the body
   bug: { solid: [0], closed: [1], wire: [3, 4, 5, 6], cut: [2] },
-  // El vidrio relleno (cierra por la boca, bajo el borde) y el nivel del líquido calado
+  // The glass filled (closed along the mouth, under the rim) and the liquid level knocked out
   flask: { closed: [0], wire: [1], cut: [2] },
   'test-tube': { closed: [0], wire: [1], cut: [2] },
-  // La clavija y el enchufe rellenos; los cables y las patas, pegados a ellos
+  // The plug and the socket filled; the cables and the pins, attached to them
   api: { solid: [1, 2], wire: [0, 3, 4] },
   webhook: { solid: [0], wire: [1, 2] },
   cpu: { solid: [0], wire: [2, 3, 4, 5], cut: [1] },
@@ -1073,8 +1081,8 @@ const FILL = {
   server: { solid: [0, 1], cut: [2, 3, 4, 5] },
   'cloud-compute': { solid: [0], cut: [1, 2] },
   container: { solid: [0], cut: [1, 2, 3] },
-  // El fuselaje y las aletas rellenos (las aletas cierran contra el costado), la ventana calada; la
-  // estela no toca nada y sigue siendo línea
+  // The fuselage and the fins filled (the fins close against the side), the window knocked out; the
+  // trail touches nothing and stays a line
   rocket: { solid: [0], closed: [1, 2], lines: [4], cut: [3] },
   log: { solid: [0], cut: from('log', 1) },
   network: { solid: [0, 4, 5, 6], wire: [1, 2, 3] },
@@ -1083,18 +1091,18 @@ const FILL = {
   sitemap: { solid: [0, 3, 4, 5], wire: [1, 2] },
   flowchart: { solid: [0, 2], wire: [1] },
   workflow: { solid: [0, 3], wire: [1, 2] },
-  // La chispa rellena dentro del ciclo, que sigue siendo línea
+  // The sparkle filled inside the cycle, which stays a line
   automation: { solid: [2], lines: [0, 1] },
   sparkle: { solid: [0] },
   sparkles: { solid: [0, 1] },
   'search-sparkle': { solid: [0], wire: [1], cut: [2] },
   robot: { solid: [0, 2], wire: [1], cut: [3, 4] },
   chatbot: { solid: [0], cut: [1, 2] },
-  // Cada hemisferio cierra contra la línea del medio, que se cala con los pliegues
+  // Each hemisphere closes against the middle line, which is knocked out along with the folds
   brain: { closed: [0, 1], cut: [2, 3, 4, 5, 6] },
   'neural-network': { solid: [0, 1, 2, 3, 4], wire: [5, 6, 7, 8, 9, 10] },
   prompt: { solid: [0], cut: [1, 2] },
-  // Los botones del bloque cierran contra su borde
+  // The block's buttons close against its edge
   component: { solid: [0], closed: [1, 2] },
   puzzle: { solid: [0] },
   cube: { solid: [0], cut: [1, 2] },
@@ -1107,11 +1115,11 @@ const FILL = {
   'server-rack': { solid: [0], cut: from('server-rack', 1) },
   memory: { solid: [0], wire: [3], cut: [1, 2] },
   'load-balancer': { solid: [0], wire: [1, 2, 3, 4, 5, 6] },
-  // La pizarra rellena con la tendencia calada; el caballete sigue unido a su borde
+  // The whiteboard filled with the trend knocked out; the easel stays joined to its edge
   presentation: { solid: [0], wire: [1], cut: [2] },
 };
-// Las bases de datos con insignia: el cuerpo (cerrado por la tapa) y la tapa rellenos, la banda y el
-// borde de la tapa calados, como en `database` del núcleo
+// The databases with a badge: the body (closed by the lid) and the lid filled, the band and the
+// lid's edge knocked out, as in the core `database`
 for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
   FILL[name] = { solid: [1], closed: [0], cut: [2] };
 for (const [name, spec] of Object.entries(FILL)) {
@@ -1123,16 +1131,16 @@ for (const [name, spec] of Object.entries(FILL)) {
   for (const k of ['cut', 'lines', 'wire']) if (spec[k]?.length) icons[name].fill[k] = pick(spec[k]);
 }
 for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import']) icons[name].fill.cut.push(DB.rim);
-// La dona: el anillo hueco (no un disco) con sus divisiones caladas
+// The donut: the hollow ring (not a disc) with its divisions knocked out
 icons['chart-donut'].fill = { solid: [ring(12, 12, 9, 4.5)], cut: icons['chart-donut'].d.slice(2) };
-// Venn: los dos conjuntos rellenos y los dos arcos de adentro calados: quedan las dos lunas y la
-// intersección, separadas por el ancho del trazo.
+// Venn: the two sets filled and the two inner arcs knocked out: what remains is the two crescents
+// and the intersection, separated by the stroke width.
 {
   const a = (Math.acos(3.25 / 6.25) * 180) / Math.PI;
   icons.venn.fill = { solid: icons.venn.d, cut: [arc(15.25, 12, 6.25, 180 - a, 180 + a).d, arc(8.75, 12, 6.25, -a, a).d] };
 }
-// Solo líneas abiertas, glifos y puntos sobre líneas: su relleno es el mismo contorno. El átomo y el
-// infinito tampoco: rellenas, sus órbitas y sus lazos se vuelven una mancha.
+// Only open lines, glyphs and dots on lines: their fill is the outline itself. Not the atom or the
+// infinity sign either: filled, their orbits and loops become a smudge.
 for (const name of [
   'chart-line', 'chart-lines', 'chart-step', 'chart-scatter', 'chart-radial', 'chart-distribution', 'chart-forecast',
   'trend-up', 'trend-down', 'trend-flat', 'braces', 'brackets', 'array', 'function', 'variable', 'sum', 'pulse',
@@ -1141,45 +1149,45 @@ for (const name of [
   icons[name].fill = false;
 
 // ---------------------------------------------------------------------------------------------
-// 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta. A 16 px un pixel mide
-// 1.5 del lienzo: los tramos rectos van en centros de pixel (0.75 + 1.5k), las diagonales a 45° pasan
-// por ellos y los puntos (r 1) se centran en un borde de pixel (múltiplos de 1.5), así cada uno cae
-// entero en 2 × 2 pixeles con 1 pixel de aire o más.
+// 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough. At 16 px a pixel
+// measures 1.5 canvas units: straight runs go on pixel centers (0.75 + 1.5k), 45° diagonals pass
+// through them, and dots (r 1) are centered on a pixel edge (multiples of 1.5), so each one falls
+// whole into 2 × 2 pixels with 1 pixel of clearance or more.
 // ---------------------------------------------------------------------------------------------
 const SMALL_DOT = 1;
-// Los corchetes de `array` y `matrix`, en centros de pixel
+// The brackets of `array` and `matrix`, on pixel centers
 const SMALL_BRACKETS = [
   rline([[6.75, 5.25], [3.75, 5.25], [3.75, 18.75], [6.75, 18.75]], 1.5),
   rline([[17.25, 5.25], [20.25, 5.25], [20.25, 18.75], [17.25, 18.75]], 1.5),
 ];
-// Los tres puntos se volvían una barra gris
+// The three dots turned into a gray bar
 icons.array.small = { d: [...SMALL_BRACKETS, ...[7.5, 12, 16.5].map((x) => dot(x, 12, SMALL_DOT))] };
-// Los nueve puntos de r 0.3 eran una mancha: a 16 px, la cuadrícula de 2 × 2
+// The nine dots of r 0.3 were a smudge: at 16 px, the 2 × 2 grid
 icons.matrix.small = { d: [...SMALL_BRACKETS, ...[9, 15].flatMap((y) => [9, 15].map((x) => dot(x, y, SMALL_DOT)))] };
-// La raya en un centro de pixel y los puntos simétricos a 2 pixeles de ella
+// The dash on a pixel center and the dots symmetric, 2 pixels from it
 icons.divide.small = { d: [line([4.25, 12.75], [19.75, 12.75]), dot(12, 7.5, SMALL_DOT), dot(12, 18, SMALL_DOT)] };
-// Los paneles se empastaban en el centro: a 16 px, 2 pixeles de aire entre ellos
+// The panels clogged up in the center: at 16 px, 2 pixels of clearance between them
 {
   const d = [sq(3.75, 3.75, 6, 16.5, 1.5), sq(14.25, 3.75, 6, 6, 1.5), sq(14.25, 14.25, 6, 6, 1.5, { square: ['br'] })];
   icons.dashboard.small = { d, fill: { solid: d } };
 }
-// Los chevrones de 2.25 × 5 eran dos manchas grises: a 45°, por centros de pixel
+// The 2.25 × 5 chevrons were two gray smudges: at 45°, through pixel centers
 {
   const body = box(2.25, 3.75, 19.5, 16.5, 3.5);
   const rule = line([2.25, 8.25], [21.75, 8.25]);
   const code = [line([9.75, 11.25], [6.75, 14.25], [9.75, 17.25]), line([14.25, 11.25], [17.25, 14.25], [14.25, 17.25])];
   icons['code-window'].small = { d: [body, rule, ...code], fill: { solid: [body], cut: [rule, ...code] } };
 }
-// Rejilla de 16 px: el centro del pixel k, el punto (columna, fila) y una línea por centros de pixel.
+// 16 px grid: the center of pixel k, the point (column, row) and a line through pixel centers.
 const px = (k) => 0.75 + 1.5 * k;
 const g = (c, r) => [px(c), px(r)];
 const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
 
-// Las bases de datos con insignia: las elipses de 24 caían entre dos filas de pixeles y se volvían
-// bandas grises. A 16 px, los costados en las columnas 2 y 13, y lo plano de la tapa, de su borde, de
-// la banda y del fondo en centros de pixel (filas 1, 5, 9 y 13). La insignia es la de pixel del motor
-// o la propia: la lupa (el lente de r 3 en el centro de la insignia, nítido en sus cuatro lados) y
-// las flechas de sincronizar de Archivos a 16 px.
+// The databases with a badge: the 24 px ellipses fell between two pixel rows and became gray bands.
+// At 16 px, the sides in columns 2 and 13, and the flat parts of the lid, its rim, the band and the
+// bottom on pixel centers (rows 1, 5, 9 and 13). The badge is the engine's pixel badge or a custom
+// one: the magnifier (the lens of r 3 at the badge center, crisp on all four sides) and the sync
+// arrows from `archivos` at 16 px.
 {
   const lid = 'M3.75 5.25c0-1.66 3.69-3 8.25-3s8.25 1.34 8.25 3-3.69 3-8.25 3-8.25-1.34-8.25-3Z';
   const body = 'M3.75 5.25v12c0 1.66 3.69 3 8.25 3s8.25-1.34 8.25-3v-12';
@@ -1205,40 +1213,42 @@ const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
   for (const [name, b] of Object.entries(BADGE16))
     icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: b };
 }
-// El átomo: el núcleo se pegaba a las órbitas y a 16 px era una flor gris. El centro va en el centro
-// del pixel (7, 7): la órbita vertical cae nítida (sus lados en las columnas 5 y 9, sus puntas en las
-// filas 1 y 13) y el núcleo es un pixel con aire alrededor.
+// The atom: the nucleus stuck to the orbits and at 16 px it was a gray flower. The center goes at
+// the center of pixel (7, 7): the vertical orbit falls crisp (its sides in columns 5 and 9, its
+// tips in rows 1 and 13) and the nucleus is a single pixel with clearance around it.
 {
   const c = g(7, 7);
   icons.atom.small = { d: [circ(...c, 0.1), ...[30, 90, 150].map((a) => rell(...c, 9, 3, a))] };
 }
-// La automatización: el ciclo de r 9 caía entre dos pixeles y el rayo era una mancha. A 16 px, el
-// ciclo de r 8.25 (sus costados en las columnas 2 y 13) con la punta de 24, y el rayo de pixel de
-// `cloud-bolt` (Archivos): baja a 45°, avanza y vuelve a bajar, en el centro del ciclo.
+// Automation: the r 9 cycle fell between two pixels and the bolt was a smudge. At 16 px, the r 8.25
+// cycle (its sides in columns 2 and 13) with the 24 px arrowhead, and the pixel bolt from
+// `cloud-bolt` (`archivos`): it drops at 45°, steps across and drops again, in the center of the
+// cycle.
 {
   const a = arc(12, 12, 8.25, -60, 240);
   icons.automation.small = { d: [a.d, head(a.end, a.tangent, 3.4), pl([9, 5], [6, 8], [9, 8], [6, 11])] };
 }
-// La red neuronal: los nodos de r 1.75 y las conexiones que no caían en centros de pixel se volvían
-// una trama gris. A 16 px, nodos de r 1.5 en centros de pixel (3 × 3 con su hueco), las capas en las
-// columnas 2, 7 y 13 y las conexiones de cada capa en filas de pixel.
+// The neural network: the r 1.75 nodes and the connections that didn't fall on pixel centers turned
+// into a gray mesh. At 16 px, nodes of r 1.5 on pixel centers (3 × 3 with their hole), the layers
+// in columns 2, 7 and 13, and each layer's connections on pixel rows.
 {
   const N = { a: g(2, 4), b: g(2, 10), c: g(7, 4), d: g(7, 10), e: g(13, 7) };
   const nodes = Object.values(N).map((p) => circ(...p, 1.5));
   const links = [['a', 'c'], ['a', 'd'], ['b', 'c'], ['b', 'd'], ['c', 'e'], ['d', 'e']].map(([x, y]) => edge(N[x], N[y], 1.5));
   icons['neural-network'].small = { d: [...nodes, ...links], fill: { solid: nodes, wire: links } };
 }
-// El grafo: con aristas casi horizontales y casi verticales, a 16 px todo era gris. Los nodos en
-// centros de pixel (el grande de r 3, los demás de r 1.5) y las dos aristas del primero, una fila y una
-// columna de pixel; la que va al nodo grande, a 45°.
+// The graph: with nearly horizontal and nearly vertical edges, everything was gray at 16 px. The
+// nodes on pixel centers (the big one r 3, the others r 1.5) and the first node's two edges, one
+// pixel row and one pixel column; the one going to the big node, at 45°.
 {
   const N = [[...g(3, 3), 1.5], [...g(12, 3), 1.5], [...g(10, 10), 3], [...g(3, 12), 1.5]];
   const nodes = N.map(([x, y, r]) => circ(x, y, r));
   const links = [[0, 1], [0, 2], [1, 2], [2, 3], [0, 3]].map(([a, b]) => edge(N[a], N[b], N[a][2], N[b][2]));
   icons['node-graph'].small = { d: [...nodes, ...links], fill: { solid: nodes, wire: links } };
 }
-// El borrador: los puntos quedaban a 2 pixeles entre sí y se juntaban en una barra. A 16 px, el resto
-// con el mismo ajuste que le da el motor y los tres puntos de 2 × 2 a 1 pixel entre sí y del nodo.
+// The draft: the dots sat 2 pixels apart and merged into a bar. At 16 px, the rest with the same
+// adjustment the engine gives it, and the three 2 × 2 dots 1 pixel apart from each other and from
+// the node.
 {
   const [top, trunk, bottom, node] = icons['git-pull-request-draft'].d.slice(0, 4).map(snapper(icons['git-pull-request-draft'].d));
   const dots = [12, 7.5, 3].map((y) => dot(18, y, SMALL_DOT));
@@ -1246,7 +1256,7 @@ const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
 }
 
 // ---------------------------------------------------------------------------------------------
-// Piezas con nombre (DESIGN.md › Piezas): lo que se anima, cambia de estado o va bajo una insignia
+// Named parts (DESIGN.md › Named parts): whatever animates, changes state or sits under a badge
 // ---------------------------------------------------------------------------------------------
 const PARTS = {
   'chart-bar-stacked': { bars: [0, 1, 2], split: [3, 4, 5] },
@@ -1304,24 +1314,24 @@ const PARTS = {
   presentation: { board: [0], stand: [1], chart: [2] },
   'server-rack': { body: [0, 1, 2], lights: [3, 4, 5] },
 };
-// La base de datos bajo cada insignia
+// The database under each badge
 for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
   PARTS[name] = { body: [0, 2], lid: [1] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ---------------------------------------------------------------------------------------------
-// Variantes automáticas que no tienen sentido (DESIGN.md › Variantes automáticas)
+// Automatic variants that make no sense (DESIGN.md › Automatic variants)
 // ---------------------------------------------------------------------------------------------
 const variants = (names, v) => {
   for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
 };
-// Ya vienen encerrados en un círculo, o son un globo: no se vuelven a encerrar
+// Already enclosed in a circle, or they are a bubble: they aren't enclosed again
 variants(['chart-donut', 'chart-radial', 'target', 'automation', 'chatbot'], { circle: false });
-// Ya son una tarjeta (o un globo con un signo): no se encierran en otro cuadrado
+// Already a card (or a bubble with a sign): they aren't enclosed in another square
 variants(['chart-treemap', 'table', 'log', 'chatbot'], { square: false });
-// Con insignia: reducidos al 58–60 % la insignia deja de leerse, y el tache la atravesaría
+// With a badge: scaled down to 58–60 % the badge stops reading, and the slash would cut through it
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, circle: false, square: false, slash: false };
-// Líneas sueltas, flechas y glifos: tacharlos no dice nada
+// Loose lines, arrows and glyphs: slashing them says nothing
 variants(
   [
     'trend-up', 'trend-down', 'trend-flat', 'pulse', 'braces', 'brackets', 'array', 'function', 'variable', 'code-sparkle',
@@ -1331,8 +1341,8 @@ variants(
 );
 
 // ---------------------------------------------------------------------------------------------
-// Espejo (DESIGN.md › Espejo): gráficas que crecen o avanzan en el tiempo, listas con sangría,
-// flujos que se leen de izquierda a derecha y el campo de texto del prompt
+// Mirroring (DESIGN.md › Mirroring): charts that grow or advance over time, indented lists, flows
+// that read left to right and the prompt's text field
 // ---------------------------------------------------------------------------------------------
 for (const name of [
   'chart-bar-horizontal', 'chart-line', 'chart-lines', 'chart-step', 'chart-area', 'chart-scatter', 'chart-waterfall',
@@ -1342,7 +1352,7 @@ for (const name of [
   icons[name].mirror = true;
 
 // ---------------------------------------------------------------------------------------------
-// Movimiento (DESIGN.md › Movimiento): el gesto propio de cada ícono
+// Motion (DESIGN.md › Motion): each icon's own gesture
 // ---------------------------------------------------------------------------------------------
 icons['chart-pie'].motion = { effect: 'slide', parts: ['slice'], vector: [-1.25, -1.25] };
 icons['trend-up'].motion = { effect: 'slide', vector: [1.5, -1.5] };

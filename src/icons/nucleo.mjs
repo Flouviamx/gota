@@ -1,5 +1,5 @@
-// Núcleo: los 50 íconos con que nació el set (los usa flouvia.com). Trazos ya calculados con
-// engine/geometry.mjs; los nuevos se dibujan con el motor, no a mano. Ver DESIGN.md.
+// Núcleo (core): the 50 icons the set started with, used by flouvia.com. Paths are precomputed
+// with engine/geometry.mjs; new icons are drawn with the engine, never by hand. See DESIGN.md.
 const icons = {
   'alert': {
     tags: ["aviso", "advertencia", "warning"],
@@ -392,10 +392,10 @@ const icons = {
   },
 };
 
-// Relleno de cada ícono por índice de sus trazos: `solid` se rellena (y conserva el trazo, así la
-// silueta es idéntica; solo figuras cerradas), `cut` se cala al ancho del trazo, `lines` va encima
-// con aire de 1.5 y `wire` va encima pegada, sin aire (el arco de un candado, una aguja).
-// Los que son solo líneas abiertas (flechas, check, más…) no llevan relleno. Ver DESIGN.md › Relleno.
+// Each icon's fill, by path index: `solid` is filled (and keeps its stroke, so the silhouette stays
+// identical; closed shapes only), `cut` is knocked out at stroke width, `lines` sits on top with a
+// 1.5 gap, and `wire` sits on top flush, with no gap (a lock's shackle, a needle).
+// Icons made only of open lines (arrows, check, plus…) get no fill. See DESIGN.md › Fill.
 const FILL = {
   alert: { solid: [0], cut: [1, 2] },
   important: { solid: [0], cut: [1, 2] },
@@ -435,17 +435,17 @@ for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
   icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
 }
-// Lo que se rellena va cerrado: la cabeza de la chincheta (su cierre corre por la barra de arriba),
-// el badajo de la campana (media luna) y el cuerpo de la base de datos
+// Anything filled must be closed: the pin's head (it closes along the top bar),
+// the bell's clapper (a half-moon) and the database body
 icons.pin.fill = { solid: [`${icons.pin.d[1]}Z`], wire: [icons.pin.d[0], icons.pin.d[2]] };
 icons.bell.fill = { solid: [`${icons.bell.d[0]}Z`, icons.bell.d[1]] };
-// Solo líneas abiertas: su relleno es el mismo contorno
+// Open lines only: their filled version is the outline itself
 for (const name of ['chevron-right', 'chevron-left', 'arrow-right', 'check', 'check-large', 'close', 'close-large', 'plus', 'search', 'refresh', 'link', 'waves', 'mute', 'code'])
   icons[name].fill = false;
-// La base de datos: el cuerpo y la tapa rellenos; se calan la curva del medio y el borde de la tapa
+// Database: body and lid filled; the middle curve and the lid's edge are knocked out
 icons.database.fill = { solid: [`${icons.database.d[1]}Z`, icons.database.d[2]], cut: [icons.database.d[0], 'M20.4 6.1c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3'] };
 
-// Ya vienen encerrados: no se vuelven a encerrar en círculo
+// Already enclosed: they don't get enclosed again
 icons.important.variants = { circle: false };
 icons.clock.variants = { circle: false };
 icons.globe.variants = { circle: false };
@@ -453,19 +453,19 @@ icons.project.variants = { square: false };
 icons.columns.variants = { square: false };
 icons.mute.variants = { slash: false };
 
-// Tachar una línea suelta no dice nada: sin tachado
+// A slash through a lone line says nothing: no slashed variant
 for (const name of ['chevron-right', 'chevron-left', 'arrow-right', 'check', 'check-large', 'close', 'close-large', 'plus', 'more', 'refresh', 'waves', 'code'])
   icons[name].variants = { ...icons[name].variants, slash: false };
 
-// Espejo: lo que apunta a un lado se voltea en idiomas de derecha a izquierda
+// Mirror: anything that points to one side flips in right-to-left languages
 for (const name of ['chevron-right', 'chevron-left', 'arrow-right', 'send', 'speaker', 'waves', 'mute', 'edit']) icons[name].mirror = true;
 
-// Niveles: las ondas se encienden de adentro hacia afuera (value 0–1)
+// Levels: the waves light up from the inside out (value 0–1)
 icons.waves.levels = [[0], [1]];
 
-// Movimiento: el efecto propio de cada ícono (los genéricos —dibujar, rebotar, reemplazar— no
-// necesitan datos). parts = índices de d que se mueven; origin = pivote; vector = desplazamiento.
-// Piezas con nombre: lo que se anima o cambia por separado (salen como data-part en el SVG)
+// Motion: each icon's own effect (the generic ones — draw, bounce, replace — need no data).
+// parts = indices into d that move; origin = pivot; vector = offset.
+// Named parts: what animates or changes on its own (emitted as data-part in the SVG)
 icons.bell.parts = { body: [0], clapper: [1] };
 icons.clock.parts = { face: [0], hands: [1] };
 icons.alert.parts = { shape: [0], mark: [1, 2] };

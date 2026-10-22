@@ -1,12 +1,12 @@
-// Comercio y finanzas: compra, pago, dinero, envío e inventario. Todo se calcula con el motor
-// (engine/geometry.mjs) y las reglas de DESIGN.md: trazo de 1.5, keylines, esquinas continuas y
-// la esquina inferior derecha recta en los contenedores. Las insignias son las del motor
-// (`badge`): la base se dibuja completa y el motor la despeja con 1.5 de aire; una pieza encima de
-// otra (la moneda de enfrente, la tarjeta de enfrente, la cartera, el billete del cajero) va igual.
+// Commerce and finance: shopping, payment, money, shipping and inventory. Everything is computed
+// with the engine (engine/geometry.mjs) and the rules in DESIGN.md: a 1.5 stroke, keylines,
+// continuous corners and a square bottom-right corner on containers. The badges are the engine's
+// (`badge`): the base is drawn whole and the engine clears it with 1.5 of clearance; a piece on top
+// of another (the front coin, the front card, the wallet, the ATM's bill) works the same way.
 import { arc, badge, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snap, snapper } from '../../engine/variants.mjs';
 
-// ── Utilidades locales ────────────────────────────────────────────────────────────────────────
+// ── Local utilities ───────────────────────────────────────────────────────────────────────────
 const N = (v) => {
   const s = (Math.round(v * 100) / 100).toFixed(2).replace(/\.?0+$/, '');
   return s === '-0' || s === '' ? '0' : s;
@@ -18,10 +18,10 @@ const len = (v) => Math.hypot(v[0], v[1]);
 const mul = (v, k) => [v[0] * k, v[1] * k];
 const unit = (v) => mul(v, 1 / len(v));
 const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
-/** Avanza `d` desde a hacia b. */
+/** Moves `d` from a toward b. */
 const toward = (a, b, d) => add(a, mul(unit(sub(b, a)), d));
 
-/** Polilínea abierta con los vértices interiores redondeados (radio por vértice o uno para todos). */
+/** Open polyline with rounded interior vertices (one radius per vertex, or one for all). */
 function roundline(pts, radius = 0) {
   const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
   let s = `M${pt(pts[0])}`;
@@ -45,9 +45,9 @@ function roundline(pts, radius = 0) {
 }
 
 /**
- * Cierra cada subtrazo abierto, para `fill.solid` (ahí solo van figuras cerradas): el cuerpo de la
- * tienda bajo su toldo, la caja del regalo bajo su tapa, las cajas sobre su repisa. Su cierre corre
- * por un borde que ya es sólido o calado, así la silueta no cambia.
+ * Closes every open subpath, for `fill.solid` (only closed shapes go there): the store body under
+ * its awning, the gift box under its lid, the boxes on their shelf. The closing segment runs along
+ * an edge that is already solid or knocked out, so the silhouette doesn't change.
  */
 const shut = (d) =>
   d
@@ -55,7 +55,7 @@ const shut = (d) =>
     .map((s) => (/Z\s*$/i.test(s) ? s : `${s}Z`))
     .join('');
 
-/** Las cuatro esquinas de sq() en orden [tr, br, bl, tl]: punto de arranque y trazo relativo. */
+/** The four corners of sq() in order [tr, br, bl, tl]: start point and relative path. */
 function corners(x, y, w, h, r, opts) {
   return sq(x, y, w, h, r, opts)
     .match(/[ML][^MLZ]*/g)
@@ -66,8 +66,8 @@ function corners(x, y, w, h, r, opts) {
 }
 
 /**
- * Tramo abierto de un sq(): de `A` (sobre el borde `eA`) a `B` (sobre el borde `eB`) en sentido
- * horario. Bordes: 0 arriba, 1 derecha, 2 abajo, 3 izquierda.
+ * Open run of a sq(): from `A` (on edge `eA`) to `B` (on edge `eB`), clockwise. Edges: 0 top,
+ * 1 right, 2 bottom, 3 left.
  */
 function sqOpen(x, y, w, h, r, opts, A, eA, B, eB) {
   const k = corners(x, y, w, h, r, opts);
@@ -80,7 +80,7 @@ function sqOpen(x, y, w, h, r, opts, A, eA, B, eB) {
   return `${s}L${pt(B)}`;
 }
 
-/** Glifos sueltos (más, menos, check, x) para el interior de un contenedor. */
+/** Standalone glyphs (plus, minus, check, x) for the inside of a container. */
 function glyph(kind, [x, y], s = 1.75) {
   if (kind === 'plus') return [line([x - s, y], [x + s, y]), line([x, y - s], [x, y + s])];
   if (kind === 'minus') return [line([x - s, y], [x + s, y])];
@@ -89,13 +89,13 @@ function glyph(kind, [x, y], s = 1.75) {
   return [line([x - k, y - k], [x + k, y + k]), line([x + k, y - k], [x - k, y + k])];
 }
 
-/** Signo de porcentaje: dos aros y la diagonal. */
+/** Percent sign: two rings and the diagonal. */
 const percent = (cx, cy, s, rr, L) => [circ(cx - s, cy - s, rr), circ(cx + s, cy + s, rr), line([cx - L, cy + L], [cx + L, cy - L])];
 
-/** Porcentaje compacto: puntos en lugar de aros (para piezas chicas). */
+/** Compact percent: dots instead of rings (for small pieces). */
 const percentDots = (cx, cy, s, L) => [dot(cx - s, cy - s), dot(cx + s, cy + s), line([cx - L, cy + L], [cx + L, cy - L])];
 
-/** Arco de un punto a otro sobre un círculo, con las banderas calculadas. */
+/** Arc from one point to another on a circle, with the flags computed. */
 function arcTo(c, r, from, to, cw = true) {
   const a0 = Math.atan2(from[1] - c[1], from[0] - c[0]);
   const a1 = Math.atan2(to[1] - c[1], to[0] - c[0]);
@@ -105,7 +105,7 @@ function arcTo(c, r, from, to, cw = true) {
   return `A${N(r)} ${N(r)} 0 ${span > 180 ? 1 : 0} ${cw ? 1 : 0} ${pt(to)}`;
 }
 
-/** Corazón de dos lóbulos y punta; `w` = ancho total. */
+/** Heart with two lobes and a point; `w` = total width. */
 function heart(cx, cy, w) {
   const r = w * 0.28;
   const a = w / 2 - r;
@@ -127,7 +127,7 @@ function heart(cx, cy, w) {
   return `M${pt(T)}L${pt(L)}${arcTo(CL, r, L, dip)}${arcTo(CR, r, dip, R)}Z`;
 }
 
-/** Ondas de toldo: arcos que cuelgan entre x0 y x1 (de derecha a izquierda). */
+/** Awning scallops: arcs hanging between x0 and x1 (right to left). */
 function scallops(x0, x1, y, n, sag) {
   const c = (x1 - x0) / n;
   const R = ((c * c) / 4 + sag * sag) / (2 * sag);
@@ -137,9 +137,9 @@ function scallops(x0, x1, y, n, sag) {
 }
 
 /**
- * Signo de dólar: una S de dos óvalos con el asta arriba y abajo. El asta y el cuerpo de la S son
- * un solo trazo (de la punta de arriba a la de abajo, pasando por el centro); las dos colas de la
- * S salen de él. Así ninguna punta es un fragmento suelto. `top` = asta de arriba si es distinta.
+ * Dollar sign: an S made of two ovals with the stem above and below. The stem and the body of the S
+ * are a single stroke (from the top tip to the bottom one, through the center); the two tails of
+ * the S branch off it. That way no tip is a loose fragment. `top` = the upper stem, if it differs.
  */
 function dollar(cx, cy, h, w = h * 0.68, stub = 1.5, top = stub) {
   const ry = h / 4;
@@ -150,7 +150,7 @@ function dollar(cx, cy, h, w = h * 0.68, stub = 1.5, top = stub) {
   const T0 = [cx, cy - h / 2];
   const B0 = [cx, cy + h / 2];
   const R = `${N(rx)} ${N(ry)}`;
-  // La cola llega a -28° (152° abajo); en un signo chico se alarga hasta medir 2.1
+  // The tail reaches -28° (152° at the bottom); in a small sign it stretches to a length of 2.1
   let tail = -28;
   const arcLen = (t) => {
     let L = 0;
@@ -165,18 +165,19 @@ function dollar(cx, cy, h, w = h * 0.68, stub = 1.5, top = stub) {
   ];
 }
 
-/** Euro: la C abierta a la derecha y sus dos barras, que la cruzan por la izquierda. */
+/** Euro: the C open to the right and its two bars, which cross it on the left. */
 function euro(cx, cy, r, bar = 1.5) {
   const x0 = cx - r - 1.5;
   const x1 = cx + r * 0.05;
   return [arc(cx, cy, r, 45, 315).d, line([x0, cy - bar], [x1, cy - bar]), line([x0, cy + bar], [x1, cy + bar])];
 }
 
-// ── Piezas compartidas ────────────────────────────────────────────────────────────────────────
+// ── Shared pieces ─────────────────────────────────────────────────────────────────────────────
 
-// Carrito: la canasta (un contenedor: el costado derecho vertical y la esquina inferior derecha
-// recta, la firma), el asa que sigue la pendiente del frente y dos ruedas. La canasta y el asa son
-// dos trazos que se tocan: en el relleno el asa sigue siendo línea. Deja hueco para un glifo en CART_IN.
+// Cart: the basket (a container: vertical right side and a square bottom-right corner, the
+// signature), the handle that follows the slope of the front, and two wheels. The basket and the
+// handle are two strokes that touch: in the fill the handle stays a line. It leaves room for a
+// glyph at CART_IN.
 const CART_IN = [13.25, 10.125];
 const CART_HANDLE = [
   [2.75, 3.25],
@@ -198,12 +199,12 @@ const cart = () => [
   circ(17.75, 19.25, 1.5),
 ];
 /**
- * Relleno del carrito: la canasta, las ruedas y lo que lleva (cerrado contra el borde de la
- * canasta), sólidos; el asa sigue siendo línea, pegada a la canasta.
+ * Cart fill: the basket, the wheels and whatever it carries (closed against the basket's edge),
+ * solid; the handle stays a line, attached to the basket.
  */
 const cartFill = (d, cut = [], extra = []) => ({ solid: [d[0], d[2], d[3], ...extra.map(shut)], wire: [d[1]], ...(cut.length && { cut }) });
 
-// Bolsa de compra: cuerpo con la esquina de la firma y asa en arco.
+// Shopping bag: body with the signature corner and an arched handle.
 const BAG_IN = [12, 14.5];
 const bag = () => [
   roundpoly(
@@ -218,14 +219,14 @@ const bag = () => [
   'M8.5 8V6.75a3.5 3.5 0 0 1 7 0V8',
 ];
 
-// Documento del núcleo (14.5 × 18.5, radio 3.75).
+// Core document (14.5 × 18.5, radius 3.75).
 const DOC = [4.75, 2.75, 14.5, 18.5, 3.75];
-// Tarjeta del núcleo (19 × 14, radio 3.75).
+// Core card (19 × 14, radius 3.75).
 const CARD = [2.5, 5, 19, 14, 3.75];
-// La firma: contenedor con la esquina inferior derecha recta.
+// The signature: a container with a square bottom-right corner.
 const SQ = { square: ['br'] };
 
-// Recibo: arriba con esquinas continuas y abajo el corte en sierra.
+// Receipt: continuous corners at the top and a sawtooth tear at the bottom.
 function receipt(x = 4.75, y = 2.75, w = 14.5, h = 18.5, teeth = 5, depth = 1.5) {
   const k = corners(x, y, w, h, 3.5);
   const tl = k[3];
@@ -236,8 +237,8 @@ function receipt(x = 4.75, y = 2.75, w = 14.5, h = 18.5, teeth = 5, depth = 1.5)
   return `M${pt([x, y + h])}L${pt(tl.p)}${tl.c}L${pt(tr.p)}${tr.c}L${pt([x + w, y + h])}${z.map((p) => `L${pt(p)}`).join('')}Z`;
 }
 
-// Etiqueta de precio: un pentágono con la punta arriba a la izquierda y su ojal (r 1, a 3 de los
-// bordes de la punta).
+// Price tag: a pentagon with its point at the top left and its eyelet (r 1, 3 from the edges of the
+// point).
 function tag({ L = 17.5, H = 5.75, nose = 5.5, c = [12, 12], ang = 45 } = {}) {
   const local = [
     [0, 0],
@@ -252,20 +253,20 @@ function tag({ L = 17.5, H = 5.75, nose = 5.5, c = [12, 12], ang = 45 } = {}) {
 }
 const T = tag();
 
-// Caja isométrica del núcleo (`box`): mismas proporciones, pendiente de 28.4°.
+// Core isometric box (`box`): same proportions, 28.4° slope.
 function iso(cx, top, w, h, k = 0.541) {
   const wk = w * k;
   return { T: [cx, top], R: [cx + w, top + wk], C: [cx, top + 2 * wk], L: [cx - w, top + wk], Rb: [cx + w, top + wk + h], B: [cx, top + 2 * wk + h], Lb: [cx - w, top + wk + h] };
 }
 
 /**
- * Paquete: la caja del núcleo con la cinta sobre la tapa, que dobla por la cara izquierda y tapa la
- * arista que cruza. En la caja del núcleo (17.2 de ancho) la tapa mide 8.2 entre aristas y la cinta
- * quedaba a 1 de aire entre sus bordes y a 1.34 de las aristas; con la cinta, la caja mide 19 de
- * ancho (el apaisado) y sus caras 7.5 de alto (la misma área que la del núcleo, y la tinta bajo el
- * 28 %). Así todo queda a 1.5: los bordes de la cinta a 3 entre sí y de las aristas de la tapa (de
- * centro a centro, en perpendicular), las patas del doblez a 3.17 del costado y de la arista del
- * frente, y su remate a 3.08 de la arista que cruza.
+ * Package: the core box with the tape over the lid, folding down the left face and covering the
+ * edge it crosses. In the core box (17.2 wide) the lid measures 8.2 between edges, and the tape was
+ * left with 1 of clearance between its sides and 1.34 from the edges; with the tape, the box is 19
+ * wide (the landscape format) and its faces 7.5 tall (the same area as the core box, and ink under
+ * 28 %). That way everything keeps 1.5: the tape's sides 3 apart and 3 from the lid's edges (center
+ * to center, perpendicular), the legs of the fold 3.17 from the side and from the front edge, and
+ * its end 3.08 from the edge it crosses.
  */
 function parcel({ cx = 12, top = 3.1, w = 9.5, h = 7.5, tape = true } = {}) {
   const P = iso(cx, top, w, h);
@@ -274,30 +275,31 @@ function parcel({ cx = 12, top = 3.1, w = 9.5, h = 7.5, tape = true } = {}) {
   const body = roundpoly([P.T, P.R, P.Rb, P.B, P.Lb, P.L], 1.6);
   const front = line(P.C, toward(P.B, P.C, 0.4));
   if (!tape) return [body, line(toward(P.L, P.C, 0.4), P.C, toward(P.R, P.C, 0.4)), front];
-  // 1.8 sobre la arista = 1.5 en perpendicular (las aristas de la tapa se cruzan a 56.8°)
+  // 1.8 along the edge = 1.5 perpendicular (the lid's edges cross at 56.8°)
   const [Pm, Pp, Qm, Qp] = [add(a, mul(u, -1.8)), add(a, mul(u, 1.8)), add(b, mul(u, -1.8)), add(b, mul(u, 1.8))];
   return [body, line(toward(P.L, P.C, 0.4), Qm), line(Qp, P.C, toward(P.R, P.C, 0.4)), front, line(Pm, Qm, add(Qm, [0, 3.5]), add(Qp, [0, 3.5]), Qp, Pp)];
 }
-// El paquete chico, corrido a la izquierda, que lleva insignia (sin cinta: no cabe con su aire)
+// The small package, shifted left, that carries a badge (no tape: it doesn't fit with its
+// clearance)
 const PARCEL_B = { cx: 10.5, w: 8, h: 8.5, tape: false };
 
-/** Caja isométrica chica (dentro de la casa o del pin): contorno y aristas interiores. */
+/** Small isometric box (inside the house or the pin): outline and inner edges. */
 function cube(cx, top, w, h, r) {
   const P = iso(cx, top, w, h);
   return [roundpoly([P.T, P.R, P.Rb, P.B, P.Lb, P.L], r), line(toward(P.L, P.C, 0.3), P.C, toward(P.R, P.C, 0.3)), line(P.C, toward(P.B, P.C, 0.3))];
 }
 
-/** Estrella de cinco puntas con las puntas suavizadas. */
+/** Five-pointed star with softened points. */
 const star = (cx, cy, ro, ri, r = 0.55) =>
   roundpoly(
     Array.from({ length: 10 }, (_, i) => polar(cx, cy, i % 2 ? ri : ro, -90 + i * 36)),
     Array.from({ length: 10 }, (_, i) => (i % 2 ? r * 0.6 : r)),
   );
 
-/** Hoja: dos arcos iguales entre p0 y p1. */
+/** Leaf: two equal arcs between p0 and p1. */
 const leaf = (p0, p1, R) => `M${pt(p0)}A${N(R)} ${N(R)} 0 0 1 ${pt(p1)}A${N(R)} ${N(R)} 0 0 1 ${pt(p0)}Z`;
 
-/** Firma manuscrita: un trazo continuo de curvas, escalado desde (x, y). */
+/** Handwritten signature: one continuous stroke of curves, scaled from (x, y). */
 function signature(x, y, k = 1) {
   const seg = [
     [1, -2.5, 2.25, -3.5, 2.75, -2.5],
@@ -309,7 +311,7 @@ function signature(x, y, k = 1) {
   return `M${P2(0, 0)}${seg.map((c) => `C${P2(c[0], c[1])} ${P2(c[2], c[3])} ${P2(c[4], c[5])}`).join('')}`;
 }
 
-/** Rectángulo girado con esquinas redondeadas (piezas que no son contenedores). */
+/** Rotated rectangle with rounded corners (for pieces that aren't containers). */
 function rrect(c, a, hw, hh, r) {
   const u = unit(a);
   const n = [-u[1], u[0]];
@@ -317,8 +319,8 @@ function rrect(c, a, hw, hh, r) {
   return roundpoly([P(-1, -1), P(1, -1), P(1, 1), P(-1, 1)], r);
 }
 
-// Casa (hipoteca, entrega a domicilio): techo de dos aguas con alero y muros con la esquina
-// inferior izquierda redonda y la derecha recta (la firma). Los muros nacen sobre el techo.
+// House (mortgage, home delivery): a gable roof with eaves, and walls with a rounded bottom-left
+// corner and a square bottom-right one (the signature). The walls start at the roof.
 const ROOF = roundline(
   [
     [2.75, 11],
@@ -336,7 +338,7 @@ const WALLS = roundline(
   ],
   [0, 2.5, 0, 0],
 );
-// El cuerpo de la casa para el relleno: el alero sigue siendo línea
+// The house body for the fill: the eave stays a line
 const HOUSE = roundpoly(
   [
     [5, 9.11],
@@ -348,9 +350,9 @@ const HOUSE = roundpoly(
   [0, 1.5, 0, 0, 2.5],
 );
 
-/** Insignia propia: la pieza que va encima, su área despejada y su relleno. */
+/** Custom badge: the piece on top, its cleared area and its fill. */
 const own = (d, knock, fill) => ({ d, knock, fill });
-// Regresar: la flecha a la izquierda en el círculo de las insignias del motor
+// Return: the left arrow in the circle of the engine's badges
 const BC = [17.25, 17.25];
 const backBadge = () => {
   const ring = circ(BC[0], BC[1], 4.25);
@@ -359,7 +361,7 @@ const backBadge = () => {
 };
 
 const icons = {
-  // ── Carrito ──
+  // ── Cart ──
   'cart': { tags: ['carrito', 'carrito vacío', 'compra', 'cart', 'shopping cart', 'empty cart'], d: cart() },
   'cart-full': {
     tags: ['carrito lleno', 'productos', 'compra', 'cart full', 'shopping', 'items'],
@@ -383,11 +385,11 @@ const icons = {
   'cart-remove': { tags: ['vaciar carrito', 'eliminar', 'cancelar compra', 'cart remove', 'clear cart'], d: [...cart(), ...glyph('x', CART_IN, 1.6)] },
   'cart-arrow-down': {
     tags: ['agregar al carrito', 'meter al carrito', 'comprar', 'add to cart', 'cart download'],
-    // La flecha cabe entre el borde y el fondo de la canasta con 1.5 de aire
+    // The arrow fits between the edge and the bottom of the basket with 1.5 of clearance
     d: [...cart(), line([CART_IN[0], 8.65], [CART_IN[0], 11.65]), head([CART_IN[0], 11.65], [0, 1], 2.25)],
   },
 
-  // ── Bolsa y canasta ──
+  // ── Bag and basket ──
   'bag': { tags: ['bolsa', 'bolsa de compra', 'tienda', 'shopping bag', 'bag'], d: bag() },
   'bag-plus': { tags: ['agregar a la bolsa', 'añadir', 'comprar', 'add to bag', 'bag plus'], d: [...bag(), ...glyph('plus', BAG_IN, 2)] },
   'bag-minus': { tags: ['quitar de la bolsa', 'restar', 'menos', 'remove from bag', 'bag minus'], d: [...bag(), ...glyph('minus', BAG_IN, 2)] },
@@ -411,15 +413,15 @@ const icons = {
         [1.25, 1.25, 0, 1.75],
       ),
       'M7 10.25A5 5 0 0 1 17 10.25',
-      // Las varas siguen la caída de los costados y quedan a 3 entre sí
+      // The rods follow the slope of the sides and sit 3 apart
       line([8.6, 13.5], [9, 17.5]),
       line([12, 13.5], [12, 17.5]),
       line([15.4, 13.5], [15, 17.5]),
     ],
   },
 
-  // ── Tienda ──
-  // Los muros cuelgan a 3 de las ondas del toldo (1.5 de aire)
+  // ── Store ──
+  // The walls hang 3 from the awning's scallops (1.5 of clearance)
   'store': {
     tags: ['tienda', 'local', 'escaparate', 'negocio', 'storefront', 'shop'],
     d: [
@@ -487,16 +489,16 @@ const icons = {
     ],
   },
 
-  // ── Recibo, factura y cotización ──
+  // ── Receipt, invoice and quote ──
   'receipt': {
     tags: ['recibo', 'ticket de compra', 'comprobante', 'receipt', 'order'],
     d: [receipt(), line([8.5, 7.75], [15.5, 7.75]), line([8.5, 11.25], [15.5, 11.25]), line([8.5, 14.75], [12.25, 14.75])],
   },
   'receipt-tax': { tags: ['impuestos', 'IVA', 'retención', 'tax', 'vat', 'tax receipt'], d: [receipt(), ...percent(12, 11.25, 2.8, 1.05, 3.25)] },
-  // La factura: el documento con el signo de pesos al centro
+  // The invoice: the document with the peso sign in the middle
   'invoice': { tags: ['factura', 'cobro', 'cuenta', 'invoice', 'bill'], d: [sq(...DOC, SQ), ...dollar(12, 12, 8, 5.25, 1.5)] },
-  // Con insignia: el documento completo (el motor lo despeja) y el signo más chico, arriba a la
-  // izquierda, fuera del área de la insignia
+  // With a badge: the full document (the engine clears it) and a smaller sign at the top left,
+  // outside the badge area
   'invoice-plus': { tags: ['nueva factura', 'facturar', 'emitir', 'new invoice', 'create bill'], d: [sq(...DOC, SQ), ...dollar(9.75, 10.25, 6.5, 4.25, 1.25)], badge: badge('plus') },
   'invoice-paid': { tags: ['factura pagada', 'pagado', 'liquidada', 'invoice paid', 'settled'], d: [sq(...DOC, SQ), ...dollar(9.75, 10.25, 6.5, 4.25, 1.25)], badge: badge('check') },
   'invoice-due': { tags: ['factura vencida', 'por pagar', 'pendiente', 'invoice due', 'overdue'], d: [sq(...DOC, SQ), ...dollar(9.75, 10.25, 6.5, 4.25, 1.25)], badge: badge('clock') },
@@ -506,7 +508,7 @@ const icons = {
   },
   'purchase-order': {
     tags: ['orden de compra', 'pedido', 'lista', 'purchase order', 'po'],
-    // El tablero se abre arriba y sus bordes terminan en los costados de la pinza; renglones a 4
+    // The board opens at the top and its edges end at the sides of the clip; lines 4 apart
     d: [
       sqOpen(4.75, 4.25, 14.5, 17, 3, SQ, [14.25, 4.25], 0, [9.75, 4.25], 0),
       sq(9.75, 2.75, 4.5, 3.25, 1.25),
@@ -522,20 +524,21 @@ const icons = {
     tags: ['contrato', 'firma', 'acuerdo', 'contract', 'signed', 'agreement'],
     d: [sq(...DOC, SQ), line([8.75, 7.5], [15.25, 7.5]), line([8.75, 11], [15.25, 11]), signature(8.5, 17.25, 0.9)],
   },
-  // El apretón: un puño de manga a cada lado; la mano izquierda sube por detrás y la derecha va
-  // encima (insignia propia), con los dedos que bajan en tres nudillos. El motor la despeja.
+  // The handshake: a shirt cuff on each side; the left hand comes up from behind and the right one
+  // goes on top (custom badge), with the fingers coming down in three knuckles. The engine clears
+  // it.
   'deal': (() => {
     const front = 'M18.25 10.25H14.9L9.65 12.75a1.25 1.25 0 0 0 .75 2.35H10.9a1.25 1.25 0 0 0 1.25 1.4h1a1.25 1.25 0 0 0 1.25 1.1h.75L18.25 15.5';
     const cuff = sq(18.25, 9, 3, 7.5, 0.9);
     return {
       tags: ['trato', 'apretón de compra', 'cerrar venta', 'acuerdo comercial', 'deal', 'handshake'],
       d: ['M5.75 10.5L9.25 8.1C10 7.6 10.6 7.5 11.5 7.5H13.5a1.5 1.5 0 0 1 1.5 1.5V13.5H5.75Z', sq(2.75, 9, 3, 7.5, 0.9)],
-      // Rellena, la mano se cierra por el canto del puño (su cierre corre por él)
+      // Filled, the hand closes along the edge of the cuff (its closing segment runs along it)
       badge: own([front, cuff], `${front}Z${cuff}`, { solid: [`${front}Z`, cuff] }),
     };
   })(),
 
-  // ── Precio y descuento ──
+  // ── Price and discount ──
   'price-tag': { tags: ['etiqueta', 'precio', 'producto', 'price tag', 'label'], d: [T.body, circ(...T.hole, 1)] },
   'price-tags': {
     tags: ['etiquetas', 'precios', 'catálogo', 'price tags', 'labels'],
@@ -545,7 +548,8 @@ const icons = {
       return [t.body, circ(...t.hole, 1), roundline(e, [0, 2.4, 0])];
     })(),
   },
-  // El ojal es el primer aro del %: el segundo aro y la diagonal completan el signo con 1.5 de aire
+  // The eyelet is the first ring of the %: the second ring and the diagonal complete the sign with
+  // 1.5 of clearance
   'price-tag-percent': {
     tags: ['oferta', 'descuento', 'rebaja', 'sale tag', 'discount'],
     d: (() => {
@@ -583,12 +587,12 @@ const icons = {
     })(),
   },
 
-  // ── Cartera y tarjetas ──
+  // ── Wallet and cards ──
   'wallet': {
     tags: ['cartera', 'billetera', 'monedero', 'wallet', 'purse'],
     d: [sq(2.75, 5.5, 18.5, 14, 3.5, SQ), 'M21.25 9H16.75a3.5 3.5 0 0 0 0 7H21.25', dot(16.75, 12.5, 0.55)],
   },
-  // La tarjeta asoma inclinada detrás de la cartera; la cartera va encima y el motor la despeja
+  // The card peeks out, tilted, behind the wallet; the wallet goes on top and the engine clears it
   'wallet-cards': (() => {
     const c = [10.75, 7.5];
     const P = (x, y) => rot(add(c, [x, y]), c, -9);
@@ -609,14 +613,14 @@ const icons = {
     tags: ['sin contacto', 'tarjeta', 'pago con acercamiento', 'contactless card', 'tap to pay'],
     d: [sq(...CARD, SQ), sq(5.75, 9.5, 6, 5, 1.6), line([5.75, 12], [11.75, 12]), arc(12.25, 12, 3.25, -38, 38).d, arc(12.25, 12, 6.25, -38, 38).d],
   },
-  // La tarjeta del núcleo completa; el motor despeja la esquina para la insignia
+  // The full core card; the engine clears the corner for the badge
   'card-plus': { tags: ['agregar tarjeta', 'nuevo método de pago', 'add card', 'new card'], d: [sq(...CARD, SQ), line([2.5, 9.6], [21.5, 9.6]), line([6.25, 15], [9.75, 15])], badge: badge('plus') },
   'card-check': { tags: ['pago aprobado', 'tarjeta', 'cobro exitoso', 'payment approved', 'card verified'], d: [sq(...CARD, SQ), line([2.5, 9.6], [21.5, 9.6]), line([6.25, 15], [9.75, 15])], badge: badge('check') },
   'card-declined': { tags: ['pago rechazado', 'tarjeta', 'declinada', 'payment declined', 'card error'], d: [sq(...CARD, SQ), line([2.5, 9.6], [21.5, 9.6]), line([6.25, 15], [9.75, 15])], badge: badge('x') },
-  // Dos tarjetas en cascada: la de atrás completa; la de enfrente va encima y el motor la despeja.
-  // Corridas 3 a la derecha y 7 hacia arriba: con menos, el recorte caía a media esquina de la de
-  // atrás (la dejaba plana y asomaba un pedazo curvo); así su esquina se ve entera y el corte cae
-  // en el tramo recto de sus costados.
+  // Two cascading cards: the back one is complete; the front one goes on top and the engine clears
+  // it. Shifted 3 to the right and 7 up: with less, the cut fell halfway through the back card's
+  // corner (flattening it and leaving a curved bit peeking out); this way its corner shows whole
+  // and the cut falls on the straight run of its sides.
   'cards': (() => {
     const front = sq(2.5, 10.25, 16, 10.5, 3.25, SQ);
     const stripe = line([2.5, 13.75], [18.5, 13.75]);
@@ -633,7 +637,7 @@ const icons = {
   'gift-card': {
     tags: ['tarjeta de regalo', 'regalo', 'vale', 'gift card', 'voucher'],
     d: (() => {
-      // Listón vertical y moño: dos lazos y dos puntas que salen del nudo
+      // Vertical ribbon and bow: two loops and two tails coming out of the knot
       const k = [9, 11.5];
       return [sq(...CARD, SQ), line([k[0], 5], [k[0], 19]), leaf(k, add(k, [-3.4, -3.2]), 2.5), leaf(add(k, [3.4, -3.2]), k, 2.5), line(k, add(k, [-2.5, 3])), line(k, add(k, [2.5, 3]))];
     })(),
@@ -647,7 +651,7 @@ const icons = {
     d: [sq(3.5, 2.75, 10.5, 18.5, 3, SQ), line([7.25, 5.75], [10.25, 5.75]), arc(12.5, 12, 5.5, -36, 36).d, arc(12.5, 12, 8.75, -36, 36).d],
   },
 
-  // ── Billetes y monedas ──
+  // ── Bills and coins ──
   'banknote': {
     tags: ['billete', 'efectivo', 'dinero', 'cash', 'bill'],
     d: [sq(2.5, 5.5, 19, 13, 3.25, SQ), circ(12, 12, 2.1), dot(6.2, 12), dot(17.8, 12)],
@@ -656,7 +660,7 @@ const icons = {
     tags: ['billetes', 'efectivo', 'dinero', 'money', 'cash'],
     d: [sq(2.5, 4, 19, 12.5, 3.25, SQ), circ(12, 10.25, 2.1), dot(6.2, 10.25), dot(17.8, 10.25), line([4.75, 19.5], [19.25, 19.5])],
   },
-  // La bolsa: un círculo con la boca atada; el signo, centrado entre la boca y el fondo
+  // The bag: a circle with a tied mouth; the sign, centered between the mouth and the bottom
   'money-bag': (() => {
     const c = [12, 14.25];
     const r = 7;
@@ -678,7 +682,7 @@ const icons = {
       ],
     };
   })(),
-  // La moneda de atrás completa; la de enfrente, con el signo, va encima
+  // The back coin is complete; the front one, with the sign, goes on top
   'coins': (() => {
     const front = circ(9.5, 14.5, 6.75);
     const sign = dollar(9.5, 14.5, 5.5, 3.75, 1.1);
@@ -721,7 +725,7 @@ const icons = {
     ],
   },
 
-  // ── Signos de moneda ──
+  // ── Currency signs ──
   'dollar': { tags: ['dólar', 'peso', 'signo de pesos', 'dinero', 'dollar sign', 'money'], d: dollar(12, 12, 14, 9.25, 2.25) },
   'currency-dollar': { tags: ['dólar', 'peso', 'moneda', 'usd', 'mxn', 'dollar'], d: [circ(12, 12, 9), ...dollar(12, 12, 9, 6, 1.5)] },
   'currency-euro': { tags: ['euro', 'moneda', 'eur', 'divisa', 'currency'], d: [circ(12, 12, 9), arc(13.25, 12, 4.75, 45, 315).d, line([7, 10.5], [12, 10.5]), line([7, 13.5], [12, 13.5])] },
@@ -729,13 +733,13 @@ const icons = {
     tags: ['libra', 'libra esterlina', 'moneda', 'gbp', 'pound'],
     d: [circ(12, 12, 9), 'M15 8.75A2.85 2.85 0 0 0 9.85 9.6V14.25C9.85 15.35 9.35 16.2 8.5 16.75H15.75', line([8.25, 12.25], [13, 12.25])],
   },
-  // ¥: la V a 3 de la moneda y de la primera barra
+  // ¥: the V 3 from the coin and from the first bar
   'currency-yen': {
     tags: ['yen', 'yuan', 'moneda', 'jpy', 'currency'],
     d: [circ(12, 12, 9), line([9.25, 7], [12, 10.25], [14.75, 7]), line([12, 10.25], [12, 18]), line([8.75, 13.25], [15.25, 13.25]), line([8.75, 16.25], [15.25, 16.25])],
   },
-  // ₿: la B más baja para que sus cuatro astas midan 2 (las de 1.75 eran fragmentos) y queden a 3
-  // entre sí y de la moneda
+  // ₿: the B sits lower so its four stems measure 2 (the 1.75 ones were fragments) and stay 3 from
+  // each other and from the coin
   'currency-bitcoin': {
     tags: ['bitcoin', 'cripto', 'criptomoneda', 'btc', 'crypto'],
     d: [
@@ -747,7 +751,7 @@ const icons = {
       line([13.5, 15.75], [13.5, 17.75]),
     ],
   },
-  // $ arriba a la izquierda, € abajo a la derecha y las dos flechas que los cambian
+  // $ at the top left, € at the bottom right, and the two arrows that exchange them
   'currency-exchange': {
     tags: ['tipo de cambio', 'divisas', 'cambiar moneda', 'exchange', 'forex'],
     d: [
@@ -760,7 +764,7 @@ const icons = {
     ],
   },
 
-  // ── Banco, ahorro e inversión ──
+  // ── Bank, savings and investment ──
   'bank': {
     tags: ['banco', 'institución', 'finanzas', 'bank', 'finance'],
     d: [
@@ -798,7 +802,7 @@ const icons = {
       ];
     })(),
   },
-  // La caja fuerte: el volante de tres rayos (con cuatro se leía como una X) y la manija a 3.5
+  // The safe: the three-spoke wheel (with four it read as an X) and the handle at 3.5
   'safe-box': {
     tags: ['caja fuerte', 'bóveda', 'resguardo', 'safe', 'vault'],
     d: [
@@ -810,7 +814,7 @@ const icons = {
       line([17.25, 18.75], [17.25, 20.75]),
     ],
   },
-  // El cajero: la ranura y el billete que sale de ella, encima del frente (el motor lo despeja)
+  // The ATM: the slot and the bill coming out of it, on top of the front (the engine clears it)
   'atm': (() => {
     const bill = roundline(
       [
@@ -834,7 +838,7 @@ const icons = {
     return {
       tags: ['cajero automático', 'retiro', 'efectivo', 'atm', 'cash machine'],
       d: [sq(2.75, 2.75, 18.5, 7.5, 2.5, SQ), line([5.75, 6.25], [18.25, 6.25])],
-      // Relleno, el billete se cierra por la ranura
+      // Filled, the bill closes along the slot
       badge: own([bill, ...sign], knock, { solid: [`${bill}Z`], cut: sign }),
     };
   })(),
@@ -843,7 +847,7 @@ const icons = {
     d: [sq(2.5, 5.5, 19, 13, 3.25, SQ), line([6, 9.5], [12.5, 9.5]), line([6, 12.75], [9.25, 12.75]), signature(11.5, 14.75, 0.8)],
   },
   'mortgage': { tags: ['hipoteca', 'crédito', 'casa', 'vivienda', 'mortgage', 'home loan'], d: [ROOF, WALLS, ...dollar(12, 12.75, 7, 4.75, 1.5)] },
-  // Inversión: el asta de arriba del signo es el tallo que echa dos hojas
+  // Investment: the sign's upper stem is the stalk that sprouts two leaves
   'investment': {
     tags: ['inversión', 'crecimiento', 'rendimiento', 'invest', 'growth'],
     d: [...dollar(12, 16.5, 7, 4.75, 1.5, 4.75), leaf([12, 8.25], [17.25, 4.25], 4), leaf([6.75, 4.25], [12, 8.25], 4)],
@@ -865,7 +869,7 @@ const icons = {
     ].flatMap(([x, t, b0, b1, bt]) => [sq(x - 1.75, b0, 3.5, b1 - b0, 1.1), line([x, t], [x, b0]), line([x, b1], [x, bt])]),
   },
 
-  // ── Pagos ──
+  // ── Payments ──
   'recurring-payment': {
     tags: ['pago recurrente', 'suscripción', 'cobro automático', 'subscription', 'recurring'],
     d: (() => {
@@ -892,7 +896,7 @@ const icons = {
     tags: ['propina', 'bote', 'frasco', 'tip', 'tip jar'],
     d: [sq(5, 7.75, 14, 13.5, 3.75, SQ), line([6.75, 4.75], [17.25, 4.75]), ...dollar(12, 14.5, 5.75, 4, 1)],
   },
-  // Donativo: la mano abierta (con el puño de manga de `deal`) que ofrece un corazón
+  // Donation: the open hand (with the shirt cuff from `deal`) offering a heart
   'donation': {
     tags: ['donativo', 'donación', 'causa', 'donate', 'charity'],
     d: [
@@ -906,8 +910,8 @@ const icons = {
     d: [circ(12, 12, 9), star(12, 12.35, 5.25, 2.3, 0.75)],
   },
 
-  // ── Punto de venta ──
-  // El cajón más alto: la jaladera queda a 3 de su borde y del fondo
+  // ── Point of sale ──
+  // The tallest drawer: the handle sits 3 from its edge and from the bottom
   'cash-register': {
     tags: ['caja registradora', 'punto de venta', 'caja', 'cash register', 'checkout'],
     d: [
@@ -919,8 +923,9 @@ const icons = {
       ...[6.75, 10.25, 13.75, 17.25].map((x) => dot(x, 12.25, 0.3)),
     ],
   },
-  // La terminal: el vertical entero (14.5 × 18.5) con el ticket arriba. Las teclas, puntos de r 0.3
-  // a 3.6 entre sí (1.5 de aire) y a 1.85 del borde; la pantalla, tan ancha como el teclado.
+  // The terminal: the full portrait container (14.5 × 18.5) with the ticket on top. The keys are
+  // dots of r 0.3, 3.6 apart (1.5 of clearance) and 1.85 from the edge; the screen is as wide as
+  // the keypad.
   'payment-terminal': {
     tags: ['terminal', 'punto de venta', 'datáfono', 'pos', 'card reader'],
     d: [
@@ -938,7 +943,7 @@ const icons = {
       ...[8.4, 12, 15.6].flatMap((x) => [dot(x, 14.3, 0.3), dot(x, 17.9, 0.3)]),
     ],
   },
-  // La calculadora: las cuatro operaciones, a 4 entre sí y a 3.25 del borde
+  // The calculator: the four operations, 4 apart and 3.25 from the edge
   'calculator': {
     tags: ['calculadora', 'cálculo', 'cuentas', 'calculator', 'math'],
     d: [
@@ -950,7 +955,7 @@ const icons = {
       line([14, 17.25], [17.5, 17.25]),
     ],
   },
-  // Código de barras: las orillas más largas y huecos de 3 y 4.5, simétricos
+  // Barcode: longer outer bars and symmetrical gaps of 3 and 4.5
   'barcode': {
     tags: ['código de barras', 'producto', 'sku', 'barcode', 'upc'],
     d: [3, 6, 10.5, 13.5, 18, 21].map((x, i) => line([x, 4.5], [x, i === 0 || i === 5 ? 19.5 : 16.5])),
@@ -993,7 +998,7 @@ const icons = {
       ...[7.25, 10.25, 13.75, 16.75].map((x) => line([x, 7.75], [x, 16.25])),
     ],
   },
-  // QR: tres cuadros guía con su punto, el cuadro de alineación y un módulo suelto
+  // QR: three finder squares with their dots, the alignment square and a loose module
   'qr-code': {
     tags: ['código QR', 'escanear', 'pagar con QR', 'qr code', 'scan'],
     d: [
@@ -1049,7 +1054,7 @@ const icons = {
     ],
   },
 
-  // ── Regalo ──
+  // ── Gift ──
   'gift': {
     tags: ['regalo', 'obsequio', 'sorpresa', 'gift', 'present'],
     d: [
@@ -1064,15 +1069,15 @@ const icons = {
       ),
       sq(3, 7.75, 18, 4.5, 1.75),
       line([12, 7.75], [12, 21]),
-      // El moño: los mismos lazos que la tarjeta de regalo
+      // The bow: the same loops as the gift card
       leaf([12, 7.75], [8.25, 4.5], 2.75),
       leaf([15.75, 4.5], [12, 7.75], 2.75),
     ],
   },
 
-  // ── Paquetes y envío ──
+  // ── Packages and shipping ──
   'parcel': { tags: ['paquete', 'caja', 'envío', 'pedido', 'parcel', 'package'], d: parcel() },
-  // Las solapas se abren desde el tramo recto de las aristas de la boca (tocan el borde)
+  // The flaps open from the straight run of the opening's edges (they touch the border)
   'parcel-open': {
     tags: ['paquete abierto', 'desempacar', 'recibido', 'unbox', 'open package'],
     d: (() => {
@@ -1080,7 +1085,7 @@ const icons = {
       const lift = (a, b, dx) => roundline([a, add(a, [dx, -4]), add(b, [dx, -4]), b], [0, 1, 1, 0]);
       return [
         roundline([P.L, P.Lb, P.B, P.Rb, P.R], [0, 1.4, 1.4, 1.4, 0]),
-        // Las esquinas de los costados casi vivas: ahí nacen las paredes
+        // The side corners almost sharp: that's where the walls start
         roundpoly([P.L, P.T, P.R, P.C], [0.25, 1.1, 0.25, 1.1]),
         line(P.C, toward(P.B, P.C, 0.4)),
         lift(toward(P.L, P.T, 2.3), toward(P.T, P.L, 1.75), -1.5),
@@ -1139,8 +1144,9 @@ const icons = {
     })(),
   },
 
-  // ── Peso y medida ──
-  // La aguja va del centro a la carátula (la toca): un tramo suelto adentro quedaba a 1.5
+  // ── Weight and measure ──
+  // The needle runs from the center to the dial (it touches it): a floating segment inside ended up
+  // only 1.5 away
   'weighing-scale': {
     tags: ['báscula', 'peso', 'pesar', 'scale', 'weight'],
     d: [sq(3.75, 7.75, 16.5, 13.5, 3.5, SQ), line([5.75, 4.25], [18.25, 4.25]), line([12, 4.25], [12, 7.75]), circ(12, 14.5, 3.75), line([12, 14.5], polar(12, 14.5, 3.75, -55))],
@@ -1173,7 +1179,7 @@ const icons = {
         [1.2, 1.2, 1.2, 1.4, 1.2],
       ),
       line([3.6, 9.5], [20.4, 9.5]),
-      // Facetas: la corona arriba y el pabellón, que se detiene antes de la punta
+      // Facets: the crown on top and the pavilion, which stops short of the point
       line([9.75, 4.25], [8.5, 9.5], [12, 16.75], [15.5, 9.5], [14.25, 4.25]),
     ],
   },
@@ -1208,7 +1214,7 @@ const icons = {
     ],
   },
 
-  // ── Subasta y sello ──
+  // ── Auction and stamp ──
   'gavel': {
     tags: ['subasta', 'martillo', 'puja', 'auction', 'gavel', 'bid'],
     d: [rrect([14.5, 8], [1, 1], 4.75, 2.4, 1.1), line(add([14.5, 8], mul(unit([-1, 1]), 2.4)), add([14.5, 8], mul(unit([-1, 1]), 13))), sq(12.75, 17.5, 8.5, 3.25, 1.25)],
@@ -1218,8 +1224,8 @@ const icons = {
     d: [circ(12, 5.25, 2.5), line([10.5, 7.25], [10, 11.75]), line([13.5, 7.25], [14, 11.75]), sq(4.25, 11.75, 15.5, 4.75, 1.75), line([4.25, 20], [19.75, 20])],
   },
 
-  // ── Inventario y almacén ──
-  // El estante: dos repisas con tres cajas (con cuatro se empastaba)
+  // ── Inventory and warehouse ──
+  // The shelving unit: two shelves with three boxes (with four it clogged up)
   'inventory': {
     tags: ['inventario', 'estantes', 'existencias', 'stock', 'inventory', 'shelves'],
     d: [
@@ -1318,8 +1324,8 @@ const icons = {
     ],
   },
 
-  // ── Moda ──
-  // El gancho baja directo al vértice del triángulo: un solo trazo, sin tramo suelto
+  // ── Fashion ──
+  // The hook drops straight to the triangle's apex: a single stroke, with no loose segment
   'hanger': (() => {
     const apex = [12, 10];
     const half = Math.atan(9.25 / 7.75);
@@ -1361,22 +1367,22 @@ const icons = {
     ],
   },
 
-  // ── Cobertura (ronda 2) ──
+  // ── Coverage (round 2) ──
   'currency-rupee': {
     tags: ['rupia', 'rupia india', 'moneda', 'inr', 'divisa', 'rupee', 'currency'],
-    // ₹ con la altura del yen: dos barras a 3, la panza que nace de la de arriba y la pierna en
-    // diagonal.
+    // ₹ at the height of the yen: two bars 3 apart, the bowl growing out of the top one and the leg
+    // on a diagonal.
     d: [circ(12, 12, 9), line([8.75, 7], [15.25, 7]), line([8.75, 10], [15.25, 10]), 'M11 7A3 3 0 0 1 11 13H8.75L14.25 17.5'],
   },
 };
 
-// ── Relleno (DESIGN.md › Relleno) ─────────────────────────────────────────────────────────────
-// Por índice de d: `solid` se rellena y conserva su trazo, `cut` se cala al ancho del trazo,
-// `lines` sigue siendo línea con 1.5 de aire y `wire` sigue siendo línea pegada al relleno (asas,
-// patas, mechas, astas, repisas). Un número es un trazo de d; un texto, un trazo solo del relleno
-// (la boca de la bolsa, el ojal hueco, el cuerpo de la casa sin el alero). En `solid` solo van
-// figuras cerradas: `z(i)` cierra un cuerpo abierto del contorno (el de la tienda, la caja del
-// regalo, las cajas del estante) por un borde que ya es sólido o calado.
+// ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
+// By index into d: `solid` is filled and keeps its stroke, `cut` is knocked out at the stroke
+// width, `lines` stays a line with 1.5 of clearance and `wire` stays a line attached to the fill
+// (handles, legs, wicks, stems, shelves). A number is a stroke of d; a string, a fill-only stroke
+// (the bag's mouth, the hollow eyelet, the house body without the eave). Only closed shapes go in
+// `solid`: `z(i)` closes an open body of the outline (the store's, the gift box, the boxes on the
+// shelf) along an edge that is already solid or knocked out.
 const HOLE = dot(...T.hole, 0.3);
 const z = (i) => ({ z: i });
 const FILL = {
@@ -1394,9 +1400,10 @@ const FILL = {
   'bag-heart': { solid: [0], lines: [1], cut: [2] },
   'bag-return': { solid: [0], lines: [1], cut: [2, 3] },
   basket: { solid: [0], lines: [1], cut: [2, 3, 4] },
-  // La tienda: el toldo y el cuerpo, que se cierra arriba (a 3 de las ondas, como en el contorno)
+  // The store: the awning and the body, which closes at the top (3 from the scallops, as in the
+  // outline)
   store: { solid: [0, z(1)], cut: [2] },
-  // La base de la pantalla y los postes del puesto siguen siendo línea
+  // The screen's base and the stall's posts stay lines
   'store-online': { solid: [0], cut: [1, 2], lines: [3] },
   'market-stall': { solid: [0], wire: [1, 2, 3] },
   receipt: { solid: [0], cut: [1, 2, 3] },
@@ -1406,12 +1413,13 @@ const FILL = {
   'invoice-paid': { solid: [0], cut: [1, 2, 3] },
   'invoice-due': { solid: [0], cut: [1, 2, 3] },
   'price-quote': { solid: [0], cut: [1, 2, 3] },
-  // La orden de compra, como el portapapeles de Archivos y Edición: el tablero se cierra bajo la
-  // pinza y la mitad de abajo de la pinza se separa de él con un canal calado (su mismo contorno)
+  // The purchase order, like the clipboard in `archivos` and `edicion`: the board closes under the
+  // clip and the lower half of the clip is separated from it by a knocked-out channel (its own
+  // outline)
   'purchase-order': { solid: [z(0), 1], cut: [sqOpen(9.75, 2.75, 4.5, 3.25, 1.25, {}, [14.25, 4.25], 1, [9.75, 4.25], 3), 2, 3, 4, 5, 6, 7] },
   'contract-signed': { solid: [0], cut: [1, 2, 3] },
   deal: { solid: [0, 1] },
-  // El ojal relleno es un hueco: un punto calado
+  // The filled eyelet is a hole: a knocked-out dot
   'price-tag': { solid: [0], cut: [HOLE] },
   'price-tag-percent': { solid: [0], cut: [HOLE, dot(...T.toWorld([13.5, 0]), 0.3), 3] },
   'price-tag-dollar': { solid: [0], cut: [HOLE, 2, 3, 4] },
@@ -1429,10 +1437,10 @@ const FILL = {
   cards: { solid: [0] },
   'loyalty-card': { solid: [0], cut: [1] },
   'gift-card': { solid: [0], cut: [1, 2, 3, 4, 5] },
-  // Las ondas siguen siendo línea, con aire del teléfono
+  // The waves stay lines, with clearance from the phone
   'mobile-payment': { solid: [0], cut: [1], lines: [2, 3] },
   banknote: { solid: [0], cut: [1, 2, 3] },
-  // El billete de atrás es una línea
+  // The back bill is a line
   banknotes: { solid: [0], cut: [1, 2, 3], lines: [4] },
   coins: { solid: [0] },
   'currency-dollar': { solid: [0], cut: [1, 2, 3] },
@@ -1441,51 +1449,51 @@ const FILL = {
   'currency-yen': { solid: [0], cut: [1, 2, 3, 4] },
   'currency-bitcoin': { solid: [0], cut: [1, 2, 3, 4, 5] },
   'currency-rupee': { solid: [0], cut: [1, 2, 3] },
-  // El banco: el frontón relleno; las columnas y la base siguen siendo línea, con su aire
+  // The bank: the pediment filled; the columns and the base stay lines, with their clearance
   bank: { solid: [0], lines: [1, 2, 3, 4] },
-  // La alcancía: la oreja se cierra contra el lomo; las patas, pegadas al cuerpo
+  // The piggy bank: the ear closes against the back; the legs, attached to the body
   'piggy-bank': { solid: [0, z(1), 3], cut: [2], wire: [4, 5] },
   'safe-box': { solid: [0], cut: [1, 2, 3, 4, 5], wire: [6, 7] },
   atm: { solid: [0], cut: [1] },
   cheque: { solid: [0], cut: [1, 2, 3] },
-  // La casa: el cuerpo entero (cubre los muros); el alero sigue siendo línea, pegada a él
+  // The house: the whole body (covering the walls); the eave stays a line, attached to it
   mortgage: { solid: [HOUSE], wire: [0], cut: [2, 3, 4] },
-  // Las velas: los cuerpos rellenos y las mechas, pegadas a ellos
+  // The candles: the bodies filled and the wicks attached to them
   stocks: { solid: [0, 3, 6], wire: [1, 2, 4, 5, 7, 8] },
   'secure-payment': { solid: [0], cut: [1, 2, 3] },
   'tip-jar': { solid: [0], lines: [1], cut: [2, 3, 4] },
-  // La mano se cierra por el canto del puño
+  // The hand closes along the edge of the cuff
   donation: { solid: [0, 1, z(2)] },
   'reward-points': { solid: [0], cut: [1] },
   'cash-register': { solid: [0, 1], wire: [2], cut: [3, 4, 5, 6, 7, 8] },
-  // La terminal: el ticket se cierra por el borde de arriba
+  // The terminal: the ticket closes along the top edge
   'payment-terminal': { solid: [0, z(1)], cut: [2, 3, 4, 5, 6, 7, 8] },
   calculator: { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7] },
   'qr-code': { solid: [0, 1, 2, 3, 7], cut: [4, 5, 6] },
   'qr-scan': { solid: [0, 1, 2, 3], lines: [4, 5, 6, 7] },
-  // El regalo: la caja se cierra bajo la tapa y se separa de ella con su borde calado
+  // The gift: the box closes under the lid and is separated from it by its knocked-out edge
   gift: { solid: [z(0), 1, 3, 4], cut: [2, 'M4.5 12.25H19.5'] },
   parcel: { solid: [0], cut: [1, 2, 3, 4] },
   'parcel-check': { solid: [0], cut: [1, 2] },
   'parcel-return': { solid: [0], cut: [1, 2] },
   'delivery-time': { solid: [0], cut: [1, 2] },
-  // El camión: la cabina se cierra contra la caja y se separa de ella con su arista calada; las
-  // líneas de velocidad siguen siendo línea
+  // The truck: the cab closes against the cargo box and is separated from it by its knocked-out
+  // edge; the speed lines stay lines
   truck: { solid: [0, z(1), 2, 3], cut: ['M14.5 7.5V14'] },
   'truck-fast': { solid: [0, z(1), 2, 3], cut: ['M16 7.5V14'], lines: [4, 5] },
   'home-delivery': { solid: [HOUSE], wire: [0], cut: [2, 3, 4] },
   'pickup-point': { solid: [0], cut: [1, 2, 3] },
-  // La báscula: el plato y su vástago siguen siendo línea, pegados al cuerpo
+  // The scale: the plate and its stem stay lines, attached to the body
   'weighing-scale': { solid: [0], wire: [1, 2], cut: [3, 4] },
   gem: { solid: [0], cut: [1, 2] },
   crown: { solid: [0, 2, 3, 4], cut: [1] },
-  // La medalla: los listones siguen siendo línea, pegados a ella
+  // The medal: the ribbons stay lines, attached to it
   medal: { solid: [0], cut: [1], wire: [2, 3] },
   gavel: { solid: [0, 2], wire: [1] },
-  // El sello: el cuello se rellena entero (cubre sus dos líneas); la base sigue siendo línea
+  // The stamp: the neck is filled whole (covering its two lines); the base stays a line
   'rubber-stamp': { solid: [0, 'M10.5 7.25L10 11.75H14L13.5 7.25Z', 3], lines: [4] },
-  // El estante y la tarima: las cajas se cierran sobre su repisa; los postes, las repisas y las
-  // tablas siguen siendo línea, pegadas a ellas
+  // The shelving unit and the pallet: the boxes close over their shelf; the posts, the shelves and
+  // the boards stay lines, attached to them
   inventory: { solid: [z(4), z(5), z(6)], wire: [0, 1, 2, 3] },
   pallet: { solid: [z(0), z(1)], wire: [2, 3, 4, 5, 6] },
   shirt: { solid: [0] },
@@ -1501,38 +1509,38 @@ for (const [name, spec] of Object.entries(FILL)) {
   for (const k of ['cut', 'lines', 'wire']) if (spec[k]) icons[name].fill[k] = pick(spec[k]);
 }
 icons.cart.fill = cartFill(icons.cart.d);
-// La bolsa de dinero: el cuello se cierra por la boca, que se cala para que se lea el nudo
+// The money bag: the neck closes along the mouth, which is knocked out so the knot reads
 {
   const d = icons['money-bag'].d;
   const yo = Number(d[0].match(/^M[\d.]+ ([\d.]+)/)[1]);
   icons['money-bag'].fill = { solid: [d[0], shut(d[1])], cut: [`M9.6 ${N(yo)}H14.4`, d[2], d[3], d[4]] };
 }
-// Las etiquetas: la de atrás sigue siendo línea
+// The tags: the back one stays a line
 {
   const d = icons['price-tags'].d;
   const hole = d[1].match(/^M([\d.]+) ([\d.]+)A([\d.]+)/);
   icons['price-tags'].fill = { solid: [d[0]], cut: [dot(Number(hole[1]) + Number(hole[3]), Number(hole[2]), 0.3)], lines: [d[2]] };
 }
-// Los lingotes se separan con la arista de abajo del de arriba calada
+// The gold bars are separated by knocking out the bottom edge of the upper one
 icons['gold-bars'].fill = { solid: icons['gold-bars'].d, cut: ['M8.75 13.25H15.25'] };
-// El paquete abierto: las caras de enfrente y las solapas rellenas (cerradas por las aristas de la
-// boca); la boca y la arista, caladas
+// The open package: the front faces and the flaps filled (closed along the edges of the opening);
+// the opening and the edge, knocked out
 {
   const d = icons['parcel-open'].d;
   icons['parcel-open'].fill = { solid: [shut(d[0]), d[1], shut(d[3]), shut(d[4])], cut: [d[1], d[2]] };
 }
-// La inversión: las hojas rellenas; el signo sigue siendo línea, pegada a ellas
+// Investment: the leaves filled; the sign stays a line, attached to them
 {
   const d = icons.investment.d;
   icons.investment.fill = { solid: [d[3], d[4]], wire: [d[0], d[1], d[2]] };
 }
-// La balanza: los platos rellenos; el poste, la base, la cruz y los cordeles siguen siendo línea
+// The balance: the pans filled; the post, the base, the beam and the strings stay lines
 {
   const d = icons['balance-scale'].d;
   icons['balance-scale'].fill = { solid: [d[4], d[6]], wire: [d[0], d[1], d[2], d[3], d[5]] };
 }
-// El almacén: el cuerpo entero (cubre los muros); el alero sigue siendo línea, pegada a él; la
-// cortina calada
+// The warehouse: the whole body (covering the walls); the eave stays a line, attached to it; the
+// rolling door knocked out
 {
   const d = icons.warehouse.d;
   const body = roundpoly(
@@ -1547,12 +1555,12 @@ icons['gold-bars'].fill = { solid: icons['gold-bars'].d, cut: ['M8.75 13.25H15.2
   );
   icons.warehouse.fill = { solid: [body], wire: [d[0]], cut: [d[2], d[3], d[4]] };
 }
-// El gancho: el triángulo relleno y el gancho, que sigue siendo línea pegada a él
+// The hanger: the triangle filled and the hook, which stays a line attached to it
 icons.hanger.fill = { solid: [icons.hanger.d[0]], wire: [icons.hanger.d[1]] };
-// Solo líneas abiertas: su relleno es el mismo contorno
+// Only open lines: their fill is the outline itself
 for (const name of ['contactless', 'dollar', 'currency-exchange', 'revenue-up', 'revenue-down', 'recurring-payment', 'refund', 'barcode', 'barcode-scan']) icons[name].fill = false;
 
-// ── Piezas con nombre (salen como data-part) ──────────────────────────────────────────────────
+// ── Named parts (emitted as data-part) ────────────────────────────────────────────────────────
 const PARTS = {
   cart: { basket: [0], handle: [1], wheels: [2, 3] },
   'cart-full': { basket: [0], handle: [1], wheels: [2, 3], items: [4, 5] },
@@ -1631,24 +1639,24 @@ const PARTS = {
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
-// ── Variantes ─────────────────────────────────────────────────────────────────────────────────
-// Ya vienen encerrados en un círculo o en un marco: no se vuelven a encerrar
+// ── Variants ──────────────────────────────────────────────────────────────────────────────────
+// Already enclosed in a circle or a frame: they aren't enclosed again
 for (const name of ['currency-dollar', 'currency-euro', 'currency-pound', 'currency-yen', 'currency-bitcoin', 'currency-rupee', 'percent-circle', 'reward-points', 'discount', 'refund', 'recurring-payment'])
   icons[name].variants = { circle: false };
 for (const name of ['barcode-scan', 'qr-scan', 'calculator']) icons[name].variants = { square: false };
-// Con insignia o con una pieza encima (como en Archivos): el encierro relleno pierde la pieza de
-// encima, al 58 % el signo deja de leerse y el tache la atravesaría sin aire
+// With a badge or a piece on top (as in `archivos`): the filled enclosure loses the piece on top,
+// at 58 % the sign stops reading, and the slash would cross it with no clearance
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, circle: false, square: false, slash: false };
 
-// ── Espejo: lo que avanza, regresa o emite hacia un lado ──────────────────────────────────────
+// ── Mirroring: whatever moves forward, goes back or emits toward one side ─────────────────────
 for (const name of ['truck', 'truck-fast', 'contactless', 'card-contactless', 'mobile-payment', 'bag-return', 'parcel-return']) icons[name].mirror = true;
 
-// ── Niveles: las ondas se encienden de adentro hacia afuera (value 0–1) ───────────────────────
+// ── Levels: the waves light up from the inside out (value 0–1) ────────────────────────────────
 icons.contactless.levels = [[0], [1], [2], [3]];
 icons['card-contactless'].levels = [[3], [4]];
 icons['mobile-payment'].levels = [[2], [3]];
 
-// ── Movimiento: el gesto propio de cada ícono ─────────────────────────────────────────────────
+// ── Motion: each icon's own gesture ───────────────────────────────────────────────────────────
 icons.cart.motion = { effect: 'slide', vector: [2, 0] };
 icons['cart-arrow-down'].motion = { effect: 'bounce', parts: ['arrow'], vector: [0, 1.25] };
 icons['bag-heart'].motion = { effect: 'beat', parts: ['heart'], origin: [12, 14.5] };
@@ -1677,34 +1685,35 @@ icons['rubber-stamp'].motion = { effect: 'bounce', parts: ['handle', 'pad'], vec
 icons.hanger.motion = { effect: 'wiggle', origin: [12, 4] };
 icons.contactless.motion = { effect: 'beat', origin: [3.75, 12] };
 
-// ── 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta ──────────────
-// El motor ajusta al pixel cada ícono con un solo ajuste para todos sus trazos y cambia solas las
-// insignias estándar a su versión de pixel (las tarjetas con insignia, el paquete entregado y el
-// reloj de entrega ya no necesitan dibujo propio). Aquí van solo los dibujos que aun así no se
-// leen. A un `small` no lo ajusta el motor, ni le cambia la insignia: se ajusta aquí y, si la
-// lleva, va la de pixel del motor (`badge(kind, { size: 16 })`). A 16 px un pixel mide 1.5 del
-// lienzo: sus centros caen en 0.75 + 1.5k; los signos nuevos van de centro a centro de pixel (sus
-// diagonales a 45°). g(columna, fila) es el centro de un pixel.
+// ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──────────────
+// The engine snaps each icon to the pixel grid with a single adjustment shared by all its strokes
+// and swaps the standard badges for their pixel versions on its own (the cards with a badge, the
+// delivered package and the delivery clock no longer need a custom drawing). Only the drawings that
+// still don't read go here. The engine neither snaps a `small` nor swaps its badge: it is snapped
+// here and, if it carries a badge, it gets the engine's pixel badge (`badge(kind, { size: 16 })`).
+// At 16 px a pixel measures 1.5 canvas units: pixel centers fall at 0.75 + 1.5k; new glyphs run
+// from pixel center to pixel center (their diagonals at 45°). g(column, row) is the center of a
+// pixel.
 const px = (k) => 0.75 + 1.5 * k;
 const g = (c, r) => [px(c), px(r)];
 const pl = (...pts) => line(...pts.map(([c, r]) => g(c, r)));
 const sharp = (list) => list.map((d) => snap(d));
-/** El signo de pesos de pixel: la S de 3 × 5 y su asta de un pixel arriba y abajo. */
+/** The pixel peso sign: the 3 × 5 S and its one-pixel stem above and below. */
 const dollar16 = (c, r) => [pl([c + 2, r + 1], [c, r + 1], [c, r + 3], [c + 2, r + 3], [c + 2, r + 5], [c, r + 5]), pl([c + 1, r], [c + 1, r + 1]), pl([c + 1, r + 5], [c + 1, r + 6])];
 
-// La factura a 16 px: el documento ajustado (columnas 3–12, filas 1–14) y el signo de pixel arriba
-// a la izquierda, fuera del área de la insignia.
+// The invoice at 16 px: the snapped document (columns 3–12, rows 1–14) and the pixel sign at the
+// top left, outside the badge area.
 {
   const doc = snap(icons['invoice-plus'].d[0]);
   const sign = dollar16(5, 3);
   for (const [name, kind] of [['invoice-plus', 'plus'], ['invoice-paid', 'check'], ['invoice-due', 'clock']])
     icons[name].small = { d: [doc, ...sign], fill: { solid: [doc], cut: sign }, badge: badge(kind, { size: 16 }) };
 }
-// La devolución del paquete: su insignia es propia (la flecha a la izquierda), y el motor solo
-// cambia solas las estándar; ajustada al pixel conservaba su círculo de 5.7 px y se empastaba. Como
-// las del motor, a 16 px va sin círculo, con la flecha de pixel centrada en el de la insignia
-// (11, 11), y despeja el mismo círculo que a 24 más la flecha con su aire. La base lleva el mismo
-// ajuste compartido que le daría el motor.
+// The package return: its badge is custom (the left arrow), and the engine only swaps the standard
+// ones on its own; snapped to the pixel grid, it kept its 5.7 px circle and clogged up. Like the
+// engine's, at 16 px it drops the circle, with the pixel arrow centered on the badge's pixel
+// (11, 11), and clears the same circle as at 24 px plus the arrow with its clearance. The base gets
+// the same shared adjustment the engine would give it.
 {
   const icon = icons['parcel-return'];
   const at = (dx, dy) => g(11 + dx, 11 + dy);
@@ -1716,18 +1725,18 @@ const dollar16 = (c, r) => [pl([c + 2, r + 1], [c, r + 1], [c, r + 3], [c + 2, r
     badge: { d: arrow, knock: `${circ(...BC, 4.25)}${arrow.join('')}` },
   };
 }
-// El paquete: ajustadas, la cinta y las aristas eran una trama gris. A 16 px va la caja de pixel
-// (aristas 2:1 por centros de pixel, columnas 1–13 y filas 2–13) con la cinta de una sola línea,
-// que cruza la tapa y dobla dos pixeles por la cara izquierda.
+// The package: snapped, the tape and the edges became a gray mesh. At 16 px it uses the pixel box
+// (2:1 edges through pixel centers, columns 1–13 and rows 2–13) with a single-line tape that
+// crosses the lid and folds two pixels down the left face.
 {
   const P = { T: g(7, 2), R: g(13, 5), C: g(7, 8), L: g(1, 5), Rb: g(13, 10), B: g(7, 13), Lb: g(1, 10) };
   const body = roundpoly([P.T, P.R, P.Rb, P.B, P.Lb, P.L], 1);
   const d = [body, line(P.L, P.C, P.R), line(P.C, P.B), pl([9, 3], [3, 6], [3, 8])];
   icons.parcel.small = { d, fill: { solid: [body], cut: d.slice(1) } };
 }
-// La terminal: los puntos del teclado, llevados a 2 × 2 pixeles, se juntaban en un bloque. A 16 px,
-// teclas de un pixel con uno de aire (3 × 2), la pantalla de 7 × 3 y el ticket de 5; todo centrado
-// en la columna 8 (con un número impar de columnas no cabe centrado en el lienzo).
+// The terminal: the keypad dots, turned into 2 × 2 pixels, merged into a block. At 16 px, one-pixel
+// keys with one pixel of clearance (3 × 2), a 7 × 3 screen and a 5-pixel ticket; everything
+// centered on column 8 (with an odd number of columns it can't be centered on the canvas).
 {
   const body = sq(px(3), px(4), 15, 15, 2.25, SQ);
   const ticket = roundline([g(6, 4), g(6, 2), g(10, 2), g(10, 4)], [0, 1.1, 1.1, 0]);
@@ -1736,8 +1745,8 @@ const dollar16 = (c, r) => [pl([c + 2, r + 1], [c, r + 1], [c, r + 3], [c + 2, r
   const d = [body, ticket, screen, ...keys];
   icons['payment-terminal'].small = { d, fill: { solid: [body, shut(ticket)], cut: [screen, ...keys] } };
 }
-// La caja registradora: las teclas, igual, se juntaban en una barra. A 16 px, tres teclas de 2 × 1
-// con un pixel de aire, el cajón con su jaladera y la pantalla con su poste.
+// The cash register: the keys, likewise, merged into a bar. At 16 px, three 2 × 1 keys with a pixel
+// of clearance, the drawer with its handle and the screen with its post.
 {
   const body = sq(px(2), px(6), 16.5, 12, 2.25, SQ);
   const screen = sq(px(3), px(1), 9, 3, 0.75);
@@ -1747,19 +1756,19 @@ const dollar16 = (c, r) => [pl([c + 2, r + 1], [c, r + 1], [c, r + 3], [c + 2, r
   icons['cash-register'].small = { d, fill: { solid: [body, screen], wire: [post], cut: d.slice(3) } };
 }
 
-// El recibo de impuestos: el % de aros y diagonal era una mancha; a 16 px, dos puntos de un pixel y
-// la diagonal de 6 pixeles, con un pixel de aire.
+// The tax receipt: the % made of rings and a diagonal was a smudge; at 16 px, two one-pixel dots
+// and a 6-pixel diagonal, with a pixel of clearance.
 {
   const d = [snap(icons['receipt-tax'].d[0]), circ(...g(6, 5), 0.1), circ(...g(9, 8), 0.1), pl([5, 9], [10, 4])];
   icons['receipt-tax'].small = { d, fill: { solid: [d[0]], cut: d.slice(1) } };
 }
-// El lector de QR: los módulos de 3 × 3 pixeles con 2 de aire entre sí.
+// The QR reader: 3 × 3 pixel modules with 2 pixels of clearance between them.
 {
   const corners = sharp(icons['qr-scan'].d.slice(4));
   const d = [sq(px(4), px(4), 3, 3, 0.75), sq(px(9), px(4), 3, 3, 0.75), sq(px(4), px(9), 3, 3, 0.75), circ(...g(10, 10), 0.1), ...corners];
   icons['qr-scan'].small = { d, fill: { solid: d.slice(0, 4), lines: corners } };
 }
-// El cambio de divisas: $ y € de pixel en esquinas opuestas y las dos flechas en las otras.
+// Currency exchange: pixel $ and € in opposite corners and the two arrows in the other two.
 {
   const euro16 = [roundline([g(13, 8), g(10, 8), g(10, 14), g(13, 14)], [0, 1.5, 1.5, 0]), pl([9, 10], [12, 10]), pl([9, 12], [12, 12])];
   const d = [
@@ -1772,8 +1781,8 @@ const dollar16 = (c, r) => [pl([c + 2, r + 1], [c, r + 1], [c, r + 3], [c + 2, r
   ];
   icons['currency-exchange'].small = { d };
 }
-// Las ondas (sin contacto, tarjeta y pago móvil): a 16 px los arcos eran una mancha gris; aquí van
-// como corchetes de pixel, rectos con las puntas a 45°. Sin contacto lleva tres, a 3 columnas.
+// The waves (contactless, card and mobile payment): at 16 px the arcs were a gray smudge; here they
+// are pixel brackets, straight with their ends at 45°. Contactless has three, 3 columns apart.
 const wave16 = (c, r0, r1) => pl([c - 1, r0], [c, r0 + 1], [c, r1 - 1], [c - 1, r1]);
 {
   const d = [wave16(5, 6, 9), wave16(8, 4, 11), wave16(11, 2, 13)];
@@ -1789,8 +1798,8 @@ const wave16 = (c, r0, r1) => pl([c - 1, r0], [c, r0 + 1], [c, r1 - 1], [c - 1, 
   const d = [...phone, wave16(12, 6, 9), wave16(14, 4, 11)];
   icons['mobile-payment'].small = { d, fill: { solid: [d[0]], cut: [d[1]], lines: d.slice(2) } };
 }
-// El pago recurrente: las dos flechas sobre un octágono de pixel (lados rectos y diagonales a 45°)
-// y el signo de pixel al centro.
+// Recurring payment: the two arrows on a pixel octagon (straight sides and 45° diagonals) and the
+// pixel sign in the center.
 {
   const d = [
     pl([2, 8], [2, 5], [5, 2], [10, 2], [12, 4]),
@@ -1801,15 +1810,15 @@ const wave16 = (c, r0, r1) => pl([c - 1, r0], [c, r0 + 1], [c, r1 - 1], [c - 1, 
   ];
   icons['recurring-payment'].small = { d };
 }
-// La inversión: el signo de pixel con su tallo y dos hojas a 45°.
+// Investment: the pixel sign with its stalk and two leaves at 45°.
 {
   const sign = [pl([7, 4], [7, 8], [8, 8]), pl([8, 8], [6, 8], [6, 10], [8, 10], [8, 12], [6, 12]), pl([7, 12], [7, 13])];
   const leaves = [leaf(g(7, 4), g(4, 1), 4.8), leaf(g(10, 1), g(7, 4), 4.8)];
   const d = [...sign, ...leaves];
   icons.investment.small = { d, fill: { solid: leaves, wire: sign } };
 }
-// El carrito: la canasta y el asa ajustadas, las ruedas de 2 × 2 pixeles exactos y el signo de
-// 3 × 3 pixeles centrado en la canasta.
+// The cart: the snapped basket and handle, wheels of exactly 2 × 2 pixels and the 3 × 3 pixel sign
+// centered in the basket.
 {
   const base = sharp(cart());
   const wheels = [sq(px(5), px(12), 1.5, 1.5, 0), sq(px(11), px(12), 1.5, 1.5, 0)];

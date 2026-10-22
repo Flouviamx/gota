@@ -1,11 +1,11 @@
-// Dispositivos y multimedia: pantallas, periféricos, energía, conexión, reproducción, audio e
-// imagen. Todo se calcula con el motor (engine/geometry.mjs) y las reglas de DESIGN.md: trazo de
-// 1.5, keylines, esquinas continuas y la esquina inferior derecha recta en las pantallas.
+// Devices and media: screens, peripherals, power, connectivity, playback, audio and imaging.
+// Everything is computed with the engine (engine/geometry.mjs) and the rules in DESIGN.md: a 1.5
+// stroke, keylines, continuous corners and a square bottom-right corner on screens.
 import { arc, circ, dot, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snap } from '../../engine/variants.mjs';
 import nucleo from './nucleo.mjs';
 
-// ── Utilidades locales ────────────────────────────────────────────────────────────────────────
+// ── Local utilities ───────────────────────────────────────────────────────────────────────────
 const N = (v) => {
   const s = (Math.round(v * 100) / 100).toFixed(2).replace(/\.?0+$/, '');
   return s === '-0' || s === '' ? '0' : s;
@@ -16,7 +16,7 @@ const len = (v) => Math.hypot(v[0], v[1]);
 const lerp = (a, b, t) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
 const BR = { square: ['br'] };
 
-/** Polilínea abierta con los vértices interiores redondeados (radio por vértice o uno para todos). */
+/** Open polyline with rounded interior vertices (one radius per vertex, or one for all). */
 function roundline(pts, radius = 0) {
   const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
   let s = `M${pt(pts[0])}`;
@@ -39,7 +39,7 @@ function roundline(pts, radius = 0) {
   return `${s}L${pt(pts[pts.length - 1])}`;
 }
 
-/** Cápsula (estadio): un rectángulo con los extremos cortos en semicírculo. */
+/** Capsule (stadium): a rectangle whose short ends are semicircles. */
 function capsule(x, y, w, h) {
   if (h >= w) {
     const r = w / 2;
@@ -49,7 +49,7 @@ function capsule(x, y, w, h) {
   return `M${pt([x + r, y])}H${N(x + w - r)}A${N(r)} ${N(r)} 0 0 1 ${pt([x + w - r, y + h])}H${N(x + r)}A${N(r)} ${N(r)} 0 0 1 ${pt([x + r, y])}Z`;
 }
 
-/** Las cuatro esquinas de sq() en orden [tr, br, bl, tl]: punto de arranque y trazo relativo. */
+/** The four corners of sq() in [tr, br, bl, tl] order: start point and relative path. */
 function corners(x, y, w, h, r, opts) {
   return sq(x, y, w, h, r, opts)
     .match(/[ML][^MLZ]*/g)
@@ -60,13 +60,13 @@ function corners(x, y, w, h, r, opts) {
 }
 
 /**
- * Tramo abierto de un sq(): de `A` (sobre el borde `eA`) a `B` (sobre el borde `eB`) en sentido
- * horario. Bordes: 0 arriba, 1 derecha, 2 abajo, 3 izquierda.
+ * Open run of an sq(): from `A` (on edge `eA`) to `B` (on edge `eB`), clockwise. Edges: 0 top, 1
+ * right, 2 bottom, 3 left.
  */
 function sqOpen(x, y, w, h, r, opts, A, eA, B, eB) {
   const k = corners(x, y, w, h, r, opts);
-  // A y B tienen que caer en el tramo recto de su borde: dentro de la curva de una esquina el
-  // trazo retrocede y deja una muesca.
+  // A and B must land on the straight part of their edge: inside a corner's curve the stroke
+  // doubles back and leaves a notch.
   const pc = (n) => (opts?.square?.includes(n) ? 0 : 1.6 * r);
   const DIR = [
     [1, 0],
@@ -91,11 +91,11 @@ function sqOpen(x, y, w, h, r, opts, A, eA, B, eB) {
   return `${s}L${pt(B)}`;
 }
 
-// ── Trazos como segmentos ─────────────────────────────────────────────────────────────────────
-// Se lee el path que da el motor como segmentos (recta, cúbica, arco de círculo) para recortarlo a
-// una región (las perforaciones de la película, las esquinas del visor), invertirlo o medir su área.
-// Lo que pasa por encima de otra pieza NO se recorta aquí: va como insignia (`badge`) y el motor
-// despeja la base con 1.5 de aire exacto (DESIGN.md › Detalle).
+// ── Paths as segments ─────────────────────────────────────────────────────────────────────────
+// The engine's path is read as segments (line, cubic, circular arc) to clip it to a region (the
+// film's perforations, the viewfinder corners), reverse it or measure its area. Anything that
+// passes over another piece is NOT clipped here: it goes in as a badge (`badge`) and the engine
+// clears the base with exactly 1.5 of clearance (DESIGN.md › Detail).
 
 function arcSeg(a, b, r, fa, fs) {
   const dx = (a[0] - b[0]) / 2;
@@ -197,7 +197,7 @@ function write(segs, closed) {
   return closed ? `${o}Z` : o;
 }
 
-/** Tramos [t0, t1] de un segmento que quedan fuera de todas las regiones. */
+/** Runs [t0, t1] of a segment that fall outside every region. */
 function keep(s, out) {
   const n = 160;
   const inside = (t) => out.some((f) => f(at(s, t)));
@@ -225,7 +225,7 @@ function keep(s, out) {
   return res.filter(([a, b]) => b - a > 1e-4);
 }
 
-/** Corta los trazos `ds` donde caen dentro de alguna región; descarta los restos más cortos que `min`. */
+/** Cuts the paths `ds` wherever they fall inside a region; drops leftovers shorter than `min`. */
 function cut(ds, out, min = 1.2) {
   const res = [];
   for (const d of [].concat(ds)) {
@@ -263,24 +263,24 @@ function cut(ds, out, min = 1.2) {
   return res;
 }
 
-/** Segmento recorrido al revés (para invertir un trazo). */
+/** A segment traversed backwards (to reverse a path). */
 function back(s) {
   if (s.k === 'L') return { k: 'L', a: s.b, b: s.a };
   if (s.k === 'C') return { k: 'C', a: s.b, c1: s.c2, c2: s.c1, b: s.a };
   return { ...s, a: s.b, b: s.a, t0: s.t0 + s.dt, dt: -s.dt };
 }
 
-/** Un trazo abierto y su regreso por el mismo camino (cerrado, es el `knock` de una pieza abierta: knockOf). */
+/** An open path and its return along the same route (closed, it is the `knock` of an open piece: knockOf). */
 const twin = (d) =>
   parse(d)
     .map((sp) => write([...sp.segs, ...sp.segs.toReversed().map(back)], false))
     .join('');
 
 /**
- * Un trazo abierto alargado `k0` al principio y `k1` al final (sus tramos rectos de los extremos).
- * Para `fill.cut`: un detalle que llega al contorno (la ranura de la linterna, la cordillera de la
- * foto) se cala de lado a lado; si terminara justo en el contorno, su punta redonda dejaría una
- * muesca con filos de pelo en la silueta.
+ * An open path extended by `k0` at the start and `k1` at the end (along its straight end runs). For
+ * `fill.cut`: a detail that reaches the outline (the flashlight's slot, the photo's mountain range)
+ * is knocked out all the way through; if it ended exactly at the outline, its round cap would leave
+ * a notch with hairline edges in the silhouette.
  */
 function extend(d, k0 = 1, k1 = 1) {
   const [sp] = parse(d);
@@ -298,7 +298,7 @@ function extend(d, k0 = 1, k1 = 1) {
   return write(segs, false);
 }
 
-/** Área con signo de una figura cerrada (su sentido de giro). */
+/** Signed area of a closed shape (its winding direction). */
 function area(d) {
   const p = samplePath(d, 0.2);
   let a = 0;
@@ -307,8 +307,8 @@ function area(d) {
 }
 
 /**
- * Una figura con huecos, para `fill.solid`: los interiores van en el sentido contrario al contorno y
- * la regla de relleno los deja vacíos (el triángulo de play dentro del círculo, el hoyo del disco).
+ * A shape with holes, for `fill.solid`: the inner contours run opposite to the outer one, so the
+ * fill rule leaves them empty (the play triangle inside the circle, the disc's hole).
  */
 function withHoles(outer, ...holes) {
   const s = Math.sign(area(outer));
@@ -320,28 +320,29 @@ function withHoles(outer, ...holes) {
 }
 
 /**
- * Área que despeja una pieza abierta (la diagonal, el brazo del tocadiscos): el trazo de ida y vuelta,
- * cerrado. La máscara del motor no lleva remate redondo; cerrado, la vuelta en cada extremo es una
- * unión redonda y el aire de 1.5 rodea también las puntas (sin el remate, la esquina de abajo de la
- * cámara quedaba pegada a la punta de la diagonal).
+ * Area cleared by an open piece (the slash, the turntable's tonearm): the path out and back,
+ * closed. The engine's mask has no round cap; closed, the turn at each end is a round join and the
+ * 1.5 clearance also wraps around the tips (without the cap, the camera's bottom corner stayed
+ * stuck to the tip of the slash).
  */
 const knockOf = (d) => `${twin(d)}Z`;
 
 /**
- * Versión "off": el ícono completo y la diagonal encima como insignia; el motor despeja la base con
- * 1.5 de aire exacto a cada lado y quita enteros los puntos que toca. La diagonal va de arriba a la
- * izquierda a abajo a la derecha, a 45°; donde la de siempre roza una pieza (la deja como una astilla
- * paralela o la corta en un ángulo muy cerrado), se corre sobre su paralela para cruzarla de frente.
+ * "Off" version: the full icon with the slash on top as a badge; the engine clears the base with
+ * exactly 1.5 of clearance on each side and removes any dot it touches entirely. The slash runs
+ * from top left to bottom right at 45°; where the default one grazes a piece (leaving it as a
+ * parallel sliver or cutting it at a very sharp angle), it shifts onto a parallel line so it
+ * crosses the piece head-on.
  */
 const slashOver = (a = [3.5, 3.5], b = [20.5, 20.5]) => {
   const s = line(a, b);
   return { d: [s], knock: knockOf(s) };
 };
 
-/** Una figura cerrada encima de otra (el teléfono frente al monitor, la foto de adelante). */
+/** A closed shape on top of another (the phone in front of the monitor, the front photo). */
 const front = (ds, knock = ds[0], fill = { solid: [ds[0]], ...(ds.length > 1 && { cut: ds.slice(1) }) }) => ({ d: ds, knock, fill });
 
-// ── Piezas compartidas ────────────────────────────────────────────────────────────────────────
+// ── Shared pieces ─────────────────────────────────────────────────────────────────────────────
 
 const SPEAKER = nucleo.icons.speaker.d[0];
 
@@ -374,15 +375,15 @@ const videoCamera = () => [
   ),
 ];
 
-/** Auricular: cabeza redonda con el tallo al ras de un costado (`side` 1 derecha, -1 izquierda). */
+/** Earbud: round head with the stem flush with one side (`side` 1 right, -1 left). */
 function earbud(cx, cy, r, side, stem = 12) {
   const x = cx + r * side;
   return [`M${pt([x, cy + stem])}V${N(cy)}A${N(r)} ${N(r)} 0 1 ${side > 0 ? 0 : 1} ${pt([cx, cy + r])}H${N(x)}`];
 }
 
 /**
- * Micrófono de mano: cabeza redonda y mango cónico a 45°, que nace del borde de la cabeza. La
- * banda de la rejilla, del lado opuesto al mango, es lo que lo separa de una lupa.
+ * Handheld microphone: round head and a tapered handle at 45° that starts at the head's edge. The
+ * grille band, on the side opposite the handle, is what sets it apart from a magnifying glass.
  */
 function handMic() {
   const C = [15.25, 8.75];
@@ -400,8 +401,8 @@ function handMic() {
 }
 
 /**
- * Linterna: cabezal, cono y mango; `t` es la altura del cabezal (más abajo deja lugar a la luz).
- * El interruptor es un punto a 3 del cuello y del fondo, igual en las dos versiones.
+ * Flashlight: head, cone and handle; `t` is the height of the head (lower leaves room for the
+ * light). The switch is a dot 3 from the neck and from the bottom, the same in both versions.
  */
 const flashlight = (t = 2.75) => [
   roundpoly(
@@ -421,22 +422,22 @@ const flashlight = (t = 2.75) => [
   dot(12, Math.min(t + 11.25, 18.25)),
 ];
 
-/** Batería horizontal con `n` barras de carga (0–4); el borne va suelto, a 3 del cuerpo. */
+/** Horizontal battery with `n` charge bars (0–4); the terminal stands apart, 3 from the body. */
 const battery = (n) => [
   sq(2.5, 6.5, 16, 11, 3, BR),
   line([21.5, 10.5], [21.5, 13.5]),
   ...[6, 9, 12, 15].slice(0, n).map((x) => line([x, 9.5], [x, 14.5])),
 ];
 
-/** Wifi: punto y hasta tres arcos concéntricos (abren 90° hacia arriba). */
+/** Wi-Fi: a dot and up to three concentric arcs (opening 90° upward). */
 const WIFI_C = [12, 18.5];
 const wifi = (n) => [dot(...WIFI_C), ...[4.5, 9, 13.5].slice(0, n).map((r) => arc(...WIFI_C, r, 225, 315).d)];
 
-/** Señal celular: cuatro barras; las que no tienen señal quedan como punto en la base. */
+/** Cellular signal: four bars; the ones without signal remain as a dot on the baseline. */
 const signal = (n) =>
   [4.5, 9.5, 14.5, 19.5].map((x, i) => (i < n ? line([x, 20], [x, [16.5, 12.5, 8.5, 4.25][i]]) : dot(x, 20)));
 
-/** Vértices del triángulo de reproducción con su punta en `tipX` (dir 1 derecha, -1 izquierda). */
+/** Vertices of the play triangle with its tip at `tipX` (dir 1 right, -1 left). */
 function triPts(tipX, cy, w, h, dir = 1) {
   const bx = tipX - w * dir;
   return dir > 0
@@ -451,13 +452,13 @@ function triPts(tipX, cy, w, h, dir = 1) {
         [bx, cy - h / 2],
       ];
 }
-/** Triángulo de reproducción con su punta en `tipX`, esquinas de radio r. */
+/** Play triangle with its tip at `tipX` and corners of radius r. */
 const tri = (tipX, cy, w, h, r, dir = 1) => roundpoly(triPts(tipX, cy, w, h, dir), r);
 
 /**
- * Polígono de esquinas redondeadas crecido `k` hacia afuera (sus lados se mueven k; las esquinas
- * convexas crecen su radio k y las cóncavas lo pierden). Para los huecos del relleno: el contorno
- * del hueco va un poco por fuera de la línea que se cala, así el borde lo da solo la máscara.
+ * Rounded polygon grown outward by `k` (its sides move by k; convex corners grow their radius by k
+ * and concave ones lose it). For holes in the fill: the hole's contour runs slightly outside the
+ * line being knocked out, so the edge comes from the mask alone.
  */
 function grown(pts, radius, k) {
   const n = pts.length;
@@ -501,7 +502,7 @@ const bluetooth = () => [
   ),
 ];
 
-/** Puntos a lo largo de un path (cada ~0.2): el interior de una forma y su sentido de giro. */
+/** Points along a path (every ~0.2): the inside of a shape and its winding direction. */
 function samplePath(d, step = 0.2) {
   const pts = [];
   for (const sp of parse(d))
@@ -517,7 +518,7 @@ function samplePath(d, step = 0.2) {
 const SPEAKER_WAVES = nucleo.icons.waves.d;
 const MUTE = nucleo.icons.mute.d;
 
-/** Repetir: dos tramos en L que se persiguen, con puntas de arco (3.4). */
+/** Repeat: two L-shaped runs chasing each other, with arc arrowheads (3.4). */
 const repeat = () => [
   roundline(
     [
@@ -539,10 +540,10 @@ const repeat = () => [
   head([4.25, 17], [-1, 0], 3.4),
 ];
 
-/** Domo: media elipse de `x0` a `x1` sobre la base `y`, de `h` de alto, cerrada por la base. */
+/** Dome: half an ellipse from `x0` to `x1` on baseline `y`, `h` tall, closed along the base. */
 const dome = (x0, x1, y, h) => `M${pt([x0, y])}A${N((x1 - x0) / 2)} ${N(h)} 0 0 1 ${pt([x1, y])}Z`;
 
-/** Región: el interior de una forma cerrada (polígono muestreado de su path). */
+/** Region: the inside of a closed shape (a polygon sampled from its path). */
 function inside(d) {
   const poly = samplePath(d, 0.1);
   return (p) => {
@@ -561,8 +562,8 @@ const outside = (d) => {
 };
 
 /**
- * Punto donde la recta de `inner` (dentro de la forma `d`) a `outer` (fuera) cruza su contorno:
- * una línea que termina ahí queda enterrada en el trazo, sin asomarse por fuera de una esquina curva.
+ * Point where the line from `inner` (inside shape `d`) to `outer` (outside) crosses its outline: a
+ * line that ends there stays buried in the stroke, without poking out past a curved corner.
  */
 function toEdge(inner, outer, d) {
   const f = inside(d);
@@ -575,27 +576,27 @@ function toEdge(inner, outer, d) {
   return lerp(inner, outer, (lo + hi) / 2);
 }
 
-/** Elipse girada `deg` grados (cabeza de nota musical). */
+/** Ellipse rotated `deg` degrees (a music note head). */
 function ellipse(cx, cy, rx, ry, deg) {
   const a = [cx + rx * Math.cos((deg * Math.PI) / 180), cy + rx * Math.sin((deg * Math.PI) / 180)];
   const b = [2 * cx - a[0], 2 * cy - a[1]];
   return `M${pt(a)}A${N(rx)} ${N(ry)} ${N(deg)} 1 1 ${pt(b)}A${N(rx)} ${N(ry)} ${N(deg)} 1 1 ${pt(a)}Z`;
 }
 
-/** El punto más a la derecha de esa elipse: ahí nace la plica, tangente al óvalo. */
+/** The rightmost point of that ellipse: the stem starts there, tangent to the oval. */
 function ellipseRight(cx, cy, rx, ry, deg) {
   const f = (deg * Math.PI) / 180;
   const t = Math.atan2(-ry * Math.sin(f), rx * Math.cos(f));
   return [cx + rx * Math.cos(t) * Math.cos(f) - ry * Math.sin(t) * Math.sin(f), cy + rx * Math.cos(t) * Math.sin(f) + ry * Math.sin(t) * Math.cos(f)];
 }
 
-/** Nota: cabeza oval inclinada y plica que sube desde su costado derecho hasta `top`. */
+/** Note: tilted oval head and a stem rising from its right side to `top`. */
 function note(cx, cy, top, rx = 3, ry = 2.1, deg = -24) {
   const s = ellipseRight(cx, cy, rx, ry, deg);
   return { head: ellipse(cx, cy, rx, ry, deg), stem: line(s, [s[0], top]), x: s[0], y: s[1] };
 }
 
-/** Espejo horizontal de un path absoluto (M, L, H, V, C, A, Z): para rewind desde fast-forward. */
+/** Horizontal mirror of an absolute path (M, L, H, V, C, A, Z): turns fast-forward into rewind. */
 function mirrorPath(d) {
   return d.replace(/([MLHVCA])([^MLHVCAZ]*)/g, (_, c, args) => {
     const n = args.trim().split(/[\s,]+/).filter(Boolean).map(Number);
@@ -609,17 +610,17 @@ function mirrorPath(d) {
 }
 
 /**
- * Adelantar: dos triángulos con 3 reales entre la punta redondeada del primero (la esquina de r 1.5
- * la retrae 1.1) y la base del segundo.
+ * Fast-forward: two triangles with a true 3 between the first one's rounded tip (the r 1.5 corner
+ * pulls it back by 1.1) and the second one's base.
  */
 const FAST_FORWARD = [tri(11, 12, 8.25, 11.5, 1.5), tri(21.25, 12, 8.25, 11.5, 1.5)];
 
 /**
- * Foto: marco apaisado, sol y una cordillera de dos picos que va de borde a borde, con laderas a 45°.
- * La cordillera arranca justo sobre el contorno (toEdge), no a un costado de la esquina curva. Las
- * laderas que bajan son paralelas a la diagonal de `image-off`: van a más de 3 de ella (antes una
- * quedaba a 2.5 y el tache la rasuraba a lo largo) y la diagonal cruza de frente las que suben, a 4.25
- * del valle y de la cima (quedan tramos de 2, no ganchos sueltos).
+ * Photo: a landscape frame, a sun and a two-peak mountain range running edge to edge, with 45°
+ * slopes. The range starts right on the outline (toEdge), not beside the curved corner. The
+ * descending slopes are parallel to the `image-off` slash: they sit more than 3 from it (one used
+ * to sit 2.5 away and the slash shaved it lengthwise), and the slash crosses the rising slopes
+ * head-on, 4.25 from the valley and from the peak (leaving runs of 2, not loose hooks).
  */
 const IMAGE_FRAME = sq(2.5, 5, 19, 14, 3.5, BR);
 const image = () => [
@@ -637,7 +638,7 @@ const image = () => [
   ),
 ];
 
-/** Chispa de IA: la de datos/sparkle (cuatro puntas, lados cóncavos), de radio R. */
+/** AI spark: the one in datos/sparkle (four points, concave sides), with radius R. */
 function aiSpark(cx, cy, R) {
   const [a, b] = [0.065, 0.389];
   const P = (x, y) => pt([cx + x * R, cy + y * R]);
@@ -645,8 +646,8 @@ function aiSpark(cx, cy, R) {
 }
 
 /**
- * Brazo de la claqueta: la tablilla abierta 15° sobre la bisagra (más abierta se sale del área
- * viva). Las franjas empiezan lejos de la bisagra, donde el brazo ya se separó del cuerpo.
+ * Clapperboard arm: the clapstick open 15° on its hinge (any wider and it leaves the live area).
+ * The stripes start away from the hinge, where the arm has already separated from the body.
  */
 function clapper() {
   const H = [3.25, 9.5];
@@ -660,11 +661,11 @@ function clapper() {
 }
 
 /**
- * Diafragma: cinco láminas curvas que giran en el mismo sentido (con seis era el más denso del
- * set). Cada lámina es un arco de radio 18 que pasa por dos vértices consecutivos de la abertura
- * (r 4.25) y sigue hasta el radio R (el aro): la abertura queda como un pentágono de lados curvos,
- * como un iris.
- * Con láminas de radio 12 y abertura de 4.75 eran más largas y el ícono pasaba del 28 % de tinta.
+ * Aperture: five curved blades turning the same way (with six it was the densest icon in the set).
+ * Each blade is an arc of radius 18 that passes through two consecutive vertices of the opening
+ * (r 4.25) and continues out to radius R (the ring): the opening becomes a pentagon with curved
+ * sides, like an iris.
+ * With radius-12 blades and a 4.75 opening they were longer and the icon went over 28% ink.
  */
 function aperture(R = 9) {
   const C = [12, 12];
@@ -681,7 +682,7 @@ function aperture(R = 9) {
       const Cb = [M[0] - n[0] * h, M[1] - n[1] * h];
       const ang = (p) => Math.atan2(p[1] - Cb[1], p[0] - Cb[0]);
       const dir = Math.sign(((ang(B) - ang(A) + 3 * Math.PI) % (2 * Math.PI)) - Math.PI);
-      // Se avanza por el arco de la lámina hasta tocar el aro
+      // Walk along the blade's arc until it touches the ring
       let [lo, hi] = [0, Math.PI / 2];
       for (let k = 0; k < 40; k++) {
         const m = (lo + hi) / 2;
@@ -695,7 +696,7 @@ function aperture(R = 9) {
   ];
 }
 
-/** Boca del puerto de red (RJ45): el rectángulo con la pestaña abajo. */
+/** Mouth of the network port (RJ45): the rectangle with the tab at the bottom. */
 const PORT = [
   [7, 8],
   [17, 8],
@@ -709,7 +710,7 @@ const PORT = [
 const PORT_R = [1, 1, 1, 0.5, 0.75, 0.75, 0.5, 1];
 
 const icons = {
-  // ── Pantallas y equipos ───────────────────────────────────────────────────────────────────
+  // ── Screens and hardware ──────────────────────────────────────────────────────────────────
   smartphone: {
     tags: ['celular', 'teléfono móvil', 'app', 'smartphone', 'mobile', 'phone'],
     d: smartphone(),
@@ -739,7 +740,8 @@ const icons = {
   },
   devices: {
     tags: ['dispositivos', 'multiplataforma', 'responsivo', 'devices', 'responsive', 'cross-platform'],
-    // El monitor completo; el teléfono va enfrente como insignia y el motor lo despeja con 1.5 de aire
+    // The full monitor; the phone sits in front as a badge and the engine clears the monitor with
+    // 1.5 of clearance
     d: [sq(2.25, 3.25, 17.5, 12, 2.75, BR), line([9, 15.25], [9, 19.5]), line([5.75, 19.5], [12.25, 19.5])],
     badge: front([sq(15.25, 9.25, 6.5, 12, 2, BR)]),
   },
@@ -778,7 +780,7 @@ const icons = {
   },
   keyboard: {
     tags: ['teclado', 'teclas', 'escribir', 'keyboard', 'typing', 'keys'],
-    // Las teclas de la segunda fila van escalonadas media tecla, como en un teclado real
+    // The second-row keys are staggered by half a key, as on a real keyboard
     d: [
       sq(2.5, 5.5, 19, 13, 3.25, BR),
       ...[6, 9, 12, 15, 18].map((x) => dot(x, 9.25, 0.3)),
@@ -792,8 +794,8 @@ const icons = {
   },
   printer: {
     tags: ['impresora', 'imprimir', 'printer', 'print'],
-    // La hoja de entrada se apoya en el cuerpo; la de salida sale de la ranura y el cuerpo se
-    // abre donde ella pasa al frente. Ambas hojas, como documentos, con la esquina de la gota.
+    // The input sheet rests on the body; the output sheet comes out of the slot, and the body opens
+    // where it passes in front. Both sheets, like documents, carry the drop's corner.
     d: [
       sqOpen(2.5, 7.5, 19, 10, 3, BR, [7.5, 17.5], 2, [16.5, 17.5], 2),
       roundline(
@@ -823,7 +825,8 @@ const icons = {
   },
   'camera-off': {
     tags: ['cámara apagada', 'sin cámara', 'camera off', 'no camera'],
-    // La diagonal pasa por el centro del lente (la de siempre lo dejaba como una astilla junto al tache)
+    // The slash goes through the center of the lens (the default one left the lens as a sliver next
+    // to it)
     d: camera(),
     badge: slashOver([3.75, 5], [20.25, 21.5]),
   },
@@ -833,8 +836,8 @@ const icons = {
   },
   'video-camera-off': {
     tags: ['video apagado', 'sin video', 'video off', 'camera off'],
-    // La diagonal cruza el cuerpo de esquina a esquina y deja la bocina entera: la de siempre cortaba
-    // el brazo de abajo de la bocina en un ángulo de 15° y lo dejaba como una espina
+    // The slash crosses the body corner to corner and leaves the lens horn whole: the default one
+    // cut the horn's lower arm at a 15° angle and left it as a spike
     d: videoCamera(),
     badge: slashOver([2.75, 5.75], [16.25, 19.25]),
   },
@@ -852,7 +855,7 @@ const icons = {
   },
   'speaker-box': {
     tags: ['bocina', 'altavoz', 'sonido', 'speaker', 'woofer', 'audio'],
-    // Tweeter y woofer como dos conos de distinto tamaño, con 3 entre ellos y contra el gabinete
+    // Tweeter and woofer as two cones of different sizes, 3 apart from each other and from the cabinet
     d: [sq(5, 2.75, 14, 18.5, 3.5, BR), circ(12, 7, 1.25), circ(12, 14.75, 3.5)],
   },
   'smart-speaker': {
@@ -883,8 +886,8 @@ const icons = {
   },
   gamepad: {
     tags: ['control de juego', 'videojuego', 'gamepad', 'controller', 'gaming'],
-    // Cruceta a la izquierda y palanca analógica a la derecha, simétricas respecto al centro y a
-    // más de 3 de los costados inclinados del cuerpo.
+    // D-pad on the left and analog stick on the right, symmetric about the center and more than 3
+    // from the body's slanted sides.
     d: [
       roundpoly(
         [
@@ -906,7 +909,7 @@ const icons = {
   },
   'vr-headset': {
     tags: ['realidad virtual', 'visor', 'vr', 'headset', 'virtual reality'],
-    // Un solo contorno cerrado: el visor y el puente de la nariz (así el relleno respeta la muesca)
+    // A single closed outline: the visor and the nose bridge (so the fill respects the notch)
     d: [`${sqOpen(2.5, 7, 19, 10.5, 3.25, {}, [9.5, 17.5], 2, [14.5, 17.5], 2)}${arc(12, 17.5, 2.5, 360, 180).d.replace(/^M[^A]*/, '')}Z`],
   },
   flashlight: {
@@ -919,8 +922,8 @@ const icons = {
   },
   'sd-card': {
     tags: ['tarjeta de memoria', 'tarjeta sd', 'almacenamiento', 'sd card', 'memory card', 'storage'],
-    // Vista del reverso, donde están los contactos: ahí el chaflán queda arriba a la izquierda.
-    // El primer contacto arranca más abajo para guardar 3 con el chaflán.
+    // Back view, where the contacts are: there the chamfer sits at the top left. The first contact
+    // starts lower to keep 3 from the chamfer.
     d: [
       roundpoly(
         [
@@ -973,7 +976,7 @@ const icons = {
       line([18, 18], [18, 20]),
     ],
   },
-  // ── Energía ───────────────────────────────────────────────────────────────────────────────
+  // ── Power ─────────────────────────────────────────────────────────────────────────────────
   'battery-full': {
     tags: ['batería llena', 'carga completa', 'battery full', 'charged'],
     d: battery(4),
@@ -992,7 +995,7 @@ const icons = {
   },
   'battery-charging': {
     tags: ['cargando', 'batería', 'carga', 'charging', 'battery charging'],
-    // Rayo de 5 de alto centrado en el cuerpo, con 3 de aire arriba y abajo
+    // A 5-tall bolt centered in the body, with 3 of clearance above and below
     d: [...battery(0), roundline([[11.75, 9.5], [8.75, 12], [12.25, 12], [9.25, 14.5]], [0, 0.4, 0.4, 0])],
   },
   'power-plug': {
@@ -1022,7 +1025,7 @@ const icons = {
     tags: ['encender', 'apagar', 'energía', 'power', 'on off', 'shutdown'],
     d: [arc(12, 12.75, 8.25, -60, 240).d, line([12, 2.75], [12, 11])],
   },
-  // ── Conexión ──────────────────────────────────────────────────────────────────────────────
+  // ── Connectivity ──────────────────────────────────────────────────────────────────────────
   wifi: {
     tags: ['wifi', 'internet', 'inalámbrico', 'conexión', 'wireless', 'connection'],
     d: wifi(3),
@@ -1037,10 +1040,10 @@ const icons = {
   },
   'wifi-off': {
     tags: ['sin wifi', 'desconectado', 'sin internet', 'wifi off', 'offline', 'no connection'],
-    // El motor despeja los arcos con 1.5 de aire. La diagonal va 1.06 arriba a la derecha de la de
-    // siempre (sigue por centros de pixel a 16 px): el punto queda a 5.66 de ella y se conserva en los
-    // tres grosores (con la de siempre, a 4.6, la negrita lo quitaba), y ningún tramo de arco que deja
-    // mide menos de 3.4 (antes, 2.4)
+    // The engine clears the arcs with 1.5 of clearance. The slash sits 1.06 up and to the right of
+    // the default one (it still runs through pixel centers at 16 px): the dot stays 5.66 from it
+    // and survives in all three weights (with the default one, at 4.6, the bold weight removed it),
+    // and no remaining arc run is shorter than 3.4 (previously 2.4)
     d: wifi(3),
     badge: slashOver([4.25, 2.75], [21.25, 19.75]),
   },
@@ -1070,8 +1073,8 @@ const icons = {
   },
   cast: {
     tags: ['transmitir', 'enviar a pantalla', 'cast', 'stream to tv'],
-    // La pantalla se abre justo donde termina la curva de su esquina superior; las ondas guardan
-    // 3 con ella (antes el borde arrancaba dentro de la curva y quedaba a 1.2 de la onda).
+    // The screen opens right where its top corner's curve ends; the waves keep 3 from it
+    // (previously the edge started inside the curve and sat 1.2 from the wave).
     d: [
       sqOpen(2.5, 4.5, 19, 15, 3, BR, [2.5, 9.3], 3, [12.75, 19.5], 2),
       dot(2.75, 19.25),
@@ -1081,8 +1084,8 @@ const icons = {
   },
   usb: {
     tags: ['usb', 'conector', 'puerto', 'cable', 'port', 'connector'],
-    // El tridente con menos piezas y más aire: punta abierta, tallo, base, y un brazo por lado
-    // que remata en círculo y en cuadro. Todo a 3 entre sí para que a 18 px no se empaste.
+    // The trident with fewer pieces and more room: open tip, stem, base, and one arm per side
+    // ending in a circle and a square. Everything 3 apart so it doesn't clog up at 18 px.
     d: [
       line([12, 2.75], [12, 17.75]),
       line([10.4, 4.35], [12, 2.75], [13.6, 4.35]),
@@ -1107,7 +1110,7 @@ const icons = {
       sq(16.25, 5.75, 3.5, 3.5, 1),
     ],
   },
-  // ── Reproducción ──────────────────────────────────────────────────────────────────────────
+  // ── Playback ──────────────────────────────────────────────────────────────────────────────
   play: {
     tags: ['reproducir', 'iniciar', 'play', 'start'],
     d: [tri(20, 12, 12.5, 15.5, 2.25)],
@@ -1162,7 +1165,7 @@ const icons = {
     tags: ['anterior', 'pista anterior', 'regresar', 'previous', 'skip back', 'previous track'],
     d: [tri(8.5, 12, 10.5, 14, 1.75, -1), line([5, 5], [5, 19])],
   },
-  // Antes la punta de un triángulo quedaba a 0.7 de la base del otro: ni se tocaban ni se separaban
+  // Previously one triangle's tip sat 0.7 from the other's base: they neither touched nor separated
   'fast-forward': {
     tags: ['adelantar', 'avanzar rápido', 'fast forward', 'seek forward'],
     d: FAST_FORWARD,
@@ -1181,14 +1184,15 @@ const icons = {
   },
   shuffle: {
     tags: ['aleatorio', 'mezclar', 'shuffle', 'random'],
-    // La que baja pasa por encima: va como insignia y el motor despeja a la otra con 1.5 de aire
+    // The descending one passes over: it goes in as a badge and the engine clears the other one
+    // with 1.5 of clearance
     d: ['M3.25 17H6.5C11 17 12 7 16.5 7H20.75', head([20.75, 7], [1, 0], 3.4)],
     badge: (() => {
       const A = 'M3.25 7H6.5C11 7 12 17 16.5 17H20.75';
       return { d: [A, head([20.75, 17], [1, 0], 3.4)], knock: knockOf(A) };
     })(),
   },
-  // ── Volumen ───────────────────────────────────────────────────────────────────────────────
+  // ── Volume ────────────────────────────────────────────────────────────────────────────────
   'volume-low': {
     tags: ['volumen bajo', 'sonido', 'audio', 'volume low', 'sound'],
     d: [SPEAKER, SPEAKER_WAVES[0]],
@@ -1209,9 +1213,9 @@ const icons = {
     tags: ['bajar volumen', 'menos volumen', 'volume down', 'quieter'],
     d: [SPEAKER, line([16.4, 12], [21.2, 12])],
   },
-  // ── Música y audio ────────────────────────────────────────────────────────────────────────
-  // Las notas llevan la cabeza oval e inclinada de la notación, con la plica tangente a su
-  // costado: es la nota grabada, no un círculo con un palo.
+  // ── Music and audio ───────────────────────────────────────────────────────────────────────
+  // Notes use the tilted oval head of musical notation, with the stem tangent to its side: it's the
+  // engraved note, not a circle on a stick.
   'music-note': {
     tags: ['nota musical', 'música', 'canción', 'music', 'song'],
     d: (() => {
@@ -1263,8 +1267,8 @@ const icons = {
       tri(21, 14.5, 6.25, 8.5, 1.25),
     ],
   },
-  // Bandas de un analizador de espectro que suben desde una base común: graves, medios y agudos
-  // con su forma típica (antes eran líneas con un punto encima y se leían como letras «i»).
+  // Bands of a spectrum analyzer rising from a shared baseline: lows, mids and highs with their
+  // typical shape (previously they were lines with a dot on top and read as the letter «i»).
   equalizer: {
     tags: ['ecualizador', 'niveles', 'espectro', 'equalizer', 'audio levels'],
     d: [4.5, 8.25, 12, 15.75, 19.5].map((x, i) => line([x, 20], [x, [11.5, 5.5, 9, 4, 13][i]])),
@@ -1290,7 +1294,7 @@ const icons = {
     tags: ['disco', 'cd', 'dvd', 'disc', 'compact disc'],
     d: [circ(12, 12, 9), circ(12, 12, 2.25), arc(12, 12, 5.75, 195, 255).d],
   },
-  // Etiqueta de r 3 y surcos de r 6: 3 de aire contra el borde y contra la etiqueta (antes 2.75)
+  // An r 3 label and r 6 grooves: 3 of clearance from the edge and from the label (previously 2.75)
   vinyl: {
     tags: ['vinil', 'acetato', 'tocadiscos', 'vinyl', 'record'],
     d: [circ(12, 12, 9), circ(12, 12, 3), dot(12, 12, 0.3), arc(12, 12, 6, 200, 250).d, arc(12, 12, 6, 20, 70).d],
@@ -1313,8 +1317,8 @@ const icons = {
       arc(12, 12, 4, 135, 225).d,
     ],
   },
-  // La portada cuadrada con la nota grabada del set (antes era un cuadro con un círculo y se leía
-  // como bocina o lente; un disco asomando por detrás no se distinguía a 18 px).
+  // The square cover with the set's engraved note (previously it was a square with a circle and
+  // read as a speaker or a lens; a disc peeking out from behind couldn't be made out at 18 px).
   album: {
     tags: ['álbum', 'portada', 'disco', 'album', 'cover', 'music library'],
     d: (() => {
@@ -1322,16 +1326,16 @@ const icons = {
       return [sq(3.25, 3.25, 17.5, 17.5, 4, BR), n.head, n.stem, `M${N(n.x)} 7.25C${N(n.x)} 9.25 ${N(n.x + 3.5)} 9.5 ${N(n.x + 3.5)} 12.25`];
     })(),
   },
-  // ── Imagen y video ────────────────────────────────────────────────────────────────────────
+  // ── Image and video ───────────────────────────────────────────────────────────────────────
   image: {
     tags: ['imagen', 'foto', 'fotografía', 'image', 'photo', 'picture'],
     d: image(),
   },
   images: {
     tags: ['galería', 'fotos', 'álbum de fotos', 'gallery', 'images', 'photos'],
-    // La foto de atrás completa; la de adelante (con su sol y su cordillera) va como insignia y el
-    // motor despeja la de atrás con 1.5 de aire. Corridas 4.25 en horizontal: la esquina de abajo de la
-    // de atrás asoma con un tramo de 2 (con 3.5 quedaba un pie suelto de 1.25)
+    // The back photo in full; the front one (with its sun and mountain range) goes in as a badge
+    // and the engine clears the back one with 1.5 of clearance. Offset 4.25 horizontally: the back
+    // photo's bottom corner peeks out with a run of 2 (at 3.5 it left a loose 1.25 foot)
     d: [sq(6.75, 3.25, 14.75, 13.5, 3, BR)],
     badge: (() => {
       const frame = sq(2.5, 7.25, 14.75, 13.5, 3, BR);
@@ -1350,7 +1354,7 @@ const icons = {
     d: (() => {
       const box = sq(4.75, 2.75, 14.5, 18.5, 3.5, BR);
       const inner = [line([8.5, 1], [8.5, 23]), line([15.5, 1], [15.5, 23])];
-      // Dos travesaños por lado parten cada orilla en tres perforaciones (con tres era denso)
+      // Two crossbars per side split each edge into three perforations (with three it was dense)
       const ticks = [9, 15].flatMap((y) => [line([4.75, y], [8.5, y]), line([15.5, y], [19.25, y])]);
       return [box, ...cut(inner, [outside(box)]), ...ticks];
     })(),
@@ -1363,7 +1367,7 @@ const icons = {
     tags: ['cámara lenta', 'velocidad', 'slow motion', 'slowmo'],
     d: [arc(12, 12, 9, -90, 180).d, dot(...polar(12, 12, 9, 210)), dot(...polar(12, 12, 9, 240)), tri(15.5, 12, 5.75, 7, 1.1)],
   },
-  // Dos renglones centrados al pie de la imagen, como se ven los subtítulos en pantalla
+  // Two centered lines at the bottom of the image, the way subtitles appear on screen
   captions: {
     tags: ['subtítulos', 'texto en pantalla', 'subtitles', 'captions', 'cc'],
     d: [sq(2.5, 5, 19, 14, 3.5, BR), line([6.5, 12.75], [17.5, 12.75]), line([8.75, 15.75], [15.25, 15.75])],
@@ -1382,7 +1386,7 @@ const icons = {
   'camera-flip': {
     tags: ['cambiar cámara', 'cámara frontal', 'flip camera', 'switch camera'],
     d: (() => {
-      // Las flechas giran en el lugar del lente; sus puntas quedan a los lados, lejos del borde
+      // The arrows turn where the lens is; their tips sit at the sides, away from the edge
       const [body, hump] = camera();
       const a = arc(12, 13.5, 3.5, 205, 335);
       const b = arc(12, 13.5, 3.5, 25, 155);
@@ -1399,7 +1403,8 @@ const icons = {
   },
   'screen-mirror': {
     tags: ['duplicar pantalla', 'proyectar', 'transmitir', 'screen mirroring', 'mirror', 'stream'],
-    // La pantalla completa; el triángulo va enfrente como insignia y el motor la despeja con 1.5 de aire
+    // The full screen; the triangle sits in front as a badge and the engine clears the screen with
+    // 1.5 of clearance
     d: [sq(2.5, 4, 19, 13, 3, BR)],
     badge: front([
       roundpoly(
@@ -1412,13 +1417,13 @@ const icons = {
       ),
     ]),
   },
-  // La etiqueta arriba y los dos carretes como aros abajo; sin la tangente entre carretes ni la
-  // boca trapezoidal, que con los carretes arriba lo volvían una cara.
+  // The label on top and the two reels as rings below; without the tangent between the reels or the
+  // trapezoidal window, which, with the reels on top, turned it into a face.
   cassette: {
     tags: ['casete', 'cinta', 'mixtape', 'cassette', 'tape'],
     d: [sq(2.5, 5, 19, 14, 3, BR), line([6.5, 8.25], [17.5, 8.25]), circ(8.25, 13.5, 2.25), circ(15.75, 13.5, 2.25)],
   },
-  // ── Puertos, carga y más equipos ──────────────────────────────────────────────────────────
+  // ── Ports, charging and more hardware ─────────────────────────────────────────────────────
   'wireless-charging': {
     tags: ['carga inalámbrica', 'cargador', 'base de carga', 'wireless charging', 'charger', 'qi'],
     d: [
@@ -1434,7 +1439,7 @@ const icons = {
   },
   joystick: {
     tags: ['palanca', 'arcade', 'videojuego', 'joystick', 'game', 'retro'],
-    // Palanca de arcade: bola sobre un vástago que sale de una base en domo
+    // Arcade stick: a ball on a shaft rising from a domed base
     d: [dome(3.25, 20.75, 20.75, 5.25), line([12, 15.5], [12, 9.5]), circ(12, 6.25, 3.25)],
   },
   scanner: {
@@ -1443,8 +1448,9 @@ const icons = {
   },
   turntable: {
     tags: ['tocadiscos', 'tornamesa', 'vinilo', 'turntable', 'dj', 'record player'],
-    // Mueble apaisado (era cuadrado y pesaba de más) y plato completo con su eje; el brazo, del
-    // pivote hasta el disco, pasa por encima como insignia y el motor despeja el plato con 1.5 de aire.
+    // Landscape cabinet (it was square and too heavy) and a full platter with its spindle; the
+    // tonearm, from the pivot to the record, passes over as a badge and the engine clears the
+    // platter with 1.5 of clearance.
     d: [sq(2.5, 5, 19, 14, 3.5, BR), circ(9.5, 12, 4), dot(9.5, 12)],
     badge: (() => {
       const tone = roundline(
@@ -1482,11 +1488,11 @@ const icons = {
     ],
   },
 
-  // ── Cobertura (ronda 2) ───────────────────────────────────────────────────────────────────────
+  // ── Coverage (round 2) ────────────────────────────────────────────────────────────────────────
   'sim-card': {
     tags: ['tarjeta sim', 'chip', 'línea móvil', 'plan de datos', 'sim card', 'esim', 'mobile plan'],
-    // La tarjeta (como `sd-card`, pero vista de frente: el chaflán arriba a la derecha) con el chip
-    // de cuatro contactos.
+    // The card (like `sd-card`, but seen from the front: the chamfer at the top right) with a
+    // four-contact chip.
     d: [
       roundpoly(
         [
@@ -1505,9 +1511,9 @@ const icons = {
   },
   'image-sparkle': {
     tags: ['imagen con ia', 'generar imagen', 'foto generada', 'editar con ia', 'ai image', 'generate image', 'ai photo'],
-    // La foto y, en la esquina de arriba, la chispa de IA (la de datos/sparkle) como pieza propia:
-    // el motor despeja el marco con 1.5 de aire. Sin el sol: la chispa ocupa su lugar, a 3 de la cima
-    // de la cordillera (más cerca, el despeje la mordía).
+    // The photo and, in the top corner, the AI spark (the one in datos/sparkle) as a custom piece:
+    // the engine clears the frame with 1.5 of clearance. No sun: the spark takes its place, 3 from
+    // the mountain peak (any closer and the clearing bit into it).
     d: [IMAGE_FRAME, image()[2]],
     badge: (() => {
       const spark = aiSpark(18.75, 5.5, 3);
@@ -1516,12 +1522,13 @@ const icons = {
   },
 };
 
-// ── Relleno (DESIGN.md › Relleno) ─────────────────────────────────────────────────────────────
-// Por índice de d: `solid` se rellena (y conserva su trazo, así la silueta es idéntica); `close` son
-// cuerpos que en el contorno quedan abiertos contra otra pieza (la joroba de la cámara, las correas
-// del reloj) y se rellenan cerrados (`${trazo}Z`: el cierre corre por el canto de esa pieza); `cut`
-// se cala al ancho del trazo; `lines` sigue siendo línea, con 1.5 de aire contra el relleno, y `wire`
-// sigue siendo línea pegada al relleno, sin aire (el pie de un monitor, una antena, una plica).
+// ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
+// By index of d: `solid` is filled (and keeps its stroke, so the silhouette is identical); `close`
+// marks bodies that the outline leaves open against another piece (the camera's hump, the watch
+// straps) and that are filled closed (`${stroke}Z`: the closing edge runs along that piece's edge);
+// `cut` is knocked out at stroke width; `lines` stays a line, with 1.5 of clearance from the fill,
+// and `wire` stays a line attached to the fill, with no clearance (a monitor's stand, an antenna, a
+// note stem).
 const FILL = {
   smartphone: { solid: [0], cut: [1] },
   'smartphone-vibrate': { solid: [0], cut: [1], lines: [2, 3, 4, 5] },
@@ -1529,20 +1536,20 @@ const FILL = {
   laptop: { solid: [0], lines: [1] },
   desktop: { solid: [0], wire: [1, 2] },
   devices: { solid: [0], wire: [1, 2] },
-  // Las correas se rellenan hasta el canto de la caja: el reloj entero es una silueta; la corona,
-  // pegada a la caja
+  // The straps are filled up to the edge of the case: the whole watch is one silhouette; the crown
+  // is attached to the case
   watch: { solid: [0], close: [1, 2], wire: [3] },
   tv: { solid: [0], wire: [1, 2] },
   keyboard: { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
   mouse: { solid: [0], cut: [1] },
-  // Cuerpo, hoja de entrada y hoja de salida forman una silueta; la ranura se cala
+  // Body, input sheet and output sheet form one silhouette; the slot is knocked out
   printer: { close: [0, 1, 3], cut: [2] },
   camera: { solid: [0], close: [1], cut: [2] },
   'camera-off': { solid: [0], close: [1], cut: [2] },
   'video-camera': { solid: [0], close: [1] },
   'video-camera-off': { solid: [0], close: [1] },
   webcam: { solid: [0], wire: [2, 3], cut: [1] },
-  // La cabeza se cierra sobre su tallo: el cierre corre por el mismo tallo
+  // The head closes over its stem: the closing edge runs along the stem itself
   earbuds: { close: [0, 1] },
   'speaker-box': { solid: [0], cut: [1, 2] },
   'smart-speaker': { solid: [0], cut: [1, 2, 3] },
@@ -1560,9 +1567,9 @@ const FILL = {
   pause: { solid: [0, 1] },
   'pause-circle': { solid: [0], cut: [1, 2] },
   stop: { solid: [0] },
-  // El botón de grabar: el punto se rellena y el aro sigue siendo línea
+  // The record button: the dot is filled and the ring stays a line
   record: { solid: [1], lines: [0] },
-  // Las barras sueltas junto al triángulo siguen siendo línea
+  // The loose bars next to the triangle stay lines
   'play-pause': { solid: [0], lines: [1, 2] },
   eject: { solid: [0], lines: [1] },
   'skip-forward': { solid: [0], lines: [1] },
@@ -1574,11 +1581,10 @@ const FILL = {
   'volume-off': { solid: [0], lines: [1, 2] },
   'volume-plus': { solid: [0], lines: [1, 2] },
   'volume-minus': { solid: [0], lines: [1] },
-  // La cabeza de la nota se rellena; los renglones siguen siendo línea y la plica y su bandera van
-  // pegadas a la cabeza
+  // The note head is filled; the rows stay lines, and the stem and its flag are attached to the head
   playlist: { solid: [3], lines: [0, 1, 2], wire: [4, 5] },
-  // Los renglones no tocan el triángulo, pero van sin aire: con el de `lines`, en negrita le mordían
-  // la base
+  // The rows don't touch the triangle, but they go with no clearance: with the `lines` clearance,
+  // the bold weight bit into its base
   'playlist-play': { solid: [4], wire: [0, 1, 2, 3] },
   radio: { solid: [0], wire: [1], cut: [2, 3, 4] },
   vinyl: { solid: [0], cut: [1, 2, 3, 4] },
@@ -1589,7 +1595,7 @@ const FILL = {
   captions: { solid: [0], cut: [1, 2] },
   'camera-focus': { solid: [4], lines: [0, 1, 2, 3] },
   'camera-flip': { solid: [0], close: [1], cut: [2, 3, 4, 5] },
-  // Imagen en imagen: se rellena la ventana flotante, que es lo que el ícono señala
+  // Picture-in-picture: the floating window is filled, since it's what the icon points to
   'picture-in-picture': { solid: [1], lines: [0] },
   'screen-mirror': { solid: [0] },
   cassette: { solid: [0], cut: [1, 2, 3] },
@@ -1601,7 +1607,7 @@ const FILL = {
   drone: { solid: [0], wire: [1, 2, 3, 4, 5, 6, 7, 8] },
   'sim-card': { solid: [0], cut: [1, 2, 3] },
 };
-/** Un cuerpo abierto del contorno, cerrado para `fill.solid` (en solid solo van figuras cerradas). */
+/** An open body from the outline, closed for `fill.solid` (solid only takes closed shapes). */
 const shut = (d) => `${d}Z`;
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
@@ -1612,28 +1618,29 @@ for (const [name, spec] of Object.entries(FILL)) {
     ...(spec.wire && { wire: pick(spec.wire) }),
   };
 }
-// Piezas abiertas que tocan al cuerpo (antena, diadema, brazos, plica, viga): siguen siendo línea,
-// pegadas al relleno (`wire`): ni se rellenan hasta su cuerda ni muerden el cuerpo con el aire de
-// `lines`.
+// Open pieces that touch the body (antenna, headband, arms, note stem, beam) stay lines, attached
+// to the fill (`wire`): they are neither filled up to their chord nor bite into the body with the
+// `lines` clearance.
 {
   const d = (n) => icons[n].d;
   icons['tv-retro'].fill = { solid: [d('tv-retro')[0]], wire: [d('tv-retro')[1]], cut: [d('tv-retro')[2], d('tv-retro')[3]] };
   icons.headphones.fill = { solid: [d('headphones')[1], d('headphones')[2]], wire: [d('headphones')[0]] };
-  // El USB relleno: la punta se vuelve un triángulo sólido; el tallo y los brazos acodados, pegados
+  // The filled USB: the tip becomes a solid triangle; the stem and the bent arms, attached
   const u = d('usb');
   icons.usb.fill = { solid: [shut(u[1]), u[2], u[4], u[6]], wire: [u[0], u[3], u[5]] };
   icons['music-note'].fill = { solid: [d('music-note')[0]], wire: [d('music-note')[1], d('music-note')[2]] };
   icons['music-notes'].fill = { solid: [d('music-notes')[0], d('music-notes')[1]], wire: [d('music-notes')[2]] };
-  // La pantalla del cast se cierra con un arco concéntrico a las ondas, a 3 de la más grande: el
-  // relleno llega hasta donde termina el contorno abierto sin pisar las ondas
+  // The cast screen closes with an arc concentric with the waves, 3 from the largest one: the fill
+  // reaches where the open outline ends without covering the waves
   const c = d('cast');
   icons.cast.fill = { solid: [`${c[0]}A10.25 10.25 0 0 0 2.5 9.3Z`, c[1]], lines: [c[2], c[3]] };
-  // Detalles que llegan al contorno (la ranura de la linterna, la banda del micrófono, la cordillera,
-  // las perforaciones, las franjas de la claqueta): se calan de lado a lado, sin muesca en la silueta
+  // Details that reach the outline (the flashlight's slot, the microphone's band, the mountain
+  // range, the perforations, the clapperboard's stripes) are knocked out all the way through, with
+  // no notch in the silhouette
   const x = (name, i, k0 = 1, k1 = 1) => extend(d(name)[i], k0, k1);
   icons.flashlight.fill = { solid: [d('flashlight')[0]], cut: [x('flashlight', 1), d('flashlight')[2]] };
   icons['flashlight-on'].fill = { solid: [d('flashlight-on')[0]], cut: [x('flashlight-on', 1), d('flashlight-on')[2]], lines: d('flashlight-on').slice(3) };
-  // El mango se cierra por la cuerda que cruza la cabeza (queda dentro de su relleno)
+  // The handle closes along the chord that crosses the head (it stays inside the head's fill)
   icons['microphone-handheld'].fill = { solid: [d('microphone-handheld')[0], shut(d('microphone-handheld')[1])], cut: [x('microphone-handheld', 2)] };
   icons['microphone-studio'].fill = {
     solid: [d('microphone-studio')[0], d('microphone-studio')[4]],
@@ -1642,16 +1649,16 @@ for (const [name, spec] of Object.entries(FILL)) {
   };
   for (const name of ['image', 'image-off']) icons[name].fill = { solid: [d(name)[0]], cut: [d(name)[1], x(name, 2)] };
   icons['image-sparkle'].fill = { solid: [d('image-sparkle')[0]], cut: [x('image-sparkle', 1)] };
-  // La película: las perforaciones quedan como bloques; solo se alarga el extremo de afuera de cada
-  // travesaño (el de adentro toca el carril y no debe morder la franja central)
+  // The film: the perforations stay as blocks; only the outer end of each crossbar is extended (the
+  // inner end touches the rail and must not bite into the center strip)
   icons.film.fill = { solid: [d('film')[0]], cut: [x('film', 1), x('film', 2), x('film', 3, 1, 0), x('film', 4, 0, 1), x('film', 5, 1, 0), x('film', 6, 0, 1)] };
   icons.clapperboard.fill = { solid: d('clapperboard').slice(0, 2), cut: [2, 3, 4].map((i) => x('clapperboard', i)) };
-  // El diafragma: el aro sigue entero; las láminas se calan hasta 0.75 antes de su línea
+  // The aperture: the ring stays whole; the blades are knocked out up to 0.75 short of its line
   icons.aperture.fill = { solid: [d('aperture')[0]], cut: aperture(8.25).slice(1) };
-  // Lo que en el contorno es un hueco (el triángulo de play, el cuadro de stop, el hoyo del disco, la
-  // cabeza de la nota, el puerto) se vacía en el relleno. El hueco va 0.75 por fuera de la figura y
-  // la figura se cala: el borde del hueco lo da la máscara, en el borde exterior de la línea, sin la
-  // costura que dejan dos bordes suavizados en el mismo lugar.
+  // Whatever is a hole in the outline (the play triangle, the stop square, the disc's hole, the
+  // note head, the port) is emptied in the fill. The hole sits 0.75 outside the shape and the shape
+  // is knocked out: the mask gives the hole its edge, at the line's outer edge, without the seam
+  // left by two antialiased edges in the same place.
   for (const [name, hole, cut] of [
     ['play-circle', grown(triPts(16.25, 12, 6.25, 8), 1.25, 0.75), [1]],
     ['stop-circle', sq(8, 8, 8, 8, 2.5), [1]],
@@ -1662,9 +1669,9 @@ for (const [name, spec] of Object.entries(FILL)) {
   ])
     icons[name].fill = { solid: [withHoles(d(name)[0], hole)], cut: cut.map((i) => d(name)[i]) };
 }
-// Solo líneas abiertas (ondas, barras, flechas, la runa de bluetooth): su relleno es el mismo
-// contorno. Las baterías por nivel tampoco: un cuerpo sólido se lee como batería llena, tenga las
-// barras que tenga.
+// Only open lines (waves, bars, arrows, the Bluetooth rune): their filled version is the outline
+// itself. The battery levels don't get one either: a solid body reads as a full battery, no matter
+// how many bars it has.
 for (const name of [
   'power', 'wifi', 'wifi-medium', 'wifi-low', 'wifi-off', 'bluetooth', 'bluetooth-connected',
   'signal', 'signal-high', 'signal-medium', 'signal-low', 'repeat', 'repeat-one', 'shuffle', 'equalizer', 'audio-waveform',
@@ -1672,34 +1679,34 @@ for (const name of [
 ])
   icons[name].fill = false;
 
-// ── 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta ──────────────
-// A 16 px un pixel mide 1.5 del lienzo: los tramos rectos van en centros de pixel (0.75 + 1.5k), las
-// diagonales a 45° pasan por centros de pixel (x ± y múltiplo de 1.5), los círculos tocan centros de
-// pixel en sus cuatro puntos cardinales y los puntos de 2 × 2 pixeles se centran en una esquina de
-// pixel. Entre piezas, 1 px de aire como mínimo. Un dibujo centrado en x 12 con un trazo vertical
-// al centro se corre medio pixel a la derecha (12.75): un trazo en 12 se vería de 2 px y gris.
+// ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──────────────
+// At 16 px a pixel is 1.5 canvas units: straight runs go on pixel centers (0.75 + 1.5k), 45°
+// diagonals pass through pixel centers (x ± y a multiple of 1.5), circles touch pixel centers at
+// their four cardinal points, and 2 × 2 pixel dots are centered on a pixel corner. At least 1 px of
+// space between pieces. A drawing centered on x 12 with a vertical stroke in the middle shifts half
+// a pixel to the right (12.75): a stroke at 12 would render 2 px wide and gray.
 const small = (name, d, fill, badge) => {
   icons[name].small = { d, ...(fill && { fill }), ...(badge && { badge }) };
 };
 const sdot = (x, y) => dot(x, y, 1);
 {
-  // Teclado: dos filas de tres teclas de 2 px y la barra espaciadora, con 1 px entre filas (los
-  // puntos de 0.3 se volvían bandas grises)
+  // Keyboard: two rows of three 2 px keys and the space bar, with 1 px between rows (the 0.3 dots
+  // turned into gray bands)
   const body = sq(2.25, 6.75, 19.5, 12, 3, BR);
   const keys = [9.75, 12.75].flatMap((y) => [6.75, 11.25, 15.75].map((x) => line([x, y], [x + 1.5, y])));
   const bar = line([8.25, 15.75], [15.75, 15.75]);
   small('keyboard', [body, ...keys, bar], { solid: [body], cut: [...keys, bar] });
 }
 {
-  // Control remoto: el botón grande como un cuadro de 4 px hueco (un aro de 4 px se llenaba de gris)
-  // y cuatro botones de 1 px
+  // Remote control: the big button as a hollow 4 px square (a 4 px ring filled in gray) and four
+  // 1 px buttons
   const body = sq(6.75, 2.25, 10.5, 19.5, 3, BR);
   const ring = sq(9.75, 5.25, 4.5, 4.5, 1.2);
   const keys = [14.25, 17.25].flatMap((y) => [9.75, 14.25].map((x) => dot(x, y, 0.3)));
   small('remote-control', [body, ring, ...keys], { solid: [body], cut: [ring, ...keys] });
 }
 {
-  // Control de juego: la cruceta de 3 px y la palanca como disco de 3 px, a 2 px entre ellas
+  // Gamepad: a 3 px D-pad and the stick as a 3 px disc, 2 px apart
   const body = roundpoly(
     [
       [6, 5.25],
@@ -1718,15 +1725,15 @@ const sdot = (x, y) => dot(x, y, 1);
   small('gamepad', [body, ...dpad, stick], { solid: [body], cut: [...dpad, stick] });
 }
 {
-  // Contacto: la placa, el aro de la toma y dos ranuras de 1 × 2 px (los dos hoyos redondos se
-  // volvían una mancha gris)
+  // Outlet: the plate, the socket ring and two 1 × 2 px slots (the two round holes turned into a
+  // gray smudge)
   const plate = sq(2.25, 2.25, 19.5, 19.5, 4, BR);
   const ring = circ(12, 12, 5.25);
   const slots = [9.75, 14.25].map((x) => line([x, 11.25], [x, 12.75]));
   small('outlet', [plate, ring, ...slots], { solid: [plate], cut: [ring, ...slots] });
 }
 {
-  // Proyector: el lente como aro de 5 px con el centro hueco y dos renglones a su altura
+  // Projector: the lens as a 5 px ring with a hollow center and two lines at its height
   const body = sq(2.25, 5.25, 19.5, 12, 3, BR);
   const lens = circ(15.75, 11.25, 3);
   const rows = [9.75, 12.75].map((y) => line([5.25, y], [8.25, y]));
@@ -1734,16 +1741,15 @@ const sdot = (x, y) => dot(x, y, 1);
   small('projector', [body, lens, ...rows, ...feet], { solid: [body], wire: feet, cut: [lens, ...rows] });
 }
 {
-  // Batería cargando: un rayo más alto y sin esquinas redondas (el de 5 de alto se volvía un borrón;
-  // uno de diagonales a 45° se leía como una cruz); el cuerpo crece 1 px hacia abajo para dejarle
-  // aire arriba y abajo
+  // Charging battery: a taller bolt with no rounded corners (the 5-tall one became a blur; one with
+  // 45° diagonals read as a cross); the body grows 1 px downward to leave it room above and below
   const body = sq(2.25, 6.75, 16.5, 12, 3, BR);
   const tip = line([21.75, 11.25], [21.75, 14.25]);
   const bolt = line([12.25, 9.5], [8.75, 12.75], [12.75, 12.75], [9.25, 16]);
   small('battery-charging', [body, tip, bolt], { solid: [body], lines: [tip], cut: [bolt] });
 }
 {
-  // Cambiar de cámara: a 16 px las flechas en círculo se empastaban; dos flechas opuestas (⇄)
+  // Switch camera: at 16 px the circular arrows clogged up; two opposing arrows (⇄)
   const body = sq(2.25, 6.75, 19.5, 13.5, 3, BR);
   const hump = roundline(
     [
@@ -1758,14 +1764,14 @@ const sdot = (x, y) => dot(x, y, 1);
   small('camera-flip', [body, hump, ...arrows], { solid: [body, shut(hump)], cut: arrows });
 }
 {
-  // Carga inalámbrica: el rayo (el de la batería, más grande) sobre la base; sin las ondas, que a
-  // 16 px lo encerraban en un paréntesis gris
+  // Wireless charging: the bolt (the battery's, larger) over the pad; without the waves, which at
+  // 16 px wrapped it in gray parentheses
   const pad = capsule(3.75, 17.25, 16.5, 3);
   const bolt = line([13.87, 4.94], [9.5, 9], [14.5, 9], [10.12, 13.06]);
   small('wireless-charging', [pad, bolt], { solid: [pad], lines: [bolt] });
 }
 {
-  // SIM: el chaflán a 45° por centros de pixel y el chip con un solo renglón
+  // SIM: the 45° chamfer through pixel centers and the chip with a single line
   const card = roundpoly(
     [
       [5.25, 2.25],
@@ -1781,14 +1787,14 @@ const sdot = (x, y) => dot(x, y, 1);
   small('sim-card', [card, chip, contact], { solid: [card], cut: [chip, contact] });
 }
 {
-  // Tocadiscos: plato de aro limpio y el brazo encima, despejado por el motor
+  // Turntable: a clean ring for the platter and the tonearm on top, cleared by the engine
   const cabinet = sq(2.25, 5.25, 19.5, 13.5, 3, BR);
   const platter = circ(9, 12, 3.75);
   const tone = line([17.25, 6.75], [17.25, 12.75], [14.25, 15.75]);
   small('turntable', [cabinet, platter], { solid: [cabinet], cut: [platter] }, { d: [tone], knock: knockOf(tone) });
 }
 {
-  // USB: el tridente con el tallo en un centro de pixel, brazos a 45° y remates de 3 px
+  // USB: the trident with its stem on a pixel center, 45° arms and 3 px ends
   const stem = line([12.75, 2.25], [12.75, 17.25]);
   const tip = line([11.25, 3.75], [12.75, 2.25], [14.25, 3.75]);
   const base = circ(12.75, 18.75, 1.5);
@@ -1799,57 +1805,56 @@ const sdot = (x, y) => dot(x, y, 1);
   small('usb', [stem, tip, base, left, bead, right, block], { solid: [shut(tip), base, bead, block], wire: [stem, left, right] });
 }
 {
-  // Podcast: corrido medio pixel a la derecha para que el tallo sea de 1 px; el micrófono y una sola
-  // onda (con dos, los arcos se volvían un abanico gris)
+  // Podcast: shifted half a pixel to the right so the stem is 1 px; the microphone and a single
+  // wave (with two, the arcs became a gray fan)
   const mic = capsule(11.25, 6.75, 3, 6);
   const stem = line([12.75, 12.75], [12.75, 20.25]);
   const wave = arc(12.75, 9.75, 6, 140, 400).d;
   small('podcast', [mic, stem, wave], { solid: [mic], wire: [stem], lines: [wave] });
 }
 {
-  // En vivo: el punto de 2 × 2 px y un par de arcos que tocan centros de pixel, a 2 px del punto
-  // (a 1 px se juntaban con él en un moño)
+  // Live: the 2 × 2 px dot and a pair of arcs touching pixel centers, 2 px from the dot (at 1 px
+  // they merged with it into a bow tie)
   const frame = sq(2.25, 5.25, 19.5, 13.5, 3.5, BR);
   const signal = [sdot(12, 12), arc(12, 12, 5.25, -40, 40).d, arc(12, 12, 5.25, 140, 220).d];
   small('live', [frame, ...signal], { solid: [frame], cut: signal });
 }
 {
-  // Bluetooth: la runa con sus cuatro diagonales a 45° por centros de pixel, cruzando el tallo en un
-  // solo punto (las del dibujo grande caían entre pixeles)
+  // Bluetooth: the rune with its four 45° diagonals through pixel centers, crossing the stem at a
+  // single point (the large drawing's fell between pixels)
   const rune = line([8.25, 8.25], [17.25, 17.25], [12.75, 21.75], [12.75, 3.75], [17.25, 8.25], [8.25, 17.25]);
   small('bluetooth', [rune]);
   small('bluetooth-connected', [rune, sdot(4.5, 12), sdot(21, 12)]);
 }
 {
-  // Sin volumen: la bocina ajustada al pixel y una × de 5 px con un solo pixel al centro
+  // Volume off: the speaker snapped to the pixel grid and a 5 px × with a single pixel at the center
   const speaker = snap(SPEAKER);
   const x = [line([15.75, 9.75], [21.75, 15.75]), line([21.75, 9.75], [15.75, 15.75])];
   small('volume-off', [speaker, ...x], { solid: [speaker], lines: x });
 }
 {
-  // Cámara web: corrida medio pixel a la derecha (el soporte de 1 px); aro de r 6 y lente de 3 px
+  // Webcam: shifted half a pixel to the right (the 1 px stand); an r 6 ring and a 3 px lens
   const ring = circ(12.75, 9.75, 6);
   const lens = circ(12.75, 9.75, 1.5);
   const stand = [line([12.75, 15.75], [12.75, 20.25]), line([8.25, 20.25], [17.25, 20.25])];
   small('webcam', [ring, lens, ...stand], { solid: [ring], wire: stand, cut: [lens] });
 }
 {
-  // Bocina: el gabinete de 14 px de alto, el tweeter como punto de 2 × 2 px y el woofer de aro limpio
+  // Speaker: a 14 px tall cabinet, the tweeter as a 2 × 2 px dot and the woofer as a clean ring
   const cabinet = sq(5.25, 2.25, 13.5, 19.5, 3.5, BR);
   const tweeter = sdot(12, 7.5);
   const woofer = circ(12, 15, 3.75);
   small('speaker-box', [cabinet, tweeter, woofer], { solid: [cabinet], cut: [tweeter, woofer] });
 }
 {
-  // Casete: los carretes como aros de 3 px centrados en un pixel (huecos; los de 4 px se llenaban de
-  // gris)
+  // Cassette: the reels as 3 px rings centered on a pixel (hollow; 4 px ones filled in gray)
   const body = sq(2.25, 5.25, 19.5, 13.5, 3, BR);
   const label = line([6.75, 8.25], [17.25, 8.25]);
   const reels = [circ(8.25, 14.25, 1.5), circ(15.75, 14.25, 1.5)];
   small('cassette', [body, label, ...reels], { solid: [body], cut: [label, ...reels] });
 }
 {
-  // Radio: la bocina como aro de 5 px centrado en un pixel y los renglones a su altura
+  // Radio: the speaker as a 5 px ring centered on a pixel and the lines at its height
   const body = sq(2.25, 8.25, 19.5, 12, 3, BR);
   const antenna = line([6.75, 8.25], [17.25, 3.75]);
   const speaker = circ(8.25, 14.25, 3);
@@ -1857,15 +1862,15 @@ const sdot = (x, y) => dot(x, y, 1);
   small('radio', [body, antenna, speaker, ...rows], { solid: [body], wire: [antenna], cut: [speaker, ...rows] });
 }
 {
-  // Vinil: el disco que toca centros de pixel, la etiqueta como punto de 2 × 2 px y dos surcos más
-  // largos (con la etiqueta como aro de 4 px se volvía una mancha)
+  // Vinyl: the disc touching pixel centers, the label as a 2 × 2 px dot and two longer grooves
+  // (with the label as a 4 px ring it became a smudge)
   const disc = circ(12, 12, 8.25);
   const label = sdot(12, 12);
   const grooves = [arc(12, 12, 5.25, 190, 260).d, arc(12, 12, 5.25, 10, 80).d];
   small('vinyl', [disc, label, ...grooves], { solid: [disc], cut: [label, ...grooves] });
 }
 {
-  // Cámara lenta: el arco que toca centros de pixel, dos puntos de 1 px y el triángulo a 45°
+  // Slow motion: the arc touching pixel centers, two 1 px dots and the triangle at 45°
   const ring = arc(12, 12, 8.25, -90, 180).d;
   const dots = [dot(5.25, 8.25, 0.3), dot(8.25, 5.25, 0.3)];
   const play = roundpoly(
@@ -1879,17 +1884,17 @@ const sdot = (x, y) => dot(x, y, 1);
   small('slow-motion', [ring, ...dots, play], { solid: [...dots, play], lines: [ring] });
 }
 
-// ── Niveles (DESIGN.md › Niveles): de menos a más; el punto del wifi y el cuerpo quedan siempre ──
+// ── Levels (DESIGN.md › Levels): from least to most; the Wi-Fi dot and the body always stay ──
 icons.wifi.levels = [[1], [2], [3]];
 icons.signal.levels = [[0], [1], [2], [3]];
 icons['battery-full'].levels = [[2], [3], [4], [5]];
 icons['volume-high'].levels = [[1], [2]];
 
-// ── Espejo (DESIGN.md › Espejo): las bocinas y las listas con sangría se voltean de derecha a
-// izquierda. Los controles de reproducción no: describen el sentido de la cinta, no el de la lectura.
+// ── Mirroring (DESIGN.md › Mirroring): speakers and indented lists flip in right-to-left layouts.
+// Playback controls don't: they describe the direction of the tape, not the reading direction.
 for (const name of ['volume-low', 'volume-high', 'volume-off', 'volume-plus', 'volume-minus', 'playlist', 'playlist-play']) icons[name].mirror = true;
 
-// ── Piezas con nombre (DESIGN.md › Piezas): lo que se mueve, cambia de estado o es una insignia ──
+// ── Named parts (DESIGN.md › Named parts): what moves, changes state or is a badge ──
 const parts = {
   'smartphone-vibrate': { body: [0, 1], wave: [2, 3, 4, 5] },
   devices: { screen: [0], stand: [1, 2] },
@@ -1922,7 +1927,7 @@ const parts = {
   'stop-circle': { shape: [0], stop: [1] },
   record: { ring: [0], dot: [1] },
   eject: { arrow: [0], bar: [1] },
-  // El triángulo de atrás y el de adelante (el que apunta), para encenderlos uno tras otro
+  // The back triangle and the front one (the one that points), so they can light up one after the other
   'fast-forward': { back: [0], front: [1] },
   rewind: { back: [0], front: [1] },
   'skip-forward': { arrow: [0], bar: [1] },
@@ -1963,29 +1968,28 @@ const parts = {
 };
 for (const [name, p] of Object.entries(parts)) icons[name].parts = p;
 
-// ── Variantes automáticas (DESIGN.md › Variantes) ──
+// ── Automatic variants (DESIGN.md › Automatic variants) ──
 const variants = (names, v) => {
   for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
 };
-// Con insignia: el motor no la lleva al relleno en círculo ni sobre el tachado; la pieza de enfrente
-// se perdería o chocaría con la diagonal
+// With a badge: the engine doesn't carry it into the filled circle or onto the slash; the front
+// piece would get lost or collide with the slash
 variants(
   Object.keys(icons).filter((n) => icons[n].badge),
   { circle: false, square: false, slash: false },
 );
-// Ya tienen su versión -off dibujada a mano
+// They already have a hand-drawn -off version
 variants(['camera', 'video-camera', 'wifi', 'wifi-medium', 'wifi-low', 'image'], { slash: false });
 variants(['volume-low', 'volume-high', 'volume-off', 'volume-plus', 'volume-minus'], { slash: false });
-// Líneas sueltas y flechas: tacharlas no dice nada
+// Loose lines and arrows: slashing them says nothing
 variants(['repeat', 'repeat-one', 'audio-waveform', 'equalizer', 'signal', 'signal-high', 'signal-medium', 'signal-low'], { slash: false });
-// Ya vienen encerrados en un círculo: ni en círculo ni en cuadrado (un círculo en un cuadro no dice más)
+// Already enclosed in a circle: neither circle nor square (a circle inside a square says nothing more)
 variants(['play-circle', 'pause-circle', 'stop-circle', 'record', 'disc', 'vinyl', 'slow-motion', 'aperture'], { circle: false, square: false });
 variants(['power', 'podcast'], { circle: false });
-// Ya vienen en un cuadro
+// Already in a square
 variants(['outlet', 'ethernet', 'camera-focus', 'album'], { square: false });
 
-// ── Movimiento (DESIGN.md › Movimiento): parts = piezas que se mueven; origin = pivote; vector =
-// desplazamiento ──
+// ── Motion (DESIGN.md › Motion): parts = pieces that move; origin = pivot; vector = offset ──
 icons['smartphone-vibrate'].motion = { effect: 'wiggle', parts: ['body'], origin: [12, 12] };
 icons.gamepad.motion = { effect: 'wiggle', origin: [12, 12] };
 icons.joystick.motion = { effect: 'wiggle', parts: ['stick'], origin: [12, 15.5] };

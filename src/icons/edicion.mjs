@@ -1,9 +1,9 @@
-// Edición y texto: portapapeles, formato, alineación, listas, herramientas de dibujo y de
-// imagen, marcas, capas y selección. Todo se calcula con engine/geometry.mjs; ver DESIGN.md.
+// Edición y texto (editing and text): clipboard, formatting, alignment, lists, drawing and image
+// tools, marks, layers and selection. Everything is computed with engine/geometry.mjs; see DESIGN.md.
 import { arc, badge, circ, dot, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snap, transform } from '../../engine/variants.mjs';
 
-// ── Auxiliares locales ────────────────────────────────────────────────────────────────────
+// ── Local helpers ─────────────────────────────────────────────────────────────────────────
 const xy = ([x, y]) => `${f(x)} ${f(y)}`;
 const add = (p, v, k = 1) => [p[0] + v[0] * k, p[1] + v[1] * k];
 const sub = (a, b) => [a[0] - b[0], a[1] - b[1]];
@@ -13,10 +13,10 @@ const unit = (v) => {
 };
 const hl = (x0, x1, y) => line([x0, y], [x1, y]);
 const vl = (x, y0, y1) => line([x, y0], [x, y1]);
-/** Contenedor con la firma: esquina inferior derecha recta. */
+/** Container with the signature corner: a square bottom-right corner. */
 const box = (x, y, w, h, r) => sq(x, y, w, h, r, { square: ['br'] });
 
-// La misma esquina continua que sq() del motor (suavizado 0.6), para usarla en polilíneas.
+// The same continuous corner as the engine's sq() (0.6 smoothing), for use in polylines.
 function corner(r, s = 0.6) {
   const p = (1 + s) * r;
   const a90 = 90 * (1 - s);
@@ -31,9 +31,9 @@ function corner(r, s = 0.6) {
 }
 
 /**
- * Polilínea (abierta o cerrada) con esquinas redondeadas: continuas en los giros de 90° y
- * arco circular en los demás (`circular`: arco circular en todos, como la cordillera de
- * dispositivos/image). `r` es un radio o uno por vértice (0 = esquina viva).
+ * Polyline (open or closed) with rounded corners: continuous at 90° turns and a circular arc
+ * everywhere else (`circular`: a circular arc at every turn, like the mountains in
+ * dispositivos/image). `r` is one radius or one per vertex (0 = sharp corner).
  */
 function rpath(pts, r = 0, { closed = false, circular = false } = {}) {
   const n = pts.length;
@@ -73,8 +73,8 @@ function rpath(pts, r = 0, { closed = false, circular = false } = {}) {
 }
 
 /**
- * La gota del isotipo girada `deg` grados (0 = esquina recta abajo a la derecha). Con -135 la
- * esquina queda arriba: es la gota de líquido del set (la misma de lugares/droplet).
+ * The logomark's drop rotated `deg` degrees (0 = square corner at bottom right). At -135 the
+ * corner points up: it's the set's liquid drop (the same as lugares/droplet).
  */
 function dropAt(cx, cy, r, deg = 0) {
   const c = [cx, cy];
@@ -83,26 +83,26 @@ function dropAt(cx, cy, r, deg = 0) {
   return `M${R(cx + r, cy)}L${R(cx + r, cy + r)}L${R(cx, cy + r)}${A}${R(cx - r, cy)}${A}${R(cx, cy - r)}${A}${R(cx + r, cy)}Z`;
 }
 
-/** Puntos de una línea recta entre a y b, recortada `t0` desde a y `t1` desde b. */
+/** Endpoints of a straight line from a to b, trimmed by `t0` at a and by `t1` at b. */
 const trim = (a, b, t0 = 0, t1 = 0) => {
   const u = unit(sub(b, a));
   return [add(a, u, t0), add(b, u, -t1)];
 };
 
-/** Numeral 2 en la caja (x0, top, w, h). */
+/** Numeral 2 in the box (x0, top, w, h). */
 function two(x0, top, w, h) {
   const r = w / 2;
   return `${arc(x0 + r, top + r, r, 190, 400).d}L${xy([x0, top + h])}H${f(x0 + w)}`;
 }
 
-/** Marco local sobre un eje a `deg` grados: P(u, v) = o + u·d + v·n (n gira 90° en sentido horario). */
+/** Local frame on an axis at `deg` degrees: P(u, v) = o + u·d + v·n (n is d rotated 90° clockwise). */
 const axis = (o, deg) => {
   const d = [Math.cos((deg * Math.PI) / 180), Math.sin((deg * Math.PI) / 180)];
   const n = [-d[1], d[0]];
   return (u, v = 0) => [o[0] + u * d[0] + v * n[0], o[1] + u * d[1] + v * n[1]];
 };
 
-/** Cápsula de radio r entre los centros a y b. */
+/** Capsule of radius r between centers a and b. */
 function capsule(a, b, r) {
   const d = unit(sub(b, a));
   const n = [-d[1], d[0]];
@@ -110,7 +110,7 @@ function capsule(a, b, r) {
   return `M${xy(add(a, n, r))}L${xy(add(b, n, r))}${A}${xy(add(b, n, -r))}L${xy(add(a, n, -r))}${A}${xy(add(a, n, r))}Z`;
 }
 
-/** Destello de cuatro puntas con lados cóncavos (k = cuánto se abren las curvas). */
+/** Four-pointed sparkle with concave sides (k = how far the curves open). */
 function spark(cx, cy, R, k = 0.9) {
   const pts = [[cx, cy - R], [cx + R, cy], [cx, cy + R], [cx - R, cy]];
   const ctl = [[k, -k], [k, k], [-k, k], [-k, -k]];
@@ -119,9 +119,9 @@ function spark(cx, cy, R, k = 0.9) {
   return `${out}Z`;
 }
 
-// ── Trazos al revés (para el relleno) ──
-// `hole()` junta un contorno con otro recorrido al revés: el de adentro queda hueco (la ventana
-// de la escuadra). Lo que en el relleno sigue siendo línea pegada al cuerpo va en `wire`.
+// ── Reversed paths (for the fill) ──
+// `hole()` joins an outline with another one traced in reverse: the inner one stays hollow (the
+// set square's window). Whatever stays a line flush with the body in the fill goes in `wire`.
 function segments(d) {
   const out = [];
   let p = [0, 0];
@@ -150,32 +150,32 @@ function hole(outer, inner) {
   return `${outer}M${xy(segs.at(-1).to)}${segs.reverse().map(back).join('')}Z`;
 }
 
-// Portapapeles (la misma pieza de archivos/clipboard): la pinza se apoya en el tramo recto del
-// borde superior del tablero.
+// Clipboard (the same piece as archivos/clipboard): the clip rests on the straight run of the
+// board's top edge.
 const CLIP = [
   rpath([[9.15, 4.5], [4.75, 4.5], [4.75, 21.25], [19.25, 21.25], [19.25, 4.5], [14.85, 4.5]], [0, 2.75, 2.75, 0, 2.75, 0]),
   sq(9.15, 2.75, 5.7, 3.5, 1.05),
 ];
-// En el relleno el tablero va cerrado: su cierre corre bajo la pinza, que lo tapa.
+// In the fill the board is closed: its closing segment runs under the clip, which covers it.
 const CLIP_SOLID = [`${CLIP[0]}Z`, CLIP[1]];
 
-// Copiar: la hoja de atrás termina en sus esquinas, a 1.5 de aire de la de enfrente.
+// Copy: the back sheet ends at its corners, with a 1.5 gap from the front one.
 const COPY_BACK = rpath([[13.75, 7.25], [13.75, 3.25], [3.25, 3.25], [3.25, 13.75], [7.25, 13.75]], 2.5);
 const COPY_FRONT = box(10.25, 10.25, 10.5, 10.5, 2.5);
 
-// Bote de basura: tapa con asa y cuerpo cerrado debajo, separados por 1.5 de aire.
+// Trash can: a lid with a handle and a closed body below, separated by a 1.5 gap.
 const TRASH_LID = [hl(3.5, 20.5, 6), rpath([[9.25, 6], [9.25, 3.25], [14.75, 3.25], [14.75, 6]], 1.25)];
 const TRASH_BODY = [box(5.25, 9, 13.5, 12.25, 3.25), vl(9.75, 12.75, 17.5), vl(14.25, 12.75, 17.5)];
 
-// Archivo: tapa ancha y cuerpo que cuelga de ella.
+// Archive: a wide lid and a body hanging from it.
 const ARCHIVE = [sq(2.75, 3.5, 18.5, 4.75, 1.4), rpath([[5.25, 8.25], [5.25, 20.75], [18.75, 20.75], [18.75, 8.25]], [0, 3, 0, 0])];
-// En el relleno la caja va cerrada: su cierre corre por el canal que la separa de la tapa.
+// In the fill the box is closed: its closing segment runs along the channel that separates it from the lid.
 const ARCHIVE_SOLID = [ARCHIVE[0], `${ARCHIVE[1]}Z`];
 
-// Encabezado: H compacta para acompañar un número.
+// Heading: a compact H to pair with a number.
 const H_SMALL = [vl(3.75, 5, 19), vl(11.75, 5, 19), hl(3.75, 11.75, 12)];
 
-// Tijeras: dos ojos y dos hojas rectas; la segunda pasa detrás de la primera.
+// Scissors: two eyes and two straight blades; the second passes behind the first.
 function scissors() {
   const L = [6.75, 17.25];
   const R = [17.25, 17.25];
@@ -184,7 +184,7 @@ function scissors() {
   const tipL = [7.5, 3.25];
   const a0 = add(L, unit(sub(tipR, L)), r);
   const b0 = add(R, unit(sub(tipL, R)), r);
-  // cruce de las hojas en x = 12
+  // the blades cross at x = 12
   const t = (12 - a0[0]) / (tipR[0] - a0[0]);
   const X = [12, a0[1] + t * (tipR[1] - a0[1])];
   const ub = unit(sub(tipL, b0));
@@ -194,25 +194,25 @@ function scissors() {
   return [circ(...L, r), circ(...R, r), line(a0, tipR), line(b0, add(X, ub, -gap)), line(add(X, ub, gap), tipL)];
 }
 
-// Tapa abierta: la tapa del bote girada 10° sobre su extremo izquierdo, que baja 0.5 para que el
-// asa no salga del área viva (el extremo queda a más de 1.5 de aire del cuerpo).
+// Open lid: the trash can's lid rotated 10° on its left end, which drops 0.5 so the handle stays
+// inside the live area (the end keeps more than a 1.5 gap from the body).
 function trashLidOpen() {
   const c = [3.5, 6.5];
   const R = (p) => rot([p[0], p[1] + 0.5], c, -10);
   return [line(R([3.5, 6]), R([20.5, 6])), rpath([[9.25, 6], [9.25, 3.25], [14.75, 3.25], [14.75, 6]].map(R), 1.25)];
 }
 
-// Girar: la pieza y un arco concéntrico que la rodea por arriba.
+// Rotate: the piece and a concentric arc that wraps around it from above.
 function rotateIcon(cw) {
   const a = cw ? arc(8, 15, 10.25, -118, 0) : arc(16, 15, 10.25, -62, -180);
   return [box(cw ? 3.25 : 11.25, 10.25, 9.5, 9.5, 2.25), a.d, head(a.end, a.tangent, 3.4)];
 }
 
-// Línea de corte o eje: tres guiones de 3.5 con 3.5 entre ellos, el del medio centrado (con
-// guiones de menos de 2 eran fragmentos y a 16 px se volvían ruido).
+// Cut line or axis: three 3.5 dashes with 3.5 between them, the middle one centered (dashes
+// shorter than 2 were fragments and turned into noise at 16 px).
 const DASHES = [[3.25, 6.75], [10.25, 13.75], [17.25, 20.75]];
 
-// Voltear: el triángulo, el eje punteado y su reflejo (los catetos a 3 del eje).
+// Flip: the triangle, the dashed axis and its reflection (the legs 3 from the axis).
 const FLIP = [
   [[[9, 5.75], [9, 18.25], [3, 18.25]], [1, 1.5, 1]],
   [[[15, 5.75], [21, 18.25], [15, 18.25]], [1, 1, 1.5]],
@@ -223,7 +223,7 @@ function flip(deg) {
   return [left, ...DASHES.map(([a, b]) => line(R([12, a]), R([12, b]))), right];
 }
 
-// Paleta: un círculo con la muesca del pulgar y cuatro pozos de color a 1.5 de aire entre sí.
+// Palette: a circle with a thumb notch and four paint wells with a 1.5 gap between them.
 function palette() {
   const R = 9;
   const rn = 2.75;
@@ -241,7 +241,7 @@ function palette() {
   return [`${main.d}${notch}`, ...[145, 197, 249, 301].map((g) => dot(...polar(12, 12, 5.25, g)))];
 }
 
-// Compás de dibujo: bisagra, dos patas radiales y el arco que las une.
+// Drafting compass: a hinge, two radial legs and the arc that joins them.
 function compass() {
   const hc = [12, 6.25];
   const hr = 2.25;
@@ -250,8 +250,8 @@ function compass() {
   return [circ(...hc, hr), vl(12, 2, 4), ...tips.map((t) => line(add(hc, unit(sub(t, hc)), hr), t)), arc(...hc, 10, ang(tips[1]), ang(tips[0])).d];
 }
 
-// Cubeta de pintura: inclinada 45°, con el labio del borde y la gota del set (la de
-// lugares/droplet) que cae del lado que vierte. Sin asa: sobre la boca parecía una tapa.
+// Paint bucket: tilted 45°, with the lip on its rim and the set's drop (the one in
+// lugares/droplet) falling from the pouring side. No handle: over the opening it looked like a lid.
 function bucket() {
   const C = [10, 10.25];
   const R = (p) => rot([C[0] + p[0], C[1] + p[1]], C, 45);
@@ -262,8 +262,8 @@ function bucket() {
   ];
 }
 
-// Lápiz del núcleo (punta, cono, cuerpo, virola y goma redonda) a lo largo de 45°. `cut`
-// abre el cuerpo entre u1 y u2 para que pase una diagonal.
+// Núcleo's pencil (tip, cone, body, ferrule and round eraser) along 45°. `cut` opens the body
+// between u1 and u2 so a diagonal can pass through.
 function pencil(tip, L = 20.5, { w = 4.2, cut } = {}) {
   const P = axis(tip, -45);
   const h = w / 2;
@@ -281,7 +281,7 @@ function pencil(tip, L = 20.5, { w = 4.2, cut } = {}) {
   ];
 }
 
-// Corazón: dos lóbulos de r 4.75 y tangentes rectas hasta la punta.
+// Heart: two lobes of r 4.75 and straight tangents down to the tip.
 function heart() {
   const r = 4.75;
   const L = [7.5, 8.75];
@@ -294,16 +294,16 @@ function heart() {
   return `M${xy(T)}L${xy(tl)}${A}${xy(cusp)}${A}${xy([24 - tl[0], tl[1]])}Z`;
 }
 
-// Estrella de cinco puntas con las puntas suavizadas.
+// Five-pointed star with softened points.
 const STAR = (() => {
   const pts = Array.from({ length: 10 }, (_, i) => polar(12, 12.4, i % 2 ? 4.75 : 9.5, -90 + i * 36));
   return rpath(pts, pts.map((_, i) => (i % 2 ? 0.75 : 1.5)), { closed: true });
 })();
 
-// Media estrella (calificación): la misma estrella partida por su eje. La mitad derecha es un
-// trazo abierto de la punta de arriba a la muesca de abajo (sus redondeos se parten a la mitad,
-// sobre el eje); la izquierda es su reflejo, cerrado por el eje (la que se rellena). Sola, la
-// mitad izquierda se leía como un «1».
+// Half star (rating): the same star split along its axis. The right half is an open path from
+// the top point to the bottom notch (its rounded corners are split in half, on the axis); the
+// left half is its reflection, closed along the axis (the one that gets filled). On its own, the
+// left half read as a «1».
 const STAR_HALVES = (() => {
   const pts = Array.from({ length: 10 }, (_, i) => polar(12, 12.4, i % 2 ? 4.75 : 9.5, -90 + i * 36));
   const bend = (i) => {
@@ -317,7 +317,7 @@ const STAR_HALVES = (() => {
     const C = add(V, w, r / Math.sin(th / 2));
     return { r, S: add(V, u, -t), E: add(V, v, t), mid: add(C, w, -r), sweep: u[0] * v[1] - u[1] * v[0] > 0 ? 1 : 0 };
   };
-  // La mitad derecha; `flip` la refleja (x → 24 − x) e invierte el giro de cada arco.
+  // The right half; `flip` mirrors it (x → 24 − x) and reverses the sweep of each arc.
   const half = (flip) => {
     const m = ([x, y]) => (flip ? [24 - x, y] : [x, y]);
     const A = (k, to) => `A${f(k.r)} ${f(k.r)} 0 0 ${flip ? 1 - k.sweep : k.sweep} ${xy(m(to))}`;
@@ -333,16 +333,16 @@ const STAR_HALVES = (() => {
   return [`${half(true)}Z`, half(false)];
 })();
 
-// Marcador: cinta con muesca en V.
+// Bookmark: a ribbon with a V notch.
 const BOOKMARK = rpath([[5.75, 20.75], [5.75, 3.25], [18.25, 3.25], [18.25, 20.75], [12, 16]], [1, 3, 3, 1, 1.5], { closed: true });
 
-// Bandera: el banderín de sistema/flag-report (asta y punta en cola de golondrina).
+// Flag: the pennant from sistema/flag-report (pole and a swallowtail end).
 const FLAG = [vl(4.75, 3.25, 21.25), roundpoly([[4.75, 3.25], [19.75, 3.25], [16.25, 9.13], [19.75, 15], [4.75, 15]], [0, 0.9, 0.6, 0.9, 0])];
 
-// Bandeja de descarga y subida: una U con la firma abajo a la derecha.
+// Download and upload tray: a U with the signature corner at bottom right.
 const TRAY = rpath([[3.25, 14], [3.25, 20.75], [20.75, 20.75], [20.75, 14]], [0, 3, 0, 0]);
 
-// Selección: esquinas y guiones de un marco punteado (guiones de 3 con 3.25 de separación).
+// Selection: the corners and dashes of a dashed frame (dashes of 3 with 3.25 spacing).
 const MARQUEE = [
   rpath([[3.25, 7.25], [3.25, 3.25], [7.25, 3.25]], 2),
   rpath([[16.75, 3.25], [20.75, 3.25], [20.75, 7.25]], 2),
@@ -354,9 +354,9 @@ const MARQUEE = [
   vl(20.75, 10.5, 13.5),
 ];
 
-// Lazo: una elipse punteada que nace del nudo y la cuerda que cae y se riza hacia la derecha.
-// Cinco guiones repartidos por longitud de arco con el hueco del marco de selección (3.25): con
-// más, a 16 px se deshacen en ruido.
+// Lasso: a dashed ellipse that starts at the knot, and the rope that drops and curls to the right.
+// Five dashes spread by arc length with the selection frame's gap (3.25): with more, they break
+// down into noise at 16 px.
 function lasso() {
   const c = [13, 9.25];
   const rx = 8;
@@ -378,7 +378,7 @@ function lasso() {
   return [...dashes, `M${xy(E(t0))}C5.25 15.25 4 17 4 18.5C4 20.25 5.5 21 7.5 21`];
 }
 
-// Buscar en el texto: renglones que se cortan a 1.5 de aire de la lupa.
+// Search in text: lines of text that stop with a 1.5 gap from the magnifier.
 function textSearch() {
   const c = [15.75, 15.75];
   const r = 3.75;
@@ -390,7 +390,7 @@ function textSearch() {
   return [...lines, circ(...c, r), line(polar(...c, r, 45), [20.75, 20.75])];
 }
 
-// Compartir en red: tres nodos y dos enlaces que tocan sus bordes.
+// Network share: three nodes and two links that touch their edges.
 function shareNodes() {
   const r = 2.5;
   const A = [6.25, 12];
@@ -398,8 +398,8 @@ function shareNodes() {
   return [circ(...A, r), ...nodes.map((n) => circ(...n, r)), ...nodes.map((n) => line(...trim(A, n, r, r)))];
 }
 
-// Comillas de apertura: dos comas con la bola abajo y la cola que sube y se abre a la derecha
-// (arco exterior tangente a la bola; la cara interior vuelve a ella en curva).
+// Opening quotes: two commas with the ball at the bottom and a tail that rises and opens to the
+// right (the outer arc is tangent to the ball; the inner face curves back into it).
 function comma(x, y, r = 2.6) {
   const L = [x - r, y];
   const T = [x + 2, y - 7];
@@ -407,10 +407,10 @@ function comma(x, y, r = 2.6) {
   return `M${xy(L)}A${f(R)} ${f(R)} 0 0 1 ${xy(T)}Q${xy([x + 0.6, y - 3.6])} ${xy(polar(x, y, r, -55))}A${f(r)} ${f(r)} 0 1 1 ${xy(L)}Z`;
 }
 
-// A mayúscula con travesaño, para los íconos de tamaño de letra.
+// Capital A with a crossbar, for the text size icons.
 const A_BIG = [line([3.25, 19.25], [9.25, 4.75], [15.25, 19.25]), hl(5.32, 13.18, 14.25)];
 
-// Trazado vectorial: tres nodos cuadrados unidos por segmentos que tocan sus bordes.
+// Vector path: three square nodes joined by segments that touch their edges.
 function vectorPath() {
   const nodes = [[5.5, 17.5], [12, 6.5], [18.5, 15.5]];
   const exit = (a, b) => 2 / Math.max(...unit(sub(b, a)).map(Math.abs));
@@ -421,8 +421,8 @@ function vectorPath() {
   ];
 }
 
-// Orden de capas: los planos de nucleo/layers (el de arriba completo y el canto del de abajo) y
-// una flecha a su derecha que dice hacia dónde se mueve el objeto.
+// Layer order: the planes from nucleo/layers (the top one whole and the edge of the one below) and
+// an arrow to their right that shows which way the object moves.
 function layerOrder(up) {
   const c = [8.5, 9.25];
   const w = 6.25;
@@ -438,14 +438,14 @@ function layerOrder(up) {
   ];
 }
 
-// Dirección del texto: calderón compacto y una flecha debajo.
+// Text direction: a compact pilcrow and an arrow below it.
 const PILCROW_SMALL = ['M12.25 8.75H10.5A2.75 2.75 0 0 1 10.5 3.25H17.25', vl(12.25, 3.25, 12.75), vl(15.75, 3.25, 12.75)];
 
-// Sangría: renglones y una flecha corta en el hueco que dejan los dos del medio.
+// Indent: lines of text and a short arrow in the gap left by the two middle ones.
 const INDENT_LINES = [hl(3.75, 20.25, 5.25), hl(11, 20.25, 9.75), hl(11, 20.25, 14.25), hl(3.75, 20.25, 18.75), hl(3.75, 7.75, 12)];
 
 const icons = {
-  // ── Portapapeles, borrar y archivar ──
+  // ── Clipboard, delete and archive ──
   'copy': {
     tags: ['copiar', 'copia', 'portapapeles', 'copy', 'clone'],
     d: [COPY_BACK, COPY_FRONT],
@@ -503,7 +503,7 @@ const icons = {
     d: [...ARCHIVE, vl(12, 11.5, 17.75), head([12, 11.5], [0, -1], 3.25)],
   },
 
-  // ── Formato de texto ──
+  // ── Text formatting ──
   'bold': {
     tags: ['negrita', 'formato', 'texto grueso', 'bold', 'strong'],
     d: ['M7 11.75V4.25H12.25A3.75 3.75 0 0 1 12.25 11.75Z', 'M7 11.75H13A4 4 0 0 1 13 19.75H7Z'],
@@ -593,7 +593,7 @@ const icons = {
     ],
   },
 
-  // ── Alineación, listas y párrafo ──
+  // ── Alignment, lists and paragraphs ──
   'align-left': {
     tags: ['alinear a la izquierda', 'alineación', 'texto', 'align left'],
     d: [hl(3.75, 20.25, 5.25), hl(3.75, 15.25, 9.75), hl(3.75, 20.25, 14.25), hl(3.75, 12.25, 18.75)],
@@ -675,11 +675,11 @@ const icons = {
     ],
   },
 
-  // ── Imagen y transformación ──
+  // ── Image and transform ──
   'image-plus': {
     tags: ['insertar imagen', 'agregar foto', 'subir imagen', 'add image', 'insert picture'],
-    // El marco y el sol de dispositivos/image completos; de su cordillera queda el primer pico, que
-    // baja y se mete bajo la insignia del motor (que despeja la esquina con 1.5 de aire).
+    // The frame and sun from dispositivos/image, whole; of its mountains only the first peak is left,
+    // running down under the engine's badge (which clears the corner with a 1.5 gap).
     d: [box(2.5, 5, 19, 14, 3.5), dot(10.5, 8.75), rpath([[2.59, 16.08], [7.75, 11.25], [13.5, 17]], [0, 1, 0], { circular: true })],
     badge: badge('plus'),
   },
@@ -722,7 +722,7 @@ const icons = {
     d: [rpath([[4, 20.75], [4, 4], [20.75, 4]], 9.75), dot(4, 4)],
   },
 
-  // ── Herramientas de dibujo ──
+  // ── Drawing tools ──
   'eraser': {
     tags: ['borrador', 'goma', 'borrar', 'eraser', 'rubber'],
     d: (() => {
@@ -736,7 +736,7 @@ const icons = {
       const P = axis([3.5, 20.5], -45);
       const c = (...q) => q.map((p) => xy(P(...p))).join(' ');
       return [
-        // las cerdas cierran contra el canto de la virola, que sigue abierta hacia ellas
+        // the bristles close against the ferrule's edge, which stays open toward them
         `M${c([9, -2.25])}C${c([6.25, -3.75], [2.75, -2.25], [0, 0])}C${c([2.75, 2.25], [6.25, 3.75], [9, 2.25])}Z`,
         rpath([P(9, -2.25), P(12.5, -2.25), P(12.5, 2.25), P(9, 2.25)], [0, 0.9, 0.9, 0]),
         line(P(12.5), P(22)),
@@ -763,7 +763,7 @@ const icons = {
       return [
         rpath([P(6.75, -3.25), P(20.5, -3.25), P(20.5, 3.25), P(6.75, 3.25)], 1.25, { closed: true }),
         line(P(16.25, -3.25), P(16.25, 3.25)),
-        // punta biselada: nace del tramo recto del canto, no de la esquina redondeada
+        // chisel tip: it starts from the straight run of the edge, not from the rounded corner
         rpath([P(6.75, -1.25), P(3.25, -1.25), P(4.5, 1.25), P(6.75, 1.25)], [0, 0.5, 0.5, 0]),
         hl(3.5, 11, 21),
       ];
@@ -819,10 +819,10 @@ const icons = {
     d: compass(),
   },
 
-  // ── Lápices y trazo libre ──
+  // ── Pencils and freehand ──
   'pencil-plus': {
     tags: ['nuevo dibujo', 'lápiz', 'agregar trazo', 'add drawing', 'new sketch'],
-    // El lápiz entero, a más de 1.5 de aire de la insignia del motor: no la toca.
+    // The whole pencil, more than a 1.5 gap away from the engine's badge: it doesn't touch it.
     d: pencil([3.25, 18], 17.5),
     badge: badge('plus'),
   },
@@ -832,8 +832,8 @@ const icons = {
   },
   'compose': {
     tags: ['redactar', 'escribir', 'nueva nota', 'compose', 'write'],
-    // La hoja completa y el lápiz encima como insignia propia: el motor abre el canal de 1.5 de
-    // aire a lo largo del lápiz (antes, la hoja se cortaba a mano).
+    // The full sheet with the pencil on top as a custom badge: the engine opens the 1.5 channel
+    // along the pencil (previously, the sheet was cut by hand).
     d: [box(3.25, 6.25, 14.5, 14.5, 3.5)],
     badge: ((d) => ({ d, knock: d[0], fill: { solid: [d[0]], cut: d.slice(1) } }))(pencil([10.25, 13.75], 13.5, { w: 3.8 })),
   },
@@ -846,7 +846,7 @@ const icons = {
     d: ['M3.5 15.5C5.5 8 9 4.5 10.75 7C12.5 9.5 6.5 16 9 18.5C11.5 21 14.5 11 17 11.5C19 12 17.5 16.5 20.5 16.5'],
   },
 
-  // ── Ver, marcar y guardar ──
+  // ── View, mark and save ──
   'eye': {
     tags: ['ver', 'mostrar', 'vista previa', 'visible', 'show'],
     d: ['M2.75 12C5 7.75 8.25 5.5 12 5.5S19 7.75 21.25 12C19 16.25 15.75 18.5 12 18.5S5 16.25 2.75 12Z', circ(12, 12, 3.25)],
@@ -907,7 +907,7 @@ const icons = {
     ],
   },
 
-  // ── Selección, capas y orden ──
+  // ── Selection, layers and order ──
   'selection': {
     tags: ['selección', 'seleccionar', 'marco', 'select', 'marquee'],
     d: MARQUEE,
@@ -961,11 +961,11 @@ const icons = {
     d: [hl(3.25, 20.75, 3.5), hl(3.25, 20.75, 20.5), box(6.25, 9.25, 11.5, 5.5, 1.6)],
   },
 
-  // ── Cobertura (ronda 2): lo que faltaba de enlaces, marcas, formularios y texto ──
+  // ── Coverage (round 2): what was missing in links, marks, forms and text ──
   'unlink': {
     tags: ['desvincular', 'quitar enlace', 'romper enlace', 'unlink', 'remove link', 'broken link'],
-    // Las dos mitades de `link` del núcleo, separadas 1.4 por la diagonal y sin el puente; dos
-    // chispas en cada lado del corte, con sus puntas a más de 3 entre sí.
+    // The two halves of Núcleo's `link`, pulled 1.4 apart along the diagonal and without the bridge;
+    // two sparks on each side of the break, with their tips more than 3 apart.
     d: [
       'M12.06 16.53 9.59 19.01A3.25 3.25 0 0 1 4.99 14.41L7.47 11.94',
       'M11.94 7.47 14.41 4.99A3.25 3.25 0 0 1 19.01 9.59L16.53 12.06',
@@ -985,8 +985,8 @@ const icons = {
   },
   'pencil-sparkle': {
     tags: ['escribir con IA', 'redactar con IA', 'mejorar texto', 'asistente de escritura', 'ai writing', 'write with ai', 'rewrite'],
-    // El lápiz de `pencil-off` entero y el destello de `magic-wand` en la esquina libre, a más
-    // de 1.5 de aire del cuerpo.
+    // The whole pencil from `pencil-off` and the `magic-wand` sparkle in the free corner, more than
+    // a 1.5 gap away from the body.
     d: [...pencil([4.1, 19.9], 20.5), spark(17.5, 17.5, 3.25)],
   },
   'copyright': {
@@ -995,41 +995,42 @@ const icons = {
   },
   'registered': {
     tags: ['marca registrada', 'registrado', 'marca', 'legal', 'registered', 'trademark'],
-    // La R en el aro de `copyright`: asta, panza de radio 2.25 y la pierna que sale de ella.
+    // The R inside the `copyright` ring: a stem, a bowl of radius 2.25 and the leg coming out of it.
     d: [circ(12, 12, 9), rpath([[9.5, 16.5], [9.5, 7.5], [12.5, 7.5]], 0) + 'A2.25 2.25 0 0 1 12.5 12H9.5', line([12.25, 12], [14.75, 16.5])],
   },
   'trademark': {
     tags: ['marca comercial', 'marca', 'tm', 'legal', 'trademark', 'brand'],
-    // ™: la T y la M a 3 entre ejes, a la altura de una mayúscula.
+    // ™: the T and the M, 3 apart center to center, at cap height.
     d: [hl(3.5, 10, 7.25), vl(6.75, 7.25, 16.75), rpath([[13, 16.75], [13, 7.25], [16.88, 13], [20.75, 7.25], [20.75, 16.75]], [0, 0.5, 0.5, 0.5, 0])],
   },
   'list-plus': {
     tags: ['agregar a la lista', 'nueva entrada', 'añadir elemento', 'colección', 'add to list', 'add item', 'collection'],
-    // Tres renglones; el último, corto, deja la esquina al más (brazos de 2.75, a 3 entre ejes).
+    // Three lines of text; the short last one leaves the corner free for the plus (arms of 2.75,
+    // 3 apart center to center).
     d: [hl(3.75, 20.25, 6), hl(3.75, 20.25, 12), hl(3.75, 10.5, 18), vl(17, 15.25, 20.75), hl(14.25, 19.75, 18)],
   },
   'form': {
     tags: ['formulario', 'campos', 'registro', 'captura de datos', 'form', 'input fields', 'sign up'],
-    // Dos etiquetas y sus campos (contenedores: la firma), a 3 entre ejes.
+    // Two labels and their fields (containers: the signature corner), 3 apart center to center.
     d: [hl(4.25, 10.25, 3.25), box(3.25, 6.25, 17.5, 4.25, 1.5), hl(4.25, 10.25, 13.5), box(3.25, 16.5, 17.5, 4.25, 1.5)],
   },
   'aspect-ratio': {
     tags: ['relación de aspecto', 'proporción', 'formato', 'tamaño de imagen', 'aspect ratio', 'ratio', 'format'],
-    // La pantalla apaisada y dos esquinas de encuadre dentro, en diagonal.
+    // The landscape screen and two framing corners inside it, on the diagonal.
     d: [box(2.5, 5, 19, 14, 3.5), rpath([[6.25, 11.25], [6.25, 8.5], [9.25, 8.5]], 1), rpath([[14.75, 15.5], [17.75, 15.5], [17.75, 12.75]], 1)],
   },
 };
 
-// ── Relleno (DESIGN.md › Relleno), por índice de d: `solid` se rellena (y conserva su trazo; solo
-// figuras cerradas), `cut` se cala al ancho del trazo, `lines` sigue siendo línea con 1.5 de aire y
-// `wire` sigue siendo línea pegada al relleno. Lo que solo es línea abierta (letras, renglones,
-// flechas) lleva `fill: false`.
+// ── Fill (DESIGN.md › Fill), by index into d: `solid` is filled (and keeps its stroke; closed shapes
+// only), `cut` is knocked out at stroke width, `lines` stays a line with a 1.5 gap, and `wire` stays
+// a line flush with the fill. Anything made only of open lines (letters, lines of text, arrows)
+// gets `fill: false`.
 const all = (name) => icons[name].d.map((_, i) => i);
 const FILL = {
   'copy': { solid: [1], lines: [0] },
   'duplicate': { solid: [1], lines: [0], cut: [2, 3] },
   'copy-check': { solid: [1], lines: [0], cut: [2] },
-  // Los ojos de las tijeras rellenos; las hojas siguen siendo línea, pegada a ellos.
+  // The scissors' eyes filled; the blades stay as lines, flush with them.
   'scissors': { solid: [0, 1], wire: [2, 3, 4] },
   'wastebasket': { solid: [0], cut: [1, 2] },
   'backspace': { solid: [0], cut: [1, 2] },
@@ -1042,7 +1043,7 @@ const FILL = {
   'flip-horizontal': { solid: [0, 4], lines: [1, 2, 3] },
   'flip-vertical': { solid: [0, 4], lines: [1, 2, 3] },
   'resize': { solid: [0], lines: [1, 2] },
-  // Los tiradores rellenos; los cantos del marco los unen como línea.
+  // The handles filled; the frame's edges join them as lines.
   'transform': { solid: [0, 1, 2, 3], wire: [4, 5, 6, 7] },
   'eraser': { solid: [0], cut: [1], lines: [2] },
   'vector-path': { solid: [0, 1, 2], wire: [3, 4] },
@@ -1082,80 +1083,80 @@ for (const [name, spec] of Object.entries(FILL)) {
 }
 {
   const d = (name) => icons[name].d;
-  // El portapapeles: la mitad de abajo de la pinza se separa del tablero con un canal.
+  // Clipboard: a channel separates the lower half of the clip from the board.
   const clipCut = rpath([[9.15, 4.5], [9.15, 6.25], [14.85, 6.25], [14.85, 4.5]], [0, 1.05, 1.05, 0]);
   icons.paste.fill = { solid: CLIP_SOLID, cut: [clipCut, d('paste')[2], d('paste')[3]] };
   icons['clipboard-check'].fill = { solid: CLIP_SOLID, cut: [clipCut, d('clipboard-check')[2]] };
-  // El archivo: un canal de lado a lado separa la tapa de la caja.
+  // Archive: a channel running side to side separates the lid from the box.
   icons.archive.fill = { solid: ARCHIVE_SOLID, cut: [hl(1, 23, 8.25), d('archive')[2]] };
   icons['archive-restore'].fill = { solid: ARCHIVE_SOLID, cut: [hl(1, 23, 8.25), d('archive-restore')[2], d('archive-restore')[3]] };
-  // La papelera: el asa se cierra contra la tapa y se rellena con ella; la tapa es una barra y las
-  // ranuras se calan.
+  // Trash can: the handle closes against the lid and is filled with it; the lid is a bar and the
+  // slots are knocked out.
   for (const name of ['trash', 'trash-open']) icons[name].fill = { solid: [`${d(name)[1]}Z`, d(name)[2]], wire: [d(name)[0]], cut: [d(name)[3], d(name)[4]] };
-  // El calderón: la panza se cierra contra el asta y se rellena, como en la tipografía; el asta y
-  // la barra siguen siendo línea, pegadas a ella.
+  // Pilcrow: the bowl closes against the stem and is filled, as in type; the stem and the bar stay
+  // as lines, flush with it.
   icons.paragraph.fill = { solid: ['M12 12.25H10A4 4 0 0 1 10 4.25H12Z'], wire: [hl(12, 18, 4.25), d('paragraph')[1], d('paragraph')[2]] };
   for (const name of ['text-direction-ltr', 'text-direction-rtl'])
     icons[name].fill = { solid: ['M12.25 8.75H10.5A2.75 2.75 0 0 1 10.5 3.25H12.25Z'], wire: [hl(12.25, 17.25, 3.25), d(name)[1], d(name)[2]], lines: [d(name)[3], d(name)[4]] };
-  // El salto de página: las dos hojas, cerradas, son dos bloques; el corte sigue punteado.
+  // Page break: the two sheets, closed, become two blocks; the break stays dashed.
   icons['page-break'].fill = {
     solid: [rpath([[4.75, 3.25], [4.75, 8.75], [19.25, 8.75], [19.25, 3.25]], [0, 2.5, 0, 0], { closed: true }), rpath([[4.75, 20.75], [4.75, 15.25], [19.25, 15.25], [19.25, 20.75]], [0, 2.5, 2.5, 0], { closed: true })],
     lines: [1, 2, 3].map((i) => d('page-break')[i]),
   };
-  // El brazo del rodillo une el rodillo con el mango: línea, no área.
+  // The roller's arm joins the roller to the handle: a line, not an area.
   icons['paint-roller'].fill = { solid: [d('paint-roller')[0], d('paint-roller')[2]], wire: [d('paint-roller')[1]] };
-  // El pincel: la virola se cierra contra las cerdas y un canal las separa; el mango es línea.
+  // Brush: the ferrule closes against the bristles and a channel separates them; the handle is a line.
   {
     const P = axis([3.5, 20.5], -45);
     icons.brush.fill = { solid: [d('brush')[0], `${d('brush')[1]}Z`], wire: [d('brush')[2]], cut: [line(P(9, -2.25), P(9, 2.25))] };
   }
-  // El resaltador: la punta biselada se cierra contra el canto del cuerpo.
+  // Highlighter: the chisel tip closes against the edge of the body.
   icons.highlighter.fill = { solid: [d('highlighter')[0], `${d('highlighter')[2]}Z`], cut: [d('highlighter')[1]], lines: [d('highlighter')[3]] };
-  // El cuentagotas: la pipeta y la perilla se cierran contra el collar, que asoma a los lados como
-  // una barra.
+  // Eyedropper: the pipette and the bulb close against the collar, which sticks out at the sides
+  // as a bar.
   icons.eyedropper.fill = { solid: [`${d('eyedropper')[0]}Z`, `${d('eyedropper')[2]}Z`], wire: [d('eyedropper')[1]] };
-  // La cubeta: el cuerpo se cierra por la boca, donde corre el labio, que sigue siendo barra.
+  // Paint bucket: the body closes across the opening, where the lip runs; the lip stays a bar.
   icons['paint-bucket'].fill = { solid: [`${d('paint-bucket')[0]}Z`, d('paint-bucket')[2]], wire: [d('paint-bucket')[1]] };
-  // Compartir: la caja se cierra por arriba y la flecha la cala con su aire al salir.
+  // Share: the box closes across the top and the arrow knocks it out with its gap on the way out.
   icons.share.fill = { solid: [`${d('share')[0]}Z`], lines: [d('share')[1], d('share')[2]] };
-  // La pluma: el ojo se abre entero (r 2) y la ranura sube a la punta.
+  // Pen tool: the eye opens fully (r 2) and the slit runs up to the tip.
   icons['pen-tool'].fill = { solid: [d('pen-tool')[0], d('pen-tool')[3]], cut: [d('pen-tool')[1], d('pen-tool')[2], circ(12, 11, 0.5)] };
-  // La regla: las marcas se calan desde el canto (salen de él para no dejar astillas).
+  // Ruler: the marks are knocked out from the edge (they start at it so no slivers are left).
   icons.ruler.fill = { solid: [d('ruler')[0]], cut: [[6, 11.25], [9, 9.75], [12, 11.25], [15, 9.75], [18, 11.25]].map(([x, y]) => vl(x, 6, y)) };
-  // La escuadra: la ventana queda hueca.
+  // Set square: the window stays hollow.
   icons['set-square'].fill = { solid: [hole(d('set-square')[0], d('set-square')[1])] };
-  // El compás: la bisagra rellena; el mango, las patas y el arco siguen siendo línea.
+  // Compass: the hinge filled; the handle, the legs and the arc stay as lines.
   icons['drafting-compass'].fill = { solid: [d('drafting-compass')[0]], wire: d('drafting-compass').slice(1) };
-  // El lápiz tachado: cada mitad se cierra contra el corte.
+  // Slashed pencil: each half closes against the cut.
   icons['pencil-off'].fill = { solid: [`${d('pencil-off')[0]}Z`, `${d('pencil-off')[2]}Z`], cut: [d('pencil-off')[1], d('pencil-off')[3]], lines: [d('pencil-off')[4]] };
-  // La media estrella: la mitad rellena y el contorno de la otra, unido a ella.
+  // Half star: one half filled and the outline of the other, joined to it.
   icons['star-half'].fill = { solid: [d('star-half')[0]], wire: [d('star-half')[1]] };
-  // El disquete: la ventanilla se cala desde el canto de arriba y la etiqueta queda aparte.
+  // Floppy disk: the shutter is knocked out from the top edge and the label stays separate.
   icons.save.fill = { solid: [d('save')[0]], cut: [rpath([[9, 1.5], [9, 8], [15, 8], [15, 1.5]], [0, 1.25, 1.25, 0]), d('save')[2]] };
-  // La nota: la esquina doblada se separa con un canal que cruza el canto.
+  // Sticky note: a channel that crosses the edge separates the folded corner.
   icons['sticky-note'].fill = { solid: [d('sticky-note')[0]], cut: [rpath([[14.25, 22.5], [14.25, 14.25], [22.5, 14.25]], [0, 1.75, 0])] };
 }
-// Solo líneas abiertas: letras, renglones, flechas, guiones y trazos libres.
+// Open lines only: letters, lines of text, arrows, dashes and freehand strokes.
 for (const icon of Object.values(icons)) if (icon.fill === undefined) icon.fill = false;
 
-// ── 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta ──
-// El motor no ajusta al pixel un `small`: aquí se ajusta con `snap`. Los signos nuevos van a 45°
-// de centro a centro de pixel (0.75 + 1.5k), así cada diagonal sale nítida en vez de una mancha.
+// ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──
+// The engine doesn't pixel-snap a `small` drawing: it's snapped here with `snap`. The new marks run
+// at 45° from pixel center to pixel center (0.75 + 1.5k), so every diagonal comes out crisp, not as a smudge.
 const sharp = (d, fill) => {
   const s = (list) => list.map((p) => snap(p));
   return { d: s(d), ...(fill && { fill: Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, s(v)])) }) };
 };
-/** Palomita de pixel: vértice en (x, y), brazo corto de `a` pasos y largo de `b` (1 paso = 1 px). */
+/** Pixel checkmark: vertex at (x, y), a short arm of `a` steps and a long one of `b` (1 step = 1 px). */
 const tick = (x, y, a, b) => line([x - 1.5 * a, y - 1.5 * a], [x, y], [x + 1.5 * b, y - 1.5 * b]);
-/** Tache de pixel: un cuadro de `n` pasos desde (x, y). */
+/** Pixel x: a square of `n` steps from (x, y). */
 const cross = (x, y, n) => [line([x, y], [x + 1.5 * n, y + 1.5 * n]), line([x + 1.5 * n, y], [x, y + 1.5 * n])];
-/** Punta de pixel: vértice en `tip`, brazos de `n` pasos hacia `dir` ([±1, 0] o [0, ±1]). */
+/** Pixel arrowhead: vertex at `tip`, arms of `n` steps, pointing toward `dir` ([±1, 0] or [0, ±1]). */
 const point = (tip, [dx, dy], n = 1) => {
   const k = 1.5 * n;
   return dx ? line([tip[0] - dx * k, tip[1] - k], tip, [tip[0] - dx * k, tip[1] + k]) : line([tip[0] - k, tip[1] - dy * k], tip, [tip[0] + k, tip[1] - dy * k]);
 };
-// Las palomitas de 4 pixeles (copiado, portapapeles, marcador, lista de tareas): las de 24 se
-// volvían una mancha gris a 16 px.
+// The 4-pixel checkmarks (copied, clipboard, bookmark, task list): the ones from 24 turned into a
+// gray smudge at 16 px.
 {
   const check = tick(14.25, 17.25, 1, 2);
   icons['copy-check'].small = sharp([COPY_BACK, COPY_FRONT, check], { solid: [COPY_FRONT], lines: [COPY_BACK], cut: [check] });
@@ -1170,52 +1171,52 @@ const point = (tip, [dx, dy], n = 1) => {
   icons['bookmark-check'].small = sharp([BOOKMARK, check], { solid: [BOOKMARK], cut: [check] });
 }
 icons['list-checks'].small = sharp([6.75, 17.25].flatMap((y) => [tick(5.25, y + 1.5, 1, 2), hl(11.25, 20.25, y)]));
-// Las viñetas: cada punto centrado en el borde de un pixel (múltiplos de 1.5) cae entero en 2 × 2
-// pixeles, como los puntos de navegacion; su renglón va a la altura de su fila de abajo.
+// Bullets: each dot centered on a pixel edge (multiples of 1.5) lands fully on 2 × 2 pixels, like
+// the dots in navegacion; its line of text sits at the height of the dot's lower pixel row.
 icons['list-bullets'].small = sharp([6, 12, 18].flatMap((y) => [dot(4.5, y, 0.8), hl(9.25, 20.25, y + 0.75)]));
-// Los taches de 5 pixeles, con su cruce en un pixel (con 4, el centro se volvía un cuadro).
+// The 5-pixel x marks, crossing on a single pixel (with 4, the center turned into a square).
 {
   const x = cross(11.25, 8.25, 4);
   icons.backspace.small = sharp([icons.backspace.d[0], ...x], { solid: [icons.backspace.d[0]], cut: x });
 }
 icons['format-clear'].small = sharp([icons['format-clear'].d[0], icons['format-clear'].d[1], ...cross(14.25, 14.25, 4)]);
 icons.deselect.small = sharp([...MARQUEE, ...cross(8.25, 8.25, 4)]);
-// Las flechas cortas: asta en una columna de pixel y punta a 45° (la de 24 caía entre dos pixeles).
+// Short arrows: the shaft on a pixel column and a 45° head (the one from 24 fell between two pixels).
 {
   const arrow = [vl(12.75, 11.25, 17.25), point([12.75, 11.25], [0, -1], 2)];
   icons['archive-restore'].small = sharp([...ARCHIVE, ...arrow], { solid: ARCHIVE_SOLID, cut: [hl(1, 23, 8.25), ...arrow] });
 }
-// La sangría: los dos renglones del medio se abren un pixel para que la flecha (punta de 2 pasos;
-// con 1 se leía como un más) quede centrada entre ellos.
+// Indent: the two middle lines of text move one pixel apart so the arrow (a 2-step head; with 1 it
+// read as a plus) sits centered between them.
 for (const [name, dir] of [['indent-increase', 1], ['indent-decrease', -1]]) {
   const tip = [dir > 0 ? 8.25 : 3.75, 12.75];
   const rows = [hl(3.75, 20.25, 5.25), hl(11, 20.25, 9.75), hl(11, 20.25, 15.75), hl(3.75, 20.25, 20.25)];
   icons[name].small = sharp([...rows, hl(3.75, 8.25, 12.75), point(tip, [dir, 0], 2)]);
 }
-// Las virgulillas de agrandar y reducir: de 5 pixeles, arriba y junto a la A.
+// The small chevrons for larger and smaller text: 5 pixels, above and beside the A.
 icons['text-larger'].small = sharp([...A_BIG, point([17.25, 3.75], [0, -1], 2)]);
 icons['text-smaller'].small = sharp([...A_BIG, point([17.25, 6.75], [0, 1], 2)]);
-// La papelera abierta: el asa girada se volvía una mancha; a 16 px la tapa se levanta derecha.
+// Open trash can: the rotated handle turned into a smudge; at 16 px the lid lifts straight up.
 {
   const lid = hl(3.5, 20.5, 3.75);
   icons['trash-open'].small = sharp([lid, ...TRASH_BODY], { solid: [TRASH_BODY[0]], wire: [lid], cut: TRASH_BODY.slice(1) });
 }
-// El cesto: las ranuras inclinadas se emborronaban; a 16 px van verticales.
+// Wastebasket: the slanted slots blurred; at 16 px they're vertical.
 {
   const d = [icons.wastebasket.d[0], vl(9.75, 8.25, 16.75), vl(14.25, 8.25, 16.75)];
   icons.wastebasket.small = sharp(d, { solid: [d[0]], cut: d.slice(1) });
 }
 
-// ── Espejo (DESIGN.md › Espejo): renglones y listas con sangría, lápices y lo que borra hacia atrás ──
+// ── Mirroring (DESIGN.md › Mirroring): lines of text and indented lists, pencils and anything that deletes backward ──
 for (const name of [
   'backspace', 'list-bullets', 'list-plus', 'indent-increase', 'indent-decrease', 'line-spacing', 'text-wrap', 'text-columns', 'text-quote',
   'pencil-plus', 'pencil-off', 'pencil-sparkle', 'compose', 'brush', 'highlighter', 'signature-line', 'align-start', 'align-end',
-  // La media estrella rellena la mitad del inicio de la lectura.
+  // The half star fills the half where reading starts.
   'star-half',
 ])
   icons[name].mirror = true;
 
-// ── Piezas con nombre (DESIGN.md › Piezas) ──
+// ── Named parts (DESIGN.md › Named parts) ──
 const PARTS = {
   'copy': { back: [0], front: [1] },
   'duplicate': { back: [0], front: [1], mark: [2, 3] },
@@ -1261,7 +1262,7 @@ const PARTS = {
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
-// ── Movimiento (DESIGN.md › Movimiento): el gesto propio de cada uno ──
+// ── Motion (DESIGN.md › Motion): each icon's own gesture ──
 const lift = (parts, y) => ({ effect: 'bounce', parts, vector: [0, y] });
 icons.trash.motion = lift(['lid'], -1.5);
 icons['trash-open'].motion = { effect: 'wiggle', parts: ['lid'], origin: [3.5, 6.5] };
@@ -1276,10 +1277,10 @@ icons['text-direction-rtl'].motion = { effect: 'slide', parts: ['arrow'], vector
 icons.resize.motion = { effect: 'slide', parts: ['arrow'], vector: [1.25, -1.25] };
 icons['bring-forward'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] };
 icons['send-backward'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] };
-// Lo que gira se balancea sobre su centro (sin dirección: sirve para los dos sentidos).
+// Anything that rotates sways around its center (no direction, so it works both ways).
 icons['rotate-right'].motion = { effect: 'wiggle', parts: ['body'], origin: [8, 15] };
 icons['rotate-left'].motion = { effect: 'wiggle', parts: ['body'], origin: [16, 15] };
-// Las herramientas se balancean sobre su punta, como el lápiz del núcleo.
+// Tools sway around their tip, like Núcleo's pencil.
 icons.eraser.motion = { effect: 'wiggle', parts: ['body'], origin: [9.1, 18.2] };
 icons.brush.motion = { effect: 'wiggle', origin: [3.5, 20.5] };
 icons.highlighter.motion = { effect: 'wiggle', parts: ['marker'], origin: [5.3, 16.7] };
@@ -1291,18 +1292,18 @@ icons.flag.motion = { effect: 'wiggle', origin: [4.75, 21.25] };
 icons.heart.motion = { effect: 'beat', origin: [12, 12.5] };
 icons.star.motion = { effect: 'beat', origin: [12, 12.4] };
 
-// ── Variantes automáticas (DESIGN.md › Variantes) ──
+// ── Automatic variants (DESIGN.md › Automatic variants) ──
 const off = (names, v) => {
   for (const n of names) icons[n].variants = { ...icons[n].variants, ...v };
 };
-// Ya vienen encerrados en un círculo o en un cuadro.
+// Already enclosed in a circle or a square.
 off(['copyright', 'registered', 'palette'], { circle: false });
 off(['text-box', 'save', 'sticky-note', 'transform', 'selection', 'select-all', 'deselect', 'group'], { square: false });
-// Con insignia: el tache la atravesaría.
+// With a badge: the slash would cut through it.
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, slash: false };
-// La escuadra: el tache caería sobre su hipotenusa.
+// Set square: the slash would land on its hypotenuse.
 off(['set-square'], { slash: false });
-// Ya tachados o rotos, y renglones sueltos (tacharlos no dice nada).
+// Already slashed or broken, and loose lines of text (slashing them says nothing).
 off(
   ['pencil-off', 'eye-closed', 'unlink', 'deselect', 'selection', 'strikethrough', 'format-clear', 'align-left', 'align-center', 'align-right', 'align-justify', 'list-bullets', 'list-numbers', 'list-checks', 'list-plus', 'indent-increase', 'indent-decrease', 'line-spacing', 'text-wrap', 'text-columns', 'text-quote'],
   { slash: false },

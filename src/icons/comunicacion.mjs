@@ -1,17 +1,17 @@
-// Comunicación y personas: globos, correo, llamadas, avisos, personas y reacciones. Todo sale
-// del motor (engine/geometry.mjs) más unas herramientas locales para mover o escalar piezas del
-// núcleo (persona, teléfono, campana, sobre) sin redibujarlas. Las insignias son las del motor y
-// lo que va encima de otra figura (el lápiz sobre el sobre, la persona de adelante, la diagonal
-// de los -off) es una insignia propia: el motor despeja la base con 1.5 exacto, nunca a mano.
-// Ver DESIGN.md.
+// Comunicación y personas (communication and people): bubbles, mail, calls, notifications,
+// people and reactions. Everything comes from the engine (engine/geometry.mjs) plus a few local
+// tools to move or scale Núcleo pieces (person, phone, bell, envelope) without redrawing them.
+// Badges are the engine's, and anything that sits on top of another shape (the pencil over the
+// envelope, the front person, the diagonal of the -off icons) is a custom badge: the engine clears
+// the base by exactly 1.5, never by hand. See DESIGN.md.
 import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 import nucleo from './nucleo.mjs';
 
-// ── Trazos como segmentos ─────────────────────────────────────────────────────────────────
-// parse() convierte un `d` del motor en segmentos absolutos (L, C, A); ser() los vuelve `d`.
-// Con eso se recorta una figura con una regla (clip), se mueve o escala una pieza (xf) y se
-// arma el área que despeja una insignia propia (knockOf).
+// ── Paths as segments ─────────────────────────────────────────────────────────────────────
+// parse() turns an engine `d` into absolute segments (L, C, A); ser() turns them back into a `d`.
+// That's how a shape is clipped by a rule (clip), a piece is moved or scaled (xf), and the area a
+// custom badge clears is assembled (knockOf).
 const P = (p) => `${f(p[0])} ${f(p[1])}`;
 const near = (a, b, e = 0.02) => Math.hypot(a[0] - b[0], a[1] - b[1]) < e;
 
@@ -182,7 +182,7 @@ function ser(subs) {
   return o;
 }
 
-/** Deja de `d` solo lo que cumple keep(p): una forma que se construye así (la esquina del sticker). */
+/** Keeps only the parts of `d` where keep(p) holds: some shapes are built this way (the sticker's corner). */
 function clip(d, keep) {
   const out = [];
   for (const sp of parse(d)) {
@@ -230,7 +230,7 @@ function clip(d, keep) {
   return ser(out);
 }
 
-/** Transformación de semejanza (giro, escala, espejo, traslado) sobre un `d`. */
+/** Similarity transform (rotation, scale, mirror, translation) applied to a `d`. */
 function xf(d, { s = 1, deg = 0, o = [12, 12], dx = 0, dy = 0, flipX = false, flipY = false } = {}) {
   const m = (p) => {
     let v = [(p[0] - o[0]) * s, (p[1] - o[1]) * s];
@@ -255,14 +255,14 @@ function xf(d, { s = 1, deg = 0, o = [12, 12], dx = 0, dy = 0, flipX = false, fl
 }
 
 /**
- * Área que despeja una insignia propia: las figuras cerradas tal cual (se despeja su interior) y
- * cada tramo de una línea abierta como subtrazo aparte, para que el motor no rellene el triángulo
- * que cierra una punta de flecha o un lápiz abierto.
+ * The area a custom badge clears: closed shapes as they are (their interior is cleared) and each
+ * segment of an open line as a separate subpath, so the engine doesn't fill the triangle that
+ * closes an arrowhead or an open pencil.
  */
 const knockOf = (...ds) =>
   ser(ds.flatMap((d) => parse(d).flatMap((sp) => (sp.closed ? [sp] : sp.segs.map((s) => ({ segs: [s], closed: false }))))));
 
-/** Polilínea abierta con esquinas redondeadas (como roundpoly, sin cerrar). */
+/** Open polyline with rounded corners (like roundpoly, without closing it). */
 function rline(pts, radius = 0) {
   const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
   let o = `M${P(pts[0])}`;
@@ -287,7 +287,7 @@ function rline(pts, radius = 0) {
   return `${o}L${P(pts.at(-1))}`;
 }
 
-/** Curva suave por puntos (Catmull-Rom → Bézier) para formas orgánicas. */
+/** Smooth curve through points (Catmull-Rom → Bézier) for organic shapes. */
 function smooth(pts, k = 1 / 6) {
   let o = `M${P(pts[0])}`;
   for (let i = 0; i < pts.length - 1; i++) {
@@ -301,14 +301,14 @@ function smooth(pts, k = 1 / 6) {
   return o;
 }
 
-// ── Glifos pequeños ──────────────────────────────────────────────────────────────────────
-/** Check con las proporciones del check del núcleo, de ancho w y centrado en (cx, cy). */
+// ── Small glyphs ─────────────────────────────────────────────────────────────────────────
+/** Check with the proportions of Núcleo's check, w wide and centered on (cx, cy). */
 const check = (cx, cy, w) => line([cx - 0.5 * w, cy + 0.036 * w], [cx - 0.183 * w, cy + 0.357 * w], [cx + 0.5 * w, cy - 0.357 * w]);
 const plus = (cx, cy, a) => [line([cx, cy - a], [cx, cy + a]), line([cx - a, cy], [cx + a, cy])];
 const minus = (cx, cy, a) => [line([cx - a, cy], [cx + a, cy])];
 const ex = (cx, cy, a) => [line([cx - a, cy - a], [cx + a, cy + a]), line([cx + a, cy - a], [cx - a, cy + a])];
 
-/** Corazón: dos lóbulos que se cruzan y bajan tangentes a una punta. */
+/** Heart: two overlapping lobes that run down tangentially to a point. */
 function heart(cx, cy, w) {
   const r = w / 3.7;
   const k = 0.82 * r;
@@ -330,7 +330,7 @@ function heart(cx, cy, w) {
   return `M${P(T)}L${a1.d.slice(1)}${a2.d.replace(/^M[^A]+/, '')}Z`;
 }
 
-/** Destello de cuatro puntas: cuatro arcos cóncavos centrados en las esquinas de su caja. */
+/** Four-pointed sparkle: four concave arcs centered on the corners of its box. */
 function sparkle(cx, cy, r) {
   const k = [
     [cx + r, cy - r, 180, 90],
@@ -341,7 +341,7 @@ function sparkle(cx, cy, r) {
   return `${k.map(([x, y, a0, a1], i) => (i ? arc(x, y, r, a0, a1).d.replace(/^M[^A]+/, '') : arc(x, y, r, a0, a1).d)).join('')}Z`;
 }
 
-/** Estrella de n puntas con las esquinas suaves. */
+/** Star with n points and soft corners. */
 function star(cx, cy, R, r, rt = 0.8, rv = 0.5) {
   const pts = [];
   for (let i = 0; i < 10; i++) pts.push(polar(cx, cy, i % 2 ? r : R, -90 + i * 36));
@@ -351,7 +351,7 @@ function star(cx, cy, R, r, rt = 0.8, rv = 0.5) {
   );
 }
 
-/** La solapa del sobre del núcleo, a la medida de un sobre (x, y, w, h). */
+/** Núcleo's envelope flap, sized to an envelope (x, y, w, h). */
 const flap = (x, y, w, h) =>
   rline(
     [
@@ -362,16 +362,16 @@ const flap = (x, y, w, h) =>
     [0, 1.5 * Math.min(1, w / 19), 0],
   );
 
-/** Cápsula vertical (micrófono). */
+/** Vertical capsule (microphone). */
 const pill = (x, y, w, h) => {
   const r = w / 2;
   return `M${P([x, y + r])}A${f(r)} ${f(r)} 0 0 1 ${P([x + w, y + r])}V${f(y + h - r)}A${f(r)} ${f(r)} 0 0 1 ${P([x, y + h - r])}Z`;
 };
 
-/** Cara: el círculo de r 9 con dos ojos y lo que se pase como boca. */
+/** Face: the r 9 circle with two eyes and whatever is passed in as the mouth. */
 const face = (...mouth) => [circ(12, 12, 9), dot(9, 9.75), dot(15, 9.75), ...mouth];
 
-/** Pulgar arriba: puño con el pulgar levantado y su puño de manga a la izquierda. */
+/** Thumbs up: a fist with the thumb raised and its cuff on the left. */
 const THUMB = [
   roundpoly(
     [
@@ -395,13 +395,13 @@ const THUMB = [
     [0, 1.25, 1.25, 0],
   ),
 ];
-/** La junta del puño con la manga: en el relleno se cala para que no se vuelvan una sola mancha. */
+/** The seam between the fist and the cuff: knocked out in the fill so they don't merge into one blob. */
 const THUMB_SEAM = line([7.25, 10.75], [7.25, 20.5]);
 
 /**
- * Mano levantada en un solo contorno: cuatro dedos de 3 con la punta en semicírculo (cada punta
- * asienta en el costado del dedo vecino), la palma y el pulgar abierto a unos 50°. Las rayas entre
- * dedos nacen del contorno y en el relleno se calan.
+ * Raised hand as a single outline: four fingers 3 wide with semicircular tips (each tip rests on
+ * the side of the neighboring finger), the palm, and the thumb open at about 50°. The lines between
+ * the fingers start from the outline and are knocked out in the fill.
  */
 function raisedHand() {
   const tops = [6.25, 4.75, 5.5, 8.25];
@@ -411,10 +411,10 @@ function raisedHand() {
   const tip = [5, 13.25];
   const L = Math.hypot(tip[0] - base[0], tip[1] - base[1]);
   const u = [(tip[0] - base[0]) / L, (tip[1] - base[1]) / L];
-  const n = [u[1], -u[0]]; // hacia el canto de afuera del pulgar
+  const n = [u[1], -u[0]]; // toward the thumb's outer edge
   const at = (p, k) => [p[0] + n[0] * k, p[1] + n[1] * k];
   const [outB, outT, inT, inB] = [at(base, r), at(tip, r), at(tip, -r), at(base, -r)];
-  const J = [xs[0], inT[1] + ((xs[0] - inT[0]) / (inB[0] - inT[0])) * (inB[1] - inT[1])]; // donde el pulgar sale del índice
+  const J = [xs[0], inT[1] + ((xs[0] - inT[0]) / (inB[0] - inT[0])) * (inB[1] - inT[1])]; // where the thumb leaves the index finger
   let d = `M${P(J)}`;
   for (let i = 0; i < 4; i++) d += `V${f(tops[i])}A${f(r)} ${f(r)} 0 0 1 ${f(xs[i + 1])} ${f(tops[i])}`;
   d += `V14.5C19.25 18.1 16.65 20.75 13.5 20.75C10.65 20.75 ${P([outB[0] + 0.9, outB[1] + 1.1])} ${P(outB)}`;
@@ -422,10 +422,10 @@ function raisedHand() {
   return [d, ...[1, 2, 3].map((i) => line([xs[i], Math.max(tops[i - 1], tops[i])], [xs[i], 11.25]))];
 }
 
-/** Busto pequeño (credenciales y tarjetas): cabeza y hombros que asientan en el borde inferior. */
+/** Small bust (badges and cards): head and shoulders resting on the bottom edge. */
 const bust = (cx, headY, hr, baseY, sr) => [circ(cx, headY, hr), arc(cx, baseY, sr, 180, 360).d];
 
-/** Lápiz a 45° con la punta en `tip`, de largo `len` y cuerpo de 3 (como el del núcleo). */
+/** Pencil at 45° with its tip at `tip`, `len` long, with a body 3 wide (like Núcleo's). */
 function pencil(tip, len, w = 3) {
   const u = [Math.SQRT1_2, -Math.SQRT1_2];
   const n = [Math.SQRT1_2, Math.SQRT1_2];
@@ -435,7 +435,7 @@ function pencil(tip, len, w = 3) {
   return [body, line(at(len - 2.4, -w / 2), at(len - 2.4, w / 2))];
 }
 
-/** Medidas de una esquina continua de radio r (el mismo suavizado 0.6 que sq() en el motor). */
+/** Measurements of a continuous corner of radius r (the same 0.6 smoothing as the engine's sq()). */
 function cornerK(r, s = 0.6) {
   const p = (1 + s) * r;
   const a90 = 90 * (1 - s);
@@ -449,7 +449,7 @@ function cornerK(r, s = 0.6) {
   return { p, a: 2 * b, b, c, d, L, r };
 }
 
-/** Polilínea abierta con esquinas continuas (como las flechas de vuelta de Navegación). */
+/** Open polyline with continuous corners (like the turn arrows in Navegación). */
 function cline(pts, radius) {
   const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
   const add = (p, u, k) => [p[0] + u[0] * k, p[1] + u[1] * k];
@@ -479,17 +479,17 @@ function cline(pts, radius) {
   return `${d}L${P(pts.at(-1))}`;
 }
 
-/** El arco de arc() sin su M inicial, para encadenarlo a un trazo. */
+/** The arc from arc() without its leading M, so it can be chained onto a path. */
 const arcTo = (...a) => arc(...a).d.replace(/^M[^A]+/, '');
 
-/** 文: el trazo de arriba que asienta en la barra y las dos diagonales, en una caja de unas 8 × 8. */
+/** 文: the top stroke resting on the bar and the two diagonals, in a box of about 8 × 8. */
 const wen = (cx, cy) => [
   line([cx, cy - 4.25], [cx, cy - 1.5]),
   line([cx - 3.9, cy - 1.5], [cx + 3.9, cy - 1.5]),
   line([cx + 2.4, cy - 1.5], [cx - 3.3, cy + 4]),
   line([cx - 2.4, cy - 1.5], [cx + 3.3, cy + 4]),
 ];
-/** La letra A de alto h: dos piernas con la punta suave y su travesaño. */
+/** The letter A, h tall: two legs with a soft apex and a crossbar. */
 const letterA = (cx, top, h) => [
   rline(
     [
@@ -502,21 +502,21 @@ const letterA = (cx, top, h) => [
   line([cx - 0.27 * h, top + 0.66 * h], [cx + 0.27 * h, top + 0.66 * h]),
 ];
 
-// ── Piezas base ──────────────────────────────────────────────────────────────────────────
+// ── Base pieces ──────────────────────────────────────────────────────────────────────────
 const N = nucleo.icons;
-const DROP = drop(12, 11.75, 8.75); // el globo del núcleo
+const DROP = drop(12, 11.75, 8.75); // Núcleo's bubble
 const MAIL = N.mail.d[0];
 const FLAP = N.mail.d[1];
 const PHONE = N.phone.d[0];
-// La campana del núcleo en orden de dibujo: primero el cuerpo, después el badajo
+// Núcleo's bell in drawing order: the body first, then the clapper
 const BELL = [N.bell.d[1], N.bell.d[0]];
 /**
- * La campana bajo una insignia de esquina: al 85 % y corrida abajo a la izquierda, así el badajo
- * queda entero fuera del área que despeja la insignia (completa, se lo comía a la mitad). El badajo
- * baja 0.45 para conservar los 3 entre ejes con el cuerpo que tiene a tamaño completo.
+ * The bell under a corner badge: at 85 % and shifted down and to the left, so the clapper stays
+ * whole outside the area the badge clears (at full size, the badge ate half of it). The clapper
+ * drops 0.45 to keep the same 3 center to center from the body that it has at full size.
  */
 const BELL_B = [xf(BELL[0], { s: 0.85, dx: -3.25, dy: 1 }), xf(BELL[1], { s: 0.85, dx: -3.25, dy: 1.45 })];
-const BELL_B_TOP = [12 - 3.25, 12 + (2.95 - 12) * 0.85 + 1]; // el cuelgue, para el movimiento
+const BELL_B_TOP = [12 - 3.25, 12 + (2.95 - 12) * 0.85 + 1]; // the hanging point, for motion
 const VIDEO = sq(2.5, 6, 13.25, 12, 3.5, { square: ['br'] });
 const LENS = rline(
   [
@@ -527,7 +527,7 @@ const LENS = rline(
   ],
   [0, 1.5, 1.5, 0],
 );
-/** Quien está del otro lado de la videollamada: cabeza y hombros dentro de la cámara. */
+/** Whoever is on the other end of the video call: head and shoulders inside the camera. */
 const CALLER = [circ(9.13, 10.35, 1.9), arc(9.13, 18, 3.6, 180, 360).d];
 const SCREEN = sq(2.5, 3.5, 19, 13.5, 3.5, { square: ['br'] });
 const STAND = line([8.5, 20.5], [15.5, 20.5]);
@@ -544,64 +544,64 @@ const MIC_HOLDER = rline(
 const MIC_STEM = line([12, 17.25], [12, 21.25]);
 const BROADCAST = [circ(12, 12, 1.75), arc(12, 12, 5, -42, 42).d, arc(12, 12, 5, 138, 222).d, arc(12, 12, 8.5, -40, 40).d, arc(12, 12, 8.5, 140, 220).d];
 const PERSON = N.person.d;
-const PERSON_L = PERSON.map((d) => xf(d, { dx: -2.5 })); // la persona corrida para dejar sitio a la insignia
-/** La persona del núcleo escalada desde sus pies; la cabeza sube para conservar el aire con los hombros. */
+const PERSON_L = PERSON.map((d) => xf(d, { dx: -2.5 })); // the person shifted to make room for the badge
+/** Núcleo's person scaled from the feet; the head moves up to keep its gap from the shoulders. */
 const personAt = (s, dx = 0, dy = 0) => [xf(PERSON[0], { s, o: [12, 20.6], dx, dy: dy - 1.95 * (1 - s) }), xf(PERSON[1], { s, o: [12, 20.6], dx, dy })];
-const dropL = (cx, cy, r) => xf(drop(cx, cy, r), { flipX: true, o: [cx, cy] }); // la gota en espejo: el otro interlocutor
-/** Clip de papel de tres patas a 3 de distancia, de pie a la derecha del sobre. */
+const dropL = (cx, cy, r) => xf(drop(cx, cy, r), { flipX: true, o: [cx, cy] }); // the mirrored drop: the other side of the conversation
+/** Paper clip with three legs 3 apart, standing to the right of the envelope. */
 const CLIP = `M18.5 10V17.75${arcTo(17, 17.75, 1.5, 0, 180)}V7.5${arcTo(18.5, 7.5, 3, 180, 360)}V19.5`;
-/** El sobre del núcleo al 80 %, arriba a la izquierda, para que el clip quepa a su lado. */
+/** Núcleo's envelope at 80 %, top left, so the clip fits beside it. */
 const MAIL_S = [MAIL, FLAP].map((d) => xf(d, { s: 0.8, o: [2.5, 5], dy: 0.75 }));
 /**
- * El sobre bajo una insignia de esquina: al 85 % y arriba a la izquierda, así la solapa queda a 1.5
- * de aire del área que despeja la insignia (completo, su brazo derecho la rozaba y en el relleno
- * dejaba una astilla entre la solapa calada y el aire de la insignia).
+ * The envelope under a corner badge: at 85 % and top left, so the flap keeps a 1.5 gap from the
+ * area the badge clears (at full size, its right arm grazed it and, in the fill, left a sliver
+ * between the knocked-out flap and the badge's gap).
  */
 const MAIL_B = [MAIL, FLAP].map((d) => xf(d, { s: 0.85, o: [2.5, 5], dy: -0.5 }));
-/** El sobre bajo el punto de aviso: completo y 2.5 más abajo, con la solapa lejos del punto. */
+/** The envelope under the notification dot: full size and 2.5 lower, with the flap away from the dot. */
 const MAIL_DOT = [MAIL, FLAP].map((d) => xf(d, { dy: 2.5 }));
 
-// ── Insignias propias ────────────────────────────────────────────────────────────────────
-// En el mismo lugar que las del motor (centro 17.25, 17.25; círculo de r 4.25). `knock` es el
-// área que el motor despeja con 1.5 de aire; lo que va encima de otra figura lleva su propia área.
+// ── Custom badges ────────────────────────────────────────────────────────────────────────
+// In the same place as the engine's badges (center 17.25, 17.25; circle of r 4.25). `knock` is the
+// area the engine clears with a 1.5 gap; anything sitting on top of another shape brings its own area.
 const BC = [17.25, 17.25];
 const BR = 4.25;
 const RING = circ(...BC, BR);
 const own = (d, knock, fill) => ({ d, knock, ...(fill && { fill }) });
-/** Bloquear: el círculo con su diagonal (calada en el relleno). */
+/** Block: the circle with its diagonal (knocked out in the fill). */
 const blockBadge = () => {
   const bar = line(polar(...BC, BR, 225), polar(...BC, BR, 45));
   return own([RING, bar], RING, { solid: [RING], cut: [bar] });
 };
-/** Corazón sin círculo: la figura es la insignia y despeja el círculo entero (sin pedazos junto a su punta). */
+/** Heart without a circle: the shape is the badge and clears the whole circle (no fragments next to its tip). */
 const heartBadge = () => {
   const h = heart(BC[0], 15.6, 7.6);
   return own([h], RING, { solid: [h] });
 };
-/** Lupa: el lente en el círculo de la insignia (r 3.25) y el mango hacia la esquina (pegado al lente). */
+/** Magnifier: the lens in the badge circle (r 3.25) and the handle toward the corner (flush with the lens). */
 const searchBadge = () => {
   const lens = circ(...BC, 3.25);
   const handle = line(polar(...BC, 3.25, 45), [21.25, 21.25]);
   return own([lens, handle], knockOf(lens, handle), { solid: [lens], wire: [handle] });
 };
-/** Lápiz encima de una figura: el cuerpo se rellena y el casquillo se cala. */
+/** Pencil on top of a shape: the body is filled and the ferrule is knocked out. */
 const pencilOver = (tip, len) => {
   const pen = pencil(tip, len);
   return own(pen, pen[0], { solid: [pen[0]], cut: [pen[1]] });
 };
-/** Flecha a la derecha encima de una figura (en el relleno sigue siendo línea). */
+/** Right arrow on top of a shape (it stays a line in the fill). */
 const arrowOver = (from, to, len = 3.4) => {
   const d = [line(from, to), head(to, [to[0] - from[0], to[1] - from[1]], len)];
   return own(d, knockOf(...d));
 };
-/** La diagonal de los -off: va encima como pieza propia y el motor le despeja 1.5 a cada lado. */
+/** The diagonal of the -off icons: it sits on top as its own piece and the engine clears 1.5 on each side. */
 const SLASH = line([3.25, 3.25], [20.75, 20.75]);
 const slashOver = (s = SLASH) => own([s], s);
-/** Una figura cerrada encima de otra (el globo de adelante, la persona del frente). */
+/** A closed shape on top of another (the front bubble, the person in front). */
 const front = (ds, fill = { solid: ds }) => own(ds, ds.join(''), fill);
 
 const icons = {
-  // ── Globos de conversación: siempre la gota del isotipo ──
+  // ── Chat bubbles: always the logomark's drop ──
   'message-dots': {
     tags: ['escribiendo', 'chat', 'mensaje', 'typing', 'chat bubble'],
     d: [DROP, dot(7.75, 12), dot(12, 12), dot(16.25, 12)],
@@ -624,12 +624,12 @@ const icons = {
   },
   'message-question': {
     tags: ['pregunta', 'ayuda', 'preguntas frecuentes', 'help', 'faq'],
-    // El gancho termina a 1.5 de aire del punto
+    // The hook ends with a 1.5 gap from the dot
     d: [DROP, `${arc(12, 9.25, 2.5, 180, 360).d}C14.5 11 12 11 12 12.75V12.85`, dot(12, 16.55)],
   },
   'message-alert': {
     tags: ['aviso', 'reportar', 'mensaje importante', 'report', 'alert'],
-    // Las medidas del signo de `important` (núcleo): 1.5 de aire entre la raya y el punto
+    // The measurements of the mark in `important` (Núcleo): a 1.5 gap between the bar and the dot
     d: [DROP, line([12, 7.4], [12, 12.6]), dot(12, 16.3)],
   },
   'message-heart': {
@@ -715,7 +715,7 @@ const icons = {
   },
   'message-unread': {
     tags: ['no leído', 'mensaje nuevo', 'chat', 'unread', 'new message'],
-    // La gota un poco menor y corrida abajo a la izquierda: el punto del motor le toma poco
+    // The drop slightly smaller and shifted down and to the left: the engine's dot takes little from it
     d: [drop(11.25, 12.5, 8.25)],
     badge: badge('dot'),
   },
@@ -726,12 +726,12 @@ const icons = {
   },
   'messages': {
     tags: ['conversaciones', 'chats', 'diálogo', 'conversations', 'chat'],
-    // Dos interlocutores: la gota de atrás en espejo, la de adelante con la firma encima
+    // Two people talking: the back drop mirrored, the front one on top with the signature corner
     d: [dropL(9.5, 9.5, 6.25)],
     badge: front([drop(14.5, 14.5, 6.25)]),
   },
 
-  // ── Correo ──
+  // ── Mail ──
   'mail-open': {
     tags: ['correo abierto', 'leído', 'sobre abierto', 'mail open', 'read'],
     d: [
@@ -787,7 +787,7 @@ const icons = {
   },
   'mail-send': {
     tags: ['enviar correo', 'salida', 'enviado', 'send mail', 'outbox'],
-    // La flecha sale por la esquina de abajo del sobre
+    // The arrow leaves through the envelope's bottom corner
     d: [MAIL, FLAP],
     badge: arrowOver([13.75, 18.5], [21.75, 18.5]),
   },
@@ -832,8 +832,8 @@ const icons = {
   },
   'mail-letter': {
     tags: ['carta', 'invitación', 'sobre con carta', 'letter', 'invitation'],
-    // La carta asoma del sobre: el bolsillo del frente va encima y el motor la despeja. Su borde
-    // de abajo queda dentro del bolsillo (más arriba dejaba una astilla junto al vértice)
+    // The letter peeks out of the envelope: the front pocket sits on top and the engine clears it.
+    // Its bottom edge stays inside the pocket (any higher, it left a sliver next to the vertex)
     d: [sq(6.5, 3, 11, 14.5, 2, { square: ['br'] }), line([9.5, 7], [14.5, 7])],
     badge: front([
       roundpoly(
@@ -850,7 +850,7 @@ const icons = {
   },
   'mail-stack': {
     tags: ['correos', 'boletín', 'envío masivo', 'newsletter', 'bulk mail'],
-    // El sobre de atrás completo; el de adelante va encima con su solapa calada en el relleno
+    // The back envelope whole; the front one sits on top, with its flap knocked out in the fill
     d: [sq(5.75, 4, 15.75, 12.25, 3.5, { square: ['br'] })],
     badge: (() => {
       const body = sq(2.5, 7.25, 15.75, 12.25, 3.5, { square: ['br'] });
@@ -861,7 +861,7 @@ const icons = {
   'mailbox': {
     tags: ['buzón', 'correo postal', 'cartas', 'mailbox', 'postbox'],
     d: [
-      // El buzón de lado: la puerta en arco al frente, la bandera levantada y el poste
+      // The mailbox from the side: the arched door at the front, the raised flag and the post
       roundpoly(
         [
           [2.75, 17.5],
@@ -887,7 +887,7 @@ const icons = {
   },
   'reply-all': {
     tags: ['responder a todos', 'contestar', 'correo', 'reply all'],
-    // La misma vuelta que arrow-turn-left (Navegación) con una segunda punta a 3 de aire
+    // The same turn as arrow-turn-left (Navegación) with a second head 3 away
     d: [
       cline(
         [
@@ -902,7 +902,7 @@ const icons = {
     ],
   },
 
-  // ── Llamadas: el teléfono del núcleo ──
+  // ── Calls: Núcleo's phone ──
   'phone-incoming': {
     tags: ['llamada entrante', 'recibir llamada', 'teléfono', 'incoming call'],
     d: [PHONE, line([20.5, 3.5], [14.5, 9.5]), head([14.5, 9.5], [-1, 1], 4.5)],
@@ -925,8 +925,8 @@ const icons = {
   },
   'phone-transfer': {
     tags: ['transferir llamada', 'cambiar', 'pasar llamada', 'transfer call'],
-    // Dos flechas cortas en sentidos opuestos (la de ida abajo, lejos del auricular); las puntas de
-    // 2.75 dejan 1.5 de aire entre sí y con el teléfono
+    // Two short arrows in opposite directions (the outgoing one below, away from the handset); the
+    // 2.75 heads leave a 1.5 gap between them and from the phone
     d: [PHONE, line([21.25, 3.75], [14.5, 3.75]), head([14.5, 3.75], [-1, 0], 2.75), line([14.5, 9], [21.25, 9]), head([21.25, 9], [1, 0], 2.75)],
   },
   'phone-hold': {
@@ -943,7 +943,7 @@ const icons = {
   },
   'phone-off': {
     tags: ['sin llamadas', 'no molestar', 'teléfono apagado', 'phone off'],
-    // La diagonal va al revés para no correr a lo largo del auricular
+    // The diagonal runs the other way so it doesn't run along the handset
     d: [PHONE],
     badge: slashOver(line([20.75, 3.25], [3.25, 20.75])),
   },
@@ -956,14 +956,14 @@ const icons = {
     d: [4.5, 9.5, 14.5].flatMap((y) => [6.25, 12, 17.75].map((x) => dot(x, y))).concat(dot(12, 19.5)),
   },
 
-  // ── Video y voz ──
+  // ── Video and voice ──
   'video-call': {
     tags: ['videollamada', 'llamada de video', 'cámara', 'video call', 'facetime'],
     d: [VIDEO, LENS, ...CALLER],
   },
   'video-call-off': {
     tags: ['cámara apagada', 'sin video', 'terminar videollamada', 'video off'],
-    // Sin la persona: la diagonal le pasaba por la cabeza y dejaba pedazos
+    // Without the person: the diagonal ran through their head and left fragments
     d: [VIDEO, LENS],
     badge: slashOver(),
   },
@@ -990,7 +990,7 @@ const icons = {
   },
   'headset': {
     tags: ['diadema', 'soporte', 'atención a clientes', 'headset', 'support'],
-    // La diadema de headphones (Dispositivos) con el brazo del micrófono rematado en su cápsula
+    // The headband from headphones (Dispositivos) with the mic boom ending in its capsule
     d: [
       arc(12, 12, 8.25, 180, 360).d,
       sq(3.75, 12, 4.5, 6.75, 1.5, { square: ['tl'] }),
@@ -1011,7 +1011,7 @@ const icons = {
     d: [sq(6.5, 7.75, 11, 13.5, 3, { square: ['br'] }), line([9.5, 7.75], [9.5, 2.75]), line([9.75, 12], [14.25, 12]), line([9.75, 15], [14.25, 15])],
   },
 
-  // ── Avisos: la campana del núcleo ──
+  // ── Notifications: Núcleo's bell ──
   'bell-dot': {
     tags: ['aviso nuevo', 'notificación', 'sin leer', 'unread', 'new notification'],
     d: BELL,
@@ -1047,7 +1047,7 @@ const icons = {
     badge: badge('dot'),
   },
 
-  // ── Símbolos y difusión ──
+  // ── Symbols and broadcast ──
   'at-sign': {
     tags: ['arroba', 'mención', 'correo', 'at', 'mention'],
     d: [circ(12, 12, 3.5), `M15.5 8.5V12${arcTo(18, 12, 2.5, 180, 0)}${arcTo(12, 12, 8.5, 0, -300)}`],
@@ -1070,7 +1070,7 @@ const icons = {
         ],
         [1.75, 0.6, 1.5, 1.5, 0.6, 1.75],
       ),
-      // El mango nace y muere sobre el cuerpo
+      // The handle starts and ends on the body
       rline(
         [
           [6, 15],
@@ -1089,7 +1089,7 @@ const icons = {
   },
   'broadcast-off': {
     tags: ['fuera del aire', 'sin transmisión', 'desconectado', 'offline'],
-    // Sin el punto del centro: quedaría entero detrás de la diagonal
+    // Without the center dot: it would sit entirely behind the diagonal
     d: BROADCAST.slice(1),
     badge: slashOver(),
   },
@@ -1099,11 +1099,11 @@ const icons = {
   },
   'satellite-dish': {
     tags: ['satélite', 'parabólica', 'antena', 'satellite', 'dish'],
-    // El brazo del receptor llega al punto (lo toca, no lo roza)
+    // The receiver's arm reaches the dot (it touches it rather than grazing it)
     d: [`${arc(9.25, 14.75, 6.5, 225, 45).d}Z`, line([9.25, 14.75], [13.75, 10.25]), dot(14.25, 9.75), arc(14.25, 9.75, 4, -80, -10).d, arc(14.25, 9.75, 7.25, -82, -8).d],
   },
 
-  // ── Personas: la persona del núcleo ──
+  // ── People: Núcleo's person ──
   'person-plus': {
     tags: ['agregar persona', 'invitar', 'nuevo usuario', 'add user', 'invite'],
     d: PERSON_L,
@@ -1164,7 +1164,7 @@ const icons = {
   },
   'people': {
     tags: ['grupo', 'equipo', 'comunidad', 'team', 'group'],
-    // Las dos personas de atrás completas; la del frente va encima y el motor las despeja
+    // The two people in back whole; the one in front sits on top and the engine clears them
     d: [-5.4, 5.4].flatMap((dx) => personAt(0.66, dx, -1.75)),
     badge: front(personAt(0.84)),
   },
@@ -1178,14 +1178,14 @@ const icons = {
   },
   'contacts': {
     tags: ['contactos', 'agenda', 'libreta de direcciones', 'address book', 'contacts'],
-    // Las pestañas del lomo cruzan la tapa; el busto, corrido a la derecha, les deja 1.5 de aire
+    // The spine tabs cross the cover; the bust, shifted right, leaves them a 1.5 gap
     d: [sq(5.5, 2.75, 14, 18.5, 3.5, { square: ['br'] }), ...bust(13.25, 10.25, 2.5, 21.25, 4.5), ...[6.5, 11.25, 16].map((y) => line([3.5, y], [7.25, y]))],
   },
   'handshake': {
     tags: ['apretón de manos', 'acuerdo', 'trato', 'handshake', 'deal'],
-    // Dos puños de manga y las manos trabadas entre ellos, en una sola figura: arriba el nudillo de
-    // una mano y la muesca donde asienta el pulgar de la otra; abajo los dedos que envuelven. El
-    // pulgar y el dedo nacen del contorno (nada flota)
+    // Two cuffs and the hands clasped between them, as a single shape: on top, one hand's knuckle
+    // and the notch where the other's thumb rests; below, the wrapping fingers. The thumb and the
+    // finger start from the outline (nothing floats)
     d: [
       rline(
         [
@@ -1223,7 +1223,7 @@ const icons = {
     ],
   },
 
-  // ── Reacciones ──
+  // ── Reactions ──
   'face-smile': {
     tags: ['sonrisa', 'feliz', 'emoji', 'smile', 'happy'],
     d: face(arc(12, 12, 4.25, 30, 150).d),
@@ -1266,8 +1266,8 @@ const icons = {
   },
   'reaction-add': {
     tags: ['agregar reacción', 'emoji', 'reaccionar', 'add reaction'],
-    // La cara corrida arriba a la izquierda y la sonrisa más chica: a 7.3 del centro de la insignia
-    // queda entera (más cerca, el despeje la adelgazaba)
+    // The face shifted up and to the left, with a smaller smile: 7.3 from the badge center it stays
+    // whole (any closer, the clearing thinned it)
     d: [circ(10, 10, 7.5), dot(7.6, 8.2), dot(12.4, 8.2), arc(10, 10.25, 2.75, 35, 145).d],
     badge: badge('plus'),
   },
@@ -1294,7 +1294,7 @@ const icons = {
         ],
         [1, 1.25, 1.25],
       ),
-      // Las serpentinas nacen a 1.5 de aire de la boca del cono
+      // The streamers start with a 1.5 gap from the cone's mouth
       smooth([
         [11, 8.75],
         [11, 6.25],
@@ -1328,10 +1328,10 @@ const icons = {
     ],
   },
 
-  // ── Lenguaje ──
+  // ── Language ──
   'translate': {
     tags: ['traducir', 'idioma', 'traducción', 'translate', 'language'],
-    // 文 arriba y, encima, la gota en espejo con la A: el otro idioma responde
+    // 文 at the top and, over it, the mirrored drop with the A: the other language replies
     d: wen(7.25, 7),
     badge: (() => {
       const bubble = dropL(15.25, 15, 6.25);
@@ -1340,21 +1340,21 @@ const icons = {
     })(),
   },
 
-  // ── Cobertura (ronda 2): lo que faltaba de correo, difusión y celebraciones ──
-  // Correo no deseado o con problema: el sobre del núcleo y la insignia de alerta del motor.
+  // ── Coverage (round 2): what was missing in mail, broadcast and celebrations ──
+  // Junk or problem mail: Núcleo's envelope and the engine's alert badge.
   'mail-alert': {
     tags: ['correo no deseado', 'spam', 'reportar correo', 'correo sospechoso', 'mail alert', 'junk', 'report spam'],
     d: MAIL_B,
     badge: badge('alert'),
   },
-  // Suscripción por fuente (RSS): el punto de origen y dos arcos que se abren desde él, con el
-  // aire de las ondas de `broadcast`.
+  // Feed subscription (RSS): the source dot and two arcs that open out from it, with the spacing
+  // of the `broadcast` waves.
   'rss': {
     tags: ['rss', 'fuente', 'suscribirse', 'feed', 'noticias', 'subscribe', 'news feed'],
     d: [dot(6.5, 17.5), arc(6.5, 17.5, 6, 270, 360).d, arc(6.5, 17.5, 11.5, 270, 360).d],
   },
-  // Pastel (cumpleaños, aniversario): el cuerpo, el betún que escurre en tres ondas y tres velas
-  // con su llama a 3 de la mecha.
+  // Cake (birthday, anniversary): the body, the frosting dripping in three waves, and three
+  // candles with their flame 3 from the wick.
   'cake': {
     tags: ['pastel', 'cumpleaños', 'aniversario', 'celebración', 'cake', 'birthday', 'anniversary'],
     d: [
@@ -1365,12 +1365,12 @@ const icons = {
   },
 };
 
-// ── Relleno (DESIGN.md › Relleno), por índice de d ──
-// `solid` se rellena (y conserva su trazo); `closed` también, pero es un trazo abierto del contorno
-// que encierra un cuerpo (el badajo, la lente de la cámara, la manga) y se rellena cerrado con Z,
-// sin cambiar la silueta; `cut` se cala al ancho del trazo; `lines` sigue siendo línea con 1.5 de
-// aire alrededor y `wire` sigue siendo línea pegada al cuerpo, sin aire (un asta, una antena, una
-// mecha). En `solid` solo van figuras cerradas: un trazo abierto se rellenaría como una cuña.
+// ── Fill (DESIGN.md › Fill), by index into d ──
+// `solid` is filled (and keeps its stroke); so is `closed`, but it's an open outline path that
+// encloses a body (the clapper, the camera lens, the cuff) and is filled closed with Z, without
+// changing the silhouette; `cut` is knocked out at stroke width; `lines` stays a line with a 1.5 gap
+// around it, and `wire` stays a line flush with the body, with no gap (a pole, an antenna, a wick).
+// Only closed shapes go in `solid`: an open path would fill as a wedge.
 const all = (name) => icons[name].d.map((_, i) => i);
 const rest = (name, from = 1) => icons[name].d.map((_, i) => i).slice(from);
 const FILL = {
@@ -1379,14 +1379,14 @@ const FILL = {
   'mail-letter': { solid: [0], cut: [1] },
   'mail-stack': { solid: [0] },
   'mail-attachment': { solid: [0], cut: [1] },
-  // El buzón: la bandera se rellena (su cierre corre por el asta); el poste y el asta siguen
-  // unidos al cuerpo como línea, y la puerta se cala
+  // Mailbox: the flag is filled (it closes along its pole); the post and the pole stay attached
+  // to the body as lines, and the door is knocked out
   mailbox: { solid: [0], closed: [4], wire: [2, 3], cut: [1] },
   'phone-hangup': { solid: [0] },
-  // Los dos carretes rellenos y la cinta que los une, pegada a ellos
+  // The two reels filled and the tape joining them, flush with them
   voicemail: { solid: [0, 1], wire: [2] },
   dialpad: { solid: all('dialpad') },
-  // La lente de la cámara se cierra por el canto del cuerpo
+  // The camera lens closes along the edge of the body
   'video-call': { solid: [0], closed: [1], cut: [2, 3] },
   'video-call-off': { solid: [0], closed: [1] },
   'video-meeting': { solid: [0], lines: [1], cut: [2, 3] },
@@ -1397,52 +1397,52 @@ const FILL = {
   'walkie-talkie': { solid: [0], wire: [1], cut: [2, 3] },
   'bell-ringing': { solid: [0], closed: [1], lines: [2, 3] },
   'notification-badge': { solid: [0] },
-  // El mango (una empuñadura de 3 de ancho) se rellena cerrado por el borde del cuerpo
+  // The handle (a grip 3 wide) is filled, closed along the edge of the body
   megaphone: { solid: [0], closed: [1], lines: [2] },
   broadcast: { solid: [0], lines: [1, 2, 3, 4] },
-  // La torre: la bola y la estructura rellenas (las patas se cierran por la base en un triángulo);
-  // las ondas siguen siendo línea con su aire
+  // Tower: the ball and the structure filled (the legs close across the base into a triangle);
+  // the waves stay as lines with their gap
   'radio-tower': { solid: [0], closed: [1], lines: [2, 3, 4, 5] },
-  // El plato y el receptor rellenos; el brazo que los une sigue siendo línea
+  // The dish and the receiver filled; the arm joining them stays a line
   'satellite-dish': { solid: [0, 2], wire: [1], lines: [3, 4] },
   'person-speaking': { solid: [0, 1], lines: [2, 3] },
   'person-circle': { solid: [0], cut: [1, 2] },
   people: { solid: [0, 1, 2, 3] },
   'id-card': { solid: [0], cut: [1, 2, 3, 4] },
   'id-badge': { solid: [0], cut: [1, 2, 3] },
-  // Las pestañas siguen unidas a la tapa (con aire se leían como rayas sueltas)
+  // The tabs stay attached to the cover (with a gap they read as loose dashes)
   contacts: { solid: [0], wire: [3, 4, 5], cut: [1, 2] },
   'face-laugh': { solid: [0], cut: [1, 2, 3] },
   'reaction-add': { solid: [0], cut: [1, 2, 3] },
-  // El puño y la manga rellenos (la manga se cierra por la junta); la junta se cala para que no se
-  // vuelvan una sola mancha
+  // The fist and the cuff filled (the cuff closes along the seam); the seam is knocked out so they
+  // don't merge into one blob
   'thumbs-up': { solid: [0], closed: [1] },
   'thumbs-down': { solid: [0], closed: [1] },
-  // La mano rellena con las rayas entre dedos caladas
+  // The hand filled, with the lines between the fingers knocked out
   'hand-raised': { solid: [0], cut: [1, 2, 3] },
   'party-popper': { solid: [0, 3, 4, 5], lines: [1, 2] },
-  // El sticker se cierra por la doblez (su silueta, como en el contorno) y la esquina despegada, que
-  // queda encima de él, se separa calando su borde en L; los ojos también se calan. Calar la doblez
-  // borraba la esquina: el relleno se leía como un cuadro con una raya
+  // The sticker closes along the fold (its silhouette, as in the outline) and the peeled corner,
+  // which sits on top of it, is separated by knocking out its L-shaped edge; the eyes are knocked
+  // out too. Knocking out the fold erased the corner: the fill read as a square with a line through it
   sticker: { closed: [0], cut: [2, 3, 4] },
-  // El pastel y las llamas rellenos; las velas, pegadas al pastel, siguen siendo línea
+  // The cake and the flames filled; the candles, flush with the cake, stay as lines
   cake: { solid: [0, 3, 5, 7], wire: [2, 4, 6], cut: [1] },
 };
-// Globos con un signo dentro: la gota rellena y el signo calado
+// Bubbles with a mark inside: the drop filled and the mark knocked out
 for (const name of Object.keys(icons).filter((n) => n.startsWith('message-') && !['message-unread', 'message-off'].includes(n))) FILL[name] = { solid: [0], cut: rest(name) };
 for (const name of ['message-unread', 'message-off', 'messages']) FILL[name] = { solid: [0] };
-// El sobre con su solapa calada (también bajo las insignias)
+// The envelope with its flap knocked out (under badges too)
 for (const name of ['mail-unread', 'mail-plus', 'mail-minus', 'mail-check', 'mail-x', 'mail-clock', 'mail-send', 'mail-draft', 'mail-search', 'mail-alert']) FILL[name] = { solid: [0], cut: [1] };
-// El teléfono relleno; las flechas, signos y ondas de al lado siguen siendo línea con su aire
+// The phone filled; the arrows, marks and waves beside it stay as lines with their gap
 for (const name of ['phone-incoming', 'phone-outgoing', 'phone-missed', 'phone-plus', 'phone-forward', 'phone-transfer', 'phone-hold', 'phone-ringing']) FILL[name] = { solid: [0], lines: rest(name) };
 FILL['phone-off'] = { solid: [0] };
-// La campana: el cuerpo y el badajo (media luna), cerrado como en el núcleo
+// The bell: the body and the clapper (a half-moon), closed as in Núcleo
 for (const name of ['bell-dot', 'bell-plus', 'bell-check', 'bell-clock', 'bell-off']) FILL[name] = { solid: [0], closed: [1] };
-// La persona: cabeza y cuerpo
+// The person: head and body
 for (const name of Object.keys(icons).filter((n) => n.startsWith('person-') && !['person-speaking', 'person-circle'].includes(n))) FILL[name] = { solid: [0, 1] };
-// Las caras: el círculo relleno y los gestos calados
+// Faces: the circle filled and the features knocked out
 for (const name of ['face-smile', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry']) FILL[name] = { solid: [0], cut: rest(name) };
-// Los audífonos: las copas y la cápsula rellenas; la diadema y el brazo del micrófono, pegados a ellas
+// Headset: the ear cups and the capsule filled; the headband and the mic boom flush with them
 FILL.headset = { solid: [1, 2, 4], wire: [0, 3] };
 for (const [name, spec] of Object.entries(FILL)) {
   const { d } = icons[name];
@@ -1451,50 +1451,50 @@ for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => d[i]);
   icons[name].fill = { solid, ...(spec.cut?.length && { cut: pick(spec.cut) }), ...(spec.lines?.length && { lines: pick(spec.lines) }), ...(spec.wire?.length && { wire: pick(spec.wire) }) };
 }
-// El apretón: puños y manos rellenos (cada puño se cierra por el borde del lienzo); se calan la junta
-// de cada mano con su puño, el pulgar y el dedo
+// Handshake: cuffs and hands filled (each cuff closes along the canvas edge); the seam between each
+// hand and its cuff, the thumb and the finger are knocked out
 icons.handshake.fill = {
   solid: [`${icons.handshake.d[0]}Z`, `${icons.handshake.d[1]}Z`, icons.handshake.d[2]],
   cut: [line([6.25, 9], [6.25, 14.5]), line([17.75, 9.5], [17.75, 14.5]), ...icons.handshake.d.slice(3)],
 };
-// La junta del puño con la manga, calada
+// The seam between the fist and the cuff, knocked out
 icons['thumbs-up'].fill.cut = [THUMB_SEAM];
 icons['thumbs-down'].fill.cut = [xf(THUMB_SEAM, { flipY: true })];
-// Solo líneas abiertas: su relleno es el mismo contorno. En translate eso es el 文 de la base: su
-// insignia (la gota con la A) trae su propio relleno y el motor la rellena igual
+// Open lines only: their filled version is the outline itself. In translate that's the base 文: its
+// badge (the drop with the A) brings its own fill and the engine fills it all the same
 for (const name of ['reply-all', 'at-sign', 'hashtag', 'broadcast-off', 'rss', 'translate']) icons[name].fill = false;
 
-// ── 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta ──
-// A 16 px un pixel mide 1.5 del lienzo: los centros caen en 0.75 + 1.5k y los bordes en 1.5k. El
-// globo pequeño tiene sus cuatro extremos en centros de pixel (3.75 y 20.25), así se ve nítido.
+// ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──
+// At 16 px one pixel is 1.5 canvas units: centers fall on 0.75 + 1.5k and edges on 1.5k. The
+// small bubble has its four extremes on pixel centers (3.75 and 20.25), so it looks crisp.
 const SDROP = drop(12, 12, 8.25);
 const small = (name, glyph, { cut = glyph, solid = [SDROP] } = {}) => {
   icons[name].small = { d: [SDROP, ...glyph], fill: { solid, cut } };
 };
-// Los puntos: centrados en el borde del pixel para que cada uno caiga entero en 2 × 2 pixeles,
-// con 1 pixel de aire entre ellos y contra el globo
+// Dots: centered on pixel edges so each one lands fully on 2 × 2 pixels, with 1 pixel of space
+// between them and from the bubble
 small('message-dots', [7.5, 12, 16.5].map((x) => dot(x, 12, 1)));
-// El corazón y la estrella, mayores y con el centro en la cuadrícula: a 13 pixeles de globo los
-// del dibujo grande se volvían una mancha
+// The heart and the star, larger and centered on the grid: in a 13-pixel bubble, the ones from the
+// large drawing turned into a smudge
 small('message-heart', [heart(12, 9.75, 9)]);
 small('message-star', [star(12, 12.4, 5.6, 2.75, 0.6, 0.45)]);
-// Los demás globos con un signo: el mismo globo pequeño y su signo con el ajuste al pixel del motor.
-// Ajustado por el motor, el globo grande (r 8.75) caía entre pixeles arriba y a la izquierda: se veía
-// gris de esos lados y un pixel más ancho que los globos con dibujo propio
+// The other bubbles with a mark: the same small bubble, with the mark snapped by the engine.
+// Snapped by the engine, the large bubble (r 8.75) fell between pixels at the top and left: it looked
+// gray on those sides and one pixel wider than the bubbles with a custom drawing
 for (const name of Object.keys(icons).filter((n) => n.startsWith('message-') && FILL[n]?.cut && !icons[n].small)) {
   const glyph = icons[name].d.slice(1);
   small(name, glyph.map(snapper([SDROP, ...glyph])));
 }
-// El globo apagado: el mismo globo pequeño bajo su diagonal
+// Bubble off: the same small bubble under its diagonal
 icons['message-off'].small = { d: [SDROP], fill: { solid: [SDROP] }, badge: icons['message-off'].badge };
-// El globo con aviso: el mismo globo pequeño, un pixel a la izquierda para dejarle sitio al punto (el
-// del dibujo grande, menor y corrido, caía entre pixeles por la izquierda)
+// Bubble with a notification: the same small bubble, one pixel to the left to make room for the dot
+// (the one in the large drawing, smaller and shifted, fell between pixels on the left)
 {
   const d = drop(10.5, 12, 8.25);
   icons['message-unread'].small = { d: [d], fill: { solid: [d] }, badge: badge('dot', { size: 16 }) };
 }
-// El pastel: dos velas en centros de pixel con su llama a 1 pixel de aire (las tres del dibujo
-// grande caían entre pixeles y sus llamas se fundían en una raya)
+// Cake: two candles on pixel centers with their flame 1 pixel away (the three in the large drawing
+// fell between pixels and their flames merged into a line)
 {
   const body = sq(3.75, 11.25, 16.5, 9, 2.25);
   const icing = `M3.75 14.25${[9.25, 14.75, 20.25].map((x) => `A3.27 3.27 0 0 0 ${x} 14.25`).join('')}`;
@@ -1502,9 +1502,9 @@ icons['message-off'].small = { d: [SDROP], fill: { solid: [SDROP] }, badge: icon
   const flames = [9.75, 14.25].map((x) => dot(x, 4.5));
   icons.cake.small = { d: [body, icing, wicks[0], flames[0], wicks[1], flames[1]], fill: { solid: [body, ...flames], wire: wicks, cut: [icing] } };
 }
-// Las caras: el círculo de r 8.25 (sus extremos en centros de pixel; el de r 9 caía entre dos y se
-// veía como un anillo gris), los ojos en 2 × 2 pixeles y cada boca con sus tramos rectos y sus
-// extremos sobre la cuadrícula
+// Faces: the r 8.25 circle (its extremes on pixel centers; the r 9 one fell between two pixels and
+// looked like a gray ring), the eyes on 2 × 2 pixels, and each mouth with its straight runs and its
+// ends on the grid
 {
   const sface = (name, mouth, eyes = [dot(9, 9, 0.8), dot(15, 9, 0.8)]) => {
     const d = [circ(12, 12, 8.25), ...eyes, ...mouth];
@@ -1528,14 +1528,14 @@ icons['message-off'].small = { d: [SDROP], fill: { solid: [SDROP] }, badge: icon
   sface('face-sad', [frown]);
   sface('face-angry', [frown], [line([7.5, 8.25], [10.5, 9.75]), line([16.5, 8.25], [13.5, 9.75])]);
 }
-// El teclado: 3 × 3 y el cero, cada punto en 2 × 2 pixeles con 1 pixel de aire (a 16 px los del
-// dibujo grande caían entre pixeles y se veían grises)
+// Dial pad: 3 × 3 plus the zero, each dot on 2 × 2 pixels with 1 pixel of space (at 16 px the ones
+// from the large drawing fell between pixels and looked gray)
 {
   const d = [4.5, 9, 13.5].flatMap((y) => [7.5, 12, 16.5].map((x) => dot(x, y, 0.8))).concat(dot(12, 18, 0.8));
   icons.dialpad.small = { d, fill: { solid: d } };
 }
 
-// ── Piezas con nombre (DESIGN.md › Piezas): lo que se anima, cambia de nivel o va bajo una insignia ──
+// ── Named parts (DESIGN.md › Named parts): what animates, changes level or sits under a badge ──
 const PARTS = {
   'message-dots': { body: [0], dots: [1, 2, 3] },
   'message-clock': { body: [0], hands: [1] },
@@ -1581,7 +1581,7 @@ for (const name of ['person-plus', 'person-minus', 'person-check', 'person-x', '
 PARTS['reaction-add'] = { face: [0, 1, 2, 3] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
-// ── Niveles (DESIGN.md › Niveles): las ondas se encienden de adentro hacia afuera ──
+// ── Levels (DESIGN.md › Levels): the waves light up from the inside out ──
 icons.broadcast.levels = [
   [1, 2],
   [3, 4],
@@ -1596,31 +1596,31 @@ icons['person-speaking'].levels = [[2], [3]];
 icons.rss.levels = [[1], [2]];
 for (const name of ['broadcast', 'radio-tower', 'satellite-dish', 'phone-ringing', 'person-speaking', 'rss']) icons[name].parts.level = icons[name].levels.flat();
 
-// ── Variantes automáticas que no tienen sentido ──
+// ── Automatic variants that make no sense ──
 const variants = (names, v) => {
   for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
 };
-// Un globo con un signo dentro ya es un encierro (como un ícono -circle), y el signo hace de
-// insignia: el tache lo atravesaría
+// A bubble with a mark inside is already an enclosure (like a -circle icon), and the mark acts as
+// a badge: the slash would cut through it
 variants(
   Object.keys(icons).filter((n) => n.startsWith('message-') && !['message-unread', 'message-off'].includes(n)),
   { circle: false, square: false, slash: false },
 );
-// Ya vienen encerrados en un círculo o en un cuadrado
+// Already enclosed in a circle or a square
 variants(['face-smile', 'face-laugh', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry', 'person-circle', 'reaction-add'], { circle: false });
 variants(['notification-badge', 'sticker'], { square: false });
-// Sin tachado: los -off dibujados a mano y sus bases; las insignias (el tache las atravesaría);
-// las líneas, signos y puntos sueltos, donde un tache no dice nada
+// No slashed variant: the hand-drawn -off icons and their bases; badges (the slash would cut
+// through them); loose lines, marks and dots, where a slash says nothing
 variants(['video-call', 'screen-share', 'screen-share-off', 'microphone', 'broadcast'], { slash: false });
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, slash: false };
 variants(['reply-all', 'dialpad', 'hashtag', 'at-sign'], { slash: false });
-// Al 58 % los puntos del teclado se juntan
+// At 58 % the dial pad's dots run together
 variants(['dialpad'], { circle: false, square: false });
 
-// ── Espejo (DESIGN.md › Espejo): lo que tiene dirección de lectura ──
+// ── Mirroring (DESIGN.md › Mirroring): anything with a reading direction ──
 for (const name of ['message-reply', 'reply-all', 'mail-send', 'mail-draft', 'phone-forward', 'person-edit', 'person-arrow', 'person-speaking', 'megaphone', 'id-card']) icons[name].mirror = true;
 
-// ── Movimiento (DESIGN.md › Movimiento): el gesto propio de cada ícono ──
+// ── Motion (DESIGN.md › Motion): each icon's own gesture ──
 icons['message-heart'].motion = { effect: 'beat', parts: ['mark'], origin: [12, 12.75] };
 icons['message-sparkle'].motion = { effect: 'beat', parts: ['mark'], origin: [12, 12] };
 icons['message-clock'].motion = { effect: 'spin', parts: ['hands'], origin: [12, 12.25] };
