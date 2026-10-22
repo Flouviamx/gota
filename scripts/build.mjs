@@ -1,7 +1,8 @@
-// Valida el set y genera svg/*.svg, dist/icons.json, dist/index.js (+ .d.ts) y dist/react.js.
+// Valida el set y genera svg/ (regular, contorno y relleno), la matriz completa de variantes en
+// dist/svg/, dist/icons.json, dist/index.js (+ .d.ts), dist/react.js y dist/icons.css.
 // Uso: node scripts/build.mjs            → valida todo y escribe
 //      node scripts/build.mjs --check X   → solo valida la categoría X (no escribe nada)
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { loadAll } from './load.mjs';
 
 const only = process.argv.includes('--check') ? process.argv[process.argv.indexOf('--check') + 1] : undefined;
@@ -16,32 +17,63 @@ if (only) {
   process.exit(0);
 }
 
-const svg = (d) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${d.map((p) => `<path d="${p}"/>`).join('')}</svg>\n`;
+// ── Salidas ──
+// svg/<nombre>.svg y svg/fill/<nombre>.svg: regular, para ver en GitHub (van al repo).
+// dist/svg/<grosor>/<outline|fill>/<nombre>[-circle|-square|-slash].svg: la matriz completa (npm).
+const { render, svgFile, WEIGHTS } = await import('../engine/variants.mjs');
+const FORMS = [
+  ['', {}],
+  ['-circle', { enclosure: 'circle' }],
+  ['-square', { enclosure: 'square' }],
+  ['-slash', { slash: true }],
+];
 rmSync('svg', { recursive: true, force: true });
-mkdirSync('svg');
-mkdirSync('dist', { recursive: true });
+rmSync('dist', { recursive: true, force: true });
+mkdirSync('svg/fill', { recursive: true });
+for (const w of Object.keys(WEIGHTS)) for (const st of ['outline', 'fill']) mkdirSync(`dist/svg/${w}/${st}`, { recursive: true });
+
 const all = {};
+let files = 0;
 for (const cat of categories)
   for (const [name, icon] of Object.entries(cat.icons)) {
-    all[name] = { category: cat.category, tags: icon.tags, d: icon.d };
-    writeFileSync(`svg/${name}.svg`, svg(icon.d));
+    all[name] = { category: cat.category, tags: icon.tags, d: icon.d, ...(icon.fill && { fill: icon.fill }), ...(icon.small && { small: icon.small }), ...(icon.mirror && { mirror: true }), ...(icon.levels && { levels: icon.levels }), ...(icon.motion && { motion: icon.motion }), ...(icon.parts && { parts: icon.parts }), ...(icon.variants && { variants: icon.variants }) };
+    writeFileSync(`svg/${name}.svg`, svgFile(render(icon, { id: name }), icon));
+    writeFileSync(`svg/fill/${name}.svg`, svgFile(render(icon, { style: 'fill', id: name }), icon));
+    for (const [w, weight] of Object.entries(WEIGHTS))
+      for (const st of ['outline', 'fill'])
+        for (const [suffix, opts] of FORMS) {
+          const off = (opts.enclosure && icon.variants?.[opts.enclosure] === false) || (opts.slash && icon.variants?.slash === false);
+          if (off) continue;
+          writeFileSync(`dist/svg/${w}/${st}/${name}${suffix}.svg`, svgFile(render(icon, { ...opts, style: st, weight, id: `${name}${suffix}` }), icon));
+          files++;
+        }
   }
 const names = Object.keys(all).sort();
-const sorted = Object.fromEntries(names.map((n) => [n, all[n]]));
+const data = Object.fromEntries(names.map((n) => [n, all[n]]));
 const cats = categories.map((c) => ({ id: c.category, label: c.label, icons: Object.keys(c.icons) }));
-writeFileSync('dist/icons.json', `${JSON.stringify(sorted)}\n`);
-writeFileSync('dist/index.js', `// Generado por scripts/build.mjs: no editar.\nexport const icons = ${JSON.stringify(Object.fromEntries(names.map((n) => [n, all[n].d])))};\nexport const categories = ${JSON.stringify(cats)};\n`);
+writeFileSync('dist/icons.json', `${JSON.stringify(data)}\n`);
+
+// El motor de variantes viaja con el paquete para dibujar cualquier combinación en el navegador
+copyFileSync('engine/geometry.mjs', 'dist/geometry.js');
+writeFileSync('dist/variants.js', readFileSync('engine/variants.mjs', 'utf8').replace("'./geometry.mjs'", "'./geometry.js'"));
+const lean = Object.fromEntries(names.map((n) => [n, { d: all[n].d, ...Object.fromEntries(['fill', 'small', 'variants', 'mirror', 'levels', 'motion', 'parts'].filter((k) => all[n][k]).map((k) => [k, all[n][k]])) }]));
 writeFileSync(
-  'dist/index.d.ts',
-  `export type IconName =\n${names.map((n) => `  | '${n}'`).join('\n')};\nexport declare const icons: Record<IconName, string[]>;\nexport declare const categories: { id: string; label: string; icons: IconName[] }[];\n`,
+  'dist/index.js',
+  `// Generado por scripts/build.mjs: no editar.\nimport { render, svgFile, WEIGHTS } from './variants.js';\n\nexport const icons = ${JSON.stringify(lean)};\nexport const categories = ${JSON.stringify(cats)};\nexport { render, WEIGHTS };\n\n/** El SVG completo de un ícono: toSvg('mail', { variant: 'fill', weight: 'bold', enclosure: 'circle', slash: true }). */\nexport function toSvg(name, { variant = 'outline', weight = 'regular', enclosure = null, slash = false, id = name } = {}) {\n  return svgFile(render(icons[name], { style: variant, weight: WEIGHTS[weight] ?? weight, enclosure, slash, id }), icons[name]);\n}\n`,
 );
+const types = `export type IconName =\n${names.map((n) => `  | '${n}'`).join('\n')};\nexport type IconWeight = 'light' | 'regular' | 'bold';\nexport type IconVariant = 'outline' | 'fill';\nexport type IconEnclosure = 'circle' | 'square';\nexport interface IconData { d: string[]; fill?: { solid: string[]; cut?: string[]; lines?: string[] }; variants?: Partial<Record<IconEnclosure | 'slash', false>> }\nexport interface IconOptions { variant?: IconVariant; weight?: IconWeight | number; enclosure?: IconEnclosure | null; slash?: boolean; id?: string }\nexport declare const icons: Record<IconName, IconData>;\nexport declare const categories: { id: string; label: string; icons: IconName[] }[];\nexport declare const WEIGHTS: Record<IconWeight, number>;\nexport declare function render(icon: IconData, options?: { style?: IconVariant; weight?: number; enclosure?: IconEnclosure | null; slash?: boolean; id?: string }): string;\nexport declare function toSvg(name: IconName, options?: IconOptions): string;\n`;
+writeFileSync('dist/index.d.ts', types);
 writeFileSync(
   'dist/react.js',
-  `// Generado por scripts/build.mjs: no editar.\nimport { createElement } from 'react';\nimport { icons } from './index.js';\n\nexport function Icon({ name, size = 24, strokeWidth = 1.5, ...props }) {\n  return createElement('svg', { xmlns: 'http://www.w3.org/2000/svg', width: size, height: size, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth, strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': props['aria-label'] ? undefined : true, ...props }, icons[name].map((d) => createElement('path', { key: d, d })));\n}\n`,
+  `// Generado por scripts/build.mjs: no editar.\nimport { createElement, useId } from 'react';\nimport { icons, render, WEIGHTS } from './index.js';\n\n// Escala respecto al texto: el ícono mide 1em y se asienta en la línea como una letra\nconst SCALES = { small: 0.85, medium: 1, large: 1.25 };\n\nexport function Icon({ name, variant = 'outline', weight = 'regular', enclosure = null, slash = false, scale = 'medium', size, style, ...props }) {\n  const id = \`fi\${useId().replace(/[^a-zA-Z0-9]/g, '')}\`;\n  const k = SCALES[scale] ?? 1;\n  const dim = size ?? \`\${k}em\`;\n  return createElement('svg', {\n    xmlns: 'http://www.w3.org/2000/svg',\n    width: dim,\n    height: dim,\n    viewBox: '0 0 24 24',\n    'aria-hidden': props['aria-label'] ? undefined : true,\n    style: size === undefined ? { verticalAlign: \`\${-0.125 * k}em\`, flex: 'none', ...style } : style,\n    dangerouslySetInnerHTML: { __html: render(icons[name], { style: variant, weight: WEIGHTS[weight] ?? weight, enclosure, slash, id }) },\n    ...props,\n  });\n}\n`,
 );
 writeFileSync(
   'dist/react.d.ts',
-  `import type { SVGProps } from 'react';\nimport type { IconName } from './index';\nexport declare function Icon(props: { name: IconName; size?: number | string; strokeWidth?: number } & SVGProps<SVGSVGElement>): JSX.Element;\n`,
+  `import type { SVGProps } from 'react';\nimport type { IconEnclosure, IconName, IconVariant, IconWeight } from './index';\nexport declare function Icon(props: { name: IconName; variant?: IconVariant; weight?: IconWeight | number; enclosure?: IconEnclosure | null; slash?: boolean; scale?: 'small' | 'medium' | 'large'; size?: number | string } & Omit<SVGProps<SVGSVGElement>, 'name'>): JSX.Element;\n`,
 );
-console.log(`✓ ${names.length} íconos en ${categories.length} categorías → svg/, dist/`);
+writeFileSync(
+  'dist/icons.css',
+  `/* Íconos en línea con el texto: miden 1em y se asientan como una letra (Gota, de Flouvia). */\n.fi { display: inline-block; width: 1em; height: 1em; vertical-align: -0.125em; flex: none; }\n.fi-sm { width: 0.85em; height: 0.85em; vertical-align: -0.1em; }\n.fi-lg { width: 1.25em; height: 1.25em; vertical-align: -0.16em; }\n`,
+);
+const fills = names.filter((n) => all[n].fill).length;
+console.log(`✓ ${names.length} íconos (${fills} con relleno) en ${categories.length} categorías → svg/, svg/fill/ y ${files} archivos en dist/svg/`);

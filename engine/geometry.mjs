@@ -1,4 +1,4 @@
-// Motor de dibujo del set de íconos de Flouvia. Todo vive en el lienzo de 24 × 24 y devuelve
+// Motor de dibujo de Gota, los íconos de Flouvia. Todo vive en el lienzo de 24 × 24 y devuelve
 // el `d` de un path. Las reglas de uso están en DESIGN.md.
 
 /** Número con dos decimales como máximo, sin ceros de sobra. */

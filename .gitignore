@@ -1,3 +1,5 @@
 node_modules/
+svg/
+dist/
 previews/
 .DS_Store
