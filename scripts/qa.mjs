@@ -27,7 +27,7 @@ const data = all.map(({ name, cat, icon }) => ({
   outline: b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { id: 'a' })}</svg>`),
   fill: icon.fill ? b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { style: 'fill', id: 'b' })}</svg>`) : null,
 }));
-const file = join(process.cwd(), 'previews', '_qa.html');
+const file = join(process.cwd(), 'previews', `_qa-${process.pid}.html`);
 writeFileSync(file, `<!doctype html><svg id="probe" width="0" height="0"></svg><script>window.DATA = ${JSON.stringify(data)};</script>`);
 const browser = await openChrome();
 await browser.send('Page.enable');

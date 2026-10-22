@@ -57,7 +57,7 @@ const browser = await openChrome();
 const PER = 30;
 const out = [];
 for (let p = 0; p * PER < list.length; p++) {
-  const file = join(process.cwd(), 'previews', `_${target}-v${p + 1}.html`);
+  const file = join(process.cwd(), 'previews', `_${target}-v${p + 1}-${process.pid}.html`);
   writeFileSync(file, page(list.slice(p * PER, (p + 1) * PER)));
   const png = join('previews', `${target}-variantes-${p + 1}.png`);
   writeFileSync(png, await browser.shoot(file, 1240));

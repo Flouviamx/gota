@@ -54,7 +54,7 @@ const out = [];
 const outside = [];
 for (let p = 0; p * PER < list.length; p++) {
   const items = list.slice(p * PER, (p + 1) * PER);
-  const file = join(process.cwd(), 'previews', `_${target}-${p + 1}.html`);
+  const file = join(process.cwd(), 'previews', `_${target}-${p + 1}-${process.pid}.html`);
   writeFileSync(file, page(items));
   await send('Emulation.setDeviceMetricsOverride', { width: 1320, height: 400, deviceScaleFactor: 2, mobile: false });
   await send('Page.enable');
