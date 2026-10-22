@@ -499,9 +499,9 @@ const icons = {
   'invoice': { tags: ['factura', 'cobro', 'cuenta', 'invoice', 'bill'], d: [sq(...DOC, SQ), ...dollar(12, 12, 8, 5.25, 1.5)] },
   // With a badge: the full document (the engine clears it) and a smaller sign at the top left,
   // outside the badge area
-  'invoice-plus': { tags: ['nueva factura', 'facturar', 'emitir', 'new invoice', 'create bill'], d: [sq(...DOC, SQ), ...dollar(9.75, 10.25, 6.5, 4.25, 1.25)], badge: badge('plus') },
-  'invoice-paid': { tags: ['factura pagada', 'pagado', 'liquidada', 'invoice paid', 'settled'], d: [sq(...DOC, SQ), ...dollar(9.75, 10.25, 6.5, 4.25, 1.25)], badge: badge('check') },
-  'invoice-due': { tags: ['factura vencida', 'por pagar', 'pendiente', 'invoice due', 'overdue'], d: [sq(...DOC, SQ), ...dollar(9.75, 10.25, 6.5, 4.25, 1.25)], badge: badge('clock') },
+  'invoice-plus': { tags: ['nueva factura', 'facturar', 'emitir', 'new invoice', 'create bill'], d: [sq(...DOC, SQ), ...dollar(9.5, 9.9, 6.5, 4.25, 1)], badge: badge('plus') },
+  'invoice-paid': { tags: ['factura pagada', 'pagado', 'liquidada', 'invoice paid', 'settled'], d: [sq(...DOC, SQ), ...dollar(9.5, 9.9, 6.5, 4.25, 1)], badge: badge('check') },
+  'invoice-due': { tags: ['factura vencida', 'por pagar', 'pendiente', 'invoice due', 'overdue'], d: [sq(...DOC, SQ), ...dollar(9.5, 9.9, 6.5, 4.25, 1)], badge: badge('clock') },
   'price-quote': {
     tags: ['cotización', 'presupuesto', 'pedir precio', 'quote', 'estimate', 'price request'],
     d: [drop(12, 11.75, 8.75), ...dollar(12, 11.75, 7.5, 5, 1.5)],

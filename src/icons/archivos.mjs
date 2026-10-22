@@ -198,13 +198,17 @@ const own = (d, knock, fill, d16, fill16) => {
   return b;
 };
 
-/** Pencil: tip at `tip`, body pointing at `a` degrees, length `len` to the center of the end cap. */
+/**
+ * Pencil: tip at `tip`, body pointing at `a` degrees, length `len` to the center of the end cap.
+ * Its band is 2.4 from the end, as on Comunicación's badge pencil: a line across the tip would
+ * close a triangle too small to stay open at bold.
+ */
 function pencil(tip, a, len, hw = 1.5, tipLen = 3) {
   const u = [Math.cos((a * Math.PI) / 180), Math.sin((a * Math.PI) / 180)];
   const n = [-u[1], u[0]];
   const at = (s, o) => [tip[0] + u[0] * s + n[0] * o, tip[1] + u[1] * s + n[1] * o];
   const outline = `M${pt(tip)}L${pt(at(tipLen, -hw))}L${pt(at(len, -hw))}A${N(hw)} ${N(hw)} 0 0 1 ${pt(at(len, hw))}L${pt(at(tipLen, hw))}Z`;
-  return [outline, line(at(tipLen, -hw), at(tipLen, hw))];
+  return [outline, line(at(len - 2.4, -hw), at(len - 2.4, hw))];
 }
 
 /**

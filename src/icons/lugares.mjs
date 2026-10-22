@@ -259,7 +259,9 @@ add('alarm-off', ['alarma apagada', 'sin alarma', 'silenciar alarma', 'alarm off
   add('clock-forward', ['adelantar', 'más tarde', 'futuro', 'clock forward', 'later'], [a.d, head(a.end, a.tangent, 3.4), line([12, 7.75], [12, 12], [14.85, 13.75])]);
 }
 // The core clock with the hour hand at 10, away from the badge.
-const clockBase = () => [circ(12, 12, 9), line([12, 7.1], [12, 12.25], [8.7, 10.2])];
+// With a badge the face loses its bottom right corner and its visual center moves up and left: the
+// hands' pivot follows it (11.5, 11.5), which also keeps it clear of the badge's clearance
+const clockBase = () => [circ(12, 12, 9), line([11.5, 6.35], [11.5, 11.5], [8.2, 9.45])];
 add('clock-plus', ['agregar tiempo', 'nueva hora', 'tiempo extra', 'add time'], clockBase(), { badge: badge('plus') });
 add('clock-check', ['a tiempo', 'hora confirmada', 'puntual', 'on time'], clockBase(), { badge: badge('check') });
 // Time zone: the ring and meridian of the core `globe` (no equator: with the badge it clogged up)
@@ -1394,8 +1396,8 @@ const MOTION = {
   'alarm-plus': { effect: 'ring', origin: ALARM },
   'alarm-check': { effect: 'ring', origin: ALARM },
   'clock-forward': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
-  'clock-plus': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
-  'clock-check': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
+  'clock-plus': { effect: 'spin', parts: ['hands'], origin: [11.5, 11.5] },
+  'clock-check': { effect: 'spin', parts: ['hands'], origin: [11.5, 11.5] },
   sunrise: { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] },
   sunset: { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] },
   // The pins bounce (like the core pin); on the ones that mark a point or an area, only the pin bounces.

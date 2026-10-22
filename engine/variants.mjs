@@ -489,7 +489,11 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       const bf = style === 'fill' || status ? r.badge.fill : null;
       const move = badgeMoves ? wrapAttr : '';
       if (bf) {
-        defs.push(maskOf('b', zoomed(black(g(bf.cut ?? []), paper))));
+        // The same rule as the base's fill: a cut that comes to the badge's edge (a pencil's band)
+        // follows the ink less a hair, a sign inside it is paper
+        const edge = (bf.cut ?? []).filter((d) => edgeCut(d, bf.solid));
+        const inside = (bf.cut ?? []).filter((d) => !edge.includes(d));
+        defs.push(maskOf('b', zoomed(`${black(g(inside), paper)}${black(g(edge), weight - 0.1)}`)));
         layer += zoomed(`<g data-part="badge"${move} fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-b)">${g(bf.solid).map((d) => `<path d="${d}"/>`).join('')}</g>`);
         if (bf.wire?.length) layer += zoomed(`<g${move} ${strokeAttrs(weight)}>${g(bf.wire).map((d) => `<path d="${d}"/>`).join('')}</g>`);
       } else {

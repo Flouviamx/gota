@@ -97,9 +97,13 @@ that merges or splits as the stroke widens. The engine takes care of what it can
   regular, 1.25 at bold). Clearances are paper too, around a fill's `lines`, a badge, and the
   slash: a stroke and its clearance take 4.5 at every weight, so the ink around them grows with
   the weight. A base stroke that ends just inside a clearance at regular can peek out of it at
-  bold: end it well inside or well outside.
+  bold: end it well inside or well outside. A badge's clearance reaches 6.5 from its center
+  (17.25, 17.25), to (12.65, 12.65) on the diagonal: a detail near the canvas's center (a clock's
+  pivot, a sign) stays at least 0.75 clear of it, moving up and left with the visual center of
+  what the badge leaves (the clock's pivot at 11.5, 11.5).
 - **Cuts that reach the silhouette** (a stripe, a separator, a meridian) keep the relation to the
-  edge they have at regular: they follow the ink's width instead of thinning.
+  edge they have at regular: they follow the ink's width instead of thinning. The same holds inside
+  a badge's fill (a pencil's band).
 - **Dots** are solid discs of radius r + w/2 at every weight, in ink and in cuts (the engine draws them; never a stroked circle meant to look solid).
 
 What the drawing must take care of:

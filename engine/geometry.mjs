@@ -167,7 +167,7 @@ export function cursor(tip, s = 1) {
 // ── Badges ──
 // Drawn once, here, and always placed in the same spot: bottom right (center 17.25, 17.25,
 // r 4.25) or, for the notification dot, top right. `knock` is the area the engine clears from
-// the base icon with an exact clearance of 1.5 (the base is never trimmed by hand).
+// the base icon with a clearance of paper, 1.5 at regular (the base is never trimmed by hand).
 const BC = [17.25, 17.25];
 const BR = 4.25;
 const signs = {
@@ -175,8 +175,10 @@ const signs = {
   minus: () => [`M${f(BC[0] - 2)} ${f(BC[1])}h4`],
   check: () => [line([BC[0] - 1.9, BC[1] + 0.15], [BC[0] - 0.55, BC[1] + 1.45], [BC[0] + 1.95, BC[1] - 1.3])],
   x: () => [line([BC[0] - 1.45, BC[1] - 1.45], [BC[0] + 1.45, BC[1] + 1.45]), line([BC[0] + 1.45, BC[1] - 1.45], [BC[0] - 1.45, BC[1] + 1.45])],
-  alert: () => [`M${f(BC[0])} ${f(BC[1] - 2.1)}v2.2`, circ(BC[0], BC[1] + 1.95, 0.35)],
-  info: () => [`M${f(BC[0])} ${f(BC[1] - 0.4)}v2.4`, circ(BC[0], BC[1] - 2.05, 0.35)],
+  // The point is a disc of r + paper/2, a little heavier than the stem, and stands 1 apart at
+  // regular (0.7 at light, 1.3 at bold, as the paper thins)
+  alert: () => [`M${f(BC[0])} ${f(BC[1] - 2.4)}v2`, circ(BC[0], BC[1] + 2.25, 0.15)],
+  info: () => [`M${f(BC[0])} ${f(BC[1] + 0.4)}v2`, circ(BC[0], BC[1] - 2.25, 0.15)],
   clock: () => [line([BC[0], BC[1] - 2.1], [BC[0], BC[1]], [BC[0] + 1.45, BC[1] + 0.85])],
   'arrow-up': () => [`M${f(BC[0])} ${f(BC[1] + 2.1)}V${f(BC[1] - 2)}`, line([BC[0] - 1.75, BC[1] - 0.25], [BC[0], BC[1] - 2], [BC[0] + 1.75, BC[1] - 0.25])],
   'arrow-down': () => [`M${f(BC[0])} ${f(BC[1] - 2.1)}V${f(BC[1] + 2)}`, line([BC[0] - 1.75, BC[1] + 0.25], [BC[0], BC[1] + 2], [BC[0] + 1.75, BC[1] + 0.25])],
