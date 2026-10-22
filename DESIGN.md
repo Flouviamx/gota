@@ -97,7 +97,7 @@ that merges or splits as the stroke widens. The engine takes care of what it can
   regular, 1.25 at bold).
 - **Cuts that reach the silhouette** (a stripe, a separator, a meridian) keep the relation to the
   edge they have at regular: they follow the ink's width instead of thinning.
-- **Dots** are solid discs at every weight, in ink and in cuts.
+- **Dots** are solid discs of radius r + w/2 at every weight, in ink and in cuts (the engine draws them; never a stroked circle meant to look solid).
 
 What the drawing must take care of:
 - **Pieces either cross or stand apart:** two strokes that don't cross keep at least the 2.85

@@ -141,7 +141,8 @@ test('fill: wire goes on top as a line, unfilled and without clearance', () => {
 test('a dot far from a diagonal badge is kept', () => {
   const slashBadge = { d: ['M14 22 22 14'], knock: 'M14 22 22 14' };
   const out = render({ d: ['M3 3h8v8H3Z', circ(5, 18, 0.7)], badge: slashBadge }, { id: 'd' });
-  assert.match(out, /A0.7 0.7/);
+  // The dot is drawn as the disc its stroke covers: radius 0.7 + 0.75
+  assert.ok(out.includes(`d="${circ(5, 18, 1.45)}"`));
 });
 
 test('sq: a corner fits its sides, so no side runs backwards (smoothing gives way, then radius)', async () => {
@@ -168,10 +169,10 @@ test('badges: a status badge is a solid disc with its sign cut out, in outline t
   assert.match(render(icons['file-search'], { id: 'c' }), /<g data-part="badge" fill="none"/);
 });
 
-test('weights: paper thins as ink grows (cuts 1.75 at light, 1.5 at regular, 1.25 at bold)', async () => {
-  const { loadAll } = await import('../scripts/load.mjs');
-  const icons = Object.assign({}, ...(await loadAll()).categories.map((c) => c.icons));
-  const cut = (w) => render(icons.calendar, { style: 'fill', weight: w }).match(/<mask[^]*?stroke="black" stroke-width="([\d.]+)"/)[1];
+test('weights: paper thins as ink grows (cuts 1.75 at light, 1.5 at regular, 1.25 at bold)', () => {
+  // An interior cut, far from the silhouette
+  const icon = { d: ['M3 3h18v18H3Z'], fill: { solid: ['M3 3h18v18H3Z'], cut: ['M9 12h6'] } };
+  const cut = (w) => render(icon, { style: 'fill', weight: w }).match(/<path d="M9 12h6" fill="none" stroke="black" stroke-width="([\d.]+)"/)[1];
   assert.deepEqual([cut(1), cut(1.5), cut(2)], ['1.75', '1.5', '1.25']);
 });
 
@@ -186,7 +187,9 @@ test('weights: a cut at the silhouette follows the ink less a hair; an interior 
 
 test('dots are solid at every weight, cut-out dots too, and the notification dot is one disc', async () => {
   const dotIcon = { d: ['M4 12h16', circ(12, 18, 0.7)], fill: { solid: ['M4 4h16v12H4Z'], cut: [circ(12, 10, 0.7)] } };
-  assert.match(render(dotIcon, { weight: 0.9 }), /<path d="M11\.3 18[^"]*" fill="currentColor"/);
-  assert.match(render(dotIcon, { style: 'fill', weight: 0.9 }), /fill="black" stroke="black"/);
+  // A dot is the disc its stroke covers (r + w/2), filled and unstroked: no ring, no pinhole
+  assert.ok(render(dotIcon, { weight: 0.9 }).includes(`<path d="${circ(12, 18, 1.15)}" fill="currentColor" stroke="none"`));
+  // A cut-out dot too, at the paper's width (1.8 at 0.9)
+  assert.ok(render(dotIcon, { style: 'fill', weight: 0.9 }).includes(`<path d="${circ(12, 10, 1.6)}" fill="black"/>`));
   assert.equal(badge('dot').d.length, 1);
 });

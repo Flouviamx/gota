@@ -387,14 +387,22 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   const order = new Map(icon.d.map((d, i) => [d, i]));
   const lvl = (d) => (r.tags.get(d) ?? '').match(/data-level="(\d+)"/)?.[1];
   const anim = (d) => (spec ? ` pathLength="1" style="--i:${order.get(d) ?? 0}${lvl(d) ? `;--l:${lvl(d)}` : ''}"` : '');
-  // A dot (a circle of radius 1 at most) is filled as well as stroked: a stroke alone fills it at
-  // regular, but at light weights it would open into a ring
-  // (measured at the drawing's own size: inside an enclosure a small ring is shrunk, not a dot)
-  const solidDot = (d) => {
+  // A dot (a circle of radius 1 at most, measured at the drawing's own size: inside an enclosure
+  // a small ring is shrunk, not a dot) is drawn as the disc its stroke would cover, radius r + w/2,
+  // filled and unstroked. A stroke alone opens it into a ring at light weights, and a stroke wider
+  // than the dot leaves a hole in its middle (Skia's stroker, and so Chrome)
+  const dotOf = (d) => {
     const c = asCircle(d);
-    return c && c.r <= (enc ? enc.scale : 1) + 1e-6 ? ' fill="currentColor"' : '';
+    return c && c.r <= (enc ? enc.scale : 1) + 1e-6 ? c : null;
   };
-  const paths = (ds) => ds.map((d) => `<path d="${d}"${solidDot(d)}${r.tags.get(d) ?? ''}${anim(d)}/>`).join('');
+  const disc = (c, w) => circ(c.cx, c.cy, c.r + w / 2);
+  const paths = (ds) =>
+    ds
+      .map((d) => {
+        const c = dotOf(d);
+        return c ? `<path d="${disc(c, weight)}" fill="currentColor" stroke="none"${r.tags.get(d) ?? ''}${anim(d)}/>` : `<path d="${d}"${r.tags.get(d) ?? ''}${anim(d)}/>`;
+      })
+      .join('');
   const k = enc ? enc.scale : 1;
   const fill = style === 'fill' && icon.fill ? icon.fill : null;
   const g = (ds) => (enc ? shrink(ds, k) : ds);
@@ -402,8 +410,14 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   // paper, and paper thins as the ink grows, like a letter's counters: 1.5 at regular, 1.25 at
   // bold, 1.75 at light (never under 0.75)
   const paper = Math.max(0.75, 1.5 + (1.5 - weight) / 2);
-  // Cut-out dots are solid too: a ring of paper would leave an island of ink in its middle
-  const black = (ds, w = weight) => ds.map((d) => `<path d="${d}" fill="${solidDot(d) ? 'black' : 'none'}" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+  // Cut-out dots are discs too: a ring of paper would leave an island of ink in its middle
+  const black = (ds, w = weight) =>
+    ds
+      .map((d) => {
+        const c = dotOf(d);
+        return c ? `<path d="${disc(c, w)}" fill="black"/>` : `<path d="${d}" fill="none" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"/>`;
+      })
+      .join('');
   const maskOf = (name, content) => `<mask id="${id}-${name}" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${content}</mask>`;
   const defs = [];
   const body = [];
@@ -473,8 +487,8 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
         if (bf.wire?.length) layer += zoomed(`<g${move} ${strokeAttrs(weight)}>${g(bf.wire).map((d) => `<path d="${d}"/>`).join('')}</g>`);
       } else {
         // The notification dot is a solid disc; any other badge is drawn, its dots filled
-        const disc = r.badge.kind === 'dot' ? ' fill="currentColor"' : '';
-        layer += zoomed(`<g data-part="badge"${move} ${strokeAttrs(weight)}>${g(r.badge.d).map((d) => `<path d="${d}"${disc || solidDot(d)}/>`).join('')}</g>`);
+        const solid = r.badge.kind === 'dot' ? ' fill="currentColor"' : '';
+        layer += zoomed(`<g data-part="badge"${move} ${strokeAttrs(weight)}>${g(r.badge.d).map((d) => (dotOf(d) ? `<path d="${disc(dotOf(d), weight)}" fill="currentColor" stroke="none"/>` : `<path d="${d}"${solid}/>`)).join('')}</g>`);
       }
     }
     if (slashCut) {
