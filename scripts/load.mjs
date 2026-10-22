@@ -58,7 +58,7 @@ export async function loadAll({ only } = {}) {
       if (icon.motion !== undefined) {
         const m = icon.motion;
         if (!MOTION.includes(m?.effect)) errors.push(`${where}: motion.effect debe ser uno de ${MOTION.join(', ')}`);
-        if (m?.parts !== undefined && (!Array.isArray(m.parts) || m.parts.some((i) => (Number.isInteger(i) ? i < 0 || i >= icon.d.length : !icon.parts?.[i]))))
+        if (m?.parts !== undefined && (!Array.isArray(m.parts) || m.parts.some((i) => (Number.isInteger(i) ? i < 0 || i >= icon.d.length : !icon.parts?.[i] && !(i === 'badge' && icon.badge)))))
           errors.push(`${where}: motion.parts son nombres de parts o índices de d`);
         for (const k of ['origin', 'vector']) if (m?.[k] !== undefined && (!Array.isArray(m[k]) || m[k].length !== 2)) errors.push(`${where}: motion.${k} es [x, y]`);
       }
@@ -66,6 +66,12 @@ export async function loadAll({ only } = {}) {
         // Piezas con nombre (kebab-case en inglés): body, clapper, badge, hand…
         const ok = icon.parts && typeof icon.parts === 'object' && Object.entries(icon.parts).every(([k, ix]) => NAME.test(k) && Array.isArray(ix) && ix.length && ix.every((i) => Number.isInteger(i) && i >= 0 && i < icon.d.length));
         if (!ok) errors.push(`${where}: parts es { nombre: [índices de d] }`);
+      }
+      if (icon.badge !== undefined) {
+        // Insignia: badge('plus') del motor o una propia { d, knock, fill? }
+        check(icon.badge?.d, 'badge.d');
+        if (typeof icon.badge?.knock !== 'string' || !PATH.test(icon.badge.knock.trim())) errors.push(`${where}: badge.knock es el área que se despeja (un trazo cerrado)`);
+        if (icon.badge?.fill !== undefined) check(icon.badge.fill?.solid, 'badge.fill.solid');
       }
       if (icon.small !== undefined) {
         check(icon.small?.d, 'small.d');

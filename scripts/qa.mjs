@@ -3,7 +3,10 @@
 // - densidad: tinta del ícono a 32 px por encima del 98 % del set (demasiadas piezas: simplificar),
 // - casi duplicados: dos íconos que a 32 px se ven casi iguales (similitud ≥ 0.975), salvo los de
 //   una misma familia (calendar y calendar-plus se parecen a propósito),
-// - relleno que cambia la silueta (el relleno debe ocupar la misma caja que el contorno).
+// - relleno que cambia la silueta (el relleno debe ocupar la misma caja que el contorno),
+// - fragmentos: trazos abiertos de menos de 2 de largo que no son un punto,
+// - casi toca: un trazo que termina a menos del aire mínimo de otro sin tocarlo (entre 0.35 y
+//   2.85 de centro a centro: o toca, o deja 1.5 de aire entre bordes).
 // Uso: node scripts/qa.mjs [categoría]
 import { writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
@@ -42,9 +45,34 @@ const result = await browser.evaluate(`(async () => {
     probe.innerHTML = it.d.map((d) => '<path d="' + d + '"/>').join('');
     let x0 = 99, y0 = 99, x1 = -99, y1 = -99;
     for (const p of probe.querySelectorAll('path')) { const b = p.getBBox(); x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height); }
+    // Fragmentos y casi-toques entre los trazos del dibujo base
+    const els = [...probe.querySelectorAll('path')];
+    const info = els.map((p, i) => {
+      const L = p.getTotalLength();
+      const closed = /[zZ]\s*$/.test(it.d[i]);
+      const pts = [];
+      for (let t = 0; t <= L; t += 0.25) { const q = p.getPointAtLength(t); pts.push([q.x, q.y]); }
+      const b = p.getBBox();
+      const dot = closed && b.width < 2.2 && b.height < 2.2;
+      return { L, closed, pts, dot, ends: closed ? [] : [p.getPointAtLength(0), p.getPointAtLength(L)] };
+    });
+    const fragments = info.map((x, i) => (!x.closed && !x.dot && x.L < 2 ? i : -1)).filter((i) => i >= 0);
+    const near = [];
+    // Dos trazos que se cruzan o se tocan en algún punto están unidos: sus extremos no rozan
+    const touch = (x, y) => x.pts.some(([ax, ay]) => y.pts.some(([bx, by]) => Math.hypot(ax - bx, ay - by) < 0.35));
+    info.forEach((x, i) => x.ends.forEach((e) => {
+      let m = 99;
+      info.forEach((y, j) => {
+        if (j === i) return;
+        let mj = 99;
+        for (const [px, py] of y.pts) mj = Math.min(mj, Math.hypot(px - e.x, py - e.y));
+        if (mj < m && !(mj > 0.35 && touch(x, y))) m = mj;
+      });
+      if (m > 0.35 && m < 2.85) near.push([i, Math.round(m * 100) / 100]);
+    }));
     let silhouette = null;
     if (it.fill) { const f = await alpha(it.fill); const A = box(a), B = box(f); silhouette = Math.max(...A.map((v, i) => Math.abs(v - B[i]))); }
-    out.push({ name: it.name, cat: it.cat, ink: ink / 1024, bbox: [x0, y0, x1, y1], silhouette, a: Array.from(a, (v) => Math.round(v * 100) / 100) });
+    out.push({ name: it.name, cat: it.cat, ink: ink / 1024, bbox: [x0, y0, x1, y1], silhouette, fragments, near, a: Array.from(a, (v) => Math.round(v * 100) / 100) });
   }
   return out;
 })()`);
@@ -62,6 +90,11 @@ for (const r of result.filter(mine)) {
 const inks = result.map((r) => r.ink).sort((a, b) => a - b);
 const hi = inks[Math.floor(0.98 * (inks.length - 1))];
 for (const r of result.filter(mine)) if (r.ink > hi) issues.push(`denso  ${r.cat}/${r.name}: tinta ${(r.ink * 100).toFixed(1)}% (98 % del set: ${(hi * 100).toFixed(1)}); ¿sobran piezas?`);
+// Fragmentos y casi-toques
+for (const r of result.filter(mine)) {
+  if (r.fragments.length) issues.push(`suelto ${r.cat}/${r.name}: trazo(s) ${r.fragments.join(', ')} de menos de 2 de largo`);
+  for (const [i, m] of r.near) issues.push(`roza  ${r.cat}/${r.name}: el trazo ${i} termina a ${m} de otro (o toca o deja 1.5 de aire)`);
+}
 // Relleno que se sale de la silueta del contorno (más de 1 px a 32)
 for (const r of result.filter(mine)) if (r.silhouette !== null && r.silhouette > 1) issues.push(`silueta ${r.cat}/${r.name}: el relleno cambia la caja ${r.silhouette} px`);
 // Casi duplicados (coseno sobre la tinta a 32 px)

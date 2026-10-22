@@ -70,6 +70,8 @@ export function snap(d, step = 1.5, offset = 0.75) {
   const ys = [];
   for (const g of segs) {
     if (!['L', 'H', 'V', 'Z'].includes(g.c)) continue;
+    // Un tramo de largo cero (el cierre de un círculo) no es ni horizontal ni vertical
+    if (Math.hypot(g.x1 - g.x0, g.y1 - g.y0) < EPS) continue;
     if (Math.abs(g.x0 - g.x1) < EPS) xs.push((g.x0 + g.x1) / 2);
     if (Math.abs(g.y0 - g.y1) < EPS) ys.push((g.y0 + g.y1) / 2);
   }
@@ -168,6 +170,38 @@ const SLASH = 'M3.6 3.6 20.4 20.4';
  * icon: { d, fill?: { solid, cut?, lines? } } · style: 'outline' | 'fill'
  * enclosure: null | 'circle' | 'square' · slash: boolean · weight: número de trazo · id: único por SVG (máscaras)
  */
+// ── Puntos y áreas despejadas ──
+// Un punto (círculo de r < 1, como los de dot()) que toca el área de una insignia se quita entero:
+// medio punto es un fragmento, no un detalle.
+const CIRCLE = /^M(-?[\d.]+) (-?[\d.]+)A([\d.]+) [\d.]+ 0 1 0 (-?[\d.]+) (-?[\d.]+)A/;
+function asCircle(d) {
+  const m = d.trim().match(CIRCLE);
+  if (!m) return null;
+  const r = Number(m[3]);
+  return { cx: Number(m[1]) + r, cy: Number(m[2]), r };
+}
+/** Caja del área de una insignia (por los puntos de su trazo en absoluto). */
+function boxOf(d) {
+  const ns = transform(d, 1, 0, 0).match(/-?\d*\.?\d+/g).map(Number);
+  const xs = [];
+  const ys = [];
+  // Pares x y de los comandos absolutos (los radios y banderas de A también entran: margen de más)
+  for (let i = 0; i + 1 < ns.length; i += 2) {
+    xs.push(ns[i]);
+    ys.push(ns[i + 1]);
+  }
+  return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+}
+/** ¿El punto `dot` toca el área despejada por `knock` (con su aire)? */
+function dotInKnock(dot, knock, weight) {
+  const halo = weight / 2 + 1.5 + weight / 2;
+  const c = asCircle(knock);
+  if (c) return Math.hypot(dot.cx - c.cx, dot.cy - c.cy) < c.r + halo + dot.r + weight / 2;
+  const [x0, y0, x1, y1] = boxOf(knock);
+  const m = halo + dot.r + weight / 2;
+  return dot.cx > x0 - m && dot.cx < x1 + m && dot.cy > y0 - m && dot.cy < y1 + m;
+}
+
 /** Índices de d de unas piezas, por nombre (icon.parts) o por número. */
 const indices = (icon, list) => (list ?? []).flatMap((p) => (Number.isInteger(p) ? [p] : (icon.parts?.[p] ?? [])));
 
@@ -196,13 +230,18 @@ function resolve(icon, { size, value, frame }) {
   let moved = null;
   if (frame && icon.motion) moved = new Set((icon.motion.parts ? indices(icon, icon.motion.parts) : icon.d.map((_, i) => i)).map((i) => icon.d[i]));
   const tags = small ? new Map() : tagsOf(icon);
+  let badge = small ? (small.badge ?? null) : (icon.badge ?? null);
+  if (size && size <= 18 && !small && badge) {
+    const sn = (list) => list?.map((p) => snap(p));
+    badge = { d: sn(badge.d), knock: snap(badge.knock), ...(badge.fill && { fill: Object.fromEntries(Object.entries(badge.fill).map(([k, v]) => [k, sn(v)])) }) };
+  }
   if (size && size <= 18 && !small) {
     for (const [p, t] of [...tags]) tags.set(snap(p), t);
     d = d.map((p) => snap(p));
     if (fill) fill = Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, v.map((p) => snap(p))]));
     moved = moved && new Set([...moved].map((p) => snap(p)));
   }
-  return { d, fill, moved, tags };
+  return { d, fill, moved, tags, badge };
 }
 
 /** Transformación SVG del cuadro extremo de cada efecto (ver DESIGN.md › Movimiento). */
@@ -218,6 +257,14 @@ export function motionTransform({ effect, origin = [12, 12], vector = [0, -2] })
 export function render(icon, { style = 'outline', enclosure = null, slash = false, weight = 1.5, id = 'i', size, rtl = false, value, frame = false } = {}) {
   const enc = enclosure ? ENCLOSURES[enclosure] : null;
   const r = resolve(icon, { size, value, frame });
+  if (r.badge) {
+    // Los puntos que tocan el área de la insignia salen enteros (contorno y relleno)
+    const gone = new Set(r.d.filter((d) => { const c = asCircle(d); return c && c.r < 1 && dotInKnock(c, r.badge.knock, weight); }));
+    if (gone.size) {
+      r.d = r.d.filter((d) => !gone.has(d));
+      if (r.fill) r.fill = Object.fromEntries(Object.entries(r.fill).map(([k, v]) => [k, v.filter((d) => !gone.has(d))]));
+    }
+  }
   icon = { ...icon, d: r.d, fill: r.fill ?? undefined };
   const paths = (ds) => ds.map((d) => `<path d="${d}"${r.tags.get(d) ?? ''}/>`).join('');
   const k = enc ? enc.scale : 1;
@@ -250,6 +297,21 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       defs.push(`<mask id="${id}-s" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${masks.join('')}</mask>`);
       body.push(`<g mask="url(#${id}-s)">${content.join('')}</g>`);
     } else body.push(...content);
+  }
+  // Insignia: despeja la base con un aire exacto de 1.5 (máscara del área + trazo + 3) y se dibuja
+  // encima; rellena, su figura va sólida y su signo calado
+  if (r.badge && !(enc && style === 'fill')) {
+    const bd = g(r.badge.d);
+    const kn = g([r.badge.knock])[0];
+    defs.push(`<mask id="${id}-k" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/><path d="${kn}" fill="black" stroke="black" stroke-width="${f(weight + 3)}" stroke-linejoin="round"/></mask>`);
+    const base = body.splice(0, body.length).join('');
+    body.push(`<g mask="url(#${id}-k)">${base}</g>`);
+    const bf = style === 'fill' ? r.badge.fill : null;
+    if (bf) {
+      const cuts = g(bf.cut ?? []).map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round"/>`);
+      defs.push(`<mask id="${id}-b" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${cuts.join('')}</mask>`);
+      body.push(`<g data-part="badge" fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-b)">${g(bf.solid).map((d) => `<path d="${d}"/>`).join('')}</g>`);
+    } else body.push(`<g data-part="badge" ${strokeAttrs(weight)}>${bd.map((d) => `<path d="${d}"/>`).join('')}</g>`);
   }
   if (slash) body.push(`<path d="${SLASH}" ${strokeAttrs(weight)}/>`);
   let inner = body.join('');

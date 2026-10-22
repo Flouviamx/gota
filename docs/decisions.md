@@ -65,6 +65,12 @@
 | 36 | Generador IA de íconos faltantes con la geometría del set | **después** | «Gota a pedido» tras la v1: motor + QA + revisión, en minutos. No se promete «milisegundos» ni «infinito» sin filtro |
 | 37 | MCP que lee el código y ajusta grosor y radios a la app | **a medias** | Sí: `weight="auto"` iguala el peso del texto (como SF Symbols), resuelto en el componente. No: radios que cambian por app (rompe la identidad) |
 
+## Detalles (el dueño señala defectos concretos)
+| # | Señalamiento | Decisión | Dónde |
+|---|---|---|---|
+| 38 | «Mira la flecha»: el puntero de `cursor-click` y `drag-drop` tosco | **sí, sistémico** | `cursor()` en el motor, el único puntero del set; punta casi viva, cola proporcionada |
+| 39 | Corazón con pulso y globo con candado con cortes y fragmentos feos | **sí, sistémico** | Insignias del motor con recorte automático (`badge`), nunca cortes a mano; QA `suelto` y `roza`; la ronda 2 lleva todo a cero avisos |
+
 ## Decisiones de diseño y técnicas (Claude, durante la construcción)
 - **Firma:** esquina inferior derecha recta en contenedores; globos con `drop()`.
 - **Relleno con máscaras**, no con operaciones booleanas: `solid`/`cut`/`lines`; las `lines` llevan aire de 1.5 (calendario con argollas separadas, como SF Symbols).

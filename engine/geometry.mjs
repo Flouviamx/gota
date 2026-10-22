@@ -129,3 +129,67 @@ export function rot(p, c, deg) {
   const y = p[1] - c[1];
   return [c[0] + x * Math.cos(a) - y * Math.sin(a), c[1] + x * Math.sin(a) + y * Math.cos(a)];
 }
+
+/**
+ * Puntero (cursor del mouse): punta arriba a la izquierda, canto izquierdo vertical, diagonal a
+ * 45° hasta el ala y la cola saliendo de la base hacia abajo a la derecha. `tip` es la punta y `s`
+ * la escala (1 ≈ 11.4 × 19 del lienzo). Todo puntero del set sale de aquí.
+ */
+export function cursor(tip, s = 1) {
+  const L = [0, 16.2];
+  const W = [11.4, 11.4];
+  const u = [W[0] - L[0], W[1] - L[1]];
+  const lu = Math.hypot(u[0], u[1]);
+  const ub = [u[0] / lu, u[1] / lu];
+  const C = [L[0] + u[0] * 0.46, L[1] + u[1] * 0.46];
+  const d = [0.38, 0.925];
+  // La cola conserva al menos 0.8 de aire por dentro aunque el puntero se reduzca
+  const h = Math.max(2.9, 2.3 / s) / 2;
+  const N1 = [C[0] - ub[0] * h, C[1] - ub[1] * h];
+  const N2 = [C[0] + ub[0] * h, C[1] + ub[1] * h];
+  const T1 = [N1[0] + d[0] * 4.8, N1[1] + d[1] * 4.8];
+  const T2 = [N2[0] + d[0] * 4.8, N2[1] + d[1] * 4.8];
+  const pts = [[0, 0], L, N1, T1, T2, N2, W].map(([x, y]) => [tip[0] + x * s, tip[1] + y * s]);
+  // La punta casi viva (en un ángulo de 45° un radio grande la vuelve roma)
+  return roundpoly(pts, [0.55, 1, 0.35, 0.8, 0.8, 0.35, 0.9].map((r) => r * s));
+}
+
+// ── Insignias ──
+// Se dibujan una vez, aquí, y van siempre en el mismo lugar: abajo a la derecha (centro 17.25,
+// 17.25, r 4.25) o, el punto de aviso, arriba a la derecha. `knock` es el área que el motor
+// despeja del ícono base con un aire exacto de 1.5 (nunca se recorta la base a mano).
+const BC = [17.25, 17.25];
+const BR = 4.25;
+const signs = {
+  plus: () => [`M${f(BC[0])} ${f(BC[1] - 2)}v4`, `M${f(BC[0] - 2)} ${f(BC[1])}h4`],
+  minus: () => [`M${f(BC[0] - 2)} ${f(BC[1])}h4`],
+  check: () => [line([BC[0] - 1.9, BC[1] + 0.15], [BC[0] - 0.55, BC[1] + 1.45], [BC[0] + 1.95, BC[1] - 1.3])],
+  x: () => [line([BC[0] - 1.45, BC[1] - 1.45], [BC[0] + 1.45, BC[1] + 1.45]), line([BC[0] + 1.45, BC[1] - 1.45], [BC[0] - 1.45, BC[1] + 1.45])],
+  alert: () => [`M${f(BC[0])} ${f(BC[1] - 2.1)}v2.2`, circ(BC[0], BC[1] + 1.95, 0.35)],
+  info: () => [`M${f(BC[0])} ${f(BC[1] - 0.4)}v2.4`, circ(BC[0], BC[1] - 2.05, 0.35)],
+  clock: () => [line([BC[0], BC[1] - 2.1], [BC[0], BC[1]], [BC[0] + 1.45, BC[1] + 0.85])],
+  'arrow-up': () => [`M${f(BC[0])} ${f(BC[1] + 2.1)}V${f(BC[1] - 2)}`, line([BC[0] - 1.75, BC[1] - 0.25], [BC[0], BC[1] - 2], [BC[0] + 1.75, BC[1] - 0.25])],
+  'arrow-down': () => [`M${f(BC[0])} ${f(BC[1] - 2.1)}V${f(BC[1] + 2)}`, line([BC[0] - 1.75, BC[1] + 0.25], [BC[0], BC[1] + 2], [BC[0] + 1.75, BC[1] + 0.25])],
+  'arrow-right': () => [`M${f(BC[0] - 2.1)} ${f(BC[1])}H${f(BC[0] + 2)}`, line([BC[0] + 0.25, BC[1] - 1.75], [BC[0] + 2, BC[1]], [BC[0] + 0.25, BC[1] + 1.75])],
+  star: () => [roundpoly(Array.from({ length: 10 }, (_, i) => polar(BC[0], BC[1] + 0.2, i % 2 ? 1.05 : 2.35, -90 + i * 36)), 0.3)],
+};
+/**
+ * Insignia estándar. kind: plus, minus, check, x, alert, info, clock, arrow-up, arrow-down,
+ * arrow-right, star (en círculo, abajo a la derecha), lock (candado sin círculo, abajo a la
+ * derecha) o dot (punto de aviso, arriba a la derecha). Devuelve { d, knock, fill }.
+ */
+export function badge(kind) {
+  if (kind === 'dot') {
+    const d = [circ(18.75, 5.25, 2), circ(18.75, 5.25, 0.7)];
+    return { d, knock: d[0], fill: { solid: d } };
+  }
+  if (kind === 'lock') {
+    const d = [sq(13.5, 16.25, 7.5, 5.5, 1.6, { square: ['br'] }), 'M15.1 16.25v-1.4a2.15 2.15 0 0 1 4.3 0v1.4'];
+    return { d, knock: sq(13.5, 12.7, 7.5, 9.05, 2.4, { square: ['br'] }), fill: { solid: d } };
+  }
+  if (!signs[kind]) throw new Error(`Insignia desconocida: ${kind}`);
+  const ring = circ(BC[0], BC[1], BR);
+  const marks = signs[kind]();
+  // Rellena: el círculo sólido y el signo calado
+  return { d: [ring, ...marks], knock: ring, fill: { solid: [ring], cut: marks } };
+}

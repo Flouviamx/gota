@@ -38,8 +38,15 @@ Una forma triangular o de pico puede tocar 2.4–21.6 para compensar ópticament
   una figura pasa detrás de otra, se corta dejando 1.5 de hueco (recorte), no se encima.
 - **Flechas**: brazos de 6 a 45° en flechas rectas; de 3.4 en flechas de arco (`head()`, con
   la tangente de `arc()`).
-- **Insignias** (más, menos, check, x, alerta sobre otro ícono): círculo de r 4–4.5 en la
-  esquina inferior derecha, recortando 1.5 alrededor al objeto base.
+- **Insignias** (más, menos, check, x, alerta, info, reloj, flechas, estrella, candado, punto de
+  aviso): **siempre las del motor**, `badge: badge('plus')`, en el campo `badge` (no en `d`). El
+  motor despeja la base con un aire exacto de 1.5 y quita enteros los puntos que toca. **Nunca se
+  recorta la base a mano**: los cortes a mano dejan puntas redondas en lugares arbitrarios y
+  fragmentos. Una pieza propia encima de otra (el puntero sobre un cuadro) va igual:
+  `badge: { d, knock, fill }`.
+- **Puntero:** siempre `cursor(punta, escala)` del motor; nunca uno dibujado a mano.
+- **Sin fragmentos ni roces:** ningún trazo abierto de menos de 2; un trazo que termina junto a
+  otro o lo toca o deja 1.5 de aire (3 de centro a centro). El QA los marca (`suelto`, `roza`).
 - Pocas piezas: a 18 px tiene que leerse. Si necesita más de ~6 trazos, simplifica.
 - Nada de texto ni letras dibujadas salvo que la letra sea el concepto (p. ej. `a-letter`).
 

@@ -1,7 +1,7 @@
 // Pruebas del motor: si una de estas falla, falla en los 10,000 íconos a la vez.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { circ, drop, f, head, roundpoly, sq } from '../engine/geometry.mjs';
+import { badge, circ, cursor, drop, f, head, roundpoly, sq } from '../engine/geometry.mjs';
 import { render, snap, svgFile, transform } from '../engine/variants.mjs';
 
 const nums = (d) => (d.match(/-?\d*\.?\d+/g) ?? []).map(Number);
@@ -46,6 +46,27 @@ test('snap lleva lo horizontal y lo vertical al centro del pixel a 16 px', () =>
 
 const bell = { d: ['M6 16V10a6 6 0 0 1 12 0v6Z', 'M10 20a2 2 0 0 0 4 0'], parts: { body: [0], clapper: [1] }, fill: { solid: ['M6 16V10a6 6 0 0 1 12 0v6Z'], lines: ['M10 20a2 2 0 0 0 4 0'] } };
 const wifi = { d: ['M12 18h.01', 'M8 14a5 5 0 0 1 8 0', 'M5 11a9 9 0 0 1 14 0'], levels: [[0], [1], [2]], mirror: true };
+
+test('snap no deforma círculos (el cierre de largo cero no cuenta)', () => {
+  const c = circ(18.75, 5.25, 2);
+  assert.equal(snap(c), transform(c, 1, 0, 0));
+});
+
+test('insignias: despejan la base con aire exacto y se dibujan encima', () => {
+  const ic = { d: ['M3 3h12v12H3Z', circ(14, 14, 0.7)], badge: badge('plus') };
+  const out = render(ic, { id: 'k' });
+  assert.match(out, /<mask id="k-k"/);
+  assert.match(out, /stroke-width="4.5"/, 'trazo + 3 = 1.5 de aire a cada lado');
+  assert.match(out, /data-part="badge"/);
+  assert.doesNotMatch(out, /A0.7 0.7/, 'el punto que toca la insignia sale entero');
+  assert.match(render(ic, { id: 'k', style: 'fill' }), /<mask id="k-b"/, 'rellena: signo calado');
+});
+
+test('cursor: un solo trazo cerrado dentro del lienzo', () => {
+  const d = cursor([6.1, 3.3], 1);
+  assert.ok(d.endsWith('Z'));
+  for (const v of nums(d)) assert.ok(v >= 0 && v <= 24);
+});
 
 test('render: un solo tono, trazo redondo y sin opacidades', () => {
   const out = render(bell, { id: 't' });

@@ -15,6 +15,8 @@ Todo trabaja en el lienzo de 24 y devuelve el `d` de un path con dos decimales c
 | `head(tip, dir, len = 6, spread = 45)` | Punta de flecha (6 en rectas, 3.4 en arcos) |
 | `roundpoly(pts, radius)` | Polígono con esquinas redondeadas (radio por esquina o uno solo) |
 | `polar`, `line`, `rot` | Punto en un círculo, línea por puntos, giro de un punto |
+| `cursor(tip, s)` | El puntero del set: punta casi viva, canto vertical, diagonal a 45°, cola proporcionada (conserva 0.8 de aire por dentro al reducirse). Todo puntero sale de aquí |
+| `badge(kind)` | Insignias estándar `{ d, knock, fill }`: en círculo abajo a la derecha (centro 17.25, r 4.25) `plus`, `minus`, `check`, `x`, `alert`, `info`, `clock`, `arrow-up`, `arrow-down`, `arrow-right`, `star`; `lock` sin círculo; `dot` (aviso) arriba a la derecha |
 
 ## Variantes (`engine/variants.mjs`)
 `render(icon, opciones)` devuelve el contenido de un `<svg viewBox="0 0 24 24">`; `svgFile(inner, icon)` lo envuelve (y agrega `data-rtl="mirror"` si el ícono es direccional).
@@ -31,8 +33,11 @@ Todo trabaja en el lienzo de 24 y devuelve el `d` de un path con dos decimales c
 | `id` | Prefijo de las máscaras; único por SVG en la página |
 Cada trazo sale con `data-part` (de `parts`) y `data-level` (de `levels`, desde 1). Nunca `id` en los trazos.
 
+### Insignias
+Con `icon.badge`, la base (contorno o relleno) va bajo una máscara que despeja el `knock` relleno y con un trazo de grosor + 3 (1.5 de aire exacto a cada lado del borde de la insignia); luego se dibuja la insignia (`data-part="badge"`); en relleno, su figura sólida y su signo calado. Los puntos de la base (círculos de r < 1) que tocan esa área se quitan enteros. Funciona con encierros, tachado, grosores y 16 px.
+
 ### Ajuste al pixel (`snap`)
-A 16 px el trazo de 1.5 mide 1 px y los centros de pixel caen en 0.75 + 1.5k del lienzo de 24. `snap` pasa el path a absoluto (`transform` sin escala), detecta los tramos rectos horizontales y verticales (tolerancia 0.06) y los mueve al centro de pixel más cercano; cada punto se mueve con su extremo y los controles de una curva con el extremo al que tocan, así las esquinas continuas acompañan.
+A 16 px el trazo de 1.5 mide 1 px y los centros de pixel caen en 0.75 + 1.5k del lienzo de 24. `snap` pasa el path a absoluto (`transform` sin escala), detecta los tramos rectos horizontales y verticales (tolerancia 0.06; los de largo cero, como el cierre de un círculo, no cuentan) y los mueve al centro de pixel más cercano; cada punto se mueve con su extremo y los controles de una curva con el extremo al que tocan, así las esquinas continuas acompañan.
 
 ### `transform(d, s, tx, ty)`
 Parser propio de paths (M L H V C S Q T A Z, absolutos y relativos, L implícitos tras M) que devuelve el path en absoluto, escalado y movido; los arcos escalan su radio. Lo usan los encierros y `snap`.

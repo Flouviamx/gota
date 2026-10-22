@@ -37,7 +37,7 @@ El núcleo (`nucleo`, 50) lo dibujó la sesión principal y es la referencia.
 ## Ronda 2 — completar los primeros ~1,000 (siguiente)
 1. **Cobertura** (1 agente, primero y solo): lista de conceptos comunes de UI/web/negocio, cruce contra nombres y tags de todo el set, y dibujo de lo que falte en su categoría correcta.
 2. Por cada una de las 10 categorías, en paralelo:
-   - **Diseño:** `fill` (u `false`), `variants` a apagar, `mirror`, `levels`, `parts` (obligatorio con movimiento, niveles o insignia; `level`/`progress` en los de cantidad), `motion`, `small` donde 16 px no se lea, orden de dibujo en `d`; corrige lo que marque `qa.mjs`. No renombra, agrega ni quita íconos.
+   - **Diseño:** pasa toda insignia a `badge` del motor (sin cortes a mano) y todo puntero a `cursor()`; `fill` (u `false`), `variants` a apagar, `mirror`, `levels`, `parts` (obligatorio con movimiento, niveles o insignia; `level`/`progress` en los de cantidad), `motion`, `small` donde 16 px no se lea, orden de dibujo en `d`; deja `qa.mjs` de su categoría en **cero avisos** (área, denso, silueta, doble, suelto, roza). No renombra, agrega ni quita íconos.
    - **Idiomas:** `src/i18n/<categoría>.json` con las 10 etiquetas y ≥ 6 palabras de búsqueda en es y en, pensadas por significado y uso. No toca los `.mjs`.
 3. La sesión principal corre `qa.mjs` completo, corrige, presenta una muestra al dueño y hace commit.
 

@@ -47,3 +47,12 @@
 - **Pruebas del motor:** `tests/engine.test.mjs`, 12 pruebas en verde (`npm test`).
 - **Análisis externos del dueño:** se evaluaron uno por uno ([decisiones 22–37](./decisions.md)). Se adoptaron piezas con nombre, metadatos `data-*`, íconos con valor en vivo y `weight="auto"`; se corrigieron datos de la competencia y se descartaron el «smart SVG» y los cambios de color.
 - **Documentación:** `CLAUDE.md` como router y `docs/` por dominio (este archivo, decisiones, roadmap, formato, motor, build, producción, calidad).
+- **Detalles que señaló el dueño.** El puntero de navegación, el corazón con pulso y el globo con candado mostraron un problema de fondo: piezas dibujadas a mano y recortes a mano. Se resolvió en el sistema, no ícono por ícono:
+  - `cursor()` en el motor: punta casi viva, porque un radio grande en 45° la volvía roma y alta;
+  - insignias estándar `badge()` con recorte automático de 1.5;
+  - los puntos que toca una insignia salen enteros;
+  - el QA suma `suelto` (fragmentos) y `roza` (casi toques);
+  - se corrigió `snap`, que tomaba el cierre de un círculo como línea y deformaba los círculos a 16 px;
+  - 15 pruebas en verde.
+- **El núcleo quedó en cero avisos de QA:** aire de los signos de alerta, la cabeza de atrás de clientes, la ruta que ahora toca sus círculos, la perforación del boleto (dos rayas), los corchetes de código, el badajo de la campana, el globo con solo ecuador y la tabla con columnas desde el encabezado.
+- **Navegación:** `cursor`, `cursor-click` (destellos con aire) y `drag-drop` (puntero como insignia) pasaron al motor. Al set del sitio en `flouvia-web` le llegan estos cambios cuando consuma Gota.

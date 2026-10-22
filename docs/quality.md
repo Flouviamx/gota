@@ -16,10 +16,12 @@ Renderiza todo el set en Chrome y avisa:
 | `denso` | Tinta a 32 px por encima del percentil 98 del set: probablemente sobran piezas |
 | `silueta` | El relleno cambia la caja del dibujo más de 1 px a 32 px |
 | `doble` | Dos íconos casi iguales a 32 px (similitud de coseno ≥ 0.975), salvo los de una misma familia (mismo primer segmento del nombre o uno prefijo del otro) |
+| `suelto` | Un trazo abierto de menos de 2 de largo que no es un punto: un fragmento |
+| `roza` | Un trazo termina a entre 0.35 y 2.85 de otro (de centro a centro) sin tocarlo: o toca, o deja 1.5 de aire. No cuenta si esos dos trazos se cruzan o se tocan en otro punto |
 Las líneas sueltas son ligeras por naturaleza: no hay aviso de "muy ligero". Los umbrales se ajustaron sobre el núcleo y la ronda 1 (al principio 0.93 de similitud y aviso de ligeros: demasiado ruido).
 
 ## Pruebas del motor (`npm test`)
-Doce pruebas: redondeo; esquinas continuas y la firma; cierre de `drop`, `circ` y `roundpoly`; largo de las puntas; `transform` (escala, arcos, absolutos); `snap` a centros de pixel; un solo tono y trazo redondo; `data-part`/`data-level` y nunca `id`; niveles con `value`; espejo solo en direccionales y `data-rtl`; máscara del relleno y aire de las líneas; grosor continuo.
+Quince pruebas: redondeo; esquinas continuas y la firma; cierre de `drop`, `circ` y `roundpoly`; largo de las puntas; `transform` (escala, arcos, absolutos); `snap` a centros de pixel; un solo tono y trazo redondo; `data-part`/`data-level` y nunca `id`; niveles con `value`; espejo solo en direccionales y `data-rtl`; máscara del relleno y aire de las líneas; grosor continuo; `snap` sin deformar círculos; insignias (máscara, aire, punto que sale entero, relleno calado); `cursor` cerrado y dentro del lienzo.
 
 ## Compuertas
 - Ningún agente termina con `build.mjs --check` en error.

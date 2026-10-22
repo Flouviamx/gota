@@ -32,7 +32,8 @@ Los trazos se calculan con el motor (constantes y funciones locales permitidas).
 | `mirror` | `true` | direccionales | Se voltea en idiomas de derecha a izquierda |
 | `levels` | `number[][]` (≥ 2) | íconos de cantidad | Índices de `d` por nivel, de menos a más |
 | `parts` | `{ nombre: number[] }` | con `motion`, `levels` o insignia | Piezas con nombre (kebab-case en inglés) |
-| `motion` | `{ effect, parts?, origin?, vector? }` | si tiene gesto propio | `effect` ∈ `ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`; `parts` por nombre o índice |
+| `badge` | `badge('plus')` o `{ d, knock, fill? }` | toda insignia | Lo que va encima con recorte automático: `d` se dibuja, `knock` es el área que se despeja con 1.5 de aire; sale como `data-part="badge"` |
+| `motion` | `{ effect, parts?, origin?, vector? }` | si tiene gesto propio | `effect` ∈ `ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`; `parts` por nombre, índice o `'badge'` |
 
 ## Idiomas (`src/i18n/<categoría>.json`)
 ```json
@@ -45,7 +46,8 @@ Idiomas: `es`, `en`, `pt`, `fr`, `de`, `it`, `ja`, `zh`, `ko`, `ar` (`LANGS` en 
 - Nombres en kebab-case, únicos en todo el set (se reporta el choque a las dos categorías).
 - Trazos que empiezan en `M` y solo usan comandos SVG de path.
 - `fill.solid`/`cut`/`lines`, `small.d`: listas de trazos válidos.
-- `levels` y `parts`: índices válidos de `d`; `motion.parts`: nombres de `parts` o índices.
+- `levels` y `parts`: índices válidos de `d`; `motion.parts`: nombres de `parts`, índices o `'badge'`.
+- `badge`: `d` válido y `knock` (un trazo cerrado).
 - `motion.effect` dentro de `MOTION`; `origin`/`vector` son `[x, y]`.
 - `variants`: solo `circle`/`square`/`slash` en `false`.
 - Idiomas: los 10 `label` y ≥ 6 `keywords` en es y en.
