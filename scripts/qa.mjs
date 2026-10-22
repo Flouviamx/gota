@@ -6,6 +6,8 @@
 //   una misma familia (calendar y calendar-plus se parecen a propósito),
 // - relleno que cambia la silueta (el relleno debe ocupar la misma caja que el contorno),
 // - fragmentos: trazos abiertos de menos de 2 de largo que no son un punto,
+// - abierto: un trazo abierto dentro de fill.solid (se rellenaría como cuña): va cerrado (Z), o en
+//   lines/wire si es línea,
 // - casi toca: un trazo que termina a menos del aire mínimo de otro sin tocarlo (entre 0.35 y
 //   2.85 de centro a centro: o toca, o deja 1.5 de aire entre bordes).
 // Uso: node scripts/qa.mjs [categoría]
@@ -24,6 +26,8 @@ const data = all.map(({ name, cat, icon }) => ({
   name,
   cat,
   d: icon.d,
+  box: [...icon.d, ...(icon.badge?.d ?? [])],
+  open: [icon.fill, icon.small?.fill, icon.badge?.fill].filter((x) => x && typeof x === 'object').flatMap((x) => x.solid ?? []).filter((d) => !/[zZ]\s*$/.test(d)).length,
   outline: b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { id: 'a' })}</svg>`),
   fill: icon.fill ? b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { style: 'fill', id: 'b' })}</svg>`) : null,
 }));
@@ -43,10 +47,11 @@ const result = await browser.evaluate(`(async () => {
   for (const it of window.DATA) {
     const a = await alpha(it.outline);
     let ink = 0; for (const v of a) ink += v;
-    probe.innerHTML = it.d.map((d) => '<path d="' + d + '"/>').join('');
+    probe.innerHTML = it.box.map((d) => '<path d="' + d + '"/>').join('');
     let x0 = 99, y0 = 99, x1 = -99, y1 = -99;
     for (const p of probe.querySelectorAll('path')) { const b = p.getBBox(); x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height); }
-    // Fragmentos y casi-toques entre los trazos del dibujo base
+    // Fragmentos y casi-toques entre los trazos del dibujo base (sin la insignia: su aire lo pone el motor)
+    probe.innerHTML = it.d.map((d) => '<path d="' + d + '"/>').join('');
     const els = [...probe.querySelectorAll('path')];
     const info = els.map((p, i) => {
       const L = p.getTotalLength();
@@ -73,7 +78,7 @@ const result = await browser.evaluate(`(async () => {
     }));
     let silhouette = null;
     if (it.fill) { const f = await alpha(it.fill); const A = box(a), B = box(f); silhouette = Math.max(...A.map((v, i) => Math.abs(v - B[i]))); }
-    out.push({ name: it.name, cat: it.cat, ink: ink / 1024, bbox: [x0, y0, x1, y1], silhouette, fragments, near, a: Array.from(a, (v) => Math.round(v * 100) / 100) });
+    out.push({ name: it.name, cat: it.cat, ink: ink / 1024, bbox: [x0, y0, x1, y1], silhouette, fragments, near, open: it.open, a: Array.from(a, (v) => Math.round(v * 100) / 100) });
   }
   return out;
 })()`);
@@ -90,8 +95,9 @@ for (const r of result.filter(mine)) {
 // Densidad: umbral fijo (las líneas sueltas son ligeras por naturaleza: no hay aviso de ligero)
 const DENSE = 0.28;
 for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`denso  ${r.cat}/${r.name}: tinta ${(r.ink * 100).toFixed(1)}% (máximo ${DENSE * 100}%); ¿sobran piezas?`);
-// Fragmentos y casi-toques
+// Fragmentos, casi-toques y rellenos abiertos
 for (const r of result.filter(mine)) {
+  if (r.open) issues.push(`abierto ${r.cat}/${r.name}: ${r.open} trazo(s) abierto(s) en fill.solid (ciérralo con Z o pásalo a lines/wire)`);
   if (r.fragments.length) issues.push(`suelto ${r.cat}/${r.name}: trazo(s) ${r.fragments.join(', ')} de menos de 2 de largo`);
   for (const [i, m] of r.near) issues.push(`roza  ${r.cat}/${r.name}: el trazo ${i} termina a ${m} de otro (o toca o deja 1.5 de aire)`);
 }

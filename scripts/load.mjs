@@ -48,6 +48,7 @@ export async function loadAll({ only } = {}) {
         check(icon.fill?.solid, 'fill.solid');
         if (icon.fill?.cut !== undefined) check(icon.fill.cut, 'fill.cut');
         if (icon.fill?.lines !== undefined) check(icon.fill.lines, 'fill.lines');
+        if (icon.fill?.wire !== undefined) check(icon.fill.wire, 'fill.wire');
       }
       if (icon.mirror !== undefined && icon.mirror !== true) errors.push(`${where}: mirror solo admite true`);
       if (icon.levels !== undefined) {

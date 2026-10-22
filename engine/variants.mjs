@@ -3,7 +3,7 @@
 // pixel y el cuadro extremo de su movimiento. El relleno (`fill`) y el dibujo de 16 px (`small`)
 // sí se dibujan en la definición. Todo sale como el contenido de un <svg viewBox="0 0 24 24">.
 // Ver DESIGN.md › Relleno, Variantes y Movimiento.
-import { circ, f, sq } from './geometry.mjs';
+import { badge, circ, f, sq } from './geometry.mjs';
 
 /** Grosores del set: el dibujo está pensado para el regular. */
 export const WEIGHTS = { light: 1, regular: 1.5, bold: 2 };
@@ -43,37 +43,52 @@ function parse(d) {
  * que se vean nítidos; las curvas solo acompañan a sus extremos.
  */
 export function snap(d, step = 1.5, offset = 0.75) {
+  return snapper([d], step, offset)(d);
+}
+
+/**
+ * Ajuste al pixel de un ícono entero: las coordenadas que se mueven salen de TODOS sus trazos, y
+ * cada trazo se mueve con los mismos desplazamientos. Así la punta de una flecha acompaña a su
+ * asta aunque sean trazos distintos. Los puntos (círculos de r < 1) van a una esquina de pixel con
+ * r 1: cubren 2 × 2 pixeles nítidos en lugar de una mancha gris.
+ */
+export function snapper(list, step = 1.5, offset = 0.75) {
   const S = (v) => Math.round((v - offset) / step) * step + offset;
   const EPS = 0.06;
-  // A absoluto (transform sin escala) y por tramos, con su punto de inicio y de fin
-  const segs = [];
-  let x = 0;
-  let y = 0;
-  let sx = 0;
-  let sy = 0;
-  for (const [c, a] of parse(transform(d, 1, 0, 0))) {
-    const g = { c, a: [...a], x0: x, y0: y };
-    if (c === 'M') [x, y, sx, sy] = [a[0], a[1], a[0], a[1]];
-    else if (c === 'L' || c === 'T') [x, y] = a;
-    else if (c === 'H') x = a[0];
-    else if (c === 'V') y = a[0];
-    else if (c === 'C') [x, y] = [a[4], a[5]];
-    else if (c === 'S' || c === 'Q') [x, y] = [a[2], a[3]];
-    else if (c === 'A') [x, y] = [a[5], a[6]];
-    else if (c === 'Z') [x, y] = [sx, sy];
-    g.x1 = x;
-    g.y1 = y;
-    segs.push(g);
-  }
-  // Coordenadas de los tramos rectos alineados a un eje: esas se mueven al centro del pixel
+  const segsOf = (d) => {
+    const segs = [];
+    let x = 0;
+    let y = 0;
+    let sx = 0;
+    let sy = 0;
+    for (const [c, a] of parse(transform(d, 1, 0, 0))) {
+      const g = { c, a: [...a], x0: x, y0: y };
+      if (c === 'M') [x, y, sx, sy] = [a[0], a[1], a[0], a[1]];
+      else if (c === 'L' || c === 'T') [x, y] = a;
+      else if (c === 'H') x = a[0];
+      else if (c === 'V') y = a[0];
+      else if (c === 'C') [x, y] = [a[4], a[5]];
+      else if (c === 'S' || c === 'Q') [x, y] = [a[2], a[3]];
+      else if (c === 'A') [x, y] = [a[5], a[6]];
+      else if (c === 'Z') [x, y] = [sx, sy];
+      g.x1 = x;
+      g.y1 = y;
+      segs.push(g);
+    }
+    return segs;
+  };
+  // Coordenadas de los tramos rectos alineados a un eje, de todos los trazos
   const xs = [];
   const ys = [];
-  for (const g of segs) {
-    if (!['L', 'H', 'V', 'Z'].includes(g.c)) continue;
-    // Un tramo de largo cero (el cierre de un círculo) no es ni horizontal ni vertical
-    if (Math.hypot(g.x1 - g.x0, g.y1 - g.y0) < EPS) continue;
-    if (Math.abs(g.x0 - g.x1) < EPS) xs.push((g.x0 + g.x1) / 2);
-    if (Math.abs(g.y0 - g.y1) < EPS) ys.push((g.y0 + g.y1) / 2);
+  for (const d of list) {
+    if (asCircle(d)?.r < 1) continue;
+    for (const g of segsOf(d)) {
+      if (!['L', 'H', 'V', 'Z'].includes(g.c)) continue;
+      // Un tramo de largo cero (el cierre de un círculo) no es ni horizontal ni vertical
+      if (Math.hypot(g.x1 - g.x0, g.y1 - g.y0) < EPS) continue;
+      if (Math.abs(g.x0 - g.x1) < EPS) xs.push((g.x0 + g.x1) / 2);
+      if (Math.abs(g.y0 - g.y1) < EPS) ys.push((g.y0 + g.y1) / 2);
+    }
   }
   const dx = (v) => {
     const u = xs.find((k) => Math.abs(k - v) < EPS);
@@ -83,21 +98,29 @@ export function snap(d, step = 1.5, offset = 0.75) {
     const u = ys.find((k) => Math.abs(k - v) < EPS);
     return u === undefined ? 0 : S(u) - v;
   };
-  // Cada punto se mueve con su extremo; los controles de una curva, con el extremo al que tocan
-  return segs
-    .map(({ c, a, x0, y0, x1, y1 }) => {
-      const [ex, ey] = [dx(x1), dy(y1)];
-      const [bx, by] = [dx(x0), dy(y0)];
-      if (c === 'M' || c === 'L' || c === 'T') return `${c}${f(x1 + ex)} ${f(y1 + ey)}`;
-      if (c === 'H') return `H${f(x1 + ex)}`;
-      if (c === 'V') return `V${f(y1 + ey)}`;
-      if (c === 'C') return `C${f(a[0] + bx)} ${f(a[1] + by)} ${f(a[2] + ex)} ${f(a[3] + ey)} ${f(x1 + ex)} ${f(y1 + ey)}`;
-      if (c === 'S' || c === 'Q') return `${c}${f(a[0] + ex)} ${f(a[1] + ey)} ${f(x1 + ex)} ${f(y1 + ey)}`;
-      if (c === 'A') return `A${f(a[0])} ${f(a[1])} ${f(a[2])} ${a[3]} ${a[4]} ${f(x1 + ex)} ${f(y1 + ey)}`;
-      return 'Z';
-    })
-    .join('');
+  return (d) => {
+    const dot = asCircle(d);
+    if (dot && dot.r < 1) {
+      const E = (v) => Math.round(v / step) * step;
+      return circleD(E(dot.cx), E(dot.cy), 1);
+    }
+    // Cada punto se mueve con su extremo; los controles de una curva, con el extremo al que tocan
+    return segsOf(d)
+      .map(({ c, a, x0, y0, x1, y1 }) => {
+        const [ex, ey] = [dx(x1), dy(y1)];
+        const [bx, by] = [dx(x0), dy(y0)];
+        if (c === 'M' || c === 'L' || c === 'T') return `${c}${f(x1 + ex)} ${f(y1 + ey)}`;
+        if (c === 'H') return `H${f(x1 + ex)}`;
+        if (c === 'V') return `V${f(y1 + ey)}`;
+        if (c === 'C') return `C${f(a[0] + bx)} ${f(a[1] + by)} ${f(a[2] + ex)} ${f(a[3] + ey)} ${f(x1 + ex)} ${f(y1 + ey)}`;
+        if (c === 'S' || c === 'Q') return `${c}${f(a[0] + ex)} ${f(a[1] + ey)} ${f(x1 + ex)} ${f(y1 + ey)}`;
+        if (c === 'A') return `A${f(a[0])} ${f(a[1])} ${f(a[2])} ${a[3]} ${a[4]} ${f(x1 + ex)} ${f(y1 + ey)}`;
+        return 'Z';
+      })
+      .join('');
+  };
 }
+const circleD = (cx, cy, r) => `M${f(cx - r)} ${f(cy)}A${f(r)} ${f(r)} 0 1 0 ${f(cx + r)} ${f(cy)}A${f(r)} ${f(r)} 0 1 0 ${f(cx - r)} ${f(cy)}Z`;
 
 /** Path a coordenadas absolutas y transformado: p' = p · s + (tx, ty). */
 export function transform(d, s, tx, ty) {
@@ -180,26 +203,35 @@ function asCircle(d) {
   const r = Number(m[3]);
   return { cx: Number(m[1]) + r, cy: Number(m[2]), r };
 }
-/** Caja del área de una insignia (por los puntos de su trazo en absoluto). */
-function boxOf(d) {
-  const ns = transform(d, 1, 0, 0).match(/-?\d*\.?\d+/g).map(Number);
-  const xs = [];
-  const ys = [];
-  // Pares x y de los comandos absolutos (los radios y banderas de A también entran: margen de más)
-  for (let i = 0; i + 1 < ns.length; i += 2) {
-    xs.push(ns[i]);
-    ys.push(ns[i + 1]);
+/** Puntos de un trazo en absoluto (los extremos de cada tramo y los controles de sus curvas). */
+function pointsOf(d) {
+  const pts = [];
+  for (const [c, a] of parse(transform(d, 1, 0, 0))) {
+    if (c === 'H' || c === 'V' || c === 'Z') continue;
+    for (let i = 0; i + 1 < a.length; i += 2) if (c !== 'A' || i === 5) pts.push([a[i], a[i + 1]]);
+    if (c === 'A') pts.push([a[5], a[6]]);
   }
-  return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+  return pts;
 }
-/** ¿El punto `dot` toca el área despejada por `knock` (con su aire)? */
+/** ¿El punto `dot` toca el área despejada por `knock` (con su aire)? Por distancia real a la figura. */
 function dotInKnock(dot, knock, weight) {
   const halo = weight / 2 + 1.5 + weight / 2;
+  const reach = halo + dot.r + weight / 2;
   const c = asCircle(knock);
-  if (c) return Math.hypot(dot.cx - c.cx, dot.cy - c.cy) < c.r + halo + dot.r + weight / 2;
-  const [x0, y0, x1, y1] = boxOf(knock);
-  const m = halo + dot.r + weight / 2;
-  return dot.cx > x0 - m && dot.cx < x1 + m && dot.cy > y0 - m && dot.cy < y1 + m;
+  if (c) return Math.hypot(dot.cx - c.cx, dot.cy - c.cy) < c.r + reach;
+  // Distancia a la línea poligonal de la figura y, si es cerrada, si el punto cae dentro
+  const pts = pointsOf(knock);
+  let min = Infinity;
+  let inside = false;
+  for (let k = 0; k < pts.length; k++) {
+    const [ax, ay] = pts[k];
+    const [bx, by] = pts[(k + 1) % pts.length];
+    const L = (bx - ax) ** 2 + (by - ay) ** 2 || 1e-9;
+    const t = Math.max(0, Math.min(1, ((dot.cx - ax) * (bx - ax) + (dot.cy - ay) * (by - ay)) / L));
+    min = Math.min(min, Math.hypot(dot.cx - (ax + t * (bx - ax)), dot.cy - (ay + t * (by - ay))));
+    if (ay > dot.cy !== by > dot.cy && dot.cx < ((bx - ax) * (dot.cy - ay)) / (by - ay) + ax) inside = !inside;
+  }
+  return min < reach || (/[zZ]\s*$/.test(knock) && inside);
 }
 
 /** Índices de d de unas piezas, por nombre (icon.parts) o por número. */
@@ -230,18 +262,25 @@ function resolve(icon, { size, value, frame }) {
   let moved = null;
   if (frame && icon.motion) moved = new Set((icon.motion.parts ? indices(icon, icon.motion.parts) : icon.d.map((_, i) => i)).map((i) => icon.d[i]));
   const tags = small ? new Map() : tagsOf(icon);
-  let badge = small ? (small.badge ?? null) : (icon.badge ?? null);
-  if (size && size <= 18 && !small && badge) {
-    const sn = (list) => list?.map((p) => snap(p));
-    badge = { d: sn(badge.d), knock: snap(badge.knock), ...(badge.fill && { fill: Object.fromEntries(Object.entries(badge.fill).map(([k, v]) => [k, sn(v)])) }) };
+  let bdg = small ? (small.badge ?? null) : (icon.badge ?? null);
+  const tiny = size && size <= 18;
+  if (tiny && bdg) {
+    // A 16 px: la insignia estándar usa su versión de pixel; una propia se ajusta al pixel
+    if (bdg.kind && !small) bdg = badge(bdg.kind, { size });
+    else if (!small) {
+      const sn = snapper([...bdg.d, bdg.knock]);
+      bdg = { d: bdg.d.map(sn), knock: sn(bdg.knock), ...(bdg.fill && { fill: Object.fromEntries(Object.entries(bdg.fill).map(([k, v]) => [k, v.map(sn)])) }) };
+    }
   }
-  if (size && size <= 18 && !small) {
-    for (const [p, t] of [...tags]) tags.set(snap(p), t);
-    d = d.map((p) => snap(p));
-    if (fill) fill = Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, v.map((p) => snap(p))]));
-    moved = moved && new Set([...moved].map((p) => snap(p)));
+  if (tiny && !small) {
+    const sn = snapper([...d, ...Object.values(fill ?? {}).flat()]);
+    for (const [p, t] of [...tags]) tags.set(sn(p), t);
+    d = d.map(sn);
+    if (fill) fill = Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, v.map(sn)]));
+    moved = moved && new Set([...moved].map(sn));
   }
-  return { d, fill, moved, tags, badge };
+  const badgeOut = bdg;
+  return { d, fill, moved, tags, badge: badgeOut };
 }
 
 /** Transformación SVG del cuadro extremo de cada efecto (ver DESIGN.md › Movimiento). */
@@ -270,58 +309,62 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   const k = enc ? enc.scale : 1;
   const fill = style === 'fill' && icon.fill ? icon.fill : null;
   const g = (ds) => (enc ? shrink(ds, k) : ds);
+  const black = (ds, w = weight) => ds.map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+  const maskOf = (name, content) => `<mask id="${id}-${name}" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${content}</mask>`;
   const defs = [];
   const body = [];
-  const masks = [];
-  // Recorte del tachado (aplica a todo lo de abajo)
-  if (slash) masks.push(`<path d="${SLASH}" stroke="black" stroke-width="${f(weight + 3)}" stroke-linecap="round"/>`);
+  // Cuadro extremo del movimiento (hojas de revisión): las piezas que se mueven y, si la insignia
+  // se mueve, también su recorte
+  const t = frame && icon.motion ? motionTransform(icon.motion) : '';
+  const badgeMoves = t && (icon.motion.parts ?? []).includes('badge');
+  const moving = (ds) => (t && r.moved?.size ? [ds.filter((p) => !r.moved.has(p)), ds.filter((p) => r.moved.has(p))] : [ds, []]);
+  // Recortes: el tachado (aplica a todo) y el área de la insignia (aplica a la base)
+  const slashCut = slash ? `<path d="${SLASH}" stroke="black" stroke-width="${f(weight + 3)}" stroke-linecap="round"/>` : '';
+  const kn = r.badge ? g([r.badge.knock])[0] : null;
+  const knockCut = kn ? `<path d="${kn}"${badgeMoves ? ` transform="${t}"` : ''} fill="black" stroke="black" stroke-width="${f(weight + 3)}" stroke-linejoin="round"/>` : '';
+  if (kn) defs.push(maskOf('k', knockCut));
 
   if (enc && style === 'fill') {
-    // Encerrado y relleno: el contenedor sólido y el dibujo calado
-    const glyph = g(icon.d);
-    defs.push(`<mask id="${id}-e" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${glyph.map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round"/>`).join('')}${masks.join('')}</mask>`);
+    // Encerrado y relleno: el contenedor sólido y el dibujo calado; cerca de la insignia la base no
+    // se cala (el recorte de la insignia la despeja) y la insignia se cala completa
+    const base = black(g(icon.d));
+    const badge = r.badge ? black(g(r.badge.d)) : '';
+    defs.push(maskOf('e', `${kn ? `<g mask="url(#${id}-k)">${base}</g>` : base}${badge}${slashCut}`));
     body.push(`<path d="${enc.shape}" fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linejoin="round" mask="url(#${id}-e)"/>`);
   } else {
     const content = [];
     if (enc) content.push(`<path d="${enc.shape}" ${strokeAttrs(weight)}/>`);
     if (fill) {
-      // Lo calado (`cut`) se recorta al ancho del trazo; las líneas sueltas (`lines`) van encima
-      // y se separan del relleno con un aire de 1.5 a cada lado
-      const cuts = g(fill.cut ?? []).map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round"/>`);
-      const halos = g(fill.lines ?? []).map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${f(weight + 3)}" stroke-linecap="round" stroke-linejoin="round"/>`);
-      defs.push(`<mask id="${id}-f" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${cuts.join('')}${halos.join('')}</mask>`);
+      // solid: se rellena y conserva su trazo · cut: se cala al ancho del trazo · lines: van encima
+      // con 1.5 de aire · wire: van encima pegadas, sin aire (el arco de un candado, una aguja)
+      defs.push(maskOf('f', `${black(g(fill.cut ?? []))}${black(g(fill.lines ?? []), weight + 3)}`));
       content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${paths(g(fill.solid))}</g>`);
-      if (fill.lines?.length) content.push(`<g ${strokeAttrs(weight)}>${paths(g(fill.lines))}</g>`);
-    } else content.push(`<g ${strokeAttrs(weight)}>${paths(g(icon.d))}</g>`);
-    if (masks.length) {
-      defs.push(`<mask id="${id}-s" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${masks.join('')}</mask>`);
-      body.push(`<g mask="url(#${id}-s)">${content.join('')}</g>`);
-    } else body.push(...content);
-  }
-  // Insignia: despeja la base con un aire exacto de 1.5 (máscara del área + trazo + 3) y se dibuja
-  // encima; rellena, su figura va sólida y su signo calado
-  if (r.badge && !(enc && style === 'fill')) {
-    const bd = g(r.badge.d);
-    const kn = g([r.badge.knock])[0];
-    defs.push(`<mask id="${id}-k" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/><path d="${kn}" fill="black" stroke="black" stroke-width="${f(weight + 3)}" stroke-linejoin="round"/></mask>`);
-    const base = body.splice(0, body.length).join('');
-    body.push(`<g mask="url(#${id}-k)">${base}</g>`);
-    const bf = style === 'fill' ? r.badge.fill : null;
-    if (bf) {
-      const cuts = g(bf.cut ?? []).map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round"/>`);
-      defs.push(`<mask id="${id}-b" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${cuts.join('')}</mask>`);
-      body.push(`<g data-part="badge" fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-b)">${g(bf.solid).map((d) => `<path d="${d}"/>`).join('')}</g>`);
-    } else body.push(`<g data-part="badge" ${strokeAttrs(weight)}>${bd.map((d) => `<path d="${d}"/>`).join('')}</g>`);
+      const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
+      if (over.length) content.push(`<g ${strokeAttrs(weight)}>${paths(g(over))}</g>`);
+    } else {
+      const [still, go] = moving(g(icon.d));
+      content.push(`<g ${strokeAttrs(weight)}>${paths(still)}${go.length ? `<g transform="${t}">${paths(go)}</g>` : ''}</g>`);
+    }
+    const base = content.join('');
+    // La base queda bajo el recorte de la insignia; todo, bajo el del tachado
+    let layer = kn ? `<g mask="url(#${id}-k)">${base}</g>` : base;
+    if (r.badge) {
+      const bf = style === 'fill' ? r.badge.fill : null;
+      const move = badgeMoves ? ` transform="${t}"` : '';
+      if (bf) {
+        defs.push(maskOf('b', black(g(bf.cut ?? []))));
+        layer += `<g data-part="badge"${move} fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-b)">${g(bf.solid).map((d) => `<path d="${d}"/>`).join('')}</g>`;
+        if (bf.wire?.length) layer += `<g${move} ${strokeAttrs(weight)}>${g(bf.wire).map((d) => `<path d="${d}"/>`).join('')}</g>`;
+      } else layer += `<g data-part="badge"${move} ${strokeAttrs(weight)}>${g(r.badge.d).map((d) => `<path d="${d}"/>`).join('')}</g>`;
+    }
+    if (slashCut) {
+      defs.push(maskOf('s', slashCut));
+      layer = `<g mask="url(#${id}-s)">${layer}</g>`;
+    }
+    body.push(layer);
   }
   if (slash) body.push(`<path d="${SLASH}" ${strokeAttrs(weight)}/>`);
   let inner = body.join('');
-  // Movimiento: el cuadro extremo de las piezas que se mueven (solo en las hojas de revisión)
-  if (r.moved?.size && !enc) {
-    const t = motionTransform(icon.motion);
-    const still = icon.d.filter((p) => !r.moved.has(p));
-    const go = icon.d.filter((p) => r.moved.has(p));
-    inner = `<g ${strokeAttrs(weight)}>${paths(still)}<g transform="${t}">${paths(go)}</g></g>`;
-  }
   // Espejo para idiomas de derecha a izquierda (solo los íconos direccionales)
   if (rtl && icon.mirror) inner = `<g transform="matrix(-1 0 0 1 24 0)">${inner}</g>`;
   return `${defs.length ? `<defs>${defs.join('')}</defs>` : ''}${inner}`;

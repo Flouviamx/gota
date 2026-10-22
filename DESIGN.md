@@ -43,7 +43,8 @@ Una forma triangular o de pico puede tocar 2.4–21.6 para compensar ópticament
   motor despeja la base con un aire exacto de 1.5 y quita enteros los puntos que toca. **Nunca se
   recorta la base a mano**: los cortes a mano dejan puntas redondas en lugares arbitrarios y
   fragmentos. Una pieza propia encima de otra (el puntero sobre un cuadro) va igual:
-  `badge: { d, knock, fill }`.
+  `badge: { d, knock, fill }`. A 16 px las insignias estándar cambian solas a su versión de pixel
+  (sin anillo, el signo más grande): no se copian `badge16` en las categorías.
 - **Puntero:** siempre `cursor(punta, escala)` del motor; nunca uno dibujado a mano.
 - **Sin fragmentos ni roces:** ningún trazo abierto de menos de 2; un trazo que termina junto a
   otro o lo toca o deja 1.5 de aire (3 de centro a centro). El QA los marca (`suelto`, `roza`).
@@ -58,8 +59,11 @@ Cada ícono que tiene un cuerpo lleva su versión rellena en `fill`, hecha con *
   un documento, la solapa del sobre, las manecillas del reloj, el signo de una insignia).
 - `lines`: trazos abiertos que siguen siendo línea y se separan del relleno con **aire de 1.5**
   (las argollas del calendario, el asa del maletín, la persona de atrás en un grupo).
-- Una pieza que toca al cuerpo y debe seguir unida (el arco del candado, la aguja de la chincheta)
-  va en `solid`, no en `lines`.
+- `wire`: trazos abiertos que siguen siendo línea **pegados** al relleno, sin aire (el arco del
+  candado, la aguja de la chincheta, la línea de una ruta, las barras de unos deslizadores).
+- En `solid` **solo van figuras cerradas** (terminan en `Z`): un trazo abierto se rellenaría como
+  una cuña. Si lo que se rellena es un trazo abierto del contorno (la media luna de un badajo, el
+  cuerpo de un cilindro), se pasa cerrado: `${trazo}Z`. El QA lo marca como `abierto`.
 - Insignias sobre un objeto (más, check, x, reloj en la esquina): el círculo de la insignia va en
   `solid` y su signo en `cut`.
 - Los íconos hechos solo de líneas abiertas (flechas, chevrons, check, más, x, ondas) llevan

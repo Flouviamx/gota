@@ -26,7 +26,7 @@ Los trazos se calculan con el motor (constantes y funciones locales permitidas).
 |---|---|---|---|
 | `tags` | `string[]` (≥ 2) | sí | Palabras de búsqueda básicas, español e inglés |
 | `d` | `string[]` | sí | Trazos (`d` de cada `path`), en orden de dibujo, lienzo de 24 |
-| `fill` | `{ solid, cut?, lines? }` o `false` | ronda 2 en adelante | Versión rellena con los mismos trazos; `false` = solo líneas |
+| `fill` | `{ solid, cut?, lines?, wire? }` o `false` | sí | Versión rellena con los mismos trazos: `solid` solo cerrados, `cut` calado, `lines` encima con aire, `wire` encima pegado; `false` = solo líneas |
 | `small` | `{ d, fill? }` | solo si hace falta | Dibujo propio para ≤ 18 px |
 | `variants` | `{ circle?, square?, slash?: false }` | no | Apaga variantes automáticas que no tienen sentido |
 | `mirror` | `true` | direccionales | Se voltea en idiomas de derecha a izquierda |
@@ -45,7 +45,7 @@ Idiomas: `es`, `en`, `pt`, `fr`, `de`, `it`, `ja`, `zh`, `ko`, `ar` (`LANGS` en 
 ## Validación (`scripts/load.mjs`)
 - Nombres en kebab-case, únicos en todo el set (se reporta el choque a las dos categorías).
 - Trazos que empiezan en `M` y solo usan comandos SVG de path.
-- `fill.solid`/`cut`/`lines`, `small.d`: listas de trazos válidos.
+- `fill.solid`/`cut`/`lines`/`wire`, `small.d`: listas de trazos válidos.
 - `levels` y `parts`: índices válidos de `d`; `motion.parts`: nombres de `parts`, índices o `'badge'`.
 - `badge`: `d` válido y `knock` (un trazo cerrado).
 - `motion.effect` dentro de `MOTION`; `origin`/`vector` son `[x, y]`.

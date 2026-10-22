@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { badge, circ, cursor, drop, f, head, roundpoly, sq } from '../engine/geometry.mjs';
-import { render, snap, svgFile, transform } from '../engine/variants.mjs';
+import { render, snap, snapper, svgFile, transform } from '../engine/variants.mjs';
 
 const nums = (d) => (d.match(/-?\d*\.?\d+/g) ?? []).map(Number);
 
@@ -104,4 +104,42 @@ test('render: relleno con máscara propia por id y líneas con aire', () => {
 test('render: el grosor es continuo', () => {
   assert.match(render(bell, { id: 'g', weight: 0.75 }), /stroke-width="0.75"/);
   assert.match(render(bell, { id: 'g', weight: 2.6 }), /stroke-width="2.6"/);
+});
+
+test('snapper: la punta de una flecha se mueve con su asta (ajuste compartido)', () => {
+  const stem = 'M12 4V20';
+  const head = 'M6 10 12 4 18 10';
+  const sn = snapper([stem, head]);
+  const sx = nums(sn(stem))[0];
+  assert.equal(nums(sn(head))[2], sx, 'la punta queda en la columna del asta');
+});
+
+test('snapper: los puntos van a una esquina de pixel con r 1', () => {
+  const d = snapper([circ(10.6, 7.1, 0.7)])(circ(10.6, 7.1, 0.7));
+  assert.match(d, /A1 1 0 1 0/);
+  for (const v of nums(d).filter((_, i) => i === 1)) assert.equal(v % 1.5, 0);
+});
+
+test('insignias a 16 px: sin anillo y en la cuadrícula del pixel', () => {
+  const big = render({ d: ['M3 3h12v12H3Z'], badge: badge('plus') }, { id: 'a' });
+  const small = render({ d: ['M3 3h12v12H3Z'], badge: badge('plus') }, { id: 'b', size: 16 });
+  assert.match(big, /A4.25 4.25 0 1 0/, 'a 24 px lleva su anillo');
+  assert.doesNotMatch(small.split('data-part="badge"')[1], /A4.25 4.25/, 'a 16 px queda solo el signo');
+});
+
+test('encerrado y relleno: la insignia se cala en el contenedor', () => {
+  const out = render({ d: ['M3 3h12v12H3Z'], fill: { solid: ['M3 3h12v12H3Z'] }, badge: badge('check') }, { id: 'e', style: 'fill', enclosure: 'circle' });
+  assert.match(out, /<mask id="e-e"[^]*<g mask="url\(#e-k\)">/, 'la base no se cala dentro del recorte de la insignia');
+});
+
+test('relleno: wire va encima como línea, sin rellenar ni aire', () => {
+  const out = render({ d: ['M5 10h14v10H5Z', 'M8 10V7a4 4 0 0 1 8 0v3'], fill: { solid: ['M5 10h14v10H5Z'], wire: ['M8 10V7a4 4 0 0 1 8 0v3'] } }, { id: 'w', style: 'fill' });
+  assert.match(out, /fill="none"[^>]*><path d="M8 10V7/);
+  assert.doesNotMatch(out, /stroke-width="4.5"/);
+});
+
+test('un punto lejos de una insignia diagonal se conserva', () => {
+  const slashBadge = { d: ['M14 22 22 14'], knock: 'M14 22 22 14' };
+  const out = render({ d: ['M3 3h8v8H3Z', circ(5, 18, 0.7)], badge: slashBadge }, { id: 'd' });
+  assert.match(out, /A0.7 0.7/);
 });

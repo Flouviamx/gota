@@ -393,7 +393,8 @@ const icons = {
 };
 
 // Relleno de cada ícono por índice de sus trazos: `solid` se rellena (y conserva el trazo, así la
-// silueta es idéntica), `cut` se cala al ancho del trazo y `lines` va encima con aire de 1.5.
+// silueta es idéntica; solo figuras cerradas), `cut` se cala al ancho del trazo, `lines` va encima
+// con aire de 1.5 y `wire` va encima pegada, sin aire (el arco de un candado, una aguja).
 // Los que son solo líneas abiertas (flechas, check, más…) no llevan relleno. Ver DESIGN.md › Relleno.
 const FILL = {
   alert: { solid: [0], cut: [1, 2] },
@@ -401,7 +402,6 @@ const FILL = {
   more: { solid: [0, 1, 2] },
   edit: { solid: [0], cut: [1, 2] },
   send: { solid: [0], cut: [1] },
-  pin: { solid: [0, 1, 2] },
   person: { solid: [0, 1] },
   clients: { solid: [0, 1], lines: [2, 3] },
   comment: { solid: [0] },
@@ -417,30 +417,33 @@ const FILL = {
   document: { solid: [0], cut: [1, 2, 3] },
   folder: { solid: [0], cut: [1] },
   project: { solid: [0], cut: [1, 2, 3] },
-  roadmap: { solid: [0, 1, 2] },
+  roadmap: { solid: [0, 1], wire: [2] },
   ticket: { solid: [0], cut: [1, 2] },
   globe: { solid: [0], cut: [1, 2] },
-  lock: { solid: [0, 1], cut: [2] },
-  key: { solid: [0, 2, 3, 4], cut: [1] },
+  lock: { solid: [0], wire: [1], cut: [2] },
+  key: { solid: [0], wire: [2, 3, 4], cut: [1] },
   shield: { solid: [0], cut: [1] },
   speaker: { solid: [0] },
   columns: { solid: [0], cut: [1, 2, 3] },
   layers: { solid: [2], lines: [0, 1] },
-  sliders: { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
+  sliders: { solid: [6, 7, 8], wire: [0, 1, 2, 3, 4, 5] },
   bolt: { solid: [0] },
   box: { solid: [2], cut: [0, 1] },
   apps: { solid: [0, 1, 2, 3] },
-  bell: { solid: [0, 1] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
-  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
 }
+// Lo que se rellena va cerrado: la cabeza de la chincheta (su cierre corre por la barra de arriba),
+// el badajo de la campana (media luna) y el cuerpo de la base de datos
+icons.pin.fill = { solid: [`${icons.pin.d[1]}Z`], wire: [icons.pin.d[0], icons.pin.d[2]] };
+icons.bell.fill = { solid: [`${icons.bell.d[0]}Z`, icons.bell.d[1]] };
 // Solo líneas abiertas: su relleno es el mismo contorno
 for (const name of ['chevron-right', 'chevron-left', 'arrow-right', 'check', 'check-large', 'close', 'close-large', 'plus', 'search', 'refresh', 'link', 'waves', 'mute', 'code'])
   icons[name].fill = false;
 // La base de datos: el cuerpo y la tapa rellenos; se calan la curva del medio y el borde de la tapa
-icons.database.fill = { solid: [icons.database.d[1], icons.database.d[2]], cut: [icons.database.d[0], 'M20.4 6.1c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3'] };
+icons.database.fill = { solid: [`${icons.database.d[1]}Z`, icons.database.d[2]], cut: [icons.database.d[0], 'M20.4 6.1c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3'] };
 
 // Ya vienen encerrados: no se vuelven a encerrar en círculo
 icons.important.variants = { circle: false };

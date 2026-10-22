@@ -171,25 +171,64 @@ const signs = {
   'arrow-up': () => [`M${f(BC[0])} ${f(BC[1] + 2.1)}V${f(BC[1] - 2)}`, line([BC[0] - 1.75, BC[1] - 0.25], [BC[0], BC[1] - 2], [BC[0] + 1.75, BC[1] - 0.25])],
   'arrow-down': () => [`M${f(BC[0])} ${f(BC[1] - 2.1)}V${f(BC[1] + 2)}`, line([BC[0] - 1.75, BC[1] + 0.25], [BC[0], BC[1] + 2], [BC[0] + 1.75, BC[1] + 0.25])],
   'arrow-right': () => [`M${f(BC[0] - 2.1)} ${f(BC[1])}H${f(BC[0] + 2)}`, line([BC[0] + 0.25, BC[1] - 1.75], [BC[0] + 2, BC[1]], [BC[0] + 0.25, BC[1] + 1.75])],
-  star: () => [roundpoly(Array.from({ length: 10 }, (_, i) => polar(BC[0], BC[1] + 0.2, i % 2 ? 1.05 : 2.35, -90 + i * 36)), 0.3)],
+  star: () => [roundpoly(Array.from({ length: 10 }, (_, i) => polar(BC[0], BC[1] + 0.25, i % 2 ? 1.05 : 2.55, -90 + i * 36)), 0.2)],
 };
 /**
  * Insignia estándar. kind: plus, minus, check, x, alert, info, clock, arrow-up, arrow-down,
  * arrow-right, star (en círculo, abajo a la derecha), lock (candado sin círculo, abajo a la
- * derecha) o dot (punto de aviso, arriba a la derecha). Devuelve { d, knock, fill }.
+ * derecha) o dot (punto de aviso, arriba a la derecha). Devuelve { kind, d, knock, fill }; con
+ * { size: 16 } (o el render a ≤ 18 px, solo) da su versión de pixel: sin anillo, el signo más grande.
  */
-export function badge(kind) {
+export function badge(kind, { size } = {}) {
+  if (size && size <= 18) return badge16(kind);
+  return { kind, ...badge24(kind) };
+}
+
+function badge24(kind) {
   if (kind === 'dot') {
     const d = [circ(18.75, 5.25, 2), circ(18.75, 5.25, 0.7)];
     return { d, knock: d[0], fill: { solid: d } };
   }
   if (kind === 'lock') {
     const d = [sq(13.5, 16.25, 7.5, 5.5, 1.6, { square: ['br'] }), 'M15.1 16.25v-1.4a2.15 2.15 0 0 1 4.3 0v1.4'];
-    return { d, knock: sq(13.5, 12.7, 7.5, 9.05, 2.4, { square: ['br'] }), fill: { solid: d } };
+    return { d, knock: sq(13.5, 12.7, 7.5, 9.05, 2.4, { square: ['br'] }), fill: { solid: [d[0]], wire: [d[1]] } };
   }
   if (!signs[kind]) throw new Error(`Insignia desconocida: ${kind}`);
   const ring = circ(BC[0], BC[1], BR);
   const marks = signs[kind]();
   // Rellena: el círculo sólido y el signo calado
   return { d: [ring, ...marks], knock: ring, fill: { solid: [ring], cut: marks } };
+}
+
+// ── Insignias a 16 px ──
+// A 16 px el anillo de r 4.25 mide 5.7 px y el signo se empasta: como en SF Symbols, la insignia
+// pierde el anillo y queda el signo, más grande y en la cuadrícula de pixel (a 16 px un pixel son
+// 1.5 del lienzo y sus centros caen en 0.75 + 1.5k). El área despejada sigue siendo la del anillo.
+// Diseño de las categorías de la ronda 2 (archivos, comercio), llevado al motor para todo el set.
+const PX = (k) => 0.75 + 1.5 * k;
+const AT = (dx, dy) => [PX(11 + dx), PX(11 + dy)];
+const RING16 = circ(BC[0], BC[1], BR);
+const SIGN16 = {
+  plus: () => [line(AT(0, -2), AT(0, 2)), line(AT(-2, 0), AT(2, 0))],
+  minus: () => [line(AT(-2, 0), AT(2, 0))],
+  check: () => [line(AT(-2, 0), AT(0, 2), AT(3, -1))],
+  x: () => [line(AT(-2, -2), AT(2, 2)), line(AT(2, -2), AT(-2, 2))],
+  alert: () => [line(AT(0, -3), AT(0, 0)), circ(...AT(0, 2), 0.1)],
+  info: () => [line(AT(0, 0), AT(0, 3)), circ(...AT(0, -2), 0.1)],
+  'arrow-up': () => [line(AT(0, 2), AT(0, -2)), line(AT(-2, 0), AT(0, -2), AT(2, 0))],
+  'arrow-down': () => [line(AT(0, -2), AT(0, 2)), line(AT(-2, 0), AT(0, 2), AT(2, 0))],
+  'arrow-right': () => [line(AT(-2, 0), AT(2, 0)), line(AT(0, -2), AT(2, 0), AT(0, 2))],
+  star: () => [roundpoly([AT(0, -3), AT(1, -1), AT(3, -1), AT(1.5, 0.5), AT(2, 3), AT(0, 1.5), AT(-2, 3), AT(-1.5, 0.5), AT(-3, -1), AT(-1, -1)], 0.3)],
+};
+function badge16(kind) {
+  if (kind === 'clock') {
+    const face = circ(BC[0], BC[1], 4.5);
+    const hands = line(AT(0, -2), AT(0, 0), AT(1, 1));
+    return { kind, d: [face, hands], knock: face, fill: { solid: [face], cut: [hands] } };
+  }
+  if (kind === 'dot' || kind === 'lock') return { kind, ...badge24(kind) };
+  if (!SIGN16[kind]) throw new Error(`Insignia desconocida: ${kind}`);
+  const d = SIGN16[kind]();
+  // Rellena: las figuras cerradas (la estrella) van sólidas; los signos de línea siguen siendo línea
+  return { kind, d, knock: `${RING16}${d.join('')}`, ...(kind === 'star' && { fill: { solid: d } }) };
 }

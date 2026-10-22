@@ -9,7 +9,7 @@
 |---|---|
 | `svg/<nombre>.svg` · `svg/fill/<nombre>.svg` | Regular, contorno y relleno |
 | `dist/svg/<light\|regular\|bold>/<outline\|fill>/<nombre>[-circle\|-square\|-slash].svg` | La matriz completa (≈ 24 archivos por ícono, menos los que apaga `variants`) |
-| `dist/icons.json` | Por ícono: categoría, tags, trazos y todos sus datos (`fill`, `small`, `variants`, `mirror`, `levels`, `motion`, `parts`) |
+| `dist/icons.json` | Por ícono: categoría, tags, trazos y todos sus datos (`fill` —también `false`—, `badge`, `small`, `variants`, `mirror`, `levels`, `motion`, `parts`) |
 | `dist/index.js` + `index.d.ts` | `icons`, `categories`, `render`, `WEIGHTS` y `toSvg(nombre, { variant, weight, enclosure, slash })`; `IconName` tipado |
 | `dist/geometry.js` · `dist/variants.js` | El motor, para dibujar cualquier combinación en el navegador |
 | `dist/react.js` + `react.d.ts` | `<Icon name variant weight enclosure slash scale size />`: por omisión mide `1em` y baja `-0.125em` como una letra; `scale` small 0.85 / medium 1 / large 1.25; máscaras con `useId` |
