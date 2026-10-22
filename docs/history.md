@@ -4,6 +4,12 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Outlines checked against their drawing (the base for fonts, Android, and Xcode)
+- **`scripts/outline.mjs`:** every icon, in any variant, as filled shapes, by evaluating `render`'s own SVG with Skia ([build](./build.md#outlines-scriptsoutlinemjs), [decision 51](./decisions.md#phase-2-22-oct-2026)). `canvaskit-wasm@0.41.1` joins as the only dev dependency (owner's OK).
+- **How it got there:** the first results filled holes (contours wound for even-odd), lost a ring (a tick starting where a circle closes), and lost the chip's holes (a line ending on a frame's stroke). Each was fixed in the method, not per icon: contours rewound by depth, pieces joined all at once with fallbacks, and every outline compared to a Skia raster of the SVG.
+- **A real defect found:** `sq` let a corner bigger than its side make the side run backwards; now each corner fits its sides as in Figma ([decision 52](./decisions.md#phase-2-22-oct-2026)). 25 icons change imperceptibly; QA at 0 warnings.
+- **Result:** 9,573 outlines (1,033 icons × 10 variants) in 46 s, all matching. Tests: 37 (one for `sq`, three for outlines).
+
 ## 22 Oct 2026 — Phase 2.5: one module per icon, per-icon components, and sprites
 - **`engine/core.mjs`** (`@flouvia/gota/core`): the API without icon data (`svg`, `pick`, `sprite`, `render`, `autoWeight`…); `@flouvia/gota` is the core plus the set by name, with `iconData(name)`.
 - **One module per icon** (`@flouvia/gota/icons`, `BellIcon`; deep imports `@flouvia/gota/icons/bell`): its data, name, and hand-drawn variants linked, so "the drawn variant wins" holds without the set ([decisions 48–49](./decisions.md#phase-2-22-oct-2026)).

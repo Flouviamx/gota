@@ -26,12 +26,22 @@ function corner(r, s = 0.6) {
 
 /**
  * Rectangle with continuous corners. `square`: square corners, e.g. ['br'] (the signature: a
- * square bottom-right corner, like the drop in the logomark). The radius must not exceed
- * min(w, h) / 3.2 so the smoothing fits.
+ * square bottom-right corner, like the drop in the logomark). Each corner fits its sides: along a
+ * side it may take half of it (all of it next to a square corner); when the smoothed corner
+ * doesn't fit, the smoothing gives way first and then the radius, as in Figma, so a side never
+ * runs backwards (min(w, h) / 3.2 keeps the full smoothing).
  */
 export function sq(x, y, w, h, r, { square = [], smoothing = 0.6 } = {}) {
   const k = {};
-  for (const n of ['tl', 'tr', 'br', 'bl']) k[n] = corner(square.includes(n) ? 0 : r, smoothing);
+  const round = (n) => !square.includes(n);
+  // Room for each corner along its horizontal and vertical side
+  const SIDES = { tl: ['tr', 'bl'], tr: ['tl', 'br'], br: ['bl', 'tr'], bl: ['br', 'tl'] };
+  for (const n of ['tl', 'tr', 'br', 'bl']) {
+    if (!round(n) || r <= 0) continue;
+    const [across, down] = SIDES[n];
+    const room = Math.min(round(across) ? w / 2 : w, round(down) ? h / 2 : h);
+    k[n] = r >= room ? corner(room, 0) : corner(r, Math.min(smoothing, room / r - 1));
+  }
   const p = (n) => (k[n] ? k[n].p : 0);
   const o = [`M${P(x + w - p('tr'), y)}`];
   let t = k.tr;

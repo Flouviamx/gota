@@ -29,9 +29,16 @@ With `--check <category>` it only validates (agents use it while drawing).
 
 **The hand-drawn variant wins:** if `<name>-circle`, `-square`, `-slash`, or `-off` exists as an icon of its own, the build doesn't generate the automatic one with that name, and every API draws the drawn one instead: each icon's data links it (`drawn`, in `icons/<name>.js` and `iconData`) and `pick` follows the link (`svg`, `toSvg`, and every component); `resolveIcon` does the same by name (the MCP server).
 
+## Outlines (`scripts/outline.mjs`)
+Android vector drawables, Xcode symbols, and icon fonts can't hold strokes or masks, so they get each icon as filled shapes: `outline(icon, options)` returns one `d` (nonzero) in the 24 canvas for any of `render`'s options. It needs the dev dependency `canvaskit-wasm` (Skia).
+- **One source of truth:** it doesn't redraw the icon; it evaluates `render`'s own SVG with Skia's path operations. Every fill and stroke is a region (with its width, caps, and joins); later paint covers earlier paint; inside a mask white keeps and black clears; a group is painted on a layer of its own, cut by its mask, and moved by its transform.
+- **Holes turn against their outline:** each contour is rewound by its depth (how many others contain it), so the result fills the same with the nonzero rule (fonts) and the even-odd rule.
+- **Checked, every time:** Skia also rasterizes the SVG as a browser does (masks by luminance) and the outline at 96 px. Scattered edge pixels are antialiasing; a clump of six or more is a loss (a dot is ~28). On a mismatch it joins the pieces another way (all at once, in a chain, in reverse, laid over each other without a union, nudged by thousandths of a unit); if none matches, it throws, naming the icon. A wrong outline never ships. To diagnose one, `attempts(svg)` returns what each way gives and how far it is from the drawing.
+- **Measured** (22 Oct 2026): the 1,033 icons in ten variants (outline, fill, slash, circle, filled square, weights 0.75 and 2.6, 16 px outline and fill, mirrored), 9,573 outlines in 46 s, all matching. The check found one real defect, in the engine: `sq` corners that didn't fit their side made it run backwards (25 icons, [decision 52](./decisions.md#phase-2-22-oct-2026)).
+
 ## What goes into the repository and what doesn't
-- **Committed:** `src/` (the drawings and the languages), `engine/`, `mcp/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`.
-- **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`. Everything is regenerated.
+- **Committed:** `src/` (the drawings and the languages), `engine/`, `mcp/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`.
+- **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`, `node_modules/`. Everything is regenerated.
 
 ## Publishing (once there are 10,000)
 - **npm:** `@flouvia/gota` with `dist/`, `svg/`, `mcp/`, `LICENSE`, `README.md`, and `README.es.md` (`files` in `package.json`). Exports: `.`, `./core`, `./icons`, `./icons/*`, `./react`, `./react/icons`, `./vue`, `./vue/icons`, `./svelte`, `./svelte/base`, `./astro`, `./morph`, `./search`, `./sprite.svg`, `./sprite-fill.svg`, `./svg/*`, `./icons.json`, `./icons.css`, `./motion.css`. `sideEffects` lists only the stylesheets, so bundlers drop every module a page doesn't use. React, Vue, and Svelte are optional peer dependencies; the package itself has none. Binary: `gota-mcp`.

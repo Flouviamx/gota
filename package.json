@@ -67,8 +67,8 @@
   ],
   "peerDependencies": {
     "react": ">=18",
-    "vue": ">=3.5",
-    "svelte": ">=4"
+    "svelte": ">=4",
+    "vue": ">=3.5"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -96,5 +96,8 @@
   },
   "sideEffects": [
     "*.css"
-  ]
+  ],
+  "devDependencies": {
+    "canvaskit-wasm": "^0.41.1"
+  }
 }

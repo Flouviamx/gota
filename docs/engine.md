@@ -8,7 +8,7 @@
 Everything works on the 24 canvas and returns a path's `d` with at most two decimals (`f`).
 | Function | What it draws |
 |---|---|
-| `sq(x, y, w, h, r, { square, smoothing })` | A rectangle with **continuous corners** (Figma's corner smoothing algorithm, 0.6 smoothing). `square: ['br']` = the signature. The radius never exceeds min(w, h) / 3.2 |
+| `sq(x, y, w, h, r, { square, smoothing })` | A rectangle with **continuous corners** (Figma's corner smoothing algorithm, 0.6 smoothing). `square: ['br']` = the signature. Each corner fits its sides: along a side it takes at most half (all of it next to a square corner); when the smoothed corner doesn't fit, the smoothing gives way first and then the radius, as in Figma, so a side never runs backwards (r ≤ min(w, h) / 3.2 keeps the full smoothing) |
 | `circ(cx, cy, r)` · `dot(x, y, r = 0.7)` | A circle; a dot that reads as solid with the 1.5 stroke |
 | `drop(cx, cy, r)` | The drop from the logomark: a circle with a square bottom-right corner |
 | `arc(cx, cy, r, a0, a1)` | An arc in degrees (clockwise if a1 > a0); returns `{ d, end, tangent }` |

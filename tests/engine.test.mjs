@@ -143,3 +143,17 @@ test('a dot far from a diagonal badge is kept', () => {
   const out = render({ d: ['M3 3h8v8H3Z', circ(5, 18, 0.7)], badge: slashBadge }, { id: 'd' });
   assert.match(out, /A0.7 0.7/);
 });
+
+test('sq: a corner fits its sides, so no side runs backwards (smoothing gives way, then radius)', async () => {
+  const { toCubics } = await import('../engine/morph.mjs');
+  const cases = [[0, 0, 6, 5, 1.6, []], [2, 3, 4, 10, 3, []], [1, 1, 10, 3, 2, ['br']], [0, 0, 18, 14, 3.5, ['br']], [0, 0, 3, 3, 5, []]];
+  for (const [x, y, w, h, r, square] of cases) {
+    for (const s of toCubics(sq(x, y, w, h, r, { square })).flatMap((sub) => sub.segs)) {
+      const [x0, y0, , , , , x1, y1] = s;
+      if (Math.abs(x0 - x1) < 1e-6 && Math.abs(x0 - (x + w)) < 1e-6) assert.ok(y1 >= y0 - 1e-6, `right side runs up in ${[w, h, r]}`);
+      if (Math.abs(x0 - x1) < 1e-6 && Math.abs(x0 - x) < 1e-6) assert.ok(y1 <= y0 + 1e-6, `left side runs down in ${[w, h, r]}`);
+      if (Math.abs(y0 - y1) < 1e-6 && Math.abs(y0 - (y + h)) < 1e-6) assert.ok(x1 <= x0 + 1e-6, `bottom runs right in ${[w, h, r]}`);
+      if (Math.abs(y0 - y1) < 1e-6 && Math.abs(y0 - y) < 1e-6) assert.ok(x1 >= x0 - 1e-6, `top runs left in ${[w, h, r]}`);
+    }
+  }
+});
