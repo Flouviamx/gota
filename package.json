@@ -1,0 +1,23 @@
+{
+  "name": "@flouvia/icons",
+  "version": "0.1.0",
+  "description": "El set de íconos de Flouvia: esquinas continuas, un trazo de 1.5 y la gota como firma.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+    "./react": { "types": "./dist/react.d.ts", "default": "./dist/react.js" },
+    "./svg/*": "./svg/*",
+    "./icons.json": "./dist/icons.json"
+  },
+  "files": ["dist", "svg", "LICENSE", "README.md"],
+  "peerDependencies": { "react": ">=18" },
+  "peerDependenciesMeta": { "react": { "optional": true } },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "sheet": "node scripts/sheet.mjs"
+  },
+  "engines": { "node": ">=22" }
+}
