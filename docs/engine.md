@@ -25,7 +25,7 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 | `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with a clearance of paper (a stroke halo of weight + 2 × paper: 4.5 at every weight), `wire` on top with no clearance |
 | `weight` | **Continuous** weight (the named ones: `WEIGHTS` = light 1, regular 1.5, bold 2) |
 | `enclosure: 'circle' \| 'square'` | Enclosure: a circle of r 9 with the drawing at 58 %, or a square with the signature at 60 %. With `fill`, the container is solid and the drawing knocked out (the badge too; the base is not knocked out inside the badge's cutout) |
-| `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with 1.5 of clearance on each side (a stroke mask + 3). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |
+| `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with a clearance of paper on each side (a stroke mask of weight + 2 × paper: 4.5 at every weight). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |
 | `size` | ≤ 18: uses `small` if it exists; otherwise, **pixel snapping** (`snap`) |
 | `rtl` | Flips (`matrix(-1 0 0 1 24 0)`) only if `icon.mirror` |
 | `value` (0–1) | With `levels`, hides the levels it doesn't reach |
@@ -35,7 +35,7 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 Every stroke comes out with `data-part` (from `parts`) and `data-level` (from `levels`, starting at 1). Never `id` on the strokes.
 
 ### Badges
-With `icon.badge`, the base (outline or fill) goes under a mask that clears the `knock`, filled and with a stroke of weight + 3 (exactly 1.5 of clearance on each side of the badge's edge); then the badge is drawn (`data-part="badge"`); in fill, its solid shape with its sign knocked out. The base's dots (circles with r < 1) that touch that area are removed entirely, measured by actual distance to the shape (not by its bounding box). At ≤ 18 px a standard badge (`kind`) switches to its pixel version; a custom one is snapped to the pixel grid. It works with enclosures, fill, slash, weights, and 16 px. A badge with `zoom: [scale, cx, cy]` (set by transitions) is scaled as a whole around that point: its strokes, its fill mask, and its cutout, and the dots it would remove are measured against the scaled cutout.
+With `icon.badge`, the base (outline or fill) goes under a mask that clears the `knock`, filled and with a stroke of weight + 2 × paper (a clearance of paper on each side of the badge's edge: 1.5 at regular, 1.25 at bold); then the badge is drawn (`data-part="badge"`); in fill, its solid shape with its sign knocked out. The base's dots (circles with r < 1) that touch that area are removed entirely, measured by actual distance to the shape (not by its bounding box). At ≤ 18 px a standard badge (`kind`) switches to its pixel version; a custom one is snapped to the pixel grid. It works with enclosures, fill, slash, weights, and 16 px. A badge with `zoom: [scale, cx, cy]` (set by transitions) is scaled as a whole around that point: its strokes, its fill mask, and its cutout, and the dots it would remove are measured against the scaled cutout.
 
 ### Weights (rules that hold from 0.9 to 2.1)
 The stroke is continuous, and these rules keep an icon's structure at every weight ([`DESIGN.md`](../DESIGN.md#every-weight-one-structure)):

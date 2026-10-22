@@ -41,7 +41,7 @@ A triangular or pointed shape may reach 2.4–21.6 to compensate optically.
   from `arc()`).
 - **Badges** (plus, minus, check, x, alert, info, clock, arrows, star, lock, notification dot):
   **always the engine's**, `badge: badge('plus')`, in the `badge` field (not in `d`). The engine
-  clears the base with an exact 1.5 clearance and removes any dots it touches entirely. **Never
+  clears the base with a clearance of paper (1.5 at regular) and removes any dots it touches entirely. **Never
   trim the base by hand**: hand cuts leave round tips in arbitrary places, and fragments. A custom
   piece on top of another (the pointer over a frame) works the same way: `badge: { d, knock, fill }`.
   A **status badge** (any of the engine's, or a custom one on the same circle, r 4.25 at 17.25) is a
@@ -78,8 +78,8 @@ Every icon that has a body carries its filled version in `fill`, made from **its
 ## Automatic variants
 Without redrawing anything, the build derives from each icon: the **light (1)**, **regular
 (1.5)**, and **bold (2)** weights; the **circle** (r 9, the drawing at 58 %), **square** (with
-the drop's corner, at 60 %), and **slash** versions (with 1.5 of clearance on each side of the
-slash); and their combinations with the fill. Turn them off with
+the drop's corner, at 60 %), and **slash** versions (with a clearance of paper on each side of the
+slash: 1.5 at regular); and their combinations with the fill. Turn them off with
 `variants: { circle: false, square: false, slash: false }`:
 - `circle`/`square: false` when the icon already comes enclosed (`*-circle`, `*-square`, a
   clock, a globe) or when it stops reading at 58 %.
@@ -94,8 +94,10 @@ An icon must keep **the same structure at every weight**: the same pieces, the s
 that merges or splits as the stroke widens. The engine takes care of what it can:
 - **Badges:** a status badge is a solid disc, so its sign (cut out, paper) never clogs a ring.
 - **Fill:** what is cut out is paper, and paper thins as the ink grows (1.75 at light, 1.5 at
-  regular, 1.25 at bold). The clearance around a fill's `lines` is paper too: a line and its
-  clearance take 4.5 at every weight, so the ink around them grows with the weight.
+  regular, 1.25 at bold). Clearances are paper too, around a fill's `lines`, a badge, and the
+  slash: a stroke and its clearance take 4.5 at every weight, so the ink around them grows with
+  the weight. A base stroke that ends just inside a clearance at regular can peek out of it at
+  bold: end it well inside or well outside.
 - **Cuts that reach the silhouette** (a stripe, a separator, a meridian) keep the relation to the
   edge they have at regular: they follow the ink's width instead of thinning.
 - **Dots** are solid discs of radius r + w/2 at every weight, in ink and in cuts (the engine draws them; never a stroked circle meant to look solid).

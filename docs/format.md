@@ -32,7 +32,7 @@ Strokes are computed with the engine (local constants and functions are allowed)
 | `mirror` | `true` | directional icons | Flips in right-to-left languages |
 | `levels` | `number[][]` (≥ 2) | quantity icons | Indices into `d` per level, from least to most |
 | `parts` | `{ name: number[] }` | with `motion`, `levels`, or a badge | Named parts (English kebab-case) |
-| `badge` | `badge('plus')` or `{ d, knock, fill? }` | every badge | What goes on top with an automatic knockout: `d` is drawn, `knock` is the area cleared with 1.5 of clearance; it renders as `data-part="badge"` |
+| `badge` | `badge('plus')` or `{ d, knock, fill? }` | every badge | What goes on top with an automatic knockout: `d` is drawn, `knock` is the area cleared with a clearance of paper (1.5 at regular); it renders as `data-part="badge"` |
 | `motion` | `{ effect, parts?, origin?, vector? }` | if it has its own gesture | `effect` ∈ `ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`; `parts` by name, index, or `'badge'` |
 
 ## Languages (`src/i18n/<category>.json`)

@@ -98,7 +98,7 @@ for (const r of result.filter(mine)) {
 }
 // Density: a fixed threshold (loose lines are light by nature: there is no "too light" warning)
 const DENSE = 0.28;
-for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`dense  ${r.cat}/${r.name}: ink ${(r.ink * 100).toFixed(1)}% (max ${DENSE * 100}%); too many parts?`);
+for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`dense  ${r.cat}/${r.name}: ink ${(r.ink * 100).toFixed(2)}% (max ${(DENSE * 100).toFixed(0)}%); too many parts?`);
 // Fragments, near-touches and open fills
 for (const r of result.filter(mine)) {
   if (r.open) issues.push(`open   ${r.cat}/${r.name}: ${r.open} open path(s) in fill.solid (close it with Z or move it to lines/wire)`);

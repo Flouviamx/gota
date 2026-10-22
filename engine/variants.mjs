@@ -185,8 +185,14 @@ export const ENCLOSURES = {
 };
 const shrink = (ds, scale) => ds.map((d) => transform(d, scale, 12 * (1 - scale), 12 * (1 - scale)));
 
-// Slash: from top left to bottom right, with 1.5 of clearance on each side
+// Slash: from top left to bottom right, with a clearance of paper on each side
 const SLASH = 'M3.6 3.6 20.4 20.4';
+
+// Ink against paper: what a fill or an enclosure cuts out (dots, signs, the drawing itself) and the
+// clearance around what sits on top (a fill's lines, a badge, the slash) are paper, and paper thins
+// as the ink grows, like a letter's counters: 1.5 at regular, 1.25 at bold, 1.75 at light (never
+// under 0.75). A stroke and its clearance take 4.5 at every weight
+const paperOf = (weight) => Math.max(0.75, 1.5 + (1.5 - weight) / 2);
 
 // ── Cuts that reach the silhouette ──
 /** Points along a path (absolute), curves and arcs sampled, to measure distances to it. */
@@ -272,7 +278,7 @@ function pointsOf(d) {
 }
 /** Does the dot `dot` touch the area cleared by `knock` (clearance included)? By true distance to the shape. */
 function dotInKnock(dot, knock, weight) {
-  const halo = weight / 2 + 1.5 + weight / 2;
+  const halo = weight / 2 + paperOf(weight) + weight / 2;
   const reach = halo + dot.r + weight / 2;
   const c = asCircle(knock);
   if (c) return Math.hypot(dot.cx - c.cx, dot.cy - c.cy) < c.r + reach;
@@ -409,10 +415,7 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   const k = enc ? enc.scale : 1;
   const fill = style === 'fill' && icon.fill ? icon.fill : null;
   const g = (ds) => (enc ? shrink(ds, k) : ds);
-  // Ink against paper: what a fill or an enclosure cuts out (dots, signs, the drawing itself) is
-  // paper, and paper thins as the ink grows, like a letter's counters: 1.5 at regular, 1.25 at
-  // bold, 1.75 at light (never under 0.75)
-  const paper = Math.max(0.75, 1.5 + (1.5 - weight) / 2);
+  const paper = paperOf(weight);
   // Cut-out dots are discs too: a ring of paper would leave an island of ink in its middle
   const black = (ds, w = weight) =>
     ds
@@ -440,12 +443,12 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   // given as 0–1 is drawn that far from the top left, its cutout with it
   const drawn = slash === true ? 1 : Math.max(0, Math.min(1, Number(slash) || 0));
   const sl = drawn >= 1 ? SLASH : `M3.6 3.6 ${f(3.6 + 16.8 * drawn)} ${f(3.6 + 16.8 * drawn)}`;
-  const slashCut = drawn > 0 ? `<path d="${sl}" stroke="black" stroke-width="${f(weight + 3)}" stroke-linecap="round"/>` : '';
+  const slashCut = drawn > 0 ? `<path d="${sl}" stroke="black" stroke-width="${f(weight + 2 * paper)}" stroke-linecap="round"/>` : '';
   const kn = r.badge ? g([r.badge.knock])[0] : null;
   // A zooming badge (transitions) scales as a whole, its strokes and cutout included
   const z = r.badge?.zoom;
   const zoomed = (html) => (z ? `<g transform="matrix(${f(z[0])} 0 0 ${f(z[0])} ${f(z[1] * (1 - z[0]))} ${f(z[2] * (1 - z[0]))})">${html}</g>` : html);
-  const knockCut = kn ? (badgeMoves ? `<g${wrapAttr}>` : '') + zoomed(`<path d="${kn}" fill="black" stroke="black" stroke-width="${f(weight + 3)}" stroke-linejoin="round"/>`) + (badgeMoves ? '</g>' : '') : '';
+  const knockCut = kn ? (badgeMoves ? `<g${wrapAttr}>` : '') + zoomed(`<path d="${kn}" fill="black" stroke="black" stroke-width="${f(weight + 2 * paper)}" stroke-linejoin="round"/>`) + (badgeMoves ? '</g>' : '') : '';
   if (kn) defs.push(maskOf('k', knockCut));
 
   if (enc && style === 'fill') {
