@@ -1,46 +1,47 @@
 # Roadmap
 
-> Estado al 21 oct 2026. Al avanzar una subfase, se marca aquí y se anota en [Historia](./history.md).
+> Status as of 22 Oct 2026. When a subphase moves forward, mark it here and log it in [History](./history.md).
 
-[← Índice](./README.md)
+[← Index](./README.md)
 
-**Meta de la v1: 10,000 íconos. Nada se publica antes.** Cada ronda de ~1,000 lleva unas 3 horas de agentes.
+**The v1 goal: 10,000 icons. Nothing is published before then.** Each round of ~1,000 takes about 3 hours of agents.
 
-## Fase 0 · Cimientos ✅
-- [x] Motor de geometría: esquinas continuas, keylines, la gota (`engine/geometry.mjs`).
-- [x] Reglas de dibujo (`DESIGN.md`), build, hojas de revisión.
-- [x] Núcleo de 50 íconos (`src/icons/nucleo.mjs`), la vara del set.
+## Phase 0 · Foundations ✅
+- [x] Geometry engine: continuous corners, keylines, the drop (`engine/geometry.mjs`).
+- [x] Drawing rules (`DESIGN.md`), build, review sheets.
+- [x] Core set of 50 icons (`src/icons/nucleo.mjs`), the set's benchmark.
 
-## Fase 1 · Primeros ~1,000 completos (en curso)
-- [x] 1.1 Dibujo base y crítica por categoría — ronda 1 cerrada: 993 íconos (9 categorías + núcleo), 18 agentes, 1 h 47 min; 268 avisos de QA pendientes para la ronda 2.
-- [x] 1.2 Formato extendido: relleno, 16 px (`small` y ajuste al pixel), espejo, niveles, piezas con nombre, movimiento, 10 idiomas, metadatos `data-*`, hoja de variantes, QA automático y pruebas del motor.
-- [x] 1.3 Auditoría de cobertura: ~400 conceptos revisados, +40 íconos comunes → 1,033.
-- [x] 1.4 Diseño por ícono: relleno, 16 px, variantes, espejo, niveles, piezas (`level`/`progress` en los de cantidad), movimiento e insignias del motor (9 agentes).
-- [x] 1.5 Idiomas: los 1,033 con etiquetas en 10 idiomas y palabras de búsqueda por significado (10 agentes).
-- [ ] 1.6 QA completo y arreglos — motor arreglado (insignias en el paquete, relleno encerrado, `wire`, insignias de 16 px, ajuste compartido, regla `abierto`); arreglos por categoría: archivos, comunicación y edición listos; las otras seis en curso.
-- [ ] 1.7 Revisión del dueño sobre una muestra y ajustes de rumbo.
+## Phase 1 · The first ~1,000, complete (in progress)
+- [x] 1.1 Base drawing and critique per category — round 1 closed: 993 icons (9 categories + the core set), 18 agents, 1 h 47 min; 268 QA warnings left for round 2.
+- [x] 1.2 Extended format: fill, 16 px (`small` and pixel snapping), mirroring, levels, named parts, motion, 10 languages, `data-*` metadata, variants sheet, automated QA, and engine tests.
+- [x] 1.3 Coverage audit: ~400 concepts reviewed, +40 common icons → 1,033.
+- [x] 1.4 Per-icon design: fill, 16 px, variants, mirroring, levels, parts (`level`/`progress` on quantity icons), motion, and engine badges (9 agents).
+- [x] 1.5 Languages: all 1,033 with labels in 10 languages and search keywords by meaning (10 agents).
+- [x] 1.6 Full QA and fixes — engine fixed (badges in the package, enclosed fill, `wire`, 16 px badges, shared snapping, the `open` rule); fixes in all 10 categories: QA at zero warnings across the 1,033 icons (commit `b55f2d6`).
+- [ ] 1.7 Owner's review of a sample, and course corrections.
 
-## Fase 2 · Salidas, probadas con esos 1,000
-Va antes de escalar: un cambio de formato cuesta poco con 1,000 y muchísimo con 10,000.
-- [ ] 2.1 Animaciones en web: dibujar, rebotar, reemplazar (genéricas) y los efectos propios (`ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`), niveles con valor.
-- [ ] 2.2 ~50 morphs curados (play ↔ pausa, menú ↔ X, más ↔ X, contorno ↔ relleno…) dibujados con estructura compatible; el resto usa «reemplazar».
-- [ ] 2.3 ~30 íconos con valor en vivo (`--gota-value` con `@property`): descarga, carga, batería, volumen, temporizador, termómetro. Un solo tono.
-- [ ] 2.4 Grosor continuo en los paquetes y `weight="auto"` (iguala el peso del texto); fuente de íconos variable `.woff2` con eje de grosor (contornos compatibles entre maestros).
-- [ ] 2.5 Paquetes React, Vue, Svelte y Astro con importación por ícono; sprite SVG; Android Vector Drawables; símbolos personalizados de Xcode (Ultralight/Regular/Black × 3 tamaños, uso con `Image("nombre")`).
-- [ ] 2.6 Figma: biblioteca o plugin con las variantes como propiedades.
-- [ ] 2.7 Búsqueda por significado (es/en) y servidor MCP remoto en `gota.flouvia.com/mcp`.
-- [ ] 2.8 Mapa de migración desde Lucide, Heroicons y SF Symbols, con codemod.
+## Phase 2 · Outputs, tested on those 1,000 (in progress)
+It comes before scaling: a format change is cheap with 1,000 icons and very expensive with 10,000.
+- [x] 2.1 Web animations: draw, bounce, replace (generic) and the icons' own effects (`ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`), levels with a value: engine (`render(icon, { animate })`), CSS (`engine/motion.css`), React, Vue, and Svelte (`effect`, `play`), checked frame by frame ([engine](./engine.md#motion)).
+- [ ] 2.2 Transitions between icons, done differently ([decision 41](./decisions.md#phase-2-22-oct-2026)): every frame drawn by the engine; badge pairs found on their own (bell ↔ bell-off, file ↔ file-check: 30 in the set today) and the automatic slash on any icon; 20 curated morphs and 7 turns that passed the frame-by-frame sheet (`scripts/transitions-sheet.mjs`); the rest swap in. React, Vue, and Svelte play them (`transition`). **Left:** outline ↔ fill (the fill could rise like liquid, on brand), and more pairs as phase 3 adds icons.
+- [ ] 2.3 ~30 icons with a live value (`--gota-value` with `@property`): download, loading, battery, volume, timer, thermometer. One color.
+- [ ] 2.4 Continuous weight in the packages and `weight="auto"` (matches the text's weight): done in React, Vue, and Svelte (`autoWeight`). **Left:** a variable `.woff2` icon font with a weight axis (outlines compatible across masters), which needs strokes turned into outlines ([decision 46](./decisions.md#phase-2-22-oct-2026)).
+- [ ] 2.5 React, Vue, Svelte, and Astro packages with per-icon imports; SVG sprite; Android Vector Drawables; Xcode custom symbols (Ultralight/Regular/Black × 3 sizes, used with `Image("name")`). Done: the four components, tested in a real browser. **Left:** per-icon imports, the sprite, and Android and Xcode (these two need outlines, like the font).
+- [ ] 2.6 Figma: a library or plugin with the variants as properties.
+- [ ] 2.7 Search by meaning (es/en) and a remote MCP server at `gota.flouvia.com/mcp`. Done: search (`@flouvia/gota/search`) and the local MCP server (`mcp/server.mjs`, `gota-mcp`). **Left:** the remote server, which needs the owner's OK.
+- [ ] 2.8 Migration map from Lucide, Heroicons, and SF Symbols, with a codemod.
 
-## Fase 3 · Escalar a 10,000
-- [ ] 3.1 Taxonomía de los ~9,000 restantes por dominios (salud, educación, comida, deportes, herramientas, ciencia, industria, hogar, animales, IA, transporte…), sin repetir conceptos.
-- [ ] 3.2 Modificadores curados en el motor: insignias con recorte (+, −, ✓, ×, reloj, candado, alerta, estrella), direcciones y niveles.
-- [ ] 3.3 Nueve rondas de ~1,000: cada agente entrega todo de una vez, con crítico, QA y muestra al dueño.
+## Phase 3 · Scaling to 10,000
+- [ ] 3.1 Taxonomy for the remaining ~9,000 by domain (health, education, food, sports, tools, science, industry, home, animals, AI, transportation…), without repeating concepts.
+- [ ] 3.2 Curated modifiers in the engine: badges with knockouts (+, −, ✓, ×, clock, lock, alert, star), directions, and levels.
+- [ ] 3.3 Nine rounds of ~1,000: each agent delivers everything at once, with a critic, QA, and a sample for the owner.
 
-## Fase 4 · Lanzamiento de la v1 (10,000)
-- [ ] 4.1 Página para explorar, buscar y copiar (SVG, JSX, Figma) en `gota.flouvia.com`.
-- [ ] 4.2 GitHub solo con la fuente; GitHub Action que publica el ZIP en cada versión; npm `@flouvia/gota`.
-- [ ] 4.3 Cero avisos de QA, revisión completa del dueño, documentación y anuncio.
+## Phase 4 · Launching v1 (10,000)
+- [ ] 4.1 A site to browse, search, and copy (SVG, JSX, Figma) at `gota.flouvia.com`.
+- [ ] 4.2 GitHub with the source only; a GitHub Action that publishes the ZIP for each version; npm `@flouvia/gota`.
+- [ ] 4.3 Zero QA warnings, the owner's full review, documentation, and announcement.
+- [ ] 4.4 Commercial README in English, plus `README.es.md` in Spanish for Latin America (today's README files are a short placeholder).
 
-## Después de la v1
-- «Gota a pedido»: un ícono que falte se dibuja con el motor, pasa QA y revisión y entra a la librería en minutos.
-- `flouvia-web` deja su set propio (`src/components/icons.ts`) y consume `@flouvia/gota`.
+## After v1
+- "Gota on demand": a missing icon is drawn with the engine, passes QA and review, and joins the library in minutes.
+- `flouvia-web` drops its own set (`src/components/icons.ts`) and consumes `@flouvia/gota`.

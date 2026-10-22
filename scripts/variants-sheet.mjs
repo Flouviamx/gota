@@ -1,9 +1,9 @@
-// Hoja de variantes de una categoría: previews/<categoría>-variantes-<n>.png. Por ícono, a 32 px
-// y a 18 px: contorno, relleno, ligero, negrita, en círculo, en cuadrado, tachado y relleno en
-// círculo; a 16 px de verdad (rasterizado a 1x y ampliado sin suavizar, como en una pantalla
-// normal), contorno y relleno; y, si los tiene, el espejo (derecha a izquierda), los niveles a la
-// mitad y el cuadro extremo de su movimiento. Marca lo que falta (relleno, idiomas).
-// Uso: node scripts/variants-sheet.mjs <categoría|all>
+// Variant sheet for a category: previews/<category>-variantes-<n>.png. Per icon, at 32 px and
+// at 18 px: outline, fill, light, bold, in a circle, in a square, slashed and filled in a circle;
+// at true 16 px (rasterized at 1x and enlarged without smoothing, as on a standard-density
+// screen), outline and fill; and, when it has them, the mirror (right to left), the levels at
+// half and the extreme frame of its motion. Flags what is missing (fill, languages).
+// Usage: node scripts/variants-sheet.mjs <category|all>
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { render, WEIGHTS } from '../engine/variants.mjs';
@@ -12,32 +12,32 @@ import { loadAll } from './load.mjs';
 
 const target = process.argv[2] ?? 'all';
 const { categories, errors } = await loadAll({ only: target === 'all' ? undefined : target });
-if (errors.length) console.warn(`(avisos de validación)\n${errors.map((e) => `  - ${e}`).join('\n')}`);
+if (errors.length) console.warn(`(validation warnings)\n${errors.map((e) => `  - ${e}`).join('\n')}`);
 const list = categories.filter((c) => target === 'all' || c.category === target).flatMap((c) => Object.entries(c.icons));
-if (!list.length) throw new Error(`Sin íconos para «${target}»`);
+if (!list.length) throw new Error(`No icons for "${target}"`);
 
 const FORMS = [
-  ['contorno', {}],
-  ['relleno', { style: 'fill' }],
-  ['ligero', { weight: WEIGHTS.light }],
-  ['negrita', { weight: WEIGHTS.bold }],
-  ['círculo', { enclosure: 'circle' }],
-  ['cuadrado', { enclosure: 'square' }],
-  ['tachado', { slash: true }],
-  ['rell. círculo', { style: 'fill', enclosure: 'circle' }],
+  ['outline', {}],
+  ['fill', { style: 'fill' }],
+  ['light', { weight: WEIGHTS.light }],
+  ['bold', { weight: WEIGHTS.bold }],
+  ['circle', { enclosure: 'circle' }],
+  ['square', { enclosure: 'square' }],
+  ['slash', { slash: true }],
+  ['fill circle', { style: 'fill', enclosure: 'circle' }],
 ];
-// Columnas que solo aplican si el ícono tiene el dato
+// Columns that only apply when the icon has the data
 const EXTRA = [
-  ['espejo', (i) => i.mirror, { rtl: true }],
-  ['niveles ½', (i) => i.levels, { value: 0.5 }],
-  ['movimiento', (i) => i.motion, { frame: true }],
+  ['mirror', (i) => i.mirror, { rtl: true }],
+  ['levels ½', (i) => i.levels, { value: 0.5 }],
+  ['motion', (i) => i.motion, { frame: true }],
 ];
 let n = 0;
 const svg = (icon, o, size) => `<svg width="${size}" height="${size}" viewBox="0 0 24 24">${render(icon, { ...o, id: `v${n++}` })}</svg>`;
-// 16 px reales: el SVG se rasteriza en un canvas de 16 × 16 y se amplía ×3 sin suavizar
+// True 16 px: the SVG is rasterized onto a 16 × 16 canvas and enlarged ×3 without smoothing
 const px = (icon, o) => `<canvas class="px" width="16" height="16" data-svg="${Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" color="white">${render(icon, { ...o, size: 16, id: `p${n++}` })}</svg>`).toString('base64')}"></canvas>`;
 const off = (icon, o) => (o.enclosure && icon.variants?.[o.enclosure] === false) || (o.slash && icon.variants?.slash === false);
-const flags = (name, icon) => `${icon.fill === undefined ? ' <b>sin relleno</b>' : ''}${i18nOf(name) ? '' : ' <b>sin idiomas</b>'}${icon.small ? ' <em>16 propio</em>' : ''}`;
+const flags = (name, icon) => `${icon.fill === undefined ? ' <b>no fill</b>' : ''}${i18nOf(name) ? '' : ' <b>no languages</b>'}${icon.small ? ' <em>custom 16 px</em>' : ''}`;
 const row = ([name, icon]) =>
   `<div class="row"><span class="n">${name}${flags(name, icon)}${icon.motion ? `<br><em>${icon.motion.effect}</em>` : ''}</span>${FORMS.map(([, o]) => `<span class="c">${off(icon, o) ? '<i>—</i>' : `${svg(icon, o, 32)}${svg(icon, o, 18)}`}</span>`).join('')}<span class="c">${px(icon, {})}${px(icon, { style: 'fill' })}</span>${EXTRA.map(([, has, o]) => `<span class="c">${has(icon) ? svg(icon, o, 32) : '<i>—</i>'}</span>`).join('')}</div>`;
 const head = `<div class="row h"><span class="n"></span>${FORMS.map(([t]) => `<span class="c">${t}</span>`).join('')}<span class="c">16 px (1x)</span>${EXTRA.map(([t]) => `<span class="c">${t}</span>`).join('')}</div>`;
@@ -66,5 +66,5 @@ for (let p = 0; p * PER < list.length; p++) {
 }
 await browser.close();
 const missing = list.filter(([, i]) => i.fill === undefined).map(([n]) => n);
-console.log(`✓ ${list.length} íconos → ${out.join(', ')}`);
-if (missing.length) console.log(`· sin relleno (${missing.length}): ${missing.join(', ')}`);
+console.log(`✓ ${list.length} icons → ${out.join(', ')}`);
+if (missing.length) console.log(`· no fill (${missing.length}): ${missing.join(', ')}`);

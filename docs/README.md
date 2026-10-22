@@ -1,21 +1,21 @@
-# Documentación de Gota
+# Gota documentation
 
-Memoria del proyecto, por dominio, para que cada tarea cargue solo lo que necesita.
+The project's memory, by domain, so each task loads only what it needs.
 
-## Matriz de carga
-| Si la tarea toca… | Lee primero | Complementa con |
+## Loading matrix
+| If the task touches… | Read first | Then |
 |---|---|---|
-| Dibujar o corregir íconos | [`DESIGN.md`](../DESIGN.md) | [Formato](./format.md) · [Producción](./production.md) |
-| El formato de un ícono (`fill`, `small`, `parts`, `motion`, `levels`, idiomas…) | [Formato](./format.md) | [`DESIGN.md`](../DESIGN.md) |
-| `engine/` (geometría, variantes, 16 px, espejo, movimiento) | [Motor](./engine.md) | [Calidad](./quality.md) |
-| `scripts/build.mjs`, `dist/`, el paquete o qué se publica | [Build](./build.md) | [Roadmap](./roadmap.md) |
-| Lanzar o planear una ronda de agentes | [Producción](./production.md) | [Calidad](./quality.md) · [Roadmap](./roadmap.md) |
-| QA, pruebas, hojas de revisión | [Calidad](./quality.md) | [Motor](./engine.md) |
-| Proponer algo nuevo | [Decisiones](./decisions.md) | [Roadmap](./roadmap.md) |
+| Drawing or fixing icons | [`DESIGN.md`](../DESIGN.md) | [Format](./format.md) · [Production](./production.md) |
+| An icon's format (`fill`, `small`, `parts`, `motion`, `levels`, languages…) | [Format](./format.md) | [`DESIGN.md`](../DESIGN.md) |
+| `engine/` (geometry, variants, 16 px, mirroring, motion, transitions, search) | [Engine](./engine.md) | [Quality](./quality.md) |
+| `scripts/build.mjs`, `dist/`, the components, the package, the MCP server, or what gets published | [Build](./build.md) | [Roadmap](./roadmap.md) |
+| Launching or planning a round of agents | [Production](./production.md) | [Quality](./quality.md) · [Roadmap](./roadmap.md) |
+| QA, tests, review sheets | [Quality](./quality.md) | [Engine](./engine.md) |
+| Proposing something new | [Decisions](./decisions.md) | [Roadmap](./roadmap.md) |
 
-## Contrato de mantenimiento
-- Una regla vive en un solo documento; los demás enlazan.
-- Un cambio de formato, motor o salidas actualiza su documento en el mismo commit.
-- Toda decisión nueva (aceptada, distinta o descartada) entra a [Decisiones](./decisions.md) con su motivo.
-- Cada sesión que avanza el proyecto agrega su entrada a [Historia](./history.md) y marca el avance en [Roadmap](./roadmap.md).
-- Cada archivo, función, campo o comando que se nombra existe en el código de hoy.
+## Maintenance contract
+- A rule lives in one document only; the others link to it.
+- A change to the format, the engine, or the outputs updates its document in the same commit.
+- Every new decision (accepted, done differently, or rejected) goes into [Decisions](./decisions.md) with its reason.
+- Every session that moves the project forward adds its entry to [History](./history.md) and marks the progress in [Roadmap](./roadmap.md).
+- Every file, function, field, or command mentioned exists in today's code.

@@ -1,44 +1,55 @@
 # Gota
 
-Los íconos de [Flouvia](https://flouvia.com), dibujados a mano, con esquinas continuas, un
-solo trazo de 1.5 y una firma propia — los contenedores llevan la esquina inferior derecha recta,
-como la gota del isotipo de Flouvia, y los globos de conversación son la gota misma.
+**English** · [Español](./README.es.md)
 
-## Uso
+The icons of [Flouvia](https://flouvia.com), drawn by hand, with continuous corners, a single
+1.5 stroke, and a signature of their own — containers have a square bottom-right corner, like
+the drop in Flouvia's logomark, and speech bubbles are the drop itself.
 
-SVG sueltos en `svg/` (24 × 24, `stroke="currentColor"`), o desde el paquete:
+## Usage
+
+Standalone SVGs in `svg/` (24 × 24, `stroke="currentColor"`), or from the package:
 
 ```js
 import { toSvg } from '@flouvia/gota';
 toSvg('mail', { variant: 'fill', weight: 'bold', enclosure: 'circle', slash: true });
 
 import { Icon } from '@flouvia/gota/react';
-<Icon name="mail" />                              // 1em, asentado en la línea como una letra
+<Icon name="mail" />                              // 1em, sitting on the line like a letter
 <Icon name="bell" variant="fill" weight="light" scale="large" />
-<Icon name="mic" slash enclosure="circle" size={20} />
+<Icon name="microphone" slash enclosure="circle" size={20} />
 ```
 
-- **Grosores:** `light`, `regular`, `bold`. **Estilos:** `outline` y `fill`.
-- **Formas:** normal, `enclosure: 'circle' | 'square'` y `slash`.
-- **Junto al texto:** por omisión mide `1em` y baja `-0.125em`, como una letra; `scale`
-  (`small`, `medium`, `large`) lo ajusta. Sin React: `@flouvia/gota/icons.css` y la clase `.fi`.
-- SVG sueltos: `svg/` (regular) y `svg/fill/`; la matriz completa en `dist/svg/<grosor>/<estilo>/`.
+- **Weights:** `light`, `regular`, `bold`. **Styles:** `outline` and `fill`.
+- **Shapes:** plain, `enclosure: 'circle' | 'square'`, and `slash`.
+- **Next to text:** by default it measures `1em` and drops `-0.125em`, like a letter; `scale`
+  (`small`, `medium`, `large`) adjusts it. Without React: `@flouvia/gota/icons.css` and the `.fi` class.
+- **Text weight:** `weight="auto"` matches the stroke to the weight of the surrounding text.
+- **Motion:** `effect="auto"` plays the icon's own gesture (`play`: `hover`, `once`, `loop`);
+  `transition="auto"` animates a change of `name` or `slash`: a badge or a slash draws itself
+  in, menu ↔ close and other curated pairs morph, the rest swap in. Still under reduced motion.
+- **Vue, Svelte, Astro:** `@flouvia/gota/vue` (`GotaIcon`), `/svelte`, and `/astro`, with the same props.
+- **Search by meaning:** `searchIcons('cobrar')` from `@flouvia/gota/search` (Spanish and English).
+- **For AI agents:** an MCP server, `gota-mcp`, to find icons and insert their code.
+- Standalone SVGs: `svg/` (regular) and `svg/fill/`; the full matrix in `dist/svg/<weight>/<style>/`.
 
-## Desarrollo
+## Development
 
 ```bash
-node scripts/build.mjs                 # valida todo y genera svg/ y dist/
-node scripts/build.mjs --check <cat>   # valida una categoría
-node scripts/sheet.mjs <cat|all>       # hoja de revisión en previews/
-node scripts/variants-sheet.mjs <cat>  # hoja de variantes (relleno, grosores, 16 px reales…)
-node scripts/qa.mjs [cat]              # control de calidad automático
-npm test                               # pruebas del motor
+node scripts/build.mjs                 # validates everything and generates svg/ and dist/
+node scripts/build.mjs --check <cat>   # validates one category
+node scripts/sheet.mjs <cat|all>       # review sheet in previews/
+node scripts/variants-sheet.mjs <cat>  # variants sheet (fill, weights, true 16 px…)
+node scripts/transitions-sheet.mjs     # frames of every transition
+node scripts/sheets.mjs                # every sheet, plus previews/index.html
+node scripts/qa.mjs [cat]              # automated quality control
+npm test                               # engine and feature tests
 ```
 
-Cada categoría vive en `src/icons/<categoría>.mjs` y se dibuja con `engine/geometry.mjs`.
-Las reglas de diseño están en [DESIGN.md](./DESIGN.md); la guía del proyecto, en
-[CLAUDE.md](./CLAUDE.md) y [docs/](./docs/README.md).
+Each category lives in `src/icons/<category>.mjs` and is drawn with `engine/geometry.mjs`.
+The design rules are in [DESIGN.md](./DESIGN.md); the project guide, in
+[CLAUDE.md](./CLAUDE.md) and [docs/](./docs/README.md).
 
-## Licencia
+## License
 
 [MIT](./LICENSE) © 2026 Flouvia

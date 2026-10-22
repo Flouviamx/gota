@@ -1,152 +1,156 @@
-# Gota — reglas de diseño
+# Gota — design rules
 
-Un set dibujado de verdad, no una variación de otra librería. Cada ícono se construye con el
-motor (`engine/geometry.mjs`) sobre estas reglas; si una regla estorba a un dibujo, gana la
-regla y se replantea el dibujo. Los 50 de `src/icons/nucleo.mjs` son la vara: todo lo nuevo
-debe sentirse de la misma mano.
+A set that is genuinely drawn, not a variation on another library. Every icon is built with the
+engine (`engine/geometry.mjs`) on top of these rules; if a rule gets in the way of a drawing, the
+rule wins and the drawing is rethought. The 50 icons in `src/icons/nucleo.mjs` are the benchmark:
+everything new must feel like it came from the same hand.
 
-## Lienzo y trazo
-- Lienzo de **24 × 24**. Área viva de 20 (2–22): el *path* nunca sale de 1.75–22.25 (la hoja
-  de revisión lo avisa).
-- **Trazo de 1.5**, centrado, `stroke-linecap` y `stroke-linejoin` **redondos**. Un solo tono:
-  sin rellenos, sin opacidades, sin duotono, sin degradados. Todo es `path` con `stroke`.
-- Coordenadas con dos decimales como máximo; prefiere medidas en cuartos (x.25, x.5, x.75).
+## Canvas and stroke
+- **24 × 24** canvas. A live area of 20 (2–22): the *path* never leaves 1.75–22.25 (the review
+  sheet flags it).
+- **1.5 stroke**, centered, with **round** `stroke-linecap` and `stroke-linejoin`. One color: no
+  fills, no opacity, no duotone, no gradients. Everything is a `path` with a `stroke`.
+- Coordinates with at most two decimals; prefer quarter values (x.25, x.5, x.75).
 
-## Keylines (que todos pesen igual)
-| Forma base | Medida del path |
+## Keylines (so everything carries the same weight)
+| Base shape | Path size |
 |---|---|
-| Círculo | r 9 (centro 12, 12) |
-| Cuadrado | 17.5 × 17.5 (3.25–20.75) |
-| Apaisado | 19 × 14 (2.5–21.5 × 5–19) |
-| Vertical | 14.5 × 18.5 (4.75–19.25 × 2.75–21.25) |
-Una forma triangular o de pico puede tocar 2.4–21.6 para compensar ópticamente.
+| Circle | r 9 (center 12, 12) |
+| Square | 17.5 × 17.5 (3.25–20.75) |
+| Landscape | 19 × 14 (2.5–21.5 × 5–19) |
+| Portrait | 14.5 × 18.5 (4.75–19.25 × 2.75–21.25) |
+A triangular or pointed shape may reach 2.4–21.6 to compensate optically.
 
-## Esquinas
-- **Continuas**: `sq()` (squircle con suavizado 0.6), nunca un rectángulo con arcos circulares.
-  Radio 4 en contenedores grandes (≥ 14 de lado), 3–3.5 en medianos, 2–2.25 en piezas de 7–8.
-- Polígonos (triángulos, flechas gruesas, hexágonos): `roundpoly()` con radios 0.8–2.6.
-- **La firma de Flouvia:** los contenedores (sobre, tarjeta, calendario, documento, carpeta,
-  maletín, bandeja, candado, caja de proyecto, ventanas, pantallas de dispositivo) llevan la
-  esquina **inferior derecha recta**: `sq(..., { square: ['br'] })`, como la gota del isotipo.
-  Los globos de conversación son la gota misma: `drop()`. No se aplica a formas que no son
-  contenedores (círculos, flechas, personas, objetos orgánicos).
+## Corners
+- **Continuous**: `sq()` (a squircle with 0.6 smoothing), never a rectangle with circular arcs.
+  Radius 4 on large containers (≥ 14 per side), 3–3.5 on medium ones, 2–2.25 on pieces of 7–8.
+- Polygons (triangles, thick arrows, hexagons): `roundpoly()` with radii of 0.8–2.6.
+- **The Flouvia signature:** containers (envelope, card, calendar, document, folder, briefcase,
+  tray, lock, project box, windows, device screens) have a **square bottom-right** corner:
+  `sq(..., { square: ['br'] })`, like the drop in the logomark. Speech bubbles are the drop
+  itself: `drop()`. It does not apply to shapes that aren't containers (circles, arrows, people,
+  organic objects).
 
-## Detalle
-- **Puntos**: `dot(x, y)` (r 0.7 → se ven de ~2.9). En grupos densos (días de un calendario),
-  r 0.3. Todos los puntos de un ícono del mismo tamaño.
-- **Separaciones**: dos trazos paralelos a no menos de 3 entre centros (1.5 de aire). Cuando
-  una figura pasa detrás de otra, se corta dejando 1.5 de hueco (recorte), no se encima.
-- **Flechas**: brazos de 6 a 45° en flechas rectas; de 3.4 en flechas de arco (`head()`, con
-  la tangente de `arc()`).
-- **Insignias** (más, menos, check, x, alerta, info, reloj, flechas, estrella, candado, punto de
-  aviso): **siempre las del motor**, `badge: badge('plus')`, en el campo `badge` (no en `d`). El
-  motor despeja la base con un aire exacto de 1.5 y quita enteros los puntos que toca. **Nunca se
-  recorta la base a mano**: los cortes a mano dejan puntas redondas en lugares arbitrarios y
-  fragmentos. Una pieza propia encima de otra (el puntero sobre un cuadro) va igual:
-  `badge: { d, knock, fill }`. A 16 px las insignias estándar cambian solas a su versión de pixel
-  (sin anillo, el signo más grande): no se copian `badge16` en las categorías.
-- **Puntero:** siempre `cursor(punta, escala)` del motor; nunca uno dibujado a mano.
-- **Sin fragmentos ni roces:** ningún trazo abierto de menos de 2; un trazo que termina junto a
-  otro o lo toca o deja 1.5 de aire (3 de centro a centro). El QA los marca (`suelto`, `roza`).
-- Pocas piezas: a 18 px tiene que leerse. Si necesita más de ~6 trazos, simplifica.
-- Nada de texto ni letras dibujadas salvo que la letra sea el concepto (p. ej. `a-letter`).
+## Detail
+- **Dots**: `dot(x, y)` (r 0.7 → they read as ~2.9). In dense groups (the days of a calendar),
+  r 0.3. Every dot in an icon is the same size.
+- **Spacing**: two parallel strokes sit no closer than 3 center to center (1.5 of clearance).
+  When one shape passes behind another, it is cut leaving a 1.5 gap (a knockout), never
+  overlapped.
+- **Arrows**: arms of 6 at 45° on straight arrows; 3.4 on arc arrows (`head()`, with the tangent
+  from `arc()`).
+- **Badges** (plus, minus, check, x, alert, info, clock, arrows, star, lock, notification dot):
+  **always the engine's**, `badge: badge('plus')`, in the `badge` field (not in `d`). The engine
+  clears the base with an exact 1.5 clearance and removes any dots it touches entirely. **Never
+  trim the base by hand**: hand cuts leave round tips in arbitrary places, and fragments. A custom
+  piece on top of another (the pointer over a frame) works the same way: `badge: { d, knock, fill }`.
+  At 16 px the standard badges switch on their own to their pixel version (no ring, a larger
+  sign): don't copy `badge16` into the categories.
+- **Pointer:** always the engine's `cursor(tip, scale)`; never a hand-drawn one.
+- **No fragments or near-misses:** no open stroke shorter than 2; a stroke that ends next to
+  another either touches it or leaves 1.5 of clearance (3 center to center). QA flags them
+  (`loose`, `near`).
+- Few pieces: it has to read at 18 px. If it needs more than ~6 strokes, simplify.
+- No text or drawn letters unless the letter is the concept (e.g. `a-letter`).
 
-## Relleno
-Cada ícono que tiene un cuerpo lleva su versión rellena en `fill`, hecha con **sus mismos trazos**
-(nunca se redibuja la silueta: el relleno y el contorno deben coincidir al pixel):
-- `solid`: las figuras que se rellenan (también conservan su trazo, así la silueta es idéntica).
-- `cut`: los detalles que quedan dentro del relleno y se **calan** al ancho del trazo (renglones de
-  un documento, la solapa del sobre, las manecillas del reloj, el signo de una insignia).
-- `lines`: trazos abiertos que siguen siendo línea y se separan del relleno con **aire de 1.5**
-  (las argollas del calendario, el asa del maletín, la persona de atrás en un grupo).
-- `wire`: trazos abiertos que siguen siendo línea **pegados** al relleno, sin aire (el arco del
-  candado, la aguja de la chincheta, la línea de una ruta, las barras de unos deslizadores).
-- En `solid` **solo van figuras cerradas** (terminan en `Z`): un trazo abierto se rellenaría como
-  una cuña. Si lo que se rellena es un trazo abierto del contorno (la media luna de un badajo, el
-  cuerpo de un cilindro), se pasa cerrado: `${trazo}Z`. El QA lo marca como `abierto`.
-- Insignias sobre un objeto (más, check, x, reloj en la esquina): el círculo de la insignia va en
-  `solid` y su signo en `cut`.
-- Los íconos hechos solo de líneas abiertas (flechas, chevrons, check, más, x, ondas) llevan
-  **`fill: false`**: su versión rellena es el mismo contorno.
-- Ejemplos completos: el bloque `FILL` al final de `src/icons/nucleo.mjs`.
+## Fill
+Every icon that has a body carries its filled version in `fill`, made from **its own strokes**
+(the silhouette is never redrawn: fill and outline must match to the pixel):
+- `solid`: the shapes that get filled (they also keep their stroke, so the silhouette is identical).
+- `cut`: the details that sit inside the fill and are **knocked out** at stroke width (a
+  document's lines, the envelope flap, the clock hands, a badge's sign).
+- `lines`: open strokes that stay lines and are separated from the fill by **1.5 of clearance**
+  (the calendar rings, the briefcase handle, the person at the back of a group).
+- `wire`: open strokes that stay lines, **attached** to the fill with no clearance (the lock's
+  shackle, the pushpin's needle, a route line, the bars of a set of sliders).
+- `solid` takes **only closed shapes** (ending in `Z`): an open stroke would fill as a wedge. If
+  what gets filled is an open stroke from the outline (the crescent of a clapper, the body of a
+  cylinder), pass it closed: `${stroke}Z`. QA flags it as `open`.
+- Badges on an object (plus, check, x, clock in the corner): the badge's circle goes in `solid`
+  and its sign in `cut`.
+- Icons made only of open lines (arrows, chevrons, check, plus, x, waves) take
+  **`fill: false`**: their filled version is the same outline.
+- Full examples: the `FILL` block at the end of `src/icons/nucleo.mjs`.
 
-## Variantes automáticas
-El build saca de cada ícono, sin redibujarlo: los grosores **ligero (1)**, **regular (1.5)** y
-**negrita (2)**; las versiones **en círculo** (r 9, el dibujo al 58 %), **en cuadrado** (con la
-esquina de la gota, al 60 %) y **tachada** (con aire de 1.5 a cada lado del tache); y sus
-combinaciones con el relleno. Se apagan con `variants: { circle: false, square: false, slash: false }`:
-- `circle`/`square: false` cuando el ícono ya viene encerrado (`*-circle`, `*-square`, un reloj,
-  un globo) o cuando reducido al 58 % deja de leerse.
-- `slash: false` en líneas sueltas (flechas, chevrons, check, x, más, puntos) y cuando ya existe
-  una versión `-off` dibujada a mano.
-Revísalas con `node scripts/variants-sheet.mjs <categoría>`.
+## Automatic variants
+Without redrawing anything, the build derives from each icon: the **light (1)**, **regular
+(1.5)**, and **bold (2)** weights; the **circle** (r 9, the drawing at 58 %), **square** (with
+the drop's corner, at 60 %), and **slash** versions (with 1.5 of clearance on each side of the
+slash); and their combinations with the fill. Turn them off with
+`variants: { circle: false, square: false, slash: false }`:
+- `circle`/`square: false` when the icon already comes enclosed (`*-circle`, `*-square`, a
+  clock, a globe) or when it stops reading at 58 %.
+- `slash: false` on standalone lines (arrows, chevrons, check, x, plus, dots) and when a
+  hand-drawn `-off` version already exists.
+Review them with `node scripts/variants-sheet.mjs <category>`.
 
 ## 16 px
-A 16 px el trazo de 1.5 mide 1 px y el build **ajusta al pixel** cada dibujo (los tramos rectos
-caen en el centro del pixel). Si aun así un ícono no se lee (demasiado detalle, piezas que se
-juntan), lleva su propio dibujo simplificado en `small: { d, fill }`, con las mismas reglas y
-**menos piezas**: quita los detalles secundarios, junta lo que se empasta y deja aire de 1.5
-(1 px) como mínimo. Revisa la columna «16 px (1x)» de la hoja de variantes: es lo que ve una
-pantalla normal, pixel por pixel.
+At 16 px the 1.5 stroke measures 1 px, and the build **snaps** every drawing **to the pixel grid**
+(straight segments land on pixel centers). If an icon still doesn't read (too much detail, pieces
+that run together), it gets its own simplified drawing in `small: { d, fill }`, with the same
+rules and **fewer pieces**: drop secondary details, merge what clumps together, and leave at
+least 1.5 (1 px) of clearance. Check the "16 px (1x)" column of the variants sheet: it's what a
+standard display shows, pixel by pixel.
 
-## Espejo (derecha a izquierda)
-`mirror: true` en lo que tiene dirección de lectura: flechas y chevrons laterales, avanzar o
-retroceder, responder, enviar, deshacer o rehacer, listas con sangría, bocinas, lápices, gráficas
-que crecen. **No** se voltean: relojes y lo que gira en el sentido del reloj, check, signos y
-números, logotipos, objetos simétricos ni los que representan algo físico con un lado fijo.
+## Mirroring (right to left)
+`mirror: true` on anything with a reading direction: side arrows and chevrons, forward or back,
+reply, send, undo or redo, indented lists, speakers, pencils, charts that grow. **Not** flipped:
+clocks and anything that turns clockwise, check, signs and numbers, logos, symmetrical objects,
+or anything that depicts a physical object with a fixed side.
 
-## Niveles
-Los íconos que expresan una cantidad (wifi, señal, batería, volumen, intensidad) marcan sus
-niveles: `levels: [[índices de d del primero], [del segundo], …]`, de menos a más. Con un valor de
-0 a 1 se encienden los niveles que alcanza (wifi a la mitad = la mitad de sus arcos).
+## Levels
+Icons that express a quantity (wifi, signal, battery, volume, intensity) mark their levels:
+`levels: [[indices in d of the first], [of the second], …]`, from least to most. Given a value
+from 0 to 1, the levels it reaches light up (wifi at half = half of its arcs).
 
-## Movimiento
-Todos los íconos pueden **dibujarse**, **rebotar** y **reemplazarse** por otro sin datos extra.
-Los que tienen un gesto propio lo declaran en `motion`:
-| `effect` | Qué hace | Ejemplos | Datos |
+## Motion
+Every icon can **draw itself**, **bounce**, and be **replaced** by another with no extra data.
+Icons with a gesture of their own declare it in `motion`:
+| `effect` | What it does | Examples | Data |
 |---|---|---|---|
-| `ring` | oscila desde un pivote, como algo que suena | campana, teléfono | `origin` (el cuelgue) |
-| `wiggle` | se balancea un poco | alerta, llave, lápiz | `origin` |
-| `spin` | gira | actualizar, cargando, engrane, manecillas | `origin`, `parts` |
-| `beat` | late (crece y vuelve) | corazón, rayo | `origin` |
-| `slide` | se desplaza en su dirección | flechas, enviar, salir | `vector` |
-| `float` | flota | nube, globo | `vector` |
-| `bounce` | salta hacia un lado | pin, descarga | `vector` |
-`parts` son las piezas que se mueven, por nombre o por índice de `d` (si no, todo el ícono); `origin` es el pivote en el
-lienzo de 24; `vector` el desplazamiento. El orden de `d` es el **orden de dibujo** (de lo
-principal a los detalles): así se anima al dibujarse. La hoja muestra el cuadro extremo del
-movimiento para revisar piezas y pivote.
+| `ring` | swings from a pivot, like something ringing | bell, phone | `origin` (where it hangs) |
+| `wiggle` | rocks slightly | alert, key, pencil | `origin` |
+| `spin` | rotates | refresh, loading, gear, clock hands | `origin`, `parts` |
+| `beat` | pulses (grows and settles back) | heart, lightning bolt | `origin` |
+| `slide` | moves in its own direction | arrows, send, log out | `vector` |
+| `float` | floats | cloud, balloon | `vector` |
+| `bounce` | hops to one side | pin, download | `vector` |
+`parts` are the pieces that move, by name or by index in `d` (otherwise, the whole icon); `origin`
+is the pivot on the 24 canvas; `vector` is the displacement. The order of `d` is the **drawing
+order** (from the main shape to the details): that's how it animates when it draws itself. The
+sheet shows the extreme frame of the motion to check the pieces and the pivot.
 
-## Piezas con nombre
-Lo que se anima, cambia de estado o es una insignia lleva nombre en `parts: { nombre: [índices
-de d] }`, en kebab-case en inglés y del vocabulario común del set: `body`, `badge`, `mark` (el
-signo de una insignia o alerta), `clapper`, `hands`, `needle`, `lid`, `handle`, `shackle`,
-`screen`, `wave`, `arrow`, `level`… Es obligatorio en todo ícono con `motion`, `levels` o
-insignia; en los demás, cuando haya piezas con sentido propio. En el SVG generado cada trazo
-lleva su `data-part` (y `data-level` si es un nivel), y el `<svg>` de los direccionales lleva
-`data-rtl="mirror"`. Nunca `id`: chocan cuando hay varios íconos en una página.
+## Named parts
+Anything that animates, changes state, or is a badge gets a name in `parts: { name: [indices in
+d] }`, in English kebab-case and from the set's shared vocabulary: `body`, `badge`, `mark` (the
+sign of a badge or alert), `clapper`, `hands`, `needle`, `lid`, `handle`, `shackle`, `screen`,
+`wave`, `arrow`, `level`… Required on every icon with `motion`, `levels`, or a badge; on the
+rest, whenever there are pieces with a meaning of their own. In the generated SVG each stroke
+carries its `data-part` (and `data-level` if it's a level), and the `<svg>` of directional icons
+carries `data-rtl="mirror"`. Never `id`: ids collide when there are several icons on a page.
 
-## Idiomas y búsqueda
-Cada categoría tiene `src/i18n/<categoría>.json`:
-`{ "nombre": { "label": { "es", "en", "pt", "fr", "de", "it", "ja", "zh", "ko", "ar" },
+## Languages and search
+Each category has `src/i18n/<category>.json`:
+`{ "name": { "label": { "es", "en", "pt", "fr", "de", "it", "ja", "zh", "ko", "ar" },
 "keywords": { "es": [≥6], "en": [≥6] } } }`.
-- `label`: la etiqueta de accesibilidad, breve y natural en cada idioma («Campana», «Bell»…),
-  con mayúscula inicial donde el idioma la use.
-- `keywords`: sinónimos y **usos** para buscar por significado: lo que el ícono es y para qué se
-  usa («cobrar» encuentra cartera, factura y terminal). Sin repetir el nombre ni rellenar.
+- `label`: the accessibility label, short and natural in each language ("Campana", "Bell"…),
+  capitalized where the language does so.
+- `keywords`: synonyms and **uses**, to search by meaning: what the icon is and what it's used
+  for ("cobrar" / "charge" finds wallet, invoice, and terminal). Don't repeat the name or pad
+  the list.
 
-## Nombres y tags
-- Nombre en **kebab-case, en inglés**, objeto primero y variante después: `file-plus`,
-  `arrow-up-right`, `bell-off`, `cloud-download`. Únicos en todo el set.
-- `tags`: al menos tres palabras, en español y en inglés, para la búsqueda.
+## Names and tags
+- Names in **English kebab-case**, object first and variant after: `file-plus`,
+  `arrow-up-right`, `bell-off`, `cloud-download`. Unique across the whole set.
+- `tags`: at least three words, in Spanish and English, for search.
 
-## Proceso
-1. Dibuja en lotes de ~20 en `src/icons/<categoría>.mjs` con las funciones del motor.
-2. `node scripts/build.mjs --check <categoría>` (nombres, tags, trazos).
-3. `node scripts/sheet.mjs <categoría>` y **mira cada página** de `previews/`: peso,
-   alineación con las keylines, legibilidad a 18 px, sobre oscuro y sobre claro.
-4. `node scripts/variants-sheet.mjs <categoría>`: relleno, grosores, círculo, cuadrado, tachado,
-   16 px reales, espejo, niveles y movimiento.
-5. `node scripts/qa.mjs <categoría>`: fuera del área, demasiado denso, relleno que cambia la
-   silueta y casi duplicados contra todo el set.
-6. Corrige y repite hasta que cada ícono se vea de la misma mano que el núcleo.
+## Process
+1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.
+2. `node scripts/build.mjs --check <category>` (names, tags, strokes).
+3. `node scripts/sheet.mjs <category>` and **look at every page** in `previews/`: weight,
+   alignment with the keylines, legibility at 18 px, on dark and on light.
+4. `node scripts/variants-sheet.mjs <category>`: fill, weights, circle, square, slash, true
+   16 px, mirror, levels, and motion.
+5. `node scripts/qa.mjs <category>`: outside the area, too dense, fill that changes the
+   silhouette, and near-duplicates against the whole set.
+6. Fix and repeat until every icon looks like it came from the same hand as the core set.

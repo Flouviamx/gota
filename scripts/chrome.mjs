@@ -1,5 +1,5 @@
-// Chrome sin ventana por DevTools Protocol, sin dependencias: las hojas de revisión lo usan para
-// renderizar HTML local a PNG. CHROME manda la ruta del navegador.
+// Headless Chrome over the DevTools Protocol, with no dependencies: the review sheets use it to
+// render local HTML to PNG. The CHROME environment variable sets the browser path.
 import { spawn } from 'node:child_process';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -19,7 +19,7 @@ export async function openChrome() {
       target = (await (await fetch(`http://127.0.0.1:${port}/json`)).json()).find((t) => t.type === 'page');
     } catch {}
   }
-  if (!target) throw new Error(`No abrió Chrome (${CHROME}): define CHROME con su ruta.`);
+  if (!target) throw new Error(`Chrome did not open (${CHROME}): set CHROME to its path.`);
   const ws = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((r) => ws.addEventListener('open', r, { once: true }));
   let id = 0;
@@ -35,7 +35,7 @@ export async function openChrome() {
       ws.send(JSON.stringify({ id: i, method, params }));
     });
   const evaluate = async (expression) => (await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true })).result.result?.value;
-  /** Renderiza un archivo HTML a PNG a todo su alto; devuelve el buffer. */
+  /** Renders an HTML file to PNG at its full height; returns the buffer. */
   const shoot = async (file, width) => {
     await send('Emulation.setDeviceMetricsOverride', { width, height: 400, deviceScaleFactor: 2, mobile: false });
     await send('Page.enable');

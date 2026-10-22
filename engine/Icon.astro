@@ -1,0 +1,48 @@
+---
+// Gota · Astro component (dist/Icon.astro). Renders on the server: zero JavaScript in the page.
+//   <Icon name="bell" />
+//   <Icon name="bell" variant="fill" weight="light" effect="auto" play="hover" />
+// With `effect`, add the motion stylesheet once in your layout: import '@flouvia/gota/motion.css'.
+import { effectOf, icons, render, resolveIcon, WEIGHTS } from './index.js';
+
+interface Props {
+    name: string;
+    variant?: 'outline' | 'fill';
+    weight?: 'light' | 'regular' | 'bold' | number;
+    enclosure?: 'circle' | 'square' | null;
+    slash?: boolean;
+    scale?: 'small' | 'medium' | 'large';
+    size?: number | string;
+    value?: number;
+    rtl?: boolean;
+    effect?: string | null;
+    play?: 'hover' | 'once' | 'loop';
+    class?: string;
+    'aria-label'?: string;
+}
+
+const { name, variant = 'outline', weight = 'regular', enclosure = null, slash = false, scale = 'medium', size, value, rtl = false, effect = null, play = 'hover', class: className, ...rest } = Astro.props;
+const SCALES = { small: 0.85, medium: 1, large: 1.25 };
+const r = resolveIcon(name, { enclosure, slash });
+const icon = icons[r.name];
+const k = SCALES[scale] ?? 1;
+const dim = size ?? `${k}em`;
+const id = `fi${Math.random().toString(36).slice(2, 10)}`;
+const inner = render(icon, { style: variant, weight: WEIGHTS[weight] ?? weight, enclosure: r.enclosure, slash: r.slash, value, rtl, animate: effect, id });
+const classes = [effect ? 'gota' : null, className].filter(Boolean).join(' ') || undefined;
+---
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={dim}
+    height={dim}
+    viewBox="0 0 24 24"
+    aria-hidden={rest['aria-label'] ? undefined : 'true'}
+    class={classes}
+    data-effect={effect ? effectOf(icon, effect) : undefined}
+    data-play={effect ? play : undefined}
+    data-rtl={icon.mirror ? 'mirror' : undefined}
+    style={size === undefined ? `vertical-align:${-0.125 * k}em;flex:none` : undefined}
+    {...rest}
+    set:html={inner}
+/>

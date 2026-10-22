@@ -1,15 +1,15 @@
-// Motor de dibujo de Gota, los íconos de Flouvia. Todo vive en el lienzo de 24 × 24 y devuelve
-// el `d` de un path. Las reglas de uso están en DESIGN.md.
+// Drawing engine for Gota, Flouvia's icons. Everything lives on the 24 × 24 canvas and returns
+// the `d` of a path. The usage rules are in DESIGN.md.
 
-/** Número con dos decimales como máximo, sin ceros de sobra. */
+/** A number with at most two decimals and no trailing zeros. */
 export const f = (n) => {
   const s = (Math.round(n * 100) / 100).toFixed(2).replace(/\.?0+$/, '');
   return s === '-0' || s === '' ? '0' : s;
 };
 const P = (x, y) => `${f(x)} ${f(y)}`;
 
-// Esquina continua (squircle) al estilo Apple: el algoritmo de suavizado de esquinas de Figma
-// con suavizado 0.6. Devuelve las medidas de una esquina de radio r.
+// Apple-style continuous corner (squircle): Figma's corner smoothing algorithm with a smoothing
+// of 0.6. Returns the measurements of a corner of radius r.
 function corner(r, s = 0.6) {
   if (r <= 0) return null;
   const p = (1 + s) * r;
@@ -25,9 +25,9 @@ function corner(r, s = 0.6) {
 }
 
 /**
- * Rectángulo de esquinas continuas. `square`: esquinas rectas, p. ej. ['br'] (la firma: la
- * esquina inferior derecha recta, como la gota del isotipo). El radio no debe pasar de
- * min(w, h) / 3.2 para que el suavizado quepa.
+ * Rectangle with continuous corners. `square`: square corners, e.g. ['br'] (the signature: a
+ * square bottom-right corner, like the drop in the logomark). The radius must not exceed
+ * min(w, h) / 3.2 so the smoothing fits.
  */
 export function sq(x, y, w, h, r, { square = [], smoothing = 0.6 } = {}) {
   const k = {};
@@ -48,20 +48,20 @@ export function sq(x, y, w, h, r, { square = [], smoothing = 0.6 } = {}) {
   return `${o.join('')}Z`;
 }
 
-/** Círculo. */
+/** Circle. */
 export const circ = (cx, cy, r) => `M${P(cx - r, cy)}A${f(r)} ${f(r)} 0 1 0 ${P(cx + r, cy)}A${f(r)} ${f(r)} 0 1 0 ${P(cx - r, cy)}Z`;
 
-/** Punto: un círculo diminuto que con el trazo de 1.5 se ve sólido (diámetro ≈ 2.9). */
+/** Dot: a tiny circle that looks solid with the 1.5 stroke (diameter ≈ 2.9). */
 export const dot = (x, y, r = 0.7) => circ(x, y, r);
 
-/** La gota del isotipo: un círculo con la esquina inferior derecha recta (globos de conversación). */
+/** The logomark's drop: a circle with a square bottom-right corner (speech bubbles). */
 export const drop = (cx, cy, r) =>
   `M${P(cx + r, cy)}V${f(cy + r)}H${f(cx)}A${f(r)} ${f(r)} 0 0 1 ${P(cx - r, cy)}A${f(r)} ${f(r)} 0 0 1 ${P(cx, cy - r)}A${f(r)} ${f(r)} 0 0 1 ${P(cx + r, cy)}Z`;
 
-/** Punto de un círculo a `deg` grados (0 = derecha, 90 = abajo: sentido horario en pantalla). */
+/** Point on a circle at `deg` degrees (0 = right, 90 = down: clockwise on screen). */
 export const polar = (cx, cy, r, deg) => [cx + r * Math.cos((deg * Math.PI) / 180), cy + r * Math.sin((deg * Math.PI) / 180)];
 
-/** Arco de a0 a a1 grados (si a1 > a0 va en sentido horario). Devuelve { d, end, tangent }. */
+/** Arc from a0 to a1 degrees (clockwise if a1 > a0). Returns { d, end, tangent }. */
 export function arc(cx, cy, r, a0, a1) {
   const [x0, y0] = polar(cx, cy, r, a0);
   const [x1, y1] = polar(cx, cy, r, a1);
@@ -73,8 +73,8 @@ export function arc(cx, cy, r, a0, a1) {
 }
 
 /**
- * Punta de flecha en `tip` mirando hacia `dir` (vector). `len` = largo de cada brazo (6 en
- * las flechas rectas, 3.4 en las de arco), `spread` = media apertura en grados (45).
+ * Arrowhead at `tip` pointing along `dir` (a vector). `len` = length of each arm (6 on
+ * straight arrows, 3.4 on arc arrows), `spread` = half the opening angle in degrees (45).
  */
 export function head(tip, dir, len = 6, spread = 45) {
   const n = Math.hypot(dir[0], dir[1]);
@@ -87,7 +87,7 @@ export function head(tip, dir, len = 6, spread = 45) {
   return line(armTo(spread), tip, armTo(-spread));
 }
 
-/** Polígono con esquinas redondeadas (radio por esquina o uno para todas). */
+/** Polygon with rounded corners (one radius per corner, or one for all of them). */
 export function roundpoly(pts, radius) {
   const n = pts.length;
   const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
@@ -119,10 +119,10 @@ export function roundpoly(pts, radius) {
   return `${out.join('')}Z`;
 }
 
-/** Línea abierta por puntos. */
+/** Open polyline through the given points. */
 export const line = (...pts) => `M${pts.map((p) => P(...p)).join('L')}`;
 
-/** Gira un punto `deg` grados alrededor de `c`. */
+/** Rotates a point `deg` degrees around `c`. */
 export function rot(p, c, deg) {
   const a = (deg * Math.PI) / 180;
   const x = p[0] - c[0];
@@ -131,9 +131,9 @@ export function rot(p, c, deg) {
 }
 
 /**
- * Puntero (cursor del mouse): punta arriba a la izquierda, canto izquierdo vertical, diagonal a
- * 45° hasta el ala y la cola saliendo de la base hacia abajo a la derecha. `tip` es la punta y `s`
- * la escala (1 ≈ 11.4 × 19 del lienzo). Todo puntero del set sale de aquí.
+ * Pointer (mouse cursor): tip at the top left, a vertical left edge, a 45° diagonal out to the
+ * wing and the tail leaving the base toward the bottom right. `tip` is the tip and `s` the scale
+ * (1 ≈ 11.4 × 19 of the canvas). Every pointer in the set comes from here.
  */
 export function cursor(tip, s = 1) {
   const L = [0, 16.2];
@@ -143,21 +143,21 @@ export function cursor(tip, s = 1) {
   const ub = [u[0] / lu, u[1] / lu];
   const C = [L[0] + u[0] * 0.46, L[1] + u[1] * 0.46];
   const d = [0.38, 0.925];
-  // La cola conserva al menos 0.8 de aire por dentro aunque el puntero se reduzca
+  // The tail keeps at least 0.8 of inner clearance even when the pointer is scaled down
   const h = Math.max(2.9, 2.3 / s) / 2;
   const N1 = [C[0] - ub[0] * h, C[1] - ub[1] * h];
   const N2 = [C[0] + ub[0] * h, C[1] + ub[1] * h];
   const T1 = [N1[0] + d[0] * 4.8, N1[1] + d[1] * 4.8];
   const T2 = [N2[0] + d[0] * 4.8, N2[1] + d[1] * 4.8];
   const pts = [[0, 0], L, N1, T1, T2, N2, W].map(([x, y]) => [tip[0] + x * s, tip[1] + y * s]);
-  // La punta casi viva (en un ángulo de 45° un radio grande la vuelve roma)
+  // A nearly sharp tip (at a 45° angle a large radius makes it blunt)
   return roundpoly(pts, [0.55, 1, 0.35, 0.8, 0.8, 0.35, 0.9].map((r) => r * s));
 }
 
-// ── Insignias ──
-// Se dibujan una vez, aquí, y van siempre en el mismo lugar: abajo a la derecha (centro 17.25,
-// 17.25, r 4.25) o, el punto de aviso, arriba a la derecha. `knock` es el área que el motor
-// despeja del ícono base con un aire exacto de 1.5 (nunca se recorta la base a mano).
+// ── Badges ──
+// Drawn once, here, and always placed in the same spot: bottom right (center 17.25, 17.25,
+// r 4.25) or, for the notification dot, top right. `knock` is the area the engine clears from
+// the base icon with an exact clearance of 1.5 (the base is never trimmed by hand).
 const BC = [17.25, 17.25];
 const BR = 4.25;
 const signs = {
@@ -174,10 +174,10 @@ const signs = {
   star: () => [roundpoly(Array.from({ length: 10 }, (_, i) => polar(BC[0], BC[1] + 0.25, i % 2 ? 1.05 : 2.55, -90 + i * 36)), 0.2)],
 };
 /**
- * Insignia estándar. kind: plus, minus, check, x, alert, info, clock, arrow-up, arrow-down,
- * arrow-right, star (en círculo, abajo a la derecha), lock (candado sin círculo, abajo a la
- * derecha) o dot (punto de aviso, arriba a la derecha). Devuelve { kind, d, knock, fill }; con
- * { size: 16 } (o el render a ≤ 18 px, solo) da su versión de pixel: sin anillo, el signo más grande.
+ * Standard badge. kind: plus, minus, check, x, alert, info, clock, arrow-up, arrow-down,
+ * arrow-right, star (in a circle, bottom right), lock (a padlock without a circle, bottom right)
+ * or dot (notification dot, top right). Returns { kind, d, knock, fill }; with { size: 16 } (or
+ * automatically when rendering at ≤ 18 px) it returns its pixel version: no ring, a larger sign.
  */
 export function badge(kind, { size } = {}) {
   if (size && size <= 18) return badge16(kind);
@@ -193,18 +193,18 @@ function badge24(kind) {
     const d = [sq(13.5, 16.25, 7.5, 5.5, 1.6, { square: ['br'] }), 'M15.1 16.25v-1.4a2.15 2.15 0 0 1 4.3 0v1.4'];
     return { d, knock: sq(13.5, 12.7, 7.5, 9.05, 2.4, { square: ['br'] }), fill: { solid: [d[0]], wire: [d[1]] } };
   }
-  if (!signs[kind]) throw new Error(`Insignia desconocida: ${kind}`);
+  if (!signs[kind]) throw new Error(`Unknown badge: ${kind}`);
   const ring = circ(BC[0], BC[1], BR);
   const marks = signs[kind]();
-  // Rellena: el círculo sólido y el signo calado
+  // Filled: a solid circle with the sign knocked out
   return { d: [ring, ...marks], knock: ring, fill: { solid: [ring], cut: marks } };
 }
 
-// ── Insignias a 16 px ──
-// A 16 px el anillo de r 4.25 mide 5.7 px y el signo se empasta: como en SF Symbols, la insignia
-// pierde el anillo y queda el signo, más grande y en la cuadrícula de pixel (a 16 px un pixel son
-// 1.5 del lienzo y sus centros caen en 0.75 + 1.5k). El área despejada sigue siendo la del anillo.
-// Diseño de las categorías de la ronda 2 (archivos, comercio), llevado al motor para todo el set.
+// ── Badges at 16 px ──
+// At 16 px the r 4.25 ring measures 5.7 px and the sign clogs up: as in SF Symbols, the badge
+// drops the ring and keeps the sign, larger and on the pixel grid (at 16 px one pixel is 1.5 of
+// the canvas and pixel centers fall on 0.75 + 1.5k). The cleared area is still the ring's.
+// Designed for the round 2 categories (archivos, comercio), then moved into the engine for the whole set.
 const PX = (k) => 0.75 + 1.5 * k;
 const AT = (dx, dy) => [PX(11 + dx), PX(11 + dy)];
 const RING16 = circ(BC[0], BC[1], BR);
@@ -228,13 +228,13 @@ function badge16(kind) {
   }
   if (kind === 'dot') return { kind, ...badge24(kind) };
   if (kind === 'lock') {
-    // El candado de pixel: cuerpo de 4 × 3 pixeles con la firma y arco de 2 pixeles
+    // The pixel padlock: a 4 × 3 pixel body with the signature corner and a 2 pixel shackle
     const body = sq(PX(9), PX(11), 6, 4.5, 1.2, { square: ['br'] });
     const shackle = `M${f(PX(10))} ${f(PX(11))}V${f(PX(10))}A1.5 1.5 0 0 1 ${f(PX(12))} ${f(PX(10))}V${f(PX(11))}`;
     return { kind, d: [body, shackle], knock: sq(13.5, 12.7, 7.5, 9.05, 2.4, { square: ['br'] }), fill: { solid: [body], wire: [shackle] } };
   }
-  if (!SIGN16[kind]) throw new Error(`Insignia desconocida: ${kind}`);
+  if (!SIGN16[kind]) throw new Error(`Unknown badge: ${kind}`);
   const d = SIGN16[kind]();
-  // Rellena: las figuras cerradas (la estrella) van sólidas; los signos de línea siguen siendo línea
+  // Filled: closed shapes (the star) go solid; line signs stay as lines
   return { kind, d, knock: `${RING16}${d.join('')}`, ...(kind === 'star' && { fill: { solid: d } }) };
 }

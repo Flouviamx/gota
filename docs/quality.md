@@ -1,30 +1,34 @@
-# Calidad
+# Quality
 
-> **Fuente de verdad:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `tests/engine.test.mjs`.
+> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`.
 
-[← Índice](./README.md)
+[← Index](./README.md)
 
-## Hojas de revisión (se miran, no se suponen)
-- **`sheet.mjs`** — 40 íconos por página, dibujados con el mismo `render` del paquete (con su insignia): cada uno a 96 px con keylines (círculo r 9, cuadrado 17.5, apaisado 19 × 14, vertical 14.5 × 18.5 y el área de 20), a 24 y 18 px, en pastilla oscura de 36 px y sobre fondo claro. Avisa lo que sale de 1.75–22.25.
-- **`variants-sheet.mjs`** — 30 por página: contorno, relleno, ligero, negrita, círculo, cuadrado, tachado y relleno en círculo (a 32 y 18 px); **16 px reales** (rasterizados a 1x en un canvas y ampliados sin suavizar, como en una pantalla normal); y, si los tiene, espejo, niveles a la mitad y el cuadro extremo de su movimiento. Marca en naranja lo que falta (`sin relleno`, `sin idiomas`) y en azul el efecto o el `16 propio`.
+## Review sheets (look at them, don't assume)
+- **`sheet.mjs`** — 40 icons per page, drawn with the package's own `render` (badge included): each one at 96 px with keylines (circle r 9, square 17.5, landscape 19 × 14, portrait 14.5 × 18.5, and the area of 20), at 24 and 18 px, in a 36 px dark pill, and on a light background. It flags anything that leaves 1.75–22.25.
+- **`variants-sheet.mjs`** — 30 per page: outline, fill, light, bold, circle, square, slash, and fill in a circle (at 32 and 18 px); **true 16 px** (rasterized at 1x on a canvas and enlarged without smoothing, as on a standard display); and, when the icon has them, mirror, levels at half, and the extreme frame of its motion. It marks what's missing in orange (`no fill`, `no languages`) and the effect or a `custom 16 px` drawing in blue.
+- **`transitions-sheet.mjs`** — nine frames of each transition, drawn by the engine: every curated morph and turn, every badge pair (found on its own), and the automatic slash. A pair joins `PAIRS` only if every frame is clean; `--try "a>b c>d"` draws candidates before adding them.
+- **`sheets.mjs`** — regenerates every sheet from scratch: it clears `previews/`, renders each category's drawing and variants sheets and the transitions sheet, and writes `previews/index.html` to browse them all (`npm run sheets`).
 
-## QA automático (`qa.mjs`)
-Renderiza todo el set en Chrome y avisa:
-| Aviso | Regla |
+## Automated QA (`qa.mjs`)
+It renders the whole set in Chrome and warns about:
+| Warning | Rule |
 |---|---|
-| `área` | Algún trazo sale de 1.75–22.25 (medido con `getBBox`) |
-| `denso` | Más de 28 % de tinta a 32 px: probablemente sobran piezas. Umbral fijo (antes era el percentil 98 del set y se movía al crecer el set) |
-| `silueta` | El relleno cambia la caja del dibujo más de 1 px a 32 px |
-| `doble` | Dos íconos casi iguales a 32 px (similitud de coseno ≥ 0.975), salvo los de una misma familia (mismo primer segmento del nombre o uno prefijo del otro) |
-| `suelto` | Un trazo abierto de menos de 2 de largo que no es un punto: un fragmento |
-| `abierto` | Un trazo abierto dentro de `fill.solid` (o del relleno de `small` o de la insignia): se rellenaría como cuña |
-| `roza` | Un trazo termina a entre 0.35 y 2.85 de otro (de centro a centro) sin tocarlo: o toca, o deja 1.5 de aire. No cuenta si esos dos trazos se cruzan o se tocan en otro punto |
-Las líneas sueltas son ligeras por naturaleza: no hay aviso de "muy ligero". Los umbrales se ajustaron sobre el núcleo y la ronda 1 (al principio 0.93 de similitud y aviso de ligeros: demasiado ruido).
+| `area` | A stroke leaves 1.75–22.25 (measured with `getBBox`) |
+| `dense` | More than 28 % ink at 32 px: it probably has too many pieces. A fixed threshold (it used to be the set's 98th percentile, and it shifted as the set grew) |
+| `silhouette` | The fill changes the drawing's box by more than 1 px at 32 px |
+| `double` | Two near-identical icons at 32 px (cosine similarity ≥ 0.975), except those of the same family (same first name segment, or one a prefix of the other) |
+| `loose` | An open stroke shorter than 2 that isn't a dot: a fragment |
+| `open` | An open stroke inside `fill.solid` (or inside the fill of `small` or of the badge): it would fill as a wedge |
+| `near` | A stroke ends between 0.35 and 2.85 from another (center to center) without touching it: either touch, or leave 1.5 of clearance. It doesn't count if those two strokes cross or touch somewhere else |
+Standalone lines are light by nature: there is no "too light" warning. The thresholds were tuned on the core set and round 1 (at first, 0.93 similarity and a warning for light icons: too much noise).
 
-## Pruebas del motor (`npm test`)
-Veintiuna pruebas: redondeo; esquinas continuas y la firma; cierre de `drop`, `circ` y `roundpoly`; largo de las puntas; `transform` (escala, arcos, absolutos); `snap` a centros de pixel; un solo tono y trazo redondo; `data-part`/`data-level` y nunca `id`; niveles con `value`; espejo solo en direccionales y `data-rtl`; máscara del relleno y aire de las líneas; grosor continuo; `snap` sin deformar círculos; insignias (máscara, aire, punto que sale entero, relleno calado); `cursor` cerrado y dentro del lienzo; ajuste compartido (punta con asta); puntos a esquina de pixel; insignias de 16 px sin anillo; relleno encerrado con insignia; `wire`; punto lejos de una insignia diagonal.
+## Tests (`npm test`)
+**Engine** (`tests/engine.test.mjs`), twenty-one tests: rounding; continuous corners and the signature; closing of `drop`, `circ`, and `roundpoly`; arrowhead length; `transform` (scaling, arcs, absolutes); `snap` to pixel centers; one color and round strokes; `data-part`/`data-level` and never `id`; levels with `value`; mirroring only on directional icons and `data-rtl`; the fill mask and the clearance of `lines`; continuous weight; `snap` without distorting circles; badges (mask, clearance, a dot removed entirely, fill knocked out); `cursor` closed and inside the canvas; shared snapping (tip with shaft); dots to a pixel corner; 16 px badges without a ring; enclosed fill with a badge; `wire`; a dot far from a diagonal badge.
 
-## Compuertas
-- Ningún agente termina con `build.mjs --check` en error.
-- Cada ronda cierra con `qa.mjs` completo y la muestra al dueño.
-- **Publicar** exige cero avisos de QA, pruebas en verde y la revisión del dueño de la hoja completa.
+**Phase 2 features** (`tests/features.test.mjs`, they read `dist/`), ten tests: search by meaning in Spanish and English; the ñ, accents, plurals, and empty words; partial matches; a leftover stroke never shrinks to a point; menu lines meet before they cross; how each pair is resolved (turns, badge pairs in any style, curated morphs only in outline); frames drawn by the engine, ending on the icon itself; the slash drawn part of the way and toggled by a component; `autoWeight`; the MCP server end to end.
+
+## Gates
+- No agent finishes with `build.mjs --check` failing.
+- Every round closes with a full `qa.mjs` run and the sample for the owner.
+- **Publishing** requires zero QA warnings, passing tests, and the owner's review of the full sheet.

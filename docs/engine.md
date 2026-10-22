@@ -1,46 +1,87 @@
-# Motor
+# Engine
 
-> **Fuente de verdad:** `engine/geometry.mjs` y `engine/variants.mjs`. Pruebas en `tests/engine.test.mjs`.
+> **Source of truth:** `engine/geometry.mjs`, `engine/variants.mjs`, `engine/morph.mjs`, and `engine/search.mjs`. Tests in `tests/engine.test.mjs` and `tests/features.test.mjs`.
 
-[← Índice](./README.md)
+[← Index](./README.md)
 
-## Geometría (`engine/geometry.mjs`)
-Todo trabaja en el lienzo de 24 y devuelve el `d` de un path con dos decimales como máximo (`f`).
-| Función | Qué dibuja |
+## Geometry (`engine/geometry.mjs`)
+Everything works on the 24 canvas and returns a path's `d` with at most two decimals (`f`).
+| Function | What it draws |
 |---|---|
-| `sq(x, y, w, h, r, { square, smoothing })` | Rectángulo de **esquinas continuas** (algoritmo de suavizado de esquinas de Figma, suavizado 0.6). `square: ['br']` = la firma. El radio no pasa de min(w, h) / 3.2 |
-| `circ(cx, cy, r)` · `dot(x, y, r = 0.7)` | Círculo; punto que con el trazo de 1.5 se ve sólido |
-| `drop(cx, cy, r)` | La gota del isotipo: círculo con la esquina inferior derecha recta |
-| `arc(cx, cy, r, a0, a1)` | Arco en grados (horario si a1 > a0); devuelve `{ d, end, tangent }` |
-| `head(tip, dir, len = 6, spread = 45)` | Punta de flecha (6 en rectas, 3.4 en arcos) |
-| `roundpoly(pts, radius)` | Polígono con esquinas redondeadas (radio por esquina o uno solo) |
-| `polar`, `line`, `rot` | Punto en un círculo, línea por puntos, giro de un punto |
-| `cursor(tip, s)` | El puntero del set: punta casi viva, canto vertical, diagonal a 45°, cola proporcionada (conserva 0.8 de aire por dentro al reducirse). Todo puntero sale de aquí |
-| `badge(kind, { size })` | Insignias estándar `{ kind, d, knock, fill }` (con `size` ≤ 18, su versión de pixel: sin anillo, el signo más grande; el candado, en la cuadrícula del pixel): en círculo abajo a la derecha (centro 17.25, r 4.25) `plus`, `minus`, `check`, `x`, `alert`, `info`, `clock`, `arrow-up`, `arrow-down`, `arrow-right`, `star`; `lock` sin círculo; `dot` (aviso) arriba a la derecha |
+| `sq(x, y, w, h, r, { square, smoothing })` | A rectangle with **continuous corners** (Figma's corner smoothing algorithm, 0.6 smoothing). `square: ['br']` = the signature. The radius never exceeds min(w, h) / 3.2 |
+| `circ(cx, cy, r)` · `dot(x, y, r = 0.7)` | A circle; a dot that reads as solid with the 1.5 stroke |
+| `drop(cx, cy, r)` | The drop from the logomark: a circle with a square bottom-right corner |
+| `arc(cx, cy, r, a0, a1)` | An arc in degrees (clockwise if a1 > a0); returns `{ d, end, tangent }` |
+| `head(tip, dir, len = 6, spread = 45)` | An arrowhead (6 on straight arrows, 3.4 on arcs) |
+| `roundpoly(pts, radius)` | A polygon with rounded corners (one radius per corner, or a single one) |
+| `polar`, `line`, `rot` | A point on a circle, a line through points, a point's rotation |
+| `cursor(tip, s)` | The set's pointer: a nearly sharp tip, a vertical edge, a 45° diagonal, a well-proportioned tail (it keeps 0.8 of clearance inside when scaled down). Every pointer comes from here |
+| `badge(kind, { size })` | Standard badges `{ kind, d, knock, fill }` (with `size` ≤ 18, their pixel version: no ring, a larger sign; the lock, on the pixel grid): in a circle at the bottom right (center 17.25, r 4.25) `plus`, `minus`, `check`, `x`, `alert`, `info`, `clock`, `arrow-up`, `arrow-down`, `arrow-right`, `star`; `lock` without a circle; `dot` (notification) at the top right |
 
-## Variantes (`engine/variants.mjs`)
-`render(icon, opciones)` devuelve el contenido de un `<svg viewBox="0 0 24 24">`; `svgFile(inner, icon)` lo envuelve (y agrega `data-rtl="mirror"` si el ícono es direccional).
-| Opción | Efecto |
+## Variants (`engine/variants.mjs`)
+`render(icon, options)` returns the contents of an `<svg viewBox="0 0 24 24">`; `svgFile(inner, icon)` wraps it (and adds `data-rtl="mirror"` if the icon is directional).
+| Option | Effect |
 |---|---|
-| `style: 'outline' \| 'fill'` | El relleno usa una máscara: `solid` relleno y con trazo (misma silueta), `cut` calado al ancho del trazo, `lines` encima con aire de 1.5 (halo de trazo + 3), `wire` encima sin aire |
-| `weight` | Grosor **continuo** (los nombrados: `WEIGHTS` = light 1, regular 1.5, bold 2) |
-| `enclosure: 'circle' \| 'square'` | Encierro: círculo r 9 con el dibujo al 58 %, o cuadrado con la firma al 60 %. Con `fill`, el contenedor va sólido y el dibujo calado (la insignia también; la base no se cala dentro de su recorte) |
-| `slash` | Tache de (3.6, 3.6) a (20.4, 20.4) con aire de 1.5 a cada lado (máscara de trazo + 3) |
-| `size` | ≤ 18: usa `small` si existe; si no, **ajuste al pixel** (`snap`) |
-| `rtl` | Voltea (`matrix(-1 0 0 1 24 0)`) solo si `icon.mirror` |
-| `value` (0–1) | Con `levels`, oculta los niveles que no alcanza |
-| `frame` | Dibuja el cuadro extremo del `motion` (hojas de revisión) |
-| `id` | Prefijo de las máscaras; único por SVG en la página |
-Cada trazo sale con `data-part` (de `parts`) y `data-level` (de `levels`, desde 1). Nunca `id` en los trazos.
+| `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with 1.5 of clearance (a stroke halo + 3), `wire` on top with no clearance |
+| `weight` | **Continuous** weight (the named ones: `WEIGHTS` = light 1, regular 1.5, bold 2) |
+| `enclosure: 'circle' \| 'square'` | Enclosure: a circle of r 9 with the drawing at 58 %, or a square with the signature at 60 %. With `fill`, the container is solid and the drawing knocked out (the badge too; the base is not knocked out inside the badge's cutout) |
+| `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with 1.5 of clearance on each side (a stroke mask + 3). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |
+| `size` | ≤ 18: uses `small` if it exists; otherwise, **pixel snapping** (`snap`) |
+| `rtl` | Flips (`matrix(-1 0 0 1 24 0)`) only if `icon.mirror` |
+| `value` (0–1) | With `levels`, hides the levels it doesn't reach |
+| `frame` | Draws the extreme frame of the `motion` (review sheets) |
+| `animate` | Prepares the SVG for `engine/motion.css`: the effect from `effectOf()` (`'auto'` = the icon's own gesture, otherwise its levels, otherwise a bounce); the moving pieces go in a `.gota-m` group with their pivot and displacement, and each visible stroke gets `pathLength="1"` and its drawing order. Not applied with an enclosure |
+| `id` | Prefix for the masks; unique per SVG on the page |
+Every stroke comes out with `data-part` (from `parts`) and `data-level` (from `levels`, starting at 1). Never `id` on the strokes.
 
-### Insignias
-Con `icon.badge`, la base (contorno o relleno) va bajo una máscara que despeja el `knock` relleno y con un trazo de grosor + 3 (1.5 de aire exacto a cada lado del borde de la insignia); luego se dibuja la insignia (`data-part="badge"`); en relleno, su figura sólida y su signo calado. Los puntos de la base (círculos de r < 1) que tocan esa área se quitan enteros, medido por distancia real a la figura (no por su caja). A ≤ 18 px una insignia estándar (`kind`) cambia a su versión de pixel; una propia se ajusta al pixel. Funciona con encierros, relleno, tachado, grosores y 16 px.
+### Badges
+With `icon.badge`, the base (outline or fill) goes under a mask that clears the `knock`, filled and with a stroke of weight + 3 (exactly 1.5 of clearance on each side of the badge's edge); then the badge is drawn (`data-part="badge"`); in fill, its solid shape with its sign knocked out. The base's dots (circles with r < 1) that touch that area are removed entirely, measured by actual distance to the shape (not by its bounding box). At ≤ 18 px a standard badge (`kind`) switches to its pixel version; a custom one is snapped to the pixel grid. It works with enclosures, fill, slash, weights, and 16 px. A badge with `zoom: [scale, cx, cy]` (set by transitions) is scaled as a whole around that point: its strokes, its fill mask, and its cutout, and the dots it would remove are measured against the scaled cutout.
 
-### Ajuste al pixel (`snap`, `snapper`)
-El ajuste es **uno por ícono** (`snapper(trazos)`): las coordenadas a mover salen de todos sus trazos y cada trazo se mueve igual, así la punta de una flecha acompaña a su asta. Los puntos van a una esquina de pixel con r 1 (2 × 2 pixeles nítidos). A 16 px el trazo de 1.5 mide 1 px y los centros de pixel caen en 0.75 + 1.5k del lienzo de 24. `snap` pasa el path a absoluto (`transform` sin escala), detecta los tramos rectos horizontales y verticales (tolerancia 0.06; los de largo cero, como el cierre de un círculo, no cuentan) y los mueve al centro de pixel más cercano; cada punto se mueve con su extremo y los controles de una curva con el extremo al que tocan, así las esquinas continuas acompañan.
+### Pixel snapping (`snap`, `snapper`)
+Snapping is **one per icon** (`snapper(strokes)`): the coordinates to move come from all of its strokes, and every stroke moves the same way, so an arrow's head stays with its shaft. Dots go to a pixel corner with r 1 (2 × 2 crisp pixels). At 16 px the 1.5 stroke measures 1 px, and pixel centers fall at 0.75 + 1.5k on the 24 canvas. `snap` converts the path to absolute (`transform` with no scaling), detects straight horizontal and vertical segments (0.06 tolerance; zero-length ones, like a circle's closing segment, don't count), and moves them to the nearest pixel center; each point moves with its endpoint, and a curve's control points move with the endpoint they touch, so continuous corners come along.
 
 ### `transform(d, s, tx, ty)`
-Parser propio de paths (M L H V C S Q T A Z, absolutos y relativos, L implícitos tras M) que devuelve el path en absoluto, escalado y movido; los arcos escalan su radio. Lo usan los encierros y `snap`.
+A custom path parser (M L H V C S Q T A Z, absolute and relative, implicit L after M) that returns the path in absolute coordinates, scaled and translated; arcs scale their radius. Used by the enclosures and by `snap`.
 
-### Movimiento
-`motionTransform(motion)` da la transformación del cuadro extremo: `ring` 18°, `wiggle` 10°, `spin` 90° sobre `origin`; `beat` escala 1.18; `slide`/`float`/`bounce` se desplazan `vector`. La animación real (fase 2) leerá los mismos datos.
+### Motion
+`motionTransform(motion)` gives the transformation for the extreme frame: `ring` 18°, `wiggle` 10°, `spin` 90° around `origin`; `beat` scales 1.18; `slide`/`float`/`bounce` move by `vector`. The animation reads the same data: `render(icon, { animate })` plus `motionAttrs(icon, effect, play)` on the `<svg>` (`class="gota"`, `data-effect`, `data-play`), and the keyframes in `engine/motion.css`:
+- `effectOf(icon, 'auto')`: the icon's own gesture, otherwise its levels, otherwise a bounce;
+- the moving pieces go in a `.gota-m` group with `transform-box: view-box`, their pivot (`transform-origin` in canvas units), and their offset (`--dx`, `--dy`);
+- `draw` and `levels` use `pathLength="1"` with the drawing order (`--i`) and the level (`--l`);
+- `data-play`: `hover` (and focus), `once`, or `loop`; under `prefers-reduced-motion` everything stays still.
+
+## Transitions (`engine/morph.mjs`)
+Every frame of a transition is drawn by `render`, so masks, fill, enclosures, weight, and 16 px apply to each one: no frame approximates the set's rules.
+| Function | What it does |
+|---|---|
+| `transitionOf(from, to, icons, { variant })` | Picks the way. First a curated turn (`{ rotate }`); then two icons with the same base and a different badge (`{ morph: true }`, found on their own, in any style); then a curated morph from `PAIRS` (`{ morph, pairs?, origin? }`, outline only); anything else `{ replace: true }` |
+| `frames(from, to, way, options)` | `t` (0–1, linear) ⇒ the inner SVG, with `render`'s options. With the same base, only the badge moves, for the whole time; a badge that changes leaves first and the new one arrives in the second half |
+| `morpher(from, to, { pairs, origin })` | The base strokes alone: `t` ⇒ array of `d` |
+| `changeOf(icons, before, after, options, transition)` | For components: `{ name, slash }` before and after ⇒ `{ way, frame }`, or `null`. Toggling the automatic slash draws it in, or erases it back to its corner |
+| `playTransition(svg, change, duration = 420)` | Browser only: plays it on an `<svg>` that already shows the final drawing |
+| `toCubics(d)` | A path as subpaths of cubic segments (lines, arcs, and quadratics included) |
+
+**Badges.** A stroke badge (open strokes whose cutout is a stroke too, open or there and back: the slash of `bell-off`, the second check) is drawn along its length, and its cutout follows it as a there-and-back path, so it never fills an area. Any other badge zooms in from the center of its cutout with a slight overshoot (`badge.zoom`): it is born as a sharp miniature, never as a blob.
+
+**Morphs.**
+- Strokes pair by nearness (their ends, an open one read backwards if closer, and their centers), or by the curated `pairs` (indices into each icon's strokes; one stroke may pair twice).
+- Two strokes with the same structure correspond segment by segment (closed ones turned the same way, from the segment where they twist least); otherwise each is cut where the other has a corner, by fraction of length.
+- A straight line into another turns: center, angle (the shortest way), and length. When it both moves and turns, it moves first and turns after: a menu's lines meet in the middle, then cross.
+- A stroke left over is erased along its length and a new one is drawn the same way (`origin: 'middle'`: from its middle), one after another; when both happen, what leaves goes first (0–55 %, then 45–100 %). Never shrunk to a point: a zero-length stroke with round caps reads as a stray dot.
+- The frames are outlines (the fill data belongs to each icon's own strokes), so in `fill` a curated morph swaps in.
+
+**Curated pairs (`PAIRS`).** Only pairs whose every frame is clean on `scripts/transitions-sheet.mjs`, in both directions:
+- morphs: menu ↔ close, minus ↔ plus, lock ↔ lock-open, mail ↔ mail-open, toggle off ↔ on, volume off ↔ low ↔ high, wifi low ↔ medium ↔ full, flashlight ↔ on, expand ↔ collapse (vertical and horizontal), sidebar collapse ↔ expand, align left ↔ center ↔ right, sort ascending ↔ descending, text larger ↔ smaller;
+- turns: plus ↔ close (45°), the four chevrons and the arrows (180°).
+
+Tried and rejected, so they swap in (no clean shape halfway): play ↔ pause, sun ↔ moon, heart ↔ star, folder ↔ folder-open, eye ↔ eye-closed, maximize ↔ minimize, lightbulb ↔ on, signal levels, play-circle ↔ pause-circle, check ↔ check-double.
+
+**Playing.** `playTransition` hides the final drawing the framework already put in the `<svg>`, draws the frames in a layer of its own (mask ids with a `t` suffix, so they don't clash with the hidden ones), and removes it at the end: the nodes a framework manages are never rewritten. A turn or a swap animates the `<svg>` itself (rotation, or scale 0.6 → 1 with a fade). A new change cancels the one in flight. Under reduced motion, the final drawing just stays.
+
+## Search (`engine/search.mjs`)
+`buildIndex(icons, i18n)` indexes each icon by its name, its labels in 10 languages, its keywords (es/en), and its tags. `search(index, query, { limit, category })` scores each query word by the best field it matches: name 10, label 7, keyword 5, tag 3; a whole word counts double, a prefix once, and a substring (words over 3 letters) half.
+- `fold` lowercases and strips accents and punctuation but keeps the ñ (*campaña* is not *campana*).
+- Empty words in Spanish and English are ignored, and plurals count as singulars (*notificaciones* = *notificación*).
+- Icons that match every word come first; if none does ("descargar pdf"), the ones that match the most. A name that is exactly the query wins; shorter names win ties.
+
+`engine/search-api.mjs` (`dist/search.js`) adds `searchIcons(query, options)`, which builds the index on first use from the generated `dist/search-data.js`.

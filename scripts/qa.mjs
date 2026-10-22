@@ -1,16 +1,16 @@
-// Control de calidad automático de todo el set (o de una categoría), en Chrome:
-// - fuera del área viva (path entre 1.75 y 22.25),
-// - densidad: más de 28 % de tinta a 32 px (demasiadas piezas: simplificar); umbral fijo para que el
-//   criterio no se mueva cuando el set crece,
-// - casi duplicados: dos íconos que a 32 px se ven casi iguales (similitud ≥ 0.975), salvo los de
-//   una misma familia (calendar y calendar-plus se parecen a propósito),
-// - relleno que cambia la silueta (el relleno debe ocupar la misma caja que el contorno),
-// - fragmentos: trazos abiertos de menos de 2 de largo que no son un punto,
-// - abierto: un trazo abierto dentro de fill.solid (se rellenaría como cuña): va cerrado (Z), o en
-//   lines/wire si es línea,
-// - casi toca: un trazo que termina a menos del aire mínimo de otro sin tocarlo (entre 0.35 y
-//   2.85 de centro a centro: o toca, o deja 1.5 de aire entre bordes).
-// Uso: node scripts/qa.mjs [categoría]
+// Automated quality control for the whole set (or one category), in Chrome:
+// - area: outside the live area (path between 1.75 and 22.25),
+// - dense: more than 28% ink at 32 px (too many parts: simplify); a fixed threshold so the
+//   criterion does not shift as the set grows,
+// - double: near duplicates, two icons that look almost the same at 32 px (similarity ≥ 0.975),
+//   except those in the same family (calendar and calendar-plus look alike on purpose),
+// - silhouette: a fill that changes the silhouette (the fill must occupy the same box as the outline),
+// - loose: fragments, open paths shorter than 2 that are not a dot,
+// - open: an open path inside fill.solid (it would fill as a wedge): close it (Z), or move it to
+//   lines/wire if it is a line,
+// - near: a path that ends closer than the minimum clearance to another without touching it
+//   (between 0.35 and 2.85 center to center: either touch, or leave 1.5 of clearance between edges).
+// Usage: node scripts/qa.mjs [category]
 import { writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { render } from '../engine/variants.mjs';
@@ -19,7 +19,7 @@ import { loadAll } from './load.mjs';
 
 const only = process.argv[2];
 const { categories, errors } = await loadAll();
-if (errors.length) console.warn(`(avisos de validación: ${errors.length}; corre build --check)`);
+if (errors.length) console.warn(`(validation warnings: ${errors.length}; run build --check)`);
 const all = categories.flatMap((c) => Object.entries(c.icons).map(([name, icon]) => ({ name, cat: c.category, icon })));
 const b64 = (s) => Buffer.from(s).toString('base64');
 const data = all.map(({ name, cat, icon }) => ({
@@ -50,7 +50,7 @@ const result = await browser.evaluate(`(async () => {
     probe.innerHTML = it.box.map((d) => '<path d="' + d + '"/>').join('');
     let x0 = 99, y0 = 99, x1 = -99, y1 = -99;
     for (const p of probe.querySelectorAll('path')) { const b = p.getBBox(); x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height); }
-    // Fragmentos y casi-toques entre los trazos del dibujo base (sin la insignia: su aire lo pone el motor)
+    // Fragments and near-touches between the base drawing's paths (not the badge: the engine sets its clearance)
     probe.innerHTML = it.d.map((d) => '<path d="' + d + '"/>').join('');
     const els = [...probe.querySelectorAll('path')];
     const info = els.map((p, i) => {
@@ -64,7 +64,7 @@ const result = await browser.evaluate(`(async () => {
     });
     const fragments = info.map((x, i) => (!x.closed && !x.dot && x.L < 2 ? i : -1)).filter((i) => i >= 0);
     const near = [];
-    // Dos trazos que se cruzan o se tocan en algún punto están unidos: sus extremos no rozan
+    // Two paths that cross or touch at some point are joined: their endpoints do not count as near
     const touch = (x, y) => x.pts.some(([ax, ay]) => y.pts.some(([bx, by]) => Math.hypot(ax - bx, ay - by) < 0.35));
     info.forEach((x, i) => x.ends.forEach((e) => {
       let m = 99;
@@ -87,23 +87,23 @@ rmSync(file);
 
 const mine = (r) => !only || r.cat === only;
 const issues = [];
-// Área viva
+// Live area
 for (const r of result.filter(mine)) {
   const [x0, y0, x1, y1] = r.bbox;
-  if (x0 < 1.75 || y0 < 1.75 || x1 > 22.25 || y1 > 22.25) issues.push(`área   ${r.cat}/${r.name}: [${r.bbox.map((v) => v.toFixed(2)).join(', ')}]`);
+  if (x0 < 1.75 || y0 < 1.75 || x1 > 22.25 || y1 > 22.25) issues.push(`area   ${r.cat}/${r.name}: [${r.bbox.map((v) => v.toFixed(2)).join(', ')}]`);
 }
-// Densidad: umbral fijo (las líneas sueltas son ligeras por naturaleza: no hay aviso de ligero)
+// Density: a fixed threshold (loose lines are light by nature: there is no "too light" warning)
 const DENSE = 0.28;
-for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`denso  ${r.cat}/${r.name}: tinta ${(r.ink * 100).toFixed(1)}% (máximo ${DENSE * 100}%); ¿sobran piezas?`);
-// Fragmentos, casi-toques y rellenos abiertos
+for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`dense  ${r.cat}/${r.name}: ink ${(r.ink * 100).toFixed(1)}% (max ${DENSE * 100}%); too many parts?`);
+// Fragments, near-touches and open fills
 for (const r of result.filter(mine)) {
-  if (r.open) issues.push(`abierto ${r.cat}/${r.name}: ${r.open} trazo(s) abierto(s) en fill.solid (ciérralo con Z o pásalo a lines/wire)`);
-  if (r.fragments.length) issues.push(`suelto ${r.cat}/${r.name}: trazo(s) ${r.fragments.join(', ')} de menos de 2 de largo`);
-  for (const [i, m] of r.near) issues.push(`roza  ${r.cat}/${r.name}: el trazo ${i} termina a ${m} de otro (o toca o deja 1.5 de aire)`);
+  if (r.open) issues.push(`open   ${r.cat}/${r.name}: ${r.open} open path(s) in fill.solid (close it with Z or move it to lines/wire)`);
+  if (r.fragments.length) issues.push(`loose  ${r.cat}/${r.name}: path(s) ${r.fragments.join(', ')} shorter than 2`);
+  for (const [i, m] of r.near) issues.push(`near   ${r.cat}/${r.name}: path ${i} ends ${m} from another (either touch it or leave 1.5 of clearance)`);
 }
-// Relleno que se sale de la silueta del contorno (más de 1 px a 32)
-for (const r of result.filter(mine)) if (r.silhouette !== null && r.silhouette > 1) issues.push(`silueta ${r.cat}/${r.name}: el relleno cambia la caja ${r.silhouette} px`);
-// Casi duplicados (coseno sobre la tinta a 32 px)
+// Fill that goes beyond the outline's silhouette (more than 1 px at 32)
+for (const r of result.filter(mine)) if (r.silhouette !== null && r.silhouette > 1) issues.push(`silhouette ${r.cat}/${r.name}: the fill changes the box by ${r.silhouette} px`);
+// Near duplicates (cosine similarity of the ink at 32 px)
 const norm = result.map((r) => Math.sqrt(r.a.reduce((s, v) => s + v * v, 0)) || 1);
 for (let i = 0; i < result.length; i++)
   for (let j = i + 1; j < result.length; j++) {
@@ -115,7 +115,7 @@ for (let i = 0; i < result.length; i++)
     const B = result[j].a;
     for (let k = 0; k < 1024; k++) dot += A[k] * B[k];
     const sim = dot / (norm[i] * norm[j]);
-    if (sim >= 0.975) issues.push(`doble  ${result[i].cat}/${result[i].name} ≈ ${result[j].cat}/${result[j].name} (${sim.toFixed(3)})`);
+    if (sim >= 0.975) issues.push(`double ${result[i].cat}/${result[i].name} ≈ ${result[j].cat}/${result[j].name} (${sim.toFixed(3)})`);
   }
-console.log(`QA ${only ?? 'todo el set'}: ${result.filter(mine).length} íconos revisados, ${issues.length} avisos`);
+console.log(`QA ${only ?? 'whole set'}: ${result.filter(mine).length} icons checked, ${issues.length} warnings`);
 if (issues.length) console.log(issues.map((i) => `  - ${i}`).join('\n'));

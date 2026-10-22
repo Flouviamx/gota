@@ -1,54 +1,54 @@
-# Formato de un ícono
+# Icon format
 
-> **Fuente de verdad:** `src/icons/<categoría>.mjs` (dibujo y datos de diseño) y `src/i18n/<categoría>.json` (idiomas). La validación vive en `scripts/load.mjs`; cómo se dibuja cada campo, en [`DESIGN.md`](../DESIGN.md).
+> **Source of truth:** `src/icons/<category>.mjs` (the drawing and design data) and `src/i18n/<category>.json` (languages). Validation lives in `scripts/load.mjs`; how each field is drawn, in [`DESIGN.md`](../DESIGN.md).
 
-[← Índice](./README.md)
+[← Index](./README.md)
 
-## Archivo de categoría
+## Category file
 ```js
 import { arc, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 
 const icons = {
   bell: {
-    tags: ['campana', 'avisos', 'notifications'],          // búsqueda básica (es + en), ≥ 2
-    d: [body, clapper],                                     // trazos en ORDEN DE DIBUJO
-    fill: { solid: [body, clapper] },                       // o false si es solo líneas
-    parts: { body: [0], clapper: [1] },                     // piezas con nombre → data-part
-    motion: { effect: 'ring', origin: [12, 3.25] },         // gesto propio
+    tags: ['campana', 'avisos', 'notifications'],          // basic search (es + en), ≥ 2
+    d: [body, clapper],                                     // strokes in DRAWING ORDER
+    fill: { solid: [body, clapper] },                       // or false if it's only lines
+    parts: { body: [0], clapper: [1] },                     // named parts → data-part
+    motion: { effect: 'ring', origin: [12, 3.25] },         // its own gesture
   },
 };
 export default { category: 'comunicacion', label: 'Comunicación y personas', icons };
 ```
-Los trazos se calculan con el motor (constantes y funciones locales permitidas). `nucleo.mjs` es la referencia: define `icons`, y al final asigna `fill`, `parts`, `motion`, `mirror`, `levels` y `variants` por bloques.
+Strokes are computed with the engine (local constants and functions are allowed). `nucleo.mjs` is the reference: it defines `icons`, and at the end assigns `fill`, `parts`, `motion`, `mirror`, `levels`, and `variants` in blocks.
 
-## Campos
-| Campo | Tipo | Obligatorio | Qué es |
+## Fields
+| Field | Type | Required | What it is |
 |---|---|---|---|
-| `tags` | `string[]` (≥ 2) | sí | Palabras de búsqueda básicas, español e inglés |
-| `d` | `string[]` | sí | Trazos (`d` de cada `path`), en orden de dibujo, lienzo de 24 |
-| `fill` | `{ solid, cut?, lines?, wire? }` o `false` | sí | Versión rellena con los mismos trazos: `solid` solo cerrados, `cut` calado, `lines` encima con aire, `wire` encima pegado; `false` = solo líneas |
-| `small` | `{ d, fill? }` | solo si hace falta | Dibujo propio para ≤ 18 px |
-| `variants` | `{ circle?, square?, slash?: false }` | no | Apaga variantes automáticas que no tienen sentido |
-| `mirror` | `true` | direccionales | Se voltea en idiomas de derecha a izquierda |
-| `levels` | `number[][]` (≥ 2) | íconos de cantidad | Índices de `d` por nivel, de menos a más |
-| `parts` | `{ nombre: number[] }` | con `motion`, `levels` o insignia | Piezas con nombre (kebab-case en inglés) |
-| `badge` | `badge('plus')` o `{ d, knock, fill? }` | toda insignia | Lo que va encima con recorte automático: `d` se dibuja, `knock` es el área que se despeja con 1.5 de aire; sale como `data-part="badge"` |
-| `motion` | `{ effect, parts?, origin?, vector? }` | si tiene gesto propio | `effect` ∈ `ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`; `parts` por nombre, índice o `'badge'` |
+| `tags` | `string[]` (≥ 2) | yes | Basic search words, in Spanish and English |
+| `d` | `string[]` | yes | Strokes (the `d` of each `path`), in drawing order, on the 24 canvas |
+| `fill` | `{ solid, cut?, lines?, wire? }` or `false` | yes | Filled version from the same strokes: `solid` closed shapes only, `cut` knocked out, `lines` on top with clearance, `wire` on top and attached; `false` = lines only |
+| `small` | `{ d, fill? }` | only when needed | Its own drawing for ≤ 18 px |
+| `variants` | `{ circle?, square?, slash?: false }` | no | Turns off automatic variants that make no sense |
+| `mirror` | `true` | directional icons | Flips in right-to-left languages |
+| `levels` | `number[][]` (≥ 2) | quantity icons | Indices into `d` per level, from least to most |
+| `parts` | `{ name: number[] }` | with `motion`, `levels`, or a badge | Named parts (English kebab-case) |
+| `badge` | `badge('plus')` or `{ d, knock, fill? }` | every badge | What goes on top with an automatic knockout: `d` is drawn, `knock` is the area cleared with 1.5 of clearance; it renders as `data-part="badge"` |
+| `motion` | `{ effect, parts?, origin?, vector? }` | if it has its own gesture | `effect` ∈ `ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`; `parts` by name, index, or `'badge'` |
 
-## Idiomas (`src/i18n/<categoría>.json`)
+## Languages (`src/i18n/<category>.json`)
 ```json
 { "bell": { "label": { "es": "Campana", "en": "Bell", "pt": "…", "fr": "…", "de": "…", "it": "…", "ja": "…", "zh": "…", "ko": "…", "ar": "…" },
-            "keywords": { "es": ["≥ 6 sinónimos y usos"], "en": ["≥ 6"] } } }
+            "keywords": { "es": ["≥ 6 synonyms and uses"], "en": ["≥ 6"] } } }
 ```
-Idiomas: `es`, `en`, `pt`, `fr`, `de`, `it`, `ja`, `zh`, `ko`, `ar` (`LANGS` en `scripts/load.mjs`). Cada ícono de la categoría debe tener su entrada y no puede haber entradas huérfanas.
+Languages: `es`, `en`, `pt`, `fr`, `de`, `it`, `ja`, `zh`, `ko`, `ar` (`LANGS` in `scripts/load.mjs`). Every icon in the category must have its entry, and there can be no orphan entries.
 
-## Validación (`scripts/load.mjs`)
-- Nombres en kebab-case, únicos en todo el set (se reporta el choque a las dos categorías).
-- Trazos que empiezan en `M` y solo usan comandos SVG de path.
-- `fill.solid`/`cut`/`lines`/`wire`, `small.d`: listas de trazos válidos.
-- `levels` y `parts`: índices válidos de `d`; `motion.parts`: nombres de `parts`, índices o `'badge'`.
-- `badge`: `d` válido y `knock` (un trazo cerrado).
-- `motion.effect` dentro de `MOTION`; `origin`/`vector` son `[x, y]`.
-- `variants`: solo `circle`/`square`/`slash` en `false`.
-- Idiomas: los 10 `label` y ≥ 6 `keywords` en es y en.
-Un archivo de categoría que no carga se reporta sin tumbar a los demás (útil con agentes en paralelo).
+## Validation (`scripts/load.mjs`)
+- Names in kebab-case, unique across the whole set (a clash is reported to both categories).
+- Strokes that start with `M` and use only SVG path commands.
+- `fill.solid`/`cut`/`lines`/`wire`, `small.d`: lists of valid strokes.
+- `levels` and `parts`: valid indices into `d`; `motion.parts`: names from `parts`, indices, or `'badge'`.
+- `badge`: a valid `d` and a `knock` (a closed stroke).
+- `motion.effect` within `MOTION`; `origin`/`vector` are `[x, y]`.
+- `variants`: only `circle`/`square`/`slash`, set to `false`.
+- Languages: all 10 `label`s and ≥ 6 `keywords` in es and en.
+A category file that fails to load is reported without taking down the others (useful with agents working in parallel).

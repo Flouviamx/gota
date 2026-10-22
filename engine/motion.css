@@ -1,17 +1,17 @@
 /*
- * Gota · movimiento. Lo lee cualquier <svg class="gota" data-effect="…" data-play="…"> que salga de
- * render(icon, { animate }) + motionAttrs(), o el <Icon effect play> de React (que la inyecta solo).
- *   data-play="hover"  se reproduce al pasar el cursor (o al enfocar)
- *   data-play="once"   una vez al aparecer (para repetir: quitar y volver a poner el atributo)
- *   data-play="loop"   en bucle
- * Las piezas que se mueven van en .gota-m con su pivote (transform-origin en unidades del lienzo) y
- * su desplazamiento (--dx, --dy). Con reduced motion, todo queda quieto.
+ * Gota · motion. Read by any <svg class="gota" data-effect="…" data-play="…"> produced by
+ * render(icon, { animate }) + motionAttrs(), or by React's <Icon effect play> (which injects it itself).
+ *   data-play="hover"  plays on hover (or on focus)
+ *   data-play="once"   once when it appears (to replay: remove the attribute and set it again)
+ *   data-play="loop"   in a loop
+ * Moving parts go in .gota-m with their pivot (transform-origin in canvas units) and their
+ * offset (--dx, --dy). With reduced motion, everything stays still.
  */
 .gota .gota-m {
   transform-box: view-box;
 }
 
-/* Cada efecto: su animación, duración y curva */
+/* Each effect: its animation, duration and easing */
 .gota[data-effect='ring'] { --gota-k: gota-ring; --gota-t: 900ms; --gota-e: cubic-bezier(0.36, 0, 0.2, 1); }
 .gota[data-effect='wiggle'] { --gota-k: gota-wiggle; --gota-t: 600ms; --gota-e: cubic-bezier(0.36, 0, 0.2, 1); }
 .gota[data-effect='spin'] { --gota-k: gota-spin; --gota-t: 1000ms; --gota-e: cubic-bezier(0.45, 0, 0.2, 1); }
@@ -21,7 +21,7 @@
 .gota[data-effect='bounce'] { --gota-k: gota-bounce; --gota-t: 650ms; --gota-e: cubic-bezier(0.3, 0, 0.2, 1); }
 .gota[data-effect='spin'][data-play='loop'] { --gota-e: linear; }
 
-/* Disparadores */
+/* Triggers */
 .gota[data-play='hover']:is(:hover, :focus-visible) .gota-m,
 .gota[data-play='once'] .gota-m,
 .gota[data-play='loop'] .gota-m {
@@ -29,7 +29,7 @@
 }
 .gota[data-play='loop'] { --gota-n: infinite; }
 
-/* Dibujarse: cada trazo visible (pathLength=1) en su orden de dibujo */
+/* Draw: each visible path (pathLength=1) in its drawing order */
 .gota[data-effect='draw'] path[pathLength] { stroke-dasharray: 1 1; }
 .gota[data-effect='draw'][data-play='hover']:is(:hover, :focus-visible) path[pathLength],
 .gota[data-effect='draw'][data-play='once'] path[pathLength],
@@ -38,7 +38,7 @@
   animation-delay: calc(var(--i, 0) * 70ms);
 }
 
-/* Niveles: se encienden uno tras otro, como el wifi al conectarse */
+/* Levels: they light up one after another, like wifi connecting */
 .gota[data-effect='levels'] path[style*='--l'] { stroke-dasharray: 1 1; }
 .gota[data-effect='levels'][data-play='hover']:is(:hover, :focus-visible) path[style*='--l'],
 .gota[data-effect='levels'][data-play='once'] path[style*='--l'],
@@ -89,7 +89,7 @@
   to { stroke-dashoffset: 0; }
 }
 
-/* Reemplazar un ícono por otro (React lo aplica al cambiar `name` con transition="replace") */
+/* Replacing one icon with another (React applies it when `name` changes with transition="replace") */
 .gota-in { animation: gota-in 320ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both; transform-origin: center; }
 @keyframes gota-in {
   from { transform: scale(0.6); opacity: 0; }

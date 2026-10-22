@@ -1,7 +1,7 @@
-// Hoja de revisión de una categoría (o de todas): previews/<categoría>-<n>.png, 40 íconos por
-// página, cada uno a 96 px con sus keylines, a 24 px, a 18 px y dentro de una pastilla de 36 px.
-// También avisa de los íconos que se salen del área viva (trazo fuera de 1.75–22.25).
-// Uso: node scripts/sheet.mjs <categoría|all>
+// Review sheet for a category (or all of them): previews/<category>-<n>.png, 40 icons per page,
+// each at 96 px with its keylines, at 24 px, at 18 px and inside a 36 px pill.
+// It also flags icons that leave the live area (a path outside 1.75–22.25).
+// Usage: node scripts/sheet.mjs <category|all>
 import { spawn } from 'node:child_process';
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -11,12 +11,12 @@ import { loadAll } from './load.mjs';
 
 const target = process.argv[2] ?? 'all';
 const { categories, errors } = await loadAll({ only: target === 'all' ? undefined : target });
-if (errors.length) console.warn(`(avisos de validación)\n${errors.map((e) => `  - ${e}`).join('\n')}`);
+if (errors.length) console.warn(`(validation warnings)\n${errors.map((e) => `  - ${e}`).join('\n')}`);
 const list = categories.filter((c) => target === 'all' || c.category === target).flatMap((c) => Object.entries(c.icons));
-if (!list.length) throw new Error(`Sin íconos para «${target}»`);
+if (!list.length) throw new Error(`No icons for "${target}"`);
 
 const KEYS = '<g stroke="#ff375f" stroke-opacity=".4" stroke-width=".08"><circle cx="12" cy="12" r="9"/><rect x="3.25" y="3.25" width="17.5" height="17.5"/><rect x="2.5" y="5" width="19" height="14"/><rect x="4.75" y="2.75" width="14.5" height="18.5"/><rect x="2" y="2" width="20" height="20" stroke-dasharray=".3 .3"/></g>';
-// El dibujo completo (con su insignia), con el mismo render que el paquete
+// The full drawing (with its badge), using the same render as the package
 let n = 0;
 const svg = (icon, size, sw, keys = '') => `<svg data-i width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${keys}${render(icon, { weight: sw, id: `s${n++}` })}</svg>`;
 const page = (items) => `<!doctype html><meta charset="utf-8"><style>
@@ -78,5 +78,5 @@ ws.close();
 chrome.kill();
 await sleep(300);
 rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 300 });
-console.log(`✓ ${list.length} íconos → ${out.join(', ')}`);
-if (outside.length) console.log(`⚠ fuera del área viva (path entre 1.75 y 22.25):\n${outside.map((o) => `  - ${o}`).join('\n')}`);
+console.log(`✓ ${list.length} icons → ${out.join(', ')}`);
+if (outside.length) console.log(`⚠ outside the live area (path between 1.75 and 22.25):\n${outside.map((o) => `  - ${o}`).join('\n')}`);

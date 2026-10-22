@@ -1,59 +1,70 @@
-# Gota — guía operativa
+# Gota — operating guide
 
-`CLAUDE.md` es el router del repositorio: qué es Gota, reglas que no se negocian, comandos, estructura y a qué documento ir antes de editar. El detalle vive en [`docs/`](./docs/README.md) y en [`DESIGN.md`](./DESIGN.md) (las reglas de dibujo); no se copia en otro lado.
+`CLAUDE.md` is the repository's router: what Gota is, the non-negotiable rules, commands, structure, and which document to read before editing. The details live in [`docs/`](./docs/README.md) and in [`DESIGN.md`](./DESIGN.md) (the drawing rules); they are not copied anywhere else.
 
-## Qué es
-Gota es la librería de íconos de Flouvia (`@flouvia/gota`, licencia MIT): dibujada a mano con un motor de geometría propio, esquinas continuas, un trazo de 1.5 en un solo tono y una firma — los contenedores llevan la esquina inferior derecha recta, como la gota del isotipo de Flouvia, y los globos de conversación son la gota misma. Nació el 21 oct 2026 a partir del set de `flouvia-web` ([historia](./docs/history.md)).
+## What it is
+Gota is Flouvia's icon library (`@flouvia/gota`, MIT license): drawn by hand with its own geometry engine, with continuous corners, a single-color 1.5 stroke, and a signature — containers have a square bottom-right corner, like the drop in Flouvia's logomark, and speech bubbles are the drop itself (*gota* is Spanish for "drop"). It was born on 21 Oct 2026 from the `flouvia-web` set ([history](./docs/history.md)).
 
-**Meta de la v1: 10,000 íconos, y no se publica nada antes** ([plan por fases](./docs/roadmap.md)). La página pública vivirá en `gota.flouvia.com`.
+**The v1 goal: 10,000 icons, and nothing is published before then** ([phased plan](./docs/roadmap.md)). The public site will live at `gota.flouvia.com`.
 
-## Inicio obligatorio
-1. `git status --short`: conserva trabajo ajeno (agentes o sesiones en paralelo pueden estar editando `src/icons/`).
-2. Lee [`docs/README.md`](./docs/README.md) y abre los documentos que su matriz pide para la tarea; para dibujar, siempre [`DESIGN.md`](./DESIGN.md) y el núcleo (`src/icons/nucleo.mjs` y sus hojas).
-3. Revisa el estado en [`docs/roadmap.md`](./docs/roadmap.md) y las decisiones ya tomadas en [`docs/decisions.md`](./docs/decisions.md) antes de proponer algo: lo descartado no se vuelve a discutir sin un motivo nuevo.
+## Required first steps
+1. `git status --short`: preserve other people's work (agents or parallel sessions may be editing `src/icons/`).
+2. Read [`docs/README.md`](./docs/README.md) and open the documents its matrix calls for; to draw, always [`DESIGN.md`](./DESIGN.md) and the core set (`src/icons/nucleo.mjs` and its sheets).
+3. Check the status in [`docs/roadmap.md`](./docs/roadmap.md) and the decisions already made in [`docs/decisions.md`](./docs/decisions.md) before proposing anything: a rejected idea is not reopened without a new reason.
 
-Al cerrar: el trabajo queda en commits locales y se anota en [`docs/history.md`](./docs/history.md). Aún no hay remoto: crear el repo en GitHub y publicar en npm requiere el OK del dueño.
+When you finish: the work goes into local commits and gets an entry in [`docs/history.md`](./docs/history.md). There is no remote yet: creating the GitHub repo and publishing to npm require the owner's OK.
 
-## Comandos
+## Commands
 ```bash
-node scripts/build.mjs                    # valida todo y genera svg/, svg/fill/ y dist/ (la matriz completa)
-node scripts/build.mjs --check <cat>      # valida una categoría (no escribe)
-node scripts/sheet.mjs <cat|all>          # hoja de dibujo: 96 px con keylines, 24, 18, pastilla y fondo claro
-node scripts/variants-sheet.mjs <cat|all> # hoja de variantes: relleno, grosores, círculo, cuadrado, tachado, 16 px reales, espejo, niveles, movimiento
-node scripts/qa.mjs [cat]                 # QA automático: área, densidad, silueta del relleno, casi duplicados
-npm test                                  # pruebas del motor (node:test)
+node scripts/build.mjs                    # validates everything and generates svg/, svg/fill/ and dist/ (the full matrix)
+node scripts/build.mjs --check <cat>      # validates one category (writes nothing)
+node scripts/sheet.mjs <cat|all>          # drawing sheet: 96 px with keylines, 24, 18, pill and light background
+node scripts/variants-sheet.mjs <cat|all> # variants sheet: fill, weights, circle, square, slash, true 16 px, mirror, levels, motion
+node scripts/transitions-sheet.mjs        # nine frames of every transition (--try "a>b" for candidates)
+node scripts/sheets.mjs                   # regenerates every sheet from scratch and writes previews/index.html
+node scripts/qa.mjs [cat]                 # automated QA: area, density, fill silhouette, near-duplicates
+npm test                                  # engine and feature tests (node:test; features read dist/)
+node mcp/server.mjs                       # the MCP server over stdio (after the build)
 ```
-Node ≥ 22, sin dependencias de npm: Chrome del sistema renderiza las hojas (`CHROME` para otra ruta).
+Node ≥ 22, no npm dependencies: the system's Chrome renders the sheets (`CHROME` for a different path).
 
-## Reglas que no se negocian
-- **Calidad nivel Apple, genuinamente diseñada:** nada copiado de Lucide, Feather, Heroicons, Tabler, Phosphor ni SF Symbols; cada metáfora se construye con el motor.
-- **Un solo tono:** sin opacidades, duotono, degradados ni cambios de color en ninguna variante.
-- **La firma** (esquina inferior derecha recta en contenedores, `drop()` en globos) y las keylines de [`DESIGN.md`](./DESIGN.md) en todo ícono.
-- **Datos, no archivos:** cada ícono es una definición en `src/icons/<categoría>.mjs`; todo SVG, paquete y hoja se genera. `svg/`, `dist/` y `previews/` nunca van al repo.
-- **Sin basura:** nada de íconos de prueba, archivos temporales ni scripts de un solo uso en el repo.
-- **Nada se publica antes de los 10,000**, y para publicar: cero avisos de QA y revisión del dueño.
-- Nombres de íconos en kebab-case en inglés; copy, comentarios y docs en español.
+## Non-negotiable rules
+- **Apple-level quality, genuinely designed:** nothing copied from Lucide, Feather, Heroicons, Tabler, Phosphor, or SF Symbols; every metaphor is built with the engine.
+- **One color:** no opacity, duotone, gradients, or color changes in any variant.
+- **The signature** (square bottom-right corner on containers, `drop()` for bubbles) and the keylines from [`DESIGN.md`](./DESIGN.md) on every icon.
+- **Data, not files:** each icon is a definition in `src/icons/<category>.mjs`; every SVG, package, and sheet is generated. `svg/`, `dist/`, and `previews/` never go into the repo.
+- **No clutter:** no test icons, temporary files, or one-off scripts in the repo.
+- **Nothing is published before 10,000**, and publishing requires zero QA warnings and the owner's review.
+- Icon names in English kebab-case.
+- All repository text is in English (docs, comments, scripts, commit messages); icon labels and search keywords stay multilingual (src/i18n, tags). The owner is addressed in Spanish in conversation.
 
-## Estructura
+## Structure
 ```text
-engine/geometry.mjs   Primitivas de dibujo: sq (squircle), circ, dot, drop, arc, polar, head, roundpoly, line, rot.
-engine/variants.mjs   Variantes sin redibujar: render, snap (16 px), transform, encierros, tachado, espejo, niveles, movimiento.
-src/icons/*.mjs       Una categoría por archivo: { category, label, icons: { nombre: definición } }. Fuente de verdad.
-src/i18n/*.json       Etiquetas en 10 idiomas y palabras de búsqueda (es/en) de cada categoría.
-scripts/              load (carga y valida), build, sheet, variants-sheet, qa, chrome (Chrome sin ventana).
-tests/                Pruebas del motor.
-DESIGN.md             Reglas de dibujo (las lee todo agente que dibuja).
+engine/geometry.mjs   Drawing primitives: sq (squircle), circ, dot, drop, arc, polar, head, roundpoly, line, rot, cursor, badge.
+engine/variants.mjs   Variants without redrawing: render, snap (16 px), transform, enclosures, slash, mirror, levels, motion.
+engine/index.mjs      The package API (dist/index.js): toSvg, resolveIcon, and the engine's exports.
+engine/react.mjs      The React component (dist/react.js): <Icon>, with weight="auto", effect, play, and transition.
+engine/vue.mjs · Icon.svelte · Icon.astro   The same component for Vue, Svelte, and Astro.
+engine/motion.css     Animations: the effects, draw, levels, replace, and reduced motion.
+engine/morph.mjs      Transitions between icons: frames drawn by render, badge pairs, curated PAIRS, the player.
+engine/search.mjs     Search by meaning (search-api.mjs: searchIcons for dist/search.js).
+mcp/server.mjs        MCP server for AI agents (stdio, no dependencies): search_icons, get_icon, list_categories.
+src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
+src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
+scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, chrome (headless Chrome).
+tests/                Engine tests and phase 2 feature tests.
+DESIGN.md             Drawing rules (read by every agent that draws).
 ```
 
-## Documentación
-| Tema | Documento |
+## Documentation
+| Topic | Document |
 |---|---|
-| Reglas de dibujo, keylines, firma, relleno, 16 px, espejo, niveles, movimiento, piezas, idiomas | [`DESIGN.md`](./DESIGN.md) |
-| Formato de datos de un ícono y su validación | [`docs/format.md`](./docs/format.md) |
-| Motor de geometría y de variantes | [`docs/engine.md`](./docs/engine.md) |
-| Build, salidas, paquete y qué se sube | [`docs/build.md`](./docs/build.md) |
-| Producción con agentes: rondas, categorías, prompts, hojas | [`docs/production.md`](./docs/production.md) |
-| Calidad: QA automático, pruebas y compuertas de revisión | [`docs/quality.md`](./docs/quality.md) |
-| Fases y subfases, estado y lo que sigue | [`docs/roadmap.md`](./docs/roadmap.md) |
-| Propuestas y decisiones (sí, no, distinto y por qué) | [`docs/decisions.md`](./docs/decisions.md) |
-| Bitácora: qué se hizo, cómo y cuándo | [`docs/history.md`](./docs/history.md) |
+| Drawing rules, keylines, signature, fill, 16 px, mirroring, levels, motion, parts, languages | [`DESIGN.md`](./DESIGN.md) |
+| An icon's data format and its validation | [`docs/format.md`](./docs/format.md) |
+| Geometry and variants engine | [`docs/engine.md`](./docs/engine.md) |
+| Build, outputs, package, and what gets committed | [`docs/build.md`](./docs/build.md) |
+| Production with agents: rounds, categories, prompts, sheets | [`docs/production.md`](./docs/production.md) |
+| Quality: automated QA, tests, and review gates | [`docs/quality.md`](./docs/quality.md) |
+| Phases and subphases, status, and what's next | [`docs/roadmap.md`](./docs/roadmap.md) |
+| Proposals and decisions (yes, no, differently, and why) | [`docs/decisions.md`](./docs/decisions.md) |
+| Log: what was done, how, and when | [`docs/history.md`](./docs/history.md) |

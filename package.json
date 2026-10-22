@@ -1,7 +1,7 @@
 {
   "name": "@flouvia/gota",
   "version": "0.1.0",
-  "description": "Gota, los íconos de Flouvia: esquinas continuas, un trazo de 1.5 y la gota del isotipo como firma.",
+  "description": "Gota, Flouvia's icon library: continuous corners, a single 1.5 stroke and the drop as a signature.",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -18,19 +18,40 @@
     "./svg/*": "./svg/*",
     "./icons.json": "./dist/icons.json",
     "./icons.css": "./dist/icons.css",
-    "./motion.css": "./dist/motion.css"
+    "./motion.css": "./dist/motion.css",
+    "./vue": "./dist/vue.js",
+    "./svelte": "./dist/Icon.svelte",
+    "./astro": "./dist/Icon.astro",
+    "./search": {
+      "types": "./dist/search.d.ts",
+      "default": "./dist/search.js"
+    },
+    "./morph": {
+      "types": "./dist/morph.d.ts",
+      "default": "./dist/morph.js"
+    }
   },
   "files": [
     "dist",
     "svg",
+    "mcp",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "README.es.md"
   ],
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "vue": ">=3.5",
+    "svelte": ">=4"
   },
   "peerDependenciesMeta": {
     "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    },
+    "svelte": {
       "optional": true
     }
   },
@@ -43,5 +64,8 @@
   },
   "engines": {
     "node": ">=22"
+  },
+  "bin": {
+    "gota-mcp": "./mcp/server.mjs"
   }
 }
