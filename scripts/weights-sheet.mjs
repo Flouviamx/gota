@@ -2,7 +2,7 @@
 // Gota's range and at regular (0.9 · 1.5 · 2.1), large, with the number of contours each weight's
 // outline has: the same number at the three weights is the structure holding (QA's `weights`).
 // For a category, only the icons QA flags (--all: every icon); given icon names instead, those
-// icons, whatever QA says (previews/icons-weights-<n>.png). --slash draws the slashed variants.
+// icons, whatever QA says (previews/icons-<first icon>-weights-<n>.png). --slash draws the slashed variants.
 // Usage: node scripts/weights-sheet.mjs <category> [--all] | <icon>… [--slash]   (needs npm ci)
 import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -19,7 +19,8 @@ const cat = args.length === 1 && categories.find((c) => c.category === args[0]);
 const all = Object.assign({}, ...categories.map((c) => c.icons));
 const missing = cat ? [] : args.filter((a) => !all[a]);
 if (missing.length) throw new Error(`No category or icon "${missing.join('", "')}"`);
-const target = cat ? cat.category : 'icons';
+// Given icons are named after the first one, so sheets made side by side don't overwrite each other
+const target = cat ? cat.category : `icons-${args[0]}`;
 const icons = cat ? cat.icons : Object.fromEntries(args.map((a) => [a, all[a]]));
 const every = !cat || process.argv.includes('--all');
 const slash = process.argv.includes('--slash') ? { slash: true } : {};
