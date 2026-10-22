@@ -1,6 +1,7 @@
 // Control de calidad automático de todo el set (o de una categoría), en Chrome:
 // - fuera del área viva (path entre 1.75 y 22.25),
-// - densidad: tinta del ícono a 32 px por encima del 98 % del set (demasiadas piezas: simplificar),
+// - densidad: más de 28 % de tinta a 32 px (demasiadas piezas: simplificar); umbral fijo para que el
+//   criterio no se mueva cuando el set crece,
 // - casi duplicados: dos íconos que a 32 px se ven casi iguales (similitud ≥ 0.975), salvo los de
 //   una misma familia (calendar y calendar-plus se parecen a propósito),
 // - relleno que cambia la silueta (el relleno debe ocupar la misma caja que el contorno),
@@ -86,10 +87,9 @@ for (const r of result.filter(mine)) {
   const [x0, y0, x1, y1] = r.bbox;
   if (x0 < 1.75 || y0 < 1.75 || x1 > 22.25 || y1 > 22.25) issues.push(`área   ${r.cat}/${r.name}: [${r.bbox.map((v) => v.toFixed(2)).join(', ')}]`);
 }
-// Densidad: por encima del 98 % del set completo (las líneas sueltas son ligeras por naturaleza)
-const inks = result.map((r) => r.ink).sort((a, b) => a - b);
-const hi = inks[Math.floor(0.98 * (inks.length - 1))];
-for (const r of result.filter(mine)) if (r.ink > hi) issues.push(`denso  ${r.cat}/${r.name}: tinta ${(r.ink * 100).toFixed(1)}% (98 % del set: ${(hi * 100).toFixed(1)}); ¿sobran piezas?`);
+// Densidad: umbral fijo (las líneas sueltas son ligeras por naturaleza: no hay aviso de ligero)
+const DENSE = 0.28;
+for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`denso  ${r.cat}/${r.name}: tinta ${(r.ink * 100).toFixed(1)}% (máximo ${DENSE * 100}%); ¿sobran piezas?`);
 // Fragmentos y casi-toques
 for (const r of result.filter(mine)) {
   if (r.fragments.length) issues.push(`suelto ${r.cat}/${r.name}: trazo(s) ${r.fragments.join(', ')} de menos de 2 de largo`);

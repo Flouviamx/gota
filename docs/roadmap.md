@@ -12,7 +12,7 @@
 - [x] Núcleo de 50 íconos (`src/icons/nucleo.mjs`), la vara del set.
 
 ## Fase 1 · Primeros ~1,000 completos (en curso)
-- [ ] 1.1 Dibujo base y crítica por categoría — ronda 1: ~1,000 dibujados, críticos terminando.
+- [x] 1.1 Dibujo base y crítica por categoría — ronda 1 cerrada: 993 íconos (9 categorías + núcleo), 18 agentes, 1 h 47 min; 268 avisos de QA pendientes para la ronda 2.
 - [x] 1.2 Formato extendido: relleno, 16 px (`small` y ajuste al pixel), espejo, niveles, piezas con nombre, movimiento, 10 idiomas, metadatos `data-*`, hoja de variantes, QA automático y pruebas del motor.
 - [ ] 1.3 Auditoría de cobertura y dibujo de lo que falte (1 agente).
 - [ ] 1.4 Diseño por ícono: relleno, 16 px, variantes, espejo, niveles, piezas (`level`/`progress` en los de cantidad) y movimiento (10 agentes).

@@ -16,6 +16,8 @@
 | `dist/icons.css` | `.fi`, `.fi-sm`, `.fi-lg` para íconos junto al texto sin React |
 Con `--check <categoría>` solo valida (lo usan los agentes mientras dibujan).
 
+**La variante dibujada a mano gana:** si existe `<nombre>-circle`, `-square`, `-slash` u `-off` como ícono propio, el build no genera la automática con ese nombre, y `toSvg` y `<Icon>` usan la dibujada (`resolveIcon`).
+
 ## Qué va al repositorio y qué no
 - **Se sube:** `src/` (los dibujos y los idiomas), `engine/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `LICENSE`, `package.json`.
 - **No se sube** (`.gitignore`): `svg/`, `dist/`, `previews/`. Todo se regenera.

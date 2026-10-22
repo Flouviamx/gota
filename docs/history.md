@@ -56,3 +56,9 @@
   - 15 pruebas en verde.
 - **El núcleo quedó en cero avisos de QA:** aire de los signos de alerta, la cabeza de atrás de clientes, la ruta que ahora toca sus círculos, la perforación del boleto (dos rayas), los corchetes de código, el badajo de la campana, el globo con solo ecuador y la tabla con columnas desde el encabezado.
 - **Navegación:** `cursor`, `cursor-click` (destellos con aire) y `drag-drop` (puntero como insignia) pasaron al motor. Al set del sitio en `flouvia-web` le llegan estos cambios cuando consuma Gota.
+- **Ronda 1 cerrada** (workflow `wf_0024a5b2-d6e`: 18 agentes, 0 errores, 1 h 47 min, ~6.1 M tokens de subagentes): 993 íconos.
+  - Los críticos rediseñaron metáforas confusas (el cubo de pintura, el lazo, la cita) y quitaron conceptos repetidos entre categorías, con su reemplazo.
+  - Acercaron cada ícono al núcleo y se adelantaron con rellenos, espejo y movimiento en navegación.
+  - Avisaron de los choques entre variantes automáticas y dibujadas. Se resolvió con una regla: **la dibujada a mano gana** (`arrow-right-circle`, `bell-off`…), en el build, en `toSvg` y en React (`resolveIcon`).
+  - La densidad del QA pasó a un umbral fijo de 28 %.
+  - Pendientes para la ronda 2: 268 avisos (la mayoría en comercio), relleno en casi todas las categorías, idiomas y etiquetas entre categorías (responder, organigrama, quitar enlace).

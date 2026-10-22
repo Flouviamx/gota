@@ -13,7 +13,7 @@ Renderiza todo el set en Chrome y avisa:
 | Aviso | Regla |
 |---|---|
 | `área` | Algún trazo sale de 1.75–22.25 (medido con `getBBox`) |
-| `denso` | Tinta a 32 px por encima del percentil 98 del set: probablemente sobran piezas |
+| `denso` | Más de 28 % de tinta a 32 px: probablemente sobran piezas. Umbral fijo (antes era el percentil 98 del set y se movía al crecer el set) |
 | `silueta` | El relleno cambia la caja del dibujo más de 1 px a 32 px |
 | `doble` | Dos íconos casi iguales a 32 px (similitud de coseno ≥ 0.975), salvo los de una misma familia (mismo primer segmento del nombre o uno prefijo del otro) |
 | `suelto` | Un trazo abierto de menos de 2 de largo que no es un punto: un fragmento |
