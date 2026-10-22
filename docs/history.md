@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Phase 2.5: one module per icon, per-icon components, and sprites
+- **`engine/core.mjs`** (`@flouvia/gota/core`): the API without icon data (`svg`, `pick`, `sprite`, `render`, `autoWeight`…); `@flouvia/gota` is the core plus the set by name, with `iconData(name)`.
+- **One module per icon** (`@flouvia/gota/icons`, `BellIcon`; deep imports `@flouvia/gota/icons/bell`): its data, name, and hand-drawn variants linked, so "the drawn variant wins" holds without the set ([decisions 48–49](./decisions.md#phase-2-22-oct-2026)).
+- **Components split** into `IconBase` (data) and `Icon` (by name) in React, Vue, and Svelte; Astro takes either. Generated components per icon for React and Vue (`/react/icons`, `/vue/icons`). Vue's component is now `Icon`, like the others.
+- **Checked:** every module equals `iconData`; `toSvg` gives the same 9,297 SVGs as the previous commit; esbuild bundles one icon in 16 KB and two React components in 33 KB, against 939 KB for `Icon` by name; React 18, Vue 3.5, and Svelte 4 in Chrome give the same drawing and transitions through data and through names, with no errors.
+- **Sprites** (`sprite.svg`, `sprite-fill.svg`): an external `<use>` in Chrome draws them like the inline SVG, masks included.
+- The owner approved Skia as a dev dependency for outlines ([decision 50](./decisions.md#phase-2-22-oct-2026)). Tests: 33.
+
 ## 22 Oct 2026 — Phase 2: transitions, components, search, and MCP
 - **Transitions (2.2), rebuilt after reviewing them frame by frame.** The first engine grew strokes from a point (stray dots), folded menu lines into a ">", and pointed at icons that don't exist (`mic`, `check-check`). Now ([engine](./engine.md#transitions-enginemorphmjs)):
   - every frame is drawn by `render` (`frames`), masks and cutouts included;

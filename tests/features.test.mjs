@@ -1,9 +1,11 @@
-// Phase 2 features: search by meaning, morphs and transitions, auto weight and the MCP server. They read
+// Phase 2 features: search by meaning, morphs and transitions, auto weight, one module per icon,
+// sprites and the MCP server. They read
 // dist/, so run `node scripts/build.mjs` first.
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { test } from 'node:test';
-import { autoWeight, icons, render } from '../dist/index.js';
+import { autoWeight, iconData, icons, pick, render, sprite, svg, toSvg } from '../dist/index.js';
+import * as perIcon from '../dist/icons/index.js';
 import { changeOf, frames, morpher, transitionOf } from '../dist/morph.js';
 import { fold, searchIcons } from '../dist/search.js';
 
@@ -71,6 +73,25 @@ test('slash: drawn as far as asked; a component toggling it gets frames, nothing
   assert.ok(!render(icons.bell, { slash: 0 }).includes('3.6'));
   assert.ok(changeOf(icons, { name: 'bell', slash: false }, { name: 'bell', slash: true }).frame);
   assert.equal(changeOf(icons, { name: 'bell', slash: false }, { name: 'bell', slash: false }), null);
+});
+
+test('one module per icon: the same data as by name, named <Name>Icon, the drawn variant linked', async () => {
+  assert.equal(Object.keys(perIcon).length, Object.keys(icons).length);
+  assert.ok(perIcon.MapIcon && perIcon.BellOffIcon && !('Map' in perIcon));
+  assert.deepEqual(perIcon.BellIcon, iconData('bell'));
+  assert.equal((await import('../dist/icons/bell.js')).default, perIcon.BellIcon);
+  assert.equal(pick(perIcon.BellIcon, { slash: true }).icon.name, 'bell-off');
+  assert.equal(pick(perIcon.CartIcon, { slash: true }).slash, true);
+  assert.equal(svg(perIcon.BellIcon, { variant: 'fill', slash: true, id: 'bell' }), toSvg('bell', { variant: 'fill', slash: true }));
+});
+
+test('sprite: one symbol per icon, mask ids of its own', () => {
+  const out = sprite([iconData('bell-off'), iconData('file-check')], { variant: 'fill' });
+  assert.equal(out.match(/<symbol /g).length, 2);
+  assert.match(out, /<symbol id="gota-bell-off" viewBox="0 0 24 24">/);
+  const ids = [...out.matchAll(/ id="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const [, ref] of out.matchAll(/url\(#([^)]+)\)/g)) assert.ok(ids.includes(ref));
 });
 
 test('auto weight follows the text: 400 is regular, bolder text, thicker stroke', () => {

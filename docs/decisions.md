@@ -84,8 +84,11 @@
 | 43 | Interpolate straight lines by their points | first morph engine | **no** | A menu's lines folded into a ">" halfway. Lines turn by center, angle, and length; when they both move and turn, they move first |
 | 44 | The transition player rewrites the `<svg>` the framework manages | first React version | **no** | It would fight React, Vue, and Svelte (Svelte's `{@html}` keeps its own nodes). The player hides the final drawing, draws in a layer of its own, and removes it |
 | 45 | The MCP server on the official SDK | Claude | **no** | The package stays dependency-free: MCP over stdio is JSON-RPC, one message per line, in one file |
-| 46 | Skia (`canvaskit-wasm`) as a dev dependency to turn strokes into outlines, for the variable icon font, Android Vector Drawables, and Xcode symbols | Claude | **pending the owner** | Those formats can't hold a stroke with masks; Skia does exact stroke outlining and boolean operations. The published package would stay dependency-free |
+| 46 | Skia (`canvaskit-wasm`) as a dev dependency to turn strokes into outlines, for the variable icon font, Android Vector Drawables, and Xcode symbols | Claude | **yes** (decision 50) | Those formats can't hold a stroke with masks; Skia does exact stroke outlining and boolean operations. The published package would stay dependency-free |
 | 47 | The swap transition fades (opacity) | Claude | **yes** | Only while it moves (320 ms), like Apple's replace; the drawings stay one color ([non-negotiable rules](../CLAUDE.md#non-negotiable-rules)) |
+| 48 | Per-icon exports named like the icon (`Bell`, `Map`) | Claude | **no: `<Name>Icon`** | `Map`, `Image`, `File`, `Text`, `Document`, `Function`, and `Math` would shadow globals in the importing file. `BellIcon`, like Heroicons, can't clash with anything |
+| 49 | One component that takes either `name` or `icon` | Claude | **no: two** | A component that can look up a name keeps the whole set in every bundle. `IconBase` takes data and imports no set; `Icon` adds the lookup by name on top, and per-icon components wrap `IconBase` (generated for React and Vue; Svelte would need a `.svelte` file per icon, so it passes data to `IconBase`) |
+| 50 | Skia (`canvaskit-wasm`) as a dev dependency (decision 46) | Claude | **yes** (owner, 22 Oct 2026) | For the variable icon font, Android, and Xcode; the published package stays dependency-free |
 
 ## Design and technical decisions (Claude, during construction)
 - **Signature:** a square bottom-right corner on containers; bubbles with `drop()`.

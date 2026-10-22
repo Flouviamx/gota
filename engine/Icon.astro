@@ -1,12 +1,14 @@
 ---
 // Gota · Astro component (dist/Icon.astro). Renders on the server: zero JavaScript in the page.
-//   <Icon name="bell" />
+//   <Icon name="bell" />                       by name
+//   <Icon icon={BellIcon} />                   or by data, from @flouvia/gota/icons
 //   <Icon name="bell" variant="fill" weight="light" effect="auto" play="hover" />
 // With `effect`, add the motion stylesheet once in your layout: import '@flouvia/gota/motion.css'.
-import { effectOf, icons, render, resolveIcon, WEIGHTS } from './index.js';
+import { effectOf, iconData, pick, render, WEIGHTS } from './index.js';
 
 interface Props {
-    name: string;
+    name?: string;
+    icon?: { name: string; d: string[] };
     variant?: 'outline' | 'fill';
     weight?: 'light' | 'regular' | 'bold' | number;
     enclosure?: 'circle' | 'square' | null;
@@ -21,10 +23,10 @@ interface Props {
     'aria-label'?: string;
 }
 
-const { name, variant = 'outline', weight = 'regular', enclosure = null, slash = false, scale = 'medium', size, value, rtl = false, effect = null, play = 'hover', class: className, ...rest } = Astro.props;
+const { name, icon: data, variant = 'outline', weight = 'regular', enclosure = null, slash = false, scale = 'medium', size, value, rtl = false, effect = null, play = 'hover', class: className, ...rest } = Astro.props;
 const SCALES = { small: 0.85, medium: 1, large: 1.25 };
-const r = resolveIcon(name, { enclosure, slash });
-const icon = icons[r.name];
+const r = pick(data ?? iconData(name), { enclosure, slash });
+const icon = r.icon;
 const k = SCALES[scale] ?? 1;
 const dim = size ?? `${k}em`;
 const id = `fi${Math.random().toString(36).slice(2, 10)}`;

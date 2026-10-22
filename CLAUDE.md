@@ -42,9 +42,10 @@ Node ≥ 22, no npm dependencies: the system's Chrome renders the sheets (`CHROM
 ```text
 engine/geometry.mjs   Drawing primitives: sq (squircle), circ, dot, drop, arc, polar, head, roundpoly, line, rot, cursor, badge.
 engine/variants.mjs   Variants without redrawing: render, snap (16 px), transform, enclosures, slash, mirror, levels, motion.
-engine/index.mjs      The package API (dist/index.js): toSvg, resolveIcon, and the engine's exports.
-engine/react.mjs      The React component (dist/react.js): <Icon>, with weight="auto", effect, play, and transition.
-engine/vue.mjs · Icon.svelte · Icon.astro   The same component for Vue, Svelte, and Astro.
+engine/core.mjs       The API without icon data (dist/core.js): svg, pick (the drawn variant wins), sprite, autoWeight.
+engine/index.mjs      The package API (dist/index.js): the core plus the set by name (iconData, toSvg, resolveIcon).
+engine/react-base.mjs IconBase on an icon's data: weight="auto", effect, play, transition. react.mjs: <Icon> by name.
+engine/vue-base.mjs · vue.mjs · IconBase.svelte · Icon.svelte · Icon.astro   The same for Vue, Svelte, and Astro.
 engine/motion.css     Animations: the effects, draw, levels, replace, and reduced motion.
 engine/morph.mjs      Transitions between icons: frames drawn by render, badge pairs, curated PAIRS, the player.
 engine/search.mjs     Search by meaning (search-api.mjs: searchIcons for dist/search.js).

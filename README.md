@@ -8,17 +8,24 @@ the drop in Flouvia's logomark, and speech bubbles are the drop itself.
 
 ## Usage
 
-Standalone SVGs in `svg/` (24 × 24, `stroke="currentColor"`), or from the package:
+Import the icons a page uses: each one carries only its own data.
 
 ```js
-import { toSvg } from '@flouvia/gota';
-toSvg('mail', { variant: 'fill', weight: 'bold', enclosure: 'circle', slash: true });
+import { BellIcon, MailIcon } from '@flouvia/gota/react/icons';    // or /vue/icons
+<MailIcon />                                       // 1em, sitting on the line like a letter
+<BellIcon variant="fill" weight="light" scale="large" />
+<BellIcon slash />                                 // the hand-drawn bell-off
 
-import { Icon } from '@flouvia/gota/react';
-<Icon name="mail" />                              // 1em, sitting on the line like a letter
-<Icon name="bell" variant="fill" weight="light" scale="large" />
-<Icon name="microphone" slash enclosure="circle" size={20} />
+import { IconBase } from '@flouvia/gota/react';     // one component, any icon: it can animate the change
+import { CloseIcon, MenuIcon } from '@flouvia/gota/icons';
+<IconBase icon={open ? CloseIcon : MenuIcon} transition="auto" />
+
+import { svg } from '@flouvia/gota/core';           // without a framework
+svg(MailIcon, { variant: 'fill', weight: 'bold', enclosure: 'circle' });
 ```
+
+By name, with the whole set (prototypes, names that arrive at runtime): `<Icon name="mail" />` from
+`@flouvia/gota/react`, or `toSvg('mail')` from `@flouvia/gota`.
 
 - **Weights:** `light`, `regular`, `bold`. **Styles:** `outline` and `fill`.
 - **Shapes:** plain, `enclosure: 'circle' | 'square'`, and `slash`.
@@ -28,10 +35,11 @@ import { Icon } from '@flouvia/gota/react';
 - **Motion:** `effect="auto"` plays the icon's own gesture (`play`: `hover`, `once`, `loop`);
   `transition="auto"` animates a change of `name` or `slash`: a badge or a slash draws itself
   in, menu ↔ close and other curated pairs morph, the rest swap in. Still under reduced motion.
-- **Vue, Svelte, Astro:** `@flouvia/gota/vue` (`GotaIcon`), `/svelte`, and `/astro`, with the same props.
+- **Vue, Svelte, Astro:** `@flouvia/gota/vue` (and `/vue/icons`), `/svelte` (and `/svelte/base`), and `/astro`, with the same props.
+- **Sprite:** `@flouvia/gota/sprite.svg` (and `sprite-fill.svg`), `<svg><use href="sprite.svg#gota-bell"/></svg>`; `sprite()` builds one with only your icons.
 - **Search by meaning:** `searchIcons('cobrar')` from `@flouvia/gota/search` (Spanish and English).
 - **For AI agents:** an MCP server, `gota-mcp`, to find icons and insert their code.
-- Standalone SVGs: `svg/` (regular) and `svg/fill/`; the full matrix in `dist/svg/<weight>/<style>/`.
+- **Standalone SVGs:** `svg/` (regular) and `svg/fill/`; the full matrix in `dist/svg/<weight>/<style>/`.
 
 ## Development
 
