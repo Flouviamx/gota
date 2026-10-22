@@ -9,8 +9,10 @@
 // - open: an open path inside fill.solid (it would fill as a wedge): close it (Z), or move it to
 //   lines/wire if it is a line,
 // - near: a path that ends closer than the minimum clearance to another without touching it
-//   (between 0.35 and 2.85 center to center: either touch, or leave 1.5 of clearance between edges).
-// Usage: node scripts/qa.mjs [category]
+//   (between 0.35 and 2.85 center to center: either touch, or leave 1.5 of clearance between edges),
+// - weights: the structure changes between weights 0.9 and 2.1 (no compatible masters for the
+//   variable font and Xcode symbols): pieces that merge or split, holes that open or close.
+// Usage: node scripts/qa.mjs [category]   (weights needs npm ci: canvaskit-wasm)
 import { writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { render } from '../engine/variants.mjs';
@@ -117,5 +119,17 @@ for (let i = 0; i < result.length; i++)
     const sim = dot / (norm[i] * norm[j]);
     if (sim >= 0.975) issues.push(`double ${result[i].cat}/${result[i].name} ≈ ${result[j].cat}/${result[j].name} (${sim.toFixed(3)})`);
   }
+// Weights: one structure from 0.9 to 2.1, so the variable font and Xcode symbols can interpolate
+// (compatible masters, checked; it needs the dev dependency, npm ci)
+const { masters } = await import('./masters.mjs');
+for (const { name, cat, icon } of all.filter((it) => !only || it.cat === only))
+  for (const style of icon.fill ? ['outline', 'fill'] : ['outline'])
+    try {
+      masters({ name, ...icon }, { style });
+    } catch (error) {
+      const why = error.message.match(/joined\/follow: ([^·]*)/)?.[1] ?? error.message;
+      const kind = /contours differ/.test(why) ? 'pieces merge or split between weights' : /turn differently/.test(why) ? 'a hole opens or closes between weights' : 'no clean interpolation between weights';
+      issues.push(`weights ${cat}/${name} (${style}): ${kind}`);
+    }
 console.log(`QA ${only ?? 'whole set'}: ${result.filter(mine).length} icons checked, ${issues.length} warnings`);
 if (issues.length) console.log(issues.map((i) => `  - ${i}`).join('\n'));

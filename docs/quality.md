@@ -21,6 +21,7 @@ It renders the whole set in Chrome and warns about:
 | `loose` | An open stroke shorter than 2 that isn't a dot: a fragment |
 | `open` | An open stroke inside `fill.solid` (or inside the fill of `small` or of the badge): it would fill as a wedge |
 | `near` | A stroke ends between 0.35 and 2.85 from another (center to center) without touching it: either touch, or leave 1.5 of clearance. It doesn't count if those two strokes cross or touch somewhere else |
+| `weights` | The structure changes between weights 0.9 and 2.1, outline or fill: pieces that merge or split, a hole that opens or closes, or no clean interpolation. Checked with compatible masters ([build](./build.md#compatible-masters-scriptsmastersmjs)); the fixes are in the drawing ([`DESIGN.md`](../DESIGN.md#every-weight-one-structure)) |
 Standalone lines are light by nature: there is no "too light" warning. The thresholds were tuned on the core set and round 1 (at first, 0.93 similarity and a warning for light icons: too much noise).
 
 ## Tests (`npm test`)
