@@ -270,12 +270,7 @@ function back(s) {
   return { ...s, a: s.b, b: s.a, t0: s.t0 + s.dt, dt: -s.dt };
 }
 
-/**
- * Un trazo abierto y su regreso por el mismo camino: en `fill.solid` se ve igual que la línea pero
- * sin área que rellenar (una polilínea abierta se rellenaría hasta su cuerda). Para lo que toca al
- * cuerpo y debe seguir unido en el relleno, donde `lines` lo mordería con su aire (y, cerrado, para
- * el `knock` de una pieza abierta: knockOf).
- */
+/** Un trazo abierto y su regreso por el mismo camino (cerrado, es el `knock` de una pieza abierta: knockOf). */
 const twin = (d) =>
   parse(d)
     .map((sp) => write([...sp.segs, ...sp.segs.toReversed().map(back)], false))
@@ -323,14 +318,6 @@ function withHoles(outer, ...holes) {
       .join('');
   return outer + holes.map((h) => (Math.sign(area(h)) === s ? rev(h) : h)).join('');
 }
-
-/**
- * Punto que el motor no quita al despejar una insignia. El motor quita entero todo punto que cae en
- * la caja de una insignia que no es un círculo (la diagonal de un ícono "off" abarca el lienzo):
- * este punto queda lejos del trazo de la insignia (más de 1.5 de aire) y se conserva. Es un dot()
- * igual, recorrido en el otro sentido.
- */
-const keepDot = (x, y, r = 0.7) => `M${pt([x - r, y])}A${N(r)} ${N(r)} 0 1 1 ${pt([x + r, y])}A${N(r)} ${N(r)} 0 1 1 ${pt([x - r, y])}Z`;
 
 /**
  * Área que despeja una pieza abierta (la diagonal, el brazo del tocadiscos): el trazo de ida y vuelta,
@@ -1050,9 +1037,12 @@ const icons = {
   },
   'wifi-off': {
     tags: ['sin wifi', 'desconectado', 'sin internet', 'wifi off', 'offline', 'no connection'],
-    // El punto lejos del tache se conserva (keepDot); el motor despeja los arcos con 1.5 de aire
-    d: [keepDot(...WIFI_C), ...wifi(3).slice(1)],
-    badge: slashOver(),
+    // El motor despeja los arcos con 1.5 de aire. La diagonal va 1.06 arriba a la derecha de la de
+    // siempre (sigue por centros de pixel a 16 px): el punto queda a 5.66 de ella y se conserva en los
+    // tres grosores (con la de siempre, a 4.6, la negrita lo quitaba), y ningún tramo de arco que deja
+    // mide menos de 3.4 (antes, 2.4)
+    d: wifi(3),
+    badge: slashOver([4.25, 2.75], [21.25, 19.75]),
   },
   bluetooth: {
     tags: ['bluetooth', 'inalámbrico', 'emparejar', 'wireless', 'pairing'],
@@ -1455,7 +1445,7 @@ const icons = {
     tags: ['tocadiscos', 'tornamesa', 'vinilo', 'turntable', 'dj', 'record player'],
     // Mueble apaisado (era cuadrado y pesaba de más) y plato completo con su eje; el brazo, del
     // pivote hasta el disco, pasa por encima como insignia y el motor despeja el plato con 1.5 de aire.
-    d: [sq(2.5, 5, 19, 14, 3.5, BR), circ(9.5, 12, 4), keepDot(9.5, 12)],
+    d: [sq(2.5, 5, 19, 14, 3.5, BR), circ(9.5, 12, 4), dot(9.5, 12)],
     badge: (() => {
       const tone = roundline(
         [
@@ -1527,39 +1517,44 @@ const icons = {
 };
 
 // ── Relleno (DESIGN.md › Relleno) ─────────────────────────────────────────────────────────────
-// Por índice de d: `solid` se rellena (y conserva su trazo, así la silueta es idéntica), `cut` se
-// cala al ancho del trazo y `lines` sigue siendo línea, con 1.5 de aire contra el relleno.
+// Por índice de d: `solid` se rellena (y conserva su trazo, así la silueta es idéntica); `close` son
+// cuerpos que en el contorno quedan abiertos contra otra pieza (la joroba de la cámara, las correas
+// del reloj) y se rellenan cerrados (`${trazo}Z`: el cierre corre por el canto de esa pieza); `cut`
+// se cala al ancho del trazo; `lines` sigue siendo línea, con 1.5 de aire contra el relleno, y `wire`
+// sigue siendo línea pegada al relleno, sin aire (el pie de un monitor, una antena, una plica).
 const FILL = {
   smartphone: { solid: [0], cut: [1] },
   'smartphone-vibrate': { solid: [0], cut: [1], lines: [2, 3, 4, 5] },
   tablet: { solid: [0], cut: [1] },
   laptop: { solid: [0], lines: [1] },
-  desktop: { solid: [0, 1, 2] },
-  devices: { solid: [0, 1, 2] },
-  // Las correas se rellenan hasta el canto de la caja: el reloj entero es una silueta
-  watch: { solid: [0, 1, 2, 3] },
-  tv: { solid: [0, 1, 2] },
+  desktop: { solid: [0], wire: [1, 2] },
+  devices: { solid: [0], wire: [1, 2] },
+  // Las correas se rellenan hasta el canto de la caja: el reloj entero es una silueta; la corona,
+  // pegada a la caja
+  watch: { solid: [0], close: [1, 2], wire: [3] },
+  tv: { solid: [0], wire: [1, 2] },
   keyboard: { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
   mouse: { solid: [0], cut: [1] },
   // Cuerpo, hoja de entrada y hoja de salida forman una silueta; la ranura se cala
-  printer: { solid: [0, 1, 3], cut: [2] },
-  camera: { solid: [0, 1], cut: [2] },
-  'camera-off': { solid: [0, 1], cut: [2] },
-  'video-camera': { solid: [0, 1] },
-  'video-camera-off': { solid: [0, 1] },
-  webcam: { solid: [0, 2, 3], cut: [1] },
-  earbuds: { solid: [0, 1] },
+  printer: { close: [0, 1, 3], cut: [2] },
+  camera: { solid: [0], close: [1], cut: [2] },
+  'camera-off': { solid: [0], close: [1], cut: [2] },
+  'video-camera': { solid: [0], close: [1] },
+  'video-camera-off': { solid: [0], close: [1] },
+  webcam: { solid: [0], wire: [2, 3], cut: [1] },
+  // La cabeza se cierra sobre su tallo: el cierre corre por el mismo tallo
+  earbuds: { close: [0, 1] },
   'speaker-box': { solid: [0], cut: [1, 2] },
   'smart-speaker': { solid: [0], cut: [1, 2, 3] },
   'remote-control': { solid: [0], cut: [1, 2, 3, 4, 5] },
   gamepad: { solid: [0], cut: [1, 2, 3] },
   'vr-headset': { solid: [0] },
   'sd-card': { solid: [0], cut: [1, 2, 3] },
-  'usb-drive': { solid: [0, 1], cut: [2] },
-  router: { solid: [0, 1, 2], cut: [3, 4, 5] },
-  projector: { solid: [0, 4, 5], cut: [1, 2, 3] },
+  'usb-drive': { solid: [0], close: [1], cut: [2] },
+  router: { solid: [0], wire: [1, 2], cut: [3, 4, 5] },
+  projector: { solid: [0], wire: [4, 5], cut: [1, 2, 3] },
   'battery-charging': { solid: [0], lines: [1], cut: [2] },
-  'power-plug': { solid: [0, 1, 2, 3] },
+  'power-plug': { solid: [0], wire: [1, 2, 3] },
   outlet: { solid: [0], cut: [1, 2, 3] },
   play: { solid: [0] },
   pause: { solid: [0, 1] },
@@ -1567,10 +1562,11 @@ const FILL = {
   stop: { solid: [0] },
   // El botón de grabar: el punto se rellena y el aro sigue siendo línea
   record: { solid: [1], lines: [0] },
-  'play-pause': { solid: [0, 1, 2] },
-  eject: { solid: [0, 1] },
-  'skip-forward': { solid: [0, 1] },
-  'skip-back': { solid: [0, 1] },
+  // Las barras sueltas junto al triángulo siguen siendo línea
+  'play-pause': { solid: [0], lines: [1, 2] },
+  eject: { solid: [0], lines: [1] },
+  'skip-forward': { solid: [0], lines: [1] },
+  'skip-back': { solid: [0], lines: [1] },
   'fast-forward': { solid: [0, 1] },
   rewind: { solid: [0, 1] },
   'volume-low': { solid: [0], lines: [1] },
@@ -1578,44 +1574,56 @@ const FILL = {
   'volume-off': { solid: [0], lines: [1, 2] },
   'volume-plus': { solid: [0], lines: [1, 2] },
   'volume-minus': { solid: [0], lines: [1] },
-  playlist: { solid: [0, 1, 2, 3, 4, 5] },
-  'playlist-play': { solid: [0, 1, 2, 3, 4] },
-  radio: { solid: [0, 1], cut: [2, 3, 4] },
+  // La cabeza de la nota se rellena; los renglones siguen siendo línea y la plica y su bandera van
+  // pegadas a la cabeza
+  playlist: { solid: [3], lines: [0, 1, 2], wire: [4, 5] },
+  // Los renglones no tocan el triángulo, pero van sin aire: con el de `lines`, en negrita le mordían
+  // la base
+  'playlist-play': { solid: [4], wire: [0, 1, 2, 3] },
+  radio: { solid: [0], wire: [1], cut: [2, 3, 4] },
   vinyl: { solid: [0], cut: [1, 2, 3, 4] },
-  podcast: { solid: [0, 1], lines: [2, 3] },
+  podcast: { solid: [0], wire: [1], lines: [2, 3] },
   live: { solid: [0], cut: [1, 2, 3] },
   images: { solid: [0] },
   'slow-motion': { solid: [1, 2, 3], lines: [0] },
   captions: { solid: [0], cut: [1, 2] },
   'camera-focus': { solid: [4], lines: [0, 1, 2, 3] },
-  'camera-flip': { solid: [0, 1], cut: [2, 3, 4, 5] },
+  'camera-flip': { solid: [0], close: [1], cut: [2, 3, 4, 5] },
   // Imagen en imagen: se rellena la ventana flotante, que es lo que el ícono señala
   'picture-in-picture': { solid: [1], lines: [0] },
   'screen-mirror': { solid: [0] },
   cassette: { solid: [0], cut: [1, 2, 3] },
   'wireless-charging': { solid: [0], lines: [1, 2, 3] },
-  joystick: { solid: [0, 1, 2] },
+  joystick: { solid: [0, 2], wire: [1] },
   scanner: { solid: [0], lines: [1], cut: [2] },
   turntable: { solid: [0], cut: [1, 2] },
-  tripod: { solid: [0, 1, 2, 3] },
-  drone: { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
+  tripod: { solid: [0], wire: [1, 2, 3] },
+  drone: { solid: [0], wire: [1, 2, 3, 4, 5, 6, 7, 8] },
   'sim-card': { solid: [0], cut: [1, 2, 3] },
 };
+/** Un cuerpo abierto del contorno, cerrado para `fill.solid` (en solid solo van figuras cerradas). */
+const shut = (d) => `${d}Z`;
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
-  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+  icons[name].fill = {
+    solid: [...pick(spec.solid ?? []), ...pick(spec.close ?? []).map(shut)],
+    ...(spec.cut && { cut: pick(spec.cut) }),
+    ...(spec.lines && { lines: pick(spec.lines) }),
+    ...(spec.wire && { wire: pick(spec.wire) }),
+  };
 }
-// Piezas abiertas que tocan al cuerpo (antena, diadema, brazos, plica, viga): van de ida y vuelta
-// (twin) para no rellenarse hasta su cuerda ni morder el cuerpo con el aire de `lines`.
+// Piezas abiertas que tocan al cuerpo (antena, diadema, brazos, plica, viga): siguen siendo línea,
+// pegadas al relleno (`wire`): ni se rellenan hasta su cuerda ni muerden el cuerpo con el aire de
+// `lines`.
 {
   const d = (n) => icons[n].d;
-  icons['tv-retro'].fill = { solid: [d('tv-retro')[0], twin(d('tv-retro')[1])], cut: [d('tv-retro')[2], d('tv-retro')[3]] };
-  icons.headphones.fill = { solid: [twin(d('headphones')[0]), d('headphones')[1], d('headphones')[2]] };
-  // El USB relleno: la punta se vuelve un triángulo sólido; los brazos acodados, de ida y vuelta
+  icons['tv-retro'].fill = { solid: [d('tv-retro')[0]], wire: [d('tv-retro')[1]], cut: [d('tv-retro')[2], d('tv-retro')[3]] };
+  icons.headphones.fill = { solid: [d('headphones')[1], d('headphones')[2]], wire: [d('headphones')[0]] };
+  // El USB relleno: la punta se vuelve un triángulo sólido; el tallo y los brazos acodados, pegados
   const u = d('usb');
-  icons.usb.fill = { solid: [u[0], u[1], u[2], twin(u[3]), u[4], twin(u[5]), u[6]] };
-  icons['music-note'].fill = { solid: [d('music-note')[0], d('music-note')[1], twin(d('music-note')[2])] };
-  icons['music-notes'].fill = { solid: [d('music-notes')[0], d('music-notes')[1], twin(d('music-notes')[2])] };
+  icons.usb.fill = { solid: [shut(u[1]), u[2], u[4], u[6]], wire: [u[0], u[3], u[5]] };
+  icons['music-note'].fill = { solid: [d('music-note')[0]], wire: [d('music-note')[1], d('music-note')[2]] };
+  icons['music-notes'].fill = { solid: [d('music-notes')[0], d('music-notes')[1]], wire: [d('music-notes')[2]] };
   // La pantalla del cast se cierra con un arco concéntrico a las ondas, a 3 de la más grande: el
   // relleno llega hasta donde termina el contorno abierto sin pisar las ondas
   const c = d('cast');
@@ -1625,8 +1633,13 @@ for (const [name, spec] of Object.entries(FILL)) {
   const x = (name, i, k0 = 1, k1 = 1) => extend(d(name)[i], k0, k1);
   icons.flashlight.fill = { solid: [d('flashlight')[0]], cut: [x('flashlight', 1), d('flashlight')[2]] };
   icons['flashlight-on'].fill = { solid: [d('flashlight-on')[0]], cut: [x('flashlight-on', 1), d('flashlight-on')[2]], lines: d('flashlight-on').slice(3) };
-  icons['microphone-handheld'].fill = { solid: d('microphone-handheld').slice(0, 2), cut: [x('microphone-handheld', 2)] };
-  icons['microphone-studio'].fill = { solid: [0, 3, 4].map((i) => d('microphone-studio')[i]), cut: [x('microphone-studio', 1), x('microphone-studio', 2)] };
+  // El mango se cierra por la cuerda que cruza la cabeza (queda dentro de su relleno)
+  icons['microphone-handheld'].fill = { solid: [d('microphone-handheld')[0], shut(d('microphone-handheld')[1])], cut: [x('microphone-handheld', 2)] };
+  icons['microphone-studio'].fill = {
+    solid: [d('microphone-studio')[0], d('microphone-studio')[4]],
+    wire: [d('microphone-studio')[3]],
+    cut: [x('microphone-studio', 1), x('microphone-studio', 2)],
+  };
   for (const name of ['image', 'image-off']) icons[name].fill = { solid: [d(name)[0]], cut: [d(name)[1], x(name, 2)] };
   icons['image-sparkle'].fill = { solid: [d('image-sparkle')[0]], cut: [x('image-sparkle', 1)] };
   // La película: las perforaciones quedan como bloques; solo se alarga el extremo de afuera de cada
@@ -1718,7 +1731,7 @@ const sdot = (x, y) => dot(x, y, 1);
   const lens = circ(15.75, 11.25, 3);
   const rows = [9.75, 12.75].map((y) => line([5.25, y], [8.25, y]));
   const feet = [5.25, 18.75].map((x) => line([x, 17.25], [x, 20.25]));
-  small('projector', [body, lens, ...rows, ...feet], { solid: [body, ...feet], cut: [lens, ...rows] });
+  small('projector', [body, lens, ...rows, ...feet], { solid: [body], wire: feet, cut: [lens, ...rows] });
 }
 {
   // Batería cargando: un rayo más alto y sin esquinas redondas (el de 5 de alto se volvía un borrón;
@@ -1742,7 +1755,7 @@ const sdot = (x, y) => dot(x, y, 1);
     [0, 0.75, 0.75, 0],
   );
   const arrows = [line([8.25, 11.25], [15.75, 11.25]), head([15.75, 11.25], [1, 0], 1.5 * Math.SQRT2), line([15.75, 15.75], [8.25, 15.75]), head([8.25, 15.75], [-1, 0], 1.5 * Math.SQRT2)];
-  small('camera-flip', [body, hump, ...arrows], { solid: [body, hump], cut: arrows });
+  small('camera-flip', [body, hump, ...arrows], { solid: [body, shut(hump)], cut: arrows });
 }
 {
   // Carga inalámbrica: el rayo (el de la batería, más grande) sobre la base; sin las ondas, que a
@@ -1783,7 +1796,7 @@ const sdot = (x, y) => dot(x, y, 1);
   const bead = circ(6.75, 6.75, 1.5);
   const right = line([12.75, 14.25], [17.25, 9.75]);
   const block = sq(15.75, 6.75, 3, 3, 0.6);
-  small('usb', [stem, tip, base, left, bead, right, block], { solid: [stem, tip, base, twin(left), bead, right, block] });
+  small('usb', [stem, tip, base, left, bead, right, block], { solid: [shut(tip), base, bead, block], wire: [stem, left, right] });
 }
 {
   // Podcast: corrido medio pixel a la derecha para que el tallo sea de 1 px; el micrófono y una sola
@@ -1791,7 +1804,7 @@ const sdot = (x, y) => dot(x, y, 1);
   const mic = capsule(11.25, 6.75, 3, 6);
   const stem = line([12.75, 12.75], [12.75, 20.25]);
   const wave = arc(12.75, 9.75, 6, 140, 400).d;
-  small('podcast', [mic, stem, wave], { solid: [mic, stem], lines: [wave] });
+  small('podcast', [mic, stem, wave], { solid: [mic], wire: [stem], lines: [wave] });
 }
 {
   // En vivo: el punto de 2 × 2 px y un par de arcos que tocan centros de pixel, a 2 px del punto
@@ -1818,7 +1831,7 @@ const sdot = (x, y) => dot(x, y, 1);
   const ring = circ(12.75, 9.75, 6);
   const lens = circ(12.75, 9.75, 1.5);
   const stand = [line([12.75, 15.75], [12.75, 20.25]), line([8.25, 20.25], [17.25, 20.25])];
-  small('webcam', [ring, lens, ...stand], { solid: [ring, ...stand], cut: [lens] });
+  small('webcam', [ring, lens, ...stand], { solid: [ring], wire: stand, cut: [lens] });
 }
 {
   // Bocina: el gabinete de 14 px de alto, el tweeter como punto de 2 × 2 px y el woofer de aro limpio
@@ -1841,7 +1854,7 @@ const sdot = (x, y) => dot(x, y, 1);
   const antenna = line([6.75, 8.25], [17.25, 3.75]);
   const speaker = circ(8.25, 14.25, 3);
   const rows = [12.75, 15.75].map((y) => line([15.75, y], [18.75, y]));
-  small('radio', [body, antenna, speaker, ...rows], { solid: [body, antenna], cut: [speaker, ...rows] });
+  small('radio', [body, antenna, speaker, ...rows], { solid: [body], wire: [antenna], cut: [speaker, ...rows] });
 }
 {
   // Vinil: el disco que toca centros de pixel, la etiqueta como punto de 2 × 2 px y dos surcos más

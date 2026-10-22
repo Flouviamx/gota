@@ -247,7 +247,7 @@ function tagsOf(icon) {
 }
 
 /** El dibujo que corresponde: el de 16 px (`small`) o su ajuste al pixel, los niveles y el movimiento. */
-function resolve(icon, { size, value, frame }) {
+function resolve(icon, { size, value, frame, spec }) {
   const small = size && size <= 18 ? icon.small : null;
   let d = small ? small.d : icon.d;
   let fill = small ? (small.fill ?? null) : (icon.fill ?? null);
@@ -260,7 +260,8 @@ function resolve(icon, { size, value, frame }) {
   }
   // Cuadro extremo del movimiento (para revisar piezas y pivote en las hojas)
   let moved = null;
-  if (frame && icon.motion) moved = new Set((icon.motion.parts ? indices(icon, icon.motion.parts) : icon.d.map((_, i) => i)).map((i) => icon.d[i]));
+  const mv = spec ?? (frame ? icon.motion : null);
+  if (mv) moved = new Set((mv.parts ? indices(icon, mv.parts) : icon.d.map((_, i) => i)).map((i) => icon.d[i]));
   const tags = small ? new Map() : tagsOf(icon);
   let bdg = small ? (small.badge ?? null) : (icon.badge ?? null);
   const tiny = size && size <= 18;
@@ -283,6 +284,24 @@ function resolve(icon, { size, value, frame }) {
   return { d, fill, moved, tags, badge: badgeOut };
 }
 
+/**
+ * El efecto que se anima y sus datos. `effect`: 'auto' (el gesto propio del ícono; si no tiene,
+ * niveles si los tiene, si no rebote), uno de MOTION ('ring', 'wiggle', 'spin', 'beat', 'slide',
+ * 'float', 'bounce') o uno genérico: 'draw' (se dibuja trazo por trazo) o 'levels'.
+ */
+export function effectOf(icon, effect = 'auto') {
+  if (effect && effect !== 'auto') return effect;
+  return icon.motion?.effect ?? (icon.levels ? 'levels' : 'bounce');
+}
+function motionSpec(icon, effect) {
+  const e = effectOf(icon, effect);
+  if (icon.motion?.effect === e) return { ...icon.motion };
+  // Genéricos: todo el ícono, pivote al centro y un salto corto hacia arriba
+  return { effect: e, origin: [12, 12], vector: e === 'slide' ? [2, 0] : [0, -2] };
+}
+/** Pivote y desplazamiento de un grupo animado, como variables CSS (ver engine/motion.css). */
+const motionStyle = ({ origin = [12, 12], vector = [0, -2] }) => `transform-origin:${f(origin[0])}px ${f(origin[1])}px;--dx:${f(vector[0])}px;--dy:${f(vector[1])}px`;
+
 /** Transformación SVG del cuadro extremo de cada efecto (ver DESIGN.md › Movimiento). */
 export function motionTransform({ effect, origin = [12, 12], vector = [0, -2] }) {
   const [ox, oy] = origin;
@@ -293,9 +312,11 @@ export function motionTransform({ effect, origin = [12, 12], vector = [0, -2] })
   return '';
 }
 
-export function render(icon, { style = 'outline', enclosure = null, slash = false, weight = 1.5, id = 'i', size, rtl = false, value, frame = false } = {}) {
+export function render(icon, { style = 'outline', enclosure = null, slash = false, weight = 1.5, id = 'i', size, rtl = false, value, frame = false, animate = null } = {}) {
   const enc = enclosure ? ENCLOSURES[enclosure] : null;
-  const r = resolve(icon, { size, value, frame });
+  // Animación: el efecto pedido con sus datos (piezas, pivote, desplazamiento)
+  const spec = animate && !enc ? motionSpec(icon, animate) : null;
+  const r = resolve(icon, { size, value, frame, spec });
   if (r.badge) {
     // Los puntos que tocan el área de la insignia salen enteros (contorno y relleno)
     const gone = new Set(r.d.filter((d) => { const c = asCircle(d); return c && c.r < 1 && dotInKnock(c, r.badge.knock, weight); }));
@@ -305,7 +326,11 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     }
   }
   icon = { ...icon, d: r.d, fill: r.fill ?? undefined };
-  const paths = (ds) => ds.map((d) => `<path d="${d}"${r.tags.get(d) ?? ''}/>`).join('');
+  // Al animar, cada trazo visible lleva pathLength=1 y su orden de dibujo (--i) y nivel (--l)
+  const order = new Map(icon.d.map((d, i) => [d, i]));
+  const lvl = (d) => (r.tags.get(d) ?? '').match(/data-level="(\d+)"/)?.[1];
+  const anim = (d) => (spec ? ` pathLength="1" style="--i:${order.get(d) ?? 0}${lvl(d) ? `;--l:${lvl(d)}` : ''}"` : '');
+  const paths = (ds) => ds.map((d) => `<path d="${d}"${r.tags.get(d) ?? ''}${anim(d)}/>`).join('');
   const k = enc ? enc.scale : 1;
   const fill = style === 'fill' && icon.fill ? icon.fill : null;
   const g = (ds) => (enc ? shrink(ds, k) : ds);
@@ -316,12 +341,19 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   // Cuadro extremo del movimiento (hojas de revisión): las piezas que se mueven y, si la insignia
   // se mueve, también su recorte
   const t = frame && icon.motion ? motionTransform(icon.motion) : '';
-  const badgeMoves = t && (icon.motion.parts ?? []).includes('badge');
-  const moving = (ds) => (t && r.moved?.size ? [ds.filter((p) => !r.moved.has(p)), ds.filter((p) => r.moved.has(p))] : [ds, []]);
+  const mv = t ? icon.motion : spec;
+  // Lo que se mueve va en un grupo: con el cuadro extremo (hojas) o con la clase de la animación
+  const wrapAttr = t ? ` transform="${t}"` : spec ? ` class="gota-m" style="${motionStyle(spec)}"` : '';
+  const badgeMoves = Boolean(wrapAttr) && (mv?.parts ?? []).includes('badge');
+  const moving = (ds) => (wrapAttr && r.moved?.size ? [ds.filter((p) => !r.moved.has(p)), ds.filter((p) => r.moved.has(p))] : [ds, []]);
+  const split = (ds, draw) => {
+    const [still, go] = moving(ds);
+    return `${draw(still)}${go.length ? `<g${wrapAttr}>${draw(go)}</g>` : ''}`;
+  };
   // Recortes: el tachado (aplica a todo) y el área de la insignia (aplica a la base)
   const slashCut = slash ? `<path d="${SLASH}" stroke="black" stroke-width="${f(weight + 3)}" stroke-linecap="round"/>` : '';
   const kn = r.badge ? g([r.badge.knock])[0] : null;
-  const knockCut = kn ? `<path d="${kn}"${badgeMoves ? ` transform="${t}"` : ''} fill="black" stroke="black" stroke-width="${f(weight + 3)}" stroke-linejoin="round"/>` : '';
+  const knockCut = kn ? (badgeMoves ? `<g${wrapAttr}>` : '') + `<path d="${kn}" fill="black" stroke="black" stroke-width="${f(weight + 3)}" stroke-linejoin="round"/>` + (badgeMoves ? '</g>' : '') : '';
   if (kn) defs.push(maskOf('k', knockCut));
 
   if (enc && style === 'fill') {
@@ -337,20 +369,17 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     if (fill) {
       // solid: se rellena y conserva su trazo · cut: se cala al ancho del trazo · lines: van encima
       // con 1.5 de aire · wire: van encima pegadas, sin aire (el arco de un candado, una aguja)
-      defs.push(maskOf('f', `${black(g(fill.cut ?? []))}${black(g(fill.lines ?? []), weight + 3)}`));
-      content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${paths(g(fill.solid))}</g>`);
+      defs.push(maskOf('f', `${split(g(fill.cut ?? []), (ds) => black(ds))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 3))}`));
+      content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
       const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
-      if (over.length) content.push(`<g ${strokeAttrs(weight)}>${paths(g(over))}</g>`);
-    } else {
-      const [still, go] = moving(g(icon.d));
-      content.push(`<g ${strokeAttrs(weight)}>${paths(still)}${go.length ? `<g transform="${t}">${paths(go)}</g>` : ''}</g>`);
-    }
+      if (over.length) content.push(`<g ${strokeAttrs(weight)}>${split(g(over), paths)}</g>`);
+    } else content.push(`<g ${strokeAttrs(weight)}>${split(g(icon.d), paths)}</g>`);
     const base = content.join('');
     // La base queda bajo el recorte de la insignia; todo, bajo el del tachado
     let layer = kn ? `<g mask="url(#${id}-k)">${base}</g>` : base;
     if (r.badge) {
       const bf = style === 'fill' ? r.badge.fill : null;
-      const move = badgeMoves ? ` transform="${t}"` : '';
+      const move = badgeMoves ? wrapAttr : '';
       if (bf) {
         defs.push(maskOf('b', black(g(bf.cut ?? []))));
         layer += `<g data-part="badge"${move} fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-b)">${g(bf.solid).map((d) => `<path d="${d}"/>`).join('')}</g>`;
@@ -371,4 +400,6 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
 }
 
 /** El archivo SVG; los íconos direccionales llevan data-rtl="mirror" para voltearse en árabe o hebreo. */
-export const svgFile = (inner, icon) => `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"${icon?.mirror ? ' data-rtl="mirror"' : ''}>${inner}</svg>\n`;
+export const svgFile = (inner, icon, extra = '') => `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"${icon?.mirror ? ' data-rtl="mirror"' : ''}${extra}>${inner}</svg>\n`;
+/** Atributos del <svg> animado: la clase de Gota, el efecto y cuándo se reproduce (hover, loop, once). */
+export const motionAttrs = (icon, effect = 'auto', play = 'hover') => ` class="gota" data-effect="${effectOf(icon, effect)}" data-play="${play}"`;

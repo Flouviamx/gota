@@ -1,0 +1,100 @@
+/*
+ * Gota · movimiento. Lo lee cualquier <svg class="gota" data-effect="…" data-play="…"> que salga de
+ * render(icon, { animate }) + motionAttrs(), o el <Icon effect play> de React (que la inyecta solo).
+ *   data-play="hover"  se reproduce al pasar el cursor (o al enfocar)
+ *   data-play="once"   una vez al aparecer (para repetir: quitar y volver a poner el atributo)
+ *   data-play="loop"   en bucle
+ * Las piezas que se mueven van en .gota-m con su pivote (transform-origin en unidades del lienzo) y
+ * su desplazamiento (--dx, --dy). Con reduced motion, todo queda quieto.
+ */
+.gota .gota-m {
+  transform-box: view-box;
+}
+
+/* Cada efecto: su animación, duración y curva */
+.gota[data-effect='ring'] { --gota-k: gota-ring; --gota-t: 900ms; --gota-e: cubic-bezier(0.36, 0, 0.2, 1); }
+.gota[data-effect='wiggle'] { --gota-k: gota-wiggle; --gota-t: 600ms; --gota-e: cubic-bezier(0.36, 0, 0.2, 1); }
+.gota[data-effect='spin'] { --gota-k: gota-spin; --gota-t: 1000ms; --gota-e: cubic-bezier(0.45, 0, 0.2, 1); }
+.gota[data-effect='beat'] { --gota-k: gota-beat; --gota-t: 700ms; --gota-e: cubic-bezier(0.2, 0.7, 0.2, 1); }
+.gota[data-effect='slide'] { --gota-k: gota-slide; --gota-t: 700ms; --gota-e: cubic-bezier(0.5, 0, 0.2, 1); }
+.gota[data-effect='float'] { --gota-k: gota-float; --gota-t: 2400ms; --gota-e: cubic-bezier(0.45, 0, 0.55, 1); }
+.gota[data-effect='bounce'] { --gota-k: gota-bounce; --gota-t: 650ms; --gota-e: cubic-bezier(0.3, 0, 0.2, 1); }
+.gota[data-effect='spin'][data-play='loop'] { --gota-e: linear; }
+
+/* Disparadores */
+.gota[data-play='hover']:is(:hover, :focus-visible) .gota-m,
+.gota[data-play='once'] .gota-m,
+.gota[data-play='loop'] .gota-m {
+  animation: var(--gota-k) var(--gota-t) var(--gota-e) var(--gota-n, 1);
+}
+.gota[data-play='loop'] { --gota-n: infinite; }
+
+/* Dibujarse: cada trazo visible (pathLength=1) en su orden de dibujo */
+.gota[data-effect='draw'] path[pathLength] { stroke-dasharray: 1 1; }
+.gota[data-effect='draw'][data-play='hover']:is(:hover, :focus-visible) path[pathLength],
+.gota[data-effect='draw'][data-play='once'] path[pathLength],
+.gota[data-effect='draw'][data-play='loop'] path[pathLength] {
+  animation: gota-draw 700ms cubic-bezier(0.4, 0, 0.2, 1) both var(--gota-n, 1);
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* Niveles: se encienden uno tras otro, como el wifi al conectarse */
+.gota[data-effect='levels'] path[style*='--l'] { stroke-dasharray: 1 1; }
+.gota[data-effect='levels'][data-play='hover']:is(:hover, :focus-visible) path[style*='--l'],
+.gota[data-effect='levels'][data-play='once'] path[style*='--l'],
+.gota[data-effect='levels'][data-play='loop'] path[style*='--l'] {
+  animation: gota-draw 420ms cubic-bezier(0.3, 0, 0.2, 1) both var(--gota-n, 1);
+  animation-delay: calc((var(--l, 1) - 1) * 160ms);
+}
+
+@keyframes gota-ring {
+  0%, 100% { transform: rotate(0); }
+  12% { transform: rotate(16deg); }
+  28% { transform: rotate(-13deg); }
+  44% { transform: rotate(9deg); }
+  60% { transform: rotate(-5deg); }
+  76% { transform: rotate(2deg); }
+}
+@keyframes gota-wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(8deg); }
+  50% { transform: rotate(-6deg); }
+  75% { transform: rotate(3deg); }
+}
+@keyframes gota-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes gota-beat {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.18); }
+  55% { transform: scale(0.96); }
+  75% { transform: scale(1.04); }
+}
+@keyframes gota-slide {
+  0%, 100% { transform: translate(0, 0); }
+  45% { transform: translate(var(--dx), var(--dy)); }
+}
+@keyframes gota-float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(var(--dx), var(--dy)); }
+}
+@keyframes gota-bounce {
+  0%, 100% { transform: translate(0, 0); }
+  35% { transform: translate(var(--dx), var(--dy)); }
+  62% { transform: translate(calc(var(--dx) * -0.12), calc(var(--dy) * -0.12)); }
+  82% { transform: translate(calc(var(--dx) * 0.05), calc(var(--dy) * 0.05)); }
+}
+@keyframes gota-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* Reemplazar un ícono por otro (React lo aplica al cambiar `name` con transition="replace") */
+.gota-in { animation: gota-in 320ms cubic-bezier(0.2, 0.9, 0.3, 1.2) both; transform-origin: center; }
+@keyframes gota-in {
+  from { transform: scale(0.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gota *, .gota-in { animation: none !important; }
+}

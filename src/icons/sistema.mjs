@@ -327,9 +327,9 @@ function reverse(s) {
 }
 /**
  * El mismo trazo abierto de ida y vuelta: se ve idéntico (las vueltas son uniones redondas, como
- * las puntas) pero no encierra área. En `fill.solid`, una pieza abierta que sigue unida al cuerpo
- * sin rellenar su hueco (el asa del trofeo); en el `knock` de una insignia propia, el área de una
- * línea con las puntas redondas (el motor la despeja con el ancho del trazo + 3).
+ * las puntas) pero no encierra área. En el `knock` de una insignia propia es el área de una línea con
+ * las puntas redondas (el motor la despeja con el ancho del trazo + 3). En el relleno, una línea
+ * pegada al cuerpo va en `wire`, no de ida y vuelta en `solid`.
  */
 const trace = (d) => ser(parse(d).map((sp) => (sp.closed ? sp : { closed: true, segs: [...sp.segs, ...sp.segs.toReversed().map(reverse)] })));
 
@@ -599,7 +599,7 @@ const icons = {
     badge: (() => {
       const seal = circ(15.25, 12.5, 2.5);
       const tails = [line(polar(15.25, 12.5, 2.5, 115), [13.5, 21.25]), line(polar(15.25, 12.5, 2.5, 65), [17, 21.25])];
-      return own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal, ...tails] });
+      return own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal], wire: tails });
     })(),
   },
   firewall: {
@@ -935,7 +935,8 @@ const icons = {
       const key = place(xf(wrench(16), { s: 0.8, o: [0, 0] }), -45, [6.1, 0]);
       const driver = [DRIVER[0], DRIVER[1], line([10.75, 0], [23.25, 0])].map((d) => place(xf(d, { s: 0.76, o: [0, 0] }), -135, [12.35, 0]));
       const [k, ...dr] = center([key, ...driver]);
-      return { d: [k], badge: own(dr, [dr[0], trace(dr[1]), trace(dr[2])].join(''), { solid: dr }) };
+      // Relleno: el mango, y el casquillo cerrado contra él; la vara, pegada
+      return { d: [k], badge: own(dr, [dr[0], trace(dr[1]), trace(dr[2])].join(''), { solid: [dr[0], `${dr[1]}Z`], wire: [dr[2]] }) };
     })(),
   },
   'traffic-cone': {
@@ -1009,7 +1010,7 @@ const icons = {
     badge: (() => {
       const lens = circ(...BC, 3.25);
       const handle = line(polar(...BC, 3.25, 45), [21.25, 21.25]);
-      return own([lens, handle], lens + trace(handle), { solid: [lens, handle] });
+      return own([lens, handle], lens + trace(handle), { solid: [lens], wire: [handle] });
     })(),
   },
   'security-camera': {
@@ -1166,30 +1167,33 @@ const icons = {
 };
 
 // ── Relleno (DESIGN.md › Relleno) ──
-// Por índice de `d`: `solid` se rellena (y conserva su trazo), `cut` se cala al ancho del trazo y
-// `lines` sigue siendo línea con 1.5 de aire. T(i): la pieza abierta i de ida y vuelta (`trace`),
-// para que siga unida al cuerpo sin rellenar su hueco (asas, soportes, tubos).
-const T = (i) => (d) => trace(d[i]);
+// Por índice de `d`: `solid` se rellena (y conserva su trazo; solo figuras cerradas), `cut` se cala
+// al ancho del trazo, `lines` sigue siendo línea con 1.5 de aire y `wire` sigue siendo línea pegada
+// al relleno, sin aire (asas, soportes, varas, tubos). Z(i): la pieza abierta i cerrada con su
+// cuerda, cuando ese cierre corre por el borde de la figura que toca (la copa del sombrero contra el
+// ala, una aleta contra el cuerpo): la silueta no cambia y se rellena entera.
+const Z = (i) => (d) => `${d[i]}Z`;
 const FILL = {
-  // Candados: como el del núcleo, el cuerpo y el arco rellenos; el abierto no encierra nada con su
-  // arco, así que va de ida y vuelta (si no, se rellenaba un domo chueco).
-  'lock-open': { solid: [0, T(1)], cut: [2] },
-  'lock-check': { solid: [0, 1], cut: [2] },
-  'lock-x': { solid: [0, 1], cut: [2, 3] },
-  'lock-clock': { solid: [0, 1], cut: [2] },
+  // Candados: como el del núcleo, el cuerpo relleno y el arco pegado (sin rellenar su hueco)
+  'lock-open': { solid: [0], wire: [1], cut: [2] },
+  'lock-check': { solid: [0], wire: [1], cut: [2] },
+  'lock-x': { solid: [0], wire: [1], cut: [2, 3] },
+  'lock-clock': { solid: [0], wire: [1], cut: [2] },
   keyhole: { solid: [0], cut: [1] },
   password: { solid: [0], cut: [1, 2, 3, 4] },
-  // La llave antigua: argolla, vara, collarín y paletón (que se cierra contra la vara)
-  'key-skeleton': { solid: [0, 1, 2, 3] },
-  passkey: { solid: [0, 1, 2, 3, 4, 5] },
+  // La llave antigua: argolla y paletón rellenos (el paletón se cierra contra la vara); la vara y el
+  // collarín, pegados
+  'key-skeleton': { solid: [0, Z(3)], wire: [1, 2] },
+  // La persona y el ojo de la llave rellenos; la vara y los dientes, pegados
+  passkey: { solid: [0, 1, 2], wire: [3, 4, 5] },
   'person-lock': { solid: [0, 1] },
   // El ojo relleno con la pupila calada; las esquinas del marco siguen siendo línea
   'iris-scan': { solid: [1], cut: [2], lines: [0] },
   'two-factor': { solid: [0], cut: [1, 2, 3, 4] },
   'eye-off': { solid: [0], cut: [1] },
   'eye-lock': { solid: [0], cut: [1] },
-  // La copa del sombrero se cierra contra el ala; el puente de los lentes va de ida y vuelta
-  incognito: { solid: [0, 1, 2, 3, T(4)] },
+  // La copa del sombrero se cierra contra el ala; el ala y el puente de los lentes, pegados
+  incognito: { solid: [Z(0), 2, 3], wire: [1, 4] },
   'window-lock': { solid: [0], cut: [1, 2, 3] },
   certificate: { solid: [0], cut: [1, 2] },
   cookie: { solid: [0], cut: [1, 2, 3, 4] },
@@ -1198,35 +1202,42 @@ const FILL = {
   'status-progress': { solid: [1], lines: [0] },
   gear: { solid: [0], cut: [1] },
   gears: { solid: [0], cut: [1] },
-  'sliders-horizontal': { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
+  // Como los deslizadores del núcleo: las perillas rellenas y las barras pegadas
+  'sliders-horizontal': { solid: [6, 7, 8], wire: [0, 1, 2, 3, 4, 5] },
   preferences: { solid: [0, 2], cut: [1, 3] },
   'toggle-on': { solid: [0], cut: [1] },
   'toggle-off': { solid: [0], cut: [1] },
   lifebuoy: { solid: [0], cut: [1, 2, 3, 4, 5] },
-  'flag-report': { solid: [0, 1], cut: [2, 3] },
-  'flag-check': { solid: [0, 1], cut: [2] },
+  // La bandera rellena y el asta pegada
+  'flag-report': { solid: [1], wire: [0], cut: [2, 3] },
+  'flag-check': { solid: [1], wire: [0], cut: [2] },
   // El domo se cierra contra la base; los destellos siguen siendo línea
-  siren: { solid: [0, 1], lines: [2, 3, 4] },
+  siren: { solid: [Z(0), 1], lines: [2, 3, 4] },
   'page-not-found': { solid: [0], cut: [1, 2, 3, 4] },
   verified: { solid: [0], cut: [1] },
   'badge-star': { solid: [0], cut: [1] },
-  award: { solid: [0, 1] },
-  // Las asas de la copa, de ida y vuelta: rellenas se volvían orejas macizas
-  trophy: { solid: [0, T(1), T(2), 3, 4] },
+  // Los listones se cierran por arriba, bajo la roseta (el motor despeja ese borde)
+  award: { solid: [Z(0), Z(1)] },
+  // Las asas y la vara de la copa, pegadas: rellenas, las asas se volvían orejas macizas
+  trophy: { solid: [0, 4], wire: [1, 2, 3] },
   'medal-ribbon': { solid: [0] },
   lightbulb: { solid: [0], lines: [1, 2] },
   'lightbulb-on': { solid: [0], lines: [1, 2, 3, 4, 5, 6] },
   // Aletas y llama se cierran contra el cuerpo; la ventanilla, calada
-  'rocket-launch': { solid: [0, 2, 3, 4], cut: [1] },
+  'rocket-launch': { solid: [0, Z(2), Z(3), Z(4)], cut: [1] },
   'target-arrow': { solid: [0], cut: [1] },
   podium: { solid: [0], cut: [1, 2] },
   wrench: { solid: [0] },
-  screwdriver: { solid: [0, 1, 3], cut: [2] },
-  hammer: { solid: [0, 1] },
+  // El casquillo se cierra contra el mango; la vara, pegada
+  screwdriver: { solid: [0, Z(1)], wire: [3], cut: [2] },
+  // El mango se cierra contra la cabeza
+  hammer: { solid: [0, Z(1)] },
   tools: { solid: [0] },
-  'traffic-cone': { solid: [0, 1], cut: [2, 3] },
-  barrier: { solid: [0, 1, 2, 3, 4], cut: [5, 6, 7] },
-  'hard-hat': { solid: [0, 1], cut: [2, 3] },
+  // El cono y el domo del casco se cierran contra su base
+  'traffic-cone': { solid: [Z(0), 1], cut: [2, 3] },
+  // El tablero relleno; las patas y sus pies, pegados
+  barrier: { solid: [0], wire: [1, 2, 3, 4], cut: [5, 6, 7] },
+  'hard-hat': { solid: [Z(0), 1], cut: [2, 3] },
   'hex-nut': { solid: [0], cut: [1] },
   checkbox: { solid: [0] },
   // La opción elegida: el aro sigue siendo línea y el centro se rellena
@@ -1235,18 +1246,21 @@ const FILL = {
   // La barra: el riel sigue siendo línea y el avance se rellena
   'progress-bar': { solid: [1], lines: [0] },
   'person-gear': { solid: [0, 1] },
-  'key-plus': { solid: [0, 2, 3, 4], cut: [1] },
+  // Como la llave del núcleo: el ojo relleno con su punto calado; la vara y los dientes, pegados
+  'key-plus': { solid: [0], wire: [2, 3, 4], cut: [1] },
   'globe-lock': { solid: [0], cut: [1, 2] },
   'shield-search': { solid: [0] },
-  // La base del soporte va de ida y vuelta (rellena era un triángulo)
-  'security-camera': { solid: [0, T(1), 2], cut: [3] },
+  // El cuerpo relleno; el soporte y la placa de la pared, pegados (relleno, el soporte era un triángulo)
+  'security-camera': { solid: [0], wire: [1, 2], cut: [3] },
   radar: { solid: [0], cut: [1, 2, 3] },
   'heart-pulse': { solid: [0], cut: [1] },
-  // Estetoscopio: la campana rellena; las olivas y el tubo, de ida y vuelta
-  stethoscope: { solid: [T(0), T(1), 2] },
-  virus: { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
-  'plug-connected': { solid: [0, 1, 2, 3, 4, 5] },
-  'plug-disconnected': { solid: [0, 1, 2, 3, 4, 5] },
+  // Estetoscopio: la campana rellena; las olivas y el tubo, pegados
+  stethoscope: { solid: [2], wire: [0, 1] },
+  // El cuerpo relleno; los receptores, pegados
+  virus: { solid: [0], wire: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  // La clavija y el contacto rellenos; las patas y los cables, pegados
+  'plug-connected': { solid: [0, 4], wire: [1, 2, 3, 5] },
+  'plug-disconnected': { solid: [0, 4], wire: [1, 2, 3, 5] },
   patch: { solid: [0], cut: [1, 2, 3, 4] },
   accessibility: { solid: [0], cut: [1, 2, 3, 4] },
   'dark-mode': { solid: [0], cut: [1] },
@@ -1263,7 +1277,7 @@ for (const name of ['shield-x', 'shield-alert', 'shield-plus', 'shield-minus', '
 for (const [name, spec] of Object.entries(FILL)) {
   const ds = icons[name].d;
   const pick = (ix) => ix.map((i) => (typeof i === 'function' ? i(ds) : ds[i]));
-  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
 }
 // Solo líneas abiertas (o signos): su relleno es el mismo contorno
 for (const name of ['fingerprint', 'face-scan', 'scan', 'firewall', 'check-double', 'loader', 'spinner', 'status-pending', 'restart', 'update', 'command', 'minus', 'asterisk', 'sync'])
@@ -1272,8 +1286,11 @@ for (const name of ['fingerprint', 'face-scan', 'scan', 'firewall', 'check-doubl
 // ── 16 px (DESIGN.md › 16 px): dibujos con menos piezas para los que se empastan a 1x ──
 // Un dibujo propio no se ajusta solo: sus tramos rectos van en centros de pixel (0.75 + 1.5k) y los
 // puntos de r 1 en bordes de pixel (múltiplos de 1.5), así caen enteros en 2 × 2 pixeles.
-/** Dibujo de 16 px con su relleno: `solid` y `cut` por índice de `d`. */
-const small = (d, solid, cut = [], extra = {}) => ({ d, fill: { solid: solid.map((i) => d[i]), ...(cut.length && { cut: cut.map((i) => d[i]) }) }, ...extra });
+/** Dibujo de 16 px con su relleno: `solid` y `cut` por índice de `d` (o Z(i), cerrado). */
+const small = (d, solid, cut = [], extra = {}) => {
+  const pick = (ix) => ix.map((i) => (typeof i === 'function' ? i(d) : d[i]));
+  return { d, fill: { solid: pick(solid), ...(cut.length && { cut: pick(cut) }) }, ...extra };
+};
 // La huella con las crestas a 4.5 en vez de 3 (3 px entre ejes en lugar de 2) y su eje en un centro
 // de pixel (en 12 cada cresta caía entre dos pixeles y se veía gris).
 icons.fingerprint.small = {
@@ -1301,7 +1318,7 @@ icons['heart-pulse'].small = small([icons['heart-pulse'].d[0], inside(line([2, 1
 {
   const seal = circ(15.75, 12.75, 2.25);
   const tails = [14.25, 17.25].map((x) => line([x, 12.75 + Math.sqrt(2.25 ** 2 - 1.5 ** 2)], [x, 21.75]));
-  icons.certificate.small = small([sq(2.25, 3.75, 19.5, 15, 3.25, BR), line([6.75, 8.25], [11.25, 8.25])], [0], [1], { badge: own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal, ...tails] }) });
+  icons.certificate.small = small([sq(2.25, 3.75, 19.5, 15, 3.25, BR), line([6.75, 8.25], [11.25, 8.25])], [0], [1], { badge: own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal], wire: tails }) });
 }
 // Los engranes con menos dientes y sin el punto del chico.
 {
@@ -1311,7 +1328,7 @@ icons['heart-pulse'].small = small([icons['heart-pulse'].d[0], inside(line([2, 1
 }
 // Medalla y roseta sin el aro interior.
 icons['medal-ribbon'].small = small([STRAP], [0], [], { badge: own([MEDAL], MEDAL, { solid: [MEDAL] }) });
-icons.award.small = small(icons.award.d, [0, 1], [], { badge: own([ROSETTE], ROSETTE, { solid: [ROSETTE] }) });
+icons.award.small = small(icons.award.d, [Z(0), Z(1)], [], { badge: own([ROSETTE], ROSETTE, { solid: [ROSETTE] }) });
 
 // ── Variantes (DESIGN.md › Variantes automáticas) ──
 const off = (names, v) => {

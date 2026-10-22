@@ -2,6 +2,7 @@
 // engine/geometry.mjs sobre las reglas de DESIGN.md (trazo 1.5, keylines, esquinas continuas y la
 // esquina inferior derecha recta en los contenedores).
 import { arc, badge, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { snapper } from '../../engine/variants.mjs';
 
 // ---------------------------------------------------------------------------------------------
 // Auxiliares locales
@@ -120,33 +121,6 @@ function edge(p, q, r1, r2 = r1) {
   return line([p[0] + (dx / L) * r1, p[1] + (dy / L) * r1], [q[0] - (dx / L) * r2, q[1] - (dy / L) * r2]);
 }
 
-/**
- * Ida y vuelta: el mismo trazo abierto recorrido de regreso. En el relleno, un conector con esquina
- * o curva (la rama de git, la línea que une dos cajas, la punta de una flecha) cerraría un triángulo
- * al rellenarse; así sigue siendo línea, unido a lo que toca y sin área. Admite M, L, H, V, C y A
- * absolutos.
- */
-function wire(d) {
-  const segs = [];
-  let p = null;
-  for (const [, c, s] of d.matchAll(/([A-Za-z])([^A-Za-z]*)/g)) {
-    const a = (s.match(/-?(?:\d+\.?\d*|\.\d+)/g) ?? []).map(Number);
-    if (c === 'M' && !p) p = [a[0], a[1]];
-    else if (c === 'L' || c === 'H' || c === 'V') {
-      const q = c === 'L' ? [a[0], a[1]] : c === 'H' ? [a[0], p[1]] : [p[0], a[0]];
-      segs.push(`L${pt(p)}`);
-      p = q;
-    } else if (c === 'C') {
-      segs.push(`C${pt([a[2], a[3]])} ${pt([a[0], a[1]])} ${pt(p)}`);
-      p = [a[4], a[5]];
-    } else if (c === 'A') {
-      segs.push(`A${n(a[0])} ${n(a[1])} ${n(a[2])} ${a[3]} ${a[4] ? 0 : 1} ${pt(p)}`);
-      p = [a[5], a[6]];
-    } else throw new Error(`wire: comando ${c} no admitido en «${d}»`);
-  }
-  return d + segs.reverse().join('');
-}
-
 /** Anillo para el relleno: el círculo exterior y el interior en sentido contrario (el centro queda hueco). */
 const ring = (cx, cy, R, r) => `${circ(cx, cy, R)}M${pt([cx - r, cy])}A${n(r)} ${n(r)} 0 1 1 ${pt([cx + r, cy])}A${n(r)} ${n(r)} 0 1 1 ${pt([cx - r, cy])}Z`;
 
@@ -170,7 +144,8 @@ const OWN = {
     const p = polar(...BC, 3.25, 45);
     const end = [21.25, 21.25];
     const handle = line(p, end);
-    return { d: [lens, handle], knock: `${RING}M${pt(p)}L${pt(end)}Z`, fill: { solid: [lens, handle] } };
+    // Rellena: el lente sólido y el mango pegado a él, que sigue siendo línea
+    return { d: [lens, handle], knock: `${RING}M${pt(p)}L${pt(end)}Z`, fill: { solid: [lens], wire: [handle] } };
   },
   // Sincronizar: dos flechas de arco que ocupan el círculo de la insignia (en relleno siguen siendo línea).
   sync() {
@@ -1036,9 +1011,13 @@ const icons = {
 };
 
 // ---------------------------------------------------------------------------------------------
-// Relleno (DESIGN.md › Relleno): por índice de d. `solid` se rellena y conserva su trazo, `cut` se
-// cala al ancho del trazo y `lines` va encima con 1.5 de aire. Los conectores con esquina o curva
-// van en `wired`: siguen en el sólido como ida y vuelta (ver `wire`), unidos a lo que tocan.
+// Relleno (DESIGN.md › Relleno): por índice de d. `solid` se rellena y conserva su trazo (solo
+// figuras cerradas); `closed` también, pero es un trazo abierto del contorno que encierra un cuerpo
+// (la media cabeza del bicho, el vidrio del matraz, las aletas del cohete, los botones del bloque,
+// cada hemisferio del cerebro, el cuerpo de la base de datos) y se rellena cerrado con Z: su cierre
+// corre por un trazo que ya está ahí, así la silueta no cambia. `cut` se cala al ancho del trazo;
+// `lines` sigue siendo línea con 1.5 de aire y `wire` sigue siendo línea pegada al relleno, sin aire
+// (las ramas de git, las aristas de un grafo, las patas de un chip, los conectores de un flujo).
 // ---------------------------------------------------------------------------------------------
 const all = (name) => icons[name].d.map((_, i) => i);
 const from = (name, i) => all(name).slice(i);
@@ -1060,81 +1039,88 @@ const FILL = {
   // Las barras rellenas; la serie pasa por encima como línea
   'chart-combo': { solid: [0, 1, 2], lines: [3] },
   dashboard: { solid: [0, 1, 2] },
-  // El eje del medidor sigue siendo línea; el centro y la aguja, rellenos y unidos
-  gauge: { solid: [1, 2], lines: [0] },
-  // El lente con el mango (unidos) y las barras caladas
-  analytics: { solid: [0, 1], cut: [2, 3, 4] },
+  // El eje del medidor sigue siendo línea; el centro relleno y la aguja pegada a él
+  gauge: { solid: [1], wire: [2], lines: [0] },
+  // El lente con el mango pegado y las barras caladas
+  analytics: { solid: [0], wire: [1], cut: [2, 3, 4] },
   table: { solid: [0], cut: [1, 2] },
   kanban: { solid: [0, 1, 2] },
-  schema: { solid: [0, 1], wired: [2], cut: [3, 4] },
+  schema: { solid: [0, 1], wire: [2], cut: [3, 4] },
   terminal: { solid: [0], cut: [1, 2] },
   'code-window': { solid: [0], cut: [1, 2, 3] },
-  // Git: los nodos rellenos y las ramas como línea, unidas a ellos
-  'git-branch': { solid: [0, 1, 3], wired: [2] },
-  'git-commit': { solid: [0, 1, 2] },
-  'git-merge': { solid: [0, 1, 2, 3], wired: [4] },
-  'git-pull-request': { solid: [0, 1, 2, 3], wired: [4, 5] },
-  'git-pull-request-closed': { solid: all('git-pull-request-closed') },
-  'git-pull-request-draft': { solid: all('git-pull-request-draft') },
-  'git-fork': { solid: [0, 3, 4], wired: [1, 2] },
-  'git-compare': { solid: [0, 3], wired: [1, 2, 4, 5] },
-  'git-graph': { solid: [0, 1, 2, 3, 4, 6], wired: [5, 7] },
-  // El cuerpo y la cabeza rellenos, la línea del élitro calada; las patas siguen unidas
-  bug: { solid: [0, 1, 3, 4, 5, 6], cut: [2] },
-  // El vidrio relleno y el nivel del líquido calado
-  flask: { solid: [0, 1], cut: [2] },
-  'test-tube': { solid: [0, 1], cut: [2] },
-  api: { solid: [0, 1, 2, 3, 4] },
-  webhook: { solid: [0], wired: [1, 2] },
-  cpu: { solid: [0, 2, 3, 4, 5], cut: [1] },
-  'ai-chip': { solid: [0, 2, 3, 4, 5], cut: [1] },
+  // Git: los nodos rellenos y el tronco y las ramas como línea, pegados a ellos
+  'git-branch': { solid: [0, 3], wire: [1, 2] },
+  'git-commit': { solid: [0], wire: [1, 2] },
+  'git-merge': { solid: [0, 2, 3], wire: [1, 4] },
+  'git-pull-request': { solid: [0, 2, 3], wire: [1, 4, 5] },
+  // La x de cerrado no toca nada: sigue siendo línea
+  'git-pull-request-closed': { solid: [0, 2, 3], wire: [1, 4], lines: [5, 6] },
+  'git-pull-request-draft': { solid: [0, 2, 3, 4, 5, 6], wire: [1] },
+  'git-fork': { solid: [0, 3, 4], wire: [1, 2] },
+  'git-compare': { solid: [0, 3], wire: [1, 2, 4, 5] },
+  'git-graph': { solid: [0, 2, 4, 6], wire: [1, 3, 5, 7] },
+  // El cuerpo y la cabeza rellenos (la cabeza cierra contra el cuerpo), la línea del élitro calada;
+  // las patas siguen unidas al cuerpo
+  bug: { solid: [0], closed: [1], wire: [3, 4, 5, 6], cut: [2] },
+  // El vidrio relleno (cierra por la boca, bajo el borde) y el nivel del líquido calado
+  flask: { closed: [0], wire: [1], cut: [2] },
+  'test-tube': { closed: [0], wire: [1], cut: [2] },
+  // La clavija y el enchufe rellenos; los cables y las patas, pegados a ellos
+  api: { solid: [1, 2], wire: [0, 3, 4] },
+  webhook: { solid: [0], wire: [1, 2] },
+  cpu: { solid: [0], wire: [2, 3, 4, 5], cut: [1] },
+  'ai-chip': { solid: [0], wire: [2, 3, 4, 5], cut: [1] },
   server: { solid: [0, 1], cut: [2, 3, 4, 5] },
   'cloud-compute': { solid: [0], cut: [1, 2] },
   container: { solid: [0], cut: [1, 2, 3] },
-  // El fuselaje y las aletas rellenos (las aletas cierran contra el costado), la ventana calada
-  rocket: { solid: [0, 1, 2, 4], cut: [3] },
+  // El fuselaje y las aletas rellenos (las aletas cierran contra el costado), la ventana calada; la
+  // estela no toca nada y sigue siendo línea
+  rocket: { solid: [0], closed: [1, 2], lines: [4], cut: [3] },
   log: { solid: [0], cut: from('log', 1) },
-  network: { solid: all('network') },
-  'node-graph': { solid: all('node-graph') },
-  hierarchy: { solid: [0, 1, 3, 4], wired: [2] },
-  sitemap: { solid: [0, 1, 3, 4, 5], wired: [2] },
-  flowchart: { solid: [0, 2], wired: [1] },
-  workflow: { solid: [0, 3], wired: [1, 2] },
+  network: { solid: [0, 4, 5, 6], wire: [1, 2, 3] },
+  'node-graph': { solid: [0, 1, 2, 3], wire: [4, 5, 6, 7, 8] },
+  hierarchy: { solid: [0, 3, 4], wire: [1, 2] },
+  sitemap: { solid: [0, 3, 4, 5], wire: [1, 2] },
+  flowchart: { solid: [0, 2], wire: [1] },
+  workflow: { solid: [0, 3], wire: [1, 2] },
   // La chispa rellena dentro del ciclo, que sigue siendo línea
   automation: { solid: [2], lines: [0, 1] },
   sparkle: { solid: [0] },
   sparkles: { solid: [0, 1] },
-  'search-sparkle': { solid: [0, 1], cut: [2] },
-  robot: { solid: [0, 1, 2], cut: [3, 4] },
+  'search-sparkle': { solid: [0], wire: [1], cut: [2] },
+  robot: { solid: [0, 2], wire: [1], cut: [3, 4] },
   chatbot: { solid: [0], cut: [1, 2] },
   // Cada hemisferio cierra contra la línea del medio, que se cala con los pliegues
-  brain: { solid: [0, 1], cut: [2, 3, 4, 5, 6] },
-  'neural-network': { solid: all('neural-network') },
+  brain: { closed: [0, 1], cut: [2, 3, 4, 5, 6] },
+  'neural-network': { solid: [0, 1, 2, 3, 4], wire: [5, 6, 7, 8, 9, 10] },
   prompt: { solid: [0], cut: [1, 2] },
   // Los botones del bloque cierran contra su borde
-  component: { solid: [0, 1, 2] },
+  component: { solid: [0], closed: [1, 2] },
   puzzle: { solid: [0] },
   cube: { solid: [0], cut: [1, 2] },
   'data-filter': { solid: [0, 1, 2, 3] },
-  'tree-view': { solid: [0, 2, 3, 4], wired: [1] },
+  'tree-view': { solid: [0, 3, 4], wire: [1, 2] },
   'chart-progress': { solid: [0, 1], cut: [2, 3] },
   target: { solid: [0], cut: [1, 2] },
   'code-sparkle': { solid: [2], lines: [0, 1] },
-  condition: { solid: [0, 1], wired: [2, 3, 4, 5] },
+  condition: { solid: [1], wire: [0, 2, 3, 4, 5] },
   'server-rack': { solid: [0], cut: from('server-rack', 1) },
-  memory: { solid: [0, 3], cut: [1, 2] },
-  'load-balancer': { solid: [0, 1], wired: [2, 3, 4, 5, 6] },
+  memory: { solid: [0], wire: [3], cut: [1, 2] },
+  'load-balancer': { solid: [0], wire: [1, 2, 3, 4, 5, 6] },
   // La pizarra rellena con la tendencia calada; el caballete sigue unido a su borde
-  presentation: { solid: [0], wired: [1], cut: [2] },
+  presentation: { solid: [0], wire: [1], cut: [2] },
 };
-// Las bases de datos con insignia: el cuerpo y la tapa rellenos, la banda y el borde de la tapa calados
+// Las bases de datos con insignia: el cuerpo (cerrado por la tapa) y la tapa rellenos, la banda y el
+// borde de la tapa calados, como en `database` del núcleo
 for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
-  FILL[name] = { solid: [0, 1], cut: [2] };
+  FILL[name] = { solid: [1], closed: [0], cut: [2] };
 for (const [name, spec] of Object.entries(FILL)) {
   const d = icons[name].d;
   const pick = (ix) => (ix ?? []).map((i) => d[i]);
-  const solid = [...pick(spec.solid), ...pick(spec.wired).map(wire)];
-  icons[name].fill = { solid, ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+  const closed = new Set(spec.closed);
+  const solid = [...(spec.solid ?? []), ...closed].sort((a, b) => a - b).map((i) => (closed.has(i) ? `${d[i]}Z` : d[i]));
+  icons[name].fill = { solid };
+  for (const k of ['cut', 'lines', 'wire']) if (spec[k]?.length) icons[name].fill[k] = pick(spec[k]);
 }
 for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import']) icons[name].fill.cut.push(DB.rim);
 // La dona: el anillo hueco (no un disco) con sus divisiones caladas
@@ -1183,6 +1169,80 @@ icons.divide.small = { d: [line([4.25, 12.75], [19.75, 12.75]), dot(12, 7.5, SMA
   const rule = line([2.25, 8.25], [21.75, 8.25]);
   const code = [line([9.75, 11.25], [6.75, 14.25], [9.75, 17.25]), line([14.25, 11.25], [17.25, 14.25], [14.25, 17.25])];
   icons['code-window'].small = { d: [body, rule, ...code], fill: { solid: [body], cut: [rule, ...code] } };
+}
+// Rejilla de 16 px: el centro del pixel k, el punto (columna, fila) y una línea por centros de pixel.
+const px = (k) => 0.75 + 1.5 * k;
+const g = (c, r) => [px(c), px(r)];
+const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
+
+// Las bases de datos con insignia: las elipses de 24 caían entre dos filas de pixeles y se volvían
+// bandas grises. A 16 px, los costados en las columnas 2 y 13, y lo plano de la tapa, de su borde, de
+// la banda y del fondo en centros de pixel (filas 1, 5, 9 y 13). La insignia es la de pixel del motor
+// o la propia: la lupa (el lente de r 3 en el centro de la insignia, nítido en sus cuatro lados) y
+// las flechas de sincronizar de Archivos a 16 px.
+{
+  const lid = 'M3.75 5.25c0-1.66 3.69-3 8.25-3s8.25 1.34 8.25 3-3.69 3-8.25 3-8.25-1.34-8.25-3Z';
+  const body = 'M3.75 5.25v12c0 1.66 3.69 3 8.25 3s8.25-1.34 8.25-3v-12';
+  const band = 'M20.25 11.25c0 1.66-3.69 3-8.25 3s-8.25-1.34-8.25-3';
+  const rim = 'M20.25 5.25c0 1.66-3.69 3-8.25 3s-8.25-1.34-8.25-3';
+  const own16 = (d, fill) => ({ d, knock: `${RING}${d.join('')}`, ...(fill && { fill }) });
+  const lens = circ(...BC, 3);
+  const handle = line(polar(...BC, 3, 45), g(14, 14));
+  const at = (dx, dy) => g(11 + dx, 11 + dy);
+  const BADGE16 = {
+    'database-plus': badge('plus', { size: 16 }),
+    'database-check': badge('check', { size: 16 }),
+    'database-export': badge('arrow-up', { size: 16 }),
+    'database-import': badge('arrow-down', { size: 16 }),
+    'database-search': own16([lens, handle], { solid: [lens], wire: [handle] }),
+    'database-sync': own16([
+      `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${n(px(13))}`,
+      pl([12, 8], [13, 9], [12, 10]),
+      `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${n(px(9))}`,
+      pl([10, 14], [9, 13], [10, 12]),
+    ]),
+  };
+  for (const [name, b] of Object.entries(BADGE16))
+    icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: b };
+}
+// El átomo: el núcleo se pegaba a las órbitas y a 16 px era una flor gris. El centro va en el centro
+// del pixel (7, 7): la órbita vertical cae nítida (sus lados en las columnas 5 y 9, sus puntas en las
+// filas 1 y 13) y el núcleo es un pixel con aire alrededor.
+{
+  const c = g(7, 7);
+  icons.atom.small = { d: [circ(...c, 0.1), ...[30, 90, 150].map((a) => rell(...c, 9, 3, a))] };
+}
+// La automatización: el ciclo de r 9 caía entre dos pixeles y el rayo era una mancha. A 16 px, el
+// ciclo de r 8.25 (sus costados en las columnas 2 y 13) con la punta de 24, y el rayo de pixel de
+// `cloud-bolt` (Archivos): baja a 45°, avanza y vuelve a bajar, en el centro del ciclo.
+{
+  const a = arc(12, 12, 8.25, -60, 240);
+  icons.automation.small = { d: [a.d, head(a.end, a.tangent, 3.4), pl([9, 5], [6, 8], [9, 8], [6, 11])] };
+}
+// La red neuronal: los nodos de r 1.75 y las conexiones que no caían en centros de pixel se volvían
+// una trama gris. A 16 px, nodos de r 1.5 en centros de pixel (3 × 3 con su hueco), las capas en las
+// columnas 2, 7 y 13 y las conexiones de cada capa en filas de pixel.
+{
+  const N = { a: g(2, 4), b: g(2, 10), c: g(7, 4), d: g(7, 10), e: g(13, 7) };
+  const nodes = Object.values(N).map((p) => circ(...p, 1.5));
+  const links = [['a', 'c'], ['a', 'd'], ['b', 'c'], ['b', 'd'], ['c', 'e'], ['d', 'e']].map(([x, y]) => edge(N[x], N[y], 1.5));
+  icons['neural-network'].small = { d: [...nodes, ...links], fill: { solid: nodes, wire: links } };
+}
+// El grafo: con aristas casi horizontales y casi verticales, a 16 px todo era gris. Los nodos en
+// centros de pixel (el grande de r 3, los demás de r 1.5) y las dos aristas del primero, una fila y una
+// columna de pixel; la que va al nodo grande, a 45°.
+{
+  const N = [[...g(3, 3), 1.5], [...g(12, 3), 1.5], [...g(10, 10), 3], [...g(3, 12), 1.5]];
+  const nodes = N.map(([x, y, r]) => circ(x, y, r));
+  const links = [[0, 1], [0, 2], [1, 2], [2, 3], [0, 3]].map(([a, b]) => edge(N[a], N[b], N[a][2], N[b][2]));
+  icons['node-graph'].small = { d: [...nodes, ...links], fill: { solid: nodes, wire: links } };
+}
+// El borrador: los puntos quedaban a 2 pixeles entre sí y se juntaban en una barra. A 16 px, el resto
+// con el mismo ajuste que le da el motor y los tres puntos de 2 × 2 a 1 pixel entre sí y del nodo.
+{
+  const [top, trunk, bottom, node] = icons['git-pull-request-draft'].d.slice(0, 4).map(snapper(icons['git-pull-request-draft'].d));
+  const dots = [12, 7.5, 3].map((y) => dot(18, y, SMALL_DOT));
+  icons['git-pull-request-draft'].small = { d: [top, trunk, bottom, node, ...dots], fill: { solid: [top, bottom, node, ...dots], wire: [trunk] } };
 }
 
 // ---------------------------------------------------------------------------------------------

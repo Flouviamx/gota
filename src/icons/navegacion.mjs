@@ -439,15 +439,21 @@ const FILL = {
   'cursor-click': { solid: [0], lines: [1, 2, 3] },
   'drag-drop': { solid: [0] },
   'hand-pointer': { solid: [0] },
-  // La mira rellena: el disco con los cuatro trazos que asoman (la parte de dentro se funde).
-  'crosshair': { solid: [0, 1, 2, 3, 4] },
+  // La mira rellena: el disco sólido y los cuatro trazos que asoman, pegados a él (wire: son líneas
+  // abiertas; la parte de dentro se funde con el disco).
+  'crosshair': { solid: [0], wire: [1, 2, 3, 4] },
 };
 for (const name of ['right', 'left', 'up', 'down', 'up-right', 'down-right', 'down-left', 'up-left'])
   for (const form of ['circle', 'square']) FILL[`arrow-${name}-${form}`] = { solid: [0], cut: [1, 2] };
 for (const name of ['right', 'left', 'up', 'down']) FILL[`chevron-${name}-circle`] = { solid: [0], cut: [1] };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
-  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+  icons[name].fill = {
+    solid: pick(spec.solid),
+    ...(spec.cut && { cut: pick(spec.cut) }),
+    ...(spec.lines && { lines: pick(spec.lines) }),
+    ...(spec.wire && { wire: pick(spec.wire) }),
+  };
 }
 // Solo líneas abiertas (flechas, chevrons, menús, esquinas) y las lupas, como search del núcleo: su
 // relleno es el mismo contorno.
@@ -520,6 +526,37 @@ icons['grip-horizontal'].small = dotsSmall([9, 15].flatMap((y) => [6, 12, 18].ma
 // tenues. Brazos de 4.5 (3 px) por centros de pixel y 4 px de aire entre los dos.
 icons['chevron-up-down'].small = { d: [line([7.5, 9], [12, 4.5], [16.5, 9]), line([7.5, 15], [12, 19.5], [16.5, 15])] };
 icons['chevron-left-right'].small = { d: [line([9, 7.5], [4.5, 12], [9, 16.5]), line([15, 7.5], [19.5, 12], [15, 16.5])] };
+// Los chevrons grandes no tienen tramos rectos que el ajuste mueva y sus diagonales caían a 1/3 de
+// pixel de los centros: a 16 px no tenían un solo pixel lleno. Sus diagonales a 45° van por centros
+// de pixel (x ± y múltiplo de 1.5), con la punta en una esquina de pixel, como los selectores de
+// arriba. `vee(punta, brazo)` apunta a la derecha y se gira con chev().
+const vee = (x0, a) => [[x0 - a, 12 - a], [x0, 12], [x0 - a, 12 + a]];
+// El sencillo: el mismo chevron de 24 (brazos de 6.75) corrido 0.5 hacia donde apunta.
+const CHEV16 = vee(16.5, 6.75);
+icons['chevron-up'].small = { d: [chev(-90, CHEV16)] };
+icons['chevron-down'].small = { d: [chev(90, CHEV16)] };
+// Dobles: brazos de 5.25 y separados 6 (4 px) en lugar de 5.5, para que los dos caigan en la
+// cuadrícula sin el gris que los unía.
+for (const [n, deg] of [['right', 0], ['left', 180], ['up', -90], ['down', 90]])
+  icons[`chevrons-${n}`].small = { d: [vee(12, 5.25), vee(18, 5.25)].map((pts) => chev(deg, pts)) };
+// En círculo: brazos de 4.5 (3 px); el chevron se cala en el relleno, como en 24.
+for (const [n, deg] of [['right', 0], ['left', 180], ['up', -90], ['down', 90]]) {
+  const chevron = chev(deg, vee(15, 4.5));
+  icons[`chevron-${n}-circle`].small = { d: [RING, chevron], fill: { solid: [RING], cut: [chevron] } };
+}
+// Primera y última página: la barra y el chevron de la misma altura (13.5), en centros de pixel, con
+// 1.5 px de aire entre la barra y la punta; el conjunto sigue centrado.
+icons['page-first'].small = { d: [line([6.75, 5.25], [6.75, 18.75]), line([17.25, 5.25], [10.5, 12], [17.25, 18.75])] };
+icons['page-last'].small = { d: [line([17.25, 5.25], [17.25, 18.75]), line([6.75, 5.25], [13.5, 12], [6.75, 18.75])] };
+// La mira: el ajuste llevaba los trazos a 12.75 y el aro se quedaba en 12, así que se veía chueca y
+// gris. Toda centrada en un pixel (11.25): el mismo aro y los cuatro trazos, que entran 2.25 como en
+// 24 y asoman 0.25 menos para no salir del área.
+{
+  const c = 11.25;
+  const ring = circ(c, c, 6.75);
+  const ticks = [line([c, c - 9], [c, c - 4.5]), line([c, c + 4.5], [c, c + 9]), line([c - 9, c], [c - 4.5, c]), line([c + 4.5, c], [c + 9, c])];
+  icons.crosshair.small = { d: [ring, ...ticks], fill: { solid: [ring], wire: ticks } };
+}
 // Desplegar y plegar: los mismos chevrons chicos, grises a 16 px. El pliegue en un centro de pixel
 // (12.75, a donde lo lleva el ajuste) y los chevrons de 3 px simétricos a él, con 2 px de aire.
 const foldSmall = (open, deg) => {

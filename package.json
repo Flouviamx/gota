@@ -17,7 +17,8 @@
     },
     "./svg/*": "./svg/*",
     "./icons.json": "./dist/icons.json",
-    "./icons.css": "./dist/icons.css"
+    "./icons.css": "./dist/icons.css",
+    "./motion.css": "./dist/motion.css"
   },
   "files": [
     "dist",
@@ -37,7 +38,8 @@
     "build": "node scripts/build.mjs",
     "sheet": "node scripts/sheet.mjs",
     "test": "node --test 'tests/*.test.mjs'",
-    "qa": "node scripts/qa.mjs"
+    "qa": "node scripts/qa.mjs",
+    "sheets": "node scripts/sheets.mjs"
   },
   "engines": {
     "node": ">=22"
