@@ -6,11 +6,11 @@ import { test } from 'node:test';
 import { iconData } from '../dist/index.js';
 import { outline } from '../scripts/outline.mjs';
 
-const contours = (d) => (d.match(/M/g) ?? []).length;
+const contours = (d) => (d.match(/m/gi) ?? []).length;
 
 test('outline: strokes, fill, badges, slash, enclosures and 16 px, each matching its drawing', () => {
   for (const [name, options] of [['bell', {}], ['bell-off', { style: 'fill' }], ['file-check', { style: 'fill' }], ['calendar', { style: 'fill' }], ['cart', { slash: true }], ['bell', { enclosure: 'circle', style: 'fill' }], ['wifi', { size: 16 }], ['arrow-right', { rtl: true }]])
-    assert.match(outline(iconData(name), { weight: 1.5, ...options }), /^M[\d.-]+ [\d.-]+/);
+    assert.match(outline(iconData(name), { weight: 1.5, ...options }), /^m[\d.-]+/);
 });
 
 test('outline: holes survive where two pieces only touch (the card chip keeps both)', () => {

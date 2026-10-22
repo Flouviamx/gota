@@ -25,6 +25,7 @@ node scripts/sheets.mjs                   # regenerates every sheet from scratch
 node scripts/qa.mjs [cat]                 # automated QA: area, density, fill silhouette, near-duplicates
 npm test                                  # engine and feature tests (node:test; features read dist/)
 node mcp/server.mjs                       # the MCP server over stdio (after the build)
+node scripts/native.mjs android           # Android vector drawables from checked outlines (after the build; npm ci first)
 ```
 Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different path). One dev dependency, `canvaskit-wasm` (Skia), turns icons into outlines for the native formats: `npm ci` before those and before `npm test`. The published package has no dependencies.
 
@@ -52,7 +53,7 @@ engine/search.mjs     Search by meaning (search-api.mjs: searchIcons for dist/se
 mcp/server.mjs        MCP server for AI agents (stdio, no dependencies): search_icons, get_icon, list_categories.
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
-scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), chrome (headless Chrome).
+scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), native (Android…), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).
 ```

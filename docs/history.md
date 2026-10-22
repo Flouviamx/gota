@@ -4,6 +4,12 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Android vector drawables; what Xcode needs
+- **`scripts/native.mjs android`:** 20,088 vector drawables (the same matrix as `dist/svg`), each from a checked outline: theme tint, nonzero, `autoMirrored` on the 434 directional icons. Compact path data (relative to rounded points) cuts the size by 40 %: 41 MB, 19 MB zipped.
+- **The check kept finding edge cases, and the method absorbed them:** a union that Skia returns empty (`form`, square, bold) and the same inside a mask. The fallback mode now lays pieces together with no union anywhere and builds each mask as one difference (render()'s masks are always a white box with black on top).
+- **Xcode, probed before building:** a symbol with different shapes per slot, compiled with `actool` and rendered with AppKit at six weights and three scales, showed that missing slots fall back to Regular-M unscaled. A full static symbol needs 27 outlines (about 1.2 GB for 10,000 icons), so the next step is compatible masters for a variable template (and the variable font).
+- Tests: 37.
+
 ## 22 Oct 2026 — Outlines checked against their drawing (the base for fonts, Android, and Xcode)
 - **`scripts/outline.mjs`:** every icon, in any variant, as filled shapes, by evaluating `render`'s own SVG with Skia ([build](./build.md#outlines-scriptsoutlinemjs), [decision 51](./decisions.md#phase-2-22-oct-2026)). `canvaskit-wasm@0.41.1` joins as the only dev dependency (owner's OK).
 - **How it got there:** the first results filled holes (contours wound for even-odd), lost a ring (a tick starting where a circle closes), and lost the chip's holes (a line ending on a frame's stroke). Each was fixed in the method, not per icon: contours rewound by depth, pieces joined all at once with fallbacks, and every outline compared to a Skia raster of the SVG.

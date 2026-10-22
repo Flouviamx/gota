@@ -110,6 +110,15 @@ function paint(node, inherited, ctx, inMask) {
   let layer = { ink: empty(), clear: empty() };
   const lay = (region, color) => {
     if (color === 'none' || !region) return;
+    if (ctx.mode === 'overlap' && !inMask) {
+      // Laid together, no union: a fill made nonzero and a stroke (nonzero already) add up right
+      const all = new CK.PathBuilder();
+      all.addPath(layer.ink);
+      all.addPath(region);
+      layer = { ink: keep(all.snapshot()), clear: layer.clear };
+      all.delete();
+      return;
+    }
     layer = inMask && isBlack(color) ? { ink: minus(layer.ink, region), clear: union(layer.clear, region) } : { ink: union(layer.ink, region), clear: minus(layer.clear, region) };
   };
   if (node.tag === 'path' || node.tag === 'rect') {
@@ -139,9 +148,22 @@ function paint(node, inherited, ctx, inMask) {
   // A mask or a transform applies to any element, a lone path as much as a group
   const ref = node.attrs.mask?.match(/url\(#([^)]+)\)/)?.[1];
   if (ref) {
-    let cover = { ink: empty(), clear: empty() };
-    for (const child of ctx.masks.get(ref).children) cover = over(cover, paint(child, DEFAULTS, ctx, true));
-    layer = { ink: within(layer.ink, cover.ink), clear: within(layer.clear, cover.ink) };
+    const content = ctx.masks.get(ref).children;
+    let keepIn;
+    if (ctx.mode === 'overlap' && content[0]?.tag === 'rect' && content.slice(1).every((c) => c.tag !== 'rect')) {
+      // render()'s masks are a white box with black on top: the box minus every black piece laid
+      // together, one difference and no unions
+      const all = new CK.PathBuilder();
+      for (const child of content.slice(1)) all.addPath(paint(child, DEFAULTS, ctx, false).ink);
+      const black = keep(all.snapshot());
+      all.delete();
+      keepIn = minus(paint(content[0], DEFAULTS, ctx, false).ink, black);
+    } else {
+      let cover = { ink: empty(), clear: empty() };
+      for (const child of content) cover = over(cover, paint(child, DEFAULTS, ctx, true));
+      keepIn = cover.ink;
+    }
+    layer = { ink: within(layer.ink, keepIn), clear: within(layer.clear, keepIn) };
   }
   const m = matrixOf(node.attrs.transform);
   if (m) {
@@ -191,12 +213,14 @@ function draw(node, inherited, masks, inMask) {
   if (ref) {
     // The mask's content, by luminance, keeps the layer where it is white
     const lumen = new CK.Paint();
+    const luma = CK.ColorFilter.MakeLuma();
     lumen.setBlendMode(CK.BlendMode.DstIn);
-    lumen.setColorFilter(CK.ColorFilter.MakeLuma());
+    lumen.setColorFilter(luma);
     canvas.saveLayer(lumen);
     for (const child of masks.get(ref).children) draw(child, DEFAULTS, masks, true);
     canvas.restore();
     lumen.delete();
+    luma.delete();
     canvas.restore();
   }
   canvas.restore();
@@ -319,6 +343,62 @@ function wound(d) {
     .join('');
 }
 
+// ── Compact path data ──
+// Absolute coordinates rounded to hundredths first (0.005 at most: 0.02 px at 96 px), then written
+// relative to the previous rounded point, so the rounding never adds up along a contour; lowercase
+// commands, repeated ones implied, h/v for straight lines, no leading zeros or spare separators.
+const num = (v) => {
+  const t = String(Math.round(v * 100) / 100);
+  return t === '-0' ? '0' : t.replace(/^(-?)0\./, '$1.');
+};
+function compact(d) {
+  const r2 = (v) => Math.round(v * 100) / 100;
+  let out = '';
+  let last = '';
+  let prev = '';
+  // A number touches the previous one without a space only where it can't be misread: a minus
+  // sign, or a leading dot after a number that already has one ("1.5.5" is 1.5 and .5)
+  const put = (cmd, values) => {
+    const implied = cmd === last && cmd !== 'm';
+    let text = implied ? '' : cmd;
+    let before = implied ? prev : '';
+    for (const v of values) {
+      const t = num(v);
+      const space = before !== '' && !(t.startsWith('-') || (t.startsWith('.') && before.includes('.')));
+      text += (space ? ' ' : '') + t;
+      before = t;
+    }
+    out += text;
+    prev = before;
+    last = cmd;
+  };
+  let x = 0;
+  let y = 0;
+  let sx = 0;
+  let sy = 0;
+  for (const [, c, args] of d.matchAll(/([MLQCZ])([^MLQCZ]*)/g)) {
+    const n = (args.match(/-?\d*\.?\d+(?:e[-+]?\d+)?/g) ?? []).map(Number).map(r2);
+    if (c === 'M') {
+      put('m', [n[0] - x, n[1] - y]);
+      [x, y, sx, sy] = [n[0], n[1], n[0], n[1]];
+    } else if (c === 'L') {
+      const [dx, dy] = [r2(n[0] - x), r2(n[1] - y)];
+      if (dx || dy) put(dx && dy ? 'l' : dx ? 'h' : 'v', dx && dy ? [dx, dy] : [dx || dy]);
+      [x, y] = n;
+    } else if (c === 'Q' || c === 'C') {
+      const rel = n.map((v, i) => r2(v - (i % 2 ? y : x)));
+      if (rel.some(Boolean)) put(c.toLowerCase(), rel);
+      [x, y] = n.slice(-2);
+    } else {
+      out += 'z';
+      last = 'z';
+      prev = '';
+      [x, y] = [sx, sy];
+    }
+  }
+  return out;
+}
+
 /** The ink of any SVG that render() produced, as one filled path (`d`, nonzero), checked. */
 export function inkOf(svg, label = 'svg', { strict = true } = {}) {
   const { root, masks } = parse(svg);
@@ -331,9 +411,7 @@ export function inkOf(svg, label = 'svg', { strict = true } = {}) {
   const MODES = ['joined', 'sequential', 'reverse', 'overlap', 'nudged'];
   for (const mode of MODES) {
     try {
-      const d = paint(root, DEFAULTS, { masks, mode, n: 0 }, false)
-        .ink.toSVGString()
-        .replace(/-?\d*\.\d+/g, (v) => String(Math.round(Number(v) * 1000) / 1000));
+      const d = compact(paint(root, DEFAULTS, { masks, mode, n: 0 }, false).ink.toSVGString());
       // Checked as it will be used: the final `d`, filled with the default nonzero rule
       const got = coverage(() => {
         ink.setStyle(CK.PaintStyle.Fill);

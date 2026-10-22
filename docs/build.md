@@ -36,6 +36,16 @@ Android vector drawables, Xcode symbols, and icon fonts can't hold strokes or ma
 - **Checked, every time:** Skia also rasterizes the SVG as a browser does (masks by luminance) and the outline at 96 px. Scattered edge pixels are antialiasing; a clump of six or more is a loss (a dot is ~28). On a mismatch it joins the pieces another way (all at once, in a chain, in reverse, laid over each other without a union, nudged by thousandths of a unit); if none matches, it throws, naming the icon. A wrong outline never ships. To diagnose one, `attempts(svg)` returns what each way gives and how far it is from the drawing.
 - **Measured** (22 Oct 2026): the 1,033 icons in ten variants (outline, fill, slash, circle, filled square, weights 0.75 and 2.6, 16 px outline and fill, mirrored), 9,573 outlines in 46 s, all matching. The check found one real defect, in the engine: `sq` corners that didn't fit their side made it run backwards (25 icons, [decision 52](./decisions.md#phase-2-22-oct-2026)).
 
+## Native formats (`node scripts/native.mjs <format>`)
+From the checked outlines, after `scripts/build.mjs`; it needs `npm ci` (Skia).
+| Format | Output |
+|---|---|
+| `android` | `dist/android/<light\|regular\|bold>/<outline\|fill>/gota_<name>[_circle\|_square\|_slash].xml`: Android vector drawables, the same matrix as `dist/svg` (20,088 files for 1,033 icons). One path, nonzero, `android:tint="?attr/colorControlNormal"` with a white fill so the theme colors it, and `android:autoMirrored` on directional icons |
+
+Path data is compact: absolute coordinates rounded to hundredths first (0.005 at most), then written relative to the previous rounded point so rounding never adds up along a contour; lowercase commands, implied repeats, h/v for straight lines. The check runs on the compact data, so what is checked is what ships. Android for 1,033 icons: 41 MB, 19 MB zipped (40 % less than plain Skia output).
+
+**Not yet:** Xcode symbols and the icon fonts. Xcode doesn't interpolate a static template: every missing weight or scale falls back to Regular-M as drawn (checked by rendering a probe symbol with AppKit), so a full static symbol needs 27 outlines. The plan is a variable template, three masters with compatible outlines (the same structure point for point), which the variable font needs too ([roadmap](./roadmap.md)).
+
 ## What goes into the repository and what doesn't
 - **Committed:** `src/` (the drawings and the languages), `engine/`, `mcp/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`.
 - **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`, `node_modules/`. Everything is regenerated.
