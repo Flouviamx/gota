@@ -1,13 +1,16 @@
 // Comunicación y personas: globos, correo, llamadas, avisos, personas y reacciones. Todo sale
-// del motor (engine/geometry.mjs) más unas herramientas locales para recortar (dejar 1.5 de
-// aire cuando una figura pasa detrás de otra) y para reutilizar las piezas del núcleo
-// (persona, teléfono, campana, sobre) sin redibujarlas. Ver DESIGN.md.
-import { arc, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+// del motor (engine/geometry.mjs) más unas herramientas locales para mover o escalar piezas del
+// núcleo (persona, teléfono, campana, sobre) sin redibujarlas. Las insignias son las del motor y
+// lo que va encima de otra figura (el lápiz sobre el sobre, la persona de adelante, la diagonal
+// de los -off) es una insignia propia: el motor despeja la base con 1.5 exacto, nunca a mano.
+// Ver DESIGN.md.
+import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import nucleo from './nucleo.mjs';
 
 // ── Trazos como segmentos ─────────────────────────────────────────────────────────────────
 // parse() convierte un `d` del motor en segmentos absolutos (L, C, A); ser() los vuelve `d`.
-// Con eso se recorta un trazo contra otra figura (cut) y se mueve o escala una pieza (xf).
+// Con eso se recorta una figura con una regla (clip), se mueve o escala una pieza (xf) y se
+// arma el área que despeja una insignia propia (knockOf).
 const P = (p) => `${f(p[0])} ${f(p[1])}`;
 const near = (a, b, e = 0.02) => Math.hypot(a[0] - b[0], a[1] - b[1]) < e;
 
@@ -178,7 +181,7 @@ function ser(subs) {
   return o;
 }
 
-/** Recorta `d` dejando solo lo que cumple keep(p). */
+/** Deja de `d` solo lo que cumple keep(p): una forma que se construye así (la esquina del sticker). */
 function clip(d, keep) {
   const out = [];
   for (const sp of parse(d)) {
@@ -226,37 +229,6 @@ function clip(d, keep) {
   return ser(out);
 }
 
-/** Distancia con signo al contorno de una figura (negativa adentro si es cerrada). */
-function field(d) {
-  const polys = parse(d).map((sp) => ({
-    closed: sp.closed,
-    pts: sp.segs.flatMap((s) => Array.from({ length: 33 }, (_, j) => pt(s, j / 32))),
-  }));
-  return (p) => {
-    let best = Infinity;
-    let inside = false;
-    for (const { closed, pts } of polys) {
-      for (let k = 1; k < pts.length; k++) {
-        const [a, b] = [pts[k - 1], pts[k]];
-        const vx = b[0] - a[0];
-        const vy = b[1] - a[1];
-        const L = vx * vx + vy * vy || 1;
-        const t = Math.max(0, Math.min(1, ((p[0] - a[0]) * vx + (p[1] - a[1]) * vy) / L));
-        best = Math.min(best, Math.hypot(p[0] - a[0] - vx * t, p[1] - a[1] - vy * t));
-        if (closed && a[1] > p[1] !== b[1] > p[1] && p[0] < a[0] + ((p[1] - a[1]) * vx) / vy) inside = !inside;
-      }
-    }
-    return inside ? -best : best;
-  };
-}
-
-/** Corta `d` donde pasa detrás de `front` (una o varias figuras), dejando `gap` entre ejes:
- *  3 = 1.5 de aire entre los bordes de los dos trazos de 1.5. */
-function cut(d, front, gap = 3) {
-  const fs = [front].flat().map(field);
-  return clip(d, (p) => fs.every((F) => F(p) >= gap));
-}
-
 /** Transformación de semejanza (giro, escala, espejo, traslado) sobre un `d`. */
 function xf(d, { s = 1, deg = 0, o = [12, 12], dx = 0, dy = 0, flipX = false, flipY = false } = {}) {
   const m = (p) => {
@@ -279,6 +251,24 @@ function xf(d, { s = 1, deg = 0, o = [12, 12], dx = 0, dy = 0, flipX = false, fl
       }),
     })),
   );
+}
+
+/**
+ * Área que despeja una insignia propia: las figuras cerradas tal cual (se despeja su interior) y
+ * cada tramo de una línea abierta como subtrazo aparte, para que el motor no rellene el triángulo
+ * que cierra una punta de flecha o un lápiz abierto.
+ */
+const knockOf = (...ds) =>
+  ser(ds.flatMap((d) => parse(d).flatMap((sp) => (sp.closed ? [sp] : sp.segs.map((s) => ({ segs: [s], closed: false }))))));
+
+/**
+ * Un trazo abierto y su regreso por el mismo camino: en `solid` se ve igual que la línea pero sin
+ * área que rellenar ni aire alrededor. Para lo que toca al cuerpo y debe seguir unido en el relleno
+ * (la diadema y el brazo del micrófono), donde `lines` mordería el cuerpo con su aire.
+ */
+function twin(d) {
+  const rev = (s) => (s.t === 'L' ? { t: 'L', a: s.b, b: s.a } : s.t === 'C' ? { t: 'C', p: [...s.p].reverse() } : { ...s, a0: s.a0 + s.da, da: -s.da });
+  return ser(parse(d).map((sp) => ({ segs: [...sp.segs, ...sp.segs.toReversed().map(rev)], closed: false })));
 }
 
 /** Polilínea abierta con esquinas redondeadas (como roundpoly, sin cerrar). */
@@ -414,8 +404,34 @@ const THUMB = [
     [0, 1.25, 1.25, 0],
   ),
 ];
+/** La junta del puño con la manga: en el relleno se cala para que no se vuelvan una sola mancha. */
+const THUMB_SEAM = line([7.25, 10.75], [7.25, 20.5]);
 
-/** Busto pequeño (credenciales y tarjetas): cabeza y hombros recortados por el borde inferior. */
+/**
+ * Mano levantada en un solo contorno: cuatro dedos de 3 con la punta en semicírculo (cada punta
+ * asienta en el costado del dedo vecino), la palma y el pulgar abierto a unos 50°. Las rayas entre
+ * dedos nacen del contorno y en el relleno se calan.
+ */
+function raisedHand() {
+  const tops = [6.25, 4.75, 5.5, 8.25];
+  const xs = [7.25, 10.25, 13.25, 16.25, 19.25];
+  const r = 1.5;
+  const base = [9.5, 18.25];
+  const tip = [5, 13.25];
+  const L = Math.hypot(tip[0] - base[0], tip[1] - base[1]);
+  const u = [(tip[0] - base[0]) / L, (tip[1] - base[1]) / L];
+  const n = [u[1], -u[0]]; // hacia el canto de afuera del pulgar
+  const at = (p, k) => [p[0] + n[0] * k, p[1] + n[1] * k];
+  const [outB, outT, inT, inB] = [at(base, r), at(tip, r), at(tip, -r), at(base, -r)];
+  const J = [xs[0], inT[1] + ((xs[0] - inT[0]) / (inB[0] - inT[0])) * (inB[1] - inT[1])]; // donde el pulgar sale del índice
+  let d = `M${P(J)}`;
+  for (let i = 0; i < 4; i++) d += `V${f(tops[i])}A${f(r)} ${f(r)} 0 0 1 ${f(xs[i + 1])} ${f(tops[i])}`;
+  d += `V14.5C19.25 18.1 16.65 20.75 13.5 20.75C10.65 20.75 ${P([outB[0] + 0.9, outB[1] + 1.1])} ${P(outB)}`;
+  d += `L${P(outT)}A${f(r)} ${f(r)} 0 0 1 ${P(inT)}Z`;
+  return [d, ...[1, 2, 3].map((i) => line([xs[i], Math.max(tops[i - 1], tops[i])], [xs[i], 11.25]))];
+}
+
+/** Busto pequeño (credenciales y tarjetas): cabeza y hombros que asientan en el borde inferior. */
 const bust = (cx, headY, hr, baseY, sr) => [circ(cx, headY, hr), arc(cx, baseY, sr, 180, 360).d];
 
 /** Lápiz a 45° con la punta en `tip`, de largo `len` y cuerpo de 3 (como el del núcleo). */
@@ -475,30 +491,41 @@ function cline(pts, radius) {
 /** El arco de arc() sin su M inicial, para encadenarlo a un trazo. */
 const arcTo = (...a) => arc(...a).d.replace(/^M[^A]+/, '');
 
-/** 文: punto, barra y las dos diagonales que bajan de la barra, en una caja de unas 8 × 8. */
+/** 文: el trazo de arriba que asienta en la barra y las dos diagonales, en una caja de unas 8 × 8. */
 const wen = (cx, cy) => [
-  line([cx, cy - 4], [cx, cy - 3.1]),
+  line([cx, cy - 4.25], [cx, cy - 1.5]),
   line([cx - 3.9, cy - 1.5], [cx + 3.9, cy - 1.5]),
   line([cx + 2.4, cy - 1.5], [cx - 3.3, cy + 4]),
   line([cx - 2.4, cy - 1.5], [cx + 3.3, cy + 4]),
 ];
 /** La letra A de alto h: dos piernas con la punta suave y su travesaño. */
 const letterA = (cx, top, h) => [
-  rline([[cx - 0.42 * h, top + h], [cx, top], [cx + 0.42 * h, top + h]], [0, 0.7, 0]),
+  rline(
+    [
+      [cx - 0.42 * h, top + h],
+      [cx, top],
+      [cx + 0.42 * h, top + h],
+    ],
+    [0, 0.7, 0],
+  ),
   line([cx - 0.27 * h, top + 0.66 * h], [cx + 0.27 * h, top + 0.66 * h]),
 ];
 
 // ── Piezas base ──────────────────────────────────────────────────────────────────────────
 const N = nucleo.icons;
 const DROP = drop(12, 11.75, 8.75); // el globo del núcleo
-const SLASH = line([3.25, 3.25], [20.75, 20.75]); // la diagonal de «apagado»
-const off = (paths, slash = SLASH) => [...paths.map((d) => cut(d, slash)).filter(Boolean), slash];
 const MAIL = N.mail.d[0];
 const FLAP = N.mail.d[1];
 const PHONE = N.phone.d[0];
-const BELL = N.bell.d;
-/** La campana un poco menor y corrida arriba a la izquierda, para dejarle la esquina a la insignia. */
-const BELL_B = BELL.map((d) => xf(d, { s: 0.9, dx: -1.75, dy: -1.25 }));
+// La campana del núcleo en orden de dibujo: primero el cuerpo, después el badajo
+const BELL = [N.bell.d[1], N.bell.d[0]];
+/**
+ * La campana bajo una insignia de esquina: al 85 % y corrida abajo a la izquierda, así el badajo
+ * queda entero fuera del área que despeja la insignia (completa, se lo comía a la mitad). El badajo
+ * baja 0.45 para conservar los 3 entre ejes con el cuerpo que tiene a tamaño completo.
+ */
+const BELL_B = [xf(BELL[0], { s: 0.85, dx: -3.25, dy: 1 }), xf(BELL[1], { s: 0.85, dx: -3.25, dy: 1.45 })];
+const BELL_B_TOP = [12 - 3.25, 12 + (2.95 - 12) * 0.85 + 1]; // el cuelgue, para el movimiento
 const VIDEO = sq(2.5, 6, 13.25, 12, 3.5, { square: ['br'] });
 const LENS = rline(
   [
@@ -534,25 +561,53 @@ const dropL = (cx, cy, r) => xf(drop(cx, cy, r), { flipX: true, o: [cx, cy] }); 
 const CLIP = `M18.5 10V17.75${arcTo(17, 17.75, 1.5, 0, 180)}V7.5${arcTo(18.5, 7.5, 3, 180, 360)}V19.5`;
 /** El sobre del núcleo al 80 %, arriba a la izquierda, para que el clip quepa a su lado. */
 const MAIL_S = [MAIL, FLAP].map((d) => xf(d, { s: 0.8, o: [2.5, 5], dy: 0.75 }));
+/**
+ * El sobre bajo una insignia de esquina: al 85 % y arriba a la izquierda, así la solapa queda a 1.5
+ * de aire del área que despeja la insignia (completo, su brazo derecho la rozaba y en el relleno
+ * dejaba una astilla entre la solapa calada y el aire de la insignia).
+ */
+const MAIL_B = [MAIL, FLAP].map((d) => xf(d, { s: 0.85, o: [2.5, 5], dy: -0.5 }));
+/** El sobre bajo el punto de aviso: completo y 2.5 más abajo, con la solapa lejos del punto. */
+const MAIL_DOT = [MAIL, FLAP].map((d) => xf(d, { dy: 2.5 }));
 
-/** Insignia: círculo de r 4.25 en la esquina inferior derecha que recorta 1.5 al objeto base. */
-const BADGE = [18, 18];
-function badge(base, kind, [cx, cy] = BADGE, R = 4.25) {
-  const ring = circ(cx, cy, R);
-  const glyph = {
-    plus: () => plus(cx, cy, 1.6),
-    minus: () => minus(cx, cy, 1.6),
-    check: () => [check(cx - 0.05, cy + 0.1, 3.3)],
-    x: () => ex(cx, cy, 1.3),
-    clock: () => [line([cx, cy - 1.75], [cx, cy], [cx + 1.35, cy + 0.8])],
-    block: () => [line(polar(cx, cy, R, 225), polar(cx, cy, R, 45))],
-    heart: () => [heart(cx, cy - 0.85, 3.35)],
-  }[kind]();
-  return [...[base].flat().map((d) => cut(d, ring)).filter(Boolean), ring, ...glyph];
-}
-
-/** Punto de «nuevo» (r 2.5) en la esquina superior derecha, con 1.5 de aire alrededor. */
-const UNREAD = (cx, cy) => circ(cx, cy, 2.5);
+// ── Insignias propias ────────────────────────────────────────────────────────────────────
+// En el mismo lugar que las del motor (centro 17.25, 17.25; círculo de r 4.25). `knock` es el
+// área que el motor despeja con 1.5 de aire; lo que va encima de otra figura lleva su propia área.
+const BC = [17.25, 17.25];
+const BR = 4.25;
+const RING = circ(...BC, BR);
+const own = (d, knock, fill) => ({ d, knock, ...(fill && { fill }) });
+/** Bloquear: el círculo con su diagonal (calada en el relleno). */
+const blockBadge = () => {
+  const bar = line(polar(...BC, BR, 225), polar(...BC, BR, 45));
+  return own([RING, bar], RING, { solid: [RING], cut: [bar] });
+};
+/** Corazón sin círculo: la figura es la insignia y despeja el círculo entero (sin pedazos junto a su punta). */
+const heartBadge = () => {
+  const h = heart(BC[0], 15.6, 7.6);
+  return own([h], RING, { solid: [h] });
+};
+/** Lupa: el lente en el círculo de la insignia (r 3.25) y el mango hacia la esquina. */
+const searchBadge = () => {
+  const lens = circ(...BC, 3.25);
+  const handle = line(polar(...BC, 3.25, 45), [21.25, 21.25]);
+  return own([lens, handle], knockOf(lens, handle), { solid: [lens, handle] });
+};
+/** Lápiz encima de una figura: el cuerpo se rellena y el casquillo se cala. */
+const pencilOver = (tip, len) => {
+  const pen = pencil(tip, len);
+  return own(pen, pen[0], { solid: [pen[0]], cut: [pen[1]] });
+};
+/** Flecha a la derecha encima de una figura (en el relleno sigue siendo línea). */
+const arrowOver = (from, to, len = 3.4) => {
+  const d = [line(from, to), head(to, [to[0] - from[0], to[1] - from[1]], len)];
+  return own(d, knockOf(...d));
+};
+/** La diagonal de los -off: va encima como pieza propia y el motor le despeja 1.5 a cada lado. */
+const SLASH = line([3.25, 3.25], [20.75, 20.75]);
+const slashOver = (s = SLASH) => own([s], s);
+/** Una figura cerrada encima de otra (el globo de adelante, la persona del frente). */
+const front = (ds, fill = { solid: ds }) => own(ds, ds.join(''), fill);
 
 const icons = {
   // ── Globos de conversación: siempre la gota del isotipo ──
@@ -578,11 +633,13 @@ const icons = {
   },
   'message-question': {
     tags: ['pregunta', 'ayuda', 'preguntas frecuentes', 'help', 'faq'],
-    d: [DROP, `${arc(12, 9.25, 2.5, 180, 360).d}C14.5 11 12 11 12 12.75V13.1`, dot(12, 16.55)],
+    // El gancho termina a 1.5 de aire del punto
+    d: [DROP, `${arc(12, 9.25, 2.5, 180, 360).d}C14.5 11 12 11 12 12.75V12.85`, dot(12, 16.55)],
   },
   'message-alert': {
     tags: ['aviso', 'reportar', 'mensaje importante', 'report', 'alert'],
-    d: [DROP, line([12, 7.4], [12, 12.75]), dot(12, 16.3)],
+    // Las medidas del signo de `important` (núcleo): 1.5 de aire entre la raya y el punto
+    d: [DROP, line([12, 7.4], [12, 12.6]), dot(12, 16.3)],
   },
   'message-heart': {
     tags: ['me gusta', 'reacción', 'mensaje', 'love', 'like'],
@@ -667,17 +724,20 @@ const icons = {
   },
   'message-unread': {
     tags: ['no leído', 'mensaje nuevo', 'chat', 'unread', 'new message'],
-    // La gota un poco menor para que el punto la recorte poco y siga leyéndose como globo
-    d: [cut(drop(11.25, 12.5, 8.25), UNREAD(19.25, 4.75)), UNREAD(19.25, 4.75)],
+    // La gota un poco menor y corrida abajo a la izquierda: el punto del motor le toma poco
+    d: [drop(11.25, 12.5, 8.25)],
+    badge: badge('dot'),
   },
   'message-off': {
     tags: ['silenciar chat', 'sin mensajes', 'chat desactivado', 'chat off', 'mute chat'],
-    d: off([DROP]),
+    d: [DROP],
+    badge: slashOver(),
   },
   'messages': {
     tags: ['conversaciones', 'chats', 'diálogo', 'conversations', 'chat'],
-    // Dos interlocutores: la gota de atrás en espejo, la de adelante con la firma
-    d: ((front) => [cut(dropL(9.5, 9.5, 6.25), front), front])(drop(14.5, 14.5, 6.25)),
+    // Dos interlocutores: la gota de atrás en espejo, la de adelante con la firma encima
+    d: [dropL(9.5, 9.5, 6.25)],
+    badge: front([drop(14.5, 14.5, 6.25)]),
   },
 
   // ── Correo ──
@@ -706,39 +766,49 @@ const icons = {
   },
   'mail-unread': {
     tags: ['correo nuevo', 'no leído', 'bandeja', 'unread mail', 'new email'],
-    d: [cut(MAIL, UNREAD(19.75, 4.25)), FLAP, UNREAD(19.75, 4.25)],
+    d: MAIL_DOT,
+    badge: badge('dot'),
   },
   'mail-plus': {
     tags: ['redactar', 'nuevo correo', 'escribir', 'compose', 'new email'],
-    d: badge([MAIL, FLAP], 'plus'),
+    d: MAIL_B,
+    badge: badge('plus'),
   },
   'mail-minus': {
     tags: ['darse de baja', 'quitar correo', 'desuscribir', 'unsubscribe'],
-    d: badge([MAIL, FLAP], 'minus'),
+    d: MAIL_B,
+    badge: badge('minus'),
   },
   'mail-check': {
     tags: ['correo entregado', 'confirmado', 'verificado', 'delivered', 'verified email'],
-    d: badge([MAIL, FLAP], 'check'),
+    d: MAIL_B,
+    badge: badge('check'),
   },
   'mail-x': {
     tags: ['correo rebotado', 'error de envío', 'no entregado', 'bounced', 'failed'],
-    d: badge([MAIL, FLAP], 'x'),
+    d: MAIL_B,
+    badge: badge('x'),
   },
   'mail-clock': {
     tags: ['envío programado', 'enviar después', 'correo pendiente', 'scheduled', 'send later'],
-    d: badge([MAIL, FLAP], 'clock'),
+    d: MAIL_B,
+    badge: badge('clock'),
   },
   'mail-send': {
     tags: ['enviar correo', 'salida', 'enviado', 'send mail', 'outbox'],
-    d: [cut(MAIL, [line([13.75, 18.5], [21.75, 18.5]), head([21.75, 18.5], [1, 0], 3.4)]), FLAP, line([13.75, 18.5], [21.75, 18.5]), head([21.75, 18.5], [1, 0], 3.4)],
+    // La flecha sale por la esquina de abajo del sobre
+    d: [MAIL, FLAP],
+    badge: arrowOver([13.75, 18.5], [21.75, 18.5]),
   },
   'mail-draft': {
     tags: ['borrador', 'redactando', 'editar correo', 'draft', 'edit email'],
-    d: ((pen) => [cut(MAIL, pen[0]), FLAP, ...pen])(pencil([13, 21.25], 10.5)),
+    d: MAIL_B,
+    badge: pencilOver([13, 21.25], 10.5),
   },
   'mail-attachment': {
     tags: ['adjunto', 'archivo adjunto', 'clip', 'attachment', 'paperclip'],
-    d: [...MAIL_S.map((d) => cut(d, CLIP)), CLIP],
+    d: MAIL_S,
+    badge: own([CLIP], knockOf(CLIP)),
   },
   'mail-signature': {
     tags: ['firma de correo', 'firma', 'remitente', 'email signature', 'signature'],
@@ -766,32 +836,15 @@ const icons = {
   },
   'mail-search': {
     tags: ['buscar correo', 'filtrar', 'bandeja', 'search mail'],
-    d: ((lens) => [cut(MAIL, lens), FLAP, ...lens])([circ(17.25, 16.5, 2.75), line([19.2, 18.45], [21.5, 20.75])]),
+    d: MAIL_B,
+    badge: searchBadge(),
   },
   'mail-letter': {
     tags: ['carta', 'invitación', 'sobre con carta', 'letter', 'invitation'],
-    d: ((pocket, letter) => [
-      cut(line([2.75, 11.5], [12, 5.25], [21.25, 11.5]), letter),
-      rline(
-        [
-          [2.75, 11.5],
-          [2.75, 20.75],
-          [21.25, 20.75],
-          [21.25, 11.5],
-        ],
-        [0, 3.25, 0, 0],
-      ),
-      rline(
-        [
-          [2.75, 11.5],
-          [12, 16.75],
-          [21.25, 11.5],
-        ],
-        [0, 1.6, 0],
-      ),
-      cut(letter, pocket),
-      cut(line([9.5, 7], [14.5, 7]), pocket),
-    ])(
+    // La carta asoma del sobre: el bolsillo del frente va encima y el motor la despeja. Su borde
+    // de abajo queda dentro del bolsillo (más arriba dejaba una astilla junto al vértice)
+    d: [sq(6.5, 3, 11, 14.5, 2, { square: ['br'] }), line([9.5, 7], [14.5, 7])],
+    badge: front([
       roundpoly(
         [
           [2.75, 11.5],
@@ -800,18 +853,19 @@ const icons = {
           [21.25, 20.75],
           [2.75, 20.75],
         ],
-        0,
+        [1, 1.6, 1, 0, 3.25],
       ),
-      sq(6.5, 3, 11, 11, 2, { square: ['br'] }),
-    ),
+    ]),
   },
   'mail-stack': {
     tags: ['correos', 'boletín', 'envío masivo', 'newsletter', 'bulk mail'],
-    d: [
-      cut(sq(5.75, 4, 15.75, 12.25, 3.5, { square: ['br'] }), sq(2.5, 7.25, 15.75, 12.25, 3.5, { square: ['br'] }), 2.9),
-      sq(2.5, 7.25, 15.75, 12.25, 3.5, { square: ['br'] }),
-      flap(2.5, 7.25, 15.75, 12.25),
-    ],
+    // El sobre de atrás completo; el de adelante va encima con su solapa calada en el relleno
+    d: [sq(5.75, 4, 15.75, 12.25, 3.5, { square: ['br'] })],
+    badge: (() => {
+      const body = sq(2.5, 7.25, 15.75, 12.25, 3.5, { square: ['br'] });
+      const fl = flap(2.5, 7.25, 15.75, 12.25);
+      return own([body, fl], body, { solid: [body], cut: [fl] });
+    })(),
   },
   'mailbox': {
     tags: ['buzón', 'correo postal', 'cartas', 'mailbox', 'postbox'],
@@ -880,7 +934,9 @@ const icons = {
   },
   'phone-transfer': {
     tags: ['transferir llamada', 'cambiar', 'pasar llamada', 'transfer call'],
-    d: [PHONE, line([14.5, 4.25], [20.75, 4.25]), head([20.75, 4.25], [1, 0], 3.4), line([20.75, 9.25], [14.5, 9.25]), head([14.5, 9.25], [-1, 0], 3.4)],
+    // Dos flechas cortas en sentidos opuestos (la de ida abajo, lejos del auricular); las puntas de
+    // 2.75 dejan 1.5 de aire entre sí y con el teléfono
+    d: [PHONE, line([21.25, 3.75], [14.5, 3.75]), head([14.5, 3.75], [-1, 0], 2.75), line([14.5, 9], [21.25, 9]), head([21.25, 9], [1, 0], 2.75)],
   },
   'phone-hold': {
     tags: ['en espera', 'pausa', 'llamada retenida', 'on hold'],
@@ -897,7 +953,8 @@ const icons = {
   'phone-off': {
     tags: ['sin llamadas', 'no molestar', 'teléfono apagado', 'phone off'],
     // La diagonal va al revés para no correr a lo largo del auricular
-    d: off([PHONE], line([20.75, 3.25], [3.25, 20.75])),
+    d: [PHONE],
+    badge: slashOver(line([20.75, 3.25], [3.25, 20.75])),
   },
   'voicemail': {
     tags: ['buzón de voz', 'mensaje de voz', 'grabación', 'voicemail'],
@@ -905,7 +962,7 @@ const icons = {
   },
   'dialpad': {
     tags: ['teclado', 'marcador', 'números', 'keypad', 'dialpad'],
-    d: [6.25, 12, 17.75].flatMap((x) => [4.5, 9.5, 14.5].map((y) => dot(x, y))).concat(dot(12, 19.5)),
+    d: [4.5, 9.5, 14.5].flatMap((y) => [6.25, 12, 17.75].map((x) => dot(x, y))).concat(dot(12, 19.5)),
   },
 
   // ── Video y voz ──
@@ -915,7 +972,9 @@ const icons = {
   },
   'video-call-off': {
     tags: ['cámara apagada', 'sin video', 'terminar videollamada', 'video off'],
-    d: off([VIDEO, LENS, ...CALLER]),
+    // Sin la persona: la diagonal le pasaba por la cabeza y dejaba pedazos
+    d: [VIDEO, LENS],
+    badge: slashOver(),
   },
   'video-meeting': {
     tags: ['videoconferencia', 'reunión', 'junta en línea', 'meeting', 'webinar'],
@@ -935,7 +994,8 @@ const icons = {
   },
   'microphone-off': {
     tags: ['silenciar', 'micrófono apagado', 'mudo', 'mute mic', 'mic off'],
-    d: off([MIC, MIC_HOLDER, MIC_STEM]),
+    d: [MIC, MIC_HOLDER, MIC_STEM],
+    badge: slashOver(),
   },
   'headset': {
     tags: ['diadema', 'soporte', 'atención a clientes', 'headset', 'support'],
@@ -963,19 +1023,23 @@ const icons = {
   // ── Avisos: la campana del núcleo ──
   'bell-dot': {
     tags: ['aviso nuevo', 'notificación', 'sin leer', 'unread', 'new notification'],
-    d: [BELL[0], cut(BELL[1], UNREAD(18.75, 4.75)), UNREAD(18.75, 4.75)],
+    d: BELL,
+    badge: badge('dot'),
   },
   'bell-plus': {
     tags: ['crear aviso', 'suscribirse', 'activar notificaciones', 'add alert', 'subscribe'],
-    d: badge(BELL_B, 'plus'),
+    d: BELL_B,
+    badge: badge('plus'),
   },
   'bell-check': {
     tags: ['suscrito', 'avisos activos', 'notificación vista', 'subscribed'],
-    d: badge(BELL_B, 'check'),
+    d: BELL_B,
+    badge: badge('check'),
   },
   'bell-clock': {
     tags: ['posponer aviso', 'recordatorio', 'más tarde', 'snooze', 'reminder'],
-    d: badge(BELL_B, 'clock'),
+    d: BELL_B,
+    badge: badge('clock'),
   },
   'bell-ringing': {
     tags: ['timbrando', 'alarma', 'notificación', 'ringing', 'alert'],
@@ -983,11 +1047,13 @@ const icons = {
   },
   'bell-off': {
     tags: ['silenciar avisos', 'no molestar', 'notificaciones apagadas', 'notifications off'],
-    d: off(BELL),
+    d: BELL,
+    badge: slashOver(),
   },
   'notification-badge': {
     tags: ['notificación', 'insignia', 'app con aviso', 'badge', 'notification'],
-    d: [cut(sq(3.25, 3.25, 17.5, 17.5, 4, { square: ['br'] }), UNREAD(19.25, 4.75)), UNREAD(19.25, 4.75)],
+    d: [sq(3.25, 3.25, 17.5, 17.5, 4, { square: ['br'] })],
+    badge: badge('dot'),
   },
 
   // ── Símbolos y difusión ──
@@ -1032,7 +1098,9 @@ const icons = {
   },
   'broadcast-off': {
     tags: ['fuera del aire', 'sin transmisión', 'desconectado', 'offline'],
-    d: off(BROADCAST),
+    // Sin el punto del centro: quedaría entero detrás de la diagonal
+    d: BROADCAST.slice(1),
+    badge: slashOver(),
   },
   'radio-tower': {
     tags: ['antena', 'señal', 'transmisión', 'radio tower', 'antenna'],
@@ -1040,49 +1108,60 @@ const icons = {
   },
   'satellite-dish': {
     tags: ['satélite', 'parabólica', 'antena', 'satellite', 'dish'],
-    d: [`${arc(9.25, 14.75, 6.5, 225, 45).d}Z`, line([9.25, 14.75], [13.5, 10.5]), dot(14.25, 9.75), arc(14.25, 9.75, 4, -80, -10).d, arc(14.25, 9.75, 7.25, -82, -8).d],
+    // El brazo del receptor llega al punto (lo toca, no lo roza)
+    d: [`${arc(9.25, 14.75, 6.5, 225, 45).d}Z`, line([9.25, 14.75], [13.75, 10.25]), dot(14.25, 9.75), arc(14.25, 9.75, 4, -80, -10).d, arc(14.25, 9.75, 7.25, -82, -8).d],
   },
 
   // ── Personas: la persona del núcleo ──
   'person-plus': {
     tags: ['agregar persona', 'invitar', 'nuevo usuario', 'add user', 'invite'],
-    d: badge(PERSON_L, 'plus'),
+    d: PERSON_L,
+    badge: badge('plus'),
   },
   'person-minus': {
     tags: ['quitar persona', 'eliminar usuario', 'sacar', 'remove user'],
-    d: badge(PERSON_L, 'minus'),
+    d: PERSON_L,
+    badge: badge('minus'),
   },
   'person-check': {
     tags: ['verificado', 'aprobado', 'usuario activo', 'verified user', 'approved'],
-    d: badge(PERSON_L, 'check'),
+    d: PERSON_L,
+    badge: badge('check'),
   },
   'person-x': {
     tags: ['rechazar', 'denegar acceso', 'usuario', 'deny user', 'reject'],
-    d: badge(PERSON_L, 'x'),
+    d: PERSON_L,
+    badge: badge('x'),
   },
   'person-block': {
     tags: ['bloquear', 'vetar', 'usuario bloqueado', 'block user', 'ban'],
-    d: badge(PERSON_L, 'block'),
+    d: PERSON_L,
+    badge: blockBadge(),
   },
   'person-clock': {
     tags: ['invitación pendiente', 'en espera', 'usuario', 'pending user'],
-    d: badge(PERSON_L, 'clock'),
+    d: PERSON_L,
+    badge: badge('clock'),
   },
   'person-heart': {
     tags: ['contacto favorito', 'seguir', 'cliente frecuente', 'favorite', 'follow'],
-    d: badge(PERSON_L, 'heart'),
+    d: PERSON_L,
+    badge: heartBadge(),
   },
   'person-edit': {
     tags: ['editar perfil', 'cuenta', 'datos personales', 'edit profile', 'account'],
-    d: ((pen) => [...PERSON_L.map((d) => cut(d, pen[0])), ...pen])(pencil([12.5, 21], 10.5)),
+    d: PERSON_L,
+    badge: pencilOver([12.5, 21], 10.5),
   },
   'person-search': {
     tags: ['buscar persona', 'directorio', 'encontrar usuario', 'find user'],
-    d: ((lens) => [...PERSON_L.map((d) => cut(d, lens)), ...lens])([circ(16.75, 16.25, 3.25), line([19.1, 18.6], [21.25, 20.75])]),
+    d: PERSON_L,
+    badge: searchBadge(),
   },
   'person-arrow': {
     tags: ['asignar', 'transferir', 'delegar', 'assign', 'transfer'],
-    d: ((arrow) => [...PERSON_L.map((d) => cut(d, arrow)), ...arrow])([line([14, 18], [21.5, 18]), head([21.5, 18], [1, 0], 3.4)]),
+    d: PERSON_L,
+    badge: arrowOver([14, 18], [21.5, 18]),
   },
   'person-speaking': {
     tags: ['hablando', 'presentador', 'voz', 'speaker', 'talking'],
@@ -1094,7 +1173,9 @@ const icons = {
   },
   'people': {
     tags: ['grupo', 'equipo', 'comunidad', 'team', 'group'],
-    d: ((front) => [...[-5.4, 5.4].flatMap((dx) => personAt(0.66, dx, -1.75).map((d) => cut(d, front))), ...front])(personAt(0.84)),
+    // Las dos personas de atrás completas; la del frente va encima y el motor las despeja
+    d: [-5.4, 5.4].flatMap((dx) => personAt(0.66, dx, -1.75)),
+    badge: front(personAt(0.84)),
   },
   'id-card': {
     tags: ['identificación', 'tarjeta de contacto', 'credencial', 'id card', 'vcard'],
@@ -1106,44 +1187,48 @@ const icons = {
   },
   'contacts': {
     tags: ['contactos', 'agenda', 'libreta de direcciones', 'address book', 'contacts'],
-    d: [sq(5.5, 2.75, 14, 18.5, 3.5, { square: ['br'] }), ...bust(12.5, 10.5, 2.5, 21.25, 4.5), ...[7.25, 12, 16.75].map((y) => line([3.5, y], [7.5, y]))],
+    // Las pestañas del lomo cruzan la tapa; el busto, corrido a la derecha, les deja 1.5 de aire
+    d: [sq(5.5, 2.75, 14, 18.5, 3.5, { square: ['br'] }), ...bust(13.25, 10.25, 2.5, 21.25, 4.5), ...[6.5, 11.25, 16].map((y) => line([3.5, y], [7.25, y]))],
   },
   'handshake': {
     tags: ['apretón de manos', 'acuerdo', 'trato', 'handshake', 'deal'],
-    // Dos puños de manga y las manos trabadas: el nudillo arriba, los dedos que envuelven abajo
+    // Dos puños de manga y las manos trabadas entre ellos, en una sola figura: arriba el nudillo de
+    // una mano y la muesca donde asienta el pulgar de la otra; abajo los dedos que envuelven. El
+    // pulgar y el dedo nacen del contorno (nada flota)
     d: [
       rline(
         [
-          [2.75, 6.25],
-          [6.25, 6.25],
-          [6.25, 16.75],
-          [2.75, 16.75],
+          [2.75, 7],
+          [6.25, 7],
+          [6.25, 16.5],
+          [2.75, 16.5],
         ],
         [0, 1, 1, 0],
       ),
       rline(
         [
-          [21.25, 6.25],
-          [17.75, 6.25],
-          [17.75, 16.75],
-          [21.25, 16.75],
+          [21.25, 7],
+          [17.75, 7],
+          [17.75, 16.5],
+          [21.25, 16.5],
         ],
         [0, 1, 1, 0],
       ),
-      smooth([
-        [6.25, 8.25],
-        [9.5, 6.5],
-        [12.75, 8.5],
-        [17.75, 8.5],
-      ]),
-      smooth([
-        [6.25, 14.75],
-        [9.25, 17],
-        [13.5, 17.75],
-        [17.75, 15],
-      ]),
-      line([12.75, 8.5], [9.75, 11.5]),
-      line([12, 15.25], [15, 12.25]),
+      roundpoly(
+        [
+          [6.25, 9],
+          [10, 7],
+          [13, 9.5],
+          [17.75, 9.5],
+          [17.75, 14.5],
+          [14, 17.75],
+          [10.5, 17.75],
+          [6.25, 14.5],
+        ],
+        [0, 2, 1, 0, 0, 2.5, 2.5, 0],
+      ),
+      line([13, 9.5], [10.25, 12.25]),
+      line([11.75, 17.75], [14.75, 14.75]),
     ],
   },
 
@@ -1190,7 +1275,10 @@ const icons = {
   },
   'reaction-add': {
     tags: ['agregar reacción', 'emoji', 'reaccionar', 'add reaction'],
-    d: badge([circ(10.5, 10.5, 7.75), dot(8, 8.75), dot(13, 8.75), arc(10.5, 10.75, 3, 35, 145).d], 'plus'),
+    // La cara corrida arriba a la izquierda y la sonrisa más chica: a 7.3 del centro de la insignia
+    // queda entera (más cerca, el despeje la adelgazaba)
+    d: [circ(10, 10, 7.5), dot(7.6, 8.2), dot(12.4, 8.2), arc(10, 10.25, 2.75, 35, 145).d],
+    badge: badge('plus'),
   },
   'thumbs-up': {
     tags: ['me gusta', 'aprobar', 'de acuerdo', 'like', 'thumbs up'],
@@ -1202,20 +1290,7 @@ const icons = {
   },
   'hand-raised': {
     tags: ['levantar la mano', 'pedir la palabra', 'turno', 'raise hand'],
-    d: [
-      line([7.75, 6.5], [7.75, 13]),
-      line([10.75, 4], [10.75, 12.5]),
-      line([14, 4.75], [14, 12.5]),
-      smooth([
-        [17.25, 7],
-        [17.25, 14],
-        [15.75, 18.75],
-        [12, 20.75],
-        [8.5, 19.75],
-        [6, 16.75],
-        [4, 12.25],
-      ]),
-    ],
+    d: raisedHand(),
   },
   'party-popper': {
     tags: ['celebrar', 'festejo', 'felicidades', 'celebrate', 'party'],
@@ -1228,17 +1303,18 @@ const icons = {
         ],
         [1, 1.25, 1.25],
       ),
+      // Las serpentinas nacen a 1.5 de aire de la boca del cono
       smooth([
-        [10.75, 9],
+        [11, 8.75],
         [11, 6.25],
         [13.5, 4.75],
       ]),
       smooth([
-        [15, 13.25],
+        [15.25, 13],
         [17.75, 13],
         [19.25, 10.5],
       ]),
-      dot(16.75, 3.75),
+      dot(17.25, 3.5),
       dot(20.25, 7),
       dot(15.5, 8.5),
     ],
@@ -1264,36 +1340,284 @@ const icons = {
   // ── Lenguaje ──
   'translate': {
     tags: ['traducir', 'idioma', 'traducción', 'translate', 'language'],
-    // 文 arriba y la A dentro de la gota en espejo: el otro idioma responde
-    d: ((front) => [...wen(7.25, 7).map((d) => cut(d, front)), front, ...letterA(15.25, 12.25, 5.5)])(dropL(15.25, 15, 6.25)),
+    // 文 arriba y, encima, la gota en espejo con la A: el otro idioma responde
+    d: wen(7.25, 7),
+    badge: (() => {
+      const bubble = dropL(15.25, 15, 6.25);
+      const a = letterA(15.25, 12.25, 5.5);
+      return own([bubble, ...a], bubble, { solid: [bubble], cut: a });
+    })(),
+  },
+
+  // ── Cobertura (ronda 2): lo que faltaba de correo, difusión y celebraciones ──
+  // Correo no deseado o con problema: el sobre del núcleo y la insignia de alerta del motor.
+  'mail-alert': {
+    tags: ['correo no deseado', 'spam', 'reportar correo', 'correo sospechoso', 'mail alert', 'junk', 'report spam'],
+    d: MAIL_B,
+    badge: badge('alert'),
+  },
+  // Suscripción por fuente (RSS): el punto de origen y dos arcos que se abren desde él, con el
+  // aire de las ondas de `broadcast`.
+  'rss': {
+    tags: ['rss', 'fuente', 'suscribirse', 'feed', 'noticias', 'subscribe', 'news feed'],
+    d: [dot(6.5, 17.5), arc(6.5, 17.5, 6, 270, 360).d, arc(6.5, 17.5, 11.5, 270, 360).d],
+  },
+  // Pastel (cumpleaños, aniversario): el cuerpo, el betún que escurre en tres ondas y tres velas
+  // con su llama a 3 de la mecha.
+  'cake': {
+    tags: ['pastel', 'cumpleaños', 'aniversario', 'celebración', 'cake', 'birthday', 'anniversary'],
+    d: [
+      sq(3.75, 11, 16.5, 9.5, 2.5),
+      `M3.75 14${[9.25, 14.75, 20.25].map((x) => `A3.27 3.27 0 0 0 ${x} 14`).join('')}`,
+      ...[8, 12, 16].flatMap((x) => [line([x, 8], [x, 11]), dot(x, 4.25)]),
+    ],
   },
 };
 
-// ── Variantes ──
-// Ya vienen encerrados en un círculo: no se vuelven a encerrar
-for (const name of ['face-smile', 'face-laugh', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry', 'person-circle', 'reaction-add'])
-  icons[name].variants = { circle: false };
-// Ya son un cuadrado con la firma
-for (const name of ['notification-badge', 'sticker']) icons[name].variants = { square: false };
-// Sin tachado automático: los -off dibujados a mano, sus bases (que ya tienen su -off) y las
-// líneas o signos sueltos, donde un tache no dice nada
-for (const name of [
-  'message-off',
-  'phone-off',
-  'video-call',
-  'video-call-off',
-  'screen-share',
-  'screen-share-off',
-  'microphone',
-  'microphone-off',
-  'bell-off',
-  'broadcast',
-  'broadcast-off',
-  'reply-all',
-  'dialpad',
-  'hashtag',
-  'at-sign',
-])
-  icons[name].variants = { ...icons[name].variants, slash: false };
+// ── Relleno (DESIGN.md › Relleno), por índice de d ──
+// `solid` se rellena (y conserva su trazo), `cut` se cala al ancho del trazo y `lines` sigue siendo
+// línea con 1.5 de aire alrededor. Lo que toca al cuerpo y debe seguir unido va en `solid`; las
+// puntas de flecha y las polilíneas con esquina van en `lines` (en `solid` cerrarían un triángulo).
+const all = (name) => icons[name].d.map((_, i) => i);
+const rest = (name, from = 1) => icons[name].d.map((_, i) => i).slice(from);
+const FILL = {
+  'mail-open': { solid: [0], cut: [1] },
+  'mail-signature': { solid: [0], cut: [1, 2] },
+  'mail-letter': { solid: [0], cut: [1] },
+  'mail-stack': { solid: [0] },
+  'mail-attachment': { solid: [0], cut: [1] },
+  // El buzón: el poste, el asta y la bandera tocan al cuerpo y siguen unidos; la puerta se cala
+  mailbox: { solid: [0, 2, 3, 4], cut: [1] },
+  'phone-hangup': { solid: [0] },
+  voicemail: { solid: [0, 1, 2] },
+  dialpad: { solid: all('dialpad') },
+  'video-call': { solid: [0, 1], cut: [2, 3] },
+  'video-call-off': { solid: [0, 1] },
+  'video-meeting': { solid: [0], lines: [1], cut: [2, 3] },
+  'screen-share': { solid: [0], lines: [1], cut: [2, 3] },
+  'screen-share-off': { solid: [0], lines: [1], cut: [2, 3] },
+  microphone: { solid: [0], lines: [1, 2] },
+  'microphone-off': { solid: [0], lines: [1, 2] },
+  'walkie-talkie': { solid: [0, 1], cut: [2, 3] },
+  'bell-ringing': { solid: [0, 1], lines: [2, 3] },
+  'notification-badge': { solid: [0] },
+  megaphone: { solid: [0, 1], lines: [2] },
+  broadcast: { solid: [0], lines: [1, 2, 3, 4] },
+  // La torre: la bola y las patas rellenas (el triángulo de la estructura), las ondas en línea
+  'radio-tower': { solid: [0, 1], lines: [2, 3, 4, 5] },
+  'satellite-dish': { solid: [0, 1, 2], lines: [3, 4] },
+  'person-speaking': { solid: [0, 1], lines: [2, 3] },
+  'person-circle': { solid: [0], cut: [1, 2] },
+  people: { solid: [0, 1, 2, 3] },
+  'id-card': { solid: [0], cut: [1, 2, 3, 4] },
+  'id-badge': { solid: [0], cut: [1, 2, 3] },
+  // Las pestañas siguen unidas a la tapa (con aire se leían como rayas sueltas)
+  contacts: { solid: [0, 3, 4, 5], cut: [1, 2] },
+  'face-laugh': { solid: [0], cut: [1, 2, 3] },
+  'reaction-add': { solid: [0], cut: [1, 2, 3] },
+  // El puño y la manga rellenos; la junta se cala para que no se vuelvan una sola mancha
+  'thumbs-up': { solid: [0, 1] },
+  'thumbs-down': { solid: [0, 1] },
+  // La mano rellena con las rayas entre dedos caladas
+  'hand-raised': { solid: [0], cut: [1, 2, 3] },
+  'party-popper': { solid: [0, 3, 4, 5], lines: [1, 2] },
+  // El sticker y su esquina despegada: la doblez se cala para separarlos, y los ojos también
+  sticker: { solid: [0, 2], cut: [1, 3, 4] },
+  translate: { solid: [0, 1, 2, 3] },
+  cake: { solid: [0, 2, 3, 4, 5, 6, 7], cut: [1] },
+};
+// Globos con un signo dentro: la gota rellena y el signo calado
+for (const name of Object.keys(icons).filter((n) => n.startsWith('message-') && !['message-unread', 'message-off'].includes(n))) FILL[name] = { solid: [0], cut: rest(name) };
+for (const name of ['message-unread', 'message-off', 'messages']) FILL[name] = { solid: [0] };
+// El sobre con su solapa calada (también bajo las insignias)
+for (const name of ['mail-unread', 'mail-plus', 'mail-minus', 'mail-check', 'mail-x', 'mail-clock', 'mail-send', 'mail-draft', 'mail-search', 'mail-alert']) FILL[name] = { solid: [0], cut: [1] };
+// El teléfono relleno; las flechas, signos y ondas de al lado siguen siendo línea con su aire
+for (const name of ['phone-incoming', 'phone-outgoing', 'phone-missed', 'phone-plus', 'phone-forward', 'phone-transfer', 'phone-hold', 'phone-ringing']) FILL[name] = { solid: [0], lines: rest(name) };
+FILL['phone-off'] = { solid: [0] };
+// La campana: cuerpo y badajo
+for (const name of ['bell-dot', 'bell-plus', 'bell-check', 'bell-clock', 'bell-off']) FILL[name] = { solid: [0, 1] };
+// La persona: cabeza y cuerpo
+for (const name of Object.keys(icons).filter((n) => n.startsWith('person-') && !['person-speaking', 'person-circle'].includes(n))) FILL[name] = { solid: [0, 1] };
+// Las caras: el círculo relleno y los gestos calados
+for (const name of ['face-smile', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry']) FILL[name] = { solid: [0], cut: rest(name) };
+for (const [name, spec] of Object.entries(FILL)) {
+  const pick = (ix) => ix.map((i) => icons[name].d[i]);
+  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut?.length && { cut: pick(spec.cut) }), ...(spec.lines?.length && { lines: pick(spec.lines) }) };
+}
+// Los audífonos: las copas rellenas y la diadema, el brazo y la cápsula unidos a ellas, sin aire
+icons.headset.fill = { solid: [icons.headset.d[1], icons.headset.d[2], twin(icons.headset.d[0]), twin(icons.headset.d[3]), icons.headset.d[4]] };
+// El apretón: puños y manos rellenos; se calan la junta de cada mano con su puño, el pulgar y el dedo
+icons.handshake.fill = {
+  solid: icons.handshake.d.slice(0, 3),
+  cut: [line([6.25, 9], [6.25, 14.5]), line([17.75, 9.5], [17.75, 14.5]), ...icons.handshake.d.slice(3)],
+};
+// La junta del puño con la manga, calada
+icons['thumbs-up'].fill.cut = [THUMB_SEAM];
+icons['thumbs-down'].fill.cut = [xf(THUMB_SEAM, { flipY: true })];
+// Solo líneas abiertas: su relleno es el mismo contorno
+for (const name of ['reply-all', 'at-sign', 'hashtag', 'broadcast-off', 'rss']) icons[name].fill = false;
+
+// ── 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta ──
+// A 16 px un pixel mide 1.5 del lienzo: los centros caen en 0.75 + 1.5k y los bordes en 1.5k. El
+// globo pequeño tiene sus cuatro extremos en centros de pixel (3.75 y 20.25), así se ve nítido.
+const SDROP = drop(12, 12, 8.25);
+const small = (name, glyph, { cut = glyph, solid = [SDROP] } = {}) => {
+  icons[name].small = { d: [SDROP, ...glyph], fill: { solid, cut } };
+};
+// Los puntos: centrados en el borde del pixel para que cada uno caiga entero en 2 × 2 pixeles,
+// con 1 pixel de aire entre ellos y contra el globo
+small('message-dots', [7.5, 12, 16.5].map((x) => dot(x, 12, 1)));
+// El corazón y la estrella, mayores y con el centro en la cuadrícula: a 13 pixeles de globo los
+// del dibujo grande se volvían una mancha
+small('message-heart', [heart(12, 9.75, 9)]);
+small('message-star', [star(12, 12.4, 5.6, 2.75, 0.6, 0.45)]);
+// El pastel: dos velas en centros de pixel con su llama a 1 pixel de aire (las tres del dibujo
+// grande caían entre pixeles y sus llamas se fundían en una raya)
+{
+  const body = sq(3.75, 11.25, 16.5, 9, 2.25);
+  const icing = `M3.75 14.25${[9.25, 14.75, 20.25].map((x) => `A3.27 3.27 0 0 0 ${x} 14.25`).join('')}`;
+  const candles = [9.75, 14.25].flatMap((x) => [line([x, 8.25], [x, 11.25]), dot(x, 4.5)]);
+  icons.cake.small = { d: [body, icing, ...candles], fill: { solid: [body, ...candles], cut: [icing] } };
+}
+// Las caras: el círculo de r 8.25 (sus extremos en centros de pixel; el de r 9 caía entre dos y se
+// veía como un anillo gris), los ojos en 2 × 2 pixeles y cada boca con sus tramos rectos y sus
+// extremos sobre la cuadrícula
+{
+  const sface = (name, mouth, eyes = [dot(9, 9, 0.8), dot(15, 9, 0.8)]) => {
+    const d = [circ(12, 12, 8.25), ...eyes, ...mouth];
+    icons[name].small = { d, fill: { solid: [d[0]], cut: d.slice(1) } };
+  };
+  const smile = arc(12, 11.25, 4.5, 35, 145).d;
+  const frown = arc(12, 20.25, 4.5, 215, 325).d;
+  sface('face-smile', [smile]);
+  sface('face-laugh', [`M7.5 12.75H16.5${arcTo(12, 12.75, 4.5, 0, 180)}`], [arc(9, 9.75, 1.5, 180, 360).d, arc(15, 9.75, 1.5, 180, 360).d]);
+  sface('face-wink', [smile], [dot(9, 9, 0.8), line([13.5, 9.75], [16.5, 9.75])]);
+  sface('face-neutral', [line([8.25, 15.75], [15.75, 15.75])]);
+  sface('face-confused', [
+    smooth([
+      [8.25, 15.75],
+      [10.5, 14.25],
+      [13.5, 15.75],
+      [15.75, 14.25],
+    ]),
+  ]);
+  sface('face-surprised', [circ(12, 15, 2.25)]);
+  sface('face-sad', [frown]);
+  sface('face-angry', [frown], [line([7.5, 8.25], [10.5, 9.75]), line([16.5, 8.25], [13.5, 9.75])]);
+}
+// El teclado: 3 × 3 y el cero, cada punto en 2 × 2 pixeles con 1 pixel de aire (a 16 px los del
+// dibujo grande caían entre pixeles y se veían grises)
+{
+  const d = [4.5, 9, 13.5].flatMap((y) => [7.5, 12, 16.5].map((x) => dot(x, y, 0.8))).concat(dot(12, 18, 0.8));
+  icons.dialpad.small = { d, fill: { solid: d } };
+}
+
+// ── Piezas con nombre (DESIGN.md › Piezas): lo que se anima, cambia de nivel o va bajo una insignia ──
+const PARTS = {
+  'message-dots': { body: [0], dots: [1, 2, 3] },
+  'message-clock': { body: [0], hands: [1] },
+  'message-heart': { body: [0], mark: [1] },
+  'message-sparkle': { body: [0], mark: [1] },
+  'message-reply': { body: [0], arrow: [1, 2] },
+  'message-unread': { body: [0] },
+  'message-off': { body: [0] },
+  messages: { back: [0] },
+  'mail-attachment': { body: [0], flap: [1] },
+  'mail-letter': { letter: [0, 1] },
+  'mail-stack': { back: [0] },
+  'reply-all': { arrow: [0, 1, 2] },
+  'phone-incoming': { body: [0], arrow: [1, 2] },
+  'phone-outgoing': { body: [0], arrow: [1, 2] },
+  'phone-forward': { body: [0], arrow: [1, 2] },
+  'phone-transfer': { body: [0], arrow: [1, 2, 3, 4] },
+  'phone-ringing': { body: [0] },
+  'phone-off': { body: [0] },
+  'video-call-off': { body: [0], lens: [1] },
+  'screen-share': { screen: [0], stand: [1], arrow: [2, 3] },
+  'microphone-off': { body: [0], holder: [1, 2] },
+  'bell-ringing': { body: [0], clapper: [1], wave: [2, 3] },
+  'notification-badge': { body: [0] },
+  broadcast: { source: [0] },
+  'broadcast-off': { wave: [0, 1, 2, 3] },
+  'radio-tower': { source: [0], tower: [1] },
+  'satellite-dish': { dish: [0], feed: [1, 2] },
+  'person-speaking': { head: [0], body: [1] },
+  people: { back: [0, 1, 2, 3] },
+  'thumbs-up': { hand: [0], cuff: [1] },
+  'thumbs-down': { hand: [0], cuff: [1] },
+  'hand-raised': { hand: [0], fingers: [1, 2, 3] },
+  handshake: { cuffs: [0, 1], hands: [2, 3, 4] },
+  'party-popper': { cone: [0], streamers: [1, 2], confetti: [3, 4, 5] },
+  translate: { glyph: [0, 1, 2, 3] },
+  rss: { source: [0] },
+};
+for (const name of ['mail-unread', 'mail-plus', 'mail-minus', 'mail-check', 'mail-x', 'mail-clock', 'mail-send', 'mail-draft', 'mail-search', 'mail-alert']) PARTS[name] = { body: [0], flap: [1] };
+for (const name of ['bell-dot', 'bell-plus', 'bell-check', 'bell-clock', 'bell-off']) PARTS[name] = { body: [0], clapper: [1] };
+for (const name of ['person-plus', 'person-minus', 'person-check', 'person-x', 'person-block', 'person-clock', 'person-heart', 'person-edit', 'person-search', 'person-arrow'])
+  PARTS[name] = { head: [0], body: [1] };
+PARTS['reaction-add'] = { face: [0, 1, 2, 3] };
+for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
+
+// ── Niveles (DESIGN.md › Niveles): las ondas se encienden de adentro hacia afuera ──
+icons.broadcast.levels = [
+  [1, 2],
+  [3, 4],
+];
+icons['radio-tower'].levels = [
+  [2, 3],
+  [4, 5],
+];
+icons['satellite-dish'].levels = [[3], [4]];
+icons['phone-ringing'].levels = [[1], [2]];
+icons['person-speaking'].levels = [[2], [3]];
+icons.rss.levels = [[1], [2]];
+for (const name of ['broadcast', 'radio-tower', 'satellite-dish', 'phone-ringing', 'person-speaking', 'rss']) icons[name].parts.level = icons[name].levels.flat();
+
+// ── Variantes automáticas que no tienen sentido ──
+const variants = (names, v) => {
+  for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
+};
+// Un globo con un signo dentro ya es un encierro (como un ícono -circle), y el signo hace de
+// insignia: el tache lo atravesaría
+variants(
+  Object.keys(icons).filter((n) => n.startsWith('message-') && !['message-unread', 'message-off'].includes(n)),
+  { circle: false, square: false, slash: false },
+);
+// Ya vienen encerrados en un círculo o en un cuadrado
+variants(['face-smile', 'face-laugh', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry', 'person-circle', 'reaction-add'], { circle: false });
+variants(['notification-badge', 'sticker'], { square: false });
+// Sin tachado: los -off dibujados a mano y sus bases; las insignias (el tache las atravesaría);
+// las líneas, signos y puntos sueltos, donde un tache no dice nada
+variants(['video-call', 'screen-share', 'screen-share-off', 'microphone', 'broadcast'], { slash: false });
+for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, slash: false };
+variants(['reply-all', 'dialpad', 'hashtag', 'at-sign'], { slash: false });
+// Al 58 % los puntos del teclado se juntan
+variants(['dialpad'], { circle: false, square: false });
+
+// ── Espejo (DESIGN.md › Espejo): lo que tiene dirección de lectura ──
+for (const name of ['message-reply', 'reply-all', 'mail-send', 'mail-draft', 'phone-forward', 'person-edit', 'person-arrow', 'person-speaking', 'megaphone', 'id-card']) icons[name].mirror = true;
+
+// ── Movimiento (DESIGN.md › Movimiento): el gesto propio de cada ícono ──
+icons['message-heart'].motion = { effect: 'beat', parts: ['mark'], origin: [12, 12.75] };
+icons['message-sparkle'].motion = { effect: 'beat', parts: ['mark'], origin: [12, 12] };
+icons['message-clock'].motion = { effect: 'spin', parts: ['hands'], origin: [12, 12.25] };
+icons['message-reply'].motion = { effect: 'slide', parts: ['arrow'], vector: [-1.5, 0] };
+icons['reply-all'].motion = { effect: 'slide', vector: [-2, 0] };
+icons['mail-send'].motion = { effect: 'slide', parts: ['badge'], vector: [2, 0] };
+icons['mail-draft'].motion = { effect: 'wiggle', parts: ['badge'], origin: [13, 21.25] };
+icons['person-edit'].motion = { effect: 'wiggle', parts: ['badge'], origin: [12.5, 21] };
+icons['person-arrow'].motion = { effect: 'slide', parts: ['badge'], vector: [2, 0] };
+icons['phone-incoming'].motion = { effect: 'slide', parts: ['arrow'], vector: [-1.5, 1.5] };
+icons['phone-outgoing'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, -1.5] };
+icons['phone-forward'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
+icons['phone-ringing'].motion = { effect: 'ring', origin: [12, 12] };
+icons['screen-share'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] };
+for (const name of ['bell-dot', 'bell-ringing']) icons[name].motion = { effect: 'ring', parts: ['body', 'clapper'], origin: [12, 2.95] };
+for (const name of ['bell-plus', 'bell-check', 'bell-clock']) icons[name].motion = { effect: 'ring', parts: ['body', 'clapper'], origin: BELL_B_TOP };
+for (const name of ['message-unread', 'mail-unread', 'notification-badge']) icons[name].motion = { effect: 'beat', parts: ['badge'], origin: [18.75, 5.25] };
+icons['thumbs-up'].motion = { effect: 'bounce', vector: [0, -2] };
+icons['thumbs-down'].motion = { effect: 'bounce', vector: [0, 2] };
+icons['hand-raised'].motion = { effect: 'wiggle', origin: [12, 20.75] };
+icons['party-popper'].motion = { effect: 'beat', parts: ['confetti', 'streamers'], origin: [7.25, 16.75] };
 
 export default { category: 'comunicacion', label: 'Comunicación y personas', icons };

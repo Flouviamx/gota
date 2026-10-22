@@ -1,0 +1,821 @@
+{
+  "calendar-plus": {
+    "label": { "es": "Agregar evento", "en": "Add event", "pt": "Adicionar evento", "fr": "Ajouter un événement", "de": "Termin hinzufügen", "it": "Aggiungi evento", "ja": "予定を追加", "zh": "添加日程", "ko": "일정 추가", "ar": "إضافة حدث" },
+    "keywords": {
+      "es": ["nuevo evento", "agendar", "programar cita", "reservar fecha", "añadir al calendario", "crear reunión", "apartar el día"],
+      "en": ["new event", "schedule", "book appointment", "save the date", "add to calendar", "create meeting", "reserve date"]
+    }
+  },
+  "calendar-minus": {
+    "label": { "es": "Quitar evento", "en": "Remove event", "pt": "Remover evento", "fr": "Supprimer l’événement", "de": "Termin entfernen", "it": "Rimuovi evento", "ja": "予定を削除", "zh": "移除日程", "ko": "일정 삭제", "ar": "إزالة حدث" },
+    "keywords": {
+      "es": ["eliminar del calendario", "borrar fecha", "cancelar cita", "liberar el día", "quitar reunión", "desagendar", "acortar periodo"],
+      "en": ["delete from calendar", "clear date", "cancel appointment", "free up day", "remove meeting", "unschedule", "shorten period"]
+    }
+  },
+  "calendar-check": {
+    "label": { "es": "Evento confirmado", "en": "Event confirmed", "pt": "Evento confirmado", "fr": "Événement confirmé", "de": "Termin bestätigt", "it": "Evento confermato", "ja": "予定確定", "zh": "日程已确认", "ko": "일정 확정", "ar": "تم تأكيد الحدث" },
+    "keywords": {
+      "es": ["asistencia confirmada", "cita agendada", "reserva hecha", "fecha aceptada", "aceptar invitación", "asistiré", "día cumplido"],
+      "en": ["attendance confirmed", "appointment booked", "reservation made", "date accepted", "accept invite", "rsvp yes", "day completed"]
+    }
+  },
+  "calendar-x": {
+    "label": { "es": "Evento cancelado", "en": "Event canceled", "pt": "Evento cancelado", "fr": "Événement annulé", "de": "Termin abgesagt", "it": "Evento annullato", "ja": "予定キャンセル", "zh": "日程已取消", "ko": "일정 취소", "ar": "تم إلغاء الحدث" },
+    "keywords": {
+      "es": ["cita cancelada", "no disponible", "ocupado", "rechazar invitación", "fecha bloqueada", "día inhábil", "sin cupo"],
+      "en": ["appointment canceled", "unavailable", "busy", "decline invite", "blocked date", "day off", "fully booked"]
+    }
+  },
+  "calendar-range": {
+    "label": { "es": "Rango de fechas", "en": "Date range", "pt": "Intervalo de datas", "fr": "Plage de dates", "de": "Zeitraum", "it": "Intervallo di date", "ja": "期間", "zh": "日期范围", "ko": "기간", "ar": "نطاق التواريخ" },
+    "keywords": {
+      "es": ["periodo", "del al", "desde hasta", "vacaciones", "estancia", "filtrar por fechas", "reservar varios días", "temporada"],
+      "en": ["period", "from to", "start and end date", "vacation", "stay", "filter by date", "multi-day booking", "timeframe"]
+    }
+  },
+  "calendar-event": {
+    "label": { "es": "Evento", "en": "Event", "pt": "Evento", "fr": "Événement", "de": "Termin", "it": "Evento", "ja": "予定", "zh": "日程", "ko": "일정", "ar": "حدث" },
+    "keywords": {
+      "es": ["cita", "día marcado", "reunión", "compromiso", "fecha importante", "agenda", "próximo evento"],
+      "en": ["appointment", "marked day", "meeting", "engagement", "key date", "agenda", "upcoming"]
+    }
+  },
+  "calendar-day": {
+    "label": { "es": "Hoy", "en": "Today", "pt": "Hoje", "fr": "Aujourd’hui", "de": "Heute", "it": "Oggi", "ja": "今日", "zh": "今天", "ko": "오늘", "ar": "اليوم" },
+    "keywords": {
+      "es": ["día actual", "fecha de hoy", "vista diaria", "ir a hoy", "jornada", "seleccionar día", "fecha"],
+      "en": ["current day", "date today", "day view", "jump to today", "single day", "select date", "date picker"]
+    }
+  },
+  "calendar-clock": {
+    "label": { "es": "Programado", "en": "Scheduled", "pt": "Agendado", "fr": "Programmé", "de": "Geplant", "it": "Programmato", "ja": "スケジュール済み", "zh": "已安排", "ko": "예약됨", "ar": "مجدول" },
+    "keywords": {
+      "es": ["fecha y hora", "agendar", "publicación programada", "envío programado", "recordatorio", "hora de la cita", "planificar"],
+      "en": ["date and time", "schedule", "scheduled post", "send later", "reminder", "appointment time", "plan ahead"]
+    }
+  },
+  "hourglass": {
+    "label": { "es": "En espera", "en": "Waiting", "pt": "Aguardando", "fr": "En attente", "de": "Warten", "it": "In attesa", "ja": "待機中", "zh": "等待中", "ko": "대기 중", "ar": "قيد الانتظار" },
+    "keywords": {
+      "es": ["reloj de arena", "cargando", "pendiente", "procesando", "paciencia", "paso del tiempo", "duración"],
+      "en": ["sand timer", "loading", "pending", "processing", "please wait", "time passing", "duration"]
+    }
+  },
+  "hourglass-end": {
+    "label": { "es": "Tiempo agotado", "en": "Time expired", "pt": "Tempo esgotado", "fr": "Temps écoulé", "de": "Zeit abgelaufen", "it": "Tempo scaduto", "ja": "時間切れ", "zh": "时间到", "ko": "시간 초과", "ar": "انتهى الوقت" },
+    "keywords": {
+      "es": ["vencido", "expirado", "plazo cumplido", "fin de la espera", "sesión caducada", "oferta terminada", "fuera de tiempo"],
+      "en": ["expired", "deadline passed", "timed out", "session expired", "offer ended", "overdue", "out of time"]
+    }
+  },
+  "timer": {
+    "label": { "es": "Temporizador", "en": "Timer", "pt": "Temporizador", "fr": "Minuteur", "de": "Timer", "it": "Timer", "ja": "タイマー", "zh": "计时器", "ko": "타이머", "ar": "مؤقت" },
+    "keywords": {
+      "es": ["cuenta regresiva", "tiempo restante", "límite de tiempo", "cuenta atrás", "pomodoro", "minutero", "tiempo de cocción"],
+      "en": ["countdown", "time remaining", "time limit", "time left", "pomodoro", "kitchen timer", "cooking time"]
+    }
+  },
+  "stopwatch": {
+    "label": { "es": "Cronómetro", "en": "Stopwatch", "pt": "Cronômetro", "fr": "Chronomètre", "de": "Stoppuhr", "it": "Cronometro", "ja": "ストップウォッチ", "zh": "秒表", "ko": "스톱워치", "ar": "ساعة إيقاف" },
+    "keywords": {
+      "es": ["medir tiempo", "tiempo transcurrido", "vuelta", "carrera", "velocidad", "registro de horas", "rendimiento"],
+      "en": ["elapsed time", "lap", "race", "speed", "time tracking", "measure time", "performance"]
+    }
+  },
+  "alarm-clock": {
+    "label": { "es": "Alarma", "en": "Alarm", "pt": "Alarme", "fr": "Alarme", "de": "Wecker", "it": "Sveglia", "ja": "アラーム", "zh": "闹钟", "ko": "알람", "ar": "منبّه" },
+    "keywords": {
+      "es": ["despertador", "recordatorio", "aviso a una hora", "levantarse", "hora programada", "timbre", "madrugar"],
+      "en": ["wake up", "reminder", "wake-up call", "set time", "morning", "ring", "notify at time"]
+    }
+  },
+  "alarm-plus": {
+    "label": { "es": "Nueva alarma", "en": "New alarm", "pt": "Novo alarme", "fr": "Nouvelle alarme", "de": "Neuer Wecker", "it": "Nuova sveglia", "ja": "アラームを追加", "zh": "添加闹钟", "ko": "알람 추가", "ar": "إضافة منبّه" },
+    "keywords": {
+      "es": ["agregar alarma", "poner despertador", "crear recordatorio", "programar aviso", "fijar hora", "añadir alarma", "nuevo despertador"],
+      "en": ["add alarm", "set alarm", "create reminder", "schedule alert", "pick a time", "new wake-up", "add timer"]
+    }
+  },
+  "alarm-check": {
+    "label": { "es": "Alarma activada", "en": "Alarm set", "pt": "Alarme ativado", "fr": "Alarme activée", "de": "Wecker gestellt", "it": "Sveglia impostata", "ja": "アラーム設定済み", "zh": "闹钟已设置", "ko": "알람 설정됨", "ar": "تم ضبط المنبّه" },
+    "keywords": {
+      "es": ["alarma lista", "despertador puesto", "recordatorio confirmado", "alarma encendida", "aviso programado", "hora fijada"],
+      "en": ["alarm on", "alarm ready", "reminder confirmed", "wake-up set", "scheduled alert", "time locked in"]
+    }
+  },
+  "alarm-off": {
+    "label": { "es": "Alarma desactivada", "en": "Alarm off", "pt": "Alarme desativado", "fr": "Alarme désactivée", "de": "Wecker aus", "it": "Sveglia disattivata", "ja": "アラームオフ", "zh": "闹钟已关闭", "ko": "알람 꺼짐", "ar": "تم إيقاف المنبّه" },
+    "keywords": {
+      "es": ["apagar alarma", "silenciar", "sin alarma", "posponer", "no molestar", "quitar despertador", "aviso desactivado"],
+      "en": ["turn off alarm", "silence", "no alarm", "snooze", "do not disturb", "dismiss alarm", "mute reminder"]
+    }
+  },
+  "clock-forward": {
+    "label": { "es": "Más tarde", "en": "Later", "pt": "Mais tarde", "fr": "Plus tard", "de": "Später", "it": "Più tardi", "ja": "後で", "zh": "稍后", "ko": "나중에", "ar": "لاحقًا" },
+    "keywords": {
+      "es": ["adelantar reloj", "posponer", "recordar después", "futuro", "horario de verano", "avanzar el tiempo", "programar para luego"],
+      "en": ["move forward", "postpone", "remind me later", "future", "daylight saving", "advance time", "schedule for later"]
+    }
+  },
+  "clock-plus": {
+    "label": { "es": "Agregar tiempo", "en": "Add time", "pt": "Adicionar tempo", "fr": "Ajouter du temps", "de": "Zeit hinzufügen", "it": "Aggiungi tempo", "ja": "時間を追加", "zh": "增加时间", "ko": "시간 추가", "ar": "إضافة وقت" },
+    "keywords": {
+      "es": ["tiempo extra", "extender plazo", "prórroga", "nuevo horario", "registrar horas", "sumar minutos", "ampliar sesión"],
+      "en": ["extra time", "extend deadline", "extension", "new time slot", "log hours", "add minutes", "extend session"]
+    }
+  },
+  "clock-check": {
+    "label": { "es": "A tiempo", "en": "On time", "pt": "No horário", "fr": "À l’heure", "de": "Pünktlich", "it": "In orario", "ja": "時間どおり", "zh": "准时", "ko": "정시", "ar": "في الموعد" },
+    "keywords": {
+      "es": ["puntual", "hora confirmada", "entregado a tiempo", "asistencia registrada", "turno cumplido", "horas aprobadas", "dentro del plazo"],
+      "en": ["punctual", "time confirmed", "delivered on time", "clocked in", "shift completed", "hours approved", "within deadline"]
+    }
+  },
+  "time-zone": {
+    "label": { "es": "Zona horaria", "en": "Time zone", "pt": "Fuso horário", "fr": "Fuseau horaire", "de": "Zeitzone", "it": "Fuso orario", "ja": "タイムゾーン", "zh": "时区", "ko": "시간대", "ar": "المنطقة الزمنية" },
+    "keywords": {
+      "es": ["huso horario", "hora mundial", "hora local", "diferencia de horario", "reloj mundial", "utc", "equipo remoto"],
+      "en": ["world clock", "local time", "time difference", "utc", "gmt", "remote team", "global hours"]
+    }
+  },
+  "sunrise": {
+    "label": { "es": "Amanecer", "en": "Sunrise", "pt": "Nascer do sol", "fr": "Lever du soleil", "de": "Sonnenaufgang", "it": "Alba", "ja": "日の出", "zh": "日出", "ko": "일출", "ar": "شروق الشمس" },
+    "keywords": {
+      "es": ["salida del sol", "mañana", "alba", "inicio del día", "madrugada", "turno matutino", "buenos días"],
+      "en": ["dawn", "morning", "daybreak", "start of day", "early hours", "morning shift", "good morning"]
+    }
+  },
+  "sunset": {
+    "label": { "es": "Atardecer", "en": "Sunset", "pt": "Pôr do sol", "fr": "Coucher du soleil", "de": "Sonnenuntergang", "it": "Tramonto", "ja": "日の入り", "zh": "日落", "ko": "일몰", "ar": "غروب الشمس" },
+    "keywords": {
+      "es": ["puesta de sol", "ocaso", "tarde", "fin del día", "anochecer", "cierre de jornada", "descontinuar"],
+      "en": ["dusk", "evening", "end of day", "twilight", "golden hour", "end of shift", "deprecate"]
+    }
+  },
+  "map": {
+    "label": { "es": "Mapa", "en": "Map", "pt": "Mapa", "fr": "Carte", "de": "Karte", "it": "Mappa", "ja": "地図", "zh": "地图", "ko": "지도", "ar": "خريطة" },
+    "keywords": {
+      "es": ["plano", "ubicaciones", "cómo llegar", "explorar la zona", "cartografía", "territorio", "cobertura"],
+      "en": ["layout", "locations", "get there", "explore area", "cartography", "territory", "coverage"]
+    }
+  },
+  "map-pin": {
+    "label": { "es": "Ubicación", "en": "Location", "pt": "Localização", "fr": "Emplacement", "de": "Standort", "it": "Posizione", "ja": "場所", "zh": "位置", "ko": "위치", "ar": "الموقع" },
+    "keywords": {
+      "es": ["dirección", "marcador", "lugar", "domicilio", "punto en el mapa", "sucursal", "dónde estamos"],
+      "en": ["address", "marker", "place", "point on map", "store location", "where we are", "geotag"]
+    }
+  },
+  "map-pin-plus": {
+    "label": { "es": "Agregar ubicación", "en": "Add location", "pt": "Adicionar local", "fr": "Ajouter un lieu", "de": "Ort hinzufügen", "it": "Aggiungi luogo", "ja": "場所を追加", "zh": "添加位置", "ko": "위치 추가", "ar": "إضافة موقع" },
+    "keywords": {
+      "es": ["nuevo lugar", "marcar sitio", "nueva dirección", "guardar lugar", "registrar sucursal", "añadir punto", "dirección de envío"],
+      "en": ["new place", "mark spot", "new address", "save place", "add branch", "add point", "shipping address"]
+    }
+  },
+  "map-pin-check": {
+    "label": { "es": "Ubicación confirmada", "en": "Location confirmed", "pt": "Local confirmado", "fr": "Lieu confirmé", "de": "Ort bestätigt", "it": "Luogo confermato", "ja": "場所確認済み", "zh": "位置已确认", "ko": "위치 확인됨", "ar": "تم تأكيد الموقع" },
+    "keywords": {
+      "es": ["llegada", "entregado", "dirección verificada", "check-in", "destino alcanzado", "visita registrada", "en sitio"],
+      "en": ["arrived", "delivered", "verified address", "check-in", "destination reached", "visit logged", "on site"]
+    }
+  },
+  "map-pin-x": {
+    "label": { "es": "Quitar ubicación", "en": "Remove location", "pt": "Remover local", "fr": "Retirer le lieu", "de": "Ort entfernen", "it": "Rimuovi luogo", "ja": "場所を削除", "zh": "移除位置", "ko": "위치 삭제", "ar": "إزالة الموقع" },
+    "keywords": {
+      "es": ["lugar no disponible", "sin cobertura", "fuera de zona", "dirección inválida", "borrar lugar", "sucursal cerrada", "no hacemos envíos ahí"],
+      "en": ["unavailable location", "no coverage", "out of area", "invalid address", "delete place", "closed branch", "not serviced"]
+    }
+  },
+  "map-pin-dot": {
+    "label": { "es": "Marcar punto", "en": "Drop pin", "pt": "Marcar ponto", "fr": "Placer un repère", "de": "Punkt markieren", "it": "Segna punto", "ja": "地点をマーク", "zh": "标记地点", "ko": "지점 표시", "ar": "تحديد نقطة" },
+    "keywords": {
+      "es": ["punto exacto", "soltar pin", "aquí", "coordenadas", "ubicación precisa", "punto de encuentro", "señalar en el mapa"],
+      "en": ["exact spot", "here", "coordinates", "precise location", "meeting point", "point on map", "set location"]
+    }
+  },
+  "map-pin-area": {
+    "label": { "es": "Zona", "en": "Area", "pt": "Área", "fr": "Zone", "de": "Gebiet", "it": "Zona", "ja": "エリア", "zh": "区域", "ko": "지역", "ar": "منطقة" },
+    "keywords": {
+      "es": ["radio de entrega", "cercanía", "alrededores", "cobertura", "geocerca", "zona de servicio", "cerca de mí"],
+      "en": ["delivery radius", "nearby", "surroundings", "coverage", "geofence", "service area", "near me"]
+    }
+  },
+  "map-pins": {
+    "label": { "es": "Ubicaciones", "en": "Locations", "pt": "Locais", "fr": "Lieux", "de": "Standorte", "it": "Luoghi", "ja": "複数の場所", "zh": "多个位置", "ko": "여러 위치", "ar": "مواقع" },
+    "keywords": {
+      "es": ["varios lugares", "sucursales", "puntos de venta", "tiendas", "red de distribución", "localizador de tiendas", "comparar lugares"],
+      "en": ["multiple places", "branches", "points of sale", "stores", "distribution network", "store locator", "venues"]
+    }
+  },
+  "compass": {
+    "label": { "es": "Explorar", "en": "Explore", "pt": "Explorar", "fr": "Explorer", "de": "Erkunden", "it": "Esplora", "ja": "探索", "zh": "探索", "ko": "탐색", "ar": "استكشاف" },
+    "keywords": {
+      "es": ["brújula", "orientación", "norte", "rumbo", "navegar", "descubrir", "puntos cardinales"],
+      "en": ["orientation", "north", "bearing", "navigate", "discover", "cardinal points", "browse"]
+    }
+  },
+  "location-arrow": {
+    "label": { "es": "Mi ubicación", "en": "My location", "pt": "Minha localização", "fr": "Ma position", "de": "Mein Standort", "it": "La mia posizione", "ja": "現在地", "zh": "我的位置", "ko": "내 위치", "ar": "موقعي" },
+    "keywords": {
+      "es": ["ubicación actual", "gps", "dónde estoy", "centrar mapa", "compartir ubicación", "localizarme", "posición"],
+      "en": ["current location", "gps", "where am i", "center map", "share location", "locate me", "position"]
+    }
+  },
+  "navigation": {
+    "label": { "es": "Navegación", "en": "Navigation", "pt": "Navegação", "fr": "Navigation", "de": "Navigation", "it": "Navigazione", "ja": "ナビゲーション", "zh": "导航", "ko": "내비게이션", "ar": "الملاحة" },
+    "keywords": {
+      "es": ["navegar", "guía paso a paso", "rumbo", "conducir", "iniciar ruta", "gps", "sentido del viaje"],
+      "en": ["navigate", "turn-by-turn", "heading", "drive", "start route", "gps", "travel direction"]
+    }
+  },
+  "route": {
+    "label": { "es": "Ruta", "en": "Route", "pt": "Rota", "fr": "Trajet", "de": "Route", "it": "Percorso", "ja": "ルート", "zh": "路线", "ko": "경로", "ar": "مسار" },
+    "keywords": {
+      "es": ["trayecto", "recorrido", "de origen a destino", "seguimiento de envío", "itinerario", "reparto", "camino"],
+      "en": ["path", "journey", "origin to destination", "shipment tracking", "itinerary", "delivery run", "trip"]
+    }
+  },
+  "signpost": {
+    "label": { "es": "Poste indicador", "en": "Signpost", "pt": "Placa de sinalização", "fr": "Panneau indicateur", "de": "Wegweiser", "it": "Cartello indicatore", "ja": "道しるべ", "zh": "路标", "ko": "이정표", "ar": "لافتة إرشادية" },
+    "keywords": {
+      "es": ["orientación", "señalización", "cómo llegar", "elegir camino", "guía", "opciones", "encrucijada"],
+      "en": ["wayfinding", "guidance", "directions", "choose a path", "guide", "options", "crossroads"]
+    }
+  },
+  "directions": {
+    "label": { "es": "Indicaciones", "en": "Directions", "pt": "Como chegar", "fr": "Itinéraire", "de": "Wegbeschreibung", "it": "Indicazioni stradali", "ja": "経路案内", "zh": "路线指引", "ko": "길찾기", "ar": "الاتجاهات" },
+    "keywords": {
+      "es": ["cómo llegar", "vuelta a la derecha", "girar", "desvío", "señal de tránsito", "obtener ruta", "manejar hasta"],
+      "en": ["how to get there", "turn right", "detour", "road sign", "get a route", "driving guidance", "navigate to"]
+    }
+  },
+  "house": {
+    "label": { "es": "Casa", "en": "House", "pt": "Casa", "fr": "Maison", "de": "Haus", "it": "Casa", "ja": "家", "zh": "住宅", "ko": "집", "ar": "منزل" },
+    "keywords": {
+      "es": ["hogar", "vivienda", "domicilio", "residencia", "dirección particular", "inmueble", "bienes raíces"],
+      "en": ["home", "residence", "dwelling", "home address", "property", "real estate", "household"]
+    }
+  },
+  "office-building": {
+    "label": { "es": "Oficina", "en": "Office", "pt": "Escritório", "fr": "Bureau", "de": "Büro", "it": "Ufficio", "ja": "オフィス", "zh": "办公楼", "ko": "사무실", "ar": "مكتب" },
+    "keywords": {
+      "es": ["edificio", "corporativo", "empresa", "compañía", "sede", "lugar de trabajo", "negocio"],
+      "en": ["building", "corporate", "company", "headquarters", "workplace", "business", "organization"]
+    }
+  },
+  "city": {
+    "label": { "es": "Ciudad", "en": "City", "pt": "Cidade", "fr": "Ville", "de": "Stadt", "it": "Città", "ja": "都市", "zh": "城市", "ko": "도시", "ar": "مدينة" },
+    "keywords": {
+      "es": ["edificios", "centro", "urbano", "metrópoli", "zona urbana", "municipio", "rascacielos"],
+      "en": ["buildings", "downtown", "urban", "metropolis", "skyline", "municipality", "town"]
+    }
+  },
+  "factory": {
+    "label": { "es": "Fábrica", "en": "Factory", "pt": "Fábrica", "fr": "Usine", "de": "Fabrik", "it": "Fabbrica", "ja": "工場", "zh": "工厂", "ko": "공장", "ar": "مصنع" },
+    "keywords": {
+      "es": ["planta", "industria", "manufactura", "producción", "proveedor", "nave industrial", "fabricante"],
+      "en": ["plant", "industry", "manufacturing", "production", "supplier", "industrial site", "manufacturer"]
+    }
+  },
+  "hospital": {
+    "label": { "es": "Hospital", "en": "Hospital", "pt": "Hospital", "fr": "Hôpital", "de": "Krankenhaus", "it": "Ospedale", "ja": "病院", "zh": "医院", "ko": "병원", "ar": "مستشفى" },
+    "keywords": {
+      "es": ["clínica", "salud", "urgencias", "atención médica", "consultorio", "emergencia", "sanatorio"],
+      "en": ["clinic", "health", "emergency room", "medical care", "doctor", "healthcare", "urgent care"]
+    }
+  },
+  "school": {
+    "label": { "es": "Escuela", "en": "School", "pt": "Escola", "fr": "École", "de": "Schule", "it": "Scuola", "ja": "学校", "zh": "学校", "ko": "학교", "ar": "مدرسة" },
+    "keywords": {
+      "es": ["colegio", "educación", "campus", "aprendizaje", "institución educativa", "primaria", "clases"],
+      "en": ["education", "campus", "learning", "institution", "classes", "academy", "university"]
+    }
+  },
+  "corner-shop": {
+    "label": { "es": "Tienda de barrio", "en": "Local shop", "pt": "Loja de bairro", "fr": "Commerce de proximité", "de": "Laden um die Ecke", "it": "Negozio di quartiere", "ja": "商店", "zh": "社区小店", "ko": "동네 가게", "ar": "متجر الحي" },
+    "keywords": {
+      "es": ["abarrotes", "tiendita", "local", "negocio", "comercio", "punto de venta", "minisúper", "fachada"],
+      "en": ["convenience store", "storefront", "local business", "retail", "point of sale", "grocery", "small business"]
+    }
+  },
+  "bed": {
+    "label": { "es": "Hospedaje", "en": "Lodging", "pt": "Hospedagem", "fr": "Hébergement", "de": "Unterkunft", "it": "Alloggio", "ja": "宿泊", "zh": "住宿", "ko": "숙박", "ar": "إقامة" },
+    "keywords": {
+      "es": ["hotel", "cama", "dormir", "habitación", "alojamiento", "recámara", "reservar noche"],
+      "en": ["hotel", "sleep", "room", "accommodation", "bedroom", "overnight stay", "rest"]
+    }
+  },
+  "car": {
+    "label": { "es": "Auto", "en": "Car", "pt": "Carro", "fr": "Voiture", "de": "Auto", "it": "Auto", "ja": "車", "zh": "汽车", "ko": "자동차", "ar": "سيارة" },
+    "keywords": {
+      "es": ["coche", "carro", "vehículo", "manejar", "transporte", "viaje por carretera", "estacionar"],
+      "en": ["vehicle", "automobile", "drive", "transport", "road trip", "auto", "commute"]
+    }
+  },
+  "taxi": {
+    "label": { "es": "Taxi", "en": "Taxi", "pt": "Táxi", "fr": "Taxi", "de": "Taxi", "it": "Taxi", "ja": "タクシー", "zh": "出租车", "ko": "택시", "ar": "سيارة أجرة" },
+    "keywords": {
+      "es": ["viaje", "traslado", "pedir auto", "servicio de transporte", "chofer", "auto de alquiler", "traslado al aeropuerto"],
+      "en": ["cab", "ride", "ride-hailing", "driver", "transfer", "hail a car", "airport transfer"]
+    }
+  },
+  "bus": {
+    "label": { "es": "Autobús", "en": "Bus", "pt": "Ônibus", "fr": "Bus", "de": "Bus", "it": "Autobus", "ja": "バス", "zh": "公交车", "ko": "버스", "ar": "حافلة" },
+    "keywords": {
+      "es": ["camión", "transporte público", "parada", "transporte de personal", "ruta urbana", "pasaje", "colectivo"],
+      "en": ["coach", "public transit", "bus stop", "shuttle", "city route", "fare", "commute"]
+    }
+  },
+  "train": {
+    "label": { "es": "Tren", "en": "Train", "pt": "Trem", "fr": "Train", "de": "Zug", "it": "Treno", "ja": "電車", "zh": "火车", "ko": "기차", "ar": "قطار" },
+    "keywords": {
+      "es": ["metro", "ferrocarril", "estación", "tren ligero", "transporte público", "vía", "boleto de tren"],
+      "en": ["subway", "railway", "station", "metro", "light rail", "public transit", "rail ticket"]
+    }
+  },
+  "plane": {
+    "label": { "es": "Vuelo", "en": "Flight", "pt": "Voo", "fr": "Vol", "de": "Flug", "it": "Volo", "ja": "フライト", "zh": "航班", "ko": "항공편", "ar": "رحلة جوية" },
+    "keywords": {
+      "es": ["avión", "viaje", "aeropuerto", "aerolínea", "envío aéreo", "modo avión", "boleto de avión"],
+      "en": ["airplane", "travel", "airport", "airline", "air freight", "airplane mode", "boarding pass"]
+    }
+  },
+  "plane-takeoff": {
+    "label": { "es": "Salida", "en": "Departure", "pt": "Partida", "fr": "Départ", "de": "Abflug", "it": "Partenza", "ja": "出発", "zh": "出发", "ko": "출발", "ar": "المغادرة" },
+    "keywords": {
+      "es": ["despegue", "vuelo de ida", "salidas", "aeropuerto", "embarque", "origen", "partida"],
+      "en": ["departures", "outbound flight", "airport", "boarding", "origin", "leaving", "wheels up"]
+    }
+  },
+  "plane-landing": {
+    "label": { "es": "Llegada", "en": "Arrival", "pt": "Chegada", "fr": "Arrivée", "de": "Ankunft", "it": "Arrivo", "ja": "到着", "zh": "到达", "ko": "도착", "ar": "الوصول" },
+    "keywords": {
+      "es": ["aterrizaje", "vuelo de regreso", "llegadas", "destino", "aeropuerto", "recoger en el aeropuerto", "arribo"],
+      "en": ["arrivals", "inbound flight", "destination", "touchdown", "airport pickup", "return flight", "airport"]
+    }
+  },
+  "ship": {
+    "label": { "es": "Barco", "en": "Ship", "pt": "Navio", "fr": "Bateau", "de": "Schiff", "it": "Nave", "ja": "船", "zh": "船", "ko": "선박", "ar": "سفينة" },
+    "keywords": {
+      "es": ["buque", "envío marítimo", "ferry", "crucero", "transporte por mar", "puerto", "flete"],
+      "en": ["vessel", "ocean freight", "ferry", "cruise", "sea transport", "port", "cargo"]
+    }
+  },
+  "sailboat": {
+    "label": { "es": "Velero", "en": "Sailboat", "pt": "Veleiro", "fr": "Voilier", "de": "Segelboot", "it": "Barca a vela", "ja": "ヨット", "zh": "帆船", "ko": "돛단배", "ar": "قارب شراعي" },
+    "keywords": {
+      "es": ["vela", "navegar", "regata", "náutico", "yate", "paseo en barco", "vacaciones en el mar"],
+      "en": ["sailing", "regatta", "nautical", "yacht", "boat trip", "marina", "seaside holiday"]
+    }
+  },
+  "anchor": {
+    "label": { "es": "Ancla", "en": "Anchor", "pt": "Âncora", "fr": "Ancre", "de": "Anker", "it": "Ancora", "ja": "錨", "zh": "锚", "ko": "닻", "ar": "مرساة" },
+    "keywords": {
+      "es": ["puerto", "marino", "náutico", "fondear", "estabilidad", "fijar", "ancla de página"],
+      "en": ["harbor", "marine", "nautical", "moor", "stability", "pin in place", "page anchor"]
+    }
+  },
+  "bicycle": {
+    "label": { "es": "Bicicleta", "en": "Bicycle", "pt": "Bicicleta", "fr": "Vélo", "de": "Fahrrad", "it": "Bicicletta", "ja": "自転車", "zh": "自行车", "ko": "자전거", "ar": "دراجة هوائية" },
+    "keywords": {
+      "es": ["bici", "ciclismo", "ciclovía", "pedalear", "reparto en bici", "movilidad sustentable", "rodada"],
+      "en": ["bike", "cycling", "bike lane", "pedal", "bike courier", "green transport", "ride"]
+    }
+  },
+  "scooter": {
+    "label": { "es": "Scooter", "en": "Scooter", "pt": "Patinete", "fr": "Trottinette", "de": "Roller", "it": "Monopattino", "ja": "キックボード", "zh": "滑板车", "ko": "킥보드", "ar": "سكوتر" },
+    "keywords": {
+      "es": ["patín eléctrico", "patín del diablo", "monopatín", "micromovilidad", "trayecto corto", "movilidad urbana", "última milla"],
+      "en": ["kick scooter", "e-scooter", "kickboard", "micromobility", "short trip", "urban mobility", "last mile"]
+    }
+  },
+  "walking": {
+    "label": { "es": "A pie", "en": "Walking", "pt": "A pé", "fr": "À pied", "de": "Zu Fuß", "it": "A piedi", "ja": "徒歩", "zh": "步行", "ko": "도보", "ar": "سيرًا على الأقدام" },
+    "keywords": {
+      "es": ["caminar", "peatón", "paseo", "pasos", "ruta peatonal", "actividad física", "andar"],
+      "en": ["walk", "pedestrian", "stroll", "steps", "on foot", "physical activity", "footpath"]
+    }
+  },
+  "gas-station": {
+    "label": { "es": "Gasolinera", "en": "Gas station", "pt": "Posto de combustível", "fr": "Station-service", "de": "Tankstelle", "it": "Distributore di benzina", "ja": "ガソリンスタンド", "zh": "加油站", "ko": "주유소", "ar": "محطة وقود" },
+    "keywords": {
+      "es": ["combustible", "cargar gasolina", "gasolina", "diésel", "repostar", "gasto de combustible", "bomba de gasolina"],
+      "en": ["fuel", "petrol", "refuel", "diesel", "filling station", "fuel cost", "pump"]
+    }
+  },
+  "ev-charger": {
+    "label": { "es": "Cargador eléctrico", "en": "EV charger", "pt": "Carregador elétrico", "fr": "Borne de recharge", "de": "Ladestation", "it": "Colonnina di ricarica", "ja": "EV充電器", "zh": "充电桩", "ko": "전기차 충전기", "ar": "شاحن سيارات كهربائية" },
+    "keywords": {
+      "es": ["auto eléctrico", "estación de carga", "recargar batería", "electrolinera", "energía", "vehículo eléctrico", "cargar el coche"],
+      "en": ["electric car", "charging station", "recharge", "electric vehicle", "plug in", "energy", "charging point"]
+    }
+  },
+  "parking": {
+    "label": { "es": "Estacionamiento", "en": "Parking", "pt": "Estacionamento", "fr": "Parking", "de": "Parkplatz", "it": "Parcheggio", "ja": "駐車場", "zh": "停车场", "ko": "주차장", "ar": "موقف سيارات" },
+    "keywords": {
+      "es": ["aparcar", "cochera", "estacionar", "lugar para el auto", "valet", "pensión de autos", "cajón"],
+      "en": ["park the car", "car park", "garage", "valet", "parking spot", "lot", "where to park"]
+    }
+  },
+  "traffic-light": {
+    "label": { "es": "Semáforo", "en": "Traffic light", "pt": "Semáforo", "fr": "Feu de circulation", "de": "Ampel", "it": "Semaforo", "ja": "信号機", "zh": "红绿灯", "ko": "신호등", "ar": "إشارة مرور" },
+    "keywords": {
+      "es": ["tráfico", "alto", "crucero", "estado", "rojo amarillo verde", "señal vial", "prioridad"],
+      "en": ["stoplight", "traffic", "status", "red yellow green", "signal", "stop and go", "rag status"]
+    }
+  },
+  "road": {
+    "label": { "es": "Carretera", "en": "Road", "pt": "Estrada", "fr": "Route", "de": "Straße", "it": "Strada", "ja": "道路", "zh": "道路", "ko": "도로", "ar": "طريق" },
+    "keywords": {
+      "es": ["camino", "autopista", "viaje", "ruta", "carril", "hoja de ruta", "trayecto largo"],
+      "en": ["highway", "street", "journey", "lane", "roadmap", "path ahead", "travel"]
+    }
+  },
+  "sun": {
+    "label": { "es": "Modo claro", "en": "Light mode", "pt": "Modo claro", "fr": "Mode clair", "de": "Heller Modus", "it": "Modalità chiara", "ja": "ライトモード", "zh": "浅色模式", "ko": "라이트 모드", "ar": "الوضع الفاتح" },
+    "keywords": {
+      "es": ["sol", "soleado", "día", "tema claro", "brillo", "despejado", "clima"],
+      "en": ["sunny", "daytime", "light theme", "brightness", "clear sky", "weather", "day mode"]
+    }
+  },
+  "sun-dim": {
+    "label": { "es": "Brillo bajo", "en": "Low brightness", "pt": "Brilho baixo", "fr": "Luminosité faible", "de": "Geringe Helligkeit", "it": "Luminosità bassa", "ja": "低輝度", "zh": "低亮度", "ko": "밝기 낮음", "ar": "سطوع منخفض" },
+    "keywords": {
+      "es": ["atenuar", "bajar brillo", "pantalla tenue", "luz suave", "ahorro de energía", "sol tenue", "oscurecer"],
+      "en": ["dim screen", "lower brightness", "soft light", "power saving", "night shift", "darken", "reduce glare"]
+    }
+  },
+  "moon": {
+    "label": { "es": "Noche", "en": "Night", "pt": "Noite", "fr": "Nuit", "de": "Nacht", "it": "Notte", "ja": "夜", "zh": "夜晚", "ko": "밤", "ar": "الليل" },
+    "keywords": {
+      "es": ["luna", "modo oscuro", "tema oscuro", "nocturno", "dormir", "no molestar", "creciente"],
+      "en": ["dark mode", "dark theme", "nighttime", "sleep", "do not disturb", "crescent", "lunar"]
+    }
+  },
+  "moon-stars": {
+    "label": { "es": "Dormir", "en": "Sleep", "pt": "Sono", "fr": "Sommeil", "de": "Schlafen", "it": "Sonno", "ja": "睡眠", "zh": "睡眠", "ko": "수면", "ar": "النوم" },
+    "keywords": {
+      "es": ["luna y estrellas", "cielo nocturno", "descanso", "hora de dormir", "noche despejada", "modo sueño", "buenas noches"],
+      "en": ["moon and stars", "night sky", "rest", "bedtime", "clear night", "sleep mode", "good night"]
+    }
+  },
+  "cloud": {
+    "label": { "es": "Nube", "en": "Cloud", "pt": "Nuvem", "fr": "Nuage", "de": "Wolke", "it": "Nuvola", "ja": "雲", "zh": "云", "ko": "구름", "ar": "سحابة" },
+    "keywords": {
+      "es": ["nublado", "clima", "cielo", "almacenamiento en línea", "respaldo", "servidor", "en línea"],
+      "en": ["cloudy", "weather", "sky", "online storage", "backup", "server", "online"]
+    }
+  },
+  "clouds": {
+    "label": { "es": "Nublado", "en": "Cloudy", "pt": "Nublado", "fr": "Nuageux", "de": "Bewölkt", "it": "Nuvoloso", "ja": "曇り", "zh": "多云", "ko": "흐림", "ar": "غائم" },
+    "keywords": {
+      "es": ["nubes", "cielo cubierto", "muy nublado", "clima", "pronóstico", "sin sol", "día gris"],
+      "en": ["overcast", "grey sky", "cloud cover", "weather", "forecast", "no sun", "gloomy"]
+    }
+  },
+  "cloud-sun": {
+    "label": { "es": "Parcialmente nublado", "en": "Partly cloudy", "pt": "Parcialmente nublado", "fr": "Partiellement nuageux", "de": "Teilweise bewölkt", "it": "Parzialmente nuvoloso", "ja": "晴れ時々曇り", "zh": "晴间多云", "ko": "구름 조금", "ar": "غائم جزئيًا" },
+    "keywords": {
+      "es": ["medio nublado", "sol y nubes", "clima", "pronóstico", "día templado", "intervalos de sol", "tiempo variable"],
+      "en": ["sun and clouds", "mostly sunny", "weather", "forecast", "mild day", "sunny intervals", "variable weather"]
+    }
+  },
+  "cloud-moon": {
+    "label": { "es": "Noche parcialmente nublada", "en": "Partly cloudy night", "pt": "Noite parcialmente nublada", "fr": "Nuit partiellement nuageuse", "de": "Nachts teilweise bewölkt", "it": "Notte parzialmente nuvolosa", "ja": "曇りの夜", "zh": "夜间多云", "ko": "구름 낀 밤", "ar": "ليلة غائمة جزئيًا" },
+    "keywords": {
+      "es": ["noche nublada", "luna y nubes", "clima nocturno", "pronóstico de la noche", "cielo nocturno", "noche templada", "madrugada"],
+      "en": ["cloudy night", "moon and clouds", "night weather", "overnight forecast", "night sky", "evening weather", "mild night"]
+    }
+  },
+  "cloud-rain": {
+    "label": { "es": "Lluvia", "en": "Rain", "pt": "Chuva", "fr": "Pluie", "de": "Regen", "it": "Pioggia", "ja": "雨", "zh": "雨", "ko": "비", "ar": "مطر" },
+    "keywords": {
+      "es": ["lluvioso", "chubascos", "aguacero", "precipitación", "pronóstico", "temporada de lluvias", "clima húmedo"],
+      "en": ["rainy", "showers", "downpour", "precipitation", "forecast", "wet weather", "rainfall"]
+    }
+  },
+  "cloud-drizzle": {
+    "label": { "es": "Llovizna", "en": "Drizzle", "pt": "Garoa", "fr": "Bruine", "de": "Nieselregen", "it": "Pioggerella", "ja": "霧雨", "zh": "毛毛雨", "ko": "이슬비", "ar": "رذاذ" },
+    "keywords": {
+      "es": ["lluvia ligera", "chipi chipi", "lloviznando", "chubasco leve", "humedad", "pronóstico", "garúa"],
+      "en": ["light rain", "sprinkle", "mist", "spitting rain", "damp", "forecast", "scattered showers"]
+    }
+  },
+  "cloud-snow": {
+    "label": { "es": "Nieve", "en": "Snow", "pt": "Neve", "fr": "Neige", "de": "Schnee", "it": "Neve", "ja": "雪", "zh": "雪", "ko": "눈", "ar": "ثلج" },
+    "keywords": {
+      "es": ["nevada", "invierno", "nevando", "frío", "pronóstico", "tormenta de nieve", "aguanieve"],
+      "en": ["snowfall", "winter", "snowing", "cold", "forecast", "blizzard", "flurries"]
+    }
+  },
+  "storm": {
+    "label": { "es": "Tormenta eléctrica", "en": "Thunderstorm", "pt": "Tempestade", "fr": "Orage", "de": "Gewitter", "it": "Temporale", "ja": "雷雨", "zh": "雷雨", "ko": "뇌우", "ar": "عاصفة رعدية" },
+    "keywords": {
+      "es": ["tormenta", "rayo", "relámpago", "trueno", "aguacero", "alerta meteorológica", "mal tiempo"],
+      "en": ["lightning", "thunder", "downpour", "severe weather", "weather alert", "bad weather", "squall"]
+    }
+  },
+  "fog": {
+    "label": { "es": "Niebla", "en": "Fog", "pt": "Neblina", "fr": "Brouillard", "de": "Nebel", "it": "Nebbia", "ja": "霧", "zh": "雾", "ko": "안개", "ar": "ضباب" },
+    "keywords": {
+      "es": ["neblina", "bruma", "poca visibilidad", "nubes bajas", "humedad", "pronóstico", "smog"],
+      "en": ["mist", "haze", "low visibility", "smog", "foggy", "forecast", "murky"]
+    }
+  },
+  "wind": {
+    "label": { "es": "Viento", "en": "Wind", "pt": "Vento", "fr": "Vent", "de": "Wind", "it": "Vento", "ja": "風", "zh": "风", "ko": "바람", "ar": "رياح" },
+    "keywords": {
+      "es": ["aire", "ventoso", "brisa", "ráfaga", "ventilación", "velocidad del viento", "corriente de aire"],
+      "en": ["air", "windy", "breeze", "gust", "ventilation", "airflow", "blowing"]
+    }
+  },
+  "tornado": {
+    "label": { "es": "Tornado", "en": "Tornado", "pt": "Tornado", "fr": "Tornade", "de": "Tornado", "it": "Tornado", "ja": "竜巻", "zh": "龙卷风", "ko": "토네이도", "ar": "إعصار قمعي" },
+    "keywords": {
+      "es": ["huracán", "remolino", "torbellino", "ciclón", "desastre natural", "alerta de clima", "vendaval"],
+      "en": ["twister", "hurricane", "whirlwind", "cyclone", "natural disaster", "storm warning", "vortex"]
+    }
+  },
+  "snowflake": {
+    "label": { "es": "Copo de nieve", "en": "Snowflake", "pt": "Floco de neve", "fr": "Flocon de neige", "de": "Schneeflocke", "it": "Fiocco di neve", "ja": "雪の結晶", "zh": "雪花", "ko": "눈송이", "ar": "ندفة ثلج" },
+    "keywords": {
+      "es": ["frío", "congelar", "invierno", "congelado", "aire acondicionado", "refrigeración", "pausar cuenta"],
+      "en": ["cold", "freeze", "winter", "frozen", "air conditioning", "cooling", "pause account"]
+    }
+  },
+  "rainbow": {
+    "label": { "es": "Arcoíris", "en": "Rainbow", "pt": "Arco-íris", "fr": "Arc-en-ciel", "de": "Regenbogen", "it": "Arcobaleno", "ja": "虹", "zh": "彩虹", "ko": "무지개", "ar": "قوس قزح" },
+    "keywords": {
+      "es": ["después de la lluvia", "esperanza", "diversidad", "orgullo", "colores", "inclusión", "buen tiempo"],
+      "en": ["after the rain", "hope", "diversity", "pride", "colors", "inclusion", "lgbtq"]
+    }
+  },
+  "thermometer": {
+    "label": { "es": "Temperatura", "en": "Temperature", "pt": "Temperatura", "fr": "Température", "de": "Temperatur", "it": "Temperatura", "ja": "温度", "zh": "温度", "ko": "온도", "ar": "درجة الحرارة" },
+    "keywords": {
+      "es": ["termómetro", "grados", "clima", "fiebre", "calor", "medir temperatura", "cadena de frío"],
+      "en": ["degrees", "weather", "fever", "heat", "measure temperature", "climate", "cold chain"]
+    }
+  },
+  "thermometer-up": {
+    "label": { "es": "Temperatura en aumento", "en": "Temperature rising", "pt": "Temperatura subindo", "fr": "Température en hausse", "de": "Temperatur steigt", "it": "Temperatura in aumento", "ja": "温度上昇", "zh": "温度升高", "ko": "온도 상승", "ar": "ارتفاع درجة الحرارة" },
+    "keywords": {
+      "es": ["calor", "temperatura alta", "subir temperatura", "ola de calor", "calentar", "sobrecalentamiento", "fiebre"],
+      "en": ["hot", "high temperature", "raise temperature", "heat wave", "warm up", "overheating", "fever"]
+    }
+  },
+  "thermometer-down": {
+    "label": { "es": "Temperatura en descenso", "en": "Temperature falling", "pt": "Temperatura caindo", "fr": "Température en baisse", "de": "Temperatur sinkt", "it": "Temperatura in calo", "ja": "温度低下", "zh": "温度降低", "ko": "온도 하강", "ar": "انخفاض درجة الحرارة" },
+    "keywords": {
+      "es": ["frío", "temperatura baja", "bajar temperatura", "helada", "enfriar", "refrigerar", "ola de frío"],
+      "en": ["cold", "low temperature", "lower temperature", "frost", "cool down", "refrigerate", "cold snap"]
+    }
+  },
+  "umbrella": {
+    "label": { "es": "Paraguas", "en": "Umbrella", "pt": "Guarda-chuva", "fr": "Parapluie", "de": "Regenschirm", "it": "Ombrello", "ja": "傘", "zh": "雨伞", "ko": "우산", "ar": "مظلة" },
+    "keywords": {
+      "es": ["sombrilla", "lluvia", "protección", "seguro", "cobertura", "temporada de lluvias", "resguardo"],
+      "en": ["rain", "protection", "insurance", "coverage", "rainy season", "shelter", "parasol"]
+    }
+  },
+  "droplet": {
+    "label": { "es": "Gota", "en": "Droplet", "pt": "Gota", "fr": "Goutte", "de": "Tropfen", "it": "Goccia", "ja": "しずく", "zh": "水滴", "ko": "물방울", "ar": "قطرة" },
+    "keywords": {
+      "es": ["agua", "líquido", "humedad", "tinta", "color", "hidratación", "consumo de agua"],
+      "en": ["water", "liquid", "moisture", "ink", "color fill", "hydration", "water usage"]
+    }
+  },
+  "droplets": {
+    "label": { "es": "Humedad", "en": "Humidity", "pt": "Umidade", "fr": "Humidité", "de": "Luftfeuchtigkeit", "it": "Umidità", "ja": "湿度", "zh": "湿度", "ko": "습도", "ar": "الرطوبة" },
+    "keywords": {
+      "es": ["gotas", "agua", "rocío", "condensación", "líquidos", "salpicadura", "humectación"],
+      "en": ["drops", "water", "dew", "condensation", "liquids", "splash", "moisture"]
+    }
+  },
+  "leaf": {
+    "label": { "es": "Ecológico", "en": "Eco-friendly", "pt": "Ecológico", "fr": "Écologique", "de": "Umweltfreundlich", "it": "Ecologico", "ja": "エコ", "zh": "环保", "ko": "친환경", "ar": "صديق للبيئة" },
+    "keywords": {
+      "es": ["hoja", "natural", "sustentable", "orgánico", "vegano", "planta", "medio ambiente"],
+      "en": ["natural", "sustainable", "organic", "vegan", "plant", "environment", "green"]
+    }
+  },
+  "tree": {
+    "label": { "es": "Árbol", "en": "Tree", "pt": "Árvore", "fr": "Arbre", "de": "Baum", "it": "Albero", "ja": "木", "zh": "树", "ko": "나무", "ar": "شجرة" },
+    "keywords": {
+      "es": ["parque", "naturaleza", "sustentable", "reforestar", "jardín", "área verde", "compensar carbono"],
+      "en": ["park", "nature", "sustainable", "reforestation", "garden", "green space", "carbon offset"]
+    }
+  },
+  "tree-pine": {
+    "label": { "es": "Pino", "en": "Pine tree", "pt": "Pinheiro", "fr": "Pin", "de": "Nadelbaum", "it": "Pino", "ja": "松の木", "zh": "松树", "ko": "소나무", "ar": "شجرة صنوبر" },
+    "keywords": {
+      "es": ["bosque", "conífera", "navidad", "árbol de navidad", "montaña", "campismo", "invierno"],
+      "en": ["forest", "conifer", "christmas", "christmas tree", "evergreen", "fir", "woods"]
+    }
+  },
+  "palm-tree": {
+    "label": { "es": "Palmera", "en": "Palm tree", "pt": "Palmeira", "fr": "Palmier", "de": "Palme", "it": "Palma", "ja": "ヤシの木", "zh": "棕榈树", "ko": "야자수", "ar": "نخلة" },
+    "keywords": {
+      "es": ["playa", "trópico", "vacaciones", "verano", "costa", "destino de playa", "isla"],
+      "en": ["beach", "tropical", "vacation", "summer", "coast", "island", "resort"]
+    }
+  },
+  "flower": {
+    "label": { "es": "Flor", "en": "Flower", "pt": "Flor", "fr": "Fleur", "de": "Blume", "it": "Fiore", "ja": "花", "zh": "花", "ko": "꽃", "ar": "زهرة" },
+    "keywords": {
+      "es": ["jardín", "primavera", "florería", "regalo", "naturaleza", "belleza", "ramo"],
+      "en": ["garden", "spring", "florist", "gift", "nature", "bloom", "bouquet"]
+    }
+  },
+  "sprout": {
+    "label": { "es": "Crecimiento", "en": "Growth", "pt": "Crescimento", "fr": "Croissance", "de": "Wachstum", "it": "Crescita", "ja": "成長", "zh": "成长", "ko": "성장", "ar": "نمو" },
+    "keywords": {
+      "es": ["brote", "planta", "semilla", "nuevo comienzo", "principiante", "germinar", "cultivo"],
+      "en": ["seedling", "plant", "seed", "new beginning", "beginner", "germinate", "nurture"]
+    }
+  },
+  "cactus": {
+    "label": { "es": "Cactus", "en": "Cactus", "pt": "Cacto", "fr": "Cactus", "de": "Kaktus", "it": "Cactus", "ja": "サボテン", "zh": "仙人掌", "ko": "선인장", "ar": "صبّار" },
+    "keywords": {
+      "es": ["desierto", "planta", "suculenta", "nopal", "árido", "clima seco", "poco mantenimiento"],
+      "en": ["desert", "plant", "succulent", "arid", "dry climate", "southwest", "low maintenance"]
+    }
+  },
+  "flame": {
+    "label": { "es": "Tendencia", "en": "Trending", "pt": "Em alta", "fr": "Tendance", "de": "Angesagt", "it": "Di tendenza", "ja": "人気", "zh": "热门", "ko": "인기", "ar": "رائج" },
+    "keywords": {
+      "es": ["fuego", "llama", "popular", "lo más visto", "racha", "calorías", "caliente"],
+      "en": ["fire", "hot", "popular", "most viewed", "streak", "calories", "burn"]
+    }
+  },
+  "campfire": {
+    "label": { "es": "Fogata", "en": "Campfire", "pt": "Fogueira", "fr": "Feu de camp", "de": "Lagerfeuer", "it": "Falò", "ja": "焚き火", "zh": "篝火", "ko": "모닥불", "ar": "نار المخيم" },
+    "keywords": {
+      "es": ["campamento", "fuego", "acampar", "hoguera", "reunión", "aire libre", "comunidad"],
+      "en": ["bonfire", "camp", "fire", "outdoors", "gathering", "community", "camping"]
+    }
+  },
+  "mountain": {
+    "label": { "es": "Montaña", "en": "Mountain", "pt": "Montanha", "fr": "Montagne", "de": "Berg", "it": "Montagna", "ja": "山", "zh": "山", "ko": "산", "ar": "جبل" },
+    "keywords": {
+      "es": ["cerro", "paisaje", "sierra", "excursión", "senderismo", "terreno", "meta"],
+      "en": ["hill", "landscape", "mountain range", "hiking", "outdoors", "terrain", "goal"]
+    }
+  },
+  "mountain-snow": {
+    "label": { "es": "Montaña nevada", "en": "Snowy mountain", "pt": "Montanha nevada", "fr": "Montagne enneigée", "de": "Schneebedeckter Berg", "it": "Montagna innevata", "ja": "雪山", "zh": "雪山", "ko": "설산", "ar": "جبل مثلج" },
+    "keywords": {
+      "es": ["cumbre", "cima", "nieve", "esquí", "alpinismo", "logro", "pico"],
+      "en": ["summit", "peak", "snow", "skiing", "mountaineering", "achievement", "alpine"]
+    }
+  },
+  "wave": {
+    "label": { "es": "Ola", "en": "Wave", "pt": "Onda", "fr": "Vague", "de": "Welle", "it": "Onda", "ja": "波", "zh": "海浪", "ko": "파도", "ar": "موجة" },
+    "keywords": {
+      "es": ["mar", "océano", "surf", "playa", "marea", "costa", "oleaje"],
+      "en": ["sea", "ocean", "surf", "beach", "tide", "coast", "swell"]
+    }
+  },
+  "planet": {
+    "label": { "es": "Planeta", "en": "Planet", "pt": "Planeta", "fr": "Planète", "de": "Planet", "it": "Pianeta", "ja": "惑星", "zh": "行星", "ko": "행성", "ar": "كوكب" },
+    "keywords": {
+      "es": ["espacio", "saturno", "universo", "astronomía", "órbita", "ciencia", "exploración espacial"],
+      "en": ["space", "saturn", "universe", "astronomy", "orbit", "science", "galaxy"]
+    }
+  },
+  "shooting-star": {
+    "label": { "es": "Estrella fugaz", "en": "Shooting star", "pt": "Estrela cadente", "fr": "Étoile filante", "de": "Sternschnuppe", "it": "Stella cadente", "ja": "流れ星", "zh": "流星", "ko": "별똥별", "ar": "شهاب" },
+    "keywords": {
+      "es": ["deseo", "destacado", "magia", "novedad", "sorpresa", "lanzamiento", "especial"],
+      "en": ["wish", "featured", "magic", "new", "surprise", "launch", "special"]
+    }
+  },
+  "footprints": {
+    "label": { "es": "Huellas", "en": "Footprints", "pt": "Pegadas", "fr": "Empreintes de pas", "de": "Fußspuren", "it": "Impronte", "ja": "足跡", "zh": "脚印", "ko": "발자국", "ar": "آثار أقدام" },
+    "keywords": {
+      "es": ["pasos", "rastro", "seguimiento", "recorrido", "historial", "conteo de pasos", "trayectoria"],
+      "en": ["steps", "trail", "tracking", "journey", "history", "step count", "trace"]
+    }
+  },
+  "paw": {
+    "label": { "es": "Mascotas", "en": "Pets", "pt": "Animais de estimação", "fr": "Animaux de compagnie", "de": "Haustiere", "it": "Animali domestici", "ja": "ペット", "zh": "宠物", "ko": "반려동물", "ar": "حيوانات أليفة" },
+    "keywords": {
+      "es": ["huella", "pata", "perro", "gato", "veterinaria", "se aceptan mascotas", "animales"],
+      "en": ["paw print", "dog", "cat", "vet", "pet friendly", "animals", "pet store"]
+    }
+  },
+  "cat": {
+    "label": { "es": "Gato", "en": "Cat", "pt": "Gato", "fr": "Chat", "de": "Katze", "it": "Gatto", "ja": "猫", "zh": "猫", "ko": "고양이", "ar": "قطة" },
+    "keywords": {
+      "es": ["mascota", "felino", "minino", "michi", "veterinaria", "animal doméstico", "tienda de mascotas"],
+      "en": ["pet", "feline", "kitten", "kitty", "vet", "pet store", "domestic animal"]
+    }
+  },
+  "fish": {
+    "label": { "es": "Pez", "en": "Fish", "pt": "Peixe", "fr": "Poisson", "de": "Fisch", "it": "Pesce", "ja": "魚", "zh": "鱼", "ko": "물고기", "ar": "سمكة" },
+    "keywords": {
+      "es": ["pescado", "pecera", "acuario", "pesca", "mascota", "mariscos", "mar"],
+      "en": ["aquarium", "sea", "fishing", "pet", "seafood", "marine life", "catch"]
+    }
+  },
+  "tent": {
+    "label": { "es": "Tienda de campaña", "en": "Tent", "pt": "Barraca", "fr": "Tente", "de": "Zelt", "it": "Tenda", "ja": "テント", "zh": "帐篷", "ko": "텐트", "ar": "خيمة" },
+    "keywords": {
+      "es": ["acampar", "campamento", "camping", "aire libre", "glamping", "excursión", "refugio"],
+      "en": ["camping", "campsite", "outdoors", "glamping", "expedition", "shelter", "festival"]
+    }
+  },
+  "volcano": {
+    "label": { "es": "Volcán", "en": "Volcano", "pt": "Vulcão", "fr": "Volcan", "de": "Vulkan", "it": "Vulcano", "ja": "火山", "zh": "火山", "ko": "화산", "ar": "بركان" },
+    "keywords": {
+      "es": ["erupción", "montaña", "actividad volcánica", "alerta", "explosión", "geología", "lava"],
+      "en": ["eruption", "mountain", "volcanic activity", "alert", "explosion", "geology", "lava"]
+    }
+  },
+  "water": {
+    "label": { "es": "Agua", "en": "Water", "pt": "Água", "fr": "Eau", "de": "Wasser", "it": "Acqua", "ja": "水", "zh": "水", "ko": "물", "ar": "ماء" },
+    "keywords": {
+      "es": ["río", "lago", "mar", "oleaje", "alberca", "nadar", "cuerpo de agua"],
+      "en": ["river", "lake", "sea", "waves", "pool", "swimming", "waterfront"]
+    }
+  },
+  "luggage": {
+    "label": { "es": "Equipaje", "en": "Luggage", "pt": "Bagagem", "fr": "Bagages", "de": "Gepäck", "it": "Bagaglio", "ja": "荷物", "zh": "行李", "ko": "수하물", "ar": "أمتعة" },
+    "keywords": {
+      "es": ["maleta", "viaje", "hospedaje", "valija", "documentar", "vacaciones", "guardaequipaje"],
+      "en": ["suitcase", "baggage", "travel", "trip", "checked bag", "vacation", "carry-on"]
+    }
+  },
+  "passport": {
+    "label": { "es": "Pasaporte", "en": "Passport", "pt": "Passaporte", "fr": "Passeport", "de": "Reisepass", "it": "Passaporto", "ja": "パスポート", "zh": "护照", "ko": "여권", "ar": "جواز سفر" },
+    "keywords": {
+      "es": ["viaje", "documento de viaje", "identidad", "viaje internacional", "migración", "visa", "identificación oficial"],
+      "en": ["travel", "travel document", "identity", "international travel", "immigration", "visa", "id"]
+    }
+  },
+  "cloud-hail": {
+    "label": { "es": "Granizo", "en": "Hail", "pt": "Granizo", "fr": "Grêle", "de": "Hagel", "it": "Grandine", "ja": "ひょう", "zh": "冰雹", "ko": "우박", "ar": "حبات البَرَد" },
+    "keywords": {
+      "es": ["granizada", "tormenta de hielo", "clima", "pronóstico", "aguanieve", "hielo", "daños por tormenta"],
+      "en": ["hailstorm", "ice storm", "weather", "forecast", "sleet", "ice pellets", "storm damage"]
+    }
+  },
+  "utensils": {
+    "label": { "es": "Restaurante", "en": "Restaurant", "pt": "Restaurante", "fr": "Restaurant", "de": "Restaurant", "it": "Ristorante", "ja": "レストラン", "zh": "餐厅", "ko": "식당", "ar": "مطعم" },
+    "keywords": {
+      "es": ["comida", "cubiertos", "comer", "menú", "comedor", "reservar mesa", "pedir comida"],
+      "en": ["food", "cutlery", "dining", "menu", "eat", "book a table", "food order"]
+    }
+  },
+  "coffee": {
+    "label": { "es": "Café", "en": "Coffee", "pt": "Café", "fr": "Café", "de": "Kaffee", "it": "Caffè", "ja": "コーヒー", "zh": "咖啡", "ko": "커피", "ar": "قهوة" },
+    "keywords": {
+      "es": ["cafetería", "taza", "descanso", "pausa", "bebida caliente", "desayuno", "té"],
+      "en": ["cafe", "cup", "break", "pause", "hot drink", "breakfast", "tea"]
+    }
+  },
+  "graduation-cap": {
+    "label": { "es": "Educación", "en": "Education", "pt": "Educação", "fr": "Éducation", "de": "Bildung", "it": "Istruzione", "ja": "教育", "zh": "教育", "ko": "교육", "ar": "تعليم" },
+    "keywords": {
+      "es": ["birrete", "graduación", "curso", "aprendizaje", "certificación", "universidad", "capacitación"],
+      "en": ["graduation", "course", "learning", "certification", "university", "training", "academy"]
+    }
+  },
+  "door": {
+    "label": { "es": "Puerta", "en": "Door", "pt": "Porta", "fr": "Porte", "de": "Tür", "it": "Porta", "ja": "ドア", "zh": "门", "ko": "문", "ar": "باب" },
+    "keywords": {
+      "es": ["entrada", "acceso", "habitación", "salida", "cuarto", "privado", "cerrar sesión"],
+      "en": ["entrance", "access", "room", "exit", "private", "sign out", "closed"]
+    }
+  },
+  "door-open": {
+    "label": { "es": "Entrar", "en": "Enter", "pt": "Entrar", "fr": "Entrer", "de": "Eintreten", "it": "Entra", "ja": "入室", "zh": "进入", "ko": "입장", "ar": "دخول" },
+    "keywords": {
+      "es": ["puerta abierta", "bienvenida", "check-in", "acceso libre", "abierto", "iniciar sesión", "pasar"],
+      "en": ["open door", "welcome", "check-in", "open access", "come in", "sign in", "now open"]
+    }
+  },
+  "recycle": {
+    "label": { "es": "Reciclar", "en": "Recycle", "pt": "Reciclar", "fr": "Recycler", "de": "Recycling", "it": "Riciclo", "ja": "リサイクル", "zh": "回收", "ko": "재활용", "ar": "إعادة التدوير" },
+    "keywords": {
+      "es": ["reciclaje", "sustentable", "reutilizar", "medio ambiente", "residuos", "economía circular", "separar basura"],
+      "en": ["recycling", "sustainable", "reuse", "environment", "waste", "circular economy", "green"]
+    }
+  },
+  "binoculars": {
+    "label": { "es": "Descubrir", "en": "Discover", "pt": "Descobrir", "fr": "Découvrir", "de": "Entdecken", "it": "Scopri", "ja": "発見", "zh": "发现", "ko": "발견", "ar": "اكتشاف" },
+    "keywords": {
+      "es": ["binoculares", "explorar", "buscar a lo lejos", "observar", "vigilar", "avistamiento", "prismáticos"],
+      "en": ["explore", "look ahead", "observe", "watch", "lookout", "sightseeing", "field glasses"]
+    }
+  },
+  "dumbbell": {
+    "label": { "es": "Gimnasio", "en": "Gym", "pt": "Academia", "fr": "Salle de sport", "de": "Fitnessstudio", "it": "Palestra", "ja": "ジム", "zh": "健身房", "ko": "헬스장", "ar": "صالة رياضية" },
+    "keywords": {
+      "es": ["pesas", "ejercicio", "entrenar", "fitness", "fuerza", "rutina", "musculación"],
+      "en": ["weights", "exercise", "workout", "fitness", "strength", "training", "weightlifting"]
+    }
+  }
+}

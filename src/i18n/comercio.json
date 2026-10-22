@@ -1,0 +1,744 @@
+{
+  "cart": {
+    "label": { "es": "Carrito", "en": "Cart", "pt": "Carrinho", "fr": "Panier", "de": "Warenkorb", "it": "Carrello", "ja": "カート", "zh": "购物车", "ko": "장바구니", "ar": "سلة التسوق" },
+    "keywords": {
+      "es": ["compras", "tienda en línea", "pedido", "comprar", "pagar", "productos", "checkout", "ecommerce"],
+      "en": ["shopping", "online store", "order", "buy", "checkout", "basket", "ecommerce", "trolley"]
+    }
+  },
+  "cart-full": {
+    "label": { "es": "Carrito con productos", "en": "Cart with items", "pt": "Carrinho com produtos", "fr": "Panier rempli", "de": "Gefüllter Warenkorb", "it": "Carrello pieno", "ja": "商品が入ったカート", "zh": "有商品的购物车", "ko": "상품이 담긴 장바구니", "ar": "سلة تسوق ممتلئة" },
+    "keywords": {
+      "es": ["artículos agregados", "compra en curso", "pedido pendiente", "productos", "pagar", "revisar compra", "contador de artículos"],
+      "en": ["items added", "purchase in progress", "pending order", "products", "checkout", "review order", "item count"]
+    }
+  },
+  "cart-plus": {
+    "label": { "es": "Agregar al carrito", "en": "Add to cart", "pt": "Adicionar ao carrinho", "fr": "Ajouter au panier", "de": "In den Warenkorb", "it": "Aggiungi al carrello", "ja": "カートに追加", "zh": "加入购物车", "ko": "장바구니에 담기", "ar": "إضافة إلى السلة" },
+    "keywords": {
+      "es": ["comprar", "añadir producto", "agregar artículo", "seleccionar", "botón de compra", "tienda en línea", "apartar"],
+      "en": ["buy", "add product", "add item", "select", "buy button", "online store", "shop now"]
+    }
+  },
+  "cart-minus": {
+    "label": { "es": "Quitar del carrito", "en": "Remove from cart", "pt": "Remover do carrinho", "fr": "Retirer du panier", "de": "Aus dem Warenkorb entfernen", "it": "Rimuovi dal carrello", "ja": "カートから削除", "zh": "移出购物车", "ko": "장바구니에서 빼기", "ar": "إزالة من السلة" },
+    "keywords": {
+      "es": ["reducir cantidad", "restar", "menos unidades", "disminuir", "sacar artículo", "ajustar pedido", "quitar producto"],
+      "en": ["decrease quantity", "subtract", "fewer units", "reduce", "take out item", "adjust order", "remove product"]
+    }
+  },
+  "cart-check": {
+    "label": { "es": "Carrito listo", "en": "Cart ready", "pt": "Carrinho pronto", "fr": "Panier validé", "de": "Warenkorb bereit", "it": "Carrello pronto", "ja": "カートの準備完了", "zh": "购物车已确认", "ko": "장바구니 준비 완료", "ar": "السلة جاهزة" },
+    "keywords": {
+      "es": ["pedido confirmado", "listo para pagar", "checkout", "finalizar compra", "verificado", "compra aprobada", "proceder al pago"],
+      "en": ["order confirmed", "ready to pay", "checkout", "complete purchase", "verified", "purchase approved", "proceed to payment"]
+    }
+  },
+  "cart-remove": {
+    "label": { "es": "Vaciar carrito", "en": "Clear cart", "pt": "Esvaziar carrinho", "fr": "Vider le panier", "de": "Warenkorb leeren", "it": "Svuota carrello", "ja": "カートを空にする", "zh": "清空购物车", "ko": "장바구니 비우기", "ar": "إفراغ السلة" },
+    "keywords": {
+      "es": ["eliminar todo", "cancelar compra", "borrar productos", "descartar pedido", "abandonar compra", "reiniciar", "limpiar"],
+      "en": ["delete all", "cancel purchase", "remove products", "discard order", "abandon cart", "reset", "empty"]
+    }
+  },
+  "cart-arrow-down": {
+    "label": { "es": "Pasar al carrito", "en": "Move to cart", "pt": "Mover para o carrinho", "fr": "Déplacer vers le panier", "de": "In den Warenkorb verschieben", "it": "Sposta nel carrello", "ja": "カートに移動", "zh": "移入购物车", "ko": "장바구니로 이동", "ar": "نقل إلى السلة" },
+    "keywords": {
+      "es": ["comprar", "añadir producto", "desde favoritos", "guardar para comprar", "soltar artículo", "volver a comprar", "tienda en línea"],
+      "en": ["buy", "add product", "from wishlist", "save to buy", "drop item", "buy again", "online store"]
+    }
+  },
+  "bag": {
+    "label": { "es": "Bolsa de compras", "en": "Shopping bag", "pt": "Sacola de compras", "fr": "Sac de shopping", "de": "Einkaufstasche", "it": "Shopping bag", "ja": "ショッピングバッグ", "zh": "购物袋", "ko": "쇼핑백", "ar": "حقيبة التسوق" },
+    "keywords": {
+      "es": ["tienda", "compras", "boutique", "moda", "pedido", "ir a pagar", "mis compras"],
+      "en": ["shop", "shopping", "boutique", "fashion", "order", "checkout", "my purchases"]
+    }
+  },
+  "bag-plus": {
+    "label": { "es": "Agregar a la bolsa", "en": "Add to bag", "pt": "Adicionar à sacola", "fr": "Ajouter au sac", "de": "Zur Einkaufstasche hinzufügen", "it": "Aggiungi alla shopping bag", "ja": "バッグに追加", "zh": "加入购物袋", "ko": "쇼핑백에 담기", "ar": "إضافة إلى الحقيبة" },
+    "keywords": {
+      "es": ["comprar", "añadir producto", "agregar artículo", "botón de compra", "tienda de moda", "elegir producto", "apartar"],
+      "en": ["buy", "add product", "add item", "buy button", "fashion store", "pick item", "shop now"]
+    }
+  },
+  "bag-minus": {
+    "label": { "es": "Quitar de la bolsa", "en": "Remove from bag", "pt": "Remover da sacola", "fr": "Retirer du sac", "de": "Aus der Einkaufstasche entfernen", "it": "Rimuovi dalla shopping bag", "ja": "バッグから削除", "zh": "移出购物袋", "ko": "쇼핑백에서 빼기", "ar": "إزالة من الحقيبة" },
+    "keywords": {
+      "es": ["reducir cantidad", "restar", "menos unidades", "disminuir", "sacar artículo", "ajustar compra", "quitar producto"],
+      "en": ["decrease quantity", "subtract", "fewer units", "reduce", "take out item", "adjust purchase", "remove product"]
+    }
+  },
+  "bag-check": {
+    "label": { "es": "Compra realizada", "en": "Purchase complete", "pt": "Compra concluída", "fr": "Achat effectué", "de": "Kauf abgeschlossen", "it": "Acquisto completato", "ja": "購入完了", "zh": "购买完成", "ko": "구매 완료", "ar": "تم الشراء" },
+    "keywords": {
+      "es": ["pedido completado", "pago confirmado", "compra exitosa", "orden lista", "gracias por tu compra", "confirmación", "artículo comprado"],
+      "en": ["order complete", "payment confirmed", "successful purchase", "order ready", "thank you for your order", "confirmation", "item purchased"]
+    }
+  },
+  "bag-remove": {
+    "label": { "es": "Cancelar compra", "en": "Cancel purchase", "pt": "Cancelar compra", "fr": "Annuler l’achat", "de": "Kauf stornieren", "it": "Annulla acquisto", "ja": "購入をキャンセル", "zh": "取消购买", "ko": "구매 취소", "ar": "إلغاء الشراء" },
+    "keywords": {
+      "es": ["eliminar de la bolsa", "anular pedido", "borrar artículo", "descartar", "pedido cancelado", "compra fallida", "quitar todo"],
+      "en": ["remove from bag", "void order", "delete item", "discard", "order canceled", "failed purchase", "remove all"]
+    }
+  },
+  "bag-heart": {
+    "label": { "es": "Lista de deseos", "en": "Wishlist", "pt": "Lista de desejos", "fr": "Liste d’envies", "de": "Wunschliste", "it": "Lista dei desideri", "ja": "ほしい物リスト", "zh": "心愿单", "ko": "위시리스트", "ar": "قائمة الأمنيات" },
+    "keywords": {
+      "es": ["favoritos", "me gusta", "guardar para después", "productos guardados", "deseados", "ideas de regalo", "marcar producto"],
+      "en": ["favorites", "like", "save for later", "saved items", "wanted", "gift ideas", "bookmark product"]
+    }
+  },
+  "bag-return": {
+    "label": { "es": "Devolver compra", "en": "Return purchase", "pt": "Devolver compra", "fr": "Retourner un achat", "de": "Retoure", "it": "Reso", "ja": "返品", "zh": "退货", "ko": "반품", "ar": "إرجاع المشتريات" },
+    "keywords": {
+      "es": ["devolución", "reembolso", "cambio de producto", "regresar artículo", "garantía", "política de devoluciones", "solicitar cambio"],
+      "en": ["return", "refund", "exchange", "send back", "warranty", "returns policy", "request exchange"]
+    }
+  },
+  "basket": {
+    "label": { "es": "Canasta", "en": "Basket", "pt": "Cesta de compras", "fr": "Panier de courses", "de": "Einkaufskorb", "it": "Cesto della spesa", "ja": "買い物かご", "zh": "购物篮", "ko": "장보기 바구니", "ar": "سلة البقالة" },
+    "keywords": {
+      "es": ["súper", "despensa", "mandado", "abarrotes", "compra rápida", "cesta", "productos frescos"],
+      "en": ["grocery", "groceries", "supermarket", "pantry", "quick shop", "hamper", "fresh produce"]
+    }
+  },
+  "store": {
+    "label": { "es": "Tienda", "en": "Store", "pt": "Loja", "fr": "Magasin", "de": "Geschäft", "it": "Negozio", "ja": "店舗", "zh": "门店", "ko": "매장", "ar": "متجر" },
+    "keywords": {
+      "es": ["local", "sucursal", "comercio", "negocio", "escaparate", "punto de venta físico", "establecimiento"],
+      "en": ["shop", "storefront", "branch", "retail", "business", "physical location", "brick and mortar"]
+    }
+  },
+  "store-online": {
+    "label": { "es": "Tienda en línea", "en": "Online store", "pt": "Loja online", "fr": "Boutique en ligne", "de": "Onlineshop", "it": "Negozio online", "ja": "オンラインストア", "zh": "在线商店", "ko": "온라인 스토어", "ar": "متجر إلكتروني" },
+    "keywords": {
+      "es": ["ecommerce", "comercio electrónico", "vender por internet", "escaparate digital", "sitio de ventas", "catálogo web", "tienda virtual"],
+      "en": ["ecommerce", "web shop", "sell online", "digital storefront", "internet sales", "online catalog", "virtual store"]
+    }
+  },
+  "market-stall": {
+    "label": { "es": "Puesto de mercado", "en": "Market stall", "pt": "Barraca de feira", "fr": "Étal de marché", "de": "Marktstand", "it": "Bancarella", "ja": "露店", "zh": "市场摊位", "ko": "시장 노점", "ar": "كشك في السوق" },
+    "keywords": {
+      "es": ["tianguis", "feria", "kiosco", "venta ambulante", "mercado local", "tienda pop-up", "bazar"],
+      "en": ["street market", "fair", "kiosk", "vendor", "farmers market", "pop-up shop", "bazaar"]
+    }
+  },
+  "receipt": {
+    "label": { "es": "Recibo", "en": "Receipt", "pt": "Recibo", "fr": "Reçu", "de": "Kassenbon", "it": "Ricevuta", "ja": "レシート", "zh": "收据", "ko": "영수증", "ar": "إيصال" },
+    "keywords": {
+      "es": ["ticket de compra", "comprobante", "nota de venta", "historial de compras", "transacción", "pago realizado", "detalle del pedido"],
+      "en": ["sales slip", "proof of purchase", "transaction", "purchase history", "payment record", "order details", "till receipt"]
+    }
+  },
+  "receipt-tax": {
+    "label": { "es": "Impuestos", "en": "Taxes", "pt": "Impostos", "fr": "Taxes", "de": "Steuern", "it": "Tasse", "ja": "税金", "zh": "税费", "ko": "세금", "ar": "الضرائب" },
+    "keywords": {
+      "es": ["IVA", "retención", "comprobante fiscal", "deducible", "declaración anual", "tasa impositiva", "desglose de impuestos"],
+      "en": ["VAT", "sales tax", "withholding", "tax receipt", "deductible", "tax return", "tax breakdown"]
+    }
+  },
+  "invoice": {
+    "label": { "es": "Factura", "en": "Invoice", "pt": "Fatura", "fr": "Facture", "de": "Rechnung", "it": "Fattura", "ja": "請求書", "zh": "发票", "ko": "청구서", "ar": "فاتورة" },
+    "keywords": {
+      "es": ["cobrar", "cuenta", "cobro", "facturación", "estado de cuenta", "documento fiscal", "pago a proveedor"],
+      "en": ["bill", "billing", "charge", "get paid", "statement", "accounts receivable", "payment request"]
+    }
+  },
+  "invoice-plus": {
+    "label": { "es": "Nueva factura", "en": "New invoice", "pt": "Nova fatura", "fr": "Nouvelle facture", "de": "Neue Rechnung", "it": "Nuova fattura", "ja": "新しい請求書", "zh": "新建发票", "ko": "새 청구서", "ar": "فاتورة جديدة" },
+    "keywords": {
+      "es": ["facturar", "emitir", "cobrar", "crear cobro", "solicitar pago", "agregar cargo", "timbrar"],
+      "en": ["draft bill", "issue", "bill a client", "charge", "request payment", "add charge", "get paid"]
+    }
+  },
+  "invoice-paid": {
+    "label": { "es": "Factura pagada", "en": "Paid invoice", "pt": "Fatura paga", "fr": "Facture payée", "de": "Bezahlte Rechnung", "it": "Fattura pagata", "ja": "支払済みの請求書", "zh": "已付款发票", "ko": "결제 완료 청구서", "ar": "فاتورة مدفوعة" },
+    "keywords": {
+      "es": ["pagado", "liquidado", "saldado", "cobrado", "pago recibido", "cuenta cerrada", "conciliado"],
+      "en": ["paid", "settled", "cleared", "collected", "payment received", "closed account", "reconciled"]
+    }
+  },
+  "invoice-due": {
+    "label": { "es": "Factura por pagar", "en": "Invoice due", "pt": "Fatura pendente", "fr": "Facture à payer", "de": "Fällige Rechnung", "it": "Fattura in scadenza", "ja": "未払いの請求書", "zh": "待付款发票", "ko": "미결제 청구서", "ar": "فاتورة مستحقة" },
+    "keywords": {
+      "es": ["vencida", "pendiente", "fecha límite", "recordatorio de pago", "cuentas por cobrar", "adeudo", "plazo de pago"],
+      "en": ["overdue", "unpaid", "due date", "payment reminder", "accounts receivable", "outstanding balance", "payment terms"]
+    }
+  },
+  "price-quote": {
+    "label": { "es": "Cotización", "en": "Quote", "pt": "Orçamento", "fr": "Devis", "de": "Angebot", "it": "Preventivo", "ja": "見積もり", "zh": "报价", "ko": "견적", "ar": "عرض سعر" },
+    "keywords": {
+      "es": ["presupuesto", "pedir precio", "estimación", "propuesta comercial", "cotizar", "solicitud de precio", "venta B2B"],
+      "en": ["estimate", "price request", "proposal", "quotation", "bid", "request for quote", "B2B sales"]
+    }
+  },
+  "purchase-order": {
+    "label": { "es": "Orden de compra", "en": "Purchase order", "pt": "Pedido de compra", "fr": "Bon de commande", "de": "Bestellung", "it": "Ordine d’acquisto", "ja": "発注書", "zh": "采购订单", "ko": "발주서", "ar": "أمر شراء" },
+    "keywords": {
+      "es": ["pedido", "OC", "compras", "proveedor", "abastecimiento", "lista de productos", "pedido mayorista"],
+      "en": ["PO", "order", "procurement", "supplier", "sourcing", "order list", "wholesale order"]
+    }
+  },
+  "contract-signed": {
+    "label": { "es": "Contrato firmado", "en": "Signed contract", "pt": "Contrato assinado", "fr": "Contrat signé", "de": "Unterzeichneter Vertrag", "it": "Contratto firmato", "ja": "署名済みの契約書", "zh": "已签署合同", "ko": "서명된 계약서", "ar": "عقد موقّع" },
+    "keywords": {
+      "es": ["acuerdo", "firma", "convenio", "términos aceptados", "firma electrónica", "cerrar trato", "documento legal"],
+      "en": ["agreement", "signature", "e-signature", "terms accepted", "deal closed", "legal document", "sign off"]
+    }
+  },
+  "deal": {
+    "label": { "es": "Trato", "en": "Deal", "pt": "Acordo", "fr": "Accord", "de": "Geschäftsabschluss", "it": "Accordo", "ja": "取引成立", "zh": "成交", "ko": "거래", "ar": "صفقة" },
+    "keywords": {
+      "es": ["apretón de manos", "cerrar venta", "acuerdo comercial", "negociación", "alianza", "socios", "oportunidad ganada"],
+      "en": ["handshake", "close a sale", "agreement", "negotiation", "partnership", "partners", "won opportunity"]
+    }
+  },
+  "price-tag": {
+    "label": { "es": "Etiqueta de precio", "en": "Price tag", "pt": "Etiqueta de preço", "fr": "Étiquette de prix", "de": "Preisschild", "it": "Cartellino del prezzo", "ja": "値札", "zh": "价签", "ko": "가격표", "ar": "بطاقة السعر" },
+    "keywords": {
+      "es": ["precio", "producto", "costo", "valor", "catálogo", "categoría", "clasificar artículo"],
+      "en": ["price", "product", "cost", "value", "catalog", "category", "label item"]
+    }
+  },
+  "price-tags": {
+    "label": { "es": "Etiquetas de precio", "en": "Price tags", "pt": "Etiquetas de preço", "fr": "Étiquettes de prix", "de": "Preisschilder", "it": "Cartellini dei prezzi", "ja": "複数の値札", "zh": "多个价签", "ko": "여러 가격표", "ar": "بطاقات الأسعار" },
+    "keywords": {
+      "es": ["lista de precios", "catálogo", "variantes", "categorías", "productos", "tarifas", "colección"],
+      "en": ["price list", "catalog", "variants", "categories", "products", "rates", "collection"]
+    }
+  },
+  "price-tag-percent": {
+    "label": { "es": "Oferta", "en": "Sale", "pt": "Promoção", "fr": "Promotion", "de": "Sonderangebot", "it": "Offerta", "ja": "セール", "zh": "促销", "ko": "세일", "ar": "تخفيضات" },
+    "keywords": {
+      "es": ["descuento", "rebaja", "promoción", "liquidación", "precio especial", "temporada de ofertas", "porcentaje de ahorro"],
+      "en": ["discount", "markdown", "promotion", "clearance", "special price", "sale season", "percent off"]
+    }
+  },
+  "price-tag-dollar": {
+    "label": { "es": "Precio", "en": "Price", "pt": "Preço", "fr": "Prix", "de": "Preis", "it": "Prezzo", "ja": "価格", "zh": "价格", "ko": "가격", "ar": "السعر" },
+    "keywords": {
+      "es": ["costo", "cuánto cuesta", "tarifa", "valor", "fijar precio", "precio unitario", "monto"],
+      "en": ["cost", "how much", "rate", "value", "set price", "unit price", "amount"]
+    }
+  },
+  "percent": {
+    "label": { "es": "Porcentaje", "en": "Percent", "pt": "Porcentagem", "fr": "Pourcentage", "de": "Prozent", "it": "Percentuale", "ja": "パーセント", "zh": "百分比", "ko": "퍼센트", "ar": "نسبة مئوية" },
+    "keywords": {
+      "es": ["descuento", "tasa", "proporción", "comisión", "interés", "tanto por ciento", "margen"],
+      "en": ["discount", "rate", "ratio", "commission", "interest", "share", "margin"]
+    }
+  },
+  "percent-circle": {
+    "label": { "es": "Tasa", "en": "Rate", "pt": "Taxa", "fr": "Taux", "de": "Prozentsatz", "it": "Tasso", "ja": "割合", "zh": "费率", "ko": "비율", "ar": "المعدل" },
+    "keywords": {
+      "es": ["porcentaje", "impuesto", "tasa de interés", "comisión", "rendimiento", "margen de ganancia", "proporción"],
+      "en": ["percentage", "tax rate", "interest rate", "commission", "yield", "profit margin", "ratio"]
+    }
+  },
+  "discount": {
+    "label": { "es": "Descuento", "en": "Discount", "pt": "Desconto", "fr": "Remise", "de": "Rabatt", "it": "Sconto", "ja": "割引", "zh": "折扣", "ko": "할인", "ar": "خصم" },
+    "keywords": {
+      "es": ["oferta", "promoción", "rebaja", "insignia de oferta", "ahorro", "Black Friday", "liquidación"],
+      "en": ["sale", "promotion", "markdown", "sale badge", "savings", "Black Friday", "deal"]
+    }
+  },
+  "coupon": {
+    "label": { "es": "Cupón", "en": "Coupon", "pt": "Cupom", "fr": "Coupon", "de": "Gutschein", "it": "Coupon", "ja": "クーポン", "zh": "优惠券", "ko": "쿠폰", "ar": "قسيمة" },
+    "keywords": {
+      "es": ["vale", "código de descuento", "código promocional", "canjear", "promoción", "aplicar código", "certificado"],
+      "en": ["voucher", "discount code", "promo code", "redeem", "promotion", "apply code", "ticket"]
+    }
+  },
+  "wallet": {
+    "label": { "es": "Cartera", "en": "Wallet", "pt": "Carteira", "fr": "Portefeuille", "de": "Geldbörse", "it": "Portafoglio", "ja": "ウォレット", "zh": "钱包", "ko": "지갑", "ar": "محفظة" },
+    "keywords": {
+      "es": ["billetera", "saldo", "pagar", "cobrar", "fondos", "monedero", "dinero disponible"],
+      "en": ["billfold", "balance", "pay", "get paid", "funds", "purse", "available money"]
+    }
+  },
+  "wallet-cards": {
+    "label": { "es": "Métodos de pago", "en": "Payment methods", "pt": "Formas de pagamento", "fr": "Moyens de paiement", "de": "Zahlungsmethoden", "it": "Metodi di pagamento", "ja": "支払い方法", "zh": "支付方式", "ko": "결제 수단", "ar": "طرق الدفع" },
+    "keywords": {
+      "es": ["tarjetas guardadas", "cartera digital", "billetera", "formas de pago", "pagar", "tarjeta de crédito", "tarjeta de débito"],
+      "en": ["saved cards", "digital wallet", "billfold", "pay", "credit card", "debit card", "checkout options"]
+    }
+  },
+  "card-chip": {
+    "label": { "es": "Tarjeta de crédito", "en": "Credit card", "pt": "Cartão de crédito", "fr": "Carte bancaire", "de": "Kreditkarte", "it": "Carta di credito", "ja": "クレジットカード", "zh": "信用卡", "ko": "신용카드", "ar": "بطاقة ائتمان" },
+    "keywords": {
+      "es": ["pago con tarjeta", "débito", "chip EMV", "banco", "pagar", "método de pago", "cobrar con tarjeta"],
+      "en": ["card payment", "debit", "EMV chip", "bank", "pay", "payment method", "charge a card"]
+    }
+  },
+  "card-contactless": {
+    "label": { "es": "Tarjeta sin contacto", "en": "Contactless card", "pt": "Cartão por aproximação", "fr": "Carte sans contact", "de": "Kontaktlose Karte", "it": "Carta contactless", "ja": "タッチ決済対応カード", "zh": "非接触式银行卡", "ko": "비접촉식 카드", "ar": "بطاقة لاتلامسية" },
+    "keywords": {
+      "es": ["pago con acercamiento", "NFC", "pagar sin contacto", "tarjeta de crédito", "tap to pay", "pago rápido", "débito"],
+      "en": ["tap to pay", "NFC", "tap card", "credit card", "wave to pay", "quick payment", "debit"]
+    }
+  },
+  "card-plus": {
+    "label": { "es": "Agregar tarjeta", "en": "Add card", "pt": "Adicionar cartão", "fr": "Ajouter une carte", "de": "Karte hinzufügen", "it": "Aggiungi carta", "ja": "カードを追加", "zh": "添加银行卡", "ko": "카드 추가", "ar": "إضافة بطاقة" },
+    "keywords": {
+      "es": ["nuevo método de pago", "registrar tarjeta", "guardar tarjeta", "vincular cuenta", "datos de pago", "configurar pago", "tarjeta de crédito"],
+      "en": ["new payment method", "register card", "save card", "link account", "payment details", "set up payment", "credit card"]
+    }
+  },
+  "card-check": {
+    "label": { "es": "Pago aprobado", "en": "Payment approved", "pt": "Pagamento aprovado", "fr": "Paiement accepté", "de": "Zahlung genehmigt", "it": "Pagamento approvato", "ja": "支払い承認", "zh": "支付成功", "ko": "결제 승인", "ar": "تمت الموافقة على الدفع" },
+    "keywords": {
+      "es": ["cobro exitoso", "transacción aprobada", "tarjeta verificada", "pago completado", "autorizado", "cargo realizado", "confirmación de pago"],
+      "en": ["successful charge", "transaction approved", "card verified", "payment complete", "authorized", "charge succeeded", "payment confirmation"]
+    }
+  },
+  "card-declined": {
+    "label": { "es": "Pago rechazado", "en": "Payment declined", "pt": "Pagamento recusado", "fr": "Paiement refusé", "de": "Zahlung abgelehnt", "it": "Pagamento rifiutato", "ja": "支払い拒否", "zh": "支付被拒", "ko": "결제 거절", "ar": "تم رفض الدفع" },
+    "keywords": {
+      "es": ["tarjeta declinada", "fondos insuficientes", "error de pago", "transacción fallida", "cobro fallido", "tarjeta vencida", "reintentar pago"],
+      "en": ["rejected card", "insufficient funds", "payment error", "failed transaction", "failed charge", "expired card", "retry payment"]
+    }
+  },
+  "cards": {
+    "label": { "es": "Tarjetas", "en": "Cards", "pt": "Cartões", "fr": "Cartes", "de": "Karten", "it": "Carte", "ja": "カード", "zh": "银行卡", "ko": "카드", "ar": "البطاقات" },
+    "keywords": {
+      "es": ["tarjetas guardadas", "métodos de pago", "varias tarjetas", "crédito y débito", "administrar tarjetas", "cuentas", "formas de pago"],
+      "en": ["saved cards", "payment methods", "multiple cards", "credit and debit", "manage cards", "accounts", "payment options"]
+    }
+  },
+  "loyalty-card": {
+    "label": { "es": "Tarjeta de lealtad", "en": "Loyalty card", "pt": "Cartão fidelidade", "fr": "Carte de fidélité", "de": "Kundenkarte", "it": "Carta fedeltà", "ja": "ポイントカード", "zh": "会员卡", "ko": "멤버십 카드", "ar": "بطاقة الولاء" },
+    "keywords": {
+      "es": ["puntos", "cliente frecuente", "membresía", "recompensas", "programa de lealtad", "beneficios", "socio"],
+      "en": ["points", "frequent customer", "membership", "rewards", "loyalty program", "perks", "member"]
+    }
+  },
+  "gift-card": {
+    "label": { "es": "Tarjeta de regalo", "en": "Gift card", "pt": "Cartão-presente", "fr": "Carte cadeau", "de": "Geschenkkarte", "it": "Carta regalo", "ja": "ギフトカード", "zh": "礼品卡", "ko": "기프트 카드", "ar": "بطاقة هدية" },
+    "keywords": {
+      "es": ["vale", "certificado de regalo", "saldo de regalo", "canjear", "obsequio", "monedero electrónico", "regalar crédito"],
+      "en": ["voucher", "gift certificate", "store credit", "redeem", "present", "e-gift", "gift balance"]
+    }
+  },
+  "contactless": {
+    "label": { "es": "Pago sin contacto", "en": "Contactless payment", "pt": "Pagamento por aproximação", "fr": "Paiement sans contact", "de": "Kontaktlos bezahlen", "it": "Pagamento contactless", "ja": "タッチ決済", "zh": "非接触式支付", "ko": "비접촉 결제", "ar": "دفع لاتلامسي" },
+    "keywords": {
+      "es": ["NFC", "acercar", "pago con acercamiento", "terminal", "pago rápido", "lector inalámbrico", "pagar con reloj"],
+      "en": ["NFC", "tap", "tap to pay", "terminal", "quick payment", "wireless reader", "wave"]
+    }
+  },
+  "mobile-payment": {
+    "label": { "es": "Pago móvil", "en": "Mobile payment", "pt": "Pagamento pelo celular", "fr": "Paiement mobile", "de": "Mobiles Bezahlen", "it": "Pagamento da cellulare", "ja": "モバイル決済", "zh": "手机支付", "ko": "모바일 결제", "ar": "الدفع عبر الهاتف" },
+    "keywords": {
+      "es": ["pagar con el celular", "billetera digital", "NFC", "teléfono", "app de pagos", "acercar el teléfono", "cartera móvil"],
+      "en": ["phone pay", "digital wallet", "NFC", "smartphone", "payment app", "tap with phone", "mobile wallet"]
+    }
+  },
+  "banknote": {
+    "label": { "es": "Efectivo", "en": "Cash", "pt": "Dinheiro em espécie", "fr": "Espèces", "de": "Bargeld", "it": "Contanti", "ja": "現金", "zh": "现金", "ko": "현금", "ar": "نقدًا" },
+    "keywords": {
+      "es": ["billete", "pago en efectivo", "dinero", "contado", "monto", "pagar en tienda", "cobro en efectivo"],
+      "en": ["bill", "cash payment", "money", "pay in cash", "amount", "pay at store", "currency note"]
+    }
+  },
+  "banknotes": {
+    "label": { "es": "Billetes", "en": "Banknotes", "pt": "Cédulas", "fr": "Billets", "de": "Geldscheine", "it": "Banconote", "ja": "紙幣", "zh": "纸币", "ko": "지폐", "ar": "أوراق نقدية" },
+    "keywords": {
+      "es": ["efectivo", "fajo", "dinero", "cobranza", "pago en efectivo", "ingresos", "corte de caja"],
+      "en": ["cash", "wad of cash", "money", "collections", "cash payment", "income", "cash count"]
+    }
+  },
+  "money-bag": {
+    "label": { "es": "Fondos", "en": "Funds", "pt": "Fundos", "fr": "Fonds", "de": "Geldmittel", "it": "Fondi", "ja": "資金", "zh": "资金", "ko": "자금", "ar": "أموال" },
+    "keywords": {
+      "es": ["bolsa de dinero", "ahorro", "capital", "presupuesto", "riqueza", "ganancias", "recaudación"],
+      "en": ["cash reserve", "savings", "capital", "budget", "wealth", "earnings", "fundraising"]
+    }
+  },
+  "coins": {
+    "label": { "es": "Monedas", "en": "Coins", "pt": "Moedas", "fr": "Pièces", "de": "Münzen", "it": "Monete", "ja": "硬貨", "zh": "硬币", "ko": "동전", "ar": "عملات معدنية" },
+    "keywords": {
+      "es": ["cambio", "dinero suelto", "morralla", "créditos", "saldo", "pago pequeño", "fichas"],
+      "en": ["change", "loose change", "credits", "balance", "small payment", "tokens", "cash"]
+    }
+  },
+  "gold-bars": {
+    "label": { "es": "Lingotes de oro", "en": "Gold bars", "pt": "Barras de ouro", "fr": "Lingots d’or", "de": "Goldbarren", "it": "Lingotti d’oro", "ja": "金塊", "zh": "金条", "ko": "금괴", "ar": "سبائك ذهبية" },
+    "keywords": {
+      "es": ["oro", "reserva", "inversión segura", "metales preciosos", "patrimonio", "riqueza", "activo"],
+      "en": ["gold", "bullion", "reserve", "safe haven", "precious metals", "wealth", "asset"]
+    }
+  },
+  "dollar": {
+    "label": { "es": "Dinero", "en": "Money", "pt": "Dinheiro", "fr": "Argent", "de": "Geld", "it": "Denaro", "ja": "お金", "zh": "金钱", "ko": "돈", "ar": "المال" },
+    "keywords": {
+      "es": ["signo de pesos", "dólar", "precio", "costo", "pagos", "monto", "finanzas"],
+      "en": ["dollar sign", "price", "cost", "payments", "amount", "finance", "pricing"]
+    }
+  },
+  "currency-dollar": {
+    "label": { "es": "Dólar", "en": "Dollar", "pt": "Dólar", "fr": "Dollar", "de": "Dollar", "it": "Dollaro", "ja": "ドル", "zh": "美元", "ko": "달러", "ar": "دولار" },
+    "keywords": {
+      "es": ["peso", "USD", "MXN", "moneda", "divisa", "pago", "precio en dólares"],
+      "en": ["peso", "USD", "MXN", "currency", "money", "payment", "price in dollars"]
+    }
+  },
+  "currency-euro": {
+    "label": { "es": "Euro", "en": "Euro", "pt": "Euro", "fr": "Euro", "de": "Euro", "it": "Euro", "ja": "ユーロ", "zh": "欧元", "ko": "유로", "ar": "يورو" },
+    "keywords": {
+      "es": ["EUR", "moneda", "divisa", "Europa", "pago en euros", "precio", "zona euro"],
+      "en": ["EUR", "currency", "money", "Europe", "pay in euros", "price", "eurozone"]
+    }
+  },
+  "currency-pound": {
+    "label": { "es": "Libra esterlina", "en": "Pound sterling", "pt": "Libra esterlina", "fr": "Livre sterling", "de": "Pfund Sterling", "it": "Sterlina", "ja": "ポンド", "zh": "英镑", "ko": "파운드", "ar": "جنيه إسترليني" },
+    "keywords": {
+      "es": ["GBP", "moneda", "divisa", "Reino Unido", "precio", "pago en libras", "Inglaterra"],
+      "en": ["GBP", "currency", "money", "United Kingdom", "price", "pay in pounds", "Britain"]
+    }
+  },
+  "currency-yen": {
+    "label": { "es": "Yen", "en": "Yen", "pt": "Iene", "fr": "Yen", "de": "Yen", "it": "Yen", "ja": "円", "zh": "日元", "ko": "엔", "ar": "ين" },
+    "keywords": {
+      "es": ["JPY", "yuan", "CNY", "moneda", "divisa", "Japón", "China"],
+      "en": ["JPY", "yuan", "CNY", "currency", "money", "Japan", "China"]
+    }
+  },
+  "currency-bitcoin": {
+    "label": { "es": "Bitcoin", "en": "Bitcoin", "pt": "Bitcoin", "fr": "Bitcoin", "de": "Bitcoin", "it": "Bitcoin", "ja": "ビットコイン", "zh": "比特币", "ko": "비트코인", "ar": "بيتكوين" },
+    "keywords": {
+      "es": ["BTC", "cripto", "criptomoneda", "blockchain", "activo digital", "billetera cripto", "minería"],
+      "en": ["BTC", "crypto", "cryptocurrency", "blockchain", "digital asset", "crypto wallet", "mining"]
+    }
+  },
+  "currency-exchange": {
+    "label": { "es": "Cambio de divisas", "en": "Currency exchange", "pt": "Câmbio", "fr": "Change de devises", "de": "Geldwechsel", "it": "Cambio valuta", "ja": "両替", "zh": "货币兑换", "ko": "환전", "ar": "صرف العملات" },
+    "keywords": {
+      "es": ["tipo de cambio", "convertir moneda", "forex", "conversión", "pagos internacionales", "casa de cambio", "moneda extranjera"],
+      "en": ["exchange rate", "convert currency", "forex", "FX", "conversion", "international payments", "money changer"]
+    }
+  },
+  "bank": {
+    "label": { "es": "Banco", "en": "Bank", "pt": "Banco", "fr": "Banque", "de": "Bank", "it": "Banca", "ja": "銀行", "zh": "银行", "ko": "은행", "ar": "بنك" },
+    "keywords": {
+      "es": ["institución financiera", "cuenta bancaria", "transferencia", "depósito", "finanzas", "datos bancarios", "sucursal bancaria"],
+      "en": ["financial institution", "bank account", "wire transfer", "deposit", "finance", "banking details", "branch"]
+    }
+  },
+  "piggy-bank": {
+    "label": { "es": "Ahorro", "en": "Savings", "pt": "Poupança", "fr": "Épargne", "de": "Ersparnisse", "it": "Risparmi", "ja": "貯金", "zh": "储蓄", "ko": "저축", "ar": "مدخرات" },
+    "keywords": {
+      "es": ["alcancía", "cochinito", "guardar dinero", "meta de ahorro", "apartado", "fondo de emergencia", "cuenta de ahorro"],
+      "en": ["coin bank", "save money", "savings goal", "set aside", "emergency fund", "savings account", "budget"]
+    }
+  },
+  "safe-box": {
+    "label": { "es": "Caja fuerte", "en": "Safe", "pt": "Cofre", "fr": "Coffre-fort", "de": "Tresor", "it": "Cassaforte", "ja": "金庫", "zh": "保险箱", "ko": "금고", "ar": "خزنة" },
+    "keywords": {
+      "es": ["bóveda", "resguardo", "seguridad", "objetos de valor", "custodia", "protegido", "depósito seguro"],
+      "en": ["vault", "safekeeping", "security", "valuables", "custody", "protected", "strongbox"]
+    }
+  },
+  "atm": {
+    "label": { "es": "Cajero automático", "en": "ATM", "pt": "Caixa eletrônico", "fr": "Distributeur de billets", "de": "Geldautomat", "it": "Bancomat", "ja": "ATM", "zh": "自动取款机", "ko": "현금인출기", "ar": "صراف آلي" },
+    "keywords": {
+      "es": ["retirar efectivo", "disposición", "sacar dinero", "consultar saldo", "depósito", "banco", "red de cajeros"],
+      "en": ["cash machine", "withdraw cash", "cashpoint", "deposit", "bank", "check balance", "get cash"]
+    }
+  },
+  "cheque": {
+    "label": { "es": "Cheque", "en": "Check", "pt": "Cheque", "fr": "Chèque", "de": "Scheck", "it": "Assegno", "ja": "小切手", "zh": "支票", "ko": "수표", "ar": "شيك" },
+    "keywords": {
+      "es": ["pago", "documento bancario", "firma", "chequera", "depositar", "pago a proveedor", "cobrar"],
+      "en": ["money order", "payment", "bank draft", "checkbook", "deposit", "signature", "pay supplier"]
+    }
+  },
+  "mortgage": {
+    "label": { "es": "Hipoteca", "en": "Mortgage", "pt": "Financiamento imobiliário", "fr": "Prêt immobilier", "de": "Hypothek", "it": "Mutuo", "ja": "住宅ローン", "zh": "房贷", "ko": "주택담보대출", "ar": "رهن عقاري" },
+    "keywords": {
+      "es": ["crédito hipotecario", "préstamo", "vivienda", "casa", "bienes raíces", "pago mensual", "enganche"],
+      "en": ["home loan", "loan", "housing", "real estate", "property", "monthly payment", "down payment"]
+    }
+  },
+  "investment": {
+    "label": { "es": "Inversión", "en": "Investment", "pt": "Investimento", "fr": "Investissement", "de": "Investition", "it": "Investimento", "ja": "投資", "zh": "投资", "ko": "투자", "ar": "استثمار" },
+    "keywords": {
+      "es": ["crecimiento", "rendimiento", "interés compuesto", "portafolio", "ahorro a largo plazo", "capital", "hacer crecer el dinero"],
+      "en": ["growth", "returns", "compound interest", "portfolio", "long-term savings", "capital", "grow money"]
+    }
+  },
+  "revenue-up": {
+    "label": { "es": "Ingresos al alza", "en": "Revenue up", "pt": "Receita em alta", "fr": "Hausse des revenus", "de": "Umsatz steigt", "it": "Ricavi in aumento", "ja": "収益増加", "zh": "收入增长", "ko": "매출 증가", "ar": "ارتفاع الإيرادات" },
+    "keywords": {
+      "es": ["ganancia", "crecimiento", "ventas al alza", "utilidad", "aumento", "rentabilidad", "tendencia positiva"],
+      "en": ["profit", "growth", "sales up", "earnings", "increase", "profitability", "upward trend"]
+    }
+  },
+  "revenue-down": {
+    "label": { "es": "Ingresos a la baja", "en": "Revenue down", "pt": "Receita em queda", "fr": "Baisse des revenus", "de": "Umsatz sinkt", "it": "Ricavi in calo", "ja": "収益減少", "zh": "收入下降", "ko": "매출 감소", "ar": "انخفاض الإيرادات" },
+    "keywords": {
+      "es": ["pérdida", "caída", "ventas a la baja", "gastos", "disminución", "déficit", "tendencia negativa"],
+      "en": ["loss", "decline", "sales down", "expenses", "decrease", "deficit", "downward trend"]
+    }
+  },
+  "stocks": {
+    "label": { "es": "Bolsa de valores", "en": "Stock market", "pt": "Bolsa de valores", "fr": "Bourse", "de": "Börse", "it": "Borsa", "ja": "株式市場", "zh": "股市", "ko": "주식 시장", "ar": "سوق الأسهم" },
+    "keywords": {
+      "es": ["acciones", "gráfica de velas", "trading", "mercado", "cotización bursátil", "inversión", "volatilidad"],
+      "en": ["shares", "candlestick chart", "trading", "market", "stock price", "investing", "volatility"]
+    }
+  },
+  "recurring-payment": {
+    "label": { "es": "Pago recurrente", "en": "Recurring payment", "pt": "Pagamento recorrente", "fr": "Paiement récurrent", "de": "Wiederkehrende Zahlung", "it": "Pagamento ricorrente", "ja": "定期支払い", "zh": "定期付款", "ko": "정기 결제", "ar": "دفع متكرر" },
+    "keywords": {
+      "es": ["suscripción", "cobro automático", "domiciliación", "mensualidad", "renovación", "plan mensual", "cargo periódico"],
+      "en": ["subscription", "autopay", "direct debit", "monthly fee", "renewal", "monthly plan", "billing cycle"]
+    }
+  },
+  "refund": {
+    "label": { "es": "Reembolso", "en": "Refund", "pt": "Reembolso", "fr": "Remboursement", "de": "Rückerstattung", "it": "Rimborso", "ja": "返金", "zh": "退款", "ko": "환불", "ar": "استرداد المبلغ" },
+    "keywords": {
+      "es": ["devolución de dinero", "regresar pago", "reintegro", "contracargo", "nota de crédito", "cancelar cargo", "devolver"],
+      "en": ["money back", "reimbursement", "return payment", "chargeback", "credit note", "reverse charge", "give back"]
+    }
+  },
+  "secure-payment": {
+    "label": { "es": "Pago seguro", "en": "Secure payment", "pt": "Pagamento seguro", "fr": "Paiement sécurisé", "de": "Sichere Zahlung", "it": "Pagamento sicuro", "ja": "安全な支払い", "zh": "安全支付", "ko": "안전 결제", "ar": "دفع آمن" },
+    "keywords": {
+      "es": ["compra protegida", "cifrado", "antifraude", "garantía", "checkout seguro", "protección al comprador", "confianza"],
+      "en": ["buyer protection", "encryption", "fraud prevention", "guarantee", "safe checkout", "protected purchase", "trust"]
+    }
+  },
+  "tip-jar": {
+    "label": { "es": "Propina", "en": "Tip", "pt": "Gorjeta", "fr": "Pourboire", "de": "Trinkgeld", "it": "Mancia", "ja": "チップ", "zh": "小费", "ko": "팁", "ar": "إكرامية" },
+    "keywords": {
+      "es": ["bote", "frasco", "dejar propina", "apoyar", "gratificación", "servicio", "aportación voluntaria"],
+      "en": ["tips", "gratuity", "leave a tip", "support", "service", "voluntary contribution", "thank you"]
+    }
+  },
+  "donation": {
+    "label": { "es": "Donar", "en": "Donate", "pt": "Doar", "fr": "Faire un don", "de": "Spenden", "it": "Dona", "ja": "寄付", "zh": "捐款", "ko": "기부", "ar": "تبرّع" },
+    "keywords": {
+      "es": ["donativo", "caridad", "causa", "beneficencia", "apoyar", "recaudación de fondos", "aportación"],
+      "en": ["donor", "charity", "cause", "nonprofit", "give", "fundraising", "contribution"]
+    }
+  },
+  "reward-points": {
+    "label": { "es": "Puntos de recompensa", "en": "Reward points", "pt": "Pontos de recompensa", "fr": "Points de fidélité", "de": "Bonuspunkte", "it": "Punti premio", "ja": "リワードポイント", "zh": "积分", "ko": "포인트", "ar": "نقاط المكافآت" },
+    "keywords": {
+      "es": ["lealtad", "acumular puntos", "canjear", "beneficios", "monedero electrónico", "premios", "programa de recompensas"],
+      "en": ["loyalty", "earn points", "redeem", "perks", "cashback", "prizes", "rewards program"]
+    }
+  },
+  "cash-register": {
+    "label": { "es": "Caja registradora", "en": "Cash register", "pt": "Caixa registradora", "fr": "Caisse enregistreuse", "de": "Kasse", "it": "Registratore di cassa", "ja": "レジ", "zh": "收银机", "ko": "금전 등록기", "ar": "آلة تسجيل النقد" },
+    "keywords": {
+      "es": ["punto de venta", "cobrar", "corte de caja", "venta en mostrador", "TPV", "ticket", "cajón de dinero"],
+      "en": ["point of sale", "POS", "till", "checkout counter", "ring up", "charge", "cash drawer"]
+    }
+  },
+  "payment-terminal": {
+    "label": { "es": "Terminal de pago", "en": "Payment terminal", "pt": "Terminal de pagamento", "fr": "Terminal de paiement", "de": "Kartenterminal", "it": "Terminale POS", "ja": "決済端末", "zh": "支付终端", "ko": "결제 단말기", "ar": "جهاز الدفع" },
+    "keywords": {
+      "es": ["cobrar", "datáfono", "TPV", "punto de venta", "lector de tarjetas", "pinpad", "cobro presencial"],
+      "en": ["charge", "card reader", "POS", "point of sale", "card machine", "PIN pad", "in-person payment"]
+    }
+  },
+  "calculator": {
+    "label": { "es": "Calculadora", "en": "Calculator", "pt": "Calculadora", "fr": "Calculatrice", "de": "Rechner", "it": "Calcolatrice", "ja": "電卓", "zh": "计算器", "ko": "계산기", "ar": "آلة حاسبة" },
+    "keywords": {
+      "es": ["calcular", "cuentas", "sumar", "matemáticas", "presupuesto", "contabilidad", "cotizar"],
+      "en": ["calculate", "math", "add up", "arithmetic", "budget", "accounting", "estimate"]
+    }
+  },
+  "barcode": {
+    "label": { "es": "Código de barras", "en": "Barcode", "pt": "Código de barras", "fr": "Code-barres", "de": "Barcode", "it": "Codice a barre", "ja": "バーコード", "zh": "条形码", "ko": "바코드", "ar": "رمز شريطي" },
+    "keywords": {
+      "es": ["SKU", "producto", "UPC", "EAN", "inventario", "etiqueta de producto", "identificador"],
+      "en": ["SKU", "product", "UPC", "EAN", "inventory", "product label", "identifier"]
+    }
+  },
+  "barcode-scan": {
+    "label": { "es": "Escanear código de barras", "en": "Scan barcode", "pt": "Escanear código de barras", "fr": "Scanner un code-barres", "de": "Barcode scannen", "it": "Scansiona codice a barre", "ja": "バーコードを読み取る", "zh": "扫描条形码", "ko": "바코드 스캔", "ar": "مسح الرمز الشريطي" },
+    "keywords": {
+      "es": ["lector", "escáner", "buscar producto", "registrar venta", "inventario", "cobrar", "agregar por código"],
+      "en": ["reader", "scanner", "look up product", "ring up", "inventory", "checkout", "scan to add"]
+    }
+  },
+  "qr-code": {
+    "label": { "es": "Código QR", "en": "QR code", "pt": "Código QR", "fr": "Code QR", "de": "QR-Code", "it": "Codice QR", "ja": "QRコード", "zh": "二维码", "ko": "QR 코드", "ar": "رمز QR" },
+    "keywords": {
+      "es": ["pagar con QR", "cobrar con QR", "enlace", "compartir", "menú digital", "boleto", "acceso rápido"],
+      "en": ["pay with QR", "link", "share", "digital menu", "ticket", "quick access", "scan code"]
+    }
+  },
+  "qr-scan": {
+    "label": { "es": "Escanear código QR", "en": "Scan QR code", "pt": "Escanear código QR", "fr": "Scanner un code QR", "de": "QR-Code scannen", "it": "Scansiona codice QR", "ja": "QRコードを読み取る", "zh": "扫描二维码", "ko": "QR 코드 스캔", "ar": "مسح رمز QR" },
+    "keywords": {
+      "es": ["escanear para pagar", "cámara", "lector", "pagar con QR", "abrir enlace", "check-in", "validar boleto"],
+      "en": ["scan to pay", "camera", "reader", "pay with QR", "open link", "check-in", "validate ticket"]
+    }
+  },
+  "gift": {
+    "label": { "es": "Regalo", "en": "Gift", "pt": "Presente", "fr": "Cadeau", "de": "Geschenk", "it": "Regalo", "ja": "ギフト", "zh": "礼物", "ko": "선물", "ar": "هدية" },
+    "keywords": {
+      "es": ["obsequio", "sorpresa", "envolver para regalo", "promoción", "cumpleaños", "recompensa", "regalar"],
+      "en": ["present", "surprise", "gift wrap", "promotion", "birthday", "reward", "giveaway"]
+    }
+  },
+  "parcel": {
+    "label": { "es": "Paquete", "en": "Package", "pt": "Pacote", "fr": "Colis", "de": "Paket", "it": "Pacco", "ja": "荷物", "zh": "包裹", "ko": "택배", "ar": "طرد" },
+    "keywords": {
+      "es": ["envío", "pedido", "caja", "mensajería", "paquetería", "producto", "logística"],
+      "en": ["shipment", "order", "box", "courier", "delivery", "product", "logistics"]
+    }
+  },
+  "parcel-open": {
+    "label": { "es": "Paquete abierto", "en": "Open package", "pt": "Pacote aberto", "fr": "Colis ouvert", "de": "Geöffnetes Paket", "it": "Pacco aperto", "ja": "開封済みの荷物", "zh": "已拆开的包裹", "ko": "개봉한 택배", "ar": "طرد مفتوح" },
+    "keywords": {
+      "es": ["desempacar", "recibido", "unboxing", "contenido", "abrir pedido", "revisar envío", "caja vacía"],
+      "en": ["unbox", "received", "unboxing", "contents", "open order", "inspect shipment", "empty box"]
+    }
+  },
+  "parcel-check": {
+    "label": { "es": "Pedido entregado", "en": "Delivered", "pt": "Pedido entregue", "fr": "Colis livré", "de": "Zugestellt", "it": "Consegnato", "ja": "配達済み", "zh": "已送达", "ko": "배송 완료", "ar": "تم التسليم" },
+    "keywords": {
+      "es": ["llegó", "pedido completo", "envío recibido", "confirmación de entrega", "paquete recibido", "surtido", "prueba de entrega"],
+      "en": ["arrived", "order complete", "shipment received", "delivery confirmation", "package received", "fulfilled", "proof of delivery"]
+    }
+  },
+  "parcel-return": {
+    "label": { "es": "Devolver paquete", "en": "Return package", "pt": "Devolver pacote", "fr": "Retourner le colis", "de": "Paket zurücksenden", "it": "Restituisci pacco", "ja": "荷物を返送", "zh": "退回包裹", "ko": "택배 반송", "ar": "إرجاع الطرد" },
+    "keywords": {
+      "es": ["devolución", "regresar envío", "guía de devolución", "logística inversa", "reembolso", "cambio", "remitente"],
+      "en": ["return", "send back", "return label", "reverse logistics", "refund", "exchange", "return to sender"]
+    }
+  },
+  "delivery-time": {
+    "label": { "es": "Tiempo de entrega", "en": "Delivery time", "pt": "Prazo de entrega", "fr": "Délai de livraison", "de": "Lieferzeit", "it": "Tempi di consegna", "ja": "配達時間", "zh": "送达时间", "ko": "배송 시간", "ar": "وقت التسليم" },
+    "keywords": {
+      "es": ["fecha estimada", "en camino", "llegada", "programar envío", "demora", "seguimiento", "horario de entrega"],
+      "en": ["ETA", "estimated arrival", "on the way", "schedule delivery", "delay", "tracking", "delivery window"]
+    }
+  },
+  "truck": {
+    "label": { "es": "Envío", "en": "Shipping", "pt": "Envio", "fr": "Livraison", "de": "Versand", "it": "Spedizione", "ja": "配送", "zh": "配送", "ko": "배송", "ar": "شحن" },
+    "keywords": {
+      "es": ["camión", "reparto", "transporte", "flete", "logística", "costo de envío", "rastrear pedido"],
+      "en": ["lorry", "delivery", "transport", "freight", "logistics", "shipping cost", "track order"]
+    }
+  },
+  "truck-fast": {
+    "label": { "es": "Envío exprés", "en": "Express shipping", "pt": "Envio expresso", "fr": "Livraison express", "de": "Expressversand", "it": "Spedizione rapida", "ja": "速達", "zh": "加急配送", "ko": "빠른 배송", "ar": "شحن سريع" },
+    "keywords": {
+      "es": ["entrega rápida", "mismo día", "día siguiente", "urgente", "envío prioritario", "paquetería exprés", "llega mañana"],
+      "en": ["fast delivery", "same day", "next day", "urgent", "priority shipping", "rush delivery", "arrives tomorrow"]
+    }
+  },
+  "home-delivery": {
+    "label": { "es": "Entrega a domicilio", "en": "Home delivery", "pt": "Entrega em domicílio", "fr": "Livraison à domicile", "de": "Lieferung nach Hause", "it": "Consegna a domicilio", "ja": "宅配", "zh": "送货上门", "ko": "집 앞 배송", "ar": "توصيل إلى المنزل" },
+    "keywords": {
+      "es": ["dirección de envío", "a tu puerta", "repartidor", "envío a casa", "última milla", "recibir en casa", "pedido en línea"],
+      "en": ["shipping address", "doorstep", "courier", "ship to home", "last mile", "receive at home", "online order"]
+    }
+  },
+  "pickup-point": {
+    "label": { "es": "Punto de recogida", "en": "Pickup point", "pt": "Ponto de retirada", "fr": "Point de retrait", "de": "Abholstelle", "it": "Punto di ritiro", "ja": "受取場所", "zh": "自提点", "ko": "픽업 장소", "ar": "نقطة الاستلام" },
+    "keywords": {
+      "es": ["recoger en tienda", "sucursal", "click and collect", "ubicación de entrega", "casillero", "punto de entrega", "pasar por el pedido"],
+      "en": ["store pickup", "click and collect", "branch", "collection point", "parcel locker", "drop-off location", "pick up order"]
+    }
+  },
+  "weighing-scale": {
+    "label": { "es": "Báscula", "en": "Scale", "pt": "Balança", "fr": "Balance", "de": "Waage", "it": "Bilancia", "ja": "はかり", "zh": "秤", "ko": "저울", "ar": "ميزان" },
+    "keywords": {
+      "es": ["peso", "pesar", "kilos", "gramos", "envío por peso", "venta a granel", "medir"],
+      "en": ["weight", "weigh", "kilograms", "pounds", "shipping weight", "bulk sale", "measure"]
+    }
+  },
+  "balance-scale": {
+    "label": { "es": "Balanza", "en": "Balance scale", "pt": "Balança de pratos", "fr": "Balance à plateaux", "de": "Balkenwaage", "it": "Bilancia a due piatti", "ja": "天秤", "zh": "天平", "ko": "천칭", "ar": "ميزان ذو كفتين" },
+    "keywords": {
+      "es": ["equilibrio", "justicia", "comparar", "legal", "imparcial", "términos y condiciones", "ponderar"],
+      "en": ["justice", "law", "compare", "legal", "fair", "terms and conditions", "weigh options"]
+    }
+  },
+  "gem": {
+    "label": { "es": "Premium", "en": "Premium", "pt": "Premium", "fr": "Premium", "de": "Premium", "it": "Premium", "ja": "プレミアム", "zh": "高级", "ko": "프리미엄", "ar": "مميز" },
+    "keywords": {
+      "es": ["diamante", "joya", "valioso", "nivel superior", "exclusivo", "plan pro", "joyería"],
+      "en": ["diamond", "jewel", "valuable", "top tier", "exclusive", "pro plan", "jewelry"]
+    }
+  },
+  "crown": {
+    "label": { "es": "VIP", "en": "VIP", "pt": "VIP", "fr": "VIP", "de": "VIP", "it": "VIP", "ja": "VIP", "zh": "贵宾", "ko": "VIP", "ar": "كبار الشخصيات" },
+    "keywords": {
+      "es": ["corona", "premium", "exclusivo", "realeza", "el mejor", "líder", "propietario"],
+      "en": ["king", "premium", "exclusive", "royalty", "best", "leader", "owner"]
+    }
+  },
+  "medal": {
+    "label": { "es": "Premio", "en": "Award", "pt": "Prêmio", "fr": "Récompense", "de": "Auszeichnung", "it": "Premio", "ja": "受賞", "zh": "奖项", "ko": "수상", "ar": "جائزة" },
+    "keywords": {
+      "es": ["medalla", "logro", "reconocimiento", "insignia", "recompensa", "primer lugar", "certificación"],
+      "en": ["trophy", "achievement", "recognition", "badge", "reward", "first place", "certification"]
+    }
+  },
+  "gavel": {
+    "label": { "es": "Subasta", "en": "Auction", "pt": "Leilão", "fr": "Enchères", "de": "Auktion", "it": "Asta", "ja": "オークション", "zh": "拍卖", "ko": "경매", "ar": "مزاد" },
+    "keywords": {
+      "es": ["martillo", "puja", "oferta", "remate", "legal", "juzgado", "vendido"],
+      "en": ["bid", "hammer", "bidding", "sold", "legal", "court", "judge"]
+    }
+  },
+  "rubber-stamp": {
+    "label": { "es": "Aprobar", "en": "Approve", "pt": "Aprovar", "fr": "Approuver", "de": "Genehmigen", "it": "Approva", "ja": "承認", "zh": "批准", "ko": "승인", "ar": "اعتماد" },
+    "keywords": {
+      "es": ["sello", "autorizar", "validar", "visto bueno", "oficial", "certificar", "firma de aprobación"],
+      "en": ["stamp", "authorize", "validate", "sign off", "official", "certify", "seal"]
+    }
+  },
+  "inventory": {
+    "label": { "es": "Inventario", "en": "Inventory", "pt": "Estoque", "fr": "Inventaire", "de": "Lagerbestand", "it": "Inventario", "ja": "在庫", "zh": "库存", "ko": "재고", "ar": "المخزون" },
+    "keywords": {
+      "es": ["existencias", "estantes", "stock", "surtido", "reabastecer", "conteo", "unidades disponibles"],
+      "en": ["stock", "shelves", "stock levels", "restock", "assortment", "stock count", "available units"]
+    }
+  },
+  "warehouse": {
+    "label": { "es": "Almacén", "en": "Warehouse", "pt": "Armazém", "fr": "Entrepôt", "de": "Lager", "it": "Magazzino", "ja": "倉庫", "zh": "仓库", "ko": "창고", "ar": "مستودع" },
+    "keywords": {
+      "es": ["bodega", "centro de distribución", "fulfillment", "logística", "almacenamiento", "despacho", "cedis"],
+      "en": ["depot", "distribution center", "fulfillment", "logistics", "storage", "dispatch", "stockroom"]
+    }
+  },
+  "pallet": {
+    "label": { "es": "Tarima", "en": "Pallet", "pt": "Palete", "fr": "Palette", "de": "Palette", "it": "Pallet", "ja": "パレット", "zh": "托盘", "ko": "팔레트", "ar": "منصة نقّالة" },
+    "keywords": {
+      "es": ["carga", "mayoreo", "flete", "estiba", "mercancía", "volumen", "embarque"],
+      "en": ["freight", "wholesale", "cargo", "skid", "goods", "bulk", "shipment"]
+    }
+  },
+  "hanger": {
+    "label": { "es": "Ropa", "en": "Clothing", "pt": "Roupas", "fr": "Vêtements", "de": "Kleidung", "it": "Abbigliamento", "ja": "衣類", "zh": "服装", "ko": "의류", "ar": "ملابس" },
+    "keywords": {
+      "es": ["gancho", "percha", "moda", "guardarropa", "colgar", "probador", "departamento de ropa"],
+      "en": ["apparel", "fashion", "wardrobe", "closet", "hang up", "fitting room", "coat check"]
+    }
+  },
+  "shirt": {
+    "label": { "es": "Camiseta", "en": "T-shirt", "pt": "Camiseta", "fr": "T-shirt", "de": "T-Shirt", "it": "Maglietta", "ja": "Tシャツ", "zh": "T恤", "ko": "티셔츠", "ar": "تي شيرت" },
+    "keywords": {
+      "es": ["playera", "ropa", "moda", "prenda", "talla", "merch", "uniforme"],
+      "en": ["tee", "apparel", "clothing", "garment", "size", "merch", "uniform"]
+    }
+  },
+  "currency-rupee": {
+    "label": { "es": "Rupia", "en": "Rupee", "pt": "Rupia", "fr": "Roupie", "de": "Rupie", "it": "Rupia", "ja": "ルピー", "zh": "卢比", "ko": "루피", "ar": "روبية" },
+    "keywords": {
+      "es": ["INR", "rupia india", "moneda", "divisa", "India", "precio", "pago en rupias"],
+      "en": ["INR", "Indian rupee", "currency", "money", "India", "price", "pay in rupees"]
+    }
+  }
+}

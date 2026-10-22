@@ -1,0 +1,758 @@
+{
+  "smartphone": {
+    "label": { "es": "Celular", "en": "Smartphone", "pt": "Celular", "fr": "Smartphone", "de": "Smartphone", "it": "Smartphone", "ja": "スマートフォン", "zh": "智能手机", "ko": "스마트폰", "ar": "هاتف ذكي" },
+    "keywords": {
+      "es": ["teléfono móvil", "móvil", "app móvil", "versión móvil", "pantalla táctil", "dispositivo", "llamar"],
+      "en": ["mobile phone", "cell phone", "mobile app", "mobile view", "touchscreen", "device", "call"]
+    }
+  },
+  "smartphone-vibrate": {
+    "label": { "es": "Vibración", "en": "Vibrate", "pt": "Vibração", "fr": "Vibreur", "de": "Vibration", "it": "Vibrazione", "ja": "バイブレーション", "zh": "振动", "ko": "진동", "ar": "الاهتزاز" },
+    "keywords": {
+      "es": ["modo vibración", "modo silencio", "sin timbre", "aviso háptico", "notificación", "llamada entrante", "teléfono sonando"],
+      "en": ["vibration mode", "silent mode", "no ringtone", "haptic feedback", "notification", "incoming call", "buzz"]
+    }
+  },
+  "tablet": {
+    "label": { "es": "Tableta", "en": "Tablet", "pt": "Tablet", "fr": "Tablette", "de": "Tablet", "it": "Tablet", "ja": "タブレット", "zh": "平板电脑", "ko": "태블릿", "ar": "جهاز لوحي" },
+    "keywords": {
+      "es": ["pantalla táctil", "dispositivo", "vista de tableta", "leer", "dibujar", "punto de venta", "kiosco"],
+      "en": ["touchscreen", "device", "tablet view", "reading", "drawing", "point of sale", "kiosk"]
+    }
+  },
+  "laptop": {
+    "label": { "es": "Laptop", "en": "Laptop", "pt": "Notebook", "fr": "Ordinateur portable", "de": "Laptop", "it": "Portatile", "ja": "ノートパソコン", "zh": "笔记本电脑", "ko": "노트북", "ar": "حاسوب محمول" },
+    "keywords": {
+      "es": ["computadora portátil", "notebook", "trabajo remoto", "oficina", "versión de escritorio", "equipo de trabajo", "programar"],
+      "en": ["notebook", "portable computer", "remote work", "office", "desktop version", "work computer", "coding"]
+    }
+  },
+  "desktop": {
+    "label": { "es": "Computadora de escritorio", "en": "Desktop computer", "pt": "Computador de mesa", "fr": "Ordinateur de bureau", "de": "Desktop-Computer", "it": "Computer fisso", "ja": "デスクトップパソコン", "zh": "台式电脑", "ko": "데스크톱 컴퓨터", "ar": "حاسوب مكتبي" },
+    "keywords": {
+      "es": ["monitor", "pantalla", "pc", "vista de escritorio", "estación de trabajo", "sitio web", "oficina"],
+      "en": ["monitor", "screen", "pc", "desktop view", "workstation", "website", "office"]
+    }
+  },
+  "devices": {
+    "label": { "es": "Dispositivos", "en": "Devices", "pt": "Dispositivos", "fr": "Appareils", "de": "Geräte", "it": "Dispositivi", "ja": "デバイス", "zh": "设备", "ko": "기기", "ar": "الأجهزة" },
+    "keywords": {
+      "es": ["multiplataforma", "diseño responsivo", "computadora y celular", "sincronizar", "varias pantallas", "vista previa", "adaptable"],
+      "en": ["cross-platform", "responsive design", "desktop and mobile", "sync", "multi-screen", "preview", "adaptive"]
+    }
+  },
+  "watch": {
+    "label": { "es": "Reloj inteligente", "en": "Smartwatch", "pt": "Relógio inteligente", "fr": "Montre connectée", "de": "Smartwatch", "it": "Smartwatch", "ja": "スマートウォッチ", "zh": "智能手表", "ko": "스마트워치", "ar": "ساعة ذكية" },
+    "keywords": {
+      "es": ["wearable", "reloj de pulsera", "actividad física", "salud", "pasos", "ritmo cardiaco", "avisos en la muñeca"],
+      "en": ["wearable", "wristwatch", "fitness tracker", "health", "step count", "heart rate", "wrist notifications"]
+    }
+  },
+  "tv": {
+    "label": { "es": "Televisión", "en": "TV", "pt": "TV", "fr": "Téléviseur", "de": "Fernseher", "it": "TV", "ja": "テレビ", "zh": "电视", "ko": "TV", "ar": "تلفزيون" },
+    "keywords": {
+      "es": ["tele", "televisor", "pantalla", "ver series", "streaming", "smart tv", "sala"],
+      "en": ["television", "screen", "watch shows", "streaming", "smart tv", "monitor", "living room"]
+    }
+  },
+  "tv-retro": {
+    "label": { "es": "Televisión antigua", "en": "Retro TV", "pt": "TV antiga", "fr": "Téléviseur rétro", "de": "Röhrenfernseher", "it": "Televisore d’epoca", "ja": "レトロなテレビ", "zh": "复古电视", "ko": "레트로 TV", "ar": "تلفزيون قديم" },
+    "keywords": {
+      "es": ["antena", "canales", "vintage", "televisión abierta", "programación", "nostalgia", "señal analógica"],
+      "en": ["antenna", "channels", "vintage", "broadcast tv", "programming", "classic tv", "analog"]
+    }
+  },
+  "keyboard": {
+    "label": { "es": "Teclado", "en": "Keyboard", "pt": "Teclado", "fr": "Clavier", "de": "Tastatur", "it": "Tastiera", "ja": "キーボード", "zh": "键盘", "ko": "키보드", "ar": "لوحة المفاتيح" },
+    "keywords": {
+      "es": ["escribir", "teclas", "atajos", "entrada de texto", "mecanografía", "comandos", "periférico"],
+      "en": ["typing", "keys", "shortcuts", "text input", "hotkeys", "write", "peripheral"]
+    }
+  },
+  "mouse": {
+    "label": { "es": "Mouse", "en": "Mouse", "pt": "Mouse", "fr": "Souris", "de": "Maus", "it": "Mouse", "ja": "マウス", "zh": "鼠标", "ko": "마우스", "ar": "الفأرة" },
+    "keywords": {
+      "es": ["ratón", "puntero", "clic", "cursor", "desplazar", "seleccionar", "periférico"],
+      "en": ["pointer", "click", "cursor", "scroll", "select", "peripheral", "input device"]
+    }
+  },
+  "printer": {
+    "label": { "es": "Imprimir", "en": "Print", "pt": "Imprimir", "fr": "Imprimer", "de": "Drucken", "it": "Stampa", "ja": "印刷", "zh": "打印", "ko": "인쇄", "ar": "طباعة" },
+    "keywords": {
+      "es": ["impresora", "copia en papel", "hoja impresa", "imprimir recibo", "ticket", "etiqueta de envío", "documento"],
+      "en": ["print preview", "hard copy", "printout", "print receipt", "ticket", "shipping label", "document"]
+    }
+  },
+  "camera": {
+    "label": { "es": "Cámara", "en": "Camera", "pt": "Câmera", "fr": "Appareil photo", "de": "Kamera", "it": "Fotocamera", "ja": "カメラ", "zh": "相机", "ko": "카메라", "ar": "الكاميرا" },
+    "keywords": {
+      "es": ["tomar foto", "fotografía", "capturar", "foto de perfil", "subir foto", "escanear", "selfie"],
+      "en": ["take photo", "photography", "capture", "profile picture", "upload photo", "snapshot", "selfie"]
+    }
+  },
+  "camera-off": {
+    "label": { "es": "Cámara desactivada", "en": "Camera disabled", "pt": "Câmera desativada", "fr": "Appareil photo désactivé", "de": "Kamera deaktiviert", "it": "Fotocamera disattivata", "ja": "カメラ無効", "zh": "相机已停用", "ko": "카메라 사용 안 함", "ar": "الكاميرا معطلة" },
+    "keywords": {
+      "es": ["sin acceso a la cámara", "permiso denegado", "privacidad", "cámara bloqueada", "no disponible", "fotos desactivadas", "sin fotos"],
+      "en": ["no camera access", "permission denied", "privacy", "camera blocked", "unavailable", "photos disabled", "no photos"]
+    }
+  },
+  "video-camera": {
+    "label": { "es": "Video", "en": "Video", "pt": "Vídeo", "fr": "Vidéo", "de": "Video", "it": "Video", "ja": "ビデオ", "zh": "视频", "ko": "비디오", "ar": "فيديو" },
+    "keywords": {
+      "es": ["cámara de video", "grabar video", "filmar", "videollamada", "encender cámara", "clip", "reunión"],
+      "en": ["start video", "record video", "film", "video call", "turn on camera", "clip", "camcorder"]
+    }
+  },
+  "video-camera-off": {
+    "label": { "es": "Video desactivado", "en": "Video off", "pt": "Vídeo desativado", "fr": "Vidéo désactivée", "de": "Video aus", "it": "Video disattivato", "ja": "ビデオオフ", "zh": "视频已关闭", "ko": "비디오 끔", "ar": "الفيديو متوقف" },
+    "keywords": {
+      "es": ["apagar cámara", "sin video", "cámara apagada", "solo audio", "privacidad", "videollamada", "ocultar video"],
+      "en": ["turn off camera", "no video", "camera off", "audio only", "privacy", "video call", "hide video"]
+    }
+  },
+  "webcam": {
+    "label": { "es": "Cámara web", "en": "Webcam", "pt": "Webcam", "fr": "Webcam", "de": "Webcam", "it": "Webcam", "ja": "ウェブカメラ", "zh": "网络摄像头", "ko": "웹캠", "ar": "كاميرا ويب" },
+    "keywords": {
+      "es": ["videollamada", "reunión en línea", "videoconferencia", "transmitir en vivo", "cámara de computadora", "verificación de identidad", "entrevista"],
+      "en": ["video call", "online meeting", "video conference", "live stream", "computer camera", "identity verification", "interview"]
+    }
+  },
+  "headphones": {
+    "label": { "es": "Audífonos", "en": "Headphones", "pt": "Fones de ouvido", "fr": "Casque audio", "de": "Kopfhörer", "it": "Cuffie", "ja": "ヘッドホン", "zh": "头戴式耳机", "ko": "헤드폰", "ar": "سماعات الرأس" },
+    "keywords": {
+      "es": ["auriculares", "escuchar", "música", "audio", "soporte", "atención al cliente", "podcast"],
+      "en": ["headset", "listen", "music", "audio", "support", "customer service", "podcast"]
+    }
+  },
+  "earbuds": {
+    "label": { "es": "Audífonos inalámbricos", "en": "Earbuds", "pt": "Fones sem fio", "fr": "Écouteurs sans fil", "de": "In-Ear-Kopfhörer", "it": "Auricolari", "ja": "ワイヤレスイヤホン", "zh": "无线耳机", "ko": "무선 이어폰", "ar": "سماعات أذن لاسلكية" },
+    "keywords": {
+      "es": ["auriculares", "intraurales", "bluetooth", "escuchar", "música", "manos libres", "llamadas"],
+      "en": ["earphones", "in-ear", "wireless", "bluetooth", "listen", "music", "hands-free"]
+    }
+  },
+  "speaker-box": {
+    "label": { "es": "Bocina", "en": "Speaker", "pt": "Caixa de som", "fr": "Enceinte", "de": "Lautsprecher", "it": "Altoparlante", "ja": "スピーカー", "zh": "音箱", "ko": "스피커", "ar": "مكبر الصوت" },
+    "keywords": {
+      "es": ["altavoz", "sonido", "salida de audio", "equipo de sonido", "música", "estéreo", "woofer"],
+      "en": ["loudspeaker", "sound", "audio output", "sound system", "music", "stereo", "woofer"]
+    }
+  },
+  "smart-speaker": {
+    "label": { "es": "Bocina inteligente", "en": "Smart speaker", "pt": "Caixa de som inteligente", "fr": "Enceinte connectée", "de": "Smarter Lautsprecher", "it": "Altoparlante smart", "ja": "スマートスピーカー", "zh": "智能音箱", "ko": "스마트 스피커", "ar": "مكبر صوت ذكي" },
+    "keywords": {
+      "es": ["asistente de voz", "comandos de voz", "casa inteligente", "domótica", "control por voz", "altavoz inteligente", "dictar"],
+      "en": ["voice assistant", "voice commands", "smart home", "home automation", "voice control", "hands-free", "dictation"]
+    }
+  },
+  "microphone-handheld": {
+    "label": { "es": "Micrófono de mano", "en": "Handheld microphone", "pt": "Microfone de mão", "fr": "Micro à main", "de": "Handmikrofon", "it": "Microfono a mano", "ja": "ハンドマイク", "zh": "手持麦克风", "ko": "핸드 마이크", "ar": "ميكروفون يدوي" },
+    "keywords": {
+      "es": ["karaoke", "cantar", "escenario", "concierto", "conferencia", "presentador", "evento en vivo"],
+      "en": ["karaoke", "sing", "stage", "concert", "talk", "presenter", "live event"]
+    }
+  },
+  "microphone-studio": {
+    "label": { "es": "Micrófono de estudio", "en": "Studio microphone", "pt": "Microfone de estúdio", "fr": "Micro de studio", "de": "Studiomikrofon", "it": "Microfono da studio", "ja": "スタジオマイク", "zh": "录音室麦克风", "ko": "스튜디오 마이크", "ar": "ميكروفون استوديو" },
+    "keywords": {
+      "es": ["grabar voz", "podcast", "locución", "estudio de grabación", "doblaje", "entrevista", "radio"],
+      "en": ["voice recording", "podcast", "voiceover", "recording studio", "dubbing", "interview", "broadcast"]
+    }
+  },
+  "remote-control": {
+    "label": { "es": "Control remoto", "en": "Remote control", "pt": "Controle remoto", "fr": "Télécommande", "de": "Fernbedienung", "it": "Telecomando", "ja": "リモコン", "zh": "遥控器", "ko": "리모컨", "ar": "جهاز التحكم عن بعد" },
+    "keywords": {
+      "es": ["mando", "cambiar de canal", "televisión", "botones", "control a distancia", "smart tv", "encender la tele"],
+      "en": ["tv remote", "change channel", "television", "buttons", "clicker", "smart tv", "controller"]
+    }
+  },
+  "gamepad": {
+    "label": { "es": "Control de videojuegos", "en": "Game controller", "pt": "Controle de videogame", "fr": "Manette de jeu", "de": "Gamecontroller", "it": "Controller di gioco", "ja": "ゲームコントローラー", "zh": "游戏手柄", "ko": "게임 컨트롤러", "ar": "وحدة تحكم الألعاب" },
+    "keywords": {
+      "es": ["videojuegos", "jugar", "consola", "gaming", "mando", "multijugador", "entretenimiento"],
+      "en": ["video games", "play", "console", "gaming", "joypad", "multiplayer", "entertainment"]
+    }
+  },
+  "vr-headset": {
+    "label": { "es": "Visor de realidad virtual", "en": "VR headset", "pt": "Óculos de realidade virtual", "fr": "Casque de réalité virtuelle", "de": "VR-Brille", "it": "Visore VR", "ja": "VRヘッドセット", "zh": "VR 头显", "ko": "VR 헤드셋", "ar": "نظارة الواقع الافتراضي" },
+    "keywords": {
+      "es": ["realidad virtual", "realidad aumentada", "realidad mixta", "inmersivo", "metaverso", "lentes vr", "experiencia 3d"],
+      "en": ["virtual reality", "augmented reality", "mixed reality", "immersive", "metaverse", "vr goggles", "3d experience"]
+    }
+  },
+  "flashlight": {
+    "label": { "es": "Linterna", "en": "Flashlight", "pt": "Lanterna", "fr": "Lampe torche", "de": "Taschenlampe", "it": "Torcia", "ja": "懐中電灯", "zh": "手电筒", "ko": "손전등", "ar": "مصباح يدوي" },
+    "keywords": {
+      "es": ["lámpara", "luz", "alumbrar", "flash del celular", "oscuridad", "buscar", "emergencia"],
+      "en": ["torch", "light", "illuminate", "phone flash", "dark", "search", "emergency"]
+    }
+  },
+  "flashlight-on": {
+    "label": { "es": "Linterna encendida", "en": "Flashlight on", "pt": "Lanterna ligada", "fr": "Lampe torche allumée", "de": "Taschenlampe an", "it": "Torcia accesa", "ja": "懐中電灯オン", "zh": "手电筒已打开", "ko": "손전등 켜짐", "ar": "المصباح اليدوي مضاء" },
+    "keywords": {
+      "es": ["luz encendida", "alumbrar", "flash activado", "iluminar", "lámpara", "brillo", "ver en la oscuridad"],
+      "en": ["light on", "illuminate", "flash on", "torch", "lamp", "brightness", "see in the dark"]
+    }
+  },
+  "sd-card": {
+    "label": { "es": "Tarjeta de memoria", "en": "Memory card", "pt": "Cartão de memória", "fr": "Carte mémoire", "de": "Speicherkarte", "it": "Scheda di memoria", "ja": "メモリーカード", "zh": "存储卡", "ko": "메모리 카드", "ar": "بطاقة ذاكرة" },
+    "keywords": {
+      "es": ["tarjeta sd", "microsd", "almacenamiento", "guardar fotos", "espacio libre", "memoria externa", "respaldo"],
+      "en": ["camera card", "microsd", "storage", "save photos", "free space", "external memory", "backup"]
+    }
+  },
+  "usb-drive": {
+    "label": { "es": "Memoria USB", "en": "USB drive", "pt": "Pen drive", "fr": "Clé USB", "de": "USB-Stick", "it": "Chiavetta USB", "ja": "USBメモリ", "zh": "U 盘", "ko": "USB 드라이브", "ar": "ذاكرة USB" },
+    "keywords": {
+      "es": ["pendrive", "almacenamiento externo", "copiar archivos", "transferir", "respaldo", "unidad extraíble", "llevar archivos"],
+      "en": ["flash drive", "thumb drive", "external storage", "copy files", "transfer", "backup", "removable drive"]
+    }
+  },
+  "router": {
+    "label": { "es": "Router", "en": "Router", "pt": "Roteador", "fr": "Routeur", "de": "Router", "it": "Router", "ja": "ルーター", "zh": "路由器", "ko": "라우터", "ar": "جهاز توجيه" },
+    "keywords": {
+      "es": ["módem", "wifi", "internet", "red", "conexión", "red doméstica", "reiniciar internet"],
+      "en": ["modem", "wifi", "internet", "network", "connection", "home network", "hotspot"]
+    }
+  },
+  "projector": {
+    "label": { "es": "Proyector", "en": "Projector", "pt": "Projetor", "fr": "Projecteur", "de": "Beamer", "it": "Proiettore", "ja": "プロジェクター", "zh": "投影仪", "ko": "프로젝터", "ar": "جهاز عرض" },
+    "keywords": {
+      "es": ["presentación", "proyectar", "sala de juntas", "cine en casa", "diapositivas", "pantalla grande", "reunión"],
+      "en": ["presentation", "project", "meeting room", "home theater", "slides", "big screen", "beamer"]
+    }
+  },
+  "battery-full": {
+    "label": { "es": "Batería llena", "en": "Battery full", "pt": "Bateria cheia", "fr": "Batterie pleine", "de": "Akku voll", "it": "Batteria carica", "ja": "バッテリー満充電", "zh": "电量已满", "ko": "배터리 완충", "ar": "البطارية ممتلئة" },
+    "keywords": {
+      "es": ["carga completa", "cargado", "cien por ciento", "energía", "pila", "autonomía", "listo para usar"],
+      "en": ["fully charged", "charged", "100 percent", "power", "energy", "battery life", "ready to go"]
+    }
+  },
+  "battery-half": {
+    "label": { "es": "Batería a la mitad", "en": "Battery half", "pt": "Bateria pela metade", "fr": "Batterie à moitié", "de": "Akku halb voll", "it": "Batteria a metà", "ja": "バッテリー残量半分", "zh": "电量剩余一半", "ko": "배터리 절반", "ar": "البطارية نصف مشحونة" },
+    "keywords": {
+      "es": ["media carga", "cincuenta por ciento", "nivel de batería", "carga restante", "energía", "pila", "autonomía"],
+      "en": ["half charged", "50 percent", "battery level", "remaining charge", "power", "energy", "battery life"]
+    }
+  },
+  "battery-low": {
+    "label": { "es": "Batería baja", "en": "Low battery", "pt": "Bateria fraca", "fr": "Batterie faible", "de": "Akku schwach", "it": "Batteria bassa", "ja": "バッテリー残量低下", "zh": "电量低", "ko": "배터리 부족", "ar": "البطارية منخفضة" },
+    "keywords": {
+      "es": ["poca carga", "cargar pronto", "ahorro de energía", "pila baja", "advertencia", "conectar cargador", "por apagarse"],
+      "en": ["low power", "charge soon", "power saving", "low charge", "warning", "plug in charger", "running out"]
+    }
+  },
+  "battery-empty": {
+    "label": { "es": "Batería vacía", "en": "Battery empty", "pt": "Bateria vazia", "fr": "Batterie vide", "de": "Akku leer", "it": "Batteria scarica", "ja": "バッテリー切れ", "zh": "电量耗尽", "ko": "배터리 방전", "ar": "البطارية فارغة" },
+    "keywords": {
+      "es": ["sin carga", "descargada", "agotada", "sin energía", "pila muerta", "apagado", "necesita carga"],
+      "en": ["dead battery", "drained", "no charge", "out of power", "depleted", "flat battery", "needs charging"]
+    }
+  },
+  "battery-charging": {
+    "label": { "es": "Cargando batería", "en": "Battery charging", "pt": "Bateria carregando", "fr": "Batterie en charge", "de": "Akku wird geladen", "it": "Batteria in carica", "ja": "充電中", "zh": "正在充电", "ko": "충전 중", "ar": "جارٍ شحن البطارية" },
+    "keywords": {
+      "es": ["conectado a la corriente", "cargador", "carga rápida", "enchufado", "recargar", "energía", "rayo"],
+      "en": ["plugged in", "charger", "fast charging", "recharge", "power", "energy", "lightning"]
+    }
+  },
+  "power-plug": {
+    "label": { "es": "Enchufe", "en": "Power plug", "pt": "Plugue", "fr": "Fiche électrique", "de": "Netzstecker", "it": "Spina elettrica", "ja": "電源プラグ", "zh": "电源插头", "ko": "전원 플러그", "ar": "قابس كهربائي" },
+    "keywords": {
+      "es": ["clavija", "conectar", "corriente", "electricidad", "integración", "complemento", "desconectado"],
+      "en": ["connect", "electricity", "power cord", "integration", "plugin", "unplugged", "mains"]
+    }
+  },
+  "outlet": {
+    "label": { "es": "Toma de corriente", "en": "Power outlet", "pt": "Tomada", "fr": "Prise murale", "de": "Steckdose", "it": "Presa elettrica", "ja": "コンセント", "zh": "电源插座", "ko": "콘센트", "ar": "مقبس كهربائي" },
+    "keywords": {
+      "es": ["contacto", "enchufe de pared", "corriente", "electricidad", "conectar", "cargar", "instalación eléctrica"],
+      "en": ["wall socket", "socket", "electricity", "plug in", "charge", "mains power", "receptacle"]
+    }
+  },
+  "power": {
+    "label": { "es": "Encender o apagar", "en": "Power", "pt": "Ligar ou desligar", "fr": "Marche/Arrêt", "de": "Ein/Aus", "it": "Accendi/spegni", "ja": "電源", "zh": "电源", "ko": "전원", "ar": "تشغيل/إيقاف" },
+    "keywords": {
+      "es": ["botón de encendido", "apagar", "reiniciar", "cerrar sesión", "suspender", "energía", "salir"],
+      "en": ["power button", "shut down", "turn off", "restart", "log out", "sleep", "on off"]
+    }
+  },
+  "wifi": {
+    "label": { "es": "Wi-Fi", "en": "Wi-Fi", "pt": "Wi-Fi", "fr": "Wi-Fi", "de": "WLAN", "it": "Wi-Fi", "ja": "Wi-Fi", "zh": "Wi-Fi", "ko": "Wi-Fi", "ar": "واي فاي" },
+    "keywords": {
+      "es": ["internet", "red inalámbrica", "conexión", "señal", "hotspot", "conectarse", "contraseña de red"],
+      "en": ["internet", "wireless network", "connection", "signal", "hotspot", "get online", "wlan"]
+    }
+  },
+  "wifi-medium": {
+    "label": { "es": "Señal de Wi-Fi media", "en": "Medium Wi-Fi signal", "pt": "Sinal de Wi-Fi médio", "fr": "Signal Wi-Fi moyen", "de": "Mittleres WLAN-Signal", "it": "Segnale Wi-Fi medio", "ja": "Wi-Fiの電波（中）", "zh": "Wi-Fi 信号中等", "ko": "Wi-Fi 신호 보통", "ar": "إشارة واي فاي متوسطة" },
+    "keywords": {
+      "es": ["intensidad de señal", "conexión regular", "cobertura", "internet", "red inalámbrica", "dos barras", "estado de la red"],
+      "en": ["signal strength", "fair connection", "coverage", "internet", "wireless network", "two bars", "network status"]
+    }
+  },
+  "wifi-low": {
+    "label": { "es": "Señal de Wi-Fi débil", "en": "Weak Wi-Fi signal", "pt": "Sinal de Wi-Fi fraco", "fr": "Signal Wi-Fi faible", "de": "Schwaches WLAN-Signal", "it": "Segnale Wi-Fi debole", "ja": "Wi-Fiの電波（弱）", "zh": "Wi-Fi 信号弱", "ko": "Wi-Fi 신호 약함", "ar": "إشارة واي فاي ضعيفة" },
+    "keywords": {
+      "es": ["conexión lenta", "mala señal", "poca cobertura", "internet inestable", "lejos del router", "una barra", "intermitente"],
+      "en": ["slow connection", "poor signal", "low coverage", "unstable internet", "far from router", "one bar", "spotty"]
+    }
+  },
+  "wifi-off": {
+    "label": { "es": "Sin Wi-Fi", "en": "Wi-Fi off", "pt": "Wi-Fi desligado", "fr": "Wi-Fi désactivé", "de": "WLAN aus", "it": "Wi-Fi disattivato", "ja": "Wi-Fiオフ", "zh": "Wi-Fi 已关闭", "ko": "Wi-Fi 꺼짐", "ar": "واي فاي متوقف" },
+    "keywords": {
+      "es": ["sin conexión", "desconectado", "sin internet", "fuera de línea", "modo avión", "red caída", "sin señal"],
+      "en": ["no connection", "disconnected", "no internet", "offline", "airplane mode", "network down", "no signal"]
+    }
+  },
+  "bluetooth": {
+    "label": { "es": "Bluetooth", "en": "Bluetooth", "pt": "Bluetooth", "fr": "Bluetooth", "de": "Bluetooth", "it": "Bluetooth", "ja": "Bluetooth", "zh": "蓝牙", "ko": "블루투스", "ar": "بلوتوث" },
+    "keywords": {
+      "es": ["inalámbrico", "emparejar", "vincular", "conectar dispositivo", "audífonos", "accesorios", "corto alcance"],
+      "en": ["wireless", "pair", "link device", "connect device", "headphones", "accessories", "short range"]
+    }
+  },
+  "bluetooth-connected": {
+    "label": { "es": "Bluetooth conectado", "en": "Bluetooth connected", "pt": "Bluetooth conectado", "fr": "Bluetooth connecté", "de": "Bluetooth verbunden", "it": "Bluetooth connesso", "ja": "Bluetooth接続済み", "zh": "蓝牙已连接", "ko": "블루투스 연결됨", "ar": "بلوتوث متصل" },
+    "keywords": {
+      "es": ["emparejado", "vinculado", "dispositivo conectado", "en uso", "audífonos conectados", "enlazado", "activo"],
+      "en": ["paired", "linked", "device connected", "in use", "headphones connected", "active", "synced"]
+    }
+  },
+  "signal": {
+    "label": { "es": "Señal celular", "en": "Cellular signal", "pt": "Sinal de celular", "fr": "Réseau mobile", "de": "Mobilfunksignal", "it": "Segnale cellulare", "ja": "モバイル通信の電波", "zh": "蜂窝信号", "ko": "셀룰러 신호", "ar": "إشارة الشبكة الخلوية" },
+    "keywords": {
+      "es": ["cobertura", "barras", "red móvil", "intensidad de señal", "señal completa", "4g", "5g"],
+      "en": ["reception", "bars", "mobile network", "signal strength", "full signal", "4g", "5g"]
+    }
+  },
+  "signal-high": {
+    "label": { "es": "Señal alta", "en": "Strong signal", "pt": "Sinal forte", "fr": "Signal fort", "de": "Starkes Signal", "it": "Segnale forte", "ja": "電波（強）", "zh": "信号强", "ko": "신호 강함", "ar": "إشارة قوية" },
+    "keywords": {
+      "es": ["buena cobertura", "tres barras", "red móvil", "conexión estable", "intensidad de señal", "recepción", "datos móviles"],
+      "en": ["good reception", "three bars", "mobile network", "stable connection", "signal strength", "coverage", "mobile data"]
+    }
+  },
+  "signal-medium": {
+    "label": { "es": "Señal media", "en": "Medium signal", "pt": "Sinal médio", "fr": "Signal moyen", "de": "Mittleres Signal", "it": "Segnale medio", "ja": "電波（中）", "zh": "信号中等", "ko": "신호 보통", "ar": "إشارة متوسطة" },
+    "keywords": {
+      "es": ["cobertura regular", "dos barras", "red móvil", "intensidad de señal", "recepción", "datos móviles", "conexión aceptable"],
+      "en": ["fair reception", "two bars", "mobile network", "signal strength", "coverage", "mobile data", "okay connection"]
+    }
+  },
+  "signal-low": {
+    "label": { "es": "Señal baja", "en": "Weak signal", "pt": "Sinal fraco", "fr": "Signal faible", "de": "Schwaches Signal", "it": "Segnale debole", "ja": "電波（弱）", "zh": "信号弱", "ko": "신호 약함", "ar": "إشارة ضعيفة" },
+    "keywords": {
+      "es": ["poca cobertura", "una barra", "mala recepción", "llamada cortada", "zona sin señal", "conexión lenta", "datos lentos"],
+      "en": ["poor reception", "one bar", "bad coverage", "dropped call", "dead zone", "slow connection", "spotty service"]
+    }
+  },
+  "cast": {
+    "label": { "es": "Transmitir", "en": "Cast", "pt": "Transmitir", "fr": "Caster", "de": "Übertragen", "it": "Trasmetti", "ja": "キャスト", "zh": "投屏", "ko": "전송", "ar": "بث إلى جهاز" },
+    "keywords": {
+      "es": ["enviar a la tele", "pantalla externa", "smart tv", "reproducir en la tele", "proyectar", "streaming", "compartir pantalla"],
+      "en": ["send to tv", "external display", "smart tv", "play on tv", "project", "stream", "screencast"]
+    }
+  },
+  "usb": {
+    "label": { "es": "USB", "en": "USB", "pt": "USB", "fr": "USB", "de": "USB", "it": "USB", "ja": "USB", "zh": "USB", "ko": "USB", "ar": "USB" },
+    "keywords": {
+      "es": ["puerto", "conector", "cable", "conectar dispositivo", "transferir datos", "periférico", "usb-c"],
+      "en": ["port", "connector", "cable", "connect device", "data transfer", "peripheral", "usb-c"]
+    }
+  },
+  "play": {
+    "label": { "es": "Reproducir", "en": "Play", "pt": "Reproduzir", "fr": "Lecture", "de": "Wiedergabe", "it": "Riproduci", "ja": "再生", "zh": "播放", "ko": "재생", "ar": "تشغيل" },
+    "keywords": {
+      "es": ["iniciar", "ver video", "escuchar", "continuar", "reanudar", "ejecutar", "empezar presentación"],
+      "en": ["start", "watch video", "listen", "continue", "resume", "run", "start slideshow"]
+    }
+  },
+  "play-circle": {
+    "label": { "es": "Reproducir video", "en": "Play video", "pt": "Reproduzir vídeo", "fr": "Lire la vidéo", "de": "Video abspielen", "it": "Riproduci video", "ja": "動画を再生", "zh": "播放视频", "ko": "동영상 재생", "ar": "تشغيل الفيديو" },
+    "keywords": {
+      "es": ["ver video", "iniciar", "demo", "tutorial", "ver ahora", "multimedia", "presentación en video"],
+      "en": ["watch video", "start", "demo", "tutorial", "watch now", "media", "video presentation"]
+    }
+  },
+  "pause": {
+    "label": { "es": "Pausar", "en": "Pause", "pt": "Pausar", "fr": "Pause", "de": "Pause", "it": "Pausa", "ja": "一時停止", "zh": "暂停", "ko": "일시정지", "ar": "إيقاف مؤقت" },
+    "keywords": {
+      "es": ["detener un momento", "esperar", "suspender", "congelar", "interrumpir", "en espera", "detener reproducción"],
+      "en": ["hold", "wait", "suspend", "freeze", "interrupt", "on hold", "halt playback"]
+    }
+  },
+  "pause-circle": {
+    "label": { "es": "En pausa", "en": "Paused", "pt": "Em pausa", "fr": "En pause", "de": "Pausiert", "it": "In pausa", "ja": "一時停止中", "zh": "已暂停", "ko": "일시정지됨", "ar": "متوقف مؤقتًا" },
+    "keywords": {
+      "es": ["pausar", "suspendido", "detenido", "en espera", "congelado", "inactivo", "suscripción suspendida"],
+      "en": ["pause", "suspended", "stopped", "on hold", "frozen", "inactive", "subscription on hold"]
+    }
+  },
+  "stop": {
+    "label": { "es": "Detener", "en": "Stop", "pt": "Parar", "fr": "Arrêter", "de": "Stoppen", "it": "Interrompi", "ja": "停止", "zh": "停止", "ko": "정지", "ar": "إيقاف" },
+    "keywords": {
+      "es": ["parar", "terminar", "finalizar", "cancelar", "detener grabación", "abortar", "cortar"],
+      "en": ["halt", "end", "finish", "cancel", "end recording", "abort", "cut"]
+    }
+  },
+  "stop-circle": {
+    "label": { "es": "Detener grabación", "en": "Stop recording", "pt": "Parar gravação", "fr": "Arrêter l’enregistrement", "de": "Aufnahme beenden", "it": "Interrompi registrazione", "ja": "録画を停止", "zh": "停止录制", "ko": "녹화 중지", "ar": "إيقاف التسجيل" },
+    "keywords": {
+      "es": ["terminar", "parar", "finalizar", "dejar de grabar", "cortar transmisión", "fin", "cancelar"],
+      "en": ["end", "halt", "finish", "end capture", "end stream", "done", "cancel"]
+    }
+  },
+  "record": {
+    "label": { "es": "Grabar", "en": "Record", "pt": "Gravar", "fr": "Enregistrer", "de": "Aufnehmen", "it": "Registra", "ja": "録画", "zh": "录制", "ko": "녹화", "ar": "تسجيل" },
+    "keywords": {
+      "es": ["rec", "al aire", "capturar", "grabar pantalla", "nota de voz", "grabar video", "en vivo"],
+      "en": ["rec", "on air", "capture", "screen capture", "voice memo", "video capture", "live"]
+    }
+  },
+  "play-pause": {
+    "label": { "es": "Reproducir o pausar", "en": "Play/Pause", "pt": "Reproduzir/pausar", "fr": "Lecture/pause", "de": "Wiedergabe/Pause", "it": "Riproduci/pausa", "ja": "再生/一時停止", "zh": "播放/暂停", "ko": "재생/일시정지", "ar": "تشغيل/إيقاف مؤقت" },
+    "keywords": {
+      "es": ["alternar", "reproducción", "control multimedia", "tecla multimedia", "reanudar", "detener", "controles del reproductor"],
+      "en": ["toggle", "playback", "media control", "media key", "resume", "hold", "player controls"]
+    }
+  },
+  "eject": {
+    "label": { "es": "Expulsar", "en": "Eject", "pt": "Ejetar", "fr": "Éjecter", "de": "Auswerfen", "it": "Espelli", "ja": "取り出す", "zh": "弹出", "ko": "꺼내기", "ar": "إخراج" },
+    "keywords": {
+      "es": ["sacar disco", "quitar unidad", "desmontar", "extraer", "retirar usb", "desconectar con seguridad", "abrir bandeja"],
+      "en": ["remove disc", "unmount", "safely remove", "extract", "remove usb", "open tray", "disconnect drive"]
+    }
+  },
+  "skip-forward": {
+    "label": { "es": "Siguiente", "en": "Next", "pt": "Próximo", "fr": "Suivant", "de": "Weiter", "it": "Successivo", "ja": "次へ", "zh": "下一个", "ko": "다음", "ar": "التالي" },
+    "keywords": {
+      "es": ["siguiente pista", "saltar", "siguiente canción", "próximo episodio", "siguiente video", "pasar", "cambiar de canción"],
+      "en": ["next track", "skip", "next song", "next episode", "next video", "advance", "change song"]
+    }
+  },
+  "skip-back": {
+    "label": { "es": "Anterior", "en": "Previous", "pt": "Anterior", "fr": "Précédent", "de": "Zurück", "it": "Precedente", "ja": "前へ", "zh": "上一个", "ko": "이전", "ar": "السابق" },
+    "keywords": {
+      "es": ["pista anterior", "regresar", "volver a empezar", "canción anterior", "episodio anterior", "reiniciar pista", "atrás"],
+      "en": ["previous track", "go back", "restart", "previous song", "previous episode", "back", "replay track"]
+    }
+  },
+  "fast-forward": {
+    "label": { "es": "Adelantar", "en": "Fast forward", "pt": "Avançar", "fr": "Avance rapide", "de": "Vorspulen", "it": "Avanti veloce", "ja": "早送り", "zh": "快进", "ko": "빨리 감기", "ar": "تقديم سريع" },
+    "keywords": {
+      "es": ["avanzar", "saltar adelante", "acelerar", "más rápido", "buscar", "avance rápido", "10 segundos adelante"],
+      "en": ["skip ahead", "seek forward", "speed up", "faster", "scrub", "jump ahead", "10 seconds forward"]
+    }
+  },
+  "rewind": {
+    "label": { "es": "Retroceder", "en": "Rewind", "pt": "Retroceder", "fr": "Retour rapide", "de": "Zurückspulen", "it": "Riavvolgi", "ja": "巻き戻し", "zh": "快退", "ko": "되감기", "ar": "ترجيع" },
+    "keywords": {
+      "es": ["regresar", "atrás", "volver a ver", "rebobinar", "buscar", "retroceso rápido", "10 segundos atrás"],
+      "en": ["go back", "seek back", "replay", "jump back", "scrub", "back", "10 seconds back"]
+    }
+  },
+  "repeat": {
+    "label": { "es": "Repetir", "en": "Repeat", "pt": "Repetir", "fr": "Répéter", "de": "Wiederholen", "it": "Ripeti", "ja": "リピート", "zh": "循环播放", "ko": "반복", "ar": "تكرار" },
+    "keywords": {
+      "es": ["bucle", "loop", "ciclo", "otra vez", "recurrente", "reproducción continua", "rutina"],
+      "en": ["loop", "cycle", "again", "recurring", "continuous playback", "replay", "recurrence"]
+    }
+  },
+  "repeat-one": {
+    "label": { "es": "Repetir canción", "en": "Repeat one", "pt": "Repetir faixa", "fr": "Répéter le titre", "de": "Titel wiederholen", "it": "Ripeti brano", "ja": "1曲リピート", "zh": "单曲循环", "ko": "한 곡 반복", "ar": "تكرار المقطع" },
+    "keywords": {
+      "es": ["bucle de una pista", "misma canción", "una sola pista", "loop", "ciclo", "escuchar otra vez", "en repetición"],
+      "en": ["loop track", "same song", "single track", "loop one", "cycle", "listen again", "on repeat"]
+    }
+  },
+  "shuffle": {
+    "label": { "es": "Aleatorio", "en": "Shuffle", "pt": "Aleatório", "fr": "Lecture aléatoire", "de": "Zufallswiedergabe", "it": "Riproduzione casuale", "ja": "シャッフル", "zh": "随机播放", "ko": "셔플", "ar": "تشغيل عشوائي" },
+    "keywords": {
+      "es": ["mezclar", "al azar", "orden aleatorio", "revolver", "random", "variar", "sorpresa"],
+      "en": ["random", "mix", "randomize", "random order", "scramble", "surprise me", "reorder"]
+    }
+  },
+  "volume-low": {
+    "label": { "es": "Volumen bajo", "en": "Low volume", "pt": "Volume baixo", "fr": "Volume faible", "de": "Lautstärke niedrig", "it": "Volume basso", "ja": "音量小", "zh": "音量低", "ko": "볼륨 낮음", "ar": "مستوى صوت منخفض" },
+    "keywords": {
+      "es": ["sonido", "audio", "bocina", "silencioso", "suave", "nivel de sonido", "altavoz"],
+      "en": ["sound", "audio", "speaker", "quiet", "soft", "sound level", "audio output"]
+    }
+  },
+  "volume-high": {
+    "label": { "es": "Volumen alto", "en": "High volume", "pt": "Volume alto", "fr": "Volume élevé", "de": "Lautstärke hoch", "it": "Volume alto", "ja": "音量大", "zh": "音量高", "ko": "볼륨 높음", "ar": "مستوى صوت مرتفع" },
+    "keywords": {
+      "es": ["sonido", "audio", "bocina", "fuerte", "con sonido", "activar sonido", "altavoz"],
+      "en": ["sound", "audio", "speaker", "loud", "sound on", "unmute", "audio output"]
+    }
+  },
+  "volume-off": {
+    "label": { "es": "Silenciado", "en": "Muted", "pt": "Sem som", "fr": "Son coupé", "de": "Stumm", "it": "Audio disattivato", "ja": "ミュート", "zh": "静音", "ko": "음소거", "ar": "كتم الصوت" },
+    "keywords": {
+      "es": ["silenciar", "mute", "sin sonido", "quitar sonido", "callar", "modo silencioso", "sin audio"],
+      "en": ["mute", "silence", "sound off", "no sound", "quiet mode", "no audio", "hush"]
+    }
+  },
+  "volume-plus": {
+    "label": { "es": "Subir volumen", "en": "Volume up", "pt": "Aumentar volume", "fr": "Augmenter le volume", "de": "Lauter", "it": "Alza il volume", "ja": "音量を上げる", "zh": "调高音量", "ko": "볼륨 높이기", "ar": "رفع مستوى الصوت" },
+    "keywords": {
+      "es": ["más fuerte", "aumentar sonido", "más alto", "sonido", "audio", "bocina", "control de sonido"],
+      "en": ["louder", "increase sound", "turn up", "sound", "audio", "speaker", "sound control"]
+    }
+  },
+  "volume-minus": {
+    "label": { "es": "Bajar volumen", "en": "Volume down", "pt": "Diminuir volume", "fr": "Baisser le volume", "de": "Leiser", "it": "Abbassa il volume", "ja": "音量を下げる", "zh": "调低音量", "ko": "볼륨 낮추기", "ar": "خفض مستوى الصوت" },
+    "keywords": {
+      "es": ["más bajo", "reducir sonido", "más suave", "sonido", "audio", "bocina", "control de sonido"],
+      "en": ["quieter", "decrease sound", "turn down", "softer", "sound", "audio", "speaker"]
+    }
+  },
+  "music-note": {
+    "label": { "es": "Música", "en": "Music", "pt": "Música", "fr": "Musique", "de": "Musik", "it": "Musica", "ja": "音楽", "zh": "音乐", "ko": "음악", "ar": "موسيقى" },
+    "keywords": {
+      "es": ["nota musical", "canción", "audio", "sonido", "melodía", "pista", "tono de llamada"],
+      "en": ["musical note", "song", "audio", "sound", "tune", "track", "ringtone"]
+    }
+  },
+  "music-notes": {
+    "label": { "es": "Notas musicales", "en": "Musical notes", "pt": "Notas musicais", "fr": "Notes de musique", "de": "Musiknoten", "it": "Note musicali", "ja": "音符", "zh": "音符", "ko": "음표", "ar": "نوتات موسيقية" },
+    "keywords": {
+      "es": ["música", "melodía", "canción", "armonía", "concierto", "biblioteca musical", "sonido"],
+      "en": ["music", "melody", "song", "harmony", "concert", "music library", "sound"]
+    }
+  },
+  "playlist": {
+    "label": { "es": "Lista de reproducción", "en": "Playlist", "pt": "Playlist", "fr": "Liste de lecture", "de": "Playlist", "it": "Playlist", "ja": "プレイリスト", "zh": "播放列表", "ko": "재생목록", "ar": "قائمة تشغيل" },
+    "keywords": {
+      "es": ["canciones", "cola", "álbum", "mezcla", "lista de canciones", "biblioteca", "colección"],
+      "en": ["songs", "queue", "album", "mix", "song list", "library", "collection"]
+    }
+  },
+  "playlist-play": {
+    "label": { "es": "Reproducir lista", "en": "Play playlist", "pt": "Reproduzir playlist", "fr": "Lire la liste de lecture", "de": "Playlist abspielen", "it": "Riproduci playlist", "ja": "プレイリストを再生", "zh": "播放此列表", "ko": "재생목록 재생", "ar": "تشغيل قائمة التشغيل" },
+    "keywords": {
+      "es": ["cola", "a continuación", "reproducir todo", "reproducción continua", "reproducción automática", "canciones", "lista de videos"],
+      "en": ["queue", "up next", "play all", "continuous play", "autoplay", "songs", "video list"]
+    }
+  },
+  "equalizer": {
+    "label": { "es": "Ecualizador", "en": "Equalizer", "pt": "Equalizador", "fr": "Égaliseur", "de": "Equalizer", "it": "Equalizzatore", "ja": "イコライザー", "zh": "均衡器", "ko": "이퀄라이저", "ar": "معادل الصوت" },
+    "keywords": {
+      "es": ["niveles de audio", "espectro", "graves", "agudos", "ajustes de sonido", "reproduciendo", "visualizador"],
+      "en": ["audio levels", "spectrum", "bass", "treble", "sound settings", "now playing", "visualizer"]
+    }
+  },
+  "audio-waveform": {
+    "label": { "es": "Forma de onda", "en": "Audio waveform", "pt": "Forma de onda", "fr": "Forme d’onde", "de": "Audiowellenform", "it": "Forma d’onda", "ja": "音声波形", "zh": "音频波形", "ko": "오디오 파형", "ar": "شكل الموجة الصوتية" },
+    "keywords": {
+      "es": ["nota de voz", "audio", "voz", "grabación", "transcripción", "dictado", "onda sonora"],
+      "en": ["voice note", "audio", "voice", "recording", "transcription", "dictation", "sound wave"]
+    }
+  },
+  "radio": {
+    "label": { "es": "Radio", "en": "Radio", "pt": "Rádio", "fr": "Radio", "de": "Radio", "it": "Radio", "ja": "ラジオ", "zh": "收音机", "ko": "라디오", "ar": "راديو" },
+    "keywords": {
+      "es": ["estación", "emisora", "fm", "am", "frecuencia", "sintonizar", "transmisión en vivo"],
+      "en": ["station", "fm", "am", "tune in", "frequency", "broadcast", "live audio"]
+    }
+  },
+  "disc": {
+    "label": { "es": "Disco", "en": "Disc", "pt": "Disco", "fr": "Disque", "de": "Disc", "it": "Disco", "ja": "ディスク", "zh": "光盘", "ko": "디스크", "ar": "قرص" },
+    "keywords": {
+      "es": ["cd", "dvd", "blu-ray", "disco compacto", "álbum", "quemar disco", "instalar"],
+      "en": ["cd", "dvd", "blu-ray", "compact disc", "album", "burn", "optical media"]
+    }
+  },
+  "vinyl": {
+    "label": { "es": "Disco de vinil", "en": "Vinyl record", "pt": "Disco de vinil", "fr": "Disque vinyle", "de": "Schallplatte", "it": "Disco in vinile", "ja": "レコード", "zh": "黑胶唱片", "ko": "레코드판", "ar": "أسطوانة فينيل" },
+    "keywords": {
+      "es": ["acetato", "lp", "tocadiscos", "música", "álbum", "retro", "coleccionista"],
+      "en": ["lp", "record", "turntable", "music", "album", "retro", "analog"]
+    }
+  },
+  "podcast": {
+    "label": { "es": "Podcast", "en": "Podcast", "pt": "Podcast", "fr": "Podcast", "de": "Podcast", "it": "Podcast", "ja": "ポッドキャスト", "zh": "播客", "ko": "팟캐스트", "ar": "بودكاست" },
+    "keywords": {
+      "es": ["episodio", "programa", "audio", "escuchar", "entrevista", "suscribirse", "conversación"],
+      "en": ["episode", "show", "audio", "listen", "interview", "subscribe", "talk show"]
+    }
+  },
+  "live": {
+    "label": { "es": "En vivo", "en": "Live", "pt": "Ao vivo", "fr": "En direct", "de": "Live", "it": "In diretta", "ja": "ライブ配信", "zh": "直播", "ko": "라이브", "ar": "بث مباشر" },
+    "keywords": {
+      "es": ["transmisión", "directo", "streaming", "al aire", "evento", "webinar", "tiempo real"],
+      "en": ["broadcast", "streaming", "on air", "live stream", "event", "webinar", "real time"]
+    }
+  },
+  "album": {
+    "label": { "es": "Álbum", "en": "Album", "pt": "Álbum", "fr": "Album", "de": "Album", "it": "Album", "ja": "アルバム", "zh": "专辑", "ko": "앨범", "ar": "ألبوم" },
+    "keywords": {
+      "es": ["portada", "disco", "biblioteca musical", "lanzamiento", "canciones", "artista", "colección"],
+      "en": ["cover art", "record", "music library", "release", "songs", "artist", "collection"]
+    }
+  },
+  "image": {
+    "label": { "es": "Imagen", "en": "Image", "pt": "Imagem", "fr": "Image", "de": "Bild", "it": "Immagine", "ja": "画像", "zh": "图片", "ko": "이미지", "ar": "صورة" },
+    "keywords": {
+      "es": ["foto", "fotografía", "galería", "subir foto", "ilustración", "paisaje", "multimedia"],
+      "en": ["photo", "picture", "gallery", "upload photo", "illustration", "landscape", "media"]
+    }
+  },
+  "images": {
+    "label": { "es": "Galería", "en": "Gallery", "pt": "Galeria", "fr": "Galerie", "de": "Galerie", "it": "Galleria", "ja": "ギャラリー", "zh": "图库", "ko": "갤러리", "ar": "معرض الصور" },
+    "keywords": {
+      "es": ["fotos", "álbum de fotos", "varias imágenes", "biblioteca", "carrusel", "colección", "multimedia"],
+      "en": ["photos", "photo album", "multiple images", "library", "carousel", "collection", "media"]
+    }
+  },
+  "image-off": {
+    "label": { "es": "Imagen no disponible", "en": "Image unavailable", "pt": "Imagem indisponível", "fr": "Image indisponible", "de": "Bild nicht verfügbar", "it": "Immagine non disponibile", "ja": "画像を表示できません", "zh": "图片不可用", "ko": "이미지를 사용할 수 없음", "ar": "الصورة غير متاحة" },
+    "keywords": {
+      "es": ["sin imagen", "imagen rota", "no se pudo cargar", "foto faltante", "ocultar imágenes", "sin vista previa", "marcador de posición"],
+      "en": ["no image", "broken image", "failed to load", "missing photo", "hide images", "no preview", "placeholder"]
+    }
+  },
+  "film": {
+    "label": { "es": "Película", "en": "Movie", "pt": "Filme", "fr": "Film", "de": "Film", "it": "Film", "ja": "映画", "zh": "电影", "ko": "영화", "ar": "فيلم" },
+    "keywords": {
+      "es": ["cine", "cinta", "video", "rollo", "largometraje", "ver películas", "multimedia"],
+      "en": ["cinema", "watch movies", "video", "reel", "film strip", "feature film", "media"]
+    }
+  },
+  "clapperboard": {
+    "label": { "es": "Claqueta", "en": "Clapperboard", "pt": "Claquete", "fr": "Clap de cinéma", "de": "Filmklappe", "it": "Ciak", "ja": "カチンコ", "zh": "场记板", "ko": "클래퍼보드", "ar": "لوح الكلاكيت" },
+    "keywords": {
+      "es": ["rodaje", "producción", "filmación", "escena", "toma", "acción", "editar video"],
+      "en": ["filming", "production", "shoot", "scene", "take", "action", "video editing"]
+    }
+  },
+  "slow-motion": {
+    "label": { "es": "Cámara lenta", "en": "Slow motion", "pt": "Câmera lenta", "fr": "Ralenti", "de": "Zeitlupe", "it": "Rallentatore", "ja": "スローモーション", "zh": "慢动作", "ko": "슬로 모션", "ar": "حركة بطيئة" },
+    "keywords": {
+      "es": ["velocidad de reproducción", "ralentizar", "más lento", "slowmo", "repetición", "media velocidad", "0.5x"],
+      "en": ["playback speed", "slow down", "slower", "slowmo", "replay", "half speed", "0.5x"]
+    }
+  },
+  "captions": {
+    "label": { "es": "Subtítulos", "en": "Captions", "pt": "Legendas", "fr": "Sous-titres", "de": "Untertitel", "it": "Sottotitoli", "ja": "字幕", "zh": "字幕", "ko": "자막", "ar": "الترجمة النصية" },
+    "keywords": {
+      "es": ["cc", "texto en pantalla", "transcripción", "accesibilidad", "traducción", "idioma", "personas sordas"],
+      "en": ["cc", "subtitles", "on-screen text", "transcript", "accessibility", "translation", "language"]
+    }
+  },
+  "aperture": {
+    "label": { "es": "Apertura", "en": "Aperture", "pt": "Abertura", "fr": "Ouverture", "de": "Blende", "it": "Diaframma", "ja": "絞り", "zh": "光圈", "ko": "조리개", "ar": "فتحة العدسة" },
+    "keywords": {
+      "es": ["diafragma", "lente", "obturador", "fotografía", "cámara", "profundidad de campo", "modo retrato"],
+      "en": ["diaphragm", "lens", "shutter", "photography", "camera", "f-stop", "portrait mode"]
+    }
+  },
+  "camera-focus": {
+    "label": { "es": "Enfocar", "en": "Focus", "pt": "Focar", "fr": "Mise au point", "de": "Fokussieren", "it": "Messa a fuoco", "ja": "フォーカス", "zh": "对焦", "ko": "초점", "ar": "ضبط التركيز" },
+    "keywords": {
+      "es": ["visor", "escanear", "encuadre", "capturar", "reconocimiento facial", "objetivo", "apuntar"],
+      "en": ["viewfinder", "scan", "frame", "capture", "face recognition", "target", "aim"]
+    }
+  },
+  "camera-flip": {
+    "label": { "es": "Cambiar cámara", "en": "Switch camera", "pt": "Alternar câmera", "fr": "Changer de caméra", "de": "Kamera wechseln", "it": "Cambia fotocamera", "ja": "カメラを切り替え", "zh": "切换摄像头", "ko": "카메라 전환", "ar": "تبديل الكاميرا" },
+    "keywords": {
+      "es": ["cámara frontal", "cámara trasera", "voltear cámara", "selfie", "girar", "alternar", "videollamada"],
+      "en": ["front camera", "rear camera", "flip camera", "selfie", "rotate", "toggle", "video call"]
+    }
+  },
+  "picture-in-picture": {
+    "label": { "es": "Imagen en imagen", "en": "Picture in picture", "pt": "Picture-in-picture", "fr": "Image dans l’image", "de": "Bild-in-Bild", "it": "Picture-in-picture", "ja": "ピクチャ・イン・ピクチャ", "zh": "画中画", "ko": "화면 속 화면", "ar": "صورة داخل صورة" },
+    "keywords": {
+      "es": ["pip", "ventana flotante", "minirreproductor", "video flotante", "multitarea", "seguir viendo", "ventana pequeña"],
+      "en": ["pip", "floating window", "mini player", "floating video", "multitasking", "keep watching", "overlay"]
+    }
+  },
+  "video-player": {
+    "label": { "es": "Reproductor de video", "en": "Video player", "pt": "Player de vídeo", "fr": "Lecteur vidéo", "de": "Videoplayer", "it": "Lettore video", "ja": "動画プレーヤー", "zh": "视频播放器", "ko": "동영상 플레이어", "ar": "مشغل الفيديو" },
+    "keywords": {
+      "es": ["ver video", "barra de progreso", "multimedia", "streaming", "curso en línea", "tutorial", "insertar video"],
+      "en": ["watch video", "progress bar", "media", "streaming", "online course", "tutorial", "embed video"]
+    }
+  },
+  "screen-mirror": {
+    "label": { "es": "Duplicar pantalla", "en": "Screen mirroring", "pt": "Espelhar tela", "fr": "Recopie de l’écran", "de": "Bildschirmsynchronisierung", "it": "Duplicazione schermo", "ja": "画面ミラーリング", "zh": "屏幕镜像", "ko": "화면 미러링", "ar": "النسخ المطابق للشاشة" },
+    "keywords": {
+      "es": ["proyectar", "transmitir", "enviar a la tele", "pantalla externa", "presentar", "espejo", "compartir pantalla"],
+      "en": ["project", "stream", "send to tv", "external display", "present", "mirror", "share screen"]
+    }
+  },
+  "cassette": {
+    "label": { "es": "Casete", "en": "Cassette", "pt": "Fita cassete", "fr": "Cassette", "de": "Kassette", "it": "Musicassetta", "ja": "カセットテープ", "zh": "磁带", "ko": "카세트테이프", "ar": "شريط كاسيت" },
+    "keywords": {
+      "es": ["cinta", "mixtape", "retro", "grabación", "música", "años ochenta", "audio analógico"],
+      "en": ["tape", "mixtape", "retro", "recording", "music", "eighties", "analog audio"]
+    }
+  },
+  "wireless-charging": {
+    "label": { "es": "Carga inalámbrica", "en": "Wireless charging", "pt": "Carregamento sem fio", "fr": "Recharge sans fil", "de": "Kabelloses Laden", "it": "Ricarica wireless", "ja": "ワイヤレス充電", "zh": "无线充电", "ko": "무선 충전", "ar": "الشحن اللاسلكي" },
+    "keywords": {
+      "es": ["cargador", "base de carga", "qi", "cargar celular", "sin cables", "batería", "energía"],
+      "en": ["charger", "charging pad", "qi", "charge phone", "cable-free", "battery", "power"]
+    }
+  },
+  "ethernet": {
+    "label": { "es": "Ethernet", "en": "Ethernet", "pt": "Ethernet", "fr": "Ethernet", "de": "Ethernet", "it": "Ethernet", "ja": "イーサネット", "zh": "以太网", "ko": "이더넷", "ar": "إيثرنت" },
+    "keywords": {
+      "es": ["cable de red", "lan", "rj45", "puerto de red", "conexión por cable", "internet", "red local"],
+      "en": ["network cable", "lan", "rj45", "network port", "wired connection", "internet", "local network"]
+    }
+  },
+  "joystick": {
+    "label": { "es": "Joystick", "en": "Joystick", "pt": "Joystick", "fr": "Joystick", "de": "Joystick", "it": "Joystick", "ja": "ジョイスティック", "zh": "操纵杆", "ko": "조이스틱", "ar": "عصا التحكم" },
+    "keywords": {
+      "es": ["palanca", "arcade", "videojuegos", "retro", "maquinita", "jugar", "control"],
+      "en": ["stick", "arcade", "video games", "retro", "game", "play", "controller"]
+    }
+  },
+  "scanner": {
+    "label": { "es": "Escanear", "en": "Scan", "pt": "Digitalizar", "fr": "Numériser", "de": "Scannen", "it": "Scansiona", "ja": "スキャン", "zh": "扫描", "ko": "스캔", "ar": "مسح ضوئي" },
+    "keywords": {
+      "es": ["escáner", "digitalizar", "copiar documento", "pdf", "fotocopiadora", "documento físico", "archivar"],
+      "en": ["flatbed", "digitize", "copy document", "pdf", "photocopier", "paper document", "archive"]
+    }
+  },
+  "turntable": {
+    "label": { "es": "Tocadiscos", "en": "Turntable", "pt": "Toca-discos", "fr": "Platine vinyle", "de": "Plattenspieler", "it": "Giradischi", "ja": "レコードプレーヤー", "zh": "黑胶唱机", "ko": "턴테이블", "ar": "مشغل الأسطوانات" },
+    "keywords": {
+      "es": ["tornamesa", "vinil", "dj", "mezclar", "música", "retro", "fonógrafo"],
+      "en": ["record player", "vinyl", "dj", "mixing", "music", "retro", "phonograph"]
+    }
+  },
+  "tripod": {
+    "label": { "es": "Trípode", "en": "Tripod", "pt": "Tripé", "fr": "Trépied", "de": "Stativ", "it": "Treppiede", "ja": "三脚", "zh": "三脚架", "ko": "삼각대", "ar": "حامل ثلاثي القوائم" },
+    "keywords": {
+      "es": ["tripié", "soporte", "estabilizar", "foto de producto", "estudio", "grabar video", "larga exposición"],
+      "en": ["stand", "mount", "stabilize", "product photo", "studio", "shoot video", "long exposure"]
+    }
+  },
+  "drone": {
+    "label": { "es": "Dron", "en": "Drone", "pt": "Drone", "fr": "Drone", "de": "Drohne", "it": "Drone", "ja": "ドローン", "zh": "无人机", "ko": "드론", "ar": "طائرة مسيّرة" },
+    "keywords": {
+      "es": ["cuadricóptero", "toma aérea", "volar", "fotografía aérea", "entrega", "inspección", "vista de pájaro"],
+      "en": ["quadcopter", "aerial shot", "fly", "aerial photography", "delivery", "inspection", "uav"]
+    }
+  },
+  "sim-card": {
+    "label": { "es": "Tarjeta SIM", "en": "SIM card", "pt": "Cartão SIM", "fr": "Carte SIM", "de": "SIM-Karte", "it": "Scheda SIM", "ja": "SIMカード", "zh": "SIM 卡", "ko": "SIM 카드", "ar": "شريحة SIM" },
+    "keywords": {
+      "es": ["chip", "esim", "línea móvil", "plan de datos", "operador", "número de teléfono", "portabilidad"],
+      "en": ["chip", "esim", "mobile line", "data plan", "carrier", "phone number", "roaming"]
+    }
+  },
+  "image-sparkle": {
+    "label": { "es": "Imagen con IA", "en": "AI image", "pt": "Imagem com IA", "fr": "Image par IA", "de": "KI-Bild", "it": "Immagine con IA", "ja": "AI画像", "zh": "AI 图像", "ko": "AI 이미지", "ar": "صورة بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["generar imagen", "foto generada", "editar con ia", "inteligencia artificial", "mejorar foto", "crear ilustración", "retoque automático"],
+      "en": ["generate image", "generated photo", "edit with ai", "artificial intelligence", "enhance photo", "create illustration", "auto retouch"]
+    }
+  }
+}

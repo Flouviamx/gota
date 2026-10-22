@@ -5,6 +5,7 @@
 // núcleo sin renglones; la carpeta repite la del núcleo. Las insignias (más, check, reloj…) son
 // las del motor: `badge` despeja la base con aire exacto; nunca se recorta a mano.
 import { arc, badge, circ, dot, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { snap } from '../../engine/variants.mjs';
 
 // ── Utilidades locales ────────────────────────────────────────────────────────────────────────
 const N = (v) => {
@@ -40,6 +41,12 @@ function roundline(pts, radius = 0) {
   }
   return `${s}L${pt(pts[pts.length - 1])}`;
 }
+
+/** El mismo trazo de ida y vuelta: en `fill.solid` queda como línea (unida al cuerpo), sin área. */
+const thin = (pts, radius = 0) => {
+  const rr = Array.isArray(radius) ? radius : pts.map(() => radius);
+  return `${roundline(pts, rr)}${roundline([...pts].reverse(), [...rr].reverse()).replace(/^M[^LA]*/, '')}`;
+};
 
 /**
  * Contorno de un sq() con huecos. Cada hueco va de `from` a `to` en sentido horario, y cada
@@ -232,11 +239,12 @@ const OWN = {
   sync() {
     return own(syncGlyph(BC, 3.75, 2.4, 25, 35), RING);
   },
-  // Persona que se asoma por la esquina (compartir).
+  // Persona que se asoma por la esquina (compartir). Despeja también el círculo de la insignia: con
+  // solo la cabeza y los hombros quedaba un trozo del borde de la base entre los dos.
   person() {
     const h = circ(BC[0], 14.75, 1.85);
     const s = `M${pt([BC[0] - 3.25, 21.75])}${arcTo(BC[0], 21.75, 3.25, 180, 360)}Z`;
-    return own([h, s], `${h}${s}`, { solid: [h, s] });
+    return own([h, s], `${RING}${h}${s}`, { solid: [h, s] });
   },
   // La nube del set a escala, sentada en la esquina.
   cloud() {
@@ -254,6 +262,8 @@ const OWN = {
 
 // ── Íconos ────────────────────────────────────────────────────────────────────────────────────
 const icons = {};
+/** Rellenos que no salen de los trazos tal cual (se asignan después del relleno por omisión). */
+const FILL_EXTRA = {};
 const add = (name, tags, d, extra = {}) => {
   icons[name] = { tags, d, ...extra };
 };
@@ -416,11 +426,11 @@ add('files', ['archivos', 'varios documentos', 'copias', 'files', 'documents'], 
 {
   const k = (a, b, c) => roundline([a, b, c], [0, 2.25, 0]);
   add('file-scan', ['escanear', 'digitalizar', 'escáner', 'scan document', 'scanner'], [
+    sq(8.25, 6.75, 7.5, 10.5, 2.25, { square: ['br'] }),
     k([3, 7.75], [3, 3], [7.75, 3]),
     k([16.25, 3], [21, 3], [21, 7.75]),
     k([21, 16.25], [21, 21], [16.25, 21]),
     k([7.75, 21], [3, 21], [3, 16.25]),
-    sq(8.25, 6.75, 7.5, 10.5, 2.25, { square: ['br'] }),
   ]);
 }
 // Triturar: la hoja entra por la boca de la trituradora y sale en cuatro tiras alineadas con
@@ -485,10 +495,15 @@ withBadge('folder-cloud', ['carpeta en la nube', 'en línea', 'carpeta remota', 
   }
   const S = [T1[0] + dir[0] * lo, T1[1] + dir[1] * lo];
   const tab = 'h2.83c.66 0 1.3.27 1.77.74l.93.93c.47.47 1.1.73 1.77.73';
-  // Un solo trazo: rellenado, su cierre (del fondo al arranque de la tapa) deja la boca abierta.
-  add('folder-open', ['carpeta abierta', 'abrir', 'explorar', 'open folder', 'browse'], [
-    `${roundline([S, T1, T2, B2], [0, 1.6, 1.6, 0])}H${N(2.75 + r)}a${r} ${r} 0 0 1 -${r} -${r}V7.35a${r} ${r} 0 0 1 ${r} -${r}${tab}H16.4a${r} ${r} 0 0 1 ${r} ${r}`,
-  ]);
+  const back = `H${N(2.75 + r)}a${r} ${r} 0 0 1 -${r} -${r}V7.35a${r} ${r} 0 0 1 ${r} -${r}${tab}H16.4a${r} ${r} 0 0 1 ${r} ${r}`;
+  // Un solo trazo: el fondo termina a 3 de la tapa (1.5 de aire).
+  add('folder-open', ['carpeta abierta', 'abrir', 'explorar', 'open folder', 'browse'], [`${roundline([S, T1, T2, B2], [0, 1.6, 1.6, 0])}${back}`]);
+  // Rellena: la silueta entera (el fondo baja hasta la tapa) y un canal calado que dibuja el borde
+  // de la tapa; muere a 1.5 del costado del fondo, que sigue unido a ella como en el contorno.
+  FILL_EXTRA['folder-open'] = {
+    solid: [`${roundline([[19.25, 9.75], [19.25, 12.75], T2, B2], [0, 0, 1.6, 0])}${back}Z`],
+    cut: [roundline([S, T1, [17.75, 12.75]], [0, 1.6, 0])],
+  };
 }
 // Varias carpetas: la de atrás asoma como escuadra a 3 de la de enfrente, con sus dos lados
 // hasta donde empezarían sus esquinas (como `files`).
@@ -498,6 +513,7 @@ add('folders', ['carpetas', 'varias carpetas', 'directorios', 'folders', 'direct
   `M2.75 14.65V7.35a2.85 2.85 0 0 1 2.85-2.85H15.4`,
 ]);
 // Árbol: una carpeta raíz y dos hijas colgadas de su tronco.
+const TRUNK = [[[5.75, 7.5], [5.75, 19.5], [12.25, 19.5]], [0, 2.25, 0]];
 {
   const s = 0.5;
   const small = (x, y) => folder({ x, y, w: 9, h: 4.75, s });
@@ -505,7 +521,7 @@ add('folders', ['carpetas', 'varias carpetas', 'directorios', 'folders', 'direct
     small(2.75, 2.75),
     small(12.25, 8.75),
     small(12.25, 16.5),
-    roundline([[5.75, 7.5], [5.75, 19.5], [12.25, 19.5]], [0, 2.25, 0]),
+    roundline(...TRUNK),
     line([5.75, 11.75], [12.25, 11.75]),
   ]);
 }
@@ -561,8 +577,10 @@ add('cloud-alert', ['aviso de nube', 'problema de sincronización', 'atención',
   const r = 2.5;
   add('cloud-search', ['buscar en la nube', 'lupa', 'encontrar', 'cloud search', 'find in cloud'], [cloud(), circ(...c, r), line(polar(...c, r, 45), [15, 15.25])]);
 }
-// Sincronizar: el par de flechas más grande que cabe en el hueco con sus puntas lejos del borde.
-add('cloud-sync', ['sincronizar', 'nube', 'al día', 'cloud sync', 'syncing'], [cloud(), ...syncGlyph([CX, 12.3], 2.5, 1.9, 25, 45, 10)]);
+// Sincronizar: dentro de la nube las flechas no caben con 1.5 de aire a sus valles (quedaban
+// garabatos de 2.5); van como insignia, las mismas de `folder-sync`, y la nube sube 2.5 para que
+// la insignia solo le tome la base y la mitad baja de la bocanada derecha.
+withBadge('cloud-sync', ['sincronizar', 'nube', 'al día', 'cloud sync', 'syncing'], [cloud(-2.5)], OWN.sync());
 // Candado: el del núcleo a escala, en el hueco de la nube.
 add('cloud-lock', ['nube privada', 'candado', 'cifrado', 'cloud lock', 'secure cloud'], [
   cloud(),
@@ -607,7 +625,7 @@ add('file-server', ['servidor de archivos', 'nas', 'red', 'file server', 'networ
 // Respaldo: la flecha da la vuelta y vuelve a entrar a la unidad.
 {
   const a = arc(12, 11, 6.5, 0, -180);
-  add('backup', ['respaldo', 'copia de seguridad', 'restaurar', 'backup', 'time machine'], [a.d, head(a.end, a.tangent, 3.4), ...unit(14, 7.25, 2.25)]);
+  add('backup', ['respaldo', 'copia de seguridad', 'restaurar', 'backup', 'time machine'], [...unit(14, 7.25, 2.25), a.d, head(a.end, a.tangent, 3.4)]);
 }
 // Archivero: tres cajones con su jaladera.
 add('filing-cabinet', ['archivero', 'cajones', 'expedientes', 'filing cabinet', 'records'], [
@@ -749,43 +767,21 @@ add('newspaper', ['periódico', 'noticias', 'prensa', 'revista', 'newspaper', 'n
   const sheets = [[3.75, 2.75], [6.75, 5.75], [9.75, 8.75]].map(([x, y]) => [x, y, 11, 12.5, r]);
   const behind = (b, n) => box(...b, { square: ['br'], gaps: [{ from: ['t', n[0] + n[2] - p], to: ['l', n[1] + n[3] - p] }] });
   add('versions', ['historial de versiones', 'versiones', 'revisiones', 'version history', 'revisions'], [
-    behind(sheets[0], sheets[1]),
-    behind(sheets[1], sheets[2]),
     sq(...sheets[2], { square: ['br'] }),
+    behind(sheets[1], sheets[2]),
+    behind(sheets[0], sheets[1]),
   ]);
 }
 
-// ── Variantes, espejo y movimiento ────────────────────────────────────────────────────────────
-// Ya viene tachado: no se vuelve a tachar.
-icons['cloud-off'].variants = { slash: false };
-// Con insignia en la esquina: el tache la atravesaría.
-for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { slash: false };
-// El visor ya lo encierra.
-icons['file-scan'].variants = { circle: false, square: false };
-
-// Espejo: lo que entra, sale, se reenvía o crece hacia un lado.
-for (const name of ['file-import', 'file-export', 'file-share', 'file-move', 'folder-move', 'clipboard-copy', 'file-analytics']) icons[name].mirror = true;
-
-// Movimiento: parts = índices de d que se mueven; origin = pivote; vector = desplazamiento.
-icons['file-download'].motion = { effect: 'bounce', parts: [1, 2], vector: [0, 2] };
-icons['file-upload'].motion = { effect: 'bounce', parts: [1, 2], vector: [0, -2] };
-icons['cloud-download'].motion = { effect: 'bounce', parts: [1, 2], vector: [0, 2] };
-icons['cloud-upload'].motion = { effect: 'bounce', parts: [1, 2], vector: [0, -2] };
-icons['trash-restore'].motion = { effect: 'bounce', parts: [3, 4], vector: [0, -2] };
-icons['file-import'].motion = { effect: 'slide', parts: [1, 2], vector: [2, 0] };
-icons['file-export'].motion = { effect: 'slide', parts: [1, 2], vector: [2, 0] };
-icons['clipboard-copy'].motion = { effect: 'slide', parts: [2, 3], vector: [2, 0] };
-icons['file-sync'].motion = { effect: 'spin', parts: [1, 2, 3, 4], origin: [12, 12] };
-icons['cloud-sync'].motion = { effect: 'spin', parts: [1, 2, 3, 4], origin: [CX, 12.3] };
-icons.paperclip.motion = { effect: 'wiggle', origin: [12, 12.25] };
-
-// Relleno (DESIGN.md › Relleno), por índice de d: por omisión el cuerpo (el primer trazo) se
-// rellena y los detalles se calan; aquí van las excepciones. `lines` sigue siendo línea con 1.5 de
-// aire alrededor; lo que toca al cuerpo y debe seguir unido va en `solid`.
+// ── Relleno (DESIGN.md › Relleno) ─────────────────────────────────────────────────────────────
+// Por índice de d: por omisión el cuerpo (el primer trazo) se rellena y los detalles se calan;
+// aquí van las excepciones. `lines` sigue siendo línea con 1.5 de aire alrededor; lo que toca al
+// cuerpo y debe seguir unido va en `solid` (si es un trazo abierto con quiebre, de ida y vuelta
+// con `thin()` para que no encierre área).
 const all = (name) => icons[name].d.map((_, i) => i);
 const FILL = {
   files: { solid: [0], lines: [1] },
-  'file-scan': { solid: [4], lines: [0, 1, 2, 3] },
+  'file-scan': { solid: [0], lines: [1, 2, 3, 4] },
   'file-shredder': { solid: all('file-shredder') },
   'file-import': { solid: [0], lines: [1, 2] },
   'file-export': { solid: [0], lines: [1, 2] },
@@ -795,14 +791,14 @@ const FILL = {
   'cloud-download': { solid: [0], lines: [1, 2] },
   'cloud-off': { solid: [0], lines: [1] },
   'file-server': { solid: [0, 1], cut: [2, 3] },
-  backup: { solid: [2], cut: [3, 4], lines: [0, 1] },
+  backup: { solid: [0], cut: [1, 2], lines: [3, 4] },
   'trash-restore': { solid: [0, 1, 2], cut: [3, 4] },
   'clipboard-copy': { solid: [0, 1], lines: [2, 3] },
   notebook: { solid: all('notebook') },
   bookshelf: { solid: [0, 2, 3], cut: [1] },
   books: { solid: [0, 1, 2], cut: [3, 4, 5] },
   newspaper: { solid: [0, 1], cut: [2, 3, 4, 5] },
-  versions: { solid: [2], lines: [0, 1] },
+  versions: { solid: [0], lines: [1, 2] },
 };
 // El portapapeles: la tabla y la pinza se rellenan; lo de adentro se cala.
 for (const name of Object.keys(icons)) if (name.startsWith('clipboard') && !FILL[name]) FILL[name] = { solid: [0, 1], cut: all(name).slice(2) };
@@ -811,11 +807,366 @@ for (const [name, icon] of Object.entries(icons)) {
   const pick = (ix) => ix.map((i) => icon.d[i]);
   icon.fill = { solid: pick(spec.solid), ...(spec.cut?.length && { cut: pick(spec.cut) }), ...(spec.lines?.length && { lines: pick(spec.lines) }) };
 }
+Object.assign(icons['folder-open'], { fill: FILL_EXTRA['folder-open'] });
 // La trituradora: la hoja y la máquina se separan por el canto de la boca; los libros apilados,
 // por los cantos que comparten (sus hojas no caben caladas en 4.5 de grueso).
 icons['file-shredder'].fill.cut = [line([4.75, 9.25], [19.25, 9.25])];
 icons.books.fill = { solid: icons.books.fill.solid, cut: [line([7.5, 12.25], [16.5, 12.25]), line([7.5, 16.75], [19, 16.75])] };
+// El tronco del árbol une la raíz con las hijas: línea, no área.
+icons['folder-tree'].fill.solid[3] = thin(...TRUNK);
+// La pinza (como `paste` y `clipboard-check` de Edición): un canal separa su mitad de abajo del
+// tablero, así se lee como pieza aparte y no como un frasco.
+const clipCut = (x = 4.75, w = 14.5) => {
+  const p = 1.6 * 2.75;
+  return roundline([[x + p, 4.5], [x + p, 6.25], [x + w - p, 6.25], [x + w - p, 4.5]], [0, 1.05, 1.05, 0]);
+};
+for (const name of Object.keys(icons))
+  if (name.startsWith('clipboard')) {
+    const icon = icons[name];
+    icon.fill.cut = [name === 'clipboard-copy' ? clipCut(8.25, 13) : clipCut(), ...(icon.fill.cut ?? [])];
+  }
 // Solo una línea abierta: su relleno es el mismo contorno.
 icons.paperclip.fill = false;
+
+// ── Piezas con nombre (DESIGN.md › Piezas con nombre) ─────────────────────────────────────────
+// `body` es el contenedor (archivo, carpeta, nube, unidad); la insignia sale sola como `badge`.
+const PARTS = {
+  'file-lock': { body: [0], lock: [1], shackle: [2] },
+  'file-unlock': { body: [0], lock: [1], shackle: [2] },
+  'file-edit': { body: [0], pencil: [1, 2] },
+  'file-bookmark': { body: [0], ribbon: [1] },
+  'file-code': { body: [0], code: [1, 2] },
+  'file-image': { body: [0], sun: [1], landscape: [2] },
+  'file-video': { body: [0], play: [1] },
+  'file-audio': { body: [0], note: [1, 2] },
+  'file-pdf': { body: [0], lines: [1, 2], figure: [3] },
+  'file-zip': { body: [0], teeth: [1, 2, 3], pull: [4] },
+  'file-spreadsheet': { body: [0], grid: [1, 2, 3] },
+  'file-presentation': { body: [0], chart: [1], slice: [2] },
+  'file-font': { body: [0], letter: [1, 2] },
+  'file-json': { body: [0], braces: [1, 2] },
+  'file-terminal': { body: [0], prompt: [1], cursor: [2] },
+  'file-3d': { body: [0], cube: [1, 2, 3] },
+  'file-person': { body: [0], head: [1], shoulders: [2] },
+  'file-signature': { body: [0], signature: [1], line: [2] },
+  'file-certificate': { body: [0], lines: [1, 2] },
+  'file-download': { body: [0], arrow: [1, 2] },
+  'file-upload': { body: [0], arrow: [1, 2] },
+  'file-transfer': { body: [0], up: [1, 2], down: [3, 4] },
+  'file-import': { body: [0], arrow: [1, 2] },
+  'file-export': { body: [0], arrow: [1, 2] },
+  'file-share': { body: [0], arrow: [1, 2] },
+  'file-diff': { body: [0], plus: [1, 2], minus: [3] },
+  'file-chart': { body: [0], bars: [1, 2, 3] },
+  'file-analytics': { body: [0], trend: [1] },
+  'file-preview': { body: [0], eye: [1], pupil: [2] },
+  'file-sparkle': { body: [0], sparkle: [1] },
+  'file-sync': { body: [0], arrows: [1, 2, 3, 4] },
+  files: { front: [0], back: [1] },
+  'file-scan': { page: [0], frame: [1, 2, 3, 4] },
+  'file-shredder': { page: [0], body: [1], strips: [2, 3, 4, 5] },
+  folders: { front: [0, 1], back: [2] },
+  'folder-tree': { root: [0], children: [1, 2], branches: [3, 4] },
+  'cloud-upload': { body: [0], arrow: [1, 2] },
+  'cloud-download': { body: [0], arrow: [1, 2] },
+  'cloud-check': { body: [0], mark: [1] },
+  'cloud-x': { body: [0], mark: [1, 2] },
+  'cloud-plus': { body: [0], mark: [1, 2] },
+  'cloud-minus': { body: [0], mark: [1] },
+  'cloud-alert': { body: [0], mark: [1, 2] },
+  'cloud-search': { body: [0], lens: [1], handle: [2] },
+  'cloud-lock': { body: [0], lock: [1], shackle: [2] },
+  'cloud-bolt': { body: [0], bolt: [1] },
+  'cloud-off': { body: [0], slash: [1] },
+  'file-cloud': { body: [0], cloud: [1] },
+  'hard-drive': { body: [0], platter: [1, 2], arm: [3, 4] },
+  'external-drive': { body: [0], slot: [1], light: [2] },
+  'file-server': { folder: [0], body: [1], slot: [2], light: [3] },
+  backup: { body: [0], slot: [1], light: [2], arrow: [3, 4] },
+  'filing-cabinet': { body: [0], drawers: [1, 2], handles: [3, 4, 5] },
+  'trash-restore': { lid: [0, 1], body: [2], arrow: [3, 4] },
+  paperclip: { clip: [0] },
+  clipboard: { board: [0], clip: [1] },
+  'clipboard-list': { board: [0], clip: [1], bullets: [2, 4, 6], lines: [3, 5, 7] },
+  'clipboard-plus': { board: [0], clip: [1], mark: [2, 3] },
+  'clipboard-x': { board: [0], clip: [1], mark: [2, 3] },
+  'clipboard-copy': { board: [0], clip: [1], arrow: [2, 3] },
+  'clipboard-clock': { board: [0], clip: [1], face: [2], hands: [3] },
+  'clipboard-person': { board: [0], clip: [1], head: [2], shoulders: [3] },
+  'clipboard-edit': { board: [0], clip: [1], pencil: [2, 3] },
+  notebook: { cover: [0], rings: [1, 2, 3] },
+  book: { cover: [0], spine: [1], ribbon: [2] },
+  'book-open': { pages: [0], spine: [1] },
+  bookshelf: { books: [0, 1], leaning: [2], shelf: [3] },
+  books: { books: [0, 1, 2], edges: [3, 4, 5] },
+  newspaper: { page: [0], fold: [1], headline: [2], photo: [3], lines: [4, 5] },
+  versions: { front: [0], back: [1, 2] },
+};
+for (const [name, icon] of Object.entries(icons)) {
+  if (PARTS[name]) icon.parts = PARTS[name];
+  // Con insignia: el contenedor (y el pliegue de la carpeta)
+  else if (icon.badge) icon.parts = name.startsWith('folder') ? { body: [0], fold: [1] } : { body: [0] };
+}
+
+// ── Movimiento (DESIGN.md › Movimiento) ───────────────────────────────────────────────────────
+// La insignia se mueve sola (`parts: ['badge']`): el reloj gira sus manecillas dentro del aro, la
+// flecha se desplaza, el corazón y la estrella laten, la alerta y la pregunta se balancean.
+const MOTION = {
+  'file-download': { effect: 'bounce', parts: ['arrow'], vector: [0, 2] },
+  'file-upload': { effect: 'bounce', parts: ['arrow'], vector: [0, -2] },
+  'cloud-download': { effect: 'bounce', parts: ['arrow'], vector: [0, 2] },
+  'cloud-upload': { effect: 'bounce', parts: ['arrow'], vector: [0, -2] },
+  'trash-restore': { effect: 'bounce', parts: ['arrow'], vector: [0, -2] },
+  'folder-download': { effect: 'bounce', parts: ['badge'], vector: [0, 1.5] },
+  'folder-upload': { effect: 'bounce', parts: ['badge'], vector: [0, -1.5] },
+  'file-shredder': { effect: 'bounce', parts: ['strips'], vector: [0, 1.5] },
+  'file-import': { effect: 'slide', parts: ['arrow'], vector: [2, 0] },
+  'file-export': { effect: 'slide', parts: ['arrow'], vector: [2, 0] },
+  'clipboard-copy': { effect: 'slide', parts: ['arrow'], vector: [2, 0] },
+  'file-share': { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] },
+  'file-move': { effect: 'slide', parts: ['badge'], vector: [1.5, 0] },
+  'folder-move': { effect: 'slide', parts: ['badge'], vector: [1.5, 0] },
+  'file-sync': { effect: 'spin', parts: ['arrows'], origin: [12, 12] },
+  'folder-sync': { effect: 'spin', parts: ['badge'], origin: BC },
+  'cloud-sync': { effect: 'spin', parts: ['badge'], origin: BC },
+  'file-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'folder-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'clipboard-clock': { effect: 'spin', parts: ['hands'], origin: [12, 13.75] },
+  'file-alert': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'folder-alert': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'file-question': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'cloud-alert': { effect: 'wiggle', parts: ['mark'], origin: [CX, 15.5] },
+  'file-edit': { effect: 'wiggle', parts: ['pencil'], origin: [8.5, 16.25] },
+  'clipboard-edit': { effect: 'wiggle', parts: ['pencil'], origin: [8.75, 17.75] },
+  paperclip: { effect: 'wiggle', parts: ['clip'], origin: [12, 12.25] },
+  'file-heart': { effect: 'beat', parts: ['badge'], origin: [17.25, 17.5] },
+  'folder-heart': { effect: 'beat', parts: ['badge'], origin: [17.25, 17.5] },
+  'file-star': { effect: 'beat', parts: ['badge'], origin: BC },
+  'folder-star': { effect: 'beat', parts: ['badge'], origin: BC },
+  'file-sparkle': { effect: 'beat', parts: ['sparkle'], origin: [12, 12] },
+  'cloud-bolt': { effect: 'beat', parts: ['bolt'], origin: [CX, 12.2] },
+  'file-scan': { effect: 'beat', parts: ['frame'], origin: [12, 12] },
+  'file-cloud': { effect: 'float', parts: ['cloud'], vector: [0, -1.5] },
+  'folder-cloud': { effect: 'float', parts: ['badge'], vector: [0, -1.5] },
+};
+for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
+
+// ── Espejo (DESIGN.md › Espejo) ───────────────────────────────────────────────────────────────
+// Lo que entra, sale, se reenvía o crece hacia un lado; los lápices; la firma, la lista, la plana
+// del periódico y el árbol con sangría, que siguen la dirección de lectura.
+for (const name of [
+  'file-import', 'file-export', 'file-share', 'file-move', 'folder-move', 'clipboard-copy', 'file-analytics',
+  'file-edit', 'clipboard-edit', 'file-signature', 'clipboard-list', 'newspaper', 'folder-tree',
+])
+  icons[name].mirror = true;
+
+// ── Variantes automáticas (DESIGN.md › Variantes) ─────────────────────────────────────────────
+const off = (names, v) => {
+  for (const n of names) icons[n].variants = { ...icons[n].variants, ...v };
+};
+// Con insignia: al 58 % su signo deja de leerse (y el encierro relleno la pierde); el tache la
+// atravesaría.
+off(Object.keys(icons).filter((n) => icons[n].badge), { circle: false, square: false, slash: false });
+// El visor ya lo encierra.
+off(['file-scan'], { circle: false, square: false });
+// Ya vienen tachados o ya dicen «no»: tacharlos no agrega nada.
+off(['cloud-off', 'cloud-x', 'clipboard-x'], { slash: false });
+
+// ── 16 px (DESIGN.md › 16 px) ─────────────────────────────────────────────────────────────────
+// El motor no ajusta al pixel un `small`: aquí se ajusta con `snap`. Los signos nuevos van de
+// centro a centro de pixel (0.75 + 1.5k) y sus diagonales a 45°, así salen nítidos.
+const px = (k) => 0.75 + 1.5 * k;
+const sharp = (list) => list.map((d) => snap(d));
+const sharpFill = (fill) => Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, sharp(v)]));
+
+// Insignias: el círculo de 5.7 px no deja lugar a su signo (la palomita, la x, la estrella y la
+// pregunta eran una mancha gris). A 16 px el signo va sin círculo, de 5 a 7 pixeles, centrado en
+// el pixel de la insignia (11, 11); el motor despeja el mismo círculo que a 24 más el signo con su
+// aire. El reloj conserva su aro (es la carátula) con las manecillas por centros de pixel. Los puntos
+// son de un pixel (r 0.1), con un pixel de aire al trazo que acompañan.
+const at = (dx, dy) => [px(11 + dx), px(11 + dy)];
+const SIGN16 = {
+  plus: () => [line(at(0, -2), at(0, 2)), line(at(-2, 0), at(2, 0))],
+  minus: () => [line(at(-2, 0), at(2, 0))],
+  check: () => [line(at(-2, 0), at(0, 2), at(3, -1))],
+  x: () => [line(at(-2, -2), at(2, 2)), line(at(2, -2), at(-2, 2))],
+  alert: () => [line(at(0, -3), at(0, 0)), circ(...at(0, 2), 0.1)],
+  question: () => [line(at(-2, -2), at(-1, -3), at(1, -3), at(2, -2), at(0, 0), at(0, 1)), circ(...at(0, 3), 0.1)],
+  'arrow-up': () => [line(at(0, 2), at(0, -2)), line(at(-2, 0), at(0, -2), at(2, 0))],
+  'arrow-down': () => [line(at(0, -2), at(0, 2)), line(at(-2, 0), at(0, 2), at(2, 0))],
+  'arrow-right': () => [line(at(-2, 0), at(2, 0)), line(at(0, -2), at(2, 0), at(0, 2))],
+  star: () => [roundpoly([at(0, -3), at(1, -1), at(3, -1), at(1.5, 0.5), at(2, 3), at(0, 1.5), at(-2, 3), at(-1.5, 0.5), at(-3, -1), at(-1, -1)], 0.3)],
+  heart: () => [roundpoly([at(-2, -1), at(-1, -2), at(0, -1), at(1, -2), at(2, -1), at(2, 0), at(0, 2), at(-2, 0)], 0.35)],
+  lock: () => [sq(px(9), px(11), 6, 4.5, 1.2, { square: ['br'] }), `M${N(px(10))} ${N(px(11))}V${N(px(10))}A1.5 1.5 0 0 1 ${N(px(12))} ${N(px(10))}V${N(px(11))}`],
+  search: () => [circ(16.5, 16.5, 3), line(at(1, 1), at(3, 3))],
+  sync: () => [
+    `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${N(px(13))}`,
+    line(at(1, -3), at(2, -2), at(1, -1)),
+    `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${N(px(9))}`,
+    line(at(-1, 3), at(-2, 2), at(-1, 1)),
+  ],
+  person: () => [circ(17.25, 14.25, 1.5), `M14.25 21.75A3 3 0 0 1 20.25 21.75Z`],
+  cloud: () => [clip(cloudPrims(5.125, 0.5, 5.125), [])],
+  seal: () => [circ(17.25, 15.75, 3), line([15.75, 18.35], [15.75, 21.75]), line([18.75, 18.35], [18.75, 21.75])],
+};
+// Relleno de cada signo: las figuras cerradas, sólidas; las líneas abiertas siguen siendo línea.
+const SIGN16_FILL = {
+  star: (d) => ({ solid: d }),
+  heart: (d) => ({ solid: d }),
+  lock: (d) => ({ solid: d }),
+  search: (d) => ({ solid: d }),
+  person: (d) => ({ solid: d }),
+  cloud: (d) => ({ solid: d }),
+  seal: (d) => ({ solid: d }),
+};
+function badge16(kind) {
+  if (kind === 'clock') {
+    const face = circ(...BC, 4.5);
+    const hands = line(at(0, -2), at(0, 0), at(1, 1));
+    return { d: [face, hands], knock: face, fill: { solid: [face], cut: [hands] } };
+  }
+  const d = SIGN16[kind]();
+  return { d, knock: `${RING}${d.join('')}`, ...(SIGN16_FILL[kind] && { fill: SIGN16_FILL[kind](d) }) };
+}
+// La carpeta ajustada: el ajuste lleva sus costados a 2.25 y 21.75 y dejaba el pliegue medio pixel
+// corto; aquí llega a ellos.
+const FOLDER16 = [snap(FOLDER[0]), line([2.25, 9.75], [21.75, 9.75])];
+// La insignia de cada ícono a 16 px.
+const KIND16 = {
+  plus: 'plus', minus: 'minus', check: 'check', x: 'x', alert: 'alert', clock: 'clock', star: 'star', move: 'arrow-right',
+  question: 'question', heart: 'heart', search: 'search', lock: 'lock', download: 'arrow-down', upload: 'arrow-up',
+  sync: 'sync', shared: 'person', cloud: 'cloud', certificate: 'seal',
+};
+for (const [name, icon] of Object.entries(icons)) {
+  if (!icon.badge) continue;
+  const kind = KIND16[name.split('-').slice(1).join('-')];
+  const base = name.startsWith('folder') ? { d: FOLDER16, fill: { solid: [FOLDER16[0]], cut: [FOLDER16[1]] } } : { d: sharp(icon.d), fill: sharpFill(icon.fill) };
+  icon.small = { ...base, badge: badge16(kind) };
+}
+
+// Glifos propios a 16 px. g(columna, fila) es el centro de un pixel. El archivo ajustado ocupa las
+// columnas 3–12 y las filas 1–14: su glifo vive en las columnas 5–10 y las filas 3–12 (1 px de aire
+// al borde). Las flechas llevan asta y punta en la misma columna (al ajustarse, el asta de 24 caía
+// en un pixel y la punta en otro), las palomitas y taches de 4 y 5 pixeles, como en Edición.
+const g = (c, r) => [px(c), px(r)];
+const pl = (...pts) => line(...pts.map(([c, r]) => g(c, r)));
+const plus16 = (c, r, n = 2) => [pl([c, r - n], [c, r + n]), pl([c - n, r], [c + n, r])];
+const cross16 = (c, r, n = 2) => [pl([c - n, r - n], [c + n, r + n]), pl([c + n, r - n], [c - n, r + n])];
+const arrowV = (c, from, to, n = 2) => {
+  const s = Math.sign(to - from);
+  return [pl([c, from], [c, to]), pl([c - n, to - s * n], [c, to], [c + n, to - s * n])];
+};
+const arrowH = (r, from, to, n = 2) => {
+  const s = Math.sign(to - from);
+  return [pl([from, r], [to, r]), pl([to - s * n, r - n], [to, r], [to - s * n, r + n])];
+};
+/** El lápiz de 24 con sus cantos sobre diagonales de pixel (medio ancho 1.59: x + y múltiplo de 1.5). */
+const pencil16 = (tip) => pencil(tip, -45, 8.5, 1.59, 2.25);
+const set16 = (name, d, fill) => {
+  icons[name].small = { d: sharp(d), ...(fill && { fill: sharpFill(fill) }) };
+};
+/** Como el relleno de 24: el primer trazo se rellena y lo demás se cala. */
+const body16 = (name, d) => set16(name, d, { solid: [d[0]], cut: d.slice(1) });
+const FILE16 = file();
+// El portapapeles ajustado: la pinza cae en 4 × 4 pixeles y el borde de la tabla llega justo a sus
+// costados (con la de 24 ajustada quedaba 0.6 corto); su canal, igual.
+const board16 = (x, w) => {
+  const [a, b] = [x + 1.6 * 2.75, x + w - 1.6 * 2.75].map((v) => px(Math.round((v - 0.75) / 1.5)));
+  return {
+    pinza: sq(a, 2.25, b - a, 4.5, 1.05),
+    cut: roundline([[a, 5.25], [a, 6.75], [b, 6.75], [b, 5.25]], [0, 1.05, 1.05, 0]),
+    gap: { from: ['t', a], to: ['t', b] },
+  };
+};
+const B16 = board16(4.75, 14.5);
+const BOARD16 = [box(4.75, 4.5, 14.5, 16.75, 2.75, { square: ['br'], gaps: [B16.gap] }), B16.pinza];
+const boardFill16 = (d) => ({ solid: d.slice(0, 2), cut: [B16.cut, ...d.slice(2)] });
+
+// Archivo: lápiz, video, comprimido (dientes de 3 px que se cruzan en la columna 8 y tirador de 5 × 4 con su hueco), presentación,
+// 3D, persona (cabeza y hombros separados por 1 px), firma, analítica, vista previa, sincronizar,
+// compartir, bajar, subir y comparar.
+body16('file-edit', [FILE16, ...pencil16([8.25, 16.5])]);
+body16('file-video', [FILE16, roundpoly([g(6, 5), g(10, 8), g(6, 11)], 0.6)]);
+body16('file-zip', [FILE16, pl([6, 3], [8, 3]), pl([8, 5], [10, 5]), pl([6, 7], [8, 7]), sq(px(6), px(9), 6, 4.5, 1.2)]);
+// Presentación: la rebanada suelta no cabe con 1 px de aire; el pastel con el cuarto que falta.
+body16('file-presentation', [FILE16, `M12 ${N(px(8))}H${N(px(10))}${arcTo(12, px(8), 3.75, 0, 270)}Z`]);
+// El cubo: sus cantos a 30° se volvían una mancha (o un barril, en isométrico de pixel); a 16 px va
+// en caballera, con el frente cuadrado y la tapa y el costado a 45°.
+body16('file-3d', [FILE16, roundpoly([g(5, 7), g(7, 5), g(10, 5), g(10, 8), g(8, 10), g(5, 10)], 0.3), pl([5, 7], [8, 7], [10, 5]), pl([8, 7], [8, 10])]);
+body16('file-person', [FILE16, circ(12, 8.25, 2.25), 'M9 17.25A3 3 0 0 1 15 17.25Z']);
+body16('file-signature', [FILE16, pl([5, 9], [7, 7], [9, 9], [10, 8]), pl([5, 11], [10, 11])]);
+body16('file-analytics', [FILE16, pl([5, 11], [7, 9], [8, 10], [10, 8])]);
+body16('file-preview', [FILE16, roundpoly([g(5, 8), g(7, 6), g(8, 6), g(10, 8), g(8, 10), g(7, 10)], 0.4), circ(12, px(8), 0.4)]);
+body16('file-sync', [
+  FILE16,
+  `M${pt(g(5, 7))}A3 3 0 0 1 ${pt(g(7, 5))}H${N(px(9))}`,
+  pl([8, 4], [9, 5], [8, 6]),
+  `M${pt(g(10, 8))}A3 3 0 0 1 ${pt(g(8, 10))}H${N(px(6))}`,
+  pl([7, 11], [6, 10], [7, 9]),
+]);
+body16('file-share', [FILE16, `M${pt(g(5, 11))}V${N(px(9))}A3 3 0 0 1 ${pt(g(7, 7))}H${N(px(10))}`, pl([8, 5], [10, 7], [8, 9])]);
+body16('file-download', [FILE16, ...arrowV(8, 4, 11)]);
+body16('file-upload', [FILE16, ...arrowV(8, 11, 4)]);
+body16('file-diff', [FILE16, ...plus16(8, 6), pl([6, 11], [10, 11])]);
+// Importar y exportar: el hueco del borde se centra en la flecha (fila 8).
+{
+  const imp = box(8.25, 3.75, 13.5, 16.5, 3.25, { square: ['br'], gaps: [{ from: ['l', 15.75], to: ['l', 9.75] }] });
+  const exp = box(2.25, 3.75, 13.5, 16.5, 3.25, { square: ['br'], gaps: [{ from: ['r', 9.75], to: ['r', 15.75] }] });
+  set16('file-import', [imp, ...arrowH(8, 1, 10)], { solid: [imp], lines: arrowH(8, 1, 10) });
+  set16('file-export', [exp, ...arrowH(8, 5, 14)], { solid: [exp], lines: arrowH(8, 5, 14) });
+}
+
+// Nube: los signos de pixel en el centro de su hueco, a 3 o más de su contorno (el tache de 3 × 3,
+// como el de 24 a escala); las flechas, con su base abierta.
+{
+  const c = cloud();
+  body16('cloud-check', [c, pl([5, 9], [6, 10], [9, 7])]);
+  body16('cloud-x', [c, ...cross16(8, 8, 1)]);
+  body16('cloud-plus', [c, ...plus16(8, 8)]);
+  body16('cloud-alert', [c, pl([8, 5], [8, 8]), circ(px(8), px(10), 0.1)]);
+  body16('cloud-search', [c, circ(12, 12, 2.25), line([13.5, 13.5], g(10, 10))]);
+  body16('cloud-bolt', [c, pl([9, 6], [7, 8], [9, 8], [7, 10])]);
+  const up = arrowV(8, 14, 5);
+  const upCloud = cloud(-2.5, [cap(g(8, 5), g(8, 14))]);
+  set16('cloud-upload', [upCloud, ...up], { solid: [upCloud], lines: up });
+  const down = arrowV(8, 6, 14);
+  const downCloud = cloud(-2.5, [cap(g(8, 6), g(8, 14))]);
+  set16('cloud-download', [downCloud, ...down], { solid: [downCloud], lines: down });
+}
+
+// Portapapeles: tache, más, lista, persona y lápiz por centros de pixel; copiar con su hueco
+// centrado en la flecha.
+set16('clipboard-x', [...BOARD16, ...cross16(8, 9)], boardFill16([...BOARD16, ...cross16(8, 9)]));
+set16('clipboard-plus', [...BOARD16, ...plus16(8, 9)], boardFill16([...BOARD16, ...plus16(8, 9)]));
+{
+  const rows = [6, 9, 12].flatMap((r) => [circ(px(5), px(r), 0.1), pl([7, r], [10, r])]);
+  set16('clipboard-list', [...BOARD16, ...rows], boardFill16([...BOARD16, ...rows]));
+}
+{
+  const person = [circ(12, 11.5, 1.5), 'M9.5 18.75A2.5 2.5 0 0 1 14.5 18.75Z'];
+  set16('clipboard-person', [...BOARD16, ...person], boardFill16([...BOARD16, ...person]));
+}
+set16('clipboard-edit', [...BOARD16, ...pencil16([8.25, 18])], boardFill16([...BOARD16, ...pencil16([8.25, 18])]));
+{
+  const c = board16(8.25, 13);
+  const board = box(8.25, 4.5, 13, 16.75, 2.75, { square: ['br'], gaps: [{ from: ['l', 15.75], to: ['l', 9.75] }, c.gap] });
+  const arrow = arrowH(8, 1, 10);
+  set16('clipboard-copy', [board, c.pinza, ...arrow], { solid: [board, c.pinza], cut: [c.cut], lines: arrow });
+}
+
+// Papelera: la flecha de restaurar en la columna 8.
+{
+  // El asa baja hasta la tapa ajustada (fila 4).
+  const [lid, , body] = icons['trash-restore'].d;
+  const handle = roundline([[9.75, 6.75], [9.75, 3.75], [14.25, 3.75], [14.25, 6.75]], [0, 1.25, 1.25, 0]);
+  const arrow = arrowV(8, 12, 8);
+  set16('trash-restore', [lid, handle, body, ...arrow], { solid: [lid, handle, body], cut: arrow });
+}
+// Clip: a 45° sus tres rectas paralelas (a 3) se juntaban en una mancha; a 16 px va derecho, con
+// las rectas en columnas alternas (1 px de aire) y las mismas tres medias vueltas.
+{
+  const d = `M${pt(g(9, 5))}V${N(px(10))}A1.5 1.5 0 0 1 ${pt(g(7, 10))}V${N(px(4))}A3 3 0 0 1 ${pt(g(11, 4))}V${N(px(11))}A4.5 4.5 0 0 1 ${pt(g(5, 11))}V${N(px(6))}`;
+  set16('paperclip', [d]);
+}
 
 export default { category: 'archivos', label: 'Archivos y nube', icons };

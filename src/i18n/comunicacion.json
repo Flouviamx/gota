@@ -1,0 +1,758 @@
+{
+  "message-dots": {
+    "label": { "es": "Escribiendo", "en": "Typing", "pt": "Digitando", "fr": "En train d’écrire", "de": "Schreibt gerade", "it": "Sta scrivendo", "ja": "入力中", "zh": "正在输入", "ko": "입력 중", "ar": "يكتب الآن" },
+    "keywords": {
+      "es": ["indicador de escritura", "chat en vivo", "conversación", "respuesta en curso", "puntos suspensivos", "mensajería", "soporte en línea"],
+      "en": ["typing indicator", "live chat", "conversation", "reply in progress", "ellipsis", "messaging", "chat bubble"]
+    }
+  },
+  "message-plus": {
+    "label": { "es": "Nuevo mensaje", "en": "New message", "pt": "Nova mensagem", "fr": "Nouveau message", "de": "Neue Nachricht", "it": "Nuovo messaggio", "ja": "新規メッセージ", "zh": "新建消息", "ko": "새 메시지", "ar": "رسالة جديدة" },
+    "keywords": {
+      "es": ["redactar", "iniciar conversación", "escribir", "abrir chat", "nuevo hilo", "contactar", "crear mensaje"],
+      "en": ["compose", "start conversation", "write", "open chat", "new thread", "contact", "create message"]
+    }
+  },
+  "message-minus": {
+    "label": { "es": "Ocultar mensaje", "en": "Hide message", "pt": "Ocultar mensagem", "fr": "Masquer le message", "de": "Nachricht ausblenden", "it": "Nascondi messaggio", "ja": "メッセージを非表示", "zh": "隐藏消息", "ko": "메시지 숨기기", "ar": "إخفاء الرسالة" },
+    "keywords": {
+      "es": ["quitar", "archivar", "descartar", "contraer", "limpiar chat", "excluir", "desfijar"],
+      "en": ["remove", "archive", "dismiss", "collapse", "clear chat", "exclude", "unpin"]
+    }
+  },
+  "message-check": {
+    "label": { "es": "Conversación resuelta", "en": "Resolved conversation", "pt": "Conversa resolvida", "fr": "Conversation résolue", "de": "Gelöste Unterhaltung", "it": "Conversazione risolta", "ja": "解決済みの会話", "zh": "已解决的对话", "ko": "해결된 대화", "ar": "محادثة تم حلها" },
+    "keywords": {
+      "es": ["resuelto", "leído", "visto", "entregado", "ticket cerrado", "confirmar recepción", "soporte atendido", "acuse de recibo"],
+      "en": ["resolved", "read receipt", "seen", "delivered", "ticket closed", "acknowledged", "support handled", "done"]
+    }
+  },
+  "message-x": {
+    "label": { "es": "Eliminar mensaje", "en": "Delete message", "pt": "Excluir mensagem", "fr": "Supprimer le message", "de": "Nachricht löschen", "it": "Elimina messaggio", "ja": "メッセージを削除", "zh": "删除消息", "ko": "메시지 삭제", "ar": "حذف الرسالة" },
+    "keywords": {
+      "es": ["borrar", "cerrar chat", "descartar", "error de envío", "mensaje fallido", "cancelar", "terminar conversación"],
+      "en": ["erase", "close chat", "discard", "send failed", "failed message", "cancel", "end conversation"]
+    }
+  },
+  "message-question": {
+    "label": { "es": "Hacer una pregunta", "en": "Ask a question", "pt": "Fazer uma pergunta", "fr": "Poser une question", "de": "Frage stellen", "it": "Fai una domanda", "ja": "質問する", "zh": "提问", "ko": "질문하기", "ar": "طرح سؤال" },
+    "keywords": {
+      "es": ["ayuda", "soporte", "preguntas frecuentes", "duda", "consulta", "centro de ayuda", "asistencia"],
+      "en": ["help", "support", "faq", "doubt", "inquiry", "help center", "assistance"]
+    }
+  },
+  "message-alert": {
+    "label": { "es": "Mensaje importante", "en": "Important message", "pt": "Mensagem importante", "fr": "Message important", "de": "Wichtige Nachricht", "it": "Messaggio importante", "ja": "重要なメッセージ", "zh": "重要消息", "ko": "중요한 메시지", "ar": "رسالة مهمة" },
+    "keywords": {
+      "es": ["aviso", "reportar", "urgente", "advertencia", "denunciar contenido", "atención", "incidencia", "error en el chat"],
+      "en": ["warning", "report", "urgent", "flag content", "attention", "issue", "abuse report", "chat error"]
+    }
+  },
+  "message-heart": {
+    "label": { "es": "Reacción de corazón", "en": "Heart reaction", "pt": "Reação de coração", "fr": "Réaction cœur", "de": "Herz-Reaktion", "it": "Reazione cuore", "ja": "ハートのリアクション", "zh": "爱心回应", "ko": "하트 반응", "ar": "تفاعل بقلب" },
+    "keywords": {
+      "es": ["me gusta", "me encanta", "agradecimiento", "testimonio", "mensaje cariñoso", "valorar", "reconocimiento"],
+      "en": ["like", "love", "appreciation", "testimonial", "kind message", "kudos", "favorite message"]
+    }
+  },
+  "message-smile": {
+    "label": { "es": "Conversación amigable", "en": "Friendly chat", "pt": "Conversa amigável", "fr": "Discussion amicale", "de": "Freundlicher Chat", "it": "Chat amichevole", "ja": "フレンドリーなチャット", "zh": "友好聊天", "ko": "친근한 채팅", "ar": "دردشة ودية" },
+    "keywords": {
+      "es": ["emoji", "reacción", "atención amable", "satisfacción", "chat de bienvenida", "comunidad", "buena experiencia", "saludo"],
+      "en": ["emoji", "reaction", "friendly support", "satisfaction", "welcome chat", "community", "positive feedback", "greeting"]
+    }
+  },
+  "message-star": {
+    "label": { "es": "Reseña", "en": "Review", "pt": "Avaliação", "fr": "Avis", "de": "Bewertung", "it": "Recensione", "ja": "レビュー", "zh": "评价", "ko": "리뷰", "ar": "تقييم" },
+    "keywords": {
+      "es": ["opinión", "calificación", "mensaje destacado", "favorito", "comentarios de clientes", "valoración", "testimonio", "encuesta de satisfacción"],
+      "en": ["feedback", "rating", "starred message", "favorite", "customer comments", "testimonial", "satisfaction survey"]
+    }
+  },
+  "message-video": {
+    "label": { "es": "Videomensaje", "en": "Video message", "pt": "Mensagem de vídeo", "fr": "Message vidéo", "de": "Videonachricht", "it": "Videomessaggio", "ja": "ビデオメッセージ", "zh": "视频消息", "ko": "영상 메시지", "ar": "رسالة فيديو" },
+    "keywords": {
+      "es": ["video", "reproducir", "grabar video", "clip", "mensaje grabado", "historia", "video asíncrono"],
+      "en": ["video", "play", "record video", "clip", "recorded message", "story", "async video"]
+    }
+  },
+  "message-voice": {
+    "label": { "es": "Mensaje de voz", "en": "Voice message", "pt": "Mensagem de voz", "fr": "Message vocal", "de": "Sprachnachricht", "it": "Messaggio vocale", "ja": "ボイスメッセージ", "zh": "语音消息", "ko": "음성 메시지", "ar": "رسالة صوتية" },
+    "keywords": {
+      "es": ["nota de voz", "audio", "grabar audio", "dictar", "onda de sonido", "escuchar", "mensaje hablado"],
+      "en": ["voice note", "audio", "record audio", "dictate", "waveform", "listen", "spoken message"]
+    }
+  },
+  "message-reply": {
+    "label": { "es": "Responder", "en": "Reply", "pt": "Responder", "fr": "Répondre", "de": "Antworten", "it": "Rispondi", "ja": "返信", "zh": "回复", "ko": "답장", "ar": "رد" },
+    "keywords": {
+      "es": ["contestar", "hilo", "respuesta", "comentar", "continuar conversación", "citar", "devolver mensaje"],
+      "en": ["answer", "thread", "respond", "comment", "continue conversation", "quote", "write back"]
+    }
+  },
+  "message-search": {
+    "label": { "es": "Buscar mensajes", "en": "Search messages", "pt": "Pesquisar mensagens", "fr": "Rechercher dans les messages", "de": "Nachrichten durchsuchen", "it": "Cerca nei messaggi", "ja": "メッセージを検索", "zh": "搜索消息", "ko": "메시지 검색", "ar": "البحث في الرسائل" },
+    "keywords": {
+      "es": ["buscar en chats", "encontrar conversación", "historial", "filtrar", "lupa", "consultar", "búsqueda en bandeja"],
+      "en": ["find conversation", "chat history", "filter", "magnifier", "lookup", "inbox search", "find in chat"]
+    }
+  },
+  "message-sparkle": {
+    "label": { "es": "Asistente de IA", "en": "AI assistant", "pt": "Assistente de IA", "fr": "Assistant IA", "de": "KI-Assistent", "it": "Assistente IA", "ja": "AIアシスタント", "zh": "AI 助手", "ko": "AI 어시스턴트", "ar": "مساعد الذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["inteligencia artificial", "chat con ia", "chatbot", "copiloto", "preguntar a la ia", "respuesta automática", "generar texto", "bot"],
+      "en": ["artificial intelligence", "ai chat", "chatbot", "copilot", "ask ai", "auto reply", "generate text", "bot"]
+    }
+  },
+  "message-hashtag": {
+    "label": { "es": "Canal", "en": "Channel", "pt": "Canal", "fr": "Canal", "de": "Kanal", "it": "Canale", "ja": "チャンネル", "zh": "频道", "ko": "채널", "ar": "قناة" },
+    "keywords": {
+      "es": ["tema", "conversación grupal", "sala", "espacio de equipo", "etiqueta", "foro", "comunidad"],
+      "en": ["topic", "group chat", "room", "team space", "tag", "forum", "community"]
+    }
+  },
+  "message-code": {
+    "label": { "es": "Comentario de código", "en": "Code comment", "pt": "Comentário de código", "fr": "Commentaire de code", "de": "Code-Kommentar", "it": "Commento al codice", "ja": "コードコメント", "zh": "代码评论", "ko": "코드 댓글", "ar": "تعليق على الكود" },
+    "keywords": {
+      "es": ["revisión de código", "fragmento", "desarrolladores", "pull request", "programación", "soporte técnico", "compartir código", "api"],
+      "en": ["code review", "snippet", "developers", "pull request", "programming", "tech support", "share code", "api"]
+    }
+  },
+  "message-lock": {
+    "label": { "es": "Chat privado", "en": "Private chat", "pt": "Conversa privada", "fr": "Discussion privée", "de": "Privater Chat", "it": "Chat privata", "ja": "プライベートチャット", "zh": "私密聊天", "ko": "비공개 채팅", "ar": "دردشة خاصة" },
+    "keywords": {
+      "es": ["cifrado", "conversación segura", "confidencial", "de extremo a extremo", "mensaje protegido", "acceso restringido", "privacidad"],
+      "en": ["encrypted", "secure conversation", "confidential", "end-to-end", "protected message", "restricted access", "privacy"]
+    }
+  },
+  "message-clock": {
+    "label": { "es": "Mensaje programado", "en": "Scheduled message", "pt": "Mensagem agendada", "fr": "Message programmé", "de": "Geplante Nachricht", "it": "Messaggio programmato", "ja": "予約メッセージ", "zh": "定时消息", "ko": "예약 메시지", "ar": "رسالة مجدولة" },
+    "keywords": {
+      "es": ["pendiente", "esperando respuesta", "enviar después", "tiempo de respuesta", "recordatorio", "en cola", "posponer"],
+      "en": ["pending", "awaiting reply", "send later", "response time", "reminder", "queued", "snooze"]
+    }
+  },
+  "message-unread": {
+    "label": { "es": "Mensaje sin leer", "en": "Unread message", "pt": "Mensagem não lida", "fr": "Message non lu", "de": "Ungelesene Nachricht", "it": "Messaggio non letto", "ja": "未読メッセージ", "zh": "未读消息", "ko": "읽지 않은 메시지", "ar": "رسالة غير مقروءة" },
+    "keywords": {
+      "es": ["mensaje nuevo", "notificación", "pendiente de leer", "punto de aviso", "bandeja de chats", "novedad", "marcar como no leído"],
+      "en": ["new message", "notification", "to read", "badge dot", "chat inbox", "update", "mark as unread"]
+    }
+  },
+  "message-off": {
+    "label": { "es": "Chat desactivado", "en": "Chat disabled", "pt": "Chat desativado", "fr": "Discussion désactivée", "de": "Chat deaktiviert", "it": "Chat disattivata", "ja": "チャット無効", "zh": "聊天已关闭", "ko": "채팅 꺼짐", "ar": "الدردشة معطلة" },
+    "keywords": {
+      "es": ["silenciar", "sin mensajes", "comentarios cerrados", "bloquear chat", "no molestar", "desactivar respuestas", "solo lectura"],
+      "en": ["mute", "no messages", "comments closed", "block chat", "do not disturb", "disable replies", "read only"]
+    }
+  },
+  "messages": {
+    "label": { "es": "Conversaciones", "en": "Conversations", "pt": "Conversas", "fr": "Conversations", "de": "Unterhaltungen", "it": "Conversazioni", "ja": "会話", "zh": "对话", "ko": "대화", "ar": "المحادثات" },
+    "keywords": {
+      "es": ["chats", "mensajería", "bandeja de entrada", "diálogo", "soporte", "comentarios", "foro", "hablar"],
+      "en": ["chats", "messaging", "inbox", "dialogue", "support", "comments", "forum", "talk"]
+    }
+  },
+  "mail-open": {
+    "label": { "es": "Correo leído", "en": "Read email", "pt": "E-mail lido", "fr": "E-mail lu", "de": "Gelesene E-Mail", "it": "Email letta", "ja": "開封済みメール", "zh": "已读邮件", "ko": "읽은 메일", "ar": "بريد مقروء" },
+    "keywords": {
+      "es": ["abierto", "sobre abierto", "visto", "marcar como leído", "tasa de apertura", "bandeja de entrada", "mensaje revisado"],
+      "en": ["opened", "open envelope", "seen", "mark as read", "open rate", "inbox", "viewed message"]
+    }
+  },
+  "mail-unread": {
+    "label": { "es": "Correo sin leer", "en": "Unread email", "pt": "E-mail não lido", "fr": "E-mail non lu", "de": "Ungelesene E-Mail", "it": "Email non letta", "ja": "未読メール", "zh": "未读邮件", "ko": "읽지 않은 메일", "ar": "بريد غير مقروء" },
+    "keywords": {
+      "es": ["correo nuevo", "bandeja de entrada", "notificación", "pendiente", "punto de aviso", "marcar como no leído", "mensaje recibido"],
+      "en": ["new email", "inbox", "notification", "pending", "badge dot", "mark as unread", "received message"]
+    }
+  },
+  "mail-plus": {
+    "label": { "es": "Redactar correo", "en": "Compose email", "pt": "Escrever e-mail", "fr": "Rédiger un e-mail", "de": "E-Mail verfassen", "it": "Scrivi email", "ja": "メールを作成", "zh": "写邮件", "ko": "메일 작성", "ar": "إنشاء بريد إلكتروني" },
+    "keywords": {
+      "es": ["nuevo correo", "escribir", "crear", "agregar dirección", "suscribirse", "invitar por correo", "enviar mensaje"],
+      "en": ["new email", "write", "create", "add address", "subscribe", "invite by email", "send message"]
+    }
+  },
+  "mail-minus": {
+    "label": { "es": "Darse de baja", "en": "Unsubscribe", "pt": "Cancelar inscrição", "fr": "Se désabonner", "de": "Abmelden", "it": "Annulla iscrizione", "ja": "配信停止", "zh": "退订", "ko": "수신 거부", "ar": "إلغاء الاشتراك" },
+    "keywords": {
+      "es": ["desuscribir", "quitar correo", "lista de correo", "dejar de recibir", "preferencias de correo", "eliminar dirección", "baja de boletín"],
+      "en": ["opt out", "remove email", "mailing list", "stop emails", "email preferences", "remove address", "leave newsletter"]
+    }
+  },
+  "mail-check": {
+    "label": { "es": "Correo verificado", "en": "Email verified", "pt": "E-mail verificado", "fr": "E-mail vérifié", "de": "E-Mail bestätigt", "it": "Email verificata", "ja": "メール確認済み", "zh": "邮箱已验证", "ko": "이메일 인증됨", "ar": "تم التحقق من البريد" },
+    "keywords": {
+      "es": ["entregado", "confirmado", "enviado con éxito", "dirección válida", "doble opt-in", "acuse de recibo", "correo aprobado"],
+      "en": ["delivered", "confirmed", "sent successfully", "valid address", "double opt-in", "receipt", "approved email"]
+    }
+  },
+  "mail-x": {
+    "label": { "es": "Correo rebotado", "en": "Bounced email", "pt": "E-mail devolvido", "fr": "E-mail non distribué", "de": "Unzustellbare E-Mail", "it": "Email non recapitata", "ja": "不達メール", "zh": "退信", "ko": "반송된 메일", "ar": "بريد لم يتم تسليمه" },
+    "keywords": {
+      "es": ["rebote", "error de envío", "no entregado", "dirección inválida", "eliminar correo", "descartar", "fallo de entrega"],
+      "en": ["bounce", "send error", "undelivered", "invalid address", "delete email", "discard", "delivery failure"]
+    }
+  },
+  "mail-clock": {
+    "label": { "es": "Envío programado", "en": "Scheduled email", "pt": "E-mail agendado", "fr": "E-mail programmé", "de": "Geplante E-Mail", "it": "Email programmata", "ja": "予約送信", "zh": "定时发送", "ko": "예약 발송", "ar": "بريد مجدول" },
+    "keywords": {
+      "es": ["enviar después", "programar", "correo pendiente", "posponer", "automatización", "recordatorio", "campaña programada"],
+      "en": ["send later", "schedule", "pending email", "snooze", "automation", "reminder", "scheduled campaign"]
+    }
+  },
+  "mail-send": {
+    "label": { "es": "Enviar correo", "en": "Send email", "pt": "Enviar e-mail", "fr": "Envoyer l’e-mail", "de": "E-Mail senden", "it": "Invia email", "ja": "メールを送信", "zh": "发送邮件", "ko": "메일 보내기", "ar": "إرسال بريد" },
+    "keywords": {
+      "es": ["bandeja de salida", "enviado", "despachar", "compartir por correo", "reenviar", "notificar", "mandar"],
+      "en": ["outbox", "sent", "dispatch", "share via email", "forward", "notify", "deliver"]
+    }
+  },
+  "mail-draft": {
+    "label": { "es": "Borrador", "en": "Draft", "pt": "Rascunho", "fr": "Brouillon", "de": "Entwurf", "it": "Bozza", "ja": "下書き", "zh": "草稿", "ko": "초안", "ar": "مسودة" },
+    "keywords": {
+      "es": ["redactando", "editar correo", "sin enviar", "guardar para después", "escribir", "lápiz", "plantilla"],
+      "en": ["writing", "edit email", "unsent", "save for later", "compose", "pencil", "template"]
+    }
+  },
+  "mail-attachment": {
+    "label": { "es": "Adjunto de correo", "en": "Email attachment", "pt": "Anexo de e-mail", "fr": "Pièce jointe", "de": "E-Mail-Anhang", "it": "Allegato email", "ja": "添付ファイル", "zh": "邮件附件", "ko": "메일 첨부", "ar": "مرفق البريد" },
+    "keywords": {
+      "es": ["archivo adjunto", "clip", "adjuntar", "documento", "enviar archivo", "anexo", "factura por correo"],
+      "en": ["attached file", "paperclip", "attach", "document", "send file", "enclosure", "emailed invoice"]
+    }
+  },
+  "mail-signature": {
+    "label": { "es": "Firma de correo", "en": "Email signature", "pt": "Assinatura de e-mail", "fr": "Signature d’e-mail", "de": "E-Mail-Signatur", "it": "Firma email", "ja": "メール署名", "zh": "邮件签名", "ko": "메일 서명", "ar": "توقيع البريد" },
+    "keywords": {
+      "es": ["firma", "remitente", "pie de correo", "firma electrónica", "firmar documento", "datos de contacto", "rúbrica"],
+      "en": ["sender", "email footer", "e-signature", "sign document", "contact details", "autograph", "sign-off"]
+    }
+  },
+  "mail-search": {
+    "label": { "es": "Buscar correo", "en": "Search email", "pt": "Pesquisar e-mail", "fr": "Rechercher dans les e-mails", "de": "E-Mails durchsuchen", "it": "Cerca email", "ja": "メールを検索", "zh": "搜索邮件", "ko": "메일 검색", "ar": "البحث في البريد" },
+    "keywords": {
+      "es": ["filtrar", "bandeja de entrada", "encontrar mensaje", "lupa", "archivo de correo", "consultar", "rastrear"],
+      "en": ["filter", "inbox", "find message", "magnifier", "mail archive", "lookup", "trace"]
+    }
+  },
+  "mail-letter": {
+    "label": { "es": "Carta", "en": "Letter", "pt": "Carta", "fr": "Lettre", "de": "Brief", "it": "Lettera", "ja": "手紙", "zh": "信件", "ko": "편지", "ar": "خطاب" },
+    "keywords": {
+      "es": ["invitación", "sobre abierto", "correspondencia", "comunicado", "boletín", "mensaje formal", "carta de presentación"],
+      "en": ["invitation", "open envelope", "correspondence", "announcement", "newsletter", "formal message", "cover letter"]
+    }
+  },
+  "mail-stack": {
+    "label": { "es": "Envío masivo", "en": "Bulk email", "pt": "E-mail em massa", "fr": "Envoi groupé", "de": "Massenversand", "it": "Invio massivo", "ja": "一斉メール", "zh": "群发邮件", "ko": "대량 메일", "ar": "بريد جماعي" },
+    "keywords": {
+      "es": ["boletín", "newsletter", "campaña de correo", "correos", "lista de distribución", "email marketing", "difusión"],
+      "en": ["newsletter", "email campaign", "emails", "distribution list", "email marketing", "mass mailing", "all mail"]
+    }
+  },
+  "mailbox": {
+    "label": { "es": "Buzón", "en": "Mailbox", "pt": "Caixa de correio", "fr": "Boîte aux lettres", "de": "Briefkasten", "it": "Cassetta postale", "ja": "郵便受け", "zh": "信箱", "ko": "우편함", "ar": "صندوق البريد" },
+    "keywords": {
+      "es": ["correo postal", "cartas", "bandeja de entrada", "dirección postal", "recibir", "paquetería", "correspondencia"],
+      "en": ["postbox", "postal mail", "letters", "inbox", "postal address", "receive", "correspondence"]
+    }
+  },
+  "reply-all": {
+    "label": { "es": "Responder a todos", "en": "Reply all", "pt": "Responder a todos", "fr": "Répondre à tous", "de": "Allen antworten", "it": "Rispondi a tutti", "ja": "全員に返信", "zh": "全部回复", "ko": "전체 답장", "ar": "الرد على الكل" },
+    "keywords": {
+      "es": ["contestar", "correo", "grupo", "destinatarios", "con copia", "hilo", "conversación grupal"],
+      "en": ["answer", "email", "group", "recipients", "cc", "thread", "group conversation"]
+    }
+  },
+  "phone-incoming": {
+    "label": { "es": "Llamada entrante", "en": "Incoming call", "pt": "Chamada recebida", "fr": "Appel entrant", "de": "Eingehender Anruf", "it": "Chiamata in arrivo", "ja": "着信", "zh": "来电", "ko": "수신 전화", "ar": "مكالمة واردة" },
+    "keywords": {
+      "es": ["recibir llamada", "contestar", "teléfono", "registro de llamadas", "atender", "llamada recibida", "entrante"],
+      "en": ["receive call", "answer", "telephone", "call log", "pick up", "inbound", "received call"]
+    }
+  },
+  "phone-outgoing": {
+    "label": { "es": "Llamada saliente", "en": "Outgoing call", "pt": "Chamada efetuada", "fr": "Appel sortant", "de": "Ausgehender Anruf", "it": "Chiamata in uscita", "ja": "発信", "zh": "拨出电话", "ko": "발신 전화", "ar": "مكالمة صادرة" },
+    "keywords": {
+      "es": ["llamar", "marcar", "teléfono", "registro de llamadas", "contactar", "llamada realizada", "saliente"],
+      "en": ["call", "dial", "telephone", "call log", "outbound", "reach out", "placed call"]
+    }
+  },
+  "phone-missed": {
+    "label": { "es": "Llamada perdida", "en": "Missed call", "pt": "Chamada perdida", "fr": "Appel manqué", "de": "Verpasster Anruf", "it": "Chiamata persa", "ja": "不在着信", "zh": "未接来电", "ko": "부재중 전화", "ar": "مكالمة فائتة" },
+    "keywords": {
+      "es": ["sin contestar", "rechazada", "devolver llamada", "registro de llamadas", "no atendida", "aviso de llamada", "ocupado"],
+      "en": ["unanswered", "declined", "call back", "call log", "not picked up", "call alert", "busy"]
+    }
+  },
+  "phone-plus": {
+    "label": { "es": "Agregar llamada", "en": "Add call", "pt": "Adicionar chamada", "fr": "Ajouter un appel", "de": "Anruf hinzufügen", "it": "Aggiungi chiamata", "ja": "通話を追加", "zh": "添加通话", "ko": "통화 추가", "ar": "إضافة مكالمة" },
+    "keywords": {
+      "es": ["conferencia", "llamada grupal", "añadir participante", "nuevo contacto", "nueva llamada", "unir llamadas", "agregar número"],
+      "en": ["conference", "group call", "add participant", "new contact", "new call", "merge calls", "add number"]
+    }
+  },
+  "phone-forward": {
+    "label": { "es": "Desviar llamada", "en": "Forward call", "pt": "Desviar chamada", "fr": "Renvoi d’appel", "de": "Anruf weiterleiten", "it": "Inoltra chiamata", "ja": "着信転送", "zh": "呼叫转移", "ko": "착신 전환", "ar": "إعادة توجيه المكالمة" },
+    "keywords": {
+      "es": ["reenviar", "redirigir", "desvío de llamadas", "otro número", "fuera de oficina", "enrutar llamadas", "disponibilidad"],
+      "en": ["redirect", "reroute", "call forwarding", "other number", "out of office", "call routing", "availability"]
+    }
+  },
+  "phone-transfer": {
+    "label": { "es": "Transferir llamada", "en": "Transfer call", "pt": "Transferir chamada", "fr": "Transférer l’appel", "de": "Anruf vermitteln", "it": "Trasferisci chiamata", "ja": "通話を転送", "zh": "转接通话", "ko": "통화 전환", "ar": "نقل المكالمة" },
+    "keywords": {
+      "es": ["pasar llamada", "cambiar de agente", "escalar", "centralita", "conmutador", "derivar", "intercambiar"],
+      "en": ["pass call", "hand off", "escalate", "switchboard", "pbx", "route to agent", "swap"]
+    }
+  },
+  "phone-hold": {
+    "label": { "es": "Llamada en espera", "en": "Call on hold", "pt": "Chamada em espera", "fr": "Appel en attente", "de": "Anruf halten", "it": "Chiamata in attesa", "ja": "通話を保留", "zh": "通话保持", "ko": "통화 보류", "ar": "وضع المكالمة قيد الانتظار" },
+    "keywords": {
+      "es": ["pausa", "retener", "música de espera", "esperar", "poner en pausa", "fila de llamadas", "aguardar"],
+      "en": ["pause", "wait", "hold music", "park call", "call queue", "suspend call", "please wait"]
+    }
+  },
+  "phone-ringing": {
+    "label": { "es": "Teléfono sonando", "en": "Phone ringing", "pt": "Telefone tocando", "fr": "Téléphone qui sonne", "de": "Telefon klingelt", "it": "Telefono che squilla", "ja": "着信中", "zh": "来电响铃", "ko": "전화 벨 울림", "ar": "الهاتف يرن" },
+    "keywords": {
+      "es": ["timbrando", "llamando", "llamada entrante", "tono de llamada", "contestar", "alerta", "contáctanos"],
+      "en": ["calling", "incoming call", "ringtone", "answer", "call alert", "buzzing", "contact us"]
+    }
+  },
+  "phone-hangup": {
+    "label": { "es": "Colgar", "en": "End call", "pt": "Encerrar chamada", "fr": "Raccrocher", "de": "Auflegen", "it": "Riaggancia", "ja": "通話を終了", "zh": "挂断", "ko": "통화 종료", "ar": "إنهاء المكالمة" },
+    "keywords": {
+      "es": ["terminar llamada", "cortar", "finalizar", "salir de la reunión", "rechazar llamada", "auricular", "desconectar"],
+      "en": ["hang up", "disconnect", "leave meeting", "decline call", "handset", "cut off", "finish call"]
+    }
+  },
+  "phone-off": {
+    "label": { "es": "Llamadas desactivadas", "en": "Calls disabled", "pt": "Chamadas desativadas", "fr": "Appels désactivés", "de": "Anrufe deaktiviert", "it": "Chiamate disattivate", "ja": "通話オフ", "zh": "通话已关闭", "ko": "통화 끔", "ar": "المكالمات معطلة" },
+    "keywords": {
+      "es": ["no molestar", "sin llamadas", "teléfono apagado", "sin servicio", "silenciar llamadas", "bloquear llamadas", "modo avión"],
+      "en": ["do not disturb", "no calls", "unavailable", "no service", "silence calls", "block calls", "airplane mode"]
+    }
+  },
+  "voicemail": {
+    "label": { "es": "Buzón de voz", "en": "Voicemail", "pt": "Correio de voz", "fr": "Messagerie vocale", "de": "Voicemail", "it": "Segreteria telefonica", "ja": "留守番電話", "zh": "语音信箱", "ko": "음성 사서함", "ar": "البريد الصوتي" },
+    "keywords": {
+      "es": ["mensaje de voz", "grabación", "contestador", "escuchar mensajes", "cinta", "llamada perdida", "dejar recado"],
+      "en": ["voice message", "recording", "answering machine", "listen to messages", "tape", "missed call", "leave a message"]
+    }
+  },
+  "dialpad": {
+    "label": { "es": "Teclado numérico", "en": "Keypad", "pt": "Teclado numérico", "fr": "Clavier numérique", "de": "Tastenfeld", "it": "Tastierino numerico", "ja": "キーパッド", "zh": "拨号键盘", "ko": "키패드", "ar": "لوحة الأرقام" },
+    "keywords": {
+      "es": ["marcador", "marcar número", "teclado", "llamar", "extensión", "tonos", "ingresar pin"],
+      "en": ["dialer", "dial number", "numbers", "call", "extension", "touch tones", "pin entry"]
+    }
+  },
+  "video-call": {
+    "label": { "es": "Videollamada", "en": "Video call", "pt": "Videochamada", "fr": "Appel vidéo", "de": "Videoanruf", "it": "Videochiamata", "ja": "ビデオ通話", "zh": "视频通话", "ko": "영상 통화", "ar": "مكالمة فيديو" },
+    "keywords": {
+      "es": ["cámara", "llamada de video", "reunión virtual", "videoconferencia", "cara a cara", "webcam", "videochat"],
+      "en": ["camera", "face to face", "virtual meeting", "video conference", "webcam", "video chat", "call with video"]
+    }
+  },
+  "video-call-off": {
+    "label": { "es": "Cámara apagada", "en": "Camera off", "pt": "Câmera desligada", "fr": "Caméra désactivée", "de": "Kamera aus", "it": "Videocamera disattivata", "ja": "カメラオフ", "zh": "摄像头已关闭", "ko": "카메라 끔", "ar": "الكاميرا متوقفة" },
+    "keywords": {
+      "es": ["sin video", "apagar cámara", "solo audio", "privacidad", "terminar videollamada", "desactivar video", "webcam apagada"],
+      "en": ["no video", "turn off camera", "audio only", "privacy", "end video call", "disable video", "webcam off"]
+    }
+  },
+  "video-meeting": {
+    "label": { "es": "Videoconferencia", "en": "Video meeting", "pt": "Videoconferência", "fr": "Visioconférence", "de": "Videokonferenz", "it": "Videoconferenza", "ja": "ビデオ会議", "zh": "视频会议", "ko": "화상 회의", "ar": "اجتماع فيديو" },
+    "keywords": {
+      "es": ["reunión", "junta en línea", "seminario web", "participante", "sala virtual", "clase en línea", "presentador"],
+      "en": ["meeting", "online meeting", "webinar", "participant", "virtual room", "online class", "presenter"]
+    }
+  },
+  "screen-share": {
+    "label": { "es": "Compartir pantalla", "en": "Share screen", "pt": "Compartilhar tela", "fr": "Partager l’écran", "de": "Bildschirm teilen", "it": "Condividi schermo", "ja": "画面を共有", "zh": "共享屏幕", "ko": "화면 공유", "ar": "مشاركة الشاشة" },
+    "keywords": {
+      "es": ["presentar", "proyectar", "transmitir pantalla", "demostración", "mostrar escritorio", "duplicar pantalla", "reunión"],
+      "en": ["present", "cast", "stream screen", "demo", "show desktop", "mirror screen", "meeting"]
+    }
+  },
+  "screen-share-off": {
+    "label": { "es": "Dejar de compartir", "en": "Stop sharing", "pt": "Parar de compartilhar", "fr": "Arrêter le partage", "de": "Teilen beenden", "it": "Interrompi condivisione", "ja": "共有を停止", "zh": "停止共享", "ko": "공유 중지", "ar": "إيقاف المشاركة" },
+    "keywords": {
+      "es": ["detener presentación", "terminar transmisión", "ocultar pantalla", "fin de la demostración", "privacidad", "cortar proyección", "cerrar presentación"],
+      "en": ["stop presenting", "end stream", "hide screen", "end demo", "privacy", "stop casting", "close presentation"]
+    }
+  },
+  "microphone": {
+    "label": { "es": "Micrófono", "en": "Microphone", "pt": "Microfone", "fr": "Micro", "de": "Mikrofon", "it": "Microfono", "ja": "マイク", "zh": "麦克风", "ko": "마이크", "ar": "الميكروفون" },
+    "keywords": {
+      "es": ["voz", "grabar", "dictado", "audio", "hablar", "búsqueda por voz", "podcast", "activar sonido"],
+      "en": ["voice", "record", "dictation", "audio", "speak", "voice search", "podcast", "unmute"]
+    }
+  },
+  "microphone-off": {
+    "label": { "es": "Silenciar micrófono", "en": "Mute microphone", "pt": "Silenciar microfone", "fr": "Couper le micro", "de": "Mikrofon stummschalten", "it": "Disattiva microfono", "ja": "マイクをミュート", "zh": "麦克风静音", "ko": "마이크 음소거", "ar": "كتم الميكروفون" },
+    "keywords": {
+      "es": ["silenciar", "mudo", "sin audio", "apagar micrófono", "privacidad", "no grabar", "callar"],
+      "en": ["mute", "muted", "no audio", "silence", "privacy", "stop recording", "quiet"]
+    }
+  },
+  "headset": {
+    "label": { "es": "Atención a clientes", "en": "Customer support", "pt": "Atendimento ao cliente", "fr": "Service client", "de": "Kundensupport", "it": "Assistenza clienti", "ja": "カスタマーサポート", "zh": "客户支持", "ko": "고객 지원", "ar": "دعم العملاء" },
+    "keywords": {
+      "es": ["diadema", "auriculares", "soporte", "centro de llamadas", "mesa de ayuda", "agente", "contacto", "videojuegos"],
+      "en": ["headphones", "earphones", "help desk", "call center", "agent", "live support", "contact us", "gaming"]
+    }
+  },
+  "walkie-talkie": {
+    "label": { "es": "Walkie-talkie", "en": "Walkie-talkie", "pt": "Walkie-talkie", "fr": "Talkie-walkie", "de": "Funkgerät", "it": "Walkie-talkie", "ja": "トランシーバー", "zh": "对讲机", "ko": "무전기", "ar": "جهاز اتصال لاسلكي" },
+    "keywords": {
+      "es": ["radio", "intercomunicador", "dos vías", "pulsar para hablar", "radiocomunicación", "equipo de campo", "seguridad"],
+      "en": ["radio", "intercom", "two-way radio", "push to talk", "transceiver", "field team", "security"]
+    }
+  },
+  "bell-dot": {
+    "label": { "es": "Notificaciones nuevas", "en": "New notifications", "pt": "Novas notificações", "fr": "Nouvelles notifications", "de": "Neue Benachrichtigungen", "it": "Nuove notifiche", "ja": "新しい通知", "zh": "新通知", "ko": "새 알림", "ar": "إشعارات جديدة" },
+    "keywords": {
+      "es": ["aviso nuevo", "sin leer", "alerta", "novedades", "actividad", "pendientes", "centro de notificaciones"],
+      "en": ["unread", "alert", "updates", "activity", "pending", "badge", "notification center"]
+    }
+  },
+  "bell-plus": {
+    "label": { "es": "Crear alerta", "en": "Add alert", "pt": "Criar alerta", "fr": "Créer une alerte", "de": "Benachrichtigung einrichten", "it": "Crea avviso", "ja": "通知を追加", "zh": "添加提醒", "ko": "알림 추가", "ar": "إضافة تنبيه" },
+    "keywords": {
+      "es": ["suscribirse", "activar notificaciones", "nuevo aviso", "seguir", "recordatorio", "avisarme", "alerta de precio"],
+      "en": ["subscribe", "enable notifications", "new alert", "follow", "reminder", "notify me", "price alert"]
+    }
+  },
+  "bell-check": {
+    "label": { "es": "Notificaciones activadas", "en": "Notifications on", "pt": "Notificações ativadas", "fr": "Notifications activées", "de": "Benachrichtigungen aktiviert", "it": "Notifiche attive", "ja": "通知オン", "zh": "已开启通知", "ko": "알림 켜짐", "ar": "الإشعارات مفعّلة" },
+    "keywords": {
+      "es": ["suscrito", "siguiendo", "avisos activos", "notificación vista", "todo leído", "confirmado", "alertas configuradas"],
+      "en": ["subscribed", "following", "alerts active", "notification seen", "all caught up", "confirmed", "alerts set"]
+    }
+  },
+  "bell-clock": {
+    "label": { "es": "Posponer notificación", "en": "Snooze notification", "pt": "Adiar notificação", "fr": "Reporter la notification", "de": "Benachrichtigung zurückstellen", "it": "Posticipa notifica", "ja": "通知をスヌーズ", "zh": "稍后提醒", "ko": "알림 미루기", "ar": "تأجيل الإشعار" },
+    "keywords": {
+      "es": ["recordatorio", "más tarde", "aplazar", "alarma", "programar aviso", "pausar alertas", "recordarme"],
+      "en": ["reminder", "later", "postpone", "alarm", "schedule alert", "pause alerts", "remind me"]
+    }
+  },
+  "bell-ringing": {
+    "label": { "es": "Alerta activa", "en": "Active alert", "pt": "Alerta ativo", "fr": "Alerte active", "de": "Aktiver Alarm", "it": "Avviso attivo", "ja": "アラート作動中", "zh": "正在提醒", "ko": "알림 울림", "ar": "تنبيه نشط" },
+    "keywords": {
+      "es": ["timbrando", "alarma", "notificación", "sonido activado", "llamar la atención", "recordatorio", "nueva actividad", "urgente"],
+      "en": ["ringing", "alarm", "notification", "sound on", "get attention", "reminder", "new activity", "urgent"]
+    }
+  },
+  "bell-off": {
+    "label": { "es": "Silenciar notificaciones", "en": "Mute notifications", "pt": "Silenciar notificações", "fr": "Désactiver les notifications", "de": "Benachrichtigungen stummschalten", "it": "Disattiva notifiche", "ja": "通知をオフ", "zh": "关闭通知", "ko": "알림 끄기", "ar": "كتم الإشعارات" },
+    "keywords": {
+      "es": ["no molestar", "notificaciones apagadas", "sin avisos", "silencio", "modo concentración", "dejar de seguir", "pausar alertas"],
+      "en": ["do not disturb", "notifications off", "no alerts", "silence", "focus mode", "unfollow", "pause alerts"]
+    }
+  },
+  "notification-badge": {
+    "label": { "es": "Notificación", "en": "Notification", "pt": "Notificação", "fr": "Notification", "de": "Benachrichtigung", "it": "Notifica", "ja": "通知", "zh": "通知", "ko": "알림", "ar": "إشعار" },
+    "keywords": {
+      "es": ["insignia", "contador", "aviso de app", "punto rojo", "pendientes", "novedad", "actividad"],
+      "en": ["counter", "app alert", "red dot", "pending", "update", "activity", "unread count"]
+    }
+  },
+  "at-sign": {
+    "label": { "es": "Mención", "en": "Mention", "pt": "Menção", "fr": "Mention", "de": "Erwähnung", "it": "Menzione", "ja": "メンション", "zh": "提及", "ko": "멘션", "ar": "إشارة" },
+    "keywords": {
+      "es": ["arroba", "etiquetar", "correo electrónico", "dirección de correo", "usuario", "nombrar", "contacto"],
+      "en": ["tag someone", "email address", "username", "handle", "notify user", "contact", "reply to user"]
+    }
+  },
+  "hashtag": {
+    "label": { "es": "Hashtag", "en": "Hashtag", "pt": "Hashtag", "fr": "Hashtag", "de": "Hashtag", "it": "Hashtag", "ja": "ハッシュタグ", "zh": "话题标签", "ko": "해시태그", "ar": "وسم" },
+    "keywords": {
+      "es": ["etiqueta", "canal", "almohadilla", "tema", "número", "tendencia", "categoría", "redes sociales"],
+      "en": ["tag", "channel", "pound sign", "topic", "number", "trending", "category", "social media"]
+    }
+  },
+  "megaphone": {
+    "label": { "es": "Anuncio", "en": "Announcement", "pt": "Anúncio", "fr": "Annonce", "de": "Ankündigung", "it": "Annuncio", "ja": "お知らせ", "zh": "公告", "ko": "공지", "ar": "إعلان" },
+    "keywords": {
+      "es": ["campaña", "altavoz", "marketing", "promoción", "difundir", "comunicado", "novedades", "publicidad"],
+      "en": ["campaign", "loudspeaker", "marketing", "promotion", "spread the word", "news", "advertising", "press release"]
+    }
+  },
+  "broadcast": {
+    "label": { "es": "Transmisión", "en": "Broadcast", "pt": "Transmissão", "fr": "Diffusion", "de": "Übertragung", "it": "Trasmissione", "ja": "配信", "zh": "广播", "ko": "방송", "ar": "بث" },
+    "keywords": {
+      "es": ["en vivo", "señal", "difusión", "streaming", "inalámbrico", "emitir", "cobertura", "punto de acceso"],
+      "en": ["live", "signal", "streaming", "wireless", "on air", "hotspot", "transmit", "coverage"]
+    }
+  },
+  "broadcast-off": {
+    "label": { "es": "Sin transmisión", "en": "Broadcast off", "pt": "Transmissão desativada", "fr": "Diffusion arrêtée", "de": "Übertragung aus", "it": "Trasmissione disattivata", "ja": "配信停止", "zh": "广播已关闭", "ko": "방송 꺼짐", "ar": "البث متوقف" },
+    "keywords": {
+      "es": ["fuera del aire", "desconectado", "sin señal", "fin del en vivo", "sin conexión", "terminar transmisión", "inalámbrico apagado"],
+      "en": ["off air", "disconnected", "no signal", "stream ended", "offline", "end stream", "wireless off"]
+    }
+  },
+  "radio-tower": {
+    "label": { "es": "Antena de transmisión", "en": "Radio tower", "pt": "Torre de transmissão", "fr": "Antenne relais", "de": "Sendemast", "it": "Torre di trasmissione", "ja": "電波塔", "zh": "信号塔", "ko": "송신탑", "ar": "برج إرسال" },
+    "keywords": {
+      "es": ["antena", "señal", "radio", "cobertura", "red celular", "emisora", "telecomunicaciones"],
+      "en": ["antenna", "signal", "cell tower", "coverage", "radio station", "telecom", "transmitter"]
+    }
+  },
+  "satellite-dish": {
+    "label": { "es": "Antena parabólica", "en": "Satellite dish", "pt": "Antena parabólica", "fr": "Antenne parabolique", "de": "Satellitenschüssel", "it": "Antenna parabolica", "ja": "パラボラアンテナ", "zh": "卫星天线", "ko": "위성 안테나", "ar": "طبق الأقمار الصناعية" },
+    "keywords": {
+      "es": ["satélite", "señal", "recepción", "televisión", "comunicación remota", "internet satelital", "espacio"],
+      "en": ["satellite", "signal", "reception", "television", "remote link", "satellite internet", "space"]
+    }
+  },
+  "person-plus": {
+    "label": { "es": "Agregar persona", "en": "Add person", "pt": "Adicionar pessoa", "fr": "Ajouter une personne", "de": "Person hinzufügen", "it": "Aggiungi persona", "ja": "ユーザーを追加", "zh": "添加用户", "ko": "사용자 추가", "ar": "إضافة شخص" },
+    "keywords": {
+      "es": ["invitar", "nuevo usuario", "registrar", "agregar miembro", "dar acceso", "agregar contacto", "alta de cliente"],
+      "en": ["invite", "new user", "sign up", "add member", "grant access", "add contact", "onboard customer"]
+    }
+  },
+  "person-minus": {
+    "label": { "es": "Quitar persona", "en": "Remove person", "pt": "Remover pessoa", "fr": "Retirer une personne", "de": "Person entfernen", "it": "Rimuovi persona", "ja": "ユーザーを削除", "zh": "移除用户", "ko": "사용자 제거", "ar": "إزالة شخص" },
+    "keywords": {
+      "es": ["eliminar usuario", "sacar del grupo", "quitar acceso", "dar de baja", "quitar miembro", "dejar de seguir", "revocar"],
+      "en": ["delete user", "remove from group", "revoke access", "offboard", "remove member", "unfollow", "kick"]
+    }
+  },
+  "person-check": {
+    "label": { "es": "Usuario verificado", "en": "Verified user", "pt": "Usuário verificado", "fr": "Utilisateur vérifié", "de": "Verifizierter Nutzer", "it": "Utente verificato", "ja": "確認済みユーザー", "zh": "已验证用户", "ko": "인증된 사용자", "ar": "مستخدم موثّق" },
+    "keywords": {
+      "es": ["aprobado", "usuario activo", "aceptar solicitud", "asistencia confirmada", "identidad validada", "miembro", "permiso concedido"],
+      "en": ["approved", "active user", "accept request", "attendance confirmed", "identity validated", "member", "access granted"]
+    }
+  },
+  "person-x": {
+    "label": { "es": "Rechazar usuario", "en": "Reject user", "pt": "Recusar usuário", "fr": "Refuser l’utilisateur", "de": "Nutzer ablehnen", "it": "Rifiuta utente", "ja": "ユーザーを拒否", "zh": "拒绝用户", "ko": "사용자 거부", "ar": "رفض المستخدم" },
+    "keywords": {
+      "es": ["denegar acceso", "eliminar usuario", "solicitud rechazada", "usuario inactivo", "cancelar invitación", "no autorizado", "quitar"],
+      "en": ["deny access", "delete user", "request declined", "inactive user", "cancel invite", "unauthorized", "remove"]
+    }
+  },
+  "person-block": {
+    "label": { "es": "Bloquear usuario", "en": "Block user", "pt": "Bloquear usuário", "fr": "Bloquer l’utilisateur", "de": "Nutzer blockieren", "it": "Blocca utente", "ja": "ユーザーをブロック", "zh": "屏蔽用户", "ko": "사용자 차단", "ar": "حظر المستخدم" },
+    "keywords": {
+      "es": ["vetar", "suspender cuenta", "banear", "restringir", "spam", "acoso", "lista negra", "moderación"],
+      "en": ["ban", "suspend account", "restrict", "spam", "harassment", "blocklist", "moderation"]
+    }
+  },
+  "person-clock": {
+    "label": { "es": "Invitación pendiente", "en": "Pending invitation", "pt": "Convite pendente", "fr": "Invitation en attente", "de": "Ausstehende Einladung", "it": "Invito in sospeso", "ja": "保留中の招待", "zh": "待处理邀请", "ko": "대기 중인 초대", "ar": "دعوة معلقة" },
+    "keywords": {
+      "es": ["usuario pendiente", "en espera", "por aprobar", "cita", "turno", "última conexión", "horario del personal"],
+      "en": ["pending user", "awaiting approval", "appointment", "shift", "last seen", "staff schedule", "waitlist"]
+    }
+  },
+  "person-heart": {
+    "label": { "es": "Contacto favorito", "en": "Favorite contact", "pt": "Contato favorito", "fr": "Contact favori", "de": "Favorisierter Kontakt", "it": "Contatto preferito", "ja": "お気に入りの連絡先", "zh": "收藏的联系人", "ko": "즐겨찾는 연락처", "ar": "جهة اتصال مفضلة" },
+    "keywords": {
+      "es": ["seguir", "cliente frecuente", "lealtad", "fan", "seguidor", "relación", "cliente vip"],
+      "en": ["follow", "loyal customer", "loyalty", "fan", "follower", "relationship", "vip customer"]
+    }
+  },
+  "person-edit": {
+    "label": { "es": "Editar perfil", "en": "Edit profile", "pt": "Editar perfil", "fr": "Modifier le profil", "de": "Profil bearbeiten", "it": "Modifica profilo", "ja": "プロフィールを編集", "zh": "编辑个人资料", "ko": "프로필 편집", "ar": "تعديل الملف الشخصي" },
+    "keywords": {
+      "es": ["cuenta", "datos personales", "actualizar información", "ajustes de usuario", "cambiar nombre", "biografía", "configurar perfil"],
+      "en": ["account", "personal details", "update info", "user settings", "change name", "bio", "profile setup"]
+    }
+  },
+  "person-search": {
+    "label": { "es": "Buscar persona", "en": "Find person", "pt": "Buscar pessoa", "fr": "Rechercher une personne", "de": "Person suchen", "it": "Cerca persona", "ja": "ユーザーを検索", "zh": "查找用户", "ko": "사용자 검색", "ar": "البحث عن شخص" },
+    "keywords": {
+      "es": ["directorio", "encontrar usuario", "buscar contacto", "reclutamiento", "talento", "buscar cliente", "lupa"],
+      "en": ["directory", "find user", "lookup contact", "recruiting", "talent search", "find customer", "magnifier"]
+    }
+  },
+  "person-arrow": {
+    "label": { "es": "Asignar", "en": "Assign", "pt": "Atribuir", "fr": "Attribuer", "de": "Zuweisen", "it": "Assegna", "ja": "割り当て", "zh": "分配", "ko": "담당자 지정", "ar": "تعيين" },
+    "keywords": {
+      "es": ["transferir", "delegar", "reasignar", "responsable", "derivar", "compartir con", "cerrar sesión"],
+      "en": ["transfer", "delegate", "reassign", "owner", "hand off", "share with", "log out"]
+    }
+  },
+  "person-speaking": {
+    "label": { "es": "Persona hablando", "en": "Person speaking", "pt": "Pessoa falando", "fr": "Personne qui parle", "de": "Sprechende Person", "it": "Persona che parla", "ja": "話している人", "zh": "发言者", "ko": "말하는 사람", "ar": "شخص يتحدث" },
+    "keywords": {
+      "es": ["hablando", "presentador", "voz", "orador activo", "dictar", "audio", "ponente", "conferencia"],
+      "en": ["talking", "presenter", "voice", "active speaker", "dictate", "audio", "lecturer", "talk"]
+    }
+  },
+  "person-circle": {
+    "label": { "es": "Perfil", "en": "Profile", "pt": "Perfil", "fr": "Profil", "de": "Profil", "it": "Profilo", "ja": "プロフィール", "zh": "个人资料", "ko": "프로필", "ar": "الملف الشخصي" },
+    "keywords": {
+      "es": ["avatar", "cuenta", "usuario", "mi cuenta", "iniciar sesión", "foto de perfil", "configuración personal"],
+      "en": ["avatar", "account", "user", "my account", "sign in", "user photo", "me"]
+    }
+  },
+  "people": {
+    "label": { "es": "Grupo", "en": "Group", "pt": "Grupo", "fr": "Groupe", "de": "Gruppe", "it": "Gruppo", "ja": "グループ", "zh": "群组", "ko": "그룹", "ar": "مجموعة" },
+    "keywords": {
+      "es": ["equipo", "comunidad", "usuarios", "miembros", "colaboradores", "audiencia", "clientes", "personal"],
+      "en": ["team", "community", "users", "members", "collaborators", "audience", "customers", "staff"]
+    }
+  },
+  "id-card": {
+    "label": { "es": "Tarjeta de identificación", "en": "ID card", "pt": "Cartão de identificação", "fr": "Carte d’identité", "de": "Ausweis", "it": "Carta d’identità", "ja": "IDカード", "zh": "证件", "ko": "신분증", "ar": "بطاقة الهوية" },
+    "keywords": {
+      "es": ["identificación", "credencial", "tarjeta de contacto", "vcard", "documento", "verificar identidad", "licencia", "datos del cliente"],
+      "en": ["identification", "credential", "contact card", "vcard", "document", "verify identity", "license", "customer details"]
+    }
+  },
+  "id-badge": {
+    "label": { "es": "Credencial", "en": "ID badge", "pt": "Crachá", "fr": "Badge", "de": "Mitarbeiterausweis", "it": "Badge", "ja": "社員証", "zh": "工牌", "ko": "사원증", "ar": "بطاقة الموظف" },
+    "keywords": {
+      "es": ["gafete", "acceso", "empleado", "pase", "personal", "evento", "registro de entrada", "control de acceso"],
+      "en": ["lanyard", "access", "employee", "pass", "staff", "event", "check-in", "access control"]
+    }
+  },
+  "contacts": {
+    "label": { "es": "Contactos", "en": "Contacts", "pt": "Contatos", "fr": "Contacts", "de": "Kontakte", "it": "Contatti", "ja": "連絡先", "zh": "联系人", "ko": "연락처", "ar": "جهات الاتصال" },
+    "keywords": {
+      "es": ["agenda", "libreta de direcciones", "directorio", "clientes", "teléfonos", "crm", "personas"],
+      "en": ["address book", "directory", "phonebook", "customers", "crm", "people", "rolodex"]
+    }
+  },
+  "handshake": {
+    "label": { "es": "Acuerdo", "en": "Deal", "pt": "Acordo", "fr": "Accord", "de": "Vereinbarung", "it": "Accordo", "ja": "合意", "zh": "合作", "ko": "합의", "ar": "اتفاق" },
+    "keywords": {
+      "es": ["apretón de manos", "trato", "socio", "alianza", "contrato", "negociación", "bienvenida", "cerrar venta"],
+      "en": ["agreement", "partner", "partnership", "contract", "negotiation", "welcome", "close sale", "trust"]
+    }
+  },
+  "face-smile": {
+    "label": { "es": "Cara sonriente", "en": "Smiling face", "pt": "Rosto sorridente", "fr": "Visage souriant", "de": "Lächelndes Gesicht", "it": "Faccina sorridente", "ja": "笑顔", "zh": "笑脸", "ko": "웃는 얼굴", "ar": "وجه مبتسم" },
+    "keywords": {
+      "es": ["feliz", "emoji", "satisfecho", "contento", "buena experiencia", "calificación positiva", "reacción", "estado de ánimo"],
+      "en": ["happy", "emoji", "satisfied", "pleased", "good experience", "positive rating", "reaction", "mood"]
+    }
+  },
+  "face-laugh": {
+    "label": { "es": "Cara riendo", "en": "Laughing face", "pt": "Rosto rindo", "fr": "Visage qui rit", "de": "Lachendes Gesicht", "it": "Faccina che ride", "ja": "笑っている顔", "zh": "大笑", "ko": "크게 웃는 얼굴", "ar": "وجه ضاحك" },
+    "keywords": {
+      "es": ["risa", "alegría", "carcajada", "divertido", "muy satisfecho", "emoji", "humor"],
+      "en": ["laughter", "joy", "funny", "very satisfied", "emoji", "humor", "lol"]
+    }
+  },
+  "face-wink": {
+    "label": { "es": "Cara guiñando", "en": "Winking face", "pt": "Rosto piscando", "fr": "Visage qui fait un clin d’œil", "de": "Zwinkerndes Gesicht", "it": "Faccina che fa l’occhiolino", "ja": "ウインクする顔", "zh": "眨眼", "ko": "윙크하는 얼굴", "ar": "وجه غامز" },
+    "keywords": {
+      "es": ["guiño", "broma", "complicidad", "coqueteo", "ironía", "emoji", "secreto"],
+      "en": ["joke", "playful", "flirt", "irony", "emoji", "just kidding", "cheeky"]
+    }
+  },
+  "face-neutral": {
+    "label": { "es": "Cara neutral", "en": "Neutral face", "pt": "Rosto neutro", "fr": "Visage neutre", "de": "Neutrales Gesicht", "it": "Faccina neutra", "ja": "無表情の顔", "zh": "面无表情", "ko": "무표정한 얼굴", "ar": "وجه محايد" },
+    "keywords": {
+      "es": ["indiferente", "serio", "regular", "ni bien ni mal", "calificación media", "sin opinión", "emoji"],
+      "en": ["indifferent", "serious", "okay", "meh", "average rating", "no opinion", "emoji"]
+    }
+  },
+  "face-confused": {
+    "label": { "es": "Cara confundida", "en": "Confused face", "pt": "Rosto confuso", "fr": "Visage perplexe", "de": "Verwirrtes Gesicht", "it": "Faccina confusa", "ja": "困惑した顔", "zh": "困惑", "ko": "혼란스러운 얼굴", "ar": "وجه مرتبك" },
+    "keywords": {
+      "es": ["duda", "no entiendo", "perplejo", "incertidumbre", "pregunta", "poco claro", "emoji"],
+      "en": ["doubt", "don’t understand", "puzzled", "uncertain", "question", "unclear", "emoji"]
+    }
+  },
+  "face-surprised": {
+    "label": { "es": "Cara sorprendida", "en": "Surprised face", "pt": "Rosto surpreso", "fr": "Visage surpris", "de": "Überraschtes Gesicht", "it": "Faccina sorpresa", "ja": "驚いた顔", "zh": "惊讶", "ko": "놀란 얼굴", "ar": "وجه متفاجئ" },
+    "keywords": {
+      "es": ["sorpresa", "asombro", "wow", "impacto", "increíble", "emoji", "reacción"],
+      "en": ["surprise", "amazed", "wow", "shocked", "unbelievable", "emoji", "reaction"]
+    }
+  },
+  "face-sad": {
+    "label": { "es": "Cara triste", "en": "Sad face", "pt": "Rosto triste", "fr": "Visage triste", "de": "Trauriges Gesicht", "it": "Faccina triste", "ja": "悲しい顔", "zh": "难过", "ko": "슬픈 얼굴", "ar": "وجه حزين" },
+    "keywords": {
+      "es": ["tristeza", "insatisfecho", "mala experiencia", "calificación negativa", "decepción", "página de error", "emoji"],
+      "en": ["unhappy", "dissatisfied", "bad experience", "negative rating", "disappointed", "error page", "emoji"]
+    }
+  },
+  "face-angry": {
+    "label": { "es": "Cara enojada", "en": "Angry face", "pt": "Rosto zangado", "fr": "Visage en colère", "de": "Wütendes Gesicht", "it": "Faccina arrabbiata", "ja": "怒った顔", "zh": "生气", "ko": "화난 얼굴", "ar": "وجه غاضب" },
+    "keywords": {
+      "es": ["enojo", "molestia", "furia", "queja", "cliente molesto", "muy insatisfecho", "emoji"],
+      "en": ["mad", "annoyed", "furious", "complaint", "upset customer", "very dissatisfied", "emoji"]
+    }
+  },
+  "reaction-add": {
+    "label": { "es": "Agregar reacción", "en": "Add reaction", "pt": "Adicionar reação", "fr": "Ajouter une réaction", "de": "Reaktion hinzufügen", "it": "Aggiungi reazione", "ja": "リアクションを追加", "zh": "添加表情回应", "ko": "반응 추가", "ar": "إضافة تفاعل" },
+    "keywords": {
+      "es": ["emoji", "reaccionar", "responder con emoji", "selector de emoji", "me gusta", "expresar", "comentario rápido"],
+      "en": ["emoji", "react", "emoji picker", "respond with emoji", "like", "express", "quick feedback"]
+    }
+  },
+  "thumbs-up": {
+    "label": { "es": "Me gusta", "en": "Like", "pt": "Curtir", "fr": "J’aime", "de": "Gefällt mir", "it": "Mi piace", "ja": "いいね", "zh": "点赞", "ko": "좋아요", "ar": "إعجاب" },
+    "keywords": {
+      "es": ["aprobar", "de acuerdo", "pulgar arriba", "votar a favor", "útil", "recomendar", "bien hecho"],
+      "en": ["approve", "agree", "upvote", "helpful", "recommend", "good job", "positive feedback"]
+    }
+  },
+  "thumbs-down": {
+    "label": { "es": "No me gusta", "en": "Dislike", "pt": "Não gostei", "fr": "Je n’aime pas", "de": "Gefällt mir nicht", "it": "Non mi piace", "ja": "低評価", "zh": "点踩", "ko": "싫어요", "ar": "عدم الإعجاب" },
+    "keywords": {
+      "es": ["rechazar", "desacuerdo", "pulgar abajo", "votar en contra", "no útil", "mala respuesta", "reportar"],
+      "en": ["reject", "disagree", "downvote", "not helpful", "bad answer", "negative feedback", "report"]
+    }
+  },
+  "hand-raised": {
+    "label": { "es": "Levantar la mano", "en": "Raise hand", "pt": "Levantar a mão", "fr": "Lever la main", "de": "Hand heben", "it": "Alza la mano", "ja": "挙手", "zh": "举手", "ko": "손 들기", "ar": "رفع اليد" },
+    "keywords": {
+      "es": ["pedir la palabra", "turno", "pregunta", "participar", "voluntario", "alto", "saludo"],
+      "en": ["ask to speak", "turn", "question", "participate", "volunteer", "stop", "hello"]
+    }
+  },
+  "party-popper": {
+    "label": { "es": "Celebración", "en": "Celebration", "pt": "Comemoração", "fr": "Célébration", "de": "Feier", "it": "Festeggiamento", "ja": "お祝い", "zh": "庆祝", "ko": "축하", "ar": "احتفال" },
+    "keywords": {
+      "es": ["festejo", "felicidades", "logro", "lanzamiento", "fiesta", "confeti", "éxito", "meta cumplida"],
+      "en": ["congratulations", "achievement", "launch", "party", "confetti", "success", "milestone", "tada"]
+    }
+  },
+  "sticker": {
+    "label": { "es": "Sticker", "en": "Sticker", "pt": "Figurinha", "fr": "Autocollant", "de": "Sticker", "it": "Sticker", "ja": "ステッカー", "zh": "贴纸", "ko": "스티커", "ar": "ملصق" },
+    "keywords": {
+      "es": ["calcomanía", "pegatina", "emoji", "reacción", "chat", "expresión", "gif"],
+      "en": ["decal", "emoji", "reaction", "chat", "expression", "gif", "label"]
+    }
+  },
+  "translate": {
+    "label": { "es": "Traducir", "en": "Translate", "pt": "Traduzir", "fr": "Traduire", "de": "Übersetzen", "it": "Traduci", "ja": "翻訳", "zh": "翻译", "ko": "번역", "ar": "ترجمة" },
+    "keywords": {
+      "es": ["idioma", "traducción", "cambiar idioma", "multilingüe", "localización", "lengua", "internacional"],
+      "en": ["language", "translation", "change language", "multilingual", "localization", "i18n", "international"]
+    }
+  },
+  "mail-alert": {
+    "label": { "es": "Correo no deseado", "en": "Spam", "pt": "Spam", "fr": "Courrier indésirable", "de": "Spam", "it": "Posta indesiderata", "ja": "迷惑メール", "zh": "垃圾邮件", "ko": "스팸 메일", "ar": "بريد غير مرغوب فيه" },
+    "keywords": {
+      "es": ["spam", "reportar correo", "correo sospechoso", "phishing", "fraude", "advertencia", "correo importante"],
+      "en": ["junk", "report spam", "suspicious email", "phishing", "fraud", "warning", "important email"]
+    }
+  },
+  "rss": {
+    "label": { "es": "Fuente RSS", "en": "RSS feed", "pt": "Feed RSS", "fr": "Flux RSS", "de": "RSS-Feed", "it": "Feed RSS", "ja": "RSSフィード", "zh": "RSS 订阅", "ko": "RSS 피드", "ar": "موجز RSS" },
+    "keywords": {
+      "es": ["suscribirse", "noticias", "blog", "podcast", "actualizaciones", "sindicación", "lector de noticias"],
+      "en": ["subscribe", "news", "blog", "podcast", "updates", "syndication", "news reader"]
+    }
+  },
+  "cake": {
+    "label": { "es": "Cumpleaños", "en": "Birthday", "pt": "Aniversário", "fr": "Anniversaire", "de": "Geburtstag", "it": "Compleanno", "ja": "誕生日", "zh": "生日", "ko": "생일", "ar": "عيد ميلاد" },
+    "keywords": {
+      "es": ["pastel", "tarta", "aniversario", "celebración", "fiesta", "fecha especial", "felicitar", "regalo"],
+      "en": ["anniversary", "celebration", "party", "special date", "congratulate", "dessert", "gift"]
+    }
+  }
+}

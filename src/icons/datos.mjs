@@ -1,7 +1,7 @@
 // Datos y desarrollo: gráficas, tableros, código, git, infraestructura e IA. Todo se calcula con
 // engine/geometry.mjs sobre las reglas de DESIGN.md (trazo 1.5, keylines, esquinas continuas y la
 // esquina inferior derecha recta en los contenedores).
-import { arc, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 
 // ---------------------------------------------------------------------------------------------
 // Auxiliares locales
@@ -13,7 +13,6 @@ const n = (v) => {
   return s === '-0' || s === '' ? '0' : s;
 };
 const pt = (p) => `${n(p[0])} ${n(p[1])}`;
-const rad = (deg) => (deg * Math.PI) / 180;
 
 /** Contenedor con la firma: esquinas continuas y la inferior derecha recta. */
 const box = (x, y, w, h, r) => sq(x, y, w, h, r, { square: ['br'] });
@@ -52,61 +51,6 @@ function rline(pts, r = 0) {
     d += `L${pt([V[0] + ux * t, V[1] + uy * t])}A${n(rr[i])} ${n(rr[i])} 0 0 ${cz > 0 ? 1 : 0} ${pt([V[0] + vx * t, V[1] + vy * t])}`;
   }
   return `${d}L${pt(pts[pts.length - 1])}`;
-}
-
-/** Punto de una elipse por ángulo de parámetro (0 = derecha, 90 = abajo). */
-const ep = (cx, cy, rx, ry, t) => [cx + rx * Math.cos(rad(t)), cy + ry * Math.sin(rad(t))];
-/** Arco de elipse de t0 a t1. */
-function earc(cx, cy, rx, ry, t0, t1) {
-  return `M${pt(ep(cx, cy, rx, ry, t0))}A${n(rx)} ${n(ry)} 0 ${Math.abs(t1 - t0) > 180 ? 1 : 0} ${t1 > t0 ? 1 : 0} ${pt(ep(cx, cy, rx, ry, t1))}`;
-}
-
-/**
- * Recorte: quita de cada primitiva lo que cae dentro de los círculos [cx, cy, R] y devuelve los tramos
- * que quedan. Primitivas: { L: [a, b] } (segmento) o { E: [cx, cy, rx, ry, t0, t1] } (arco).
- */
-function cut(prims, holes) {
-  const at = (p, s) => {
-    if (p.L) return [p.L[0][0] + (p.L[1][0] - p.L[0][0]) * s, p.L[0][1] + (p.L[1][1] - p.L[0][1]) * s];
-    const [cx, cy, rx, ry, t0, t1] = p.E;
-    return ep(cx, cy, rx, ry, t0 + (t1 - t0) * s);
-  };
-  const out = (p, s) => holes.every(([cx, cy, R]) => Math.hypot(at(p, s)[0] - cx, at(p, s)[1] - cy) > R);
-  const edge = (p, a, b) => {
-    const ia = out(p, a);
-    for (let k = 0; k < 40; k++) {
-      const m = (a + b) / 2;
-      if (out(p, m) === ia) a = m;
-      else b = m;
-    }
-    return (a + b) / 2;
-  };
-  const d = [];
-  for (const p of prims) {
-    const N = 400;
-    let start = out(p, 0) ? 0 : null;
-    for (let i = 1; i <= N; i++) {
-      const s0 = (i - 1) / N;
-      const s1 = i / N;
-      const o0 = out(p, s0);
-      const o1 = out(p, s1);
-      if (o0 !== o1) {
-        const e = edge(p, s0, s1);
-        if (o1) start = e;
-        else if (start !== null) {
-          d.push(piece(p, start, e));
-          start = null;
-        }
-      }
-    }
-    if (start !== null) d.push(piece(p, start, 1));
-  }
-  return d;
-  function piece(p, s0, s1) {
-    if (p.L) return line(at(p, s0), at(p, s1));
-    const [cx, cy, rx, ry, t0, t1] = p.E;
-    return earc(cx, cy, rx, ry, t0 + (t1 - t0) * s0, t0 + (t1 - t0) * s1);
-  }
 }
 
 /** Path con puntos transformados (p. ej. girados): [['M', p], ['C', c1, c2, p], ['A', r, large, sweep, p], ['Z']]. */
@@ -176,18 +120,65 @@ function edge(p, q, r1, r2 = r1) {
   return line([p[0] + (dx / L) * r1, p[1] + (dy / L) * r1], [q[0] - (dx / L) * r2, q[1] - (dy / L) * r2]);
 }
 
-// La base de datos del núcleo como primitivas, para recortarla bajo una insignia.
-const DB = [
-  { E: [12, 6.1, 8.4, 3, 0, 180] },
-  { E: [12, 6.1, 8.4, 3, 180, 360] },
-  { L: [[3.6, 6.1], [3.6, 17.9]] },
-  { L: [[20.4, 6.1], [20.4, 17.9]] },
-  { E: [12, 12, 8.4, 3, 0, 180] },
-  { E: [12, 17.9, 8.4, 3, 0, 180] },
-];
-// Insignia: círculo de r 4.25 abajo a la derecha; el objeto base se recorta a 3 del trazo.
-const BADGE = [17.25, 17.25, 4.25];
-const BADGE_CUT = [[17.25, 17.25, 7.25]];
+/**
+ * Ida y vuelta: el mismo trazo abierto recorrido de regreso. En el relleno, un conector con esquina
+ * o curva (la rama de git, la línea que une dos cajas, la punta de una flecha) cerraría un triángulo
+ * al rellenarse; así sigue siendo línea, unido a lo que toca y sin área. Admite M, L, H, V, C y A
+ * absolutos.
+ */
+function wire(d) {
+  const segs = [];
+  let p = null;
+  for (const [, c, s] of d.matchAll(/([A-Za-z])([^A-Za-z]*)/g)) {
+    const a = (s.match(/-?(?:\d+\.?\d*|\.\d+)/g) ?? []).map(Number);
+    if (c === 'M' && !p) p = [a[0], a[1]];
+    else if (c === 'L' || c === 'H' || c === 'V') {
+      const q = c === 'L' ? [a[0], a[1]] : c === 'H' ? [a[0], p[1]] : [p[0], a[0]];
+      segs.push(`L${pt(p)}`);
+      p = q;
+    } else if (c === 'C') {
+      segs.push(`C${pt([a[2], a[3]])} ${pt([a[0], a[1]])} ${pt(p)}`);
+      p = [a[4], a[5]];
+    } else if (c === 'A') {
+      segs.push(`A${n(a[0])} ${n(a[1])} ${n(a[2])} ${a[3]} ${a[4] ? 0 : 1} ${pt(p)}`);
+      p = [a[5], a[6]];
+    } else throw new Error(`wire: comando ${c} no admitido en «${d}»`);
+  }
+  return d + segs.reverse().join('');
+}
+
+/** Anillo para el relleno: el círculo exterior y el interior en sentido contrario (el centro queda hueco). */
+const ring = (cx, cy, R, r) => `${circ(cx, cy, R)}M${pt([cx - r, cy])}A${n(r)} ${n(r)} 0 1 1 ${pt([cx + r, cy])}A${n(r)} ${n(r)} 0 1 1 ${pt([cx - r, cy])}Z`;
+
+// La base de datos del núcleo, completa (las insignias la despejan con el motor).
+const DB = {
+  body: 'M3.6 6.1v11.8c0 1.66 3.76 3 8.4 3s8.4-1.34 8.4-3V6.1',
+  lid: 'M3.6 6.1c0-1.66 3.76-3 8.4-3s8.4 1.34 8.4 3-3.76 3-8.4 3-8.4-1.34-8.4-3Z',
+  band: 'M20.4 12c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3',
+  // El borde de la tapa, que en el relleno se cala (como en `database` del núcleo)
+  rim: 'M20.4 6.1c0 1.66-3.76 3-8.4 3s-8.4-1.34-8.4-3',
+};
+const DB_D = [DB.body, DB.lid, DB.band];
+
+// Insignias propias, en el mismo lugar y con el mismo aro que las del motor (centro 17.25, r 4.25).
+const BC = [17.25, 17.25];
+const RING = circ(...BC, 4.25);
+const OWN = {
+  // Lupa: el lente es el círculo de la insignia (r 3.25) y el mango sale hacia la esquina.
+  search() {
+    const lens = circ(...BC, 3.25);
+    const p = polar(...BC, 3.25, 45);
+    const end = [21.25, 21.25];
+    const handle = line(p, end);
+    return { d: [lens, handle], knock: `${RING}M${pt(p)}L${pt(end)}Z`, fill: { solid: [lens, handle] } };
+  },
+  // Sincronizar: dos flechas de arco que ocupan el círculo de la insignia (en relleno siguen siendo línea).
+  sync() {
+    const a = arc(...BC, 3.75, 205, 325);
+    const b = arc(...BC, 3.75, 25, 145);
+    return { d: [a.d, head(a.end, a.tangent, 2.4), b.d, head(b.end, b.tangent, 2.4)], knock: RING };
+  },
+};
 
 // Keylines.
 const K0 = 3.25;
@@ -215,6 +206,9 @@ const GR = 2.35;
 // La lupa del núcleo (search), idéntica: aro de r 6.85 en 10.6 y mango de 15.6 a 20.5.
 const SEARCH = [circ(10.6, 10.6, 6.85), line([15.6, 15.6], [20.5, 20.5])];
 
+// Un vértice de 90° de un `roundpoly` de radio r queda (√2 − 1)·r adentro: ahí tocan los conectores.
+const INSET = (r) => (Math.SQRT2 - 1) * r;
+
 // ---------------------------------------------------------------------------------------------
 // Íconos
 // ---------------------------------------------------------------------------------------------
@@ -237,10 +231,10 @@ const icons = {
     tags: ['barras apiladas', 'gráfica', 'composición', 'stacked bar chart'],
     d: [
       bar(BX[0], 9.25),
-      line([BX[0], 14.5], [BX[0] + BW, 14.5]),
       bar(BX[1], 3.25),
-      line([BX[1], 10.75], [BX[1] + BW, 10.75]),
       bar(BX[2], 12),
+      line([BX[0], 14.5], [BX[0] + BW, 14.5]),
+      line([BX[1], 10.75], [BX[1] + BW, 10.75]),
       line([BX[2], 16.5], [BX[2] + BW, 16.5]),
     ],
   },
@@ -329,7 +323,9 @@ const icons = {
   },
   'chart-waterfall': {
     tags: ['cascada', 'variación', 'puente', 'waterfall chart'],
-    d: [bar(BX[0], 11.5), sq(BX[1], 4.25, BW, 7.25, 1.15), line([BX[0] + BW, 11.5], [BX[1], 11.5]), sq(BX[2], 4.25, BW, 10, 1.15), line([BX[1] + BW, 4.25], [BX[2], 4.25])],
+    // El inicio, la variación que flota y el total: la barra del medio nace a la altura de la
+    // primera y llega a la de la última, sin conectores (rozaban las esquinas de las barras).
+    d: [bar(BX[0], 11.5), sq(BX[1], 4.25, BW, 7.25, 1.15), bar(BX[2], 4.25)],
   },
   'chart-gantt': {
     tags: ['gantt', 'cronograma', 'planeación', 'gantt chart'],
@@ -366,18 +362,20 @@ const icons = {
   },
   'dashboard': {
     tags: ['tablero', 'panel', 'resumen', 'dashboard'],
+    // Paneles a 3 entre sí (antes a 2.5: a 16 px se pegaban); el último lleva la firma.
     d: [
-      sq(K0, K0, 7.5, 17.5, 2.25),
-      sq(13.25, K0, 7.5, 7.5, 2.25),
-      sq(13.25, 13.25, 7.5, 7.5, 2.25, { square: ['br'] }),
+      sq(K0, K0, 7.25, 17.5, 2.25),
+      sq(13.5, K0, 7.25, 7.25, 2.25),
+      sq(13.5, 13.5, 7.25, 7.25, 2.25, { square: ['br'] }),
     ],
   },
   'gauge': {
     tags: ['medidor', 'velocidad', 'rendimiento', 'gauge'],
     d: (() => {
-      // Centro en 14: el arco (de 5 a 18.5) queda centrado en el lienzo.
+      // Centro en 14: el arco (de 5 a 18.5) queda centrado en el lienzo. La aguja termina a 3 del
+      // arco (antes a 2.75: rozaba).
       const c = [12, 14];
-      return [arc(c[0], c[1], 9, 150, 390).d, circ(c[0], c[1], 1.75), line(polar(c[0], c[1], 1.75, -45), polar(c[0], c[1], 6.25, -45))];
+      return [arc(c[0], c[1], 9, 150, 390).d, circ(c[0], c[1], 1.75), line(polar(c[0], c[1], 1.75, -45), polar(c[0], c[1], 6, -45))];
     })(),
   },
   'analytics': {
@@ -399,10 +397,10 @@ const icons = {
     tags: ['esquema', 'modelo de datos', 'relación', 'schema'],
     d: [
       box(K0, K0, 8.5, 7.5, 2.25),
-      line([K0, 6.5], [11.75, 6.5]),
       box(12.25, 13.25, 8.5, 7.5, 2.25),
-      line([12.25, 16.5], [K1, 16.5]),
       rline([[11.75, 8.5], [16.5, 8.5], [16.5, 13.25]], 2),
+      line([K0, 6.5], [11.75, 6.5]),
+      line([12.25, 16.5], [K1, 16.5]),
     ],
   },
 
@@ -454,11 +452,12 @@ const icons = {
   },
   'code-window': {
     tags: ['ventana de código', 'editor', 'desarrollo', 'code editor'],
+    // Los chevrones a 3 de la barra y a 3.25 del borde de abajo (antes a 2.75 de la barra: rozaban).
     d: [
       box(2.5, 4, 19, 16, 4),
       line([2.5, 8.75], [21.5, 8.75]),
-      rline([[9.5, 11.5], [7.25, 14.25], [9.5, 17]], 0),
-      rline([[14.5, 11.5], [16.75, 14.25], [14.5, 17]], 0),
+      rline([[9.5, 11.75], [7.25, 14.25], [9.5, 16.75]], 0),
+      rline([[14.5, 11.75], [16.75, 14.25], [14.5, 16.75]], 0),
     ],
   },
 
@@ -466,24 +465,24 @@ const icons = {
   'git-branch': {
     tags: ['rama', 'git', 'bifurcación', 'nueva rama', 'branch'],
     // El tiempo sube: la rama sale del tronco como un carril y termina arriba, en su nodo.
-    d: [circ(6.25, 18.4, GR), circ(17.75, 5.6, GR), line([6.25, K0], [6.25, 16.05]), 'M6.25 15.25C6.25 11.25 17.75 12.75 17.75 8.75V7.95'],
+    d: [circ(6.25, 18.4, GR), line([6.25, K0], [6.25, 16.05]), 'M6.25 15.25C6.25 11.25 17.75 12.75 17.75 8.75V7.95', circ(17.75, 5.6, GR)],
   },
   'git-commit': {
     tags: ['commit', 'git', 'confirmación', 'versión', 'commit'],
-    d: [line([2.5, 12], [8.25, 12]), circ(12, 12, 3.75), line([15.75, 12], [21.5, 12])],
+    d: [circ(12, 12, 3.75), line([2.5, 12], [8.25, 12]), line([15.75, 12], [21.5, 12])],
   },
   'git-merge': {
     tags: ['fusionar', 'merge', 'git', 'unir ramas', 'merge branch'],
     // El espejo de git-branch: la rama nace abajo y se incorpora al tronco como un carril.
-    d: [circ(6.25, 5.6, GR), circ(6.25, 18.4, GR), circ(17.75, 18.4, GR), line([6.25, 7.95], [6.25, 16.05]), 'M17.75 16.05V15C17.75 11.25 6.25 12.75 6.25 8.75'],
+    d: [circ(6.25, 18.4, GR), line([6.25, 7.95], [6.25, 16.05]), circ(6.25, 5.6, GR), circ(17.75, 18.4, GR), 'M17.75 16.05V15C17.75 11.25 6.25 12.75 6.25 8.75'],
   },
   'git-pull-request': {
     tags: ['pull request', 'revisión', 'git', 'solicitud de cambios'],
     d: [
-      circ(6.25, 5.6, 2.35),
-      circ(6.25, 18.4, 2.35),
+      circ(6.25, 5.6, GR),
       line([6.25, 7.95], [6.25, 16.05]),
-      circ(17.75, 18.4, 2.35),
+      circ(6.25, 18.4, GR),
+      circ(17.75, 18.4, GR),
       rline([[17.75, 16.05], [17.75, 5.6], [11.75, 5.6]], 3.5),
       head([11.75, 5.6], [-1, 0], 3.4),
     ],
@@ -491,10 +490,10 @@ const icons = {
   'git-pull-request-closed': {
     tags: ['pull request cerrado', 'rechazado', 'git', 'closed'],
     d: [
-      circ(6.25, 5.6, 2.35),
-      circ(6.25, 18.4, 2.35),
+      circ(6.25, 5.6, GR),
       line([6.25, 7.95], [6.25, 16.05]),
-      circ(17.75, 18.4, 2.35),
+      circ(6.25, 18.4, GR),
+      circ(17.75, 18.4, GR),
       line([17.75, 16.05], [17.75, 11.25]),
       line([15.75, 3.6], [19.75, 7.6]),
       line([19.75, 3.6], [15.75, 7.6]),
@@ -503,10 +502,10 @@ const icons = {
   'git-pull-request-draft': {
     tags: ['borrador', 'pull request', 'git', 'draft'],
     d: [
-      circ(6.25, 5.6, 2.35),
-      circ(6.25, 18.4, 2.35),
+      circ(6.25, 5.6, GR),
       line([6.25, 7.95], [6.25, 16.05]),
-      circ(17.75, 18.4, 2.35),
+      circ(6.25, 18.4, GR),
+      circ(17.75, 18.4, GR),
       dot(17.75, 12.75),
       dot(17.75, 9),
       dot(17.75, 5.25),
@@ -516,20 +515,20 @@ const icons = {
     tags: ['fork', 'bifurcar', 'copia del repositorio', 'git', 'repository fork'],
     // Una Y de curvas tangentes: las dos copias salen del mismo tronco sin codos.
     d: [
-      circ(6.25, 5.6, GR),
-      circ(17.75, 5.6, GR),
       circ(12, 18.4, GR),
       'M6.25 7.95C6.25 11.5 12 10.5 12 14.25V16.05',
       'M17.75 7.95C17.75 11.5 12 10.5 12 14.25',
+      circ(6.25, 5.6, GR),
+      circ(17.75, 5.6, GR),
     ],
   },
   'git-compare': {
     tags: ['comparar', 'diferencias', 'git', 'compare'],
     d: [
       circ(5.6, 5.6, 2.35),
-      circ(18.4, 18.4, 2.35),
       rline([[7.95, 5.6], [18.4, 5.6], [18.4, 12.5]], 3.5),
       head([18.4, 12.5], [0, 1], 3.4),
+      circ(18.4, 18.4, 2.35),
       rline([[16.05, 18.4], [5.6, 18.4], [5.6, 11.5]], 3.5),
       head([5.6, 11.5], [0, -1], 3.4),
     ],
@@ -538,16 +537,20 @@ const icons = {
   // Pruebas ------------------------------------------------------------------------------------
   'bug': {
     tags: ['error', 'bicho', 'falla', 'depurar', 'bug', 'debug'],
-    // El cuerpo lleva hombros redondos (antes eran esquinas vivas, ajenas al set).
-    d: [
-      'M9.25 8.5A2.75 2.75 0 0 1 14.75 8.5',
-      'M6.75 14V11A2.5 2.5 0 0 1 9.25 8.5H14.75A2.5 2.5 0 0 1 17.25 11V14A5.25 5.25 0 0 1 6.75 14Z',
-      line([12, 8.5], [12, 19.25]),
-      line([6.75, 12.75], [3.5, 12.75]),
-      line([7.6, 17.5], [4.5, 19.75]),
-      line([17.25, 12.75], [20.5, 12.75]),
-      line([16.4, 17.5], [19.5, 19.75]),
-    ],
+    // El cuerpo lleva hombros redondos (antes eran esquinas vivas, ajenas al set). Las patas de
+    // abajo nacen sobre el arco del cuerpo (antes quedaban a 0.4: rozaban).
+    d: (() => {
+      const foot = (a) => polar(12, 14, 5.25, a);
+      return [
+        'M6.75 14V11A2.5 2.5 0 0 1 9.25 8.5H14.75A2.5 2.5 0 0 1 17.25 11V14A5.25 5.25 0 0 1 6.75 14Z',
+        'M9.25 8.5A2.75 2.75 0 0 1 14.75 8.5',
+        line([12, 8.5], [12, 19.25]),
+        line([6.75, 12.75], [3.5, 12.75]),
+        line(foot(141.5), [4.5, 19.75]),
+        line([17.25, 12.75], [20.5, 12.75]),
+        line(foot(38.5), [19.5, 19.75]),
+      ];
+    })(),
   },
   'flask': {
     tags: ['matraz', 'prueba', 'experimento', 'laboratorio', 'test', 'testing'],
@@ -577,9 +580,9 @@ const icons = {
       return [
         tp([['M', [-12.25, 0]], ['L', [-8.25, 0]]], T),
         tp([['M', [-3.25, -3.75]], ['L', [-4.5, -3.75]], ['A', 3.75, 0, 0, [-4.5, 3.75]], ['L', [-3.25, 3.75]], ['Z']], T),
-        tp([['M', [3.25, -1.75]], ['L', [0.25, -1.75]], ['M', [3.25, 1.75]], ['L', [0.25, 1.75]]], T),
         tp([['M', [3.25, -3.75]], ['L', [4.5, -3.75]], ['A', 3.75, 0, 1, [4.5, 3.75]], ['L', [3.25, 3.75]], ['Z']], T),
         tp([['M', [8.25, 0]], ['L', [12.25, 0]]], T),
+        tp([['M', [3.25, -1.75]], ['L', [0.25, -1.75]], ['M', [3.25, 1.75]], ['L', [0.25, 1.75]]], T),
       ];
     })(),
   },
@@ -613,22 +616,25 @@ const icons = {
   },
   'server': {
     tags: ['servidor', 'hosting', 'infraestructura', 'server'],
+    // Dos unidades como las de Archivos (`external-drive`, `file-server`): la ranura a la izquierda y
+    // la luz a la derecha. De 16 × 6.5 y a 3 entre sí: con 17.5 × 7.25 pasaba del 28 % de tinta.
     d: [
-      box(K0, K0, 17.5, 7.25, 2.25),
-      dot(7.25, 6.875),
-      line([11.25, 6.875], [16.75, 6.875]),
-      box(K0, 13.5, 17.5, 7.25, 2.25),
-      dot(7.25, 17.125),
-      line([11.25, 17.125], [16.75, 17.125]),
+      box(4, 4, 16, 6.5, 2),
+      box(4, 13.5, 16, 6.5, 2),
+      line([7.5, 7.25], [11, 7.25]),
+      dot(16, 7.25),
+      line([7.5, 16.75], [11, 16.75]),
+      dot(16, 16.75),
     ],
   },
   'cloud-compute': {
     tags: ['nube', 'cómputo en la nube', 'servidor remoto', 'cloud computing'],
-    // La nube de archivos (mismos tres lóbulos y base en 18.25) con el prompt de la terminal.
+    // La nube de archivos (mismos tres lóbulos y base en 18.25) con el prompt de la terminal, a 3 o
+    // más del contorno (antes la punta del chevrón quedaba a 2.4 del lóbulo izquierdo).
     d: [
       cloud([7.25, 14.25, 4], [12.5, 10.75, 5.5], [17.25, 14.5, 3.75], 18.25),
-      rline([[9.25, 11.25], [11.25, 13.25], [9.25, 15.25]], 0),
-      line([13.5, 15.25], [15.75, 15.25]),
+      rline([[9.75, 11.25], [11.75, 13.25], [9.75, 15.25]], 0),
+      line([14, 15.25], [16.25, 15.25]),
     ],
   },
   'container': {
@@ -644,9 +650,9 @@ const icons = {
       const T = (p) => rot([12 + (p[0] - 12) * k, 12 + (p[1] - 12) * k], [12, 12], 45);
       return [
         tp([['M', [9, 15.25]], ['L', [9, 9.5]], ['C', [9, 6.5], [10.25, 4.25], [12, 2.75]], ['C', [13.75, 4.25], [15, 6.5], [15, 9.5]], ['L', [15, 15.25]], ['Z']], T),
-        circ(...T([12, 9.25]), 1.6),
         tp([['M', [9, 11.75]], ['L', [6.5, 14.25]], ['L', [6.5, 17.5]], ['L', [9, 15.25]]], T),
         tp([['M', [15, 11.75]], ['L', [17.5, 14.25]], ['L', [17.5, 17.5]], ['L', [15, 15.25]]], T),
+        circ(...T([12, 9.25]), 1.6),
         tp([['M', [12, 18.25]], ['L', [12, 20.5]]], T),
       ];
     })(),
@@ -657,7 +663,8 @@ const icons = {
   },
   'log': {
     tags: ['registro', 'bitácora', 'eventos', 'log', 'logs', 'audit trail'],
-    d: [CARD, ...[8.5, 12, 15.5].flatMap((y) => [dot(7.75, y), line([10.75, y], [16.25, y])])],
+    // Renglones a 3.75 de su punto (a 3 rozaban: el borde del punto quedaba a 2.3 del renglón).
+    d: [CARD, ...[8.5, 12, 15.5].flatMap((y) => [dot(7.75, y), line([11.5, y], [16.25, y])])],
   },
 
   // Estructuras y flujos -------------------------------------------------------------------------
@@ -668,8 +675,8 @@ const icons = {
       const A = [-90, 30, 150];
       return [
         circ(c[0], c[1], 2.5),
-        ...A.map((a) => circ(...polar(c[0], c[1], 8, a), 2.25)),
         ...A.map((a) => line(polar(c[0], c[1], 2.5, a), polar(c[0], c[1], 5.75, a))),
+        ...A.map((a) => circ(...polar(c[0], c[1], 8, a), 2.25)),
       ];
     })(),
   },
@@ -687,10 +694,10 @@ const icons = {
     tags: ['jerarquía', 'árbol', 'niveles', 'hierarchy'],
     d: [
       circ(12, 5.6, 2.35),
-      circ(5.6, 18.4, 2.35),
-      circ(18.4, 18.4, 2.35),
       line([12, 7.95], [12, 12]),
       rline([[5.6, 16.05], [5.6, 12], [18.4, 12], [18.4, 16.05]], 2.5),
+      circ(5.6, 18.4, 2.35),
+      circ(18.4, 18.4, 2.35),
     ],
   },
   'sitemap': {
@@ -710,15 +717,18 @@ const icons = {
   },
   'flowchart': {
     tags: ['diagrama de flujo', 'proceso', 'algoritmo', 'decisión', 'flowchart', 'algorithm'],
+    // El conector llega al vértice redondeado del rombo (antes terminaba a 0.4 de él).
     d: [
       box(K0, K0, 8, 6, 1.85),
+      rline([[7.25, 9.25], [7.25, 15.75], [11.75 + INSET(1), 15.75]], 2.5),
       roundpoly([[16.25, 11.25], [20.75, 15.75], [16.25, 20.25], [11.75, 15.75]], 1),
-      rline([[7.25, 9.25], [7.25, 15.75], [11.75, 15.75]], 2.5),
     ],
   },
   'workflow': {
     tags: ['flujo de trabajo', 'automatización', 'pasos', 'workflow'],
-    d: [sq(K0, K0, 7.5, 7.5, 2.25), box(13.25, 13.25, 7.5, 7.5, 2.25), rline([[10.75, 7], [17, 7], [17, 11]], 3), head([17, 11], [0, 1], 3)],
+    // Dos pasos de 6 en diagonal: así el último tramo del conector es largo para su punta y la punta
+    // queda a 3 de la segunda caja (antes a 2.25: casi la tocaba).
+    d: [sq(K0, K0, 6, 6, 1.85), rline([[9.25, 6.25], [17.75, 6.25], [17.75, 11.75]], 2), head([17.75, 11.75], [0, 1], 3), box(14.75, 14.75, 6, 6, 1.85)],
   },
   'automation': {
     tags: ['automatización', 'disparador', 'ciclo', 'automation'],
@@ -771,7 +781,9 @@ const icons = {
   },
   'atom': {
     tags: ['átomo', 'ciencia', 'partículas', 'atom'],
-    d: [rell(12, 12, 9.25, 3.5, 30), rell(12, 12, 9.25, 3.5, 90), rell(12, 12, 9.25, 3.5, 150), dot(12, 12)],
+    // Órbitas de 8.75 (la vertical va justo del 3.25 al 20.75 del cuadrado del set) y 3.5 de alto, que
+    // dejan aire al núcleo: con 9.25 pasaba del 28 % de tinta.
+    d: [dot(12, 12), ...[30, 90, 150].map((a) => rell(12, 12, 8.75, 3.5, a))],
   },
   'neural-network': {
     tags: ['red neuronal', 'aprendizaje automático', 'modelo', 'neural network'],
@@ -820,31 +832,32 @@ const icons = {
   },
 
   // Bases de datos -----------------------------------------------------------------------------
+  // La base de datos del núcleo completa y la insignia encima: el motor la despeja con 1.5 de aire.
   'database-plus': {
     tags: ['nueva base de datos', 'agregar datos', 'crear tabla', 'add database'],
-    d: [...cut(DB, BADGE_CUT), circ(...BADGE), line([15.25, 17.25], [19.25, 17.25]), line([17.25, 15.25], [17.25, 19.25])],
+    d: DB_D,
+    badge: badge('plus'),
   },
   'database-check': {
     tags: ['datos validados', 'base de datos lista', 'verificado', 'database check'],
-    d: [...cut(DB, BADGE_CUT), circ(...BADGE), rline([[15.35, 17.35], [16.65, 18.65], [19.15, 16.05]], 0)],
+    d: DB_D,
+    badge: badge('check'),
   },
   'database-search': {
     tags: ['consulta', 'query', 'buscar datos', 'database search'],
-    d: [...cut(DB, [[16.75, 16.75, 6.25], [20.25, 20.25, 3]]), circ(16.75, 16.75, 3.25), line(polar(16.75, 16.75, 3.25, 45), [20.75, 20.75])],
+    d: DB_D,
+    badge: OWN.search(),
   },
   'database-sync': {
     tags: ['sincronizar datos', 'réplica', 'actualizar', 'database sync'],
-    d: (() => {
-      const a = arc(17.25, 17.25, 4.25, 190, 320);
-      const b = arc(17.25, 17.25, 4.25, 10, 140);
-      return [...cut(DB, BADGE_CUT), a.d, head(a.end, a.tangent, 2.25), b.d, head(b.end, b.tangent, 2.25)];
-    })(),
+    d: DB_D,
+    badge: OWN.sync(),
   },
 
   // Filtros y experimentos -----------------------------------------------------------------------
   'data-filter': {
     tags: ['filtrar datos', 'filtro', 'segmentar', 'data filter', 'filter data'],
-    d: [dot(7, 3.75), dot(12, 3.75), dot(17, 3.75), roundpoly([[K0, 7.25], [K1, 7.25], [13.75, 14.25], [13.75, K1], [10.25, K1], [10.25, 14.25]], [1.25, 1.25, 1, 0.6, 0.6, 1])],
+    d: [roundpoly([[K0, 7.25], [K1, 7.25], [13.75, 14.25], [13.75, K1], [10.25, K1], [10.25, 14.25]], [1.25, 1.25, 1, 0.6, 0.6, 1]), dot(7, 3.75), dot(12, 3.75), dot(17, 3.75)],
   },
   'ab-test': {
     tags: ['prueba a/b', 'experimento', 'variantes', 'ab test'],
@@ -864,7 +877,7 @@ const icons = {
   'chart-progress': {
     tags: ['progreso', 'avance', 'barras de progreso', 'progress'],
     // Cápsulas de 6: el avance queda a 3 del borde (antes a 2.5, sin aire).
-    d: [pill(2.5, 4.5, 19, 6), line([5.5, 7.5], [14.5, 7.5]), pill(2.5, 13.5, 19, 6), line([5.5, 16.5], [10, 16.5])],
+    d: [pill(2.5, 4.5, 19, 6), pill(2.5, 13.5, 19, 6), line([5.5, 7.5], [14.5, 7.5]), line([5.5, 16.5], [10, 16.5])],
   },
   'chart-forecast': {
     tags: ['pronóstico', 'proyección', 'predicción', 'forecast'],
@@ -922,16 +935,17 @@ const icons = {
   },
   'code-sparkle': {
     tags: ['código con ia', 'generar código', 'asistente', 'ai code'],
-    d: [rline([[7.5, 7.5], [3, 12], [7.5, 16.5]], 0), star4(12, 12, 2.9), rline([[16.5, 7.5], [21, 12], [16.5, 16.5]], 0)],
+    d: [rline([[7.5, 7.5], [3, 12], [7.5, 16.5]], 0), rline([[16.5, 7.5], [21, 12], [16.5, 16.5]], 0), star4(12, 12, 2.9)],
   },
   'condition': {
     tags: ['condición', 'si no', 'decisión', 'algoritmo', 'if else', 'branching'],
+    // Las líneas llegan a los vértices redondeados del rombo (antes terminaban a 0.4 de ellos).
     d: [
-      line([12, K0], [12, 7.5]),
+      line([12, K0], [12, 7.5 + INSET(1)]),
       roundpoly([[12, 7.5], [16.5, 12], [12, 16.5], [7.5, 12]], 1),
-      rline([[7.5, 12], [4.5, 12], [4.5, 20.25]], 2),
+      rline([[7.5 + INSET(1), 12], [4.5, 12], [4.5, 20.25]], 2),
       head([4.5, 20.25], [0, 1], 3),
-      rline([[16.5, 12], [19.5, 12], [19.5, 20.25]], 2),
+      rline([[16.5 - INSET(1), 12], [19.5, 12], [19.5, 20.25]], 2),
       head([19.5, 20.25], [0, 1], 3),
     ],
   },
@@ -943,22 +957,25 @@ const icons = {
     tags: ['historial', 'commits', 'git', 'git history', 'commit graph'],
     d: [
       circ(7, 5, 1.9),
-      circ(7, 12, 1.9),
-      circ(7, 19, 1.9),
       line([7, 6.9], [7, 10.1]),
+      circ(7, 12, 1.9),
       line([7, 13.9], [7, 17.1]),
-      circ(17, 12, 1.9),
+      circ(7, 19, 1.9),
       'M8.9 5H12.5A4.5 4.5 0 0 1 17 9.5V10.1',
+      circ(17, 12, 1.9),
       'M17 13.9V14.5A4.5 4.5 0 0 1 12.5 19H8.9',
     ],
   },
   'server-rack': {
     tags: ['rack', 'centro de datos', 'servidores', 'data center'],
+    // El gabinete con tres unidades y la luz de cada una a la derecha, como en `server`. Con luz y
+    // ranura pasaba del 28 % de tinta y la luz quedaba metida en la esquina; sin ranuras tampoco se
+    // confunde con `filing-cabinet` (jaladeras al centro).
     d: [
       box(4.75, 2.75, 14.5, 18.5, 3.75),
       line([4.75, 8.92], [19.25, 8.92]),
       line([4.75, 15.08], [19.25, 15.08]),
-      ...[5.83, 12, 18.17].flatMap((y) => [dot(8.25, y), line([11.5, y], [15.75, y])]),
+      ...[5.83, 12, 18.17].map((y) => dot(15.25, y)),
     ],
   },
   'memory': {
@@ -976,32 +993,316 @@ const icons = {
     // Las salidas a 7.25 entre sí: las puntas quedan a 3 (antes casi se tocaban).
     d: [
       circ(5, 12, GR),
-      rline([[7.35, 12], [10.25, 12], [14, 4.75], [20.25, 4.75]], 1.75),
-      head([20.25, 4.75], [1, 0], 3),
       line([7.35, 12], [20.25, 12]),
       head([20.25, 12], [1, 0], 3),
+      rline([[7.35, 12], [10.25, 12], [14, 4.75], [20.25, 4.75]], 1.75),
+      head([20.25, 4.75], [1, 0], 3),
       rline([[7.35, 12], [10.25, 12], [14, 19.25], [20.25, 19.25]], 1.75),
       head([20.25, 19.25], [1, 0], 3),
     ],
   },
   'database-export': {
     tags: ['exportar datos', 'extraer', 'descargar base', 'export'],
-    d: [...cut(DB, BADGE_CUT), circ(...BADGE), line([17.25, 19.5], [17.25, 15]), rline([[15.25, 17], [17.25, 15], [19.25, 17]], 0)],
+    d: DB_D,
+    badge: badge('arrow-up'),
   },
   'database-import': {
     tags: ['importar datos', 'cargar', 'migrar', 'import'],
-    d: [...cut(DB, BADGE_CUT), circ(...BADGE), line([17.25, 15], [17.25, 19.5]), rline([[15.25, 17.5], [17.25, 19.5], [19.25, 17.5]], 0)],
+    d: DB_D,
+    badge: badge('arrow-down'),
+  },
+
+  // Cobertura (ronda 2) ------------------------------------------------------------------------
+  'presentation': {
+    tags: ['presentación', 'pizarra', 'exponer', 'junta', 'presentation', 'slides', 'pitch'],
+    // La pizarra apaisada (contenedor: la firma), la tendencia que sube y el caballete en Λ que
+    // nace del centro de su borde.
+    d: [
+      box(2.5, 3.25, 19, 12.75, 3),
+      rline([[8, 21], [12, 16], [16, 21]], 0.6),
+      rline([[6.5, 12], [9.75, 8.75], [12.75, 10.75], [17.25, 6.75]], 0.6),
+    ],
+  },
+  // Operadores sueltos: los mismos largos que `plus` del núcleo y `minus` de sistema; el igual,
+  // más corto que `menu-compact` para no confundirse con él.
+  'equals': {
+    tags: ['igual', 'resultado', 'equivale', 'fórmula', 'equals', 'equal', 'result'],
+    d: [line([5.5, 9.5], [18.5, 9.5]), line([5.5, 14.5], [18.5, 14.5])],
+  },
+  'divide': {
+    tags: ['dividir', 'división', 'entre', 'operación', 'divide', 'division', 'math'],
+    d: [line([4.25, 12], [19.75, 12]), dot(12, 7), dot(12, 17)],
   },
 };
 
-// Variantes (DESIGN.md › Variantes automáticas).
-// Ya vienen encerrados en un círculo, o son un globo: no se vuelven a encerrar.
-for (const name of ['chart-donut', 'chart-radial', 'target', 'automation', 'chatbot']) icons[name].variants = { circle: false };
-// Con insignia: reducidos al 58–60 % la insignia deja de leerse.
+// ---------------------------------------------------------------------------------------------
+// Relleno (DESIGN.md › Relleno): por índice de d. `solid` se rellena y conserva su trazo, `cut` se
+// cala al ancho del trazo y `lines` va encima con 1.5 de aire. Los conectores con esquina o curva
+// van en `wired`: siguen en el sólido como ida y vuelta (ver `wire`), unidos a lo que tocan.
+// ---------------------------------------------------------------------------------------------
+const all = (name) => icons[name].d.map((_, i) => i);
+const from = (name, i) => all(name).slice(i);
+const FILL = {
+  'chart-bar': { solid: [0, 1, 2] },
+  'chart-bar-horizontal': { solid: [0, 1, 2] },
+  // Las barras rellenas y los cortes de cada pila calados
+  'chart-bar-stacked': { solid: [0, 1, 2], cut: [3, 4, 5] },
+  'chart-histogram': { solid: [0], cut: [1, 2, 3, 4] },
+  'chart-area': { solid: [0] },
+  'chart-pie': { solid: [0, 1] },
+  'chart-bubble': { solid: [0, 1, 2, 3] },
+  'chart-funnel': { solid: [0, 1, 2] },
+  // El dato relleno dentro de la red, que sigue siendo línea
+  'chart-radar': { solid: [1], lines: [0] },
+  'chart-waterfall': { solid: [0, 1, 2] },
+  'chart-gantt': { solid: [0, 1, 2] },
+  'chart-treemap': { solid: [0], cut: [1, 2, 3, 4] },
+  // Las barras rellenas; la serie pasa por encima como línea
+  'chart-combo': { solid: [0, 1, 2], lines: [3] },
+  dashboard: { solid: [0, 1, 2] },
+  // El eje del medidor sigue siendo línea; el centro y la aguja, rellenos y unidos
+  gauge: { solid: [1, 2], lines: [0] },
+  // El lente con el mango (unidos) y las barras caladas
+  analytics: { solid: [0, 1], cut: [2, 3, 4] },
+  table: { solid: [0], cut: [1, 2] },
+  kanban: { solid: [0, 1, 2] },
+  schema: { solid: [0, 1], wired: [2], cut: [3, 4] },
+  terminal: { solid: [0], cut: [1, 2] },
+  'code-window': { solid: [0], cut: [1, 2, 3] },
+  // Git: los nodos rellenos y las ramas como línea, unidas a ellos
+  'git-branch': { solid: [0, 1, 3], wired: [2] },
+  'git-commit': { solid: [0, 1, 2] },
+  'git-merge': { solid: [0, 1, 2, 3], wired: [4] },
+  'git-pull-request': { solid: [0, 1, 2, 3], wired: [4, 5] },
+  'git-pull-request-closed': { solid: all('git-pull-request-closed') },
+  'git-pull-request-draft': { solid: all('git-pull-request-draft') },
+  'git-fork': { solid: [0, 3, 4], wired: [1, 2] },
+  'git-compare': { solid: [0, 3], wired: [1, 2, 4, 5] },
+  'git-graph': { solid: [0, 1, 2, 3, 4, 6], wired: [5, 7] },
+  // El cuerpo y la cabeza rellenos, la línea del élitro calada; las patas siguen unidas
+  bug: { solid: [0, 1, 3, 4, 5, 6], cut: [2] },
+  // El vidrio relleno y el nivel del líquido calado
+  flask: { solid: [0, 1], cut: [2] },
+  'test-tube': { solid: [0, 1], cut: [2] },
+  api: { solid: [0, 1, 2, 3, 4] },
+  webhook: { solid: [0], wired: [1, 2] },
+  cpu: { solid: [0, 2, 3, 4, 5], cut: [1] },
+  'ai-chip': { solid: [0, 2, 3, 4, 5], cut: [1] },
+  server: { solid: [0, 1], cut: [2, 3, 4, 5] },
+  'cloud-compute': { solid: [0], cut: [1, 2] },
+  container: { solid: [0], cut: [1, 2, 3] },
+  // El fuselaje y las aletas rellenos (las aletas cierran contra el costado), la ventana calada
+  rocket: { solid: [0, 1, 2, 4], cut: [3] },
+  log: { solid: [0], cut: from('log', 1) },
+  network: { solid: all('network') },
+  'node-graph': { solid: all('node-graph') },
+  hierarchy: { solid: [0, 1, 3, 4], wired: [2] },
+  sitemap: { solid: [0, 1, 3, 4, 5], wired: [2] },
+  flowchart: { solid: [0, 2], wired: [1] },
+  workflow: { solid: [0, 3], wired: [1, 2] },
+  // La chispa rellena dentro del ciclo, que sigue siendo línea
+  automation: { solid: [2], lines: [0, 1] },
+  sparkle: { solid: [0] },
+  sparkles: { solid: [0, 1] },
+  'search-sparkle': { solid: [0, 1], cut: [2] },
+  robot: { solid: [0, 1, 2], cut: [3, 4] },
+  chatbot: { solid: [0], cut: [1, 2] },
+  // Cada hemisferio cierra contra la línea del medio, que se cala con los pliegues
+  brain: { solid: [0, 1], cut: [2, 3, 4, 5, 6] },
+  'neural-network': { solid: all('neural-network') },
+  prompt: { solid: [0], cut: [1, 2] },
+  // Los botones del bloque cierran contra su borde
+  component: { solid: [0, 1, 2] },
+  puzzle: { solid: [0] },
+  cube: { solid: [0], cut: [1, 2] },
+  'data-filter': { solid: [0, 1, 2, 3] },
+  'tree-view': { solid: [0, 2, 3, 4], wired: [1] },
+  'chart-progress': { solid: [0, 1], cut: [2, 3] },
+  target: { solid: [0], cut: [1, 2] },
+  'code-sparkle': { solid: [2], lines: [0, 1] },
+  condition: { solid: [0, 1], wired: [2, 3, 4, 5] },
+  'server-rack': { solid: [0], cut: from('server-rack', 1) },
+  memory: { solid: [0, 3], cut: [1, 2] },
+  'load-balancer': { solid: [0, 1], wired: [2, 3, 4, 5, 6] },
+  // La pizarra rellena con la tendencia calada; el caballete sigue unido a su borde
+  presentation: { solid: [0], wired: [1], cut: [2] },
+};
+// Las bases de datos con insignia: el cuerpo y la tapa rellenos, la banda y el borde de la tapa calados
 for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
-  icons[name].variants = { circle: false, square: false };
-// Líneas sueltas y glifos: tacharlos no dice nada.
-for (const name of ['trend-up', 'trend-down', 'trend-flat', 'pulse', 'braces', 'brackets', 'code-sparkle', 'diff', 'math', 'sum', 'lambda', 'regex', 'infinity'])
-  icons[name].variants = { ...icons[name].variants, slash: false };
+  FILL[name] = { solid: [0, 1], cut: [2] };
+for (const [name, spec] of Object.entries(FILL)) {
+  const d = icons[name].d;
+  const pick = (ix) => (ix ?? []).map((i) => d[i]);
+  const solid = [...pick(spec.solid), ...pick(spec.wired).map(wire)];
+  icons[name].fill = { solid, ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+}
+for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import']) icons[name].fill.cut.push(DB.rim);
+// La dona: el anillo hueco (no un disco) con sus divisiones caladas
+icons['chart-donut'].fill = { solid: [ring(12, 12, 9, 4.5)], cut: icons['chart-donut'].d.slice(2) };
+// Venn: los dos conjuntos rellenos y los dos arcos de adentro calados: quedan las dos lunas y la
+// intersección, separadas por el ancho del trazo.
+{
+  const a = (Math.acos(3.25 / 6.25) * 180) / Math.PI;
+  icons.venn.fill = { solid: icons.venn.d, cut: [arc(15.25, 12, 6.25, 180 - a, 180 + a).d, arc(8.75, 12, 6.25, -a, a).d] };
+}
+// Solo líneas abiertas, glifos y puntos sobre líneas: su relleno es el mismo contorno. El átomo y el
+// infinito tampoco: rellenas, sus órbitas y sus lazos se vuelven una mancha.
+for (const name of [
+  'chart-line', 'chart-lines', 'chart-step', 'chart-scatter', 'chart-radial', 'chart-distribution', 'chart-forecast',
+  'trend-up', 'trend-down', 'trend-flat', 'braces', 'brackets', 'array', 'function', 'variable', 'sum', 'pulse',
+  'atom', 'axis-3d', 'ab-test', 'matrix', 'math', 'diff', 'regex', 'lambda', 'binary', 'infinity', 'equals', 'divide',
+])
+  icons[name].fill = false;
+
+// ---------------------------------------------------------------------------------------------
+// 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta. A 16 px un pixel mide
+// 1.5 del lienzo: los tramos rectos van en centros de pixel (0.75 + 1.5k), las diagonales a 45° pasan
+// por ellos y los puntos (r 1) se centran en un borde de pixel (múltiplos de 1.5), así cada uno cae
+// entero en 2 × 2 pixeles con 1 pixel de aire o más.
+// ---------------------------------------------------------------------------------------------
+const SMALL_DOT = 1;
+// Los corchetes de `array` y `matrix`, en centros de pixel
+const SMALL_BRACKETS = [
+  rline([[6.75, 5.25], [3.75, 5.25], [3.75, 18.75], [6.75, 18.75]], 1.5),
+  rline([[17.25, 5.25], [20.25, 5.25], [20.25, 18.75], [17.25, 18.75]], 1.5),
+];
+// Los tres puntos se volvían una barra gris
+icons.array.small = { d: [...SMALL_BRACKETS, ...[7.5, 12, 16.5].map((x) => dot(x, 12, SMALL_DOT))] };
+// Los nueve puntos de r 0.3 eran una mancha: a 16 px, la cuadrícula de 2 × 2
+icons.matrix.small = { d: [...SMALL_BRACKETS, ...[9, 15].flatMap((y) => [9, 15].map((x) => dot(x, y, SMALL_DOT)))] };
+// La raya en un centro de pixel y los puntos simétricos a 2 pixeles de ella
+icons.divide.small = { d: [line([4.25, 12.75], [19.75, 12.75]), dot(12, 7.5, SMALL_DOT), dot(12, 18, SMALL_DOT)] };
+// Los paneles se empastaban en el centro: a 16 px, 2 pixeles de aire entre ellos
+{
+  const d = [sq(3.75, 3.75, 6, 16.5, 1.5), sq(14.25, 3.75, 6, 6, 1.5), sq(14.25, 14.25, 6, 6, 1.5, { square: ['br'] })];
+  icons.dashboard.small = { d, fill: { solid: d } };
+}
+// Los chevrones de 2.25 × 5 eran dos manchas grises: a 45°, por centros de pixel
+{
+  const body = box(2.25, 3.75, 19.5, 16.5, 3.5);
+  const rule = line([2.25, 8.25], [21.75, 8.25]);
+  const code = [line([9.75, 11.25], [6.75, 14.25], [9.75, 17.25]), line([14.25, 11.25], [17.25, 14.25], [14.25, 17.25])];
+  icons['code-window'].small = { d: [body, rule, ...code], fill: { solid: [body], cut: [rule, ...code] } };
+}
+
+// ---------------------------------------------------------------------------------------------
+// Piezas con nombre (DESIGN.md › Piezas): lo que se anima, cambia de estado o va bajo una insignia
+// ---------------------------------------------------------------------------------------------
+const PARTS = {
+  'chart-bar-stacked': { bars: [0, 1, 2], split: [3, 4, 5] },
+  'chart-line': { line: [0], axis: [1] },
+  'chart-lines': { line: [0, 1], axis: [2] },
+  'chart-step': { line: [0], axis: [1] },
+  'chart-pie': { pie: [0], slice: [1] },
+  'chart-donut': { ring: [0, 1], split: [2, 3, 4] },
+  'chart-scatter': { axis: [0], points: [1, 2, 3, 4, 5, 6] },
+  'chart-radar': { web: [0], data: [1] },
+  'chart-waterfall': { start: [0], change: [1], total: [2] },
+  'chart-combo': { bars: [0, 1, 2], line: [3] },
+  'chart-radial': { progress: [0, 1], center: [2] },
+  'chart-distribution': { curve: [0], axis: [1] },
+  'trend-up': { line: [0], arrow: [1] },
+  'trend-down': { line: [0], arrow: [1] },
+  'trend-flat': { line: [0], arrow: [1] },
+  gauge: { dial: [0], needle: [1, 2] },
+  analytics: { lens: [0], handle: [1], bars: [2, 3, 4] },
+  schema: { tables: [0, 1], relation: [2] },
+  terminal: { screen: [0], prompt: [1, 2] },
+  'code-window': { screen: [0, 1], code: [2, 3] },
+  'git-branch': { trunk: [0, 1], branch: [2, 3] },
+  'git-merge': { trunk: [0, 1, 2], branch: [3, 4] },
+  'git-pull-request': { trunk: [0, 1, 2], branch: [3, 4], arrow: [5] },
+  'git-pull-request-closed': { trunk: [0, 1, 2], branch: [3, 4], mark: [5, 6] },
+  'git-pull-request-draft': { trunk: [0, 1, 2], branch: [3, 4, 5, 6] },
+  'git-fork': { trunk: [0], branch: [1, 2, 3, 4] },
+  'git-compare': { base: [0, 1, 2], head: [3, 4, 5] },
+  bug: { body: [0, 1, 2], legs: [3, 4, 5, 6] },
+  flask: { body: [0, 1], level: [2] },
+  'test-tube': { body: [0, 1], level: [2] },
+  api: { socket: [0, 1], plug: [2, 3, 4] },
+  webhook: { node: [0], hook: [1], arrow: [2] },
+  cpu: { body: [0], core: [1], pins: [2, 3, 4, 5] },
+  'ai-chip': { body: [0], spark: [1], pins: [2, 3, 4, 5] },
+  server: { body: [0, 1], slots: [2, 4], lights: [3, 5] },
+  'cloud-compute': { cloud: [0], prompt: [1, 2] },
+  rocket: { body: [0, 1, 2], window: [3], flame: [4] },
+  log: { body: [0], rows: from('log', 1) },
+  automation: { cycle: [0, 1], bolt: [2] },
+  sparkles: { large: [0], small: [1] },
+  'search-sparkle': { lens: [0], handle: [1], spark: [2] },
+  robot: { head: [0], antenna: [1, 2], eyes: [3, 4] },
+  chatbot: { body: [0], eyes: [1, 2] },
+  atom: { nucleus: [0], orbits: [1, 2, 3] },
+  prompt: { field: [0], spark: [1], text: [2] },
+  'code-sparkle': { code: [0, 1], spark: [2] },
+  'chart-progress': { track: [0, 1], progress: [2, 3] },
+  'chart-forecast': { line: [0], forecast: [1, 2, 3], axis: [4] },
+  target: { rings: [0, 1], center: [2] },
+  'data-filter': { funnel: [0], points: [1, 2, 3] },
+  condition: { input: [0], decision: [1], branches: [2, 3, 4, 5] },
+  'load-balancer': { source: [0], routes: [1, 2, 3, 4, 5, 6] },
+  presentation: { board: [0], stand: [1], chart: [2] },
+  'server-rack': { body: [0, 1, 2], lights: [3, 4, 5] },
+};
+// La base de datos bajo cada insignia
+for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
+  PARTS[name] = { body: [0, 2], lid: [1] };
+for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
+
+// ---------------------------------------------------------------------------------------------
+// Variantes automáticas que no tienen sentido (DESIGN.md › Variantes automáticas)
+// ---------------------------------------------------------------------------------------------
+const variants = (names, v) => {
+  for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
+};
+// Ya vienen encerrados en un círculo, o son un globo: no se vuelven a encerrar
+variants(['chart-donut', 'chart-radial', 'target', 'automation', 'chatbot'], { circle: false });
+// Ya son una tarjeta (o un globo con un signo): no se encierran en otro cuadrado
+variants(['chart-treemap', 'table', 'log', 'chatbot'], { square: false });
+// Con insignia: reducidos al 58–60 % la insignia deja de leerse, y el tache la atravesaría
+for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, circle: false, square: false, slash: false };
+// Líneas sueltas, flechas y glifos: tacharlos no dice nada
+variants(
+  [
+    'trend-up', 'trend-down', 'trend-flat', 'pulse', 'braces', 'brackets', 'array', 'function', 'variable', 'code-sparkle',
+    'axis-3d', 'ab-test', 'matrix', 'diff', 'math', 'sum', 'lambda', 'regex', 'binary', 'infinity', 'equals', 'divide',
+  ],
+  { slash: false },
+);
+
+// ---------------------------------------------------------------------------------------------
+// Espejo (DESIGN.md › Espejo): gráficas que crecen o avanzan en el tiempo, listas con sangría,
+// flujos que se leen de izquierda a derecha y el campo de texto del prompt
+// ---------------------------------------------------------------------------------------------
+for (const name of [
+  'chart-bar-horizontal', 'chart-line', 'chart-lines', 'chart-step', 'chart-area', 'chart-scatter', 'chart-waterfall',
+  'chart-gantt', 'chart-combo', 'chart-forecast', 'chart-progress', 'trend-up', 'trend-down', 'trend-flat', 'log',
+  'tree-view', 'workflow', 'flowchart', 'load-balancer', 'neural-network', 'prompt', 'presentation',
+])
+  icons[name].mirror = true;
+
+// ---------------------------------------------------------------------------------------------
+// Movimiento (DESIGN.md › Movimiento): el gesto propio de cada ícono
+// ---------------------------------------------------------------------------------------------
+icons['chart-pie'].motion = { effect: 'slide', parts: ['slice'], vector: [-1.25, -1.25] };
+icons['trend-up'].motion = { effect: 'slide', vector: [1.5, -1.5] };
+icons['trend-down'].motion = { effect: 'slide', vector: [1.5, 1.5] };
+icons['trend-flat'].motion = { effect: 'slide', vector: [2, 0] };
+icons.gauge.motion = { effect: 'wiggle', parts: ['needle'], origin: [12, 14] };
+icons.bug.motion = { effect: 'wiggle', origin: [12, 14] };
+icons.api.motion = { effect: 'slide', parts: ['plug'], vector: [-1.25, 1.25] };
+icons['ai-chip'].motion = { effect: 'beat', parts: ['spark'], origin: [12, 12] };
+icons['cloud-compute'].motion = { effect: 'float', vector: [0, -1.5] };
+icons.rocket.motion = { effect: 'slide', vector: [2, -2] };
+icons.automation.motion = { effect: 'spin', parts: ['cycle'], origin: [12, 12] };
+icons.sparkle.motion = { effect: 'beat', origin: [12, 12] };
+icons.sparkles.motion = { effect: 'beat', origin: [12, 12] };
+icons['search-sparkle'].motion = { effect: 'beat', parts: ['spark'], origin: [10.6, 10.6] };
+icons['code-sparkle'].motion = { effect: 'beat', parts: ['spark'], origin: [12, 12] };
+icons.prompt.motion = { effect: 'beat', parts: ['spark'], origin: [7.5, 12] };
+icons.atom.motion = { effect: 'spin', parts: ['orbits'], origin: [12, 12] };
+icons['database-sync'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['database-export'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, -1.5] };
+icons['database-import'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, 1.5] };
 
 export default { category: 'datos', label: 'Datos y desarrollo', icons };

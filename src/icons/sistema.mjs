@@ -1,8 +1,10 @@
 // Sistema, seguridad y estado: candados, llaves, biometría, escudos, ajustes, avisos, estados,
 // logros, herramientas, accesibilidad y apariencia. Todo sale del motor (engine/geometry.mjs)
-// más unas herramientas locales para recortar (1.5 de aire cuando una figura pasa detrás de
-// otra) y reutilizar piezas del núcleo sin redibujarlas. Ver DESIGN.md.
-import { arc, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+// más unas herramientas locales para construir piezas (encajar una figura dentro de otra, unir
+// piezas que se tocan) y reutilizar las del núcleo sin redibujarlas. Lo que va encima de otra
+// figura (insignias, el tache, la lupa, el desarmador) va en `badge`: la base se dibuja completa
+// y el motor la despeja con 1.5 de aire exacto; nunca se recorta a mano. Ver DESIGN.md.
+import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import nucleo from './nucleo.mjs';
 
 // ── Trazos como segmentos ─────────────────────────────────────────────────────────────────
@@ -233,10 +235,10 @@ function field(d) {
   };
 }
 
-/** Corta `d` donde pasa detrás de `front`: 3 entre ejes = 1.5 de aire entre los dos trazos. */
-function cut(d, front, gap = 3) {
-  const fs = [front].flat().map(field);
-  return clip(d, (p) => fs.every((F) => F(p) >= gap));
+/** Deja de `d` solo lo que queda fuera de `shape`: la pieza llega justo a su borde y lo toca (no es un recorte con aire). */
+function outside(d, shape) {
+  const F = field(shape);
+  return clip(d, (p) => F(p) >= 0);
 }
 
 /** Deja de `d` solo lo que queda dentro de `shape` con `gap` entre ejes respecto a su contorno. */
@@ -317,6 +319,28 @@ function arcPick(c, r, from, to, want) {
 /** Solo el comando A de un arc() del motor, para encadenarlo tras otro trazo. */
 const arcTo = (cx, cy, r, a0, a1) => arc(cx, cy, r, a0, a1).d.replace(/^M[^A]+/, '');
 
+/** Un tramo recorrido al revés (para ir y volver por el mismo trazo). */
+function reverse(s) {
+  if (s.t === 'L') return { t: 'L', a: s.b, b: s.a };
+  if (s.t === 'C') return { t: 'C', p: [...s.p].reverse() };
+  return { ...s, a0: s.a0 + s.da, da: -s.da };
+}
+/**
+ * El mismo trazo abierto de ida y vuelta: se ve idéntico (las vueltas son uniones redondas, como
+ * las puntas) pero no encierra área. En `fill.solid`, una pieza abierta que sigue unida al cuerpo
+ * sin rellenar su hueco (el asa del trofeo); en el `knock` de una insignia propia, el área de una
+ * línea con las puntas redondas (el motor la despeja con el ancho del trazo + 3).
+ */
+const trace = (d) => ser(parse(d).map((sp) => (sp.closed ? sp : { closed: true, segs: [...sp.segs, ...sp.segs.toReversed().map(reverse)] })));
+
+/** Insignia propia: lo que se dibuja encima, el área que el motor despeja y su relleno. */
+const own = (d, knock, fill) => ({ d, knock, ...(fill && { fill }) });
+/** El tache de los `-off`: va encima como insignia propia y el motor despeja la base a su paso. */
+const slashOver = (a, b) => {
+  const s = line(a, b);
+  return own([s], trace(s));
+};
+
 // ── Glifos ───────────────────────────────────────────────────────────────────────────────
 /** Check con las proporciones del check del núcleo, de ancho w y centrado en (cx, cy). */
 const check = (cx, cy, w) => line([cx - 0.5 * w, cy + 0.036 * w], [cx - 0.183 * w, cy + 0.357 * w], [cx + 0.5 * w, cy - 0.357 * w]);
@@ -345,7 +369,7 @@ const KEY = nucleo.icons.key.d;
 const EYE = 'M2.75 12C5 7.75 8.25 5.5 12 5.5S19 7.75 21.25 12C19 16.25 15.75 18.5 12 18.5S5 16.25 2.75 12Z';
 const PUPIL = circ(12, 12, 3.25);
 
-/** Candado pequeño (insignia de candado): cuerpo de w × h con la esquina firma y su argolla. */
+/** Candado chico dentro de otra figura (ventana, escudo): cuerpo de w × h con la firma y su argolla. */
 function padlock(x, y, w, h) {
   const r = Math.min(1.75, h / 3.2);
   const rs = w * 0.27;
@@ -353,20 +377,9 @@ function padlock(x, y, w, h) {
   const legs = h * 0.3;
   return [sq(x, y, w, h, r, BR), `M${P([cx - rs, y])}V${f(y - legs)}${arcTo(cx, y - legs, rs, 180, 360)}V${f(y)}`];
 }
-const LOCK_BADGE = padlock(14.25, 15.75, 7, 5.5);
 
-/**
- * Insignia: círculo de r 4.25 en la esquina inferior derecha que recorta 1.5 al objeto base. El
- * signo cabe en r 1.35 para que sus puntas queden a 3 del aro (1.5 de aire), sin rozarlo.
- */
-function badge(base, glyph, [cx, cy] = [18, 18], R = 4.25) {
-  const ring = circ(cx, cy, R);
-  const g = {
-    plus: () => plus(cx, cy, 1.35),
-    clock: () => [line([cx, cy - 1.35], [cx, cy], [cx + 1.1, cy + 0.75])],
-  }[glyph]();
-  return [...[base].flat().map((d) => cut(d, ring)).filter(Boolean), ring, ...g];
-}
+/** Centro de las insignias del motor (abajo a la derecha). */
+const BC = [17.25, 17.25];
 
 /** Bandera con la cola en V (reportar, hito). */
 const FLAG = roundpoly([[4.75, 3.25], [19.75, 3.25], [16.25, 9.625], [19.75, 16], [4.75, 16]], [0, 0.9, 0.6, 0.9, 0]);
@@ -418,6 +431,11 @@ function ribbon(a, b, w = 3.25, notch = 1.4) {
   return rline([[a[0] - n[0], a[1] - n[1]], [b[0] - n[0], b[1] - n[1]], [b[0] - u[0] * notch, b[1] - u[1] * notch], [b[0] + n[0], b[1] + n[1]], [a[0] + n[0], a[1] + n[1]]], [0, 0.4, 0.4, 0.4, 0]);
 }
 
+// Roseta del premio y medalla con su cinta: la pieza de enfrente y la de atrás.
+const ROSETTE = scallop(12, 9, 6.1, 0.4, 16);
+const MEDAL = circ(12, 15.75, 5.25);
+const STRAP = roundpoly([[6.25, 3.25], [10.25, 3.25], [12, 7], [13.75, 3.25], [17.75, 3.25], [14.25, 11.25], [9.75, 11.25]], [0.6, 0.6, 0.5, 0.6, 0.6, 0, 0]);
+
 /** Una pieza dibujada a lo largo del eje x local, girada `deg` y con el punto `o` llevado a (12, 12). */
 const place = (d, deg, o, to = [12, 12]) => xf(d, { deg, o, dx: to[0] - o[0], dy: to[1] - o[1] });
 
@@ -442,7 +460,7 @@ function center(ds) {
 // Desarmador en coordenadas locales: mango de esquinas continuas, el casquillo (el escalón que lo
 // distingue de una pluma), la estría del mango y la vara hasta x 18.5. Orden: mango, casquillo, estría, vara.
 const DRIVER_HANDLE = sq(0, -3, 8.5, 6, 1.85);
-const DRIVER = [DRIVER_HANDLE, cut(rline([[7, -1.75], [10.75, -1.75], [10.75, 1.75], [7, 1.75]], [0, 0.6, 0.6, 0]), DRIVER_HANDLE, 0), line([2.75, 0], [5.75, 0]), line([10.75, 0], [18.5, 0])];
+const DRIVER = [DRIVER_HANDLE, outside(rline([[7, -1.75], [10.75, -1.75], [10.75, 1.75], [7, 1.75]], [0, 0.6, 0.6, 0]), DRIVER_HANDLE), line([2.75, 0], [5.75, 0]), line([10.75, 0], [18.5, 0])];
 
 /** Corazón: dos lóbulos de radio r que bajan tangentes a la punta (cx, tipY). */
 function heart(cx, cy, k, r, tipY) {
@@ -461,7 +479,7 @@ function heart(cx, cy, k, r, tipY) {
 const star = (cx, cy, R, r) => roundpoly(Array.from({ length: 10 }, (_, i) => polar(cx, cy, i % 2 ? r : R, -90 + i * 36)), Array.from({ length: 10 }, (_, i) => (i % 2 ? 0.45 : 0.7)));
 
 // Clavija y contacto de un conector en coordenadas locales (eje x): la clavija hasta x 10.5.
-const PLUG = [line([0, 0], [2.5, 0]), sq(2.5, -3.25, 5.75, 6.5, 1.75, { square: ['tr', 'br'] }), line([8.25, -1.6], [10.5, -1.6]), line([8.25, 1.6], [10.5, 1.6])];
+const PLUG = [sq(2.5, -3.25, 5.75, 6.5, 1.75, { square: ['tr', 'br'] }), line([8.25, -1.6], [10.5, -1.6]), line([8.25, 1.6], [10.5, 1.6]), line([0, 0], [2.5, 0])];
 const SOCKET = (x) => [sq(x, -3.25, 5.75, 6.5, 1.75, { square: ['tl', 'bl'] }), line([x + 5.75, 0], [x + 8.25, 0])];
 
 /** Las cuatro esquinas de un marco de escaneo: la squircle del cuadrado, sin los centros. */
@@ -483,9 +501,12 @@ const icons = {
     tags: ['acceso denegado', 'cuenta bloqueada', 'intentos fallidos', 'candado', 'access denied', 'locked out', 'lock error'],
     d: [LOCK_BODY, LOCK_SHACKLE, ...ex(12, 15.75, 2.35)],
   },
+  // El candado del núcleo completo, corrido arriba a la izquierda: así el reloj del motor lo cruza
+  // de frente (el borde de arriba del cuerpo queda lejos del aro) y la cerradura queda entera.
   'lock-clock': {
     tags: ['sesión expirada', 'bloqueo temporal', 'tiempo de espera', 'timeout', 'session expired', 'lock timer'],
-    d: badge([xf(LOCK_BODY, { dx: -2 }), xf(LOCK_SHACKLE, { dx: -2 }), xf(LOCK_HOLE, { dx: -2 })], 'clock'),
+    d: [LOCK_BODY, LOCK_SHACKLE, LOCK_HOLE].map((d) => xf(d, { dx: -2.25, dy: -1 })),
+    badge: badge('clock'),
   },
   keyhole: {
     tags: ['cerradura', 'ojo de cerradura', 'acceso', 'privado', 'keyhole', 'access'],
@@ -500,17 +521,23 @@ const icons = {
     // Llave antigua: argolla, el collarín junto a ella y el paletón escalonado en la punta
     d: [circ(6.75, 11.5, 4), line([10.75, 11.5], [21.25, 11.5]), line([13.75, 9.75], [13.75, 13.25]), rline([[16.75, 11.5], [16.75, 17.25], [19, 17.25], [19, 14.5], [21.25, 14.5], [21.25, 11.5]], [0, 0.75, 0.75, 0.6, 0.75, 0])],
   },
+  // La persona al 85 % y la llave a su lado, con más de 1.5 de aire: no se tocan.
   passkey: {
     tags: ['passkey', 'llave de acceso', 'sin contraseña', 'identidad', 'webauthn', 'passwordless'],
-    d: (() => {
-      const key = [circ(18.25, 7.75, 2.75), line([18.25, 10.5], [18.25, 20.75]), line([18.25, 17.25], [20.5, 17.25]), line([18.25, 20.25], [20.5, 20.25])];
-      const person = [xf(PERSON_HEAD, { s: 0.85, o: [12, 20.6], dx: -3, dy: -0.3 }), xf(PERSON_BODY, { s: 0.85, o: [12, 20.6], dx: -3 })];
-      return [...person.map((d) => cut(d, key)), ...key];
-    })(),
+    d: [
+      xf(PERSON_HEAD, { s: 0.85, o: [12, 20.6], dx: -3, dy: -0.3 }),
+      xf(PERSON_BODY, { s: 0.85, o: [12, 20.6], dx: -3 }),
+      circ(18.25, 7.75, 2.75),
+      line([18.25, 10.5], [18.25, 20.75]),
+      line([18.25, 17.25], [20.5, 17.25]),
+      line([18.25, 20.25], [20.5, 20.25]),
+    ],
   },
+  // La persona del núcleo completa, corrida a la izquierda; el candado del motor le toma el hombro.
   'person-lock': {
     tags: ['cuenta protegida', 'usuario bloqueado', 'perfil privado', 'user lock', 'private account'],
-    d: [...[xf(PERSON_HEAD, { dx: -2.5 }), xf(PERSON_BODY, { dx: -2.5 })].map((d) => cut(d, LOCK_BADGE)), ...LOCK_BADGE],
+    d: [xf(PERSON_HEAD, { dx: -2.5 }), xf(PERSON_BODY, { dx: -2.5 })],
+    badge: badge('lock'),
   },
 
   // ── Biometría y escaneo ──
@@ -542,14 +569,18 @@ const icons = {
   },
 
   // ── Privacidad ──
+  // El ojo de edición completo; el tache va encima y el motor lo despeja a su paso.
   'eye-off': {
     tags: ['ocultar', 'privado', 'no visible', 'ocultar contraseña', 'hide', 'hidden', 'invisible'],
-    d: [...[EYE, PUPIL].map((d) => cut(d, line([4, 4], [20, 20]))), line([4, 4], [20, 20])],
+    d: [EYE, PUPIL],
+    badge: slashOver([4, 4], [20, 20]),
   },
+  // El ojo al 90 % arriba a la izquierda, con la pupila de r 2.5 (a 3 del párpado y del candado):
+  // el candado del motor le toma la esquina del párpado de abajo.
   'eye-lock': {
     tags: ['privacidad', 'vista protegida', 'confidencial', 'privacy', 'confidential', 'protected view'],
-    // El ojo al 85 % con su pupila de r 2.5 (al reducirla con él quedaba a menos de 3 del párpado)
-    d: [...[xf(EYE, { s: 0.85, dx: -1.25, dy: -2 }), circ(10.75, 10, 2.5)].map((d) => cut(d, LOCK_BADGE)), ...LOCK_BADGE],
+    d: [xf(EYE, { s: 0.9, dx: -1.5, dy: -3 }), circ(10.5, 9, 2.5)],
+    badge: badge('lock'),
   },
   incognito: {
     tags: ['incógnito', 'anónimo', 'navegación privada', 'espía', 'incognito', 'anonymous', 'private browsing'],
@@ -559,12 +590,16 @@ const icons = {
     tags: ['sitio seguro', 'https', 'conexión cifrada', 'página protegida', 'secure site', 'ssl'],
     d: [SQUARE, line([3.25, 7.75], [20.75, 7.75]), ...padlock(9.25, 13.75, 5.5, 4)],
   },
+  // La tarjeta completa con dos renglones; el sello va dentro, a 3 de los bordes y de los renglones,
+  // y sus listones bajan por encima del borde inferior (insignia propia: el motor despeja la tarjeta
+  // a su paso, de frente).
   certificate: {
     tags: ['certificado', 'diploma', 'ssl', 'acreditación', 'certificate', 'credential'],
-    d: (() => {
-      const seal = circ(16.25, 15.25, 2.75);
-      const tails = [line([14.75, 17.75], [14.25, 21.25]), line([17.75, 17.75], [18.25, 21.25])];
-      return [cut(sq(2.5, 4, 19, 13.5, 3.25, BR), [seal, ...tails]), line([6.25, 8.5], [14.25, 8.5]), line([6.25, 12], [10.5, 12]), seal, ...tails.map((d) => cut(d, seal, 0))];
+    d: [sq(2.5, 4, 19, 14, 3.25, BR), line([6, 8], [12, 8]), line([6, 11.5], [9.75, 11.5])],
+    badge: (() => {
+      const seal = circ(15.25, 12.5, 2.5);
+      const tails = [line(polar(15.25, 12.5, 2.5, 115), [13.5, 21.25]), line(polar(15.25, 12.5, 2.5, 65), [17, 21.25])];
+      return own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal, ...tails] });
     })(),
   },
   firewall: {
@@ -626,7 +661,8 @@ const icons = {
   },
   'shield-off': {
     tags: ['sin protección', 'desactivado', 'inseguro', 'shield off', 'unsecured', 'disabled'],
-    d: [cut(SHIELD, line([3.75, 3.75], [20.25, 20.25])), line([3.75, 3.75], [20.25, 20.25])],
+    d: [SHIELD],
+    badge: slashOver([3.75, 3.75], [20.25, 20.25]),
   },
   'shield-question': {
     tags: ['seguridad', 'duda', 'verificar', 'sospechoso', 'security question', 'unverified'],
@@ -700,11 +736,14 @@ const icons = {
     tags: ['quitar', 'contraer', 'colapsar', 'collapse', 'remove', 'minus'],
     d: [SQUARE, ...minus(12, 12, 4)],
   },
+  // El segundo check completo; el primero pasa por delante (insignia propia) y el motor despeja el
+  // brazo corto del segundo a su paso.
   'check-double': {
     tags: ['leído', 'todo listo', 'confirmado', 'entregado', 'read', 'double check', 'delivered'],
-    d: (() => {
+    d: [line([9.25, 12.6], [13.1, 16.6], [21, 7.5])],
+    badge: (() => {
       const a = line([2.75, 12.6], [6.6, 16.6], [14.5, 7.5]);
-      return [a, cut(line([9.25, 12.6], [13.1, 16.6], [21, 7.5]), a)];
+      return own([a], trace(a));
     })(),
   },
 
@@ -737,11 +776,15 @@ const icons = {
     tags: ['ajustes', 'configuración', 'engranaje', 'opciones', 'settings', 'preferences', 'cog'],
     d: [gear(12, 12, 9.25, 6.9, 8), circ(12, 12, 3)],
   },
+  // El engrane grande completo y el chico encima (insignia propia): se despeja un círculo de su
+  // radio exterior, no el perfil de los dientes, para que el corte del grande sea un arco limpio. El
+  // grande da un diente al chico y el arco lo cruza de frente, sin dejar trozos de diente.
   gears: {
     tags: ['ajustes avanzados', 'mecanismo', 'engranes', 'sistema', 'advanced settings', 'mechanism', 'cogs'],
-    d: (() => {
-      const small = gear(17, 17, 4.75, 3.35, 6, 0.55, 0.7);
-      return [cut(gear(9, 9, 6.6, 4.85, 8, 0.6, 0.8), small), cut(circ(9, 9, 1.85), small), small, dot(17, 17)];
+    d: [gear(8.75, 8.75, 6.6, 4.85, 8, 0.6, 0.8), circ(8.75, 8.75, 1.85)],
+    badge: (() => {
+      const small = gear(...BC, 4.5, 3.15, 6, 0.55, 0.7);
+      return own([small, dot(...BC)], circ(...BC, 4.5), { solid: [small], cut: [dot(...BC)] });
     })(),
   },
   'sliders-horizontal': {
@@ -803,10 +846,11 @@ const icons = {
   },
   award: {
     tags: ['premio', 'reconocimiento', 'roseta', 'galardón', 'award', 'prize', 'rosette'],
-    d: (() => {
-      const rosette = scallop(12, 9, 6.1, 0.4, 16);
-      return [rosette, circ(12, 9, 2.5), ...[ribbon([9.25, 13], [7.25, 21]), ribbon([14.75, 13], [16.75, 21])].map((d) => cut(d, rosette))];
-    })(),
+    // Los listones completos detrás; la roseta va encima (insignia propia) y el motor los despeja.
+    // Nacen juntos bajo la roseta (se cruzan ahí, donde no se ven) y salen por su borde en la misma
+    // línea de siempre.
+    d: [ribbon([10.5, 8], [7.25, 21]), ribbon([13.5, 8], [16.75, 21])],
+    badge: own([ROSETTE, circ(12, 9, 2.5)], ROSETTE, { solid: [ROSETTE], cut: [circ(12, 9, 2.5)] }),
   },
   trophy: {
     tags: ['trofeo', 'campeón', 'logro', 'ganador', 'trophy', 'winner', 'champion'],
@@ -820,11 +864,9 @@ const icons = {
   },
   'medal-ribbon': {
     tags: ['medalla', 'primer lugar', 'ganador', 'condecoración', 'medal', 'first place', 'winner'],
-    d: (() => {
-      const medal = circ(12, 15.75, 5.25);
-      const strap = roundpoly([[6.25, 3.25], [10.25, 3.25], [12, 7], [13.75, 3.25], [17.75, 3.25], [14.25, 11.25], [9.75, 11.25]], [0.6, 0.6, 0.5, 0.6, 0.6, 0, 0]);
-      return [cut(strap, medal), medal, circ(12, 15.75, 2.25)];
-    })(),
+    // La cinta completa detrás; la medalla va encima (insignia propia) y el motor la despeja.
+    d: [STRAP],
+    badge: own([MEDAL, circ(12, 15.75, 2.25)], MEDAL, { solid: [MEDAL], cut: [circ(12, 15.75, 2.25)] }),
   },
   lightbulb: {
     tags: ['idea', 'foco', 'sugerencia', 'consejo', 'lightbulb', 'tip', 'hint'],
@@ -859,9 +901,11 @@ const icons = {
   },
   'target-arrow': {
     tags: ['meta', 'objetivo cumplido', 'diana', 'acierto', 'goal', 'target hit', 'bullseye'],
-    d: (() => {
-      const shaft = line([10.75, 13.25], [19.75, 4.25]);
-      return [...[circ(10.75, 13.25, 8), circ(10.75, 13.25, 4.25)].map((d) => cut(d, shaft)), shaft, rline([[16.75, 3.75], [16.75, 7.25], [20.25, 7.25]], [0, 0.6, 0]), line([19.75, 4.25], [21.25, 2.75])];
+    // La diana completa; la flecha va encima (insignia propia) y la cruza de frente, en radio.
+    d: [circ(10.75, 13.25, 8), circ(10.75, 13.25, 4.25)],
+    badge: (() => {
+      const arrow = [line([10.75, 13.25], [19.75, 4.25]), rline([[16.75, 3.75], [16.75, 7.25], [20.25, 7.25]], [0, 0.6, 0]), line([19.75, 4.25], [21.25, 2.75])];
+      return own(arrow, arrow.map(trace).join(''));
     })(),
   },
   podium: {
@@ -884,24 +928,25 @@ const icons = {
   },
   tools: {
     tags: ['herramientas', 'mantenimiento', 'reparar', 'servicio', 'tools', 'maintenance', 'repair'],
-    d: (() => {
-      // Llave de mango largo para que el cruce caiga a media empuñadura y no en el cuello (si no,
-      // la cabeza quedaba suelta en dos trozos); el desarmador pasa adelante con la vara más larga,
-      // y el cruce cae en la vara a 3 del casquillo.
+    // Llave de mango largo para que el cruce caiga a media empuñadura y no en el cuello (si no, la
+    // cabeza quedaba suelta en dos trozos). La llave completa; el desarmador pasa adelante con la vara
+    // más larga (insignia propia) y el motor despeja la llave a su paso.
+    ...(() => {
       const key = place(xf(wrench(16), { s: 0.8, o: [0, 0] }), -45, [6.1, 0]);
       const driver = [DRIVER[0], DRIVER[1], line([10.75, 0], [23.25, 0])].map((d) => place(xf(d, { s: 0.76, o: [0, 0] }), -135, [12.35, 0]));
-      return center([cut(key, driver), ...driver]);
+      const [k, ...dr] = center([key, ...driver]);
+      return { d: [k], badge: own(dr, [dr[0], trace(dr[1]), trace(dr[2])].join(''), { solid: dr }) };
     })(),
   },
   'traffic-cone': {
     tags: ['mantenimiento', 'en obra', 'precaución', 'cono', 'under construction', 'traffic cone', 'caution'],
-    d: [rline([[6.5, 17.5], [10.4, 3.25], [13.6, 3.25], [17.5, 17.5]], [0, 1, 1, 0]), line([9.1, 8], [14.9, 8]), line([7.8, 12.75], [16.2, 12.75]), sq(3.25, 17.5, 17.5, 3.25, 1)],
+    d: [rline([[6.5, 17.5], [10.4, 3.25], [13.6, 3.25], [17.5, 17.5]], [0, 1, 1, 0]), sq(3.25, 17.5, 17.5, 3.25, 1), line([9.1, 8], [14.9, 8]), line([7.8, 12.75], [16.2, 12.75])],
   },
   barrier: {
     tags: ['barrera', 'en construcción', 'cerrado', 'desvío', 'roadblock', 'barrier', 'closed'],
     d: (() => {
       const board = sq(2.75, 5.75, 18.5, 7, 2);
-      return [board, ...[6.25, 11, 15.75].map((x) => inside(line([x - 4, 14], [x + 4.5, 4.5]), board, 0)), line([6.5, 12.75], [6.5, 20.75]), line([17.5, 12.75], [17.5, 20.75]), line([4.25, 20.75], [8.75, 20.75]), line([15.25, 20.75], [19.75, 20.75])];
+      return [board, line([6.5, 12.75], [6.5, 20.75]), line([17.5, 12.75], [17.5, 20.75]), line([4.25, 20.75], [8.75, 20.75]), line([15.25, 20.75], [19.75, 20.75]), ...[6.25, 11, 15.75].map((x) => inside(line([x - 4, 14], [x + 4.5, 4.5]), board, 0))];
     })(),
   },
   'hard-hat': {
@@ -936,25 +981,35 @@ const icons = {
   },
   'person-gear': {
     tags: ['ajustes de cuenta', 'perfil', 'configuración de usuario', 'account settings', 'user preferences', 'profile settings'],
-    d: (() => {
-      // El engrane más pequeño y en la esquina: el recorte se comía el hombro hasta rozar la cabeza
-      const g = gear(18, 18, 4.1, 2.95, 6, 0.45, 0.55);
-      return [...[xf(PERSON_HEAD, { dx: -2.75 }), xf(PERSON_BODY, { dx: -2.75 })].map((d) => cut(d, g)), g, dot(18, 18)];
+    // La persona como en `person-lock`; el engrane, del tamaño del aro de las insignias, va en su
+    // lugar (insignia propia) y se despeja su círculo exterior, no el perfil de los dientes.
+    d: [xf(PERSON_HEAD, { dx: -2.5 }), xf(PERSON_BODY, { dx: -2.5 })],
+    badge: (() => {
+      const g = gear(...BC, 4.25, 3.05, 6, 0.45, 0.55);
+      return own([g, dot(...BC)], circ(...BC, 4.25), { solid: [g], cut: [dot(...BC)] });
     })(),
   },
+  // La llave del núcleo girada (el ojo arriba a la derecha) y al 90 %, a más de 1.5 del más.
   'key-plus': {
     tags: ['agregar llave', 'nueva credencial', 'registrar passkey', 'add key', 'new credential', 'add passkey'],
-    d: badge(KEY.map((d) => xf(d, { deg: 180, dx: -1, dy: -1 })), 'plus'),
+    d: KEY.map((d) => xf(d, { deg: 180, s: 0.9, dx: -2, dy: -2 })),
+    badge: badge('plus'),
   },
+  // El globo del núcleo al 76 % arriba a la izquierda: el candado del motor solo toma su contorno y
+  // cruza el aro de frente; el ecuador y el meridiano quedan enteros (a 3 o más de su área).
   'globe-lock': {
     tags: ['vpn', 'red privada', 'acceso restringido', 'navegación segura', 'private network', 'secure web'],
-    d: [...nucleo.icons.globe.d.map((d) => cut(xf(d, { s: 0.86, dx: -1.5, dy: -1.5 }), LOCK_BADGE)), ...LOCK_BADGE],
+    d: nucleo.icons.globe.d.map((d) => xf(d, { s: 0.76, dx: -3.25, dy: -3.25 })),
+    badge: badge('lock'),
   },
+  // El escudo del núcleo al 94 %; la lupa de las insignias (la de datos) va encima.
   'shield-search': {
     tags: ['auditoría', 'análisis de seguridad', 'escaneo', 'revisión', 'security scan', 'audit', 'inspection'],
-    d: (() => {
-      const lens = [circ(16.25, 16.25, 3.5), line(polar(16.25, 16.25, 3.5, 45), [21, 21])];
-      return [cut(xf(SHIELD, { s: 0.88, o: [12, 3], dx: -1.75 }), lens), ...lens];
+    d: [xf(SHIELD, { s: 0.94, o: [12, 3], dx: -1.75 })],
+    badge: (() => {
+      const lens = circ(...BC, 3.25);
+      const handle = line(polar(...BC, 3.25, 45), [21.25, 21.25]);
+      return own([lens, handle], lens + trace(handle), { solid: [lens, handle] });
     })(),
   },
   'security-camera': {
@@ -1040,43 +1095,349 @@ const icons = {
   },
   language: {
     tags: ['idioma', 'región', 'localización', 'traducción', 'language', 'locale', 'localization'],
+    // El globo del núcleo a dos tercios (r 6) arriba a la izquierda; el globo de conversación va
+    // encima (insignia propia) y el motor despeja el mundo. Así el ecuador y el meridiano quedan a 3
+    // o más de la gota: solo el contorno pasa detrás, y la cruza de frente. Renglones a 3 del borde.
+    d: nucleo.icons.globe.d.map((d) => xf(d, { s: 2 / 3, dx: -4, dy: -4 })),
+    badge: (() => {
+      const bubble = drop(16.5, 16.5, 5.25);
+      const rows = [line([14.85, 15], [18.15, 15]), line([14.85, 18], [17.1, 18])];
+      return own([bubble, ...rows], bubble, { solid: [bubble], cut: rows });
+    })(),
+  },
+
+  // ── Cobertura (ronda 2): signos, controles y emergencias que faltaban ──
+  // Menos: la pareja de `plus` del núcleo (el mismo largo sobre el mismo eje).
+  minus: {
+    tags: ['menos', 'restar', 'quitar', 'reducir', 'minus', 'subtract', 'remove'],
+    d: [line([4.25, 12], [19.75, 12])],
+  },
+  // Asterisco (campo obligatorio, nota al pie): seis brazos de 7 que se cruzan en el centro.
+  asterisk: {
+    tags: ['asterisco', 'obligatorio', 'campo requerido', 'nota', 'asterisk', 'required', 'footnote'],
+    d: [-90, -30, 30].map((a) => line(polar(12, 12, 7, a), polar(12, 12, 7, a + 180))),
+  },
+  // Sincronizar: las dos flechas en círculo de `update`, sin la flecha de descarga.
+  sync: {
+    tags: ['sincronizar', 'sincronizando', 'actualizar datos', 'al día', 'sync', 'syncing', 'synchronize'],
     d: (() => {
-      // El globo de r 5.5 deja que los renglones queden a 3 de su borde, alineados a la izquierda
-      const bubble = drop(16, 16, 5.5);
-      const globe = [circ(9.25, 9.25, 6.5), `M9.25 2.75C11 4.5 11.9 6.6 11.9 9.25S11 14 9.25 15.75C7.5 14 6.6 11.9 6.6 9.25S7.5 4.5 9.25 2.75Z`, line([2.75, 9.25], [15.75, 9.25])];
-      return [...globe.map((d) => cut(d, bubble)), bubble, line([14, 14.5], [18, 14.5]), line([14, 17.5], [16.5, 17.5])];
+      const a = arc(12, 12, 9, -150, -25);
+      const b = arc(12, 12, 9, 30, 155);
+      return [a.d, head(a.end, a.tangent, 3.4), b.d, head(b.end, b.tangent, 3.4)];
+    })(),
+  },
+  // La opción sin elegir: la pareja de `radio-selected` (y de `checkbox`, que es el cuadro vacío).
+  'radio-unselected': {
+    tags: ['opción sin elegir', 'botón de opción', 'círculo', 'por hacer', 'radio button', 'unselected', 'circle'],
+    d: [CIRCLE],
+  },
+  // Imán: la herradura (brazos de 4.5 que se unen en un arco) con sus polos marcados.
+  magnet: {
+    tags: ['imán', 'atraer', 'ajustar a la cuadrícula', 'captar clientes', 'magnet', 'snap', 'attract'],
+    d: [
+      'M4.5 4.5A1 1 0 0 1 5.5 3.5H8A1 1 0 0 1 9 4.5V12.75A3 3 0 0 0 15 12.75V4.5A1 1 0 0 1 16 3.5H18.5A1 1 0 0 1 19.5 4.5V12.75A7.5 7.5 0 0 1 4.5 12.75Z',
+      line([4.5, 7.75], [9, 7.75]),
+      line([15, 7.75], [19.5, 7.75]),
+    ],
+  },
+  // Botiquín: el estuche (contenedor: la esquina inferior derecha recta), su asa y la cruz.
+  'first-aid': {
+    tags: ['primeros auxilios', 'botiquín', 'emergencia', 'salud', 'first aid', 'medical kit', 'emergency'],
+    d: [
+      sq(2.75, 7, 18.5, 13.5, 3.5, BR),
+      rline([[9, 7], [9, 4.25], [15, 4.25], [15, 7]], [0, 1.25, 1.25, 0]),
+      line([12, 10.75], [12, 16.75]),
+      line([9, 13.75], [15, 13.75]),
+    ],
+  },
+  // Silla de ruedas (accesibilidad física, el símbolo internacional): cabeza (a 3 de la espalda),
+  // espalda, asiento y pierna; la rueda pasa detrás de la pierna con 1.5 de aire.
+  wheelchair: {
+    tags: ['silla de ruedas', 'acceso accesible', 'discapacidad', 'movilidad reducida', 'wheelchair', 'accessible', 'disability'],
+    // Cabeza y rueda completas; el cuerpo (espalda, asiento y pierna) va encima como insignia propia
+    // y el motor despeja la rueda a su paso. La cabeza, a 3 de la espalda.
+    ...(() => {
+      const x = 9.75;
+      const leg = rline([[x, 9], [x, 13.5], [x + 5, 13.5], [x + 7.25, 19.75], [x + 9.5, 19.75]], [0, 1, 0.75, 0.75, 0]);
+      const seat = line([x, 11], [x + 4, 11]);
+      return { d: [circ(x, 4.35, 1.6), arc(x + 1, 15.25, 5.75, 205, -10).d], badge: own([leg, seat], trace(leg) + trace(seat)) };
     })(),
   },
 };
 
-// 16 px (DESIGN.md › 16 px): dibujos con menos piezas para los que se empastan a 1x.
-// La huella con las crestas a 4.5 en vez de 3 (a 16 px, 3 px entre ejes en lugar de 2).
-icons.fingerprint.small = {
-  d: [`M3 14.5V11.75${arcTo(12, 11.75, 9, 180, 342)}`, `M7.5 18V11.75${arcTo(12, 11.75, 4.5, 180, 360)}V16`, line([12, 11.75], [12, 17.5])],
+// ── Relleno (DESIGN.md › Relleno) ──
+// Por índice de `d`: `solid` se rellena (y conserva su trazo), `cut` se cala al ancho del trazo y
+// `lines` sigue siendo línea con 1.5 de aire. T(i): la pieza abierta i de ida y vuelta (`trace`),
+// para que siga unida al cuerpo sin rellenar su hueco (asas, soportes, tubos).
+const T = (i) => (d) => trace(d[i]);
+const FILL = {
+  // Candados: como el del núcleo, el cuerpo y el arco rellenos; el abierto no encierra nada con su
+  // arco, así que va de ida y vuelta (si no, se rellenaba un domo chueco).
+  'lock-open': { solid: [0, T(1)], cut: [2] },
+  'lock-check': { solid: [0, 1], cut: [2] },
+  'lock-x': { solid: [0, 1], cut: [2, 3] },
+  'lock-clock': { solid: [0, 1], cut: [2] },
+  keyhole: { solid: [0], cut: [1] },
+  password: { solid: [0], cut: [1, 2, 3, 4] },
+  // La llave antigua: argolla, vara, collarín y paletón (que se cierra contra la vara)
+  'key-skeleton': { solid: [0, 1, 2, 3] },
+  passkey: { solid: [0, 1, 2, 3, 4, 5] },
+  'person-lock': { solid: [0, 1] },
+  // El ojo relleno con la pupila calada; las esquinas del marco siguen siendo línea
+  'iris-scan': { solid: [1], cut: [2], lines: [0] },
+  'two-factor': { solid: [0], cut: [1, 2, 3, 4] },
+  'eye-off': { solid: [0], cut: [1] },
+  'eye-lock': { solid: [0], cut: [1] },
+  // La copa del sombrero se cierra contra el ala; el puente de los lentes va de ida y vuelta
+  incognito: { solid: [0, 1, 2, 3, T(4)] },
+  'window-lock': { solid: [0], cut: [1, 2, 3] },
+  certificate: { solid: [0], cut: [1, 2] },
+  cookie: { solid: [0], cut: [1, 2, 3, 4] },
+  'shield-empty': { solid: [0] },
+  'shield-off': { solid: [0] },
+  'status-progress': { solid: [1], lines: [0] },
+  gear: { solid: [0], cut: [1] },
+  gears: { solid: [0], cut: [1] },
+  'sliders-horizontal': { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
+  preferences: { solid: [0, 2], cut: [1, 3] },
+  'toggle-on': { solid: [0], cut: [1] },
+  'toggle-off': { solid: [0], cut: [1] },
+  lifebuoy: { solid: [0], cut: [1, 2, 3, 4, 5] },
+  'flag-report': { solid: [0, 1], cut: [2, 3] },
+  'flag-check': { solid: [0, 1], cut: [2] },
+  // El domo se cierra contra la base; los destellos siguen siendo línea
+  siren: { solid: [0, 1], lines: [2, 3, 4] },
+  'page-not-found': { solid: [0], cut: [1, 2, 3, 4] },
+  verified: { solid: [0], cut: [1] },
+  'badge-star': { solid: [0], cut: [1] },
+  award: { solid: [0, 1] },
+  // Las asas de la copa, de ida y vuelta: rellenas se volvían orejas macizas
+  trophy: { solid: [0, T(1), T(2), 3, 4] },
+  'medal-ribbon': { solid: [0] },
+  lightbulb: { solid: [0], lines: [1, 2] },
+  'lightbulb-on': { solid: [0], lines: [1, 2, 3, 4, 5, 6] },
+  // Aletas y llama se cierran contra el cuerpo; la ventanilla, calada
+  'rocket-launch': { solid: [0, 2, 3, 4], cut: [1] },
+  'target-arrow': { solid: [0], cut: [1] },
+  podium: { solid: [0], cut: [1, 2] },
+  wrench: { solid: [0] },
+  screwdriver: { solid: [0, 1, 3], cut: [2] },
+  hammer: { solid: [0, 1] },
+  tools: { solid: [0] },
+  'traffic-cone': { solid: [0, 1], cut: [2, 3] },
+  barrier: { solid: [0, 1, 2, 3, 4], cut: [5, 6, 7] },
+  'hard-hat': { solid: [0, 1], cut: [2, 3] },
+  'hex-nut': { solid: [0], cut: [1] },
+  checkbox: { solid: [0] },
+  // La opción elegida: el aro sigue siendo línea y el centro se rellena
+  'radio-selected': { solid: [1], lines: [0] },
+  'radio-unselected': { solid: [0] },
+  // La barra: el riel sigue siendo línea y el avance se rellena
+  'progress-bar': { solid: [1], lines: [0] },
+  'person-gear': { solid: [0, 1] },
+  'key-plus': { solid: [0, 2, 3, 4], cut: [1] },
+  'globe-lock': { solid: [0], cut: [1, 2] },
+  'shield-search': { solid: [0] },
+  // La base del soporte va de ida y vuelta (rellena era un triángulo)
+  'security-camera': { solid: [0, T(1), 2], cut: [3] },
+  radar: { solid: [0], cut: [1, 2, 3] },
+  'heart-pulse': { solid: [0], cut: [1] },
+  // Estetoscopio: la campana rellena; las olivas y el tubo, de ida y vuelta
+  stethoscope: { solid: [T(0), T(1), 2] },
+  virus: { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] },
+  'plug-connected': { solid: [0, 1, 2, 3, 4, 5] },
+  'plug-disconnected': { solid: [0, 1, 2, 3, 4, 5] },
+  patch: { solid: [0], cut: [1, 2, 3, 4] },
+  accessibility: { solid: [0], cut: [1, 2, 3, 4] },
+  'dark-mode': { solid: [0], cut: [1] },
+  contrast: { solid: [0], cut: [1, 2, 3, 4] },
+  language: { solid: [0], cut: [1, 2] },
+  magnet: { solid: [0], cut: [1, 2] },
+  // El asa del botiquín, como la del maletín del núcleo: línea con aire
+  'first-aid': { solid: [0], lines: [1], cut: [2, 3] },
+  wheelchair: { solid: [0], lines: [1] },
 };
-// Los engranes con menos dientes y sin el punto del pequeño.
-icons.gears.small = {
-  d: (() => {
-    const small = gear(17, 17, 4.75, 3.35, 5, 0.6, 0.8);
-    return [cut(gear(9, 9, 6.6, 4.85, 6, 0.8, 1), small), cut(circ(9, 9, 1.85), small), small];
-  })(),
-};
-// Medalla y roseta sin el aro interior.
-icons['medal-ribbon'].small = { d: icons['medal-ribbon'].d.slice(0, 2) };
-icons.award.small = { d: [icons.award.d[0], ...icons.award.d.slice(2)] };
+// Un escudo, aviso o estado con su signo: la figura rellena y el signo calado
+for (const name of ['shield-x', 'shield-alert', 'shield-plus', 'shield-minus', 'shield-lock', 'shield-person', 'shield-question', 'info', 'info-square', 'help', 'help-square', 'alert-octagon', 'close-octagon', 'alert-square', 'alert-diamond', 'check-circle', 'close-circle', 'plus-circle', 'minus-circle', 'check-square', 'close-square', 'plus-square', 'minus-square', 'block'])
+  FILL[name] = { solid: [0], cut: icons[name].d.map((_, i) => i).slice(1) };
+for (const [name, spec] of Object.entries(FILL)) {
+  const ds = icons[name].d;
+  const pick = (ix) => ix.map((i) => (typeof i === 'function' ? i(ds) : ds[i]));
+  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+}
+// Solo líneas abiertas (o signos): su relleno es el mismo contorno
+for (const name of ['fingerprint', 'face-scan', 'scan', 'firewall', 'check-double', 'loader', 'spinner', 'status-pending', 'restart', 'update', 'command', 'minus', 'asterisk', 'sync'])
+  icons[name].fill = false;
 
-// Variantes (DESIGN.md › Variantes automáticas).
+// ── 16 px (DESIGN.md › 16 px): dibujos con menos piezas para los que se empastan a 1x ──
+// Un dibujo propio no se ajusta solo: sus tramos rectos van en centros de pixel (0.75 + 1.5k) y los
+// puntos de r 1 en bordes de pixel (múltiplos de 1.5), así caen enteros en 2 × 2 pixeles.
+/** Dibujo de 16 px con su relleno: `solid` y `cut` por índice de `d`. */
+const small = (d, solid, cut = [], extra = {}) => ({ d, fill: { solid: solid.map((i) => d[i]), ...(cut.length && { cut: cut.map((i) => d[i]) }) }, ...extra });
+// La huella con las crestas a 4.5 en vez de 3 (3 px entre ejes en lugar de 2) y su eje en un centro
+// de pixel (en 12 cada cresta caía entre dos pixeles y se veía gris).
+icons.fingerprint.small = {
+  d: [`M2.25 14.25V11.25${arcTo(11.25, 11.25, 9, 180, 342)}`, `M6.75 17.25V11.25${arcTo(11.25, 11.25, 4.5, 180, 360)}V15.75`, line([11.25, 11.25], [11.25, 17.25])],
+};
+// El campo en centros de pixel; los puntos de 2 × 2 y el cursor de un pixel, con uno de aire.
+icons.password.small = small([sq(2.25, 6.75, 19.5, 10.5, 3, BR), ...[6, 10.5, 15].map((x) => dot(x, 12, 1)), line([18.75, 9.75], [18.75, 14.25])], [0], [1, 2, 3, 4]);
+// El teléfono de 12 de ancho (centrado en un pixel) y el código en tres puntos de un pixel con uno
+// de aire: los de r 0.3 se volvían una raya gris.
+icons['two-factor'].small = small([sq(6.75, 2.25, 12, 19.5, 3.25, BR), line([11.25, 5.25], [14.25, 5.25]), ...[9.75, 12.75, 15.75].map((x) => dot(x, 12.75, 0.25))], [0], [1, 2, 3, 4]);
+// El parche sin los poros (a 16 px eran ruido gris).
+icons.patch.small = small(icons.patch.d.slice(0, 3), [0], [1, 2]);
+// El radar con los aros en centros de pixel y sin el eco (se encimaba con los aros).
+icons.radar.small = small([circ(12, 12, 8.25), circ(12, 12, 3.75), line([12, 12], polar(12, 12, 8.25, -50))], [0], [1, 2]);
+// El pulso con un solo pico, a la altura de un centro de pixel: con dos se volvía una x.
+icons['heart-pulse'].small = small([icons['heart-pulse'].d[0], inside(line([2, 12.75], [10.5, 12.75], [12, 9.75], [13.5, 12.75], [22, 12.75]), icons['heart-pulse'].d[0], 3)], [0], [1]);
+// El mundo y la gota en centros de pixel, con los renglones en filas enteras.
+{
+  const globe = nucleo.icons.globe.d.map((d) => xf(d, { s: 2 / 3, dx: -3.75, dy: -3.75 }));
+  const bubble = drop(16.5, 16.5, 5.25);
+  const rows = [line([14.25, 15.75], [18.75, 15.75]), line([14.25, 18.75], [17.25, 18.75])];
+  icons.language.small = small(globe, [0], [1, 2], { badge: own([bubble, ...rows], bubble, { solid: [bubble], cut: rows }) });
+}
+// El certificado con un renglón y los listones rectos, en columnas de pixel.
+{
+  const seal = circ(15.75, 12.75, 2.25);
+  const tails = [14.25, 17.25].map((x) => line([x, 12.75 + Math.sqrt(2.25 ** 2 - 1.5 ** 2)], [x, 21.75]));
+  icons.certificate.small = small([sq(2.25, 3.75, 19.5, 15, 3.25, BR), line([6.75, 8.25], [11.25, 8.25])], [0], [1], { badge: own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal, ...tails] }) });
+}
+// Los engranes con menos dientes y sin el punto del chico.
+{
+  const big = [gear(8.75, 8.75, 6.6, 4.85, 6, 0.8, 1), circ(8.75, 8.75, 1.85)];
+  const cog = gear(...BC, 4.5, 3.15, 5, 0.6, 0.8);
+  icons.gears.small = small(big, [0], [1], { badge: own([cog], circ(...BC, 4.5), { solid: [cog] }) });
+}
+// Medalla y roseta sin el aro interior.
+icons['medal-ribbon'].small = small([STRAP], [0], [], { badge: own([MEDAL], MEDAL, { solid: [MEDAL] }) });
+icons.award.small = small(icons.award.d, [0, 1], [], { badge: own([ROSETTE], ROSETTE, { solid: [ROSETTE] }) });
+
+// ── Variantes (DESIGN.md › Variantes automáticas) ──
+const off = (names, v) => {
+  for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
+};
 // Ya vienen encerrados en un círculo (o el contorno es el ícono): no se vuelven a encerrar.
-for (const name of ['keyhole', 'cookie', 'info', 'help', 'check-circle', 'close-circle', 'plus-circle', 'minus-circle', 'loader', 'spinner', 'status-pending', 'status-progress', 'block', 'lifebuoy', 'verified', 'badge-star', 'radio-selected', 'radar', 'accessibility', 'contrast', 'alert-octagon', 'close-octagon', 'alert-diamond'])
-  icons[name].variants = { circle: false };
+off(['keyhole', 'cookie', 'info', 'help', 'check-circle', 'close-circle', 'plus-circle', 'minus-circle', 'loader', 'spinner', 'status-pending', 'status-progress', 'block', 'lifebuoy', 'verified', 'badge-star', 'radio-selected', 'radio-unselected', 'radar', 'accessibility', 'contrast', 'alert-octagon', 'close-octagon', 'alert-diamond'], { circle: false });
 // Ya vienen en un cuadrado o en una ventana: no se vuelven a encerrar en cuadrado.
-for (const name of ['info-square', 'help-square', 'alert-square', 'check-square', 'close-square', 'plus-square', 'minus-square', 'checkbox', 'window-lock', 'page-not-found', 'scan', 'face-scan', 'iris-scan'])
-  icons[name].variants = { square: false };
-// Con insignia o pieza en la esquina (o la luna de la perilla): reducidos al 58–60 % dejan de leerse.
-for (const name of ['lock-clock', 'person-lock', 'eye-lock', 'key-plus', 'globe-lock', 'shield-search', 'person-gear', 'passkey', 'language', 'certificate', 'gears', 'tools', 'dark-mode'])
-  icons[name].variants = { circle: false, square: false };
-// Líneas sueltas, estados y los que ya tienen su versión -off dibujada: sin tachado.
-for (const name of ['check-double', 'loader', 'spinner', 'status-pending', 'block', 'eye-off', 'shield-off', 'shield-empty', 'toggle-on', 'toggle-off', 'plug-disconnected', 'progress-bar'])
-  icons[name].variants = { ...icons[name].variants, slash: false };
+off(['info-square', 'help-square', 'alert-square', 'check-square', 'close-square', 'plus-square', 'minus-square', 'checkbox', 'window-lock', 'page-not-found', 'scan', 'face-scan', 'iris-scan'], { square: false });
+// Reducidos al 58–60 % dejan de leerse (la luna de la perilla, la persona con su llave).
+off(['passkey', 'dark-mode'], { circle: false, square: false });
+// Con insignia: encerrada, la insignia deja de leerse (y relleno en círculo no la dibuja), y el
+// tache la atravesaría sin aire.
+for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, circle: false, square: false, slash: false };
+// Líneas sueltas, signos, estados y los que ya tienen su versión tachada dibujada (`shield-off`,
+// `plug-disconnected`): sin tachado.
+off(['minus', 'asterisk', 'command', 'loader', 'spinner', 'status-pending', 'status-progress', 'progress-bar', 'block', 'restart', 'sync', 'update', 'shield-empty', 'toggle-on', 'toggle-off', 'plug-connected', 'plug-disconnected'], { slash: false });
+
+// ── Espejo (DESIGN.md › Espejo): lo que se lee de izquierda a derecha ──
+// El cursor al final del campo, los interruptores (en derecha a izquierda el encendido va a la
+// izquierda) y la barra que avanza.
+for (const name of ['password', 'toggle-on', 'toggle-off', 'preferences', 'dark-mode', 'progress-bar']) icons[name].mirror = true;
+
+// ── Piezas con nombre (DESIGN.md › Piezas): lo que se anima, cambia de estado o va bajo una insignia ──
+const PARTS = {
+  'lock-open': { body: [0], shackle: [1], keyhole: [2] },
+  'lock-check': { body: [0], shackle: [1], mark: [2] },
+  'lock-x': { body: [0], shackle: [1], mark: [2, 3] },
+  'lock-clock': { body: [0], shackle: [1], keyhole: [2] },
+  keyhole: { shape: [0], keyhole: [1] },
+  password: { field: [0], dots: [1, 2, 3], caret: [4] },
+  'key-skeleton': { bow: [0], shaft: [1, 2, 3] },
+  passkey: { person: [0, 1], key: [2, 3, 4, 5] },
+  'person-lock': { person: [0, 1] },
+  'two-factor': { device: [0], code: [2, 3, 4] },
+  'eye-off': { body: [0], pupil: [1] },
+  'eye-lock': { body: [0], pupil: [1] },
+  certificate: { body: [0], text: [1, 2] },
+  'shield-empty': { shape: [0] },
+  'shield-off': { shape: [0] },
+  'shield-lock': { shape: [0], lock: [1, 2] },
+  'shield-person': { shape: [0], person: [1, 2] },
+  'check-double': { mark: [0] },
+  loader: { arc: [0] },
+  spinner: { rays: [0, 1, 2, 3, 4, 5, 6, 7] },
+  'status-pending': { ring: [0, 1, 2, 3, 4, 5, 6, 7] },
+  'status-progress': { ring: [0], progress: [1] },
+  gear: { gear: [0], hub: [1] },
+  gears: { gear: [0], hub: [1] },
+  preferences: { track: [0, 2], knob: [1, 3] },
+  'toggle-on': { track: [0], knob: [1] },
+  'toggle-off': { track: [0], knob: [1] },
+  restart: { arrow: [0, 1], power: [2] },
+  'flag-report': { pole: [0], flag: [1], mark: [2, 3] },
+  'flag-check': { pole: [0], flag: [1], mark: [2] },
+  siren: { dome: [0], base: [1], rays: [2, 3, 4] },
+  award: { ribbons: [0, 1] },
+  trophy: { cup: [0], handles: [1, 2], stand: [3, 4] },
+  'medal-ribbon': { strap: [0] },
+  'lightbulb-on': { bulb: [0], base: [1], rays: [2, 3, 4, 5, 6] },
+  'rocket-launch': { body: [0], window: [1], fins: [2, 3], flame: [4] },
+  'target-arrow': { rings: [0, 1] },
+  wrench: { body: [0] },
+  hammer: { head: [0], handle: [1] },
+  tools: { wrench: [0] },
+  'radio-selected': { ring: [0], dot: [1] },
+  'progress-bar': { track: [0], progress: [1] },
+  update: { cycle: [0, 1, 2, 3], arrow: [4, 5] },
+  sync: { cycle: [0, 1, 2, 3] },
+  'person-gear': { person: [0, 1] },
+  'key-plus': { bow: [0, 1], shaft: [2, 3, 4] },
+  'globe-lock': { globe: [0, 1, 2] },
+  'shield-search': { shape: [0] },
+  'security-camera': { body: [0, 3], mount: [1, 2] },
+  radar: { face: [0, 1], sweep: [2], blip: [3] },
+  'heart-pulse': { heart: [0], pulse: [1] },
+  'plug-connected': { plug: [0, 1, 2, 3], socket: [4, 5] },
+  'plug-disconnected': { plug: [0, 1, 2, 3], socket: [4, 5] },
+  'dark-mode': { track: [0], knob: [1] },
+  language: { globe: [0, 1, 2] },
+  wheelchair: { head: [0], wheel: [1] },
+};
+// Escudos, avisos y estados: la figura y su signo
+for (const name of ['shield-x', 'shield-alert', 'shield-plus', 'shield-minus', 'shield-question', 'info', 'info-square', 'help', 'help-square', 'alert-octagon', 'close-octagon', 'alert-square', 'alert-diamond', 'check-circle', 'close-circle', 'plus-circle', 'minus-circle', 'check-square', 'close-square', 'plus-square', 'minus-square', 'block'])
+  PARTS[name] = { shape: [0], mark: icons[name].d.map((_, i) => i).slice(1) };
+for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
+
+// ── Movimiento (DESIGN.md › Movimiento): el gesto propio de cada ícono ──
+const MOTION = {
+  // El arco del candado abierto salta; el reloj de la insignia gira
+  'lock-open': { effect: 'bounce', parts: ['shackle'], vector: [0, -1.5] },
+  'lock-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'key-skeleton': { effect: 'wiggle', origin: [6.75, 11.5] },
+  // Los avisos se sacuden desde su base, como `alert` del núcleo
+  'shield-alert': { effect: 'wiggle', origin: [12, 21.5] },
+  'alert-octagon': { effect: 'wiggle', origin: [12, 21.75] },
+  'alert-square': { effect: 'wiggle', origin: [12, 20.75] },
+  'alert-diamond': { effect: 'wiggle', origin: [12, 22] },
+  // Lo que gira: cargas, engranes, el barrido del radar y las flechas de sincronizar
+  loader: { effect: 'spin', parts: ['arc'], origin: [12, 12] },
+  spinner: { effect: 'spin', parts: ['rays'], origin: [12, 12] },
+  'status-pending': { effect: 'spin', parts: ['ring'], origin: [12, 12] },
+  gear: { effect: 'spin', origin: [12, 12] },
+  gears: { effect: 'spin', parts: ['gear', 'hub'], origin: [8.75, 8.75] },
+  'person-gear': { effect: 'spin', parts: ['badge'], origin: BC },
+  radar: { effect: 'spin', parts: ['sweep'], origin: [12, 12] },
+  sync: { effect: 'spin', parts: ['cycle'], origin: [12, 12] },
+  // La flecha de la actualización baja
+  update: { effect: 'bounce', parts: ['arrow'], vector: [0, 1.5] },
+  // La bandera ondea desde el pie del asta
+  'flag-report': { effect: 'wiggle', origin: [4.75, 21.25] },
+  'flag-check': { effect: 'wiggle', origin: [4.75, 21.25] },
+  // La sirena y el foco destellan
+  siren: { effect: 'beat', parts: ['rays'], origin: [12, 13.5] },
+  'lightbulb-on': { effect: 'beat', parts: ['rays'], origin: [12, 11.5] },
+  'heart-pulse': { effect: 'beat', origin: [12, 13] },
+  'rocket-launch': { effect: 'slide', vector: [0, -2] },
+  // La flecha entra en la diana
+  'target-arrow': { effect: 'slide', parts: ['badge'], vector: [-1.5, 1.5] },
+  // La llave inglesa gira sobre la tuerca; el martillo golpea desde el puño
+  wrench: { effect: 'wiggle', origin: [15.6, 8.4] },
+  hammer: { effect: 'wiggle', origin: [4.4, 19.6] },
+  'security-camera': { effect: 'wiggle', parts: ['body'], origin: [13.5, 11.75] },
+  // La clavija avanza hacia el contacto
+  'plug-disconnected': { effect: 'slide', parts: ['plug'], vector: [1.25, -1.25] },
+};
+for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
 export default { category: 'sistema', label: 'Sistema, seguridad y estado', icons };

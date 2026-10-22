@@ -1,0 +1,786 @@
+{
+  "arrow-left": {
+    "label": { "es": "Atrás", "en": "Back", "pt": "Voltar", "fr": "Retour", "de": "Zurück", "it": "Indietro", "ja": "戻る", "zh": "返回", "ko": "뒤로", "ar": "رجوع" },
+    "keywords": {
+      "es": ["volver", "regresar", "retroceder", "anterior", "página anterior", "navegar atrás", "salir de la pantalla"],
+      "en": ["go back", "return", "previous", "prior page", "navigate back", "backward", "leave screen"]
+    }
+  },
+  "arrow-up": {
+    "label": { "es": "Arriba", "en": "Up", "pt": "Para cima", "fr": "Vers le haut", "de": "Nach oben", "it": "Su", "ja": "上へ", "zh": "向上", "ko": "위로", "ar": "إلى الأعلى" },
+    "keywords": {
+      "es": ["subir", "ascender", "aumentar", "incrementar", "desplazar hacia arriba", "volver arriba", "norte"],
+      "en": ["move up", "ascend", "increase", "raise", "scroll up", "rise", "north"]
+    }
+  },
+  "arrow-down": {
+    "label": { "es": "Abajo", "en": "Down", "pt": "Para baixo", "fr": "Vers le bas", "de": "Nach unten", "it": "Giù", "ja": "下へ", "zh": "向下", "ko": "아래로", "ar": "إلى الأسفل" },
+    "keywords": {
+      "es": ["bajar", "descender", "disminuir", "reducir", "desplazar hacia abajo", "descargar", "sur"],
+      "en": ["move down", "descend", "decrease", "lower", "scroll down", "download", "south"]
+    }
+  },
+  "arrow-up-right": {
+    "label": { "es": "Arriba a la derecha", "en": "Up right", "pt": "Para cima à direita", "fr": "En haut à droite", "de": "Nach rechts oben", "it": "In alto a destra", "ja": "右上へ", "zh": "向右上", "ko": "오른쪽 위로", "ar": "إلى الأعلى واليسار" },
+    "keywords": {
+      "es": ["abrir", "ir a", "enlace", "tendencia al alza", "crecimiento", "saliente", "subida"],
+      "en": ["open", "go to", "link", "trending up", "growth", "outgoing", "launch"]
+    }
+  },
+  "arrow-down-right": {
+    "label": { "es": "Abajo a la derecha", "en": "Down right", "pt": "Para baixo à direita", "fr": "En bas à droite", "de": "Nach rechts unten", "it": "In basso a destra", "ja": "右下へ", "zh": "向右下", "ko": "오른쪽 아래로", "ar": "إلى الأسفل واليسار" },
+    "keywords": {
+      "es": ["tendencia a la baja", "caída", "descenso", "bajada", "esquina inferior", "redimensionar", "sureste"],
+      "en": ["trending down", "decline", "drop", "decrease", "bottom corner", "resize", "southeast"]
+    }
+  },
+  "arrow-down-left": {
+    "label": { "es": "Abajo a la izquierda", "en": "Down left", "pt": "Para baixo à esquerda", "fr": "En bas à gauche", "de": "Nach links unten", "it": "In basso a sinistra", "ja": "左下へ", "zh": "向左下", "ko": "왼쪽 아래로", "ar": "إلى الأسفل واليمين" },
+    "keywords": {
+      "es": ["entrante", "recibido", "llamada entrante", "minimizar", "acoplar a la esquina", "importar", "suroeste"],
+      "en": ["incoming", "received", "inbound", "minimize", "dock", "import", "southwest"]
+    }
+  },
+  "arrow-up-left": {
+    "label": { "es": "Arriba a la izquierda", "en": "Up left", "pt": "Para cima à esquerda", "fr": "En haut à gauche", "de": "Nach links oben", "it": "In alto a sinistra", "ja": "左上へ", "zh": "向左上", "ko": "왼쪽 위로", "ar": "إلى الأعلى واليمين" },
+    "keywords": {
+      "es": ["volver al origen", "esquina superior", "regresar", "retroceder", "redimensionar", "noroeste"],
+      "en": ["back to origin", "top corner", "return", "backtrack", "resize", "northwest"]
+    }
+  },
+  "arrow-right-circle": {
+    "label": { "es": "Siguiente", "en": "Next", "pt": "Próximo", "fr": "Suivant", "de": "Weiter", "it": "Successivo", "ja": "次へ", "zh": "下一个", "ko": "다음", "ar": "التالي" },
+    "keywords": {
+      "es": ["avanzar", "continuar", "adelante", "seguir", "ir", "paso siguiente", "botón"],
+      "en": ["forward", "continue", "proceed", "go", "advance", "next step", "submit"]
+    }
+  },
+  "arrow-left-circle": {
+    "label": { "es": "Anterior", "en": "Previous", "pt": "Anterior", "fr": "Précédent", "de": "Vorheriges", "it": "Precedente", "ja": "前へ", "zh": "上一个", "ko": "이전", "ar": "السابق" },
+    "keywords": {
+      "es": ["volver", "regresar", "atrás", "retroceder", "paso anterior", "botón"],
+      "en": ["back", "go back", "return", "prior", "previous step", "backward"]
+    }
+  },
+  "arrow-up-circle": {
+    "label": { "es": "Subir", "en": "Go up", "pt": "Subir", "fr": "Monter", "de": "Hoch", "it": "Sali", "ja": "上昇", "zh": "上升", "ko": "올라가기", "ar": "صعود" },
+    "keywords": {
+      "es": ["enviar", "cargar", "ascender", "aumentar", "volver arriba", "botón"],
+      "en": ["send", "upload", "ascend", "increase", "back to top", "button"]
+    }
+  },
+  "arrow-down-circle": {
+    "label": { "es": "Bajar", "en": "Go down", "pt": "Descer", "fr": "Descendre", "de": "Runter", "it": "Scendi", "ja": "下降", "zh": "下降", "ko": "내려가기", "ar": "نزول" },
+    "keywords": {
+      "es": ["descargar", "descender", "disminuir", "desplazar", "ver más", "botón", "guardar"],
+      "en": ["download", "descend", "decrease", "scroll down", "see more", "button", "save"]
+    }
+  },
+  "arrow-up-right-circle": {
+    "label": { "es": "Ir", "en": "Go", "pt": "Ir", "fr": "Accéder", "de": "Aufrufen", "it": "Vai", "ja": "移動", "zh": "前往", "ko": "바로 가기", "ar": "انتقال" },
+    "keywords": {
+      "es": ["abrir", "visitar", "enlace", "saliente", "ir a la página", "tendencia al alza", "acceder"],
+      "en": ["open", "visit", "link", "outgoing", "navigate", "trending up", "launch"]
+    }
+  },
+  "arrow-down-right-circle": {
+    "label": { "es": "Abajo a la derecha", "en": "Down right", "pt": "Para baixo à direita", "fr": "En bas à droite", "de": "Nach rechts unten", "it": "In basso a destra", "ja": "右下へ", "zh": "向右下", "ko": "오른쪽 아래로", "ar": "إلى الأسفل واليسار" },
+    "keywords": {
+      "es": ["tendencia a la baja", "caída", "descenso", "esquina inferior", "botón", "sureste"],
+      "en": ["trending down", "decline", "decrease", "bottom corner", "button", "southeast"]
+    }
+  },
+  "arrow-down-left-circle": {
+    "label": { "es": "Entrante", "en": "Incoming", "pt": "Entrada", "fr": "Entrant", "de": "Eingehend", "it": "In entrata", "ja": "受信", "zh": "传入", "ko": "수신", "ar": "وارد" },
+    "keywords": {
+      "es": ["recibido", "llamada entrante", "pago recibido", "cobro", "depósito", "ingreso", "importar"],
+      "en": ["received", "inbound", "incoming call", "payment received", "deposit", "income", "import"]
+    }
+  },
+  "arrow-up-left-circle": {
+    "label": { "es": "Arriba a la izquierda", "en": "Up left", "pt": "Para cima à esquerda", "fr": "En haut à gauche", "de": "Nach links oben", "it": "In alto a sinistra", "ja": "左上へ", "zh": "向左上", "ko": "왼쪽 위로", "ar": "إلى الأعلى واليمين" },
+    "keywords": {
+      "es": ["volver al origen", "regresar", "esquina superior", "retroceder", "botón", "noroeste"],
+      "en": ["back to origin", "return", "top corner", "backtrack", "button", "northwest"]
+    }
+  },
+  "arrow-right-square": {
+    "label": { "es": "Avanzar", "en": "Step forward", "pt": "Avançar", "fr": "Avancer", "de": "Vorwärts", "it": "Vai avanti", "ja": "先へ進む", "zh": "前进", "ko": "앞으로 가기", "ar": "تقدّم" },
+    "keywords": {
+      "es": ["siguiente", "continuar", "adelante", "ir", "botón", "tecla de flecha"],
+      "en": ["next", "continue", "forward", "go", "button", "arrow key"]
+    }
+  },
+  "arrow-left-square": {
+    "label": { "es": "Retroceder", "en": "Step back", "pt": "Retroceder", "fr": "Reculer", "de": "Rückwärts", "it": "Torna indietro", "ja": "後退", "zh": "后退", "ko": "뒤로 가기", "ar": "العودة للخلف" },
+    "keywords": {
+      "es": ["anterior", "volver", "regresar", "atrás", "botón", "tecla de flecha"],
+      "en": ["previous", "back", "return", "backward", "button", "arrow key"]
+    }
+  },
+  "arrow-up-square": {
+    "label": { "es": "Mover arriba", "en": "Move up", "pt": "Mover para cima", "fr": "Déplacer vers le haut", "de": "Nach oben verschieben", "it": "Sposta su", "ja": "上に移動", "zh": "上移", "ko": "위로 이동", "ar": "نقل لأعلى" },
+    "keywords": {
+      "es": ["reordenar", "subir", "prioridad", "aumentar", "botón", "tecla de flecha", "cargar"],
+      "en": ["reorder", "raise", "priority", "increase", "button", "arrow key", "upload"]
+    }
+  },
+  "arrow-down-square": {
+    "label": { "es": "Mover abajo", "en": "Move down", "pt": "Mover para baixo", "fr": "Déplacer vers le bas", "de": "Nach unten verschieben", "it": "Sposta giù", "ja": "下に移動", "zh": "下移", "ko": "아래로 이동", "ar": "نقل لأسفل" },
+    "keywords": {
+      "es": ["reordenar", "bajar", "prioridad", "disminuir", "botón", "tecla de flecha", "descargar"],
+      "en": ["reorder", "lower", "priority", "decrease", "button", "arrow key", "download"]
+    }
+  },
+  "arrow-up-right-square": {
+    "label": { "es": "Abrir", "en": "Open", "pt": "Abrir", "fr": "Ouvrir", "de": "Öffnen", "it": "Apri", "ja": "開く", "zh": "打开", "ko": "열기", "ar": "فتح" },
+    "keywords": {
+      "es": ["abrir afuera", "enlace", "ir a", "expandir", "ver detalle", "saliente", "nueva ventana"],
+      "en": ["open externally", "link", "go to", "expand", "view details", "outgoing", "new window"]
+    }
+  },
+  "arrow-down-right-square": {
+    "label": { "es": "Abajo a la derecha", "en": "Down right", "pt": "Para baixo à direita", "fr": "En bas à droite", "de": "Nach rechts unten", "it": "In basso a destra", "ja": "右下へ", "zh": "向右下", "ko": "오른쪽 아래로", "ar": "إلى الأسفل واليسار" },
+    "keywords": {
+      "es": ["tendencia a la baja", "caída", "descenso", "esquina inferior", "botón", "redimensionar"],
+      "en": ["trending down", "decline", "decrease", "bottom corner", "button", "resize"]
+    }
+  },
+  "arrow-down-left-square": {
+    "label": { "es": "Recibir", "en": "Receive", "pt": "Receber", "fr": "Recevoir", "de": "Empfangen", "it": "Ricevi", "ja": "受け取る", "zh": "接收", "ko": "받기", "ar": "استلام" },
+    "keywords": {
+      "es": ["entrante", "recibido", "cobrar", "depósito", "importar", "bandeja de entrada"],
+      "en": ["incoming", "received", "inbound", "collect", "deposit", "import"]
+    }
+  },
+  "arrow-up-left-square": {
+    "label": { "es": "Arriba a la izquierda", "en": "Up left", "pt": "Para cima à esquerda", "fr": "En haut à gauche", "de": "Nach links oben", "it": "In alto a sinistra", "ja": "左上へ", "zh": "向左上", "ko": "왼쪽 위로", "ar": "إلى الأعلى واليمين" },
+    "keywords": {
+      "es": ["volver al origen", "regresar", "esquina superior", "retroceder", "botón", "noroeste"],
+      "en": ["back to origin", "return", "top corner", "backtrack", "button", "northwest"]
+    }
+  },
+  "arrow-thick-right": {
+    "label": { "es": "Hacia adelante", "en": "Forward", "pt": "Para a frente", "fr": "En avant", "de": "Nach vorn", "it": "In avanti", "ja": "進む", "zh": "向前", "ko": "앞쪽으로", "ar": "إلى الأمام" },
+    "keywords": {
+      "es": ["siguiente", "continuar", "ir", "dirección", "señalar", "indicación"],
+      "en": ["next", "continue", "go", "direction", "proceed", "pointing"]
+    }
+  },
+  "arrow-thick-left": {
+    "label": { "es": "Hacia atrás", "en": "Backward", "pt": "Para trás", "fr": "En arrière", "de": "Nach hinten", "it": "All'indietro", "ja": "後ろへ", "zh": "向后", "ko": "뒤쪽으로", "ar": "إلى الخلف" },
+    "keywords": {
+      "es": ["anterior", "volver", "atrás", "retroceder", "dirección", "indicación"],
+      "en": ["previous", "go back", "back", "return", "direction", "pointing"]
+    }
+  },
+  "arrow-thick-up": {
+    "label": { "es": "Hacia arriba", "en": "Upward", "pt": "Acima", "fr": "En haut", "de": "Aufwärts", "it": "Verso l'alto", "ja": "上向き", "zh": "朝上", "ko": "위쪽", "ar": "اتجاه لأعلى" },
+    "keywords": {
+      "es": ["subir", "mayúsculas", "tecla shift", "votar a favor", "aumentar", "ascender"],
+      "en": ["shift key", "caps", "upvote", "increase", "ascend", "rise"]
+    }
+  },
+  "arrow-thick-down": {
+    "label": { "es": "Hacia abajo", "en": "Downward", "pt": "Abaixo", "fr": "En bas", "de": "Abwärts", "it": "Verso il basso", "ja": "下向き", "zh": "朝下", "ko": "아래쪽", "ar": "اتجاه لأسفل" },
+    "keywords": {
+      "es": ["bajar", "votar en contra", "disminuir", "descargar", "descender", "caída"],
+      "en": ["downvote", "decrease", "download", "descend", "fall", "lower"]
+    }
+  },
+  "arrow-up-to-line": {
+    "label": { "es": "Ir arriba del todo", "en": "Go to top", "pt": "Ir para o topo", "fr": "Tout en haut", "de": "Ganz nach oben", "it": "Vai in cima", "ja": "一番上へ", "zh": "回到顶部", "ko": "맨 위로", "ar": "الانتقال إلى أعلى الصفحة" },
+    "keywords": {
+      "es": ["volver arriba", "tope", "inicio de página", "desplazar al principio", "alinear arriba", "primero"],
+      "en": ["scroll to top", "back to top", "page top", "jump to start", "align top", "first"]
+    }
+  },
+  "arrow-down-to-line": {
+    "label": { "es": "Ir abajo del todo", "en": "Go to bottom", "pt": "Ir para o final da página", "fr": "Tout en bas", "de": "Ganz nach unten", "it": "Vai in fondo", "ja": "一番下へ", "zh": "跳到底部", "ko": "맨 아래로", "ar": "الانتقال إلى أسفل الصفحة" },
+    "keywords": {
+      "es": ["fondo", "fin de página", "desplazar al final", "descargar", "alinear abajo", "último", "guardar"],
+      "en": ["scroll to bottom", "page end", "jump to end", "download", "align bottom", "last", "save"]
+    }
+  },
+  "arrow-left-to-line": {
+    "label": { "es": "Ir al inicio", "en": "Go to start", "pt": "Ir para o início", "fr": "Aller au début", "de": "Zum Anfang", "it": "Vai all'inizio", "ja": "先頭へ", "zh": "跳到开头", "ko": "처음으로", "ar": "الانتقال إلى البداية" },
+    "keywords": {
+      "es": ["principio", "comienzo", "alinear a la izquierda", "primero", "tecla inicio", "contraer panel"],
+      "en": ["beginning", "first", "align left", "home key", "jump to start", "collapse panel"]
+    }
+  },
+  "arrow-right-to-line": {
+    "label": { "es": "Ir al final", "en": "Go to end", "pt": "Ir para o final", "fr": "Aller à la fin", "de": "Zum Ende", "it": "Vai alla fine", "ja": "末尾へ", "zh": "跳到末尾", "ko": "끝으로", "ar": "الانتقال إلى النهاية" },
+    "keywords": {
+      "es": ["fin", "tabulador", "tecla tab", "alinear a la derecha", "último", "tecla fin", "expandir panel"],
+      "en": ["finish", "tab key", "tabulate", "align right", "last", "end key", "expand panel"]
+    }
+  },
+  "arrow-turn-right": {
+    "label": { "es": "Girar a la derecha", "en": "Turn right", "pt": "Virar à direita", "fr": "Tourner à droite", "de": "Rechts abbiegen", "it": "Svolta a destra", "ja": "右折", "zh": "右转", "ko": "우회전", "ar": "انعطف يسارًا" },
+    "keywords": {
+      "es": ["reenviar", "redirigir", "desviar", "cambiar de dirección", "ruta", "indicaciones", "compartir"],
+      "en": ["forward", "redirect", "divert", "change direction", "route", "directions", "share"]
+    }
+  },
+  "arrow-turn-left": {
+    "label": { "es": "Girar a la izquierda", "en": "Turn left", "pt": "Virar à esquerda", "fr": "Tourner à gauche", "de": "Links abbiegen", "it": "Svolta a sinistra", "ja": "左折", "zh": "左转", "ko": "좌회전", "ar": "انعطف يمينًا" },
+    "keywords": {
+      "es": ["responder", "contestar", "devolver", "cambiar de dirección", "ruta", "indicaciones", "regresar"],
+      "en": ["reply", "respond", "send back", "change direction", "route", "directions", "return"]
+    }
+  },
+  "arrow-turn-down-left": {
+    "label": { "es": "Intro", "en": "Enter", "pt": "Enter", "fr": "Entrée", "de": "Eingabe", "it": "Invio", "ja": "改行", "zh": "回车", "ko": "엔터", "ar": "إدخال" },
+    "keywords": {
+      "es": ["enter", "retorno", "confirmar", "enviar", "salto de línea", "nueva línea", "teclado"],
+      "en": ["return", "newline", "line break", "confirm", "submit", "carriage return", "keyboard"]
+    }
+  },
+  "arrow-turn-down-right": {
+    "label": { "es": "Sangría", "en": "Indent", "pt": "Recuo", "fr": "Retrait", "de": "Einzug", "it": "Rientro", "ja": "インデント", "zh": "缩进", "ko": "들여쓰기", "ar": "مسافة بادئة" },
+    "keywords": {
+      "es": ["subelemento", "anidado", "jerarquía", "subtarea", "respuesta en hilo", "derivar", "nivel inferior"],
+      "en": ["sub-item", "nested", "hierarchy", "subtask", "thread reply", "child", "branch"]
+    }
+  },
+  "arrow-curve-right": {
+    "label": { "es": "Saltar adelante", "en": "Skip forward", "pt": "Pular para a frente", "fr": "Sauter en avant", "de": "Vorspringen", "it": "Salta avanti", "ja": "前方へスキップ", "zh": "向前跳", "ko": "앞으로 건너뛰기", "ar": "تخطٍّ للأمام" },
+    "keywords": {
+      "es": ["omitir", "pasar", "adelantar", "siguiente", "rehacer", "rodear", "esquivar"],
+      "en": ["jump ahead", "pass over", "next", "redo", "bypass", "hop", "fast forward"]
+    }
+  },
+  "arrow-curve-left": {
+    "label": { "es": "Saltar atrás", "en": "Skip back", "pt": "Pular para trás", "fr": "Sauter en arrière", "de": "Zurückspringen", "it": "Salta indietro", "ja": "後方へスキップ", "zh": "向后跳", "ko": "뒤로 건너뛰기", "ar": "تخطٍّ للخلف" },
+    "keywords": {
+      "es": ["regresar", "retroceder", "deshacer", "repetir", "rebobinar", "volver a ver"],
+      "en": ["jump back", "rewind", "undo", "replay", "go back", "bypass"]
+    }
+  },
+  "undo": {
+    "label": { "es": "Deshacer", "en": "Undo", "pt": "Desfazer", "fr": "Annuler", "de": "Rückgängig", "it": "Annulla", "ja": "取り消す", "zh": "撤销", "ko": "실행 취소", "ar": "تراجع" },
+    "keywords": {
+      "es": ["revertir", "corregir", "retroceder un paso", "cancelar cambio", "ctrl z", "error", "recuperar"],
+      "en": ["revert", "step back", "reverse", "cancel change", "ctrl z", "mistake", "restore"]
+    }
+  },
+  "redo": {
+    "label": { "es": "Rehacer", "en": "Redo", "pt": "Refazer", "fr": "Rétablir", "de": "Wiederholen", "it": "Ripeti", "ja": "やり直す", "zh": "重做", "ko": "다시 실행", "ar": "إعادة" },
+    "keywords": {
+      "es": ["repetir", "volver a aplicar", "restablecer", "avanzar un paso", "ctrl y", "recuperar cambio"],
+      "en": ["repeat", "reapply", "step forward", "restore change", "ctrl y", "again"]
+    }
+  },
+  "history": {
+    "label": { "es": "Historial", "en": "History", "pt": "Histórico", "fr": "Historique", "de": "Verlauf", "it": "Cronologia", "ja": "履歴", "zh": "历史记录", "ko": "기록", "ar": "السجل" },
+    "keywords": {
+      "es": ["reciente", "actividad", "registro", "versiones anteriores", "bitácora", "pasado", "restaurar"],
+      "en": ["recent", "activity", "log", "past versions", "timeline", "restore", "audit"]
+    }
+  },
+  "arrows-left-right": {
+    "label": { "es": "Ancho", "en": "Width", "pt": "Largura", "fr": "Largeur", "de": "Breite", "it": "Larghezza", "ja": "幅", "zh": "宽度", "ko": "너비", "ar": "العرض" },
+    "keywords": {
+      "es": ["horizontal", "redimensionar", "ambos lados", "izquierda y derecha", "estirar", "medida", "dimensión"],
+      "en": ["horizontal", "resize", "both ways", "left and right", "stretch", "measure", "dimension"]
+    }
+  },
+  "arrows-up-down": {
+    "label": { "es": "Alto", "en": "Height", "pt": "Altura", "fr": "Hauteur", "de": "Höhe", "it": "Altezza", "ja": "高さ", "zh": "高度", "ko": "높이", "ar": "الارتفاع" },
+    "keywords": {
+      "es": ["vertical", "redimensionar", "altura", "arriba y abajo", "estirar", "medida", "dimensión"],
+      "en": ["vertical", "resize", "both ways", "up and down", "stretch", "measure", "dimension"]
+    }
+  },
+  "move": {
+    "label": { "es": "Mover", "en": "Move", "pt": "Mover", "fr": "Déplacer", "de": "Verschieben", "it": "Sposta", "ja": "移動", "zh": "移动", "ko": "이동", "ar": "تحريك" },
+    "keywords": {
+      "es": ["desplazar", "arrastrar", "reubicar", "recolocar", "cuatro direcciones", "paneo", "posición"],
+      "en": ["drag", "reposition", "relocate", "pan", "four directions", "position", "arrange"]
+    }
+  },
+  "chevron-up": {
+    "label": { "es": "Contraer", "en": "Collapse", "pt": "Recolher", "fr": "Replier", "de": "Einklappen", "it": "Comprimi", "ja": "折りたたむ", "zh": "收起", "ko": "접기", "ar": "طي" },
+    "keywords": {
+      "es": ["subir", "arriba", "ocultar", "cerrar sección", "mostrar menos", "plegar", "acordeón"],
+      "en": ["up", "hide", "close section", "show less", "fold", "accordion", "scroll up"]
+    }
+  },
+  "chevron-down": {
+    "label": { "es": "Desplegar", "en": "Expand", "pt": "Expandir", "fr": "Développer", "de": "Ausklappen", "it": "Espandi", "ja": "展開", "zh": "展开", "ko": "펼치기", "ar": "توسيع" },
+    "keywords": {
+      "es": ["bajar", "abajo", "mostrar más", "abrir sección", "desplegable", "acordeón", "menú"],
+      "en": ["down", "show more", "open section", "dropdown", "accordion", "reveal", "menu"]
+    }
+  },
+  "chevrons-right": {
+    "label": { "es": "Avance rápido", "en": "Fast forward", "pt": "Avanço rápido", "fr": "Avance rapide", "de": "Schneller Vorlauf", "it": "Avanti veloce", "ja": "早送り", "zh": "快进", "ko": "빨리 감기", "ar": "تقديم سريع" },
+    "keywords": {
+      "es": ["saltar", "siguiente", "adelantar", "omitir", "expandir panel", "más", "migas de pan"],
+      "en": ["skip", "next", "jump ahead", "seek forward", "expand panel", "more", "breadcrumb"]
+    }
+  },
+  "chevrons-left": {
+    "label": { "es": "Retroceso rápido", "en": "Rewind", "pt": "Retrocesso rápido", "fr": "Retour rapide", "de": "Schneller Rücklauf", "it": "Indietro veloce", "ja": "巻き戻し", "zh": "快退", "ko": "되감기", "ar": "ترجيع سريع" },
+    "keywords": {
+      "es": ["rebobinar", "anterior", "saltar atrás", "contraer panel", "retroceder", "volver"],
+      "en": ["previous", "jump back", "seek back", "collapse panel", "step back", "go back"]
+    }
+  },
+  "chevrons-up": {
+    "label": { "es": "Llevar al principio", "en": "Move to top", "pt": "Mover para o topo", "fr": "Placer en tête", "de": "An den Anfang verschieben", "it": "Porta in cima", "ja": "最上部へ移動", "zh": "置顶", "ko": "맨 위로 이동", "ar": "نقل إلى أعلى القائمة" },
+    "keywords": {
+      "es": ["prioridad alta", "subir todo", "primero", "urgente", "destacar", "contraer"],
+      "en": ["high priority", "promote", "first", "urgent", "pin to top", "collapse"]
+    }
+  },
+  "chevrons-down": {
+    "label": { "es": "Llevar al final", "en": "Move to bottom", "pt": "Mover para o fim", "fr": "Placer en dernier", "de": "Ans Ende verschieben", "it": "Porta in fondo", "ja": "最下部へ移動", "zh": "置底", "ko": "맨 아래로 이동", "ar": "نقل إلى أسفل القائمة" },
+    "keywords": {
+      "es": ["prioridad baja", "bajar todo", "último", "posponer", "relegar", "desplegar"],
+      "en": ["low priority", "demote", "last", "postpone", "push down", "expand"]
+    }
+  },
+  "chevron-up-down": {
+    "label": { "es": "Selector", "en": "Selector", "pt": "Seletor", "fr": "Sélecteur", "de": "Auswahl", "it": "Selettore", "ja": "選択", "zh": "选择器", "ko": "선택기", "ar": "منتقي" },
+    "keywords": {
+      "es": ["desplegable", "lista de opciones", "elegir", "menú emergente", "combo", "cambiar"],
+      "en": ["dropdown", "options", "choose", "popup menu", "combo box", "picker", "switch"]
+    }
+  },
+  "chevron-left-right": {
+    "label": { "es": "Deslizar", "en": "Swipe", "pt": "Deslizar", "fr": "Balayer", "de": "Wischen", "it": "Scorri lateralmente", "ja": "スワイプ", "zh": "滑动", "ko": "넘기기", "ar": "تمرير أفقي" },
+    "keywords": {
+      "es": ["carrusel", "anterior y siguiente", "horizontal", "navegar", "galería", "código"],
+      "en": ["carousel", "previous and next", "horizontal", "navigate", "gallery", "code"]
+    }
+  },
+  "chevron-right-circle": {
+    "label": { "es": "Continuar", "en": "Continue", "pt": "Continuar", "fr": "Continuer", "de": "Fortfahren", "it": "Continua", "ja": "続ける", "zh": "继续", "ko": "계속", "ar": "متابعة" },
+    "keywords": {
+      "es": ["siguiente", "avanzar", "adelante", "ver detalle", "ir", "botón"],
+      "en": ["next", "forward", "proceed", "view details", "go", "button"]
+    }
+  },
+  "chevron-left-circle": {
+    "label": { "es": "Volver", "en": "Go back", "pt": "Regressar", "fr": "Revenir", "de": "Zurückkehren", "it": "Torna", "ja": "前に戻る", "zh": "回退", "ko": "돌아가기", "ar": "عودة" },
+    "keywords": {
+      "es": ["anterior", "atrás", "regresar", "retroceder", "botón", "cerrar detalle"],
+      "en": ["previous", "back", "return", "backward", "button", "close details"]
+    }
+  },
+  "chevron-up-circle": {
+    "label": { "es": "Mostrar menos", "en": "Show less", "pt": "Mostrar menos", "fr": "Afficher moins", "de": "Weniger anzeigen", "it": "Mostra meno", "ja": "表示を減らす", "zh": "显示更少", "ko": "간단히 보기", "ar": "عرض أقل" },
+    "keywords": {
+      "es": ["contraer", "subir", "ocultar", "plegar", "botón", "volver arriba"],
+      "en": ["collapse", "up", "hide", "fold", "button", "scroll up"]
+    }
+  },
+  "chevron-down-circle": {
+    "label": { "es": "Mostrar más", "en": "Show more", "pt": "Mostrar mais", "fr": "Afficher plus", "de": "Mehr anzeigen", "it": "Mostra altro", "ja": "さらに表示", "zh": "显示更多", "ko": "더 보기", "ar": "عرض المزيد" },
+    "keywords": {
+      "es": ["desplegar", "bajar", "expandir", "abrir sección", "botón", "detalles"],
+      "en": ["expand", "down", "reveal", "open section", "button", "details"]
+    }
+  },
+  "caret-right": {
+    "label": { "es": "Siguiente", "en": "Next", "pt": "Próximo", "fr": "Suivant", "de": "Nächstes", "it": "Successivo", "ja": "次へ", "zh": "下一个", "ko": "다음", "ar": "التالي" },
+    "keywords": {
+      "es": ["triángulo de despliegue", "expandir", "abrir carpeta", "árbol", "reproducir", "avanzar"],
+      "en": ["disclosure triangle", "expand", "open folder", "tree view", "play", "forward"]
+    }
+  },
+  "caret-left": {
+    "label": { "es": "Anterior", "en": "Previous", "pt": "Anterior", "fr": "Précédent", "de": "Vorheriges", "it": "Precedente", "ja": "前へ", "zh": "上一个", "ko": "이전", "ar": "السابق" },
+    "keywords": {
+      "es": ["atrás", "retroceder", "volver", "mes anterior", "contraer panel", "reproducir al revés"],
+      "en": ["back", "step back", "go back", "previous month", "collapse panel", "reverse"]
+    }
+  },
+  "caret-up": {
+    "label": { "es": "Aumentar", "en": "Increase", "pt": "Aumentar", "fr": "Augmenter", "de": "Erhöhen", "it": "Aumenta", "ja": "増やす", "zh": "增加", "ko": "늘리기", "ar": "زيادة" },
+    "keywords": {
+      "es": ["contraer", "subir", "incrementar", "más", "orden ascendente", "votar a favor"],
+      "en": ["collapse", "up", "increment", "more", "ascending", "upvote"]
+    }
+  },
+  "caret-down": {
+    "label": { "es": "Menú desplegable", "en": "Dropdown", "pt": "Menu suspenso", "fr": "Menu déroulant", "de": "Dropdown-Menü", "it": "Menu a discesa", "ja": "ドロップダウン", "zh": "下拉菜单", "ko": "드롭다운", "ar": "قائمة منسدلة" },
+    "keywords": {
+      "es": ["desplegar", "opciones", "disminuir", "bajar", "seleccionar", "orden descendente"],
+      "en": ["expand", "options", "decrease", "down", "select", "descending"]
+    }
+  },
+  "caret-up-down": {
+    "label": { "es": "Ordenar columna", "en": "Sort column", "pt": "Ordenar coluna", "fr": "Trier la colonne", "de": "Spalte sortieren", "it": "Ordina colonna", "ja": "列を並べ替え", "zh": "列排序", "ko": "열 정렬", "ar": "فرز العمود" },
+    "keywords": {
+      "es": ["ordenar", "selector", "ascendente o descendente", "tabla", "cambiar orden", "ajustar valor"],
+      "en": ["sort", "selector", "ascending or descending", "table", "toggle order", "stepper"]
+    }
+  },
+  "page-first": {
+    "label": { "es": "Primera página", "en": "First page", "pt": "Primeira página", "fr": "Première page", "de": "Erste Seite", "it": "Prima pagina", "ja": "最初のページ", "zh": "第一页", "ko": "첫 페이지", "ar": "الصفحة الأولى" },
+    "keywords": {
+      "es": ["inicio", "paginación", "al principio", "saltar al inicio", "primer resultado", "comienzo"],
+      "en": ["start", "pagination", "beginning", "jump to start", "first result", "skip back"]
+    }
+  },
+  "page-last": {
+    "label": { "es": "Última página", "en": "Last page", "pt": "Última página", "fr": "Dernière page", "de": "Letzte Seite", "it": "Ultima pagina", "ja": "最後のページ", "zh": "最后一页", "ko": "마지막 페이지", "ar": "الصفحة الأخيرة" },
+    "keywords": {
+      "es": ["final", "paginación", "al final", "saltar al final", "último resultado", "fin"],
+      "en": ["end", "pagination", "finish", "jump to end", "last result", "skip ahead"]
+    }
+  },
+  "sort-ascending": {
+    "label": { "es": "Orden ascendente", "en": "Sort ascending", "pt": "Ordem crescente", "fr": "Tri croissant", "de": "Aufsteigend sortieren", "it": "Ordine crescente", "ja": "昇順", "zh": "升序", "ko": "오름차순", "ar": "ترتيب تصاعدي" },
+    "keywords": {
+      "es": ["menor a mayor", "de la a a la z", "ordenar", "clasificar", "lista", "tabla", "más antiguo primero"],
+      "en": ["smallest to largest", "a to z", "order", "arrange", "list", "table", "oldest first"]
+    }
+  },
+  "sort-descending": {
+    "label": { "es": "Orden descendente", "en": "Sort descending", "pt": "Ordem decrescente", "fr": "Tri décroissant", "de": "Absteigend sortieren", "it": "Ordine decrescente", "ja": "降順", "zh": "降序", "ko": "내림차순", "ar": "ترتيب تنازلي" },
+    "keywords": {
+      "es": ["mayor a menor", "de la z a la a", "ordenar", "clasificar", "lista", "tabla", "más reciente primero"],
+      "en": ["largest to smallest", "z to a", "order", "arrange", "list", "table", "newest first"]
+    }
+  },
+  "sort": {
+    "label": { "es": "Ordenar", "en": "Sort", "pt": "Ordenar", "fr": "Trier", "de": "Sortieren", "it": "Ordina", "ja": "並べ替え", "zh": "排序", "ko": "정렬", "ar": "فرز" },
+    "keywords": {
+      "es": ["orden", "clasificar", "reordenar", "intercambiar", "ascendente y descendente", "subir y bajar", "tabla"],
+      "en": ["order", "arrange", "reorder", "swap", "ascending and descending", "up and down", "table"]
+    }
+  },
+  "swap-horizontal": {
+    "label": { "es": "Intercambiar", "en": "Swap", "pt": "Trocar", "fr": "Échanger", "de": "Tauschen", "it": "Scambia", "ja": "入れ替え", "zh": "交换", "ko": "바꾸기", "ar": "تبديل" },
+    "keywords": {
+      "es": ["cambiar", "transferir", "convertir", "alternar", "ida y vuelta", "transacción", "invertir"],
+      "en": ["exchange", "transfer", "convert", "switch", "back and forth", "transaction", "reverse"]
+    }
+  },
+  "maximize": {
+    "label": { "es": "Maximizar", "en": "Maximize", "pt": "Maximizar", "fr": "Agrandir", "de": "Maximieren", "it": "Massimizza", "ja": "最大化", "zh": "最大化", "ko": "최대화", "ar": "تكبير النافذة" },
+    "keywords": {
+      "es": ["agrandar", "ampliar", "expandir", "ventana completa", "abrir en grande", "escalar"],
+      "en": ["enlarge", "expand", "grow", "full window", "scale up", "open large"]
+    }
+  },
+  "minimize": {
+    "label": { "es": "Minimizar", "en": "Minimize", "pt": "Minimizar", "fr": "Réduire", "de": "Minimieren", "it": "Minimizza", "ja": "最小化", "zh": "最小化", "ko": "최소화", "ar": "تصغير النافذة" },
+    "keywords": {
+      "es": ["reducir", "achicar", "contraer", "encoger", "ventana pequeña", "escalar"],
+      "en": ["shrink", "reduce", "collapse", "contract", "small window", "scale down"]
+    }
+  },
+  "expand-vertical": {
+    "label": { "es": "Desplegar todo", "en": "Expand all", "pt": "Expandir tudo", "fr": "Tout développer", "de": "Alle ausklappen", "it": "Espandi tutto", "ja": "すべて展開", "zh": "全部展开", "ko": "모두 펼치기", "ar": "توسيع الكل" },
+    "keywords": {
+      "es": ["expandir", "mostrar todo", "abrir", "vertical", "aumentar altura", "separar"],
+      "en": ["unfold", "show all", "open", "vertical", "increase height", "spread"]
+    }
+  },
+  "collapse-vertical": {
+    "label": { "es": "Contraer todo", "en": "Collapse all", "pt": "Recolher tudo", "fr": "Tout réduire", "de": "Alle einklappen", "it": "Comprimi tutto", "ja": "すべて折りたたむ", "zh": "全部收起", "ko": "모두 접기", "ar": "طي الكل" },
+    "keywords": {
+      "es": ["plegar", "ocultar", "cerrar", "compactar", "vertical", "reducir altura", "unir"],
+      "en": ["fold", "hide", "close", "compact", "vertical", "reduce height", "merge"]
+    }
+  },
+  "expand-horizontal": {
+    "label": { "es": "Ensanchar", "en": "Widen", "pt": "Alargar", "fr": "Élargir", "de": "Verbreitern", "it": "Allarga", "ja": "幅を広げる", "zh": "加宽", "ko": "너비 넓히기", "ar": "توسيع العرض" },
+    "keywords": {
+      "es": ["expandir", "ancho", "estirar", "separar", "columna", "redimensionar", "horizontal"],
+      "en": ["expand", "width", "stretch", "spread", "column", "resize", "horizontal"]
+    }
+  },
+  "collapse-horizontal": {
+    "label": { "es": "Estrechar", "en": "Narrow", "pt": "Estreitar", "fr": "Rétrécir", "de": "Verschmälern", "it": "Restringi", "ja": "幅を狭める", "zh": "收窄", "ko": "너비 줄이기", "ar": "تضييق العرض" },
+    "keywords": {
+      "es": ["contraer", "angosto", "juntar", "compactar", "columna", "redimensionar", "horizontal"],
+      "en": ["collapse", "thin", "squeeze", "compact", "column", "resize", "horizontal"]
+    }
+  },
+  "fullscreen": {
+    "label": { "es": "Pantalla completa", "en": "Full screen", "pt": "Tela cheia", "fr": "Plein écran", "de": "Vollbild", "it": "Schermo intero", "ja": "全画面表示", "zh": "全屏", "ko": "전체 화면", "ar": "ملء الشاشة" },
+    "keywords": {
+      "es": ["expandir", "ampliar", "ver en grande", "modo inmersivo", "presentación", "video", "maximizar"],
+      "en": ["expand", "enlarge", "view large", "immersive", "presentation", "video", "maximize"]
+    }
+  },
+  "fullscreen-exit": {
+    "label": { "es": "Salir de pantalla completa", "en": "Exit full screen", "pt": "Sair da tela cheia", "fr": "Quitter le plein écran", "de": "Vollbild beenden", "it": "Esci da schermo intero", "ja": "全画面表示を終了", "zh": "退出全屏", "ko": "전체 화면 종료", "ar": "الخروج من ملء الشاشة" },
+    "keywords": {
+      "es": ["reducir", "contraer", "ventana", "minimizar", "volver", "encoger"],
+      "en": ["shrink", "collapse", "windowed", "minimize", "restore", "reduce"]
+    }
+  },
+  "fit-screen": {
+    "label": { "es": "Ajustar a la pantalla", "en": "Fit to screen", "pt": "Ajustar à tela", "fr": "Ajuster à l'écran", "de": "An Bildschirm anpassen", "it": "Adatta allo schermo", "ja": "画面に合わせる", "zh": "适应屏幕", "ko": "화면에 맞추기", "ar": "ملاءمة الشاشة" },
+    "keywords": {
+      "es": ["encajar", "zoom", "encuadrar", "centrar", "vista completa", "escalar", "enfocar"],
+      "en": ["zoom to fit", "frame", "center", "whole view", "scale", "focus", "resize"]
+    }
+  },
+  "log-in": {
+    "label": { "es": "Iniciar sesión", "en": "Sign in", "pt": "Entrar", "fr": "Se connecter", "de": "Anmelden", "it": "Accedi", "ja": "ログイン", "zh": "登录", "ko": "로그인", "ar": "تسجيل الدخول" },
+    "keywords": {
+      "es": ["entrar", "acceder", "ingresar", "autenticarse", "cuenta", "identificarse", "login"],
+      "en": ["member access", "enter", "access", "authenticate", "account", "sign on", "login"]
+    }
+  },
+  "log-out": {
+    "label": { "es": "Cerrar sesión", "en": "Sign out", "pt": "Sair", "fr": "Se déconnecter", "de": "Abmelden", "it": "Esci", "ja": "ログアウト", "zh": "退出登录", "ko": "로그아웃", "ar": "تسجيل الخروج" },
+    "keywords": {
+      "es": ["salir", "desconectarse", "terminar sesión", "abandonar", "cuenta", "logout"],
+      "en": ["end session", "exit", "leave", "disconnect", "account", "logout"]
+    }
+  },
+  "external-link": {
+    "label": { "es": "Enlace externo", "en": "External link", "pt": "Link externo", "fr": "Lien externe", "de": "Externer Link", "it": "Link esterno", "ja": "外部リンク", "zh": "外部链接", "ko": "외부 링크", "ar": "رابط خارجي" },
+    "keywords": {
+      "es": ["abrir afuera", "nueva pestaña", "nueva ventana", "otro sitio", "salir del sitio", "vínculo", "url"],
+      "en": ["open externally", "new tab", "new window", "other site", "leave site", "hyperlink", "url"]
+    }
+  },
+  "menu": {
+    "label": { "es": "Menú", "en": "Menu", "pt": "Menu", "fr": "Menu", "de": "Menü", "it": "Menu", "ja": "メニュー", "zh": "菜单", "ko": "메뉴", "ar": "القائمة" },
+    "keywords": {
+      "es": ["hamburguesa", "navegación", "opciones", "abrir menú", "secciones", "tres líneas", "cajón"],
+      "en": ["hamburger", "navigation", "options", "open menu", "sections", "three lines", "drawer"]
+    }
+  },
+  "menu-compact": {
+    "label": { "es": "Menú compacto", "en": "Compact menu", "pt": "Menu compacto", "fr": "Menu compact", "de": "Kompaktmenü", "it": "Menu compatto", "ja": "コンパクトメニュー", "zh": "紧凑菜单", "ko": "간소화 메뉴", "ar": "قائمة مضغوطة" },
+    "keywords": {
+      "es": ["hamburguesa", "navegación", "asa", "reordenar", "arrastrar", "dos líneas", "opciones"],
+      "en": ["hamburger", "navigation", "handle", "reorder", "drag", "two lines", "options"]
+    }
+  },
+  "more-vertical": {
+    "label": { "es": "Más opciones", "en": "More options", "pt": "Mais opções", "fr": "Plus d'options", "de": "Weitere Optionen", "it": "Altre opzioni", "ja": "その他のオプション", "zh": "更多选项", "ko": "옵션 더보기", "ar": "خيارات إضافية" },
+    "keywords": {
+      "es": ["menú", "acciones", "kebab", "tres puntos", "contextual", "configurar", "desbordamiento"],
+      "en": ["menu", "actions", "kebab", "three dots", "context menu", "settings", "overflow"]
+    }
+  },
+  "more-circle": {
+    "label": { "es": "Más", "en": "More", "pt": "Mais", "fr": "Plus", "de": "Mehr", "it": "Altro", "ja": "その他", "zh": "更多", "ko": "더보기", "ar": "المزيد" },
+    "keywords": {
+      "es": ["opciones", "acciones", "menú", "tres puntos", "puntos suspensivos", "contextual"],
+      "en": ["options", "actions", "menu", "three dots", "ellipsis", "overflow"]
+    }
+  },
+  "grip-vertical": {
+    "label": { "es": "Arrastrar para reordenar", "en": "Drag to reorder", "pt": "Arrastar para reordenar", "fr": "Glisser pour réorganiser", "de": "Zum Sortieren ziehen", "it": "Trascina per riordinare", "ja": "ドラッグして並べ替え", "zh": "拖动以排序", "ko": "끌어서 순서 변경", "ar": "اسحب لإعادة الترتيب" },
+    "keywords": {
+      "es": ["asa", "agarrar", "mover", "ordenar lista", "fila", "puntos", "manija"],
+      "en": ["handle", "grab", "move", "sort list", "row", "dots", "grabber"]
+    }
+  },
+  "grip-horizontal": {
+    "label": { "es": "Asa para arrastrar", "en": "Drag handle", "pt": "Alça de arrastar", "fr": "Poignée de déplacement", "de": "Ziehgriff", "it": "Maniglia di trascinamento", "ja": "ドラッグハンドル", "zh": "拖动手柄", "ko": "드래그 핸들", "ar": "مقبض السحب" },
+    "keywords": {
+      "es": ["agarrar", "mover", "reordenar", "panel", "tarjeta", "puntos", "manija"],
+      "en": ["grab", "move", "reorder", "panel", "card", "dots", "grabber"]
+    }
+  },
+  "sidebar-left": {
+    "label": { "es": "Barra lateral", "en": "Sidebar", "pt": "Barra lateral", "fr": "Barre latérale", "de": "Seitenleiste", "it": "Barra laterale", "ja": "サイドバー", "zh": "侧边栏", "ko": "사이드바", "ar": "الشريط الجانبي" },
+    "keywords": {
+      "es": ["panel izquierdo", "navegación", "menú lateral", "carpetas", "estructura", "columna"],
+      "en": ["left panel", "navigation", "side menu", "folders", "structure", "column"]
+    }
+  },
+  "sidebar-right": {
+    "label": { "es": "Panel de detalles", "en": "Details panel", "pt": "Painel de detalhes", "fr": "Panneau de détails", "de": "Detailbereich", "it": "Pannello dettagli", "ja": "詳細パネル", "zh": "详情面板", "ko": "세부 정보 패널", "ar": "لوحة التفاصيل" },
+    "keywords": {
+      "es": ["panel derecho", "inspector", "propiedades", "barra lateral", "información", "ajustes"],
+      "en": ["right panel", "inspector", "properties", "sidebar", "info", "settings"]
+    }
+  },
+  "panel-bottom": {
+    "label": { "es": "Panel inferior", "en": "Bottom panel", "pt": "Painel inferior", "fr": "Panneau inférieur", "de": "Unterer Bereich", "it": "Pannello inferiore", "ja": "下部パネル", "zh": "底部面板", "ko": "하단 패널", "ar": "اللوحة السفلية" },
+    "keywords": {
+      "es": ["consola", "terminal", "bandeja", "pie", "hoja inferior", "registros"],
+      "en": ["console", "terminal", "tray", "footer", "bottom sheet", "logs"]
+    }
+  },
+  "panel-top": {
+    "label": { "es": "Panel superior", "en": "Top panel", "pt": "Painel superior", "fr": "Panneau supérieur", "de": "Oberer Bereich", "it": "Pannello superiore", "ja": "上部パネル", "zh": "顶部面板", "ko": "상단 패널", "ar": "اللوحة العلوية" },
+    "keywords": {
+      "es": ["encabezado", "cabecera", "barra superior", "barra de herramientas", "banner", "navegación"],
+      "en": ["header", "top bar", "toolbar", "banner", "navbar", "masthead"]
+    }
+  },
+  "sidebar-collapse": {
+    "label": { "es": "Ocultar barra lateral", "en": "Hide sidebar", "pt": "Ocultar barra lateral", "fr": "Masquer la barre latérale", "de": "Seitenleiste ausblenden", "it": "Nascondi barra laterale", "ja": "サイドバーを隠す", "zh": "隐藏侧边栏", "ko": "사이드바 숨기기", "ar": "إخفاء الشريط الجانبي" },
+    "keywords": {
+      "es": ["cerrar panel", "contraer", "plegar", "más espacio", "modo enfoque", "navegación"],
+      "en": ["close panel", "collapse", "fold", "more space", "focus mode", "navigation"]
+    }
+  },
+  "sidebar-expand": {
+    "label": { "es": "Mostrar barra lateral", "en": "Show sidebar", "pt": "Mostrar barra lateral", "fr": "Afficher la barre latérale", "de": "Seitenleiste einblenden", "it": "Mostra barra laterale", "ja": "サイドバーを表示", "zh": "显示侧边栏", "ko": "사이드바 표시", "ar": "إظهار الشريط الجانبي" },
+    "keywords": {
+      "es": ["abrir panel", "expandir", "desplegar", "navegación", "menú lateral", "carpetas"],
+      "en": ["open panel", "expand", "unfold", "navigation", "side menu", "folders"]
+    }
+  },
+  "split-view": {
+    "label": { "es": "Vista dividida", "en": "Split view", "pt": "Tela dividida", "fr": "Écran partagé", "de": "Geteilte Ansicht", "it": "Vista divisa", "ja": "分割表示", "zh": "分屏视图", "ko": "분할 보기", "ar": "عرض مقسّم" },
+    "keywords": {
+      "es": ["dos paneles", "comparar", "lado a lado", "dividir pantalla", "columnas", "multitarea"],
+      "en": ["two panes", "compare", "side by side", "split screen", "columns", "multitasking"]
+    }
+  },
+  "tabs": {
+    "label": { "es": "Pestañas", "en": "Tabs", "pt": "Abas", "fr": "Onglets", "de": "Tabs", "it": "Schede", "ja": "タブ", "zh": "标签页", "ko": "탭", "ar": "علامات التبويب" },
+    "keywords": {
+      "es": ["navegador", "secciones", "ventana", "carpeta", "páginas abiertas", "cambiar de vista"],
+      "en": ["browser", "sections", "window", "folder", "open pages", "switch view"]
+    }
+  },
+  "view-grid": {
+    "label": { "es": "Vista de cuadrícula", "en": "Grid view", "pt": "Visualização em grade", "fr": "Vue en grille", "de": "Rasteransicht", "it": "Vista a griglia", "ja": "グリッド表示", "zh": "网格视图", "ko": "그리드 보기", "ar": "عرض شبكي" },
+    "keywords": {
+      "es": ["mosaico", "galería", "aplicaciones", "miniaturas", "catálogo", "productos"],
+      "en": ["tiles", "gallery", "apps", "thumbnails", "catalog", "products"]
+    }
+  },
+  "view-list": {
+    "label": { "es": "Vista de lista", "en": "List view", "pt": "Visualização em lista", "fr": "Vue en liste", "de": "Listenansicht", "it": "Vista a elenco", "ja": "リスト表示", "zh": "列表视图", "ko": "목록 보기", "ar": "عرض قائمة" },
+    "keywords": {
+      "es": ["filas", "renglones", "elementos", "viñetas", "tareas", "índice"],
+      "en": ["rows", "items", "bullets", "tasks", "index", "entries"]
+    }
+  },
+  "view-columns": {
+    "label": { "es": "Vista de columnas", "en": "Column view", "pt": "Visualização em colunas", "fr": "Vue en colonnes", "de": "Spaltenansicht", "it": "Vista a colonne", "ja": "カラム表示", "zh": "分栏视图", "ko": "열 보기", "ar": "عرض أعمدة" },
+    "keywords": {
+      "es": ["tablero", "kanban", "etapas", "flujo de trabajo", "tareas", "proyectos"],
+      "en": ["board", "kanban", "stages", "pipeline", "tasks", "projects"]
+    }
+  },
+  "view-cards": {
+    "label": { "es": "Vista de tarjetas", "en": "Card view", "pt": "Visualização em cartões", "fr": "Vue en cartes", "de": "Kartenansicht", "it": "Vista a card", "ja": "カード表示", "zh": "卡片视图", "ko": "카드 보기", "ar": "عرض بطاقات" },
+    "keywords": {
+      "es": ["bloques", "publicaciones", "muro", "feed", "apilado", "contenido"],
+      "en": ["blocks", "posts", "feed", "stacked", "content", "timeline"]
+    }
+  },
+  "view-carousel": {
+    "label": { "es": "Carrusel", "en": "Carousel", "pt": "Carrossel", "fr": "Carrousel", "de": "Karussell", "it": "Carosello", "ja": "カルーセル", "zh": "轮播", "ko": "캐러셀", "ar": "عرض دوّار" },
+    "keywords": {
+      "es": ["galería", "diapositivas", "deslizar", "destacados", "banner", "presentación"],
+      "en": ["gallery", "slides", "swipe", "featured", "banner", "slideshow"]
+    }
+  },
+  "filter": {
+    "label": { "es": "Filtrar", "en": "Filter", "pt": "Filtrar", "fr": "Filtrer", "de": "Filtern", "it": "Filtra", "ja": "フィルター", "zh": "筛选", "ko": "필터", "ar": "تصفية" },
+    "keywords": {
+      "es": ["embudo", "refinar", "acotar", "criterios", "segmentar", "búsqueda avanzada", "conversión"],
+      "en": ["funnel", "refine", "narrow down", "criteria", "segment", "advanced search", "conversion"]
+    }
+  },
+  "filter-lines": {
+    "label": { "es": "Opciones de filtro", "en": "Filter options", "pt": "Opções de filtro", "fr": "Options de filtre", "de": "Filteroptionen", "it": "Opzioni di filtro", "ja": "絞り込み", "zh": "筛选选项", "ko": "필터 옵션", "ar": "خيارات التصفية" },
+    "keywords": {
+      "es": ["filtrar", "refinar", "acotar", "ordenar", "criterios", "ajustes"],
+      "en": ["filter", "refine", "narrow down", "sort", "criteria", "adjust"]
+    }
+  },
+  "home": {
+    "label": { "es": "Inicio", "en": "Home", "pt": "Início", "fr": "Accueil", "de": "Startseite", "it": "Home", "ja": "ホーム", "zh": "首页", "ko": "홈", "ar": "الرئيسية" },
+    "keywords": {
+      "es": ["casa", "principal", "portada", "página principal", "escritorio", "volver al inicio", "hogar"],
+      "en": ["house", "main", "start page", "landing", "dashboard", "homepage", "go home"]
+    }
+  },
+  "scroll": {
+    "label": { "es": "Desplazar", "en": "Scroll", "pt": "Rolar", "fr": "Faire défiler", "de": "Scrollen", "it": "Scorri", "ja": "スクロール", "zh": "滚动", "ko": "스크롤", "ar": "تمرير" },
+    "keywords": {
+      "es": ["ratón", "rueda", "bajar", "desliza para ver más", "mouse", "seguir leyendo"],
+      "en": ["mouse", "wheel", "scroll down", "swipe to see more", "keep reading", "explore"]
+    }
+  },
+  "cursor": {
+    "label": { "es": "Puntero", "en": "Pointer", "pt": "Ponteiro", "fr": "Pointeur", "de": "Zeiger", "it": "Puntatore", "ja": "ポインタ", "zh": "指针", "ko": "포인터", "ar": "المؤشر" },
+    "keywords": {
+      "es": ["seleccionar", "ratón", "mouse", "flecha", "apuntar", "herramienta de selección", "señalar"],
+      "en": ["select", "mouse", "arrow", "point", "selection tool", "click", "aim"]
+    }
+  },
+  "cursor-click": {
+    "label": { "es": "Hacer clic", "en": "Click", "pt": "Clicar", "fr": "Cliquer", "de": "Klicken", "it": "Fai clic", "ja": "クリック", "zh": "点击", "ko": "클릭", "ar": "نقر" },
+    "keywords": {
+      "es": ["pulsar", "presionar", "seleccionar", "interacción", "botón", "llamada a la acción", "puntero"],
+      "en": ["press", "tap", "select", "interaction", "button", "call to action", "pointer"]
+    }
+  },
+  "drag-drop": {
+    "label": { "es": "Arrastrar y soltar", "en": "Drag and drop", "pt": "Arrastar e soltar", "fr": "Glisser-déposer", "de": "Ziehen und ablegen", "it": "Trascina e rilascia", "ja": "ドラッグ＆ドロップ", "zh": "拖放", "ko": "끌어서 놓기", "ar": "سحب وإفلات" },
+    "keywords": {
+      "es": ["mover", "soltar archivo", "subir", "reubicar", "seleccionar", "organizar"],
+      "en": ["move", "drop file", "upload", "relocate", "select", "organize"]
+    }
+  },
+  "crosshair": {
+    "label": { "es": "Mira", "en": "Crosshair", "pt": "Mira", "fr": "Réticule", "de": "Fadenkreuz", "it": "Mirino", "ja": "照準", "zh": "十字准星", "ko": "조준선", "ar": "علامة التصويب" },
+    "keywords": {
+      "es": ["apuntar", "centrar", "precisión", "ubicación actual", "objetivo", "enfocar", "seleccionar punto"],
+      "en": ["aim", "center", "precision", "current location", "target", "focus", "pick point"]
+    }
+  },
+  "zoom-in": {
+    "label": { "es": "Acercar", "en": "Zoom in", "pt": "Ampliar", "fr": "Zoom avant", "de": "Vergrößern", "it": "Ingrandisci", "ja": "拡大", "zh": "放大", "ko": "확대", "ar": "تكبير" },
+    "keywords": {
+      "es": ["ampliar", "aumentar", "lupa", "agrandar", "detalle", "ver de cerca"],
+      "en": ["magnify", "enlarge", "magnifier", "closer", "detail", "increase"]
+    }
+  },
+  "zoom-out": {
+    "label": { "es": "Alejar", "en": "Zoom out", "pt": "Reduzir", "fr": "Zoom arrière", "de": "Verkleinern", "it": "Riduci", "ja": "縮小", "zh": "缩小", "ko": "축소", "ar": "تصغير" },
+    "keywords": {
+      "es": ["reducir", "disminuir", "lupa", "achicar", "vista general", "ver de lejos"],
+      "en": ["shrink", "reduce", "magnifier", "farther", "overview", "decrease"]
+    }
+  },
+  "browser": {
+    "label": { "es": "Navegador", "en": "Browser", "pt": "Navegador", "fr": "Navigateur", "de": "Browser", "it": "Browser", "ja": "ブラウザ", "zh": "浏览器", "ko": "브라우저", "ar": "المتصفح" },
+    "keywords": {
+      "es": ["ventana", "sitio web", "página web", "internet", "aplicación web", "web"],
+      "en": ["window", "website", "web page", "internet", "web app", "site"]
+    }
+  },
+  "layout": {
+    "label": { "es": "Diseño de página", "en": "Layout", "pt": "Layout", "fr": "Mise en page", "de": "Layout", "it": "Layout", "ja": "レイアウト", "zh": "布局", "ko": "레이아웃", "ar": "التخطيط" },
+    "keywords": {
+      "es": ["plantilla", "maqueta", "estructura", "cuadrícula", "wireframe", "composición", "secciones"],
+      "en": ["template", "wireframe", "structure", "grid", "composition", "page design", "mockup"]
+    }
+  },
+  "hand-pointer": {
+    "label": { "es": "Tocar", "en": "Tap", "pt": "Tocar", "fr": "Toucher", "de": "Tippen", "it": "Tocca", "ja": "タップ", "zh": "轻触", "ko": "터치", "ar": "لمس" },
+    "keywords": {
+      "es": ["mano", "señalar", "enlace", "pulsar", "dedo", "interactivo", "gesto"],
+      "en": ["hand", "point", "link", "press", "finger", "interactive", "gesture"]
+    }
+  },
+  "search-x": {
+    "label": { "es": "Sin resultados", "en": "No results", "pt": "Nenhum resultado", "fr": "Aucun résultat", "de": "Keine Ergebnisse", "it": "Nessun risultato", "ja": "結果なし", "zh": "无结果", "ko": "결과 없음", "ar": "لا توجد نتائج" },
+    "keywords": {
+      "es": ["borrar búsqueda", "búsqueda vacía", "no encontrado", "limpiar", "cancelar búsqueda", "lupa", "cero coincidencias"],
+      "en": ["clear search", "empty search", "not found", "reset", "cancel search", "magnifier", "no matches"]
+    }
+  },
+  "filter-x": {
+    "label": { "es": "Quitar filtros", "en": "Clear filters", "pt": "Limpar filtros", "fr": "Effacer les filtres", "de": "Filter entfernen", "it": "Rimuovi filtri", "ja": "フィルターを解除", "zh": "清除筛选", "ko": "필터 지우기", "ar": "مسح عوامل التصفية" },
+    "keywords": {
+      "es": ["limpiar filtros", "restablecer", "sin filtros", "borrar", "embudo", "mostrar todo", "reiniciar"],
+      "en": ["remove filter", "reset", "no filters", "delete", "funnel", "show all", "unfilter"]
+    }
+  }
+}

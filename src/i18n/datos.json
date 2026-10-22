@@ -1,0 +1,751 @@
+{
+  "chart-bar": {
+    "label": { "es": "Gráfica de barras", "en": "Bar chart", "pt": "Gráfico de barras", "fr": "Graphique à barres", "de": "Balkendiagramm", "it": "Grafico a barre", "ja": "棒グラフ", "zh": "柱状图", "ko": "막대 차트", "ar": "مخطط شريطي" },
+    "keywords": {
+      "es": ["estadísticas", "reporte", "métricas", "comparar valores", "ventas por mes", "columnas", "informe"],
+      "en": ["statistics", "report", "metrics", "compare values", "monthly sales", "column chart", "analytics"]
+    }
+  },
+  "chart-bar-horizontal": {
+    "label": { "es": "Gráfica de barras horizontales", "en": "Horizontal bar chart", "pt": "Gráfico de barras horizontais", "fr": "Graphique à barres horizontales", "de": "Horizontales Balkendiagramm", "it": "Grafico a barre orizzontali", "ja": "横棒グラフ", "zh": "条形图", "ko": "가로 막대 차트", "ar": "مخطط شريطي أفقي" },
+    "keywords": {
+      "es": ["ranking", "clasificación", "los más vendidos", "comparar categorías", "top 10", "de mayor a menor", "resultados de encuesta"],
+      "en": ["ranking", "leaderboard", "top sellers", "compare categories", "top 10", "sorted values", "survey results"]
+    }
+  },
+  "chart-bar-stacked": {
+    "label": { "es": "Gráfica de barras apiladas", "en": "Stacked bar chart", "pt": "Gráfico de barras empilhadas", "fr": "Graphique à barres empilées", "de": "Gestapeltes Balkendiagramm", "it": "Grafico a barre impilate", "ja": "積み上げ棒グラフ", "zh": "堆积柱状图", "ko": "누적 막대 차트", "ar": "مخطط شريطي مكدس" },
+    "keywords": {
+      "es": ["composición", "desglose", "segmentos", "participación por categoría", "partes de un total", "ventas por canal", "acumulado"],
+      "en": ["composition", "breakdown", "segments", "share by category", "part to whole", "sales by channel", "cumulative"]
+    }
+  },
+  "chart-histogram": {
+    "label": { "es": "Histograma", "en": "Histogram", "pt": "Histograma", "fr": "Histogramme", "de": "Histogramm", "it": "Istogramma", "ja": "ヒストグラム", "zh": "直方图", "ko": "히스토그램", "ar": "مدرج تكراري" },
+    "keywords": {
+      "es": ["distribución", "frecuencia", "rangos", "intervalos", "estadística descriptiva", "dispersión de valores", "conteo por rango"],
+      "en": ["distribution", "frequency", "bins", "ranges", "descriptive statistics", "spread of values", "value counts"]
+    }
+  },
+  "chart-line": {
+    "label": { "es": "Gráfica de líneas", "en": "Line chart", "pt": "Gráfico de linhas", "fr": "Graphique linéaire", "de": "Liniendiagramm", "it": "Grafico a linee", "ja": "折れ線グラフ", "zh": "折线图", "ko": "선 차트", "ar": "مخطط خطي" },
+    "keywords": {
+      "es": ["serie de tiempo", "evolución", "tendencia", "histórico", "crecimiento", "variación mensual", "métricas"],
+      "en": ["time series", "trend", "over time", "history", "growth", "monthly change", "metrics"]
+    }
+  },
+  "chart-lines": {
+    "label": { "es": "Gráfica de varias series", "en": "Multi-line chart", "pt": "Gráfico de várias linhas", "fr": "Graphique multisérie", "de": "Mehrlinien-Diagramm", "it": "Grafico a più linee", "ja": "複数系列の折れ線グラフ", "zh": "多系列折线图", "ko": "다중 선 차트", "ar": "مخطط متعدد الخطوط" },
+    "keywords": {
+      "es": ["comparar series", "comparativo", "año contra año", "benchmark", "varias métricas", "tendencias", "competencia"],
+      "en": ["compare series", "comparison", "year over year", "benchmark", "multiple metrics", "trends", "overlay"]
+    }
+  },
+  "chart-step": {
+    "label": { "es": "Gráfica escalonada", "en": "Step chart", "pt": "Gráfico em degraus", "fr": "Graphique en escalier", "de": "Stufendiagramm", "it": "Grafico a gradini", "ja": "ステップチャート", "zh": "阶梯图", "ko": "계단형 차트", "ar": "مخطط درجي" },
+    "keywords": {
+      "es": ["escalones", "cambios por etapa", "niveles", "precio por tramo", "nivel de inventario", "cambios discretos", "tarifas"],
+      "en": ["steps", "stepwise", "levels", "tiered pricing", "inventory level", "discrete changes", "rate changes"]
+    }
+  },
+  "chart-area": {
+    "label": { "es": "Gráfica de área", "en": "Area chart", "pt": "Gráfico de área", "fr": "Graphique en aires", "de": "Flächendiagramm", "it": "Grafico ad area", "ja": "面グラフ", "zh": "面积图", "ko": "영역 차트", "ar": "مخطط مساحي" },
+    "keywords": {
+      "es": ["volumen", "acumulado", "total en el tiempo", "tráfico", "uso", "tendencia", "consumo"],
+      "en": ["volume", "cumulative", "total over time", "traffic", "usage", "trend", "consumption"]
+    }
+  },
+  "chart-pie": {
+    "label": { "es": "Gráfica de pastel", "en": "Pie chart", "pt": "Gráfico de pizza", "fr": "Graphique circulaire", "de": "Kreisdiagramm", "it": "Grafico a torta", "ja": "円グラフ", "zh": "饼图", "ko": "원형 차트", "ar": "مخطط دائري" },
+    "keywords": {
+      "es": ["proporción", "porcentaje", "reparto", "participación de mercado", "presupuesto", "segmentos", "gráfica circular"],
+      "en": ["proportion", "percentage", "share", "market share", "budget split", "segments", "allocation"]
+    }
+  },
+  "chart-donut": {
+    "label": { "es": "Gráfica de dona", "en": "Donut chart", "pt": "Gráfico de rosca", "fr": "Graphique en anneau", "de": "Ringdiagramm", "it": "Grafico ad anello", "ja": "ドーナツグラフ", "zh": "环形图", "ko": "도넛 차트", "ar": "مخطط حلقي" },
+    "keywords": {
+      "es": ["anillo", "proporción", "porcentaje", "parte del total", "presupuesto", "segmentos", "rosca"],
+      "en": ["ring chart", "proportion", "percentage", "share of total", "budget", "segments", "doughnut"]
+    }
+  },
+  "chart-scatter": {
+    "label": { "es": "Gráfica de dispersión", "en": "Scatter plot", "pt": "Gráfico de dispersão", "fr": "Nuage de points", "de": "Streudiagramm", "it": "Grafico a dispersione", "ja": "散布図", "zh": "散点图", "ko": "분산형 차트", "ar": "مخطط مبعثر" },
+    "keywords": {
+      "es": ["correlación", "puntos", "relación entre variables", "regresión", "valores atípicos", "nube de puntos", "análisis estadístico"],
+      "en": ["correlation", "dots", "relationship between variables", "regression", "outliers", "point cloud", "xy plot"]
+    }
+  },
+  "chart-bubble": {
+    "label": { "es": "Gráfica de burbujas", "en": "Bubble chart", "pt": "Gráfico de bolhas", "fr": "Graphique à bulles", "de": "Blasendiagramm", "it": "Grafico a bolle", "ja": "バブルチャート", "zh": "气泡图", "ko": "버블 차트", "ar": "مخطط فقاعي" },
+    "keywords": {
+      "es": ["magnitud", "tres variables", "tamaño relativo", "dispersión", "comparar mercados", "volumen", "círculos"],
+      "en": ["magnitude", "three variables", "relative size", "scatter", "market comparison", "weight", "circles"]
+    }
+  },
+  "chart-funnel": {
+    "label": { "es": "Gráfica de embudo", "en": "Funnel chart", "pt": "Gráfico de funil", "fr": "Graphique en entonnoir", "de": "Trichterdiagramm", "it": "Grafico a imbuto", "ja": "ファネルチャート", "zh": "漏斗图", "ko": "퍼널 차트", "ar": "مخطط قمعي" },
+    "keywords": {
+      "es": ["conversión", "etapas de venta", "pipeline", "embudo de ventas", "abandono", "prospectos", "checkout"],
+      "en": ["conversion", "sales stages", "pipeline", "sales funnel", "drop-off", "leads", "checkout"]
+    }
+  },
+  "chart-radar": {
+    "label": { "es": "Gráfica de radar", "en": "Radar chart", "pt": "Gráfico de radar", "fr": "Graphique radar", "de": "Netzdiagramm", "it": "Grafico radar", "ja": "レーダーチャート", "zh": "雷达图", "ko": "방사형 차트", "ar": "مخطط راداري" },
+    "keywords": {
+      "es": ["araña", "atributos", "habilidades", "comparar perfiles", "evaluación", "puntuación por criterio", "telaraña"],
+      "en": ["spider chart", "attributes", "skills", "compare profiles", "evaluation", "score by criteria", "web chart"]
+    }
+  },
+  "chart-waterfall": {
+    "label": { "es": "Gráfica de cascada", "en": "Waterfall chart", "pt": "Gráfico de cascata", "fr": "Graphique en cascade", "de": "Wasserfalldiagramm", "it": "Grafico a cascata", "ja": "ウォーターフォールチャート", "zh": "瀑布图", "ko": "폭포 차트", "ar": "مخطط شلالي" },
+    "keywords": {
+      "es": ["variación", "gráfica de puente", "estado de resultados", "flujo de efectivo", "aumentos y disminuciones", "utilidad", "conciliación"],
+      "en": ["variance", "bridge chart", "income statement", "cash flow", "increases and decreases", "profit", "reconciliation"]
+    }
+  },
+  "chart-gantt": {
+    "label": { "es": "Diagrama de Gantt", "en": "Gantt chart", "pt": "Gráfico de Gantt", "fr": "Diagramme de Gantt", "de": "Gantt-Diagramm", "it": "Diagramma di Gantt", "ja": "ガントチャート", "zh": "甘特图", "ko": "간트 차트", "ar": "مخطط جانت" },
+    "keywords": {
+      "es": ["cronograma", "planeación", "línea de tiempo", "proyecto", "tareas", "fechas de entrega", "calendario de obra"],
+      "en": ["schedule", "planning", "timeline", "project", "tasks", "deadlines", "roadmap"]
+    }
+  },
+  "chart-treemap": {
+    "label": { "es": "Mapa de árbol", "en": "Treemap", "pt": "Mapa de árvore", "fr": "Treemap", "de": "Treemap", "it": "Treemap", "ja": "ツリーマップ", "zh": "矩形树图", "ko": "트리맵", "ar": "مخطط شجري" },
+    "keywords": {
+      "es": ["jerarquía", "proporción", "categorías anidadas", "uso de espacio", "rectángulos", "participación", "portafolio"],
+      "en": ["hierarchy", "proportion", "nested categories", "disk usage", "rectangles", "share", "portfolio"]
+    }
+  },
+  "chart-combo": {
+    "label": { "es": "Gráfica combinada", "en": "Combo chart", "pt": "Gráfico combinado", "fr": "Graphique combiné", "de": "Kombidiagramm", "it": "Grafico combinato", "ja": "複合グラフ", "zh": "组合图", "ko": "콤보 차트", "ar": "مخطط مركب" },
+    "keywords": {
+      "es": ["barras y línea", "mixta", "dos ejes", "ventas y margen", "comparar métricas", "tendencia y volumen", "reporte"],
+      "en": ["bars and line", "mixed chart", "dual axis", "sales and margin", "compare metrics", "trend and volume", "report"]
+    }
+  },
+  "chart-radial": {
+    "label": { "es": "Gráfica de barras radiales", "en": "Radial bar chart", "pt": "Gráfico de barras radiais", "fr": "Graphique à barres radiales", "de": "Radiales Balkendiagramm", "it": "Grafico a barre radiali", "ja": "円形棒グラフ", "zh": "径向条形图", "ko": "원형 막대 차트", "ar": "مخطط شريطي دائري" },
+    "keywords": {
+      "es": ["progreso", "anillos", "metas", "avance circular", "anillos de actividad", "cumplimiento", "porcentaje"],
+      "en": ["progress", "rings", "goals", "circular progress", "activity rings", "completion", "percentage"]
+    }
+  },
+  "chart-distribution": {
+    "label": { "es": "Curva de distribución", "en": "Distribution curve", "pt": "Curva de distribuição", "fr": "Courbe de distribution", "de": "Verteilungskurve", "it": "Curva di distribuzione", "ja": "分布曲線", "zh": "分布曲线", "ko": "분포 곡선", "ar": "منحنى التوزيع" },
+    "keywords": {
+      "es": ["curva normal", "campana de Gauss", "probabilidad", "desviación estándar", "promedio", "estadística", "densidad"],
+      "en": ["normal curve", "bell curve", "probability", "standard deviation", "mean", "statistics", "density"]
+    }
+  },
+  "trend-up": {
+    "label": { "es": "Tendencia al alza", "en": "Trending up", "pt": "Tendência de alta", "fr": "Tendance à la hausse", "de": "Aufwärtstrend", "it": "Tendenza al rialzo", "ja": "上昇傾向", "zh": "上升趋势", "ko": "상승 추세", "ar": "اتجاه صاعد" },
+    "keywords": {
+      "es": ["crecimiento", "sube", "ganancia", "aumento", "mejora", "rendimiento positivo", "bolsa al alza"],
+      "en": ["growth", "rising", "gain", "increase", "improvement", "positive performance", "bull market"]
+    }
+  },
+  "trend-down": {
+    "label": { "es": "Tendencia a la baja", "en": "Trending down", "pt": "Tendência de baixa", "fr": "Tendance à la baisse", "de": "Abwärtstrend", "it": "Tendenza al ribasso", "ja": "下降傾向", "zh": "下降趋势", "ko": "하락 추세", "ar": "اتجاه هابط" },
+    "keywords": {
+      "es": ["caída", "baja", "pérdida", "disminución", "descenso", "rendimiento negativo", "recorte"],
+      "en": ["decline", "falling", "loss", "decrease", "drop", "negative performance", "downturn"]
+    }
+  },
+  "trend-flat": {
+    "label": { "es": "Tendencia estable", "en": "Trending flat", "pt": "Tendência estável", "fr": "Tendance stable", "de": "Seitwärtstrend", "it": "Tendenza stabile", "ja": "横ばい", "zh": "平稳趋势", "ko": "보합세", "ar": "اتجاه ثابت" },
+    "keywords": {
+      "es": ["estable", "sin cambio", "constante", "neutral", "se mantiene", "lateral", "equilibrio"],
+      "en": ["steady", "no change", "constant", "neutral", "unchanged", "sideways", "stable"]
+    }
+  },
+  "dashboard": {
+    "label": { "es": "Tablero", "en": "Dashboard", "pt": "Painel", "fr": "Tableau de bord", "de": "Dashboard", "it": "Dashboard", "ja": "ダッシュボード", "zh": "仪表板", "ko": "대시보드", "ar": "لوحة المعلومات" },
+    "keywords": {
+      "es": ["panel de control", "resumen", "inicio", "indicadores", "widgets", "vista general", "métricas"],
+      "en": ["control panel", "overview", "home", "kpis", "widgets", "summary", "metrics"]
+    }
+  },
+  "gauge": {
+    "label": { "es": "Medidor", "en": "Gauge", "pt": "Medidor", "fr": "Jauge", "de": "Messanzeige", "it": "Indicatore", "ja": "ゲージ", "zh": "仪表", "ko": "게이지", "ar": "مقياس" },
+    "keywords": {
+      "es": ["velocidad", "rendimiento", "nivel", "velocímetro", "capacidad", "puntaje", "carga"],
+      "en": ["speed", "performance", "level", "speedometer", "capacity", "score", "meter"]
+    }
+  },
+  "analytics": {
+    "label": { "es": "Analítica", "en": "Analytics", "pt": "Análises", "fr": "Analyses", "de": "Analysen", "it": "Analisi", "ja": "分析", "zh": "数据分析", "ko": "분석", "ar": "التحليلات" },
+    "keywords": {
+      "es": ["explorar datos", "estadísticas", "insights", "reportes", "inteligencia de negocio", "investigar", "métricas"],
+      "en": ["explore data", "statistics", "insights", "reports", "business intelligence", "investigate", "metrics"]
+    }
+  },
+  "table": {
+    "label": { "es": "Tabla", "en": "Table", "pt": "Tabela", "fr": "Tableau", "de": "Tabelle", "it": "Tabella", "ja": "表", "zh": "表格", "ko": "표", "ar": "جدول" },
+    "keywords": {
+      "es": ["filas", "columnas", "registros", "hoja de cálculo", "cuadrícula", "datos tabulares", "listado"],
+      "en": ["rows", "columns", "records", "spreadsheet", "grid", "tabular data", "data view"]
+    }
+  },
+  "kanban": {
+    "label": { "es": "Tablero Kanban", "en": "Kanban board", "pt": "Quadro Kanban", "fr": "Tableau Kanban", "de": "Kanban-Board", "it": "Bacheca Kanban", "ja": "カンバンボード", "zh": "看板", "ko": "칸반 보드", "ar": "لوحة كانبان" },
+    "keywords": {
+      "es": ["columnas", "tareas", "por hacer", "en progreso", "gestión de proyectos", "metodología ágil", "tarjetas"],
+      "en": ["columns", "tasks", "to do", "in progress", "project management", "agile", "cards"]
+    }
+  },
+  "schema": {
+    "label": { "es": "Esquema de datos", "en": "Data schema", "pt": "Esquema de dados", "fr": "Schéma de données", "de": "Datenschema", "it": "Schema dei dati", "ja": "データスキーマ", "zh": "数据模式", "ko": "데이터 스키마", "ar": "مخطط البيانات" },
+    "keywords": {
+      "es": ["modelo de datos", "relaciones", "tablas", "entidades", "diagrama entidad relación", "estructura de la base", "migración"],
+      "en": ["data model", "relations", "tables", "entities", "er diagram", "database structure", "migration"]
+    }
+  },
+  "braces": {
+    "label": { "es": "Llaves", "en": "Curly braces", "pt": "Chaves", "fr": "Accolades", "de": "Geschweifte Klammern", "it": "Parentesi graffe", "ja": "波括弧", "zh": "花括号", "ko": "중괄호", "ar": "أقواس معقوفة" },
+    "keywords": {
+      "es": ["json", "objeto", "código", "bloque de código", "configuración", "sintaxis", "desarrollo"],
+      "en": ["json", "object", "code", "code block", "configuration", "syntax", "developer"]
+    }
+  },
+  "brackets": {
+    "label": { "es": "Corchetes", "en": "Square brackets", "pt": "Colchetes", "fr": "Crochets", "de": "Eckige Klammern", "it": "Parentesi quadre", "ja": "角括弧", "zh": "方括号", "ko": "대괄호", "ar": "أقواس مربعة" },
+    "keywords": {
+      "es": ["lista", "código", "índice", "sintaxis", "arreglo vacío", "opcional", "programación"],
+      "en": ["list", "code", "index", "syntax", "empty array", "optional", "programming"]
+    }
+  },
+  "array": {
+    "label": { "es": "Arreglo", "en": "Array", "pt": "Array", "fr": "Tableau de valeurs", "de": "Array", "it": "Array", "ja": "配列", "zh": "数组", "ko": "배열", "ar": "مصفوفة" },
+    "keywords": {
+      "es": ["lista", "colección", "elementos", "índices", "vector", "secuencia", "estructura de datos"],
+      "en": ["list", "collection", "items", "indexes", "vector", "sequence", "data structure"]
+    }
+  },
+  "terminal": {
+    "label": { "es": "Terminal", "en": "Terminal", "pt": "Terminal", "fr": "Terminal", "de": "Terminal", "it": "Terminale", "ja": "ターミナル", "zh": "终端", "ko": "터미널", "ar": "الطرفية" },
+    "keywords": {
+      "es": ["consola", "línea de comandos", "shell", "comandos", "bash", "ejecutar script", "cli"],
+      "en": ["console", "command line", "shell", "cli", "bash", "run script", "command prompt"]
+    }
+  },
+  "function": {
+    "label": { "es": "Función", "en": "Function", "pt": "Função", "fr": "Fonction", "de": "Funktion", "it": "Funzione", "ja": "関数", "zh": "函数", "ko": "함수", "ar": "دالة" },
+    "keywords": {
+      "es": ["fórmula", "cálculo", "matemáticas", "fórmula de hoja de cálculo", "método", "rutina", "expresión"],
+      "en": ["formula", "calculation", "math", "spreadsheet formula", "method", "routine", "expression"]
+    }
+  },
+  "variable": {
+    "label": { "es": "Variable", "en": "Variable", "pt": "Variável", "fr": "Variable", "de": "Variable", "it": "Variabile", "ja": "変数", "zh": "变量", "ko": "변수", "ar": "متغير" },
+    "keywords": {
+      "es": ["valor", "parámetro", "marcador de posición", "campo dinámico", "plantilla", "incógnita", "variable de entorno"],
+      "en": ["value", "parameter", "placeholder", "dynamic field", "template", "unknown", "env var"]
+    }
+  },
+  "sum": {
+    "label": { "es": "Suma", "en": "Sum", "pt": "Soma", "fr": "Somme", "de": "Summe", "it": "Somma", "ja": "合計", "zh": "求和", "ko": "합계", "ar": "المجموع" },
+    "keywords": {
+      "es": ["sigma", "total", "sumatoria", "autosuma", "agregar valores", "fórmula", "calcular"],
+      "en": ["sigma", "total", "summation", "autosum", "aggregate", "formula", "add up"]
+    }
+  },
+  "code-window": {
+    "label": { "es": "Editor de código", "en": "Code editor", "pt": "Editor de código", "fr": "Éditeur de code", "de": "Code-Editor", "it": "Editor di codice", "ja": "コードエディター", "zh": "代码编辑器", "ko": "코드 편집기", "ar": "محرر الأكواد" },
+    "keywords": {
+      "es": ["código fuente", "desarrollo", "programar", "ide", "html", "insertar código", "ver código"],
+      "en": ["source code", "development", "programming", "ide", "html", "embed", "view source"]
+    }
+  },
+  "git-branch": {
+    "label": { "es": "Rama", "en": "Branch", "pt": "Branch", "fr": "Branche", "de": "Branch", "it": "Branch", "ja": "ブランチ", "zh": "分支", "ko": "브랜치", "ar": "فرع" },
+    "keywords": {
+      "es": ["git", "control de versiones", "nueva rama", "desarrollo en paralelo", "feature", "cambiar de rama", "repositorio"],
+      "en": ["git", "version control", "new branch", "parallel work", "feature branch", "checkout", "repository"]
+    }
+  },
+  "git-commit": {
+    "label": { "es": "Commit", "en": "Commit", "pt": "Commit", "fr": "Commit", "de": "Commit", "it": "Commit", "ja": "コミット", "zh": "提交", "ko": "커밋", "ar": "إيداع" },
+    "keywords": {
+      "es": ["confirmar cambios", "guardar versión", "git", "historial", "punto de control", "control de versiones", "snapshot"],
+      "en": ["save changes", "version", "git", "history", "checkpoint", "version control", "snapshot"]
+    }
+  },
+  "git-merge": {
+    "label": { "es": "Fusionar", "en": "Merge", "pt": "Mesclar", "fr": "Fusionner", "de": "Zusammenführen", "it": "Unisci", "ja": "マージ", "zh": "合并", "ko": "병합", "ar": "دمج" },
+    "keywords": {
+      "es": ["unir ramas", "git", "integrar cambios", "combinar", "control de versiones", "resolver conflictos", "juntar"],
+      "en": ["combine branches", "git", "integrate changes", "join", "version control", "resolve conflicts", "consolidate"]
+    }
+  },
+  "git-pull-request": {
+    "label": { "es": "Pull request", "en": "Pull request", "pt": "Pull request", "fr": "Pull request", "de": "Pull-Request", "it": "Pull request", "ja": "プルリクエスト", "zh": "拉取请求", "ko": "풀 리퀘스트", "ar": "طلب سحب" },
+    "keywords": {
+      "es": ["revisión de código", "solicitud de cambios", "proponer cambios", "git", "code review", "aprobar", "merge request"],
+      "en": ["code review", "propose changes", "merge request", "git", "pr", "approve", "review changes"]
+    }
+  },
+  "git-pull-request-closed": {
+    "label": { "es": "Pull request cerrado", "en": "Closed pull request", "pt": "Pull request fechado", "fr": "Pull request fermée", "de": "Geschlossener Pull-Request", "it": "Pull request chiusa", "ja": "クローズされたプルリクエスト", "zh": "已关闭的拉取请求", "ko": "닫힌 풀 리퀘스트", "ar": "طلب سحب مغلق" },
+    "keywords": {
+      "es": ["rechazado", "descartado", "cerrado sin fusionar", "cancelado", "git", "cambios rechazados", "revisión"],
+      "en": ["rejected", "dismissed", "closed without merging", "canceled", "git", "declined", "abandoned"]
+    }
+  },
+  "git-pull-request-draft": {
+    "label": { "es": "Pull request en borrador", "en": "Draft pull request", "pt": "Pull request em rascunho", "fr": "Pull request en brouillon", "de": "Pull-Request-Entwurf", "it": "Pull request in bozza", "ja": "ドラフトのプルリクエスト", "zh": "拉取请求草稿", "ko": "초안 풀 리퀘스트", "ar": "مسودة طلب سحب" },
+    "keywords": {
+      "es": ["en progreso", "sin terminar", "trabajo en curso", "wip", "git", "no listo para revisión", "retroalimentación temprana"],
+      "en": ["in progress", "unfinished", "work in progress", "wip", "git", "not ready for review", "early feedback"]
+    }
+  },
+  "git-fork": {
+    "label": { "es": "Fork", "en": "Fork", "pt": "Fork", "fr": "Fork", "de": "Fork", "it": "Fork", "ja": "フォーク", "zh": "复刻", "ko": "포크", "ar": "تفريع" },
+    "keywords": {
+      "es": ["copia del repositorio", "bifurcar", "proyecto derivado", "git", "contribuir", "código abierto", "duplicar repositorio"],
+      "en": ["repository copy", "derived project", "spin off", "git", "contribute", "open source", "duplicate repository"]
+    }
+  },
+  "git-compare": {
+    "label": { "es": "Comparar cambios", "en": "Compare changes", "pt": "Comparar alterações", "fr": "Comparer les modifications", "de": "Änderungen vergleichen", "it": "Confronta modifiche", "ja": "変更を比較", "zh": "比较更改", "ko": "변경 사항 비교", "ar": "مقارنة التغييرات" },
+    "keywords": {
+      "es": ["diferencias", "git", "comparar ramas", "versiones", "intercambiar", "revisar cambios", "control de versiones"],
+      "en": ["differences", "git", "compare branches", "versions", "swap", "review changes", "version control"]
+    }
+  },
+  "bug": {
+    "label": { "es": "Error de software", "en": "Bug", "pt": "Bug", "fr": "Bug", "de": "Programmfehler", "it": "Bug", "ja": "バグ", "zh": "程序错误", "ko": "버그", "ar": "خلل برمجي" },
+    "keywords": {
+      "es": ["bicho", "falla", "depurar", "reportar error", "incidencia", "debug", "problema técnico"],
+      "en": ["defect", "glitch", "debug", "report a problem", "issue", "insect", "error"]
+    }
+  },
+  "flask": {
+    "label": { "es": "Experimento", "en": "Experiment", "pt": "Experimento", "fr": "Expérience", "de": "Experiment", "it": "Esperimento", "ja": "実験", "zh": "实验", "ko": "실험", "ar": "تجربة" },
+    "keywords": {
+      "es": ["matraz", "laboratorio", "funciones beta", "prueba", "ciencia", "química", "acceso anticipado"],
+      "en": ["lab flask", "labs", "beta features", "test", "science", "chemistry", "early access"]
+    }
+  },
+  "test-tube": {
+    "label": { "es": "Pruebas", "en": "Tests", "pt": "Testes", "fr": "Tests", "de": "Tests", "it": "Test", "ja": "テスト", "zh": "测试", "ko": "테스트", "ar": "اختبارات" },
+    "keywords": {
+      "es": ["tubo de ensayo", "laboratorio", "muestra", "pruebas unitarias", "análisis clínico", "ensayo", "control de calidad"],
+      "en": ["vial", "lab", "sample", "unit tests", "lab test", "assay", "quality assurance"]
+    }
+  },
+  "api": {
+    "label": { "es": "API", "en": "API", "pt": "API", "fr": "API", "de": "API", "it": "API", "ja": "API", "zh": "API", "ko": "API", "ar": "واجهة برمجة التطبيقات" },
+    "keywords": {
+      "es": ["conexión", "integración", "conector", "endpoint", "enchufe", "conectar servicios", "interfaz de programación"],
+      "en": ["connection", "integration", "connector", "endpoint", "plug", "connect services", "rest"]
+    }
+  },
+  "webhook": {
+    "label": { "es": "Webhook", "en": "Webhook", "pt": "Webhook", "fr": "Webhook", "de": "Webhook", "it": "Webhook", "ja": "Webhook", "zh": "Webhook", "ko": "웹훅", "ar": "خطاف ويب" },
+    "keywords": {
+      "es": ["evento", "notificación automática", "callback", "integración", "disparador", "gancho", "avisar a otro sistema"],
+      "en": ["event", "automatic notification", "callback", "integration", "trigger", "hook", "http callback"]
+    }
+  },
+  "cpu": {
+    "label": { "es": "Procesador", "en": "Processor", "pt": "Processador", "fr": "Processeur", "de": "Prozessor", "it": "Processore", "ja": "プロセッサー", "zh": "处理器", "ko": "프로세서", "ar": "المعالج" },
+    "keywords": {
+      "es": ["chip", "cómputo", "rendimiento", "hardware", "núcleos", "uso de recursos", "microprocesador"],
+      "en": ["chip", "compute", "performance", "hardware", "cores", "resource usage", "microprocessor"]
+    }
+  },
+  "ai-chip": {
+    "label": { "es": "Chip de IA", "en": "AI chip", "pt": "Chip de IA", "fr": "Puce d’IA", "de": "KI-Chip", "it": "Chip IA", "ja": "AIチップ", "zh": "AI 芯片", "ko": "AI 칩", "ar": "شريحة ذكاء اصطناعي" },
+    "keywords": {
+      "es": ["inteligencia artificial", "modelo", "gpu", "procesamiento de ia", "aprendizaje automático", "acelerador", "inferencia"],
+      "en": ["artificial intelligence", "model", "gpu", "ai processing", "machine learning", "accelerator", "inference"]
+    }
+  },
+  "server": {
+    "label": { "es": "Servidor", "en": "Server", "pt": "Servidor", "fr": "Serveur", "de": "Server", "it": "Server", "ja": "サーバー", "zh": "服务器", "ko": "서버", "ar": "خادم" },
+    "keywords": {
+      "es": ["hosting", "infraestructura", "backend", "alojamiento", "almacenamiento", "base de datos", "centro de datos"],
+      "en": ["hosting", "infrastructure", "backend", "storage", "database", "data center", "self-hosted"]
+    }
+  },
+  "cloud-compute": {
+    "label": { "es": "Cómputo en la nube", "en": "Cloud computing", "pt": "Computação em nuvem", "fr": "Informatique en nuage", "de": "Cloud-Computing", "it": "Cloud computing", "ja": "クラウドコンピューティング", "zh": "云计算", "ko": "클라우드 컴퓨팅", "ar": "الحوسبة السحابية" },
+    "keywords": {
+      "es": ["servidor remoto", "nube", "consola remota", "ejecutar en la nube", "serverless", "instancia", "infraestructura"],
+      "en": ["remote server", "cloud", "remote shell", "run in the cloud", "serverless", "instance", "infrastructure"]
+    }
+  },
+  "container": {
+    "label": { "es": "Contenedor", "en": "Container", "pt": "Contêiner", "fr": "Conteneur", "de": "Container", "it": "Container", "ja": "コンテナ", "zh": "容器", "ko": "컨테이너", "ar": "حاوية" },
+    "keywords": {
+      "es": ["docker", "imagen", "despliegue", "kubernetes", "microservicio", "entorno aislado", "virtualización"],
+      "en": ["docker", "image", "deployment", "kubernetes", "microservice", "isolated environment", "virtualization"]
+    }
+  },
+  "rocket": {
+    "label": { "es": "Lanzamiento", "en": "Launch", "pt": "Lançamento", "fr": "Lancement", "de": "Start", "it": "Lancio", "ja": "ローンチ", "zh": "发布", "ko": "출시", "ar": "إطلاق" },
+    "keywords": {
+      "es": ["cohete", "desplegar", "publicar", "estreno", "salir a producción", "arrancar", "impulso"],
+      "en": ["release", "deploy", "publish", "ship", "go live", "startup", "boost"]
+    }
+  },
+  "pulse": {
+    "label": { "es": "Actividad", "en": "Activity", "pt": "Atividade", "fr": "Activité", "de": "Aktivität", "it": "Attività", "ja": "アクティビティ", "zh": "活动", "ko": "활동", "ar": "النشاط" },
+    "keywords": {
+      "es": ["pulso", "monitoreo", "disponibilidad", "estado del servicio", "ritmo cardiaco", "salud del sistema", "latido"],
+      "en": ["vital signs", "monitoring", "uptime", "service status", "heart rate", "system health", "heartbeat"]
+    }
+  },
+  "log": {
+    "label": { "es": "Registro", "en": "Log", "pt": "Registro", "fr": "Journal", "de": "Protokoll", "it": "Registro", "ja": "ログ", "zh": "日志", "ko": "로그", "ar": "السجل" },
+    "keywords": {
+      "es": ["bitácora", "eventos", "historial", "auditoría", "registros del sistema", "depurar", "actividad"],
+      "en": ["events", "history", "audit trail", "system records", "debug", "activity history", "changelog"]
+    }
+  },
+  "network": {
+    "label": { "es": "Red", "en": "Network", "pt": "Rede", "fr": "Réseau", "de": "Netzwerk", "it": "Rete", "ja": "ネットワーク", "zh": "网络", "ko": "네트워크", "ar": "شبكة" },
+    "keywords": {
+      "es": ["nodos", "conexiones", "topología", "comunidad", "conectar", "infraestructura", "sistema distribuido"],
+      "en": ["nodes", "connections", "topology", "community", "connect", "infrastructure", "distributed system"]
+    }
+  },
+  "node-graph": {
+    "label": { "es": "Grafo de nodos", "en": "Node graph", "pt": "Grafo de nós", "fr": "Graphe de nœuds", "de": "Knotengraph", "it": "Grafo di nodi", "ja": "ノードグラフ", "zh": "节点图", "ko": "노드 그래프", "ar": "مخطط العقد" },
+    "keywords": {
+      "es": ["relaciones", "grafo de conocimiento", "conexiones", "vínculos", "red de entidades", "dependencias", "mapa de relaciones"],
+      "en": ["relationships", "knowledge graph", "connections", "links", "entity network", "dependencies", "relationship map"]
+    }
+  },
+  "hierarchy": {
+    "label": { "es": "Jerarquía", "en": "Hierarchy", "pt": "Hierarquia", "fr": "Hiérarchie", "de": "Hierarchie", "it": "Gerarchia", "ja": "階層", "zh": "层级", "ko": "계층 구조", "ar": "التسلسل الهرمي" },
+    "keywords": {
+      "es": ["organigrama", "árbol", "niveles", "estructura", "padre e hijos", "dependencias", "a quién reporta"],
+      "en": ["org chart", "tree", "levels", "structure", "parent and children", "reporting line", "taxonomy"]
+    }
+  },
+  "sitemap": {
+    "label": { "es": "Mapa del sitio", "en": "Sitemap", "pt": "Mapa do site", "fr": "Plan du site", "de": "Sitemap", "it": "Mappa del sito", "ja": "サイトマップ", "zh": "网站地图", "ko": "사이트맵", "ar": "خريطة الموقع" },
+    "keywords": {
+      "es": ["organigrama", "estructura", "páginas", "arquitectura de información", "navegación", "índice del sitio", "jerarquía"],
+      "en": ["org chart", "structure", "pages", "information architecture", "navigation", "site index", "hierarchy"]
+    }
+  },
+  "flowchart": {
+    "label": { "es": "Diagrama de flujo", "en": "Flowchart", "pt": "Fluxograma", "fr": "Diagramme de flux", "de": "Flussdiagramm", "it": "Diagramma di flusso", "ja": "フローチャート", "zh": "流程图", "ko": "순서도", "ar": "مخطط انسيابي" },
+    "keywords": {
+      "es": ["proceso", "algoritmo", "decisión", "pasos", "lógica", "mapa de procesos", "diagrama"],
+      "en": ["process", "algorithm", "decision", "steps", "logic", "process map", "diagram"]
+    }
+  },
+  "workflow": {
+    "label": { "es": "Flujo de trabajo", "en": "Workflow", "pt": "Fluxo de trabalho", "fr": "Flux de travail", "de": "Workflow", "it": "Flusso di lavoro", "ja": "ワークフロー", "zh": "工作流", "ko": "워크플로", "ar": "سير العمل" },
+    "keywords": {
+      "es": ["automatización", "pasos", "proceso", "secuencia", "aprobaciones", "etapas", "orquestar"],
+      "en": ["automation", "steps", "process", "sequence", "approvals", "stages", "orchestration"]
+    }
+  },
+  "automation": {
+    "label": { "es": "Automatización", "en": "Automation", "pt": "Automação", "fr": "Automatisation", "de": "Automatisierung", "it": "Automazione", "ja": "自動化", "zh": "自动化", "ko": "자동화", "ar": "الأتمتة" },
+    "keywords": {
+      "es": ["disparador", "ciclo", "regla automática", "ejecutar solo", "tarea programada", "flujo automático", "sin intervención"],
+      "en": ["trigger", "loop", "automatic rule", "run automatically", "scheduled task", "auto flow", "hands-free"]
+    }
+  },
+  "sparkle": {
+    "label": { "es": "IA", "en": "AI", "pt": "IA", "fr": "IA", "de": "KI", "it": "IA", "ja": "AI", "zh": "人工智能", "ko": "AI", "ar": "الذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["inteligencia artificial", "chispa", "mágico", "nuevo", "destacado", "brillo", "asistente"],
+      "en": ["artificial intelligence", "magic", "new", "featured", "shine", "smart", "assistant"]
+    }
+  },
+  "sparkles": {
+    "label": { "es": "Generar con IA", "en": "Generate with AI", "pt": "Gerar com IA", "fr": "Générer avec l’IA", "de": "Mit KI generieren", "it": "Genera con l’IA", "ja": "AIで生成", "zh": "AI 生成", "ko": "AI로 생성", "ar": "إنشاء بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["chispas", "magia", "crear contenido", "mejorar con ia", "autocompletar", "inteligencia artificial", "estrellas"],
+      "en": ["magic", "create content", "enhance with ai", "autofill", "artificial intelligence", "stars", "magic wand"]
+    }
+  },
+  "search-sparkle": {
+    "label": { "es": "Búsqueda con IA", "en": "AI search", "pt": "Pesquisa com IA", "fr": "Recherche par IA", "de": "KI-Suche", "it": "Ricerca con IA", "ja": "AI検索", "zh": "AI 搜索", "ko": "AI 검색", "ar": "البحث بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["búsqueda inteligente", "búsqueda semántica", "preguntar", "encontrar respuestas", "lenguaje natural", "lupa", "descubrir"],
+      "en": ["smart search", "semantic search", "ask", "find answers", "natural language", "magnifier", "discover"]
+    }
+  },
+  "robot": {
+    "label": { "es": "Robot", "en": "Robot", "pt": "Robô", "fr": "Robot", "de": "Roboter", "it": "Robot", "ja": "ロボット", "zh": "机器人", "ko": "로봇", "ar": "روبوت" },
+    "keywords": {
+      "es": ["bot", "agente de ia", "automatización", "asistente virtual", "máquina", "tarea automática", "androide"],
+      "en": ["bot", "ai agent", "automation", "virtual assistant", "machine", "automated task", "android"]
+    }
+  },
+  "chatbot": {
+    "label": { "es": "Chatbot", "en": "Chatbot", "pt": "Chatbot", "fr": "Chatbot", "de": "Chatbot", "it": "Chatbot", "ja": "チャットボット", "zh": "聊天机器人", "ko": "챗봇", "ar": "روبوت محادثة" },
+    "keywords": {
+      "es": ["asistente", "conversación con ia", "soporte automático", "ayuda", "preguntar a la ia", "agente virtual", "chat"],
+      "en": ["assistant", "ai conversation", "automated support", "help", "ask ai", "virtual agent", "chat"]
+    }
+  },
+  "brain": {
+    "label": { "es": "Cerebro", "en": "Brain", "pt": "Cérebro", "fr": "Cerveau", "de": "Gehirn", "it": "Cervello", "ja": "脳", "zh": "大脑", "ko": "뇌", "ar": "دماغ" },
+    "keywords": {
+      "es": ["inteligencia", "conocimiento", "pensar", "memoria", "aprendizaje", "ideas", "razonamiento"],
+      "en": ["intelligence", "knowledge", "think", "memory", "learning", "ideas", "reasoning"]
+    }
+  },
+  "atom": {
+    "label": { "es": "Átomo", "en": "Atom", "pt": "Átomo", "fr": "Atome", "de": "Atom", "it": "Atomo", "ja": "原子", "zh": "原子", "ko": "원자", "ar": "ذرة" },
+    "keywords": {
+      "es": ["ciencia", "partículas", "física", "química", "react", "núcleo", "investigación"],
+      "en": ["science", "particles", "physics", "chemistry", "react", "nucleus", "research"]
+    }
+  },
+  "neural-network": {
+    "label": { "es": "Red neuronal", "en": "Neural network", "pt": "Rede neural", "fr": "Réseau de neurones", "de": "Neuronales Netz", "it": "Rete neurale", "ja": "ニューラルネットワーク", "zh": "神经网络", "ko": "신경망", "ar": "شبكة عصبية" },
+    "keywords": {
+      "es": ["aprendizaje automático", "deep learning", "modelo de ia", "entrenar", "capas", "inteligencia artificial", "neuronas"],
+      "en": ["machine learning", "deep learning", "ai model", "training", "layers", "artificial intelligence", "neurons"]
+    }
+  },
+  "prompt": {
+    "label": { "es": "Prompt", "en": "Prompt", "pt": "Prompt", "fr": "Prompt", "de": "Prompt", "it": "Prompt", "ja": "プロンプト", "zh": "提示词", "ko": "프롬프트", "ar": "موجّه" },
+    "keywords": {
+      "es": ["instrucción", "pedir a la ia", "escribirle a la ia", "consulta", "plantilla de instrucciones", "entrada de texto", "preguntar"],
+      "en": ["instruction", "ask ai", "ai input", "query", "instruction template", "text input", "command"]
+    }
+  },
+  "component": {
+    "label": { "es": "Componente", "en": "Component", "pt": "Componente", "fr": "Composant", "de": "Komponente", "it": "Componente", "ja": "コンポーネント", "zh": "组件", "ko": "컴포넌트", "ar": "مكوّن" },
+    "keywords": {
+      "es": ["bloque", "módulo", "pieza reutilizable", "sistema de diseño", "elemento de interfaz", "lego", "construir"],
+      "en": ["block", "module", "reusable piece", "design system", "ui element", "building block", "build"]
+    }
+  },
+  "puzzle": {
+    "label": { "es": "Extensión", "en": "Extension", "pt": "Extensão", "fr": "Extension", "de": "Erweiterung", "it": "Estensione", "ja": "拡張機能", "zh": "扩展", "ko": "확장 프로그램", "ar": "إضافة" },
+    "keywords": {
+      "es": ["rompecabezas", "plugin", "complemento", "integración", "add-on", "pieza", "encajar"],
+      "en": ["jigsaw", "plugin", "add-on", "integration", "piece", "fit together", "module"]
+    }
+  },
+  "cube": {
+    "label": { "es": "Objeto 3D", "en": "3D object", "pt": "Objeto 3D", "fr": "Objet 3D", "de": "3D-Objekt", "it": "Oggetto 3D", "ja": "3Dオブジェクト", "zh": "3D 对象", "ko": "3D 개체", "ar": "كائن ثلاثي الأبعاد" },
+    "keywords": {
+      "es": ["cubo", "modelo 3d", "volumen", "geometría", "caja", "bloque", "render"],
+      "en": ["3d model", "volume", "geometry", "box", "block", "render", "solid"]
+    }
+  },
+  "axis-3d": {
+    "label": { "es": "Ejes 3D", "en": "3D axes", "pt": "Eixos 3D", "fr": "Axes 3D", "de": "3D-Achsen", "it": "Assi 3D", "ja": "3D軸", "zh": "3D 坐标轴", "ko": "3D 축", "ar": "محاور ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["coordenadas", "x y z", "espacio tridimensional", "orientación", "transformar", "mover en 3d", "modelado"],
+      "en": ["coordinates", "x y z", "three dimensional space", "orientation", "transform", "move in 3d", "modeling"]
+    }
+  },
+  "database-plus": {
+    "label": { "es": "Nueva base de datos", "en": "New database", "pt": "Novo banco de dados", "fr": "Nouvelle base de données", "de": "Neue Datenbank", "it": "Nuovo database", "ja": "新規データベース", "zh": "新建数据库", "ko": "새 데이터베이스", "ar": "قاعدة بيانات جديدة" },
+    "keywords": {
+      "es": ["agregar datos", "crear tabla", "nuevo registro", "almacenamiento", "insertar", "crear base", "conectar fuente de datos"],
+      "en": ["add data", "create table", "new record", "storage", "insert", "create db", "add data source"]
+    }
+  },
+  "database-check": {
+    "label": { "es": "Base de datos verificada", "en": "Verified database", "pt": "Banco de dados verificado", "fr": "Base de données vérifiée", "de": "Geprüfte Datenbank", "it": "Database verificato", "ja": "確認済みのデータベース", "zh": "已验证的数据库", "ko": "확인된 데이터베이스", "ar": "قاعدة بيانات تم التحقق منها" },
+    "keywords": {
+      "es": ["datos validados", "base lista", "integridad", "respaldo completo", "conexión exitosa", "sincronizada", "aprobada"],
+      "en": ["validated data", "database ready", "integrity", "backup complete", "connected", "in sync", "healthy"]
+    }
+  },
+  "database-search": {
+    "label": { "es": "Consultar base de datos", "en": "Query database", "pt": "Consultar banco de dados", "fr": "Interroger la base de données", "de": "Datenbank abfragen", "it": "Interroga il database", "ja": "データベースを検索", "zh": "查询数据库", "ko": "데이터베이스 검색", "ar": "البحث في قاعدة البيانات" },
+    "keywords": {
+      "es": ["consulta", "query", "buscar datos", "sql", "buscar registros", "filtrar", "explorar"],
+      "en": ["find data", "sql", "lookup", "search records", "filter", "explore", "select"]
+    }
+  },
+  "database-sync": {
+    "label": { "es": "Sincronizar base de datos", "en": "Sync database", "pt": "Sincronizar banco de dados", "fr": "Synchroniser la base de données", "de": "Datenbank synchronisieren", "it": "Sincronizza database", "ja": "データベースを同期", "zh": "同步数据库", "ko": "데이터베이스 동기화", "ar": "مزامنة قاعدة البيانات" },
+    "keywords": {
+      "es": ["réplica", "actualizar", "replicación", "respaldo", "refrescar datos", "migrar", "mantener al día"],
+      "en": ["replica", "update", "replication", "backup", "refresh data", "migrate", "keep up to date"]
+    }
+  },
+  "data-filter": {
+    "label": { "es": "Filtrar datos", "en": "Filter data", "pt": "Filtrar dados", "fr": "Filtrer les données", "de": "Daten filtern", "it": "Filtra dati", "ja": "データを絞り込む", "zh": "筛选数据", "ko": "데이터 필터링", "ar": "تصفية البيانات" },
+    "keywords": {
+      "es": ["segmentar", "embudo", "acotar resultados", "criterios", "refinar", "seleccionar", "condiciones"],
+      "en": ["segment", "funnel", "narrow results", "criteria", "refine", "select", "conditions"]
+    }
+  },
+  "ab-test": {
+    "label": { "es": "Prueba A/B", "en": "A/B test", "pt": "Teste A/B", "fr": "Test A/B", "de": "A/B-Test", "it": "Test A/B", "ja": "A/Bテスト", "zh": "A/B 测试", "ko": "A/B 테스트", "ar": "اختبار A/B" },
+    "keywords": {
+      "es": ["experimento", "variantes", "comparar versiones", "split test", "optimizar conversión", "hipótesis", "dividir tráfico"],
+      "en": ["experiment", "variants", "compare versions", "split test", "conversion optimization", "hypothesis", "split traffic"]
+    }
+  },
+  "tree-view": {
+    "label": { "es": "Vista de árbol", "en": "Tree view", "pt": "Visualização em árvore", "fr": "Arborescence", "de": "Baumansicht", "it": "Vista ad albero", "ja": "ツリー表示", "zh": "树状视图", "ko": "트리 보기", "ar": "عرض شجري" },
+    "keywords": {
+      "es": ["estructura", "anidado", "carpetas", "niveles", "explorador", "esquema", "subelementos"],
+      "en": ["structure", "nested", "folders", "levels", "explorer", "outline", "child items"]
+    }
+  },
+  "chart-progress": {
+    "label": { "es": "Barras de progreso", "en": "Progress bars", "pt": "Barras de progresso", "fr": "Barres de progression", "de": "Fortschrittsbalken", "it": "Barre di avanzamento", "ja": "進捗バー", "zh": "进度条", "ko": "진행률 막대", "ar": "أشرطة التقدم" },
+    "keywords": {
+      "es": ["avance", "cumplimiento", "metas", "porcentaje", "estado del proyecto", "completado", "carga"],
+      "en": ["completion", "goals", "percentage", "project status", "done", "loading", "advancement"]
+    }
+  },
+  "chart-forecast": {
+    "label": { "es": "Pronóstico", "en": "Forecast", "pt": "Previsão", "fr": "Prévision", "de": "Prognose", "it": "Previsione", "ja": "予測", "zh": "预测", "ko": "예측", "ar": "التوقعات" },
+    "keywords": {
+      "es": ["proyección", "predicción", "estimación", "tendencia futura", "presupuesto", "planeación", "escenario"],
+      "en": ["projection", "prediction", "estimate", "future trend", "budget", "planning", "scenario"]
+    }
+  },
+  "target": {
+    "label": { "es": "Objetivo", "en": "Target", "pt": "Objetivo", "fr": "Objectif", "de": "Ziel", "it": "Obiettivo", "ja": "目標", "zh": "目标", "ko": "목표", "ar": "الهدف" },
+    "keywords": {
+      "es": ["meta", "kpi", "diana", "enfoque", "precisión", "alcance", "puntería"],
+      "en": ["goal", "kpi", "bullseye", "focus", "accuracy", "aim", "objective"]
+    }
+  },
+  "venn": {
+    "label": { "es": "Diagrama de Venn", "en": "Venn diagram", "pt": "Diagrama de Venn", "fr": "Diagramme de Venn", "de": "Venn-Diagramm", "it": "Diagramma di Venn", "ja": "ベン図", "zh": "维恩图", "ko": "벤 다이어그램", "ar": "مخطط فن" },
+    "keywords": {
+      "es": ["intersección", "conjuntos", "unión de tablas", "join", "coincidencias", "superposición", "en común"],
+      "en": ["intersection", "sets", "table join", "overlap", "common ground", "union", "shared"]
+    }
+  },
+  "matrix": {
+    "label": { "es": "Matriz", "en": "Matrix", "pt": "Matriz", "fr": "Matrice", "de": "Matrix", "it": "Matrice", "ja": "行列", "zh": "矩阵", "ko": "행렬", "ar": "مصفوفة رياضية" },
+    "keywords": {
+      "es": ["tabla de valores", "cuadrícula", "álgebra lineal", "filas y columnas", "dimensiones", "tensor", "cálculo"],
+      "en": ["value grid", "grid", "linear algebra", "rows and columns", "dimensions", "tensor", "calculation"]
+    }
+  },
+  "math": {
+    "label": { "es": "Matemáticas", "en": "Math", "pt": "Matemática", "fr": "Mathématiques", "de": "Mathematik", "it": "Matematica", "ja": "数学", "zh": "数学", "ko": "수학", "ar": "الرياضيات" },
+    "keywords": {
+      "es": ["operaciones", "calculadora", "sumar", "restar", "multiplicar", "aritmética", "fórmulas"],
+      "en": ["operations", "calculator", "add", "subtract", "multiply", "arithmetic", "formulas"]
+    }
+  },
+  "diff": {
+    "label": { "es": "Diferencias", "en": "Diff", "pt": "Diferenças", "fr": "Différences", "de": "Unterschiede", "it": "Differenze", "ja": "差分", "zh": "差异", "ko": "차이점", "ar": "الفروق" },
+    "keywords": {
+      "es": ["cambios", "comparar versiones", "líneas agregadas", "líneas eliminadas", "más y menos", "revisión de código", "control de versiones"],
+      "en": ["changes", "compare versions", "added lines", "removed lines", "plus minus", "code review", "version control"]
+    }
+  },
+  "regex": {
+    "label": { "es": "Expresión regular", "en": "Regular expression", "pt": "Expressão regular", "fr": "Expression régulière", "de": "Regulärer Ausdruck", "it": "Espressione regolare", "ja": "正規表現", "zh": "正则表达式", "ko": "정규 표현식", "ar": "تعبير نمطي" },
+    "keywords": {
+      "es": ["patrón", "búsqueda avanzada", "comodín", "validar texto", "coincidencia", "buscar y reemplazar", "sintaxis"],
+      "en": ["pattern", "advanced search", "wildcard", "validate text", "match", "find and replace", "string parsing"]
+    }
+  },
+  "lambda": {
+    "label": { "es": "Función lambda", "en": "Lambda function", "pt": "Função lambda", "fr": "Fonction lambda", "de": "Lambda-Funktion", "it": "Funzione lambda", "ja": "ラムダ関数", "zh": "Lambda 函数", "ko": "람다 함수", "ar": "دالة لامدا" },
+    "keywords": {
+      "es": ["función anónima", "serverless", "sin servidor", "programación funcional", "función en la nube", "función flecha", "letra griega"],
+      "en": ["anonymous function", "serverless", "cloud function", "functional programming", "closure", "arrow function", "greek letter"]
+    }
+  },
+  "binary": {
+    "label": { "es": "Código binario", "en": "Binary code", "pt": "Código binário", "fr": "Code binaire", "de": "Binärcode", "it": "Codice binario", "ja": "バイナリコード", "zh": "二进制代码", "ko": "이진 코드", "ar": "الشيفرة الثنائية" },
+    "keywords": {
+      "es": ["bits", "ceros y unos", "datos", "código máquina", "computación", "codificación", "digital"],
+      "en": ["bits", "zeros and ones", "data", "machine code", "computing", "encoding", "digital"]
+    }
+  },
+  "code-sparkle": {
+    "label": { "es": "Programar con IA", "en": "AI coding", "pt": "Programar com IA", "fr": "Coder avec l’IA", "de": "Mit KI programmieren", "it": "Programmare con l’IA", "ja": "AIでコーディング", "zh": "AI 编程", "ko": "AI 코딩", "ar": "البرمجة بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["generar código", "asistente de programación", "copiloto", "autocompletar código", "desarrollo", "vibe coding", "agente de código"],
+      "en": ["generate code", "coding assistant", "copilot", "code completion", "development", "vibe coding", "code agent"]
+    }
+  },
+  "condition": {
+    "label": { "es": "Condición", "en": "Condition", "pt": "Condição", "fr": "Condition", "de": "Bedingung", "it": "Condizione", "ja": "条件分岐", "zh": "条件分支", "ko": "조건 분기", "ar": "شرط" },
+    "keywords": {
+      "es": ["si no", "decisión", "bifurcar", "regla", "lógica", "ramificación", "caso"],
+      "en": ["if else", "decision", "branching", "rule", "logic", "split path", "switch"]
+    }
+  },
+  "infinity": {
+    "label": { "es": "Infinito", "en": "Infinity", "pt": "Infinito", "fr": "Infini", "de": "Unendlich", "it": "Infinito", "ja": "無限", "zh": "无限", "ko": "무한대", "ar": "ما لا نهاية" },
+    "keywords": {
+      "es": ["ciclo continuo", "devops", "ilimitado", "para siempre", "bucle", "integración continua", "sin fin"],
+      "en": ["continuous loop", "devops", "unlimited", "forever", "loop", "continuous integration", "endless"]
+    }
+  },
+  "git-graph": {
+    "label": { "es": "Historial de commits", "en": "Commit history", "pt": "Histórico de commits", "fr": "Historique des commits", "de": "Commit-Verlauf", "it": "Cronologia dei commit", "ja": "コミット履歴", "zh": "提交历史", "ko": "커밋 기록", "ar": "سجل الإيداعات" },
+    "keywords": {
+      "es": ["historial", "git", "gráfico de ramas", "versiones", "línea de tiempo", "registro de cambios", "control de versiones"],
+      "en": ["history", "git", "branch graph", "versions", "timeline", "change log", "version control"]
+    }
+  },
+  "server-rack": {
+    "label": { "es": "Rack de servidores", "en": "Server rack", "pt": "Rack de servidores", "fr": "Baie de serveurs", "de": "Serverschrank", "it": "Rack di server", "ja": "サーバーラック", "zh": "服务器机架", "ko": "서버 랙", "ar": "رف الخوادم" },
+    "keywords": {
+      "es": ["centro de datos", "servidores", "infraestructura", "hosting", "hardware", "gabinete", "nube privada"],
+      "en": ["data center", "servers", "infrastructure", "hosting", "hardware", "cabinet", "on premises"]
+    }
+  },
+  "memory": {
+    "label": { "es": "Memoria", "en": "Memory", "pt": "Memória", "fr": "Mémoire", "de": "Arbeitsspeicher", "it": "Memoria", "ja": "メモリ", "zh": "内存", "ko": "메모리", "ar": "الذاكرة" },
+    "keywords": {
+      "es": ["ram", "hardware", "módulo de ram", "uso de memoria", "caché", "rendimiento", "almacenamiento temporal"],
+      "en": ["ram", "hardware", "dimm", "memory usage", "cache", "performance", "temporary storage"]
+    }
+  },
+  "load-balancer": {
+    "label": { "es": "Balanceador de carga", "en": "Load balancer", "pt": "Balanceador de carga", "fr": "Répartiteur de charge", "de": "Lastverteiler", "it": "Bilanciatore di carico", "ja": "ロードバランサー", "zh": "负载均衡器", "ko": "로드 밸런서", "ar": "موازن الأحمال" },
+    "keywords": {
+      "es": ["distribuir", "tráfico", "escalar", "repartir peticiones", "alta disponibilidad", "redundancia", "infraestructura"],
+      "en": ["distribute", "traffic", "scaling", "spread requests", "high availability", "redundancy", "infrastructure"]
+    }
+  },
+  "database-export": {
+    "label": { "es": "Exportar datos", "en": "Export data", "pt": "Exportar dados", "fr": "Exporter les données", "de": "Daten exportieren", "it": "Esporta dati", "ja": "データをエクスポート", "zh": "导出数据", "ko": "데이터 내보내기", "ar": "تصدير البيانات" },
+    "keywords": {
+      "es": ["extraer", "descargar base", "respaldo", "volcado", "csv", "copia de seguridad", "compartir datos"],
+      "en": ["extract", "download database", "backup", "dump", "csv", "share data", "etl"]
+    }
+  },
+  "database-import": {
+    "label": { "es": "Importar datos", "en": "Import data", "pt": "Importar dados", "fr": "Importer des données", "de": "Daten importieren", "it": "Importa dati", "ja": "データをインポート", "zh": "导入数据", "ko": "데이터 가져오기", "ar": "استيراد البيانات" },
+    "keywords": {
+      "es": ["cargar", "migrar", "subir archivo", "restaurar", "csv", "carga masiva", "ingesta"],
+      "en": ["load", "migrate", "upload file", "restore", "csv", "bulk upload", "ingest"]
+    }
+  },
+  "presentation": {
+    "label": { "es": "Presentación", "en": "Presentation", "pt": "Apresentação", "fr": "Présentation", "de": "Präsentation", "it": "Presentazione", "ja": "プレゼンテーション", "zh": "演示", "ko": "프레젠테이션", "ar": "عرض تقديمي" },
+    "keywords": {
+      "es": ["pizarra", "exponer", "junta", "diapositivas", "pitch", "reporte de resultados", "capacitación"],
+      "en": ["whiteboard", "slides", "meeting", "pitch", "keynote", "results report", "training"]
+    }
+  },
+  "equals": {
+    "label": { "es": "Igual", "en": "Equals", "pt": "Igual", "fr": "Égal", "de": "Gleich", "it": "Uguale", "ja": "イコール", "zh": "等于", "ko": "등호", "ar": "يساوي" },
+    "keywords": {
+      "es": ["resultado", "equivale", "fórmula", "calcular", "igualdad", "operación", "comparar"],
+      "en": ["result", "equal sign", "formula", "calculate", "equality", "operation", "compare"]
+    }
+  },
+  "divide": {
+    "label": { "es": "Dividir", "en": "Divide", "pt": "Dividir", "fr": "Diviser", "de": "Dividieren", "it": "Dividi", "ja": "割り算", "zh": "除法", "ko": "나누기", "ar": "قسمة" },
+    "keywords": {
+      "es": ["división", "entre", "operación", "repartir", "cociente", "calculadora", "matemáticas"],
+      "en": ["division", "divided by", "operation", "split", "quotient", "calculator", "math"]
+    }
+  }
+}

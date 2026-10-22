@@ -1,7 +1,8 @@
 // Tiempo, lugares y naturaleza: calendario, reloj, mapas, edificios, transporte, clima y
 // naturaleza. Todo se calcula con el motor (engine/geometry.mjs) y las reglas de DESIGN.md: trazo
 // de 1.5, keylines, esquinas continuas y la esquina inferior derecha recta en los contenedores.
-import { arc, badge, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { snap } from '../../engine/variants.mjs';
 
 // ── Utilidades locales ────────────────────────────────────────────────────────────────────────
 const N = (v) => {
@@ -67,10 +68,10 @@ function meet([x1, y1, r1], [x2, y2, r2]) {
 }
 const angOf = ([cx, cy], [x, y]) => deg(Math.atan2(y - cy, x - cx));
 
-// ── Recorte ───────────────────────────────────────────────────────────────────────────────────
-// Cuando una pieza pasa detrás de otra se corta con 1.5 de aire (3 de centro a centro). Se lee
-// el path como segmentos (recta, cúbica, arco), se quitan los tramos que caen dentro de alguna
-// región y se vuelve a escribir.
+// ── Trazos como segmentos ─────────────────────────────────────────────────────────────────────
+// Un path se lee como segmentos (recta, cúbica, arco de círculo) para recorrerlo de vuelta
+// (`retrace`) y para medir el aire de un trazo junto a una nube (`clearOf`). Lo que pasa detrás
+// de otra pieza nunca se recorta a mano: la pieza de encima va como insignia y el motor despeja.
 function arcSeg(a, b, r, fa, fs) {
   const dx = (a[0] - b[0]) / 2;
   const dy = (a[1] - b[1]) / 2;
@@ -142,25 +143,6 @@ function at(s, t) {
   return [0, 1].map((j) => m * m * m * s.a[j] + 3 * m * m * t * s.c1[j] + 3 * m * t * t * s.c2[j] + t * t * t * s.b[j]);
 }
 
-function piece(s, t0, t1) {
-  if (s.k === 'L') return { k: 'L', a: at(s, t0), b: at(s, t1) };
-  if (s.k === 'A') return { ...s, a: at(s, t0), b: at(s, t1), t0: s.t0 + s.dt * t0, dt: s.dt * (t1 - t0) };
-  const split = (c, t) => {
-    const p01 = lerp(c.a, c.c1, t);
-    const p12 = lerp(c.c1, c.c2, t);
-    const p23 = lerp(c.c2, c.b, t);
-    const p012 = lerp(p01, p12, t);
-    const p123 = lerp(p12, p23, t);
-    const m = lerp(p012, p123, t);
-    return [
-      { k: 'C', a: c.a, c1: p01, c2: p012, b: m },
-      { k: 'C', a: m, c1: p123, c2: p23, b: c.b },
-    ];
-  };
-  const right = t0 > 0 ? split(s, t0)[1] : s;
-  return t1 < 1 ? split(right, (t1 - t0) / (1 - t0))[0] : right;
-}
-
 function write(segs, closed) {
   let o = `M${pt(segs[0].a)}`;
   for (const s of segs) {
@@ -171,82 +153,22 @@ function write(segs, closed) {
   return closed ? `${o}Z` : o;
 }
 
-/** Tramos [t0, t1] de un segmento que quedan fuera de todas las regiones. */
-function keep(s, out) {
-  const n = 200;
-  const inside = (t) => out.some((f) => f(at(s, t)));
-  const res = [];
-  let prev = inside(0);
-  let start = prev ? null : 0;
-  for (let j = 1; j <= n; j++) {
-    const t = j / n;
-    const now = inside(t);
-    if (now !== prev) {
-      let lo = (j - 1) / n;
-      let hi = t;
-      for (let k = 0; k < 30; k++) {
-        const mid = (lo + hi) / 2;
-        if (inside(mid) === prev) lo = mid;
-        else hi = mid;
-      }
-      const edge = (lo + hi) / 2;
-      if (now) res.push([start, edge]);
-      else start = edge;
-      prev = now;
-    }
-  }
-  if (!prev) res.push([start, 1]);
-  return res.filter(([a, b]) => b - a > 1e-4);
+/**
+ * Un trazo abierto que vuelve sobre sí mismo: se ve igual, pero no encierra área. En `fill.solid`
+ * sigue siendo línea (un trazo abierto con esquinas se cerraría con una cuerda y se rellenaría).
+ */
+function retrace(d) {
+  const [sp] = parse(d);
+  const back = sp.segs
+    .slice()
+    .reverse()
+    .map((s) => (s.k === 'L' ? { k: 'L', a: s.b, b: s.a } : s.k === 'C' ? { k: 'C', a: s.b, c1: s.c2, c2: s.c1, b: s.a } : { ...s, a: s.b, b: s.a, t0: s.t0 + s.dt, dt: -s.dt }));
+  return write(sp.segs, false) + write(back, false).replace(/^M[^LCA]*/, '');
 }
 
-/** Corta los trazos `ds` donde caen dentro de alguna región (tramos de menos de `min` se quitan). */
-function cut(ds, out, min = 1) {
-  const res = [];
-  for (const d of [].concat(ds)) {
-    for (const sp of parse(d)) {
-      const runs = [];
-      let run = null;
-      let cutAny = false;
-      sp.segs.forEach((s, j) => {
-        const iv = keep(s, out);
-        if (iv.length !== 1 || iv[0][0] > 0 || iv[0][1] < 1) cutAny = true;
-        iv.forEach(([t0, t1], k) => {
-          const p = piece(s, t0, t1);
-          if (k === 0 && t0 === 0 && run && run.end === j - 1) run.segs.push(p);
-          else {
-            run = { segs: [p], first: j === 0 && t0 === 0 };
-            runs.push(run);
-          }
-          run.end = t1 === 1 ? j : -9;
-        });
-        if (!iv.length) run = null;
-      });
-      if (!cutAny) {
-        res.push(write(sp.segs, sp.closed));
-        continue;
-      }
-      if (sp.closed && runs.length > 1 && runs[0].first && runs.at(-1).end === sp.segs.length - 1) {
-        runs[0].segs = runs.pop().segs.concat(runs[0].segs);
-      }
-      for (const r of runs) {
-        const L = r.segs.reduce((n, s) => n + len(sub(s.b, s.a)), 0);
-        if (L > min) res.push(write(r.segs, false));
-      }
-    }
-  }
-  return res;
-}
-
-// Regiones de recorte.
+// Zonas para medir el aire junto a una nube.
 const GAP = 3; // centro a centro: 1.5 de aire entre trazos de 1.5
 const disc = (c, R) => (p) => len(sub(p, c)) < R;
-function nearSeg(a, b, D = GAP) {
-  return (p) => {
-    const v = sub(b, a);
-    const t = Math.max(0, Math.min(1, ((p[0] - a[0]) * v[0] + (p[1] - a[1]) * v[1]) / (v[0] ** 2 + v[1] ** 2)));
-    return len(sub(p, lerp(a, b, t))) < D;
-  };
-}
 function nearBox(x, y, w, h, D = GAP) {
   return (p) => {
     const dx = Math.max(x - p[0], 0, p[0] - x - w);
@@ -254,24 +176,12 @@ function nearBox(x, y, w, h, D = GAP) {
     return Math.hypot(dx, dy) < D;
   };
 }
-/** Polígono convexo o no (regla par-impar), engrosado D. */
-function nearPoly(pts, D = GAP) {
-  return (p) => {
-    let inside = false;
-    for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
-      const [xi, yi] = pts[i];
-      const [xj, yj] = pts[j];
-      if (yi > p[1] !== yj > p[1] && p[0] < ((xj - xi) * (p[1] - yi)) / (yj - yi) + xi) inside = !inside;
-    }
-    if (inside) return true;
-    return pts.some((a, i) => nearSeg(a, pts[(i + 1) % pts.length], D)(p));
-  };
-}
-
-/** Versión tachada: la diagonal cruza el ícono y lo corta con 1.5 de aire a cada lado. */
-function off(ds, a = [3.5, 3.5], b = [20.5, 20.5]) {
-  return [...cut(ds, [nearSeg(a, b)], 2.5), line(a, b)];
-}
+/**
+ * Tachado dibujado (los `-off`): la diagonal del tachado automático va como insignia propia y el
+ * motor despeja la base con 1.5 de aire a cada lado.
+ */
+const SLASH = line([3.6, 3.6], [20.4, 20.4]);
+const slashBadge = { d: [SLASH], knock: SLASH, fill: { solid: [SLASH] } };
 
 // ── Íconos ────────────────────────────────────────────────────────────────────────────────────
 const icons = {};
@@ -302,11 +212,15 @@ add('calendar-clock', ['programado', 'fecha y hora', 'agenda', 'recordatorio', '
 
 // ── Reloj de arena, temporizador, cronómetro y alarma ───────────────────────────────────────
 {
-  // Dos bulbos rectos arriba y abajo que se angostan hasta el cuello; tapas a lo ancho.
-  const side = (x, nx) => roundline([[x, 3.25], [x, 6.75], [nx, 12], [x, 17.25], [x, 20.75]], [0, 3, 1, 3, 0]);
-  const glass = [line([5.25, 3.25], [18.75, 3.25]), line([5.25, 20.75], [18.75, 20.75]), side(7, 10.9), side(17, 13.1)];
-  add('hourglass', ['reloj de arena', 'espera', 'tiempo', 'hourglass', 'wait'], glass);
-  add('hourglass-end', ['tiempo agotado', 'reloj de arena', 'vencido', 'time up'], [...glass, `M9.25 20.75C9.75 18.5 10.75 17.75 12 17.75S14.25 18.5 14.75 20.75`]);
+  // El vidrio es un solo contorno: dos bulbos rectos que se angostan hasta el cuello, cerrados
+  // bajo las tapas (así se rellena entero); las tapas van a lo ancho.
+  const glass = roundpoly(
+    [[7, 3.25], [17, 3.25], [17, 6.75], [13.1, 12], [17, 17.25], [17, 20.75], [7, 20.75], [7, 17.25], [10.9, 12], [7, 6.75]],
+    [0, 0, 3, 1, 3, 0, 0, 3, 1, 3],
+  );
+  const caps = [line([5.25, 3.25], [18.75, 3.25]), line([5.25, 20.75], [18.75, 20.75])];
+  add('hourglass', ['reloj de arena', 'espera', 'tiempo', 'hourglass', 'wait'], [glass, ...caps]);
+  add('hourglass-end', ['tiempo agotado', 'reloj de arena', 'vencido', 'time up'], [glass, ...caps, `M9.25 20.75C9.75 18.5 10.75 17.75 12 17.75S14.25 18.5 14.75 20.75`]);
 }
 {
   // Temporizador: el anillo es el tiempo que queda; arranca en las 12 con un remate (la perilla) y
@@ -328,15 +242,29 @@ add('calendar-clock', ['programado', 'fecha y hora', 'agenda', 'recordatorio', '
 }
 const ALARM = [12, 13.25];
 const ALARM_R = 7.25;
-function alarm(inner) {
-  const [C, r] = [ALARM, ALARM_R];
-  const bell = (a) => cut(circ(...polar(...C, 8.5, a), 3.25), [disc(C, r + GAP)]);
-  return [circ(...C, r), ...bell(-135), ...bell(-45), line(polar(...C, r, 130), polar(...C, r + 2.25, 130)), line(polar(...C, r, 50), polar(...C, r + 2.25, 50)), ...inner];
+/**
+ * Campana del despertador: el arco de un círculo (r 3.25, a 8.5 del centro) que termina a 1.5 de
+ * aire de la carátula (3 de centro a centro). `lune` es la medialuna que encierra ese arco con el
+ * mismo aire: el relleno de la campana.
+ */
+function bell(a) {
+  const B = polar(...ALARM, 8.5, a);
+  const [p] = meet([...ALARM, ALARM_R + GAP], [...B, 3.25]);
+  const half = Math.abs(((angOf(B, p) - a + 540) % 360) - 180);
+  const outer = arc(...B, 3.25, a - half, a + half);
+  const start = polar(...B, 3.25, a - half);
+  return { d: outer.d, lune: `${outer.d}A${N(ALARM_R + GAP)} ${N(ALARM_R + GAP)} 0 0 0 ${pt(start)}Z` };
 }
-add('alarm-clock', ['alarma', 'despertador', 'recordatorio', 'alarm', 'alarm clock', 'wake up'], alarm([line([12, 9.5], [12, 13.25], [14.75, 14.75])]));
-add('alarm-plus', ['nueva alarma', 'agregar alarma', 'despertador', 'add alarm', 'new alarm'], alarm([line([9.25, 13.25], [14.75, 13.25]), line([12, 10.5], [12, 16])]));
+const BELLS = [bell(-135), bell(-45)];
+const ALARM_LEGS = [130, 50].map((a) => line(polar(...ALARM, ALARM_R, a), polar(...ALARM, ALARM_R + 2.25, a)));
+const ALARM_HANDS = line([12, 9.5], [12, 13.25], [14.75, 14.75]);
+const alarm = (inner) => [circ(...ALARM, ALARM_R), ...BELLS.map((b) => b.d), ...ALARM_LEGS, ...inner];
+add('alarm-clock', ['alarma', 'despertador', 'recordatorio', 'alarm', 'alarm clock', 'wake up'], alarm([ALARM_HANDS]));
+add('alarm-plus', ['nueva alarma', 'agregar alarma', 'despertador', 'add alarm', 'new alarm'], alarm([line([12, 10.5], [12, 16]), line([9.25, 13.25], [14.75, 13.25])]));
 add('alarm-check', ['alarma activa', 'alarma lista', 'despertador', 'alarm set', 'alarm on'], alarm([line([9, 13.4], [11.1, 15.5], [15.1, 11.5])]));
-add('alarm-off', ['alarma apagada', 'sin alarma', 'silenciar alarma', 'alarm off', 'snooze'], off(alarm([line([12, 9.5], [12, 13.25], [14.75, 14.75])])));
+// Apagada: el tachado (insignia) tapa casi entera la campana de la izquierda y las manecillas;
+// no se dibujan (quedarían fragmentos).
+add('alarm-off', ['alarma apagada', 'sin alarma', 'silenciar alarma', 'alarm off', 'snooze'], [circ(...ALARM, ALARM_R), BELLS[1].d, ...ALARM_LEGS], { badge: slashBadge });
 
 // ── Reloj con flecha e insignias ──────────────────────────────────────────────────────────────
 {
@@ -368,12 +296,7 @@ function pin([cx, cy], r) {
   const b = polar(cx, cy, r, 135);
   return `M${pt(a)}A${N(r)} ${N(r)} 0 1 0 ${pt(b)}L${pt([cx, cy + r * Math.SQRT2])}Z`;
 }
-/** Región del pin engrosada (para recortar lo que pasa detrás). */
-function pinZone([cx, cy], r, D = GAP) {
-  const tip = [cx, cy + r * Math.SQRT2];
-  return [disc([cx, cy], r + D), nearPoly([polar(cx, cy, r, 45), tip, polar(cx, cy, r, 135), [cx, cy]], D)];
-}
-/** Elipse con cuatro cúbicas (para poder recortarla). */
+/** Elipse con cuatro cúbicas. */
 function ellipse(cx, cy, rx, ry) {
   const k = 0.5523;
   return `M${pt([cx + rx, cy])}C${pt([cx + rx, cy + k * ry])} ${pt([cx + k * rx, cy + ry])} ${pt([cx, cy + ry])}C${pt([cx - k * rx, cy + ry])} ${pt([cx - rx, cy + k * ry])} ${pt([cx - rx, cy])}C${pt([cx - rx, cy - k * ry])} ${pt([cx - k * rx, cy - ry])} ${pt([cx, cy - ry])}C${pt([cx + k * rx, cy - ry])} ${pt([cx + rx, cy - k * ry])} ${pt([cx + rx, cy])}Z`;
@@ -398,10 +321,15 @@ add('map-pin-x', ['quitar ubicación', 'lugar no disponible', 'sin cobertura', '
   add('map-pin-dot', ['punto exacto', 'soltar pin', 'aquí', 'drop pin', 'exact location'], [pin(c, r), circ(...c, 2), dot(12, 20)]);
 }
 {
-  // Área: el pin parado en el centro de una elipse que se abre a su paso.
+  // Área: el pin parado en el centro de una elipse. El pin va encima como insignia propia: el
+  // motor despeja la elipse con 1.5 de aire exacto.
   const c = [12, 8.25];
   const r = 5.5;
-  add('map-pin-area', ['zona', 'área', 'radio de entrega', 'area', 'nearby'], [pin(c, r), circ(...c, 2), ...cut(ellipse(12, 16.75, 9, 3.5), pinZone(c, r))]);
+  const top = pin(c, r);
+  const hole = circ(...c, 2);
+  add('map-pin-area', ['zona', 'área', 'radio de entrega', 'area', 'nearby'], [ellipse(12, 16.75, 9, 3.5)], {
+    badge: { d: [top, hole], knock: top, fill: { solid: [top], cut: [hole] } },
+  });
 }
 {
   // Varios lugares: un pin grande con su aro y otro chico, completo, a su lado (a 3 de aire, sin
@@ -533,11 +461,12 @@ add('school', ['escuela', 'colegio', 'educación', 'campus', 'school', 'educatio
     roundline([[10.25, 21.25], [10.25, 14.5], [13.75, 14.5], [13.75, 21.25]], [0, 1.25, 1.25, 0]),
   ]);
 }
+// Cama: la almohada flota a 1.5 de aire del colchón (pegada, al rellenarse se fundía con él).
 add('bed', ['hotel', 'hospedaje', 'cama', 'dormir', 'bed', 'lodging'], [
   line([3.25, 4.75], [3.25, 20.25]),
   roundline([[3.25, 11.75], [17.75, 11.75], [20.75, 14.75], [20.75, 20.25]], [0, 2.5, 2.5, 0]),
   line([3.25, 16.75], [20.75, 16.75]),
-  capsule(6.25, 7.25, 6, 4.5),
+  capsule(6.25, 5, 6.5, 3.75),
 ]);
 
 // ── Transporte ────────────────────────────────────────────────────────────────────────────────
@@ -549,22 +478,22 @@ function car(cabinTop = 5.25) {
   return [
     sq(2.75, 10.25, 18.5, 7.5, 2.5),
     roundline([[4.6, 10.25], [6.75, cabinTop], [17.25, cabinTop], [19.4, 10.25]], [0, 1.4, 1.4, 0]),
-    dot(6.75, 14),
-    dot(17.25, 14),
     roundline([[5, 17.75], [5, 20.75], [8, 20.75], [8, 17.75]], [0, 0.75, 0.75, 0]),
     roundline([[16, 17.75], [16, 20.75], [19, 20.75], [19, 17.75]], [0, 0.75, 0.75, 0]),
+    dot(6.75, 14),
+    dot(17.25, 14),
   ];
 }
 add('car', ['auto', 'coche', 'carro', 'manejar', 'car'], car());
 add('taxi', ['taxi', 'auto de alquiler', 'viaje', 'traslado', 'cab', 'ride'], [...car(6.5), roundline([[9.75, 6.5], [9.75, 3.75], [14.25, 3.75], [14.25, 6.5]], [0, 0.75, 0.75, 0])]);
 add('bus', ['autobús', 'camión', 'transporte público', 'parada', 'bus', 'transit'], [
   sq(4.75, 2.75, 14.5, 15.75, 3.25),
+  roundline([[6.75, 18.5], [6.75, 21.25], [9.25, 21.25], [9.25, 18.5]], [0, 0.75, 0.75, 0]),
+  roundline([[14.75, 18.5], [14.75, 21.25], [17.25, 21.25], [17.25, 18.5]], [0, 0.75, 0.75, 0]),
   line([4.75, 6.5], [19.25, 6.5]),
   line([4.75, 12], [19.25, 12]),
   dot(8.25, 15.25),
   dot(15.75, 15.25),
-  roundline([[6.75, 18.5], [6.75, 21.25], [9.25, 21.25], [9.25, 18.5]], [0, 0.75, 0.75, 0]),
-  roundline([[14.75, 18.5], [14.75, 21.25], [17.25, 21.25], [17.25, 18.5]], [0, 0.75, 0.75, 0]),
 ]);
 add('train', ['tren', 'metro', 'ferrocarril', 'train', 'subway'], [
   sq(5.25, 2.75, 13.5, 14.75, 4),
@@ -664,8 +593,8 @@ add('traffic-light', ['semáforo', 'tráfico', 'alto', 'crucero', 'traffic light
 add('road', ['carretera', 'camino', 'viaje', 'ruta', 'road', 'highway'], [line([8, 3], [3.5, 21]), line([16, 3], [20.5, 21]), line([12, 3.5], [12, 5.5]), line([12, 8.5], [12, 11.5]), line([12, 15], [12, 19.75])]);
 
 // ── Clima ─────────────────────────────────────────────────────────────────────────────────────
-// La nube es la de archivos (tres círculos y la base recta), calculada con arcos exactos para
-// poder recortarla y recortar lo que pasa detrás. `k` escala alrededor de (12, 12) y `o` la mueve.
+// La nube es la de archivos (tres círculos y la base recta), calculada con arcos exactos. `k`
+// escala alrededor de (12, 12) y `o` la mueve; encima de otra pieza va como insignia propia.
 const CLOUD = [[7.25, 14.25, 4], [12.5, 10.75, 5.5], [17.25, 14.5, 3.75]];
 const cloudCircles = (k = 1, o = [0, 0]) => CLOUD.map(([x, y, r]) => [o[0] + 12 + (x - 12) * k, o[1] + 12 + (y - 12) * k, r * k]);
 function cloud(k = 1, o = [0, 0]) {
@@ -680,7 +609,7 @@ function cloud(k = 1, o = [0, 0]) {
   };
   return `M${pt([C[0], base])}${ccw(C, 90, angOf(C, bc), bc)}${ccw(B, angOf(B, bc), angOf(B, ab), ab)}${ccw(A, angOf(A, ab), 90, [A[0], base])}Z`;
 }
-/** Región de la nube engrosada D (para recortar lo que pasa detrás). */
+/** Región de la nube engrosada D (para medir el aire de lo que va junto a ella). */
 function cloudZone(k = 1, o = [0, 0], D = GAP) {
   const [A, B, C] = cloudCircles(k, o);
   const base = A[1] + A[2];
@@ -724,24 +653,32 @@ function sparkle([cx, cy], R, k = 0.3) {
 add('moon-stars', ['luna y estrellas', 'noche', 'dormir', 'descanso', 'night sky', 'sleep'], [moon([10.25, 13.75], 7.5, [15, 9], 6), sparkle([17.25, 6.25], 3.75), dot(20.5, 11.75)]);
 
 add('cloud', ['nube', 'nublado', 'clima', 'cloud', 'cloudy'], [cloud()]);
-{
-  const fk = 0.82;
-  const fo = [-1.25, 2.4];
-  const bk = 0.6;
-  const bo = [4, -3.4];
-  add('clouds', ['nublado', 'nubes', 'cielo cubierto', 'clouds', 'overcast'], [cloud(fk, fo), ...cut(cloud(bk, bo), cloudZone(fk, fo))]);
+/** Insignia propia: una nube encima de otra pieza (el motor despeja lo de atrás con 1.5 de aire). */
+const cloudBadge = (d) => ({ d: [d], knock: d, fill: { solid: [d] } });
+/** ¿El trazo `d` queda entero a 1.5 de aire de la nube (k, o)? (3 de centro a centro, por fuera.) */
+function clearOf(d, k, o) {
+  const outline = parse(cloud(k, o))[0].segs.flatMap((sg) => Array.from({ length: 40 }, (_, i) => at(sg, i / 40)));
+  const inside = cloudZone(k, o, 0);
+  return parse(d)[0].segs.every((sg) =>
+    Array.from({ length: 21 }, (_, i) => at(sg, i / 20)).every((p) => !inside.some((f) => f(p)) && Math.min(...outline.map((q) => len(sub(p, q)))) >= GAP),
+  );
 }
 {
-  // Sol detrás de la nube: arriba a la izquierda, recortado con 1.5 de aire; los rayos que
-  // quedan miden 2, como los del sol.
+  // Dos nubes: la de adelante va encima como insignia propia; la de atrás, completa.
+  add('clouds', ['nublado', 'nubes', 'cielo cubierto', 'clouds', 'overcast'], [cloud(0.6, [4, -3.4])], { badge: cloudBadge(cloud(0.82, [-1.25, 2.4])) });
+}
+{
+  // Sol detrás de la nube: arriba a la izquierda; la nube va encima como insignia propia. Solo se
+  // dibujan los rayos que quedan enteros a 1.5 de aire de ella (uno a medias sería un fragmento).
   const k = 0.72;
   const o = [2.75, 3.75];
   const s = [9.5, 9.5];
-  add('cloud-sun', ['parcialmente nublado', 'medio nublado', 'sol y nubes', 'partly cloudy'], [
-    cloud(k, o),
-    ...cut([circ(...s, 2.5), ...sunRays(s, 2.5)], cloudZone(k, o), 2),
-  ]);
-  add('cloud-moon', ['noche nublada', 'luna y nubes', 'clima', 'partly cloudy night', 'cloudy night'], [cloud(k, o), ...cut(moon([9, 9], 6, [12.5, 5.25], 4.75), cloudZone(k, o), 2)]);
+  add('cloud-sun', ['parcialmente nublado', 'medio nublado', 'sol y nubes', 'partly cloudy'], [circ(...s, 2.5), ...sunRays(s, 2.5).filter((r) => clearOf(r, k, o))], {
+    badge: cloudBadge(cloud(k, o)),
+  });
+  // La luna esconde su cuerno de abajo detrás de la nube (con el cuerno junto a ella, el despeje
+  // dejaba una astilla de su punta).
+  add('cloud-moon', ['noche nublada', 'luna y nubes', 'clima', 'partly cloudy night', 'cloudy night'], [moon([9, 9], 6, [14, 7], 5.25)], { badge: cloudBadge(cloud(k, o)) });
 }
 {
   const drops = [[8, 17.25], [12, 17.25], [16, 17.25]];
@@ -787,13 +724,13 @@ add('wind', ['viento', 'aire', 'ventoso', 'wind', 'breeze'], [
   ]);
 }
 {
-  // Arcoíris que baja hasta una nube: tres bandas en arco con sus patas; las de la derecha pasan
-  // detrás de la nube con 1.5 de aire.
+  // Arcoíris que baja hasta una nube: tres bandas en arco con sus patas; la nube va encima como
+  // insignia propia y el motor despeja las patas de la derecha con 1.5 de aire.
   const band = (c, r, foot) => `M${pt([c[0] - r, foot])}V${N(c[1])}A${N(r)} ${N(r)} 0 0 1 ${pt([c[0] + r, c[1]])}V${N(foot)}`;
   const C = [11, 12.5];
-  const k = 0.46;
-  const o = [4.9, 5.4];
-  add('rainbow', ['arcoíris', 'después de la lluvia', 'esperanza', 'diversidad', 'rainbow', 'pride'], [cloud(k, o), ...cut([8.25, 5.25, 2.25].map((r) => band(C, r, 17.25)), cloudZone(k, o), 1.5)]);
+  add('rainbow', ['arcoíris', 'después de la lluvia', 'esperanza', 'diversidad', 'rainbow', 'pride'], [8.25, 5.25, 2.25].map((r) => band(C, r, 17.25)), {
+    badge: cloudBadge(cloud(0.46, [4.9, 5.4])),
+  });
 }
 {
   // Termómetro: tubo de 5.8 (el mercurio a 1.4 de aire de las paredes) que remata en un bulbo de
@@ -803,7 +740,9 @@ add('wind', ['viento', 'aire', 'ventoso', 'wind', 'breeze'], [
     const yi = yb - Math.sqrt(R * R - w * w);
     return [`M${N(x - w)} ${N(yi)}V${N(2.75 + w)}A${N(w)} ${N(w)} 0 0 1 ${N(x + w)} ${N(2.75 + w)}V${N(yi)}A${N(R)} ${N(R)} 0 1 1 ${N(x - w)} ${N(yi)}Z`, line([x, top], [x, yb])];
   };
-  add('thermometer', ['termómetro', 'temperatura', 'grados', 'thermometer', 'temperature'], thermo());
+  // El mercurio en tres tramos que se tocan (se ven como uno): sus niveles, del bulbo hacia arriba.
+  const [glass] = thermo();
+  add('thermometer', ['termómetro', 'temperatura', 'grados', 'thermometer', 'temperature'], [glass, line([12, 16.75], [12, 13.5]), line([12, 13.5], [12, 11]), line([12, 11], [12, 8.75])]);
   add('thermometer-up', ['calor', 'temperatura alta', 'sube la temperatura', 'hot', 'temperature up'], [...thermo(9, 8.25), line([17.75, 13.5], [17.75, 3.5]), head([17.75, 3.5], [0, -1], 3)]);
   add('thermometer-down', ['frío', 'temperatura baja', 'baja la temperatura', 'cold', 'temperature down'], [...thermo(9, 12.5), line([17.75, 3.5], [17.75, 13.5]), head([17.75, 13.5], [0, 1], 3)]);
 }
@@ -911,7 +850,7 @@ add('cactus', ['cactus', 'desierto', 'planta', 'cactus', 'desert'], [
     return [out, drop];
   };
   add('flame', ['llama', 'fuego', 'tendencia', 'popular', 'flame', 'fire'], flame([12, 14.25], 6.75, [13.25, 2.75]));
-  // Fogata: la llama sobre dos leños que se apoyan hacia el centro (no se cruzan: el recorte de un
+  // Fogata: la llama sobre dos leños que se apoyan hacia el centro (no se cruzan: despejar un
   // cruce tan abierto se comía medio leño).
   add('campfire', ['fogata', 'campamento', 'fuego', 'acampar', 'campfire', 'bonfire'], [
     ...flame([12, 10.25], 5, [12.75, 2.5]),
@@ -920,46 +859,44 @@ add('cactus', ['cactus', 'desierto', 'planta', 'cactus', 'desert'], [
   ]);
 }
 {
-  // Montañas: el pico de adelante completo y el de atrás que pasa detrás de él con 1.5 de aire;
-  // la base del de atrás sigue la del de adelante como un solo suelo.
+  // Montañas: el pico de atrás completo y el de adelante encima como insignia propia: el motor
+  // despeja al de atrás con 1.5 de aire exacto (también su suelo junto al de adelante).
   const F = [[2.75, 19.75], [9.5, 5.75], [16.25, 19.75]];
-  const foot = Math.atan2(F[2][1] - F[1][1], F[2][0] - F[1][0]);
-  const t = 1 / Math.tan(foot / 2); // donde empieza el redondeo (radio 1) de la esquina derecha
   const front = roundpoly(F, [1, 1.25, 1]);
-  const behind = (p) => p[1] < 18.5 && nearPoly(F)(p);
-  const back = cut(roundline([[16.25 - t, 19.75], [21.25, 19.75], [16.25, 9.75], [11, 19.75]], [0, 1, 1.25, 0]), [behind], 1.5);
-  add('mountain', ['montaña', 'cerro', 'paisaje', 'sierra', 'mountain', 'landscape'], [front, ...back]);
+  const back = roundpoly([[11, 19.75], [16.25, 9.75], [21.25, 19.75]], [1, 1.25, 1]);
+  add('mountain', ['montaña', 'cerro', 'paisaje', 'sierra', 'mountain', 'landscape'], [back], { badge: { d: [front], knock: front, fill: { solid: [front] } } });
   const k = (F[1][0] - F[0][0]) / (F[0][1] - F[1][1]);
   const L = (y) => [F[1][0] - (y - F[1][1]) * k, y];
   const Rr = (y) => [F[1][0] + (y - F[1][1]) * k, y];
-  add('mountain-snow', ['montaña nevada', 'cumbre', 'cima', 'nieve', 'snowy mountain', 'summit'], [front, ...back, line(L(10.75), [8.6, 12.25], [10.25, 10.75], Rr(11.75))]);
+  const snow = line(L(10.75), [8.6, 12.25], [10.25, 10.75], Rr(11.75));
+  add('mountain-snow', ['montaña nevada', 'cumbre', 'cima', 'nieve', 'snowy mountain', 'summit'], [back], {
+    badge: { d: [front, snow], knock: front, fill: { solid: [front], cut: [snow] } },
+  });
 }
 add('wave', ['ola', 'mar', 'océano', 'surf', 'wave', 'ocean'], [
   'M2.75 19.25C7.25 19.25 7.5 5 14.5 5A4.5 4.5 0 0 1 19 9.5A2.25 2.25 0 0 1 14.5 9.5C11.75 12.5 13 19.25 21.25 19.25',
 ]);
 {
-  // Planeta: el anillo pasa por delante abajo y por detrás arriba, con 1.5 de aire.
+  // Planeta: el anillo pasa por delante del disco abajo y por detrás arriba. La mitad de adelante va
+  // encima como insignia propia (despeja el disco con 1.5 de aire); los dos arcos de la mitad de
+  // atrás terminan a 1.5 de aire del disco (3 de centro a centro).
   const C = [12, 12];
   const R = 5.5;
   const [rx, ry] = [10.5, 2];
   const tilt = -18;
   const E = (t) => plus(C, rot([rx * Math.cos(rad(t)), ry * Math.sin(rad(t))], [0, 0], tilt));
-  // La mitad de adelante como polilínea fina, para saber qué tanto del disco tapa.
-  const half = (t0, t1) => Array.from({ length: 41 }, (_, i) => E(t0 + ((t1 - t0) * i) / 40));
-  // Las dos mitades como cúbicas (cuatro cuartos de elipse girados).
-  const quarter = (t0) => {
-    const k = 0.5523;
-    const a = E(t0);
-    const b = E(t0 + 90);
-    const ta = rot([-rx * Math.sin(rad(t0)), ry * Math.cos(rad(t0))], [0, 0], tilt);
-    const tb = rot([-rx * Math.sin(rad(t0 + 90)), ry * Math.cos(rad(t0 + 90))], [0, 0], tilt);
-    return `C${pt(plus(a, scale(ta, k)))} ${pt(sub(b, scale(tb, k)))} ${pt(b)}`;
-  };
-  const front = `M${pt(E(0))}${quarter(0)}${quarter(90)}`;
-  const back = `M${pt(E(180))}${quarter(180)}${quarter(270)}`;
-  const fp = half(0, 180);
-  const nearFront = fp.slice(1).map((p, i) => nearSeg(fp[i], p));
-  add('planet', ['planeta', 'espacio', 'saturno', 'planet', 'space'], [front, ...cut(back, [disc(C, R + GAP)]), ...cut(circ(...C, R), nearFront)]);
+  /** Arco del anillo de t0 a t1 (grados del parámetro, creciente = sentido horario). */
+  const ring = (t0, t1) => `M${pt(E(t0))}A${N(rx)} ${N(ry)} ${N(tilt)} 0 1 ${pt(E(t1))}`;
+  /** Parámetro (0–90) donde el anillo está a `d` del centro. */
+  const atDist = (d) => deg(Math.acos(Math.sqrt((d * d - ry * ry) / (rx * rx - ry * ry))));
+  const tb = atDist(R + GAP);
+  const front = `${ring(0, 90)}${ring(90, 180).replace(/^M[^A]+/, '')}`;
+  // El área que despeja: el tramo de adelante que cruza el disco, de ida y vuelta (sin área); sus
+  // puntas quedan a más de 1.5 de aire de los arcos de atrás.
+  const tk = atDist(R + 1.5);
+  const A = (t, sweep) => `A${N(rx)} ${N(ry)} ${N(tilt)} 0 ${sweep} ${pt(E(t))}`;
+  const knock = `M${pt(E(tk))}${A(90, 1)}${A(180 - tk, 1)}${A(90, 0)}${A(tk, 0)}`;
+  add('planet', ['planeta', 'espacio', 'saturno', 'planet', 'space'], [circ(...C, R), ring(180, 180 + tb), ring(360 - tb, 360)], { badge: { d: [front], knock } });
 }
 {
   const s = [15.25, 8.75];
@@ -1041,6 +978,661 @@ add('luggage', ['maleta', 'equipaje', 'viaje', 'hospedaje', 'luggage', 'suitcase
     `M${pt([g[0], g[1] - r])}C${pt([g[0] + 2, g[1] - r * 0.55])} ${pt([g[0] + 2, g[1] + r * 0.55])} ${pt([g[0], g[1] + r])}C${pt([g[0] - 2, g[1] + r * 0.55])} ${pt([g[0] - 2, g[1] - r * 0.55])} ${pt([g[0], g[1] - r])}Z`,
     line([9, 17.75], [15, 17.75]),
   ]);
+}
+
+// ── Cobertura (ronda 2): lo que faltaba de lugares, comida, clima y objetos ──────────────────
+// Granizo: la nube de lluvia y tres granos (puntos) en lugar de gotas.
+add('cloud-hail', ['granizo', 'granizada', 'tormenta de hielo', 'clima', 'hail', 'sleet'], [rainCloud(), dot(8, 18.5), dot(16, 18.5), dot(12, 20.75)]);
+{
+  // Restaurante: el tenedor (tres dientes en U y el mango que nace del de en medio) y el cuchillo
+  // (lomo recto, filo curvo y el mango en la línea del lomo).
+  const fx = 7.75;
+  const kx = 15.75;
+  add('utensils', ['restaurante', 'comida', 'cubiertos', 'comer', 'restaurant', 'dining', 'food'], [
+    `M${N(fx - 3)} 2.75V7a3 3 0 0 0 6 0V2.75`,
+    line([fx, 2.75], [fx, 21.25]),
+    `M${N(kx)} 14V2.75C${N(kx + 2.25)} 3.6 ${N(kx + 3.5)} 6 ${N(kx + 3.5)} 9.75V12.75a1.25 1.25 0 0 1-1.25 1.25Z`,
+    line([kx, 14], [kx, 21.25]),
+  ]);
+}
+{
+  // Café: la taza (recipiente: la esquina inferior derecha recta), el asa en D y dos hilos de
+  // vapor a 3 del borde (con tres se leían como «zzz»).
+  const wisp = (x) => `M${N(x)} 7C${N(x - 0.8)} 6.25 ${N(x - 0.8)} 5.5 ${N(x)} 4.85S${N(x + 0.8)} 3.5 ${N(x)} 2.75`;
+  add('coffee', ['café', 'cafetería', 'taza', 'descanso', 'coffee', 'cafe', 'break'], [
+    roundpoly([[4.25, 10], [16.25, 10], [16.25, 21.25], [4.25, 21.25]], [0.75, 0.75, 0, 3.5]),
+    roundline([[16.25, 12.5], [19.75, 12.5], [19.75, 17.25], [16.25, 17.25]], [0, 1.75, 1.75, 0]),
+    wisp(8.25),
+    wisp(12.25),
+  ]);
+}
+{
+  // Birrete: el tablero en rombo, la copa que baja de sus bordes y la borla que cuelga del borde
+  // derecho, a 3 de la copa (las puntas de los lados, más agudas, llevan radio 0.75 para que la
+  // borla nazca del tramo recto).
+  const T = [[12, 5], [21.25, 9.75], [12, 14.5], [2.75, 9.75]];
+  const k = (T[2][1] - T[3][1]) / (T[2][0] - T[3][0]);
+  const yL = T[3][1] + (7.25 - T[3][0]) * k;
+  const yT = T[1][1] + (21.25 - 19.75) * k;
+  add('graduation-cap', ['birrete', 'graduación', 'educación', 'curso', 'graduation', 'education', 'course'], [
+    roundpoly(T, [1, 0.75, 1, 0.75]),
+    `M7.25 ${N(yL)}V16.25c0 1.6 2.2 2.75 4.75 2.75s4.75-1.15 4.75-2.75V${N(yL)}`,
+    line([19.75, yT], [19.75, 16]),
+  ]);
+}
+{
+  // Puerta: la hoja con el remate de arriba redondeado, parada sobre el piso, y la perilla.
+  const leaf = roundline([[6, 21.25], [6, 2.75], [18, 2.75], [18, 21.25]], [0, 2.5, 2.5, 0]);
+  const floor = line([3.25, 21.25], [20.75, 21.25]);
+  add('door', ['puerta', 'entrada', 'acceso', 'habitación', 'door', 'entrance', 'room'], [leaf, floor, dot(14.25, 12.5)]);
+  // Abierta: el marco vacío y la hoja que gira hacia adentro sobre las bisagras de la izquierda
+  // (en perspectiva, su borde libre es más corto). Sin perilla: en la hoja angosta no cabe con
+  // 1.5 de aire.
+  add('door-open', ['puerta abierta', 'entrar', 'bienvenida', 'check-in', 'door open', 'enter', 'welcome'], [
+    roundline([[6, 21.25], [6, 2.75], [18, 2.75], [18, 21.25]], [0, 1.25, 1.25, 0]),
+    floor,
+    roundline([[6, 4.75], [11.75, 6.5], [11.75, 19.5], [6, 21.25]], [0, 0.75, 0.75, 0]),
+  ]);
+}
+{
+  // Reciclar: tres flechas que se persiguen alrededor de un triángulo; cada una dobla una esquina
+  // y deja 3.5 de hueco a la cola de la siguiente.
+  const C = [12, 13.75];
+  const V = [-90, 30, 150].map((a) => polar(...C, 10, a));
+  const g = 3.5;
+  const mid = (a, b) => lerp(a, b, 0.5);
+  const arrows = V.flatMap((v, i) => {
+    const A = V[(i + 2) % 3];
+    const B = V[(i + 1) % 3];
+    const start = plus(mid(A, v), scale(unit(sub(v, A)), g / 2));
+    const tip = sub(mid(v, B), scale(unit(sub(B, v)), g / 2));
+    return [roundline([start, v, tip], [0, 2.5, 0]), head(tip, sub(B, v), 2.75)];
+  });
+  add('recycle', ['reciclar', 'reciclaje', 'sustentable', 'reutilizar', 'recycle', 'reuse', 'eco'], arrows);
+}
+{
+  // Binoculares: dos lentes grandes abajo y, sobre cada uno, el cuerpo que se angosta hasta el
+  // ocular (sus lados son tangentes al lente); el puente une los cuerpos.
+  const y = 15;
+  const r = 4;
+  /** Punto donde la recta que baja de T toca el círculo (C, r); side = 1 por fuera, -1 por dentro. */
+  const tangent = (T, C, side) => {
+    const v = sub(T, C);
+    const a = Math.atan2(v[1], v[0]) + side * Math.acos(r / len(v));
+    return plus(C, [r * Math.cos(a), r * Math.sin(a)]);
+  };
+  const body = (cx, s) => {
+    const C = [cx, y];
+    const outer = [cx - s * 1.75, 5];
+    const inner = [cx + s * 1.75, 5];
+    return roundline([tangent(outer, C, -s), outer, inner, tangent(inner, C, s)], [0, 1.25, 1.25, 0]);
+  };
+  // El puente toca los cuerpos: sus extremos son los lados de adentro a la altura y = 9.
+  const innerAt = (cx, s, yy) => {
+    const top = [cx + s * 1.75, 5];
+    const foot = tangent(top, [cx, y], s);
+    return lerp(top, foot, (yy - top[1]) / (foot[1] - top[1]));
+  };
+  add('binoculars', ['binoculares', 'explorar', 'descubrir', 'buscar a lo lejos', 'binoculars', 'explore', 'discover'], [
+    circ(6.5, y, r),
+    circ(17.5, y, r),
+    body(6.5, 1),
+    body(17.5, -1),
+    line(innerAt(6.5, 1, 9), innerAt(17.5, -1, 9)),
+  ]);
+}
+{
+  // Mancuerna (gimnasio): dos discos, la barra entre ellos y los remates que asoman por fuera.
+  const plate = (x) => sq(x, 5.5, 3.5, 13, 1.5);
+  add('dumbbell', ['gimnasio', 'pesas', 'ejercicio', 'entrenar', 'gym', 'fitness', 'workout'], [
+    plate(4.75),
+    plate(15.75),
+    line([8.25, 12], [15.75, 12]),
+    line([2.5, 12], [4.75, 12]),
+    line([19.25, 12], [21.5, 12]),
+  ]);
+}
+
+// ── Relleno (DESIGN.md › Relleno) ─────────────────────────────────────────────────────────────
+// Por índice de `d`: `solid` se rellena (y conserva su trazo: la silueta no cambia), `cut` se cala
+// al ancho del trazo y `lines` sigue siendo línea, separada del relleno con 1.5 de aire.
+const range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i);
+const FILL = {};
+// Calendario (como el del núcleo): las argollas siguen siendo línea; se calan la cabecera y el glifo.
+for (const name of ['calendar-plus', 'calendar-minus', 'calendar-check', 'calendar-x', 'calendar-range', 'calendar-event', 'calendar-day', 'calendar-clock'])
+  FILL[name] = { solid: [0], lines: [1, 2], cut: range(3, icons[name].d.length) };
+Object.assign(FILL, {
+  hourglass: { solid: [0, 1, 2] },
+  'hourglass-end': { solid: [0, 1, 2], cut: [3] },
+  stopwatch: { solid: [0, 1, 2, 3], cut: [4] },
+  'clock-plus': { solid: [0], cut: [1] },
+  'clock-check': { solid: [0], cut: [1] },
+  'time-zone': { solid: [0], cut: [1] },
+  // El sol a medias se rellena hasta el horizonte; los rayos y la flecha siguen siendo línea.
+  sunrise: { solid: [0, 1], lines: [2, 3, 4, 5, 6, 7] },
+  sunset: { solid: [0, 1], lines: [2, 3, 4, 5, 6, 7] },
+  map: { solid: [0], cut: [1, 2] },
+  'map-pin': { solid: [0], cut: [1] },
+  'map-pin-plus': { solid: [0], cut: [1, 2] },
+  'map-pin-check': { solid: [0], cut: [1] },
+  'map-pin-x': { solid: [0], cut: [1, 2] },
+  'map-pin-dot': { solid: [0, 2], cut: [1] },
+  'map-pin-area': { solid: [0] },
+  'map-pins': { solid: [0, 2], cut: [1] },
+  compass: { solid: [0], cut: [1, 2, 3, 4, 5] },
+  'location-arrow': { solid: [0] },
+  navigation: { solid: [0], cut: [1] },
+  signpost: { solid: [0, 1, 2, 3, 4] },
+  directions: { solid: [0], cut: [1, 2] },
+  house: { solid: [0, 1], cut: [2, 3] },
+  'office-building': { solid: [0], cut: range(1, 8) },
+  factory: { solid: [0], cut: [1] },
+  hospital: { solid: [0], cut: [1, 2, 3] },
+  // El toldo y el local se rellenan juntos (calar su lindero dejaba una ranura suelta); las
+  // rayas del toldo y la puerta se calan.
+  'corner-shop': { solid: [0, 3], cut: [1, 2, 4] },
+  ship: { solid: [0, 1, 2] },
+  // Clima: los cuerpos (sol, luna, nubes) se rellenan; rayos, gotas, copos y rachas siguen siendo
+  // línea. Lo que va detrás de una nube-insignia se rellena entero y el motor lo despeja.
+  sun: { solid: [0], lines: range(1, 9) },
+  'sun-dim': { solid: range(0, 9) },
+  moon: { solid: [0] },
+  'moon-stars': { solid: [0, 1, 2] },
+  cloud: { solid: [0] },
+  clouds: { solid: [0] },
+  'cloud-sun': { solid: [0], lines: range(1, icons['cloud-sun'].d.length) },
+  'cloud-moon': { solid: [0] },
+  'cloud-rain': { solid: [0], lines: [1, 2, 3] },
+  'cloud-drizzle': { solid: [0], lines: [1, 2, 3, 4] },
+  'cloud-snow': { solid: [0], lines: range(1, 7) },
+  storm: { solid: [0], lines: [1, 2, 3] },
+  fog: { solid: [0], lines: [1, 2] },
+  tornado: { solid: [0], lines: [1, 2, 3] },
+  thermometer: { solid: [0], cut: [1, 2, 3] },
+  'thermometer-up': { solid: [0], cut: [1], lines: [2, 3] },
+  'thermometer-down': { solid: [0], cut: [1], lines: [2, 3] },
+  'cloud-hail': { solid: [0, 1, 2, 3] },
+  // Naturaleza
+  droplet: { solid: [0], cut: [1] },
+  droplets: { solid: [0, 1] },
+  tree: { solid: [0, 1, 2] },
+  flower: { solid: [0, 2, 3], cut: [1] },
+  sprout: { solid: [0, 1, 2, 3] },
+  cactus: { solid: [0, 1] },
+  flame: { solid: [0], cut: [1] },
+  campfire: { solid: [0, 2, 3], cut: [1] },
+  mountain: { solid: [0] },
+  'mountain-snow': { solid: [0] },
+  wave: { solid: [0] },
+  'shooting-star': { solid: [0], lines: [1, 2, 3] },
+  footprints: { solid: [0, 1, 2, 3] },
+  paw: { solid: [0, 1, 2, 3, 4] },
+  cat: { solid: [0], cut: [1, 2, 3] },
+  fish: { solid: [0, 1], cut: [2] },
+  tent: { solid: [0], cut: [1] },
+  volcano: { solid: [0], lines: [1, 2, 3] },
+  // Viaje y objetos: el asa de la maleta sigue siendo línea (como la del maletín del núcleo); las
+  // ruedas, pegadas al cuerpo, se rellenan con él.
+  luggage: { solid: [0, 4, 5], lines: [1], cut: [2, 3] },
+  passport: { solid: [0], cut: [1, 2, 3] },
+  'graduation-cap': { solid: [0, 1, 2] },
+  door: { solid: [0, 1], cut: [2] },
+  binoculars: { solid: [0, 1, 2, 3, 4] },
+  dumbbell: { solid: [0, 1, 2, 3, 4] },
+  school: { solid: [0, 1, 2], cut: [3] },
+  bus: { solid: [0, 1, 2], cut: [3, 4, 5, 6] },
+  train: { solid: [0, 4, 5], cut: [1, 2, 3] },
+  plane: { solid: [0] },
+  'plane-takeoff': { solid: [0], lines: [1] },
+  'plane-landing': { solid: [0], lines: [1] },
+  sailboat: { solid: [0, 1, 2] },
+  scooter: { solid: [0, 1, 2, 3, 4] },
+  parking: { solid: [0], cut: [1] },
+  'traffic-light': { solid: [0], cut: [1, 2, 3] },
+});
+for (const [name, spec] of Object.entries(FILL)) {
+  const pick = (ix) => ix.map((i) => icons[name].d[i]);
+  icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
+}
+// Despertador: la carátula y las patas rellenas, cada campana es la medialuna que deja su arco
+// con 1.5 de aire; se calan las manecillas o el signo.
+for (const name of ['alarm-clock', 'alarm-plus', 'alarm-check'])
+  icons[name].fill = { solid: [icons[name].d[0], ...BELLS.map((b) => b.lune), ...ALARM_LEGS], cut: icons[name].d.slice(5) };
+icons['alarm-off'].fill = { solid: [icons['alarm-off'].d[0], BELLS[1].lune, ...ALARM_LEGS] };
+// Ruta: los extremos rellenos y el camino sigue siendo línea (cerrado por su cuerda se rellenaba).
+icons.route.fill = { solid: [icons.route.d[0], retrace(icons.route.d[1]), icons.route.d[2]] };
+// Auto y taxi: la cabina (el vidrio) se separa de la carrocería por la línea de su techo, calada.
+for (const name of ['car', 'taxi']) {
+  const d = icons[name].d;
+  icons[name].fill = { solid: [d[0], d[1], d[2], d[3], ...d.slice(6)], cut: [line([6.75, 10.25], [17.25, 10.25]), d[4], d[5]] };
+}
+// Cama: el colchón se rellena (su cuerpo cerrado es el mismo contorno); cabecera, base y
+// almohada como en el contorno.
+{
+  const [head, top, frame, pillow] = icons.bed.d;
+  const mattress = roundpoly([[3.25, 11.75], [17.75, 11.75], [20.75, 14.75], [20.75, 16.75], [3.25, 16.75]], [0, 2.5, 2.5, 0, 0]);
+  icons.bed.fill = { solid: [head, mattress, retrace(top), frame, pillow] };
+}
+// Ancla: el aro relleno y las puntas como uñas sólidas; el brazo curvo sigue siendo línea.
+{
+  const [ring, shank, stock, bow, ...tips] = icons.anchor.d;
+  icons.anchor.fill = { solid: [ring, shank, stock, retrace(bow), ...tips] };
+}
+// Persona caminando: la cabeza rellena; brazos y piernas siguen siendo línea.
+icons.walking.fill = { solid: [icons.walking.d[0], ...icons.walking.d.slice(1).map(retrace)] };
+// Surtidor y cargador: el cuerpo relleno, la manguera sigue siendo línea; se calan la ventanilla
+// o el rayo.
+for (const name of ['gas-station', 'ev-charger']) {
+  const [body, mark, hose] = icons[name].d;
+  icons[name].fill = { solid: [body, retrace(hose)], cut: [mark] };
+}
+// Arcoíris: las bandas siguen siendo línea (cerradas por su cuerda se fundían en un arco macizo);
+// la nube-insignia, rellena.
+icons.rainbow.fill = { solid: icons.rainbow.d.map(retrace) };
+// Paraguas: la tela rellena; el mango sigue siendo línea.
+icons.umbrella.fill = { solid: [icons.umbrella.d[0], retrace(icons.umbrella.d[1])] };
+// Hoja: el tallo sigue entero y la nervadura se cala desde 2.8 de la punta (calada desde la
+// punta, cortaba el tallo).
+icons.leaf.fill = { solid: icons.leaf.d, cut: [line([7.5, 16.5], [14.25, 9.75])] };
+// Pino: el tronco se cala dentro de la copa desde 1.5 de su base (el de afuera sigue entero), con
+// la rama que sale de él.
+icons['tree-pine'].fill = { solid: icons['tree-pine'].d.slice(0, 2), cut: [line([12, 16.25], [12, 9.75]), icons['tree-pine'].d[2]] };
+// Planeta: el disco relleno; los arcos de atrás siguen siendo línea y la mitad de adelante
+// (insignia) también.
+icons.planet.fill = { solid: [icons.planet.d[0]], lines: icons.planet.d.slice(1) };
+// Cubiertos y taza: los dientes del tenedor y el asa siguen siendo línea (cerrados por su cuerda
+// se volvían una pala y una D maciza).
+{
+  const [tines, fork, blade, knife] = icons.utensils.d;
+  icons.utensils.fill = { solid: [retrace(tines), fork, blade, knife] };
+  const [cup, handle, ...steam] = icons.coffee.d;
+  icons.coffee.fill = { solid: [cup, retrace(handle)], lines: steam };
+}
+// Puerta abierta: la hoja rellena; el marco sigue siendo línea (cerrado por el piso, se rellenaba
+// el vano entero).
+icons['door-open'].fill = { solid: [retrace(icons['door-open'].d[0]), icons['door-open'].d[1], icons['door-open'].d[2]] };
+// Ciudad: los dos edificios rellenos; se cala su lindero (el muro de la torre que el otro tapa).
+icons.city.fill = { solid: icons.city.d.slice(0, 2), cut: [line([12.75, 9], [12.75, 21.25]), ...icons.city.d.slice(2)] };
+// Solo líneas abiertas: su relleno es el mismo contorno.
+// El temporizador es un aro abierto (relleno, su cuerda lo volvía un disco mordido).
+for (const name of ['timer', 'clock-forward', 'bicycle', 'road', 'wind', 'snowflake', 'palm-tree', 'water', 'recycle']) icons[name].fill = false;
+
+// ── Piezas con nombre (DESIGN.md › Piezas con nombre) ─────────────────────────────────────────
+const PARTS = {
+  hourglass: { glass: [0], caps: [1, 2] },
+  'hourglass-end': { glass: [0], caps: [1, 2], sand: [3] },
+  timer: { ring: [0], knob: [1], hand: [2] },
+  stopwatch: { face: [0], crown: [1, 2], button: [3], hand: [4] },
+  'alarm-clock': { face: [0], bells: [1, 2], legs: [3, 4], hands: [5] },
+  'alarm-plus': { face: [0], bells: [1, 2], legs: [3, 4], mark: [5, 6] },
+  'alarm-check': { face: [0], bells: [1, 2], legs: [3, 4], mark: [5] },
+  'alarm-off': { face: [0], bell: [1], legs: [2, 3] },
+  'clock-forward': { arrow: [0, 1], hands: [2] },
+  'clock-plus': { face: [0], hands: [1] },
+  'clock-check': { face: [0], hands: [1] },
+  'time-zone': { globe: [0], meridian: [1] },
+  sunrise: { horizon: [0], sun: [1], rays: [2, 3, 4, 5], arrow: [6, 7] },
+  sunset: { horizon: [0], sun: [1], rays: [2, 3, 4, 5], arrow: [6, 7] },
+  map: { map: [0], folds: [1, 2] },
+  'map-pin': { pin: [0], hole: [1] },
+  'map-pin-plus': { pin: [0], mark: [1, 2] },
+  'map-pin-check': { pin: [0], mark: [1] },
+  'map-pin-x': { pin: [0], mark: [1, 2] },
+  'map-pin-dot': { pin: [0, 1], spot: [2] },
+  'map-pin-area': { area: [0] },
+  'map-pins': { pin: [0, 1], second: [2] },
+  compass: { ring: [0], needle: [1], ticks: [2, 3, 4, 5] },
+  'location-arrow': { arrow: [0] },
+  navigation: { arrow: [0], ridge: [1] },
+  route: { start: [0], path: [1], end: [2] },
+  signpost: { signs: [0, 1], post: [2, 3, 4] },
+  directions: { sign: [0], arrow: [1, 2] },
+  house: { roof: [0], walls: [1], door: [2], window: [3] },
+  'office-building': { body: [0], windows: range(1, 7), door: [7] },
+  city: { tower: [0], building: [1], windows: range(2, 8) },
+  factory: { body: [0], door: [1] },
+  hospital: { body: [0], cross: [1, 2], door: [3] },
+  school: { body: [0], pole: [1], flag: [2], door: [3] },
+  'corner-shop': { awning: [0, 1, 2], walls: [3], door: [4] },
+  bed: { headboard: [0], mattress: [1], frame: [2], pillow: [3] },
+  car: { body: [0], cabin: [1], wheels: [2, 3], lights: [4, 5] },
+  taxi: { body: [0], cabin: [1], wheels: [2, 3], lights: [4, 5], sign: [6] },
+  bus: { body: [0], wheels: [1, 2], windows: [3, 4], lights: [5, 6] },
+  train: { body: [0], window: [1], lights: [2, 3], rails: [4, 5] },
+  plane: { plane: [0] },
+  'plane-takeoff': { plane: [0], ground: [1] },
+  'plane-landing': { plane: [0], ground: [1] },
+  ship: { hull: [0], cabin: [1], funnel: [2] },
+  sailboat: { sails: [0, 1], hull: [2] },
+  anchor: { ring: [0], shank: [1], stock: [2], arms: [3, 4, 5] },
+  bicycle: { wheels: [0, 1], frame: [2, 3], seat: [4, 5], handlebar: [6] },
+  scooter: { wheels: [0, 1], deck: [2], stem: [3], handlebar: [4] },
+  walking: { head: [0], body: [1], legs: [2, 3], arms: [4] },
+  'gas-station': { pump: [0], window: [1], hose: [2] },
+  'ev-charger': { pump: [0], bolt: [1], hose: [2] },
+  parking: { sign: [0], letter: [1] },
+  // Cada luz por separado: el semáforo enciende la que toca.
+  'traffic-light': { body: [0], red: [1], yellow: [2], green: [3] },
+  road: { edges: [0, 1], lanes: [2, 3, 4] },
+  sun: { sun: [0], rays: range(1, 9) },
+  'sun-dim': { sun: [0], rays: range(1, 9) },
+  moon: { moon: [0] },
+  'moon-stars': { moon: [0], stars: [1, 2] },
+  cloud: { cloud: [0] },
+  clouds: { back: [0] },
+  'cloud-sun': { sun: [0], rays: range(1, icons['cloud-sun'].d.length) },
+  'cloud-moon': { moon: [0] },
+  'cloud-rain': { cloud: [0], drops: [1, 2, 3] },
+  'cloud-drizzle': { cloud: [0], drops: [1, 2, 3, 4] },
+  'cloud-snow': { cloud: [0], flakes: range(1, 7) },
+  storm: { cloud: [0], bolt: [1], drops: [2, 3] },
+  fog: { cloud: [0], mist: [1, 2] },
+  wind: { gusts: [0, 1, 2] },
+  tornado: { top: [0], turns: [1, 2, 3] },
+  snowflake: { arms: range(0, 6), branches: range(6, 12) },
+  rainbow: { bands: [0, 1, 2] },
+  thermometer: { body: [0], level: [1, 2, 3] },
+  'thermometer-up': { body: [0], level: [1], arrow: [2, 3] },
+  'thermometer-down': { body: [0], level: [1], arrow: [2, 3] },
+  umbrella: { canopy: [0], handle: [1] },
+  'cloud-hail': { cloud: [0], hail: [1, 2, 3] },
+  droplet: { drop: [0], shine: [1] },
+  droplets: { large: [0], small: [1] },
+  leaf: { leaf: [0], stem: [1] },
+  tree: { crown: [0], trunk: [1], branch: [2] },
+  'tree-pine': { crown: [0], trunk: [1], branch: [2] },
+  'palm-tree': { trunk: [0], fronds: [1, 2, 3, 4] },
+  flower: { petals: [0], center: [1], stem: [2], leaf: [3] },
+  sprout: { stem: [0], leaves: [1, 2], ground: [3] },
+  cactus: { cactus: [0], ground: [1] },
+  flame: { flame: [0], core: [1] },
+  campfire: { flame: [0], core: [1], logs: [2, 3] },
+  mountain: { back: [0] },
+  'mountain-snow': { back: [0] },
+  wave: { wave: [0] },
+  planet: { planet: [0], ring: [1, 2] },
+  'shooting-star': { star: [0], trail: [1, 2, 3] },
+  footprints: { left: [0, 1], right: [2, 3] },
+  paw: { pad: [0], toes: [1, 2, 3, 4] },
+  cat: { head: [0], eyes: [1, 2], mouth: [3] },
+  fish: { body: [0], tail: [1], eye: [2] },
+  tent: { tent: [0], door: [1] },
+  volcano: { mountain: [0], lava: [1, 2, 3] },
+  water: { waves: [0, 1, 2] },
+  luggage: { body: [0], handle: [1], stripes: [2, 3], wheels: [4, 5] },
+  passport: { cover: [0], globe: [1, 2], line: [3] },
+  utensils: { fork: [0, 1], knife: [2, 3] },
+  coffee: { cup: [0], handle: [1], steam: [2, 3] },
+  'graduation-cap': { board: [0], cap: [1], tassel: [2] },
+  door: { door: [0], floor: [1], knob: [2] },
+  'door-open': { frame: [0], floor: [1], door: [2] },
+  recycle: { arrows: range(0, 6) },
+  binoculars: { lenses: [0, 1], bodies: [2, 3], bridge: [4] },
+  dumbbell: { plates: [0, 1], bar: [2, 3, 4] },
+};
+for (const name of Object.keys(icons).filter((n) => n.startsWith('calendar-'))) {
+  const n = icons[name].d.length;
+  PARTS[name] = { body: [0], rings: [1, 2], header: [3], ...(n > 4 && { mark: range(4, n) }) };
+}
+for (const [name, p] of Object.entries(PARTS)) icons[name].parts = p;
+
+// ── Movimiento (DESIGN.md › Movimiento) ───────────────────────────────────────────────────────
+// La insignia de reloj gira sus manecillas en su lugar (centro 17.25, 17.25).
+const BC = [17.25, 17.25];
+const MOTION = {
+  'calendar-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'time-zone': { effect: 'spin', parts: ['badge'], origin: BC },
+  // El reloj de arena se voltea; el que ya se vació se sacude.
+  hourglass: { effect: 'spin', origin: [12, 12] },
+  'hourglass-end': { effect: 'wiggle', origin: [12, 20.75] },
+  timer: { effect: 'spin', parts: ['hand'], origin: [12, 12] },
+  stopwatch: { effect: 'spin', parts: ['hand'], origin: [12, 13.25] },
+  'alarm-clock': { effect: 'ring', origin: ALARM },
+  'alarm-plus': { effect: 'ring', origin: ALARM },
+  'alarm-check': { effect: 'ring', origin: ALARM },
+  'clock-forward': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
+  'clock-plus': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
+  'clock-check': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
+  sunrise: { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] },
+  sunset: { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] },
+  // Los pines saltan (como el pin del núcleo); el que señala un punto o un área salta solo.
+  'map-pin': { effect: 'bounce', vector: [0, -2] },
+  'map-pin-plus': { effect: 'bounce', vector: [0, -2] },
+  'map-pin-check': { effect: 'bounce', vector: [0, -2] },
+  'map-pin-x': { effect: 'bounce', vector: [0, -2] },
+  'map-pin-dot': { effect: 'bounce', parts: ['pin'], vector: [0, -2] },
+  'map-pin-area': { effect: 'bounce', parts: ['badge'], vector: [0, -2] },
+  'map-pins': { effect: 'bounce', parts: ['pin'], vector: [0, -2] },
+  compass: { effect: 'wiggle', parts: ['needle'], origin: [12, 12] },
+  'location-arrow': { effect: 'slide', vector: [1.5, -1.5] },
+  navigation: { effect: 'slide', vector: [0, -2] },
+  directions: { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] },
+  school: { effect: 'wiggle', parts: ['flag'], origin: [12, 4.1] },
+  // Los vehículos de frente brincan en su suspensión; los de perfil avanzan hacia donde miran.
+  car: { effect: 'bounce', vector: [0, -1.5] },
+  taxi: { effect: 'bounce', vector: [0, -1.5] },
+  bus: { effect: 'bounce', vector: [0, -1.5] },
+  train: { effect: 'bounce', parts: ['body', 'window', 'lights'], vector: [0, -1.5] },
+  plane: { effect: 'slide', vector: [1.5, -1.5] },
+  'plane-takeoff': { effect: 'slide', parts: ['plane'], vector: [1.75, -1] },
+  'plane-landing': { effect: 'slide', parts: ['plane'], vector: [1.75, 1] },
+  ship: { effect: 'float', vector: [0, -1.5] },
+  sailboat: { effect: 'float', vector: [0, -1.5] },
+  anchor: { effect: 'wiggle', origin: [12, 4.75] },
+  bicycle: { effect: 'slide', vector: [2, 0] },
+  scooter: { effect: 'slide', vector: [2, 0] },
+  walking: { effect: 'slide', vector: [1.5, 0] },
+  'ev-charger': { effect: 'beat', parts: ['bolt'], origin: [8.25, 12.4] },
+  road: { effect: 'slide', parts: ['lanes'], vector: [0, 1.5] },
+  // Clima: los rayos giran, las nubes se desplazan, la lluvia cae inclinada, la nieve flota, el
+  // granizo rebota y el rayo late.
+  sun: { effect: 'spin', parts: ['rays'], origin: [12, 12] },
+  'sun-dim': { effect: 'spin', parts: ['rays'], origin: [12, 12] },
+  moon: { effect: 'wiggle', origin: [11.5, 12.5] },
+  'moon-stars': { effect: 'beat', parts: ['stars'], origin: [17.25, 6.25] },
+  cloud: { effect: 'float', vector: [1.5, 0] },
+  clouds: { effect: 'float', parts: ['badge'], vector: [1.5, 0] },
+  'cloud-sun': { effect: 'float', parts: ['badge'], vector: [1.5, 0] },
+  'cloud-moon': { effect: 'float', parts: ['badge'], vector: [1.5, 0] },
+  'cloud-rain': { effect: 'slide', parts: ['drops'], vector: [-0.5, 1.5] },
+  'cloud-drizzle': { effect: 'slide', parts: ['drops'], vector: [-0.35, 1] },
+  'cloud-snow': { effect: 'float', parts: ['flakes'], vector: [0, 1.5] },
+  storm: { effect: 'beat', parts: ['bolt'], origin: [12.25, 19.5] },
+  fog: { effect: 'float', parts: ['mist'], vector: [1.5, 0] },
+  wind: { effect: 'slide', vector: [2, 0] },
+  tornado: { effect: 'wiggle', origin: [11, 19.75] },
+  snowflake: { effect: 'spin', origin: [12, 12] },
+  'thermometer-up': { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] },
+  'thermometer-down': { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] },
+  umbrella: { effect: 'wiggle', origin: [12, 12.5] },
+  'cloud-hail': { effect: 'bounce', parts: ['hail'], vector: [0, 1.5] },
+  // Naturaleza: lo que crece se mece desde su raíz; el fuego titila; el agua se desplaza.
+  droplet: { effect: 'bounce', vector: [0, 1.5] },
+  droplets: { effect: 'bounce', vector: [0, 1.5] },
+  leaf: { effect: 'wiggle', origin: [3.25, 20.75] },
+  tree: { effect: 'wiggle', origin: [12, 21.25] },
+  'tree-pine': { effect: 'wiggle', origin: [12, 21.25] },
+  'palm-tree': { effect: 'wiggle', origin: [10.25, 21.25] },
+  flower: { effect: 'wiggle', origin: [12, 21.25] },
+  sprout: { effect: 'beat', origin: [12, 21] },
+  flame: { effect: 'wiggle', origin: [12, 20.5] },
+  campfire: { effect: 'wiggle', parts: ['flame', 'core'], origin: [12, 15] },
+  wave: { effect: 'float', vector: [1.5, 0] },
+  water: { effect: 'float', vector: [1.5, 0] },
+  planet: { effect: 'float', vector: [0, -1.5] },
+  'shooting-star': { effect: 'slide', vector: [1.5, -1.5] },
+  footprints: { effect: 'slide', vector: [0, -1.5] },
+  fish: { effect: 'slide', vector: [-1.5, 0] },
+  volcano: { effect: 'bounce', parts: ['lava'], vector: [0, -1.5] },
+  coffee: { effect: 'float', parts: ['steam'], vector: [0, -1.5] },
+  'graduation-cap': { effect: 'bounce', vector: [0, -2] },
+  recycle: { effect: 'spin', origin: [12, 13.75] },
+  dumbbell: { effect: 'bounce', vector: [0, -1.5] },
+};
+for (const [name, m] of Object.entries(MOTION)) icons[name].motion = m;
+
+// ── Variantes automáticas (DESIGN.md › Variantes) ─────────────────────────────────────────────
+const offV = (names, v) => {
+  for (const n of names) icons[n].variants = { ...icons[n].variants, ...v };
+};
+// Con insignia: el encierro relleno no la dibuja y al 58 % deja de leerse; el tache la atravesaría.
+offV(Object.keys(icons).filter((n) => icons[n].badge), { circle: false, square: false, slash: false });
+// Relojes: ya vienen en su aro.
+offV(['timer', 'stopwatch', 'clock-forward'], { circle: false });
+offV(['compass'], { circle: false });
+// El letrero de indicaciones ya es su propio marco.
+offV(['directions'], { circle: false, square: false });
+offV(['parking'], { square: false });
+// Ya dicen «no»: tacharlos no agrega nada.
+offV(['calendar-x', 'map-pin-x'], { slash: false });
+// El despertador ya tiene su versión apagada dibujada a mano (alarm-off).
+offV(['alarm-clock'], { slash: false });
+
+// ── Niveles (DESIGN.md › Niveles): el mercurio sube del bulbo hacia arriba ──────────────────
+icons.thermometer.levels = [[1], [2], [3]];
+// El brillo del sol: a medias, los cuatro rayos de los ejes; lleno, también los diagonales.
+for (const name of ['sun', 'sun-dim']) icons[name].levels = [[1, 3, 5, 7], [2, 4, 6, 8]];
+
+// ── Espejo (DESIGN.md › Espejo) ───────────────────────────────────────────────────────────────
+// La vuelta de las indicaciones sigue la dirección de lectura.
+for (const name of ['directions']) icons[name].mirror = true;
+
+// ── 16 px (DESIGN.md › 16 px) ─────────────────────────────────────────────────────────────────
+// El motor no ajusta al pixel un `small`: su base se ajusta aquí con `snap` y lo nuevo va por
+// centros de pixel (0.75 + 1.5k) o, los puntos de 2 × 2 pixeles, por sus bordes (múltiplos de 1.5).
+const sharp = (list) => list.map((d) => snap(d));
+const sharpFill = (fill) => Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, sharp(v)]));
+const px = (k) => 0.75 + 1.5 * k;
+// Insignias a 16 px (las mismas de archivos): el círculo de 5.7 px no deja lugar a su signo, que se
+// volvía una mancha gris. El signo va solo, de 5 pixeles, centrado en el pixel de la insignia; el
+// motor despeja el mismo círculo. El reloj conserva su aro (es la carátula).
+const at16 = (dx, dy) => [px(11 + dx), px(11 + dy)];
+const RING = circ(...BC, 4.25);
+function badge16(kind) {
+  if (kind === 'clock') {
+    const face = circ(...BC, 4.5);
+    const hands = line(at16(0, -2), at16(0, 0), at16(1, 1));
+    return { d: [face, hands], knock: face, fill: { solid: [face], cut: [hands] } };
+  }
+  const d = kind === 'plus' ? [line(at16(0, -2), at16(0, 2)), line(at16(-2, 0), at16(2, 0))] : [line(at16(-2, 0), at16(0, 2), at16(3, -1))];
+  return { d, knock: `${RING}${d.join('')}` };
+}
+const withBadge16 = (name, kind) => {
+  const icon = icons[name];
+  icon.small = { d: sharp(icon.d), fill: sharpFill(icon.fill), badge: badge16(kind) };
+};
+withBadge16('calendar-clock', 'clock');
+// Reloj y globo con insignia: con la carátula centrada en 12 las manecillas caían entre pixeles. A
+// 16 px la carátula se centra en un pixel (11.25, medio pixel hacia la esquina libre), con la
+// manecilla de los minutos de 3 pixeles y la de la hora a 45°; el meridiano se abre 2 pixeles.
+{
+  const face = circ(11.25, 11.25, 9);
+  const hands = line([11.25, 6.75], [11.25, 11.25], [8.25, 8.25]);
+  for (const [name, kind] of [['clock-plus', 'plus'], ['clock-check', 'check']])
+    icons[name].small = { d: [face, hands], fill: { solid: [face], cut: [hands] }, badge: badge16(kind) };
+  const meridian = 'M11.25 2.25A15 15 0 0 1 11.25 20.25A15 15 0 0 1 11.25 2.25Z';
+  icons['time-zone'].small = { d: [face, meridian], fill: { solid: [face], cut: [meridian] }, badge: badge16('clock') };
+}
+// Día marcado: el punto de 0.7 caía entre pixeles (una mancha gris). El calendario de 12 × 11
+// pixeles con su centro en un borde de pixel y el punto de 2 × 2 pixeles justo al centro.
+{
+  const body = sq(3.75, 5.25, 16.5, 15, 3.5, BR);
+  const rings = [line([8.25, 2.25], [8.25, 6.75]), line([15.75, 2.25], [15.75, 6.75])];
+  const header = line([3.75, 9.75], [20.25, 9.75]);
+  const mark = dot(12, 15, 1);
+  icons['calendar-day'].small = { d: [body, ...rings, header, mark], fill: { solid: [body], lines: rings, cut: [header, mark] } };
+}
+
+// Oficina y ciudad: las ventanas de r 0.3 desaparecían. Ventanas de 2 × 2 pixeles con 1 pixel
+// de aire entre ellas y a los muros; muros y puerta por centros de pixel.
+{
+  const body = sq(5.25, 2.25, 13.5, 19.5, 3, BR);
+  const windows = [9, 15].flatMap((x) => [6, 10.5, 15].map((y) => dot(x, y, 1)));
+  const door = roundline([[9.75, 21.75], [9.75, 18.75], [14.25, 18.75], [14.25, 21.75]], [0, 0.75, 0.75, 0]);
+  icons['office-building'].small = { d: [body, ...windows, door], fill: { solid: [body], cut: [...windows, door] } };
+}
+{
+  const tower = sq(2.25, 2.25, 10.5, 19.5, 2.5, BR);
+  const building = roundline([[12.75, 9.75], [20.25, 9.75], [20.25, 21.75], [12.75, 21.75]], [0, 2.5, 0, 0]);
+  const windows = [...[6, 10.5, 15].map((y) => dot(7.5, y, 1)), ...[13.5, 18].map((y) => dot(16.5, y, 1))];
+  icons.city.small = { d: [tower, building, ...windows], fill: { solid: [tower, building], cut: [line([12.75, 9.75], [12.75, 21.75]), ...windows] } };
+}
+// Agua: las ondas de amplitud 1 se volvían barras grises. Ondas de amplitud 1.5 (sus crestas en
+// centros de pixel) con 2 pixeles de aire entre ellas.
+{
+  const wave = (y, x0, n, h = 3, a = 1.5) => {
+    let d = `M${pt([x0, y])}`;
+    for (let i = 0; i < n; i++) {
+      const sg = i % 2 ? 1 : -1;
+      const x = x0 + i * h;
+      d += `C${pt([x + h / 3, y + (sg * 4 * a) / 3])} ${pt([x + (2 * h) / 3, y + (sg * 4 * a) / 3])} ${pt([x + h, y])}`;
+    }
+    return d;
+  };
+  icons.water.small = { d: [wave(5.25, 2.25, 6), wave(12, 5.25, 4), wave(18.75, 2.25, 6)] };
+}
+// Arcoíris: tres bandas y la nube no caben (1 pixel entre bandas, la nube una mancha). Dos medios
+// arcos con 2 pixeles de aire, con sus extremos y crestas en centros de pixel.
+{
+  const band = (r) => `M${N(12 - r)} 16.5A${N(r)} ${N(r)} 0 0 1 ${N(12 + r)} 16.5`;
+  const d = [band(8.25), band(3.75)];
+  icons.rainbow.small = { d, fill: { solid: d.map(retrace) } };
+}
+// Indicaciones: el rombo con sus lados a 45° por centros de pixel y la vuelta de 2 × 3 pixeles,
+// a 1.5 de aire del rombo.
+{
+  const sign = roundpoly([[12, 3], [21, 12], [12, 21], [3, 12]], 2.25);
+  const turn = roundline([[9.75, 14.25], [9.75, 11.25], [15.75, 11.25]], [0, 1.5, 0]);
+  const tip = line([13.5, 9], [15.75, 11.25], [13.5, 13.5]);
+  icons.directions.small = { d: [sign, turn, tip], fill: { solid: [sign], cut: [turn, tip] } };
+}
+// Brújula: a 16 px las cuatro marcas caladas volvían el relleno una mancha; solo el aro y la aguja.
+icons.compass.small = { d: [icons.compass.d[0], icons.compass.d[1]], fill: { solid: [icons.compass.d[0]], cut: [icons.compass.d[1]] } };
+// Varios lugares: el pin chico se pegaba al grande. Pines separados casi 2 pixeles; el grande con
+// su hueco.
+{
+  const big = [16.5, 8.25];
+  const d = [pin(big, 4.5), circ(...big, 1.5), pin([5.25, 14.25], 2.75)];
+  icons['map-pins'].small = { d, fill: { solid: [d[0], d[2]], cut: [d[1]] } };
+}
+// Binoculares: los cuerpos cónicos y los lentes se empastaban. Lentes de r 3.75 por centros de
+// pixel, cuerpos rectos tangentes a ellos y el puente; 2 pixeles entre los lentes.
+{
+  const lenses = [circ(6, 15, 3.75), circ(18, 15, 3.75)];
+  const body = (x) => roundline([[x - 3.75, 15], [x - 3.75, 5.25], [x + 3.75, 5.25], [x + 3.75, 15]], [0, 1.5, 1.5, 0]);
+  const d = [...lenses, body(6), body(18), line([9.75, 9.75], [14.25, 9.75])];
+  icons.binoculars.small = { d, fill: { solid: d } };
+}
+// Pasaporte: el globo con meridiano era una mancha; a 16 px el globo es un aro de 2.5 pixeles.
+{
+  const book = sq(5.25, 2.25, 13.5, 19.5, 3, BR);
+  const globe = circ(12, 10.5, 3.75);
+  const data = line([9.75, 17.25], [14.25, 17.25]);
+  icons.passport.small = { d: [book, globe, data], fill: { solid: [book], cut: [globe, data] } };
+}
+// Tornado: cuatro vueltas de 1 pixel de alto se volvían barras. La boca y dos vueltas de 2 pixeles
+// de hondo, con 2 pixeles de aire, que se mecen un pixel.
+{
+  const turn = (cx, y, rx) => `M${N(cx - rx)} ${N(y)}A${N(rx)} 1.5 0 0 0 ${N(cx + rx)} ${N(y)}`;
+  const mouth = ellipse(12, 5.25, 8.25, 1.5);
+  const d = [mouth, turn(12, 11.25, 5.25), turn(10.5, 17.25, 2.25)];
+  icons.tornado.small = { d, fill: { solid: [mouth], lines: d.slice(1) } };
+}
+
+// Pines: el aro de r 2.5 y los signos caían entre pixeles (una mancha). El pin con su centro en
+// un pixel (medio pixel a la derecha) y su círculo en centros de pixel (r 7.5); el aro con 3
+// pixeles de hueco y los signos de 5 pixeles, sus tramos rectos y sus diagonales por centros de
+// pixel.
+{
+  const c = [12.75, 9.75];
+  const body = pin(c, 7.5);
+  const marks = {
+    'map-pin': [circ(...c, 3)],
+    'map-pin-plus': [line([12.75, 6.75], [12.75, 12.75]), line([9.75, 9.75], [15.75, 9.75])],
+    'map-pin-check': [line([9.75, 11.25], [11.25, 12.75], [15.75, 8.25])],
+    'map-pin-x': [line([9.75, 6.75], [15.75, 12.75]), line([15.75, 6.75], [9.75, 12.75])],
+  };
+  for (const [name, mark] of Object.entries(marks)) icons[name].small = { d: [body, ...mark], fill: { solid: [body], cut: mark } };
 }
 
 export default { category: 'lugares', label: 'Tiempo, lugares y naturaleza', icons };

@@ -1,0 +1,352 @@
+{
+  "alert": {
+    "label": { "es": "Advertencia", "en": "Warning", "pt": "Aviso", "fr": "Avertissement", "de": "Warnung", "it": "Avviso", "ja": "警告", "zh": "警告", "ko": "경고", "ar": "تحذير" },
+    "keywords": {
+      "es": ["alerta", "precaución", "peligro", "riesgo", "atención", "error", "problema", "cuidado"],
+      "en": ["caution", "danger", "risk", "attention", "error", "problem", "hazard", "issue"]
+    }
+  },
+  "important": {
+    "label": { "es": "Importante", "en": "Important", "pt": "Importante", "fr": "Important", "de": "Wichtig", "it": "Importante", "ja": "重要", "zh": "重要", "ko": "중요", "ar": "مهم" },
+    "keywords": {
+      "es": ["atención", "prioridad", "urgente", "aviso", "requiere acción", "nota destacada", "error", "exclamación"],
+      "en": ["attention", "priority", "urgent", "notice", "action required", "highlight", "error", "exclamation"]
+    }
+  },
+  "chevron-right": {
+    "label": { "es": "Siguiente", "en": "Next", "pt": "Próximo", "fr": "Suivant", "de": "Weiter", "it": "Successivo", "ja": "次へ", "zh": "下一个", "ko": "다음", "ar": "التالي" },
+    "keywords": {
+      "es": ["avanzar", "continuar", "ir a", "abrir detalle", "ver más", "navegar", "derecha", "página siguiente"],
+      "en": ["forward", "continue", "go to", "open details", "see more", "navigate", "right", "next page"]
+    }
+  },
+  "chevron-left": {
+    "label": { "es": "Anterior", "en": "Previous", "pt": "Anterior", "fr": "Précédent", "de": "Zurück", "it": "Precedente", "ja": "前へ", "zh": "上一个", "ko": "이전", "ar": "السابق" },
+    "keywords": {
+      "es": ["volver", "regresar", "retroceder", "atrás", "navegar", "izquierda", "página anterior", "cerrar detalle"],
+      "en": ["back", "go back", "return", "backward", "navigate", "left", "previous page", "close details"]
+    }
+  },
+  "arrow-right": {
+    "label": { "es": "Continuar", "en": "Continue", "pt": "Continuar", "fr": "Continuer", "de": "Fortfahren", "it": "Continua", "ja": "続ける", "zh": "继续", "ko": "계속", "ar": "متابعة" },
+    "keywords": {
+      "es": ["avanzar", "ir", "siguiente", "adelante", "abrir", "llamada a la acción", "enviar formulario", "derecha"],
+      "en": ["forward", "go", "next", "proceed", "open", "call to action", "submit", "right"]
+    }
+  },
+  "check": {
+    "label": { "es": "Hecho", "en": "Done", "pt": "Concluído", "fr": "Terminé", "de": "Erledigt", "it": "Fatto", "ja": "完了", "zh": "完成", "ko": "완료", "ar": "تم" },
+    "keywords": {
+      "es": ["listo", "completado", "correcto", "aprobado", "seleccionado", "verificado", "tarea terminada", "palomita"],
+      "en": ["complete", "correct", "approved", "selected", "verified", "finished", "task done", "tick"]
+    }
+  },
+  "check-large": {
+    "label": { "es": "Confirmar", "en": "Confirm", "pt": "Confirmar", "fr": "Confirmer", "de": "Bestätigen", "it": "Conferma", "ja": "確定", "zh": "确认", "ko": "확인", "ar": "تأكيد" },
+    "keywords": {
+      "es": ["aceptar", "aprobar", "validar", "guardar cambios", "de acuerdo", "éxito", "listo", "palomita"],
+      "en": ["accept", "approve", "validate", "save changes", "ok", "success", "ready", "tick"]
+    }
+  },
+  "close": {
+    "label": { "es": "Cerrar", "en": "Close", "pt": "Fechar", "fr": "Fermer", "de": "Schließen", "it": "Chiudi", "ja": "閉じる", "zh": "关闭", "ko": "닫기", "ar": "إغلاق" },
+    "keywords": {
+      "es": ["salir", "quitar", "descartar", "ocultar", "eliminar", "limpiar filtro", "cerrar ventana", "equis"],
+      "en": ["exit", "remove", "dismiss", "hide", "delete", "clear filter", "close window", "x"]
+    }
+  },
+  "close-large": {
+    "label": { "es": "Cancelar", "en": "Cancel", "pt": "Cancelar", "fr": "Annuler", "de": "Abbrechen", "it": "Annulla", "ja": "キャンセル", "zh": "取消", "ko": "취소", "ar": "إلغاء" },
+    "keywords": {
+      "es": ["cerrar", "rechazar", "denegar", "incorrecto", "anular", "descartar", "fallido", "equis"],
+      "en": ["close", "reject", "deny", "wrong", "abort", "discard", "failed", "x"]
+    }
+  },
+  "plus": {
+    "label": { "es": "Agregar", "en": "Add", "pt": "Adicionar", "fr": "Ajouter", "de": "Hinzufügen", "it": "Aggiungi", "ja": "追加", "zh": "添加", "ko": "추가", "ar": "إضافة" },
+    "keywords": {
+      "es": ["nuevo", "crear", "añadir", "insertar", "sumar", "más", "incluir", "expandir"],
+      "en": ["new", "create", "insert", "sum", "more", "include", "expand", "positive"]
+    }
+  },
+  "more": {
+    "label": { "es": "Más acciones", "en": "More actions", "pt": "Mais ações", "fr": "Plus d’actions", "de": "Weitere Aktionen", "it": "Altre azioni", "ja": "その他の操作", "zh": "更多操作", "ko": "작업 더보기", "ar": "مزيد من الإجراءات" },
+    "keywords": {
+      "es": ["opciones", "menú", "puntos suspensivos", "tres puntos", "ver más", "menú contextual", "configurar", "desbordamiento"],
+      "en": ["options", "menu", "ellipsis", "three dots", "see more", "context menu", "overflow", "meatballs menu"]
+    }
+  },
+  "search": {
+    "label": { "es": "Buscar", "en": "Search", "pt": "Pesquisar", "fr": "Rechercher", "de": "Suchen", "it": "Cerca", "ja": "検索", "zh": "搜索", "ko": "검색", "ar": "بحث" },
+    "keywords": {
+      "es": ["encontrar", "lupa", "explorar", "consultar", "filtrar", "localizar", "inspeccionar", "barra de búsqueda"],
+      "en": ["find", "magnifier", "explore", "lookup", "query", "filter", "locate", "inspect"]
+    }
+  },
+  "refresh": {
+    "label": { "es": "Actualizar", "en": "Refresh", "pt": "Atualizar", "fr": "Actualiser", "de": "Aktualisieren", "it": "Aggiorna", "ja": "更新", "zh": "刷新", "ko": "새로고침", "ar": "تحديث" },
+    "keywords": {
+      "es": ["recargar", "sincronizar", "reintentar", "volver a cargar", "renovar", "reiniciar", "girar", "datos nuevos"],
+      "en": ["reload", "sync", "retry", "update", "renew", "restart", "rotate", "fetch again"]
+    }
+  },
+  "edit": {
+    "label": { "es": "Editar", "en": "Edit", "pt": "Editar", "fr": "Modifier", "de": "Bearbeiten", "it": "Modifica", "ja": "編集", "zh": "编辑", "ko": "편집", "ar": "تعديل" },
+    "keywords": {
+      "es": ["lápiz", "modificar", "cambiar", "escribir", "redactar", "renombrar", "corregir", "anotar"],
+      "en": ["pencil", "modify", "change", "write", "compose", "rename", "correct", "annotate"]
+    }
+  },
+  "link": {
+    "label": { "es": "Enlace", "en": "Link", "pt": "Link", "fr": "Lien", "de": "Link", "it": "Link", "ja": "リンク", "zh": "链接", "ko": "링크", "ar": "رابط" },
+    "keywords": {
+      "es": ["vínculo", "hipervínculo", "URL", "copiar dirección", "conectar", "adjuntar", "compartir", "cadena"],
+      "en": ["hyperlink", "URL", "permalink", "copy URL", "connect", "attach", "share", "chain"]
+    }
+  },
+  "send": {
+    "label": { "es": "Enviar", "en": "Send", "pt": "Enviar", "fr": "Envoyer", "de": "Senden", "it": "Invia", "ja": "送信", "zh": "发送", "ko": "보내기", "ar": "إرسال" },
+    "keywords": {
+      "es": ["mandar", "avión de papel", "despachar", "publicar", "responder", "entregar", "compartir", "mensaje"],
+      "en": ["submit", "paper plane", "dispatch", "post", "reply", "deliver", "share", "message"]
+    }
+  },
+  "pin": {
+    "label": { "es": "Fijar", "en": "Pin", "pt": "Fixar", "fr": "Épingler", "de": "Anheften", "it": "Fissa", "ja": "ピン留め", "zh": "固定", "ko": "고정", "ar": "تثبيت" },
+    "keywords": {
+      "es": ["chincheta", "tachuela", "anclar", "mantener arriba", "destacar", "guardar", "marcar", "favorito"],
+      "en": ["thumbtack", "anchor", "keep on top", "stick", "highlight", "save", "bookmark", "favorite"]
+    }
+  },
+  "person": {
+    "label": { "es": "Usuario", "en": "User", "pt": "Usuário", "fr": "Utilisateur", "de": "Benutzer", "it": "Utente", "ja": "ユーザー", "zh": "用户", "ko": "사용자", "ar": "المستخدم" },
+    "keywords": {
+      "es": ["perfil", "cuenta", "avatar", "contacto", "miembro", "cliente", "iniciar sesión", "identidad"],
+      "en": ["profile", "account", "avatar", "contact", "member", "customer", "sign in", "individual"]
+    }
+  },
+  "clients": {
+    "label": { "es": "Clientes", "en": "Clients", "pt": "Clientes", "fr": "Clients", "de": "Kunden", "it": "Clienti", "ja": "顧客", "zh": "客户", "ko": "고객", "ar": "العملاء" },
+    "keywords": {
+      "es": ["equipo", "usuarios", "personas", "grupo", "miembros", "contactos", "cartera de clientes", "comunidad"],
+      "en": ["team", "users", "people", "group", "members", "contacts", "customers", "audience"]
+    }
+  },
+  "comment": {
+    "label": { "es": "Comentario", "en": "Comment", "pt": "Comentário", "fr": "Commentaire", "de": "Kommentar", "it": "Commento", "ja": "コメント", "zh": "评论", "ko": "댓글", "ar": "تعليق" },
+    "keywords": {
+      "es": ["opinar", "responder", "nota", "retroalimentación", "conversación", "burbuja de diálogo", "chat", "discutir"],
+      "en": ["feedback", "reply", "note", "discuss", "conversation", "speech bubble", "chat", "review"]
+    }
+  },
+  "message": {
+    "label": { "es": "Mensaje", "en": "Message", "pt": "Mensagem", "fr": "Message", "de": "Nachricht", "it": "Messaggio", "ja": "メッセージ", "zh": "消息", "ko": "메시지", "ar": "رسالة" },
+    "keywords": {
+      "es": ["chat", "conversación", "soporte", "atención al cliente", "mensajería", "texto", "escribir", "SMS"],
+      "en": ["chat", "conversation", "support", "customer service", "messaging", "text", "write", "SMS"]
+    }
+  },
+  "mail": {
+    "label": { "es": "Correo", "en": "Email", "pt": "E-mail", "fr": "E-mail", "de": "E-Mail", "it": "Email", "ja": "メール", "zh": "邮件", "ko": "이메일", "ar": "البريد الإلكتروني" },
+    "keywords": {
+      "es": ["email", "sobre", "carta", "contacto", "escribir correo", "boletín", "bandeja", "correspondencia"],
+      "en": ["envelope", "letter", "contact", "write email", "newsletter", "inbox", "post", "correspondence"]
+    }
+  },
+  "phone": {
+    "label": { "es": "Teléfono", "en": "Phone", "pt": "Telefone", "fr": "Téléphone", "de": "Telefon", "it": "Telefono", "ja": "電話", "zh": "电话", "ko": "전화", "ar": "هاتف" },
+    "keywords": {
+      "es": ["llamar", "llamada", "marcar", "número", "contacto", "soporte", "auricular", "línea de atención"],
+      "en": ["call", "dial", "number", "contact", "support", "handset", "hotline", "ring"]
+    }
+  },
+  "inbox": {
+    "label": { "es": "Bandeja de entrada", "en": "Inbox", "pt": "Caixa de entrada", "fr": "Boîte de réception", "de": "Posteingang", "it": "Posta in arrivo", "ja": "受信トレイ", "zh": "收件箱", "ko": "받은편지함", "ar": "صندوق الوارد" },
+    "keywords": {
+      "es": ["recibidos", "mensajes", "correo", "pendientes", "solicitudes", "notificaciones", "leads", "bandeja"],
+      "en": ["received", "messages", "mail", "pending", "requests", "notifications", "leads", "tray"]
+    }
+  },
+  "briefcase": {
+    "label": { "es": "Trabajo", "en": "Work", "pt": "Trabalho", "fr": "Travail", "de": "Arbeit", "it": "Lavoro", "ja": "仕事", "zh": "工作", "ko": "업무", "ar": "العمل" },
+    "keywords": {
+      "es": ["maletín", "empleo", "portafolio", "proyectos", "servicios", "oficina", "carrera", "profesional"],
+      "en": ["job", "portfolio", "projects", "services", "office", "career", "professional", "case"]
+    }
+  },
+  "briefcase-clasp": {
+    "label": { "es": "Negocio", "en": "Business", "pt": "Negócios", "fr": "Entreprise", "de": "Unternehmen", "it": "Azienda", "ja": "ビジネス", "zh": "商务", "ko": "비즈니스", "ar": "الأعمال" },
+    "keywords": {
+      "es": ["empresa", "corporativo", "cuenta empresarial", "maletín", "comercio", "B2B", "ejecutivo", "oficina"],
+      "en": ["company", "corporate", "business account", "enterprise", "commerce", "B2B", "executive", "office"]
+    }
+  },
+  "calendar": {
+    "label": { "es": "Calendario", "en": "Calendar", "pt": "Calendário", "fr": "Calendrier", "de": "Kalender", "it": "Calendario", "ja": "カレンダー", "zh": "日历", "ko": "캘린더", "ar": "التقويم" },
+    "keywords": {
+      "es": ["fecha", "agenda", "evento", "cita", "agendar", "reunión", "plazo", "día"],
+      "en": ["date", "schedule", "event", "appointment", "book", "meeting", "deadline", "agenda"]
+    }
+  },
+  "card": {
+    "label": { "es": "Método de pago", "en": "Payment method", "pt": "Forma de pagamento", "fr": "Moyen de paiement", "de": "Zahlungsmethode", "it": "Metodo di pagamento", "ja": "支払い方法", "zh": "支付方式", "ko": "결제 수단", "ar": "طريقة الدفع" },
+    "keywords": {
+      "es": ["tarjeta de crédito", "tarjeta de débito", "pagar", "cobrar", "facturación", "suscripción", "checkout", "compra"],
+      "en": ["credit card", "debit card", "pay", "charge", "billing", "subscription", "checkout", "purchase"]
+    }
+  },
+  "clock": {
+    "label": { "es": "Hora", "en": "Time", "pt": "Hora", "fr": "Heure", "de": "Uhrzeit", "it": "Ora", "ja": "時刻", "zh": "时间", "ko": "시간", "ar": "الوقت" },
+    "keywords": {
+      "es": ["reloj", "horario", "duración", "pendiente", "historial", "recordatorio", "tiempo de respuesta", "reciente"],
+      "en": ["hour", "schedule", "duration", "pending", "history", "reminder", "response time", "recent"]
+    }
+  },
+  "document": {
+    "label": { "es": "Documento", "en": "Document", "pt": "Documento", "fr": "Document", "de": "Dokument", "it": "Documento", "ja": "ドキュメント", "zh": "文档", "ko": "문서", "ar": "مستند" },
+    "keywords": {
+      "es": ["archivo", "página", "texto", "contrato", "informe", "factura", "propuesta", "hoja"],
+      "en": ["file", "page", "text", "contract", "report", "invoice", "proposal", "paper"]
+    }
+  },
+  "folder": {
+    "label": { "es": "Carpeta", "en": "Folder", "pt": "Pasta", "fr": "Dossier", "de": "Ordner", "it": "Cartella", "ja": "フォルダ", "zh": "文件夹", "ko": "폴더", "ar": "مجلد" },
+    "keywords": {
+      "es": ["directorio", "archivos", "organizar", "almacenar", "categoría", "colección", "bóveda", "expediente"],
+      "en": ["directory", "files", "organize", "storage", "category", "collection", "vault", "archive"]
+    }
+  },
+  "project": {
+    "label": { "es": "Proyecto", "en": "Project", "pt": "Projeto", "fr": "Projet", "de": "Projekt", "it": "Progetto", "ja": "プロジェクト", "zh": "项目", "ko": "프로젝트", "ar": "مشروع" },
+    "keywords": {
+      "es": ["tareas", "lista", "resumen", "detalles", "brief", "alcance", "entregables", "tablero"],
+      "en": ["tasks", "list", "summary", "details", "brief", "scope", "deliverables", "board"]
+    }
+  },
+  "roadmap": {
+    "label": { "es": "Hoja de ruta", "en": "Roadmap", "pt": "Roteiro", "fr": "Feuille de route", "de": "Roadmap", "it": "Roadmap", "ja": "ロードマップ", "zh": "路线图", "ko": "로드맵", "ar": "خارطة الطريق" },
+    "keywords": {
+      "es": ["plan", "etapas", "hitos", "cronograma", "trayecto", "progreso", "proceso", "planeación"],
+      "en": ["plan", "stages", "milestones", "timeline", "journey", "progress", "process", "planning"]
+    }
+  },
+  "ticket": {
+    "label": { "es": "Boleto", "en": "Ticket", "pt": "Ingresso", "fr": "Billet", "de": "Ticket", "it": "Biglietto", "ja": "チケット", "zh": "票券", "ko": "티켓", "ar": "تذكرة" },
+    "keywords": {
+      "es": ["entrada", "pase", "evento", "cupón", "vale", "reservación", "solicitud de soporte", "admisión"],
+      "en": ["admission", "pass", "event", "coupon", "voucher", "booking", "support request", "entry"]
+    }
+  },
+  "globe": {
+    "label": { "es": "Sitio web", "en": "Website", "pt": "Site", "fr": "Site web", "de": "Website", "it": "Sito web", "ja": "ウェブサイト", "zh": "网站", "ko": "웹사이트", "ar": "موقع ويب" },
+    "keywords": {
+      "es": ["internet", "mundo", "global", "idioma", "región", "público", "dominio", "internacional"],
+      "en": ["internet", "world", "global", "language", "region", "public", "domain", "international"]
+    }
+  },
+  "lock": {
+    "label": { "es": "Bloqueado", "en": "Locked", "pt": "Bloqueado", "fr": "Verrouillé", "de": "Gesperrt", "it": "Bloccato", "ja": "ロック中", "zh": "已锁定", "ko": "잠김", "ar": "مقفل" },
+    "keywords": {
+      "es": ["candado", "seguridad", "privado", "contraseña", "protegido", "acceso restringido", "cifrado", "cerrado"],
+      "en": ["padlock", "security", "private", "password", "protected", "restricted", "encrypted", "closed"]
+    }
+  },
+  "key": {
+    "label": { "es": "Llave de acceso", "en": "Access key", "pt": "Chave de acesso", "fr": "Clé d’accès", "de": "Zugangsschlüssel", "it": "Chiave di accesso", "ja": "アクセスキー", "zh": "访问密钥", "ko": "액세스 키", "ar": "مفتاح الوصول" },
+    "keywords": {
+      "es": ["contraseña", "credenciales", "permisos", "desbloquear", "clave API", "autenticación", "passkey", "accesos"],
+      "en": ["password", "credentials", "permissions", "unlock", "API token", "authentication", "passkey", "sign in"]
+    }
+  },
+  "shield": {
+    "label": { "es": "Seguridad", "en": "Security", "pt": "Segurança", "fr": "Sécurité", "de": "Sicherheit", "it": "Sicurezza", "ja": "セキュリティ", "zh": "安全", "ko": "보안", "ar": "الأمان" },
+    "keywords": {
+      "es": ["protección", "escudo", "privacidad", "verificado", "confianza", "garantía", "antivirus", "seguro"],
+      "en": ["protection", "privacy", "verified", "trust", "guarantee", "antivirus", "secure", "safe"]
+    }
+  },
+  "speaker": {
+    "label": { "es": "Sonido", "en": "Sound", "pt": "Som", "fr": "Son", "de": "Ton", "it": "Audio", "ja": "サウンド", "zh": "声音", "ko": "소리", "ar": "الصوت" },
+    "keywords": {
+      "es": ["audio", "volumen", "bocina", "altavoz", "reproducir", "música", "salida de audio", "anuncio"],
+      "en": ["audio", "volume", "loudspeaker", "playback", "music", "audio output", "media", "announcement"]
+    }
+  },
+  "waves": {
+    "label": { "es": "Volumen", "en": "Volume", "pt": "Volume", "fr": "Volume", "de": "Lautstärke", "it": "Volume", "ja": "音量", "zh": "音量", "ko": "볼륨", "ar": "مستوى الصوت" },
+    "keywords": {
+      "es": ["sonido", "ondas sonoras", "nivel de audio", "intensidad", "subir volumen", "señal", "transmisión", "frecuencia"],
+      "en": ["sound", "audio level", "loudness", "intensity", "volume up", "signal", "broadcast", "frequency"]
+    }
+  },
+  "mute": {
+    "label": { "es": "Silenciar", "en": "Mute", "pt": "Silenciar", "fr": "Couper le son", "de": "Stummschalten", "it": "Disattiva audio", "ja": "ミュート", "zh": "静音", "ko": "음소거", "ar": "كتم الصوت" },
+    "keywords": {
+      "es": ["silencio", "sin sonido", "apagar sonido", "callar", "volumen cero", "modo silencioso", "desactivar audio", "quitar audio"],
+      "en": ["silence", "no sound", "sound off", "quiet", "volume zero", "silent mode", "audio off", "hush"]
+    }
+  },
+  "columns": {
+    "label": { "es": "Columnas", "en": "Columns", "pt": "Colunas", "fr": "Colonnes", "de": "Spalten", "it": "Colonne", "ja": "列", "zh": "列", "ko": "열", "ar": "الأعمدة" },
+    "keywords": {
+      "es": ["tabla", "hoja de cálculo", "cuadrícula", "registros", "encabezado", "datos tabulares", "campos visibles", "diseño"],
+      "en": ["table", "spreadsheet", "grid", "records", "header", "tabular data", "visible fields", "layout"]
+    }
+  },
+  "layers": {
+    "label": { "es": "Capas", "en": "Layers", "pt": "Camadas", "fr": "Calques", "de": "Ebenen", "it": "Livelli", "ja": "レイヤー", "zh": "图层", "ko": "레이어", "ar": "الطبقات" },
+    "keywords": {
+      "es": ["pila", "apilar", "niveles", "superposición", "orden", "diseño", "plataforma", "stack tecnológico"],
+      "en": ["stack", "levels", "overlay", "arrange", "order", "design", "platform", "tech stack"]
+    }
+  },
+  "code": {
+    "label": { "es": "Código", "en": "Code", "pt": "Código", "fr": "Code", "de": "Code", "it": "Codice", "ja": "コード", "zh": "代码", "ko": "코드", "ar": "التعليمات البرمجية" },
+    "keywords": {
+      "es": ["desarrollo", "programación", "HTML", "etiquetas", "código fuente", "insertar", "API", "ingeniería"],
+      "en": ["development", "programming", "HTML", "tags", "source", "embed", "developer", "engineering"]
+    }
+  },
+  "sliders": {
+    "label": { "es": "Ajustes", "en": "Adjustments", "pt": "Ajustes", "fr": "Réglages", "de": "Anpassungen", "it": "Regolazioni", "ja": "調整", "zh": "调整", "ko": "조정", "ar": "الضبط" },
+    "keywords": {
+      "es": ["filtros", "controles", "configuración", "preferencias", "personalizar", "parámetros", "mezclador", "opciones"],
+      "en": ["filters", "controls", "settings", "preferences", "customize", "parameters", "mixer", "options"]
+    }
+  },
+  "bolt": {
+    "label": { "es": "Acción rápida", "en": "Quick action", "pt": "Ação rápida", "fr": "Action rapide", "de": "Schnellaktion", "it": "Azione rapida", "ja": "クイックアクション", "zh": "快捷操作", "ko": "빠른 작업", "ar": "إجراء سريع" },
+    "keywords": {
+      "es": ["rayo", "velocidad", "instantáneo", "automatización", "energía", "rendimiento", "atajo", "electricidad"],
+      "en": ["lightning", "speed", "instant", "automation", "energy", "performance", "shortcut", "electricity"]
+    }
+  },
+  "box": {
+    "label": { "es": "Producto", "en": "Product", "pt": "Produto", "fr": "Produit", "de": "Produkt", "it": "Prodotto", "ja": "製品", "zh": "产品", "ko": "제품", "ar": "منتج" },
+    "keywords": {
+      "es": ["caja", "paquete", "envío", "inventario", "módulo", "dependencia", "entrega", "almacén"],
+      "en": ["package", "shipping", "inventory", "module", "dependency", "delivery", "warehouse", "item"]
+    }
+  },
+  "database": {
+    "label": { "es": "Base de datos", "en": "Database", "pt": "Banco de dados", "fr": "Base de données", "de": "Datenbank", "it": "Database", "ja": "データベース", "zh": "数据库", "ko": "데이터베이스", "ar": "قاعدة البيانات" },
+    "keywords": {
+      "es": ["datos", "almacenamiento", "servidor", "registros", "SQL", "backend", "tablas", "respaldo"],
+      "en": ["data", "storage", "server", "records", "SQL", "backend", "tables", "backup"]
+    }
+  },
+  "apps": {
+    "label": { "es": "Aplicaciones", "en": "Apps", "pt": "Aplicativos", "fr": "Applications", "de": "Apps", "it": "App", "ja": "アプリ", "zh": "应用", "ko": "앱", "ar": "التطبيقات" },
+    "keywords": {
+      "es": ["módulos", "cuadrícula", "lanzador", "panel", "integraciones", "catálogo", "herramientas", "inicio"],
+      "en": ["modules", "grid", "launcher", "dashboard", "integrations", "catalog", "tools", "home"]
+    }
+  },
+  "bell": {
+    "label": { "es": "Notificaciones", "en": "Notifications", "pt": "Notificações", "fr": "Notifications", "de": "Benachrichtigungen", "it": "Notifiche", "ja": "通知", "zh": "通知", "ko": "알림", "ar": "الإشعارات" },
+    "keywords": {
+      "es": ["avisos", "alertas", "campana", "recordatorio", "novedades", "actividad", "suscribirse", "timbre"],
+      "en": ["alerts", "reminder", "updates", "activity", "subscribe", "news", "chime", "ring"]
+    }
+  }
+}

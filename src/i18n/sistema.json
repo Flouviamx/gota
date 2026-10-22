@@ -1,0 +1,772 @@
+{
+  "lock-open": {
+    "label": { "es": "Desbloqueado", "en": "Unlocked", "pt": "Desbloqueado", "fr": "Déverrouillé", "de": "Entsperrt", "it": "Sbloccato", "ja": "ロック解除", "zh": "已解锁", "ko": "잠금 해제됨", "ar": "تم إلغاء القفل" },
+    "keywords": {
+      "es": ["desbloquear", "abrir acceso", "sin protección", "acceso libre", "quitar candado", "contenido público", "permitir edición"],
+      "en": ["unlock", "free access", "unprotected", "unsecured", "remove padlock", "public content", "allow editing"]
+    }
+  },
+  "lock-check": {
+    "label": { "es": "Protegido", "en": "Secured", "pt": "Protegido", "fr": "Sécurisé", "de": "Gesichert", "it": "Protetto", "ja": "保護済み", "zh": "已保护", "ko": "보호됨", "ar": "محمي" },
+    "keywords": {
+      "es": ["candado", "acceso seguro", "verificado", "cifrado activo", "pago seguro", "conexión segura", "bloqueo confirmado"],
+      "en": ["padlock", "secure access", "verified", "encryption on", "secure checkout", "safe connection", "locked and verified"]
+    }
+  },
+  "lock-x": {
+    "label": { "es": "Acceso denegado", "en": "Access denied", "pt": "Acesso negado", "fr": "Accès refusé", "de": "Zugriff verweigert", "it": "Accesso negato", "ja": "アクセス拒否", "zh": "拒绝访问", "ko": "액세스 거부됨", "ar": "تم رفض الوصول" },
+    "keywords": {
+      "es": ["sin permiso", "cuenta bloqueada", "intentos fallidos", "error de inicio de sesión", "no autorizado", "403", "candado"],
+      "en": ["no permission", "locked out", "failed attempts", "login error", "unauthorized", "403", "padlock"]
+    }
+  },
+  "lock-clock": {
+    "label": { "es": "Bloqueo temporal", "en": "Temporary lock", "pt": "Bloqueio temporário", "fr": "Verrouillage temporaire", "de": "Vorübergehend gesperrt", "it": "Blocco temporaneo", "ja": "一時ロック", "zh": "临时锁定", "ko": "일시 잠금", "ar": "قفل مؤقت" },
+    "keywords": {
+      "es": ["sesión expirada", "tiempo de espera", "reintentar más tarde", "bloqueo programado", "inactividad", "límite de intentos", "acceso por tiempo"],
+      "en": ["session expired", "timeout", "try again later", "scheduled lockout", "inactivity", "rate limit", "timed access"]
+    }
+  },
+  "keyhole": {
+    "label": { "es": "Cerradura", "en": "Keyhole", "pt": "Fechadura", "fr": "Serrure", "de": "Schlüsselloch", "it": "Serratura", "ja": "鍵穴", "zh": "锁孔", "ko": "열쇠 구멍", "ar": "ثقب المفتاح" },
+    "keywords": {
+      "es": ["acceso privado", "entrar", "contenido restringido", "secreto", "seguridad", "abrir con llave", "área protegida"],
+      "en": ["private access", "enter", "restricted content", "secret", "security", "open with a key", "protected area"]
+    }
+  },
+  "password": {
+    "label": { "es": "Contraseña", "en": "Password", "pt": "Senha", "fr": "Mot de passe", "de": "Passwort", "it": "Password", "ja": "パスワード", "zh": "密码", "ko": "비밀번호", "ar": "كلمة المرور" },
+    "keywords": {
+      "es": ["clave", "pin", "código secreto", "iniciar sesión", "credenciales", "cambiar contraseña", "campo oculto"],
+      "en": ["passcode", "pin", "secret code", "sign in", "credentials", "reset credentials", "masked field"]
+    }
+  },
+  "key-skeleton": {
+    "label": { "es": "Llave maestra", "en": "Master key", "pt": "Chave mestra", "fr": "Passe-partout", "de": "Generalschlüssel", "it": "Chiave maestra", "ja": "マスターキー", "zh": "万能钥匙", "ko": "마스터 키", "ar": "مفتاح رئيسي" },
+    "keywords": {
+      "es": ["acceso total", "administrador", "permisos completos", "llave antigua", "superusuario", "abrir todo", "credencial raíz"],
+      "en": ["full access", "admin", "all permissions", "superuser", "root access", "unlock everything", "god mode"]
+    }
+  },
+  "passkey": {
+    "label": { "es": "Llave de acceso", "en": "Passkey", "pt": "Chave de acesso", "fr": "Clé d'accès", "de": "Passkey", "it": "Passkey", "ja": "パスキー", "zh": "通行密钥", "ko": "패스키", "ar": "مفتاح المرور" },
+    "keywords": {
+      "es": ["sin contraseña", "iniciar sesión", "biometría", "webauthn", "identidad", "credencial del dispositivo", "acceso seguro"],
+      "en": ["passwordless", "sign in", "biometrics", "webauthn", "identity", "device credential", "fido"]
+    }
+  },
+  "person-lock": {
+    "label": { "es": "Cuenta protegida", "en": "Protected account", "pt": "Conta protegida", "fr": "Compte protégé", "de": "Geschütztes Konto", "it": "Account protetto", "ja": "保護されたアカウント", "zh": "受保护的账户", "ko": "보호된 계정", "ar": "حساب محمي" },
+    "keywords": {
+      "es": ["usuario bloqueado", "perfil privado", "cuenta privada", "permisos de usuario", "acceso restringido", "seguridad de la cuenta", "suspender usuario"],
+      "en": ["user locked", "private profile", "private account", "user permissions", "restricted access", "account security", "suspend user"]
+    }
+  },
+  "fingerprint": {
+    "label": { "es": "Huella digital", "en": "Fingerprint", "pt": "Impressão digital", "fr": "Empreinte digitale", "de": "Fingerabdruck", "it": "Impronta digitale", "ja": "指紋", "zh": "指纹", "ko": "지문", "ar": "بصمة الإصبع" },
+    "keywords": {
+      "es": ["biometría", "desbloquear", "touch id", "identidad", "autenticación", "verificar usuario", "sensor"],
+      "en": ["biometrics", "unlock", "touch id", "identity", "authentication", "verify user", "sensor"]
+    }
+  },
+  "face-scan": {
+    "label": { "es": "Reconocimiento facial", "en": "Face recognition", "pt": "Reconhecimento facial", "fr": "Reconnaissance faciale", "de": "Gesichtserkennung", "it": "Riconoscimento facciale", "ja": "顔認証", "zh": "人脸识别", "ko": "얼굴 인식", "ar": "التعرف على الوجه" },
+    "keywords": {
+      "es": ["face id", "biometría", "rostro", "desbloquear", "verificar identidad", "selfie", "autenticación"],
+      "en": ["face id", "biometrics", "unlock", "verify identity", "selfie check", "authentication", "facial id"]
+    }
+  },
+  "iris-scan": {
+    "label": { "es": "Escaneo de iris", "en": "Iris scan", "pt": "Leitura da íris", "fr": "Reconnaissance de l'iris", "de": "Iris-Scan", "it": "Scansione dell'iride", "ja": "虹彩スキャン", "zh": "虹膜扫描", "ko": "홍채 스캔", "ar": "مسح قزحية العين" },
+    "keywords": {
+      "es": ["biometría", "ojo", "retina", "verificar identidad", "control de acceso", "alta seguridad", "autenticación"],
+      "en": ["biometrics", "eye", "retina", "verify identity", "access control", "high security", "authentication"]
+    }
+  },
+  "scan": {
+    "label": { "es": "Escanear", "en": "Scan", "pt": "Digitalizar", "fr": "Scanner", "de": "Scannen", "it": "Scansiona", "ja": "スキャン", "zh": "扫描", "ko": "스캔", "ar": "مسح ضوئي" },
+    "keywords": {
+      "es": ["escáner", "leer código", "código qr", "código de barras", "cámara", "digitalizar documento", "encuadrar"],
+      "en": ["read code", "qr code", "barcode", "camera", "capture document", "viewfinder", "frame"]
+    }
+  },
+  "two-factor": {
+    "label": { "es": "Verificación en dos pasos", "en": "Two-factor authentication", "pt": "Verificação em duas etapas", "fr": "Validation en deux étapes", "de": "Zwei-Faktor-Authentifizierung", "it": "Verifica in due passaggi", "ja": "2段階認証", "zh": "双重验证", "ko": "2단계 인증", "ar": "التحقق بخطوتين" },
+    "keywords": {
+      "es": ["2fa", "código de verificación", "sms", "otp", "app autenticadora", "seguridad de la cuenta", "confirmar inicio de sesión"],
+      "en": ["2fa", "verification code", "sms code", "otp", "authenticator app", "account security", "confirm sign in"]
+    }
+  },
+  "eye-off": {
+    "label": { "es": "Ocultar", "en": "Hide", "pt": "Ocultar", "fr": "Masquer", "de": "Ausblenden", "it": "Nascondi", "ja": "非表示", "zh": "隐藏", "ko": "숨기기", "ar": "إخفاء" },
+    "keywords": {
+      "es": ["ocultar contraseña", "invisible", "no visible", "privado", "esconder", "sin vista previa", "tapar datos"],
+      "en": ["hide password", "invisible", "hidden", "private", "conceal", "not visible", "mask"]
+    }
+  },
+  "eye-lock": {
+    "label": { "es": "Vista privada", "en": "Private view", "pt": "Visualização privada", "fr": "Vue privée", "de": "Private Ansicht", "it": "Vista privata", "ja": "プライベート表示", "zh": "私密查看", "ko": "비공개 보기", "ar": "عرض خاص" },
+    "keywords": {
+      "es": ["privacidad", "confidencial", "vista protegida", "contenido sensible", "visibilidad restringida", "datos ocultos", "permisos de vista"],
+      "en": ["privacy", "confidential", "protected view", "sensitive content", "restricted visibility", "hidden data", "view permissions"]
+    }
+  },
+  "incognito": {
+    "label": { "es": "Incógnito", "en": "Incognito", "pt": "Anônimo", "fr": "Navigation privée", "de": "Inkognito", "it": "Incognito", "ja": "シークレットモード", "zh": "无痕模式", "ko": "시크릿 모드", "ar": "التصفح المتخفي" },
+    "keywords": {
+      "es": ["anónimo", "navegación privada", "sin rastro", "modo privado", "espía", "ocultar identidad", "sin historial"],
+      "en": ["anonymous", "private browsing", "no trace", "private mode", "spy", "hide identity", "no history"]
+    }
+  },
+  "window-lock": {
+    "label": { "es": "Sitio seguro", "en": "Secure site", "pt": "Site seguro", "fr": "Site sécurisé", "de": "Sichere Website", "it": "Sito sicuro", "ja": "安全なサイト", "zh": "安全网站", "ko": "보안 사이트", "ar": "موقع آمن" },
+    "keywords": {
+      "es": ["https", "ssl", "conexión cifrada", "página protegida", "navegador", "candado", "área de miembros"],
+      "en": ["https", "ssl", "encrypted connection", "protected page", "browser", "padlock", "members area"]
+    }
+  },
+  "certificate": {
+    "label": { "es": "Certificado", "en": "Certificate", "pt": "Certificado", "fr": "Certificat", "de": "Zertifikat", "it": "Certificato", "ja": "証明書", "zh": "证书", "ko": "인증서", "ar": "شهادة" },
+    "keywords": {
+      "es": ["diploma", "ssl", "acreditación", "credencial", "constancia", "licencia", "curso terminado"],
+      "en": ["diploma", "ssl", "accreditation", "credential", "license", "qualification", "course completed"]
+    }
+  },
+  "firewall": {
+    "label": { "es": "Cortafuegos", "en": "Firewall", "pt": "Firewall", "fr": "Pare-feu", "de": "Firewall", "it": "Firewall", "ja": "ファイアウォール", "zh": "防火墙", "ko": "방화벽", "ar": "جدار الحماية" },
+    "keywords": {
+      "es": ["muro", "protección de red", "bloquear tráfico", "reglas de acceso", "seguridad", "filtrar conexiones", "ladrillos"],
+      "en": ["wall", "network protection", "block traffic", "access rules", "security", "filter connections", "bricks"]
+    }
+  },
+  "cookie": {
+    "label": { "es": "Cookies", "en": "Cookies", "pt": "Cookies", "fr": "Cookies", "de": "Cookies", "it": "Cookie", "ja": "Cookie", "zh": "Cookie", "ko": "쿠키", "ar": "ملفات تعريف الارتباط" },
+    "keywords": {
+      "es": ["consentimiento", "rastreo", "privacidad", "aviso de consentimiento", "galleta", "datos del sitio", "rgpd"],
+      "en": ["consent", "tracking", "privacy", "consent banner", "biscuit", "site data", "gdpr"]
+    }
+  },
+  "shield-empty": {
+    "label": { "es": "Seguridad", "en": "Security", "pt": "Segurança", "fr": "Sécurité", "de": "Sicherheit", "it": "Sicurezza", "ja": "セキュリティ", "zh": "安全", "ko": "보안", "ar": "الأمان" },
+    "keywords": {
+      "es": ["escudo", "protección", "defensa", "garantía", "antivirus", "resguardo", "seguro"],
+      "en": ["protection", "defense", "guarantee", "antivirus", "safeguard", "insurance", "safety"]
+    }
+  },
+  "shield-x": {
+    "label": { "es": "Error de seguridad", "en": "Security error", "pt": "Erro de segurança", "fr": "Erreur de sécurité", "de": "Sicherheitsfehler", "it": "Errore di sicurezza", "ja": "セキュリティエラー", "zh": "安全错误", "ko": "보안 오류", "ar": "خطأ أمني" },
+    "keywords": {
+      "es": ["desprotegido", "amenaza", "riesgo", "bloqueado", "verificación fallida", "sitio no seguro", "falla de seguridad"],
+      "en": ["unprotected", "threat", "risk", "blocked", "check failed", "unsafe site", "security failure"]
+    }
+  },
+  "shield-alert": {
+    "label": { "es": "Alerta de seguridad", "en": "Security alert", "pt": "Alerta de segurança", "fr": "Alerte de sécurité", "de": "Sicherheitswarnung", "it": "Avviso di sicurezza", "ja": "セキュリティ警告", "zh": "安全警报", "ko": "보안 경고", "ar": "تنبيه أمني" },
+    "keywords": {
+      "es": ["vulnerabilidad", "riesgo", "advertencia", "actividad sospechosa", "intento de acceso", "brecha", "revisar seguridad"],
+      "en": ["vulnerability", "risk", "warning", "suspicious activity", "sign-in attempt", "breach", "security review"]
+    }
+  },
+  "shield-plus": {
+    "label": { "es": "Agregar protección", "en": "Add protection", "pt": "Adicionar proteção", "fr": "Ajouter une protection", "de": "Schutz hinzufügen", "it": "Aggiungi protezione", "ja": "保護を追加", "zh": "添加保护", "ko": "보호 추가", "ar": "إضافة حماية" },
+    "keywords": {
+      "es": ["seguro", "cobertura", "activar seguridad", "garantía extendida", "póliza", "protección extra", "seguro médico"],
+      "en": ["insurance", "coverage", "enable security", "extended warranty", "policy", "extra protection", "health insurance"]
+    }
+  },
+  "shield-minus": {
+    "label": { "es": "Quitar protección", "en": "Remove protection", "pt": "Remover proteção", "fr": "Retirer la protection", "de": "Schutz entfernen", "it": "Rimuovi protezione", "ja": "保護を解除", "zh": "移除保护", "ko": "보호 제거", "ar": "إزالة الحماية" },
+    "keywords": {
+      "es": ["excepción", "reducir seguridad", "lista de permitidos", "desactivar regla", "cancelar seguro", "baja de cobertura", "permitir"],
+      "en": ["exception", "lower security", "allowlist", "disable rule", "cancel insurance", "drop coverage", "allow"]
+    }
+  },
+  "shield-lock": {
+    "label": { "es": "Cifrado", "en": "Encrypted", "pt": "Criptografado", "fr": "Chiffré", "de": "Verschlüsselt", "it": "Crittografato", "ja": "暗号化済み", "zh": "已加密", "ko": "암호화됨", "ar": "مشفّر" },
+    "keywords": {
+      "es": ["encriptado", "protegido", "bóveda", "cifrado de extremo a extremo", "datos seguros", "privacidad", "seguridad máxima"],
+      "en": ["encryption", "protected", "vault", "end-to-end", "secure data", "privacy", "maximum security"]
+    }
+  },
+  "shield-person": {
+    "label": { "es": "Protección de identidad", "en": "Identity protection", "pt": "Proteção de identidade", "fr": "Protection de l'identité", "de": "Identitätsschutz", "it": "Protezione dell'identità", "ja": "個人情報の保護", "zh": "身份保护", "ko": "신원 보호", "ar": "حماية الهوية" },
+    "keywords": {
+      "es": ["cuenta protegida", "privacidad", "datos personales", "seguridad del usuario", "verificación de identidad", "protección de datos", "kyc"],
+      "en": ["protected account", "privacy", "personal data", "user security", "identity verification", "data protection", "kyc"]
+    }
+  },
+  "shield-off": {
+    "label": { "es": "Protección desactivada", "en": "Protection off", "pt": "Proteção desativada", "fr": "Protection désactivée", "de": "Schutz deaktiviert", "it": "Protezione disattivata", "ja": "保護オフ", "zh": "保护已关闭", "ko": "보호 꺼짐", "ar": "الحماية متوقفة" },
+    "keywords": {
+      "es": ["sin protección", "inseguro", "desactivado", "vulnerable", "antivirus apagado", "seguridad pausada", "expuesto"],
+      "en": ["unprotected", "unsecured", "disabled", "vulnerable", "antivirus disabled", "security paused", "exposed"]
+    }
+  },
+  "shield-question": {
+    "label": { "es": "Sin verificar", "en": "Unverified", "pt": "Não verificado", "fr": "Non vérifié", "de": "Nicht verifiziert", "it": "Non verificato", "ja": "未確認", "zh": "未验证", "ko": "확인되지 않음", "ar": "غير مُتحقَّق منه" },
+    "keywords": {
+      "es": ["duda de seguridad", "sospechoso", "verificar", "estado desconocido", "pregunta de seguridad", "no confiable", "comprobar"],
+      "en": ["security doubt", "suspicious", "verify", "unknown status", "security challenge", "untrusted", "check safety"]
+    }
+  },
+  "info": {
+    "label": { "es": "Información", "en": "Information", "pt": "Informações", "fr": "Informations", "de": "Informationen", "it": "Informazioni", "ja": "情報", "zh": "信息", "ko": "정보", "ar": "معلومات" },
+    "keywords": {
+      "es": ["detalles", "acerca de", "ayuda", "más información", "nota", "aclaración", "tooltip"],
+      "en": ["details", "about", "help", "learn more", "note", "tooltip", "explanation"]
+    }
+  },
+  "info-square": {
+    "label": { "es": "Detalles", "en": "Details", "pt": "Detalhes", "fr": "Détails", "de": "Details", "it": "Dettagli", "ja": "詳細", "zh": "详情", "ko": "세부 정보", "ar": "التفاصيل" },
+    "keywords": {
+      "es": ["información", "nota", "aviso", "acerca de", "propiedades", "más información", "ficha"],
+      "en": ["information", "note", "notice", "about", "properties", "learn more", "inspector"]
+    }
+  },
+  "help": {
+    "label": { "es": "Ayuda", "en": "Help", "pt": "Ajuda", "fr": "Aide", "de": "Hilfe", "it": "Aiuto", "ja": "ヘルプ", "zh": "帮助", "ko": "도움말", "ar": "مساعدة" },
+    "keywords": {
+      "es": ["pregunta", "dudas", "soporte", "signo de interrogación", "cómo funciona", "centro de ayuda", "asistencia"],
+      "en": ["question", "support", "question mark", "how it works", "knowledge base", "assistance", "faq"]
+    }
+  },
+  "help-square": {
+    "label": { "es": "Preguntas frecuentes", "en": "FAQ", "pt": "Perguntas frequentes", "fr": "Questions fréquentes", "de": "Häufige Fragen", "it": "Domande frequenti", "ja": "よくある質問", "zh": "常见问题", "ko": "자주 묻는 질문", "ar": "الأسئلة الشائعة" },
+    "keywords": {
+      "es": ["ayuda", "pregunta", "dudas", "soporte", "signo de interrogación", "guía", "base de conocimiento"],
+      "en": ["question", "support", "question mark", "guide", "knowledge base", "docs", "common questions"]
+    }
+  },
+  "alert-octagon": {
+    "label": { "es": "Error crítico", "en": "Critical error", "pt": "Erro crítico", "fr": "Erreur critique", "de": "Kritischer Fehler", "it": "Errore critico", "ja": "重大なエラー", "zh": "严重错误", "ko": "심각한 오류", "ar": "خطأ فادح" },
+    "keywords": {
+      "es": ["peligro", "alto", "fallo grave", "incidente", "bloqueante", "atención inmediata", "caída del sistema"],
+      "en": ["danger", "stop", "severe failure", "incident", "blocker", "immediate attention", "system down"]
+    }
+  },
+  "close-octagon": {
+    "label": { "es": "Detener", "en": "Stop", "pt": "Parar", "fr": "Arrêter", "de": "Stopp", "it": "Ferma", "ja": "停止", "zh": "停止", "ko": "중지", "ar": "إيقاف" },
+    "keywords": {
+      "es": ["alto", "fallo", "cancelado", "abortar", "proceso detenido", "no continuar", "error"],
+      "en": ["halt", "failed", "cancelled", "abort", "process stopped", "do not proceed", "error"]
+    }
+  },
+  "alert-square": {
+    "label": { "es": "Atención", "en": "Attention", "pt": "Atenção", "fr": "Attention", "de": "Achtung", "it": "Attenzione", "ja": "注意", "zh": "注意", "ko": "주의", "ar": "تنبيه" },
+    "keywords": {
+      "es": ["aviso", "advertencia", "importante", "revisar", "exclamación", "requiere acción", "mensaje del sistema"],
+      "en": ["notice", "warning", "important", "review", "exclamation", "action required", "system message"]
+    }
+  },
+  "alert-diamond": {
+    "label": { "es": "Precaución", "en": "Caution", "pt": "Cuidado", "fr": "Prudence", "de": "Vorsicht", "it": "Cautela", "ja": "要注意", "zh": "警示", "ko": "조심", "ar": "حذر" },
+    "keywords": {
+      "es": ["advertencia", "riesgo", "peligro", "cuidado", "señal de tráfico", "revisar antes", "posible problema"],
+      "en": ["warning", "hazard", "risk", "danger", "road sign", "check first", "potential issue"]
+    }
+  },
+  "check-circle": {
+    "label": { "es": "Completado", "en": "Completed", "pt": "Concluído", "fr": "Terminé", "de": "Abgeschlossen", "it": "Completato", "ja": "完了", "zh": "已完成", "ko": "완료됨", "ar": "مكتمل" },
+    "keywords": {
+      "es": ["éxito", "aprobado", "listo", "correcto", "confirmado", "verificado", "paso terminado"],
+      "en": ["success", "approved", "done", "correct", "confirmed", "verified", "step complete"]
+    }
+  },
+  "close-circle": {
+    "label": { "es": "Fallido", "en": "Failed", "pt": "Falha", "fr": "Échec", "de": "Fehlgeschlagen", "it": "Non riuscito", "ja": "失敗", "zh": "失败", "ko": "실패", "ar": "فشل" },
+    "keywords": {
+      "es": ["error", "rechazado", "cancelar", "incorrecto", "no válido", "borrar campo", "denegado"],
+      "en": ["error", "rejected", "cancel", "incorrect", "invalid", "clear field", "denied"]
+    }
+  },
+  "plus-circle": {
+    "label": { "es": "Agregar", "en": "Add", "pt": "Adicionar", "fr": "Ajouter", "de": "Hinzufügen", "it": "Aggiungi", "ja": "追加", "zh": "添加", "ko": "추가", "ar": "إضافة" },
+    "keywords": {
+      "es": ["nuevo", "crear", "sumar", "añadir", "incluir", "más", "nuevo elemento"],
+      "en": ["new", "create", "include", "insert", "append", "more", "new item"]
+    }
+  },
+  "minus-circle": {
+    "label": { "es": "Quitar", "en": "Remove", "pt": "Remover", "fr": "Retirer", "de": "Entfernen", "it": "Rimuovi", "ja": "取り除く", "zh": "移除", "ko": "제거", "ar": "إزالة" },
+    "keywords": {
+      "es": ["restar", "reducir", "eliminar", "menos", "disminuir cantidad", "excluir", "sacar de la lista"],
+      "en": ["subtract", "reduce", "delete", "decrease quantity", "exclude", "take out", "remove from list"]
+    }
+  },
+  "check-square": {
+    "label": { "es": "Casilla marcada", "en": "Checked box", "pt": "Caixa marcada", "fr": "Case cochée", "de": "Kontrollkästchen aktiviert", "it": "Casella selezionata", "ja": "チェック済み", "zh": "已勾选", "ko": "체크됨", "ar": "مربع محدد" },
+    "keywords": {
+      "es": ["tarea hecha", "seleccionado", "aceptar términos", "lista de pendientes", "marcado", "opción activa", "completado"],
+      "en": ["task done", "selected", "accept terms", "to-do list", "ticked", "option on", "completed"]
+    }
+  },
+  "close-square": {
+    "label": { "es": "Cerrar", "en": "Close", "pt": "Fechar", "fr": "Fermer", "de": "Schließen", "it": "Chiudi", "ja": "閉じる", "zh": "关闭", "ko": "닫기", "ar": "إغلاق" },
+    "keywords": {
+      "es": ["descartar", "rechazar", "salir", "quitar", "cancelar", "cerrar ventana", "tachar"],
+      "en": ["dismiss", "reject", "exit", "cancel", "discard", "cross out", "quit"]
+    }
+  },
+  "plus-square": {
+    "label": { "es": "Nuevo elemento", "en": "New item", "pt": "Novo item", "fr": "Nouvel élément", "de": "Neues Element", "it": "Nuovo elemento", "ja": "新規項目", "zh": "新建项目", "ko": "새 항목", "ar": "عنصر جديد" },
+    "keywords": {
+      "es": ["agregar", "crear", "expandir", "añadir", "sumar", "abrir sección", "nuevo registro"],
+      "en": ["add", "create", "expand", "insert", "new entry", "open section", "append"]
+    }
+  },
+  "minus-square": {
+    "label": { "es": "Contraer", "en": "Collapse", "pt": "Recolher", "fr": "Réduire", "de": "Einklappen", "it": "Comprimi", "ja": "折りたたむ", "zh": "收起", "ko": "접기", "ar": "طي" },
+    "keywords": {
+      "es": ["colapsar", "quitar", "cerrar sección", "ocultar detalles", "restar", "selección parcial", "plegar"],
+      "en": ["fold", "remove", "close section", "hide details", "subtract", "partial selection", "indeterminate"]
+    }
+  },
+  "check-double": {
+    "label": { "es": "Leído", "en": "Read", "pt": "Lido", "fr": "Lu", "de": "Gelesen", "it": "Letto", "ja": "既読", "zh": "已读", "ko": "읽음", "ar": "تمت القراءة" },
+    "keywords": {
+      "es": ["entregado", "visto", "confirmado", "todo listo", "doble palomita", "mensaje recibido", "marcar todo"],
+      "en": ["delivered", "seen", "confirmed", "all done", "two ticks", "message received", "mark all"]
+    }
+  },
+  "loader": {
+    "label": { "es": "Cargando", "en": "Loading", "pt": "Carregando", "fr": "Chargement", "de": "Wird geladen", "it": "Caricamento", "ja": "読み込み中", "zh": "加载中", "ko": "로딩 중", "ar": "جارٍ التحميل" },
+    "keywords": {
+      "es": ["progreso", "espera", "procesando", "en curso", "cargar", "círculo giratorio", "un momento"],
+      "en": ["progress", "wait", "processing", "in progress", "busy", "spinning circle", "please wait"]
+    }
+  },
+  "spinner": {
+    "label": { "es": "Procesando", "en": "Processing", "pt": "Processando", "fr": "Traitement en cours", "de": "Wird verarbeitet", "it": "Elaborazione", "ja": "処理中", "zh": "处理中", "ko": "처리 중", "ar": "جارٍ المعالجة" },
+    "keywords": {
+      "es": ["cargando", "espera", "actividad", "trabajando", "indicador de actividad", "ocupado", "girando"],
+      "en": ["loading", "wait", "activity", "working", "activity indicator", "busy", "throbber"]
+    }
+  },
+  "status-pending": {
+    "label": { "es": "Pendiente", "en": "Pending", "pt": "Pendente", "fr": "En attente", "de": "Ausstehend", "it": "In sospeso", "ja": "保留中", "zh": "待处理", "ko": "대기 중", "ar": "قيد الانتظار" },
+    "keywords": {
+      "es": ["por hacer", "en espera", "en cola", "sin empezar", "programado", "estado", "borrador"],
+      "en": ["to do", "waiting", "queued", "not started", "scheduled", "state", "backlog"]
+    }
+  },
+  "status-progress": {
+    "label": { "es": "En progreso", "en": "In progress", "pt": "Em andamento", "fr": "En cours", "de": "In Bearbeitung", "it": "In corso", "ja": "進行中", "zh": "进行中", "ko": "진행 중", "ar": "قيد التنفيذ" },
+    "keywords": {
+      "es": ["en curso", "avance", "a medias", "porcentaje", "estado de tarea", "parcial", "trabajando"],
+      "en": ["ongoing", "partial", "percentage", "task state", "underway", "doing", "halfway"]
+    }
+  },
+  "block": {
+    "label": { "es": "Bloqueado", "en": "Blocked", "pt": "Bloqueado", "fr": "Bloqué", "de": "Blockiert", "it": "Bloccato", "ja": "ブロック済み", "zh": "已阻止", "ko": "차단됨", "ar": "محظور" },
+    "keywords": {
+      "es": ["prohibido", "sin acceso", "no permitido", "vetar", "spam", "restringir usuario", "deshabilitado"],
+      "en": ["forbidden", "banned", "not allowed", "prohibited", "spam", "restrict user", "disabled"]
+    }
+  },
+  "gear": {
+    "label": { "es": "Configuración", "en": "Settings", "pt": "Configurações", "fr": "Paramètres", "de": "Einstellungen", "it": "Impostazioni", "ja": "設定", "zh": "设置", "ko": "설정", "ar": "الإعدادات" },
+    "keywords": {
+      "es": ["ajustes", "engranaje", "opciones", "preferencias", "personalizar", "panel de control", "rueda dentada"],
+      "en": ["preferences", "cog", "options", "configure", "customize", "control panel", "setup"]
+    }
+  },
+  "gears": {
+    "label": { "es": "Configuración avanzada", "en": "Advanced settings", "pt": "Configurações avançadas", "fr": "Paramètres avancés", "de": "Erweiterte Einstellungen", "it": "Impostazioni avanzate", "ja": "詳細設定", "zh": "高级设置", "ko": "고급 설정", "ar": "الإعدادات المتقدمة" },
+    "keywords": {
+      "es": ["mecanismo", "engranes", "sistema", "automatización", "procesos", "integraciones", "funcionamiento interno"],
+      "en": ["mechanism", "cogs", "system", "automation", "processes", "integrations", "machinery"]
+    }
+  },
+  "sliders-horizontal": {
+    "label": { "es": "Ajustes", "en": "Adjustments", "pt": "Ajustes", "fr": "Ajustements", "de": "Anpassungen", "it": "Regolazioni", "ja": "調整", "zh": "调整", "ko": "조정", "ar": "تعديلات" },
+    "keywords": {
+      "es": ["filtros", "controles", "ecualizador", "refinar búsqueda", "parámetros", "personalizar", "niveles"],
+      "en": ["filters", "controls", "equalizer", "refine search", "parameters", "customize", "levels"]
+    }
+  },
+  "preferences": {
+    "label": { "es": "Preferencias", "en": "Preferences", "pt": "Preferências", "fr": "Préférences", "de": "Präferenzen", "it": "Preferenze", "ja": "環境設定", "zh": "偏好设置", "ko": "환경설정", "ar": "التفضيلات" },
+    "keywords": {
+      "es": ["interruptores", "opciones", "activar funciones", "notificaciones", "personalizar", "privacidad", "configurar cuenta"],
+      "en": ["toggles", "switches", "options", "enable features", "notifications", "customize", "account setup"]
+    }
+  },
+  "toggle-on": {
+    "label": { "es": "Activado", "en": "On", "pt": "Ativado", "fr": "Activé", "de": "Ein", "it": "Attivato", "ja": "オン", "zh": "开启", "ko": "켜짐", "ar": "مُفعّل" },
+    "keywords": {
+      "es": ["encendido", "interruptor", "habilitado", "activar", "función activa", "sí", "switch"],
+      "en": ["enabled", "activate", "active", "feature enabled", "yes", "switch", "power up"]
+    }
+  },
+  "toggle-off": {
+    "label": { "es": "Desactivado", "en": "Off", "pt": "Desativado", "fr": "Désactivé", "de": "Aus", "it": "Disattivato", "ja": "オフ", "zh": "关闭", "ko": "꺼짐", "ar": "مُعطّل" },
+    "keywords": {
+      "es": ["apagado", "interruptor", "deshabilitado", "desactivar", "función inactiva", "no", "switch"],
+      "en": ["disabled", "deactivate", "inactive", "feature disabled", "no", "switch", "power down"]
+    }
+  },
+  "restart": {
+    "label": { "es": "Reiniciar", "en": "Restart", "pt": "Reiniciar", "fr": "Redémarrer", "de": "Neu starten", "it": "Riavvia", "ja": "再起動", "zh": "重新启动", "ko": "다시 시작", "ar": "إعادة التشغيل" },
+    "keywords": {
+      "es": ["reinicio", "encender de nuevo", "apagar y encender", "volver a cargar", "reset", "energía", "restablecer"],
+      "en": ["reboot", "power cycle", "turn off and on", "reload", "reset", "power", "relaunch"]
+    }
+  },
+  "lifebuoy": {
+    "label": { "es": "Soporte", "en": "Support", "pt": "Suporte", "fr": "Assistance", "de": "Support", "it": "Supporto", "ja": "サポート", "zh": "技术支持", "ko": "지원", "ar": "الدعم" },
+    "keywords": {
+      "es": ["salvavidas", "ayuda", "rescate", "atención al cliente", "abrir ticket", "asistencia técnica", "emergencia"],
+      "en": ["life ring", "help", "rescue", "customer service", "open ticket", "tech support", "helpdesk"]
+    }
+  },
+  "flag-report": {
+    "label": { "es": "Reportar", "en": "Report", "pt": "Denunciar", "fr": "Signaler", "de": "Melden", "it": "Segnala", "ja": "報告", "zh": "举报", "ko": "신고", "ar": "إبلاغ" },
+    "keywords": {
+      "es": ["denunciar", "marcar problema", "incidencia", "contenido inapropiado", "abuso", "moderación", "spam"],
+      "en": ["mark issue", "incident", "inappropriate content", "abuse", "moderation", "spam", "complaint"]
+    }
+  },
+  "flag-check": {
+    "label": { "es": "Meta cumplida", "en": "Goal reached", "pt": "Meta alcançada", "fr": "Objectif atteint", "de": "Ziel erreicht", "it": "Obiettivo raggiunto", "ja": "目標達成", "zh": "目标达成", "ko": "목표 달성", "ar": "تم تحقيق الهدف" },
+    "keywords": {
+      "es": ["hito", "completado", "llegada", "fin del proyecto", "entrega", "logro", "etapa superada"],
+      "en": ["milestone", "completed", "finish line", "project done", "delivery", "achievement", "phase complete"]
+    }
+  },
+  "siren": {
+    "label": { "es": "Emergencia", "en": "Emergency", "pt": "Emergência", "fr": "Urgence", "de": "Notfall", "it": "Emergenza", "ja": "緊急", "zh": "紧急情况", "ko": "긴급 상황", "ar": "حالة طوارئ" },
+    "keywords": {
+      "es": ["alarma", "incidente", "urgente", "sirena", "caída del servicio", "alerta crítica", "guardia"],
+      "en": ["alarm", "incident", "urgent", "outage", "critical alert", "on call", "beacon"]
+    }
+  },
+  "page-not-found": {
+    "label": { "es": "Página no encontrada", "en": "Page not found", "pt": "Página não encontrada", "fr": "Page introuvable", "de": "Seite nicht gefunden", "it": "Pagina non trovata", "ja": "ページが見つかりません", "zh": "找不到页面", "ko": "페이지를 찾을 수 없음", "ar": "الصفحة غير موجودة" },
+    "keywords": {
+      "es": ["404", "error", "enlace roto", "página de error", "no existe", "contenido eliminado", "ruta inválida"],
+      "en": ["404", "error", "broken link", "error screen", "missing", "removed content", "dead end"]
+    }
+  },
+  "verified": {
+    "label": { "es": "Verificado", "en": "Verified", "pt": "Verificado", "fr": "Vérifié", "de": "Verifiziert", "it": "Verificato", "ja": "認証済み", "zh": "已认证", "ko": "인증됨", "ar": "موثّق" },
+    "keywords": {
+      "es": ["cuenta oficial", "insignia", "auténtico", "palomita azul", "confiable", "validado", "certificado"],
+      "en": ["official account", "badge", "authentic", "blue check", "trusted", "validated", "certified"]
+    }
+  },
+  "badge-star": {
+    "label": { "es": "Destacado", "en": "Featured", "pt": "Destaque", "fr": "À la une", "de": "Hervorgehoben", "it": "In evidenza", "ja": "注目", "zh": "精选", "ko": "추천", "ar": "مميّز" },
+    "keywords": {
+      "es": ["insignia", "logro", "favorito", "recompensa", "nivel", "miembro premium", "recomendado"],
+      "en": ["achievement", "favorite", "reward", "level", "premium member", "recommended", "top rated"]
+    }
+  },
+  "award": {
+    "label": { "es": "Premio", "en": "Award", "pt": "Prêmio", "fr": "Récompense", "de": "Auszeichnung", "it": "Premio", "ja": "受賞", "zh": "奖项", "ko": "수상", "ar": "جائزة" },
+    "keywords": {
+      "es": ["reconocimiento", "roseta", "galardón", "distinción", "mérito", "sello de calidad", "primer lugar"],
+      "en": ["recognition", "prize", "rosette", "honor", "merit", "quality seal", "distinction"]
+    }
+  },
+  "trophy": {
+    "label": { "es": "Trofeo", "en": "Trophy", "pt": "Troféu", "fr": "Trophée", "de": "Trophäe", "it": "Trofeo", "ja": "トロフィー", "zh": "奖杯", "ko": "트로피", "ar": "كأس" },
+    "keywords": {
+      "es": ["campeón", "logro", "ganador", "copa", "victoria", "competencia", "récord"],
+      "en": ["champion", "achievement", "winner", "cup", "victory", "competition", "record"]
+    }
+  },
+  "medal-ribbon": {
+    "label": { "es": "Medalla", "en": "Medal", "pt": "Medalha", "fr": "Médaille", "de": "Medaille", "it": "Medaglia", "ja": "メダル", "zh": "奖牌", "ko": "메달", "ar": "ميدالية" },
+    "keywords": {
+      "es": ["primer lugar", "ganador", "condecoración", "oro", "logro", "honor", "competencia"],
+      "en": ["first place", "winner", "decoration", "gold", "achievement", "honor", "competition"]
+    }
+  },
+  "lightbulb": {
+    "label": { "es": "Idea", "en": "Idea", "pt": "Ideia", "fr": "Idée", "de": "Idee", "it": "Idea", "ja": "アイデア", "zh": "创意", "ko": "아이디어", "ar": "فكرة" },
+    "keywords": {
+      "es": ["foco", "bombilla", "sugerencia", "consejo", "tip", "pista", "creatividad"],
+      "en": ["lamp", "suggestion", "tip", "hint", "advice", "creativity", "brainstorm"]
+    }
+  },
+  "lightbulb-on": {
+    "label": { "es": "Inspiración", "en": "Inspiration", "pt": "Inspiração", "fr": "Inspiration", "de": "Inspiration", "it": "Ispirazione", "ja": "ひらめき", "zh": "灵感", "ko": "영감", "ar": "إلهام" },
+    "keywords": {
+      "es": ["eureka", "idea brillante", "hallazgo", "foco encendido", "solución", "aprendizaje", "descubrimiento"],
+      "en": ["eureka", "bright idea", "insight", "aha moment", "solution", "learning", "discovery"]
+    }
+  },
+  "rocket-launch": {
+    "label": { "es": "Lanzamiento", "en": "Launch", "pt": "Lançamento", "fr": "Lancement", "de": "Start", "it": "Lancio", "ja": "ローンチ", "zh": "发布", "ko": "출시", "ar": "إطلاق" },
+    "keywords": {
+      "es": ["despegue", "publicar", "estreno", "desplegar", "salir en vivo", "empezar", "crecimiento rápido"],
+      "en": ["takeoff", "go live", "deploy", "release", "ship", "get started", "boost"]
+    }
+  },
+  "target-arrow": {
+    "label": { "es": "Objetivo cumplido", "en": "Target hit", "pt": "Alvo atingido", "fr": "Cible atteinte", "de": "Ziel getroffen", "it": "Bersaglio colpito", "ja": "的中", "zh": "命中目标", "ko": "목표 적중", "ar": "إصابة الهدف" },
+    "keywords": {
+      "es": ["meta", "diana", "acierto", "precisión", "enfoque", "kpi", "estrategia"],
+      "en": ["goal", "bullseye", "precision", "focus", "kpi", "strategy", "aim"]
+    }
+  },
+  "podium": {
+    "label": { "es": "Clasificación", "en": "Leaderboard", "pt": "Classificação", "fr": "Classement", "de": "Rangliste", "it": "Classifica", "ja": "ランキング", "zh": "排行榜", "ko": "순위표", "ar": "لوحة الصدارة" },
+    "keywords": {
+      "es": ["podio", "ranking", "primeros lugares", "ganadores", "competencia", "puntuación", "mejores"],
+      "en": ["ranking", "top three", "winners", "competition", "scores", "standings", "best"]
+    }
+  },
+  "wrench": {
+    "label": { "es": "Reparar", "en": "Fix", "pt": "Reparar", "fr": "Réparer", "de": "Reparieren", "it": "Ripara", "ja": "修理", "zh": "修复", "ko": "수리", "ar": "إصلاح" },
+    "keywords": {
+      "es": ["llave inglesa", "herramienta", "ajustar", "configurar", "arreglar", "mantenimiento", "personalizar"],
+      "en": ["spanner", "tool", "adjust", "configure", "repair", "maintenance", "tweak"]
+    }
+  },
+  "screwdriver": {
+    "label": { "es": "Ensamblar", "en": "Assemble", "pt": "Montar", "fr": "Assembler", "de": "Montieren", "it": "Assembla", "ja": "組み立て", "zh": "组装", "ko": "조립", "ar": "تجميع" },
+    "keywords": {
+      "es": ["desarmador", "destornillador", "herramienta", "armar", "ajuste fino", "instalar", "hardware"],
+      "en": ["tool", "assembly", "fine tune", "install", "hardware", "tighten", "diy"]
+    }
+  },
+  "hammer": {
+    "label": { "es": "Compilar", "en": "Build", "pt": "Compilar", "fr": "Compiler", "de": "Kompilieren", "it": "Compila", "ja": "ビルド", "zh": "构建", "ko": "빌드", "ar": "بناء" },
+    "keywords": {
+      "es": ["martillo", "construir", "herramienta", "compilación", "desarrollo", "carpintería", "reparar"],
+      "en": ["construct", "tool", "compile", "development", "make", "carpentry", "repair"]
+    }
+  },
+  "tools": {
+    "label": { "es": "Mantenimiento", "en": "Maintenance", "pt": "Manutenção", "fr": "Maintenance", "de": "Wartung", "it": "Manutenzione", "ja": "メンテナンス", "zh": "维护", "ko": "유지 관리", "ar": "الصيانة" },
+    "keywords": {
+      "es": ["herramientas", "reparar", "servicio técnico", "llave y desarmador", "taller", "soporte técnico", "configuración"],
+      "en": ["repair", "service", "workshop", "tech support", "utilities", "toolkit", "setup"]
+    }
+  },
+  "traffic-cone": {
+    "label": { "es": "En construcción", "en": "Under construction", "pt": "Em construção", "fr": "En construction", "de": "Im Aufbau", "it": "In costruzione", "ja": "工事中", "zh": "施工中", "ko": "공사 중", "ar": "قيد الإنشاء" },
+    "keywords": {
+      "es": ["mantenimiento", "en obra", "precaución", "cono", "próximamente", "beta", "trabajo en curso"],
+      "en": ["maintenance", "work in progress", "caution", "coming soon", "beta", "roadwork", "wip"]
+    }
+  },
+  "barrier": {
+    "label": { "es": "Paso cerrado", "en": "Roadblock", "pt": "Bloqueio", "fr": "Barrage", "de": "Absperrung", "it": "Sbarramento", "ja": "通行止め", "zh": "路障", "ko": "통행 금지", "ar": "حاجز" },
+    "keywords": {
+      "es": ["barrera", "en construcción", "cerrado", "desvío", "obstáculo", "acceso restringido", "impedimento"],
+      "en": ["closed", "under construction", "detour", "obstacle", "restricted access", "blocker", "road closed"]
+    }
+  },
+  "hard-hat": {
+    "label": { "es": "Construcción", "en": "Construction", "pt": "Construção", "fr": "Chantier", "de": "Baustelle", "it": "Cantiere", "ja": "建設", "zh": "施工", "ko": "건설", "ar": "إنشاءات" },
+    "keywords": {
+      "es": ["casco", "mantenimiento", "obra", "seguridad laboral", "ingeniería", "trabajador", "en desarrollo"],
+      "en": ["helmet", "maintenance", "worksite", "workplace safety", "engineering", "worker", "in development"]
+    }
+  },
+  "hex-nut": {
+    "label": { "es": "Componente", "en": "Component", "pt": "Componente", "fr": "Composant", "de": "Komponente", "it": "Componente", "ja": "部品", "zh": "部件", "ko": "부품", "ar": "مكوّن" },
+    "keywords": {
+      "es": ["tuerca", "pieza", "hardware", "refacción", "ensamblaje", "ingeniería", "fijar"],
+      "en": ["bolt", "part", "hardware", "spare part", "assembly", "engineering", "fastener"]
+    }
+  },
+  "checkbox": {
+    "label": { "es": "Casilla sin marcar", "en": "Unchecked box", "pt": "Caixa desmarcada", "fr": "Case non cochée", "de": "Kontrollkästchen nicht aktiviert", "it": "Casella non selezionata", "ja": "未チェック", "zh": "未勾选", "ko": "체크 안 됨", "ar": "مربع غير محدد" },
+    "keywords": {
+      "es": ["casilla", "sin marcar", "pendiente", "opción", "tarea abierta", "lista de pendientes", "seleccionar"],
+      "en": ["unchecked", "empty box", "pending", "option", "open task", "to-do", "select"]
+    }
+  },
+  "radio-selected": {
+    "label": { "es": "Opción seleccionada", "en": "Selected option", "pt": "Opção selecionada", "fr": "Option sélectionnée", "de": "Ausgewählte Option", "it": "Opzione selezionata", "ja": "選択済み", "zh": "已选择", "ko": "선택됨", "ar": "خيار محدد" },
+    "keywords": {
+      "es": ["botón de opción", "elegido", "marcado", "formulario", "opción única", "activo", "seleccionar"],
+      "en": ["option button", "chosen", "checked", "form", "single choice", "active", "pick"]
+    }
+  },
+  "progress-bar": {
+    "label": { "es": "Progreso", "en": "Progress", "pt": "Progresso", "fr": "Progression", "de": "Fortschritt", "it": "Avanzamento", "ja": "進捗", "zh": "进度", "ko": "진행률", "ar": "التقدم" },
+    "keywords": {
+      "es": ["avance", "carga", "porcentaje", "completado", "descarga", "estado", "medidor"],
+      "en": ["advance", "loading", "percentage", "completion", "download", "status", "meter"]
+    }
+  },
+  "update": {
+    "label": { "es": "Actualización", "en": "Update", "pt": "Atualização", "fr": "Mise à jour", "de": "Aktualisierung", "it": "Aggiornamento", "ja": "アップデート", "zh": "更新", "ko": "업데이트", "ar": "تحديث" },
+    "keywords": {
+      "es": ["instalar", "nueva versión", "descargar", "actualizar sistema", "parche", "mejora", "software"],
+      "en": ["install", "new version", "download", "upgrade", "patch", "software", "firmware"]
+    }
+  },
+  "person-gear": {
+    "label": { "es": "Configuración de la cuenta", "en": "Account settings", "pt": "Configurações da conta", "fr": "Paramètres du compte", "de": "Kontoeinstellungen", "it": "Impostazioni account", "ja": "アカウント設定", "zh": "账户设置", "ko": "계정 설정", "ar": "إعدادات الحساب" },
+    "keywords": {
+      "es": ["perfil", "ajustes de usuario", "editar perfil", "preferencias", "administrar usuario", "datos personales", "roles"],
+      "en": ["profile", "user preferences", "edit profile", "manage user", "personal details", "roles", "my account"]
+    }
+  },
+  "key-plus": {
+    "label": { "es": "Agregar llave", "en": "Add key", "pt": "Adicionar chave", "fr": "Ajouter une clé", "de": "Schlüssel hinzufügen", "it": "Aggiungi chiave", "ja": "キーを追加", "zh": "添加密钥", "ko": "키 추가", "ar": "إضافة مفتاح" },
+    "keywords": {
+      "es": ["nueva credencial", "registrar llave de acceso", "clave de api", "nuevo acceso", "dar acceso", "generar token", "dispositivo de confianza"],
+      "en": ["new credential", "register passkey", "api token", "grant access", "new access", "generate token", "trusted device"]
+    }
+  },
+  "globe-lock": {
+    "label": { "es": "Red privada", "en": "Private network", "pt": "Rede privada", "fr": "Réseau privé", "de": "Privates Netzwerk", "it": "Rete privata", "ja": "プライベートネットワーク", "zh": "专用网络", "ko": "사설 네트워크", "ar": "شبكة خاصة" },
+    "keywords": {
+      "es": ["vpn", "acceso restringido", "navegación segura", "internet seguro", "geobloqueo", "dominio privado", "conexión cifrada"],
+      "en": ["vpn", "restricted access", "secure browsing", "safe internet", "geo-blocking", "private domain", "encrypted connection"]
+    }
+  },
+  "shield-search": {
+    "label": { "es": "Análisis de seguridad", "en": "Security scan", "pt": "Verificação de segurança", "fr": "Analyse de sécurité", "de": "Sicherheitsscan", "it": "Scansione di sicurezza", "ja": "セキュリティスキャン", "zh": "安全扫描", "ko": "보안 검사", "ar": "فحص أمني" },
+    "keywords": {
+      "es": ["auditoría", "escaneo", "revisión", "inspección", "buscar amenazas", "antivirus", "detectar vulnerabilidades"],
+      "en": ["audit", "inspection", "review", "threat detection", "antivirus", "vulnerability scan", "checkup"]
+    }
+  },
+  "security-camera": {
+    "label": { "es": "Cámara de seguridad", "en": "Security camera", "pt": "Câmera de segurança", "fr": "Caméra de surveillance", "de": "Überwachungskamera", "it": "Telecamera di sicurezza", "ja": "防犯カメラ", "zh": "监控摄像头", "ko": "보안 카메라", "ar": "كاميرا المراقبة" },
+    "keywords": {
+      "es": ["vigilancia", "monitoreo", "cctv", "grabación", "supervisión", "videovigilancia", "registro de actividad"],
+      "en": ["surveillance", "monitoring", "cctv", "recording", "oversight", "video watch", "activity log"]
+    }
+  },
+  "radar": {
+    "label": { "es": "Monitoreo", "en": "Monitoring", "pt": "Monitoramento", "fr": "Surveillance", "de": "Überwachung", "it": "Monitoraggio", "ja": "監視", "zh": "监测", "ko": "모니터링", "ar": "المراقبة" },
+    "keywords": {
+      "es": ["detección", "barrido", "escaneo de red", "rastreo", "vigilar", "descubrir dispositivos", "señales"],
+      "en": ["detection", "sweep", "network scan", "tracking", "watch", "discover devices", "signals"]
+    }
+  },
+  "heart-pulse": {
+    "label": { "es": "Estado del sistema", "en": "System health", "pt": "Saúde do sistema", "fr": "État du système", "de": "Systemzustand", "it": "Stato del sistema", "ja": "システムの状態", "zh": "系统健康状况", "ko": "시스템 상태", "ar": "حالة النظام" },
+    "keywords": {
+      "es": ["salud", "latido", "monitoreo", "disponibilidad", "ritmo cardiaco", "signos vitales", "uptime"],
+      "en": ["health", "heartbeat", "monitoring", "availability", "bpm", "vital signs", "uptime"]
+    }
+  },
+  "stethoscope": {
+    "label": { "es": "Diagnóstico", "en": "Diagnostics", "pt": "Diagnóstico", "fr": "Diagnostic", "de": "Diagnose", "it": "Diagnostica", "ja": "診断", "zh": "诊断", "ko": "진단", "ar": "التشخيص" },
+    "keywords": {
+      "es": ["salud del sistema", "revisión", "chequeo", "médico", "consulta", "detectar problemas", "auscultar"],
+      "en": ["system health", "checkup", "health check", "doctor", "medical", "troubleshoot", "examine"]
+    }
+  },
+  "virus": {
+    "label": { "es": "Malware", "en": "Malware", "pt": "Malware", "fr": "Logiciel malveillant", "de": "Schadsoftware", "it": "Malware", "ja": "マルウェア", "zh": "恶意软件", "ko": "악성 코드", "ar": "برمجيات خبيثة" },
+    "keywords": {
+      "es": ["amenaza", "infección", "germen", "contagio", "software malicioso", "cuarentena", "programa dañino"],
+      "en": ["threat", "infection", "germ", "contagion", "malicious software", "quarantine", "bug"]
+    }
+  },
+  "plug-connected": {
+    "label": { "es": "Conectado", "en": "Connected", "pt": "Conectado", "fr": "Connecté", "de": "Verbunden", "it": "Connesso", "ja": "接続済み", "zh": "已连接", "ko": "연결됨", "ar": "متصل" },
+    "keywords": {
+      "es": ["integración activa", "enchufado", "conexión", "en línea", "vinculado", "api", "complemento"],
+      "en": ["integration on", "plugged in", "online", "linked", "api", "add-on", "connection"]
+    }
+  },
+  "plug-disconnected": {
+    "label": { "es": "Desconectado", "en": "Disconnected", "pt": "Desconectado", "fr": "Déconnecté", "de": "Getrennt", "it": "Disconnesso", "ja": "切断", "zh": "已断开", "ko": "연결 끊김", "ar": "غير متصل" },
+    "keywords": {
+      "es": ["sin conexión", "integración caída", "desenchufado", "fuera de línea", "desvincular", "error de conexión", "interrumpido"],
+      "en": ["no connection", "integration down", "unplugged", "offline", "unlink", "connection error", "interrupted"]
+    }
+  },
+  "command": {
+    "label": { "es": "Atajo de teclado", "en": "Keyboard shortcut", "pt": "Atalho de teclado", "fr": "Raccourci clavier", "de": "Tastaturkurzbefehl", "it": "Scorciatoia da tastiera", "ja": "キーボードショートカット", "zh": "键盘快捷键", "ko": "키보드 단축키", "ar": "اختصار لوحة المفاتيح" },
+    "keywords": {
+      "es": ["tecla cmd", "mac", "combinación de teclas", "paleta de acciones", "acceso rápido", "teclado", "atajo"],
+      "en": ["cmd key", "mac", "hotkey", "key combo", "quick actions", "keyboard", "accelerator"]
+    }
+  },
+  "patch": {
+    "label": { "es": "Parche", "en": "Patch", "pt": "Correção", "fr": "Correctif", "de": "Patch", "it": "Patch", "ja": "パッチ", "zh": "补丁", "ko": "패치", "ar": "تصحيح" },
+    "keywords": {
+      "es": ["corrección", "hotfix", "curita", "arreglo rápido", "vendita", "primeros auxilios", "solucionar error"],
+      "en": ["fix", "hotfix", "bandage", "band-aid", "quick fix", "first aid", "bug fix"]
+    }
+  },
+  "accessibility": {
+    "label": { "es": "Accesibilidad", "en": "Accessibility", "pt": "Acessibilidade", "fr": "Accessibilité", "de": "Barrierefreiheit", "it": "Accessibilità", "ja": "アクセシビリティ", "zh": "无障碍", "ko": "접근성", "ar": "إمكانية الوصول" },
+    "keywords": {
+      "es": ["inclusión", "a11y", "discapacidad", "acceso universal", "lector de pantalla", "diseño inclusivo", "persona"],
+      "en": ["inclusion", "a11y", "disability", "universal access", "screen reader", "inclusive design", "person"]
+    }
+  },
+  "dark-mode": {
+    "label": { "es": "Modo oscuro", "en": "Dark mode", "pt": "Modo escuro", "fr": "Mode sombre", "de": "Dunkelmodus", "it": "Modalità scura", "ja": "ダークモード", "zh": "深色模式", "ko": "다크 모드", "ar": "الوضع الداكن" },
+    "keywords": {
+      "es": ["tema oscuro", "apariencia", "modo noche", "luna", "cambiar tema", "descansar la vista", "interruptor"],
+      "en": ["night mode", "appearance", "moon", "switch theme", "eye comfort", "toggle", "low light"]
+    }
+  },
+  "contrast": {
+    "label": { "es": "Contraste", "en": "Contrast", "pt": "Contraste", "fr": "Contraste", "de": "Kontrast", "it": "Contrasto", "ja": "コントラスト", "zh": "对比度", "ko": "대비", "ar": "التباين" },
+    "keywords": {
+      "es": ["apariencia", "tema", "modo claro y oscuro", "alta visibilidad", "brillo", "tema automático", "legibilidad"],
+      "en": ["appearance", "theme", "light and dark", "high visibility", "brightness", "auto theme", "legibility"]
+    }
+  },
+  "language": {
+    "label": { "es": "Idioma", "en": "Language", "pt": "Idioma", "fr": "Langue", "de": "Sprache", "it": "Lingua", "ja": "言語", "zh": "语言", "ko": "언어", "ar": "اللغة" },
+    "keywords": {
+      "es": ["región", "localización", "traducción", "traducir", "internacional", "cambiar idioma", "país"],
+      "en": ["region", "locale", "localization", "translate", "international", "i18n", "country"]
+    }
+  },
+  "minus": {
+    "label": { "es": "Restar", "en": "Subtract", "pt": "Subtrair", "fr": "Soustraire", "de": "Subtrahieren", "it": "Sottrai", "ja": "減らす", "zh": "减少", "ko": "빼기", "ar": "طرح" },
+    "keywords": {
+      "es": ["menos", "quitar", "reducir", "disminuir", "guion", "resta", "cantidad"],
+      "en": ["remove", "reduce", "decrease", "dash", "less", "negative", "quantity"]
+    }
+  },
+  "asterisk": {
+    "label": { "es": "Obligatorio", "en": "Required", "pt": "Obrigatório", "fr": "Obligatoire", "de": "Erforderlich", "it": "Obbligatorio", "ja": "必須", "zh": "必填", "ko": "필수", "ar": "مطلوب" },
+    "keywords": {
+      "es": ["asterisco", "campo requerido", "nota al pie", "comodín", "estrella", "aclaración", "formulario"],
+      "en": ["required field", "footnote", "wildcard", "star", "note", "form", "mandatory"]
+    }
+  },
+  "sync": {
+    "label": { "es": "Sincronizar", "en": "Sync", "pt": "Sincronizar", "fr": "Synchroniser", "de": "Synchronisieren", "it": "Sincronizza", "ja": "同期", "zh": "同步", "ko": "동기화", "ar": "مزامنة" },
+    "keywords": {
+      "es": ["sincronizando", "actualizar datos", "al día", "respaldo", "nube", "refrescar", "intercambio"],
+      "en": ["update data", "up to date", "backup", "cloud", "refresh", "reconcile", "mirror"]
+    }
+  },
+  "radio-unselected": {
+    "label": { "es": "Opción no seleccionada", "en": "Unselected option", "pt": "Opção não selecionada", "fr": "Option non sélectionnée", "de": "Nicht ausgewählte Option", "it": "Opzione non selezionata", "ja": "未選択", "zh": "未选择", "ko": "선택 안 됨", "ar": "خيار غير محدد" },
+    "keywords": {
+      "es": ["botón de opción", "sin elegir", "círculo vacío", "formulario", "por hacer", "elegir", "vacío"],
+      "en": ["option button", "not chosen", "empty circle", "form", "to do", "choose", "blank"]
+    }
+  },
+  "magnet": {
+    "label": { "es": "Imán", "en": "Magnet", "pt": "Ímã", "fr": "Aimant", "de": "Magnet", "it": "Calamita", "ja": "マグネット", "zh": "磁铁", "ko": "자석", "ar": "مغناطيس" },
+    "keywords": {
+      "es": ["atraer", "ajustar a la cuadrícula", "captar clientes", "imantar", "atracción", "generar prospectos", "retener"],
+      "en": ["attract", "snap to grid", "lead generation", "pull", "attraction", "retention", "stick"]
+    }
+  },
+  "first-aid": {
+    "label": { "es": "Primeros auxilios", "en": "First aid", "pt": "Primeiros socorros", "fr": "Premiers secours", "de": "Erste Hilfe", "it": "Primo soccorso", "ja": "救急", "zh": "急救", "ko": "응급 처치", "ar": "الإسعافات الأولية" },
+    "keywords": {
+      "es": ["botiquín", "emergencia", "salud", "medicina", "seguro médico", "clínica", "rescate"],
+      "en": ["medical kit", "emergency", "health", "medicine", "health insurance", "clinic", "rescue"]
+    }
+  },
+  "wheelchair": {
+    "label": { "es": "Acceso para silla de ruedas", "en": "Wheelchair accessible", "pt": "Acessível para cadeira de rodas", "fr": "Accessible en fauteuil roulant", "de": "Rollstuhlgerecht", "it": "Accessibile in sedia a rotelle", "ja": "車椅子対応", "zh": "轮椅无障碍", "ko": "휠체어 이용 가능", "ar": "مناسب للكراسي المتحركة" },
+    "keywords": {
+      "es": ["accesible", "discapacidad", "movilidad reducida", "rampa", "accesibilidad", "acceso universal", "inclusión"],
+      "en": ["accessible", "disability", "reduced mobility", "ramp", "accessibility", "universal access", "inclusion"]
+    }
+  }
+}

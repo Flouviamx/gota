@@ -1,7 +1,7 @@
 // Navegación: flechas, chevrons, menús, paneles, vistas y todo lo que mueve al usuario por la
 // interfaz. Se dibuja con el motor sobre las reglas de DESIGN.md; las medidas base salen del
 // núcleo (arrow-right: asta de 16 y brazos de 6 por eje; chevron-right: brazos de 6.75).
-import { arc, circ, cursor, dot, f, head, line, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, cursor, dot, f, head, line, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 
 const C = [12, 12];
 const R2 = Math.SQRT2;
@@ -357,6 +357,44 @@ const icons = {
   },
   'zoom-in': { tags: ['acercar', 'ampliar', 'zoom', 'zoom in', 'magnify'], d: [...LENS, line([10.6, 7.85], [10.6, 13.35]), line([7.85, 10.6], [13.35, 10.6])] },
   'zoom-out': { tags: ['alejar', 'reducir', 'zoom', 'zoom out', 'magnify'], d: [...LENS, line([7.85, 10.6], [13.35, 10.6])] },
+
+  // ── Cobertura (ronda 2): ventana, plantilla, mano, búsqueda y filtro ─────────────────
+  // La ventana del set (la de `window-lock` y `page-not-found` de sistema): el cuadro con la firma y
+  // su barra de título.
+  'browser': {
+    tags: ['navegador', 'ventana', 'sitio web', 'página web', 'browser', 'window', 'web page'],
+    d: [sq(3.25, 3.25, 17.5, 17.5, 4, { square: ['br'] }), line([3.25, 7.75], [20.75, 7.75])],
+  },
+  // Plantilla: la misma ventana con la barra lateral bajo la cabecera.
+  'layout': {
+    tags: ['diseño de página', 'plantilla', 'maqueta', 'estructura', 'layout', 'template', 'wireframe'],
+    d: [sq(3.25, 3.25, 17.5, 17.5, 4, { square: ['br'] }), line([3.25, 7.75], [20.75, 7.75]), line([9.25, 7.75], [9.25, 20.75])],
+  },
+  // Mano que señala (enlace, tocar): un solo contorno cerrado. El índice arriba (3 de ancho), los
+  // dedos doblados en un solo nudillo (con dos se leían como dientes a 18 px), la palma y el
+  // pulgar que vuelve a la base del índice.
+  'hand-pointer': {
+    tags: ['mano', 'señalar', 'tocar', 'enlace', 'hand pointer', 'tap', 'touch'],
+    d: ['M10.25 16V5a1.5 1.5 0 0 1 3 0V10.75a2.65 2.65 0 0 1 5.3 0V14.5c0 3.6-2.4 6.25-5.75 6.25h-1c-1.95 0-3.3-.9-4.3-2.45L6.1 15.4a1.4 1.4 0 0 1 2.3-1.6L10.25 16Z'],
+  },
+  // Sin resultados o borrar la búsqueda: la lupa del zoom con una x dentro (como el más y el menos).
+  'search-x': {
+    tags: ['sin resultados', 'borrar búsqueda', 'búsqueda vacía', 'no encontrado', 'no results', 'clear search', 'not found'],
+    d: [...LENS, line([8.75, 8.75], [12.45, 12.45]), line([12.45, 8.75], [8.75, 12.45])],
+  },
+  // Quitar filtros: el embudo de `filter` al 78 % y corrido arriba a la izquierda (como la campana
+  // de las insignias de comunicación), para que la insignia de cerrar del motor solo le tome la
+  // punta del asta.
+  'filter-x': {
+    tags: ['quitar filtros', 'limpiar filtros', 'sin filtros', 'restablecer', 'clear filters', 'reset filters', 'remove filter'],
+    d: [
+      roundpoly(
+        [[3.25, 4.75], [20.75, 4.75], [14, 12.25], [14, 19.75], [10, 19.75], [10, 12.25]].map(([x, y]) => [12 + (x - 12) * 0.78 - 2.25, 12 + (y - 12) * 0.78 - 2]),
+        [1.75, 1.75, 1, 1, 1, 1].map((r) => r * 0.78),
+      ),
+    ],
+    badge: badge('x'),
+  },
 };
 
 // ── Relleno (DESIGN.md › Relleno): índices de `d` que se rellenan, se calan o siguen siendo línea.
@@ -384,17 +422,23 @@ const FILL = {
   'sidebar-expand': { solid: [0], cut: [1, 2] },
   'split-view': { solid: [0], cut: [1] },
   'tabs': { solid: [0], cut: [1] },
+  // La ventana del navegador y la plantilla: el cuadro sólido con la cabecera (y la barra) calada.
+  'browser': { solid: [0], cut: [1] },
+  'layout': { solid: [0], cut: [1, 2] },
   'view-grid': { solid: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
   'view-list': { solid: [0, 2, 4], lines: [1, 3, 5] },
   'view-columns': { solid: [0], cut: [1, 2] },
   'view-cards': { solid: [0, 1] },
   'view-carousel': { solid: [0], lines: [1, 2] },
   'filter': { solid: [0] },
+  // Quitar filtros: el embudo sólido; la insignia del motor trae su relleno (círculo sólido, x calada).
+  'filter-x': { solid: [0] },
   'home': { solid: [0], cut: [1] },
   'scroll': { solid: [0], cut: [1, 2] },
   'cursor': { solid: [0] },
   'cursor-click': { solid: [0], lines: [1, 2, 3] },
   'drag-drop': { solid: [0] },
+  'hand-pointer': { solid: [0] },
   // La mira rellena: el disco con los cuatro trazos que asoman (la parte de dentro se funde).
   'crosshair': { solid: [0, 1, 2, 3, 4] },
 };
@@ -405,11 +449,13 @@ for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
   icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }) };
 }
-// Solo líneas abiertas (flechas, chevrons, menús, esquinas y las lupas, como search del núcleo):
-// su relleno es el mismo contorno.
+// Solo líneas abiertas (flechas, chevrons, menús, esquinas) y las lupas, como search del núcleo: su
+// relleno es el mismo contorno.
 for (const icon of Object.values(icons)) if (icon.fill === undefined) icon.fill = false;
 
 // ── 16 px (DESIGN.md › 16 px): dibujos propios donde el ajuste al pixel no basta ──
+// Un dibujo propio no se ajusta solo: sus tramos rectos van en centros de pixel (0.75 + 1.5k) y sus
+// diagonales a 45° pasan por centros de pixel (x ± y múltiplo de 1.5), así caen nítidas y no grises.
 // La cuadrícula: al ajustarse, las celdas de 3.5 quedaban de 2, 3 y 2 px y la del centro se
 // empastaba. Tres celdas iguales de 3 px (4.5) con 1 px de aire entre ellas.
 {
@@ -417,15 +463,45 @@ for (const icon of Object.values(icons)) if (icon.fill === undefined) icon.fill 
   const d = at.flatMap((y) => at.map((x) => sq(x, y, 4.5, 4.5, 1.25, { square: x === 17.25 && y === 17.25 ? ['br'] : [] })));
   icons['view-grid'].small = { d, fill: { solid: d } };
 }
-// Los puntos: centrados en el borde del pixel (múltiplos de 1.5) para que cada punto de 2 px
-// caiga entero en dos pixeles y no se junte con el vecino.
+// Los puntos: centrados en el borde del pixel (múltiplos de 1.5) para que cada punto caiga entero
+// en 2 × 2 pixeles y no se junte con el vecino. Con r 1: con r 0.7–0.8 el punto queda gris (≈ 50 %).
+const SMALL_DOT = 1;
 const dotsSmall = (pts) => {
-  const d = pts.map(([x, y]) => dot(x, y, 0.8));
+  const d = pts.map(([x, y]) => dot(x, y, SMALL_DOT));
   return { d, fill: { solid: d } };
 };
 icons['more-vertical'].small = dotsSmall([4.5, 12, 19.5].map((y) => [12, y]));
 icons['grip-vertical'].small = dotsSmall([9, 15].flatMap((x) => [6, 12, 18].map((y) => [x, y])));
 icons['grip-horizontal'].small = dotsSmall([9, 15].flatMap((y) => [6, 12, 18].map((x) => [x, y])));
+// Más en círculo: los mismos puntos de 2 × 2 px, con 1 px entre ellos; rellenos, calados.
+{
+  const dots = [7.5, 12, 16.5].map((x) => dot(x, 12, SMALL_DOT));
+  icons['more-circle'].small = { d: [RING, ...dots], fill: { solid: [RING], cut: dots } };
+}
+// Vista de lista: al ajustarse, la celda de en medio medía 4 px y las otras 3, y se leía como un
+// cero. Viñetas iguales de 3 × 3 px y renglones en centros de pixel, con 1 px de aire entre ellos.
+{
+  const ys = [2.25, 9.75, 17.25];
+  const cells = ys.map((y) => sq(2.25, y, 3, 3, 0.6));
+  const rows = ys.map((y) => line([9.75, y + 1.5], [20.25, y + 1.5]));
+  icons['view-list'].small = { d: cells.flatMap((c, i) => [c, rows[i]]), fill: { solid: cells, lines: rows } };
+}
+// Los punteros: el del motor con la punta en un centro de pixel, así su canto vertical y su
+// diagonal de 45° caen nítidos (corrido menos de 0.7; la escala no cambia).
+{
+  const p = cursor([6.75, 2.25], 1);
+  icons.cursor.small = { d: [p], fill: { solid: [p] } };
+}
+{
+  const p = cursor([11.25, 8.25], 0.72);
+  const rays = [line([11.25, 3.75], [11.25, 2.25]), line([6.75, 8.25], [5.25, 8.25]), line([8.25, 5.25], [6.75, 3.75])];
+  icons['cursor-click'].small = { d: [p, ...rays], fill: { solid: [p], lines: rays } };
+}
+{
+  const box = sq(3.75, 3.75, 12, 12, 3);
+  const p = cursor([11.25, 9.75], 0.66);
+  icons['drag-drop'].small = { d: [box], fill: { solid: [box] }, badge: { d: [p], knock: p, fill: { solid: [p] } } };
+}
 // Los dos carets: a 16 px los triángulos rellenos se tocaban; bases en centros de pixel con 2 px
 // de aire entre ellas.
 {
@@ -440,6 +516,49 @@ icons['grip-horizontal'].small = dotsSmall([9, 15].flatMap((y) => [6, 12, 18].ma
   const tip = head([12, 15.75], [0, 1], 2.25 * R2);
   icons.scroll.small = { d: [body, shaft, tip], fill: { solid: [body], cut: [shaft, tip] } };
 }
+// Los selectores de dos chevrons: sus brazos de 4.25 caían entre pixeles y se veían grises y
+// tenues. Brazos de 4.5 (3 px) por centros de pixel y 4 px de aire entre los dos.
+icons['chevron-up-down'].small = { d: [line([7.5, 9], [12, 4.5], [16.5, 9]), line([7.5, 15], [12, 19.5], [16.5, 15])] };
+icons['chevron-left-right'].small = { d: [line([9, 7.5], [4.5, 12], [9, 16.5]), line([15, 7.5], [19.5, 12], [15, 16.5])] };
+// Desplegar y plegar: los mismos chevrons chicos, grises a 16 px. El pliegue en un centro de pixel
+// (12.75, a donde lo lleva el ajuste) y los chevrons de 3 px simétricos a él, con 2 px de aire.
+const foldSmall = (open, deg) => {
+  const ch = open
+    ? [[[7.5, 9], [12, 4.5], [16.5, 9]], [[7.5, 16.5], [12, 21], [16.5, 16.5]]]
+    : [[[7.5, 4.5], [12, 9], [16.5, 4.5]], [[7.5, 21], [12, 16.5], [16.5, 21]]];
+  return { d: [line(...turn([[3.75, 12.75], [20.25, 12.75]], deg)), ...ch.map((pts) => line(...turn(pts, deg)))] };
+};
+icons['expand-vertical'].small = foldSmall(true, 0);
+icons['collapse-vertical'].small = foldSmall(false, 0);
+icons['expand-horizontal'].small = foldSmall(true, 90);
+icons['collapse-horizontal'].small = foldSmall(false, 90);
+// Plegar y desplegar la barra lateral: el chevron de 2.75 se volvía una mancha de 2 pixeles. La
+// ventana en centros de pixel y un chevron de 3 × 6 px, centrado en el panel con 1 px de aire.
+{
+  const win = sq(2.25, 5.25, 19.5, 13.5, 4, { square: ['br'] });
+  const divider = line([9.75, 5.25], [9.75, 18.75]);
+  for (const [name, pts] of [
+    ['sidebar-collapse', [[18, 7.5], [13.5, 12], [18, 16.5]]],
+    ['sidebar-expand', [[13.5, 7.5], [18, 12], [13.5, 16.5]]],
+  ]) {
+    const chevron = line(...pts);
+    icons[name].small = { d: [win, divider, chevron], fill: { solid: [win], cut: [divider, chevron] } };
+  }
+}
+// Sin resultados: la x de 3.7 se empastaba en una mancha dentro de la lupa (y una de 4 × 4 px se
+// leía como un cuadro: su centro es de 2 × 2). Una x de 5 × 5 px con un solo pixel al centro, en
+// una lupa de r 7.5 centrada en ese pixel, con 1.75 de aire al aro.
+icons['search-x'].small = {
+  d: [circ(9.75, 9.75, 7.5), line([15.25, 15.25], [20.25, 20.25]), line([6.75, 6.75], [12.75, 12.75]), line([12.75, 6.75], [6.75, 12.75])],
+};
+// Quitar filtros: la insignia de cerrar (círculo de 5.7 px) no cabe a 16 px y su x se volvía un
+// cuadro gris. El embudo en centros de pixel y, en lugar de la insignia, una x de 5 × 5 px que el
+// motor despeja igual (con 1 px de aire al asta).
+{
+  const funnel = roundpoly([[2.25, 3.75], [17.25, 3.75], [11.25, 9.75], [11.25, 15.75], [8.25, 15.75], [8.25, 9.75]], [1.1, 1.1, 0.75, 0.6, 0.6, 0.75]);
+  const x = [line([14.25, 14.25], [20.25, 20.25]), line([20.25, 14.25], [14.25, 20.25])];
+  icons['filter-x'].small = { d: [funnel], fill: { solid: [funnel] }, badge: { d: x, knock: x.join(''), fill: { solid: x } } };
+}
 
 // ── Espejo (DESIGN.md › Espejo): lo que tiene dirección de lectura se voltea en RTL ──
 for (const name of [
@@ -449,60 +568,124 @@ for (const name of [
   'arrow-turn-right', 'arrow-turn-left', 'arrow-turn-down-left', 'arrow-turn-down-right', 'arrow-curve-right', 'arrow-curve-left',
   'undo', 'redo', 'chevrons-right', 'chevrons-left', 'chevron-right-circle', 'chevron-left-circle', 'caret-right', 'caret-left',
   'page-first', 'page-last', 'sort-ascending', 'sort-descending', 'log-in', 'log-out', 'external-link',
-  'sidebar-left', 'sidebar-right', 'sidebar-collapse', 'sidebar-expand', 'tabs', 'view-list',
+  'sidebar-left', 'sidebar-right', 'sidebar-collapse', 'sidebar-expand', 'tabs', 'view-list', 'layout',
 ])
   icons[name].mirror = true;
 
+// ── Piezas con nombre (DESIGN.md › Piezas con nombre): lo que se mueve, cambia de estado o es una
+// insignia. Vocabulario: `arrow` (asta y punta), `shape` (el círculo o cuadro que encierra, como
+// important del núcleo), `chevron`, `caret`, `bar` (la línea contra la que llega una flecha), `window`.
+const DIRS8 = ['right', 'left', 'up', 'down', 'up-right', 'down-right', 'down-left', 'up-left'];
+const parts = (names, p) => {
+  for (const n of names) icons[n].parts = p;
+};
+parts(DIRS8.filter((n) => n !== 'right').map((n) => `arrow-${n}`), { arrow: [0, 1] });
+parts(DIRS8.flatMap((n) => [`arrow-${n}-circle`, `arrow-${n}-square`]), { shape: [0], arrow: [1, 2] });
+parts(['right', 'left', 'up', 'down'].map((n) => `arrow-thick-${n}`), { arrow: [0] });
+parts(['right', 'left', 'up', 'down'].map((n) => `arrow-${n}-to-line`), { bar: [0], arrow: [1, 2] });
+parts(['arrow-turn-right', 'arrow-turn-left', 'arrow-turn-down-left', 'arrow-turn-down-right', 'arrow-curve-right', 'arrow-curve-left', 'undo', 'redo'], { arrow: [0, 1] });
+parts(['history'], { arrow: [0, 1], hands: [2] });
+// Los dos sentidos por separado: la tabla enciende el que está activo
+parts(['sort'], { up: [0, 1], down: [2, 3] });
+parts(['swap-horizontal'], { right: [0, 1], left: [2, 3] });
+parts(['sort-ascending', 'sort-descending'], { arrow: [0, 1], bars: [2, 3, 4] });
+parts(['maximize', 'minimize'], { arrow: [0, 1, 2, 3] });
+parts(['chevron-up', 'chevron-down'], { chevron: [0] });
+// El de atrás y el de adelante (el que apunta), para encenderlos uno tras otro
+parts(['right', 'left', 'up', 'down'].map((n) => `chevrons-${n}`), { back: [0], front: [1] });
+parts(['right', 'left', 'up', 'down'].map((n) => `chevron-${n}-circle`), { shape: [0], chevron: [1] });
+parts(['chevron-up-down', 'caret-up-down'], { up: [0], down: [1] });
+parts(['chevron-left-right'], { left: [0], right: [1] });
+parts(['right', 'left', 'up', 'down'].map((n) => `caret-${n}`), { caret: [0] });
+parts(['page-first', 'page-last'], { bar: [0], chevron: [1] });
+parts(['fullscreen', 'fullscreen-exit'], { corners: [0, 1, 2, 3] });
+parts(['fit-screen'], { corners: [0, 1, 2, 3], screen: [4] });
+parts(['log-in', 'log-out'], { door: [0], arrow: [1, 2] });
+parts(['external-link'], { frame: [0], arrow: [1, 2] });
+parts(['more-circle'], { shape: [0], dots: [1, 2, 3] });
+parts(['sidebar-left', 'sidebar-right', 'panel-bottom', 'panel-top', 'split-view'], { window: [0], divider: [1] });
+parts(['sidebar-collapse', 'sidebar-expand'], { window: [0], divider: [1], chevron: [2] });
+parts(['tabs'], { window: [0], tab: [1] });
+parts(['browser'], { window: [0], header: [1] });
+parts(['layout'], { window: [0], header: [1], sidebar: [2] });
+parts(['filter', 'filter-x'], { funnel: [0] });
+parts(['home'], { body: [0], door: [1] });
+parts(['scroll'], { body: [0], wheel: [1], chevron: [2] });
+parts(['cursor'], { pointer: [0] });
+parts(['cursor-click'], { pointer: [0], rays: [1, 2, 3] });
+parts(['drag-drop'], { box: [0] });
+parts(['hand-pointer'], { hand: [0] });
+parts(['crosshair'], { ring: [0], ticks: [1, 2, 3, 4] });
+parts(['zoom-in', 'search-x'], { lens: [0], handle: [1], mark: [2, 3] });
+parts(['zoom-out'], { lens: [0], handle: [1], mark: [2] });
+
 // ── Movimiento (DESIGN.md › Movimiento): las flechas se deslizan hacia donde apuntan ──
 const DIR = { right: [1, 0], left: [-1, 0], up: [0, -1], down: [0, 1], 'up-right': [0.8, -0.8], 'down-right': [0.8, 0.8], 'down-left': [-0.8, 0.8], 'up-left': [-0.8, -0.8] };
-const slide = ([x, y], k, parts) => ({ effect: 'slide', vector: [x * k, y * k], ...(parts && { parts }) });
+const slide = ([x, y], k, moving) => ({ effect: 'slide', vector: [x * k, y * k], ...(moving && { parts: moving }) });
 for (const [n, v] of Object.entries(DIR)) {
   if (n !== 'right') icons[`arrow-${n}`].motion = slide(v, 2.5);
-  icons[`arrow-${n}-circle`].motion = slide(v, 1.5, [1, 2]);
-  icons[`arrow-${n}-square`].motion = slide(v, 1.5, [1, 2]);
+  icons[`arrow-${n}-circle`].motion = slide(v, 1.5, ['arrow']);
+  icons[`arrow-${n}-square`].motion = slide(v, 1.5, ['arrow']);
 }
 for (const n of ['right', 'left', 'up', 'down']) {
   icons[`arrow-thick-${n}`].motion = slide(DIR[n], 2.5);
-  icons[`arrow-${n}-to-line`].motion = slide(DIR[n], 2, [1, 2]);
+  icons[`arrow-${n}-to-line`].motion = slide(DIR[n], 2, ['arrow']);
   icons[`chevrons-${n}`].motion = slide(DIR[n], 2);
-  icons[`chevron-${n}-circle`].motion = slide(DIR[n], 1.5, [1]);
+  icons[`chevron-${n}-circle`].motion = slide(DIR[n], 1.5, ['chevron']);
   icons[`caret-${n}`].motion = slide(DIR[n], 1.5);
 }
 for (const n of ['up', 'down']) icons[`chevron-${n}`].motion = slide(DIR[n], 2);
 for (const [name, n] of [['arrow-turn-right', 'right'], ['arrow-turn-left', 'left'], ['arrow-turn-down-left', 'left'], ['arrow-turn-down-right', 'right'], ['arrow-curve-right', 'right'], ['arrow-curve-left', 'left'], ['undo', 'left'], ['redo', 'right']])
   icons[name].motion = slide(DIR[n], 2);
-icons['page-first'].motion = slide(DIR.left, 2, [1]);
-icons['page-last'].motion = slide(DIR.right, 2, [1]);
-icons['log-in'].motion = slide(DIR.right, 2, [1, 2]);
-icons['log-out'].motion = slide(DIR.right, 2, [1, 2]);
-icons['external-link'].motion = slide(DIR['up-right'], 1.75, [1, 2]);
-icons['sidebar-collapse'].motion = slide(DIR.left, 1.5, [2]);
-icons['sidebar-expand'].motion = slide(DIR.right, 1.5, [2]);
-icons.scroll.motion = slide(DIR.down, 1.5, [2]);
+icons['page-first'].motion = slide(DIR.left, 2, ['chevron']);
+icons['page-last'].motion = slide(DIR.right, 2, ['chevron']);
+icons['log-in'].motion = slide(DIR.right, 2, ['arrow']);
+icons['log-out'].motion = slide(DIR.right, 2, ['arrow']);
+icons['external-link'].motion = slide(DIR['up-right'], 1.75, ['arrow']);
+icons['sidebar-collapse'].motion = slide(DIR.left, 1.5, ['chevron']);
+icons['sidebar-expand'].motion = slide(DIR.right, 1.5, ['chevron']);
+icons.scroll.motion = slide(DIR.down, 1.5, ['chevron']);
 icons['drag-drop'].motion = slide(DIR['down-right'], 1.75, ['badge']);
+// Ordenar: la flecha baja en el sentido del orden; las barras se quedan
+icons['sort-ascending'].motion = slide(DIR.down, 1.5, ['arrow']);
+icons['sort-descending'].motion = slide(DIR.down, 1.5, ['arrow']);
 // Las manecillas giran (como clock del núcleo); los rayos del clic laten desde la punta.
-icons.history.motion = { effect: 'spin', parts: [2], origin: [12, 12] };
-icons['cursor-click'].motion = { effect: 'beat', parts: [1, 2, 3], origin: [11, 8] };
+icons.history.motion = { effect: 'spin', parts: ['hands'], origin: [12, 12] };
+icons['cursor-click'].motion = { effect: 'beat', parts: ['rays'], origin: [11, 8] };
+// Agrandar: el ícono late desde el centro; encajar: crece la pantalla dentro de sus esquinas;
+// acercar: crece el más dentro de la lupa.
+icons.maximize.motion = { effect: 'beat', origin: [12, 12] };
+icons.fullscreen.motion = { effect: 'beat', origin: [12, 12] };
+icons['fit-screen'].motion = { effect: 'beat', parts: ['screen'], origin: [12, 12] };
+icons['zoom-in'].motion = { effect: 'beat', parts: ['mark'], origin: [10.6, 10.6] };
+// Sin resultados: la lupa niega con un balanceo desde el mango; la mano toca hacia arriba; la mira
+// late al fijar el blanco.
+icons['search-x'].motion = { effect: 'wiggle', origin: [20.5, 20.5] };
+icons['hand-pointer'].motion = { effect: 'bounce', vector: [0, -1.5] };
+icons.crosshair.motion = { effect: 'beat', origin: [12, 12] };
 
 // ── Variantes automáticas (DESIGN.md › Variantes) ──
 const off = (names, v) => {
   for (const n of names) icons[n].variants = { ...icons[n].variants, ...v };
 };
-const DIRS8 = ['right', 'left', 'up', 'down', 'up-right', 'down-right', 'down-left', 'up-left'];
 // Las ocho flechas ya tienen su versión en círculo y en cuadrado dibujada a mano.
 off(['arrow-left', 'arrow-up', 'arrow-down', 'arrow-up-right', 'arrow-down-right', 'arrow-down-left', 'arrow-up-left'], { circle: false, square: false });
 off(['chevron-up', 'chevron-down'], { circle: false });
-// Ya vienen encerrados (o, como la cuadrícula de 3 × 3, dejan de leerse al 58 %).
-off([...DIRS8.map((n) => `arrow-${n}-circle`), 'chevron-right-circle', 'chevron-left-circle', 'chevron-up-circle', 'chevron-down-circle', 'more-circle', 'history', 'crosshair'], { circle: false });
-off([...DIRS8.map((n) => `arrow-${n}-square`), 'view-columns'], { square: false });
-off(['view-grid'], { circle: false, square: false });
-// Tachar una flecha, un chevron o una línea suelta no dice nada.
+// Ya vienen encerrados: ni en círculo ni en cuadrado (un círculo dentro de un cuadro no dice más).
+off([...DIRS8.flatMap((n) => [`arrow-${n}-circle`, `arrow-${n}-square`]), 'chevron-right-circle', 'chevron-left-circle', 'chevron-up-circle', 'chevron-down-circle', 'more-circle'], { circle: false, square: false });
+off(['history', 'crosshair'], { circle: false });
+off(['view-columns', 'browser', 'layout'], { square: false });
+// La cuadrícula de 3 × 3 deja de leerse al 58 %; las insignias (la x, el puntero) también, y el
+// relleno encerrado no las dibuja.
+off(['view-grid', 'filter-x', 'drag-drop'], { circle: false, square: false });
+// Tachar una flecha, un chevron o una línea suelta no dice nada; tachar lo que ya niega (quitar
+// filtros, sin resultados) tampoco.
 off(
   Object.keys(icons).filter((n) => /^(arrow|arrows|chevron|chevrons|caret)-/.test(n)),
   { slash: false },
 );
 off(
-  ['undo', 'redo', 'move', 'page-first', 'page-last', 'sort-ascending', 'sort-descending', 'sort', 'swap-horizontal', 'maximize', 'minimize', 'expand-vertical', 'collapse-vertical', 'expand-horizontal', 'collapse-horizontal', 'fullscreen', 'fullscreen-exit', 'log-in', 'log-out', 'external-link', 'menu', 'menu-compact', 'more-vertical', 'more-circle', 'grip-vertical', 'grip-horizontal', 'filter-lines'],
+  ['undo', 'redo', 'move', 'page-first', 'page-last', 'sort-ascending', 'sort-descending', 'sort', 'swap-horizontal', 'maximize', 'minimize', 'expand-vertical', 'collapse-vertical', 'expand-horizontal', 'collapse-horizontal', 'fullscreen', 'fullscreen-exit', 'fit-screen', 'log-in', 'log-out', 'external-link', 'menu', 'menu-compact', 'more-vertical', 'more-circle', 'grip-vertical', 'grip-horizontal', 'filter-lines', 'filter-x', 'search-x'],
   { slash: false },
 );
 
