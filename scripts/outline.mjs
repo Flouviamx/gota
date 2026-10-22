@@ -399,17 +399,35 @@ function compact(d) {
   return out;
 }
 
+// Every piece at once first; then chains of unions in order and in reverse; then the pieces laid
+// over each other without a union (fills the same under nonzero, contours may overlap); then the
+// pieces nudged by thousandths of a unit, so no two of them share an exact point
+const MODES = ['joined', 'sequential', 'reverse', 'overlap', 'nudged'];
+
+/** Does a filled path (nonzero) draw what an SVG from render() draws? Same test as every outline. */
+export function matches(svg, d) {
+  const { root, masks } = parse(svg);
+  try {
+    const want = coverage(() => draw(root, DEFAULTS, masks, false));
+    const got = coverage(() => {
+      ink.setStyle(CK.PaintStyle.Fill);
+      ink.setColor(CK.WHITE);
+      canvas.drawPath(fromSvg(d), ink);
+    });
+    const r = compare(want, got);
+    return { ...r, ok: r.clump < 6 && r.diff <= Math.max(8, r.total * 0.02) };
+  } finally {
+    free();
+  }
+}
+
 /** The ink of any SVG that render() produced, as one filled path (`d`, nonzero), checked. */
-export function inkOf(svg, label = 'svg', { strict = true } = {}) {
+export function inkOf(svg, label = 'svg', { strict = true, modes = MODES } = {}) {
   const { root, masks } = parse(svg);
   const want = coverage(() => draw(root, DEFAULTS, masks, false));
   free();
   let last = null;
-  // Every piece at once first; then chains of unions in order and in reverse; then the pieces laid
-  // over each other without a union (fills the same under nonzero, contours may overlap); then the
-  // pieces nudged by thousandths of a unit, so no two of them share an exact point
-  const MODES = ['joined', 'sequential', 'reverse', 'overlap', 'nudged'];
-  for (const mode of MODES) {
+  for (const mode of modes) {
     try {
       const d = compact(paint(root, DEFAULTS, { masks, mode, n: 0 }, false).ink.toSVGString());
       // Checked as it will be used: the final `d`, filled with the default nonzero rule
@@ -437,7 +455,7 @@ export function attempts(svg) {
   const { root, masks } = parse(svg);
   const want = coverage(() => draw(root, DEFAULTS, masks, false));
   free();
-  return ['joined', 'sequential', 'reverse', 'overlap', 'nudged'].map((mode) => {
+  return MODES.map((mode) => {
     try {
       const d = paint(root, DEFAULTS, { masks, mode, n: 0 }, false).ink.toSVGString();
       const got = coverage(() => {

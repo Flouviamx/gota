@@ -84,6 +84,28 @@ slash); and their combinations with the fill. Turn them off with
   hand-drawn `-off` version already exists.
 Review them with `node scripts/variants-sheet.mjs <category>`.
 
+## Every weight, one structure
+Gota's weights run continuously from **0.9 to 2.1** (the variable font and Xcode symbols interpolate
+between masters at 0.9, 1.5, and 2.1; `weight="auto"` maps text weights 100–700 onto that range).
+An icon must keep **the same structure at every weight**: the same pieces, the same holes, nothing
+that merges or splits as the stroke widens. The engine takes care of what it can:
+- **Badges:** the sign shrinks inside its ring past regular, so it never touches it.
+- **Fill:** what is cut out is paper, and paper thins as the ink grows (1.75 at light, 1.5 at
+  regular, 1.25 at bold).
+- **Cuts that meet the silhouette** keep meeting it the same way at every weight: their tips move
+  with the change of weight.
+- **Dots** are solid discs at every weight, in ink and in cuts.
+
+What the drawing must take care of:
+- **Pieces either cross or stand apart:** two strokes that don't cross keep at least the 2.85
+  center to center that QA's `near` asks for, so they don't merge at 2.1 (the gap shrinks by 0.6).
+- **A cut either goes through or stops short, clearly:** a cut that ends on an edge another piece
+  shares (a clipboard's clip on its board) separates at some weights and not at others; end it
+  well past the edge, or ≥ 0.6 inside it.
+- **Small holes between crossing strokes** (an atom's orbits, a gear's teeth) close up at heavy
+  weights: give them room, or let them be ink at every weight.
+`node scripts/qa.mjs` reports the icons whose structure changes with the weight (`weights`).
+
 ## 16 px
 At 16 px the 1.5 stroke measures 1 px, and the build **snaps** every drawing **to the pixel grid**
 (straight segments land on pixel centers). If an icon still doesn't read (too much detail, pieces

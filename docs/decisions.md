@@ -92,6 +92,17 @@
 | 51 | Outlines by redrawing each icon's rules (fill masks, badges, enclosures) with path operations | Claude | **no: evaluate `render`'s SVG** | A second copy of the drawing rules would drift from the first. The SVG is evaluated as an image model (regions, paint order, luminance masks), and every outline is checked against a raster of the same SVG: Skia's path operations go wrong silently where two shapes only touch, and here they never ship |
 | 52 | Keep `sq`'s fixed 0.6 smoothing when the corner doesn't fit the side | engine | **no: the corner fits, as in Figma** | The outline check found sides that ran backwards (the card chip: a 5-high side with two 2.56 corners). The rule "r ≤ min(w, h) / 3.2" was documented but not enforced; now the smoothing gives way and then the radius. 25 icons change by a hair (smoothing 0.6 → ~0.56 in those corners), checked side by side; QA stays at zero |
 
+## Weights (22 Oct 2026)
+Found by checking every icon at 0.9, 1.5, and 2.1 for the variable outputs: the bold variant already shipping had badge signs that filled their ring, and fills that read lighter at bold than at regular.
+| # | Proposal | From | Decision | Reason |
+|---|---|---|---|---|
+| 53 | A badge's sign keeps its size at every weight | engine | **no: the air holds** | At bold the check and the plus filled the ring. The sign shrinks past regular; the air narrows (regular gap × 1.5 / w) without closing, as in SF Symbols' `plus.circle` Black |
+| 54 | Cuts as wide as the ink (`weight`) | engine | **no: paper thins as ink grows** | A bold fill read lighter than regular (thicker white cuts). Paper is 1.75 / 1.5 / 1.25 at light / regular / bold |
+| 55 | Cuts that reach the silhouette go clean through it | Claude | **no: they meet it as drawn** | Tried first; at regular it notched the gem's points, the money bag's neck, and the box's corners. The drawings meet the edge with a round tip, and that is kept at every weight (`meet`) |
+| 56 | Dots drawn as stroked circles | engine | **no: solid discs** | At light weights a dot opened into a ring and a cut dot left an island of ink; the notification dot showed a ring around a dot |
+| 57 | Gota's weight range up to 2.5 (font weight 900) | Claude | **no: 0.9–2.1** | Past 2.1 a ring of r 4.25 has no room for a legible sign (a plus becomes a blob, even at 96 px). Material Symbols' variable weight also ends at 700. `weight="auto"` keeps 2.1 for heavier text |
+| 58 | Outline badges as solid discs with the sign cut out, like Apple's `doc.badge.plus` (legible at every weight, and it would allow heavier weights) | Claude | **pending the owner** | It changes Gota's badges from rings to discs in the outline style: an identity decision |
+
 ## Design and technical decisions (Claude, during construction)
 - **Signature:** a square bottom-right corner on containers; bubbles with `drop()`.
 - **Fill with masks**, not boolean operations: `solid`/`cut`/`lines`; `lines` get 1.5 of clearance (a calendar with separate rings, like SF Symbols).

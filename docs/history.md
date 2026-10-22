@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Every weight, one structure; compatible masters
+- **Compatible masters** (`scripts/masters.mjs`): each icon's outline at 0.9, 1.5, and 2.1 with the same structure point for point, for the variable font and Xcode's variable template ([build](./build.md#compatible-masters-scriptsmastersmjs)). The first method (corners and fractions of length) bent round caps when interpolating; following the regular master by nearest point fixed them. 1,634 of 1,865 variants (87.6 %) pass, masters and interpolations checked.
+- **Weight defects it found, fixed in the engine** ([decisions 53–57](./decisions.md#weights-22-oct-2026)): badge signs that filled their ring at bold; fills whose cuts grew with the ink (bold read lighter); dots that opened into rings at light weights; cut dots that left an island of ink; the notification dot as a ring. Regular is unchanged, compared pixel by pixel against the previous engine, except for 12 dots whose pinhole closed.
+- **Tried and undone:** cuts that run clean through the silhouette notched the gem, the money bag, and the box at regular; cuts now meet the silhouette as drawn, at every weight.
+- **Range 0.9–2.1:** past 2.1 a badge's ring has no room for its sign; `autoWeight` stops at 2.1 (font weight 700).
+- **Pending the owner:** solid badges in the outline style, as Apple does (decision 58).
+- QA at 0 warnings; tests: 41.
+
 ## 22 Oct 2026 — Android vector drawables; what Xcode needs
 - **`scripts/native.mjs android`:** 20,088 vector drawables (the same matrix as `dist/svg`), each from a checked outline: theme tint, nonzero, `autoMirrored` on the 434 directional icons. Compact path data (relative to rounded points) cuts the size by 40 %: 41 MB, 19 MB zipped.
 - **The check kept finding edge cases, and the method absorbed them:** a union that Skia returns empty (`form`, square, bold) and the same inside a mask. The fallback mode now lays pieces together with no union anywhere and builds each mask as one difference (render()'s masks are always a white box with black on top).

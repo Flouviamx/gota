@@ -53,7 +53,7 @@ engine/search.mjs     Search by meaning (search-api.mjs: searchIcons for dist/se
 mcp/server.mjs        MCP server for AI agents (stdio, no dependencies): search_icons, get_icon, list_categories.
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
-scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), native (Android…), chrome (headless Chrome).
+scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android…), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).
 ```

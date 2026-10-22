@@ -157,3 +157,32 @@ test('sq: a corner fits its sides, so no side runs backwards (smoothing gives wa
     }
   }
 });
+
+test('weights: a badge sign keeps its air in the ring at bold; light keeps it whole', async () => {
+  const { loadAll } = await import('../scripts/load.mjs');
+  const icons = Object.assign({}, ...(await loadAll()).categories.map((c) => c.icons));
+  const marks = (w) => render(icons['file-check'], { weight: w }).match(/data-part="badge"[^>]*>(.*?)<\/g>/)[1].match(/d="([^"]+)"/g).slice(1);
+  assert.deepEqual(marks(1), marks(1.5));
+  assert.notDeepEqual(marks(2), marks(1.5));
+});
+
+test('weights: paper thins as ink grows (cuts 1.75 at light, 1.5 at regular, 1.25 at bold)', async () => {
+  const { loadAll } = await import('../scripts/load.mjs');
+  const icons = Object.assign({}, ...(await loadAll()).categories.map((c) => c.icons));
+  const cut = (w) => render(icons.calendar, { style: 'fill', weight: w }).match(/<mask[^]*?stroke="black" stroke-width="([\d.]+)"/)[1];
+  assert.deepEqual([cut(1), cut(1.5), cut(2)], ['1.75', '1.5', '1.25']);
+});
+
+test('weights: a cut that meets the silhouette keeps meeting it (the card stripe reaches out at bold)', async () => {
+  const { loadAll } = await import('../scripts/load.mjs');
+  const icons = Object.assign({}, ...(await loadAll()).categories.map((c) => c.icons));
+  const start = (w) => Number(render(icons.card, { style: 'fill', weight: w }).match(/<mask[^]*?<path d="M([\d.]+)/)[1]);
+  assert.ok(start(2) < start(1.5) && start(1.5) < start(1));
+});
+
+test('dots are solid at every weight, cut-out dots too, and the notification dot is one disc', async () => {
+  const dotIcon = { d: ['M4 12h16', circ(12, 18, 0.7)], fill: { solid: ['M4 4h16v12H4Z'], cut: [circ(12, 10, 0.7)] } };
+  assert.match(render(dotIcon, { weight: 0.9 }), /<path d="M11\.3 18[^"]*" fill="currentColor"/);
+  assert.match(render(dotIcon, { style: 'fill', weight: 0.9 }), /fill="black" stroke="black"/);
+  assert.equal(badge('dot').d.length, 1);
+});

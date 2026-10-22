@@ -188,6 +188,108 @@ const shrink = (ds, scale) => ds.map((d) => transform(d, scale, 12 * (1 - scale)
 // Slash: from top left to bottom right, with 1.5 of clearance on each side
 const SLASH = 'M3.6 3.6 20.4 20.4';
 
+// ── Cuts that reach the silhouette ──
+/** Points along a path (absolute), curves and arcs sampled, to measure distances to it. */
+function samplesOf(d) {
+  const pts = [];
+  let [x, y, sx, sy] = [0, 0, 0, 0];
+  for (const [c, a] of parse(transform(d, 1, 0, 0))) {
+    if (c === 'M') [x, y, sx, sy] = [a[0], a[1], a[0], a[1]];
+    else if (c === 'Z') [x, y] = [sx, sy];
+    else if (c === 'H' || c === 'V' || c === 'L' || c === 'T') {
+      const [nx, ny] = c === 'H' ? [a[0], y] : c === 'V' ? [x, a[0]] : a;
+      for (let i = 1; i <= 4; i++) pts.push([x + ((nx - x) * i) / 4, y + ((ny - y) * i) / 4]);
+      [x, y] = [nx, ny];
+    } else if (c === 'C' || c === 'S' || c === 'Q') {
+      const end = a.slice(-2);
+      const ctrl = c === 'Q' ? [a[0], a[1], a[0], a[1]] : c === 'S' ? [x, y, a[0], a[1]] : a.slice(0, 4);
+      for (let i = 1; i <= 8; i++) {
+        const t = i / 8;
+        const u = 1 - t;
+        pts.push([u * u * u * x + 3 * u * u * t * ctrl[0] + 3 * u * t * t * ctrl[2] + t * t * t * end[0], u * u * u * y + 3 * u * u * t * ctrl[1] + 3 * u * t * t * ctrl[3] + t * t * t * end[1]]);
+      }
+      [x, y] = end;
+    } else if (c === 'A') {
+      // Endpoint arc to center form (SVG implementation notes), sampled
+      const [rx0, ry0, , large, sweep, ex, ey] = a;
+      const [mx, my] = [(x - ex) / 2, (y - ey) / 2];
+      let [rx, ry] = [Math.abs(rx0), Math.abs(ry0)];
+      const lam = (mx * mx) / (rx * rx || 1) + (my * my) / (ry * ry || 1);
+      if (lam > 1) [rx, ry] = [rx * Math.sqrt(lam), ry * Math.sqrt(lam)];
+      const num = Math.max(0, rx * rx * ry * ry - rx * rx * my * my - ry * ry * mx * mx);
+      const den = rx * rx * my * my + ry * ry * mx * mx || 1;
+      const k = (large === sweep ? -1 : 1) * Math.sqrt(num / den);
+      const [cx, cy] = [(k * rx * my) / ry + (x + ex) / 2, (-k * ry * mx) / rx + (y + ey) / 2];
+      const a0 = Math.atan2((y - cy) / ry, (x - cx) / rx);
+      let da = Math.atan2((ey - cy) / ry, (ex - cx) / rx) - a0;
+      if (sweep && da < 0) da += 2 * Math.PI;
+      if (!sweep && da > 0) da -= 2 * Math.PI;
+      for (let i = 1; i <= 12; i++) pts.push([cx + rx * Math.cos(a0 + (da * i) / 12), cy + ry * Math.sin(a0 + (da * i) / 12)]);
+      [x, y] = [ex, ey];
+    }
+  }
+  return pts;
+}
+/**
+ * A cut that meets the silhouette meets it the same way at every weight: its round tip stops at
+ * the ink's edge, a hair inside, as it does at regular. Paper and ink change width with the weight
+ * (thinner paper at bold, thinner ink at light), so the open ends of a cut that lie on a solid's
+ * outline (within 0.6) move along their own direction: out at bold, in at light. The silhouette
+ * stays in one piece at every weight, and regular keeps the drawing as it was drawn.
+ */
+function meet(cuts, solids, weight, paper) {
+  if (!cuts?.length || !solids?.length) return cuts ?? [];
+  const edge = solids.flatMap(samplesOf);
+  const near = ([px, py]) => edge.some(([ex, ey]) => Math.hypot(ex - px, ey - py) < 0.6);
+  const move = (weight - paper) / 2 - 0.15;
+  return cuts.map((d) => {
+    if (/z\s*$/i.test(d.trim())) return d;
+    // Absolute commands, with H and V as L, so every end is a point
+    const cmds = [];
+    let [x, y] = [0, 0];
+    for (const [c, a] of parse(transform(d, 1, 0, 0))) {
+      if (c === 'H') cmds.push(['L', [a[0], y]]);
+      else if (c === 'V') cmds.push(['L', [x, a[0]]]);
+      else cmds.push([c, a.slice()]);
+      const last = cmds.at(-1)[1];
+      if (last.length >= 2) [x, y] = last.slice(-2);
+    }
+    if (cmds.length < 2 || cmds[0][0] !== 'M' || cmds.some(([c]) => c === 'A' || c === 'Z')) return d;
+    const shift = (pts, at, toward) => {
+      // Moves the end (and the control point next to it, so its direction holds) by `move`
+      const [ex, ey] = [pts[at], pts[at + 1]];
+      const [dx, dy] = [ex - toward[0], ey - toward[1]];
+      const l = Math.hypot(dx, dy);
+      if (!l || (move < 0 && -move >= l * 0.9)) return null;
+      return [(dx / l) * move, (dy / l) * move];
+    };
+    const first = cmds[1];
+    const next = first[1].slice(0, 2);
+    const start = cmds[0][1];
+    if (near(start)) {
+      const v = shift(start, 0, next);
+      if (v) {
+        start[0] += v[0];
+        start[1] += v[1];
+        if (first[0] === 'C' || first[0] === 'Q') [first[1][0], first[1][1]] = [first[1][0] + v[0], first[1][1] + v[1]];
+      }
+    }
+    const lastCmd = cmds.at(-1);
+    const a = lastCmd[1];
+    const end = a.length - 2;
+    const prev = a.length > 2 ? a.slice(end - 2, end) : cmds.at(-2)[1].slice(-2);
+    if (near(a.slice(end))) {
+      const v = shift(a, end, prev);
+      if (v) {
+        a[end] += v[0];
+        a[end + 1] += v[1];
+        if (lastCmd[0] === 'C' || lastCmd[0] === 'Q') [a[end - 2], a[end - 1]] = [a[end - 2] + v[0], a[end - 1] + v[1]];
+      }
+    }
+    return cmds.map(([c, args]) => `${c}${args.map(f).join(' ')}`).join('');
+  });
+}
+
 /**
  * SVG content of an icon in a given variant.
  * icon: { d, fill?: { solid, cut?, lines? } } · style: 'outline' | 'fill'
@@ -328,16 +430,41 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       if (r.fill) r.fill = Object.fromEntries(Object.entries(r.fill).map(([k, v]) => [k, v.filter((d) => !gone.has(d))]));
     }
   }
+  // The air holds: inside a standard badge's ring the sign shrinks as the weight grows past regular,
+  // so ring and sign never meet. The gap narrows with the weight (regular gap × 1.5 / weight), as
+  // in SF Symbols' heavy weights, and the sign keeps arms long enough to read; lighter weights keep
+  // the sign and gain air
+  if (r.badge?.kind && style !== 'fill' && weight > 1.5) {
+    const ring = asCircle(r.badge.d[0]);
+    const marks = r.badge.d.slice(1);
+    if (ring && marks.length) {
+      const reach = Math.max(...marks.flatMap(pointsOf).map(([x, y]) => Math.hypot(x - ring.cx, y - ring.cy)));
+      const gap = ring.r - 1.5 - reach;
+      const k = Math.max(0.5, (ring.r - weight - (gap * 1.5) / weight) / reach);
+      r.badge = { ...r.badge, d: [r.badge.d[0], ...marks.map((d) => transform(d, k, ring.cx * (1 - k), ring.cy * (1 - k)))] };
+    }
+  }
   icon = { ...icon, d: r.d, fill: r.fill ?? undefined };
   // When animating, each visible path gets pathLength=1 plus its drawing order (--i) and level (--l)
   const order = new Map(icon.d.map((d, i) => [d, i]));
   const lvl = (d) => (r.tags.get(d) ?? '').match(/data-level="(\d+)"/)?.[1];
   const anim = (d) => (spec ? ` pathLength="1" style="--i:${order.get(d) ?? 0}${lvl(d) ? `;--l:${lvl(d)}` : ''}"` : '');
-  const paths = (ds) => ds.map((d) => `<path d="${d}"${r.tags.get(d) ?? ''}${anim(d)}/>`).join('');
+  // A dot (a circle of radius 1 at most) is filled as well as stroked: a stroke alone fills it at
+  // regular, but at light weights it would open into a ring
+  const solidDot = (d) => {
+    const c = asCircle(d);
+    return c && c.r <= 1 ? ' fill="currentColor"' : '';
+  };
+  const paths = (ds) => ds.map((d) => `<path d="${d}"${solidDot(d)}${r.tags.get(d) ?? ''}${anim(d)}/>`).join('');
   const k = enc ? enc.scale : 1;
   const fill = style === 'fill' && icon.fill ? icon.fill : null;
   const g = (ds) => (enc ? shrink(ds, k) : ds);
-  const black = (ds, w = weight) => ds.map((d) => `<path d="${d}" fill="none" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
+  // Ink against paper: what a fill or an enclosure cuts out (dots, signs, the drawing itself) is
+  // paper, and paper thins as the ink grows, like a letter's counters: 1.5 at regular, 1.25 at
+  // bold, 1.75 at light (never under 0.75)
+  const paper = Math.max(0.75, 1.5 + (1.5 - weight) / 2);
+  // Cut-out dots are solid too: a ring of paper would leave an island of ink in its middle
+  const black = (ds, w = weight) => ds.map((d) => `<path d="${d}" fill="${solidDot(d) ? 'black' : 'none'}" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"/>`).join('');
   const maskOf = (name, content) => `<mask id="${id}-${name}" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${content}</mask>`;
   const defs = [];
   const body = [];
@@ -368,8 +495,8 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   if (enc && style === 'fill') {
     // Enclosed and filled: a solid container with the drawing knocked out; near the badge the base
     // is not knocked out (the badge cutout already clears it) and the badge is knocked out in full
-    const base = black(g(icon.d));
-    const badge = r.badge ? zoomed(black(g(r.badge.d))) : '';
+    const base = black(g(icon.d), paper);
+    const badge = r.badge ? zoomed(black(g(r.badge.d), paper)) : '';
     defs.push(maskOf('e', `${kn ? `<g mask="url(#${id}-k)">${base}</g>` : base}${badge}${slashCut}`));
     body.push(`<path d="${enc.shape}" fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linejoin="round" mask="url(#${id}-e)"/>`);
   } else {
@@ -378,7 +505,11 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     if (fill) {
       // solid: filled, keeping its stroke · cut: knocked out at stroke width · lines: drawn on top
       // with 1.5 of clearance · wire: drawn on top, flush, with no clearance (a padlock's shackle, a needle)
-      defs.push(maskOf('f', `${split(g(fill.cut ?? []), (ds) => black(ds))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 3))}`));
+      const cuts = fill.cut ?? [];
+      const reaching = meet(cuts, fill.solid, weight, paper);
+      // A moving cut keeps moving with its ends moved
+      reaching.forEach((d, i) => r.moved?.has(cuts[i]) && r.moved.add(d));
+      defs.push(maskOf('f', `${split(g(reaching), (ds) => black(ds, paper))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 3))}`));
       content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
       const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
       if (over.length) content.push(`<g ${strokeAttrs(weight)}>${split(g(over), paths)}</g>`);
@@ -390,10 +521,14 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       const bf = style === 'fill' ? r.badge.fill : null;
       const move = badgeMoves ? wrapAttr : '';
       if (bf) {
-        defs.push(maskOf('b', zoomed(black(g(bf.cut ?? [])))));
+        defs.push(maskOf('b', zoomed(black(g(bf.cut ?? []), paper))));
         layer += zoomed(`<g data-part="badge"${move} fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-b)">${g(bf.solid).map((d) => `<path d="${d}"/>`).join('')}</g>`);
         if (bf.wire?.length) layer += zoomed(`<g${move} ${strokeAttrs(weight)}>${g(bf.wire).map((d) => `<path d="${d}"/>`).join('')}</g>`);
-      } else layer += zoomed(`<g data-part="badge"${move} ${strokeAttrs(weight)}>${g(r.badge.d).map((d) => `<path d="${d}"/>`).join('')}</g>`);
+      } else {
+        // The notification dot is a solid disc; any other badge is drawn, its dots filled
+        const disc = r.badge.kind === 'dot' ? ' fill="currentColor"' : '';
+        layer += zoomed(`<g data-part="badge"${move} ${strokeAttrs(weight)}>${g(r.badge.d).map((d) => `<path d="${d}"${disc || solidDot(d)}/>`).join('')}</g>`);
+      }
     }
     if (slashCut) {
       defs.push(maskOf('s', slashCut));

@@ -196,7 +196,8 @@ export function badge(kind, { size } = {}) {
 
 function badge24(kind) {
   if (kind === 'dot') {
-    const d = [circ(18.75, 5.25, 2), circ(18.75, 5.25, 0.7)];
+    // A solid disc at every weight (render fills it): a ring around a dot would open at light weights
+    const d = [circ(18.75, 5.25, 2)];
     return { d, knock: d[0], fill: { solid: d } };
   }
   if (kind === 'lock') {
