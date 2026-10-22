@@ -158,12 +158,14 @@ test('sq: a corner fits its sides, so no side runs backwards (smoothing gives wa
   }
 });
 
-test('weights: a badge sign keeps its air in the ring at bold; light keeps it whole', async () => {
+test('badges: a status badge is a solid disc with its sign cut out, in outline too; a lens stays drawn', async () => {
   const { loadAll } = await import('../scripts/load.mjs');
   const icons = Object.assign({}, ...(await loadAll()).categories.map((c) => c.icons));
-  const marks = (w) => render(icons['file-check'], { weight: w }).match(/data-part="badge"[^>]*>(.*?)<\/g>/)[1].match(/d="([^"]+)"/g).slice(1);
-  assert.deepEqual(marks(1), marks(1.5));
-  assert.notDeepEqual(marks(2), marks(1.5));
+  const check = render(icons['file-check'], { id: 'a' });
+  assert.match(check, /<g data-part="badge" fill="currentColor"[^>]*mask="url\(#a-b\)"/);
+  assert.match(check, /<mask id="a-b"/);
+  assert.match(render(icons['person-block'], { id: 'b' }), /<g data-part="badge" fill="currentColor"/);
+  assert.match(render(icons['file-search'], { id: 'c' }), /<g data-part="badge" fill="none"/);
 });
 
 test('weights: paper thins as ink grows (cuts 1.75 at light, 1.5 at regular, 1.25 at bold)', async () => {

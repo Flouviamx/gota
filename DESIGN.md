@@ -44,8 +44,11 @@ A triangular or pointed shape may reach 2.4–21.6 to compensate optically.
   clears the base with an exact 1.5 clearance and removes any dots it touches entirely. **Never
   trim the base by hand**: hand cuts leave round tips in arbitrary places, and fragments. A custom
   piece on top of another (the pointer over a frame) works the same way: `badge: { d, knock, fill }`.
-  At 16 px the standard badges switch on their own to their pixel version (no ring, a larger
-  sign): don't copy `badge16` into the categories.
+  A **status badge** (any of the engine's, or a custom one on the same circle, r 4.25 at 17.25) is a
+  **solid disc with its sign cut out, in every style**, as Apple's badges are: it reads at every
+  weight and at 24 px. A custom piece that isn't a status (a lens, a second card) keeps the
+  icon's style. At 16 px the standard badges switch on their own to their pixel version (no
+  disc, a larger sign): don't copy `badge16` into the categories.
 - **Pointer:** always the engine's `cursor(tip, scale)`; never a hand-drawn one.
 - **No fragments or near-misses:** no open stroke shorter than 2; a stroke that ends next to
   another either touches it or leaves 1.5 of clearance (3 center to center). QA flags them
@@ -89,7 +92,7 @@ Gota's weights run continuously from **0.9 to 2.1** (the variable font and Xcode
 between masters at 0.9, 1.5, and 2.1; `weight="auto"` maps text weights 100–700 onto that range).
 An icon must keep **the same structure at every weight**: the same pieces, the same holes, nothing
 that merges or splits as the stroke widens. The engine takes care of what it can:
-- **Badges:** the sign shrinks inside its ring past regular, so it never touches it.
+- **Badges:** a status badge is a solid disc, so its sign (cut out, paper) never clogs a ring.
 - **Fill:** what is cut out is paper, and paper thins as the ink grows (1.75 at light, 1.5 at
   regular, 1.25 at bold).
 - **Cuts that meet the silhouette** keep meeting it the same way at every weight: their tips move

@@ -9,8 +9,8 @@
 - **Weight defects it found, fixed in the engine** ([decisions 53–57](./decisions.md#weights-22-oct-2026)): badge signs that filled their ring at bold; fills whose cuts grew with the ink (bold read lighter); dots that opened into rings at light weights; cut dots that left an island of ink; the notification dot as a ring. Regular is unchanged, compared pixel by pixel against the previous engine, except for 12 dots whose pinhole closed.
 - **Tried and undone:** cuts that run clean through the silhouette notched the gem, the money bag, and the box at regular; cuts now meet the silhouette as drawn, at every weight.
 - **Range 0.9–2.1:** past 2.1 a badge's ring has no room for its sign; `autoWeight` stops at 2.1 (font weight 700).
-- **Pending the owner:** solid badges in the outline style, as Apple does (decision 58).
-- QA at 0 warnings; tests: 41.
+- **Solid status badges** ([decision 58](./decisions.md#weights-22-oct-2026)): the owner chose them from a side-by-side sheet. The engine's badges and custom ones on the standard circle (65 icons) are a solid disc with the sign cut out in every style; QA's density leaves the badge out.
+- **QA's `weights`** reports the icons whose structure changes between 0.9 and 2.1: 229 warnings (outline and fill), the next round of drawing fixes. Tests: 41.
 
 ## 22 Oct 2026 — Android vector drawables; what Xcode needs
 - **`scripts/native.mjs android`:** 20,088 vector drawables (the same matrix as `dist/svg`), each from a checked outline: theme tint, nonzero, `autoMirrored` on the 434 directional icons. Compact path data (relative to rounded points) cuts the size by 40 %: 41 MB, 19 MB zipped.

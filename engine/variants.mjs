@@ -430,20 +430,6 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       if (r.fill) r.fill = Object.fromEntries(Object.entries(r.fill).map(([k, v]) => [k, v.filter((d) => !gone.has(d))]));
     }
   }
-  // The air holds: inside a standard badge's ring the sign shrinks as the weight grows past regular,
-  // so ring and sign never meet. The gap narrows with the weight (regular gap × 1.5 / weight), as
-  // in SF Symbols' heavy weights, and the sign keeps arms long enough to read; lighter weights keep
-  // the sign and gain air
-  if (r.badge?.kind && style !== 'fill' && weight > 1.5) {
-    const ring = asCircle(r.badge.d[0]);
-    const marks = r.badge.d.slice(1);
-    if (ring && marks.length) {
-      const reach = Math.max(...marks.flatMap(pointsOf).map(([x, y]) => Math.hypot(x - ring.cx, y - ring.cy)));
-      const gap = ring.r - 1.5 - reach;
-      const k = Math.max(0.5, (ring.r - weight - (gap * 1.5) / weight) / reach);
-      r.badge = { ...r.badge, d: [r.badge.d[0], ...marks.map((d) => transform(d, k, ring.cx * (1 - k), ring.cy * (1 - k)))] };
-    }
-  }
   icon = { ...icon, d: r.d, fill: r.fill ?? undefined };
   // When animating, each visible path gets pathLength=1 plus its drawing order (--i) and level (--l)
   const order = new Map(icon.d.map((d, i) => [d, i]));
@@ -518,7 +504,12 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     // The base sits under the badge cutout; everything sits under the slash cutout
     let layer = kn ? `<g mask="url(#${id}-k)">${base}</g>` : base;
     if (r.badge) {
-      const bf = style === 'fill' ? r.badge.fill : null;
+      // A status badge (a standard one, or a custom one on the standard ring: r 4.25 at 17.25) is
+      // solid in every style, its sign cut out of it, as Apple's badges are: it reads at every weight
+      // and at 24 px. Any other badge (a lens, a second card, a sun behind a cloud) keeps the style
+      const ring = r.badge.fill?.solid?.[0] && asCircle(r.badge.fill.solid[0]);
+      const status = r.badge.kind || (ring && Math.abs(ring.cx - 17.25) < 0.05 && Math.abs(ring.cy - 17.25) < 0.05 && Math.abs(ring.r - 4.25) < 0.05);
+      const bf = style === 'fill' || status ? r.badge.fill : null;
       const move = badgeMoves ? wrapAttr : '';
       if (bf) {
         defs.push(maskOf('b', zoomed(black(g(bf.cut ?? []), paper))));

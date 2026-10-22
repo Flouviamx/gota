@@ -1,7 +1,7 @@
 // Automated quality control for the whole set (or one category), in Chrome:
 // - area: outside the live area (path between 1.75 and 22.25),
-// - dense: more than 28% ink at 32 px (too many parts: simplify); a fixed threshold so the
-//   criterion does not shift as the set grows,
+// - dense: more than 28% ink at 32 px (too many parts: simplify), measured without the badge; a
+//   fixed threshold so the criterion does not shift as the set grows,
 // - double: near duplicates, two icons that look almost the same at 32 px (similarity ≥ 0.975),
 //   except those in the same family (calendar and calendar-plus look alike on purpose),
 // - silhouette: a fill that changes the silhouette (the fill must occupy the same box as the outline),
@@ -31,6 +31,8 @@ const data = all.map(({ name, cat, icon }) => ({
   box: [...icon.d, ...(icon.badge?.d ?? [])],
   open: [icon.fill, icon.small?.fill, icon.badge?.fill].filter((x) => x && typeof x === 'object').flatMap((x) => x.solid ?? []).filter((d) => !/[zZ]\s*$/.test(d)).length,
   outline: b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { id: 'a' })}</svg>`),
+  // Density is the drawing's: a status badge is a solid disc, ink that isn't "too many parts"
+  bare: icon.badge ? b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render({ ...icon, badge: undefined }, { id: 'c' })}</svg>`) : null,
   fill: icon.fill ? b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { style: 'fill', id: 'b' })}</svg>`) : null,
 }));
 const file = join(process.cwd(), 'previews', `_qa-${process.pid}.html`);
@@ -48,7 +50,7 @@ const result = await browser.evaluate(`(async () => {
   const out = [];
   for (const it of window.DATA) {
     const a = await alpha(it.outline);
-    let ink = 0; for (const v of a) ink += v;
+    let ink = 0; for (const v of it.bare ? await alpha(it.bare) : a) ink += v;
     probe.innerHTML = it.box.map((d) => '<path d="' + d + '"/>').join('');
     let x0 = 99, y0 = 99, x1 = -99, y1 = -99;
     for (const p of probe.querySelectorAll('path')) { const b = p.getBBox(); x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height); }

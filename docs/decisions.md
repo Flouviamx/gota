@@ -96,12 +96,12 @@
 Found by checking every icon at 0.9, 1.5, and 2.1 for the variable outputs: the bold variant already shipping had badge signs that filled their ring, and fills that read lighter at bold than at regular.
 | # | Proposal | From | Decision | Reason |
 |---|---|---|---|---|
-| 53 | A badge's sign keeps its size at every weight | engine | **no: the air holds** | At bold the check and the plus filled the ring. The sign shrinks past regular; the air narrows (regular gap × 1.5 / w) without closing, as in SF Symbols' `plus.circle` Black |
+| 53 | A badge's sign keeps its size at every weight | engine | **no** (superseded by 58) | At bold the check and the plus filled the ring. First the sign shrank past regular so the air held; at 2.1 a plus still became a blob, which led to solid badges |
 | 54 | Cuts as wide as the ink (`weight`) | engine | **no: paper thins as ink grows** | A bold fill read lighter than regular (thicker white cuts). Paper is 1.75 / 1.5 / 1.25 at light / regular / bold |
 | 55 | Cuts that reach the silhouette go clean through it | Claude | **no: they meet it as drawn** | Tried first; at regular it notched the gem's points, the money bag's neck, and the box's corners. The drawings meet the edge with a round tip, and that is kept at every weight (`meet`) |
 | 56 | Dots drawn as stroked circles | engine | **no: solid discs** | At light weights a dot opened into a ring and a cut dot left an island of ink; the notification dot showed a ring around a dot |
-| 57 | Gota's weight range up to 2.5 (font weight 900) | Claude | **no: 0.9–2.1** | Past 2.1 a ring of r 4.25 has no room for a legible sign (a plus becomes a blob, even at 96 px). Material Symbols' variable weight also ends at 700. `weight="auto"` keeps 2.1 for heavier text |
-| 58 | Outline badges as solid discs with the sign cut out, like Apple's `doc.badge.plus` (legible at every weight, and it would allow heavier weights) | Claude | **pending the owner** | It changes Gota's badges from rings to discs in the outline style: an identity decision |
+| 57 | Gota's weight range up to 2.5 (font weight 900) | Claude | **not yet: 0.9–2.1** | Past 2.1 a ring of r 4.25 had no room for a legible sign. With solid badges (58) that limit is gone; the range can grow once the drawings hold their structure at 2.5. Material Symbols' variable weight also ends at 700 |
+| 58 | Outline badges as solid discs with the sign cut out, like Apple's `doc.badge.plus` | Claude | **yes** (owner, 22 Oct 2026, from a side-by-side sheet at 0.9 / 1.5 / 2.1 and 24 px) | Legible at every weight and at 24 px, where a ring with a sign clogs. Status badges only (the engine's and custom ones on the standard circle, 65 icons); a lens or a second card keeps the icon's style. QA's density is measured without the badge (a disc is not "too many parts") |
 
 ## Design and technical decisions (Claude, during construction)
 - **Signature:** a square bottom-right corner on containers; bubbles with `drop()`.
