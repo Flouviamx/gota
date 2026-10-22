@@ -195,8 +195,11 @@ function samplesOf(d) {
   let [x, y, sx, sy] = [0, 0, 0, 0];
   for (const [c, a] of parse(transform(d, 1, 0, 0))) {
     if (c === 'M') [x, y, sx, sy] = [a[0], a[1], a[0], a[1]];
-    else if (c === 'Z') [x, y] = [sx, sy];
-    else if (c === 'H' || c === 'V' || c === 'L' || c === 'T') {
+    else if (c === 'Z') {
+      // The closing side is an edge like any other
+      for (let i = 1; i <= 4; i++) pts.push([x + ((sx - x) * i) / 4, y + ((sy - y) * i) / 4]);
+      [x, y] = [sx, sy];
+    } else if (c === 'H' || c === 'V' || c === 'L' || c === 'T') {
       const [nx, ny] = c === 'H' ? [a[0], y] : c === 'V' ? [x, a[0]] : a;
       for (let i = 1; i <= 4; i++) pts.push([x + ((nx - x) * i) / 4, y + ((ny - y) * i) / 4]);
       [x, y] = [nx, ny];
