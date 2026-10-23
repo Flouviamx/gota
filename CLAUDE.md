@@ -66,6 +66,7 @@ migrate/              The codemod, gota-migrate (cli.mjs; transform.mjs: React, 
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
 src/migrate/*.json    Migration maps: Lucide, Heroicons, and SF Symbols names → Gota (checked by load.mjs).
+src/taxonomy.json     The plan to 10,000: domains, categories, rounds, targets, scopes, adoptions (checked by load.mjs).
 scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), font and sfnt (icon fonts), type (typefaces drawn with the engine), contours (path data → TrueType), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).

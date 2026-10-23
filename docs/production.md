@@ -44,4 +44,9 @@ The core set (`nucleo`, 50) was drawn by the main session and is the reference.
 3. The main session runs the full `qa.mjs`, fixes, presents a sample to the owner, and commits.
 
 ## Rounds 3 onward — scaling to 10,000
-Each agent delivers **everything at once** (outline, fill, 16 px, parts, motion, levels, mirroring, and languages), followed by a critic and QA. The taxonomy for the remaining 9,000 is defined before round 3 ([roadmap](./roadmap.md)).
+Each round draws the categories the [taxonomy](./taxonomy.md) gives it, about 1,000 icons:
+1. **Names** for the whole round first: an agent per category, deduplication in code, and one judge ([how](./taxonomy.md#how-a-round-uses-it)). What comes out is the list each illustrator draws.
+2. **A pipeline per category: illustrator → critic.** The illustrator delivers **everything at once** (outline, fill, 16 px, parts, motion, levels, mirroring, and `src/i18n/<category>.json`), starting a new file from its taxonomy entry (`category` is its `id`, `label` its Spanish label). The critic, independent as in round 1, opens every sheet, redesigns what's weak, and leaves the category at zero QA warnings.
+3. **The main session** runs the full QA, looks at the sheets, presents a sample to the owner, commits, and redeploys `gota.flouvia.com` so the MCP server serves the new icons.
+
+About 31 agents per round (10 for names, 1 judge, 10 illustrators, 10 critics), 6 at a time.

@@ -1,5 +1,6 @@
-// Loads the categories from src/icons/*.mjs and validates the set, its languages (src/i18n/) and the
-// migration maps (src/migrate/). Used by build.mjs and the sheet and QA scripts.
+// Loads the categories from src/icons/*.mjs and validates the set, its languages (src/i18n/), the
+// migration maps (src/migrate/), and the taxonomy (src/taxonomy.json). Used by build.mjs and the
+// sheet and QA scripts.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -121,7 +122,70 @@ export async function loadAll({ only } = {}) {
   }
   // Migration maps: other sets' names → Gota (the whole set is needed to check them)
   const migrate = only ? null : loadMigrate(Object.assign({}, ...categories.map((c) => c.icons)), errors);
-  return { categories, errors, migrate };
+  const taxonomy = loadTaxonomy(categories, errors);
+  adopt(categories, taxonomy);
+  return { categories, errors, migrate, taxonomy };
+}
+
+/**
+ * The taxonomy (src/taxonomy.json): the domains and every category, drawn or planned, with its
+ * round, target, scope, and the icons it adopts. Every category file must be in it, under the same
+ * Spanish label. See docs/taxonomy.md.
+ */
+export function loadTaxonomy(categories = [], errors = []) {
+  let tax;
+  try {
+    tax = JSON.parse(readFileSync(new URL('../src/taxonomy.json', import.meta.url), 'utf8'));
+  } catch (e) {
+    errors.push(`taxonomy.json: ${e.message}`);
+    return { domains: [], categories: [] };
+  }
+  const domains = new Set(tax.domains.map((d) => d.id));
+  const byId = new Map();
+  const adopted = new Map();
+  const names = new Map(categories.flatMap((c) => Object.keys(c.icons).map((n) => [n, c.category])));
+  for (const c of tax.categories) {
+    const where = `taxonomy.json: ${c.id}`;
+    if (byId.has(c.id)) errors.push(`${where}: repeated`);
+    byId.set(c.id, c);
+    if (!domains.has(c.domain)) errors.push(`${where}: unknown domain "${c.domain}"`);
+    if (!Number.isInteger(c.round) || !Number.isInteger(c.target) || c.target < 0) errors.push(`${where}: round and target are whole numbers`);
+    if (!c.label?.es || !c.label?.en || typeof c.scope !== 'string' || !c.scope) errors.push(`${where}: needs label.es, label.en, and a scope`);
+    for (const n of c.adopts ?? []) {
+      if (adopted.has(n)) errors.push(`${where}: ${n} is already adopted by ${adopted.get(n)}`);
+      adopted.set(n, c.id);
+      if (!names.has(n)) errors.push(`${where}: adopts ${n}, which is not an icon`);
+      else if (names.get(n) === c.id) errors.push(`${where}: adopts ${n}, which is drawn in its own file`);
+    }
+  }
+  for (const cat of categories) {
+    const c = byId.get(cat.category);
+    if (!c) errors.push(`${cat.file}: the category is not in src/taxonomy.json`);
+    else if (c.label.es !== cat.label) errors.push(`${cat.file}: its label "${cat.label}" is "${c.label.es}" in src/taxonomy.json`);
+  }
+  return tax;
+}
+
+/**
+ * A category adopts its icons once its file exists: they keep their source (and their languages'
+ * file) where they were drawn, and are built, searched, and shown under the adopting category.
+ */
+export function adopt(categories, taxonomy) {
+  const byId = new Map(categories.map((c) => [c.category, c]));
+  for (const t of taxonomy.categories) {
+    const to = byId.get(t.id);
+    if (!to) continue;
+    for (const name of t.adopts ?? []) {
+      const from = categories.find((c) => c !== to && c.icons[name]);
+      if (!from) continue;
+      to.icons[name] = from.icons[name];
+      delete from.icons[name];
+      if (from.i18n?.[name]) {
+        to.i18n = { ...to.i18n, [name]: from.i18n[name] };
+        delete from.i18n[name];
+      }
+    }
+  }
 }
 
 /** The migration maps' files (src/migrate/), by set. */

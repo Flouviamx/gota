@@ -9,7 +9,8 @@ The project's memory, by domain, so each task loads only what it needs.
 | An icon's format (`fill`, `small`, `parts`, `motion`, `levels`, languages…) | [Format](./format.md) | [`DESIGN.md`](../DESIGN.md) |
 | `engine/` (geometry, variants, 16 px, mirroring, motion, transitions, search) | [Engine](./engine.md) | [Quality](./quality.md) |
 | `scripts/build.mjs`, `dist/`, the components, the package, the MCP server, or what gets published | [Build](./build.md) | [Roadmap](./roadmap.md) |
-| Launching or planning a round of agents | [Production](./production.md) | [Quality](./quality.md) · [Roadmap](./roadmap.md) |
+| Launching or planning a round of agents | [Production](./production.md) | [Taxonomy](./taxonomy.md) · [Quality](./quality.md) · [Roadmap](./roadmap.md) |
+| Which category an icon belongs to, or a new category | [Taxonomy](./taxonomy.md) | [Production](./production.md) |
 | QA, tests, review sheets | [Quality](./quality.md) | [Engine](./engine.md) |
 | Proposing something new | [Decisions](./decisions.md) | [Roadmap](./roadmap.md) |
 

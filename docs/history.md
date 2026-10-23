@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — The taxonomy (3.1 closes)
+- **`src/taxonomy.json` and [Taxonomy](./taxonomy.md)** ([decision 80](./decisions.md#phase-3-23-oct-2026)): 81 categories in 11 domains, each with its round, target, scope, exclusions, and the icons it adopts from the first thousand; nine rounds of about 1,000, the order set by what the teams that use Gota reach for first. The loader checks it (every category file planned, under the same label; adopted icons exist) and applies adoptions once the adopting category exists.
+- [Production](./production.md#rounds-3-onward--scaling-to-10000) now starts each round with its names: an agent per category, deduplication in code, and one judge.
+- Tests: 61.
+
 ## 23 Oct 2026 — Phase 3 starts: the modifiers in the engine (3.2 closes)
 - **Badges** ([engine](./engine.md#geometry-enginegeometrymjs), [decision 79](./decisions.md#phase-3-23-oct-2026)): `badge()` gains `question`, `block`, `arrow-left`, and the glyph badges `search`, `heart`, `sync`, `edit`, `gear`, each with its pixel version, taken from the copies Archivos, Comunicación, Datos, and Sistema drew by hand (their 24 px drawings, unchanged). Glyph badges keep the icon's style; the status ones stay solid. The four categories' copies, Archivos' `heart`, `ringHull`, and Comunicación's `pencil` are gone.
 - **Directions:** `turn`, `turnPath`, `flipPath`, and `gear` in the engine.

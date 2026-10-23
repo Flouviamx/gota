@@ -1,6 +1,6 @@
 # Quality
 
-> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`, `tests/outline.test.mjs`, `tests/figma.test.mjs`, `tests/migrate.test.mjs`, `tests/type.test.mjs`, and the check inside `scripts/outline.mjs`.
+> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`, `tests/outline.test.mjs`, `tests/figma.test.mjs`, `tests/migrate.test.mjs`, `tests/type.test.mjs`, `tests/taxonomy.test.mjs`, and the check inside `scripts/outline.mjs`.
 
 [← Index](./README.md)
 

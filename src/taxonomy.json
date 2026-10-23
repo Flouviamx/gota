@@ -1,0 +1,1295 @@
+{
+  "$comment": "Gota's taxonomy: every category, the domain it is browsed under, the round that draws or grows it, how many new icons it takes, its scope, what belongs elsewhere, and the icons it adopts from the first thousand. See docs/taxonomy.md.",
+  "goal": 10000,
+  "rounds": {
+    "3": "Interface and work",
+    "4": "Business",
+    "5": "Technology",
+    "6": "Home and food",
+    "7": "People and health",
+    "8": "Places and travel",
+    "9": "Science and industry",
+    "10": "Leisure and culture",
+    "11": "Nature, and reaching 10,000"
+  },
+  "domains": [
+    {
+      "id": "interface",
+      "label": {
+        "es": "Interfaz",
+        "en": "Interface"
+      }
+    },
+    {
+      "id": "work",
+      "label": {
+        "es": "Trabajo y archivos",
+        "en": "Work and files"
+      }
+    },
+    {
+      "id": "business",
+      "label": {
+        "es": "Negocios",
+        "en": "Business"
+      }
+    },
+    {
+      "id": "technology",
+      "label": {
+        "es": "Tecnología",
+        "en": "Technology"
+      }
+    },
+    {
+      "id": "media",
+      "label": {
+        "es": "Dispositivos y medios",
+        "en": "Devices and media"
+      }
+    },
+    {
+      "id": "home",
+      "label": {
+        "es": "Hogar y comida",
+        "en": "Home and food"
+      }
+    },
+    {
+      "id": "people",
+      "label": {
+        "es": "Personas y salud",
+        "en": "People and health"
+      }
+    },
+    {
+      "id": "places",
+      "label": {
+        "es": "Lugares y viajes",
+        "en": "Places and travel"
+      }
+    },
+    {
+      "id": "science",
+      "label": {
+        "es": "Ciencia e industria",
+        "en": "Science and industry"
+      }
+    },
+    {
+      "id": "leisure",
+      "label": {
+        "es": "Ocio y cultura",
+        "en": "Leisure and culture"
+      }
+    },
+    {
+      "id": "nature",
+      "label": {
+        "es": "Naturaleza",
+        "en": "Nature"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "nucleo",
+      "label": {
+        "es": "Núcleo",
+        "en": "Core"
+      },
+      "domain": "interface",
+      "drawn": true,
+      "round": 1,
+      "target": 0,
+      "scope": "The 50 reference icons every category is measured against. Closed: it doesn't grow."
+    },
+    {
+      "id": "navegacion",
+      "label": {
+        "es": "Navegación",
+        "en": "Navigation"
+      },
+      "domain": "interface",
+      "drawn": true,
+      "round": 3,
+      "target": 60,
+      "scope": "Grows the arrow and navigation families: arrows into and out of a box (enter, exit), arrow pairs (exchange, merge, split, converge, diverge), circular and rotating arrows, arrows to a corner, cursor states (wait, text, move, resize in each direction, not-allowed, grab, grabbing, help, zoom), breadcrumbs, pagination, back to top, scroll variants, jump to.",
+      "exclude": "Directions are drawn once and turned (turnPath, flipPath). Window chrome → ventanas; form controls → controles."
+    },
+    {
+      "id": "edicion",
+      "label": {
+        "es": "Edición y texto",
+        "en": "Editing and text"
+      },
+      "domain": "interface",
+      "drawn": true,
+      "round": 3,
+      "target": 100,
+      "scope": "Grows design-tool and text depth: layers, frames and artboards, components and instances, boolean operations (union, subtract, intersect, exclude), masks, bezier nodes and handles, anchor points, path operations, guides and grids, snapping, auto layout and spacing, constraints, opacity, blend, gradient, shadow, stroke styles, text on a path, letter spacing, font weight and style, special characters, tables in documents, footnotes, track changes, document comments, spell check, word count, outline view.",
+      "exclude": "Shapes as subjects → formas; signs and letters → simbolos; art supplies → arte."
+    },
+    {
+      "id": "archivos",
+      "label": {
+        "es": "Archivos y nube",
+        "en": "Files and cloud"
+      },
+      "domain": "work",
+      "drawn": true,
+      "round": 4,
+      "target": 90,
+      "scope": "Grows document and file depth, never with text or letters on the file: templates, drafts, forms, reports, encrypted, corrupted, linked, missing, read-only, shared-by-link, expiring; pages and sections; scanning and printing; storage media (tape, disk, memory card adapters, NAS); sync conflicts; version history; trash states; printed matter (magazine, brochure, flyer, poster).",
+      "exclude": "Books and newspapers → lectura (adopted); contracts → legal; invoices → comercio."
+    },
+    {
+      "id": "comercio",
+      "label": {
+        "es": "Comercio y finanzas",
+        "en": "Commerce and finance"
+      },
+      "domain": "business",
+      "drawn": true,
+      "round": 4,
+      "target": 120,
+      "scope": "Grows payments, banking, investing, and the shop floor: split payments, installments, subscriptions, payouts, payment links, pay later; transfers, statements, balances, account numbers; portfolios, dividends, bonds, candlesticks, markets up and down; insurance policies and claims; ledgers, balance sheets, taxes, budgets, expenses; crypto as generic concepts (blockchain, keys, tokens, never a coin's logo); retail operations (shelf, aisle, mannequin, fitting room, self-checkout, product variants, sizes), returns and exchanges.",
+      "exclude": "Shipping and warehouses → logistica; property → bienes-raices; clothes → ropa (adopts shirt, hanger); a scale of justice and a gavel → legal (adopted)."
+    },
+    {
+      "id": "comunicacion",
+      "label": {
+        "es": "Comunicación y personas",
+        "en": "Communication and people"
+      },
+      "domain": "work",
+      "drawn": true,
+      "round": 4,
+      "target": 90,
+      "scope": "Grows messaging, mail, and calls: threads, channels, group chats, read receipts, typing, pinned and starred messages, scheduled messages, forward, quote reply; mail folders (spam, sent, outbox, drafts folder, archive), rules and filters; contact groups and address books; conference calls, call recording, intercom, fax; postal mail (letter, postcard, stamp, mailbox kinds).",
+      "exclude": "Faces → emociones (adopted); hands → gestos (adopted); community features → social; people as roles → personas; cake and party popper → fiestas (adopted)."
+    },
+    {
+      "id": "datos",
+      "label": {
+        "es": "Datos y desarrollo",
+        "en": "Data and development"
+      },
+      "domain": "technology",
+      "drawn": true,
+      "round": 5,
+      "target": 90,
+      "scope": "Once ia and desarrollo adopt AI and code, its label becomes Datos y analítica (Data and analytics) and it grows charts and data work: more chart kinds (sankey, sunburst, heatmap, box plot, bullet, slope, dot plot, pictogram, gauge kinds), KPIs and metrics, data sources, ETL pipelines, data warehouses and lakes, queries, joins, schemas, data quality, sampling, segments.",
+      "exclude": "AI → ia (adopted); code, git, and APIs → desarrollo (adopted); the lab → ciencia (adopted); rockets → espacio (adopted)."
+    },
+    {
+      "id": "sistema",
+      "label": {
+        "es": "Sistema, seguridad y estado",
+        "en": "System, security, and status"
+      },
+      "domain": "technology",
+      "drawn": true,
+      "round": 5,
+      "target": 110,
+      "scope": "Grows settings, access, and status: settings sections (display, sound, privacy, storage, battery, notifications), permissions, roles and access levels, account states (active, suspended, pending, banned), presence (online, away, busy, offline, do not disturb), health checks, maintenance mode, update and download states, error and warning kinds, keyboard keys and shortcuts (option, shift, control, escape, enter, tab, delete, function), power states (sleep, shut down, hibernate), lock screen.",
+      "exclude": "Threats and defense → ciberseguridad; tools → herramientas (adopted); health → salud (adopted); site safety → seguridad-laboral (adopted); accessibility → accesibilidad (adopted)."
+    },
+    {
+      "id": "dispositivos",
+      "label": {
+        "es": "Dispositivos y multimedia",
+        "en": "Devices and media"
+      },
+      "domain": "media",
+      "drawn": true,
+      "round": 5,
+      "target": 120,
+      "scope": "Grows the devices themselves: phones and tablets in their states (rotation, portrait, landscape, foldables), laptops, desktops, monitors, all-in-ones, wearables (ring, band, glasses), e-readers, game consoles and handhelds (generic), cameras by kind (action, instant, compact), keyboards and mice by kind, trackpads, styluses, drawing tablets, docks and hubs, chargers and power banks, set-top boxes, media players.",
+      "exclude": "Components and electronics → hardware; the craft of photo and film → foto-video; music → musica; home appliances → electrodomesticos."
+    },
+    {
+      "id": "lugares",
+      "label": {
+        "es": "Tiempo, lugares y naturaleza",
+        "en": "Time, places, and nature"
+      },
+      "domain": "places",
+      "drawn": true,
+      "round": 8,
+      "target": 120,
+      "scope": "Once calendario, clima, plantas, and the transport categories adopt their icons, its label becomes Lugares y mapas (Places and maps) and it grows places and maps: buildings (apartment block, skyscraper, castle, tower, bridge, monument, fountain, park, playground, plaza, library, museum, police station, fire station, post office, one generic place of worship), landscapes (desert, island, canyon, lake, river, beach, forest, valley), and maps (layers, satellite, terrain, geofence, coordinates, distance, elevation, north arrow, scale bar, waypoints, points of interest, indoor maps, floor selector).",
+      "exclude": "Stores and banks stay in comercio; hotels → viajes; stadiums → deportes; theaters → entretenimiento; farms → agricultura."
+    },
+    {
+      "id": "controles",
+      "label": {
+        "es": "Controles y formularios",
+        "en": "Controls and forms"
+      },
+      "domain": "interface",
+      "round": 3,
+      "target": 120,
+      "scope": "Form controls and input: text and search fields, number steppers, sliders and ranges, switches, checkboxes and radios in every state (indeterminate, disabled, error), dropdowns and selects, combo boxes, date and time pickers, color, file, and image inputs, star and emoji ratings, segmented controls, chips and tags, buttons and button groups, PIN and one-time-code fields, password fields, validation states, steppers and wizards, form layouts.",
+      "exclude": "Toggles, checkbox, radios, progress bar, and sliders already drawn stay where they are; menus and panels → navegacion; text formatting → edicion."
+    },
+    {
+      "id": "ventanas",
+      "label": {
+        "es": "Ventanas y apps",
+        "en": "Windows and apps"
+      },
+      "domain": "interface",
+      "round": 3,
+      "target": 100,
+      "scope": "Windows and app chrome: window controls, app windows and their layouts, toolbars, docks and taskbars, title bars, modals, dialogs, sheets, popovers, tooltips, toasts, banners, drawers, notification centers, widgets, split and stacked windows, desktops and workspaces, app launchers, app states (loading, empty, error, offline, maintenance, not found, under construction).",
+      "exclude": "Panels, sidebars, tabs, views, and the browser window stay in navegacion."
+    },
+    {
+      "id": "simbolos",
+      "label": {
+        "es": "Símbolos y caracteres",
+        "en": "Symbols and characters"
+      },
+      "domain": "interface",
+      "round": 3,
+      "target": 130,
+      "scope": "Single characters drawn as geometry with the set's stroke, never set in a font: digits 0–9, capital letters A–Z, math operators and relations (not equal, less and greater, plus-minus, multiply, square root, fraction, power, pi, sigma, integral, approximately, degree, per mille), set and logic signs, punctuation and typographic signs (ampersand, section, pilcrow, bullet, ellipsis, quotation marks, slash, backslash, underscore, tilde), brackets of every kind, currency signs not yet drawn.",
+      "exclude": "No words, abbreviations, or non-Latin scripts. The signs already drawn (percent, at, hashtag, asterisk, equals, divide, infinity, lambda, sum, function, braces, brackets, the currency signs in comercio) stay where they are."
+    },
+    {
+      "id": "formas",
+      "label": {
+        "es": "Formas y geometría",
+        "en": "Shapes and geometry"
+      },
+      "domain": "interface",
+      "round": 3,
+      "target": 100,
+      "scope": "Shapes as subjects: 2D primitives (triangle, pentagon, hexagon, octagon, rhombus, parallelogram, trapezoid, semicircle, ellipse, crescent, ring, star kinds), 3D solids (cylinder, sphere, cone, pyramid, prism, torus, cuboid), dashed and dotted shapes, line styles and weights, angles, symmetry, patterns and grids, measures (area, perimeter, diameter, radius, volume).",
+      "exclude": "Vector tools → edicion; the cube and 3D axes already drawn stay in datos."
+    },
+    {
+      "id": "calendario",
+      "label": {
+        "es": "Calendario y tiempo",
+        "en": "Calendar and time"
+      },
+      "domain": "work",
+      "round": 3,
+      "target": 100,
+      "scope": "Calendars and time: views (day, week, month, year, agenda, timeline), events by kind and state, recurrence, availability, booking slots, reminders, deadlines, schedules, shifts, time tracking, timesheets, clock faces and watches by kind, time ranges, countdowns, durations, history.",
+      "exclude": "The base calendar and clock stay in nucleo; seasons, sunrise, and sunset → clima.",
+      "adopts": [
+        "calendar-plus",
+        "calendar-minus",
+        "calendar-check",
+        "calendar-x",
+        "calendar-range",
+        "calendar-event",
+        "calendar-day",
+        "calendar-clock",
+        "hourglass",
+        "hourglass-end",
+        "timer",
+        "stopwatch",
+        "alarm-clock",
+        "alarm-plus",
+        "alarm-check",
+        "alarm-off",
+        "clock-forward",
+        "clock-plus",
+        "clock-check",
+        "time-zone"
+      ]
+    },
+    {
+      "id": "oficina",
+      "label": {
+        "es": "Oficina y productividad",
+        "en": "Office and productivity"
+      },
+      "domain": "work",
+      "round": 3,
+      "target": 120,
+      "scope": "Office and productivity: tasks and to-dos, checklists, kanban cards, notes, whiteboards, meetings and agendas, presentations and slides, spreadsheet cells (rows, columns, merge, freeze, formula), desk supplies (stapler, binder, tape dispenser, rubber band, pushpin kinds, envelope opener), desks and workspaces, print queues, approvals, sign-offs.",
+      "exclude": "Files and folders → archivos; calendars → calendario; charts → datos."
+    },
+    {
+      "id": "social",
+      "label": {
+        "es": "Social y comunidad",
+        "en": "Social and community"
+      },
+      "domain": "work",
+      "round": 3,
+      "target": 100,
+      "scope": "Social features and communities: follow and followers, friends, groups, posts and feeds, stories, likes and reactions beyond the thumbs, comment threads, mentions, shares and reposts, profiles, invitations, polls, upvote and downvote, trending, forums, questions and answers, reviews and ratings, moderation (report, mute, hide, block lists).",
+      "exclude": "Bubbles, mail, and calls → comunicacion; faces → emociones; never a social network's logo."
+    },
+    {
+      "id": "producto",
+      "label": {
+        "es": "Producto y UX",
+        "en": "Product and UX"
+      },
+      "domain": "interface",
+      "round": 3,
+      "target": 100,
+      "scope": "Product design and research: wireframes, user flows, personas, journey maps, prototypes, usability tests, heatmaps and click maps, interviews, insights, design systems and tokens, responsive breakpoints, onboarding, feature flags, releases and changelogs, feedback loops, experiments, prioritization (impact and effort), backlogs, sprints.",
+      "exclude": "A/B tests, sitemaps, components, and the roadmap already drawn stay where they are; app states → ventanas."
+    },
+    {
+      "id": "negocios",
+      "label": {
+        "es": "Negocios y gestión",
+        "en": "Business and management"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 120,
+      "scope": "Business and management: strategy, goals and OKRs, KPIs, growth, organization charts, departments, decisions, approvals, priorities, risk, partnerships, proposals, pitches, headquarters and branches, franchises, suppliers, procurement, quality, processes, lean, benchmarks, milestones, board meetings, shareholders.",
+      "exclude": "Deals, clients, and projects already drawn stay where they are; legal matters → legal; people operations → rrhh."
+    },
+    {
+      "id": "marketing",
+      "label": {
+        "es": "Marketing y publicidad",
+        "en": "Marketing and advertising"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 120,
+      "scope": "Marketing and advertising: campaigns, audiences and segments, leads, conversion, SEO, search and display ads, billboards, newsletters, email campaigns, influencers, brand, positioning, promotions, referrals, affiliates, attribution, impressions, reach, click-through, landing pages, link tracking, press and PR, sponsorships, events marketing.",
+      "exclude": "The megaphone, coupons, loyalty cards, and the funnel chart already drawn stay where they are."
+    },
+    {
+      "id": "rrhh",
+      "label": {
+        "es": "Recursos humanos",
+        "en": "People operations"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 100,
+      "scope": "People operations: hiring, job posts, candidates, résumés, interviews, offers, onboarding and offboarding, payroll, benefits, time off, vacation, sick leave, attendance, performance reviews, promotions, training, teams and roles, remote and hybrid work, desk booking, recognition.",
+      "exclude": "Shifts and timesheets → calendario; workplace safety → seguridad-laboral."
+    },
+    {
+      "id": "soporte",
+      "label": {
+        "es": "Soporte y servicio",
+        "en": "Support and service"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 90,
+      "scope": "Customer support: help desks, queues, agents, live chat, call centers, SLAs, escalation, FAQs, knowledge bases, guides and tutorials, feedback, surveys, NPS and satisfaction, complaints, warranties, repairs and their status, status pages, community support.",
+      "exclude": "The ticket, the headset, and the lifebuoy already drawn stay where they are; chatbots → ia."
+    },
+    {
+      "id": "legal",
+      "label": {
+        "es": "Legal y gobierno",
+        "en": "Law and government"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 110,
+      "scope": "Law and government: contracts and clauses, notaries, seals, courts, judges, law books, regulations, compliance, privacy (consent, data requests, cookies settings), terms and policies, intellectual property (patents), licenses and permits, voting, elections, ballots, government buildings, public services, taxes, citizenship, immigration.",
+      "exclude": "Passports and visas → viajes; signatures and IDs already drawn stay where they are.",
+      "adopts": [
+        "gavel",
+        "balance-scale"
+      ]
+    },
+    {
+      "id": "logistica",
+      "label": {
+        "es": "Logística",
+        "en": "Logistics"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 110,
+      "scope": "Logistics and the supply chain: racks, forklifts, containers, port cranes, conveyor belts, picking and packing, labels and tracking, shipments by state, freight by sea, air, rail, and road, customs, distribution centers, last mile, route planning, fleets, parcel lockers, reverse logistics, inventory counts, stock levels.",
+      "exclude": "Trucks, parcels, warehouse, and pallet already drawn stay in comercio; vehicles as subjects → vehiculos."
+    },
+    {
+      "id": "bienes-raices",
+      "label": {
+        "es": "Bienes raíces",
+        "en": "Real estate"
+      },
+      "domain": "business",
+      "round": 4,
+      "target": 90,
+      "scope": "Real estate and property: homes and apartments for sale and rent, listings, floor plans, room counts, area, key handover, viewings, agents, neighborhoods, moving (boxes, moving truck), property management, maintenance requests, tenants, leases, utilities, amenities (pool, gym, parking, elevator, laundry).",
+      "exclude": "Mortgages stay in comercio; furniture → hogar; construction → construccion."
+    },
+    {
+      "id": "ia",
+      "label": {
+        "es": "Inteligencia artificial",
+        "en": "Artificial intelligence"
+      },
+      "domain": "technology",
+      "round": 5,
+      "target": 140,
+      "scope": "Artificial intelligence: models, training and fine-tuning, datasets, embeddings and vectors, tokens, context, agents and tools, assistants and copilots, generation (text, image, audio, video, code), summarizing, voice assistants, computer vision (detection, recognition, segmentation), recommendations, predictions, agent workflows, guardrails, evaluation, inference, model cards.",
+      "exclude": "AI badges on other objects (a file, an image, a message) stay with their object; chips → hardware.",
+      "adopts": [
+        "sparkle",
+        "sparkles",
+        "search-sparkle",
+        "robot",
+        "chatbot",
+        "brain",
+        "neural-network",
+        "prompt",
+        "ai-chip",
+        "code-sparkle"
+      ]
+    },
+    {
+      "id": "desarrollo",
+      "label": {
+        "es": "Desarrollo de software",
+        "en": "Software development"
+      },
+      "domain": "technology",
+      "round": 5,
+      "target": 140,
+      "scope": "Software development: code concepts (class, object, method, module, package, dependency, library, SDK, plugin, extension), build and CI (pipelines, builds, tests, coverage, lint, deploys, releases, tags, environments), debugging (breakpoints, stepping, watch, console, stack traces, crashes), version control in depth (rebase, cherry-pick, stash, conflicts), code review, issues, documentation, APIs (endpoints, requests and responses, rate limits, keys), containers and orchestration (generic), serverless functions, scheduled jobs, queues, caches.",
+      "exclude": "Never a language's or a tool's logo.",
+      "adopts": [
+        "git-branch",
+        "git-commit",
+        "git-merge",
+        "git-pull-request",
+        "git-pull-request-closed",
+        "git-pull-request-draft",
+        "git-fork",
+        "git-compare",
+        "git-graph",
+        "bug",
+        "terminal",
+        "code-window",
+        "api",
+        "webhook"
+      ]
+    },
+    {
+      "id": "redes",
+      "label": {
+        "es": "Redes e infraestructura",
+        "en": "Networks and infrastructure"
+      },
+      "domain": "technology",
+      "round": 5,
+      "target": 110,
+      "scope": "Networks and infrastructure: switches, hubs, modems, data centers, cables and ports, fiber, antennas, cell towers, mesh networks, VPNs, DNS, IP addresses, domains, CDNs and the edge, latency, bandwidth, uptime and outages, topologies (star, ring, bus, mesh), cloud regions and zones, servers by role (web, mail, game).",
+      "exclude": "The router, firewall, load balancer, server rack, and file server already drawn stay where they are."
+    },
+    {
+      "id": "hardware",
+      "label": {
+        "es": "Hardware y electrónica",
+        "en": "Hardware and electronics"
+      },
+      "domain": "technology",
+      "round": 5,
+      "target": 130,
+      "scope": "Electronics and components: GPUs, motherboards, circuit boards, resistors, capacitors, diodes, LEDs, transistors, sensors, microcontroller boards, breadboards, soldering, multimeters, oscilloscopes, connectors and cables by shape, storage drives (SSD, HDD), fans and cooling, power supplies, battery cells (cylinder, coin, pack), 3D printers, laser cutters.",
+      "exclude": "The CPU and memory chip already drawn stay in datos; finished devices → dispositivos."
+    },
+    {
+      "id": "ciberseguridad",
+      "label": {
+        "es": "Ciberseguridad",
+        "en": "Cybersecurity"
+      },
+      "domain": "technology",
+      "round": 5,
+      "target": 110,
+      "scope": "Threats and defense: malware, worms, trojans, ransomware, phishing, bots, intrusions, vulnerabilities, encryption and decryption, hashing, secure channels, data breaches, audit logs, incident response, penetration testing, bug bounties, hardware security keys, access policies, zero trust, threat intelligence, backups against attack.",
+      "exclude": "Locks, keys, shields, biometrics, and two-factor stay in sistema; the virus as an illness → salud."
+    },
+    {
+      "id": "hogar",
+      "label": {
+        "es": "Hogar y muebles",
+        "en": "Home and furniture"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 120,
+      "scope": "Home and furniture: sofas, armchairs, beds by kind, tables, desks, chairs, shelves, wardrobes, dressers, lamps, mirrors, rugs, curtains, picture frames, rooms (living room, bedroom, bathroom, garage, laundry room), windows, stairs, fireplaces, house parts (roof, chimney, gate, fence, mailbox).",
+      "exclude": "Appliances → electrodomesticos; the kitchen → cocina; houseplants → plantas.",
+      "adopts": [
+        "bed",
+        "door",
+        "door-open"
+      ]
+    },
+    {
+      "id": "electrodomesticos",
+      "label": {
+        "es": "Electrodomésticos y casa inteligente",
+        "en": "Appliances and smart home"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 110,
+      "scope": "Appliances and the smart home: fridge, freezer, oven, stove, microwave, dishwasher, washing machine, dryer, iron, vacuum and robot vacuum, air conditioner, fan, heater, humidifier, air purifier, water heater, thermostat, smart plugs and switches, sensors (motion, door, smoke, leak), smart locks, doorbells, blinds, lighting scenes, coffee machine, kettle, toaster, blender, mixer, juicer, rice cooker, air fryer.",
+      "exclude": "The smart speaker, outlet, and security camera already drawn stay where they are."
+    },
+    {
+      "id": "limpieza",
+      "label": {
+        "es": "Limpieza y lavandería",
+        "en": "Cleaning and laundry"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 80,
+      "scope": "Cleaning and laundry: brooms, mops, buckets, spray bottles, sponges, rubber gloves, detergents, trash bags, laundry baskets, clothespins, ironing boards, garment care symbols (washing temperatures, bleach, tumble dry, dry clean, iron settings), stains, dust, pest control.",
+      "exclude": "Trash cans stay in edicion; recycling → medio-ambiente; personal hygiene → belleza."
+    },
+    {
+      "id": "cocina",
+      "label": {
+        "es": "Cocina y utensilios",
+        "en": "Kitchen and cooking"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 110,
+      "scope": "Kitchen tools and cooking: knives, forks, spoons, chopsticks, pots, pans, woks, lids, whisks, spatulas, ladles, tongs, cutting boards, graters, peelers, rolling pins, measuring cups, oven mitts, aprons, chef's hats, recipes, cooking methods (boil, fry, bake, grill, steam), doneness and temperatures, servings.",
+      "exclude": "Appliances → electrodomesticos; food → comida.",
+      "adopts": [
+        "utensils"
+      ]
+    },
+    {
+      "id": "comida",
+      "label": {
+        "es": "Comida",
+        "en": "Food"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 140,
+      "scope": "Prepared food and ingredients: bread and bakery, cheese, eggs, meat cuts, poultry, seafood dishes, pizza, burgers, tacos, burritos, sushi, noodles, pasta, rice, soups, salads, sandwiches, hot dogs, fries, snacks, desserts, ice cream, cookies, donuts, candy, chocolate, honey, jam, spices and condiments, oils, flour, sugar, salt, canned food.",
+      "exclude": "Fruits, vegetables, and nuts → frutas-verduras; drinks → bebidas; the birthday cake → fiestas."
+    },
+    {
+      "id": "frutas-verduras",
+      "label": {
+        "es": "Frutas y verduras",
+        "en": "Fruits and vegetables"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 120,
+      "scope": "Produce: fruits (apple, pear, banana, citrus, grapes, berries, cherries, stone fruit, melons, tropical fruit), vegetables (root, leafy, cruciferous, squash, peppers, tomatoes, onions, garlic, corn, peas), legumes, nuts and seeds, herbs, mushrooms, grains.",
+      "exclude": "Crops in the field → agricultura; plants as growing things → plantas."
+    },
+    {
+      "id": "bebidas",
+      "label": {
+        "es": "Bebidas",
+        "en": "Drinks"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 90,
+      "scope": "Drinks: coffee by kind (espresso, latte, iced, coffee beans), tea and matcha, water and sparkling water, juice, smoothies, milk and plant milks, soda, energy drinks, wine, beer, cocktails, spirits, mugs, cups, glasses, bottles, thermoses, straws, ice, bars.",
+      "adopts": [
+        "coffee"
+      ]
+    },
+    {
+      "id": "restaurante",
+      "label": {
+        "es": "Restaurantes",
+        "en": "Restaurants"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 100,
+      "scope": "Restaurants and dining: menus, reservations, tables and seating, waiters, service bells, the bill, takeaway and delivery bags, food trucks, drive-throughs, buffets, cafés, the fourteen common allergens (gluten, crustaceans, eggs, fish, peanuts, soy, milk, nuts, celery, mustard, sesame, sulphites, lupin, molluscs), dietary labels (vegan, vegetarian, gluten-free, dairy-free), spicy levels, portions, calories, waitlists, kitchen open and closed.",
+      "exclude": "The tip jar stays in comercio."
+    },
+    {
+      "id": "bebes",
+      "label": {
+        "es": "Bebés y niños",
+        "en": "Babies and kids"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 70,
+      "scope": "Babies and kids: bottles, pacifiers, strollers, cribs, diapers, rattles, high chairs, baby monitors, car seats, bibs, pregnancy, breastfeeding, changing tables, child safety (outlet covers, gates), growth charts.",
+      "exclude": "Toys and playgrounds → juegos; school → educacion."
+    },
+    {
+      "id": "mascotas",
+      "label": {
+        "es": "Mascotas",
+        "en": "Pets"
+      },
+      "domain": "home",
+      "round": 6,
+      "target": 80,
+      "scope": "Pets and pet care: dogs and puppies, kittens, bones, leashes, collars and tags, bowls, food bags, treats, pet toys, pet beds, carriers, litter boxes, aquariums, bird cages, small pets (hamster, rabbit), grooming, vet visits, microchips, walks, training, pet-friendly signs.",
+      "exclude": "Animals in the wild → animales.",
+      "adopts": [
+        "cat",
+        "paw"
+      ]
+    },
+    {
+      "id": "personas",
+      "label": {
+        "es": "Personas y roles",
+        "en": "People and roles"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 120,
+      "scope": "People by role and stage of life, gender-neutral and in one color: workers marked by their attributes (hard hat, chef's hat, stethoscope, mortarboard), families, couples, children, elders, pregnancy, group sizes, crowds, queues, postures and actions (sitting, standing, lying, carrying), avatars and profile placeholders.",
+      "exclude": "Person-with-badge UI icons stay in comunicacion; gestures → gestos; faces → emociones."
+    },
+    {
+      "id": "gestos",
+      "label": {
+        "es": "Manos y gestos",
+        "en": "Hands and gestures"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 90,
+      "scope": "Hands and gestures: pointing, waving, OK, peace, fist, high five, clapping, pinch and spread, swipes, tap, double tap, long press, rotate, two-finger scroll, stop, holding (an object in an open hand), fist bump, counting fingers one to five, sign-language handshapes.",
+      "exclude": "No religious gestures.",
+      "adopts": [
+        "thumbs-up",
+        "thumbs-down",
+        "hand-raised"
+      ]
+    },
+    {
+      "id": "emociones",
+      "label": {
+        "es": "Caras y emociones",
+        "en": "Faces and emotions"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 90,
+      "scope": "Faces and emotions: the remaining expressions (love, kiss, crying, tired, sleeping, sick, hot, cold, cool, thinking, shy, worried, scared, nervous, relieved, grinning, zipped mouth, dizzy, partying, star-struck, mind-blown, skeptical), mood scales, broken heart, mood up and down.",
+      "adopts": [
+        "face-smile",
+        "face-laugh",
+        "face-wink",
+        "face-neutral",
+        "face-confused",
+        "face-surprised",
+        "face-sad",
+        "face-angry"
+      ]
+    },
+    {
+      "id": "salud",
+      "label": {
+        "es": "Salud y medicina",
+        "en": "Health and medicine"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 140,
+      "scope": "Health and medicine: pills, capsules, syringes, vaccines, IV drips, bandages, medical thermometers, blood pressure, blood drops and types, glucose meters, inhalers, crutches, casts, X-rays, scanners, ultrasound, ambulances, pharmacies, prescriptions, medical records, appointments, telemedicine, doctor's bags, masks, sanitizer, tests, allergies, dentistry (tooth, braces, dental chair), eye care (eye chart, contact lenses).",
+      "exclude": "Organs and the body → anatomia; mental health → bienestar; hearing aids → accesibilidad.",
+      "adopts": [
+        "heart-pulse",
+        "stethoscope",
+        "virus",
+        "first-aid",
+        "hospital"
+      ]
+    },
+    {
+      "id": "anatomia",
+      "label": {
+        "es": "Cuerpo y anatomía",
+        "en": "Body and anatomy"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 90,
+      "scope": "The body: organs (heart, lungs, kidneys, liver, stomach, intestines, bladder), skeleton, bones, joints, muscles, teeth, eye, ear, nose, mouth, tongue, hair, skin, foot, body outlines front and back, body regions for symptom pickers, cells and blood cells.",
+      "exclude": "The brain as AI stays in ia; hands → gestos; DNA → ciencia."
+    },
+    {
+      "id": "bienestar",
+      "label": {
+        "es": "Bienestar",
+        "en": "Wellbeing"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 90,
+      "scope": "Wellbeing and mental health: meditation, mindfulness, breathing, yoga poses, sleep and sleep tracking, relaxation, spa, massage, sauna, bath, aromatherapy, journaling, gratitude, therapy, support groups, stress and energy levels, hydration, nutrition plates, habits, screen time.",
+      "exclude": "Training and the gym → fitness; illness → salud."
+    },
+    {
+      "id": "fitness",
+      "label": {
+        "es": "Fitness y entrenamiento",
+        "en": "Fitness and training"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 100,
+      "scope": "Training and the gym: kettlebells, barbells, weight plates, benches, treadmills, rowing machines, stationary bikes, ellipticals, pull-up bars, resistance bands, jump ropes, foam rollers, running, cycling, swimming, hiking, climbing, boxing, dancing, workouts, sets and reps, heart-rate zones, calories burned, steps, distance, personal records, body measurements, protein shakers.",
+      "exclude": "Sports with rules, balls, and venues → deportes.",
+      "adopts": [
+        "dumbbell"
+      ]
+    },
+    {
+      "id": "belleza",
+      "label": {
+        "es": "Belleza y cuidado personal",
+        "en": "Beauty and personal care"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 90,
+      "scope": "Beauty and personal care: lipstick, mascara, eyeshadow, foundation, makeup brushes, nail polish, perfume, skincare (cream jars, serum droppers, sunscreen), haircare (comb, hairbrush, hair dryer, straightener, curler), barbering (razor, shaving brush, barber pole, clippers), salon chairs, toothbrushes, toothpaste, floss, soap, shampoo, deodorant, towels, cotton swabs, tweezers.",
+      "exclude": "Scissors stay in edicion; mirrors → hogar."
+    },
+    {
+      "id": "ropa",
+      "label": {
+        "es": "Ropa y moda",
+        "en": "Clothing and fashion"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 130,
+      "scope": "Clothing and fashion: tops (t-shirt, blouse, sweater, hoodie, jacket, coat, vest), bottoms (pants, jeans, shorts, skirt), dresses, suits, ties, bow ties, underwear, socks, shoes (sneakers, boots, heels, sandals, formal shoes), hats (cap, beanie, sun hat), glasses and sunglasses, belts, scarves, gloves, jewelry (ring, necklace, earrings, bracelet), handbags, backpacks, totes, sewing (needle, thread, button, sewing machine, pins), sizes, uniforms.",
+      "exclude": "The shopping bag and gem stay in comercio.",
+      "adopts": [
+        "shirt",
+        "hanger"
+      ]
+    },
+    {
+      "id": "accesibilidad",
+      "label": {
+        "es": "Accesibilidad",
+        "en": "Accessibility"
+      },
+      "domain": "people",
+      "round": 7,
+      "target": 70,
+      "scope": "Accessibility: wheelchair users in motion, accessible entrances, ramps, guide dogs, white canes, low vision, blindness, deafness, sign language, hearing loops, hearing aids, audio description, braille, large text, screen readers, reduced motion, keyboard navigation, cognitive accessibility, service animals, quiet rooms.",
+      "exclude": "Captions and contrast already drawn stay where they are.",
+      "adopts": [
+        "accessibility",
+        "wheelchair"
+      ]
+    },
+    {
+      "id": "vehiculos",
+      "label": {
+        "es": "Vehículos",
+        "en": "Vehicles"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 140,
+      "scope": "Road vehicles: cars by body (sedan, hatchback, SUV, pickup, convertible, sports, electric) and the main car's front, side, and rear, vans, trucks by kind (box, semi, tanker, dump, tow, garbage), motorcycles, mopeds, e-bikes and bicycles by kind, emergency vehicles (fire truck, police car), construction vehicles (excavator, bulldozer, crane truck, cement mixer, forklift), RVs and caravans, golf carts.",
+      "exclude": "Delivery trucks already drawn stay in comercio; tractors → agricultura; ambulances → salud; buses and trains in service → transito.",
+      "adopts": [
+        "car",
+        "taxi",
+        "bicycle",
+        "scooter"
+      ]
+    },
+    {
+      "id": "conduccion",
+      "label": {
+        "es": "Conducción y tránsito vial",
+        "en": "Driving and the road"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 120,
+      "scope": "Driving and the road: steering wheels, dashboard warning lights (engine, oil, battery, tire pressure, brakes, ABS, airbag, seatbelt, coolant, low fuel, high and low beams, fog lights, turn signals, hazard lights, cruise control, lane assist), gears and transmission, pedals, tires and wheels, engines, car batteries, keys and fobs, car washes, mechanics, oil changes, road signs (stop, yield, speed limit without numbers, no entry, one way, roundabout, curves, merge, crossings, school zone, roadworks), tolls, speed cameras, driving licenses.",
+      "adopts": [
+        "gas-station",
+        "ev-charger",
+        "parking",
+        "traffic-light",
+        "road"
+      ]
+    },
+    {
+      "id": "aviacion",
+      "label": {
+        "es": "Aviación",
+        "en": "Air travel"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 90,
+      "scope": "Air travel: planes by kind, helicopters, hot-air balloons, gliders, airports, terminals, gates, boarding passes, check-in, security checks, baggage claim, carry-on, seat selection, flight status (delayed, cancelled, on time), departure and arrival boards, control towers, runways, jet bridges, lounges, frequent flyer.",
+      "exclude": "Drones stay in dispositivos; air freight → logistica.",
+      "adopts": [
+        "plane",
+        "plane-takeoff",
+        "plane-landing"
+      ]
+    },
+    {
+      "id": "nautica",
+      "label": {
+        "es": "Náutica",
+        "en": "Sea and river travel"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 80,
+      "scope": "Sea and river travel: ships by kind (cruise ship, ferry, cargo ship, tanker, fishing boat), motorboats, rowboats, canoes, yachts, jet skis, sails, life jackets, ports, docks, piers, lighthouses, buoys, helms, knots, submarines.",
+      "exclude": "The lifebuoy stays in sistema; containers and port cranes → logistica.",
+      "adopts": [
+        "ship",
+        "sailboat",
+        "anchor"
+      ]
+    },
+    {
+      "id": "transito",
+      "label": {
+        "es": "Transporte público",
+        "en": "Public transport"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 90,
+      "scope": "Public transport: trains by kind (high speed, metro, tram, monorail, cable car, funicular), buses (city, coach, double-decker, school), stations, platforms, transit passes and cards, turnstiles, timetables, routes and lines, transfers, bus stops and shelters, bike and scooter sharing, ride-hailing, carpooling, park and ride.",
+      "exclude": "The ticket stays in nucleo.",
+      "adopts": [
+        "bus",
+        "train"
+      ]
+    },
+    {
+      "id": "viajes",
+      "label": {
+        "es": "Viajes y hospedaje",
+        "en": "Travel and hospitality"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 110,
+      "scope": "Travel and hospitality: suitcases by kind, travel backpacks, visas, hotels, room keys and key cards, reception bells, concierges, room service, do-not-disturb signs, pools, beaches (umbrella, sunbed), resorts, tours and guides, generic landmarks (never a real monument), souvenirs, travel insurance, itineraries, check-in and check-out, bookings.",
+      "exclude": "Camping → camping; flights → aviacion.",
+      "adopts": [
+        "luggage",
+        "passport"
+      ]
+    },
+    {
+      "id": "senales",
+      "label": {
+        "es": "Señalética",
+        "en": "Public signs"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 130,
+      "scope": "Public pictograms and wayfinding: restrooms (neutral figures), elevators, escalators, stairs, exits, information points, lost and found, lockers, cloakrooms, waiting areas, meeting points, drinking water, charging points, smoking and no-smoking areas, prohibitions (no phones, no photos, no pets, no food), quiet zones, baby changing, and the frames of prohibition, mandatory, warning, and safe-condition signs as sets.",
+      "exclude": "Hazard signs and fire safety → seguridad-laboral; road signs → conduccion."
+    },
+    {
+      "id": "camping",
+      "label": {
+        "es": "Aire libre y campamento",
+        "en": "Outdoors and camping"
+      },
+      "domain": "places",
+      "round": 8,
+      "target": 80,
+      "scope": "The outdoors: sleeping bags, hiking backpacks, lanterns, headlamps, camping stoves, coolers, hammocks, hiking boots, trekking poles, trail markers, cabins, fishing (rod, hook, bait), knots, rope, survival knives as tools, water filters, national parks.",
+      "exclude": "No hunting or weapons; the compass and maps stay in lugares.",
+      "adopts": [
+        "tent",
+        "campfire",
+        "binoculars"
+      ]
+    },
+    {
+      "id": "ciencia",
+      "label": {
+        "es": "Ciencia y laboratorio",
+        "en": "Science and the lab"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 120,
+      "scope": "Science and the lab: beakers, pipettes, petri dishes, microscopes, centrifuges, Bunsen burners, lab coats, molecules, electrons, DNA and RNA, cells, bacteria, the periodic table, elements, reactions, radioactivity, physics (pendulum, lens, prism, spectrum, gravity, force, velocity), experiments, hypotheses, research papers.",
+      "exclude": "Viruses as illness → salud.",
+      "adopts": [
+        "flask",
+        "test-tube",
+        "atom",
+        "magnet"
+      ]
+    },
+    {
+      "id": "espacio",
+      "label": {
+        "es": "Espacio y astronomía",
+        "en": "Space and astronomy"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 90,
+      "scope": "Space and astronomy: ringed planets, stars, constellations, galaxies, nebulae, comets, asteroids, black holes, the solar system, orbits, moon phases, eclipses, telescopes, observatories, satellites, space stations, shuttles, capsules, landers, astronauts, space suits, rovers, launch pads.",
+      "exclude": "The night sky as weather (moon, stars) stays in clima.",
+      "adopts": [
+        "planet",
+        "shooting-star",
+        "rocket"
+      ]
+    },
+    {
+      "id": "educacion",
+      "label": {
+        "es": "Educación",
+        "en": "Education"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 110,
+      "scope": "Education: universities, classrooms, chalkboards, school desks, school backpacks, pencil cases, exams, quizzes, grades, homework, lessons, courses, online learning, lectures, tutors, students and teachers, scholarships, library cards, attendance, alphabet blocks, abacuses.",
+      "exclude": "Notebooks, books, rulers, and calculators already drawn stay where they are; the lab → ciencia.",
+      "adopts": [
+        "graduation-cap",
+        "school"
+      ]
+    },
+    {
+      "id": "industria",
+      "label": {
+        "es": "Industria y manufactura",
+        "en": "Industry and manufacturing"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 110,
+      "scope": "Industry and manufacturing: assembly lines, robotic arms, conveyor belts, CNC machines, lathes, presses, molds, welding, foundries, refineries, oil rigs, pipelines, valves, pumps, pressure, tanks, quality control, defects, inspection, batches, maintenance, spare parts, bearings, springs, chains, pulleys, hydraulics, compressors.",
+      "exclude": "Gears and the gauge already drawn stay in sistema and datos.",
+      "adopts": [
+        "factory"
+      ]
+    },
+    {
+      "id": "construccion",
+      "label": {
+        "es": "Construcción y arquitectura",
+        "en": "Construction and architecture"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 110,
+      "scope": "Construction and architecture: tower cranes, scaffolding, bricks, blocks, concrete, beams, columns, trusses, blueprints, plumb bobs, trowels, wheelbarrows, building stages (foundation, framing, roofing), renovation, demolition, plumbing (pipes, faucets), electrical work (wires, junction boxes, breakers), insulation, roofs.",
+      "exclude": "Construction vehicles → vehiculos; hand and power tools → herramientas; floor plans → bienes-raices."
+    },
+    {
+      "id": "herramientas",
+      "label": {
+        "es": "Herramientas",
+        "en": "Tools"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 120,
+      "scope": "Tools and hardware: pliers, wire cutters, spanners by kind, Allen keys, chisels, files, saws by kind, axes, crowbars, utility knives, clamps, vises, power tools (drill, impact driver, circular saw, jigsaw, sander, grinder, nail gun, heat gun, soldering iron), measuring tools (tape measure, spirit level, square, caliper, laser measure), fasteners (screw, bolt, nail, washer, rivet, wall plug), toolboxes and tool belts, ladders, workbenches, paint (can, spray), glue, tape, rope, chain.",
+      "exclude": "The paint roller stays in edicion; garden tools → plantas.",
+      "adopts": [
+        "wrench",
+        "screwdriver",
+        "hammer",
+        "tools",
+        "hex-nut"
+      ]
+    },
+    {
+      "id": "energia",
+      "label": {
+        "es": "Energía y servicios",
+        "en": "Energy and utilities"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 110,
+      "scope": "Energy and utilities: power lines, pylons, transformers, generators, solar panels, wind turbines, hydro dams, nuclear plants, coal, oil barrels and drops, gas, grid batteries, meters (electricity, gas, water), energy saving, efficiency labels, the grid, consumption, peak hours, water supply (tap, pipe, water tower), sewage, heating (radiator, boiler), cooling.",
+      "exclude": "The bolt stays in nucleo; light bulbs and outlets already drawn stay where they are; EV charging → conduccion."
+    },
+    {
+      "id": "seguridad-laboral",
+      "label": {
+        "es": "Seguridad y emergencias",
+        "en": "Safety and emergencies"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 100,
+      "scope": "Safety and emergencies: protective equipment (safety glasses, ear protection, respirators, gloves, high-visibility vests, safety boots, harnesses), hazard signs (flammable, explosive, toxic, corrosive, radioactive, biohazard, high voltage, laser, magnetic field, slippery floor, falling objects), fire safety (extinguisher, hydrant, hose, alarm, sprinkler, fire blanket, fire exit), emergencies (emergency call, evacuation, assembly point, eyewash, emergency stop, defibrillator), lockout, caution tape.",
+      "exclude": "The siren and first aid stay in sistema and salud.",
+      "adopts": [
+        "hard-hat",
+        "traffic-cone",
+        "barrier"
+      ]
+    },
+    {
+      "id": "agricultura",
+      "label": {
+        "es": "Agricultura",
+        "en": "Farming"
+      },
+      "domain": "science",
+      "round": 9,
+      "target": 90,
+      "scope": "Farming: farms, barns, silos, fields, crops (wheat, corn, rice, soy), seeds and sowing, harvests, irrigation, sprinklers, greenhouses, tractors, combines, plows, fences, scarecrows, beehives, milk cans, fertilizer, pesticides, soil, organic labels.",
+      "exclude": "Farm animals → animales; produce → frutas-verduras."
+    },
+    {
+      "id": "deportes",
+      "label": {
+        "es": "Deportes",
+        "en": "Sports"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 150,
+      "scope": "Sports: balls (soccer, basketball, American football, baseball, tennis, volleyball, rugby, golf, bowling, table tennis, billiards), equipment (rackets, bats, clubs, gloves, helmets, nets, goals, hoops, pins, pucks, sticks, skis, snowboards, skates, surfboards, paddles), venues (stadium, court, field, track, pool, rink, golf course, ring), officiating (whistle, cards, scoreboard), competition, extreme sports (skateboard, parachute), motorsport (racing helmet, checkered flag, race car), martial arts.",
+      "exclude": "The trophy, medal, and podium already drawn stay where they are; the gym → fitness."
+    },
+    {
+      "id": "juegos",
+      "label": {
+        "es": "Juegos y juguetes",
+        "en": "Games and toys"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 120,
+      "scope": "Games and toys: dice, chess pieces, checkers, playing cards and suits, poker chips, game boards, dominoes, arcade cabinets, handheld consoles, achievements, levels, health bars, power-ups, leaderboards, toys (blocks, teddy bear, doll, kite, yo-yo, spinning top, rocking horse, toy car, toy robot, rubber duck), playgrounds (slide, swing, sandbox), puzzles (jigsaw, cube).",
+      "exclude": "The gamepad and joystick stay in dispositivos; the puzzle piece stays in datos."
+    },
+    {
+      "id": "musica",
+      "label": {
+        "es": "Música y audio",
+        "en": "Music and audio"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 140,
+      "scope": "Music and audio production: instruments (guitars, bass, violin, cello, piano, organ, drums, cymbals, trumpet, saxophone, flute, clarinet, harp, accordion, harmonica, ukulele, banjo, maracas, tambourine, xylophone), notation (clefs, rests, sharps, flats, staff, metronome, tuning fork), production (mixing desk, faders, knobs, MIDI controllers, synthesizers, studio monitors, audio interfaces, mic stands, pop filters, tracks, loops, tempo), jukeboxes, boomboxes, concerts and stages.",
+      "exclude": "Playback controls, volume, and the notes and records already drawn stay in dispositivos."
+    },
+    {
+      "id": "foto-video",
+      "label": {
+        "es": "Foto y video",
+        "en": "Photo and video"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 110,
+      "scope": "Photography and filmmaking: lenses, shutter, exposure, ISO, white balance, focus modes, metering, histograms, external flashes, light stands, softboxes, ring lights, reflectors, gimbals, camera sliders, film rolls, director's chairs, boom mics, green screens, storyboards, editing (timeline, cut, trim, split, transitions, keyframes, color grading, render), frame rates, photo albums, prints.",
+      "exclude": "The camera, aperture, tripod, and clapperboard already drawn stay in dispositivos."
+    },
+    {
+      "id": "arte",
+      "label": {
+        "es": "Arte y manualidades",
+        "en": "Art and crafts"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 110,
+      "scope": "Art and crafts: easels, canvases, paint tubes, spray paint, charcoal, crayons, markers, sketchbooks, sculpture (chisel, clay, bust), pottery (wheel, vase), knitting, crochet, yarn, embroidery, origami, paper cutting, glue guns, beads, calligraphy (fountain pen, ink), galleries (frame, pedestal), color wheels and swatches.",
+      "exclude": "The palette, brush, and pencil already drawn stay in edicion; theater masks → entretenimiento."
+    },
+    {
+      "id": "entretenimiento",
+      "label": {
+        "es": "Entretenimiento",
+        "en": "Entertainment"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 110,
+      "scope": "Entertainment and events: event tickets, cinemas (screen, seats, popcorn, 3D glasses), theaters (stage, curtains, masks, spotlight), circuses, fairs, amusement parks (Ferris wheel, roller coaster, carousel), festivals, nightlife (disco ball), stand-up, magic shows, zoos, aquariums, awards nights, red carpets, VIP, guest lists, venues, wristbands.",
+      "exclude": "Concerts → musica; television already drawn stays in dispositivos."
+    },
+    {
+      "id": "fiestas",
+      "label": {
+        "es": "Celebraciones",
+        "en": "Celebrations"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 100,
+      "scope": "Celebrations: birthdays (candles, balloons, party hats, confetti), weddings (rings, wedding cake, bouquet, invitation), anniversaries, baby showers, New Year (fireworks, countdown, toast), seasonal festivities without religious symbols (decorated tree, ornaments, snowman, gingerbread, pumpkin, ghost, bat, Valentine's heart, painted egg).",
+      "exclude": "Gifts stay in comercio; seasons → clima.",
+      "adopts": [
+        "cake",
+        "party-popper"
+      ]
+    },
+    {
+      "id": "lectura",
+      "label": {
+        "es": "Lectura y publicaciones",
+        "en": "Reading and publishing"
+      },
+      "domain": "leisure",
+      "round": 10,
+      "target": 100,
+      "scope": "Reading and publishing: books by kind (hardcover, paperback, audiobook, e-book, children's book), reading lists, libraries, bookmarks in books, magazines, comics, newspapers' sections, poetry, authors, publishers, printing presses, reading glasses, reading lamps, book clubs.",
+      "exclude": "Notebooks stay in archivos; e-readers → dispositivos.",
+      "adopts": [
+        "book",
+        "book-open",
+        "bookshelf",
+        "books",
+        "newspaper"
+      ]
+    },
+    {
+      "id": "animales",
+      "label": {
+        "es": "Animales",
+        "en": "Animals"
+      },
+      "domain": "nature",
+      "round": 11,
+      "target": 130,
+      "scope": "Mammals, wild and on the farm, as full silhouettes: lion, tiger, elephant, giraffe, zebra, hippo, rhino, bear, panda, koala, kangaroo, monkey, gorilla, fox, wolf, deer, moose, rabbit, squirrel, hedgehog, bat, mouse, horse, donkey, cow, pig, sheep, goat, llama, camel; animal tracks.",
+      "exclude": "Pets → mascotas; birds, insects, and reptiles → aves-insectos; sea life → mar."
+    },
+    {
+      "id": "aves-insectos",
+      "label": {
+        "es": "Aves, insectos y reptiles",
+        "en": "Birds, insects, and reptiles"
+      },
+      "domain": "nature",
+      "round": 11,
+      "target": 110,
+      "scope": "Birds (sparrow, eagle, owl, parrot, penguin, flamingo, duck, swan, hen, rooster, hummingbird, pigeon, crow), feathers, nests, eggs; insects and arachnids (bee, butterfly, ant, ladybug, beetle, dragonfly, mosquito, fly, caterpillar, spider, scorpion), snails and worms; reptiles (snake, lizard, turtle, crocodile, chameleon, dinosaurs); amphibians (frog, salamander)."
+    },
+    {
+      "id": "mar",
+      "label": {
+        "es": "Vida marina",
+        "en": "Sea life"
+      },
+      "domain": "nature",
+      "round": 11,
+      "target": 90,
+      "scope": "Sea life: fish by kind (tropical, puffer, swordfish, shark, ray), whales, dolphins, orcas, seals, sea lions, otters, octopus, squid, jellyfish, crab, lobster, shrimp, starfish, sea urchin, shells, coral, seaweed, sea turtles.",
+      "exclude": "Fishing → camping; aquariums → mascotas.",
+      "adopts": [
+        "fish"
+      ]
+    },
+    {
+      "id": "plantas",
+      "label": {
+        "es": "Plantas y jardín",
+        "en": "Plants and gardening"
+      },
+      "domain": "nature",
+      "round": 11,
+      "target": 120,
+      "scope": "Plants and gardening: trees by kind (oak, birch, willow, bonsai, bare, fruit), leaves by kind (maple, oak, fern, clover, monstera), flowers (rose, tulip, sunflower, daisy, lotus, cherry blossom), succulents, houseplants in pots, seeds, wild mushrooms, grass, bushes, vines, gardening (trowel, rake, hoe, watering can, hose, pruning shears, lawn mower, garden gloves), compost, garden beds.",
+      "exclude": "Crops → agricultura; produce → frutas-verduras.",
+      "adopts": [
+        "leaf",
+        "tree",
+        "tree-pine",
+        "palm-tree",
+        "flower",
+        "sprout",
+        "cactus"
+      ]
+    },
+    {
+      "id": "clima",
+      "label": {
+        "es": "Clima y cielo",
+        "en": "Weather and sky"
+      },
+      "domain": "nature",
+      "round": 11,
+      "target": 110,
+      "scope": "Weather and the sky: the remaining conditions (sleet, freezing rain, heavy rain, thunderstorm, hail by day and night, mist, haze, smoke, dust, sandstorm, hurricane, heat wave, cold wave, frost, ice), wind speed and direction (windsock, wind vane), humidity, pressure, UV index, visibility, chance of rain, day and night, seasons, forecasts, weather stations, rain gauges, temperature scales.",
+      "exclude": "Moon phases → espacio; air quality → medio-ambiente.",
+      "adopts": [
+        "sun",
+        "sun-dim",
+        "moon",
+        "moon-stars",
+        "cloud",
+        "clouds",
+        "cloud-sun",
+        "cloud-moon",
+        "cloud-rain",
+        "cloud-drizzle",
+        "cloud-snow",
+        "cloud-hail",
+        "storm",
+        "fog",
+        "wind",
+        "tornado",
+        "snowflake",
+        "rainbow",
+        "thermometer",
+        "thermometer-up",
+        "thermometer-down",
+        "umbrella",
+        "droplet",
+        "droplets",
+        "sunrise",
+        "sunset"
+      ]
+    },
+    {
+      "id": "medio-ambiente",
+      "label": {
+        "es": "Medio ambiente",
+        "en": "Environment"
+      },
+      "domain": "nature",
+      "round": 11,
+      "target": 100,
+      "scope": "Environment and sustainability: waste sorting (paper, plastic, glass, organic, electronics, hazardous), compost, reuse, refill, zero waste, carbon footprint, emissions, pollution (air, water, soil, noise, light), air quality, deforestation and reforestation, wildlife protection, ocean cleanup, plastic-free, eco labels, water saving, natural disasters (drought, flood, wildfire, earthquake, landslide, tsunami), climate change, melting ice, sea level.",
+      "exclude": "Renewable energy → energia.",
+      "adopts": [
+        "recycle"
+      ]
+    }
+  ]
+}
