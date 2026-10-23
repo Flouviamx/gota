@@ -7,7 +7,7 @@
 ## 23 Oct 2026 — The remote MCP server (2.7 closes)
 - **`https://gota.flouvia.com/mcp`** ([build](./build.md#mcp-server-mcp-apimcpmjs), [decision 71](./decisions.md#outputs-23-oct-2026)), with the owner's OK: MCP's Streamable HTTP, stateless, as a Vercel function (project `gota`, team `flouvia`). The tools and the JSON-RPC dispatch moved to `mcp/handler.mjs`, shared by stdio and HTTP; along the way, version negotiation (a version it speaks comes back, any other gets the newest), batches, read-only annotations, `instructions` for agents, a cap of 50 results, and an unknown tool as a JSON-RPC error.
 - **Checked** in a test with every case (versions, notifications, batches, tool errors, protocol errors, 405, 413, 415, CORS) and on a deployed preview before production.
-- **The subdomain shows nothing else until the site:** `/` goes to `flouvia.com`, and `site/robots.txt` asks not to index it.
+- **Domains** ([decision 72](./decisions.md#outputs-23-oct-2026)): the owner put Gota's page at `gota.flouvia.com`, in `flouvia-web`, which proxies `/mcp` to this project's origin, `mcp.gota.flouvia.com` (a production custom domain, so Deployment Protection doesn't stop the proxy; `/` sends people to the page and `site/robots.txt` keeps it out of search).
 - Tests: 46.
 
 ## 23 Oct 2026 — The owner's review (1.7, phase 1 closes)

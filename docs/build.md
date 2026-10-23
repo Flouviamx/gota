@@ -100,7 +100,7 @@ A tool's bad input (no query, an unknown icon, an option the engine rejects) com
 
 ### The remote server's deploy
 Vercel project `gota` (team `flouvia`), deployed with the CLI from this folder, linked by `vercel link` (`.vercel/`, not committed). There is no Git remote yet, so a deploy goes out from a clean tree at a commit: `git status --short` empty, then `vercel deploy` (a protected preview, tried with `vercel curl /mcp --deployment <url>`) and `vercel deploy --prod`.
-- `vercel.json`: no dependencies to install (`npm ci --omit=dev`), the build (`node scripts/build.mjs`, which writes the `dist/` the function imports), the function with `dist/icons.json` and `package.json` (read from disk, not imported), `/mcp` → `/api/mcp`, and `/` → `flouvia.com` (307) until the site.
+- `vercel.json`: no dependencies to install (`npm ci --omit=dev`), the build (`node scripts/build.mjs`, which writes the `dist/` the function imports), the function with `dist/icons.json` and `package.json` (read from disk, not imported), `/mcp` → `/api/mcp`, and `/` → `gota.flouvia.com` (307).
 - `.vercelignore` uploads only what the build and the function read: `api/`, `engine/`, `mcp/`, `scripts/`, `site/`, `src/`, and the package files.
-- `site/`: the subdomain's static files, today only `robots.txt` (`Disallow: /`, nothing to index before the launch). Phase 4's site takes its place ([roadmap](./roadmap.md)).
-- Domain: `gota.flouvia.com`, on the `flouvia.com` zone in Vercel's DNS.
+- `site/`: the project's static files, only `robots.txt` (`Disallow: /`: an origin, nothing to index).
+- **Domains** (the `flouvia.com` zone, in Vercel's DNS): `gota.flouvia.com` belongs to `flouvia-web`, which serves Gota's page there (the owner's call, 23 Oct 2026) and proxies `/mcp` to this project at `mcp.gota.flouvia.com`, the origin. The origin is a production custom domain, so Deployment Protection (which guards previews and the `*.vercel.app` URLs) doesn't stop the proxy. The public address is `gota.flouvia.com/mcp`; the origin answers the same, but isn't documented.
