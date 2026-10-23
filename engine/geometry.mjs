@@ -7,6 +7,13 @@ export const f = (n) => {
   return s === '-0' || s === '' ? '0' : s;
 };
 const P = (x, y) => `${f(x)} ${f(y)}`;
+/**
+ * The radius of a half circle between two endpoints that are written rounded: exactly half the
+ * chord as written. A half circle whose radius comes out a hair longer than half its chord swings
+ * its center off the chord (by 0.12 for a 0.005 excess at r 1.5, by 0.3 at r 9) and two such halves
+ * draw a circle as a stadium, in every renderer.
+ */
+export const halfChord = ([x0, y0], [x1, y1]) => String(Math.round((Math.hypot(Number(f(x1)) - Number(f(x0)), Number(f(y1)) - Number(f(y0))) / 2) * 1000) / 1000);
 
 // Apple-style continuous corner (squircle): Figma's corner smoothing algorithm with a smoothing
 // of 0.6. Returns the measurements of a corner of radius r.
@@ -59,7 +66,10 @@ export function sq(x, y, w, h, r, { square = [], smoothing = 0.6 } = {}) {
 }
 
 /** Circle. */
-export const circ = (cx, cy, r) => `M${P(cx - r, cy)}A${f(r)} ${f(r)} 0 1 0 ${P(cx + r, cy)}A${f(r)} ${f(r)} 0 1 0 ${P(cx - r, cy)}Z`;
+export const circ = (cx, cy, r) => {
+  const R = halfChord([cx - r, cy], [cx + r, cy]);
+  return `M${P(cx - r, cy)}A${R} ${R} 0 1 0 ${P(cx + r, cy)}A${R} ${R} 0 1 0 ${P(cx - r, cy)}Z`;
+};
 
 /** Dot: a tiny circle that looks solid with the 1.5 stroke (diameter ≈ 2.9). */
 export const dot = (x, y, r = 0.7) => circ(x, y, r);
@@ -79,7 +89,8 @@ export function arc(cx, cy, r, a0, a1) {
   const sweep = a1 > a0 ? 1 : 0;
   const rad = (a1 * Math.PI) / 180;
   const dir = sweep ? 1 : -1;
-  return { d: `M${P(x0, y0)}A${f(r)} ${f(r)} 0 ${large} ${sweep} ${P(x1, y1)}`, end: [x1, y1], tangent: [-Math.sin(rad) * dir, Math.cos(rad) * dir] };
+  const R = Math.abs(a1 - a0) === 180 ? halfChord([x0, y0], [x1, y1]) : f(r);
+  return { d: `M${P(x0, y0)}A${R} ${R} 0 ${large} ${sweep} ${P(x1, y1)}`, end: [x1, y1], tangent: [-Math.sin(rad) * dir, Math.cos(rad) * dir] };
 }
 
 /**

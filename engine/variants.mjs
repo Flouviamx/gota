@@ -3,7 +3,7 @@
 // the pixel and the extreme frame of its motion. The fill (`fill`) and the 16 px drawing (`small`)
 // are drawn in the definition. Everything comes out as the content of an <svg viewBox="0 0 24 24">.
 // See DESIGN.md › Fill, Variants and Motion.
-import { badge, circ, f, sq } from './geometry.mjs';
+import { badge, circ, f, halfChord, sq } from './geometry.mjs';
 
 /** The set's weights: the drawing is designed for regular. */
 export const WEIGHTS = { light: 1, regular: 1.5, bold: 2 };
@@ -102,7 +102,7 @@ export function snapper(list, step = 1.5, offset = 0.75) {
     const dot = asCircle(d);
     if (dot && dot.r < 1) {
       const E = (v) => Math.round(v / step) * step;
-      return circleD(E(dot.cx), E(dot.cy), 1);
+      return circ(E(dot.cx), E(dot.cy), 1);
     }
     // Each point moves with its endpoint; a curve's control points move with the endpoint they touch
     return segsOf(d)
@@ -114,13 +114,18 @@ export function snapper(list, step = 1.5, offset = 0.75) {
         if (c === 'V') return `V${f(y1 + ey)}`;
         if (c === 'C') return `C${f(a[0] + bx)} ${f(a[1] + by)} ${f(a[2] + ex)} ${f(a[3] + ey)} ${f(x1 + ex)} ${f(y1 + ey)}`;
         if (c === 'S' || c === 'Q') return `${c}${f(a[0] + ex)} ${f(a[1] + ey)} ${f(x1 + ex)} ${f(y1 + ey)}`;
-        if (c === 'A') return `A${f(a[0])} ${f(a[1])} ${f(a[2])} ${a[3]} ${a[4]} ${f(x1 + ex)} ${f(y1 + ey)}`;
+        if (c === 'A') {
+          const R = a[0] === a[1] && exactHalf(a[0], [x0, y0], [x1, y1]) ? halfChord([x0 + bx, y0 + by], [x1 + ex, y1 + ey]) : null;
+          return `A${R ?? f(a[0])} ${R ?? f(a[1])} ${f(a[2])} ${a[3]} ${a[4]} ${f(x1 + ex)} ${f(y1 + ey)}`;
+        }
         return 'Z';
       })
       .join('');
   };
 }
-const circleD = (cx, cy, r) => `M${f(cx - r)} ${f(cy)}A${f(r)} ${f(r)} 0 1 0 ${f(cx + r)} ${f(cy)}A${f(r)} ${f(r)} 0 1 0 ${f(cx - r)} ${f(cy)}Z`;
+// An arc written as an exact half circle (radius half its chord, as circ() and arc() write them)
+// stays one when its ends move or scale: its radius is again half its new chord
+const exactHalf = (r, [x0, y0], [x1, y1]) => Math.abs(Math.hypot(x1 - x0, y1 - y0) / 2 - r) <= 0.0015;
 
 /** Path converted to absolute coordinates and transformed: p' = p · s + (tx, ty). */
 export function transform(d, s, tx, ty) {
@@ -163,9 +168,11 @@ export function transform(d, s, tx, ty) {
       y = p[3];
       o.push(`${C}${X(p[0])} ${Y(p[1])} ${X(p[2])} ${Y(p[3])}`);
     } else if (C === 'A') {
+      const from = [x, y];
       x = ax(a[5]);
       y = ay(a[6]);
-      o.push(`A${f(a[0] * s)} ${f(a[1] * s)} ${f(a[2])} ${a[3]} ${a[4]} ${X(x)} ${Y(y)}`);
+      const R = a[0] === a[1] && exactHalf(a[0], from, [x, y]) ? halfChord([from[0] * s + tx, from[1] * s + ty], [x * s + tx, y * s + ty]) : null;
+      o.push(`A${R ?? f(a[0] * s)} ${R ?? f(a[1] * s)} ${f(a[2])} ${a[3]} ${a[4]} ${X(x)} ${Y(y)}`);
     } else if (C === 'Z') {
       x = sx;
       y = sy;
@@ -195,7 +202,12 @@ const SLASH = 'M3.6 3.6 20.4 20.4';
 const paperOf = (weight) => Math.max(0.75, 1.5 + (1.5 - weight) / 2);
 
 // ── Cuts that reach the silhouette ──
-/** Points along a path (absolute), curves and arcs sampled, to measure distances to it. */
+/**
+ * Points along a path (absolute), at most a quarter of a unit apart along lines, curves and arcs,
+ * to measure distances to it: sparser points miss where a cut ends partway along a long edge.
+ */
+const STEP = 0.25;
+const steps = (len) => Math.max(4, Math.ceil(len / STEP));
 function samplesOf(d) {
   const pts = [];
   let [x, y, sx, sy] = [0, 0, 0, 0];
@@ -206,17 +218,21 @@ function samplesOf(d) {
       pts.push([x, y]);
     } else if (c === 'Z') {
       // The closing side is an edge like any other
-      for (let i = 1; i <= 4; i++) pts.push([x + ((sx - x) * i) / 4, y + ((sy - y) * i) / 4]);
+      const n = steps(Math.hypot(sx - x, sy - y));
+      for (let i = 1; i <= n; i++) pts.push([x + ((sx - x) * i) / n, y + ((sy - y) * i) / n]);
       [x, y] = [sx, sy];
     } else if (c === 'H' || c === 'V' || c === 'L' || c === 'T') {
       const [nx, ny] = c === 'H' ? [a[0], y] : c === 'V' ? [x, a[0]] : a;
-      for (let i = 1; i <= 4; i++) pts.push([x + ((nx - x) * i) / 4, y + ((ny - y) * i) / 4]);
+      const n = steps(Math.hypot(nx - x, ny - y));
+      for (let i = 1; i <= n; i++) pts.push([x + ((nx - x) * i) / n, y + ((ny - y) * i) / n]);
       [x, y] = [nx, ny];
     } else if (c === 'C' || c === 'S' || c === 'Q') {
       const end = a.slice(-2);
       const ctrl = c === 'Q' ? [a[0], a[1], a[0], a[1]] : c === 'S' ? [x, y, a[0], a[1]] : a.slice(0, 4);
-      for (let i = 1; i <= 8; i++) {
-        const t = i / 8;
+      // The control polygon is never shorter than the curve
+      const n = steps(Math.hypot(ctrl[0] - x, ctrl[1] - y) + Math.hypot(ctrl[2] - ctrl[0], ctrl[3] - ctrl[1]) + Math.hypot(end[0] - ctrl[2], end[1] - ctrl[3]));
+      for (let i = 1; i <= n; i++) {
+        const t = i / n;
         const u = 1 - t;
         pts.push([u * u * u * x + 3 * u * u * t * ctrl[0] + 3 * u * t * t * ctrl[2] + t * t * t * end[0], u * u * u * y + 3 * u * u * t * ctrl[1] + 3 * u * t * t * ctrl[3] + t * t * t * end[1]]);
       }
@@ -236,7 +252,8 @@ function samplesOf(d) {
       let da = Math.atan2((ey - cy) / ry, (ex - cx) / rx) - a0;
       if (sweep && da < 0) da += 2 * Math.PI;
       if (!sweep && da > 0) da -= 2 * Math.PI;
-      for (let i = 1; i <= 12; i++) pts.push([cx + rx * Math.cos(a0 + (da * i) / 12), cy + ry * Math.sin(a0 + (da * i) / 12)]);
+      const n = steps(Math.abs(da) * Math.max(rx, ry));
+      for (let i = 1; i <= n; i++) pts.push([cx + rx * Math.cos(a0 + (da * i) / n), cy + ry * Math.sin(a0 + (da * i) / n)]);
       [x, y] = [ex, ey];
     }
   }
@@ -472,7 +489,29 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       const cuts = fill.cut ?? [];
       const atEdge = cuts.filter((d) => edgeCut(d, fill.solid));
       const inner = cuts.filter((d) => !atEdge.includes(d));
-      defs.push(maskOf('f', `${split(g(inner), (ds) => black(ds, paper))}${split(g(atEdge), (ds) => black(ds, weight - 0.1))}${split(g(fill.lines ?? []), (ds) => black(ds, weight + 2 * paper))}`));
+      // A line that crosses, meets or lies on the fill (a calendar's rings) keeps its clearance of
+      // paper; one that stands apart from it (1.5 or more at regular, as strokes stand 3 apart: a
+      // sun's rays, the rain under a cloud) never cuts into it: its clearance stops at the fill's ink,
+      // so at bold the fill keeps its edge instead of a bite
+      const solids = g(fill.solid);
+      const body = solids.flatMap(samplesOf);
+      const rings = solids.flatMap((d) => transform(d, 1, 0, 0).split(/(?=M)/).map(samplesOf));
+      const inside = ([px, py]) => {
+        let hit = false;
+        for (const ring of rings)
+          for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+            const [[xi, yi], [xj, yj]] = [ring[i], ring[j]];
+            if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) hit = !hit;
+          }
+        return hit;
+      };
+      const halo = (d) => {
+        const pts = samplesOf(d);
+        const gap = pts.some(inside) ? 0 : Math.min(...pts.map(([px, py]) => Math.min(...body.map(([qx, qy]) => Math.hypot(qx - px, qy - py)))));
+        return gap < 1.5 * k ? weight + 2 * paper : Math.max(weight, Math.min(weight + 2 * paper, 2 * gap - weight));
+      };
+      const lineCuts = (ds) => ds.map((d) => black([d], halo(d))).join('');
+      defs.push(maskOf('f', `${split(g(inner), (ds) => black(ds, paper))}${split(g(atEdge), (ds) => black(ds, weight - 0.1))}${split(g(fill.lines ?? []), lineCuts)}`));
       content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
       const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
       if (over.length) content.push(`<g ${strokeAttrs(weight)}>${split(g(over), paths)}</g>`);

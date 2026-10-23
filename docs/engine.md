@@ -9,9 +9,9 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 | Function | What it draws |
 |---|---|
 | `sq(x, y, w, h, r, { square, smoothing })` | A rectangle with **continuous corners** (Figma's corner smoothing algorithm, 0.6 smoothing). `square: ['br']` = the signature. Each corner fits its sides: along a side it takes at most half (all of it next to a square corner); when the smoothed corner doesn't fit, the smoothing gives way first and then the radius, as in Figma, so a side never runs backwards (r ≤ min(w, h) / 3.2 keeps the full smoothing) |
-| `circ(cx, cy, r)` · `dot(x, y, r = 0.7)` | A circle; a dot that reads as solid with the 1.5 stroke |
+| `circ(cx, cy, r)` · `dot(x, y, r = 0.7)` | A circle (two half circles, each with exactly half its written chord as radius: a radius a hair long would bulge it into a stadium); a dot, drawn by the engine as a solid disc |
 | `drop(cx, cy, r)` | The drop from the logomark: a circle with a square bottom-right corner |
-| `arc(cx, cy, r, a0, a1)` | An arc in degrees (clockwise if a1 > a0); returns `{ d, end, tangent }` |
+| `arc(cx, cy, r, a0, a1)` | An arc in degrees (clockwise if a1 > a0); returns `{ d, end, tangent }`. A half circle (exactly 180°) gets exactly half its written chord as radius (`halfChord`), and stays exact when the engine scales or snaps it |
 | `head(tip, dir, len = 6, spread = 45)` | An arrowhead (6 on straight arrows, 3.4 on arcs) |
 | `roundpoly(pts, radius)` | A polygon with rounded corners (one radius per corner, or a single one) |
 | `polar`, `line`, `rot` | A point on a circle, a line through points, a point's rotation |
@@ -22,7 +22,7 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 `render(icon, options)` returns the contents of an `<svg viewBox="0 0 24 24">`; `svgFile(inner, icon)` wraps it (and adds `data-rtl="mirror"` if the icon is directional).
 | Option | Effect |
 |---|---|
-| `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with a clearance of paper (a stroke halo of weight + 2 × paper: 4.5 at every weight), `wire` on top with no clearance |
+| `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with a clearance of paper (a stroke halo of weight + 2 × paper: 4.5 at every weight) where they cross, meet, or lie on the fill; a line that stands apart (1.5 or more at regular) keeps its clearance short of the fill's ink, so it never bites it at bold, `wire` on top with no clearance |
 | `weight` | **Continuous** weight (the named ones: `WEIGHTS` = light 1, regular 1.5, bold 2) |
 | `enclosure: 'circle' \| 'square'` | Enclosure: a circle of r 9 with the drawing at 58 %, or a square with the signature at 60 %. With `fill`, the container is solid and the drawing knocked out (the badge too; the base is not knocked out inside the badge's cutout) |
 | `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with a clearance of paper on each side (a stroke mask of weight + 2 × paper: 4.5 at every weight). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |

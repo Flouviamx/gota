@@ -96,7 +96,8 @@ that merges or splits as the stroke widens. The engine takes care of what it can
 - **Fill:** what is cut out is paper, and paper thins as the ink grows (1.75 at light, 1.5 at
   regular, 1.25 at bold). Clearances are paper too, around a fill's `lines`, a badge, and the
   slash: a stroke and its clearance take 4.5 at every weight, so the ink around them grows with
-  the weight. A base stroke that ends just inside a clearance at regular can peek out of it at
+  the weight. A line that stands apart from the fill (a sun's rays, the rain under a cloud) never
+  bites into it: its clearance stops at the fill's ink. A base stroke that ends just inside a clearance at regular can peek out of it at
   bold: end it well inside or well outside. A badge's clearance reaches 6.5 from its center
   (17.25, 17.25), to (12.65, 12.65) on the diagonal: a detail near the canvas's center (a clock's
   pivot, a sign) stays at least 0.75 clear of it, moving up and left with the visual center of
@@ -105,6 +106,9 @@ that merges or splits as the stroke widens. The engine takes care of what it can
   edge they have at regular: they follow the ink's width instead of thinning. The same holds inside
   a badge's fill (a pencil's band).
 - **Dots** are solid discs of radius r + w/2 at every weight, in ink and in cuts (the engine draws them; never a stroked circle meant to look solid).
+- **Circles are exact** at every weight: `circ()` and a 180° `arc()` write each half circle with
+  exactly half its chord as radius. A builder that writes its own half circle (a pencil's cap)
+  does the same, or the rounding bulges it (`halfChord` in `engine/geometry.mjs`).
 
 What the drawing must take care of:
 - **Pieces either cross or stand apart:** two strokes that don't cross keep at least the 2.85

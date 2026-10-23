@@ -192,6 +192,12 @@ test('weights: a line on a fill keeps a clearance of paper, so it and its cleara
   const icon = { d: ['M3 3h18v18H3Z'], fill: { solid: ['M3 3h18v18H3Z'], lines: ['M12 6v12'] } };
   const halo = (w) => render(icon, { style: 'fill', weight: w }).match(/<path d="M12 6v12" fill="none" stroke="black" stroke-width="([\d.]+)"/)[1];
   assert.deepEqual([halo(0.9), halo(1.5), halo(2.1)], ['4.5', '4.5', '4.5']);
+  // A line that stands apart (a ray 3 from the sun's disc) never bites the fill: at bold its
+  // clearance stops at the disc's ink (2 × 3 − 2.1)
+  const sun = { d: [circ(12, 12, 4), 'M12 1v4'], fill: { solid: [circ(12, 12, 4)], lines: ['M12 1v4'] } };
+  const ray = (w) => render(sun, { style: 'fill', weight: w }).match(/<path d="M12 1v4" fill="none" stroke="black" stroke-width="([\d.]+)"/)[1];
+  assert.deepEqual([ray(0.9), ray(1.5)], ['4.5', '4.5']);
+  assert.ok(Math.abs(Number(ray(2.1)) - 3.9) <= 0.02, `ray at bold: ${ray(2.1)}`);
 });
 
 test('dots are solid at every weight, cut-out dots too, and the notification dot is one disc', async () => {

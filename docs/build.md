@@ -40,11 +40,11 @@ Android vector drawables, Xcode symbols, and icon fonts can't hold strokes or ma
 A variable font and an Xcode variable symbol interpolate between masters, so the masters must share their structure point for point. `masters(icon, options, [0.9, 1.5, 2.1])` returns each weight's outline with the same contours, segments, and commands:
 - each weight's checked outline (with unions first; then with the pieces laid over each other); invisible slivers (under 0.02 of area) are left out;
 - contours paired across weights by turn, nesting depth, center, box, and spread (second moments, which tell apart orbits that share a center);
-- points made to correspond by **following the regular master**: stations along it (its sharp corners among them) carried to each master by nearest point, searching forward, so a round cap maps radially onto the wider or narrower cap; or, where nearest points jump between close branches, by corners and fractions of length;
+- points made to correspond, trying four ways in turn and keeping the first whose result passes every check: **following the regular master** (stations along it, its sharp corners among them, carried to each master by nearest point, searching forward, so a round cap maps radially onto the wider or narrower cap); **anchored** (the corners every master shares as anchors, following in between, where following alone jumps between close branches near a cut's corners); **each contour its own way** (the first of those that traces that contour faithfully in every master); and **corners and fractions of length**;
 - each piece drawn as a quadratic curve (TrueType's own), split in all masters at once wherever one of them strays more than 0.01;
-- every master checked against its drawing, and the outline halfway between masters (interpolated) checked against the drawing at that weight.
+- every master checked against its drawing, and the outline halfway between masters (interpolated) checked against the drawing at that weight, as strictly as the masters: a failed check says where (`where`, the box of the largest mismatch).
 
-Measured on 22 Oct 2026: 1,634 of the 1,865 outline and fill variants (87.6 %) have compatible masters. Most of the rest change structure with the weight (a cut on a shared edge, small holes that close, pieces that merge): drawing fixes, flagged by QA's `weights`. `describe` and `between` are there to diagnose one.
+Measured on 22 Oct 2026: 1,838 of the 1,865 outline and fill variants (98.6 %) have compatible masters, and every icon keeps its structure from 0.9 to 2.1. The other 27 interpolate with a visible error where a cut or a join moves nonlinearly (a bump where a badge's clearance meets a curve, a flattened cap): masters work, not drawing. `describe` and `between` (by any of the four ways) are there to diagnose one.
 
 ## Native formats (`node scripts/native.mjs <format>`)
 From the checked outlines, after `scripts/build.mjs`; it needs `npm ci` (Skia).

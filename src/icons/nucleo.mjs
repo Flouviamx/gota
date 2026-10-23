@@ -94,7 +94,8 @@ const icons = {
   'edit': {
     tags: ["editar", "lápiz", "pencil"],
     d: [
-      'M5.58 15.45L17.12 3.92A2.1 2.1 0 0 1 20.08 6.88L8.55 18.42L4.1 19.9Z',
+      // The end is a half circle: its radius is exactly half the body's width (2.1 bulged it flat)
+      'M5.58 15.45L17.12 3.92A2.093 2.093 0 0 1 20.08 6.88L8.55 18.42L4.1 19.9Z',
       'M14.71 6.32L17.68 9.29',
       'M5.58 15.45L8.55 18.42',
     ],

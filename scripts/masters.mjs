@@ -2,14 +2,15 @@
 // so a variable font or an Xcode variable symbol can interpolate between them.
 //   masters(icon, options, [0.9, 1.5, 2.1])   // → { weights, ds: [d, d, d], checks } or throws
 // How:
-//   · each weight's outline, checked, with the pieces laid over each other and no unions: every
-//     stroke stays a contour of its own, so the structure holds from the lightest weight to the
-//     heaviest (a union would merge pieces differently at each weight);
-//   · contours paired across weights (same turn, nearest center), corners paired along each contour
-//     (the same count, the cyclic shift that lands them closest);
-//   · each span between corners cut at the same fractions of its length in every weight and drawn
-//     with quadratic curves (TrueType's own), split further in all weights at once wherever one of
-//     them doesn't fit within a hundredth of a unit;
+//   · each weight's outline, checked: joined first (an icon whose pieces either cross or stand
+//     apart keeps its structure that way), then with the pieces laid over each other; slivers under
+//     0.02 of area left out;
+//   · contours paired across weights (same turn, depth, nearest center, box and spread);
+//   · points made to correspond in four ways, the first whose result passes every check: following
+//     the regular master by nearest point, anchored at the corners every master shares, each
+//     contour its own way, and corners with fractions of length;
+//   · pieces drawn with quadratic curves (TrueType's own), split further in all weights at once
+//     wherever one of them doesn't fit within a hundredth of a unit;
 //   · every master checked against its drawing, and the weights halfway between masters, drawn by
 //     interpolating, checked against theirs.
 import { render } from '../engine/variants.mjs';
@@ -411,6 +412,42 @@ function sampler(c, n) {
   }
   return pts;
 }
+/** Where a point of the reference contour lands on contour k: its nearest point within `span` ahead of `from`. */
+function lander(group, R) {
+  const fine = group.map((c) => sampler(c, Math.max(256, Math.ceil(c.length / 0.03))));
+  return (k, s, from, span) => {
+    const p = locate(group[R], s).pt;
+    const L = group[k].length;
+    let best = null;
+    for (const q of fine[k]) {
+      let ahead = q.s - from;
+      while (ahead < -1e-9) ahead += L;
+      while (ahead > L + 1e-9) ahead -= L;
+      if (ahead > span) continue;
+      const d = Math.hypot(q.p[0] - p[0], q.p[1] - p[1]);
+      if (!best || d < best.d - 1e-12) best = { s: from + ahead, d };
+    }
+    return best ? best.s : from;
+  };
+}
+/** Pieces between stations every master shares, split at the middle (of the reference, carried) wherever one master doesn't fit. */
+function piecesBetween(group, R, at, land) {
+  const pieces = [];
+  const walk = (a, b, depth) => {
+    const fits = group.map((c, k) => quadFor(c, a[k], b[k]));
+    if (fits.every(Boolean) || depth > 8 || group.every((c, k) => b[k] - a[k] < 0.02)) {
+      const all = fits.map((q, k) => q ?? { p0: locate(group[k], a[k]).pt, p1: locate(group[k], b[k]).pt, straight: true });
+      pieces.push(all.map((q) => (all.every((x) => x.straight) ? { t: 'L', to: q.p1 } : { t: 'Q', ctrl: q.ctrl ?? [(q.p0[0] + q.p1[0]) / 2, (q.p0[1] + q.p1[1]) / 2], to: q.p1 })));
+      return;
+    }
+    const midRef = (a[R] + b[R]) / 2;
+    const mid = group.map((c, k) => (k === R ? midRef : Math.min(b[k], Math.max(a[k], land(k, midRef % group[R].length, a[k], Math.max(0.001, b[k] - a[k]))))));
+    walk(a, mid, depth + 1);
+    walk(mid, b, depth + 1);
+  };
+  for (let i = 0; i < at[R].length - 1; i++) walk(group.map((_, k) => at[k][i]), group.map((_, k) => at[k][i + 1]), 0);
+  return pieces;
+}
 function follow(group, weights) {
   const R = weights.indexOf(1.5) >= 0 ? weights.indexOf(1.5) : 1;
   const ref = group[R];
@@ -496,6 +533,67 @@ function follow(group, weights) {
   return { starts: group.map((c, k) => locate(c, starts[k]).pt), pieces, closed };
 }
 
+// ── Anchored at corners, following in between ──
+// Following alone can jump between close branches near a cut's corners (a badge's clearance), and
+// fractions of length alone place points unevenly along a curve that bends differently at each
+// weight. Here the paired corners anchor the structure and, between each pair, stations of the
+// regular master are carried to every master by nearest point, never past the next anchor.
+function anchored(group, weights) {
+  const R = weights.indexOf(1.5) >= 0 ? weights.indexOf(1.5) : 1;
+  const corners = pairCorners(group, weights);
+  const land = lander(group, R);
+  const n = corners[0].length;
+  const spans = corners[0].map((_, i) =>
+    group.map((c, k) => {
+      const a = corners[k][i];
+      let b = corners[k][(i + 1) % n];
+      if (n === 1 || b <= a) b += c.length;
+      return [a, b];
+    }),
+  );
+  const at = group.map((_, k) => [spans[0][k][0]]);
+  for (const span of spans) {
+    const [A, B] = span[R];
+    const steps = Math.max(1, Math.ceil((B - A) / 1.2));
+    for (let j = 1; j < steps; j++) {
+      const s = A + ((B - A) * j) / steps;
+      group.forEach((c, k) => {
+        if (k === R) return at[k].push(s);
+        const prev = at[k].at(-1);
+        at[k].push(Math.min(span[k][1], Math.max(prev, land(k, s % c.length, prev, span[k][1] - prev))));
+      });
+    }
+    group.forEach((_, k) => at[k].push(span[k][1]));
+  }
+  return { starts: group.map((c, k) => locate(c, at[k][0]).pt), pieces: piecesBetween(group, R, at, land), closed: true };
+}
+
+// ── Each contour its own way ──
+// Following can tangle one contour (a station that lands across a narrow neck) while the others
+// come out exact; so each contour takes the first way whose masters trace it faithfully: the same
+// area, and every point within 0.02 of the contour it comes from.
+function faithful(contour, group) {
+  return group.every((c, k) => {
+    const traced = contoursOf(pathOf([contour], k)).map(measure)[0];
+    if (!traced || Math.abs(areaOf(traced) - areaOf(c)) > Math.max(0.02, Math.abs(areaOf(c)) * 0.005)) return false;
+    const fine = sampler(c, Math.max(256, Math.ceil(c.length / 0.03)));
+    for (let q = 0; q < 64; q++) {
+      const p = locate(traced, (traced.length * q) / 64).pt;
+      if (Math.min(...fine.map(({ p: f }) => Math.hypot(f[0] - p[0], f[1] - p[1]))) > 0.02) return false;
+    }
+    return true;
+  });
+}
+function eachOwnWay(group, weights) {
+  for (const way of [follow, anchored, (g, w) => fit(g, pairCorners(g, w))]) {
+    try {
+      const contour = way(group, weights);
+      if (faithful(contour, group)) return contour;
+    } catch {}
+  }
+  throw new Error('no way traces this contour in every master');
+}
+
 const r3 = (v) => String(Math.round(v * 1000) / 1000);
 function pathOf(contours, k, mix) {
   const pt = (p) => (mix ? mix(p) : p[k]);
@@ -543,6 +641,8 @@ export function masters(icon, options = {}, weights = [0.9, 1.5, 2.1]) {
     // branches); each one checked
     for (const [way, make] of [
       ['follow', (group) => follow(group, weights)],
+      ['anchored', (group) => anchored(group, weights)],
+      ['each', (group) => eachOwnWay(group, weights)],
       ['corners', (group) => fit(group, pairCorners(group, weights))],
     ]) {
       try {
@@ -556,7 +656,7 @@ export function masters(icon, options = {}, weights = [0.9, 1.5, 2.1]) {
         }
         const bad = checks.filter((c) => !c.ok);
         if (!bad.length) return { weights, ds: out, contours, checks, mode: `${modes[0]}/${way}` };
-        errors.push(`${modes[0]}/${way}: ${JSON.stringify(bad.map(({ weight, between, diff, clump }) => ({ weight, between, diff, clump })))}`);
+        errors.push(`${modes[0]}/${way}: ${JSON.stringify(bad.map(({ weight, between, diff, clump, where }) => ({ weight, between, diff, clump, where })))}`);
       } catch (error) {
         errors.push(`${modes[0]}/${way}: ${error.message}`);
       }
@@ -576,10 +676,11 @@ export function describe(icon, options = {}, weights = [0.9, 1.5, 2.1], modes = 
   });
 }
 
-/** Diagnosis: the outline interpolated at `t` between masters k and k + 1 (same modes as masters()). */
-export function between(icon, options = {}, weights = [0.9, 1.5, 2.1], k = 1, t = 0.5, modes = ['joined', 'sequential', 'reverse', 'nudged']) {
+/** Diagnosis: the outline interpolated at `t` between masters k and k + 1 (same modes as masters()), by one way of pairing points. */
+export function between(icon, options = {}, weights = [0.9, 1.5, 2.1], k = 1, t = 0.5, modes = ['joined', 'sequential', 'reverse', 'nudged'], way = 'follow') {
   const ds = weights.map((w) => outline(icon, { ...options, weight: w }, { modes }));
   const sets = ds.map((d) => contoursOf(d).map(measure).filter((c) => Math.abs(areaOf(c)) >= 0.02));
-  const contours = pairContours(sets).map((group) => follow(group, weights));
+  const make = { follow, anchored, each: eachOwnWay, corners: (g, w) => fit(g, pairCorners(g, w)) }[way];
+  const contours = pairContours(sets).map((group) => make(group, weights));
   return { d: pathOf(contours, 0, (values) => values[k].map((v, i) => v + (values[k + 1][i] - v) * t)), masters: weights.map((_, q) => pathOf(contours, q)) };
 }

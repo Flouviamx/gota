@@ -254,24 +254,29 @@ function compare(a, b) {
     }
   }
   let clump = 0;
+  // Where the largest clump is, in canvas units (x0, y0, x1, y1): what a failed check points at
+  let where = null;
   for (let i = 0; i < off.length; i++) {
     if (off[i] !== 1) continue;
     let size = 0;
+    const box = [SIZE, SIZE, 0, 0];
     const stack = [i];
     off[i] = 2;
     while (stack.length) {
       const k = stack.pop();
       size++;
       const x = k % SIZE;
+      const y = (k - x) / SIZE;
+      [box[0], box[1], box[2], box[3]] = [Math.min(box[0], x), Math.min(box[1], y), Math.max(box[2], x + 1), Math.max(box[3], y + 1)];
       for (const n of [k - SIZE, k + SIZE, x > 0 ? k - 1 : -1, x < SIZE - 1 ? k + 1 : -1])
         if (n >= 0 && n < off.length && off[n] === 1) {
           off[n] = 2;
           stack.push(n);
         }
     }
-    clump = Math.max(clump, size);
+    if (size > clump) [clump, where] = [size, box.map((v) => (v * 24) / SIZE)];
   }
-  return { diff, clump, total };
+  return { diff, clump, total, where };
 }
 
 // ── Winding: holes turn against their outline ──
