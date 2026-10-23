@@ -4,13 +4,14 @@
   "installCommand": "npm ci --omit=dev",
   "buildCommand": "node scripts/build.mjs",
   "outputDirectory": "site",
+  "trailingSlash": false,
   "functions": {
     "api/mcp.mjs": { "includeFiles": "{dist/icons.json,package.json}", "maxDuration": 10 }
   },
   "redirects": [
     { "source": "/", "destination": "https://flouvia.com/", "permanent": false },
     { "source": "/en", "destination": "https://flouvia.com/en/", "permanent": false },
-    { "source": "/:path((?!mcp/?$|api/|robots\\.txt$).+)", "destination": "https://flouvia.com/:path", "permanent": false }
+    { "source": "/:path((?!mcp$|api/|robots\\.txt$).+)", "destination": "https://flouvia.com/:path", "permanent": false }
   ],
   "rewrites": [{ "source": "/mcp", "destination": "/api/mcp" }]
 }
