@@ -137,7 +137,7 @@ test('MCP server: initialize, list tools, search and get an icon', async () => {
   server.kill();
   const byId = Object.fromEntries(lines.map((l) => JSON.parse(l)).map((m) => [m.id, m]));
   assert.equal(byId[1].result.serverInfo.name, 'gota');
-  assert.deepEqual(byId[2].result.tools.map((t) => t.name), ['search_icons', 'get_icon', 'list_categories']);
+  assert.deepEqual(byId[2].result.tools.map((t) => t.name), ['search_icons', 'get_icon', 'list_categories', 'find_equivalent']);
   assert.match(byId[3].result.content[0].text, /^bell/);
   assert.match(byId[4].result.content[0].text, /^<svg/);
 });
@@ -174,6 +174,11 @@ test('MCP over HTTP (gota.flouvia.com/mcp): stateless JSON answers, versions, no
   assert.equal((await call(7, 'get_icon', { name: 'belll' })).result.isError, true);
   assert.equal((await call(8, 'get_icon', { name: 'toString' })).result.isError, true);
   assert.equal((await call(9, 'search_icons', {})).result.isError, true);
+  // Moving from another set: the equivalent, its props and code; none, with nearby icons to check
+  assert.match((await call(16, 'find_equivalent', { from: 'lucide', name: 'CircleCheck' })).result.content[0].text, /^check-circle\nReact: import \{ CheckCircleIcon \}/);
+  assert.match((await call(17, 'find_equivalent', { from: 'sf-symbols', name: 'bell.slash.fill' })).result.content[0].text, /bell with variant="fill" slash[\s\S]*Image\("bell-off\.fill"\)/);
+  assert.match((await call(18, 'find_equivalent', { from: 'heroicons', name: 'GifIcon' })).result.content[0].text, /has no icon that shows the same thing/);
+  assert.equal((await call(19, 'find_equivalent', { from: 'feather', name: 'x' })).result.isError, true);
   assert.equal((await call(10, 'delete_icons', {})).error.code, -32602);
   assert.equal((await rpc({ jsonrpc: '2.0', id: 11, method: 'resources/list' })).error.code, -32601);
   assert.equal((await rpc({ id: 12, method: 'ping' })).error.code, -32600);

@@ -4,6 +4,13 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Migration from Lucide, Heroicons, and SF Symbols (2.8 closes)
+- **The maps** (`src/migrate/`, [build](./build.md#migration-srcmigrate-flouviagotamigrate-gota-migrate), [decision 75](./decisions.md#outputs-23-oct-2026)): Lucide 973 of its 1,903 icons (1,157 entries with its old names), Heroicons 285 of 324, SF Symbols 708 concepts and whole names that cover 1,814 of its 8,091 names. Made with the owner's OK to download `lucide-static` and `heroicons` from npm (names only; nothing of theirs is committed) and SF Symbols' own list on this Mac.
+- **How:** six agents judged every name by meaning, comparing drawings; Claude checked the pairs on review sheets (the original beside Gota's; SF Symbols drawn by AppKit). The sheets caught SF Symbols' diagonal arrows mapped backwards, `book` (an open book), `message` (a plain bubble), and `restart`; SF names whose circle is part of Gota's drawing (`info.circle`, the currency signs) became whole-name entries, and a `.fill` in the middle of a name (`bag.fill.badge.plus`) is the fill style.
+- **`@flouvia/gota/migrate`**, the **`gota-migrate`** codemod (React, Vue, Astro, Swift; a dry run unless `--write`), and **`find_equivalent`** in the MCP server.
+- **The build keeps** `dist/fonts`, `android`, `xcode`, and `figma` ([decision 76](./decisions.md#outputs-23-oct-2026)): a rebuild had taken away the Figma plugin while the owner was importing it.
+- Tests: 56.
+
 ## 23 Oct 2026 — Outline ↔ fill: the liquid (2.2 closes)
 - **`liquid(icon, rise, options)`** ([engine](./engine.md#transitions-enginemorphmjs), [decision 74](./decisions.md#outputs-23-oct-2026)): the fill rises through the outline like a liquid, or drains out of it, its surface a wave that settles flat. Each frame is the outline and the fill `render` already draws, split by the surface: one color, every cutout exact. React, Vue, and Svelte play it when `variant` changes (`transition="auto"`), in 560 ms.
 - **Tuned on the sheet:** the first version eased out and started below the ink, so it filled in the first half and sat still in the second; the level now runs exactly across the ink with a sine ease. Played in Chrome: the layer leaves at the end, nothing stays hidden.

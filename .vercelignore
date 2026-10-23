@@ -3,6 +3,7 @@
 !/api
 !/engine
 !/mcp
+!/migrate
 !/scripts
 !/site
 !/src

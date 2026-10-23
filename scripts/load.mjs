@@ -1,4 +1,5 @@
-// Loads the categories from src/icons/*.mjs and validates the set. Used by build.mjs and the sheet and QA scripts.
+// Loads the categories from src/icons/*.mjs and validates the set, its languages (src/i18n/) and the
+// migration maps (src/migrate/). Used by build.mjs and the sheet and QA scripts.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -118,5 +119,46 @@ export async function loadAll({ only } = {}) {
     }
     for (const name of Object.keys(data)) if (!cat.icons[name]) errors.push(`i18n/${cat.category}/${name}: does not exist in src/icons`);
   }
-  return { categories, errors };
+  // Migration maps: other sets' names → Gota (the whole set is needed to check them)
+  const migrate = only ? null : loadMigrate(Object.assign({}, ...categories.map((c) => c.icons)), errors);
+  return { categories, errors, migrate };
+}
+
+/** The migration maps' files (src/migrate/), by set. */
+export const MIGRATE = { lucide: 'lucide.json', heroicons: 'heroicons.json', sfSymbols: 'sf-symbols.json' };
+
+/** Can an icon take this enclosure or the slash: automatically, or as a hand-drawn icon of its own? */
+export function takes(icons, name, variant) {
+  if (variant === 'slash') return icons[name].variants?.slash !== false || Boolean(icons[`${name}-slash`] || icons[`${name}-off`]);
+  return icons[name].variants?.[variant] !== false || Boolean(icons[`${name}-${variant}`]);
+}
+
+// Each entry: a Gota name, or { name, enclosure?, slash? } (Lucide and Heroicons only: SF Symbols
+// writes its enclosures and slash as suffixes, applied when the name is read)
+function loadMigrate(icons, errors) {
+  const maps = {};
+  for (const [set, file] of Object.entries(MIGRATE)) {
+    const path = new URL(`../src/migrate/${file}`, import.meta.url).pathname;
+    try {
+      maps[set] = JSON.parse(readFileSync(path, 'utf8'));
+    } catch (e) {
+      errors.push(`migrate/${file}: ${e.message}`);
+      maps[set] = {};
+      continue;
+    }
+    for (const [from, to] of Object.entries(maps[set])) {
+      const where = `migrate/${file}: ${from}`;
+      const t = typeof to === 'string' ? { name: to } : (to ?? {});
+      if (typeof t.name !== 'string' || !icons[t.name]) {
+        errors.push(`${where} → ${JSON.stringify(to)} is not an icon`);
+        continue;
+      }
+      if (set === 'sfSymbols' && typeof to !== 'string') errors.push(`${where}: an SF Symbols concept maps to a name (its suffixes give the variants)`);
+      const extra = Object.keys(t).filter((k) => !['name', 'enclosure', 'slash'].includes(k));
+      if (extra.length) errors.push(`${where}: unknown ${extra.join(', ')}`);
+      if (t.enclosure !== undefined && (!['circle', 'square'].includes(t.enclosure) || !takes(icons, t.name, t.enclosure))) errors.push(`${where}: ${t.name} takes no enclosure "${t.enclosure}"`);
+      if (t.slash !== undefined && (t.slash !== true || !takes(icons, t.name, 'slash'))) errors.push(`${where}: ${t.name} takes no slash`);
+    }
+  }
+  return maps;
 }

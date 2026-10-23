@@ -8,9 +8,13 @@
 //   get_icon        { name, format?, variant?, weight?, enclosure?, slash?, size?, animate?, play? }
 //                   format: svg (default) | react | data
 //   list_categories {}                                  → categories and their icon counts
+//   find_equivalent { from, name, style? }              → the Gota icon for a Lucide, Heroicons or
+//                                                         SF Symbols name, with its props and code
 import { readFileSync } from 'node:fs';
 import { categories, icons, resolveIcon, toSvg } from '../dist/index.js';
+import { fromHeroicons, fromLucide, fromSFSymbol } from '../dist/migrate.js';
 import { searchIcons } from '../dist/search.js';
+import { exportName, xcodeSymbol } from '../migrate/transform.mjs';
 
 const meta = JSON.parse(readFileSync(new URL('../dist/icons.json', import.meta.url), 'utf8'));
 const VERSION = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version;
@@ -69,6 +73,22 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: {} },
     annotations: READ_ONLY,
   },
+  {
+    name: 'find_equivalent',
+    title: 'Find the Gota equivalent',
+    description:
+      'For moving a codebase to Gota: the Gota icon that shows the same thing as a Lucide, Heroicons, or SF Symbols icon, by its name or component name ("circle-check", "CheckCircleIcon", "bell.slash.fill"), with the props it needs, its React line, and (SF Symbols) its Xcode symbol.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        from: { type: 'string', enum: ['lucide', 'heroicons', 'sf-symbols'] },
+        name: { type: 'string', description: 'The icon as that set names it, or its component name.' },
+        style: { type: 'string', enum: ['outline', 'solid'], description: 'Heroicons only (default outline); solid is Gota\'s fill.' },
+      },
+      required: ['from', 'name'],
+    },
+    annotations: READ_ONLY,
+  },
 ];
 
 const text = (t) => ({ content: [{ type: 'text', text: t }] });
@@ -97,6 +117,25 @@ function call(name, args) {
       return text(`import { Icon } from '@flouvia/gota/react';\n\n<Icon ${props.join(' ')} />`);
     }
     return text(toSvg(args.name, opts));
+  }
+  if (name === 'find_equivalent') {
+    if (typeof args.name !== 'string' || !args.name.trim()) return fail('find_equivalent needs the icon\'s name.');
+    const from = { lucide: fromLucide, heroicons: (n) => fromHeroicons(n, { style: args.style === 'solid' ? 'solid' : 'outline' }), 'sf-symbols': fromSFSymbol }[args.from];
+    if (!from) return fail('from is lucide, heroicons, or sf-symbols.');
+    const eq = from(args.name);
+    if (!eq) {
+      const words = args.name.replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/[-._]/g, ' ').replace(/\bIcon$/, '');
+      const near = searchIcons(words, { limit: 5 }).map((r) => r.name);
+      return text(`Gota has no icon that shows the same thing as ${args.from} "${args.name}" yet.${near.length ? ` Near in meaning (check before using): ${near.join(', ')}.` : ''}`);
+    }
+    const props = [eq.variant && `variant="${eq.variant}"`, eq.enclosure && `enclosure="${eq.enclosure}"`, eq.slash && 'slash'].filter(Boolean);
+    const component = exportName(eq.name);
+    const lines = [`${eq.name}${props.length ? ` with ${props.join(' ')}` : ''}`, `React: import { ${component} } from '@flouvia/gota/react/icons';  <${[component, ...props].join(' ')} />`];
+    if (args.from === 'sf-symbols') {
+      const x = xcodeSymbol(args.name);
+      lines.push(x.symbol ? `Xcode (Gota.xcassets): Image("${x.symbol}")` : `Xcode: ${x.reason}`);
+    }
+    return text(lines.join('\n'));
   }
   return text(categories.map((c) => `${c.id} — ${c.label} (${c.icons.length})`).join('\n'));
 }

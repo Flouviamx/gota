@@ -50,6 +50,10 @@
       "types": "./dist/search.d.ts",
       "default": "./dist/search.js"
     },
+    "./migrate": {
+      "types": "./dist/migrate.d.ts",
+      "default": "./dist/migrate.js"
+    },
     "./sprite.svg": "./dist/sprite.svg",
     "./sprite-fill.svg": "./dist/sprite-fill.svg",
     "./svg/*": "./svg/*",
@@ -67,6 +71,7 @@
     "!dist/figma",
     "svg",
     "mcp",
+    "migrate",
     "LICENSE",
     "README.md",
     "README.es.md"
@@ -98,7 +103,8 @@
     "node": ">=22"
   },
   "bin": {
-    "gota-mcp": "./mcp/server.mjs"
+    "gota-mcp": "./mcp/server.mjs",
+    "gota-migrate": "./migrate/cli.mjs"
   },
   "sideEffects": [
     "*.css"

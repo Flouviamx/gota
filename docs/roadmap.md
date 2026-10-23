@@ -29,7 +29,7 @@ It comes before scaling: a format change is cheap with 1,000 icons and very expe
 - [x] 2.5 React, Vue, Svelte, and Astro packages with per-icon imports; SVG sprite; Android Vector Drawables; Xcode custom symbols (Ultralight/Regular/Black × 3 sizes, used with `Image("name")`). Done: the four components, tested in a real browser; one module per icon (`@flouvia/gota/icons`, `BellIcon`) and one component per icon in React and Vue, tree-shaken down to the icons a page uses; the sprites (`sprite.svg`, `sprite-fill.svg`, and `sprite()`). Android vector drawables too (`scripts/native.mjs android`, every outline checked), and Xcode custom symbols (`scripts/native.mjs xcode`): a variable template per icon and style, compiled by `actool` and drawn by AppKit.
 - [ ] 2.6 Figma: a library or plugin with the variants as properties. Done: `node scripts/native.mjs figma`, a development plugin that builds the library in the open file (a component set per icon, Style × Weight, every outline checked) and updates it in place ([build](./build.md#native-formats-node-scriptsnativemjs-format), [decision 73](./decisions.md#outputs-23-oct-2026)). **Left:** the owner's first run in Figma, and the file published as a team library.
 - [x] 2.7 Search by meaning (es/en) and a remote MCP server at `gota.flouvia.com/mcp`: search (`@flouvia/gota/search`), the local MCP server (`mcp/server.mjs`, `gota-mcp`), and the remote one (`api/mcp.mjs`, Streamable HTTP on Vercel, with the owner's OK; [decision 71](./decisions.md#outputs-23-oct-2026)), both on the same tools (`mcp/handler.mjs`).
-- [ ] 2.8 Migration map from Lucide, Heroicons, and SF Symbols, with a codemod.
+- [x] 2.8 Migration map from Lucide, Heroicons, and SF Symbols, with a codemod: the maps (`src/migrate/`: Lucide 973 of 1,903, Heroicons 285 of 324, SF Symbols 1,814 of 8,091 names), `@flouvia/gota/migrate`, the `gota-migrate` codemod (React, Vue, Astro, Swift), and `find_equivalent` in the MCP server ([build](./build.md#migration-srcmigrate-flouviagotamigrate-gota-migrate), [decision 75](./decisions.md#outputs-23-oct-2026)). The maps grow with the set.
 
 ## Phase 3 · Scaling to 10,000
 - [ ] 3.1 Taxonomy for the remaining ~9,000 by domain (health, education, food, sports, tools, science, industry, home, animals, AI, transportation…), without repeating concepts.
@@ -37,7 +37,7 @@ It comes before scaling: a format change is cheap with 1,000 icons and very expe
 - [ ] 3.3 Nine rounds of ~1,000: each agent delivers everything at once, with a critic, QA, and a sample for the owner.
 
 ## Phase 4 · Launching v1 (10,000)
-- [ ] 4.1 A site to browse, search, and copy (SVG, JSX, Figma) at `gota.flouvia.com`.
+- [ ] 4.1 A site to browse, search, and copy (SVG, JSX, Figma) at `gota.flouvia.com`. Being built in `flouvia-web` by the site's session, at the owner's request (23 Oct 2026): the page, the explorer (`/icons`), a guide, a showcase, and the license, English at the root and Spanish under `/es`, served at `gota.flouvia.com` through this project ([decision 72](./decisions.md#outputs-23-oct-2026)). Not in production yet.
 - [ ] 4.2 GitHub with the source only; a GitHub Action that publishes the ZIP for each version; npm `@flouvia/gota`.
 - [ ] 4.3 Zero QA warnings, the owner's full review, documentation, and announcement.
 - [ ] 4.4 Commercial README in English, plus `README.es.md` in Spanish for Latin America (today's README files are a short placeholder).

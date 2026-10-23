@@ -26,6 +26,7 @@ node scripts/qa.mjs [cat]                 # automated QA: area, density, fill si
 node scripts/weights-sheet.mjs <cat> [--all] | <icon>… [--slash] # 0.9 · 1.5 · 2.1, outline and fill, with each weight's contours (a category: what QA's weights flags)
 npm test                                  # engine and feature tests (node:test; features read dist/)
 node mcp/server.mjs                       # the MCP server over stdio (after the build)
+node migrate/cli.mjs [--write] <paths>    # the codemod (gota-migrate): Lucide, Heroicons, SF Symbols → Gota; a dry run unless --write
 vercel deploy --prod                      # the remote MCP server, gota.flouvia.com/mcp (from a clean tree; docs/build.md)
 node scripts/native.mjs android           # Android vector drawables from checked outlines (after the build; npm ci first)
 node scripts/native.mjs xcode             # Xcode custom symbols: variable templates, compiled by actool and drawn by AppKit (macOS)
@@ -55,11 +56,14 @@ engine/vue-base.mjs · vue.mjs · IconBase.svelte · Icon.svelte · Icon.astro  
 engine/motion.css     Animations: the effects, draw, levels, replace, and reduced motion.
 engine/morph.mjs      Transitions between icons: frames drawn by render, badge pairs, curated PAIRS, the player.
 engine/search.mjs     Search by meaning (search-api.mjs: searchIcons for dist/search.js).
-mcp/handler.mjs       MCP for AI agents (no dependencies): the tools (search_icons, get_icon, list_categories) and the JSON-RPC dispatch.
+engine/migrate.mjs    Other sets' names in Gota (dist/migrate.js): fromLucide, fromHeroicons, fromSFSymbol.
+mcp/handler.mjs       MCP for AI agents (no dependencies): the tools (search_icons, get_icon, list_categories, find_equivalent) and the JSON-RPC dispatch.
 mcp/server.mjs        The MCP server over stdio (`gota-mcp`).
 api/mcp.mjs           The remote MCP server, gota.flouvia.com/mcp (Vercel: vercel.json, .vercelignore; site/ holds the subdomain's static files).
+migrate/              The codemod, gota-migrate (cli.mjs; transform.mjs: React, Vue, Astro, Swift).
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
+src/migrate/*.json    Migration maps: Lucide, Heroicons, and SF Symbols names → Gota (checked by load.mjs).
 scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).
