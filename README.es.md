@@ -40,7 +40,7 @@ Por nombre, con el set completo (prototipos, nombres que llegan en tiempo de eje
 - **Vue, Svelte, Astro:** `@flouvia/gota/vue` (y `/vue/icons`), `/svelte` (y `/svelte/base`) y `/astro`, con las mismas props.
 - **Sprite:** `@flouvia/gota/sprite.svg` (y `sprite-fill.svg`), `<svg><use href="sprite.svg#gota-bell"/></svg>`; `sprite()` arma uno solo con tus íconos.
 - **Búsqueda por significado:** `searchIcons('cobrar')` desde `@flouvia/gota/search` (español e inglés).
-- **Para agentes de IA:** un servidor MCP, `gota-mcp`, para encontrar íconos e insertar su código.
+- **Para agentes de IA:** un servidor MCP para encontrar íconos e insertar su código, remoto en `https://gota.flouvia.com/mcp` o local con `gota-mcp`.
 - **Nativos:** los vector drawables de Android y un catálogo de Xcode con símbolos propios (`Image("bell")`, todos los pesos y escalas) vienen en el ZIP de cada versión.
 - **Fuente de íconos:** `@flouvia/gota/font.css`, luego `<i class="gota">bell</i>` (el nombre es una ligadura) o el punto de código del ícono (`fonts/codepoints.json`); `.gota-fill` para el estilo relleno. Variable: el trazo sigue a `font-weight`, de 300 (light) a 700 (bold), como hace `weight="auto"`.
 - **SVG sueltos:** `svg/` (regular) y `svg/fill/`; la matriz completa en `dist/svg/<grosor>/<estilo>/`.

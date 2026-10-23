@@ -4,6 +4,12 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — The remote MCP server (2.7 closes)
+- **`https://gota.flouvia.com/mcp`** ([build](./build.md#mcp-server-mcp-apimcpmjs), [decision 71](./decisions.md#outputs-23-oct-2026)), with the owner's OK: MCP's Streamable HTTP, stateless, as a Vercel function (project `gota`, team `flouvia`). The tools and the JSON-RPC dispatch moved to `mcp/handler.mjs`, shared by stdio and HTTP; along the way, version negotiation (a version it speaks comes back, any other gets the newest), batches, read-only annotations, `instructions` for agents, a cap of 50 results, and an unknown tool as a JSON-RPC error.
+- **Checked** in a test with every case (versions, notifications, batches, tool errors, protocol errors, 405, 413, 415, CORS) and on a deployed preview before production.
+- **The subdomain shows nothing else until the site:** `/` goes to `flouvia.com`, and `site/robots.txt` asks not to index it.
+- Tests: 46.
+
 ## 23 Oct 2026 — The owner's review (1.7, phase 1 closes)
 - **Approved as drawn:** a local review page put the 53 icons redrawn while the weights were unified (102 variants) before and after, side by side, each with the reason for its change, next to the scale of weights at Light, Regular, and Bold. The owner reviewed it and approved everything, with no course corrections.
 

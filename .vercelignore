@@ -1,0 +1,11 @@
+# The remote MCP server's deploy uploads only what its build and function read (docs/build.md)
+/*
+!/api
+!/engine
+!/mcp
+!/scripts
+!/site
+!/src
+!/package.json
+!/package-lock.json
+!/vercel.json

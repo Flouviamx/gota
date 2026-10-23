@@ -74,8 +74,8 @@ Path data is compact: absolute coordinates rounded to hundredths first (0.005 at
 
 
 ## What goes into the repository and what doesn't
-- **Committed:** `src/` (the drawings and the languages), `engine/`, `mcp/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`.
-- **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`, `node_modules/`. Everything is regenerated.
+- **Committed:** `src/` (the drawings and the languages), `engine/`, `mcp/`, `api/`, `site/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`, `vercel.json`, `.vercelignore`.
+- **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`, `node_modules/`, `.vercel/`, `.env*`. Everything is regenerated.
 
 ## Publishing (once there are 10,000)
 - **npm:** `@flouvia/gota` with `dist/`, `svg/`, `mcp/`, `LICENSE`, `README.md`, and `README.es.md` (`files` in `package.json`). Exports: `.`, `./core`, `./icons`, `./icons/*`, `./react`, `./react/icons`, `./vue`, `./vue/icons`, `./svelte`, `./svelte/base`, `./astro`, `./morph`, `./search`, `./sprite.svg`, `./sprite-fill.svg`, `./svg/*`, `./icons.json`, `./icons.css`, `./motion.css`, `./font.css`, `./fonts/*` (the WOFF2 fonts; the TTFs, for desktop apps, go in the release ZIP, not in the package). `sideEffects` lists only the stylesheets, so bundlers drop every module a page doesn't use. React, Vue, and Svelte are optional peer dependencies; the package itself has none. Binary: `gota-mcp`.
@@ -84,12 +84,23 @@ Path data is compact: absolute coordinates rounded to hundredths first (0.005 at
 - Semantic versioning, a changelog, and aliases for renames ([decisions](./decisions.md)).
 - Site: `gota.flouvia.com` ([roadmap](./roadmap.md)).
 
-## MCP server (`mcp/server.mjs`)
-Lets AI agents (Claude Code, Cursor, Claude Desktop…) find icons by meaning and insert the exact SVG or component code. No dependencies: JSON-RPC 2.0 over stdio, one message per line (`initialize`, `ping`, `tools/list`, `tools/call`).
+## MCP server (`mcp/`, `api/mcp.mjs`)
+Lets AI agents (Claude Code, Cursor, Claude Desktop…) find icons by meaning and insert the exact SVG or component code. No dependencies. `mcp/handler.mjs` holds the tools and the JSON-RPC 2.0 dispatch (`initialize`, `ping`, `tools/list`, `tools/call`; one message or a batch); two transports only move messages:
+- **Local, over stdio** (`mcp/server.mjs`, the `gota-mcp` binary): one message per line. `node mcp/server.mjs` in the repo, after the build, or `npx -p @flouvia/gota gota-mcp` once published.
+- **Remote, over HTTP** (`api/mcp.mjs`): `https://gota.flouvia.com/mcp` ([decision 71](./decisions.md#outputs-23-oct-2026)). MCP's Streamable HTTP, stateless: a POST of JSON-RPC gets its answers as `application/json`; notifications get `202`; no sessions and no event stream, so `GET` and `DELETE` answer `405`. It checks `Content-Type` (415), `MCP-Protocol-Version` (400 for a version it doesn't speak), and the body's size (64 KB, 413). Public and read-only: any origin (CORS `*`), no credentials, `Cache-Control: no-store`. In Claude Code: `claude mcp add --transport http gota https://gota.flouvia.com/mcp`.
+
+Versions: a client asking for 2024-11-05, 2025-03-26, 2025-06-18, or 2025-11-25 gets it back; any other gets the newest. Every tool is marked read-only (`annotations`).
 | Tool | What it returns |
 |---|---|
-| `search_icons { query, limit?, category? }` | Names, labels, and categories, best first ([search](./engine.md#search-enginesearchmjs)) |
+| `search_icons { query, limit?, category? }` | Names, labels, and categories, best first ([search](./engine.md#search-enginesearchmjs)); 12 by default, 50 at most |
 | `get_icon { name, format?, variant?, weight?, enclosure?, slash?, size?, animate?, play? }` | `format`: `svg` (default), `react` (the `<Icon>` line and its import), or `data`. An unknown name gets suggestions |
 | `list_categories {}` | The categories and how many icons each has |
 
-It reads `dist/`, so it runs after the build: `node mcp/server.mjs` in the repo, or `npx -p @flouvia/gota gota-mcp` once published. The remote server at `gota.flouvia.com/mcp` needs the owner's OK ([roadmap](./roadmap.md)).
+A tool's bad input (no query, an unknown icon, an option the engine rejects) comes back as a tool result with `isError`, which the model reads and corrects; an unknown tool is a JSON-RPC error (`-32602`).
+
+### The remote server's deploy
+Vercel project `gota` (team `flouvia`), deployed with the CLI from this folder, linked by `vercel link` (`.vercel/`, not committed). There is no Git remote yet, so a deploy goes out from a clean tree at a commit: `git status --short` empty, then `vercel deploy` (a protected preview, tried with `vercel curl /mcp --deployment <url>`) and `vercel deploy --prod`.
+- `vercel.json`: no dependencies to install (`npm ci --omit=dev`), the build (`node scripts/build.mjs`, which writes the `dist/` the function imports), the function with `dist/icons.json` and `package.json` (read from disk, not imported), `/mcp` → `/api/mcp`, and `/` → `flouvia.com` (307) until the site.
+- `.vercelignore` uploads only what the build and the function read: `api/`, `engine/`, `mcp/`, `scripts/`, `site/`, `src/`, and the package files.
+- `site/`: the subdomain's static files, today only `robots.txt` (`Disallow: /`, nothing to index before the launch). Phase 4's site takes its place ([roadmap](./roadmap.md)).
+- Domain: `gota.flouvia.com`, on the `flouvia.com` zone in Vercel's DNS.

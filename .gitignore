@@ -3,3 +3,5 @@ svg/
 dist/
 previews/
 .DS_Store
+.vercel
+.env*

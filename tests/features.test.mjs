@@ -1,9 +1,10 @@
 // Phase 2 features: search by meaning, morphs and transitions, auto weight, one module per icon,
-// sprites and the MCP server. They read
+// sprites and the MCP server (stdio and HTTP). They read
 // dist/, so run `node scripts/build.mjs` first.
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { test } from 'node:test';
+import * as remote from '../api/mcp.mjs';
 import { autoWeight, iconData, icons, pick, render, sprite, svg, toSvg, WEIGHTS } from '../dist/index.js';
 import * as perIcon from '../dist/icons/index.js';
 import { changeOf, frames, morpher, transitionOf } from '../dist/morph.js';
@@ -118,4 +119,54 @@ test('MCP server: initialize, list tools, search and get an icon', async () => {
   assert.deepEqual(byId[2].result.tools.map((t) => t.name), ['search_icons', 'get_icon', 'list_categories']);
   assert.match(byId[3].result.content[0].text, /^bell/);
   assert.match(byId[4].result.content[0].text, /^<svg/);
+});
+
+test('MCP over HTTP (gota.flouvia.com/mcp): stateless JSON answers, versions, notifications and errors', async () => {
+  const post = (body, headers = {}) =>
+    remote.POST(new Request('https://gota.flouvia.com/mcp', { method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream', ...headers }, body: typeof body === 'string' ? body : JSON.stringify(body) }));
+  const rpc = async (body, headers) => {
+    const res = await post(body, headers);
+    assert.equal(res.status, 200);
+    assert.equal(res.headers.get('content-type'), 'application/json');
+    assert.equal(res.headers.get('mcp-session-id'), null);
+    return res.json();
+  };
+  const init = (protocolVersion) => ({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion, capabilities: {}, clientInfo: { name: 'test', version: '1' } } });
+  // A version it speaks comes back as asked; any other gets the newest it speaks
+  const asked = await rpc(init('2025-06-18'));
+  assert.equal(asked.result.protocolVersion, '2025-06-18');
+  assert.equal(asked.result.serverInfo.name, 'gota');
+  assert.equal((await rpc(init('2099-01-01'))).result.protocolVersion, '2025-11-25');
+  // Notifications get 202 with no body; a batch gets an array with only the requests' answers
+  const note = await post({ jsonrpc: '2.0', method: 'notifications/initialized' });
+  assert.equal(note.status, 202);
+  assert.equal(await note.text(), '');
+  const batch = await rpc([{ jsonrpc: '2.0', method: 'notifications/initialized' }, { jsonrpc: '2.0', id: 2, method: 'tools/list' }, { jsonrpc: '2.0', id: 3, method: 'ping' }]);
+  assert.deepEqual(batch.map((m) => m.id), [2, 3]);
+  assert.ok(batch[0].result.tools.every((t) => t.annotations.readOnlyHint));
+  // The same tools as the stdio server
+  const call = (id, name, args) => rpc({ jsonrpc: '2.0', id, method: 'tools/call', params: { name, arguments: args } }, { 'mcp-protocol-version': '2025-06-18' });
+  assert.match((await call(4, 'search_icons', { query: 'campana', limit: 3 })).result.content[0].text, /^bell/);
+  assert.equal((await call(5, 'get_icon', { name: 'bell', weight: 'bold' })).result.content[0].text, toSvg('bell', { weight: 'bold' }));
+  assert.equal((await call(6, 'search_icons', { query: 'file', limit: 1e6 })).result.content[0].text.split('\n').length, 50);
+  // Mistakes: a tool's bad input is a tool error the model can read; protocol mistakes are JSON-RPC errors
+  assert.equal((await call(7, 'get_icon', { name: 'belll' })).result.isError, true);
+  assert.equal((await call(8, 'get_icon', { name: 'toString' })).result.isError, true);
+  assert.equal((await call(9, 'search_icons', {})).result.isError, true);
+  assert.equal((await call(10, 'delete_icons', {})).error.code, -32602);
+  assert.equal((await rpc({ jsonrpc: '2.0', id: 11, method: 'resources/list' })).error.code, -32601);
+  assert.equal((await rpc({ id: 12, method: 'ping' })).error.code, -32600);
+  assert.equal((await post('{"jsonrpc":')).status, 400);
+  assert.equal((await post({ jsonrpc: '2.0', id: 13, method: 'ping' }, { 'mcp-protocol-version': '1999-01-01' })).status, 400);
+  assert.equal((await post({ jsonrpc: '2.0', id: 14, method: 'ping' }, { 'content-type': 'text/plain' })).status, 415);
+  assert.equal((await post({ jsonrpc: '2.0', id: 15, method: 'ping', params: { pad: 'x'.repeat(70_000) } })).status, 413);
+  // No event stream and no sessions; any origin may ask
+  const get = await remote.GET(new Request('https://gota.flouvia.com/mcp'));
+  assert.equal(get.status, 405);
+  assert.equal(get.headers.get('allow'), 'POST, OPTIONS');
+  assert.equal((await remote.DELETE(new Request('https://gota.flouvia.com/mcp', { method: 'DELETE' }))).status, 405);
+  const pre = await remote.OPTIONS(new Request('https://gota.flouvia.com/mcp', { method: 'OPTIONS' }));
+  assert.equal(pre.status, 204);
+  assert.equal(pre.headers.get('access-control-allow-origin'), '*');
+  assert.match(pre.headers.get('access-control-allow-headers'), /MCP-Protocol-Version/);
 });

@@ -26,6 +26,7 @@ node scripts/qa.mjs [cat]                 # automated QA: area, density, fill si
 node scripts/weights-sheet.mjs <cat> [--all] | <icon>… [--slash] # 0.9 · 1.5 · 2.1, outline and fill, with each weight's contours (a category: what QA's weights flags)
 npm test                                  # engine and feature tests (node:test; features read dist/)
 node mcp/server.mjs                       # the MCP server over stdio (after the build)
+vercel deploy --prod                      # the remote MCP server, gota.flouvia.com/mcp (from a clean tree; docs/build.md)
 node scripts/native.mjs android           # Android vector drawables from checked outlines (after the build; npm ci first)
 node scripts/native.mjs xcode             # Xcode custom symbols: variable templates, compiled by actool and drawn by AppKit (macOS)
 node scripts/font.mjs                     # icon fonts: variable and static, outline and fill, with ligatures, every glyph checked (after the build)
@@ -53,7 +54,9 @@ engine/vue-base.mjs · vue.mjs · IconBase.svelte · Icon.svelte · Icon.astro  
 engine/motion.css     Animations: the effects, draw, levels, replace, and reduced motion.
 engine/morph.mjs      Transitions between icons: frames drawn by render, badge pairs, curated PAIRS, the player.
 engine/search.mjs     Search by meaning (search-api.mjs: searchIcons for dist/search.js).
-mcp/server.mjs        MCP server for AI agents (stdio, no dependencies): search_icons, get_icon, list_categories.
+mcp/handler.mjs       MCP for AI agents (no dependencies): the tools (search_icons, get_icon, list_categories) and the JSON-RPC dispatch.
+mcp/server.mjs        The MCP server over stdio (`gota-mcp`).
+api/mcp.mjs           The remote MCP server, gota.flouvia.com/mcp (Vercel: vercel.json, .vercelignore; site/ holds the subdomain's static files).
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
 scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android…), chrome (headless Chrome).
