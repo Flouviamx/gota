@@ -4,6 +4,13 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Icon fonts (2.4)
+- **`scripts/font.mjs`** and **`scripts/sfnt.mjs`** ([build](./build.md#icon-fonts-node-scriptsfontmjs)): a variable font per style (a weight axis from 100 to 700, as `weight="auto"`), static fonts at the masters, WOFF2 and TTF, `gota.css`, and a codepoint and a ligature per icon ([decisions 65–67](./decisions.md#weights-22-oct-2026)). No dependency: the OpenType writer and its reader are under 600 lines.
+- **How it was checked:** the first check drew each glyph in Chrome against its SVG and failed every icon by half a pixel: Chrome snaps text to the pixel and thickens it on macOS. Now the bytes written are read back by an independent reader and compared with the drawing by Skia at five weights, and Chrome only has to take every font, form every ligature, and move every varying glyph along the axis. A round-trip test covers the writer.
+- **Masters, lighter:** a station every 2.4 and pieces within 0.02, and points on a straight run dropped: the variable font went from 852 to 581 KB, and 15 more variants interpolate cleanly (QA: 27 → 12 warnings, all interpolations).
+- **coupon:** its notches started inside its corners, so the outline ran back over them (a sliver at light weights); they now start where the corners end, and the % sits in the middle of the body.
+- 1,027 of 1,033 icons vary with the weight in each style; the other 6 keep their regular drawing. Tests: 44.
+
 ## 22 Oct 2026 — Every icon holds its structure from 0.9 to 2.1
 - **The drawing round** (four agents in parallel, one group of categories each, every result reviewed on its weights sheet): 44 structural warnings fixed in the drawing. What the owner should look at:
   - `radar`: the inner ring is now a hub (r 2.75), so the echo fits between the rings at bold;

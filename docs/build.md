@@ -41,10 +41,25 @@ A variable font and an Xcode variable symbol interpolate between masters, so the
 - each weight's checked outline (with unions first; then with the pieces laid over each other); invisible slivers (under 0.02 of area) are left out;
 - contours paired across weights by turn, nesting depth, center, box, and spread (second moments, which tell apart orbits that share a center);
 - points made to correspond, trying four ways in turn and keeping the first whose result passes every check: **following the regular master** (stations along it, its sharp corners among them, carried to each master by nearest point, searching forward, so a round cap maps radially onto the wider or narrower cap); **anchored** (the corners every master shares as anchors, following in between, where following alone jumps between close branches near a cut's corners); **each contour its own way** (the first of those that traces that contour faithfully in every master); and **corners and fractions of length**;
-- each piece drawn as a quadratic curve (TrueType's own), split in all masters at once wherever one of them strays more than 0.01;
+- each piece drawn as a quadratic curve (TrueType's own), split in all masters at once wherever one of them strays more than 0.02 (0.02 px at 24 px), and a point that lies on a straight run in every master dropped, in every master at once;
 - every master checked against its drawing, and the outline halfway between masters (interpolated) checked against the drawing at that weight, as strictly as the masters: a failed check says where (`where`, the box of the largest mismatch).
 
-Measured on 22 Oct 2026: 1,838 of the 1,865 outline and fill variants (98.6 %) have compatible masters, and every icon keeps its structure from 0.9 to 2.1. The other 27 interpolate with a visible error where a cut or a join moves nonlinearly (a bump where a badge's clearance meets a curve, a flattened cap): masters work, not drawing. `describe` and `between` (by any of the four ways) are there to diagnose one.
+Measured on 22 Oct 2026: 1,853 of the 1,865 outline and fill variants (99.4 %) have compatible masters, and every icon keeps its structure from 0.9 to 2.1. The other 12 interpolate with a visible error where a cut or a join moves nonlinearly (a bump where a badge's clearance meets a curve, a flattened cap): masters work, not drawing. `describe` and `between` (by any of the four ways) are there to diagnose one.
+
+## Icon fonts (`node scripts/font.mjs`)
+After the build; it needs `npm ci` (Skia). Written by `scripts/sfnt.mjs`, with no dependencies: TrueType outlines (quadratic, as the masters are), `cmap` 4 and 12, a ligature `GSUB`, `fvar`, `gvar`, and `STAT`, and WOFF2 (brotli; `glyf` and `loca` untransformed, which the format allows).
+| File | What it holds |
+|---|---|
+| `dist/fonts/gota.woff2` · `gota-fill.woff2` (and `.ttf`) | Variable: a weight axis from 100 to 700, the stroke from 0.9 to 2.1 as `weight="auto"` maps a text's weight (400 is regular), from the compatible masters |
+| `dist/fonts/gota-{thin,regular,bold}[-fill].woff2` (and `.ttf`) | Static, each master as it is (100 · 400 · 700) |
+| `dist/fonts/gota.css` · `codepoints.json` | The `@font-face` rules and the `.gota` and `.gota-fill` classes; each icon's codepoint |
+
+- **Codepoints** are stable, in the Supplementary Private Use Area-A (from U+F0000: the BMP's 6,400 wouldn't hold 10,000 icons): `src/codepoints.json` is committed, a new icon gets the next one, and a codepoint is never given to another icon.
+- **Ligatures:** an icon's name typed as text becomes the icon; the letters themselves are empty and zero wide.
+- **Grid:** 4,800 units per em (200 per canvas unit), the 24 canvas filling the em from the baseline up; points within 0.0025, so rounding never tips an interpolated weight past the check.
+- **An icon without compatible masters** keeps its regular drawing at every weight of the variable font (6 per style, reported); the static fonts have every icon at its own weight.
+- **Checked twice:** the glyphs are read back from the bytes written by an independent reader, the variable ones interpolated as a rasterizer does, and compared with `render()` at 100, 250, 400, 550, and 700 by Skia (the masters' own check); then Chrome loads every font (its sanitizer rejects a malformed table), every name must form its ligature, and every varying glyph must change between 100 and 700. Chrome's text rasterizer isn't the judge of the drawing: it snaps the baseline to the pixel and, on macOS, thickens text.
+- Measured on 22 Oct 2026 (1,033 icons): `gota.woff2` 581 KB, `gota-fill.woff2` 483 KB, `gota-regular.woff2` 244 KB; 2 min 20 s.
 
 ## Native formats (`node scripts/native.mjs <format>`)
 From the checked outlines, after `scripts/build.mjs`; it needs `npm ci` (Skia).
@@ -61,9 +76,9 @@ Path data is compact: absolute coordinates rounded to hundredths first (0.005 at
 - **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`, `node_modules/`. Everything is regenerated.
 
 ## Publishing (once there are 10,000)
-- **npm:** `@flouvia/gota` with `dist/`, `svg/`, `mcp/`, `LICENSE`, `README.md`, and `README.es.md` (`files` in `package.json`). Exports: `.`, `./core`, `./icons`, `./icons/*`, `./react`, `./react/icons`, `./vue`, `./vue/icons`, `./svelte`, `./svelte/base`, `./astro`, `./morph`, `./search`, `./sprite.svg`, `./sprite-fill.svg`, `./svg/*`, `./icons.json`, `./icons.css`, `./motion.css`. `sideEffects` lists only the stylesheets, so bundlers drop every module a page doesn't use. React, Vue, and Svelte are optional peer dependencies; the package itself has none. Binary: `gota-mcp`.
+- **npm:** `@flouvia/gota` with `dist/`, `svg/`, `mcp/`, `LICENSE`, `README.md`, and `README.es.md` (`files` in `package.json`). Exports: `.`, `./core`, `./icons`, `./icons/*`, `./react`, `./react/icons`, `./vue`, `./vue/icons`, `./svelte`, `./svelte/base`, `./astro`, `./morph`, `./search`, `./sprite.svg`, `./sprite-fill.svg`, `./svg/*`, `./icons.json`, `./icons.css`, `./motion.css`, `./font.css`, `./fonts/*` (the WOFF2 fonts; the TTFs, for desktop apps, go in the release ZIP, not in the package). `sideEffects` lists only the stylesheets, so bundlers drop every module a page doesn't use. React, Vue, and Svelte are optional peer dependencies; the package itself has none. Binary: `gota-mcp`.
 - **Bundle size** (esbuild, minified, measured 22 Oct 2026 with 1,033 icons): one icon from `icons` with `core`, 16 KB (the engine plus that icon and its drawn variant); one or two components from `react/icons` or `vue/icons`, 33 KB (transitions included); `Icon` by name, 939 KB, since it carries the whole set: for prototypes and names that arrive at runtime, never for a production page that knows its icons.
-- **GitHub Releases:** a GitHub Action, when a version is tagged, runs the build and attaches a ZIP with the SVGs sorted by weight and style.
+- **GitHub Releases:** a GitHub Action, when a version is tagged, runs the build and attaches a ZIP with the SVGs sorted by weight and style, and the fonts as TTF.
 - Semantic versioning, a changelog, and aliases for renames ([decisions](./decisions.md)).
 - Site: `gota.flouvia.com` ([roadmap](./roadmap.md)).
 

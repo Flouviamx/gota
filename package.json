@@ -55,10 +55,13 @@
     "./svg/*": "./svg/*",
     "./icons.json": "./dist/icons.json",
     "./icons.css": "./dist/icons.css",
-    "./motion.css": "./dist/motion.css"
+    "./motion.css": "./dist/motion.css",
+    "./font.css": "./dist/fonts/gota.css",
+    "./fonts/*": "./dist/fonts/*"
   },
   "files": [
     "dist",
+    "!dist/fonts/*.ttf",
     "svg",
     "mcp",
     "LICENSE",
