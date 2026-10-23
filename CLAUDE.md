@@ -23,6 +23,7 @@ node scripts/variants-sheet.mjs <cat|all> # variants sheet: fill, weights, circl
 node scripts/transitions-sheet.mjs        # nine frames of every transition (--try "a>b" for candidates)
 node scripts/sheets.mjs                   # regenerates every sheet from scratch and writes previews/index.html
 node scripts/qa.mjs [cat]                 # automated QA: area, density, fill silhouette, near-duplicates, weights
+node scripts/names.mjs <proposals.json>   # a round's proposed names against the set and each other, before drawing
 node scripts/weights-sheet.mjs <cat> [--all] | <icon>… [--slash] # 0.9 · 1.5 · 2.1, outline and fill, with each weight's contours (a category: what QA's weights flags)
 npm test                                  # engine and feature tests (node:test; features read dist/)
 node mcp/server.mjs                       # the MCP server over stdio (after the build)
@@ -67,7 +68,7 @@ src/icons/*.mjs       One category per file: { category, label, icons: { name: d
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
 src/migrate/*.json    Migration maps: Lucide, Heroicons, and SF Symbols names → Gota (checked by load.mjs).
 src/taxonomy.json     The plan to 10,000: domains, categories, rounds, targets, scopes, adoptions (checked by load.mjs).
-scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), font and sfnt (icon fonts), type (typefaces drawn with the engine), contours (path data → TrueType), chrome (headless Chrome).
+scripts/              load (loads and validates), names (a round's names, deduplicated), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), font and sfnt (icon fonts), type (typefaces drawn with the engine), contours (path data → TrueType), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).
 ```
