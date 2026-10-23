@@ -6,7 +6,7 @@
 // (./flouvia-logo.svg, a copy of flouvia-web's public/imgs/logo-flouvia-1.svg).
 // Used as the file's thumbnail and, at v1, the Community one.
 import { readFileSync, rmSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { openChrome, sleep } from '../chrome.mjs';
 
 const W = 960; // CSS px, shot at 2x
@@ -51,7 +51,7 @@ i{position:absolute;width:${SIZE}px;height:${SIZE}px}
 .t b{display:block;font-weight:500;font-size:40px;letter-spacing:-.02em;line-height:1}
 .t img{display:block;margin:14px auto 0;height:${LOGO_H}px;width:auto}
 </style><div class="f">${cells.join('')}</div><div class="v"></div><div class="d">${sized(toSvg('message', { variant: 'fill', id: 'drop' }), 112)}</div><div class="t"><b>Gota</b><img src="${LOGO}" alt="Flouvia"></div>`;
-  const page = join(process.cwd(), dir, '_cover.html');
+  const page = resolve(dir, '_cover.html');
   writeFileSync(page, html);
   const browser = await openChrome();
   try {

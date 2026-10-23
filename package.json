@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Gota, Flouvia's icon library: continuous corners, a single 1.5 stroke and the drop as a signature.",
   "license": "MIT",
+  "author": "Flouvia, S.A.S. de C.V. (https://flouvia.com)",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

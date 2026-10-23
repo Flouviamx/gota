@@ -66,4 +66,4 @@ The design rules are in [DESIGN.md](./DESIGN.md); the project guide, in
 
 ## License
 
-[MIT](./LICENSE) © 2026 Flouvia
+[MIT](./LICENSE) © 2026 Flouvia, S.A.S. de C.V.

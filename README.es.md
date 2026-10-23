@@ -66,4 +66,4 @@ Las reglas de diseño están en [DESIGN.md](./DESIGN.md); la guía del proyecto,
 
 ## Licencia
 
-[MIT](./LICENSE) © 2026 Flouvia
+[MIT](./LICENSE) © 2026 Flouvia, S.A.S. de C.V.
