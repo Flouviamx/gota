@@ -4,6 +4,9 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — The owner's review (1.7, phase 1 closes)
+- **Approved as drawn:** a local review page put the 53 icons redrawn while the weights were unified (102 variants) before and after, side by side, each with the reason for its change, next to the scale of weights at Light, Regular, and Bold. The owner reviewed it and approved everything, with no course corrections.
+
 ## 23 Oct 2026 — One scale of weights
 - **Light, Regular, Bold are 0.9, 1.5, 2.1 at font weights 300, 400, 700** ([decision 70](./decisions.md#weights-22-oct-2026)): the owner left the naming to Claude. The components' named weights (light 1, bold 2 until now), the variable font's axis (100 to 700 until now), the static fonts (`gota-light` instead of `gota-thin`), and `autoWeight` all sit on one scale, and every named weight is a master, exact in every format.
 - Tests: 45.

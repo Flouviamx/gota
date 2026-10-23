@@ -1,6 +1,6 @@
 # Roadmap
 
-> Status as of 22 Oct 2026. When a subphase moves forward, mark it here and log it in [History](./history.md).
+> Status as of 23 Oct 2026. When a subphase moves forward, mark it here and log it in [History](./history.md).
 
 [← Index](./README.md)
 
@@ -11,14 +11,14 @@
 - [x] Drawing rules (`DESIGN.md`), build, review sheets.
 - [x] Core set of 50 icons (`src/icons/nucleo.mjs`), the set's benchmark.
 
-## Phase 1 · The first ~1,000, complete (in progress)
+## Phase 1 · The first ~1,000, complete ✅
 - [x] 1.1 Base drawing and critique per category — round 1 closed: 993 icons (9 categories + the core set), 18 agents, 1 h 47 min; 268 QA warnings left for round 2.
 - [x] 1.2 Extended format: fill, 16 px (`small` and pixel snapping), mirroring, levels, named parts, motion, 10 languages, `data-*` metadata, variants sheet, automated QA, and engine tests.
 - [x] 1.3 Coverage audit: ~400 concepts reviewed, +40 common icons → 1,033.
 - [x] 1.4 Per-icon design: fill, 16 px, variants, mirroring, levels, parts (`level`/`progress` on quantity icons), motion, and engine badges (9 agents).
 - [x] 1.5 Languages: all 1,033 with labels in 10 languages and search keywords by meaning (10 agents).
 - [x] 1.6 Full QA and fixes — engine fixed (badges in the package, enclosed fill, `wire`, 16 px badges, shared snapping, the `open` rule); fixes in all 10 categories: QA at zero warnings across the 1,033 icons (commit `b55f2d6`).
-- [ ] 1.7 Owner's review of a sample, and course corrections.
+- [x] 1.7 Owner's review of a sample, and course corrections — the 53 icons redrawn while the weights were unified (102 variants, before and after) and the scale of weights, approved by the owner on 23 Oct 2026.
 
 ## Phase 2 · Outputs, tested on those 1,000 (in progress)
 It comes before scaling: a format change is cheap with 1,000 icons and very expensive with 10,000.
