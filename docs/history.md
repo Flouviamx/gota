@@ -4,6 +4,9 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Flouvia's new logo on the cover
+- The owner moved Flouvia's logo to Flouvia Sans (the same isotype), across flouvia.com. The Figma cover now reads the logo and "Gota" in that typeface from the private `flouvia-web` when it is drawn, and the copy of the old logo left this repository: nothing of Flouvia's brand is kept here.
+
 ## 23 Oct 2026 — Typefaces drawn with the engine
 - **`node scripts/type.mjs <folder>`** ([build](./build.md#typefaces-node-scriptstypemjs-folder), [decision 77](./decisions.md#outputs-23-oct-2026)): a typeface's glyphs, written as icons are (stroke axes on the grid), become variable and static fonts, words as outlines, and a specimen set in the fonts. The owner asked for Flouvia's own typeface built like the icons; it lives in the private `flouvia-web/brand/flouvia-sans/` (162 glyphs: lowercase, capitals, figures, punctuation, accents for Spanish, Portuguese, and French), all rights reserved. Its first draft wrote the o as a drop and read "Gata"; the o stayed round and the drop's corner went to bowls that close against a stem.
 - Along the way: `scripts/contours.mjs` (path data to TrueType contours, shared with the icon fonts), and `font()` takes vertical metrics, Unicode ranges, the embedding flag, and the trademark and manufacturer names.

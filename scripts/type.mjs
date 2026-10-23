@@ -5,7 +5,8 @@
 //   fonts/<Family>[wght].ttf · .woff2          variable, weight 300–700 (Gota's 0.9 to 2.1 stroke)
 //   fonts/<Family>-{Light,Regular,Bold}.ttf · .woff2   static, at the masters (300 · 400 · 700)
 //   fonts/<family>.css · specimen.png         the @font-face rules, and a specimen set in the fonts
-//   words/<word>-{light,regular,bold}.svg      the typeface's `words` (a logo's name), as outlines
+//   words/<word>-{light,regular,bold}.svg      the typeface's `words` (a logo's name), as outlines, and
+//     .json with each letter apart: { ch, d, box } (canvas units, the baseline at y = 0)
 // Each glyph is an icon to the engine: its strokes on the 24 canvas, outlined at the three weights
 // as compatible masters (scripts/masters.mjs, each checked against the drawing); a glyph without
 // compatible masters keeps its regular outline across the variable font (reported). The names table
@@ -127,12 +128,19 @@ if (T.words?.length) {
     ['light', 'regular', 'bold'].forEach((weight, k) => {
       let x = 0;
       const parts = [];
+      const letters = [];
       for (const ch of word) {
         const gl = byGlyph.get(ch);
         if (!gl) throw new Error(`${word}: no glyph ${ch}`);
-        parts.push(svgPath(gl.sets[k], x));
+        const d = svgPath(gl.sets[k], x);
+        const n = d.match(/-?\d+(\.\d+)?/g).map(Number);
+        const lx = n.filter((_, i) => i % 2 === 0);
+        const ly = n.filter((_, i) => i % 2 === 1);
+        parts.push(d);
+        letters.push({ ch, d, box: [Math.min(...lx), Math.min(...ly), Math.max(...lx), Math.max(...ly)] });
         x += gl.advance;
       }
+      writeFileSync(join(dir, 'words', `${word.toLowerCase()}-${weight}.json`), `${JSON.stringify({ word, weight, letters })}\n`);
       const ink = parts.join('').match(/-?\d+(\.\d+)?/g).map(Number);
       const xs = ink.filter((_, i) => i % 2 === 0);
       const ys = ink.filter((_, i) => i % 2 === 1);
