@@ -2,22 +2,27 @@
 // can't hold strokes or masks get each icon as filled shapes. Run after scripts/build.mjs.
 //   node scripts/native.mjs android   → dist/android/<weight>/<outline|fill>/gota_<name>[_circle|_square|_slash].xml
 //   node scripts/native.mjs xcode     → dist/xcode/Gota.xcassets/<name>[.fill].symbolset (macOS, with Xcode)
+//   node scripts/native.mjs figma     → dist/figma/ (a development plugin that builds the Figma library)
 // Android vector drawables: one path, nonzero, tinted by the theme (?attr/colorControlNormal), and
 // mirrored for right-to-left layouts where the icon is directional (autoMirrored).
 // Xcode custom symbols: a variable template per icon and style (its three masters as Ultralight,
 // Regular and Black; Xcode draws every other weight and scale between them), compiled by actool and
 // drawn by AppKit at every master to check it.
+// Figma: the plugin in scripts/figma/ builds a component set per icon (Style × Weight) in the open
+// file; its data is every icon's outline at the three named weights, as absolute paths (the syntax
+// Figma takes), each checked again as written.
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { transform, WEIGHTS } from '../engine/variants.mjs';
+import { gzipSync } from 'node:zlib';
+import { render, transform, WEIGHTS } from '../engine/variants.mjs';
 import { loadAll } from './load.mjs';
 import { masters } from './masters.mjs';
-import { outline } from './outline.mjs';
+import { absolute, matches, outline } from './outline.mjs';
 
 const targets = process.argv.slice(2);
-if (!targets.length) throw new Error('Which format? node scripts/native.mjs android | xcode');
+if (!targets.length) throw new Error('Which format? node scripts/native.mjs android | xcode | figma');
 const { categories } = await loadAll();
 const icons = Object.assign({}, ...categories.map((c) => c.icons));
 const NAMES = new Set(Object.keys(icons));
@@ -190,4 +195,42 @@ for line in list {
     process.exitCode = 1;
   } else
     console.log(`✓ xcode: ${symbols.length} symbols (${symbols.length - fixed.length} varying with the weight${fixed.length ? `; regular at every weight: ${fixed.join(', ')}` : ''}), compiled by actool with no warning (Assets.car ${(car / 1048576).toFixed(1)} MB) and drawn by AppKit at Ultralight, Regular and Black, in ${((performance.now() - start) / 1000).toFixed(0)} s → ${OUT}/`);
+}
+
+if (targets.includes('figma')) {
+  const OUT = 'dist/figma';
+  rmSync(OUT, { recursive: true, force: true });
+  mkdirSync(OUT, { recursive: true });
+  const start = performance.now();
+  let variants = 0;
+  // The core set first, as everywhere: it is the reference
+  const ordered = [...categories].sort((a, b) => (b.category === 'nucleo') - (a.category === 'nucleo'));
+  const data = {
+    version: JSON.parse(readFileSync('package.json', 'utf8')).version,
+    categories: ordered.map((c) => ({
+      id: c.category,
+      label: c.label,
+      icons: Object.entries(c.icons).map(([name, icon]) => {
+        const t = c.i18n?.[name] ?? {};
+        // Figma searches a component's description: its labels, then every word it answers to
+        const words = [...new Set([...(t.keywords?.en ?? []), ...(t.keywords?.es ?? []), ...(icon.tags ?? [])])];
+        const paths = {};
+        for (const style of ['outline', 'fill'])
+          paths[style] = Object.values(WEIGHTS).map((weight) => {
+            const d = absolute(outline({ name, ...icon }, { style, weight }));
+            if (!matches(render({ name, ...icon }, { style, weight, animate: null, id: 'o' }), d).ok) throw new Error(`figma: ${name} (${style}, ${weight}) doesn't match its drawing as written`);
+            variants++;
+            return d;
+          });
+        return { name, description: `${[t.label?.en, t.label?.es].filter(Boolean).join(' · ')}\n${words.join(', ')}`.trim(), paths };
+      }),
+    })),
+  };
+  const packed = gzipSync(JSON.stringify(data), { level: 9 }).toString('base64');
+  const ui = readFileSync('scripts/figma/ui.html', 'utf8');
+  if (!ui.includes("'__GOTA_DATA__'")) throw new Error('figma: ui.html has no __GOTA_DATA__ slot');
+  writeFileSync(join(OUT, 'ui.html'), ui.replace("'__GOTA_DATA__'", `'${packed}'`));
+  for (const file of ['manifest.json', 'code.js']) copyFileSync(join('scripts/figma', file), join(OUT, file));
+  const icons = data.categories.reduce((n, c) => n + c.icons.length, 0);
+  console.log(`✓ figma: ${icons} component sets, ${variants} variants, every outline checked as written; ui.html ${(Buffer.byteLength(packed) / 1048576).toFixed(1)} MB, in ${((performance.now() - start) / 1000).toFixed(0)} s → ${OUT}/ (Figma: Plugins → Development → Import plugin from manifest)`);
 }

@@ -1,6 +1,6 @@
 # Quality
 
-> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`, `tests/outline.test.mjs`, and the check inside `scripts/outline.mjs`.
+> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`, `tests/outline.test.mjs`, `tests/figma.test.mjs`, and the check inside `scripts/outline.mjs`.
 
 [← Index](./README.md)
 
@@ -29,7 +29,9 @@ Standalone lines are light by nature: there is no "too light" warning. The thres
 
 **Phase 2 features** (`tests/features.test.mjs`, they read `dist/`), thirteen tests: search by meaning in Spanish and English; the ñ, accents, plurals, and empty words; partial matches; a leftover stroke never shrinks to a point; menu lines meet before they cross; how each pair is resolved (turns, badge pairs in any style, curated morphs only in outline); frames drawn by the engine, ending on the icon itself; the slash drawn part of the way and toggled by a component; `autoWeight`; one module per icon (same data as by name, `<Name>Icon` names, the drawn variant linked, `svg` equal to `toSvg`); the sprite (one symbol per icon, unique mask ids); the MCP server end to end over stdio, and over HTTP with every case of the remote transport (versions, notifications, batches, tool and protocol errors, 405, 413, 415, CORS).
 
-**Outlines** (`tests/outline.test.mjs`, they need `npm ci`), three tests: every kind of variant matches its drawing; holes survive where two pieces only touch (the card chip); a cut-out enclosure keeps the drawing as holes. Every outline the build makes is checked the same way ([build](./build.md#outlines-scriptsoutlinemjs)).
+**Outlines** (`tests/outline.test.mjs`, they need `npm ci`), four tests: every kind of variant matches its drawing; holes survive where two pieces only touch (the card chip); a cut-out enclosure keeps the drawing as holes; the absolute paths Figma takes, point for point and drawing for drawing.
+
+**Figma** (`tests/figma.test.mjs`), three tests on the library builder against a stand-in for Figma's API: a page per category and a set per icon with Style × Weight, each variant a 24 × 24 scaling vector in its slot; a second run redraws the same nodes and keeps (and reports) a set whose icon left; the code is plain ES2017, as Figma's sandbox runs it. Every outline the build makes is checked the same way ([build](./build.md#outlines-scriptsoutlinemjs)).
 
 ## Gates
 - No agent finishes with `build.mjs --check` failing.

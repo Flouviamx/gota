@@ -42,6 +42,7 @@ By name, with the whole set (prototypes, names that arrive at runtime): `<Icon n
 - **For AI agents:** an MCP server to find icons and insert their code, remote at `https://gota.flouvia.com/mcp` or local with `gota-mcp`.
 - **Standalone SVGs:** `svg/` (regular) and `svg/fill/`; the full matrix in `dist/svg/<weight>/<style>/`.
 - **Native:** Android vector drawables and an Xcode asset catalog of custom symbols (`Image("bell")`, every weight and scale) come in the release ZIP.
+- **Figma:** a library with every icon as a component, Style (Outline, Fill) × Weight (Light, Regular, Bold), searchable by meaning.
 - **Icon font:** `@flouvia/gota/font.css`, then `<i class="gota">bell</i>` (the name is a ligature) or the icon's codepoint (`fonts/codepoints.json`); `.gota-fill` for the filled style. Variable: the stroke follows `font-weight`, from 300 (light) to 700 (bold), as `weight="auto"` does.
 
 ## Development

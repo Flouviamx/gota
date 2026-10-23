@@ -404,6 +404,46 @@ function compact(d) {
   return out;
 }
 
+/**
+ * Compact path data (above) as absolute M, L, Q, C and Z with one space between every command and
+ * number: the only syntax Figma's vector paths take. Each point comes back to the hundredth it was
+ * rounded to.
+ */
+export function absolute(d) {
+  const tokens = d.match(/[mlhvqcz]|-?(?:\d+\.?\d*|\.\d+)/gi) ?? [];
+  const full = (v) => {
+    const t = String(Math.round(v * 100) / 100);
+    return t === '-0' ? '0' : t;
+  };
+  const out = [];
+  let [x, y, sx, sy, i, cmd] = [0, 0, 0, 0, 0, ''];
+  const next = () => Number(tokens[i++]);
+  while (i < tokens.length) {
+    if (/[a-z]/i.test(tokens[i])) cmd = tokens[i++];
+    else if (!cmd) throw new Error(`absolute: a number with no command in "${d.slice(0, 40)}"`);
+    const rel = cmd === cmd.toLowerCase();
+    const [ox, oy] = rel ? [x, y] : [0, 0];
+    const c = cmd.toLowerCase();
+    if (c === 'z') {
+      out.push('Z');
+      [x, y, cmd] = [sx, sy, ''];
+    } else if (c === 'm' || c === 'l') {
+      [x, y] = [ox + next(), oy + next()];
+      if (c === 'm') [sx, sy, cmd] = [x, y, rel ? 'l' : 'L']; // numbers after a move are lines
+      out.push(c === 'm' ? 'M' : 'L', full(x), full(y));
+    } else if (c === 'h' || c === 'v') {
+      if (c === 'h') x = ox + next();
+      else y = oy + next();
+      out.push('L', full(x), full(y));
+    } else if (c === 'q' || c === 'c') {
+      const pts = Array.from({ length: c === 'q' ? 4 : 6 }, (_, k) => (k % 2 ? oy : ox) + next());
+      out.push(c.toUpperCase(), ...pts.map(full));
+      [x, y] = pts.slice(-2);
+    } else throw new Error(`absolute: unexpected command "${cmd}"`);
+  }
+  return out.join(' ');
+}
+
 // Every piece at once first; then chains of unions in order and in reverse; then the pieces laid
 // over each other without a union (fills the same under nonzero, contours may overlap); then the
 // pieces nudged by thousandths of a unit, so no two of them share an exact point

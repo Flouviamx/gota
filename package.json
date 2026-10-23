@@ -64,6 +64,7 @@
     "!dist/fonts/*.ttf",
     "!dist/xcode",
     "!dist/android",
+    "!dist/figma",
     "svg",
     "mcp",
     "LICENSE",

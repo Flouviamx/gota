@@ -1,0 +1,111 @@
+<!doctype html>
+<!-- Gota · the Figma library builder's panel (see code.js). scripts/native.mjs puts the icons in
+     DATA: JSON, gzipped and base64-encoded, unpacked here and handed to the plugin in one message. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 16px;
+        font: 11px/1.5 Inter, system-ui, sans-serif;
+        color: var(--figma-color-text, #1e1e1e);
+        background: var(--figma-color-bg, #fff);
+      }
+      h1 {
+        margin: 0 0 4px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      p {
+        margin: 0 0 12px;
+        color: var(--figma-color-text-secondary, #757575);
+      }
+      button {
+        width: 100%;
+        height: 32px;
+        border: 0;
+        border-radius: 6px;
+        font: inherit;
+        font-weight: 600;
+        color: var(--figma-color-text-onbrand, #fff);
+        background: var(--figma-color-bg-brand, #0d99ff);
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+      .bar {
+        height: 4px;
+        margin: 12px 0 8px;
+        border-radius: 2px;
+        background: var(--figma-color-bg-secondary, #f5f5f5);
+        overflow: hidden;
+      }
+      .bar span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: var(--figma-color-bg-brand, #0d99ff);
+        transition: width 120ms linear;
+      }
+      #status {
+        margin: 0;
+        color: var(--figma-color-text, #1e1e1e);
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gota</h1>
+    <p id="summary">Unpacking the icons…</p>
+    <button id="build" disabled>Build the library</button>
+    <div class="bar"><span id="fill"></span></div>
+    <p id="status"></p>
+    <script>
+      const DATA = '__GOTA_DATA__';
+      const $ = (id) => document.getElementById(id);
+      const send = (msg) => parent.postMessage({ pluginMessage: msg }, '*');
+      const n = (v) => v.toLocaleString('en-US');
+      let data = null;
+
+      (async () => {
+        const bytes = Uint8Array.from(atob(DATA), (c) => c.charCodeAt(0));
+        data = await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
+        const icons = data.categories.reduce((sum, c) => sum + c.icons.length, 0);
+        $('summary').textContent = `${n(icons)} icons in ${data.categories.length} categories, version ${data.version}. Each one a component set: Style (Outline, Fill) × Weight (Light, Regular, Bold). It builds them in this file, or updates the ones already here.`;
+        $('build').disabled = false;
+      })().catch((error) => {
+        $('summary').textContent = `The icons couldn't be read: ${error.message}`;
+      });
+
+      $('build').onclick = () => {
+        $('build').disabled = true;
+        $('status').textContent = 'Starting…';
+        send({ type: 'build', data });
+      };
+
+      onmessage = (event) => {
+        const msg = event.data.pluginMessage;
+        if (!msg) return;
+        if (msg.type === 'progress') {
+          $('fill').style.width = `${(100 * msg.done) / msg.total}%`;
+          $('status').textContent = `${msg.label} · ${n(msg.done)} of ${n(msg.total)}`;
+        } else if (msg.type === 'done') {
+          const s = msg.stats;
+          $('fill').style.width = '100%';
+          $('status').textContent =
+            `Done in ${s.seconds} s: ${n(s.created)} new, ${n(s.updated)} updated.` +
+            (s.gone.length ? `\nNo longer in Gota, kept so instances don't break: ${s.gone.join(', ')}.` : '');
+          $('build').textContent = 'Close';
+          $('build').disabled = false;
+          $('build').onclick = () => send({ type: 'close' });
+        } else if (msg.type === 'error') {
+          $('status').textContent = `Stopped: ${msg.message}`;
+          $('build').disabled = false;
+        }
+      };
+    </script>
+  </body>
+</html>

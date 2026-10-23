@@ -4,6 +4,12 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Figma library builder (2.6)
+- **`node scripts/native.mjs figma`** ([build](./build.md#native-formats-node-scriptsnativemjs-format), [decision 73](./decisions.md#outputs-23-oct-2026)): a development plugin that builds Gota's library in the open Figma file: a page per category, a component set per icon with Style (Outline, Fill) × Weight (Light, Regular, Bold), 6,198 variants, each a 24 × 24 component with the icon's checked outline. Descriptions carry the labels and keywords in English and Spanish for Figma's search. A second run updates in place, so instances in other files keep working through every round.
+- `absolute()` in `scripts/outline.mjs` writes the compact outlines as the absolute `M L Q C Z` Figma takes; every one of the 6,198 is checked again as written.
+- **Left:** the owner imports the plugin in Figma's desktop app and runs it (Claude can't sign in to Figma); publishing the file as a team library is the owner's step.
+- Tests: 50.
+
 ## 23 Oct 2026 — The remote MCP server (2.7 closes)
 - **`https://gota.flouvia.com/mcp`** ([build](./build.md#mcp-server-mcp-apimcpmjs), [decision 71](./decisions.md#outputs-23-oct-2026)), with the owner's OK: MCP's Streamable HTTP, stateless, as a Vercel function (project `gota`, team `flouvia`). The tools and the JSON-RPC dispatch moved to `mcp/handler.mjs`, shared by stdio and HTTP; along the way, version negotiation (a version it speaks comes back, any other gets the newest), batches, read-only annotations, `instructions` for agents, a cap of 50 results, and an unknown tool as a JSON-RPC error.
 - **Checked** in a test with every case (versions, notifications, batches, tool errors, protocol errors, 405, 413, 415, CORS) and on a deployed preview before production.
