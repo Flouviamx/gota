@@ -580,11 +580,13 @@ const icons = {
     d: (() => {
       const [x, y, w, h, r] = [2.5, 5.25, 19, 13.5, 3];
       const k = corners(x, y, w, h, r);
-      const n = 8.5;
+      // The notches start where the corners end (2.5 + 1.6 × 3 = 7.3): at 6.75 the outline ran back
+      // over the corner, a sliver that broke the outline at light weights
+      const n = 9.25;
       const nr = 1.75;
       return [
         `M${pt(k[0].p)}${k[0].c}L${pt(k[1].p)}${k[1].c}L${pt([n + nr, y + h])}A${nr} ${nr} 0 0 0 ${pt([n - nr, y + h])}L${pt(k[2].p)}${k[2].c}L${pt(k[3].p)}${k[3].c}L${pt([n - nr, y])}A${nr} ${nr} 0 0 0 ${pt([n + nr, y])}Z`,
-        ...percentDots(15, 12, 2.75, 3.25),
+        ...percentDots(15.25, 12, 2.75, 3),
       ];
     })(),
   },

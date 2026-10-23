@@ -10,7 +10,8 @@
 //     the regular master by nearest point, anchored at the corners every master shares, each
 //     contour its own way, and corners with fractions of length;
 //   · pieces drawn with quadratic curves (TrueType's own), split further in all weights at once
-//     wherever one of them doesn't fit within a hundredth of a unit;
+//     wherever one of them doesn't fit within 0.02 of a unit; a point that lies on a straight run in
+//     every master is dropped;
 //   · every master checked against its drawing, and the weights halfway between masters, drawn by
 //     interpolating, checked against theirs.
 import { render } from '../engine/variants.mjs';
@@ -316,7 +317,8 @@ function pairCorners(group, weights) {
 }
 
 // ── Fitting quadratic pieces in every weight at once ──
-const TOL = 0.01;
+// Within 0.02 of the true contour (0.02 px at 24 px): half again would add a third more points for nothing
+const TOL = 0.02;
 function quadFor(c, s0, s1) {
   const p0 = locate(c, s0).pt;
   const p1 = locate(c, s1).pt;
@@ -481,7 +483,8 @@ function follow(group, weights) {
     return best ? best.s : from;
   };
   // Stations: the regular master's sharp corners plus even steps, carried to every master
-  const step = 1.2;
+  // A station every 2.4: where a curve doesn't fit between two, the walk splits it at the (carried) middle
+  const step = 2.4;
   const marks = [...new Set([...sharp[R], ...Array.from({ length: Math.ceil(ref.length / step) }, (_, i) => (ref.length * i) / Math.ceil(ref.length / step))].map((v) => Math.round(v * 1e6) / 1e6))].sort((a, b) => a - b);
   const startRef = sharp[R].length ? sharp[R][0] : marks[0];
   const order = [...marks.filter((m) => m >= startRef), ...marks.filter((m) => m < startRef).map((m) => m + ref.length)];
@@ -554,7 +557,7 @@ function anchored(group, weights) {
   const at = group.map((_, k) => [spans[0][k][0]]);
   for (const span of spans) {
     const [A, B] = span[R];
-    const steps = Math.max(1, Math.ceil((B - A) / 1.2));
+    const steps = Math.max(1, Math.ceil((B - A) / 2.4));
     for (let j = 1; j < steps; j++) {
       const s = A + ((B - A) * j) / steps;
       group.forEach((c, k) => {
@@ -592,6 +595,32 @@ function eachOwnWay(group, weights) {
     } catch {}
   }
   throw new Error('no way traces this contour in every master');
+}
+
+// ── Fewer points ──
+// Following places a station every 1.2 along a contour, so a straight side comes out as several
+// pieces; a point between two straight pieces that lies on the line through its neighbors in every
+// master (within 0.002) is dropped, in every master at once, so the structure stays shared.
+function simplify({ starts, pieces, closed }) {
+  const n = starts.length;
+  const out = [];
+  for (const piece of pieces) {
+    const prev = out.at(-1);
+    if (prev && prev[0].t === 'L' && piece[0].t === 'L') {
+      const before = out.length > 1 ? out.at(-2).map((q) => q.to) : starts;
+      const straight = Array.from({ length: n }, (_, k) => {
+        const [a, m, b] = [before[k], prev[k].to, piece[k].to];
+        const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
+        return len > 1e-9 && Math.abs((b[0] - a[0]) * (a[1] - m[1]) - (a[0] - m[0]) * (b[1] - a[1])) / len < 0.002 && (m[0] - a[0]) * (b[0] - a[0]) + (m[1] - a[1]) * (b[1] - a[1]) > 0;
+      }).every(Boolean);
+      if (straight) {
+        out[out.length - 1] = piece;
+        continue;
+      }
+    }
+    out.push(piece);
+  }
+  return { starts, pieces: out, closed };
 }
 
 const r3 = (v) => String(Math.round(v * 1000) / 1000);
@@ -646,7 +675,7 @@ export function masters(icon, options = {}, weights = [0.9, 1.5, 2.1]) {
       ['corners', (group) => fit(group, pairCorners(group, weights))],
     ]) {
       try {
-        const contours = pairContours(sets).map(make);
+        const contours = pairContours(sets).map(make).map(simplify);
         const out = weights.map((_, k) => pathOf(contours, k));
         const checks = out.map((d, k) => ({ weight: weights[k], ...matches(svgAt(weights[k]), d) }));
         for (let k = 0; k < weights.length - 1; k++) {
