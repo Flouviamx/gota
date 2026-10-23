@@ -20,7 +20,7 @@
 - **`node scripts/native.mjs figma`** ([build](./build.md#native-formats-node-scriptsnativemjs-format), [decision 73](./decisions.md#outputs-23-oct-2026)): a development plugin that builds Gota's library in the open Figma file: a page per category, a component set per icon with Style (Outline, Fill) × Weight (Light, Regular, Bold), 6,198 variants, each a 24 × 24 component with the icon's checked outline. Descriptions carry the labels and keywords in English and Spanish for Figma's search. A second run updates in place, so instances in other files keep working through every round.
 - `absolute()` in `scripts/outline.mjs` writes the compact outlines as the absolute `M L Q C Z` Figma takes; every one of the 6,198 is checked again as written.
 - **Left:** the owner imports the plugin in Figma's desktop app and runs it (Claude can't sign in to Figma); publishing the file as a team library is the owner's step.
-- **The cover** (`dist/figma/cover.png`), at the owner's request: on Flouvia's graphite, the set as a field whose weight grows left to right, fading around the drop in Flouvia's blue over "Gota", signed with Flouvia's official logo; written with the plugin, so it follows the set as it grows.
+- **The cover** (`dist/figma/cover.png`), at the owner's request: on Flouvia's graphite, the set as a field whose weight grows left to right, fading around a clearing with only "Gota" and Flouvia's official logo (the owner's call, over a drop in blue and an app icon); written with the plugin, so it follows the set as it grows.
 - Tests: 50.
 
 ## 23 Oct 2026 — The remote MCP server (2.7 closes)
