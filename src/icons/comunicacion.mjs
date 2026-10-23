@@ -4,7 +4,7 @@
 // Badges are the engine's, and anything that sits on top of another shape (the pencil over the
 // envelope, the front person, the diagonal of the -off icons) is a custom badge: the engine clears
 // the base by exactly 1.5, never by hand. See DESIGN.md.
-import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, f, halfChord, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 import nucleo from './nucleo.mjs';
 
@@ -431,7 +431,9 @@ function pencil(tip, len, w = 3) {
   const n = [Math.SQRT1_2, Math.SQRT1_2];
   const at = (a, b) => [tip[0] + u[0] * a + n[0] * b, tip[1] + u[1] * a + n[1] * b];
   const a = 2.6;
-  const body = `M${P(tip)}L${P(at(a, -w / 2))}L${P(at(len, -w / 2))}A${f(w / 2)} ${f(w / 2)} 0 0 1 ${P(at(len, w / 2))}L${P(at(a, w / 2))}Z`;
+  // The end is a half circle: exactly half its written chord, or the rounding of its turned ends bulges it
+  const R = halfChord(at(len, -w / 2), at(len, w / 2));
+  const body = `M${P(tip)}L${P(at(a, -w / 2))}L${P(at(len, -w / 2))}A${R} ${R} 0 0 1 ${P(at(len, w / 2))}L${P(at(a, w / 2))}Z`;
   return [body, line(at(len - 2.4, -w / 2), at(len - 2.4, w / 2))];
 }
 
@@ -482,24 +484,31 @@ function cline(pts, radius) {
 /** The arc from arc() without its leading M, so it can be chained onto a path. */
 const arcTo = (...a) => arc(...a).d.replace(/^M[^A]+/, '');
 
-/** 文: the top stroke resting on the bar and the two diagonals, in a box of about 8 × 8. */
+/**
+ * 文: the top stroke resting on the bar and the two diagonals, in a box of 8.5 × 8.75. The diagonals
+ * leave 6 between them on the bar and cross 3 below it: the triangle they close with the bar stays
+ * open at 2.1 (narrower, it filled in at heavy weights).
+ */
 const wen = (cx, cy) => [
-  line([cx, cy - 4.25], [cx, cy - 1.5]),
-  line([cx - 3.9, cy - 1.5], [cx + 3.9, cy - 1.5]),
-  line([cx + 2.4, cy - 1.5], [cx - 3.3, cy + 4]),
-  line([cx - 2.4, cy - 1.5], [cx + 3.3, cy + 4]),
+  line([cx, cy - 4.25], [cx, cy - 2]),
+  line([cx - 4.25, cy - 2], [cx + 4.25, cy - 2]),
+  line([cx + 3, cy - 2], [cx - 3.4, cy + 4.5]),
+  line([cx - 3, cy - 2], [cx + 3.4, cy + 4.5]),
 ];
-/** The letter A, h tall: two legs with a soft apex and a crossbar. */
+/**
+ * The letter A, h tall and as wide: two legs with a soft apex and a crossbar at 70 % of the height,
+ * so its counter stays open at 2.1 (a narrower A with the bar at 66 % filled in).
+ */
 const letterA = (cx, top, h) => [
   rline(
     [
-      [cx - 0.42 * h, top + h],
+      [cx - 0.5 * h, top + h],
       [cx, top],
-      [cx + 0.42 * h, top + h],
+      [cx + 0.5 * h, top + h],
     ],
     [0, 0.7, 0],
   ),
-  line([cx - 0.27 * h, top + 0.66 * h], [cx + 0.27 * h, top + 0.66 * h]),
+  line([cx - 0.35 * h, top + 0.7 * h], [cx + 0.35 * h, top + 0.7 * h]),
 ];
 
 // ── Base pieces ──────────────────────────────────────────────────────────────────────────
@@ -963,9 +972,11 @@ const icons = {
   },
   'video-call-off': {
     tags: ['cámara apagada', 'sin video', 'terminar videollamada', 'video off'],
-    // Without the person: the diagonal ran through their head and left fragments
+    // Without the person: the diagonal ran through their head and left fragments. The diagonal runs
+    // 0.53 below the canvas's, so its clearance stays clear of where the lens meets the body: on the
+    // canvas's diagonal it cut that joint at light weights and not at heavy ones (the lens opened)
     d: [VIDEO, LENS],
-    badge: slashOver(),
+    badge: slashOver(line([2.9, 3.65], [20.4, 21.15])),
   },
   'video-meeting': {
     tags: ['videoconferencia', 'reunión', 'junta en línea', 'meeting', 'webinar'],
@@ -1266,9 +1277,10 @@ const icons = {
   },
   'reaction-add': {
     tags: ['agregar reacción', 'emoji', 'reaccionar', 'add reaction'],
-    // The face shifted up and to the left, with a smaller smile: 7.3 from the badge center it stays
-    // whole (any closer, the clearing thinned it)
-    d: [circ(10, 10, 7.5), dot(7.6, 8.2), dot(12.4, 8.2), arc(10, 10.25, 2.75, 35, 145).d],
+    // The face shifted up and to the left, with a smaller smile: 7.7 from the badge center it stays
+    // whole, and in the fill its cut keeps a rim of ink from the badge's clearance even at 0.9, where
+    // the cut is widest (at 7.3 the two met)
+    d: [circ(9.75, 9.75, 7.5), dot(7.35, 7.95), dot(12.15, 7.95), arc(9.75, 10, 2.75, 35, 145).d],
     badge: badge('plus'),
   },
   'thumbs-up': {
@@ -1335,7 +1347,7 @@ const icons = {
     d: wen(7.25, 7),
     badge: (() => {
       const bubble = dropL(15.25, 15, 6.25);
-      const a = letterA(15.25, 12.25, 5.5);
+      const a = letterA(14.75, 11.75, 5.75);
       return own([bubble, ...a], bubble, { solid: [bubble], cut: a });
     })(),
   },

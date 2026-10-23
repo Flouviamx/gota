@@ -494,7 +494,9 @@ const icons = {
     tags: ['recibo', 'ticket de compra', 'comprobante', 'receipt', 'order'],
     d: [receipt(), line([8.5, 7.75], [15.5, 7.75]), line([8.5, 11.25], [15.5, 11.25]), line([8.5, 14.75], [12.25, 14.75])],
   },
-  'receipt-tax': { tags: ['impuestos', 'IVA', 'retención', 'tax', 'vat', 'tax receipt'], d: [receipt(), ...percent(12, 11.25, 2.8, 1.05, 3.25)] },
+  // The % rings at r 1.35, as in `percent-circle`, and 3 from the diagonal: at r 1.05 a ring lost
+  // its hole at 2.1
+  'receipt-tax': { tags: ['impuestos', 'IVA', 'retención', 'tax', 'vat', 'tax receipt'], d: [receipt(), ...percent(12, 11.25, 3, 1.35, 3.25)] },
   // The invoice: the document with the peso sign in the middle
   'invoice': { tags: ['factura', 'cobro', 'cuenta', 'invoice', 'bill'], d: [sq(...DOC, SQ), ...dollar(12, 12, 8, 5.25, 1.5)] },
   // With a badge: the full document (the engine clears it) and a smaller sign at the top left,
@@ -816,20 +818,24 @@ const icons = {
   },
   // The ATM: the slot and the bill coming out of it, on top of the front (the engine clears it)
   'atm': (() => {
-    const bill = roundline(
-      [
-        [7.25, 6.25],
-        [7.25, 21.25],
-        [16.75, 21.25],
-        [16.75, 6.25],
-      ],
-      [0, 2, 0, 0],
-    );
+    const billFrom = (top) =>
+      roundline(
+        [
+          [7.25, top],
+          [7.25, 21.25],
+          [16.75, 21.25],
+          [16.75, top],
+        ],
+        [0, 2, 0, 0],
+      );
+    const bill = billFrom(6.25);
     const sign = dollar(12, 13.75, 6.75, 4.5, 1.25);
+    // The clearance beside the bill starts 0.35 below the slot even at 0.9, where the slot is
+    // widest: from 9.25 it met the slot at light weights and opened it to the outside
     const knock = roundpoly(
       [
-        [7.25, 9.25],
-        [16.75, 9.25],
+        [7.25, 9.75],
+        [16.75, 9.75],
         [16.75, 21.25],
         [7.25, 21.25],
       ],
@@ -838,8 +844,9 @@ const icons = {
     return {
       tags: ['cajero automático', 'retiro', 'efectivo', 'atm', 'cash machine'],
       d: [sq(2.75, 2.75, 18.5, 7.5, 2.5, SQ), line([5.75, 6.25], [18.25, 6.25])],
-      // Filled, the bill closes along the slot
-      badge: own([bill, ...sign], knock, { solid: [`${bill}Z`], cut: sign }),
+      // Filled, the bill goes up through the slot and joins the front at every weight (closed along
+      // the slot, it came loose at light weights, where the slot is wider than the stroke)
+      badge: own([bill, ...sign], knock, { solid: [`${billFrom(5.5)}Z`], cut: sign }),
     };
   })(),
   'cheque': {
@@ -911,12 +918,13 @@ const icons = {
   },
 
   // ── Point of sale ──
-  // The tallest drawer: the handle sits 3 from its edge and from the bottom
+  // The tallest drawer: the handle sits 3 from its edge and from the bottom. The display, 7.5 wide
+  // and centered on its post, keeps the ink under QA's density limit (at 8.5 it was just over)
   'cash-register': {
     tags: ['caja registradora', 'punto de venta', 'caja', 'cash register', 'checkout'],
     d: [
       sq(3.25, 9, 17.5, 12.25, 3, SQ),
-      sq(4.25, 2.75, 8.5, 3.25, 1),
+      sq(4.75, 2.75, 7.5, 3.25, 1),
       line([8.5, 6], [8.5, 9]),
       line([3.25, 15.5], [20.75, 15.5]),
       line([10.25, 18.375], [13.75, 18.375]),

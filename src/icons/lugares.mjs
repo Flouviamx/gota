@@ -658,10 +658,12 @@ function clearOf(d, k, o) {
 }
 {
   // Sun behind the cloud: at the top left; the cloud sits on top as a custom badge. Only the rays
-  // that stay fully 1.5 clear of it are drawn (a partial one would be a fragment).
+  // that stay fully 1.5 clear of it are drawn (a partial one would be a fragment). The sun sits close
+  // enough for the cloud's clearance to cut its ring through at every weight: at 9.5, 9.5 the ring's
+  // inner edge came out of the clearance at 2.1 and closed the ring.
   const k = 0.72;
   const o = [2.75, 3.75];
-  const s = [9.5, 9.5];
+  const s = [9.75, 9.75];
   add('cloud-sun', ['parcialmente nublado', 'medio nublado', 'sol y nubes', 'partly cloudy'], [circ(...s, 2.5), ...sunRays(s, 2.5).filter((r) => clearOf(r, k, o))], {
     badge: cloudBadge(cloud(k, o)),
   });
@@ -893,12 +895,13 @@ add('wave', ['ola', 'mar', 'océano', 'surf', 'wave', 'ocean'], [
   add('shooting-star', ['estrella fugaz', 'deseo', 'destacado', 'shooting star', 'wish'], [star, line([10.25, 13.75], [3.5, 20.5]), line([13.75, 15.25], [9.75, 19.25]), line([8.75, 10.25], [4.75, 14.25])]);
 }
 {
-  // Shoe print: an oval sole and a heel, angled outward.
+  // Shoe print: an oval sole and a heel, angled outward. The heel sits 2.85 from the sole (center to
+  // center) and the two heels 3 apart, so nothing merges at 2.1; the print keeps its length.
   const print = (c, tilt) => {
     const at = (dx, dy) => plus(c, rot([dx, dy], [0, 0], tilt));
-    return [ell(at(0, 0), 2.6, 3.9, tilt), ell(at(0, 7.4), 2.2, 1.5, tilt)];
+    return [ell(at(0, 0), 2.6, 3.6, tilt), ell(at(0, 7.9), 2.1, 1.45, tilt)];
   };
-  add('footprints', ['huellas', 'pasos', 'rastro', 'footprints', 'steps'], [...print([7.5, 9.75], -12), ...print([16.5, 6.75], 12)]);
+  add('footprints', ['huellas', 'pasos', 'rastro', 'footprints', 'steps'], [...print([7.25, 9.5], -12), ...print([16.75, 6.5], 12)]);
 }
 add('paw', ['huella de mascota', 'pata', 'perro', 'gato', 'paw', 'pet'], [
   roundpoly([[9.5, 12.5], [14.5, 12.5], [18.75, 19.75], [5.25, 19.75]], [2.75, 2.75, 2.25, 2.25]),

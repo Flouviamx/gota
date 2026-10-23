@@ -4,7 +4,7 @@
 // square bottom-right corner on containers. The base file is the core `document` without its text
 // lines; the folder repeats the core one. The badges (plus, check, clock…) are the engine's:
 // `badge` clears the base with exact clearance; nothing is ever trimmed by hand.
-import { arc, badge, circ, dot, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, halfChord, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 
 // ── Local utilities ───────────────────────────────────────────────────────────────────────────
@@ -121,8 +121,11 @@ function clip(prims, caps, closed = true) {
           else hi = m;
         }
         const e = (lo + hi) / 2;
-        if (now) edges.push([start, e]);
-        else start = e;
+        // A run that goes under a capsule ends there: a primitive that ends hidden adds no run
+        if (now) {
+          edges.push([start, e]);
+          start = null;
+        } else start = e;
       }
       prev = now;
     }
@@ -207,7 +210,9 @@ function pencil(tip, a, len, hw = 1.5, tipLen = 3) {
   const u = [Math.cos((a * Math.PI) / 180), Math.sin((a * Math.PI) / 180)];
   const n = [-u[1], u[0]];
   const at = (s, o) => [tip[0] + u[0] * s + n[0] * o, tip[1] + u[1] * s + n[1] * o];
-  const outline = `M${pt(tip)}L${pt(at(tipLen, -hw))}L${pt(at(len, -hw))}A${N(hw)} ${N(hw)} 0 0 1 ${pt(at(len, hw))}L${pt(at(tipLen, hw))}Z`;
+  // The end is a half circle: exactly half its written chord, or the rounding of its turned ends bulges it
+  const R = halfChord(at(len, -hw), at(len, hw));
+  const outline = `M${pt(tip)}L${pt(at(tipLen, -hw))}L${pt(at(len, -hw))}A${R} ${R} 0 0 1 ${pt(at(len, hw))}L${pt(at(tipLen, hw))}Z`;
   return [outline, line(at(len - 2.4, -hw), at(len - 2.4, hw))];
 }
 
@@ -219,6 +224,26 @@ function syncGlyph([cx, cy], r, len = 2.6, s0 = 20, s1 = 30, t = 0) {
   const a = arc(cx, cy, r, 180 + s0 + t, 360 - s1 + t);
   const b = arc(cx, cy, r, s0 + t, 180 - s1 + t);
   return [a.d, head(a.end, a.tangent, len), b.d, head(b.end, b.tangent, len)];
+}
+
+/**
+ * The area a custom badge clears when its glyph reaches past the ring (the sync arrowheads): the
+ * ring and the corners of `ds` that lie beyond it, joined by tangents (their convex hull). The base
+ * keeps a clearance of paper from the whole glyph at every weight, and its cut edge stays one smooth
+ * curve (clearing the ring and each arrowhead on its own left a point of ink where the two met).
+ */
+function ringHull(ds) {
+  const out = ds
+    .flatMap((d) => d.match(/-?[\d.]+/g).map(Number).flatMap((v, i, a) => (i % 2 ? [] : [[v, a[i + 1]]])))
+    .filter((p) => Math.hypot(p[0] - BC[0], p[1] - BC[1]) > BR)
+    .map((p) => ({ p, a: ang(BC, p), w: deg(Math.acos(BR / Math.hypot(p[0] - BC[0], p[1] - BC[1]))) }))
+    .sort((u, v) => u.a - v.a);
+  let s = `M${pt(polar(...BC, BR, out[0].a - out[0].w))}`;
+  out.forEach((q, i) => {
+    const next = out[(i + 1) % out.length];
+    s += `L${pt(q.p)}L${pt(polar(...BC, BR, q.a + q.w))}${arcTo(...BC, BR, q.a + q.w, next.a - next.w + (i === out.length - 1 ? 360 : 0))}`;
+  });
+  return `${s}Z`;
 }
 
 /** Heart: two lobes that cross at the top and two tangents that run down to the point. */
@@ -269,9 +294,13 @@ const OWN = {
     const handle16 = line(at(1, 1), at(3, 3));
     return own([lensC, handle], `${RING}M${pt(p)}L${pt(end)}Z`, { solid: [lensC], wire: [handle] }, [lens16, handle16], { solid: [lens16], wire: [handle16] });
   },
-  // Sync: the arc arrows fill the badge circle (in the fill they stay lines).
+  // Sync: the arc arrows fill the badge circle (in the fill they stay lines). Their outer
+  // arrowheads reach past the ring, so the cleared area is the ring's hull with them (with the ring
+  // alone they met the base at bold); turned 6°, the upper one lies level with the top of the ring
+  // and the hull's edge runs flat from it.
   sync() {
-    return own(syncGlyph(BC, 3.75, 2.4, 25, 35), RING, null, [
+    const glyph = syncGlyph(BC, 3.75, 2.4, 25, 35, 6);
+    return own(glyph, ringHull([glyph[1], glyph[3]]), null, [
       `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${N(px(13))}`,
       line(at(1, -3), at(2, -2), at(1, -1)),
       `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${N(px(9))}`,
@@ -279,9 +308,10 @@ const OWN = {
     ]);
   },
   // Person peeking in from the corner (share). It also clears the badge circle: with only the head
-  // and shoulders, a piece of the base's edge was left between the two.
+  // and shoulders, a piece of the base's edge was left between the two. Head and shoulders 2.45
+  // apart (centerlines), as in the core `person`: at 1.9 (a head of r 1.85) they met at bold.
   person() {
-    const h = circ(BC[0], 14.75, 1.85);
+    const h = circ(BC[0], 14.45, 1.6);
     const s = `M${pt([BC[0] - 3.25, 21.75])}${arcTo(BC[0], 21.75, 3.25, 180, 360)}Z`;
     const d16 = [circ(17.25, 14.25, 1.5), 'M14.25 21.75A3 3 0 0 1 20.25 21.75Z'];
     return own([h, s], `${RING}${h}${s}`, { solid: [h, s] }, d16, { solid: d16 });
@@ -502,9 +532,9 @@ function folder({ x = 2.75, y = 4.5, w = 18.5, h = 15, s = 1 } = {}) {
   return `M${pt([x, y + r])}a${R} ${R} 0 0 1 ${R} -${R}${tab}H${N(x + w - r)}a${R} ${R} 0 0 1 ${R} ${R}V${N(y + h)}H${N(x + r)}a${R} ${R} 0 0 1 -${R} -${R}Z`;
 }
 const DIV = line([2.75, 10.25], [21.25, 10.25]); // the front fold, as in the core
-// With a badge, the folder moves up 0.75: the fold sits 3.25 from the circle and the badge doesn't
-// bite into it.
-const FOLDER = [folder({ y: 3.75 }), line([2.75, 9.5], [21.25, 9.5])];
+// With a badge, the folder moves up 1.25: the fold sits 4 from the circle and stays clear of the
+// area the badge clears at every weight (moved up 0.75, it met the padlock's at bold).
+const FOLDER = [folder({ y: 3.25 }), line([2.75, 9], [21.25, 9])];
 
 withBadge('folder-plus', ['carpeta nueva', 'agregar carpeta', 'crear', 'new folder', 'add folder'], FOLDER, badge('plus'));
 withBadge('folder-minus', ['quitar carpeta', 'eliminar carpeta', 'menos', 'remove folder', 'delete folder'], FOLDER, badge('minus'));
@@ -560,16 +590,17 @@ add('folders', ['carpetas', 'varias carpetas', 'directorios', 'folders', 'direct
   line([5.75, 13.25], [21.25, 13.25]),
   `M2.75 14.65V7.35a2.85 2.85 0 0 1 2.85-2.85H15.4`,
 ]);
-// Tree: a root folder and two child folders hanging from its trunk.
+// Tree: a root folder and two child folders hanging from its trunk. The folders are 8.5 wide so the
+// root's corner stays 2.5 from the first child (9 wide, 1.9 apart, they met at bold).
 {
   const s = 0.5;
-  const small = (x, y) => folder({ x, y, w: 9, h: 4.75, s });
+  const small = (x, y) => folder({ x, y, w: 8.5, h: 4.75, s });
   add('folder-tree', ['árbol de carpetas', 'jerarquía', 'estructura', 'folder tree', 'directory tree'], [
     small(2.75, 2.75),
-    small(12.25, 8.75),
-    small(12.25, 16.5),
-    roundline([[5.75, 7.5], [5.75, 19.5], [12.25, 19.5]], [0, 2.25, 0]),
-    line([5.75, 11.75], [12.25, 11.75]),
+    small(12.75, 8.75),
+    small(12.75, 16.5),
+    roundline([[5.75, 7.5], [5.75, 19.5], [12.75, 19.5]], [0, 2.25, 0]),
+    line([5.75, 11.75], [12.75, 11.75]),
   ]);
 }
 
@@ -634,13 +665,11 @@ add('cloud-lock', ['nube privada', 'candado', 'cifrado', 'cloud lock', 'secure c
   sq(CX - 3, 11, 6, 4.25, 1.4, { square: ['br'] }),
   `M${N(CX - 1.5)} 11V9.75${arcTo(CX, 9.75, 1.5, 180, 360)}V11`,
 ]);
-{
-  // The core bolt scaled down: a six-vertex zigzag with soft corners.
-  const V = [[13.1, 4.25], [5.4, 12.85], [11.35, 12.85], [10.9, 19.75], [18.6, 11.15], [12.65, 11.15]];
-  const k = 0.5;
-  const P = V.map(([x, y]) => [CX + (x - 12) * k, 12.2 + (y - 12) * k]);
-  add('cloud-bolt', ['nube rápida', 'rayo', 'instantáneo', 'cloud fast', 'edge'], [cloud(), roundpoly(P, [0.5, 0.6, 0.3, 0.5, 0.6, 0.3])]);
-}
+// Bolt: drawn as the set draws a small one (the storm, the charger, the battery, and this icon at
+// 16 px), a stroke that drops at 45°, steps across and drops again, centered in the cloud's open
+// space and 3 from its outline. The core's closed bolt at half size had no room inside: its two
+// halves met at regular and parted at light.
+add('cloud-bolt', ['nube rápida', 'rayo', 'instantáneo', 'cloud fast', 'edge'], [cloud(), roundline([[14, 8.75], [10.75, 12], [14, 12], [10.75, 15.25]], [0, 0.5, 0.5, 0])]);
 // Offline: the diagonal cuts the cloud with 1.5 of clearance.
 add('cloud-off', ['sin nube', 'sin conexión', 'desconectado', 'cloud off', 'offline'], [cloud(0, [cap([3.75, 4.25], [20.25, 20.75])]), line([3.75, 4.25], [20.25, 20.75])]);
 // The set's cloud inside the file (the largest that fits with 1.5 of clearance).
@@ -648,12 +677,13 @@ add('file-cloud', ['archivo en la nube', 'en línea', 'almacenado en la nube', '
 
 // ── Storage ───────────────────────────────────────────────────────────────────────────────────
 // Hard drive: the open drive, with its platter, spindle and read arm; the platter is cut under the
-// arm with 1.5 of clearance and sits 3 from the case and from the arm's pivot.
+// arm with 1.5 of clearance and sits 3 from the case. The pivot is a ring of r 1.35, 2.4 from the
+// case: smaller, its hole closed at bold (r 1.1 left a 0.05 hole at 2.1).
 {
   const c = [12, 10];
   const r = 4.25;
-  const pivot = [15.75, 17.75];
-  const pr = 1.1;
+  const pivot = [15.5, 17.5];
+  const pr = 1.35;
   const tip = [14.25, 12.75];
   const from = polar(...pivot, pr, deg(Math.atan2(tip[1] - pivot[1], tip[0] - pivot[0])));
   add('hard-drive', ['disco duro', 'almacenamiento', 'disco', 'hard drive', 'storage'], [
@@ -835,7 +865,8 @@ add('newspaper', ['periódico', 'noticias', 'prensa', 'revista', 'newspaper', 'n
 // arrow's clearance, so the silhouette doesn't change. `lines` stays a line with 1.5 of clearance
 // around it; `wire`, a line attached to the fill (the strips coming out of the shredder, the tree's
 // trunk, the trash can's lid, which, as in `trash` from `edicion`, has its handle closed and
-// solid).
+// solid). The folder behind in `folders` is a `wire` too: it stands 3 from the front one, as in the
+// outline, and a clearance of paper reached into the front folder at bold and opened its fold.
 const all = (name) => icons[name].d.map((_, i) => i);
 const FILL = {
   files: { solid: [0], lines: [1] },
@@ -843,7 +874,7 @@ const FILL = {
   'file-shredder': { solid: [0, 1], wire: [2, 3, 4, 5], close: true },
   'file-import': { solid: [0], lines: [1, 2], close: true },
   'file-export': { solid: [0], lines: [1, 2], close: true },
-  folders: { solid: [0], cut: [1], lines: [2] },
+  folders: { solid: [0], cut: [1], wire: [2] },
   'folder-tree': { solid: [0, 1, 2], wire: [3, 4] },
   'cloud-upload': { solid: [0], lines: [1, 2], close: true },
   'cloud-download': { solid: [0], lines: [1, 2], close: true },
@@ -1002,7 +1033,7 @@ const MOTION = {
   'file-star': { effect: 'beat', parts: ['badge'], origin: BC },
   'folder-star': { effect: 'beat', parts: ['badge'], origin: BC },
   'file-sparkle': { effect: 'beat', parts: ['sparkle'], origin: [12, 12] },
-  'cloud-bolt': { effect: 'beat', parts: ['bolt'], origin: [CX, 12.2] },
+  'cloud-bolt': { effect: 'beat', parts: ['bolt'], origin: [CX, 12] },
   'file-scan': { effect: 'beat', parts: ['frame'], origin: [12, 12] },
   'file-cloud': { effect: 'float', parts: ['cloud'], vector: [0, -1.5] },
   'folder-cloud': { effect: 'float', parts: ['badge'], vector: [0, -1.5] },

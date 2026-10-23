@@ -592,15 +592,16 @@ const icons = {
     tags: ['sitio seguro', 'https', 'conexión cifrada', 'página protegida', 'secure site', 'ssl'],
     d: [SQUARE, line([3.25, 7.75], [20.75, 7.75]), ...padlock(9.25, 13.75, 5.5, 4)],
   },
-  // The full card with two lines; the seal sits inside, 3 from the edges and from the lines, and
-  // its ribbons hang down over the bottom edge (custom badge: the engine clears the card along
-  // their path, head-on).
+  // The full card with two lines; the seal sits inside, 3 from the edges, and its ribbons hang
+  // down over the bottom edge (custom badge: the engine clears the card along their path,
+  // head-on). The lines end 6.19 or more from the seal's center: in the fill, a line's cut and the
+  // seal's clearance stay apart from 0.9 to 2.1.
   certificate: {
     tags: ['certificado', 'diploma', 'ssl', 'acreditación', 'certificate', 'credential'],
-    d: [sq(2.5, 4, 19, 14, 3.25, BR), line([6, 8], [12, 8]), line([6, 11.5], [9.75, 11.5])],
+    d: [sq(2.5, 4, 19, 14, 3.25, BR), line([6, 8], [11.75, 8]), line([6, 11.5], [9.75, 11.5])],
     badge: (() => {
-      const seal = circ(15.25, 12.5, 2.5);
-      const tails = [line(polar(15.25, 12.5, 2.5, 115), [13.5, 21.25]), line(polar(15.25, 12.5, 2.5, 65), [17, 21.25])];
+      const seal = circ(16, 12.5, 2.5);
+      const tails = [line(polar(16, 12.5, 2.5, 115), [14.25, 21.25]), line(polar(16, 12.5, 2.5, 65), [17.75, 21.25])];
       return own([seal, ...tails], [seal, ...tails.map(trace)].join(''), { solid: [seal], wire: tails });
     })(),
   },
@@ -933,13 +934,16 @@ const icons = {
     tags: ['herramientas', 'mantenimiento', 'reparar', 'servicio', 'tools', 'maintenance', 'repair'],
     // A long-handled wrench so the crossing falls mid-grip and not at the neck (otherwise the head
     // was left loose in two pieces). The full wrench; the screwdriver passes in front with a longer
-    // shaft (custom badge) and the engine clears the wrench along its path.
+    // shaft (custom badge) and the engine clears the wrench along its path. At 76% the ferrule is
+    // a collar across the shaft just past the handle's end (0.5 in the screwdriver's units), one
+    // piece of ink with it at every weight: the screwdriver's ferrule box left a hole that closed
+    // at bold.
     ...(() => {
       const key = place(xf(wrench(16), { s: 0.8, o: [0, 0] }), -45, [6.1, 0]);
-      const driver = [DRIVER[0], DRIVER[1], line([10.75, 0], [23.25, 0])].map((d) => place(xf(d, { s: 0.76, o: [0, 0] }), -135, [12.35, 0]));
+      const driver = [DRIVER[0], line([9, -1.75], [9, 1.75]), line([9, 0], [23.25, 0])].map((d) => place(xf(d, { s: 0.76, o: [0, 0] }), -135, [12.35, 0]));
       const [k, ...dr] = center([key, ...driver]);
-      // Fill: the handle, and the ferrule closed against it; the shaft, attached
-      return { d: [k], badge: own(dr, [dr[0], trace(dr[1]), trace(dr[2])].join(''), { solid: [dr[0], `${dr[1]}Z`], wire: [dr[2]] }) };
+      // Fill: the handle; the collar and the shaft, attached
+      return { d: [k], badge: own(dr, [dr[0], trace(dr[1]), trace(dr[2])].join(''), { solid: [dr[0]], wire: [dr[1], dr[2]] }) };
     })(),
   },
   'traffic-cone': {
@@ -993,10 +997,13 @@ const icons = {
       return own([g, dot(...BC)], circ(...BC, 4.25), { solid: [g], cut: [dot(...BC)] });
     })(),
   },
-  // The core key rotated (the bow at the top right) and at 90%, more than 1.5 from the plus.
+  // The core key rotated (the bow at the top right) and at 90%, more than 1.5 from the plus. Its
+  // hole is a dot() of its own (transformed, the core's dot is no longer a circle the engine
+  // recognizes and was stroked as a ring), 1.05 from the bow's center so it stays clear of the
+  // ring at bold.
   'key-plus': {
     tags: ['agregar llave', 'nueva credencial', 'registrar passkey', 'add key', 'new credential', 'add passkey'],
-    d: KEY.map((d) => xf(d, { deg: 180, s: 0.9, dx: -2, dy: -2 })),
+    d: KEY.map((d, i) => (i === 1 ? dot(14.25, 5.75, 0.5) : xf(d, { deg: 180, s: 0.9, dx: -2, dy: -2 }))),
     badge: badge('plus'),
   },
   // The core globe at 76% at the top left: the engine's padlock only takes over its outline and
@@ -1022,13 +1029,17 @@ const icons = {
   },
   radar: {
     tags: ['monitoreo', 'detección', 'radar', 'escaneo de red', 'detection', 'monitoring', 'sweep'],
-    d: [CIRCLE, circ(12, 12, 4.25), line([12, 12], polar(12, 12, 9, -50)), dot(...polar(12, 12, 6.6, 145))],
+    // A small inner ring (the hub) so the echo fits between the rings with room at every weight:
+    // with the ring at 4.25 the echo touched both rings at bold and the inner one at regular.
+    d: [CIRCLE, circ(12, 12, 2.75), line([12, 12], polar(12, 12, 9, -50)), dot(...polar(12, 12, 5.875, 145))],
   },
+  // The pulse in one piece, 3 or more inside the heart: its dip went closer than 3 to the heart's
+  // side and the clip cut it in two.
   'heart-pulse': {
     tags: ['salud del sistema', 'estado', 'monitoreo', 'latido', 'health', 'health check', 'uptime'],
     d: (() => {
       const h = heart(12, 8.75, 4.25, 4.65, 20.5);
-      return [h, inside(line([2, 12.5], [9.25, 12.5], [10.75, 9.75], [13.25, 15.25], [14.75, 12.5], [22, 12.5]), h, 3)];
+      return [h, inside(line([2, 12], [9.25, 12], [10.75, 9.75], [13.25, 14.25], [14.75, 12], [22, 12]), h, 3)];
     })(),
   },
   stethoscope: {
@@ -1100,14 +1111,15 @@ const icons = {
   },
   language: {
     tags: ['idioma', 'región', 'localización', 'traducción', 'language', 'locale', 'localization'],
-    // The core globe at two thirds (r 6) at the top left; the speech bubble sits on top (custom
-    // badge) and the engine clears the globe. That way the equator and the meridian stay 3 or more
-    // from the drop: only the outline passes behind it, and crosses it head-on. Lines 3 from the
-    // edge.
-    d: nucleo.icons.globe.d.map((d) => xf(d, { s: 2 / 3, dx: -4, dy: -4 })),
+    // The core globe at 68% (r 6.12) at the top left; the speech bubble sits on top (custom badge)
+    // and the engine clears the globe. Only the outline passes behind it, and crosses it head-on:
+    // the equator and the meridian stay 3.4 or more from the drop. The drop sits 0.5 right of the
+    // diagonal, away from the meridian's lower flank: from 0.9 to 2.1 the clearance still cuts the
+    // ring through, and in the fill it stays apart from the meridian's cut. Lines 3 from the edge.
+    d: nucleo.icons.globe.d.map((d) => xf(d, { s: 0.68, dx: -4, dy: -4 })),
     badge: (() => {
-      const bubble = drop(16.5, 16.5, 5.25);
-      const rows = [line([14.85, 15], [18.15, 15]), line([14.85, 18], [17.1, 18])];
+      const bubble = drop(17, 16.5, 5.25);
+      const rows = [line([15.35, 15], [18.65, 15]), line([15.35, 18], [17.6, 18])];
       return own([bubble, ...rows], bubble, { solid: [bubble], cut: rows });
     })(),
   },
@@ -1162,12 +1174,13 @@ const icons = {
   wheelchair: {
     tags: ['silla de ruedas', 'acceso accesible', 'discapacidad', 'movilidad reducida', 'wheelchair', 'accessible', 'disability'],
     // Head and wheel in full; the body (back, seat and leg) sits on top as a custom badge and the
-    // engine clears the wheel along its path. The head, 3 from the back.
+    // engine clears the wheel along its path. The head, 3 from the back. The wheel ends well inside
+    // the leg's clearance (0.9 from its path): ending 1.3 away, it peeked out of it at bold.
     ...(() => {
       const x = 9.75;
       const leg = rline([[x, 9], [x, 13.5], [x + 5, 13.5], [x + 7.25, 19.75], [x + 9.5, 19.75]], [0, 1, 0.75, 0.75, 0]);
       const seat = line([x, 11], [x + 4, 11]);
-      return { d: [circ(x, 4.35, 1.6), arc(x + 1, 15.25, 5.75, 205, -10).d], badge: own([leg, seat], trace(leg) + trace(seat)) };
+      return { d: [circ(x, 4.35, 1.6), arc(x + 1, 15.25, 5.75, 205, 5).d], badge: own([leg, seat], trace(leg) + trace(seat)) };
     })(),
   },
 };

@@ -4,6 +4,22 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Every icon holds its structure from 0.9 to 2.1
+- **The drawing round** (four agents in parallel, one group of categories each, every result reviewed on its weights sheet): 44 structural warnings fixed in the drawing. What the owner should look at:
+  - `radar`: the inner ring is now a hub (r 2.75), so the echo fits between the rings at bold;
+  - `cloud-bolt`: the half-size core bolt couldn't keep its inside open; it is now the zigzag the set uses for small bolts (storm, charger, battery);
+  - `video-call-off`: its slash runs 0.53 below the canvas diagonal, so its clearance misses the lens's joint at every weight;
+  - `rocket`'s window is a dot; `key-plus`'s hole is a dot, as in the core key;
+  - the 16 folders with a badge sit 0.5 higher (the fold cleared the padlock);
+  - one sync badge for folder-sync, cloud-sync, and database-sync: the arrows at full size, turned 6°, with the clearance around their heads.
+- **Fixed on the way:** `clip()` drew a cloud's hidden pieces again (cloud-off's arc crossed the slash at every weight); the core `edit` pencil's end was a flattened half circle.
+- **Half circles are exact** ([decision 62](./decisions.md#weights-22-oct-2026)): at any weight but the masters' three, every dot was a stadium.
+- **A cut's ends are found:** the edge test sampled a long side at its quarter points only, so a cut ending partway along it was taken as interior (traffic-cone, magnet, the radar's sweep). Points are now at most 0.25 apart.
+- **Lines that stand apart don't bite the fill** ([decision 63](./decisions.md#weights-22-oct-2026)): the sun, the sunrise, rain, snow, and every fill with a stroke 3 from it kept a 0.3 bite at bold.
+- **Masters:** four ways to make points correspond, the first that passes ([decision 64](./decisions.md#weights-22-oct-2026)); a failed check says where. A change that capped following's stations broke two icons and was undone.
+- **Workarounds dropped:** cuts that agents had run past an outline (stacked bars, flask, test tube, compose's band, person-circle's shoulders) went back to the drawing once the engine found their ends.
+- QA: 87 → 27 warnings, all interpolations (masters work); no structural warning left, and cash-register is under the density line. 1,838 of 1,865 variants have compatible masters (98.6 %). Regular, compared pixel by pixel against the previous commit: only the drawings above change, plus paperclip's and the pencils' half circles. Tests: 42.
+
 ## 22 Oct 2026 — The core holds every weight; a fill's lines keep paper
 - **`scripts/weights-sheet.mjs <cat>`:** each variant QA's `weights` flags, at 0.9, 1.5, and 2.1, with its contours per weight (`--all` for the whole category). It is how the defects below were read.
 - **The person** (and every `person-*` that reuses it): head and shoulders 2.45 apart center to center, so they stay apart up to 2.1; the drawing looks the same.

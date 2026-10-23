@@ -1450,14 +1450,16 @@ const icons = {
     tags: ['tocadiscos', 'tornamesa', 'vinilo', 'turntable', 'dj', 'record player'],
     // Landscape cabinet (it was square and too heavy) and a full platter with its spindle; the
     // tonearm, from the pivot to the record, passes over as a badge and the engine clears the
-    // platter with 1.5 of clearance.
+    // platter with 1.5 of clearance. The stylus sits 5.15 from the spindle: close enough that the
+    // clearance cuts the platter through at bold, far enough that it doesn't take the spindle with
+    // it (at 4.65 the spindle went at bold).
     d: [sq(2.5, 5, 19, 14, 3.5, BR), circ(9.5, 12, 4), dot(9.5, 12)],
     badge: (() => {
       const tone = roundline(
         [
           [17.5, 8.25],
           [17.5, 12.75],
-          [13.25, 14.75],
+          [14, 14.5],
         ],
         [0, 1, 0],
       );
@@ -1512,11 +1514,12 @@ const icons = {
   'image-sparkle': {
     tags: ['imagen con ia', 'generar imagen', 'foto generada', 'editar con ia', 'ai image', 'generate image', 'ai photo'],
     // The photo and, in the top corner, the AI spark (the one in datos/sparkle) as a custom piece:
-    // the engine clears the frame with 1.5 of clearance. No sun: the spark takes its place, 3 from
-    // the mountain peak (any closer and the clearing bit into it).
+    // the engine clears the frame with 1.5 of clearance. No sun: the spark takes its place, centered
+    // on the frame's top edge and 3.7 from the mountain (at 3 the clearing grazed the mountain at
+    // regular, and in the fill it cut off the sky behind the peak at bold).
     d: [IMAGE_FRAME, image()[2]],
     badge: (() => {
-      const spark = aiSpark(18.75, 5.5, 3);
+      const spark = aiSpark(19.25, 5, 3);
       return { d: [spark], knock: spark, fill: { solid: [spark] } };
     })(),
   },
@@ -1652,7 +1655,11 @@ for (const [name, spec] of Object.entries(FILL)) {
   // The film: the perforations stay as blocks; only the outer end of each crossbar is extended (the
   // inner end touches the rail and must not bite into the center strip)
   icons.film.fill = { solid: [d('film')[0]], cut: [x('film', 1), x('film', 2), x('film', 3, 1, 0), x('film', 4, 0, 1), x('film', 5, 1, 0), x('film', 6, 0, 1)] };
-  icons.clapperboard.fill = { solid: d('clapperboard').slice(0, 2), cut: [2, 3, 4].map((i) => x('clapperboard', i)) };
+  // The clapperboard's arm meets the body at the hinge, where the wedge between them is thinner than
+  // a stroke: the first stripe stops short of the arm's lower edge (through it, it bit the body and
+  // left the next block touching the body at some weights and not at others), and the second one
+  // runs only 0.7 past it, so its cap stays off the body at bold.
+  icons.clapperboard.fill = { solid: d('clapperboard').slice(0, 2), cut: [x('clapperboard', 2, -1), x('clapperboard', 3, 0.7), x('clapperboard', 4)] };
   // The aperture: the ring stays whole; the blades are knocked out up to 0.75 short of its line
   icons.aperture.fill = { solid: [d('aperture')[0]], cut: aperture(8.25).slice(1) };
   // Whatever is a hole in the outline (the play triangle, the stop square, the disc's hole, the
@@ -2013,7 +2020,7 @@ icons['wireless-charging'].motion = { effect: 'beat', parts: ['bolt', 'wave'], o
 icons.equalizer.motion = { effect: 'beat', origin: [12, 20] };
 icons['audio-waveform'].motion = { effect: 'beat', origin: [12, 12] };
 icons['camera-focus'].motion = { effect: 'beat', parts: ['lens'], origin: [12, 12] };
-icons['image-sparkle'].motion = { effect: 'beat', parts: ['badge'], origin: [18.75, 5.5] };
+icons['image-sparkle'].motion = { effect: 'beat', parts: ['badge'], origin: [19.25, 5] };
 icons['fast-forward'].motion = { effect: 'slide', vector: [2, 0] };
 icons.rewind.motion = { effect: 'slide', vector: [-2, 0] };
 icons['skip-forward'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };

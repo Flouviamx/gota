@@ -137,6 +137,26 @@ const DB_D = [DB.body, DB.lid, DB.band];
 // Custom badges, in the same place and with the same ring as the engine's (center 17.25, r 4.25).
 const BC = [17.25, 17.25];
 const RING = circ(...BC, 4.25);
+/**
+ * The badge ring's hull with the points that reach past it (as in Archivos): from each point, the
+ * tangents to the ring, and the ring's arcs between them.
+ */
+function ringHull(ds) {
+  const BR = 4.25;
+  const ang = (p) => (Math.atan2(p[1] - BC[1], p[0] - BC[0]) * 180) / Math.PI;
+  const arcTo = (a0, a1) => arc(...BC, BR, a0, a1).d.replace(/^M[^A]*/, '');
+  const out = ds
+    .flatMap((d) => d.match(/-?[\d.]+/g).map(Number).flatMap((v, i, a) => (i % 2 ? [] : [[v, a[i + 1]]])))
+    .filter((p) => Math.hypot(p[0] - BC[0], p[1] - BC[1]) > BR)
+    .map((p) => ({ p, a: ang(p), w: (Math.acos(BR / Math.hypot(p[0] - BC[0], p[1] - BC[1])) * 180) / Math.PI }))
+    .sort((u, v) => u.a - v.a);
+  let s = `M${pt(polar(...BC, BR, out[0].a - out[0].w))}`;
+  out.forEach((q, i) => {
+    const next = out[(i + 1) % out.length];
+    s += `L${pt(q.p)}L${pt(polar(...BC, BR, q.a + q.w))}${arcTo(q.a + q.w, next.a - next.w + (i === out.length - 1 ? 360 : 0))}`;
+  });
+  return `${s}Z`;
+}
 const OWN = {
   // Magnifier: the lens is the badge circle (r 3.25) and the handle runs toward the corner.
   search() {
@@ -147,11 +167,15 @@ const OWN = {
     // Filled: the lens solid and the handle attached to it, still a line
     return { d: [lens, handle], knock: `${RING}M${pt(p)}L${pt(end)}Z`, fill: { solid: [lens], wire: [handle] } };
   },
-  // Sync: two arc arrows that fill the badge circle (in the fill they stay lines).
+  // Sync: the same badge as Archivos' folder-sync and cloud-sync. The arc arrows fill the badge
+  // circle (in the fill they stay lines); their outer arrowheads reach past the ring, so the cleared
+  // area is the ring's hull with them (with the ring alone they met the base at bold); turned 6°,
+  // the upper one lies level with the top of the ring and the hull's edge runs flat from it.
   sync() {
-    const a = arc(...BC, 3.75, 205, 325);
-    const b = arc(...BC, 3.75, 25, 145);
-    return { d: [a.d, head(a.end, a.tangent, 2.4), b.d, head(b.end, b.tangent, 2.4)], knock: RING };
+    const a = arc(...BC, 3.75, 211, 331);
+    const b = arc(...BC, 3.75, 31, 151);
+    const heads = [head(a.end, a.tangent, 2.4), head(b.end, b.tangent, 2.4)];
+    return { d: [a.d, heads[0], b.d, heads[1]], knock: ringHull(heads) };
   },
 };
 
@@ -625,6 +649,8 @@ const icons = {
   },
   'rocket': {
     tags: ['cohete', 'lanzamiento', 'despliegue', 'deploy'],
+    // The window is a dot: a ring (r 1.6) sat 1.64 from the walls, center to center, and merged
+    // with them at bold; there is no room in the body for a ring that keeps its hole and its air.
     d: (() => {
       const k = 1.08;
       const T = (p) => rot([12 + (p[0] - 12) * k, 12 + (p[1] - 12) * k], [12, 12], 45);
@@ -632,7 +658,7 @@ const icons = {
         tp([['M', [9, 15.25]], ['L', [9, 9.5]], ['C', [9, 6.5], [10.25, 4.25], [12, 2.75]], ['C', [13.75, 4.25], [15, 6.5], [15, 9.5]], ['L', [15, 15.25]], ['Z']], T),
         tp([['M', [9, 11.75]], ['L', [6.5, 14.25]], ['L', [6.5, 17.5]], ['L', [9, 15.25]]], T),
         tp([['M', [15, 11.75]], ['L', [17.5, 14.25]], ['L', [17.5, 17.5]], ['L', [15, 15.25]]], T),
-        circ(...T([12, 9.25]), 1.6),
+        dot(...T([12, 9.25])),
         tp([['M', [12, 18.25]], ['L', [12, 20.5]]], T),
       ];
     })(),
