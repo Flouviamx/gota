@@ -5,14 +5,14 @@
 ## What it is
 Gota is Flouvia's icon library (`@flouvia/gota`, MIT license): drawn by hand with its own geometry engine, with continuous corners, a single-color 1.5 stroke, and a signature — containers have a square bottom-right corner, like the drop in Flouvia's logomark, and speech bubbles are the drop itself (*gota* is Spanish for "drop"). It was born on 21 Oct 2026 from the `flouvia-web` set ([history](./docs/history.md)).
 
-**The v1 goal: 10,000 icons, and nothing is published before then** ([phased plan](./docs/roadmap.md)). The public site will live at `gota.flouvia.com`.
+**The v1 goal: 10,000 icons** ([phased plan](./docs/roadmap.md)). The source is public at `github.com/Flouviamx/gota` (since 23 Oct 2026, unannounced); npm, the release ZIP, and the announcement wait for v1. The site is `gota.flouvia.com`.
 
 ## Required first steps
 1. `git status --short`: preserve other people's work (agents or parallel sessions may be editing `src/icons/`).
 2. Read [`docs/README.md`](./docs/README.md) and open the documents its matrix calls for; to draw, always [`DESIGN.md`](./DESIGN.md) and the core set (`src/icons/nucleo.mjs` and its sheets).
 3. Check the status in [`docs/roadmap.md`](./docs/roadmap.md) and the decisions already made in [`docs/decisions.md`](./docs/decisions.md) before proposing anything: a rejected idea is not reopened without a new reason.
 
-When you finish: the work goes into local commits and gets an entry in [`docs/history.md`](./docs/history.md). There is no remote yet: creating the GitHub repo and publishing to npm require the owner's OK.
+When you finish: the work goes into commits, pushed to `main`, and gets an entry in [`docs/history.md`](./docs/history.md). The repository is public: nothing of Flouvia's brand (its logo, its typeface) and no secret ever goes in it. Publishing to npm requires the owner's OK.
 
 ## Commands
 ```bash
@@ -42,7 +42,7 @@ Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different pa
 - **The signature** (square bottom-right corner on containers, `drop()` for bubbles) and the keylines from [`DESIGN.md`](./DESIGN.md) on every icon.
 - **Data, not files:** each icon is a definition in `src/icons/<category>.mjs`; every SVG, package, and sheet is generated. `svg/`, `dist/`, and `previews/` never go into the repo.
 - **No clutter:** no test icons, temporary files, or one-off scripts in the repo.
-- **Nothing is published before 10,000**, and publishing requires zero QA warnings and the owner's review.
+- **npm and the announcement wait for 10,000**, with zero QA warnings and the owner's review; the GitHub source is public meanwhile, without promotion.
 - Icon names in English kebab-case.
 - All repository text is in English (docs, comments, scripts, commit messages); icon labels and search keywords stay multilingual (src/i18n, tags). The owner is addressed in Spanish in conversation.
 

@@ -4,6 +4,10 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Phase 2 closes; the source goes public
+- **2.6 closes:** the owner built the Figma library with the plugin. Phase 2 is done; what stays open from it is optional (the last 12 icons without clean in-between weights in the variable font, and drawings of their own for a progress bar and liquids).
+- **GitHub, public and unannounced** ([decision 78](./decisions.md#outputs-23-oct-2026)): `github.com/Flouviamx/gota`, so gota.flouvia.com links its documentation. Before the first push, the copy of Flouvia's old logo (used by the Figma cover until it read the brand from `flouvia-web`) was taken out of the history.
+
 ## 23 Oct 2026 — Flouvia's new logo on the cover
 - The owner moved Flouvia's logo to Flouvia Sans (the same isotype), across flouvia.com. The Figma cover now reads the logo and "Gota" in that typeface from the private `flouvia-web` when it is drawn, and the copy of the old logo left this repository: nothing of Flouvia's brand is kept here.
 
