@@ -7,7 +7,7 @@ import { test } from 'node:test';
 import * as remote from '../api/mcp.mjs';
 import { autoWeight, iconData, icons, pick, render, sprite, svg, toSvg, WEIGHTS } from '../dist/index.js';
 import * as perIcon from '../dist/icons/index.js';
-import { changeOf, frames, morpher, transitionOf } from '../dist/morph.js';
+import { changeOf, frames, liquid, morpher, transitionOf } from '../dist/morph.js';
 import { fold, searchIcons } from '../dist/search.js';
 
 const names = (q, o) => searchIcons(q, o).map((r) => r.name);
@@ -101,6 +101,27 @@ test('auto weight follows the text on the named weights\' scale: Light 300, Regu
   assert.ok(Math.abs(autoWeight(500) - 1.7) < 1e-9 && Math.abs(autoWeight(350) - 1.2) < 1e-9);
   // Gota's range ends at both: lighter and heavier text keep the ends
   assert.deepEqual([autoWeight(100), autoWeight(900)], [0.9, 2.1]);
+});
+
+test('outline ↔ fill: the liquid, from one drawing to the other, one color, only where there is a fill', () => {
+  const opts = { style: 'fill', weight: 1.5, id: 'q' };
+  const rise = changeOf(icons, { name: 'heart', style: 'outline' }, { name: 'heart', style: 'fill' }, opts);
+  assert.deepEqual(rise.way, { liquid: 'rise' });
+  // The last frame is the drawing itself; halfway, both drawings, each clipped to its side
+  assert.equal(rise.frame(1), render(icons.heart, { style: 'fill', weight: 1.5, id: 'qt', animate: null, slash: false }));
+  const half = rise.frame(0.5);
+  assert.equal((half.match(/<clipPath /g) ?? []).length, 2);
+  assert.ok(half.includes(render(icons.heart, { style: 'outline', weight: 1.5, id: 'qt-lo', animate: null, slash: false })));
+  assert.ok(half.includes(render(icons.heart, { style: 'fill', weight: 1.5, id: 'qt-lf', animate: null, slash: false })));
+  assert.doesNotMatch(half, /opacity/);
+  // At the start the surface sits under the ink: the fill shows nowhere
+  const start = liquid(icons.heart, true, { weight: 1.5, id: 'q' })(0);
+  const below = start.match(/id="q-lb"><path d="M([^"]+)"/)[1];
+  assert.ok(below.split('L').slice(0, 53).every((pt) => Number(pt.split(' ')[1]) >= 20));
+  assert.deepEqual(changeOf(icons, { name: 'heart', style: 'fill' }, { name: 'heart', style: 'outline' }, { ...opts, style: 'outline' }).way, { liquid: 'drain' });
+  assert.deepEqual(changeOf(icons, { name: 'heart', style: 'outline' }, { name: 'heart', style: 'fill' }, opts, 'replace'), { way: { replace: true }, frame: null });
+  assert.equal(changeOf(icons, { name: 'ab-test', style: 'outline' }, { name: 'ab-test', style: 'fill' }, opts), null);
+  assert.equal(changeOf(icons, { name: 'heart', style: 'fill' }, { name: 'heart', style: 'fill' }, opts), null);
 });
 
 test('MCP server: initialize, list tools, search and get an icon', async () => {

@@ -34,9 +34,9 @@ Por nombre, con el set completo (prototipos, nombres que llegan en tiempo de eje
 - **Valores:** `value={0.6}` en wifi, señal, batería, volumen, un temporizador, un medidor, una brújula…: se encienden niveles, un anillo se dibuja hasta ahí, una aguja gira, y un valor nuevo se anima.
 - **Peso del texto:** `weight="auto"` iguala el trazo al peso del texto que lo rodea.
 - **Movimiento:** `effect="auto"` reproduce el gesto propio del ícono (`play`: `hover`, `once`, `loop`);
-  `transition="auto"` anima un cambio de `name` o de `slash`: una insignia o una diagonal se dibujan
-  solas, menú ↔ cerrar y otros pares curados se transforman, el resto se reemplaza. Quieto con
-  movimiento reducido.
+  `transition="auto"` anima un cambio de `name`, `slash` o `variant`: una insignia o una diagonal se
+  dibujan solas, menú ↔ cerrar y otros pares curados se transforman, outline ↔ fill se llena como
+  un líquido, el resto se reemplaza. Quieto con movimiento reducido.
 - **Vue, Svelte, Astro:** `@flouvia/gota/vue` (y `/vue/icons`), `/svelte` (y `/svelte/base`) y `/astro`, con las mismas props.
 - **Sprite:** `@flouvia/gota/sprite.svg` (y `sprite-fill.svg`), `<svg><use href="sprite.svg#gota-bell"/></svg>`; `sprite()` arma uno solo con tus íconos.
 - **Búsqueda por significado:** `searchIcons('cobrar')` desde `@flouvia/gota/search` (español e inglés).

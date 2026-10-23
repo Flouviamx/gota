@@ -34,8 +34,9 @@ By name, with the whole set (prototypes, names that arrive at runtime): `<Icon n
 - **Text weight:** `weight="auto"` matches the stroke to the weight of the surrounding text.
 - **Values:** `value={0.6}` on wifi, signal, battery, volume, a timer, a gauge, a compass…: levels light up, a ring is drawn that far, a needle turns, and a new value animates.
 - **Motion:** `effect="auto"` plays the icon's own gesture (`play`: `hover`, `once`, `loop`);
-  `transition="auto"` animates a change of `name` or `slash`: a badge or a slash draws itself
-  in, menu ↔ close and other curated pairs morph, the rest swap in. Still under reduced motion.
+  `transition="auto"` animates a change of `name`, `slash` or `variant`: a badge or a slash draws
+  itself in, menu ↔ close and other curated pairs morph, outline ↔ fill fills like a liquid, the
+  rest swap in. Still under reduced motion.
 - **Vue, Svelte, Astro:** `@flouvia/gota/vue` (and `/vue/icons`), `/svelte` (and `/svelte/base`), and `/astro`, with the same props.
 - **Sprite:** `@flouvia/gota/sprite.svg` (and `sprite-fill.svg`), `<svg><use href="sprite.svg#gota-bell"/></svg>`; `sprite()` builds one with only your icons.
 - **Search by meaning:** `searchIcons('cobrar')` from `@flouvia/gota/search` (Spanish and English).

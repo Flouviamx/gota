@@ -1,11 +1,12 @@
 // Transitions sheet: previews/transitions-<n>.png. Nine frames of each transition, drawn by the
 // engine (masks included): every curated morph and turn, every pair with the same base and a
-// different badge (found on their own), and the automatic slash. A pair joins PAIRS only if every
+// different badge (found on their own), the automatic slash, and outline ↔ fill (the liquid) on a
+// sample of shapes. A pair joins PAIRS only if every
 // frame is clean. To try candidates before adding them: --try "eye>eye-closed play>pause".
 // Usage: node scripts/transitions-sheet.mjs [--try "a>b c>d"]
 import { mkdirSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { frames, PAIRS, transitionOf } from '../engine/morph.mjs';
+import { frames, liquid, PAIRS, transitionOf } from '../engine/morph.mjs';
 import { render } from '../engine/variants.mjs';
 import { openChrome } from './chrome.mjs';
 import { loadAll } from './load.mjs';
@@ -26,6 +27,8 @@ else {
   for (const [name, icon] of Object.entries(icons)) if (!icon.badge) base.set(key(icon), name);
   for (const [name, icon] of Object.entries(icons)) if (icon.badge && base.has(key(icon))) rows.push([base.get(key(icon)), name, null]);
   rows.push(['bell', 'bell', 'slash']);
+  for (const name of ['bell', 'message', 'folder', 'heart', 'calendar', 'cart', 'home', 'lock', 'cloud', 'file-check', 'battery-full', 'camera', 'microphone']) rows.push([name, name, 'rise']);
+  for (const name of ['bell', 'message']) rows.push([name, name, 'drain']);
 }
 const missing = rows.filter(([a, b]) => !icons[a] || !icons[b]).map(([a, b]) => `${a}>${b}`);
 if (missing.length) throw new Error(`Unknown icons in: ${missing.join(', ')}`);
@@ -34,15 +37,17 @@ let n = 0;
 const cell = (html) => `<svg viewBox="0 0 24 24" width="56" height="56" fill="none" color="#111">${html}</svg>`;
 const row = ([a, b, given]) => {
   const opts = { weight: 1.5, id: `t${++n}` };
-  const way = given === 'slash' ? { slash: true } : (given ?? transitionOf(a, b, icons));
+  const way = given === 'slash' ? { slash: true } : given === 'rise' || given === 'drain' ? { liquid: given } : (given ?? transitionOf(a, b, icons));
   const draw =
     given === 'slash'
       ? (t) => render(icons[a], { ...opts, slash: t })
-      : way.morph
+      : way.liquid
+        ? liquid(icons[a], way.liquid === 'rise', opts)
+        : way.morph
         ? frames(icons[a], icons[b], way, opts)
         : (t) => render(icons[t < 0.5 ? a : b], opts);
   const cells = T.map((t, i) => cell(draw(t).replace(/(id="|url\(#)t\d+-/g, `$1t${n}f${i}-`))).join('');
-  const kind = way.slash ? 'slash' : way.rotate ? `turn ${way.rotate}°` : way.replace ? 'swap' : icons[a].badge || icons[b].badge ? 'badge' : 'morph';
+  const kind = way.liquid ? `liquid, ${way.liquid}` : way.slash ? 'slash' : way.rotate ? `turn ${way.rotate}°` : way.replace ? 'swap' : icons[a].badge || icons[b].badge ? 'badge' : 'morph';
   return `<div class="r"><span>${a} → ${b}<small>${kind}</small></span>${cells}</div>`;
 };
 

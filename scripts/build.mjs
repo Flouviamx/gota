@@ -78,14 +78,15 @@ writeFileSync(
   'dist/morph.d.ts',
   `import type { IconData, IconName, IconVariant, render } from './index';
 type RenderOptions = Parameters<typeof render>[1];
-export type Transition = { morph: true; pairs?: [number, number][]; origin?: 'start' | 'middle' } | { rotate: number } | { replace: true };
+export type Transition = { morph: true; pairs?: [number, number][]; origin?: 'start' | 'middle' } | { rotate: number } | { replace: true } | { liquid: 'rise' | 'drain' };
 export type Change = { way: Transition; frame: ((t: number) => string) | null };
 export declare const PAIRS: Record<string, { morph?: true; pairs?: [number, number][]; origin?: 'start' | 'middle'; rotate?: number }>;
 export declare function toCubics(d: string): { closed: boolean; segs: number[][] }[];
 export declare function morpher(from: IconData, to: IconData, options?: { pairs?: [number, number][]; origin?: 'start' | 'middle' }): (t: number) => string[];
 export declare function frames(from: IconData, to: IconData, way?: Transition, options?: RenderOptions): (t: number) => string;
 export declare function transitionOf(from: IconName, to: IconName, icons?: Record<string, IconData>, options?: { variant?: IconVariant }): Transition;
-export declare function changeOf(icons: Record<string, IconData>, before: { name: IconName; slash?: boolean }, after: { name: IconName; slash?: boolean }, options?: RenderOptions, transition?: 'auto' | 'morph' | 'replace'): Change | null;
+export declare function liquid(icon: IconData, rise: boolean, options?: RenderOptions): (t: number) => string;
+export declare function changeOf(icons: Record<string, IconData>, before: { name: IconName; slash?: boolean; style?: IconVariant }, after: { name: IconName; slash?: boolean; style?: IconVariant }, options?: RenderOptions, transition?: 'auto' | 'morph' | 'replace'): Change | null;
 export declare function playTransition(svg: SVGSVGElement, change: Change, duration?: number): void;
 `,
 );

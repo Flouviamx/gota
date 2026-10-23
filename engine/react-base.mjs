@@ -6,6 +6,7 @@
 //   <IconBase icon={MicrophoneIcon} enclosure="circle" slash /> enclosed and slashed (the drawn variant wins)
 //   <IconBase icon={BellIcon} effect="auto" play="hover" />     its own gesture on hover
 //   <IconBase icon={open ? CloseIcon : MenuIcon} transition="auto" />  morphs, turns or swaps in, as fits
+//   <IconBase icon={HeartIcon} variant={liked ? 'fill' : 'outline'} transition="auto" />  the fill rises like a liquid
 //   <IconBase icon={WifiIcon} value={0.5} />                    levels at half
 import { createElement, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { autoWeight, effectOf, pick, render, WEIGHTS } from './core.js';
@@ -49,16 +50,17 @@ export function IconBase({ icon: data, variant = 'outline', weight = 'regular', 
   }, [effect, showing]);
   const html = render(icon, { style: variant, weight: stroke, enclosure: r.enclosure, slash: r.slash, value: showing ? 'live' : undefined, rtl, animate: effect, id });
 
-  // transition: when the icon (or its slash) changes, morph, draw the badge, turn or swap in
-  const last = useRef({ name: icon.name, slash: r.slash, icon });
+  // transition: when the icon, its slash or its style changes, morph, draw the badge, turn, swap in
+  // or fill like a liquid
+  const last = useRef({ name: icon.name, slash: r.slash, style: variant, icon });
   useIsoLayoutEffect(() => {
     const before = last.current;
-    last.current = { name: icon.name, slash: r.slash, icon };
-    if (!transition || !ref.current || (before.icon === icon && before.slash === r.slash)) return;
+    last.current = { name: icon.name, slash: r.slash, style: variant, icon };
+    if (!transition || !ref.current || (before.icon === icon && before.slash === r.slash && before.style === variant)) return;
     const both = { [before.name]: before.icon, [icon.name]: icon };
     const change = changeOf(both, before, last.current, { style: variant, weight: stroke, enclosure: r.enclosure, rtl, value: showing ? 'live' : undefined, id }, transition);
     if (change) playTransition(ref.current, change);
-  }, [icon, r.slash]);
+  }, [icon, r.slash, variant]);
 
   const k = SCALES[scale] ?? 1;
   const dim = size ?? `${k}em`;

@@ -9,6 +9,8 @@
 //     length) instead of folding; a stroke left over is erased along its own length and a new one
 //     is drawn the same way, one after another, never grown from a point.
 //   · Any other pair is not forced: it swaps in ({ replace }) or turns ({ rotate }).
+//   · One icon, outline ↔ fill: the fill rises through the outline like a liquid, or drains out of it
+//     ({ liquid: 'rise' | 'drain' }).
 //   const way = transitionOf('bell', 'bell-off', icons)
 //   const frame = frames(icons.bell, icons['bell-off'], way, { weight: 1.5, id: 'a' })
 //   frame(0.5)  // → the inner SVG halfway
@@ -489,18 +491,68 @@ export function transitionOf(from, to, icons, { variant = 'outline' } = {}) {
   return { replace: true };
 }
 
+// ── Outline ↔ fill ──
+// The ink's vertical extent, for where the liquid starts and ends: the strokes and the badge, with
+// half the weight; an enclosure spans the canvas
+function inkSpan(icon, { weight, enclosure }) {
+  if (enclosure) return [2, 22];
+  const half = (typeof weight === 'number' ? weight : 1.5) / 2;
+  const ys = [...icon.d, ...(icon.badge?.d ?? [])].flatMap(toCubics).flatMap((s) => s.segs.flatMap((g) => [g[1], g[3], g[5], g[7]]));
+  return ys.length ? [Math.min(...ys) - half, Math.max(...ys) + half] : [2, 22];
+}
+const WAVE = 9; // wavelength on the 24 grid: two and a half crests across it
+const RISE = 0.6; // the wave's height halfway; flat at the start and at the end
+// Where the surface sits at x, for a level (y) and a time
+const surface = (level, t, x) => level + RISE * Math.sin(Math.PI * Math.min(1, t * 1.15)) * Math.sin((2 * Math.PI * x) / WAVE + 2 * Math.PI * 1.25 * t);
+const fmt = (v) => Math.round(v * 100) / 100;
+
 /**
- * The transition between two states of a component, { name, slash } before and after, drawn with
- * the new state's render `options`. `transition`: 'auto' (transitionOf decides), 'morph' or
+ * Outline ↔ fill of one icon, t (0–1) ⇒ the inner SVG. The fill rises through the outline like a
+ * liquid (or drains out of it), its surface a gentle wave that settles flat as it ends. Each frame is
+ * the two drawings render() makes, the outline above the surface and the fill below it (clipped,
+ * one color): the fill's cutouts and paper stay exact, and the last frame is the drawing itself. The
+ * outline reaches 0.12 below the surface, under the fill, so the seam never shows a lighter line.
+ */
+export function liquid(icon, rise, options = {}) {
+  const id = options.id ?? 'i';
+  const opts = { ...options, animate: null };
+  const outline = render(icon, { ...opts, style: 'outline', id: `${id}-lo` });
+  const fill = render(icon, { ...opts, style: 'fill', id: `${id}-lf` });
+  const [top, bottom] = inkSpan(icon, options);
+  return (t) => {
+    if (t >= 1) return render(icon, { ...options, style: rise ? 'fill' : 'outline' });
+    // Sine in and out: it starts at once and settles (the wave is flat at both ends, so the level
+    // runs exactly from the ink's bottom to its top)
+    const e = (1 - Math.cos(Math.PI * t)) / 2;
+    const level = bottom + (top - bottom) * (rise ? e : 1 - e);
+    const wave = Array.from({ length: 53 }, (_, k) => [k / 2 - 1, surface(level, t, k / 2 - 1)]);
+    const path = (pts) => pts.map(([x, y]) => `${fmt(x)} ${fmt(y)}`).join('L');
+    const below = `M${path(wave)}L25 25L-1 25Z`;
+    const above = `M-1 -1L25 -1L${path(wave.map(([x, y]) => [x, y + 0.12]).reverse())}Z`;
+    return `<defs><clipPath id="${id}-la"><path d="${above}"/></clipPath><clipPath id="${id}-lb"><path d="${below}"/></clipPath></defs><g clip-path="url(#${id}-la)">${outline}</g><g clip-path="url(#${id}-lb)">${fill}</g>`;
+  };
+}
+
+/**
+ * The transition between two states of a component, { name, slash, style } before and after, drawn
+ * with the new state's render `options`. `transition`: 'auto' (transitionOf decides), 'morph' or
  * 'replace'. Returns { way, frame } (frame is null for a turn or a swap), or null if nothing changed.
- * Same icon with the automatic slash toggled: the slash draws itself in, or erases back to the corner.
+ * Same icon with the automatic slash toggled: the slash draws itself in, or erases back to the corner;
+ * with its style changed, the liquid (an icon without a fill has nothing to change).
  */
 export function changeOf(icons, before, after, options = {}, transition = 'auto') {
   const opts = { ...options, animate: null, id: `${options.id ?? 'i'}t` };
   if (before.name === after.name) {
-    if (Boolean(before.slash) === Boolean(after.slash)) return null;
-    const on = Boolean(after.slash);
-    return { way: { morph: true }, frame: (t) => render(icons[after.name], { ...opts, slash: on ? outCubic(t) : 1 - outCubic(t) }) };
+    const icon = icons[after.name];
+    if (Boolean(before.slash) !== Boolean(after.slash)) {
+      const on = Boolean(after.slash);
+      return { way: { morph: true }, frame: (t) => render(icon, { ...opts, slash: on ? outCubic(t) : 1 - outCubic(t) }) };
+    }
+    const [was, now] = [before.style ?? 'outline', after.style ?? options.style ?? 'outline'];
+    if (was === now || icon.fill === false) return null;
+    if (transition === 'replace') return { way: { replace: true }, frame: null };
+    const rise = now === 'fill';
+    return { way: { liquid: rise ? 'rise' : 'drain' }, frame: liquid(icon, rise, { ...opts, style: now, slash: Boolean(after.slash) }) };
   }
   const way = transition === 'morph' ? { morph: true } : transition === 'replace' ? { replace: true } : transitionOf(before.name, after.name, icons, { variant: options.style });
   return { way, frame: way.morph ? frames(icons[before.name], icons[after.name], way, opts) : null };
@@ -512,13 +564,13 @@ const running = new WeakMap();
 /**
  * Play a change on an <svg> that already shows its final drawing (any framework, or none). A morph
  * hides that drawing, draws the frames in a layer of its own and removes it at the end, so the
- * nodes a framework manages are never rewritten; a turn or a swap animates the <svg> itself. Under
- * reduced motion the final drawing just stays.
+ * nodes a framework manages are never rewritten; a turn or a swap animates the <svg> itself. The
+ * liquid takes a little longer (560 ms) to settle. Under reduced motion the final drawing just stays.
  */
-export function playTransition(svg, { way, frame }, duration = 420) {
+export function playTransition(svg, { way, frame }, duration = way.liquid ? 560 : 420) {
   running.get(svg)?.();
   if (typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!way.morph || !frame) {
+  if (!frame) {
     const turn = way.rotate !== undefined;
     const keys = turn ? [{ transform: `rotate(${-way.rotate}deg)` }, { transform: 'rotate(0)' }] : [{ transform: 'scale(0.6)', opacity: 0 }, { transform: 'scale(1)', opacity: 1 }];
     svg.animate(keys, { duration: turn ? 380 : 320, easing: EASE });

@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Outline ↔ fill: the liquid (2.2 closes)
+- **`liquid(icon, rise, options)`** ([engine](./engine.md#transitions-enginemorphmjs), [decision 74](./decisions.md#outputs-23-oct-2026)): the fill rises through the outline like a liquid, or drains out of it, its surface a wave that settles flat. Each frame is the outline and the fill `render` already draws, split by the surface: one color, every cutout exact. React, Vue, and Svelte play it when `variant` changes (`transition="auto"`), in 560 ms.
+- **Tuned on the sheet:** the first version eased out and started below the ink, so it filled in the first half and sat still in the second; the level now runs exactly across the ink with a sine ease. Played in Chrome: the layer leaves at the end, nothing stays hidden.
+- Tests: 51.
+
 ## 23 Oct 2026 — Figma library builder (2.6)
 - **`node scripts/native.mjs figma`** ([build](./build.md#native-formats-node-scriptsnativemjs-format), [decision 73](./decisions.md#outputs-23-oct-2026)): a development plugin that builds Gota's library in the open Figma file: a page per category, a component set per icon with Style (Outline, Fill) × Weight (Light, Regular, Bold), 6,198 variants, each a 24 × 24 component with the icon's checked outline. Descriptions carry the labels and keywords in English and Spanish for Figma's search. A second run updates in place, so instances in other files keep working through every round.
 - `absolute()` in `scripts/outline.mjs` writes the compact outlines as the absolute `M L Q C Z` Figma takes; every one of the 6,198 is checked again as written.

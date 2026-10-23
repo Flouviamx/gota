@@ -5,6 +5,7 @@
 //   <IconBase :icon="BellIcon" weight="auto" />                 stroke that matches the surrounding text
 //   <IconBase :icon="WifiIcon" :value="0.5" />
 //   <IconBase :icon="open ? CloseIcon : MenuIcon" transition="auto" />   morphs, draws the badge, turns or swaps in
+//   <IconBase :icon="HeartIcon" :variant="liked ? 'fill' : 'outline'" transition="auto" />   the fill rises like a liquid
 import { computed, defineComponent, h, onMounted, ref, useId, watch } from 'vue';
 import { autoWeight, effectOf, pick, render, WEIGHTS } from './core.js';
 import { changeOf, playTransition } from './morph.js';
@@ -53,13 +54,13 @@ export const IconBase = defineComponent({
     const resolved = computed(() => pick(props.icon, { enclosure: props.enclosure, slash: props.slash }));
     const stroke = () => (props.weight === 'auto' ? autoWeight(textWeight.value) : (WEIGHTS[props.weight] ?? props.weight));
     const options = () => ({ style: props.variant, weight: stroke(), enclosure: resolved.value.enclosure, value: showing() ? 'live' : undefined, rtl: props.rtl, id });
-    // transition: when the icon (or its slash) changes, once the new drawing is in the DOM
+    // transition: when the icon, its slash or its style changes, once the new drawing is in the DOM
     watch(
-      () => [resolved.value.icon, resolved.value.slash],
-      ([icon, slash], [prev, prevSlash]) => {
+      () => [resolved.value.icon, resolved.value.slash, props.variant],
+      ([icon, slash, style], [prev, prevSlash, prevStyle]) => {
         if (!props.transition || !el.value) return;
         const both = { [prev.name]: prev, [icon.name]: icon };
-        const change = changeOf(both, { name: prev.name, slash: prevSlash }, { name: icon.name, slash }, options(), props.transition);
+        const change = changeOf(both, { name: prev.name, slash: prevSlash, style: prevStyle }, { name: icon.name, slash, style }, options(), props.transition);
         if (change) playTransition(el.value, change);
       },
       { flush: 'post' },

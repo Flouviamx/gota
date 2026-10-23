@@ -5,6 +5,7 @@
     <IconBase icon={BellIcon} variant="fill" weight="light" effect="auto" play="hover" />
     <IconBase icon={BellIcon} weight="auto" />   stroke that matches the surrounding text
     <IconBase icon={open ? CloseIcon : MenuIcon} transition="auto" />
+    <IconBase icon={HeartIcon} variant={liked ? 'fill' : 'outline'} transition="auto" />   the fill rises like a liquid
 -->
 <script>
   import { afterUpdate, onMount } from 'svelte';
@@ -50,11 +51,11 @@
   $: options = { style: variant, weight: stroke, enclosure: r.enclosure, value: showing ? 'live' : undefined, rtl, id };
   $: inner = render(shown, { ...options, slash: r.slash, animate: effect });
 
-  // transition: when the icon (or its slash) changes, once the new drawing is in the DOM
+  // transition: when the icon, its slash or its style changes, once the new drawing is in the DOM
   let before = null;
   afterUpdate(() => {
-    const now = { name: shown.name, slash: r.slash, icon: shown };
-    if (before && transition && el && (before.icon !== shown || before.slash !== r.slash)) {
+    const now = { name: shown.name, slash: r.slash, style: variant, icon: shown };
+    if (before && transition && el && (before.icon !== shown || before.slash !== r.slash || before.style !== variant)) {
       const change = changeOf({ [before.name]: before.icon, [shown.name]: shown }, before, now, options, transition);
       if (change) playTransition(el, change);
     }
