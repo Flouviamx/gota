@@ -9,11 +9,15 @@ import { effectOf, motionAttrs, render, svgFile, WEIGHTS } from './variants.js';
 export { effectOf, motionAttrs, render, svgFile, WEIGHTS };
 
 /**
- * Stroke width that matches a font weight, like SF Symbols matching the text around it: 400 → 1.5
- * (regular), 700 → 2.1, 300 → 1.3, 100 → 0.9. Gota's range ends at 2.1 (700): past it a badge's
- * ring has no room left for its sign, so heavier text keeps 2.1. Used by weight="auto".
+ * Stroke width that matches a font weight, like SF Symbols matching the text around it, on the
+ * scale of the named weights and the icon fonts: 300 (Light) → 0.9, 400 (Regular) → 1.5, 700
+ * (Bold) → 2.1, straight in between (500 → 1.7). Gota's range ends at both: lighter text keeps 0.9,
+ * and past 2.1 a badge's ring has no room for its sign, so heavier text keeps 2.1. Used by weight="auto".
  */
-export const autoWeight = (fontWeight) => Math.min(2.1, Math.max(0.9, 1.5 + (Number(fontWeight || 400) - 400) * 0.002));
+export const autoWeight = (fontWeight) => {
+  const w = Number(fontWeight || 400);
+  return w <= 400 ? Math.max(0.9, 1.5 - (400 - w) * 0.006) : Math.min(2.1, 1.5 + (w - 400) * 0.002);
+};
 
 /**
  * The hand-drawn variant wins over the automatic one: an icon's data links the variants drawn by

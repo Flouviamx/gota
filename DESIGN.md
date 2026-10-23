@@ -89,7 +89,8 @@ Review them with `node scripts/variants-sheet.mjs <category>`.
 
 ## Every weight, one structure
 Gota's weights run continuously from **0.9 to 2.1** (the variable font and Xcode symbols interpolate
-between masters at 0.9, 1.5, and 2.1; `weight="auto"` maps text weights 100–700 onto that range).
+between masters at 0.9, 1.5, and 2.1, which are also the named weights light, regular, and bold, at
+font weights 300, 400, and 700; `weight="auto"` follows the text on that scale).
 An icon must keep **the same structure at every weight**: the same pieces, the same holes, nothing
 that merges or splits as the stroke widens. The engine takes care of what it can:
 - **Badges:** a status badge is a solid disc, so its sign (cut out, paper) never clogs a ring.

@@ -50,15 +50,15 @@ Measured on 22 Oct 2026: 1,853 of the 1,865 outline and fill variants (99.4 %) h
 After the build; it needs `npm ci` (Skia). Written by `scripts/sfnt.mjs`, with no dependencies: TrueType outlines (quadratic, as the masters are), `cmap` 4 and 12, a ligature `GSUB`, `fvar`, `gvar`, and `STAT`, and WOFF2 (brotli; `glyf` and `loca` untransformed, which the format allows).
 | File | What it holds |
 |---|---|
-| `dist/fonts/gota.woff2` · `gota-fill.woff2` (and `.ttf`) | Variable: a weight axis from 100 to 700, the stroke from 0.9 to 2.1 as `weight="auto"` maps a text's weight (400 is regular), from the compatible masters |
-| `dist/fonts/gota-{thin,regular,bold}[-fill].woff2` (and `.ttf`) | Static, each master as it is (100 · 400 · 700) |
+| `dist/fonts/gota.woff2` · `gota-fill.woff2` (and `.ttf`) | Variable: a weight axis from 300 (Light, 0.9) to 700 (Bold, 2.1), 400 Regular (1.5), as `weight="auto"` maps a text's weight, from the compatible masters |
+| `dist/fonts/gota-{light,regular,bold}[-fill].woff2` (and `.ttf`) | Static, each master as it is (300 · 400 · 700) |
 | `dist/fonts/gota.css` · `codepoints.json` | The `@font-face` rules and the `.gota` and `.gota-fill` classes; each icon's codepoint |
 
 - **Codepoints** are stable, in the Supplementary Private Use Area-A (from U+F0000: the BMP's 6,400 wouldn't hold 10,000 icons): `src/codepoints.json` is committed, a new icon gets the next one, and a codepoint is never given to another icon.
 - **Ligatures:** an icon's name typed as text becomes the icon; the letters themselves are empty and zero wide.
 - **Grid:** 4,800 units per em (200 per canvas unit), the 24 canvas filling the em from the baseline up; points within 0.0025, so rounding never tips an interpolated weight past the check.
 - **An icon without compatible masters** keeps its regular drawing at every weight of the variable font (6 per style, reported); the static fonts have every icon at its own weight.
-- **Checked twice:** the glyphs are read back from the bytes written by an independent reader, the variable ones interpolated as a rasterizer does, and compared with `render()` at 100, 250, 400, 550, and 700 by Skia (the masters' own check); then Chrome loads every font (its sanitizer rejects a malformed table), every name must form its ligature, and every varying glyph must change between 100 and 700. Chrome's text rasterizer isn't the judge of the drawing: it snaps the baseline to the pixel and, on macOS, thickens text.
+- **Checked twice:** the glyphs are read back from the bytes written by an independent reader, the variable ones interpolated as a rasterizer does, and compared with `render()` at 300, 350, 400, 550, and 700 by Skia (the masters' own check); then Chrome loads every font (its sanitizer rejects a malformed table), every name must form its ligature, and every varying glyph must change between 300 and 700. Chrome's text rasterizer isn't the judge of the drawing: it snaps the baseline to the pixel and, on macOS, thickens text.
 - Measured on 22 Oct 2026 (1,033 icons): `gota.woff2` 581 KB, `gota-fill.woff2` 483 KB, `gota-regular.woff2` 244 KB; 2 min 20 s.
 
 ## Native formats (`node scripts/native.mjs <format>`)

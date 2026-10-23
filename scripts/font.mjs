@@ -1,14 +1,14 @@
 // Gota's icon fonts, from outlines checked against their drawing (scripts/outline.mjs) and compatible
 // masters (scripts/masters.mjs), written by scripts/sfnt.mjs. Run after scripts/build.mjs.
-//   dist/fonts/gota.ttf · .woff2, gota-fill.ttf · .woff2   variable: a weight axis from 100 to 700, the
+//   dist/fonts/gota.ttf · .woff2, gota-fill.ttf · .woff2   variable: a weight axis from 300 to 700, the
 //     stroke from 0.9 to 2.1 as weight="auto" maps a text's weight (400 is regular)
-//   dist/fonts/gota-{thin,regular,bold}[-fill].ttf · .woff2   static, at the masters (100 · 400 · 700)
+//   dist/fonts/gota-{light,regular,bold}[-fill].ttf · .woff2   static, at the masters (300 · 400 · 700)
 //   dist/fonts/gota.css (the @font-face rules and the .gota and .gota-fill classes) · codepoints.json
 // Every icon has a stable codepoint in the Supplementary Private Use Area-A (src/codepoints.json:
 // a new icon gets the next one, and a codepoint is never given to another icon) and a ligature: its
 // name typed as text becomes the icon (<i class="gota">bell</i>). An icon without compatible masters
 // keeps its regular drawing at every weight of the variable font (reported). Every glyph is then
-// drawn by Chrome at 100, 250, 400, 550 and 700 and compared with its SVG at that weight.
+// read back and compared with the drawing at 300, 350, 400, 550 and 700.
 // Usage: node scripts/font.mjs   (needs npm ci: Skia)
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -25,7 +25,7 @@ const FIRST = 0xf0000;
 const REGISTRY = 'src/codepoints.json';
 const OUT = 'dist/fonts';
 const STROKES = [0.9, 1.5, 2.1];
-const FONT_WEIGHTS = [100, 400, 700];
+const FONT_WEIGHTS = [300, 400, 700];
 const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
 const version = pkg.version.split('.').slice(0, 2).join('.').replace(/^(\d+)\.(\d)$/, '$1.$200');
 const start = performance.now();
@@ -180,13 +180,12 @@ const ligatures = names.map((n, i) => ({ components: [...n].map((c) => 1 + chars
 const meta = { copyright: `© ${new Date().getFullYear()} Flouvia`, url: 'https://gota.flouvia.com', license: 'MIT License', licenseUrl: 'https://opensource.org/licenses/MIT' };
 const axis = {
   tag: 'wght',
-  min: 100,
+  min: 300,
   default: 400,
   max: 700,
   regions: [-1, 1],
+  // Gota's named weights where CSS has them, its masters (Light 300 is 0.9, Bold 700 is 2.1)
   instances: [
-    { name: 'Thin', value: 100 },
-    { name: 'ExtraLight', value: 200 },
     { name: 'Light', value: 300 },
     { name: 'Regular', value: 400 },
     { name: 'Medium', value: 500 },
@@ -222,7 +221,7 @@ for (const [style, family, file] of [
   };
   write(file, font({ family, unitsPerEm: UPM, version, glyphs: [notdef, ...charGlyphs, ...variable], cmap, ligatures, axis, names: meta }));
   // Static: each master as it is (the icons without compatible masters, at that weight's own outline)
-  ['Thin', 'Regular', 'Bold'].forEach((weightName, k) => {
+  ['Light', 'Regular', 'Bold'].forEach((weightName, k) => {
     const glyphs = list.map((g) => iconGlyph(g, k));
     write(`${file}-${weightName.toLowerCase()}`, font({ family, style: weightName === 'Regular' ? 'Regular' : weightName, weightClass: FONT_WEIGHTS[k], unitsPerEm: UPM, version, glyphs: [notdef, ...charGlyphs, ...glyphs], cmap, ligatures, names: meta }));
   });
@@ -233,9 +232,9 @@ for (const [style, family, file] of [
 writeFileSync(
   join(OUT, 'gota.css'),
   `/* Gota icon fonts: <i class="gota">bell</i> (a ligature) or the icon's codepoint (codepoints.json).
-   The weight follows font-weight, from 100 to 700 (400 is regular), as weight="auto" does. */
-@font-face { font-family: 'Gota'; src: url('gota.woff2') format('woff2'); font-weight: 100 700; font-style: normal; font-display: block; }
-@font-face { font-family: 'Gota Fill'; src: url('gota-fill.woff2') format('woff2'); font-weight: 100 700; font-style: normal; font-display: block; }
+   The weight follows font-weight, from 300 (light) to 700 (bold), as weight="auto" does. */
+@font-face { font-family: 'Gota'; src: url('gota.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: block; }
+@font-face { font-family: 'Gota Fill'; src: url('gota-fill.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: block; }
 .gota, .gota-fill { font-family: 'Gota'; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap; word-wrap: normal; direction: ltr; display: inline-block; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; }
 .gota-fill { font-family: 'Gota Fill'; }
 `,
@@ -278,15 +277,15 @@ const judge = (label, svg, d) => {
 for (const { style, fixed } of report) {
   const file = style === 'fill' ? 'gota-fill' : 'gota';
   const variable = readGlyphs(files[file]);
-  const statics = ['thin', 'regular', 'bold'].map((w) => readGlyphs(files[`${file}-${w}`]));
+  const statics = ['light', 'regular', 'bold'].map((w) => readGlyphs(files[`${file}-${w}`]));
   names.forEach((name, i) => {
     const gi = 1 + chars.length + i;
     const icon = { name, ...icons[name] };
     const opts = { style: icon.fill || style === 'outline' ? style : 'outline' };
     const svgAt = (stroke) => render(icon, { ...opts, weight: stroke, animate: null, id: 'c' });
     const g = variable[gi];
-    for (const weight of fixed.includes(name) ? [400] : [100, 250, 400, 550, 700]) {
-      const s = [weight < 400 ? (400 - weight) / 300 : 0, weight > 400 ? (weight - 400) / 300 : 0];
+    for (const weight of fixed.includes(name) ? [400] : [300, 350, 400, 550, 700]) {
+      const s = [weight < 400 ? (400 - weight) / (400 - axis.min) : 0, weight > 400 ? (weight - 400) / (axis.max - 400) : 0];
       let k = 0;
       const contours = g.contours.map((c) =>
         c.map((p) => {
@@ -297,7 +296,7 @@ for (const { style, fixed } of report) {
       );
       judge(`${file} ${name} @${weight}`, svgAt(autoWeight(weight)), toPath(contours));
     }
-    statics.forEach((glyphs, k) => judge(`${file}-${['thin', 'regular', 'bold'][k]} ${name}`, svgAt(STROKES[k]), toPath(glyphs[gi].contours)));
+    statics.forEach((glyphs, k) => judge(`${file}-${['light', 'regular', 'bold'][k]} ${name}`, svgAt(STROKES[k]), toPath(glyphs[gi].contours)));
   });
 }
 
@@ -311,7 +310,7 @@ const S = 96;
 const ctx = (() => { const c = document.createElement('canvas'); c.width = S * 2; c.height = S; return c.getContext('2d', { willReadFrequently: true }); })();
 window.add = async (family, b64) => {
   const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
-  try { const f = new FontFace(family, bytes, { weight: '100 700' }); await f.load(); document.fonts.add(f); return 'ok'; } catch (e) { return String(e); }
+  try { const f = new FontFace(family, bytes, { weight: '300 700' }); await f.load(); document.fonts.add(f); return 'ok'; } catch (e) { return String(e); }
 };
 const draw = (family, weight, text) => { ctx.clearRect(0, 0, S * 2, S); ctx.font = weight + ' ' + S + 'px "' + family + '"'; ctx.fillText(text, 0, S); const d = ctx.getImageData(0, 0, S, S).data; const a = new Uint8Array(S * S); for (let i = 0; i < a.length; i++) a[i] = d[i * 4 + 3]; return a; };
 window.probe = (family, items) => items.flatMap((it) => {
@@ -321,7 +320,7 @@ window.probe = (family, items) => items.flatMap((it) => {
   if (lig !== S) out.push(it.name + ': its name is ' + lig + ' wide, not one em (no ligature)');
   const glyph = String.fromCodePoint(it.code);
   // A fill may hold as much ink at bold as at light (its edge cuts widen with it): what must change is the drawing
-  const [light, bold] = [draw(family, 100, glyph), draw(family, 700, glyph)];
+  const [light, bold] = [draw(family, 300, glyph), draw(family, 700, glyph)];
   let changed = 0;
   for (let i = 0; i < light.length; i++) changed += Math.abs(light[i] - bold[i]) > 96;
   if (!light.some((v) => v > 127)) out.push(it.name + ': no ink');
@@ -354,4 +353,4 @@ if (failures.length) {
   console.log(`✗ ${failures.length} problems:`);
   for (const f of failures.slice(0, 40)) console.log(`  ${f}`);
   process.exitCode = 1;
-} else console.log(`✓ every glyph, read back from the files, matches its drawing (variable at 100 · 250 · 400 · 550 · 700, static at its weight); Chrome takes every font; every name is a ligature (${((performance.now() - start) / 1000).toFixed(0)} s) → ${OUT}/`);
+} else console.log(`✓ every glyph, read back from the files, matches its drawing (variable at 300 · 350 · 400 · 550 · 700, static at its weight); Chrome takes every font; every name is a ligature (${((performance.now() - start) / 1000).toFixed(0)} s) → ${OUT}/`);

@@ -27,7 +27,7 @@ svg(MailIcon, { variant: 'fill', weight: 'bold', enclosure: 'circle' });
 By name, with the whole set (prototypes, names that arrive at runtime): `<Icon name="mail" />` from
 `@flouvia/gota/react`, or `toSvg('mail')` from `@flouvia/gota`.
 
-- **Weights:** `light`, `regular`, `bold`. **Styles:** `outline` and `fill`.
+- **Weights:** `light`, `regular`, `bold` (strokes 0.9, 1.5, 2.1: font weights 300, 400, 700), or any number in between. **Styles:** `outline` and `fill`.
 - **Shapes:** plain, `enclosure: 'circle' | 'square'`, and `slash`.
 - **Next to text:** by default it measures `1em` and drops `-0.125em`, like a letter; `scale`
   (`small`, `medium`, `large`) adjusts it. Without React: `@flouvia/gota/icons.css` and the `.fi` class.
@@ -42,7 +42,7 @@ By name, with the whole set (prototypes, names that arrive at runtime): `<Icon n
 - **For AI agents:** an MCP server, `gota-mcp`, to find icons and insert their code.
 - **Standalone SVGs:** `svg/` (regular) and `svg/fill/`; the full matrix in `dist/svg/<weight>/<style>/`.
 - **Native:** Android vector drawables and an Xcode asset catalog of custom symbols (`Image("bell")`, every weight and scale) come in the release ZIP.
-- **Icon font:** `@flouvia/gota/font.css`, then `<i class="gota">bell</i>` (the name is a ligature) or the icon's codepoint (`fonts/codepoints.json`); `.gota-fill` for the filled style. Variable: the stroke follows `font-weight`, from 100 to 700, as `weight="auto"` does.
+- **Icon font:** `@flouvia/gota/font.css`, then `<i class="gota">bell</i>` (the name is a ligature) or the icon's codepoint (`fonts/codepoints.json`); `.gota-fill` for the filled style. Variable: the stroke follows `font-weight`, from 300 (light) to 700 (bold), as `weight="auto"` does.
 
 ## Development
 

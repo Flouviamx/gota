@@ -4,6 +4,10 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — One scale of weights
+- **Light, Regular, Bold are 0.9, 1.5, 2.1 at font weights 300, 400, 700** ([decision 70](./decisions.md#weights-22-oct-2026)): the owner left the naming to Claude. The components' named weights (light 1, bold 2 until now), the variable font's axis (100 to 700 until now), the static fonts (`gota-light` instead of `gota-thin`), and `autoWeight` all sit on one scale, and every named weight is a master, exact in every format.
+- Tests: 45.
+
 ## 23 Oct 2026 — Live values (2.3)
 - **`render(icon, { value })`** ([engine](./engine.md#variants-enginevariantsmjs), [decision 69](./decisions.md#weights-22-oct-2026)): a number draws the value; `'live'` follows `--gota-value`. React, Vue, and Svelte set the property from their `value` prop, so a new value animates; Astro draws the number.
 - **26 icons:** the 20 with levels, the timer (its ring is the time left, its hand points where it ends), the loader, the gauge's needle, the stopwatch's hand, the compass needle, and the navigation arrow. Static and live compared side by side at 0, ¼, ½, ¾, and 1: the same drawing (a level at exactly its threshold differed until the live step rounded a half up, as the number does).

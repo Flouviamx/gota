@@ -23,7 +23,7 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 | Option | Effect |
 |---|---|
 | `style: 'outline' \| 'fill'` | The fill uses a mask: `solid` filled and stroked (same silhouette), `cut` knocked out at stroke width, `lines` on top with a clearance of paper (a stroke halo of weight + 2 × paper: 4.5 at every weight) where they cross, meet, or lie on the fill; a line that stands apart (1.5 or more at regular) keeps its clearance short of the fill's ink, so it never bites it at bold, `wire` on top with no clearance |
-| `weight` | **Continuous** weight (the named ones: `WEIGHTS` = light 1, regular 1.5, bold 2) |
+| `weight` | **Continuous** weight, 0.9 to 2.1 (the named ones, `WEIGHTS`, are the three masters: light 0.9, regular 1.5, bold 2.1, at font weights 300, 400, 700) |
 | `enclosure: 'circle' \| 'square'` | Enclosure: a circle of r 9 with the drawing at 58 %, or a square with the signature at 60 %. With `fill`, the container is solid and the drawing knocked out (the badge too; the base is not knocked out inside the badge's cutout) |
 | `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with a clearance of paper on each side (a stroke mask of weight + 2 × paper: 4.5 at every weight). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |
 | `size` | ≤ 18: uses `small` if it exists; otherwise, **pixel snapping** (`snap`) |

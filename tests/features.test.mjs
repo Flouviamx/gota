@@ -4,7 +4,7 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { test } from 'node:test';
-import { autoWeight, iconData, icons, pick, render, sprite, svg, toSvg } from '../dist/index.js';
+import { autoWeight, iconData, icons, pick, render, sprite, svg, toSvg, WEIGHTS } from '../dist/index.js';
 import * as perIcon from '../dist/icons/index.js';
 import { changeOf, frames, morpher, transitionOf } from '../dist/morph.js';
 import { fold, searchIcons } from '../dist/search.js';
@@ -94,10 +94,12 @@ test('sprite: one symbol per icon, mask ids of its own', () => {
   for (const [, ref] of out.matchAll(/url\(#([^)]+)\)/g)) assert.ok(ids.includes(ref));
 });
 
-test('auto weight follows the text: 400 is regular, bolder text, thicker stroke', () => {
-  assert.equal(autoWeight(400), 1.5);
-  assert.ok(autoWeight(700) > autoWeight(400) && autoWeight(300) < autoWeight(400));
-  assert.ok(autoWeight(100) >= 0.75 && autoWeight(900) <= 2.6);
+test('auto weight follows the text on the named weights\' scale: Light 300, Regular 400, Bold 700', () => {
+  assert.deepEqual([300, 400, 700].map(autoWeight), [WEIGHTS.light, WEIGHTS.regular, WEIGHTS.bold]);
+  assert.deepEqual([WEIGHTS.light, WEIGHTS.regular, WEIGHTS.bold], [0.9, 1.5, 2.1]);
+  assert.ok(Math.abs(autoWeight(500) - 1.7) < 1e-9 && Math.abs(autoWeight(350) - 1.2) < 1e-9);
+  // Gota's range ends at both: lighter and heavier text keep the ends
+  assert.deepEqual([autoWeight(100), autoWeight(900)], [0.9, 2.1]);
 });
 
 test('MCP server: initialize, list tools, search and get an icon', async () => {

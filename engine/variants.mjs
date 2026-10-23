@@ -5,8 +5,8 @@
 // See DESIGN.md › Fill, Variants and Motion.
 import { badge, circ, f, halfChord, sq } from './geometry.mjs';
 
-/** The set's weights: the drawing is designed for regular. */
-export const WEIGHTS = { light: 1, regular: 1.5, bold: 2 };
+/** The set's named weights, its three masters (font weights 300 · 400 · 700): the drawing is designed for regular. */
+export const WEIGHTS = { light: 0.9, regular: 1.5, bold: 2.1 };
 
 // ── Transforming a path (uniform scale + translation) ──
 const NUMS = { M: 2, L: 2, H: 1, V: 1, C: 6, S: 4, Q: 4, T: 2, A: 7, Z: 0 };

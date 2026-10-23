@@ -19,7 +19,7 @@ const cmap = new Map([
   [0xf0000, 3],
   [0xf0001, 4],
 ]);
-const axis = { tag: 'wght', min: 100, default: 400, max: 700, regions: [-1, 1], instances: [{ name: 'Thin', value: 100 }, { name: 'Regular', value: 400 }, { name: 'Bold', value: 700 }] };
+const axis = { tag: 'wght', min: 300, default: 400, max: 700, regions: [-1, 1], instances: [{ name: 'Light', value: 300 }, { name: 'Regular', value: 400 }, { name: 'Bold', value: 700 }] };
 
 test('fonts: what is written reads back the same, deltas included (bytes and words, zero runs)', () => {
   const sfnt = font({ family: 'Probe', unitsPerEm: 1000, glyphs, cmap, ligatures: [{ components: [1, 2], glyph: 3 }], axis });
