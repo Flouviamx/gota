@@ -31,6 +31,7 @@ vercel deploy --prod                      # the remote MCP server, gota.flouvia.
 node scripts/native.mjs android           # Android vector drawables from checked outlines (after the build; npm ci first)
 node scripts/native.mjs xcode             # Xcode custom symbols: variable templates, compiled by actool and drawn by AppKit (macOS)
 node scripts/native.mjs figma             # the Figma library builder, a development plugin (Style × Weight per icon, every outline checked)
+node scripts/type.mjs <folder>            # a typeface drawn with the engine (its glyphs.mjs) → variable and static fonts, words, specimen
 node scripts/font.mjs                     # icon fonts: variable and static, outline and fill, with ligatures, every glyph checked (after the build)
 ```
 Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different path). One dev dependency, `canvaskit-wasm` (Skia), turns icons into outlines for the native formats: `npm ci` before those and before `npm test`. The published package has no dependencies.
@@ -64,7 +65,7 @@ migrate/              The codemod, gota-migrate (cli.mjs; transform.mjs: React, 
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
 src/migrate/*.json    Migration maps: Lucide, Heroicons, and SF Symbols names → Gota (checked by load.mjs).
-scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), chrome (headless Chrome).
+scripts/              load (loads and validates), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), font and sfnt (icon fonts), type (typefaces drawn with the engine), contours (path data → TrueType), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).
 ```

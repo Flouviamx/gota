@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Typefaces drawn with the engine
+- **`node scripts/type.mjs <folder>`** ([build](./build.md#typefaces-node-scriptstypemjs-folder), [decision 77](./decisions.md#outputs-23-oct-2026)): a typeface's glyphs, written as icons are (stroke axes on the grid), become variable and static fonts, words as outlines, and a specimen set in the fonts. The owner asked for Flouvia's own typeface built like the icons; it lives in the private `flouvia-web/brand/flouvia-sans/` (162 glyphs: lowercase, capitals, figures, punctuation, accents for Spanish, Portuguese, and French), all rights reserved. Its first draft wrote the o as a drop and read "Gata"; the o stayed round and the drop's corner went to bowls that close against a stem.
+- Along the way: `scripts/contours.mjs` (path data to TrueType contours, shared with the icon fonts), and `font()` takes vertical metrics, Unicode ranges, the embedding flag, and the trademark and manufacturer names.
+- Tests: 57.
+
 ## 23 Oct 2026 — Migration from Lucide, Heroicons, and SF Symbols (2.8 closes)
 - **The maps** (`src/migrate/`, [build](./build.md#migration-srcmigrate-flouviagotamigrate-gota-migrate), [decision 75](./decisions.md#outputs-23-oct-2026)): Lucide 973 of its 1,903 icons (1,157 entries with its old names), Heroicons 285 of 324, SF Symbols 708 concepts and whole names that cover 1,814 of its 8,091 names. Made with the owner's OK to download `lucide-static` and `heroicons` from npm (names only; nothing of theirs is committed) and SF Symbols' own list on this Mac.
 - **How:** six agents judged every name by meaning, comparing drawings; Claude checked the pairs on review sheets (the original beside Gota's; SF Symbols drawn by AppKit). The sheets caught SF Symbols' diagonal arrows mapped backwards, `book` (an open book), `message` (a plain bubble), and `restart`; SF names whose circle is part of Gota's drawing (`info.circle`, the currency signs) became whole-name entries, and a `.fill` in the middle of a name (`bag.fill.badge.plus`) is the fill style.

@@ -1,6 +1,6 @@
 # Quality
 
-> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`, `tests/outline.test.mjs`, `tests/figma.test.mjs`, `tests/migrate.test.mjs`, and the check inside `scripts/outline.mjs`.
+> **Source of truth:** `scripts/qa.mjs`, `scripts/sheet.mjs`, `scripts/variants-sheet.mjs`, `scripts/transitions-sheet.mjs`, `tests/engine.test.mjs`, `tests/features.test.mjs`, `tests/outline.test.mjs`, `tests/figma.test.mjs`, `tests/migrate.test.mjs`, `tests/type.test.mjs`, and the check inside `scripts/outline.mjs`.
 
 [← Index](./README.md)
 
@@ -34,6 +34,8 @@ Standalone lines are light by nature: there is no "too light" warning. The thres
 **Figma** (`tests/figma.test.mjs`), three tests on the library builder against a stand-in for Figma's API: a page per category and a set per icon with Style × Weight, each variant a 24 × 24 scaling vector in its slot; a second run redraws the same nodes and keeps (and reports) a set whose icon left; the code is plain ES2017, as Figma's sandbox runs it. Every outline the build makes is checked the same way ([build](./build.md#outlines-scriptsoutlinemjs)).
 
 **Migration** (`tests/migrate.test.mjs`, they read `dist/`), five tests: lookups by name and component name, every target an icon, old Lucide names; SF Symbols suffixes as variants, a localized glyph as its symbol, and no equivalent where the icon can't take the variant; the codemod on Lucide in React (local names kept, props on every tag, stroke widths as named weights, notes for what stays); Heroicons solid as fill and Vue's kebab-case tags; Swift to Gota's Xcode symbols, drawn variants and fill included.
+
+**Typefaces** (`tests/type.test.mjs`, they need `npm ci`), one test: a two-letter typeface built in a temporary folder, its fonts listed, its glyphs read back (a ring, a stem and its dot, a composed accent), deltas in the variable font, embedding restricted, its words as outlines.
 
 ## Gates
 - No agent finishes with `build.mjs --check` failing.

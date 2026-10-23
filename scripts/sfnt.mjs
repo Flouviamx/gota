@@ -2,7 +2,12 @@
 // glyf/loca, cmap (formats 4 and 12), hmtx, name, OS/2, post, gasp, a ligature GSUB (a name typed
 // as text becomes its icon), and for a variable font fvar, gvar and STAT; plus WOFF2 (brotli, glyf
 // and loca untransformed, which the format allows). Coordinates are integers in font units.
-//   font({ family, style, weightClass, unitsPerEm, glyphs, cmap, ligatures, axis }) → Buffer (sfnt)
+//   font({ family, style, weightClass, unitsPerEm, glyphs, cmap, ligatures, axis, metrics, ranges }) → Buffer (sfnt)
+// metrics (a typeface's vertical metrics, in font units): { ascender, descender, lineGap, xHeight,
+// capHeight, winAscent, winDescent }; without them, the icons' square (ascender = em, descender 0).
+// ranges: OS/2's four Unicode range words (the icons': Basic Latin and the Private Use Areas).
+// fsType: OS/2 embedding (0 installable, the icons'; 2 restricted). names: copyright, trademark,
+// manufacturer, designer, url, license, licenseUrl.
 //   woff2(sfnt) → Buffer
 // glyphs: [{ name, advance, contours: [[{ x, y, on }], …], overlap?, deltas?: [[[dx, dy], …] per region] }]
 // axis (variable): { tag, min, default, max, regions: [-1, 1] (peaks of each delta set), instances: [{ name, value }] }
@@ -274,9 +279,10 @@ function gsubTable(ligatures) {
 }
 
 /** The font (sfnt) as a Buffer. */
-export function font({ family, style = 'Regular', weightClass = 400, unitsPerEm, version = '1.000', glyphs, cmap, ligatures = [], axis = null, names = {} }) {
+export function font({ family, style = 'Regular', weightClass = 400, unitsPerEm, version = '1.000', glyphs, cmap, ligatures = [], axis = null, names = {}, metrics = null, ranges = [1, 1 << 28, 1 << 26, 0], fsType = 0 }) {
   const tables = {};
   const upm = unitsPerEm;
+  const v = { ascender: upm, descender: 0, lineGap: 0, xHeight: 0, capHeight: 0, winAscent: upm, winDescent: 0, ...metrics };
   const numGlyphs = glyphs.length;
   // glyf / loca
   const glyf = new Writer();
@@ -304,7 +310,7 @@ export function font({ family, style = 'Regular', weightClass = 400, unitsPerEm,
   const advances = glyphs.map((g) => g.advance);
   const lsbs = glyphs.map((g, i) => (g.contours.length ? boxes[i][0] : 0));
   const rsbs = glyphs.map((g, i) => (g.contours.length ? g.advance - boxes[i][2] : 0));
-  hhea.u32(0x00010000).i16(upm).i16(0).i16(0).u16(Math.max(...advances)).i16(Math.min(...lsbs)).i16(Math.min(...rsbs)).i16(xMax);
+  hhea.u32(0x00010000).i16(v.ascender).i16(v.descender).i16(v.lineGap).u16(Math.max(...advances)).i16(Math.min(...lsbs)).i16(Math.min(...rsbs)).i16(xMax);
   hhea.i16(1).i16(0).i16(0).i16(0).i16(0).i16(0).i16(0).i16(0).u16(numGlyphs);
   tables.hhea = hhea.buffer();
   const hmtx = new Writer();
@@ -318,13 +324,14 @@ export function font({ family, style = 'Regular', weightClass = 400, unitsPerEm,
   const os2 = new Writer();
   const wide = advances.filter((a) => a > 0);
   const codes = [...cmap.keys()];
-  os2.u16(4).i16(Math.round(wide.reduce((s, a) => s + a, 0) / Math.max(1, wide.length))).u16(weightClass).u16(5).u16(0);
+  os2.u16(4).i16(Math.round(wide.reduce((s, a) => s + a, 0) / Math.max(1, wide.length))).u16(weightClass).u16(5).u16(fsType);
   for (const v of [0.65, 0.6, 0, 0.075, 0.65, 0.6, 0, 0.35]) os2.i16(Math.round(v * upm));
   os2.i16(Math.round(0.05 * upm)).i16(Math.round(0.25 * upm)).i16(0).bytes(new Array(10).fill(0));
-  // Basic Latin (the names typed for ligatures), Private Use Area, Supplementary Private Use Area-A
-  os2.u32(1).u32(1 << 28).u32(1 << 26).u32(0).tag('FLVA');
+  // Unicode ranges (the icons': Basic Latin, for the names typed as ligatures, and the Private Use Areas)
+  for (const r of ranges) os2.u32(r >>> 0);
+  os2.tag('FLVA');
   os2.u16((weightClass >= 700 ? 0x20 : 0x40) | 0x80).u16(Math.min(...codes)).u16(Math.min(0xffff, Math.max(...codes)));
-  os2.i16(upm).i16(0).i16(0).u16(upm).u16(0).u32(1).u32(0).i16(0).i16(0).u16(0).u16(0x20).u16(Math.max(1, ...ligatures.map((l) => l.components.length)));
+  os2.i16(v.ascender).i16(v.descender).i16(v.lineGap).u16(v.winAscent).u16(Math.abs(v.winDescent)).u32(1).u32(0).i16(v.xHeight).i16(v.capHeight).u16(0).u16(0x20).u16(Math.max(1, ...ligatures.map((l) => l.components.length)));
   tables['OS/2'] = os2.buffer();
   // post (version 3: no glyph names)
   const post = new Writer();
@@ -344,8 +351,9 @@ export function font({ family, style = 'Regular', weightClass = 400, unitsPerEm,
     [4, `${family} ${style}`],
     [5, `Version ${version}`],
     [6, ps],
-    [8, 'Flouvia'],
-    [9, 'Flouvia'],
+    [7, names.trademark ?? ''],
+    [8, names.manufacturer ?? 'Flouvia'],
+    [9, names.designer ?? 'Flouvia'],
     [11, names.url ?? ''],
     [13, names.license ?? ''],
     [14, names.licenseUrl ?? ''],
