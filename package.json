@@ -62,6 +62,8 @@
   "files": [
     "dist",
     "!dist/fonts/*.ttf",
+    "!dist/xcode",
+    "!dist/android",
     "svg",
     "mcp",
     "LICENSE",

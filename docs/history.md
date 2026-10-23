@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 22 Oct 2026 — Xcode symbols (2.5 closes)
+- **`node scripts/native.mjs xcode`** ([build](./build.md#native-formats-node-scriptsnativemjs-format)): 1,865 variable templates (outline and fill), 1,853 varying with the weight; `actool` compiles them with no warning and AppKit draws each at Ultralight, Regular, and Black. A sample sheet at Apple's six weights shows clean interpolation, the signature corner kept.
+- **How it was found:** no template ships with Xcode or the system, so the probe started from Apple's template layout (Notes, Guides with baselines, caplines, and per-master margins, Symbols with the three masters) and was taken as right only once `actool` compiled it and AppKit drew the bell at six weights next to SF Symbols' own ([decision 68](./decisions.md#weights-22-oct-2026)).
+- **The package stays light:** Android's drawables (41 MB) and the Xcode catalog (31 MB) were about to ship in the npm package; they go in the release ZIP instead.
+
 ## 22 Oct 2026 — Icon fonts (2.4)
 - **`scripts/font.mjs`** and **`scripts/sfnt.mjs`** ([build](./build.md#icon-fonts-node-scriptsfontmjs)): a variable font per style (a weight axis from 100 to 700, as `weight="auto"`), static fonts at the masters, WOFF2 and TTF, `gota.css`, and a codepoint and a ligature per icon ([decisions 65–67](./decisions.md#weights-22-oct-2026)). No dependency: the OpenType writer and its reader are under 600 lines.
 - **How it was checked:** the first check drew each glyph in Chrome against its SVG and failed every icon by half a pixel: Chrome snaps text to the pixel and thickens it on macOS. Now the bytes written are read back by an independent reader and compared with the drawing by Skia at five weights, and Chrome only has to take every font, form every ligature, and move every varying glyph along the axis. A round-trip test covers the writer.

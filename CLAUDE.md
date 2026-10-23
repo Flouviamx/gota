@@ -27,6 +27,7 @@ node scripts/weights-sheet.mjs <cat> [--all] | <icon>… [--slash] # 0.9 · 1.5 
 npm test                                  # engine and feature tests (node:test; features read dist/)
 node mcp/server.mjs                       # the MCP server over stdio (after the build)
 node scripts/native.mjs android           # Android vector drawables from checked outlines (after the build; npm ci first)
+node scripts/native.mjs xcode             # Xcode custom symbols: variable templates, compiled by actool and drawn by AppKit (macOS)
 node scripts/font.mjs                     # icon fonts: variable and static, outline and fill, with ligatures, every glyph checked (after the build)
 ```
 Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different path). One dev dependency, `canvaskit-wasm` (Skia), turns icons into outlines for the native formats: `npm ci` before those and before `npm test`. The published package has no dependencies.

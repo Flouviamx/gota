@@ -65,11 +65,13 @@ After the build; it needs `npm ci` (Skia). Written by `scripts/sfnt.mjs`, with n
 From the checked outlines, after `scripts/build.mjs`; it needs `npm ci` (Skia).
 | Format | Output |
 |---|---|
+| `xcode` | `dist/xcode/Gota.xcassets/<name>[.fill].symbolset`: Xcode custom symbols, variable templates (below) |
 | `android` | `dist/android/<light\|regular\|bold>/<outline\|fill>/gota_<name>[_circle\|_square\|_slash].xml`: Android vector drawables, the same matrix as `dist/svg` (20,088 files for 1,033 icons). One path, nonzero, `android:tint="?attr/colorControlNormal"` with a white fill so the theme colors it, and `android:autoMirrored` on directional icons |
 
 Path data is compact: absolute coordinates rounded to hundredths first (0.005 at most), then written relative to the previous rounded point so rounding never adds up along a contour; lowercase commands, implied repeats, h/v for straight lines. The check runs on the compact data, so what is checked is what ships. Android for 1,033 icons: 41 MB, 19 MB zipped (40 % less than plain Skia output).
 
-**Not yet:** Xcode symbols and the icon fonts. Xcode doesn't interpolate a static template: every missing weight or scale falls back to Regular-M as drawn (checked by rendering a probe symbol with AppKit), so a full static symbol needs 27 outlines. The plan is a variable template, three masters with compatible outlines (the same structure point for point), which the variable font needs too ([roadmap](./roadmap.md)).
+**Xcode** (`xcode`, macOS with Xcode): `dist/xcode/Gota.xcassets`, one symbol image set per icon and style (`bell`, `bell.fill`; 1,865), used with `Image("bell")` or `NSImage(named:)`. Each is a variable template ([decision 68](./decisions.md#weights-22-oct-2026)): the icon's three masters as Ultralight, Regular, and Black (quadratics written as the cubics they are), the 24 canvas typeset at 100 pt and centered on the cap height, its margins at the canvas's edges; Xcode draws every other weight and the three scales between them. Every template is compiled by `actool` (no warning allowed) and every symbol drawn by AppKit at Ultralight, Regular, and Black: it must load and change from the lightest to the heaviest. An icon without compatible masters has its regular drawing in all three (12, reported). A static template was probed first and rejected: Xcode doesn't interpolate one, and every missing weight or scale falls back to Regular-M as drawn. 5 min; `Assets.car` 25.7 MB.
+
 
 ## What goes into the repository and what doesn't
 - **Committed:** `src/` (the drawings and the languages), `engine/`, `mcp/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`.
@@ -78,7 +80,7 @@ Path data is compact: absolute coordinates rounded to hundredths first (0.005 at
 ## Publishing (once there are 10,000)
 - **npm:** `@flouvia/gota` with `dist/`, `svg/`, `mcp/`, `LICENSE`, `README.md`, and `README.es.md` (`files` in `package.json`). Exports: `.`, `./core`, `./icons`, `./icons/*`, `./react`, `./react/icons`, `./vue`, `./vue/icons`, `./svelte`, `./svelte/base`, `./astro`, `./morph`, `./search`, `./sprite.svg`, `./sprite-fill.svg`, `./svg/*`, `./icons.json`, `./icons.css`, `./motion.css`, `./font.css`, `./fonts/*` (the WOFF2 fonts; the TTFs, for desktop apps, go in the release ZIP, not in the package). `sideEffects` lists only the stylesheets, so bundlers drop every module a page doesn't use. React, Vue, and Svelte are optional peer dependencies; the package itself has none. Binary: `gota-mcp`.
 - **Bundle size** (esbuild, minified, measured 22 Oct 2026 with 1,033 icons): one icon from `icons` with `core`, 16 KB (the engine plus that icon and its drawn variant); one or two components from `react/icons` or `vue/icons`, 33 KB (transitions included); `Icon` by name, 939 KB, since it carries the whole set: for prototypes and names that arrive at runtime, never for a production page that knows its icons.
-- **GitHub Releases:** a GitHub Action, when a version is tagged, runs the build and attaches a ZIP with the SVGs sorted by weight and style, and the fonts as TTF.
+- **GitHub Releases:** a GitHub Action, when a version is tagged, runs the build and attaches a ZIP with the SVGs sorted by weight and style, the fonts as TTF, the Android vector drawables, and the Xcode asset catalog (none of them in the npm package).
 - Semantic versioning, a changelog, and aliases for renames ([decisions](./decisions.md)).
 - Site: `gota.flouvia.com` ([roadmap](./roadmap.md)).
 
