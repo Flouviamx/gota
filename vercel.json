@@ -7,6 +7,10 @@
   "functions": {
     "api/mcp.mjs": { "includeFiles": "{dist/icons.json,package.json}", "maxDuration": 10 }
   },
-  "rewrites": [{ "source": "/mcp", "destination": "/api/mcp" }],
-  "redirects": [{ "source": "/", "destination": "https://gota.flouvia.com", "permanent": false }]
+  "redirects": [
+    { "source": "/", "destination": "https://flouvia.com/", "permanent": false },
+    { "source": "/en", "destination": "https://flouvia.com/en/", "permanent": false },
+    { "source": "/:path((?!mcp/?$|api/|robots\\.txt$).+)", "destination": "https://flouvia.com/:path", "permanent": false }
+  ],
+  "rewrites": [{ "source": "/mcp", "destination": "/api/mcp" }]
 }

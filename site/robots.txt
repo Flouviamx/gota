@@ -1,3 +1,3 @@
-# The origin of Gota's MCP server: gota.flouvia.com/mcp is served from here, through flouvia-web
 User-agent: *
-Disallow: /
+Disallow: /mcp
+Disallow: /api/
