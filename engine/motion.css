@@ -5,7 +5,7 @@
  *   data-play="once"   once when it appears (to replay: remove the attribute and set it again)
  *   data-play="loop"   in a loop
  * Moving parts go in .gota-m with their pivot (transform-origin in canvas units) and their
- * offset (--dx, --dy). With reduced motion, everything stays still.
+ * offset (--dx, --dy). With reduced motion, everything stays still (a live value jumps to its new value).
  */
 .gota .gota-m {
   transform-box: view-box;
@@ -95,6 +95,19 @@
   from { transform: scale(0.6); opacity: 0; }
 }
 
+/* A live value: render(icon, { value: 'live' }) draws its levels, strokes and turns from
+   --gota-value (0–1), set on the <svg> (the components set it from their value prop). Registered,
+   so a change runs through every value in between: levels appear one by one, a needle sweeps */
+@property --gota-value {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+.gota-v {
+  transition: --gota-value 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gota *, .gota-in { animation: none !important; }
+  .gota-v { transition: none; }
 }

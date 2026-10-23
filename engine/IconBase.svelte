@@ -33,7 +33,7 @@
   let textWeight = 400;
   onMount(() => {
     if (weight === 'auto' && el?.parentElement) textWeight = Number(getComputedStyle(el.parentElement).fontWeight) || 400;
-    if (!effect || document.querySelector('style[data-gota="motion"]')) return;
+    if (!(effect || showing) || document.querySelector('style[data-gota="motion"]')) return;
     const style = document.createElement('style');
     style.dataset.gota = 'motion';
     style.textContent = css;
@@ -45,7 +45,9 @@
   $: k = SCALES[scale] ?? 1;
   $: dim = size ?? `${k}em`;
   $: stroke = weight === 'auto' ? autoWeight(textWeight) : (WEIGHTS[weight] ?? weight);
-  $: options = { style: variant, weight: stroke, enclosure: r.enclosure, value, rtl, id };
+  // A value is drawn live: the markup stays and --gota-value (on the <svg>) moves it
+  $: showing = value !== undefined && value !== null;
+  $: options = { style: variant, weight: stroke, enclosure: r.enclosure, value: showing ? 'live' : undefined, rtl, id };
   $: inner = render(shown, { ...options, slash: r.slash, animate: effect });
 
   // transition: when the icon (or its slash) changes, once the new drawing is in the DOM
@@ -67,9 +69,9 @@
   height={dim}
   viewBox="0 0 24 24"
   aria-hidden={$$restProps['aria-label'] ? undefined : 'true'}
-  class={effect ? 'gota' : undefined}
+  class={[effect ? 'gota' : null, showing ? 'gota-v' : null].filter(Boolean).join(' ') || undefined}
   data-effect={effect ? effectOf(shown, effect) : undefined}
   data-play={effect ? play : undefined}
   data-rtl={shown.mirror ? 'mirror' : undefined}
-  style={size === undefined ? `vertical-align:${-0.125 * k}em;flex:none` : undefined}
+  style={[size === undefined ? `vertical-align:${-0.125 * k}em;flex:none` : '', showing ? `--gota-value:${Math.max(0, Math.min(1, Number(value)))}` : ''].filter(Boolean).join(';') || undefined}
   {...$$restProps}>{@html inner}</svg>

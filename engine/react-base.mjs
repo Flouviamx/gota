@@ -41,10 +41,13 @@ export function IconBase({ icon: data, variant = 'outline', weight = 'regular', 
   }, [weight]);
   const stroke = weight === 'auto' ? autoWeight(textWeight) : (WEIGHTS[weight] ?? weight);
 
+  // A value is drawn live: the markup stays the same and --gota-value (set on the <svg>) moves it,
+  // so a new value runs through every one in between
+  const showing = value !== undefined && value !== null;
   useEffect(() => {
-    if (effect) injectMotion();
-  }, [effect]);
-  const html = render(icon, { style: variant, weight: stroke, enclosure: r.enclosure, slash: r.slash, value, rtl, animate: effect, id });
+    if (effect || showing) injectMotion();
+  }, [effect, showing]);
+  const html = render(icon, { style: variant, weight: stroke, enclosure: r.enclosure, slash: r.slash, value: showing ? 'live' : undefined, rtl, animate: effect, id });
 
   // transition: when the icon (or its slash) changes, morph, draw the badge, turn or swap in
   const last = useRef({ name: icon.name, slash: r.slash, icon });
@@ -53,13 +56,13 @@ export function IconBase({ icon: data, variant = 'outline', weight = 'regular', 
     last.current = { name: icon.name, slash: r.slash, icon };
     if (!transition || !ref.current || (before.icon === icon && before.slash === r.slash)) return;
     const both = { [before.name]: before.icon, [icon.name]: icon };
-    const change = changeOf(both, before, last.current, { style: variant, weight: stroke, enclosure: r.enclosure, rtl, value, id }, transition);
+    const change = changeOf(both, before, last.current, { style: variant, weight: stroke, enclosure: r.enclosure, rtl, value: showing ? 'live' : undefined, id }, transition);
     if (change) playTransition(ref.current, change);
   }, [icon, r.slash]);
 
   const k = SCALES[scale] ?? 1;
   const dim = size ?? `${k}em`;
-  const classes = [effect ? 'gota' : null, className].filter(Boolean).join(' ') || undefined;
+  const classes = [effect ? 'gota' : null, showing ? 'gota-v' : null, className].filter(Boolean).join(' ') || undefined;
   return createElement('svg', {
     ref,
     xmlns: 'http://www.w3.org/2000/svg',
@@ -71,7 +74,7 @@ export function IconBase({ icon: data, variant = 'outline', weight = 'regular', 
     'data-effect': effect ? effectOf(icon, effect) : undefined,
     'data-play': effect ? (play === true ? 'once' : play) : undefined,
     'data-rtl': icon.mirror ? 'mirror' : undefined,
-    style: size === undefined ? { verticalAlign: `${-0.125 * k}em`, flex: 'none', transformOrigin: 'center', ...style } : { transformOrigin: 'center', ...style },
+    style: { ...(size === undefined ? { verticalAlign: `${-0.125 * k}em`, flex: 'none' } : {}), transformOrigin: 'center', ...(showing ? { '--gota-value': Math.max(0, Math.min(1, Number(value))) } : {}), ...style },
     dangerouslySetInnerHTML: { __html: html },
     ...props,
   });

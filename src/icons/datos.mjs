@@ -1385,6 +1385,8 @@ icons['trend-up'].motion = { effect: 'slide', vector: [1.5, -1.5] };
 icons['trend-down'].motion = { effect: 'slide', vector: [1.5, 1.5] };
 icons['trend-flat'].motion = { effect: 'slide', vector: [2, 0] };
 icons.gauge.motion = { effect: 'wiggle', parts: ['needle'], origin: [12, 14] };
+// A value: the needle sweeps the dial, from its start (150°) at 0 to its end (390°) at 1
+icons.gauge.value = { turn: { parts: ['needle'], origin: [12, 14], from: 150, to: 390, at: 315 } };
 icons.bug.motion = { effect: 'wiggle', origin: [12, 14] };
 icons.api.motion = { effect: 'slide', parts: ['plug'], vector: [-1.25, 1.25] };
 icons['ai-chip'].motion = { effect: 'beat', parts: ['spark'], origin: [12, 12] };

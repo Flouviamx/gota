@@ -88,6 +88,27 @@ test('render: levels turn off with value', () => {
   assert.equal((render(wifi, { id: 'w', value: 1 }).match(/<path/g) ?? []).length, 3);
 });
 
+test('values: a number is drawn in the markup, "live" follows --gota-value; a value plays no effect', () => {
+  const dial = {
+    d: ['M3 12A9 9 0 1 1 21 12', 'M12 12L12 6', 'M5 20h14', 'M5 22h14'],
+    parts: { ring: [0], hand: [1] },
+    levels: [[2], [3]],
+    value: { draw: ['ring'], turn: { parts: ['hand'], origin: [12, 12], from: -90, to: 270, at: -90 } },
+    motion: { effect: 'spin', parts: ['hand'], origin: [12, 12] },
+  };
+  // A number: the stroke drawn that far, the hand turned, the levels it doesn't reach left out
+  const half = render(dial, { id: 'a', value: 0.5 });
+  assert.match(half, /data-part="ring" pathLength="1" stroke-dasharray="0.5 2"/);
+  assert.match(half, /transform="rotate\(180 12 12\)"/);
+  assert.equal((half.match(/data-level=/g) ?? []).length, 1);
+  // Live: the same pieces, moved by the property; the levels step at their thresholds
+  const live = render(dial, { id: 'b', value: 'live' });
+  assert.match(live, /stroke-dasharray:var\(--gota-value, 1\) 2/);
+  assert.match(live, /transform:rotate\(calc\(\(0 \+ var\(--gota-value, 1\) \* 360\) \* 1deg\)\)/);
+  assert.match(live, /opacity:clamp\(0, calc\(\(var\(--gota-value, 1\) \* 2 - 1\.5\) \* 1000 \+ 1\), 1\)/);
+  assert.doesNotMatch(render(dial, { id: 'c', value: 0.5, animate: 'auto' }), /gota-m/);
+});
+
 test('render: mirrors only directional icons', () => {
   assert.match(render(wifi, { id: 'w', rtl: true }), /matrix\(-1 0 0 1 24 0\)/);
   assert.doesNotMatch(render(bell, { id: 'b', rtl: true }), /matrix/);

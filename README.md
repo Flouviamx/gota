@@ -32,6 +32,7 @@ By name, with the whole set (prototypes, names that arrive at runtime): `<Icon n
 - **Next to text:** by default it measures `1em` and drops `-0.125em`, like a letter; `scale`
   (`small`, `medium`, `large`) adjusts it. Without React: `@flouvia/gota/icons.css` and the `.fi` class.
 - **Text weight:** `weight="auto"` matches the stroke to the weight of the surrounding text.
+- **Values:** `value={0.6}` on wifi, signal, battery, volume, a timer, a gauge, a compass…: levels light up, a ring is drawn that far, a needle turns, and a new value animates.
 - **Motion:** `effect="auto"` plays the icon's own gesture (`play`: `hover`, `once`, `loop`);
   `transition="auto"` animates a change of `name` or `slash`: a badge or a slash draws itself
   in, menu ↔ close and other curated pairs morph, the rest swap in. Still under reduced motion.

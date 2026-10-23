@@ -44,13 +44,15 @@ export const IconBase = defineComponent({
     const el = ref(null);
     // weight="auto": read the weight of the text the icon sits in
     const textWeight = ref(400);
+    // A value is drawn live: the markup stays and --gota-value (on the <svg>) moves it
+    const showing = () => props.value !== undefined && props.value !== null;
     onMounted(() => {
-      if (props.effect) injectMotion();
+      if (props.effect || showing()) injectMotion();
       if (props.weight === 'auto' && el.value?.parentElement) textWeight.value = Number(getComputedStyle(el.value.parentElement).fontWeight) || 400;
     });
     const resolved = computed(() => pick(props.icon, { enclosure: props.enclosure, slash: props.slash }));
     const stroke = () => (props.weight === 'auto' ? autoWeight(textWeight.value) : (WEIGHTS[props.weight] ?? props.weight));
-    const options = () => ({ style: props.variant, weight: stroke(), enclosure: resolved.value.enclosure, value: props.value, rtl: props.rtl, id });
+    const options = () => ({ style: props.variant, weight: stroke(), enclosure: resolved.value.enclosure, value: showing() ? 'live' : undefined, rtl: props.rtl, id });
     // transition: when the icon (or its slash) changes, once the new drawing is in the DOM
     watch(
       () => [resolved.value.icon, resolved.value.slash],
@@ -73,11 +75,11 @@ export const IconBase = defineComponent({
         height: dim,
         viewBox: '0 0 24 24',
         'aria-hidden': attrs['aria-label'] ? undefined : 'true',
-        class: props.effect ? 'gota' : undefined,
+        class: [props.effect ? 'gota' : null, showing() ? 'gota-v' : null].filter(Boolean).join(' ') || undefined,
         'data-effect': props.effect ? effectOf(icon, props.effect) : undefined,
         'data-play': props.effect ? props.play : undefined,
         'data-rtl': icon.mirror ? 'mirror' : undefined,
-        style: props.size === undefined ? { verticalAlign: `${-0.125 * k}em`, flex: 'none' } : undefined,
+        style: { ...(props.size === undefined ? { verticalAlign: `${-0.125 * k}em`, flex: 'none' } : {}), ...(showing() ? { '--gota-value': Math.max(0, Math.min(1, Number(props.value))) } : {}) },
         innerHTML: render(icon, { ...options(), slash, animate: props.effect }),
       });
     };

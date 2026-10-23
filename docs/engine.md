@@ -28,7 +28,7 @@ Everything works on the 24 canvas and returns a path's `d` with at most two deci
 | `slash` | A slash from (3.6, 3.6) to (20.4, 20.4) with a clearance of paper on each side (a stroke mask of weight + 2 × paper: 4.5 at every weight). As a number 0–1, drawn that far from the top left, its cutout with it (transitions) |
 | `size` | ≤ 18: uses `small` if it exists; otherwise, **pixel snapping** (`snap`) |
 | `rtl` | Flips (`matrix(-1 0 0 1 24 0)`) only if `icon.mirror` |
-| `value` (0–1) | With `levels`, hides the levels it doesn't reach |
+| `value` (0–1, or `'live'`) | Shows a value: the `levels` it doesn't reach are left out, `value.draw` strokes are drawn that far, `value.turn` parts turned. `'live'` draws the same from the CSS property `--gota-value` (registered in `motion.css`, so a new value animates through the ones in between); the components do this when given a number. A value plays no effect |
 | `frame` | Draws the extreme frame of the `motion` (review sheets) |
 | `animate` | Prepares the SVG for `engine/motion.css`: the effect from `effectOf()` (`'auto'` = the icon's own gesture, otherwise its levels, otherwise a bounce); the moving pieces go in a `.gota-m` group with their pivot and displacement, and each visible stroke gets `pathLength="1"` and its drawing order. Not applied with an enclosure |
 | `id` | Prefix for the masks; unique per SVG on the page |

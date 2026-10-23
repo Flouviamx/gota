@@ -1480,6 +1480,17 @@ const MOTION = {
 };
 for (const [name, m] of Object.entries(MOTION)) icons[name].motion = m;
 
+// Values (0–1): the timer's ring is the time left, drawn from the top, and its hand points at
+// where it ends; the stopwatch's hand runs a full turn from 12; the compass needle and the
+// navigation arrow turn to a heading (0 is north)
+const VALUE = {
+  timer: { draw: ['ring'], turn: { parts: ['hand'], origin: [12, 12], from: -90, to: 210, at: 210 } },
+  stopwatch: { turn: { parts: ['hand'], origin: [12, 13.25], from: -90, to: 270, at: -55 } },
+  compass: { turn: { parts: ['needle'], origin: [12, 12], from: -90, to: 270, at: -45 } },
+  navigation: { turn: { parts: ['arrow', 'ridge'], origin: [12, 12], from: -90, to: 270, at: -90 } },
+};
+for (const [name, v] of Object.entries(VALUE)) icons[name].value = v;
+
 // ── Automatic variants (DESIGN.md › Automatic variants) ───────────────────────────────────────
 const offV = (names, v) => {
   for (const n of names) icons[n].variants = { ...icons[n].variants, ...v };

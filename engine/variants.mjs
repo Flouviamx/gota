@@ -395,9 +395,13 @@ export function motionTransform({ effect, origin = [12, 12], vector = [0, -2] })
 
 export function render(icon, { style = 'outline', enclosure = null, slash = false, weight = 1.5, id = 'i', size, rtl = false, value, frame = false, animate = null } = {}) {
   const enc = enclosure ? ENCLOSURES[enclosure] : null;
+  // A value (0–1, or 'live' to follow the CSS property --gota-value): the icon's levels, its `draw`
+  // strokes and its `turn` parts show it (icon.value); an icon showing a value plays no effect
+  const shows = value !== undefined && value !== null;
+  const turn = shows && !enc ? (icon.value?.turn ?? null) : null;
   // Animation: the requested effect with its data (parts, pivot, offset)
-  const spec = animate && !enc ? motionSpec(icon, animate) : null;
-  const r = resolve(icon, { size, value, frame, spec });
+  const spec = animate && !enc && !shows ? motionSpec(icon, animate) : null;
+  const r = resolve(icon, { size, value, frame: frame && !shows, spec: spec ?? (turn ? { parts: turn.parts } : null) });
   if (r.badge) {
     // Dots that touch the badge's area are removed whole (outline and fill)
     const z = r.badge.zoom;
@@ -413,6 +417,21 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   const order = new Map(icon.d.map((d, i) => [d, i]));
   const lvl = (d) => (r.tags.get(d) ?? '').match(/data-level="(\d+)"/)?.[1];
   const anim = (d) => (spec ? ` pathLength="1" style="--i:${order.get(d) ?? 0}${lvl(d) ? `;--l:${lvl(d)}` : ''}"` : '');
+  // Showing a value: a level appears once the value passes it (live, as a step the property's
+  // transition runs through); a `draw` stroke is drawn that far along its length
+  const live = value === 'live';
+  const amount = live ? 0 : Math.max(0, Math.min(1, Number(value)));
+  const partOf = (d) => (r.tags.get(d) ?? '').match(/data-part="([^"]+)"/)?.[1];
+  const drawing = new Set(shows && !enc ? (icon.value?.draw ?? []) : []);
+  const levels = icon.levels?.length ?? 0;
+  const show = (d) => {
+    if (!shows) return '';
+    // Shown from v × levels = n − 0.5 on, as the static value rounds (a half up)
+    if (live && lvl(d)) return ` style="opacity:clamp(0, calc((var(--gota-value, 1) * ${levels} - ${Number(lvl(d)) - 0.5}) * 1000 + 1), 1)"`;
+    if (!drawing.has(partOf(d))) return '';
+    if (live) return ' pathLength="1" style="stroke-dasharray:var(--gota-value, 1) 2;opacity:min(1, calc(var(--gota-value, 1) * 1000))"';
+    return ` pathLength="1" stroke-dasharray="${f(amount)} 2"${amount > 0 ? '' : ' opacity="0"'}`;
+  };
   // A dot (a circle of radius 1 at most, measured at the drawing's own size: inside an enclosure
   // a small ring is shrunk, not a dot) is drawn as the disc its stroke would cover, radius r + w/2,
   // filled and unstroked. A stroke alone opens it into a ring at light weights, and a stroke wider
@@ -426,7 +445,7 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     ds
       .map((d) => {
         const c = dotOf(d);
-        return c ? `<path d="${disc(c, weight)}" fill="currentColor" stroke="none"${r.tags.get(d) ?? ''}${anim(d)}/>` : `<path d="${d}"${r.tags.get(d) ?? ''}${anim(d)}/>`;
+        return c ? `<path d="${disc(c, weight)}" fill="currentColor" stroke="none"${r.tags.get(d) ?? ''}${anim(d)}${show(d)}/>` : `<path d="${d}"${r.tags.get(d) ?? ''}${anim(d)}${show(d)}/>`;
       })
       .join('');
   const k = enc ? enc.scale : 1;
@@ -438,7 +457,7 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     ds
       .map((d) => {
         const c = dotOf(d);
-        return c ? `<path d="${disc(c, w)}" fill="black"/>` : `<path d="${d}" fill="none" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"/>`;
+        return c ? `<path d="${disc(c, w)}" fill="black"${show(d)}/>` : `<path d="${d}" fill="none" stroke="black" stroke-width="${f(w)}" stroke-linecap="round" stroke-linejoin="round"${show(d)}/>`;
       })
       .join('');
   const maskOf = (name, content) => `<mask id="${id}-${name}" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="white"/>${content}</mask>`;
@@ -446,10 +465,16 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
   const body = [];
   // Extreme frame of the motion (review sheets): the parts that move and, if the badge moves,
   // its cutout too
-  const t = frame && icon.motion ? motionTransform(icon.motion) : '';
+  const t = frame && !shows && icon.motion ? motionTransform(icon.motion) : '';
   const mv = t ? icon.motion : spec;
-  // Whatever moves goes in a group: with the extreme frame (sheets) or with the animation class
-  const wrapAttr = t ? ` transform="${t}"` : spec ? ` class="gota-m" style="${motionStyle(spec)}"` : '';
+  // A `turn` showing a value: from its `from` angle at 0 to its `to` at 1 (drawn at `at`)
+  const turned = (tn) => {
+    const [ox, oy] = tn.origin;
+    if (live) return ` style="transform-box:view-box;transform-origin:${f(ox)}px ${f(oy)}px;transform:rotate(calc((${f(tn.from - tn.at)} + var(--gota-value, 1) * ${f(tn.to - tn.from)}) * 1deg))"`;
+    return ` transform="rotate(${f(tn.from - tn.at + amount * (tn.to - tn.from))} ${f(ox)} ${f(oy)})"`;
+  };
+  // Whatever moves goes in a group: with the extreme frame (sheets), the animation class, or the value's turn
+  const wrapAttr = t ? ` transform="${t}"` : spec ? ` class="gota-m" style="${motionStyle(spec)}"` : turn ? turned(turn) : '';
   const badgeMoves = Boolean(wrapAttr) && (mv?.parts ?? []).includes('badge');
   const moving = (ds) => (wrapAttr && r.moved?.size ? [ds.filter((p) => !r.moved.has(p)), ds.filter((p) => r.moved.has(p))] : [ds, []]);
   const split = (ds, draw) => {

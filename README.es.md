@@ -31,6 +31,7 @@ Por nombre, con el set completo (prototipos, nombres que llegan en tiempo de eje
 - **Formas:** normal, `enclosure: 'circle' | 'square'` y `slash`.
 - **Junto al texto:** por omisión mide `1em` y baja `-0.125em`, como una letra; `scale`
   (`small`, `medium`, `large`) lo ajusta. Sin React: `@flouvia/gota/icons.css` y la clase `.fi`.
+- **Valores:** `value={0.6}` en wifi, señal, batería, volumen, un temporizador, un medidor, una brújula…: se encienden niveles, un anillo se dibuja hasta ahí, una aguja gira, y un valor nuevo se anima.
 - **Peso del texto:** `weight="auto"` iguala el trazo al peso del texto que lo rodea.
 - **Movimiento:** `effect="auto"` reproduce el gesto propio del ícono (`play`: `hover`, `once`, `loop`);
   `transition="auto"` anima un cambio de `name` o de `slash`: una insignia o una diagonal se dibujan

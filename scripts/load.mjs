@@ -56,6 +56,15 @@ export async function loadAll({ only } = {}) {
         if (!Array.isArray(icon.levels) || icon.levels.length < 2 || icon.levels.some((l) => !Array.isArray(l) || !l.length || l.some((i) => !Number.isInteger(i) || i < 0 || i >= n)))
           errors.push(`${where}: levels is a list of ≥2 levels, each with valid indices into d`);
       }
+      if (icon.value !== undefined) {
+        // A value: strokes drawn that far (`draw`, named parts) and parts turned to it (`turn`)
+        const v = icon.value;
+        const named = (list) => Array.isArray(list) && list.length > 0 && list.every((p) => icon.parts?.[p]);
+        if (!v || typeof v !== 'object' || Object.keys(v).some((k) => !['draw', 'turn'].includes(k))) errors.push(`${where}: value is { draw?, turn? }`);
+        if (v?.draw !== undefined && !named(v.draw)) errors.push(`${where}: value.draw names parts`);
+        const t = v?.turn;
+        if (t !== undefined && !(named(t.parts) && Array.isArray(t.origin) && t.origin.length === 2 && ['from', 'to', 'at'].every((k) => Number.isFinite(t[k])))) errors.push(`${where}: value.turn is { parts, origin: [x, y], from, to, at }`);
+      }
       if (icon.motion !== undefined) {
         const m = icon.motion;
         if (!MOTION.includes(m?.effect)) errors.push(`${where}: motion.effect must be one of ${MOTION.join(', ')}`);

@@ -134,10 +134,18 @@ reply, send, undo or redo, indented lists, speakers, pencils, charts that grow. 
 clocks and anything that turns clockwise, check, signs and numbers, logos, symmetrical objects,
 or anything that depicts a physical object with a fixed side.
 
-## Levels
+## Levels and values
 Icons that express a quantity (wifi, signal, battery, volume, intensity) mark their levels:
 `levels: [[indices in d of the first], [of the second], …]`, from least to most. Given a value
 from 0 to 1, the levels it reaches light up (wifi at half = half of its arcs).
+
+Other icons show a value with the pieces they already have, one color, in `value`:
+- `draw: ['ring']`: those strokes are drawn that far along their length (a timer's time left, a
+  determinate loader);
+- `turn: { parts, origin, from, to, at }`: those parts turn from `from` degrees at 0 to `to` at 1
+  (`at`: the angle they're drawn at), a needle on its dial, a hand, a heading.
+A piece that would have to stretch (a progress bar's pill, a liquid with no surface of its own)
+needs a drawing made for it, not a value. An icon showing a value plays no effect.
 
 ## Motion
 Every icon can **draw itself**, **bounce**, and be **replaced** by another with no extra data.

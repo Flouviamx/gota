@@ -31,7 +31,8 @@ Strokes are computed with the engine (local constants and functions are allowed)
 | `variants` | `{ circle?, square?, slash?: false }` | no | Turns off automatic variants that make no sense |
 | `mirror` | `true` | directional icons | Flips in right-to-left languages |
 | `levels` | `number[][]` (≥ 2) | quantity icons | Indices into `d` per level, from least to most |
-| `parts` | `{ name: number[] }` | with `motion`, `levels`, or a badge | Named parts (English kebab-case) |
+| `value` | `{ draw?: string[], turn?: { parts, origin, from, to, at } }` | icons that show a value with their own pieces | Strokes drawn that far, parts turned from `from` to `to` degrees (drawn at `at`); see DESIGN.md › Levels and values |
+| `parts` | `{ name: number[] }` | with `motion`, `levels`, `value`, or a badge | Named parts (English kebab-case) |
 | `badge` | `badge('plus')` or `{ d, knock, fill? }` | every badge | What goes on top with an automatic knockout: `d` is drawn, `knock` is the area cleared with a clearance of paper (1.5 at regular); it renders as `data-part="badge"` |
 | `motion` | `{ effect, parts?, origin?, vector? }` | if it has its own gesture | `effect` ∈ `ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`; `parts` by name, index, or `'badge'` |
 

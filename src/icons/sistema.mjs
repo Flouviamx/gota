@@ -1475,5 +1475,7 @@ const MOTION = {
   'plug-disconnected': { effect: 'slide', parts: ['plug'], vector: [1.25, -1.25] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
+// A value (0–1): the loader's arc is drawn that far, a determinate progress
+icons.loader.value = { draw: ['arc'] };
 
 export default { category: 'sistema', label: 'Sistema, seguridad y estado', icons };

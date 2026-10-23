@@ -4,6 +4,12 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Live values (2.3)
+- **`render(icon, { value })`** ([engine](./engine.md#variants-enginevariantsmjs), [decision 69](./decisions.md#weights-22-oct-2026)): a number draws the value; `'live'` follows `--gota-value`. React, Vue, and Svelte set the property from their `value` prop, so a new value animates; Astro draws the number.
+- **26 icons:** the 20 with levels, the timer (its ring is the time left, its hand points where it ends), the loader, the gauge's needle, the stopwatch's hand, the compass needle, and the navigation arrow. Static and live compared side by side at 0, ¼, ½, ¾, and 1: the same drawing (a level at exactly its threshold differed until the live step rounded a half up, as the number does).
+- **Left for drawings of their own:** a progress bar (its pill would stretch) and liquids (flask, coffee, hourglass don't draw a surface apart from the glass).
+- Tests: 45.
+
 ## 22 Oct 2026 — Xcode symbols (2.5 closes)
 - **`node scripts/native.mjs xcode`** ([build](./build.md#native-formats-node-scriptsnativemjs-format)): 1,865 variable templates (outline and fill), 1,853 varying with the weight; `actool` compiles them with no warning and AppKit draws each at Ultralight, Regular, and Black. A sample sheet at Apple's six weights shows clean interpolation, the signature corner kept.
 - **How it was found:** no template ships with Xcode or the system, so the probe started from Apple's template layout (Notes, Guides with baselines, caplines, and per-master margins, Symbols with the three masters) and was taken as right only once `actool` compiled it and AppKit drew the bell at six weights next to SF Symbols' own ([decision 68](./decisions.md#weights-22-oct-2026)).
