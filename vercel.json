@@ -9,9 +9,21 @@
     "api/mcp.mjs": { "includeFiles": "{dist/icons.json,package.json}", "maxDuration": 10 }
   },
   "redirects": [
-    { "source": "/", "destination": "https://flouvia.com/", "permanent": false },
-    { "source": "/en", "destination": "https://flouvia.com/en/", "permanent": false },
-    { "source": "/:path((?!mcp$|api/|robots\\.txt$).+)", "destination": "https://flouvia.com/:path", "permanent": false }
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
+    {
+      "source": "/:path((?!mcp$|api/|robots\\.txt$|sitemap\\.xml$|icons$|guide$|showcase$|license$|es$|es/(?:icons|guide|showcase|license)$|_astro/|imgs/|relay-fv/|favicon-light\\.svg$|favicon-dark\\.svg$|favicon\\.ico$|apple-touch-icon\\.png$|android-touch-icon\\.png$|android-touch-icon-512\\.png$|manifest\\.json$).+)",
+      "destination": "https://flouvia.com/:path",
+      "permanent": false
+    }
   ],
-  "rewrites": [{ "source": "/mcp", "destination": "/api/mcp" }]
+  "rewrites": [
+    { "source": "/mcp", "destination": "/api/mcp" },
+    { "source": "/", "destination": "https://flouvia.com/en/gota" },
+    { "source": "/:page(icons|guide|showcase|license)", "destination": "https://flouvia.com/en/gota/:page" },
+    { "source": "/es", "destination": "https://flouvia.com/gota" },
+    { "source": "/es/:page(icons|guide|showcase|license)", "destination": "https://flouvia.com/gota/:page" },
+    { "source": "/:dir(_astro|imgs|relay-fv)/:path*", "destination": "https://flouvia.com/:dir/:path*" },
+    { "source": "/:file(favicon-light\\.svg|favicon-dark\\.svg|favicon\\.ico|apple-touch-icon\\.png|android-touch-icon\\.png|android-touch-icon-512\\.png|manifest\\.json)", "destination": "https://flouvia.com/:file" }
+  ]
 }

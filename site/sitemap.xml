@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://gota.flouvia.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/icons"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/es/icons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/icons"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/icons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/icons"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/guide"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/es/guide</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/guide"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/guide"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/showcase</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/showcase"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/showcase"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/showcase"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/es/showcase</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/showcase"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/showcase"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/showcase"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/license</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/license"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/license"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/license"/>
+  </url>
+  <url>
+    <loc>https://gota.flouvia.com/es/license</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gota.flouvia.com/license"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://gota.flouvia.com/es/license"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gota.flouvia.com/license"/>
+  </url>
+</urlset>
