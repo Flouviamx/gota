@@ -1,14 +1,11 @@
 // Navegación (navigation): arrows, chevrons, menus, panels, views and everything that moves the
 // user through the interface. Drawn with the engine following the rules in DESIGN.md; the base
 // measurements come from Núcleo (arrow-right: 16 shaft, arms of 6 per axis; chevron-right: arms of 6.75).
-import { arc, badge, circ, cursor, dot, f, head, line, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, cursor, dot, f, head, line, roundpoly, sq, turn } from '../../engine/geometry.mjs';
 
-const C = [12, 12];
 const R2 = Math.SQRT2;
 const P = ([x, y]) => `${f(x)} ${f(y)}`;
 
-/** Rotates a list of points around the center of the canvas. */
-const turn = (pts, deg) => pts.map((p) => rot(p, C, deg));
 /** Straight arrow from `a` to `b`; `len` is the length of each arm of the head. */
 const arrow = (a, b, len) => [line(a, b), head(b, [b[0] - a[0], b[1] - a[1]], len)];
 /** Straight arrow rotated `deg` around the center. */

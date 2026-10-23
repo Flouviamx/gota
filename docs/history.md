@@ -4,6 +4,12 @@
 
 [← Index](./README.md)
 
+## 23 Oct 2026 — Phase 3 starts: the modifiers in the engine (3.2 closes)
+- **Badges** ([engine](./engine.md#geometry-enginegeometrymjs), [decision 79](./decisions.md#phase-3-23-oct-2026)): `badge()` gains `question`, `block`, `arrow-left`, and the glyph badges `search`, `heart`, `sync`, `edit`, `gear`, each with its pixel version, taken from the copies Archivos, Comunicación, Datos, and Sistema drew by hand (their 24 px drawings, unchanged). Glyph badges keep the icon's style; the status ones stay solid. The four categories' copies, Archivos' `heart`, `ringHull`, and Comunicación's `pencil` are gone.
+- **Directions:** `turn`, `turnPath`, `flipPath`, and `gear` in the engine.
+- Checked: a sheet of the 17 icons before and after, the render of the whole set compared string by string (only those change; at 16 px they also gain their named parts), and the full QA (1,033 icons, the same 12 known weight warnings).
+- Tests: 59.
+
 ## 23 Oct 2026 — Phase 2 closes; the source goes public
 - **2.6 closes:** the owner built the Figma library with the plugin. Phase 2 is done; what stays open from it is optional (the last 12 icons without clean in-between weights in the variable font, and drawings of their own for a progress bar and liquids).
 - **GitHub, public and unannounced** ([decision 78](./decisions.md#outputs-23-oct-2026)): `github.com/Flouviamx/gota`, so gota.flouvia.com links its documentation. Before the first push, the copy of Flouvia's old logo (used by the Figma cover until it read the brand from `flouvia-web`) was taken out of the history.

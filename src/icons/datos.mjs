@@ -134,50 +134,8 @@ const DB = {
 };
 const DB_D = [DB.body, DB.lid, DB.band];
 
-// Custom badges, in the same place and with the same ring as the engine's (center 17.25, r 4.25).
+// The badges' center (the engine's), for the motions that turn a badge.
 const BC = [17.25, 17.25];
-const RING = circ(...BC, 4.25);
-/**
- * The badge ring's hull with the points that reach past it (as in Archivos): from each point, the
- * tangents to the ring, and the ring's arcs between them.
- */
-function ringHull(ds) {
-  const BR = 4.25;
-  const ang = (p) => (Math.atan2(p[1] - BC[1], p[0] - BC[0]) * 180) / Math.PI;
-  const arcTo = (a0, a1) => arc(...BC, BR, a0, a1).d.replace(/^M[^A]*/, '');
-  const out = ds
-    .flatMap((d) => d.match(/-?[\d.]+/g).map(Number).flatMap((v, i, a) => (i % 2 ? [] : [[v, a[i + 1]]])))
-    .filter((p) => Math.hypot(p[0] - BC[0], p[1] - BC[1]) > BR)
-    .map((p) => ({ p, a: ang(p), w: (Math.acos(BR / Math.hypot(p[0] - BC[0], p[1] - BC[1])) * 180) / Math.PI }))
-    .sort((u, v) => u.a - v.a);
-  let s = `M${pt(polar(...BC, BR, out[0].a - out[0].w))}`;
-  out.forEach((q, i) => {
-    const next = out[(i + 1) % out.length];
-    s += `L${pt(q.p)}L${pt(polar(...BC, BR, q.a + q.w))}${arcTo(q.a + q.w, next.a - next.w + (i === out.length - 1 ? 360 : 0))}`;
-  });
-  return `${s}Z`;
-}
-const OWN = {
-  // Magnifier: the lens is the badge circle (r 3.25) and the handle runs toward the corner.
-  search() {
-    const lens = circ(...BC, 3.25);
-    const p = polar(...BC, 3.25, 45);
-    const end = [21.25, 21.25];
-    const handle = line(p, end);
-    // Filled: the lens solid and the handle attached to it, still a line
-    return { d: [lens, handle], knock: `${RING}M${pt(p)}L${pt(end)}Z`, fill: { solid: [lens], wire: [handle] } };
-  },
-  // Sync: the same badge as Archivos' folder-sync and cloud-sync. The arc arrows fill the badge
-  // circle (in the fill they stay lines); their outer arrowheads reach past the ring, so the cleared
-  // area is the ring's hull with them (with the ring alone they met the base at bold); turned 6°,
-  // the upper one lies level with the top of the ring and the hull's edge runs flat from it.
-  sync() {
-    const a = arc(...BC, 3.75, 211, 331);
-    const b = arc(...BC, 3.75, 31, 151);
-    const heads = [head(a.end, a.tangent, 2.4), head(b.end, b.tangent, 2.4)];
-    return { d: [a.d, heads[0], b.d, heads[1]], knock: ringHull(heads) };
-  },
-};
 
 // Keylines.
 const K0 = 3.25;
@@ -853,12 +811,12 @@ const icons = {
   'database-search': {
     tags: ['consulta', 'query', 'buscar datos', 'database search'],
     d: DB_D,
-    badge: OWN.search(),
+    badge: badge('search'),
   },
   'database-sync': {
     tags: ['sincronizar datos', 'réplica', 'actualizar', 'database sync'],
     d: DB_D,
-    badge: OWN.sync(),
+    badge: badge('sync'),
   },
 
   // Filters and experiments ----------------------------------------------------------------------
@@ -1211,33 +1169,14 @@ const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
 
 // The databases with a badge: the 24 px ellipses fell between two pixel rows and became gray bands.
 // At 16 px, the sides in columns 2 and 13, and the flat parts of the lid, its rim, the band and the
-// bottom on pixel centers (rows 1, 5, 9 and 13). The badge is the engine's pixel badge or a custom
-// one: the magnifier (the lens of r 3 at the badge center, crisp on all four sides) and the sync
-// arrows from `archivos` at 16 px.
+// bottom on pixel centers (rows 1, 5, 9 and 13). The badge is the engine's pixel badge.
 {
   const lid = 'M3.75 5.25c0-1.66 3.69-3 8.25-3s8.25 1.34 8.25 3-3.69 3-8.25 3-8.25-1.34-8.25-3Z';
   const body = 'M3.75 5.25v12c0 1.66 3.69 3 8.25 3s8.25-1.34 8.25-3v-12';
   const band = 'M20.25 11.25c0 1.66-3.69 3-8.25 3s-8.25-1.34-8.25-3';
   const rim = 'M20.25 5.25c0 1.66-3.69 3-8.25 3s-8.25-1.34-8.25-3';
-  const own16 = (d, fill) => ({ d, knock: `${RING}${d.join('')}`, ...(fill && { fill }) });
-  const lens = circ(...BC, 3);
-  const handle = line(polar(...BC, 3, 45), g(14, 14));
-  const at = (dx, dy) => g(11 + dx, 11 + dy);
-  const BADGE16 = {
-    'database-plus': badge('plus', { size: 16 }),
-    'database-check': badge('check', { size: 16 }),
-    'database-export': badge('arrow-up', { size: 16 }),
-    'database-import': badge('arrow-down', { size: 16 }),
-    'database-search': own16([lens, handle], { solid: [lens], wire: [handle] }),
-    'database-sync': own16([
-      `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${n(px(13))}`,
-      pl([12, 8], [13, 9], [12, 10]),
-      `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${n(px(9))}`,
-      pl([10, 14], [9, 13], [10, 12]),
-    ]),
-  };
-  for (const [name, b] of Object.entries(BADGE16))
-    icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: b };
+  for (const name of ['database-plus', 'database-check', 'database-export', 'database-import', 'database-search', 'database-sync'])
+    icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: badge(icons[name].badge.kind, { size: 16 }) };
 }
 // The atom: the nucleus stuck to the orbits and at 16 px it was a gray flower. The center goes at
 // the center of pixel (7, 7): the vertical orbit falls crisp (its sides in columns 5 and 9, its

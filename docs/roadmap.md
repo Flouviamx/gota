@@ -33,7 +33,7 @@ It comes before scaling: a format change is cheap with 1,000 icons and very expe
 
 ## Phase 3 · Scaling to 10,000
 - [ ] 3.1 Taxonomy for the remaining ~9,000 by domain (health, education, food, sports, tools, science, industry, home, animals, AI, transportation…), without repeating concepts.
-- [ ] 3.2 Curated modifiers in the engine: badges with knockouts (+, −, ✓, ×, clock, lock, alert, star), directions, and levels.
+- [x] 3.2 Curated modifiers in the engine: badges with knockouts (+, −, ✓, ×, clock, lock, alert, star), directions, and levels. Those badges and levels (`levels`, `value`) were already there; 3.2 moved into the engine the badges four categories drew by hand (`question`, `block`, `arrow-left`, and the glyphs `search`, `heart`, `sync`, `edit`, `gear`, each with its 16 px version) and added the directions (`turn`, `turnPath`, `flipPath`) ([engine](./engine.md#geometry-enginegeometrymjs), [decision 79](./decisions.md#phase-3-23-oct-2026)).
 - [ ] 3.3 Nine rounds of ~1,000: each agent delivers everything at once, with a critic, QA, and a sample for the owner.
 
 ## Phase 4 · Launching v1 (10,000)

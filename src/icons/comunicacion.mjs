@@ -1,10 +1,10 @@
 // Comunicación y personas (communication and people): bubbles, mail, calls, notifications,
 // people and reactions. Everything comes from the engine (engine/geometry.mjs) plus a few local
 // tools to move or scale Núcleo pieces (person, phone, bell, envelope) without redrawing them.
-// Badges are the engine's, and anything that sits on top of another shape (the pencil over the
-// envelope, the front person, the diagonal of the -off icons) is a custom badge: the engine clears
-// the base by exactly 1.5, never by hand. See DESIGN.md.
-import { arc, badge, circ, dot, drop, f, halfChord, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+// Badges are the engine's (the pencil, the heart and the magnifier included), and anything that
+// sits on top of another shape (an arrow, the front person, the diagonal of the -off icons) is a
+// custom badge: the engine clears the base by exactly 1.5, never by hand. See DESIGN.md.
+import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 import nucleo from './nucleo.mjs';
 
@@ -425,18 +425,6 @@ function raisedHand() {
 /** Small bust (badges and cards): head and shoulders resting on the bottom edge. */
 const bust = (cx, headY, hr, baseY, sr) => [circ(cx, headY, hr), arc(cx, baseY, sr, 180, 360).d];
 
-/** Pencil at 45° with its tip at `tip`, `len` long, with a body 3 wide (like Núcleo's). */
-function pencil(tip, len, w = 3) {
-  const u = [Math.SQRT1_2, -Math.SQRT1_2];
-  const n = [Math.SQRT1_2, Math.SQRT1_2];
-  const at = (a, b) => [tip[0] + u[0] * a + n[0] * b, tip[1] + u[1] * a + n[1] * b];
-  const a = 2.6;
-  // The end is a half circle: exactly half its written chord, or the rounding of its turned ends bulges it
-  const R = halfChord(at(len, -w / 2), at(len, w / 2));
-  const body = `M${P(tip)}L${P(at(a, -w / 2))}L${P(at(len, -w / 2))}A${R} ${R} 0 0 1 ${P(at(len, w / 2))}L${P(at(a, w / 2))}Z`;
-  return [body, line(at(len - 2.4, -w / 2), at(len - 2.4, w / 2))];
-}
-
 /** Measurements of a continuous corner of radius r (the same 0.6 smoothing as the engine's sq()). */
 function cornerK(r, s = 0.6) {
   const p = (1 + s) * r;
@@ -571,33 +559,9 @@ const MAIL_B = [MAIL, FLAP].map((d) => xf(d, { s: 0.85, o: [2.5, 5], dy: -0.5 })
 const MAIL_DOT = [MAIL, FLAP].map((d) => xf(d, { dy: 2.5 }));
 
 // ── Custom badges ────────────────────────────────────────────────────────────────────────
-// In the same place as the engine's badges (center 17.25, 17.25; circle of r 4.25). `knock` is the
-// area the engine clears with a 1.5 gap; anything sitting on top of another shape brings its own area.
-const BC = [17.25, 17.25];
-const BR = 4.25;
-const RING = circ(...BC, BR);
+// `knock` is the area the engine clears with a 1.5 gap; anything sitting on top of another shape
+// brings its own area.
 const own = (d, knock, fill) => ({ d, knock, ...(fill && { fill }) });
-/** Block: the circle with its diagonal (knocked out in the fill). */
-const blockBadge = () => {
-  const bar = line(polar(...BC, BR, 225), polar(...BC, BR, 45));
-  return own([RING, bar], RING, { solid: [RING], cut: [bar] });
-};
-/** Heart without a circle: the shape is the badge and clears the whole circle (no fragments next to its tip). */
-const heartBadge = () => {
-  const h = heart(BC[0], 15.6, 7.6);
-  return own([h], RING, { solid: [h] });
-};
-/** Magnifier: the lens in the badge circle (r 3.25) and the handle toward the corner (flush with the lens). */
-const searchBadge = () => {
-  const lens = circ(...BC, 3.25);
-  const handle = line(polar(...BC, 3.25, 45), [21.25, 21.25]);
-  return own([lens, handle], knockOf(lens, handle), { solid: [lens], wire: [handle] });
-};
-/** Pencil on top of a shape: the body is filled and the ferrule is knocked out. */
-const pencilOver = (tip, len) => {
-  const pen = pencil(tip, len);
-  return own(pen, pen[0], { solid: [pen[0]], cut: [pen[1]] });
-};
 /** Right arrow on top of a shape (it stays a line in the fill). */
 const arrowOver = (from, to, len = 3.4) => {
   const d = [line(from, to), head(to, [to[0] - from[0], to[1] - from[1]], len)];
@@ -803,7 +767,7 @@ const icons = {
   'mail-draft': {
     tags: ['borrador', 'redactando', 'editar correo', 'draft', 'edit email'],
     d: MAIL_B,
-    badge: pencilOver([13, 21.25], 10.5),
+    badge: badge('edit'),
   },
   'mail-attachment': {
     tags: ['adjunto', 'archivo adjunto', 'clip', 'attachment', 'paperclip'],
@@ -837,7 +801,7 @@ const icons = {
   'mail-search': {
     tags: ['buscar correo', 'filtrar', 'bandeja', 'search mail'],
     d: MAIL_B,
-    badge: searchBadge(),
+    badge: badge('search'),
   },
   'mail-letter': {
     tags: ['carta', 'invitación', 'sobre con carta', 'letter', 'invitation'],
@@ -1138,7 +1102,7 @@ const icons = {
   'person-block': {
     tags: ['bloquear', 'vetar', 'usuario bloqueado', 'block user', 'ban'],
     d: PERSON_L,
-    badge: blockBadge(),
+    badge: badge('block'),
   },
   'person-clock': {
     tags: ['invitación pendiente', 'en espera', 'usuario', 'pending user'],
@@ -1148,17 +1112,17 @@ const icons = {
   'person-heart': {
     tags: ['contacto favorito', 'seguir', 'cliente frecuente', 'favorite', 'follow'],
     d: PERSON_L,
-    badge: heartBadge(),
+    badge: badge('heart'),
   },
   'person-edit': {
     tags: ['editar perfil', 'cuenta', 'datos personales', 'edit profile', 'account'],
     d: PERSON_L,
-    badge: pencilOver([12.5, 21], 10.5),
+    badge: badge('edit'),
   },
   'person-search': {
     tags: ['buscar persona', 'directorio', 'encontrar usuario', 'find user'],
     d: PERSON_L,
-    badge: searchBadge(),
+    badge: badge('search'),
   },
   'person-arrow': {
     tags: ['asignar', 'transferir', 'delegar', 'assign', 'transfer'],

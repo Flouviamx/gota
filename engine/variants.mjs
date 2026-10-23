@@ -3,7 +3,7 @@
 // the pixel and the extreme frame of its motion. The fill (`fill`) and the 16 px drawing (`small`)
 // are drawn in the definition. Everything comes out as the content of an <svg viewBox="0 0 24 24">.
 // See DESIGN.md › Fill, Variants and Motion.
-import { badge, circ, f, halfChord, sq } from './geometry.mjs';
+import { badge, circ, f, glyphBadge, halfChord, sq } from './geometry.mjs';
 
 /** The set's named weights, its three masters (font weights 300 · 400 · 700): the drawing is designed for regular. */
 export const WEIGHTS = { light: 0.9, regular: 1.5, bold: 2.1 };
@@ -547,9 +547,10 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
     if (r.badge) {
       // A status badge (a standard one, or a custom one on the standard ring: r 4.25 at 17.25) is
       // solid in every style, its sign cut out of it, as Apple's badges are: it reads at every weight
-      // and at 24 px. Any other badge (a lens, a second card, a sun behind a cloud) keeps the style
+      // and at 24 px. A glyph badge (the engine's magnifier, heart, sync, pencil, gear) and any other
+      // custom one (a second card, a sun behind a cloud) keep the style
       const ring = r.badge.fill?.solid?.[0] && asCircle(r.badge.fill.solid[0]);
-      const status = r.badge.kind || (ring && Math.abs(ring.cx - 17.25) < 0.05 && Math.abs(ring.cy - 17.25) < 0.05 && Math.abs(ring.r - 4.25) < 0.05);
+      const status = r.badge.kind ? !glyphBadge(r.badge.kind) : ring && Math.abs(ring.cx - 17.25) < 0.05 && Math.abs(ring.cy - 17.25) < 0.05 && Math.abs(ring.r - 4.25) < 0.05;
       const bf = style === 'fill' || status ? r.badge.fill : null;
       const move = badgeMoves ? wrapAttr : '';
       if (bf) {

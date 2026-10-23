@@ -1,7 +1,7 @@
 // Engine tests: if one of these fails, it fails across all 10,000 icons at once.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { badge, circ, cursor, drop, f, head, roundpoly, sq } from '../engine/geometry.mjs';
+import { badge, circ, cursor, drop, f, flipPath, head, roundpoly, sq, turnPath } from '../engine/geometry.mjs';
 import { render, snap, snapper, svgFile, transform } from '../engine/variants.mjs';
 
 const nums = (d) => (d.match(/-?\d*\.?\d+/g) ?? []).map(Number);
@@ -146,6 +146,34 @@ test('badges at 16 px: no ring and on the pixel grid', () => {
   const small = render({ d: ['M3 3h12v12H3Z'], badge: badge('plus') }, { id: 'b', size: 16 });
   assert.match(big, /A4.25 4.25 0 1 0/, 'at 24 px it keeps its ring');
   assert.doesNotMatch(small.split('data-part="badge"')[1], /A4.25 4.25/, 'at 16 px only the sign remains');
+});
+
+test('badges: every kind at 24 and 16 px; glyph badges keep the style, status badges are solid', () => {
+  const kinds = ['plus', 'minus', 'check', 'x', 'alert', 'info', 'question', 'clock', 'block', 'arrow-up', 'arrow-down', 'arrow-right', 'arrow-left', 'star', 'search', 'heart', 'sync', 'edit', 'gear', 'lock', 'dot'];
+  const path = /^M[-0-9.,\sMLHVCSQTAZmlhvcsqtaz]+$/;
+  for (const kind of kinds)
+    for (const b of [badge(kind), badge(kind, { size: 16 })]) {
+      assert.equal(b.kind, kind);
+      assert.ok(b.d.length && b.d.every((d) => path.test(d)) && path.test(b.knock), `${kind}: valid paths`);
+    }
+  const base = { d: ['M3 3h12v12H3Z'] };
+  // In outline, a status badge is filled through its mask; a glyph badge is drawn as strokes
+  assert.match(render({ ...base, badge: badge('question') }, { id: 'q' }), /mask="url\(#q-b\)"/);
+  for (const kind of ['search', 'heart', 'sync', 'edit', 'gear']) {
+    assert.doesNotMatch(render({ ...base, badge: badge(kind) }, { id: 'g' }), /#g-b/, `${kind} keeps the outline`);
+    if (badge(kind).fill) assert.match(render({ ...base, badge: badge(kind) }, { id: 'g', style: 'fill' }), /#g-b/, `${kind} fills in the fill style`);
+  }
+});
+
+test('directions: a path turned or mirrored keeps its arcs and comes back whole', () => {
+  const folder = sq(2.75, 4.5, 18.5, 15, 3.5, { square: ['br'] });
+  let d = folder;
+  for (let k = 0; k < 4; k++) d = turnPath(d, 90);
+  assert.equal(d, turnPath(folder, 0), 'four quarter turns are no turn');
+  assert.equal(flipPath(flipPath(folder)), turnPath(folder, 0), 'two mirrors are none');
+  assert.equal(turnPath('M3 12h6', 90), 'M12 3L12 9', 'a right arrow points down');
+  assert.equal(flipPath('M12 3A9 9 0 0 1 21 12'), 'M12 3A9 9 0 0 0 3 12', 'a mirror reverses the sweep');
+  assert.equal(turnPath('M4 4a2 1 0 011 1', 90), 'M20 4A2 1 90 0 1 19 5', 'compact arc flags and relative points');
 });
 
 test('enclosed and filled: the badge is knocked out of the container', () => {

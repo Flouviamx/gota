@@ -39,14 +39,19 @@ A triangular or pointed shape may reach 2.4–21.6 to compensate optically.
   overlapped.
 - **Arrows**: arms of 6 at 45° on straight arrows; 3.4 on arc arrows (`head()`, with the tangent
   from `arc()`).
-- **Badges** (plus, minus, check, x, alert, info, clock, arrows, star, lock, notification dot):
+- **Directions**: a family that points several ways is drawn once, pointing right, and turned
+  (`turn` for points, `turnPath` for a path) or mirrored (`flipPath`), so every member shares its
+  measurements. Never redraw the left one by hand.
+- **Badges** (plus, minus, check, x, alert, info, question, clock, block, arrows, star; the
+  magnifier, heart, sync, pencil, and gear; lock, notification dot):
   **always the engine's**, `badge: badge('plus')`, in the `badge` field (not in `d`). The engine
   clears the base with a clearance of paper (1.5 at regular) and removes any dots it touches entirely. **Never
   trim the base by hand**: hand cuts leave round tips in arbitrary places, and fragments. A custom
   piece on top of another (the pointer over a frame) works the same way: `badge: { d, knock, fill }`.
-  A **status badge** (any of the engine's, or a custom one on the same circle, r 4.25 at 17.25) is a
-  **solid disc with its sign cut out, in every style**, as Apple's badges are: it reads at every
-  weight and at 24 px. A custom piece that isn't a status (a lens, a second card) keeps the
+  A **status badge** (the engine's in a circle, or a custom one on the same circle, r 4.25 at 17.25)
+  is a **solid disc with its sign cut out, in every style**, as Apple's badges are: it reads at
+  every weight and at 24 px. A **glyph badge** (`search`, `heart`, `sync`, `edit`, `gear`: the
+  drawing is the badge, no circle) and a custom piece that isn't a status (a second card) keep the
   icon's style. At 16 px the standard badges switch on their own to their pixel version (no
   disc, a larger sign): don't copy `badge16` into the categories.
 - **Pointer:** always the engine's `cursor(tip, scale)`; never a hand-drawn one.

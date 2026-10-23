@@ -48,7 +48,8 @@ Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different pa
 
 ## Structure
 ```text
-engine/geometry.mjs   Drawing primitives: sq (squircle), circ, dot, drop, arc, polar, head, roundpoly, line, rot, cursor, badge.
+engine/geometry.mjs   Drawing primitives: sq (squircle), circ, dot, drop, arc, polar, head, roundpoly, line, rot, cursor, gear,
+                      badge; directions: turn, turnPath, flipPath.
 engine/variants.mjs   Variants without redrawing: render, snap (16 px), transform, enclosures, slash, mirror, levels, motion.
 engine/core.mjs       The API without icon data (dist/core.js): svg, pick (the drawn variant wins), sprite, autoWeight.
 engine/index.mjs      The package API (dist/index.js): the core plus the set by name (iconData, toSvg, resolveIcon).

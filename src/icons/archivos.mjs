@@ -183,13 +183,12 @@ const BC = [17.25, 17.25];
 const BR = 4.25;
 const RING = circ(...BC, BR);
 // The 16 px grid: a pixel measures 1.5 canvas units and pixel centers fall at 0.75 + 1.5k.
-// g(column, row) is the center of a pixel; at(dx, dy) counts from the badge's pixel (11, 11).
+// g(column, row) is the center of a pixel.
 const px = (k) => 0.75 + 1.5 * k;
 const g = (c, r) => [px(c), px(r)];
-const at = (dx, dy) => g(11 + dx, 11 + dy);
 /**
- * Custom badge, with its 16 px version (`d16`, `fill16`). The engine only swaps the standard badges
- * for their pixel versions; a custom badge snapped to the pixel grid keeps its 5.7 px circle and
+ * Custom badge, with its 16 px version (`d16`, `fill16`). The engine only swaps its own badges for
+ * their pixel versions; a custom badge snapped to the pixel grid keeps its 5.7 px circle and
  * clogs up (the question mark and the arrows became a gray smudge). Like the engine's, at 16 px it
  * drops the circle, puts the glyph on the pixel grid, and clears the same circle as at 24 px plus
  * the glyph with its clearance. See "16 px".
@@ -226,87 +225,7 @@ function syncGlyph([cx, cy], r, len = 2.6, s0 = 20, s1 = 30, t = 0) {
   return [a.d, head(a.end, a.tangent, len), b.d, head(b.end, b.tangent, len)];
 }
 
-/**
- * The area a custom badge clears when its glyph reaches past the ring (the sync arrowheads): the
- * ring and the corners of `ds` that lie beyond it, joined by tangents (their convex hull). The base
- * keeps a clearance of paper from the whole glyph at every weight, and its cut edge stays one smooth
- * curve (clearing the ring and each arrowhead on its own left a point of ink where the two met).
- */
-function ringHull(ds) {
-  const out = ds
-    .flatMap((d) => d.match(/-?[\d.]+/g).map(Number).flatMap((v, i, a) => (i % 2 ? [] : [[v, a[i + 1]]])))
-    .filter((p) => Math.hypot(p[0] - BC[0], p[1] - BC[1]) > BR)
-    .map((p) => ({ p, a: ang(BC, p), w: deg(Math.acos(BR / Math.hypot(p[0] - BC[0], p[1] - BC[1]))) }))
-    .sort((u, v) => u.a - v.a);
-  let s = `M${pt(polar(...BC, BR, out[0].a - out[0].w))}`;
-  out.forEach((q, i) => {
-    const next = out[(i + 1) % out.length];
-    s += `L${pt(q.p)}L${pt(polar(...BC, BR, q.a + q.w))}${arcTo(...BC, BR, q.a + q.w, next.a - next.w + (i === out.length - 1 ? 360 : 0))}`;
-  });
-  return `${s}Z`;
-}
-
-/** Heart: two lobes that cross at the top and two tangents that run down to the point. */
-function heart([cx, cy], r = 2.25, a = 1.6, h = 4.25) {
-  const P = [cx, cy + h];
-  const lobe = (C, side) => {
-    const L = Math.hypot(P[0] - C[0], P[1] - C[1]);
-    return ang(C, P) + side * deg(Math.acos(r / L));
-  };
-  const Cl = [cx - a, cy];
-  const Cr = [cx + a, cy];
-  const top = [cx, cy - Math.sqrt(r * r - a * a)];
-  const t1 = lobe(Cl, 1);
-  const t2 = lobe(Cr, -1);
-  const c1 = ang(Cl, top);
-  const c2 = ang(Cr, top);
-  return `M${pt(P)}L${pt(polar(...Cl, r, t1))}${arcTo(...Cl, r, t1, c1 + 360)}${arcTo(...Cr, r, c2, t2 + 360)}Z`;
-}
-
 const OWN = {
-  // Question: the hook and its dot inside the circle. At 16 px, the hook runs through pixel centers
-  // and the dot is a single pixel.
-  question() {
-    const [cx, cy] = BC;
-    const hook = `M${pt([cx - 1.3, cy - 1.3])}${arcTo(cx, cy - 1.3, 1.3, 180, 400)}L${pt([cx, cy - 0.05])}`;
-    const mark = circ(cx, cy + 2.15, 0.35);
-    return own([RING, hook, mark], RING, { solid: [RING], cut: [hook, mark] }, [
-      line(at(-2, -2), at(-1, -3), at(1, -3), at(2, -2), at(0, 0), at(0, 1)),
-      circ(...at(0, 3), 0.1),
-    ]);
-  },
-  // Heart, without a circle: the shape itself is the badge; it clears the whole circle (so no bits
-  // of the base are left next to its point).
-  heart() {
-    const h = heart([BC[0], 16.25]);
-    const h16 = roundpoly([at(-2, -1), at(-1, -2), at(0, -1), at(1, -2), at(2, -1), at(2, 0), at(0, 2), at(-2, 0)], 0.35);
-    return own([h], RING, { solid: [h] }, [h16], { solid: [h16] });
-  },
-  // Magnifier: the lens is the badge circle (r 3.25) and the handle runs toward the corner. Filled:
-  // the lens is solid and the handle stays a line, attached to it.
-  search() {
-    const r = 3.25;
-    const lensC = circ(...BC, r);
-    const p = polar(...BC, r, 45);
-    const end = [21.25, 21.25];
-    const handle = line(p, end);
-    const lens16 = circ(16.5, 16.5, 3);
-    const handle16 = line(at(1, 1), at(3, 3));
-    return own([lensC, handle], `${RING}M${pt(p)}L${pt(end)}Z`, { solid: [lensC], wire: [handle] }, [lens16, handle16], { solid: [lens16], wire: [handle16] });
-  },
-  // Sync: the arc arrows fill the badge circle (in the fill they stay lines). Their outer
-  // arrowheads reach past the ring, so the cleared area is the ring's hull with them (with the ring
-  // alone they met the base at bold); turned 6°, the upper one lies level with the top of the ring
-  // and the hull's edge runs flat from it.
-  sync() {
-    const glyph = syncGlyph(BC, 3.75, 2.4, 25, 35, 6);
-    return own(glyph, ringHull([glyph[1], glyph[3]]), null, [
-      `M${pt(at(-3, 0))}A3 3 0 0 1 ${pt(at(0, -2))}H${N(px(13))}`,
-      line(at(1, -3), at(2, -2), at(1, -1)),
-      `M${pt(at(3, 0))}A3 3 0 0 1 ${pt(at(0, 2))}H${N(px(9))}`,
-      line(at(-1, 3), at(-2, 2), at(-1, 1)),
-    ]);
-  },
   // Person peeking in from the corner (share). It also clears the badge circle: with only the head
   // and shoulders, a piece of the base's edge was left between the two. Head and shoulders 2.45
   // apart (centerlines), as in the core `person`: at 1.9 (a head of r 1.85) they met at bold.
@@ -355,9 +274,9 @@ withBadge('file-alert', ['archivo con aviso', 'advertencia', 'problema', 'file w
 withBadge('file-clock', ['archivo reciente', 'reloj', 'pendiente', 'recent file', 'pending file'], [file()], badge('clock'));
 withBadge('file-star', ['archivo destacado', 'estrella', 'favorito', 'starred file', 'favorite'], [file()], badge('star'));
 withBadge('file-move', ['mover archivo', 'trasladar', 'cambiar de lugar', 'move file', 'relocate'], [file()], badge('arrow-right'));
-withBadge('file-question', ['archivo desconocido', 'pregunta', 'formato no reconocido', 'unknown file', 'file help'], [file()], OWN.question());
-withBadge('file-heart', ['me gusta', 'archivo guardado', 'colección', 'liked file', 'saved file'], [file()], OWN.heart());
-withBadge('file-search', ['buscar archivo', 'lupa', 'encontrar', 'find file', 'search file'], [file()], OWN.search());
+withBadge('file-question', ['archivo desconocido', 'pregunta', 'formato no reconocido', 'unknown file', 'file help'], [file()], badge('question'));
+withBadge('file-heart', ['me gusta', 'archivo guardado', 'colección', 'liked file', 'saved file'], [file()], badge('heart'));
+withBadge('file-search', ['buscar archivo', 'lupa', 'encontrar', 'find file', 'search file'], [file()], badge('search'));
 
 // Lock inside the file: the core `lock` scaled down, centered in the file.
 const miniLock = sq(8.5, 11.25, 7, 5.5, 1.6, { square: ['br'] });
@@ -547,9 +466,9 @@ withBadge('folder-clock', ['carpeta reciente', 'reloj', 'historial', 'recent fol
 withBadge('folder-move', ['mover carpeta', 'trasladar', 'reubicar', 'move folder', 'relocate folder'], FOLDER, badge('arrow-right'));
 withBadge('folder-star', ['carpeta destacada', 'estrella', 'favorita', 'starred folder', 'favorite folder'], FOLDER, badge('star'));
 withBadge('folder-lock', ['carpeta protegida', 'candado', 'privada', 'locked folder', 'private folder'], FOLDER, badge('lock'));
-withBadge('folder-heart', ['me gusta', 'carpeta guardada', 'colección', 'liked folder', 'saved folder'], FOLDER, OWN.heart());
-withBadge('folder-search', ['buscar carpeta', 'lupa', 'explorar', 'find folder', 'search folder'], FOLDER, OWN.search());
-withBadge('folder-sync', ['sincronizar carpeta', 'actualizar', 'respaldo continuo', 'sync folder', 'update folder'], FOLDER, OWN.sync());
+withBadge('folder-heart', ['me gusta', 'carpeta guardada', 'colección', 'liked folder', 'saved folder'], FOLDER, badge('heart'));
+withBadge('folder-search', ['buscar carpeta', 'lupa', 'explorar', 'find folder', 'search folder'], FOLDER, badge('search'));
+withBadge('folder-sync', ['sincronizar carpeta', 'actualizar', 'respaldo continuo', 'sync folder', 'update folder'], FOLDER, badge('sync'));
 withBadge('folder-shared', ['carpeta compartida', 'equipo', 'colaborar', 'shared folder', 'team folder'], FOLDER, OWN.person());
 withBadge('folder-cloud', ['carpeta en la nube', 'en línea', 'carpeta remota', 'cloud folder', 'online folder'], FOLDER, OWN.cloud());
 
@@ -658,7 +577,7 @@ add('cloud-alert', ['aviso de nube', 'problema de sincronización', 'atención',
 // Sync: inside the cloud the arrows don't fit with 1.5 of clearance to its dips (they ended up as
 // 2.5 scribbles); they go as a badge, the same arrows as `folder-sync`, and the cloud moves up 2.5
 // so the badge only takes its base and the lower half of the right puff.
-withBadge('cloud-sync', ['sincronizar', 'nube', 'al día', 'cloud sync', 'syncing'], [cloud(-2.5)], OWN.sync());
+withBadge('cloud-sync', ['sincronizar', 'nube', 'al día', 'cloud sync', 'syncing'], [cloud(-2.5)], badge('sync'));
 // Lock: the core one scaled down, in the cloud's open space.
 add('cloud-lock', ['nube privada', 'candado', 'cifrado', 'cloud lock', 'secure cloud'], [
   cloud(),

@@ -5,7 +5,7 @@
 // Whatever sits on top of another shape (badges, the slash, the magnifier, the screwdriver) goes in
 // `badge`: the base is drawn complete and the engine clears it with exactly 1.5 of clearance; it's
 // never trimmed by hand. See DESIGN.md.
-import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, f, gear, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
 import nucleo from './nucleo.mjs';
 
 // ── Paths as segments ─────────────────────────────────────────────────────────────────────
@@ -390,21 +390,6 @@ const pill = (x, y, w, h) => {
   const r = h / 2;
   return `M${P([x + r, y])}H${f(x + w - r)}A${f(r)} ${f(r)} 0 0 1 ${P([x + w - r, y + h])}H${f(x + r)}A${f(r)} ${f(r)} 0 0 1 ${P([x + r, y])}Z`;
 };
-
-/** Gear with n teeth: tip radius ro, root radius ri; the flanks are rounded. */
-function gear(cx, cy, ro, ri, n, tip = 0.7, root = 0.9) {
-  const step = 360 / n;
-  const dt = step * 0.2;
-  const db = step * 0.31;
-  const pts = [];
-  const rr = [];
-  for (let i = 0; i < n; i++) {
-    const a = -90 + i * step;
-    pts.push(polar(cx, cy, ri, a - db), polar(cx, cy, ro, a - dt), polar(cx, cy, ro, a + dt), polar(cx, cy, ri, a + db));
-    rr.push(root, tip, tip, root);
-  }
-  return roundpoly(pts, rr);
-}
 
 /** Smooth closed curve through points (Catmull-Rom → Bézier). */
 function smoothClosed(pts, k = 1 / 6) {
@@ -989,13 +974,10 @@ const icons = {
   },
   'person-gear': {
     tags: ['ajustes de cuenta', 'perfil', 'configuración de usuario', 'account settings', 'user preferences', 'profile settings'],
-    // The person as in `person-lock`; the gear, the size of the badges' ring, sits in its place
-    // (custom badge) and its outer circle is cleared, not the teeth profile.
+    // The person as in `person-lock`; the engine's gear, the size of the badges' ring, clears its
+    // outer circle, not the teeth profile.
     d: [xf(PERSON_HEAD, { dx: -2.5 }), xf(PERSON_BODY, { dx: -2.5 })],
-    badge: (() => {
-      const g = gear(...BC, 4.25, 3.05, 6, 0.45, 0.55);
-      return own([g, dot(...BC)], circ(...BC, 4.25), { solid: [g], cut: [dot(...BC)] });
-    })(),
+    badge: badge('gear'),
   },
   // The core key rotated (the bow at the top right) and at 90%, more than 1.5 from the plus. Its
   // hole is a dot() of its own (transformed, the core's dot is no longer a circle the engine
@@ -1013,15 +995,11 @@ const icons = {
     d: nucleo.icons.globe.d.map((d) => xf(d, { s: 0.76, dx: -3.25, dy: -3.25 })),
     badge: badge('lock'),
   },
-  // The core shield at 94%; the badge magnifier (the one from datos) sits on top.
+  // The core shield at 94%; the engine's magnifier sits on top.
   'shield-search': {
     tags: ['auditoría', 'análisis de seguridad', 'escaneo', 'revisión', 'security scan', 'audit', 'inspection'],
     d: [xf(SHIELD, { s: 0.94, o: [12, 3], dx: -1.75 })],
-    badge: (() => {
-      const lens = circ(...BC, 3.25);
-      const handle = line(polar(...BC, 3.25, 45), [21.25, 21.25]);
-      return own([lens, handle], lens + trace(handle), { solid: [lens], wire: [handle] });
-    })(),
+    badge: badge('search'),
   },
   'security-camera': {
     tags: ['cámara de seguridad', 'vigilancia', 'monitoreo', 'cctv', 'surveillance', 'security camera'],
