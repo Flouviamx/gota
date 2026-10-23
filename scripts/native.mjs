@@ -231,6 +231,9 @@ if (targets.includes('figma')) {
   if (!ui.includes("'__GOTA_DATA__'")) throw new Error('figma: ui.html has no __GOTA_DATA__ slot');
   writeFileSync(join(OUT, 'ui.html'), ui.replace("'__GOTA_DATA__'", `'${packed}'`));
   for (const file of ['manifest.json', 'code.js']) copyFileSync(join('scripts/figma', file), join(OUT, file));
+  // The file's cover, for its thumbnail (scripts/figma/cover.mjs)
+  const { cover } = await import('./figma/cover.mjs');
+  await cover(OUT, await import('../dist/index.js'));
   const icons = data.categories.reduce((n, c) => n + c.icons.length, 0);
-  console.log(`✓ figma: ${icons} component sets, ${variants} variants, every outline checked as written; ui.html ${(Buffer.byteLength(packed) / 1048576).toFixed(1)} MB, in ${((performance.now() - start) / 1000).toFixed(0)} s → ${OUT}/ (Figma: Plugins → Development → Import plugin from manifest)`);
+  console.log(`✓ figma: ${icons} component sets, ${variants} variants, every outline checked as written; ui.html ${(Buffer.byteLength(packed) / 1048576).toFixed(1)} MB; the cover; in ${((performance.now() - start) / 1000).toFixed(0)} s → ${OUT}/ (Figma: Plugins → Development → Import plugin from manifest)`);
 }
