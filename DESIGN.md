@@ -194,6 +194,29 @@ Each category has `src/i18n/<category>.json`:
   `arrow-up-right`, `bell-off`, `cloud-download`. Unique across the whole set.
 - `tags`: at least three words, in Spanish and English, for search.
 
+## What failed before (check every icon against it)
+The first thousand took two rounds and a phase of fixes to reach the bar; every later icon has to
+reach it in one pass. What the critics, QA, and the owner caught, so it isn't drawn again:
+- **A metaphor that needs its name.** Look at the icon at 18 px without its label: if it doesn't
+  say its meaning, redesign it (round 1 redrew the paint bucket, the lasso, and the quote).
+- **A family on two bases.** Every variant reuses its family's base exactly: the same field, the
+  same window, the same calendar, the same person. A search field drawn as a capsule beside a
+  rectangular `input` breaks the family (round 3).
+- **A tiny pictogram inside a container.** A glyph inside a field, a window, or a card that is
+  under ~8 wide turns to mush at 18 px (round 3: a chain link in a URL field read as a scribble).
+  Make the glyph the subject, or say it with a badge.
+- **Hand-drawn pieces and hand cuts.** Pointers, badges, and knockouts come from the engine
+  (`cursor`, `badge`); a hand cut leaves round tips in arbitrary places and fragments (the owner
+  caught it in the pointer, the heart with a pulse, and the bubble with a lock).
+- **Drawing what the engine draws.** No icon for an enclosure, a slash, or a fill the engine
+  already makes; a hand-drawn variant only where the engine's doesn't work.
+- **A structure that changes with the weight:** pieces that merge at 2.1 or holes that close (see
+  "Every weight, one structure"); open strokes inside `solid` fill as wedges (`wire` or `lines`).
+- **16 px left to chance.** Look at the true 16 px row of the variants sheet; draw `small` where
+  the snap leaves a smudge.
+- **QA at the end.** Round 1 closed with 268 warnings. Run `qa.mjs <category>` after every batch,
+  not once before returning.
+
 ## Process
 1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.
 2. `node scripts/build.mjs --check <category>` (names, tags, strokes).
