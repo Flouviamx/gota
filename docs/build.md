@@ -126,7 +126,7 @@ Versions: a client asking for 2024-11-05, 2025-03-26, 2025-06-18, or 2025-11-25 
 A tool's bad input (no query, an unknown icon, an option the engine rejects) comes back as a tool result with `isError`, which the model reads and corrects; an unknown tool is a JSON-RPC error (`-32602`).
 
 ### The remote server's deploy
-Vercel project `gota` (team `flouvia`), deployed with the CLI from this folder, linked by `vercel link` (`.vercel/`, not committed). There is no Git remote yet, so a deploy goes out from a clean tree at a commit: `git status --short` empty, then `vercel deploy` (a protected preview, tried with `vercel curl /mcp --deployment <url>`) and `vercel deploy --prod`.
+Vercel project `gota` (team `flouvia`), connected to `github.com/Flouviamx/gota`: a push to `main` deploys production (`gota-git-main-flouvia.vercel.app`, served at `gota.flouvia.com`), so `main` only gets what is ready to be served. A preview from this folder (`vercel deploy`, linked by `vercel link` in `.vercel/`, not committed) is tried with `vercel curl /mcp --deployment <url>` before a change to the server goes to `main`.
 - `vercel.json`: no dependencies to install (`npm ci --omit=dev`), the build (`node scripts/build.mjs`, which writes the `dist/` the function imports), the function with `dist/icons.json` and `package.json` (read from disk, not imported), and the host's routes (below).
 - `.vercelignore` uploads only what the build and the function read: `api/`, `engine/`, `mcp/`, `scripts/`, `site/`, `src/`, and the package files.
 - `site/`: the host's static files: `robots.txt` (everything may be indexed but the server; it points to the sitemap) and `sitemap.xml` (the page's ten URLs, English and Spanish, with their hreflang; English is x-default).
