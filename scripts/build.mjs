@@ -39,7 +39,7 @@ mkdirSync('svg/fill', { recursive: true });
 for (const w of Object.keys(WEIGHTS)) for (const st of ['outline', 'fill']) mkdirSync(`dist/svg/${w}/${st}`, { recursive: true });
 
 // Design data of each icon that ships in the package, besides d
-const DATA = ['fill', 'badge', 'small', 'variants', 'mirror', 'levels', 'value', 'motion', 'parts'];
+const DATA = ['fill', 'mark', 'badge', 'small', 'variants', 'mirror', 'levels', 'value', 'motion', 'parts'];
 // Names across the whole set, to know whether a variant already exists as a hand-drawn icon
 const NAMES = new Set(categories.flatMap((c) => Object.keys(c.icons)));
 const drawn = (name, { enclosure, slash }) => (enclosure ? NAMES.has(`${name}-${enclosure}`) : slash && (NAMES.has(`${name}-slash`) || NAMES.has(`${name}-off`)));

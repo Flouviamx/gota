@@ -4,6 +4,9 @@
 
 [← Index](./README.md)
 
+## 24 Oct 2026 — Flouvia's marks and `mark`
+- **`marcas` starts** with `brand-flouvia` (the isotype) and `brand-flouvia-u` (the u), traced from Flouvia's official logo by an exact scale and shift ([decision 83](./decisions.md#phase-3-23-oct-2026)). `mark` keeps them solid and identical in every style and weight; QA skips their density. `TRADEMARKS.md` ships the brand icons' notice. The rest of `marcas` comes with round 4.
+
 ## 24 Oct 2026 — Round 3: interface and work (903 icons)
 - **Eight new categories and two that grew** ([taxonomy](./taxonomy.md)): controles 108, ventanas 75, simbolos 113, formas 83, calendario 69 (and the 20 it adopts from lugares), oficina 115, social 80, producto 76, edicion +118, navegacion +66. The set has 1,936 icons in 18 categories.
 - **Names:** 945 proposed, 916 approved. The judge, as an agent, ran four hours over the ten lists and died on a network drop without returning, so the main session judged with `scripts/names.mjs` ([decision 82](./decisions.md#phase-3-23-oct-2026)): nine keyboard keys go to sistema in round 5, the table borders stay in edicion, and five names proposed twice keep one home.

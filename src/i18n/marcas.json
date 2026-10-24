@@ -1,0 +1,16 @@
+{
+  "brand-flouvia": {
+    "label": { "es": "Flouvia", "en": "Flouvia", "pt": "Flouvia", "fr": "Flouvia", "de": "Flouvia", "it": "Flouvia", "ja": "Flouvia", "zh": "Flouvia", "ko": "Flouvia", "ar": "Flouvia" },
+    "keywords": {
+      "es": ["logotipo", "isotipo", "marca", "estudio de diseño", "gota", "software a la medida"],
+      "en": ["logo", "isotype", "brand", "design studio", "drop", "custom software"]
+    }
+  },
+  "brand-flouvia-u": {
+    "label": { "es": "La u de Flouvia", "en": "Flouvia’s u", "pt": "O u da Flouvia", "fr": "Le u de Flouvia", "de": "Das u von Flouvia", "it": "La u di Flouvia", "ja": "Flouvia の u", "zh": "Flouvia 的 u", "ko": "Flouvia의 u", "ar": "حرف u من Flouvia" },
+    "keywords": {
+      "es": ["logotipo", "isotipo", "marca", "monograma", "inicial", "estudio de diseño"],
+      "en": ["logo", "isotype", "brand", "monogram", "initial", "design studio"]
+    }
+  }
+}

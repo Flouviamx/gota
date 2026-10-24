@@ -100,7 +100,7 @@ For moving a codebase to Gota from Lucide, Heroicons, or SF Symbols ([decision 7
 - **For agents:** the MCP server's `find_equivalent` (below) answers with the same maps.
 
 ## What goes into the repository and what doesn't
-- **Committed:** `src/` (the drawings, the languages, and the migration maps), `engine/`, `mcp/`, `migrate/`, `api/`, `site/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`, `vercel.json`, `.vercelignore`.
+- **Committed:** `src/` (the drawings, the languages, and the migration maps), `engine/`, `mcp/`, `migrate/`, `api/`, `site/`, `scripts/`, `tests/`, `docs/`, `CLAUDE.md`, `DESIGN.md`, `README.md`, `README.es.md`, `LICENSE`, `package.json`, `package-lock.json`, `vercel.json`, `.vercelignore`, `TRADEMARKS.md` (the brand icons' notice).
 - **Not committed** (`.gitignore`): `svg/`, `dist/`, `previews/`, `node_modules/`, `.vercel/`, `.env*`. Everything is regenerated.
 
 ## Publishing (once there are 10,000)

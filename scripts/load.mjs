@@ -53,6 +53,7 @@ export async function loadAll({ only } = {}) {
         if (icon.fill?.wire !== undefined) check(icon.fill.wire, 'fill.wire');
       }
       if (icon.mirror !== undefined && icon.mirror !== true) errors.push(`${where}: mirror only accepts true`);
+      if (icon.mark !== undefined && (icon.mark !== true || !icon.fill?.solid?.length)) errors.push(`${where}: mark is true and needs the mark's solid shapes in fill.solid`);
       if (icon.levels !== undefined) {
         const n = icon.d?.length ?? 0;
         if (!Array.isArray(icon.levels) || icon.levels.length < 2 || icon.levels.some((l) => !Array.isArray(l) || !l.length || l.some((i) => !Number.isInteger(i) || i < 0 || i >= n)))

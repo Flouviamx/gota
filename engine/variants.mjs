@@ -394,6 +394,8 @@ export function motionTransform({ effect, origin = [12, 12], vector = [0, -2] })
 }
 
 export function render(icon, { style = 'outline', enclosure = null, slash = false, weight = 1.5, id = 'i', size, rtl = false, value, frame = false, animate = null } = {}) {
+  // A brand mark (`mark`) is drawn as its owner draws it, solid, in every style
+  if (icon.mark) style = 'fill';
   const enc = enclosure ? ENCLOSURES[enclosure] : null;
   // A value (0–1, or 'live' to follow the CSS property --gota-value): the icon's levels, its `draw`
   // strokes and its `turn` parts show it (icon.value); an icon showing a value plays no effect
@@ -537,7 +539,10 @@ export function render(icon, { style = 'outline', enclosure = null, slash = fals
       };
       const lineCuts = (ds) => ds.map((d) => black([d], halo(d))).join('');
       defs.push(maskOf('f', `${split(g(inner), (ds) => black(ds, paper))}${split(g(atEdge), (ds) => black(ds, weight - 0.1))}${split(g(fill.lines ?? []), lineCuts)}`));
-      content.push(`<g fill="currentColor" stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round" mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
+      // A brand mark keeps its exact shapes at every weight: filled, without the stroke that
+      // widens a drawing's solids
+      const solidStroke = icon.mark ? 'stroke="none"' : `stroke="currentColor" stroke-width="${weight}" stroke-linecap="round" stroke-linejoin="round"`;
+      content.push(`<g fill="currentColor" ${solidStroke} mask="url(#${id}-f)">${split(g(fill.solid), paths)}</g>`);
       const over = [...(fill.lines ?? []), ...(fill.wire ?? [])];
       if (over.length) content.push(`<g ${strokeAttrs(weight)}>${split(g(over), paths)}</g>`);
     } else content.push(`<g ${strokeAttrs(weight)}>${split(g(icon.d), paths)}</g>`);

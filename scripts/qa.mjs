@@ -1,7 +1,8 @@
 // Automated quality control for the whole set (or one category), in Chrome:
 // - area: outside the live area (path between 1.75 and 22.25),
-// - dense: more than 28% ink at 32 px (too many parts: simplify), measured without the badge; a
-//   fixed threshold so the criterion does not shift as the set grows,
+// - dense: more than 28% ink at 32 px (too many parts: simplify), measured without the badge and
+//   not for brand marks (solid by nature); a fixed threshold so the criterion does not shift as
+//   the set grows,
 // - double: near duplicates, two icons that look almost the same at 32 px (similarity ≥ 0.975),
 //   except those in the same family (calendar and calendar-plus look alike on purpose),
 // - silhouette: a fill that changes the silhouette (the fill must occupy the same box as the outline),
@@ -33,6 +34,7 @@ const data = all.map(({ name, cat, icon }) => ({
   outline: b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { id: 'a' })}</svg>`),
   // Density is the drawing's: a status badge is a solid disc, ink that isn't "too many parts"
   bare: icon.badge ? b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render({ ...icon, badge: undefined }, { id: 'c' })}</svg>`) : null,
+  mark: Boolean(icon.mark),
   fill: icon.fill ? b64(`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" color="black">${render(icon, { style: 'fill', id: 'b' })}</svg>`) : null,
 }));
 const file = join(process.cwd(), 'previews', `_qa-${process.pid}.html`);
@@ -82,7 +84,7 @@ const result = await browser.evaluate(`(async () => {
     }));
     let silhouette = null;
     if (it.fill) { const f = await alpha(it.fill); const A = box(a), B = box(f); silhouette = Math.max(...A.map((v, i) => Math.abs(v - B[i]))); }
-    out.push({ name: it.name, cat: it.cat, ink: ink / 1024, bbox: [x0, y0, x1, y1], silhouette, fragments, near, open: it.open, a: Array.from(a, (v) => Math.round(v * 100) / 100) });
+    out.push({ name: it.name, cat: it.cat, mark: it.mark, ink: ink / 1024, bbox: [x0, y0, x1, y1], silhouette, fragments, near, open: it.open, a: Array.from(a, (v) => Math.round(v * 100) / 100) });
   }
   return out;
 })()`);
@@ -98,7 +100,8 @@ for (const r of result.filter(mine)) {
 }
 // Density: a fixed threshold (loose lines are light by nature: there is no "too light" warning)
 const DENSE = 0.28;
-for (const r of result.filter(mine)) if (r.ink > DENSE) issues.push(`dense  ${r.cat}/${r.name}: ink ${(r.ink * 100).toFixed(2)}% (max ${(DENSE * 100).toFixed(0)}%); too many parts?`);
+// A brand mark is solid by nature: its ink isn't "too many parts"
+for (const r of result.filter(mine)) if (r.ink > DENSE && !r.mark) issues.push(`dense  ${r.cat}/${r.name}: ink ${(r.ink * 100).toFixed(2)}% (max ${(DENSE * 100).toFixed(0)}%); too many parts?`);
 // Fragments, near-touches and open fills
 for (const r of result.filter(mine)) {
   if (r.open) issues.push(`open   ${r.cat}/${r.name}: ${r.open} open path(s) in fill.solid (close it with Z or move it to lines/wire)`);
