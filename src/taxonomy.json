@@ -89,6 +89,13 @@
         "es": "Naturaleza",
         "en": "Nature"
       }
+    },
+    {
+      "id": "brands",
+      "label": {
+        "es": "Marcas",
+        "en": "Brands"
+      }
     }
   ],
   "categories": [
@@ -426,6 +433,18 @@
       "target": 90,
       "scope": "Real estate and property: homes and apartments for sale and rent, listings, floor plans, room counts, area, key handover, viewings, agents, neighborhoods, moving (boxes, moving truck), property management, maintenance requests, tenants, leases, utilities, amenities (pool, gym, parking, elevator, laundry).",
       "exclude": "Mortgages stay in comercio; furniture → hogar; construction → construccion."
+    },
+    {
+      "id": "marcas",
+      "label": {
+        "es": "Marcas",
+        "en": "Brands"
+      },
+      "domain": "brands",
+      "round": 4,
+      "target": 80,
+      "scope": "The symbols of the platforms people link to and share on, adapted to Gota's stroke as Tabler and Phosphor do: social networks, messaging, video and music streaming, developer platforms, design tools, app stores. Named brand-<name>. One color, the slash turned off on every one, and the trademark notice ships with the set (the marks belong to their owners; Gota's license covers only its drawings). Flouvia's own marks come first: brand-flouvia (the isotype, the drop with the u) and brand-flouvia-u (the u on its own), traced exactly from Flouvia's official logo by the main session, never redrawn.",
+      "exclude": "Only symbols, never a wordmark or a logotype made of letters, and never Flouvia's wordmark (it is set in Flouvia Sans, which stays out of Gota). Generic concepts (share, follow, hashtag, RSS, the at sign) stay in their categories."
     },
     {
       "id": "ia",

@@ -12,7 +12,7 @@ Gota is Flouvia's icon library (`@flouvia/gota`, MIT license): drawn by hand wit
 2. Read [`docs/README.md`](./docs/README.md) and open the documents its matrix calls for; to draw, always [`DESIGN.md`](./DESIGN.md) and the core set (`src/icons/nucleo.mjs` and its sheets).
 3. Check the status in [`docs/roadmap.md`](./docs/roadmap.md) and the decisions already made in [`docs/decisions.md`](./docs/decisions.md) before proposing anything: a rejected idea is not reopened without a new reason.
 
-When you finish: the work goes into commits, pushed to `main`, and gets an entry in [`docs/history.md`](./docs/history.md). The repository is public: nothing of Flouvia's brand (its logo, its typeface) and no secret ever goes in it. Publishing to npm requires the owner's OK.
+When you finish: the work goes into commits, pushed to `main`, and gets an entry in [`docs/history.md`](./docs/history.md). The repository is public: no secret ever goes in it, and of Flouvia's brand only its isotype and its u as `brand-flouvia` and `brand-flouvia-u` in `marcas` (traced from the official logo, with the trademark notice); never its wordmark or its typeface, Flouvia Sans. Publishing to npm requires the owner's OK.
 
 ## Commands
 ```bash
