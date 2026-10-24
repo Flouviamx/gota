@@ -1,0 +1,562 @@
+{
+  "post": {
+    "label": { "es": "Publicación", "en": "Post", "pt": "Publicação", "fr": "Publication", "de": "Beitrag", "it": "Post", "ja": "投稿", "zh": "帖子", "ko": "게시물", "ar": "منشور" },
+    "keywords": {
+      "es": ["post", "entrada", "red social", "pestaña de publicaciones", "abrir publicación", "contenido", "elemento del feed"],
+      "en": ["feed item", "entry", "update", "posts tab", "open post", "social media", "content"]
+    }
+  },
+  "post-text": {
+    "label": { "es": "Publicación de texto", "en": "Text post", "pt": "Publicação de texto", "fr": "Publication texte", "de": "Textbeitrag", "it": "Post di testo", "ja": "テキスト投稿", "zh": "文字帖子", "ko": "텍스트 게시물", "ar": "منشور نصي" },
+    "keywords": {
+      "es": ["estado", "actualización de estado", "solo texto", "sin imagen", "tuit", "qué estás pensando", "nota"],
+      "en": ["status update", "text only", "no media", "tweet", "what's on your mind", "note", "words only"]
+    }
+  },
+  "post-quote": {
+    "label": { "es": "Citar publicación", "en": "Quote post", "pt": "Citar publicação", "fr": "Citer la publication", "de": "Beitrag zitieren", "it": "Cita post", "ja": "引用投稿", "zh": "引用帖子", "ko": "게시물 인용", "ar": "اقتباس منشور" },
+    "keywords": {
+      "es": ["cita", "compartir con comentario", "retuit con cita", "repost con comentario", "responder citando", "dar tu opinión", "comentar encima"],
+      "en": ["quote tweet", "share with comment", "quote repost", "add your take", "cite", "comment on post", "embed post"]
+    }
+  },
+  "post-thread": {
+    "label": { "es": "Hilo", "en": "Thread", "pt": "Fio de publicações", "fr": "Fil de publications", "de": "Thread", "it": "Thread", "ja": "スレッド", "zh": "帖子串", "ko": "스레드", "ar": "سلسلة منشورات" },
+    "keywords": {
+      "es": ["serie de publicaciones", "publicaciones encadenadas", "tuits seguidos", "continuación", "historia en partes", "mismo autor", "1/n"],
+      "en": ["tweetstorm", "chained posts", "series of posts", "continued", "multi-part post", "same author", "1/n"]
+    }
+  },
+  "post-collab": {
+    "label": { "es": "Publicación en colaboración", "en": "Collab post", "pt": "Publicação em colaboração", "fr": "Publication en collaboration", "de": "Gemeinsamer Beitrag", "it": "Post in collaborazione", "ja": "コラボ投稿", "zh": "合作帖子", "ko": "공동 게시물", "ar": "منشور مشترك" },
+    "keywords": {
+      "es": ["colab", "coautores", "publicar juntos", "dos autores", "alianza con creador", "contenido compartido", "invitar colaborador"],
+      "en": ["collaboration", "co-authors", "joint post", "two authors", "creator partnership", "shared content", "invite collaborator"]
+    }
+  },
+  "post-pin": {
+    "label": { "es": "Publicación fijada", "en": "Pinned post", "pt": "Publicação fixada", "fr": "Publication épinglée", "de": "Angehefteter Beitrag", "it": "Post fissato", "ja": "固定された投稿", "zh": "置顶帖子", "ko": "고정된 게시물", "ar": "منشور مثبت" },
+    "keywords": {
+      "es": ["fijar", "anclar al perfil", "destacado", "arriba del todo", "anuncio fijo", "fijar en el grupo", "importante"],
+      "en": ["pin to profile", "pin to top", "sticky post", "featured", "announcement", "highlight", "keep at top"]
+    }
+  },
+  "post-sparkle": {
+    "label": { "es": "Contenido generado con IA", "en": "AI-generated content", "pt": "Conteúdo gerado por IA", "fr": "Contenu généré par IA", "de": "KI-generierter Inhalt", "it": "Contenuto generato dall’IA", "ja": "AI生成コンテンツ", "zh": "AI 生成内容", "ko": "AI 생성 콘텐츠", "ar": "محتوى مُنشأ بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["etiqueta de IA", "inteligencia artificial", "hecho con IA", "imagen sintética", "medios sintéticos", "transparencia", "aviso de IA"],
+      "en": ["AI label", "artificial intelligence", "made with AI", "synthetic media", "generated image", "disclosure", "AI info"]
+    }
+  },
+  "post-shield": {
+    "label": { "es": "Moderación de contenido", "en": "Content moderation", "pt": "Moderação de conteúdo", "fr": "Modération du contenu", "de": "Inhaltsmoderation", "it": "Moderazione dei contenuti", "ja": "コンテンツモデレーション", "zh": "内容审核", "ko": "콘텐츠 검토", "ar": "الإشراف على المحتوى" },
+    "keywords": {
+      "es": ["moderar", "moderador", "publicación moderada", "reglas de la comunidad", "seguridad", "revisión de publicaciones", "proteger la comunidad", "normas"],
+      "en": ["moderate", "moderator", "moderated post", "community guidelines", "trust and safety", "post review", "safety tools", "rules"]
+    }
+  },
+  "post-bag": {
+    "label": { "es": "Publicación con productos", "en": "Shoppable post", "pt": "Publicação com produtos", "fr": "Publication avec produits", "de": "Shopping-Beitrag", "it": "Post con prodotti", "ja": "ショッピング投稿", "zh": "购物帖子", "ko": "쇼핑 게시물", "ar": "منشور تسوق" },
+    "keywords": {
+      "es": ["etiquetas de producto", "comprar desde la publicación", "comercio social", "tienda en redes", "venta en Instagram", "comprar ahora", "social commerce"],
+      "en": ["product tags", "shop from post", "social commerce", "social shopping", "buy now", "tagged products", "storefront"]
+    }
+  },
+  "post-location": {
+    "label": { "es": "Publicación con ubicación", "en": "Post with location", "pt": "Publicação com localização", "fr": "Publication avec lieu", "de": "Beitrag mit Standort", "it": "Post con posizione", "ja": "位置情報付きの投稿", "zh": "带位置的帖子", "ko": "위치 태그된 게시물", "ar": "منشور مع الموقع" },
+    "keywords": {
+      "es": ["check-in", "registrar visita", "etiquetar lugar", "dónde estoy", "geoetiqueta", "lugar visitado", "compartir ubicación"],
+      "en": ["check-in", "tag location", "geotag", "place", "where I am", "visited place", "share location"]
+    }
+  },
+  "post-audio": {
+    "label": { "es": "Publicación de audio", "en": "Audio post", "pt": "Publicação de áudio", "fr": "Publication audio", "de": "Audiobeitrag", "it": "Post audio", "ja": "音声投稿", "zh": "音频帖子", "ko": "오디오 게시물", "ar": "منشور صوتي" },
+    "keywords": {
+      "es": ["nota de voz", "mensaje de voz", "voz", "grabación", "escuchar", "clip de audio", "podcast corto"],
+      "en": ["voice note", "voice post", "recording", "listen", "audio clip", "sound", "short podcast"]
+    }
+  },
+  "post-plus": {
+    "label": { "es": "Crear publicación", "en": "Create post", "pt": "Criar publicação", "fr": "Créer une publication", "de": "Beitrag erstellen", "it": "Crea post", "ja": "投稿を作成", "zh": "发帖", "ko": "게시물 만들기", "ar": "إنشاء منشور" },
+    "keywords": {
+      "es": ["publicar", "redactar", "nuevo post", "compartir algo", "escribir", "botón de publicar", "subir"],
+      "en": ["compose", "new post", "publish", "write", "share something", "post button", "upload"]
+    }
+  },
+  "post-clock": {
+    "label": { "es": "Publicación programada", "en": "Scheduled post", "pt": "Publicação agendada", "fr": "Publication programmée", "de": "Geplanter Beitrag", "it": "Post programmato", "ja": "予約投稿", "zh": "定时发布", "ko": "예약 게시물", "ar": "منشور مجدول" },
+    "keywords": {
+      "es": ["programar", "publicar después", "calendario de contenido", "agendar", "fecha de publicación", "en cola", "publicación diferida"],
+      "en": ["schedule", "publish later", "content calendar", "queue", "publish date", "planned post", "timed post"]
+    }
+  },
+  "post-check": {
+    "label": { "es": "Publicación aprobada", "en": "Approved post", "pt": "Publicação aprovada", "fr": "Publication approuvée", "de": "Freigegebener Beitrag", "it": "Post approvato", "ja": "承認済みの投稿", "zh": "已批准的帖子", "ko": "승인된 게시물", "ar": "منشور معتمد" },
+    "keywords": {
+      "es": ["aprobar", "cola de moderación", "revisado", "permitido", "visto bueno", "publicado", "aceptado"],
+      "en": ["approve", "moderation queue", "reviewed", "allowed", "accepted", "published", "cleared"]
+    }
+  },
+  "post-lock": {
+    "label": { "es": "Publicación restringida", "en": "Locked post", "pt": "Publicação restrita", "fr": "Publication verrouillée", "de": "Gesperrter Beitrag", "it": "Post bloccato", "ja": "ロックされた投稿", "zh": "已锁定的帖子", "ko": "잠긴 게시물", "ar": "منشور مقفل" },
+    "keywords": {
+      "es": ["hilo cerrado", "sin respuestas", "comentarios desactivados", "solo seguidores", "audiencia limitada", "privado", "candado"],
+      "en": ["locked thread", "replies off", "comments disabled", "followers only", "limited audience", "private", "closed"]
+    }
+  },
+  "feed": {
+    "label": { "es": "Feed de noticias", "en": "News feed", "pt": "Feed de notícias", "fr": "Fil d’actualité", "de": "Newsfeed", "it": "Feed delle notizie", "ja": "フィード", "zh": "信息流", "ko": "피드", "ar": "آخر الأخبار" },
+    "keywords": {
+      "es": ["inicio", "cronología", "línea de tiempo", "publicaciones recientes", "a quién sigues", "scroll", "muro", "actualizaciones"],
+      "en": ["home", "timeline", "stream", "recent posts", "following", "scroll", "wall", "updates"]
+    }
+  },
+  "link-preview": {
+    "label": { "es": "Vista previa de enlace", "en": "Link preview", "pt": "Prévia do link", "fr": "Aperçu du lien", "de": "Linkvorschau", "it": "Anteprima del link", "ja": "リンクプレビュー", "zh": "链接预览", "ko": "링크 미리보기", "ar": "معاينة الرابط" },
+    "keywords": {
+      "es": ["tarjeta de link", "compartir link", "miniatura", "Open Graph", "tarjeta enriquecida", "unfurl", "URL", "publicación con link"],
+      "en": ["link card", "unfurl", "rich preview", "Open Graph", "thumbnail", "shared link", "URL card", "embed"]
+    }
+  },
+  "collection": {
+    "label": { "es": "Colección guardada", "en": "Saved collection", "pt": "Coleção salva", "fr": "Collection enregistrée", "de": "Gespeicherte Sammlung", "it": "Raccolta salvata", "ja": "保存したコレクション", "zh": "收藏集", "ko": "저장한 컬렉션", "ar": "مجموعة محفوظة" },
+    "keywords": {
+      "es": ["guardados", "tablero", "favoritos", "marcadores", "inspiración", "moodboard", "guardar para después"],
+      "en": ["saved posts", "board", "bookmarks", "favorites", "inspiration", "moodboard", "save for later"]
+    }
+  },
+  "repost": {
+    "label": { "es": "Republicar", "en": "Repost", "pt": "Repostar", "fr": "Republier", "de": "Erneut posten", "it": "Ripubblica", "ja": "リポスト", "zh": "转发", "ko": "재게시", "ar": "إعادة النشر" },
+    "keywords": {
+      "es": ["retuit", "compartir", "rebloguear", "volver a publicar", "difundir", "compartir con seguidores", "RT"],
+      "en": ["retweet", "reshare", "reblog", "boost", "share", "amplify", "RT"]
+    }
+  },
+  "crosspost": {
+    "label": { "es": "Compartir en otra comunidad", "en": "Crosspost", "pt": "Publicar em outra comunidade", "fr": "Publier dans une autre communauté", "de": "In anderer Community teilen", "it": "Condividi in un’altra community", "ja": "クロスポスト", "zh": "跨社区转发", "ko": "크로스포스트", "ar": "النشر في مجتمع آخر" },
+    "keywords": {
+      "es": ["crosspost", "publicación cruzada", "compartir en grupo", "otro subreddit", "difundir en comunidades", "reenviar a un grupo", "multipublicar"],
+      "en": ["share to group", "share to community", "another subreddit", "post elsewhere", "multi-post", "syndicate", "forward to group"]
+    }
+  },
+  "fact-check": {
+    "label": { "es": "Verificación de datos", "en": "Fact-check", "pt": "Checagem de fatos", "fr": "Vérification des faits", "de": "Faktencheck", "it": "Verifica dei fatti", "ja": "ファクトチェック", "zh": "事实核查", "ko": "팩트체크", "ar": "تدقيق الحقائق" },
+    "keywords": {
+      "es": ["nota de la comunidad", "contexto", "desinformación", "noticia falsa", "fake news", "verificar", "información engañosa", "fuentes"],
+      "en": ["community note", "context", "misinformation", "fake news", "verify", "misleading", "sources", "disinformation"]
+    }
+  },
+  "story": {
+    "label": { "es": "Historia", "en": "Story", "pt": "Story", "fr": "Story", "de": "Story", "it": "Storia", "ja": "ストーリーズ", "zh": "限时动态", "ko": "스토리", "ar": "قصة" },
+    "keywords": {
+      "es": ["stories", "contenido efímero", "24 horas", "pantalla completa", "estado de WhatsApp", "momentos", "video vertical"],
+      "en": ["stories", "ephemeral", "24 hours", "full screen", "status", "moments", "vertical"]
+    }
+  },
+  "story-ring": {
+    "label": { "es": "Historia sin ver", "en": "Unseen story", "pt": "Story não visto", "fr": "Story non vue", "de": "Neue Story", "it": "Storia non vista", "ja": "未読のストーリーズ", "zh": "未看的限时动态", "ko": "새 스토리", "ar": "قصة لم تُشاهد" },
+    "keywords": {
+      "es": ["anillo", "aro de colores", "foto de perfil", "avatar", "toca para ver", "contenido reciente", "novedad"],
+      "en": ["ring", "gradient ring", "profile photo", "avatar", "tap to view", "new content", "unwatched"]
+    }
+  },
+  "story-plus": {
+    "label": { "es": "Agregar a tu historia", "en": "Add to story", "pt": "Adicionar ao story", "fr": "Ajouter à la story", "de": "Zur Story hinzufügen", "it": "Aggiungi alla storia", "ja": "ストーリーズに追加", "zh": "添加到限时动态", "ko": "스토리에 추가", "ar": "إضافة إلى القصة" },
+    "keywords": {
+      "es": ["subir", "publicar un momento", "cámara", "contenido efímero", "compartir ahora", "24 horas", "stories"],
+      "en": ["upload", "share a moment", "camera", "ephemeral", "share now", "24 hours", "stories"]
+    }
+  },
+  "short-video": {
+    "label": { "es": "Video corto", "en": "Short video", "pt": "Vídeo curto", "fr": "Vidéo courte", "de": "Kurzvideo", "it": "Video breve", "ja": "ショート動画", "zh": "短视频", "ko": "숏폼 동영상", "ar": "فيديو قصير" },
+    "keywords": {
+      "es": ["reels", "shorts", "clips", "TikTok", "video vertical", "formato corto", "deslizar"],
+      "en": ["reels", "shorts", "clips", "TikTok", "vertical video", "short-form", "swipe"]
+    }
+  },
+  "remix": {
+    "label": { "es": "Remix", "en": "Remix", "pt": "Remix", "fr": "Remix", "de": "Remix", "it": "Remix", "ja": "リミックス", "zh": "合拍", "ko": "리믹스", "ar": "ريمكس" },
+    "keywords": {
+      "es": ["dueto", "stitch", "reaccionar a un video", "pantalla dividida", "video de respuesta", "colaborar", "versión propia"],
+      "en": ["duet", "stitch", "react to video", "split screen", "response video", "collab video", "make your own"]
+    }
+  },
+  "creator": {
+    "label": { "es": "Creador de contenido", "en": "Content creator", "pt": "Criador de conteúdo", "fr": "Créateur de contenu", "de": "Content Creator", "it": "Creatore di contenuti", "ja": "クリエイター", "zh": "创作者", "ko": "크리에이터", "ar": "صانع محتوى" },
+    "keywords": {
+      "es": ["influencer", "streamer", "youtuber", "herramientas de creación", "canal", "monetizar", "audiencia"],
+      "en": ["influencer", "streamer", "youtuber", "studio", "channel", "monetize", "audience"]
+    }
+  },
+  "watch-party": {
+    "label": { "es": "Ver juntos", "en": "Watch together", "pt": "Assistir juntos", "fr": "Regarder ensemble", "de": "Gemeinsam ansehen", "it": "Guarda insieme", "ja": "一緒に見る", "zh": "一起看", "ko": "함께 보기", "ar": "مشاهدة جماعية" },
+    "keywords": {
+      "es": ["watch party", "reproducción compartida", "ver con amigos", "fiesta de video", "video sincronizado", "noche de películas", "SharePlay"],
+      "en": ["watch party", "shared playback", "with friends", "synced video", "movie night", "SharePlay", "co-watching"]
+    }
+  },
+  "audio-room": {
+    "label": { "es": "Sala de audio", "en": "Audio room", "pt": "Sala de áudio", "fr": "Salon audio", "de": "Audioraum", "it": "Stanza audio", "ja": "音声ルーム", "zh": "语音房间", "ko": "오디오 룸", "ar": "غرفة صوتية" },
+    "keywords": {
+      "es": ["spaces", "escenario", "charla en vivo", "Clubhouse", "transmisión de voz", "levantar la mano", "conversación abierta"],
+      "en": ["spaces", "stage", "live talk", "Clubhouse", "drop-in audio", "raise hand", "voice chat"]
+    }
+  },
+  "heart-double": {
+    "label": { "es": "Match", "en": "Match", "pt": "Match", "fr": "Match", "de": "Match", "it": "Match", "ja": "マッチ", "zh": "互相喜欢", "ko": "매치", "ar": "إعجاب متبادل" },
+    "keywords": {
+      "es": ["me gusta mutuo", "citas", "pareja", "dos corazones", "conexión", "Tinder", "amor"],
+      "en": ["mutual like", "dating", "couple", "two hearts", "connection", "Tinder", "love"]
+    }
+  },
+  "heart-burst": {
+    "label": { "es": "Me encanta", "en": "Love it", "pt": "Amei", "fr": "J’adore", "de": "Gefällt mir sehr", "it": "Lo adoro", "ja": "大好き", "zh": "超爱", "ko": "최고예요", "ar": "أحببته" },
+    "keywords": {
+      "es": ["súper like", "reacción", "corazón", "amor", "lo máximo", "fan", "reaccionar"],
+      "en": ["super like", "reaction", "heart", "adore", "favorite", "best reaction", "react"]
+    }
+  },
+  "live-reactions": {
+    "label": { "es": "Reacciones en vivo", "en": "Live reactions", "pt": "Reações ao vivo", "fr": "Réactions en direct", "de": "Live-Reaktionen", "it": "Reazioni in diretta", "ja": "ライブリアクション", "zh": "直播互动", "ko": "실시간 반응", "ar": "تفاعلات مباشرة" },
+    "keywords": {
+      "es": ["corazones flotando", "transmisión en directo", "live", "me gusta en directo", "emojis", "audiencia", "interacción"],
+      "en": ["floating hearts", "livestream", "live video", "emoji burst", "audience", "engagement", "likes"]
+    }
+  },
+  "comment-thread": {
+    "label": { "es": "Hilo de comentarios", "en": "Comment thread", "pt": "Comentários e respostas", "fr": "Fil de commentaires", "de": "Kommentarverlauf", "it": "Discussione nei commenti", "ja": "コメントスレッド", "zh": "评论串", "ko": "댓글 스레드", "ar": "سلسلة التعليقات" },
+    "keywords": {
+      "es": ["respuestas", "responder", "comentarios anidados", "conversación", "discusión", "ver respuestas", "réplica"],
+      "en": ["replies", "reply", "nested comments", "conversation", "discussion", "view replies", "threaded"]
+    }
+  },
+  "person-tag": {
+    "label": { "es": "Etiquetar personas", "en": "Tag people", "pt": "Marcar pessoas", "fr": "Identifier des personnes", "de": "Personen markieren", "it": "Tagga persone", "ja": "ユーザーをタグ付け", "zh": "标记用户", "ko": "사람 태그하기", "ar": "الإشارة إلى أشخاص" },
+    "keywords": {
+      "es": ["mencionar", "taggear", "etiqueta en foto", "arroba", "identificar", "amigos", "quién aparece"],
+      "en": ["mention", "photo tag", "@", "identify", "friends", "who's in this", "label"]
+    }
+  },
+  "profile": {
+    "label": { "es": "Página de perfil", "en": "Profile page", "pt": "Página de perfil", "fr": "Page de profil", "de": "Profilseite", "it": "Pagina del profilo", "ja": "プロフィールページ", "zh": "个人主页", "ko": "프로필 페이지", "ar": "صفحة الملف الشخصي" },
+    "keywords": {
+      "es": ["cuenta", "portada", "avatar", "biografía", "acerca de", "usuario", "página personal"],
+      "en": ["account", "cover photo", "avatar", "bio", "about", "user page", "personal page"]
+    }
+  },
+  "profile-card": {
+    "label": { "es": "Tarjeta de perfil", "en": "Profile card", "pt": "Cartão de perfil", "fr": "Carte de profil", "de": "Profilkarte", "it": "Scheda profilo", "ja": "プロフィールカード", "zh": "资料卡", "ko": "프로필 카드", "ar": "بطاقة الملف الشخصي" },
+    "keywords": {
+      "es": ["seguir", "cuenta sugerida", "a quién seguir", "vista rápida", "tarjeta flotante", "personas que quizá conozcas", "recomendación"],
+      "en": ["follow", "suggested account", "who to follow", "hover card", "quick view", "people you may know", "recommendation"]
+    }
+  },
+  "profile-deck": {
+    "label": { "es": "Deslizar perfiles", "en": "Swipe deck", "pt": "Deslizar perfis", "fr": "Profils à balayer", "de": "Profile wischen", "it": "Scorri i profili", "ja": "スワイプで探す", "zh": "滑动浏览资料", "ko": "프로필 스와이프", "ar": "تصفح الملفات بالسحب" },
+    "keywords": {
+      "es": ["swipe", "descubrir personas", "citas", "tarjetas apiladas", "dar like", "conocer gente", "Tinder", "una a la vez"],
+      "en": ["discover people", "dating", "card stack", "swipe right", "meet people", "Tinder", "one at a time"]
+    }
+  },
+  "bio-links": {
+    "label": { "es": "Enlaces en la bio", "en": "Link in bio", "pt": "Link na bio", "fr": "Liens dans la bio", "de": "Links in der Bio", "it": "Link nella bio", "ja": "プロフィールのリンク集", "zh": "简介链接", "ko": "바이오 링크", "ar": "روابط في النبذة" },
+    "keywords": {
+      "es": ["Linktree", "página de links", "creador", "lista de enlaces", "mis redes", "landing personal", "todos mis links"],
+      "en": ["Linktree", "links page", "creator", "link list", "my socials", "landing page", "all my links"]
+    }
+  },
+  "avatar-stack": {
+    "label": { "es": "Grupo de avatares", "en": "Avatar stack", "pt": "Grupo de avatares", "fr": "Pile d’avatars", "de": "Avatar-Stapel", "it": "Gruppo di avatar", "ja": "メンバーのアバター", "zh": "头像组", "ko": "아바타 그룹", "ar": "مجموعة صور الحسابات" },
+    "keywords": {
+      "es": ["facepile", "participantes", "miembros", "a quién le gustó", "asistentes", "colaboradores", "personas en línea"],
+      "en": ["facepile", "participants", "members", "liked by", "attendees", "collaborators", "who's here"]
+    }
+  },
+  "person-crown": {
+    "label": { "es": "Propietario del grupo", "en": "Group owner", "pt": "Dono do grupo", "fr": "Propriétaire du groupe", "de": "Gruppeninhaber", "it": "Proprietario del gruppo", "ja": "グループのオーナー", "zh": "群主", "ko": "그룹 소유자", "ar": "مالك المجموعة" },
+    "keywords": {
+      "es": ["administrador", "admin", "dueño", "fan principal", "fan destacado", "líder", "corona", "anfitrión"],
+      "en": ["admin", "administrator", "top fan", "leader", "crown", "group creator", "host", "founder"]
+    }
+  },
+  "person-gem": {
+    "label": { "es": "Miembro de pago", "en": "Paid member", "pt": "Membro pagante", "fr": "Membre payant", "de": "Zahlendes Mitglied", "it": "Membro pagante", "ja": "有料メンバー", "zh": "付费会员", "ko": "유료 멤버", "ar": "عضو مشترك" },
+    "keywords": {
+      "es": ["suscriptor", "super follow", "membresía del canal", "patrocinador", "apoyo al creador", "nivel de suscripción", "Patreon", "contenido exclusivo"],
+      "en": ["subscriber", "super follow", "channel membership", "patron", "supporter", "tier", "Patreon", "exclusive"]
+    }
+  },
+  "person-spotlight": {
+    "label": { "es": "Miembro destacado", "en": "Featured member", "pt": "Membro em destaque", "fr": "Membre à la une", "de": "Mitglied im Fokus", "it": "Membro in evidenza", "ja": "注目のメンバー", "zh": "精选成员", "ko": "주목할 멤버", "ar": "عضو مميز" },
+    "keywords": {
+      "es": ["reflector", "en el foco", "reconocimiento", "miembro del mes", "presentar", "protagonista", "spotlight"],
+      "en": ["spotlight", "member of the month", "recognition", "introduce", "showcase", "highlight", "shout-out"]
+    }
+  },
+  "person-bell": {
+    "label": { "es": "Notificaciones de publicaciones", "en": "Post notifications", "pt": "Notificações de publicações", "fr": "Notifications de publications", "de": "Beitragsbenachrichtigungen", "it": "Notifiche dei post", "ja": "投稿のお知らせ", "zh": "发帖提醒", "ko": "게시물 알림", "ar": "إشعارات المنشورات" },
+    "keywords": {
+      "es": ["campana", "avisarme", "seguir de cerca", "alertas", "activar avisos", "suscribirse", "cuando publique"],
+      "en": ["bell", "notify me", "follow closely", "alerts", "get updates", "subscribe", "when they post"]
+    }
+  },
+  "person-eye": {
+    "label": { "es": "Espectadores", "en": "Viewers", "pt": "Espectadores", "fr": "Spectateurs", "de": "Zuschauer", "it": "Spettatori", "ja": "閲覧者", "zh": "浏览者", "ko": "조회자", "ar": "المشاهدون" },
+    "keywords": {
+      "es": ["visto por", "vistas del perfil", "quién vio", "visualizaciones", "audiencia", "visitas", "alcance"],
+      "en": ["seen by", "profile views", "who viewed", "views", "audience", "visitors", "reach"]
+    }
+  },
+  "person-link": {
+    "label": { "es": "Enlace de perfil", "en": "Profile link", "pt": "Link do perfil", "fr": "Lien du profil", "de": "Profillink", "it": "Link del profilo", "ja": "プロフィールURL", "zh": "个人主页链接", "ko": "프로필 링크", "ar": "رابط الملف الشخصي" },
+    "keywords": {
+      "es": ["compartir perfil", "link de invitación", "copiar link", "URL del perfil", "invitar", "agregar amigo", "compartir contacto"],
+      "en": ["share profile", "invite link", "copy link", "profile URL", "invite", "add friend", "share contact"]
+    }
+  },
+  "person-mute": {
+    "label": { "es": "Silenciar cuenta", "en": "Mute account", "pt": "Silenciar conta", "fr": "Mettre le compte en sourdine", "de": "Konto stummschalten", "it": "Silenzia account", "ja": "アカウントをミュート", "zh": "静音用户", "ko": "계정 뮤트", "ar": "كتم الحساب" },
+    "keywords": {
+      "es": ["ocultar publicaciones", "dejar de ver", "sin dejar de seguir", "pausar", "callar", "filtrar", "no mostrar"],
+      "en": ["hide posts", "stop seeing", "without unfollowing", "snooze", "silence", "filter", "hide user"]
+    }
+  },
+  "person-star": {
+    "label": { "es": "Amigos cercanos", "en": "Close friends", "pt": "Amigos próximos", "fr": "Amis proches", "de": "Enge Freunde", "it": "Amici più stretti", "ja": "親しい友達", "zh": "密友", "ko": "친한 친구", "ar": "الأصدقاء المقربون" },
+    "keywords": {
+      "es": ["mejores amigos", "favorito", "miembro destacado", "lista privada", "círculo cercano", "estrella", "VIP"],
+      "en": ["best friends", "favorite", "featured member", "inner circle", "private list", "star", "VIP"]
+    }
+  },
+  "person-arrow-up": {
+    "label": { "es": "Promover miembro", "en": "Promote member", "pt": "Promover membro", "fr": "Promouvoir le membre", "de": "Mitglied befördern", "it": "Promuovi membro", "ja": "メンバーを昇格", "zh": "提升成员权限", "ko": "멤버 승급", "ar": "ترقية العضو" },
+    "keywords": {
+      "es": ["hacer moderador", "hacer administrador", "subir de rol", "dar permisos", "ascender", "nombrar admin", "cambiar rol"],
+      "en": ["make moderator", "make admin", "upgrade role", "grant permissions", "elevate", "assign admin", "change role"]
+    }
+  },
+  "followers": {
+    "label": { "es": "Seguidores", "en": "Followers", "pt": "Seguidores", "fr": "Abonnés", "de": "Follower", "it": "Follower", "ja": "フォロワー", "zh": "粉丝", "ko": "팔로워", "ar": "المتابعون" },
+    "keywords": {
+      "es": ["audiencia", "fans", "suscriptores", "seguir", "comunidad", "alcance", "crecimiento"],
+      "en": ["audience", "fans", "subscribers", "follow", "fan base", "reach", "growth"]
+    }
+  },
+  "person-connection": {
+    "label": { "es": "Conexión", "en": "Connection", "pt": "Conexão", "fr": "Relation", "de": "Verbindung", "it": "Collegamento", "ja": "つながり", "zh": "人脉", "ko": "연결", "ar": "تواصل" },
+    "keywords": {
+      "es": ["conectar", "seguirse mutuamente", "seguir de vuelta", "contacto", "LinkedIn", "relación", "agregar a la red"],
+      "en": ["connect", "mutual follow", "follow back", "contact", "LinkedIn", "relationship", "add to network"]
+    }
+  },
+  "mutual-friends": {
+    "label": { "es": "Amigos en común", "en": "Mutual friends", "pt": "Amigos em comum", "fr": "Amis en commun", "de": "Gemeinsame Freunde", "it": "Amici in comune", "ja": "共通の友達", "zh": "共同好友", "ko": "함께 아는 친구", "ar": "أصدقاء مشتركون" },
+    "keywords": {
+      "es": ["contactos compartidos", "conocidos", "conexiones mutuas", "red compartida", "personas que ambos conocen", "seguidores en común", "amistades"],
+      "en": ["shared connections", "common friends", "people you both know", "mutuals", "acquaintances", "shared network", "followed by"]
+    }
+  },
+  "social-graph": {
+    "label": { "es": "Red de contactos", "en": "Social graph", "pt": "Rede de contatos", "fr": "Graphe social", "de": "Kontaktnetz", "it": "Rete di contatti", "ja": "ソーシャルグラフ", "zh": "社交关系图", "ko": "소셜 그래프", "ar": "شبكة العلاقات" },
+    "keywords": {
+      "es": ["grafo social", "conexiones", "seguidores", "relaciones", "networking", "contactos de segundo grado", "mapa de relaciones"],
+      "en": ["network", "connections", "followers", "relationships", "networking", "second-degree", "relationship map"]
+    }
+  },
+  "community": {
+    "label": { "es": "Comunidad", "en": "Community", "pt": "Comunidade", "fr": "Communauté", "de": "Community", "it": "Community", "ja": "コミュニティ", "zh": "社区", "ko": "커뮤니티", "ar": "مجتمع" },
+    "keywords": {
+      "es": ["grupo", "miembros", "colectivo", "tribu", "red", "interés común", "unirse", "foro"],
+      "en": ["group", "members", "collective", "tribe", "network", "shared interest", "join", "club"]
+    }
+  },
+  "member-list": {
+    "label": { "es": "Lista de miembros", "en": "Member list", "pt": "Lista de membros", "fr": "Liste des membres", "de": "Mitgliederliste", "it": "Elenco dei membri", "ja": "メンバー一覧", "zh": "成员列表", "ko": "멤버 목록", "ar": "قائمة الأعضاء" },
+    "keywords": {
+      "es": ["integrantes", "plantilla", "lista de seguidores", "directorio", "participantes", "equipo", "inscritos"],
+      "en": ["roster", "followers list", "directory", "participants", "team", "people", "subscribers"]
+    }
+  },
+  "member-list-block": {
+    "label": { "es": "Cuentas bloqueadas", "en": "Blocked accounts", "pt": "Contas bloqueadas", "fr": "Comptes bloqués", "de": "Blockierte Konten", "it": "Account bloccati", "ja": "ブロック中のアカウント", "zh": "黑名单", "ko": "차단한 계정", "ar": "الحسابات المحظورة" },
+    "keywords": {
+      "es": ["lista de bloqueo", "lista negra", "desbloquear", "usuarios vetados", "privacidad", "restricciones", "acoso"],
+      "en": ["block list", "blacklist", "unblock", "banned users", "privacy", "restricted", "harassment"]
+    }
+  },
+  "people-plus": {
+    "label": { "es": "Unirse al grupo", "en": "Join group", "pt": "Entrar no grupo", "fr": "Rejoindre le groupe", "de": "Gruppe beitreten", "it": "Unisciti al gruppo", "ja": "グループに参加", "zh": "加入群组", "ko": "그룹 가입", "ar": "الانضمام إلى المجموعة" },
+    "keywords": {
+      "es": ["crear grupo", "invitar personas", "agregar miembros", "sumar gente", "formar equipo", "inscribirse", "comunidad"],
+      "en": ["create group", "invite people", "add members", "sign up", "new community", "team up", "enroll"]
+    }
+  },
+  "people-minus": {
+    "label": { "es": "Salir del grupo", "en": "Leave group", "pt": "Sair do grupo", "fr": "Quitter le groupe", "de": "Gruppe verlassen", "it": "Abbandona il gruppo", "ja": "グループを退出", "zh": "退出群组", "ko": "그룹 나가기", "ar": "مغادرة المجموعة" },
+    "keywords": {
+      "es": ["quitar miembros", "expulsar", "abandonar", "sacar del grupo", "darse de baja", "sacar personas", "remover"],
+      "en": ["remove members", "kick", "quit", "remove from group", "unsubscribe", "exit", "drop out"]
+    }
+  },
+  "people-lock": {
+    "label": { "es": "Grupo privado", "en": "Private group", "pt": "Grupo privado", "fr": "Groupe privé", "de": "Private Gruppe", "it": "Gruppo privato", "ja": "非公開グループ", "zh": "私密群组", "ko": "비공개 그룹", "ar": "مجموعة خاصة" },
+    "keywords": {
+      "es": ["cerrado", "solo por invitación", "comunidad privada", "acceso restringido", "secreto", "solo miembros", "aprobación"],
+      "en": ["closed", "invite only", "private community", "restricted access", "secret", "members only", "approval required"]
+    }
+  },
+  "forum": {
+    "label": { "es": "Foro", "en": "Forum", "pt": "Fórum", "fr": "Forum", "de": "Forum", "it": "Forum", "ja": "フォーラム", "zh": "论坛", "ko": "포럼", "ar": "منتدى" },
+    "keywords": {
+      "es": ["temas", "tablero de discusión", "comunidad", "subforo", "Reddit", "hilos", "preguntas", "debate"],
+      "en": ["topics", "message board", "community", "subforum", "Reddit", "threads", "categories", "debate"]
+    }
+  },
+  "discussion": {
+    "label": { "es": "Discusión", "en": "Discussion", "pt": "Discussão", "fr": "Discussion", "de": "Diskussion", "it": "Discussione", "ja": "ディスカッション", "zh": "讨论", "ko": "토론", "ar": "نقاش" },
+    "keywords": {
+      "es": ["conversación", "debate", "charla", "intercambio de ideas", "comentarios", "diálogo", "comunidad"],
+      "en": ["conversation", "debate", "talk", "exchange ideas", "comments", "dialogue", "chat"]
+    }
+  },
+  "bulletin-board": {
+    "label": { "es": "Tablero de avisos", "en": "Bulletin board", "pt": "Mural de avisos", "fr": "Tableau d’affichage", "de": "Schwarzes Brett", "it": "Bacheca", "ja": "掲示板", "zh": "公告栏", "ko": "게시판", "ar": "لوحة الإعلانات" },
+    "keywords": {
+      "es": ["anuncios", "comunicados", "corcho", "noticias de la comunidad", "pizarrón", "carteles", "notas fijadas"],
+      "en": ["announcements", "notices", "corkboard", "community news", "pinboard", "flyers", "posted notes"]
+    }
+  },
+  "meetup": {
+    "label": { "es": "Reunión presencial", "en": "Meetup", "pt": "Encontro presencial", "fr": "Rencontre", "de": "Treffen", "it": "Incontro", "ja": "オフ会", "zh": "线下聚会", "ko": "오프라인 모임", "ar": "لقاء" },
+    "keywords": {
+      "es": ["meetup", "encuentro", "evento", "convivio", "juntarse", "networking", "en persona", "grupo local"],
+      "en": ["get-together", "gathering", "event", "in person", "networking", "local group", "IRL", "hangout"]
+    }
+  },
+  "name-tag": {
+    "label": { "es": "Gafete", "en": "Name tag", "pt": "Crachá", "fr": "Badge nominatif", "de": "Namensschild", "it": "Targhetta con il nome", "ja": "名札", "zh": "姓名牌", "ko": "이름표", "ar": "بطاقة الاسم" },
+    "keywords": {
+      "es": ["hola, me llamo", "presentarse", "identificación", "evento", "credencial", "nombre", "networking"],
+      "en": ["hello my name is", "introductions", "badge", "event", "ID", "networking", "icebreaker"]
+    }
+  },
+  "invitation": {
+    "label": { "es": "Invitación", "en": "Invitation", "pt": "Convite", "fr": "Invitation", "de": "Einladung", "it": "Invito", "ja": "招待状", "zh": "邀请", "ko": "초대장", "ar": "دعوة" },
+    "keywords": {
+      "es": ["invitar", "unirse", "RSVP", "evento", "sobre", "convocatoria", "registrarse", "acceso anticipado"],
+      "en": ["invite", "join", "RSVP", "event", "envelope", "referral", "sign up", "early access"]
+    }
+  },
+  "poll": {
+    "label": { "es": "Encuesta", "en": "Poll", "pt": "Enquete", "fr": "Sondage", "de": "Umfrage", "it": "Sondaggio", "ja": "アンケート", "zh": "投票", "ko": "투표", "ar": "استطلاع رأي" },
+    "keywords": {
+      "es": ["votación", "opciones", "preguntar a seguidores", "opinión", "sondeo", "elegir", "pregunta rápida"],
+      "en": ["vote", "options", "survey", "ask followers", "opinion", "choose", "quick question"]
+    }
+  },
+  "poll-results": {
+    "label": { "es": "Resultados de la encuesta", "en": "Poll results", "pt": "Resultados da enquete", "fr": "Résultats du sondage", "de": "Umfrageergebnisse", "it": "Risultati del sondaggio", "ja": "アンケート結果", "zh": "投票结果", "ko": "투표 결과", "ar": "نتائج الاستطلاع" },
+    "keywords": {
+      "es": ["porcentajes", "votos", "ganador", "conteo", "barras", "opinión mayoritaria", "estadísticas"],
+      "en": ["percentages", "votes", "winner", "tally", "bars", "majority", "breakdown"]
+    }
+  },
+  "vote": {
+    "label": { "es": "Votar", "en": "Vote", "pt": "Votar", "fr": "Voter", "de": "Abstimmen", "it": "Vota", "ja": "高評価・低評価", "zh": "赞成/反对", "ko": "추천/비추천", "ar": "تصويت" },
+    "keywords": {
+      "es": ["voto a favor", "voto en contra", "upvote", "downvote", "puntuación", "karma", "Reddit", "mejor respuesta"],
+      "en": ["upvote", "downvote", "score", "karma", "Reddit", "best answer", "rank", "points"]
+    }
+  },
+  "trending": {
+    "label": { "es": "Tendencias", "en": "Trending topics", "pt": "Assuntos do momento", "fr": "Tendances", "de": "Trends", "it": "Tendenze", "ja": "トレンド", "zh": "热门话题", "ko": "트렌드", "ar": "الأكثر تداولًا" },
+    "keywords": {
+      "es": ["temas del momento", "viral", "popular", "hashtag", "lo más comentado", "explorar", "de qué se habla"],
+      "en": ["what's happening", "viral", "popular", "hashtag", "most talked about", "explore", "hot topics"]
+    }
+  },
+  "question-answer": {
+    "label": { "es": "Preguntas y respuestas", "en": "Q&A", "pt": "Perguntas e respostas", "fr": "Questions-réponses", "de": "Fragen und Antworten", "it": "Domande e risposte", "ja": "Q&A", "zh": "问答", "ko": "질문과 답변", "ar": "أسئلة وأجوبة" },
+    "keywords": {
+      "es": ["Q&A", "preguntar", "responder", "dudas", "pregúntame lo que sea", "AMA", "foro de ayuda", "consultas"],
+      "en": ["questions and answers", "ask", "answer", "ask me anything", "AMA", "help forum", "doubts"]
+    }
+  },
+  "review": {
+    "label": { "es": "Calificación y reseña", "en": "Rating and review", "pt": "Avaliação e comentário", "fr": "Note et avis", "de": "Bewertung mit Rezension", "it": "Valutazione e recensione", "ja": "評価とレビュー", "zh": "评分与评价", "ko": "평점과 리뷰", "ar": "تقييم ومراجعة" },
+    "keywords": {
+      "es": ["opinión", "estrellas", "comentario de cliente", "valoración", "experiencia", "puntuación", "recomendación"],
+      "en": ["opinion", "stars", "customer feedback", "score", "experience", "recommendation", "verdict"]
+    }
+  },
+  "review-edit": {
+    "label": { "es": "Escribir reseña", "en": "Write a review", "pt": "Escrever avaliação", "fr": "Rédiger un avis", "de": "Bewertung schreiben", "it": "Scrivi una recensione", "ja": "レビューを書く", "zh": "写评价", "ko": "리뷰 쓰기", "ar": "كتابة مراجعة" },
+    "keywords": {
+      "es": ["calificar", "opinar", "dejar comentario", "evaluar", "dar estrellas", "compartir experiencia", "editar opinión"],
+      "en": ["rate", "leave feedback", "give stars", "share experience", "evaluate", "post opinion", "comment"]
+    }
+  },
+  "testimonial": {
+    "label": { "es": "Testimonio", "en": "Testimonial", "pt": "Depoimento", "fr": "Témoignage", "de": "Kundenstimme", "it": "Testimonianza", "ja": "お客様の声", "zh": "客户证言", "ko": "추천사", "ar": "شهادة" },
+    "keywords": {
+      "es": ["cita", "opinión de cliente", "recomendación", "prueba social", "caso de éxito", "comentario destacado", "autor"],
+      "en": ["customer quote", "endorsement", "social proof", "success story", "recommendation", "kind words", "attribution"]
+    }
+  },
+  "laurel-wreath": {
+    "label": { "es": "Mejor calificado", "en": "Top rated", "pt": "Mais bem avaliado", "fr": "Mieux noté", "de": "Top bewertet", "it": "Migliore valutazione", "ja": "トップ評価", "zh": "高分推荐", "ko": "최고 평점", "ar": "الأعلى تقييمًا" },
+    "keywords": {
+      "es": ["laureles", "corona de laurel", "premio", "selección del editor", "ganador", "reconocimiento", "lo mejor", "distinción"],
+      "en": ["laurels", "laurel wreath", "award winner", "editor's pick", "prize", "recognition", "best of", "accolade"]
+    }
+  },
+  "eye-alert": {
+    "label": { "es": "Contenido sensible", "en": "Sensitive content", "pt": "Conteúdo sensível", "fr": "Contenu sensible", "de": "Sensibler Inhalt", "it": "Contenuto sensibile", "ja": "センシティブな内容", "zh": "敏感内容", "ko": "민감한 콘텐츠", "ar": "محتوى حساس" },
+    "keywords": {
+      "es": ["advertencia", "toca para ver", "contenido explícito", "NSFW", "ver de todos modos", "imagen difuminada", "violencia"],
+      "en": ["warning", "tap to view", "explicit", "NSFW", "view anyway", "content warning", "blurred", "graphic"]
+    }
+  },
+  "spoiler": {
+    "label": { "es": "Spoiler", "en": "Spoiler", "pt": "Spoiler", "fr": "Spoiler", "de": "Spoiler", "it": "Spoiler", "ja": "ネタバレ", "zh": "剧透", "ko": "스포일러", "ar": "حرق الأحداث" },
+    "keywords": {
+      "es": ["oculto", "revelar", "toca para mostrar", "texto tapado", "final", "trama", "sorpresa"],
+      "en": ["hidden", "reveal", "tap to show", "blurred text", "plot", "ending", "surprise"]
+    }
+  },
+  "challenge": {
+    "label": { "es": "Reto", "en": "Challenge", "pt": "Desafio", "fr": "Défi", "de": "Herausforderung", "it": "Sfida", "ja": "チャレンジ", "zh": "挑战", "ko": "챌린지", "ar": "تحدٍّ" },
+    "keywords": {
+      "es": ["desafío", "uno contra uno", "competencia", "versus", "duelo", "juego", "invitar a competir"],
+      "en": ["head-to-head", "dare", "competition", "versus", "duel", "game", "1v1"]
+    }
+  },
+  "memories": {
+    "label": { "es": "Recuerdos", "en": "Memories", "pt": "Lembranças", "fr": "Souvenirs", "de": "Erinnerungen", "it": "Ricordi", "ja": "思い出", "zh": "回忆", "ko": "추억", "ar": "ذكريات" },
+    "keywords": {
+      "es": ["un día como hoy", "hace un año", "aniversario", "publicaciones anteriores", "nostalgia", "volver a ver", "historial"],
+      "en": ["on this day", "years ago", "anniversary", "past posts", "nostalgia", "look back", "throwback"]
+    }
+  },
+  "fundraiser": {
+    "label": { "es": "Recaudación de fondos", "en": "Fundraiser", "pt": "Arrecadação de fundos", "fr": "Collecte de fonds", "de": "Spendenaktion", "it": "Raccolta fondi", "ja": "募金活動", "zh": "筹款", "ko": "모금", "ar": "حملة تبرعات" },
+    "keywords": {
+      "es": ["donar", "colecta", "causa", "meta", "beneficencia", "crowdfunding", "vaquita", "apoyar"],
+      "en": ["donate", "charity", "cause", "goal", "crowdfunding", "donation drive", "support", "GoFundMe"]
+    }
+  },
+  "qr-code-person": {
+    "label": { "es": "Código de perfil", "en": "Profile code", "pt": "Código do perfil", "fr": "Code de profil", "de": "Profilcode", "it": "Codice profilo", "ja": "プロフィールQRコード", "zh": "个人二维码", "ko": "프로필 QR 코드", "ar": "رمز الملف الشخصي" },
+    "keywords": {
+      "es": ["QR", "escanear para seguir", "agregar amigo", "nametag", "compartir perfil", "conectar en persona", "escanear"],
+      "en": ["QR", "scan to follow", "add friend", "nametag", "share profile", "scan", "connect in person"]
+    }
+  },
+  "people-nearby": {
+    "label": { "es": "Personas cerca", "en": "People nearby", "pt": "Pessoas por perto", "fr": "Personnes à proximité", "de": "Personen in der Nähe", "it": "Persone nelle vicinanze", "ja": "近くの人", "zh": "附近的人", "ko": "주변 사람", "ar": "أشخاص بالقرب منك" },
+    "keywords": {
+      "es": ["cerca de mí", "descubrir gente", "radar", "ubicación", "conocer personas", "vecinos", "en la zona"],
+      "en": ["near me", "discover people", "radar", "location", "meet people", "around you", "local"]
+    }
+  }
+}

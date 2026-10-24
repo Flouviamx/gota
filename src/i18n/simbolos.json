@@ -1,0 +1,793 @@
+{
+  "letter-a": {
+    "label": { "es": "Letra A", "en": "Letter A", "pt": "Letra A", "fr": "Lettre A", "de": "Buchstabe A", "it": "Lettera A", "ja": "文字 A", "zh": "字母 A", "ko": "알파벳 A", "ar": "الحرف A" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción A", "tecla A", "primera letra"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option A", "A key", "first letter"]
+    }
+  },
+  "letter-b": {
+    "label": { "es": "Letra B", "en": "Letter B", "pt": "Letra B", "fr": "Lettre B", "de": "Buchstabe B", "it": "Lettera B", "ja": "文字 B", "zh": "字母 B", "ko": "알파벳 B", "ar": "الحرف B" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción B", "tecla B", "plan B"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option B", "B key", "plan B"]
+    }
+  },
+  "letter-c": {
+    "label": { "es": "Letra C", "en": "Letter C", "pt": "Letra C", "fr": "Lettre C", "de": "Buchstabe C", "it": "Lettera C", "ja": "文字 C", "zh": "字母 C", "ko": "알파벳 C", "ar": "الحرف C" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción C", "tecla C", "inciso c"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option C", "C key", "answer C"]
+    }
+  },
+  "letter-d": {
+    "label": { "es": "Letra D", "en": "Letter D", "pt": "Letra D", "fr": "Lettre D", "de": "Buchstabe D", "it": "Lettera D", "ja": "文字 D", "zh": "字母 D", "ko": "알파벳 D", "ar": "الحرف D" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción D", "tecla D", "inciso d"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option D", "D key", "answer D"]
+    }
+  },
+  "letter-e": {
+    "label": { "es": "Letra E", "en": "Letter E", "pt": "Letra E", "fr": "Lettre E", "de": "Buchstabe E", "it": "Lettera E", "ja": "文字 E", "zh": "字母 E", "ko": "알파벳 E", "ar": "الحرف E" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción E", "tecla E", "inciso e"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option E", "E key", "answer E"]
+    }
+  },
+  "letter-f": {
+    "label": { "es": "Letra F", "en": "Letter F", "pt": "Letra F", "fr": "Lettre F", "de": "Buchstabe F", "it": "Lettera F", "ja": "文字 F", "zh": "字母 F", "ko": "알파벳 F", "ar": "الحرف F" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción F", "tecla F", "inciso f"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option F", "F key", "answer F"]
+    }
+  },
+  "letter-g": {
+    "label": { "es": "Letra G", "en": "Letter G", "pt": "Letra G", "fr": "Lettre G", "de": "Buchstabe G", "it": "Lettera G", "ja": "文字 G", "zh": "字母 G", "ko": "알파벳 G", "ar": "الحرف G" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción G", "tecla G", "inciso g"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option G", "G key", "answer G"]
+    }
+  },
+  "letter-h": {
+    "label": { "es": "Letra H", "en": "Letter H", "pt": "Letra H", "fr": "Lettre H", "de": "Buchstabe H", "it": "Lettera H", "ja": "文字 H", "zh": "字母 H", "ko": "알파벳 H", "ar": "الحرف H" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción H", "tecla H", "inciso h"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option H", "H key", "answer H"]
+    }
+  },
+  "letter-i": {
+    "label": { "es": "Letra I", "en": "Letter I", "pt": "Letra I", "fr": "Lettre I", "de": "Buchstabe I", "it": "Lettera I", "ja": "文字 I", "zh": "字母 I", "ko": "알파벳 I", "ar": "الحرف I" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción I", "tecla I", "inciso i"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option I", "I key", "answer I"]
+    }
+  },
+  "letter-j": {
+    "label": { "es": "Letra J", "en": "Letter J", "pt": "Letra J", "fr": "Lettre J", "de": "Buchstabe J", "it": "Lettera J", "ja": "文字 J", "zh": "字母 J", "ko": "알파벳 J", "ar": "الحرف J" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción J", "tecla J", "inciso j"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option J", "J key", "answer J"]
+    }
+  },
+  "letter-k": {
+    "label": { "es": "Letra K", "en": "Letter K", "pt": "Letra K", "fr": "Lettre K", "de": "Buchstabe K", "it": "Lettera K", "ja": "文字 K", "zh": "字母 K", "ko": "알파벳 K", "ar": "الحرف K" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción K", "tecla K", "inciso k"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option K", "K key", "answer K"]
+    }
+  },
+  "letter-l": {
+    "label": { "es": "Letra L", "en": "Letter L", "pt": "Letra L", "fr": "Lettre L", "de": "Buchstabe L", "it": "Lettera L", "ja": "文字 L", "zh": "字母 L", "ko": "알파벳 L", "ar": "الحرف L" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción L", "tecla L", "inciso l"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option L", "L key", "answer L"]
+    }
+  },
+  "letter-m": {
+    "label": { "es": "Letra M", "en": "Letter M", "pt": "Letra M", "fr": "Lettre M", "de": "Buchstabe M", "it": "Lettera M", "ja": "文字 M", "zh": "字母 M", "ko": "알파벳 M", "ar": "الحرف M" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción M", "tecla M", "inciso m"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option M", "M key", "answer M"]
+    }
+  },
+  "letter-n": {
+    "label": { "es": "Letra N", "en": "Letter N", "pt": "Letra N", "fr": "Lettre N", "de": "Buchstabe N", "it": "Lettera N", "ja": "文字 N", "zh": "字母 N", "ko": "알파벳 N", "ar": "الحرف N" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción N", "tecla N", "inciso n"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option N", "N key", "answer N"]
+    }
+  },
+  "letter-o": {
+    "label": { "es": "Letra O", "en": "Letter O", "pt": "Letra O", "fr": "Lettre O", "de": "Buchstabe O", "it": "Lettera O", "ja": "文字 O", "zh": "字母 O", "ko": "알파벳 O", "ar": "الحرف O" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción O", "tecla O", "inciso o"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option O", "O key", "answer O"]
+    }
+  },
+  "letter-p": {
+    "label": { "es": "Letra P", "en": "Letter P", "pt": "Letra P", "fr": "Lettre P", "de": "Buchstabe P", "it": "Lettera P", "ja": "文字 P", "zh": "字母 P", "ko": "알파벳 P", "ar": "الحرف P" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción P", "tecla P", "inciso p"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option P", "P key", "answer P"]
+    }
+  },
+  "letter-q": {
+    "label": { "es": "Letra Q", "en": "Letter Q", "pt": "Letra Q", "fr": "Lettre Q", "de": "Buchstabe Q", "it": "Lettera Q", "ja": "文字 Q", "zh": "字母 Q", "ko": "알파벳 Q", "ar": "الحرف Q" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción Q", "tecla Q", "inciso q"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option Q", "Q key", "answer Q"]
+    }
+  },
+  "letter-r": {
+    "label": { "es": "Letra R", "en": "Letter R", "pt": "Letra R", "fr": "Lettre R", "de": "Buchstabe R", "it": "Lettera R", "ja": "文字 R", "zh": "字母 R", "ko": "알파벳 R", "ar": "الحرف R" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción R", "tecla R", "inciso r"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option R", "R key", "answer R"]
+    }
+  },
+  "letter-s": {
+    "label": { "es": "Letra S", "en": "Letter S", "pt": "Letra S", "fr": "Lettre S", "de": "Buchstabe S", "it": "Lettera S", "ja": "文字 S", "zh": "字母 S", "ko": "알파벳 S", "ar": "الحرف S" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción S", "tecla S", "inciso s"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option S", "S key", "answer S"]
+    }
+  },
+  "letter-t": {
+    "label": { "es": "Letra T", "en": "Letter T", "pt": "Letra T", "fr": "Lettre T", "de": "Buchstabe T", "it": "Lettera T", "ja": "文字 T", "zh": "字母 T", "ko": "알파벳 T", "ar": "الحرف T" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción T", "tecla T", "inciso t"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option T", "T key", "answer T"]
+    }
+  },
+  "letter-u": {
+    "label": { "es": "Letra U", "en": "Letter U", "pt": "Letra U", "fr": "Lettre U", "de": "Buchstabe U", "it": "Lettera U", "ja": "文字 U", "zh": "字母 U", "ko": "알파벳 U", "ar": "الحرف U" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción U", "tecla U", "inciso u"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option U", "U key", "answer U"]
+    }
+  },
+  "letter-v": {
+    "label": { "es": "Letra V", "en": "Letter V", "pt": "Letra V", "fr": "Lettre V", "de": "Buchstabe V", "it": "Lettera V", "ja": "文字 V", "zh": "字母 V", "ko": "알파벳 V", "ar": "الحرف V" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción V", "tecla V", "inciso v"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option V", "V key", "answer V"]
+    }
+  },
+  "letter-w": {
+    "label": { "es": "Letra W", "en": "Letter W", "pt": "Letra W", "fr": "Lettre W", "de": "Buchstabe W", "it": "Lettera W", "ja": "文字 W", "zh": "字母 W", "ko": "알파벳 W", "ar": "الحرف W" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción W", "tecla W", "inciso w"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option W", "W key", "answer W"]
+    }
+  },
+  "letter-x": {
+    "label": { "es": "Letra X", "en": "Letter X", "pt": "Letra X", "fr": "Lettre X", "de": "Buchstabe X", "it": "Lettera X", "ja": "文字 X", "zh": "字母 X", "ko": "알파벳 X", "ar": "الحرف X" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción X", "tecla X", "eje x"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option X", "X key", "x-axis"]
+    }
+  },
+  "letter-y": {
+    "label": { "es": "Letra Y", "en": "Letter Y", "pt": "Letra Y", "fr": "Lettre Y", "de": "Buchstabe Y", "it": "Lettera Y", "ja": "文字 Y", "zh": "字母 Y", "ko": "알파벳 Y", "ar": "الحرف Y" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción Y", "tecla Y", "eje y"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option Y", "Y key", "y-axis"]
+    }
+  },
+  "letter-z": {
+    "label": { "es": "Letra Z", "en": "Letter Z", "pt": "Letra Z", "fr": "Lettre Z", "de": "Buchstabe Z", "it": "Lettera Z", "ja": "文字 Z", "zh": "字母 Z", "ko": "알파벳 Z", "ar": "الحرف Z" },
+    "keywords": {
+      "es": ["inicial", "monograma", "avatar", "abecedario", "índice alfabético", "opción Z", "tecla Z", "última letra"],
+      "en": ["initial", "monogram", "avatar", "alphabet", "alphabetical index", "option Z", "Z key", "last letter"]
+    }
+  },
+  "letter-n-tilde": {
+    "label": { "es": "Letra Ñ", "en": "Letter Ñ", "pt": "Letra Ñ", "fr": "Lettre Ñ", "de": "Buchstabe Ñ", "it": "Lettera Ñ", "ja": "文字 Ñ", "zh": "字母 Ñ", "ko": "알파벳 Ñ", "ar": "الحرف Ñ" },
+    "keywords": {
+      "es": ["eñe", "teclado en español", "idioma español", "abecedario", "índice alfabético", "tecla Ñ", "configuración regional"],
+      "en": ["eñe", "enye", "n with tilde", "Spanish keyboard", "Spanish language", "alphabetical index", "Ñ key", "locale"]
+    }
+  },
+  "number-0": {
+    "label": { "es": "Número 0", "en": "Number 0", "pt": "Número 0", "fr": "Chiffre 0", "de": "Ziffer 0", "it": "Numero 0", "ja": "数字 0", "zh": "数字 0", "ko": "숫자 0", "ar": "الرقم 0" },
+    "keywords": {
+      "es": ["cero", "dígito", "sin elementos", "contador", "calificación", "teclado numérico", "marcador numerado"],
+      "en": ["zero", "digit", "none", "counter", "rating", "numeric keypad", "numbered marker"]
+    }
+  },
+  "number-1": {
+    "label": { "es": "Número 1", "en": "Number 1", "pt": "Número 1", "fr": "Chiffre 1", "de": "Ziffer 1", "it": "Numero 1", "ja": "数字 1", "zh": "数字 1", "ko": "숫자 1", "ar": "الرقم 1" },
+    "keywords": {
+      "es": ["uno", "dígito", "paso 1", "contador", "calificación", "teclado numérico", "marcador numerado", "primer lugar"],
+      "en": ["one", "digit", "step 1", "counter", "rating", "numeric keypad", "numbered marker", "first place"]
+    }
+  },
+  "number-2": {
+    "label": { "es": "Número 2", "en": "Number 2", "pt": "Número 2", "fr": "Chiffre 2", "de": "Ziffer 2", "it": "Numero 2", "ja": "数字 2", "zh": "数字 2", "ko": "숫자 2", "ar": "الرقم 2" },
+    "keywords": {
+      "es": ["dos", "dígito", "paso 2", "contador", "calificación", "teclado numérico", "marcador numerado", "segundo lugar"],
+      "en": ["two", "digit", "step 2", "counter", "rating", "numeric keypad", "numbered marker", "second place"]
+    }
+  },
+  "number-3": {
+    "label": { "es": "Número 3", "en": "Number 3", "pt": "Número 3", "fr": "Chiffre 3", "de": "Ziffer 3", "it": "Numero 3", "ja": "数字 3", "zh": "数字 3", "ko": "숫자 3", "ar": "الرقم 3" },
+    "keywords": {
+      "es": ["tres", "dígito", "paso 3", "contador", "calificación", "teclado numérico", "marcador numerado", "tercer lugar"],
+      "en": ["three", "digit", "step 3", "counter", "rating", "numeric keypad", "numbered marker", "third place"]
+    }
+  },
+  "number-4": {
+    "label": { "es": "Número 4", "en": "Number 4", "pt": "Número 4", "fr": "Chiffre 4", "de": "Ziffer 4", "it": "Numero 4", "ja": "数字 4", "zh": "数字 4", "ko": "숫자 4", "ar": "الرقم 4" },
+    "keywords": {
+      "es": ["cuatro", "dígito", "paso 4", "contador", "calificación", "teclado numérico", "marcador numerado"],
+      "en": ["four", "digit", "step 4", "counter", "rating", "numeric keypad", "numbered marker"]
+    }
+  },
+  "number-5": {
+    "label": { "es": "Número 5", "en": "Number 5", "pt": "Número 5", "fr": "Chiffre 5", "de": "Ziffer 5", "it": "Numero 5", "ja": "数字 5", "zh": "数字 5", "ko": "숫자 5", "ar": "الرقم 5" },
+    "keywords": {
+      "es": ["cinco", "dígito", "paso 5", "contador", "calificación", "teclado numérico", "marcador numerado", "cinco estrellas"],
+      "en": ["five", "digit", "step 5", "counter", "rating", "numeric keypad", "numbered marker", "five stars"]
+    }
+  },
+  "number-6": {
+    "label": { "es": "Número 6", "en": "Number 6", "pt": "Número 6", "fr": "Chiffre 6", "de": "Ziffer 6", "it": "Numero 6", "ja": "数字 6", "zh": "数字 6", "ko": "숫자 6", "ar": "الرقم 6" },
+    "keywords": {
+      "es": ["seis", "dígito", "paso 6", "contador", "calificación", "teclado numérico", "marcador numerado"],
+      "en": ["six", "digit", "step 6", "counter", "rating", "numeric keypad", "numbered marker"]
+    }
+  },
+  "number-7": {
+    "label": { "es": "Número 7", "en": "Number 7", "pt": "Número 7", "fr": "Chiffre 7", "de": "Ziffer 7", "it": "Numero 7", "ja": "数字 7", "zh": "数字 7", "ko": "숫자 7", "ar": "الرقم 7" },
+    "keywords": {
+      "es": ["siete", "dígito", "paso 7", "contador", "calificación", "teclado numérico", "marcador numerado"],
+      "en": ["seven", "digit", "step 7", "counter", "rating", "numeric keypad", "numbered marker"]
+    }
+  },
+  "number-8": {
+    "label": { "es": "Número 8", "en": "Number 8", "pt": "Número 8", "fr": "Chiffre 8", "de": "Ziffer 8", "it": "Numero 8", "ja": "数字 8", "zh": "数字 8", "ko": "숫자 8", "ar": "الرقم 8" },
+    "keywords": {
+      "es": ["ocho", "dígito", "paso 8", "contador", "calificación", "teclado numérico", "marcador numerado"],
+      "en": ["eight", "digit", "step 8", "counter", "rating", "numeric keypad", "numbered marker"]
+    }
+  },
+  "number-9": {
+    "label": { "es": "Número 9", "en": "Number 9", "pt": "Número 9", "fr": "Chiffre 9", "de": "Ziffer 9", "it": "Numero 9", "ja": "数字 9", "zh": "数字 9", "ko": "숫자 9", "ar": "الرقم 9" },
+    "keywords": {
+      "es": ["nueve", "dígito", "paso 9", "contador", "calificación", "teclado numérico", "marcador numerado"],
+      "en": ["nine", "digit", "step 9", "counter", "rating", "numeric keypad", "numbered marker"]
+    }
+  },
+  "multiply": {
+    "label": { "es": "Multiplicar", "en": "Multiply", "pt": "Multiplicar", "fr": "Multiplier", "de": "Multiplizieren", "it": "Moltiplica", "ja": "掛け算", "zh": "乘法", "ko": "곱하기", "ar": "ضرب" },
+    "keywords": {
+      "es": ["por", "producto", "veces", "calculadora", "fórmula", "dimensiones", "resolución", "cantidad"],
+      "en": ["times", "product", "by", "calculator", "formula", "dimensions", "resolution", "quantity"]
+    }
+  },
+  "not-equal": {
+    "label": { "es": "Distinto de", "en": "Not equal to", "pt": "Diferente de", "fr": "Différent de", "de": "Ungleich", "it": "Diverso da", "ja": "等しくない", "zh": "不等于", "ko": "같지 않음", "ar": "لا يساوي" },
+    "keywords": {
+      "es": ["no es", "diferente", "desigualdad", "filtro", "condición", "comparar", "excluir", "fórmula"],
+      "en": ["is not", "different", "inequality", "filter", "condition", "compare", "exclude", "formula"]
+    }
+  },
+  "less-than": {
+    "label": { "es": "Menor que", "en": "Less than", "pt": "Menor que", "fr": "Inférieur à", "de": "Kleiner als", "it": "Minore di", "ja": "より小さい", "zh": "小于", "ko": "미만", "ar": "أصغر من" },
+    "keywords": {
+      "es": ["por debajo de", "inferior", "comparación", "desigualdad", "filtro", "condición", "regla", "fórmula"],
+      "en": ["below", "fewer than", "comparison", "inequality", "filter", "condition", "rule", "formula"]
+    }
+  },
+  "greater-than": {
+    "label": { "es": "Mayor que", "en": "Greater than", "pt": "Maior que", "fr": "Supérieur à", "de": "Größer als", "it": "Maggiore di", "ja": "より大きい", "zh": "大于", "ko": "초과", "ar": "أكبر من" },
+    "keywords": {
+      "es": ["por encima de", "más de", "superior", "comparación", "desigualdad", "filtro", "condición", "regla"],
+      "en": ["above", "more than", "exceeds", "comparison", "inequality", "filter", "condition", "rule"]
+    }
+  },
+  "less-than-or-equal": {
+    "label": { "es": "Menor o igual que", "en": "Less than or equal to", "pt": "Menor ou igual a", "fr": "Inférieur ou égal à", "de": "Kleiner oder gleich", "it": "Minore o uguale a", "ja": "以下", "zh": "小于或等于", "ko": "이하", "ar": "أصغر من أو يساوي" },
+    "keywords": {
+      "es": ["como máximo", "hasta", "límite", "tope", "desigualdad", "filtro", "condición", "fórmula"],
+      "en": ["at most", "up to", "limit", "cap", "inequality", "filter", "condition", "formula"]
+    }
+  },
+  "greater-than-or-equal": {
+    "label": { "es": "Mayor o igual que", "en": "Greater than or equal to", "pt": "Maior ou igual a", "fr": "Supérieur ou égal à", "de": "Größer oder gleich", "it": "Maggiore o uguale a", "ja": "以上", "zh": "大于或等于", "ko": "이상", "ar": "أكبر من أو يساوي" },
+    "keywords": {
+      "es": ["al menos", "como mínimo", "desde", "umbral", "desigualdad", "filtro", "condición", "fórmula"],
+      "en": ["at least", "minimum", "from", "threshold", "inequality", "filter", "condition", "formula"]
+    }
+  },
+  "approximately": {
+    "label": { "es": "Aproximadamente", "en": "Approximately", "pt": "Aproximadamente", "fr": "Environ", "de": "Ungefähr", "it": "Circa", "ja": "おおよそ", "zh": "约等于", "ko": "대략", "ar": "تقريبًا" },
+    "keywords": {
+      "es": ["casi igual", "estimado", "redondeado", "cerca de", "alrededor de", "más o menos", "cálculo estimado"],
+      "en": ["almost equal", "estimate", "rounded", "about", "around", "roughly", "close to"]
+    }
+  },
+  "square-root": {
+    "label": { "es": "Raíz cuadrada", "en": "Square root", "pt": "Raiz quadrada", "fr": "Racine carrée", "de": "Quadratwurzel", "it": "Radice quadrata", "ja": "平方根", "zh": "平方根", "ko": "제곱근", "ar": "الجذر التربيعي" },
+    "keywords": {
+      "es": ["radical", "insertar radical", "sqrt", "calculadora", "editor de ecuaciones", "álgebra", "matemáticas"],
+      "en": ["radical", "insert radical", "sqrt", "calculator", "equation editor", "algebra", "math"]
+    }
+  },
+  "fraction": {
+    "label": { "es": "Fracción", "en": "Fraction", "pt": "Fração", "fr": "Fraction", "de": "Bruch", "it": "Frazione", "ja": "分数", "zh": "分数", "ko": "분수", "ar": "كسر" },
+    "keywords": {
+      "es": ["numerador", "denominador", "quebrado", "cociente", "plantilla de ecuación", "editor de ecuaciones", "matemáticas"],
+      "en": ["numerator", "denominator", "ratio", "quotient", "equation template", "equation editor", "math"]
+    }
+  },
+  "exponent": {
+    "label": { "es": "Exponente", "en": "Exponent", "pt": "Expoente", "fr": "Exposant", "de": "Exponent", "it": "Esponente", "ja": "指数", "zh": "指数", "ko": "지수", "ar": "الأُس" },
+    "keywords": {
+      "es": ["potencia", "elevar a", "al cuadrado", "al cubo", "superíndice", "base", "calculadora", "editor de ecuaciones"],
+      "en": ["power", "raise to", "squared", "cubed", "superscript", "base", "calculator", "equation editor"]
+    }
+  },
+  "pi": {
+    "label": { "es": "Pi", "en": "Pi", "pt": "Pi", "fr": "Pi", "de": "Pi", "it": "Pi greco", "ja": "円周率", "zh": "圆周率", "ko": "원주율", "ar": "باي" },
+    "keywords": {
+      "es": ["constante", "3.1416", "círculo", "circunferencia", "geometría", "letra griega", "calculadora", "matemáticas"],
+      "en": ["constant", "3.14", "circle", "circumference", "geometry", "Greek letter", "calculator", "math"]
+    }
+  },
+  "integral": {
+    "label": { "es": "Integral", "en": "Integral", "pt": "Integral", "fr": "Intégrale", "de": "Integral", "it": "Integrale", "ja": "積分", "zh": "积分", "ko": "적분", "ar": "تكامل" },
+    "keywords": {
+      "es": ["cálculo", "integrar", "área bajo la curva", "antiderivada", "suma continua", "editor de ecuaciones", "matemáticas"],
+      "en": ["calculus", "integrate", "area under the curve", "antiderivative", "accumulate", "equation editor", "math"]
+    }
+  },
+  "partial-derivative": {
+    "label": { "es": "Derivada parcial", "en": "Partial derivative", "pt": "Derivada parcial", "fr": "Dérivée partielle", "de": "Partielle Ableitung", "it": "Derivata parziale", "ja": "偏微分", "zh": "偏导数", "ko": "편미분", "ar": "مشتقة جزئية" },
+    "keywords": {
+      "es": ["cálculo", "derivar", "tasa de cambio", "gradiente", "cálculo multivariable", "editor de ecuaciones", "matemáticas"],
+      "en": ["calculus", "differentiate", "rate of change", "gradient", "multivariable", "equation editor", "math"]
+    }
+  },
+  "degree": {
+    "label": { "es": "Grados", "en": "Degrees", "pt": "Graus", "fr": "Degrés", "de": "Grad", "it": "Gradi", "ja": "度", "zh": "度", "ko": "도", "ar": "درجة" },
+    "keywords": {
+      "es": ["ángulo", "rotación", "girar", "temperatura", "orientación", "rumbo", "brújula"],
+      "en": ["angle", "rotation", "rotate", "temperature", "orientation", "heading", "compass"]
+    }
+  },
+  "degree-celsius": {
+    "label": { "es": "Grados Celsius", "en": "Degrees Celsius", "pt": "Graus Celsius", "fr": "Degrés Celsius", "de": "Grad Celsius", "it": "Gradi Celsius", "ja": "摂氏", "zh": "摄氏度", "ko": "섭씨", "ar": "درجة مئوية" },
+    "keywords": {
+      "es": ["centígrados", "°C", "temperatura", "clima", "termostato", "unidad de temperatura", "sistema métrico"],
+      "en": ["centigrade", "°C", "temperature", "weather", "thermostat", "temperature unit", "metric"]
+    }
+  },
+  "degree-fahrenheit": {
+    "label": { "es": "Grados Fahrenheit", "en": "Degrees Fahrenheit", "pt": "Graus Fahrenheit", "fr": "Degrés Fahrenheit", "de": "Grad Fahrenheit", "it": "Gradi Fahrenheit", "ja": "華氏", "zh": "华氏度", "ko": "화씨", "ar": "درجة فهرنهايت" },
+    "keywords": {
+      "es": ["°F", "temperatura", "clima", "termostato", "unidad de temperatura", "sistema imperial", "Estados Unidos"],
+      "en": ["°F", "temperature", "weather", "thermostat", "temperature unit", "imperial", "US units"]
+    }
+  },
+  "per-mille": {
+    "label": { "es": "Por mil", "en": "Per mille", "pt": "Por mil", "fr": "Pour mille", "de": "Promille", "it": "Per mille", "ja": "パーミル", "zh": "千分率", "ko": "퍼밀", "ar": "في الألف" },
+    "keywords": {
+      "es": ["milésimas", "tasa", "proporción", "alcoholemia", "impuesto", "tasa de natalidad", "porcentaje"],
+      "en": ["per thousand", "permille", "rate", "ratio", "blood alcohol", "tax rate", "percentage"]
+    }
+  },
+  "proportional": {
+    "label": { "es": "Proporcional a", "en": "Proportional to", "pt": "Proporcional a", "fr": "Proportionnel à", "de": "Proportional zu", "it": "Proporzionale a", "ja": "比例", "zh": "正比于", "ko": "비례", "ar": "يتناسب مع" },
+    "keywords": {
+      "es": ["proporción", "escala", "relación", "variación directa", "fórmula", "física", "matemáticas"],
+      "en": ["proportion", "scale", "relation", "varies with", "formula", "physics", "math"]
+    }
+  },
+  "therefore": {
+    "label": { "es": "Por lo tanto", "en": "Therefore", "pt": "Portanto", "fr": "Donc", "de": "Folglich", "it": "Quindi", "ja": "ゆえに", "zh": "所以", "ko": "그러므로", "ar": "لذلك" },
+    "keywords": {
+      "es": ["conclusión", "en consecuencia", "entonces", "deducción", "lógica", "demostración", "razonamiento"],
+      "en": ["conclusion", "hence", "thus", "deduction", "logic", "proof", "reasoning"]
+    }
+  },
+  "because": {
+    "label": { "es": "Porque", "en": "Because", "pt": "Porque", "fr": "Parce que", "de": "Weil", "it": "Perché", "ja": "なぜならば", "zh": "因为", "ko": "왜냐하면", "ar": "لأن" },
+    "keywords": {
+      "es": ["premisa", "puesto que", "dado que", "razón", "causa", "lógica", "demostración"],
+      "en": ["premise", "since", "given that", "reason", "cause", "logic", "proof"]
+    }
+  },
+  "absolute-value": {
+    "label": { "es": "Valor absoluto", "en": "Absolute value", "pt": "Valor absoluto", "fr": "Valeur absolue", "de": "Absolutwert", "it": "Valore assoluto", "ja": "絶対値", "zh": "绝对值", "ko": "절댓값", "ar": "القيمة المطلقة" },
+    "keywords": {
+      "es": ["abs", "magnitud", "módulo", "sin signo", "distancia a cero", "hoja de cálculo", "editor de fórmulas"],
+      "en": ["abs", "magnitude", "modulus", "unsigned", "distance from zero", "spreadsheet", "formula editor"]
+    }
+  },
+  "tally-marks": {
+    "label": { "es": "Conteo", "en": "Tally", "pt": "Contagem", "fr": "Comptage", "de": "Strichliste", "it": "Conteggio", "ja": "カウント", "zh": "计数", "ko": "개수 세기", "ar": "العدّ" },
+    "keywords": {
+      "es": ["palitos", "rayitas", "contar a mano", "marcador", "puntaje", "asistencia", "número de registros", "agregado"],
+      "en": ["count", "hash marks", "keep score", "scoreboard", "attendance", "record count", "aggregate"]
+    }
+  },
+  "subset": {
+    "label": { "es": "Subconjunto de", "en": "Subset of", "pt": "Subconjunto de", "fr": "Sous-ensemble de", "de": "Teilmenge von", "it": "Sottoinsieme di", "ja": "部分集合", "zh": "子集", "ko": "부분집합", "ar": "جزء من" },
+    "keywords": {
+      "es": ["está contenido en", "incluido en", "parte de", "conjuntos", "teoría de conjuntos", "filtro", "lógica de conjuntos"],
+      "en": ["is contained in", "included in", "part of", "sets", "set theory", "filter", "set logic"]
+    }
+  },
+  "superset": {
+    "label": { "es": "Superconjunto de", "en": "Superset of", "pt": "Superconjunto de", "fr": "Sur-ensemble de", "de": "Obermenge von", "it": "Sovrainsieme di", "ja": "上位集合", "zh": "超集", "ko": "상위집합", "ar": "يحتوي على" },
+    "keywords": {
+      "es": ["contiene", "incluye", "abarca", "conjuntos", "teoría de conjuntos", "filtro", "lógica de conjuntos"],
+      "en": ["contains", "includes", "encompasses", "sets", "set theory", "filter", "set logic"]
+    }
+  },
+  "subset-or-equal": {
+    "label": { "es": "Subconjunto o igual a", "en": "Subset of or equal to", "pt": "Subconjunto ou igual a", "fr": "Sous-ensemble ou égal à", "de": "Teilmenge oder gleich", "it": "Sottoinsieme o uguale a", "ja": "部分集合または等しい", "zh": "子集或等于", "ko": "부분집합 또는 같음", "ar": "جزء من أو يساوي" },
+    "keywords": {
+      "es": ["contenido en", "inclusión no estricta", "puede ser igual", "conjuntos", "teoría de conjuntos", "filtro", "lógica de conjuntos"],
+      "en": ["contained in", "non-strict inclusion", "may be equal", "sets", "set theory", "filter", "set logic"]
+    }
+  },
+  "superset-or-equal": {
+    "label": { "es": "Superconjunto o igual a", "en": "Superset of or equal to", "pt": "Superconjunto ou igual a", "fr": "Sur-ensemble ou égal à", "de": "Obermenge oder gleich", "it": "Sovrainsieme o uguale a", "ja": "上位集合または等しい", "zh": "超集或等于", "ko": "상위집합 또는 같음", "ar": "يحتوي على أو يساوي" },
+    "keywords": {
+      "es": ["contiene", "incluye todos", "puede ser igual", "conjuntos", "teoría de conjuntos", "filtro", "lógica de conjuntos"],
+      "en": ["contains", "contains all", "may be equal", "sets", "set theory", "filter", "set logic"]
+    }
+  },
+  "element-of": {
+    "label": { "es": "Pertenece a", "en": "Element of", "pt": "Pertence a", "fr": "Appartient à", "de": "Element von", "it": "Appartiene a", "ja": "属する", "zh": "属于", "ko": "속함", "ar": "ينتمي إلى" },
+    "keywords": {
+      "es": ["es alguno de", "está en", "miembro de", "elemento", "conjuntos", "filtro", "consulta"],
+      "en": ["is any of", "is in", "member of", "belongs to", "sets", "filter", "query builder"]
+    }
+  },
+  "empty-set": {
+    "label": { "es": "Conjunto vacío", "en": "Empty set", "pt": "Conjunto vazio", "fr": "Ensemble vide", "de": "Leere Menge", "it": "Insieme vuoto", "ja": "空集合", "zh": "空集", "ko": "공집합", "ar": "مجموعة خالية" },
+    "keywords": {
+      "es": ["nulo", "null", "sin valor", "en blanco", "ninguno", "sin datos", "filtro", "teoría de conjuntos"],
+      "en": ["null", "no value", "blank", "none", "nothing", "no data", "filter", "set theory"]
+    }
+  },
+  "for-all": {
+    "label": { "es": "Para todo", "en": "For all", "pt": "Para todo", "fr": "Pour tout", "de": "Für alle", "it": "Per ogni", "ja": "すべての", "zh": "对于所有", "ko": "모든 항목에 대해", "ar": "لكل" },
+    "keywords": {
+      "es": ["cuantificador universal", "todos", "cada uno", "aplica a todos", "lógica", "regla", "condición"],
+      "en": ["universal quantifier", "every", "each", "applies to all", "logic", "rule", "condition"]
+    }
+  },
+  "there-exists": {
+    "label": { "es": "Existe", "en": "There exists", "pt": "Existe", "fr": "Il existe", "de": "Es existiert", "it": "Esiste", "ja": "存在する", "zh": "存在", "ko": "존재함", "ar": "يوجد" },
+    "keywords": {
+      "es": ["cuantificador existencial", "al menos uno", "alguno", "hay", "lógica", "regla", "condición"],
+      "en": ["existential quantifier", "at least one", "some", "any", "logic", "rule", "condition"]
+    }
+  },
+  "logic-not": {
+    "label": { "es": "Negación lógica", "en": "Logical NOT", "pt": "Negação lógica", "fr": "Négation logique", "de": "Logische Negation", "it": "Negazione logica", "ja": "論理否定", "zh": "逻辑非", "ko": "논리 부정", "ar": "النفي المنطقي" },
+    "keywords": {
+      "es": ["no", "negar", "invertir condición", "excepto", "booleano", "lógica", "regla", "consulta"],
+      "en": ["negate", "invert condition", "inverse", "except", "boolean", "logic", "rule", "query"]
+    }
+  },
+  "implies": {
+    "label": { "es": "Implica", "en": "Implies", "pt": "Implica", "fr": "Implique", "de": "Impliziert", "it": "Implica", "ja": "ならば", "zh": "蕴含", "ko": "함의", "ar": "يستلزم" },
+    "keywords": {
+      "es": ["si entonces", "condicional", "consecuencia", "lógica", "regla", "automatización", "condición"],
+      "en": ["if then", "conditional", "consequence", "logic", "rule", "automation", "condition"]
+    }
+  },
+  "if-and-only-if": {
+    "label": { "es": "Si y solo si", "en": "If and only if", "pt": "Se e somente se", "fr": "Si et seulement si", "de": "Genau dann, wenn", "it": "Se e solo se", "ja": "同値", "zh": "当且仅当", "ko": "필요충분조건", "ar": "إذا وفقط إذا" },
+    "keywords": {
+      "es": ["equivalencia", "bicondicional", "sii", "doble implicación", "lógica", "condición", "demostración"],
+      "en": ["equivalence", "biconditional", "iff", "double implication", "logic", "condition", "proof"]
+    }
+  },
+  "ampersand": {
+    "label": { "es": "Ampersand", "en": "Ampersand", "pt": "E comercial", "fr": "Esperluette", "de": "Und-Zeichen", "it": "E commerciale", "ja": "アンパサンド", "zh": "与号", "ko": "앰퍼샌드", "ar": "علامة العطف" },
+    "keywords": {
+      "es": ["y comercial", "et", "unir nombres", "conjunción", "operador AND", "tecla &"],
+      "en": ["and", "and sign", "et", "join names", "conjunction", "AND operator", "& key"]
+    }
+  },
+  "section-sign": {
+    "label": { "es": "Sección", "en": "Section", "pt": "Parágrafo", "fr": "Paragraphe", "de": "Paragraf", "it": "Paragrafo", "ja": "条項", "zh": "条款", "ko": "조항", "ar": "فقرة" },
+    "keywords": {
+      "es": ["artículo", "ley", "cláusula", "referencia legal", "reglamento", "contrato", "parágrafo"],
+      "en": ["article", "law", "clause", "legal reference", "regulation", "contract", "paragraph"]
+    }
+  },
+  "bullet": {
+    "label": { "es": "Viñeta", "en": "Bullet", "pt": "Marcador", "fr": "Puce", "de": "Aufzählungszeichen", "it": "Punto elenco", "ja": "黒丸", "zh": "项目符号", "ko": "글머리 기호", "ar": "نقطة تعداد" },
+    "keywords": {
+      "es": ["punto", "lista", "elemento de lista", "separador", "punto medio", "estado", "indicador"],
+      "en": ["dot", "list", "list item", "separator", "middle dot", "status dot", "indicator"]
+    }
+  },
+  "question-mark": {
+    "label": { "es": "Signo de interrogación", "en": "Question mark", "pt": "Ponto de interrogação", "fr": "Point d’interrogation", "de": "Fragezeichen", "it": "Punto interrogativo", "ja": "疑問符", "zh": "问号", "ko": "물음표", "ar": "علامة استفهام" },
+    "keywords": {
+      "es": ["pregunta", "duda", "ayuda", "ayuda contextual", "desconocido", "interrogante", "tecla ?"],
+      "en": ["question", "help", "inline help", "unknown", "unknown value", "query", "? key"]
+    }
+  },
+  "exclamation-mark": {
+    "label": { "es": "Signo de exclamación", "en": "Exclamation mark", "pt": "Ponto de exclamação", "fr": "Point d’exclamation", "de": "Ausrufezeichen", "it": "Punto esclamativo", "ja": "感嘆符", "zh": "感叹号", "ko": "느낌표", "ar": "علامة تعجب" },
+    "keywords": {
+      "es": ["admiración", "énfasis", "importante", "prioridad", "atención", "urgente", "tecla !"],
+      "en": ["bang", "emphasis", "important", "priority", "attention", "urgent", "! key"]
+    }
+  },
+  "question-mark-inverted": {
+    "label": { "es": "Interrogación de apertura", "en": "Inverted question mark", "pt": "Ponto de interrogação invertido", "fr": "Point d’interrogation inversé", "de": "Umgekehrtes Fragezeichen", "it": "Punto interrogativo capovolto", "ja": "逆疑問符", "zh": "倒问号", "ko": "거꾸로 된 물음표", "ar": "علامة استفهام مقلوبة" },
+    "keywords": {
+      "es": ["abrir pregunta", "signo invertido", "español", "ortografía", "teclado en español", "tipografía", "puntuación"],
+      "en": ["opening question mark", "upside-down question mark", "Spanish", "spelling", "Spanish keyboard", "typography", "punctuation"]
+    }
+  },
+  "exclamation-mark-inverted": {
+    "label": { "es": "Exclamación de apertura", "en": "Inverted exclamation mark", "pt": "Ponto de exclamação invertido", "fr": "Point d’exclamation inversé", "de": "Umgekehrtes Ausrufezeichen", "it": "Punto esclamativo capovolto", "ja": "逆感嘆符", "zh": "倒感叹号", "ko": "거꾸로 된 느낌표", "ar": "علامة تعجب مقلوبة" },
+    "keywords": {
+      "es": ["abrir admiración", "signo invertido", "español", "ortografía", "teclado en español", "tipografía", "puntuación"],
+      "en": ["opening exclamation mark", "upside-down exclamation mark", "Spanish", "spelling", "Spanish keyboard", "typography", "punctuation"]
+    }
+  },
+  "quote-closing": {
+    "label": { "es": "Comillas de cierre", "en": "Closing quotation marks", "pt": "Aspas de fechamento", "fr": "Guillemets fermants", "de": "Schließende Anführungszeichen", "it": "Virgolette di chiusura", "ja": "閉じ引用符", "zh": "右引号", "ko": "닫는 따옴표", "ar": "علامة اقتباس ختامية" },
+    "keywords": {
+      "es": ["cerrar cita", "fin de cita", "comillas inglesas", "comillas tipográficas", "texto citado", "tipografía", "puntuación"],
+      "en": ["end quote", "close quote", "curly quotes", "smart quotes", "quoted text", "typography", "punctuation"]
+    }
+  },
+  "quote-straight": {
+    "label": { "es": "Comillas rectas", "en": "Straight quotes", "pt": "Aspas retas", "fr": "Guillemets droits", "de": "Gerade Anführungszeichen", "it": "Virgolette dritte", "ja": "ダブルクォート", "zh": "直引号", "ko": "곧은 따옴표", "ar": "علامات اقتباس مستقيمة" },
+    "keywords": {
+      "es": ["comillas dobles", "cadena de texto", "string", "tipo texto", "esquema", "código", "programación"],
+      "en": ["double quotes", "string", "text value", "text field type", "schema", "code", "programming"]
+    }
+  },
+  "quote-single": {
+    "label": { "es": "Comilla simple", "en": "Single quotation mark", "pt": "Aspa simples", "fr": "Guillemet simple", "de": "Einfaches Anführungszeichen", "it": "Virgoletta singola", "ja": "シングルクォート", "zh": "单引号", "ko": "작은따옴표", "ar": "علامة اقتباس مفردة" },
+    "keywords": {
+      "es": ["apóstrofo", "cita anidada", "cita dentro de cita", "contracción", "cadena en código", "tipografía", "puntuación"],
+      "en": ["apostrophe", "nested quote", "quote within a quote", "contraction", "string literal", "typography", "punctuation"]
+    }
+  },
+  "guillemets": {
+    "label": { "es": "Comillas angulares", "en": "Guillemets", "pt": "Aspas angulares", "fr": "Guillemets", "de": "Guillemets", "it": "Virgolette basse", "ja": "ギユメ", "zh": "双尖引号", "ko": "기유메", "ar": "علامتا التنصيص" },
+    "keywords": {
+      "es": ["comillas latinas", "comillas españolas", "cita", "texto citado", "francés", "tipografía", "puntuación"],
+      "en": ["angle quotes", "French quotes", "Spanish quotes", "quotation", "chevrons", "typography", "punctuation"]
+    }
+  },
+  "comma": {
+    "label": { "es": "Coma", "en": "Comma", "pt": "Vírgula", "fr": "Virgule", "de": "Komma", "it": "Virgola", "ja": "カンマ", "zh": "逗号", "ko": "쉼표", "ar": "فاصلة" },
+    "keywords": {
+      "es": ["separador decimal", "separador de miles", "formato de número", "separador de lista", "CSV", "delimitador", "puntuación"],
+      "en": ["decimal separator", "thousands separator", "number format", "list separator", "CSV", "delimiter", "punctuation"]
+    }
+  },
+  "colon": {
+    "label": { "es": "Dos puntos", "en": "Colon", "pt": "Dois-pontos", "fr": "Deux-points", "de": "Doppelpunkt", "it": "Due punti", "ja": "コロン", "zh": "冒号", "ko": "콜론", "ar": "نقطتان" },
+    "keywords": {
+      "es": ["separador de hora", "proporción", "razón", "relación de aspecto", "clave valor", "etiqueta", "puntuación"],
+      "en": ["time separator", "ratio", "aspect ratio", "key value", "label", "separator", "punctuation"]
+    }
+  },
+  "semicolon": {
+    "label": { "es": "Punto y coma", "en": "Semicolon", "pt": "Ponto e vírgula", "fr": "Point-virgule", "de": "Semikolon", "it": "Punto e virgola", "ja": "セミコロン", "zh": "分号", "ko": "세미콜론", "ar": "فاصلة منقوطة" },
+    "keywords": {
+      "es": ["fin de instrucción", "delimitador", "CSV", "separador", "código", "programación", "puntuación"],
+      "en": ["statement end", "delimiter", "CSV", "separator", "code", "programming", "punctuation"]
+    }
+  },
+  "slash": {
+    "label": { "es": "Barra diagonal", "en": "Slash", "pt": "Barra", "fr": "Barre oblique", "de": "Schrägstrich", "it": "Barra obliqua", "ja": "スラッシュ", "zh": "斜杠", "ko": "슬래시", "ar": "شرطة مائلة" },
+    "keywords": {
+      "es": ["diagonal", "ruta de archivo", "URL", "comando /", "alternativa", "fracción", "división", "separador"],
+      "en": ["forward slash", "file path", "URL", "slash command", "either/or", "fraction", "division", "separator"]
+    }
+  },
+  "backslash": {
+    "label": { "es": "Barra invertida", "en": "Backslash", "pt": "Barra invertida", "fr": "Barre oblique inversée", "de": "Backslash", "it": "Barra rovesciata", "ja": "バックスラッシュ", "zh": "反斜杠", "ko": "백슬래시", "ar": "شرطة مائلة عكسية" },
+    "keywords": {
+      "es": ["diagonal invertida", "escape", "carácter de escape", "ruta de Windows", "diferencia de conjuntos", "código", "programación"],
+      "en": ["reverse slash", "escape", "escape character", "Windows path", "set difference", "code", "programming"]
+    }
+  },
+  "pipe": {
+    "label": { "es": "Barra vertical", "en": "Vertical bar", "pt": "Barra vertical", "fr": "Barre verticale", "de": "Senkrechter Strich", "it": "Barra verticale", "ja": "縦棒", "zh": "竖线", "ko": "세로 막대", "ar": "خط عمودي" },
+    "keywords": {
+      "es": ["pipe", "tubería", "terminal", "o lógico", "unión de tipos", "expresión regular", "separador", "código"],
+      "en": ["pipe", "pipeline", "shell", "logical or", "union type", "regex", "separator", "code"]
+    }
+  },
+  "underscore": {
+    "label": { "es": "Guion bajo", "en": "Underscore", "pt": "Sublinhado", "fr": "Tiret bas", "de": "Unterstrich", "it": "Trattino basso", "ja": "アンダースコア", "zh": "下划线", "ko": "밑줄", "ar": "شرطة سفلية" },
+    "keywords": {
+      "es": ["snake_case", "identificador", "nombre de variable", "espacio para rellenar", "subrayado", "programación"],
+      "en": ["snake_case", "identifier", "variable name", "fill in the blank", "low line", "programming"]
+    }
+  },
+  "tilde": {
+    "label": { "es": "Virgulilla", "en": "Tilde", "pt": "Til", "fr": "Tilde", "de": "Tilde", "it": "Tilde", "ja": "チルダ", "zh": "波浪号", "ko": "물결표", "ar": "تيلدا" },
+    "keywords": {
+      "es": ["tilde", "aproximadamente", "alrededor de", "carpeta de inicio", "ruta", "terminal", "símbolo de onda"],
+      "en": ["approximately", "about", "home folder", "home directory", "path", "terminal", "squiggle"]
+    }
+  },
+  "parentheses": {
+    "label": { "es": "Paréntesis", "en": "Parentheses", "pt": "Parênteses", "fr": "Parenthèses", "de": "Runde Klammern", "it": "Parentesi tonde", "ja": "丸括弧", "zh": "圆括号", "ko": "소괄호", "ar": "أقواس هلالية" },
+    "keywords": {
+      "es": ["agrupar", "fórmula", "orden de operaciones", "llamada a función", "aclaración", "inciso", "código"],
+      "en": ["group", "formula", "order of operations", "function call", "aside", "round brackets", "code"]
+    }
+  },
+  "braces-double": {
+    "label": { "es": "Llaves dobles", "en": "Double braces", "pt": "Chaves duplas", "fr": "Doubles accolades", "de": "Doppelte geschweifte Klammern", "it": "Doppie parentesi graffe", "ja": "二重波括弧", "zh": "双花括号", "ko": "이중 중괄호", "ar": "أقواس معقوفة مزدوجة" },
+    "keywords": {
+      "es": ["variable de plantilla", "etiqueta de combinación", "campo dinámico", "personalización", "correo personalizado", "plantilla", "marcador de posición"],
+      "en": ["template variable", "merge tag", "dynamic field", "personalization", "mustache", "templating", "placeholder"]
+    }
+  },
+  "brackets-double": {
+    "label": { "es": "Corchetes dobles", "en": "Double brackets", "pt": "Colchetes duplos", "fr": "Doubles crochets", "de": "Doppelte eckige Klammern", "it": "Doppie parentesi quadre", "ja": "二重角括弧", "zh": "双方括号", "ko": "이중 대괄호", "ar": "أقواس مربعة مزدوجة" },
+    "keywords": {
+      "es": ["enlace wiki", "vincular notas", "enlace interno", "notas conectadas", "arreglo anidado", "referencia", "wiki"],
+      "en": ["wiki link", "link notes", "internal link", "backlink", "nested array", "reference", "wiki"]
+    }
+  },
+  "brackets-floor": {
+    "label": { "es": "Redondear hacia abajo", "en": "Round down", "pt": "Arredondar para baixo", "fr": "Arrondir à l’inférieur", "de": "Abrunden", "it": "Arrotonda per difetto", "ja": "切り捨て", "zh": "向下取整", "ko": "내림", "ar": "التقريب للأسفل" },
+    "keywords": {
+      "es": ["piso", "función piso", "parte entera", "truncar", "entero inferior", "hoja de cálculo", "fórmula"],
+      "en": ["floor", "floor function", "integer part", "truncate", "lower integer", "spreadsheet", "formula"]
+    }
+  },
+  "brackets-ceiling": {
+    "label": { "es": "Redondear hacia arriba", "en": "Round up", "pt": "Arredondar para cima", "fr": "Arrondir au supérieur", "de": "Aufrunden", "it": "Arrotonda per eccesso", "ja": "切り上げ", "zh": "向上取整", "ko": "올림", "ar": "التقريب للأعلى" },
+    "keywords": {
+      "es": ["techo", "función techo", "entero superior", "hoja de cálculo", "fórmula", "matemáticas"],
+      "en": ["ceiling", "ceil", "ceiling function", "upper integer", "spreadsheet", "formula", "math"]
+    }
+  },
+  "currency-cent": {
+    "label": { "es": "Centavo", "en": "Cent", "pt": "Centavo", "fr": "Centime", "de": "Cent", "it": "Centesimo", "ja": "セント", "zh": "美分", "ko": "센트", "ar": "سنت" },
+    "keywords": {
+      "es": ["morralla", "monedas", "moneda fraccionaria", "cambio", "precio", "precio bajo", "micropago"],
+      "en": ["penny", "coins", "fraction of a dollar", "change", "price", "low price", "micropayment"]
+    }
+  },
+  "currency-won": {
+    "label": { "es": "Won", "en": "Won", "pt": "Won", "fr": "Won", "de": "Won", "it": "Won", "ja": "ウォン", "zh": "韩元", "ko": "원", "ar": "وون" },
+    "keywords": {
+      "es": ["KRW", "moneda", "divisa", "Corea del Sur", "precio", "won surcoreano", "Seúl"],
+      "en": ["KRW", "currency", "money", "South Korea", "price", "South Korean won", "Seoul"]
+    }
+  },
+  "currency-ruble": {
+    "label": { "es": "Rublo", "en": "Ruble", "pt": "Rublo", "fr": "Rouble", "de": "Rubel", "it": "Rublo", "ja": "ルーブル", "zh": "卢布", "ko": "루블", "ar": "روبل" },
+    "keywords": {
+      "es": ["RUB", "moneda", "divisa", "Rusia", "precio", "rublo ruso", "Moscú"],
+      "en": ["RUB", "currency", "money", "Russia", "price", "Russian ruble", "Moscow"]
+    }
+  },
+  "currency-lira": {
+    "label": { "es": "Lira turca", "en": "Turkish lira", "pt": "Lira turca", "fr": "Livre turque", "de": "Türkische Lira", "it": "Lira turca", "ja": "トルコリラ", "zh": "土耳其里拉", "ko": "튀르키예 리라", "ar": "ليرة تركية" },
+    "keywords": {
+      "es": ["TRY", "moneda", "divisa", "Turquía", "precio", "Estambul", "pago en liras"],
+      "en": ["TRY", "currency", "money", "Türkiye", "price", "Turkey", "Istanbul"]
+    }
+  },
+  "currency-shekel": {
+    "label": { "es": "Shékel", "en": "Shekel", "pt": "Shekel", "fr": "Shekel", "de": "Schekel", "it": "Shekel", "ja": "シェケル", "zh": "谢克尔", "ko": "셰켈", "ar": "شيكل" },
+    "keywords": {
+      "es": ["ILS", "moneda", "divisa", "Israel", "precio", "nuevo shékel", "séquel"],
+      "en": ["ILS", "currency", "money", "Israel", "price", "new shekel", "NIS"]
+    }
+  },
+  "currency-naira": {
+    "label": { "es": "Naira", "en": "Naira", "pt": "Naira", "fr": "Naira", "de": "Naira", "it": "Naira", "ja": "ナイラ", "zh": "奈拉", "ko": "나이라", "ar": "نايرا" },
+    "keywords": {
+      "es": ["NGN", "moneda", "divisa", "Nigeria", "precio", "Lagos", "África"],
+      "en": ["NGN", "currency", "money", "Nigeria", "price", "Lagos", "Africa"]
+    }
+  },
+  "currency-philippine-peso": {
+    "label": { "es": "Peso filipino", "en": "Philippine peso", "pt": "Peso filipino", "fr": "Peso philippin", "de": "Philippinischer Peso", "it": "Peso filippino", "ja": "フィリピン・ペソ", "zh": "菲律宾比索", "ko": "필리핀 페소", "ar": "بيزو فلبيني" },
+    "keywords": {
+      "es": ["PHP", "moneda", "divisa", "Filipinas", "precio", "Manila", "pago en pesos filipinos"],
+      "en": ["PHP", "currency", "money", "Philippines", "price", "piso", "Manila"]
+    }
+  },
+  "currency-baht": {
+    "label": { "es": "Baht", "en": "Baht", "pt": "Baht", "fr": "Baht", "de": "Baht", "it": "Baht", "ja": "バーツ", "zh": "泰铢", "ko": "바트", "ar": "بات" },
+    "keywords": {
+      "es": ["THB", "moneda", "divisa", "Tailandia", "precio", "baht tailandés", "Bangkok"],
+      "en": ["THB", "currency", "money", "Thailand", "price", "Thai baht", "Bangkok"]
+    }
+  },
+  "currency-dong": {
+    "label": { "es": "Dong", "en": "Dong", "pt": "Dong", "fr": "Dong", "de": "Dong", "it": "Dong", "ja": "ドン", "zh": "越南盾", "ko": "동", "ar": "دونغ" },
+    "keywords": {
+      "es": ["VND", "moneda", "divisa", "Vietnam", "precio", "dong vietnamita", "Hanói"],
+      "en": ["VND", "currency", "money", "Vietnam", "price", "Vietnamese dong", "Hanoi"]
+    }
+  },
+  "currency-hryvnia": {
+    "label": { "es": "Grivna", "en": "Hryvnia", "pt": "Grívnia", "fr": "Hryvnia", "de": "Hrywnja", "it": "Grivnia", "ja": "フリヴニャ", "zh": "格里夫纳", "ko": "흐리우냐", "ar": "هريفنيا" },
+    "keywords": {
+      "es": ["UAH", "moneda", "divisa", "Ucrania", "precio", "grivna ucraniana", "Kiev"],
+      "en": ["UAH", "currency", "money", "Ukraine", "price", "Ukrainian hryvnia", "Kyiv"]
+    }
+  },
+  "currency-tenge": {
+    "label": { "es": "Tenge", "en": "Tenge", "pt": "Tenge", "fr": "Tenge", "de": "Tenge", "it": "Tenge", "ja": "テンゲ", "zh": "坚戈", "ko": "텡게", "ar": "تينغ" },
+    "keywords": {
+      "es": ["KZT", "moneda", "divisa", "Kazajistán", "precio", "tenge kazajo", "Asia Central"],
+      "en": ["KZT", "currency", "money", "Kazakhstan", "price", "Kazakhstani tenge", "Central Asia"]
+    }
+  },
+  "currency-guarani": {
+    "label": { "es": "Guaraní", "en": "Guaraní", "pt": "Guarani", "fr": "Guaraní", "de": "Guaraní", "it": "Guaraní", "ja": "グアラニー", "zh": "瓜拉尼", "ko": "과라니", "ar": "غواراني" },
+    "keywords": {
+      "es": ["PYG", "moneda", "divisa", "Paraguay", "precio", "guaraní paraguayo", "Asunción"],
+      "en": ["PYG", "currency", "money", "Paraguay", "price", "Paraguayan guaraní", "Asunción"]
+    }
+  },
+  "currency-colon": {
+    "label": { "es": "Colón costarricense", "en": "Costa Rican colón", "pt": "Colón costarriquenho", "fr": "Colón costaricien", "de": "Costa-Rica-Colón", "it": "Colón costaricano", "ja": "コスタリカ・コロン", "zh": "哥斯达黎加科朗", "ko": "코스타리카 콜론", "ar": "كولون كوستاريكي" },
+    "keywords": {
+      "es": ["CRC", "moneda", "divisa", "Costa Rica", "precio", "Centroamérica", "pago en colones"],
+      "en": ["CRC", "currency", "money", "Costa Rica", "price", "Central America", "pay in colones"]
+    }
+  },
+  "currency-kip": {
+    "label": { "es": "Kip", "en": "Kip", "pt": "Kip", "fr": "Kip", "de": "Kip", "it": "Kip", "ja": "キープ", "zh": "基普", "ko": "킵", "ar": "كيب" },
+    "keywords": {
+      "es": ["LAK", "moneda", "divisa", "Laos", "precio", "kip laosiano", "Vientián"],
+      "en": ["LAK", "currency", "money", "Laos", "price", "Lao kip", "Vientiane"]
+    }
+  },
+  "currency-tugrik": {
+    "label": { "es": "Tugrik", "en": "Tugrik", "pt": "Tugrik", "fr": "Tugrik", "de": "Tögrög", "it": "Tugrik", "ja": "トゥグルグ", "zh": "图格里克", "ko": "투그릭", "ar": "توغروغ" },
+    "keywords": {
+      "es": ["MNT", "moneda", "divisa", "Mongolia", "precio", "tugrik mongol", "tögrög"],
+      "en": ["MNT", "currency", "money", "Mongolia", "price", "Mongolian tugrik", "tögrög"]
+    }
+  },
+  "currency-manat": {
+    "label": { "es": "Manat", "en": "Manat", "pt": "Manat", "fr": "Manat", "de": "Manat", "it": "Manat", "ja": "マナト", "zh": "马纳特", "ko": "마나트", "ar": "مانات" },
+    "keywords": {
+      "es": ["AZN", "moneda", "divisa", "Azerbaiyán", "precio", "manat azerbaiyano", "Bakú"],
+      "en": ["AZN", "currency", "money", "Azerbaijan", "price", "Azerbaijani manat", "Baku"]
+    }
+  },
+  "currency-franc": {
+    "label": { "es": "Franco", "en": "Franc", "pt": "Franco", "fr": "Franc", "de": "Franken", "it": "Franco", "ja": "フラン", "zh": "法郎", "ko": "프랑", "ar": "فرنك" },
+    "keywords": {
+      "es": ["CHF", "moneda", "divisa", "Suiza", "precio", "franco suizo", "franco CFA", "África Occidental"],
+      "en": ["CHF", "currency", "money", "Switzerland", "price", "Swiss franc", "CFA franc", "West Africa"]
+    }
+  },
+  "currency-dirham": {
+    "label": { "es": "Dírham emiratí", "en": "UAE dirham", "pt": "Dirham dos Emirados", "fr": "Dirham émirati", "de": "VAE-Dirham", "it": "Dirham emiratino", "ja": "UAEディルハム", "zh": "阿联酋迪拉姆", "ko": "UAE 디르함", "ar": "درهم إماراتي" },
+    "keywords": {
+      "es": ["AED", "moneda", "divisa", "Emiratos Árabes Unidos", "precio", "Dubái", "nuevo símbolo"],
+      "en": ["AED", "currency", "money", "United Arab Emirates", "price", "Dubai", "new symbol"]
+    }
+  },
+  "currency-generic": {
+    "label": { "es": "Moneda", "en": "Currency", "pt": "Moeda", "fr": "Devise", "de": "Währung", "it": "Valuta", "ja": "通貨", "zh": "货币", "ko": "통화", "ar": "عملة" },
+    "keywords": {
+      "es": ["divisa", "cualquier moneda", "signo monetario", "dinero", "tipo de cambio", "configuración regional", "precio"],
+      "en": ["any currency", "money", "currency sign", "unspecified currency", "exchange rate", "locale settings", "price"]
+    }
+  }
+}

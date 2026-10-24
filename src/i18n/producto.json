@@ -1,0 +1,534 @@
+{
+  "wireframe": {
+    "label": { "es": "Wireframe", "en": "Wireframe", "pt": "Wireframe", "fr": "Wireframe", "de": "Wireframe", "it": "Wireframe", "ja": "ワイヤーフレーム", "zh": "线框图", "ko": "와이어프레임", "ar": "مخطط هيكلي" },
+    "keywords": {
+      "es": ["boceto de pantalla", "baja fidelidad", "esqueleto", "estructura de página", "distribución", "lo-fi", "diseño UX"],
+      "en": ["lo-fi", "low fidelity", "page skeleton", "layout sketch", "page structure", "blueprint", "UX design"]
+    }
+  },
+  "wireframe-mobile": {
+    "label": { "es": "Wireframe móvil", "en": "Mobile wireframe", "pt": "Wireframe mobile", "fr": "Wireframe mobile", "de": "Mobiles Wireframe", "it": "Wireframe mobile", "ja": "モバイルのワイヤーフレーム", "zh": "移动端线框图", "ko": "모바일 와이어프레임", "ar": "مخطط هيكلي للجوال" },
+    "keywords": {
+      "es": ["app móvil", "pantalla de celular", "baja fidelidad", "boceto de app", "esqueleto", "lo-fi", "diseño de app"],
+      "en": ["mobile app", "phone screen", "low fidelity", "app sketch", "app skeleton", "lo-fi", "app design"]
+    }
+  },
+  "image-placeholder": {
+    "label": { "es": "Espacio para imagen", "en": "Image placeholder", "pt": "Espaço para imagem", "fr": "Emplacement d’image", "de": "Bildplatzhalter", "it": "Segnaposto immagine", "ja": "画像のプレースホルダー", "zh": "图片占位符", "ko": "이미지 자리 표시자", "ar": "عنصر نائب للصورة" },
+    "keywords": {
+      "es": ["placeholder", "sin imagen", "imagen pendiente", "foto por definir", "campo de medios", "hueco vacío", "wireframe"],
+      "en": ["empty image", "no image", "image pending", "missing photo", "media slot", "crossed box", "wireframe"]
+    }
+  },
+  "mockup": {
+    "label": { "es": "Mockup", "en": "Mockup", "pt": "Mockup", "fr": "Maquette", "de": "Mockup", "it": "Mockup", "ja": "モックアップ", "zh": "设计稿", "ko": "목업", "ar": "نموذج تصميم" },
+    "keywords": {
+      "es": ["alta fidelidad", "diseño final", "maqueta", "diseño visual", "presentación", "revisión de diseño", "pantalla terminada"],
+      "en": ["high fidelity", "hi-fi", "final design", "visual design", "presentation", "design review", "comp"]
+    }
+  },
+  "mockup-mobile": {
+    "label": { "es": "Mockup móvil", "en": "Mobile mockup", "pt": "Mockup mobile", "fr": "Maquette mobile", "de": "Mobiles Mockup", "it": "Mockup mobile", "ja": "モバイルのモックアップ", "zh": "移动端设计稿", "ko": "모바일 목업", "ar": "نموذج تصميم للجوال" },
+    "keywords": {
+      "es": ["app en el celular", "alta fidelidad", "capturas para la tienda", "ficha de la app", "diseño de app", "marco de dispositivo", "presentación"],
+      "en": ["app on phone", "high fidelity", "store screenshots", "app listing", "app design", "device frame", "presentation"]
+    }
+  },
+  "prototype": {
+    "label": { "es": "Prototipo", "en": "Prototype", "pt": "Protótipo", "fr": "Prototype", "de": "Prototyp", "it": "Prototipo", "ja": "プロトタイプ", "zh": "原型", "ko": "프로토타입", "ar": "نموذج أولي" },
+    "keywords": {
+      "es": ["interactivo", "pantallas enlazadas", "clicable", "simulación", "probar flujo", "modo presentación", "demo"],
+      "en": ["interactive", "linked screens", "clickable", "click-through", "simulation", "present mode", "demo"]
+    }
+  },
+  "moodboard": {
+    "label": { "es": "Tablero de inspiración", "en": "Moodboard", "pt": "Painel de referências", "fr": "Planche d’inspiration", "de": "Moodboard", "it": "Moodboard", "ja": "ムードボード", "zh": "情绪板", "ko": "무드보드", "ar": "لوحة إلهام" },
+    "keywords": {
+      "es": ["moodboard", "referencias visuales", "collage", "dirección de arte", "estética", "concepto visual", "estilo"],
+      "en": ["inspiration board", "visual references", "collage", "art direction", "aesthetic", "look and feel", "visual concept"]
+    }
+  },
+  "style-guide": {
+    "label": { "es": "Guía de estilo", "en": "Style guide", "pt": "Guia de estilo", "fr": "Guide de style", "de": "Styleguide", "it": "Guida di stile", "ja": "スタイルガイド", "zh": "样式指南", "ko": "스타일 가이드", "ar": "دليل الأسلوب" },
+    "keywords": {
+      "es": ["manual de marca", "identidad visual", "paleta de colores", "tipografía", "lineamientos", "brandbook", "reglas de uso"],
+      "en": ["brand guidelines", "visual identity", "color palette", "typography", "usage rules", "brand book", "standards"]
+    }
+  },
+  "design-system": {
+    "label": { "es": "Sistema de diseño", "en": "Design system", "pt": "Sistema de design", "fr": "Système de design", "de": "Designsystem", "it": "Sistema di design", "ja": "デザインシステム", "zh": "设计系统", "ko": "디자인 시스템", "ar": "نظام التصميم" },
+    "keywords": {
+      "es": ["biblioteca de componentes", "UI kit", "componentes", "librería", "fundamentos", "patrones", "consistencia"],
+      "en": ["component library", "UI kit", "components", "library", "foundations", "patterns", "consistency"]
+    }
+  },
+  "design-system-sync": {
+    "label": { "es": "Actualizaciones de la biblioteca", "en": "Library updates", "pt": "Atualizações da biblioteca", "fr": "Mises à jour de la bibliothèque", "de": "Bibliotheksupdates", "it": "Aggiornamenti della libreria", "ja": "ライブラリの更新", "zh": "库更新", "ko": "라이브러리 업데이트", "ar": "تحديثات المكتبة" },
+    "keywords": {
+      "es": ["sincronizar", "cambios pendientes", "publicar cambios", "revisar cambios", "componentes actualizados", "sistema de diseño", "aceptar cambios"],
+      "en": ["sync", "pending changes", "publish changes", "review changes", "updated components", "design system", "accept changes"]
+    }
+  },
+  "design-token": {
+    "label": { "es": "Token de diseño", "en": "Design token", "pt": "Token de design", "fr": "Jeton de design", "de": "Design-Token", "it": "Token di design", "ja": "デザイントークン", "zh": "设计令牌", "ko": "디자인 토큰", "ar": "رمز التصميم" },
+    "keywords": {
+      "es": ["variable", "valor de diseño", "color", "espaciado", "radio de borde", "tema", "estilos compartidos"],
+      "en": ["variable", "design value", "color", "spacing", "border radius", "theme", "shared styles"]
+    }
+  },
+  "annotation": {
+    "label": { "es": "Anotación", "en": "Annotation", "pt": "Anotação", "fr": "Annotation", "de": "Anmerkung", "it": "Annotazione", "ja": "注釈", "zh": "标注", "ko": "주석", "ar": "تعليق توضيحي" },
+    "keywords": {
+      "es": ["nota", "especificaciones", "medidas", "indicación", "llamada", "nota de diseño", "specs"],
+      "en": ["note", "spec", "measurements", "callout", "redline", "design note", "dev notes"]
+    }
+  },
+  "handoff": {
+    "label": { "es": "Entrega a desarrollo", "en": "Developer handoff", "pt": "Entrega para desenvolvimento", "fr": "Transmission aux développeurs", "de": "Übergabe an die Entwicklung", "it": "Consegna agli sviluppatori", "ja": "開発への引き渡し", "zh": "交付开发", "ko": "개발 핸드오프", "ar": "التسليم إلى المطورين" },
+    "keywords": {
+      "es": ["handoff", "modo desarrollador", "diseño a código", "especificaciones", "inspeccionar", "programadores", "exportar assets"],
+      "en": ["dev mode", "design to code", "specs", "inspect", "engineering", "export assets", "implementation"]
+    }
+  },
+  "handoff-check": {
+    "label": { "es": "Listo para desarrollo", "en": "Ready for development", "pt": "Pronto para desenvolvimento", "fr": "Prêt pour le développement", "de": "Bereit für die Entwicklung", "it": "Pronto per lo sviluppo", "ja": "開発準備完了", "zh": "可供开发", "ko": "개발 준비 완료", "ar": "جاهز للتطوير" },
+    "keywords": {
+      "es": ["dev ready", "aprobado", "diseño terminado", "entregado", "implementado", "estado del diseño", "construido"],
+      "en": ["dev ready", "approved", "design done", "handed off", "implemented", "design status", "built"]
+    }
+  },
+  "live-cursors": {
+    "label": { "es": "Colaboración en tiempo real", "en": "Real-time collaboration", "pt": "Colaboração em tempo real", "fr": "Collaboration en temps réel", "de": "Zusammenarbeit in Echtzeit", "it": "Collaborazione in tempo reale", "ja": "リアルタイム共同編集", "zh": "实时协作", "ko": "실시간 협업", "ar": "تعاون مباشر" },
+    "keywords": {
+      "es": ["multijugador", "cursores", "presencia", "coedición", "quién está viendo", "archivo compartido", "equipo conectado"],
+      "en": ["multiplayer", "live cursors", "presence", "co-editing", "who's here", "shared file", "team online"]
+    }
+  },
+  "easing": {
+    "label": { "es": "Curva de animación", "en": "Easing curve", "pt": "Curva de animação", "fr": "Courbe d’accélération", "de": "Easing-Kurve", "it": "Curva di animazione", "ja": "イージング", "zh": "缓动曲线", "ko": "이징 곡선", "ar": "منحنى التسارع" },
+    "keywords": {
+      "es": ["easing", "ease in out", "bézier", "timing", "transición", "movimiento", "aceleración"],
+      "en": ["timing curve", "ease in out", "cubic bezier", "timing", "transition", "motion", "acceleration"]
+    }
+  },
+  "easing-spring": {
+    "label": { "es": "Animación de resorte", "en": "Spring animation", "pt": "Animação de mola", "fr": "Animation à ressort", "de": "Federanimation", "it": "Animazione a molla", "ja": "スプリングアニメーション", "zh": "弹簧动画", "ko": "스프링 애니메이션", "ar": "حركة زنبركية" },
+    "keywords": {
+      "es": ["rebote", "elástico", "física", "rigidez", "amortiguación", "spring", "movimiento natural"],
+      "en": ["bounce", "elastic", "physics", "stiffness", "damping", "overshoot", "natural motion"]
+    }
+  },
+  "pencil-ruler": {
+    "label": { "es": "Diseño", "en": "Design", "pt": "Design", "fr": "Design", "de": "Design", "it": "Design", "ja": "デザイン", "zh": "设计", "ko": "디자인", "ar": "التصميم" },
+    "keywords": {
+      "es": ["lápiz y regla", "servicios creativos", "equipo de diseño", "dibujar", "bocetar", "diseño gráfico", "estudio creativo"],
+      "en": ["pencil and ruler", "creative services", "design team", "draw", "sketch", "graphic design", "creative studio"]
+    }
+  },
+  "breakpoints": {
+    "label": { "es": "Puntos de quiebre", "en": "Breakpoints", "pt": "Pontos de quebra", "fr": "Points de rupture", "de": "Breakpoints", "it": "Breakpoint", "ja": "ブレークポイント", "zh": "响应式断点", "ko": "브레이크포인트", "ar": "نقاط التحول" },
+    "keywords": {
+      "es": ["breakpoints", "responsivo", "ancho de pantalla", "escritorio", "tableta", "móvil", "media queries"],
+      "en": ["responsive", "screen width", "viewport", "desktop", "tablet", "mobile", "media queries"]
+    }
+  },
+  "thumb-zone": {
+    "label": { "es": "Zona del pulgar", "en": "Thumb zone", "pt": "Zona do polegar", "fr": "Zone du pouce", "de": "Daumenzone", "it": "Zona del pollice", "ja": "親指の届く範囲", "zh": "拇指操作区", "ko": "엄지 영역", "ar": "منطقة الإبهام" },
+    "keywords": {
+      "es": ["alcance", "ergonomía", "uso con una mano", "celular", "zona cómoda", "área táctil", "accesibilidad móvil"],
+      "en": ["reachability", "ergonomics", "one-handed use", "phone", "comfort zone", "touch target", "mobile accessibility"]
+    }
+  },
+  "double-diamond": {
+    "label": { "es": "Doble diamante", "en": "Double diamond", "pt": "Duplo diamante", "fr": "Double diamant", "de": "Double Diamond", "it": "Doppio diamante", "ja": "ダブルダイヤモンド", "zh": "双钻模型", "ko": "더블 다이아몬드", "ar": "الماسة المزدوجة" },
+    "keywords": {
+      "es": ["proceso de diseño", "metodología", "descubrir", "definir", "desarrollar", "entregar", "divergir y converger"],
+      "en": ["design process", "methodology", "discover", "define", "develop", "deliver", "diverge and converge"]
+    }
+  },
+  "user-flow": {
+    "label": { "es": "Flujo de usuario", "en": "User flow", "pt": "Fluxo do usuário", "fr": "Flux utilisateur", "de": "Nutzerfluss", "it": "Flusso utente", "ja": "ユーザーフロー", "zh": "用户流程", "ko": "사용자 흐름", "ar": "مسار المستخدم" },
+    "keywords": {
+      "es": ["recorrido por pantallas", "diagrama de flujo", "pasos", "navegación", "tarea", "camino feliz", "wireflow"],
+      "en": ["screen flow", "flow diagram", "steps", "navigation", "task flow", "happy path", "wireflow"]
+    }
+  },
+  "drop-off": {
+    "label": { "es": "Punto de abandono", "en": "Drop-off point", "pt": "Ponto de abandono", "fr": "Point d’abandon", "de": "Abbruchpunkt", "it": "Punto di abbandono", "ja": "離脱ポイント", "zh": "流失点", "ko": "이탈 지점", "ar": "نقطة التخلي" },
+    "keywords": {
+      "es": ["deserción", "embudo", "fuga", "dónde se van", "tasa de salida", "conversión", "usuarios perdidos"],
+      "en": ["abandonment", "churn point", "funnel", "leak", "exit rate", "conversion", "lost users"]
+    }
+  },
+  "journey-map": {
+    "label": { "es": "Mapa de experiencia del cliente", "en": "Customer journey map", "pt": "Mapa da jornada do cliente", "fr": "Carte du parcours client", "de": "Customer Journey Map", "it": "Mappa del percorso cliente", "ja": "カスタマージャーニーマップ", "zh": "用户旅程图", "ko": "고객 여정 지도", "ar": "خريطة رحلة العميل" },
+    "keywords": {
+      "es": ["customer journey", "recorrido", "etapas", "puntos de contacto", "altibajos", "emociones", "viaje del cliente"],
+      "en": ["journey", "stages", "touchpoints", "highs and lows", "emotions", "customer experience", "CX"]
+    }
+  },
+  "pain-point": {
+    "label": { "es": "Punto de dolor", "en": "Pain point", "pt": "Ponto de dor", "fr": "Point de friction", "de": "Pain Point", "it": "Punto critico", "ja": "ペインポイント", "zh": "痛点", "ko": "페인 포인트", "ar": "نقطة الألم" },
+    "keywords": {
+      "es": ["fricción", "frustración", "problema", "queja", "obstáculo", "pain point", "hallazgo de investigación"],
+      "en": ["friction", "frustration", "problem", "complaint", "obstacle", "blocker", "research finding"]
+    }
+  },
+  "service-blueprint": {
+    "label": { "es": "Plano de servicio", "en": "Service blueprint", "pt": "Blueprint de serviço", "fr": "Plan de service", "de": "Service Blueprint", "it": "Blueprint del servizio", "ja": "サービスブループリント", "zh": "服务蓝图", "ko": "서비스 블루프린트", "ar": "مخطط الخدمة" },
+    "keywords": {
+      "es": ["diseño de servicios", "service blueprint", "frontstage", "backstage", "procesos internos", "operación", "puntos de contacto"],
+      "en": ["service design", "frontstage", "backstage", "internal processes", "operations", "touchpoints", "swimlanes"]
+    }
+  },
+  "use-case": {
+    "label": { "es": "Caso de uso", "en": "Use case", "pt": "Caso de uso", "fr": "Cas d’utilisation", "de": "Anwendungsfall", "it": "Caso d’uso", "ja": "ユースケース", "zh": "用例", "ko": "유스케이스", "ar": "حالة استخدام" },
+    "keywords": {
+      "es": ["actor", "requisitos", "diagrama UML", "escenario", "funcionalidad", "análisis del sistema", "comportamiento"],
+      "en": ["actor", "requirements", "UML diagram", "scenario", "functionality", "system analysis", "behavior"]
+    }
+  },
+  "persona": {
+    "label": { "es": "Arquetipo de usuario", "en": "User persona", "pt": "Persona", "fr": "Persona", "de": "Persona", "it": "Archetipo di utente", "ja": "ペルソナ", "zh": "用户画像", "ko": "페르소나", "ar": "شخصية المستخدم" },
+    "keywords": {
+      "es": ["persona", "buyer persona", "perfil", "usuario tipo", "público objetivo", "segmento", "investigación de usuarios"],
+      "en": ["archetype", "buyer persona", "profile", "target user", "target audience", "segment", "user research"]
+    }
+  },
+  "user-interview": {
+    "label": { "es": "Entrevista con usuario", "en": "User interview", "pt": "Entrevista com usuário", "fr": "Entretien utilisateur", "de": "Nutzerinterview", "it": "Intervista all’utente", "ja": "ユーザーインタビュー", "zh": "用户访谈", "ko": "사용자 인터뷰", "ar": "مقابلة مستخدم" },
+    "keywords": {
+      "es": ["investigación cualitativa", "conversación", "uno a uno", "agendar sesión", "necesidades", "guion de preguntas", "participante"],
+      "en": ["qualitative research", "conversation", "one-on-one", "schedule session", "user needs", "discussion guide", "participant"]
+    }
+  },
+  "focus-group": {
+    "label": { "es": "Grupo focal", "en": "Focus group", "pt": "Grupo focal", "fr": "Groupe de discussion", "de": "Fokusgruppe", "it": "Focus group", "ja": "フォーカスグループ", "zh": "焦点小组", "ko": "포커스 그룹", "ar": "مجموعة نقاش مركزة" },
+    "keywords": {
+      "es": ["sesión grupal", "moderador", "discusión", "investigación cualitativa", "opiniones", "participantes", "dinámica de grupo"],
+      "en": ["group session", "moderator", "discussion", "qualitative research", "opinions", "participants", "panel"]
+    }
+  },
+  "usability-test": {
+    "label": { "es": "Prueba de usabilidad", "en": "Usability test", "pt": "Teste de usabilidade", "fr": "Test d’utilisabilité", "de": "Usability-Test", "it": "Test di usabilità", "ja": "ユーザビリティテスト", "zh": "可用性测试", "ko": "사용성 테스트", "ar": "اختبار قابلية الاستخدام" },
+    "keywords": {
+      "es": ["sesión con usuarios", "observar", "tareas", "guion de tareas", "fricción", "experiencia de usuario", "UX"],
+      "en": ["user testing", "observe", "tasks", "test plan", "friction", "user experience", "UX"]
+    }
+  },
+  "eye-tracking": {
+    "label": { "es": "Seguimiento ocular", "en": "Eye tracking", "pt": "Rastreamento ocular", "fr": "Suivi oculaire", "de": "Eye-Tracking", "it": "Tracciamento oculare", "ja": "視線追跡", "zh": "眼动追踪", "ko": "시선 추적", "ar": "تتبع العين" },
+    "keywords": {
+      "es": ["mirada", "atención", "eye tracking", "fijación", "dónde miran", "estudio visual", "patrón F"],
+      "en": ["gaze", "attention", "fixation", "where people look", "visual study", "F-pattern", "saccade"]
+    }
+  },
+  "card-sorting": {
+    "label": { "es": "Clasificación de tarjetas", "en": "Card sorting", "pt": "Classificação de cartões", "fr": "Tri de cartes", "de": "Card Sorting", "it": "Card sorting", "ja": "カードソーティング", "zh": "卡片分类", "ko": "카드 소팅", "ar": "فرز البطاقات" },
+    "keywords": {
+      "es": ["card sorting", "arquitectura de información", "agrupar temas", "categorías", "navegación", "estructura del menú", "taxonomía"],
+      "en": ["information architecture", "group topics", "categories", "navigation", "menu structure", "taxonomy", "IA"]
+    }
+  },
+  "tree-test": {
+    "label": { "es": "Prueba de árbol", "en": "Tree test", "pt": "Teste de árvore", "fr": "Test de l’arborescence", "de": "Baumtest", "it": "Test ad albero", "ja": "ツリーテスト", "zh": "树状测试", "ko": "트리 테스트", "ar": "اختبار شجرة التنقل" },
+    "keywords": {
+      "es": ["tree testing", "estructura del menú", "encontrar contenido", "arquitectura de información", "navegación", "jerarquía", "taxonomía"],
+      "en": ["menu structure", "findability", "information architecture", "navigation", "hierarchy", "taxonomy", "sitemap"]
+    }
+  },
+  "preference-test": {
+    "label": { "es": "Prueba de preferencia", "en": "Preference test", "pt": "Teste de preferência", "fr": "Test de préférence", "de": "Präferenztest", "it": "Test di preferenza", "ja": "選好テスト", "zh": "偏好测试", "ko": "선호도 테스트", "ar": "اختبار التفضيل" },
+    "keywords": {
+      "es": ["elegir opción", "comparar diseños", "votar", "opción A o B", "deseabilidad", "encuesta visual", "cuál te gusta más"],
+      "en": ["choose option", "compare designs", "vote", "option A or B", "desirability", "visual survey", "which one wins"]
+    }
+  },
+  "five-second-test": {
+    "label": { "es": "Prueba de cinco segundos", "en": "Five-second test", "pt": "Teste de cinco segundos", "fr": "Test des cinq secondes", "de": "Fünf-Sekunden-Test", "it": "Test dei cinque secondi", "ja": "5秒テスト", "zh": "五秒测试", "ko": "5초 테스트", "ar": "اختبار الثواني الخمس" },
+    "keywords": {
+      "es": ["primera impresión", "recordación", "claridad", "mensaje principal", "vistazo", "temporizador", "comprensión"],
+      "en": ["first impression", "recall", "clarity", "key message", "glance", "timer", "comprehension"]
+    }
+  },
+  "diary-study": {
+    "label": { "es": "Estudio de diario", "en": "Diary study", "pt": "Estudo de diário", "fr": "Étude par journal de bord", "de": "Tagebuchstudie", "it": "Studio con diario", "ja": "日記調査", "zh": "日记研究", "ko": "다이어리 스터디", "ar": "دراسة اليوميات" },
+    "keywords": {
+      "es": ["bitácora", "investigación longitudinal", "registro diario", "entradas", "experiencias", "seguimiento", "varias semanas"],
+      "en": ["log", "longitudinal research", "daily log", "entries", "experiences", "self-reporting", "over time"]
+    }
+  },
+  "empathy-map": {
+    "label": { "es": "Mapa de empatía", "en": "Empathy map", "pt": "Mapa de empatia", "fr": "Carte d’empathie", "de": "Empathy Map", "it": "Mappa dell’empatia", "ja": "共感マップ", "zh": "同理心地图", "ko": "공감 지도", "ar": "خريطة التعاطف" },
+    "keywords": {
+      "es": ["dice", "piensa", "hace", "siente", "entender al usuario", "design thinking", "perspectiva"],
+      "en": ["says", "thinks", "does", "feels", "understand users", "design thinking", "perspective"]
+    }
+  },
+  "insight": {
+    "label": { "es": "Hallazgo", "en": "Insight", "pt": "Insight", "fr": "Enseignement", "de": "Erkenntnis", "it": "Insight", "ja": "インサイト", "zh": "洞察", "ko": "인사이트", "ar": "رؤية مستخلصة" },
+    "keywords": {
+      "es": ["insight", "conclusión", "aprendizaje", "dato clave", "evidencia", "repositorio de investigación", "cita de usuario"],
+      "en": ["key finding", "takeaway", "learning", "evidence", "research repository", "user quote", "conclusion"]
+    }
+  },
+  "mental-model": {
+    "label": { "es": "Modelo mental", "en": "Mental model", "pt": "Modelo mental", "fr": "Modèle mental", "de": "Mentales Modell", "it": "Modello mentale", "ja": "メンタルモデル", "zh": "心智模型", "ko": "멘탈 모델", "ar": "النموذج الذهني" },
+    "keywords": {
+      "es": ["expectativas", "cómo creen que funciona", "percepción", "comprensión", "psicología", "cognición", "intuitivo"],
+      "en": ["expectations", "how users think", "perception", "understanding", "psychology", "cognition", "intuitive"]
+    }
+  },
+  "discovery": {
+    "label": { "es": "Descubrimiento de producto", "en": "Product discovery", "pt": "Descoberta de produto", "fr": "Découverte produit", "de": "Product Discovery", "it": "Scoperta del prodotto", "ja": "プロダクトディスカバリー", "zh": "产品探索", "ko": "프로덕트 디스커버리", "ar": "استكشاف المنتج" },
+    "keywords": {
+      "es": ["discovery", "explorar", "problemas", "oportunidades", "fase inicial", "hipótesis", "validar ideas"],
+      "en": ["explore", "problem space", "opportunities", "early phase", "hypotheses", "research", "validate ideas"]
+    }
+  },
+  "brainstorm": {
+    "label": { "es": "Lluvia de ideas", "en": "Brainstorm", "pt": "Brainstorming", "fr": "Remue-méninges", "de": "Brainstorming", "it": "Brainstorming", "ja": "ブレインストーミング", "zh": "头脑风暴", "ko": "브레인스토밍", "ar": "عصف ذهني" },
+    "keywords": {
+      "es": ["ideación", "generar ideas", "sesión creativa", "brainstorming", "taller", "post-its", "pizarrón"],
+      "en": ["ideation", "generate ideas", "creative session", "workshop", "sticky notes", "creativity", "whiteboard"]
+    }
+  },
+  "heatmap": {
+    "label": { "es": "Mapa de calor", "en": "Heatmap", "pt": "Mapa de calor", "fr": "Carte de chaleur", "de": "Heatmap", "it": "Mappa di calore", "ja": "ヒートマップ", "zh": "热力图", "ko": "히트맵", "ar": "خريطة حرارية" },
+    "keywords": {
+      "es": ["heatmap", "atención", "zonas calientes", "comportamiento", "analítica web", "interacción", "dónde se fijan"],
+      "en": ["attention", "hot spots", "user behavior", "web analytics", "engagement", "density", "visual analytics"]
+    }
+  },
+  "heatmap-click": {
+    "label": { "es": "Mapa de clics", "en": "Click map", "pt": "Mapa de cliques", "fr": "Carte des clics", "de": "Klick-Heatmap", "it": "Mappa dei clic", "ja": "クリックマップ", "zh": "点击热力图", "ko": "클릭 맵", "ar": "خريطة النقرات" },
+    "keywords": {
+      "es": ["toques", "dónde hacen clic", "mapa de calor", "botones más usados", "interacción", "analítica web", "comportamiento"],
+      "en": ["taps", "where users click", "heatmap", "most clicked", "interaction", "web analytics", "behavior"]
+    }
+  },
+  "heatmap-scroll": {
+    "label": { "es": "Mapa de desplazamiento", "en": "Scroll map", "pt": "Mapa de rolagem", "fr": "Carte de défilement", "de": "Scroll-Heatmap", "it": "Mappa di scorrimento", "ja": "スクロールマップ", "zh": "滚动热力图", "ko": "스크롤 맵", "ar": "خريطة التمرير" },
+    "keywords": {
+      "es": ["scroll", "profundidad", "pliegue", "hasta dónde bajan", "mapa de calor", "contenido visto", "analítica web"],
+      "en": ["scroll depth", "the fold", "how far users scroll", "heatmap", "content seen", "web analytics", "engagement"]
+    }
+  },
+  "heatmap-move": {
+    "label": { "es": "Mapa de movimiento del mouse", "en": "Mouse movement map", "pt": "Mapa de movimento do mouse", "fr": "Carte des mouvements de souris", "de": "Mausbewegungs-Heatmap", "it": "Mappa dei movimenti del mouse", "ja": "マウス移動マップ", "zh": "鼠标移动热力图", "ko": "마우스 이동 맵", "ar": "خريطة حركة الفأرة" },
+    "keywords": {
+      "es": ["cursor", "recorrido del puntero", "hover", "mapa de calor", "atención", "comportamiento", "analítica web"],
+      "en": ["cursor", "pointer path", "hover", "heatmap", "attention", "behavior", "web analytics"]
+    }
+  },
+  "rage-click": {
+    "label": { "es": "Clics de frustración", "en": "Rage clicks", "pt": "Cliques de frustração", "fr": "Clics rageurs", "de": "Wutklicks", "it": "Clic di frustrazione", "ja": "レイジクリック", "zh": "愤怒点击", "ko": "분노 클릭", "ar": "نقرات الغضب" },
+    "keywords": {
+      "es": ["clics repetidos", "clics de ira", "usuario molesto", "botón roto", "señal de fricción", "error de interfaz", "analítica de producto"],
+      "en": ["repeated clicks", "frustration", "annoyed user", "broken button", "friction signal", "dead click", "product analytics"]
+    }
+  },
+  "session-replay": {
+    "label": { "es": "Grabación de sesión", "en": "Session replay", "pt": "Gravação de sessão", "fr": "Relecture de session", "de": "Sitzungsaufzeichnung", "it": "Registrazione della sessione", "ja": "セッションリプレイ", "zh": "会话回放", "ko": "세션 리플레이", "ar": "إعادة تشغيل الجلسة" },
+    "keywords": {
+      "es": ["session replay", "reproducir", "ver lo que hizo el usuario", "comportamiento", "depurar", "experiencia de usuario", "analítica de producto"],
+      "en": ["recording", "playback", "watch users", "user behavior", "debug", "user experience", "product analytics"]
+    }
+  },
+  "onboarding": {
+    "label": { "es": "Primeros pasos", "en": "Onboarding", "pt": "Primeiros passos", "fr": "Prise en main", "de": "Onboarding", "it": "Onboarding", "ja": "オンボーディング", "zh": "新手引导", "ko": "온보딩", "ar": "الخطوات الأولى" },
+    "keywords": {
+      "es": ["onboarding", "bienvenida", "nuevos usuarios", "pantallas de bienvenida", "configuración inicial", "registro", "activación"],
+      "en": ["welcome", "new users", "welcome screens", "getting started", "first run", "setup", "activation"]
+    }
+  },
+  "product-tour": {
+    "label": { "es": "Recorrido guiado", "en": "Product tour", "pt": "Tour do produto", "fr": "Visite guidée", "de": "Produkttour", "it": "Tour del prodotto", "ja": "製品ツアー", "zh": "产品导览", "ko": "제품 투어", "ar": "جولة في المنتج" },
+    "keywords": {
+      "es": ["tour", "guía en la app", "tooltips", "coach marks", "paso a paso", "tutorial", "funciones nuevas"],
+      "en": ["walkthrough", "in-app guide", "tooltips", "coach marks", "step by step", "tutorial", "feature discovery"]
+    }
+  },
+  "feature-flag": {
+    "label": { "es": "Bandera de funcionalidad", "en": "Feature flag", "pt": "Sinalizador de recurso", "fr": "Indicateur de fonctionnalité", "de": "Feature-Flag", "it": "Flag di funzionalità", "ja": "フィーチャーフラグ", "zh": "功能开关", "ko": "기능 플래그", "ar": "علامة الميزة" },
+    "keywords": {
+      "es": ["feature flag", "activar función", "desactivar función", "toggle", "por usuario", "por entorno", "lanzamiento controlado"],
+      "en": ["feature toggle", "turn on", "turn off", "switch", "per user", "per environment", "controlled release"]
+    }
+  },
+  "feature-flag-clock": {
+    "label": { "es": "Bandera programada", "en": "Scheduled flag", "pt": "Sinalizador agendado", "fr": "Indicateur programmé", "de": "Geplantes Feature-Flag", "it": "Flag programmato", "ja": "予約済みのフィーチャーフラグ", "zh": "定时功能开关", "ko": "예약된 기능 플래그", "ar": "علامة ميزة مجدولة" },
+    "keywords": {
+      "es": ["feature flag", "programar", "activar más tarde", "fecha de activación", "lanzamiento programado", "despliegue agendado", "horario"],
+      "en": ["feature flag", "schedule", "turn on later", "activation date", "scheduled rollout", "timed release", "timer"]
+    }
+  },
+  "kill-switch": {
+    "label": { "es": "Interruptor de emergencia", "en": "Kill switch", "pt": "Interruptor de emergência", "fr": "Arrêt d’urgence", "de": "Notschalter", "it": "Interruttore di emergenza", "ja": "緊急停止スイッチ", "zh": "紧急关闭开关", "ko": "긴급 차단 스위치", "ar": "مفتاح الإيقاف الطارئ" },
+    "keywords": {
+      "es": ["kill switch", "apagar función", "desactivar ya", "producción", "incidente", "feature flag", "revertir"],
+      "en": ["emergency off", "disable feature", "turn off now", "production", "incident", "feature flag", "rollback"]
+    }
+  },
+  "rollout": {
+    "label": { "es": "Despliegue gradual", "en": "Gradual rollout", "pt": "Lançamento gradual", "fr": "Déploiement progressif", "de": "Schrittweise Einführung", "it": "Rilascio graduale", "ja": "段階的ロールアウト", "zh": "逐步发布", "ko": "단계적 출시", "ar": "طرح تدريجي" },
+    "keywords": {
+      "es": ["rollout", "porcentaje de usuarios", "por etapas", "liberar función", "canary", "beta", "lanzamiento escalonado"],
+      "en": ["percentage rollout", "staged release", "release feature", "canary", "beta", "phased launch", "progressive delivery"]
+    }
+  },
+  "multivariate-test": {
+    "label": { "es": "Prueba multivariable", "en": "Multivariate test", "pt": "Teste multivariado", "fr": "Test multivarié", "de": "Multivariater Test", "it": "Test multivariato", "ja": "多変量テスト", "zh": "多变量测试", "ko": "다변량 테스트", "ar": "اختبار متعدد المتغيرات" },
+    "keywords": {
+      "es": ["A/B/n", "variantes", "experimento", "comparar versiones", "optimización", "conversión", "prueba A/B"],
+      "en": ["A/B/n", "variants", "experiment", "compare versions", "optimization", "conversion", "split test"]
+    }
+  },
+  "lightbulb-question": {
+    "label": { "es": "Hipótesis", "en": "Hypothesis", "pt": "Hipótese", "fr": "Hypothèse", "de": "Hypothese", "it": "Ipotesi", "ja": "仮説", "zh": "假设", "ko": "가설", "ar": "فرضية" },
+    "keywords": {
+      "es": ["suposición", "idea sin probar", "experimento", "por validar", "pregunta de investigación", "incertidumbre", "apuesta"],
+      "en": ["assumption", "untested idea", "experiment", "to validate", "research question", "uncertainty", "bet"]
+    }
+  },
+  "lightbulb-check": {
+    "label": { "es": "Idea validada", "en": "Validated idea", "pt": "Ideia validada", "fr": "Idée validée", "de": "Bestätigte Idee", "it": "Idea convalidata", "ja": "検証済みのアイデア", "zh": "已验证的想法", "ko": "검증된 아이디어", "ar": "فكرة تم التحقق منها" },
+    "keywords": {
+      "es": ["hipótesis comprobada", "aprendizaje", "confirmado", "experimento exitoso", "aprobado", "evidencia", "funciona"],
+      "en": ["proven hypothesis", "validated learning", "confirmed", "successful experiment", "approved", "evidence", "it works"]
+    }
+  },
+  "lightbulb-plus": {
+    "label": { "es": "Proponer una idea", "en": "Submit an idea", "pt": "Enviar ideia", "fr": "Proposer une idée", "de": "Idee einreichen", "it": "Proponi un’idea", "ja": "アイデアを投稿", "zh": "提交想法", "ko": "아이디어 제안", "ar": "اقتراح فكرة" },
+    "keywords": {
+      "es": ["sugerencia", "solicitud de función", "portal de ideas", "nueva idea", "votar ideas", "feedback", "pedir mejora"],
+      "en": ["suggestion", "feature request", "idea portal", "new idea", "upvote", "feedback", "request improvement"]
+    }
+  },
+  "release": {
+    "label": { "es": "Publicar versión", "en": "Release", "pt": "Lançar versão", "fr": "Publier une version", "de": "Version veröffentlichen", "it": "Pubblica versione", "ja": "リリース", "zh": "发布版本", "ko": "릴리스", "ar": "إصدار نسخة" },
+    "keywords": {
+      "es": ["release", "lanzar", "notas de la versión", "actualización", "despliegue", "salir a producción", "entregar"],
+      "en": ["ship", "launch", "release notes", "update", "deploy", "new version", "go live"]
+    }
+  },
+  "release-clock": {
+    "label": { "es": "Versión programada", "en": "Scheduled release", "pt": "Lançamento agendado", "fr": "Version planifiée", "de": "Geplantes Release", "it": "Rilascio programmato", "ja": "予定されたリリース", "zh": "计划发布", "ko": "예정된 릴리스", "ar": "إصدار مجدول" },
+    "keywords": {
+      "es": ["fecha de lanzamiento", "plan de releases", "calendario", "programar", "roadmap", "fecha límite", "congelamiento de código"],
+      "en": ["release date", "release plan", "calendar", "schedule", "roadmap", "deadline", "code freeze"]
+    }
+  },
+  "changelog": {
+    "label": { "es": "Registro de cambios", "en": "Changelog", "pt": "Registro de alterações", "fr": "Journal des modifications", "de": "Änderungsprotokoll", "it": "Registro delle modifiche", "ja": "変更履歴", "zh": "更新日志", "ko": "변경 로그", "ar": "سجل التغييرات" },
+    "keywords": {
+      "es": ["changelog", "novedades", "notas de la versión", "qué hay de nuevo", "actualizaciones", "historial de versiones", "mejoras"],
+      "en": ["what's new", "release notes", "updates", "version history", "improvements", "fixes", "news"]
+    }
+  },
+  "feedback-loop": {
+    "label": { "es": "Ciclo de retroalimentación", "en": "Feedback loop", "pt": "Ciclo de feedback", "fr": "Boucle de rétroaction", "de": "Feedbackschleife", "it": "Ciclo di feedback", "ja": "フィードバックループ", "zh": "反馈循环", "ko": "피드백 루프", "ar": "حلقة التغذية الراجعة" },
+    "keywords": {
+      "es": ["feedback", "opiniones de usuarios", "mejora continua", "iterar", "escuchar al cliente", "voz del cliente", "comentarios"],
+      "en": ["user feedback", "continuous improvement", "iterate", "listen to customers", "voice of the customer", "comments", "learn and adapt"]
+    }
+  },
+  "impact-effort": {
+    "label": { "es": "Matriz impacto-esfuerzo", "en": "Impact-effort matrix", "pt": "Matriz de impacto e esforço", "fr": "Matrice impact-effort", "de": "Aufwand-Nutzen-Matrix", "it": "Matrice impatto-sforzo", "ja": "インパクト・エフォートマトリクス", "zh": "影响-投入矩阵", "ko": "영향-노력 매트릭스", "ar": "مصفوفة الأثر والجهد" },
+    "keywords": {
+      "es": ["priorizar", "2x2", "cuadrantes", "ganancias rápidas", "valor contra esfuerzo", "decidir", "roadmap"],
+      "en": ["prioritize", "2x2", "quadrants", "quick wins", "value vs effort", "decision making", "roadmap"]
+    }
+  },
+  "triage": {
+    "label": { "es": "Clasificar solicitudes", "en": "Triage", "pt": "Triagem", "fr": "Tri des demandes", "de": "Triage", "it": "Triage", "ja": "トリアージ", "zh": "分类处理", "ko": "요청 분류", "ar": "فرز الطلبات" },
+    "keywords": {
+      "es": ["triage", "bandeja de entrada", "priorizar", "nuevos reportes", "cola", "asignar", "revisar pendientes"],
+      "en": ["inbox", "prioritize", "incoming requests", "bug reports", "queue", "assign", "sort"]
+    }
+  },
+  "backlog": {
+    "label": { "es": "Backlog", "en": "Backlog", "pt": "Backlog", "fr": "Backlog", "de": "Backlog", "it": "Backlog", "ja": "バックログ", "zh": "待办列表", "ko": "백로그", "ar": "قائمة الأعمال المتراكمة" },
+    "keywords": {
+      "es": ["pendientes", "lista de trabajo", "cola de tareas", "historias de usuario", "priorizar", "por hacer", "refinamiento"],
+      "en": ["to do", "work queue", "task list", "user stories", "prioritize", "grooming", "refinement"]
+    }
+  },
+  "backlog-plus": {
+    "label": { "es": "Agregar al backlog", "en": "Add to backlog", "pt": "Adicionar ao backlog", "fr": "Ajouter au backlog", "de": "Zum Backlog hinzufügen", "it": "Aggiungi al backlog", "ja": "バックログに追加", "zh": "添加到待办列表", "ko": "백로그에 추가", "ar": "إضافة إلى قائمة الأعمال" },
+    "keywords": {
+      "es": ["nueva tarea", "nueva historia", "crear ticket", "capturar", "registrar pendiente", "nuevo elemento", "crear issue"],
+      "en": ["new task", "new story", "create ticket", "capture", "log item", "new item", "create issue"]
+    }
+  },
+  "user-story": {
+    "label": { "es": "Historia de usuario", "en": "User story", "pt": "História de usuário", "fr": "Récit utilisateur", "de": "User Story", "it": "User story", "ja": "ユーザーストーリー", "zh": "用户故事", "ko": "사용자 스토리", "ar": "قصة المستخدم" },
+    "keywords": {
+      "es": ["requisito", "tarjeta", "como usuario quiero", "criterios de aceptación", "ágil", "scrum", "ticket"],
+      "en": ["requirement", "story card", "as a user I want", "acceptance criteria", "agile", "scrum", "ticket"]
+    }
+  },
+  "epic": {
+    "label": { "es": "Épica", "en": "Epic", "pt": "Épico", "fr": "Epic", "de": "Epic", "it": "Epic", "ja": "エピック", "zh": "史诗", "ko": "에픽", "ar": "ملحمة" },
+    "keywords": {
+      "es": ["iniciativa", "conjunto de historias", "bloque de trabajo", "ágil", "scrum", "agrupar tareas", "proyecto grande"],
+      "en": ["initiative", "group of stories", "large body of work", "agile", "scrum", "parent issue", "big feature"]
+    }
+  },
+  "story-map": {
+    "label": { "es": "Mapa de historias", "en": "Story map", "pt": "Mapa de histórias", "fr": "Cartographie des récits", "de": "Story Map", "it": "Mappa delle storie", "ja": "ストーリーマップ", "zh": "用户故事地图", "ko": "스토리 맵", "ar": "خريطة القصص" },
+    "keywords": {
+      "es": ["story mapping", "historias de usuario", "recorrido del usuario", "planear entregas", "MVP", "columna vertebral", "priorizar"],
+      "en": ["user stories", "user journey", "release planning", "MVP", "backbone", "release slices", "agile planning"]
+    }
+  },
+  "icebox": {
+    "label": { "es": "Ideas en pausa", "en": "Icebox", "pt": "Ideias em espera", "fr": "Idées en attente", "de": "Ideen auf Eis", "it": "Idee in sospeso", "ja": "保留中のアイデア", "zh": "搁置的想法", "ko": "보류된 아이디어", "ar": "أفكار مؤجلة" },
+    "keywords": {
+      "es": ["icebox", "para después", "congelado", "estacionado", "algún día", "no prioritario", "en espera"],
+      "en": ["parked ideas", "later", "frozen", "someday", "on hold", "low priority", "deferred"]
+    }
+  },
+  "sprint": {
+    "label": { "es": "Sprint", "en": "Sprint", "pt": "Sprint", "fr": "Sprint", "de": "Sprint", "it": "Sprint", "ja": "スプリント", "zh": "冲刺", "ko": "스프린트", "ar": "سبرنت" },
+    "keywords": {
+      "es": ["iteración", "ciclo", "scrum", "periodo de trabajo", "dos semanas", "ágil", "planeación"],
+      "en": ["iteration", "cycle", "scrum", "timebox", "two weeks", "agile", "planning"]
+    }
+  },
+  "sprint-check": {
+    "label": { "es": "Completar sprint", "en": "Complete sprint", "pt": "Concluir sprint", "fr": "Terminer le sprint", "de": "Sprint abschließen", "it": "Completa sprint", "ja": "スプリントを完了", "zh": "完成冲刺", "ko": "스프린트 완료", "ar": "إكمال السبرنت" },
+    "keywords": {
+      "es": ["cerrar iteración", "terminado", "entregado", "demo", "retrospectiva", "meta cumplida", "scrum"],
+      "en": ["close iteration", "done", "delivered", "sprint review", "retrospective", "goal met", "end of cycle"]
+    }
+  },
+  "chart-burndown": {
+    "label": { "es": "Gráfica de trabajo pendiente", "en": "Burndown chart", "pt": "Gráfico de burndown", "fr": "Graphique du reste à faire", "de": "Burndown-Chart", "it": "Grafico burndown", "ja": "バーンダウンチャート", "zh": "燃尽图", "ko": "번다운 차트", "ar": "مخطط العمل المتبقي" },
+    "keywords": {
+      "es": ["burndown", "trabajo restante", "avance del sprint", "seguimiento", "puntos de historia", "scrum", "ritmo"],
+      "en": ["remaining work", "sprint progress", "tracking", "story points", "scrum", "pace", "ideal line"]
+    }
+  },
+  "chart-burnup": {
+    "label": { "es": "Gráfica de trabajo completado", "en": "Burnup chart", "pt": "Gráfico de burnup", "fr": "Graphique du travail accompli", "de": "Burnup-Chart", "it": "Grafico burnup", "ja": "バーンアップチャート", "zh": "燃起图", "ko": "번업 차트", "ar": "مخطط العمل المنجز" },
+    "keywords": {
+      "es": ["burnup", "alcance total", "avance", "entregado", "progreso del proyecto", "cambios de alcance", "scrum"],
+      "en": ["total scope", "completed work", "progress", "delivered", "scope change", "project tracking", "scrum"]
+    }
+  },
+  "chart-velocity": {
+    "label": { "es": "Gráfica de velocidad", "en": "Velocity chart", "pt": "Gráfico de velocidade", "fr": "Graphique de vélocité", "de": "Velocity-Diagramm", "it": "Grafico della velocità", "ja": "ベロシティチャート", "zh": "速率图", "ko": "벨로시티 차트", "ar": "مخطط السرعة" },
+    "keywords": {
+      "es": ["ritmo del equipo", "puntos por sprint", "capacidad", "rendimiento", "historial de sprints", "scrum", "pronóstico"],
+      "en": ["team pace", "points per sprint", "capacity", "throughput", "sprint history", "scrum", "forecast"]
+    }
+  },
+  "planning-poker": {
+    "label": { "es": "Planning poker", "en": "Planning poker", "pt": "Planning poker", "fr": "Planning poker", "de": "Planning Poker", "it": "Planning poker", "ja": "プランニングポーカー", "zh": "计划扑克", "ko": "플래닝 포커", "ar": "بوكر التخطيط" },
+    "keywords": {
+      "es": ["estimación", "puntos de historia", "cartas", "Fibonacci", "estimar tareas", "scrum", "votación del equipo"],
+      "en": ["estimation", "story points", "cards", "Fibonacci", "estimate tasks", "scrum", "team vote"]
+    }
+  }
+}

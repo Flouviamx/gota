@@ -1,0 +1,583 @@
+{
+  "triangle": {
+    "label": { "es": "Triángulo", "en": "Triangle", "pt": "Triângulo", "fr": "Triangle", "de": "Dreieck", "it": "Triangolo", "ja": "三角形", "zh": "三角形", "ko": "삼각형", "ar": "مثلث" },
+    "keywords": {
+      "es": ["insertar forma", "figura geométrica", "equilátero", "tres lados", "marcador de gráfica", "polígono", "geometría"],
+      "en": ["insert shape", "geometric figure", "equilateral", "three sides", "chart marker", "polygon", "geometry"]
+    }
+  },
+  "right-triangle": {
+    "label": { "es": "Triángulo rectángulo", "en": "Right triangle", "pt": "Triângulo retângulo", "fr": "Triangle rectangle", "de": "Rechtwinkliges Dreieck", "it": "Triangolo rettangolo", "ja": "直角三角形", "zh": "直角三角形", "ko": "직각삼각형", "ar": "مثلث قائم الزاوية" },
+    "keywords": {
+      "es": ["ángulo recto", "pendiente", "inclinación", "hipotenusa", "catetos", "trigonometría", "geometría"],
+      "en": ["right angle", "slope", "incline", "hypotenuse", "pythagoras", "trigonometry", "geometry"]
+    }
+  },
+  "pentagon": {
+    "label": { "es": "Pentágono", "en": "Pentagon", "pt": "Pentágono", "fr": "Pentagone", "de": "Fünfeck", "it": "Pentagono", "ja": "五角形", "zh": "五边形", "ko": "오각형", "ar": "مخمس" },
+    "keywords": {
+      "es": ["cinco lados", "polígono regular", "insignia", "marcador de gráfica", "selector de formas", "figura geométrica", "geometría"],
+      "en": ["five sides", "regular polygon", "badge", "chart marker", "shape picker", "geometric figure", "geometry"]
+    }
+  },
+  "hexagon": {
+    "label": { "es": "Hexágono", "en": "Hexagon", "pt": "Hexágono", "fr": "Hexagone", "de": "Sechseck", "it": "Esagono", "ja": "六角形", "zh": "六边形", "ko": "육각형", "ar": "مسدس" },
+    "keywords": {
+      "es": ["seis lados", "polígono regular", "celda hexagonal", "nodo", "ficha", "insignia", "geometría"],
+      "en": ["six sides", "regular polygon", "hex cell", "node", "token", "badge", "geometry"]
+    }
+  },
+  "heptagon": {
+    "label": { "es": "Heptágono", "en": "Heptagon", "pt": "Heptágono", "fr": "Heptagone", "de": "Siebeneck", "it": "Ettagono", "ja": "七角形", "zh": "七边形", "ko": "칠각형", "ar": "مسبع" },
+    "keywords": {
+      "es": ["siete lados", "polígono regular", "selector de polígonos", "forma", "figura geométrica", "geometría"],
+      "en": ["seven sides", "regular polygon", "polygon picker", "shape", "geometric figure", "geometry"]
+    }
+  },
+  "octagon": {
+    "label": { "es": "Octágono", "en": "Octagon", "pt": "Octógono", "fr": "Octogone", "de": "Achteck", "it": "Ottagono", "ja": "八角形", "zh": "八边形", "ko": "팔각형", "ar": "مثمن" },
+    "keywords": {
+      "es": ["ocho lados", "polígono regular", "señal de alto", "forma de alto", "selector de formas", "geometría"],
+      "en": ["eight sides", "regular polygon", "stop sign shape", "stop", "shape picker", "geometry"]
+    }
+  },
+  "rectangle": {
+    "label": { "es": "Rectángulo", "en": "Rectangle", "pt": "Retângulo", "fr": "Rectangle", "de": "Rechteck", "it": "Rettangolo", "ja": "長方形", "zh": "矩形", "ko": "직사각형", "ar": "مستطيل" },
+    "keywords": {
+      "es": ["herramienta de forma", "insertar forma", "marco", "banner", "caja", "recuadro", "cuatro lados"],
+      "en": ["shape tool", "insert shape", "frame", "banner", "box", "oblong", "four sides"]
+    }
+  },
+  "rhombus": {
+    "label": { "es": "Rombo", "en": "Rhombus", "pt": "Losango", "fr": "Losange", "de": "Raute", "it": "Rombo", "ja": "ひし形", "zh": "菱形", "ko": "마름모", "ar": "معين" },
+    "keywords": {
+      "es": ["diamante", "nodo de decisión", "diagrama de flujo", "marcador de gráfica", "cuadrado girado", "forma", "geometría"],
+      "en": ["diamond", "decision node", "flowchart", "chart marker", "lozenge", "shape", "geometry"]
+    }
+  },
+  "parallelogram": {
+    "label": { "es": "Paralelogramo", "en": "Parallelogram", "pt": "Paralelogramo", "fr": "Parallélogramme", "de": "Parallelogramm", "it": "Parallelogramma", "ja": "平行四辺形", "zh": "平行四边形", "ko": "평행사변형", "ar": "متوازي أضلاع" },
+    "keywords": {
+      "es": ["entrada y salida", "diagrama de flujo", "datos", "forma inclinada", "cuadrilátero", "geometría"],
+      "en": ["input output", "flowchart", "data node", "slanted shape", "quadrilateral", "geometry"]
+    }
+  },
+  "trapezoid": {
+    "label": { "es": "Trapecio", "en": "Trapezoid", "pt": "Trapézio", "fr": "Trapèze", "de": "Trapez", "it": "Trapezio", "ja": "台形", "zh": "梯形", "ko": "사다리꼴", "ar": "شبه منحرف" },
+    "keywords": {
+      "es": ["cuadrilátero", "panel cónico", "forma ahusada", "operación manual", "diagrama de flujo", "geometría"],
+      "en": ["quadrilateral", "tapered panel", "trapezium", "manual operation", "flowchart", "geometry"]
+    }
+  },
+  "polygon": {
+    "label": { "es": "Polígono", "en": "Polygon", "pt": "Polígono", "fr": "Polygone", "de": "Polygon", "it": "Poligono", "ja": "多角形", "zh": "多边形", "ko": "다각형", "ar": "مضلع" },
+    "keywords": {
+      "es": ["forma libre", "región personalizada", "dibujar punto por punto", "área irregular", "lazo poligonal", "contorno", "figura irregular"],
+      "en": ["freeform", "custom region", "point by point", "irregular area", "polygonal lasso", "outline", "irregular shape"]
+    }
+  },
+  "ellipse": {
+    "label": { "es": "Elipse", "en": "Ellipse", "pt": "Elipse", "fr": "Ellipse", "de": "Ellipse", "it": "Ellisse", "ja": "楕円", "zh": "椭圆", "ko": "타원", "ar": "شكل بيضاوي" },
+    "keywords": {
+      "es": ["óvalo", "insertar óvalo", "herramienta de forma", "órbita", "marcador de gráfica", "forma", "geometría"],
+      "en": ["oval", "insert oval", "shape tool", "orbit", "chart marker", "shape", "geometry"]
+    }
+  },
+  "semicircle": {
+    "label": { "es": "Semicírculo", "en": "Semicircle", "pt": "Semicírculo", "fr": "Demi-cercle", "de": "Halbkreis", "it": "Semicerchio", "ja": "半円", "zh": "半圆", "ko": "반원", "ar": "نصف دائرة" },
+    "keywords": {
+      "es": ["medio círculo", "medio disco", "cúpula en planta", "arco", "forma", "geometría"],
+      "en": ["half circle", "half disc", "dome in plan", "arch", "shape", "geometry"]
+    }
+  },
+  "quarter-circle": {
+    "label": { "es": "Cuarto de círculo", "en": "Quarter circle", "pt": "Quarto de círculo", "fr": "Quart de cercle", "de": "Viertelkreis", "it": "Quarto di cerchio", "ja": "四分円", "zh": "四分之一圆", "ko": "사분원", "ar": "ربع دائرة" },
+    "keywords": {
+      "es": ["sector circular", "90 grados", "rebanada de pastel", "pieza de esquina", "esquina redondeada", "forma", "geometría"],
+      "en": ["circular sector", "90 degrees", "pie wedge", "corner piece", "rounded corner", "shape", "geometry"]
+    }
+  },
+  "arc": {
+    "label": { "es": "Arco", "en": "Arc", "pt": "Arco", "fr": "Arc", "de": "Bogen", "it": "Arco", "ja": "円弧", "zh": "圆弧", "ko": "원호", "ar": "قوس" },
+    "keywords": {
+      "es": ["segmento curvo", "curva", "parte de un círculo", "CAD", "dibujo técnico", "geometría"],
+      "en": ["curved segment", "curve", "part of a circle", "CAD", "technical drawing", "geometry"]
+    }
+  },
+  "capsule": {
+    "label": { "es": "Cápsula", "en": "Capsule", "pt": "Cápsula", "fr": "Capsule", "de": "Kapsel", "it": "Capsula", "ja": "カプセル", "zh": "胶囊形", "ko": "캡슐", "ar": "كبسولة" },
+    "keywords": {
+      "es": ["pastilla", "botón redondeado", "etiqueta", "inicio y fin", "diagrama de flujo", "rectángulo redondeado", "forma de estadio"],
+      "en": ["pill", "pill button", "tag", "terminator", "flowchart", "rounded rectangle", "stadium"]
+    }
+  },
+  "annulus": {
+    "label": { "es": "Anillo", "en": "Ring", "pt": "Anel", "fr": "Anneau", "de": "Ring", "it": "Anello", "ja": "リング", "zh": "圆环", "ko": "고리", "ar": "حلقة" },
+    "keywords": {
+      "es": ["dona", "corona circular", "círculo con hueco", "aro", "gráfica de dona", "forma", "geometría"],
+      "en": ["donut", "annulus", "hollow circle", "hoop", "donut chart", "shape", "geometry"]
+    }
+  },
+  "blob": {
+    "label": { "es": "Forma orgánica", "en": "Organic shape", "pt": "Forma orgânica", "fr": "Forme organique", "de": "Organische Form", "it": "Forma organica", "ja": "有機的な形", "zh": "不规则形状", "ko": "유기적 형태", "ar": "شكل عضوي" },
+    "keywords": {
+      "es": ["mancha", "burbuja", "forma libre", "fondo orgánico", "relleno libre", "amiba", "forma irregular"],
+      "en": ["blob", "splotch", "freeform", "organic background", "freeform fill", "amoeba", "irregular shape"]
+    }
+  },
+  "spiral": {
+    "label": { "es": "Espiral", "en": "Spiral", "pt": "Espiral", "fr": "Spirale", "de": "Spirale", "it": "Spirale", "ja": "らせん", "zh": "螺旋", "ko": "나선", "ar": "حلزون" },
+    "keywords": {
+      "es": ["remolino", "hipnótico", "torbellino", "crecimiento", "caracol", "vórtice", "herramienta de dibujo"],
+      "en": ["swirl", "hypnotic", "whirl", "growth", "coil", "vortex", "drawing tool"]
+    }
+  },
+  "star-four": {
+    "label": { "es": "Estrella de cuatro puntas", "en": "Four-pointed star", "pt": "Estrela de quatro pontas", "fr": "Étoile à quatre branches", "de": "Vierzackiger Stern", "it": "Stella a quattro punte", "ja": "四芒星", "zh": "四角星", "ko": "네 꼭짓점 별", "ar": "نجمة رباعية" },
+    "keywords": {
+      "es": ["destello", "brillo", "rosa de los vientos", "resaltar", "chispa", "estrella de brújula", "forma"],
+      "en": ["sparkle", "twinkle", "compass star", "highlight", "glint", "shine", "shape"]
+    }
+  },
+  "starburst": {
+    "label": { "es": "Explosión", "en": "Starburst", "pt": "Explosão", "fr": "Explosion", "de": "Explosion", "it": "Esplosione", "ja": "爆発", "zh": "爆炸形", "ko": "폭발", "ar": "انفجار" },
+    "keywords": {
+      "es": ["oferta", "promoción", "nuevo", "sticker de rebaja", "estallido", "llamada de atención", "énfasis"],
+      "en": ["sale", "promo", "new", "sale sticker", "explosion", "callout", "emphasis"]
+    }
+  },
+  "seal": {
+    "label": { "es": "Sello", "en": "Seal", "pt": "Selo", "fr": "Macaron", "de": "Siegel", "it": "Sigillo", "ja": "シール", "zh": "徽章形", "ko": "씰", "ar": "ختم" },
+    "keywords": {
+      "es": ["insignia", "estampa", "distintivo", "garantía", "etiqueta", "sticker", "certificado", "verificado"],
+      "en": ["badge", "stamp", "quality mark", "guarantee", "label", "sticker", "certificate", "rosette"]
+    }
+  },
+  "circle-dotted": {
+    "label": { "es": "Círculo punteado", "en": "Dotted circle", "pt": "Círculo pontilhado", "fr": "Cercle en pointillés", "de": "Gepunkteter Kreis", "it": "Cerchio punteggiato", "ja": "点線の円", "zh": "点线圆", "ko": "점선 원", "ar": "دائرة منقطة" },
+    "keywords": {
+      "es": ["marcador de posición", "sin empezar", "pendiente", "opcional", "virtual", "vacío", "por hacer"],
+      "en": ["placeholder", "not started", "pending", "optional", "virtual", "empty", "to do"]
+    }
+  },
+  "triangle-dashed": {
+    "label": { "es": "Triángulo discontinuo", "en": "Dashed triangle", "pt": "Triângulo tracejado", "fr": "Triangle en tirets", "de": "Gestricheltes Dreieck", "it": "Triangolo tratteggiato", "ja": "破線の三角形", "zh": "虚线三角形", "ko": "파선 삼각형", "ar": "مثلث متقطع" },
+    "keywords": {
+      "es": ["marcador de posición", "borrador", "forma opcional", "oculto", "boceto", "forma pendiente", "contorno"],
+      "en": ["placeholder", "draft", "optional shape", "hidden", "sketch", "pending shape", "outline"]
+    }
+  },
+  "hexagon-dashed": {
+    "label": { "es": "Hexágono discontinuo", "en": "Dashed hexagon", "pt": "Hexágono tracejado", "fr": "Hexagone en tirets", "de": "Gestricheltes Sechseck", "it": "Esagono tratteggiato", "ja": "破線の六角形", "zh": "虚线六边形", "ko": "파선 육각형", "ar": "مسدس متقطع" },
+    "keywords": {
+      "es": ["espacio vacío", "casilla libre", "nodo pendiente", "ficha vacía", "celda sin llenar", "marcador de posición"],
+      "en": ["empty slot", "free slot", "placeholder node", "empty token", "unfilled cell", "placeholder"]
+    }
+  },
+  "rectangle-dashed": {
+    "label": { "es": "Rectángulo discontinuo", "en": "Dashed rectangle", "pt": "Retângulo tracejado", "fr": "Rectangle en tirets", "de": "Gestricheltes Rechteck", "it": "Rettangolo tratteggiato", "ja": "破線の長方形", "zh": "虚线矩形", "ko": "파선 직사각형", "ar": "مستطيل متقطع" },
+    "keywords": {
+      "es": ["marcador de posición", "espacio vacío", "zona para soltar", "área de imagen", "banner pendiente", "selección", "arrastrar aquí"],
+      "en": ["placeholder", "empty slot", "drop zone", "image area", "banner area", "selection", "drag here"]
+    }
+  },
+  "cylinder": {
+    "label": { "es": "Cilindro", "en": "Cylinder", "pt": "Cilindro", "fr": "Cylindre", "de": "Zylinder", "it": "Cilindro", "ja": "円柱", "zh": "圆柱体", "ko": "원기둥", "ar": "أسطوانة" },
+    "keywords": {
+      "es": ["sólido 3D", "primitiva 3D", "tanque", "lata", "tubo", "volumen cilíndrico", "columna"],
+      "en": ["3D solid", "3D primitive", "tank", "can", "tube", "cylindrical volume", "column"]
+    }
+  },
+  "sphere": {
+    "label": { "es": "Esfera", "en": "Sphere", "pt": "Esfera", "fr": "Sphère", "de": "Kugel", "it": "Sfera", "ja": "球体", "zh": "球体", "ko": "구체", "ar": "كرة" },
+    "keywords": {
+      "es": ["pelota", "bola", "balón", "globo", "primitiva 3D", "sólido 3D", "volumen esférico"],
+      "en": ["ball", "orb", "globe", "round solid", "3D primitive", "3D solid", "spherical volume"]
+    }
+  },
+  "hemisphere": {
+    "label": { "es": "Hemisferio", "en": "Hemisphere", "pt": "Hemisfério", "fr": "Hémisphère", "de": "Halbkugel", "it": "Emisfero", "ja": "半球", "zh": "半球体", "ko": "반구", "ar": "نصف كرة" },
+    "keywords": {
+      "es": ["cúpula", "domo", "media esfera", "bóveda", "primitiva 3D", "sólido 3D"],
+      "en": ["dome", "half sphere", "cupola", "vault", "3D primitive", "3D solid"]
+    }
+  },
+  "cone": {
+    "label": { "es": "Cono", "en": "Cone", "pt": "Cone", "fr": "Cône", "de": "Kegel", "it": "Cono", "ja": "円錐", "zh": "圆锥体", "ko": "원뿔", "ar": "مخروط" },
+    "keywords": {
+      "es": ["primitiva 3D", "sólido 3D", "volumen cónico", "embudo", "punta", "cucurucho"],
+      "en": ["3D primitive", "3D solid", "conical volume", "funnel", "tip", "taper"]
+    }
+  },
+  "pyramid": {
+    "label": { "es": "Pirámide", "en": "Pyramid", "pt": "Pirâmide", "fr": "Pyramide", "de": "Pyramide", "it": "Piramide", "ja": "四角錐", "zh": "四棱锥", "ko": "사각뿔", "ar": "هرم" },
+    "keywords": {
+      "es": ["base cuadrada", "primitiva 3D", "sólido 3D", "volumen piramidal", "poliedro", "cúspide"],
+      "en": ["square base", "3D primitive", "3D solid", "pyramidal volume", "polyhedron", "apex"]
+    }
+  },
+  "tetrahedron": {
+    "label": { "es": "Tetraedro", "en": "Tetrahedron", "pt": "Tetraedro", "fr": "Tétraèdre", "de": "Tetraeder", "it": "Tetraedro", "ja": "四面体", "zh": "四面体", "ko": "사면체", "ar": "رباعي الأوجه" },
+    "keywords": {
+      "es": ["pirámide triangular", "primitiva 3D", "sólido 3D", "poliedro", "cuatro caras", "sólido platónico"],
+      "en": ["triangular pyramid", "3D primitive", "3D solid", "polyhedron", "four faces", "platonic solid"]
+    }
+  },
+  "prism": {
+    "label": { "es": "Prisma triangular", "en": "Triangular prism", "pt": "Prisma triangular", "fr": "Prisme triangulaire", "de": "Dreiecksprisma", "it": "Prisma triangolare", "ja": "三角柱", "zh": "三棱柱", "ko": "삼각기둥", "ar": "منشور ثلاثي" },
+    "keywords": {
+      "es": ["primitiva 3D", "sólido 3D", "volumen prismático", "poliedro", "dos bases triangulares", "óptica"],
+      "en": ["3D primitive", "3D solid", "prism volume", "polyhedron", "two triangular bases", "optics"]
+    }
+  },
+  "prism-hexagonal": {
+    "label": { "es": "Prisma hexagonal", "en": "Hexagonal prism", "pt": "Prisma hexagonal", "fr": "Prisme hexagonal", "de": "Sechseckiges Prisma", "it": "Prisma esagonale", "ja": "六角柱", "zh": "六棱柱", "ko": "육각기둥", "ar": "منشور سداسي" },
+    "keywords": {
+      "es": ["columna hexagonal", "cristal", "casilla de juego 3D", "ficha", "primitiva 3D", "sólido 3D"],
+      "en": ["hex column", "crystal", "3D game tile", "token", "3D primitive", "3D solid"]
+    }
+  },
+  "cuboid": {
+    "label": { "es": "Prisma rectangular", "en": "Cuboid", "pt": "Paralelepípedo", "fr": "Pavé droit", "de": "Quader", "it": "Parallelepipedo", "ja": "直方体", "zh": "长方体", "ko": "직육면체", "ar": "متوازي مستطيلات" },
+    "keywords": {
+      "es": ["caja", "ortoedro", "paralelepípedo", "primitiva 3D", "sólido 3D", "volumen rectangular", "ladrillo"],
+      "en": ["box", "rectangular prism", "rectangular box", "3D primitive", "3D solid", "rectangular volume", "brick"]
+    }
+  },
+  "octahedron": {
+    "label": { "es": "Octaedro", "en": "Octahedron", "pt": "Octaedro", "fr": "Octaèdre", "de": "Oktaeder", "it": "Ottaedro", "ja": "八面体", "zh": "八面体", "ko": "팔면체", "ar": "ثماني الأوجه" },
+    "keywords": {
+      "es": ["poliedro", "cristal", "ocho caras", "sólido platónico", "primitiva 3D", "diamante 3D", "gema"],
+      "en": ["polyhedron", "crystal", "eight faces", "platonic solid", "3D primitive", "3D diamond", "gem"]
+    }
+  },
+  "icosahedron": {
+    "label": { "es": "Icosaedro", "en": "Icosahedron", "pt": "Icosaedro", "fr": "Icosaèdre", "de": "Ikosaeder", "it": "Icosaedro", "ja": "二十面体", "zh": "二十面体", "ko": "이십면체", "ar": "عشروني الأوجه" },
+    "keywords": {
+      "es": ["poliedro", "veinte caras", "low poly", "malla 3D", "dado de 20 caras", "d20", "sólido platónico"],
+      "en": ["polyhedron", "twenty faces", "low poly", "3D mesh", "twenty-sided die", "d20", "platonic solid"]
+    }
+  },
+  "torus": {
+    "label": { "es": "Toroide", "en": "Torus", "pt": "Toro", "fr": "Tore", "de": "Torus", "it": "Toro", "ja": "トーラス", "zh": "圆环体", "ko": "토러스", "ar": "طارة" },
+    "keywords": {
+      "es": ["dona 3D", "anillo 3D", "rosca", "flotador", "toro", "primitiva 3D", "sólido 3D"],
+      "en": ["3D donut", "3D ring", "doughnut", "inner tube", "toroid", "3D primitive", "3D solid"]
+    }
+  },
+  "cube-transparent": {
+    "label": { "es": "Cubo transparente", "en": "Transparent cube", "pt": "Cubo transparente", "fr": "Cube transparent", "de": "Transparenter Würfel", "it": "Cubo trasparente", "ja": "透明な立方体", "zh": "透明立方体", "ko": "투명한 큐브", "ar": "مكعب شفاف" },
+    "keywords": {
+      "es": ["estructura alámbrica", "wireframe", "rayos X", "vista a través", "caja delimitadora", "aristas ocultas", "malla"],
+      "en": ["wireframe", "x-ray", "see-through", "bounding box", "hidden edges", "mesh", "3D bounds"]
+    }
+  },
+  "capsule-3d": {
+    "label": { "es": "Cápsula 3D", "en": "3D capsule", "pt": "Cápsula 3D", "fr": "Capsule 3D", "de": "3D-Kapsel", "it": "Capsula 3D", "ja": "3Dカプセル", "zh": "3D 胶囊体", "ko": "3D 캡슐", "ar": "كبسولة ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["primitiva 3D", "colisionador", "motor de juego", "personaje", "pastilla", "sólido 3D"],
+      "en": ["3D primitive", "collider", "game engine", "character controller", "pill", "3D solid"]
+    }
+  },
+  "wedge": {
+    "label": { "es": "Cuña", "en": "Wedge", "pt": "Cunha", "fr": "Coin", "de": "Keil", "it": "Cuneo", "ja": "くさび", "zh": "楔形", "ko": "쐐기", "ar": "إسفين" },
+    "keywords": {
+      "es": ["rampa", "plano inclinado", "pendiente", "calza", "primitiva 3D", "sólido 3D"],
+      "en": ["ramp", "inclined plane", "incline", "chock", "3D primitive", "3D solid"]
+    }
+  },
+  "shapes-3d": {
+    "label": { "es": "Formas 3D", "en": "3D shapes", "pt": "Formas 3D", "fr": "Formes 3D", "de": "3D-Formen", "it": "Forme 3D", "ja": "3D図形", "zh": "3D 形状", "ko": "3D 도형", "ar": "أشكال ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["insertar objeto 3D", "primitivas 3D", "modelado 3D", "sólidos", "volúmenes", "cuerpos geométricos", "geometría 3D"],
+      "en": ["insert 3D object", "3D primitives", "3D modeling", "solids", "volumes", "geometric solids", "3D geometry"]
+    }
+  },
+  "line-segment": {
+    "label": { "es": "Segmento de recta", "en": "Line segment", "pt": "Segmento de reta", "fr": "Segment", "de": "Strecke", "it": "Segmento", "ja": "線分", "zh": "线段", "ko": "선분", "ar": "قطعة مستقيمة" },
+    "keywords": {
+      "es": ["herramienta de línea", "línea recta", "dos puntos", "trazo", "dibujar línea", "geometría"],
+      "en": ["line tool", "straight line", "two points", "stroke", "draw line", "geometry"]
+    }
+  },
+  "line-curved": {
+    "label": { "es": "Conector curvo", "en": "Curved connector", "pt": "Conector curvo", "fr": "Connecteur courbe", "de": "Gebogener Verbinder", "it": "Connettore curvo", "ja": "曲線コネクタ", "zh": "曲线连接线", "ko": "곡선 연결선", "ar": "موصل منحني" },
+    "keywords": {
+      "es": ["línea curva", "curva", "diagrama", "flecha curva", "estilo de línea", "unir nodos", "herramienta de curva"],
+      "en": ["curved line", "curve", "diagram", "curved arrow", "line style", "connect nodes", "curve tool"]
+    }
+  },
+  "line-elbow": {
+    "label": { "es": "Conector angular", "en": "Elbow connector", "pt": "Conector angulado", "fr": "Connecteur en angle", "de": "Gewinkelte Verbindung", "it": "Connettore a gomito", "ja": "カギ線コネクタ", "zh": "肘形连接线", "ko": "꺾인 연결선", "ar": "موصل مرفقي" },
+    "keywords": {
+      "es": ["codo", "ángulo recto", "ortogonal", "diagrama de flujo", "estilo de conector", "escalonado", "unir nodos"],
+      "en": ["elbow", "right angle", "orthogonal", "flowchart", "connector style", "stepped line", "connect nodes"]
+    }
+  },
+  "polyline": {
+    "label": { "es": "Polilínea", "en": "Polyline", "pt": "Polilinha", "fr": "Polyligne", "de": "Polylinie", "it": "Polilinea", "ja": "ポリライン", "zh": "折线", "ko": "폴리라인", "ar": "خط متعدد" },
+    "keywords": {
+      "es": ["línea quebrada", "segmentos unidos", "varios puntos", "trayecto", "vértices", "trazo abierto", "CAD"],
+      "en": ["broken line", "connected segments", "multi-point", "path", "vertices", "open path", "CAD"]
+    }
+  },
+  "line-dashed": {
+    "label": { "es": "Línea discontinua", "en": "Dashed line", "pt": "Linha tracejada", "fr": "Ligne en tirets", "de": "Gestrichelte Linie", "it": "Linea tratteggiata", "ja": "破線", "zh": "虚线", "ko": "파선", "ar": "خط متقطع" },
+    "keywords": {
+      "es": ["guiones", "rayas", "estilo de línea", "estilo de trazo", "línea de corte", "borde discontinuo"],
+      "en": ["dashes", "dash", "line style", "stroke style", "cut line", "dashed border"]
+    }
+  },
+  "line-dotted": {
+    "label": { "es": "Línea punteada", "en": "Dotted line", "pt": "Linha pontilhada", "fr": "Ligne pointillée", "de": "Gepunktete Linie", "it": "Linea punteggiata", "ja": "点線", "zh": "点线", "ko": "점선", "ar": "خط منقط" },
+    "keywords": {
+      "es": ["puntos", "puntitos", "estilo de línea", "estilo de trazo", "borde punteado", "línea guía"],
+      "en": ["dots", "dot pattern", "line style", "stroke style", "dotted border", "leader line"]
+    }
+  },
+  "line-dash-dot": {
+    "label": { "es": "Línea de trazo y punto", "en": "Dash-dot line", "pt": "Linha traço-ponto", "fr": "Ligne tiret-point", "de": "Strichpunktlinie", "it": "Linea tratto-punto", "ja": "一点鎖線", "zh": "点划线", "ko": "일점쇄선", "ar": "خط شرطة ونقطة" },
+    "keywords": {
+      "es": ["línea de centro", "eje", "dibujo técnico", "planos", "estilo de línea", "gráfica", "trazo mixto"],
+      "en": ["center line", "axis", "technical drawing", "blueprint", "line style", "chart", "chain line"]
+    }
+  },
+  "line-wavy": {
+    "label": { "es": "Línea ondulada", "en": "Wavy line", "pt": "Linha ondulada", "fr": "Ligne ondulée", "de": "Wellenlinie", "it": "Linea ondulata", "ja": "波線", "zh": "波浪线", "ko": "물결선", "ar": "خط متموج" },
+    "keywords": {
+      "es": ["onda", "subrayado ondulado", "senoidal", "estilo de línea", "error de ortografía", "ondulación"],
+      "en": ["wave", "wavy underline", "sine", "line style", "spelling error", "squiggle"]
+    }
+  },
+  "line-zigzag": {
+    "label": { "es": "Línea en zigzag", "en": "Zigzag line", "pt": "Linha em zigue-zague", "fr": "Ligne en zigzag", "de": "Zickzacklinie", "it": "Linea a zigzag", "ja": "ジグザグ線", "zh": "锯齿线", "ko": "지그재그 선", "ar": "خط متعرج" },
+    "keywords": {
+      "es": ["dientes de sierra", "borde dentado", "estilo de línea", "picos", "trazo quebrado", "patrón chevrón"],
+      "en": ["sawtooth", "jagged edge", "line style", "peaks", "serrated", "chevron pattern"]
+    }
+  },
+  "line-weight": {
+    "label": { "es": "Grosor de línea", "en": "Line weight", "pt": "Espessura da linha", "fr": "Épaisseur du trait", "de": "Linienstärke", "it": "Spessore linea", "ja": "線の太さ", "zh": "线条粗细", "ko": "선 굵기", "ar": "سُمك الخط" },
+    "keywords": {
+      "es": ["ancho de trazo", "espesor", "grueso", "delgado", "contorno", "tamaño de pincel", "peso de línea"],
+      "en": ["stroke width", "thickness", "thick", "thin", "outline", "brush size", "stroke weight"]
+    }
+  },
+  "line-styles": {
+    "label": { "es": "Estilos de línea", "en": "Line styles", "pt": "Estilos de linha", "fr": "Styles de trait", "de": "Linienstile", "it": "Stili linea", "ja": "線のスタイル", "zh": "线条样式", "ko": "선 스타일", "ar": "أنماط الخطوط" },
+    "keywords": {
+      "es": ["tipo de trazo", "continua", "discontinua", "punteada", "selector de trazo", "guiones", "contorno"],
+      "en": ["stroke type", "solid", "dashed", "dotted", "stroke picker", "dash pattern", "outline"]
+    }
+  },
+  "angle": {
+    "label": { "es": "Ángulo", "en": "Angle", "pt": "Ângulo", "fr": "Angle", "de": "Winkel", "it": "Angolo", "ja": "角度", "zh": "角度", "ko": "각도", "ar": "زاوية" },
+    "keywords": {
+      "es": ["grados", "rotación", "girar", "inclinación", "medir", "vértice", "geometría"],
+      "en": ["degrees", "rotation", "rotate", "tilt", "measure", "vertex", "geometry"]
+    }
+  },
+  "right-angle": {
+    "label": { "es": "Ángulo recto", "en": "Right angle", "pt": "Ângulo reto", "fr": "Angle droit", "de": "Rechter Winkel", "it": "Angolo retto", "ja": "直角", "zh": "直角", "ko": "직각", "ar": "زاوية قائمة" },
+    "keywords": {
+      "es": ["90 grados", "esquina cuadrada", "escuadra", "perpendicular", "esquina", "geometría"],
+      "en": ["90 degrees", "square corner", "set square", "perpendicular", "corner", "geometry"]
+    }
+  },
+  "obtuse-angle": {
+    "label": { "es": "Ángulo obtuso", "en": "Obtuse angle", "pt": "Ângulo obtuso", "fr": "Angle obtus", "de": "Stumpfer Winkel", "it": "Angolo ottuso", "ja": "鈍角", "zh": "钝角", "ko": "둔각", "ar": "زاوية منفرجة" },
+    "keywords": {
+      "es": ["ángulo abierto", "más de 90 grados", "ángulo amplio", "grados", "abertura", "geometría"],
+      "en": ["wide angle", "over 90 degrees", "open angle", "degrees", "aperture", "geometry"]
+    }
+  },
+  "protractor": {
+    "label": { "es": "Transportador", "en": "Protractor", "pt": "Transferidor", "fr": "Rapporteur", "de": "Winkelmesser", "it": "Goniometro", "ja": "分度器", "zh": "量角器", "ko": "각도기", "ar": "منقلة" },
+    "keywords": {
+      "es": ["medir ángulos", "grados", "herramienta de ángulo", "útiles escolares", "semicírculo graduado", "geometría"],
+      "en": ["measure angles", "degrees", "angle tool", "school supplies", "angle gauge", "geometry"]
+    }
+  },
+  "lines-parallel": {
+    "label": { "es": "Líneas paralelas", "en": "Parallel lines", "pt": "Linhas paralelas", "fr": "Lignes parallèles", "de": "Parallele Linien", "it": "Linee parallele", "ja": "平行線", "zh": "平行线", "ko": "평행선", "ar": "خطوط متوازية" },
+    "keywords": {
+      "es": ["paralelismo", "restricción paralela", "misma dirección", "alinear", "CAD", "geometría"],
+      "en": ["parallelism", "parallel constraint", "same direction", "align", "CAD", "geometry"]
+    }
+  },
+  "lines-perpendicular": {
+    "label": { "es": "Líneas perpendiculares", "en": "Perpendicular lines", "pt": "Linhas perpendiculares", "fr": "Lignes perpendiculaires", "de": "Senkrechte Linien", "it": "Linee perpendicolari", "ja": "垂直な線", "zh": "垂直线", "ko": "직교하는 선", "ar": "خطوط متعامدة" },
+    "keywords": {
+      "es": ["perpendicularidad", "restricción perpendicular", "ángulo recto", "ortogonal", "CAD", "geometría"],
+      "en": ["perpendicularity", "perpendicular constraint", "right angle", "orthogonal", "CAD", "geometry"]
+    }
+  },
+  "tangent": {
+    "label": { "es": "Tangente", "en": "Tangent", "pt": "Tangente", "fr": "Tangente", "de": "Tangente", "it": "Tangente", "ja": "接線", "zh": "切线", "ko": "접선", "ar": "مماس" },
+    "keywords": {
+      "es": ["toca la curva", "punto de contacto", "restricción tangente", "curva", "círculo", "CAD", "geometría"],
+      "en": ["touching a curve", "point of contact", "tangent constraint", "curve", "circle", "CAD", "geometry"]
+    }
+  },
+  "symmetry": {
+    "label": { "es": "Simetría", "en": "Symmetry", "pt": "Simetria", "fr": "Symétrie", "de": "Symmetrie", "it": "Simmetria", "ja": "対称", "zh": "对称", "ko": "대칭", "ar": "تناظر" },
+    "keywords": {
+      "es": ["eje", "espejo", "reflejar", "guía de dibujo", "reflexión", "mitades iguales", "equilibrio"],
+      "en": ["axis", "mirror", "reflect", "drawing guide", "reflection", "equal halves", "balance"]
+    }
+  },
+  "symmetry-quadrant": {
+    "label": { "es": "Simetría en cuadrantes", "en": "Four-way symmetry", "pt": "Simetria em quadrantes", "fr": "Symétrie en quadrants", "de": "Vierfache Symmetrie", "it": "Simmetria in quadranti", "ja": "4方向対称", "zh": "四向对称", "ko": "4방향 대칭", "ar": "تناظر رباعي" },
+    "keywords": {
+      "es": ["cuatro cuadrantes", "doble eje", "espejo en ambos ejes", "guía de dibujo", "reflejar", "mandala", "caleidoscopio"],
+      "en": ["quadrants", "two axes", "mirror both axes", "drawing guide", "reflect", "mandala", "kaleidoscope"]
+    }
+  },
+  "grid": {
+    "label": { "es": "Cuadrícula", "en": "Grid", "pt": "Grade", "fr": "Grille", "de": "Raster", "it": "Griglia", "ja": "グリッド", "zh": "网格", "ko": "격자", "ar": "شبكة" },
+    "keywords": {
+      "es": ["papel cuadriculado", "regla de tercios", "patrón", "guías", "retícula", "malla", "cuadros"],
+      "en": ["graph paper", "rule of thirds", "pattern", "guides", "lattice", "mesh", "squares"]
+    }
+  },
+  "grid-dots": {
+    "label": { "es": "Cuadrícula de puntos", "en": "Dot grid", "pt": "Grade de pontos", "fr": "Grille de points", "de": "Punktraster", "it": "Griglia a punti", "ja": "ドットグリッド", "zh": "点阵网格", "ko": "점 격자", "ar": "شبكة نقطية" },
+    "keywords": {
+      "es": ["papel punteado", "puntos de ajuste", "lienzo punteado", "lunares", "bullet journal", "patrón de puntos"],
+      "en": ["dotted paper", "snap points", "dotted canvas", "polka dots", "bullet journal", "dot pattern"]
+    }
+  },
+  "grid-isometric": {
+    "label": { "es": "Cuadrícula isométrica", "en": "Isometric grid", "pt": "Grade isométrica", "fr": "Grille isométrique", "de": "Isometrisches Raster", "it": "Griglia isometrica", "ja": "アイソメトリックグリッド", "zh": "等距网格", "ko": "아이소메트릭 격자", "ar": "شبكة متساوية القياس" },
+    "keywords": {
+      "es": ["dibujo isométrico", "red triangular", "triángulos", "guía 3D", "axonometría", "papel isométrico"],
+      "en": ["isometric drawing", "triangle lattice", "triangles", "3D guide", "axonometric", "isometric paper"]
+    }
+  },
+  "grid-perspective": {
+    "label": { "es": "Cuadrícula en perspectiva", "en": "Perspective grid", "pt": "Grade de perspectiva", "fr": "Grille de perspective", "de": "Perspektivraster", "it": "Griglia prospettica", "ja": "パースグリッド", "zh": "透视网格", "ko": "원근 격자", "ar": "شبكة منظور" },
+    "keywords": {
+      "es": ["punto de fuga", "perspectiva de un punto", "plano de suelo", "piso en realidad aumentada", "guía 3D", "horizonte"],
+      "en": ["vanishing point", "one-point perspective", "ground plane", "AR floor", "3D guide", "horizon"]
+    }
+  },
+  "grid-polar": {
+    "label": { "es": "Cuadrícula polar", "en": "Polar grid", "pt": "Grade polar", "fr": "Grille polaire", "de": "Polarraster", "it": "Griglia polare", "ja": "極座標グリッド", "zh": "极坐标网格", "ko": "극좌표 격자", "ar": "شبكة قطبية" },
+    "keywords": {
+      "es": ["coordenadas polares", "diseño radial", "círculos concéntricos", "gráfica de radar", "guía radial", "diana"],
+      "en": ["polar coordinates", "radial layout", "concentric circles", "radar chart", "radial guide", "target"]
+    }
+  },
+  "honeycomb": {
+    "label": { "es": "Panal", "en": "Honeycomb", "pt": "Favo de mel", "fr": "Nid d’abeille", "de": "Wabenmuster", "it": "Nido d’ape", "ja": "ハニカム", "zh": "蜂窝", "ko": "벌집", "ar": "خلية نحل" },
+    "keywords": {
+      "es": ["cuadrícula hexagonal", "hexágonos", "mosaico", "mapa hexagonal", "patrón", "colmena", "teselado"],
+      "en": ["hex grid", "hexagons", "tiles", "hex map", "pattern", "beehive", "tessellation"]
+    }
+  },
+  "checkerboard": {
+    "label": { "es": "Patrón de cuadros", "en": "Checkerboard", "pt": "Padrão xadrez", "fr": "Damier", "de": "Schachbrettmuster", "it": "Scacchiera", "ja": "市松模様", "zh": "棋盘格", "ko": "체크무늬", "ar": "نمط رقعة الشطرنج" },
+    "keywords": {
+      "es": ["fondo transparente", "transparencia", "ajedrez", "damas", "damero", "tablero", "canal alfa"],
+      "en": ["transparent background", "transparency", "chess", "checkers", "checkered", "alpha channel"]
+    }
+  },
+  "stripes": {
+    "label": { "es": "Rayas", "en": "Stripes", "pt": "Listras", "fr": "Rayures", "de": "Streifen", "it": "Righe", "ja": "ストライプ", "zh": "条纹", "ko": "줄무늬", "ar": "نمط مخطط" },
+    "keywords": {
+      "es": ["achurado", "textura", "líneas diagonales", "patrón", "sombreado", "relleno de líneas"],
+      "en": ["hatch", "texture", "diagonal lines", "pattern", "shading", "line fill"]
+    }
+  },
+  "crosshatch": {
+    "label": { "es": "Trama cruzada", "en": "Crosshatch", "pt": "Hachura cruzada", "fr": "Hachures croisées", "de": "Kreuzschraffur", "it": "Tratteggio incrociato", "ja": "クロスハッチ", "zh": "交叉影线", "ko": "크로스해칭", "ar": "تظليل متقاطع" },
+    "keywords": {
+      "es": ["celosía", "malla", "achurado", "rombos", "textura", "sombreado", "red"],
+      "en": ["lattice", "mesh fill", "hatching", "diamonds", "texture", "shading", "net"]
+    }
+  },
+  "golden-ratio": {
+    "label": { "es": "Proporción áurea", "en": "Golden ratio", "pt": "Proporção áurea", "fr": "Nombre d’or", "de": "Goldener Schnitt", "it": "Sezione aurea", "ja": "黄金比", "zh": "黄金比例", "ko": "황금비", "ar": "النسبة الذهبية" },
+    "keywords": {
+      "es": ["espiral áurea", "rectángulo áureo", "guía de composición", "fibonacci", "phi", "proporción divina", "número de oro"],
+      "en": ["golden spiral", "golden rectangle", "composition guide", "fibonacci", "phi", "divine proportion", "golden section"]
+    }
+  },
+  "diameter": {
+    "label": { "es": "Diámetro", "en": "Diameter", "pt": "Diâmetro", "fr": "Diamètre", "de": "Durchmesser", "it": "Diametro", "ja": "直径", "zh": "直径", "ko": "지름", "ar": "قطر" },
+    "keywords": {
+      "es": ["ancho", "medida", "círculo", "tamaño de rueda", "calibre", "tubería", "objetos redondos"],
+      "en": ["width", "measure", "circle", "wheel size", "caliber", "pipe size", "round items"]
+    }
+  },
+  "radius": {
+    "label": { "es": "Radio del círculo", "en": "Radius", "pt": "Raio", "fr": "Rayon", "de": "Radius", "it": "Raggio", "ja": "半径", "zh": "半径", "ko": "반지름", "ar": "نصف القطر" },
+    "keywords": {
+      "es": ["distancia al centro", "medida", "tamaño del círculo", "alcance", "redondeo de esquinas", "geometría"],
+      "en": ["from center", "measure", "circle size", "range", "corner rounding", "geometry"]
+    }
+  },
+  "circumference": {
+    "label": { "es": "Circunferencia", "en": "Circumference", "pt": "Circunferência", "fr": "Circonférence", "de": "Kreisumfang", "it": "Circonferenza", "ja": "円周", "zh": "圆周", "ko": "원둘레", "ar": "محيط الدائرة" },
+    "keywords": {
+      "es": ["contorno", "medida alrededor", "talla de anillo", "perímetro del círculo", "medida de cintura", "vuelta completa"],
+      "en": ["girth", "around a circle", "ring size", "circle perimeter", "waist measurement", "full turn"]
+    }
+  },
+  "area": {
+    "label": { "es": "Área", "en": "Surface area", "pt": "Área de superfície", "fr": "Aire", "de": "Fläche", "it": "Area", "ja": "面積", "zh": "面积", "ko": "면적", "ar": "المساحة" },
+    "keywords": {
+      "es": ["superficie", "metros cuadrados", "m²", "tamaño de la región", "terreno", "metraje", "medida"],
+      "en": ["footprint", "square meters", "m²", "region size", "floor space", "square footage", "measure"]
+    }
+  },
+  "perimeter": {
+    "label": { "es": "Perímetro", "en": "Perimeter", "pt": "Perímetro", "fr": "Périmètre", "de": "Umfang", "it": "Perimetro", "ja": "周長", "zh": "周长", "ko": "둘레", "ar": "المحيط" },
+    "keywords": {
+      "es": ["contorno", "borde", "longitud del borde", "cerca", "barda", "linderos", "medida"],
+      "en": ["outline", "border", "edge length", "fencing", "boundary", "property line", "measure"]
+    }
+  },
+  "dimensions": {
+    "label": { "es": "Dimensiones", "en": "Dimensions", "pt": "Dimensões", "fr": "Dimensions", "de": "Abmessungen", "it": "Dimensioni", "ja": "寸法", "zh": "尺寸", "ko": "치수", "ar": "الأبعاد" },
+    "keywords": {
+      "es": ["ancho y alto", "medidas", "tamaño", "largo", "cotas", "tamaño del producto", "2D"],
+      "en": ["width and height", "measurements", "size", "length", "spec sheet", "product size", "2D"]
+    }
+  },
+  "dimensions-3d": {
+    "label": { "es": "Dimensiones 3D", "en": "3D dimensions", "pt": "Dimensões 3D", "fr": "Dimensions 3D", "de": "3D-Abmessungen", "it": "Dimensioni 3D", "ja": "3D寸法", "zh": "三维尺寸", "ko": "3D 치수", "ar": "الأبعاد الثلاثية" },
+    "keywords": {
+      "es": ["largo, ancho y alto", "volumen", "tamaño del paquete", "medidas de envío", "caja", "capacidad", "profundidad"],
+      "en": ["length width height", "volume", "package size", "shipping size", "box", "capacity", "depth"]
+    }
+  },
+  "dimension-width": {
+    "label": { "es": "Medida de ancho", "en": "Width measurement", "pt": "Medida de largura", "fr": "Mesure de la largeur", "de": "Breitenmaß", "it": "Misura della larghezza", "ja": "幅の寸法", "zh": "宽度尺寸", "ko": "너비 치수", "ar": "قياس العرض" },
+    "keywords": {
+      "es": ["ancho", "anchura", "medida horizontal", "ficha técnica", "especificaciones", "de lado a lado"],
+      "en": ["width", "breadth", "horizontal measure", "spec sheet", "specifications", "side to side"]
+    }
+  },
+  "dimension-height": {
+    "label": { "es": "Medida de altura", "en": "Height measurement", "pt": "Medida de altura", "fr": "Mesure de la hauteur", "de": "Höhenmaß", "it": "Misura dell’altezza", "ja": "高さの寸法", "zh": "高度尺寸", "ko": "높이 치수", "ar": "قياس الارتفاع" },
+    "keywords": {
+      "es": ["alto", "altura", "medida vertical", "ficha técnica", "especificaciones", "de arriba abajo"],
+      "en": ["height", "tall", "vertical measure", "spec sheet", "specifications", "top to bottom"]
+    }
+  },
+  "dimension-depth": {
+    "label": { "es": "Medida de profundidad", "en": "Depth measurement", "pt": "Medida de profundidade", "fr": "Mesure de la profondeur", "de": "Tiefenmaß", "it": "Misura della profondità", "ja": "奥行きの寸法", "zh": "深度尺寸", "ko": "깊이 치수", "ar": "قياس العمق" },
+    "keywords": {
+      "es": ["fondo", "profundidad", "de frente a fondo", "ficha técnica", "especificaciones", "eje z"],
+      "en": ["depth", "front to back", "spec sheet", "specifications", "thickness", "z axis"]
+    }
+  },
+  "dimension-diagonal": {
+    "label": { "es": "Medida diagonal", "en": "Diagonal measurement", "pt": "Medida diagonal", "fr": "Mesure de la diagonale", "de": "Diagonalmaß", "it": "Misura della diagonale", "ja": "対角線の寸法", "zh": "对角线尺寸", "ko": "대각선 치수", "ar": "القياس القطري" },
+    "keywords": {
+      "es": ["tamaño de pantalla", "pulgadas", "televisión", "monitor", "de esquina a esquina", "rectángulo"],
+      "en": ["screen size", "inches", "tv", "monitor", "corner to corner", "rectangle"]
+    }
+  }
+}

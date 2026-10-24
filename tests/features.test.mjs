@@ -15,7 +15,9 @@ const names = (q, o) => searchIcons(q, o).map((r) => r.name);
 test('search: by meaning, in Spanish and English', () => {
   assert.ok(names('cobrar', { limit: 6 }).includes('wallet'));
   assert.equal(names('campana')[0], 'bell');
-  assert.equal(names('notifications')[0] === 'bell' || names('notifications').slice(0, 3).includes('bell'), true);
+  // The icon named for it comes first (plurals fold); the bell is among the first results
+  assert.equal(names('notifications')[0], 'notification');
+  assert.ok(names('notifications', { limit: 8 }).includes('bell'));
   assert.equal(names('carrito de compras')[0], 'cart');
 });
 

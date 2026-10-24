@@ -1,0 +1,485 @@
+{
+  "calendar-week": {
+    "label": { "es": "Vista semanal", "en": "Week view", "pt": "Visualização semanal", "fr": "Vue semaine", "de": "Wochenansicht", "it": "Vista settimanale", "ja": "週表示", "zh": "周视图", "ko": "주 보기", "ar": "عرض الأسبوع" },
+    "keywords": {
+      "es": ["semana", "siete días", "esta semana", "calendario semanal", "planificador semanal", "lunes a domingo", "cambiar vista"],
+      "en": ["seven days", "this week", "weekly calendar", "weekly planner", "monday to sunday", "switch view", "week schedule"]
+    }
+  },
+  "calendar-month": {
+    "label": { "es": "Vista mensual", "en": "Month view", "pt": "Visualização mensal", "fr": "Vue mois", "de": "Monatsansicht", "it": "Vista mensile", "ja": "月表示", "zh": "月视图", "ko": "월 보기", "ar": "عرض الشهر" },
+    "keywords": {
+      "es": ["mes", "este mes", "calendario mensual", "cuadrícula de días", "planificador mensual", "fechas del mes", "cambiar vista"],
+      "en": ["this month", "monthly calendar", "day grid", "monthly planner", "dates of the month", "monthly overview", "switch view"]
+    }
+  },
+  "calendar-year": {
+    "label": { "es": "Vista anual", "en": "Year view", "pt": "Visualização anual", "fr": "Vue année", "de": "Jahresansicht", "it": "Vista annuale", "ja": "年表示", "zh": "年视图", "ko": "연 보기", "ar": "عرض السنة" },
+    "keywords": {
+      "es": ["año", "doce meses", "calendario anual", "planeación anual", "año completo", "resumen del año", "cambiar vista"],
+      "en": ["twelve months", "annual calendar", "annual planning", "full year", "year at a glance", "yearly overview", "switch view"]
+    }
+  },
+  "calendar-agenda": {
+    "label": { "es": "Vista de agenda", "en": "Agenda view", "pt": "Visualização de agenda", "fr": "Vue planning", "de": "Terminübersicht", "it": "Vista agenda", "ja": "スケジュール表示", "zh": "日程视图", "ko": "일정 목록", "ar": "عرض جدول المواعيد" },
+    "keywords": {
+      "es": ["lista de eventos", "próximos eventos", "itinerario", "orden cronológico", "programa del día", "pendientes", "cambiar vista"],
+      "en": ["event list", "upcoming events", "schedule", "itinerary", "chronological list", "what's next", "switch view"]
+    }
+  },
+  "calendar-stack": {
+    "label": { "es": "Mis calendarios", "en": "My calendars", "pt": "Meus calendários", "fr": "Mes calendriers", "de": "Meine Kalender", "it": "I miei calendari", "ja": "マイカレンダー", "zh": "我的日历", "ko": "내 캘린더", "ar": "تقويماتي" },
+    "keywords": {
+      "es": ["varios calendarios", "lista de calendarios", "superponer calendarios", "otros calendarios", "calendario suscrito", "capas", "mostrar u ocultar calendarios"],
+      "en": ["multiple calendars", "calendar list", "overlay calendars", "other calendars", "subscribed calendar", "layers", "show or hide calendars"]
+    }
+  },
+  "calendar-blank": {
+    "label": { "es": "Calendario vacío", "en": "Empty calendar", "pt": "Calendário vazio", "fr": "Calendrier vide", "de": "Leerer Kalender", "it": "Calendario vuoto", "ja": "空のカレンダー", "zh": "空日历", "ko": "빈 캘린더", "ar": "تقويم فارغ" },
+    "keywords": {
+      "es": ["sin eventos", "nada programado", "sin fecha", "día libre", "estado vacío", "agenda libre", "disponible"],
+      "en": ["no events", "nothing scheduled", "no date set", "free day", "empty state", "clear schedule", "available"]
+    }
+  },
+  "calendar-tear-off": {
+    "label": { "es": "Calendario diario", "en": "Tear-off calendar", "pt": "Folhinha", "fr": "Éphéméride", "de": "Abreißkalender", "it": "Calendario a strappo", "ja": "日めくりカレンダー", "zh": "手撕日历", "ko": "일력", "ar": "تقويم يومي" },
+    "keywords": {
+      "es": ["hoja del día", "vista diaria", "día a día", "pasa el día", "fecha del día", "calendario de escritorio", "arrancar la hoja"],
+      "en": ["daily calendar", "page a day", "day view", "day by day", "days passing", "today's date", "desk calendar"]
+    }
+  },
+  "timeline": {
+    "label": { "es": "Línea de tiempo", "en": "Timeline", "pt": "Linha do tempo", "fr": "Chronologie", "de": "Zeitleiste", "it": "Sequenza temporale", "ja": "タイムライン", "zh": "时间线", "ko": "타임라인", "ar": "الخط الزمني" },
+    "keywords": {
+      "es": ["cronología", "historial del proyecto", "hitos", "secuencia de eventos", "roadmap", "etapas", "cronograma"],
+      "en": ["chronology", "project history", "milestones", "sequence of events", "roadmap", "stages", "gantt"]
+    }
+  },
+  "timeline-list": {
+    "label": { "es": "Historial de actividad", "en": "Activity timeline", "pt": "Histórico de atividades", "fr": "Fil d’activité", "de": "Aktivitätsverlauf", "it": "Cronologia attività", "ja": "アクティビティ履歴", "zh": "活动记录", "ko": "활동 기록", "ar": "سجل النشاط" },
+    "keywords": {
+      "es": ["registro de cambios", "seguimiento del pedido", "bitácora", "paso a paso", "auditoría", "estado del envío", "cronología vertical"],
+      "en": ["changelog", "order tracking", "audit trail", "step by step", "activity feed", "event log", "record history"]
+    }
+  },
+  "time-block": {
+    "label": { "es": "Bloques de tiempo", "en": "Time blocking", "pt": "Blocos de tempo", "fr": "Blocs de temps", "de": "Zeitblöcke", "it": "Blocchi di tempo", "ja": "タイムブロック", "zh": "时间块", "ko": "타임 블록", "ar": "كتل زمنية" },
+    "keywords": {
+      "es": ["horario del día", "planear el día", "agenda por horas", "vista del día", "franjas horarias", "enfoque", "rutina"],
+      "en": ["day schedule", "plan the day", "hourly schedule", "day view", "time slots", "deep work", "routine"]
+    }
+  },
+  "calendar-person": {
+    "label": { "es": "Cita individual", "en": "Appointment", "pt": "Agendamento", "fr": "Rendez-vous", "de": "Terminvereinbarung", "it": "Appuntamento", "ja": "アポイント", "zh": "预约", "ko": "예약", "ar": "موعد" },
+    "keywords": {
+      "es": ["agendar cita", "reunión uno a uno", "disponibilidad", "calendario de alguien", "reservar con", "consulta", "asesoría"],
+      "en": ["book appointment", "one-on-one", "availability", "someone's calendar", "booking", "consultation", "client meeting"]
+    }
+  },
+  "calendar-people": {
+    "label": { "es": "Calendario del equipo", "en": "Team calendar", "pt": "Calendário da equipe", "fr": "Calendrier d’équipe", "de": "Teamkalender", "it": "Calendario del team", "ja": "チームカレンダー", "zh": "团队日历", "ko": "팀 캘린더", "ar": "تقويم الفريق" },
+    "keywords": {
+      "es": ["evento grupal", "disponibilidad compartida", "reunión con varios", "asistentes", "invitados", "reserva grupal", "calendario compartido"],
+      "en": ["group event", "shared availability", "group meeting", "attendees", "guests", "group booking", "shared calendar"]
+    }
+  },
+  "calendar-pin": {
+    "label": { "es": "Evento presencial", "en": "In-person event", "pt": "Evento presencial", "fr": "Événement en présentiel", "de": "Vor-Ort-Termin", "it": "Evento in presenza", "ja": "対面の予定", "zh": "线下活动", "ko": "대면 일정", "ar": "حدث حضوري" },
+    "keywords": {
+      "es": ["lugar del evento", "dirección", "ubicación", "sede", "dónde es", "en persona", "punto de reunión"],
+      "en": ["event location", "venue", "address", "where", "in person", "meeting point", "on site"]
+    }
+  },
+  "calendar-video": {
+    "label": { "es": "Evento por videollamada", "en": "Video call event", "pt": "Evento por videochamada", "fr": "Événement en visio", "de": "Videotermin", "it": "Evento in videochiamata", "ja": "ビデオ通話の予定", "zh": "视频会议日程", "ko": "화상 회의 일정", "ar": "حدث عبر مكالمة فيديو" },
+    "keywords": {
+      "es": ["reunión virtual", "evento en línea", "enlace de la reunión", "webinar", "remoto", "unirse a la llamada", "junta en línea"],
+      "en": ["virtual meeting", "online event", "meeting link", "webinar", "remote", "join call", "video conference"]
+    }
+  },
+  "calendar-phone": {
+    "label": { "es": "Llamada programada", "en": "Scheduled call", "pt": "Chamada agendada", "fr": "Appel programmé", "de": "Geplanter Anruf", "it": "Chiamata programmata", "ja": "予定された通話", "zh": "预约通话", "ko": "예약된 통화", "ar": "مكالمة مجدولة" },
+    "keywords": {
+      "es": ["llamada telefónica", "agendar llamada", "cita por teléfono", "llamada de seguimiento", "devolver la llamada", "opción de llamada", "teléfono"],
+      "en": ["phone call", "book a call", "phone appointment", "follow-up call", "call back", "call option", "phone"]
+    }
+  },
+  "calendar-plane": {
+    "label": { "es": "Fechas de viaje", "en": "Travel dates", "pt": "Datas da viagem", "fr": "Dates de voyage", "de": "Reisedaten", "it": "Date del viaggio", "ja": "旅行の日程", "zh": "出行日期", "ko": "여행 일정", "ar": "مواعيد السفر" },
+    "keywords": {
+      "es": ["viaje", "fuera de la oficina", "ausencia", "vuelo", "vacaciones", "viaje de trabajo", "respuesta automática"],
+      "en": ["trip", "out of office", "away", "flight", "vacation", "business trip", "ooo"]
+    }
+  },
+  "calendar-cake": {
+    "label": { "es": "Calendario de cumpleaños", "en": "Birthday calendar", "pt": "Calendário de aniversários", "fr": "Calendrier des anniversaires", "de": "Geburtstagskalender", "it": "Calendario dei compleanni", "ja": "誕生日カレンダー", "zh": "生日日历", "ko": "생일 캘린더", "ar": "تقويم أعياد الميلاد" },
+    "keywords": {
+      "es": ["aniversario", "fecha especial", "celebración", "cumpleaños de contactos", "felicitar", "recordatorio de cumpleaños", "pastel"],
+      "en": ["anniversary", "special date", "celebration", "contacts' birthdays", "send wishes", "birthday reminder", "cake"]
+    }
+  },
+  "calendar-coin": {
+    "label": { "es": "Fecha de pago", "en": "Payment date", "pt": "Data de pagamento", "fr": "Date de paiement", "de": "Zahlungsdatum", "it": "Data di pagamento", "ja": "支払日", "zh": "付款日期", "ko": "결제일", "ar": "تاريخ الدفع" },
+    "keywords": {
+      "es": ["día de pago", "fecha de cobro", "quincena", "fecha de facturación", "vencimiento del pago", "cargo recurrente", "pago mensual"],
+      "en": ["payday", "billing date", "charge date", "payment due", "billing cycle", "renewal date", "next charge"]
+    }
+  },
+  "calendar-workday": {
+    "label": { "es": "Día hábil", "en": "Business day", "pt": "Dia útil", "fr": "Jour ouvré", "de": "Arbeitstag", "it": "Giorno lavorativo", "ja": "営業日", "zh": "工作日", "ko": "근무일", "ar": "يوم عمل" },
+    "keywords": {
+      "es": ["días laborables", "lunes a viernes", "calendario laboral", "jornada laboral", "entre semana", "calendario de trabajo", "días de oficina"],
+      "en": ["working days", "weekdays", "monday to friday", "work calendar", "workday", "office days", "work schedule"]
+    }
+  },
+  "calendar-sun": {
+    "label": { "es": "Día festivo", "en": "Holiday", "pt": "Feriado", "fr": "Jour férié", "de": "Feiertag", "it": "Giorno festivo", "ja": "祝日", "zh": "节假日", "ko": "공휴일", "ar": "عطلة رسمية" },
+    "keywords": {
+      "es": ["feriado", "día inhábil", "día de descanso", "puente", "calendario de festivos", "asueto", "no laborable"],
+      "en": ["public holiday", "bank holiday", "non-working day", "day off", "long weekend", "holiday calendar", "rest day"]
+    }
+  },
+  "calendar-globe": {
+    "label": { "es": "Calendario público", "en": "Public calendar", "pt": "Calendário público", "fr": "Calendrier public", "de": "Öffentlicher Kalender", "it": "Calendario pubblico", "ja": "公開カレンダー", "zh": "公开日历", "ko": "공개 캘린더", "ar": "تقويم عام" },
+    "keywords": {
+      "es": ["evento público", "visible para todos", "festivos por país", "calendario regional", "compartir con todos", "abierto al público", "eventos de la comunidad"],
+      "en": ["public event", "visible to everyone", "holidays by country", "regional calendar", "share with everyone", "open to the public", "community events"]
+    }
+  },
+  "calendar-bolt": {
+    "label": { "es": "Reserva instantánea", "en": "Instant booking", "pt": "Reserva instantânea", "fr": "Réservation instantanée", "de": "Sofortbuchung", "it": "Prenotazione immediata", "ja": "即時予約", "zh": "即时预订", "ko": "즉시 예약", "ar": "حجز فوري" },
+    "keywords": {
+      "es": ["evento rápido", "agregar rápido", "sin aprobación", "reservar al instante", "confirmación automática", "atajo", "agendar en un clic"],
+      "en": ["quick event", "quick add", "no approval", "book instantly", "auto-confirm", "shortcut", "one-click booking"]
+    }
+  },
+  "calendar-sparkle": {
+    "label": { "es": "Programación inteligente", "en": "Smart scheduling", "pt": "Agendamento inteligente", "fr": "Planification intelligente", "de": "Intelligente Terminplanung", "it": "Pianificazione intelligente", "ja": "スマートスケジュール", "zh": "智能排程", "ko": "스마트 일정 관리", "ar": "جدولة ذكية" },
+    "keywords": {
+      "es": ["ia", "sugerir horario", "asistente", "planear automáticamente", "optimizar agenda", "mejor momento", "programación automática"],
+      "en": ["ai", "suggest a time", "assistant", "auto-schedule", "optimize calendar", "best time", "automatic planning"]
+    }
+  },
+  "calendar-chart": {
+    "label": { "es": "Análisis del tiempo", "en": "Time insights", "pt": "Análise do tempo", "fr": "Analyse du temps", "de": "Zeitanalyse", "it": "Analisi del tempo", "ja": "時間の分析", "zh": "时间分析", "ko": "시간 분석", "ar": "تحليل الوقت" },
+    "keywords": {
+      "es": ["reporte de tiempo", "tiempo en reuniones", "tiempo de enfoque", "estadísticas del calendario", "productividad", "uso del tiempo", "horas por proyecto"],
+      "en": ["time report", "meeting time", "focus time", "calendar stats", "productivity", "time spent", "hours by project"]
+    }
+  },
+  "calendar-link": {
+    "label": { "es": "Enlace de reserva", "en": "Booking link", "pt": "Link de agendamento", "fr": "Lien de réservation", "de": "Buchungslink", "it": "Link di prenotazione", "ja": "予約リンク", "zh": "预约链接", "ko": "예약 링크", "ar": "رابط الحجز" },
+    "keywords": {
+      "es": ["link para agendar", "elegir horario", "compartir disponibilidad", "url de suscripción", "página de reservas", "copiar enlace", "agenda en línea"],
+      "en": ["schedule a meeting", "pick a time", "share availability", "subscription url", "booking page", "copy link", "online scheduling"]
+    }
+  },
+  "calendar-invite": {
+    "label": { "es": "Invitación a evento", "en": "Event invitation", "pt": "Convite para evento", "fr": "Invitation à un événement", "de": "Termineinladung", "it": "Invito all’evento", "ja": "予定への招待", "zh": "活动邀请", "ko": "일정 초대", "ar": "دعوة إلى حدث" },
+    "keywords": {
+      "es": ["invitar", "enviar invitación", "confirmar asistencia", "agregar invitados", "aceptar o rechazar", "invitación recibida", "convocar a reunión"],
+      "en": ["invite", "send invite", "rsvp", "add guests", "accept or decline", "invitation received", "meeting request"]
+    }
+  },
+  "calendar-bell": {
+    "label": { "es": "Avisos del evento", "en": "Event notifications", "pt": "Notificações do evento", "fr": "Notifications d’événement", "de": "Terminbenachrichtigungen", "it": "Notifiche dell’evento", "ja": "予定の通知", "zh": "日程通知", "ko": "일정 알림", "ar": "تنبيهات الحدث" },
+    "keywords": {
+      "es": ["recordatorio", "alerta", "avisar antes", "notificación", "configurar recordatorios", "minutos antes", "no olvidar"],
+      "en": ["reminder", "alert", "notify before", "reminder settings", "minutes before", "heads-up", "don't forget"]
+    }
+  },
+  "calendar-due": {
+    "label": { "es": "Fecha límite", "en": "Due date", "pt": "Prazo", "fr": "Échéance", "de": "Fälligkeitsdatum", "it": "Scadenza", "ja": "期日", "zh": "截止日期", "ko": "마감일", "ar": "تاريخ الاستحقاق" },
+    "keywords": {
+      "es": ["vencimiento", "plazo", "último día", "deadline", "fecha de entrega", "vence", "tarea pendiente"],
+      "en": ["deadline", "due", "expiry", "delivery date", "last day", "task due", "cutoff"]
+    }
+  },
+  "calendar-start": {
+    "label": { "es": "Fecha de inicio", "en": "Start date", "pt": "Data de início", "fr": "Date de début", "de": "Startdatum", "it": "Data di inizio", "ja": "開始日", "zh": "开始日期", "ko": "시작일", "ar": "تاريخ البدء" },
+    "keywords": {
+      "es": ["comienzo", "arranque", "inicio del proyecto", "alta", "inicio de suscripción", "primer día", "desde"],
+      "en": ["begins", "kickoff", "project start", "subscription start", "first day", "from", "check-in date"]
+    }
+  },
+  "calendar-hourglass": {
+    "label": { "es": "Días restantes", "en": "Days left", "pt": "Dias restantes", "fr": "Jours restants", "de": "Verbleibende Tage", "it": "Giorni rimanenti", "ja": "残り日数", "zh": "剩余天数", "ko": "남은 일수", "ar": "الأيام المتبقية" },
+    "keywords": {
+      "es": ["cuenta regresiva", "fecha de expiración", "fin de la prueba", "caduca", "vence pronto", "faltan días", "periodo de prueba"],
+      "en": ["countdown", "expiration date", "trial ending", "expires", "expiring soon", "time left", "trial period"]
+    }
+  },
+  "calendar-repeat": {
+    "label": { "es": "Evento recurrente", "en": "Recurring event", "pt": "Evento recorrente", "fr": "Événement récurrent", "de": "Serientermin", "it": "Evento ricorrente", "ja": "繰り返しの予定", "zh": "重复日程", "ko": "반복 일정", "ar": "حدث متكرر" },
+    "keywords": {
+      "es": ["repetir", "cada semana", "diario", "mensual", "periodicidad", "serie", "regla de repetición"],
+      "en": ["repeat", "every week", "daily", "monthly", "recurrence", "series", "repeat rule"]
+    }
+  },
+  "calendar-conflict": {
+    "label": { "es": "Conflicto de horario", "en": "Scheduling conflict", "pt": "Conflito de agenda", "fr": "Conflit d’horaire", "de": "Terminkonflikt", "it": "Conflitto di orario", "ja": "予定の重複", "zh": "日程冲突", "ko": "일정 충돌", "ar": "تعارض في المواعيد" },
+    "keywords": {
+      "es": ["empalme", "eventos encimados", "traslape", "doble reservación", "horario ocupado", "choque de citas", "superposición"],
+      "en": ["overlap", "double booking", "clash", "busy", "overlapping events", "conflicting meetings", "already booked"]
+    }
+  },
+  "calendar-pause": {
+    "label": { "es": "Pausado hasta una fecha", "en": "Paused until a date", "pt": "Pausado até uma data", "fr": "En pause jusqu’à une date", "de": "Pausiert bis zu einem Datum", "it": "In pausa fino a una data", "ja": "指定日まで一時停止", "zh": "暂停至指定日期", "ko": "지정일까지 일시 중지", "ar": "متوقف مؤقتًا حتى تاريخ محدد" },
+    "keywords": {
+      "es": ["suscripción pausada", "pausar hasta", "reanudar después", "evento suspendido", "reserva en espera", "congelar", "detener temporalmente"],
+      "en": ["paused subscription", "pause until", "resume later", "suspended event", "booking on hold", "freeze", "temporarily stopped"]
+    }
+  },
+  "calendar-search": {
+    "label": { "es": "Buscar eventos", "en": "Search events", "pt": "Pesquisar eventos", "fr": "Rechercher des événements", "de": "Termine suchen", "it": "Cerca eventi", "ja": "予定を検索", "zh": "搜索日程", "ko": "일정 검색", "ar": "البحث في الأحداث" },
+    "keywords": {
+      "es": ["encontrar horario", "buscar fecha", "consultar agenda", "filtrar eventos", "buscar cita", "ir a fecha", "disponibilidad"],
+      "en": ["find a time", "look up date", "search calendar", "filter events", "find appointment", "go to date", "availability"]
+    }
+  },
+  "calendar-sync": {
+    "label": { "es": "Sincronizar calendario", "en": "Sync calendar", "pt": "Sincronizar calendário", "fr": "Synchroniser le calendrier", "de": "Kalender synchronisieren", "it": "Sincronizza calendario", "ja": "カレンダーを同期", "zh": "同步日历", "ko": "캘린더 동기화", "ar": "مزامنة التقويم" },
+    "keywords": {
+      "es": ["calendario conectado", "conectar cuenta", "integración", "actualizar eventos", "vincular calendario", "otra cuenta", "calendario externo"],
+      "en": ["connected calendar", "connect account", "integration", "refresh events", "link calendar", "two-way sync", "external calendar"]
+    }
+  },
+  "calendar-edit": {
+    "label": { "es": "Editar evento", "en": "Edit event", "pt": "Editar evento", "fr": "Modifier l’événement", "de": "Termin bearbeiten", "it": "Modifica evento", "ja": "予定を編集", "zh": "编辑日程", "ko": "일정 편집", "ar": "تعديل الحدث" },
+    "keywords": {
+      "es": ["cambiar fecha", "modificar horario", "ajustar agenda", "corregir evento", "actualizar cita", "cambiar lugar", "detalles del evento"],
+      "en": ["change date", "modify schedule", "adjust calendar", "update appointment", "change location", "event details", "rename event"]
+    }
+  },
+  "calendar-gear": {
+    "label": { "es": "Configuración del calendario", "en": "Calendar settings", "pt": "Configurações do calendário", "fr": "Paramètres du calendrier", "de": "Kalendereinstellungen", "it": "Impostazioni del calendario", "ja": "カレンダーの設定", "zh": "日历设置", "ko": "캘린더 설정", "ar": "إعدادات التقويم" },
+    "keywords": {
+      "es": ["horario laboral", "recordatorios predeterminados", "zona horaria", "inicio de semana", "preferencias", "ajustes", "formato de fecha"],
+      "en": ["working hours", "default reminders", "time zone", "week start", "preferences", "options", "date format"]
+    }
+  },
+  "calendar-lock": {
+    "label": { "es": "Evento privado", "en": "Private event", "pt": "Evento privado", "fr": "Événement privé", "de": "Privater Termin", "it": "Evento privato", "ja": "非公開の予定", "zh": "私密日程", "ko": "비공개 일정", "ar": "حدث خاص" },
+    "keywords": {
+      "es": ["calendario bloqueado", "solo yo", "detalles ocultos", "confidencial", "sin edición", "privacidad", "solo lectura"],
+      "en": ["locked calendar", "only me", "hidden details", "confidential", "no edits", "privacy", "read-only"]
+    }
+  },
+  "calendar-question": {
+    "label": { "es": "Por confirmar", "en": "Tentative", "pt": "A confirmar", "fr": "Provisoire", "de": "Mit Vorbehalt", "it": "Provvisorio", "ja": "仮の予定", "zh": "暂定", "ko": "미정", "ar": "مبدئي" },
+    "keywords": {
+      "es": ["tal vez", "quizás asista", "fecha tentativa", "provisional", "posible", "asistencia dudosa", "aún no se sabe"],
+      "en": ["maybe", "might attend", "not confirmed", "pending", "provisional", "possible date", "unsure"]
+    }
+  },
+  "calendar-star": {
+    "label": { "es": "Evento destacado", "en": "Starred event", "pt": "Evento em destaque", "fr": "Événement en vedette", "de": "Markierter Termin", "it": "Evento in evidenza", "ja": "重要な予定", "zh": "重要日程", "ko": "중요 일정", "ar": "حدث مميّز" },
+    "keywords": {
+      "es": ["importante", "fecha especial", "favorito", "resaltar", "prioridad", "evento principal", "no te lo pierdas"],
+      "en": ["important", "special date", "favorite", "highlight", "priority", "featured", "key event"]
+    }
+  },
+  "calendar-forward": {
+    "label": { "es": "Reprogramar", "en": "Reschedule", "pt": "Reagendar", "fr": "Reporter", "de": "Termin verschieben", "it": "Rinvia", "ja": "日程を変更", "zh": "改期", "ko": "일정 변경", "ar": "إعادة الجدولة" },
+    "keywords": {
+      "es": ["posponer", "aplazar", "mover a otra fecha", "cambiar de día", "recorrer la cita", "próximamente", "dejar para después"],
+      "en": ["postpone", "defer", "move to later", "push back", "change day", "upcoming", "delay"]
+    }
+  },
+  "calendar-block": {
+    "label": { "es": "Fechas bloqueadas", "en": "Blocked dates", "pt": "Datas bloqueadas", "fr": "Dates bloquées", "de": "Gesperrte Tage", "it": "Date bloccate", "ja": "予約不可の日", "zh": "不可用日期", "ko": "예약 불가 날짜", "ar": "تواريخ محجوبة" },
+    "keywords": {
+      "es": ["no disponible", "sin reservas", "fechas cerradas", "agotado", "fuera de servicio", "cerrado", "ocupado"],
+      "en": ["unavailable", "blackout dates", "no bookings", "closed dates", "sold out", "busy", "time off"]
+    }
+  },
+  "calendar-export": {
+    "label": { "es": "Exportar calendario", "en": "Export calendar", "pt": "Exportar calendário", "fr": "Exporter le calendrier", "de": "Kalender exportieren", "it": "Esporta calendario", "ja": "カレンダーをエクスポート", "zh": "导出日历", "ko": "캘린더 내보내기", "ar": "تصدير التقويم" },
+    "keywords": {
+      "es": ["descargar", "publicar calendario", "compartir", "archivo ics", "respaldo", "enviar eventos", "sacar eventos"],
+      "en": ["download", "publish calendar", "share", "ics file", "backup", "send events", "ical"]
+    }
+  },
+  "calendar-import": {
+    "label": { "es": "Importar eventos", "en": "Import events", "pt": "Importar eventos", "fr": "Importer des événements", "de": "Termine importieren", "it": "Importa eventi", "ja": "予定をインポート", "zh": "导入日程", "ko": "일정 가져오기", "ar": "استيراد الأحداث" },
+    "keywords": {
+      "es": ["subir calendario", "archivo ics", "suscribirse", "agregar desde archivo", "cargar eventos", "traer eventos", "migrar calendario"],
+      "en": ["upload calendar", "ics file", "subscribe", "add from file", "load events", "bring in events", "migrate calendar"]
+    }
+  },
+  "clock-range": {
+    "label": { "es": "Rango de horas", "en": "Time range", "pt": "Intervalo de horário", "fr": "Plage horaire", "de": "Zeitspanne", "it": "Fascia oraria", "ja": "時間帯", "zh": "时间段", "ko": "시간 범위", "ar": "نطاق زمني" },
+    "keywords": {
+      "es": ["horario de atención", "horas hábiles", "de 9 a 6", "intervalo", "horario de apertura", "duración", "hora de inicio y fin"],
+      "en": ["business hours", "opening hours", "office hours", "9 to 5", "interval", "start and end time", "duration"]
+    }
+  },
+  "clock-fast": {
+    "label": { "es": "Rápido", "en": "Fast", "pt": "Rápido", "fr": "Rapide", "de": "Schnell", "it": "Veloce", "ja": "高速", "zh": "快速", "ko": "빠름", "ar": "سريع" },
+    "keywords": {
+      "es": ["exprés", "respuesta rápida", "poca espera", "al momento", "velocidad", "urgente", "en minutos"],
+      "en": ["express", "quick response", "short wait", "instant", "speed", "urgent", "in minutes"]
+    }
+  },
+  "clock-in": {
+    "label": { "es": "Registrar entrada", "en": "Clock in", "pt": "Registrar entrada", "fr": "Pointer l’arrivée", "de": "Einstempeln", "it": "Timbra entrata", "ja": "出勤", "zh": "上班打卡", "ko": "출근", "ar": "تسجيل الحضور" },
+    "keywords": {
+      "es": ["checar entrada", "inicio de turno", "entrada al trabajo", "asistencia", "fichar", "llegada", "empezar la jornada"],
+      "en": ["punch in", "start shift", "check in", "attendance", "arrival", "start work", "time in"]
+    }
+  },
+  "clock-out": {
+    "label": { "es": "Registrar salida", "en": "Clock out", "pt": "Registrar saída", "fr": "Pointer le départ", "de": "Ausstempeln", "it": "Timbra uscita", "ja": "退勤", "zh": "下班打卡", "ko": "퇴근", "ar": "تسجيل الانصراف" },
+    "keywords": {
+      "es": ["checar salida", "fin de turno", "salida del trabajo", "terminar la jornada", "fichar salida", "hora de salida", "asistencia"],
+      "en": ["punch out", "end shift", "check out", "leave work", "end of day", "time out", "attendance"]
+    }
+  },
+  "hourly-rate": {
+    "label": { "es": "Tarifa por hora", "en": "Hourly rate", "pt": "Valor por hora", "fr": "Taux horaire", "de": "Stundensatz", "it": "Tariffa oraria", "ja": "時給", "zh": "时薪", "ko": "시간당 요금", "ar": "السعر بالساعة" },
+    "keywords": {
+      "es": ["tiempo facturable", "costo por hora", "honorarios", "cobro por tiempo", "pago por hora", "consultoría", "freelance"],
+      "en": ["billable time", "cost per hour", "fees", "time billing", "pay per hour", "consulting fee", "freelance"]
+    }
+  },
+  "break-time": {
+    "label": { "es": "Descanso", "en": "Break", "pt": "Intervalo", "fr": "Temps de pause", "de": "Pausenzeit", "it": "Pausa dal lavoro", "ja": "休憩", "zh": "休息", "ko": "휴식", "ar": "استراحة" },
+    "keywords": {
+      "es": ["pausa", "hora de comida", "receso", "pausa del turno", "café", "tiempo libre", "desconectar"],
+      "en": ["pause", "lunch break", "coffee break", "rest", "off the clock", "recess", "step away"]
+    }
+  },
+  "shift-day": {
+    "label": { "es": "Turno matutino", "en": "Day shift", "pt": "Turno diurno", "fr": "Équipe de jour", "de": "Tagschicht", "it": "Turno diurno", "ja": "日勤", "zh": "白班", "ko": "주간 근무", "ar": "الوردية النهارية" },
+    "keywords": {
+      "es": ["turno de día", "mañana", "horario diurno", "primer turno", "jornada diurna", "rol de turnos", "sol"],
+      "en": ["morning shift", "daytime", "first shift", "early shift", "day work", "shift rota", "sun"]
+    }
+  },
+  "shift-evening": {
+    "label": { "es": "Turno vespertino", "en": "Evening shift", "pt": "Turno da tarde", "fr": "Équipe d’après-midi", "de": "Spätschicht", "it": "Turno pomeridiano", "ja": "遅番", "zh": "中班", "ko": "오후 근무", "ar": "الوردية المسائية" },
+    "keywords": {
+      "es": ["turno de tarde", "tarde", "segundo turno", "horario vespertino", "rol de turnos", "atardecer", "turno intermedio"],
+      "en": ["afternoon shift", "swing shift", "second shift", "late shift", "shift rota", "sunset", "middle shift"]
+    }
+  },
+  "shift-night": {
+    "label": { "es": "Turno nocturno", "en": "Night shift", "pt": "Turno da noite", "fr": "Équipe de nuit", "de": "Nachtschicht", "it": "Turno di notte", "ja": "夜勤", "zh": "夜班", "ko": "야간 근무", "ar": "الوردية الليلية" },
+    "keywords": {
+      "es": ["madrugada", "tercer turno", "guardia", "horario nocturno", "rol de turnos", "trabajo de noche", "luna"],
+      "en": ["overnight", "graveyard shift", "third shift", "night duty", "on call", "shift rota", "moon"]
+    }
+  },
+  "shift-swap": {
+    "label": { "es": "Cambio de turno", "en": "Shift swap", "pt": "Troca de turno", "fr": "Échange de poste", "de": "Schichttausch", "it": "Cambio turno", "ja": "シフト交換", "zh": "换班", "ko": "근무 교환", "ar": "تبديل الوردية" },
+    "keywords": {
+      "es": ["intercambiar turno", "cubrir turno", "suplencia", "compañero de trabajo", "rol de turnos", "solicitar cambio", "cambiar horario"],
+      "en": ["trade shift", "cover a shift", "coworker", "replacement", "shift rota", "change schedule", "pick up shift"]
+    }
+  },
+  "clock-alert": {
+    "label": { "es": "Retrasado", "en": "Overdue", "pt": "Atrasado", "fr": "En retard", "de": "Überfällig", "it": "In ritardo", "ja": "期限切れ", "zh": "已逾期", "ko": "기한 초과", "ar": "متأخر" },
+    "keywords": {
+      "es": ["vencido", "tarde", "fuera de plazo", "fecha límite perdida", "demora", "urgente", "hora pasada"],
+      "en": ["late", "past due", "missed deadline", "delayed", "behind schedule", "urgent", "time exceeded"]
+    }
+  },
+  "clock-edit": {
+    "label": { "es": "Editar hora", "en": "Edit time", "pt": "Editar horário", "fr": "Modifier l’heure", "de": "Uhrzeit bearbeiten", "it": "Modifica orario", "ja": "時刻を編集", "zh": "编辑时间", "ko": "시간 편集", "ar": "تعديل الوقت" },
+    "keywords": {
+      "es": ["cambiar la hora", "ajustar horas", "corregir registro", "modificar tiempo", "hoja de horas", "horas trabajadas", "editar entrada"],
+      "en": ["change time", "adjust hours", "fix entry", "time entry", "timesheet", "hours worked", "set time"]
+    }
+  },
+  "digital-clock": {
+    "label": { "es": "Reloj digital", "en": "Digital clock", "pt": "Relógio digital", "fr": "Horloge numérique", "de": "Digitaluhr", "it": "Orologio digitale", "ja": "デジタル時計", "zh": "数字时钟", "ko": "디지털 시계", "ar": "ساعة رقمية" },
+    "keywords": {
+      "es": ["despertador", "reloj de buró", "pantalla", "hora en números", "reloj de escritorio", "dígitos", "hora actual"],
+      "en": ["bedside clock", "desk clock", "display", "digits", "current time", "led clock", "clock radio"]
+    }
+  },
+  "flip-clock": {
+    "label": { "es": "Reloj de paletas", "en": "Flip clock", "pt": "Relógio flip", "fr": "Horloge à palettes", "de": "Fallblattuhr", "it": "Orologio a palette", "ja": "パタパタ時計", "zh": "翻页时钟", "ko": "플립 시계", "ar": "ساعة قلّابة" },
+    "keywords": {
+      "es": ["reloj flip", "retro", "cuenta regresiva", "tablero de salidas", "reloj vintage", "marcador", "split-flap"],
+      "en": ["retro clock", "split-flap", "countdown", "departure board", "vintage", "scoreboard", "flip numbers"]
+    }
+  },
+  "watch-analog": {
+    "label": { "es": "Reloj de pulsera", "en": "Wristwatch", "pt": "Relógio de pulso", "fr": "Montre", "de": "Armbanduhr", "it": "Orologio da polso", "ja": "腕時計", "zh": "手表", "ko": "손목시계", "ar": "ساعة يد" },
+    "keywords": {
+      "es": ["reloj analógico", "muñeca", "reloj clásico", "manecillas", "accesorio", "puntualidad", "joyería"],
+      "en": ["analog watch", "wrist", "classic watch", "watch hands", "accessory", "timepiece", "jewelry"]
+    }
+  },
+  "pocket-watch": {
+    "label": { "es": "Reloj de bolsillo", "en": "Pocket watch", "pt": "Relógio de bolso", "fr": "Montre à gousset", "de": "Taschenuhr", "it": "Orologio da tasca", "ja": "懐中時計", "zh": "怀表", "ko": "회중시계", "ar": "ساعة جيب" },
+    "keywords": {
+      "es": ["puntualidad", "antiguo", "vintage", "leontina", "reloj tradicional", "elegancia", "herencia"],
+      "en": ["punctuality", "antique", "vintage", "watch chain", "traditional watch", "heirloom", "victorian"]
+    }
+  },
+  "grandfather-clock": {
+    "label": { "es": "Reloj de péndulo", "en": "Grandfather clock", "pt": "Relógio de pêndulo", "fr": "Horloge comtoise", "de": "Standuhr", "it": "Orologio a pendolo", "ja": "振り子時計", "zh": "落地钟", "ko": "괘종시계", "ar": "ساعة بندول أرضية" },
+    "keywords": {
+      "es": ["reloj de pie", "antigüedad", "campanadas", "péndulo", "patrimonio", "reloj de caja alta", "dar la hora"],
+      "en": ["longcase clock", "antique", "chime", "pendulum", "heritage", "floor clock", "striking the hour"]
+    }
+  },
+  "punch-clock": {
+    "label": { "es": "Reloj checador", "en": "Time clock", "pt": "Relógio de ponto", "fr": "Pointeuse", "de": "Stempeluhr", "it": "Marcatempo", "ja": "タイムレコーダー", "zh": "打卡机", "ko": "출퇴근 기록기", "ar": "ساعة تسجيل الحضور" },
+    "keywords": {
+      "es": ["asistencia", "checar", "control de asistencia", "tarjeta de checado", "entrada y salida", "nómina", "registro de turnos"],
+      "en": ["punch clock", "attendance", "time card", "clock in and out", "attendance terminal", "payroll", "shift log"]
+    }
+  },
+  "chess-clock": {
+    "label": { "es": "Reloj de ajedrez", "en": "Chess clock", "pt": "Relógio de xadrez", "fr": "Pendule d’échecs", "de": "Schachuhr", "it": "Orologio da scacchi", "ja": "チェスクロック", "zh": "棋钟", "ko": "체스 시계", "ar": "ساعة الشطرنج" },
+    "keywords": {
+      "es": ["reloj de juego", "turnos", "partida", "dos jugadores", "tiempo por jugada", "torneo", "debate"],
+      "en": ["game clock", "turns", "match", "two players", "time per move", "tournament", "blitz"]
+    }
+  },
+  "kitchen-timer": {
+    "label": { "es": "Temporizador de cocina", "en": "Kitchen timer", "pt": "Timer de cozinha", "fr": "Minuteur de cuisine", "de": "Küchenwecker", "it": "Timer da cucina", "ja": "キッチンタイマー", "zh": "厨房定时器", "ko": "주방 타이머", "ar": "مؤقت المطبخ" },
+    "keywords": {
+      "es": ["cocinar", "receta", "horno", "pomodoro", "cuenta regresiva corta", "tiempo de horneado", "bloque de trabajo"],
+      "en": ["cooking", "recipe", "oven", "pomodoro", "short countdown", "baking time", "work sprint"]
+    }
+  },
+  "hourglass-start": {
+    "label": { "es": "Cuenta regresiva iniciada", "en": "Countdown started", "pt": "Contagem regressiva iniciada", "fr": "Compte à rebours lancé", "de": "Countdown gestartet", "it": "Conto alla rovescia avviato", "ja": "カウントダウン開始", "zh": "倒计时开始", "ko": "카운트다운 시작", "ar": "بدأ العد التنازلي" },
+    "keywords": {
+      "es": ["reloj de arena", "tiempo completo", "empezar", "temporizador", "tiempo disponible", "nueva sesión", "inicio del plazo"],
+      "en": ["sand timer", "full time left", "start", "timer", "time available", "new session", "deadline started"]
+    }
+  },
+  "hourglass-half": {
+    "label": { "es": "Tiempo corriendo", "en": "Time running", "pt": "Tempo correndo", "fr": "Temps qui s’écoule", "de": "Zeit läuft", "it": "Tempo che scorre", "ja": "時間経過中", "zh": "计时中", "ko": "시간 경과 중", "ar": "الوقت يمر" },
+    "keywords": {
+      "es": ["reloj de arena", "a la mitad", "en curso", "cuenta regresiva", "tiempo restante", "progreso", "falta poco"],
+      "en": ["sand timer", "halfway", "in progress", "countdown", "time remaining", "elapsed", "running out"]
+    }
+  },
+  "stopwatch-play": {
+    "label": { "es": "Iniciar cronómetro", "en": "Start timer", "pt": "Iniciar cronômetro", "fr": "Démarrer le chronomètre", "de": "Zeitmessung starten", "it": "Avvia cronometro", "ja": "タイマーを開始", "zh": "开始计时", "ko": "타이머 시작", "ar": "بدء المؤقت" },
+    "keywords": {
+      "es": ["registrar tiempo", "empezar tarea", "medir horas", "tiempo trabajado", "seguimiento de tiempo", "arrancar", "play"],
+      "en": ["track time", "start task", "time tracking", "log hours", "begin", "play", "record time"]
+    }
+  },
+  "stopwatch-pause": {
+    "label": { "es": "Pausar cronómetro", "en": "Pause timer", "pt": "Pausar cronômetro", "fr": "Mettre le chronomètre en pause", "de": "Zeitmessung pausieren", "it": "Metti in pausa il cronometro", "ja": "タイマーを一時停止", "zh": "暂停计时", "ko": "타이머 일시 중지", "ar": "إيقاف المؤقت مؤقتًا" },
+    "keywords": {
+      "es": ["detener un momento", "registro en pausa", "descanso", "interrumpir", "seguimiento pausado", "retomar después", "congelar tiempo"],
+      "en": ["hold", "paused tracking", "break", "interrupt", "resume later", "suspend", "freeze timer"]
+    }
+  },
+  "stopwatch-stop": {
+    "label": { "es": "Detener cronómetro", "en": "Stop timer", "pt": "Parar cronômetro", "fr": "Arrêter le chronomètre", "de": "Zeitmessung beenden", "it": "Ferma cronometro", "ja": "タイマーを停止", "zh": "停止计时", "ko": "타이머 정지", "ar": "إيقاف المؤقت" },
+    "keywords": {
+      "es": ["terminar", "guardar registro", "finalizar tarea", "registro de tiempo", "tiempo total", "parar", "horas registradas"],
+      "en": ["end", "save entry", "finish task", "time entry", "total time", "log time", "halt"]
+    }
+  }
+}

@@ -782,5 +782,467 @@
       "es": ["limpiar filtros", "restablecer", "sin filtros", "borrar", "embudo", "mostrar todo", "reiniciar"],
       "en": ["remove filter", "reset", "no filters", "delete", "funnel", "show all", "unfilter"]
     }
+  },
+  "arrow-up-from-line": {
+    "label": { "es": "Empujar hacia arriba", "en": "Push up", "pt": "Empurrar para cima", "fr": "Pousser vers le haut", "de": "Nach oben schieben", "it": "Spingi verso l’alto", "ja": "上へ押し出す", "zh": "向上推", "ko": "위로 밀기", "ar": "دفع إلى الأعلى" },
+    "keywords": {
+      "es": ["subir", "levantar", "elevar", "separar del borde", "desde abajo", "estirar hacia arriba", "redimensionar hacia arriba"],
+      "en": ["move up", "raise", "lift", "away from edge", "from bottom", "n-resize", "stretch up"]
+    }
+  },
+  "arrow-down-from-line": {
+    "label": { "es": "Jalar hacia abajo", "en": "Pull down", "pt": "Puxar para baixo", "fr": "Tirer vers le bas", "de": "Nach unten ziehen", "it": "Tira verso il basso", "ja": "下へ引き出す", "zh": "向下拉", "ko": "아래로 당기기", "ar": "سحب إلى الأسفل" },
+    "keywords": {
+      "es": ["bajar", "desplegar", "dejar caer", "desde arriba", "separar del borde", "estirar hacia abajo", "redimensionar hacia abajo"],
+      "en": ["move down", "drop from", "lower", "from top", "away from edge", "s-resize", "stretch down"]
+    }
+  },
+  "arrow-left-from-line": {
+    "label": { "es": "Jalar hacia la izquierda", "en": "Pull left", "pt": "Puxar para a esquerda", "fr": "Tirer vers la gauche", "de": "Nach links ziehen", "it": "Tira verso sinistra", "ja": "左へ引き出す", "zh": "向左拉", "ko": "왼쪽으로 당기기", "ar": "سحب إلى اليسار" },
+    "keywords": {
+      "es": ["mover a la izquierda", "sacar del panel", "desde la derecha", "separar del borde", "estirar a la izquierda", "redimensionar a la izquierda", "extraer"],
+      "en": ["move left", "pull out", "out of panel", "from right edge", "away from edge", "w-resize", "stretch left"]
+    }
+  },
+  "arrow-right-from-line": {
+    "label": { "es": "Empujar hacia la derecha", "en": "Push right", "pt": "Empurrar para a direita", "fr": "Pousser vers la droite", "de": "Nach rechts schieben", "it": "Spingi verso destra", "ja": "右へ押し出す", "zh": "向右推", "ko": "오른쪽으로 밀기", "ar": "دفع إلى اليمين" },
+    "keywords": {
+      "es": ["mover a la derecha", "empezar desde el borde", "desde la izquierda", "sacar", "separar del borde", "estirar a la derecha", "redimensionar a la derecha"],
+      "en": ["move right", "start from edge", "push out", "from left edge", "away from edge", "e-resize", "stretch right"]
+    }
+  },
+  "arrow-down-to-dot": {
+    "label": { "es": "Soltar aquí", "en": "Drop here", "pt": "Soltar aqui", "fr": "Déposer ici", "de": "Hier ablegen", "it": "Rilascia qui", "ja": "ここにドロップ", "zh": "放到这里", "ko": "여기에 놓기", "ar": "أفلت هنا" },
+    "keywords": {
+      "es": ["aterrizar", "destino", "ir a no leídos", "llegar", "punto de llegada", "ubicación", "marcar posición"],
+      "en": ["land", "destination", "jump to unread", "arrive", "target point", "location", "go to point"]
+    }
+  },
+  "arrow-up-from-dot": {
+    "label": { "es": "Elevar desde aquí", "en": "Lift from here", "pt": "Erguer daqui", "fr": "Soulever d’ici", "de": "Von hier anheben", "it": "Solleva da qui", "ja": "ここから持ち上げる", "zh": "从这里抬起", "ko": "여기서 들어 올리기", "ar": "الرفع من هنا" },
+    "keywords": {
+      "es": ["levantar", "despegar", "lanzar", "subir", "punto de partida", "origen", "empujar desde un lugar"],
+      "en": ["raise", "take off", "launch", "rise", "starting point", "origin", "push from location"]
+    }
+  },
+  "arrow-turn-right-up": {
+    "label": { "es": "Promover", "en": "Promote", "pt": "Promover", "fr": "Promouvoir", "de": "Hochstufen", "it": "Promuovi", "ja": "昇格", "zh": "提升", "ko": "승격", "ar": "ترقية" },
+    "keywords": {
+      "es": ["subir de nivel", "girar hacia arriba", "avanzar y subir", "escalar", "nivel superior", "ascender", "mover arriba"],
+      "en": ["level up", "turn up", "move along and up", "escalate", "upper level", "raise", "go up"]
+    }
+  },
+  "arrow-turn-left-up": {
+    "label": { "es": "Subir un nivel", "en": "Up one level", "pt": "Subir um nível", "fr": "Remonter d’un niveau", "de": "Eine Ebene höher", "it": "Livello superiore", "ja": "1つ上の階層へ", "zh": "返回上一级", "ko": "한 단계 위로", "ar": "الصعود مستوى واحدًا" },
+    "keywords": {
+      "es": ["carpeta superior", "carpeta principal", "directorio padre", "volver", "atrás", "jerarquía", "subir carpeta"],
+      "en": ["parent folder", "parent directory", "go up", "back", "hierarchy", "folder up", "previous level"]
+    }
+  },
+  "arrow-up-right-to-corner": {
+    "label": { "es": "Acoplar arriba a la derecha", "en": "Dock top right", "pt": "Encaixar no canto superior direito", "fr": "Ancrer en haut à droite", "de": "Oben rechts andocken", "it": "Aggancia in alto a destra", "ja": "右上に寄せる", "zh": "停靠到右上角", "ko": "오른쪽 위로 도킹", "ar": "تثبيت في الزاوية العلوية اليمنى" },
+    "keywords": {
+      "es": ["esquina superior derecha", "mover a la esquina", "ajustar a la esquina", "anclar", "fijar", "posición", "diagonal"],
+      "en": ["top right corner", "move to corner", "snap to corner", "anchor", "pin", "position", "diagonal"]
+    }
+  },
+  "arrow-down-right-to-corner": {
+    "label": { "es": "Acoplar abajo a la derecha", "en": "Dock bottom right", "pt": "Encaixar no canto inferior direito", "fr": "Ancrer en bas à droite", "de": "Unten rechts andocken", "it": "Aggancia in basso a destra", "ja": "右下に寄せる", "zh": "停靠到右下角", "ko": "오른쪽 아래로 도킹", "ar": "تثبيت في الزاوية السفلية اليمنى" },
+    "keywords": {
+      "es": ["esquina inferior derecha", "imagen en imagen", "ventana flotante", "minirreproductor", "chat flotante", "mover a la esquina", "anclar"],
+      "en": ["bottom right corner", "picture in picture", "floating window", "mini player", "chat widget", "move to corner", "anchor"]
+    }
+  },
+  "arrow-down-left-to-corner": {
+    "label": { "es": "Acoplar abajo a la izquierda", "en": "Dock bottom left", "pt": "Encaixar no canto inferior esquerdo", "fr": "Ancrer en bas à gauche", "de": "Unten links andocken", "it": "Aggancia in basso a sinistra", "ja": "左下に寄せる", "zh": "停靠到左下角", "ko": "왼쪽 아래로 도킹", "ar": "تثبيت في الزاوية السفلية اليسرى" },
+    "keywords": {
+      "es": ["esquina inferior izquierda", "enviar a la esquina", "mover a la esquina", "ajustar a la esquina", "anclar", "fijar", "diagonal"],
+      "en": ["bottom left corner", "send to corner", "move to corner", "snap to corner", "anchor", "pin", "diagonal"]
+    }
+  },
+  "arrow-up-left-to-corner": {
+    "label": { "es": "Acoplar arriba a la izquierda", "en": "Dock top left", "pt": "Encaixar no canto superior esquerdo", "fr": "Ancrer en haut à gauche", "de": "Oben links andocken", "it": "Aggancia in alto a sinistra", "ja": "左上に寄せる", "zh": "停靠到左上角", "ko": "왼쪽 위로 도킹", "ar": "تثبيت في الزاوية العلوية اليسرى" },
+    "keywords": {
+      "es": ["esquina superior izquierda", "insertar al inicio", "al principio", "ajustar a la esquina", "mover a la esquina", "anclar", "origen"],
+      "en": ["top left corner", "insert at start", "beginning", "snap to corner", "move to corner", "anchor", "origin"]
+    }
+  },
+  "import": {
+    "label": { "es": "Importar", "en": "Import", "pt": "Importar", "fr": "Importer", "de": "Importieren", "it": "Importa", "ja": "インポート", "zh": "导入", "ko": "가져오기", "ar": "استيراد" },
+    "keywords": {
+      "es": ["traer", "cargar datos", "guardar en el dispositivo", "recibir", "agregar desde archivo", "migrar datos", "subir csv", "entrada"],
+      "en": ["bring in", "load data", "save to device", "receive", "add from file", "migrate data", "csv upload", "inbound"]
+    }
+  },
+  "pop-in": {
+    "label": { "es": "Volver a la página", "en": "Return to page", "pt": "Voltar para a página", "fr": "Réintégrer la page", "de": "In die Seite zurückholen", "it": "Riporta nella pagina", "ja": "ページに戻す", "zh": "放回页面", "ko": "페이지로 되돌리기", "ar": "إعادة إلى الصفحة" },
+    "keywords": {
+      "es": ["integrar", "incrustar", "abrir en la misma página", "acoplar ventana", "cerrar ventana flotante", "ver aquí", "pop in"],
+      "en": ["pop in", "embed", "open in place", "dock window", "close floating window", "inline view", "reattach"]
+    }
+  },
+  "arrows-merge": {
+    "label": { "es": "Combinar", "en": "Combine", "pt": "Combinar", "fr": "Combiner", "de": "Kombinieren", "it": "Combina", "ja": "合流", "zh": "汇合", "ko": "합류", "ar": "دمج المسارات" },
+    "keywords": {
+      "es": ["fusionar", "unir", "juntar flujos", "dos en uno", "consolidar", "integrar", "confluencia", "incorporarse"],
+      "en": ["merge", "join", "join streams", "two into one", "consolidate", "integrate", "confluence", "unify"]
+    }
+  },
+  "arrows-split": {
+    "label": { "es": "Bifurcar", "en": "Split", "pt": "Bifurcar", "fr": "Bifurquer", "de": "Aufteilen", "it": "Biforca", "ja": "分岐", "zh": "分流", "ko": "분기", "ar": "تفرّع" },
+    "keywords": {
+      "es": ["dividir", "separar", "ramificar", "dos caminos", "condición", "flujo alterno", "uno en dos"],
+      "en": ["fork", "branch out", "divide", "two paths", "condition", "alternate flow", "one into two"]
+    }
+  },
+  "arrows-converge": {
+    "label": { "es": "Converger", "en": "Converge", "pt": "Convergir", "fr": "Converger", "de": "Zusammenlaufen", "it": "Convergenza", "ja": "収束", "zh": "汇聚", "ko": "수렴", "ar": "تقارب" },
+    "keywords": {
+      "es": ["concentrar", "consolidar", "punto central", "enfocar", "objetivo", "reunir", "centralizar"],
+      "en": ["focus", "consolidate", "center point", "target", "gather", "centralize", "come together"]
+    }
+  },
+  "arrows-diverge": {
+    "label": { "es": "Divergir", "en": "Diverge", "pt": "Divergir", "fr": "Diverger", "de": "Auseinanderlaufen", "it": "Divergenza", "ja": "発散", "zh": "发散", "ko": "발산", "ar": "تباعد" },
+    "keywords": {
+      "es": ["dispersar", "distribuir", "repartir", "abrir en abanico", "expandir", "desde el centro", "difundir"],
+      "en": ["spread out", "fan out", "distribute", "scatter", "expand", "from center", "broadcast"]
+    }
+  },
+  "arrows-diagonal-up": {
+    "label": { "es": "Diagonal ascendente", "en": "Rising diagonal", "pt": "Diagonal ascendente", "fr": "Diagonale montante", "de": "Steigende Diagonale", "it": "Diagonale ascendente", "ja": "右上がりの対角線", "zh": "上升对角线", "ko": "오른쪽 위 대각선", "ar": "قطر صاعد" },
+    "keywords": {
+      "es": ["redimensionar", "escalar desde la esquina", "esquina superior derecha", "estirar en diagonal", "mover en diagonal", "proporcional", "ajustar tamaño"],
+      "en": ["resize", "scale from corner", "nesw-resize", "top right corner", "diagonal stretch", "move diagonally", "proportional"]
+    }
+  },
+  "arrows-diagonal-down": {
+    "label": { "es": "Diagonal descendente", "en": "Falling diagonal", "pt": "Diagonal descendente", "fr": "Diagonale descendante", "de": "Fallende Diagonale", "it": "Diagonale discendente", "ja": "右下がりの対角線", "zh": "下降对角线", "ko": "오른쪽 아래 대각선", "ar": "قطر هابط" },
+    "keywords": {
+      "es": ["redimensionar", "escalar desde la esquina", "esquina inferior derecha", "esquina superior izquierda", "estirar en diagonal", "mover en diagonal", "proporcional"],
+      "en": ["resize", "scale from corner", "nwse-resize", "bottom right corner", "top left corner", "diagonal stretch", "move diagonally"]
+    }
+  },
+  "rotate-3d": {
+    "label": { "es": "Girar en 3D", "en": "Rotate in 3D", "pt": "Girar em 3D", "fr": "Rotation 3D", "de": "3D-Drehung", "it": "Ruota in 3D", "ja": "3D回転", "zh": "3D 旋转", "ko": "3D 회전", "ar": "تدوير ثلاثي الأبعاد" },
+    "keywords": {
+      "es": ["vista 360", "orbitar", "modelo 3d", "rotar", "visor de producto", "realidad aumentada", "perspectiva"],
+      "en": ["360 view", "orbit", "3d model", "spin", "product viewer", "augmented reality", "perspective"]
+    }
+  },
+  "arrow-loop": {
+    "label": { "es": "Bucle", "en": "Loop", "pt": "Loop", "fr": "Boucle", "de": "Schleife", "it": "Loop", "ja": "ループ", "zh": "循环", "ko": "루프", "ar": "حلقة" },
+    "keywords": {
+      "es": ["iterar", "iteración", "repetir hasta", "paso del flujo", "automatización", "para cada", "volver a ejecutar"],
+      "en": ["iterate", "iteration", "repeat until", "workflow step", "automation", "for each", "rerun"]
+    }
+  },
+  "arrow-bounce": {
+    "label": { "es": "Rebote", "en": "Bounce", "pt": "Rebote", "fr": "Rebond", "de": "Absprung", "it": "Rimbalzo", "ja": "バウンス", "zh": "跳出", "ko": "이탈", "ar": "ارتداد" },
+    "keywords": {
+      "es": ["tasa de rebote", "analítica web", "visita breve", "abandono", "salida inmediata", "sin interacción", "rechazo"],
+      "en": ["bounce rate", "web analytics", "short visit", "abandonment", "left immediately", "ricochet", "no engagement"]
+    }
+  },
+  "arrows-cycle": {
+    "label": { "es": "Ciclo", "en": "Cycle", "pt": "Ciclo", "fr": "Cycle", "de": "Zyklus", "it": "Ciclo", "ja": "サイクル", "zh": "周期", "ko": "순환", "ar": "دورة" },
+    "keywords": {
+      "es": ["ciclo de vida", "proceso recurrente", "ronda", "iteraciones", "continuo", "flujo circular", "mejora continua"],
+      "en": ["lifecycle", "recurring process", "round", "iterations", "continuous", "circular flow", "continuous improvement"]
+    }
+  },
+  "reset": {
+    "label": { "es": "Restablecer", "en": "Reset", "pt": "Redefinir", "fr": "Réinitialiser", "de": "Zurücksetzen", "it": "Reimposta", "ja": "リセット", "zh": "重置", "ko": "재설정", "ar": "إعادة تعيين" },
+    "keywords": {
+      "es": ["valores predeterminados", "revertir", "restaurar ajustes", "empezar de nuevo", "reiniciar", "configuración de fábrica", "deshacer cambios"],
+      "en": ["defaults", "revert", "restore settings", "start over", "restart", "factory settings", "discard changes"]
+    }
+  },
+  "cursor-wait": {
+    "label": { "es": "Puntero ocupado", "en": "Busy pointer", "pt": "Ponteiro ocupado", "fr": "Pointeur occupé", "de": "Wartezeiger", "it": "Puntatore occupato", "ja": "処理中のポインタ", "zh": "忙碌指针", "ko": "작업 중 포인터", "ar": "مؤشر الانتظار" },
+    "keywords": {
+      "es": ["cargando", "esperando", "procesando", "en progreso", "reloj de arena", "trabajando", "cursor de progreso"],
+      "en": ["loading", "waiting", "processing", "in progress", "hourglass", "working", "progress cursor"]
+    }
+  },
+  "cursor-block": {
+    "label": { "es": "No permitido", "en": "Not allowed", "pt": "Não permitido", "fr": "Non autorisé", "de": "Nicht erlaubt", "it": "Non consentito", "ja": "操作不可", "zh": "不允许", "ko": "허용되지 않음", "ar": "غير مسموح" },
+    "keywords": {
+      "es": ["prohibido", "no disponible", "no se puede soltar", "bloqueado", "acción inválida", "deshabilitado", "restringido"],
+      "en": ["forbidden", "unavailable", "no drop", "blocked", "invalid action", "disabled", "restricted"]
+    }
+  },
+  "cursor-question": {
+    "label": { "es": "Ayuda contextual", "en": "Contextual help", "pt": "Ajuda contextual", "fr": "Aide contextuelle", "de": "Kontexthilfe", "it": "Guida contestuale", "ja": "コンテキストヘルプ", "zh": "上下文帮助", "ko": "상황별 도움말", "ar": "مساعدة سياقية" },
+    "keywords": {
+      "es": ["qué es esto", "cursor de ayuda", "pregunta", "información", "explicación", "dudas", "guía"],
+      "en": ["what's this", "help cursor", "question", "info", "explanation", "tooltip", "guide"]
+    }
+  },
+  "cursor-plus": {
+    "label": { "es": "Agregar una copia", "en": "Add a copy", "pt": "Adicionar uma cópia", "fr": "Ajouter une copie", "de": "Kopie hinzufügen", "it": "Aggiungi una copia", "ja": "コピーを追加", "zh": "添加副本", "ko": "사본 추가", "ar": "إضافة نسخة" },
+    "keywords": {
+      "es": ["copiar", "duplicar", "soltar una copia", "agregar con clic", "cursor de copia", "arrastrar y copiar", "añadir"],
+      "en": ["copy", "duplicate", "drop a copy", "click to add", "copy cursor", "drag to copy", "insert"]
+    }
+  },
+  "cursor-hover": {
+    "label": { "es": "Pasar el cursor", "en": "Hover", "pt": "Passar o cursor", "fr": "Survol", "de": "Mouseover", "it": "Passaggio del mouse", "ja": "ホバー", "zh": "悬停", "ko": "마우스 오버", "ar": "تمرير المؤشر" },
+    "keywords": {
+      "es": ["hover", "mouse encima", "estado al pasar", "resaltar", "vista previa", "tooltip", "señalar"],
+      "en": ["mouse over", "hover state", "rollover", "highlight", "preview", "tooltip", "point at"]
+    }
+  },
+  "cursor-double-click": {
+    "label": { "es": "Doble clic", "en": "Double click", "pt": "Clique duplo", "fr": "Double-clic", "de": "Doppelklick", "it": "Doppio clic", "ja": "ダブルクリック", "zh": "双击", "ko": "더블 클릭", "ar": "نقر مزدوج" },
+    "keywords": {
+      "es": ["abrir", "dos clics", "doble toque", "activar", "editar", "disparador", "seleccionar palabra"],
+      "en": ["open", "two clicks", "double tap", "activate", "edit", "trigger", "select word"]
+    }
+  },
+  "cursor-multiplayer": {
+    "label": { "es": "Colaboración en vivo", "en": "Live collaboration", "pt": "Colaboração ao vivo", "fr": "Collaboration en direct", "de": "Live-Zusammenarbeit", "it": "Collaborazione in tempo reale", "ja": "リアルタイム共同編集", "zh": "实时协作", "ko": "실시간 협업", "ar": "تعاون مباشر" },
+    "keywords": {
+      "es": ["cursores", "multijugador", "presencia", "colaboradores", "lienzo compartido", "tiempo real", "edición simultánea", "equipo"],
+      "en": ["cursors", "multiplayer", "presence", "collaborators", "shared canvas", "real time", "co-editing", "team"]
+    }
+  },
+  "cursor-select": {
+    "label": { "es": "Seleccionar área", "en": "Select area", "pt": "Selecionar área", "fr": "Sélectionner une zone", "de": "Bereich auswählen", "it": "Seleziona area", "ja": "範囲を選択", "zh": "框选", "ko": "영역 선택", "ar": "تحديد منطقة" },
+    "keywords": {
+      "es": ["herramienta de selección", "arrastrar para seleccionar", "marco de selección", "lienzo", "seleccionar varios", "rectángulo", "marquesina"],
+      "en": ["selection tool", "drag to select", "marquee", "canvas", "multi-select", "rectangle", "selection box"]
+    }
+  },
+  "hand-grab": {
+    "label": { "es": "Agarrar", "en": "Grab", "pt": "Agarrar", "fr": "Saisir", "de": "Greifen", "it": "Afferra", "ja": "つかむ", "zh": "抓取", "ko": "잡기", "ar": "إمساك" },
+    "keywords": {
+      "es": ["mano", "desplazar lienzo", "paneo", "mover vista", "arrastrable", "tomar", "herramienta mano"],
+      "en": ["hand", "pan canvas", "pan", "move view", "draggable", "pick up", "hand tool"]
+    }
+  },
+  "hand-grabbing": {
+    "label": { "es": "Arrastrando", "en": "Dragging", "pt": "Arrastando", "fr": "Glissement en cours", "de": "Wird gezogen", "it": "Trascinamento", "ja": "ドラッグ中", "zh": "拖动中", "ko": "드래그 중", "ar": "جارٍ السحب" },
+    "keywords": {
+      "es": ["mano cerrada", "agarrando", "moviendo lienzo", "paneo en curso", "sujetar", "puño", "mover"],
+      "en": ["closed hand", "grabbing", "panning", "holding", "fist", "moving", "drag in progress"]
+    }
+  },
+  "mouse-left-click": {
+    "label": { "es": "Clic izquierdo", "en": "Left click", "pt": "Clique esquerdo", "fr": "Clic gauche", "de": "Linksklick", "it": "Clic sinistro", "ja": "左クリック", "zh": "左键单击", "ko": "왼쪽 클릭", "ar": "نقر بالزر الأيسر" },
+    "keywords": {
+      "es": ["botón principal", "ratón", "mouse", "atajo", "instrucciones", "seleccionar", "pulsar"],
+      "en": ["primary button", "mouse", "shortcut", "instructions", "select", "press", "left button"]
+    }
+  },
+  "mouse-right-click": {
+    "label": { "es": "Clic derecho", "en": "Right click", "pt": "Clique direito", "fr": "Clic droit", "de": "Rechtsklick", "it": "Clic destro", "ja": "右クリック", "zh": "右键单击", "ko": "오른쪽 클릭", "ar": "نقر بالزر الأيمن" },
+    "keywords": {
+      "es": ["botón secundario", "menú contextual", "ratón", "mouse", "más opciones", "atajo", "instrucciones"],
+      "en": ["secondary button", "context menu", "mouse", "more options", "shortcut", "instructions", "secondary click"]
+    }
+  },
+  "menu-context": {
+    "label": { "es": "Menú contextual", "en": "Context menu", "pt": "Menu de contexto", "fr": "Menu contextuel", "de": "Kontextmenü", "it": "Menu contestuale", "ja": "コンテキストメニュー", "zh": "上下文菜单", "ko": "컨텍스트 메뉴", "ar": "قائمة السياق" },
+    "keywords": {
+      "es": ["clic derecho", "opciones", "acciones", "menú emergente", "más acciones", "acciones del elemento", "atajos"],
+      "en": ["right click", "options", "actions", "popup menu", "more actions", "item actions", "shortcut menu"]
+    }
+  },
+  "submenu": {
+    "label": { "es": "Submenú", "en": "Submenu", "pt": "Submenu", "fr": "Sous-menu", "de": "Untermenü", "it": "Sottomenu", "ja": "サブメニュー", "zh": "子菜单", "ko": "하위 메뉴", "ar": "قائمة فرعية" },
+    "keywords": {
+      "es": ["menú anidado", "segundo nivel", "desplegable", "menú en cascada", "más opciones", "navegación", "categorías"],
+      "en": ["nested menu", "second level", "dropdown", "cascading menu", "flyout", "navigation", "categories"]
+    }
+  },
+  "breadcrumb": {
+    "label": { "es": "Ruta de navegación", "en": "Breadcrumbs", "pt": "Trilha de navegação", "fr": "Fil d’Ariane", "de": "Brotkrümelnavigation", "it": "Percorso di navigazione", "ja": "パンくずリスト", "zh": "面包屑导航", "ko": "이동 경로", "ar": "مسار التنقل" },
+    "keywords": {
+      "es": ["migas de pan", "dónde estoy", "jerarquía", "página actual", "niveles", "volver a la sección", "ubicación"],
+      "en": ["navigation path", "where am I", "hierarchy", "current page", "levels", "parent page", "trail"]
+    }
+  },
+  "pagination": {
+    "label": { "es": "Paginación", "en": "Pagination", "pt": "Paginação", "fr": "Pagination", "de": "Seitennummerierung", "it": "Paginazione", "ja": "ページネーション", "zh": "分页", "ko": "페이지 매기기", "ar": "ترقيم الصفحات" },
+    "keywords": {
+      "es": ["páginas", "siguiente página", "página anterior", "resultados", "números de página", "navegar", "tabla"],
+      "en": ["pages", "next page", "previous page", "results", "page numbers", "pager", "table"]
+    }
+  },
+  "pagination-dots": {
+    "label": { "es": "Indicador de página", "en": "Page indicator", "pt": "Indicador de página", "fr": "Indicateur de page", "de": "Seitenindikator", "it": "Indicatore di pagina", "ja": "ページインジケーター", "zh": "页面指示器", "ko": "페이지 표시기", "ar": "مؤشر الصفحة" },
+    "keywords": {
+      "es": ["puntos", "carrusel", "diapositiva actual", "deslizar", "galería", "pasos", "onboarding"],
+      "en": ["dots", "carousel", "current slide", "swipe", "gallery", "steps", "onboarding"]
+    }
+  },
+  "load-more": {
+    "label": { "es": "Cargar más", "en": "Load more", "pt": "Carregar mais", "fr": "Charger plus", "de": "Mehr laden", "it": "Carica altro", "ja": "さらに読み込む", "zh": "加载更多", "ko": "더 불러오기", "ar": "تحميل المزيد" },
+    "keywords": {
+      "es": ["ver más", "más resultados", "siguiente lote", "mostrar más", "lista", "catálogo", "continuar"],
+      "en": ["see more", "more results", "next batch", "show more", "list", "catalog", "fetch more"]
+    }
+  },
+  "infinite-scroll": {
+    "label": { "es": "Desplazamiento infinito", "en": "Infinite scroll", "pt": "Rolagem infinita", "fr": "Défilement infini", "de": "Endloses Scrollen", "it": "Scorrimento infinito", "ja": "無限スクロール", "zh": "无限滚动", "ko": "무한 스크롤", "ar": "تمرير لا نهائي" },
+    "keywords": {
+      "es": ["scroll infinito", "feed", "carga automática", "lista continua", "tema de tienda", "paginación", "seguir bajando"],
+      "en": ["endless scroll", "feed", "auto load", "continuous list", "store theme", "pagination setting", "keep scrolling"]
+    }
+  },
+  "scrollbar": {
+    "label": { "es": "Barra de desplazamiento", "en": "Scrollbar", "pt": "Barra de rolagem", "fr": "Barre de défilement", "de": "Bildlaufleiste", "it": "Barra di scorrimento", "ja": "スクロールバー", "zh": "滚动条", "ko": "스크롤바", "ar": "شريط التمرير" },
+    "keywords": {
+      "es": ["desplazar", "scroll", "posición en la página", "contenido largo", "desbordamiento", "vertical", "overflow"],
+      "en": ["scroll", "scroll position", "long content", "overflow", "vertical", "scroll track", "thumb"]
+    }
+  },
+  "scrollbar-horizontal": {
+    "label": { "es": "Desplazamiento horizontal", "en": "Horizontal scroll", "pt": "Rolagem horizontal", "fr": "Défilement horizontal", "de": "Horizontales Scrollen", "it": "Scorrimento orizzontale", "ja": "横スクロール", "zh": "横向滚动", "ko": "가로 스크롤", "ar": "شريط التمرير الأفقي" },
+    "keywords": {
+      "es": ["barra de desplazamiento", "deslizar a los lados", "tabla ancha", "carrusel", "desbordamiento", "scroll lateral"],
+      "en": ["scrollbar", "sideways", "wide table", "carousel", "overflow", "side scroll", "pan"]
+    }
+  },
+  "jump-to": {
+    "label": { "es": "Saltar a", "en": "Jump to", "pt": "Ir para", "fr": "Aller à", "de": "Springen zu", "it": "Vai a", "ja": "ジャンプ", "zh": "跳转", "ko": "위치로 이동", "ar": "الانتقال إلى" },
+    "keywords": {
+      "es": ["ir a la línea", "ir a la sección", "saltar contenido", "ancla", "ir abajo", "navegación rápida", "índice"],
+      "en": ["go to line", "go to section", "skip down", "anchor", "skip to content", "quick navigation", "table of contents"]
+    }
+  },
+  "tab-bar": {
+    "label": { "es": "Barra de pestañas", "en": "Tab bar", "pt": "Barra de abas", "fr": "Barre d’onglets", "de": "Tableiste", "it": "Barra delle schede", "ja": "タブバー", "zh": "标签栏", "ko": "탭 바", "ar": "شريط علامات التبويب" },
+    "keywords": {
+      "es": ["navegación inferior", "app móvil", "menú inferior", "barra de navegación", "secciones", "pie de la app"],
+      "en": ["bottom navigation", "mobile app", "bottom bar", "nav bar", "sections", "bottom tabs"]
+    }
+  },
+  "tabs-plus": {
+    "label": { "es": "Nueva pestaña", "en": "New tab", "pt": "Nova aba", "fr": "Nouvel onglet", "de": "Neuer Tab", "it": "Nuova scheda", "ja": "新しいタブ", "zh": "新建标签页", "ko": "새 탭", "ar": "علامة تبويب جديدة" },
+    "keywords": {
+      "es": ["abrir pestaña", "agregar pestaña", "navegador", "otra página", "crear", "nueva ventana", "más"],
+      "en": ["open tab", "add tab", "browser", "another page", "create", "new window", "plus"]
+    }
+  },
+  "tabs-vertical": {
+    "label": { "es": "Pestañas verticales", "en": "Vertical tabs", "pt": "Abas verticais", "fr": "Onglets verticaux", "de": "Vertikale Tabs", "it": "Schede verticali", "ja": "縦タブ", "zh": "垂直标签页", "ko": "세로 탭", "ar": "علامات تبويب عمودية" },
+    "keywords": {
+      "es": ["pestañas laterales", "secciones de ajustes", "navegación lateral", "lista de pestañas", "configuración", "menú lateral", "categorías"],
+      "en": ["side tabs", "settings sections", "side navigation", "tab list", "settings", "side menu", "categories"]
+    }
+  },
+  "filter-plus": {
+    "label": { "es": "Agregar filtro", "en": "Add filter", "pt": "Adicionar filtro", "fr": "Ajouter un filtre", "de": "Filter hinzufügen", "it": "Aggiungi filtro", "ja": "フィルターを追加", "zh": "添加筛选", "ko": "필터 추가", "ar": "إضافة عامل تصفية" },
+    "keywords": {
+      "es": ["nuevo filtro", "regla de filtro", "condición", "refinar", "tabla", "embudo", "segmentar"],
+      "en": ["new filter", "filter rule", "condition", "refine", "table", "funnel", "segment"]
+    }
+  },
+  "history-x": {
+    "label": { "es": "Borrar historial", "en": "Clear history", "pt": "Limpar histórico", "fr": "Effacer l’historique", "de": "Verlauf löschen", "it": "Cancella cronologia", "ja": "履歴を消去", "zh": "清除历史记录", "ko": "기록 삭제", "ar": "مسح السجل" },
+    "keywords": {
+      "es": ["eliminar recientes", "limpiar navegación", "privacidad", "búsquedas recientes", "actividad", "olvidar", "datos de navegación"],
+      "en": ["delete recents", "clear browsing data", "privacy", "recent searches", "activity", "forget", "remove recent"]
+    }
+  },
+  "panel-bottom-collapse": {
+    "label": { "es": "Ocultar panel inferior", "en": "Hide bottom panel", "pt": "Ocultar painel inferior", "fr": "Masquer le panneau inférieur", "de": "Unteren Bereich ausblenden", "it": "Nascondi pannello inferiore", "ja": "下部パネルを隠す", "zh": "隐藏底部面板", "ko": "하단 패널 숨기기", "ar": "إخفاء اللوحة السفلية" },
+    "keywords": {
+      "es": ["cerrar consola", "cerrar terminal", "contraer", "más espacio", "plegar", "registros", "abajo"],
+      "en": ["close console", "close terminal", "collapse", "more space", "fold", "logs", "bottom"]
+    }
+  },
+  "panel-bottom-expand": {
+    "label": { "es": "Mostrar panel inferior", "en": "Show bottom panel", "pt": "Mostrar painel inferior", "fr": "Afficher le panneau inférieur", "de": "Unteren Bereich einblenden", "it": "Mostra pannello inferiore", "ja": "下部パネルを表示", "zh": "显示底部面板", "ko": "하단 패널 표시", "ar": "إظهار اللوحة السفلية" },
+    "keywords": {
+      "es": ["abrir consola", "abrir terminal", "expandir", "desplegar", "registros", "salida", "depurar"],
+      "en": ["open console", "open terminal", "expand", "unfold", "logs", "output", "debug"]
+    }
+  },
+  "panel-top-collapse": {
+    "label": { "es": "Ocultar panel superior", "en": "Hide top panel", "pt": "Ocultar painel superior", "fr": "Masquer le panneau supérieur", "de": "Oberen Bereich ausblenden", "it": "Nascondi pannello superiore", "ja": "上部パネルを隠す", "zh": "隐藏顶部面板", "ko": "상단 패널 숨기기", "ar": "إخفاء اللوحة العلوية" },
+    "keywords": {
+      "es": ["contraer encabezado", "ocultar barra de herramientas", "más espacio", "plegar", "cabecera", "cinta de opciones", "arriba"],
+      "en": ["collapse header", "hide toolbar", "more space", "fold", "header", "ribbon", "top"]
+    }
+  },
+  "panel-top-expand": {
+    "label": { "es": "Mostrar panel superior", "en": "Show top panel", "pt": "Mostrar painel superior", "fr": "Afficher le panneau supérieur", "de": "Oberen Bereich einblenden", "it": "Mostra pannello superiore", "ja": "上部パネルを表示", "zh": "显示顶部面板", "ko": "상단 패널 표시", "ar": "إظهار اللوحة العلوية" },
+    "keywords": {
+      "es": ["expandir encabezado", "mostrar barra de herramientas", "desplegar", "cabecera", "cinta de opciones", "arriba", "abrir"],
+      "en": ["expand header", "show toolbar", "unfold", "header", "ribbon", "top", "open"]
+    }
+  },
+  "sidebar-right-collapse": {
+    "label": { "es": "Ocultar panel derecho", "en": "Hide right panel", "pt": "Ocultar painel direito", "fr": "Masquer le panneau droit", "de": "Rechten Bereich ausblenden", "it": "Nascondi pannello destro", "ja": "右パネルを隠す", "zh": "隐藏右侧面板", "ko": "오른쪽 패널 숨기기", "ar": "إخفاء اللوحة اليمنى" },
+    "keywords": {
+      "es": ["barra lateral derecha", "cerrar inspector", "cerrar detalles", "contraer", "más espacio", "propiedades", "modo enfoque"],
+      "en": ["right sidebar", "close inspector", "close details", "collapse", "more space", "properties", "focus mode"]
+    }
+  },
+  "sidebar-right-expand": {
+    "label": { "es": "Mostrar panel derecho", "en": "Show right panel", "pt": "Mostrar painel direito", "fr": "Afficher le panneau droit", "de": "Rechten Bereich einblenden", "it": "Mostra pannello destro", "ja": "右パネルを表示", "zh": "显示右侧面板", "ko": "오른쪽 패널 표시", "ar": "إظهار اللوحة اليمنى" },
+    "keywords": {
+      "es": ["barra lateral derecha", "abrir inspector", "ver detalles", "propiedades", "expandir", "información", "ajustes del elemento"],
+      "en": ["right sidebar", "open inspector", "view details", "properties", "expand", "info", "item settings"]
+    }
+  },
+  "view-masonry": {
+    "label": { "es": "Vista de mosaico", "en": "Masonry view", "pt": "Visualização em mosaico", "fr": "Vue en mosaïque", "de": "Mosaikansicht", "it": "Vista a mosaico", "ja": "メイソンリー表示", "zh": "瀑布流视图", "ko": "메이슨리 보기", "ar": "عرض فسيفسائي" },
+    "keywords": {
+      "es": ["muro", "galería", "tarjetas de distinta altura", "estilo pinterest", "portafolio", "cuadrícula irregular", "tablero de inspiración"],
+      "en": ["wall", "gallery", "uneven tiles", "pinterest style", "portfolio", "staggered grid", "mood board"]
+    }
+  },
+  "view-thumbnails": {
+    "label": { "es": "Galería con miniaturas", "en": "Thumbnail gallery", "pt": "Galeria com miniaturas", "fr": "Galerie avec miniatures", "de": "Galerie mit Miniaturen", "it": "Galleria con miniature", "ja": "サムネイル付きギャラリー", "zh": "缩略图画廊", "ko": "썸네일 갤러리", "ar": "معرض بصور مصغّرة" },
+    "keywords": {
+      "es": ["tira de imágenes", "vista previa", "galería de producto", "navegador de diapositivas", "visor de imágenes", "fotos", "presentación"],
+      "en": ["filmstrip", "preview", "product gallery", "slide navigator", "image viewer", "photos", "slides"]
+    }
+  },
+  "view-stack": {
+    "label": { "es": "Vista de pila", "en": "Stack view", "pt": "Visualização em pilha", "fr": "Vue en pile", "de": "Stapelansicht", "it": "Vista a pila", "ja": "スタック表示", "zh": "堆叠视图", "ko": "스택 보기", "ar": "عرض مكدّس" },
+    "keywords": {
+      "es": ["pila de tarjetas", "mazo", "notificaciones apiladas", "capas", "tarjetas", "deslizar tarjetas", "agrupar"],
+      "en": ["card stack", "deck", "stacked notifications", "layers", "cards", "swipe cards", "group"]
+    }
+  },
+  "view-carousel-vertical": {
+    "label": { "es": "Carrusel vertical", "en": "Vertical carousel", "pt": "Carrossel vertical", "fr": "Carrousel vertical", "de": "Vertikales Karussell", "it": "Carosello verticale", "ja": "縦型カルーセル", "zh": "纵向轮播", "ko": "세로 캐러셀", "ar": "عرض دوّار عمودي" },
+    "keywords": {
+      "es": ["feed vertical", "deslizar hacia arriba", "videos cortos", "historias", "reels", "uno a la vez", "pantalla completa"],
+      "en": ["vertical feed", "swipe up", "short videos", "stories", "reels", "one at a time", "full-screen feed"]
+    }
+  },
+  "grip-diagonal": {
+    "label": { "es": "Asa para redimensionar", "en": "Resize handle", "pt": "Alça de redimensionamento", "fr": "Poignée de redimensionnement", "de": "Größenänderungsgriff", "it": "Maniglia di ridimensionamento", "ja": "サイズ変更ハンドル", "zh": "调整大小手柄", "ko": "크기 조절 핸들", "ar": "مقبض تغيير الحجم" },
+    "keywords": {
+      "es": ["esquina", "cambiar tamaño", "agrandar ventana", "área de texto", "estirar", "arrastrar la esquina", "panel"],
+      "en": ["corner", "grabber", "enlarge window", "text area", "drag to resize", "stretch", "panel"]
+    }
+  },
+  "zoom-selection": {
+    "label": { "es": "Zoom a la selección", "en": "Zoom to selection", "pt": "Zoom na seleção", "fr": "Zoom sur la sélection", "de": "Auf Auswahl zoomen", "it": "Zoom sulla selezione", "ja": "選択範囲にズーム", "zh": "缩放至所选内容", "ko": "선택 영역 확대", "ar": "تكبير إلى التحديد" },
+    "keywords": {
+      "es": ["ajustar a lo seleccionado", "encuadrar", "acercar", "enfocar elementos", "lienzo", "centrar", "ver seleccionados"],
+      "en": ["fit selection", "frame selection", "zoom in", "focus items", "canvas", "center", "show selected"]
+    }
+  },
+  "fit-width": {
+    "label": { "es": "Ajustar al ancho", "en": "Fit to width", "pt": "Ajustar à largura", "fr": "Ajuster à la largeur", "de": "An Breite anpassen", "it": "Adatta alla larghezza", "ja": "幅に合わせる", "zh": "适应宽度", "ko": "너비에 맞추기", "ar": "ملاءمة العرض" },
+    "keywords": {
+      "es": ["ancho completo", "ancho de página", "zoom", "escalar", "visor de pdf", "imagen", "ocupar todo el ancho"],
+      "en": ["full width", "page width", "zoom", "scale", "pdf viewer", "image", "stretch horizontally"]
+    }
+  },
+  "fit-height": {
+    "label": { "es": "Ajustar al alto", "en": "Fit to height", "pt": "Ajustar à altura", "fr": "Ajuster à la hauteur", "de": "An Höhe anpassen", "it": "Adatta all’altezza", "ja": "高さに合わせる", "zh": "适应高度", "ko": "높이에 맞추기", "ar": "ملاءمة الارتفاع" },
+    "keywords": {
+      "es": ["altura completa", "página completa", "zoom", "escalar", "visor de pdf", "imagen", "ver la página entera"],
+      "en": ["full height", "whole page", "zoom", "scale", "pdf viewer", "image", "stretch vertically"]
+    }
   }
 }

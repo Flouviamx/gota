@@ -803,5 +803,831 @@
       "es": ["proporción", "formato", "tamaño de imagen", "16:9", "cuadrado", "vertical", "encuadre"],
       "en": ["ratio", "format", "image size", "16:9", "square", "portrait", "widescreen"]
     }
+  },
+  "frame": {
+    "label": { "es": "Marco", "en": "Frame", "pt": "Quadro", "fr": "Cadre", "de": "Rahmen", "it": "Frame", "ja": "フレーム", "zh": "画框", "ko": "프레임", "ar": "إطار" },
+    "keywords": {
+      "es": ["mesa de trabajo", "artboard", "contenedor", "lienzo", "pantalla", "tarjeta", "herramienta de diseño", "figma"],
+      "en": ["artboard", "container", "canvas", "screen", "card", "design tool", "board", "figma"]
+    }
+  },
+  "bring-to-front": {
+    "label": { "es": "Traer al frente", "en": "Bring to front", "pt": "Trazer para a frente", "fr": "Mettre au premier plan", "de": "In den Vordergrund", "it": "Porta in primo piano", "ja": "最前面へ移動", "zh": "置于顶层", "ko": "맨 앞으로 가져오기", "ar": "إحضار إلى المقدمة" },
+    "keywords": {
+      "es": ["orden de capas", "encima de todo", "capa superior", "primer plano", "apilar", "organizar", "z-index"],
+      "en": ["layer order", "on top", "top layer", "foreground", "arrange", "stack", "z-index"]
+    }
+  },
+  "send-to-back": {
+    "label": { "es": "Enviar al fondo", "en": "Send to back", "pt": "Enviar para trás", "fr": "Mettre à l’arrière-plan", "de": "In den Hintergrund", "it": "Porta in secondo piano", "ja": "最背面へ移動", "zh": "置于底层", "ko": "맨 뒤로 보내기", "ar": "إرسال إلى الخلفية" },
+    "keywords": {
+      "es": ["orden de capas", "debajo de todo", "capa inferior", "segundo plano", "apilar", "organizar", "z-index"],
+      "en": ["layer order", "behind everything", "bottom layer", "background", "arrange", "stack", "z-index"]
+    }
+  },
+  "ungroup": {
+    "label": { "es": "Desagrupar", "en": "Ungroup", "pt": "Desagrupar", "fr": "Dissocier", "de": "Gruppierung aufheben", "it": "Separa", "ja": "グループ解除", "zh": "取消编组", "ko": "그룹 해제", "ar": "فك التجميع" },
+    "keywords": {
+      "es": ["separar objetos", "romper grupo", "deshacer grupo", "capas", "elementos sueltos", "ctrl shift g", "organizar"],
+      "en": ["split group", "break apart", "separate objects", "layers", "release", "cmd shift g", "arrange"]
+    }
+  },
+  "flatten": {
+    "label": { "es": "Aplanar", "en": "Flatten", "pt": "Achatar", "fr": "Aplatir", "de": "Auf eine Ebene reduzieren", "it": "Appiattisci", "ja": "フラット化", "zh": "拼合", "ko": "평탄화", "ar": "تسطيح" },
+    "keywords": {
+      "es": ["combinar capas", "fusionar", "una sola forma", "convertir en vector", "operación booleana", "simplificar", "ctrl e"],
+      "en": ["merge layers", "combine", "single shape", "convert to vector", "boolean", "simplify", "cmd e"]
+    }
+  },
+  "mask": {
+    "label": { "es": "Máscara", "en": "Mask", "pt": "Máscara", "fr": "Masque", "de": "Maske", "it": "Maschera", "ja": "マスク", "zh": "蒙版", "ko": "마스크", "ar": "قناع" },
+    "keywords": {
+      "es": ["máscara de recorte", "recortar contenido", "ocultar lo de afuera", "enmascarar", "silueta", "capas", "clip"],
+      "en": ["clipping mask", "clip content", "crop to shape", "hide outside", "layers", "masking", "clip path"]
+    }
+  },
+  "component-instance": {
+    "label": { "es": "Instancia de componente", "en": "Component instance", "pt": "Instância de componente", "fr": "Instance de composant", "de": "Komponenteninstanz", "it": "Istanza del componente", "ja": "コンポーネントのインスタンス", "zh": "组件实例", "ko": "컴포넌트 인스턴스", "ar": "مثيل المكوّن" },
+    "keywords": {
+      "es": ["copia vinculada", "ir al componente principal", "componente maestro", "sistema de diseño", "biblioteca", "reutilizar", "figma"],
+      "en": ["linked copy", "go to main component", "master component", "design system", "library", "reuse", "figma"]
+    }
+  },
+  "component-variants": {
+    "label": { "es": "Variantes de componente", "en": "Component variants", "pt": "Variantes de componente", "fr": "Variantes de composant", "de": "Komponentenvarianten", "it": "Varianti del componente", "ja": "コンポーネントのバリアント", "zh": "组件变体", "ko": "컴포넌트 베리언트", "ar": "متغيرات المكوّن" },
+    "keywords": {
+      "es": ["conjunto de componentes", "propiedades de variante", "estados", "tamaños", "sistema de diseño", "opciones", "figma"],
+      "en": ["component set", "variant properties", "states", "sizes", "design system", "options", "figma"]
+    }
+  },
+  "component-detach": {
+    "label": { "es": "Desvincular instancia", "en": "Detach instance", "pt": "Desanexar instância", "fr": "Détacher l’instance", "de": "Instanz lösen", "it": "Scollega istanza", "ja": "インスタンスの切り離し", "zh": "分离实例", "ko": "인스턴스 분리", "ar": "فصل المثيل" },
+    "keywords": {
+      "es": ["separar del componente", "romper vínculo", "convertir en marco", "editar libremente", "componente principal", "sistema de diseño", "ctrl alt b"],
+      "en": ["unlink component", "break link", "convert to frame", "edit freely", "main component", "design system", "cmd option b"]
+    }
+  },
+  "component-swap": {
+    "label": { "es": "Intercambiar instancia", "en": "Swap instance", "pt": "Trocar instância", "fr": "Échanger l’instance", "de": "Instanz austauschen", "it": "Scambia istanza", "ja": "インスタンスの入れ替え", "zh": "替换实例", "ko": "인스턴스 교체", "ar": "تبديل المثيل" },
+    "keywords": {
+      "es": ["reemplazar componente", "cambiar por otro", "otra variante", "biblioteca", "sistema de diseño", "sustituir", "figma"],
+      "en": ["replace component", "change component", "switch variant", "library", "design system", "substitute", "figma"]
+    }
+  },
+  "component-plus": {
+    "label": { "es": "Crear componente", "en": "Create component", "pt": "Criar componente", "fr": "Créer un composant", "de": "Komponente erstellen", "it": "Crea componente", "ja": "コンポーネントを作成", "zh": "创建组件", "ko": "컴포넌트 만들기", "ar": "إنشاء مكوّن" },
+    "keywords": {
+      "es": ["nuevo componente", "convertir selección", "reutilizable", "sistema de diseño", "biblioteca", "ctrl alt k", "componente principal"],
+      "en": ["new component", "convert selection", "reusable", "design system", "library", "cmd option k", "main component"]
+    }
+  },
+  "boolean-union": {
+    "label": { "es": "Unir formas", "en": "Unite shapes", "pt": "Unir formas", "fr": "Union", "de": "Formen vereinigen", "it": "Unisci forme", "ja": "合体", "zh": "联集", "ko": "합치기", "ar": "توحيد الأشكال" },
+    "keywords": {
+      "es": ["operación booleana", "combinar formas", "fusionar", "un solo contorno", "pathfinder", "buscatrazos", "sumar"],
+      "en": ["boolean", "union", "combine shapes", "merge", "single outline", "pathfinder", "add"]
+    }
+  },
+  "boolean-subtract": {
+    "label": { "es": "Restar formas", "en": "Subtract shapes", "pt": "Subtrair formas", "fr": "Soustraction", "de": "Formen subtrahieren", "it": "Sottrai forme", "ja": "前面オブジェクトで型抜き", "zh": "减去顶层", "ko": "앞면 오브젝트 제외", "ar": "طرح الشكل" },
+    "keywords": {
+      "es": ["operación booleana", "recortar", "quitar forma", "perforar", "pathfinder", "menos frente", "hueco"],
+      "en": ["boolean", "minus front", "cut out", "punch hole", "knockout", "pathfinder", "remove shape"]
+    }
+  },
+  "boolean-intersect": {
+    "label": { "es": "Intersecar formas", "en": "Intersect shapes", "pt": "Interseção de formas", "fr": "Intersection", "de": "Schnittmenge bilden", "it": "Interseca forme", "ja": "交差", "zh": "交集", "ko": "교차 영역", "ar": "تقاطع الأشكال" },
+    "keywords": {
+      "es": ["operación booleana", "intersección", "área en común", "superposición", "pathfinder", "solo lo que se cruza", "recortar"],
+      "en": ["boolean", "intersection", "common area", "overlap", "pathfinder", "shared region", "crop"]
+    }
+  },
+  "boolean-exclude": {
+    "label": { "es": "Excluir superposición", "en": "Exclude overlap", "pt": "Excluir sobreposição", "fr": "Exclusion", "de": "Schnittmenge entfernen", "it": "Escludi sovrapposizione", "ja": "中マド", "zh": "差集", "ko": "교차 영역 제외", "ar": "استبعاد التداخل" },
+    "keywords": {
+      "es": ["operación booleana", "diferencia", "xor", "quitar el traslape", "pathfinder", "hueco", "partes no comunes"],
+      "en": ["boolean", "difference", "xor", "exclude", "pathfinder", "hole", "non-overlapping"]
+    }
+  },
+  "bezier-curve": {
+    "label": { "es": "Curva Bézier", "en": "Bezier curve", "pt": "Curva de Bézier", "fr": "Courbe de Bézier", "de": "Bézierkurve", "it": "Curva di Bézier", "ja": "ベジェ曲線", "zh": "贝塞尔曲线", "ko": "베지어 곡선", "ar": "منحنى بيزييه" },
+    "keywords": {
+      "es": ["manejadores", "tiradores", "herramienta curva", "editar curva", "puntos de control", "vector", "trazado"],
+      "en": ["control handles", "curve tool", "edit curve", "control points", "vector", "path", "spline"]
+    }
+  },
+  "node-corner": {
+    "label": { "es": "Punto de esquina", "en": "Corner point", "pt": "Ponto de canto", "fr": "Point d’angle", "de": "Eckpunkt", "it": "Punto angolo", "ja": "コーナーポイント", "zh": "角点", "ko": "모퉁이 기준점", "ar": "نقطة زاوية" },
+    "keywords": {
+      "es": ["nodo", "punto de ancla", "vértice", "ángulo", "cambio de dirección", "trazado", "editar puntos"],
+      "en": ["node", "anchor point", "vertex", "sharp corner", "angle", "path", "edit points"]
+    }
+  },
+  "node-smooth": {
+    "label": { "es": "Punto suave", "en": "Smooth point", "pt": "Ponto suave", "fr": "Point lisse", "de": "Übergangspunkt", "it": "Punto smussato", "ja": "スムーズポイント", "zh": "平滑点", "ko": "매끄러운 기준점", "ar": "نقطة سلسة" },
+    "keywords": {
+      "es": ["nodo", "punto de ancla", "curva continua", "manejadores simétricos", "suavizar", "trazado", "bézier"],
+      "en": ["node", "anchor point", "continuous curve", "mirrored handles", "symmetric", "path", "bezier"]
+    }
+  },
+  "pen-tool-plus": {
+    "label": { "es": "Agregar punto de ancla", "en": "Add anchor point", "pt": "Adicionar ponto de ancoragem", "fr": "Ajouter un point d’ancrage", "de": "Ankerpunkt hinzufügen", "it": "Aggiungi punto di ancoraggio", "ja": "アンカーポイントの追加", "zh": "添加锚点", "ko": "기준점 추가", "ar": "إضافة نقطة ارتكاز" },
+    "keywords": {
+      "es": ["nuevo nodo", "pluma", "insertar punto", "editar trazado", "vector", "curva", "más puntos"],
+      "en": ["new node", "pen", "insert point", "edit path", "vector", "curve", "add node"]
+    }
+  },
+  "pen-tool-minus": {
+    "label": { "es": "Eliminar punto de ancla", "en": "Delete anchor point", "pt": "Excluir ponto de ancoragem", "fr": "Supprimer le point d’ancrage", "de": "Ankerpunkt löschen", "it": "Elimina punto di ancoraggio", "ja": "アンカーポイントの削除", "zh": "删除锚点", "ko": "기준점 삭제", "ar": "حذف نقطة الارتكاز" },
+    "keywords": {
+      "es": ["quitar nodo", "pluma", "simplificar trazado", "editar trazado", "vector", "menos puntos", "borrar punto"],
+      "en": ["remove node", "pen", "simplify path", "edit path", "vector", "fewer points", "delete node"]
+    }
+  },
+  "path-join": {
+    "label": { "es": "Unir trazado", "en": "Join path", "pt": "Unir traçado", "fr": "Joindre le tracé", "de": "Pfad verbinden", "it": "Unisci tracciato", "ja": "パスの連結", "zh": "连接路径", "ko": "패스 연결", "ar": "وصل المسار" },
+    "keywords": {
+      "es": ["conectar puntos", "cerrar trazado", "unir extremos", "nodos", "vector", "ctrl j", "soldar"],
+      "en": ["connect points", "close path", "join endpoints", "nodes", "vector", "cmd j", "weld"]
+    }
+  },
+  "path-break": {
+    "label": { "es": "Cortar trazado", "en": "Break path", "pt": "Dividir traçado", "fr": "Couper le tracé", "de": "Pfad auftrennen", "it": "Dividi tracciato", "ja": "パスを切断", "zh": "断开路径", "ko": "패스 끊기", "ar": "قطع المسار" },
+    "keywords": {
+      "es": ["tijeras", "separar en nodo", "abrir trazado", "dividir", "extremos abiertos", "vector", "romper"],
+      "en": ["scissors", "split at node", "open path", "cut path", "divide", "vector", "open ends"]
+    }
+  },
+  "path-offset": {
+    "label": { "es": "Desplazar trazado", "en": "Offset path", "pt": "Deslocar traçado", "fr": "Décalage du tracé", "de": "Pfad verschieben", "it": "Sposta tracciato", "ja": "パスのオフセット", "zh": "偏移路径", "ko": "패스 이동", "ar": "إزاحة المسار" },
+    "keywords": {
+      "es": ["contorno exterior", "contorno interior", "expandir forma", "copia paralela", "línea de corte", "stickers", "vector"],
+      "en": ["outer outline", "inset", "outset", "parallel copy", "cut line", "expand shape", "vector"]
+    }
+  },
+  "guides": {
+    "label": { "es": "Guías", "en": "Guides", "pt": "Guias", "fr": "Repères", "de": "Hilfslinien", "it": "Guide", "ja": "ガイド", "zh": "参考线", "ko": "안내선", "ar": "خطوط إرشادية" },
+    "keywords": {
+      "es": ["reglas", "líneas de referencia", "mostrar guías", "ocultar guías", "maquetación", "alinear", "lienzo"],
+      "en": ["rulers", "ruler guides", "show guides", "hide guides", "layout", "align", "canvas"]
+    }
+  },
+  "pixel-grid": {
+    "label": { "es": "Cuadrícula de píxeles", "en": "Pixel grid", "pt": "Grade de pixels", "fr": "Grille de pixels", "de": "Pixelraster", "it": "Griglia di pixel", "ja": "ピクセルグリッド", "zh": "像素网格", "ko": "픽셀 그리드", "ar": "شبكة البكسل" },
+    "keywords": {
+      "es": ["ajustar a píxel", "zoom", "pixel perfect", "nitidez", "alinear a píxeles", "píxeles enteros", "rejilla"],
+      "en": ["snap to pixel", "zoom", "pixel perfect", "crisp edges", "align to pixels", "whole pixels", "raster"]
+    }
+  },
+  "snap-to-grid": {
+    "label": { "es": "Ajustar a la cuadrícula", "en": "Snap to grid", "pt": "Ajustar à grade", "fr": "Magnétisme de la grille", "de": "Am Raster ausrichten", "it": "Aggancia alla griglia", "ja": "グリッドにスナップ", "zh": "对齐网格", "ko": "그리드에 맞추기", "ar": "المحاذاة إلى الشبكة" },
+    "keywords": {
+      "es": ["imán", "magnético", "encajar", "mover objetos", "rejilla", "alineación automática", "precisión"],
+      "en": ["magnet", "magnetic", "snapping", "move objects", "align", "auto align", "precision"]
+    }
+  },
+  "auto-layout-horizontal": {
+    "label": { "es": "Diseño automático horizontal", "en": "Horizontal auto layout", "pt": "Layout automático horizontal", "fr": "Disposition auto horizontale", "de": "Horizontales Auto-Layout", "it": "Auto layout orizzontale", "ja": "水平方向のオートレイアウト", "zh": "水平自动布局", "ko": "가로 자동 레이아웃", "ar": "تخطيط تلقائي أفقي" },
+    "keywords": {
+      "es": ["en fila", "pila horizontal", "flexbox", "flex row", "auto layout", "lado a lado", "shift a"],
+      "en": ["row", "horizontal stack", "hstack", "flex row", "flexbox", "side by side", "shift a"]
+    }
+  },
+  "auto-layout-vertical": {
+    "label": { "es": "Diseño automático vertical", "en": "Vertical auto layout", "pt": "Layout automático vertical", "fr": "Disposition auto verticale", "de": "Vertikales Auto-Layout", "it": "Auto layout verticale", "ja": "垂直方向のオートレイアウト", "zh": "垂直自动布局", "ko": "세로 자동 레이아웃", "ar": "تخطيط تلقائي عمودي" },
+    "keywords": {
+      "es": ["en columna", "pila vertical", "flexbox", "flex column", "auto layout", "uno debajo de otro", "apilar"],
+      "en": ["column", "vertical stack", "vstack", "flex column", "flexbox", "stacked", "shift a"]
+    }
+  },
+  "auto-layout-wrap": {
+    "label": { "es": "Diseño automático con ajuste", "en": "Wrapping auto layout", "pt": "Layout automático com quebra", "fr": "Disposition auto avec retour à la ligne", "de": "Auto-Layout mit Umbruch", "it": "Auto layout a capo", "ja": "折り返しのオートレイアウト", "zh": "自动换行布局", "ko": "줄 바꿈 자동 레이아웃", "ar": "تخطيط تلقائي مع الالتفاف" },
+    "keywords": {
+      "es": ["flex wrap", "varias filas", "salto de fila", "cuadrícula fluida", "flexbox", "etiquetas", "responsive"],
+      "en": ["flex wrap", "multiple rows", "wrap to next row", "fluid grid", "flexbox", "tags", "responsive"]
+    }
+  },
+  "gap-horizontal": {
+    "label": { "es": "Espaciado horizontal", "en": "Horizontal gap", "pt": "Espaçamento horizontal", "fr": "Espacement horizontal", "de": "Horizontaler Abstand", "it": "Spaziatura orizzontale", "ja": "水平方向の間隔", "zh": "水平间距", "ko": "가로 간격", "ar": "المسافة الأفقية" },
+    "keywords": {
+      "es": ["separación entre elementos", "gap", "column gap", "espacio entre columnas", "auto layout", "medianil", "distancia"],
+      "en": ["item spacing", "column gap", "gap", "spacing", "auto layout", "gutter", "distance"]
+    }
+  },
+  "gap-vertical": {
+    "label": { "es": "Espaciado vertical", "en": "Vertical gap", "pt": "Espaçamento vertical", "fr": "Espacement vertical", "de": "Vertikaler Abstand", "it": "Spaziatura verticale", "ja": "垂直方向の間隔", "zh": "垂直间距", "ko": "세로 간격", "ar": "المسافة العمودية" },
+    "keywords": {
+      "es": ["separación entre filas", "row gap", "gap", "espacio entre elementos", "auto layout", "elementos apilados", "distancia"],
+      "en": ["row gap", "item spacing", "gap", "spacing", "auto layout", "stacked items", "distance"]
+    }
+  },
+  "padding": {
+    "label": { "es": "Margen interior", "en": "Padding", "pt": "Espaçamento interno", "fr": "Marge intérieure", "de": "Innenabstand", "it": "Spaziatura interna", "ja": "パディング", "zh": "内边距", "ko": "안쪽 여백", "ar": "الحشو الداخلي" },
+    "keywords": {
+      "es": ["padding", "relleno", "espacio interno", "contenedor", "auto layout", "modelo de caja", "css"],
+      "en": ["inner spacing", "inset", "container", "auto layout", "box model", "css", "whitespace"]
+    }
+  },
+  "margin": {
+    "label": { "es": "Margen", "en": "Margin", "pt": "Margem", "fr": "Marge", "de": "Rand", "it": "Margine", "ja": "余白", "zh": "边距", "ko": "여백", "ar": "الهامش" },
+    "keywords": {
+      "es": ["márgenes de página", "espacio exterior", "margin", "separación", "modelo de caja", "css", "documento"],
+      "en": ["page margins", "outer spacing", "spacing", "box model", "css", "whitespace", "document"]
+    }
+  },
+  "hug-contents": {
+    "label": { "es": "Ajustar al contenido", "en": "Hug contents", "pt": "Ajustar ao conteúdo", "fr": "Ajuster au contenu", "de": "Inhalt umschließen", "it": "Adatta al contenuto", "ja": "コンテンツに合わせる", "zh": "适应内容", "ko": "콘텐츠에 맞추기", "ar": "احتواء المحتوى" },
+    "keywords": {
+      "es": ["tamaño automático", "fit content", "encoger", "auto layout", "contenedor", "redimensionar", "ancho automático"],
+      "en": ["auto size", "fit content", "shrink wrap", "auto layout", "container", "resizing", "intrinsic size"]
+    }
+  },
+  "fill-container": {
+    "label": { "es": "Llenar contenedor", "en": "Fill container", "pt": "Preencher contêiner", "fr": "Remplir le conteneur", "de": "Container füllen", "it": "Riempi contenitore", "ja": "コンテナに合わせて拡大", "zh": "填充容器", "ko": "컨테이너 채우기", "ar": "ملء الحاوية" },
+    "keywords": {
+      "es": ["estirar", "ancho completo", "100%", "flex grow", "auto layout", "expandir", "ocupar espacio"],
+      "en": ["stretch", "full width", "100%", "flex grow", "auto layout", "expand", "fill parent"]
+    }
+  },
+  "constraints": {
+    "label": { "es": "Restricciones", "en": "Constraints", "pt": "Restrições", "fr": "Contraintes", "de": "Einschränkungen", "it": "Vincoli", "ja": "制約", "zh": "约束", "ko": "제약 조건", "ar": "القيود" },
+    "keywords": {
+      "es": ["fijar a bordes", "anclar", "centrar", "responsive", "redimensionar", "escalar", "pin"],
+      "en": ["pin to edges", "anchor", "center", "responsive", "resizing", "scale", "pinning"]
+    }
+  },
+  "tidy-up": {
+    "label": { "es": "Acomodar", "en": "Tidy up", "pt": "Organizar", "fr": "Ranger", "de": "Aufräumen", "it": "Riordina", "ja": "整理", "zh": "整理", "ko": "정리", "ar": "ترتيب" },
+    "keywords": {
+      "es": ["ordenar", "cuadrícula pareja", "espaciado uniforme", "alinear objetos", "limpiar lienzo", "distribuir", "ctrl alt t"],
+      "en": ["arrange", "even grid", "even spacing", "align objects", "clean up canvas", "distribute", "ctrl alt t"]
+    }
+  },
+  "constrain-proportions": {
+    "label": { "es": "Mantener proporciones", "en": "Constrain proportions", "pt": "Manter proporções", "fr": "Conserver les proportions", "de": "Proportionen beibehalten", "it": "Mantieni proporzioni", "ja": "縦横比を固定", "zh": "锁定比例", "ko": "비율 고정", "ar": "الحفاظ على التناسب" },
+    "keywords": {
+      "es": ["bloquear relación de aspecto", "candado", "escalar proporcional", "ancho y alto", "redimensionar", "shift", "sin deformar"],
+      "en": ["lock aspect ratio", "lock", "proportional scaling", "width and height", "resize", "shift", "no distortion"]
+    }
+  },
+  "align-center-horizontal": {
+    "label": { "es": "Centrar horizontalmente", "en": "Align horizontal centers", "pt": "Alinhar centros horizontalmente", "fr": "Centrer horizontalement", "de": "Horizontal zentrieren", "it": "Allinea al centro orizzontale", "ja": "水平方向中央揃え", "zh": "水平居中对齐", "ko": "가로 가운데 맞춤", "ar": "محاذاة إلى المنتصف أفقيًا" },
+    "keywords": {
+      "es": ["alinear al centro", "eje vertical", "centrado", "alinear objetos", "maquetación", "diseño", "alt h"],
+      "en": ["center", "vertical axis", "centered", "align objects", "layout", "design", "alt h"]
+    }
+  },
+  "align-middle": {
+    "label": { "es": "Alinear al medio", "en": "Align middle", "pt": "Alinhar ao meio", "fr": "Aligner au milieu", "de": "Vertikal zentrieren", "it": "Allinea al centro verticale", "ja": "垂直方向中央揃え", "zh": "垂直居中对齐", "ko": "세로 가운데 맞춤", "ar": "محاذاة إلى المنتصف عموديًا" },
+    "keywords": {
+      "es": ["centrar verticalmente", "eje horizontal", "centro vertical", "alinear objetos", "maquetación", "diseño", "alt v"],
+      "en": ["vertical centers", "horizontal axis", "center vertically", "align objects", "layout", "design", "alt v"]
+    }
+  },
+  "skew": {
+    "label": { "es": "Sesgar", "en": "Skew", "pt": "Inclinar", "fr": "Incliner", "de": "Neigen", "it": "Inclina", "ja": "シアー", "zh": "倾斜", "ko": "기울이기", "ar": "إمالة" },
+    "keywords": {
+      "es": ["inclinar", "cizalla", "deformar", "oblicuo", "transformar", "ángulo", "perspectiva falsa"],
+      "en": ["shear", "slant", "distort", "oblique", "transform", "angle", "italicize"]
+    }
+  },
+  "perspective": {
+    "label": { "es": "Perspectiva", "en": "Perspective", "pt": "Perspectiva", "fr": "Perspective", "de": "Perspektive", "it": "Prospettiva", "ja": "遠近法", "zh": "透视", "ko": "원근", "ar": "منظور" },
+    "keywords": {
+      "es": ["distorsionar", "deformar esquinas", "transformación libre", "punto de fuga", "3d", "mockup", "inclinación"],
+      "en": ["distort", "corner pin", "free transform", "vanishing point", "3d", "mockup", "four corners"]
+    }
+  },
+  "warp": {
+    "label": { "es": "Deformar", "en": "Warp", "pt": "Deformar", "fr": "Déformation", "de": "Verkrümmen", "it": "Altera", "ja": "ワープ", "zh": "变形", "ko": "뒤틀기", "ar": "تشويه" },
+    "keywords": {
+      "es": ["malla", "curvar", "doblar", "envolvente", "distorsión", "transformar", "ondular"],
+      "en": ["mesh warp", "bend", "envelope distort", "curve", "distortion", "transform", "puppet warp"]
+    }
+  },
+  "opacity": {
+    "label": { "es": "Opacidad", "en": "Opacity", "pt": "Opacidade", "fr": "Opacité", "de": "Deckkraft", "it": "Opacità", "ja": "不透明度", "zh": "不透明度", "ko": "불투명도", "ar": "العتامة" },
+    "keywords": {
+      "es": ["transparencia", "translúcido", "alfa", "desvanecer", "capa", "porcentaje", "visibilidad"],
+      "en": ["transparency", "translucent", "alpha", "fade", "layer", "percentage", "see-through"]
+    }
+  },
+  "blend-mode": {
+    "label": { "es": "Modo de fusión", "en": "Blend mode", "pt": "Modo de mesclagem", "fr": "Mode de fusion", "de": "Füllmethode", "it": "Metodo di fusione", "ja": "描画モード", "zh": "混合模式", "ko": "혼합 모드", "ar": "وضع المزج" },
+    "keywords": {
+      "es": ["multiplicar", "trama", "superponer", "mezclar capas", "efecto de capa", "luz suave", "photoshop"],
+      "en": ["multiply", "screen", "overlay", "layer blending", "layer effect", "soft light", "photoshop"]
+    }
+  },
+  "gradient-linear": {
+    "label": { "es": "Degradado lineal", "en": "Linear gradient", "pt": "Gradiente linear", "fr": "Dégradé linéaire", "de": "Linearer Verlauf", "it": "Sfumatura lineare", "ja": "線形グラデーション", "zh": "线性渐变", "ko": "선형 그레이디언트", "ar": "تدرج خطي" },
+    "keywords": {
+      "es": ["gradiente", "relleno", "transición de color", "dos colores", "fondo", "css", "difuminado"],
+      "en": ["gradient fill", "color transition", "two colors", "fill", "background", "css", "fade"]
+    }
+  },
+  "gradient-radial": {
+    "label": { "es": "Degradado radial", "en": "Radial gradient", "pt": "Gradiente radial", "fr": "Dégradé radial", "de": "Radialer Verlauf", "it": "Sfumatura radiale", "ja": "放射状グラデーション", "zh": "径向渐变", "ko": "방사형 그레이디언트", "ar": "تدرج شعاعي" },
+    "keywords": {
+      "es": ["gradiente circular", "relleno", "desde el centro", "brillo", "viñeta", "fondo", "css"],
+      "en": ["circular gradient", "fill", "from center", "glow", "vignette", "background", "css"]
+    }
+  },
+  "gradient-angular": {
+    "label": { "es": "Degradado angular", "en": "Angular gradient", "pt": "Gradiente angular", "fr": "Dégradé angulaire", "de": "Winkelverlauf", "it": "Sfumatura angolare", "ja": "角度グラデーション", "zh": "角度渐变", "ko": "각도 그레이디언트", "ar": "تدرج زاوي" },
+    "keywords": {
+      "es": ["gradiente cónico", "conic gradient", "relleno", "rueda de color", "barrido", "círculo cromático", "css"],
+      "en": ["conic gradient", "conical", "sweep gradient", "fill", "color wheel", "spinner", "css"]
+    }
+  },
+  "shadow-drop": {
+    "label": { "es": "Sombra paralela", "en": "Drop shadow", "pt": "Sombra projetada", "fr": "Ombre portée", "de": "Schlagschatten", "it": "Ombra esterna", "ja": "ドロップシャドウ", "zh": "投影", "ko": "드롭 섀도", "ar": "ظل مُسقط" },
+    "keywords": {
+      "es": ["elevación", "profundidad", "efecto de capa", "box shadow", "relieve", "flotante", "difuminado"],
+      "en": ["elevation", "depth", "layer effect", "box shadow", "floating", "material", "offset blur"]
+    }
+  },
+  "shadow-inner": {
+    "label": { "es": "Sombra interior", "en": "Inner shadow", "pt": "Sombra interna", "fr": "Ombre interne", "de": "Schatten nach innen", "it": "Ombra interna", "ja": "インナーシャドウ", "zh": "内阴影", "ko": "내부 그림자", "ar": "ظل داخلي" },
+    "keywords": {
+      "es": ["hundido", "bajorrelieve", "inset", "efecto de capa", "box shadow inset", "profundidad", "botón presionado"],
+      "en": ["inset", "sunken", "debossed", "layer effect", "box shadow inset", "depth", "pressed button"]
+    }
+  },
+  "blur": {
+    "label": { "es": "Desenfoque", "en": "Blur", "pt": "Desfoque", "fr": "Flou", "de": "Weichzeichnen", "it": "Sfocatura", "ja": "ぼかし", "zh": "模糊", "ko": "흐림 효과", "ar": "تمويه" },
+    "keywords": {
+      "es": ["desenfocar", "difuminar", "borroso", "efecto de capa", "gaussiano", "suavizar", "ocultar detalles"],
+      "en": ["gaussian blur", "soften", "blurry", "layer effect", "out of focus", "smudge", "hide details"]
+    }
+  },
+  "blur-background": {
+    "label": { "es": "Desenfoque de fondo", "en": "Background blur", "pt": "Desfoque de fundo", "fr": "Flou d’arrière-plan", "de": "Hintergrund weichzeichnen", "it": "Sfocatura dello sfondo", "ja": "背景のぼかし", "zh": "背景模糊", "ko": "배경 흐림 효과", "ar": "تمويه الخلفية" },
+    "keywords": {
+      "es": ["vidrio esmerilado", "efecto vidrio", "backdrop filter", "glassmorphism", "panel translúcido", "acrílico", "transparencia"],
+      "en": ["frosted glass", "glass effect", "backdrop filter", "glassmorphism", "translucent panel", "acrylic", "vibrancy"]
+    }
+  },
+  "corner-radius-independent": {
+    "label": { "es": "Esquinas independientes", "en": "Independent corners", "pt": "Cantos independentes", "fr": "Angles indépendants", "de": "Unabhängige Ecken", "it": "Angoli indipendenti", "ja": "角丸を個別に設定", "zh": "独立圆角", "ko": "개별 모서리 반경", "ar": "زوايا مستقلة" },
+    "keywords": {
+      "es": ["esquinas por separado", "redondear una esquina", "border radius", "radio de esquina", "personalizar esquinas", "forma", "diseño de interfaz"],
+      "en": ["individual corners", "per-corner radius", "border radius", "rounded corners", "custom corners", "shape", "ui design"]
+    }
+  },
+  "stroke-align-inside": {
+    "label": { "es": "Trazo interior", "en": "Inside stroke", "pt": "Contorno interno", "fr": "Contour intérieur", "de": "Kontur innen", "it": "Traccia interna", "ja": "内側の線", "zh": "内部描边", "ko": "안쪽 획", "ar": "حد داخلي" },
+    "keywords": {
+      "es": ["alinear trazo", "borde por dentro", "contorno", "grosor de línea", "posición del trazo", "border", "inside"],
+      "en": ["stroke alignment", "inner border", "outline", "line weight", "stroke position", "border", "inset stroke"]
+    }
+  },
+  "stroke-align-center": {
+    "label": { "es": "Trazo centrado", "en": "Center stroke", "pt": "Contorno centralizado", "fr": "Contour centré", "de": "Kontur mittig", "it": "Traccia centrata", "ja": "中央の線", "zh": "居中描边", "ko": "가운데 획", "ar": "حد في المنتصف" },
+    "keywords": {
+      "es": ["alinear trazo", "sobre el trazado", "contorno", "grosor de línea", "posición del trazo", "mitad y mitad", "borde"],
+      "en": ["stroke alignment", "on path", "outline", "line weight", "stroke position", "half and half", "border"]
+    }
+  },
+  "stroke-align-outside": {
+    "label": { "es": "Trazo exterior", "en": "Outside stroke", "pt": "Contorno externo", "fr": "Contour extérieur", "de": "Kontur außen", "it": "Traccia esterna", "ja": "外側の線", "zh": "外部描边", "ko": "바깥쪽 획", "ar": "حد خارجي" },
+    "keywords": {
+      "es": ["alinear trazo", "borde por fuera", "contorno", "grosor de línea", "posición del trazo", "halo", "outline"],
+      "en": ["stroke alignment", "outer border", "outline", "line weight", "stroke position", "halo", "outset stroke"]
+    }
+  },
+  "stroke-cap-butt": {
+    "label": { "es": "Extremo plano", "en": "Butt cap", "pt": "Extremidade reta", "fr": "Extrémité plate", "de": "Abgeflachtes Ende", "it": "Estremità piatta", "ja": "線端なし", "zh": "平头端点", "ko": "단면 끝", "ar": "طرف مسطح" },
+    "keywords": {
+      "es": ["terminación de línea", "remate", "corte recto", "trazo", "line cap", "butt", "sin extensión"],
+      "en": ["line cap", "flat end", "stroke end", "stroke", "linecap butt", "no extension", "endpoint"]
+    }
+  },
+  "stroke-cap-round": {
+    "label": { "es": "Extremo redondeado", "en": "Round cap", "pt": "Extremidade arredondada", "fr": "Extrémité arrondie", "de": "Abgerundetes Ende", "it": "Estremità arrotondata", "ja": "丸型線端", "zh": "圆头端点", "ko": "둥근 끝", "ar": "طرف دائري" },
+    "keywords": {
+      "es": ["terminación de línea", "punta redonda", "remate", "trazo", "line cap", "suavizado", "linecap round"],
+      "en": ["line cap", "rounded end", "stroke end", "stroke", "linecap round", "soft end", "endpoint"]
+    }
+  },
+  "stroke-cap-square": {
+    "label": { "es": "Extremo cuadrado", "en": "Square cap", "pt": "Extremidade projetada", "fr": "Extrémité carrée", "de": "Überstehendes Ende", "it": "Estremità sporgente", "ja": "突出線端", "zh": "方头端点", "ko": "돌출 끝", "ar": "طرف مربع" },
+    "keywords": {
+      "es": ["terminación de línea", "proyectado", "sobresale del extremo", "remate", "trazo", "line cap", "linecap square"],
+      "en": ["line cap", "projecting cap", "extends past end", "stroke end", "stroke", "linecap square", "endpoint"]
+    }
+  },
+  "stroke-join-miter": {
+    "label": { "es": "Unión en inglete", "en": "Miter join", "pt": "Junção em ângulo", "fr": "Raccord en pointe", "de": "Gehrungsecke", "it": "Unione a spigolo vivo", "ja": "マイター結合", "zh": "斜接连接", "ko": "각진 연결", "ar": "وصلة حادة" },
+    "keywords": {
+      "es": ["esquina en punta", "vértice afilado", "trazo", "line join", "límite de inglete", "esquina", "linejoin miter"],
+      "en": ["sharp corner", "pointed corner", "stroke", "line join", "miter limit", "corner", "linejoin miter"]
+    }
+  },
+  "stroke-join-round": {
+    "label": { "es": "Unión redondeada", "en": "Round join", "pt": "Junção arredondada", "fr": "Raccord arrondi", "de": "Abgerundete Ecke", "it": "Unione arrotondata", "ja": "ラウンド結合", "zh": "圆角连接", "ko": "둥근 연결", "ar": "وصلة مستديرة" },
+    "keywords": {
+      "es": ["esquina redonda", "vértice suave", "trazo", "line join", "esquina curva", "linejoin round", "suavizar esquinas"],
+      "en": ["rounded corner", "soft corner", "stroke", "line join", "curved corner", "linejoin round", "smooth corner"]
+    }
+  },
+  "stroke-join-bevel": {
+    "label": { "es": "Unión biselada", "en": "Bevel join", "pt": "Junção chanfrada", "fr": "Raccord biseauté", "de": "Abgeflachte Ecke", "it": "Unione smussata", "ja": "ベベル結合", "zh": "斜角连接", "ko": "경사 연결", "ar": "وصلة مشطوفة" },
+    "keywords": {
+      "es": ["esquina recortada", "chaflán", "corte diagonal", "trazo", "line join", "linejoin bevel", "vértice plano"],
+      "en": ["chamfer", "cut corner", "clipped corner", "stroke", "line join", "linejoin bevel", "flat corner"]
+    }
+  },
+  "stroke-outline": {
+    "label": { "es": "Contornear trazo", "en": "Outline stroke", "pt": "Contornar traçado", "fr": "Vectoriser le contour", "de": "Konturlinie", "it": "Traccia contorno", "ja": "パスのアウトライン", "zh": "轮廓化描边", "ko": "획 윤곽선", "ar": "تحويل الحد إلى شكل" },
+    "keywords": {
+      "es": ["convertir trazo en forma", "expandir", "relleno", "vectorizar", "ctrl alt o", "grosor fijo", "exportar íconos"],
+      "en": ["convert stroke to shape", "expand", "expand stroke", "fill", "vectorize", "cmd option o", "export icons"]
+    }
+  },
+  "text-path": {
+    "label": { "es": "Texto en trazado", "en": "Type on a path", "pt": "Texto no traçado", "fr": "Texte curviligne", "de": "Pfadtext", "it": "Testo su tracciato", "ja": "パス上文字", "zh": "路径文字", "ko": "패스 위 텍스트", "ar": "نص على مسار" },
+    "keywords": {
+      "es": ["texto curvo", "texto en círculo", "seguir curva", "tipografía", "logotipo", "sello", "arco"],
+      "en": ["curved text", "circular text", "follow curve", "typography", "logo", "badge", "text on arc"]
+    }
+  },
+  "letter-spacing": {
+    "label": { "es": "Espaciado entre letras", "en": "Letter spacing", "pt": "Espaçamento entre letras", "fr": "Interlettrage", "de": "Laufweite", "it": "Spaziatura tra le lettere", "ja": "文字間隔", "zh": "字间距", "ko": "자간", "ar": "تباعد الأحرف" },
+    "keywords": {
+      "es": ["tracking", "interletraje", "kerning", "tipografía", "abrir texto", "cerrar texto", "separación de caracteres"],
+      "en": ["tracking", "kerning", "character spacing", "typography", "letterspace", "loose", "tight"]
+    }
+  },
+  "paragraph-spacing": {
+    "label": { "es": "Espaciado entre párrafos", "en": "Paragraph spacing", "pt": "Espaçamento entre parágrafos", "fr": "Espacement des paragraphes", "de": "Absatzabstand", "it": "Spaziatura tra paragrafi", "ja": "段落間隔", "zh": "段落间距", "ko": "단락 간격", "ar": "تباعد الفقرات" },
+    "keywords": {
+      "es": ["espacio antes", "espacio después", "separación de bloques", "tipografía", "documento", "aire", "legibilidad"],
+      "en": ["space before", "space after", "block spacing", "typography", "document", "margin bottom", "readability"]
+    }
+  },
+  "font-weight": {
+    "label": { "es": "Peso de la fuente", "en": "Font weight", "pt": "Peso da fonte", "fr": "Graisse", "de": "Schriftstärke", "it": "Peso del carattere", "ja": "フォントの太さ", "zh": "字重", "ko": "글꼴 두께", "ar": "سُمك الخط" },
+    "keywords": {
+      "es": ["negrita", "ligera", "regular", "grosor", "tipografía", "estilo de fuente", "familia tipográfica"],
+      "en": ["bold", "light", "regular", "thickness", "typography", "font style", "typeface"]
+    }
+  },
+  "letter-case-upper": {
+    "label": { "es": "Mayúsculas", "en": "Uppercase", "pt": "Maiúsculas", "fr": "Majuscules", "de": "Großbuchstaben", "it": "Maiuscolo", "ja": "大文字", "zh": "大写", "ko": "대문자", "ar": "أحرف كبيرة" },
+    "keywords": {
+      "es": ["altas", "caps", "versales", "convertir texto", "text transform", "bloq mayús", "títulos"],
+      "en": ["all caps", "capitals", "caps lock", "text transform", "change case", "headline", "shout"]
+    }
+  },
+  "letter-case-lower": {
+    "label": { "es": "Minúsculas", "en": "Lowercase", "pt": "Minúsculas", "fr": "Minuscules", "de": "Kleinbuchstaben", "it": "Minuscolo", "ja": "小文字", "zh": "小写", "ko": "소문자", "ar": "أحرف صغيرة" },
+    "keywords": {
+      "es": ["bajas", "convertir texto", "text transform", "sin mayúsculas", "cambiar caja", "normalizar", "quitar altas"],
+      "en": ["small letters", "text transform", "change case", "no caps", "normalize", "lower", "decapitalize"]
+    }
+  },
+  "underline-double": {
+    "label": { "es": "Subrayado doble", "en": "Double underline", "pt": "Sublinhado duplo", "fr": "Double soulignement", "de": "Doppelt unterstrichen", "it": "Sottolineatura doppia", "ja": "二重下線", "zh": "双下划线", "ko": "이중 밑줄", "ar": "تسطير مزدوج" },
+    "keywords": {
+      "es": ["dos líneas", "decoración de texto", "énfasis", "formato", "total", "contabilidad", "resaltar"],
+      "en": ["two lines", "text decoration", "emphasis", "formatting", "total", "accounting", "highlight"]
+    }
+  },
+  "underline-wavy": {
+    "label": { "es": "Subrayado ondulado", "en": "Wavy underline", "pt": "Sublinhado ondulado", "fr": "Soulignement ondulé", "de": "Gewellt unterstrichen", "it": "Sottolineatura ondulata", "ja": "波線の下線", "zh": "波浪下划线", "ko": "물결 밑줄", "ar": "تسطير متموج" },
+    "keywords": {
+      "es": ["línea ondulada", "error ortográfico", "decoración de texto", "corrector", "garabato", "formato", "advertencia"],
+      "en": ["squiggly line", "spelling error", "text decoration", "squiggle", "spellcheck", "formatting", "warning"]
+    }
+  },
+  "overline": {
+    "label": { "es": "Línea superior", "en": "Overline", "pt": "Sobrelinhado", "fr": "Trait au-dessus", "de": "Überstrichen", "it": "Sopralineato", "ja": "上線", "zh": "上划线", "ko": "윗줄", "ar": "خط علوي" },
+    "keywords": {
+      "es": ["sobrerrayado", "raya encima", "decoración de texto", "formato", "matemáticas", "promedio", "css"],
+      "en": ["line above", "overbar", "text decoration", "formatting", "math", "mean", "css"]
+    }
+  },
+  "text-truncate": {
+    "label": { "es": "Truncar texto", "en": "Truncate text", "pt": "Truncar texto", "fr": "Tronquer le texte", "de": "Text kürzen", "it": "Tronca testo", "ja": "テキストの省略", "zh": "截断文本", "ko": "텍스트 말줄임", "ar": "اقتطاع النص" },
+    "keywords": {
+      "es": ["puntos suspensivos", "recortar texto", "desbordamiento", "text overflow", "ellipsis", "una sola línea", "line clamp"],
+      "en": ["ellipsis", "text overflow", "clip text", "overflow", "shorten", "single line", "line clamp"]
+    }
+  },
+  "text-auto-width": {
+    "label": { "es": "Ancho automático", "en": "Auto width", "pt": "Largura automática", "fr": "Largeur automatique", "de": "Automatische Breite", "it": "Larghezza automatica", "ja": "幅の自動調整", "zh": "自动宽度", "ko": "자동 너비", "ar": "عرض تلقائي" },
+    "keywords": {
+      "es": ["cuadro de texto", "crece a lo ancho", "una línea", "ajustar al texto", "redimensionar", "tipografía", "sin salto"],
+      "en": ["text box", "grows sideways", "single line", "fit text", "resizing", "hug width", "no wrap"]
+    }
+  },
+  "text-auto-height": {
+    "label": { "es": "Alto automático", "en": "Auto height", "pt": "Altura automática", "fr": "Hauteur automatique", "de": "Automatische Höhe", "it": "Altezza automatica", "ja": "高さの自動調整", "zh": "自动高度", "ko": "자동 높이", "ar": "ارتفاع تلقائي" },
+    "keywords": {
+      "es": ["cuadro de texto", "crece hacia abajo", "ancho fijo", "párrafo", "redimensionar", "multilínea", "ajustar al texto"],
+      "en": ["text box", "grows downward", "fixed width", "paragraph", "resizing", "multiline", "fit text"]
+    }
+  },
+  "text-vertical": {
+    "label": { "es": "Texto vertical", "en": "Vertical text", "pt": "Texto vertical", "fr": "Texte vertical", "de": "Vertikaler Text", "it": "Testo verticale", "ja": "縦書き", "zh": "竖排文字", "ko": "세로 쓰기", "ar": "نص عمودي" },
+    "keywords": {
+      "es": ["escritura vertical", "letras apiladas", "orientación del texto", "japonés", "chino", "writing mode", "de arriba abajo"],
+      "en": ["vertical writing", "stacked letters", "text orientation", "japanese", "chinese", "writing mode", "top to bottom"]
+    }
+  },
+  "drop-cap": {
+    "label": { "es": "Letra capital", "en": "Drop cap", "pt": "Letra capitular", "fr": "Lettrine", "de": "Initiale", "it": "Capolettera", "ja": "ドロップキャップ", "zh": "首字下沉", "ko": "드롭 캡", "ar": "حرف استهلالي" },
+    "keywords": {
+      "es": ["capitular", "inicial grande", "primera letra", "revista", "editorial", "tipografía", "párrafo"],
+      "en": ["initial", "large first letter", "versal", "magazine", "editorial", "typography", "paragraph"]
+    }
+  },
+  "glyphs": {
+    "label": { "es": "Glifos", "en": "Glyphs", "pt": "Glifos", "fr": "Glyphes", "de": "Glyphen", "it": "Glifi", "ja": "字形", "zh": "字形", "ko": "글리프", "ar": "الحروف الرسومية" },
+    "keywords": {
+      "es": ["caracteres especiales", "símbolos", "insertar símbolo", "ligaduras", "unicode", "tipografía", "acentos"],
+      "en": ["special characters", "symbols", "insert symbol", "ligatures", "unicode", "typography", "character map"]
+    }
+  },
+  "text-select": {
+    "label": { "es": "Seleccionar texto", "en": "Select text", "pt": "Selecionar texto", "fr": "Sélectionner le texte", "de": "Text auswählen", "it": "Seleziona testo", "ja": "テキストを選択", "zh": "选择文本", "ko": "텍스트 선택", "ar": "تحديد النص" },
+    "keywords": {
+      "es": ["resaltar", "fragmento", "tiradores", "copiar", "marcar texto", "cursor", "arrastrar"],
+      "en": ["highlight", "selection handles", "text range", "copy", "mark text", "cursor", "drag"]
+    }
+  },
+  "indent-first-line": {
+    "label": { "es": "Sangría de primera línea", "en": "First-line indent", "pt": "Recuo da primeira linha", "fr": "Retrait de première ligne", "de": "Einzug erste Zeile", "it": "Rientro prima riga", "ja": "1行目のインデント", "zh": "首行缩进", "ko": "첫 줄 들여쓰기", "ar": "مسافة بادئة للسطر الأول" },
+    "keywords": {
+      "es": ["inicio de párrafo", "párrafo", "tabulador", "regla", "formato de párrafo", "estilo libro", "documento"],
+      "en": ["indent", "paragraph", "tab", "ruler", "paragraph format", "book style", "document"]
+    }
+  },
+  "indent-hanging": {
+    "label": { "es": "Sangría francesa", "en": "Hanging indent", "pt": "Recuo deslocado", "fr": "Retrait négatif", "de": "Hängender Einzug", "it": "Rientro sporgente", "ja": "ぶら下げインデント", "zh": "悬挂缩进", "ko": "내어쓰기", "ar": "مسافة بادئة معلّقة" },
+    "keywords": {
+      "es": ["bibliografía", "referencias", "apa", "párrafo", "regla", "citas", "formato de párrafo"],
+      "en": ["bibliography", "references", "apa", "paragraph", "ruler", "citations", "outdent"]
+    }
+  },
+  "heading-4": {
+    "label": { "es": "Encabezado 4", "en": "Heading 4", "pt": "Título 4", "fr": "Titre 4", "de": "Überschrift 4", "it": "Titolo 4", "ja": "見出し4", "zh": "标题 4", "ko": "제목 4", "ar": "عنوان 4" },
+    "keywords": {
+      "es": ["h4", "cuarto nivel", "subsección", "jerarquía", "subtítulo", "editor de texto", "markdown"],
+      "en": ["h4", "fourth level", "subsection", "hierarchy", "subtitle", "rich text", "markdown"]
+    }
+  },
+  "heading-5": {
+    "label": { "es": "Encabezado 5", "en": "Heading 5", "pt": "Título 5", "fr": "Titre 5", "de": "Überschrift 5", "it": "Titolo 5", "ja": "見出し5", "zh": "标题 5", "ko": "제목 5", "ar": "عنوان 5" },
+    "keywords": {
+      "es": ["h5", "quinto nivel", "jerarquía", "subtítulo menor", "editor de texto", "markdown", "html"],
+      "en": ["h5", "fifth level", "hierarchy", "minor subtitle", "rich text", "markdown", "html"]
+    }
+  },
+  "heading-6": {
+    "label": { "es": "Encabezado 6", "en": "Heading 6", "pt": "Título 6", "fr": "Titre 6", "de": "Überschrift 6", "it": "Titolo 6", "ja": "見出し6", "zh": "标题 6", "ko": "제목 6", "ar": "عنوان 6" },
+    "keywords": {
+      "es": ["h6", "sexto nivel", "nivel más bajo", "jerarquía", "editor de texto", "markdown", "html"],
+      "en": ["h6", "sixth level", "lowest level", "hierarchy", "rich text", "markdown", "html"]
+    }
+  },
+  "list-nested": {
+    "label": { "es": "Lista multinivel", "en": "Nested list", "pt": "Lista de vários níveis", "fr": "Liste à plusieurs niveaux", "de": "Liste mit mehreren Ebenen", "it": "Elenco a più livelli", "ja": "階層リスト", "zh": "多级列表", "ko": "다단계 목록", "ar": "قائمة متعددة المستويات" },
+    "keywords": {
+      "es": ["lista anidada", "subniveles", "jerarquía", "esquema", "viñetas", "sangría", "árbol"],
+      "en": ["multilevel list", "sublist", "hierarchy", "outline", "bullets", "indent", "tree"]
+    }
+  },
+  "divider": {
+    "label": { "es": "Separador", "en": "Divider", "pt": "Linha divisória", "fr": "Séparateur", "de": "Trennlinie", "it": "Linea divisoria", "ja": "区切り線", "zh": "分隔线", "ko": "구분선", "ar": "فاصل" },
+    "keywords": {
+      "es": ["línea horizontal", "regla horizontal", "hr", "separar secciones", "bloque", "editor", "raya"],
+      "en": ["horizontal rule", "hr", "separator", "line", "section break", "block", "editor"]
+    }
+  },
+  "callout": {
+    "label": { "es": "Bloque destacado", "en": "Callout", "pt": "Bloco de destaque", "fr": "Encadré", "de": "Hinweisbox", "it": "Riquadro in evidenza", "ja": "コールアウト", "zh": "标注块", "ko": "콜아웃", "ar": "مربع تنبيه" },
+    "keywords": {
+      "es": ["nota", "aviso", "recuadro", "consejo", "notion", "información", "advertencia"],
+      "en": ["note", "notice", "admonition", "tip", "notion", "info box", "warning"]
+    }
+  },
+  "toggle-list": {
+    "label": { "es": "Lista desplegable", "en": "Toggle list", "pt": "Lista de alternância", "fr": "Liste dépliable", "de": "Aufklappbare Liste", "it": "Elenco a scomparsa", "ja": "トグルリスト", "zh": "折叠列表", "ko": "토글 목록", "ar": "قائمة قابلة للطي" },
+    "keywords": {
+      "es": ["plegable", "contraer", "expandir", "acordeón", "notion", "detalles", "ocultar contenido"],
+      "en": ["collapsible", "collapse", "expand", "accordion", "notion", "details", "disclosure"]
+    }
+  },
+  "table-plus": {
+    "label": { "es": "Insertar tabla", "en": "Insert table", "pt": "Inserir tabela", "fr": "Insérer un tableau", "de": "Tabelle einfügen", "it": "Inserisci tabella", "ja": "表を挿入", "zh": "插入表格", "ko": "표 삽입", "ar": "إدراج جدول" },
+    "keywords": {
+      "es": ["nueva tabla", "filas y columnas", "cuadrícula", "celdas", "documento", "datos", "agregar tabla"],
+      "en": ["new table", "rows and columns", "grid", "cells", "document", "data", "add table"]
+    }
+  },
+  "border-all": {
+    "label": { "es": "Todos los bordes", "en": "All borders", "pt": "Todas as bordas", "fr": "Toutes les bordures", "de": "Alle Rahmenlinien", "it": "Tutti i bordi", "ja": "格子", "zh": "所有框线", "ko": "모든 테두리", "ar": "كل الحدود" },
+    "keywords": {
+      "es": ["celdas", "tabla", "cuadrícula", "hoja de cálculo", "excel", "líneas de celda", "formato de celda"],
+      "en": ["cells", "table", "grid lines", "spreadsheet", "excel", "outline cells", "cell format"]
+    }
+  },
+  "border-outer": {
+    "label": { "es": "Bordes externos", "en": "Outside borders", "pt": "Bordas externas", "fr": "Bordures extérieures", "de": "Rahmenlinien außen", "it": "Bordi esterni", "ja": "外枠", "zh": "外侧框线", "ko": "바깥쪽 테두리", "ar": "الحدود الخارجية" },
+    "keywords": {
+      "es": ["contorno", "marco", "celdas", "tabla", "hoja de cálculo", "excel", "formato de celda"],
+      "en": ["outline", "box", "cells", "table", "spreadsheet", "excel", "cell format"]
+    }
+  },
+  "border-inner": {
+    "label": { "es": "Bordes internos", "en": "Inside borders", "pt": "Bordas internas", "fr": "Bordures intérieures", "de": "Rahmenlinien innen", "it": "Bordi interni", "ja": "内側の罫線", "zh": "内部框线", "ko": "안쪽 테두리", "ar": "الحدود الداخلية" },
+    "keywords": {
+      "es": ["líneas interiores", "separar celdas", "celdas", "tabla", "hoja de cálculo", "excel", "formato de celda"],
+      "en": ["inner lines", "cell dividers", "cells", "table", "spreadsheet", "excel", "cell format"]
+    }
+  },
+  "border-none": {
+    "label": { "es": "Sin bordes", "en": "No border", "pt": "Sem bordas", "fr": "Aucune bordure", "de": "Kein Rahmen", "it": "Nessun bordo", "ja": "枠なし", "zh": "无框线", "ko": "테두리 없음", "ar": "بلا حدود" },
+    "keywords": {
+      "es": ["quitar bordes", "borrar líneas", "celdas", "tabla", "hoja de cálculo", "excel", "limpiar formato"],
+      "en": ["remove borders", "clear lines", "cells", "table", "spreadsheet", "excel", "clear formatting"]
+    }
+  },
+  "border-top": {
+    "label": { "es": "Borde superior", "en": "Top border", "pt": "Borda superior", "fr": "Bordure supérieure", "de": "Rahmenlinie oben", "it": "Bordo superiore", "ja": "上罫線", "zh": "上框线", "ko": "위쪽 테두리", "ar": "الحد العلوي" },
+    "keywords": {
+      "es": ["línea arriba", "celdas", "tabla", "hoja de cálculo", "excel", "encabezado", "formato de celda"],
+      "en": ["line above", "cells", "table", "spreadsheet", "excel", "header row", "cell format"]
+    }
+  },
+  "border-bottom": {
+    "label": { "es": "Borde inferior", "en": "Bottom border", "pt": "Borda inferior", "fr": "Bordure inférieure", "de": "Rahmenlinie unten", "it": "Bordo inferiore", "ja": "下罫線", "zh": "下框线", "ko": "아래쪽 테두리", "ar": "الحد السفلي" },
+    "keywords": {
+      "es": ["línea abajo", "celdas", "tabla", "hoja de cálculo", "excel", "totales", "formato de celda"],
+      "en": ["line below", "cells", "table", "spreadsheet", "excel", "totals", "cell format"]
+    }
+  },
+  "border-left": {
+    "label": { "es": "Borde izquierdo", "en": "Left border", "pt": "Borda esquerda", "fr": "Bordure gauche", "de": "Rahmenlinie links", "it": "Bordo sinistro", "ja": "左罫線", "zh": "左框线", "ko": "왼쪽 테두리", "ar": "الحد الأيسر" },
+    "keywords": {
+      "es": ["línea a la izquierda", "celdas", "tabla", "hoja de cálculo", "excel", "columna", "formato de celda"],
+      "en": ["line on left", "cells", "table", "spreadsheet", "excel", "column", "cell format"]
+    }
+  },
+  "border-right": {
+    "label": { "es": "Borde derecho", "en": "Right border", "pt": "Borda direita", "fr": "Bordure droite", "de": "Rahmenlinie rechts", "it": "Bordo destro", "ja": "右罫線", "zh": "右框线", "ko": "오른쪽 테두리", "ar": "الحد الأيمن" },
+    "keywords": {
+      "es": ["línea a la derecha", "celdas", "tabla", "hoja de cálculo", "excel", "columna", "formato de celda"],
+      "en": ["line on right", "cells", "table", "spreadsheet", "excel", "column", "cell format"]
+    }
+  },
+  "border-horizontal": {
+    "label": { "es": "Bordes horizontales internos", "en": "Inside horizontal borders", "pt": "Bordas horizontais internas", "fr": "Bordures horizontales intérieures", "de": "Innere horizontale Linien", "it": "Bordi orizzontali interni", "ja": "横罫線 (内側)", "zh": "内部横框线", "ko": "안쪽 가로 테두리", "ar": "الحدود الأفقية الداخلية" },
+    "keywords": {
+      "es": ["separar filas", "líneas entre filas", "celdas", "tabla", "hoja de cálculo", "excel", "formato de celda"],
+      "en": ["row dividers", "lines between rows", "cells", "table", "spreadsheet", "excel", "cell format"]
+    }
+  },
+  "border-vertical": {
+    "label": { "es": "Bordes verticales internos", "en": "Inside vertical borders", "pt": "Bordas verticais internas", "fr": "Bordures verticales intérieures", "de": "Innere vertikale Linien", "it": "Bordi verticali interni", "ja": "縦罫線 (内側)", "zh": "内部竖框线", "ko": "안쪽 세로 테두리", "ar": "الحدود العمودية الداخلية" },
+    "keywords": {
+      "es": ["separar columnas", "líneas entre columnas", "celdas", "tabla", "hoja de cálculo", "excel", "formato de celda"],
+      "en": ["column dividers", "lines between columns", "cells", "table", "spreadsheet", "excel", "cell format"]
+    }
+  },
+  "footnote": {
+    "label": { "es": "Nota al pie", "en": "Footnote", "pt": "Nota de rodapé", "fr": "Note de bas de page", "de": "Fußnote", "it": "Nota a piè di pagina", "ja": "脚注", "zh": "脚注", "ko": "각주", "ar": "حاشية سفلية" },
+    "keywords": {
+      "es": ["referencia", "cita", "número volado", "aclaración", "documento", "tesis", "nota final"],
+      "en": ["reference", "citation", "superscript number", "endnote", "annotation", "document", "thesis"]
+    }
+  },
+  "figure-caption": {
+    "label": { "es": "Pie de imagen", "en": "Figure caption", "pt": "Legenda da figura", "fr": "Légende de figure", "de": "Bildunterschrift", "it": "Didascalia", "ja": "図のキャプション", "zh": "图注", "ko": "그림 캡션", "ar": "تعليق الصورة" },
+    "keywords": {
+      "es": ["leyenda", "descripción de imagen", "pie de foto", "texto bajo la imagen", "figura", "documento", "créditos"],
+      "en": ["image caption", "photo caption", "legend", "figure", "description", "credit line", "document"]
+    }
+  },
+  "table-of-contents": {
+    "label": { "es": "Tabla de contenido", "en": "Table of contents", "pt": "Sumário", "fr": "Table des matières", "de": "Inhaltsverzeichnis", "it": "Sommario", "ja": "目次", "zh": "目录", "ko": "목차", "ar": "جدول المحتويات" },
+    "keywords": {
+      "es": ["índice", "contenido", "capítulos", "secciones", "navegación del documento", "toc", "temario"],
+      "en": ["contents", "index", "chapters", "sections", "toc", "document navigation", "outline"]
+    }
+  },
+  "document-outline": {
+    "label": { "es": "Esquema del documento", "en": "Document outline", "pt": "Estrutura do documento", "fr": "Plan du document", "de": "Dokumentgliederung", "it": "Struttura del documento", "ja": "ドキュメントのアウトライン", "zh": "文档大纲", "ko": "문서 개요", "ar": "مخطط المستند" },
+    "keywords": {
+      "es": ["encabezados", "árbol de títulos", "navegación", "panel lateral", "estructura", "secciones", "ir a sección"],
+      "en": ["headings", "heading tree", "navigation pane", "sidebar", "structure", "sections", "jump to section"]
+    }
+  },
+  "page-orientation": {
+    "label": { "es": "Orientación de página", "en": "Page orientation", "pt": "Orientação da página", "fr": "Orientation de la page", "de": "Seitenausrichtung", "it": "Orientamento pagina", "ja": "ページの向き", "zh": "页面方向", "ko": "페이지 방향", "ar": "اتجاه الصفحة" },
+    "keywords": {
+      "es": ["vertical", "horizontal", "retrato", "paisaje", "girar página", "impresión", "configurar página"],
+      "en": ["portrait", "landscape", "rotate page", "page setup", "print", "layout", "sheet"]
+    }
+  },
+  "page-header": {
+    "label": { "es": "Encabezado de página", "en": "Page header", "pt": "Cabeçalho da página", "fr": "En-tête de page", "de": "Kopfzeile", "it": "Intestazione di pagina", "ja": "ヘッダー", "zh": "页眉", "ko": "머리글", "ar": "رأس الصفحة" },
+    "keywords": {
+      "es": ["membrete", "parte superior", "título de página", "documento", "logo", "numeración", "editar encabezado"],
+      "en": ["letterhead", "top of page", "running head", "document", "logo", "page number", "edit header"]
+    }
+  },
+  "page-footer": {
+    "label": { "es": "Pie de página", "en": "Page footer", "pt": "Rodapé da página", "fr": "Pied de page", "de": "Fußzeile", "it": "Piè di pagina", "ja": "フッター", "zh": "页脚", "ko": "바닥글", "ar": "تذييل الصفحة" },
+    "keywords": {
+      "es": ["parte inferior", "numeración de páginas", "documento", "datos de contacto", "aviso legal", "editar pie", "membrete"],
+      "en": ["bottom of page", "page numbers", "document", "contact details", "legal notice", "edit footer", "running foot"]
+    }
+  },
+  "image-wrap": {
+    "label": { "es": "Texto alrededor de la imagen", "en": "Wrap text around image", "pt": "Texto ao redor da imagem", "fr": "Habillage du texte", "de": "Text um Bild umfließen", "it": "Testo intorno all’immagine", "ja": "画像の周りに文字を配置", "zh": "文字环绕", "ko": "이미지 주위 텍스트 배치", "ar": "التفاف النص حول الصورة" },
+    "keywords": {
+      "es": ["ajuste cuadrado", "imagen flotante", "maquetación", "columna", "documento", "revista", "posición de imagen"],
+      "en": ["square wrap", "float image", "layout", "column", "document", "magazine", "image position"]
+    }
+  },
+  "image-break": {
+    "label": { "es": "Texto arriba y abajo", "en": "Top and bottom wrap", "pt": "Texto acima e abaixo", "fr": "Habillage haut et bas", "de": "Text oben und unten", "it": "Testo sopra e sotto", "ja": "上下の折り返し", "zh": "上下型环绕", "ko": "위아래 텍스트 배치", "ar": "النص أعلى الصورة وأسفلها" },
+    "keywords": {
+      "es": ["imagen en línea", "cortar texto", "maquetación", "imagen a lo ancho", "documento", "posición de imagen", "bloque"],
+      "en": ["inline image", "break text", "layout", "full width image", "document", "image position", "block image"]
+    }
+  },
+  "track-changes": {
+    "label": { "es": "Control de cambios", "en": "Track changes", "pt": "Controlar alterações", "fr": "Suivi des modifications", "de": "Änderungen nachverfolgen", "it": "Rileva modifiche", "ja": "変更履歴の記録", "zh": "修订", "ko": "변경 내용 추적", "ar": "تعقب التغييرات" },
+    "keywords": {
+      "es": ["modo sugerencia", "sugerir cambios", "revisión", "edición", "correcciones", "historial", "colaborar"],
+      "en": ["suggesting mode", "suggest edits", "revision", "redline", "corrections", "history", "collaborate"]
+    }
+  },
+  "change-accept": {
+    "label": { "es": "Aceptar cambio", "en": "Accept change", "pt": "Aceitar alteração", "fr": "Accepter la modification", "de": "Änderung annehmen", "it": "Accetta modifica", "ja": "変更を承諾", "zh": "接受修订", "ko": "변경 내용 수락", "ar": "قبول التغيير" },
+    "keywords": {
+      "es": ["aceptar sugerencia", "aprobar", "control de cambios", "revisión", "confirmar", "aplicar", "palomita"],
+      "en": ["accept suggestion", "approve", "track changes", "review", "confirm", "apply", "checkmark"]
+    }
+  },
+  "change-reject": {
+    "label": { "es": "Rechazar cambio", "en": "Reject change", "pt": "Rejeitar alteração", "fr": "Refuser la modification", "de": "Änderung ablehnen", "it": "Rifiuta modifica", "ja": "変更を却下", "zh": "拒绝修订", "ko": "변경 내용 거부", "ar": "رفض التغيير" },
+    "keywords": {
+      "es": ["rechazar sugerencia", "descartar", "control de cambios", "revisión", "deshacer cambio", "denegar", "tache"],
+      "en": ["reject suggestion", "discard", "track changes", "review", "revert", "decline", "x mark"]
+    }
+  },
+  "comment-inline": {
+    "label": { "es": "Comentario en el texto", "en": "Inline comment", "pt": "Comentário no texto", "fr": "Commentaire dans le texte", "de": "Kommentar im Text", "it": "Commento nel testo", "ja": "インラインコメント", "zh": "行内批注", "ko": "인라인 댓글", "ar": "تعليق داخل النص" },
+    "keywords": {
+      "es": ["anotación", "comentar selección", "revisión", "nota al margen", "colaborar", "feedback", "documento"],
+      "en": ["annotation", "comment on selection", "review", "margin note", "collaborate", "feedback", "document"]
+    }
+  },
+  "spell-check": {
+    "label": { "es": "Revisar ortografía", "en": "Spell check", "pt": "Verificar ortografia", "fr": "Vérifier l’orthographe", "de": "Rechtschreibprüfung", "it": "Controllo ortografico", "ja": "スペルチェック", "zh": "拼写检查", "ko": "맞춤법 검사", "ar": "التدقيق الإملائي" },
+    "keywords": {
+      "es": ["corrector", "gramática", "errores", "faltas de ortografía", "abc", "corrección de estilo", "palomita"],
+      "en": ["spelling", "grammar", "proofread", "typos", "abc", "checker", "proofing"]
+    }
+  },
+  "word-count": {
+    "label": { "es": "Contador de palabras", "en": "Word count", "pt": "Contagem de palavras", "fr": "Nombre de mots", "de": "Wortanzahl", "it": "Conteggio parole", "ja": "文字数カウント", "zh": "字数统计", "ko": "단어 수", "ar": "عدد الكلمات" },
+    "keywords": {
+      "es": ["caracteres", "estadísticas", "longitud", "conteo", "límite de caracteres", "ensayo", "documento"],
+      "en": ["characters", "statistics", "length", "character count", "limit", "essay", "document"]
+    }
+  },
+  "replace": {
+    "label": { "es": "Buscar y reemplazar", "en": "Find and replace", "pt": "Localizar e substituir", "fr": "Rechercher et remplacer", "de": "Suchen und ersetzen", "it": "Trova e sostituisci", "ja": "検索と置換", "zh": "查找和替换", "ko": "찾기 및 바꾸기", "ar": "البحث والاستبدال" },
+    "keywords": {
+      "es": ["sustituir", "cambiar texto", "corregir", "ctrl h", "coincidencias", "editar", "renombrar"],
+      "en": ["substitute", "change text", "swap", "ctrl h", "cmd shift h", "matches", "rename"]
+    }
+  },
+  "replace-all": {
+    "label": { "es": "Reemplazar todo", "en": "Replace all", "pt": "Substituir tudo", "fr": "Tout remplacer", "de": "Alle ersetzen", "it": "Sostituisci tutto", "ja": "すべて置換", "zh": "全部替换", "ko": "모두 바꾸기", "ar": "استبدال الكل" },
+    "keywords": {
+      "es": ["sustituir todo", "todas las coincidencias", "cambio masivo", "buscar y reemplazar", "de una vez", "corregir", "edición en lote"],
+      "en": ["substitute all", "every match", "bulk change", "find and replace", "at once", "batch edit", "global replace"]
+    }
+  },
+  "save-all": {
+    "label": { "es": "Guardar todo", "en": "Save all", "pt": "Salvar tudo", "fr": "Tout enregistrer", "de": "Alle speichern", "it": "Salva tutto", "ja": "すべて保存", "zh": "全部保存", "ko": "모두 저장", "ar": "حفظ الكل" },
+    "keywords": {
+      "es": ["disquetes", "guardar documentos", "pestañas abiertas", "salvar cambios", "conservar", "ctrl alt s", "respaldar"],
+      "en": ["floppy disks", "save documents", "open tabs", "keep changes", "persist", "cmd option s", "backup"]
+    }
+  },
+  "redact": {
+    "label": { "es": "Censurar texto", "en": "Redact", "pt": "Tarjar texto", "fr": "Caviarder", "de": "Schwärzen", "it": "Oscura testo", "ja": "墨消し", "zh": "涂黑", "ko": "정보 가리기", "ar": "حجب النص" },
+    "keywords": {
+      "es": ["información confidencial", "datos sensibles", "barra negra", "ocultar datos", "privacidad", "documento legal", "anonimizar"],
+      "en": ["sensitive data", "confidential", "black bar", "blackout", "hide text", "privacy", "anonymize"]
+    }
   }
 }

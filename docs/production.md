@@ -45,8 +45,13 @@ The core set (`nucleo`, 50) was drawn by the main session and is the reference.
 
 ## Rounds 3 onward — scaling to 10,000
 Each round draws the categories the [taxonomy](./taxonomy.md) gives it, about 1,000 icons:
-1. **Names** for the whole round first: an agent per category, deduplication in code, and one judge ([how](./taxonomy.md#how-a-round-uses-it)). What comes out is the list each illustrator draws.
+1. **Names** for the whole round first: an agent per category, deduplication in code, and the main session as judge ([how](./taxonomy.md#how-a-round-uses-it)). What comes out is the list each illustrator draws.
 2. **A pipeline per category: illustrator → critic, with languages beside them.** The illustrator delivers **every drawing at once** (outline, fill, 16 px, parts, motion, levels, mirroring), starting a new file from its taxonomy entry (`category` is its `id`, `label` its Spanish label). The critic, independent as in round 1, opens every sheet, redesigns what's weak, and leaves the category at zero QA warnings; it may drop an icon, never rename or add one. Meanwhile a languages agent writes `src/i18n/<category>.json` from the approved names and meanings, as in round 2 (it touches no `.mjs`).
 3. **The main session** removes the languages of dropped icons, runs the full QA, looks at the sheets, presents a sample to the owner, commits, and redeploys `gota.flouvia.com` so the MCP server serves the new icons.
 
-About 41 agents per round (10 for names, 1 judge, 10 illustrators, 10 critics, 10 for languages), 6 at a time; the names come back to the main session before any drawing starts.
+About 40 agents per round (10 for names, 10 illustrators, 10 critics, 10 for languages), 6 at a time; the names come back to the main session before any drawing starts.
+
+What round 3 taught about running one (it was cut six times):
+- **Relaunch only what's left.** The drawing workflow takes a `todo` per category (`draw`, `lang`, `critic`); a relaunch never repeats finished work, and an illustrator that finds its file half done continues from it. A critic whose illustrator was cut finishes the checks itself.
+- **Results outside the temporary folder.** A restart clears `/private/tmp`: the approved lists, the illustrators' reports, and the languages are kept in the session's own folder, and languages come back as data that the main session writes to `src/i18n/` once the critic is done (so a dropped icon never leaves an entry behind).
+- **The usage limit** stops every running agent at once; they fail cleanly and the round resumes when it resets. Keep the Mac on power and the session open while a round runs.

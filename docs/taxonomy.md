@@ -35,7 +35,7 @@ The order puts first what the teams that use Gota reach for most (interface, bus
 ## How a round uses it
 1. **Names first** (one agent per category): about 15 % more candidates than the target, each with its meaning, the closest existing icon, and why it isn't the same. It reads the category's scope and exclusions, the other categories' scopes, the set's names and tags, and the names the migration maps can't place yet.
 2. **Deduplication in code** (`node scripts/names.mjs <proposals.json>`, which reads `{ category: [{ name, meaning }] }`): names already taken, names proposed twice in the round, the same words in another order, names that contain an existing one (a family's base aside), and what the set's search finds for each name become a conflict list. The names agents run it on their own lists before returning.
-3. **One judge** settles the conflicts for the whole round: keep, rename, move to another category, or drop. The approved lists are what the illustrators draw; they may drop a name, never add one.
+3. **The main session judges** the whole round ([decision 82](./decisions.md#phase-3-23-oct-2026)): it reads the lists and the script's report and keeps, renames, moves, or drops. The approved lists are what the illustrators draw; they may drop a name, never add one.
 4. Then drawing, critic, languages, and QA as in [Production](./production.md#rounds-3-onward--scaling-to-10000).
 
 A category's target is a goal, not a quota: the critic drops what doesn't reach the bar, and the sweep makes up the difference.

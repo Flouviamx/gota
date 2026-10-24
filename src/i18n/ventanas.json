@@ -1,0 +1,527 @@
+{
+  "window": {
+    "label": { "es": "Ventana", "en": "Window", "pt": "Janela", "fr": "Fenêtre", "de": "Fenster", "it": "Finestra", "ja": "ウィンドウ", "zh": "窗口", "ko": "창", "ar": "نافذة" },
+    "keywords": {
+      "es": ["aplicación", "app de escritorio", "navegador", "interfaz", "programa", "abrir app", "organizar ventanas", "marco"],
+      "en": ["app", "desktop app", "browser", "interface", "program", "open app", "arrange windows", "frame"]
+    }
+  },
+  "window-plus": {
+    "label": { "es": "Nueva ventana", "en": "New window", "pt": "Nova janela", "fr": "Nouvelle fenêtre", "de": "Neues Fenster", "it": "Nuova finestra", "ja": "新規ウィンドウ", "zh": "新建窗口", "ko": "새 창", "ar": "نافذة جديدة" },
+    "keywords": {
+      "es": ["abrir otra ventana", "crear", "agregar", "otra instancia", "nueva pestaña", "ventana de incógnito", "nueva sesión"],
+      "en": ["open another window", "create", "add", "new instance", "new tab", "incognito window", "new session"]
+    }
+  },
+  "window-x": {
+    "label": { "es": "Cerrar ventana", "en": "Close window", "pt": "Fechar janela", "fr": "Fermer la fenêtre", "de": "Fenster schließen", "it": "Chiudi finestra", "ja": "ウィンドウを閉じる", "zh": "关闭窗口", "ko": "창 닫기", "ar": "إغلاق النافذة" },
+    "keywords": {
+      "es": ["salir", "cerrar app", "terminar", "app cerrada", "descartar", "forzar cierre", "quitar"],
+      "en": ["quit", "close app", "exit", "app closed", "dismiss", "force quit", "terminate"]
+    }
+  },
+  "window-gear": {
+    "label": { "es": "Configuración de la app", "en": "App settings", "pt": "Configurações do app", "fr": "Paramètres de l’app", "de": "App-Einstellungen", "it": "Impostazioni dell’app", "ja": "アプリの設定", "zh": "应用设置", "ko": "앱 설정", "ar": "إعدادات التطبيق" },
+    "keywords": {
+      "es": ["preferencias", "ajustes", "opciones", "configurar ventana", "personalizar", "ventana de preferencias", "panel de control"],
+      "en": ["preferences", "options", "window settings", "configure", "customize", "preferences window", "setup"]
+    }
+  },
+  "window-sync": {
+    "label": { "es": "Recargar ventana", "en": "Reload window", "pt": "Recarregar janela", "fr": "Recharger la fenêtre", "de": "Fenster neu laden", "it": "Ricarica finestra", "ja": "ウィンドウを再読み込み", "zh": "重新加载窗口", "ko": "창 새로고침", "ar": "إعادة تحميل النافذة" },
+    "keywords": {
+      "es": ["actualizar", "refrescar", "sincronizar", "app actualizándose", "volver a cargar", "recargar página", "reiniciar vista", "sincronización"],
+      "en": ["refresh", "sync", "update", "app updating", "reload page", "restart view", "syncing", "redraw"]
+    }
+  },
+  "window-arrow-down": {
+    "label": { "es": "Descargar app de escritorio", "en": "Download desktop app", "pt": "Baixar o app para computador", "fr": "Télécharger l’app de bureau", "de": "Desktop-App herunterladen", "it": "Scarica l’app desktop", "ja": "デスクトップアプリをダウンロード", "zh": "下载桌面应用", "ko": "데스크톱 앱 다운로드", "ar": "تنزيل تطبيق سطح المكتب" },
+    "keywords": {
+      "es": ["instalar", "instalador", "app para mac", "app para windows", "obtener la app", "app nativa", "programa", "archivo de instalación"],
+      "en": ["install", "installer", "mac app", "windows app", "get the app", "native app", "program", "setup file"]
+    }
+  },
+  "window-edit": {
+    "label": { "es": "Personalizar diseño", "en": "Customize layout", "pt": "Personalizar layout", "fr": "Personnaliser la disposition", "de": "Layout anpassen", "it": "Personalizza layout", "ja": "レイアウトをカスタマイズ", "zh": "自定义布局", "ko": "레이아웃 맞춤 설정", "ar": "تخصيص التخطيط" },
+    "keywords": {
+      "es": ["modo edición", "editar pantalla", "acomodar", "reorganizar", "editar página", "personalizar vista", "mover secciones", "constructor"],
+      "en": ["edit mode", "edit screen", "arrange", "rearrange", "edit page", "customize view", "move sections", "page builder"]
+    }
+  },
+  "window-stack": {
+    "label": { "es": "Ventanas apiladas", "en": "Stacked windows", "pt": "Janelas empilhadas", "fr": "Fenêtres empilées", "de": "Gestapelte Fenster", "it": "Finestre sovrapposte", "ja": "重なったウィンドウ", "zh": "层叠窗口", "ko": "겹친 창", "ar": "نوافذ متراكبة" },
+    "keywords": {
+      "es": ["varias ventanas", "cascada", "menú ventana", "ventanas abiertas", "multitarea", "capas", "lista de ventanas", "traer al frente"],
+      "en": ["multiple windows", "cascade", "window menu", "open windows", "multitasking", "layers", "window list", "bring to front"]
+    }
+  },
+  "window-overview": {
+    "label": { "es": "Todas las ventanas", "en": "All windows", "pt": "Todas as janelas", "fr": "Toutes les fenêtres", "de": "Alle Fenster", "it": "Tutte le finestre", "ja": "すべてのウィンドウ", "zh": "所有窗口", "ko": "모든 창", "ar": "كل النوافذ" },
+    "keywords": {
+      "es": ["mission control", "vista de tareas", "exposé", "ventanas abiertas", "vista general", "cambiar de ventana", "mosaico", "multitarea"],
+      "en": ["mission control", "task view", "exposé", "open windows", "overview", "switch windows", "grid view", "multitasking"]
+    }
+  },
+  "window-resize": {
+    "label": { "es": "Cambiar tamaño de ventana", "en": "Resize window", "pt": "Redimensionar janela", "fr": "Redimensionner la fenêtre", "de": "Fenstergröße ändern", "it": "Ridimensiona finestra", "ja": "ウィンドウのサイズを変更", "zh": "调整窗口大小", "ko": "창 크기 조정", "ar": "تغيير حجم النافذة" },
+    "keywords": {
+      "es": ["redimensionar", "agrandar", "achicar", "arrastrar esquina", "estirar", "ajustar tamaño", "control de tamaño", "maximizar"],
+      "en": ["drag corner", "enlarge", "shrink", "stretch", "adjust size", "resize grip", "resize handle", "maximize"]
+    }
+  },
+  "window-select": {
+    "label": { "es": "Elegir ventana", "en": "Select window", "pt": "Selecionar janela", "fr": "Choisir une fenêtre", "de": "Fenster auswählen", "it": "Seleziona finestra", "ja": "ウィンドウを選択", "zh": "选择窗口", "ko": "창 선택", "ar": "اختيار نافذة" },
+    "keywords": {
+      "es": ["captura de ventana", "compartir una ventana", "grabar ventana", "captura de pantalla", "presentar app", "solo esta ventana", "transmitir", "elegir app"],
+      "en": ["window capture", "share a window", "record window", "screenshot", "present app", "this window only", "cast", "choose app"]
+    }
+  },
+  "window-sheet": {
+    "label": { "es": "Hoja de ventana", "en": "Window sheet", "pt": "Folha da janela", "fr": "Feuille de fenêtre", "de": "Sheet-Dialog", "it": "Foglio della finestra", "ja": "ウィンドウのシート", "zh": "窗口表单", "ko": "창 시트", "ar": "ورقة النافذة" },
+    "keywords": {
+      "es": ["diálogo modal", "panel modal", "guardar como", "exportar", "confirmar", "cuadro desplegable", "barra de título", "macos"],
+      "en": ["modal dialog", "modal panel", "save as", "export", "confirm", "drop-down panel", "title bar", "macos"]
+    }
+  },
+  "window-pin": {
+    "label": { "es": "Siempre visible", "en": "Always on top", "pt": "Sempre no topo", "fr": "Toujours au premier plan", "de": "Immer im Vordergrund", "it": "Sempre in primo piano", "ja": "常に手前に表示", "zh": "窗口置顶", "ko": "항상 위에 표시", "ar": "دائمًا في المقدمة" },
+    "keywords": {
+      "es": ["fijar ventana", "flotante", "encima de todo", "primer plano", "anclar", "ventana flotante", "no ocultar"],
+      "en": ["pin window", "float", "stay on top", "foreground", "floating window", "keep visible", "pinned"]
+    }
+  },
+  "window-detach": {
+    "label": { "es": "Abrir en ventana aparte", "en": "Pop out", "pt": "Abrir em janela separada", "fr": "Ouvrir dans une fenêtre séparée", "de": "In eigenem Fenster öffnen", "it": "Apri in una finestra separata", "ja": "別ウィンドウで開く", "zh": "在独立窗口中打开", "ko": "새 창으로 분리", "ar": "فتح في نافذة منفصلة" },
+    "keywords": {
+      "es": ["desacoplar", "separar", "sacar pestaña", "panel flotante", "chat emergente", "ventana independiente", "desprender", "segunda pantalla"],
+      "en": ["detach", "separate window", "undock", "tear off tab", "floating panel", "pop-out chat", "own window", "second screen"]
+    }
+  },
+  "window-attach": {
+    "label": { "es": "Combinar ventanas", "en": "Merge windows", "pt": "Juntar janelas", "fr": "Fusionner les fenêtres", "de": "Fenster zusammenführen", "it": "Unisci finestre", "ja": "ウィンドウを結合", "zh": "合并窗口", "ko": "창 합치기", "ar": "دمج النوافذ" },
+    "keywords": {
+      "es": ["acoplar", "reintegrar", "volver a la ventana principal", "unir pestañas", "regresar panel", "juntar", "anclar de nuevo", "integrar"],
+      "en": ["attach", "dock back", "pop in", "return to main window", "merge all windows", "rejoin tabs", "reattach", "consolidate"]
+    }
+  },
+  "window-minimize": {
+    "label": { "es": "Minimizar ventana", "en": "Minimize window", "pt": "Minimizar janela", "fr": "Réduire la fenêtre", "de": "Fenster minimieren", "it": "Riduci a icona", "ja": "ウィンドウを最小化", "zh": "最小化窗口", "ko": "창 최소화", "ar": "تصغير النافذة إلى شريط المهام" },
+    "keywords": {
+      "es": ["ocultar", "esconder", "enviar al dock", "barra de tareas", "reducir", "guardar para después", "quitar de la vista"],
+      "en": ["hide", "send to dock", "taskbar", "collapse", "shrink", "tuck away", "out of view"]
+    }
+  },
+  "window-move": {
+    "label": { "es": "Mover ventana", "en": "Move window", "pt": "Mover janela", "fr": "Déplacer la fenêtre", "de": "Fenster verschieben", "it": "Sposta finestra", "ja": "ウィンドウを移動", "zh": "移动窗口", "ko": "창 이동", "ar": "نقل النافذة" },
+    "keywords": {
+      "es": ["otra pantalla", "otro monitor", "otro escritorio", "segundo monitor", "trasladar", "cambiar de pantalla", "enviar a escritorio", "reubicar"],
+      "en": ["another display", "other monitor", "other desktop", "second monitor", "relocate", "move to display", "send to desktop", "transfer"]
+    }
+  },
+  "window-loading": {
+    "label": { "es": "Cargando app", "en": "App loading", "pt": "Carregando app", "fr": "Chargement de l’app", "de": "App wird geladen", "it": "Caricamento app", "ja": "アプリを読み込み中", "zh": "应用加载中", "ko": "앱 로딩 중", "ar": "جارٍ تحميل التطبيق" },
+    "keywords": {
+      "es": ["espera", "en progreso", "pantalla de carga", "procesando", "spinner", "estado de carga", "abriendo", "un momento"],
+      "en": ["please wait", "in progress", "loading screen", "processing", "spinner", "loading state", "opening", "busy"]
+    }
+  },
+  "window-empty": {
+    "label": { "es": "Estado vacío", "en": "Empty state", "pt": "Estado vazio", "fr": "État vide", "de": "Leerer Zustand", "it": "Stato vuoto", "ja": "空の状態", "zh": "空状态", "ko": "빈 상태", "ar": "حالة فارغة" },
+    "keywords": {
+      "es": ["sin contenido", "sin resultados", "nada por aquí", "pantalla en blanco", "sin datos", "primer uso", "aún no hay nada", "lista sin elementos"],
+      "en": ["no content", "no results", "nothing here", "blank screen", "no data", "first use", "nothing yet", "no items"]
+    }
+  },
+  "window-alert": {
+    "label": { "es": "Error en la app", "en": "App error", "pt": "Erro no app", "fr": "Erreur de l’app", "de": "App-Fehler", "it": "Errore dell’app", "ja": "アプリのエラー", "zh": "应用错误", "ko": "앱 오류", "ar": "خطأ في التطبيق" },
+    "keywords": {
+      "es": ["algo salió mal", "estado de error", "falla", "problema", "advertencia", "aviso", "error 500", "pantalla de error"],
+      "en": ["something went wrong", "error state", "failure", "problem", "warning", "issue", "500 error", "error screen"]
+    }
+  },
+  "window-block": {
+    "label": { "es": "Acceso bloqueado", "en": "Access blocked", "pt": "Acesso bloqueado", "fr": "Accès bloqué", "de": "Zugriff gesperrt", "it": "Accesso bloccato", "ja": "アクセス禁止", "zh": "禁止访问", "ko": "접근 차단됨", "ar": "الوصول محظور" },
+    "keywords": {
+      "es": ["prohibido", "restringido", "sin permiso", "error 403", "no autorizado", "bloquear app", "contenido restringido", "acceso denegado"],
+      "en": ["forbidden", "restricted", "no permission", "403 error", "unauthorized", "block app", "restricted content", "not allowed"]
+    }
+  },
+  "window-check": {
+    "label": { "es": "Pantalla de éxito", "en": "Success screen", "pt": "Tela de sucesso", "fr": "Écran de réussite", "de": "Erfolgsbildschirm", "it": "Schermata di successo", "ja": "完了画面", "zh": "成功页面", "ko": "완료 화면", "ar": "شاشة النجاح" },
+    "keywords": {
+      "es": ["listo", "completado", "confirmación", "terminado", "operación exitosa", "todo salió bien", "enviado", "pago aprobado"],
+      "en": ["done", "completed", "confirmation", "finished", "all set", "sent", "payment approved", "thank you page"]
+    }
+  },
+  "window-maintenance": {
+    "label": { "es": "En mantenimiento", "en": "Under maintenance", "pt": "Em manutenção", "fr": "En maintenance", "de": "Wartungsarbeiten", "it": "In manutenzione", "ja": "メンテナンス中", "zh": "维护中", "ko": "점검 중", "ar": "قيد الصيانة" },
+    "keywords": {
+      "es": ["mantenimiento programado", "fuera de servicio", "volvemos pronto", "caído", "servicio no disponible", "actualización del sistema", "reparación", "inactividad"],
+      "en": ["scheduled maintenance", "out of service", "back soon", "down", "service unavailable", "system update", "repairs", "downtime"]
+    }
+  },
+  "window-construction": {
+    "label": { "es": "Página en construcción", "en": "Page under construction", "pt": "Página em construção", "fr": "Page en construction", "de": "Seite im Aufbau", "it": "Pagina in costruzione", "ja": "ページ準備中", "zh": "页面建设中", "ko": "페이지 준비 중", "ar": "الصفحة قيد الإنشاء" },
+    "keywords": {
+      "es": ["próximamente", "en desarrollo", "trabajando en ello", "en obra", "lanzamiento pronto", "beta", "aún no disponible"],
+      "en": ["coming soon", "in development", "work in progress", "wip", "launching soon", "beta", "not ready yet"]
+    }
+  },
+  "window-crash": {
+    "label": { "es": "La app no responde", "en": "App not responding", "pt": "O app não está respondendo", "fr": "L’app ne répond pas", "de": "App reagiert nicht", "it": "L’app non risponde", "ja": "アプリが応答しません", "zh": "应用无响应", "ko": "앱 응답 없음", "ar": "التطبيق لا يستجيب" },
+    "keywords": {
+      "es": ["se cerró", "falla", "congelada", "trabada", "forzar cierre", "se colgó", "dejó de funcionar", "reporte de fallas"],
+      "en": ["crash", "crashed", "frozen", "hang", "force quit", "stopped working", "crash report", "freeze"]
+    }
+  },
+  "window-pause": {
+    "label": { "es": "Estado en pausa", "en": "Paused state", "pt": "Estado pausado", "fr": "État en pause", "de": "Pausierter Zustand", "it": "Stato in pausa", "ja": "一時停止状態", "zh": "暂停状态", "ko": "일시 중지 상태", "ar": "حالة الإيقاف المؤقت" },
+    "keywords": {
+      "es": ["suspendido", "inactivo", "cuenta suspendida", "proyecto pausado", "espacio de trabajo pausado", "reanudar", "congelado", "detenido"],
+      "en": ["suspended", "inactive", "suspended account", "paused project", "paused workspace", "resume", "on hold", "frozen"]
+    }
+  },
+  "status-bar": {
+    "label": { "es": "Barra de estado", "en": "Status bar", "pt": "Barra de status", "fr": "Barre d’état", "de": "Statusleiste", "it": "Barra di stato", "ja": "ステータスバー", "zh": "状态栏", "ko": "상태 표시줄", "ar": "شريط الحالة" },
+    "keywords": {
+      "es": ["barra inferior", "pie de ventana", "indicadores", "progreso", "contador de palabras", "línea y columna", "conexión", "mensajes del sistema"],
+      "en": ["bottom bar", "window footer", "indicators", "progress", "word count", "line and column", "connection", "info bar"]
+    }
+  },
+  "title-bar": {
+    "label": { "es": "Barra de título", "en": "Title bar", "pt": "Barra de título", "fr": "Barre de titre", "de": "Titelleiste", "it": "Barra del titolo", "ja": "タイトルバー", "zh": "标题栏", "ko": "제목 표시줄", "ar": "شريط العنوان" },
+    "keywords": {
+      "es": ["encabezado de ventana", "barra personalizada", "nombre de la ventana", "arrastrar ventana", "cabecera", "marco de ventana", "mostrar u ocultar"],
+      "en": ["window header", "custom chrome", "window name", "drag window", "header", "window frame", "caption bar"]
+    }
+  },
+  "window-controls": {
+    "label": { "es": "Controles de ventana", "en": "Window controls", "pt": "Controles da janela", "fr": "Contrôles de fenêtre", "de": "Fenstersteuerung", "it": "Controlli della finestra", "ja": "ウィンドウコントロール", "zh": "窗口控制按钮", "ko": "창 컨트롤", "ar": "أزرار التحكم في النافذة" },
+    "keywords": {
+      "es": ["semáforo", "cerrar", "minimizar", "maximizar", "zoom", "botones rojo amarillo verde", "barra de título personalizada", "pantalla completa"],
+      "en": ["traffic lights", "close", "minimize", "maximize", "zoom", "red yellow green buttons", "custom title bar", "full screen"]
+    }
+  },
+  "toolbar": {
+    "label": { "es": "Barra de herramientas", "en": "Toolbar", "pt": "Barra de ferramentas", "fr": "Barre d’outils", "de": "Symbolleiste", "it": "Barra degli strumenti", "ja": "ツールバー", "zh": "工具栏", "ko": "도구 모음", "ar": "شريط الأدوات" },
+    "keywords": {
+      "es": ["barra de acciones", "botones", "acciones rápidas", "barra superior", "controles", "cinta de opciones", "mostrar u ocultar", "personalizar"],
+      "en": ["action bar", "buttons", "quick actions", "top bar", "controls", "ribbon", "show or hide", "customize"]
+    }
+  },
+  "remote-desktop": {
+    "label": { "es": "Escritorio remoto", "en": "Remote desktop", "pt": "Área de trabalho remota", "fr": "Bureau à distance", "de": "Remotedesktop", "it": "Desktop remoto", "ja": "リモートデスクトップ", "zh": "远程桌面", "ko": "원격 데스크톱", "ar": "سطح المكتب البعيد" },
+    "keywords": {
+      "es": ["control remoto", "acceso remoto", "soporte técnico", "otra computadora", "conexión remota", "vnc", "rdp", "tomar el control"],
+      "en": ["remote control", "remote access", "tech support", "another computer", "remote connection", "vnc", "rdp", "take control"]
+    }
+  },
+  "skeleton-screen": {
+    "label": { "es": "Pantalla esqueleto", "en": "Skeleton screen", "pt": "Tela esqueleto", "fr": "Écran squelette", "de": "Skeleton-Screen", "it": "Schermata scheletro", "ja": "スケルトンスクリーン", "zh": "骨架屏", "ko": "스켈레톤 화면", "ar": "شاشة هيكلية" },
+    "keywords": {
+      "es": ["skeleton", "marcador de posición", "cargando contenido", "placeholder", "carga progresiva", "estado de carga", "contenido pendiente", "shimmer"],
+      "en": ["skeleton loader", "placeholder", "loading content", "content loader", "progressive loading", "loading state", "shimmer", "ghost elements"]
+    }
+  },
+  "splash-screen": {
+    "label": { "es": "Pantalla de presentación", "en": "Splash screen", "pt": "Tela de abertura", "fr": "Écran de démarrage", "de": "Begrüßungsbildschirm", "it": "Schermata iniziale", "ja": "スプラッシュ画面", "zh": "启动画面", "ko": "스플래시 화면", "ar": "شاشة البداية" },
+    "keywords": {
+      "es": ["splash", "abrir app", "arranque", "lanzamiento", "logo de la app", "carga inicial", "pantalla de bienvenida", "intro"],
+      "en": ["launch screen", "app launch", "startup", "boot", "app logo", "initial load", "intro screen", "welcome screen"]
+    }
+  },
+  "ghost": {
+    "label": { "es": "Fantasma", "en": "Ghost", "pt": "Fantasma", "fr": "Fantôme", "de": "Geist", "it": "Fantasma", "ja": "おばけ", "zh": "幽灵", "ko": "유령", "ar": "شبح" },
+    "keywords": {
+      "es": ["no encontrado", "error 404", "vacío", "no hay nada", "desaparecido", "perdido", "mascota", "halloween"],
+      "en": ["not found", "404", "empty", "nothing here", "missing", "gone", "mascot", "halloween"]
+    }
+  },
+  "menu-bar": {
+    "label": { "es": "Barra de menús", "en": "Menu bar", "pt": "Barra de menus", "fr": "Barre des menus", "de": "Menüleiste", "it": "Barra dei menu", "ja": "メニューバー", "zh": "菜单栏", "ko": "메뉴 막대", "ar": "شريط القوائم" },
+    "keywords": {
+      "es": ["barra superior", "apps del menú superior", "menú de la app", "archivo edición ver", "íconos de estado", "bandeja", "macos", "menú global"],
+      "en": ["top bar", "menu extras", "app menu", "file edit view", "status icons", "system tray", "macos", "global menu"]
+    }
+  },
+  "dock": {
+    "label": { "es": "Dock", "en": "Dock", "pt": "Dock", "fr": "Dock", "de": "Dock", "it": "Dock", "ja": "ドック", "zh": "程序坞", "ko": "독", "ar": "شريط التطبيقات" },
+    "keywords": {
+      "es": ["barra de apps", "apps fijadas", "lanzador", "ocultar automáticamente", "accesos directos", "apps abiertas", "macos", "favoritos"],
+      "en": ["app bar", "pinned apps", "launcher", "auto-hide", "shortcuts", "open apps", "macos", "favorites"]
+    }
+  },
+  "taskbar": {
+    "label": { "es": "Barra de tareas", "en": "Taskbar", "pt": "Barra de tarefas", "fr": "Barre des tâches", "de": "Taskleiste", "it": "Barra delle applicazioni", "ja": "タスクバー", "zh": "任务栏", "ko": "작업 표시줄", "ar": "شريط المهام" },
+    "keywords": {
+      "es": ["menú inicio", "windows", "apps abiertas", "bandeja del sistema", "reloj", "barra inferior", "ventanas abiertas", "panel"],
+      "en": ["start menu", "windows", "open apps", "system tray", "clock", "bottom bar", "running apps", "panel"]
+    }
+  },
+  "taskbar-pin": {
+    "label": { "es": "Anclar a la barra de tareas", "en": "Pin to taskbar", "pt": "Fixar na barra de tarefas", "fr": "Épingler à la barre des tâches", "de": "An Taskleiste anheften", "it": "Aggiungi alla barra delle applicazioni", "ja": "タスクバーにピン留め", "zh": "固定到任务栏", "ko": "작업 표시줄에 고정", "ar": "تثبيت على شريط المهام" },
+    "keywords": {
+      "es": ["fijar", "mantener en el dock", "acceso rápido", "fijar app", "favorito", "acceso directo", "dejar a la mano"],
+      "en": ["keep in dock", "quick access", "pin app", "favorite", "shortcut", "launch quickly", "add to dock"]
+    }
+  },
+  "workspaces": {
+    "label": { "es": "Escritorios virtuales", "en": "Virtual desktops", "pt": "Áreas de trabalho virtuais", "fr": "Bureaux virtuels", "de": "Virtuelle Desktops", "it": "Desktop virtuali", "ja": "仮想デスクトップ", "zh": "虚拟桌面", "ko": "가상 데스크톱", "ar": "أسطح المكتب الافتراضية" },
+    "keywords": {
+      "es": ["espacios", "áreas de trabajo", "cambiar de escritorio", "varios escritorios", "spaces", "vista de tareas", "organizar por contexto", "multitarea"],
+      "en": ["spaces", "workspaces", "switch desktops", "multiple desktops", "task view", "contexts", "multitasking", "desktop switcher"]
+    }
+  },
+  "workspaces-plus": {
+    "label": { "es": "Agregar escritorio", "en": "Add desktop", "pt": "Adicionar área de trabalho", "fr": "Ajouter un bureau", "de": "Desktop hinzufügen", "it": "Aggiungi desktop", "ja": "デスクトップを追加", "zh": "添加桌面", "ko": "데스크톱 추가", "ar": "إضافة سطح مكتب" },
+    "keywords": {
+      "es": ["nuevo escritorio", "nuevo espacio", "crear espacio de trabajo", "escritorio virtual", "más espacios", "nueva área de trabajo", "organizar"],
+      "en": ["new desktop", "new space", "create workspace", "virtual desktop", "more spaces", "new workspace", "organize"]
+    }
+  },
+  "app-switcher": {
+    "label": { "es": "Cambiar de app", "en": "Switch apps", "pt": "Alternar apps", "fr": "Changer d’app", "de": "Apps wechseln", "it": "Passa da un’app all’altra", "ja": "アプリを切り替え", "zh": "切换应用", "ko": "앱 전환", "ar": "التبديل بين التطبيقات" },
+    "keywords": {
+      "es": ["alt tab", "cmd tab", "apps recientes", "multitarea", "apps abiertas", "selector de apps", "alternar", "vista de apps"],
+      "en": ["alt tab", "cmd tab", "recent apps", "multitasking", "open apps", "task switcher", "toggle", "app carousel"]
+    }
+  },
+  "home-screen": {
+    "label": { "es": "Pantalla de inicio", "en": "Home screen", "pt": "Tela de início", "fr": "Écran d’accueil", "de": "Home-Bildschirm", "it": "Schermata Home", "ja": "ホーム画面", "zh": "主屏幕", "ko": "홈 화면", "ar": "الشاشة الرئيسية" },
+    "keywords": {
+      "es": ["íconos de apps", "celular", "tableta", "lanzador", "menú de apps", "iphone", "android", "cuadrícula de apps"],
+      "en": ["app icons", "phone", "tablet", "launcher", "app grid", "iphone", "android", "springboard"]
+    }
+  },
+  "home-screen-plus": {
+    "label": { "es": "Agregar a pantalla de inicio", "en": "Add to home screen", "pt": "Adicionar à tela de início", "fr": "Ajouter à l’écran d’accueil", "de": "Zum Home-Bildschirm hinzufügen", "it": "Aggiungi a Home", "ja": "ホーム画面に追加", "zh": "添加到主屏幕", "ko": "홈 화면에 추가", "ar": "إضافة إلى الشاشة الرئيسية" },
+    "keywords": {
+      "es": ["instalar app web", "pwa", "acceso directo", "anclar sitio", "guardar en el celular", "atajo", "app progresiva"],
+      "en": ["install web app", "pwa", "shortcut", "pin site", "save to phone", "install", "progressive web app"]
+    }
+  },
+  "apps-plus": {
+    "label": { "es": "Agregar app", "en": "Add app", "pt": "Adicionar app", "fr": "Ajouter une app", "de": "App hinzufügen", "it": "Aggiungi app", "ja": "アプリを追加", "zh": "添加应用", "ko": "앱 추가", "ar": "إضافة تطبيق" },
+    "keywords": {
+      "es": ["integración", "instalar", "catálogo", "tienda de apps", "conectar", "complemento", "extensión", "marketplace"],
+      "en": ["integration", "install", "catalog", "app store", "connect", "plugin", "extension", "marketplace"]
+    }
+  },
+  "app-shortcut": {
+    "label": { "es": "Acceso directo", "en": "App shortcut", "pt": "Atalho do app", "fr": "Raccourci d’app", "de": "App-Verknüpfung", "it": "Collegamento all’app", "ja": "アプリのショートカット", "zh": "应用快捷方式", "ko": "앱 바로 가기", "ar": "اختصار التطبيق" },
+    "keywords": {
+      "es": ["alias", "enlace", "crear alias", "abrir rápido", "ícono en el escritorio", "atajo", "lanzador", "vínculo"],
+      "en": ["alias", "link", "desktop icon", "quick launch", "create alias", "launcher", "symlink"]
+    }
+  },
+  "widgets": {
+    "label": { "es": "Widgets", "en": "Widgets", "pt": "Widgets", "fr": "Widgets", "de": "Widgets", "it": "Widget", "ja": "ウィジェット", "zh": "小组件", "ko": "위젯", "ar": "الأدوات المصغّرة" },
+    "keywords": {
+      "es": ["complementos", "mini apps", "tablero", "bloques", "acomodar", "personalizar inicio", "módulos", "add-ons"],
+      "en": ["add-ons", "mini apps", "dashboard", "blocks", "arrange", "customize home", "modules", "gadgets"]
+    }
+  },
+  "lock-screen": {
+    "label": { "es": "Pantalla de bloqueo", "en": "Lock screen", "pt": "Tela de bloqueio", "fr": "Écran verrouillé", "de": "Sperrbildschirm", "it": "Schermata di blocco", "ja": "ロック画面", "zh": "锁定屏幕", "ko": "잠금 화면", "ar": "شاشة القفل" },
+    "keywords": {
+      "es": ["fondo de pantalla", "reloj", "widgets", "notificaciones", "teléfono bloqueado", "personalizar", "siempre activa", "reposo"],
+      "en": ["wallpaper", "clock", "widgets", "notifications", "locked phone", "customize", "always on display", "standby"]
+    }
+  },
+  "quick-settings": {
+    "label": { "es": "Ajustes rápidos", "en": "Quick settings", "pt": "Configurações rápidas", "fr": "Réglages rapides", "de": "Schnelleinstellungen", "it": "Impostazioni rapide", "ja": "クイック設定", "zh": "快速设置", "ko": "빠른 설정", "ar": "الإعدادات السريعة" },
+    "keywords": {
+      "es": ["centro de control", "interruptores", "wifi", "bluetooth", "brillo", "panel de control", "modo avión", "linterna"],
+      "en": ["control center", "toggles", "wifi", "bluetooth", "brightness", "control panel", "airplane mode", "flashlight"]
+    }
+  },
+  "split-screen": {
+    "label": { "es": "Pantalla dividida", "en": "Split screen", "pt": "Divisão de tela", "fr": "Écran divisé", "de": "Geteilter Bildschirm", "it": "Schermo diviso", "ja": "画面分割", "zh": "分屏", "ko": "화면 분할", "ar": "تقسيم الشاشة" },
+    "keywords": {
+      "es": ["multitarea", "dos apps a la vez", "split view", "una arriba de otra", "tableta", "celular", "lado a lado", "ipad"],
+      "en": ["multitasking", "two apps", "split view", "stacked apps", "tablet", "phone", "side by side", "ipad"]
+    }
+  },
+  "modal": {
+    "label": { "es": "Ventana modal", "en": "Modal", "pt": "Janela modal", "fr": "Fenêtre modale", "de": "Modales Fenster", "it": "Finestra modale", "ja": "モーダル", "zh": "模态框", "ko": "모달", "ar": "نافذة مشروطة" },
+    "keywords": {
+      "es": ["ventana emergente", "popup", "vista centrada", "superposición", "overlay", "cuadro flotante", "vista rápida", "abrir encima"],
+      "en": ["popup", "overlay", "center peek", "pop-up window", "floating box", "layer", "quick view", "focus view"]
+    }
+  },
+  "dialog": {
+    "label": { "es": "Cuadro de diálogo", "en": "Dialog", "pt": "Caixa de diálogo", "fr": "Boîte de dialogue", "de": "Dialogfeld", "it": "Finestra di dialogo", "ja": "ダイアログ", "zh": "对话框", "ko": "대화 상자", "ar": "مربع حوار" },
+    "keywords": {
+      "es": ["confirmar", "cancelar", "aceptar", "pregunta", "decisión", "ventana de confirmación", "sí o no", "aviso"],
+      "en": ["confirm", "cancel", "ok", "prompt", "decision", "confirmation", "yes or no", "question"]
+    }
+  },
+  "dialog-alert": {
+    "label": { "es": "Diálogo de advertencia", "en": "Alert dialog", "pt": "Caixa de alerta", "fr": "Boîte d’alerte", "de": "Warndialog", "it": "Finestra di avviso", "ja": "警告ダイアログ", "zh": "警告对话框", "ko": "경고 대화 상자", "ar": "مربع حوار تحذيري" },
+    "keywords": {
+      "es": ["alerta", "acción destructiva", "confirmar eliminación", "estás seguro", "peligro", "irreversible", "precaución", "borrar"],
+      "en": ["warning", "destructive action", "confirm delete", "are you sure", "danger", "irreversible", "caution", "delete"]
+    }
+  },
+  "popover": {
+    "label": { "es": "Panel emergente", "en": "Popover", "pt": "Painel flutuante", "fr": "Bulle contextuelle", "de": "Popover", "it": "Popover", "ja": "ポップオーバー", "zh": "弹出框", "ko": "팝오버", "ar": "فقاعة منبثقة" },
+    "keywords": {
+      "es": ["popover", "tarjeta al pasar el cursor", "menú contextual", "globo", "anclado a un botón", "detalles", "hover card", "información extra"],
+      "en": ["hover card", "flyout", "callout", "anchored panel", "context menu", "bubble", "details", "dropdown panel"]
+    }
+  },
+  "tooltip": {
+    "label": { "es": "Globo de ayuda", "en": "Tooltip", "pt": "Dica de ferramenta", "fr": "Info-bulle", "de": "Kurzinfo", "it": "Suggerimento", "ja": "ツールチップ", "zh": "工具提示", "ko": "툴팁", "ar": "تلميح" },
+    "keywords": {
+      "es": ["tooltip", "pista", "sugerencia", "al pasar el cursor", "hover", "descripción", "etiqueta flotante", "explicación"],
+      "en": ["hint", "hover", "help text", "info", "description", "floating label", "explanation", "on hover"]
+    }
+  },
+  "toast": {
+    "label": { "es": "Aviso breve", "en": "Toast message", "pt": "Mensagem rápida", "fr": "Notification éphémère", "de": "Kurzmeldung", "it": "Messaggio temporaneo", "ja": "トースト通知", "zh": "轻提示", "ko": "토스트 메시지", "ar": "رسالة منبثقة قصيرة" },
+    "keywords": {
+      "es": ["toast", "snackbar", "mensaje flotante", "confirmación", "aviso temporal", "notificación breve", "guardado", "deshacer"],
+      "en": ["snackbar", "brief message", "floating message", "confirmation", "temporary notice", "flash message", "saved", "undo"]
+    }
+  },
+  "banner": {
+    "label": { "es": "Barra de anuncio", "en": "Announcement banner", "pt": "Faixa de aviso", "fr": "Bannière d’annonce", "de": "Hinweisbanner", "it": "Banner di annuncio", "ja": "お知らせバナー", "zh": "公告横幅", "ko": "공지 배너", "ar": "شريط الإعلان" },
+    "keywords": {
+      "es": ["banner", "aviso superior", "promoción", "cintillo", "mensaje del sitio", "comunicado", "novedades", "aviso de cookies"],
+      "en": ["top bar", "site notice", "promo", "hello bar", "news", "cookie notice", "header message", "system notice"]
+    }
+  },
+  "inline-alert": {
+    "label": { "es": "Alerta en línea", "en": "Inline alert", "pt": "Alerta em linha", "fr": "Alerte intégrée", "de": "Inline-Hinweis", "it": "Avviso in linea", "ja": "インラインアラート", "zh": "内联提示", "ko": "인라인 알림", "ar": "تنبيه مضمّن" },
+    "keywords": {
+      "es": ["callout", "nota", "aviso", "información", "advertencia", "éxito", "cuadro destacado", "mensaje en el contenido"],
+      "en": ["callout", "note", "notice", "info", "warning", "success", "admonition", "message box"]
+    }
+  },
+  "drawer": {
+    "label": { "es": "Panel deslizable", "en": "Drawer", "pt": "Gaveta", "fr": "Tiroir", "de": "Seitenpanel", "it": "Pannello a scomparsa", "ja": "ドロワー", "zh": "抽屉", "ko": "드로어", "ar": "درج جانبي" },
+    "keywords": {
+      "es": ["drawer", "cajón", "hoja lateral", "vista lateral", "menú lateral", "detalles", "side peek", "panel flotante"],
+      "en": ["side sheet", "side panel", "side peek", "slide-over", "slide-out panel", "off-canvas", "details pane", "flyout"]
+    }
+  },
+  "bottom-sheet": {
+    "label": { "es": "Hoja inferior", "en": "Bottom sheet", "pt": "Folha inferior", "fr": "Feuille inférieure", "de": "Bottom Sheet", "it": "Foglio inferiore", "ja": "ボトムシート", "zh": "底部弹出面板", "ko": "바텀 시트", "ar": "لوحة سفلية منزلقة" },
+    "keywords": {
+      "es": ["bottom sheet", "panel inferior", "móvil", "deslizar hacia arriba", "menú inferior", "opciones", "celular", "media hoja"],
+      "en": ["mobile", "swipe up", "bottom panel", "bottom drawer", "options", "phone", "pull up", "half sheet"]
+    }
+  },
+  "action-sheet": {
+    "label": { "es": "Hoja de acciones", "en": "Action sheet", "pt": "Folha de ações", "fr": "Feuille d’actions", "de": "Aktionsblatt", "it": "Foglio delle azioni", "ja": "アクションシート", "zh": "操作表", "ko": "액션 시트", "ar": "ورقة الإجراءات" },
+    "keywords": {
+      "es": ["opciones", "menú de acciones", "cancelar", "elegir", "móvil", "compartir", "ios", "lista de opciones"],
+      "en": ["options", "action menu", "cancel", "choose", "mobile", "share", "ios", "choice list"]
+    }
+  },
+  "command-palette": {
+    "label": { "es": "Paleta de comandos", "en": "Command palette", "pt": "Paleta de comandos", "fr": "Palette de commandes", "de": "Befehlspalette", "it": "Tavolozza comandi", "ja": "コマンドパレット", "zh": "命令面板", "ko": "명령 팔레트", "ar": "لوحة الأوامر" },
+    "keywords": {
+      "es": ["búsqueda rápida", "cmd k", "ctrl k", "atajos", "buscar acciones", "lanzador", "apertura rápida", "ejecutar"],
+      "en": ["quick search", "cmd k", "ctrl k", "shortcuts", "search actions", "launcher", "quick open", "run command"]
+    }
+  },
+  "lightbox": {
+    "label": { "es": "Visor de imágenes", "en": "Lightbox", "pt": "Visualizador de imagens", "fr": "Visionneuse d’images", "de": "Bildbetrachter", "it": "Visualizzatore di immagini", "ja": "ライトボックス", "zh": "灯箱", "ko": "라이트박스", "ar": "عارض الصور" },
+    "keywords": {
+      "es": ["lightbox", "galería", "ampliar foto", "ver imagen", "pantalla completa", "carrusel", "siguiente foto", "zoom"],
+      "en": ["gallery", "enlarge photo", "view image", "image viewer", "full screen", "carousel", "next photo", "zoom"]
+    }
+  },
+  "notification": {
+    "label": { "es": "Notificación emergente", "en": "Pop-up notification", "pt": "Notificação pop-up", "fr": "Notification contextuelle", "de": "Pop-up-Benachrichtigung", "it": "Notifica a comparsa", "ja": "ポップアップ通知", "zh": "弹出通知", "ko": "팝업 알림", "ar": "إشعار منبثق" },
+    "keywords": {
+      "es": ["aviso", "alerta", "mensaje del sistema", "mensaje de la app", "recordatorio", "novedad", "actividad", "actualización"],
+      "en": ["alert", "system alert", "in-app message", "reminder", "update", "activity", "heads-up", "news"]
+    }
+  },
+  "notification-stack": {
+    "label": { "es": "Centro de notificaciones", "en": "Notification center", "pt": "Central de notificações", "fr": "Centre de notifications", "de": "Mitteilungszentrale", "it": "Centro notifiche", "ja": "通知センター", "zh": "通知中心", "ko": "알림 센터", "ar": "مركز الإشعارات" },
+    "keywords": {
+      "es": ["avisos agrupados", "historial", "bandeja", "alertas", "actividad reciente", "pendientes", "resumen", "pila"],
+      "en": ["grouped alerts", "history", "inbox", "activity feed", "recent activity", "pending", "summary", "stack"]
+    }
+  },
+  "notification-x": {
+    "label": { "es": "Descartar notificaciones", "en": "Clear notifications", "pt": "Limpar notificações", "fr": "Effacer les notifications", "de": "Mitteilungen löschen", "it": "Cancella notifiche", "ja": "通知を消去", "zh": "清除通知", "ko": "알림 지우기", "ar": "مسح الإشعارات" },
+    "keywords": {
+      "es": ["cerrar aviso", "limpiar", "borrar todo", "ignorar", "quitar alerta", "eliminar", "ocultar"],
+      "en": ["dismiss", "close alert", "clear all", "ignore", "remove alert", "delete", "hide"]
+    }
+  },
+  "notification-check": {
+    "label": { "es": "Marcar como leídas", "en": "Mark as read", "pt": "Marcar como lidas", "fr": "Marquer comme lues", "de": "Als gelesen markieren", "it": "Segna come lette", "ja": "既読にする", "zh": "标记为已读", "ko": "읽음으로 표시", "ar": "تعليم كمقروءة" },
+    "keywords": {
+      "es": ["leído", "al día", "todo visto", "sin pendientes", "bandeja limpia", "revisado", "confirmar", "listo"],
+      "en": ["read", "all caught up", "all seen", "nothing pending", "inbox zero", "reviewed", "acknowledge", "done"]
+    }
+  },
+  "push-notification": {
+    "label": { "es": "Notificación push", "en": "Push notification", "pt": "Notificação push", "fr": "Notification push", "de": "Push-Benachrichtigung", "it": "Notifica push", "ja": "プッシュ通知", "zh": "推送通知", "ko": "푸시 알림", "ar": "إشعار فوري" },
+    "keywords": {
+      "es": ["celular", "aviso en el teléfono", "alerta móvil", "canal push", "permiso de avisos", "app móvil", "pantalla bloqueada", "recordatorio"],
+      "en": ["mobile", "phone alert", "mobile alert", "push channel", "permission prompt", "mobile app", "lock screen", "reminder"]
+    }
+  },
+  "window-snap-left": {
+    "label": { "es": "Acoplar a la izquierda", "en": "Snap to left", "pt": "Ajustar à esquerda", "fr": "Ancrer à gauche", "de": "Links andocken", "it": "Disponi nella metà sinistra", "ja": "左にスナップ", "zh": "贴靠到左侧", "ko": "왼쪽에 맞춤", "ar": "إرساء النافذة يسارًا" },
+    "keywords": {
+      "es": ["mitad izquierda", "pantalla dividida", "mosaico", "lado a lado", "organizar ventanas", "media pantalla", "snap"],
+      "en": ["left half", "split screen", "tile", "side by side", "arrange windows", "half screen", "snap layouts"]
+    }
+  },
+  "window-snap-right": {
+    "label": { "es": "Acoplar a la derecha", "en": "Snap to right", "pt": "Ajustar à direita", "fr": "Ancrer à droite", "de": "Rechts andocken", "it": "Disponi nella metà destra", "ja": "右にスナップ", "zh": "贴靠到右侧", "ko": "오른쪽에 맞춤", "ar": "إرساء النافذة يمينًا" },
+    "keywords": {
+      "es": ["mitad derecha", "pantalla dividida", "mosaico", "lado a lado", "organizar ventanas", "media pantalla", "snap"],
+      "en": ["right half", "split screen", "tile", "side by side", "arrange windows", "half screen", "snap layouts"]
+    }
+  },
+  "window-snap-top": {
+    "label": { "es": "Acoplar arriba", "en": "Snap to top", "pt": "Ajustar na parte superior", "fr": "Ancrer en haut", "de": "Oben andocken", "it": "Disponi nella metà superiore", "ja": "上にスナップ", "zh": "贴靠到顶部", "ko": "위쪽에 맞춤", "ar": "إرساء النافذة في الأعلى" },
+    "keywords": {
+      "es": ["mitad superior", "división horizontal", "mosaico", "una arriba de otra", "organizar ventanas", "media pantalla", "snap"],
+      "en": ["top half", "horizontal split", "tile", "stacked", "arrange windows", "half screen", "snap layouts"]
+    }
+  },
+  "window-snap-bottom": {
+    "label": { "es": "Acoplar abajo", "en": "Snap to bottom", "pt": "Ajustar na parte inferior", "fr": "Ancrer en bas", "de": "Unten andocken", "it": "Disponi nella metà inferiore", "ja": "下にスナップ", "zh": "贴靠到底部", "ko": "아래쪽에 맞춤", "ar": "إرساء النافذة في الأسفل" },
+    "keywords": {
+      "es": ["mitad inferior", "división horizontal", "mosaico", "una debajo de otra", "organizar ventanas", "media pantalla", "snap"],
+      "en": ["bottom half", "horizontal split", "tile", "stacked", "arrange windows", "half screen", "snap layouts"]
+    }
+  },
+  "window-snap-top-left": {
+    "label": { "es": "Acoplar arriba a la izquierda", "en": "Snap to top left", "pt": "Ajustar no canto superior esquerdo", "fr": "Ancrer en haut à gauche", "de": "Oben links andocken", "it": "Disponi nell’angolo in alto a sinistra", "ja": "左上にスナップ", "zh": "贴靠到左上角", "ko": "왼쪽 위에 맞춤", "ar": "إرساء النافذة أعلى اليسار" },
+    "keywords": {
+      "es": ["cuadrante superior izquierdo", "esquina", "cuarto de pantalla", "cuatro ventanas", "mosaico", "organizar ventanas", "snap"],
+      "en": ["top-left quadrant", "corner", "quarter screen", "four windows", "tile", "arrange windows", "snap layouts"]
+    }
+  },
+  "window-snap-top-right": {
+    "label": { "es": "Acoplar arriba a la derecha", "en": "Snap to top right", "pt": "Ajustar no canto superior direito", "fr": "Ancrer en haut à droite", "de": "Oben rechts andocken", "it": "Disponi nell’angolo in alto a destra", "ja": "右上にスナップ", "zh": "贴靠到右上角", "ko": "오른쪽 위에 맞춤", "ar": "إرساء النافذة أعلى اليمين" },
+    "keywords": {
+      "es": ["cuadrante superior derecho", "esquina", "cuarto de pantalla", "cuatro ventanas", "mosaico", "organizar ventanas", "snap"],
+      "en": ["top-right quadrant", "corner", "quarter screen", "four windows", "tile", "arrange windows", "snap layouts"]
+    }
+  },
+  "window-snap-bottom-left": {
+    "label": { "es": "Acoplar abajo a la izquierda", "en": "Snap to bottom left", "pt": "Ajustar no canto inferior esquerdo", "fr": "Ancrer en bas à gauche", "de": "Unten links andocken", "it": "Disponi nell’angolo in basso a sinistra", "ja": "左下にスナップ", "zh": "贴靠到左下角", "ko": "왼쪽 아래에 맞춤", "ar": "إرساء النافذة أسفل اليسار" },
+    "keywords": {
+      "es": ["cuadrante inferior izquierdo", "esquina", "cuarto de pantalla", "cuatro ventanas", "mosaico", "organizar ventanas", "snap"],
+      "en": ["bottom-left quadrant", "corner", "quarter screen", "four windows", "tile", "arrange windows", "snap layouts"]
+    }
+  },
+  "window-snap-bottom-right": {
+    "label": { "es": "Acoplar abajo a la derecha", "en": "Snap to bottom right", "pt": "Ajustar no canto inferior direito", "fr": "Ancrer en bas à droite", "de": "Unten rechts andocken", "it": "Disponi nell’angolo in basso a destra", "ja": "右下にスナップ", "zh": "贴靠到右下角", "ko": "오른쪽 아래에 맞춤", "ar": "إرساء النافذة أسفل اليمين" },
+    "keywords": {
+      "es": ["cuadrante inferior derecho", "esquina", "cuarto de pantalla", "cuatro ventanas", "mosaico", "organizar ventanas", "snap"],
+      "en": ["bottom-right quadrant", "corner", "quarter screen", "four windows", "tile", "arrange windows", "snap layouts"]
+    }
+  }
+}

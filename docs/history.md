@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 24 Oct 2026 — Round 3: interface and work (903 icons)
+- **Eight new categories and two that grew** ([taxonomy](./taxonomy.md)): controles 108, ventanas 75, simbolos 113, formas 83, calendario 69 (and the 20 it adopts from lugares), oficina 115, social 80, producto 76, edicion +118, navegacion +66. The set has 1,936 icons in 18 categories.
+- **Names:** 945 proposed, 916 approved. The judge, as an agent, ran four hours over the ten lists and died on a network drop without returning, so the main session judged with `scripts/names.mjs` ([decision 82](./decisions.md#phase-3-23-oct-2026)): nine keyboard keys go to sistema in round 5, the table borders stay in edicion, and five names proposed twice keep one home.
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category. The critics redesigned 139 icons and dropped 10 that didn't reach the bar; the main session dropped `input-range` and `input-copy` (still weak after the critic; `slider-range` and `copy` say them). `DESIGN.md` gained "What failed before", which the critics and the later illustrators read.
+- **Interruptions:** two network drops, a restart, a dead battery, and the usage limit three times. Each relaunch ran only what was left (the drawing workflow takes a `todo`), languages came back as data and were written by the main session, and the lists, reports, and languages were kept outside the temporary folder.
+- **Checked:** the build, QA over the whole set (the same 12 known weight warnings, none new), every new sheet, and a sample page for the owner. A search test now expects `notification` (an icon of its own since this round) first for "notifications", with the bell among the first results.
+- About 14 M subagent tokens for drawing, critics, and languages, plus the names stage. Tests: 61.
+
 ## 23 Oct 2026 — The taxonomy (3.1 closes)
 - **`src/taxonomy.json` and [Taxonomy](./taxonomy.md)** ([decision 80](./decisions.md#phase-3-23-oct-2026)): 81 categories in 11 domains, each with its round, target, scope, exclusions, and the icons it adopts from the first thousand; nine rounds of about 1,000, the order set by what the teams that use Gota reach for first. The loader checks it (every category file planned, under the same label; adopted icons exist) and applies adoptions once the adopting category exists.
 - [Production](./production.md#rounds-3-onward--scaling-to-10000) now starts each round with its names: an agent per category, deduplication in code, and one judge.

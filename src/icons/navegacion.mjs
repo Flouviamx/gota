@@ -1,7 +1,7 @@
 // Navegación (navigation): arrows, chevrons, menus, panels, views and everything that moves the
 // user through the interface. Drawn with the engine following the rules in DESIGN.md; the base
 // measurements come from Núcleo (arrow-right: 16 shaft, arms of 6 per axis; chevron-right: arms of 6.75).
-import { arc, badge, circ, cursor, dot, f, head, line, roundpoly, sq, turn } from '../../engine/geometry.mjs';
+import { arc, badge, circ, cursor, dot, f, flipPath, head, line, polar, roundpoly, sq, turn, turnPath } from '../../engine/geometry.mjs';
 
 const R2 = Math.SQRT2;
 const P = ([x, y]) => `${f(x)} ${f(y)}`;
@@ -157,6 +157,183 @@ const cell = (x, y, br = false) => sq(x, y, 3.5, 3.5, 1.05, { square: br ? ['br'
 
 // Núcleo's magnifier (search) for zoom.
 const LENS = [circ(10.6, 10.6, 6.85), line([15.6, 15.6], [20.5, 20.5])];
+
+// ── Round 3 ───────────────────────────────────────────────────────────────────────────────
+// Arrow leaving a bar: toLine's bar and arrow (12.25 shaft, arms of 5.5 per axis) with the arrow
+// reversed, its tail 4 from the bar. Drawn running down from a bar at the top, then rotated.
+const fromLine = (deg) => {
+  const [a, b, c, e] = turn([[5.25, 4], [18.75, 4], [12, 8], [12, 20.25]], deg);
+  return [line(a, b), ...arrow(c, e, 5.5 * R2)];
+};
+// Arrow and dot: the same arrow, its tip (or its tail) 3.75 above a dot, 3.05 from its edge.
+const DOT_ARROW = [[12, 3.5], [12, 16]];
+const DOT_UNDER = dot(12, 19.75);
+// Arrow into a corner: a diagonal arrow (12.75 box, arms of 6 along the axes) whose head nests 3.75
+// inside an L bracket with arms of 8 (fullscreen's corner, radius 2.5). Drawn into the top right and
+// turned; at the bottom right the bracket keeps the signature square corner, as in fullscreen.
+const CORNER_L = [[12.75, 3.25], [20.75, 3.25], [20.75, 11.25]];
+const CORNER_ARROW = [[4.25, 19.75], [17, 7]];
+const toCorner = (deg) => {
+  const pts = turn(CORNER_L, deg);
+  const br = pts[1][0] > 12 && pts[1][1] > 12;
+  return [cline(pts, [0, br ? 0 : 2.5, 0]), ...arrow(...turn(CORNER_ARROW, deg), 6)];
+};
+// The share box from Edición (an opening of 5.9 in its lid, signature corner at bottom right).
+const SHARE_BOX = cline([[14.95, 9.5], [19.75, 9.5], [19.75, 21], [4.25, 21], [4.25, 9.5], [9.05, 9.5]], [0, 3, 0, 3, 3, 0]);
+// Fork (merge and split): a branch leaves the stem at 45°, turns straight on an arc of 4.5 and runs
+// to the edge (x 6 or 18). `sx` picks the side and `sy` the half (1: below the junction); the path
+// runs from the edge in to the junction `jy`, or out from it.
+const FORK_R = 4.5;
+function forkBranch(sx, sy, jy, end, outward) {
+  const J = [12, jy];
+  const k = FORK_R * (1 - Math.SQRT1_2);
+  const E1 = [12 + sx * (6 - k), jy + sy * (6 - k)];
+  const A = [12 + sx * 6, E1[1] + sy * FORK_R * Math.SQRT1_2];
+  const B = [12 + sx * 6, end];
+  // Turning from the diagonal to the straight run: clockwise on screen when the cross product is positive
+  const u = [E1[0] - J[0], E1[1] - J[1]];
+  const v = [0, sy];
+  const cw = u[0] * v[1] - u[1] * v[0] > 0;
+  return outward
+    ? `M${P(J)}L${P(E1)}A${f(FORK_R)} ${f(FORK_R)} 0 0 ${cw ? 1 : 0} ${P(A)}L${P(B)}`
+    : `M${P(B)}L${P(A)}A${f(FORK_R)} ${f(FORK_R)} 0 0 ${cw ? 0 : 1} ${P(E1)}L${P(J)}`;
+}
+// Converge and diverge: two diagonal arrows (arms of 5 along the axes, like the set's diagonals)
+// that point at a dot or leave it, 3 per axis from its center, so the inner arms stand 6 apart.
+const FAN_DOT = [16, 12];
+const fan = (out) => {
+  const c = out ? [24 - FAN_DOT[0], 12] : FAN_DOT;
+  const dir = out ? 1 : -1;
+  return [-1, 1].flatMap((s) => {
+    const near = [c[0] + dir * 3, 12 + s * 3];
+    const far = [c[0] + dir * 8.5, 12 + s * 8.5];
+    return out ? arrow(near, far, 5) : arrow(far, near, 5);
+  });
+};
+
+// Orbit (rotate-3d): an ellipse of 9 × 3.75 around a vertical axis. Its front passes before the axis,
+// which is cut 3 from it; at the back the axis passes before the orbit, which opens there (3 to each
+// side of the axis) and ends in its head (3.4, like every arc arrow).
+const ORBIT = (() => {
+  const [rx, ry] = [9, 3.75];
+  const y = 12 - ry * Math.sqrt(1 - (3 / rx) ** 2);
+  const t = Math.acos(-3 / rx) + Math.PI; // the end, at the back left
+  const tangent = [-rx * Math.sin(t), ry * Math.cos(t)];
+  return [`M${P([15, y])}A${f(rx)} ${f(ry)} 0 1 1 ${P([9, y])}`, head([9, y], tangent, 3.4), line([12, 2.75], [12, 12 + ry - 3]), line([12, 12 + ry + 3], [12, 21.25])];
+})();
+// Loop: the line comes in from the left, turns up on an arc of 2.5 into a diagonal, goes once around a
+// circle of r 3 and leaves on the other diagonal, crossing the way in at a right angle; then it turns
+// level again to its head (arms of 3). The way in passes behind: it's cut 3 to each side of the crossing.
+// The line runs at 15.5 so the whole loop sits on the canvas's center (at 17 it hung 1.5 low).
+const LOOP = (() => {
+  const [r, R, yb] = [3, 2.5, 15.5];
+  const k = Math.SQRT1_2;
+  const X = [12, yb - 3 * k - R * (1 - k)]; // the crossing, 3 along the diagonal from the turn
+  const C = [12, X[1] - r * Math.SQRT2];
+  const T1 = [C[0] + r * k, C[1] + r * k];
+  const T2 = [C[0] - r * k, C[1] + r * k];
+  const E1 = [X[0] - 3 * k, X[1] + 3 * k];
+  const E2 = [X[0] + 3 * k, X[1] + 3 * k];
+  const inWay = `M3.25 ${f(yb)}H${f(E1[0] - R * k)}A${f(R)} ${f(R)} 0 0 0 ${P(E1)}`;
+  const around = `M${P(T1)}A${f(r)} ${f(r)} 0 1 0 ${P(T2)}L${P(E2)}A${f(R)} ${f(R)} 0 0 0 ${P([E2[0] + R * k, yb])}H20.75`;
+  return [inWay, around, head([20.75, yb], [1, 0], 3 * R2)];
+})();
+// Bounce: the arrow comes down onto the ground and leaves it at the same angle, as a reflection, to its
+// head (arms of 6, like every straight arrow); the corner (r 1.5) stops at least 3 above a ground line
+// across the whole width (on the next quarter). Falling steep and leaving shallow over a short ground,
+// it read as a check mark or a chart.
+const BOUNCE = [[3.5, 5.25], [12, 16.25], [20.5, 5.25]];
+const BOUNCE_R = 1.5;
+const BOUNCE_GROUND = (() => {
+  const half = Math.atan2(BOUNCE[1][0] - BOUNCE[0][0], BOUNCE[1][1] - BOUNCE[0][1]);
+  return Math.ceil((BOUNCE[1][1] - (BOUNCE_R / Math.sin(half) - BOUNCE_R) + 3) * 4) / 4;
+})();
+/** Open polyline with a circular corner of radius `r` at each inner vertex (any angle). */
+function rline(pts, r) {
+  let d = `M${P(pts[0])}`;
+  for (let i = 1; i < pts.length - 1; i++) {
+    const [A, V, B] = [pts[i - 1], pts[i], pts[i + 1]];
+    const u = [(A[0] - V[0]) / Math.hypot(A[0] - V[0], A[1] - V[1]), (A[1] - V[1]) / Math.hypot(A[0] - V[0], A[1] - V[1])];
+    const v = [(B[0] - V[0]) / Math.hypot(B[0] - V[0], B[1] - V[1]), (B[1] - V[1]) / Math.hypot(B[0] - V[0], B[1] - V[1])];
+    const t = r / Math.tan(Math.acos(u[0] * v[0] + u[1] * v[1]) / 2);
+    const cz = (V[0] - A[0]) * (B[1] - V[1]) - (V[1] - A[1]) * (B[0] - V[0]);
+    d += `L${P([V[0] + u[0] * t, V[1] + u[1] * t])}A${f(r)} ${f(r)} 0 0 ${cz > 0 ? 1 : 0} ${P([V[0] + v[0] * t, V[1] + v[1] * t])}`;
+  }
+  return `${d}L${P(pts.at(-1))}`;
+}
+// Cycle: three arc arrows on r 7.5, 85° each and 35° apart, each with its head (3.4): drawn once and
+// turned. The heads sit off the axes (at 25°, 145° and 265°) so their outer arms stay in the live area.
+const CYCLE = (() => {
+  const a = arc(12, 12, 7.5, -60, 25);
+  return [a.d, head(a.end, a.tangent, 3.4)];
+})();
+// The pointer that carries a status badge (block, question, plus) or a spinner: the engine's at 0.75,
+// up and to the left, 7.45 from the badge's center, so the badge's 6.5 of clearance never reaches it.
+const BADGE_PTR = cursor([3.5, 2.75], 0.75);
+// Hand (Comunicación's raised hand): four fingers 3 wide with round tips, lines between them that end
+// at `split`, and the thumb (3 wide) from `base` to `tip`, leaving the side of the palm. Grabbing, the
+// fingers curl forward: from the back they show shorter. `dy` centers the hand on the canvas.
+function hand(tops, split, base, tip, dy) {
+  const xs = [7.25, 10.25, 13.25, 16.25, 19.25];
+  const r = 1.5;
+  const Y = (y) => f(y + dy);
+  const [b, t] = [[base[0], base[1] + dy], [tip[0], tip[1] + dy]];
+  const L = Math.hypot(t[0] - b[0], t[1] - b[1]);
+  const n = [(t[1] - b[1]) / L, -(t[0] - b[0]) / L]; // toward the thumb's outer edge
+  const at = (p, k) => [p[0] + n[0] * k, p[1] + n[1] * k];
+  const [outB, outT, inT, inB] = [at(b, r), at(t, r), at(t, -r), at(b, -r)];
+  const J = [xs[0], inT[1] + ((xs[0] - inT[0]) / (inB[0] - inT[0])) * (inB[1] - inT[1])]; // where the thumb leaves the index finger
+  let d = `M${P(J)}`;
+  for (let i = 0; i < 4; i++) d += `V${Y(tops[i])}A${f(r)} ${f(r)} 0 0 1 ${f(xs[i + 1])} ${Y(tops[i])}`;
+  d += `V${Y(14.5)}C19.25 ${Y(18.1)} 16.65 ${Y(20.75)} 13.5 ${Y(20.75)}C10.65 ${Y(20.75)} ${P([outB[0] + 0.9, outB[1] + 1.1])} ${P(outB)}`;
+  d += `L${P(outT)}A${f(r)} ${f(r)} 0 0 1 ${P(inT)}Z`;
+  return [d, ...[1, 2, 3].map((i) => line([xs[i], Math.max(tops[i - 1], tops[i]) + dy], [xs[i], split + dy]))];
+}
+// Mouse (Dispositivos' capsule, 9.5 × 13.25 here) with its button seams, and three click rays off the
+// corner of the pressed button, 3 to 5.5 out from its arc. Drawn for the left button and mirrored.
+const MOUSE = (() => {
+  const c = [14.25, 12.75];
+  const rays = [195, 225, 255].map((a) => line(polar(...c, 7.75, a), polar(...c, 10.25, a)));
+  return [capsule(9.5, 8, 9.5, 13.25), line([9.5, 13.25], [19, 13.25]), line([14.25, 8], [14.25, 13.25]), ...rays];
+})();
+
+// Collapse and expand a panel: sidebar-collapse's chevron (arms of 2.75) centered in the window's main
+// area, pointing toward the panel (collapse) or away from it (expand).
+const panelChevron = (c, deg) => line(...turn([[-1.375, -2.75], [1.375, 0], [-1.375, 2.75]], deg, [0, 0]).map(([x, y]) => [c[0] + x, c[1] + y]));
+const PANEL = {
+  'panel-bottom': { divider: line([2.5, 14], [21.5, 14]), main: [12, 9.5], toward: 90 },
+  'panel-top': { divider: line([2.5, 10], [21.5, 10]), main: [12, 14.5], toward: -90 },
+  'sidebar-right': { divider: line([14.75, 5], [14.75, 19]), main: [8.63, 12], toward: 0 },
+};
+const panelIcon = (name, collapse) => [WIN, PANEL[name].divider, panelChevron(PANEL[name].main, PANEL[name].toward + (collapse ? 0 : 180))];
+// The portrait frame (keyline, signature corner) of the tab bar.
+const PORTRAIT = sq(4.75, 2.75, 14.5, 18.5, 4, { square: ['br'] });
+// Scrollbars: the panels' window with the thumb, a pill of half-width 0.4 (pagination-dots' pill: heavier
+// than a line and solid at every weight) 2.85 from the edge it runs along, and a double arrow (heads of
+// 2.25 per axis) for the way it scrolls. With the bare thumb the window read as a card, a phone or a door;
+// with text lines beside it, as a document.
+const vpill = (x, y0, y1, r = 0.4) => `M${f(x + r)} ${f(y0)}V${f(y1)}A${f(r)} ${f(r)} 0 0 1 ${f(x - r)} ${f(y1)}V${f(y0)}A${f(r)} ${f(r)} 0 0 1 ${f(x + r)} ${f(y0)}Z`;
+const twoWay = (a, b, arm) => [line(a, b), head(a, [a[0] - b[0], a[1] - b[1]], arm * R2), head(b, [b[0] - a[0], b[1] - a[1]], arm * R2)];
+// Infinite scroll: the same frame with its sides running off the bottom edge.
+const OPEN_FRAME = cline([[4.75, 21.25], [4.75, 2.75], [19.25, 2.75], [19.25, 21.25]], [0, 4, 4, 0]);
+// Page indicator: the current page is a short pill and the others dots of r 0.4; the pill's half
+// height is the same 0.4, so both are as tall at every weight (and the pill never opens a hole).
+const pill = (x0, x1, y, r = 0.4) => `M${f(x0)} ${f(y - r)}H${f(x1)}A${f(r)} ${f(r)} 0 0 1 ${f(x1)} ${f(y + r)}H${f(x0)}A${f(r)} ${f(r)} 0 0 1 ${f(x0)} ${f(y - r)}Z`;
+// Jump to: an arc arrow (r 6, head of 3.4) from beside the top line round to beside the bottom one.
+const JUMP = arc(8.75, 12, 6, -90, -270);
+// filter-x's funnel: the core filter at 78 %, up and to the left, so a badge only takes its stem's tip.
+const FUNNEL_B = roundpoly(
+  [[3.25, 4.75], [20.75, 4.75], [14, 12.25], [14, 19.75], [10, 19.75], [10, 12.25]].map(([x, y]) => [12 + (x - 12) * 0.78 - 2.25, 12 + (y - 12) * 0.78 - 2]),
+  [1.75, 1.75, 1, 1, 1, 1].map((r) => r * 0.78),
+);
+// Fit to width (and, turned, to height): a double arrow (heads of 3.5 per axis) between two bars,
+// its tips 3.5 from them.
+const fit = (deg) => {
+  const pts = (ps) => turn(ps, deg);
+  const [l1, l2] = [pts([[3.25, 6], [3.25, 18]]), pts([[20.75, 6], [20.75, 18]])];
+  const [a, b] = pts([[6.75, 12], [17.25, 12]]);
+  return [line(...l1), line(...l2), line(a, b), head(a, [a[0] - b[0], a[1] - b[1]], 3.5 * R2), head(b, [b[0] - a[0], b[1] - a[1]], 3.5 * R2)];
+};
 
 const icons = {
   // ── Straight arrows ───────────────────────────────────────────────────────────────────
@@ -391,6 +568,221 @@ const icons = {
     ],
     badge: badge('x'),
   },
+
+  // ── Round 3: arrows leaving a bar, to and from a dot ─────────────────────────────────
+  'arrow-up-from-line': { tags: ['subir desde', 'alejar del borde', 'redimensionar', 'arrow', 'up from line', 'n-resize'], d: fromLine(180) },
+  'arrow-down-from-line': { tags: ['bajar desde', 'soltar', 'redimensionar', 'arrow', 'down from line', 's-resize'], d: fromLine(0) },
+  'arrow-left-from-line': { tags: ['salir del panel', 'izquierda', 'redimensionar', 'arrow', 'left from line', 'w-resize'], d: fromLine(90) },
+  'arrow-right-from-line': { tags: ['desde el borde', 'derecha', 'redimensionar', 'arrow', 'right from line', 'e-resize'], d: fromLine(-90) },
+  'arrow-down-to-dot': { tags: ['soltar aquí', 'ir a no leídos', 'aterrizar', 'arrow', 'down to dot', 'drop here'], d: [...arrow(...DOT_ARROW, 5.5 * R2), DOT_UNDER] },
+  'arrow-up-from-dot': { tags: ['despegar', 'lanzar', 'levantar', 'arrow', 'up from dot', 'launch'], d: [DOT_UNDER, ...arrow(DOT_ARROW[1], DOT_ARROW[0], 5.5 * R2)] },
+
+  // ── Round 3: turns up and arrows into a corner ─────────────────────────────────────────
+  'arrow-turn-right-up': { tags: ['girar', 'subir de nivel', 'promover', 'turn', 'right up', 'level up'], d: turnArrow(mirrorX(turn(TURN, -90))) },
+  'arrow-turn-left-up': { tags: ['carpeta superior', 'subir un nivel', 'girar', 'turn', 'left up', 'parent folder'], d: turnArrow(turn(TURN, -90)) },
+  'arrow-up-right-to-corner': { tags: ['a la esquina', 'acoplar', 'arriba derecha', 'arrow', 'corner', 'snap'], d: toCorner(0) },
+  'arrow-down-right-to-corner': { tags: ['a la esquina', 'imagen en imagen', 'abajo derecha', 'arrow', 'corner', 'dock'], d: toCorner(90) },
+  'arrow-down-left-to-corner': { tags: ['a la esquina', 'acoplar', 'abajo izquierda', 'arrow', 'corner', 'dock'], d: toCorner(180) },
+  'arrow-up-left-to-corner': { tags: ['al inicio', 'insertar', 'arriba izquierda', 'arrow', 'corner', 'insert'], d: toCorner(-90) },
+
+  // ── Round 3: in and out of a box ───────────────────────────────────────────────────────
+  // Import: the share box with its arrow reversed, coming down through the opening (arms of 3.5).
+  import: { tags: ['importar', 'traer', 'recibir', 'import', 'bring in', 'save to device'], d: [SHARE_BOX, ...arrow([12, 2.75], [12, 17], 3.5 * R2)] },
+  // Pop in: external-link's frame with the arrow coming in from beyond the corner (arms of 5.5).
+  'pop-in': {
+    tags: ['acoplar', 'traer a la página', 'incrustar', 'pop in', 'embed', 'open in place'],
+    d: [cline([[10.5, 5.25], [3.25, 5.25], [3.25, 20.75], [18.75, 20.75], [18.75, 13.5]], [0, 4, 4, 0, 0]), ...arrow([20.75, 3.25], [10, 14], 5.5)],
+  },
+
+  // ── Round 3: pairs that meet or part ───────────────────────────────────────────────────
+  'arrows-merge': {
+    tags: ['fusionar', 'combinar', 'unir', 'merge', 'combine', 'join'],
+    d: [forkBranch(-1, 1, 11.75, 20.75, false), forkBranch(1, 1, 11.75, 20.75, false), line([12, 11.75], [12, 3.25]), head([12, 3.25], [0, -1], 4.5 * R2)],
+  },
+  // The heads at the corners need the junction lower: their inner arms stay 3 from the branches.
+  'arrows-split': {
+    tags: ['dividir', 'bifurcar', 'ramificar', 'split', 'fork', 'branch out'],
+    d: [line([12, 20.75], [12, 13.5]), forkBranch(-1, -1, 13.5, 3.25, true), forkBranch(1, -1, 13.5, 3.25, true), head([6, 3.25], [0, -1], 3.75 * R2), head([18, 3.25], [0, -1], 3.75 * R2)],
+  },
+  'arrows-converge': { tags: ['converger', 'consolidar', 'enfocar', 'converge', 'consolidate', 'focus'], d: [...fan(false), dot(...FAN_DOT)] },
+  'arrows-diverge': { tags: ['diverger', 'repartir', 'distribuir', 'diverge', 'fan out', 'distribute'], d: [dot(24 - FAN_DOT[0], 12), ...fan(true)] },
+  // Resize along a diagonal: arrows-left-right on the 45° (one line, a head of 6 per axis at each end).
+  'arrows-diagonal-up': {
+    tags: ['redimensionar', 'diagonal', 'escalar', 'resize', 'nesw', 'diagonal'],
+    d: [line([4, 20], [20, 4]), head([20, 4], [1, -1], 6), head([4, 20], [-1, 1], 6)],
+  },
+  'arrows-diagonal-down': {
+    tags: ['redimensionar', 'diagonal', 'escalar', 'resize', 'nwse', 'diagonal'],
+    d: [line([4, 4], [20, 20]), head([20, 20], [1, 1], 6), head([4, 4], [-1, -1], 6)],
+  },
+
+  // ── Round 3: turning and looping ───────────────────────────────────────────────────────
+  'rotate-3d': { tags: ['rotar en 3d', 'girar', 'vista 360', 'rotate 3d', 'orbit', '360 view'], d: ORBIT },
+  'arrow-loop': { tags: ['bucle', 'iterar', 'repetir hasta', 'loop', 'iterate', 'repeat'], d: LOOP },
+  'arrow-bounce': {
+    tags: ['rebote', 'tasa de rebote', 'rebotar', 'bounce', 'bounce rate', 'ricochet'],
+    d: [rline(BOUNCE, BOUNCE_R), head(BOUNCE[2], [BOUNCE[2][0] - BOUNCE[1][0], BOUNCE[2][1] - BOUNCE[1][1]], 6), line([3.25, BOUNCE_GROUND], [20.75, BOUNCE_GROUND])],
+  },
+  'arrows-cycle': { tags: ['ciclo', 'ciclo de vida', 'recurrente', 'cycle', 'lifecycle', 'recurring'], d: [0, 120, 240].flatMap((deg) => CYCLE.map((p) => turnPath(p, deg))) },
+  // Reset: history's arrow (the clock running back) around a dot instead of its hands.
+  reset: { tags: ['restablecer', 'restaurar', 'empezar de nuevo', 'reset', 'restore defaults', 'start over'], d: [HISTORY.d, head(HISTORY.end, HISTORY.tangent, 3.4), dot(12, 12)] },
+
+  // ── Round 3: pointer states ────────────────────────────────────────────────────────────
+  // Busy: the pointer and sistema's loader (an open three-quarter ring) where a badge would go.
+  'cursor-wait': { tags: ['ocupado', 'cargando', 'esperar', 'busy', 'wait', 'progress cursor'], d: [BADGE_PTR, arc(17.25, 17.25, 3.5, -90, 180).d] },
+  'cursor-block': { tags: ['no permitido', 'prohibido', 'no soltar', 'not allowed', 'no drop', 'forbidden'], d: [BADGE_PTR], badge: badge('block') },
+  'cursor-question': { tags: ['ayuda', 'qué es esto', 'ayuda contextual', 'help cursor', 'what is this', 'help'], d: [BADGE_PTR], badge: badge('question') },
+  'cursor-plus': { tags: ['copiar', 'soltar copia', 'agregar', 'copy cursor', 'add', 'drop copy'], d: [BADGE_PTR], badge: badge('plus') },
+  // Hover: the pointer and two short trails behind it, parallel to its tail, 3.25 apart.
+  'cursor-hover': {
+    tags: ['pasar encima', 'hover', 'sobrevolar', 'mouse over', 'hover state', 'pointer'],
+    d: [cursor([5.5, 3], 0.8), line([15.5, 15.5], [16.87, 18.83]), line([18.5, 14.25], [19.87, 17.58])],
+  },
+  // Double click: cursor-click's pointer and two arcs around its tip (3.5 and 6.5), one per click.
+  'cursor-double-click': {
+    tags: ['doble clic', 'abrir', 'pulsar dos veces', 'double click', 'open', 'double tap'],
+    d: [cursor([11.25, 8.75], 0.68), arc(11.25, 8.75, 3.5, 180, 270).d, arc(11.25, 8.75, 6.5, 180, 270).d],
+  },
+  // Multiplayer: a smaller pointer up and to the left and a larger one in front, 3.2 apart. Overlapped,
+  // one pointer's tail ran along the other's edge and the knockout left a sliver that came and went
+  // with the weight; side by side both stay whole.
+  'cursor-multiplayer': {
+    tags: ['colaboradores', 'en vivo', 'presencia', 'multiplayer', 'collaborators', 'presence'],
+    d: [cursor([3.25, 2.75], 0.55), cursor([12.75, 8.5], 0.68)],
+  },
+  // Select: three corners of a selection square (arms of 3, gaps of 3) and the pointer at the fourth.
+  'cursor-select': {
+    tags: ['seleccionar área', 'arrastrar selección', 'marco', 'select', 'marquee', 'drag select'],
+    d: [
+      cline([[4.5, 6.25], [4.5, 3.25], [7.5, 3.25]], [0, 1.5, 0]),
+      cline([[10.5, 3.25], [13.5, 3.25], [13.5, 6.25]], [0, 1.5, 0]),
+      cline([[4.5, 9.25], [4.5, 12.25], [7.5, 12.25]], [0, 1.5, 0]),
+      cursor([13.5, 12.25], 0.48),
+    ],
+  },
+
+  // ── Round 3: hands and mouse buttons ───────────────────────────────────────────────────
+  'hand-grab': {
+    tags: ['mano', 'agarrar', 'desplazar lienzo', 'grab', 'pan', 'open hand'],
+    d: hand([7.5, 6.25, 6.75, 8.5], 11, [9.5, 18.25], [4.5, 13.75], -0.75),
+  },
+  // Grabbing: the fingers curl under and only their knuckles show above the palm, the thumb tucked in.
+  // With the fingers barely shorter than hand-grab's, the two read as the same open hand at 18 px.
+  'hand-grabbing': {
+    tags: ['mano cerrada', 'arrastrando', 'agarrando', 'grabbing', 'dragging', 'closed hand'],
+    d: hand([10.75, 10.25, 10.5, 11], 13.25, [9.5, 18.25], [6.75, 16], -3),
+  },
+  'mouse-left-click': { tags: ['clic izquierdo', 'botón principal', 'ratón', 'left click', 'primary button', 'mouse'], d: MOUSE },
+  'mouse-right-click': { tags: ['clic derecho', 'botón secundario', 'menú contextual', 'right click', 'secondary button', 'mouse'], d: MOUSE.map((p) => flipPath(p)) },
+
+  // ── Round 3: menus and trails ──────────────────────────────────────────────────────────
+  // Context menu: a card with three rows and the pointer in front of its top-left corner. The pointer
+  // stays clear of the card's left edge (its tail ran along it), so the knockout only crosses edges.
+  'menu-context': {
+    tags: ['menú contextual', 'clic derecho', 'acciones', 'context menu', 'right-click menu', 'actions'],
+    d: [sq(8, 8, 12.75, 12.75, 3.25, { square: ['br'] }), ...[11.5, 14.5, 17.5].map((y) => line([12, y], [17, y]))],
+    badge: { d: [cursor([3.25, 2.75], 0.52)], knock: cursor([3.25, 2.75], 0.52), fill: { solid: [cursor([3.25, 2.75], 0.52)] } },
+  },
+  // Submenu: `menu`'s three rows, the middle one ending in the chevron that marks an item with a submenu
+  // (arms of 2.5, 3 from the rows around it and from its own row). Two cards side by side with an arrow
+  // between them read as a phone and a battery: 24 px has no room for both menus with their rows.
+  submenu: {
+    tags: ['submenú', 'menú anidado', 'cascada', 'submenu', 'nested menu', 'flyout'],
+    d: [line([3.75, 6.5], [20.25, 6.5]), line([3.75, 12], [14.75, 12]), line([17.75, 9.5], [20.25, 12], [17.75, 14.5]), line([3.75, 17.5], [20.25, 17.5])],
+  },
+  // Breadcrumb: three crumbs and the two chevrons between them. With bars for crumbs the clearances
+  // left them 2 long and the trail read as a dashed arrow; dots keep each crumb whole.
+  breadcrumb: {
+    tags: ['migas de pan', 'ruta', 'jerarquía', 'breadcrumb', 'path', 'hierarchy'],
+    d: [dot(3.25, 12), line([5.85, 9.5], [8.35, 12], [5.85, 14.5]), dot(12, 12), line([14.6, 9.5], [17.1, 12], [14.6, 14.5]), dot(20.75, 12)],
+  },
+  // ── Round 3: pages, scrolling and jumping ──────────────────────────────────────────────
+  pagination: {
+    tags: ['paginación', 'páginas', 'resultados', 'pagination', 'pages', 'pager'],
+    d: [line([5.5, 9], [2.5, 12], [5.5, 15]), ...[8, 12, 16].map((x) => dot(x, 12)), line([18.5, 9], [21.5, 12], [18.5, 15])],
+  },
+  'pagination-dots': { tags: ['indicador de página', 'carrusel', 'diapositiva actual', 'page indicator', 'page control', 'carousel dots'], d: [pill(5, 10, 12), dot(14.5, 12, 0.4), dot(19, 12, 0.4)] },
+  // Load more: three dots in a column running down into a chevron (arms of 4.5), the list going on below.
+  // In a row above the chevron they made a smiley face, plain to see once enclosed in a circle.
+  'load-more': { tags: ['cargar más', 'ver más', 'siguientes', 'load more', 'show more', 'more results'], d: [...[4, 8, 12].map((y) => dot(12, y)), line([7.5, 16.25], [12, 20.75], [16.5, 16.25])] },
+  'infinite-scroll': {
+    tags: ['scroll infinito', 'carga continua', 'feed', 'infinite scroll', 'endless feed', 'auto load'],
+    d: [OPEN_FRAME, line([8.5, 7], [15.5, 7]), line([8.5, 10.25], [15.5, 10.25]), line([12, 13.25], [12, 19.25]), head([12, 19.25], [0, 1], 3 * R2)],
+  },
+  // The thumb near the top of the right edge and the up-down arrow centered in the space beside it.
+  scrollbar: { tags: ['barra de desplazamiento', 'desplazar', 'contenido', 'scrollbar', 'scroll', 'overflow'], d: [WIN, ...twoWay([10.25, 8], [10.25, 16], 2.25), vpill(18.25, 8.25, 13.25)] },
+  // The thumb near the start of the bottom edge and the left-right arrow centered above it.
+  'scrollbar-horizontal': {
+    tags: ['desplazamiento horizontal', 'tabla ancha', 'carrusel', 'horizontal scroll', 'scrollbar', 'wide table'],
+    d: [WIN, ...twoWay([6.5, 10.25], [17.5, 10.25], 2.25), pill(6.25, 11.75, 15.75)],
+  },
+  'jump-to': {
+    tags: ['saltar a', 'ir a la línea', 'ir a la sección', 'jump to', 'go to line', 'skip'],
+    d: [JUMP.d, head(JUMP.end, JUMP.tangent, 3.4), ...[6, 12, 18].map((y) => line([12.25, y], [20.75, y]))],
+  },
+
+  // ── Round 3: tabs, filters and history ─────────────────────────────────────────────────
+  // Tab bar: the portrait screen with the bar across its foot and three tabs as dots.
+  'tab-bar': {
+    tags: ['barra de pestañas', 'navegación inferior', 'app móvil', 'tab bar', 'bottom navigation', 'mobile app'],
+    d: [PORTRAIT, line([4.75, 14.5], [19.25, 14.5]), ...[8, 12, 16].map((x) => dot(x, 17.75))],
+  },
+  'tabs-plus': { tags: ['nueva pestaña', 'abrir pestaña', 'agregar', 'new tab', 'add tab', 'open tab'], d: [WIN, line([11.25, 5], [11.25, 9.75], [21.5, 9.75])], badge: badge('plus') },
+  // Vertical tabs: a column of three tabs; the chosen one runs on to meet the content.
+  'tabs-vertical': {
+    tags: ['pestañas verticales', 'secciones', 'navegación lateral', 'vertical tabs', 'side tabs', 'settings sections'],
+    d: [WIN, line([11.5, 5], [11.5, 19]), line([6, 8.5], [8.5, 8.5]), line([6, 12], [11.5, 12]), line([6, 15.5], [8.5, 15.5])],
+  },
+  'filter-plus': { tags: ['agregar filtro', 'nuevo filtro', 'regla', 'add filter', 'new filter', 'filter rule'], d: [FUNNEL_B], badge: badge('plus') },
+  // Clear history: history's arrow with the hands at ten, pivot at (11.5, 11.5), clear of the badge.
+  'history-x': {
+    tags: ['borrar historial', 'limpiar recientes', 'eliminar historial', 'clear history', 'delete history', 'clear recent'],
+    d: [HISTORY.d, head(HISTORY.end, HISTORY.tangent, 3.4), line([11.5, 6.35], [11.5, 11.5], [8.2, 9.45])],
+    badge: badge('x'),
+  },
+
+  // ── Round 3: collapse and expand panels ────────────────────────────────────────────────
+  'panel-bottom-collapse': { tags: ['ocultar panel inferior', 'cerrar consola', 'terminal', 'hide bottom panel', 'collapse', 'console'], d: panelIcon('panel-bottom', true) },
+  'panel-bottom-expand': { tags: ['mostrar panel inferior', 'abrir consola', 'terminal', 'show bottom panel', 'expand', 'console'], d: panelIcon('panel-bottom', false) },
+  'panel-top-collapse': { tags: ['ocultar panel superior', 'contraer cabecera', 'barra', 'hide top panel', 'collapse', 'header'], d: panelIcon('panel-top', true) },
+  'panel-top-expand': { tags: ['mostrar panel superior', 'expandir cabecera', 'barra', 'show top panel', 'expand', 'header'], d: panelIcon('panel-top', false) },
+  'sidebar-right-collapse': { tags: ['ocultar inspector', 'cerrar detalles', 'panel derecho', 'hide right sidebar', 'collapse', 'inspector'], d: panelIcon('sidebar-right', true) },
+  'sidebar-right-expand': { tags: ['mostrar inspector', 'abrir detalles', 'panel derecho', 'show right sidebar', 'expand', 'inspector'], d: panelIcon('sidebar-right', false) },
+
+  // ── Round 3: views ─────────────────────────────────────────────────────────────────────
+  // Masonry: two columns of tiles, tall and short swapped between them (3 apart, radius 2).
+  'view-masonry': {
+    tags: ['mampostería', 'galería', 'mosaico irregular', 'masonry', 'gallery', 'pinterest grid'],
+    d: [sq(3.25, 3.25, 7.25, 10, 2), sq(13.5, 3.25, 7.25, 4.5, 2), sq(3.25, 16.25, 7.25, 4.5, 2), sq(13.5, 10.75, 7.25, 10, 2, { square: ['br'] })],
+  },
+  // Thumbnails: the large preview and a strip of three cells (3.75, view-grid's kind) beneath it.
+  'view-thumbnails': {
+    tags: ['miniaturas', 'galería', 'vista previa', 'thumbnails', 'gallery', 'filmstrip'],
+    d: [sq(3.25, 3.25, 17.5, 10.5, 3), ...[3.25, 10.13, 17].map((x) => sq(x, 17, 3.75, 3.75, 1.1, { square: x === 17 ? ['br'] : [] }))],
+  },
+  // Stack: a card and the edges of two more behind it, above it, 2 and 3.5 narrower per side and 3 apart
+  // (Apple's rectangle.stack). With the edges below, the card read as a monitor on its stand.
+  'view-stack': {
+    tags: ['pila', 'tarjetas apiladas', 'notificaciones', 'stack', 'card stack', 'deck'],
+    d: [sq(3.25, 9.25, 17.5, 11.5, 3.25, { square: ['br'] }), line([5.25, 6.25], [18.75, 6.25]), line([6.75, 3.25], [17.25, 3.25])],
+  },
+  // view-carousel turned: the card lies landscape and its neighbors show above and below.
+  'view-carousel-vertical': {
+    tags: ['carrusel vertical', 'feed', 'deslizar', 'vertical carousel', 'swipe feed', 'reels'],
+    d: [sq(4.25, 6.75, 15.5, 10.5, 3, { square: ['br'] }), line([7.5, 3.25], [16.5, 3.25]), line([7.5, 20.75], [16.5, 20.75])],
+  },
+  // Resize grip: grip-vertical's dots (r 0.8) in a triangle, three, two and one toward the corner.
+  'grip-diagonal': {
+    tags: ['asa de redimensión', 'esquina', 'redimensionar', 'resize grip', 'resize handle', 'corner'],
+    d: [[6.5, 17.5], [12, 12], [17.5, 6.5], [12, 17.5], [17.5, 12], [17.5, 17.5]].map(([x, y]) => dot(x, y, 0.8)),
+  },
+  // Zoom to selection: fullscreen's corners around a magnifier (lens r 3.5).
+  'zoom-selection': {
+    tags: ['zoom a la selección', 'encuadrar', 'acercar selección', 'zoom to selection', 'zoom to fit', 'frame selection'],
+    d: [...brackets(false), circ(11, 11, 3.5), line(polar(11, 11, 3.5, 45), [16.25, 16.25])],
+  },
+  'fit-width': { tags: ['ajustar al ancho', 'ancho completo', 'escalar', 'fit width', 'full width', 'scale'], d: fit(0) },
+  'fit-height': { tags: ['ajustar al alto', 'alto completo', 'escalar', 'fit height', 'full height', 'scale'], d: fit(90) },
 };
 
 // ── Fill (DESIGN.md › Fill): indices into `d` that are filled, knocked out or stay as lines.
@@ -438,7 +830,35 @@ const FILL = {
   // Filled crosshair: the solid disc and the four ticks that stick out, flush with it (wire: they're
   // open lines; the inner part merges with the disc).
   'crosshair': { solid: [0], wire: [1, 2, 3, 4] },
+  // Round 3. Pointers solid with their marks as lines; a badge brings its own fill (the front pointer
+  // too); the hands as the raised hand; cards, frames and windows with their details knocked out.
+  'cursor-wait': { solid: [0], lines: [1] },
+  'cursor-block': { solid: [0] },
+  'cursor-question': { solid: [0] },
+  'cursor-plus': { solid: [0] },
+  'cursor-hover': { solid: [0], lines: [1, 2] },
+  'cursor-double-click': { solid: [0], lines: [1, 2] },
+  'cursor-multiplayer': { solid: [0, 1] },
+  'cursor-select': { solid: [3], lines: [0, 1, 2] },
+  'hand-grab': { solid: [0], cut: [1, 2, 3] },
+  'hand-grabbing': { solid: [0], cut: [1, 2, 3] },
+  'mouse-left-click': { solid: [0], cut: [1, 2], lines: [3, 4, 5] },
+  'mouse-right-click': { solid: [0], cut: [1, 2], lines: [3, 4, 5] },
+  'menu-context': { solid: [0], cut: [1, 2, 3] },
+  scrollbar: { solid: [0], cut: [1, 2, 3, 4] },
+  'scrollbar-horizontal': { solid: [0], cut: [1, 2, 3, 4] },
+  'tab-bar': { solid: [0], cut: [1, 2, 3, 4] },
+  'tabs-plus': { solid: [0], cut: [1] },
+  'tabs-vertical': { solid: [0], cut: [1, 2, 3, 4] },
+  'filter-plus': { solid: [0] },
+  'view-masonry': { solid: [0, 1, 2, 3] },
+  'view-thumbnails': { solid: [0, 1, 2, 3] },
+  'view-stack': { solid: [0], lines: [1, 2] },
+  'view-carousel-vertical': { solid: [0], lines: [1, 2] },
+  'grip-diagonal': { solid: [0, 1, 2, 3, 4, 5] },
+  'zoom-selection': { solid: [4], lines: [0, 1, 2, 3], wire: [5] },
 };
+for (const name of ['panel-bottom', 'panel-top', 'sidebar-right']) for (const v of ['collapse', 'expand']) FILL[`${name}-${v}`] = { solid: [0], cut: [1, 2] };
 for (const name of ['right', 'left', 'up', 'down', 'up-right', 'down-right', 'down-left', 'up-left'])
   for (const form of ['circle', 'square']) FILL[`arrow-${name}-${form}`] = { solid: [0], cut: [1, 2] };
 for (const name of ['right', 'left', 'up', 'down']) FILL[`chevron-${name}-circle`] = { solid: [0], cut: [1] };
@@ -454,6 +874,11 @@ for (const [name, spec] of Object.entries(FILL)) {
 // Open lines only (arrows, chevrons, menus, corners) and the magnifiers, like Núcleo's search: their
 // filled version is the outline itself.
 for (const icon of Object.values(icons)) if (icon.fill === undefined) icon.fill = false;
+// Round 3. Import, like Edición's share: the box closes along its lid and fills; the arrow stays a
+// line, apart from it.
+icons.import.fill = { solid: [`${SHARE_BOX}Z`], lines: icons.import.d.slice(1) };
+// Infinite scroll: the frame closes along the bottom it runs off; its lines and arrow are knocked out.
+icons['infinite-scroll'].fill = { solid: [`${OPEN_FRAME}Z`], cut: icons['infinite-scroll'].d.slice(1) };
 
 // ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──
 // A custom drawing isn't snapped for you: its straight runs sit on pixel centers (0.75 + 1.5k) and
@@ -593,6 +1018,69 @@ icons['search-x'].small = {
   icons['filter-x'].small = { d: [funnel], fill: { solid: [funnel] }, badge: { d: x, knock: x.join(''), fill: { solid: x } } };
 }
 
+// Round 3. Panels: the sidebar's pixel window and its 3 × 6 px chevron, 1 px from the edges, for the
+// bottom and top panels and the right sidebar (toward the panel to collapse, away to expand).
+{
+  const win = sq(2.25, 5.25, 19.5, 13.5, 4, { square: ['br'] });
+  const PANEL16 = {
+    'panel-bottom': [line([2.25, 14.25], [21.75, 14.25]), [[7.5, 7.5], [12, 12], [16.5, 7.5]], [[7.5, 12], [12, 7.5], [16.5, 12]]],
+    'panel-top': [line([2.25, 9.75], [21.75, 9.75]), [[7.5, 16.5], [12, 12], [16.5, 16.5]], [[7.5, 12], [12, 16.5], [16.5, 12]]],
+    'sidebar-right': [line([14.25, 5.25], [14.25, 18.75]), [[6, 7.5], [10.5, 12], [6, 16.5]], [[10.5, 7.5], [6, 12], [10.5, 16.5]]],
+  };
+  for (const [name, [divider, collapse, expand]] of Object.entries(PANEL16))
+    for (const [v, pts] of [['collapse', collapse], ['expand', expand]]) {
+      const chevron = line(...pts);
+      icons[`${name}-${v}`].small = { d: [win, divider, chevron], fill: { solid: [win], cut: [divider, chevron] } };
+    }
+}
+// Arrows into a corner: the bracket on pixel centers and the diagonal through them, the head 2 px
+// inside the bracket.
+{
+  const L = [[12.75, 3.75], [20.25, 3.75], [20.25, 11.25]];
+  const A = [[5.25, 18.75], [17.25, 6.75]];
+  for (const [n, deg] of [['up-right', 0], ['down-right', 90], ['down-left', 180], ['up-left', -90]]) {
+    const pts = turn(L, deg);
+    const br = pts[1][0] > 12 && pts[1][1] > 12;
+    icons[`arrow-${n}-to-corner`].small = { d: [cline(pts, [0, br ? 0 : 2.25, 0]), ...arrow(...turn(A, deg), 6)] };
+  }
+}
+// Dots on 2 × 2 px (centers on pixel edges) and chevrons whose tips are two pixels tall, so they
+// center on the dots: the trail, the pages, load more and the grip.
+{
+  const flat = (x, s) => line([x - s * 1.5, 9.75], [x, 11.25], [x, 12.75], [x - s * 1.5, 14.25]);
+  icons.breadcrumb.small = { d: [dot(3, 12, SMALL_DOT), flat(8.25, 1), dot(12, 12, SMALL_DOT), flat(17.25, 1), dot(21, 12, SMALL_DOT)] };
+  icons.pagination.small = { d: [flat(2.25, -1), ...[7.5, 12, 16.5].map((x) => dot(x, 12, SMALL_DOT)), flat(21.75, 1)] };
+  // Load more: the column 3 px apart (1 px between dots; at 4 they ran together into an exclamation mark)
+  icons['load-more'].small = { d: [...[4.5, 9, 13.5].map((y) => dot(12, y, SMALL_DOT)), line([7.5, 16.5], [12, 21], [16.5, 16.5])] };
+  icons['grip-diagonal'].small = dotsSmall([[6, 18], [12, 12], [18, 6], [12, 18], [18, 12], [18, 18]]);
+}
+// Submenu: the rows 4 px apart on pixel centers and a chevron with 2 px arms, 1 px clear of the rows
+// around it and of its own row (at 24 its 2.5 arms fell between pixels).
+icons.submenu.small = { d: [line([3.75, 5.25], [20.25, 5.25]), line([3.75, 11.25], [14.25, 11.25]), line([17.25, 8.25], [20.25, 11.25], [17.25, 14.25]), line([3.75, 17.25], [20.25, 17.25])] };
+// Scrollbars: the sidebar's pixel window; the thumb a solid bar 2 px thick (a pill of half-width 0.75
+// between two rows of pixel centers) and the double arrow with 1 px arms, each 1 px clear of the rest.
+{
+  const win = sq(2.25, 5.25, 19.5, 13.5, 4, { square: ['br'] });
+  const two = (a, b) => [line(a, b), head(a, [a[0] - b[0], a[1] - b[1]], 1.5 * R2), head(b, [b[0] - a[0], b[1] - a[1]], 1.5 * R2)];
+  const v = [...two([9.75, 8.25], [9.75, 15.75]), vpill(18, 9, 12, 0.75)];
+  const h = [...two([6.75, 9.75], [17.25, 9.75]), pill(6.75, 11.25, 15, 0.75)];
+  icons.scrollbar.small = { d: [win, ...v], fill: { solid: [win], cut: v } };
+  icons['scrollbar-horizontal'].small = { d: [win, ...h], fill: { solid: [win], cut: h } };
+}
+// Bounce: the legs at 45° through pixel centers (the steeper ones at 24 fell between pixels and grayed the
+// head), the head with 2 px arms, and the ground 1 px clear of the corner.
+icons['arrow-bounce'].small = { d: [line([3.75, 6.75], [12, 15], [20.25, 6.75]), line([17.25, 6.75], [20.25, 6.75], [20.25, 9.75]), line([3.75, 18.75], [20.25, 18.75])] };
+// Fit to width and height: the double arrow's heads (2 px arms) and the bars on pixel centers, 1 px apart;
+// snapped, the 3.5 heads closed into a diamond.
+{
+  const fit16 = (deg) => {
+    const [l1, l2, [a, b]] = [[[3.75, 6.75], [3.75, 18.75]], [[20.25, 6.75], [20.25, 18.75]], [[6.75, 12.75], [17.25, 12.75]]].map((ps) => turn(ps, deg));
+    return { d: [line(...l1), line(...l2), line(a, b), head(a, [a[0] - b[0], a[1] - b[1]], 3 * R2), head(b, [b[0] - a[0], b[1] - a[1]], 3 * R2)] };
+  };
+  icons['fit-width'].small = fit16(0);
+  icons['fit-height'].small = fit16(90);
+}
+
 // ── Mirroring (DESIGN.md › Mirroring): anything with a reading direction flips in RTL ──
 for (const name of [
   'arrow-left', 'arrow-up-right', 'arrow-down-right', 'arrow-down-left', 'arrow-up-left',
@@ -602,6 +1090,14 @@ for (const name of [
   'undo', 'redo', 'chevrons-right', 'chevrons-left', 'chevron-right-circle', 'chevron-left-circle', 'caret-right', 'caret-left',
   'page-first', 'page-last', 'sort-ascending', 'sort-descending', 'log-in', 'log-out', 'external-link',
   'sidebar-left', 'sidebar-right', 'sidebar-collapse', 'sidebar-expand', 'tabs', 'view-list', 'layout',
+])
+  icons[name].mirror = true;
+// Round 3
+for (const name of [
+  'arrow-left-from-line', 'arrow-right-from-line', 'arrow-turn-right-up', 'arrow-turn-left-up',
+  'arrow-up-right-to-corner', 'arrow-down-right-to-corner', 'arrow-down-left-to-corner', 'arrow-up-left-to-corner',
+  'pop-in', 'arrows-converge', 'arrows-diverge', 'arrow-loop', 'arrow-bounce', 'submenu', 'breadcrumb', 'pagination-dots',
+  'scrollbar', 'scrollbar-horizontal', 'jump-to', 'tabs-plus', 'tabs-vertical', 'sidebar-right-collapse', 'sidebar-right-expand', 'grip-diagonal',
 ])
   icons[name].mirror = true;
 
@@ -651,6 +1147,54 @@ parts(['hand-pointer'], { hand: [0] });
 parts(['crosshair'], { ring: [0], ticks: [1, 2, 3, 4] });
 parts(['zoom-in', 'search-x'], { lens: [0], handle: [1], mark: [2, 3] });
 parts(['zoom-out'], { lens: [0], handle: [1], mark: [2] });
+// Round 3
+parts(['up', 'down', 'left', 'right'].map((n) => `arrow-${n}-from-line`), { bar: [0], arrow: [1, 2] });
+parts(['arrow-down-to-dot'], { arrow: [0, 1], dot: [2] });
+parts(['arrow-up-from-dot'], { dot: [0], arrow: [1, 2] });
+parts(['arrow-turn-right-up', 'arrow-turn-left-up'], { arrow: [0, 1] });
+parts(['up-right', 'down-right', 'down-left', 'up-left'].map((n) => `arrow-${n}-to-corner`), { corner: [0], arrow: [1, 2] });
+parts(['import'], { box: [0], arrow: [1, 2] });
+parts(['pop-in'], { frame: [0], arrow: [1, 2] });
+parts(['arrows-merge'], { branches: [0, 1], stem: [2, 3] });
+parts(['arrows-split'], { stem: [0], branches: [1, 2, 3, 4] });
+parts(['arrows-converge'], { arrows: [0, 1, 2, 3], dot: [4] });
+parts(['arrows-diverge'], { dot: [0], arrows: [1, 2, 3, 4] });
+parts(['arrows-diagonal-up', 'arrows-diagonal-down'], { arrow: [0, 1, 2] });
+parts(['rotate-3d'], { orbit: [0, 1], axis: [2, 3] });
+parts(['arrow-loop'], { arrow: [0, 1, 2] });
+parts(['arrow-bounce'], { arrow: [0, 1], ground: [2] });
+parts(['arrows-cycle'], { arrows: [0, 1, 2, 3, 4, 5] });
+parts(['reset'], { arrow: [0, 1], dot: [2] });
+parts(['cursor-wait'], { pointer: [0], spinner: [1] });
+parts(['cursor-block', 'cursor-question', 'cursor-plus'], { pointer: [0] });
+parts(['cursor-multiplayer'], { back: [0], front: [1] });
+parts(['cursor-hover'], { pointer: [0], trails: [1, 2] });
+parts(['cursor-double-click'], { pointer: [0], clicks: [1, 2] });
+parts(['cursor-select'], { selection: [0, 1, 2], pointer: [3] });
+parts(['hand-grab', 'hand-grabbing'], { hand: [0], fingers: [1, 2, 3] });
+parts(['mouse-left-click', 'mouse-right-click'], { body: [0], seams: [1, 2], rays: [3, 4, 5] });
+parts(['menu-context'], { card: [0], rows: [1, 2, 3] });
+parts(['submenu'], { menu: [0, 1, 3], chevron: [2] });
+parts(['breadcrumb'], { crumbs: [0, 2, 4], chevrons: [1, 3] });
+parts(['pagination'], { previous: [0], pages: [1, 2, 3], next: [4] });
+parts(['pagination-dots'], { current: [0], pages: [1, 2] });
+parts(['load-more'], { dots: [0, 1, 2], chevron: [3] });
+parts(['infinite-scroll'], { frame: [0], lines: [1, 2], arrow: [3, 4] });
+parts(['scrollbar', 'scrollbar-horizontal'], { frame: [0], arrow: [1, 2, 3], thumb: [4] });
+parts(['jump-to'], { arrow: [0, 1], lines: [2, 3, 4] });
+parts(['tab-bar'], { frame: [0], bar: [1], tabs: [2, 3, 4] });
+parts(['tabs-plus'], { window: [0], tab: [1] });
+parts(['tabs-vertical'], { window: [0], divider: [1], tabs: [2, 3, 4] });
+parts(['filter-plus'], { funnel: [0] });
+parts(['history-x'], { arrow: [0, 1], hands: [2] });
+parts(['panel-bottom', 'panel-top', 'sidebar-right'].flatMap((n) => [`${n}-collapse`, `${n}-expand`]), { window: [0], divider: [1], chevron: [2] });
+parts(['view-masonry'], { tiles: [0, 1, 2, 3] });
+parts(['view-thumbnails'], { preview: [0], thumbnails: [1, 2, 3] });
+parts(['view-stack'], { card: [0], stack: [1, 2] });
+parts(['view-carousel-vertical'], { card: [0], previous: [1], next: [2] });
+parts(['grip-diagonal'], { dots: [0, 1, 2, 3, 4, 5] });
+parts(['zoom-selection'], { corners: [0, 1, 2, 3], lens: [4], handle: [5] });
+parts(['fit-width', 'fit-height'], { bars: [0, 1], arrow: [2, 3, 4] });
 
 // ── Motion (DESIGN.md › Motion): arrows slide toward where they point ──
 const DIR = { right: [1, 0], left: [-1, 0], up: [0, -1], down: [0, 1], 'up-right': [0.8, -0.8], 'down-right': [0.8, 0.8], 'down-left': [-0.8, 0.8], 'up-left': [-0.8, -0.8] };
@@ -696,6 +1240,49 @@ icons['zoom-in'].motion = { effect: 'beat', parts: ['mark'], origin: [10.6, 10.6
 icons['search-x'].motion = { effect: 'wiggle', origin: [20.5, 20.5] };
 icons['hand-pointer'].motion = { effect: 'bounce', vector: [0, -1.5] };
 icons.crosshair.motion = { effect: 'beat', origin: [12, 12] };
+// Round 3: arrows slide away from their bar or dot and into their corner; import drops its arrow
+// into the box, like download; the fork rises; the fan slides toward (or away from) its dot; the
+// diagonal resize pulses, like maximize.
+for (const n of ['up', 'down', 'left', 'right']) icons[`arrow-${n}-from-line`].motion = slide(DIR[n], 2, ['arrow']);
+icons['arrow-down-to-dot'].motion = slide(DIR.down, 1.5, ['arrow']);
+icons['arrow-up-from-dot'].motion = slide(DIR.up, 2, ['arrow']);
+icons['arrow-turn-right-up'].motion = slide(DIR.up, 2);
+icons['arrow-turn-left-up'].motion = slide(DIR.up, 2);
+for (const n of ['up-right', 'down-right', 'down-left', 'up-left']) icons[`arrow-${n}-to-corner`].motion = slide(DIR[n], 1.5, ['arrow']);
+icons.import.motion = { effect: 'bounce', parts: ['arrow'], vector: [0, 1.5] };
+icons['pop-in'].motion = slide(DIR['down-left'], 1.75, ['arrow']);
+icons['arrows-merge'].motion = slide(DIR.up, 1.5);
+icons['arrows-split'].motion = slide(DIR.up, 1.5);
+icons['arrows-converge'].motion = slide(DIR.right, 1.5, ['arrows']);
+icons['arrows-diverge'].motion = slide(DIR.right, 1.5, ['arrows']);
+icons['arrows-diagonal-up'].motion = { effect: 'beat', origin: [12, 12] };
+icons['arrows-diagonal-down'].motion = { effect: 'beat', origin: [12, 12] };
+// The loop runs on to the right; the bounce drops to its ground and back; the cycle turns (clockwise,
+// as drawn); the spinner spins and the click arcs pulse from the tip, like cursor-click's rays; the
+// mouse's rays pulse from its corner; trails and chevrons slide where they point; the zoom pulses.
+icons['arrow-loop'].motion = slide(DIR.right, 2);
+icons['arrow-bounce'].motion = { effect: 'bounce', parts: ['arrow'], vector: [0, 1.5] };
+icons['arrows-cycle'].motion = { effect: 'spin', origin: [12, 12] };
+icons['cursor-wait'].motion = { effect: 'spin', parts: ['spinner'], origin: [17.25, 17.25] };
+icons['cursor-hover'].motion = slide([-0.4, -0.9], 1.5, ['pointer']);
+icons['cursor-double-click'].motion = { effect: 'beat', parts: ['clicks'], origin: [11.25, 8.75] };
+icons['cursor-select'].motion = slide(DIR['down-right'], 1.25, ['pointer']);
+icons['mouse-left-click'].motion = { effect: 'beat', parts: ['rays'], origin: [14.25, 12.75] };
+icons['mouse-right-click'].motion = { effect: 'beat', parts: ['rays'], origin: [9.75, 12.75] };
+icons.submenu.motion = slide(DIR.right, 1.5, ['chevron']);
+icons['load-more'].motion = slide(DIR.down, 1.5, ['chevron']);
+icons['infinite-scroll'].motion = slide(DIR.down, 1.5, ['arrow']);
+icons.scrollbar.motion = slide(DIR.down, 2.5, ['thumb']);
+icons['scrollbar-horizontal'].motion = slide(DIR.right, 2.5, ['thumb']);
+icons['history-x'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 17.25] };
+for (const [name, toward] of [['panel-bottom', 'down'], ['panel-top', 'up'], ['sidebar-right', 'right']]) {
+  const away = { down: 'up', up: 'down', right: 'left' }[toward];
+  icons[`${name}-collapse`].motion = slide(DIR[toward], 1.5, ['chevron']);
+  icons[`${name}-expand`].motion = slide(DIR[away], 1.5, ['chevron']);
+}
+icons['zoom-selection'].motion = { effect: 'beat', parts: ['lens', 'handle'], origin: [12, 12] };
+icons['fit-width'].motion = { effect: 'beat', parts: ['arrow'], origin: [12, 12] };
+icons['fit-height'].motion = { effect: 'beat', parts: ['arrow'], origin: [12, 12] };
 
 // ── Automatic variants (DESIGN.md › Automatic variants) ──
 const off = (names, v) => {
@@ -721,5 +1308,13 @@ off(
   ['undo', 'redo', 'move', 'page-first', 'page-last', 'sort-ascending', 'sort-descending', 'sort', 'swap-horizontal', 'maximize', 'minimize', 'expand-vertical', 'collapse-vertical', 'expand-horizontal', 'collapse-horizontal', 'fullscreen', 'fullscreen-exit', 'fit-screen', 'log-in', 'log-out', 'external-link', 'menu', 'menu-compact', 'more-vertical', 'more-circle', 'grip-vertical', 'grip-horizontal', 'filter-lines', 'filter-x', 'search-x'],
   { slash: false },
 );
+// Round 3. Lone marks and pieces that already negate take no slash; enclosed or badged ones (and
+// pieces that stop reading at 58 %: the pointers with their marks, the hands' fingers) no enclosure.
+off(['pop-in', 'reset', 'submenu', 'breadcrumb', 'pagination', 'pagination-dots', 'load-more', 'jump-to', 'grip-diagonal', 'fit-width', 'fit-height'], { slash: false });
+// A slash through a status badge says nothing, as across the set (and the spinner is no badge to slash)
+off(['cursor-block', 'cursor-question', 'cursor-plus', 'cursor-wait', 'tabs-plus', 'filter-plus', 'history-x'], { slash: false });
+off(['reset', 'history-x'], { circle: false });
+off(['cursor-block', 'cursor-question', 'cursor-plus', 'cursor-wait', 'cursor-multiplayer', 'menu-context', 'tabs-plus', 'filter-plus', 'history-x'], { circle: false, square: false });
+off(['zoom-selection', 'view-masonry', 'view-thumbnails'], { square: false });
 
 export default { category: 'navegacion', label: 'Navegación', icons };

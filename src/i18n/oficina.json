@@ -1,0 +1,807 @@
+{
+  "task": {
+    "label": { "es": "Tarea", "en": "Task", "pt": "Tarefa", "fr": "Tâche", "de": "Aufgabe", "it": "Attività", "ja": "タスク", "zh": "任务", "ko": "작업", "ar": "مهمة" },
+    "keywords": {
+      "es": ["pendiente", "por hacer", "actividad", "gestor de tareas", "entregable", "encargo", "to-do"],
+      "en": ["to-do", "todo item", "action item", "task manager", "assignment", "work item", "deliverable"]
+    }
+  },
+  "task-plus": {
+    "label": { "es": "Nueva tarea", "en": "New task", "pt": "Nova tarefa", "fr": "Nouvelle tâche", "de": "Neue Aufgabe", "it": "Nuova attività", "ja": "新規タスク", "zh": "新建任务", "ko": "새 작업", "ar": "مهمة جديدة" },
+    "keywords": {
+      "es": ["agregar pendiente", "crear tarea", "añadir actividad", "anotar", "nuevo to-do", "capturar", "planear"],
+      "en": ["add task", "create task", "add to-do", "new item", "capture", "quick add", "plan"]
+    }
+  },
+  "task-blocked": {
+    "label": { "es": "Tarea bloqueada", "en": "Blocked task", "pt": "Tarefa bloqueada", "fr": "Tâche bloquée", "de": "Blockierte Aufgabe", "it": "Attività bloccata", "ja": "ブロックされたタスク", "zh": "受阻任务", "ko": "차단된 작업", "ar": "مهمة متوقفة" },
+    "keywords": {
+      "es": ["detenida", "en espera", "dependencia", "atorada", "impedimento", "esperando respuesta", "sin avance"],
+      "en": ["on hold", "waiting on", "dependency", "blocker", "impediment", "stuck", "can't proceed"]
+    }
+  },
+  "task-star": {
+    "label": { "es": "Tarea destacada", "en": "Starred task", "pt": "Tarefa com estrela", "fr": "Tâche marquée d’une étoile", "de": "Markierte Aufgabe", "it": "Attività contrassegnata", "ja": "スター付きタスク", "zh": "已加星标的任务", "ko": "별표 표시한 작업", "ar": "مهمة مميّزة بنجمة" },
+    "keywords": {
+      "es": ["importante", "prioridad", "favorita", "urgente", "marcar", "resaltar", "mi día"],
+      "en": ["important", "priority", "favorite", "urgent", "flag", "highlight", "my day"]
+    }
+  },
+  "task-assign": {
+    "label": { "es": "Asignar tarea", "en": "Assign task", "pt": "Atribuir tarefa", "fr": "Assigner une tâche", "de": "Aufgabe zuweisen", "it": "Assegna attività", "ja": "タスクを割り当て", "zh": "分配任务", "ko": "작업 할당", "ar": "إسناد مهمة" },
+    "keywords": {
+      "es": ["responsable", "encargado", "delegar", "asignado a", "dueño de la tarea", "repartir trabajo", "equipo"],
+      "en": ["assignee", "owner", "delegate", "assigned to", "responsible", "hand off", "team member"]
+    }
+  },
+  "task-reopen": {
+    "label": { "es": "Reabrir tarea", "en": "Reopen task", "pt": "Reabrir tarefa", "fr": "Rouvrir la tâche", "de": "Aufgabe wieder öffnen", "it": "Riapri attività", "ja": "タスクを再開", "zh": "重新打开任务", "ko": "작업 다시 열기", "ar": "إعادة فتح المهمة" },
+    "keywords": {
+      "es": ["marcar como pendiente", "desmarcar", "deshacer completada", "volver a abrir", "reactivar", "no terminada", "retomar"],
+      "en": ["mark incomplete", "uncheck", "undo complete", "reactivate", "not done", "resume", "open again"]
+    }
+  },
+  "task-dependency": {
+    "label": { "es": "Dependencia de tareas", "en": "Task dependency", "pt": "Dependência de tarefas", "fr": "Dépendance entre tâches", "de": "Aufgabenabhängigkeit", "it": "Dipendenza tra attività", "ja": "タスクの依存関係", "zh": "任务依赖", "ko": "작업 종속성", "ar": "تبعية المهام" },
+    "keywords": {
+      "es": ["vincular tareas", "predecesora", "sucesora", "fin a inicio", "diagrama de Gantt", "ruta crítica", "secuencia", "bloquea a"],
+      "en": ["linked tasks", "predecessor", "successor", "finish to start", "gantt chart", "critical path", "sequence", "blocks"]
+    }
+  },
+  "subtask": {
+    "label": { "es": "Subtarea", "en": "Subtask", "pt": "Subtarefa", "fr": "Sous-tâche", "de": "Unteraufgabe", "it": "Sottoattività", "ja": "サブタスク", "zh": "子任务", "ko": "하위 작업", "ar": "مهمة فرعية" },
+    "keywords": {
+      "es": ["tarea anidada", "tarea hija", "desglose", "paso", "dividir trabajo", "jerarquía", "tarea principal"],
+      "en": ["nested task", "child task", "breakdown", "step", "split work", "hierarchy", "parent task"]
+    }
+  },
+  "kanban-card": {
+    "label": { "es": "Tarjeta Kanban", "en": "Kanban card", "pt": "Cartão Kanban", "fr": "Carte Kanban", "de": "Kanban-Karte", "it": "Scheda Kanban", "ja": "カンバンカード", "zh": "看板卡片", "ko": "칸반 카드", "ar": "بطاقة كانبان" },
+    "keywords": {
+      "es": ["ticket", "incidencia", "oportunidad", "elemento del tablero", "historia de usuario", "trato", "pendiente"],
+      "en": ["ticket", "issue", "deal", "board item", "user story", "card view", "work item"]
+    }
+  },
+  "kanban-column": {
+    "label": { "es": "Columna Kanban", "en": "Kanban column", "pt": "Coluna Kanban", "fr": "Colonne Kanban", "de": "Kanban-Spalte", "it": "Colonna Kanban", "ja": "カンバンの列", "zh": "看板列", "ko": "칸반 열", "ar": "عمود كانبان" },
+    "keywords": {
+      "es": ["etapa", "fase", "lista", "estado", "por hacer", "en curso", "embudo", "pipeline"],
+      "en": ["stage", "phase", "list", "status", "to do", "in progress", "pipeline", "lane"]
+    }
+  },
+  "kanban-swimlane": {
+    "label": { "es": "Carriles Kanban", "en": "Swimlanes", "pt": "Raias Kanban", "fr": "Couloirs Kanban", "de": "Swimlanes", "it": "Corsie Kanban", "ja": "スイムレーン", "zh": "泳道", "ko": "스윔레인", "ar": "مسارات كانبان" },
+    "keywords": {
+      "es": ["swimlanes", "filas del tablero", "agrupar por responsable", "dividir tablero", "por equipo", "por prioridad", "flujo de trabajo"],
+      "en": ["lanes", "board rows", "group by assignee", "split board", "by team", "by priority", "workflow"]
+    }
+  },
+  "kanban-move": {
+    "label": { "es": "Mover tarjeta", "en": "Move card", "pt": "Mover cartão", "fr": "Déplacer la carte", "de": "Karte verschieben", "it": "Sposta scheda", "ja": "カードを移動", "zh": "移动卡片", "ko": "카드 이동", "ar": "نقل البطاقة" },
+    "keywords": {
+      "es": ["cambiar de etapa", "avanzar", "arrastrar", "cambiar estado", "siguiente columna", "progreso", "flujo"],
+      "en": ["change stage", "advance", "drag", "change status", "next column", "progress", "workflow"]
+    }
+  },
+  "kanban-plus": {
+    "label": { "es": "Nueva columna Kanban", "en": "New Kanban column", "pt": "Nova coluna Kanban", "fr": "Nouvelle colonne Kanban", "de": "Neue Kanban-Spalte", "it": "Nuova colonna Kanban", "ja": "カンバンの列を追加", "zh": "新建看板列", "ko": "새 칸반 열", "ar": "عمود كانبان جديد" },
+    "keywords": {
+      "es": ["agregar etapa", "nueva lista", "nuevo tablero", "crear tablero", "añadir fase", "configurar flujo", "proyecto nuevo"],
+      "en": ["add stage", "new list", "new board", "create board", "add phase", "set up workflow", "new project"]
+    }
+  },
+  "notepad": {
+    "label": { "es": "Bloc de notas", "en": "Notepad", "pt": "Bloco de notas", "fr": "Bloc-notes", "de": "Notizblock", "it": "Blocco note", "ja": "メモ帳", "zh": "记事本", "ko": "메모장", "ar": "مفكرة" },
+    "keywords": {
+      "es": ["libreta", "apuntes", "nota rápida", "memo", "anotar", "borrador", "bitácora"],
+      "en": ["notebook", "jot down", "quick note", "memo", "scratchpad", "notes", "writing pad"]
+    }
+  },
+  "notepad-lock": {
+    "label": { "es": "Nota bloqueada", "en": "Locked note", "pt": "Nota bloqueada", "fr": "Note verrouillée", "de": "Gesperrte Notiz", "it": "Nota bloccata", "ja": "ロックされたメモ", "zh": "已锁定的笔记", "ko": "잠긴 메모", "ar": "ملاحظة مقفلة" },
+    "keywords": {
+      "es": ["nota privada", "protegida con contraseña", "confidencial", "candado", "secreto", "seguridad", "cifrada"],
+      "en": ["private note", "password protected", "confidential", "padlock", "secret", "secure", "encrypted"]
+    }
+  },
+  "meeting-notes": {
+    "label": { "es": "Minuta", "en": "Meeting notes", "pt": "Ata da reunião", "fr": "Compte rendu de réunion", "de": "Besprechungsprotokoll", "it": "Verbale della riunione", "ja": "議事録", "zh": "会议纪要", "ko": "회의록", "ar": "محضر الاجتماع" },
+    "keywords": {
+      "es": ["notas de la junta", "acta", "acuerdos", "resumen", "apuntes", "relatoría", "pendientes"],
+      "en": ["minutes", "action items", "summary", "recap", "decisions", "transcript", "follow-ups"]
+    }
+  },
+  "sticky-note-plus": {
+    "label": { "es": "Nueva nota adhesiva", "en": "New sticky note", "pt": "Nova nota adesiva", "fr": "Nouvelle note autocollante", "de": "Neue Haftnotiz", "it": "Nuova nota adesiva", "ja": "付箋を追加", "zh": "新建便签", "ko": "새 스티커 메모", "ar": "ملاحظة لاصقة جديدة" },
+    "keywords": {
+      "es": ["agregar nota", "post-it", "anotar idea", "lluvia de ideas", "pizarra", "comentario", "recordatorio"],
+      "en": ["add note", "post-it", "jot an idea", "brainstorm", "whiteboard", "comment", "reminder"]
+    }
+  },
+  "sticky-note-pin": {
+    "label": { "es": "Nota fijada", "en": "Pinned note", "pt": "Nota fixada", "fr": "Note épinglée", "de": "Angeheftete Notiz", "it": "Nota fissata", "ja": "固定されたメモ", "zh": "已置顶的便签", "ko": "고정된 메모", "ar": "ملاحظة مثبتة" },
+    "keywords": {
+      "es": ["fijar arriba", "destacar", "anuncio", "aviso", "importante", "mantener visible", "recordatorio"],
+      "en": ["pin to top", "highlight", "announcement", "notice", "important", "keep visible", "reminder"]
+    }
+  },
+  "sticky-note-pad": {
+    "label": { "es": "Bloc de notas adhesivas", "en": "Sticky note pad", "pt": "Bloco de notas adesivas", "fr": "Bloc de notes autocollantes", "de": "Haftnotizblock", "it": "Blocchetto di foglietti adesivi", "ja": "付箋の束", "zh": "便签本", "ko": "스티커 메모 패드", "ar": "دفتر ملاحظات لاصقة" },
+    "keywords": {
+      "es": ["post-it", "papelitos", "nueva nota", "lluvia de ideas", "pizarra", "taco de notas", "recordatorios"],
+      "en": ["post-it", "new sticky", "brainstorm", "whiteboard", "stack of notes", "reminders", "memo pad"]
+    }
+  },
+  "pinboard": {
+    "label": { "es": "Tablero de avisos", "en": "Bulletin board", "pt": "Quadro de avisos", "fr": "Tableau d’affichage", "de": "Pinnwand", "it": "Bacheca", "ja": "掲示板", "zh": "公告板", "ko": "게시판", "ar": "لوحة إعلانات" },
+    "keywords": {
+      "es": ["corcho", "anuncios", "periódico mural", "comunicados", "notas clavadas", "inspiración", "moodboard"],
+      "en": ["corkboard", "pinboard", "announcements", "noticeboard", "pinned notes", "inspiration", "moodboard"]
+    }
+  },
+  "thumbtack": {
+    "label": { "es": "Chinche", "en": "Thumbtack", "pt": "Tachinha", "fr": "Punaise", "de": "Reißzwecke", "it": "Puntina", "ja": "画鋲", "zh": "图钉", "ko": "압정", "ar": "دبوس تثبيت" },
+    "keywords": {
+      "es": ["tachuela", "clavar", "fijar", "corcho", "sujetar papel", "tablero de avisos", "colgar aviso"],
+      "en": ["drawing pin", "push pin", "tack", "pin up", "corkboard", "notice board", "fasten"]
+    }
+  },
+  "pin-round": {
+    "label": { "es": "Alfiler marcador", "en": "Marker pin", "pt": "Alfinete marcador", "fr": "Épingle à tête ronde", "de": "Stecknadel", "it": "Spillo a capocchia", "ja": "まち針", "zh": "大头针", "ko": "마커 핀", "ar": "دبوس ذو رأس كروي" },
+    "keywords": {
+      "es": ["alfiler de cabeza", "marcar en el mapa", "ubicación", "punto de interés", "corcho", "señalar", "mapa de pared"],
+      "en": ["round-head pin", "pin on map", "location", "point of interest", "corkboard", "mark", "wall map"]
+    }
+  },
+  "whiteboard": {
+    "label": { "es": "Pizarrón blanco", "en": "Whiteboard", "pt": "Quadro branco", "fr": "Tableau blanc", "de": "Whiteboard", "it": "Lavagna bianca", "ja": "ホワイトボード", "zh": "白板", "ko": "화이트보드", "ar": "سبورة بيضاء" },
+    "keywords": {
+      "es": ["pintarrón", "pizarra en línea", "lluvia de ideas", "colaborar", "dibujar", "lienzo", "plumón"],
+      "en": ["dry erase board", "online whiteboard", "brainstorm", "collaborate", "canvas", "sketch", "marker board"]
+    }
+  },
+  "flipchart": {
+    "label": { "es": "Rotafolio", "en": "Flip chart", "pt": "Flip chart", "fr": "Paperboard", "de": "Flipchart", "it": "Lavagna a fogli mobili", "ja": "フリップチャート", "zh": "翻页挂图", "ko": "플립차트", "ar": "لوح ورقي قلاب" },
+    "keywords": {
+      "es": ["taller", "caballete", "capacitación", "lluvia de ideas", "exponer", "papelógrafo", "dinámica de grupo"],
+      "en": ["easel pad", "workshop", "training", "brainstorm", "paper pad", "facilitation", "flipboard"]
+    }
+  },
+  "mind-map": {
+    "label": { "es": "Mapa mental", "en": "Mind map", "pt": "Mapa mental", "fr": "Carte mentale", "de": "Mindmap", "it": "Mappa mentale", "ja": "マインドマップ", "zh": "思维导图", "ko": "마인드맵", "ar": "خريطة ذهنية" },
+    "keywords": {
+      "es": ["lluvia de ideas", "ideas", "tema central", "diagrama", "mapa conceptual", "organizar ideas", "ramas"],
+      "en": ["brainstorm", "ideas", "central topic", "diagram", "concept map", "branches", "ideation"]
+    }
+  },
+  "meeting": {
+    "label": { "es": "Reunión", "en": "Meeting", "pt": "Reunião", "fr": "Réunion", "de": "Besprechung", "it": "Riunione", "ja": "会議", "zh": "会议", "ko": "회의", "ar": "اجتماع" },
+    "keywords": {
+      "es": ["junta", "presencial", "equipo", "cita", "encuentro", "sesión", "mesa de trabajo"],
+      "en": ["in-person", "team", "get-together", "gathering", "session", "huddle", "appointment"]
+    }
+  },
+  "meeting-room": {
+    "label": { "es": "Sala de juntas", "en": "Meeting room", "pt": "Sala de reunião", "fr": "Salle de réunion", "de": "Besprechungsraum", "it": "Sala riunioni", "ja": "会議室", "zh": "会议室", "ko": "회의실", "ar": "غرفة اجتماعات" },
+    "keywords": {
+      "es": ["sala de reuniones", "reservar sala", "sala de conferencias", "espacio", "agendar", "oficina", "disponibilidad"],
+      "en": ["conference room", "book a room", "room booking", "boardroom", "space", "reserve", "availability"]
+    }
+  },
+  "one-on-one": {
+    "label": { "es": "Reunión uno a uno", "en": "One-on-one", "pt": "Reunião individual", "fr": "Entretien individuel", "de": "Einzelgespräch", "it": "Incontro individuale", "ja": "1on1ミーティング", "zh": "一对一会议", "ko": "1:1 미팅", "ar": "اجتماع فردي" },
+    "keywords": {
+      "es": ["1:1", "plática", "seguimiento", "jefe directo", "retroalimentación", "mentoría", "entrevista"],
+      "en": ["1:1", "check-in", "manager", "feedback", "mentoring", "catch-up", "private meeting"]
+    }
+  },
+  "meeting-agenda": {
+    "label": { "es": "Orden del día", "en": "Meeting agenda", "pt": "Pauta da reunião", "fr": "Ordre du jour", "de": "Tagesordnung", "it": "Ordine del giorno", "ja": "会議の議題", "zh": "会议议程", "ko": "회의 안건", "ar": "جدول أعمال الاجتماع" },
+    "keywords": {
+      "es": ["agenda", "temas", "puntos a tratar", "junta", "planear reunión", "temario", "lista de pendientes"],
+      "en": ["topics", "talking points", "items to cover", "plan meeting", "order of business", "outline", "run of show"]
+    }
+  },
+  "presenter": {
+    "label": { "es": "Presentador", "en": "Presenter", "pt": "Apresentador", "fr": "Présentateur", "de": "Vortragender", "it": "Relatore", "ja": "発表者", "zh": "演讲者", "ko": "발표자", "ar": "مقدّم العرض" },
+    "keywords": {
+      "es": ["exponer", "ponente", "modo presentador", "conferencia", "público", "charla", "expositor"],
+      "en": ["speaker", "presenter mode", "audience", "talk", "pitch", "lecture", "demo"]
+    }
+  },
+  "lectern": {
+    "label": { "es": "Atril", "en": "Lectern", "pt": "Púlpito", "fr": "Pupitre", "de": "Rednerpult", "it": "Leggio", "ja": "演台", "zh": "讲台", "ko": "연설대", "ar": "منصة الخطابة" },
+    "keywords": {
+      "es": ["podio", "conferencia", "discurso", "ponencia", "keynote", "evento", "orador"],
+      "en": ["podium", "speaker stand", "keynote", "speech", "talk", "conference", "rostrum"]
+    }
+  },
+  "name-tent": {
+    "label": { "es": "Tarjeta de nombre", "en": "Name card", "pt": "Prisma de mesa", "fr": "Chevalet de table", "de": "Tischnamensschild", "it": "Segnaposto", "ja": "卓上名札", "zh": "桌牌", "ko": "명패", "ar": "بطاقة الاسم على الطاولة" },
+    "keywords": {
+      "es": ["gafete de mesa", "lugar asignado", "invitado", "evento", "acomodo de mesas", "ponente", "panel"],
+      "en": ["name tent", "place card", "table card", "seating", "guest", "event", "panel"]
+    }
+  },
+  "conference-phone": {
+    "label": { "es": "Teléfono de conferencias", "en": "Conference phone", "pt": "Telefone de conferência", "fr": "Téléphone de conférence", "de": "Konferenztelefon", "it": "Telefono per conferenze", "ja": "会議用電話", "zh": "会议电话", "ko": "회의용 전화기", "ar": "هاتف المؤتمرات" },
+    "keywords": {
+      "es": ["altavoz", "manos libres", "llamada grupal", "conferencia telefónica", "sala de juntas", "audioconferencia", "bocina"],
+      "en": ["speakerphone", "hands-free", "group call", "conference call", "audio conference", "meeting room", "dial-in"]
+    }
+  },
+  "slide": {
+    "label": { "es": "Diapositiva", "en": "Slide", "pt": "Slide", "fr": "Diapositive", "de": "Folie", "it": "Diapositiva", "ja": "スライド", "zh": "幻灯片", "ko": "슬라이드", "ar": "شريحة" },
+    "keywords": {
+      "es": ["lámina", "presentación", "página", "filmina", "plantilla", "contenido", "exposición"],
+      "en": ["presentation", "page", "deck", "template", "frame", "keynote", "content"]
+    }
+  },
+  "slide-plus": {
+    "label": { "es": "Nueva diapositiva", "en": "New slide", "pt": "Novo slide", "fr": "Nouvelle diapositive", "de": "Neue Folie", "it": "Nuova diapositiva", "ja": "新しいスライド", "zh": "新建幻灯片", "ko": "새 슬라이드", "ar": "شريحة جديدة" },
+    "keywords": {
+      "es": ["agregar lámina", "insertar diapositiva", "añadir página", "duplicar", "crear", "presentación", "en blanco"],
+      "en": ["add slide", "insert slide", "add page", "duplicate", "create", "presentation", "blank"]
+    }
+  },
+  "slide-layout": {
+    "label": { "es": "Diseño de diapositiva", "en": "Slide layout", "pt": "Layout do slide", "fr": "Disposition de la diapositive", "de": "Folienlayout", "it": "Layout diapositiva", "ja": "スライドのレイアウト", "zh": "幻灯片版式", "ko": "슬라이드 레이아웃", "ar": "تخطيط الشريحة" },
+    "keywords": {
+      "es": ["plantilla", "distribución", "acomodo", "título y contenido", "dos columnas", "maquetación", "estructura"],
+      "en": ["template", "arrangement", "title and content", "two columns", "master", "structure", "placeholder"]
+    }
+  },
+  "slide-deck": {
+    "label": { "es": "Juego de diapositivas", "en": "Slide deck", "pt": "Conjunto de slides", "fr": "Jeu de diapositives", "de": "Foliensatz", "it": "Set di diapositive", "ja": "スライド資料", "zh": "幻灯片组", "ko": "슬라이드 덱", "ar": "مجموعة شرائح" },
+    "keywords": {
+      "es": ["presentación", "deck", "pitch", "exposición", "propuesta comercial", "láminas", "material de apoyo"],
+      "en": ["presentation", "pitch", "proposal", "keynote", "talk", "sales pitch", "investor presentation"]
+    }
+  },
+  "slideshow": {
+    "label": { "es": "Iniciar presentación", "en": "Start slideshow", "pt": "Iniciar apresentação", "fr": "Lancer le diaporama", "de": "Bildschirmpräsentation starten", "it": "Avvia presentazione", "ja": "スライドショーを開始", "zh": "开始放映", "ko": "슬라이드 쇼 시작", "ar": "بدء العرض التقديمي" },
+    "keywords": {
+      "es": ["presentar", "pantalla completa", "desde el inicio", "reproducir", "proyectar", "modo presentación", "exponer"],
+      "en": ["present", "play", "full screen", "from beginning", "project", "presentation mode", "run show"]
+    }
+  },
+  "slide-transition": {
+    "label": { "es": "Transición de diapositiva", "en": "Slide transition", "pt": "Transição de slide", "fr": "Transition de diapositive", "de": "Folienübergang", "it": "Transizione diapositiva", "ja": "画面切り替え", "zh": "幻灯片切换", "ko": "슬라이드 전환", "ar": "انتقال الشريحة" },
+    "keywords": {
+      "es": ["efecto", "desvanecer", "deslizar", "cambio de lámina", "animación", "fundido", "pasar"],
+      "en": ["effect", "fade", "push", "dissolve", "animation", "morph", "wipe"]
+    }
+  },
+  "slide-animation": {
+    "label": { "es": "Animar objeto", "en": "Animate object", "pt": "Animar objeto", "fr": "Animer l’objet", "de": "Objekt animieren", "it": "Anima oggetto", "ja": "オブジェクトのアニメーション", "zh": "对象动画", "ko": "개체 애니메이션", "ar": "تحريك الكائن" },
+    "keywords": {
+      "es": ["animación", "efecto de entrada", "aparecer", "movimiento", "diapositiva", "presentación", "énfasis"],
+      "en": ["animation", "entrance effect", "appear", "motion", "slide", "presentation", "emphasis"]
+    }
+  },
+  "speaker-notes": {
+    "label": { "es": "Notas del orador", "en": "Speaker notes", "pt": "Anotações do orador", "fr": "Notes du présentateur", "de": "Sprechernotizen", "it": "Note del relatore", "ja": "発表者ノート", "zh": "演讲者备注", "ko": "발표자 노트", "ar": "ملاحظات المتحدث" },
+    "keywords": {
+      "es": ["guion", "apuntes", "notas de la presentación", "recordatorio", "texto de apoyo", "exponer", "comentarios"],
+      "en": ["script", "presenter notes", "talking points", "cue", "prompts", "reminders", "comments"]
+    }
+  },
+  "presenter-view": {
+    "label": { "es": "Vista del presentador", "en": "Presenter view", "pt": "Modo de apresentador", "fr": "Mode présentateur", "de": "Referentenansicht", "it": "Visualizzazione relatore", "ja": "発表者ツール", "zh": "演示者视图", "ko": "발표자 보기", "ar": "طريقة عرض مقدم العرض" },
+    "keywords": {
+      "es": ["siguiente diapositiva", "notas del orador", "cronómetro", "segunda pantalla", "pantalla dividida", "ensayar", "modo presentador"],
+      "en": ["next slide", "speaker notes", "timer", "second screen", "dual monitor", "rehearse", "current slide"]
+    }
+  },
+  "handout": {
+    "label": { "es": "Material impreso", "en": "Handout", "pt": "Material impresso", "fr": "Document à distribuer", "de": "Handzettel", "it": "Stampati", "ja": "配布資料", "zh": "讲义", "ko": "유인물", "ar": "مطبوعات للتوزيع" },
+    "keywords": {
+      "es": ["fotocopias", "material de apoyo", "imprimir presentación", "folleto", "repartir", "documento", "taller"],
+      "en": ["printout", "printed slides", "leaflet", "takeaway", "print presentation", "pamphlet", "workshop material"]
+    }
+  },
+  "projector-screen": {
+    "label": { "es": "Pantalla de proyección", "en": "Projector screen", "pt": "Tela de projeção", "fr": "Écran de projection", "de": "Projektionsleinwand", "it": "Schermo per proiezione", "ja": "プロジェクタースクリーン", "zh": "投影幕布", "ko": "프로젝터 스크린", "ar": "شاشة عرض" },
+    "keywords": {
+      "es": ["proyector", "presentación", "sala de juntas", "cine", "telón", "proyectar", "lona"],
+      "en": ["projector", "presentation", "meeting room", "pull-down screen", "cinema", "projection", "AV"]
+    }
+  },
+  "laser-pointer": {
+    "label": { "es": "Apuntador láser", "en": "Laser pointer", "pt": "Apontador laser", "fr": "Pointeur laser", "de": "Laserpointer", "it": "Puntatore laser", "ja": "レーザーポインター", "zh": "激光笔", "ko": "레이저 포인터", "ar": "مؤشر ليزر" },
+    "keywords": {
+      "es": ["señalar", "puntero", "presentar", "resaltar", "control de presentación", "indicar", "clicker"],
+      "en": ["pointer", "point at", "presenting", "highlight", "clicker", "remote", "indicate"]
+    }
+  },
+  "row-insert-above": {
+    "label": { "es": "Insertar fila arriba", "en": "Insert row above", "pt": "Inserir linha acima", "fr": "Insérer une ligne au-dessus", "de": "Zeile oberhalb einfügen", "it": "Inserisci riga sopra", "ja": "上に行を挿入", "zh": "在上方插入行", "ko": "위에 행 삽입", "ar": "إدراج صف أعلاه" },
+    "keywords": {
+      "es": ["agregar fila", "nueva fila", "hoja de cálculo", "tabla", "añadir registro", "encima", "renglón"],
+      "en": ["add row", "new row", "spreadsheet", "table", "add record", "row before", "grid"]
+    }
+  },
+  "row-insert-below": {
+    "label": { "es": "Insertar fila abajo", "en": "Insert row below", "pt": "Inserir linha abaixo", "fr": "Insérer une ligne en dessous", "de": "Zeile unterhalb einfügen", "it": "Inserisci riga sotto", "ja": "下に行を挿入", "zh": "在下方插入行", "ko": "아래에 행 삽입", "ar": "إدراج صف أدناه" },
+    "keywords": {
+      "es": ["agregar fila", "nueva fila", "hoja de cálculo", "tabla", "añadir registro", "debajo", "renglón"],
+      "en": ["add row", "new row", "spreadsheet", "table", "add record", "row after", "append"]
+    }
+  },
+  "column-insert-left": {
+    "label": { "es": "Insertar columna a la izquierda", "en": "Insert column left", "pt": "Inserir coluna à esquerda", "fr": "Insérer une colonne à gauche", "de": "Spalte links einfügen", "it": "Inserisci colonna a sinistra", "ja": "左に列を挿入", "zh": "在左侧插入列", "ko": "왼쪽에 열 삽입", "ar": "إدراج عمود إلى اليسار" },
+    "keywords": {
+      "es": ["agregar columna", "añadir campo", "hoja de cálculo", "tabla", "antes", "campo nuevo", "cuadrícula"],
+      "en": ["add column", "new column", "spreadsheet", "table", "add field", "column before", "grid"]
+    }
+  },
+  "column-insert-right": {
+    "label": { "es": "Insertar columna a la derecha", "en": "Insert column right", "pt": "Inserir coluna à direita", "fr": "Insérer une colonne à droite", "de": "Spalte rechts einfügen", "it": "Inserisci colonna a destra", "ja": "右に列を挿入", "zh": "在右侧插入列", "ko": "오른쪽에 열 삽입", "ar": "إدراج عمود إلى اليمين" },
+    "keywords": {
+      "es": ["agregar columna", "añadir campo", "hoja de cálculo", "tabla", "después", "campo nuevo", "cuadrícula"],
+      "en": ["add column", "new column", "spreadsheet", "table", "add field", "column after", "append"]
+    }
+  },
+  "row-delete": {
+    "label": { "es": "Eliminar fila", "en": "Delete row", "pt": "Excluir linha", "fr": "Supprimer la ligne", "de": "Zeile löschen", "it": "Elimina riga", "ja": "行を削除", "zh": "删除行", "ko": "행 삭제", "ar": "حذف الصف" },
+    "keywords": {
+      "es": ["borrar fila", "quitar registro", "hoja de cálculo", "tabla", "renglón", "limpiar", "descartar"],
+      "en": ["remove row", "remove record", "spreadsheet", "table", "erase", "clear", "discard"]
+    }
+  },
+  "column-delete": {
+    "label": { "es": "Eliminar columna", "en": "Delete column", "pt": "Excluir coluna", "fr": "Supprimer la colonne", "de": "Spalte löschen", "it": "Elimina colonna", "ja": "列を削除", "zh": "删除列", "ko": "열 삭제", "ar": "حذف العمود" },
+    "keywords": {
+      "es": ["borrar columna", "quitar campo", "hoja de cálculo", "tabla", "limpiar", "descartar", "eliminar campo"],
+      "en": ["remove column", "remove field", "spreadsheet", "table", "erase", "clear", "drop column"]
+    }
+  },
+  "row-move-up": {
+    "label": { "es": "Subir fila", "en": "Move row up", "pt": "Mover linha para cima", "fr": "Monter la ligne", "de": "Zeile nach oben verschieben", "it": "Sposta riga su", "ja": "行を上に移動", "zh": "上移行", "ko": "행 위로 이동", "ar": "نقل الصف لأعلى" },
+    "keywords": {
+      "es": ["reordenar", "mover arriba", "cambiar orden", "prioridad", "tabla", "arrastrar", "ordenar"],
+      "en": ["reorder", "shift up", "change order", "raise", "table", "drag", "sort"]
+    }
+  },
+  "row-move-down": {
+    "label": { "es": "Bajar fila", "en": "Move row down", "pt": "Mover linha para baixo", "fr": "Descendre la ligne", "de": "Zeile nach unten verschieben", "it": "Sposta riga giù", "ja": "行を下に移動", "zh": "下移行", "ko": "행 아래로 이동", "ar": "نقل الصف لأسفل" },
+    "keywords": {
+      "es": ["reordenar", "mover abajo", "cambiar orden", "prioridad", "tabla", "arrastrar", "ordenar"],
+      "en": ["reorder", "shift down", "change order", "lower", "table", "drag", "sort"]
+    }
+  },
+  "column-move-left": {
+    "label": { "es": "Mover columna a la izquierda", "en": "Move column left", "pt": "Mover coluna para a esquerda", "fr": "Déplacer la colonne à gauche", "de": "Spalte nach links verschieben", "it": "Sposta colonna a sinistra", "ja": "列を左に移動", "zh": "左移列", "ko": "열 왼쪽으로 이동", "ar": "نقل العمود إلى اليسار" },
+    "keywords": {
+      "es": ["reordenar columnas", "cambiar orden", "recorrer", "acomodar", "tabla", "arrastrar", "hoja de cálculo"],
+      "en": ["reorder columns", "change order", "shift left", "rearrange", "table", "drag", "spreadsheet"]
+    }
+  },
+  "column-move-right": {
+    "label": { "es": "Mover columna a la derecha", "en": "Move column right", "pt": "Mover coluna para a direita", "fr": "Déplacer la colonne à droite", "de": "Spalte nach rechts verschieben", "it": "Sposta colonna a destra", "ja": "列を右に移動", "zh": "右移列", "ko": "열 오른쪽으로 이동", "ar": "نقل العمود إلى اليمين" },
+    "keywords": {
+      "es": ["reordenar columnas", "cambiar orden", "recorrer", "acomodar", "tabla", "arrastrar", "hoja de cálculo"],
+      "en": ["reorder columns", "change order", "shift right", "rearrange", "table", "drag", "spreadsheet"]
+    }
+  },
+  "row-height": {
+    "label": { "es": "Alto de fila", "en": "Row height", "pt": "Altura da linha", "fr": "Hauteur de ligne", "de": "Zeilenhöhe", "it": "Altezza riga", "ja": "行の高さ", "zh": "行高", "ko": "행 높이", "ar": "ارتفاع الصف" },
+    "keywords": {
+      "es": ["ajustar altura", "redimensionar", "espaciado", "tamaño de fila", "hoja de cálculo", "tabla", "autoajustar"],
+      "en": ["resize row", "adjust height", "spacing", "row size", "spreadsheet", "table", "autofit"]
+    }
+  },
+  "column-width": {
+    "label": { "es": "Ancho de columna", "en": "Column width", "pt": "Largura da coluna", "fr": "Largeur de colonne", "de": "Spaltenbreite", "it": "Larghezza colonna", "ja": "列の幅", "zh": "列宽", "ko": "열 너비", "ar": "عرض العمود" },
+    "keywords": {
+      "es": ["ajustar ancho", "redimensionar", "autoajustar", "tamaño de columna", "hoja de cálculo", "tabla", "ensanchar"],
+      "en": ["resize column", "adjust width", "autofit", "column size", "spreadsheet", "table", "widen"]
+    }
+  },
+  "row-expand": {
+    "label": { "es": "Abrir registro", "en": "Expand record", "pt": "Expandir registro", "fr": "Ouvrir l’enregistrement", "de": "Datensatz öffnen", "it": "Apri record", "ja": "レコードを展開", "zh": "展开记录", "ko": "레코드 펼치기", "ar": "فتح السجل" },
+    "keywords": {
+      "es": ["expandir fila", "ver detalle", "ficha completa", "vista de detalle", "base de datos", "tabla", "editar campos"],
+      "en": ["open row", "view details", "detail view", "full record", "database", "table", "edit fields"]
+    }
+  },
+  "row-freeze": {
+    "label": { "es": "Inmovilizar filas", "en": "Freeze rows", "pt": "Congelar linhas", "fr": "Figer les lignes", "de": "Zeilen fixieren", "it": "Blocca righe", "ja": "行を固定", "zh": "冻结行", "ko": "행 고정", "ar": "تجميد الصفوف" },
+    "keywords": {
+      "es": ["fijar encabezado", "congelar", "fila superior", "mantener visible", "desplazamiento", "hoja de cálculo", "bloquear filas"],
+      "en": ["lock header", "pin rows", "top row", "keep visible", "scrolling", "spreadsheet", "sticky header"]
+    }
+  },
+  "column-freeze": {
+    "label": { "es": "Inmovilizar columnas", "en": "Freeze columns", "pt": "Congelar colunas", "fr": "Figer les colonnes", "de": "Spalten fixieren", "it": "Blocca colonne", "ja": "列を固定", "zh": "冻结列", "ko": "열 고정", "ar": "تجميد الأعمدة" },
+    "keywords": {
+      "es": ["fijar columna", "congelar", "primera columna", "mantener visible", "desplazamiento horizontal", "hoja de cálculo", "bloquear columnas"],
+      "en": ["lock column", "pin columns", "first column", "keep visible", "horizontal scroll", "spreadsheet", "sticky column"]
+    }
+  },
+  "table-freeze": {
+    "label": { "es": "Inmovilizar paneles", "en": "Freeze panes", "pt": "Congelar painéis", "fr": "Figer les volets", "de": "Fenster fixieren", "it": "Blocca riquadri", "ja": "ウィンドウ枠の固定", "zh": "冻结窗格", "ko": "틀 고정", "ar": "تجميد الأجزاء" },
+    "keywords": {
+      "es": ["congelar filas y columnas", "fijar encabezados", "mantener visible", "desplazamiento", "hoja de cálculo", "bloquear vista", "tabla"],
+      "en": ["freeze rows and columns", "lock headers", "keep visible", "scrolling", "spreadsheet", "pin headers", "table"]
+    }
+  },
+  "row-header": {
+    "label": { "es": "Fila de encabezado", "en": "Header row", "pt": "Linha de cabeçalho", "fr": "Ligne d’en-tête", "de": "Kopfzeile", "it": "Riga di intestazione", "ja": "見出し行", "zh": "标题行", "ko": "머리글 행", "ar": "صف العناوين" },
+    "keywords": {
+      "es": ["títulos de columna", "primera fila", "nombres de campo", "tabla", "hoja de cálculo", "rótulos", "cabecera"],
+      "en": ["column titles", "first row", "field names", "table", "spreadsheet", "labels", "top row"]
+    }
+  },
+  "column-header": {
+    "label": { "es": "Columna de encabezado", "en": "Header column", "pt": "Coluna de cabeçalho", "fr": "Colonne d’en-tête", "de": "Kopfspalte", "it": "Colonna di intestazione", "ja": "見出し列", "zh": "标题列", "ko": "머리글 열", "ar": "عمود العناوين" },
+    "keywords": {
+      "es": ["títulos de fila", "primera columna", "rótulos", "tabla", "hoja de cálculo", "etiquetas de fila", "cabecera"],
+      "en": ["row titles", "first column", "row labels", "table", "spreadsheet", "side header", "leftmost column"]
+    }
+  },
+  "row-banded": {
+    "label": { "es": "Filas alternadas", "en": "Banded rows", "pt": "Linhas em faixas", "fr": "Lignes à bandes", "de": "Gebänderte Zeilen", "it": "Righe alternate", "ja": "縞模様の行", "zh": "镶边行", "ko": "줄무늬 행", "ar": "صفوف متناوبة الألوان" },
+    "keywords": {
+      "es": ["colores alternos", "cebra", "rayado", "formato de tabla", "estilo de tabla", "legibilidad", "sombreado"],
+      "en": ["alternating colors", "zebra stripes", "striped rows", "table style", "table format", "readability", "shading"]
+    }
+  },
+  "row-select": {
+    "label": { "es": "Seleccionar fila", "en": "Select row", "pt": "Selecionar linha", "fr": "Sélectionner la ligne", "de": "Zeile auswählen", "it": "Seleziona riga", "ja": "行を選択", "zh": "选择行", "ko": "행 선택", "ar": "تحديد الصف" },
+    "keywords": {
+      "es": ["fila completa", "marcar fila", "renglón", "resaltar", "hoja de cálculo", "tabla", "elegir registro"],
+      "en": ["whole row", "entire row", "highlight row", "pick record", "spreadsheet", "table", "checkbox"]
+    }
+  },
+  "column-select": {
+    "label": { "es": "Seleccionar columna", "en": "Select column", "pt": "Selecionar coluna", "fr": "Sélectionner la colonne", "de": "Spalte auswählen", "it": "Seleziona colonna", "ja": "列を選択", "zh": "选择列", "ko": "열 선택", "ar": "تحديد العمود" },
+    "keywords": {
+      "es": ["columna completa", "marcar columna", "campo", "resaltar", "hoja de cálculo", "tabla", "elegir campo"],
+      "en": ["whole column", "entire column", "highlight column", "field", "spreadsheet", "table", "pick field"]
+    }
+  },
+  "row-total": {
+    "label": { "es": "Fila de totales", "en": "Total row", "pt": "Linha de totais", "fr": "Ligne de total", "de": "Ergebniszeile", "it": "Riga totale", "ja": "集計行", "zh": "汇总行", "ko": "요약 행", "ar": "صف الإجمالي" },
+    "keywords": {
+      "es": ["suma", "total general", "subtotal", "resumen", "pie de tabla", "calcular", "hoja de cálculo"],
+      "en": ["sum", "grand total", "subtotal", "summary", "table footer", "calculate", "spreadsheet"]
+    }
+  },
+  "table-pivot": {
+    "label": { "es": "Tabla dinámica", "en": "Pivot table", "pt": "Tabela dinâmica", "fr": "Tableau croisé dynamique", "de": "Pivot-Tabelle", "it": "Tabella pivot", "ja": "ピボットテーブル", "zh": "数据透视表", "ko": "피벗 테이블", "ar": "جدول محوري" },
+    "keywords": {
+      "es": ["resumir datos", "agrupar", "tabla cruzada", "análisis", "reporte", "totales", "hoja de cálculo"],
+      "en": ["summarize data", "group by", "crosstab", "analysis", "report", "totals", "spreadsheet"]
+    }
+  },
+  "table-lock": {
+    "label": { "es": "Proteger hoja", "en": "Protect sheet", "pt": "Proteger planilha", "fr": "Protéger la feuille", "de": "Blatt schützen", "it": "Proteggi foglio", "ja": "シートの保護", "zh": "保护工作表", "ko": "시트 보호", "ar": "حماية الورقة" },
+    "keywords": {
+      "es": ["bloquear celdas", "solo lectura", "contraseña", "evitar cambios", "permisos", "rango protegido", "hoja de cálculo"],
+      "en": ["lock cells", "read-only", "password", "prevent edits", "permissions", "protected range", "spreadsheet"]
+    }
+  },
+  "table-transpose": {
+    "label": { "es": "Transponer", "en": "Transpose", "pt": "Transpor", "fr": "Transposer", "de": "Transponieren", "it": "Trasponi", "ja": "行列を入れ替え", "zh": "转置", "ko": "행/열 바꿈", "ar": "تبديل الصفوف والأعمدة" },
+    "keywords": {
+      "es": ["intercambiar filas y columnas", "girar tabla", "invertir ejes", "pegado especial", "matriz", "hoja de cálculo", "rotar datos"],
+      "en": ["swap rows and columns", "flip table", "switch axes", "paste special", "matrix", "spreadsheet", "pivot data"]
+    }
+  },
+  "cell-merge": {
+    "label": { "es": "Combinar celdas", "en": "Merge cells", "pt": "Mesclar células", "fr": "Fusionner les cellules", "de": "Zellen verbinden", "it": "Unisci celle", "ja": "セルを結合", "zh": "合并单元格", "ko": "셀 병합", "ar": "دمج الخلايا" },
+    "keywords": {
+      "es": ["unir celdas", "fusionar", "juntar", "centrar en varias columnas", "tabla", "hoja de cálculo", "encabezado"],
+      "en": ["join cells", "combine", "merge and center", "span", "table", "spreadsheet", "colspan"]
+    }
+  },
+  "cell-split": {
+    "label": { "es": "Dividir celda", "en": "Split cell", "pt": "Dividir célula", "fr": "Fractionner la cellule", "de": "Zelle teilen", "it": "Dividi cella", "ja": "セルを分割", "zh": "拆分单元格", "ko": "셀 분할", "ar": "تقسيم الخلية" },
+    "keywords": {
+      "es": ["separar celdas", "deshacer combinación", "descombinar", "tabla", "hoja de cálculo", "partir", "desunir"],
+      "en": ["unmerge", "separate cells", "undo merge", "table", "spreadsheet", "break apart", "divide"]
+    }
+  },
+  "cell-range": {
+    "label": { "es": "Rango de celdas", "en": "Cell range", "pt": "Intervalo de células", "fr": "Plage de cellules", "de": "Zellbereich", "it": "Intervallo di celle", "ja": "セル範囲", "zh": "单元格区域", "ko": "셀 범위", "ar": "نطاق الخلايا" },
+    "keywords": {
+      "es": ["selección", "seleccionar celdas", "área", "bloque", "hoja de cálculo", "A1:B10", "rango con nombre"],
+      "en": ["selection", "select cells", "area", "block", "spreadsheet", "A1:B10", "named range"]
+    }
+  },
+  "cell-autofill": {
+    "label": { "es": "Autorrellenar", "en": "Autofill", "pt": "Preenchimento automático", "fr": "Remplissage automatique", "de": "Automatisch ausfüllen", "it": "Riempimento automatico", "ja": "オートフィル", "zh": "自动填充", "ko": "자동 채우기", "ar": "تعبئة تلقائية" },
+    "keywords": {
+      "es": ["rellenar hacia abajo", "copiar fórmula", "serie", "arrastrar", "controlador de relleno", "completar", "hoja de cálculo"],
+      "en": ["fill down", "fill series", "copy formula", "drag", "fill handle", "smart fill", "spreadsheet"]
+    }
+  },
+  "cell-comment": {
+    "label": { "es": "Comentario en celda", "en": "Cell comment", "pt": "Comentário na célula", "fr": "Commentaire de cellule", "de": "Zellkommentar", "it": "Commento nella cella", "ja": "セルのコメント", "zh": "单元格批注", "ko": "셀 메모", "ar": "تعليق على الخلية" },
+    "keywords": {
+      "es": ["nota", "anotación", "observación", "esquina marcada", "hoja de cálculo", "revisar", "mención"],
+      "en": ["note", "annotation", "remark", "corner marker", "spreadsheet", "review", "mention"]
+    }
+  },
+  "formula-bar": {
+    "label": { "es": "Barra de fórmulas", "en": "Formula bar", "pt": "Barra de fórmulas", "fr": "Barre de formule", "de": "Bearbeitungsleiste", "it": "Barra della formula", "ja": "数式バー", "zh": "编辑栏", "ko": "수식 입력줄", "ar": "شريط الصيغة" },
+    "keywords": {
+      "es": ["función", "editar fórmula", "calcular", "fx", "hoja de cálculo", "expresión", "contenido de celda"],
+      "en": ["function", "edit formula", "calculate", "fx", "spreadsheet", "expression", "cell contents"]
+    }
+  },
+  "row-group": {
+    "label": { "es": "Agrupar filas", "en": "Group rows", "pt": "Agrupar linhas", "fr": "Grouper les lignes", "de": "Zeilen gruppieren", "it": "Raggruppa righe", "ja": "行をグループ化", "zh": "组合行", "ko": "행 그룹화", "ar": "تجميع الصفوف" },
+    "keywords": {
+      "es": ["esquema", "contraer", "expandir", "plegar", "subtotales", "jerarquía", "hoja de cálculo"],
+      "en": ["outline", "collapse", "expand", "fold", "subtotals", "hierarchy", "spreadsheet"]
+    }
+  },
+  "column-group": {
+    "label": { "es": "Agrupar columnas", "en": "Group columns", "pt": "Agrupar colunas", "fr": "Grouper les colonnes", "de": "Spalten gruppieren", "it": "Raggruppa colonne", "ja": "列をグループ化", "zh": "组合列", "ko": "열 그룹화", "ar": "تجميع الأعمدة" },
+    "keywords": {
+      "es": ["esquema", "contraer", "expandir", "ocultar columnas", "plegar", "jerarquía", "hoja de cálculo"],
+      "en": ["outline", "collapse", "expand", "hide columns", "fold", "hierarchy", "spreadsheet"]
+    }
+  },
+  "worksheet": {
+    "label": { "es": "Hoja de trabajo", "en": "Worksheet", "pt": "Aba da planilha", "fr": "Feuille du classeur", "de": "Arbeitsblatt", "it": "Foglio di lavoro", "ja": "ワークシート", "zh": "工作表", "ko": "워크시트", "ar": "ورقة عمل" },
+    "keywords": {
+      "es": ["pestañas de hojas", "libro de trabajo", "hoja de cálculo", "agregar hoja", "cambiar de hoja", "renombrar hoja", "tabla"],
+      "en": ["sheet tabs", "workbook", "spreadsheet", "add sheet", "switch sheet", "rename sheet", "tab"]
+    }
+  },
+  "stapler": {
+    "label": { "es": "Engrapadora", "en": "Stapler", "pt": "Grampeador", "fr": "Agrafeuse", "de": "Hefter", "it": "Cucitrice", "ja": "ホッチキス", "zh": "订书机", "ko": "스테이플러", "ar": "دبّاسة" },
+    "keywords": {
+      "es": ["engrapar", "grapas", "unir hojas", "papelería", "oficina", "sujetar", "juntar documentos"],
+      "en": ["staple", "staples", "fasten pages", "stationery", "office", "attach", "bind"]
+    }
+  },
+  "binder": {
+    "label": { "es": "Carpeta de argollas", "en": "Binder", "pt": "Fichário", "fr": "Classeur", "de": "Ordner", "it": "Raccoglitore", "ja": "バインダー", "zh": "活页夹", "ko": "바인더", "ar": "ملف حلقات" },
+    "keywords": {
+      "es": ["lefort", "expediente", "archivar documentos", "clasificador", "papelería", "carpeta de palanca", "carpeta de anillos"],
+      "en": ["ring binder", "lever arch file", "file folder", "archive", "documents", "organizer", "stationery"]
+    }
+  },
+  "binder-clip": {
+    "label": { "es": "Clip mariposa", "en": "Binder clip", "pt": "Prendedor de papel", "fr": "Pince double clic", "de": "Foldback-Klammer", "it": "Clip fermacarte", "ja": "ダブルクリップ", "zh": "长尾夹", "ko": "바인더 클립", "ar": "مشبك أوراق" },
+    "keywords": {
+      "es": ["sujetar papeles", "pinza", "agrupar hojas", "broche", "papelería", "oficina", "documentos"],
+      "en": ["paper clamp", "foldback clip", "hold papers", "bulldog clip", "stationery", "office", "bundle"]
+    }
+  },
+  "tape-dispenser": {
+    "label": { "es": "Despachador de cinta", "en": "Tape dispenser", "pt": "Suporte para fita adesiva", "fr": "Dévidoir de ruban adhésif", "de": "Klebebandabroller", "it": "Portanastro", "ja": "テープカッター", "zh": "胶带座", "ko": "테이프 디스펜서", "ar": "حامل الشريط اللاصق" },
+    "keywords": {
+      "es": ["diurex", "cinta adhesiva", "pegar", "masking", "papelería", "oficina", "cinta canela"],
+      "en": ["sticky tape", "scotch tape", "adhesive", "stick", "stationery", "office", "tape roll"]
+    }
+  },
+  "rubber-band": {
+    "label": { "es": "Liga", "en": "Rubber band", "pt": "Elástico", "fr": "Élastique", "de": "Gummiband", "it": "Elastico", "ja": "輪ゴム", "zh": "橡皮筋", "ko": "고무줄", "ar": "شريط مطاطي" },
+    "keywords": {
+      "es": ["resorte", "amarrar", "agrupar", "atar", "papelería", "elástico", "juntar"],
+      "en": ["elastic band", "bundle", "tie together", "group", "stationery", "elastic", "wrap"]
+    }
+  },
+  "letter-opener": {
+    "label": { "es": "Abrecartas", "en": "Letter opener", "pt": "Abridor de cartas", "fr": "Coupe-papier", "de": "Brieföffner", "it": "Tagliacarte", "ja": "ペーパーナイフ", "zh": "拆信刀", "ko": "편지 칼", "ar": "فتّاحة الرسائل" },
+    "keywords": {
+      "es": ["abrir correo", "correspondencia", "sobre", "cartas recibidas", "cortapapel", "correo entrante", "oficina"],
+      "en": ["open mail", "envelope", "paper knife", "correspondence", "incoming mail", "inbox", "office"]
+    }
+  },
+  "hole-punch": {
+    "label": { "es": "Perforadora", "en": "Hole punch", "pt": "Furador", "fr": "Perforatrice", "de": "Locher", "it": "Perforatrice", "ja": "穴あけパンチ", "zh": "打孔机", "ko": "펀치", "ar": "خرّامة الورق" },
+    "keywords": {
+      "es": ["perforar", "hacer agujeros", "carpeta de argollas", "archivar", "papelería", "oficina", "taladro de papel"],
+      "en": ["punch holes", "paper punch", "ring binder", "file", "stationery", "office", "perforate"]
+    }
+  },
+  "pencil-cup": {
+    "label": { "es": "Portalápices", "en": "Pencil cup", "pt": "Porta-lápis", "fr": "Pot à crayons", "de": "Stiftehalter", "it": "Portapenne", "ja": "ペン立て", "zh": "笔筒", "ko": "연필꽂이", "ar": "حامل الأقلام" },
+    "keywords": {
+      "es": ["organizador de escritorio", "plumas", "lápices", "bote de lápices", "papelería", "escritorio", "útiles"],
+      "en": ["pen holder", "desk organizer", "pens", "pencils", "stationery", "desk", "supplies"]
+    }
+  },
+  "pencil-sharpener": {
+    "label": { "es": "Sacapuntas", "en": "Pencil sharpener", "pt": "Apontador", "fr": "Taille-crayon", "de": "Anspitzer", "it": "Temperamatite", "ja": "鉛筆削り", "zh": "卷笔刀", "ko": "연필깎이", "ar": "مبراة" },
+    "keywords": {
+      "es": ["afilar", "sacar punta", "lápiz", "punta", "papelería", "útiles escolares", "escuela"],
+      "en": ["sharpen", "pencil", "point", "stationery", "school supplies", "school", "office"]
+    }
+  },
+  "paper-trimmer": {
+    "label": { "es": "Guillotina", "en": "Paper trimmer", "pt": "Guilhotina de papel", "fr": "Massicot", "de": "Papierschneider", "it": "Taglierina", "ja": "ペーパーカッター", "zh": "切纸机", "ko": "재단기", "ar": "قطّاعة ورق" },
+    "keywords": {
+      "es": ["cortar papel", "cortadora", "recortar", "tarjetas", "imprenta", "papelería", "cizalla"],
+      "en": ["paper cutter", "guillotine", "cut paper", "trim", "print shop", "stationery", "crop"]
+    }
+  },
+  "stationery": {
+    "label": { "es": "Artículos de oficina", "en": "Office supplies", "pt": "Material de escritório", "fr": "Fournitures de bureau", "de": "Bürobedarf", "it": "Cancelleria", "ja": "文房具", "zh": "文具", "ko": "사무용품", "ar": "لوازم مكتبية" },
+    "keywords": {
+      "es": ["papelería", "útiles", "insumos", "material", "lápices y plumas", "suministros", "compras de oficina"],
+      "en": ["stationery", "supplies", "pens and pencils", "materials", "consumables", "office store", "desk supplies"]
+    }
+  },
+  "letter-tray": {
+    "label": { "es": "Charola de documentos", "en": "Letter tray", "pt": "Bandeja de documentos", "fr": "Corbeille à courrier", "de": "Briefablage", "it": "Vaschetta portacorrispondenza", "ja": "レタートレー", "zh": "文件盘", "ko": "서류함", "ar": "صينية مستندات" },
+    "keywords": {
+      "es": ["entrada y salida", "bandeja", "pendientes", "correspondencia", "archivar", "papeles", "escritorio"],
+      "en": ["in tray", "out tray", "inbox", "paperwork", "correspondence", "desk organizer", "stacking tray"]
+    }
+  },
+  "label-maker": {
+    "label": { "es": "Rotuladora", "en": "Label maker", "pt": "Rotuladora", "fr": "Étiqueteuse", "de": "Beschriftungsgerät", "it": "Etichettatrice", "ja": "ラベルライター", "zh": "标签机", "ko": "라벨 프린터", "ar": "آلة طباعة الملصقات" },
+    "keywords": {
+      "es": ["etiquetadora", "etiquetas", "imprimir etiquetas", "rotular", "organizar", "archivo", "marcar"],
+      "en": ["labeler", "label printer", "print tags", "tagging", "organize", "filing", "mark"]
+    }
+  },
+  "typewriter": {
+    "label": { "es": "Máquina de escribir", "en": "Typewriter", "pt": "Máquina de escrever", "fr": "Machine à écrire", "de": "Schreibmaschine", "it": "Macchina da scrivere", "ja": "タイプライター", "zh": "打字机", "ko": "타자기", "ar": "آلة كاتبة" },
+    "keywords": {
+      "es": ["mecanografía", "teclear", "redactar", "retro", "modo de enfoque", "clásico", "escritura"],
+      "en": ["typing", "writing", "retro", "draft", "focus mode", "classic", "manuscript"]
+    }
+  },
+  "laminator": {
+    "label": { "es": "Enmicadora", "en": "Laminator", "pt": "Plastificadora", "fr": "Plastifieuse", "de": "Laminiergerät", "it": "Plastificatrice", "ja": "ラミネーター", "zh": "过塑机", "ko": "코팅기", "ar": "آلة تغليف حراري" },
+    "keywords": {
+      "es": ["enmicar", "plastificar", "laminar", "proteger documento", "mica", "credencial", "papelería"],
+      "en": ["laminate", "lamination", "protect document", "pouch", "ID card", "seal", "stationery"]
+    }
+  },
+  "paper-ream": {
+    "label": { "es": "Resma de papel", "en": "Ream of paper", "pt": "Resma de papel", "fr": "Rame de papier", "de": "Papierpaket", "it": "Risma di carta", "ja": "コピー用紙の束", "zh": "一令纸", "ko": "용지 묶음", "ar": "رزمة ورق" },
+    "keywords": {
+      "es": ["paquete de hojas", "hojas blancas", "papel bond", "tamaño carta", "impresora", "suministros", "papelería"],
+      "en": ["paper pack", "printer paper", "copy paper", "letter paper", "A4", "supplies", "paper supply"]
+    }
+  },
+  "desk": {
+    "label": { "es": "Escritorio", "en": "Desk", "pt": "Escrivaninha", "fr": "Bureau", "de": "Schreibtisch", "it": "Scrivania", "ja": "デスク", "zh": "办公桌", "ko": "책상", "ar": "مكتب" },
+    "keywords": {
+      "es": ["mesa de trabajo", "oficina", "lugar de trabajo", "mueble", "puesto", "home office", "despacho"],
+      "en": ["work table", "office", "workplace", "furniture", "home office", "bureau", "study"]
+    }
+  },
+  "workstation": {
+    "label": { "es": "Estación de trabajo", "en": "Workstation", "pt": "Estação de trabalho", "fr": "Poste de travail", "de": "Arbeitsplatz", "it": "Postazione di lavoro", "ja": "ワークステーション", "zh": "工位", "ko": "워크스테이션", "ar": "محطة عمل" },
+    "keywords": {
+      "es": ["lugar de trabajo", "escritorio con computadora", "puesto", "espacio de trabajo", "home office", "reservar lugar", "oficina"],
+      "en": ["workspace", "desk setup", "computer desk", "hot desk", "home office", "desk booking", "seat"]
+    }
+  },
+  "office-chair": {
+    "label": { "es": "Silla de oficina", "en": "Office chair", "pt": "Cadeira de escritório", "fr": "Chaise de bureau", "de": "Bürostuhl", "it": "Sedia da ufficio", "ja": "オフィスチェア", "zh": "办公椅", "ko": "사무용 의자", "ar": "كرسي مكتب" },
+    "keywords": {
+      "es": ["silla giratoria", "asiento", "ergonomía", "mobiliario", "lugar", "escritorio", "silla ejecutiva"],
+      "en": ["swivel chair", "seat", "ergonomics", "furniture", "desk chair", "seating", "task chair"]
+    }
+  },
+  "standing-desk": {
+    "label": { "es": "Escritorio de pie", "en": "Standing desk", "pt": "Mesa para trabalhar em pé", "fr": "Bureau assis-debout", "de": "Stehschreibtisch", "it": "Scrivania regolabile in altezza", "ja": "スタンディングデスク", "zh": "升降桌", "ko": "스탠딩 책상", "ar": "مكتب وقوف" },
+    "keywords": {
+      "es": ["altura ajustable", "trabajar de pie", "ergonomía", "escritorio elevable", "salud", "postura", "mobiliario"],
+      "en": ["sit-stand desk", "height adjustable", "ergonomics", "work standing", "posture", "health", "furniture"]
+    }
+  },
+  "cubicle": {
+    "label": { "es": "Cubículo", "en": "Cubicle", "pt": "Baia", "fr": "Box de bureau", "de": "Bürokabine", "it": "Cubicolo", "ja": "仕切り付きデスク", "zh": "办公隔间", "ko": "칸막이 책상", "ar": "حجرة مكتبية" },
+    "keywords": {
+      "es": ["mampara", "oficina abierta", "lugar de trabajo", "privacidad", "separador", "puesto", "módulo"],
+      "en": ["office pod", "open office", "partition", "workspace", "privacy", "booth", "workstation"]
+    }
+  },
+  "desk-lamp": {
+    "label": { "es": "Lámpara de escritorio", "en": "Desk lamp", "pt": "Luminária de mesa", "fr": "Lampe de bureau", "de": "Schreibtischlampe", "it": "Lampada da scrivania", "ja": "デスクライト", "zh": "台灯", "ko": "책상 스탠드", "ar": "مصباح مكتب" },
+    "keywords": {
+      "es": ["iluminación", "luz", "lámpara articulada", "leer", "estudiar", "lugar de trabajo", "encender"],
+      "en": ["lighting", "light", "task lamp", "reading lamp", "study", "workspace", "turn on"]
+    }
+  },
+  "reception-desk": {
+    "label": { "es": "Recepción", "en": "Reception desk", "pt": "Recepção", "fr": "Accueil", "de": "Empfang", "it": "Reception", "ja": "受付", "zh": "前台", "ko": "안내 데스크", "ar": "مكتب الاستقبال" },
+    "keywords": {
+      "es": ["mostrador", "registro de visitas", "bienvenida", "recepcionista", "lobby", "control de acceso", "check-in"],
+      "en": ["front desk", "check-in", "welcome", "receptionist", "lobby", "visitor log", "access control"]
+    }
+  },
+  "desk-phone": {
+    "label": { "es": "Teléfono fijo", "en": "Desk phone", "pt": "Telefone fixo", "fr": "Téléphone de bureau", "de": "Tischtelefon", "it": "Telefono fisso", "ja": "固定電話", "zh": "座机", "ko": "유선 전화기", "ar": "هاتف مكتبي" },
+    "keywords": {
+      "es": ["teléfono de oficina", "extensión", "conmutador", "línea fija", "llamar", "auricular", "telefonía IP"],
+      "en": ["office phone", "landline", "extension", "PBX", "call", "handset", "VoIP"]
+    }
+  },
+  "water-cooler": {
+    "label": { "es": "Despachador de agua", "en": "Water cooler", "pt": "Bebedouro", "fr": "Fontaine à eau", "de": "Wasserspender", "it": "Distributore d’acqua", "ja": "ウォーターサーバー", "zh": "饮水机", "ko": "정수기", "ar": "مبرد مياه" },
+    "keywords": {
+      "es": ["garrafón", "cafetería", "descanso", "plática informal", "área común", "hidratación", "pausa"],
+      "en": ["water dispenser", "break room", "small talk", "casual chat", "hydration", "common area", "coffee break"]
+    }
+  },
+  "printer-check": {
+    "label": { "es": "Impresión completada", "en": "Printing done", "pt": "Impressão concluída", "fr": "Impression terminée", "de": "Druck abgeschlossen", "it": "Stampa completata", "ja": "印刷完了", "zh": "打印完成", "ko": "인쇄 완료", "ar": "اكتملت الطباعة" },
+    "keywords": {
+      "es": ["lista", "impresora", "terminada", "trabajo completado", "documento impreso", "recoger impresión", "éxito"],
+      "en": ["print complete", "printer", "finished", "job done", "printed", "ready to pick up", "success"]
+    }
+  },
+  "printer-alert": {
+    "label": { "es": "Error de impresora", "en": "Printer error", "pt": "Erro na impressora", "fr": "Erreur d’imprimante", "de": "Druckerfehler", "it": "Errore della stampante", "ja": "プリンターエラー", "zh": "打印机错误", "ko": "프린터 오류", "ar": "خطأ في الطابعة" },
+    "keywords": {
+      "es": ["atasco de papel", "sin papel", "sin tinta", "falla", "impresión fallida", "revisar impresora", "tóner bajo"],
+      "en": ["paper jam", "out of paper", "low ink", "low toner", "print failed", "check printer", "offline"]
+    }
+  },
+  "print-queue": {
+    "label": { "es": "Cola de impresión", "en": "Print queue", "pt": "Fila de impressão", "fr": "File d’attente d’impression", "de": "Druckwarteschlange", "it": "Coda di stampa", "ja": "印刷キュー", "zh": "打印队列", "ko": "인쇄 대기열", "ar": "قائمة انتظار الطباعة" },
+    "keywords": {
+      "es": ["trabajos pendientes", "impresora", "en espera", "imprimir", "lista de impresión", "orden de impresión", "spooler"],
+      "en": ["print jobs", "printer", "waiting", "pending jobs", "spooler", "print list", "printing"]
+    }
+  },
+  "print-duplex": {
+    "label": { "es": "Impresión a doble cara", "en": "Double-sided printing", "pt": "Impressão frente e verso", "fr": "Impression recto verso", "de": "Beidseitiger Druck", "it": "Stampa fronte-retro", "ja": "両面印刷", "zh": "双面打印", "ko": "양면 인쇄", "ar": "طباعة على الوجهين" },
+    "keywords": {
+      "es": ["dúplex", "ambos lados", "frente y vuelta", "ahorrar papel", "impresora", "imprimir", "dos caras"],
+      "en": ["duplex", "both sides", "two-sided", "save paper", "printer", "front and back", "print"]
+    }
+  },
+  "photocopier": {
+    "label": { "es": "Fotocopiadora", "en": "Photocopier", "pt": "Fotocopiadora", "fr": "Photocopieuse", "de": "Fotokopierer", "it": "Fotocopiatrice", "ja": "コピー機", "zh": "复印机", "ko": "복사기", "ar": "آلة تصوير المستندات" },
+    "keywords": {
+      "es": ["copias", "sacar copias", "multifuncional", "escanear", "centro de copiado", "duplicar", "impresora"],
+      "en": ["copier", "copy machine", "make copies", "copy room", "multifunction", "scan", "duplicate"]
+    }
+  },
+  "sign-off": {
+    "label": { "es": "Visto bueno", "en": "Sign-off", "pt": "Aprovação final", "fr": "Validation finale", "de": "Freigabe", "it": "Approvazione finale", "ja": "最終承認", "zh": "最终签核", "ko": "최종 승인", "ar": "الاعتماد النهائي" },
+    "keywords": {
+      "es": ["aprobación final", "autorizar", "firmar", "conformidad", "liberar entrega", "aceptación", "cierre"],
+      "en": ["final approval", "approve", "authorize", "sign", "acceptance", "release", "green light"]
+    }
+  },
+  "approval-chain": {
+    "label": { "es": "Cadena de aprobación", "en": "Approval chain", "pt": "Cadeia de aprovação", "fr": "Circuit d’approbation", "de": "Genehmigungskette", "it": "Catena di approvazione", "ja": "承認フロー", "zh": "审批流程", "ko": "결재 라인", "ar": "سلسلة الموافقات" },
+    "keywords": {
+      "es": ["flujo de aprobación", "autorizaciones", "aprobadores", "visto bueno", "jerarquía", "pasos", "firmas"],
+      "en": ["approval workflow", "approvers", "sign-offs", "authorization", "routing", "sequence", "escalation"]
+    }
+  },
+  "rubber-stamp-check": {
+    "label": { "es": "Aprobado", "en": "Approved", "pt": "Aprovado", "fr": "Approuvé", "de": "Genehmigt", "it": "Approvato", "ja": "承認済み", "zh": "已批准", "ko": "승인됨", "ar": "تمت الموافقة" },
+    "keywords": {
+      "es": ["sello", "autorizado", "aceptado", "visto bueno", "validado", "sellar", "conforme"],
+      "en": ["stamp", "authorized", "accepted", "okayed", "validated", "stamped", "passed"]
+    }
+  },
+  "rubber-stamp-clock": {
+    "label": { "es": "Pendiente de aprobación", "en": "Awaiting approval", "pt": "Aguardando aprovação", "fr": "En attente d’approbation", "de": "Genehmigung ausstehend", "it": "In attesa di approvazione", "ja": "承認待ち", "zh": "待审批", "ko": "승인 대기", "ar": "بانتظار الموافقة" },
+    "keywords": {
+      "es": ["sello", "en revisión", "por autorizar", "en espera", "trámite", "falta firma", "solicitud"],
+      "en": ["stamp", "pending", "under review", "on hold", "request", "awaiting signature", "in progress"]
+    }
+  },
+  "rubber-stamp-x": {
+    "label": { "es": "Rechazado", "en": "Rejected", "pt": "Rejeitado", "fr": "Refusé", "de": "Abgelehnt", "it": "Rifiutato", "ja": "却下", "zh": "已拒绝", "ko": "반려됨", "ar": "مرفوض" },
+    "keywords": {
+      "es": ["sello", "denegado", "no aprobado", "negado", "improcedente", "devuelto", "cancelado"],
+      "en": ["stamp", "denied", "declined", "not approved", "returned", "refused", "void"]
+    }
+  },
+  "date-stamp": {
+    "label": { "es": "Fechador", "en": "Date stamp", "pt": "Carimbo datador", "fr": "Dateur", "de": "Datumstempel", "it": "Datario", "ja": "日付印", "zh": "日期章", "ko": "날짜 도장", "ar": "ختم التاريخ" },
+    "keywords": {
+      "es": ["sello de fecha", "recibido", "acuse", "sellar documento", "registro de entrada", "oficialía de partes", "correspondencia"],
+      "en": ["dater", "received", "receipt", "stamp document", "date received", "mailroom", "logged"]
+    }
+  }
+}

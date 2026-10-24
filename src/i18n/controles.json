@@ -1,0 +1,758 @@
+{
+  "input": {
+    "label": { "es": "Campo de texto", "en": "Text field", "pt": "Campo de texto", "fr": "Champ de texte", "de": "Texteingabefeld", "it": "Campo di testo", "ja": "テキストフィールド", "zh": "文本输入框", "ko": "텍스트 필드", "ar": "حقل نصي" },
+    "keywords": {
+      "es": ["caja de texto", "entrada", "escribir", "respuesta corta", "formulario", "una línea", "input"],
+      "en": ["text box", "input", "type", "short answer", "form field", "single line", "entry"]
+    }
+  },
+  "input-search": {
+    "label": { "es": "Campo de búsqueda", "en": "Search field", "pt": "Campo de pesquisa", "fr": "Champ de recherche", "de": "Suchfeld", "it": "Campo di ricerca", "ja": "検索フィールド", "zh": "搜索框", "ko": "검색창", "ar": "حقل البحث" },
+    "keywords": {
+      "es": ["barra de búsqueda", "buscador", "buscar en la lista", "lupa", "consulta", "encontrar", "filtrar resultados"],
+      "en": ["search bar", "search box", "find", "magnifier", "query", "look up", "filter results"]
+    }
+  },
+  "input-search-filter": {
+    "label": { "es": "Búsqueda con filtros", "en": "Search with filters", "pt": "Pesquisa com filtros", "fr": "Recherche avec filtres", "de": "Suche mit Filtern", "it": "Ricerca con filtri", "ja": "フィルター付き検索", "zh": "带筛选的搜索", "ko": "필터 검색", "ar": "بحث مع عوامل التصفية" },
+    "keywords": {
+      "es": ["filtrar", "refinar resultados", "búsqueda avanzada", "acotar", "criterios", "ordenar resultados", "barra de búsqueda"],
+      "en": ["filter", "refine results", "advanced search", "narrow down", "criteria", "faceted search", "search bar"]
+    }
+  },
+  "input-search-shortcut": {
+    "label": { "es": "Búsqueda rápida", "en": "Quick search", "pt": "Pesquisa rápida", "fr": "Recherche rapide", "de": "Schnellsuche", "it": "Ricerca rapida", "ja": "クイック検索", "zh": "快速搜索", "ko": "빠른 검색", "ar": "بحث سريع" },
+    "keywords": {
+      "es": ["cmd k", "paleta de comandos", "atajo de teclado", "buscar en todo", "lanzador", "acceso rápido", "búsqueda global"],
+      "en": ["cmd k", "command palette", "keyboard shortcut", "search everywhere", "launcher", "quick open", "global search"]
+    }
+  },
+  "input-clear": {
+    "label": { "es": "Vaciar campo", "en": "Clear field", "pt": "Limpar campo", "fr": "Effacer le champ", "de": "Feld leeren", "it": "Cancella campo", "ja": "入力をクリア", "zh": "清空输入", "ko": "입력 지우기", "ar": "مسح الحقل" },
+    "keywords": {
+      "es": ["borrar texto", "limpiar", "botón x", "reiniciar búsqueda", "quitar filtro", "empezar de nuevo", "deshacer lo escrito"],
+      "en": ["erase text", "reset", "x button", "reset search", "remove filter", "start over", "clearable input"]
+    }
+  },
+  "input-focus": {
+    "label": { "es": "Campo enfocado", "en": "Focused field", "pt": "Campo em foco", "fr": "Champ actif", "de": "Fokussiertes Feld", "it": "Campo attivo", "ja": "フォーカス中のフィールド", "zh": "已聚焦的输入框", "ko": "포커스된 필드", "ar": "حقل في حالة التركيز" },
+    "keywords": {
+      "es": ["foco", "anillo de foco", "navegación con teclado", "accesibilidad", "contorno", "estado activo", "tabulador"],
+      "en": ["focus", "focus ring", "keyboard navigation", "accessibility", "outline", "active state", "tab order"]
+    }
+  },
+  "input-check": {
+    "label": { "es": "Campo válido", "en": "Valid field", "pt": "Campo válido", "fr": "Champ valide", "de": "Gültiges Feld", "it": "Campo valido", "ja": "有効な入力", "zh": "输入有效", "ko": "유효한 입력", "ar": "حقل صالح" },
+    "keywords": {
+      "es": ["validado", "correcto", "aprobado", "dato verificado", "estado de éxito", "todo bien", "validación"],
+      "en": ["validated", "correct", "passed", "verified value", "success state", "looks good", "validation"]
+    }
+  },
+  "input-alert": {
+    "label": { "es": "Campo con advertencia", "en": "Field warning", "pt": "Campo com aviso", "fr": "Champ avec avertissement", "de": "Feld mit Warnung", "it": "Campo con avviso", "ja": "警告のあるフィールド", "zh": "输入警告", "ko": "입력 경고", "ar": "حقل به تحذير" },
+    "keywords": {
+      "es": ["aviso", "revisar dato", "atención", "valor dudoso", "estado de advertencia", "validación", "verificar"],
+      "en": ["caution", "check value", "attention", "unusual value", "warning state", "validation", "double-check"]
+    }
+  },
+  "input-x": {
+    "label": { "es": "Campo no válido", "en": "Invalid field", "pt": "Campo inválido", "fr": "Champ non valide", "de": "Ungültiges Feld", "it": "Campo non valido", "ja": "無効な入力", "zh": "输入无效", "ko": "잘못된 입력", "ar": "حقل غير صالح" },
+    "keywords": {
+      "es": ["error", "dato incorrecto", "validación fallida", "estado de error", "corregir", "formato incorrecto", "no se puede enviar"],
+      "en": ["error", "wrong value", "failed validation", "error state", "fix", "wrong format", "can't submit"]
+    }
+  },
+  "input-lock": {
+    "label": { "es": "Campo de solo lectura", "en": "Read-only field", "pt": "Campo somente leitura", "fr": "Champ en lecture seule", "de": "Schreibgeschütztes Feld", "it": "Campo di sola lettura", "ja": "読み取り専用フィールド", "zh": "只读字段", "ko": "읽기 전용 필드", "ar": "حقل للقراءة فقط" },
+    "keywords": {
+      "es": ["bloqueado", "no editable", "deshabilitado", "protegido", "valor fijo", "sin permiso", "candado"],
+      "en": ["locked", "not editable", "disabled", "protected", "fixed value", "no permission", "padlock"]
+    }
+  },
+  "input-plus": {
+    "label": { "es": "Agregar campo", "en": "Add field", "pt": "Adicionar campo", "fr": "Ajouter un champ", "de": "Feld hinzufügen", "it": "Aggiungi campo", "ja": "フィールドを追加", "zh": "添加字段", "ko": "필드 추가", "ar": "إضافة حقل" },
+    "keywords": {
+      "es": ["nueva pregunta", "campo personalizado", "constructor de formularios", "agregar pregunta", "diseñar formulario", "más datos", "propiedad nueva"],
+      "en": ["new question", "custom field", "form builder", "add question", "build form", "new property", "extra field"]
+    }
+  },
+  "input-required": {
+    "label": { "es": "Campo obligatorio", "en": "Required field", "pt": "Campo obrigatório", "fr": "Champ obligatoire", "de": "Pflichtfeld", "it": "Campo obbligatorio", "ja": "必須項目", "zh": "必填项", "ko": "필수 입력", "ar": "حقل إلزامي" },
+    "keywords": {
+      "es": ["asterisco", "requerido", "necesario", "no opcional", "se debe llenar", "validación", "dato indispensable"],
+      "en": ["asterisk", "mandatory", "needed", "not optional", "must fill", "validation", "compulsory"]
+    }
+  },
+  "input-number": {
+    "label": { "es": "Campo numérico", "en": "Number field", "pt": "Campo numérico", "fr": "Champ numérique", "de": "Zahlenfeld", "it": "Campo numerico", "ja": "数値フィールド", "zh": "数字输入框", "ko": "숫자 입력", "ar": "حقل رقمي" },
+    "keywords": {
+      "es": ["número", "cantidad", "cifra", "subir y bajar", "incrementar", "valor numérico", "entero"],
+      "en": ["number", "quantity", "spin box", "increment", "decrement", "numeric value", "integer"]
+    }
+  },
+  "input-currency": {
+    "label": { "es": "Campo de monto", "en": "Amount field", "pt": "Campo de valor", "fr": "Champ de montant", "de": "Betragsfeld", "it": "Campo importo", "ja": "金額フィールド", "zh": "金额输入框", "ko": "금액 입력", "ar": "حقل المبلغ" },
+    "keywords": {
+      "es": ["precio", "pago", "presupuesto", "dinero", "importe", "moneda", "cobro"],
+      "en": ["price", "payment", "budget", "money", "currency", "sum", "charge"]
+    }
+  },
+  "input-percent": {
+    "label": { "es": "Campo de porcentaje", "en": "Percentage field", "pt": "Campo de porcentagem", "fr": "Champ de pourcentage", "de": "Prozentfeld", "it": "Campo percentuale", "ja": "パーセント入力", "zh": "百分比输入框", "ko": "백분율 입력", "ar": "حقل النسبة المئوية" },
+    "keywords": {
+      "es": ["por ciento", "tasa", "descuento", "comisión", "proporción", "impuesto", "interés"],
+      "en": ["percent", "rate", "discount", "commission", "share", "tax rate", "interest"]
+    }
+  },
+  "input-email": {
+    "label": { "es": "Campo de correo", "en": "Email field", "pt": "Campo de e-mail", "fr": "Champ d’e-mail", "de": "E-Mail-Feld", "it": "Campo email", "ja": "メールアドレス欄", "zh": "电子邮件输入框", "ko": "이메일 입력란", "ar": "حقل البريد الإلكتروني" },
+    "keywords": {
+      "es": ["correo electrónico", "email", "arroba", "dirección de correo", "contacto", "registro", "suscripción"],
+      "en": ["email address", "e-mail", "at sign", "mail", "contact", "sign up", "subscribe"]
+    }
+  },
+  "input-phone": {
+    "label": { "es": "Campo de teléfono", "en": "Phone field", "pt": "Campo de telefone", "fr": "Champ de téléphone", "de": "Telefonfeld", "it": "Campo telefono", "ja": "電話番号欄", "zh": "电话号码输入框", "ko": "전화번호 입력란", "ar": "حقل رقم الهاتف" },
+    "keywords": {
+      "es": ["número de teléfono", "celular", "lada", "móvil", "contacto", "código de país", "llamar"],
+      "en": ["phone number", "mobile", "cell", "country code", "contact", "telephone", "dial code"]
+    }
+  },
+  "input-url": {
+    "label": { "es": "Campo de enlace", "en": "Link field", "pt": "Campo de link", "fr": "Champ de lien", "de": "Link-Feld", "it": "Campo link", "ja": "URL入力欄", "zh": "网址输入框", "ko": "URL 입력란", "ar": "حقل الرابط" },
+    "keywords": {
+      "es": ["url", "sitio web", "página web", "dirección web", "liga", "dominio", "pegar enlace"],
+      "en": ["url", "website", "web address", "domain", "paste link", "homepage", "hyperlink"]
+    }
+  },
+  "input-location": {
+    "label": { "es": "Campo de dirección", "en": "Address field", "pt": "Campo de endereço", "fr": "Champ d’adresse", "de": "Adressfeld", "it": "Campo indirizzo", "ja": "住所入力欄", "zh": "地址输入框", "ko": "주소 입력란", "ar": "حقل العنوان" },
+    "keywords": {
+      "es": ["domicilio", "ubicación", "autocompletar lugar", "calle", "dirección de envío", "mapa", "código postal"],
+      "en": ["location", "place autocomplete", "street", "shipping address", "map", "zip code", "postal code"]
+    }
+  },
+  "input-date": {
+    "label": { "es": "Campo de fecha", "en": "Date field", "pt": "Campo de data", "fr": "Champ de date", "de": "Datumsfeld", "it": "Campo data", "ja": "日付フィールド", "zh": "日期输入框", "ko": "날짜 입력란", "ar": "حقل التاريخ" },
+    "keywords": {
+      "es": ["día", "calendario", "fecha de nacimiento", "elegir día", "dd/mm/aaaa", "vencimiento", "agendar"],
+      "en": ["day", "calendar", "birth date", "pick a date", "mm/dd/yyyy", "due date", "schedule"]
+    }
+  },
+  "input-time": {
+    "label": { "es": "Campo de hora", "en": "Time field", "pt": "Campo de horário", "fr": "Champ d’heure", "de": "Uhrzeitfeld", "it": "Campo orario", "ja": "時刻フィールド", "zh": "时间输入框", "ko": "시간 입력란", "ar": "حقل الوقت" },
+    "keywords": {
+      "es": ["horario", "reloj", "hh:mm", "hora de la cita", "am pm", "elegir hora", "agendar"],
+      "en": ["clock", "hh:mm", "appointment time", "am pm", "pick a time", "schedule", "hour"]
+    }
+  },
+  "input-color": {
+    "label": { "es": "Campo de color", "en": "Color field", "pt": "Campo de cor", "fr": "Champ de couleur", "de": "Farbfeld", "it": "Campo colore", "ja": "カラーフィールド", "zh": "颜色输入框", "ko": "색상 입력란", "ar": "حقل اللون" },
+    "keywords": {
+      "es": ["código hex", "muestra de color", "hexadecimal", "color de marca", "tema", "rgb", "personalizar"],
+      "en": ["hex code", "color swatch", "hexadecimal", "brand color", "theme", "rgb", "customize"]
+    }
+  },
+  "input-tags": {
+    "label": { "es": "Campo de etiquetas", "en": "Tag input", "pt": "Campo de tags", "fr": "Champ d’étiquettes", "de": "Tag-Eingabe", "it": "Campo tag", "ja": "タグ入力", "zh": "标签输入框", "ko": "태그 입력", "ar": "حقل الوسوم" },
+    "keywords": {
+      "es": ["palabras clave", "chips", "categorías", "varios valores", "temas", "clasificar", "hashtags"],
+      "en": ["keywords", "chips", "categories", "multiple values", "topics", "labels", "hashtags"]
+    }
+  },
+  "input-file": {
+    "label": { "es": "Seleccionar archivo", "en": "Choose file", "pt": "Escolher arquivo", "fr": "Choisir un fichier", "de": "Datei auswählen", "it": "Scegli file", "ja": "ファイルを選択", "zh": "选择文件", "ko": "파일 선택", "ar": "اختيار ملف" },
+    "keywords": {
+      "es": ["adjuntar", "subir archivo", "examinar", "cargar documento", "clip", "anexo", "campo de archivo"],
+      "en": ["attach", "upload file", "browse", "attachment", "paperclip", "file input", "add document"]
+    }
+  },
+  "input-submit": {
+    "label": { "es": "Campo con botón de envío", "en": "Field with submit button", "pt": "Campo com botão de envio", "fr": "Champ avec bouton d’envoi", "de": "Feld mit Senden-Button", "it": "Campo con pulsante di invio", "ja": "送信ボタン付き入力欄", "zh": "带提交按钮的输入框", "ko": "제출 버튼이 있는 입력란", "ar": "حقل مع زر إرسال" },
+    "keywords": {
+      "es": ["boletín", "suscribirse", "código de cupón", "invitar por correo", "newsletter", "formulario en línea", "aplicar código"],
+      "en": ["newsletter", "subscribe", "coupon code", "invite by email", "inline form", "send", "apply code"]
+    }
+  },
+  "input-person": {
+    "label": { "es": "Campo de persona", "en": "Person field", "pt": "Campo de pessoa", "fr": "Champ de personne", "de": "Personenfeld", "it": "Campo persona", "ja": "ユーザー選択欄", "zh": "人员选择框", "ko": "사용자 선택란", "ar": "حقل الشخص" },
+    "keywords": {
+      "es": ["asignar", "responsable", "usuario", "revisor", "dueño", "miembro del equipo", "elegir persona"],
+      "en": ["assignee", "owner", "user picker", "reviewer", "assign", "team member", "select user"]
+    }
+  },
+  "input-voice": {
+    "label": { "es": "Dictado por voz", "en": "Voice input", "pt": "Entrada de voz", "fr": "Saisie vocale", "de": "Spracheingabe", "it": "Input vocale", "ja": "音声入力", "zh": "语音输入", "ko": "음성 입력", "ar": "إدخال صوتي" },
+    "keywords": {
+      "es": ["dictar", "búsqueda por voz", "micrófono", "hablar", "voz a texto", "reconocimiento de voz", "asistente de voz"],
+      "en": ["dictate", "voice search", "microphone", "speak", "speech to text", "speech recognition", "voice assistant"]
+    }
+  },
+  "inline-edit": {
+    "label": { "es": "Edición en línea", "en": "Inline edit", "pt": "Edição em linha", "fr": "Modification sur place", "de": "Inline-Bearbeitung", "it": "Modifica in linea", "ja": "インライン編集", "zh": "行内编辑", "ko": "인라인 편집", "ar": "تعديل مباشر" },
+    "keywords": {
+      "es": ["renombrar", "editar en el lugar", "cambiar nombre", "clic para editar", "modificar texto", "editar título", "lápiz"],
+      "en": ["rename", "edit in place", "change name", "click to edit", "edit text", "edit title", "pencil"]
+    }
+  },
+  "input-loading": {
+    "label": { "es": "Campo cargando", "en": "Loading field", "pt": "Campo carregando", "fr": "Champ en chargement", "de": "Feld wird geladen", "it": "Campo in caricamento", "ja": "読み込み中のフィールド", "zh": "输入框加载中", "ko": "입력란 로딩 중", "ar": "حقل قيد التحميل" },
+    "keywords": {
+      "es": ["verificando", "validando", "cargando sugerencias", "espera", "indicador de carga", "comprobando disponibilidad", "spinner"],
+      "en": ["checking", "validating", "fetching suggestions", "wait", "loading indicator", "checking availability", "spinner"]
+    }
+  },
+  "input-hint": {
+    "label": { "es": "Texto de ayuda", "en": "Helper text", "pt": "Texto de ajuda", "fr": "Texte d’aide", "de": "Hilfetext", "it": "Testo di aiuto", "ja": "ヘルプテキスト", "zh": "辅助说明", "ko": "도움말 텍스트", "ar": "نص مساعد" },
+    "keywords": {
+      "es": ["pista", "indicación", "nota del campo", "descripción", "sistema de diseño", "instrucciones", "mensaje de apoyo"],
+      "en": ["hint", "help text", "field note", "description", "design system", "instructions", "caption"]
+    }
+  },
+  "input-hidden": {
+    "label": { "es": "Campo oculto", "en": "Hidden field", "pt": "Campo oculto", "fr": "Champ masqué", "de": "Verstecktes Feld", "it": "Campo nascosto", "ja": "非表示フィールド", "zh": "隐藏字段", "ko": "숨겨진 필드", "ar": "حقل مخفي" },
+    "keywords": {
+      "es": ["invisible", "utm", "origen de campaña", "identificador", "dato interno", "seguimiento", "parámetro"],
+      "en": ["invisible", "utm", "campaign source", "id", "internal value", "tracking", "parameter"]
+    }
+  },
+  "autofill": {
+    "label": { "es": "Autocompletar", "en": "Autofill", "pt": "Preenchimento automático", "fr": "Remplissage automatique", "de": "Automatisch ausfüllen", "it": "Compilazione automatica", "ja": "自動入力", "zh": "自动填充", "ko": "자동 채우기", "ar": "تعبئة تلقائية" },
+    "keywords": {
+      "es": ["llenado automático", "datos guardados", "gestor de contraseñas", "rellenar", "completar formulario", "sugerencias", "perfil guardado"],
+      "en": ["auto-complete", "saved data", "password manager", "fill in", "complete form", "suggestions", "saved profile"]
+    }
+  },
+  "textarea": {
+    "label": { "es": "Área de texto", "en": "Text area", "pt": "Área de texto", "fr": "Zone de texte multiligne", "de": "Textbereich", "it": "Area di testo", "ja": "テキストエリア", "zh": "多行文本框", "ko": "텍스트 영역", "ar": "مربع نص متعدد الأسطر" },
+    "keywords": {
+      "es": ["varias líneas", "descripción", "comentarios", "mensaje", "respuesta larga", "párrafo", "notas"],
+      "en": ["multi-line", "description", "comments", "message", "long answer", "paragraph", "notes"]
+    }
+  },
+  "select": {
+    "label": { "es": "Lista desplegable", "en": "Select box", "pt": "Lista suspensa", "fr": "Liste déroulante", "de": "Auswahlliste", "it": "Elenco a discesa", "ja": "選択ボックス", "zh": "下拉选择框", "ko": "선택 상자", "ar": "قائمة اختيار منسدلة" },
+    "keywords": {
+      "es": ["seleccionar", "menú desplegable", "lista de opciones", "elegir una opción", "select", "desplegar", "opciones"],
+      "en": ["select", "dropdown", "picker", "choose option", "option list", "pick one", "menu"]
+    }
+  },
+  "select-open": {
+    "label": { "es": "Desplegable abierto", "en": "Open dropdown", "pt": "Menu suspenso aberto", "fr": "Liste déroulante ouverte", "de": "Geöffnetes Dropdown", "it": "Menu a tendina aperto", "ja": "開いたドロップダウン", "zh": "展开的下拉菜单", "ko": "열린 드롭다운", "ar": "قائمة منسدلة مفتوحة" },
+    "keywords": {
+      "es": ["lista de opciones", "opción elegida", "seleccionado", "menú abierto", "opciones visibles", "seleccionar", "elegir"],
+      "en": ["option list", "chosen option", "selected", "open menu", "options shown", "select", "choose"]
+    }
+  },
+  "select-search": {
+    "label": { "es": "Desplegable con búsqueda", "en": "Searchable dropdown", "pt": "Menu suspenso com pesquisa", "fr": "Liste déroulante avec recherche", "de": "Dropdown mit Suche", "it": "Menu a tendina con ricerca", "ja": "検索付きドロップダウン", "zh": "可搜索的下拉菜单", "ko": "검색 가능한 드롭다운", "ar": "قائمة منسدلة مع بحث" },
+    "keywords": {
+      "es": ["filtrar opciones", "escribir para buscar", "autocompletar", "buscar en la lista", "select", "lista larga", "elegir país"],
+      "en": ["filter options", "type to search", "autocomplete", "search list", "select", "long list", "country picker"]
+    }
+  },
+  "select-plus": {
+    "label": { "es": "Crear opción", "en": "Create option", "pt": "Criar opção", "fr": "Créer une option", "de": "Option erstellen", "it": "Crea opzione", "ja": "選択肢を作成", "zh": "新建选项", "ko": "옵션 만들기", "ar": "إنشاء خيار" },
+    "keywords": {
+      "es": ["agregar opción", "nueva etiqueta", "nueva categoría", "desplegable", "select editable", "agregar a la lista", "otro"],
+      "en": ["add option", "new label", "new category", "dropdown", "creatable select", "add to list", "other"]
+    }
+  },
+  "combobox": {
+    "label": { "es": "Cuadro combinado", "en": "Combobox", "pt": "Caixa de combinação", "fr": "Zone de liste modifiable", "de": "Kombinationsfeld", "it": "Casella combinata", "ja": "コンボボックス", "zh": "组合框", "ko": "콤보 상자", "ar": "مربع تحرير وسرد" },
+    "keywords": {
+      "es": ["autocompletar", "sugerencias", "escribir o elegir", "combobox", "búsqueda predictiva", "desplegable", "texto libre"],
+      "en": ["autocomplete", "suggestions", "type or pick", "typeahead", "predictive search", "dropdown", "free text"]
+    }
+  },
+  "listbox": {
+    "label": { "es": "Cuadro de lista", "en": "List box", "pt": "Caixa de listagem", "fr": "Zone de liste", "de": "Listenfeld", "it": "Casella di riepilogo", "ja": "リストボックス", "zh": "列表框", "ko": "목록 상자", "ar": "مربع قائمة" },
+    "keywords": {
+      "es": ["lista de opciones", "siempre abierta", "selección", "configuración", "formulario de administración", "listbox", "elegir de la lista"],
+      "en": ["option list", "always open", "selection", "settings", "admin form", "pick from list", "scrolling list"]
+    }
+  },
+  "transfer-list": {
+    "label": { "es": "Lista de transferencia", "en": "Transfer list", "pt": "Lista de transferência", "fr": "Liste de transfert", "de": "Transferliste", "it": "Lista di trasferimento", "ja": "トランスファーリスト", "zh": "穿梭框", "ko": "이동 목록", "ar": "قائمة النقل" },
+    "keywords": {
+      "es": ["lista doble", "mover elementos", "disponibles y elegidos", "asignar", "pasar a la derecha", "elegir columnas", "permisos"],
+      "en": ["dual list box", "move items", "available and chosen", "assign", "shuttle", "pick columns", "permissions"]
+    }
+  },
+  "checkbox-group": {
+    "label": { "es": "Casillas de verificación", "en": "Checkboxes", "pt": "Caixas de seleção", "fr": "Cases à cocher", "de": "Kontrollkästchen", "it": "Caselle di controllo", "ja": "チェックボックス", "zh": "复选框", "ko": "체크박스", "ar": "مربعات اختيار" },
+    "keywords": {
+      "es": ["varias respuestas", "opción múltiple", "marcar varias", "pregunta", "encuesta", "selección múltiple", "lista de opciones"],
+      "en": ["multiple answers", "multiple choice", "check several", "question", "survey", "multi-select", "option list"]
+    }
+  },
+  "checkbox-tree": {
+    "label": { "es": "Casillas anidadas", "en": "Nested checkboxes", "pt": "Caixas de seleção aninhadas", "fr": "Cases à cocher imbriquées", "de": "Verschachtelte Kontrollkästchen", "it": "Caselle annidate", "ja": "階層チェックボックス", "zh": "树形复选框", "ko": "중첩 체크박스", "ar": "مربعات اختيار متداخلة" },
+    "keywords": {
+      "es": ["árbol", "jerarquía", "permisos", "carpetas", "categorías", "seleccionar todo", "subopciones"],
+      "en": ["tree", "hierarchy", "permissions", "folders", "categories", "select all", "sub-options"]
+    }
+  },
+  "checkbox-consent": {
+    "label": { "es": "Casilla de consentimiento", "en": "Consent checkbox", "pt": "Caixa de consentimento", "fr": "Case de consentement", "de": "Einwilligungs-Checkbox", "it": "Casella di consenso", "ja": "同意チェックボックス", "zh": "同意复选框", "ko": "동의 체크박스", "ar": "مربع الموافقة" },
+    "keywords": {
+      "es": ["acepto", "términos y condiciones", "aviso de privacidad", "suscribirse", "autorizar", "política", "estoy de acuerdo"],
+      "en": ["i agree", "terms and conditions", "privacy policy", "opt in", "authorize", "accept", "gdpr"]
+    }
+  },
+  "checkbox-alert": {
+    "label": { "es": "Error en la casilla", "en": "Checkbox error", "pt": "Erro na caixa de seleção", "fr": "Erreur de case à cocher", "de": "Fehler beim Kontrollkästchen", "it": "Errore nella casella", "ja": "チェックボックスのエラー", "zh": "复选框错误", "ko": "체크박스 오류", "ar": "خطأ في مربع الاختيار" },
+    "keywords": {
+      "es": ["casilla obligatoria", "sin aceptar", "términos no aceptados", "falta marcar", "validación", "estado de error", "requerido"],
+      "en": ["required checkbox", "not accepted", "terms not accepted", "left unchecked", "validation", "error state", "required"]
+    }
+  },
+  "radio-group": {
+    "label": { "es": "Opción única", "en": "Single choice", "pt": "Escolha única", "fr": "Choix unique", "de": "Einfachauswahl", "it": "Scelta singola", "ja": "単一選択", "zh": "单选", "ko": "단일 선택", "ar": "اختيار واحد" },
+    "keywords": {
+      "es": ["botones de opción", "radio", "elegir una", "pregunta", "encuesta", "alternativas", "opción múltiple"],
+      "en": ["radio buttons", "radio group", "pick one", "question", "survey", "alternatives", "multiple choice"]
+    }
+  },
+  "choice-grid": {
+    "label": { "es": "Cuadrícula de opciones", "en": "Choice grid", "pt": "Grade de opções", "fr": "Grille de choix", "de": "Auswahlraster", "it": "Griglia a scelta", "ja": "選択式グリッド", "zh": "选择网格", "ko": "객관식 그리드", "ar": "شبكة خيارات" },
+    "keywords": {
+      "es": ["matriz", "filas y columnas", "pregunta de cuadrícula", "encuesta", "escala por fila", "evaluación", "tabla de opciones"],
+      "en": ["matrix", "rows and columns", "grid question", "survey", "rating per row", "assessment", "matrix table"]
+    }
+  },
+  "choice-card": {
+    "label": { "es": "Opción en tarjeta", "en": "Choice card", "pt": "Opção em cartão", "fr": "Carte de choix", "de": "Auswahlkarte", "it": "Scheda di scelta", "ja": "カード選択", "zh": "卡片选项", "ko": "카드형 선택", "ar": "بطاقة اختيار" },
+    "keywords": {
+      "es": ["tarjeta seleccionable", "plan", "método de envío", "elegir plan", "precios", "opciones", "comparar"],
+      "en": ["selectable card", "plan", "shipping method", "choose plan", "pricing", "options", "compare"]
+    }
+  },
+  "image-choice": {
+    "label": { "es": "Opción con imagen", "en": "Picture choice", "pt": "Escolha por imagem", "fr": "Choix par image", "de": "Bildauswahl", "it": "Scelta per immagine", "ja": "画像で選択", "zh": "图片选项", "ko": "이미지 선택", "ar": "اختيار بالصورة" },
+    "keywords": {
+      "es": ["elegir imagen", "opciones visuales", "galería", "foto", "encuesta", "estilo", "variante"],
+      "en": ["pick an image", "visual options", "gallery", "photo", "survey", "style", "variant"]
+    }
+  },
+  "yes-no": {
+    "label": { "es": "Sí o no", "en": "Yes or no", "pt": "Sim ou não", "fr": "Oui ou non", "de": "Ja oder Nein", "it": "Sì o no", "ja": "はい・いいえ", "zh": "是或否", "ko": "예/아니요", "ar": "نعم أو لا" },
+    "keywords": {
+      "es": ["pregunta binaria", "verdadero o falso", "confirmar", "aceptar o rechazar", "decisión", "encuesta", "dos opciones"],
+      "en": ["binary question", "true or false", "confirm", "accept or decline", "decision", "survey", "two options"]
+    }
+  },
+  "ranking": {
+    "label": { "es": "Ordenar por preferencia", "en": "Rank by preference", "pt": "Ordenar por preferência", "fr": "Classer par préférence", "de": "Nach Präferenz ordnen", "it": "Ordina per preferenza", "ja": "優先順位をつける", "zh": "按偏好排序", "ko": "선호도 순위", "ar": "الترتيب حسب الأفضلية" },
+    "keywords": {
+      "es": ["ranking", "prioridad", "arrastrar para ordenar", "primer lugar", "encuesta", "jerarquizar", "preferencias"],
+      "en": ["ranking", "priority", "drag to reorder", "first place", "survey", "prioritize", "top choices"]
+    }
+  },
+  "captcha": {
+    "label": { "es": "Verificación humana", "en": "Human verification", "pt": "Verificação humana", "fr": "Vérification humaine", "de": "Captcha-Prüfung", "it": "Verifica umana", "ja": "CAPTCHA認証", "zh": "人机验证", "ko": "자동입력 방지 확인", "ar": "التحقق من أنك إنسان" },
+    "keywords": {
+      "es": ["captcha", "no soy un robot", "antispam", "seguridad", "bots", "reto", "prueba de humanidad"],
+      "en": ["captcha", "i'm not a robot", "anti-spam", "security", "bots", "challenge", "human test"]
+    }
+  },
+  "toggle-mixed": {
+    "label": { "es": "Interruptor mixto", "en": "Mixed switch", "pt": "Interruptor misto", "fr": "Interrupteur mixte", "de": "Gemischter Schalter", "it": "Interruttore misto", "ja": "混在状態のスイッチ", "zh": "混合状态开关", "ko": "혼합 상태 스위치", "ar": "مفتاح بحالة مختلطة" },
+    "keywords": {
+      "es": ["parcial", "indeterminado", "algunos activados", "configuración de grupo", "estado mixto", "switch", "varios elementos"],
+      "en": ["partial", "indeterminate", "some on", "group setting", "mixed state", "toggle", "multiple items"]
+    }
+  },
+  "toggle-lock": {
+    "label": { "es": "Ajuste bloqueado", "en": "Locked setting", "pt": "Configuração bloqueada", "fr": "Paramètre verrouillé", "de": "Gesperrte Einstellung", "it": "Impostazione bloccata", "ja": "ロックされた設定", "zh": "已锁定的设置", "ko": "잠긴 설정", "ar": "إعداد مقفل" },
+    "keywords": {
+      "es": ["interruptor bloqueado", "lo controla el admin", "política", "no editable", "requiere otro plan", "switch", "función restringida"],
+      "en": ["locked switch", "managed by admin", "policy", "not editable", "upgrade required", "toggle", "restricted feature"]
+    }
+  },
+  "slider-single": {
+    "label": { "es": "Control deslizante", "en": "Slider", "pt": "Controle deslizante", "fr": "Curseur", "de": "Schieberegler", "it": "Cursore", "ja": "スライダー", "zh": "滑块", "ko": "슬라이더", "ar": "منزلق" },
+    "keywords": {
+      "es": ["deslizar", "volumen", "tamaño", "intensidad", "ajustar valor", "barra", "nivel"],
+      "en": ["slide", "volume", "size", "intensity", "adjust value", "track", "level"]
+    }
+  },
+  "slider-range": {
+    "label": { "es": "Control deslizante de rango", "en": "Range slider", "pt": "Controle deslizante de intervalo", "fr": "Curseur de plage", "de": "Bereichsschieberegler", "it": "Cursore di intervallo", "ja": "範囲スライダー", "zh": "范围滑块", "ko": "범위 슬라이더", "ar": "منزلق النطاق" },
+    "keywords": {
+      "es": ["mínimo y máximo", "rango de precio", "filtro de precio", "dos controles", "desde hasta", "intervalo", "filtrar"],
+      "en": ["min and max", "price range", "price filter", "two handles", "from to", "interval", "filter"]
+    }
+  },
+  "slider-steps": {
+    "label": { "es": "Control deslizante por pasos", "en": "Stepped slider", "pt": "Controle deslizante com etapas", "fr": "Curseur à crans", "de": "Schieberegler mit Stufen", "it": "Cursore a scatti", "ja": "段階スライダー", "zh": "分段滑块", "ko": "단계 슬라이더", "ar": "منزلق بخطوات" },
+    "keywords": {
+      "es": ["pasos", "niveles", "marcas", "valores fijos", "escala", "intervalos", "ajuste por niveles"],
+      "en": ["steps", "levels", "tick marks", "snap", "discrete values", "scale", "notches"]
+    }
+  },
+  "slider-histogram": {
+    "label": { "es": "Rango con histograma", "en": "Histogram slider", "pt": "Controle deslizante com histograma", "fr": "Curseur avec histogramme", "de": "Schieberegler mit Histogramm", "it": "Cursore con istogramma", "ja": "ヒストグラム付きスライダー", "zh": "带直方图的滑块", "ko": "히스토그램 슬라이더", "ar": "منزلق مع مدرج تكراري" },
+    "keywords": {
+      "es": ["filtro de precio", "distribución", "rango de precio", "productos por precio", "gráfica de barras", "filtrar productos", "tienda en línea"],
+      "en": ["price filter", "distribution", "price range", "items per price", "bar chart", "filter products", "e-commerce"]
+    }
+  },
+  "slider-value": {
+    "label": { "es": "Control deslizante con valor", "en": "Slider with value", "pt": "Controle deslizante com valor", "fr": "Curseur avec valeur", "de": "Schieberegler mit Wert", "it": "Cursore con valore", "ja": "値表示付きスライダー", "zh": "带数值的滑块", "ko": "값 표시 슬라이더", "ar": "منزلق مع القيمة" },
+    "keywords": {
+      "es": ["globo de valor", "etiqueta", "valor actual", "arrastrar", "tooltip", "número", "indicador"],
+      "en": ["value bubble", "value label", "current value", "drag", "tooltip", "number", "readout"]
+    }
+  },
+  "slider-vertical": {
+    "label": { "es": "Control deslizante vertical", "en": "Vertical slider", "pt": "Controle deslizante vertical", "fr": "Curseur vertical", "de": "Vertikaler Schieberegler", "it": "Cursore verticale", "ja": "縦型スライダー", "zh": "垂直滑块", "ko": "세로 슬라이더", "ar": "منزلق عمودي" },
+    "keywords": {
+      "es": ["volumen", "brillo", "fader", "mezcladora", "canal de audio", "nivel", "subir y bajar"],
+      "en": ["volume", "brightness", "fader", "mixer", "audio channel", "level", "up and down"]
+    }
+  },
+  "slider-radial": {
+    "label": { "es": "Control deslizante circular", "en": "Radial slider", "pt": "Controle deslizante circular", "fr": "Curseur circulaire", "de": "Kreisförmiger Schieberegler", "it": "Cursore circolare", "ja": "円形スライダー", "zh": "环形滑块", "ko": "원형 슬라이더", "ar": "منزلق دائري" },
+    "keywords": {
+      "es": ["termostato", "temporizador", "horario de sueño", "arco", "girar", "temperatura", "dial"],
+      "en": ["thermostat", "timer", "sleep schedule", "arc", "circular", "temperature", "dial"]
+    }
+  },
+  "knob": {
+    "label": { "es": "Perilla", "en": "Knob", "pt": "Botão giratório", "fr": "Bouton rotatif", "de": "Drehregler", "it": "Manopola", "ja": "ノブ", "zh": "旋钮", "ko": "노브", "ar": "مقبض دوار" },
+    "keywords": {
+      "es": ["girar", "rotativo", "ganancia", "volumen", "ecualizador", "termostato", "audio"],
+      "en": ["rotary", "dial", "turn", "gain", "volume", "equalizer", "audio"]
+    }
+  },
+  "button": {
+    "label": { "es": "Botón", "en": "Button", "pt": "Botão", "fr": "Bouton", "de": "Schaltfläche", "it": "Pulsante", "ja": "ボタン", "zh": "按钮", "ko": "버튼", "ar": "زر" },
+    "keywords": {
+      "es": ["presionar", "llamada a la acción", "cta", "clic", "acción", "componente", "enviar"],
+      "en": ["press", "call to action", "cta", "click", "action", "component", "submit"]
+    }
+  },
+  "button-group": {
+    "label": { "es": "Grupo de botones", "en": "Button group", "pt": "Grupo de botões", "fr": "Groupe de boutons", "de": "Schaltflächengruppe", "it": "Gruppo di pulsanti", "ja": "ボタングループ", "zh": "按钮组", "ko": "버튼 그룹", "ar": "مجموعة أزرار" },
+    "keywords": {
+      "es": ["botones unidos", "barra de botones", "acciones", "barra de herramientas", "opciones", "alinear", "conjunto"],
+      "en": ["joined buttons", "button bar", "actions", "toolbar", "options", "set", "connected buttons"]
+    }
+  },
+  "button-split": {
+    "label": { "es": "Botón dividido", "en": "Split button", "pt": "Botão dividido", "fr": "Bouton partagé", "de": "Geteilte Schaltfläche", "it": "Pulsante diviso", "ja": "分割ボタン", "zh": "拆分按钮", "ko": "분할 버튼", "ar": "زر منقسم" },
+    "keywords": {
+      "es": ["acción principal", "más acciones", "menú de opciones", "guardar como", "flecha", "desplegable", "acciones relacionadas"],
+      "en": ["primary action", "more actions", "options menu", "save as", "caret", "dropdown", "related actions"]
+    }
+  },
+  "button-dropdown": {
+    "label": { "es": "Botón de menú", "en": "Menu button", "pt": "Botão de menu", "fr": "Bouton de menu", "de": "Menüschaltfläche", "it": "Pulsante menu", "ja": "メニューボタン", "zh": "菜单按钮", "ko": "메뉴 버튼", "ar": "زر القائمة" },
+    "keywords": {
+      "es": ["desplegable", "abrir menú", "chip de filtro", "opciones", "flecha hacia abajo", "más", "ordenar por"],
+      "en": ["dropdown", "open menu", "filter chip", "options", "chevron", "more", "sort by"]
+    }
+  },
+  "button-loading": {
+    "label": { "es": "Botón cargando", "en": "Loading button", "pt": "Botão carregando", "fr": "Bouton en chargement", "de": "Schaltfläche lädt", "it": "Pulsante in caricamento", "ja": "読み込み中のボタン", "zh": "加载中的按钮", "ko": "로딩 중인 버튼", "ar": "زر قيد التحميل" },
+    "keywords": {
+      "es": ["procesando", "enviando", "espera", "spinner", "en curso", "pago en proceso", "deshabilitado"],
+      "en": ["processing", "sending", "wait", "spinner", "in progress", "busy", "pending"]
+    }
+  },
+  "button-floating": {
+    "label": { "es": "Botón flotante", "en": "Floating action button", "pt": "Botão de ação flutuante", "fr": "Bouton d’action flottant", "de": "Unverankerte Aktionsschaltfläche", "it": "Pulsante di azione mobile", "ja": "フローティングアクションボタン", "zh": "悬浮操作按钮", "ko": "플로팅 액션 버튼", "ar": "زر إجراء عائم" },
+    "keywords": {
+      "es": ["fab", "acción principal", "crear", "botón redondo", "esquina", "botón de acción", "nuevo"],
+      "en": ["fab", "primary action", "create", "round button", "corner", "action button", "compose"]
+    }
+  },
+  "segmented-control": {
+    "label": { "es": "Control segmentado", "en": "Segmented control", "pt": "Controle segmentado", "fr": "Contrôle segmenté", "de": "Segmentierte Steuerung", "it": "Controllo segmentato", "ja": "セグメントコントロール", "zh": "分段控件", "ko": "세그먼트 컨트롤", "ar": "عنصر تحكم مقسم" },
+    "keywords": {
+      "es": ["pestañas", "cambiar vista", "modo de vista", "rango de tiempo", "opciones", "alternar", "día semana mes"],
+      "en": ["tabs", "switch view", "view mode", "time range", "options", "toggle group", "day week month"]
+    }
+  },
+  "number-stepper": {
+    "label": { "es": "Selector de cantidad", "en": "Stepper", "pt": "Seletor de quantidade", "fr": "Sélecteur de quantité", "de": "Mengenauswahl", "it": "Selettore di quantità", "ja": "数量ステッパー", "zh": "步进器", "ko": "수량 조절", "ar": "محدد الكمية" },
+    "keywords": {
+      "es": ["más y menos", "cantidad", "sumar", "restar", "invitados", "contador", "carrito"],
+      "en": ["plus and minus", "quantity", "increment", "decrement", "guests", "counter", "cart"]
+    }
+  },
+  "slide-to-confirm": {
+    "label": { "es": "Deslizar para confirmar", "en": "Slide to confirm", "pt": "Deslize para confirmar", "fr": "Glisser pour confirmer", "de": "Zum Bestätigen schieben", "it": "Scorri per confermare", "ja": "スライドして確認", "zh": "滑动确认", "ko": "밀어서 확인", "ar": "اسحب للتأكيد" },
+    "keywords": {
+      "es": ["deslizar para pagar", "desbloquear", "confirmar pago", "arrastrar", "acción segura", "eliminar", "validar"],
+      "en": ["swipe to pay", "unlock", "confirm payment", "drag", "safe action", "delete", "swipe"]
+    }
+  },
+  "chip": {
+    "label": { "es": "Chip", "en": "Chip", "pt": "Chip", "fr": "Chip", "de": "Chip", "it": "Chip", "ja": "入力チップ", "zh": "可移除标签", "ko": "칩", "ar": "شريحة" },
+    "keywords": {
+      "es": ["token", "destinatario", "filtro", "etiqueta", "quitar", "píldora", "valor"],
+      "en": ["token", "recipient", "filter", "tag", "removable", "pill", "value"]
+    }
+  },
+  "chip-selected": {
+    "label": { "es": "Filtro activo", "en": "Active filter", "pt": "Filtro ativo", "fr": "Filtre actif", "de": "Aktiver Filter", "it": "Filtro attivo", "ja": "有効なフィルター", "zh": "已启用的筛选", "ko": "활성 필터", "ar": "عامل تصفية نشط" },
+    "keywords": {
+      "es": ["chip seleccionado", "filtro aplicado", "seleccionado", "activado", "palomita", "categoría", "refinar"],
+      "en": ["selected chip", "applied filter", "selected", "on", "checkmark", "category", "refine"]
+    }
+  },
+  "chip-avatar": {
+    "label": { "es": "Chip de persona", "en": "Person chip", "pt": "Chip de pessoa", "fr": "Chip de personne", "de": "Personen-Chip", "it": "Chip persona", "ja": "人物チップ", "zh": "人员标签", "ko": "사용자 칩", "ar": "شريحة شخص" },
+    "keywords": {
+      "es": ["asignado", "destinatario", "mención", "usuario", "avatar", "responsable", "invitado"],
+      "en": ["assignee", "recipient", "mention", "user", "avatar", "owner", "guest"]
+    }
+  },
+  "chip-add": {
+    "label": { "es": "Agregar chip", "en": "Add chip", "pt": "Adicionar chip", "fr": "Ajouter un chip", "de": "Chip hinzufügen", "it": "Aggiungi chip", "ja": "チップを追加", "zh": "添加标签", "ko": "칩 추가", "ar": "إضافة شريحة" },
+    "keywords": {
+      "es": ["agregar filtro", "agregar etiqueta", "agregar persona", "espacio vacío", "nuevo", "más", "añadir"],
+      "en": ["add filter", "add tag", "add person", "empty slot", "new", "plus", "append"]
+    }
+  },
+  "chip-group": {
+    "label": { "es": "Grupo de chips", "en": "Chip group", "pt": "Grupo de chips", "fr": "Groupe de chips", "de": "Chip-Gruppe", "it": "Gruppo di chip", "ja": "チップグループ", "zh": "标签组", "ko": "칩 그룹", "ar": "مجموعة شرائح" },
+    "keywords": {
+      "es": ["filtros", "temas", "sugerencias", "etiquetas", "categorías", "filtros rápidos", "conjunto"],
+      "en": ["filters", "topics", "suggestions", "tags", "categories", "quick filters", "set"]
+    }
+  },
+  "status-label": {
+    "label": { "es": "Etiqueta de estado", "en": "Status label", "pt": "Rótulo de status", "fr": "Étiquette de statut", "de": "Statuslabel", "it": "Etichetta di stato", "ja": "ステータスラベル", "zh": "状态标签", "ko": "상태 라벨", "ar": "تسمية الحالة" },
+    "keywords": {
+      "es": ["insignia", "activo", "en pausa", "borrador", "estatus", "píldora", "indicador"],
+      "en": ["badge", "active", "paused", "draft", "status pill", "indicator", "state"]
+    }
+  },
+  "date-picker": {
+    "label": { "es": "Selector de fecha", "en": "Date picker", "pt": "Seletor de data", "fr": "Sélecteur de date", "de": "Datumsauswahl", "it": "Selettore data", "ja": "日付ピッカー", "zh": "日期选择器", "ko": "날짜 선택기", "ar": "منتقي التاريخ" },
+    "keywords": {
+      "es": ["calendario", "elegir día", "fecha de entrega", "reservar", "agenda", "mes", "rango de fechas"],
+      "en": ["calendar", "pick a day", "delivery date", "booking", "schedule", "month view", "date range"]
+    }
+  },
+  "time-picker": {
+    "label": { "es": "Selector de hora", "en": "Time picker", "pt": "Seletor de horário", "fr": "Sélecteur d’heure", "de": "Uhrzeitauswahl", "it": "Selettore orario", "ja": "時刻ピッカー", "zh": "时间选择器", "ko": "시간 선택기", "ar": "منتقي الوقت" },
+    "keywords": {
+      "es": ["reloj", "horas y minutos", "manecilla", "alarma", "carátula", "programar", "cita"],
+      "en": ["clock", "hours and minutes", "clock hand", "alarm", "clock face", "schedule", "appointment"]
+    }
+  },
+  "wheel-picker": {
+    "label": { "es": "Selector de rueda", "en": "Wheel picker", "pt": "Seletor de roda", "fr": "Sélecteur à molette", "de": "Auswahlrad", "it": "Selettore a rotella", "ja": "ホイールピッカー", "zh": "滚轮选择器", "ko": "휠 선택기", "ar": "منتقي بعجلة" },
+    "keywords": {
+      "es": ["tambor", "móvil", "girar", "fecha", "hora", "desplazar valores", "selector giratorio"],
+      "en": ["drum", "mobile", "scroll", "date", "time", "spinner", "rolling list"]
+    }
+  },
+  "color-picker": {
+    "label": { "es": "Selector de color", "en": "Color picker", "pt": "Seletor de cor", "fr": "Sélecteur de couleur", "de": "Farbauswahl", "it": "Selettore colore", "ja": "カラーピッカー", "zh": "颜色选择器", "ko": "색상 선택기", "ar": "منتقي الألوان" },
+    "keywords": {
+      "es": ["espectro", "paleta", "tono", "saturación", "hex", "elegir color", "rgb"],
+      "en": ["spectrum", "palette", "hue", "saturation", "hex", "choose color", "rgb"]
+    }
+  },
+  "color-swatches": {
+    "label": { "es": "Muestras de color", "en": "Color swatches", "pt": "Amostras de cor", "fr": "Échantillons de couleur", "de": "Farbfelder", "it": "Campioni di colore", "ja": "カラースウォッチ", "zh": "色板", "ko": "색상 견본", "ar": "عينات الألوان" },
+    "keywords": {
+      "es": ["variantes", "colores predefinidos", "tema", "producto", "etiquetas de color", "paleta", "elegir color"],
+      "en": ["variants", "preset colors", "theme", "product", "color labels", "palette", "pick color"]
+    }
+  },
+  "dropzone": {
+    "label": { "es": "Zona para soltar", "en": "Drop zone", "pt": "Área para soltar", "fr": "Zone de dépôt", "de": "Ablagebereich", "it": "Area di rilascio", "ja": "ドロップゾーン", "zh": "拖放区域", "ko": "드롭 영역", "ar": "منطقة الإفلات" },
+    "keywords": {
+      "es": ["arrastrar y soltar", "subir archivos", "cargar", "adjuntar", "importar", "área de carga", "examinar"],
+      "en": ["drag and drop", "upload files", "upload", "attach", "import", "upload area", "browse"]
+    }
+  },
+  "avatar-upload": {
+    "label": { "es": "Cambiar foto de perfil", "en": "Change profile photo", "pt": "Alterar foto de perfil", "fr": "Modifier la photo de profil", "de": "Profilbild ändern", "it": "Cambia foto profilo", "ja": "プロフィール写真を変更", "zh": "更换头像", "ko": "프로필 사진 변경", "ar": "تغيير صورة الملف الشخصي" },
+    "keywords": {
+      "es": ["avatar", "subir foto", "imagen de perfil", "cámara", "cuenta", "agregar foto", "retrato"],
+      "en": ["avatar", "upload photo", "profile picture", "camera", "account", "add photo", "headshot"]
+    }
+  },
+  "rating-stars": {
+    "label": { "es": "Calificación con estrellas", "en": "Star rating", "pt": "Avaliação por estrelas", "fr": "Note en étoiles", "de": "Sternebewertung", "it": "Valutazione a stelle", "ja": "星評価", "zh": "星级评分", "ko": "별점", "ar": "تقييم بالنجوم" },
+    "keywords": {
+      "es": ["reseña", "calificar", "opinión", "puntuación", "cinco estrellas", "valorar", "evaluar"],
+      "en": ["review", "rate", "feedback", "score", "five stars", "stars", "evaluate"]
+    }
+  },
+  "rating-emoji": {
+    "label": { "es": "Calificación con emojis", "en": "Emoji rating", "pt": "Avaliação com emojis", "fr": "Note par emoji", "de": "Emoji-Bewertung", "it": "Valutazione con emoji", "ja": "絵文字で評価", "zh": "表情评分", "ko": "이모지 평가", "ar": "تقييم بالرموز التعبيرية" },
+    "keywords": {
+      "es": ["satisfacción", "caritas", "csat", "encuesta", "opinión", "estado de ánimo", "experiencia"],
+      "en": ["satisfaction", "smiley faces", "csat", "survey", "feedback", "mood", "experience"]
+    }
+  },
+  "rating-scale": {
+    "label": { "es": "Escala de opinión", "en": "Opinion scale", "pt": "Escala de opinião", "fr": "Échelle d’opinion", "de": "Bewertungsskala", "it": "Scala di valutazione", "ja": "評価スケール", "zh": "评分量表", "ko": "의견 척도", "ar": "مقياس الرأي" },
+    "keywords": {
+      "es": ["nps", "likert", "escala lineal", "del 1 al 10", "recomendación", "encuesta", "puntuación"],
+      "en": ["nps", "likert", "linear scale", "1 to 10", "net promoter", "survey", "score"]
+    }
+  },
+  "one-time-code": {
+    "label": { "es": "Código de verificación", "en": "Verification code", "pt": "Código de verificação", "fr": "Code de vérification", "de": "Bestätigungscode", "it": "Codice di verifica", "ja": "確認コード", "zh": "验证码", "ko": "인증 코드", "ar": "رمز التحقق" },
+    "keywords": {
+      "es": ["código de un solo uso", "otp", "dígitos", "sms", "verificación en dos pasos", "confirmar cuenta", "código por correo"],
+      "en": ["one-time code", "otp", "digits", "sms code", "two-factor", "confirm account", "email code"]
+    }
+  },
+  "passcode": {
+    "label": { "es": "Código de acceso", "en": "Passcode", "pt": "Código de acesso", "fr": "Code d’accès", "de": "Zugangscode", "it": "Codice di accesso", "ja": "パスコード", "zh": "数字密码", "ko": "암호", "ar": "رمز المرور" },
+    "keywords": {
+      "es": ["pin", "nip", "bloqueo de pantalla", "desbloquear", "puntos", "contraseña numérica", "seguridad"],
+      "en": ["pin", "lock screen", "unlock", "dots", "numeric password", "app lock", "security"]
+    }
+  },
+  "password-strength": {
+    "label": { "es": "Seguridad de la contraseña", "en": "Password strength", "pt": "Força da senha", "fr": "Robustesse du mot de passe", "de": "Passwortstärke", "it": "Sicurezza della password", "ja": "パスワードの強度", "zh": "密码强度", "ko": "비밀번호 강도", "ar": "قوة كلمة المرور" },
+    "keywords": {
+      "es": ["contraseña segura", "contraseña débil", "medidor", "registro", "crear cuenta", "nivel de seguridad", "barra de fuerza"],
+      "en": ["strong password", "weak password", "meter", "sign up", "create account", "security level", "strength bar"]
+    }
+  },
+  "password-reveal": {
+    "label": { "es": "Mostrar contraseña", "en": "Show password", "pt": "Mostrar senha", "fr": "Afficher le mot de passe", "de": "Passwort anzeigen", "it": "Mostra password", "ja": "パスワードを表示", "zh": "显示密码", "ko": "비밀번호 표시", "ar": "إظهار كلمة المرور" },
+    "keywords": {
+      "es": ["ver contraseña", "ojo", "revelar", "ocultar contraseña", "texto oculto", "iniciar sesión", "visibilidad"],
+      "en": ["view password", "eye", "reveal", "hide password", "masked text", "sign in", "visibility"]
+    }
+  },
+  "password-reset": {
+    "label": { "es": "Restablecer contraseña", "en": "Reset password", "pt": "Redefinir senha", "fr": "Réinitialiser le mot de passe", "de": "Passwort zurücksetzen", "it": "Reimposta password", "ja": "パスワードをリセット", "zh": "重置密码", "ko": "비밀번호 재설정", "ar": "إعادة تعيين كلمة المرور" },
+    "keywords": {
+      "es": ["olvidé mi contraseña", "recuperar acceso", "cambiar contraseña", "nueva contraseña", "recuperar cuenta", "credenciales", "enlace de recuperación"],
+      "en": ["forgot password", "recover access", "change password", "new password", "account recovery", "credentials", "reset link"]
+    }
+  },
+  "validation-rules": {
+    "label": { "es": "Requisitos", "en": "Requirements", "pt": "Requisitos", "fr": "Exigences", "de": "Anforderungen", "it": "Requisiti", "ja": "入力要件", "zh": "要求清单", "ko": "요구 사항", "ar": "المتطلبات" },
+    "keywords": {
+      "es": ["reglas de contraseña", "validación", "cumple", "no cumple", "mínimo de caracteres", "criterios", "lista de verificación"],
+      "en": ["password rules", "validation", "passed", "failed", "minimum length", "criteria", "checklist"]
+    }
+  },
+  "form-check": {
+    "label": { "es": "Formulario enviado", "en": "Form submitted", "pt": "Formulário enviado", "fr": "Formulaire envoyé", "de": "Formular gesendet", "it": "Modulo inviato", "ja": "フォーム送信済み", "zh": "表单已提交", "ko": "양식 제출 완료", "ar": "تم إرسال النموذج" },
+    "keywords": {
+      "es": ["completado", "enviado con éxito", "listo", "confirmación", "gracias", "registro completo", "respuesta recibida"],
+      "en": ["completed", "sent successfully", "done", "confirmation", "thank you", "registration complete", "response received"]
+    }
+  },
+  "form-alert": {
+    "label": { "es": "Formulario con errores", "en": "Form errors", "pt": "Formulário com erros", "fr": "Formulaire avec erreurs", "de": "Formular mit Fehlern", "it": "Modulo con errori", "ja": "フォームのエラー", "zh": "表单有错误", "ko": "양식 오류", "ar": "نموذج به أخطاء" },
+    "keywords": {
+      "es": ["corregir", "campos inválidos", "validación", "faltan datos", "no se pudo enviar", "revisar", "advertencia"],
+      "en": ["fix errors", "invalid fields", "validation", "missing data", "couldn't submit", "review", "warning"]
+    }
+  },
+  "form-plus": {
+    "label": { "es": "Nuevo formulario", "en": "New form", "pt": "Novo formulário", "fr": "Nouveau formulaire", "de": "Neues Formular", "it": "Nuovo modulo", "ja": "新規フォーム", "zh": "新建表单", "ko": "새 양식", "ar": "نموذج جديد" },
+    "keywords": {
+      "es": ["crear formulario", "encuesta nueva", "agregar", "plantilla", "cuestionario", "registro", "constructor de formularios"],
+      "en": ["create form", "new survey", "add", "template", "questionnaire", "sign-up form", "form builder"]
+    }
+  },
+  "form-lock": {
+    "label": { "es": "Formulario cerrado", "en": "Form closed", "pt": "Formulário fechado", "fr": "Formulaire fermé", "de": "Formular geschlossen", "it": "Modulo chiuso", "ja": "受付終了のフォーム", "zh": "表单已关闭", "ko": "응답 마감된 양식", "ar": "نموذج مغلق" },
+    "keywords": {
+      "es": ["no acepta respuestas", "inscripciones cerradas", "bloqueado", "fecha límite", "finalizado", "encuesta cerrada", "convocatoria cerrada"],
+      "en": ["not accepting responses", "registration closed", "locked", "deadline", "ended", "survey closed", "submissions off"]
+    }
+  },
+  "form-edit": {
+    "label": { "es": "Editar formulario", "en": "Edit form", "pt": "Editar formulário", "fr": "Modifier le formulaire", "de": "Formular bearbeiten", "it": "Modifica modulo", "ja": "フォームを編集", "zh": "编辑表单", "ko": "양식 편집", "ar": "تعديل النموذج" },
+    "keywords": {
+      "es": ["modificar", "cambiar preguntas", "lápiz", "actualizar", "editar encuesta", "diseñar", "ajustar campos"],
+      "en": ["modify", "change questions", "pencil", "update", "edit survey", "design", "adjust fields"]
+    }
+  },
+  "form-gear": {
+    "label": { "es": "Configuración del formulario", "en": "Form settings", "pt": "Configurações do formulário", "fr": "Paramètres du formulaire", "de": "Formulareinstellungen", "it": "Impostazioni modulo", "ja": "フォームの設定", "zh": "表单设置", "ko": "양식 설정", "ar": "إعدادات النموذج" },
+    "keywords": {
+      "es": ["ajustes", "opciones", "engrane", "preferencias", "notificaciones", "permisos", "personalizar"],
+      "en": ["preferences", "options", "gear", "notifications", "permissions", "customize", "configure"]
+    }
+  },
+  "form-columns": {
+    "label": { "es": "Formulario a dos columnas", "en": "Two-column form", "pt": "Formulário em duas colunas", "fr": "Formulaire sur deux colonnes", "de": "Zweispaltiges Formular", "it": "Modulo a due colonne", "ja": "2列フォーム", "zh": "双栏表单", "ko": "2열 양식", "ar": "نموذج من عمودين" },
+    "keywords": {
+      "es": ["diseño", "columnas", "maquetación", "acomodo de campos", "cuadrícula", "lado a lado", "layout"],
+      "en": ["layout", "columns", "grid", "side by side", "field arrangement", "form design", "split"]
+    }
+  },
+  "form-inline": {
+    "label": { "es": "Formulario horizontal", "en": "Horizontal form", "pt": "Formulário horizontal", "fr": "Formulaire horizontal", "de": "Horizontales Formular", "it": "Modulo orizzontale", "ja": "横並びフォーム", "zh": "水平表单", "ko": "가로형 양식", "ar": "نموذج أفقي" },
+    "keywords": {
+      "es": ["etiquetas a la izquierda", "diseño", "alineación", "etiqueta junto al campo", "layout", "formulario de ajustes", "maquetación"],
+      "en": ["labels on the left", "layout", "alignment", "label beside field", "settings form", "inline labels", "form design"]
+    }
+  },
+  "input-key-value": {
+    "label": { "es": "Pares clave-valor", "en": "Key-value pairs", "pt": "Pares chave-valor", "fr": "Paires clé-valeur", "de": "Schlüssel-Wert-Paare", "it": "Coppie chiave-valore", "ja": "キーと値のペア", "zh": "键值对", "ko": "키-값 쌍", "ar": "أزواج المفتاح والقيمة" },
+    "keywords": {
+      "es": ["encabezados", "metadatos", "variables de entorno", "nombre y valor", "parámetros", "propiedades", "configuración"],
+      "en": ["headers", "metadata", "environment variables", "name and value", "parameters", "properties", "config"]
+    }
+  },
+  "fieldset": {
+    "label": { "es": "Grupo de campos", "en": "Field group", "pt": "Grupo de campos", "fr": "Groupe de champs", "de": "Feldgruppe", "it": "Gruppo di campi", "ja": "フィールドグループ", "zh": "字段组", "ko": "필드 그룹", "ar": "مجموعة حقول" },
+    "keywords": {
+      "es": ["fieldset", "leyenda", "sección", "dirección", "datos de facturación", "bloque", "agrupar"],
+      "en": ["fieldset", "legend", "section", "address", "billing details", "block", "grouping"]
+    }
+  },
+  "form-steps": {
+    "label": { "es": "Formulario por pasos", "en": "Multi-step form", "pt": "Formulário em etapas", "fr": "Formulaire en plusieurs étapes", "de": "Mehrstufiges Formular", "it": "Modulo a più passaggi", "ja": "ステップ式フォーム", "zh": "分步表单", "ko": "단계별 양식", "ar": "نموذج متعدد الخطوات" },
+    "keywords": {
+      "es": ["asistente", "etapas", "wizard", "paso a paso", "registro", "proceso", "siguiente"],
+      "en": ["wizard", "stages", "step by step", "onboarding", "sign up", "process", "next"]
+    }
+  },
+  "form-login": {
+    "label": { "es": "Formulario de inicio de sesión", "en": "Sign-in form", "pt": "Formulário de login", "fr": "Formulaire de connexion", "de": "Anmeldeformular", "it": "Modulo di accesso", "ja": "ログインフォーム", "zh": "登录表单", "ko": "로그인 양식", "ar": "نموذج تسجيل الدخول" },
+    "keywords": {
+      "es": ["login", "acceder", "correo y contraseña", "entrar", "cuenta", "credenciales", "autenticación"],
+      "en": ["log in", "email and password", "access", "account", "credentials", "authentication", "enter"]
+    }
+  },
+  "form-logic": {
+    "label": { "es": "Lógica condicional", "en": "Conditional logic", "pt": "Lógica condicional", "fr": "Logique conditionnelle", "de": "Bedingte Logik", "it": "Logica condizionale", "ja": "条件付きロジック", "zh": "条件逻辑", "ko": "조건부 로직", "ar": "منطق شرطي" },
+    "keywords": {
+      "es": ["ramificación", "si entonces", "saltar pregunta", "reglas", "flujo", "respuestas", "mostrar campo"],
+      "en": ["branching", "if then", "skip logic", "rules", "flow", "answers", "show field"]
+    }
+  },
+  "survey": {
+    "label": { "es": "Encuesta", "en": "Survey", "pt": "Pesquisa", "fr": "Sondage", "de": "Umfrage", "it": "Sondaggio", "ja": "アンケート", "zh": "问卷调查", "ko": "설문조사", "ar": "استبيان" },
+    "keywords": {
+      "es": ["cuestionario", "preguntas", "responder", "opinión", "retroalimentación", "sondeo", "investigación"],
+      "en": ["questionnaire", "questions", "answer", "opinion", "feedback", "poll", "research"]
+    }
+  },
+  "accordion": {
+    "label": { "es": "Acordeón", "en": "Accordion", "pt": "Acordeão", "fr": "Accordéon", "de": "Akkordeon", "it": "Fisarmonica", "ja": "アコーディオン", "zh": "折叠面板", "ko": "아코디언", "ar": "أقسام قابلة للطي" },
+    "keywords": {
+      "es": ["preguntas frecuentes", "secciones plegables", "expandir", "contraer", "desplegar", "faq", "mostrar más"],
+      "en": ["faq", "collapsible sections", "expand", "collapse", "disclosure", "show more", "details"]
+    }
+  },
+  "progress-steps": {
+    "label": { "es": "Indicador de pasos", "en": "Step indicator", "pt": "Indicador de etapas", "fr": "Indicateur d’étapes", "de": "Schrittanzeige", "it": "Indicatore di passaggi", "ja": "ステップインジケーター", "zh": "步骤条", "ko": "단계 표시기", "ar": "مؤشر الخطوات" },
+    "keywords": {
+      "es": ["progreso", "etapas", "asistente", "pago", "paso actual", "flujo", "checkout"],
+      "en": ["progress", "stages", "wizard", "checkout", "current step", "stepper", "flow"]
+    }
+  }
+}
