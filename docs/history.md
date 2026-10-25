@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 24 Oct 2026 — Typefaces at Apple's level
+- **`scripts/type.mjs`** ([build](./build.md#typefaces-node-scriptstypemjs-folder), [decision 84](./decisions.md#phase-3-23-oct-2026)): a typeface's source is drawn for each stroke; `pen` gives horizontals their contrast; solids (`{ solid }`) for dots; alternates (`<base>.<feature>`) become GSUB features; `kerning` (groups, pairs and exceptions) becomes GPOS, varying with the weight through GDEF; each master keeps its own advances (phantom points and HVAR); words are kerned and their JSON carries each letter's x and the word's advance; `proof.png` sits next to the specimen; `--subset --out` cuts fonts to a text. A glyph that doesn't interpolate fails the build.
+- **`scripts/sfnt.mjs`** writes GPOS (pair adjustment, glyph pairs and classes, VariationIndex devices), GDEF 1.3 and HVAR (one ItemVariationStore each), a GSUB with any number of features, and advance deltas in gvar; **`scripts/masters.mjs`** takes a glyph as a function of the weight. Checked with fontTools, the OpenType Sanitizer (OTS: Chrome's and Firefox's filter) and HarfBuzz. Tests: `tests/type.test.mjs` builds a typeface with all of it.
+- Flouvia Sans 2 was built with it in `flouvia-web` (267 glyphs, kerning, `case` and `tnum`).
+
 ## 24 Oct 2026 — Flouvia's marks and `mark`
 - **`marcas` starts** with `brand-flouvia` (the isotype) and `brand-flouvia-u` (the u), traced from Flouvia's official logo by an exact scale and shift ([decision 83](./decisions.md#phase-3-23-oct-2026)). `mark` keeps them solid and identical in every style and weight; QA skips their density. `TRADEMARKS.md` ships the brand icons' notice. The rest of `marcas` comes with round 4.
 

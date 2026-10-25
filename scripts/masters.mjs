@@ -1,6 +1,9 @@
 // Compatible masters: an icon's outline at several weights with the same structure point for point,
 // so a variable font or an Xcode variable symbol can interpolate between them.
 //   masters(icon, options, [0.9, 1.5, 2.1])   // → { weights, ds: [d, d, d], checks } or throws
+// `icon` can also be a function of the weight that returns the icon drawn for it (a typeface's glyph,
+// whose drawing widens with the stroke); the masters and the weights between them are each checked
+// against the drawing for their own weight.
 // How:
 //   · each weight's outline, checked: joined first (an icon whose pieces either cross or stand
 //     apart keeps its structure that way), then with the pieces laid over each other; slivers under
@@ -648,7 +651,8 @@ function pathOf(contours, k, mix) {
  * structure can't be shared (contours that appear or merge between weights) or a check fails.
  */
 export function masters(icon, options = {}, weights = [0.9, 1.5, 2.1]) {
-  const svgAt = (w) => render(icon, { ...options, weight: w, animate: null, id: 'o' });
+  const drawn = typeof icon === 'function' ? icon : () => icon;
+  const svgAt = (w) => render(drawn(w), { ...options, weight: w, animate: null, id: 'o' });
   const errors = [];
   // Joined first: the union of a QA-clean icon keeps its structure across weights (pieces either
   // cross or stand 2.85 apart) and its contours turn canonically; then each piece on its own
@@ -658,7 +662,7 @@ export function masters(icon, options = {}, weights = [0.9, 1.5, 2.1]) {
   ]) {
     let sets;
     try {
-      const ds = weights.map((w) => outline(icon, { ...options, weight: w }, { modes }));
+      const ds = weights.map((w) => outline(drawn(w), { ...options, weight: w }, { modes }));
       // Slivers a path operation leaves (under 0.02 of area) are invisible and don't hold across weights
       sets = ds.map((d) => contoursOf(d).map(measure).filter((c) => Math.abs(areaOf(c)) >= 0.02));
     } catch (error) {
@@ -691,7 +695,7 @@ export function masters(icon, options = {}, weights = [0.9, 1.5, 2.1]) {
       }
     }
   }
-  throw new Error(`${icon.name ?? 'icon'} ${JSON.stringify(options)}: no compatible masters (${errors.join(' · ')})`);
+  throw new Error(`${drawn(weights[1] ?? weights[0]).name ?? 'icon'} ${JSON.stringify(options)}: no compatible masters (${errors.join(' · ')})`);
 }
 
 /** Diagnosis: each weight's contours with their turn, depth, center and box. */

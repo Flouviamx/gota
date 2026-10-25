@@ -81,12 +81,23 @@ Path data is compact: absolute coordinates rounded to hundredths first (0.005 at
 
 
 ## Typefaces (`node scripts/type.mjs <folder>`)
-Typefaces drawn with the engine, the way icons are ([decision 77](./decisions.md#outputs-23-oct-2026)): a folder holds the source, `glyphs.mjs` (a function that receives the engine's primitives, `arc`, `circ`, `drop`, `line`, `dot`, and returns the typeface: family, metrics in canvas units, each glyph's stroke axes with its width and side bearings, the marks, the accented letters composed from them, and the words to write as outlines), and its `LICENSE`. The tool writes, in that folder:
-- `fonts/<Family>[wght].ttf · .woff2` (variable, weight 300–700, Gota's 0.9 to 2.1 stroke) and `<Family>-{Light,Regular,Bold}.ttf · .woff2`, with `<family>.css`;
-- `words/<word>-{light,regular,bold}.svg`: the words as outlines (a logo's name), the baseline at y = 0;
-- `specimen.png`, set in the fonts just written, by Chrome (`--no-specimen` skips it).
+Typefaces drawn with the engine, the way icons are ([decision 77](./decisions.md#outputs-23-oct-2026), [decision 84](./decisions.md#phase-3-23-oct-2026)): a folder holds the source, `glyphs.mjs`, and its `LICENSE`. The source is a function that receives the engine's primitives (`arc`, `circ`, `drop`, `line`, `dot`) and the stroke it is drawn for (`stroke`: 0.9, 1.5, 2.1, or any weight between them, since the checks ask for those too), and returns the typeface:
+- family, version, names and metrics in canvas units;
+- `glyphs`: each one's strokes (axes) with its width and side bearings, drawn for that stroke (a glyph can widen with the weight, or space itself apart differently); a `d` entry can be a solid, `{ solid: d }`, a closed shape filled as it is, without the stroke (a dot, which no pen draws that small);
+- `marks` and `composites` (accented letters: a base and a mark);
+- alternates: glyphs named `<base>.<feature>` with no character (`hyphen.case`, `one.tnum`), reached through that feature;
+- `kerning`: `{ groups: { name: [char or glyph name…] }, pairs: [[left, right, value]…] }`, a side being `@group` or one glyph; group pairs become class kerning, any pair with a single glyph an exception that wins over them, and an accented letter joins its base's group; values in canvas units, at that stroke;
+- `pen: { contrast }`: horizontals that much thinner than verticals, as an elliptical nib would draw them (the strokes are outlined narrowed by `contrast` at a stroke that much thinner, and widened back);
+- `words` to write as outlines, and optionally `samples` (the specimen's text) and `proof` (its kerning pairs and each feature's sample).
 
-Each glyph is an icon to the engine: its strokes on the 24 canvas (its origin at (4, 19), room for capital accents and descenders at the boldest weight), outlined at the three weights as compatible masters (`scripts/masters.mjs`, each checked against the drawing); one without them keeps its regular outline across the variable font, reported. Vertical metrics, Unicode ranges, the embedding flag (restricted, `fsType` 2), and the names table (copyright, trademark, manufacturer, license and its URL) come from the source. `scripts/contours.mjs` turns path data into TrueType contours for both the icon fonts and typefaces. No typeface's design lives in this repository: Flouvia's (Flouvia Sans) is in the private `flouvia-web`, under its own license, and is built from there (`npm run brand:type`).
+The tool writes, in that folder:
+- `fonts/<Family>[wght].ttf · .woff2` (variable, weight 300–700, Gota's 0.9 to 2.1 stroke) and `<Family>-{Light,Regular,Bold}.ttf · .woff2`, with `<family>.css`: each master with its own advances (in the variable font, phantom-point deltas and HVAR), the kerning in GPOS (class pairs and exceptions; values that change with the weight through GDEF's variation store) and the alternates in GSUB;
+- `words/<word>-{light,regular,bold}.svg` and `.json`: the words as outlines, kerned (a logo's name), the baseline at y = 0, with the word's advance and each letter's x;
+- `specimen.png` and `proof.png`, set in the fonts just written, by Chrome (`--no-specimen` skips them): the proof holds, at each weight, every letter between n and o and between H and O, the figures, the kerning pairs off and on, each feature off and on, and the text from 120 to 12 px.
+
+`--subset <text> --out <dir>` writes only fonts, of that text's characters (their accented letters composed as usual), their alternates and the kerning between them: how a site serves a typeface cut to its headlines.
+
+Each glyph is an icon to the engine: its strokes on the 24 canvas (its origin at (4, 19), room for capital accents and descenders at the boldest weight), outlined at the three weights as compatible masters (`scripts/masters.mjs`, which takes the glyph as a function of the weight; each master and the weights halfway between them checked against their own drawing). A glyph without compatible masters fails the build: every glyph changes weight. Vertical metrics, the embedding flag (restricted, `fsType` 2), and the names table (copyright, trademark, manufacturer, license and its URL) come from the source; the Unicode ranges, from its characters. `scripts/contours.mjs` turns path data into TrueType contours for both the icon fonts and typefaces. No typeface's design lives in this repository: Flouvia's (Flouvia Sans) is in the private `flouvia-web`, under its own license, and is built from there (`npm run brand:type`).
 
 ## Migration (`src/migrate/`, `@flouvia/gota/migrate`, `gota-migrate`)
 For moving a codebase to Gota from Lucide, Heroicons, or SF Symbols ([decision 75](./decisions.md#outputs-23-oct-2026)).
