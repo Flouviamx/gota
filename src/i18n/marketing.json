@@ -1,0 +1,618 @@
+{
+  "megaphone-plus": {
+    "label": { "es": "Nueva campaña", "en": "New campaign", "pt": "Nova campanha", "fr": "Nouvelle campagne", "de": "Neue Kampagne", "it": "Nuova campagna", "ja": "新規キャンペーン", "zh": "新建营销活动", "ko": "새 캠페인", "ar": "حملة جديدة" },
+    "keywords": {
+      "es": ["lanzar campaña", "crear", "promoción", "publicidad", "email marketing", "difusión", "anuncio nuevo"],
+      "en": ["launch campaign", "create", "promotion", "advertising", "email marketing", "outreach", "new ad"]
+    }
+  },
+  "megaphone-edit": {
+    "label": { "es": "Editar campaña", "en": "Edit campaign", "pt": "Editar campanha", "fr": "Modifier la campagne", "de": "Kampagne bearbeiten", "it": "Modifica campagna", "ja": "キャンペーンを編集", "zh": "编辑营销活动", "ko": "캠페인 편집", "ar": "تعديل الحملة" },
+    "keywords": {
+      "es": ["borrador", "campaña en borrador", "modificar", "redactar", "configurar campaña", "ajustar", "sin publicar"],
+      "en": ["draft", "draft campaign", "modify", "compose", "campaign settings", "adjust", "unpublished"]
+    }
+  },
+  "megaphone-clock": {
+    "label": { "es": "Campaña programada", "en": "Scheduled campaign", "pt": "Campanha agendada", "fr": "Campagne programmée", "de": "Geplante Kampagne", "it": "Campagna programmata", "ja": "予約済みのキャンペーン", "zh": "已排期的营销活动", "ko": "예약된 캠페인", "ar": "حملة مجدولة" },
+    "keywords": {
+      "es": ["programar envío", "agendar", "enviar más tarde", "fecha de lanzamiento", "calendario de campañas", "pendiente", "hora de envío"],
+      "en": ["schedule send", "send later", "launch date", "campaign calendar", "pending", "queued", "send time"]
+    }
+  },
+  "megaphone-pause": {
+    "label": { "es": "Campaña en pausa", "en": "Paused campaign", "pt": "Campanha pausada", "fr": "Campagne en pause", "de": "Pausierte Kampagne", "it": "Campagna in pausa", "ja": "一時停止中のキャンペーン", "zh": "已暂停的营销活动", "ko": "일시 중지된 캠페인", "ar": "حملة متوقفة مؤقتًا" },
+    "keywords": {
+      "es": ["pausar", "detener anuncios", "suspender", "inactiva", "frenar gasto", "reanudar", "en espera"],
+      "en": ["pause", "stop ads", "suspend", "inactive", "hold spend", "resume", "on hold"]
+    }
+  },
+  "megaphone-check": {
+    "label": { "es": "Campaña enviada", "en": "Campaign sent", "pt": "Campanha enviada", "fr": "Campagne envoyée", "de": "Kampagne gesendet", "it": "Campagna inviata", "ja": "送信済みのキャンペーン", "zh": "营销活动已发送", "ko": "발송된 캠페인", "ar": "تم إرسال الحملة" },
+    "keywords": {
+      "es": ["completada", "finalizada", "publicada", "entregada", "lanzada", "terminada", "resultados"],
+      "en": ["completed", "finished", "published", "delivered", "launched", "done", "results"]
+    }
+  },
+  "megaphone-sync": {
+    "label": { "es": "Campaña automatizada", "en": "Automated campaign", "pt": "Campanha automatizada", "fr": "Campagne automatisée", "de": "Automatisierte Kampagne", "it": "Campagna automatizzata", "ja": "自動化キャンペーン", "zh": "自动化营销活动", "ko": "자동화 캠페인", "ar": "حملة مؤتمتة" },
+    "keywords": {
+      "es": ["recurrente", "automatización", "flujo", "envío automático", "se repite", "marketing automation", "disparador"],
+      "en": ["recurring", "automation", "flow", "auto send", "repeating", "marketing automation", "trigger"]
+    }
+  },
+  "audience": {
+    "label": { "es": "Audiencia", "en": "Audience", "pt": "Público", "fr": "Audience", "de": "Zielgruppe", "it": "Pubblico", "ja": "オーディエンス", "zh": "受众", "ko": "오디언스", "ar": "الجمهور" },
+    "keywords": {
+      "es": ["público objetivo", "personas", "clientes", "seguidores", "suscriptores", "lista de contactos", "mercado"],
+      "en": ["target audience", "people", "customers", "followers", "subscribers", "contact list", "market"]
+    }
+  },
+  "audience-segment": {
+    "label": { "es": "Segmento de audiencia", "en": "Audience segment", "pt": "Segmento de público", "fr": "Segment d’audience", "de": "Zielgruppensegment", "it": "Segmento di pubblico", "ja": "オーディエンスセグメント", "zh": "受众细分", "ko": "오디언스 세그먼트", "ar": "شريحة الجمهور" },
+    "keywords": {
+      "es": ["segmentar", "subconjunto", "reglas", "filtro", "grupo de clientes", "cohorte", "personalización"],
+      "en": ["segmentation", "subset", "rules", "filter", "customer group", "cohort", "personalization"]
+    }
+  },
+  "audience-plus": {
+    "label": { "es": "Crear audiencia", "en": "Create audience", "pt": "Criar público", "fr": "Créer une audience", "de": "Zielgruppe erstellen", "it": "Crea pubblico", "ja": "オーディエンスを作成", "zh": "创建受众", "ko": "오디언스 만들기", "ar": "إنشاء جمهور" },
+    "keywords": {
+      "es": ["audiencia personalizada", "agregar personas", "añadir a la lista", "nuevos contactos", "importar contactos", "ampliar público", "sumar"],
+      "en": ["custom audience", "add people", "add to list", "new contacts", "import contacts", "grow audience", "include"]
+    }
+  },
+  "audience-minus": {
+    "label": { "es": "Excluir audiencia", "en": "Exclude audience", "pt": "Excluir público", "fr": "Exclure une audience", "de": "Zielgruppe ausschließen", "it": "Escludi pubblico", "ja": "オーディエンスを除外", "zh": "排除受众", "ko": "오디언스 제외", "ar": "استبعاد جمهور" },
+    "keywords": {
+      "es": ["exclusión", "quitar personas", "no mostrar a", "lista de exclusión", "clientes actuales", "segmentación negativa", "filtrar"],
+      "en": ["exclusion", "remove people", "don’t show to", "suppression list", "existing customers", "negative targeting", "filter out"]
+    }
+  },
+  "audience-search": {
+    "label": { "es": "Investigación de audiencia", "en": "Audience research", "pt": "Pesquisa de público", "fr": "Étude d’audience", "de": "Zielgruppenanalyse", "it": "Ricerca sul pubblico", "ja": "オーディエンス調査", "zh": "受众研究", "ko": "오디언스 조사", "ar": "دراسة الجمهور" },
+    "keywords": {
+      "es": ["estudio de mercado", "explorar clientes", "insights", "conocer al cliente", "encuesta", "análisis de público", "descubrir"],
+      "en": ["market research", "explore customers", "insights", "customer discovery", "survey", "audience analysis", "discover"]
+    }
+  },
+  "audience-sync": {
+    "label": { "es": "Sincronizar audiencia", "en": "Sync audience", "pt": "Sincronizar público", "fr": "Synchroniser l’audience", "de": "Zielgruppe synchronisieren", "it": "Sincronizza pubblico", "ja": "オーディエンスを同期", "zh": "同步受众", "ko": "오디언스 동기화", "ar": "مزامنة الجمهور" },
+    "keywords": {
+      "es": ["actualizar lista", "CRM", "plataforma de anuncios", "exportar audiencia", "integración", "conectar", "mantener al día"],
+      "en": ["refresh list", "CRM", "ad platform", "export audience", "integration", "connect", "keep updated"]
+    }
+  },
+  "lookalike": {
+    "label": { "es": "Audiencia similar", "en": "Lookalike audience", "pt": "Público semelhante", "fr": "Audience similaire", "de": "Ähnliche Zielgruppe", "it": "Pubblico simile", "ja": "類似オーディエンス", "zh": "类似受众", "ko": "유사 타겟", "ar": "جمهور مشابه" },
+    "keywords": {
+      "es": ["lookalike", "clientes parecidos", "público parecido", "expansión", "nuevos clientes", "prospección", "mejores clientes"],
+      "en": ["similar audience", "similar customers", "expansion", "new customers", "prospecting", "best customers", "modeled audience"]
+    }
+  },
+  "targeting-person": {
+    "label": { "es": "Cliente ideal", "en": "Ideal customer", "pt": "Cliente ideal", "fr": "Client idéal", "de": "Idealer Kunde", "it": "Cliente ideale", "ja": "理想の顧客", "zh": "理想客户", "ko": "이상적인 고객", "ar": "العميل المثالي" },
+    "keywords": {
+      "es": ["público objetivo", "segmentación", "buyer persona", "ICP", "a quién va dirigido", "perfil de cliente", "nicho"],
+      "en": ["target audience", "targeting", "buyer persona", "ICP", "who it’s for", "customer profile", "niche"]
+    }
+  },
+  "targeting-location": {
+    "label": { "es": "Segmentación geográfica", "en": "Location targeting", "pt": "Segmentação geográfica", "fr": "Ciblage géographique", "de": "Standort-Targeting", "it": "Targeting geografico", "ja": "地域ターゲティング", "zh": "地理位置定向", "ko": "위치 타겟팅", "ar": "الاستهداف الجغرافي" },
+    "keywords": {
+      "es": ["geolocalización", "por ubicación", "ciudad", "región", "radio", "anuncios locales", "país"],
+      "en": ["geotargeting", "geofencing", "city", "region", "radius", "local ads", "country"]
+    }
+  },
+  "targeting-device": {
+    "label": { "es": "Segmentación por dispositivo", "en": "Device targeting", "pt": "Segmentação por dispositivo", "fr": "Ciblage par appareil", "de": "Geräte-Targeting", "it": "Targeting per dispositivo", "ja": "デバイスターゲティング", "zh": "设备定向", "ko": "기기 타겟팅", "ar": "الاستهداف حسب الجهاز" },
+    "keywords": {
+      "es": ["celular", "computadora", "tableta", "móvil", "escritorio", "plataforma", "sistema operativo"],
+      "en": ["mobile", "desktop", "tablet", "phone", "platform", "operating system", "cross-device"]
+    }
+  },
+  "targeting-interest": {
+    "label": { "es": "Segmentación por intereses", "en": "Interest targeting", "pt": "Segmentação por interesses", "fr": "Ciblage par centres d’intérêt", "de": "Interessen-Targeting", "it": "Targeting per interessi", "ja": "興味関心ターゲティング", "zh": "兴趣定向", "ko": "관심사 타겟팅", "ar": "الاستهداف حسب الاهتمامات" },
+    "keywords": {
+      "es": ["gustos", "aficiones", "afinidad", "pasatiempos", "comportamiento", "preferencias", "temas"],
+      "en": ["likes", "hobbies", "affinity", "passions", "behavior", "preferences", "topics"]
+    }
+  },
+  "targeting-company": {
+    "label": { "es": "Marketing basado en cuentas", "en": "Account-based marketing", "pt": "Marketing baseado em contas", "fr": "Marketing basé sur les comptes", "de": "Account-based Marketing", "it": "Account-based marketing", "ja": "アカウントベースドマーケティング", "zh": "目标客户营销", "ko": "어카운트 기반 마케팅", "ar": "التسويق القائم على الحسابات" },
+    "keywords": {
+      "es": ["ABM", "B2B", "empresas objetivo", "cuentas clave", "segmentación por empresa", "ventas corporativas", "prospección B2B"],
+      "en": ["ABM", "B2B", "target accounts", "key accounts", "company targeting", "enterprise sales", "B2B prospecting"]
+    }
+  },
+  "targeting-time": {
+    "label": { "es": "Segmentación por horario", "en": "Time targeting", "pt": "Segmentação por horário", "fr": "Ciblage horaire", "de": "Zeitliches Targeting", "it": "Targeting orario", "ja": "時間帯ターゲティング", "zh": "时段定向", "ko": "시간대 타겟팅", "ar": "الاستهداف حسب الوقت" },
+    "keywords": {
+      "es": ["dayparting", "programación de anuncios", "franja horaria", "días de la semana", "horas pico", "horario comercial", "hora del día"],
+      "en": ["dayparting", "ad scheduling", "time slot", "days of the week", "peak hours", "business hours", "time of day"]
+    }
+  },
+  "targeting-content": {
+    "label": { "es": "Segmentación contextual", "en": "Contextual targeting", "pt": "Segmentação contextual", "fr": "Ciblage contextuel", "de": "Kontextuelles Targeting", "it": "Targeting contestuale", "ja": "コンテキストターゲティング", "zh": "内容定向", "ko": "문맥 타겟팅", "ar": "الاستهداف السياقي" },
+    "keywords": {
+      "es": ["por contenido", "palabras clave", "temas", "ubicación del anuncio", "sitio web", "página", "red de display"],
+      "en": ["content targeting", "keywords", "topics", "placement", "website", "page context", "display network"]
+    }
+  },
+  "retargeting": {
+    "label": { "es": "Retargeting", "en": "Retargeting", "pt": "Retargeting", "fr": "Reciblage", "de": "Retargeting", "it": "Retargeting", "ja": "リターゲティング", "zh": "再营销", "ko": "리타겟팅", "ar": "إعادة الاستهداف" },
+    "keywords": {
+      "es": ["remarketing", "volver a impactar", "visitantes anteriores", "carrito abandonado", "recuperar clientes", "seguimiento", "reconectar"],
+      "en": ["remarketing", "re-engage", "past visitors", "abandoned cart", "win back", "follow up", "reconnect"]
+    }
+  },
+  "demographics": {
+    "label": { "es": "Datos demográficos", "en": "Demographics", "pt": "Dados demográficos", "fr": "Données démographiques", "de": "Demografische Merkmale", "it": "Dati demografici", "ja": "ユーザー属性", "zh": "人口统计", "ko": "인구통계", "ar": "البيانات الديموغرافية" },
+    "keywords": {
+      "es": ["edad", "género", "ingresos", "nivel socioeconómico", "perfil", "segmentación demográfica", "estadísticas de audiencia"],
+      "en": ["age", "gender", "income", "household", "profile", "demographic targeting", "audience stats"]
+    }
+  },
+  "firmographics": {
+    "label": { "es": "Datos firmográficos", "en": "Firmographics", "pt": "Dados firmográficos", "fr": "Données firmographiques", "de": "Firmografische Daten", "it": "Dati firmografici", "ja": "企業属性", "zh": "企业属性", "ko": "기업 속성", "ar": "خصائص الشركات" },
+    "keywords": {
+      "es": ["industria", "tamaño de empresa", "facturación", "sector", "número de empleados", "perfil de empresa", "B2B"],
+      "en": ["industry", "company size", "revenue", "sector", "headcount", "company profile", "B2B"]
+    }
+  },
+  "lead": {
+    "label": { "es": "Prospecto", "en": "Lead", "pt": "Lead", "fr": "Prospect", "de": "Lead", "it": "Lead", "ja": "リード", "zh": "潜在客户", "ko": "리드", "ar": "عميل محتمل" },
+    "keywords": {
+      "es": ["lead", "cliente potencial", "generación de leads", "lead magnet", "contacto", "oportunidad", "captación"],
+      "en": ["prospect", "potential customer", "lead generation", "lead magnet", "contact", "opportunity", "sales lead"]
+    }
+  },
+  "lead-plus": {
+    "label": { "es": "Nuevo prospecto", "en": "New lead", "pt": "Novo lead", "fr": "Nouveau prospect", "de": "Neuer Lead", "it": "Nuovo lead", "ja": "新規リード", "zh": "新增潜在客户", "ko": "새 리드", "ar": "عميل محتمل جديد" },
+    "keywords": {
+      "es": ["captar lead", "agregar contacto", "formulario", "registro", "capturar", "suscripción", "generación de leads"],
+      "en": ["capture lead", "add contact", "form", "sign up", "capture", "lead form", "lead generation"]
+    }
+  },
+  "lead-check": {
+    "label": { "es": "Prospecto calificado", "en": "Qualified lead", "pt": "Lead qualificado", "fr": "Prospect qualifié", "de": "Qualifizierter Lead", "it": "Lead qualificato", "ja": "有望なリード", "zh": "合格潜在客户", "ko": "검증된 리드", "ar": "عميل محتمل مؤهل" },
+    "keywords": {
+      "es": ["MQL", "SQL", "listo para ventas", "aprobado", "validado", "oportunidad de venta", "pasar a ventas"],
+      "en": ["MQL", "SQL", "sales ready", "approved", "validated", "sales opportunity", "hand off to sales"]
+    }
+  },
+  "lead-x": {
+    "label": { "es": "Prospecto descartado", "en": "Disqualified lead", "pt": "Lead desqualificado", "fr": "Prospect disqualifié", "de": "Disqualifizierter Lead", "it": "Lead scartato", "ja": "対象外のリード", "zh": "不合格潜在客户", "ko": "부적격 리드", "ar": "عميل محتمل مستبعد" },
+    "keywords": {
+      "es": ["perdido", "no calificado", "rechazado", "sin interés", "cerrado perdido", "spam", "fuera de perfil"],
+      "en": ["lost", "unqualified", "rejected", "not interested", "closed lost", "spam", "bad fit"]
+    }
+  },
+  "lead-score": {
+    "label": { "es": "Puntuación del prospecto", "en": "Lead score", "pt": "Pontuação do lead", "fr": "Score du prospect", "de": "Lead-Score", "it": "Punteggio del lead", "ja": "リードスコア", "zh": "潜在客户评分", "ko": "리드 점수", "ar": "تقييم العميل المحتمل" },
+    "keywords": {
+      "es": ["lead scoring", "calificación", "intención de compra", "temperatura", "prospecto caliente", "prioridad", "medidor"],
+      "en": ["lead scoring", "rating", "purchase intent", "hot lead", "buying readiness", "priority", "gauge"]
+    }
+  },
+  "conversion": {
+    "label": { "es": "Conversión", "en": "Conversion", "pt": "Conversão", "fr": "Conversion", "de": "Conversion", "it": "Conversione", "ja": "コンバージョン", "zh": "转化", "ko": "전환", "ar": "التحويل" },
+    "keywords": {
+      "es": ["convertir", "objetivo logrado", "venta", "tasa de conversión", "compra", "registro completado", "resultado"],
+      "en": ["convert", "goal completed", "sale", "conversion rate", "purchase", "signup", "outcome"]
+    }
+  },
+  "conversion-path": {
+    "label": { "es": "Ruta de conversión", "en": "Conversion path", "pt": "Caminho de conversão", "fr": "Parcours de conversion", "de": "Conversion-Pfad", "it": "Percorso di conversione", "ja": "コンバージョン経路", "zh": "转化路径", "ko": "전환 경로", "ar": "مسار التحويل" },
+    "keywords": {
+      "es": ["recorrido del cliente", "customer journey", "puntos de contacto", "embudo", "pasos", "trayectoria", "viaje del usuario"],
+      "en": ["customer journey", "touchpoints", "funnel", "steps", "user journey", "path to purchase", "flow"]
+    }
+  },
+  "landing-page": {
+    "label": { "es": "Página de aterrizaje", "en": "Landing page", "pt": "Página de destino", "fr": "Page de destination", "de": "Landingpage", "it": "Landing page", "ja": "ランディングページ", "zh": "落地页", "ko": "랜딩 페이지", "ar": "صفحة هبوط" },
+    "keywords": {
+      "es": ["landing", "página de campaña", "formulario", "captación", "llamado a la acción", "página de ventas", "micrositio"],
+      "en": ["landing", "campaign page", "form", "lead capture", "call to action", "sales page", "microsite"]
+    }
+  },
+  "web-traffic": {
+    "label": { "es": "Tráfico web", "en": "Web traffic", "pt": "Tráfego do site", "fr": "Trafic du site", "de": "Website-Traffic", "it": "Traffico web", "ja": "サイトのトラフィック", "zh": "网站流量", "ko": "웹 트래픽", "ar": "زيارات الموقع" },
+    "keywords": {
+      "es": ["visitas", "visitantes", "sesiones", "fuentes de tráfico", "audiencia del sitio", "analítica web", "páginas vistas"],
+      "en": ["visits", "visitors", "sessions", "traffic sources", "site audience", "web analytics", "pageviews"]
+    }
+  },
+  "exit-intent": {
+    "label": { "es": "Intención de salida", "en": "Exit intent", "pt": "Intenção de saída", "fr": "Intention de sortie", "de": "Exit-Intent", "it": "Intento di uscita", "ja": "離脱意図", "zh": "离开意图", "ko": "이탈 의도", "ar": "نية المغادرة" },
+    "keywords": {
+      "es": ["popup de salida", "abandono", "retener visitante", "ventana emergente", "abandonar página", "rebote", "última oferta"],
+      "en": ["exit popup", "abandonment", "retain visitor", "popup", "leaving page", "bounce", "last-chance offer"]
+    }
+  },
+  "click-through": {
+    "label": { "es": "Tasa de clics", "en": "Click-through rate", "pt": "Taxa de cliques", "fr": "Taux de clics", "de": "Klickrate", "it": "Percentuale di clic", "ja": "クリック率", "zh": "点击率", "ko": "클릭률", "ar": "نسبة النقر" },
+    "keywords": {
+      "es": ["CTR", "clics", "clic en anuncio", "interacción", "clic en enlace", "métrica", "rendimiento del anuncio"],
+      "en": ["CTR", "clicks", "ad click", "engagement", "link click", "metric", "ad performance"]
+    }
+  },
+  "seo": {
+    "label": { "es": "Posicionamiento en buscadores", "en": "SEO", "pt": "SEO", "fr": "Référencement naturel", "de": "Suchmaschinenoptimierung", "it": "Posizionamento SEO", "ja": "SEO対策", "zh": "搜索引擎优化", "ko": "검색엔진 최적화", "ar": "تحسين محركات البحث" },
+    "keywords": {
+      "es": ["SEO", "ranking", "resultados orgánicos", "visibilidad", "optimizar sitio", "primeros lugares", "tráfico orgánico"],
+      "en": ["search engine optimization", "ranking", "organic results", "visibility", "optimize site", "top position", "organic traffic"]
+    }
+  },
+  "keyword": {
+    "label": { "es": "Palabra clave", "en": "Keyword", "pt": "Palavra-chave", "fr": "Mot-clé", "de": "Keyword", "it": "Parola chiave", "ja": "キーワード", "zh": "关键词", "ko": "키워드", "ar": "كلمة مفتاحية" },
+    "keywords": {
+      "es": ["término de búsqueda", "keyword", "consulta", "búsqueda", "SEO", "SEM", "long tail"],
+      "en": ["search term", "query", "keyword research", "SEO", "SEM", "match type", "long tail"]
+    }
+  },
+  "search-results": {
+    "label": { "es": "Resultados de búsqueda", "en": "Search results", "pt": "Resultados da pesquisa", "fr": "Résultats de recherche", "de": "Suchergebnisse", "it": "Risultati di ricerca", "ja": "検索結果", "zh": "搜索结果", "ko": "검색 결과", "ar": "نتائج البحث" },
+    "keywords": {
+      "es": ["SERP", "página de resultados", "ranking", "posición orgánica", "buscador", "listado", "primera página"],
+      "en": ["SERP", "results page", "ranking", "organic position", "search engine", "listing", "first page"]
+    }
+  },
+  "search-ad": {
+    "label": { "es": "Anuncio de búsqueda", "en": "Search ad", "pt": "Anúncio de pesquisa", "fr": "Annonce de recherche", "de": "Suchanzeige", "it": "Annuncio di ricerca", "ja": "検索広告", "zh": "搜索广告", "ko": "검색 광고", "ar": "إعلان بحث" },
+    "keywords": {
+      "es": ["SEM", "resultado patrocinado", "anuncio pagado", "anuncio de texto", "pago por clic", "publicidad en buscadores", "enlace patrocinado"],
+      "en": ["SEM", "sponsored result", "paid ad", "text ad", "pay per click", "search advertising", "sponsored link"]
+    }
+  },
+  "backlink": {
+    "label": { "es": "Enlace entrante", "en": "Backlink", "pt": "Backlink", "fr": "Lien entrant", "de": "Backlink", "it": "Backlink", "ja": "被リンク", "zh": "反向链接", "ko": "백링크", "ar": "رابط خلفي" },
+    "keywords": {
+      "es": ["backlink", "link building", "enlace externo", "autoridad de dominio", "SEO", "referencia", "otro sitio"],
+      "en": ["inbound link", "link building", "external link", "domain authority", "SEO", "referring domain", "off-page"]
+    }
+  },
+  "link-shortener": {
+    "label": { "es": "Enlace corto", "en": "Short link", "pt": "Link curto", "fr": "Lien court", "de": "Kurzlink", "it": "Link breve", "ja": "短縮URL", "zh": "短链接", "ko": "단축 링크", "ar": "رابط مختصر" },
+    "keywords": {
+      "es": ["acortador de URL", "acortar enlace", "URL corta", "compartir", "link de campaña", "redirección", "liga corta"],
+      "en": ["URL shortener", "shorten link", "short URL", "share", "campaign link", "redirect", "vanity URL"]
+    }
+  },
+  "link-tracking": {
+    "label": { "es": "Enlace con seguimiento", "en": "Tracked link", "pt": "Link rastreado", "fr": "Lien suivi", "de": "Tracking-Link", "it": "Link tracciato", "ja": "トラッキングリンク", "zh": "跟踪链接", "ko": "추적 링크", "ar": "رابط تتبع" },
+    "keywords": {
+      "es": ["UTM", "parámetros UTM", "rastreo de clics", "contar clics", "analítica", "atribución", "liga de campaña"],
+      "en": ["UTM", "UTM parameters", "click tracking", "count clicks", "analytics", "attribution", "campaign URL"]
+    }
+  },
+  "tracking-pixel": {
+    "label": { "es": "Píxel de seguimiento", "en": "Tracking pixel", "pt": "Pixel de rastreamento", "fr": "Pixel de suivi", "de": "Tracking-Pixel", "it": "Pixel di tracciamento", "ja": "トラッキングピクセル", "zh": "跟踪像素", "ko": "추적 픽셀", "ar": "بكسل التتبع" },
+    "keywords": {
+      "es": ["píxel de conversión", "etiqueta", "código de seguimiento", "medir conversiones", "analítica", "cookies", "rastreo"],
+      "en": ["conversion pixel", "tag", "tracking code", "measure conversions", "analytics", "cookies", "web beacon"]
+    }
+  },
+  "billboard": {
+    "label": { "es": "Publicidad", "en": "Advertising", "pt": "Publicidade", "fr": "Publicité", "de": "Werbung", "it": "Pubblicità", "ja": "広告", "zh": "广告", "ko": "광고", "ar": "الإعلانات" },
+    "keywords": {
+      "es": ["espectacular", "anuncio", "valla publicitaria", "publicidad exterior", "cartelera", "medios", "campaña publicitaria"],
+      "en": ["billboard", "ad", "out of home", "OOH", "outdoor advertising", "media buy", "ad campaign"]
+    }
+  },
+  "billboard-plus": {
+    "label": { "es": "Crear anuncio", "en": "Create ad", "pt": "Criar anúncio", "fr": "Créer une annonce", "de": "Anzeige erstellen", "it": "Crea annuncio", "ja": "広告を作成", "zh": "创建广告", "ko": "광고 만들기", "ar": "إنشاء إعلان" },
+    "keywords": {
+      "es": ["nuevo anuncio", "publicar anuncio", "agregar", "pautar", "creatividad", "lanzar publicidad", "diseñar anuncio"],
+      "en": ["new ad", "post ad", "add", "ad creative", "launch ad", "design ad", "advertise"]
+    }
+  },
+  "billboard-check": {
+    "label": { "es": "Anuncio aprobado", "en": "Ad approved", "pt": "Anúncio aprovado", "fr": "Annonce approuvée", "de": "Anzeige genehmigt", "it": "Annuncio approvato", "ja": "承認済みの広告", "zh": "广告已通过审核", "ko": "승인된 광고", "ar": "إعلان معتمد" },
+    "keywords": {
+      "es": ["activo", "publicado", "en circulación", "revisado", "visto bueno", "al aire", "cumple políticas"],
+      "en": ["active", "live", "published", "running", "reviewed", "eligible", "policy compliant"]
+    }
+  },
+  "billboard-x": {
+    "label": { "es": "Anuncio rechazado", "en": "Ad rejected", "pt": "Anúncio reprovado", "fr": "Annonce refusée", "de": "Anzeige abgelehnt", "it": "Annuncio rifiutato", "ja": "不承認の広告", "zh": "广告未通过审核", "ko": "비승인 광고", "ar": "إعلان مرفوض" },
+    "keywords": {
+      "es": ["no aprobado", "desaprobado", "infracción de políticas", "bloqueado", "inactivo", "error", "corregir anuncio"],
+      "en": ["disapproved", "not approved", "policy violation", "blocked", "inactive", "error", "fix ad"]
+    }
+  },
+  "billboard-clock": {
+    "label": { "es": "Anuncio programado", "en": "Scheduled ad", "pt": "Anúncio programado", "fr": "Annonce programmée", "de": "Geplante Anzeige", "it": "Annuncio programmato", "ja": "予約済みの広告", "zh": "已排期的广告", "ko": "예약된 광고", "ar": "إعلان مجدول" },
+    "keywords": {
+      "es": ["en revisión", "pendiente", "por publicar", "fecha de inicio", "en espera", "calendario de anuncios", "aprobación pendiente"],
+      "en": ["in review", "pending", "upcoming", "start date", "on hold", "ad calendar", "pending approval"]
+    }
+  },
+  "display-ad": {
+    "label": { "es": "Banner publicitario", "en": "Display ad", "pt": "Anúncio de display", "fr": "Bannière publicitaire", "de": "Display-Anzeige", "it": "Annuncio display", "ja": "ディスプレイ広告", "zh": "展示广告", "ko": "디스플레이 광고", "ar": "إعلان بانر" },
+    "keywords": {
+      "es": ["display", "anuncio gráfico", "anuncio en página", "red de display", "publicidad web", "espacio publicitario", "anuncio de imagen"],
+      "en": ["banner", "banner ad", "web ad", "display network", "ad space", "image ad", "ad slot"]
+    }
+  },
+  "video-ad": {
+    "label": { "es": "Anuncio en video", "en": "Video ad", "pt": "Anúncio em vídeo", "fr": "Annonce vidéo", "de": "Videoanzeige", "it": "Annuncio video", "ja": "動画広告", "zh": "视频广告", "ko": "동영상 광고", "ar": "إعلان فيديو" },
+    "keywords": {
+      "es": ["pre-roll", "omitir anuncio", "saltar anuncio", "comercial", "spot", "publicidad audiovisual", "anuncio omitible"],
+      "en": ["pre-roll", "skip ad", "skippable ad", "commercial", "spot", "in-stream", "video advertising"]
+    }
+  },
+  "interstitial-ad": {
+    "label": { "es": "Anuncio intersticial", "en": "Interstitial ad", "pt": "Anúncio intersticial", "fr": "Annonce interstitielle", "de": "Interstitial-Anzeige", "it": "Annuncio interstitial", "ja": "インタースティシャル広告", "zh": "插页式广告", "ko": "전면 광고", "ar": "إعلان بيني" },
+    "keywords": {
+      "es": ["pantalla completa", "anuncio en app", "cerrar anuncio", "publicidad móvil", "ventana emergente", "entre pantallas", "monetización"],
+      "en": ["full screen", "in-app ad", "close ad", "mobile advertising", "overlay", "between screens", "monetization"]
+    }
+  },
+  "rewarded-ad": {
+    "label": { "es": "Anuncio con recompensa", "en": "Rewarded ad", "pt": "Anúncio premiado", "fr": "Annonce avec récompense", "de": "Anzeige mit Prämie", "it": "Annuncio con premio", "ja": "リワード広告", "zh": "激励广告", "ko": "보상형 광고", "ar": "إعلان بمكافأة" },
+    "keywords": {
+      "es": ["ver video", "ganar premio", "monedas", "videojuegos", "vidas extra", "monetización", "anuncio en app"],
+      "en": ["watch video", "earn reward", "coins", "games", "extra lives", "monetization", "in-app ad"]
+    }
+  },
+  "post-boost": {
+    "label": { "es": "Promocionar publicación", "en": "Boost post", "pt": "Impulsionar publicação", "fr": "Booster la publication", "de": "Beitrag bewerben", "it": "Metti in evidenza il post", "ja": "投稿を宣伝", "zh": "推广帖子", "ko": "게시물 홍보하기", "ar": "ترويج المنشور" },
+    "keywords": {
+      "es": ["boost", "anuncio pagado", "pautar", "alcance pagado", "redes sociales", "publicación patrocinada", "más alcance"],
+      "en": ["promote post", "paid reach", "sponsored post", "social media", "paid social", "amplify", "more reach"]
+    }
+  },
+  "swipe-up": {
+    "label": { "es": "Desliza hacia arriba", "en": "Swipe up", "pt": "Deslize para cima", "fr": "Glisser vers le haut", "de": "Nach oben wischen", "it": "Scorri verso l’alto", "ja": "上にスワイプ", "zh": "上滑", "ko": "위로 스와이프", "ar": "اسحب للأعلى" },
+    "keywords": {
+      "es": ["historias", "stories", "enlace en historia", "llamado a la acción", "ver más", "gesto", "anuncio en historias"],
+      "en": ["stories", "story link", "call to action", "see more", "gesture", "story ad", "CTA"]
+    }
+  },
+  "pay-per-click": {
+    "label": { "es": "Pago por clic", "en": "Pay per click", "pt": "Pagamento por clique", "fr": "Paiement au clic", "de": "Pay-per-Click", "it": "Pagamento per clic", "ja": "クリック課金", "zh": "按点击付费", "ko": "클릭당 과금", "ar": "الدفع لكل نقرة" },
+    "keywords": {
+      "es": ["PPC", "CPC", "costo por clic", "puja", "presupuesto de anuncios", "SEM", "subasta"],
+      "en": ["PPC", "CPC", "cost per click", "bid", "ad budget", "SEM", "ad auction"]
+    }
+  },
+  "acquisition-cost": {
+    "label": { "es": "Costo de adquisición", "en": "Acquisition cost", "pt": "Custo de aquisição", "fr": "Coût d’acquisition", "de": "Akquisitionskosten", "it": "Costo di acquisizione", "ja": "顧客獲得コスト", "zh": "获客成本", "ko": "고객 획득 비용", "ar": "تكلفة اكتساب العملاء" },
+    "keywords": {
+      "es": ["CAC", "CPA", "costo por cliente", "inversión publicitaria", "rentabilidad", "retorno", "eficiencia de campaña"],
+      "en": ["CAC", "CPA", "cost per customer", "cost per acquisition", "ad spend", "ROI", "unit economics"]
+    }
+  },
+  "digital-signage": {
+    "label": { "es": "Pantalla publicitaria", "en": "Digital signage", "pt": "Sinalização digital", "fr": "Affichage dynamique", "de": "Digital Signage", "it": "Digital signage", "ja": "デジタルサイネージ", "zh": "数字标牌", "ko": "디지털 사이니지", "ar": "لافتة رقمية" },
+    "keywords": {
+      "es": ["tótem digital", "señalización digital", "DOOH", "pantalla en plaza comercial", "publicidad exterior digital", "kiosco", "estación"],
+      "en": ["digital totem", "DOOH", "screen ad", "mall display", "digital out of home", "kiosk", "station"]
+    }
+  },
+  "sidewalk-sign": {
+    "label": { "es": "Letrero de banqueta", "en": "Sidewalk sign", "pt": "Cavalete", "fr": "Chevalet de trottoir", "de": "Kundenstopper", "it": "Cavalletto pubblicitario", "ja": "A型看板", "zh": "A字广告牌", "ko": "입간판", "ar": "لافتة رصيف" },
+    "keywords": {
+      "es": ["caballete", "pizarrón", "menú del día", "anuncio en la calle", "promoción local", "negocio", "cartel"],
+      "en": ["A-frame sign", "chalkboard", "sandwich board", "street sign", "local promotion", "storefront", "menu board"]
+    }
+  },
+  "roll-up-banner": {
+    "label": { "es": "Banner roll-up", "en": "Roll-up banner", "pt": "Banner roll-up", "fr": "Kakémono", "de": "Roll-up-Banner", "it": "Banner roll-up", "ja": "ロールアップバナー", "zh": "易拉宝", "ko": "롤업 배너", "ar": "لافتة رول أب" },
+    "keywords": {
+      "es": ["roll up", "lona", "display portátil", "banner retráctil", "pendón", "expo", "congreso"],
+      "en": ["pull-up banner", "banner stand", "portable display", "event banner", "trade show", "retractable banner", "point of sale"]
+    }
+  },
+  "pole-banner": {
+    "label": { "es": "Pendón de poste", "en": "Pole banner", "pt": "Banner de poste", "fr": "Bannière de lampadaire", "de": "Mastbanner", "it": "Stendardo stradale", "ja": "街路灯フラッグ", "zh": "灯杆旗", "ko": "가로등 배너", "ar": "لافتة عمود الإنارة" },
+    "keywords": {
+      "es": ["poste de luz", "campaña urbana", "calle", "festival", "evento en la ciudad", "estandarte", "vía pública"],
+      "en": ["lamppost banner", "street banner", "city campaign", "festival", "street pole", "light pole", "civic event"]
+    }
+  },
+  "mobile-billboard": {
+    "label": { "es": "Camión publicitario", "en": "Mobile billboard", "pt": "Caminhão publicitário", "fr": "Camion publicitaire", "de": "Werbetruck", "it": "Camion pubblicitario", "ja": "アドトラック", "zh": "广告宣传车", "ko": "광고 트럭", "ar": "شاحنة إعلانية" },
+    "keywords": {
+      "es": ["espectacular móvil", "publicidad en vehículo", "ruta", "rotulado", "publicidad exterior", "perifoneo", "recorrido"],
+      "en": ["billboard truck", "vehicle advertising", "route", "truck wrap", "out of home", "roadshow", "ad van"]
+    }
+  },
+  "impressions": {
+    "label": { "es": "Impresiones", "en": "Impressions", "pt": "Impressões", "fr": "Impressions", "de": "Impressionen", "it": "Impressioni", "ja": "インプレッション", "zh": "展示次数", "ko": "노출수", "ar": "مرات الظهور" },
+    "keywords": {
+      "es": ["vistas", "visualizaciones", "veces mostrado", "exposición", "métrica", "CPM", "visibilidad"],
+      "en": ["views", "times shown", "exposure", "metric", "CPM", "visibility", "ad views"]
+    }
+  },
+  "reach": {
+    "label": { "es": "Alcance", "en": "Reach", "pt": "Alcance", "fr": "Portée", "de": "Reichweite", "it": "Copertura", "ja": "リーチ", "zh": "覆盖人数", "ko": "도달", "ar": "مدى الوصول" },
+    "keywords": {
+      "es": ["personas alcanzadas", "usuarios únicos", "cobertura", "audiencia", "difusión", "métrica", "frecuencia"],
+      "en": ["people reached", "unique users", "coverage", "audience size", "spread", "metric", "frequency"]
+    }
+  },
+  "attribution": {
+    "label": { "es": "Atribución", "en": "Attribution", "pt": "Atribuição", "fr": "Attribution", "de": "Attribution", "it": "Attribuzione", "ja": "アトリビューション", "zh": "归因", "ko": "기여 분석", "ar": "الإسناد" },
+    "keywords": {
+      "es": ["multicanal", "basada en datos", "puntos de contacto", "crédito de conversión", "modelo de atribución", "multitoque", "canales"],
+      "en": ["multi-touch", "data-driven", "touchpoints", "conversion credit", "attribution model", "channels", "marketing mix"]
+    }
+  },
+  "attribution-first-touch": {
+    "label": { "es": "Atribución al primer contacto", "en": "First-touch attribution", "pt": "Atribuição de primeiro toque", "fr": "Attribution au premier contact", "de": "First-Touch-Attribution", "it": "Attribuzione al primo contatto", "ja": "ファーストタッチアトリビューション", "zh": "首次触点归因", "ko": "첫 터치 기여", "ar": "إسناد اللمسة الأولى" },
+    "keywords": {
+      "es": ["primer clic", "primera interacción", "descubrimiento", "origen", "modelo de atribución", "fuente", "canal de entrada"],
+      "en": ["first click", "first interaction", "discovery", "origin", "attribution model", "source", "acquisition channel"]
+    }
+  },
+  "attribution-last-touch": {
+    "label": { "es": "Atribución al último contacto", "en": "Last-touch attribution", "pt": "Atribuição de último toque", "fr": "Attribution au dernier contact", "de": "Last-Touch-Attribution", "it": "Attribuzione all’ultimo contatto", "ja": "ラストタッチアトリビューション", "zh": "最终触点归因", "ko": "마지막 터치 기여", "ar": "إسناد اللمسة الأخيرة" },
+    "keywords": {
+      "es": ["último clic", "última interacción", "cierre", "conversión final", "modelo de atribución", "canal de cierre", "fuente"],
+      "en": ["last click", "last interaction", "closing touch", "final conversion", "attribution model", "closing channel", "source"]
+    }
+  },
+  "newsletter": {
+    "label": { "es": "Boletín", "en": "Newsletter", "pt": "Newsletter", "fr": "Newsletter", "de": "Newsletter", "it": "Newsletter", "ja": "ニュースレター", "zh": "邮件简报", "ko": "뉴스레터", "ar": "نشرة إخبارية" },
+    "keywords": {
+      "es": ["newsletter", "suscriptores", "correo masivo", "email marketing", "edición", "novedades", "envío"],
+      "en": ["email newsletter", "subscribers", "bulk email", "email marketing", "issue", "updates", "digest"]
+    }
+  },
+  "mail-sequence": {
+    "label": { "es": "Secuencia de correos", "en": "Email sequence", "pt": "Sequência de e-mails", "fr": "Séquence d’e-mails", "de": "E-Mail-Sequenz", "it": "Sequenza di email", "ja": "ステップメール", "zh": "邮件序列", "ko": "이메일 시퀀스", "ar": "سلسلة رسائل بريدية" },
+    "keywords": {
+      "es": ["campaña de goteo", "drip", "correos automáticos", "nutrición de leads", "bienvenida", "seguimiento", "autorespuesta"],
+      "en": ["drip campaign", "automated emails", "lead nurturing", "welcome series", "follow-up", "autoresponder", "cadence"]
+    }
+  },
+  "ambassador": {
+    "label": { "es": "Embajador de marca", "en": "Brand ambassador", "pt": "Embaixador da marca", "fr": "Ambassadeur de marque", "de": "Markenbotschafter", "it": "Ambasciatore del brand", "ja": "ブランドアンバサダー", "zh": "品牌大使", "ko": "브랜드 앰버서더", "ar": "سفير العلامة التجارية" },
+    "keywords": {
+      "es": ["influencer", "promotor", "programa de embajadores", "defensor de marca", "creador de contenido", "recomendación", "colaboración"],
+      "en": ["influencer", "advocate", "ambassador program", "brand advocate", "creator", "endorsement", "partnership"]
+    }
+  },
+  "branding": {
+    "label": { "es": "Identidad de marca", "en": "Branding", "pt": "Identidade de marca", "fr": "Identité de marque", "de": "Markenidentität", "it": "Identità di marca", "ja": "ブランディング", "zh": "品牌形象", "ko": "브랜딩", "ar": "هوية العلامة التجارية" },
+    "keywords": {
+      "es": ["branding", "logotipo", "marca", "imagen corporativa", "estilo", "manual de marca", "personalidad"],
+      "en": ["brand identity", "logo", "brand", "corporate identity", "style guide", "brand guidelines", "visual identity"]
+    }
+  },
+  "positioning-map": {
+    "label": { "es": "Mapa de posicionamiento", "en": "Positioning map", "pt": "Mapa de posicionamento", "fr": "Carte de positionnement", "de": "Positionierungskarte", "it": "Mappa di posizionamento", "ja": "ポジショニングマップ", "zh": "定位图", "ko": "포지셔닝 맵", "ar": "خريطة التموضع" },
+    "keywords": {
+      "es": ["mapa perceptual", "competencia", "posicionamiento de marca", "cuadrante", "análisis competitivo", "precio y calidad", "matriz"],
+      "en": ["perceptual map", "competitors", "brand positioning", "quadrant", "competitive analysis", "price vs quality", "matrix"]
+    }
+  },
+  "differentiation": {
+    "label": { "es": "Diferenciación", "en": "Differentiation", "pt": "Diferenciação", "fr": "Différenciation", "de": "Differenzierung", "it": "Differenziazione", "ja": "差別化", "zh": "差异化", "ko": "차별화", "ar": "التمايز" },
+    "keywords": {
+      "es": ["destacar", "propuesta de valor", "ventaja competitiva", "único", "sobresalir", "diferente", "competencia"],
+      "en": ["stand out", "value proposition", "competitive advantage", "unique", "USP", "different", "competition"]
+    }
+  },
+  "flash-sale": {
+    "label": { "es": "Venta relámpago", "en": "Flash sale", "pt": "Oferta relâmpago", "fr": "Vente flash", "de": "Blitzangebot", "it": "Offerta lampo", "ja": "タイムセール", "zh": "限时抢购", "ko": "반짝 세일", "ar": "تخفيضات خاطفة" },
+    "keywords": {
+      "es": ["oferta por tiempo limitado", "hot sale", "descuento", "promoción", "cuenta regresiva", "solo hoy", "liquidación"],
+      "en": ["limited-time offer", "deal", "discount", "promotion", "countdown", "today only", "lightning deal"]
+    }
+  },
+  "prize-wheel": {
+    "label": { "es": "Ruleta de premios", "en": "Prize wheel", "pt": "Roleta de prêmios", "fr": "Roue de la chance", "de": "Glücksrad", "it": "Ruota della fortuna", "ja": "抽選ルーレット", "zh": "幸运转盘", "ko": "룰렛 이벤트", "ar": "عجلة الجوائز" },
+    "keywords": {
+      "es": ["gira y gana", "girar", "gamificación", "popup", "juego", "premio instantáneo", "descuento sorpresa"],
+      "en": ["spin to win", "spin", "gamification", "popup", "game", "instant prize", "surprise discount"]
+    }
+  },
+  "scratch-card": {
+    "label": { "es": "Raspa y gana", "en": "Scratch card", "pt": "Raspadinha", "fr": "Carte à gratter", "de": "Rubbellos", "it": "Gratta e vinci", "ja": "スクラッチカード", "zh": "刮刮卡", "ko": "스크래치 카드", "ar": "بطاقة اكشط واربح" },
+    "keywords": {
+      "es": ["raspadito", "premio instantáneo", "tarjeta de promoción", "boleto", "gamificación", "sorpresa", "concurso"],
+      "en": ["scratch-off", "instant win", "promo card", "lottery ticket", "gamification", "surprise", "contest"]
+    }
+  },
+  "raffle": {
+    "label": { "es": "Sorteo", "en": "Giveaway", "pt": "Sorteio", "fr": "Tirage au sort", "de": "Gewinnspiel", "it": "Estrazione a premi", "ja": "抽選", "zh": "抽奖", "ko": "경품 추첨", "ar": "سحب على جوائز" },
+    "keywords": {
+      "es": ["rifa", "concurso", "regalo", "boleto", "ganador", "dinámica", "giveaway"],
+      "en": ["raffle", "sweepstakes", "contest", "prize", "ticket", "winner", "prize draw"]
+    }
+  },
+  "sneak-peek": {
+    "label": { "es": "Adelanto", "en": "Sneak peek", "pt": "Prévia", "fr": "Avant-première", "de": "Erster Einblick", "it": "Anteprima", "ja": "先行公開", "zh": "抢先看", "ko": "티저", "ar": "لمحة مسبقة" },
+    "keywords": {
+      "es": ["teaser", "próximamente", "avance", "lanzamiento", "expectativa", "vista previa", "exclusiva"],
+      "en": ["teaser", "coming soon", "preview", "launch", "hype", "first look", "exclusive"]
+    }
+  },
+  "referral": {
+    "label": { "es": "Referidos", "en": "Referral", "pt": "Indicação", "fr": "Parrainage", "de": "Empfehlung", "it": "Referral", "ja": "紹介", "zh": "推荐", "ko": "추천", "ar": "إحالة" },
+    "keywords": {
+      "es": ["invitar amigos", "código de invitación", "recompensa", "recomendar", "invita y gana", "bono por referir", "crecimiento"],
+      "en": ["refer a friend", "invite friends", "referral code", "reward", "recommend", "referral program", "growth loop"]
+    }
+  },
+  "affiliate-link": {
+    "label": { "es": "Enlace de afiliado", "en": "Affiliate link", "pt": "Link de afiliado", "fr": "Lien d’affiliation", "de": "Affiliate-Link", "it": "Link di affiliazione", "ja": "アフィリエイトリンク", "zh": "联盟链接", "ko": "제휴 링크", "ar": "رابط تسويق بالعمولة" },
+    "keywords": {
+      "es": ["afiliados", "comisión", "marketing de afiliación", "ganar dinero", "liga de afiliado", "partner", "ventas por referencia"],
+      "en": ["affiliates", "commission", "affiliate marketing", "earn money", "partner link", "referral sales", "monetize"]
+    }
+  },
+  "word-of-mouth": {
+    "label": { "es": "De boca en boca", "en": "Word of mouth", "pt": "Boca a boca", "fr": "Bouche-à-oreille", "de": "Mundpropaganda", "it": "Passaparola", "ja": "口コミ", "zh": "口碑传播", "ko": "입소문", "ar": "التسويق الشفهي" },
+    "keywords": {
+      "es": ["recomendación", "clientes satisfechos", "reseñas", "voz a voz", "confianza", "marketing orgánico", "comentarios"],
+      "en": ["recommendation", "happy customers", "reviews", "buzz", "trust", "organic marketing", "referrals"]
+    }
+  },
+  "viral": {
+    "label": { "es": "Viralización", "en": "Going viral", "pt": "Viralização", "fr": "Viralité", "de": "Virale Verbreitung", "it": "Viralità", "ja": "バイラル拡散", "zh": "病毒式传播", "ko": "바이럴 확산", "ar": "انتشار فيروسي" },
+    "keywords": {
+      "es": ["se hizo viral", "tendencia", "compartir", "contenido viral", "difusión", "alcance orgánico", "efecto bola de nieve"],
+      "en": ["trending", "share", "viral content", "spread", "shares", "organic reach", "snowball effect"]
+    }
+  },
+  "press-release": {
+    "label": { "es": "Comunicado de prensa", "en": "Press release", "pt": "Comunicado à imprensa", "fr": "Communiqué de presse", "de": "Pressemitteilung", "it": "Comunicato stampa", "ja": "プレスリリース", "zh": "新闻稿", "ko": "보도자료", "ar": "بيان صحفي" },
+    "keywords": {
+      "es": ["boletín de prensa", "relaciones públicas", "medios", "anuncio oficial", "noticia", "PR", "periodistas"],
+      "en": ["news release", "public relations", "media", "official announcement", "news", "PR", "journalists"]
+    }
+  },
+  "press-release-clock": {
+    "label": { "es": "Comunicado con embargo", "en": "Embargoed press release", "pt": "Comunicado sob embargo", "fr": "Communiqué sous embargo", "de": "Pressemitteilung mit Sperrfrist", "it": "Comunicato sotto embargo", "ja": "解禁前のプレスリリース", "zh": "定时发布的新闻稿", "ko": "엠바고 보도자료", "ar": "بيان صحفي مجدول" },
+    "keywords": {
+      "es": ["embargo", "programado", "fecha de publicación", "hora de liberación", "no publicar antes de", "relaciones públicas", "pendiente"],
+      "en": ["embargo", "scheduled", "publish date", "release time", "hold for release", "public relations", "pending"]
+    }
+  },
+  "press-conference": {
+    "label": { "es": "Conferencia de prensa", "en": "Press conference", "pt": "Coletiva de imprensa", "fr": "Conférence de presse", "de": "Pressekonferenz", "it": "Conferenza stampa", "ja": "記者会見", "zh": "新闻发布会", "ko": "기자회견", "ar": "مؤتمر صحفي" },
+    "keywords": {
+      "es": ["rueda de prensa", "declaración", "micrófonos", "medios", "vocero", "anuncio público", "entrevista"],
+      "en": ["media briefing", "statement", "microphones", "media", "spokesperson", "public announcement", "podium"]
+    }
+  },
+  "press-clipping": {
+    "label": { "es": "Recorte de prensa", "en": "Press clipping", "pt": "Clipping de imprensa", "fr": "Coupure de presse", "de": "Presseausschnitt", "it": "Ritaglio stampa", "ja": "掲載記事", "zh": "媒体报道", "ko": "언론 보도", "ar": "تغطية إعلامية" },
+    "keywords": {
+      "es": ["cobertura en medios", "mención", "nota periodística", "salimos en", "monitoreo de medios", "artículo", "medios ganados"],
+      "en": ["media coverage", "mention", "news article", "as seen in", "media monitoring", "featured in", "earned media"]
+    }
+  },
+  "sponsorship": {
+    "label": { "es": "Patrocinio", "en": "Sponsorship", "pt": "Patrocínio", "fr": "Sponsoring", "de": "Sponsoring", "it": "Sponsorizzazione", "ja": "スポンサーシップ", "zh": "赞助", "ko": "스폰서십", "ar": "رعاية" },
+    "keywords": {
+      "es": ["patrocinador", "evento patrocinado", "marca patrocinadora", "alianza", "colaboración", "publicidad en eventos", "logotipo del patrocinador"],
+      "en": ["sponsor", "sponsored event", "partner brand", "partnership", "collaboration", "event advertising", "sponsor banner"]
+    }
+  },
+  "webinar": {
+    "label": { "es": "Seminario web", "en": "Webinar", "pt": "Webinar", "fr": "Webinaire", "de": "Webinar", "it": "Webinar", "ja": "ウェビナー", "zh": "网络研讨会", "ko": "웨비나", "ar": "ندوة عبر الإنترنت" },
+    "keywords": {
+      "es": ["webinar", "presentación en línea", "conferencia virtual", "evento en vivo", "taller en línea", "transmisión", "registro"],
+      "en": ["online seminar", "virtual event", "live event", "online workshop", "presentation", "livestream", "registration"]
+    }
+  },
+  "trade-show-booth": {
+    "label": { "es": "Stand de exposición", "en": "Trade show booth", "pt": "Estande de feira", "fr": "Stand de salon", "de": "Messestand", "it": "Stand fieristico", "ja": "展示ブース", "zh": "展会展位", "ko": "전시 부스", "ar": "جناح معرض" },
+    "keywords": {
+      "es": ["expo", "feria comercial", "evento", "módulo", "convención", "networking", "expositor"],
+      "en": ["expo", "trade fair", "exhibition", "stand", "convention", "exhibitor", "event marketing"]
+    }
+  },
+  "social-listening": {
+    "label": { "es": "Escucha social", "en": "Social listening", "pt": "Escuta social", "fr": "Écoute sociale", "de": "Social Listening", "it": "Social listening", "ja": "ソーシャルリスニング", "zh": "社交聆听", "ko": "소셜 리스닝", "ar": "الاستماع الاجتماعي" },
+    "keywords": {
+      "es": ["monitoreo de redes", "menciones de marca", "reputación", "sentimiento", "conversaciones", "qué dicen de la marca", "redes sociales"],
+      "en": ["social monitoring", "brand mentions", "reputation", "sentiment", "conversations", "brand monitoring", "social media"]
+    }
+  }
+}

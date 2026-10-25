@@ -1,0 +1,408 @@
+{
+  "strategy": {
+    "label": { "es": "Estrategia", "en": "Strategy", "pt": "Estratégia", "fr": "Stratégie", "de": "Strategie", "it": "Strategia", "ja": "戦略", "zh": "战略", "ko": "전략", "ar": "الاستراتيجية" },
+    "keywords": {
+      "es": ["plan de juego", "planeación", "plan de negocio", "táctica", "jugada", "cómo ganar", "objetivos a largo plazo"],
+      "en": ["game plan", "planning", "business plan", "tactics", "play", "how to win", "long-term plan"]
+    }
+  },
+  "pivot": {
+    "label": { "es": "Cambio de rumbo", "en": "Pivot", "pt": "Mudança de rumo", "fr": "Pivot", "de": "Kurswechsel", "it": "Cambio di rotta", "ja": "ピボット", "zh": "转型", "ko": "방향 전환", "ar": "تغيير المسار" },
+    "keywords": {
+      "es": ["pivotear", "pivote", "cambio de estrategia", "nueva dirección", "reorientar", "startup", "ajustar el modelo de negocio"],
+      "en": ["change direction", "change of strategy", "new direction", "reorient", "startup", "shift", "rethink business model"]
+    }
+  },
+  "north-star": {
+    "label": { "es": "Estrella polar", "en": "North star", "pt": "Estrela-guia", "fr": "Étoile polaire", "de": "Nordstern", "it": "Stella polare", "ja": "北極星", "zh": "北极星", "ko": "북극성", "ar": "النجم القطبي" },
+    "keywords": {
+      "es": ["métrica guía", "métrica principal", "north star", "rumbo", "visión", "dirección a largo plazo", "propósito", "norte"],
+      "en": ["guiding metric", "one metric that matters", "key metric", "vision", "true north", "long-term direction", "purpose"]
+    }
+  },
+  "scenarios": {
+    "label": { "es": "Escenarios", "en": "Scenarios", "pt": "Cenários", "fr": "Scénarios", "de": "Szenarien", "it": "Scenari", "ja": "シナリオ", "zh": "情景分析", "ko": "시나리오", "ar": "السيناريوهات" },
+    "keywords": {
+      "es": ["qué pasaría si", "mejor caso", "peor caso", "caso base", "simulación", "análisis de sensibilidad", "proyecciones", "supuestos"],
+      "en": ["what-if analysis", "best case", "worst case", "base case", "simulation", "sensitivity analysis", "projections", "assumptions"]
+    }
+  },
+  "market-size": {
+    "label": { "es": "Tamaño de mercado", "en": "Market size", "pt": "Tamanho do mercado", "fr": "Taille du marché", "de": "Marktgröße", "it": "Dimensione del mercato", "ja": "市場規模", "zh": "市场规模", "ko": "시장 규모", "ar": "حجم السوق" },
+    "keywords": {
+      "es": ["tam sam som", "mercado total", "mercado potencial", "mercado alcanzable", "pitch", "análisis de mercado", "oportunidad"],
+      "en": ["tam sam som", "addressable market", "total market", "serviceable market", "pitch deck", "market analysis", "opportunity"]
+    }
+  },
+  "gap-analysis": {
+    "label": { "es": "Análisis de brechas", "en": "Gap analysis", "pt": "Análise de lacunas", "fr": "Analyse des écarts", "de": "Gap-Analyse", "it": "Analisi dei gap", "ja": "ギャップ分析", "zh": "差距分析", "ko": "갭 분석", "ar": "تحليل الفجوات" },
+    "keywords": {
+      "es": ["situación actual", "situación deseada", "dónde estamos", "a dónde queremos llegar", "diferencia", "áreas de mejora", "diagnóstico"],
+      "en": ["current state", "desired state", "as-is to-be", "where we are", "shortfall", "areas for improvement", "assessment"]
+    }
+  },
+  "competitive-edge": {
+    "label": { "es": "Ventaja competitiva", "en": "Competitive edge", "pt": "Vantagem competitiva", "fr": "Avantage concurrentiel", "de": "Wettbewerbsvorteil", "it": "Vantaggio competitivo", "ja": "競争優位", "zh": "竞争优势", "ko": "경쟁 우위", "ar": "الميزة التنافسية" },
+    "keywords": {
+      "es": ["competencia", "análisis competitivo", "posicionamiento", "ir adelante", "diferenciación", "rivales", "liderar el mercado"],
+      "en": ["competition", "competitive analysis", "positioning", "ahead of rivals", "differentiation", "competitors", "market leader"]
+    }
+  },
+  "leverage": {
+    "label": { "es": "Apalancamiento", "en": "Leverage", "pt": "Alavancagem", "fr": "Effet de levier", "de": "Hebelwirkung", "it": "Effetto leva", "ja": "レバレッジ", "zh": "杠杆", "ko": "레버리지", "ar": "تأثير الرافعة" },
+    "keywords": {
+      "es": ["palanca", "hacer más con menos", "multiplicar", "eficiencia", "efecto multiplicador", "aprovechar recursos", "impacto"],
+      "en": ["lever", "do more with less", "multiply", "efficiency", "multiplier effect", "make the most of resources", "impact"]
+    }
+  },
+  "decision-tree": {
+    "label": { "es": "Árbol de decisiones", "en": "Decision tree", "pt": "Árvore de decisão", "fr": "Arbre de décision", "de": "Entscheidungsbaum", "it": "Albero decisionale", "ja": "決定木", "zh": "决策树", "ko": "의사결정 트리", "ar": "شجرة القرار" },
+    "keywords": {
+      "es": ["opciones", "decidir", "ramas", "resultados posibles", "análisis de decisiones", "elegir camino", "consecuencias"],
+      "en": ["options", "decide", "branches", "possible outcomes", "decision analysis", "choose a path", "consequences"]
+    }
+  },
+  "pros-cons": {
+    "label": { "es": "Pros y contras", "en": "Pros and cons", "pt": "Prós e contras", "fr": "Avantages et inconvénients", "de": "Vor- und Nachteile", "it": "Pro e contro", "ja": "メリットとデメリット", "zh": "利弊", "ko": "장단점", "ar": "الإيجابيات والسلبيات" },
+    "keywords": {
+      "es": ["ventajas y desventajas", "a favor y en contra", "comparar", "evaluar opciones", "sopesar", "balance", "decidir"],
+      "en": ["advantages and disadvantages", "for and against", "compare", "weigh options", "trade-offs", "evaluate", "decide"]
+    }
+  },
+  "growth": {
+    "label": { "es": "Crecimiento del negocio", "en": "Business growth", "pt": "Crescimento do negócio", "fr": "Croissance de l’entreprise", "de": "Geschäftswachstum", "it": "Crescita aziendale", "ja": "事業成長", "zh": "业务增长", "ko": "사업 성장", "ar": "نمو الأعمال" },
+    "keywords": {
+      "es": ["crecer", "aumento", "más ventas", "más usuarios", "resultados al alza", "expansión", "escalar"],
+      "en": ["grow", "increase", "more sales", "user growth", "results up", "expansion", "business development"]
+    }
+  },
+  "decline": {
+    "label": { "es": "Declive", "en": "Decline", "pt": "Declínio", "fr": "Déclin", "de": "Rückgang", "it": "Declino", "ja": "衰退", "zh": "下滑", "ko": "하락세", "ar": "التراجع" },
+    "keywords": {
+      "es": ["caída", "baja", "recesión", "pérdidas", "resultados a la baja", "contracción", "crisis"],
+      "en": ["drop", "downturn", "recession", "losses", "results down", "contraction", "slump"]
+    }
+  },
+  "growth-curve": {
+    "label": { "es": "Curva de crecimiento", "en": "Growth curve", "pt": "Curva de crescimento", "fr": "Courbe de croissance", "de": "Wachstumskurve", "it": "Curva di crescita", "ja": "成長曲線", "zh": "增长曲线", "ko": "성장 곡선", "ar": "منحنى النمو" },
+    "keywords": {
+      "es": ["crecimiento exponencial", "palo de hockey", "hockey stick", "pitch", "proyección", "escalar", "tracción"],
+      "en": ["exponential growth", "hockey stick", "pitch deck", "forecast", "scale", "traction", "j-curve"]
+    }
+  },
+  "flywheel": {
+    "label": { "es": "Volante de inercia", "en": "Flywheel", "pt": "Volante de inércia", "fr": "Volant d’inertie", "de": "Schwungrad", "it": "Volano", "ja": "フライホイール", "zh": "飞轮", "ko": "플라이휠", "ar": "عجلة الزخم" },
+    "keywords": {
+      "es": ["flywheel", "círculo virtuoso", "bucle de crecimiento", "impulso", "efecto bola de nieve", "modelo de crecimiento", "se alimenta solo"],
+      "en": ["virtuous cycle", "growth loop", "momentum", "self-reinforcing", "snowball effect", "growth model", "compounding"]
+    }
+  },
+  "breakthrough": {
+    "label": { "es": "Gran avance", "en": "Breakthrough", "pt": "Avanço", "fr": "Percée", "de": "Durchbruch", "it": "Svolta", "ja": "ブレークスルー", "zh": "突破", "ko": "돌파구", "ar": "قفزة نوعية" },
+    "keywords": {
+      "es": ["romper barreras", "superar obstáculos", "disrupción", "salto", "innovación", "logro", "romper el techo"],
+      "en": ["break barriers", "overcome obstacles", "disruption", "leap", "innovation", "achievement", "game changer"]
+    }
+  },
+  "turnaround": {
+    "label": { "es": "Recuperación", "en": "Turnaround", "pt": "Recuperação", "fr": "Redressement", "de": "Trendwende", "it": "Ripresa", "ja": "業績回復", "zh": "扭转局面", "ko": "반등", "ar": "التعافي" },
+    "keywords": {
+      "es": ["repunte", "rebote", "forma de v", "salir de la crisis", "reestructura", "volver a crecer", "rescate"],
+      "en": ["recovery", "rebound", "v-shaped", "comeback", "out of the crisis", "restructuring", "back to growth"]
+    }
+  },
+  "target-progress": {
+    "label": { "es": "Avance de la meta", "en": "Goal progress", "pt": "Progresso da meta", "fr": "Progression de l’objectif", "de": "Zielfortschritt", "it": "Avanzamento dell’obiettivo", "ja": "目標の進捗", "zh": "目标进度", "ko": "목표 진행률", "ar": "التقدم نحو الهدف" },
+    "keywords": {
+      "es": ["okr", "resultados clave", "seguimiento", "porcentaje de avance", "cumplimiento", "kpi", "qué tan cerca"],
+      "en": ["okr", "key results", "tracking", "percent complete", "on track", "kpi", "how close"]
+    }
+  },
+  "target-cascade": {
+    "label": { "es": "Objetivos en cascada", "en": "Cascading goals", "pt": "Metas em cascata", "fr": "Objectifs en cascade", "de": "Kaskadierte Ziele", "it": "Obiettivi a cascata", "ja": "目標の展開", "zh": "目标分解", "ko": "목표 연계", "ar": "الأهداف المتسلسلة" },
+    "keywords": {
+      "es": ["okr", "alineación", "objetivos por equipo", "de la empresa a los equipos", "desdoblar metas", "jerarquía de objetivos", "metas compartidas"],
+      "en": ["okr", "alignment", "team goals", "company to teams", "goal hierarchy", "shared goals", "roll down"]
+    }
+  },
+  "target-plus": {
+    "label": { "es": "Nueva meta", "en": "New goal", "pt": "Nova meta", "fr": "Nouvel objectif", "de": "Neues Ziel", "it": "Nuovo obiettivo", "ja": "新しい目標", "zh": "新建目标", "ko": "새 목표", "ar": "هدف جديد" },
+    "keywords": {
+      "es": ["crear objetivo", "agregar meta", "definir okr", "fijar objetivo", "plantear meta", "nuevo kpi", "planeación"],
+      "en": ["create objective", "add goal", "set okr", "set target", "define objective", "new kpi", "planning"]
+    }
+  },
+  "target-alert": {
+    "label": { "es": "Meta en riesgo", "en": "Goal at risk", "pt": "Meta em risco", "fr": "Objectif menacé", "de": "Ziel gefährdet", "it": "Obiettivo a rischio", "ja": "達成が危うい目標", "zh": "目标存在风险", "ko": "목표 달성 위험", "ar": "هدف معرّض للخطر" },
+    "keywords": {
+      "es": ["fuera de rumbo", "retrasado", "alerta", "no se va a cumplir", "okr en rojo", "atención", "desviación"],
+      "en": ["off track", "behind", "delayed", "alert", "won't be met", "okr in the red", "attention"]
+    }
+  },
+  "mountain-flag": {
+    "label": { "es": "Cima alcanzada", "en": "Summit reached", "pt": "Cume alcançado", "fr": "Sommet atteint", "de": "Gipfel erreicht", "it": "Vetta raggiunta", "ja": "頂上到達", "zh": "登顶", "ko": "정상 도달", "ar": "بلوغ القمة" },
+    "keywords": {
+      "es": ["meta a largo plazo", "misión", "ambición", "logro", "objetivo cumplido", "visión", "desafío"],
+      "en": ["long-term goal", "mission", "ambition", "achievement", "accomplished", "vision", "challenge", "top of the mountain"]
+    }
+  },
+  "scorecard": {
+    "label": { "es": "Cuadro de mando", "en": "Scorecard", "pt": "Quadro de indicadores", "fr": "Tableau d’indicateurs", "de": "Kennzahlenübersicht", "it": "Scheda indicatori", "ja": "スコアカード", "zh": "计分卡", "ko": "스코어카드", "ar": "بطاقة الأداء" },
+    "keywords": {
+      "es": ["kpi", "indicadores", "balanced scorecard", "semáforo", "desempeño", "métricas", "evaluación"],
+      "en": ["kpi", "balanced scorecard", "indicators", "status", "performance", "metrics", "traffic light"]
+    }
+  },
+  "benchmark": {
+    "label": { "es": "Comparación con referentes", "en": "Benchmark", "pt": "Análise comparativa", "fr": "Analyse comparative", "de": "Benchmarking", "it": "Analisi comparativa", "ja": "ベンチマーク", "zh": "对标分析", "ko": "벤치마킹", "ar": "المقارنة المرجعية" },
+    "keywords": {
+      "es": ["benchmark", "referente", "estándar de la industria", "comparar con la competencia", "punto de referencia", "mejores prácticas", "medir contra"],
+      "en": ["comparison", "industry standard", "compare to competitors", "reference point", "best practices", "measure against", "baseline"]
+    }
+  },
+  "priority": {
+    "label": { "es": "Prioridad", "en": "Priority", "pt": "Prioridade", "fr": "Priorité", "de": "Priorität", "it": "Priorità", "ja": "優先度", "zh": "优先级", "ko": "우선순위", "ar": "الأولوية" },
+    "keywords": {
+      "es": ["urgencia", "importancia", "priorizar", "alta media baja", "qué va primero", "nivel", "clasificar"],
+      "en": ["urgency", "importance", "prioritize", "high medium low", "what comes first", "level", "rank"]
+    }
+  },
+  "milestone": {
+    "label": { "es": "Hito", "en": "Milestone", "pt": "Marco", "fr": "Jalon", "de": "Meilenstein", "it": "Traguardo", "ja": "マイルストーン", "zh": "里程碑", "ko": "마일스톤", "ar": "علامة فارقة" },
+    "keywords": {
+      "es": ["roadmap", "hoja de ruta", "entregable", "fecha clave", "gantt", "etapa", "logro", "punto de control"],
+      "en": ["roadmap", "deliverable", "key date", "gantt", "phase", "achievement", "checkpoint", "project plan"]
+    }
+  },
+  "org-chart": {
+    "label": { "es": "Organigrama", "en": "Org chart", "pt": "Organograma", "fr": "Organigramme", "de": "Organigramm", "it": "Organigramma", "ja": "組織図", "zh": "组织架构图", "ko": "조직도", "ar": "الهيكل التنظيمي" },
+    "keywords": {
+      "es": ["estructura", "a quién reporta", "jerarquía", "equipo", "jefes", "departamentos", "puestos"],
+      "en": ["structure", "who reports to whom", "reporting line", "hierarchy", "team", "departments", "roles"]
+    }
+  },
+  "org-chart-edit": {
+    "label": { "es": "Editar organigrama", "en": "Edit org chart", "pt": "Editar organograma", "fr": "Modifier l’organigramme", "de": "Organigramm bearbeiten", "it": "Modifica organigramma", "ja": "組織図を編集", "zh": "编辑组织架构图", "ko": "조직도 편집", "ar": "تعديل الهيكل التنظيمي" },
+    "keywords": {
+      "es": ["reestructura", "reorganización", "reorg", "cambiar puestos", "mover personas", "nueva estructura", "reasignar"],
+      "en": ["restructuring", "reorg", "reorganization", "change roles", "move people", "new structure", "reassign"]
+    }
+  },
+  "risk-matrix": {
+    "label": { "es": "Matriz de riesgos", "en": "Risk matrix", "pt": "Matriz de risco", "fr": "Matrice des risques", "de": "Risikomatrix", "it": "Matrice dei rischi", "ja": "リスクマトリクス", "zh": "风险矩阵", "ko": "리스크 매트릭스", "ar": "مصفوفة المخاطر" },
+    "keywords": {
+      "es": ["evaluación de riesgos", "probabilidad e impacto", "mapa de calor", "severidad", "gestión de riesgos", "cumplimiento", "control interno"],
+      "en": ["risk assessment", "likelihood and impact", "heat map", "severity", "risk management", "compliance", "probability"]
+    }
+  },
+  "contingency": {
+    "label": { "es": "Plan de contingencia", "en": "Contingency plan", "pt": "Plano de contingência", "fr": "Plan de secours", "de": "Notfallplan", "it": "Piano di riserva", "ja": "代替案", "zh": "应急预案", "ko": "비상 계획", "ar": "خطة بديلة" },
+    "keywords": {
+      "es": ["plan b", "respaldo", "alternativa", "qué hacer si falla", "continuidad del negocio", "emergencia", "salida alterna"],
+      "en": ["plan b", "backup plan", "fallback", "alternative", "business continuity", "emergency", "what if it fails"]
+    }
+  },
+  "domino-effect": {
+    "label": { "es": "Efecto dominó", "en": "Domino effect", "pt": "Efeito dominó", "fr": "Effet domino", "de": "Dominoeffekt", "it": "Effetto domino", "ja": "ドミノ効果", "zh": "多米诺效应", "ko": "도미노 효과", "ar": "تأثير الدومينو" },
+    "keywords": {
+      "es": ["reacción en cadena", "riesgo en cascada", "consecuencias", "contagio", "impacto", "causa y efecto", "riesgo sistémico"],
+      "en": ["chain reaction", "cascading risk", "knock-on effect", "ripple effect", "consequences", "cause and effect", "systemic risk"]
+    }
+  },
+  "bottleneck": {
+    "label": { "es": "Cuello de botella", "en": "Bottleneck", "pt": "Gargalo", "fr": "Goulot d’étranglement", "de": "Engpass", "it": "Collo di bottiglia", "ja": "ボトルネック", "zh": "瓶颈", "ko": "병목 현상", "ar": "عنق الزجاجة" },
+    "keywords": {
+      "es": ["restricción", "atasco", "freno", "proceso lento", "obstáculo", "capacidad limitada", "teoría de restricciones"],
+      "en": ["constraint", "blocker", "slowdown", "slow process", "obstacle", "limited capacity", "theory of constraints"]
+    }
+  },
+  "partnership": {
+    "label": { "es": "Alianza", "en": "Partnership", "pt": "Parceria", "fr": "Partenariat", "de": "Partnerschaft", "it": "Partnership", "ja": "提携", "zh": "合作伙伴关系", "ko": "파트너십", "ar": "شراكة" },
+    "keywords": {
+      "es": ["socios", "colaboración", "b2b", "acuerdo entre empresas", "asociación", "socio comercial", "unir fuerzas"],
+      "en": ["partners", "alliance", "collaboration", "b2b", "joint venture", "business partner", "join forces"]
+    }
+  },
+  "puzzle-pieces": {
+    "label": { "es": "Piezas que encajan", "en": "Perfect fit", "pt": "Encaixe perfeito", "fr": "Pièces complémentaires", "de": "Passgenaue Teile", "it": "Incastro perfetto", "ja": "ぴったりの組み合わせ", "zh": "完美契合", "ko": "완벽한 조합", "ar": "تكامل مثالي" },
+    "keywords": {
+      "es": ["product market fit", "sinergia", "fortalezas complementarias", "embonar", "solución a la medida", "socios", "rompecabezas"],
+      "en": ["product-market fit", "synergy", "complementary strengths", "match", "tailored solution", "partners", "jigsaw"]
+    }
+  },
+  "merger": {
+    "label": { "es": "Fusión", "en": "Merger", "pt": "Fusão", "fr": "Fusion", "de": "Fusion", "it": "Fusione", "ja": "合併", "zh": "合并", "ko": "합병", "ar": "اندماج" },
+    "keywords": {
+      "es": ["m&a", "fusiones y adquisiciones", "unir empresas", "integración", "consolidación", "operación corporativa", "nueva compañía"],
+      "en": ["m&a", "mergers and acquisitions", "combine companies", "integration", "consolidation", "corporate deal", "joint company"]
+    }
+  },
+  "headquarters": {
+    "label": { "es": "Oficinas centrales", "en": "Headquarters", "pt": "Sede", "fr": "Siège social", "de": "Hauptsitz", "it": "Sede centrale", "ja": "本社", "zh": "总部", "ko": "본사", "ar": "المقر الرئيسي" },
+    "keywords": {
+      "es": ["matriz", "corporativo", "sede", "oficina principal", "hq", "dirección general", "empresa"],
+      "en": ["hq", "head office", "main office", "corporate office", "central office", "company", "base"]
+    }
+  },
+  "office-branches": {
+    "label": { "es": "Sucursales", "en": "Branch offices", "pt": "Filiais", "fr": "Succursales", "de": "Niederlassungen", "it": "Filiali", "ja": "支店", "zh": "分支机构", "ko": "지점", "ar": "الفروع" },
+    "keywords": {
+      "es": ["filiales", "subsidiarias", "oficinas regionales", "red de oficinas", "ubicaciones", "presencia", "expansión"],
+      "en": ["affiliates", "subsidiaries", "regional offices", "office network", "locations", "footprint", "expansion"]
+    }
+  },
+  "office-building-plus": {
+    "label": { "es": "Agregar empresa", "en": "Add company", "pt": "Adicionar empresa", "fr": "Ajouter une entreprise", "de": "Unternehmen hinzufügen", "it": "Aggiungi azienda", "ja": "会社を追加", "zh": "添加公司", "ko": "회사 추가", "ar": "إضافة شركة" },
+    "keywords": {
+      "es": ["nueva empresa", "registrar organización", "nueva sede", "nueva ubicación", "alta de cliente", "crear cuenta", "nueva sucursal"],
+      "en": ["new company", "register organization", "new location", "new office", "new account", "create organization", "onboard client"]
+    }
+  },
+  "office-building-search": {
+    "label": { "es": "Buscar empresa", "en": "Find company", "pt": "Buscar empresa", "fr": "Rechercher une entreprise", "de": "Unternehmen suchen", "it": "Cerca azienda", "ja": "会社を検索", "zh": "查找公司", "ko": "회사 검색", "ar": "البحث عن شركة" },
+    "keywords": {
+      "es": ["consulta de empresas", "directorio", "due diligence", "investigar empresa", "razón social", "verificar datos", "rfc"],
+      "en": ["company lookup", "directory", "due diligence", "research company", "business registry", "background check", "look up"]
+    }
+  },
+  "office-building-check": {
+    "label": { "es": "Empresa verificada", "en": "Verified business", "pt": "Empresa verificada", "fr": "Entreprise vérifiée", "de": "Verifiziertes Unternehmen", "it": "Azienda verificata", "ja": "認証済みの企業", "zh": "已认证企业", "ko": "인증된 기업", "ar": "شركة موثّقة" },
+    "keywords": {
+      "es": ["kyb", "validación", "cuenta empresarial", "aprobada", "organización confiable", "cumplimiento", "documentos en regla"],
+      "en": ["kyb", "know your business", "validated", "business account", "approved", "trusted organization", "compliance"]
+    }
+  },
+  "office-building-gear": {
+    "label": { "es": "Configuración de la organización", "en": "Organization settings", "pt": "Configurações da empresa", "fr": "Paramètres de l’organisation", "de": "Organisationseinstellungen", "it": "Impostazioni dell’organizzazione", "ja": "組織の設定", "zh": "组织设置", "ko": "조직 설정", "ar": "إعدادات المؤسسة" },
+    "keywords": {
+      "es": ["ajustes", "preferencias", "datos fiscales", "administrar empresa", "cuenta de la empresa", "perfil de la organización", "workspace"],
+      "en": ["company settings", "preferences", "admin", "manage organization", "business profile", "workspace settings", "account settings"]
+    }
+  },
+  "franchise": {
+    "label": { "es": "Franquicia", "en": "Franchise", "pt": "Franquia", "fr": "Franchise", "de": "Franchise", "it": "Franchising", "ja": "フランチャイズ", "zh": "特许经营", "ko": "프랜차이즈", "ar": "امتياز تجاري" },
+    "keywords": {
+      "es": ["cadena de tiendas", "franquiciatario", "sucursales iguales", "modelo replicable", "marca", "expansión", "licencia de marca"],
+      "en": ["chain stores", "franchisee", "identical stores", "replicable model", "brand", "expansion", "licensing"]
+    }
+  },
+  "supplier": {
+    "label": { "es": "Proveedor", "en": "Supplier", "pt": "Fornecedor", "fr": "Fournisseur", "de": "Lieferant", "it": "Fornitore", "ja": "仕入先", "zh": "供应商", "ko": "공급업체", "ar": "المورّد" },
+    "keywords": {
+      "es": ["vendedor", "abastecimiento", "compras", "cadena de suministro", "distribuidor", "mayorista", "fabricante"],
+      "en": ["vendor", "procurement", "purchasing", "supply chain", "distributor", "wholesaler", "manufacturer"]
+    }
+  },
+  "supplier-check": {
+    "label": { "es": "Proveedor aprobado", "en": "Approved supplier", "pt": "Fornecedor aprovado", "fr": "Fournisseur agréé", "de": "Zugelassener Lieferant", "it": "Fornitore approvato", "ja": "承認済みの仕入先", "zh": "合格供应商", "ko": "승인된 공급업체", "ar": "مورّد معتمد" },
+    "keywords": {
+      "es": ["verificado", "proveedores autorizados", "homologado", "padrón de proveedores", "certificado", "alta de proveedor", "confiable"],
+      "en": ["verified vendor", "approved vendor list", "avl", "qualified", "certified", "vendor onboarding", "trusted"]
+    }
+  },
+  "supplier-search": {
+    "label": { "es": "Buscar proveedores", "en": "Find suppliers", "pt": "Buscar fornecedores", "fr": "Rechercher des fournisseurs", "de": "Lieferanten suchen", "it": "Cerca fornitori", "ja": "仕入先を探す", "zh": "寻找供应商", "ko": "공급업체 찾기", "ar": "البحث عن موردين" },
+    "keywords": {
+      "es": ["sourcing", "abastecimiento", "cotizar", "evaluar opciones", "licitación", "compras", "nuevos proveedores"],
+      "en": ["sourcing", "vendor search", "request quotes", "evaluate vendors", "rfq", "procurement", "new vendors"]
+    }
+  },
+  "deal-check": {
+    "label": { "es": "Trato ganado", "en": "Deal won", "pt": "Negócio ganho", "fr": "Affaire conclue", "de": "Gewonnener Deal", "it": "Trattativa vinta", "ja": "受注", "zh": "赢单", "ko": "거래 성사", "ar": "صفقة مُبرمة" },
+    "keywords": {
+      "es": ["venta cerrada", "cierre", "embudo de ventas", "pipeline", "oportunidad ganada", "crm", "acuerdo firmado"],
+      "en": ["closed won", "closed deal", "sales pipeline", "opportunity won", "crm", "signed", "sale"]
+    }
+  },
+  "deal-x": {
+    "label": { "es": "Trato perdido", "en": "Deal lost", "pt": "Negócio perdido", "fr": "Affaire perdue", "de": "Verlorener Deal", "it": "Trattativa persa", "ja": "失注", "zh": "丢单", "ko": "거래 무산", "ar": "صفقة خاسرة" },
+    "keywords": {
+      "es": ["venta perdida", "oportunidad perdida", "embudo de ventas", "pipeline", "crm", "rechazado", "no se cerró"],
+      "en": ["closed lost", "lost opportunity", "sales pipeline", "crm", "rejected", "no deal", "lost prospect"]
+    }
+  },
+  "pdca-wheel": {
+    "label": { "es": "Ciclo PDCA", "en": "PDCA cycle", "pt": "Ciclo PDCA", "fr": "Cycle PDCA", "de": "PDCA-Zyklus", "it": "Ciclo PDCA", "ja": "PDCAサイクル", "zh": "PDCA循环", "ko": "PDCA 사이클", "ar": "دورة PDCA" },
+    "keywords": {
+      "es": ["mejora continua", "planear hacer verificar actuar", "kaizen", "círculo de deming", "calidad", "lean", "iteración"],
+      "en": ["continuous improvement", "plan do check act", "kaizen", "deming cycle", "quality", "lean", "iteration"]
+    }
+  },
+  "fishbone": {
+    "label": { "es": "Diagrama de Ishikawa", "en": "Fishbone diagram", "pt": "Diagrama de Ishikawa", "fr": "Diagramme d’Ishikawa", "de": "Ishikawa-Diagramm", "it": "Diagramma di Ishikawa", "ja": "特性要因図", "zh": "鱼骨图", "ko": "피시본 다이어그램", "ar": "مخطط عظم السمكة" },
+    "keywords": {
+      "es": ["espina de pescado", "causa raíz", "causa y efecto", "análisis de causas", "calidad", "6m", "resolución de problemas"],
+      "en": ["ishikawa", "root cause analysis", "cause and effect", "quality", "6m", "problem solving", "why it happened"]
+    }
+  },
+  "audit": {
+    "label": { "es": "Auditoría", "en": "Audit", "pt": "Auditoria", "fr": "Audit", "de": "Audit", "it": "Audit", "ja": "監査", "zh": "审计", "ko": "감사", "ar": "التدقيق" },
+    "keywords": {
+      "es": ["revisión", "controles", "cumplimiento", "registros", "inspección", "control interno", "contraloría"],
+      "en": ["review", "controls", "compliance", "records", "inspection", "internal control", "assurance"]
+    }
+  },
+  "chart-pareto": {
+    "label": { "es": "Diagrama de Pareto", "en": "Pareto chart", "pt": "Gráfico de Pareto", "fr": "Diagramme de Pareto", "de": "Pareto-Diagramm", "it": "Diagramma di Pareto", "ja": "パレート図", "zh": "帕累托图", "ko": "파레토 차트", "ar": "مخطط باريتو" },
+    "keywords": {
+      "es": ["regla 80/20", "pocos vitales", "calidad", "lean", "priorizar causas", "frecuencia acumulada", "defectos"],
+      "en": ["80/20 rule", "vital few", "quality", "lean", "prioritize causes", "cumulative frequency", "defects"]
+    }
+  },
+  "chart-break-even": {
+    "label": { "es": "Punto de equilibrio", "en": "Break-even point", "pt": "Ponto de equilíbrio", "fr": "Seuil de rentabilité", "de": "Break-even-Punkt", "it": "Punto di pareggio", "ja": "損益分岐点", "zh": "盈亏平衡点", "ko": "손익분기점", "ar": "نقطة التعادل" },
+    "keywords": {
+      "es": ["ingresos y costos", "rentabilidad", "costos fijos", "margen de contribución", "cuándo recuperamos", "viabilidad", "sin pérdidas ni ganancias"],
+      "en": ["revenue vs cost", "profitability", "fixed costs", "contribution margin", "payback", "viability", "no profit no loss"]
+    }
+  },
+  "chart-pyramid": {
+    "label": { "es": "Diagrama de pirámide", "en": "Pyramid chart", "pt": "Gráfico de pirâmide", "fr": "Diagramme pyramidal", "de": "Pyramidendiagramm", "it": "Diagramma a piramide", "ja": "ピラミッド図", "zh": "金字塔图", "ko": "피라미드 차트", "ar": "مخطط هرمي" },
+    "keywords": {
+      "es": ["niveles", "jerarquía", "pirámide de necesidades", "maslow", "base de la pirámide", "prioridades", "segmentos de mercado"],
+      "en": ["tiers", "hierarchy", "hierarchy of needs", "maslow", "bottom of the pyramid", "priorities", "market segments"]
+    }
+  },
+  "process": {
+    "label": { "es": "Proceso", "en": "Process", "pt": "Processo", "fr": "Processus", "de": "Prozess", "it": "Processo", "ja": "プロセス", "zh": "流程", "ko": "프로세스", "ar": "العملية" },
+    "keywords": {
+      "es": ["etapas", "fases", "pasos", "flujo", "procedimiento", "pipeline", "operación"],
+      "en": ["stages", "phases", "steps", "flow", "procedure", "pipeline", "operations"]
+    }
+  },
+  "value-stream": {
+    "label": { "es": "Flujo de valor", "en": "Value stream", "pt": "Fluxo de valor", "fr": "Flux de valeur", "de": "Wertstrom", "it": "Flusso del valore", "ja": "バリューストリーム", "zh": "价值流", "ko": "가치 흐름", "ar": "تدفق القيمة" },
+    "keywords": {
+      "es": ["vsm", "mapeo de procesos", "lean", "desperdicio", "manufactura esbelta", "mejora de procesos", "tiempo de entrega"],
+      "en": ["vsm", "process mapping", "lean", "waste", "muda", "process improvement", "lead time"]
+    }
+  },
+  "shareholder": {
+    "label": { "es": "Accionista", "en": "Shareholder", "pt": "Acionista", "fr": "Actionnaire", "de": "Aktionär", "it": "Azionista", "ja": "株主", "zh": "股东", "ko": "주주", "ar": "مساهم" },
+    "keywords": {
+      "es": ["socio", "inversionista", "participación", "acciones", "dueño", "capital", "tabla de capitalización"],
+      "en": ["stockholder", "investor", "equity", "shares", "owner", "stake", "cap table"]
+    }
+  },
+  "business-canvas": {
+    "label": { "es": "Modelo Canvas", "en": "Business model canvas", "pt": "Canvas de modelo de negócio", "fr": "Business Model Canvas", "de": "Business Model Canvas", "it": "Business Model Canvas", "ja": "ビジネスモデルキャンバス", "zh": "商业模式画布", "ko": "비즈니스 모델 캔버스", "ar": "مخطط نموذج العمل" },
+    "keywords": {
+      "es": ["lienzo", "lean canvas", "modelo de negocio", "propuesta de valor", "segmentos de clientes", "emprendimiento", "startup"],
+      "en": ["lean canvas", "business model", "value proposition", "customer segments", "startup", "entrepreneurship", "strategy"]
+    }
+  },
+  "playbook": {
+    "label": { "es": "Playbook", "en": "Playbook", "pt": "Playbook", "fr": "Guide opérationnel", "de": "Playbook", "it": "Manuale operativo", "ja": "プレイブック", "zh": "行动手册", "ko": "플레이북", "ar": "دليل الخطط" },
+    "keywords": {
+      "es": ["manual de jugadas", "procedimientos", "guía de ventas", "respuesta a incidentes", "mejores prácticas", "runbook", "manual operativo"],
+      "en": ["plays", "procedures", "sales guide", "incident response", "best practices", "runbook", "operations manual"]
+    }
+  },
+  "maze": {
+    "label": { "es": "Laberinto", "en": "Maze", "pt": "Labirinto", "fr": "Labyrinthe", "de": "Labyrinth", "it": "Labirinto", "ja": "迷路", "zh": "迷宫", "ko": "미로", "ar": "متاهة" },
+    "keywords": {
+      "es": ["problema complejo", "encontrar la salida", "complejidad", "reto", "confusión", "resolver", "camino"],
+      "en": ["complex problem", "find a way out", "complexity", "challenge", "confusion", "solve", "labyrinth"]
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "ticket-plus": {
+    "label": { "es": "Nuevo ticket", "en": "New ticket", "pt": "Novo chamado", "fr": "Nouveau ticket", "de": "Neues Ticket", "it": "Nuovo ticket", "ja": "新規チケット", "zh": "新建工单", "ko": "새 티켓", "ar": "تذكرة جديدة" },
+    "keywords": {
+      "es": ["levantar reporte", "abrir caso", "solicitud de soporte", "crear incidencia", "pedir ayuda", "mesa de ayuda", "reportar un problema"],
+      "en": ["open a case", "submit a request", "support request", "create issue", "get help", "help desk", "report a problem"]
+    }
+  },
+  "ticket-check": {
+    "label": { "es": "Ticket resuelto", "en": "Solved ticket", "pt": "Chamado resolvido", "fr": "Ticket résolu", "de": "Gelöstes Ticket", "it": "Ticket risolto", "ja": "解決済みのチケット", "zh": "已解决的工单", "ko": "해결된 티켓", "ar": "تذكرة تم حلها" },
+    "keywords": {
+      "es": ["caso cerrado", "solucionado", "atendido", "problema arreglado", "estado resuelto", "filtro de resueltos", "completado"],
+      "en": ["closed case", "resolved", "fixed", "issue fixed", "solved status", "solved filter", "done"]
+    }
+  },
+  "ticket-clock": {
+    "label": { "es": "Ticket pendiente", "en": "Pending ticket", "pt": "Chamado pendente", "fr": "Ticket en attente", "de": "Ausstehendes Ticket", "it": "Ticket in sospeso", "ja": "保留中のチケット", "zh": "待回复的工单", "ko": "보류 중인 티켓", "ar": "تذكرة معلّقة" },
+    "keywords": {
+      "es": ["esperando al cliente", "en espera de respuesta", "tiempo de respuesta", "por atender", "cronómetro de SLA", "sin resolver", "en curso"],
+      "en": ["waiting on customer", "awaiting reply", "response time", "to do", "SLA timer", "unresolved", "in progress"]
+    }
+  },
+  "ticket-alert": {
+    "label": { "es": "Ticket urgente", "en": "Urgent ticket", "pt": "Chamado urgente", "fr": "Ticket urgent", "de": "Dringendes Ticket", "it": "Ticket urgente", "ja": "緊急のチケット", "zh": "紧急工单", "ko": "긴급 티켓", "ar": "تذكرة عاجلة" },
+    "keywords": {
+      "es": ["prioridad alta", "crítico", "atención inmediata", "en riesgo", "incidente", "a punto de vencer", "alerta"],
+      "en": ["high priority", "critical", "needs attention", "at risk", "incident", "about to breach", "alert"]
+    }
+  },
+  "ticket-escalated": {
+    "label": { "es": "Ticket escalado", "en": "Escalated ticket", "pt": "Chamado escalado", "fr": "Ticket escaladé", "de": "Eskaliertes Ticket", "it": "Ticket in escalation", "ja": "エスカレーションされたチケット", "zh": "已升级的工单", "ko": "에스컬레이션된 티켓", "ar": "تذكرة مُصعَّدة" },
+    "keywords": {
+      "es": ["segundo nivel", "nivel superior", "turnado a especialista", "supervisor", "soporte avanzado", "derivado", "filtro de escalados"],
+      "en": ["tier 2", "higher tier", "handed to specialist", "supervisor", "second line", "transferred", "escalation filter"]
+    }
+  },
+  "ticket-stack": {
+    "label": { "es": "Cola de tickets", "en": "Ticket queue", "pt": "Fila de chamados", "fr": "File de tickets", "de": "Ticket-Warteschlange", "it": "Coda di ticket", "ja": "チケットキュー", "zh": "工单队列", "ko": "티켓 대기열", "ar": "قائمة انتظار التذاكر" },
+    "keywords": {
+      "es": ["bandeja", "vista de tickets", "lista de casos", "carga del agente", "pila", "backlog", "pendientes"],
+      "en": ["inbox", "ticket view", "case list", "agent workload", "stack", "backlog", "all tickets"]
+    }
+  },
+  "ticket-merge": {
+    "label": { "es": "Combinar tickets", "en": "Merge tickets", "pt": "Mesclar chamados", "fr": "Fusionner des tickets", "de": "Tickets zusammenführen", "it": "Unisci ticket", "ja": "チケットを統合", "zh": "合并工单", "ko": "티켓 병합", "ar": "دمج التذاكر" },
+    "keywords": {
+      "es": ["fusionar", "duplicados", "unir casos", "consolidar", "ticket repetido", "agrupar", "juntar"],
+      "en": ["combine", "duplicates", "join cases", "consolidate", "duplicate ticket", "group", "dedupe"]
+    }
+  },
+  "ticket-split": {
+    "label": { "es": "Dividir ticket", "en": "Split ticket", "pt": "Dividir chamado", "fr": "Scinder le ticket", "de": "Ticket aufteilen", "it": "Dividi ticket", "ja": "チケットを分割", "zh": "拆分工单", "ko": "티켓 분할", "ar": "تقسيم التذكرة" },
+    "keywords": {
+      "es": ["separar", "abrir caso aparte", "otro tema", "partir conversación", "problema distinto", "bifurcar", "extraer mensaje"],
+      "en": ["separate", "spin off", "break out", "other topic", "branch conversation", "different issue", "fork"]
+    }
+  },
+  "ticket-link": {
+    "label": { "es": "Tickets vinculados", "en": "Linked tickets", "pt": "Chamados vinculados", "fr": "Tickets liés", "de": "Verknüpfte Tickets", "it": "Ticket collegati", "ja": "関連付けられたチケット", "zh": "关联工单", "ko": "연결된 티켓", "ar": "تذاكر مرتبطة" },
+    "keywords": {
+      "es": ["relacionados", "incidente y problema", "ticket padre", "dependencia", "enlazar casos", "referencia", "asociar"],
+      "en": ["related", "incident and problem", "parent ticket", "dependency", "connect cases", "reference", "associate"]
+    }
+  },
+  "ticket-reopen": {
+    "label": { "es": "Reabrir ticket", "en": "Reopen ticket", "pt": "Reabrir chamado", "fr": "Rouvrir le ticket", "de": "Ticket wieder öffnen", "it": "Riapri ticket", "ja": "チケットを再オープン", "zh": "重新打开工单", "ko": "티켓 다시 열기", "ar": "إعادة فتح التذكرة" },
+    "keywords": {
+      "es": ["volver a abrir", "reactivar", "el problema regresó", "no se resolvió", "reincidencia", "deshacer cierre", "retomar caso"],
+      "en": ["open again", "reactivate", "issue returned", "not fixed", "recurrence", "undo close", "resume case"]
+    }
+  },
+  "ticket-hold": {
+    "label": { "es": "Ticket en espera", "en": "Ticket on hold", "pt": "Chamado em espera", "fr": "Ticket en pause", "de": "Zurückgestelltes Ticket", "it": "Ticket in attesa", "ja": "待機中のチケット", "zh": "已暂停的工单", "ko": "대기 중인 티켓", "ar": "تذكرة قيد الانتظار" },
+    "keywords": {
+      "es": ["en pausa", "esperando a un tercero", "proveedor externo", "detenido", "bloqueado", "esperando refacción", "congelado"],
+      "en": ["paused", "waiting on third party", "external vendor", "stalled", "blocked", "awaiting parts", "frozen"]
+    }
+  },
+  "take-a-number": {
+    "label": { "es": "Tomar turno", "en": "Take a number", "pt": "Senha de atendimento", "fr": "Ticket d’attente", "de": "Wartenummer", "it": "Eliminacode", "ja": "整理券", "zh": "取号", "ko": "번호표", "ar": "رقم الدور" },
+    "keywords": {
+      "es": ["fila", "sala de espera", "ventanilla", "fila virtual", "número de atención", "dispensador de turnos", "mostrador", "su turno"],
+      "en": ["queue", "waiting room", "service counter", "virtual queue", "queue ticket", "now serving", "number dispenser", "line"]
+    }
+  },
+  "round-robin": {
+    "label": { "es": "Asignación por turnos", "en": "Round-robin assignment", "pt": "Distribuição por rodízio", "fr": "Attribution à tour de rôle", "de": "Round-Robin-Zuweisung", "it": "Assegnazione a rotazione", "ja": "ラウンドロビン割り当て", "zh": "轮流分配", "ko": "순환 배정", "ar": "التوزيع بالتناوب" },
+    "keywords": {
+      "es": ["rotación", "repartir tickets", "distribución equitativa", "en orden", "balanceo de carga", "reglas de asignación", "siguiente agente"],
+      "en": ["rotation", "distribute tickets", "even distribution", "take turns", "load balancing", "assignment rules", "next agent"]
+    }
+  },
+  "omnichannel": {
+    "label": { "es": "Atención omnicanal", "en": "Omnichannel support", "pt": "Atendimento omnichannel", "fr": "Support omnicanal", "de": "Omnichannel-Support", "it": "Assistenza omnicanale", "ja": "オムニチャネルサポート", "zh": "全渠道客服", "ko": "옴니채널 지원", "ar": "دعم متعدد القنوات" },
+    "keywords": {
+      "es": ["bandeja unificada", "todos los canales", "multicanal", "correo y chat", "teléfono", "redes sociales", "centro de contacto"],
+      "en": ["unified inbox", "all channels", "multichannel", "email and chat", "phone", "social media", "contact center"]
+    }
+  },
+  "support-agent": {
+    "label": { "es": "Agente de soporte", "en": "Support agent", "pt": "Atendente", "fr": "Agent du support", "de": "Support-Agent", "it": "Operatore dell’assistenza", "ja": "サポート担当者", "zh": "客服人员", "ko": "상담원", "ar": "وكيل الدعم" },
+    "keywords": {
+      "es": ["hablar con un asesor", "ejecutivo de atención", "operador", "perfil de asesor", "asignado a", "representante", "persona real"],
+      "en": ["talk to a human", "representative", "operator", "staff profile", "assignee", "customer service rep", "live person"]
+    }
+  },
+  "headset-clock": {
+    "label": { "es": "Horario de atención", "en": "Support hours", "pt": "Horário de atendimento", "fr": "Horaires du support", "de": "Supportzeiten", "it": "Orari di assistenza", "ja": "サポート受付時間", "zh": "客服时间", "ko": "상담 가능 시간", "ar": "ساعات الدعم" },
+    "keywords": {
+      "es": ["disponibilidad", "horas hábiles", "abierto ahora", "cerrado", "lunes a viernes", "cuándo llamar", "días laborables"],
+      "en": ["availability", "business hours", "open now", "closed", "weekdays", "when to call", "office hours"]
+    }
+  },
+  "phone-menu": {
+    "label": { "es": "Menú telefónico", "en": "Phone menu", "pt": "Menu telefônico", "fr": "Serveur vocal", "de": "Telefonmenü", "it": "Menu telefonico", "ja": "自動音声応答", "zh": "语音菜单", "ko": "자동 응답 메뉴", "ar": "قائمة الرد الصوتي" },
+    "keywords": {
+      "es": ["IVR", "conmutador", "marque 1", "opciones por teléfono", "respuesta de voz interactiva", "operadora automática", "teclado telefónico", "enrutar llamadas"],
+      "en": ["IVR", "press 1", "phone tree", "auto attendant", "voice menu", "keypad", "call routing", "switchboard"]
+    }
+  },
+  "chat-launcher": {
+    "label": { "es": "Botón de chat", "en": "Chat button", "pt": "Botão de chat", "fr": "Bouton de chat", "de": "Chat-Button", "it": "Pulsante della chat", "ja": "チャットボタン", "zh": "聊天按钮", "ko": "채팅 버튼", "ar": "زر الدردشة" },
+    "keywords": {
+      "es": ["burbuja flotante", "messenger", "ayuda en vivo", "esquina de la pantalla", "lanzador", "widget", "contactar a soporte"],
+      "en": ["floating bubble", "messenger", "live help", "corner button", "launcher", "widget", "contact support"]
+    }
+  },
+  "chat-widget": {
+    "label": { "es": "Ventana de chat", "en": "Chat window", "pt": "Janela de chat", "fr": "Fenêtre de chat", "de": "Chatfenster", "it": "Finestra della chat", "ja": "チャットウィンドウ", "zh": "聊天窗口", "ko": "채팅 창", "ar": "نافذة الدردشة" },
+    "keywords": {
+      "es": ["chat en vivo", "panel de soporte", "conversación en la página", "messenger", "atención en línea", "chat del sitio", "asistente"],
+      "en": ["live chat", "support panel", "on-page chat", "messenger", "online help", "website chat", "docked chat"]
+    }
+  },
+  "internal-note": {
+    "label": { "es": "Nota interna", "en": "Internal note", "pt": "Nota interna", "fr": "Note interne", "de": "Interne Notiz", "it": "Nota interna", "ja": "社内メモ", "zh": "内部备注", "ko": "내부 메모", "ar": "ملاحظة داخلية" },
+    "keywords": {
+      "es": ["comentario privado", "solo para agentes", "no visible al cliente", "apunte", "comentario del equipo", "bitácora", "mención"],
+      "en": ["private comment", "agents only", "hidden from customer", "team comment", "memo", "whisper", "mention"]
+    }
+  },
+  "complaint": {
+    "label": { "es": "Queja", "en": "Complaint", "pt": "Reclamação", "fr": "Réclamation", "de": "Beschwerde", "it": "Reclamo", "ja": "苦情", "zh": "投诉", "ko": "불만 사항", "ar": "شكوى" },
+    "keywords": {
+      "es": ["reclamación", "inconformidad", "cliente molesto", "mala experiencia", "insatisfacción", "reporte de servicio", "denuncia"],
+      "en": ["grievance", "unhappy customer", "bad experience", "dissatisfaction", "claim", "service issue", "negative feedback"]
+    }
+  },
+  "escalate": {
+    "label": { "es": "Escalar", "en": "Escalate", "pt": "Escalar", "fr": "Escalader", "de": "Eskalieren", "it": "Avvia escalation", "ja": "エスカレーション", "zh": "升级处理", "ko": "에스컬레이션", "ar": "تصعيد" },
+    "keywords": {
+      "es": ["subir de nivel", "turnar", "pasar a supervisor", "segundo nivel", "derivar", "subir prioridad", "soporte especializado"],
+      "en": ["move up", "hand off", "pass to supervisor", "tier 2", "transfer", "raise priority", "specialist support"]
+    }
+  },
+  "sla": {
+    "label": { "es": "Acuerdo de nivel de servicio", "en": "Service level agreement", "pt": "Acordo de nível de serviço", "fr": "Accord de niveau de service", "de": "Service-Level-Vereinbarung", "it": "Accordo sul livello di servizio", "ja": "サービスレベル契約", "zh": "服务等级协议", "ko": "서비스 수준 계약", "ar": "اتفاقية مستوى الخدمة" },
+    "keywords": {
+      "es": ["SLA", "tiempo de respuesta", "tiempo de resolución", "compromiso de servicio", "objetivo", "plazo prometido", "garantía de disponibilidad"],
+      "en": ["SLA", "response time", "resolution time", "service commitment", "target", "promised deadline", "uptime guarantee"]
+    }
+  },
+  "sla-breach": {
+    "label": { "es": "SLA incumplido", "en": "SLA breach", "pt": "SLA violado", "fr": "SLA non respecté", "de": "SLA-Verletzung", "it": "SLA violato", "ja": "SLA違反", "zh": "SLA 违约", "ko": "SLA 위반", "ar": "خرق اتفاقية الخدمة" },
+    "keywords": {
+      "es": ["vencido", "fuera de tiempo", "retraso", "por vencer", "plazo excedido", "alerta de tiempo", "penalización"],
+      "en": ["overdue", "late", "missed target", "about to breach", "deadline passed", "time alert", "penalty"]
+    }
+  },
+  "around-the-clock": {
+    "label": { "es": "Soporte 24/7", "en": "24/7 support", "pt": "Suporte 24 horas", "fr": "Assistance 24 h/24", "de": "Rund-um-die-Uhr-Support", "it": "Assistenza 24 ore su 24", "ja": "24時間サポート", "zh": "7×24 小时服务", "ko": "24시간 지원", "ar": "دعم على مدار الساعة" },
+    "keywords": {
+      "es": ["24 horas", "siempre abierto", "todos los días", "sin cerrar", "fines de semana", "atención continua", "365 días"],
+      "en": ["24 hours", "always open", "every day", "nonstop", "weekends", "round the clock", "365 days"]
+    }
+  },
+  "follow-the-sun": {
+    "label": { "es": "Soporte por zonas horarias", "en": "Follow-the-sun support", "pt": "Suporte entre fusos horários", "fr": "Support entre fuseaux horaires", "de": "Follow-the-Sun-Support", "it": "Supporto tra fusi orari", "ja": "フォロー・ザ・サン・サポート", "zh": "全球接力式支持", "ko": "팔로우 더 선 지원", "ar": "دعم متواصل عبر المناطق الزمنية" },
+    "keywords": {
+      "es": ["follow the sun", "equipos globales", "relevo entre regiones", "cobertura mundial", "cambio de turno", "oficinas internacionales", "diferencia de horario"],
+      "en": ["global teams", "regional handoff", "worldwide coverage", "shift handover", "time zones", "international offices", "relay"]
+    }
+  },
+  "knowledge-base": {
+    "label": { "es": "Base de conocimientos", "en": "Knowledge base", "pt": "Base de conhecimento", "fr": "Base de connaissances", "de": "Wissensdatenbank", "it": "Base di conoscenza", "ja": "ナレッジベース", "zh": "知识库", "ko": "지식 베이스", "ar": "قاعدة المعرفة" },
+    "keywords": {
+      "es": ["artículos de ayuda", "centro de ayuda", "documentación", "preguntas frecuentes", "wiki", "manuales", "autoservicio"],
+      "en": ["help articles", "help center", "documentation", "faq", "wiki", "manuals", "self-service"]
+    }
+  },
+  "repair-guide": {
+    "label": { "es": "Guía de reparación", "en": "Repair guide", "pt": "Guia de reparo", "fr": "Guide de réparation", "de": "Reparaturanleitung", "it": "Guida alla riparazione", "ja": "修理ガイド", "zh": "维修指南", "ko": "수리 가이드", "ar": "دليل الإصلاح" },
+    "keywords": {
+      "es": ["manual", "paso a paso", "cómo arreglar", "instructivo", "tutorial", "solución de problemas", "hazlo tú mismo"],
+      "en": ["manual", "step by step", "how to fix", "instructions", "tutorial", "troubleshooting", "DIY"]
+    }
+  },
+  "search-question": {
+    "label": { "es": "Buscar ayuda", "en": "Search help", "pt": "Buscar ajuda", "fr": "Rechercher de l’aide", "de": "Hilfe durchsuchen", "it": "Cerca nella guida", "ja": "ヘルプを検索", "zh": "搜索帮助", "ko": "도움말 검색", "ar": "البحث في المساعدة" },
+    "keywords": {
+      "es": ["centro de ayuda", "encontrar respuesta", "preguntas frecuentes", "buscador", "duda", "consulta", "autoservicio"],
+      "en": ["help center", "find an answer", "faq", "search bar", "question", "lookup", "self-service"]
+    }
+  },
+  "workaround": {
+    "label": { "es": "Solución alternativa", "en": "Workaround", "pt": "Solução alternativa", "fr": "Solution de contournement", "de": "Workaround", "it": "Soluzione alternativa", "ja": "回避策", "zh": "临时解决方法", "ko": "임시 해결책", "ar": "حل بديل" },
+    "keywords": {
+      "es": ["arreglo temporal", "parche", "rodeo", "mientras tanto", "problema conocido", "truco", "remedio provisional"],
+      "en": ["temporary fix", "patch", "detour", "in the meantime", "known issue", "hack", "stopgap"]
+    }
+  },
+  "community-help": {
+    "label": { "es": "Ayuda de la comunidad", "en": "Community help", "pt": "Ajuda da comunidade", "fr": "Entraide de la communauté", "de": "Community-Hilfe", "it": "Aiuto della community", "ja": "コミュニティサポート", "zh": "社区互助", "ko": "커뮤니티 지원", "ar": "مساعدة المجتمع" },
+    "keywords": {
+      "es": ["foro", "preguntas y respuestas", "usuarios ayudan", "clientes expertos", "grupo de usuarios", "respuesta aceptada", "entre usuarios"],
+      "en": ["forum", "q&a", "peer support", "user group", "accepted answer", "customers helping", "discussion board"]
+    }
+  },
+  "feedback-kiosk": {
+    "label": { "es": "Kiosco de satisfacción", "en": "Satisfaction kiosk", "pt": "Totem de satisfação", "fr": "Borne de satisfaction", "de": "Zufriedenheitsterminal", "it": "Totem di gradimento", "ja": "満足度評価端末", "zh": "满意度评价器", "ko": "만족도 평가기", "ar": "جهاز تقييم الرضا" },
+    "keywords": {
+      "es": ["caritas", "botones de calificación", "encuesta en tienda", "calificar la atención", "a la salida", "mostrador", "opinión rápida", "experiencia del cliente"],
+      "en": ["smiley buttons", "rating buttons", "in-store survey", "rate the service", "exit survey", "counter", "quick feedback", "customer experience"]
+    }
+  },
+  "smartphone-repair": {
+    "label": { "es": "Reparación de celular", "en": "Phone repair", "pt": "Conserto de celular", "fr": "Réparation de téléphone", "de": "Handyreparatur", "it": "Riparazione dello smartphone", "ja": "スマホ修理", "zh": "手机维修", "ko": "휴대폰 수리", "ar": "إصلاح الهاتف" },
+    "keywords": {
+      "es": ["agendar reparación", "servicio técnico", "equipo en reparación", "orden de servicio", "taller", "garantía", "arreglar teléfono", "técnico"],
+      "en": ["book a repair", "in for service", "device repair", "service order", "repair shop", "warranty", "fix my phone", "technician"]
+    }
+  },
+  "smartphone-repair-check": {
+    "label": { "es": "Reparación lista", "en": "Repair complete", "pt": "Conserto concluído", "fr": "Réparation terminée", "de": "Reparatur abgeschlossen", "it": "Riparazione completata", "ja": "修理完了", "zh": "维修完成", "ko": "수리 완료", "ar": "اكتمل الإصلاح" },
+    "keywords": {
+      "es": ["listo para recoger", "equipo reparado", "servicio terminado", "orden cerrada", "funciona de nuevo", "entrega del equipo", "aviso de recolección"],
+      "en": ["ready for pickup", "device fixed", "service done", "order closed", "working again", "collect device", "pickup notice"]
+    }
+  },
+  "smartphone-cracked": {
+    "label": { "es": "Pantalla rota", "en": "Cracked screen", "pt": "Tela quebrada", "fr": "Écran fissuré", "de": "Gesprungenes Display", "it": "Schermo rotto", "ja": "画面割れ", "zh": "屏幕碎裂", "ko": "깨진 화면", "ar": "شاشة مكسورة" },
+    "keywords": {
+      "es": ["celular estrellado", "cristal roto", "equipo dañado", "se cayó", "cambio de pantalla", "golpe", "recepción de equipo"],
+      "en": ["shattered phone", "broken glass", "damaged device", "dropped phone", "screen replacement", "impact", "repair intake"]
+    }
+  },
+  "service-center": {
+    "label": { "es": "Centro de servicio", "en": "Service center", "pt": "Assistência técnica", "fr": "Centre de réparation", "de": "Servicecenter", "it": "Centro assistenza", "ja": "サービスセンター", "zh": "售后服务中心", "ko": "서비스 센터", "ar": "مركز الخدمة" },
+    "keywords": {
+      "es": ["centro autorizado", "taller de reparación", "sucursal", "servicio técnico", "ubicar centro", "garantía", "soporte presencial"],
+      "en": ["authorized center", "repair shop", "branch", "technical service", "find a location", "warranty", "in-person support"]
+    }
+  },
+  "status-page": {
+    "label": { "es": "Página de estado", "en": "Status page", "pt": "Página de status", "fr": "Page d’état", "de": "Statusseite", "it": "Pagina di stato", "ja": "ステータスページ", "zh": "状态页", "ko": "상태 페이지", "ar": "صفحة الحالة" },
+    "keywords": {
+      "es": ["funcionamiento del servicio", "uptime", "caída del servicio", "incidentes", "mantenimiento programado", "todo funcionando", "disponibilidad"],
+      "en": ["service health", "uptime", "outage", "incidents", "scheduled maintenance", "all systems operational", "availability"]
+    }
+  }
+}

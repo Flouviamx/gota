@@ -1,0 +1,681 @@
+{
+  "forklift": {
+    "label": { "es": "Montacargas", "en": "Forklift", "pt": "Empilhadeira", "fr": "Chariot élévateur", "de": "Gabelstapler", "it": "Carrello elevatore", "ja": "フォークリフト", "zh": "叉车", "ko": "지게차", "ar": "رافعة شوكية" },
+    "keywords": {
+      "es": ["carretilla elevadora", "mover tarimas", "maniobras en almacén", "manejo de materiales", "estibar", "equipo de almacén", "reservar equipo"],
+      "en": ["lift truck", "move pallets", "material handling", "warehouse equipment", "stacking", "equipment booking", "WMS"]
+    }
+  },
+  "pallet-jack": {
+    "label": { "es": "Patín hidráulico", "en": "Pallet jack", "pt": "Paleteira manual", "fr": "Transpalette", "de": "Hubwagen", "it": "Transpallet", "ja": "ハンドリフト", "zh": "手动托盘车", "ko": "핸드 팔레트 트럭", "ar": "رافعة منصات يدوية" },
+    "keywords": {
+      "es": ["patín de carga", "transpaleta", "mover tarimas a mano", "piso del almacén", "carga baja", "traslado de tarimas", "maniobra manual"],
+      "en": ["pallet truck", "pump truck", "move pallets", "warehouse floor", "low lift", "manual handling", "dock work"]
+    }
+  },
+  "hand-truck": {
+    "label": { "es": "Diablito", "en": "Hand truck", "pt": "Carrinho de carga", "fr": "Diable", "de": "Sackkarre", "it": "Carrello a due ruote", "ja": "二輪台車", "zh": "两轮手推车", "ko": "핸드 트럭", "ar": "عربة يد بعجلتين" },
+    "keywords": {
+      "es": ["carretilla de dos ruedas", "cargar cajas", "mover mercancía", "recolección de mensajería", "repartidor", "subir cajas", "carga ligera"],
+      "en": ["dolly", "sack truck", "carry boxes", "courier pickup", "move stock", "delivery driver", "two-wheeler"]
+    }
+  },
+  "platform-trolley": {
+    "label": { "es": "Carrito de plataforma", "en": "Platform trolley", "pt": "Carrinho plataforma", "fr": "Chariot à plateau", "de": "Plattformwagen", "it": "Carrello a piattaforma", "ja": "平台車", "zh": "平板手推车", "ko": "평판 카트", "ar": "عربة مسطحة" },
+    "keywords": {
+      "es": ["plataforma con ruedas", "mover cajas", "carga a granel", "paquetería interna", "sala de correo", "traslado", "piso de almacén"],
+      "en": ["flatbed cart", "platform truck", "move boxes", "bulk boxes", "mail room", "push cart", "warehouse floor"]
+    }
+  },
+  "roll-cage": {
+    "label": { "es": "Jaula rodante", "en": "Roll cage", "pt": "Gaiola rolante", "fr": "Roll conteneur", "de": "Rollcontainer", "it": "Roll container", "ja": "カゴ台車", "zh": "笼车", "ko": "롤테이너", "ar": "عربة قفص بعجلات" },
+    "keywords": {
+      "es": ["jaula de carga", "clasificación de paquetes", "entregas a tienda", "centro de distribución", "contenedor de malla", "hub de paquetería", "carro jaula"],
+      "en": ["cage trolley", "roll container", "parcel sorting", "store deliveries", "hub", "wire cart", "sortation"]
+    }
+  },
+  "pick-cart": {
+    "label": { "es": "Carrito de surtido", "en": "Picking cart", "pt": "Carrinho de separação", "fr": "Chariot de préparation", "de": "Kommissionierwagen", "it": "Carrello per picking", "ja": "ピッキングカート", "zh": "拣货车", "ko": "피킹 카트", "ar": "عربة انتقاء الطلبات" },
+    "keywords": {
+      "es": ["picking", "surtido por lotes", "recorrido de surtido", "preparar pedidos", "carrito con charolas", "cajas de surtido", "orden de surtido"],
+      "en": ["order picking", "batch picking", "pick run", "tote cart", "multi-tier cart", "fulfill orders", "pick list"]
+    }
+  },
+  "conveyor-belt": {
+    "label": { "es": "Banda transportadora", "en": "Conveyor belt", "pt": "Esteira transportadora", "fr": "Convoyeur à bande", "de": "Förderband", "it": "Nastro trasportatore", "ja": "ベルトコンベア", "zh": "传送带", "ko": "컨베이어 벨트", "ar": "سير ناقل" },
+    "keywords": {
+      "es": ["transportador", "línea de clasificación", "automatización", "rendimiento", "centro de distribución", "flujo de paquetes", "manejo automatizado"],
+      "en": ["conveyor", "sortation line", "automation", "throughput", "distribution center", "parcel flow", "automated handling"]
+    }
+  },
+  "port-crane": {
+    "label": { "es": "Grúa portuaria", "en": "Port crane", "pt": "Guindaste portuário", "fr": "Portique à conteneurs", "de": "Containerbrücke", "it": "Gru portuale", "ja": "ガントリークレーン", "zh": "港口起重机", "ko": "항만 크레인", "ar": "رافعة ميناء" },
+    "keywords": {
+      "es": ["grúa de muelle", "terminal portuaria", "flete marítimo", "maniobra de contenedores", "puerto", "descarga de buque", "operaciones de terminal"],
+      "en": ["ship-to-shore crane", "STS crane", "container terminal", "ocean freight", "port operations", "vessel unloading", "quay crane"]
+    }
+  },
+  "container-stack": {
+    "label": { "es": "Contenedores apilados", "en": "Stacked containers", "pt": "Contêineres empilhados", "fr": "Conteneurs empilés", "de": "Gestapelte Container", "it": "Container impilati", "ja": "積み重ねたコンテナ", "zh": "堆叠的集装箱", "ko": "쌓인 컨테이너", "ar": "حاويات مكدسة" },
+    "keywords": {
+      "es": ["patio de contenedores", "terminal portuaria", "volumen marítimo", "contenedor marítimo", "importación", "exportación", "carga en puerto"],
+      "en": ["container yard", "shipping containers", "terminal stock", "ocean freight volume", "import", "export", "TEU"]
+    }
+  },
+  "container-location": {
+    "label": { "es": "Rastreo de contenedor", "en": "Container tracking", "pt": "Rastreamento de contêiner", "fr": "Suivi de conteneur", "de": "Containerverfolgung", "it": "Tracciamento container", "ja": "コンテナ追跡", "zh": "集装箱追踪", "ko": "컨테이너 추적", "ar": "تتبع الحاوية" },
+    "keywords": {
+      "es": ["dónde está mi contenedor", "visibilidad marítima", "seguimiento en puerto", "estatus del buque", "llegada a puerto", "contenedor en tránsito", "geolocalización"],
+      "en": ["where is my container", "ocean visibility", "port visibility", "vessel tracking", "container status", "ETA at port", "shipment visibility"]
+    }
+  },
+  "pallet-rack": {
+    "label": { "es": "Rack de tarimas", "en": "Pallet rack", "pt": "Porta-paletes", "fr": "Rayonnage à palettes", "de": "Palettenregal", "it": "Scaffalatura portapallet", "ja": "パレットラック", "zh": "托盘货架", "ko": "팔레트 랙", "ar": "رفوف المنصات" },
+    "keywords": {
+      "es": ["estantería industrial", "almacenamiento en altura", "capacidad de almacenaje", "zonas de almacén", "posiciones de tarima", "anaqueles", "estiba en niveles"],
+      "en": ["racking", "high-bay storage", "rack capacity", "storage zone", "shelving", "pallet positions", "selective racking"]
+    }
+  },
+  "bin-location": {
+    "label": { "es": "Ubicación en almacén", "en": "Bin location", "pt": "Endereço de armazenagem", "fr": "Emplacement de stockage", "de": "Lagerplatz", "it": "Ubicazione di magazzino", "ja": "保管ロケーション", "zh": "库位", "ko": "보관 위치", "ar": "موقع التخزين" },
+    "keywords": {
+      "es": ["posición", "código de ubicación", "slotting", "dónde está el artículo", "pasillo y nivel", "hueco", "localización"],
+      "en": ["storage location", "slot", "location code", "slotting", "aisle and level", "find item", "putaway location"]
+    }
+  },
+  "storage-bin": {
+    "label": { "es": "Gaveta de almacén", "en": "Storage bin", "pt": "Caixa de armazenagem", "fr": "Bac de stockage", "de": "Lagerbehälter", "it": "Contenitore da magazzino", "ja": "保管ボックス", "zh": "周转箱", "ko": "보관 상자", "ar": "صندوق تخزين" },
+    "keywords": {
+      "es": ["contenedor apilable", "caja de plástico", "tote", "caja de surtido", "piezas pequeñas", "refacciones", "organizador"],
+      "en": ["tote", "stackable crate", "picking tote", "small parts", "plastic box", "parts storage", "organizer"]
+    }
+  },
+  "boxes": {
+    "label": { "es": "Cajas", "en": "Boxes", "pt": "Caixas", "fr": "Cartons", "de": "Kartons", "it": "Scatole", "ja": "積み重ねた箱", "zh": "堆叠的箱子", "ko": "상자 더미", "ar": "صناديق" },
+    "keywords": {
+      "es": ["varios paquetes", "carga a granel", "bultos", "mercancía", "mudanza", "pedido múltiple", "no estibar"],
+      "en": ["multiple packages", "bulk", "cartons", "stacked boxes", "moving", "multi-piece shipment", "do not stack"]
+    }
+  },
+  "crate": {
+    "label": { "es": "Caja de madera", "en": "Crate", "pt": "Caixote de madeira", "fr": "Caisse en bois", "de": "Holzkiste", "it": "Cassa di legno", "ja": "木箱", "zh": "木箱", "ko": "나무 상자", "ar": "صندوق خشبي" },
+    "keywords": {
+      "es": ["huacal", "embalaje de exportación", "carga pesada", "maquinaria", "mercancía frágil", "flete", "empaque reforzado"],
+      "en": ["wooden box", "export packing", "heavy freight", "machinery", "fragile goods", "crating", "reinforced packing"]
+    }
+  },
+  "loading-dock": {
+    "label": { "es": "Andén de carga", "en": "Loading dock", "pt": "Doca de carga", "fr": "Quai de chargement", "de": "Laderampe", "it": "Banchina di carico", "ja": "荷積みドック", "zh": "装卸平台", "ko": "상하차 도크", "ar": "رصيف التحميل" },
+    "keywords": {
+      "es": ["muelle", "llegada de camiones", "citas de andén", "puertas de andén", "rampa", "carga y descarga", "patio de maniobras"],
+      "en": ["dock", "truck arrivals", "dock scheduling", "dock doors", "bay", "loading bay", "yard"]
+    }
+  },
+  "dock-door": {
+    "label": { "es": "Puerta de andén", "en": "Dock door", "pt": "Porta de doca", "fr": "Porte de quai", "de": "Ladetor", "it": "Portone di carico", "ja": "ドックドア", "zh": "装卸门", "ko": "도크 도어", "ar": "باب رصيف التحميل" },
+    "keywords": {
+      "es": ["cortina", "puerta seccional", "asignar andén", "estado del andén", "andén ocupado", "puerta enrollable", "bahía"],
+      "en": ["roll-up door", "sectional door", "assign door", "dock status", "door occupied", "bay door", "dock appointment"]
+    }
+  },
+  "tape-gun": {
+    "label": { "es": "Pistola de cinta", "en": "Tape gun", "pt": "Aplicador de fita", "fr": "Dérouleur pistolet", "de": "Handabroller", "it": "Tendinastro", "ja": "梱包用テープカッター", "zh": "封箱器", "ko": "테이프 커터기", "ar": "موزع شريط لاصق" },
+    "keywords": {
+      "es": ["despachador de cinta", "cinta canela", "sellar cajas", "estación de empaque", "embalar", "cerrar paquete", "cinta de empaque"],
+      "en": ["tape dispenser", "packing tape", "seal boxes", "packing station", "taping", "close box", "box sealing"]
+    }
+  },
+  "poly-mailer": {
+    "label": { "es": "Bolsa de envío", "en": "Poly mailer", "pt": "Envelope de segurança", "fr": "Pochette d’expédition", "de": "Versandtasche", "it": "Busta di spedizione", "ja": "宅配ビニール袋", "zh": "快递袋", "ko": "택배 봉투", "ar": "كيس شحن بلاستيكي" },
+    "keywords": {
+      "es": ["bolsa de mensajería", "sobre de plástico", "empaque flexible", "ropa", "paquete ligero", "bolsa con adhesivo", "envío de prendas"],
+      "en": ["mailer bag", "plastic mailer", "soft packaging", "apparel", "light parcel", "courier bag", "self-seal bag"]
+    }
+  },
+  "shipping-label": {
+    "label": { "es": "Guía de envío", "en": "Shipping label", "pt": "Etiqueta de envio", "fr": "Étiquette d’expédition", "de": "Versandetikett", "it": "Etichetta di spedizione", "ja": "配送ラベル", "zh": "快递面单", "ko": "운송장", "ar": "ملصق الشحن" },
+    "keywords": {
+      "es": ["etiqueta de envío", "imprimir guía", "crear guía", "número de guía", "paquetería", "guía generada", "rastreo"],
+      "en": ["create label", "print label", "label created", "tracking number", "waybill", "postage", "carrier label"]
+    }
+  },
+  "return-label": {
+    "label": { "es": "Guía de devolución", "en": "Return label", "pt": "Etiqueta de devolução", "fr": "Étiquette de retour", "de": "Rücksendeetikett", "it": "Etichetta di reso", "ja": "返品ラベル", "zh": "退货面单", "ko": "반품 운송장", "ar": "ملصق الإرجاع" },
+    "keywords": {
+      "es": ["devolución prepagada", "portal de devoluciones", "regresar producto", "logística inversa", "cambio", "etiqueta de retorno", "reembolso"],
+      "en": ["prepaid return", "returns portal", "send back", "reverse logistics", "exchange", "RMA", "refund"]
+    }
+  },
+  "label-printer": {
+    "label": { "es": "Impresora de etiquetas", "en": "Label printer", "pt": "Impressora de etiquetas", "fr": "Imprimante d’étiquettes", "de": "Etikettendrucker", "it": "Stampante di etichette", "ja": "ラベルプリンター", "zh": "标签打印机", "ko": "송장 프린터", "ar": "طابعة الملصقات" },
+    "keywords": {
+      "es": ["impresora térmica", "imprimir guías", "estación de empaque", "etiquetas adhesivas", "rollo de etiquetas", "código de barras", "4x6"],
+      "en": ["thermal printer", "print shipping labels", "packing station", "sticker labels", "label roll", "barcode", "4x6"]
+    }
+  },
+  "handheld-scanner": {
+    "label": { "es": "Escáner de mano", "en": "Handheld scanner", "pt": "Leitor portátil", "fr": "Douchette", "de": "Handscanner", "it": "Scanner portatile", "ja": "ハンディスキャナー", "zh": "手持扫描枪", "ko": "핸디 스캐너", "ar": "ماسح ضوئي محمول" },
+    "keywords": {
+      "es": ["pistola lectora", "lector de código de barras", "recibir mercancía", "surtido", "conteo cíclico", "terminal portátil", "escanear"],
+      "en": ["barcode gun", "barcode reader", "receiving", "picking", "cycle count", "mobile computer", "scan"]
+    }
+  },
+  "rfid-tag": {
+    "label": { "es": "Etiqueta RFID", "en": "RFID tag", "pt": "Etiqueta RFID", "fr": "Étiquette RFID", "de": "RFID-Etikett", "it": "Etichetta RFID", "ja": "RFIDタグ", "zh": "RFID 标签", "ko": "RFID 태그", "ar": "علامة RFID" },
+    "keywords": {
+      "es": ["radiofrecuencia", "rastreo de activos", "conteo automático", "chip", "etiqueta inteligente", "identificación", "control de inventario"],
+      "en": ["radio frequency", "asset tracking", "automatic count", "chip", "smart tag", "identification", "inventory control"]
+    }
+  },
+  "weight": {
+    "label": { "es": "Peso", "en": "Weight", "pt": "Peso", "fr": "Poids", "de": "Gewicht", "it": "Peso", "ja": "重量", "zh": "重量", "ko": "무게", "ar": "الوزن" },
+    "keywords": {
+      "es": ["kilos", "masa", "pesa", "límite de carga", "cobro por kilo", "sobrepeso", "pesaje"],
+      "en": ["mass", "kilograms", "pounds", "load limit", "rate per kilo", "overweight", "heavy"]
+    }
+  },
+  "warehouse-robot": {
+    "label": { "es": "Robot de almacén", "en": "Warehouse robot", "pt": "Robô de armazém", "fr": "Robot d’entrepôt", "de": "Lagerroboter", "it": "Robot di magazzino", "ja": "倉庫ロボット", "zh": "仓储机器人", "ko": "물류 로봇", "ar": "روبوت المستودع" },
+    "keywords": {
+      "es": ["AMR", "robot móvil", "surtido automatizado", "mercancía a persona", "robótica", "flota de robots", "automatización"],
+      "en": ["AMR", "mobile robot", "automated picking", "goods-to-person", "robotics", "robot fleet", "automation"]
+    }
+  },
+  "delivery-robot": {
+    "label": { "es": "Robot repartidor", "en": "Delivery robot", "pt": "Robô de entrega", "fr": "Robot de livraison", "de": "Lieferroboter", "it": "Robot per consegne", "ja": "配送ロボット", "zh": "配送机器人", "ko": "배달 로봇", "ar": "روبوت توصيل" },
+    "keywords": {
+      "es": ["entrega autónoma", "última milla", "robot de banqueta", "reparto sin conductor", "pedido a domicilio", "vehículo autónomo", "entrega local"],
+      "en": ["autonomous delivery", "last mile", "sidewalk robot", "driverless delivery", "food delivery", "autonomous vehicle", "local delivery"]
+    }
+  },
+  "drone-delivery": {
+    "label": { "es": "Entrega con dron", "en": "Drone delivery", "pt": "Entrega por drone", "fr": "Livraison par drone", "de": "Drohnenlieferung", "it": "Consegna con drone", "ja": "ドローン配送", "zh": "无人机配送", "ko": "드론 배송", "ar": "التوصيل بطائرة مسيّرة" },
+    "keywords": {
+      "es": ["entrega aérea", "última milla", "multirrotor", "envío por aire", "zonas remotas", "reparto autónomo", "aeronave no tripulada"],
+      "en": ["air drop", "last mile", "UAV", "aerial delivery", "remote areas", "autonomous delivery", "quadcopter"]
+    }
+  },
+  "delivery-moped": {
+    "label": { "es": "Motoneta de reparto", "en": "Delivery moped", "pt": "Moto de entrega", "fr": "Scooter de livraison", "de": "Lieferroller", "it": "Scooter per consegne", "ja": "配達バイク", "zh": "配送摩托车", "ko": "배달 오토바이", "ar": "دراجة نارية للتوصيل" },
+    "keywords": {
+      "es": ["moto", "repartidor", "entrega a domicilio", "comida a domicilio", "mandados", "entrega local", "mensajería en moto"],
+      "en": ["scooter", "motorbike", "courier", "food delivery", "grocery delivery", "local delivery", "rider"]
+    }
+  },
+  "cargo-bike": {
+    "label": { "es": "Bicicleta de carga", "en": "Cargo bike", "pt": "Bicicleta de carga", "fr": "Vélo cargo", "de": "Lastenrad", "it": "Bici cargo", "ja": "カーゴバイク", "zh": "载货自行车", "ko": "화물 자전거", "ar": "دراجة شحن" },
+    "keywords": {
+      "es": ["triciclo de reparto", "última milla urbana", "entrega ecológica", "reparto en bici", "cero emisiones", "ciudad", "mensajería sustentable"],
+      "en": ["cargo tricycle", "urban last mile", "green delivery", "bike courier", "zero emissions", "city logistics", "sustainable delivery"]
+    }
+  },
+  "delivery-bag": {
+    "label": { "es": "Mochila de reparto", "en": "Delivery backpack", "pt": "Mochila de entrega", "fr": "Sac isotherme de livraison", "de": "Lieferrucksack", "it": "Zaino termico per consegne", "ja": "配達バッグ", "zh": "配送保温包", "ko": "배달 가방", "ar": "حقيبة توصيل حرارية" },
+    "keywords": {
+      "es": ["mochila térmica", "repartidor", "comida a domicilio", "súper a domicilio", "equipo de reparto", "caja térmica", "pedido caliente"],
+      "en": ["insulated bag", "thermal backpack", "courier", "food delivery", "grocery delivery", "rider kit", "keep warm"]
+    }
+  },
+  "parcel-locker": {
+    "label": { "es": "Lockers de paquetería", "en": "Parcel locker", "pt": "Armário de encomendas", "fr": "Consigne à colis", "de": "Paketstation", "it": "Locker per pacchi", "ja": "宅配ロッカー", "zh": "快递柜", "ko": "택배 보관함", "ar": "خزائن الطرود" },
+    "keywords": {
+      "es": ["casilleros", "recoger con código", "punto de recolección", "entrega en locker", "pick up", "estación de paquetes", "autoservicio"],
+      "en": ["locker bank", "pickup code", "pickup point", "locker delivery", "click and collect", "smart locker", "parcel terminal"]
+    }
+  },
+  "curbside-pickup": {
+    "label": { "es": "Recoger en auto", "en": "Curbside pickup", "pt": "Retirada no carro", "fr": "Retrait en drive", "de": "Abholung am Auto", "it": "Ritiro in auto", "ja": "車での受け取り", "zh": "路边取货", "ko": "차량 픽업", "ar": "الاستلام من السيارة" },
+    "keywords": {
+      "es": ["recolección en tienda", "sin bajarse del auto", "click and collect", "estacionamiento", "pedido para llevar", "entrega en banqueta", "pickup"],
+      "en": ["drive-up", "collect order", "pick up in store", "click and collect", "parking spot", "contactless pickup", "BOPIS"]
+    }
+  },
+  "proof-of-delivery": {
+    "label": { "es": "Prueba de entrega", "en": "Proof of delivery", "pt": "Comprovante de entrega", "fr": "Preuve de livraison", "de": "Zustellnachweis", "it": "Prova di consegna", "ja": "配達証明", "zh": "签收凭证", "ko": "배송 완료 증빙", "ar": "إثبات التسليم" },
+    "keywords": {
+      "es": ["firma de recibido", "acuse de recibo", "confirmación de entrega", "POD", "firma digital", "recibido conforme", "evidencia de entrega"],
+      "en": ["POD", "delivery signature", "signed for", "delivery confirmation", "e-signature", "receipt", "delivery evidence"]
+    }
+  },
+  "parcel-handover": {
+    "label": { "es": "Entrega en mano", "en": "Hand delivery", "pt": "Entrega em mãos", "fr": "Remise en main propre", "de": "Persönliche Übergabe", "it": "Consegna a mano", "ja": "手渡し", "zh": "当面交付", "ko": "직접 전달", "ar": "التسليم باليد" },
+    "keywords": {
+      "es": ["recibir paquete", "en persona", "repartidor", "manejar con cuidado", "servicio de mensajería", "contra firma", "trato cuidadoso"],
+      "en": ["handover", "in person", "courier", "handle with care", "receive package", "signature required", "personal delivery"]
+    }
+  },
+  "fleet": {
+    "label": { "es": "Flotilla", "en": "Fleet", "pt": "Frota", "fr": "Flotte", "de": "Fuhrpark", "it": "Flotta", "ja": "車両フリート", "zh": "车队", "ko": "운송 차량", "ar": "أسطول المركبات" },
+    "keywords": {
+      "es": ["vehículos", "unidades", "transportistas", "parque vehicular", "camiones", "control vehicular", "choferes"],
+      "en": ["vehicles", "carriers", "trucks", "vehicle management", "motor pool", "drivers", "units"]
+    }
+  },
+  "truck-location": {
+    "label": { "es": "Ubicación del vehículo", "en": "Vehicle location", "pt": "Localização do veículo", "fr": "Position du véhicule", "de": "Fahrzeugstandort", "it": "Posizione del veicolo", "ja": "車両の現在地", "zh": "车辆位置", "ko": "차량 위치", "ar": "موقع المركبة" },
+    "keywords": {
+      "es": ["rastreo GPS", "seguimiento en vivo", "dónde va el camión", "posición del chofer", "monitoreo de flotilla", "geocerca", "telemetría"],
+      "en": ["GPS tracking", "live tracking", "where is the truck", "driver position", "fleet tracking", "geofence", "telematics"]
+    }
+  },
+  "truck-capacity": {
+    "label": { "es": "Capacidad del camión", "en": "Truck capacity", "pt": "Capacidade do caminhão", "fr": "Capacité du camion", "de": "LKW-Auslastung", "it": "Capacità del camion", "ja": "トラックの積載率", "zh": "货车装载率", "ko": "트럭 적재율", "ar": "سعة الشاحنة" },
+    "keywords": {
+      "es": ["carga completa", "carga consolidada", "espacio disponible", "factor de carga", "FTL", "LTL", "ocupación"],
+      "en": ["load factor", "full truckload", "partial load", "space left", "FTL", "LTL", "utilization"]
+    }
+  },
+  "truck-loading": {
+    "label": { "es": "Carga y descarga", "en": "Loading and unloading", "pt": "Carga e descarga", "fr": "Chargement et déchargement", "de": "Be- und Entladen", "it": "Carico e scarico", "ja": "積み降ろし", "zh": "装卸货", "ko": "상하차", "ar": "التحميل والتفريغ" },
+    "keywords": {
+      "es": ["maniobras", "operación de andén", "recolección", "subir mercancía", "embarque", "estibar", "bajar mercancía"],
+      "en": ["dock operations", "pickup", "load cargo", "truck bay", "shipping out", "stowing", "receiving"]
+    }
+  },
+  "truck-return": {
+    "label": { "es": "Viaje de regreso", "en": "Return trip", "pt": "Viagem de retorno", "fr": "Trajet retour", "de": "Rückfahrt", "it": "Viaggio di ritorno", "ja": "帰り便", "zh": "回程运输", "ko": "복귀 운행", "ar": "رحلة العودة" },
+    "keywords": {
+      "es": ["logística inversa", "recolección de devoluciones", "regreso a base", "retorno vacío", "backhaul", "viaje redondo", "retorno de mercancía"],
+      "en": ["backhaul", "reverse logistics", "return pickup", "back to depot", "empty return", "round trip", "returns collection"]
+    }
+  },
+  "truck-alert": {
+    "label": { "es": "Incidencia del vehículo", "en": "Vehicle incident", "pt": "Ocorrência com o veículo", "fr": "Incident véhicule", "de": "Fahrzeugstörung", "it": "Problema al veicolo", "ja": "車両トラブル", "zh": "车辆异常", "ko": "차량 이상", "ar": "مشكلة في المركبة" },
+    "keywords": {
+      "es": ["retraso", "avería", "camión demorado", "excepción de ruta", "accidente", "falla mecánica", "desvío"],
+      "en": ["delay", "breakdown", "late truck", "route exception", "accident", "mechanical failure", "detour"]
+    }
+  },
+  "calendar-truck": {
+    "label": { "es": "Fecha de entrega", "en": "Delivery date", "pt": "Data de entrega", "fr": "Date de livraison", "de": "Liefertermin", "it": "Data di consegna", "ja": "配達予定日", "zh": "送货日期", "ko": "배송 예정일", "ar": "موعد التسليم" },
+    "keywords": {
+      "es": ["cita de andén", "entrega programada", "agendar recolección", "fecha compromiso", "calendario de entregas", "ventana de entrega", "reservar recolección"],
+      "en": ["dock appointment", "scheduled delivery", "pickup booking", "delivery schedule", "promised date", "delivery window", "book pickup"]
+    }
+  },
+  "freight-sea": {
+    "label": { "es": "Flete marítimo", "en": "Ocean freight", "pt": "Frete marítimo", "fr": "Fret maritime", "de": "Seefracht", "it": "Trasporto marittimo", "ja": "海上輸送", "zh": "海运", "ko": "해상 운송", "ar": "الشحن البحري" },
+    "keywords": {
+      "es": ["envío por barco", "buque", "contenedor", "reserva marítima", "importación", "naviera", "FCL"],
+      "en": ["sea freight", "by ship", "vessel", "container", "ocean booking", "shipping line", "FCL"]
+    }
+  },
+  "freight-air": {
+    "label": { "es": "Flete aéreo", "en": "Air freight", "pt": "Frete aéreo", "fr": "Fret aérien", "de": "Luftfracht", "it": "Trasporto aereo", "ja": "航空輸送", "zh": "空运", "ko": "항공 운송", "ar": "الشحن الجوي" },
+    "keywords": {
+      "es": ["carga aérea", "envío por avión", "aerolínea de carga", "guía aérea", "envío urgente", "importación aérea", "aeropuerto"],
+      "en": ["air cargo", "by plane", "cargo airline", "air waybill", "express shipment", "airport", "air import"]
+    }
+  },
+  "freight-rail": {
+    "label": { "es": "Flete ferroviario", "en": "Rail freight", "pt": "Frete ferroviário", "fr": "Fret ferroviaire", "de": "Schienengüterverkehr", "it": "Trasporto ferroviario", "ja": "鉄道貨物", "zh": "铁路货运", "ko": "철도 운송", "ar": "الشحن بالسكك الحديدية" },
+    "keywords": {
+      "es": ["tren de carga", "intermodal", "ferrocarril", "vagón", "furgón", "transporte por tren", "terminal ferroviaria"],
+      "en": ["freight train", "intermodal", "railway", "railcar", "boxcar", "by train", "rail terminal"]
+    }
+  },
+  "freight-road": {
+    "label": { "es": "Flete terrestre", "en": "Road freight", "pt": "Frete rodoviário", "fr": "Transport routier", "de": "Straßengüterverkehr", "it": "Trasporto su strada", "ja": "トラック輸送", "zh": "公路运输", "ko": "도로 운송", "ar": "الشحن البري" },
+    "keywords": {
+      "es": ["camión", "tráiler", "transporte de carga", "acarreo", "carga completa", "transportista", "autotransporte"],
+      "en": ["trucking", "lorry", "drayage", "FTL", "carrier", "by truck", "haulage"]
+    }
+  },
+  "map-route": {
+    "label": { "es": "Ruta planeada", "en": "Planned route", "pt": "Rota planejada", "fr": "Itinéraire prévu", "de": "Geplante Route", "it": "Percorso pianificato", "ja": "計画ルート", "zh": "规划路线", "ko": "계획된 경로", "ar": "المسار المخطط" },
+    "keywords": {
+      "es": ["mapa de despacho", "itinerario", "recorrido", "trayecto", "trazar camino", "navegación", "plan de reparto"],
+      "en": ["dispatch map", "itinerary", "route plan", "trip", "directions", "navigation", "delivery plan"]
+    }
+  },
+  "route-optimize": {
+    "label": { "es": "Optimizar ruta", "en": "Optimize route", "pt": "Otimizar rota", "fr": "Optimiser l’itinéraire", "de": "Route optimieren", "it": "Ottimizza percorso", "ja": "ルート最適化", "zh": "优化路线", "ko": "경로 최적화", "ar": "تحسين المسار" },
+    "keywords": {
+      "es": ["ruta más corta", "reordenar paradas", "ahorrar tiempo", "ahorrar combustible", "mejor camino", "secuencia de entregas", "eficiencia"],
+      "en": ["shortest route", "resequence stops", "save time", "save fuel", "best path", "delivery sequence", "efficiency"]
+    }
+  },
+  "route-stops": {
+    "label": { "es": "Ruta con paradas", "en": "Multi-stop route", "pt": "Rota com paradas", "fr": "Itinéraire à plusieurs arrêts", "de": "Route mit Stopps", "it": "Percorso con più tappe", "ja": "巡回ルート", "zh": "多站点路线", "ko": "다중 경유 경로", "ar": "مسار متعدد التوقفات" },
+    "keywords": {
+      "es": ["recorrido de reparto", "orden de paradas", "puntos de entrega", "vuelta", "milk run", "itinerario de entregas", "escalas"],
+      "en": ["delivery run", "stop sequence", "drop points", "milk run", "waypoints", "multi-drop", "itinerary"]
+    }
+  },
+  "supply-chain": {
+    "label": { "es": "Cadena de suministro", "en": "Supply chain", "pt": "Cadeia de suprimentos", "fr": "Chaîne d’approvisionnement", "de": "Lieferkette", "it": "Catena di approvvigionamento", "ja": "サプライチェーン", "zh": "供应链", "ko": "공급망", "ar": "سلسلة التوريد" },
+    "keywords": {
+      "es": ["abastecimiento", "proveedores", "red de suministro", "de punta a punta", "logística", "compras", "flujo de mercancía"],
+      "en": ["sourcing", "suppliers", "supply network", "end to end", "logistics", "procurement", "flow of goods"]
+    }
+  },
+  "cross-dock": {
+    "label": { "es": "Cross-docking", "en": "Cross-docking", "pt": "Cross-docking", "fr": "Cross-docking", "de": "Cross-Docking", "it": "Cross-docking", "ja": "クロスドッキング", "zh": "越库作业", "ko": "크로스도킹", "ar": "الرصيف العابر" },
+    "keywords": {
+      "es": ["transbordo", "sin almacenamiento", "paso directo", "andén a andén", "flujo continuo", "centro de distribución", "consolidación"],
+      "en": ["transshipment", "no storage", "flow-through", "dock to dock", "continuous flow", "distribution center", "transload"]
+    }
+  },
+  "warehouse-inbound": {
+    "label": { "es": "Recepción de mercancía", "en": "Receiving", "pt": "Recebimento", "fr": "Réception des marchandises", "de": "Wareneingang", "it": "Ricevimento merci", "ja": "入荷", "zh": "入库", "ko": "입고", "ar": "استلام البضائع" },
+    "keywords": {
+      "es": ["entrada de mercancía", "envíos entrantes", "descarga", "llegada de proveedores", "orden de compra", "inbound", "registro de entrada"],
+      "en": ["inbound", "goods receipt", "incoming shipments", "supplier arrivals", "purchase order", "check in stock", "unloading"]
+    }
+  },
+  "warehouse-outbound": {
+    "label": { "es": "Salida de mercancía", "en": "Outbound", "pt": "Expedição", "fr": "Expédition des marchandises", "de": "Warenausgang", "it": "Spedizione merci", "ja": "出荷", "zh": "出库", "ko": "출고", "ar": "شحن البضائع الصادرة" },
+    "keywords": {
+      "es": ["despacho", "embarque", "pedidos salientes", "envíos", "expedición", "liberar pedidos", "outbound"],
+      "en": ["dispatch", "shipping out", "outgoing orders", "shipments", "fulfillment", "release orders", "goods issue"]
+    }
+  },
+  "warehouse-snowflake": {
+    "label": { "es": "Almacén refrigerado", "en": "Cold storage", "pt": "Armazém refrigerado", "fr": "Entrepôt frigorifique", "de": "Kühllager", "it": "Magazzino frigorifero", "ja": "冷蔵倉庫", "zh": "冷库", "ko": "냉동 창고", "ar": "مستودع مبرّد" },
+    "keywords": {
+      "es": ["cámara fría", "congelados", "cadena de frío", "refrigeración", "perecederos", "bodega fría", "temperatura controlada"],
+      "en": ["cold room", "frozen goods", "cold chain", "refrigerated warehouse", "perishables", "freezer", "temperature controlled"]
+    }
+  },
+  "warehouse-plus": {
+    "label": { "es": "Agregar almacén", "en": "Add warehouse", "pt": "Adicionar armazém", "fr": "Ajouter un entrepôt", "de": "Lager hinzufügen", "it": "Aggiungi magazzino", "ja": "倉庫を追加", "zh": "添加仓库", "ko": "창고 추가", "ar": "إضافة مستودع" },
+    "keywords": {
+      "es": ["nueva ubicación", "abrir bodega", "nuevo cedis", "centro de distribución", "sucursal", "punto de fulfillment", "registrar sede"],
+      "en": ["new location", "add location", "fulfillment center", "distribution center", "new site", "branch", "set up storage"]
+    }
+  },
+  "picking": {
+    "label": { "es": "Surtido de pedidos", "en": "Order picking", "pt": "Separação de pedidos", "fr": "Préparation de commandes", "de": "Kommissionierung", "it": "Prelievo ordini", "ja": "ピッキング", "zh": "拣货", "ko": "피킹", "ar": "انتقاء الطلبات" },
+    "keywords": {
+      "es": ["picking", "tomar del anaquel", "preparar pedido", "lista de surtido", "recolectar artículos", "armar pedido", "ruta de picking"],
+      "en": ["pick", "take from shelf", "prepare order", "pick list", "collect items", "fulfill order", "pick path"]
+    }
+  },
+  "putaway": {
+    "label": { "es": "Acomodo de mercancía", "en": "Putaway", "pt": "Endereçamento", "fr": "Mise en stock", "de": "Einlagerung", "it": "Stoccaggio", "ja": "棚入れ", "zh": "上架", "ko": "적치", "ar": "تخزين البضائع" },
+    "keywords": {
+      "es": ["guardar mercancía", "ubicar en rack", "almacenar", "mercancía recibida", "asignar ubicación", "reabastecer anaquel", "putaway"],
+      "en": ["store goods", "shelve", "stow", "received goods", "assign location", "slotting", "replenish shelf"]
+    }
+  },
+  "parcel-pack": {
+    "label": { "es": "Empacar pedido", "en": "Pack order", "pt": "Embalar pedido", "fr": "Emballer la commande", "de": "Bestellung verpacken", "it": "Imballa ordine", "ja": "梱包", "zh": "打包", "ko": "포장", "ar": "تغليف الطلب" },
+    "keywords": {
+      "es": ["embalar", "meter en caja", "estación de empaque", "preparar envío", "cerrar caja", "material de empaque", "armar paquete"],
+      "en": ["packing", "box up", "packing station", "prepare shipment", "seal box", "packaging", "pack out"]
+    }
+  },
+  "parcel-sort": {
+    "label": { "es": "Clasificar paquetes", "en": "Sort parcels", "pt": "Triagem de pacotes", "fr": "Tri des colis", "de": "Pakete sortieren", "it": "Smistamento pacchi", "ja": "荷物の仕分け", "zh": "包裹分拣", "ko": "택배 분류", "ar": "فرز الطرود" },
+    "keywords": {
+      "es": ["separar envío", "carriles de salida", "dividir pedido", "por destino", "hub de paquetería", "distribuir", "sortation"],
+      "en": ["sortation", "split shipment", "lanes", "by destination", "hub", "distribute", "route parcels"]
+    }
+  },
+  "parcel-merge": {
+    "label": { "es": "Consolidar envíos", "en": "Consolidate shipments", "pt": "Consolidar envios", "fr": "Regrouper les envois", "de": "Sendungen bündeln", "it": "Consolida spedizioni", "ja": "まとめて発送", "zh": "合并发货", "ko": "합포장", "ar": "دمج الشحنات" },
+    "keywords": {
+      "es": ["juntar pedidos", "un solo envío", "agrupar paquetes", "envío combinado", "ahorrar flete", "mismo destino", "unificar"],
+      "en": ["combine orders", "single shipment", "group parcels", "merge", "combined shipping", "save on freight", "same destination"]
+    }
+  },
+  "parcel-transit": {
+    "label": { "es": "En tránsito", "en": "In transit", "pt": "Em trânsito", "fr": "En transit", "de": "Unterwegs", "it": "In transito", "ja": "輸送中", "zh": "运输中", "ko": "배송 중", "ar": "قيد النقل" },
+    "keywords": {
+      "es": ["en camino", "enviado", "rastreo", "estatus del envío", "ya salió", "llega pronto", "seguimiento"],
+      "en": ["on its way", "shipped", "tracking", "shipment status", "en route", "out for delivery", "dispatched"]
+    }
+  },
+  "parcel-damaged": {
+    "label": { "es": "Paquete dañado", "en": "Damaged package", "pt": "Pacote danificado", "fr": "Colis endommagé", "de": "Beschädigtes Paket", "it": "Pacco danneggiato", "ja": "破損した荷物", "zh": "包裹破损", "ko": "파손된 택배", "ar": "طرد تالف" },
+    "keywords": {
+      "es": ["reclamo", "mercancía rota", "golpeado", "siniestro", "reportar daño", "caja aplastada", "merma"],
+      "en": ["damage claim", "broken goods", "crushed box", "report damage", "insurance claim", "dented", "loss"]
+    }
+  },
+  "parcel-scan": {
+    "label": { "es": "Escanear paquete", "en": "Scan package", "pt": "Escanear pacote", "fr": "Scanner le colis", "de": "Paket scannen", "it": "Scansiona pacco", "ja": "荷物をスキャン", "zh": "扫描包裹", "ko": "택배 스캔", "ar": "مسح الطرد" },
+    "keywords": {
+      "es": ["leer guía", "registro de recolección", "lector", "código de barras", "punto de control", "clasificación", "confirmar entrega"],
+      "en": ["read label", "pickup scan", "barcode", "checkpoint", "sorting scan", "delivery scan", "tracking event"]
+    }
+  },
+  "parcel-dimensions": {
+    "label": { "es": "Medidas del paquete", "en": "Package dimensions", "pt": "Dimensões do pacote", "fr": "Dimensions du colis", "de": "Paketmaße", "it": "Dimensioni del pacco", "ja": "荷物の寸法", "zh": "包裹尺寸", "ko": "택배 치수", "ar": "أبعاد الطرد" },
+    "keywords": {
+      "es": ["largo, ancho y alto", "peso volumétrico", "tamaño", "volumen", "medir caja", "dimensiones", "centímetros"],
+      "en": ["length, width and height", "dimensional weight", "size", "volume", "measure box", "cubic size", "inches"]
+    }
+  },
+  "parcel-sizes": {
+    "label": { "es": "Tamaños de paquete", "en": "Package sizes", "pt": "Tamanhos de pacote", "fr": "Tailles de colis", "de": "Paketgrößen", "it": "Formati dei pacchi", "ja": "荷物のサイズ", "zh": "包裹规格", "ko": "택배 크기", "ar": "أحجام الطرود" },
+    "keywords": {
+      "es": ["chico, mediano y grande", "tipos de caja", "cajas predefinidas", "presets", "catálogo de empaques", "elegir caja", "tallas de caja"],
+      "en": ["small, medium, large", "box types", "box presets", "packaging catalog", "choose box", "carton sizes", "standard boxes"]
+    }
+  },
+  "parcel-shield": {
+    "label": { "es": "Protección de envío", "en": "Shipping protection", "pt": "Proteção de envio", "fr": "Protection de l’envoi", "de": "Versandschutz", "it": "Protezione spedizione", "ja": "配送保証", "zh": "运输保障", "ko": "배송 보호", "ar": "حماية الشحنة" },
+    "keywords": {
+      "es": ["envío asegurado", "seguro de envío", "garantía", "cobertura", "paquete protegido", "pérdida o robo", "valor declarado"],
+      "en": ["insured shipment", "shipping insurance", "guarantee", "coverage", "package protection", "loss or theft", "declared value"]
+    }
+  },
+  "parcel-leaf": {
+    "label": { "es": "Envío neutro en carbono", "en": "Carbon-neutral shipping", "pt": "Envio carbono neutro", "fr": "Livraison neutre en carbone", "de": "Klimaneutraler Versand", "it": "Spedizione a impatto zero", "ja": "カーボンニュートラル配送", "zh": "碳中和配送", "ko": "탄소중립 배송", "ar": "شحن محايد كربونيًا" },
+    "keywords": {
+      "es": ["envío ecológico", "empaque sustentable", "huella de carbono", "compensación", "verde", "reciclable", "bajo impacto"],
+      "en": ["eco shipping", "sustainable packaging", "carbon footprint", "offset", "green delivery", "recyclable", "low impact"]
+    }
+  },
+  "parcel-snowflake": {
+    "label": { "es": "Envío refrigerado", "en": "Cold-chain shipment", "pt": "Envio refrigerado", "fr": "Envoi réfrigéré", "de": "Kühlversand", "it": "Spedizione refrigerata", "ja": "クール便", "zh": "冷链包裹", "ko": "콜드체인 배송", "ar": "شحنة مبردة" },
+    "keywords": {
+      "es": ["cadena de frío", "temperatura controlada", "congelado", "perecederos", "hielo seco", "medicamentos", "alimentos frescos"],
+      "en": ["cold chain", "temperature controlled", "frozen", "perishables", "dry ice", "pharma", "fresh food"]
+    }
+  },
+  "parcel-coin": {
+    "label": { "es": "Costo de envío", "en": "Shipping cost", "pt": "Custo de envio", "fr": "Frais de port", "de": "Versandkosten", "it": "Costo di spedizione", "ja": "送料", "zh": "运费", "ko": "배송비", "ar": "تكلفة الشحن" },
+    "keywords": {
+      "es": ["tarifa de envío", "cotizar envío", "flete", "cargo por entrega", "costo puesto en destino", "envío gratis", "tarifas de paquetería"],
+      "en": ["shipping rates", "delivery fee", "landed cost", "freight cost", "quote shipping", "postage", "free shipping"]
+    }
+  },
+  "parcel-globe": {
+    "label": { "es": "Envío internacional", "en": "International shipping", "pt": "Envio internacional", "fr": "Livraison internationale", "de": "Internationaler Versand", "it": "Spedizione internazionale", "ja": "海外配送", "zh": "国际配送", "ko": "해외 배송", "ar": "شحن دولي" },
+    "keywords": {
+      "es": ["transfronterizo", "a todo el mundo", "exportación", "importación", "aduana", "envío al extranjero", "global"],
+      "en": ["cross-border", "worldwide", "export", "import", "customs", "ship abroad", "global"]
+    }
+  },
+  "parcel-x": {
+    "label": { "es": "Entrega fallida", "en": "Delivery failed", "pt": "Falha na entrega", "fr": "Échec de livraison", "de": "Zustellung fehlgeschlagen", "it": "Consegna non riuscita", "ja": "配達失敗", "zh": "配送失败", "ko": "배송 실패", "ar": "فشل التسليم" },
+    "keywords": {
+      "es": ["envío cancelado", "no entregado", "intento fallido", "rechazado", "devuelto", "cancelar envío", "destinatario ausente"],
+      "en": ["shipment cancelled", "not delivered", "failed attempt", "refused", "returned", "cancel shipment", "recipient unavailable"]
+    }
+  },
+  "parcel-alert": {
+    "label": { "es": "Incidencia de entrega", "en": "Delivery exception", "pt": "Problema na entrega", "fr": "Incident de livraison", "de": "Zustellproblem", "it": "Problema di consegna", "ja": "配送トラブル", "zh": "配送异常", "ko": "배송 문제", "ar": "مشكلة في التسليم" },
+    "keywords": {
+      "es": ["dirección incorrecta", "retenido por paquetería", "excepción", "problema con el envío", "requiere atención", "domicilio no encontrado", "demora"],
+      "en": ["address issue", "held by carrier", "exception", "shipment problem", "needs attention", "address not found", "delay"]
+    }
+  },
+  "parcel-search": {
+    "label": { "es": "Rastrear paquete", "en": "Track package", "pt": "Rastrear pacote", "fr": "Suivre le colis", "de": "Sendung verfolgen", "it": "Traccia pacco", "ja": "荷物を追跡", "zh": "查询包裹", "ko": "택배 조회", "ar": "تتبع الطرد" },
+    "keywords": {
+      "es": ["seguimiento", "número de guía", "buscar envío", "dónde está mi pedido", "estatus", "consultar envío", "localizar"],
+      "en": ["tracking", "tracking number", "shipment lookup", "where is my order", "status", "find shipment", "locate"]
+    }
+  },
+  "parcel-plus": {
+    "label": { "es": "Crear envío", "en": "Create shipment", "pt": "Criar envio", "fr": "Créer un envoi", "de": "Sendung erstellen", "it": "Crea spedizione", "ja": "発送を登録", "zh": "创建运单", "ko": "배송 등록", "ar": "إنشاء شحنة" },
+    "keywords": {
+      "es": ["agregar paquete", "generar guía", "registrar envío", "solicitar recolección", "enviar", "documentar", "nuevo bulto"],
+      "en": ["add package", "new parcel", "generate label", "book shipment", "request pickup", "send", "ship"]
+    }
+  },
+  "inventory-level": {
+    "label": { "es": "Nivel de inventario", "en": "Stock level", "pt": "Nível de estoque", "fr": "Niveau de stock", "de": "Bestandsniveau", "it": "Livello di scorte", "ja": "在庫レベル", "zh": "库存水平", "ko": "재고 수준", "ar": "مستوى المخزون" },
+    "keywords": {
+      "es": ["existencias", "disponible", "stock bajo", "sobreinventario", "cantidad en almacén", "unidades", "medidor"],
+      "en": ["in stock", "low stock", "overstock", "quantity on hand", "units", "availability", "gauge"]
+    }
+  },
+  "stock-transfer": {
+    "label": { "es": "Traspaso de inventario", "en": "Stock transfer", "pt": "Transferência de estoque", "fr": "Transfert de stock", "de": "Umlagerung", "it": "Trasferimento di scorte", "ja": "在庫移動", "zh": "库存调拨", "ko": "재고 이동", "ar": "نقل المخزون" },
+    "keywords": {
+      "es": ["mover existencias", "entre almacenes", "entre sucursales", "reubicar", "transferencia", "redistribuir", "envío interno"],
+      "en": ["move stock", "between warehouses", "between stores", "relocate", "transfer order", "rebalance", "internal shipment"]
+    }
+  },
+  "inventory-x": {
+    "label": { "es": "Agotado", "en": "Out of stock", "pt": "Esgotado", "fr": "Rupture de stock", "de": "Nicht auf Lager", "it": "Esaurito", "ja": "在庫切れ", "zh": "缺货", "ko": "품절", "ar": "نفد المخزون" },
+    "keywords": {
+      "es": ["sin existencias", "sin stock", "no disponible", "quiebre de stock", "faltante", "cero unidades", "fuera de inventario"],
+      "en": ["sold out", "unavailable", "stockout", "no stock", "zero units", "missing item", "out of inventory"]
+    }
+  },
+  "inventory-alert": {
+    "label": { "es": "Inventario bajo", "en": "Low stock", "pt": "Estoque baixo", "fr": "Stock faible", "de": "Niedriger Bestand", "it": "Scorte basse", "ja": "在庫僅少", "zh": "库存不足", "ko": "재고 부족", "ar": "مخزون منخفض" },
+    "keywords": {
+      "es": ["alerta de existencias", "pocas unidades", "punto de reorden", "reabastecer", "stock mínimo", "por agotarse", "aviso de inventario"],
+      "en": ["stock alert", "few left", "reorder point", "restock", "minimum stock", "running out", "inventory warning"]
+    }
+  },
+  "inventory-plus": {
+    "label": { "es": "Reabastecer", "en": "Restock", "pt": "Repor estoque", "fr": "Réapprovisionner", "de": "Bestand auffüllen", "it": "Rifornisci scorte", "ja": "在庫を補充", "zh": "补货", "ko": "재고 보충", "ar": "إعادة تعبئة المخزون" },
+    "keywords": {
+      "es": ["agregar existencias", "recibir mercancía", "entrada de inventario", "resurtir", "reposición", "sumar unidades", "orden de compra"],
+      "en": ["add stock", "receive stock", "replenish", "stock in", "refill", "add units", "purchase order"]
+    }
+  },
+  "inventory-sync": {
+    "label": { "es": "Sincronizar inventario", "en": "Sync inventory", "pt": "Sincronizar estoque", "fr": "Synchroniser le stock", "de": "Bestand synchronisieren", "it": "Sincronizza inventario", "ja": "在庫を同期", "zh": "同步库存", "ko": "재고 동기화", "ar": "مزامنة المخزون" },
+    "keywords": {
+      "es": ["multicanal", "actualizar existencias", "entre tiendas", "marketplaces", "sucursales", "stock unificado", "tiempo real"],
+      "en": ["multichannel", "update stock", "across stores", "marketplaces", "locations", "unified stock", "real time"]
+    }
+  },
+  "inventory-search": {
+    "label": { "es": "Buscar existencias", "en": "Find stock", "pt": "Consultar estoque", "fr": "Rechercher le stock", "de": "Bestand suchen", "it": "Cerca disponibilità", "ja": "在庫を検索", "zh": "查询库存", "ko": "재고 검색", "ar": "البحث في المخزون" },
+    "keywords": {
+      "es": ["disponibilidad", "consultar inventario", "por sucursal", "hay stock", "localizar producto", "dónde hay", "ver almacén"],
+      "en": ["availability", "check inventory", "by location", "is it in stock", "locate item", "stock lookup", "store availability"]
+    }
+  },
+  "inventory-clock": {
+    "label": { "es": "Inventario por llegar", "en": "Incoming stock", "pt": "Estoque a caminho", "fr": "Stock à venir", "de": "Erwarteter Bestand", "it": "Scorte in arrivo", "ja": "入荷待ち", "zh": "待到货库存", "ko": "입고 예정 재고", "ar": "مخزون قادم" },
+    "keywords": {
+      "es": ["backorder", "pedido pendiente", "disponible pronto", "reabasto en camino", "preventa", "fecha de reabasto", "en espera"],
+      "en": ["backorder", "on order", "available soon", "restock on the way", "preorder", "expected date", "awaiting stock"]
+    }
+  },
+  "inventory-check": {
+    "label": { "es": "Inventario verificado", "en": "Stock verified", "pt": "Estoque verificado", "fr": "Stock vérifié", "de": "Bestand geprüft", "it": "Scorte verificate", "ja": "在庫確認済み", "zh": "库存已核对", "ko": "재고 확인 완료", "ar": "تم التحقق من المخزون" },
+    "keywords": {
+      "es": ["conteo cíclico", "existencias contadas", "en stock", "conciliado", "auditoría de almacén", "cuadre", "disponible"],
+      "en": ["cycle count", "stock counted", "in stock", "reconciled", "audit", "stocktake", "available"]
+    }
+  },
+  "packing-list": {
+    "label": { "es": "Lista de empaque", "en": "Packing list", "pt": "Romaneio", "fr": "Liste de colisage", "de": "Packliste", "it": "Distinta di imballaggio", "ja": "梱包明細書", "zh": "装箱单", "ko": "패킹 리스트", "ar": "قائمة التعبئة" },
+    "keywords": {
+      "es": ["manifiesto", "carta porte", "remisión", "conocimiento de embarque", "contenido del envío", "documentos de envío", "relación de bultos"],
+      "en": ["shipping manifest", "bill of lading", "delivery note", "waybill", "shipment contents", "shipping documents", "packing slip"]
+    }
+  },
+  "customs-clearance": {
+    "label": { "es": "Despacho aduanal", "en": "Customs clearance", "pt": "Desembaraço aduaneiro", "fr": "Dédouanement", "de": "Zollabfertigung", "it": "Sdoganamento", "ja": "通関", "zh": "清关", "ko": "통관", "ar": "التخليص الجمركي" },
+    "keywords": {
+      "es": ["aduana", "pedimento", "comercio exterior", "importación", "liberado", "aranceles", "frontera"],
+      "en": ["customs", "border", "import", "duties", "cleared", "customs broker", "declaration"]
+    }
+  },
+  "fragile": {
+    "label": { "es": "Frágil", "en": "Fragile", "pt": "Frágil", "fr": "Fragile", "de": "Zerbrechlich", "it": "Fragile", "ja": "割れ物注意", "zh": "易碎品", "ko": "파손 주의", "ar": "قابل للكسر" },
+    "keywords": {
+      "es": ["manejar con cuidado", "rompible", "vidrio", "delicado", "símbolo de embalaje", "cuidado", "copa"],
+      "en": ["handle with care", "breakable", "glass", "delicate", "handling mark", "careful", "wine glass"]
+    }
+  },
+  "this-side-up": {
+    "label": { "es": "Este lado arriba", "en": "This side up", "pt": "Este lado para cima", "fr": "Ce côté vers le haut", "de": "Diese Seite oben", "it": "Questo lato in alto", "ja": "天地無用", "zh": "此面向上", "ko": "이쪽을 위로", "ar": "هذا الجانب للأعلى" },
+    "keywords": {
+      "es": ["mantener vertical", "no voltear", "flechas hacia arriba", "posición correcta", "símbolo de embalaje", "orientación", "no invertir"],
+      "en": ["keep upright", "do not invert", "arrows up", "orientation", "handling mark", "do not tip", "top side"]
+    }
+  },
+  "keep-dry": {
+    "label": { "es": "Mantener seco", "en": "Keep dry", "pt": "Manter seco", "fr": "Craint l’humidité", "de": "Vor Nässe schützen", "it": "Teme l’umidità", "ja": "水濡れ注意", "zh": "怕湿", "ko": "습기 주의", "ar": "يحفظ جافًا" },
+    "keywords": {
+      "es": ["proteger de la lluvia", "no mojar", "humedad", "paraguas", "símbolo de embalaje", "resguardar del agua", "impermeable"],
+      "en": ["protect from rain", "keep away from water", "moisture", "umbrella", "handling mark", "do not wet", "waterproof"]
+    }
+  },
+  "keep-from-heat": {
+    "label": { "es": "Proteger del calor", "en": "Keep away from heat", "pt": "Proteger do calor", "fr": "Craint la chaleur", "de": "Vor Hitze schützen", "it": "Proteggere dal calore", "ja": "高温注意", "zh": "远离热源", "ko": "고온 주의", "ar": "يحفظ بعيدًا عن الحرارة" },
+    "keywords": {
+      "es": ["no exponer al sol", "luz solar", "temperatura alta", "lugar fresco", "símbolo de embalaje", "sensible al calor", "derretir"],
+      "en": ["keep out of sun", "sunlight", "high temperature", "store cool", "handling mark", "heat sensitive", "melting"]
+    }
+  },
+  "thermometer-range": {
+    "label": { "es": "Rango de temperatura", "en": "Temperature range", "pt": "Faixa de temperatura", "fr": "Plage de température", "de": "Temperaturbereich", "it": "Intervallo di temperatura", "ja": "温度範囲", "zh": "温度范围", "ko": "온도 범위", "ar": "نطاق درجة الحرارة" },
+    "keywords": {
+      "es": ["límites térmicos", "cadena de frío", "monitoreo", "mínimo y máximo", "termómetro", "condiciones de almacenaje", "refrigeración"],
+      "en": ["min and max", "cold chain", "monitoring", "thermometer", "storage conditions", "thermal limits", "temperature excursion"]
+    }
+  },
+  "cargo-hook": {
+    "label": { "es": "Gancho de carga", "en": "Cargo hook", "pt": "Gancho de carga", "fr": "Crochet de levage", "de": "Lasthaken", "it": "Gancio di sollevamento", "ja": "クレーンフック", "zh": "起重吊钩", "ko": "크레인 훅", "ar": "خطاف الرافعة" },
+    "keywords": {
+      "es": ["grúa", "punto de izaje", "izar", "carga suspendida", "eslinga", "levantar", "no usar ganchos"],
+      "en": ["crane hook", "lifting point", "hoist", "slung load", "sling", "lift", "no hooks"]
+    }
+  },
+  "container-open": {
+    "label": { "es": "Contenedor abierto", "en": "Open container", "pt": "Contêiner aberto", "fr": "Conteneur ouvert", "de": "Offener Container", "it": "Container aperto", "ja": "扉の開いたコンテナ", "zh": "打开的集装箱", "ko": "열린 컨테이너", "ar": "حاوية مفتوحة" },
+    "keywords": {
+      "es": ["descarga", "desconsolidar", "contenedor vacío", "inspección", "revisión aduanal", "puertas abiertas", "vaciado"],
+      "en": ["unloading", "devanning", "empty container", "inspection", "customs check", "doors open", "stripping"]
+    }
+  },
+  "air-container": {
+    "label": { "es": "Contenedor aéreo", "en": "Air cargo container", "pt": "Contêiner aéreo", "fr": "Conteneur aérien", "de": "Luftfrachtcontainer", "it": "Container aereo", "ja": "航空コンテナ", "zh": "航空集装箱", "ko": "항공 컨테이너", "ar": "حاوية شحن جوي" },
+    "keywords": {
+      "es": ["ULD", "carga aérea", "flete aéreo", "avión de carga", "unidad de carga", "reserva aérea", "bodega del avión"],
+      "en": ["ULD", "LD3", "air freight", "cargo plane", "air cargo booking", "aircraft hold", "airline cargo"]
+    }
+  },
+  "shipping-lane": {
+    "label": { "es": "Ruta comercial", "en": "Trade lane", "pt": "Rota comercial", "fr": "Axe de transport", "de": "Frachtroute", "it": "Tratta di trasporto", "ja": "輸送区間", "zh": "运输线路", "ko": "운송 노선", "ar": "مسار تجاري" },
+    "keywords": {
+      "es": ["origen y destino", "tarifas por ruta", "corredor logístico", "desempeño por ruta", "trayecto", "lane", "tramo"],
+      "en": ["origin to destination", "lane rates", "freight lane", "lane performance", "corridor", "O-D pair", "route"]
+    }
+  },
+  "parcel-camera": {
+    "label": { "es": "Foto de entrega", "en": "Delivery photo", "pt": "Foto da entrega", "fr": "Photo de livraison", "de": "Zustellfoto", "it": "Foto di consegna", "ja": "配達写真", "zh": "送达照片", "ko": "배송 사진", "ar": "صورة التسليم" },
+    "keywords": {
+      "es": ["evidencia fotográfica", "prueba de entrega", "foto del paquete", "foto obligatoria", "comprobante", "cámara", "entregado en puerta"],
+      "en": ["photo proof", "proof of delivery", "package photo", "photo required", "evidence", "camera", "left at door"]
+    }
+  },
+  "parcel-heavy": {
+    "label": { "es": "Paquete pesado", "en": "Heavy package", "pt": "Pacote pesado", "fr": "Colis lourd", "de": "Schweres Paket", "it": "Pacco pesante", "ja": "重量物", "zh": "重货", "ko": "중량물", "ar": "طرد ثقيل" },
+    "keywords": {
+      "es": ["sobrepeso", "sobredimensionado", "carga pesada", "entrega con dos personas", "recargo por peso", "voluminoso", "mercancía grande"],
+      "en": ["overweight", "oversized", "freight item", "two-person delivery", "weight surcharge", "bulky", "large item"]
+    }
+  },
+  "asset-tracker": {
+    "label": { "es": "Rastreador de activos", "en": "Asset tracker", "pt": "Rastreador de ativos", "fr": "Balise de suivi", "de": "Ortungsgerät", "it": "Localizzatore GPS", "ja": "GPSトラッカー", "zh": "资产追踪器", "ko": "자산 추적기", "ar": "جهاز تتبع الأصول" },
+    "keywords": {
+      "es": ["GPS", "localizador", "dispositivo de rastreo", "tarimas", "remolques", "contenedores", "geolocalización"],
+      "en": ["GPS", "tracking device", "locator", "pallets", "trailers", "containers", "IoT"]
+    }
+  }
+}

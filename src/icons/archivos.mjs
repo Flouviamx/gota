@@ -4,8 +4,11 @@
 // square bottom-right corner on containers. The base file is the core `document` without its text
 // lines; the folder repeats the core one. The badges (plus, check, clock…) are the engine's:
 // `badge` clears the base with exact clearance; nothing is ever trimmed by hand.
-import { arc, badge, circ, dot, halfChord, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
-import { snapper } from '../../engine/variants.mjs';
+import { arc, badge, circ, dot, drop, halfChord, head, line, polar, rot, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
+import { snapper, transform } from '../../engine/variants.mjs';
+import dispositivos from './dispositivos.mjs';
+import edicion from './edicion.mjs';
+import nucleo from './nucleo.mjs';
 
 // ── Local utilities ───────────────────────────────────────────────────────────────────────────
 const N = (v) => {
@@ -776,6 +779,752 @@ add('newspaper', ['periódico', 'noticias', 'prensa', 'revista', 'newspaper', 'n
   ]);
 }
 
+// ── Round 4 helpers ───────────────────────────────────────────────────────────────────────────
+/** Points every `step` along a path of lines, cubics and circular arcs (absolute or relative). */
+function samples(d, step = 0.2) {
+  const tk = d.match(/[MmLlHhVvCcAaZz]|-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?/g);
+  const pts = [];
+  let [i, cmd, cur, start] = [0, '', [0, 0], [0, 0]];
+  const n = () => Number.parseFloat(tk[i++]);
+  while (i < tk.length) {
+    if (/[A-Za-z]/.test(tk[i])) cmd = tk[i++];
+    const rel = cmd !== cmd.toUpperCase();
+    const C = cmd.toUpperCase();
+    const o = rel ? cur : [0, 0];
+    if (C === 'Z') {
+      pts.push(start);
+      cur = start;
+      continue;
+    }
+    if (C === 'M') {
+      cur = start = [o[0] + n(), o[1] + n()];
+      pts.push(cur);
+      cmd = rel ? 'l' : 'L';
+    } else if (C === 'L') {
+      cur = [o[0] + n(), o[1] + n()];
+      pts.push(cur);
+    } else if (C === 'H') {
+      cur = [(rel ? cur[0] : 0) + n(), cur[1]];
+      pts.push(cur);
+    } else if (C === 'V') {
+      cur = [cur[0], (rel ? cur[1] : 0) + n()];
+      pts.push(cur);
+    } else if (C === 'C') {
+      const [a, b, e] = [[o[0] + n(), o[1] + n()], [o[0] + n(), o[1] + n()], [o[0] + n(), o[1] + n()]];
+      const p0 = cur;
+      const m = Math.max(6, Math.ceil(Math.hypot(e[0] - p0[0], e[1] - p0[1]) / step) * 2);
+      for (let k = 1; k <= m; k++) {
+        const [t, u] = [k / m, 1 - k / m];
+        pts.push([0, 1].map((j) => u * u * u * p0[j] + 3 * u * u * t * a[j] + 3 * u * t * t * b[j] + t * t * t * e[j]));
+      }
+      cur = e;
+    } else if (C === 'A') {
+      let rx = n();
+      n();
+      n();
+      const [large, sweep] = [n(), n()];
+      const e = [o[0] + n(), o[1] + n()];
+      const p0 = cur;
+      const [hx, hy] = [(p0[0] - e[0]) / 2, (p0[1] - e[1]) / 2];
+      const h2 = hx * hx + hy * hy;
+      if (h2 > rx * rx) rx = Math.sqrt(h2);
+      const k = (large !== sweep ? 1 : -1) * Math.sqrt(Math.max(0, (rx * rx - h2) / h2));
+      const c = [k * hy + (p0[0] + e[0]) / 2, -k * hx + (p0[1] + e[1]) / 2];
+      const a0 = Math.atan2(p0[1] - c[1], p0[0] - c[0]);
+      let da = Math.atan2(e[1] - c[1], e[0] - c[0]) - a0;
+      if (sweep && da < 0) da += 2 * Math.PI;
+      if (!sweep && da > 0) da -= 2 * Math.PI;
+      const m = Math.max(6, Math.ceil((Math.abs(da) * rx) / step));
+      for (let q = 1; q <= m; q++) pts.push([c[0] + rx * Math.cos(a0 + (da * q) / m), c[1] + rx * Math.sin(a0 + (da * q) / m)]);
+      cur = e;
+    }
+  }
+  return pts;
+}
+/**
+ * A closed outline as dashes about `dash` long with gaps of `gap` between their ends (the 1.5 of
+ * clearance); `center` is a point of the outline that falls in the middle of a dash (a square
+ * corner: a gap across it would be short). Each dash follows the outline as a polyline.
+ */
+function dashed(d, { dash = 2.5, gap = 3, center } = {}) {
+  const pts = samples(d, 0.1);
+  const acc = [0];
+  for (let k = 1; k < pts.length; k++) acc.push(acc[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]));
+  const L = acc[acc.length - 1];
+  const n = Math.max(1, Math.round(L / (dash + gap)));
+  const per = L / n;
+  let phase = 0;
+  if (center) {
+    let best = 0;
+    pts.forEach((p, k) => {
+      if (Math.hypot(p[0] - center[0], p[1] - center[1]) < Math.hypot(pts[best][0] - center[0], pts[best][1] - center[1])) best = k;
+    });
+    phase = acc[best] - (per - gap) / 2;
+  }
+  const at = (s) => {
+    const t = ((s % L) + L) % L;
+    let k = 1;
+    while (k < acc.length - 1 && acc[k] < t) k++;
+    const u = (t - acc[k - 1]) / (acc[k] - acc[k - 1] || 1);
+    return [pts[k - 1][0] + (pts[k][0] - pts[k - 1][0]) * u, pts[k - 1][1] + (pts[k][1] - pts[k - 1][1]) * u];
+  };
+  const out = [];
+  for (let q = 0; q < n; q++) {
+    const s0 = phase + q * per;
+    const s1 = s0 + per - gap;
+    const run = [];
+    for (let s = s0; s < s1; s += 0.1) run.push(at(s));
+    run.push(at(s1));
+    // Merge the straight runs: keep a point only where the direction turns
+    const keep = run.filter((p, j) => {
+      if (j === 0 || j === run.length - 1) return true;
+      const [a, b] = [run[j - 1], run[j + 1]];
+      return Math.abs((b[0] - a[0]) * (p[1] - a[1]) - (b[1] - a[1]) * (p[0] - a[0])) > 2e-3;
+    });
+    out.push(line(...keep.filter((p, j) => j === 0 || Math.hypot(p[0] - keep[j - 1][0], p[1] - keep[j - 1][1]) > 0.05)));
+  }
+  return out;
+}
+/**
+ * A computed knockout for a straight line (a folder's fold, a page's edge): it is cut wherever it
+ * comes closer than `rad` (3: 1.5 of clearance between edges) to the given strokes; a piece left
+ * shorter than `min` goes (a fragment).
+ */
+function around(p0, p1, paths, rad = 3, min = 2.5) {
+  const caps = paths.flatMap((d) => {
+    const pts = samples(d, 0.25);
+    return pts.slice(1).map((p, k) => cap(pts[k], p, rad));
+  });
+  const runs = clip([{ l: [p0, p1] }], caps, false)
+    .split(/(?=M)/)
+    .filter((r) => {
+      const q = samples(r, 0.5);
+      return q.length > 1 && Math.hypot(q[q.length - 1][0] - q[0][0], q[q.length - 1][1] - q[0][1]) >= min;
+    });
+  return runs.join('');
+}
+/** A polyline through pixel centers of the 16 px grid. */
+const pl16 = (...pts) => line(...pts.map(([c, r]) => g(c, r)));
+/** A path moved by (dx, dy). */
+const move = (d, dx, dy) => transform(d, 1, dx, dy);
+/** The pieces of the core set, the trash can and the floppy from Edición, the printer and SD card from Dispositivos. */
+const CORE = nucleo.icons;
+const TRASH = edicion.icons.trash;
+const SAVE = edicion.icons.save;
+const PRINTER = dispositivos.icons.printer;
+
+// ── Round 4: the file's states, actions and types ─────────────────────────────────────────────
+// Template: an empty layout, a header slot across the top and below it a second slot split into two
+// side by side (the shared wall leaves each 4.25 wide: two separate slots in the file's 8.5 of glyph
+// area would be 2.75, and read as digits).
+add('file-template', ['plantilla', 'modelo', 'diseño base', 'nuevo desde plantilla', 'template', 'layout', 'boilerplate'], [
+  file(),
+  sq(7.75, 7, 8.5, 2.75, 1),
+  sq(7.75, 12.75, 8.5, 4.5, 1.25),
+  line([12, 12.75], [12, 17.25]),
+]);
+// Draft: a line of text and a second one that breaks into a loose scribble halfway across.
+add('file-draft', ['borrador', 'sin terminar', 'en progreso', 'draft', 'work in progress', 'unfinished'], [
+  file(),
+  line([8.75, 9.25], [15.25, 9.25]),
+  `M8.75 14.25H10.75${arcTo(12, 14.25, 1.25, 180, 360)}${arcTo(14.5, 14.25, 1.25, 180, 0)}`,
+]);
+// Form: a title line and two input fields (the field's signature corner), 3 apart.
+add('file-form', ['formulario', 'solicitud', 'campos', 'llenar', 'form', 'application', 'fillable pdf'], [
+  file(),
+  line([8.75, 6.5], [12.75, 6.5]),
+  sq(7.75, 9.5, 8.5, 2.75, 1, { square: ['br'] }),
+  sq(7.75, 15.25, 8.5, 2.75, 1, { square: ['br'] }),
+]);
+// Key: lying across the middle, the bow on the left and the bit down at the end of the shaft (its
+// two teeth 3 apart).
+add('file-key', ['archivo cifrado', 'llave', 'certificado', 'clave privada', 'encrypted file', 'key file', 'private key'], [
+  file(),
+  circ(9.25, 11.5, 1.5),
+  roundline([[10.75, 11.5], [16.25, 11.5], [16.25, 14.25]], [0, 0.6, 0]),
+  line([13.25, 11.5], [13.25, 13.75]),
+]);
+// Broken: a zigzag crack splits the file top to bottom and each half moves 1.75 out, so the two
+// edges of the crack stand 3 apart (center to center) along its steepest run.
+{
+  const Z = [[12.75, 2.75], [10.75, 7], [13.25, 12], [10.75, 16.75], [12.5, 21.25]];
+  const zig = (pts) => roundline(pts, pts.map((_, i) => (i === 0 || i === pts.length - 1 ? 0 : 0.5))).replace(/^M/, 'L');
+  const left = `${box(...F, { square: ['br'], gaps: [{ from: ['t', 12.75], to: ['b', 12.5] }] })}${zig(Z)}Z`;
+  const right = `${box(...F, { square: ['br'], gaps: [{ from: ['b', 12.5], to: ['t', 12.75] }] })}${zig([...Z].reverse())}Z`;
+  add('file-broken', ['archivo dañado', 'corrupto', 'no se puede abrir', 'roto', 'corrupted file', 'broken file', 'damaged'], [move(left, -1.75, 0), move(right, 1.75, 0)]);
+}
+// Link: the set's chain link, compact, on the diagonal at the bottom right: two U-shaped halves 3
+// apart and the bar between them, 3 from their arms (the core link's measurements, shortened).
+// At 16 px: two 4 px rings crossing at a corner, a chain's two links on the pixel grid.
+const CHAIN16 = [sq(px(8), px(10), 4.5, 4.5, 1.2), sq(px(10), px(8), 4.5, 4.5, 1.2)];
+function chain(c = [16.5, 16.5], w = 3) {
+  const a = [Math.SQRT1_2, -Math.SQRT1_2];
+  const nv = [Math.SQRT1_2, Math.SQRT1_2];
+  const P = (u, v) => [c[0] + u * a[0] + v * nv[0], c[1] + u * a[1] + v * nv[1]];
+  const half = (s) => `M${pt(P(1.5 * s, w * s))}L${pt(P(3 * s, w * s))}A${w} ${w} 0 0 0 ${pt(P(3 * s, -w * s))}L${pt(P(1.5 * s, -w * s))}`;
+  const hull = `M${pt(P(-3, -w))}L${pt(P(3, -w))}A${w} ${w} 0 0 1 ${pt(P(3, w))}L${pt(P(-3, w))}A${w} ${w} 0 0 1 ${pt(P(-3, -w))}Z`;
+  return { d: [half(-1), half(1), line(P(-3, 0), P(3, 0))], hull };
+}
+{
+  const k = chain();
+  add('file-link', ['enlace al archivo', 'compartir enlace', 'copiar enlace', 'vínculo', 'file link', 'share link', 'copy link'], [file()], { badge: own(k.d, k.hull, null, CHAIN16) });
+}
+// Shortcut (alias): a short arc arrow rises from below the lower left corner, crosses the file's
+// left side and points into it; the file opens where it passes. The area it clears runs along the
+// arc and back (an arc closed on its chord would clear a wedge of the filled file).
+function aliasArrow(c, r, a0, a1, wedge = false) {
+  const a = arc(...c, r, a0, a1);
+  const h = head(a.end, a.tangent, 3.4);
+  // `wedge` also clears along the lower arm of the head carried on down to the arc's start: an edge
+  // that passes under both the arc and that arm (the folder's foot) left an island of ink between
+  // them at some weights
+  const [u, s] = [a.tangent, Math.SQRT1_2];
+  const low = [a.end[0] - 3.4 * (u[0] * s + u[1] * s), a.end[1] - 3.4 * (u[1] * s - u[0] * s)];
+  const t = (polar(...c, r, a0)[1] - low[1]) / (low[1] - a.end[1]);
+  const on = wedge ? `M${pt(low)}L${pt([low[0] + (low[0] - a.end[0]) * t, low[1] + (low[1] - a.end[1]) * t])}` : '';
+  return { d: [a.d, h], knock: `${a.d}${arcTo(...c, r, a1, a0)}Z${h}${on}` };
+}
+add('file-shortcut', ['acceso directo', 'alias', 'enlace simbólico', 'atajo', 'shortcut', 'file alias', 'symlink'], [file()], { badge: aliasArrow([12, 20.5], 8.5, 190, 261) });
+// Missing: the file's outline in dashes, with nothing inside.
+add('file-missing', ['archivo faltante', 'no encontrado', 'referencia rota', 'marcador de posición', 'missing file', 'file not found', 'placeholder'], dashed(file(), { dash: 2.75, center: [19.25, 21.25] }));
+// Expiring: an hourglass at the bottom right, the two bulbs meeting at a point (their sides cross at
+// the neck at every weight) and its two caps.
+{
+  const glass = roundpoly([[14.75, 13.25], [19.75, 13.25], [19.75, 14.5], [17.25, 17.25], [19.75, 20], [19.75, 21.25], [14.75, 21.25], [14.75, 20], [17.25, 17.25], [14.75, 14.5]], [0, 0, 1.2, 0.3, 1.2, 0, 0, 1.2, 0.3, 1.2]);
+  const caps = [line([13.5, 13.25], [21, 13.25]), line([13.5, 21.25], [21, 21.25])];
+  const hull = 'M13.5 13.25H21V21.25H13.5Z';
+  const d16 = [roundpoly([g(10, 8), g(12, 8), g(12, 9), g(11, 10.5), g(12, 12), g(12, 13), g(10, 13), g(10, 12), g(11, 10.5), g(10, 9)], 0.2), pl16([9, 8], [13, 8]), pl16([9, 13], [13, 13])];
+  add('file-hourglass', ['archivo temporal', 'vence', 'caduca', 'retención', 'expiring file', 'temporary file', 'expires'], [file()], {
+    badge: own([glass, ...caps], hull, { solid: [glass], wire: caps }, d16, { solid: [d16[0]], wire: d16.slice(1) }),
+  });
+}
+// Conflict: two copies side by side, the one behind peeking out as an L 3 from the one in front (as
+// in `files`), and the alert.
+{
+  const FRONT2 = [10.75, 6.75, 10.5, 14, 3];
+  const BACK2 = [2.75, 3.25, 10.5, 14, 3];
+  add('file-conflict', ['conflicto', 'copia en conflicto', 'versiones distintas', 'sincronización', 'sync conflict', 'conflicted copy', 'file conflict'], [
+    sq(...FRONT2, { square: ['br'] }),
+    box(...BACK2, { square: ['br'], gaps: [{ from: ['t', 13.25], to: ['b', 7.75] }] }),
+  ], { badge: badge('alert') });
+}
+// Restore: one arc arrow that turns back (counterclockwise), its head at the upper left.
+{
+  const a = arc(12.25, 12, 4, 100, -150);
+  add('file-restore', ['restaurar', 'versión anterior', 'revertir', 'recuperar', 'restore', 'revert', 'previous version'], [file(), a.d, head(a.end, a.tangent, 3.4)]);
+}
+// Merge and split: the same Y, two branches at 45° and the trunk; merge points down its trunk, split
+// points out of its branches (arms of 2.75, so the split's two heads stay 3 apart).
+add('file-merge', ['combinar archivos', 'unir pdf', 'fusionar', 'juntar', 'merge files', 'combine', 'join pdf'], [
+  file(),
+  roundline([[7.75, 7.75], [12, 12], [16.25, 7.75]], [0, 1, 0]),
+  line([12, 12 - (Math.SQRT2 - 1)], [12, 16.25]),
+  head([12, 16.25], [0, 1], 2.75),
+]);
+add('file-split', ['dividir archivo', 'separar pdf', 'partir', 'extraer', 'split file', 'split pdf', 'separate'], [
+  file(),
+  line([12, 7.75], [12, 12 + (Math.SQRT2 - 1)]),
+  roundline([[7.75, 16.25], [12, 12], [16.25, 16.25]], [0, 1, 0]),
+  head([7.75, 16.25], [-1, 1], 2.75),
+  head([16.25, 16.25], [1, 1], 2.75),
+]);
+// Optimize: two short arrows pointing at each other, squeezing the line between them.
+add('file-optimize', ['optimizar', 'reducir tamaño', 'comprimir pdf', 'aligerar', 'optimize', 'reduce file size', 'shrink'], [
+  file(),
+  line([8.75, 12], [15.25, 12]),
+  line([12, 5.75], [12, 9]),
+  head([12, 9], [0, 1], 2.75),
+  line([12, 18.25], [12, 15]),
+  head([12, 15], [0, -1], 2.75),
+]);
+// Convert: two small files on the diagonal and an arc arrow over the top from the first to the second.
+{
+  const a = arc(13.5, 8.25, 4.25, -90, 0);
+  add('file-convert', ['convertir', 'cambiar formato', 'exportar como', 'transformar', 'convert file', 'change format', 'pdf to word'], [
+    sq(2.75, 2.75, 7.5, 9.75, 2.25, { square: ['br'] }),
+    sq(13.75, 11.5, 7.5, 9.75, 2.25, { square: ['br'] }),
+    a.d,
+    head(a.end, a.tangent, 3.4),
+  ]);
+}
+// Unzip: file-zip with its top opened: where its first two teeth were, the tapes part into a V, and
+// its last tooth and its pull stay where they are. With the pull moved up between the V and the
+// teeth, the zipper read as a face.
+add('file-unzip', ['descomprimir', 'extraer todo', 'abrir zip', 'desempaquetar', 'unzip', 'extract', 'decompress'], [
+  file(),
+  roundline([[9, 5.75], [12, 8.75], [15, 5.75]], [0, 0.8, 0]),
+  line([9.75, 11.75], [12, 11.75]),
+  sq(10.25, 14.75, 3.5, 3.5, 1.05),
+]);
+// Tabs: three divider tabs stepping down the right edge, 3 apart; the file moves 2 to the left and
+// the last tab sits flush with its foot (the signature corner moves out to the tab).
+{
+  const T = [2.75, 2.75, 14.5, 18.5, 3.75];
+  const body = sq(...T, { square: ['br'] });
+  const [x0, x1] = [17.25, 21.25];
+  // Where the top tab meets the corner's curve
+  const yTop = 6.5;
+  const onCorner = samples(body, 0.02).filter((p) => p[0] > 14 && p[1] < 9).reduce((b, p) => (Math.abs(p[1] - yTop) < Math.abs(b[1] - yTop) ? p : b));
+  const tab = (y0, y1, from = x0, r = [0, 1.25, 1.25, 0]) => roundline([[from, y0], [x1, y0], [x1, y1], [x0, y1]], r);
+  add('file-tabs', ['separadores', 'secciones', 'pestañas', 'índice', 'tabs', 'sections', 'dividers'], [
+    body,
+    tab(yTop, 9.5, onCorner[0]),
+    tab(12.5, 15.5),
+    tab(18.25, 21.25, x0, [0, 1.25, 0, 0]),
+  ]);
+}
+// Types: the glyph at the file's optical center (12, 12), as in round 2.
+add('file-database', ['archivo de base de datos', 'sql', 'respaldo de datos', 'exportación', 'database file', 'sql dump', 'db file'], [file(), ...CORE.database.d.map((d) => transform(d, 0.5, 6, 6))]);
+// Vector: an S between two square nodes, each node's handle running out the other side to a dot.
+add('file-vector', ['vector', 'svg', 'ilustración', 'curva bézier', 'vector file', 'svg file', 'artwork'], [
+  file(),
+  'M9 13.75C9 8.25 15 15.75 15 10.25',
+  sq(7.75, 13.75, 2.5, 2.5, 0.8),
+  sq(13.75, 7.75, 2.5, 2.5, 0.8),
+  line([9, 16.25], [9, 18.25]),
+  line([15, 7.75], [15, 5.75]),
+]);
+add('file-disc', ['imagen de disco', 'iso', 'dmg', 'instalador', 'disk image', 'iso file', 'installer'], [file(), circ(12, 12, 4.25), circ(12, 12, 1.25)]);
+
+// ── Round 4: more types, glyph badges and the folder's contents ───────────────────────────────
+// Globe: as calendario's calendar-globe carries it, a status disc on the badge ring with its meridian
+// (a lens 3.5 wide) and its equator cut out. Inside the file the globe could be r 4.25 at most: its
+// cells closed at bold and it was a smudge at 16 px. At 16 px: the 7-pixel disc with its equator and
+// meridian cut out as a cross (with the lens's two sides it read as a grid).
+{
+  const ring = circ(...BC, BR);
+  const meridian = `M${pt([BC[0], BC[1] - BR])}${bow([BC[0], BC[1] - BR], [BC[0], BC[1] + BR], 1.75, 1)}${bow([BC[0], BC[1] + BR], [BC[0], BC[1] - BR], 1.75, 1)}Z`;
+  const equator = line([BC[0] - BR, BC[1]], [BC[0] + BR, BC[1]]);
+  const face16 = circ(...BC, 4.5);
+  const cuts16 = [pl16([8, 11], [14, 11]), pl16([11, 8], [11, 14])];
+  add('file-globe', ['página web', 'html', 'publicado', 'público', 'web page', 'html file', 'published'], [file()], {
+    badge: own([ring, meridian, equator], ring, { solid: [ring], cut: [meridian, equator] }, [face16, ...cuts16], { solid: [face16], cut: cuts16 }),
+  });
+}
+// Shield: the core one, its outline scaled into the file.
+add('file-shield', ['archivo protegido', 'seguro', 'verificado', 'antivirus', 'protected file', 'safe file', 'virus scan'], [file(), transform(CORE.shield.d[0], 0.55, 5.4, 5.5)]);
+// Tag: a label hanging off the corner on the diagonal, its hole a dot. A glyph badge: it clears
+// the file around its outline and the badge circle (the file's square corner peeked out at bold).
+{
+  const a = [Math.SQRT1_2, Math.SQRT1_2];
+  const nv = [Math.SQRT1_2, -Math.SQRT1_2];
+  const C = [16.75, 16.75];
+  const P = (u, v) => [C[0] + u * a[0] + v * nv[0], C[1] + u * a[1] + v * nv[1]];
+  const tag = roundpoly([P(-4.5, 0), P(-2, 3.25), P(3.25, 3.25), P(3.25, -3.25), P(-2, -3.25)], [1, 0.8, 1.25, 1.25, 0.8]);
+  const hole = dot(...P(-0.5, 0));
+  const tag16 = roundpoly([g(8, 8), g(11, 8), g(14, 11), g(11, 14), g(8, 11)], 0.3);
+  const hole16 = circ(...g(10, 10), 0.1);
+  add('file-tag', ['etiqueta', 'archivo etiquetado', 'metadatos', 'clasificación', 'tagged file', 'file label', 'metadata'], [file()], {
+    badge: own([tag, hole], `${RING}${tag}`, { solid: [tag], cut: [hole] }, [tag16, hole16], { solid: [tag16], cut: [hole16] }),
+  });
+}
+// Comment: the set's speech bubble, the drop, in the corner with the core message's two lines (it
+// keeps the icon's style). Empty, the drop read as a blot, and with one line as a minus: it grows to
+// r 5 so two lines fit 3 apart and 3 from its edge. At 16 px: a 7-pixel drop with two lines a pixel
+// apart.
+{
+  const b = drop(16.75, 16.75, 5);
+  const lines = [line([15.25, 15.25], [18.25, 15.25]), line([15.25, 18.25], [17.25, 18.25])];
+  const b16 = drop(17.25, 17.25, 4.5);
+  const lines16 = [pl16([10, 10], [12, 10]), pl16([10, 12], [11, 12])];
+  add('file-comment', ['comentarios', 'archivo comentado', 'notas', 'retroalimentación', 'file comments', 'feedback', 'annotate'], [file()], {
+    badge: own([b, ...lines], b, { solid: [b], cut: lines }, [b16, ...lines16], { solid: [b16], cut: lines16 }),
+  });
+}
+withBadge('file-shared', ['compartido', 'compartido conmigo', 'colaborar', 'acceso', 'shared file', 'shared with me', 'collaborate'], [file()], OWN.person());
+// Rename: the text cursor (an I-beam) in the corner.
+{
+  const beam = [line([17.25, 13], [17.25, 21.5]), line([15.25, 13], [19.25, 13]), line([15.25, 21.5], [19.25, 21.5])];
+  const d16 = [pl16([11, 8], [11, 14]), pl16([10, 8], [12, 8]), pl16([10, 14], [12, 14])];
+  add('file-rename', ['renombrar', 'cambiar nombre', 'editar nombre', 'cursor de texto', 'rename', 'rename file', 'text cursor'], [file()], {
+    badge: own(beam, 'M15.25 13H19.25V21.5H15.25Z', null, d16),
+  });
+}
+// Gear: the engine's, clearing a ring 0.15 wider than its own (a hair no one sees): with the ring's
+// exact clearance the variable font's masters found no clean interpolation between weights (the
+// file's cut ends and the gear's teeth paired differently). Its pixel version is the engine's.
+{
+  const [gr, g16] = [badge('gear'), badge('gear', { size: 16 })];
+  withBadge('file-gear', ['configuración', 'archivo de ajustes', 'preferencias', 'config', 'config file', 'settings file', 'preferences'], [file()], own(gr.d, circ(...BC, 4.4), gr.fill, g16.d, g16.fill));
+}
+withBadge('file-block', ['archivo bloqueado', 'restringido', 'acceso denegado', 'no permitido', 'blocked file', 'restricted', 'access denied'], [file()], badge('block'));
+// Diagram: three square nodes joined by two elbows (a flowchart); the right node 2.5 across from
+// the left ones and 3 apart on their diagonals.
+add('file-diagram', ['diagrama', 'diagrama de flujo', 'mapa mental', 'pizarra', 'diagram', 'flowchart', 'mind map'], [
+  file(),
+  sq(7.75, 5.75, 3, 3, 0.9),
+  sq(13.25, 10.5, 3, 3, 0.9),
+  sq(7.75, 15.25, 3, 3, 0.9),
+  roundline([[10.75, 7.25], [14.75, 7.25], [14.75, 10.5]], [0, 1.25, 0]),
+  roundline([[14.75, 13.5], [14.75, 16.75], [10.75, 16.75]], [0, 1.25, 0]),
+]);
+// Transcript: a short waveform (four bars of uneven height, 2.875 apart: the most the glyph area
+// holds) over two lines of text.
+{
+  const bars = [[7.69, 3], [10.56, 5.5], [13.44, 3.75], [16.31, 2]].map(([x, h]) => line([x, 8.75 - h / 2], [x, 8.75 + h / 2]));
+  add('file-transcript', ['transcripción', 'subtítulos', 'audio a texto', 'dictado', 'transcript', 'captions', 'speech to text'], [
+    file(),
+    ...bars,
+    line([8.75, 14.5], [15.25, 14.5]),
+    line([8.75, 17.75], [12.75, 17.75]),
+  ]);
+}
+// App: the apps glyph, four rounded squares 3 apart (the last with the signature corner).
+{
+  const s = (x, y, br) => sq(x, y, 2.75, 2.75, 0.9, br ? { square: ['br'] } : {});
+  add('file-app', ['aplicación', 'ejecutable', 'instalador', 'paquete', 'app file', 'executable', 'apk'], [file(), s(7.75, 7.75), s(13.5, 7.75), s(7.75, 13.5), s(13.5, 13.5, true)]);
+}
+// Layers: the core diamond and two chevrons under it, 3 apart across their slope.
+add('file-layers', ['archivo con capas', 'psd', 'diseño fuente', 'capas', 'layered file', 'psd file', 'design file'], [
+  file(),
+  roundpoly([[12, 6.25], [16.25, 8.5], [12, 10.75], [7.75, 8.5]], 0.9),
+  roundline([[7.75, 11.9], [12, 14.15], [16.25, 11.9]], [0, 0.9, 0]),
+  roundline([[7.75, 15.3], [12, 17.55], [16.25, 15.3]], [0, 0.9, 0]),
+]);
+
+// The folder's contents: the core folder with a glyph across its front; the fold is cut 3 from the
+// glyph (a computed knockout) and keeps its ends, so the front still reads as the flap. The glyphs
+// live in the band from 9.9 to 16.5 (3 from the back's edge and the folder's foot).
+const FOLD = [[2.75, 10.25], [21.25, 10.25]];
+const onFolder = (glyph) => [folder(), around(...FOLD, glyph), ...glyph];
+add('folder-image', ['carpeta de imágenes', 'fotos', 'galería', 'imágenes', 'pictures folder', 'photos', 'images folder'], onFolder([
+  dot(15.75, 11.25),
+  roundline([[7.75, 16.5], [10.75, 12.5], [13, 15.25], [14.5, 13.75], [16.25, 16.25]], [0, 0.75, 0.6, 0.6, 0]),
+]));
+add('folder-music', ['carpeta de música', 'canciones', 'audio', 'música', 'music folder', 'songs', 'audio folder'], onFolder([
+  circ(10.75, 15, 1.5),
+  `M12.25 15V10${arcTo(12.25, 13, 3, -90, 0)}`,
+]));
+add('folder-video', ['carpeta de videos', 'películas', 'grabaciones', 'videos', 'videos folder', 'movies', 'recordings'], onFolder([roundpoly([[10.25, 10], [15.5, 13.25], [10.25, 16.5]], 1.1)]));
+// Home: a small house, its door left out (the signature corner on its foot).
+add('folder-home', ['carpeta personal', 'inicio', 'mis archivos', 'mi unidad', 'home folder', 'my files', 'my drive'], onFolder([
+  roundpoly([[12, 10], [15.5, 12.75], [15.5, 16.5], [8.5, 16.5], [8.5, 12.75]], [0.9, 0.7, 0, 1, 0.7]),
+]));
+add('folder-code', ['carpeta de código', 'proyecto', 'repositorio', 'código fuente', 'code folder', 'project folder', 'repository'], onFolder([
+  line([10, 10.75], [7.75, 13.25], [10, 15.75]),
+  line([14, 10.75], [16.25, 13.25], [14, 15.75]),
+]));
+add('folder-key', ['carpeta cifrada', 'bóveda', 'llave', 'protegida', 'encrypted folder', 'vault', 'secure folder'], onFolder([
+  circ(9.25, 14, 1.5),
+  roundline([[10.75, 14], [16.25, 14], [16.25, 16.5]], [0, 0.6, 0]),
+  line([13.25, 14], [13.25, 16.25]),
+]));
+// Shortcut: file-shortcut's alias arrow, shorter, out of the lower left corner: it rises from under
+// the folder's foot and stays 3 below the fold with its head (as tall as the file's, its head took
+// the fold's place).
+add('folder-shortcut', ['acceso directo a carpeta', 'alias', 'enlace simbólico', 'atajo', 'folder shortcut', 'folder alias', 'symlink'], [folder(), line(...FOLD)], { badge: aliasArrow([10.5, 22.5], 6.5, 195, 268, true) });
+// The link sits higher than on the file: its upper cap reaches over the fold, so the fold is cut
+// through at every weight (lower, the cut grazed the fold and left a sliver of it at bold); it also
+// clears the badge circle, so no tip of the folder's square corner is left beside it.
+{
+  const k = chain([16.5, 14.75]);
+  withBadge('folder-link', ['enlace a carpeta', 'compartir enlace', 'copiar enlace', 'vínculo', 'folder link', 'share link', 'copy link'], FOLDER, own(k.d, `${RING}${k.hull}`, null, CHAIN16));
+}
+// Unlocked: the engine's padlock badge with its shackle lifted and its right leg released, 3 clear of
+// the body (folder-lock's sibling, as file-unlock is file-lock's).
+{
+  const body = sq(13.5, 16.25, 7.5, 5.5, 1.6, { square: ['br'] });
+  const shackle = 'M15.1 16.25V13.1a2.15 2.15 0 0 1 4.3 0';
+  const body16 = sq(px(9), px(11), 6, 4.5, 1.2, { square: ['br'] });
+  const shackle16 = `M${N(px(10))} ${N(px(11))}V${N(px(9))}A1.5 1.5 0 0 1 ${N(px(12))} ${N(px(9))}`;
+  withBadge('folder-unlock', ['carpeta desbloqueada', 'sin protección', 'abierta', 'editable', 'unlocked folder', 'unlock folder', 'unprotected'], FOLDER,
+    own([body, shackle], sq(13.5, 10.95, 7.5, 10.8, 2.4, { square: ['br'] }), { solid: [body], wire: [shackle] }, [body16, shackle16], { solid: [body16], wire: [shackle16] }));
+}
+
+// Folder badges: the engine's, on the raised folder.
+withBadge('folder-gear', ['configuración de carpeta', 'carpeta inteligente', 'opciones', 'administrada', 'folder settings', 'smart folder', 'folder options'], FOLDER, badge('gear'));
+withBadge('folder-edit', ['renombrar carpeta', 'editar carpeta', 'lápiz', 'modificar', 'edit folder', 'rename folder', 'modify folder'], FOLDER, badge('edit'));
+withBadge('folder-block', ['carpeta restringida', 'sin permiso', 'acceso denegado', 'bloqueada', 'restricted folder', 'no access', 'blocked folder'], FOLDER, badge('block'));
+// Import and export: the arrow crosses the folder's side, which opens where it passes (from the
+// fold down, so the side ends at the fold's corner); the folder narrows to 13 to leave the arrow
+// room outside, as the file does in file-import.
+{
+  const [y, w, r, top, h] = [13.25, 13, 2.85, 4.5, 15];
+  const tab = 'h2.83c.66 0 1.3.27 1.77.74l.93.93c.47.47 1.1.73 1.77.73';
+  // Open on the left from the fold down, from x0; or on the right
+  const left = (x0) => `M${N(x0)} 10.25V${N(top + r)}a${r} ${r} 0 0 1 ${r} -${r}${tab}H${N(x0 + w - r)}a${r} ${r} 0 0 1 ${r} ${r}V${N(top + h)}H${N(x0 + r)}a${r} ${r} 0 0 1 -${r} -${r}V${N(y + 3)}`;
+  const right = (x0) => `M${N(x0 + w)} ${N(y + 3)}V${N(top + h)}H${N(x0 + r)}a${r} ${r} 0 0 1 -${r} -${r}V${N(top + r)}a${r} ${r} 0 0 1 ${r} -${r}${tab}H${N(x0 + w - r)}a${r} ${r} 0 0 1 ${r} ${r}V10.25`;
+  const inArrow = [line([2.75, y], [17, y]), head([17, y], [1, 0], 3.4)];
+  add('folder-import', ['importar a carpeta', 'solicitud de archivos', 'recibir archivos', 'entrada', 'import to folder', 'file request', 'receive files'], [left(8.25), around([8.25, 10.25], [21.25, 10.25], inArrow), ...inArrow]);
+  const outArrow = [line([7, y], [21.25, y]), head([21.25, y], [1, 0], 3.4)];
+  add('folder-export', ['exportar carpeta', 'sacar contenido', 'salida', 'extraer', 'export folder', 'export contents', 'folder output'], [right(2.75), around([2.75, 10.25], [15.75, 10.25], outArrow), ...outArrow]);
+}
+
+// ── Round 4: the trash, the cloud, saving and storage ─────────────────────────────────────────
+/**
+ * A crumpled ball of paper: nine corners around `c`, pushed in and out by a fixed profile (every ball
+ * in the set is the same crumple), with small rounded corners; its creases run from three of its
+ * dents toward the middle and stop well apart.
+ */
+const CRUMPLE = [[-90, 1], [-50, 0.84], [-8, 1.02], [32, 0.88], [75, 1.04], [118, 0.86], [160, 1], [205, 0.84], [245, 1.02]];
+const crumple = (c, r) => roundpoly(CRUMPLE.map(([a, k]) => polar(...c, r * k, a)), 0.3 * r);
+/** Its creases: a fold from one dent to another, bent once inside, and two short ones from dents. */
+const dentOf = (c, r, a) => polar(...c, r * CRUMPLE.find((q) => q[0] === a)[1], a);
+const creases = (c, r) => {
+  const P = (dx, dy) => [c[0] + (dx * r) / 8.75, c[1] + (dy * r) / 8.75];
+  return [roundline([dentOf(c, r, -50), P(-0.5, -1.75), dentOf(c, r, 205)], [0, 0.5 * (r / 8.75), 0]), line(dentOf(c, r, 32), P(1.75, 2.25)), line(dentOf(c, r, 118), P(-1.75, 2.5))];
+};
+// Full: the can without its lid and the crumpled heap rising out of it, one jagged line of peaks
+// that stops 3 from the rim (the heap is inside, behind its front). Crumpled balls on the rim read as
+// ice cubes or dice, and sheets cut by the rim as a handle or a padlock's shackle.
+{
+  const body = TRASH.d.slice(2);
+  const rim = samples(body[0], 0.1);
+  const peaks = [[5.5, 9.5], [6.25, 6], [9, 4.25], [10.75, 5.5], [13.5, 2.75], [15.5, 4.75], [17.5, 4.75], [18.5, 9.5]];
+  const heap = clip(peaks.slice(1).map((p, i) => ({ l: [peaks[i], p] })), rim.slice(1).map((p, i) => cap(rim[i], p)), false);
+  add('trash-full', ['papelera llena', 'basura', 'con elementos', 'tirar', 'full trash', 'bin full', 'not empty'], [...body, heap]);
+}
+add('trash-clock', ['borrado automático', 'eliminar después', 'papelera programada', 'retención', 'auto delete', 'scheduled deletion', 'trash timer'], TRASH.d, { badge: badge('clock') });
+// Sweep: the can (at 85 %, on the right) and three speed lines streaming in from its left.
+{
+  const can = TRASH.d.map((d) => transform(d, 0.85, 4.33, 3.19));
+  add('trash-sweep', ['vaciar papelera', 'borrar todo', 'eliminar todo', 'limpiar', 'empty trash', 'clear all', 'delete all'], [
+    ...can,
+    line([2, 12.75], [5.75, 12.75]),
+    line([3.25, 15.75], [5.75, 15.75]),
+    line([2, 18.75], [5.75, 18.75]),
+  ]);
+}
+// Cloud: the pause bars in its open space; the clock and the gear as badges, on the raised cloud.
+add('cloud-pause', ['sincronización en pausa', 'pausar respaldo', 'detenido', 'en espera', 'sync paused', 'pause backup', 'on hold'], [cloud(), line([CX - 1.5, 10.65], [CX - 1.5, 14.85]), line([CX + 1.5, 10.65], [CX + 1.5, 14.85])]);
+withBadge('cloud-clock', ['esperando sincronizar', 'en cola', 'última sincronización', 'respaldo programado', 'waiting to sync', 'queued upload', 'last synced'], [cloud(-2.5)], badge('clock'));
+withBadge('cloud-gear', ['ajustes de la nube', 'configurar sincronización', 'almacenamiento', 'preferencias', 'cloud settings', 'sync settings', 'storage preferences'], [cloud(-2.5)], badge('gear'));
+// Save: Edición's floppy with the engine's badges.
+add('save-as', ['guardar como', 'guardar copia', 'nuevo nombre', 'formato', 'save as', 'save copy', 'save under new name'], SAVE.d, { badge: badge('edit') });
+// Under the clock the label is 0.25 shorter: the clock's clearance cuts it at its lower corner, and
+// with the full label that cut moved from its straight foot into its corner between weights.
+add('save-clock', ['guardado automático', 'autoguardado', 'guardar cada', 'programado', 'autosave', 'auto save', 'saved automatically'], [SAVE.d[0], SAVE.d[1], sq(7.75, 12.75, 8.5, 4.75, 1.5)], { badge: badge('clock') });
+// Data tape: a square cartridge (the notch, a chamfer at its top right), one large reel with its hub
+// and the tape leaving it along the bottom.
+add('data-tape', ['cinta de datos', 'cartucho', 'respaldo en cinta', 'lto', 'data tape', 'tape cartridge', 'cold storage'], [
+  roundpoly([[3.25, 3.25], [16.75, 3.25], [20.75, 7.25], [20.75, 20.75], [3.25, 20.75]], [3.5, 1, 1, 0, 3.5]),
+  circ(10.75, 11.25, 4.5),
+  circ(10.75, 11.25, 1.5),
+  line([10.75, 15.75], [17.75, 15.75]),
+]);
+// microSD: the small card, narrow at the top where its contacts are, a step out on its right side.
+add('micro-sd-card', ['tarjeta microsd', 'memoria', 'tarjeta de memoria', 'celular', 'microsd card', 'memory card', 'tf card'], [
+  roundpoly([[5.75, 4.25], [15, 4.25], [15, 10.5], [17.75, 12.5], [17.75, 19.75], [5.75, 19.75]], [2.25, 1, 0.8, 0.8, 0, 2.25]),
+  line([8.75, 7.25], [8.75, 10]),
+  line([11.75, 7.25], [11.75, 10]),
+]);
+// Adapter: the SD card from Dispositivos, shortened, with the microSD half in at its foot.
+{
+  const sd = roundpoly([[5.25, 6.75], [9.25, 2.75], [18.75, 2.75], [18.75, 17], [5.25, 17]], [1, 1, 2.5, 0, 2.5]);
+  add('sd-card-adapter', ['adaptador sd', 'adaptador microsd', 'tarjeta de memoria', 'convertidor', 'sd adapter', 'microsd adapter', 'card adapter'], [
+    sd,
+    line([9.5, 6.75], [9.5, 10]),
+    line([12.5, 6], [12.5, 10]),
+    line([15.5, 6], [15.5, 10]),
+    roundline([[10, 17], [10, 21.25], [16.25, 21.25], [16.25, 17]], [0, 1.5, 0, 0]),
+  ]);
+}
+// Optical drive: the set's drive unit (its slot and its light) and a disc going into it, behind its
+// top edge (it stops 3 above it), with its hole. A slab with half a disc hanging under it read as a
+// camera, or a winking face.
+{
+  const body = unit(14.25, 7, 2.25);
+  const edge = samples(body[0], 0.1);
+  const caps = edge.slice(1).map((p, i) => cap(edge[i], p));
+  for (let y = 14.25; y <= 22; y += 0.5) caps.push(cap([0, y], [24, y], 0.5));
+  add('optical-drive', ['unidad óptica', 'lector de cd', 'dvd', 'blu-ray', 'optical drive', 'cd drive', 'disc tray'], [
+    ...body,
+    clip([{ a: [12, 9.5, 7, 0, 360] }], caps),
+    circ(12, 9.5, 1.75),
+  ]);
+}
+// With a badge the drive keeps its case and its platter (whole: the badge already hides the arm it
+// passed under); the spindle goes too: the engine drops a dot its clearance touches, and this one sat
+// on the edge of that reach, kept at some weights and dropped at others.
+const DRIVE = [icons['hard-drive'].d[0], circ(12, 10, 4.25)];
+withBadge('hard-drive-alert', ['problema de disco', 'disco lleno', 'falla de disco', 'error', 'disk error', 'disk full', 'failing drive'], DRIVE, badge('alert'));
+withBadge('hard-drive-lock', ['disco cifrado', 'cifrado completo', 'bitlocker', 'filevault', 'encrypted disk', 'disk encryption', 'locked drive'], DRIVE, badge('lock'));
+// Scheduled backup: the backup drawing with the unit 0.75 narrower, so the clock's clearance takes its
+// square corner whole at every weight (at full width a tip of it was left at bold), without the light
+// the badge covers, and the loop ending 2° short of the half turn (at exactly 180° its head and the
+// clock's clearance gave masters that didn't interpolate).
+{
+  const a = arc(12, 11, 6.5, 0, -178);
+  withBadge('backup-clock', ['respaldo programado', 'próximo respaldo', 'respaldo automático', 'copia periódica', 'scheduled backup', 'next backup', 'automatic backup'], [
+    sq(2.75, 14, 17.75, 7.25, 2.25, { square: ['br'] }),
+    line([6.25, 17.63], [10.25, 17.63]),
+    a.d,
+    head(a.end, a.tangent, 3.4),
+  ], badge('clock'));
+}
+
+// ── Round 4: printing, pages and printed matter ───────────────────────────────────────────────
+// Punch card: the landscape card with its clipped corner and five slots on three rows (one per
+// column, the columns 3 apart).
+add('punch-card', ['tarjeta perforada', 'datos antiguos', 'perforaciones', 'cómputo clásico', 'punch card', 'punched card', 'legacy data'], [
+  roundpoly([[2.5, 9], [6.5, 5], [21.5, 5], [21.5, 19], [2.5, 19]], [0.8, 0.8, 3, 0, 3]),
+  ...[[6.5, 14], [9.5, 8], [12.5, 11], [15.5, 14], [18.5, 8]].map(([x, y]) => line([x, y], [x, y + 2])),
+]);
+// Recognize text: file-scan's viewfinder around three lines of text, without the sheet.
+{
+  const k = (a, b, c) => roundline([a, b, c], [0, 2.25, 0]);
+  add('scan-text', ['reconocer texto', 'ocr', 'escanear texto', 'copiar texto de imagen', 'scan text', 'text recognition', 'live text'], [
+    k([3, 7.75], [3, 3], [7.75, 3]),
+    k([16.25, 3], [21, 3], [21, 7.75]),
+    k([21, 16.25], [21, 21], [16.25, 21]),
+    k([7.75, 21], [3, 21], [3, 16.25]),
+    line([7.5, 8.25], [16.5, 8.25]),
+    line([7.5, 12], [16.5, 12]),
+    line([7.5, 15.75], [13, 15.75]),
+  ]);
+}
+// Ink cartridge: the body with Lugares's drop on its face and a short nozzle under it.
+{
+  const [cx, cy, r] = [12, 11.1, 2.75];
+  const ink = `M${pt(polar(cx, cy, r, -45))}A${N(r)} ${N(r)} 0 1 1 ${pt(polar(cx, cy, r, -135))}L${pt([cx, cy - r * Math.SQRT2])}Z`;
+  add('ink-cartridge', ['cartucho de tinta', 'tóner', 'nivel de tinta', 'reemplazar cartucho', 'ink cartridge', 'toner', 'ink level'], [
+    sq(6.25, 2.75, 11.5, 15.5, 3, { square: ['br'] }),
+    ink,
+    roundline([[10, 18.25], [10, 21.25], [14, 21.25], [14, 18.25]], [0, 1, 0, 0]),
+  ]);
+}
+// Plotter: a wide, low body with its slot, on two legs with their feet, the sheet hanging out under
+// it (3 clear of the legs).
+add('plotter', ['plóter', 'impresora de gran formato', 'planos', 'carteles', 'plotter', 'large format printer', 'blueprints'], [
+  sq(2.5, 4.25, 19, 6.5, 2.25, { square: ['br'] }),
+  line([6.25, 7.5], [17.75, 7.5]),
+  roundline([[7.75, 10.75], [7.75, 17.25], [16.25, 17.25], [16.25, 10.75]], [0, 1.25, 0, 0]),
+  line([4.75, 10.75], [4.75, 20.75]),
+  line([3, 20.75], [6.5, 20.75]),
+  line([19.25, 10.75], [19.25, 20.75]),
+  line([17.5, 20.75], [21, 20.75]),
+]);
+add('printer-search', ['vista previa de impresión', 'previsualizar', 'antes de imprimir', 'revisar', 'print preview', 'preview pages', 'printer search'], PRINTER.d, { badge: badge('search') });
+// Pages: the file's portrait page; two of them side by side share its corners.
+// Spread: two facing pages flat, meeting at the center line, two lines of text on each.
+add('page-spread', ['dos páginas', 'páginas enfrentadas', 'vista doble', 'pliego', 'two-page view', 'facing pages', 'spread'], [
+  sq(2.75, 4.25, 18.5, 15.5, 3.5, { square: ['br'] }),
+  line([12, 4.25], [12, 19.75]),
+  line([5.75, 8.25], [9, 8.25]),
+  line([5.75, 11.5], [9, 11.5]),
+  line([15, 8.25], [18.25, 8.25]),
+  line([15, 11.5], [18.25, 11.5]),
+]);
+// Rotate: a page and an arc arrow around its top right corner, concentric with the page.
+{
+  const a = arc(8.5, 14.5, 11.25, -100, -10);
+  add('page-rotate', ['rotar páginas', 'girar página', 'orientación', 'pdf', 'rotate pages', 'rotate page', 'turn page'], [
+    sq(3.25, 7.75, 10.5, 13.5, 3, { square: ['br'] }),
+    a.d,
+    head(a.end, a.tangent, 3.4),
+  ]);
+}
+// Extract: file-conflict's two pages, the one in front carrying a short arrow out to the right.
+{
+  const FRONT2 = [10.75, 6.75, 10.5, 14, 3];
+  const BACK2 = [2.75, 3.25, 10.5, 14, 3];
+  add('page-extract', ['extraer páginas', 'sacar páginas', 'separar', 'nuevo documento', 'extract pages', 'pull pages', 'extract'], [
+    sq(...FRONT2, { square: ['br'] }),
+    box(...BACK2, { square: ['br'], gaps: [{ from: ['t', 13.25], to: ['b', 7.75] }] }),
+    line([13.75, 13.75], [18.25, 13.75]),
+    head([18.25, 13.75], [1, 0], 3),
+  ]);
+}
+// Insert: two pages side by side and a plus over the seam between them (it clears their edges, as
+// a badge does, along their straight sides: the pages are tall enough that the cut never reaches a
+// corner).
+{
+  const plus = [line([12, 9.5], [12, 14.5]), line([9.5, 12], [14.5, 12])];
+  add('page-insert', ['insertar página', 'agregar página', 'nueva página', 'entre páginas', 'insert page', 'add page', 'new page'], [
+    sq(2.75, 3.25, 7.5, 17.5, 2.25, { square: ['br'] }),
+    sq(13.75, 3.25, 7.5, 17.5, 2.25, { square: ['br'] }),
+  ], { badge: { d: plus, knock: plus.map((d) => `${d}Z`).join('') } });
+}
+// Reorder: two pages and a two-headed arc over them, swapping their places.
+{
+  const a = arc(12, 9, 6, -150, -30);
+  const b = arc(12, 9, 6, -30, -150);
+  add('page-reorder', ['reordenar páginas', 'mover página', 'organizar', 'intercambiar', 'reorder pages', 'organize pages', 'swap pages'], [
+    sq(2.75, 9.25, 7.5, 12, 2.5, { square: ['br'] }),
+    sq(13.75, 9.25, 7.5, 12, 2.5, { square: ['br'] }),
+    a.d,
+    head(a.end, a.tangent, 3.4),
+    head(b.end, b.tangent, 3.4),
+  ]);
+}
+// Tree: a page at the top left and two smaller ones hanging from its trunk, as in folder-tree.
+add('page-tree', ['subpáginas', 'jerarquía de páginas', 'wiki', 'documentación', 'page tree', 'subpages', 'page hierarchy'], [
+  sq(2.75, 2.75, 5.5, 6.75, 1.75, { square: ['br'] }),
+  sq(14.25, 8.25, 5, 5, 1.5, { square: ['br'] }),
+  sq(14.25, 16.25, 5, 5, 1.5, { square: ['br'] }),
+  roundline([[5.5, 9.5], [5.5, 18.75], [14.25, 18.75]], [0, 2.25, 0]),
+  line([5.5, 10.75], [14.25, 10.75]),
+]);
+// Page number: a line of text at the top and the number sign at the foot, where the number prints.
+add('page-number', ['número de página', 'numeración', 'paginar', 'folio', 'page number', 'page numbering', 'insert page number'], [
+  file(),
+  line([8.75, 7.5], [15.25, 7.5]),
+  line([10.5, 12], [10.5, 18.25]),
+  line([13.5, 12], [13.5, 18.25]),
+  line([8.75, 13.75], [15.25, 13.75]),
+  line([8.75, 16.75], [15.25, 16.75]),
+]);
+// Printed matter: the book's cover (radius 2.5 and the signature corner).
+const COVER = (y = 2.75, h = 18.5) => sq(4.75, y, 14.5, h, 2.5, { square: ['br'] });
+// Magazine: the cover with its masthead and a cover line under it, and a large image circle below
+// (a band across the top over a centered circle read as a washing machine, a portrait as a badge).
+add('magazine', ['revista', 'publicación', 'número', 'portada', 'magazine', 'periodical', 'issue'], [
+  sq(4.75, 2.75, 14.5, 18.5, 2, { square: ['br'] }),
+  line([8.25, 6.75], [15.75, 6.75]),
+  line([8.25, 9.75], [12.25, 9.75]),
+  circ(12, 15.5, 2.75),
+]);
+// Brochure: three tall panels folded in a zigzag, seen from the front (the map's fold, in portrait).
+{
+  const P = [[4.75, 4.25], [9.6, 2.75], [14.4, 4.25], [19.25, 2.75], [19.25, 19.75], [14.4, 21.25], [9.6, 19.75], [4.75, 21.25]];
+  add('brochure', ['folleto', 'tríptico', 'panfleto', 'díptico', 'brochure', 'leaflet', 'pamphlet'], [
+    roundpoly(P, [1, 0.6, 0.6, 1, 0, 0.6, 0.6, 1]),
+    line([9.6, 2.75], [9.6, 19.75]),
+    line([14.4, 4.25], [14.4, 21.25]),
+  ]);
+}
+// Flyer: one sheet tilted 6°, a large image block on top and two lines under it.
+{
+  const T = (d) => turnPath(d, -6);
+  add('flyer', ['volante', 'hoja suelta', 'anuncio', 'propaganda', 'flyer', 'handout', 'leaflet'], [
+    T(sq(5.25, 3.25, 13.5, 17.5, 2.5, { square: ['br'] })),
+    T(sq(8.25, 6.25, 7.5, 5.5, 1.25)),
+    T(line([8.25, 14.75], [15.75, 14.75])),
+    T(line([8.25, 17.75], [12.75, 17.75])),
+  ]);
+}
+// Poster: a sheet held by two strips of tape across its top corners (the sheet clears under them)
+// and a mountain on it.
+{
+  const tape = (c, s) => {
+    const a = [Math.SQRT1_2, -s * Math.SQRT1_2];
+    const n = [Math.SQRT1_2, s * Math.SQRT1_2];
+    const P = (u, v) => [c[0] + u * a[0] + v * n[0], c[1] + u * a[1] + v * n[1]];
+    return roundpoly([P(-2.5, -1.5), P(2.5, -1.5), P(2.5, 1.5), P(-2.5, 1.5)], 0.6);
+  };
+  // Each strip centered on its corner, so the top edge between them stays 3 long
+  const tapes = [tape([5.25, 4.75], 1), tape([18.75, 4.75], -1)];
+  add('poster', ['póster', 'cartel', 'afiche', 'lámina', 'poster', 'wall print', 'artwork'], [
+    sq(5.25, 4.75, 13.5, 16, 2.5, { square: ['br'] }),
+    roundline([[8.25, 16.75], [11, 12.75], [13.25, 15.25], [14.5, 14], [15.75, 15.75]], [0, 0.75, 0.6, 0.6, 0]),
+  ], { badge: { d: tapes, knock: tapes.join(''), fill: { solid: tapes } } });
+}
+add('crumpled-paper', ['papel arrugado', 'bola de papel', 'borrador descartado', 'desecho', 'crumpled paper', 'paper ball', 'discarded draft'], [crumple([12, 12], 8.75), ...creases([12, 12], 8.75)]);
+// Open notebook: two pages side by side and the spiral rings across the gap between them.
+add('notebook-open', ['cuaderno abierto', 'notas', 'apuntes', 'libreta', 'open notebook', 'notes', 'note page'], [
+  sq(2.75, 4.25, 7.75, 15.5, 3, { square: ['br'] }),
+  sq(13.5, 4.25, 7.75, 15.5, 3, { square: ['br'] }),
+  line([8.5, 8.5], [15.5, 8.5]),
+  line([8.5, 12], [15.5, 12]),
+  line([8.5, 15.5], [15.5, 15.5]),
+]);
+// Journal: the closed cover, an elastic band down its right side and the ribbon out of its foot.
+add('journal', ['diario', 'bitácora', 'libreta', 'agenda', 'journal', 'diary', 'notebook'], [
+  COVER(2.75, 16.25),
+  line([15.5, 2.75], [15.5, 19]),
+  line([9.25, 19], [9.25, 21.75]),
+]);
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index into d: by default the body (the first stroke) is filled and the details are knocked
 // out; the exceptions go here. Only closed shapes go in `solid`: `close` closes the outlines that
@@ -807,6 +1556,31 @@ const FILL = {
   books: { solid: [0, 1, 2], cut: [3, 4, 5] },
   newspaper: { solid: [0, 1], cut: [2, 3, 4, 5], close: true },
   versions: { solid: [0], lines: [1, 2] },
+  // Round 4: the halves of the broken file, the copy behind in a conflict, the two files of a
+  // conversion (the arrow stands apart from them), the tabs closed along the file's edge.
+  'file-broken': { solid: [0, 1] },
+  'file-conflict': { solid: [0], lines: [1] },
+  'file-convert': { solid: [0, 1], lines: [2, 3] },
+  'file-tabs': { solid: [0, 1, 2, 3], close: true },
+  // Import and export: the arrow's clearance takes the fold's place (3 apart, at bold the two cuts
+  // met and closed the ink between them).
+  'folder-import': { solid: [0], lines: [2, 3], close: true },
+  'folder-export': { solid: [0], lines: [2, 3], close: true },
+  'trash-sweep': { solid: [1, 2], wire: [0], cut: [3, 4], lines: [5, 6, 7], close: true },
+  'sd-card-adapter': { solid: [0, 4], cut: [1, 2, 3], close: true },
+  'optical-drive': { solid: [0, 3], cut: [1, 2, 4], close: true },
+  // The heap closes along its foot, 3 above the rim
+  'trash-full': { solid: [0, 3], cut: [1, 2], close: true },
+  'backup-clock': { solid: [0], cut: [1], lines: [2, 3] },
+  'ink-cartridge': { solid: [0, 2], cut: [1], close: true },
+  'plotter': { solid: [0, 2], cut: [1], wire: [3, 4, 5, 6], close: true },
+  'page-rotate': { solid: [0], lines: [1, 2] },
+  'page-extract': { solid: [0], lines: [1], cut: [2, 3] },
+  'page-insert': { solid: [0, 1] },
+  'page-reorder': { solid: [0, 1], lines: [2, 3, 4] },
+  'page-tree': { solid: [0, 1, 2], wire: [3, 4] },
+  'notebook-open': { solid: [0, 1], wire: [2, 3, 4] },
+  journal: { solid: [0], cut: [1], wire: [2] },
 };
 for (const [name, icon] of Object.entries(icons)) {
   // The clipboard fills the board and the clip (its first two strokes)
@@ -832,8 +1606,20 @@ for (const name of Object.keys(icons))
     fill.solid[0] = c.solid;
     fill.cut = [c.channel, ...(fill.cut ?? [])];
   }
-// Just an open line: its fill is the outline itself.
+// Just an open line: its fill is the outline itself (the missing file's dashes too).
 icons.paperclip.fill = false;
+icons['file-missing'].fill = false;
+// Round 4: the trash can, the floppy and the printer keep their own fills (Edición, Dispositivos).
+icons['trash-clock'].fill = TRASH.fill;
+icons['save-as'].fill = SAVE.fill;
+icons['save-clock'].fill = { solid: [SAVE.fill.solid[0]], cut: [SAVE.fill.cut[0], icons['save-clock'].d[2]] };
+icons['printer-search'].fill = PRINTER.fill;
+// The edit badge's pencil comes within 3 of the raised folder's fold: filled, the fold stops short of
+// it, or its cut and the pencil's clearance meet at bold.
+icons['folder-edit'].fill.cut = [line([2.75, 9], [15.5, 9])];
+// The plotter's sheet and body: separated by the edge they share.
+icons.plotter.fill.cut.push(line([7.75, 10.75], [16.25, 10.75]));
+icons['scan-text'].fill = false;
 
 // ── Named parts (DESIGN.md › Named parts) ─────────────────────────────────────────────────────
 // `body` is the container (file, folder, cloud, drive unit); the badge comes out on its own as
@@ -909,6 +1695,69 @@ const PARTS = {
   books: { books: [0, 1, 2], edges: [3, 4, 5] },
   newspaper: { page: [0], fold: [1], headline: [2], photo: [3], lines: [4, 5] },
   versions: { front: [0], back: [1, 2] },
+  // Round 4
+  'file-template': { body: [0], slots: [1, 2, 3] },
+  'file-draft': { body: [0], lines: [1, 2] },
+  'file-form': { body: [0], title: [1], fields: [2, 3] },
+  'file-key': { body: [0], key: [1, 2, 3] },
+  'file-broken': { left: [0], right: [1] },
+  'file-missing': { outline: Array.from({ length: icons['file-missing'].d.length }, (_, i) => i) },
+  'file-conflict': { front: [0], back: [1] },
+  'file-restore': { body: [0], arrow: [1, 2] },
+  'file-merge': { body: [0], branches: [1], arrow: [2, 3] },
+  'file-split': { body: [0], trunk: [1], arrows: [2, 3, 4] },
+  'file-optimize': { body: [0], line: [1], arrows: [2, 3, 4, 5] },
+  'file-convert': { from: [0], to: [1], arrow: [2, 3] },
+  'file-unzip': { body: [0], tapes: [1], teeth: [2], pull: [3] },
+  'file-tabs': { body: [0], tabs: [1, 2, 3] },
+  'file-database': { body: [0], database: [1, 2, 3] },
+  'file-vector': { body: [0], curve: [1], nodes: [2, 3], handles: [4, 5] },
+  'file-disc': { body: [0], disc: [1], hole: [2] },
+  'file-shield': { body: [0], shield: [1] },
+  'file-diagram': { body: [0], nodes: [1, 2, 3], links: [4, 5] },
+  'file-transcript': { body: [0], wave: [1, 2, 3, 4], lines: [5, 6] },
+  'file-app': { body: [0], apps: [1, 2, 3, 4] },
+  'file-layers': { body: [0], layers: [1, 2, 3] },
+  'folder-image': { body: [0], fold: [1], sun: [2], landscape: [3] },
+  'folder-music': { body: [0], fold: [1], note: [2, 3] },
+  'folder-video': { body: [0], fold: [1], play: [2] },
+  'folder-home': { body: [0], fold: [1], house: [2] },
+  'folder-code': { body: [0], fold: [1], code: [2, 3] },
+  'folder-key': { body: [0], fold: [1], key: [2, 3, 4] },
+  'folder-import': { body: [0], fold: [1], arrow: [2, 3] },
+  'folder-export': { body: [0], fold: [1], arrow: [2, 3] },
+  'trash-full': { body: [0, 1, 2], heap: [3] },
+  'trash-clock': { lid: [0, 1], body: [2, 3, 4] },
+  'trash-sweep': { lid: [0, 1], body: [2, 3, 4], lines: [5, 6, 7] },
+  'cloud-pause': { body: [0], mark: [1, 2] },
+  'save-as': { body: [0], shutter: [1], label: [2] },
+  'save-clock': { body: [0], shutter: [1], label: [2] },
+  'data-tape': { body: [0], reel: [1], hub: [2], tape: [3] },
+  'micro-sd-card': { body: [0], contacts: [1, 2] },
+  'sd-card-adapter': { adapter: [0], contacts: [1, 2, 3], card: [4] },
+  'optical-drive': { body: [0], slot: [1], light: [2], disc: [3, 4] },
+  'hard-drive-alert': { body: [0], platter: [1] },
+  'hard-drive-lock': { body: [0], platter: [1] },
+  'backup-clock': { body: [0], slot: [1], arrow: [2, 3] },
+  'punch-card': { card: [0], holes: [1, 2, 3, 4, 5] },
+  'scan-text': { frame: [0, 1, 2, 3], text: [4, 5, 6] },
+  'ink-cartridge': { body: [0], drop: [1], nozzle: [2] },
+  plotter: { body: [0], slot: [1], sheet: [2], legs: [3, 4, 5, 6] },
+  'printer-search': PRINTER.parts,
+  'page-spread': { pages: [0], fold: [1], lines: [2, 3, 4, 5] },
+  'page-rotate': { page: [0], arrow: [1, 2] },
+  'page-extract': { front: [0], back: [1], arrow: [2, 3] },
+  'page-insert': { pages: [0, 1] },
+  'page-reorder': { pages: [0, 1], arrow: [2, 3, 4] },
+  'page-tree': { root: [0], children: [1, 2], branches: [3, 4] },
+  'page-number': { body: [0], line: [1], number: [2, 3, 4, 5] },
+  magazine: { cover: [0], masthead: [1, 2], image: [3] },
+  brochure: { panels: [0], folds: [1, 2] },
+  flyer: { sheet: [0], image: [1], lines: [2, 3] },
+  poster: { sheet: [0], image: [1] },
+  'crumpled-paper': { ball: [0], creases: [1, 2, 3] },
+  'notebook-open': { pages: [0, 1], rings: [2, 3, 4] },
+  journal: { cover: [0], band: [1], ribbon: [2] },
 };
 for (const [name, icon] of Object.entries(icons)) {
   if (PARTS[name]) icon.parts = PARTS[name];
@@ -956,6 +1805,35 @@ const MOTION = {
   'file-scan': { effect: 'beat', parts: ['frame'], origin: [12, 12] },
   'file-cloud': { effect: 'float', parts: ['cloud'], vector: [0, -1.5] },
   'folder-cloud': { effect: 'float', parts: ['badge'], vector: [0, -1.5] },
+  // Round 4
+  'file-key': { effect: 'wiggle', parts: ['key'], origin: [9.25, 11.5] },
+  'file-link': { effect: 'wiggle', parts: ['badge'], origin: [16.5, 16.5] },
+  'file-shortcut': { effect: 'slide', parts: ['badge'], vector: [1.25, -0.75] },
+  'file-conflict': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'file-merge': { effect: 'bounce', parts: ['arrow'], vector: [0, 1.5] },
+  'file-convert': { effect: 'slide', parts: ['arrow'], vector: [1, 1] },
+  'file-gear': { effect: 'spin', parts: ['badge'], origin: BC },
+  'folder-gear': { effect: 'spin', parts: ['badge'], origin: BC },
+  'cloud-gear': { effect: 'spin', parts: ['badge'], origin: BC },
+  'file-tag': { effect: 'wiggle', parts: ['badge'], origin: [16.4, 16.4] },
+  'folder-key': { effect: 'wiggle', parts: ['key'], origin: [9.25, 14] },
+  'folder-shortcut': { effect: 'slide', parts: ['badge'], vector: [1.25, -0.75] },
+  'folder-link': { effect: 'wiggle', parts: ['badge'], origin: [16.5, 14.75] },
+  'folder-edit': { effect: 'wiggle', parts: ['badge'], origin: [12.5, 21] },
+  'save-as': { effect: 'wiggle', parts: ['badge'], origin: [12.5, 21] },
+  'folder-import': { effect: 'slide', parts: ['arrow'], vector: [2, 0] },
+  'folder-export': { effect: 'slide', parts: ['arrow'], vector: [2, 0] },
+  'trash-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'save-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'cloud-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'backup-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'trash-sweep': { effect: 'slide', parts: ['lines'], vector: [1.5, 0] },
+  'trash-full': { effect: 'bounce', parts: ['heap'], vector: [0, -1.5] },
+  'hard-drive-alert': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'optical-drive': { effect: 'slide', parts: ['disc'], vector: [0, -1] },
+  'page-extract': { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] },
+  plotter: { effect: 'slide', parts: ['sheet'], vector: [0, 1] },
+  'printer-search': { effect: 'wiggle', parts: ['badge'], origin: BC },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
@@ -965,6 +1843,10 @@ for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion
 for (const name of [
   'file-import', 'file-export', 'file-share', 'file-move', 'folder-move', 'clipboard-copy', 'file-analytics',
   'file-edit', 'clipboard-edit', 'file-signature', 'clipboard-list', 'newspaper', 'folder-tree',
+  // Round 4: the scribble that trails off, the alias arrow, turning back, the conversion, the tabs
+  'file-draft', 'file-shortcut', 'file-restore', 'file-convert', 'file-tabs',
+  'file-transcript', 'folder-import', 'folder-export', 'folder-shortcut', 'trash-sweep', 'folder-edit', 'save-as',
+  'scan-text', 'page-extract', 'page-tree', 'flyer', 'magazine',
 ])
   icons[name].mirror = true;
 
@@ -979,6 +1861,10 @@ off(Object.keys(icons).filter((n) => icons[n].badge), { circle: false, square: f
 off(['file-scan'], { circle: false, square: false });
 // Already slashed, or they already say "no": slashing them adds nothing.
 off(['cloud-off', 'cloud-x', 'clipboard-x'], { slash: false });
+// Round 4: the missing file is already only a ghost; slashing its dashes says nothing.
+off(['file-missing'], { slash: false });
+// The viewfinder already encloses the text.
+off(['scan-text'], { circle: false, square: false });
 
 // ── 16 px (DESIGN.md › 16 px) ─────────────────────────────────────────────────────────────────
 // The engine snaps each icon to the pixel grid with a single adjustment shared by all its strokes
@@ -1107,5 +1993,70 @@ clip16('clipboard-edit', pencil16([8.25, 18]));
   const d = `M${pt(g(9, 5))}V${N(px(10))}A1.5 1.5 0 0 1 ${pt(g(7, 10))}V${N(px(4))}A3 3 0 0 1 ${pt(g(11, 4))}V${N(px(11))}A4.5 4.5 0 0 1 ${pt(g(5, 11))}V${N(px(6))}`;
   set16('paperclip', [d]);
 }
+
+// Round 4. The scribble as a short line and a two-step zigzag (a zigzag of single steps was a gray
+// smear); the key as a 3 px bow, its shaft and two teeth a pixel apart; the open zipper as a pixel V
+// over file-zip's last tooth and pull; the database as stacked discs; the curve as a stepped S; the
+// diagram's nodes as 2 × 2 squares joined by pixel elbows; the apps as four 2 × 2 squares a pixel
+// apart (the rounded squares were a gray grid); the layers as the diamond and one chevron (a second
+// one would touch the file's foot); the split as one stroke that forks into two legs (their
+// arrowheads didn't fit a pixel clear of the file's sides); the restore arrow as a U turning back to
+// the left, its head at the top.
+const node16 = (c, r) => sq(px(c), px(r), 1.5, 1.5, 0);
+body16('file-draft', [FILE16, pl([5, 5], [10, 5]), pl([5, 9], [7, 9], [8, 8], [9, 9], [10, 8])]);
+body16('file-key', [FILE16, circ(...g(6, 7), 1.5), pl([7, 7], [10, 7], [10, 9]), pl([8, 7], [8, 9])]);
+body16('file-unzip', [FILE16, pl([6, 3], [8, 5], [10, 3]), pl([6, 7], [8, 7]), sq(px(6), px(9), 6, 4.5, 1.2)]);
+body16('file-database', [FILE16, sq(px(5), px(4), 7.5, 10.5, 1.5), pl([5, 6], [10, 6]), pl([5, 9], [10, 9])]);
+body16('file-vector', [FILE16, pl([5, 12], [5, 10], [7, 8], [8, 8], [10, 6], [10, 3])]);
+body16('file-diagram', [FILE16, node16(5, 3), node16(9, 7), node16(5, 11), pl([7, 4], [9, 4], [9, 6]), pl([9, 9], [9, 11], [7, 11])]);
+body16('file-app', [FILE16, node16(5, 5), node16(8, 5), node16(5, 8), node16(8, 8)]);
+body16('file-layers', [FILE16, roundpoly([g(5, 5), g(7, 3), g(8, 3), g(10, 5), g(8, 7), g(7, 7)], 0.3), pl([5, 8], [7, 10], [8, 10], [10, 8])]);
+body16('file-split', [FILE16, pl([7, 3], [7, 6]), pl([5, 11], [5, 8], [7, 6], [9, 8], [9, 11])]);
+body16('file-restore', [FILE16, `M${pt(g(6, 10))}H${N(px(8))}A3 3 0 0 0 ${pt(g(8, 6))}H${N(px(6))}`, pl([7, 5], [6, 6], [7, 7])]);
+// Conflict: the badge's clearance took the front copy's body and left a gray arch; at 16 px the alert
+// goes inside the front copy, which stands whole, and the copy behind peeks out as an L.
+{
+  const front = sq(px(6), px(4), 10.5, 13.5, 2.25, { square: ['br'] });
+  const back = `M${pt(g(4, 10))}H${N(px(2))}A1.5 1.5 0 0 1 ${pt(g(1, 9))}V${N(px(2))}A1.5 1.5 0 0 1 ${pt(g(2, 1))}H${N(px(8))}`;
+  const mark = [pl([10, 6], [10, 9]), dot16(10, 11)];
+  set16('file-conflict', [front, back, ...mark], { solid: [front], lines: [back], cut: mark });
+}
+// The trash's heap as a pixel zigzag a pixel above the rim; the optical drive on the pixel grid: the
+// unit 4 pixels tall with its slot and its light, and the disc a 9-pixel arc with a 2 × 2 hole.
+{
+  const body = icons['trash-full'].d.slice(0, 3);
+  const heap = pl([4, 4], [6, 2], [7, 3], [9, 1], [11, 3]);
+  set16('trash-full', [...body, heap], { solid: [body[0], `${heap}Z`], cut: body.slice(1) });
+  const box = sq(px(2), px(9), 16.5, 6, 1.5, { square: ['br'] });
+  const [slot, light] = [pl([4, 11], [6, 11]), dot16(11, 11)];
+  const disc = arc(12, 9, 6.75, 160.5, 379.5).d;
+  const hole = circ(12, 9, 0.75);
+  set16('optical-drive', [box, slot, light, disc, hole], { solid: [box, `${disc}Z`], cut: [slot, light, hole] });
+}
+// The folders' contents through pixel centers: the landscape as one stepped ridge with its sun on the
+// fold (the fold opens around it); the note and the key under the fold, a pixel clear of it.
+{
+  const fo = folder();
+  const fold = (...runs) => runs.map(([c0, c1]) => pl([c0, 6], [c1, 6]));
+  const inFolder = (name, folds, glyph) => set16(name, [fo, ...folds, ...glyph], { solid: [fo], cut: [...folds, ...glyph] });
+  inFolder('folder-image', fold([1, 8], [12, 14]), [pl([4, 11], [7, 8], [9, 10], [10, 9], [11, 10]), dot16(10, 6)]);
+  inFolder('folder-music', fold([1, 14]), [node16(5, 10), pl([7, 11], [7, 8], [9, 9])]);
+  inFolder('folder-key', fold([1, 14]), [circ(...g(5, 9), 1.5), pl([7, 9], [11, 9]), pl([10, 9], [10, 11])]);
+}
+// The alias arrow on the pixel diagonal, out of the lower left corner (no badge circle to clear: it
+// is not in the corner badges' place).
+{
+  const arrow = [pl([2, 13], [6, 9]), pl([4, 9], [6, 9], [6, 11])];
+  set16('file-shortcut', [FILE16], { solid: [FILE16] }, { d: arrow, knock: arrow.join('') });
+  const fold = [folder(), line(...FOLD)];
+  const arrowF = [pl([2, 13], [6, 9]), pl([4, 9], [6, 9], [6, 11])];
+  set16('folder-shortcut', fold, { solid: [fold[0]], cut: [fold[1]] }, { d: arrowF, knock: arrowF.join('') });
+}
+// The tape's reel as a 5 px ring with a one-pixel hub, the tape along its foot.
+body16('data-tape', [icons['data-tape'].d[0], circ(...g(7, 7), 3), dot16(7, 7), pl([7, 9], [11, 9])]);
+// The flyer straight: tilted, its edges and lines turned into gray steps.
+body16('flyer', [sq(5.25, 3.25, 13.5, 17.5, 2.5, { square: ['br'] }), sq(8.25, 6.25, 7.5, 5.5, 1.25), line([8.25, 14.75], [15.75, 14.75]), line([8.25, 17.75], [12.75, 17.75])]);
+// The crumpled ball through pixel centers, one fold across it.
+body16('crumpled-paper', [roundpoly([g(6, 1), g(10, 2), g(13, 5), g(14, 9), g(11, 13), g(6, 14), g(2, 11), g(1, 6), g(3, 3)], 0.4), pl([10, 2], [8, 6], [3, 5]), pl([11, 13], [9, 10])]);
 
 export default { category: 'archivos', label: 'Archivos y nube', icons };

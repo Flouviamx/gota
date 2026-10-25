@@ -1,0 +1,590 @@
+{
+  "now-hiring": {
+    "label": { "es": "Estamos contratando", "en": "We’re hiring", "pt": "Estamos contratando", "fr": "On recrute", "de": "Wir stellen ein", "it": "Stiamo assumendo", "ja": "採用募集中", "zh": "正在招聘", "ko": "채용 중", "ar": "نحن نوظّف" },
+    "keywords": {
+      "es": ["vacantes abiertas", "bolsa de trabajo", "oferta de empleo", "únete al equipo", "reclutamiento", "página de carreras", "se solicita personal"],
+      "en": ["open roles", "job board", "job posting", "join the team", "recruiting", "careers page", "help wanted"]
+    }
+  },
+  "briefcase-plus": {
+    "label": { "es": "Abrir vacante", "en": "New job opening", "pt": "Abrir vaga", "fr": "Ouvrir un poste", "de": "Stelle ausschreiben", "it": "Apri una posizione", "ja": "求人を作成", "zh": "新建职位", "ko": "채용 공고 등록", "ar": "فتح وظيفة شاغرة" },
+    "keywords": {
+      "es": ["publicar puesto", "crear oferta de empleo", "requisición de personal", "nueva plaza", "reclutar", "agregar puesto", "solicitud de personal"],
+      "en": ["open a position", "post a job", "job requisition", "new role", "recruit", "add position", "create opening"]
+    }
+  },
+  "briefcase-search": {
+    "label": { "es": "Buscar empleo", "en": "Job search", "pt": "Buscar vagas", "fr": "Recherche d’emploi", "de": "Jobsuche", "it": "Cerca lavoro", "ja": "求人検索", "zh": "搜索职位", "ko": "채용 검색", "ar": "البحث عن وظيفة" },
+    "keywords": {
+      "es": ["explorar vacantes", "ofertas de trabajo", "bolsa de trabajo", "portal de empleo", "filtrar puestos", "chamba", "postularse"],
+      "en": ["browse openings", "job board", "find work", "career search", "filter jobs", "job listings", "apply"]
+    }
+  },
+  "briefcase-check": {
+    "label": { "es": "Puesto cubierto", "en": "Position filled", "pt": "Vaga preenchida", "fr": "Poste pourvu", "de": "Stelle besetzt", "it": "Posizione coperta", "ja": "採用決定", "zh": "职位已招满", "ko": "채용 완료", "ar": "تم شغل الوظيفة" },
+    "keywords": {
+      "es": ["contratado", "candidato seleccionado", "plaza ocupada", "contratación concluida", "empleado activo", "con trabajo", "proceso terminado"],
+      "en": ["hired", "candidate selected", "role filled", "offer accepted", "employed", "search complete", "new hire made"]
+    }
+  },
+  "briefcase-clock": {
+    "label": { "es": "Experiencia laboral", "en": "Work experience", "pt": "Experiência profissional", "fr": "Expérience professionnelle", "de": "Berufserfahrung", "it": "Esperienza lavorativa", "ja": "職歴", "zh": "工作经历", "ko": "경력", "ar": "الخبرة المهنية" },
+    "keywords": {
+      "es": ["historial laboral", "años de experiencia", "antigüedad", "trayectoria", "empleos anteriores", "tiempo en la empresa", "currículum"],
+      "en": ["work history", "years of experience", "tenure", "seniority", "past jobs", "time at company", "résumé"]
+    }
+  },
+  "briefcase-x": {
+    "label": { "es": "Vacante cerrada", "en": "Position closed", "pt": "Vaga encerrada", "fr": "Poste fermé", "de": "Stelle geschlossen", "it": "Posizione chiusa", "ja": "募集終了", "zh": "职位已关闭", "ko": "채용 마감", "ar": "إغلاق الوظيفة" },
+    "keywords": {
+      "es": ["cancelar puesto", "retirar oferta de empleo", "plaza eliminada", "proceso suspendido", "dar de baja la vacante", "sin contratación", "archivar puesto"],
+      "en": ["cancel position", "withdraw job post", "role eliminated", "requisition canceled", "unpublish job", "no hire", "archive opening"]
+    }
+  },
+  "candidate": {
+    "label": { "es": "Candidato", "en": "Candidate", "pt": "Candidato", "fr": "Candidat", "de": "Bewerber", "it": "Candidato", "ja": "応募者", "zh": "候选人", "ko": "지원자", "ar": "مرشّح للوظيفة" },
+    "keywords": {
+      "es": ["postulante", "aspirante", "solicitante", "perfil del candidato", "ATS", "reclutamiento", "currículum", "expediente"],
+      "en": ["applicant", "job seeker", "candidate profile", "ATS", "recruiting", "résumé", "talent"]
+    }
+  },
+  "candidate-pipeline": {
+    "label": { "es": "Etapas de contratación", "en": "Hiring pipeline", "pt": "Funil de contratação", "fr": "Pipeline de recrutement", "de": "Bewerbungspipeline", "it": "Pipeline di selezione", "ja": "採用パイプライン", "zh": "招聘流程", "ko": "채용 파이프라인", "ar": "مراحل التوظيف" },
+    "keywords": {
+      "es": ["proceso de selección", "tablero de candidatos", "embudo de reclutamiento", "seguimiento de postulantes", "fases", "ATS", "kanban"],
+      "en": ["recruiting stages", "applicant tracking", "candidate board", "selection process", "hiring funnel", "ATS", "kanban"]
+    }
+  },
+  "candidate-screening": {
+    "label": { "es": "Filtrar candidatos", "en": "Screen candidates", "pt": "Triagem de candidatos", "fr": "Présélection des candidats", "de": "Bewerbervorauswahl", "it": "Screening dei candidati", "ja": "書類選考", "zh": "筛选候选人", "ko": "지원자 선별", "ar": "فرز المرشحين" },
+    "keywords": {
+      "es": ["preselección", "evaluar postulantes", "revisión de currículum", "descartar", "criterios", "primer filtro", "lista corta"],
+      "en": ["prescreening", "shortlist", "résumé review", "qualify applicants", "criteria", "first round", "weed out"]
+    }
+  },
+  "talent-pool": {
+    "label": { "es": "Banco de talento", "en": "Talent pool", "pt": "Banco de talentos", "fr": "Vivier de talents", "de": "Talentpool", "it": "Bacino di talenti", "ja": "タレントプール", "zh": "人才库", "ko": "인재풀", "ar": "قاعدة المواهب" },
+    "keywords": {
+      "es": ["cartera de candidatos", "bolsa de talento", "futuras vacantes", "CRM de reclutamiento", "candidatos guardados", "semillero", "base de perfiles"],
+      "en": ["candidate database", "talent CRM", "future roles", "saved candidates", "silver medalists", "talent community", "sourcing"]
+    }
+  },
+  "vacancy": {
+    "label": { "es": "Puesto vacante", "en": "Vacancy", "pt": "Posição vaga", "fr": "Poste vacant", "de": "Unbesetzte Stelle", "it": "Posto vacante", "ja": "欠員", "zh": "空缺岗位", "ko": "공석", "ar": "منصب شاغر" },
+    "keywords": {
+      "es": ["plaza libre", "lugar disponible", "sin ocupar", "organigrama", "hueco en el equipo", "posición abierta", "por contratar"],
+      "en": ["open role", "unfilled position", "empty seat", "org chart", "team gap", "to be hired", "TBH"]
+    }
+  },
+  "headcount": {
+    "label": { "es": "Plantilla de personal", "en": "Headcount", "pt": "Quadro de funcionários", "fr": "Effectifs", "de": "Personalbestand", "it": "Organico", "ja": "人員数", "zh": "员工人数", "ko": "인원 수", "ar": "عدد الموظفين" },
+    "keywords": {
+      "es": ["número de empleados", "headcount", "planeación de plazas", "fuerza laboral", "dotación", "tamaño del equipo", "conteo de personal"],
+      "en": ["employee count", "workforce planning", "staffing", "team size", "FTE", "staff numbers", "position budget"]
+    }
+  },
+  "interview-panel": {
+    "label": { "es": "Entrevista en panel", "en": "Panel interview", "pt": "Entrevista em painel", "fr": "Entretien avec un jury", "de": "Panelinterview", "it": "Colloquio con commissione", "ja": "パネル面接", "zh": "面试小组", "ko": "패널 면접", "ar": "مقابلة مع لجنة" },
+    "keywords": {
+      "es": ["entrevistadores", "comité de selección", "entrevista grupal", "evaluación de candidatos", "jurado", "ronda de entrevistas", "reunión de contratación"],
+      "en": ["interviewers", "hiring committee", "group interview", "interview loop", "onsite interview", "candidate evaluation", "interview round"]
+    }
+  },
+  "job-offer": {
+    "label": { "es": "Oferta de trabajo", "en": "Job offer", "pt": "Proposta de emprego", "fr": "Offre d’embauche", "de": "Jobangebot", "it": "Offerta di lavoro", "ja": "内定通知", "zh": "录用通知", "ko": "채용 제안", "ar": "عرض عمل" },
+    "keywords": {
+      "es": ["carta oferta", "propuesta laboral", "contratar", "aceptar oferta", "condiciones del puesto", "sueldo ofrecido", "firmar contrato"],
+      "en": ["offer letter", "extend offer", "hire", "accept offer", "compensation package", "terms of employment", "sign contract"]
+    }
+  },
+  "talent-magnet": {
+    "label": { "es": "Atracción de talento", "en": "Talent attraction", "pt": "Atração de talentos", "fr": "Attraction des talents", "de": "Talentgewinnung", "it": "Attrazione dei talenti", "ja": "人材獲得", "zh": "人才吸引", "ko": "인재 유치", "ar": "استقطاب المواهب" },
+    "keywords": {
+      "es": ["marca empleadora", "retener talento", "employer branding", "propuesta de valor al empleado", "cazatalentos", "atraer candidatos", "reclutamiento"],
+      "en": ["employer brand", "talent retention", "recruitment marketing", "EVP", "headhunting", "attract candidates", "sourcing"]
+    }
+  },
+  "global-hiring": {
+    "label": { "es": "Contratación internacional", "en": "Global hiring", "pt": "Contratação internacional", "fr": "Recrutement international", "de": "Internationales Recruiting", "it": "Assunzioni internazionali", "ja": "海外採用", "zh": "全球招聘", "ko": "글로벌 채용", "ar": "التوظيف الدولي" },
+    "keywords": {
+      "es": ["empleador de registro", "EOR", "contratistas en el extranjero", "equipo remoto global", "nómina internacional", "otros países", "reubicación"],
+      "en": ["employer of record", "EOR", "international contractors", "global remote team", "global payroll", "cross-border", "relocation"]
+    }
+  },
+  "hiring-freeze": {
+    "label": { "es": "Contrataciones congeladas", "en": "Hiring freeze", "pt": "Contratações congeladas", "fr": "Gel des embauches", "de": "Einstellungsstopp", "it": "Blocco delle assunzioni", "ja": "採用凍結", "zh": "招聘冻结", "ko": "채용 동결", "ar": "تجميد التوظيف" },
+    "keywords": {
+      "es": ["pausa de contratación", "sin vacantes", "reclutamiento suspendido", "plazas en espera", "recorte de presupuesto", "austeridad", "no se contrata"],
+      "en": ["hiring pause", "paused recruiting", "no openings", "budget cuts", "on hold", "headcount freeze", "cost control"]
+    }
+  },
+  "offboarding": {
+    "label": { "es": "Baja de empleado", "en": "Offboarding", "pt": "Desligamento", "fr": "Départ d’un employé", "de": "Mitarbeiteraustritt", "it": "Uscita del dipendente", "ja": "退職手続き", "zh": "离职", "ko": "퇴사 처리", "ar": "مغادرة موظف" },
+    "keywords": {
+      "es": ["salida", "despido", "terminación laboral", "finiquito", "desvinculación", "último día", "entrevista de salida"],
+      "en": ["leaving", "termination", "exit", "separation", "last day", "exit interview", "deprovision"]
+    }
+  },
+  "welcome-kit": {
+    "label": { "es": "Kit de bienvenida", "en": "Welcome kit", "pt": "Kit de boas-vindas", "fr": "Kit de bienvenue", "de": "Willkommenspaket", "it": "Kit di benvenuto", "ja": "ウェルカムキット", "zh": "入职礼包", "ko": "웰컴 키트", "ar": "حقيبة الترحيب" },
+    "keywords": {
+      "es": ["onboarding", "regalo corporativo", "merch", "equipo de cómputo", "nuevo ingreso", "primer día", "artículos de la empresa"],
+      "en": ["onboarding swag", "company merch", "equipment", "new hire gift", "first day", "starter pack", "laptop setup"]
+    }
+  },
+  "resignation": {
+    "label": { "es": "Renuncia", "en": "Resignation", "pt": "Pedido de demissão", "fr": "Démission", "de": "Kündigung", "it": "Dimissioni", "ja": "退職", "zh": "辞职", "ko": "사직", "ar": "استقالة" },
+    "keywords": {
+      "es": ["dejar el trabajo", "carta de renuncia", "salida voluntaria", "baja voluntaria", "recoger mis cosas", "último día", "aviso de salida"],
+      "en": ["quit", "leave the job", "resignation letter", "voluntary exit", "two weeks’ notice", "packing up", "last day"]
+    }
+  },
+  "rehire": {
+    "label": { "es": "Recontratación", "en": "Rehire", "pt": "Recontratação", "fr": "Réembauche", "de": "Wiedereinstellung", "it": "Riassunzione", "ja": "再雇用", "zh": "重新录用", "ko": "재고용", "ar": "إعادة التوظيف" },
+    "keywords": {
+      "es": ["empleado que regresa", "reingreso", "volver a contratar", "boomerang", "exempleado", "alumni", "regreso a la empresa"],
+      "en": ["returning employee", "boomerang", "re-employment", "former employee", "alumni", "rejoin", "comeback"]
+    }
+  },
+  "mentorship": {
+    "label": { "es": "Mentoría", "en": "Mentorship", "pt": "Mentoria", "fr": "Mentorat", "de": "Mentoring", "it": "Mentoring", "ja": "メンター制度", "zh": "导师制", "ko": "멘토링", "ar": "الإرشاد المهني" },
+    "keywords": {
+      "es": ["mentor", "aprendiz", "acompañamiento", "programa de padrinos", "buddy", "guía", "coaching"],
+      "en": ["mentor", "mentee", "buddy program", "guidance", "coaching", "one-on-one", "sponsor"]
+    }
+  },
+  "succession-plan": {
+    "label": { "es": "Plan de sucesión", "en": "Succession plan", "pt": "Plano de sucessão", "fr": "Plan de succession", "de": "Nachfolgeplanung", "it": "Piano di successione", "ja": "後継者計画", "zh": "继任计划", "ko": "승계 계획", "ar": "خطة التعاقب الوظيفي" },
+    "keywords": {
+      "es": ["relevo", "reemplazo", "puesto clave", "listo para el rol", "continuidad del negocio", "talento interno", "cartera de líderes"],
+      "en": ["successor", "replacement", "key role", "ready now", "bench strength", "leadership pipeline", "continuity"]
+    }
+  },
+  "career-growth": {
+    "label": { "es": "Crecimiento profesional", "en": "Career growth", "pt": "Crescimento profissional", "fr": "Évolution de carrière", "de": "Karriereentwicklung", "it": "Crescita professionale", "ja": "キャリアアップ", "zh": "职业发展", "ko": "커리어 성장", "ar": "التطور المهني" },
+    "keywords": {
+      "es": ["ascenso", "plan de carrera", "promoción", "niveles", "escalafón", "crecer en la empresa", "trayectoria"],
+      "en": ["promotion", "career path", "career ladder", "levels", "advancement", "move up", "progression"]
+    }
+  },
+  "team-lead": {
+    "label": { "es": "Líder de equipo", "en": "Team lead", "pt": "Líder de equipe", "fr": "Chef d’équipe", "de": "Teamleitung", "it": "Responsabile di team", "ja": "チームリーダー", "zh": "团队负责人", "ko": "팀장", "ar": "قائد الفريق" },
+    "keywords": {
+      "es": ["jefe", "gerente", "coordinador", "encargado", "supervisor", "responsable del equipo", "mánager"],
+      "en": ["manager", "supervisor", "head of team", "lead", "coordinator", "boss", "squad lead"]
+    }
+  },
+  "direct-reports": {
+    "label": { "es": "Equipo a cargo", "en": "Direct reports", "pt": "Subordinados diretos", "fr": "Collaborateurs directs", "de": "Direkt unterstellte Mitarbeiter", "it": "Riporti diretti", "ja": "直属の部下", "zh": "直接下属", "ko": "직속 팀원", "ar": "المرؤوسون المباشرون" },
+    "keywords": {
+      "es": ["subordinados", "reportes directos", "organigrama", "jefe directo", "jerarquía", "línea de reporte", "gestión de personas"],
+      "en": ["subordinates", "reporting line", "org chart", "manager", "hierarchy", "my team", "people manager"]
+    }
+  },
+  "internal-mobility": {
+    "label": { "es": "Movilidad interna", "en": "Internal mobility", "pt": "Mobilidade interna", "fr": "Mobilité interne", "de": "Interne Mobilität", "it": "Mobilità interna", "ja": "社内異動", "zh": "内部调动", "ko": "사내 이동", "ar": "التنقل الداخلي" },
+    "keywords": {
+      "es": ["cambio de puesto", "transferencia", "rotación interna", "cambio de área", "vacantes internas", "reasignación", "traslado"],
+      "en": ["internal transfer", "role change", "lateral move", "job rotation", "internal openings", "reassignment", "department change"]
+    }
+  },
+  "job-sharing": {
+    "label": { "es": "Puesto compartido", "en": "Job sharing", "pt": "Cargo compartilhado", "fr": "Poste partagé", "de": "Jobsharing", "it": "Lavoro ripartito", "ja": "ジョブシェアリング", "zh": "岗位共享", "ko": "직무 공유", "ar": "تقاسم الوظيفة" },
+    "keywords": {
+      "es": ["dos personas un rol", "medio tiempo", "jornada dividida", "corresponsabilidad", "flexibilidad laboral", "cubrir turnos", "rol dividido"],
+      "en": ["shared role", "two people one job", "part-time", "split position", "flexible work", "co-role", "job split"]
+    }
+  },
+  "job-description": {
+    "label": { "es": "Descripción del puesto", "en": "Job description", "pt": "Descrição do cargo", "fr": "Fiche de poste", "de": "Stellenbeschreibung", "it": "Descrizione del ruolo", "ja": "職務記述書", "zh": "职位描述", "ko": "직무 기술서", "ar": "الوصف الوظيفي" },
+    "keywords": {
+      "es": ["perfil del puesto", "requisitos", "funciones", "responsabilidades", "vacante", "anuncio de empleo", "competencias"],
+      "en": ["job profile", "requirements", "duties", "responsibilities", "JD", "job ad", "qualifications"]
+    }
+  },
+  "time-off": {
+    "label": { "es": "Vacaciones", "en": "Time off", "pt": "Folga", "fr": "Congés", "de": "Urlaub", "it": "Ferie", "ja": "休暇", "zh": "休假", "ko": "휴가", "ar": "إجازة" },
+    "keywords": {
+      "es": ["días libres", "permiso", "ausencia", "descanso", "PTO", "prima vacacional", "saldo de días"],
+      "en": ["PTO", "vacation", "leave", "days off", "holiday", "absence", "leave balance"]
+    }
+  },
+  "time-off-plus": {
+    "label": { "es": "Solicitar vacaciones", "en": "Request time off", "pt": "Pedir folga", "fr": "Demander un congé", "de": "Urlaub beantragen", "it": "Richiedi ferie", "ja": "休暇を申請", "zh": "申请休假", "ko": "휴가 신청", "ar": "طلب إجازة" },
+    "keywords": {
+      "es": ["pedir días libres", "nueva solicitud", "pedir permiso", "registrar ausencia", "agendar descanso", "PTO", "apartar fechas"],
+      "en": ["book leave", "new request", "ask for days off", "PTO request", "vacation request", "log absence", "plan a break"]
+    }
+  },
+  "time-off-check": {
+    "label": { "es": "Vacaciones aprobadas", "en": "Time off approved", "pt": "Folga aprovada", "fr": "Congé approuvé", "de": "Urlaub genehmigt", "it": "Ferie approvate", "ja": "休暇承認済み", "zh": "休假已批准", "ko": "휴가 승인됨", "ar": "تمت الموافقة على الإجازة" },
+    "keywords": {
+      "es": ["permiso autorizado", "solicitud aceptada", "días confirmados", "visto bueno", "ausencia aprobada", "autorizar", "aprobación del jefe"],
+      "en": ["leave approved", "request accepted", "confirmed days", "authorized", "approve", "manager approval", "PTO granted"]
+    }
+  },
+  "time-off-x": {
+    "label": { "es": "Vacaciones rechazadas", "en": "Time off declined", "pt": "Folga recusada", "fr": "Congé refusé", "de": "Urlaub abgelehnt", "it": "Ferie rifiutate", "ja": "休暇却下", "zh": "休假被拒绝", "ko": "휴가 반려됨", "ar": "تم رفض الإجازة" },
+    "keywords": {
+      "es": ["permiso denegado", "solicitud negada", "no autorizado", "cancelar días", "días no aprobados", "denegar", "conflicto de fechas"],
+      "en": ["leave denied", "request rejected", "not approved", "cancel leave", "deny", "PTO denied", "date conflict"]
+    }
+  },
+  "time-off-clock": {
+    "label": { "es": "Vacaciones pendientes", "en": "Time off pending", "pt": "Folga pendente", "fr": "Congé en attente", "de": "Urlaub ausstehend", "it": "Ferie in attesa", "ja": "休暇承認待ち", "zh": "休假待审批", "ko": "휴가 승인 대기", "ar": "إجازة قيد الموافقة" },
+    "keywords": {
+      "es": ["por aprobar", "en revisión", "solicitud en espera", "sin respuesta", "esperando autorización", "aprobación del jefe", "en trámite"],
+      "en": ["awaiting approval", "under review", "request submitted", "waiting", "manager review", "in progress", "not yet approved"]
+    }
+  },
+  "sick-leave": {
+    "label": { "es": "Permiso por enfermedad", "en": "Sick leave", "pt": "Licença médica", "fr": "Arrêt maladie", "de": "Krankmeldung", "it": "Congedo per malattia", "ja": "病気休暇", "zh": "病假", "ko": "병가", "ar": "إجازة مرضية" },
+    "keywords": {
+      "es": ["incapacidad", "día por enfermedad", "IMSS", "justificante médico", "ausencia por salud", "reposo", "enfermo"],
+      "en": ["sick day", "illness", "doctor’s note", "medical leave", "out sick", "health absence", "recovery"]
+    }
+  },
+  "parental-leave": {
+    "label": { "es": "Licencia parental", "en": "Parental leave", "pt": "Licença parental", "fr": "Congé parental", "de": "Elternzeit", "it": "Congedo parentale", "ja": "育児休業", "zh": "育儿假", "ko": "육아휴직", "ar": "إجازة الوالدين" },
+    "keywords": {
+      "es": ["maternidad", "paternidad", "bebé", "incapacidad por maternidad", "permiso de paternidad", "lactancia", "adopción"],
+      "en": ["maternity leave", "paternity leave", "baby", "new parent", "family leave", "adoption", "nursing"]
+    }
+  },
+  "on-leave": {
+    "label": { "es": "De permiso", "en": "On leave", "pt": "Afastado", "fr": "En congé", "de": "Abwesend", "it": "In congedo", "ja": "休暇中", "zh": "休假中", "ko": "휴가 중", "ar": "في إجازة" },
+    "keywords": {
+      "es": ["ausente", "fuera de la oficina", "no disponible", "estado del empleado", "de vacaciones", "licencia", "regresa pronto"],
+      "en": ["away", "out of office", "OOO", "unavailable", "employee status", "absent", "back soon"]
+    }
+  },
+  "badge-tap": {
+    "label": { "es": "Registro con gafete", "en": "Badge in", "pt": "Registro com crachá", "fr": "Pointage par badge", "de": "Mit Ausweis stempeln", "it": "Timbratura con badge", "ja": "社員証で打刻", "zh": "刷卡打卡", "ko": "사원증 태그", "ar": "تسجيل الحضور بالبطاقة" },
+    "keywords": {
+      "es": ["checar entrada", "checar salida", "asistencia", "control de acceso", "tarjeta de acceso", "reloj checador", "NFC"],
+      "en": ["clock in", "badge out", "attendance", "access control", "key card", "time clock", "tap in"]
+    }
+  },
+  "work-from-home": {
+    "label": { "es": "Trabajo desde casa", "en": "Work from home", "pt": "Trabalho em casa", "fr": "Télétravail", "de": "Homeoffice", "it": "Lavoro da casa", "ja": "在宅勤務", "zh": "居家办公", "ko": "재택근무", "ar": "العمل من المنزل" },
+    "keywords": {
+      "es": ["home office", "trabajo remoto", "teletrabajo", "a distancia", "WFH", "videollamadas", "sin traslado"],
+      "en": ["remote work", "WFH", "home office", "telework", "telecommute", "distributed team", "remote day"]
+    }
+  },
+  "hybrid-work": {
+    "label": { "es": "Trabajo híbrido", "en": "Hybrid work", "pt": "Trabalho híbrido", "fr": "Travail hybride", "de": "Hybrides Arbeiten", "it": "Lavoro ibrido", "ja": "ハイブリッドワーク", "zh": "混合办公", "ko": "하이브리드 근무", "ar": "العمل الهجين" },
+    "keywords": {
+      "es": ["esquema mixto", "días en oficina", "home office", "semipresencial", "modalidad flexible", "casa y oficina", "rotación de días"],
+      "en": ["mixed schedule", "office days", "split week", "flexible work", "home and office", "return to office", "anchor days"]
+    }
+  },
+  "work-from-anywhere": {
+    "label": { "es": "Trabajo desde cualquier lugar", "en": "Work from anywhere", "pt": "Trabalho de qualquer lugar", "fr": "Travail depuis n’importe où", "de": "Arbeiten von überall", "it": "Lavoro da ovunque", "ja": "場所を問わない勤務", "zh": "随处办公", "ko": "어디서나 근무", "ar": "العمل من أي مكان" },
+    "keywords": {
+      "es": ["nómada digital", "trabajo remoto", "viajar trabajando", "sin oficina fija", "workation", "equipo distribuido", "remoto internacional"],
+      "en": ["digital nomad", "location independent", "remote-first", "workation", "distributed team", "travel and work", "WFA"]
+    }
+  },
+  "commute": {
+    "label": { "es": "Traslado al trabajo", "en": "Commute", "pt": "Deslocamento ao trabalho", "fr": "Trajet domicile-travail", "de": "Arbeitsweg", "it": "Tragitto casa-lavoro", "ja": "通勤", "zh": "通勤", "ko": "출퇴근", "ar": "التنقل إلى العمل" },
+    "keywords": {
+      "es": ["transporte", "trayecto", "camino a la oficina", "transporte de personal", "apoyo de transporte", "movilidad", "tráfico"],
+      "en": ["commuter benefit", "transit", "trip to work", "travel to office", "transport allowance", "shuttle", "rush hour"]
+    }
+  },
+  "right-to-disconnect": {
+    "label": { "es": "Derecho a la desconexión", "en": "Right to disconnect", "pt": "Direito à desconexão", "fr": "Droit à la déconnexion", "de": "Recht auf Nichterreichbarkeit", "it": "Diritto alla disconnessione", "ja": "つながらない権利", "zh": "离线权", "ko": "연결되지 않을 권리", "ar": "الحق في قطع الاتصال" },
+    "keywords": {
+      "es": ["fuera de horario", "sin mensajes", "no molestar", "fin de la jornada", "descanso digital", "NOM-037", "silenciar notificaciones"],
+      "en": ["after hours", "no work messages", "do not disturb", "end of workday", "off the clock", "mute notifications", "digital rest"]
+    }
+  },
+  "hot-desk": {
+    "label": { "es": "Escritorio compartido", "en": "Hot desk", "pt": "Mesa compartilhada", "fr": "Bureau partagé", "de": "Flexibler Arbeitsplatz", "it": "Postazione condivisa", "ja": "フリーアドレス席", "zh": "共享工位", "ko": "자율 좌석", "ar": "مكتب مشترك" },
+    "keywords": {
+      "es": ["hot desking", "lugar libre", "sin asignar", "puesto flexible", "oficina flexible", "coworking", "rotación de lugares"],
+      "en": ["desk sharing", "flexible seating", "unassigned desk", "free seating", "flex desk", "shared workspace", "coworking"]
+    }
+  },
+  "desk-check": {
+    "label": { "es": "Escritorio reservado", "en": "Desk booked", "pt": "Mesa reservada", "fr": "Bureau réservé", "de": "Arbeitsplatz gebucht", "it": "Postazione prenotata", "ja": "座席予約済み", "zh": "工位已预订", "ko": "좌석 예약됨", "ar": "تم حجز المكتب" },
+    "keywords": {
+      "es": ["reserva confirmada", "lugar apartado", "asiento asignado", "puesto confirmado", "check-in", "día en oficina", "mi lugar"],
+      "en": ["booking confirmed", "reserved seat", "assigned desk", "check in", "seat confirmed", "my desk", "office day"]
+    }
+  },
+  "desk-plus": {
+    "label": { "es": "Reservar escritorio", "en": "Book a desk", "pt": "Reservar mesa", "fr": "Réserver un bureau", "de": "Arbeitsplatz buchen", "it": "Prenota postazione", "ja": "座席を予約", "zh": "预订工位", "ko": "좌석 예약", "ar": "حجز مكتب" },
+    "keywords": {
+      "es": ["apartar lugar", "nueva reserva", "elegir asiento", "ir a la oficina", "hot desk", "agendar día en oficina", "lugar de trabajo"],
+      "en": ["reserve a seat", "new booking", "pick a desk", "office visit", "hot desk", "plan office day", "workspace"]
+    }
+  },
+  "desk-x": {
+    "label": { "es": "Liberar escritorio", "en": "Release desk", "pt": "Liberar mesa", "fr": "Libérer le bureau", "de": "Arbeitsplatz freigeben", "it": "Libera postazione", "ja": "座席予約をキャンセル", "zh": "取消工位预订", "ko": "좌석 예약 취소", "ar": "إلغاء حجز المكتب" },
+    "keywords": {
+      "es": ["cancelar reserva", "dejar lugar libre", "no iré a la oficina", "quitar reserva", "anular", "desocupar", "cambio de planes"],
+      "en": ["cancel booking", "free up desk", "not coming in", "remove reservation", "unbook", "vacate", "change of plans"]
+    }
+  },
+  "locker": {
+    "label": { "es": "Casillero", "en": "Locker", "pt": "Armário", "fr": "Casier", "de": "Spind", "it": "Armadietto", "ja": "ロッカー", "zh": "储物柜", "ko": "사물함", "ar": "خزانة" },
+    "keywords": {
+      "es": ["locker", "lóquer", "guardar cosas", "vestidor", "reserva de locker", "guardarropa", "llave"],
+      "en": ["storage", "personal belongings", "locker booking", "cubby", "changing room", "lock", "cabinet"]
+    }
+  },
+  "performance-review": {
+    "label": { "es": "Evaluación de desempeño", "en": "Performance review", "pt": "Avaliação de desempenho", "fr": "Évaluation des performances", "de": "Leistungsbeurteilung", "it": "Valutazione delle prestazioni", "ja": "人事評価", "zh": "绩效评估", "ko": "성과 평가", "ar": "تقييم الأداء" },
+    "keywords": {
+      "es": ["revisión anual", "calificación", "objetivos", "rendimiento", "KPI", "retroalimentación", "OKR"],
+      "en": ["appraisal", "annual review", "rating", "goals", "employee performance", "KPI", "evaluation"]
+    }
+  },
+  "feedback-360": {
+    "label": { "es": "Evaluación 360", "en": "360 feedback", "pt": "Avaliação 360", "fr": "Feedback à 360°", "de": "360-Grad-Feedback", "it": "Feedback a 360 gradi", "ja": "360度評価", "zh": "360度评估", "ko": "360도 피드백", "ar": "تقييم 360 درجة" },
+    "keywords": {
+      "es": ["retroalimentación integral", "pares", "jefe y equipo", "evaluación multifuente", "autoevaluación", "desempeño", "encuesta"],
+      "en": ["multi-rater feedback", "peers", "manager and reports", "self-assessment", "performance", "full-circle review", "survey"]
+    }
+  },
+  "peer-feedback": {
+    "label": { "es": "Retroalimentación entre colegas", "en": "Peer feedback", "pt": "Feedback entre colegas", "fr": "Feedback entre pairs", "de": "Peer-Feedback", "it": "Feedback tra colleghi", "ja": "同僚からのフィードバック", "zh": "同事反馈", "ko": "동료 피드백", "ar": "ملاحظات الزملاء" },
+    "keywords": {
+      "es": ["feedback", "compañeros", "comentarios", "pares", "opinión del equipo", "crítica constructiva", "conversación"],
+      "en": ["coworker feedback", "colleagues", "comments", "peers", "team input", "constructive criticism", "review"]
+    }
+  },
+  "peer-recognition": {
+    "label": { "es": "Reconocimiento entre colegas", "en": "Peer recognition", "pt": "Reconhecimento entre colegas", "fr": "Reconnaissance entre pairs", "de": "Anerkennung im Team", "it": "Riconoscimento tra colleghi", "ja": "同僚への称賛", "zh": "同事认可", "ko": "동료 칭찬", "ar": "تقدير الزملاء" },
+    "keywords": {
+      "es": ["felicitar", "kudos", "aplausos", "buen trabajo", "elogio", "chocar las manos", "shout-out"],
+      "en": ["kudos", "praise", "shout-out", "high five", "good job", "appreciation", "celebrate"]
+    }
+  },
+  "thank-you-card": {
+    "label": { "es": "Tarjeta de agradecimiento", "en": "Thank-you card", "pt": "Cartão de agradecimento", "fr": "Carte de remerciement", "de": "Dankeskarte", "it": "Biglietto di ringraziamento", "ja": "サンクスカード", "zh": "感谢卡", "ko": "감사 카드", "ar": "بطاقة شكر" },
+    "keywords": {
+      "es": ["gracias", "nota de aprecio", "reconocimiento", "mensaje a un colega", "gratitud", "detalle", "dedicatoria"],
+      "en": ["thanks", "appreciation note", "gratitude", "recognition", "kind note", "message to a colleague", "kudos"]
+    }
+  },
+  "nine-box": {
+    "label": { "es": "Matriz de talento", "en": "Nine-box grid", "pt": "Matriz nine box", "fr": "Matrice 9 box", "de": "Neun-Felder-Matrix", "it": "Matrice nine box", "ja": "9ボックス", "zh": "九宫格人才盘点", "ko": "9박스 그리드", "ar": "مصفوفة المربعات التسعة" },
+    "keywords": {
+      "es": ["9 box", "desempeño y potencial", "revisión de talento", "calibración", "alto potencial", "cuadrantes", "planeación de talento"],
+      "en": ["9-box", "performance vs potential", "talent review", "calibration", "high potential", "quadrants", "talent grid"]
+    }
+  },
+  "top-performer": {
+    "label": { "es": "Empleado estrella", "en": "Top performer", "pt": "Funcionário destaque", "fr": "Employé vedette", "de": "Leistungsträger", "it": "Dipendente di punta", "ja": "優秀な社員", "zh": "优秀员工", "ko": "우수 직원", "ar": "موظف متميز" },
+    "keywords": {
+      "es": ["alto rendimiento", "mejor desempeño", "talento clave", "sobresaliente", "alto potencial", "destacado", "MVP"],
+      "en": ["star employee", "high performer", "key talent", "outstanding", "MVP", "rockstar", "best performance"]
+    }
+  },
+  "employee-of-the-month": {
+    "label": { "es": "Empleado del mes", "en": "Employee of the month", "pt": "Funcionário do mês", "fr": "Employé du mois", "de": "Mitarbeiter des Monats", "it": "Dipendente del mese", "ja": "月間最優秀社員", "zh": "月度最佳员工", "ko": "이달의 직원", "ar": "موظف الشهر" },
+    "keywords": {
+      "es": ["reconocimiento", "premio", "empleado destacado", "cuadro de honor", "logro", "galardón", "homenaje"],
+      "en": ["recognition", "award", "featured employee", "wall of fame", "achievement", "honor", "spotlight"]
+    }
+  },
+  "work-anniversary": {
+    "label": { "es": "Aniversario laboral", "en": "Work anniversary", "pt": "Aniversário de empresa", "fr": "Anniversaire professionnel", "de": "Dienstjubiläum", "it": "Anniversario aziendale", "ja": "勤続記念日", "zh": "入职周年", "ko": "입사 기념일", "ar": "ذكرى الانضمام للعمل" },
+    "keywords": {
+      "es": ["cumpleaños", "antigüedad", "años en la empresa", "celebración", "festejo", "quinquenio", "pastel"],
+      "en": ["birthday", "tenure", "years of service", "celebration", "milestone", "party", "cake"]
+    }
+  },
+  "personal-growth": {
+    "label": { "es": "Plan de desarrollo", "en": "Development plan", "pt": "Plano de desenvolvimento", "fr": "Plan de développement", "de": "Entwicklungsplan", "it": "Piano di sviluppo", "ja": "能力開発計画", "zh": "个人发展计划", "ko": "성장 계획", "ar": "خطة التطوير" },
+    "keywords": {
+      "es": ["crecimiento personal", "objetivos de aprendizaje", "PDI", "metas", "habilidades", "superación", "plan individual"],
+      "en": ["personal growth", "learning goals", "IDP", "skills", "self-improvement", "objectives", "growth plan"]
+    }
+  },
+  "job-training": {
+    "label": { "es": "Capacitación", "en": "Employee training", "pt": "Treinamento", "fr": "Formation", "de": "Schulung", "it": "Formazione", "ja": "研修", "zh": "职业培训", "ko": "직무 교육", "ar": "التدريب المهني" },
+    "keywords": {
+      "es": ["curso", "taller", "entrenamiento", "actualización", "upskilling", "DC-3", "inducción"],
+      "en": ["course", "workshop", "upskilling", "reskilling", "on-the-job training", "class", "certification"]
+    }
+  },
+  "learning-path": {
+    "label": { "es": "Ruta de aprendizaje", "en": "Learning path", "pt": "Trilha de aprendizagem", "fr": "Parcours de formation", "de": "Lernpfad", "it": "Percorso formativo", "ja": "学習パス", "zh": "学习路径", "ko": "학습 경로", "ar": "مسار التعلم" },
+    "keywords": {
+      "es": ["plan de estudios", "programa de capacitación", "módulos", "currícula", "LMS", "progreso", "cursos en orden"],
+      "en": ["curriculum", "training program", "modules", "course sequence", "LMS", "progress", "learning journey"]
+    }
+  },
+  "belonging": {
+    "label": { "es": "Sentido de pertenencia", "en": "Belonging", "pt": "Pertencimento", "fr": "Sentiment d’appartenance", "de": "Zugehörigkeit", "it": "Senso di appartenenza", "ja": "帰属意識", "zh": "归属感", "ko": "소속감", "ar": "الانتماء" },
+    "keywords": {
+      "es": ["inclusión", "diversidad", "cuidado del empleado", "bienestar", "comunidad", "equidad", "DEI"],
+      "en": ["inclusion", "diversity", "employee care", "wellbeing", "community", "equity", "DEI"]
+    }
+  },
+  "workplace-conflict": {
+    "label": { "es": "Conflicto laboral", "en": "Workplace conflict", "pt": "Conflito no trabalho", "fr": "Conflit au travail", "de": "Konflikt am Arbeitsplatz", "it": "Conflitto sul lavoro", "ja": "職場のトラブル", "zh": "职场冲突", "ko": "직장 내 갈등", "ar": "نزاع في العمل" },
+    "keywords": {
+      "es": ["queja", "desacuerdo", "mediación", "relaciones laborales", "caso de RH", "acoso", "denuncia"],
+      "en": ["dispute", "complaint", "mediation", "employee relations", "HR case", "grievance", "harassment"]
+    }
+  },
+  "burnout": {
+    "label": { "es": "Agotamiento laboral", "en": "Burnout", "pt": "Esgotamento profissional", "fr": "Épuisement professionnel", "de": "Burnout", "it": "Burnout", "ja": "燃え尽き症候群", "zh": "职业倦怠", "ko": "번아웃", "ar": "الاحتراق الوظيفي" },
+    "keywords": {
+      "es": ["burnout", "estrés", "cansancio", "desgaste", "salud mental", "NOM-035", "sobrecarga"],
+      "en": ["exhaustion", "stress", "fatigue", "mental health", "overwork", "wellbeing risk", "low energy"]
+    }
+  },
+  "people-analytics": {
+    "label": { "es": "Analítica de personal", "en": "People analytics", "pt": "Análise de RH", "fr": "Analyse RH", "de": "HR-Analytics", "it": "Analisi HR", "ja": "ピープルアナリティクス", "zh": "人力资源分析", "ko": "인사 분석", "ar": "تحليلات الموارد البشرية" },
+    "keywords": {
+      "es": ["métricas de RH", "indicadores", "tablero de personal", "reportes", "rotación", "datos de empleados", "KPI"],
+      "en": ["HR analytics", "workforce metrics", "HR dashboard", "reports", "attrition", "employee data", "KPI"]
+    }
+  },
+  "workload": {
+    "label": { "es": "Carga de trabajo", "en": "Workload", "pt": "Carga de trabalho", "fr": "Charge de travail", "de": "Arbeitsbelastung", "it": "Carico di lavoro", "ja": "業務量", "zh": "工作量", "ko": "업무량", "ar": "عبء العمل" },
+    "keywords": {
+      "es": ["capacidad", "sobrecarga", "asignación", "disponibilidad", "pendientes", "saturación", "balanceo de tareas"],
+      "en": ["capacity", "overload", "allocation", "availability", "bandwidth", "utilization", "task balance"]
+    }
+  },
+  "work-life-balance": {
+    "label": { "es": "Equilibrio vida-trabajo", "en": "Work-life balance", "pt": "Equilíbrio entre vida e trabalho", "fr": "Équilibre vie pro-vie perso", "de": "Work-Life-Balance", "it": "Equilibrio vita-lavoro", "ja": "ワークライフバランス", "zh": "工作与生活平衡", "ko": "일과 삶의 균형", "ar": "التوازن بين العمل والحياة" },
+    "keywords": {
+      "es": ["bienestar", "vida personal", "horario flexible", "descanso", "salud mental", "tiempo en familia", "balance"],
+      "en": ["wellbeing", "personal life", "flexible hours", "rest", "mental health", "family time", "harmony"]
+    }
+  },
+  "turnover": {
+    "label": { "es": "Rotación de personal", "en": "Employee turnover", "pt": "Rotatividade", "fr": "Rotation du personnel", "de": "Fluktuation", "it": "Turnover del personale", "ja": "離職率", "zh": "员工流失", "ko": "이직률", "ar": "معدل دوران الموظفين" },
+    "keywords": {
+      "es": ["bajas", "renuncias", "deserción", "retención", "salidas", "attrition", "fuga de talento"],
+      "en": ["attrition", "churn", "retention", "resignations", "leavers", "quit rate", "staff loss"]
+    }
+  },
+  "payslip": {
+    "label": { "es": "Recibo de nómina", "en": "Payslip", "pt": "Holerite", "fr": "Bulletin de paie", "de": "Gehaltsabrechnung", "it": "Busta paga", "ja": "給与明細", "zh": "工资单", "ko": "급여 명세서", "ar": "قسيمة الراتب" },
+    "keywords": {
+      "es": ["CFDI de nómina", "comprobante de pago", "talón de pago", "sueldo", "deducciones", "percepciones", "timbrado"],
+      "en": ["pay stub", "salary slip", "earnings statement", "deductions", "wages", "pay statement", "paycheck"]
+    }
+  },
+  "payslip-check": {
+    "label": { "es": "Nómina pagada", "en": "Payroll paid", "pt": "Salário pago", "fr": "Paie versée", "de": "Gehalt ausgezahlt", "it": "Stipendio pagato", "ja": "給与支払済み", "zh": "工资已发放", "ko": "급여 지급 완료", "ar": "تم صرف الراتب" },
+    "keywords": {
+      "es": ["recibo timbrado", "depósito de sueldo", "pago confirmado", "dispersión", "quincena", "recibo emitido", "día de pago"],
+      "en": ["payslip issued", "salary deposited", "payment confirmed", "payday", "pay run complete", "direct deposit", "paid out"]
+    }
+  },
+  "salary": {
+    "label": { "es": "Sueldo", "en": "Salary", "pt": "Salário", "fr": "Salaire", "de": "Gehalt", "it": "Stipendio", "ja": "給与", "zh": "薪资", "ko": "급여", "ar": "الراتب" },
+    "keywords": {
+      "es": ["salario", "pago", "quincena", "ingresos", "remuneración", "compensación", "paga"],
+      "en": ["wages", "pay", "income", "compensation", "earnings", "paycheck", "remuneration"]
+    }
+  },
+  "payroll": {
+    "label": { "es": "Nómina", "en": "Payroll", "pt": "Folha de pagamento", "fr": "Paie", "de": "Lohnbuchhaltung", "it": "Elaborazione paghe", "ja": "給与計算", "zh": "薪资核算", "ko": "급여 정산", "ar": "كشف الرواتب" },
+    "keywords": {
+      "es": ["pagar sueldos", "corrida", "dispersión", "costo de personal", "ISR", "IMSS", "quincena"],
+      "en": ["process pay", "pay run", "people cost", "salaries", "payroll taxes", "disbursement", "pay cycle"]
+    }
+  },
+  "pay-advance": {
+    "label": { "es": "Adelanto de nómina", "en": "Pay advance", "pt": "Adiantamento salarial", "fr": "Avance sur salaire", "de": "Gehaltsvorschuss", "it": "Anticipo dello stipendio", "ja": "給与前払い", "zh": "预支工资", "ko": "급여 선지급", "ar": "سلفة على الراتب" },
+    "keywords": {
+      "es": ["anticipo de sueldo", "salario bajo demanda", "préstamo al empleado", "salario devengado", "antes de la quincena", "liquidez", "EWA"],
+      "en": ["earned wage access", "EWA", "salary advance", "on-demand pay", "early pay", "before payday", "employee loan"]
+    }
+  },
+  "pay-raise": {
+    "label": { "es": "Aumento de sueldo", "en": "Pay raise", "pt": "Aumento salarial", "fr": "Augmentation de salaire", "de": "Gehaltserhöhung", "it": "Aumento di stipendio", "ja": "昇給", "zh": "加薪", "ko": "급여 인상", "ar": "زيادة الراتب" },
+    "keywords": {
+      "es": ["incremento salarial", "mérito", "revisión salarial", "ajuste", "promoción", "ganar más", "mejor pago"],
+      "en": ["merit increase", "salary increase", "pay rise", "compensation review", "adjustment", "promotion", "earn more"]
+    }
+  },
+  "bonus": {
+    "label": { "es": "Bono", "en": "Bonus", "pt": "Bônus", "fr": "Prime", "de": "Bonus", "it": "Bonus", "ja": "ボーナス", "zh": "奖金", "ko": "보너스", "ar": "مكافأة" },
+    "keywords": {
+      "es": ["incentivo", "compensación variable", "aguinaldo", "comisión", "premio", "gratificación", "estímulo"],
+      "en": ["incentive", "variable pay", "commission", "reward", "13th month", "spot award", "extra pay"]
+    }
+  },
+  "salary-band": {
+    "label": { "es": "Tabulador de sueldos", "en": "Salary band", "pt": "Faixa salarial", "fr": "Fourchette de salaire", "de": "Gehaltsband", "it": "Fascia retributiva", "ja": "給与レンジ", "zh": "薪资范围", "ko": "급여 범위", "ar": "نطاق الرواتب" },
+    "keywords": {
+      "es": ["rango salarial", "banda salarial", "nivel de puesto", "grado", "mínimo y máximo", "estructura salarial", "escala"],
+      "en": ["pay range", "pay grade", "compensation band", "level", "min and max", "salary structure", "pay scale"]
+    }
+  },
+  "pay-equity": {
+    "label": { "es": "Igualdad salarial", "en": "Pay equity", "pt": "Igualdade salarial", "fr": "Égalité salariale", "de": "Entgeltgleichheit", "it": "Parità retributiva", "ja": "賃金の公平性", "zh": "同工同酬", "ko": "임금 형평성", "ar": "المساواة في الأجور" },
+    "keywords": {
+      "es": ["mismo pago", "brecha salarial", "transparencia salarial", "equidad", "brecha de género", "pago justo", "NOM-025"],
+      "en": ["equal pay", "pay gap", "pay transparency", "fairness", "gender pay gap", "fair pay", "compensation audit"]
+    }
+  },
+  "profit-sharing": {
+    "label": { "es": "Reparto de utilidades", "en": "Profit sharing", "pt": "Participação nos lucros", "fr": "Participation aux bénéfices", "de": "Gewinnbeteiligung", "it": "Partecipazione agli utili", "ja": "利益分配", "zh": "利润分享", "ko": "이익 배분", "ar": "تقاسم الأرباح" },
+    "keywords": {
+      "es": ["PTU", "ganancias", "pago de mayo", "participación de los trabajadores", "bono anual", "dividendo", "beneficio anual"],
+      "en": ["PTU", "shared earnings", "profit bonus", "gainsharing", "annual payout", "employee share", "earnings"]
+    }
+  },
+  "benefits": {
+    "label": { "es": "Prestaciones", "en": "Benefits", "pt": "Benefícios", "fr": "Avantages sociaux", "de": "Zusatzleistungen", "it": "Benefit aziendali", "ja": "福利厚生", "zh": "员工福利", "ko": "복리후생", "ar": "مزايا الموظفين" },
+    "keywords": {
+      "es": ["beneficios", "seguro de gastos médicos", "cobertura", "fondo de ahorro", "aguinaldo", "superiores a la ley", "paquete de compensación"],
+      "en": ["perks", "health insurance", "coverage", "dental", "wellness", "401(k)", "total rewards"]
+    }
+  },
+  "retirement": {
+    "label": { "es": "Plan de retiro", "en": "Retirement plan", "pt": "Previdência", "fr": "Épargne retraite", "de": "Altersvorsorge", "it": "Piano pensionistico", "ja": "退職年金", "zh": "退休计划", "ko": "퇴직연금", "ar": "خطة التقاعد" },
+    "keywords": {
+      "es": ["Afore", "pensión", "jubilación", "aportaciones", "SAR", "fondo de pensiones", "vejez"],
+      "en": ["pension", "401(k)", "contributions", "savings plan", "employer match", "superannuation", "nest egg"]
+    }
+  },
+  "business-trip": {
+    "label": { "es": "Viaje de negocios", "en": "Business trip", "pt": "Viagem a trabalho", "fr": "Déplacement professionnel", "de": "Dienstreise", "it": "Trasferta", "ja": "出張", "zh": "出差", "ko": "출장", "ar": "رحلة عمل" },
+    "keywords": {
+      "es": ["viáticos", "solicitud de viaje", "comisión de trabajo", "gastos de viaje", "vuelo", "hospedaje", "reembolso"],
+      "en": ["travel request", "per diem", "travel expenses", "work travel", "flight", "hotel", "reimbursement"]
+    }
+  },
+  "employee": {
+    "label": { "es": "Empleado", "en": "Employee", "pt": "Funcionário", "fr": "Employé", "de": "Mitarbeiter", "it": "Dipendente", "ja": "従業員", "zh": "员工", "ko": "직원", "ar": "موظف" },
+    "keywords": {
+      "es": ["colaborador", "trabajador", "personal", "expediente del empleado", "HRIS", "plantilla", "ficha de personal"],
+      "en": ["staff member", "worker", "team member", "employee record", "HRIS", "personnel", "staff profile"]
+    }
+  },
+  "freelancer": {
+    "label": { "es": "Freelance", "en": "Freelancer", "pt": "Freelancer", "fr": "Freelance", "de": "Freiberufler", "it": "Libero professionista", "ja": "フリーランス", "zh": "自由职业者", "ko": "프리랜서", "ar": "عامل مستقل" },
+    "keywords": {
+      "es": ["independiente", "contratista", "por honorarios", "trabajador por cuenta propia", "por proyecto", "proveedor externo", "autónomo"],
+      "en": ["contractor", "independent worker", "self-employed", "gig worker", "1099", "consultant", "per project"]
+    }
+  },
+  "temp-worker": {
+    "label": { "es": "Personal temporal", "en": "Temporary worker", "pt": "Trabalhador temporário", "fr": "Intérimaire", "de": "Befristeter Mitarbeiter", "it": "Lavoratore temporaneo", "ja": "臨時従業員", "zh": "临时员工", "ko": "임시직 직원", "ar": "عامل مؤقت" },
+    "keywords": {
+      "es": ["eventual", "contrato por tiempo determinado", "periodo de prueba", "por obra", "temporada", "interino", "suplente"],
+      "en": ["temp", "fixed-term contract", "probation period", "seasonal worker", "contingent worker", "interim", "cover"]
+    }
+  },
+  "new-hire": {
+    "label": { "es": "Nuevo ingreso", "en": "New hire", "pt": "Novo contratado", "fr": "Nouvelle recrue", "de": "Neuer Mitarbeiter", "it": "Nuovo assunto", "ja": "新入社員", "zh": "新员工", "ko": "신규 입사자", "ar": "موظف جديد" },
+    "keywords": {
+      "es": ["onboarding", "integración", "primer día", "bienvenida", "alta de empleado", "recién contratado", "inducción"],
+      "en": ["onboarding", "first day", "welcome", "newcomer", "recently joined", "starter", "orientation"]
+    }
+  }
+}

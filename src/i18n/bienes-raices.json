@@ -1,0 +1,618 @@
+{
+  "house-plus": {
+    "label": { "es": "Agregar propiedad", "en": "Add property", "pt": "Adicionar imóvel", "fr": "Ajouter un bien", "de": "Immobilie hinzufügen", "it": "Aggiungi immobile", "ja": "物件を追加", "zh": "添加房源", "ko": "매물 등록", "ar": "إضافة عقار" },
+    "keywords": {
+      "es": ["publicar", "nuevo anuncio", "crear anuncio", "dar de alta", "registrar inmueble", "anunciar", "vender mi casa"],
+      "en": ["new listing", "create listing", "list a property", "publish", "post a listing", "register property", "advertise"]
+    }
+  },
+  "house-search": {
+    "label": { "es": "Buscar propiedades", "en": "Search properties", "pt": "Buscar imóveis", "fr": "Rechercher un bien", "de": "Immobilien suchen", "it": "Cerca immobili", "ja": "物件を探す", "zh": "搜索房源", "ko": "매물 검색", "ar": "البحث عن عقار" },
+    "keywords": {
+      "es": ["encontrar casa", "encontrar depa", "casas en venta", "filtros", "explorar", "inspección", "revisar inmueble"],
+      "en": ["find a home", "house hunting", "browse listings", "homes for sale", "filters", "explore", "inspection"]
+    }
+  },
+  "house-heart": {
+    "label": { "es": "Propiedades guardadas", "en": "Saved homes", "pt": "Imóveis salvos", "fr": "Biens enregistrés", "de": "Gespeicherte Immobilien", "it": "Immobili salvati", "ja": "保存した物件", "zh": "收藏的房源", "ko": "찜한 매물", "ar": "العقارات المحفوظة" },
+    "keywords": {
+      "es": ["favoritos", "me gusta", "lista de deseos", "casa soñada", "marcar", "me interesa", "seguimiento"],
+      "en": ["favorites", "like", "wishlist", "dream home", "shortlist", "bookmark", "interested"]
+    }
+  },
+  "house-check": {
+    "label": { "es": "Propiedad verificada", "en": "Verified property", "pt": "Imóvel verificado", "fr": "Bien vérifié", "de": "Geprüfte Immobilie", "it": "Immobile verificato", "ja": "確認済み物件", "zh": "已认证房源", "ko": "인증된 매물", "ar": "عقار موثّق" },
+    "keywords": {
+      "es": ["aprobada", "anuncio validado", "lista para habitar", "inspección aprobada", "certificada", "confiable", "revisada"],
+      "en": ["approved listing", "move-in ready", "inspected", "passed inspection", "certified", "trusted", "validated"]
+    }
+  },
+  "house-star": {
+    "label": { "es": "Propiedad destacada", "en": "Featured property", "pt": "Imóvel em destaque", "fr": "Bien à la une", "de": "Top-Immobilie", "it": "Immobile in evidenza", "ja": "おすすめ物件", "zh": "精选房源", "ko": "추천 매물", "ar": "عقار مميز" },
+    "keywords": {
+      "es": ["anuncio premium", "anuncio patrocinado", "recomendada", "exclusiva", "promocionada", "favorita", "top"],
+      "en": ["premium listing", "sponsored listing", "recommended", "spotlight", "exclusive", "promoted", "top pick"]
+    }
+  },
+  "house-gear": {
+    "label": { "es": "Configuración de la propiedad", "en": "Property settings", "pt": "Configurações do imóvel", "fr": "Paramètres du bien", "de": "Immobilieneinstellungen", "it": "Impostazioni dell’immobile", "ja": "物件の設定", "zh": "房源设置", "ko": "부동산 설정", "ar": "إعدادات العقار" },
+    "keywords": {
+      "es": ["administración de inmuebles", "gestionar", "ajustes", "preferencias", "administrador", "mantenimiento", "operación del inmueble"],
+      "en": ["property management", "manage", "preferences", "configuration", "property manager", "maintenance", "operations"]
+    }
+  },
+  "house-clock": {
+    "label": { "es": "Agendar visita", "en": "Schedule a viewing", "pt": "Agendar visita", "fr": "Planifier une visite", "de": "Besichtigung planen", "it": "Prenota una visita", "ja": "内覧予約", "zh": "预约看房", "ko": "방문 예약", "ar": "جدولة معاينة" },
+    "keywords": {
+      "es": ["cita", "horario", "ver la casa", "conocer el depa", "recorrido", "calendario", "disponibilidad"],
+      "en": ["showing", "appointment", "book a tour", "viewing time", "see the home", "calendar", "availability"]
+    }
+  },
+  "house-block": {
+    "label": { "es": "Propiedad no disponible", "en": "Unavailable property", "pt": "Imóvel indisponível", "fr": "Bien indisponible", "de": "Nicht verfügbare Immobilie", "it": "Immobile non disponibile", "ja": "掲載停止中の物件", "zh": "已下架房源", "ko": "거래 불가 매물", "ar": "عقار غير متاح" },
+    "keywords": {
+      "es": ["fuera del mercado", "retirada", "dada de baja", "pausada", "bloqueada", "inactiva", "no se vende"],
+      "en": ["off the market", "withdrawn", "delisted", "paused", "blocked", "inactive", "not for sale"]
+    }
+  },
+  "house-question": {
+    "label": { "es": "Preguntar por la propiedad", "en": "Ask about property", "pt": "Perguntar sobre o imóvel", "fr": "Question sur le bien", "de": "Anfrage zur Immobilie", "it": "Richiedi informazioni", "ja": "物件のお問い合わせ", "zh": "房源咨询", "ko": "매물 문의", "ar": "الاستفسار عن العقار" },
+    "keywords": {
+      "es": ["consulta", "pedir informes", "más información", "contactar al agente", "contactar al dueño", "duda", "solicitud de información"],
+      "en": ["inquiry", "request info", "more info", "contact agent", "contact landlord", "ask the owner", "question"]
+    }
+  },
+  "house-edit": {
+    "label": { "es": "Editar anuncio", "en": "Edit listing", "pt": "Editar anúncio", "fr": "Modifier l’annonce", "de": "Anzeige bearbeiten", "it": "Modifica annuncio", "ja": "物件情報を編集", "zh": "编辑房源", "ko": "매물 수정", "ar": "تعديل الإعلان" },
+    "keywords": {
+      "es": ["modificar", "actualizar datos", "cambiar precio", "cambiar fotos", "corregir", "datos del inmueble", "ficha de la propiedad"],
+      "en": ["modify", "update details", "change price", "update photos", "correct", "property details", "revise"]
+    }
+  },
+  "house-alert": {
+    "label": { "es": "Problema en la propiedad", "en": "Property issue", "pt": "Problema no imóvel", "fr": "Problème sur le bien", "de": "Problem an der Immobilie", "it": "Problema nell’immobile", "ja": "物件のトラブル", "zh": "房屋问题", "ko": "부동산 문제", "ar": "مشكلة في العقار" },
+    "keywords": {
+      "es": ["alerta", "incidencia", "reporte", "falla", "infracción", "multa", "aviso", "urgente"],
+      "en": ["alert", "violation", "code violation", "reported problem", "incident", "damage", "warning", "urgent"]
+    }
+  },
+  "house-vacant": {
+    "label": { "es": "Propiedad desocupada", "en": "Vacant property", "pt": "Imóvel vago", "fr": "Logement vacant", "de": "Leerstehende Immobilie", "it": "Immobile libero", "ja": "空室", "zh": "空置房", "ko": "공실", "ar": "عقار شاغر" },
+    "keywords": {
+      "es": ["disponible", "vacía", "deshabitada", "sin inquilino", "unidad libre", "lista para rentar", "entrega inmediata", "vacante"],
+      "en": ["available", "empty", "unoccupied", "no tenant", "vacancy", "ready to rent", "immediate move-in"]
+    }
+  },
+  "house-pin": {
+    "label": { "es": "Ubicación de la propiedad", "en": "Property location", "pt": "Localização do imóvel", "fr": "Emplacement du bien", "de": "Lage der Immobilie", "it": "Posizione dell’immobile", "ja": "物件の所在地", "zh": "房产位置", "ko": "매물 위치", "ar": "موقع العقار" },
+    "keywords": {
+      "es": ["dirección", "domicilio", "mapa", "pin en el mapa", "cómo llegar", "búsqueda en mapa", "zona", "geolocalización"],
+      "en": ["address", "map", "map pin", "directions", "map search", "neighborhood", "geolocation"]
+    }
+  },
+  "house-key": {
+    "label": { "es": "Llaves de la casa", "en": "House keys", "pt": "Chaves de casa", "fr": "Clés de la maison", "de": "Hausschlüssel", "it": "Chiavi di casa", "ja": "家の鍵", "zh": "房屋钥匙", "ko": "집 열쇠", "ar": "مفاتيح المنزل" },
+    "keywords": {
+      "es": ["rentar", "renta", "mudarse", "nuevo hogar", "estrenar casa", "casa propia", "inquilino", "acceso"],
+      "en": ["rent", "rental", "move in", "new home", "handover", "homeowner", "tenant", "access"]
+    }
+  },
+  "open-house": {
+    "label": { "es": "Casa abierta", "en": "Open house", "pt": "Casa aberta", "fr": "Portes ouvertes", "de": "Offene Besichtigung", "it": "Casa aperta", "ja": "オープンハウス", "zh": "开放看房", "ko": "오픈 하우스", "ar": "منزل مفتوح للزيارة" },
+    "keywords": {
+      "es": ["open house", "visita abierta", "día de visitas", "visita sin cita", "recorrido", "conocer la casa", "evento"],
+      "en": ["viewing event", "showing", "walk-through", "tour the home", "open inspection", "drop-in", "visit"]
+    }
+  },
+  "two-story-house": {
+    "label": { "es": "Casa de dos pisos", "en": "Two-story house", "pt": "Sobrado", "fr": "Maison à étage", "de": "Zweistöckiges Haus", "it": "Casa su due piani", "ja": "二階建ての家", "zh": "两层住宅", "ko": "2층 주택", "ar": "منزل من طابقين" },
+    "keywords": {
+      "es": ["dos niveles", "dos plantas", "planta alta", "número de niveles", "casa con escaleras", "tipo de propiedad"],
+      "en": ["two-level", "two floors", "upstairs", "number of stories", "storeys", "property type"]
+    }
+  },
+  "duplex": {
+    "label": { "es": "Dúplex", "en": "Duplex", "pt": "Casa geminada", "fr": "Maison jumelée", "de": "Doppelhaus", "it": "Villetta bifamiliare", "ja": "二世帯住宅", "zh": "双拼别墅", "ko": "듀플렉스 주택", "ar": "منزل مزدوج" },
+    "keywords": {
+      "es": ["dos viviendas", "casa doble", "casa pareada", "dos unidades", "bifamiliar", "multifamiliar", "tipo de propiedad"],
+      "en": ["semi-detached", "two-family home", "two units", "twin home", "multifamily", "house hack", "property type"]
+    }
+  },
+  "cabin": {
+    "label": { "es": "Cabaña", "en": "Cabin", "pt": "Cabana", "fr": "Chalet", "de": "Hütte", "it": "Baita", "ja": "山小屋", "zh": "小木屋", "ko": "오두막", "ar": "كوخ" },
+    "keywords": {
+      "es": ["casa de campo", "casa de descanso", "chalet", "casa en el bosque", "casa de madera", "retiro", "vacaciones", "tipo de propiedad"],
+      "en": ["a-frame", "country house", "vacation home", "lodge", "cottage", "chalet", "retreat", "property type"]
+    }
+  },
+  "villa": {
+    "label": { "es": "Villa", "en": "Villa", "pt": "Mansão", "fr": "Villa", "de": "Villa", "it": "Villa", "ja": "邸宅", "zh": "别墅", "ko": "고급 주택", "ar": "فيلا" },
+    "keywords": {
+      "es": ["residencia", "mansión", "casa de lujo", "casa grande", "casa con jardín", "propiedad exclusiva", "tipo de propiedad"],
+      "en": ["mansion", "luxury home", "estate", "large house", "high-end property", "residence", "property type"]
+    }
+  },
+  "modern-house": {
+    "label": { "es": "Casa moderna", "en": "Modern house", "pt": "Casa moderna", "fr": "Maison moderne", "de": "Modernes Haus", "it": "Casa moderna", "ja": "モダン住宅", "zh": "现代风格住宅", "ko": "모던 하우스", "ar": "منزل عصري" },
+    "keywords": {
+      "es": ["casa contemporánea", "techo plano", "arquitectura moderna", "casa minimalista", "diseño de autor", "obra nueva", "tipo de propiedad"],
+      "en": ["contemporary home", "flat roof", "modern architecture", "minimalist house", "architect-designed", "new build", "property type"]
+    }
+  },
+  "apartment": {
+    "label": { "es": "Departamento", "en": "Apartment", "pt": "Apartamento", "fr": "Appartement", "de": "Wohnung", "it": "Appartamento", "ja": "マンション", "zh": "公寓", "ko": "아파트", "ar": "شقة" },
+    "keywords": {
+      "es": ["depa", "condominio", "edificio residencial", "vivienda vertical", "unidad habitacional", "loft", "tipo de propiedad", "renta"],
+      "en": ["condo", "flat", "apartment building", "unit", "multifamily", "loft", "property type", "for rent"]
+    }
+  },
+  "townhouse": {
+    "label": { "es": "Casa adosada", "en": "Townhouse", "pt": "Casa em fileira", "fr": "Maison de ville", "de": "Reihenhaus", "it": "Casa a schiera", "ja": "タウンハウス", "zh": "联排别墅", "ko": "타운하우스", "ar": "منزل متلاصق" },
+    "keywords": {
+      "es": ["townhouse", "condominio horizontal", "casas en serie", "casas en hilera", "conjunto residencial", "vivienda unifamiliar", "tipo de propiedad"],
+      "en": ["row house", "terraced house", "townhome", "rowhome", "attached home", "single-family attached", "property type"]
+    }
+  },
+  "tiny-house": {
+    "label": { "es": "Minicasa", "en": "Tiny house", "pt": "Minicasa", "fr": "Mini-maison", "de": "Minihaus", "it": "Minicasa", "ja": "タイニーハウス", "zh": "微型房屋", "ko": "타이니 하우스", "ar": "منزل صغير متنقل" },
+    "keywords": {
+      "es": ["tiny house", "casa sobre ruedas", "casa móvil", "casa rodante", "vivienda compacta", "remolque", "vida minimalista", "tipo de propiedad"],
+      "en": ["house on wheels", "mobile home", "trailer home", "micro home", "compact living", "minimalist living", "property type"]
+    }
+  },
+  "mixed-use": {
+    "label": { "es": "Uso mixto", "en": "Mixed-use", "pt": "Uso misto", "fr": "Usage mixte", "de": "Wohn- und Geschäftshaus", "it": "Uso misto", "ja": "店舗併用住宅", "zh": "商住两用", "ko": "주상복합", "ar": "استخدام مختلط" },
+    "keywords": {
+      "es": ["local comercial", "habitacional y comercial", "casa con local", "edificio comercial", "inmueble comercial", "oficinas", "plaza comercial", "tipo de propiedad"],
+      "en": ["commercial property", "residential and commercial", "storefront", "live-work", "retail space", "office space", "commercial listing", "property type"]
+    }
+  },
+  "land-plot": {
+    "label": { "es": "Terreno", "en": "Land", "pt": "Terreno", "fr": "Terrain", "de": "Grundstück", "it": "Terreno", "ja": "土地", "zh": "土地", "ko": "토지", "ar": "قطعة أرض" },
+    "keywords": {
+      "es": ["lote", "predio", "parcela", "lote en venta", "baldío", "superficie", "metros cuadrados", "tamaño del lote"],
+      "en": ["lot", "parcel", "plot", "vacant lot", "lot for sale", "lot size", "acreage", "building site"]
+    }
+  },
+  "subdivision": {
+    "label": { "es": "Lotificación", "en": "Subdivision", "pt": "Loteamento", "fr": "Lotissement", "de": "Parzellierung", "it": "Lottizzazione", "ja": "分譲地", "zh": "地块划分", "ko": "택지 분할", "ar": "تقسيم الأراضي" },
+    "keywords": {
+      "es": ["plano de lotes", "fraccionamiento", "venta de lotes", "desarrollo", "desarrolladora", "plano maestro", "manzanas", "plano de conjunto"],
+      "en": ["site plan", "lot layout", "lots for sale", "development", "developer", "master plan", "plat map", "parcels"]
+    }
+  },
+  "off-plan": {
+    "label": { "es": "Preventa", "en": "Pre-construction", "pt": "Venda na planta", "fr": "Vente sur plan", "de": "Kauf vom Plan", "it": "Vendita su carta", "ja": "完成前販売", "zh": "期房", "ko": "선분양", "ar": "بيع على الخارطة" },
+    "keywords": {
+      "es": ["en construcción", "obra negra", "precio de preventa", "sobre plano", "desarrollo inmobiliario", "entrega futura", "edificio en obra", "proyecto"],
+      "en": ["off-plan", "presale", "under construction", "new development", "buy from plans", "future delivery", "new build"]
+    }
+  },
+  "storage-unit": {
+    "label": { "es": "Bodega", "en": "Storage unit", "pt": "Depósito", "fr": "Box de stockage", "de": "Lagerraum", "it": "Deposito", "ja": "トランクルーム", "zh": "储物间", "ko": "보관 창고", "ar": "وحدة تخزين" },
+    "keywords": {
+      "es": ["minibodega", "almacenamiento", "trastero", "self storage", "guardar muebles", "cuarto de guardado", "espacio extra", "renta de espacio"],
+      "en": ["self storage", "storeroom", "storage locker", "mini storage", "locker", "store belongings", "extra space"]
+    }
+  },
+  "properties": {
+    "label": { "es": "Propiedades", "en": "Properties", "pt": "Imóveis", "fr": "Biens immobiliers", "de": "Immobilien", "it": "Immobili", "ja": "物件一覧", "zh": "房产", "ko": "부동산 목록", "ar": "العقارات" },
+    "keywords": {
+      "es": ["inmuebles", "portafolio", "cartera de inmuebles", "listado de inmuebles", "bienes raíces", "administración", "unidades", "inventario"],
+      "en": ["real estate", "portfolio", "property portfolio", "rentals", "units", "buildings", "property management", "inventory"]
+    }
+  },
+  "neighborhood": {
+    "label": { "es": "Colonia", "en": "Neighborhood", "pt": "Bairro", "fr": "Quartier", "de": "Wohngegend", "it": "Quartiere", "ja": "周辺環境", "zh": "周边社区", "ko": "동네", "ar": "الحي" },
+    "keywords": {
+      "es": ["vecindario", "barrio", "zona", "alrededores", "entorno", "guía de la zona", "zona residencial", "ubicación"],
+      "en": ["area", "district", "area guide", "surroundings", "local area", "residential area", "community", "location"]
+    }
+  },
+  "gated-community": {
+    "label": { "es": "Fraccionamiento privado", "en": "Gated community", "pt": "Condomínio fechado", "fr": "Résidence fermée", "de": "Geschlossene Wohnanlage", "it": "Comprensorio privato", "ja": "ゲーテッドコミュニティ", "zh": "封闭式小区", "ko": "게이티드 커뮤니티", "ar": "مجمع سكني مسوّر" },
+    "keywords": {
+      "es": ["privada", "coto", "residencial", "condominio horizontal", "comunidad cerrada", "acceso controlado", "conjunto cerrado", "seguridad"],
+      "en": ["private community", "enclave", "residential complex", "controlled access", "walled community", "secure community", "HOA community"]
+    }
+  },
+  "gatehouse": {
+    "label": { "es": "Caseta de vigilancia", "en": "Gatehouse", "pt": "Guarita", "fr": "Poste de garde", "de": "Pförtnerhaus", "it": "Guardiola", "ja": "守衛所", "zh": "门卫室", "ko": "경비실", "ar": "غرفة الحراسة" },
+    "keywords": {
+      "es": ["vigilancia 24 horas", "guardia", "vigilante", "portería", "control de acceso", "pluma de acceso", "seguridad", "entrada"],
+      "en": ["guard booth", "security guard", "24-hour security", "controlled access", "gate", "entry checkpoint", "doorman", "security post"]
+    }
+  },
+  "waterfront": {
+    "label": { "es": "Frente al mar", "en": "Waterfront", "pt": "Beira-mar", "fr": "Bord de l’eau", "de": "Wassergrundstück", "it": "Fronte mare", "ja": "ウォーターフロント", "zh": "滨水房产", "ko": "수변 주택", "ar": "على الواجهة المائية" },
+    "keywords": {
+      "es": ["playa", "frente a la playa", "frente al lago", "vista al mar", "acceso a la playa", "orilla", "costa", "malecón"],
+      "en": ["beachfront", "lakefront", "oceanfront", "ocean view", "beach access", "riverfront", "shoreline", "coastal"]
+    }
+  },
+  "sun-exposure": {
+    "label": { "es": "Orientación solar", "en": "Sun exposure", "pt": "Orientação solar", "fr": "Ensoleillement", "de": "Sonnenlage", "it": "Esposizione al sole", "ja": "日当たり", "zh": "朝向采光", "ko": "채광", "ar": "التعرض للشمس" },
+    "keywords": {
+      "es": ["luz natural", "iluminación", "asoleamiento", "orientación sur", "hacia dónde da", "sol de la mañana", "luminoso"],
+      "en": ["orientation", "natural light", "sunlight", "south-facing", "daylight", "morning sun", "bright"]
+    }
+  },
+  "yard": {
+    "label": { "es": "Jardín", "en": "Yard", "pt": "Quintal", "fr": "Jardin", "de": "Garten", "it": "Giardino", "ja": "庭", "zh": "院子", "ko": "마당", "ar": "حديقة" },
+    "keywords": {
+      "es": ["patio", "patio trasero", "área verde", "pasto", "espacio al aire libre", "exterior privado", "amenidad"],
+      "en": ["garden", "backyard", "front yard", "lawn", "outdoor space", "green area", "private outdoor"]
+    }
+  },
+  "for-sale-sign": {
+    "label": { "es": "En venta", "en": "For sale", "pt": "À venda", "fr": "À vendre", "de": "Zu verkaufen", "it": "In vendita", "ja": "売り出し中", "zh": "出售中", "ko": "판매 중", "ar": "للبيع" },
+    "keywords": {
+      "es": ["se vende", "se renta", "en renta", "letrero", "anuncio", "vender mi casa", "en el mercado", "publicar inmueble"],
+      "en": ["for rent", "yard sign", "sell your home", "on the market", "listing", "for sale by owner", "sign"]
+    }
+  },
+  "for-sale-sign-check": {
+    "label": { "es": "Vendido", "en": "Sold", "pt": "Vendido", "fr": "Vendu", "de": "Verkauft", "it": "Venduto", "ja": "成約済み", "zh": "已售出", "ko": "거래 완료", "ar": "تم البيع" },
+    "keywords": {
+      "es": ["rentado", "operación cerrada", "venta concretada", "trato cerrado", "cierre", "ya no disponible", "anuncio cerrado"],
+      "en": ["rented", "leased", "deal closed", "sale completed", "closing", "no longer available", "closed listing"]
+    }
+  },
+  "for-sale-sign-clock": {
+    "label": { "es": "Venta en proceso", "en": "Sale pending", "pt": "Em negociação", "fr": "Vente en cours", "de": "Verkauf ausstehend", "it": "Vendita in corso", "ja": "商談中", "zh": "交易进行中", "ko": "계약 진행 중", "ar": "البيع قيد الإتمام" },
+    "keywords": {
+      "es": ["apartado", "en trámite", "bajo contrato", "oferta aceptada", "en negociación", "reservado", "próximamente", "pendiente"],
+      "en": ["pending", "under contract", "offer accepted", "contingent", "in escrow", "reserved", "coming soon"]
+    }
+  },
+  "listing": {
+    "label": { "es": "Anuncio de propiedad", "en": "Property listing", "pt": "Anúncio de imóvel", "fr": "Annonce immobilière", "de": "Immobilienanzeige", "it": "Annuncio immobiliare", "ja": "物件情報", "zh": "房源", "ko": "매물 정보", "ar": "إعلان عقاري" },
+    "keywords": {
+      "es": ["ficha", "publicación", "tarjeta", "resultado de búsqueda", "inmueble", "detalle de la propiedad", "listado", "ficha técnica"],
+      "en": ["listing card", "search result", "property card", "MLS", "property details", "real estate ad", "ad"]
+    }
+  },
+  "house-price": {
+    "label": { "es": "Precio de la propiedad", "en": "Property price", "pt": "Preço do imóvel", "fr": "Prix du bien", "de": "Immobilienpreis", "it": "Prezzo dell’immobile", "ja": "物件価格", "zh": "房价", "ko": "집값", "ar": "سعر العقار" },
+    "keywords": {
+      "es": ["valor", "avalúo", "valuación", "estimación", "precio de lista", "precio de venta", "cuánto vale mi casa", "costo"],
+      "en": ["home value", "valuation", "appraisal", "estimate", "asking price", "list price", "what is my home worth", "cost"]
+    }
+  },
+  "house-price-up": {
+    "label": { "es": "Aumento de precio", "en": "Price increase", "pt": "Aumento de preço", "fr": "Hausse du prix", "de": "Preiserhöhung", "it": "Aumento di prezzo", "ja": "価格上昇", "zh": "房价上涨", "ko": "가격 상승", "ar": "ارتفاع السعر" },
+    "keywords": {
+      "es": ["plusvalía", "revalorización", "apreciación", "subió el precio", "valor al alza", "mercado al alza", "ganancia"],
+      "en": ["appreciation", "value up", "price raised", "rising market", "equity", "home value growth", "gain"]
+    }
+  },
+  "house-price-down": {
+    "label": { "es": "Precio rebajado", "en": "Price reduced", "pt": "Preço reduzido", "fr": "Prix réduit", "de": "Preis gesenkt", "it": "Prezzo ribassato", "ja": "値下げ", "zh": "降价", "ko": "가격 인하", "ar": "تخفيض السعر" },
+    "keywords": {
+      "es": ["rebaja", "bajó de precio", "descuento", "ajuste de precio", "precio a la baja", "oportunidad", "remate", "depreciación"],
+      "en": ["price cut", "price drop", "discount", "price adjustment", "deal", "bargain", "depreciation"]
+    }
+  },
+  "virtual-tour": {
+    "label": { "es": "Recorrido virtual", "en": "Virtual tour", "pt": "Tour virtual", "fr": "Visite virtuelle", "de": "Virtueller Rundgang", "it": "Tour virtuale", "ja": "バーチャル内覧", "zh": "虚拟看房", "ko": "가상 투어", "ar": "جولة افتراضية" },
+    "keywords": {
+      "es": ["tour 360", "vista 360", "3D", "visita en línea", "visita a distancia", "realidad virtual", "matterport"],
+      "en": ["360 tour", "3D tour", "online viewing", "remote viewing", "walkthrough", "virtual reality", "matterport"]
+    }
+  },
+  "floor-plan": {
+    "label": { "es": "Plano de planta", "en": "Floor plan", "pt": "Planta baixa", "fr": "Plan du logement", "de": "Grundriss", "it": "Planimetria", "ja": "間取り図", "zh": "户型图", "ko": "평면도", "ar": "مخطط الطابق" },
+    "keywords": {
+      "es": ["distribución", "plano arquitectónico", "croquis", "layout", "medidas", "metros cuadrados", "recámaras", "planta tipo"],
+      "en": ["layout", "blueprint", "floorplan", "room layout", "square footage", "unit plan", "dimensions"]
+    }
+  },
+  "house-compare": {
+    "label": { "es": "Comparar propiedades", "en": "Compare properties", "pt": "Comparar imóveis", "fr": "Comparer des biens", "de": "Immobilien vergleichen", "it": "Confronta immobili", "ja": "物件を比較", "zh": "比较房源", "ko": "매물 비교", "ar": "مقارنة العقارات" },
+    "keywords": {
+      "es": ["comparativa", "comparador", "lado a lado", "versus", "diferencias", "opciones", "elegir"],
+      "en": ["comparison", "side by side", "versus", "differences", "options", "shortlist", "choose"]
+    }
+  },
+  "key-ring": {
+    "label": { "es": "Llavero", "en": "Key ring", "pt": "Molho de chaves", "fr": "Trousseau de clés", "de": "Schlüsselbund", "it": "Mazzo di chiavi", "ja": "キーリング", "zh": "钥匙串", "ko": "열쇠 꾸러미", "ar": "حلقة مفاتيح" },
+    "keywords": {
+      "es": ["juego de llaves", "manojo de llaves", "copias", "duplicados", "argolla", "llaves del departamento", "cerrajería"],
+      "en": ["keychain", "set of keys", "bunch of keys", "spare keys", "duplicates", "copies", "locksmith"]
+    }
+  },
+  "key-tag": {
+    "label": { "es": "Llave etiquetada", "en": "Labeled key", "pt": "Chave com etiqueta", "fr": "Clé étiquetée", "de": "Schlüssel mit Etikett", "it": "Chiave etichettata", "ja": "タグ付きの鍵", "zh": "带标签的钥匙", "ko": "이름표 달린 열쇠", "ar": "مفتاح بملصق" },
+    "keywords": {
+      "es": ["control de llaves", "inventario de llaves", "etiqueta", "marbete", "número de unidad", "qué llave abre", "identificar"],
+      "en": ["key management", "key control", "key tag", "key inventory", "unit number", "which key", "identify"]
+    }
+  },
+  "key-handover": {
+    "label": { "es": "Entrega de llaves", "en": "Key handover", "pt": "Entrega das chaves", "fr": "Remise des clés", "de": "Schlüsselübergabe", "it": "Consegna delle chiavi", "ja": "鍵の引き渡し", "zh": "交钥匙", "ko": "열쇠 인도", "ar": "تسليم المفاتيح" },
+    "keywords": {
+      "es": ["cierre", "escrituración", "recibir la casa", "entrega del inmueble", "nuevo dueño", "mudanza", "firma", "bienvenida"],
+      "en": ["closing", "closing day", "move-in", "handing over", "new owner", "possession", "welcome home"]
+    }
+  },
+  "key-return": {
+    "label": { "es": "Devolución de llaves", "en": "Key return", "pt": "Devolução das chaves", "fr": "Restitution des clés", "de": "Schlüsselrückgabe", "it": "Restituzione delle chiavi", "ja": "鍵の返却", "zh": "归还钥匙", "ko": "열쇠 반납", "ar": "إعادة المفاتيح" },
+    "keywords": {
+      "es": ["desocupar", "fin del contrato", "terminar la renta", "entregar el depa", "salida", "mudanza", "check-out"],
+      "en": ["move-out", "end of lease", "end of rental", "hand back", "vacate", "check-out", "returning"]
+    }
+  },
+  "key-fob": {
+    "label": { "es": "Tag de acceso", "en": "Key fob", "pt": "Tag de acesso", "fr": "Badge d’accès", "de": "Zugangstransponder", "it": "Chiavetta di accesso", "ja": "電子キー", "zh": "门禁钥匙扣", "ko": "출입 태그", "ar": "مفتاح إلكتروني للدخول" },
+    "keywords": {
+      "es": ["llavero electrónico", "tarjeta de proximidad", "control de acceso", "portón", "estacionamiento", "pluma", "chip", "RFID"],
+      "en": ["access fob", "proximity tag", "RFID", "gate access", "garage", "building entry", "electronic key", "keyless entry"]
+    }
+  },
+  "lockbox": {
+    "label": { "es": "Caja de llaves", "en": "Lockbox", "pt": "Cofre para chaves", "fr": "Boîte à clés", "de": "Schlüsselsafe", "it": "Cassetta portachiavi", "ja": "キーボックス", "zh": "密码钥匙盒", "ko": "키 박스", "ar": "صندوق المفاتيح" },
+    "keywords": {
+      "es": ["lockbox", "caja con combinación", "candado de llaves", "autoacceso", "visita sin agente", "check-in autónomo", "caja de seguridad"],
+      "en": ["key safe", "key box", "combination lock", "self-showing", "self check-in", "agent access", "keyless"]
+    }
+  },
+  "real-estate-agent": {
+    "label": { "es": "Agente inmobiliario", "en": "Real estate agent", "pt": "Corretor de imóveis", "fr": "Agent immobilier", "de": "Immobilienmakler", "it": "Agente immobiliare", "ja": "不動産エージェント", "zh": "房产经纪人", "ko": "공인중개사", "ar": "وكيل عقاري" },
+    "keywords": {
+      "es": ["asesor inmobiliario", "corredor", "broker", "inmobiliaria", "realtor", "vendedor", "promotor", "contacto"],
+      "en": ["realtor", "broker", "listing agent", "buyer's agent", "realty", "salesperson", "contact agent"]
+    }
+  },
+  "landlord": {
+    "label": { "es": "Propietario", "en": "Landlord", "pt": "Proprietário", "fr": "Propriétaire", "de": "Vermieter", "it": "Proprietario", "ja": "家主", "zh": "房东", "ko": "집주인", "ar": "المالك" },
+    "keywords": {
+      "es": ["dueño", "arrendador", "casero", "rentista", "dueño del inmueble", "titular", "quien renta", "inversionista"],
+      "en": ["property owner", "owner", "lessor", "homeowner", "proprietor", "rental owner", "investor"]
+    }
+  },
+  "tenant": {
+    "label": { "es": "Inquilino", "en": "Tenant", "pt": "Inquilino", "fr": "Locataire", "de": "Mieter", "it": "Inquilino", "ja": "入居者", "zh": "租客", "ko": "세입자", "ar": "المستأجر" },
+    "keywords": {
+      "es": ["arrendatario", "residente", "ocupante", "quien renta", "habitante", "huésped", "renta"],
+      "en": ["renter", "resident", "occupant", "lessee", "leaseholder", "occupier", "rental"]
+    }
+  },
+  "residents": {
+    "label": { "es": "Residentes", "en": "Residents", "pt": "Moradores", "fr": "Résidents", "de": "Bewohner", "it": "Residenti", "ja": "居住者", "zh": "住户", "ko": "거주자", "ar": "السكان" },
+    "keywords": {
+      "es": ["inquilinos", "hogar", "familia", "roomies", "compañeros de cuarto", "coliving", "vivienda compartida", "condóminos"],
+      "en": ["tenants", "household", "family", "roommates", "co-living", "shared housing", "occupants", "tenant list"]
+    }
+  },
+  "lease": {
+    "label": { "es": "Contrato de renta", "en": "Lease", "pt": "Contrato de aluguel", "fr": "Bail", "de": "Mietvertrag", "it": "Contratto di affitto", "ja": "賃貸借契約", "zh": "租赁合同", "ko": "임대차 계약", "ar": "عقد الإيجار" },
+    "keywords": {
+      "es": ["arrendamiento", "acuerdo de renta", "firmar", "plazo forzoso", "cláusulas", "póliza jurídica", "fiador", "aval"],
+      "en": ["rental agreement", "tenancy agreement", "contract", "sign", "terms and conditions", "guarantor", "landlord and tenant"]
+    }
+  },
+  "lease-renewal": {
+    "label": { "es": "Renovar contrato", "en": "Renew lease", "pt": "Renovar contrato", "fr": "Renouveler le bail", "de": "Mietvertrag verlängern", "it": "Rinnova contratto", "ja": "契約更新", "zh": "续租", "ko": "계약 갱신", "ar": "تجديد عقد الإيجار" },
+    "keywords": {
+      "es": ["prórroga", "extender la renta", "otro año", "nuevo plazo", "seguir rentando", "aumento de renta", "actualizar contrato"],
+      "en": ["re-sign", "extension", "extend", "another year", "new term", "rent increase", "stay longer"]
+    }
+  },
+  "lease-expiring": {
+    "label": { "es": "Contrato por vencer", "en": "Lease expiring", "pt": "Contrato a vencer", "fr": "Bail arrivant à échéance", "de": "Mietvertrag läuft aus", "it": "Contratto in scadenza", "ja": "契約満了間近", "zh": "租约即将到期", "ko": "만료 임박 계약", "ar": "عقد يوشك على الانتهاء" },
+    "keywords": {
+      "es": ["vencimiento", "fin de contrato", "fecha límite", "aviso de término", "días restantes", "por terminar", "desocupación"],
+      "en": ["expiration", "end date", "ending soon", "days left", "term ending", "notice to vacate", "lease end"]
+    }
+  },
+  "lease-application": {
+    "label": { "es": "Solicitud de renta", "en": "Rental application", "pt": "Proposta de locação", "fr": "Dossier de location", "de": "Mietbewerbung", "it": "Domanda di locazione", "ja": "入居申込書", "zh": "租房申请", "ko": "임대 신청서", "ar": "طلب استئجار" },
+    "keywords": {
+      "es": ["formulario", "aplicar", "investigación de inquilino", "requisitos", "comprobante de ingresos", "aval", "firmar", "solicitar departamento"],
+      "en": ["application form", "apply", "tenant screening", "requirements", "proof of income", "background check", "sign"]
+    }
+  },
+  "title-deed": {
+    "label": { "es": "Escrituras", "en": "Title deed", "pt": "Escritura", "fr": "Titre de propriété", "de": "Eigentumsnachweis", "it": "Atto di proprietà", "ja": "権利証", "zh": "房产证", "ko": "등기권리증", "ar": "سند الملكية" },
+    "keywords": {
+      "es": ["título de propiedad", "escritura pública", "notario", "registro público", "comprobante de propiedad", "dueño legal", "predial"],
+      "en": ["property title", "certificate of title", "proof of ownership", "ownership", "notary", "land registry", "title insurance"]
+    }
+  },
+  "rent-payment": {
+    "label": { "es": "Pago de renta", "en": "Rent payment", "pt": "Pagamento do aluguel", "fr": "Paiement du loyer", "de": "Mietzahlung", "it": "Pagamento dell’affitto", "ja": "家賃の支払い", "zh": "房租支付", "ko": "임대료 납부", "ar": "دفع الإيجار" },
+    "keywords": {
+      "es": ["cobrar renta", "renta mensual", "mensualidad", "alquiler", "recibo de arrendamiento", "cobranza", "transferencia"],
+      "en": ["pay rent", "collect rent", "monthly rent", "rent due", "rent collection", "receipt", "transfer"]
+    }
+  },
+  "security-deposit": {
+    "label": { "es": "Depósito en garantía", "en": "Security deposit", "pt": "Caução", "fr": "Dépôt de garantie", "de": "Mietkaution", "it": "Deposito cauzionale", "ja": "敷金", "zh": "押金", "ko": "보증금", "ar": "مبلغ التأمين" },
+    "keywords": {
+      "es": ["mes de depósito", "fianza", "reembolso", "devolución", "anticipo", "daños", "dinero retenido"],
+      "en": ["deposit", "damage deposit", "holding deposit", "bond", "refund", "deposit return", "first month"]
+    }
+  },
+  "condo-fee": {
+    "label": { "es": "Cuota de mantenimiento", "en": "HOA fee", "pt": "Taxa de condomínio", "fr": "Charges de copropriété", "de": "Hausgeld", "it": "Spese condominiali", "ja": "管理費", "zh": "物业费", "ko": "관리비", "ar": "رسوم الصيانة" },
+    "keywords": {
+      "es": ["cuota de condominio", "gastos comunes", "pago mensual", "administración del condominio", "asociación de colonos", "condóminos", "áreas comunes"],
+      "en": ["condo fee", "maintenance fee", "HOA dues", "common charges", "monthly fee", "service charge", "strata fee"]
+    }
+  },
+  "area-price": {
+    "label": { "es": "Precio por metro cuadrado", "en": "Price per square meter", "pt": "Preço por metro quadrado", "fr": "Prix au mètre carré", "de": "Quadratmeterpreis", "it": "Prezzo al metro quadro", "ja": "平米単価", "zh": "每平米单价", "ko": "제곱미터당 가격", "ar": "السعر للمتر المربع" },
+    "keywords": {
+      "es": ["precio por m²", "costo por metro", "valor del metro", "m2", "pies cuadrados", "precio unitario", "superficie", "avalúo"],
+      "en": ["price per square foot", "per m²", "sq ft", "price per sqm", "cost per area", "unit price", "valuation"]
+    }
+  },
+  "maintenance-request": {
+    "label": { "es": "Solicitud de mantenimiento", "en": "Maintenance request", "pt": "Solicitação de manutenção", "fr": "Demande d’intervention", "de": "Reparaturanfrage", "it": "Richiesta di manutenzione", "ja": "修繕依頼", "zh": "报修", "ko": "수리 요청", "ar": "طلب صيانة" },
+    "keywords": {
+      "es": ["reparación", "orden de trabajo", "reportar falla", "arreglo", "plomero", "electricista", "servicio técnico", "ticket"],
+      "en": ["repair", "work order", "report an issue", "fix", "plumber", "handyman", "service request", "ticket"]
+    }
+  },
+  "managed-property": {
+    "label": { "es": "Propiedad administrada", "en": "Managed property", "pt": "Imóvel administrado", "fr": "Bien en gestion", "de": "Verwaltete Immobilie", "it": "Immobile gestito", "ja": "管理物件", "zh": "托管房产", "ko": "위탁 관리 부동산", "ar": "عقار مُدار" },
+    "keywords": {
+      "es": ["administración de inmuebles", "administradora", "cuidado de la propiedad", "servicios al propietario", "gestión de rentas", "apoyo de vivienda", "property management"],
+      "en": ["property management", "property care", "landlord services", "rental management", "housing support", "caretaker"]
+    }
+  },
+  "utilities": {
+    "label": { "es": "Luz y agua", "en": "Utilities", "pt": "Água e luz", "fr": "Eau et électricité", "de": "Strom und Wasser", "it": "Utenze", "ja": "水道光熱費", "zh": "水电", "ko": "공과금", "ar": "الماء والكهرباء" },
+    "keywords": {
+      "es": ["servicios", "servicios incluidos", "electricidad", "recibo de luz", "recibo de agua", "gas", "CFE", "consumo"],
+      "en": ["power", "water", "electricity", "utilities included", "utility bill", "gas", "energy", "bills"]
+    }
+  },
+  "eco-home": {
+    "label": { "es": "Casa sustentable", "en": "Eco-friendly home", "pt": "Casa sustentável", "fr": "Maison écologique", "de": "Ökohaus", "it": "Casa ecologica", "ja": "エコ住宅", "zh": "绿色住宅", "ko": "친환경 주택", "ar": "منزل صديق للبيئة" },
+    "keywords": {
+      "es": ["eficiencia energética", "ecológica", "paneles solares", "certificación verde", "ahorro de energía", "vivienda verde", "hipoteca verde", "LEED"],
+      "en": ["energy efficient", "green certified", "solar panels", "sustainable", "energy saving", "net zero", "green building", "LEED"]
+    }
+  },
+  "vacation-rental": {
+    "label": { "es": "Renta vacacional", "en": "Vacation rental", "pt": "Aluguel por temporada", "fr": "Location de vacances", "de": "Ferienwohnung", "it": "Casa vacanze", "ja": "民泊", "zh": "度假租赁", "ko": "단기 임대", "ar": "إيجار لقضاء العطلات" },
+    "keywords": {
+      "es": ["airbnb", "renta corta", "estancia corta", "casa de playa", "hospedaje", "huéspedes", "por noche", "vacaciones"],
+      "en": ["short-term rental", "airbnb", "holiday home", "holiday let", "beach house", "guests", "nightly rate", "stay"]
+    }
+  },
+  "room-rental": {
+    "label": { "es": "Cuarto en renta", "en": "Room for rent", "pt": "Quarto para alugar", "fr": "Chambre à louer", "de": "Zimmer zu vermieten", "it": "Stanza in affitto", "ja": "貸し部屋", "zh": "单间出租", "ko": "방 임대", "ar": "غرفة للإيجار" },
+    "keywords": {
+      "es": ["habitación", "recámara", "roomie", "casa compartida", "depa compartido", "coliving", "subarrendar", "estudiantes"],
+      "en": ["private room", "spare room", "roommate", "shared house", "flatshare", "sublet", "lodger", "student housing"]
+    }
+  },
+  "moving-boxes": {
+    "label": { "es": "Cajas de mudanza", "en": "Moving boxes", "pt": "Caixas de mudança", "fr": "Cartons de déménagement", "de": "Umzugskartons", "it": "Scatoloni per trasloco", "ja": "引っ越しの段ボール", "zh": "搬家纸箱", "ko": "이삿짐 상자", "ar": "صناديق النقل" },
+    "keywords": {
+      "es": ["empacar", "embalaje", "empaque", "cartón", "mudarse", "cambiarse de casa", "guardar cosas"],
+      "en": ["packing", "pack up", "cardboard", "packing tape", "move house", "relocate", "storage"]
+    }
+  },
+  "moving-truck": {
+    "label": { "es": "Camión de mudanza", "en": "Moving truck", "pt": "Caminhão de mudança", "fr": "Camion de déménagement", "de": "Umzugswagen", "it": "Camion per traslochi", "ja": "引っ越しトラック", "zh": "搬家货车", "ko": "이삿짐 트럭", "ar": "شاحنة نقل الأثاث" },
+    "keywords": {
+      "es": ["mudanceros", "flete", "fletes y mudanzas", "servicio de mudanza", "transporte de muebles", "cargadores", "camioneta"],
+      "en": ["movers", "moving van", "removal van", "moving company", "furniture transport", "haul", "truck rental"]
+    }
+  },
+  "move-in": {
+    "label": { "es": "Mudarse", "en": "Move in", "pt": "Mudar-se", "fr": "Emménager", "de": "Einziehen", "it": "Trasferirsi", "ja": "入居", "zh": "入住", "ko": "입주", "ar": "الانتقال إلى المنزل" },
+    "keywords": {
+      "es": ["llegada", "nueva casa", "entrar a vivir", "fecha de entrada", "estrenar casa", "instalarse", "recibir el depa"],
+      "en": ["moving in", "new home", "move-in date", "settle in", "arrival", "occupancy", "check in"]
+    }
+  },
+  "move-out": {
+    "label": { "es": "Desocupar", "en": "Move out", "pt": "Desocupar", "fr": "Quitter le logement", "de": "Ausziehen", "it": "Lasciare casa", "ja": "退去", "zh": "搬出", "ko": "퇴거", "ar": "إخلاء المنزل" },
+    "keywords": {
+      "es": ["salida", "dejar la casa", "fin de renta", "entregar el depa", "fecha de salida", "mudanza", "irse"],
+      "en": ["moving out", "vacate", "move-out date", "end of tenancy", "leave", "departure", "check-out"]
+    }
+  },
+  "relocation": {
+    "label": { "es": "Cambio de domicilio", "en": "Relocation", "pt": "Mudança de endereço", "fr": "Changement d’adresse", "de": "Umzug", "it": "Trasloco", "ja": "転居", "zh": "搬家", "ko": "이사", "ar": "تغيير العنوان" },
+    "keywords": {
+      "es": ["mudanza", "nueva dirección", "reubicación", "cambiarse de casa", "trasladarse", "otra ciudad", "actualizar dirección"],
+      "en": ["moving", "change of address", "new address", "move house", "relocate", "transfer", "update address"]
+    }
+  },
+  "swimming-pool": {
+    "label": { "es": "Alberca", "en": "Swimming pool", "pt": "Piscina", "fr": "Piscine", "de": "Swimmingpool", "it": "Piscina", "ja": "プール", "zh": "游泳池", "ko": "수영장", "ar": "مسبح" },
+    "keywords": {
+      "es": ["piscina", "nadar", "chapoteadero", "climatizada", "jacuzzi", "casa club", "amenidad"],
+      "en": ["pool", "swim", "lap pool", "heated pool", "hot tub", "clubhouse", "amenity"]
+    }
+  },
+  "elevator": {
+    "label": { "es": "Elevador", "en": "Elevator", "pt": "Elevador", "fr": "Ascenseur", "de": "Aufzug", "it": "Ascensore", "ja": "エレベーター", "zh": "电梯", "ko": "엘리베이터", "ar": "مصعد" },
+    "keywords": {
+      "es": ["ascensor", "edificio", "pisos", "subir", "montacargas", "accesibilidad", "amenidad"],
+      "en": ["lift", "building", "floors", "go up", "freight elevator", "accessibility", "amenity"]
+    }
+  },
+  "laundry": {
+    "label": { "es": "Lavandería", "en": "Laundry", "pt": "Lavanderia", "fr": "Buanderie", "de": "Waschküche", "it": "Lavanderia", "ja": "ランドリー", "zh": "洗衣房", "ko": "세탁실", "ar": "غرفة الغسيل" },
+    "keywords": {
+      "es": ["lavadora", "secadora", "cuarto de lavado", "centro de lavado", "área de lavado", "lavar ropa", "amenidad"],
+      "en": ["washer", "dryer", "in-unit washer", "washing machine", "utility room", "laundromat", "amenity"]
+    }
+  },
+  "balcony": {
+    "label": { "es": "Balcón", "en": "Balcony", "pt": "Varanda", "fr": "Balcon", "de": "Balkon", "it": "Balcone", "ja": "バルコニー", "zh": "阳台", "ko": "발코니", "ar": "شرفة" },
+    "keywords": {
+      "es": ["terraza", "vista", "barandal", "espacio exterior", "aire libre", "amenidad"],
+      "en": ["veranda", "view", "railing", "outdoor space", "juliet balcony", "amenity"]
+    }
+  },
+  "terrace": {
+    "label": { "es": "Terraza", "en": "Terrace", "pt": "Terraço", "fr": "Terrasse", "de": "Terrasse", "it": "Terrazza", "ja": "テラス", "zh": "露台", "ko": "테라스", "ar": "تراس" },
+    "keywords": {
+      "es": ["patio", "deck", "área exterior", "asador", "aire libre", "espacio para reuniones", "amenidad"],
+      "en": ["patio", "deck", "outdoor area", "barbecue", "open-air", "outdoor seating", "amenity"]
+    }
+  },
+  "roof-garden": {
+    "label": { "es": "Jardín en azotea", "en": "Rooftop garden", "pt": "Jardim no terraço", "fr": "Toit-terrasse", "de": "Dachgarten", "it": "Giardino pensile", "ja": "屋上庭園", "zh": "屋顶花园", "ko": "옥상 정원", "ar": "حديقة على السطح" },
+    "keywords": {
+      "es": ["roof garden", "azotea", "terraza en azotea", "rooftop", "techo verde", "área social", "amenidad"],
+      "en": ["roof terrace", "roof garden", "roof deck", "green roof", "sky garden", "terrace", "amenity"]
+    }
+  },
+  "carport": {
+    "label": { "es": "Estacionamiento techado", "en": "Covered parking", "pt": "Garagem coberta", "fr": "Abri voiture", "de": "Carport", "it": "Posto auto coperto", "ja": "カーポート", "zh": "车棚", "ko": "지붕 있는 주차장", "ar": "موقف سيارات مغطى" },
+    "keywords": {
+      "es": ["cochera", "carport", "techumbre", "garage", "lugar para auto", "sombra", "cajones"],
+      "en": ["carport", "garage", "car shelter", "covered spot", "car space", "parking", "shade"]
+    }
+  },
+  "parking-space": {
+    "label": { "es": "Cajón de estacionamiento", "en": "Parking space", "pt": "Vaga de garagem", "fr": "Place de parking", "de": "Stellplatz", "it": "Posto auto", "ja": "駐車スペース", "zh": "车位", "ko": "주차 공간", "ar": "موقف سيارة مخصص" },
+    "keywords": {
+      "es": ["lugar de estacionamiento", "estacionamiento asignado", "número de cajones", "cochera", "lugares", "auto", "parking"],
+      "en": ["parking spot", "assigned parking", "parking stall", "number of spaces", "car space", "garage spot", "bay"]
+    }
+  },
+  "basement": {
+    "label": { "es": "Sótano", "en": "Basement", "pt": "Porão", "fr": "Sous-sol", "de": "Keller", "it": "Seminterrato", "ja": "地下室", "zh": "地下室", "ko": "지하실", "ar": "قبو" },
+    "keywords": {
+      "es": ["semisótano", "subterráneo", "nivel inferior", "bodega", "cuarto de máquinas", "almacenamiento", "cava"],
+      "en": ["cellar", "lower level", "underground", "garden level", "storage", "utility room", "crawl space"]
+    }
+  },
+  "attic": {
+    "label": { "es": "Ático", "en": "Attic", "pt": "Sótão", "fr": "Grenier", "de": "Dachboden", "it": "Soffitta", "ja": "屋根裏", "zh": "阁楼", "ko": "다락방", "ar": "علية" },
+    "keywords": {
+      "es": ["tapanco", "buhardilla", "desván", "mansarda", "loft", "bajo techo", "almacenamiento"],
+      "en": ["loft", "garret", "under the roof", "roof space", "dormer", "converted loft", "storage"]
+    }
+  },
+  "floor-level": {
+    "label": { "es": "Número de piso", "en": "Floor number", "pt": "Andar", "fr": "Étage", "de": "Etage", "it": "Piano", "ja": "所在階", "zh": "所在楼层", "ko": "해당 층", "ar": "رقم الطابق" },
+    "keywords": {
+      "es": ["nivel", "planta", "planta baja", "piso alto", "último piso", "en qué piso", "penthouse"],
+      "en": ["level", "story", "ground floor", "top floor", "high floor", "which floor", "penthouse"]
+    }
+  },
+  "room": {
+    "label": { "es": "Cuartos", "en": "Rooms", "pt": "Cômodos", "fr": "Pièces", "de": "Zimmer", "it": "Locali", "ja": "部屋数", "zh": "房间数", "ko": "방 개수", "ar": "عدد الغرف" },
+    "keywords": {
+      "es": ["habitaciones", "ambientes", "recámaras", "número de cuartos", "espacios", "distribución", "piezas"],
+      "en": ["room count", "total rooms", "bedrooms", "spaces", "layout", "living areas"]
+    }
+  },
+  "dollhouse-view": {
+    "label": { "es": "Maqueta 3D", "en": "3D dollhouse view", "pt": "Maquete 3D", "fr": "Vue 3D en coupe", "de": "3D-Modellansicht", "it": "Modello 3D", "ja": "3D間取り", "zh": "3D户型图", "ko": "3D 입체 보기", "ar": "مجسم ثلاثي الأبعاد" },
+    "keywords": {
+      "es": ["modelo 3D", "casa de muñecas", "vista en corte", "perspectiva", "vista de toda la casa", "render", "recorrido virtual", "volumetría"],
+      "en": ["3D model", "cutaway view", "perspective", "3D floor plan", "whole-home view", "render", "matterport"]
+    }
+  }
+}

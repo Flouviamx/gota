@@ -4,8 +4,11 @@
 // Badges are the engine's (the pencil, the heart and the magnifier included), and anything that
 // sits on top of another shape (an arrow, the front person, the diagonal of the -off icons) is a
 // custom badge: the engine clears the base by exactly 1.5, never by hand. See DESIGN.md.
-import { arc, badge, circ, dot, drop, f, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
-import { snapper } from '../../engine/variants.mjs';
+import { arc, badge, circ, dot, drop, f, flipPath, head, line, polar, rot, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
+import { snapper, transform } from '../../engine/variants.mjs';
+import dispositivos from './dispositivos.mjs';
+import lugares from './lugares.mjs';
+import navegacion from './navegacion.mjs';
 import nucleo from './nucleo.mjs';
 
 // ── Paths as segments ─────────────────────────────────────────────────────────────────────
@@ -572,6 +575,106 @@ const SLASH = line([3.25, 3.25], [20.75, 20.75]);
 const slashOver = (s = SLASH) => own([s], s);
 /** A closed shape on top of another (the front bubble, the person in front). */
 const front = (ds, fill = { solid: ds }) => own(ds, ds.join(''), fill);
+
+// ── Round 4 pieces ───────────────────────────────────────────────────────────────────────
+// What another category already drew comes from it (navegacion's undo, lugares' map pin, dispositivos'
+// smartphone, the turn arrow of message-reply); the corner glyphs are built
+// around the standard badge's center as social's are, and clear its circle as well as their own
+// shape, so a pair like mail-pin ↔ mail-plus only swaps the badge.
+/** Scales `d` by s about `o` and puts `o` at `to`. */
+const place = (d, s, o, to = o) => transform(d, s, to[0] - o[0] * s, to[1] - o[1] * s);
+/** Closes an outline for `fill.solid` (an open stroke would fill as a wedge). */
+const shut = (d) => (/Z\s*$/i.test(d) ? d : `${d}Z`);
+/** Points along a path, every ~0.1 (to measure distances and test insides). */
+const samples = (d) =>
+  parse(d).map((sp) =>
+    sp.segs.flatMap((s) => {
+      const n = Math.max(2, Math.ceil(segLen(s) / 0.1));
+      return Array.from({ length: n + 1 }, (_, k) => pt(s, k / n));
+    }),
+  );
+const inPoly = (ring, [px, py]) => {
+  let hit = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [[xi, yi], [xj, yj]] = [ring[i], ring[j]];
+    if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) hit = !hit;
+  }
+  return hit;
+};
+/**
+ * The part of `d` that shows behind the closed shapes `fronts` (social's behind()): whatever lies
+ * inside them or closer than `gap` center to center to their outline is dropped, the set's knockout.
+ */
+function behind(d, fronts, gap = 3) {
+  const rings = fronts.flatMap(samples);
+  const pts = rings.flat();
+  return clip(d, (p) => !rings.some((r) => inPoly(r, p)) && pts.every((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) >= gap - 0.005));
+}
+/** Inside the drop (cx, cy, r): its circle, and the square quadrant at the bottom right. */
+const inDrop = (cx, cy, r) => ([x, y]) => (x > cx && y > cy ? x <= cx + r + 1e-6 && y <= cy + r + 1e-6 : Math.hypot(x - cx, y - cy) <= r + 1e-6);
+/**
+ * A bust inside the drop: the head, and the shoulders an arc that runs out to the bubble's outline
+ * and ends on it (as person-circle's shoulders end on the ring).
+ */
+const dropBust = (cx, headY, hr, shY, sr, bubble = [12, 11.75, 8.75]) => [circ(cx, headY, hr), clip(arc(cx, shY, sr, 180, 360).d, inDrop(...bubble))];
+
+/**
+ * Núcleo's person scaled from the feet (social's personAt): the head moves up to keep its gap from
+ * the shoulders, never less than 2.35 between them, so a small person keeps its head apart at 2.1.
+ */
+const personSmall = (s, dx = 0, dy = 0) => {
+  const up = s < 1 ? Math.max(1.95, (2.35 - 2.45 * s) / (1 - s)) * (1 - s) : 0;
+  return [place(PERSON[0], s, [12, 20.6], [12 + dx, 20.6 + dy - up]), place(PERSON[1], s, [12, 20.6], [12 + dx, 20.6 + dy])];
+};
+
+/** The pair from people (Núcleo's clients): the one in front whole, the one behind cut 3 short of it. */
+const pair = (s, [fx, fy], [bx, by], sb = s * 0.85) => {
+  const fr = personSmall(s, fx, fy);
+  return [...personSmall(sb, bx, by).map((d) => behind(d, fr.map(shut))), ...fr];
+};
+
+const BC = [17.25, 17.25];
+const RING = circ(BC[0], BC[1], 4.25);
+/** A glyph for the corner: it clears the standard badge's circle and its own shape. */
+const glyph = (d, mine, fill) => ({ d, knock: `${RING}${mine}`, ...(fill && { fill }) });
+/** Núcleo's pushpin at half size, its needle into the corner (social's post-pin, ventanas' window-pin). */
+const PIN_B = (() => {
+  const s = 0.5;
+  const [bar, top, needle] = N.pin.d.map((d) => place(d, s, [12, 3.25], [BC[0], 12.75]));
+  const k = (p) => [BC[0] + (p[0] - 12) * s, 12.75 + (p[1] - 3.25) * s];
+  const area = roundpoly([k([8.75, 3.25]), k([15.25, 3.25]), k([17.4, 11.9]), k([17.4, 12.75]), k([12, 20.75]), k([6.6, 12.75]), k([6.6, 11.9])], 0);
+  return glyph([bar, top, needle], area, { solid: [shut(top)], wire: [bar, needle] });
+})();
+/** A chain link laid on the diagonal as Núcleo's link lies: two hooks of r 2.25 and the bar between them (social's person-link). */
+const LINK_B = (() => {
+  const [x, y] = BC;
+  const d = [`M${f(x - 2.83)} ${f(y - 2.25)}A2.25 2.25 0 0 0 ${f(x - 2.83)} ${f(y + 2.25)}`, `M${f(x + 2.83)} ${f(y - 2.25)}A2.25 2.25 0 0 1 ${f(x + 2.83)} ${f(y + 2.25)}`, line([x - 1, y], [x + 1, y])].map((p) => turnPath(p, -45, BC));
+  return glyph(d, knockOf(...d));
+})();
+// ── Marks inside the bubble ──
+// The family's marks sit inside the drop (message-lock, message-search, message-clock): its whole
+// silhouette and its square corner stay, the fill is the drop with the mark knocked out, and at 16 px
+// the mark snaps into the small bubble like the others'. Each one fits inside r 5.75 of the bubble's
+// center, so it keeps 3 center to center from the outline.
+/** A pencil at 45°, its tip at the bottom left: the engine's edit glyph (a body 3 wide, its band 2.4 from the rounded end), `len` long. */
+function pencil(tip, len, hw = 1.5) {
+  const at = (s, o) => [tip[0] + (s + o) * Math.SQRT1_2, tip[1] + (o - s) * Math.SQRT1_2];
+  const R = f(hw);
+  const body = `M${P(tip)}L${P(at(2.6, -hw))}L${P(at(len, -hw))}A${R} ${R} 0 0 1 ${P(at(len, hw))}L${P(at(2.6, hw))}Z`;
+  return [body, line(at(len - 2.4, -hw), at(len - 2.4, hw))];
+}
+/** The chain link of mail-link and phone-link (LINK_B), on the bubble's center and a tenth larger. */
+const LINK_IN = LINK_B.d.map((d) => place(d, 1.1, BC, [12, 12]));
+/** The paper clip of mail-attachment (legs 3 apart, turns of 1.5 and 3), leaning 45° as archivos' does. */
+const CLIP_IN = (() => {
+  const [x, y] = [12, 12.75];
+  return turnPath(`M${P([x, y - 1])}V${f(y + 2.5)}${arcTo(x - 1.5, y + 2.5, 1.5, 0, 180)}V${f(y - 2.5)}${arcTo(x, y - 2.5, 3, 180, 360)}V${f(y + 4)}`, 45, [12, 12]);
+})();
+/** lugares' map pin at 60 %, its hole a dot. */
+const MAP_PIN_IN = (() => {
+  const s = 0.6;
+  return [place(lugares.icons['map-pin'].d[0], s, [12, 11.7], [12, 12]), dot(12, 12 + (10.25 - 11.7) * s)];
+})();
 
 const icons = {
   // ── Chat bubbles: always the logomark's drop ──
@@ -1341,6 +1444,694 @@ const icons = {
   },
 };
 
+// ── Round 4: messaging ─────────────────────────────────────────────────────────────────────
+/**
+ * Read: Núcleo's check and a second one 4.25 to its right (their long arms 3 apart), whose short arm
+ * starts on the first one's long arm.
+ */
+function doubleCheck(cx, cy, w, dx) {
+  const at = (ox) => [
+    [ox - 0.5 * w, cy + 0.036 * w],
+    [ox - 0.183 * w, cy + 0.357 * w],
+    [ox + 0.5 * w, cy - 0.357 * w],
+  ];
+  const [a1, b1, c1] = at(cx);
+  const [a2, b2, c2] = at(cx + dx);
+  const u = [b2[0] - a2[0], b2[1] - a2[1]];
+  const v = [c1[0] - b1[0], c1[1] - b1[1]];
+  const t = ((b1[0] - a2[0]) * v[1] - (b1[1] - a2[1]) * v[0]) / (u[0] * v[1] - u[1] * v[0]);
+  return [line(a1, b1, c1), line([a2[0] + t * u[0], a2[1] + t * u[1]], b2, c2)];
+}
+/**
+ * The drop's outline as n even dashes, 3 apart center to center (1.5 of paper), one of them bent
+ * around the signature corner: one path, so it draws itself as one.
+ */
+function dashedDrop(cx, cy, r, n) {
+  const round = 1.5 * Math.PI * r;
+  const total = 2 * r + round;
+  const len = total / n - 3;
+  // From the corner along the bottom, around the circle clockwise, and down the right side
+  const at = (s) => {
+    if (s <= r) return [cx + r - s, cy + r];
+    if (s <= r + round) return polar(cx, cy, r, 90 + (((s - r) / r) * 180) / Math.PI);
+    return [cx + r, cy + (s - r - round)];
+  };
+  const breaks = [r, r + round, total];
+  let d = '';
+  for (let k = 0; k < n; k++) {
+    let s = (k * total) / n - len / 2;
+    const end = s + len;
+    if (s < 0) s += total;
+    let stop = end < 0 ? end + total : end;
+    if (stop < s) stop += total;
+    d += `M${P(at(s % total))}`;
+    while (s < stop - 1e-9) {
+      const b = Math.min(stop, ...breaks.map((x) => (x > s + 1e-9 ? x : x + total)).filter((x) => x > s + 1e-9));
+      const q = at(b % total || (b > 0 ? total : 0));
+      const inRound = s % total >= r - 1e-9 && s % total < r + round - 1e-9;
+      d += inRound ? `A${f(r)} ${f(r)} 0 0 1 ${P(q)}` : `L${P(q)}`;
+      s = b;
+    }
+  }
+  return d;
+}
+/**
+ * A cloud of scallops: the outer arcs of circles given clockwise, each running between the points
+ * where it meets its neighbors.
+ */
+function scallops(cs) {
+  const c = [cs.reduce((n, q) => n + q[0], 0) / cs.length, cs.reduce((n, q) => n + q[1], 0) / cs.length];
+  const meet = ([x0, y0, r0], [x1, y1, r1]) => {
+    const dd = Math.hypot(x1 - x0, y1 - y0);
+    const a = (dd * dd + r0 * r0 - r1 * r1) / (2 * dd);
+    const h = Math.sqrt(r0 * r0 - a * a);
+    const m = [x0 + ((x1 - x0) * a) / dd, y0 + ((y1 - y0) * a) / dd];
+    const ps = [
+      [m[0] + ((y1 - y0) * h) / dd, m[1] - ((x1 - x0) * h) / dd],
+      [m[0] - ((y1 - y0) * h) / dd, m[1] + ((x1 - x0) * h) / dd],
+    ];
+    return ps.sort((p, q) => Math.hypot(q[0] - c[0], q[1] - c[1]) - Math.hypot(p[0] - c[0], p[1] - c[1]))[0];
+  };
+  const pts = cs.map((q, i) => meet(cs[(i - 1 + cs.length) % cs.length], q));
+  let d = `M${P(pts[0])}`;
+  cs.forEach(([x, y, r], i) => {
+    const [p, q] = [pts[i], pts[(i + 1) % cs.length]];
+    const span = ((((Math.atan2(q[1] - y, q[0] - x) - Math.atan2(p[1] - y, p[0] - x)) * 180) / Math.PI) % 360 + 360) % 360;
+    d += `A${f(r)} ${f(r)} 0 ${span > 180 ? 1 : 0} 1 ${P(q)}`;
+  });
+  return `${d}Z`;
+}
+Object.assign(icons, {
+  'message-forward': {
+    tags: ['reenviar mensaje', 'compartir', 'reenviar', 'forward message', 'share message'],
+    // message-reply's turn arrow mirrored: it turns right
+    d: [DROP, ...icons['message-reply'].d.slice(1).map((d) => flipPath(d))],
+  },
+  'message-quote': {
+    tags: ['citar', 'responder citando', 'cita', 'quote', 'quote reply'],
+    // The quoted block as chat apps draw it: a bar and the lines beside it
+    d: [DROP, line([8.25, 8.5], [8.25, 15]), line([11.25, 10], [15.75, 10]), line([11.25, 13.5], [14, 13.5])],
+  },
+  'message-pin': {
+    tags: ['mensaje fijado', 'fijar', 'anclar', 'pinned message', 'pin'],
+    // Núcleo's pushpin at 60 %, upright inside the bubble
+    d: [DROP, ...N.pin.d.map((d) => place(d, 0.6, [12, 12]))],
+  },
+  'message-edit': {
+    tags: ['editar mensaje', 'editado', 'corregir', 'edit message', 'edited'],
+    // The engine's pencil (the edit badge's, 3 wide) across the bubble
+    d: [DROP, ...pencil([8.3, 15.7], 9)],
+  },
+  'message-info': {
+    tags: ['detalles del mensaje', 'información', 'entregado', 'message info', 'details'],
+    // message-alert's mark turned over: the dot above, the bar below
+    d: [DROP, dot(12, 7.2), line([12, 10.9], [12, 16.1])],
+  },
+  'message-read': {
+    tags: ['leído', 'visto', 'confirmación de lectura', 'read receipt', 'seen'],
+    d: [DROP, ...doubleCheck(12 - 4.25 / 2, 12, 6.5, 4.25)],
+  },
+  'message-person': {
+    tags: ['mensaje directo', 'chat privado', 'conversación', 'direct message', 'dm'],
+    d: [DROP, ...dropBust(12, 9.35, 2.75, 21.25, 6)],
+  },
+  'message-people': {
+    tags: ['chat grupal', 'grupo', 'conversación de grupo', 'group chat', 'group'],
+    // conference-call's pair with a bubble in front of it instead of the handset: the group and its
+    // conversation (two busts inside the bubble read as a face). The bubble hides the shoulders of the
+    // one behind: what was left of them peeked out beside it at bold
+    d: pair(0.72, [-4.5, -2.5], [2.75, -5], 0.6).filter((_, i) => i !== 1),
+    badge: front([drop(16.75, 16.5, 4.75)]),
+  },
+  'message-link': {
+    tags: ['enlace al mensaje', 'copiar enlace', 'vínculo', 'message link', 'copy link'],
+    d: [DROP, ...LINK_IN],
+  },
+  'message-bolt': {
+    tags: ['respuestas rápidas', 'plantillas', 'respuesta guardada', 'quick replies', 'canned responses'],
+    // Núcleo's bolt at 70 %
+    d: [DROP, place(N.bolt.d[0], 0.7, [12, 12])],
+  },
+  'message-disappearing': {
+    tags: ['mensajes temporales', 'autodestrucción', 'efímero', 'disappearing messages', 'ephemeral'],
+    d: [dashedDrop(12, 11.75, 8.75, 10)],
+  },
+  'message-image': {
+    tags: ['foto', 'mensaje con imagen', 'mms', 'photo message', 'image'],
+    // The landscape fills the bubble: the mountains run from edge to edge, the sun above them
+    d: [
+      DROP,
+      dot(9.25, 7.75),
+      rline(
+        [
+          [4.32, 15.94],
+          [8, 12.25],
+          [11, 15.25],
+          [15.5, 10.75],
+          [20.75, 16],
+        ],
+        [0, 1, 1, 1, 0],
+      ),
+    ],
+  },
+  'message-history': {
+    tags: ['historial del chat', 'conservar mensajes', 'retención', 'chat history', 'retention'],
+    // The bubble is the history arrow: the drop runs back around from navegacion's history gap (220° to
+    // 295°) through its square corner, with history's head (3.4) at its end, and message-clock's hands
+    d: (() => {
+      const [cx, cy, r] = [12, 11.75, 8.75];
+      const back = arc(cx, cy, r, 360, 295);
+      return [
+        `${arc(cx, cy, r, 220, 90).d}L${P([cx + r, cy + r])}L${P([cx + r, cy])}${arcTo(cx, cy, r, 360, 295)}`,
+        head(back.end, back.tangent, 3.4),
+        line([12, 7.5], [12, 12.25], [15.25, 14.25]),
+      ];
+    })(),
+  },
+  'message-attachment': {
+    tags: ['adjunto', 'archivo en el chat', 'clip', 'attachment', 'attach file'],
+    d: [DROP, CLIP_IN],
+  },
+  'message-location': {
+    tags: ['compartir ubicación', 'ubicación', 'dónde estoy', 'share location', 'location'],
+    d: [DROP, ...MAP_PIN_IN],
+  },
+  'thought-bubble': {
+    tags: ['pensamiento', 'pensando', 'idea', 'thought', 'thinking'],
+    // Four scallops and the two circles trailing from it (not the drop: a thought isn't said), the
+    // last one a dot inside the live area
+    d: [
+      scallops([
+        [10.25, 9.25, 3.75],
+        [14.5, 6.25, 3.75],
+        [18.25, 9.25, 3],
+        [14.5, 11, 3.25],
+      ]),
+      circ(7.25, 16.5, 1.5),
+      dot(3.75, 20),
+    ],
+  },
+  'text-message': {
+    tags: ['sms', 'mensaje de texto', 'celular', 'text message', 'texting'],
+    // dispositivos' smartphone at the left and the drop over its corner (its clearance stops short of
+    // the speaker at every weight)
+    d: dispositivos.icons.smartphone.d.map((d) => transform(d, 1, -3.5, 0)),
+    badge: front([drop(17.25, 8.75, 4.5)]),
+  },
+  'hashtag-lock': {
+    tags: ['canal privado', 'privado', 'canal cerrado', 'private channel', 'locked'],
+    d: icons.hashtag.d,
+    badge: badge('lock'),
+  },
+  'hashtag-plus': {
+    tags: ['crear canal', 'nuevo canal', 'canal', 'create channel', 'new channel'],
+    d: icons.hashtag.d,
+    badge: badge('plus'),
+  },
+});
+
+// ── Round 4: mail ──────────────────────────────────────────────────────────────────────────
+/** message-reply's turn arrow on the badge's center (and mirrored, to forward). */
+const REPLY_B = (() => {
+  const d = icons['message-reply'].d.slice(1).map((p) => transform(p, 1, BC[0] - 11.875, BC[1] - 12.75));
+  return glyph(d, knockOf(...d));
+})();
+const FORWARD_B = (() => {
+  const d = REPLY_B.d.map((p) => flipPath(p, 'x', BC[0]));
+  return glyph(d, knockOf(...d));
+})();
+/** navegacion's funnel for the corner: its cone and a stem 3 wide (at half size the stem closed). */
+const FUNNEL_B = (() => {
+  const d = roundpoly(
+    [
+      [13, 13],
+      [21.5, 13],
+      [18.75, 16.75],
+      [18.75, 21],
+      [15.75, 21],
+      [15.75, 16.75],
+    ],
+    [1, 1, 0.6, 0.6, 0.6, 0.6],
+  );
+  return glyph([d], d, { solid: [d] });
+})();
+/**
+ * Two people for the corner, drawn as Núcleo's clients and calendario's calendar-people draw them:
+ * the one in front a whole bust, and of the one behind, to its right, only the far side of its head
+ * (the arc that stays 3.1 clear of the front head) and its far shoulder. The person behind cut out
+ * by the front one left loose hooks that read as an S at 18 px. Both clear the base, the hidden part
+ * of the one behind included (no bit of the base shows through it); filled, the one in front is
+ * solid and the one behind stays lines.
+ */
+const PAIR_B = (() => {
+  const [sh, r, fx, bx, base] = [2.75, 1.6, 15.5, 19.25, 21.25];
+  const y = base - sh - 2.45 - r;
+  const reach = r + 3.1;
+  const lim = (Math.acos((reach * reach - (bx - fx) ** 2 - r * r) / (2 * (bx - fx) * r)) * 180) / Math.PI;
+  const head = circ(fx, y, r);
+  const shoulders = arc(fx, base, sh, 180, 360).d;
+  const back = [arc(bx, y, r, -lim, lim).d, arc(bx, base, sh, 312, 360).d];
+  const hidden = [circ(bx, y, r), shut(arc(bx, base, sh, 180, 360).d)];
+  return { d: [head, shoulders, ...back], knock: [head, shut(shoulders), ...hidden].join(''), fill: { solid: [head, shut(shoulders)], wire: back } };
+})();
+
+Object.assign(icons, {
+  'mail-reply': {
+    tags: ['responder correo', 'contestar', 'respuesta', 'reply email', 'reply'],
+    d: MAIL_B,
+    badge: REPLY_B,
+  },
+  'mail-forward': {
+    tags: ['reenviar correo', 'reenviar', 'compartir correo', 'forward email', 'forward'],
+    d: MAIL_B,
+    badge: FORWARD_B,
+  },
+  'mail-filter': {
+    tags: ['filtrar correo', 'no leídos', 'filtro', 'filter mail', 'unread'],
+    d: MAIL_B,
+    badge: FUNNEL_B,
+  },
+  'mail-rule': {
+    tags: ['reglas de correo', 'clasificar', 'automatizar', 'mail rules', 'routing'],
+    // A smaller envelope (its flap 3.1 inside the corners, so it keeps its clearance) and the arrow
+    // that leaves its side and forks: where the mail goes
+    d: [
+      sq(2.5, 7.5, 12, 9, 2.75, { square: ['br'] }),
+      rline(
+        [
+          [5.6, 10.6],
+          [8.5, 12.63],
+          [11.4, 10.6],
+        ],
+        [0, 1.2, 0],
+      ),
+      line([14.5, 12], [16.5, 12], [21, 7.5]),
+      line([16.5, 12], [21, 16.5]),
+      head([21, 7.5], [1, -1], 2.75),
+      head([21, 16.5], [1, 1], 2.75),
+    ],
+  },
+  'mail-incoming': {
+    tags: ['correo entrante', 'recibido', 'llega correo', 'incoming mail', 'received'],
+    // phone-incoming's arrow (pointing down and to the left, its head 4) over the corner of the envelope
+    // at 78 %, which sits at the bottom left. Across the envelope, the arrow tangled with the flap
+    d: [...[MAIL, FLAP].map((d) => place(d, 0.78, [2.5, 19], [2.5, 21])), line([21.5, 2.75], [16.75, 7.5]), head([16.75, 7.5], [-1, 1], 4)],
+  },
+  'mail-fast': {
+    tags: ['correo urgente', 'exprés', 'prioridad', 'express mail', 'priority'],
+    // The envelope at 71 % (its flap keeps its clearance), against the right, and truck-fast's speed
+    // lines (3 apart, ending 2.9 from it)
+    d: [...[MAIL, FLAP].map((d) => place(d, 0.71, [21.5, 12])), line([1.95, 9], [5.1, 9]), line([2.45, 12], [5.1, 12]), line([2.95, 15], [5.1, 15])],
+  },
+  'mail-lock': {
+    tags: ['correo cifrado', 'confidencial', 'privado', 'encrypted email', 'confidential'],
+    d: MAIL_B,
+    badge: badge('lock'),
+  },
+  'mail-block': {
+    tags: ['bloquear remitente', 'bloqueado', 'spam', 'block sender', 'blocked'],
+    d: MAIL_B,
+    badge: badge('block'),
+  },
+  'mail-star': {
+    tags: ['correo destacado', 'importante', 'seguimiento', 'starred email', 'flagged'],
+    d: MAIL_B,
+    badge: badge('star'),
+  },
+  'mail-sync': {
+    tags: ['sincronizar correo', 'conectar cuenta', 'actualizar bandeja', 'sync mail', 'fetch mail'],
+    d: MAIL_B,
+    badge: badge('sync'),
+  },
+  'mailing-list': {
+    tags: ['lista de correo', 'lista de distribución', 'grupo de correo', 'mailing list', 'distribution list'],
+    d: MAIL_B,
+    badge: PAIR_B,
+  },
+  'mail-pin': {
+    tags: ['correo fijado', 'fijar', 'anclar', 'pinned email', 'pin'],
+    d: MAIL_B,
+    badge: PIN_B,
+  },
+  'mail-link': {
+    tags: ['enlace por correo', 'enlace mágico', 'compartir por correo', 'magic link', 'email link'],
+    d: MAIL_B,
+    badge: LINK_B,
+  },
+  'mail-postal': {
+    tags: ['correo postal', 'carta', 'remitente', 'postal mail', 'letter'],
+    // The address side: no flap, the stamp and two address lines
+    d: [MAIL, sq(15, 8, 3.5, 3.5, 0.9), line([6.75, 13], [12.25, 13]), line([6.75, 16], [15.25, 16])],
+  },
+  'letter-sealed': {
+    tags: ['carta sellada', 'sello de cera', 'invitación', 'sealed letter', 'wax seal'],
+    // The back of the envelope: the flap runs from corner to corner down to the middle, the wax seal
+    // on its point (Núcleo's short flap left two dashes beside the seal)
+    d: [
+      MAIL,
+      clip(
+        rline(
+          [
+            [0.5, 3.6],
+            [12, 13],
+            [23.5, 3.6],
+          ],
+          [0, 1.5, 0],
+        ),
+        (p) => inPoly(samples(MAIL)[0], p),
+      ),
+    ],
+    badge: front([circ(12, 13, 2.75)]),
+  },
+  'inbox-arrow-down': {
+    tags: ['mover a la bandeja', 'desarchivar', 'recibir', 'move to inbox', 'unarchive'],
+    // The arrow over the notch, which sits 1 left of the tray's middle in Núcleo's inbox
+    d: [...N.inbox.d, line([11, 6.75], [11, 12.5]), head([11, 12.5], [0, 1], 3.5)],
+  },
+  'outbox': {
+    tags: ['bandeja de salida', 'por enviar', 'pendiente de envío', 'outbox', 'sending'],
+    d: [...N.inbox.d, line([11, 12.5], [11, 6.75]), head([11, 6.75], [0, -1], 3.5)],
+  },
+  'inbox-full': {
+    tags: ['bandeja llena', 'correo pendiente', 'documentos', 'full inbox', 'pending'],
+    // Two sheets resting in the tray, seen by their top edges above its rim (drawn whole, the sheets
+    // tangled with the notch)
+    d: [...N.inbox.d, line([7, 7], [16, 7]), line([7, 10.25], [16, 10.25])],
+  },
+  'inbox-check': {
+    tags: ['bandeja vacía', 'todo al día', 'inbox cero', 'inbox zero', 'all done'],
+    d: N.inbox.d,
+    badge: badge('check'),
+  },
+});
+
+// ── Round 4: post ──────────────────────────────────────────────────────────────────────────
+/**
+ * A stamp's perforated edge: the rectangle (x, y, w, h) with n × m bites of radius rb along its sides,
+ * evenly spaced, the corners left as teeth.
+ */
+function perforated(x, y, w, h, n, m, rb) {
+  const corners = [
+    [x, y],
+    [x + w, y],
+    [x + w, y + h],
+    [x, y + h],
+  ];
+  let d = `M${P(corners[0])}`;
+  corners.forEach((a, i) => {
+    const b = corners[(i + 1) % 4];
+    const k = i % 2 ? m : n;
+    const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
+    const u = [(b[0] - a[0]) / len, (b[1] - a[1]) / len];
+    for (let j = 0; j < k; j++) {
+      const t = (len * (j + 0.5)) / k;
+      d += `L${P([a[0] + u[0] * (t - rb), a[1] + u[1] * (t - rb)])}A${f(rb)} ${f(rb)} 0 0 0 ${P([a[0] + u[0] * (t + rb), a[1] + u[1] * (t + rb)])}`;
+    }
+    d += i === 3 ? 'Z' : `L${P(b)}`;
+  });
+  return d;
+}
+/** A wave along y from x0 to x1: half-waves of `half` (cubic halves of a sine), amplitude `amp`, starting upward. */
+function wave(x0, x1, y, half, amp) {
+  let d = `M${P([x0, y])}`;
+  let s = -1;
+  for (let x = x0; x < x1 - 1e-6; x += half) {
+    const e = Math.min(x + half, x1);
+    const k = (e - x) / half;
+    d += `C${P([x + 0.36 * half * k, y + s * amp * 1.3 * k])} ${P([e - 0.36 * half * k, y + s * amp * 1.3 * k])} ${P([e, y])}`;
+    s = -s;
+  }
+  return d;
+}
+/** A tilted envelope (center c, w × h, `deg`), cut off along y = cut: what shows above a slot. */
+function envelopeIn(c, w, h, deg, cut) {
+  const R = (p) => rot([c[0] + p[0], c[1] + p[1]], c, deg);
+  const [tl, tr, br, bl] = [R([-w / 2, -h / 2]), R([w / 2, -h / 2]), R([w / 2, h / 2]), R([-w / 2, h / 2])];
+  const at = (a, b) => {
+    const t = (cut - a[1]) / (b[1] - a[1]);
+    return [a[0] + (b[0] - a[0]) * t, cut];
+  };
+  const body = roundpoly([tl, tr, at(tr, br), at(tl, bl)], [1.5, 1.5, 0, 0]);
+  const fl = rline([R([-w * 0.284, -h / 2 + 0.3 * h]), R([0, -h / 2 + 0.3 * h + 0.7 * 0.284 * w]), R([w * 0.284, -h / 2 + 0.3 * h])], [0, 1.2, 0]);
+  return [body, fl];
+}
+
+Object.assign(icons, {
+  'postcard': {
+    tags: ['postal', 'tarjeta postal', 'saludos', 'postcard', 'greetings'],
+    // The back: the rule between the message and the address side, the stamp and the address
+    d: [sq(2.5, 4.5, 19, 15, 3.5, { square: ['br'] }), line([11, 7.5], [11, 16.5]), sq(15.5, 7.5, 3, 3, 0.75), line([14, 13.5], [18.5, 13.5]), line([14, 16.5], [18.5, 16.5])],
+  },
+  'postage-stamp': {
+    tags: ['estampilla', 'timbre postal', 'sello', 'postage stamp', 'stamp'],
+    // The inner frame kept small: at 6.5 × 10.5 the stamp ran too dense
+    d: [perforated(4.75, 2.75, 14.5, 18.5, 4, 5, 1), sq(9.25, 7.5, 5.5, 9, 1.5, { square: ['br'] })],
+  },
+  'postmark': {
+    tags: ['matasellos', 'sello de correos', 'fecha de envío', 'postmark', 'cancellation'],
+    // The round date stamp and the three waves that cancel the stamp, running out of it
+    d: (() => {
+      const ring = circ(8, 12, 5.25);
+      const out = (p) => Math.hypot(p[0] - 8, p[1] - 12) >= 5.25;
+      return [ring, circ(8, 12, 2.25), ...[8.5, 12, 15.5].map((y) => clip(wave(8, 21.5, y, 3.375, 0.85), out))];
+    })(),
+  },
+  'postbox': {
+    tags: ['buzón de correos', 'buzón público', 'enviar carta', 'postbox', 'pillar box'],
+    // A pillar box: the dome over its rim, the slot under it and the collection door
+    d: ['M17.5 8.25V21.25H8A1.5 1.5 0 0 1 6.5 19.75V8.25A5.5 5.5 0 0 1 17.5 8.25Z', line([6.5, 8.25], [17.5, 8.25]), line([9.5, 11.25], [14.5, 11.25]), sq(9.5, 14.25, 5, 4, 1)],
+  },
+  'mailbox-open': {
+    tags: ['llegó correo', 'buzón abierto', 'carta recibida', 'mail arrived', 'open mailbox'],
+    // mailbox at 80 % against the right (its flag kept at full size, its post under the middle, clear of
+    // the letter) and an envelope coming out of its open front, in front of it: the engine clears the
+    // body. A bare strip of letter sticking out of the body read as a nozzle
+    d: (() => {
+      const [body, , , , flag] = icons.mailbox.d;
+      // The pole rises from where the body's rounded top meets its flat run, as mailbox's does
+      return [place(body, 0.8, [21.25, 17.5]), line([14.5, 17.5], [14.5, 21.25]), line([17.45, 9.9], [17.45, 2.75]), transform(flag, 1, 0.95, 0)];
+    })(),
+    badge: (() => {
+      const R = (d) => turnPath(d, -12, [6.25, 13.5]);
+      const env = R(sq(2.25, 10.63, 8, 5.75, 1.5, { square: ['br'] }));
+      const fl = R(flap(2.25, 10.63, 8, 5.75));
+      return own([env, fl], env, { solid: [env], cut: [fl] });
+    })(),
+  },
+  'mailbox-wall': {
+    tags: ['buzón de pared', 'buzón de casa', 'correspondencia', 'letterbox', 'wall mailbox'],
+    // The lid hinged along the top edge, the slot under it, and the lock
+    d: [sq(4.75, 2.75, 14.5, 18.5, 3.5, { square: ['br'] }), line([4.75, 7.25], [19.25, 7.25]), line([8.25, 10.25], [15.75, 10.25]), dot(12, 16.75)],
+  },
+  'mail-slot': {
+    tags: ['ranura de correo', 'buzón de puerta', 'entrega', 'letter slot', 'mail slot'],
+    // The door's plate and the letter half through it, tilted: it sits on top and the engine clears the
+    // plate around it (a slot line beside it left fragments a pixel long)
+    d: [sq(2.5, 13, 19, 7.25, 2.25, { square: ['br'] })],
+    badge: (() => {
+      const [body, fl] = envelopeIn([12, 12.75], 10.5, 8, -10, 16);
+      return own([body, fl], body, { solid: [body], cut: [fl] });
+    })(),
+  },
+  'mailbag': {
+    tags: ['bolsa de correo', 'cartero', 'reparto', 'mailbag', 'mail carrier'],
+    // The carrier's satchel is the envelope itself (Núcleo's, at 85 %, its flap the bag's), hung from a
+    // shoulder strap that arches over it and ends on its outline. A satchel with a letter in its mouth
+    // read as mail-slot's envelope over a tray
+    d: (() => {
+      const [env, fl] = [MAIL, FLAP].map((d) => place(d, 0.85, [12, 19], [12, 21.25]));
+      // Wide and low, from corner to corner (a narrow round arch read as a padlock's shackle)
+      const strap = clip('M4.75 12C4.75 2.75 19.25 2.75 19.25 12', (p) => !inPoly(samples(env)[0], p));
+      return [env, fl, strap];
+    })(),
+  },
+  'mailboxes': {
+    tags: ['buzones', 'apartado postal', 'casilleros', 'mailboxes', 'po box'],
+    d: [sq(2.5, 5, 19, 14, 3.5, { square: ['br'] }), line([12, 5], [12, 19]), line([2.5, 12], [21.5, 12]), ...[8.5, 15.5].flatMap((y) => [line([6, y], [8.5, y]), line([15.5, y], [18, y])])],
+  },
+});
+
+// ── Round 4: calls ─────────────────────────────────────────────────────────────────────────
+// The handset whole, as in the rest of the phone family, and its mark in the corner it leaves free
+// at the top right (3 from it at least); the round marks share one ring, r 3.75 at (17.75, 6.25).
+const MARK = [17.75, 6.25];
+const MARK_RING = circ(...MARK, 3.75);
+/**
+ * Núcleo's handset at 62 %, in front at the bottom right: the engine clears what's behind it. Its grip
+ * is 3.85 across at full size: smaller (at half size), it clogged up at bold.
+ */
+const HANDSET_B = front([place(PHONE, 0.62, [12.41, 11.57], [16.5, 16.5])]);
+/** video-call's camera at 85 %, against the bottom left, so an arrow fits above its lens. */
+const CAMERA_S = [VIDEO, LENS, ...CALLER].map((d) => place(d, 0.85, [2.5, 18], [2.5, 20.75]));
+
+Object.assign(icons, {
+  'phone-merge': {
+    tags: ['unir llamadas', 'conferencia', 'fusionar', 'merge calls', 'conference'],
+    // navegacion's arrows-merge, small: the two branches meet at 45° and leave as one (its head 3 clear of them)
+    d: [PHONE, line([14.5, 10], [17.75, 6.75], [21, 10]), line([17.75, 6.75], [17.75, 2.5]), head([17.75, 2.5], [0, -1], 2.75)],
+  },
+  'phone-record': {
+    tags: ['grabar llamada', 'grabación', 'registro', 'call recording', 'record'],
+    d: [PHONE, MARK_RING, dot(...MARK)],
+  },
+  'phone-list': {
+    tags: ['registro de llamadas', 'recientes', 'historial', 'call log', 'recent calls'],
+    d: [PHONE, ...[3.75, 6.75, 9.75].map((y) => line([14.75, y], [21, y]))],
+  },
+  'phone-wifi': {
+    tags: ['llamadas por wifi', 'voip', 'llamada por internet', 'wifi calling', 'internet call'],
+    // dispositivos' wifi: the dot and two arcs, 3 apart
+    d: [PHONE, dot(17.75, 9.5), arc(17.75, 9.5, 3.75, 230, 310).d, arc(17.75, 9.5, 6.75, 230, 310).d],
+  },
+  'phone-callback': {
+    tags: ['devolver llamada', 'llámame', 'rellamar', 'callback', 'call back'],
+    // navegacion's undo, small: it leaves the handset and comes back to it
+    d: [PHONE, ...navegacion.icons.undo.d.map((d) => place(d, 0.45, [12, 12], MARK))],
+  },
+  'phone-link': {
+    tags: ['enlace de llamada', 'unirse por enlace', 'invitación', 'call link', 'join link'],
+    // The link of mail-link and message-link
+    d: [PHONE, ...LINK_B.d.map((d) => transform(d, 1, MARK[0] - BC[0], MARK[1] - BC[1]))],
+  },
+  'phone-globe': {
+    tags: ['llamada internacional', 'roaming', 'larga distancia', 'international call', 'roaming'],
+    // The handset at 64 %, bottom left, and Núcleo's globe at 70 % in the hollow it leaves at the top
+    // right, 3.85 from it: the two stand apart, the globe whole. In front of the globe, the handset cut
+    // its meridian into an A; a globe small enough for the handset's free corner (r 3.75) closed its
+    // cells at bold
+    d: [place(PHONE, 0.64, [12.41, 11.57], [7.5, 16.5]), ...N.globe.d.map((d) => place(d, 0.7, [12, 12], [15.5, 8.5]))],
+  },
+  'phone-block': {
+    tags: ['bloquear número', 'llamada bloqueada', 'número bloqueado', 'block number', 'blocked caller'],
+    // The block badge's sign: the ring crossed from edge to edge
+    d: [PHONE, MARK_RING, line(polar(...MARK, 3.75, 225), polar(...MARK, 3.75, 45))],
+  },
+  'conference-call': {
+    tags: ['llamada grupal', 'conferencia', 'llamada de varios', 'conference call', 'group call'],
+    // caller-id's handset in front of the pair
+    d: pair(0.72, [-4.5, -2.5], [2.75, -5], 0.6),
+    badge: HANDSET_B,
+  },
+  'caller-id': {
+    tags: ['identificador de llamadas', 'quién llama', 'contacto', 'caller id', 'contact call'],
+    // Núcleo's person at 80 %, top left, and the handset in front of it
+    d: personSmall(0.8, -3.75, -1.5),
+    badge: HANDSET_B,
+  },
+  'video-call-incoming': {
+    tags: ['videollamada entrante', 'recibir video', 'videollamada', 'incoming video call'],
+    // phone-incoming's arrow over the camera's lens
+    d: [...CAMERA_S, line([21.25, 2.75], [16, 8]), head([16, 8], [-1, 1], 4.5)],
+  },
+});
+
+// ── Round 4: telephones, devices and contacts ──────────────────────────────────────────────
+/** Núcleo's handset turned to lie flat, its cups down (phone-hangup's turn), or upright, its cups to the right. */
+const HANDSET_FLAT = turnPath(PHONE, 135);
+const HANDSET_UP = turnPath(PHONE, 45);
+/** The handset upright at 62 % (at less, its grip clogs up at bold), centered on `at`. */
+const handsetUp = (at) => place(HANDSET_UP, 0.62, [11.39, 12.11], at);
+/** contacts at 85 %, top left, under a corner badge (as the envelope is under MAIL_B). */
+const CONTACTS_B = () => icons.contacts.d.map((d) => place(d, 0.85, [3.5, 2.75]));
+
+Object.assign(icons, {
+  'rotary-phone': {
+    tags: ['teléfono fijo', 'teléfono clásico', 'llámanos', 'rotary phone', 'landline', 'telephone'],
+    // The handset lies on the cradle: the body's sides start at its cups; the dial and its hub
+    d: [
+      place(HANDSET_FLAT, 0.7, [11.89, 6.72], [12, 2.75]),
+      rline(
+        [
+          [6.4, 9.3],
+          [3.25, 21.25],
+          [20.75, 21.25],
+          [17.6, 9.3],
+        ],
+        [0, 2.25, 2.25, 0],
+      ),
+      circ(12, 14.5, 3.75),
+      dot(12, 14.5),
+    ],
+  },
+  'payphone': {
+    tags: ['teléfono público', 'caseta', 'cabina telefónica', 'payphone', 'public phone'],
+    // The handset hung on the left of the unit, the coin slot and the keypad (dense dots, as the
+    // calendar's days): with the slot alone, the unit was a smartphone and its speaker
+    d: [
+      sq(10.5, 2.75, 9.25, 18.5, 3, { square: ['br'] }),
+      handsetUp([4.75, 12]),
+      line([13.5, 6.5], [16.75, 6.5]),
+      ...[10.75, 14, 17.25].flatMap((y) => [13.25, 17].map((x) => dot(x, y, 0.3))),
+    ],
+  },
+  'intercom': {
+    tags: ['interfón', 'portero eléctrico', 'timbre', 'intercom', 'door phone', 'buzzer'],
+    // The speaker grille and the call button
+    d: [sq(4.75, 2.75, 14.5, 18.5, 3.5, { square: ['br'] }), ...[5.75, 8.75, 11.75].map((y) => line([9.5, y], [14.5, y])), circ(12, 16.5, 1.75)],
+  },
+  'fax': {
+    tags: ['fax', 'facsímil', 'enviar fax', 'fax machine'],
+    // The sheet comes out of the machine's top; the handset stands at its left
+    d: [
+      sq(10.75, 12.5, 10.5, 8.25, 2.5, { square: ['br'] }),
+      rline(
+        [
+          [12.25, 12.5],
+          [12.25, 2.75],
+          [20.25, 2.75],
+          [20.25, 12.5],
+        ],
+        [0, 1.25, 1.25, 0],
+      ),
+      line([15.25, 5.75], [17.25, 5.75]),
+      line([15.25, 8.75], [17.25, 8.75]),
+      handsetUp([5, 12]),
+    ],
+  },
+  'pager': {
+    tags: ['localizador', 'bíper', 'guardia', 'pager', 'beeper', 'on call'],
+    // The screen across the top and one button under it
+    d: [sq(2.5, 5, 19, 14, 3.5, { square: ['br'] }), sq(6, 8, 12, 3.5, 1), dot(12, 15.25)],
+  },
+  'contacts-plus': {
+    tags: ['agregar contacto', 'nuevo contacto', 'agenda', 'add contact', 'new contact'],
+    d: CONTACTS_B(),
+    badge: badge('plus'),
+  },
+  'contacts-sync': {
+    tags: ['sincronizar contactos', 'importar contactos', 'agenda', 'sync contacts', 'import contacts'],
+    d: CONTACTS_B(),
+    badge: badge('sync'),
+  },
+  'contacts-group': {
+    tags: ['grupo de contactos', 'etiqueta', 'lista de contactos', 'contact group', 'label'],
+    // The book with the pair from people in its corner, as mailing-list carries it; its own bust gives
+    // way to them (the three of them crowded the book and merged at bold)
+    d: CONTACTS_B().filter((_, i) => i === 0 || i > 2),
+    badge: PAIR_B,
+  },
+  'business-card': {
+    tags: ['tarjeta de presentación', 'datos de contacto', 'escanear tarjeta', 'business card', 'contact card'],
+    // A logo and three lines: the company's card, not a person's
+    d: [sq(2.5, 5, 19, 14, 3.5, { square: ['br'] }), sq(6, 9.75, 4.5, 4.5, 1.25), line([13.5, 9], [18.25, 9]), line([13.5, 12], [18.25, 12]), line([13.5, 15], [16.5, 15])],
+  },
+  'bell-gear': {
+    tags: ['ajustes de notificaciones', 'preferencias de avisos', 'notificaciones', 'notification settings'],
+    d: BELL_B,
+    badge: badge('gear'),
+  },
+  'public-address': {
+    tags: ['altavoz', 'megafonía', 'anuncios', 'public address', 'loudspeaker', 'announcement'],
+    // A horn that flares from its driver, on its pole, and two waves out of its mouth
+    d: [
+      'M3.25 10.25A1 1 0 0 1 4.25 9.25H7C9.67 9.25 12.25 7.5 14.75 4.5V17.5C12.25 14.5 9.67 12.75 7 12.75H4.25A1 1 0 0 1 3.25 11.75Z',
+      line([9, 13.07], [9, 21.25]),
+      arc(14.75, 11, 3.75, -35, 35).d,
+      arc(14.75, 11, 6.75, -35, 35).d,
+    ],
+  },
+});
+
 // ── Fill (DESIGN.md › Fill), by index into d ──
 // `solid` is filled (and keeps its stroke); so is `closed`, but it's an open outline path that
 // encloses a body (the clapper, the camera lens, the cuff) and is filled closed with Z, without
@@ -1420,6 +2211,58 @@ for (const name of Object.keys(icons).filter((n) => n.startsWith('person-') && !
 for (const name of ['face-smile', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry']) FILL[name] = { solid: [0], cut: rest(name) };
 // Headset: the ear cups and the capsule filled; the headband and the mic boom flush with them
 FILL.headset = { solid: [1, 2, 4], wire: [0, 3] };
+// Round 4: the bases fill as their families do (the envelope, the tray, the phone, the bell, contacts)
+for (const name of ['mail-reply', 'mail-forward', 'mail-filter', 'mail-lock', 'mail-block', 'mail-star', 'mail-sync', 'mailing-list', 'mail-pin', 'mail-link', 'letter-sealed'])
+  FILL[name] = { solid: [0], cut: [1] };
+for (const name of ['phone-merge', 'phone-record', 'phone-list', 'phone-wifi', 'phone-callback', 'phone-link', 'phone-block']) FILL[name] = { solid: [0], lines: rest(name) };
+// The handset and the globe filled, the globe's equator and meridian knocked out as in Núcleo
+FILL['phone-globe'] = { solid: [0, 1], cut: [2, 3] };
+for (const name of ['contacts-plus', 'contacts-sync']) FILL[name] = FILL.contacts;
+FILL['contacts-group'] = { solid: [0], wire: [1, 2, 3] };
+// The dashes of a disappearing bubble and the history arrow are lines (filled further down)
+delete FILL['message-disappearing'];
+delete FILL['message-history'];
+Object.assign(FILL, {
+  'thought-bubble': { solid: [0, 1, 2] },
+  'text-message': { solid: [0], cut: [1] },
+  'mail-rule': { solid: [0], cut: [1], lines: rest('mail-rule', 2) },
+  'mail-incoming': { solid: [0], cut: [1], lines: [2, 3] },
+  // The people as conference-call's; the bubble in front brings its own fill
+  'message-people': { solid: [1, 2], lines: [0] },
+  'mail-fast': { solid: [0], cut: [1], lines: [2, 3, 4] },
+  'mail-postal': { solid: [0], cut: [1, 2, 3] },
+  'inbox-arrow-down': { solid: [0], cut: [1, 2, 3] },
+  outbox: { solid: [0], cut: [1, 2, 3] },
+  'inbox-full': { solid: [0], cut: rest('inbox-full') },
+  'inbox-check': { solid: [0], cut: [1] },
+  postcard: { solid: [0], cut: [1, 2, 3, 4] },
+  'postage-stamp': { solid: [0], cut: [1] },
+  // The waves leave the date stamp's ring, flush with it
+  postmark: { solid: [0], cut: [1], wire: [2, 3, 4] },
+  postbox: { solid: [0], cut: [1, 2, 3] },
+  'mailbox-wall': { solid: [0], cut: [1, 2, 3] },
+  'mail-slot': { solid: [0] },
+  mailboxes: { solid: [0], cut: rest('mailboxes') },
+  // As mailbox: the flag filled (it closes along its pole), the post and the pole flush with the body;
+  // the letter in front brings its own fill
+  'mailbox-open': { solid: [0], closed: [3], wire: [1, 2] },
+  // The strap flush with the satchel
+  mailbag: { solid: [0], cut: [1], wire: [2] },
+  // The person in front filled; the one behind, cut short of it, stays lines
+  'conference-call': { solid: [2, 3], lines: [0, 1] },
+  'caller-id': { solid: [0, 1] },
+  'video-call-incoming': { solid: [0], closed: [1], cut: [2, 3], lines: [4, 5] },
+  // The body closes under the handset along the cradle; the dial and its hub are knocked out
+  'rotary-phone': { solid: [0], closed: [1], cut: [2, 3] },
+  payphone: { solid: [0, 1], cut: rest('payphone', 2) },
+  intercom: { solid: [0], cut: [1, 2, 3, 4] },
+  // The sheet closes along the machine's top
+  fax: { solid: [0, 4], closed: [1], cut: [2, 3] },
+  pager: { solid: [0], cut: [1, 2] },
+  'business-card': { solid: [0], cut: [1, 2, 3, 4] },
+  'bell-gear': { solid: [0], closed: [1] },
+  'public-address': { solid: [0], wire: [1], lines: [2, 3] },
+});
 for (const [name, spec] of Object.entries(FILL)) {
   const { d } = icons[name];
   const closed = new Set(spec.closed);
@@ -1439,6 +2282,9 @@ icons['thumbs-down'].fill.cut = [xf(THUMB_SEAM, { flipY: true })];
 // Open lines only: their filled version is the outline itself. In translate that's the base 文: its
 // badge (the drop with the A) brings its own fill and the engine fills it all the same
 for (const name of ['reply-all', 'at-sign', 'hashtag', 'broadcast-off', 'rss', 'translate']) icons[name].fill = false;
+// Round 4: the dashes of a disappearing bubble, the history arrow and the hashtag under their badges
+// (the drop in message-history's corner brings its own fill)
+for (const name of ['message-disappearing', 'message-history', 'hashtag-lock', 'hashtag-plus']) icons[name].fill = false;
 
 // ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──
 // At 16 px one pixel is 1.5 canvas units: centers fall on 0.75 + 1.5k and edges on 1.5k. The
@@ -1454,12 +2300,38 @@ small('message-dots', [7.5, 12, 16.5].map((x) => dot(x, 12, 1)));
 // large drawing turned into a smudge
 small('message-heart', [heart(12, 9.75, 9)]);
 small('message-star', [star(12, 12.4, 5.6, 2.75, 0.6, 0.45)]);
+// Read: the two checks on pixel diagonals, their long arms 3 pixels apart (snapped, they ran into one)
+small('message-read', [line([6.75, 12.75], [8.25, 14.25], [12.75, 9.75]), line([10.5, 12], [12.75, 14.25], [17.25, 9.75])]);
 // The other bubbles with a mark: the same small bubble, with the mark snapped by the engine.
 // Snapped by the engine, the large bubble (r 8.75) fell between pixels at the top and left: it looked
 // gray on those sides and one pixel wider than the bubbles with a custom drawing
-for (const name of Object.keys(icons).filter((n) => n.startsWith('message-') && FILL[n]?.cut && !icons[n].small)) {
+for (const name of Object.keys(icons).filter((n) => n.startsWith('message-') && FILL[n]?.cut && !icons[n].small && !icons[n].badge)) {
   const glyph = icons[name].d.slice(1);
   small(name, glyph.map(snapper([SDROP, ...glyph])));
+}
+// Disappearing messages: the small bubble's outline in eight dashes (ten fell under a pixel apart)
+icons['message-disappearing'].small = { d: [dashedDrop(12, 12, 8.25, 8)] };
+// Rotary phone: without the dial's hub (at 16 px it ran into the ring)
+{
+  const [hand, body] = icons['rotary-phone'].d;
+  const dial = circ(12, 14.25, 3.75);
+  const d = [hand, body, dial].map(snapper([hand, body, dial]));
+  icons['rotary-phone'].small = { d, fill: { solid: [d[0], `${d[1]}Z`], cut: [d[2]] } };
+}
+// Payphone: the unit on pixel centers and its keypad as single pixels, 1 pixel apart (snapped, the
+// dense dots grew into a block)
+{
+  const unit = sq(11.25, 3.75, 9, 16.5, 2.25, { square: ['br'] });
+  const keys = [11.25, 14.25, 17.25].flatMap((y) => [14.25, 17.25].map((x) => circ(x, y, 0.1)));
+  const d = [unit, icons.payphone.d[1], line([14.25, 6.75], [17.25, 6.75]), ...keys];
+  icons.payphone.small = { d, fill: { solid: [unit, d[1]], cut: d.slice(2) } };
+}
+// Postmark: the ring alone and two waves (the date ring and the third wave ran together)
+{
+  const ring = circ(7.5, 12, 4.5);
+  const out = (p) => Math.hypot(p[0] - 7.5, p[1] - 12) >= 4.5;
+  const waves = [9.75, 14.25].map((y) => clip(wave(7.5, 21.75, y, 3, 0.75), out));
+  icons.postmark.small = { d: [ring, ...waves], fill: { solid: [ring], wire: waves } };
 }
 // Bubble off: the same small bubble under its diagonal
 icons['message-off'].small = { d: [SDROP], fill: { solid: [SDROP] }, badge: icons['message-off'].badge };
@@ -1555,6 +2427,55 @@ for (const name of ['bell-dot', 'bell-plus', 'bell-check', 'bell-clock', 'bell-o
 for (const name of ['person-plus', 'person-minus', 'person-check', 'person-x', 'person-block', 'person-clock', 'person-heart', 'person-edit', 'person-search', 'person-arrow'])
   PARTS[name] = { head: [0], body: [1] };
 PARTS['reaction-add'] = { face: [0, 1, 2, 3] };
+// Round 4
+for (const name of ['message-pin', 'message-edit', 'message-link', 'message-bolt', 'message-attachment', 'message-location']) PARTS[name] = { body: [0], mark: rest(name) };
+PARTS['message-history'] = { arrow: [0, 1], hands: [2] };
+for (const name of ['mail-reply', 'mail-forward', 'mail-filter', 'mail-lock', 'mail-block', 'mail-star', 'mail-sync', 'mailing-list', 'mail-pin', 'mail-link', 'letter-sealed']) PARTS[name] = { body: [0], flap: [1] };
+for (const name of ['phone-record', 'phone-list', 'phone-wifi', 'phone-link', 'phone-block']) PARTS[name] = { body: [0], mark: rest(name) };
+PARTS['phone-globe'] = { body: [0], globe: [1, 2, 3] };
+for (const name of ['phone-merge', 'phone-callback']) PARTS[name] = { body: [0], arrow: rest(name) };
+for (const name of ['contacts-plus', 'contacts-sync']) PARTS[name] = { book: [0], person: [1, 2], tabs: [3, 4, 5] };
+PARTS['contacts-group'] = { book: [0], tabs: [1, 2, 3] };
+for (const name of ['hashtag-lock', 'hashtag-plus']) PARTS[name] = { hashtag: [0, 1, 2, 3] };
+Object.assign(PARTS, {
+  'message-forward': { body: [0], arrow: [1, 2] },
+  'message-quote': { body: [0], bar: [1], text: [2, 3] },
+  'message-info': { body: [0], mark: [1, 2] },
+  'message-read': { body: [0], mark: [1, 2] },
+  'message-person': { body: [0], person: [1, 2] },
+  'message-people': { people: [0, 1, 2] },
+  'mail-incoming': { body: [0], flap: [1], arrow: [2, 3] },
+  'message-image': { body: [0], sun: [1], mountain: [2] },
+  'thought-bubble': { cloud: [0], trail: [1, 2] },
+  'text-message': { phone: [0, 1] },
+  'mail-rule': { body: [0], flap: [1], arrow: rest('mail-rule', 2) },
+  'mail-fast': { body: [0], flap: [1], speed: [2, 3, 4] },
+  'mail-postal': { body: [0], stamp: [1], address: [2, 3] },
+  'inbox-arrow-down': { tray: [0, 1], arrow: [2, 3] },
+  outbox: { tray: [0, 1], arrow: [2, 3] },
+  'inbox-full': { tray: [0, 1], sheets: rest('inbox-full', 2) },
+  'inbox-check': { tray: [0, 1] },
+  postcard: { card: [0], rule: [1], stamp: [2], address: [3, 4] },
+  'postage-stamp': { stamp: [0], frame: [1] },
+  postmark: { stamp: [0, 1], waves: [2, 3, 4] },
+  postbox: { body: [0, 1], slot: [2], door: [3] },
+  'mailbox-wall': { body: [0], lid: [1], slot: [2], lock: [3] },
+  'mail-slot': { plate: [0] },
+  mailboxes: { body: [0, 1, 2], slots: rest('mailboxes', 3) },
+  'mailbox-open': { body: [0], post: [1], flag: [2, 3] },
+  mailbag: { bag: [0], flap: [1], strap: [2] },
+  'conference-call': { people: [0, 1, 2, 3] },
+  'caller-id': { head: [0], body: [1] },
+  'video-call-incoming': { body: [0], lens: [1], caller: [2, 3], arrow: [4, 5] },
+  'rotary-phone': { handset: [0], body: [1], dial: [2, 3] },
+  payphone: { unit: [0], handset: [1], slot: [2], keypad: rest('payphone', 3) },
+  intercom: { panel: [0], grille: [1, 2, 3], button: [4] },
+  fax: { body: [0], sheet: [1, 2, 3], handset: [4] },
+  pager: { body: [0], screen: [1], button: [2] },
+  'business-card': { card: [0], logo: [1], text: [2, 3, 4] },
+  'bell-gear': { body: [0], clapper: [1] },
+  'public-address': { horn: [0], pole: [1] },
+});
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ── Levels (DESIGN.md › Levels): the waves light up from the inside out ──
@@ -1570,7 +2491,8 @@ icons['satellite-dish'].levels = [[3], [4]];
 icons['phone-ringing'].levels = [[1], [2]];
 icons['person-speaking'].levels = [[2], [3]];
 icons.rss.levels = [[1], [2]];
-for (const name of ['broadcast', 'radio-tower', 'satellite-dish', 'phone-ringing', 'person-speaking', 'rss']) icons[name].parts.level = icons[name].levels.flat();
+icons['public-address'].levels = [[2], [3]];
+for (const name of ['broadcast', 'radio-tower', 'satellite-dish', 'phone-ringing', 'person-speaking', 'rss', 'public-address']) icons[name].parts.level = icons[name].levels.flat();
 
 // ── Automatic variants that make no sense ──
 const variants = (names, v) => {
@@ -1582,6 +2504,9 @@ variants(
   Object.keys(icons).filter((n) => n.startsWith('message-') && !['message-unread', 'message-off'].includes(n)),
   { circle: false, square: false, slash: false },
 );
+// Group chat is the people with a bubble in front, not a bubble with a mark: it encloses as
+// conference-call does
+icons['message-people'].variants = { slash: false };
 // Already enclosed in a circle or a square
 variants(['face-smile', 'face-laugh', 'face-wink', 'face-neutral', 'face-confused', 'face-surprised', 'face-sad', 'face-angry', 'person-circle', 'reaction-add'], { circle: false });
 variants(['notification-badge', 'sticker'], { square: false });
@@ -1618,5 +2543,35 @@ icons['thumbs-up'].motion = { effect: 'bounce', vector: [0, -2] };
 icons['thumbs-down'].motion = { effect: 'bounce', vector: [0, 2] };
 icons['hand-raised'].motion = { effect: 'wiggle', origin: [12, 20.75] };
 icons['party-popper'].motion = { effect: 'beat', parts: ['confetti', 'streamers'], origin: [7.25, 16.75] };
+
+// ── Round 4: mirroring and motion ──
+for (const name of ['message-forward', 'message-quote', 'message-edit', 'mail-reply', 'mail-forward', 'mail-fast', 'mail-rule', 'phone-callback', 'phone-list', 'business-card', 'public-address'])
+  icons[name].mirror = true;
+Object.assign(icons['message-forward'], { motion: { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] } });
+icons['message-edit'].motion = { effect: 'wiggle', parts: ['mark'], origin: [8.3, 15.7] };
+icons['message-history'].motion = { effect: 'spin', parts: ['hands'], origin: [12, 12.25] };
+icons['message-pin'].motion = { effect: 'bounce', parts: ['mark'], vector: [0, -1.5] };
+icons['message-location'].motion = { effect: 'bounce', parts: ['mark'], vector: [0, -1.5] };
+icons['message-bolt'].motion = { effect: 'beat', parts: ['mark'], origin: [12, 12] };
+icons['thought-bubble'].motion = { effect: 'float', vector: [0, -1.5] };
+icons['mail-reply'].motion = { effect: 'slide', parts: ['badge'], vector: [-1.5, 0] };
+icons['mail-forward'].motion = { effect: 'slide', parts: ['badge'], vector: [1.5, 0] };
+icons['mail-incoming'].motion = { effect: 'slide', parts: ['arrow'], vector: [-1.5, 1.5] };
+icons['mail-fast'].motion = { effect: 'slide', vector: [2, 0] };
+icons['mail-rule'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
+icons['mail-sync'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['contacts-sync'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['mail-star'].motion = { effect: 'beat', parts: ['badge'], origin: BC };
+icons['mail-pin'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, -2] };
+icons['inbox-arrow-down'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] };
+icons.outbox.motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] };
+icons['phone-merge'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] };
+icons['phone-record'].motion = { effect: 'beat', parts: ['mark'], origin: MARK };
+icons['video-call-incoming'].motion = { effect: 'slide', parts: ['arrow'], vector: [-1.5, 1.5] };
+for (const name of ['conference-call', 'caller-id']) icons[name].motion = { effect: 'ring', parts: ['badge'], origin: [16.5, 16.5] };
+icons['phone-globe'].motion = { effect: 'ring', parts: ['body'], origin: [7.5, 16.5] };
+icons['rotary-phone'].motion = { effect: 'ring', parts: ['handset'], origin: [12, 9.3] };
+icons.pager.motion = { effect: 'wiggle', origin: [12, 19] };
+icons['bell-gear'].motion = { effect: 'ring', parts: ['body', 'clapper'], origin: BELL_B_TOP };
 
 export default { category: 'comunicacion', label: 'Comunicación y personas', icons };

@@ -12,5 +12,642 @@
       "es": ["logotipo", "isotipo", "marca", "monograma", "inicial", "estudio de diseño"],
       "en": ["logo", "isotype", "brand", "monogram", "initial", "design studio"]
     }
+  },
+  "brand-cord": {
+    "label": { "es": "Cord", "en": "Cord", "pt": "Cord", "fr": "Cord", "de": "Cord", "it": "Cord", "ja": "Cord", "zh": "Cord", "ko": "Cord", "ar": "Cord" },
+    "keywords": {
+      "es": ["logotipo", "marca", "cordhq", "propuestas", "cotización", "cierre comercial", "cobro en línea"],
+      "en": ["logo", "brand", "cordhq", "proposals", "quote", "sales closing", "online payment"]
+    }
+  },
+  "brand-instagram": {
+    "label": { "es": "Instagram", "en": "Instagram", "pt": "Instagram", "fr": "Instagram", "de": "Instagram", "it": "Instagram", "ja": "Instagram", "zh": "Instagram", "ko": "Instagram", "ar": "Instagram" },
+    "keywords": {
+      "es": ["insta", "IG", "red social", "perfil", "fotos", "historias", "reels", "compartir"],
+      "en": ["insta", "IG", "social media", "profile", "photos", "stories", "reels", "share"]
+    }
+  },
+  "brand-facebook": {
+    "label": { "es": "Facebook", "en": "Facebook", "pt": "Facebook", "fr": "Facebook", "de": "Facebook", "it": "Facebook", "ja": "Facebook", "zh": "Facebook", "ko": "Facebook", "ar": "Facebook" },
+    "keywords": {
+      "es": ["FB", "red social", "página de empresa", "perfil", "compartir publicación", "inicio de sesión social", "me gusta", "grupos"],
+      "en": ["FB", "social media", "business page", "profile", "share post", "social login", "like", "groups"]
+    }
+  },
+  "brand-x": {
+    "label": { "es": "X (antes Twitter)", "en": "X (formerly Twitter)", "pt": "X (antigo Twitter)", "fr": "X (anciennement Twitter)", "de": "X (ehemals Twitter)", "it": "X (ex Twitter)", "ja": "X（旧Twitter）", "zh": "X（原推特）", "ko": "X(옛 트위터)", "ar": "X (تويتر سابقًا)" },
+    "keywords": {
+      "es": ["tuit", "tuitear", "red social", "perfil", "publicar", "compartir", "seguir", "hilo"],
+      "en": ["tweet", "post", "social media", "profile", "share", "follow", "thread", "timeline"]
+    }
+  },
+  "brand-threads": {
+    "label": { "es": "Threads", "en": "Threads", "pt": "Threads", "fr": "Threads", "de": "Threads", "it": "Threads", "ja": "Threads", "zh": "Threads", "ko": "Threads", "ar": "Threads" },
+    "keywords": {
+      "es": ["red social", "perfil", "publicar", "compartir", "conversación", "seguir", "app de Meta", "Instagram"],
+      "en": ["social media", "profile", "post", "share", "conversation", "follow", "Meta app", "Instagram"]
+    }
+  },
+  "brand-tiktok": {
+    "label": { "es": "TikTok", "en": "TikTok", "pt": "TikTok", "fr": "TikTok", "de": "TikTok", "it": "TikTok", "ja": "TikTok", "zh": "TikTok", "ko": "TikTok", "ar": "TikTok" },
+    "keywords": {
+      "es": ["videos cortos", "red social", "perfil", "compartir video", "tendencias", "creadores", "en vivo", "música"],
+      "en": ["short videos", "social media", "profile", "share video", "trends", "creators", "for you", "live"]
+    }
+  },
+  "brand-snapchat": {
+    "label": { "es": "Snapchat", "en": "Snapchat", "pt": "Snapchat", "fr": "Snapchat", "de": "Snapchat", "it": "Snapchat", "ja": "Snapchat", "zh": "Snapchat", "ko": "Snapchat", "ar": "Snapchat" },
+    "keywords": {
+      "es": ["snap", "fantasma", "Snapcode", "agregar amigo", "red social", "historias", "fotos que desaparecen", "filtros"],
+      "en": ["snap", "ghost", "Snapcode", "add friend", "social media", "stories", "disappearing photos", "lenses"]
+    }
+  },
+  "brand-pinterest": {
+    "label": { "es": "Pinterest", "en": "Pinterest", "pt": "Pinterest", "fr": "Pinterest", "de": "Pinterest", "it": "Pinterest", "ja": "Pinterest", "zh": "Pinterest", "ko": "Pinterest", "ar": "Pinterest" },
+    "keywords": {
+      "es": ["pin", "pinear", "guardar idea", "tablero", "inspiración", "moodboard", "ideas", "red social"],
+      "en": ["pin it", "save idea", "board", "inspiration", "moodboard", "ideas", "social media", "repin"]
+    }
+  },
+  "brand-linkedin": {
+    "label": { "es": "LinkedIn", "en": "LinkedIn", "pt": "LinkedIn", "fr": "LinkedIn", "de": "LinkedIn", "it": "LinkedIn", "ja": "LinkedIn", "zh": "LinkedIn", "ko": "LinkedIn", "ar": "LinkedIn" },
+    "keywords": {
+      "es": ["red profesional", "perfil profesional", "página de empresa", "empleo", "currículum", "contactos", "vacantes", "networking"],
+      "en": ["professional network", "career profile", "company page", "jobs", "resume", "connections", "hiring", "networking"]
+    }
+  },
+  "brand-reddit": {
+    "label": { "es": "Reddit", "en": "Reddit", "pt": "Reddit", "fr": "Reddit", "de": "Reddit", "it": "Reddit", "ja": "Reddit", "zh": "Reddit", "ko": "Reddit", "ar": "Reddit" },
+    "keywords": {
+      "es": ["subreddit", "foro", "comunidad", "publicación", "votar", "comentarios", "compartir", "Snoo"],
+      "en": ["subreddit", "forum", "community", "post", "upvote", "comments", "share", "Snoo"]
+    }
+  },
+  "brand-tumblr": {
+    "label": { "es": "Tumblr", "en": "Tumblr", "pt": "Tumblr", "fr": "Tumblr", "de": "Tumblr", "it": "Tumblr", "ja": "Tumblr", "zh": "Tumblr", "ko": "Tumblr", "ar": "Tumblr" },
+    "keywords": {
+      "es": ["blog", "reblog", "rebloguear", "microblog", "red social", "publicar", "seguir", "fandom"],
+      "en": ["blog", "reblog", "microblog", "social media", "post", "follow", "fandom", "dashboard"]
+    }
+  },
+  "brand-mastodon": {
+    "label": { "es": "Mastodon", "en": "Mastodon", "pt": "Mastodon", "fr": "Mastodon", "de": "Mastodon", "it": "Mastodon", "ja": "Mastodon", "zh": "Mastodon", "ko": "Mastodon", "ar": "Mastodon" },
+    "keywords": {
+      "es": ["fediverso", "red social descentralizada", "instancia", "toot", "perfil", "compartir", "código abierto", "seguir"],
+      "en": ["fediverse", "decentralized social", "instance", "toot", "profile", "share", "open source", "ActivityPub"]
+    }
+  },
+  "brand-bluesky": {
+    "label": { "es": "Bluesky", "en": "Bluesky", "pt": "Bluesky", "fr": "Bluesky", "de": "Bluesky", "it": "Bluesky", "ja": "Bluesky", "zh": "Bluesky", "ko": "Bluesky", "ar": "Bluesky" },
+    "keywords": {
+      "es": ["mariposa", "bsky", "red social", "perfil", "publicar", "compartir", "descentralizada", "seguir"],
+      "en": ["butterfly", "bsky", "social media", "profile", "post", "share", "decentralized", "AT Protocol"]
+    }
+  },
+  "brand-meta": {
+    "label": { "es": "Meta", "en": "Meta", "pt": "Meta", "fr": "Meta", "de": "Meta", "it": "Meta", "ja": "Meta", "zh": "Meta", "ko": "Meta", "ar": "Meta" },
+    "keywords": {
+      "es": ["infinito", "cuenta empresarial", "Business Suite", "anuncios", "Facebook", "Instagram", "WhatsApp", "centro de cuentas"],
+      "en": ["infinity", "business account", "Business Suite", "ads manager", "Facebook", "Instagram", "WhatsApp", "accounts center"]
+    }
+  },
+  "brand-medium": {
+    "label": { "es": "Medium", "en": "Medium", "pt": "Medium", "fr": "Medium", "de": "Medium", "it": "Medium", "ja": "Medium", "zh": "Medium", "ko": "Medium", "ar": "Medium" },
+    "keywords": {
+      "es": ["blog", "artículo", "autor", "lectura", "publicación", "ensayo", "escribir", "historia"],
+      "en": ["blog", "article", "author", "reading", "publication", "essay", "writing", "story"]
+    }
+  },
+  "brand-substack": {
+    "label": { "es": "Substack", "en": "Substack", "pt": "Substack", "fr": "Substack", "de": "Substack", "it": "Substack", "ja": "Substack", "zh": "Substack", "ko": "Substack", "ar": "Substack" },
+    "keywords": {
+      "es": ["newsletter", "boletín", "suscribirse", "suscripción de pago", "autor", "correo", "publicación", "podcast"],
+      "en": ["newsletter", "subscribe", "paid subscription", "writer", "email", "publication", "podcast", "posts"]
+    }
+  },
+  "brand-wordpress": {
+    "label": { "es": "WordPress", "en": "WordPress", "pt": "WordPress", "fr": "WordPress", "de": "WordPress", "it": "WordPress", "ja": "WordPress", "zh": "WordPress", "ko": "WordPress", "ar": "WordPress" },
+    "keywords": {
+      "es": ["WP", "CMS", "sitio web", "blog", "hecho con", "gestor de contenidos", "plugin", "tema"],
+      "en": ["WP", "CMS", "website", "blog", "built with", "content management", "plugin", "theme"]
+    }
+  },
+  "brand-linktree": {
+    "label": { "es": "Linktree", "en": "Linktree", "pt": "Linktree", "fr": "Linktree", "de": "Linktree", "it": "Linktree", "ja": "Linktree", "zh": "Linktree", "ko": "Linktree", "ar": "Linktree" },
+    "keywords": {
+      "es": ["link en bio", "enlaces", "biografía", "perfil", "página de enlaces", "creadores", "redes sociales"],
+      "en": ["link in bio", "links", "bio link", "profile", "link page", "creators", "social links"]
+    }
+  },
+  "brand-whatsapp": {
+    "label": { "es": "WhatsApp", "en": "WhatsApp", "pt": "WhatsApp", "fr": "WhatsApp", "de": "WhatsApp", "it": "WhatsApp", "ja": "WhatsApp", "zh": "WhatsApp", "ko": "WhatsApp", "ar": "WhatsApp" },
+    "keywords": {
+      "es": ["whats", "wasap", "chat", "enviar mensaje", "número de empresa", "atención al cliente", "llamada", "compartir"],
+      "en": ["chat", "message us", "business number", "customer service", "call", "share", "messaging", "wa.me"]
+    }
+  },
+  "brand-telegram": {
+    "label": { "es": "Telegram", "en": "Telegram", "pt": "Telegram", "fr": "Telegram", "de": "Telegram", "it": "Telegram", "ja": "Telegram", "zh": "Telegram", "ko": "Telegram", "ar": "Telegram" },
+    "keywords": {
+      "es": ["avión de papel", "chat", "canal", "grupo", "mensajería", "compartir", "bot", "mensaje"],
+      "en": ["paper plane", "chat", "channel", "group", "messaging", "share", "bot", "t.me"]
+    }
+  },
+  "brand-messenger": {
+    "label": { "es": "Messenger", "en": "Messenger", "pt": "Messenger", "fr": "Messenger", "de": "Messenger", "it": "Messenger", "ja": "Messenger", "zh": "Messenger", "ko": "Messenger", "ar": "Messenger" },
+    "keywords": {
+      "es": ["chat", "Facebook", "mensaje directo", "escríbenos", "mensajería", "compartir", "atención al cliente", "rayo"],
+      "en": ["chat", "Facebook", "direct message", "message us", "messaging", "share", "customer support", "lightning bolt"]
+    }
+  },
+  "brand-signal": {
+    "label": { "es": "Signal", "en": "Signal", "pt": "Signal", "fr": "Signal", "de": "Signal", "it": "Signal", "ja": "Signal", "zh": "Signal", "ko": "Signal", "ar": "Signal" },
+    "keywords": {
+      "es": ["mensajería segura", "chat cifrado", "privacidad", "contacto", "grupo", "llamada", "mensaje", "cifrado de extremo a extremo"],
+      "en": ["secure messaging", "encrypted chat", "privacy", "contact", "group", "call", "message", "end-to-end encryption"]
+    }
+  },
+  "brand-wechat": {
+    "label": { "es": "WeChat", "en": "WeChat", "pt": "WeChat", "fr": "WeChat", "de": "WeChat", "it": "WeChat", "ja": "WeChat", "zh": "微信", "ko": "WeChat", "ar": "WeChat" },
+    "keywords": {
+      "es": ["Weixin", "chat", "contacto", "cuenta oficial", "mensajería", "compartir", "pagos", "China"],
+      "en": ["Weixin", "chat", "contact", "official account", "messaging", "share", "pay", "China"]
+    }
+  },
+  "brand-discord": {
+    "label": { "es": "Discord", "en": "Discord", "pt": "Discord", "fr": "Discord", "de": "Discord", "it": "Discord", "ja": "Discord", "zh": "Discord", "ko": "Discord", "ar": "Discord" },
+    "keywords": {
+      "es": ["servidor", "invitación", "comunidad", "chat de voz", "canal", "gamers", "perfil", "unirse"],
+      "en": ["server", "invite", "community", "voice chat", "channel", "gaming", "profile", "join"]
+    }
+  },
+  "brand-slack": {
+    "label": { "es": "Slack", "en": "Slack", "pt": "Slack", "fr": "Slack", "de": "Slack", "it": "Slack", "ja": "Slack", "zh": "Slack", "ko": "Slack", "ar": "Slack" },
+    "keywords": {
+      "es": ["espacio de trabajo", "canal", "chat de equipo", "integración", "agregar app", "notificaciones", "mensajería", "trabajo"],
+      "en": ["workspace", "channel", "team chat", "integration", "add app", "notifications", "messaging", "work chat"]
+    }
+  },
+  "brand-youtube": {
+    "label": { "es": "YouTube", "en": "YouTube", "pt": "YouTube", "fr": "YouTube", "de": "YouTube", "it": "YouTube", "ja": "YouTube", "zh": "YouTube", "ko": "YouTube", "ar": "YouTube" },
+    "keywords": {
+      "es": ["YT", "videos", "canal", "suscribirse", "ver video", "botón de play", "en vivo", "creadores"],
+      "en": ["YT", "videos", "channel", "subscribe", "watch", "play button", "live", "creators"]
+    }
+  },
+  "brand-twitch": {
+    "label": { "es": "Twitch", "en": "Twitch", "pt": "Twitch", "fr": "Twitch", "de": "Twitch", "it": "Twitch", "ja": "Twitch", "zh": "Twitch", "ko": "Twitch", "ar": "Twitch" },
+    "keywords": {
+      "es": ["streaming", "transmisión en vivo", "canal", "stream", "videojuegos", "streamer", "seguir", "chat"],
+      "en": ["streaming", "live stream", "channel", "gaming", "streamer", "follow", "go live", "chat"]
+    }
+  },
+  "brand-vimeo": {
+    "label": { "es": "Vimeo", "en": "Vimeo", "pt": "Vimeo", "fr": "Vimeo", "de": "Vimeo", "it": "Vimeo", "ja": "Vimeo", "zh": "Vimeo", "ko": "Vimeo", "ar": "Vimeo" },
+    "keywords": {
+      "es": ["video", "reproductor", "showcase", "portafolio", "cortometraje", "ver video", "insertar video", "productora"],
+      "en": ["video", "player", "showcase", "portfolio", "short film", "watch", "embed video", "filmmaker"]
+    }
+  },
+  "brand-netflix": {
+    "label": { "es": "Netflix", "en": "Netflix", "pt": "Netflix", "fr": "Netflix", "de": "Netflix", "it": "Netflix", "ja": "Netflix", "zh": "Netflix", "ko": "Netflix", "ar": "Netflix" },
+    "keywords": {
+      "es": ["series", "películas", "streaming", "ver ahora", "maratón", "plataforma", "título", "estreno"],
+      "en": ["series", "movies", "streaming", "watch now", "binge", "TV shows", "title", "premiere"]
+    }
+  },
+  "brand-spotify": {
+    "label": { "es": "Spotify", "en": "Spotify", "pt": "Spotify", "fr": "Spotify", "de": "Spotify", "it": "Spotify", "ja": "Spotify", "zh": "Spotify", "ko": "Spotify", "ar": "Spotify" },
+    "keywords": {
+      "es": ["música", "playlist", "podcast", "escuchar", "artista", "canción", "álbum", "streaming de música"],
+      "en": ["music", "playlist", "podcast", "listen", "artist", "song", "album", "music streaming"]
+    }
+  },
+  "brand-soundcloud": {
+    "label": { "es": "SoundCloud", "en": "SoundCloud", "pt": "SoundCloud", "fr": "SoundCloud", "de": "SoundCloud", "it": "SoundCloud", "ja": "SoundCloud", "zh": "SoundCloud", "ko": "SoundCloud", "ar": "SoundCloud" },
+    "keywords": {
+      "es": ["música", "pista", "canción", "audio", "productor", "escuchar", "beats", "perfil de artista"],
+      "en": ["music", "track", "song", "audio", "producer", "listen", "beats", "artist profile"]
+    }
+  },
+  "brand-tidal": {
+    "label": { "es": "TIDAL", "en": "TIDAL", "pt": "TIDAL", "fr": "TIDAL", "de": "TIDAL", "it": "TIDAL", "ja": "TIDAL", "zh": "TIDAL", "ko": "TIDAL", "ar": "TIDAL" },
+    "keywords": {
+      "es": ["música", "alta fidelidad", "hi-fi", "álbum", "escuchar", "playlist", "streaming de música", "sin pérdida"],
+      "en": ["music", "high fidelity", "hi-fi", "album", "listen", "playlist", "music streaming", "lossless"]
+    }
+  },
+  "brand-apple-podcasts": {
+    "label": { "es": "Apple Podcasts", "en": "Apple Podcasts", "pt": "Apple Podcasts", "fr": "Apple Podcasts", "de": "Apple Podcasts", "it": "Apple Podcasts", "ja": "Apple Podcasts", "zh": "Apple 播客", "ko": "Apple Podcasts", "ar": "Apple Podcasts" },
+    "keywords": {
+      "es": ["programa", "episodio", "escuchar", "suscribirse", "seguir programa", "audio", "micrófono", "iTunes"],
+      "en": ["show", "episode", "listen", "subscribe", "follow show", "audio", "microphone", "iTunes"]
+    }
+  },
+  "brand-steam": {
+    "label": { "es": "Steam", "en": "Steam", "pt": "Steam", "fr": "Steam", "de": "Steam", "it": "Steam", "ja": "Steam", "zh": "Steam", "ko": "Steam", "ar": "Steam" },
+    "keywords": {
+      "es": ["videojuegos", "tienda de juegos", "juego", "perfil de jugador", "juegos de PC", "Valve", "lista de deseos", "biblioteca"],
+      "en": ["video games", "game store", "game", "player profile", "PC gaming", "Valve", "wishlist", "library"]
+    }
+  },
+  "brand-xbox": {
+    "label": { "es": "Xbox", "en": "Xbox", "pt": "Xbox", "fr": "Xbox", "de": "Xbox", "it": "Xbox", "ja": "Xbox", "zh": "Xbox", "ko": "Xbox", "ar": "Xbox" },
+    "keywords": {
+      "es": ["consola", "videojuegos", "gamertag", "perfil de jugador", "Microsoft", "Game Pass", "control", "juego"],
+      "en": ["console", "video games", "gamertag", "player profile", "Microsoft", "Game Pass", "controller", "game"]
+    }
+  },
+  "brand-nintendo-switch": {
+    "label": { "es": "Nintendo Switch", "en": "Nintendo Switch", "pt": "Nintendo Switch", "fr": "Nintendo Switch", "de": "Nintendo Switch", "it": "Nintendo Switch", "ja": "Nintendo Switch", "zh": "Nintendo Switch", "ko": "Nintendo Switch", "ar": "Nintendo Switch" },
+    "keywords": {
+      "es": ["consola", "videojuegos", "eShop", "código de amigo", "juego", "Joy-Con", "consola portátil", "tienda de juegos"],
+      "en": ["console", "video games", "eShop", "friend code", "game", "Joy-Con", "handheld", "game store"]
+    }
+  },
+  "brand-roblox": {
+    "label": { "es": "Roblox", "en": "Roblox", "pt": "Roblox", "fr": "Roblox", "de": "Roblox", "it": "Roblox", "ja": "Roblox", "zh": "Roblox", "ko": "Roblox", "ar": "Roblox" },
+    "keywords": {
+      "es": ["videojuegos", "experiencia", "juego", "perfil de jugador", "mundos", "avatar", "Robux", "jugar"],
+      "en": ["video games", "experience", "game", "player profile", "worlds", "avatar", "Robux", "play"]
+    }
+  },
+  "brand-apple": {
+    "label": { "es": "Apple", "en": "Apple", "pt": "Apple", "fr": "Apple", "de": "Apple", "it": "Apple", "ja": "Apple", "zh": "Apple", "ko": "Apple", "ar": "Apple" },
+    "keywords": {
+      "es": ["manzana", "iniciar sesión", "inicio de sesión social", "cuenta", "iPhone", "Mac", "iOS", "descargar para Mac"],
+      "en": ["sign in", "social login", "account", "iPhone", "Mac", "iOS", "macOS", "download for Mac"]
+    }
+  },
+  "brand-google": {
+    "label": { "es": "Google", "en": "Google", "pt": "Google", "fr": "Google", "de": "Google", "it": "Google", "ja": "Google", "zh": "Google", "ko": "Google", "ar": "Google" },
+    "keywords": {
+      "es": ["iniciar sesión", "inicio de sesión social", "cuenta", "buscador", "búsqueda", "integración", "Workspace"],
+      "en": ["sign in", "social login", "account", "search engine", "search", "integration", "Workspace"]
+    }
+  },
+  "brand-microsoft": {
+    "label": { "es": "Microsoft", "en": "Microsoft", "pt": "Microsoft", "fr": "Microsoft", "de": "Microsoft", "it": "Microsoft", "ja": "Microsoft", "zh": "Microsoft", "ko": "Microsoft", "ar": "Microsoft" },
+    "keywords": {
+      "es": ["Windows", "cuatro cuadros", "iniciar sesión", "cuenta", "descargar para Windows", "Office", "PC", "Azure"],
+      "en": ["Windows", "four squares", "sign in", "account", "download for Windows", "Office", "PC", "Azure"]
+    }
+  },
+  "brand-android": {
+    "label": { "es": "Android", "en": "Android", "pt": "Android", "fr": "Android", "de": "Android", "it": "Android", "ja": "Android", "zh": "Android", "ko": "Android", "ar": "Android" },
+    "keywords": {
+      "es": ["robot", "celular", "descargar app", "sistema operativo", "versión móvil", "APK", "teléfono", "Google"],
+      "en": ["robot", "phone", "download app", "operating system", "mobile version", "APK", "smartphone", "Google"]
+    }
+  },
+  "brand-linux": {
+    "label": { "es": "Linux", "en": "Linux", "pt": "Linux", "fr": "Linux", "de": "Linux", "it": "Linux", "ja": "Linux", "zh": "Linux", "ko": "Linux", "ar": "Linux" },
+    "keywords": {
+      "es": ["Tux", "pingüino", "sistema operativo", "código abierto", "descarga", "terminal", "servidor", "distribución"],
+      "en": ["Tux", "penguin", "operating system", "open source", "download", "terminal", "server", "distro"]
+    }
+  },
+  "brand-ubuntu": {
+    "label": { "es": "Ubuntu", "en": "Ubuntu", "pt": "Ubuntu", "fr": "Ubuntu", "de": "Ubuntu", "it": "Ubuntu", "ja": "Ubuntu", "zh": "Ubuntu", "ko": "Ubuntu", "ar": "Ubuntu" },
+    "keywords": {
+      "es": ["Linux", "distribución", "sistema operativo", "paquete", "descarga", "código abierto", "Canonical", "servidor"],
+      "en": ["Linux", "distro", "operating system", "package", "download", "open source", "Canonical", "server"]
+    }
+  },
+  "brand-app-store": {
+    "label": { "es": "App Store", "en": "App Store", "pt": "App Store", "fr": "App Store", "de": "App Store", "it": "App Store", "ja": "App Store", "zh": "App Store", "ko": "App Store", "ar": "App Store" },
+    "keywords": {
+      "es": ["descargar app", "iPhone", "iOS", "Apple", "tienda de apps", "aplicación", "instalar", "iPad"],
+      "en": ["download", "iPhone", "iOS", "Apple", "get the app", "mobile app", "install", "iPad"]
+    }
+  },
+  "brand-google-play": {
+    "label": { "es": "Google Play", "en": "Google Play", "pt": "Google Play", "fr": "Google Play", "de": "Google Play", "it": "Google Play", "ja": "Google Play", "zh": "Google Play", "ko": "Google Play", "ar": "Google Play" },
+    "keywords": {
+      "es": ["descargar app", "Android", "tienda de apps", "Play Store", "instalar", "aplicación", "juegos", "celular"],
+      "en": ["download", "Android", "get the app", "Play Store", "install", "mobile app", "games", "phone"]
+    }
+  },
+  "brand-chrome": {
+    "label": { "es": "Chrome", "en": "Chrome", "pt": "Chrome", "fr": "Chrome", "de": "Chrome", "it": "Chrome", "ja": "Chrome", "zh": "Chrome", "ko": "Chrome", "ar": "Chrome" },
+    "keywords": {
+      "es": ["navegador", "extensión", "complemento", "Chrome Web Store", "abrir en el navegador", "Google", "web", "instalar extensión"],
+      "en": ["browser", "extension", "add-on", "Chrome Web Store", "open in browser", "Google", "web", "install extension"]
+    }
+  },
+  "brand-edge": {
+    "label": { "es": "Microsoft Edge", "en": "Microsoft Edge", "pt": "Microsoft Edge", "fr": "Microsoft Edge", "de": "Microsoft Edge", "it": "Microsoft Edge", "ja": "Microsoft Edge", "zh": "Microsoft Edge", "ko": "Microsoft Edge", "ar": "Microsoft Edge" },
+    "keywords": {
+      "es": ["navegador", "extensión", "complemento", "abrir en el navegador", "Windows", "web", "Internet Explorer", "ola"],
+      "en": ["browser", "extension", "add-on", "open in browser", "Windows", "web", "Internet Explorer", "wave"]
+    }
+  },
+  "brand-amazon": {
+    "label": { "es": "Amazon", "en": "Amazon", "pt": "Amazon", "fr": "Amazon", "de": "Amazon", "it": "Amazon", "ja": "Amazon", "zh": "Amazon", "ko": "Amazon", "ar": "Amazon" },
+    "keywords": {
+      "es": ["sonrisa", "comprar", "tienda en línea", "lista de deseos", "marketplace", "pedido", "envío", "vendedor"],
+      "en": ["smile", "buy", "online store", "wishlist", "marketplace", "order", "shipping", "seller"]
+    }
+  },
+  "brand-shopify": {
+    "label": { "es": "Shopify", "en": "Shopify", "pt": "Shopify", "fr": "Shopify", "de": "Shopify", "it": "Shopify", "ja": "Shopify", "zh": "Shopify", "ko": "Shopify", "ar": "Shopify" },
+    "keywords": {
+      "es": ["tienda en línea", "ecommerce", "comercio electrónico", "bolsa de compras", "Shop Pay", "app de tienda", "hecho con", "vender en línea"],
+      "en": ["online store", "ecommerce", "shopping bag", "Shop Pay", "store app", "built with", "sell online", "storefront"]
+    }
+  },
+  "brand-airbnb": {
+    "label": { "es": "Airbnb", "en": "Airbnb", "pt": "Airbnb", "fr": "Airbnb", "de": "Airbnb", "it": "Airbnb", "ja": "Airbnb", "zh": "Airbnb", "ko": "Airbnb", "ar": "Airbnb" },
+    "keywords": {
+      "es": ["hospedaje", "renta vacacional", "reservar", "alojamiento", "anuncio", "viaje", "anfitrión", "casa"],
+      "en": ["lodging", "vacation rental", "book", "accommodation", "listing", "travel", "host", "stay"]
+    }
+  },
+  "brand-github": {
+    "label": { "es": "GitHub", "en": "GitHub", "pt": "GitHub", "fr": "GitHub", "de": "GitHub", "it": "GitHub", "ja": "GitHub", "zh": "GitHub", "ko": "GitHub", "ar": "GitHub" },
+    "keywords": {
+      "es": ["repositorio", "repo", "código", "Git", "perfil de desarrollador", "iniciar sesión", "código abierto", "Octocat"],
+      "en": ["repository", "repo", "code", "Git", "developer profile", "sign in", "open source", "Octocat"]
+    }
+  },
+  "brand-gitlab": {
+    "label": { "es": "GitLab", "en": "GitLab", "pt": "GitLab", "fr": "GitLab", "de": "GitLab", "it": "GitLab", "ja": "GitLab", "zh": "GitLab", "ko": "GitLab", "ar": "GitLab" },
+    "keywords": {
+      "es": ["repositorio", "repo", "código", "Git", "iniciar sesión", "CI/CD", "tanuki", "DevOps"],
+      "en": ["repository", "repo", "code", "Git", "sign in", "CI/CD", "tanuki", "DevOps"]
+    }
+  },
+  "brand-bitbucket": {
+    "label": { "es": "Bitbucket", "en": "Bitbucket", "pt": "Bitbucket", "fr": "Bitbucket", "de": "Bitbucket", "it": "Bitbucket", "ja": "Bitbucket", "zh": "Bitbucket", "ko": "Bitbucket", "ar": "Bitbucket" },
+    "keywords": {
+      "es": ["repositorio", "repo", "código", "Git", "Atlassian", "control de versiones", "pull request", "cubeta"],
+      "en": ["repository", "repo", "code", "Git", "Atlassian", "version control", "pull request", "bucket"]
+    }
+  },
+  "brand-stack-overflow": {
+    "label": { "es": "Stack Overflow", "en": "Stack Overflow", "pt": "Stack Overflow", "fr": "Stack Overflow", "de": "Stack Overflow", "it": "Stack Overflow", "ja": "Stack Overflow", "zh": "Stack Overflow", "ko": "Stack Overflow", "ar": "Stack Overflow" },
+    "keywords": {
+      "es": ["preguntas y respuestas", "pregunta", "respuesta", "programación", "foro", "perfil de desarrollador", "duda de código", "comunidad"],
+      "en": ["Q&A", "question", "answer", "programming", "forum", "developer profile", "coding help", "community"]
+    }
+  },
+  "brand-codepen": {
+    "label": { "es": "CodePen", "en": "CodePen", "pt": "CodePen", "fr": "CodePen", "de": "CodePen", "it": "CodePen", "ja": "CodePen", "zh": "CodePen", "ko": "CodePen", "ar": "CodePen" },
+    "keywords": {
+      "es": ["pen", "demo", "código", "editor en línea", "HTML", "CSS", "JavaScript", "front-end"],
+      "en": ["pen", "demo", "code", "online editor", "HTML", "CSS", "JavaScript", "front-end"]
+    }
+  },
+  "brand-docker": {
+    "label": { "es": "Docker", "en": "Docker", "pt": "Docker", "fr": "Docker", "de": "Docker", "it": "Docker", "ja": "Docker", "zh": "Docker", "ko": "Docker", "ar": "Docker" },
+    "keywords": {
+      "es": ["contenedor", "imagen", "ballena", "despliegue", "DevOps", "registro de imágenes", "contenerizar", "Docker Hub"],
+      "en": ["container", "image", "whale", "deploy", "DevOps", "image registry", "containerize", "Docker Hub"]
+    }
+  },
+  "brand-vscode": {
+    "label": { "es": "Visual Studio Code", "en": "Visual Studio Code", "pt": "Visual Studio Code", "fr": "Visual Studio Code", "de": "Visual Studio Code", "it": "Visual Studio Code", "ja": "Visual Studio Code", "zh": "Visual Studio Code", "ko": "Visual Studio Code", "ar": "Visual Studio Code" },
+    "keywords": {
+      "es": ["VS Code", "editor de código", "IDE", "extensión", "abrir en el editor", "programar", "Microsoft", "código"],
+      "en": ["VS Code", "code editor", "IDE", "extension", "open in editor", "coding", "Microsoft", "programming"]
+    }
+  },
+  "brand-digitalocean": {
+    "label": { "es": "DigitalOcean", "en": "DigitalOcean", "pt": "DigitalOcean", "fr": "DigitalOcean", "de": "DigitalOcean", "it": "DigitalOcean", "ja": "DigitalOcean", "zh": "DigitalOcean", "ko": "DigitalOcean", "ar": "DigitalOcean" },
+    "keywords": {
+      "es": ["droplet", "nube", "servidor", "hosting", "despliegue", "VPS", "App Platform", "infraestructura"],
+      "en": ["droplet", "cloud", "server", "hosting", "deploy", "VPS", "App Platform", "infrastructure"]
+    }
+  },
+  "brand-hugging-face": {
+    "label": { "es": "Hugging Face", "en": "Hugging Face", "pt": "Hugging Face", "fr": "Hugging Face", "de": "Hugging Face", "it": "Hugging Face", "ja": "Hugging Face", "zh": "Hugging Face", "ko": "Hugging Face", "ar": "Hugging Face" },
+    "keywords": {
+      "es": ["modelo", "dataset", "conjunto de datos", "Space", "inteligencia artificial", "IA", "machine learning", "emoji de abrazo"],
+      "en": ["model", "dataset", "Space", "AI", "machine learning", "open source AI", "transformers", "hugging emoji"]
+    }
+  },
+  "brand-openai": {
+    "label": { "es": "OpenAI", "en": "OpenAI", "pt": "OpenAI", "fr": "OpenAI", "de": "OpenAI", "it": "OpenAI", "ja": "OpenAI", "zh": "OpenAI", "ko": "OpenAI", "ar": "OpenAI" },
+    "keywords": {
+      "es": ["ChatGPT", "GPT", "inteligencia artificial", "IA", "asistente", "abrir en ChatGPT", "integración", "chatbot"],
+      "en": ["ChatGPT", "GPT", "AI", "artificial intelligence", "assistant", "open in ChatGPT", "integration", "chatbot"]
+    }
+  },
+  "brand-claude": {
+    "label": { "es": "Claude", "en": "Claude", "pt": "Claude", "fr": "Claude", "de": "Claude", "it": "Claude", "ja": "Claude", "zh": "Claude", "ko": "Claude", "ar": "Claude" },
+    "keywords": {
+      "es": ["Anthropic", "inteligencia artificial", "IA", "asistente", "preguntar", "integración", "chatbot", "modelo de lenguaje"],
+      "en": ["Anthropic", "AI", "artificial intelligence", "assistant", "ask", "integration", "chatbot", "language model"]
+    }
+  },
+  "brand-figma": {
+    "label": { "es": "Figma", "en": "Figma", "pt": "Figma", "fr": "Figma", "de": "Figma", "it": "Figma", "ja": "Figma", "zh": "Figma", "ko": "Figma", "ar": "Figma" },
+    "keywords": {
+      "es": ["diseño", "prototipo", "archivo de diseño", "UI", "colaboración", "diseño de interfaces", "abrir archivo", "FigJam"],
+      "en": ["design", "prototype", "design file", "UI", "collaboration", "interface design", "open file", "FigJam"]
+    }
+  },
+  "brand-framer": {
+    "label": { "es": "Framer", "en": "Framer", "pt": "Framer", "fr": "Framer", "de": "Framer", "it": "Framer", "ja": "Framer", "zh": "Framer", "ko": "Framer", "ar": "Framer" },
+    "keywords": {
+      "es": ["sitio web", "hecho con", "diseño web", "no-code", "prototipo", "proyecto", "creador de sitios", "publicar sitio"],
+      "en": ["website", "made with", "web design", "no-code", "prototype", "project", "site builder", "publish site"]
+    }
+  },
+  "brand-dribbble": {
+    "label": { "es": "Dribbble", "en": "Dribbble", "pt": "Dribbble", "fr": "Dribbble", "de": "Dribbble", "it": "Dribbble", "ja": "Dribbble", "zh": "Dribbble", "ko": "Dribbble", "ar": "Dribbble" },
+    "keywords": {
+      "es": ["diseñador", "portafolio", "shot", "inspiración", "diseño", "perfil", "balón de básquetbol", "comunidad de diseño"],
+      "en": ["designer", "portfolio", "shot", "inspiration", "design", "profile", "basketball", "design community"]
+    }
+  },
+  "brand-adobe": {
+    "label": { "es": "Adobe", "en": "Adobe", "pt": "Adobe", "fr": "Adobe", "de": "Adobe", "it": "Adobe", "ja": "Adobe", "zh": "Adobe", "ko": "Adobe", "ar": "Adobe" },
+    "keywords": {
+      "es": ["Creative Cloud", "Photoshop", "Illustrator", "Acrobat", "PDF", "cuenta", "diseño", "integración"],
+      "en": ["Creative Cloud", "Photoshop", "Illustrator", "Acrobat", "PDF", "account", "design", "integration"]
+    }
+  },
+  "brand-unsplash": {
+    "label": { "es": "Unsplash", "en": "Unsplash", "pt": "Unsplash", "fr": "Unsplash", "de": "Unsplash", "it": "Unsplash", "ja": "Unsplash", "zh": "Unsplash", "ko": "Unsplash", "ar": "Unsplash" },
+    "keywords": {
+      "es": ["fotos gratis", "fotografía", "crédito de foto", "fotógrafo", "banco de imágenes", "foto de stock", "atribución", "imagen"],
+      "en": ["free photos", "photography", "photo credit", "photographer", "stock images", "stock photo", "attribution", "image"]
+    }
+  },
+  "brand-notion": {
+    "label": { "es": "Notion", "en": "Notion", "pt": "Notion", "fr": "Notion", "de": "Notion", "it": "Notion", "ja": "Notion", "zh": "Notion", "ko": "Notion", "ar": "Notion" },
+    "keywords": {
+      "es": ["página", "notas", "wiki", "documentos", "espacio de trabajo", "base de datos", "integración", "productividad"],
+      "en": ["page", "notes", "wiki", "docs", "workspace", "database", "integration", "productivity"]
+    }
+  },
+  "brand-trello": {
+    "label": { "es": "Trello", "en": "Trello", "pt": "Trello", "fr": "Trello", "de": "Trello", "it": "Trello", "ja": "Trello", "zh": "Trello", "ko": "Trello", "ar": "Trello" },
+    "keywords": {
+      "es": ["tablero", "kanban", "tarjetas", "tareas", "listas", "proyecto", "integración", "Atlassian"],
+      "en": ["board", "kanban", "cards", "tasks", "lists", "project", "integration", "Atlassian"]
+    }
+  },
+  "brand-asana": {
+    "label": { "es": "Asana", "en": "Asana", "pt": "Asana", "fr": "Asana", "de": "Asana", "it": "Asana", "ja": "Asana", "zh": "Asana", "ko": "Asana", "ar": "Asana" },
+    "keywords": {
+      "es": ["proyecto", "tarea", "gestión de proyectos", "equipo", "pendientes", "integración", "tres puntos", "productividad"],
+      "en": ["project", "task", "project management", "team", "to-do", "integration", "three dots", "productivity"]
+    }
+  },
+  "brand-linear": {
+    "label": { "es": "Linear", "en": "Linear", "pt": "Linear", "fr": "Linear", "de": "Linear", "it": "Linear", "ja": "Linear", "zh": "Linear", "ko": "Linear", "ar": "Linear" },
+    "keywords": {
+      "es": ["issue", "incidencia", "proyecto", "seguimiento de bugs", "sprint", "tareas", "integración", "ingeniería"],
+      "en": ["issue", "project", "bug tracking", "sprint", "cycle", "tasks", "integration", "engineering"]
+    }
+  },
+  "brand-clickup": {
+    "label": { "es": "ClickUp", "en": "ClickUp", "pt": "ClickUp", "fr": "ClickUp", "de": "ClickUp", "it": "ClickUp", "ja": "ClickUp", "zh": "ClickUp", "ko": "ClickUp", "ar": "ClickUp" },
+    "keywords": {
+      "es": ["tarea", "proyecto", "gestión de proyectos", "pendientes", "equipo", "espacio de trabajo", "integración", "productividad"],
+      "en": ["task", "project", "project management", "to-do", "team", "workspace", "integration", "productivity"]
+    }
+  },
+  "brand-monday": {
+    "label": { "es": "monday.com", "en": "monday.com", "pt": "monday.com", "fr": "monday.com", "de": "monday.com", "it": "monday.com", "ja": "monday.com", "zh": "monday.com", "ko": "monday.com", "ar": "monday.com" },
+    "keywords": {
+      "es": ["tablero", "gestión de proyectos", "flujo de trabajo", "tareas", "equipo", "CRM", "integración", "Work OS"],
+      "en": ["board", "project management", "workflow", "tasks", "team", "CRM", "integration", "Work OS"]
+    }
+  },
+  "brand-miro": {
+    "label": { "es": "Miro", "en": "Miro", "pt": "Miro", "fr": "Miro", "de": "Miro", "it": "Miro", "ja": "Miro", "zh": "Miro", "ko": "Miro", "ar": "Miro" },
+    "keywords": {
+      "es": ["pizarra", "pizarrón digital", "lluvia de ideas", "colaboración", "diagrama", "post-its", "taller", "integración"],
+      "en": ["whiteboard", "online whiteboard", "brainstorm", "collaboration", "diagram", "sticky notes", "workshop", "integration"]
+    }
+  },
+  "brand-airtable": {
+    "label": { "es": "Airtable", "en": "Airtable", "pt": "Airtable", "fr": "Airtable", "de": "Airtable", "it": "Airtable", "ja": "Airtable", "zh": "Airtable", "ko": "Airtable", "ar": "Airtable" },
+    "keywords": {
+      "es": ["base", "base de datos", "hoja de cálculo", "tabla", "registros", "no-code", "automatización", "integración"],
+      "en": ["base", "database", "spreadsheet", "table", "records", "no-code", "automation", "integration"]
+    }
+  },
+  "brand-jira": {
+    "label": { "es": "Jira", "en": "Jira", "pt": "Jira", "fr": "Jira", "de": "Jira", "it": "Jira", "ja": "Jira", "zh": "Jira", "ko": "Jira", "ar": "Jira" },
+    "keywords": {
+      "es": ["issue", "ticket", "incidencia", "bug", "sprint", "scrum", "Atlassian", "integración"],
+      "en": ["issue", "ticket", "bug", "sprint", "scrum", "backlog", "Atlassian", "integration"]
+    }
+  },
+  "brand-dropbox": {
+    "label": { "es": "Dropbox", "en": "Dropbox", "pt": "Dropbox", "fr": "Dropbox", "de": "Dropbox", "it": "Dropbox", "ja": "Dropbox", "zh": "Dropbox", "ko": "Dropbox", "ar": "Dropbox" },
+    "keywords": {
+      "es": ["nube", "guardar en la nube", "elegir archivo", "enlace compartido", "almacenamiento", "carpeta", "subir archivo", "caja"],
+      "en": ["cloud", "save to cloud", "choose file", "shared link", "storage", "folder", "upload", "box"]
+    }
+  },
+  "brand-google-drive": {
+    "label": { "es": "Google Drive", "en": "Google Drive", "pt": "Google Drive", "fr": "Google Drive", "de": "Google Drive", "it": "Google Drive", "ja": "Google ドライブ", "zh": "Google 云端硬盘", "ko": "Google 드라이브", "ar": "Google Drive" },
+    "keywords": {
+      "es": ["nube", "guardar en la nube", "elegir archivo", "enlace compartido", "almacenamiento", "carpeta compartida", "documentos", "subir archivo"],
+      "en": ["cloud", "save to cloud", "choose file", "shared link", "storage", "shared folder", "docs", "upload"]
+    }
+  },
+  "brand-google-photos": {
+    "label": { "es": "Google Fotos", "en": "Google Photos", "pt": "Google Fotos", "fr": "Google Photos", "de": "Google Fotos", "it": "Google Foto", "ja": "Google フォト", "zh": "Google 相册", "ko": "Google 포토", "ar": "صور Google" },
+    "keywords": {
+      "es": ["álbum compartido", "galería", "importar imágenes", "respaldo", "recuerdos", "imágenes", "nube", "rehilete"],
+      "en": ["shared album", "gallery", "import pictures", "backup", "memories", "pictures", "cloud", "pinwheel"]
+    }
+  },
+  "brand-gmail": {
+    "label": { "es": "Gmail", "en": "Gmail", "pt": "Gmail", "fr": "Gmail", "de": "Gmail", "it": "Gmail", "ja": "Gmail", "zh": "Gmail", "ko": "Gmail", "ar": "Gmail" },
+    "keywords": {
+      "es": ["correo", "email", "bandeja de entrada", "abrir correo", "cuenta de Google", "redactar", "sobre", "integración"],
+      "en": ["email", "mail", "inbox", "open email", "Google account", "compose", "envelope", "integration"]
+    }
+  },
+  "brand-microsoft-teams": {
+    "label": { "es": "Microsoft Teams", "en": "Microsoft Teams", "pt": "Microsoft Teams", "fr": "Microsoft Teams", "de": "Microsoft Teams", "it": "Microsoft Teams", "ja": "Microsoft Teams", "zh": "Microsoft Teams", "ko": "Microsoft Teams", "ar": "Microsoft Teams" },
+    "keywords": {
+      "es": ["videollamada", "reunión", "unirse a la reunión", "junta en línea", "chat de equipo", "llamada", "Office", "integración"],
+      "en": ["video call", "meeting", "join meeting", "online meeting", "team chat", "call", "Office", "integration"]
+    }
+  },
+  "brand-hubspot": {
+    "label": { "es": "HubSpot", "en": "HubSpot", "pt": "HubSpot", "fr": "HubSpot", "de": "HubSpot", "it": "HubSpot", "ja": "HubSpot", "zh": "HubSpot", "ko": "HubSpot", "ar": "HubSpot" },
+    "keywords": {
+      "es": ["CRM", "formulario", "agendar reunión", "marketing", "ventas", "prospectos", "leads", "integración"],
+      "en": ["CRM", "form", "meeting link", "marketing", "sales", "leads", "inbound", "integration"]
+    }
+  },
+  "brand-intercom": {
+    "label": { "es": "Intercom", "en": "Intercom", "pt": "Intercom", "fr": "Intercom", "de": "Intercom", "it": "Intercom", "ja": "Intercom", "zh": "Intercom", "ko": "Intercom", "ar": "Intercom" },
+    "keywords": {
+      "es": ["chat de soporte", "atención al cliente", "chat en vivo", "ayuda", "widget de chat", "mensajero", "soporte", "integración"],
+      "en": ["support chat", "customer support", "live chat", "help", "chat widget", "messenger", "launcher", "integration"]
+    }
+  },
+  "brand-zendesk": {
+    "label": { "es": "Zendesk", "en": "Zendesk", "pt": "Zendesk", "fr": "Zendesk", "de": "Zendesk", "it": "Zendesk", "ja": "Zendesk", "zh": "Zendesk", "ko": "Zendesk", "ar": "Zendesk" },
+    "keywords": {
+      "es": ["centro de ayuda", "mesa de ayuda", "soporte", "ticket", "atención al cliente", "preguntas frecuentes", "base de conocimiento", "integración"],
+      "en": ["help center", "help desk", "support", "ticket", "customer service", "FAQ", "knowledge base", "integration"]
+    }
+  },
+  "brand-basecamp": {
+    "label": { "es": "Basecamp", "en": "Basecamp", "pt": "Basecamp", "fr": "Basecamp", "de": "Basecamp", "it": "Basecamp", "ja": "Basecamp", "zh": "Basecamp", "ko": "Basecamp", "ar": "Basecamp" },
+    "keywords": {
+      "es": ["proyecto", "gestión de proyectos", "equipo", "tareas", "pendientes", "colaboración", "montaña", "integración"],
+      "en": ["project", "project management", "team", "tasks", "to-do", "collaboration", "mountain", "integration"]
+    }
+  },
+  "brand-todoist": {
+    "label": { "es": "Todoist", "en": "Todoist", "pt": "Todoist", "fr": "Todoist", "de": "Todoist", "it": "Todoist", "ja": "Todoist", "zh": "Todoist", "ko": "Todoist", "ar": "Todoist" },
+    "keywords": {
+      "es": ["pendientes", "lista de tareas", "tareas", "checklist", "recordatorio", "proyecto", "productividad", "integración"],
+      "en": ["to-do", "task list", "tasks", "checklist", "reminder", "project", "productivity", "integration"]
+    }
+  },
+  "brand-paypal": {
+    "label": { "es": "PayPal", "en": "PayPal", "pt": "PayPal", "fr": "PayPal", "de": "PayPal", "it": "PayPal", "ja": "PayPal", "zh": "PayPal", "ko": "PayPal", "ar": "PayPal" },
+    "keywords": {
+      "es": ["pagar", "pago en línea", "cobrar", "enlace de pago", "checkout", "billetera digital", "enviar dinero", "integración"],
+      "en": ["pay", "online payment", "charge", "payment link", "checkout", "digital wallet", "send money", "integration"]
+    }
+  },
+  "brand-stripe": {
+    "label": { "es": "Stripe", "en": "Stripe", "pt": "Stripe", "fr": "Stripe", "de": "Stripe", "it": "Stripe", "ja": "Stripe", "zh": "Stripe", "ko": "Stripe", "ar": "Stripe" },
+    "keywords": {
+      "es": ["pagar", "pago con tarjeta", "cobrar", "checkout", "pasarela de pagos", "suscripciones", "cuenta", "integración"],
+      "en": ["pay", "card payment", "charge", "checkout", "payment gateway", "subscriptions", "account", "integration"]
+    }
+  },
+  "brand-waze": {
+    "label": { "es": "Waze", "en": "Waze", "pt": "Waze", "fr": "Waze", "de": "Waze", "it": "Waze", "ja": "Waze", "zh": "Waze", "ko": "Waze", "ar": "Waze" },
+    "keywords": {
+      "es": ["cómo llegar", "navegación", "ruta", "mapa", "dirección", "GPS", "tráfico", "manejar"],
+      "en": ["directions", "navigation", "route", "map", "address", "GPS", "traffic", "drive"]
+    }
+  },
+  "brand-yelp": {
+    "label": { "es": "Yelp", "en": "Yelp", "pt": "Yelp", "fr": "Yelp", "de": "Yelp", "it": "Yelp", "ja": "Yelp", "zh": "Yelp", "ko": "Yelp", "ar": "Yelp" },
+    "keywords": {
+      "es": ["reseñas", "opiniones", "calificación", "estrellas", "dejar reseña", "negocio local", "restaurantes", "recomendaciones"],
+      "en": ["reviews", "ratings", "stars", "write a review", "local business", "restaurants", "recommendations", "business page"]
+    }
+  },
+  "brand-tripadvisor": {
+    "label": { "es": "Tripadvisor", "en": "Tripadvisor", "pt": "Tripadvisor", "fr": "Tripadvisor", "de": "Tripadvisor", "it": "Tripadvisor", "ja": "Tripadvisor", "zh": "Tripadvisor", "ko": "Tripadvisor", "ar": "Tripadvisor" },
+    "keywords": {
+      "es": ["reseñas", "opiniones", "calificación", "dejar reseña", "viajes", "hoteles", "restaurantes", "búho"],
+      "en": ["reviews", "ratings", "write a review", "travel", "hotels", "restaurants", "attractions", "owl"]
+    }
+  },
+  "brand-strava": {
+    "label": { "es": "Strava", "en": "Strava", "pt": "Strava", "fr": "Strava", "de": "Strava", "it": "Strava", "ja": "Strava", "zh": "Strava", "ko": "Strava", "ar": "Strava" },
+    "keywords": {
+      "es": ["correr", "ciclismo", "actividad", "entrenamiento", "club", "perfil de atleta", "running", "deporte"],
+      "en": ["running", "cycling", "activity", "workout", "club", "athlete profile", "fitness", "sports"]
+    }
   }
 }

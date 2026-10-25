@@ -4,7 +4,8 @@
 //   not for brand marks (solid by nature); a fixed threshold so the criterion does not shift as
 //   the set grows,
 // - double: near duplicates, two icons that look almost the same at 32 px (similarity ≥ 0.975),
-//   except those in the same family (calendar and calendar-plus look alike on purpose),
+//   except those in the same family (calendar and calendar-plus look alike on purpose) and badge
+//   siblings (the same drawing with another badge, whatever their names),
 // - silhouette: a fill that changes the silhouette (the fill must occupy the same box as the outline),
 // - loose: fragments, open paths shorter than 2 that are not a dot,
 // - open: an open path inside fill.solid (it would fill as a wedge): close it (Z), or move it to
@@ -23,7 +24,13 @@ import { loadAll } from './load.mjs';
 const only = process.argv[2];
 const { categories, errors } = await loadAll();
 if (errors.length) console.warn(`(validation warnings: ${errors.length}; run build --check)`);
-const all = categories.flatMap((c) => Object.entries(c.icons).map(([name, icon]) => ({ name, cat: c.category, icon })));
+// An icon with an empty or missing path (one being drawn in another category) would break the
+// measurement of the whole set: it is left out and named, and build --check reports it
+const valid = (icon) => Array.isArray(icon.d) && icon.d.length > 0 && icon.d.every((p) => typeof p === 'string' && p.trim());
+const every = categories.flatMap((c) => Object.entries(c.icons).map(([name, icon]) => ({ name, cat: c.category, icon })));
+const broken = every.filter((x) => !valid(x.icon));
+if (broken.length) console.warn(`(skipped, invalid path: ${broken.map((x) => `${x.cat}/${x.name}`).join(', ')})`);
+const all = every.filter((x) => valid(x.icon));
 const b64 = (s) => Buffer.from(s).toString('base64');
 const data = all.map(({ name, cat, icon }) => ({
   name,
@@ -112,11 +119,19 @@ for (const r of result.filter(mine)) {
 for (const r of result.filter(mine)) if (r.silhouette !== null && r.silhouette > 1) issues.push(`silhouette ${r.cat}/${r.name}: the fill changes the box by ${r.silhouette} px`);
 // Near duplicates (cosine similarity of the ink at 32 px)
 const norm = result.map((r) => Math.sqrt(r.a.reduce((s, v) => s + v * v, 0)) || 1);
+// Badge siblings look alike on purpose whatever their names: the same drawing alone or with another
+// badge (delivery-time and parcel-plus are both the parcel). The same drawing twice without a
+// badge is still a double
+const drawing = new Map(all.map((x) => [`${x.cat}/${x.name}`, { d: JSON.stringify(x.icon.d), badge: x.icon.badge?.kind ?? null }]));
+const siblings = (a, b) => {
+  const [x, y] = [drawing.get(`${a.cat}/${a.name}`), drawing.get(`${b.cat}/${b.name}`)];
+  return x.d === y.d && x.badge !== y.badge;
+};
 for (let i = 0; i < result.length; i++)
   for (let j = i + 1; j < result.length; j++) {
     if (!mine(result[i]) && !mine(result[j])) continue;
     const [n1, n2] = [result[i].name, result[j].name];
-    if (n1.startsWith(`${n2}-`) || n2.startsWith(`${n1}-`) || n1.split('-')[0] === n2.split('-')[0]) continue;
+    if (n1.startsWith(`${n2}-`) || n2.startsWith(`${n1}-`) || n1.split('-')[0] === n2.split('-')[0] || siblings(result[i], result[j])) continue;
     let dot = 0;
     const A = result[i].a;
     const B = result[j].a;

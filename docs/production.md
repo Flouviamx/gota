@@ -55,3 +55,8 @@ What round 3 taught about running one (it was cut six times):
 - **Relaunch only what's left.** The drawing workflow takes a `todo` per category (`draw`, `lang`, `critic`); a relaunch never repeats finished work, and an illustrator that finds its file half done continues from it. A critic whose illustrator was cut finishes the checks itself.
 - **Results outside the temporary folder.** A restart clears `/private/tmp`: the approved lists, the illustrators' reports, and the languages are kept in the session's own folder, and languages come back as data that the main session writes to `src/i18n/` once the critic is done (so a dropped icon never leaves an entry behind).
 - **The usage limit** stops every running agent at once; they fail cleanly and the round resumes when it resets. Keep the Mac on power and the session open while a round runs.
+
+What round 4 added:
+- **A critic cut off partway** leaves some icons redrawn and others not: its relaunch is told so and judges the file as it is now, never from the illustrator's report.
+- **The next round's names can run while a round's critics finish** (they only read), but two workflows at once spend the usage limit about twice as fast: start them when the critics are few.
+- **After the critics, the main session looks at what they redrew** in one sheet (outline, fill, and 18 px for each) and drops or redraws what still doesn't read, before the owner's sample.

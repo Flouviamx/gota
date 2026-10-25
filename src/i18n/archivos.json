@@ -698,5 +698,565 @@
       "es": ["revisiones", "cambios", "restaurar anterior", "control de cambios", "borradores", "iteraciones", "historial"],
       "en": ["revisions", "changes", "restore previous", "track changes", "drafts", "iterations", "history"]
     }
+  },
+  "file-template": {
+    "label": { "es": "Plantilla", "en": "Template", "pt": "Modelo", "fr": "Modèle", "de": "Vorlage", "it": "Modello", "ja": "テンプレート", "zh": "模板", "ko": "템플릿", "ar": "قالب" },
+    "keywords": {
+      "es": ["usar plantilla", "galería de plantillas", "nuevo desde plantilla", "machote", "formato base", "diseño predefinido", "punto de partida"],
+      "en": ["use template", "template gallery", "new from template", "boilerplate", "starter", "preset", "starting point"]
+    }
+  },
+  "file-draft": {
+    "label": { "es": "Documento en borrador", "en": "Draft document", "pt": "Documento em rascunho", "fr": "Document en brouillon", "de": "Dokumententwurf", "it": "Documento in bozza", "ja": "下書きの文書", "zh": "草稿文档", "ko": "초안 문서", "ar": "مسودة مستند" },
+    "keywords": {
+      "es": ["sin terminar", "en progreso", "sin publicar", "versión preliminar", "pendiente de revisión", "trabajo en curso", "boceto"],
+      "en": ["unfinished", "work in progress", "unpublished", "preliminary version", "pending review", "WIP", "rough copy"]
+    }
+  },
+  "file-form": {
+    "label": { "es": "Formulario para llenar", "en": "Fillable form", "pt": "Formulário preenchível", "fr": "Formulaire à remplir", "de": "Ausfüllbares Formular", "it": "Modulo compilabile", "ja": "記入式の書類", "zh": "可填写表单", "ko": "작성용 서식", "ar": "نموذج قابل للتعبئة" },
+    "keywords": {
+      "es": ["formato", "PDF rellenable", "solicitud de trámite", "papeleo", "inscripción", "documento oficial", "firmar y enviar"],
+      "en": ["PDF form", "fill in", "application form", "paperwork", "enrollment", "official document", "sign and submit"]
+    }
+  },
+  "file-key": {
+    "label": { "es": "Archivo cifrado", "en": "Encrypted file", "pt": "Arquivo criptografado", "fr": "Fichier chiffré", "de": "Verschlüsselte Datei", "it": "File crittografato", "ja": "暗号化されたファイル", "zh": "加密文件", "ko": "암호화된 파일", "ar": "ملف مشفّر" },
+    "keywords": {
+      "es": ["encriptado", "llave privada", "certificado", "archivo de clave", "PEM", "seguridad", "acceso con clave"],
+      "en": ["encryption", "private key", "certificate", "key file", "PEM", "security", "keystore"]
+    }
+  },
+  "file-broken": {
+    "label": { "es": "Archivo dañado", "en": "Corrupted file", "pt": "Arquivo corrompido", "fr": "Fichier corrompu", "de": "Beschädigte Datei", "it": "File danneggiato", "ja": "破損したファイル", "zh": "已损坏的文件", "ko": "손상된 파일", "ar": "ملف تالف" },
+    "keywords": {
+      "es": ["corrupto", "no se puede abrir", "roto", "ilegible", "error al abrir", "reparar archivo", "datos perdidos"],
+      "en": ["corrupt", "can't open", "broken", "unreadable", "failed to open", "repair file", "data loss"]
+    }
+  },
+  "file-link": {
+    "label": { "es": "Enlace del archivo", "en": "File link", "pt": "Link do arquivo", "fr": "Lien du fichier", "de": "Dateilink", "it": "Link al file", "ja": "ファイルのリンク", "zh": "文件链接", "ko": "파일 링크", "ar": "رابط الملف" },
+    "keywords": {
+      "es": ["copiar enlace", "cualquiera con el enlace", "compartir por enlace", "liga", "URL", "archivo vinculado", "acceso público"],
+      "en": ["copy link", "anyone with the link", "share via link", "URL", "linked file", "shareable link", "public access"]
+    }
+  },
+  "file-shortcut": {
+    "label": { "es": "Acceso directo a archivo", "en": "File shortcut", "pt": "Atalho de arquivo", "fr": "Raccourci vers un fichier", "de": "Dateiverknüpfung", "it": "Collegamento al file", "ja": "ファイルのショートカット", "zh": "文件快捷方式", "ko": "파일 바로 가기", "ar": "اختصار ملف" },
+    "keywords": {
+      "es": ["alias", "enlace simbólico", "symlink", "apunta a otro lugar", "referencia", "acceso rápido", "ubicación original"],
+      "en": ["alias", "symbolic link", "symlink", "points elsewhere", "reference", "quick access", "original location"]
+    }
+  },
+  "file-missing": {
+    "label": { "es": "Archivo no encontrado", "en": "Missing file", "pt": "Arquivo ausente", "fr": "Fichier manquant", "de": "Fehlende Datei", "it": "File mancante", "ja": "見つからないファイル", "zh": "缺失的文件", "ko": "누락된 파일", "ar": "ملف مفقود" },
+    "keywords": {
+      "es": ["referencia rota", "no existe", "marcador de posición", "eliminado", "ruta inválida", "404", "falta el documento"],
+      "en": ["broken reference", "not found", "placeholder", "deleted", "invalid path", "404", "file not found"]
+    }
+  },
+  "file-hourglass": {
+    "label": { "es": "Archivo con vencimiento", "en": "Expiring file", "pt": "Arquivo com validade", "fr": "Fichier à durée limitée", "de": "Ablaufende Datei", "it": "File in scadenza", "ja": "期限付きファイル", "zh": "限时文件", "ko": "만료 예정 파일", "ar": "ملف محدود الصلاحية" },
+    "keywords": {
+      "es": ["caduca", "expira", "enlace temporal", "archivo temporal", "periodo de retención", "tiempo limitado", "se borra pronto"],
+      "en": ["expires", "expiration date", "temporary link", "temp file", "retention period", "time-limited", "self-destruct"]
+    }
+  },
+  "file-conflict": {
+    "label": { "es": "Conflicto de archivos", "en": "File conflict", "pt": "Conflito de arquivos", "fr": "Conflit de fichiers", "de": "Dateikonflikt", "it": "Conflitto tra file", "ja": "ファイルの競合", "zh": "文件冲突", "ko": "파일 충돌", "ar": "تعارض في الملفات" },
+    "keywords": {
+      "es": ["conflicto de sincronización", "copia en conflicto", "dos versiones", "versiones distintas", "elegir versión", "conservar ambas", "duplicado"],
+      "en": ["sync conflict", "conflicted copy", "two versions", "mismatched versions", "choose version", "keep both", "duplicate"]
+    }
+  },
+  "file-restore": {
+    "label": { "es": "Restaurar archivo", "en": "Restore file", "pt": "Restaurar arquivo", "fr": "Restaurer le fichier", "de": "Datei wiederherstellen", "it": "Ripristina file", "ja": "ファイルを復元", "zh": "恢复文件", "ko": "파일 복원", "ar": "استعادة الملف" },
+    "keywords": {
+      "es": ["versión anterior", "revertir", "recuperar", "deshacer cambios", "recuperar borrado", "regresar versión", "historial"],
+      "en": ["previous version", "revert", "recover", "undo changes", "undelete", "roll back", "history"]
+    }
+  },
+  "file-merge": {
+    "label": { "es": "Combinar archivos", "en": "Merge files", "pt": "Mesclar arquivos", "fr": "Fusionner des fichiers", "de": "Dateien zusammenführen", "it": "Unisci file", "ja": "ファイルを結合", "zh": "合并文件", "ko": "파일 병합", "ar": "دمج الملفات" },
+    "keywords": {
+      "es": ["unir PDF", "juntar documentos", "fusionar", "un solo archivo", "consolidar", "herramientas PDF", "agrupar páginas"],
+      "en": ["merge PDF", "join documents", "combine", "single file", "consolidate", "PDF tools", "concatenate"]
+    }
+  },
+  "file-split": {
+    "label": { "es": "Dividir archivo", "en": "Split file", "pt": "Dividir arquivo", "fr": "Scinder le fichier", "de": "Datei aufteilen", "it": "Dividi file", "ja": "ファイルを分割", "zh": "拆分文件", "ko": "파일 분할", "ar": "تقسيم الملف" },
+    "keywords": {
+      "es": ["dividir PDF", "separar documento", "partir", "varios archivos", "separar páginas", "herramientas PDF", "fragmentar"],
+      "en": ["split PDF", "separate document", "break apart", "multiple files", "separate pages", "PDF tools", "divide"]
+    }
+  },
+  "file-optimize": {
+    "label": { "es": "Reducir tamaño del archivo", "en": "Reduce file size", "pt": "Reduzir tamanho do arquivo", "fr": "Réduire la taille du fichier", "de": "Dateigröße verringern", "it": "Riduci dimensioni del file", "ja": "ファイルサイズを縮小", "zh": "减小文件大小", "ko": "파일 크기 줄이기", "ar": "تقليل حجم الملف" },
+    "keywords": {
+      "es": ["optimizar", "comprimir PDF", "aligerar", "bajar el peso", "achicar imagen", "menos MB", "compresión"],
+      "en": ["optimize", "compress PDF", "shrink", "smaller file", "compress image", "fewer MB", "compression"]
+    }
+  },
+  "file-convert": {
+    "label": { "es": "Convertir archivo", "en": "Convert file", "pt": "Converter arquivo", "fr": "Convertir le fichier", "de": "Datei konvertieren", "it": "Converti file", "ja": "ファイルを変換", "zh": "转换文件", "ko": "파일 변환", "ar": "تحويل الملف" },
+    "keywords": {
+      "es": ["cambiar formato", "PDF a Word", "imagen a PDF", "exportar como", "conversor", "transformar", "otro formato"],
+      "en": ["change format", "PDF to Word", "image to PDF", "export as", "converter", "transform", "file format"]
+    }
+  },
+  "file-unzip": {
+    "label": { "es": "Descomprimir archivo", "en": "Extract archive", "pt": "Descompactar arquivo", "fr": "Extraire l’archive", "de": "Archiv entpacken", "it": "Estrai archivio", "ja": "ファイルを解凍", "zh": "解压文件", "ko": "압축 풀기", "ar": "فك ضغط الملف" },
+    "keywords": {
+      "es": ["extraer", "extraer todo", "abrir ZIP", "unzip", "desempaquetar", "RAR", "archivo ZIP"],
+      "en": ["unzip", "extract all", "open ZIP", "decompress", "unpack", "RAR", "ZIP file"]
+    }
+  },
+  "file-tabs": {
+    "label": { "es": "Documento con pestañas", "en": "Tabbed document", "pt": "Documento com abas", "fr": "Document à onglets", "de": "Dokument mit Registern", "it": "Documento a schede", "ja": "タブ付きドキュメント", "zh": "带标签页的文档", "ko": "탭이 있는 문서", "ar": "مستند بعلامات تبويب" },
+    "keywords": {
+      "es": ["secciones", "separadores", "índice", "apartados", "organizar partes", "capítulos", "divisores"],
+      "en": ["sections", "dividers", "index tabs", "parts", "organize sections", "chapters", "binder"]
+    }
+  },
+  "file-database": {
+    "label": { "es": "Archivo de base de datos", "en": "Database file", "pt": "Arquivo de banco de dados", "fr": "Fichier de base de données", "de": "Datenbankdatei", "it": "File di database", "ja": "データベースファイル", "zh": "数据库文件", "ko": "데이터베이스 파일", "ar": "ملف قاعدة بيانات" },
+    "keywords": {
+      "es": ["volcado SQL", "dump", "SQLite", ".db", "exportar datos", "respaldo de datos", "tablas"],
+      "en": ["SQL dump", "dump", "SQLite", ".db", "data export", "data backup", "tables"]
+    }
+  },
+  "file-vector": {
+    "label": { "es": "Archivo vectorial", "en": "Vector file", "pt": "Arquivo vetorial", "fr": "Fichier vectoriel", "de": "Vektordatei", "it": "File vettoriale", "ja": "ベクターファイル", "zh": "矢量文件", "ko": "벡터 파일", "ar": "ملف متجهي" },
+    "keywords": {
+      "es": ["SVG", "EPS", "AI", "ilustración", "logotipo", "trazos", "diseño gráfico"],
+      "en": ["SVG", "EPS", "AI", "illustration", "logo", "paths", "artwork"]
+    }
+  },
+  "file-disc": {
+    "label": { "es": "Imagen de disco", "en": "Disk image", "pt": "Imagem de disco", "fr": "Image disque", "de": "Datenträgerabbild", "it": "Immagine disco", "ja": "ディスクイメージ", "zh": "磁盘映像", "ko": "디스크 이미지", "ar": "صورة قرص" },
+    "keywords": {
+      "es": ["ISO", "DMG", "instalador", "medio de instalación", "montar", "grabar disco", "unidad virtual"],
+      "en": ["ISO", "DMG", "installer", "installation media", "mount", "burn disc", "virtual drive"]
+    }
+  },
+  "file-globe": {
+    "label": { "es": "Página web", "en": "Web page", "pt": "Página da web", "fr": "Page web", "de": "Webseite", "it": "Pagina web", "ja": "ウェブページ", "zh": "网页", "ko": "웹 페이지", "ar": "صفحة ويب" },
+    "keywords": {
+      "es": ["HTML", "publicar en la web", "público", "sitio", "en línea", "cualquiera puede verlo", "navegador"],
+      "en": ["HTML", "publish to web", "public", "website", "online", "anyone can view", "browser"]
+    }
+  },
+  "file-shield": {
+    "label": { "es": "Archivo seguro", "en": "Safe file", "pt": "Arquivo seguro", "fr": "Fichier sûr", "de": "Sichere Datei", "it": "File sicuro", "ja": "安全なファイル", "zh": "安全文件", "ko": "안전한 파일", "ar": "ملف آمن" },
+    "keywords": {
+      "es": ["sin virus", "analizado", "antivirus", "protegido", "verificado", "abrir sin riesgo", "escaneo de malware"],
+      "en": ["virus-free", "scanned", "antivirus", "protected", "verified", "malware scan", "trusted"]
+    }
+  },
+  "file-tag": {
+    "label": { "es": "Archivo etiquetado", "en": "Tagged file", "pt": "Arquivo com etiqueta", "fr": "Fichier étiqueté", "de": "Datei mit Tags", "it": "File con tag", "ja": "タグ付きファイル", "zh": "带标签的文件", "ko": "태그가 지정된 파일", "ar": "ملف موسوم" },
+    "keywords": {
+      "es": ["tags", "metadatos", "clasificación", "categoría", "organizar", "nivel de confidencialidad", "palabras clave"],
+      "en": ["labels", "metadata", "classification", "category", "organize", "sensitivity label", "keywords"]
+    }
+  },
+  "file-comment": {
+    "label": { "es": "Comentarios del documento", "en": "Document comments", "pt": "Comentários do documento", "fr": "Commentaires du document", "de": "Dokumentkommentare", "it": "Commenti del documento", "ja": "ドキュメントのコメント", "zh": "文档评论", "ko": "문서 댓글", "ar": "تعليقات المستند" },
+    "keywords": {
+      "es": ["retroalimentación", "revisión", "notas", "sugerencias", "observaciones", "anotaciones", "discusión"],
+      "en": ["feedback", "review", "notes", "suggestions", "remarks", "annotations", "discussion"]
+    }
+  },
+  "file-shared": {
+    "label": { "es": "Archivo compartido", "en": "Shared file", "pt": "Arquivo compartilhado", "fr": "Fichier partagé", "de": "Geteilte Datei", "it": "File condiviso", "ja": "共有ファイル", "zh": "共享文件", "ko": "공유 파일", "ar": "ملف مشترك" },
+    "keywords": {
+      "es": ["compartido conmigo", "colaboradores", "acceso de otros", "equipo", "personas con acceso", "colaborar", "permisos"],
+      "en": ["shared with me", "collaborators", "others have access", "team", "people with access", "collaborate", "permissions"]
+    }
+  },
+  "file-rename": {
+    "label": { "es": "Renombrar archivo", "en": "Rename file", "pt": "Renomear arquivo", "fr": "Renommer le fichier", "de": "Datei umbenennen", "it": "Rinomina file", "ja": "ファイル名を変更", "zh": "重命名文件", "ko": "파일 이름 바꾸기", "ar": "إعادة تسمية الملف" },
+    "keywords": {
+      "es": ["cambiar nombre", "nombre de archivo", "editar nombre", "poner nombre", "cambiar título", "nombre nuevo", "F2"],
+      "en": ["change name", "file name", "edit name", "retitle", "name file", "new name", "F2"]
+    }
+  },
+  "file-gear": {
+    "label": { "es": "Archivo de configuración", "en": "Configuration file", "pt": "Arquivo de configuração", "fr": "Fichier de configuration", "de": "Konfigurationsdatei", "it": "File di configurazione", "ja": "設定ファイル", "zh": "配置文件", "ko": "구성 파일", "ar": "ملف الإعدادات" },
+    "keywords": {
+      "es": ["ajustes", "preferencias", "config", "opciones del archivo", ".ini", "YAML", "parámetros"],
+      "en": ["settings", "preferences", "config", "file options", ".ini", "YAML", "dotfile"]
+    }
+  },
+  "file-block": {
+    "label": { "es": "Archivo bloqueado", "en": "Blocked file", "pt": "Arquivo bloqueado", "fr": "Fichier bloqué", "de": "Blockierte Datei", "it": "File bloccato", "ja": "ブロックされたファイル", "zh": "已阻止的文件", "ko": "차단된 파일", "ar": "ملف محظور" },
+    "keywords": {
+      "es": ["restringido", "acceso denegado", "tipo no permitido", "sin permiso", "prohibido", "no autorizado", "formato no admitido"],
+      "en": ["restricted", "access denied", "file type not allowed", "no permission", "forbidden", "unauthorized", "disallowed"]
+    }
+  },
+  "file-diagram": {
+    "label": { "es": "Archivo de diagrama", "en": "Diagram file", "pt": "Arquivo de diagrama", "fr": "Fichier de diagramme", "de": "Diagrammdatei", "it": "File di diagramma", "ja": "ダイアグラムファイル", "zh": "示意图文件", "ko": "다이어그램 파일", "ar": "ملف مخطط" },
+    "keywords": {
+      "es": ["diagrama de flujo", "mapa mental", "pizarra", "esquema", "organigrama", "flujo de proceso", "lluvia de ideas"],
+      "en": ["flowchart", "mind map", "whiteboard", "schema", "org chart", "process flow", "brainstorm"]
+    }
+  },
+  "file-transcript": {
+    "label": { "es": "Transcripción", "en": "Transcript", "pt": "Transcrição", "fr": "Transcription", "de": "Transkript", "it": "Trascrizione", "ja": "文字起こし", "zh": "文字记录", "ko": "녹취록", "ar": "تفريغ نصي" },
+    "keywords": {
+      "es": ["subtítulos", "texto del audio", "texto del video", "voz a texto", "acta de reunión", "dictado", "captions"],
+      "en": ["captions", "subtitles", "speech to text", "audio to text", "meeting notes", "dictation", "closed captions"]
+    }
+  },
+  "file-app": {
+    "label": { "es": "Archivo ejecutable", "en": "Executable file", "pt": "Arquivo executável", "fr": "Fichier exécutable", "de": "Ausführbare Datei", "it": "File eseguibile", "ja": "実行ファイル", "zh": "可执行文件", "ko": "실행 파일", "ar": "ملف تنفيذي" },
+    "keywords": {
+      "es": ["aplicación", "instalador", "programa", ".exe", ".apk", "paquete", "instalar app"],
+      "en": ["application", "installer", "program", ".exe", ".apk", "package", "install app"]
+    }
+  },
+  "file-layers": {
+    "label": { "es": "Archivo con capas", "en": "Layered file", "pt": "Arquivo com camadas", "fr": "Fichier à calques", "de": "Datei mit Ebenen", "it": "File con livelli", "ja": "レイヤー付きファイル", "zh": "分层文件", "ko": "레이어 파일", "ar": "ملف متعدد الطبقات" },
+    "keywords": {
+      "es": ["PSD", "Photoshop", "archivo fuente", "editable", "diseño original", "archivo de diseño", "arte final"],
+      "en": ["PSD", "Photoshop", "source file", "editable", "original artwork", "design file", "working file"]
+    }
+  },
+  "folder-image": {
+    "label": { "es": "Carpeta de imágenes", "en": "Pictures folder", "pt": "Pasta de imagens", "fr": "Dossier Images", "de": "Bilderordner", "it": "Cartella Immagini", "ja": "画像フォルダ", "zh": "图片文件夹", "ko": "사진 폴더", "ar": "مجلد الصور" },
+    "keywords": {
+      "es": ["fotos", "galería", "álbum", "fotografías", "capturas de pantalla", "biblioteca de fotos", "rollo de cámara"],
+      "en": ["photos", "gallery", "album", "photographs", "screenshots", "photo library", "camera roll"]
+    }
+  },
+  "folder-music": {
+    "label": { "es": "Carpeta de música", "en": "Music folder", "pt": "Pasta de música", "fr": "Dossier Musique", "de": "Musikordner", "it": "Cartella Musica", "ja": "ミュージックフォルダ", "zh": "音乐文件夹", "ko": "음악 폴더", "ar": "مجلد الموسيقى" },
+    "keywords": {
+      "es": ["canciones", "audio", "biblioteca musical", "MP3", "álbumes", "playlist", "pistas"],
+      "en": ["songs", "audio", "music library", "MP3", "albums", "playlist", "tracks"]
+    }
+  },
+  "folder-video": {
+    "label": { "es": "Carpeta de videos", "en": "Videos folder", "pt": "Pasta de vídeos", "fr": "Dossier Vidéos", "de": "Videoordner", "it": "Cartella Video", "ja": "ビデオフォルダ", "zh": "视频文件夹", "ko": "동영상 폴더", "ar": "مجلد الفيديوهات" },
+    "keywords": {
+      "es": ["películas", "grabaciones", "clips", "MP4", "series", "cortos", "filmaciones"],
+      "en": ["movies", "recordings", "clips", "MP4", "footage", "films", "shows"]
+    }
+  },
+  "folder-home": {
+    "label": { "es": "Carpeta personal", "en": "Home folder", "pt": "Pasta pessoal", "fr": "Dossier personnel", "de": "Benutzerordner", "it": "Cartella personale", "ja": "ホームフォルダ", "zh": "主文件夹", "ko": "홈 폴더", "ar": "المجلد الرئيسي" },
+    "keywords": {
+      "es": ["inicio", "mis archivos", "mi unidad", "carpeta del usuario", "mis documentos", "raíz", "home"],
+      "en": ["my files", "my drive", "user folder", "my documents", "root", "personal folder", "user directory"]
+    }
+  },
+  "folder-code": {
+    "label": { "es": "Carpeta de código", "en": "Code folder", "pt": "Pasta de código", "fr": "Dossier de code", "de": "Quellcodeordner", "it": "Cartella del codice", "ja": "コードフォルダ", "zh": "代码文件夹", "ko": "코드 폴더", "ar": "مجلد الشيفرة البرمجية" },
+    "keywords": {
+      "es": ["código fuente", "repositorio", "proyecto", "repo", "desarrollo", "programación", "directorio"],
+      "en": ["source code", "repository", "project", "repo", "development", "programming", "directory"]
+    }
+  },
+  "folder-key": {
+    "label": { "es": "Carpeta cifrada", "en": "Encrypted folder", "pt": "Pasta criptografada", "fr": "Dossier chiffré", "de": "Verschlüsselter Ordner", "it": "Cartella crittografata", "ja": "暗号化されたフォルダ", "zh": "加密文件夹", "ko": "암호화된 폴더", "ar": "مجلد مشفّر" },
+    "keywords": {
+      "es": ["bóveda", "encriptada", "protegida con clave", "caja fuerte", "privado", "llave", "seguridad"],
+      "en": ["vault", "encryption", "password protected", "safe", "private", "key", "secure folder"]
+    }
+  },
+  "folder-shortcut": {
+    "label": { "es": "Acceso directo a carpeta", "en": "Folder shortcut", "pt": "Atalho de pasta", "fr": "Raccourci vers un dossier", "de": "Ordnerverknüpfung", "it": "Collegamento alla cartella", "ja": "フォルダのショートカット", "zh": "文件夹快捷方式", "ko": "폴더 바로 가기", "ar": "اختصار مجلد" },
+    "keywords": {
+      "es": ["alias", "enlace simbólico", "symlink", "acceso rápido", "apunta a otra carpeta", "favoritos", "ubicación original"],
+      "en": ["alias", "symbolic link", "symlink", "quick access", "points to a folder", "favorites", "original location"]
+    }
+  },
+  "folder-link": {
+    "label": { "es": "Enlace de la carpeta", "en": "Folder link", "pt": "Link da pasta", "fr": "Lien du dossier", "de": "Ordnerlink", "it": "Link alla cartella", "ja": "フォルダのリンク", "zh": "文件夹链接", "ko": "폴더 링크", "ar": "رابط المجلد" },
+    "keywords": {
+      "es": ["copiar enlace", "compartir por enlace", "liga", "URL", "cualquiera con el enlace", "acceso público", "invitar"],
+      "en": ["copy link", "share via link", "URL", "anyone with the link", "shareable link", "public access", "invite"]
+    }
+  },
+  "folder-unlock": {
+    "label": { "es": "Carpeta desbloqueada", "en": "Unlocked folder", "pt": "Pasta desbloqueada", "fr": "Dossier déverrouillé", "de": "Entsperrter Ordner", "it": "Cartella sbloccata", "ja": "ロック解除されたフォルダ", "zh": "已解锁的文件夹", "ko": "잠금 해제된 폴더", "ar": "مجلد تم إلغاء قفله" },
+    "keywords": {
+      "es": ["sin protección", "abrir", "quitar contraseña", "acceso libre", "editable", "desproteger", "permitir cambios"],
+      "en": ["unprotected", "open", "remove password", "open access", "editable", "unprotect", "allow edits"]
+    }
+  },
+  "folder-gear": {
+    "label": { "es": "Configuración de carpeta", "en": "Folder settings", "pt": "Configurações da pasta", "fr": "Paramètres du dossier", "de": "Ordnereinstellungen", "it": "Impostazioni cartella", "ja": "フォルダの設定", "zh": "文件夹设置", "ko": "폴더 설정", "ar": "إعدادات المجلد" },
+    "keywords": {
+      "es": ["opciones de carpeta", "carpeta inteligente", "reglas", "administrada", "ajustes", "preferencias", "automatizar"],
+      "en": ["folder options", "smart folder", "rules", "managed folder", "properties", "preferences", "automate"]
+    }
+  },
+  "folder-edit": {
+    "label": { "es": "Editar carpeta", "en": "Edit folder", "pt": "Editar pasta", "fr": "Modifier le dossier", "de": "Ordner bearbeiten", "it": "Modifica cartella", "ja": "フォルダを編集", "zh": "编辑文件夹", "ko": "폴더 편집", "ar": "تعديل المجلد" },
+    "keywords": {
+      "es": ["renombrar carpeta", "cambiar nombre", "modificar", "propiedades", "cambiar color", "lápiz", "personalizar"],
+      "en": ["rename folder", "change name", "modify", "properties", "change color", "pencil", "customize"]
+    }
+  },
+  "folder-block": {
+    "label": { "es": "Carpeta restringida", "en": "Restricted folder", "pt": "Pasta restrita", "fr": "Dossier à accès restreint", "de": "Eingeschränkter Ordner", "it": "Cartella con restrizioni", "ja": "アクセス制限フォルダ", "zh": "受限文件夹", "ko": "제한된 폴더", "ar": "مجلد مقيّد" },
+    "keywords": {
+      "es": ["sin permiso", "acceso denegado", "bloqueado", "prohibido", "no autorizado", "privado", "solo administradores"],
+      "en": ["no permission", "access denied", "blocked", "forbidden", "unauthorized", "private", "admins only"]
+    }
+  },
+  "folder-import": {
+    "label": { "es": "Importar a la carpeta", "en": "Import to folder", "pt": "Importar para a pasta", "fr": "Importer dans le dossier", "de": "In Ordner importieren", "it": "Importa nella cartella", "ja": "フォルダにインポート", "zh": "导入到文件夹", "ko": "폴더로 가져오기", "ar": "استيراد إلى المجلد" },
+    "keywords": {
+      "es": ["solicitar archivos", "recibir archivos", "buzón de archivos", "agregar a carpeta", "traer archivos", "juntar archivos", "entrada"],
+      "en": ["file request", "receive files", "file drop", "add to folder", "bring in files", "collect files", "inbox"]
+    }
+  },
+  "folder-export": {
+    "label": { "es": "Exportar carpeta", "en": "Export folder", "pt": "Exportar pasta", "fr": "Exporter le dossier", "de": "Ordner exportieren", "it": "Esporta cartella", "ja": "フォルダをエクスポート", "zh": "导出文件夹", "ko": "폴더 내보내기", "ar": "تصدير المجلد" },
+    "keywords": {
+      "es": ["sacar contenido", "enviar", "guardar fuera", "extraer", "migrar", "copiar a otro lugar", "salida"],
+      "en": ["export contents", "send out", "save elsewhere", "extract", "migrate", "copy out", "output"]
+    }
+  },
+  "trash-full": {
+    "label": { "es": "Papelera llena", "en": "Full trash", "pt": "Lixeira cheia", "fr": "Corbeille pleine", "de": "Voller Papierkorb", "it": "Cestino pieno", "ja": "中身の入ったゴミ箱", "zh": "有文件的回收站", "ko": "가득 찬 휴지통", "ar": "سلة مهملات ممتلئة" },
+    "keywords": {
+      "es": ["basura", "elementos eliminados", "no está vacía", "bote de basura", "borrados", "reciclaje", "archivos borrados"],
+      "en": ["bin", "deleted items", "not empty", "garbage", "recycle bin", "wastebasket", "deleted files"]
+    }
+  },
+  "trash-clock": {
+    "label": { "es": "Eliminación automática", "en": "Auto-delete", "pt": "Exclusão automática", "fr": "Suppression automatique", "de": "Automatisches Löschen", "it": "Eliminazione automatica", "ja": "自動削除", "zh": "自动删除", "ko": "자동 삭제", "ar": "حذف تلقائي" },
+    "keywords": {
+      "es": ["borrado programado", "se elimina en 30 días", "retención", "caducidad", "limpieza automática", "temporizador", "papelera"],
+      "en": ["scheduled deletion", "deleted after 30 days", "retention", "expiry", "auto cleanup", "timer", "purge"]
+    }
+  },
+  "trash-sweep": {
+    "label": { "es": "Vaciar papelera", "en": "Empty trash", "pt": "Esvaziar lixeira", "fr": "Vider la corbeille", "de": "Papierkorb leeren", "it": "Svuota cestino", "ja": "ゴミ箱を空にする", "zh": "清空回收站", "ko": "휴지통 비우기", "ar": "إفراغ سلة المهملات" },
+    "keywords": {
+      "es": ["borrar todo", "limpiar todo", "eliminar varios", "eliminación masiva", "liberar espacio", "barrer", "borrar definitivamente"],
+      "en": ["clear all", "delete all", "bulk delete", "delete many", "free up space", "sweep", "delete permanently"]
+    }
+  },
+  "cloud-pause": {
+    "label": { "es": "Sincronización en pausa", "en": "Sync paused", "pt": "Sincronização pausada", "fr": "Synchronisation suspendue", "de": "Synchronisierung pausiert", "it": "Sincronizzazione in pausa", "ja": "同期を一時停止中", "zh": "同步已暂停", "ko": "동기화 일시 중지됨", "ar": "المزامنة متوقفة مؤقتًا" },
+    "keywords": {
+      "es": ["subida en pausa", "respaldo detenido", "en espera", "reanudar", "detener subida", "pausar respaldo", "nube"],
+      "en": ["upload paused", "backup on hold", "on hold", "resume", "stop upload", "suspended", "cloud"]
+    }
+  },
+  "cloud-clock": {
+    "label": { "es": "Pendiente de sincronizar", "en": "Waiting to sync", "pt": "Aguardando sincronização", "fr": "En attente de synchronisation", "de": "Wartet auf Synchronisierung", "it": "In attesa di sincronizzazione", "ja": "同期待ち", "zh": "等待同步", "ko": "동기화 대기 중", "ar": "في انتظار المزامنة" },
+    "keywords": {
+      "es": ["en cola", "subida en cola", "última sincronización", "subida programada", "sincronizado hace", "en espera", "próximo respaldo"],
+      "en": ["queued", "queued upload", "last synced", "scheduled upload", "pending", "next backup", "sync later"]
+    }
+  },
+  "cloud-gear": {
+    "label": { "es": "Configuración de la nube", "en": "Cloud settings", "pt": "Configurações da nuvem", "fr": "Paramètres du cloud", "de": "Cloud-Einstellungen", "it": "Impostazioni cloud", "ja": "クラウドの設定", "zh": "云设置", "ko": "클라우드 설정", "ar": "إعدادات السحابة" },
+    "keywords": {
+      "es": ["ajustes de sincronización", "almacenamiento", "preferencias", "cuenta de la nube", "opciones de respaldo", "plan de almacenamiento", "sincronizar"],
+      "en": ["sync settings", "storage", "preferences", "cloud account", "backup options", "storage plan", "sync"]
+    }
+  },
+  "save-as": {
+    "label": { "es": "Guardar como", "en": "Save as", "pt": "Salvar como", "fr": "Enregistrer sous", "de": "Speichern unter", "it": "Salva con nome", "ja": "名前を付けて保存", "zh": "另存为", "ko": "다른 이름으로 저장", "ar": "حفظ باسم" },
+    "keywords": {
+      "es": ["guardar copia", "nuevo nombre", "otro formato", "duplicar", "exportar", "guardar versión", "disquete"],
+      "en": ["save a copy", "new name", "another format", "duplicate", "export", "save version", "floppy disk"]
+    }
+  },
+  "save-clock": {
+    "label": { "es": "Guardado automático", "en": "Autosave", "pt": "Salvamento automático", "fr": "Enregistrement automatique", "de": "Automatisch speichern", "it": "Salvataggio automatico", "ja": "自動保存", "zh": "自动保存", "ko": "자동 저장", "ar": "حفظ تلقائي" },
+    "keywords": {
+      "es": ["autoguardado", "cada 5 minutos", "cambios guardados", "no perder trabajo", "último guardado", "intervalo", "recuperar cambios"],
+      "en": ["background save", "every few minutes", "changes saved", "don't lose work", "last saved", "interval", "recovery"]
+    }
+  },
+  "data-tape": {
+    "label": { "es": "Cinta de datos", "en": "Data tape", "pt": "Fita de dados", "fr": "Bande de données", "de": "Datenband", "it": "Nastro dati", "ja": "データテープ", "zh": "数据磁带", "ko": "데이터 테이프", "ar": "شريط بيانات" },
+    "keywords": {
+      "es": ["LTO", "cartucho", "respaldo", "archivo frío", "archivo histórico", "copia de seguridad", "almacenamiento a largo plazo"],
+      "en": ["LTO", "cartridge", "backup", "cold storage", "archival", "long-term storage", "magnetic media"]
+    }
+  },
+  "micro-sd-card": {
+    "label": { "es": "Tarjeta microSD", "en": "microSD card", "pt": "Cartão microSD", "fr": "Carte microSD", "de": "microSD-Karte", "it": "Scheda microSD", "ja": "microSDカード", "zh": "microSD 卡", "ko": "microSD 카드", "ar": "بطاقة microSD" },
+    "keywords": {
+      "es": ["memoria", "almacenamiento del celular", "cámara", "dron", "ampliar espacio", "TF", "almacenamiento extraíble"],
+      "en": ["memory card", "phone storage", "camera", "drone", "expand storage", "TF card", "removable storage"]
+    }
+  },
+  "sd-card-adapter": {
+    "label": { "es": "Adaptador de tarjeta de memoria", "en": "Memory card adapter", "pt": "Adaptador de cartão de memória", "fr": "Adaptateur de carte mémoire", "de": "Speicherkartenadapter", "it": "Adattatore per schede di memoria", "ja": "メモリーカードアダプター", "zh": "存储卡适配器", "ko": "메모리 카드 어댑터", "ar": "محوّل بطاقة الذاكرة" },
+    "keywords": {
+      "es": ["microSD a SD", "adaptador SD", "microSD", "cámara", "ranura SD", "laptop", "SD de tamaño completo"],
+      "en": ["microSD to SD", "SD adapter", "microSD", "camera", "card slot", "laptop", "full-size SD"]
+    }
+  },
+  "optical-drive": {
+    "label": { "es": "Unidad óptica", "en": "Optical drive", "pt": "Unidade óptica", "fr": "Lecteur optique", "de": "Optisches Laufwerk", "it": "Unità ottica", "ja": "光学ドライブ", "zh": "光驱", "ko": "광학 드라이브", "ar": "محرك أقراص ضوئية" },
+    "keywords": {
+      "es": ["CD", "DVD", "Blu-ray", "quemador", "lector de discos", "grabar disco", "bandeja"],
+      "en": ["CD", "DVD", "Blu-ray", "disc burner", "disc reader", "burn disc", "disc tray"]
+    }
+  },
+  "hard-drive-alert": {
+    "label": { "es": "Advertencia de disco", "en": "Disk warning", "pt": "Aviso de disco", "fr": "Avertissement de disque", "de": "Datenträgerwarnung", "it": "Avviso sul disco", "ja": "ディスクの警告", "zh": "磁盘警告", "ko": "디스크 경고", "ar": "تحذير بشأن القرص" },
+    "keywords": {
+      "es": ["disco lleno", "falla del disco", "error de disco", "poco espacio", "SMART", "disco dañado", "sin almacenamiento"],
+      "en": ["disk full", "failing drive", "drive error", "low disk space", "SMART", "bad sectors", "out of storage"]
+    }
+  },
+  "hard-drive-lock": {
+    "label": { "es": "Disco cifrado", "en": "Encrypted disk", "pt": "Disco criptografado", "fr": "Disque chiffré", "de": "Verschlüsselter Datenträger", "it": "Disco crittografato", "ja": "暗号化されたディスク", "zh": "加密磁盘", "ko": "암호화된 디스크", "ar": "قرص مشفّر" },
+    "keywords": {
+      "es": ["encriptación total", "BitLocker", "FileVault", "disco bloqueado", "unidad protegida", "contraseña de arranque", "seguridad"],
+      "en": ["full-disk encryption", "BitLocker", "FileVault", "locked drive", "protected drive", "startup password", "security"]
+    }
+  },
+  "backup-clock": {
+    "label": { "es": "Respaldo programado", "en": "Scheduled backup", "pt": "Backup agendado", "fr": "Sauvegarde planifiée", "de": "Geplante Sicherung", "it": "Backup pianificato", "ja": "スケジュールバックアップ", "zh": "定时备份", "ko": "예약된 백업", "ar": "نسخ احتياطي مجدول" },
+    "keywords": {
+      "es": ["próximo respaldo", "copia de seguridad automática", "cada noche", "temporizador", "Time Machine", "periodicidad", "último respaldo"],
+      "en": ["next backup", "automatic backup", "nightly", "timer", "Time Machine", "backup schedule", "last backup"]
+    }
+  },
+  "punch-card": {
+    "label": { "es": "Tarjeta perforada", "en": "Punch card", "pt": "Cartão perfurado", "fr": "Carte perforée", "de": "Lochkarte", "it": "Scheda perforata", "ja": "パンチカード", "zh": "穿孔卡片", "ko": "천공 카드", "ar": "بطاقة مثقّبة" },
+    "keywords": {
+      "es": ["datos antiguos", "computación clásica", "entrada por lotes", "sistema heredado", "mainframe", "historia de la computación", "almacenamiento antiguo"],
+      "en": ["legacy data", "vintage computing", "batch input", "legacy system", "mainframe", "computing history", "early storage"]
+    }
+  },
+  "scan-text": {
+    "label": { "es": "Reconocer texto", "en": "Recognize text", "pt": "Reconhecer texto", "fr": "Reconnaître le texte", "de": "Text erkennen", "it": "Riconosci testo", "ja": "テキスト認識", "zh": "识别文字", "ko": "텍스트 인식", "ar": "التعرّف على النص" },
+    "keywords": {
+      "es": ["OCR", "escanear texto", "copiar de una imagen", "extraer texto", "texto en vivo", "digitalizar", "foto a texto"],
+      "en": ["OCR", "scan text", "copy from image", "extract text", "live text", "digitize", "image to text"]
+    }
+  },
+  "ink-cartridge": {
+    "label": { "es": "Cartucho de tinta", "en": "Ink cartridge", "pt": "Cartucho de tinta", "fr": "Cartouche d’encre", "de": "Tintenpatrone", "it": "Cartuccia d’inchiostro", "ja": "インクカートリッジ", "zh": "墨盒", "ko": "잉크 카트리지", "ar": "خرطوشة حبر" },
+    "keywords": {
+      "es": ["tóner", "nivel de tinta", "cambiar cartucho", "impresora", "repuesto", "sin tinta", "consumibles"],
+      "en": ["toner", "ink level", "replace cartridge", "printer", "refill", "low ink", "supplies"]
+    }
+  },
+  "plotter": {
+    "label": { "es": "Plotter", "en": "Plotter", "pt": "Plotter", "fr": "Traceur", "de": "Plotter", "it": "Plotter", "ja": "プロッター", "zh": "绘图仪", "ko": "플로터", "ar": "طابعة بلوتر" },
+    "keywords": {
+      "es": ["impresora de gran formato", "planos", "pósters", "lonas", "imprimir planos", "arquitectura", "rollo de papel"],
+      "en": ["large-format printer", "blueprints", "posters", "banners", "print plans", "architecture", "paper roll"]
+    }
+  },
+  "printer-search": {
+    "label": { "es": "Vista previa de impresión", "en": "Print preview", "pt": "Visualizar impressão", "fr": "Aperçu avant impression", "de": "Druckvorschau", "it": "Anteprima di stampa", "ja": "印刷プレビュー", "zh": "打印预览", "ko": "인쇄 미리 보기", "ar": "معاينة الطباعة" },
+    "keywords": {
+      "es": ["antes de imprimir", "revisar páginas", "previsualizar", "ver impresión", "diseño de página", "márgenes", "impresora"],
+      "en": ["before printing", "review pages", "preview", "print layout", "page layout", "margins", "printer"]
+    }
+  },
+  "page-spread": {
+    "label": { "es": "Vista de dos páginas", "en": "Two-page view", "pt": "Visualização de duas páginas", "fr": "Affichage sur deux pages", "de": "Doppelseitenansicht", "it": "Vista a due pagine", "ja": "見開き表示", "zh": "双页视图", "ko": "두 페이지 보기", "ar": "عرض صفحتين" },
+    "keywords": {
+      "es": ["páginas enfrentadas", "doble página", "pliego", "spread", "libro abierto", "lado a lado", "revista"],
+      "en": ["facing pages", "spread", "double page", "book view", "side by side", "two-up", "magazine layout"]
+    }
+  },
+  "page-rotate": {
+    "label": { "es": "Girar páginas", "en": "Rotate pages", "pt": "Girar páginas", "fr": "Faire pivoter les pages", "de": "Seiten drehen", "it": "Ruota pagine", "ja": "ページを回転", "zh": "旋转页面", "ko": "페이지 회전", "ar": "تدوير الصفحات" },
+    "keywords": {
+      "es": ["rotar", "herramientas PDF", "voltear página", "orientación", "horizontal", "vertical", "enderezar"],
+      "en": ["turn", "PDF tools", "flip page", "orientation", "landscape", "portrait", "straighten"]
+    }
+  },
+  "page-extract": {
+    "label": { "es": "Extraer páginas", "en": "Extract pages", "pt": "Extrair páginas", "fr": "Extraire des pages", "de": "Seiten extrahieren", "it": "Estrai pagine", "ja": "ページを抽出", "zh": "提取页面", "ko": "페이지 추출", "ar": "استخراج الصفحات" },
+    "keywords": {
+      "es": ["sacar páginas", "nuevo documento", "separar", "herramientas PDF", "seleccionar páginas", "guardar páginas", "copiar páginas"],
+      "en": ["pull pages", "new document", "separate", "PDF tools", "select pages", "save pages as", "copy pages"]
+    }
+  },
+  "page-insert": {
+    "label": { "es": "Insertar página", "en": "Insert page", "pt": "Inserir página", "fr": "Insérer une page", "de": "Seite einfügen", "it": "Inserisci pagina", "ja": "ページを挿入", "zh": "插入页面", "ko": "페이지 삽입", "ar": "إدراج صفحة" },
+    "keywords": {
+      "es": ["agregar página", "página nueva", "entre páginas", "añadir hoja", "herramientas PDF", "salto de página", "intercalar"],
+      "en": ["add page", "new page", "between pages", "add sheet", "PDF tools", "page break", "interleave"]
+    }
+  },
+  "page-reorder": {
+    "label": { "es": "Reordenar páginas", "en": "Reorder pages", "pt": "Reordenar páginas", "fr": "Réorganiser les pages", "de": "Seiten neu anordnen", "it": "Riordina pagine", "ja": "ページを並べ替え", "zh": "重新排列页面", "ko": "페이지 순서 변경", "ar": "إعادة ترتيب الصفحات" },
+    "keywords": {
+      "es": ["organizar páginas", "mover página", "cambiar orden", "arrastrar", "ordenar", "herramientas PDF", "acomodar"],
+      "en": ["organize pages", "move page", "change order", "drag", "sort", "PDF tools", "rearrange"]
+    }
+  },
+  "page-tree": {
+    "label": { "es": "Jerarquía de páginas", "en": "Page hierarchy", "pt": "Hierarquia de páginas", "fr": "Arborescence des pages", "de": "Seitenhierarchie", "it": "Gerarchia delle pagine", "ja": "ページ階層", "zh": "页面层级", "ko": "페이지 계층", "ar": "التسلسل الهرمي للصفحات" },
+    "keywords": {
+      "es": ["subpáginas", "páginas anidadas", "wiki", "documentación", "árbol", "estructura", "páginas hijas"],
+      "en": ["subpages", "nested pages", "wiki", "docs", "tree", "structure", "child pages"]
+    }
+  },
+  "page-number": {
+    "label": { "es": "Números de página", "en": "Page numbers", "pt": "Números de página", "fr": "Numéros de page", "de": "Seitenzahlen", "it": "Numeri di pagina", "ja": "ページ番号", "zh": "页码", "ko": "페이지 번호", "ar": "أرقام الصفحات" },
+    "keywords": {
+      "es": ["numeración", "insertar número", "paginación", "pie de página", "encabezado", "foliar", "numerar"],
+      "en": ["numbering", "insert page number", "pagination", "footer", "header", "folio", "number pages"]
+    }
+  },
+  "magazine": {
+    "label": { "es": "Revista", "en": "Magazine", "pt": "Revista", "fr": "Magazine", "de": "Zeitschrift", "it": "Rivista", "ja": "雑誌", "zh": "杂志", "ko": "잡지", "ar": "مجلة" },
+    "keywords": {
+      "es": ["publicación", "número", "edición", "periódica", "suscripción", "lectura", "portada"],
+      "en": ["periodical", "issue", "edition", "publication", "subscription", "reading", "cover"]
+    }
+  },
+  "brochure": {
+    "label": { "es": "Tríptico", "en": "Brochure", "pt": "Folheto", "fr": "Dépliant", "de": "Faltblatt", "it": "Pieghevole", "ja": "パンフレット", "zh": "宣传折页", "ko": "브로슈어", "ar": "مطوية" },
+    "keywords": {
+      "es": ["folleto", "díptico", "panfleto", "publicidad impresa", "información del producto", "material promocional", "doblado en tres"],
+      "en": ["tri-fold", "leaflet", "pamphlet", "printed marketing", "product info", "promotional material", "folded"]
+    }
+  },
+  "flyer": {
+    "label": { "es": "Volante", "en": "Flyer", "pt": "Panfleto", "fr": "Prospectus", "de": "Handzettel", "it": "Volantino", "ja": "チラシ", "zh": "传单", "ko": "전단지", "ar": "منشور إعلاني" },
+    "keywords": {
+      "es": ["flyer", "hoja suelta", "anuncio impreso", "repartir", "promoción", "aviso", "evento"],
+      "en": ["handbill", "single sheet", "printed ad", "hand out", "promotion", "notice", "event"]
+    }
+  },
+  "poster": {
+    "label": { "es": "Póster", "en": "Poster", "pt": "Pôster", "fr": "Affiche", "de": "Poster", "it": "Poster", "ja": "ポスター", "zh": "海报", "ko": "포스터", "ar": "ملصق" },
+    "keywords": {
+      "es": ["cartel", "afiche", "pared", "impresión", "lámina", "cuadro", "anuncio"],
+      "en": ["wall print", "placard", "wall", "print", "art print", "frame", "billboard"]
+    }
+  },
+  "crumpled-paper": {
+    "label": { "es": "Papel arrugado", "en": "Crumpled paper", "pt": "Papel amassado", "fr": "Papier froissé", "de": "Zerknülltes Papier", "it": "Carta accartocciata", "ja": "丸めた紙", "zh": "揉皱的纸", "ko": "구겨진 종이", "ar": "ورقة مجعّدة" },
+    "keywords": {
+      "es": ["borrador descartado", "desechar", "bolita de papel", "idea descartada", "tirar a la basura", "empezar de nuevo", "desperdicio"],
+      "en": ["discarded draft", "scrap", "paper ball", "rejected idea", "throw away", "start over", "waste"]
+    }
+  },
+  "notebook-open": {
+    "label": { "es": "Cuaderno abierto", "en": "Open notebook", "pt": "Caderno aberto", "fr": "Carnet ouvert", "de": "Aufgeschlagenes Notizbuch", "it": "Quaderno aperto", "ja": "開いたノート", "zh": "打开的笔记本", "ko": "펼친 노트", "ar": "دفتر مفتوح" },
+    "keywords": {
+      "es": ["tomar notas", "apuntes", "libreta", "escribir", "página de notas", "estudiar", "cuaderno de clase"],
+      "en": ["take notes", "notes", "jotter", "writing", "notes page", "study", "class notes"]
+    }
+  },
+  "journal": {
+    "label": { "es": "Diario", "en": "Journal", "pt": "Diário", "fr": "Journal intime", "de": "Tagebuch", "it": "Diario", "ja": "日記帳", "zh": "日记本", "ko": "일기장", "ar": "دفتر يوميات" },
+    "keywords": {
+      "es": ["libreta", "agenda", "bitácora", "notas personales", "cuaderno con liga", "memorias", "privado"],
+      "en": ["diary", "notebook", "logbook", "personal notes", "elastic band", "memoir", "planner"]
+    }
   }
 }

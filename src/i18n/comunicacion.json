@@ -754,5 +754,488 @@
       "es": ["pastel", "tarta", "aniversario", "celebración", "fiesta", "fecha especial", "felicitar", "regalo"],
       "en": ["anniversary", "celebration", "party", "special date", "congratulate", "dessert", "gift"]
     }
+  },
+  "message-forward": {
+    "label": { "es": "Reenviar mensaje", "en": "Forward message", "pt": "Encaminhar mensagem", "fr": "Transférer le message", "de": "Nachricht weiterleiten", "it": "Inoltra messaggio", "ja": "メッセージを転送", "zh": "转发消息", "ko": "메시지 전달", "ar": "إعادة توجيه الرسالة" },
+    "keywords": {
+      "es": ["compartir", "mandar a otro chat", "pasar el mensaje", "enviar a otra persona", "reenviado", "difundir", "compartir conversación"],
+      "en": ["share", "send to another chat", "pass along", "send to someone else", "forwarded", "spread", "share conversation"]
+    }
+  },
+  "message-quote": {
+    "label": { "es": "Citar mensaje", "en": "Quote message", "pt": "Citar mensagem", "fr": "Citer le message", "de": "Nachricht zitieren", "it": "Cita messaggio", "ja": "メッセージを引用", "zh": "引用消息", "ko": "메시지 인용", "ar": "اقتباس الرسالة" },
+    "keywords": {
+      "es": ["responder citando", "cita", "respuesta con contexto", "mensaje anterior", "hilo", "referencia", "contestar"],
+      "en": ["quote reply", "citation", "reply with context", "earlier message", "thread", "reference", "respond"]
+    }
+  },
+  "message-pin": {
+    "label": { "es": "Mensaje fijado", "en": "Pinned message", "pt": "Mensagem fixada", "fr": "Message épinglé", "de": "Angeheftete Nachricht", "it": "Messaggio fissato", "ja": "固定されたメッセージ", "zh": "置顶消息", "ko": "고정된 메시지", "ar": "رسالة مثبتة" },
+    "keywords": {
+      "es": ["fijar", "anclar", "destacado", "aviso importante", "arriba del chat", "anuncio del canal", "dejar a la vista"],
+      "en": ["pin", "sticky", "highlighted", "important notice", "top of chat", "channel announcement", "keep on top"]
+    }
+  },
+  "message-edit": {
+    "label": { "es": "Editar mensaje", "en": "Edit message", "pt": "Editar mensagem", "fr": "Modifier le message", "de": "Nachricht bearbeiten", "it": "Modifica messaggio", "ja": "メッセージを編集", "zh": "编辑消息", "ko": "메시지 편집", "ar": "تعديل الرسالة" },
+    "keywords": {
+      "es": ["editado", "corregir", "modificar", "cambiar texto", "lápiz", "error de dedo", "rectificar"],
+      "en": ["edited", "correct", "modify", "change text", "pencil", "fix typo", "revise"]
+    }
+  },
+  "message-info": {
+    "label": { "es": "Detalles del mensaje", "en": "Message details", "pt": "Detalhes da mensagem", "fr": "Détails du message", "de": "Nachrichtendetails", "it": "Dettagli del messaggio", "ja": "メッセージの詳細", "zh": "消息详情", "ko": "메시지 정보", "ar": "تفاصيل الرسالة" },
+    "keywords": {
+      "es": ["información", "entregado a", "leído por", "hora de envío", "estado de entrega", "quién lo vio", "acuse de recibo"],
+      "en": ["info", "delivered to", "read by", "sent time", "delivery status", "who saw it", "receipts"]
+    }
+  },
+  "message-read": {
+    "label": { "es": "Mensaje leído", "en": "Message seen", "pt": "Mensagem lida", "fr": "Message lu", "de": "Nachricht gelesen", "it": "Messaggio letto", "ja": "既読", "zh": "已读", "ko": "읽음", "ar": "تمت قراءة الرسالة" },
+    "keywords": {
+      "es": ["visto", "confirmación de lectura", "palomitas azules", "doble palomita", "abierto", "estado del mensaje", "ya lo vio"],
+      "en": ["read receipt", "read", "blue ticks", "double check", "opened", "message status", "acknowledged"]
+    }
+  },
+  "message-person": {
+    "label": { "es": "Mensaje directo", "en": "Direct message", "pt": "Mensagem direta", "fr": "Message privé", "de": "Direktnachricht", "it": "Messaggio diretto", "ja": "ダイレクトメッセージ", "zh": "私信", "ko": "다이렉트 메시지", "ar": "رسالة مباشرة" },
+    "keywords": {
+      "es": ["dm", "inbox", "chat individual", "conversación uno a uno", "mensaje privado", "escribirle a alguien", "contactar a una persona"],
+      "en": ["dm", "pm", "one-on-one chat", "private message", "message someone", "personal chat", "contact a person"]
+    }
+  },
+  "message-people": {
+    "label": { "es": "Chat grupal", "en": "Group chat", "pt": "Conversa em grupo", "fr": "Discussion de groupe", "de": "Gruppenchat", "it": "Chat di gruppo", "ja": "グループチャット", "zh": "群聊", "ko": "그룹 채팅", "ar": "دردشة جماعية" },
+    "keywords": {
+      "es": ["grupo", "conversación grupal", "varias personas", "chat del equipo", "participantes", "sala", "chat familiar"],
+      "en": ["group", "group conversation", "several people", "team chat", "participants", "room", "family chat"]
+    }
+  },
+  "message-link": {
+    "label": { "es": "Enlace al mensaje", "en": "Message link", "pt": "Link da mensagem", "fr": "Lien du message", "de": "Nachrichtenlink", "it": "Link al messaggio", "ja": "メッセージのリンク", "zh": "消息链接", "ko": "메시지 링크", "ar": "رابط الرسالة" },
+    "keywords": {
+      "es": ["copiar enlace", "liga", "url", "vínculo", "compartir mensaje", "enlace permanente", "mensaje con enlace"],
+      "en": ["copy link", "url", "hyperlink", "share message", "permalink", "link preview", "message with link"]
+    }
+  },
+  "message-bolt": {
+    "label": { "es": "Respuestas rápidas", "en": "Quick replies", "pt": "Respostas rápidas", "fr": "Réponses rapides", "de": "Schnellantworten", "it": "Risposte rapide", "ja": "クイック返信", "zh": "快捷回复", "ko": "빠른 답장", "ar": "ردود سريعة" },
+    "keywords": {
+      "es": ["respuestas guardadas", "plantillas de mensaje", "atajos", "respuesta automática", "mensajes predefinidos", "macros", "atención ágil"],
+      "en": ["saved replies", "canned responses", "message templates", "shortcuts", "auto reply", "macros", "instant reply"]
+    }
+  },
+  "message-disappearing": {
+    "label": { "es": "Mensajes temporales", "en": "Disappearing messages", "pt": "Mensagens temporárias", "fr": "Messages éphémères", "de": "Selbstlöschende Nachrichten", "it": "Messaggi effimeri", "ja": "消えるメッセージ", "zh": "限时消息", "ko": "사라지는 메시지", "ar": "رسائل مؤقتة" },
+    "keywords": {
+      "es": ["que desaparecen", "autodestrucción", "se borran solos", "borrado automático", "efímeros", "temporizador", "privacidad", "caducidad"],
+      "en": ["self-destruct", "ephemeral", "auto-delete", "vanish mode", "timer", "temporary chat", "privacy", "expiring messages"]
+    }
+  },
+  "message-image": {
+    "label": { "es": "Mensaje con foto", "en": "Photo message", "pt": "Mensagem com foto", "fr": "Message photo", "de": "Bildnachricht", "it": "Messaggio con foto", "ja": "写真メッセージ", "zh": "图片消息", "ko": "사진 메시지", "ar": "رسالة صورة" },
+    "keywords": {
+      "es": ["mms", "enviar foto", "imagen", "compartir imagen", "galería", "multimedia", "captura de pantalla"],
+      "en": ["mms", "send photo", "image", "picture", "share image", "media", "screenshot"]
+    }
+  },
+  "message-history": {
+    "label": { "es": "Historial del chat", "en": "Chat history", "pt": "Histórico da conversa", "fr": "Historique de la discussion", "de": "Chatverlauf", "it": "Cronologia chat", "ja": "チャット履歴", "zh": "聊天记录", "ko": "채팅 기록", "ar": "سجل الدردشة" },
+    "keywords": {
+      "es": ["conversaciones anteriores", "registro", "retención", "guardar historial", "borrar historial", "archivo de mensajes", "respaldo"],
+      "en": ["past conversations", "log", "retention", "keep history", "clear history", "message archive", "transcript"]
+    }
+  },
+  "message-attachment": {
+    "label": { "es": "Adjunto en el chat", "en": "Chat attachment", "pt": "Anexo da conversa", "fr": "Pièce jointe au message", "de": "Chat-Anhang", "it": "Allegato della chat", "ja": "チャットの添付ファイル", "zh": "聊天附件", "ko": "채팅 첨부 파일", "ar": "مرفق الدردشة" },
+    "keywords": {
+      "es": ["archivo adjunto", "clip", "adjuntar", "enviar archivo", "documento", "archivos compartidos", "multimedia del chat"],
+      "en": ["attached file", "paperclip", "attach", "send file", "document", "shared files", "chat media"]
+    }
+  },
+  "message-location": {
+    "label": { "es": "Compartir ubicación", "en": "Share location", "pt": "Compartilhar localização", "fr": "Partager la position", "de": "Standort teilen", "it": "Condividi posizione", "ja": "位置情報を共有", "zh": "共享位置", "ko": "위치 공유", "ar": "مشاركة الموقع" },
+    "keywords": {
+      "es": ["ubicación en tiempo real", "mapa", "dónde estoy", "dirección", "punto de encuentro", "mandar ubicación", "geolocalización"],
+      "en": ["live location", "map", "where I am", "address", "meeting point", "send location", "geolocation"]
+    }
+  },
+  "thought-bubble": {
+    "label": { "es": "Pensamiento", "en": "Thought", "pt": "Pensamento", "fr": "Pensée", "de": "Gedanke", "it": "Pensiero", "ja": "考えごと", "zh": "想法", "ko": "생각", "ar": "تفكير" },
+    "keywords": {
+      "es": ["pensando", "idea", "reflexión", "imaginar", "globo de pensamiento", "voz interior", "cómic", "procesando"],
+      "en": ["thinking", "idea", "reflection", "imagine", "thought bubble", "inner voice", "comic", "processing"]
+    }
+  },
+  "text-message": {
+    "label": { "es": "Mensaje de texto", "en": "Text message", "pt": "Mensagem de texto", "fr": "SMS", "de": "SMS", "it": "SMS", "ja": "SMS", "zh": "短信", "ko": "문자 메시지", "ar": "رسالة نصية" },
+    "keywords": {
+      "es": ["sms", "celular", "número de teléfono", "código por sms", "campaña sms", "mensajería móvil", "recordatorio por mensaje"],
+      "en": ["sms", "texting", "phone number", "sms code", "sms campaign", "mobile messaging", "text reminder"]
+    }
+  },
+  "hashtag-lock": {
+    "label": { "es": "Canal privado", "en": "Private channel", "pt": "Canal privado", "fr": "Canal privé", "de": "Privater Kanal", "it": "Canale privato", "ja": "プライベートチャンネル", "zh": "私密频道", "ko": "비공개 채널", "ar": "قناة خاصة" },
+    "keywords": {
+      "es": ["solo por invitación", "acceso restringido", "grupo cerrado", "confidencial", "solo miembros", "equipo interno", "sala privada"],
+      "en": ["invite only", "restricted access", "closed group", "confidential", "members only", "internal team", "private room"]
+    }
+  },
+  "hashtag-plus": {
+    "label": { "es": "Crear canal", "en": "Create channel", "pt": "Criar canal", "fr": "Créer un canal", "de": "Kanal erstellen", "it": "Crea canale", "ja": "チャンネルを作成", "zh": "创建频道", "ko": "채널 만들기", "ar": "إنشاء قناة" },
+    "keywords": {
+      "es": ["nuevo canal", "agregar canal", "abrir un tema", "nueva sala", "espacio de equipo", "nuevo grupo", "comunidad"],
+      "en": ["new channel", "add channel", "start a topic", "new room", "team space", "new group", "community"]
+    }
+  },
+  "mail-reply": {
+    "label": { "es": "Responder correo", "en": "Reply to email", "pt": "Responder e-mail", "fr": "Répondre à l’e-mail", "de": "E-Mail beantworten", "it": "Rispondi all’email", "ja": "メールに返信", "zh": "回复邮件", "ko": "메일 답장", "ar": "الرد على البريد" },
+    "keywords": {
+      "es": ["contestar", "respuesta", "hilo de correo", "remitente", "bandeja de entrada", "dar seguimiento", "contestar al remitente"],
+      "en": ["answer", "respond", "email thread", "sender", "inbox", "follow up", "write back"]
+    }
+  },
+  "mail-forward": {
+    "label": { "es": "Reenviar correo", "en": "Forward email", "pt": "Encaminhar e-mail", "fr": "Transférer l’e-mail", "de": "E-Mail weiterleiten", "it": "Inoltra email", "ja": "メールを転送", "zh": "转发邮件", "ko": "메일 전달", "ar": "إعادة توجيه البريد" },
+    "keywords": {
+      "es": ["fwd", "reenvío", "compartir correo", "enviar a otra persona", "redirigir", "pasar a un colega", "delegar"],
+      "en": ["fwd", "share email", "send on", "redirect", "pass to a colleague", "delegate", "auto-forward"]
+    }
+  },
+  "mail-filter": {
+    "label": { "es": "Filtrar correo", "en": "Filter mail", "pt": "Filtrar e-mails", "fr": "Filtrer les e-mails", "de": "E-Mails filtern", "it": "Filtra email", "ja": "メールを絞り込む", "zh": "筛选邮件", "ko": "메일 필터", "ar": "تصفية البريد" },
+    "keywords": {
+      "es": ["no leídos", "marcados", "por remitente", "ordenar", "refinar búsqueda", "embudo", "vista de la bandeja"],
+      "en": ["unread", "flagged", "by sender", "sort", "narrow down", "funnel", "inbox view"]
+    }
+  },
+  "mail-rule": {
+    "label": { "es": "Reglas de correo", "en": "Mail rules", "pt": "Regras de e-mail", "fr": "Règles de messagerie", "de": "E-Mail-Regeln", "it": "Regole della posta", "ja": "メールの仕分けルール", "zh": "邮件规则", "ko": "메일 규칙", "ar": "قواعد البريد" },
+    "keywords": {
+      "es": ["automatización", "clasificar correos", "mover a carpeta", "filtros automáticos", "organizar bandeja", "reenvío automático", "condiciones"],
+      "en": ["automation", "sort mail", "move to folder", "auto filters", "organize inbox", "auto-forward", "conditions"]
+    }
+  },
+  "mail-incoming": {
+    "label": { "es": "Correo entrante", "en": "Incoming email", "pt": "E-mail recebido", "fr": "E-mail entrant", "de": "Eingehende E-Mail", "it": "Email in arrivo", "ja": "受信メール", "zh": "收到的邮件", "ko": "수신 메일", "ar": "بريد وارد" },
+    "keywords": {
+      "es": ["correo recibido", "nuevo correo", "bandeja de entrada", "recibir", "llegó un correo", "disparador", "automatización"],
+      "en": ["received email", "new mail", "inbox", "inbound", "receive", "trigger", "automation"]
+    }
+  },
+  "mail-fast": {
+    "label": { "es": "Correo urgente", "en": "Urgent email", "pt": "E-mail urgente", "fr": "E-mail urgent", "de": "Dringende E-Mail", "it": "Email urgente", "ja": "至急メール", "zh": "紧急邮件", "ko": "긴급 메일", "ar": "بريد عاجل" },
+    "keywords": {
+      "es": ["envío exprés", "prioridad alta", "correo prioritario", "entrega rápida", "importante", "atención inmediata", "lo antes posible"],
+      "en": ["express mail", "high priority", "priority mail", "fast delivery", "important", "immediate", "asap"]
+    }
+  },
+  "mail-lock": {
+    "label": { "es": "Correo cifrado", "en": "Encrypted email", "pt": "E-mail criptografado", "fr": "E-mail chiffré", "de": "Verschlüsselte E-Mail", "it": "Email crittografata", "ja": "暗号化メール", "zh": "加密邮件", "ko": "암호화된 메일", "ar": "بريد مشفّر" },
+    "keywords": {
+      "es": ["confidencial", "privado", "seguro", "protegido", "información sensible", "con contraseña", "de extremo a extremo"],
+      "en": ["confidential", "private", "secure", "protected", "sensitive information", "password protected", "end-to-end"]
+    }
+  },
+  "mail-block": {
+    "label": { "es": "Bloquear remitente", "en": "Block sender", "pt": "Bloquear remetente", "fr": "Bloquer l’expéditeur", "de": "Absender blockieren", "it": "Blocca mittente", "ja": "送信者をブロック", "zh": "屏蔽发件人", "ko": "발신자 차단", "ar": "حظر المرسل" },
+    "keywords": {
+      "es": ["spam", "correo no deseado", "lista negra", "dejar de recibir", "filtrar", "acoso", "dominio bloqueado"],
+      "en": ["spam", "junk", "blocklist", "stop receiving", "filter", "harassment", "blocked domain"]
+    }
+  },
+  "mail-star": {
+    "label": { "es": "Correo destacado", "en": "Starred email", "pt": "E-mail com estrela", "fr": "E-mail suivi", "de": "Markierte E-Mail", "it": "Email contrassegnata", "ja": "スター付きメール", "zh": "已加星标的邮件", "ko": "별표 메일", "ar": "بريد مميّز بنجمة" },
+    "keywords": {
+      "es": ["marcado", "favorito", "importante", "dar seguimiento", "cliente vip", "estrella", "pendiente"],
+      "en": ["flagged", "favorite", "important", "follow up", "vip", "star", "to do"]
+    }
+  },
+  "mail-sync": {
+    "label": { "es": "Sincronizar correo", "en": "Sync mail", "pt": "Sincronizar e-mail", "fr": "Synchroniser la messagerie", "de": "E-Mails synchronisieren", "it": "Sincronizza posta", "ja": "メールを同期", "zh": "同步邮件", "ko": "메일 동기화", "ar": "مزامنة البريد" },
+    "keywords": {
+      "es": ["conectar cuenta", "actualizar bandeja", "descargar correos", "imap", "integración de correo", "recargar", "vincular correo"],
+      "en": ["connect account", "refresh inbox", "fetch mail", "imap", "email integration", "reload", "link email"]
+    }
+  },
+  "mailing-list": {
+    "label": { "es": "Lista de correo", "en": "Mailing list", "pt": "Lista de e-mails", "fr": "Liste de diffusion", "de": "Verteilerliste", "it": "Mailing list", "ja": "メーリングリスト", "zh": "邮件列表", "ko": "메일링 리스트", "ar": "قائمة بريدية" },
+    "keywords": {
+      "es": ["lista de distribución", "grupo de correo", "suscriptores", "destinatarios", "boletín", "alias", "correo grupal"],
+      "en": ["distribution list", "group email", "subscribers", "recipients", "newsletter", "alias", "listserv"]
+    }
+  },
+  "mail-pin": {
+    "label": { "es": "Correo fijado", "en": "Pinned email", "pt": "E-mail fixado", "fr": "E-mail épinglé", "de": "Angeheftete E-Mail", "it": "Email fissata", "ja": "固定されたメール", "zh": "置顶邮件", "ko": "고정된 메일", "ar": "بريد مثبّت" },
+    "keywords": {
+      "es": ["fijar", "anclar", "arriba de la bandeja", "importante", "tener a la mano", "recordatorio", "prioridad"],
+      "en": ["pin", "sticky", "top of inbox", "important", "keep handy", "reminder", "priority"]
+    }
+  },
+  "mail-link": {
+    "label": { "es": "Enlace por correo", "en": "Email link", "pt": "Link por e-mail", "fr": "Lien par e-mail", "de": "Link per E-Mail", "it": "Link via email", "ja": "メールのリンク", "zh": "邮件链接", "ko": "이메일 링크", "ar": "رابط عبر البريد" },
+    "keywords": {
+      "es": ["enlace mágico", "iniciar sesión", "liga de acceso", "sin contraseña", "compartir por correo", "enviar enlace", "verificar correo"],
+      "en": ["magic link", "sign in", "login link", "passwordless", "share by email", "send link", "verify email"]
+    }
+  },
+  "mail-postal": {
+    "label": { "es": "Correo postal", "en": "Postal mail", "pt": "Correio postal", "fr": "Courrier postal", "de": "Briefpost", "it": "Posta ordinaria", "ja": "郵便", "zh": "邮政信件", "ko": "우편", "ar": "البريد العادي" },
+    "keywords": {
+      "es": ["carta física", "sobre con timbre", "correspondencia", "enviar por correo", "oficina de correos", "dirección postal", "paquetería"],
+      "en": ["snail mail", "physical letter", "stamped envelope", "correspondence", "post office", "postal address", "send by post"]
+    }
+  },
+  "letter-sealed": {
+    "label": { "es": "Carta sellada", "en": "Sealed letter", "pt": "Carta lacrada", "fr": "Lettre cachetée", "de": "Versiegelter Brief", "it": "Lettera sigillata", "ja": "封書", "zh": "密封信件", "ko": "봉인된 편지", "ar": "رسالة مختومة" },
+    "keywords": {
+      "es": ["invitación", "sello de lacre", "correspondencia formal", "confidencial", "boda", "carta privada", "sobre cerrado"],
+      "en": ["invitation", "wax seal", "formal correspondence", "confidential", "wedding", "private letter", "closed envelope"]
+    }
+  },
+  "inbox-arrow-down": {
+    "label": { "es": "Mover a la bandeja de entrada", "en": "Move to inbox", "pt": "Mover para a caixa de entrada", "fr": "Déplacer vers la boîte de réception", "de": "In den Posteingang verschieben", "it": "Sposta nella posta in arrivo", "ja": "受信トレイに移動", "zh": "移至收件箱", "ko": "받은편지함으로 이동", "ar": "نقل إلى البريد الوارد" },
+    "keywords": {
+      "es": ["desarchivar", "regresar a la bandeja", "restaurar", "recuperar correo", "sacar del archivo", "no es spam", "recibir"],
+      "en": ["unarchive", "return to inbox", "restore", "recover email", "move out of archive", "not spam", "receive"]
+    }
+  },
+  "outbox": {
+    "label": { "es": "Bandeja de salida", "en": "Outbox", "pt": "Caixa de saída", "fr": "Boîte d’envoi", "de": "Postausgang", "it": "Posta in uscita", "ja": "送信トレイ", "zh": "发件箱", "ko": "보낼편지함", "ar": "صندوق الصادر" },
+    "keywords": {
+      "es": ["por enviar", "en cola", "enviando", "correos salientes", "no enviado", "reintentar envío", "sin conexión"],
+      "en": ["to send", "queued", "sending", "outgoing mail", "unsent", "retry sending", "offline"]
+    }
+  },
+  "inbox-full": {
+    "label": { "es": "Bandeja llena", "en": "Full inbox", "pt": "Caixa de entrada cheia", "fr": "Boîte de réception pleine", "de": "Voller Posteingang", "it": "Posta in arrivo piena", "ja": "受信トレイがいっぱい", "zh": "收件箱已满", "ko": "가득 찬 받은편지함", "ar": "صندوق وارد ممتلئ" },
+    "keywords": {
+      "es": ["pendientes", "correos por atender", "sin leer", "saturado", "sin espacio", "almacenamiento lleno", "acumulados"],
+      "en": ["pending", "emails to handle", "unread", "overloaded", "no space", "storage full", "backlog"]
+    }
+  },
+  "inbox-check": {
+    "label": { "es": "Bandeja al día", "en": "Inbox zero", "pt": "Caixa de entrada em dia", "fr": "Boîte de réception à jour", "de": "Posteingang erledigt", "it": "Posta in arrivo azzerata", "ja": "受信トレイ処理済み", "zh": "收件箱已清空", "ko": "받은편지함 정리 완료", "ar": "صندوق الوارد فارغ" },
+    "keywords": {
+      "es": ["inbox zero", "todo atendido", "sin pendientes", "nada por leer", "terminado", "correos resueltos", "estás al corriente"],
+      "en": ["all caught up", "nothing left", "no pending", "all done", "empty inbox", "handled", "cleared"]
+    }
+  },
+  "postcard": {
+    "label": { "es": "Postal", "en": "Postcard", "pt": "Cartão-postal", "fr": "Carte postale", "de": "Postkarte", "it": "Cartolina", "ja": "ポストカード", "zh": "明信片", "ko": "엽서", "ar": "بطاقة بريدية" },
+    "keywords": {
+      "es": ["tarjeta postal", "recuerdo de viaje", "saludos", "vacaciones", "turismo", "correspondencia", "tarjeta"],
+      "en": ["greetings", "travel souvenir", "vacation", "holiday card", "tourism", "correspondence", "card"]
+    }
+  },
+  "postage-stamp": {
+    "label": { "es": "Timbre postal", "en": "Postage stamp", "pt": "Selo postal", "fr": "Timbre-poste", "de": "Briefmarke", "it": "Francobollo", "ja": "切手", "zh": "邮票", "ko": "우표", "ar": "طابع بريدي" },
+    "keywords": {
+      "es": ["estampilla", "sello postal", "franqueo", "filatelia", "colección de timbres", "enviar carta", "ponerle timbre"],
+      "en": ["stamp", "postage", "philately", "stamp collecting", "mail a letter", "add a stamp", "franking"]
+    }
+  },
+  "postmark": {
+    "label": { "es": "Matasellos", "en": "Postmark", "pt": "Carimbo postal", "fr": "Cachet de la poste", "de": "Poststempel", "it": "Timbro postale", "ja": "消印", "zh": "邮戳", "ko": "소인", "ar": "ختم البريد" },
+    "keywords": {
+      "es": ["sello de correos", "fecha de envío", "cancelación postal", "comprobante de envío", "sello fechador", "filatelia", "oficina de correos"],
+      "en": ["postal cancellation", "mailing date", "date stamp", "proof of mailing", "ink stamp", "philately", "post office"]
+    }
+  },
+  "postbox": {
+    "label": { "es": "Buzón postal", "en": "Postbox", "pt": "Caixa de coleta", "fr": "Boîte aux lettres publique", "de": "Öffentlicher Briefkasten", "it": "Buca delle lettere", "ja": "郵便ポスト", "zh": "邮筒", "ko": "우체통", "ar": "صندوق البريد العام" },
+    "keywords": {
+      "es": ["enviar carta", "depositar correspondencia", "servicio postal", "mandar por correo", "recolección de correo", "correspondencia saliente"],
+      "en": ["post a letter", "mail drop", "collection box", "postal service", "pillar box", "send by post", "street mailbox"]
+    }
+  },
+  "mailbox-open": {
+    "label": { "es": "Llegó correo", "en": "Mail arrived", "pt": "Chegou correspondência", "fr": "Courrier arrivé", "de": "Post ist da", "it": "Posta arrivata", "ja": "郵便物あり", "zh": "信件已到", "ko": "우편 도착", "ar": "وصل البريد" },
+    "keywords": {
+      "es": ["buzón abierto", "carta recibida", "correspondencia", "nuevo correo", "paquete recibido", "recoger correo", "aviso de entrega"],
+      "en": ["open mailbox", "letter received", "correspondence", "new mail", "package received", "collect mail", "delivery notice"]
+    }
+  },
+  "mailbox-wall": {
+    "label": { "es": "Buzón de pared", "en": "Wall mailbox", "pt": "Caixa de correio de parede", "fr": "Boîte aux lettres murale", "de": "Wandbriefkasten", "it": "Cassetta postale a muro", "ja": "壁掛け郵便受け", "zh": "壁挂信箱", "ko": "벽걸이 우편함", "ar": "صندوق بريد جداري" },
+    "keywords": {
+      "es": ["casa", "entrada", "puerta principal", "domicilio", "recibir cartas", "fachada", "dirección de entrega"],
+      "en": ["home", "front door", "letterbox", "residence", "receive letters", "porch", "delivery address"]
+    }
+  },
+  "mail-slot": {
+    "label": { "es": "Ranura para cartas", "en": "Mail slot", "pt": "Abertura para cartas", "fr": "Fente à courrier", "de": "Briefschlitz", "it": "Fessura per la posta", "ja": "ドアポスト", "zh": "投信口", "ko": "우편 투입구", "ar": "فتحة البريد" },
+    "keywords": {
+      "es": ["puerta", "rendija", "buzón de puerta", "entrega a domicilio", "correo por la puerta", "cartas", "recibir correspondencia"],
+      "en": ["letterbox", "door", "letter plate", "home delivery", "mail through the door", "letters", "receive correspondence"]
+    }
+  },
+  "mailbag": {
+    "label": { "es": "Bolsa de cartero", "en": "Mailbag", "pt": "Bolsa de carteiro", "fr": "Sacoche de facteur", "de": "Posttasche", "it": "Borsa del postino", "ja": "郵便かばん", "zh": "邮袋", "ko": "우편 가방", "ar": "حقيبة ساعي البريد" },
+    "keywords": {
+      "es": ["repartidor", "entrega de correo", "recolección", "mensajería", "servicio postal", "costal de correo", "correspondencia"],
+      "en": ["mail carrier", "postman", "mail delivery", "collection", "courier", "postal service", "fan mail"]
+    }
+  },
+  "mailboxes": {
+    "label": { "es": "Buzones", "en": "Mailboxes", "pt": "Caixas de correio", "fr": "Boîtes aux lettres", "de": "Briefkastenanlage", "it": "Cassette postali", "ja": "集合郵便受け", "zh": "集合信箱", "ko": "공동 우편함", "ar": "صناديق بريد" },
+    "keywords": {
+      "es": ["edificio", "departamentos", "apartado postal", "condominio", "casilleros", "vecinos", "conserjería"],
+      "en": ["apartment building", "po box", "condo", "lockers", "neighbors", "mailroom", "concierge"]
+    }
+  },
+  "phone-merge": {
+    "label": { "es": "Unir llamadas", "en": "Merge calls", "pt": "Mesclar chamadas", "fr": "Fusionner les appels", "de": "Anrufe zusammenführen", "it": "Unisci chiamate", "ja": "通話を統合", "zh": "合并通话", "ko": "통화 병합", "ar": "دمج المكالمات" },
+    "keywords": {
+      "es": ["conferencia", "llamada grupal", "combinar", "llamada tripartita", "agregar participante", "juntar llamadas", "multiconferencia"],
+      "en": ["conference", "group call", "combine", "three-way call", "add participant", "join calls", "multiparty call"]
+    }
+  },
+  "phone-record": {
+    "label": { "es": "Grabar llamada", "en": "Record call", "pt": "Gravar chamada", "fr": "Enregistrer l’appel", "de": "Anruf aufzeichnen", "it": "Registra chiamata", "ja": "通話を録音", "zh": "通话录音", "ko": "통화 녹음", "ar": "تسجيل المكالمة" },
+    "keywords": {
+      "es": ["grabación", "audio", "evidencia", "calidad en el servicio", "transcripción", "aviso de grabación", "centro de llamadas"],
+      "en": ["recording", "audio", "evidence", "quality assurance", "transcript", "recording notice", "call center"]
+    }
+  },
+  "phone-list": {
+    "label": { "es": "Historial de llamadas", "en": "Call log", "pt": "Histórico de chamadas", "fr": "Journal d’appels", "de": "Anrufliste", "it": "Registro chiamate", "ja": "通話履歴", "zh": "通话记录", "ko": "통화 기록", "ar": "سجل المكالمات" },
+    "keywords": {
+      "es": ["llamadas recientes", "registro", "llamadas perdidas", "devolver llamada", "bitácora de llamadas", "números marcados", "duración"],
+      "en": ["recent calls", "call history", "missed calls", "call back", "dialed numbers", "duration", "calls list"]
+    }
+  },
+  "phone-wifi": {
+    "label": { "es": "Llamadas por wifi", "en": "Wi-Fi calling", "pt": "Chamadas por Wi-Fi", "fr": "Appels Wi-Fi", "de": "WLAN-Anrufe", "it": "Chiamate Wi-Fi", "ja": "Wi-Fi通話", "zh": "Wi-Fi 通话", "ko": "Wi-Fi 통화", "ar": "الاتصال عبر Wi-Fi" },
+    "keywords": {
+      "es": ["voip", "llamada por internet", "telefonía ip", "sin señal", "red inalámbrica", "llamadas en línea", "softphone"],
+      "en": ["voip", "internet call", "ip telephony", "no signal", "wireless", "online calls", "softphone"]
+    }
+  },
+  "phone-callback": {
+    "label": { "es": "Solicitar llamada", "en": "Request callback", "pt": "Solicitar retorno", "fr": "Demander à être rappelé", "de": "Rückruf anfordern", "it": "Richiedi richiamata", "ja": "折り返し電話を依頼", "zh": "请求回电", "ko": "회신 전화 요청", "ar": "طلب معاودة الاتصال" },
+    "keywords": {
+      "es": ["devolver llamada", "llámame", "te marcamos", "agendar llamada", "contacto telefónico", "ventas", "soporte"],
+      "en": ["call back", "call me", "we'll call you", "schedule a call", "phone contact", "sales", "support"]
+    }
+  },
+  "phone-link": {
+    "label": { "es": "Enlace de llamada", "en": "Call link", "pt": "Link da chamada", "fr": "Lien d’appel", "de": "Anruflink", "it": "Link alla chiamata", "ja": "通話リンク", "zh": "通话链接", "ko": "통화 링크", "ar": "رابط المكالمة" },
+    "keywords": {
+      "es": ["unirse a la llamada", "invitación", "liga de reunión", "compartir llamada", "sala", "url", "llamada en línea"],
+      "en": ["join call", "invitation", "meeting link", "share call", "room", "url", "online call"]
+    }
+  },
+  "phone-globe": {
+    "label": { "es": "Llamada internacional", "en": "International call", "pt": "Chamada internacional", "fr": "Appel international", "de": "Auslandsanruf", "it": "Chiamata internazionale", "ja": "国際電話", "zh": "国际电话", "ko": "국제 전화", "ar": "مكالمة دولية" },
+    "keywords": {
+      "es": ["roaming", "larga distancia", "extranjero", "lada internacional", "viaje", "tarifa internacional", "llamar a otro país"],
+      "en": ["roaming", "long distance", "abroad", "country code", "travel", "international rates", "call overseas"]
+    }
+  },
+  "phone-block": {
+    "label": { "es": "Bloquear número", "en": "Block number", "pt": "Bloquear número", "fr": "Bloquer le numéro", "de": "Nummer blockieren", "it": "Blocca numero", "ja": "番号をブロック", "zh": "屏蔽号码", "ko": "번호 차단", "ar": "حظر الرقم" },
+    "keywords": {
+      "es": ["llamada bloqueada", "spam telefónico", "número desconocido", "lista negra", "fraude telefónico", "llamadas no deseadas", "rechazar llamada"],
+      "en": ["blocked caller", "spam call", "unknown number", "blocklist", "robocall", "unwanted calls", "reject call"]
+    }
+  },
+  "conference-call": {
+    "label": { "es": "Llamada en conferencia", "en": "Conference call", "pt": "Teleconferência", "fr": "Conférence téléphonique", "de": "Telefonkonferenz", "it": "Teleconferenza", "ja": "電話会議", "zh": "电话会议", "ko": "전화 회의", "ar": "مكالمة جماعية" },
+    "keywords": {
+      "es": ["llamada grupal", "audioconferencia", "junta telefónica", "varios participantes", "reunión", "puente telefónico", "equipo remoto"],
+      "en": ["group call", "audio conference", "phone meeting", "several participants", "meeting", "dial-in", "remote team"]
+    }
+  },
+  "caller-id": {
+    "label": { "es": "Identificador de llamadas", "en": "Caller ID", "pt": "Identificador de chamadas", "fr": "Présentation du numéro", "de": "Anruferkennung", "it": "ID chiamante", "ja": "発信者番号", "zh": "来电显示", "ko": "발신자 표시", "ar": "معرّف المتصل" },
+    "keywords": {
+      "es": ["quién llama", "contacto guardado", "llamar a un contacto", "número entrante", "nombre del contacto", "agenda", "marcar"],
+      "en": ["who's calling", "saved contact", "call a contact", "incoming number", "contact name", "phonebook", "dial"]
+    }
+  },
+  "video-call-incoming": {
+    "label": { "es": "Videollamada entrante", "en": "Incoming video call", "pt": "Videochamada recebida", "fr": "Appel vidéo entrant", "de": "Eingehender Videoanruf", "it": "Videochiamata in arrivo", "ja": "ビデオ通話の着信", "zh": "视频来电", "ko": "영상 통화 수신", "ar": "مكالمة فيديو واردة" },
+    "keywords": {
+      "es": ["contestar", "aceptar", "cámara", "te están llamando", "timbrando", "videochat", "aviso de llamada"],
+      "en": ["answer", "accept", "camera", "someone is calling", "ringing", "video chat", "call notification"]
+    }
+  },
+  "rotary-phone": {
+    "label": { "es": "Teléfono clásico", "en": "Classic phone", "pt": "Telefone clássico", "fr": "Téléphone à cadran", "de": "Wählscheibentelefon", "it": "Telefono a disco", "ja": "黒電話", "zh": "老式电话", "ko": "다이얼 전화기", "ar": "هاتف كلاسيكي" },
+    "keywords": {
+      "es": ["llámanos", "teléfono de disco", "línea fija", "contacto", "retro", "vintage", "atención telefónica"],
+      "en": ["call us", "rotary dial", "landline", "contact", "retro", "vintage", "phone support"]
+    }
+  },
+  "payphone": {
+    "label": { "es": "Teléfono público", "en": "Payphone", "pt": "Telefone público", "fr": "Cabine téléphonique", "de": "Münztelefon", "it": "Telefono pubblico", "ja": "公衆電話", "zh": "公用电话", "ko": "공중전화", "ar": "هاتف عمومي" },
+    "keywords": {
+      "es": ["caseta telefónica", "tarjeta telefónica", "monedas", "cabina", "vía pública", "llamada de emergencia", "retro"],
+      "en": ["phone booth", "phone card", "coins", "booth", "street", "emergency call", "retro"]
+    }
+  },
+  "intercom": {
+    "label": { "es": "Interfón", "en": "Intercom", "pt": "Interfone", "fr": "Interphone", "de": "Gegensprechanlage", "it": "Citofono", "ja": "インターホン", "zh": "对讲门铃", "ko": "인터폰", "ar": "إنترفون" },
+    "keywords": {
+      "es": ["portero eléctrico", "timbre", "abrir la puerta", "visitas", "control de acceso", "edificio", "videoportero"],
+      "en": ["door entry", "buzzer", "doorbell", "buzz in", "visitor", "access control", "video doorphone"]
+    }
+  },
+  "fax": {
+    "label": { "es": "Fax", "en": "Fax", "pt": "Fax", "fr": "Fax", "de": "Fax", "it": "Fax", "ja": "ファックス", "zh": "传真", "ko": "팩스", "ar": "فاكس" },
+    "keywords": {
+      "es": ["facsímil", "enviar documento", "oficina", "documento escaneado", "línea telefónica", "trámite", "imprimir"],
+      "en": ["facsimile", "send document", "office", "scanned document", "phone line", "paperwork", "print"]
+    }
+  },
+  "pager": {
+    "label": { "es": "Localizador", "en": "Pager", "pt": "Pager", "fr": "Bipeur", "de": "Pager", "it": "Cercapersone", "ja": "ポケベル", "zh": "寻呼机", "ko": "삐삐", "ar": "جهاز النداء" },
+    "keywords": {
+      "es": ["bíper", "guardia", "de turno", "aviso urgente", "incidente", "escalamiento", "hospital"],
+      "en": ["beeper", "on call", "paging", "urgent alert", "incident", "escalation", "hospital"]
+    }
+  },
+  "contacts-plus": {
+    "label": { "es": "Agregar contacto", "en": "Add contact", "pt": "Adicionar contato", "fr": "Ajouter un contact", "de": "Kontakt hinzufügen", "it": "Aggiungi contatto", "ja": "連絡先を追加", "zh": "添加联系人", "ko": "연락처 추가", "ar": "إضافة جهة اتصال" },
+    "keywords": {
+      "es": ["nuevo contacto", "guardar número", "agenda", "libreta de direcciones", "registrar cliente", "directorio", "añadir persona"],
+      "en": ["new contact", "save number", "address book", "phonebook", "new customer", "directory", "add person"]
+    }
+  },
+  "contacts-sync": {
+    "label": { "es": "Sincronizar contactos", "en": "Sync contacts", "pt": "Sincronizar contatos", "fr": "Synchroniser les contacts", "de": "Kontakte synchronisieren", "it": "Sincronizza contatti", "ja": "連絡先を同期", "zh": "同步联系人", "ko": "연락처 동기화", "ar": "مزامنة جهات الاتصال" },
+    "keywords": {
+      "es": ["importar contactos", "respaldo", "agenda", "actualizar", "cuenta conectada", "celular", "exportar"],
+      "en": ["import contacts", "backup", "address book", "update", "connected account", "phone", "export"]
+    }
+  },
+  "contacts-group": {
+    "label": { "es": "Grupo de contactos", "en": "Contact group", "pt": "Grupo de contatos", "fr": "Groupe de contacts", "de": "Kontaktgruppe", "it": "Gruppo di contatti", "ja": "連絡先グループ", "zh": "联系人分组", "ko": "연락처 그룹", "ar": "مجموعة جهات اتصال" },
+    "keywords": {
+      "es": ["etiqueta", "lista", "segmento", "agenda", "categoría", "lista de difusión", "audiencia"],
+      "en": ["label", "list", "segment", "address book", "category", "broadcast list", "audience"]
+    }
+  },
+  "business-card": {
+    "label": { "es": "Tarjeta de presentación", "en": "Business card", "pt": "Cartão de visita", "fr": "Carte de visite", "de": "Visitenkarte", "it": "Biglietto da visita", "ja": "名刺", "zh": "名片", "ko": "명함", "ar": "بطاقة عمل" },
+    "keywords": {
+      "es": ["datos de contacto", "intercambiar contacto", "escanear contacto", "vcard", "networking", "perfil profesional", "tarjeta digital"],
+      "en": ["contact details", "exchange contacts", "scan card", "vcard", "networking", "professional profile", "digital card"]
+    }
+  },
+  "bell-gear": {
+    "label": { "es": "Configuración de notificaciones", "en": "Notification settings", "pt": "Configurações de notificação", "fr": "Paramètres de notification", "de": "Benachrichtigungseinstellungen", "it": "Impostazioni notifiche", "ja": "通知設定", "zh": "通知设置", "ko": "알림 설정", "ar": "إعدادات الإشعارات" },
+    "keywords": {
+      "es": ["preferencias", "alertas", "ajustes", "silenciar", "frecuencia de avisos", "suscripciones", "canales de aviso"],
+      "en": ["preferences", "alerts", "configure", "mute", "alert frequency", "subscriptions", "delivery channels"]
+    }
+  },
+  "public-address": {
+    "label": { "es": "Avisos por altavoz", "en": "Public address", "pt": "Avisos por alto-falante", "fr": "Annonces par haut-parleur", "de": "Lautsprecherdurchsage", "it": "Annunci all’altoparlante", "ja": "構内放送", "zh": "公共广播", "ko": "안내 방송", "ar": "الإذاعة الداخلية" },
+    "keywords": {
+      "es": ["voceo", "perifoneo", "anuncio", "bocina", "megafonía", "emergencia", "aeropuerto", "escuela"],
+      "en": ["pa system", "announcement", "loudspeaker", "paging system", "emergency alert", "airport", "school"]
+    }
   }
 }

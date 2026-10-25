@@ -1,0 +1,506 @@
+{
+  "contract": {
+    "label": { "es": "Contrato", "en": "Contract", "pt": "Contrato", "fr": "Contrat", "de": "Vertrag", "it": "Contratto", "ja": "契約書", "zh": "合同", "ko": "계약서", "ar": "عقد" },
+    "keywords": {
+      "es": ["acuerdo", "convenio", "por firmar", "documento legal", "términos del acuerdo", "cerrar trato", "jurídico"],
+      "en": ["agreement", "deal", "sign here", "legal document", "terms", "close a deal", "paperwork"]
+    }
+  },
+  "contract-plus": {
+    "label": { "es": "Nuevo contrato", "en": "New contract", "pt": "Novo contrato", "fr": "Nouveau contrat", "de": "Neuer Vertrag", "it": "Nuovo contratto", "ja": "新規契約", "zh": "新建合同", "ko": "새 계약", "ar": "عقد جديد" },
+    "keywords": {
+      "es": ["crear acuerdo", "redactar contrato", "agregar", "nuevo convenio", "plantilla de contrato", "iniciar trato", "generar documento"],
+      "en": ["create agreement", "draft contract", "add", "new agreement", "contract template", "start a deal", "generate document"]
+    }
+  },
+  "contract-clock": {
+    "label": { "es": "Firma pendiente", "en": "Awaiting signature", "pt": "Assinatura pendente", "fr": "Signature en attente", "de": "Unterschrift ausstehend", "it": "Firma in attesa", "ja": "署名待ち", "zh": "待签署", "ko": "서명 대기 중", "ar": "بانتظار التوقيع" },
+    "keywords": {
+      "es": ["por firmar", "contrato por vencer", "vencimiento", "fecha límite", "en espera", "recordatorio de firma", "plazo"],
+      "en": ["to be signed", "expiring contract", "expiration date", "deadline", "pending", "signature reminder", "term ending"]
+    }
+  },
+  "contract-x": {
+    "label": { "es": "Contrato anulado", "en": "Voided contract", "pt": "Contrato anulado", "fr": "Contrat annulé", "de": "Annullierter Vertrag", "it": "Contratto annullato", "ja": "無効になった契約", "zh": "已作废的合同", "ko": "무효 처리된 계약", "ar": "عقد ملغى" },
+    "keywords": {
+      "es": ["rescindir", "cancelar contrato", "rechazado", "terminación anticipada", "sin efecto", "acuerdo roto", "invalidar"],
+      "en": ["terminate", "cancel contract", "declined", "early termination", "rescind", "broken agreement", "invalidate"]
+    }
+  },
+  "contract-lock": {
+    "label": { "es": "Acuerdo de confidencialidad", "en": "Non-disclosure agreement", "pt": "Acordo de confidencialidade", "fr": "Accord de confidentialité", "de": "Geheimhaltungsvereinbarung", "it": "Accordo di riservatezza", "ja": "秘密保持契約", "zh": "保密协议", "ko": "비밀유지계약", "ar": "اتفاقية عدم إفصاح" },
+    "keywords": {
+      "es": ["nda", "confidencial", "privado", "contrato protegido", "secreto comercial", "información reservada", "no divulgar"],
+      "en": ["nda", "confidential", "private", "protected contract", "secrecy", "classified information", "restricted"]
+    }
+  },
+  "contract-renewal": {
+    "label": { "es": "Renovar contrato", "en": "Renew contract", "pt": "Renovar contrato", "fr": "Renouveler le contrat", "de": "Vertrag verlängern", "it": "Rinnova contratto", "ja": "契約を更新", "zh": "续签合同", "ko": "계약 갱신", "ar": "تجديد العقد" },
+    "keywords": {
+      "es": ["renovación automática", "prórroga", "extender plazo", "suscripción", "nuevo periodo", "vigencia", "recurrente"],
+      "en": ["auto-renewal", "extension", "extend term", "subscription", "new term", "validity", "recurring"]
+    }
+  },
+  "contract-stack": {
+    "label": { "es": "Contratos", "en": "Contracts", "pt": "Contratos", "fr": "Contrats", "de": "Verträge", "it": "Contratti", "ja": "契約書一覧", "zh": "合同库", "ko": "계약서 목록", "ar": "العقود" },
+    "keywords": {
+      "es": ["repositorio", "todos los acuerdos", "carga masiva", "archivo de contratos", "biblioteca legal", "expedientes", "gestión documental"],
+      "en": ["repository", "all agreements", "bulk contracts", "contract archive", "legal library", "contract management", "documents"]
+    }
+  },
+  "addendum": {
+    "label": { "es": "Anexo", "en": "Addendum", "pt": "Aditivo", "fr": "Avenant", "de": "Nachtrag", "it": "Addendum", "ja": "付属書", "zh": "补充协议", "ko": "부속서", "ar": "ملحق" },
+    "keywords": {
+      "es": ["adenda", "enmienda", "convenio modificatorio", "modificación", "documento adjunto", "cláusula adicional", "apéndice"],
+      "en": ["annex", "amendment", "attachment", "modification", "appendix", "rider", "supplement"]
+    }
+  },
+  "clause": {
+    "label": { "es": "Cláusula", "en": "Clause", "pt": "Cláusula", "fr": "Clause", "de": "Klausel", "it": "Clausola", "ja": "条項", "zh": "条款", "ko": "조항", "ar": "بند" },
+    "keywords": {
+      "es": ["sección", "artículo", "estipulación", "condición", "inciso", "resaltar texto", "términos del contrato"],
+      "en": ["section", "article", "provision", "condition", "subsection", "highlight text", "contract terms"]
+    }
+  },
+  "parchment": {
+    "label": { "es": "Pergamino", "en": "Parchment", "pt": "Pergaminho", "fr": "Parchemin", "de": "Pergament", "it": "Pergamena", "ja": "巻物", "zh": "卷轴", "ko": "두루마리", "ar": "مخطوطة" },
+    "keywords": {
+      "es": ["términos y condiciones", "decreto", "constitución", "carta magna", "edicto", "documento histórico", "proclamación"],
+      "en": ["terms and conditions", "charter", "decree", "constitution", "edict", "historic document", "proclamation"]
+    }
+  },
+  "policy": {
+    "label": { "es": "Política", "en": "Policy", "pt": "Política", "fr": "Politique", "de": "Richtlinie", "it": "Policy", "ja": "ポリシー", "zh": "政策", "ko": "정책", "ar": "سياسة" },
+    "keywords": {
+      "es": ["aviso de privacidad", "privacidad", "reglamento interno", "lineamientos", "normas de la empresa", "código de conducta", "uso de datos"],
+      "en": ["privacy", "privacy notice", "company rules", "guidelines", "code of conduct", "employee handbook", "data use"]
+    }
+  },
+  "legal-document": {
+    "label": { "es": "Documento legal", "en": "Legal document", "pt": "Documento jurídico", "fr": "Document juridique", "de": "Rechtsdokument", "it": "Documento legale", "ja": "法的文書", "zh": "法律文件", "ko": "법률 문서", "ar": "مستند قانوني" },
+    "keywords": {
+      "es": ["texto legal", "artículo de ley", "aviso legal", "información legal", "acta", "jurídico", "términos legales"],
+      "en": ["legal text", "article of law", "legal notice", "imprint", "legal information", "disclaimer", "legal terms"]
+    }
+  },
+  "compliance": {
+    "label": { "es": "Cumplimiento normativo", "en": "Compliance", "pt": "Conformidade", "fr": "Conformité", "de": "Compliance", "it": "Conformità", "ja": "コンプライアンス", "zh": "合规", "ko": "규정 준수", "ar": "الامتثال" },
+    "keywords": {
+      "es": ["regulación", "controles aprobados", "auditoría", "certificación", "apego a la norma", "gestión de riesgos", "requisitos"],
+      "en": ["regulation", "controls passed", "audit", "certification", "regulatory", "risk management", "requirements"]
+    }
+  },
+  "tax-form": {
+    "label": { "es": "Declaración de impuestos", "en": "Tax return", "pt": "Declaração de impostos", "fr": "Déclaration d’impôts", "de": "Steuererklärung", "it": "Dichiarazione dei redditi", "ja": "税務申告", "zh": "纳税申报", "ko": "세금 신고", "ar": "إقرار ضريبي" },
+    "keywords": {
+      "es": ["sat", "declaración anual", "hacienda", "formulario fiscal", "pagar impuestos", "contador", "isr", "obligaciones fiscales"],
+      "en": ["tax filing", "irs", "tax form", "annual return", "pay taxes", "accountant", "income tax", "fiscal"]
+    }
+  },
+  "petition": {
+    "label": { "es": "Petición", "en": "Petition", "pt": "Abaixo-assinado", "fr": "Pétition", "de": "Petition", "it": "Petizione", "ja": "請願書", "zh": "请愿书", "ko": "청원", "ar": "عريضة" },
+    "keywords": {
+      "es": ["recolección de firmas", "causa", "campaña", "activismo", "solicitud colectiva", "apoyar", "movimiento ciudadano"],
+      "en": ["collect signatures", "cause", "campaign", "activism", "signature drive", "support", "grassroots"]
+    }
+  },
+  "e-signature": {
+    "label": { "es": "Firma electrónica", "en": "E-signature", "pt": "Assinatura eletrônica", "fr": "Signature électronique", "de": "Elektronische Signatur", "it": "Firma elettronica", "ja": "電子署名", "zh": "电子签名", "ko": "전자 서명", "ar": "توقيع إلكتروني" },
+    "keywords": {
+      "es": ["firma digital", "firmar en pantalla", "firmar en tableta", "e.firma", "firmar en línea", "sin papel", "rúbrica"],
+      "en": ["digital signature", "sign on screen", "tablet signing", "sign online", "paperless", "signature pad", "autograph"]
+    }
+  },
+  "fountain-pen": {
+    "label": { "es": "Pluma fuente", "en": "Fountain pen", "pt": "Caneta-tinteiro", "fr": "Stylo plume", "de": "Füllfederhalter", "it": "Penna stilografica", "ja": "万年筆", "zh": "钢笔", "ko": "만년필", "ar": "قلم حبر" },
+    "keywords": {
+      "es": ["firmar", "escritura formal", "tinta", "caligrafía", "rúbrica", "firma de contrato", "plumilla"],
+      "en": ["sign", "signing pen", "formal writing", "ink", "calligraphy", "contract signing", "nib"]
+    }
+  },
+  "quill": {
+    "label": { "es": "Pluma de ave", "en": "Quill", "pt": "Pena de escrever", "fr": "Plume d’oie", "de": "Federkiel", "it": "Penna d’oca", "ja": "羽根ペン", "zh": "羽毛笔", "ko": "깃펜", "ar": "ريشة الكتابة" },
+    "keywords": {
+      "es": ["tintero", "redactar", "documento histórico", "escrito a mano", "autor", "manuscrito", "redacción legal"],
+      "en": ["inkwell", "drafting", "historic document", "handwritten", "author", "manuscript", "legal drafting"]
+    }
+  },
+  "wax-seal": {
+    "label": { "es": "Sello de lacre", "en": "Wax seal", "pt": "Selo de cera", "fr": "Sceau de cire", "de": "Wachssiegel", "it": "Sigillo di ceralacca", "ja": "封蝋", "zh": "火漆印", "ko": "밀랍 봉인", "ar": "ختم شمعي" },
+    "keywords": {
+      "es": ["sellado", "auténtico", "oficial", "documento oficial", "certificado", "carta sellada", "original"],
+      "en": ["sealed", "authentic", "official", "official document", "certified", "sealed letter", "original"]
+    }
+  },
+  "embosser": {
+    "label": { "es": "Sello notarial", "en": "Notary seal", "pt": "Selo seco", "fr": "Timbre sec", "de": "Prägesiegel", "it": "Timbro a secco", "ja": "公証印", "zh": "钢印", "ko": "공증 인장", "ar": "ختم التوثيق" },
+    "keywords": {
+      "es": ["certificar", "notaría", "gofradora", "sello en relieve", "dar fe", "legalizar documento", "protocolizar"],
+      "en": ["notarize", "certify", "embosser", "embossed seal", "notary public", "authenticate", "legalize document"]
+    }
+  },
+  "ballot": {
+    "label": { "es": "Boleta electoral", "en": "Ballot", "pt": "Cédula eleitoral", "fr": "Bulletin de vote", "de": "Stimmzettel", "it": "Scheda elettorale", "ja": "投票用紙", "zh": "选票", "ko": "투표용지", "ar": "ورقة اقتراع" },
+    "keywords": {
+      "es": ["papeleta", "votar", "marcar opción", "boleta muestra", "elecciones", "candidatos", "elegir"],
+      "en": ["voting slip", "vote", "mark your choice", "sample ballot", "elections", "candidates", "polling"]
+    }
+  },
+  "ballot-box": {
+    "label": { "es": "Urna", "en": "Ballot box", "pt": "Urna", "fr": "Urne", "de": "Wahlurne", "it": "Urna elettorale", "ja": "投票箱", "zh": "投票箱", "ko": "투표함", "ar": "صندوق الاقتراع" },
+    "keywords": {
+      "es": ["votar", "elecciones", "emitir voto", "sufragio", "democracia", "jornada electoral", "consulta popular"],
+      "en": ["vote", "elections", "cast your vote", "referendum", "suffrage", "democracy", "election day"]
+    }
+  },
+  "ballot-box-check": {
+    "label": { "es": "Voto emitido", "en": "Vote cast", "pt": "Voto registrado", "fr": "Vote enregistré", "de": "Stimme abgegeben", "it": "Voto espresso", "ja": "投票済み", "zh": "已投票", "ko": "투표 완료", "ar": "تم التصويت" },
+    "keywords": {
+      "es": ["ya voté", "voto contado", "voto registrado", "participación", "conteo de votos", "confirmación de voto", "elecciones"],
+      "en": ["i voted", "vote counted", "vote recorded", "turnout", "vote count", "vote confirmation", "elections"]
+    }
+  },
+  "voting-booth": {
+    "label": { "es": "Cabina de votación", "en": "Voting booth", "pt": "Cabine de votação", "fr": "Isoloir", "de": "Wahlkabine", "it": "Cabina elettorale", "ja": "投票ブース", "zh": "投票间", "ko": "기표소", "ar": "كابينة الاقتراع" },
+    "keywords": {
+      "es": ["voto secreto", "casilla", "mampara", "votar en privado", "centro de votación", "elecciones", "jornada electoral"],
+      "en": ["secret ballot", "polling station", "private vote", "polls", "elections", "election day", "privacy screen"]
+    }
+  },
+  "voting-machine": {
+    "label": { "es": "Urna electrónica", "en": "Voting machine", "pt": "Urna eletrônica", "fr": "Machine à voter", "de": "Wahlcomputer", "it": "Macchina per il voto", "ja": "電子投票機", "zh": "电子投票机", "ko": "전자 투표기", "ar": "آلة تصويت إلكترونية" },
+    "keywords": {
+      "es": ["voto electrónico", "votar en pantalla", "votación digital", "máquina de votación", "elecciones", "pantalla táctil", "conteo automático"],
+      "en": ["electronic voting", "e-voting", "digital voting", "touchscreen vote", "elections", "voting terminal", "automated count"]
+    }
+  },
+  "postal-vote": {
+    "label": { "es": "Voto por correo", "en": "Vote by mail", "pt": "Voto por correio", "fr": "Vote par correspondance", "de": "Briefwahl", "it": "Voto per corrispondenza", "ja": "郵便投票", "zh": "邮寄投票", "ko": "우편 투표", "ar": "التصويت بالبريد" },
+    "keywords": {
+      "es": ["voto postal", "voto desde el extranjero", "voto anticipado", "voto a distancia", "sobre electoral", "boleta por correo", "voto en ausencia"],
+      "en": ["postal vote", "absentee ballot", "mail-in ballot", "early voting", "remote voting", "overseas vote", "election envelope"]
+    }
+  },
+  "hemicycle": {
+    "label": { "es": "Hemiciclo", "en": "Parliament seats", "pt": "Hemiciclo", "fr": "Hémicycle", "de": "Sitzverteilung", "it": "Emiciclo", "ja": "議席配分", "zh": "议席分布", "ko": "의석 분포", "ar": "توزيع المقاعد" },
+    "keywords": {
+      "es": ["escaños", "curules", "resultados electorales", "composición del congreso", "bancadas", "mayoría", "cámara de diputados", "gráfica de parlamento"],
+      "en": ["hemicycle", "election results", "chamber composition", "parliament chart", "majority", "caucus", "congress"]
+    }
+  },
+  "debate": {
+    "label": { "es": "Debate", "en": "Debate", "pt": "Debate", "fr": "Débat", "de": "Debatte", "it": "Dibattito", "ja": "討論会", "zh": "辩论", "ko": "토론", "ar": "مناظرة" },
+    "keywords": {
+      "es": ["candidatos", "foro", "atriles", "discusión pública", "confrontar propuestas", "moderador", "campaña electoral"],
+      "en": ["candidates", "forum", "lecterns", "public discussion", "podiums", "moderator", "election campaign"]
+    }
+  },
+  "voter": {
+    "label": { "es": "Votante", "en": "Voter", "pt": "Eleitor", "fr": "Électeur", "de": "Wähler", "it": "Elettore", "ja": "有権者", "zh": "选民", "ko": "유권자", "ar": "ناخب" },
+    "keywords": {
+      "es": ["elector", "padrón electoral", "credencial para votar", "lista nominal", "ciudadano", "registro electoral", "electorado"],
+      "en": ["elector", "electoral roll", "registration", "voting card", "citizen", "electorate", "constituent"]
+    }
+  },
+  "capitol": {
+    "label": { "es": "Congreso", "en": "Capitol", "pt": "Congresso", "fr": "Parlement", "de": "Parlament", "it": "Parlamento", "ja": "議事堂", "zh": "国会大厦", "ko": "국회의사당", "ar": "مبنى البرلمان" },
+    "keywords": {
+      "es": ["capitolio", "parlamento", "poder legislativo", "senado", "cámara de diputados", "sede de gobierno", "legisladores"],
+      "en": ["legislature", "parliament", "senate", "congress", "seat of government", "lawmakers", "state house"]
+    }
+  },
+  "city-hall": {
+    "label": { "es": "Ayuntamiento", "en": "City hall", "pt": "Prefeitura", "fr": "Mairie", "de": "Rathaus", "it": "Municipio", "ja": "市役所", "zh": "市政厅", "ko": "시청", "ar": "مبنى البلدية" },
+    "keywords": {
+      "es": ["municipio", "alcaldía", "palacio municipal", "gobierno local", "presidencia municipal", "trámites municipales", "cabildo"],
+      "en": ["municipality", "town hall", "local government", "mayor’s office", "city council", "municipal services", "civic center"]
+    }
+  },
+  "courthouse": {
+    "label": { "es": "Tribunal", "en": "Courthouse", "pt": "Tribunal", "fr": "Palais de justice", "de": "Gericht", "it": "Tribunale", "ja": "裁判所", "zh": "法院", "ko": "법원", "ar": "محكمة" },
+    "keywords": {
+      "es": ["juzgado", "corte", "poder judicial", "palacio de justicia", "justicia", "suprema corte", "juicio"],
+      "en": ["court of law", "judiciary", "legal system", "palace of justice", "justice", "supreme court", "trial"]
+    }
+  },
+  "embassy": {
+    "label": { "es": "Embajada", "en": "Embassy", "pt": "Embaixada", "fr": "Ambassade", "de": "Botschaft", "it": "Ambasciata", "ja": "大使館", "zh": "大使馆", "ko": "대사관", "ar": "سفارة" },
+    "keywords": {
+      "es": ["consulado", "misión diplomática", "visa", "diplomacia", "relaciones exteriores", "trámite consular", "pasaporte"],
+      "en": ["consulate", "diplomatic mission", "visa", "diplomacy", "foreign affairs", "consular services", "passport"]
+    }
+  },
+  "pillar": {
+    "label": { "es": "Pilar", "en": "Pillar", "pt": "Pilar", "fr": "Pilier", "de": "Säule", "it": "Colonna", "ja": "柱", "zh": "支柱", "ko": "기둥", "ar": "عمود" },
+    "keywords": {
+      "es": ["columna", "institución", "fundamentos", "bases", "solidez", "estructura", "arquitectura clásica"],
+      "en": ["column", "institution", "foundations", "core principles", "stability", "strength", "classical architecture"]
+    }
+  },
+  "prison": {
+    "label": { "es": "Cárcel", "en": "Prison", "pt": "Prisão", "fr": "Prison", "de": "Gefängnis", "it": "Prigione", "ja": "刑務所", "zh": "监狱", "ko": "교도소", "ar": "سجن" },
+    "keywords": {
+      "es": ["prisión", "penal", "reclusorio", "rejas", "detención", "encarcelado", "centro penitenciario"],
+      "en": ["jail", "penitentiary", "bars", "detention", "incarceration", "locked up", "correctional facility"]
+    }
+  },
+  "inmate": {
+    "label": { "es": "Recluso", "en": "Inmate", "pt": "Detento", "fr": "Détenu", "de": "Häftling", "it": "Detenuto", "ja": "受刑者", "zh": "囚犯", "ko": "수감자", "ar": "سجين" },
+    "keywords": {
+      "es": ["preso", "detenido", "prisionero", "reo", "interno", "privado de la libertad", "condenado"],
+      "en": ["prisoner", "detainee", "convict", "incarcerated", "jailed", "offender", "behind bars"]
+    }
+  },
+  "handcuffs": {
+    "label": { "es": "Esposas", "en": "Handcuffs", "pt": "Algemas", "fr": "Menottes", "de": "Handschellen", "it": "Manette", "ja": "手錠", "zh": "手铐", "ko": "수갑", "ar": "أصفاد" },
+    "keywords": {
+      "es": ["arresto", "detención", "custodia", "derecho penal", "delito", "policía", "capturado"],
+      "en": ["arrest", "custody", "criminal law", "crime", "police", "detained", "apprehension"]
+    }
+  },
+  "police-badge": {
+    "label": { "es": "Placa de policía", "en": "Police badge", "pt": "Distintivo policial", "fr": "Insigne de police", "de": "Polizeimarke", "it": "Distintivo della polizia", "ja": "警察バッジ", "zh": "警徽", "ko": "경찰 배지", "ar": "شارة الشرطة" },
+    "keywords": {
+      "es": ["autoridad", "seguridad pública", "agente", "sheriff", "fuerzas del orden", "oficial", "detective"],
+      "en": ["law enforcement", "authority", "officer", "sheriff", "cop", "public safety", "detective"]
+    }
+  },
+  "case-file": {
+    "label": { "es": "Expediente", "en": "Case file", "pt": "Dossiê", "fr": "Dossier", "de": "Akte", "it": "Fascicolo", "ja": "案件ファイル", "zh": "案卷", "ko": "사건 파일", "ar": "ملف القضية" },
+    "keywords": {
+      "es": ["caso", "asunto legal", "dossier", "carpeta", "historial", "número de caso", "seguimiento"],
+      "en": ["legal matter", "case", "dossier", "folder", "records", "case number", "matter management"]
+    }
+  },
+  "lawsuit": {
+    "label": { "es": "Demanda", "en": "Lawsuit", "pt": "Processo judicial", "fr": "Action en justice", "de": "Klage", "it": "Causa legale", "ja": "訴訟", "zh": "诉讼", "ko": "소송", "ar": "دعوى قضائية" },
+    "keywords": {
+      "es": ["litigio", "juicio", "sentencia", "pleito", "fallo", "acción legal", "querella"],
+      "en": ["litigation", "sue", "court filing", "ruling", "verdict", "legal action", "claim"]
+    }
+  },
+  "courtroom": {
+    "label": { "es": "Sala de audiencias", "en": "Courtroom", "pt": "Sala de audiência", "fr": "Salle d’audience", "de": "Gerichtssaal", "it": "Aula di tribunale", "ja": "法廷", "zh": "法庭", "ko": "법정", "ar": "قاعة المحكمة" },
+    "keywords": {
+      "es": ["juicio", "audiencia", "estrado", "juicio oral", "proceso judicial", "comparecer", "sesión"],
+      "en": ["trial", "hearing", "judge’s bench", "court session", "appear in court", "proceedings", "witness stand"]
+    }
+  },
+  "jury": {
+    "label": { "es": "Jurado", "en": "Jury", "pt": "Júri", "fr": "Jury", "de": "Geschworene", "it": "Giuria", "ja": "陪審団", "zh": "陪审团", "ko": "배심원단", "ar": "هيئة المحلفين" },
+    "keywords": {
+      "es": ["panel de jueces", "veredicto", "deliberación", "tribunal colegiado", "comité evaluador", "jueces de concurso", "sinodales"],
+      "en": ["jurors", "panel of judges", "verdict", "deliberation", "judging panel", "competition judges", "peers"]
+    }
+  },
+  "judge": {
+    "label": { "es": "Juez", "en": "Judge", "pt": "Juiz", "fr": "Juge", "de": "Richter", "it": "Giudice", "ja": "裁判官", "zh": "法官", "ko": "판사", "ar": "قاضٍ" },
+    "keywords": {
+      "es": ["magistrado", "jueza", "autoridad judicial", "toga", "sentencia", "árbitro", "ministro"],
+      "en": ["magistrate", "justice", "judicial authority", "robe", "ruling", "arbiter", "your honor"]
+    }
+  },
+  "lawyer": {
+    "label": { "es": "Abogado", "en": "Lawyer", "pt": "Advogado", "fr": "Avocat", "de": "Anwalt", "it": "Avvocato", "ja": "弁護士", "zh": "律师", "ko": "변호사", "ar": "محامٍ" },
+    "keywords": {
+      "es": ["abogada", "licenciado", "asesor legal", "defensor", "jurista", "despacho jurídico", "representante legal"],
+      "en": ["attorney", "legal counsel", "defense", "advocate", "solicitor", "law firm", "legal representative"]
+    }
+  },
+  "notary": {
+    "label": { "es": "Notario", "en": "Notary", "pt": "Tabelião", "fr": "Notaire", "de": "Notar", "it": "Notaio", "ja": "公証人", "zh": "公证员", "ko": "공증인", "ar": "كاتب العدل" },
+    "keywords": {
+      "es": ["notaría", "fedatario", "dar fe", "escritura pública", "testamento", "poder notarial", "certificación"],
+      "en": ["notarization", "witness signature", "deed", "will", "power of attorney", "certification", "affidavit"]
+    }
+  },
+  "legal-aid": {
+    "label": { "es": "Asistencia legal", "en": "Legal aid", "pt": "Assistência jurídica", "fr": "Aide juridique", "de": "Rechtshilfe", "it": "Assistenza legale", "ja": "法律扶助", "zh": "法律援助", "ko": "법률 지원", "ar": "مساعدة قانونية" },
+    "keywords": {
+      "es": ["pro bono", "defensoría pública", "defensor de oficio", "ayuda legal gratuita", "orientación jurídica", "derechos", "apoyo legal"],
+      "en": ["pro bono", "public defender", "free legal help", "legal support", "legal services", "rights", "advocacy"]
+    }
+  },
+  "legal-advice": {
+    "label": { "es": "Asesoría legal", "en": "Legal advice", "pt": "Consultoria jurídica", "fr": "Conseil juridique", "de": "Rechtsberatung", "it": "Consulenza legale", "ja": "法律相談", "zh": "法律咨询", "ko": "법률 상담", "ar": "استشارة قانونية" },
+    "keywords": {
+      "es": ["consulta", "preguntar a un abogado", "asesor", "orientación", "duda legal", "opinión jurídica", "dictamen"],
+      "en": ["consultation", "ask a lawyer", "counsel", "guidance", "legal question", "legal opinion", "advisor"]
+    }
+  },
+  "mediation": {
+    "label": { "es": "Mediación", "en": "Mediation", "pt": "Mediação", "fr": "Médiation", "de": "Mediation", "it": "Mediazione", "ja": "調停", "zh": "调解", "ko": "조정", "ar": "وساطة" },
+    "keywords": {
+      "es": ["arbitraje", "conciliación", "resolución de conflictos", "negociación", "tercero neutral", "llegar a un acuerdo", "conflicto"],
+      "en": ["arbitration", "conciliation", "dispute resolution", "negotiation", "neutral party", "settlement", "adr"]
+    }
+  },
+  "dispute": {
+    "label": { "es": "Disputa", "en": "Dispute", "pt": "Disputa", "fr": "Litige", "de": "Rechtsstreit", "it": "Controversia", "ja": "紛争", "zh": "纠纷", "ko": "분쟁", "ar": "نزاع" },
+    "keywords": {
+      "es": ["conflicto", "pleito", "partes contrarias", "controversia", "desacuerdo", "reclamación", "contraparte"],
+      "en": ["conflict", "disagreement", "opposing parties", "controversy", "claim", "counterparty", "contest"]
+    }
+  },
+  "balance-scale-tilted": {
+    "label": { "es": "Desigualdad", "en": "Inequality", "pt": "Desigualdade", "fr": "Inégalité", "de": "Ungleichheit", "it": "Disuguaglianza", "ja": "不平等", "zh": "不平等", "ko": "불평등", "ar": "عدم المساواة" },
+    "keywords": {
+      "es": ["injusto", "sesgo", "parcialidad", "desequilibrio", "favoritismo", "inclinar la balanza", "ventaja"],
+      "en": ["unfair", "bias", "partiality", "imbalance", "favoritism", "tip the scales", "advantage"]
+    }
+  },
+  "oath": {
+    "label": { "es": "Juramento", "en": "Oath", "pt": "Juramento", "fr": "Serment", "de": "Eid", "it": "Giuramento", "ja": "宣誓", "zh": "宣誓", "ko": "선서", "ar": "أداء القسم" },
+    "keywords": {
+      "es": ["jurar", "toma de protesta", "testimonio", "declaración jurada", "bajo protesta de decir verdad", "testigo", "promesa"],
+      "en": ["swear", "swearing in", "testimony", "sworn statement", "affidavit", "witness", "pledge"]
+    }
+  },
+  "law-book": {
+    "label": { "es": "Código legal", "en": "Legal code", "pt": "Código de leis", "fr": "Recueil de lois", "de": "Gesetzbuch", "it": "Raccolta di leggi", "ja": "法典", "zh": "法典", "ko": "법전", "ar": "مدونة القوانين" },
+    "keywords": {
+      "es": ["ley", "reglamento", "estatutos", "normativa", "código civil", "derecho", "marco legal"],
+      "en": ["law", "statutes", "regulations", "rules", "civil code", "jurisprudence", "legal framework"]
+    }
+  },
+  "law-book-check": {
+    "label": { "es": "Conforme a la ley", "en": "Legally compliant", "pt": "Em conformidade com a lei", "fr": "Conforme à la loi", "de": "Gesetzeskonform", "it": "Conforme alla legge", "ja": "法令順守", "zh": "合法合规", "ko": "법규 준수", "ar": "متوافق مع القانون" },
+    "keywords": {
+      "es": ["legal", "lícito", "cumple la norma", "dentro de la ley", "regulado", "apegado a derecho", "validado"],
+      "en": ["lawful", "legal", "regulation met", "within the law", "regulated", "legitimate", "approved"]
+    }
+  },
+  "law-book-search": {
+    "label": { "es": "Investigación jurídica", "en": "Legal research", "pt": "Pesquisa jurídica", "fr": "Recherche juridique", "de": "Rechtsrecherche", "it": "Ricerca giuridica", "ja": "法令検索", "zh": "法律检索", "ko": "법률 검색", "ar": "بحث قانوني" },
+    "keywords": {
+      "es": ["jurisprudencia", "buscar ley", "consultar código", "precedentes", "tesis", "doctrina", "buscador legal"],
+      "en": ["case law", "search law", "look up statute", "precedents", "legal database", "doctrine", "case search"]
+    }
+  },
+  "personal-data": {
+    "label": { "es": "Datos personales", "en": "Personal data", "pt": "Dados pessoais", "fr": "Données personnelles", "de": "Personenbezogene Daten", "it": "Dati personali", "ja": "個人情報", "zh": "个人信息", "ko": "개인정보", "ar": "البيانات الشخصية" },
+    "keywords": {
+      "es": ["titular de datos", "información personal", "privacidad", "datos sensibles", "pii", "protección de datos", "identidad"],
+      "en": ["data subject", "pii", "personal information", "privacy", "sensitive data", "data protection", "identity"]
+    }
+  },
+  "personal-data-download": {
+    "label": { "es": "Exportar datos personales", "en": "Export personal data", "pt": "Exportar dados pessoais", "fr": "Exporter les données personnelles", "de": "Personenbezogene Daten exportieren", "it": "Esporta dati personali", "ja": "個人情報のエクスポート", "zh": "导出个人信息", "ko": "개인정보 내보내기", "ar": "تصدير البيانات الشخصية" },
+    "keywords": {
+      "es": ["solicitud de acceso", "derecho de acceso", "portabilidad", "descargar mis datos", "derechos arco", "copia de mis datos", "dsar"],
+      "en": ["data access request", "dsar", "data portability", "download my data", "right of access", "copy of my data", "gdpr request"]
+    }
+  },
+  "personal-data-x": {
+    "label": { "es": "Eliminar datos personales", "en": "Erase personal data", "pt": "Apagar dados pessoais", "fr": "Effacer les données personnelles", "de": "Personenbezogene Daten löschen", "it": "Cancella dati personali", "ja": "個人情報の削除", "zh": "删除个人信息", "ko": "개인정보 삭제", "ar": "محو البيانات الشخصية" },
+    "keywords": {
+      "es": ["derecho al olvido", "solicitud de eliminación", "cancelación", "borrar mis datos", "derechos arco", "cerrar cuenta", "oposición"],
+      "en": ["right to be forgotten", "erasure request", "deletion request", "delete my data", "delete account", "gdpr", "opt out"]
+    }
+  },
+  "personal-data-edit": {
+    "label": { "es": "Corregir datos personales", "en": "Correct personal data", "pt": "Corrigir dados pessoais", "fr": "Rectifier les données personnelles", "de": "Personenbezogene Daten berichtigen", "it": "Rettifica dati personali", "ja": "個人情報の訂正", "zh": "更正个人信息", "ko": "개인정보 정정", "ar": "تصحيح البيانات الشخصية" },
+    "keywords": {
+      "es": ["rectificación", "actualizar datos", "editar información", "derechos arco", "dato incorrecto", "modificar perfil", "error en mis datos"],
+      "en": ["rectification", "update data", "edit information", "fix my details", "incorrect data", "edit profile", "gdpr rights"]
+    }
+  },
+  "anonymize": {
+    "label": { "es": "Datos anonimizados", "en": "Anonymized data", "pt": "Dados anonimizados", "fr": "Données anonymisées", "de": "Anonymisierte Daten", "it": "Dati anonimizzati", "ja": "匿名化データ", "zh": "匿名化数据", "ko": "익명화된 데이터", "ar": "بيانات مجهولة الهوية" },
+    "keywords": {
+      "es": ["anónimo", "seudónimo", "seudonimizar", "ocultar identidad", "sin identificar", "privacidad", "desidentificar"],
+      "en": ["anonymous", "pseudonymized", "hide identity", "de-identify", "unidentified", "privacy", "masked data"]
+    }
+  },
+  "consent": {
+    "label": { "es": "Consentimiento", "en": "Consent", "pt": "Consentimento", "fr": "Consentement", "de": "Einwilligung", "it": "Consenso", "ja": "同意", "zh": "同意", "ko": "동의", "ar": "موافقة" },
+    "keywords": {
+      "es": ["autorización", "permiso otorgado", "acepto", "aprobación", "opt-in", "de acuerdo", "aceptar términos"],
+      "en": ["permission granted", "authorization", "opt-in", "i agree", "approval", "accept terms", "agreement"]
+    }
+  },
+  "data-residency": {
+    "label": { "es": "Residencia de datos", "en": "Data residency", "pt": "Residência de dados", "fr": "Localisation des données", "de": "Datenresidenz", "it": "Residenza dei dati", "ja": "データ所在地", "zh": "数据驻留", "ko": "데이터 저장 위치", "ar": "موقع تخزين البيانات" },
+    "keywords": {
+      "es": ["soberanía de datos", "ubicación de datos", "región del servidor", "almacenamiento local", "centro de datos", "jurisdicción", "datos en el país"],
+      "en": ["data sovereignty", "data location", "server region", "data localization", "data center", "jurisdiction", "in-country data"]
+    }
+  },
+  "cookie-gear": {
+    "label": { "es": "Configurar cookies", "en": "Cookie settings", "pt": "Configurações de cookies", "fr": "Paramètres des cookies", "de": "Cookie-Einstellungen", "it": "Impostazioni cookie", "ja": "Cookieの設定", "zh": "Cookie 设置", "ko": "쿠키 설정", "ar": "إعدادات ملفات تعريف الارتباط" },
+    "keywords": {
+      "es": ["preferencias", "gestor de consentimiento", "ajustes de privacidad", "rastreo", "rechazar", "personalizar", "rgpd"],
+      "en": ["preferences", "consent manager", "privacy settings", "tracking", "opt out", "customize", "gdpr"]
+    }
+  },
+  "cookie-check": {
+    "label": { "es": "Cookies aceptadas", "en": "Cookies accepted", "pt": "Cookies aceitos", "fr": "Cookies acceptés", "de": "Cookies akzeptiert", "it": "Cookie accettati", "ja": "Cookieに同意済み", "zh": "已接受 Cookie", "ko": "쿠키 허용됨", "ar": "تم قبول ملفات تعريف الارتباط" },
+    "keywords": {
+      "es": ["aceptar todo", "consentimiento otorgado", "permitir", "de acuerdo", "privacidad", "rastreo permitido", "aviso aceptado"],
+      "en": ["accept all", "consent given", "allow", "agreed", "privacy", "tracking allowed", "banner dismissed"]
+    }
+  },
+  "archive-lock": {
+    "label": { "es": "Retención legal", "en": "Legal hold", "pt": "Retenção legal", "fr": "Conservation légale", "de": "Rechtliche Aufbewahrung", "it": "Conservazione legale", "ja": "リーガルホールド", "zh": "法律保全", "ko": "법적 보존", "ar": "حفظ قانوني" },
+    "keywords": {
+      "es": ["archivo protegido", "no borrar", "resguardo de registros", "litigio", "auditoría", "plazo de conservación", "bloqueo de eliminación"],
+      "en": ["records retention", "preserved", "do not delete", "litigation", "audit", "ediscovery", "deletion lock"]
+    }
+  },
+  "patent": {
+    "label": { "es": "Patente", "en": "Patent", "pt": "Patente", "fr": "Brevet", "de": "Patent", "it": "Brevetto", "ja": "特許", "zh": "专利", "ko": "특허", "ar": "براءة اختراع" },
+    "keywords": {
+      "es": ["invención", "propiedad intelectual", "registrar un invento", "impi", "innovación", "idea protegida", "modelo de utilidad"],
+      "en": ["invention", "intellectual property", "ip", "innovation", "protected idea", "uspto", "utility model"]
+    }
+  },
+  "lightbulb-lock": {
+    "label": { "es": "Secreto industrial", "en": "Trade secret", "pt": "Segredo industrial", "fr": "Secret d’affaires", "de": "Geschäftsgeheimnis", "it": "Segreto industriale", "ja": "営業秘密", "zh": "商业秘密", "ko": "영업 비밀", "ar": "سر تجاري" },
+    "keywords": {
+      "es": ["know-how", "confidencial", "fórmula secreta", "información reservada", "propiedad intelectual", "ventaja competitiva", "conocimiento propio"],
+      "en": ["know-how", "confidential", "secret formula", "proprietary", "intellectual property", "competitive advantage", "classified idea"]
+    }
+  },
+  "copyleft": {
+    "label": { "es": "Copyleft", "en": "Copyleft", "pt": "Copyleft", "fr": "Copyleft", "de": "Copyleft", "it": "Copyleft", "ja": "コピーレフト", "zh": "Copyleft", "ko": "카피레프트", "ar": "الحقوق المتروكة" },
+    "keywords": {
+      "es": ["compartir igual", "licencia libre", "código abierto", "gpl", "creative commons", "software libre", "obras derivadas"],
+      "en": ["share-alike", "open license", "open source", "gpl", "creative commons", "free software", "derivative works"]
+    }
+  },
+  "immigration": {
+    "label": { "es": "Migración", "en": "Immigration", "pt": "Imigração", "fr": "Immigration", "de": "Einwanderung", "it": "Immigrazione", "ja": "入国", "zh": "移民", "ko": "이민", "ar": "الهجرة" },
+    "keywords": {
+      "es": ["inmigración", "cruzar la frontera", "visa", "entrada al país", "migrante", "residencia", "trámite migratorio"],
+      "en": ["migration", "border crossing", "visa", "entry", "migrant", "residency", "relocation"]
+    }
+  },
+  "asylum": {
+    "label": { "es": "Asilo", "en": "Asylum", "pt": "Asilo", "fr": "Asile", "de": "Asyl", "it": "Diritto d’asilo", "ja": "庇護", "zh": "庇护", "ko": "망명", "ar": "لجوء" },
+    "keywords": {
+      "es": ["refugio", "refugiado", "protección internacional", "comar", "acogida", "desplazados", "albergue"],
+      "en": ["refuge", "refugee", "international protection", "shelter", "displaced people", "sanctuary", "safe haven"]
+    }
+  },
+  "checkpoint": {
+    "label": { "es": "Punto de control", "en": "Checkpoint", "pt": "Posto de controle", "fr": "Poste de contrôle", "de": "Kontrollpunkt", "it": "Posto di blocco", "ja": "検問所", "zh": "检查站", "ko": "검문소", "ar": "نقطة تفتيش" },
+    "keywords": {
+      "es": ["control fronterizo", "aduana", "retén", "garita", "pluma de acceso", "caseta de vigilancia", "revisión de seguridad"],
+      "en": ["border control", "customs", "boom barrier", "guard booth", "security check", "roadblock", "gate"]
+    }
+  },
+  "license": {
+    "label": { "es": "Licencia de funcionamiento", "en": "Business license", "pt": "Alvará", "fr": "Licence d’exploitation", "de": "Gewerbeschein", "it": "Licenza commerciale", "ja": "営業許可証", "zh": "营业执照", "ko": "영업 허가증", "ar": "رخصة تجارية" },
+    "keywords": {
+      "es": ["permiso", "autorización", "certificado", "registro", "permiso municipal", "acreditación", "en regla"],
+      "en": ["permit", "authorization", "certificate", "registration", "municipal permit", "accreditation", "licensed"]
+    }
+  },
+  "license-clock": {
+    "label": { "es": "Permiso en trámite", "en": "Permit pending", "pt": "Licença em andamento", "fr": "Permis en attente", "de": "Genehmigung ausstehend", "it": "Permesso in attesa", "ja": "許可申請中", "zh": "许可审批中", "ko": "허가 대기 중", "ar": "تصريح قيد المعالجة" },
+    "keywords": {
+      "es": ["licencia por vencer", "renovar permiso", "vencimiento", "en revisión", "solicitud en proceso", "caducidad", "recordatorio de renovación"],
+      "en": ["license expiring", "renew permit", "expiration", "under review", "application in progress", "expiry date", "renewal reminder"]
+    }
+  }
+}
