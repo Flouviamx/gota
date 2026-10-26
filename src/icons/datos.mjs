@@ -1,7 +1,8 @@
-// Data and development: charts, dashboards, code, git, infrastructure and AI. Everything is
+// Data and analytics: charts, dashboards, databases, and data work. Its code, git, and AI icons were
+// drawn here and are shown under desarrollo and ia, which adopt them (src/taxonomy.json). Everything is
 // computed with engine/geometry.mjs on the rules in DESIGN.md (1.5 stroke, keylines, continuous
 // corners and a square bottom-right corner on containers).
-import { arc, badge, circ, dot, drop, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, flipPath, halfChord, head, line, polar, rot, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 
 // ---------------------------------------------------------------------------------------------
@@ -166,6 +167,393 @@ const SEARCH = [circ(10.6, 10.6, 6.85), line([15.6, 15.6], [20.5, 20.5])];
 // A 90° vertex of a `roundpoly` with radius r sits (√2 − 1)·r inside: that's where the connectors
 // touch.
 const INSET = (r) => (Math.SQRT2 - 1) * r;
+
+// ---------------------------------------------------------------------------------------------
+// Charts and data (round 5): paths as segments, to cut a shape where it passes behind another,
+// dash a stroke, or split a curve where it crosses another (as `ia` and `social` do), smooth
+// curves through points, and the cylinders of the data stores
+// ---------------------------------------------------------------------------------------------
+
+const same = (a, b, e = 0.02) => Math.hypot(a[0] - b[0], a[1] - b[1]) < e;
+
+/** An SVG arc without rotation, from its endpoints to its center: { t: 'E', c, rx, ry, a0, da }. */
+function arcSeg(p0, p1, rx, ry, large, sweep) {
+  const x1 = (p0[0] - p1[0]) / 2;
+  const y1 = (p0[1] - p1[1]) / 2;
+  const lam = (x1 * x1) / (rx * rx) + (y1 * y1) / (ry * ry);
+  if (lam > 1) [rx, ry] = [rx * Math.sqrt(lam), ry * Math.sqrt(lam)];
+  const num = rx * rx * ry * ry - rx * rx * y1 * y1 - ry * ry * x1 * x1;
+  const den = rx * rx * y1 * y1 + ry * ry * x1 * x1;
+  const k = (large !== sweep ? 1 : -1) * Math.sqrt(Math.max(0, num / den));
+  const [u, v] = [(k * rx * y1) / ry, (-k * ry * x1) / rx];
+  const c = [u + (p0[0] + p1[0]) / 2, v + (p0[1] + p1[1]) / 2];
+  const a0 = Math.atan2((y1 - v) / ry, (x1 - u) / rx);
+  let da = Math.atan2((-y1 - v) / ry, (-x1 - u) / rx) - a0;
+  if (sweep && da < 0) da += 2 * Math.PI;
+  if (!sweep && da > 0) da -= 2 * Math.PI;
+  return { t: 'E', c, rx, ry, a0, da };
+}
+
+/** A path as subpaths of segments: lines (L), cubics (C) and arcs (E), all absolute. */
+function parse(d) {
+  const tk = d.match(/[MmLlHhVvCcSsAaZz]|-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?/g) ?? [];
+  const subs = [];
+  let [sp, i, cmd, x, y, sx, sy, lc] = [null, 0, '', 0, 0, 0, 0, null];
+  const num = () => Number.parseFloat(tk[i++]);
+  while (i < tk.length) {
+    if (/[A-Za-z]/.test(tk[i])) cmd = tk[i++];
+    const rel = cmd !== cmd.toUpperCase();
+    const C = cmd.toUpperCase();
+    const [ox, oy] = rel ? [x, y] : [0, 0];
+    if (C === 'Z') {
+      if (sp) {
+        if (!same([x, y], [sx, sy], 1e-6)) sp.segs.push({ t: 'L', a: [x, y], b: [sx, sy] });
+        sp.closed = true;
+      }
+      [x, y, lc, sp] = [sx, sy, null, null];
+      continue;
+    }
+    if (C === 'M') {
+      [x, y] = [ox + num(), oy + num()];
+      [sx, sy] = [x, y];
+      sp = { segs: [], closed: false };
+      subs.push(sp);
+      cmd = rel ? 'l' : 'L';
+      lc = null;
+      continue;
+    }
+    if (!sp) {
+      sp = { segs: [], closed: false };
+      subs.push(sp);
+      [sx, sy] = [x, y];
+    }
+    const a = [x, y];
+    if (C === 'L' || C === 'H' || C === 'V') {
+      if (C === 'L') [x, y] = [ox + num(), oy + num()];
+      else if (C === 'H') x = ox + num();
+      else y = oy + num();
+      sp.segs.push({ t: 'L', a, b: [x, y] });
+      lc = null;
+    } else if (C === 'C' || C === 'S') {
+      const p1 = C === 'C' ? [ox + num(), oy + num()] : lc ? [2 * x - lc[0], 2 * y - lc[1]] : [x, y];
+      const p2 = [ox + num(), oy + num()];
+      const p3 = [ox + num(), oy + num()];
+      sp.segs.push({ t: 'C', p: [a, p1, p2, p3] });
+      lc = p2;
+      [x, y] = p3;
+    } else if (C === 'A') {
+      const [rx, ry] = [num(), num()];
+      num();
+      const [large, sweep] = [num(), num()];
+      const b = [ox + num(), oy + num()];
+      sp.segs.push(arcSeg(a, b, rx, ry, large, sweep));
+      [x, y] = b;
+      lc = null;
+    }
+  }
+  return subs;
+}
+
+/** The point at t (0–1) of a segment. */
+function at(s, t) {
+  if (s.t === 'L') return [s.a[0] + (s.b[0] - s.a[0]) * t, s.a[1] + (s.b[1] - s.a[1]) * t];
+  if (s.t === 'E') {
+    const g = s.a0 + s.da * t;
+    return [s.c[0] + s.rx * Math.cos(g), s.c[1] + s.ry * Math.sin(g)];
+  }
+  const [p0, p1, p2, p3] = s.p;
+  const u = 1 - t;
+  const w = [u * u * u, 3 * u * u * t, 3 * u * t * t, t * t * t];
+  return [0, 1].map((j) => w[0] * p0[j] + w[1] * p1[j] + w[2] * p2[j] + w[3] * p3[j]);
+}
+/** A cubic split at t. */
+function splitC(p, t) {
+  const L = (a, b) => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t];
+  const [a, b, c] = [L(p[0], p[1]), L(p[1], p[2]), L(p[2], p[3])];
+  const [d, e] = [L(a, b), L(b, c)];
+  const m = L(d, e);
+  return [
+    [p[0], a, d, m],
+    [m, e, c, p[3]],
+  ];
+}
+/** The piece of a segment between t0 and t1. */
+function piece(s, t0, t1) {
+  if (s.t === 'L') return { t: 'L', a: at(s, t0), b: at(s, t1) };
+  if (s.t === 'E') return { ...s, a0: s.a0 + s.da * t0, da: s.da * (t1 - t0) };
+  let p = s.p;
+  if (t1 < 1) p = splitC(p, t1)[0];
+  if (t0 > 0) p = splitC(p, t0 / t1)[1];
+  return { t: 'C', p };
+}
+/** Cumulative lengths of a segment in 64 steps (to cut it by arc length). */
+function lengths(s) {
+  const out = [0];
+  let a = at(s, 0);
+  for (let k = 1; k <= 64; k++) {
+    const b = at(s, k / 64);
+    out.push(out[k - 1] + Math.hypot(b[0] - a[0], b[1] - a[1]));
+    a = b;
+  }
+  return out;
+}
+const segLen = (s) => lengths(s)[64];
+/** The t at which a segment reaches length `l`. */
+function tAt(s, l) {
+  const tb = lengths(s);
+  if (l <= 0) return 0;
+  if (l >= tb[64]) return 1;
+  let k = 1;
+  while (tb[k] < l) k++;
+  return (k - 1 + (l - tb[k - 1]) / (tb[k] - tb[k - 1])) / 64;
+}
+function segD(s) {
+  if (s.t === 'L') return `L${pt(s.b)}`;
+  if (s.t === 'C') return `C${pt(s.p[1])} ${pt(s.p[2])} ${pt(s.p[3])}`;
+  if (Math.abs(s.da) > Math.PI * 1.98) return segD(piece(s, 0, 0.5)) + segD(piece(s, 0.5, 1));
+  const [a, b] = [at(s, 0), at(s, 1)];
+  // A half circle is written with exactly half its chord as radius (DESIGN.md › circles are exact)
+  const half = Math.abs(s.rx - s.ry) < 1e-6 && Math.abs(Math.abs(s.da) - Math.PI) < 1e-6;
+  const [rx, ry] = half ? [halfChord(a, b), halfChord(a, b)] : [n(s.rx), n(s.ry)];
+  return `A${rx} ${ry} 0 ${Math.abs(s.da) > Math.PI ? 1 : 0} ${s.da > 0 ? 1 : 0} ${pt(b)}`;
+}
+/** Subpaths back to a path. */
+function ser(subs) {
+  let o = '';
+  for (const sp of subs) {
+    if (!sp.segs.length) continue;
+    let last = at(sp.segs[0], 0);
+    o += `M${pt(last)}`;
+    for (const s of sp.segs) {
+      if (!same(at(s, 0), last)) o += `M${pt(at(s, 0))}`;
+      o += segD(s);
+      last = at(s, 1);
+    }
+    if (sp.closed) o += 'Z';
+  }
+  return o;
+}
+
+/** Keeps the parts of `d` where keep(p) holds (pieces shorter than 0.3 are dropped). */
+function clip(d, keep) {
+  const out = [];
+  for (const sp of parse(d)) {
+    const pieces = [];
+    sp.segs.forEach((s, i) => {
+      const N = 96;
+      let prev = keep(at(s, 0));
+      let start = prev ? 0 : null;
+      for (let k = 1; k <= N; k++) {
+        const now = keep(at(s, k / N));
+        if (now === prev) continue;
+        let [lo, hi] = [(k - 1) / N, k / N];
+        for (let j = 0; j < 30; j++) {
+          const m = (lo + hi) / 2;
+          if (keep(at(s, m)) === prev) lo = m;
+          else hi = m;
+        }
+        if (prev) pieces.push({ i, t0: start, t1: lo });
+        else start = hi;
+        prev = now;
+      }
+      if (prev) pieces.push({ i, t0: start, t1: 1 });
+    });
+    if (pieces.length === sp.segs.length && pieces.every((p) => p.t0 === 0 && p.t1 === 1)) {
+      out.push(sp);
+      continue;
+    }
+    const chains = [];
+    for (const pc of pieces) {
+      const last = chains.at(-1)?.at(-1);
+      if (last && last.t1 === 1 && pc.t0 === 0 && pc.i === last.i + 1) chains.at(-1).push(pc);
+      else chains.push([pc]);
+    }
+    if (sp.closed && chains.length > 1) {
+      const [a, z] = [chains[0][0], chains.at(-1).at(-1)];
+      if (a.i === 0 && a.t0 === 0 && z.i === sp.segs.length - 1 && z.t1 === 1) chains[0] = [...chains.pop(), ...chains[0]];
+    }
+    for (const ch of chains) {
+      const segs = ch.map((pc) => piece(sp.segs[pc.i], pc.t0, pc.t1));
+      if (segs.reduce((m, s) => m + segLen(s), 0) > 0.3) out.push({ segs, closed: false });
+    }
+  }
+  return ser(out);
+}
+
+/** Points along a path, every ~0.1 (to measure distances and test insides). */
+const samples = (d) =>
+  parse(d).map((sp) =>
+    sp.segs.flatMap((s) => {
+      const k = Math.max(2, Math.ceil(segLen(s) / 0.1));
+      return Array.from({ length: k + 1 }, (_, j) => at(s, j / k));
+    }),
+  );
+function inside(ring, [px, py]) {
+  let hit = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [[xi, yi], [xj, yj]] = [ring[i], ring[j]];
+    if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) hit = !hit;
+  }
+  return hit;
+}
+/**
+ * The part of `d` that shows behind the closed shapes `fronts`: whatever lies inside them or
+ * closer than `gap` (center to center) to their outline is dropped. 3 center to center is the
+ * set's knockout: 1.5 of paper between the strokes.
+ */
+function behind(d, fronts, gap = 3) {
+  const rings = fronts.flatMap(samples);
+  const pts = rings.flat();
+  return clip(d, (p) => !rings.some((r) => inside(r, p)) && pts.every((q) => Math.hypot(q[0] - p[0], q[1] - p[1]) >= gap - 0.005));
+}
+/** The piece of an open path (its first subpath) between arc lengths l0 and l1. */
+function span(d, l0, l1) {
+  const sp = parse(d)[0];
+  const lens = sp.segs.map(segLen);
+  const segs = [];
+  let from = 0;
+  sp.segs.forEach((s, i) => {
+    const [s0, s1] = [from, from + lens[i]];
+    from = s1;
+    const [u, v] = [Math.max(l0, s0), Math.min(l1, s1)];
+    if (v - u > 1e-6) segs.push(piece(s, tAt(s, u - s0), tAt(s, v - s0)));
+  });
+  return ser([{ segs, closed: false }]);
+}
+const lengthOf = (d) => parse(d)[0].segs.reduce((m, s) => m + segLen(s), 0);
+/**
+ * A dashed open stroke as one path: `k` dashes `gap` apart (3 center to center: 1.5 of paper), the
+ * first and the last on the path's ends. A closed path starts its first dash, centered, at `mid`
+ * (arc length).
+ */
+function dashes(d, k, { gap = 3, mid = 0 } = {}) {
+  const L = lengthOf(d);
+  const sp = parse(d)[0];
+  if (sp.closed) {
+    // Around a closed path: the path twice over, so a dash may run across its start
+    const dash = L / k - gap;
+    const twice = ser([{ segs: [...sp.segs, ...sp.segs], closed: false }]);
+    return Array.from({ length: k }, (_, i) => {
+      let m = (((mid + (i * L) / k) % L) + L) % L;
+      if (m < dash / 2) m += L;
+      return span(twice, m - dash / 2, m + dash / 2);
+    }).join('');
+  }
+  const dash = (L - (k - 1) * gap) / k;
+  return Array.from({ length: k }, (_, i) => span(d, i * (dash + gap), i * (dash + gap) + dash)).join('');
+}
+
+/**
+ * A smooth curve through points (Catmull-Rom as cubics). Open by default, its ends leaving along
+ * their first and last chords; `closed` joins the last point back to the first.
+ */
+function smooth(P, { closed = false } = {}) {
+  const N = P.length;
+  const get = (i) => (closed ? P[(i + N) % N] : P[Math.max(0, Math.min(N - 1, i))]);
+  const tan = (i) => {
+    const [a, b] = [get(i - 1), get(i + 1)];
+    return [(b[0] - a[0]) / 2, (b[1] - a[1]) / 2];
+  };
+  let d = `M${pt(P[0])}`;
+  for (let i = 0; i < (closed ? N : N - 1); i++) {
+    const [a, b] = [get(i), get(i + 1)];
+    const [ta, tb] = [tan(i), tan(i + 1)];
+    d += `C${pt([a[0] + ta[0] / 3, a[1] + ta[1] / 3])} ${pt([b[0] - tb[0] / 3, b[1] - tb[1] / 3])} ${pt(b)}`;
+  }
+  return closed ? `${d}Z` : d;
+}
+
+/**
+ * A cylinder (the data stores): its lid (a whole ellipse), its body (the sides and the bottom
+ * arc), the lid's rim (knocked out in the fill, as in the core `database`), its outline (to cut
+ * what passes behind it) and the band arcs at the given heights.
+ */
+function cylinder(cx, top, rx, ry, bottom, bands = []) {
+  const [l, r] = [n(cx - rx), n(cx + rx)];
+  const arcTo = (x, y, sweep, large = 0) => `A${n(rx)} ${n(ry)} 0 ${large} ${sweep} ${x} ${n(y)}`;
+  return {
+    lid: `M${l} ${n(top)}${arcTo(r, top, 1)}${arcTo(l, top, 1)}Z`,
+    body: `M${l} ${n(top)}V${n(bottom)}${arcTo(r, bottom, 0)}V${n(top)}`,
+    rim: `M${r} ${n(top)}${arcTo(l, top, 1)}`,
+    bands: bands.map((y) => `M${r} ${n(y)}${arcTo(l, y, 1)}`),
+    outline: `M${l} ${n(top)}${arcTo(r, top, 1)}V${n(bottom)}${arcTo(l, bottom, 1)}Z`,
+  };
+}
+
+/** A gentle wave across [x0, x1] at height y: `k` half waves of amplitude `amp`, the first one up. */
+function wave(x0, x1, y, k, amp) {
+  const w = (x1 - x0) / k;
+  const h = (amp * 4) / 3;
+  let d = `M${pt([x0, y])}`;
+  for (let i = 0; i < k; i++) {
+    const s = i % 2 ? h : -h;
+    const x = x0 + i * w;
+    d += `C${pt([x + w / 3, y + s])} ${pt([x + (2 * w) / 3, y + s])} ${pt([x + w, y])}`;
+  }
+  return d;
+}
+
+/** A dashed arc of `k` dashes 3 apart, from a0 to a1 degrees, its first and last dash on the ends. */
+const dashedArc = (cx, cy, r, a0, a1, k) => dashes(arc(cx, cy, r, a0, a1).d, k);
+
+/** Closes an outline for `fill.solid` (an open stroke would fill as a wedge). */
+const shut = (d) => (/Z\s*$/i.test(d) ? d : `${d}Z`);
+
+/** The warehouse roof: a wide, low gable over a store (lakehouse shares it). */
+const ROOF = rline([[2.5, 7.05], [12, 3.25], [21.5, 7.05]], 1.5);
+/** The store under the roof: a cylinder 12 wide that stands 3.5 or more clear of the gable. */
+const STORE = (bands) => cylinder(12, 9.25, 6, 1.75, 19.25, bands);
+/** A data source: a narrow store, a short cable from its side and the plug (sistema's, smaller), up
+ * and clear of the badge's corner. */
+const SOURCE_STORE = cylinder(7.75, 5.1, 4.5, 1.6, 18, [11.1]);
+const SOURCE = [
+  SOURCE_STORE.body,
+  SOURCE_STORE.lid,
+  SOURCE_STORE.bands[0],
+  line([12.25, 7], [15.25, 7]),
+  sq(15.25, 4.5, 4, 5, 1.5, { square: ['tr', 'br'] }),
+  line([19.25, 5.5], [21.25, 5.5]) + line([19.25, 8.5], [21.25, 8.5]),
+];
+/** The pipeline: an elbow pipe 6 wide (its walls 3 either side of the flow), up the left and along
+ * the top, with a flange across each end; the badge's corner stays clear. */
+const PIPE = (() => {
+  const [x, y, R] = [6.75, 6.75, 4.5];
+  const c = [x + R, y + R];
+  const wall = (o) => `M${n(x + o)} 20.25V${n(c[1])}A${n(R - o)} ${n(R - o)} 0 0 1 ${n(c[0])} ${n(y + o)}H20.5`;
+  const body = `M${n(x - 3)} 20.25V${n(c[1])}A${n(R + 3)} ${n(R + 3)} 0 0 1 ${n(c[0])} ${n(y - 3)}H20.5V${n(y + 3)}H${n(c[0])}A${n(R - 3)} ${n(R - 3)} 0 0 0 ${n(x + 3)} ${n(c[1])}V20.25Z`;
+  const flow = [dot(x, 16.25), dot(...polar(...c, R, 225)), dot(15.25, y)];
+  return { d: [wall(-3), wall(3), line([x - 4, 20.25], [x + 4, 20.25]), line([20.5, y - 4], [20.5, y + 4]), ...flow], body };
+})();
+/** The table card (datos' `table`). */
+const TABLE = [CARD, line([K0, 8.75], [K1, 8.75]), line([10.75, 8.75], [10.75, K1])];
+/** The venn's two sets (centers 6.5 apart, r 6.25), where they meet (P above, Q below) and the angle a. */
+const VA = [8.75, 12];
+const VB = [15.25, 12];
+const VR = 6.25;
+const Va = (Math.acos(3.25 / VR) * 180) / Math.PI;
+const VP = [12, 12 - Math.sqrt(VR * VR - 3.25 * 3.25)];
+const VQ = [12, 12 + Math.sqrt(VR * VR - 3.25 * 3.25)];
+/** The dashed parts start 3.6 along the circle from where the circles meet (in degrees). */
+const VG = (3.6 / VR) * (180 / Math.PI);
+/** ER notation: two bars across the line (one and only one) and the crow's foot (many). */
+const ONE = (x) => line([x, 8.75], [x, 15.25]) + line([x + 3, 8.75], [x + 3, 15.25]);
+const MANY = (x, to) => line([x, 12], [to, 7.5]) + line([x, 12], [to, 16.5]);
+
+/**
+ * Drill down and up: one tall bar (chart-bar's) and the breakdown, three short bars side by side as
+ * one silhouette (as chart-histogram), and an arc arrow between them that starts 3 above one and
+ * lands 3 above the other.
+ */
+function drill(down) {
+  const parts = roundpoly([[11, K1], [11, 16.25], [14.25, 16.25], [14.25, 15], [17.5, 15], [17.5, 17.5], [K1, 17.5], [K1, K1]], [0, 1.15, 0, 1.15, 1.15, 0, 1.15, 0]);
+  const [A, B] = [[5.125, 5.25], [15.875, 12]];
+  const L = Math.hypot(B[0] - A[0], B[1] - A[1]);
+  const c = [(A[0] + B[0]) / 2 - (4 * (B[1] - A[1])) / L, (A[1] + B[1]) / 2 + (4 * (B[0] - A[0])) / L];
+  const r = Math.hypot(A[0] - c[0], A[1] - c[1]);
+  const ang = (p) => (Math.atan2(p[1] - c[1], p[0] - c[0]) * 180) / Math.PI;
+  const a = down ? arc(...c, r, ang(A), ang(B)) : arc(...c, r, ang(B), ang(A));
+  return [bar(K0, 8.5), parts, line([14.25, 16.25], [14.25, K1]), line([17.5, 17.5], [17.5, K1]), a.d, head(a.end, a.tangent, 3.4)];
+}
 
 // ---------------------------------------------------------------------------------------------
 // Icons
@@ -1000,6 +1388,733 @@ const icons = {
     tags: ['dividir', 'división', 'entre', 'operación', 'divide', 'division', 'math'],
     d: [line([4.25, 12], [19.75, 12]), dot(12, 7), dot(12, 17)],
   },
+
+  // Charts (round 5) ---------------------------------------------------------------------------
+  // Every chart keeps chart-bar's bars (3.75 wide, corners of 1.15), the baseline at 20.75 and the
+  // corner axes of chart-scatter.
+  'chart-bar-grouped': {
+    tags: ['barras agrupadas', 'comparar series', 'barras dobles', 'grouped bar chart', 'clustered bars'],
+    // Two pairs of bars (3.63 wide, 3 apart): each pair one silhouette, as chart-histogram, its two
+    // bars split by the edge they share.
+    d: (() => {
+      const w = (17.5 - 3) / 4;
+      const pair = (x, a, b) => {
+        const m = x + w;
+        const R = a < b ? [0, 1.15, 1.15, 0, 1.15, 0] : [0, 1.15, 0, 1.15, 1.15, 0];
+        return [roundpoly([[x, K1], [x, a], [m, a], [m, b], [x + 2 * w, b], [x + 2 * w, K1]], R), line([m, Math.max(a, b)], [m, K1])];
+      };
+      return [...pair(K0, 6.5, 11.5), ...pair(K0 + 2 * w + 3, 10, K0)];
+    })(),
+  },
+  'chart-bar-horizontal-stacked': {
+    tags: ['barras horizontales apiladas', 'encuesta', 'composición por fila', 'likert', 'stacked horizontal bar chart'],
+    // chart-bar-horizontal's rows (as chart-bar-stacked keeps chart-bar's bars at its own heights),
+    // the outer two a little shorter so the three splits stay under the set's density.
+    d: [
+      sq(K0, 3.25, 12, BW, 1.15, { square: ['tl', 'bl'] }),
+      sq(K0, 10.125, 17.5, BW, 1.15, { square: ['tl', 'bl'] }),
+      sq(K0, 17, 9.25, BW, 1.15, { square: ['tl', 'bl'] }),
+      line([9.75, 3.25], [9.75, 3.25 + BW]),
+      line([13.75, 10.125], [13.75, 10.125 + BW]),
+      line([7.5, 17], [7.5, 17 + BW]),
+    ],
+  },
+  'chart-bar-diverging': {
+    tags: ['barras divergentes', 'positivo y negativo', 'pirámide', 'a favor y en contra', 'diverging bar chart'],
+    d: [
+      line([12, 3.375], [12, 20.625]),
+      sq(12, 3.375, 8.75, BW, 1.15, { square: ['tl', 'bl'] }),
+      sq(4.25, 10.125, 7.75, BW, 1.15, { square: ['tr', 'br'] }),
+      sq(12, 16.875, 5, BW, 1.15, { square: ['tl', 'bl'] }),
+    ],
+  },
+  'chart-lollipop': {
+    tags: ['gráfica de paleta', 'ranking', 'puntos y tallos', 'lollipop chart', 'dot plot'],
+    d: [[5.5, 10.25], [12, 5.5], [18.5, 12.5]].flatMap(([x, y]) => [line([x, K1], [x, y + 2.25]), circ(x, y, 2.25)]).concat(line([K0, K1], [K1, K1])),
+  },
+  'chart-bullet': {
+    tags: ['gráfica de bala', 'meta', 'kpi contra objetivo', 'rangos', 'bullet chart', 'target'],
+    // The bar of two ranges (split at 14.25), the measure running through the first one, 3 from
+    // its edges, and the target crossing the bar 3 from its end. (A measure 4 long read as a minus
+    // sign in a box.)
+    d: [sq(2.5, 7.5, 19, 9, 2.25), line([14.25, 7.5], [14.25, 16.5]), line([5.5, 12], [11.25, 12]), line([18.5, 5], [18.5, 19])],
+  },
+  'chart-error-bars': {
+    tags: ['barras de error', 'incertidumbre', 'intervalo', 'desviación', 'error bars', 'uncertainty'],
+    // Each value a ring (r 1.75) with its range above and below, capped like an I.
+    d: [[5.5, 13, 8.5, 17.5], [12, 8.5, 3.25, 14], [18.5, 15, 10, 20.75]].flatMap(([x, y, top, bottom]) => [
+      circ(x, y, 1.75),
+      line([x - 2, top], [x + 2, top]) + line([x, top], [x, y - 1.75]) + line([x, y + 1.75], [x, bottom]) + line([x - 2, bottom], [x + 2, bottom]),
+    ]),
+  },
+  'chart-area-stacked': {
+    tags: ['área apilada', 'series acumuladas', 'participación', 'stacked area chart'],
+    // chart-area with a second series inside it, 3.5 or more from the top everywhere.
+    d: [
+      roundpoly([[3.25, 20.75], [3.25, 14.5], [8.5, 8.75], [12.75, 12.5], [20.75, 4.5], [20.75, 20.75]], [0, 1, 1.5, 1.5, 1, 0]),
+      rline([[K0, 17.75], [8.5, 14], [12.75, 16.25], [K1, 10.75]], SOFT),
+    ],
+  },
+  'chart-streamgraph': {
+    tags: ['streamgraph', 'flujo de series', 'temas en el tiempo', 'tendencias', 'streamgraph', 'stream chart'],
+    // Two stacked streams that swell and meander together, in phase, with no baseline: they rise
+    // out of a point at the left and run on to the right edge, cut there as the chart's present. (A
+    // ribbon pointed at both ends read as lips, or as a leaf with its midrib.)
+    d: (() => {
+      const a = [2.5, 13.5];
+      const top = smooth([a, [6.75, 8.75], [11.5, 10], [16.25, 6.25], [21.5, 7.5]]);
+      const bottom = smooth([[21.5, 15.5], [16.25, 14], [11.5, 17.25], [6.75, 15.25], a]);
+      return [`${top}L21.5 15.5${bottom.replace(/^M[^C]*/, '')}Z`, smooth([a, [6.75, 12], [11.5, 13.75], [16.25, 10.25], [21.5, 11.25]])];
+    })(),
+  },
+  'chart-spline': {
+    tags: ['curva suave', 'spline', 'línea curva', 'smooth line chart', 'spline chart'],
+    // chart-line's points joined by a curve with no corners: level at each peak and valley.
+    d: ['M3.25 15.25C5.25 11.75 6.5 9.25 8.5 9.25S10.75 13.25 12.75 13.25S18.25 7.75 20.75 4.75', line([K0, K1], [K1, K1])],
+  },
+  'chart-slope': {
+    tags: ['gráfica de pendiente', 'antes y después', 'cambio entre dos momentos', 'slope chart'],
+    // Each line's ends are dots on the two axes; the slopes are steep enough to read as change (near
+    // level lines were a ladder at 18 px), and the top two cross.
+    d: (() => {
+      const L = [[5.5, 12.25], [11.25, 5.25], [17.25, 18.25]];
+      return [line([K0, K0], [K0, K1]), line([K1, K0], [K1, K1]), ...L.map(([a, b]) => line([K0, a], [K1, b])), ...L.flatMap(([a, b]) => [dot(K0, a), dot(K1, b)])];
+    })(),
+  },
+  'chart-bump': {
+    tags: ['gráfica de ranking', 'posiciones', 'liga', 'cambio de lugar', 'bump chart', 'rankings'],
+    // Two series that swap places twice; every vertex a ring (r 1.75, as chart-error-bars' values).
+    d: (() => {
+      const r = 1.75;
+      const A = [[4.75, 6], [12, 18], [19.25, 6]];
+      const B = [[4.75, 18], [12, 6], [19.25, 18]];
+      const series = (S) => [...S.map(([x, y]) => circ(x, y, r)), edge(S[0], S[1], r), edge(S[1], S[2], r)];
+      return [...series(A), ...series(B)];
+    })(),
+  },
+  'chart-regression': {
+    tags: ['línea de tendencia', 'regresión', 'correlación', 'ajuste', 'trend line', 'regression'],
+    // chart-scatter's axes and the fitted line through a cloud of five dots, 3.25 to 3.75 off it on
+    // either side. The line is shallower than a slash: at 45° with two dots on each side it read as
+    // a percent sign.
+    d: (() => {
+      const [a, b] = [[6.5, 16], [20.5, 7.25]];
+      const k = (b[1] - a[1]) / (b[0] - a[0]);
+      const L = Math.hypot(1, k);
+      const at = (x, off) => [x - (off * k) / L, a[1] + k * (x - a[0]) + off / L];
+      return [rline([[K0, K0], [K0, K1], [K1, K1]], 0), line(a, b), dot(...at(8.75, -3.25)), dot(...at(10.25, 3.5)), dot(...at(13.25, -3.5)), dot(...at(16, 3.25)), dot(...at(18, -3.75))];
+    })(),
+  },
+  'chart-moving-average': {
+    tags: ['media móvil', 'suavizado', 'promedio', 'tendencia', 'moving average', 'smoothing'],
+    // The noisy series swings 3 or more either side of its smooth trend, so every hole stays open.
+    d: [rline([[K0, 17.75], [6.75, 10.5], [10.5, 17.25], [14.25, 7.25], [17.5, 14], [K1, 4.5]], 0.6), smooth([[K0, 14.75], [12, 12.5], [K1, 8.25]]), line([K0, K1], [K1, K1])],
+  },
+  'chart-compare': {
+    tags: ['comparar periodos', 'periodo anterior', 'contra el mes pasado', 'compare', 'period comparison'],
+    // The previous period is the same series, dashed and 5 lower.
+    d: (() => {
+      const P = [[K0, 11.75], [8.5, 6], [12.75, 9.75], [K1, 3.25]];
+      return [rline(P, SOFT), dashes(rline(P.map(([x, y]) => [x, y + 5]), SOFT), 5), line([K0, K1], [K1, K1])];
+    })(),
+  },
+  'chart-anomaly': {
+    tags: ['anomalía', 'pico', 'valor atípico', 'detección de anomalías', 'anomaly', 'outlier', 'spike'],
+    // A quiet series with one sharp spike, flagged by the engine's alert badge; the series stays 7.5
+    // or more from the badge's center, so only the baseline goes under it. (A ring on the spike's
+    // tip, with or without the tip inside, read as a stick figure's head.)
+    d: [
+      rline([[K0, 14.25], [5.5, 12.5], [7.5, 14.25], [9.5, 4], [11.75, 12], [14.25, 9.75], [K1, 9.25]], [0, 0.6, 0.6, 0.6, 0.6, 0.6, 0]),
+      line([K0, K1], [K1, K1]),
+    ],
+    badge: badge('alert'),
+  },
+  'chart-threshold': {
+    tags: ['umbral', 'límite', 'línea de meta', 'alerta', 'threshold', 'goal line', 'slo'],
+    // The series rises across the dashed limit over chart-line's baseline; it crosses inside the
+    // middle dash, never next to the end of one.
+    d: [
+      rline([[K0, 17.25], [7.25, 13.75], [9.75, 15.25], [13.75, 6.5], [16.5, 7.75], [K1, 4]], [0, 1, 1, 0.6, 0.6, 0]),
+      dashes(line([K0, 10.75], [K1, 10.75]), 3),
+      line([K0, K1], [K1, K1]),
+    ],
+  },
+  'chart-confidence': {
+    tags: ['intervalo de confianza', 'pronóstico', 'incertidumbre', 'abanico', 'confidence band', 'fan chart'],
+    // The series runs alone to the middle and on through a band that opens toward the right edge:
+    // the band starts round, 3 either side of the line, and is cut flat at the edge. (Bounds leaving
+    // the line itself merged with it into a twig; loose bounds read as speed lines.)
+    d: [
+      'M12 9C14.5 8.25 17.75 5.75 20.75 4V15.75C17.75 15.75 14.5 15.25 12 15A3 3 0 0 1 12 9Z',
+      line([K0, 15.25], [K1, 8.75]),
+      line([K0, K1], [K1, K1]),
+    ],
+  },
+  'chart-realtime': {
+    tags: ['tiempo real', 'en vivo', 'transmisión', 'datos en vivo', 'real time', 'live data'],
+    // The last point is a dot and the signal opens from it.
+    d: (() => {
+      const p = [13.25, 11.5];
+      return [rline([[K0, 17], [6.5, 12.5], [9.25, 15], p], SOFT), dot(...p), arc(...p, 3.75, -45, 45).d, arc(...p, 7.25, -50, 50).d, line([K0, K1], [K1, K1])];
+    })(),
+  },
+  'chart-retention': {
+    tags: ['curva de retención', 'usuarios que regresan', 'cohortes', 'abandono', 'retention curve'],
+    d: [rline([[K0, K0], [K0, K1], [K1, K1]], 0), 'M6.5 4.75C7.5 11.5 10.5 15 20.75 15.5'],
+  },
+  'chart-distribution-overlap': {
+    tags: ['distribuciones comparadas', 'control y variante', 'antes y después', 'overlapping distributions'],
+    // Two equal bells, chart-distribution's narrowed, their tails level 3.5 over the baseline and
+    // crossing at its middle; each tail ends under the other bell's crown, never along the other
+    // tail. (Bells standing on the baseline read as two mountains.)
+    d: (() => {
+      const bell = (x0) => {
+        const [w, m] = [12.75, x0 + 6.375];
+        const k = w / 18.5;
+        return `M${pt([x0, 17.25])}C${pt([x0 + 4.75 * k, 17.25])} ${pt([x0 + 5.5 * k, 4.5])} ${pt([m, 4.5])}S${pt([x0 + w - 4.75 * k, 17.25])} ${pt([x0 + w, 17.25])}`;
+      };
+      return [bell(2.75), bell(8.5), line([K0, K1], [K1, K1])];
+    })(),
+  },
+  'chart-dumbbell': {
+    tags: ['gráfica de pesas', 'brecha', 'antes y después', 'diferencia entre grupos', 'dumbbell chart'],
+    // Each row two values (rings of r 1.9) joined by their gap.
+    d: [[5, 6.5, 15.5], [12, 10, 19], [19, 4.75, 12.5]].flatMap(([y, a, b]) => [circ(a, y, 1.9), line([a + 1.9, y], [b - 1.9, y]), circ(b, y, 1.9)]),
+  },
+  'chart-box-plot': {
+    tags: ['diagrama de caja', 'bigotes', 'cuartiles', 'mediana', 'box plot', 'box and whisker'],
+    d: [
+      sq(7, 4.75, 7.5, 5.5, 1.5),
+      line([10.5, 4.75], [10.5, 10.25]),
+      line([K0, 6], [K0, 9]) + line([K0, 7.5], [7, 7.5]),
+      line([14.5, 7.5], [19.25, 7.5]) + line([19.25, 6], [19.25, 9]),
+      sq(9, 13.75, 8, 5.5, 1.5),
+      line([14, 13.75], [14, 19.25]),
+      line([4.75, 15], [4.75, 18]) + line([4.75, 16.5], [9, 16.5]),
+      line([17, 16.5], [K1, 16.5]) + line([K1, 15], [K1, 18]),
+    ],
+  },
+  'chart-violin': {
+    tags: ['diagrama de violín', 'forma de la distribución', 'densidad', 'violin plot'],
+    // Two mirrored outlines, each with two bulges and a waist (one wider below, the other above),
+    // crossed edge to edge by its median at its widest. (Lenses and single bulges read as bottles.)
+    d: (() => {
+      const violin = (x, P) => smooth([[x, K0], ...P.map(([y, w]) => [x + w, y]), [x, K1], ...[...P].reverse().map(([y, w]) => [x - w, y])], { closed: true });
+      const median = (v, y) => clip(line([0, y], [24, y]), (p) => inside(samples(v)[0], p));
+      const a = violin(7.25, [[5, 1.25], [8, 2.25], [10.75, 1.6], [14.25, 3.5], [18, 1.75]]);
+      const b = violin(16.75, [[6, 1.75], [9.75, 3.5], [13.25, 1.6], [16, 2.25], [19, 1.25]]);
+      return [a, median(a, 14.25), b, median(b, 9.75)];
+    })(),
+  },
+  'chart-cluster': {
+    tags: ['clústeres', 'agrupamiento', 'segmentos', 'k-means', 'clusters', 'clustering'],
+    // Two rings 2.9 apart on the diagonal, three dots in each, their triangles turned opposite ways.
+    d: (() => {
+      const group = ([cx, cy], a0) => [circ(cx, cy, 5.25), ...[0, 120, 240].map((a) => dot(...polar(cx, cy, 2.3, a0 + a)))];
+      return [...group([7.25, 7.25], -90), ...group([16.75, 16.75], 90)];
+    })(),
+  },
+  'chart-sunburst': {
+    tags: ['gráfica solar', 'jerarquía en anillos', 'sunburst', 'drill down'],
+    // The center, a full ring split twice and the next level, which covers only one of its parts;
+    // the dividers of the inner ring run on through the outer one.
+    d: [
+      circ(12, 12, 3),
+      circ(12, 12, 6),
+      arc(12, 12, 9, -90, 60).d,
+      line(polar(12, 12, 3, -90), polar(12, 12, 9, -90)),
+      line(polar(12, 12, 3, 60), polar(12, 12, 9, 60)),
+      line(polar(12, 12, 6, -15), polar(12, 12, 9, -15)),
+    ],
+  },
+  'chart-polar': {
+    tags: ['gráfica polar', 'rosa', 'cíclico', 'meses', 'polar area chart', 'rose chart'],
+    // Four quarters 3 apart (their straight sides 1.5 off the axes), each to its own radius; the
+    // smallest at 5.5 keeps its hole open at every weight (at 4.75 it closed at bold).
+    d: [9, 6.25, 7.75, 5.5].map((R, k) => {
+      const h = Math.sqrt(R * R - 2.25);
+      return turnPath(`M13.5 10.5V${n(12 - h)}A${n(R)} ${n(R)} 0 0 1 ${n(12 + h)} 10.5Z`, 90 * k);
+    }),
+  },
+  'chart-sankey': {
+    tags: ['diagrama de sankey', 'flujos', 'volumen entre etapas', 'sankey diagram', 'flow'],
+    // The node at the upper left feeds the two on the right through two bands 3 wide, each a pair of
+    // S curves: one runs nearly level, the other sweeps down. Nodes are bars 3 wide whose ends stand
+    // 1.5 past the bands. (Level bands between line nodes read as a ladder.)
+    d: (() => {
+      const S = (y0, y1) => `M6.25 ${n(y0)}C12 ${n(y0)} 12 ${n(y1)} 17.75 ${n(y1)}`;
+      return [sq(K0, 4.25, 3, 12, 0.75), S(5.75, 6.75), S(8.75, 9.75), S(11.75, 16.25), S(14.75, 19.25), sq(17.75, 5.25, 3, 6, 0.75), sq(17.75, 14.75, 3, 6, 0.75)];
+    })(),
+  },
+  'chart-heatmap': {
+    tags: ['mapa de calor', 'matriz de correlación', 'intensidad', 'heatmap chart', 'correlation matrix'],
+    // The size of each cell is its value: a full square, a smaller one or a dot (the diagonal full, as
+    // in a correlation matrix), on a pitch of 7.25 so the smaller squares keep a hole at bold (at 2.5
+    // they were rings with a pinhole that closed).
+    d: (() => {
+      const c = [4.75, 12, 19.25];
+      const cell = (x, y, k) => (k === 2 ? sq(x - 2.125, y - 2.125, 4.25, 4.25, 1.35) : k === 1 ? sq(x - 1.375, y - 1.375, 2.75, 2.75, 0.9) : dot(x, y));
+      return [[2, 1, 0], [1, 2, 1], [0, 1, 2]].flatMap((row, j) => row.map((k, i) => cell(c[i], c[j], k)));
+    })(),
+  },
+  'chart-cohort': {
+    tags: ['tabla de cohortes', 'retención por cohorte', 'suscripciones', 'cohort table', 'cohort analysis'],
+    // Each later cohort has one period less: a staircase of cells 4.38 square.
+    d: (() => {
+      const g = (i) => K0 + (i * 17.5) / 4;
+      return [
+        roundpoly([[K0, K0], [K1, K0], [K1, g(1)], [g(3), g(1)], [g(3), g(2)], [g(2), g(2)], [g(2), g(3)], [g(1), g(3)], [g(1), K1], [K0, K1]], [2.25, 2.25, 1, 0, 1, 0, 1, 0, 1, 2.25]),
+        line([K0, g(1)], [g(3), g(1)]),
+        line([K0, g(2)], [g(2), g(2)]),
+        line([K0, g(3)], [g(1), g(3)]),
+        line([g(1), K0], [g(1), g(3)]),
+        line([g(2), K0], [g(2), g(2)]),
+        line([g(3), K0], [g(3), g(1)]),
+      ];
+    })(),
+  },
+  'chart-dendrogram': {
+    tags: ['dendrograma', 'agrupamiento jerárquico', 'árbol de similitud', 'taxonomía', 'dendrogram'],
+    d: [
+      rline([[4.25, K1], [4.25, 13], [9.25, 13], [9.25, K1]], 1.5),
+      rline([[14.75, K1], [14.75, 15.5], [19.75, 15.5], [19.75, K1]], 1.5),
+      rline([[6.75, 13], [6.75, 6.25], [17.25, 6.25], [17.25, 15.5]], 1.5),
+      line([12, 6.25], [12, K0]),
+    ],
+  },
+  'chart-small-multiples': {
+    tags: ['múltiplos pequeños', 'cuadrícula de gráficas', 'comparar grupos', 'small multiples', 'trellis'],
+    // Four corner axes 7.25 square, 3 apart, each with the same short series rising from its axis at
+    // its own slope (a line floating in the corner read as an arrow).
+    d: [[K0, K0, 2], [13.5, K0, 4.25], [K0, 13.5, 1], [13.5, 13.5, 3]].flatMap(([x, y, k]) => [rline([[x, y], [x, y + 7.25], [x + 7.25, y + 7.25]], 0), line([x, y + 4.25], [x + 7.25, y + 4.25 - k])]),
+  },
+  'chart-map': {
+    tags: ['mapa de datos', 'coropletas', 'por región', 'analítica geográfica', 'choropleth', 'map chart'],
+    // lugares' folded map with a region (an irregular closed border, 3 clear of the map's edges) laid
+    // over its first fold, which it hides, and the border between the next two regions running from
+    // it across the second fold to the edge. (A round region bisected by the fold read as a Φ; a
+    // polygon, as a nut.)
+    d: [
+      roundpoly([[2.75, 6.25], [9, 4], [15, 6.25], [21.25, 4], [21.25, 17.75], [15, 20], [9, 17.75], [2.75, 20]], [1, 0.6, 0.6, 1, 1, 0.6, 0.6, 1]),
+      line([15, 6.25], [15, 20]),
+      smooth([[5.75, 9.25], [8, 7.5], [10.25, 8.5], [12, 10.25], [11.25, 12.25], [11.75, 14.25], [9, 14.5], [6.5, 13.5]], { closed: true }),
+      smooth([[12, 10.25], [15, 11.5], [18, 10.5], [21.25, 11.75]]),
+    ],
+  },
+  'chart-axes': {
+    tags: ['ejes', 'gráfica vacía', 'sin datos', 'chart axes', 'empty chart'],
+    d: [rline([[K0, K0], [K0, K1], [K1, K1]], 0), ...[8.25, 13.25, 18.25].map((x) => line([x, K1], [x, 18.25])), ...[15.75, 10.75, 5.75].map((y) => line([K0, y], [5.75, y]))],
+  },
+  'data-point': {
+    tags: ['punto de datos', 'coordenadas', 'valor', 'inspeccionar', 'data point', 'tooltip'],
+    // One ring in the field and its two readings, straight to each axis.
+    d: [rline([[K0, K0], [K0, K1], [K1, K1]], 0), line([K0, 10], [11.25, 10]), line([13.5, 12.25], [13.5, K1]), circ(13.5, 10, 2.25)],
+  },
+  'chart-bar-plus': {
+    tags: ['agregar gráfica', 'nueva visualización', 'insertar gráfica', 'add chart', 'new chart'],
+    d: [bar(BX[0], 11.75), bar(BX[1], 3.25), bar(BX[2], 7.75)],
+    badge: badge('plus'),
+  },
+  'chart-bar-edit': {
+    tags: ['editar gráfica', 'configurar visualización', 'ejes y series', 'edit chart', 'configure chart'],
+    d: [bar(BX[0], 11.75), bar(BX[1], 3.25), bar(BX[2], 7.75)],
+    badge: badge('edit'),
+  },
+  'drill-down': {
+    tags: ['profundizar', 'desglose', 'ver detalle', 'drill down', 'breakdown'],
+    d: drill(true),
+  },
+  'drill-up': {
+    tags: ['subir de nivel', 'agregar', 'ver resumen', 'drill up', 'roll up'],
+    d: drill(false),
+  },
+  'trend-up-down': {
+    tags: ['tendencia mixta', 'volátil', 'sube y baja', 'fluctuación', 'mixed trend', 'volatility'],
+    // trend-up's and trend-down's zigzags at 45°, with their full dip (2.5) and arrowheads (4.5),
+    // crossing once at the middle; before the crossing they stay 3 apart. (With the dip flattened it
+    // read as shuffle.)
+    d: (() => {
+      const U = [[3, 18], [7.5, 13.5], [10, 16], [20.25, 5.75]];
+      const D = U.map(([x, y]) => [x, 24 - y]);
+      return [rline(U, [0, 1.25, 1.25, 0]), head(U[3], [1, -1], 4.5), rline(D, [0, 1.25, 1.25, 0]), head(D[3], [1, 1], 4.5)];
+    })(),
+  },
+  'gauge-zones': {
+    tags: ['medidor por zonas', 'semáforo', 'estado del kpi', 'salud', 'gauge zones', 'health score'],
+    // The gauge's dial in three ranges, their ends 3 apart.
+    d: (() => {
+      const c = [12, 14];
+      const gap = (2 * Math.asin(1.5 / 9) * 180) / Math.PI;
+      const seg = (240 - 2 * gap) / 3;
+      return [...[0, 1, 2].map((i) => arc(...c, 9, 150 + i * (seg + gap), 150 + i * (seg + gap) + seg).d), circ(...c, 1.75), line(polar(...c, 1.75, 290), polar(...c, 6, 290))];
+    })(),
+  },
+  'gauge-linear': {
+    tags: ['medidor lineal', 'escala', 'nivel', 'puntaje', 'linear gauge', 'meter'],
+    // A ruler: the scale with long ticks at its ends and middle and short ones between; the pointer's
+    // rounded tip rests exactly on it, over a short tick (between ticks, its flank came 2.7 from the
+    // middle one).
+    d: (() => {
+      const [y, hw, h, r] = [13.25, 3, 5.75, 0.9];
+      const tip = [16.375, y + r / Math.sin(Math.atan(hw / h)) - r];
+      return [
+        rline([[K0, y + 3.5], [K0, y], [K1, y], [K1, y + 3.5]], 0),
+        line([12, y], [12, y + 3.5]) + line([7.625, y], [7.625, y + 2]) + line([16.375, y], [16.375, y + 2]),
+        roundpoly([[tip[0] - hw, tip[1] - h], [tip[0] + hw, tip[1] - h], tip], [1.2, 1.2, r]),
+      ];
+    })(),
+  },
+  'gauge-progress': {
+    tags: ['medidor de porcentaje', 'avance', 'uso', 'puntaje', 'percent gauge', 'utilization'],
+    // A half ring 4 wide; the divider marks the value.
+    d: (() => {
+      const c = [12, 16.25];
+      return [`${arc(...c, 9, 180, 360).d}H17${arc(...c, 5, 360, 180).d.replace(/^M[^A]*/, '')}Z`, line(polar(...c, 5, 300), polar(...c, 9, 300))];
+    })(),
+  },
+  'metric-card': {
+    tags: ['tarjeta de kpi', 'métrica', 'indicador', 'resumen', 'metric card', 'kpi tile'],
+    d: [box(2.5, 5, 19, 14, 4), line([6.25, 9.25], [11.75, 9.25]), rline([[6.25, 15.25], [9.5, 12.75], [12.5, 14.5], [17.75, 10.25]], 0.6)],
+  },
+  'dashboard-plus': {
+    tags: ['nuevo tablero', 'crear dashboard', 'agregar panel', 'new dashboard', 'add dashboard'],
+    // dashboard's first two panels and a plus where the third one was, 3.4 from its neighbors, as
+    // ventanas' apps-plus. (The engine's badge took the third panel anyway and bit the edges of the
+    // other two, which graze its clearance.)
+    d: [sq(K0, K0, 7.25, 17.5, 2.25), sq(13.5, K0, 7.25, 7.25, 2.25), line([17.125, 13.875], [17.125, 20.375]), line([13.875, 17.125], [20.375, 17.125])],
+  },
+  'dashboard-edit': {
+    tags: ['editar tablero', 'personalizar dashboard', 'acomodar paneles', 'edit dashboard', 'customize'],
+    // dashboard's first two panels and the engine's pencil where the third one was, as
+    // dashboard-plus's plus: over the third panel the pencil left two of its corners as fragments.
+    // The top-right panel is 5.5 tall here, so the pencil's clearance misses it at every weight (at
+    // 7.25 it grazed its bottom edge, which split at light).
+    d: [sq(K0, K0, 7.25, 17.5, 2.25), sq(13.5, K0, 7.25, 5.5, 2.25)],
+    badge: badge('edit'),
+  },
+
+  // Data stores (round 5) ----------------------------------------------------------------------
+  'database-cluster': {
+    tags: ['clúster de bases de datos', 'réplicas', 'varias bases', 'database cluster', 'replicas'],
+    // A store in front and two behind it, to either side and higher, each cut 1.5 clear of the one in
+    // front: three stores, a group. (Stores stepped 3 apart on the diagonal showed only slivers of
+    // the ones behind, which read as signal arcs.)
+    d: (() => {
+      const front = cylinder(12, 12, 5.5, 2, 19);
+      const show = (c) => [c.lid, c.body].map((d) => behind(d, [front.outline])).join('');
+      return [front.body, front.lid, show(cylinder(6.75, 4.75, 3.75, 1.5, 12)), show(cylinder(17.25, 4.75, 3.75, 1.5, 12))];
+    })(),
+  },
+  'database-shard': {
+    tags: ['fragmentación', 'particiones', 'sharding', 'dividir datos', 'database shard', 'partitioning'],
+    // The core store, its lid and its band, split down the middle into two halves pulled 3 apart.
+    // (Three slices stacked and slid sideways read as a stack of coins.)
+    d: (() => {
+      const [cx, rx, ry, top, bottom, band] = [10.5, 6.75, 2.5, 6.5, 17.5, 12];
+      const to = (p) => `A${n(rx)} ${n(ry)} 0 0 0 ${pt(p)}`;
+      const half = [`M${pt([cx, top - ry])}${to([cx - rx, top])}V${n(bottom)}${to([cx, bottom + ry])}Z`, `M${pt([cx - rx, top])}${to([cx, top + ry])}`, `M${pt([cx - rx, band])}${to([cx, band + ry])}`];
+      return [...half, ...half.map((d) => flipPath(d))];
+    })(),
+  },
+  'database-cloud': {
+    tags: ['base de datos en la nube', 'base administrada', 'hosting de datos', 'cloud database', 'managed database'],
+    d: DB_D,
+    // A small cloud (three lobes on a flat base) inside the badge's ring, which is what it clears, as
+    // the engine's badges do (clearing the cloud's own outline left the band's end at the edge of the
+    // clearance, and the fill found no clean interpolation between weights)
+    badge: (() => {
+      const c = cloud([14.75, 18.25, 1.5], [17, 16, 2.5], [19.5, 18.25, 1.6], 19.75);
+      return { d: [c], knock: circ(...BC, 4.25), fill: { solid: [c] } };
+    })(),
+  },
+  'database-transfer': {
+    tags: ['migración de datos', 'transferir', 'mover datos', 'data migration', 'transfer'],
+    // Two small stores (the core one's lid, band and body) and the arrow from one to the other above
+    // them.
+    d: (() => {
+      const C = (cx) => cylinder(cx, 11.75, 3.5, 1.4, 19.5, [15.75]);
+      const [a, b] = [C(6.5), C(17.5)];
+      return [a.body, a.lid, a.bands[0], b.body, b.lid, b.bands[0], line([4.75, 4.25], [19.25, 4.25]), head([19.25, 4.25], [1, 0], 2.75)];
+    })(),
+  },
+  'database-backup': {
+    tags: ['respaldo de base de datos', 'copia de seguridad', 'restaurar', 'database backup', 'restore point'],
+    d: DB_D,
+    // The history arrow (counterclockwise, as navegacion's history) around the badge's corner, its
+    // head 15° further on than first drawn: there its clearance met the band's end and the fill
+    // found no clean interpolation between weights
+    badge: (() => {
+      const a = arc(...BC, 3.5, 235, -50);
+      const h = head(a.end, a.tangent, 2.4);
+      return { d: [a.d, h], knock: `${circ(...BC, 4.25)}${h}` };
+    })(),
+  },
+  'database-x': {
+    tags: ['base de datos no disponible', 'conexión fallida', 'fuente caída', 'database error', 'database offline'],
+    d: DB_D,
+    badge: badge('x'),
+  },
+  'database-alert': {
+    tags: ['problema de datos', 'error de sincronización', 'calidad de datos', 'database warning', 'data issue'],
+    d: DB_D,
+    badge: badge('alert'),
+  },
+  'database-lock': {
+    tags: ['datos restringidos', 'base cifrada', 'acceso limitado', 'database lock', 'encrypted database'],
+    d: DB_D,
+    badge: badge('lock'),
+  },
+  'database-clock': {
+    tags: ['actualización de datos', 'última actualización', 'programado', 'data freshness', 'scheduled refresh'],
+    d: DB_D,
+    badge: badge('clock'),
+  },
+  'database-gear': {
+    tags: ['configuración de base de datos', 'conexión', 'credenciales', 'database settings', 'data source settings'],
+    d: DB_D,
+    // The engine's gear clearing a ring 0.15 wider than its own, as archivos' file-gear, and turned
+    // 15° on its pivot: as drawn, the store's cut ends and the gear's teeth paired differently
+    // between weights at every clearance tried. Its pixel version is the engine's (`kind`).
+    badge: (() => {
+      const g = badge('gear');
+      const t = (d) => turnPath(d, 15, BC);
+      return { ...g, d: g.d.map(t), knock: circ(...BC, 4.4), fill: { solid: g.fill.solid.map(t), cut: g.fill.cut.map(t) } };
+    })(),
+  },
+  'database-edit': {
+    tags: ['editar datos', 'modificar registros', 'editar tabla', 'edit data', 'edit records'],
+    d: DB_D,
+    badge: badge('edit'),
+  },
+  'data-warehouse': {
+    tags: ['almacén de datos', 'data warehouse', 'datos modelados', 'analítica', 'warehouse'],
+    // The low gable over a store of three discs.
+    d: (() => {
+      const c = STORE([9.25 + 10 / 3, 9.25 + 20 / 3]);
+      return [c.body, c.lid, ...c.bands, ROOF];
+    })(),
+  },
+  'data-lake': {
+    tags: ['lago de datos', 'datos sin procesar', 'data lake', 'raw data', 'almacenamiento'],
+    // The core store with water inside: two waves in place of its band, 3 clear of its sides (wall to
+    // wall they took it over the set's density).
+    d: [DB.body, DB.lid, wave(6.6, 17.4, 12.75, 4, 0.6), wave(6.6, 17.4, 16.25, 4, 0.6)],
+  },
+  'data-lakehouse': {
+    tags: ['lakehouse', 'lago y almacén', 'datos crudos y modelados', 'data lakehouse'],
+    d: (() => {
+      const c = STORE();
+      return [c.body, c.lid, wave(6, 18, 14, 4, 0.5), wave(6, 18, 17, 4, 0.5), ROOF];
+    })(),
+  },
+  'data-source': {
+    tags: ['fuente de datos', 'conector', 'conectar datos', 'data source', 'connector'],
+    d: SOURCE,
+  },
+  'data-source-plus': {
+    tags: ['agregar fuente de datos', 'conectar fuente', 'nuevo conector', 'add data source', 'new connection'],
+    d: SOURCE,
+    badge: badge('plus'),
+  },
+  'table-export': {
+    tags: ['exportar tabla', 'descargar csv', 'exportar resultados', 'export table', 'download csv'],
+    d: TABLE,
+    badge: badge('arrow-up'),
+  },
+  'table-import': {
+    tags: ['importar a tabla', 'cargar filas', 'subir csv', 'import table', 'load rows'],
+    d: TABLE,
+    badge: badge('arrow-down'),
+  },
+  'data-stream': {
+    tags: ['flujo de eventos', 'streaming', 'datos continuos', 'event stream', 'live feed'],
+    // Three events moving right, each with two speed lines behind it, the nearer one 3 from the dot's
+    // edge.
+    d: [[17, 6.5], [20.5, 12], [15, 17.5]].flatMap(([x, y]) => [line([x - 12.25, y], [x - 9.75, y]), line([x - 6.75, y], [x - 3.75, y]), dot(x, y)]),
+  },
+  'data-batch': {
+    tags: ['procesamiento por lotes', 'lote', 'carga programada', 'batch processing', 'batch'],
+    // Three records bound by a bracket and an arrow leaving the batch.
+    d: [pill(8.25, 4.125, 6.5, 3.25), pill(8.25, 10.375, 6.5, 3.25), pill(8.25, 16.625, 6.5, 3.25), rline([[5.25, K0], [K0, K0], [K0, K1], [5.25, K1]], 1.25), line([17.75, 12], [21.25, 12]), head([21.25, 12], [1, 0], 3)],
+  },
+  'data-pipeline': {
+    tags: ['canalización de datos', 'etl', 'elt', 'tubería', 'data pipeline'],
+    d: PIPE.d,
+  },
+  'data-pipeline-clock': {
+    tags: ['canalización programada', 'próxima ejecución', 'etl programado', 'scheduled pipeline', 'pipeline schedule'],
+    d: PIPE.d,
+    badge: badge('clock'),
+  },
+  'data-pipeline-alert': {
+    tags: ['canalización fallida', 'error de etl', 'ejecución con error', 'failed pipeline', 'pipeline error'],
+    d: PIPE.d,
+    badge: badge('alert'),
+  },
+  'data-transform': {
+    tags: ['transformar datos', 'convertir', 'paso de transformación', 'transform', 'etl'],
+    // The same data in a new shape: a triangle becomes a square of the same height, under an arc arrow.
+    d: (() => {
+      const a = arc(11.75, 9.25, 5.25, 180, 360);
+      return [roundpoly([[2.75, 19.75], [6.5, 12.25], [10.25, 19.75]], 1), sq(13.25, 12.25, 7.5, 7.5, 2), a.d, head(a.end, a.tangent, 3.4)];
+    })(),
+  },
+  'data-mapping': {
+    tags: ['mapeo de campos', 'emparejar columnas', 'esquema', 'field mapping', 'schema mapping'],
+    // Three source fields and three destination fields, two of the links crossing.
+    d: (() => {
+      const Y = [5.5, 12, 18.5];
+      return [...Y.map((y) => pill(K0, y - 1.5, 4.5, 3)), ...Y.map((y) => pill(16.25, y - 1.5, 4.5, 3)), line([7.75, 5.5], [16.25, 5.5]), line([7.75, 12], [16.25, 18.5]), line([7.75, 18.5], [16.25, 12])];
+    })(),
+  },
+  'data-lineage': {
+    tags: ['linaje de datos', 'origen de datos', 'dependencias', 'data lineage', 'upstream'],
+    // Two sources join into a table (a card with its header), which feeds on to the right.
+    d: [
+      sq(K0, 4.25, 4, 4, 1.25),
+      sq(K0, 15.75, 4, 4, 1.25),
+      'M7.25 6.25H8A2 2 0 0 1 10 8.25V15.75A2 2 0 0 1 8 17.75H7.25',
+      line([10, 13.5], [13, 13.5]),
+      box(13, 7.25, 6.25, 10, 2),
+      line([13, 10.25], [19.25, 10.25]),
+      line([19.25, 13.5], [21.5, 13.5]),
+    ],
+  },
+  'deduplicate': {
+    tags: ['quitar duplicados', 'deduplicar', 'limpiar datos', 'fusionar registros', 'deduplicate', 'remove duplicates'],
+    // Two identical records join into one.
+    d: [pill(K0, 4.5, 6, 4), pill(K0, 15.5, 6, 4), 'M9.25 6.5H9.75A2 2 0 0 1 11.75 8.5V15.5A2 2 0 0 1 9.75 17.5H9.25', line([11.75, 12], [14.75, 12]), pill(14.75, 10, 6, 4)],
+  },
+  'join-inner': {
+    tags: ['inner join', 'unión interna', 'coincidencias', 'intersección', 'sql join'],
+    // venn's sets: what the join keeps is solid, the rest dashed (dashes 3 apart). The dashes start
+    // 3.6 along the circle from where the circles meet, so the kept part stands clear of them
+    // (dashes leaving the lens's tips gave it horns).
+    d: [`M${pt(VP)}A${VR} ${VR} 0 0 1 ${pt(VQ)}A${VR} ${VR} 0 0 1 ${pt(VP)}Z`, dashedArc(...VA, VR, Va + VG, 360 - Va - VG, 5), dashedArc(...VB, VR, 180 + Va + VG, 540 - Va - VG, 5)],
+  },
+  'join-left': {
+    tags: ['left join', 'unión izquierda', 'conservar la primera tabla', 'sql join'],
+    d: [circ(...VA, VR), arc(...VB, VR, 180 - Va, 180 + Va).d, dashedArc(...VB, VR, 180 + Va + VG, 540 - Va - VG, 5)],
+  },
+  'join-right': {
+    tags: ['right join', 'unión derecha', 'conservar la segunda tabla', 'sql join'],
+    // join-left mirrored
+    d: [circ(...VA, VR), arc(...VB, VR, 180 - Va, 180 + Va).d, dashedArc(...VB, VR, 180 + Va + VG, 540 - Va - VG, 5)].map((d) => flipPath(d)),
+  },
+  'join-anti': {
+    tags: ['anti join', 'sin coincidencia', 'huérfanos', 'registros faltantes', 'sql join'],
+    d: [`M${pt(VQ)}A${VR} ${VR} 0 1 1 ${pt(VP)}A${VR} ${VR} 0 0 0 ${pt(VQ)}Z`, dashedArc(...VA, VR, -Va + VG, Va - VG, 2), dashedArc(...VB, VR, 180 + Va + VG, 540 - Va - VG, 5)],
+  },
+  'primary-key': {
+    tags: ['llave primaria', 'clave primaria', 'identificador único', 'primary key', 'pk'],
+    // A table's header row (a short card split in two) and the core key in front of its corner,
+    // cleared by the engine.
+    d: [box(2.75, 3.75, 14.25, 7.5, 2.5), line([8.5, 3.75], [8.5, 11.25])],
+    badge: (() => {
+      const [o, s, c] = [[8.1, 15.9], 3.5 / 4.6, [8.25, 17.75]];
+      const P = (p) => [c[0] + (p[0] - o[0]) * s, c[1] + (p[1] - o[1]) * s];
+      const bow = circ(...c, 3.5);
+      const shaft = line(P([11.35, 12.65]), P([20.25, 3.75]));
+      const teeth = line(P([17.3, 6.7]), P([19.6, 9])) + line(P([14.8, 9.2]), P([16.65, 11.05]));
+      return { d: [bow, shaft, teeth], knock: `${bow}${shaft}${teeth}`, fill: { solid: [bow], wire: [shaft, teeth] } };
+    })(),
+  },
+  'foreign-key': {
+    tags: ['llave foránea', 'clave externa', 'referencia', 'foreign key', 'fk'],
+    // A key whose shaft runs on into an arrow.
+    d: [circ(6.25, 12, 3.5), line([9.75, 12], [20.75, 12]), line([12.25, 12], [12.25, 15]) + line([14.75, 12], [14.75, 14.25]), head([20.75, 12], [1, 0], 4.5)],
+  },
+  'star-schema': {
+    tags: ['esquema de estrella', 'tabla de hechos', 'dimensiones', 'modelo de datos', 'star schema'],
+    // The fact table (a card with its header) and four dimensions on its corners, each joined along
+    // the diagonal from outline to outline.
+    d: (() => {
+      const center = box(8.75, 8.75, 6.5, 6.5, 2);
+      const dims = [[K0, K0], [16.5, K0], [K0, 16.5], [16.5, 16.5]].map(([x, y]) => sq(x, y, 4.25, 4.25, 1.25));
+      const ring = (d) => samples(d)[0];
+      const links = dims.map((d, i) => {
+        const [x, y] = [[K0, K0], [16.5, K0], [K0, 16.5], [16.5, 16.5]][i];
+        return clip(line([x + 2.125, y + 2.125], [12, 12]), (p) => !inside(ring(d), p) && !inside(ring(center), p));
+      });
+      return [center, line([8.75, 11.75], [15.25, 11.75]), ...dims, ...links];
+    })(),
+  },
+  'data-cube': {
+    tags: ['cubo olap', 'multidimensional', 'dimensiones', 'segmentar', 'olap cube', 'data cube'],
+    // datos' cube split 2 × 2 × 2: every visible face in four cells, its lines 3 apart. Drawn 14.5 wide
+    // (depth 6) so the grid stays under the set's density; full size it was 34.5 % ink.
+    d: (() => {
+      const [x0, s, dp] = [4.75, 14.5, 6];
+      const [x1, f] = [x0 + s, s - dp];
+      const [fx, fy, h] = [x0 + f, x0 + dp, f / 2];
+      return [
+        roundpoly([[x0, fy], [x0 + dp, x0], [x1, x0], [x1, x1 - dp], [fx, x1], [x0, x1]], 1.25),
+        // The front's top edge runs on to the rounded corner, not to its vertex (which left a nub)
+        rline([[x0, fy], [fx, fy], [x1 - INSET(1.25) * Math.SQRT1_2, x0 + INSET(1.25) * Math.SQRT1_2]], 0),
+        line([fx, fy], [fx, x1]),
+        rline([[x0 + h, x1], [x0 + h, fy], [x0 + h + dp, x0]], 0),
+        rline([[x0, fy + h], [fx, fy + h], [x1, fy + h - dp]], 0),
+        rline([[x0 + dp / 2, x0 + dp / 2], [x1 - dp / 2, x0 + dp / 2], [x1 - dp / 2, x1 - dp / 2]], 0),
+      ];
+    })(),
+  },
+  'relation-one-to-one': {
+    tags: ['relación uno a uno', 'diagrama er', 'cardinalidad', 'one to one', 'er diagram'],
+    d: [line([2.75, 12], [21.25, 12]), ONE(5.75), ONE(15.25)],
+  },
+  'relation-one-to-many': {
+    tags: ['relación uno a muchos', 'diagrama er', 'pata de gallo', 'one to many', 'er diagram'],
+    d: [line([2.75, 12], [21.25, 12]), ONE(5.75), MANY(15.25, 21.25)],
+  },
+  'relation-many-to-many': {
+    tags: ['relación muchos a muchos', 'diagrama er', 'tabla intermedia', 'many to many', 'er diagram'],
+    d: [line([2.75, 12], [21.25, 12]), MANY(8.75, 2.75), MANY(15.25, 21.25)],
+  },
+  'metadata': {
+    tags: ['metadatos', 'catálogo de datos', 'etiquetas', 'definiciones', 'metadata', 'data catalog'],
+    d: DB_D,
+    // comercio's price tag, smaller, hanging off the store's lower right, its point toward it; set
+    // 0.5 further into the corner than first drawn, where its clearance left a sliver of the store
+    // that joined the fill at bold
+    badge: (() => {
+      const [L, H, nose, c] = [9.5, 3.25, 3.25, [16.25, 16.25]];
+      const W = (p) => {
+        const q = rot([p[0] - L * 0.52, p[1]], [0, 0], 45);
+        return [q[0] + c[0], q[1] + c[1]];
+      };
+      const body = roundpoly([[0, 0], [nose, -H], [L, -H], [L, H], [nose, H]].map(W), [1.2, 1, 1.6, 1.6, 1]);
+      const hole = dot(...W([4.25, 0]));
+      return { d: [body, hole], knock: body, fill: { solid: [body], cut: [hole] } };
+    })(),
+  },
+  'missing-value': {
+    tags: ['valores faltantes', 'nulos', 'celda vacía', 'calidad de datos', 'missing values', 'null'],
+    // Three rows of values; the middle one is missing, its row dashed. (A dashed pill read as
+    // parentheses around an equals sign.)
+    d: [CARD, line([6.75, 7.25], [17.25, 7.25]), dashes(line([6.75, 12], [17.25, 12]), 3), line([6.75, 16.75], [14.25, 16.75])],
+  },
+  'data-sample': {
+    tags: ['muestra', 'muestreo', 'subconjunto', 'vista previa de datos', 'sample', 'sampling'],
+    // The sample (r 5) touches the population (r 9) inside, at its lower right.
+    d: (() => {
+      const c = [12 + 4 * Math.SQRT1_2, 12 + 4 * Math.SQRT1_2];
+      return [circ(12, 12, 9), circ(...c, 5), dot(7.5, 9), dot(11.5, 6.25), dot(6.75, 13.5), dot(...polar(...c, 2, 135)), dot(...polar(...c, 2, -45))];
+    })(),
+  },
+  'data-notebook': {
+    tags: ['cuaderno de datos', 'notebook', 'celdas', 'análisis', 'jupyter', 'data notebook'],
+    // A page (the portrait document, with the signature) that mixes code and its result: a prompt and
+    // a line of code above, three bars of its chart below. (Two cells as boxes with nothing around
+    // them read as a server or a drawer.)
+    d: [
+      box(4.75, 2.75, 14.5, 18.5, 3.75),
+      line([8.25, 6.25], [10.25, 8], [8.25, 9.75]),
+      line([12.75, 9.75], [15.75, 9.75]),
+      line([8.75, 17.75], [8.75, 14.75]),
+      line([12, 17.75], [12, 13.25]),
+      line([15.25, 17.75], [15.25, 15.5]),
+    ],
+  },
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -1012,6 +2127,8 @@ const icons = {
 // clearance (git branches, a graph's edges, a chip's pins, a flow's connectors).
 // ---------------------------------------------------------------------------------------------
 const all = (name) => icons[name].d.map((_, i) => i);
+// The round 5 databases with a badge (the engine's, or a custom piece in its corner)
+const DB_R5 = ['database-cloud', 'database-backup', 'database-x', 'database-alert', 'database-lock', 'database-clock', 'database-gear', 'database-edit'];
 const from = (name, i) => all(name).slice(i);
 const FILL = {
   'chart-bar': { solid: [0, 1, 2] },
@@ -1101,10 +2218,68 @@ const FILL = {
   'load-balancer': { solid: [0], wire: [1, 2, 3, 4, 5, 6] },
   // The whiteboard filled with the trend knocked out; the easel stays joined to its edge
   presentation: { solid: [0], wire: [1], cut: [2] },
+
+  // Round 5: bars and bands filled with their splits knocked out; dots, rings and nodes filled with
+  // their stems, whiskers and edges attached
+  'chart-bar-grouped': { solid: [0, 2], cut: [1, 3] },
+  'chart-bar-horizontal-stacked': { solid: [0, 1, 2], cut: [3, 4, 5] },
+  'chart-bar-diverging': { solid: [1, 2, 3], wire: [0] },
+  'chart-lollipop': { solid: [1, 3, 5], wire: [0, 2, 4, 6] },
+  // The measure is knocked out inside the ranges; the target crosses them as a line
+  'chart-bullet': { solid: [0], cut: [1, 2], lines: [3] },
+  'chart-error-bars': { solid: [0, 2, 4], wire: [1, 3, 5] },
+  'chart-area-stacked': { solid: [0], cut: [1] },
+  'chart-streamgraph': { solid: [0], cut: [1] },
+  'chart-bump': { solid: [0, 1, 2, 5, 6, 7], wire: [3, 4, 8, 9] },
+  'chart-dumbbell': { solid: [0, 2, 3, 5, 6, 8], wire: [1, 4, 7] },
+  'chart-box-plot': { solid: [0, 4], cut: [1, 5], wire: [2, 3, 6, 7] },
+  'chart-violin': { solid: [0, 2], cut: [1, 3] },
+  'chart-cluster': { solid: [0, 4], cut: [1, 2, 3, 5, 6, 7] },
+  'chart-polar': { solid: [0, 1, 2, 3] },
+  'chart-heatmap': { solid: all('chart-heatmap') },
+  'chart-cohort': { solid: [0], cut: [1, 2, 3, 4, 5, 6] },
+  'chart-map': { solid: [0], cut: [1, 2, 3] },
+  'data-point': { solid: [3], wire: [0, 1, 2] },
+  'chart-bar-plus': { solid: [0, 1, 2] },
+  'chart-bar-edit': { solid: [0, 1, 2] },
+  // The bars filled, the breakdown's splits knocked out and the arch attached to both
+  'drill-down': { solid: [0, 1], cut: [2, 3], wire: [4, 5] },
+  'drill-up': { solid: [0, 1], cut: [2, 3], wire: [4, 5] },
+  'gauge-zones': { solid: [3], wire: [4], lines: [0, 1, 2] },
+  'gauge-linear': { solid: [2], wire: [0, 1] },
+  'metric-card': { solid: [0], cut: [1, 2] },
+  'dashboard-plus': { solid: [0, 1], lines: [2, 3] },
+  'dashboard-edit': { solid: [0, 1] },
+  // The front store filled as the core one; the ones behind stay lines
+  'database-cluster': { solid: [1], closed: [0], lines: [2, 3] },
+  'database-shard': { solid: [0, 3], cut: [1, 2, 4, 5] },
+  'database-transfer': { solid: [1, 4], closed: [0, 3], cut: [2, 5], lines: [6, 7] },
+  'data-warehouse': { solid: [1], closed: [0], cut: [2, 3], lines: [4] },
+  'data-lake': { solid: [1], closed: [0], cut: [2, 3] },
+  'data-lakehouse': { solid: [1], closed: [0], cut: [2, 3], lines: [4] },
+  'data-source': { solid: [1, 4], closed: [0], cut: [2], wire: [3, 5] },
+  'data-source-plus': { solid: [1, 4], closed: [0], cut: [2], wire: [3, 5] },
+  'table-export': { solid: [0], cut: [1, 2] },
+  'table-import': { solid: [0], cut: [1, 2] },
+  'data-batch': { solid: [0, 1, 2], lines: [3, 4, 5] },
+  'data-transform': { solid: [0, 1], lines: [2, 3] },
+  'data-mapping': { solid: [0, 1, 2, 3, 4, 5], wire: [6, 7, 8] },
+  'data-lineage': { solid: [0, 1, 4], wire: [2, 3, 6], cut: [5] },
+  deduplicate: { solid: [0, 1, 4], wire: [2, 3] },
+  // What the join keeps is filled; the dashed rest stays lines
+  'join-inner': { solid: [0], lines: [1, 2] },
+  'join-left': { solid: [0], cut: [1], lines: [2] },
+  'join-right': { solid: [0], cut: [1], lines: [2] },
+  'join-anti': { solid: [0], lines: [1, 2] },
+  'foreign-key': { solid: [0], wire: [1, 2, 3] },
+  'star-schema': { solid: [0, 2, 3, 4, 5], cut: [1], wire: [6, 7, 8, 9] },
+  'missing-value': { solid: [0], cut: [1, 2, 3] },
+  'data-sample': { solid: [0], cut: [1, 2, 3, 4, 5, 6] },
+  'data-notebook': { solid: [0], cut: [1, 2, 3, 4, 5] },
 };
 // The databases with a badge: the body (closed by the lid) and the lid filled, the band and the
 // lid's edge knocked out, as in the core `database`
-for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
+for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import', ...DB_R5, 'metadata'])
   FILL[name] = { solid: [1], closed: [0], cut: [2] };
 for (const [name, spec] of Object.entries(FILL)) {
   const d = icons[name].d;
@@ -1114,7 +2289,7 @@ for (const [name, spec] of Object.entries(FILL)) {
   icons[name].fill = { solid };
   for (const k of ['cut', 'lines', 'wire']) if (spec[k]?.length) icons[name].fill[k] = pick(spec[k]);
 }
-for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import']) icons[name].fill.cut.push(DB.rim);
+for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import', ...DB_R5, 'metadata']) icons[name].fill.cut.push(DB.rim);
 // The donut: the hollow ring (not a disc) with its divisions knocked out
 icons['chart-donut'].fill = { solid: [ring(12, 12, 9, 4.5)], cut: icons['chart-donut'].d.slice(2) };
 // Venn: the two sets filled and the two inner arcs knocked out: what remains is the two crescents
@@ -1131,6 +2306,75 @@ for (const name of [
   'atom', 'axis-3d', 'ab-test', 'matrix', 'math', 'diff', 'regex', 'lambda', 'binary', 'infinity', 'equals', 'divide',
 ])
   icons[name].fill = false;
+
+// Round 5: the line charts are lines; their filled version is the outline itself
+for (const name of [
+  'chart-spline', 'chart-slope', 'chart-regression', 'chart-moving-average', 'chart-compare', 'chart-threshold', 'chart-confidence',
+  'chart-realtime', 'chart-retention', 'chart-anomaly', 'chart-dendrogram', 'chart-small-multiples', 'chart-axes', 'trend-up-down',
+  'data-stream', 'relation-one-to-one', 'relation-one-to-many', 'relation-many-to-many',
+])
+  icons[name].fill = false;
+// The two bells filled and each one's flank inside the other knocked out, as venn's arcs: what
+// remains is both bells and their overlap
+{
+  const [a, b, axis] = icons['chart-distribution-overlap'].d;
+  // Only the flanks are cut: the tails run into the other bell's flat bottom and stay ink
+  icons['chart-distribution-overlap'].fill = { solid: [shut(a), shut(b)], cut: [clip(a, (p) => p[0] > 12 && p[1] < 15.5), clip(b, (p) => p[0] < 12 && p[1] < 15.5)], wire: [axis] };
+}
+// The sunburst: the inner ring filled whole and the outer part as its sector; the center's edge,
+// the inner ring's dividers, the seam between the levels and the outer divider knocked out
+{
+  const c = [12, 12];
+  const sector = `${arc(...c, 9, -90, 60).d}L${pt(polar(...c, 6, 60))}${arc(...c, 6, 60, -90).d.replace(/^M[^A]*/, '')}Z`;
+  icons['chart-sunburst'].fill = {
+    solid: [circ(...c, 6), sector],
+    cut: [circ(...c, 3), line(polar(...c, 3, -90), polar(...c, 6, -90)), line(polar(...c, 3, 60), polar(...c, 6, 60)), arc(...c, 6, -90, 60).d, icons['chart-sunburst'].d[5]],
+  };
+}
+// The sankey: the nodes and each band (closed along the nodes' edges) filled
+{
+  const d = icons['chart-sankey'].d;
+  const band = ([a0, a1], [b0, b1]) => `M6.25 ${n(a0)}C12 ${n(a0)} 12 ${n(a1)} 17.75 ${n(a1)}V${n(b1)}C12 ${n(b1)} 12 ${n(b0)} 6.25 ${n(b0)}Z`;
+  icons['chart-sankey'].fill = { solid: [d[0], d[5], d[6], band([5.75, 6.75], [8.75, 9.75]), band([11.75, 16.25], [14.75, 19.25])] };
+}
+// The percent gauge filled up to its value; the rest of the band stays an outline, attached
+{
+  const c = [12, 16.25];
+  const value = `${arc(...c, 9, 180, 300).d}L${pt(polar(...c, 5, 300))}${arc(...c, 5, 300, 180).d.replace(/^M[^A]*/, '')}Z`;
+  const rest = `${arc(...c, 9, 300, 360).d}H17${arc(...c, 5, 360, 300).d.replace(/^M[^A]*/, '')}`;
+  icons['gauge-progress'].fill = { solid: [value], wire: [rest] };
+}
+// The stores' lids are knocked out along their rim, as in the core database
+icons['database-cluster'].fill.cut = [cylinder(12, 12, 5.5, 2, 19).rim];
+icons["database-transfer"].fill.cut.push(...[6.5, 17.5].map((cx) => cylinder(cx, 11.75, 3.5, 1.4, 19.5).rim));
+for (const name of ['data-warehouse', 'data-lakehouse']) icons[name].fill.cut.push(STORE().rim);
+icons['data-lake'].fill.cut.push(DB.rim);
+for (const name of ['data-source', 'data-source-plus']) icons[name].fill.cut.push(SOURCE_STORE.rim);
+// The OLAP cube filled: its edges knocked out as the cube's, and its grid knocked out through the
+// silhouette, 1.5 past it, so the cells stand apart at every weight (ending on the edge, the cuts
+// found no clean interpolation between weights)
+{
+  const [x0, s, dp] = [4.75, 14.5, 6];
+  const [x1, f] = [x0 + s, s - dp];
+  const [fx, fy, h] = [x0 + f, x0 + dp, f / 2];
+  const d = icons['data-cube'].d;
+  const o = 1.5 * Math.SQRT1_2;
+  icons['data-cube'].fill = {
+    solid: [d[0]],
+    cut: [
+      d[1],
+      d[2],
+      rline([[x0 + h, x1 + 1.5], [x0 + h, fy], [x0 + h + dp + o, x0 - o]], 0),
+      rline([[x0 - 1.5, fy + h], [fx, fy + h], [x1 + o, fy + h - dp - o]], 0),
+      rline([[x0 + dp / 2 - 1.5, x0 + dp / 2], [x1 - dp / 2, x0 + dp / 2], [x1 - dp / 2, x1 - dp / 2 + 1.5]], 0),
+    ],
+  };
+}
+// The primary key's header: its divider knocked out through the card, 1.5 past both edges, so the
+// two cells stand apart at every weight (ending on the edges, the cells joined at bold)
+icons['primary-key'].fill = { solid: [icons['primary-key'].d[0]], cut: [line([8.5, 2.25], [8.5, 12.75])] };
+// The pipe filled whole, the flow knocked out and the flanges attached
+for (const name of ['data-pipeline', 'data-pipeline-clock', 'data-pipeline-alert']) icons[name].fill = { solid: [PIPE.body], wire: PIPE.d.slice(2, 4), cut: PIPE.d.slice(4) };
 
 // ---------------------------------------------------------------------------------------------
 // 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough. At 16 px a pixel
@@ -1175,8 +2419,12 @@ const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
   const body = 'M3.75 5.25v12c0 1.66 3.69 3 8.25 3s8.25-1.34 8.25-3v-12';
   const band = 'M20.25 11.25c0 1.66-3.69 3-8.25 3s-8.25-1.34-8.25-3';
   const rim = 'M20.25 5.25c0 1.66-3.69 3-8.25 3s-8.25-1.34-8.25-3';
-  for (const name of ['database-plus', 'database-check', 'database-export', 'database-import', 'database-search', 'database-sync'])
+  for (const name of ['database-plus', 'database-check', 'database-export', 'database-import', 'database-search', 'database-sync', ...DB_R5.filter((k) => icons[k].badge.kind)])
     icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: badge(icons[name].badge.kind, { size: 16 }) };
+  // The round 5 stores with a custom piece in the corner (the cloud, the history arrow, the tag): the
+  // same pixel store, their own piece as drawn
+  for (const name of ['database-cloud', 'database-backup', 'metadata'])
+    icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: icons[name].badge };
 }
 // The atom: the nucleus stuck to the orbits and at 16 px it was a gray flower. The center goes at
 // the center of pixel (7, 7): the vertical orbit falls crisp (its sides in columns 5 and 9, its
@@ -1218,6 +2466,28 @@ const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
   const [top, trunk, bottom, node] = icons['git-pull-request-draft'].d.slice(0, 4).map(snapper(icons['git-pull-request-draft'].d));
   const dots = [12, 7.5, 3].map((y) => dot(18, y, SMALL_DOT));
   icons['git-pull-request-draft'].small = { d: [top, trunk, bottom, node, ...dots], fill: { solid: [top, bottom, node, ...dots], wire: [trunk] } };
+}
+
+// The bump chart: rings of r 2 and edges off the pixel grid were a gray X. At 16 px, rings of r 1.5 on
+// pixel centers (columns 2, 7 and 12, rows 5 and 10) joined by edges at 45°, through pixel centers.
+{
+  const r = 1.5;
+  const A = [g(2, 5), g(7, 10), g(12, 5)];
+  const B = [g(2, 10), g(7, 5), g(12, 10)];
+  const nodes = [...A, ...B].map((p) => circ(...p, r));
+  const links = [edge(A[0], A[1], r), edge(A[1], A[2], r), edge(B[0], B[1], r), edge(B[1], B[2], r)];
+  icons['chart-bump'].small = { d: [...nodes, ...links], fill: { solid: nodes, wire: links } };
+}
+// The sunburst: rings 3 apart off the pixel grid were a gray target. At 16 px, the center on pixel
+// (7, 7) and radii of 1.5, 4.5 and 7.5 (pixel centers), the outer level a quarter, its dividers on a
+// pixel row, a pixel column and the pixel diagonal.
+{
+  const c = g(7, 7);
+  const [r0, r1, r2] = [1.5, 4.5, 7.5];
+  const spoke = (a, from, to) => line(polar(...c, from, a), polar(...c, to, a));
+  const d = [circ(...c, r0), circ(...c, r1), arc(...c, r2, -90, 0).d, spoke(-90, r0, r2), spoke(0, r0, r2), spoke(-45, r1, r2)];
+  const sector = `${arc(...c, r2, -90, 0).d}L${pt(polar(...c, r1, 0))}${arc(...c, r1, 0, -90).d.replace(/^M[^A]*/, '')}Z`;
+  icons['chart-sunburst'].small = { d, fill: { solid: [circ(...c, r1), sector], cut: [circ(...c, r0), spoke(-90, r0, r1), spoke(0, r0, r1), arc(...c, r1, -90, 0).d, spoke(-45, r1, r2)] } };
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -1278,9 +2548,27 @@ const PARTS = {
   'load-balancer': { source: [0], routes: [1, 2, 3, 4, 5, 6] },
   presentation: { board: [0], stand: [1], chart: [2] },
   'server-rack': { body: [0, 1, 2], lights: [3, 4, 5] },
+  // Round 5: the pieces under a badge, and the ones that move or show a value
+  'chart-bar-plus': { bars: [0, 1, 2] },
+  'chart-bar-edit': { bars: [0, 1, 2] },
+  'chart-anomaly': { line: [0], axis: [1] },
+  'chart-realtime': { line: [0, 1], signal: [2, 3], axis: [4] },
+  'dashboard-plus': { panels: [0, 1], mark: [2, 3] },
+  'dashboard-edit': { panels: [0, 1] },
+  'gauge-zones': { dial: [0, 1, 2], needle: [3, 4] },
+  'database-transfer': { source: [0, 1, 2], target: [3, 4, 5], arrow: [6, 7] },
+  'data-source': { store: [0, 1, 2], plug: [3, 4, 5] },
+  'data-source-plus': { store: [0, 1, 2], plug: [3, 4, 5] },
+  'table-export': { table: [0, 1, 2] },
+  'table-import': { table: [0, 1, 2] },
+  'data-pipeline': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
+  'data-pipeline-clock': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
+  'data-pipeline-alert': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
+  'primary-key': { table: [0, 1] },
+  metadata: { body: [0, 2], lid: [1] },
 };
 // The database under each badge
-for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import'])
+for (const name of ['database-plus', 'database-check', 'database-search', 'database-sync', 'database-export', 'database-import', ...DB_R5])
   PARTS[name] = { body: [0, 2], lid: [1] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
@@ -1315,6 +2603,16 @@ for (const name of [
   'tree-view', 'workflow', 'flowchart', 'load-balancer', 'neural-network', 'prompt', 'presentation',
 ])
   icons[name].mirror = true;
+// Round 5: charts that run over time or grow from one side, flows that read left to right and rows of
+// values
+for (const name of [
+  'chart-bar-horizontal-stacked', 'chart-bullet', 'chart-area-stacked', 'chart-streamgraph', 'chart-spline', 'chart-slope',
+  'chart-bump', 'chart-regression', 'chart-moving-average', 'chart-compare', 'chart-threshold', 'chart-confidence',
+  'chart-realtime', 'chart-retention', 'chart-sankey', 'chart-cohort', 'chart-small-multiples', 'chart-axes', 'data-point',
+  'drill-down', 'drill-up', 'trend-up-down', 'gauge-linear', 'metric-card', 'database-transfer', 'data-stream', 'data-batch',
+  'data-transform', 'data-lineage', 'deduplicate', 'foreign-key', 'relation-one-to-many', 'missing-value', 'data-notebook',
+])
+  icons[name].mirror = true;
 
 // ---------------------------------------------------------------------------------------------
 // Motion (DESIGN.md › Motion): each icon's own gesture
@@ -1341,5 +2639,14 @@ icons.atom.motion = { effect: 'spin', parts: ['orbits'], origin: [12, 12] };
 icons['database-sync'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
 icons['database-export'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, -1.5] };
 icons['database-import'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, 1.5] };
+// Round 5
+icons['gauge-zones'].motion = { effect: 'wiggle', parts: ['needle'], origin: [12, 14] };
+// A value: the needle sweeps the dial, as gauge's
+icons['gauge-zones'].value = { turn: { parts: ['needle'], origin: [12, 14], from: 150, to: 390, at: 290 } };
+icons['chart-realtime'].motion = { effect: 'beat', parts: ['signal'], origin: [13.25, 11.5] };
+icons['database-transfer'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
+icons['database-gear'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['database-cloud'].motion = { effect: 'float', parts: ['badge'], vector: [0, -1.25] };
+icons['data-stream'].motion = { effect: 'slide', vector: [2, 0] };
 
-export default { category: 'datos', label: 'Datos y desarrollo', icons };
+export default { category: 'datos', label: 'Datos y analítica', icons };

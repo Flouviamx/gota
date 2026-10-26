@@ -768,5 +768,369 @@
       "es": ["accesible", "discapacidad", "movilidad reducida", "rampa", "accesibilidad", "acceso universal", "inclusión"],
       "en": ["accessible", "disability", "reduced mobility", "ramp", "accessibility", "universal access", "inclusion"]
     }
+  },
+  "option-key": {
+    "label": { "es": "Tecla Opción", "en": "Option key", "pt": "Tecla Option", "fr": "Touche Option", "de": "Wahltaste", "it": "Tasto Opzione", "ja": "Optionキー", "zh": "Option 键", "ko": "Option 키", "ar": "مفتاح Option" },
+    "keywords": {
+      "es": ["alt", "modificador", "atajo de teclado", "mac", "combinación de teclas", "caracteres especiales", "acento"],
+      "en": ["alt", "modifier", "keyboard shortcut", "mac", "key combo", "special characters", "hotkey"]
+    }
+  },
+  "escape-key": {
+    "label": { "es": "Tecla Esc", "en": "Escape key", "pt": "Tecla Esc", "fr": "Touche Échap", "de": "Esc-Taste", "it": "Tasto Esc", "ja": "Escキー", "zh": "Esc 键", "ko": "Esc 키", "ar": "مفتاح Esc" },
+    "keywords": {
+      "es": ["escape", "cerrar", "salir", "cancelar", "atajo de teclado", "descartar", "salir de pantalla completa"],
+      "en": ["esc", "close", "exit", "cancel", "keyboard shortcut", "dismiss", "exit full screen"]
+    }
+  },
+  "caps-lock": {
+    "label": { "es": "Bloq Mayús", "en": "Caps Lock", "pt": "Caps Lock", "fr": "Verr. Maj", "de": "Feststelltaste", "it": "Bloc Maiusc", "ja": "Caps Lock", "zh": "大写锁定", "ko": "Caps Lock", "ar": "تثبيت الأحرف الكبيرة" },
+    "keywords": {
+      "es": ["mayúsculas activadas", "letras mayúsculas", "campo de contraseña", "aviso al escribir", "teclado", "shift", "todo en mayúsculas"],
+      "en": ["uppercase", "capital letters", "caps on", "password field", "keyboard", "shift", "all caps"]
+    }
+  },
+  "delete-forward": {
+    "label": { "es": "Tecla Supr", "en": "Forward delete", "pt": "Tecla Del", "fr": "Touche Suppr", "de": "Entf-Taste", "it": "Tasto Canc", "ja": "前方削除キー", "zh": "向前删除键", "ko": "Delete 키", "ar": "مفتاح الحذف للأمام" },
+    "keywords": {
+      "es": ["suprimir", "borrar a la derecha", "delete", "eliminar carácter", "fn y borrar", "atajo de teclado", "teclado"],
+      "en": ["del", "delete right", "delete key", "erase character", "fn backspace", "keyboard shortcut", "remove text"]
+    }
+  },
+  "space-key": {
+    "label": { "es": "Barra espaciadora", "en": "Space bar", "pt": "Barra de espaço", "fr": "Barre d’espace", "de": "Leertaste", "it": "Barra spaziatrice", "ja": "スペースキー", "zh": "空格键", "ko": "스페이스 바", "ar": "مفتاح المسافة" },
+    "keywords": {
+      "es": ["espacio", "tecla espacio", "reproducir y pausar", "vista previa", "escribir", "atajo de teclado", "separar palabras"],
+      "en": ["space", "spacebar", "play pause", "quick look", "typing", "keyboard shortcut", "blank"]
+    }
+  },
+  "keycap": {
+    "label": { "es": "Tecla", "en": "Keyboard key", "pt": "Tecla", "fr": "Touche", "de": "Taste", "it": "Tasto", "ja": "キー", "zh": "按键", "ko": "키보드 키", "ar": "مفتاح لوحة المفاتيح" },
+    "keywords": {
+      "es": ["atajo de teclado", "teclado", "pulsar", "presionar", "indicación de atajo", "tecla rápida", "comando"],
+      "en": ["keyboard shortcut", "keycap", "press", "hotkey", "shortcut hint", "keystroke", "typing"]
+    }
+  },
+  "keycap-combo": {
+    "label": { "es": "Combinación de teclas", "en": "Key combination", "pt": "Combinação de teclas", "fr": "Combinaison de touches", "de": "Tastenkombination", "it": "Combinazione di tasti", "ja": "キーの組み合わせ", "zh": "组合键", "ko": "키 조합", "ar": "مجموعة مفاتيح" },
+    "keywords": {
+      "es": ["atajos de teclado", "ctrl", "cmd", "pulsar a la vez", "tecla rápida", "configurar atajos", "acceso rápido"],
+      "en": ["keyboard shortcuts", "hotkey", "ctrl", "cmd", "press together", "shortcut settings", "chord"]
+    }
+  },
+  "keycap-arrows": {
+    "label": { "es": "Teclas de flecha", "en": "Arrow keys", "pt": "Teclas de seta", "fr": "Touches fléchées", "de": "Pfeiltasten", "it": "Tasti freccia", "ja": "矢印キー", "zh": "方向键", "ko": "방향키", "ar": "مفاتيح الأسهم" },
+    "keywords": {
+      "es": ["direccionales", "cursores", "navegación con teclado", "mover selección", "desplazarse", "arriba y abajo", "controles de juego"],
+      "en": ["cursor keys", "directional", "keyboard navigation", "move selection", "scroll", "up down", "game controls"]
+    }
+  },
+  "theme-auto": {
+    "label": { "es": "Apariencia automática", "en": "Automatic appearance", "pt": "Aparência automática", "fr": "Apparence automatique", "de": "Automatisches Erscheinungsbild", "it": "Aspetto automatico", "ja": "外観の自動切り替え", "zh": "自动切换外观", "ko": "자동 화면 모드", "ar": "المظهر التلقائي" },
+    "keywords": {
+      "es": ["tema del sistema", "claro y oscuro", "seguir al sistema", "según la hora", "modo automático", "anochecer", "preferencia del dispositivo"],
+      "en": ["system theme", "light and dark", "match system", "time of day", "auto mode", "sunset", "device preference"]
+    }
+  },
+  "brightness": {
+    "label": { "es": "Brillo", "en": "Brightness", "pt": "Brilho", "fr": "Luminosité", "de": "Helligkeit", "it": "Luminosità", "ja": "明るさ", "zh": "亮度", "ko": "밝기", "ar": "السطوع" },
+    "keywords": {
+      "es": ["pantalla", "luz de la pantalla", "control deslizante", "iluminación", "más claro", "ajustes de pantalla", "atenuar"],
+      "en": ["display", "screen light", "slider", "luminance", "dim", "display settings", "backlight"]
+    }
+  },
+  "night-light": {
+    "label": { "es": "Luz nocturna", "en": "Night light", "pt": "Luz noturna", "fr": "Éclairage nocturne", "de": "Nachtmodus", "it": "Luce notturna", "ja": "夜間モード", "zh": "护眼模式", "ko": "야간 모드", "ar": "الإضاءة الليلية" },
+    "keywords": {
+      "es": ["night shift", "filtro de luz azul", "colores cálidos", "descanso visual", "pantalla de noche", "dormir mejor", "temperatura de color"],
+      "en": ["night shift", "blue light filter", "warm colors", "eye comfort", "color temperature", "bedtime", "evening"]
+    }
+  },
+  "bell-moon": {
+    "label": { "es": "No molestar", "en": "Do not disturb", "pt": "Não perturbe", "fr": "Ne pas déranger", "de": "Nicht stören", "it": "Non disturbare", "ja": "おやすみモード", "zh": "勿扰模式", "ko": "방해 금지 모드", "ar": "عدم الإزعاج" },
+    "keywords": {
+      "es": ["horario silencioso", "silenciar notificaciones", "modo concentración", "dormir", "ausente", "luna", "pausar avisos"],
+      "en": ["quiet hours", "silence notifications", "focus mode", "sleep", "away", "moon", "hold alerts"]
+    }
+  },
+  "bell-alert": {
+    "label": { "es": "Alertas críticas", "en": "Critical alerts", "pt": "Alertas críticos", "fr": "Alertes critiques", "de": "Kritische Hinweise", "it": "Avvisi critici", "ja": "重大な通知", "zh": "关键提醒", "ko": "중요 알림", "ar": "تنبيهات حرجة" },
+    "keywords": {
+      "es": ["urgente", "emergencia", "aviso importante", "ignorar el silencio", "prioridad alta", "alarma", "incidente"],
+      "en": ["urgent", "emergency", "important notice", "bypass silence", "high priority", "alarm", "incident"]
+    }
+  },
+  "person-online": {
+    "label": { "es": "En línea", "en": "Online", "pt": "Online", "fr": "En ligne", "de": "Online", "it": "Online", "ja": "オンライン", "zh": "在线", "ko": "온라인", "ar": "متصل الآن" },
+    "keywords": {
+      "es": ["presencia", "activo ahora", "disponible", "conectado", "estado del usuario", "punto verde", "lista de miembros"],
+      "en": ["presence", "active now", "available", "connected", "user status", "green dot", "member list"]
+    }
+  },
+  "person-away": {
+    "label": { "es": "Ausente", "en": "Away", "pt": "Ausente", "fr": "Absent", "de": "Abwesend", "it": "Assente", "ja": "退席中", "zh": "离开", "ko": "자리 비움", "ar": "غائب" },
+    "keywords": {
+      "es": ["inactivo", "presencia", "vuelvo pronto", "estado del usuario", "sin actividad", "lejos del escritorio", "en pausa"],
+      "en": ["idle", "presence", "be right back", "user status", "inactive", "away from desk", "brb"]
+    }
+  },
+  "person-offline": {
+    "label": { "es": "Fuera de línea", "en": "Offline", "pt": "Offline", "fr": "Hors ligne", "de": "Offline", "it": "Offline", "ja": "オフライン", "zh": "离线", "ko": "오프라인", "ar": "غير متصل" },
+    "keywords": {
+      "es": ["desconectado", "invisible", "presencia", "no disponible", "estado del usuario", "inactivo", "aparecer desconectado"],
+      "en": ["disconnected", "invisible", "presence", "unavailable", "user status", "appear offline", "inactive"]
+    }
+  },
+  "person-switch": {
+    "label": { "es": "Cambiar de cuenta", "en": "Switch account", "pt": "Trocar de conta", "fr": "Changer de compte", "de": "Konto wechseln", "it": "Cambia account", "ja": "アカウントを切り替え", "zh": "切换账户", "ko": "계정 전환", "ar": "تبديل الحساب" },
+    "keywords": {
+      "es": ["cambiar usuario", "otra cuenta", "cerrar sesión", "varias cuentas", "perfil", "menú de cuenta", "entrar con otro usuario"],
+      "en": ["switch user", "another account", "sign out", "multiple accounts", "profile", "account menu", "log in as"]
+    }
+  },
+  "person-guest": {
+    "label": { "es": "Invitado", "en": "Guest", "pt": "Convidado", "fr": "Invité", "de": "Gast", "it": "Ospite", "ja": "ゲスト", "zh": "访客", "ko": "게스트", "ar": "ضيف" },
+    "keywords": {
+      "es": ["modo invitado", "visitante", "sin cuenta", "permisos limitados", "usuario temporal", "solo lectura", "acceso externo"],
+      "en": ["guest mode", "visitor", "no account", "limited permissions", "temporary user", "read only", "external access"]
+    }
+  },
+  "people-gear": {
+    "label": { "es": "Usuarios y grupos", "en": "Users and groups", "pt": "Usuários e grupos", "fr": "Utilisateurs et groupes", "de": "Benutzer und Gruppen", "it": "Utenti e gruppi", "ja": "ユーザーとグループ", "zh": "用户和群组", "ko": "사용자 및 그룹", "ar": "المستخدمون والمجموعات" },
+    "keywords": {
+      "es": ["roles", "permisos", "administrar equipo", "configuración del equipo", "miembros", "control de acceso", "administración"],
+      "en": ["roles", "permissions", "manage team", "team settings", "members", "access control", "admin"]
+    }
+  },
+  "light-mode": {
+    "label": { "es": "Modo claro", "en": "Light mode", "pt": "Modo claro", "fr": "Mode clair", "de": "Heller Modus", "it": "Modalità chiara", "ja": "ライトモード", "zh": "浅色模式", "ko": "라이트 모드", "ar": "الوضع الفاتح" },
+    "keywords": {
+      "es": ["tema claro", "apariencia", "sol", "fondo blanco", "cambiar tema", "modo día", "interruptor"],
+      "en": ["light theme", "appearance", "sun", "white background", "switch theme", "day mode", "toggle"]
+    }
+  },
+  "id-card-check": {
+    "label": { "es": "Identidad verificada", "en": "Identity verified", "pt": "Identidade verificada", "fr": "Identité vérifiée", "de": "Identität bestätigt", "it": "Identità verificata", "ja": "本人確認済み", "zh": "身份已验证", "ko": "신원 인증 완료", "ar": "تم التحقق من الهوية" },
+    "keywords": {
+      "es": ["kyc", "documento aprobado", "ine validada", "verificación completa", "cuenta verificada", "credencial", "conoce a tu cliente"],
+      "en": ["kyc", "id approved", "verification passed", "verified account", "id check", "document approved", "know your customer"]
+    }
+  },
+  "lock-alert": {
+    "label": { "es": "No seguro", "en": "Not secure", "pt": "Não seguro", "fr": "Non sécurisé", "de": "Nicht sicher", "it": "Non sicuro", "ja": "保護されていない通信", "zh": "不安全", "ko": "안전하지 않음", "ar": "غير آمن" },
+    "keywords": {
+      "es": ["conexión insegura", "advertencia de seguridad", "sin https", "certificado inválido", "riesgo", "vulnerabilidad", "candado"],
+      "en": ["insecure connection", "security warning", "no https", "invalid certificate", "risk", "vulnerability", "padlock"]
+    }
+  },
+  "lock-combination": {
+    "label": { "es": "Candado de combinación", "en": "Combination lock", "pt": "Cadeado com segredo", "fr": "Cadenas à code", "de": "Zahlenschloss", "it": "Lucchetto a combinazione", "ja": "ダイヤル錠", "zh": "密码锁", "ko": "다이얼 자물쇠", "ar": "قفل بأرقام سرية" },
+    "keywords": {
+      "es": ["pin", "caja fuerte", "locker", "código numérico", "clave", "casillero", "protegido con código"],
+      "en": ["pin", "safe", "locker", "number code", "passcode", "dial lock", "vault"]
+    }
+  },
+  "pattern-lock": {
+    "label": { "es": "Desbloqueo con patrón", "en": "Pattern lock", "pt": "Padrão de desbloqueio", "fr": "Schéma de déverrouillage", "de": "Entsperrmuster", "it": "Sequenza di sblocco", "ja": "パターンロック", "zh": "图案解锁", "ko": "패턴 잠금", "ar": "قفل بالنمط" },
+    "keywords": {
+      "es": ["trazo", "bloqueo de pantalla", "android", "unir puntos", "desbloquear celular", "seguridad del teléfono", "contraseña gráfica"],
+      "en": ["swipe pattern", "screen lock", "android", "connect the dots", "unlock phone", "phone security", "gesture password"]
+    }
+  },
+  "lock-rotation": {
+    "label": { "es": "Bloqueo de rotación", "en": "Rotation lock", "pt": "Bloqueio de rotação", "fr": "Verrouillage de la rotation", "de": "Ausrichtungssperre", "it": "Blocco rotazione", "ja": "画面の向きのロック", "zh": "锁定屏幕方向", "ko": "화면 회전 잠금", "ar": "قفل التدوير" },
+    "keywords": {
+      "es": ["orientación", "girar pantalla", "vertical", "horizontal", "rotación automática", "centro de control", "fijar orientación"],
+      "en": ["orientation lock", "rotate screen", "portrait", "landscape", "auto-rotate", "control center", "fixed orientation"]
+    }
+  },
+  "key-x": {
+    "label": { "es": "Credencial revocada", "en": "Revoked credential", "pt": "Credencial revogada", "fr": "Identifiant révoqué", "de": "Widerrufener Schlüssel", "it": "Credenziale revocata", "ja": "失効したキー", "zh": "已撤销的密钥", "ko": "폐기된 키", "ar": "مفتاح ملغى" },
+    "keywords": {
+      "es": ["llave inválida", "token vencido", "revocar acceso", "clave de api", "llave de acceso", "expirada", "sin validez"],
+      "en": ["invalid key", "expired token", "revoke access", "api key", "passkey", "expired", "no longer valid"]
+    }
+  },
+  "key-rotate": {
+    "label": { "es": "Rotar credenciales", "en": "Rotate credentials", "pt": "Rotacionar credenciais", "fr": "Renouveler les identifiants", "de": "Schlüssel rotieren", "it": "Ruota credenziali", "ja": "キーをローテーション", "zh": "轮换密钥", "ko": "키 교체", "ar": "تدوير المفاتيح" },
+    "keywords": {
+      "es": ["renovar llave", "regenerar token", "clave de api", "restablecer secreto", "nueva llave", "reemplazar llave vieja", "seguridad"],
+      "en": ["renew key", "regenerate token", "api key", "reset secret", "roll keys", "replace old key", "reissue"]
+    }
+  },
+  "single-sign-on": {
+    "label": { "es": "Inicio de sesión único", "en": "Single sign-on", "pt": "Login único", "fr": "Authentification unique", "de": "Single Sign-on", "it": "Single sign-on", "ja": "シングルサインオン", "zh": "单点登录", "ko": "싱글 사인온", "ar": "تسجيل الدخول الموحد" },
+    "keywords": {
+      "es": ["sso", "una sola cuenta", "saml", "identidad corporativa", "varias apps", "acceso empresarial", "proveedor de identidad"],
+      "en": ["sso", "one login", "saml", "corporate identity", "many apps", "enterprise login", "identity provider"]
+    }
+  },
+  "fingerprint-plus": {
+    "label": { "es": "Agregar huella", "en": "Add fingerprint", "pt": "Adicionar impressão digital", "fr": "Ajouter une empreinte", "de": "Fingerabdruck hinzufügen", "it": "Aggiungi impronta", "ja": "指紋を追加", "zh": "添加指纹", "ko": "지문 추가", "ar": "إضافة بصمة" },
+    "keywords": {
+      "es": ["registrar dedo", "touch id", "biometría", "nuevo dedo", "configurar desbloqueo", "sensor", "lector biométrico"],
+      "en": ["enroll finger", "touch id", "biometrics", "new finger", "set up unlock", "sensor", "biometric reader"]
+    }
+  },
+  "palm-scan": {
+    "label": { "es": "Reconocimiento de palma", "en": "Palm recognition", "pt": "Reconhecimento da palma", "fr": "Reconnaissance de la paume", "de": "Handflächenerkennung", "it": "Riconoscimento del palmo", "ja": "手のひら認証", "zh": "掌纹识别", "ko": "손바닥 인식", "ar": "التعرف على راحة اليد" },
+    "keywords": {
+      "es": ["biometría", "venas de la mano", "pagar con la mano", "escáner", "identidad", "acceso sin contacto", "mano"],
+      "en": ["biometrics", "palm vein", "pay by palm", "scanner", "identity", "contactless", "hand"]
+    }
+  },
+  "shield-half": {
+    "label": { "es": "Privacidad y seguridad", "en": "Privacy and security", "pt": "Privacidade e segurança", "fr": "Confidentialité et sécurité", "de": "Datenschutz und Sicherheit", "it": "Privacy e sicurezza", "ja": "プライバシーとセキュリティ", "zh": "隐私与安全", "ko": "개인정보 보호 및 보안", "ar": "الخصوصية والأمان" },
+    "keywords": {
+      "es": ["estado de protección", "protección", "ajustes", "escudo", "configuración", "permisos", "dispositivo protegido"],
+      "en": ["protection status", "protection", "settings", "shield", "preferences", "permissions", "device protection"]
+    }
+  },
+  "shield-level": {
+    "label": { "es": "Nivel de seguridad", "en": "Security level", "pt": "Nível de segurança", "fr": "Niveau de sécurité", "de": "Sicherheitsstufe", "it": "Livello di sicurezza", "ja": "セキュリティレベル", "zh": "安全级别", "ko": "보안 수준", "ar": "مستوى الأمان" },
+    "keywords": {
+      "es": ["nivel de protección", "fortaleza", "medidor", "puntaje de protección", "riesgo", "alto medio bajo", "escudo"],
+      "en": ["protection level", "strength", "meter", "protection score", "risk", "high medium low", "shield"]
+    }
+  },
+  "shield-eye": {
+    "label": { "es": "Protección de privacidad", "en": "Privacy protection", "pt": "Proteção de privacidade", "fr": "Protection de la vie privée", "de": "Datenschutz", "it": "Protezione della privacy", "ja": "プライバシー保護", "zh": "隐私保护", "ko": "개인정보 보호", "ar": "حماية الخصوصية" },
+    "keywords": {
+      "es": ["evitar rastreo", "antirrastreo", "cookies", "ajustes de privacidad", "navegación privada", "datos personales", "anuncios personalizados"],
+      "en": ["tracking prevention", "anti-tracking", "cookies", "privacy settings", "private browsing", "personal data", "ad tracking"]
+    }
+  },
+  "shield-gear": {
+    "label": { "es": "Configuración de seguridad", "en": "Security settings", "pt": "Configurações de segurança", "fr": "Paramètres de sécurité", "de": "Sicherheitseinstellungen", "it": "Impostazioni di sicurezza", "ja": "セキュリティ設定", "zh": "安全设置", "ko": "보안 설정", "ar": "إعدادات الأمان" },
+    "keywords": {
+      "es": ["políticas de seguridad", "administrador", "ajustes", "reglas de acceso", "cumplimiento", "configurar protección", "consola de administración"],
+      "en": ["security policies", "admin", "preferences", "access rules", "compliance", "configure protection", "admin console"]
+    }
+  },
+  "storage-usage": {
+    "label": { "es": "Almacenamiento usado", "en": "Storage used", "pt": "Armazenamento usado", "fr": "Stockage utilisé", "de": "Belegter Speicher", "it": "Spazio utilizzato", "ja": "ストレージ使用量", "zh": "已用存储空间", "ko": "사용한 저장 공간", "ar": "مساحة التخزين المستخدمة" },
+    "keywords": {
+      "es": ["espacio en disco", "memoria", "capacidad", "barra de uso", "liberar espacio", "gigas", "nube"],
+      "en": ["disk space", "memory", "capacity", "usage bar", "free up space", "gigabytes", "cloud"]
+    }
+  },
+  "quota": {
+    "label": { "es": "Límite de uso", "en": "Usage limit", "pt": "Limite de uso", "fr": "Limite d’utilisation", "de": "Nutzungslimit", "it": "Limite di utilizzo", "ja": "使用量の上限", "zh": "使用配额", "ko": "사용 한도", "ar": "حد الاستخدام" },
+    "keywords": {
+      "es": ["cuota", "límite del plan", "consumo", "asientos", "llamadas a la api", "tope", "medidor"],
+      "en": ["quota", "plan limit", "consumption", "seats", "api calls", "cap", "meter"]
+    }
+  },
+  "gear-wrench": {
+    "label": { "es": "Modo mantenimiento", "en": "Maintenance mode", "pt": "Modo de manutenção", "fr": "Mode maintenance", "de": "Wartungsmodus", "it": "Modalità manutenzione", "ja": "メンテナンスモード", "zh": "维护模式", "ko": "유지 관리 모드", "ar": "وضع الصيانة" },
+    "keywords": {
+      "es": ["en reparación", "configuración del servicio", "ajustes técnicos", "servicio no disponible", "fuera de servicio temporal", "trabajos programados", "ajustes del sistema"],
+      "en": ["under repair", "service settings", "technical settings", "service unavailable", "temporarily down", "scheduled work", "system settings"]
+    }
+  },
+  "health-check": {
+    "label": { "es": "Servicio en buen estado", "en": "Healthy service", "pt": "Serviço saudável", "fr": "Service en bonne santé", "de": "Dienst fehlerfrei", "it": "Servizio funzionante", "ja": "正常なサービス", "zh": "服务运行正常", "ko": "서비스 정상", "ar": "الخدمة سليمة" },
+    "keywords": {
+      "es": ["health check", "operativo", "funcionando", "monitoreo", "estado del sistema", "sin incidentes", "disponibilidad"],
+      "en": ["health check", "operational", "up and running", "monitoring", "system status", "no incidents", "uptime"]
+    }
+  },
+  "status-review": {
+    "label": { "es": "En revisión", "en": "In review", "pt": "Em revisão", "fr": "En cours de révision", "de": "In Prüfung", "it": "In revisione", "ja": "レビュー中", "zh": "审核中", "ko": "검토 중", "ar": "قيد المراجعة" },
+    "keywords": {
+      "es": ["por aprobar", "estado de tarea", "revisión de código", "pull request", "flujo de trabajo", "esperando aprobación", "control de calidad"],
+      "en": ["awaiting approval", "task state", "code review", "pull request", "workflow", "qa", "under evaluation"]
+    }
+  },
+  "status-change": {
+    "label": { "es": "Cambio de estado", "en": "Status change", "pt": "Mudança de status", "fr": "Changement de statut", "de": "Statusänderung", "it": "Cambio di stato", "ja": "ステータス変更", "zh": "状态变更", "ko": "상태 변경", "ar": "تغيير الحالة" },
+    "keywords": {
+      "es": ["transición", "actividad", "historial", "flujo de trabajo", "mover tarea", "actualización", "registro de cambios"],
+      "en": ["transition", "activity feed", "history", "workflow", "move task", "updated", "changelog"]
+    }
+  },
+  "alert-stack": {
+    "label": { "es": "Varias alertas", "en": "Multiple alerts", "pt": "Vários alertas", "fr": "Plusieurs alertes", "de": "Mehrere Warnungen", "it": "Più avvisi", "ja": "複数の警告", "zh": "多个警报", "ko": "여러 경고", "ar": "تنبيهات متعددة" },
+    "keywords": {
+      "es": ["advertencias", "problemas", "incidencias", "conteo de errores", "avisos acumulados", "monitoreo", "pendientes de revisar"],
+      "en": ["warnings", "issues", "incidents", "error count", "monitoring", "triage", "problems"]
+    }
+  },
+  "alert-seal": {
+    "label": { "es": "Requiere verificación", "en": "Needs verification", "pt": "Requer verificação", "fr": "Vérification requise", "de": "Verifizierung erforderlich", "it": "Verifica richiesta", "ja": "要認証", "zh": "需要验证", "ko": "인증 필요", "ar": "يتطلب التحقق" },
+    "keywords": {
+      "es": ["sin verificar", "aviso importante", "sello", "pendiente de validar", "insignia", "no confirmado", "atención"],
+      "en": ["unverified", "important notice", "seal", "pending validation", "badge", "unconfirmed", "attention"]
+    }
+  },
+  "pause-octagon": {
+    "label": { "es": "Suspendido", "en": "Suspended", "pt": "Suspenso", "fr": "Suspendu", "de": "Ausgesetzt", "it": "Sospeso", "ja": "停止中", "zh": "已暂停", "ko": "중단됨", "ar": "معلّق" },
+    "keywords": {
+      "es": ["detenido", "en pausa", "bloqueado por política", "proceso detenido", "congelado", "reanudar", "fuera de servicio"],
+      "en": ["halted", "paused", "policy hold", "stopped process", "frozen", "resume", "on hold"]
+    }
+  },
+  "plug-connecting": {
+    "label": { "es": "Conectando", "en": "Connecting", "pt": "Conectando", "fr": "Connexion en cours", "de": "Verbindung wird hergestellt", "it": "Connessione in corso", "ja": "接続中", "zh": "正在连接", "ko": "연결 중", "ar": "جارٍ الاتصال" },
+    "keywords": {
+      "es": ["vinculando", "integración", "estableciendo conexión", "dispositivo", "emparejando", "en espera", "enchufar"],
+      "en": ["linking", "integration", "establishing connection", "device", "pairing", "pending", "plugging in"]
+    }
+  },
+  "update-dot": {
+    "label": { "es": "Actualización disponible", "en": "Update available", "pt": "Atualização disponível", "fr": "Mise à jour disponible", "de": "Update verfügbar", "it": "Aggiornamento disponibile", "ja": "アップデートあり", "zh": "有可用更新", "ko": "업데이트 가능", "ar": "يتوفر تحديث" },
+    "keywords": {
+      "es": ["nueva versión", "instalar", "actualizar software", "parche", "mejora", "menú de la app", "punto de notificación"],
+      "en": ["new version", "install", "software update", "upgrade", "patch", "app menu", "notification dot"]
+    }
+  },
+  "sync-check": {
+    "label": { "es": "Sincronizado", "en": "Synced", "pt": "Sincronizado", "fr": "Synchronisé", "de": "Synchronisiert", "it": "Sincronizzato", "ja": "同期済み", "zh": "已同步", "ko": "동기화됨", "ar": "تمت المزامنة" },
+    "keywords": {
+      "es": ["al día", "actualizado", "integración activa", "datos al corriente", "sin cambios pendientes", "respaldo completo", "fuente de datos"],
+      "en": ["up to date", "in sync", "integration ok", "current data", "no pending changes", "backup complete", "data source"]
+    }
+  },
+  "sync-alert": {
+    "label": { "es": "Error de sincronización", "en": "Sync error", "pt": "Erro de sincronização", "fr": "Erreur de synchronisation", "de": "Synchronisierungsfehler", "it": "Errore di sincronizzazione", "ja": "同期エラー", "zh": "同步出错", "ko": "동기화 오류", "ar": "خطأ في المزامنة" },
+    "keywords": {
+      "es": ["falló la actualización", "conflicto de datos", "reintentar", "integración con problemas", "no se pudo sincronizar", "atención", "desfase"],
+      "en": ["update failed", "data conflict", "retry", "integration issue", "couldn't sync", "needs attention", "out of sync"]
+    }
+  },
+  "sync-pause": {
+    "label": { "es": "Pausar sincronización", "en": "Pause sync", "pt": "Pausar sincronização", "fr": "Suspendre la synchronisation", "de": "Synchronisierung pausieren", "it": "Sospendi sincronizzazione", "ja": "同期を一時停止", "zh": "暂停同步", "ko": "동기화 일시 중지", "ar": "إيقاف المزامنة مؤقتًا" },
+    "keywords": {
+      "es": ["en pausa", "actualizaciones detenidas", "reanudar", "ahorro de datos", "modo sin conexión", "pausar respaldo", "datos móviles"],
+      "en": ["paused", "updates on hold", "resume", "data saver", "offline mode", "pause backup", "mobile data"]
+    }
+  },
+  "download-pending": {
+    "label": { "es": "Descarga en espera", "en": "Download queued", "pt": "Download na fila", "fr": "Téléchargement en attente", "de": "Download in Warteschlange", "it": "Download in coda", "ja": "ダウンロード待機中", "zh": "等待下载", "ko": "다운로드 대기 중", "ar": "التنزيل في الانتظار" },
+    "keywords": {
+      "es": ["en cola", "pendiente", "programado", "esperando conexión", "gestor de descargas", "bajar archivo", "esperando wifi"],
+      "en": ["in queue", "pending", "scheduled", "waiting for connection", "download manager", "waiting for wi-fi", "not started"]
+    }
+  },
+  "download-pause": {
+    "label": { "es": "Descarga en pausa", "en": "Download paused", "pt": "Download pausado", "fr": "Téléchargement suspendu", "de": "Download pausiert", "it": "Download in pausa", "ja": "ダウンロード一時停止中", "zh": "下载已暂停", "ko": "다운로드 일시 중지됨", "ar": "التنزيل متوقف مؤقتًا" },
+    "keywords": {
+      "es": ["pausar", "reanudar", "detener", "gestor de descargas", "ahorro de datos", "interrumpido", "continuar después"],
+      "en": ["pause", "resume", "stop", "download manager", "data saver", "interrupted", "continue later"]
+    }
+  },
+  "download-check": {
+    "label": { "es": "Descarga completa", "en": "Downloaded", "pt": "Download concluído", "fr": "Téléchargement terminé", "de": "Heruntergeladen", "it": "Download completato", "ja": "ダウンロード済み", "zh": "已下载", "ko": "다운로드 완료", "ar": "اكتمل التنزيل" },
+    "keywords": {
+      "es": ["sin conexión", "disponible offline", "guardado en el dispositivo", "listo", "terminado", "archivo bajado", "para ver después"],
+      "en": ["available offline", "saved to device", "done", "finished", "complete", "offline", "watch later"]
+    }
+  },
+  "download-x": {
+    "label": { "es": "Error de descarga", "en": "Download failed", "pt": "Falha no download", "fr": "Échec du téléchargement", "de": "Download fehlgeschlagen", "it": "Download non riuscito", "ja": "ダウンロード失敗", "zh": "下载失败", "ko": "다운로드 실패", "ar": "فشل التنزيل" },
+    "keywords": {
+      "es": ["cancelado", "falló", "reintentar", "interrumpido", "archivo dañado", "sin conexión", "quitar de la lista"],
+      "en": ["canceled", "error", "retry", "interrupted", "corrupted file", "no connection", "remove from list"]
+    }
   }
 }

@@ -29,7 +29,9 @@ for (const c of categories) {
 const index = buildIndex(icons, i18n);
 const entries = new Map(index.map((e) => [e.name, e]));
 const planned = new Set(taxonomy.categories.map((c) => c.id));
-const NAME = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+// English kebab-case that starts with a letter: an icon's component name (`printer-3d` →
+// `Printer3dIcon`) has to be a JavaScript identifier
+const NAME = /^[a-z][a-z0-9]*(-[a-z0-9]+)*$/;
 // A name's words, folded and singular, as a sorted key
 const words = (name) => fold(name.replace(/-/g, ' ')).split(' ').map((w) => (w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w));
 const key = (name) => [...new Set(words(name))].sort().join(' ');

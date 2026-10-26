@@ -5,8 +5,13 @@
 // Whatever sits on top of another shape (badges, the slash, the magnifier, the screwdriver) goes in
 // `badge`: the base is drawn complete and the engine clears it with exactly 1.5 of clearance; it's
 // never trimmed by hand. See DESIGN.md.
-import { arc, badge, circ, dot, drop, f, gear, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, f, flipPath, gear, head, line, polar, rot, roundpoly, sq, turn } from '../../engine/geometry.mjs';
+import { snapper } from '../../engine/variants.mjs';
+import comunicacion from './comunicacion.mjs';
+import edicion from './edicion.mjs';
 import nucleo from './nucleo.mjs';
+import rrhh from './rrhh.mjs';
+import social from './social.mjs';
 
 // ── Paths as segments ─────────────────────────────────────────────────────────────────────
 // parse() turns a `d` into absolute segments (L, C, circular A); ser() turns them back into a `d`.
@@ -471,6 +476,95 @@ const SOCKET = (x) => [sq(x, -3.25, 5.75, 6.5, 1.75, { square: ['tl', 'bl'] }), 
 
 /** The four corners of a scan frame: the square's squircle without the middle of each side. */
 const SCAN = clip(sq(3.25, 3.25, 17.5, 17.5, 4.5), ([x, y]) => Math.abs(x - 12) > 4.25 && Math.abs(y - 12) > 4.25);
+
+// ── Round 5 pieces ───────────────────────────────────────────────────────────────────────
+// What another category already drew comes from it: comunicacion's bell under a badge and its
+// people, edicion's backspace and download, social's group under a badge. The presence marks
+// (online, away, offline, paused) all sit on the badges' circle, so a pair like person-online ↔
+// person-away only swaps the mark.
+const COM = comunicacion.icons;
+/** The standard badges' circle (r 4.25 at 17.25, 17.25). */
+const RING = circ(...BC, 4.25);
+/** Núcleo's person shifted to make room for a corner badge (as person-lock, comunicacion's person-plus). */
+const PERSON_L = [xf(PERSON_HEAD, { dx: -2.5 }), xf(PERSON_BODY, { dx: -2.5 })];
+/** Núcleo's person scaled from the feet; the head moves up to keep 2.35 or more from the shoulders (comunicacion's personSmall). */
+const personAt = (s, dx = 0, dy = 0) => {
+  const up = s < 1 ? Math.max(1.95, (2.35 - 2.45 * s) / (1 - s)) * (1 - s) : 0;
+  return [xf(PERSON_HEAD, { s, o: [12, 20.6], dx, dy: dy - up }), xf(PERSON_BODY, { s, o: [12, 20.6], dx, dy })];
+};
+/** Crescent: the disc (c, R) less the disc (ic, r), its tips where the two circles meet (dark-mode's knob). */
+function crescent(c, R, ic, r) {
+  const [A, B] = meet(c, R, ic, r);
+  const out = (p) => Math.hypot(p[0] - ic[0], p[1] - ic[1]) > r;
+  const inn = (p) => Math.hypot(p[0] - c[0], p[1] - c[1]) < R;
+  return `M${P(A)}${arcPick(c, R, A, B, out)}${arcPick(ic, r, B, A, inn)}Z`;
+}
+/** lugares' moon (R 8.5, its bite r 6.75 offset 5.25 up and right) at scale s, centered at c. */
+const moonAt = (c, s) => crescent(c, 8.5 * s, [c[0] + 5.25 * s, c[1] - 5.25 * s], 6.75 * s);
+// The presence marks on the badges' circle: online is the solid disc, offline its ring and away a
+// crescent the size of the disc (it keeps the icon's style, as the glyph badges do).
+const MOON_MARK = moonAt(BC, 0.5);
+const ONLINE_B = own([RING], RING, { solid: [RING] });
+const OFFLINE_B = own([RING], RING);
+const AWAY_B = own([MOON_MARK], RING, { solid: [MOON_MARK] });
+/** rrhh's pause badge (on-leave): the status disc with two bars cut out, solid in every style. */
+const PAUSE_B = rrhh.icons['on-leave'].badge;
+/** The two arc arrows of `sync` (and `update`), on the r 9 circle, turned `deg` clockwise. */
+const syncAt = (deg = 0) => {
+  const a = arc(12, 12, 9, -150 + deg, -25 + deg);
+  const b = arc(12, 12, 9, 30 + deg, 155 + deg);
+  return [a.d, head(a.end, a.tangent, 3.4), b.d, head(b.end, b.tangent, 3.4)];
+};
+
+/**
+ * A closed outline in n dashes with `gap` between them (measured along the path), the first dash
+ * centered `phase` along from its start: status-pending's dashed circle, for any shape.
+ */
+function dashes(d, n, gap, phase = 0) {
+  const { segs } = parse(d)[0];
+  const lens = segs.map(segLen);
+  const starts = lens.map((_, i) => lens.slice(0, i).reduce((a, b) => a + b, 0));
+  const total = lens.reduce((a, b) => a + b, 0);
+  const piece = (a, b) =>
+    segs.flatMap((s, i) => {
+      const [s0, s1] = [Math.max(a, starts[i]), Math.min(b, starts[i] + lens[i])];
+      return s1 - s0 > 1e-6 ? [sub(s, (s0 - starts[i]) / lens[i], (s1 - starts[i]) / lens[i])] : [];
+    });
+  const period = total / n;
+  return Array.from({ length: n }, (_, k) => {
+    const a = (((phase + k * period - (period - gap) / 2) % total) + total) % total;
+    const b = a + period - gap;
+    return ser([{ segs: b <= total ? piece(a, b) : [...piece(a, total), ...piece(0, b - total)], closed: false }]);
+  });
+}
+
+/** An eight-point star around c (tips at Ro, valleys at Ri) in eight pieces, one per point (valley, tip, valley), so each one can light up as a level. */
+const sunburstPoints = (c, Ro, Ri, rt) => Array.from({ length: 8 }, (_, i) => rline([polar(...c, Ri, -112.5 + i * 45), polar(...c, Ro, -90 + i * 45), polar(...c, Ri, -67.5 + i * 45)], [0, rt, 0]));
+
+/** A keycap from above: the key, and its top face 3 from the top, 3.5 from the sides and lifted 6.25 off the bottom. */
+const KEYCAP = [sq(3.25, 3.25, 17.5, 17.5, 4), sq(6.75, 6.25, 10.5, 8.25, 2.5)];
+
+// The bases a badge sits on, shared with the icons that already carry them (so a pair like
+// lock-clock ↔ lock-alert only swaps the badge): the core padlock moved up and left, the core key
+// turned and at 90 %, the shield at 94 %, and edicion's download at 85 %, up and left, its arrow
+// clear of the badge (the badge takes over the tray's right wall).
+const LOCK_B = [LOCK_BODY, LOCK_SHACKLE, LOCK_HOLE].map((d) => xf(d, { dx: -2.25, dy: -1 }));
+const KEY_B = KEY.map((d, i) => (i === 1 ? dot(14.25, 5.75, 0.5) : xf(d, { deg: 180, s: 0.9, dx: -2, dy: -2 })));
+const SHIELD_B = xf(SHIELD, { s: 0.94, o: [12, 3], dx: -1.75 });
+const DOWNLOAD = edicion.icons.download.d;
+const DOWNLOAD_B = DOWNLOAD.map((d) => xf(d, { s: 0.85, dx: -1.25, dy: -1.5 }));
+/** sync's two arc arrows (and update's) as they are. */
+const SYNC = syncAt(0);
+const UPDATE = [...SYNC, line([12, 7.25], [12, 16]), head([12, 16], [0, 1], 3.4)];
+/** The octagon of alert-octagon. */
+const OCTAGON = roundpoly(Array.from({ length: 8 }, (_, i) => polar(12, 12, 9.75, 22.5 + i * 45)), 2.25);
+/** progress-bar's track: the storage bar and the quota meter are drawn on it. */
+const TRACK = pill(2.5, 7.75, 19, 8.5);
+/** A clockwise (or, with a1 < a0, counterclockwise) arc arrow on the r 9 circle: the arc and its head. */
+const cycle = (a0, a1) => {
+  const a = arc(12, 12, 9, a0, a1);
+  return [a.d, head(a.end, a.tangent, 3.4)];
+};
 
 const icons = {
   // ── Locks and keys ──
@@ -1161,7 +1255,365 @@ const icons = {
       return { d: [circ(x, 4.35, 1.6), arc(x + 1, 15.25, 5.75, 205, 5).d], badge: own([leg, seat], trace(leg) + trace(seat)) };
     })(),
   },
+
+  // ── Round 5: keyboard keys ──
+  // The modifier glyphs are drawn here with the set's geometry, never set in or traced from a font.
+  // Option (⌥): a flat stroke that steps down diagonally to the right and runs flat again, and a
+  // short flat stroke at the top right, 4.2 clear of the diagonal.
+  'option-key': {
+    tags: ['tecla opción', 'alt', 'modificador', 'atajo', 'option key', 'alt key', 'modifier'],
+    d: [rline([[3.25, 6], [8.75, 6], [15.25, 18], [20.75, 18]], [0, 1, 1, 0]), line([13.5, 6], [20.75, 6])],
+  },
+  // Escape (⎋): a circle broken at its upper left and an arrow leaving through the gap toward the
+  // corner; the gap leaves the shaft and the head 3.3 clear of the circle's ends.
+  'escape-key': {
+    tags: ['tecla escape', 'esc', 'salir', 'cerrar', 'escape key', 'esc key', 'exit'],
+    d: [arc(13, 13, 7.5, 251, 559).d, line([13, 13], [3.5, 3.5]), head([3.5, 3.5], [-1, -1], 4.75)],
+  },
+  // Caps Lock (⇪): navegacion's thick arrow with a shorter shaft, and the bar under it 3 below,
+  // as wide as the shaft.
+  'caps-lock': {
+    tags: ['bloqueo de mayúsculas', 'mayúsculas', 'tecla', 'caps lock', 'uppercase', 'capitals'],
+    d: [roundpoly(turn([[7.25, 9.25], [11.75, 9.25], [11.75, 4.5], [20.75, 12], [11.75, 19.5], [11.75, 14.75], [7.25, 14.75]], -90), [1.25, 0.75, 1.25, 1.75, 1.25, 0.75, 1.25]), line([9.25, 19.75], [14.75, 19.75])],
+  },
+  // Forward delete (⌦): edicion's backspace mirrored, the tag pointing right.
+  'delete-forward': {
+    tags: ['suprimir', 'borrar hacia adelante', 'tecla supr', 'delete', 'forward delete', 'del key'],
+    d: edicion.icons.backspace.d.map((d) => flipPath(d, 'x')),
+  },
+  // Space (␣): a wide flat base with two short upturned ends, low on the canvas.
+  'space-key': {
+    tags: ['barra espaciadora', 'espacio', 'tecla', 'space bar', 'space key', 'spacebar'],
+    d: [rline([[3.25, 12.5], [3.25, 16.75], [20.75, 16.75], [20.75, 12.5]], [0, 1.25, 1.25, 0])],
+  },
+  keycap: {
+    tags: ['tecla', 'atajo de teclado', 'teclado', 'botón', 'keycap', 'key', 'keyboard shortcut'],
+    d: KEYCAP,
+  },
+  // Two keys and the plus between them, 2.85 clear of each: at this width the keys have no room
+  // for their top face, so they are the key's outline alone, as the arrow keys are, and square
+  // (taller, they read as zeros).
+  'keycap-combo': {
+    tags: ['combinación de teclas', 'atajos de teclado', 'teclas', 'key combination', 'shortcut', 'hotkey'],
+    d: [sq(2.1, 9.1, 5.8, 5.8, 1.5), sq(16.1, 9.1, 5.8, 5.8, 1.5), ...plus(12, 12, 1.25)],
+  },
+  // The arrow keys: four keys in an inverted T, 3 apart center to center.
+  'keycap-arrows': {
+    tags: ['teclas de flecha', 'flechas del teclado', 'navegar', 'cursores', 'arrow keys', 'cursor keys', 'keyboard navigation'],
+    d: [sq(9.75, 6, 4.5, 4.5, 1.25), ...[2.25, 9.75, 17.25].map((x) => sq(x, 13.5, 4.5, 4.5, 1.25))],
+  },
+
+  // ── Round 5: appearance ──
+  // A disc split by the inner edge of a crescent: the sun on the left with its rays, the moon on
+  // the right (2.9 across at its middle, so its outline stays open at 2.1).
+  'theme-auto': {
+    tags: ['tema automático', 'apariencia automática', 'claro y oscuro', 'según el sistema', 'auto theme', 'automatic appearance', 'system theme'],
+    d: [circ(14.5, 12, 4.75), arc(9.25, 12, 7.08, -42.14, 42.14).d, ...[90, 135, 180, 225, 270].map((a) => line(polar(14.5, 12, 7.75, a), polar(14.5, 12, 9.85, a)))],
+  },
+  // The sunburst in eight points (each one a level) around a disc split down the middle; filled,
+  // one half of the disc is solid.
+  brightness: {
+    tags: ['brillo', 'pantalla', 'luminosidad', 'ajustar brillo', 'brightness', 'display', 'screen brightness'],
+    d: [circ(12, 12, 4), line([12, 8], [12, 16]), ...sunburstPoints([12, 12], 9.5, 7.25, 1)],
+  },
+  // lugares' moon at 72 % with three short rays off its outer edge (3 from it, 2.1 long).
+  'night-light': {
+    tags: ['luz nocturna', 'filtro de luz azul', 'night shift', 'colores cálidos', 'night light', 'blue light filter', 'warm colors'],
+    d: center([moonAt([12, 12], 0.72), ...[105, 135, 165].map((a) => line(polar(12, 12, 6.12 + 3, a), polar(12, 12, 6.12 + 5.1, a)))]),
+  },
+
+  // ── Round 5: notifications ──
+  // comunicacion's bell under a badge (at 85 %, its clapper whole outside the badge's area).
+  'bell-moon': {
+    tags: ['no molestar', 'horas de silencio', 'modo descanso', 'avisos en pausa', 'do not disturb', 'quiet hours', 'sleep mode'],
+    d: COM['bell-plus'].d,
+    badge: own([moonAt(BC, 0.5)], RING, { solid: [moonAt(BC, 0.5)] }),
+  },
+  'bell-alert': {
+    tags: ['alerta crítica', 'aviso urgente', 'notificación importante', 'critical alert', 'urgent notification', 'alarm'],
+    d: COM['bell-plus'].d,
+    badge: badge('alert'),
+  },
+
+  // ── Round 5: people and presence ──
+  'person-online': {
+    tags: ['en línea', 'conectado', 'activo', 'disponible', 'online', 'active', 'available'],
+    d: PERSON_L,
+    badge: ONLINE_B,
+  },
+  'person-away': {
+    tags: ['ausente', 'inactivo', 'vuelvo pronto', 'presencia', 'away', 'idle', 'be right back'],
+    d: PERSON_L,
+    badge: AWAY_B,
+  },
+  'person-offline': {
+    tags: ['desconectado', 'invisible', 'fuera de línea', 'presencia', 'offline', 'invisible', 'not available'],
+    d: PERSON_L,
+    badge: OFFLINE_B,
+  },
+  // sync's two arc arrows turned 70° (their heads on the diagonals, clear of the shoulders and
+  // inside the canvas) around the person at 45 %, 3.1 or more from them.
+  'person-switch': {
+    tags: ['cambiar de cuenta', 'cambiar usuario', 'otra cuenta', 'sesión', 'switch account', 'switch user', 'change account'],
+    d: [...syncAt(70), ...personAt(0.45, 0, -4.25)],
+  },
+  // The person in dashes, as status-pending dashes its circle: four on the head, on its
+  // diagonals (a gap faces the shoulders, so no end sits near them), and six on the shoulders.
+  'person-guest': {
+    tags: ['invitado', 'acceso de invitado', 'visitante', 'modo invitado', 'guest', 'guest access', 'visitor'],
+    d: [...dashes(PERSON_HEAD, 4, 3.3, 2.9), ...dashes(PERSON_BODY, 6, 3.1, 5.65)],
+  },
+  // social's group under a badge (the two in back cut 3 short of the one in front).
+  'people-gear': {
+    tags: ['ajustes de usuarios', 'roles', 'permisos', 'gestionar equipo', 'user management', 'roles and permissions', 'team settings'],
+    d: social.icons['people-plus'].d,
+    badge: badge('gear'),
+  },
+
+  // ── Round 5: appearance (continued) ──
+  // dark-mode's toggle switched off: the knob on the left is a small sun. Inside the track there is
+  // no room for a disc and rays standing apart (3 from the track and from each other), so the rays
+  // grow from the disc, as a sun's do. Eight rays of one length made an asterisk at 18 px; long and
+  // short ones in turn (2.1 and 1.5, out to 2.9 from the track) make it a sun. The sun is one piece,
+  // the knob: a short ray is part of the disc, not a fragment.
+  'light-mode': {
+    tags: ['modo claro', 'tema claro', 'apariencia', 'modo de día', 'light mode', 'day mode', 'light theme'],
+    d: [pill(2.5, 5, 19, 14), [circ(9.5, 12, 2), ...Array.from({ length: 8 }, (_, i) => line(polar(9.5, 12, 2, i * 45), polar(9.5, 12, i % 2 ? 3.5 : 4.1, i * 45)))].join('')],
+  },
+
+  // ── Round 5: identity and access ──
+  // comunicacion's id-card under the check: its bust moves 1 to the right, so the badge cuts its
+  // shoulder well above the card's edge at every weight (at 8 the gap closed at 2.1), and its first
+  // line moves up to 9.5, clear of the badge's area (at 10.5 the clearance bit into its end); the
+  // second line doesn't fit.
+  'id-card-check': {
+    tags: ['identidad verificada', 'kyc aprobado', 'documento validado', 'identity verified', 'id verified', 'kyc passed'],
+    d: [COM['id-card'].d[0], circ(9, 10.5, 2.25), arc(9, 19, 3.75, 180, 360).d, line([14.75, 9.5], [18.25, 9.5])],
+    badge: badge('check'),
+  },
+  'lock-alert': {
+    tags: ['no seguro', 'conexión insegura', 'alerta de seguridad', 'candado', 'not secure', 'security warning', 'insecure'],
+    d: LOCK_B,
+    badge: badge('alert'),
+  },
+  // A round padlock: the core shackle (legs 7.8 apart, r 3.9) over a disc, and on it the dial, a
+  // knob 3 inside the disc whose pointer is turned 40° off the top (a tick down from the top and a
+  // dot at the center made an exclamation mark: the padlock read as lock-alert).
+  'lock-combination': {
+    tags: ['candado de combinación', 'combinación', 'caja fuerte', 'casillero', 'combination lock', 'dial lock', 'safe'],
+    d: (() => {
+      const legs = 14.25 - Math.sqrt(7 ** 2 - 3.9 ** 2);
+      return [circ(12, 14.25, 7), `M8.1 ${f(legs)}V7${arcTo(12, 7, 3.9, 180, 360)}V${f(legs)}`, circ(12, 14.25, 4), line(polar(12, 14.25, 4, -50), polar(12, 14.25, 1.75, -50))];
+    })(),
+  },
+  // Android's unlock pattern: nine dots 7 apart and one stroke through five of them, an L and a
+  // diagonal (4.95 from the dots it passes by).
+  'pattern-lock': {
+    tags: ['patrón de desbloqueo', 'desbloquear', 'bloqueo de pantalla', 'patrón', 'pattern lock', 'unlock pattern', 'screen lock'],
+    d: [...[5, 12, 19].flatMap((y) => [5, 12, 19].map((x) => dot(x, y))), line([5, 5], [5, 19], [12, 19], [19, 12])],
+  },
+  // A small padlock (window-lock's) at the center of an almost full clockwise arrow, 2.95 from it.
+  'lock-rotation': {
+    tags: ['bloqueo de rotación', 'orientación fija', 'girar pantalla', 'rotation lock', 'orientation lock', 'portrait lock'],
+    d: [...cycle(-40, 250), ...padlock(8.25, 11, 7.5, 5.75)],
+  },
+  'key-x': {
+    tags: ['llave revocada', 'credencial inválida', 'passkey eliminada', 'token revocado', 'revoked key', 'invalid credential', 'revoked token'],
+    d: KEY_B,
+    badge: badge('x'),
+  },
+  // The core key at 55 % along the diagonal (bow, shaft and two teeth 2.9 apart, each 2.25 long;
+  // the hole doesn't fit in a bow this small) inside a counterclockwise arrow whose gap faces the
+  // key's tip (3 or more from it) and whose head sits clear of the teeth, low on the right.
+  'key-rotate': {
+    tags: ['rotar credenciales', 'regenerar llave', 'renovar token', 'nueva clave', 'rotate keys', 'regenerate key', 'reset credentials'],
+    d: (() => {
+      const at = (s, t = 0) => [12 + (s + t) * Math.SQRT1_2, 12 + (t - s) * Math.SQRT1_2];
+      return [...cycle(307, 20), circ(...at(-3.5), 2.5), line(at(-1), at(6)), line(at(5), at(5, 2.25)), line(at(2.1), at(2.1, 2.25))];
+    })(),
+  },
+  // The core key's bow and its shaft, which forks into three prongs that end in dots: one key, many
+  // doors. The bow's hole is a dot the size of the prongs' (every dot in an icon is one size), 0.75
+  // from the bow's center away from the shaft, so it stays clear of the ring at 2.1.
+  'single-sign-on': {
+    tags: ['inicio de sesión único', 'sso', 'una cuenta', 'acceso unificado', 'single sign-on', 'one login', 'identity provider'],
+    d: (() => {
+      const F = [14.6, 9.4];
+      const ends = [[14.6, 4.25], [19.75, 4.25], [19.75, 9.4]];
+      return [KEY[0], dot(8.1 - 0.75 * Math.SQRT1_2, 15.9 + 0.75 * Math.SQRT1_2), line([11.35, 12.65], F), ...ends.map((e) => line(F, e)), ...ends.map((e) => dot(...e))];
+    })(),
+  },
+  // The fingerprint moved up and left to the edge of the live area (scaled, its ridges came closer
+  // than 3): the badge takes over the ends of its two inner ridges (its strokes are set right after
+  // this list, from the fingerprint's own).
+  'fingerprint-plus': {
+    tags: ['agregar huella', 'registrar huella', 'nueva huella', 'biometría', 'add fingerprint', 'enroll fingerprint', 'new fingerprint'],
+    d: [],
+    badge: badge('plus'),
+  },
+  // comunicacion's raised hand (its outline: the fingers together) at 64 % in the scan corners.
+  'palm-scan': {
+    tags: ['escaneo de palma', 'reconocimiento de palma', 'biometría', 'venas de la mano', 'palm scan', 'palm recognition', 'palm vein'],
+    d: [SCAN, ...center([xf(COM['hand-raised'].d[0], { s: 0.64 })])],
+  },
+
+  // ── Round 5: shields ──
+  // Split down the middle; filled, the right half is solid.
+  'shield-half': {
+    tags: ['privacidad y seguridad', 'estado de seguridad', 'ajustes de seguridad', 'escudo', 'privacy and security', 'security status', 'security settings'],
+    d: [SHIELD, line([12, 3.02], [12, 21.45])],
+  },
+  // Three bars that climb, 3.25 apart and 3 or more from the shield, one level each.
+  'shield-level': {
+    tags: ['nivel de seguridad', 'nivel de protección', 'fuerza', 'escudo', 'security level', 'protection level', 'strength'],
+    d: [SHIELD, line([8.75, 15.25], [8.75, 12.75]), line([12, 15.25], [12, 10.25]), line([15.25, 15.25], [15.25, 7.75])],
+  },
+  // edicion's eye at 49 %, where the shield is widest, its pupil a dot.
+  'shield-eye': {
+    tags: ['protección de privacidad', 'prevenir rastreo', 'privacidad', 'escudo', 'privacy protection', 'tracking prevention', 'privacy'],
+    d: [SHIELD, xf(EYE, { s: 0.49, dy: -0.75 }), dot(12, 11.25)],
+  },
+  'shield-gear': {
+    tags: ['ajustes de seguridad', 'políticas de seguridad', 'configurar protección', 'escudo', 'security settings', 'security policies', 'admin security'],
+    d: [SHIELD_B],
+    badge: badge('gear'),
+  },
+
+  // ── Round 5: storage and limits ──
+  // progress-bar's track split in three by two dividers: filled, the first two are solid (the
+  // divider between them knocked out) and the last one stays empty.
+  'storage-usage': {
+    tags: ['almacenamiento usado', 'espacio en disco', 'uso de almacenamiento', 'capacidad', 'storage usage', 'disk space', 'storage'],
+    d: [TRACK, line([10.75, 7.75], [10.75, 16.25]), line([15.25, 7.75], [15.25, 16.25])],
+  },
+  // progress-bar's track and its progress, which stops 3 short of a limit tick that rises 3.5
+  // above and below the track.
+  quota: {
+    tags: ['cuota', 'límite de uso', 'límite del plan', 'consumo', 'quota', 'usage limit', 'plan limit'],
+    d: [TRACK, pill(5.5, 10.75, 7.75, 2.5), line([16.25, 4.25], [16.25, 19.75])],
+  },
+  // The core gear (without its hub, which the wrench covers), turned half a tooth so the wrench
+  // crosses it between teeth, and sistema's wrench at 81 % across it on the diagonal, in front
+  // (custom badge: the engine clears the gear along its outline). At other sizes the clearance
+  // grazed the corner of a tooth and left specks at 2.1.
+  'gear-wrench': {
+    tags: ['mantenimiento', 'modo mantenimiento', 'ajustes del servicio', 'reparación', 'maintenance', 'maintenance mode', 'service settings'],
+    d: [xf(gear(12, 12, 9.25, 6.9, 8), { deg: 22.5 })],
+    badge: (() => {
+      const w = center([place(xf(WRENCH, { s: 0.81, o: [0, 0] }), -45, [0, 0])])[0];
+      return own([w], w, { solid: [w] });
+    })(),
+  },
+
+  // ── Round 5: health and statuses ──
+  // A pulse: flat, one beat up and back to the line, and from there the line becomes a check, its
+  // short arm down at 45° and its long arm up (when the beat's own downstroke was the short arm, the
+  // V came out narrow and the check read as a zigzag).
+  'health-check': {
+    tags: ['estado saludable', 'chequeo de salud', 'servicio operativo', 'monitoreo', 'health check', 'healthy', 'service up'],
+    d: [line([2.5, 13.5], [5, 13.5], [7, 8.25], [9, 13.5], [12, 16.5], [21.25, 7.25])],
+  },
+  'status-review': {
+    tags: ['en revisión', 'revisando', 'por aprobar', 'casi listo', 'in review', 'under review', 'reviewing'],
+    d: [CIRCLE, `M12 12V6${arcTo(12, 12, 6, -90, 180)}Z`],
+  },
+  // From an empty status to a done one: the empty circle at the bottom left, an arc arrow hops over
+  // and lands on the engine's check, 7.25 or more from its center.
+  'status-change': {
+    tags: ['cambio de estado', 'transición', 'actividad', 'estado actualizado', 'status change', 'status update', 'transition'],
+    d: (() => {
+      const a = arc(11.5, 14, 7, 205, 320);
+      return [circ(5.75, 17.25, 3.25), a.d, head(a.end, a.tangent, 3.4)];
+    })(),
+    badge: badge('check'),
+  },
+  // Two core alerts at 80 %: the back one up and right, whole; the front one sits on top (custom
+  // badge) and the engine clears the back one, which shows its top and its right side. The front
+  // one's mark is drawn for its size: the dot 3.1 above the base and 2.95 below the bar (scaled
+  // with the triangle, it merged with the base at 2.1).
+  'alert-stack': {
+    tags: ['varias alertas', 'alertas', 'advertencias', 'problemas', 'multiple alerts', 'warnings', 'alert list'],
+    d: [xf(nucleo.icons.alert.d[0], { s: 0.8, dx: 2, dy: -3.25 })],
+    badge: (() => {
+      const at = (p) => [12 + (p[0] - 12) * 0.8 - 1.25, 12 + (p[1] - 12) * 0.8 + 1.75];
+      const shape = xf(nucleo.icons.alert.d[0], { s: 0.8, dx: -1.25, dy: 1.75 });
+      const mark = [line(at([12, 9]), at([12, 12.3])), dot(...at([12, 16]))];
+      return own([shape, ...mark], shape, { solid: [shape], cut: mark });
+    })(),
+  },
+  'alert-seal': {
+    tags: ['sin verificar', 'aviso importante', 'requiere verificación', 'sello', 'unverified', 'important notice', 'needs verification'],
+    d: [scallop(12, 12, 8.35, 0.7, 12), ...bang(12, 7.4, 12.75)],
+  },
+  'pause-octagon': {
+    tags: ['suspendido', 'detenido', 'en pausa', 'servicio detenido', 'suspended', 'halted', 'paused'],
+    d: [OCTAGON, line([10, 8.25], [10, 15.75]), line([14, 8.25], [14, 15.75])],
+  },
+  // plug-disconnected's plug and socket, shorter (bodies 4.5 long, cables and prongs 2.1) so three
+  // dots fit in the gap on the diagonal: 2.85 apart and 2.9 or more from the prongs and the socket.
+  // The dots are drawn where they land (a turned circle isn't a dot the engine recognizes).
+  'plug-connecting': {
+    tags: ['conectando', 'estableciendo conexión', 'enlazando', 'integración', 'connecting', 'pairing', 'linking'],
+    d: (() => {
+      const x1 = 8.7 + Math.sqrt(3.2 ** 2 - 1.45 ** 2);
+      const xs = x1 + 5.7 + 3.2;
+      const mid = (xs + 6.6) / 2;
+      const pieces = [
+        sq(2.1, -2.75, 4.5, 5.5, 1.5, { square: ['tr', 'br'] }),
+        line([6.6, -1.45], [8.7, -1.45]),
+        line([6.6, 1.45], [8.7, 1.45]),
+        line([0, 0], [2.1, 0]),
+        sq(xs, -2.75, 4.5, 5.5, 1.5, { square: ['tl', 'bl'] }),
+        line([xs + 4.5, 0], [xs + 6.6, 0]),
+      ].map((d) => place(d, -45, [mid, 0]));
+      return [...pieces, ...[0, 1, 2].map((k) => dot(12 + (x1 + k * 2.85 - mid) * Math.SQRT1_2, 12 - (x1 + k * 2.85 - mid) * Math.SQRT1_2, 0.3))];
+    })(),
+  },
+
+  // ── Round 5: updates and sync ──
+  // update at 82 %, down and left, so the notification dot sits clear of its arrows.
+  'update-dot': {
+    tags: ['actualización disponible', 'nueva versión', 'actualizar', 'pendiente de instalar', 'update available', 'new version', 'software update'],
+    d: UPDATE.map((d) => xf(d, { s: 0.82, dx: -1.75, dy: 1.75 })),
+    badge: badge('dot'),
+  },
+  // sync's arrows with a sign at the center, 2.85 or more from their heads
+  'sync-check': {
+    tags: ['sincronizado', 'al día', 'actualizado', 'sincronización completa', 'synced', 'up to date', 'sync complete'],
+    d: [...SYNC, check(12, 12.25, 7)],
+  },
+  'sync-alert': {
+    tags: ['error de sincronización', 'fallo al actualizar', 'problema de sincronización', 'sync error', 'sync failed', 'update failed'],
+    d: [...SYNC, ...bang(12, 7.25, 12.25)],
+  },
+  'sync-pause': {
+    tags: ['sincronización en pausa', 'actualizaciones pausadas', 'pausar sincronización', 'sync paused', 'updates paused', 'pause sync'],
+    d: [...SYNC, line([10.25, 9], [10.25, 15]), line([13.75, 9], [13.75, 15])],
+  },
+
+  // ── Round 5: downloads ──
+  // download's arrow in two dashes (3 apart) and its head whole: queued.
+  'download-pending': {
+    tags: ['descarga en cola', 'descarga pendiente', 'esperando', 'en cola', 'download queued', 'pending download', 'waiting'],
+    d: [DOWNLOAD[0], line([12, 3.25], [12, 6.5]), line([12, 9.5], [12, 15.75]), DOWNLOAD[2]],
+  },
+  'download-pause': {
+    tags: ['descarga en pausa', 'pausar descarga', 'descarga detenida', 'download paused', 'pause download', 'paused'],
+    d: DOWNLOAD_B,
+    badge: PAUSE_B,
+  },
+  'download-check': {
+    tags: ['descarga completa', 'descargado', 'disponible sin conexión', 'download complete', 'downloaded', 'available offline'],
+    d: DOWNLOAD_B,
+    badge: badge('check'),
+  },
+  'download-x': {
+    tags: ['descarga fallida', 'descarga cancelada', 'error de descarga', 'download failed', 'download canceled', 'download error'],
+    d: DOWNLOAD_B,
+    badge: badge('x'),
+  },
 };
+icons['fingerprint-plus'].d = icons.fingerprint.d.map((d) => xf(d, { dx: -1.2, dy: -0.95 }));
 
 // ── Fill (DESIGN.md › Fill) ──
 // By index of `d`: `solid` is filled (and keeps its stroke; closed shapes only), `cut` is knocked
@@ -1267,7 +1719,57 @@ const FILL = {
   // The first-aid kit's handle, like the core briefcase's: a line with clearance
   'first-aid': { solid: [0], lines: [1], cut: [2, 3] },
   wheelchair: { solid: [0], lines: [1] },
+
+  // ── Round 5 ──
+  // The thick arrow filled, the bar apart
+  'caps-lock': { solid: [0], lines: [1] },
+  // Like backspace: the tag filled and the x knocked out
+  'delete-forward': { solid: [0], cut: [1, 2] },
+  // The key filled and the edge of its top face knocked out; the small keys, solid
+  keycap: { solid: [0], cut: [1] },
+  'keycap-combo': { solid: [0, 1], lines: [2, 3] },
+  'keycap-arrows': { solid: [0, 1, 2, 3] },
+  // The disc filled with the moon's edge knocked out; the rays stay lines
+  'theme-auto': { solid: [0], cut: [1], lines: [2, 3, 4, 5, 6] },
+  'night-light': { solid: [0], lines: [1, 2, 3] },
+  // comunicacion's bell: the body and the clapper (a half-moon, closed)
+  'bell-moon': { solid: [0, Z(1)] },
+  'bell-alert': { solid: [0, Z(1)] },
+  // The group as social's: the one in front filled, the two in back stay lines
+  'people-gear': { solid: [4, 5], lines: [0, 1, 2, 3] },
+  // The small person filled inside the arrows
+  'person-switch': { solid: [4, 5], lines: [0, 1, 2, 3] },
+  // Like dark-mode: the track filled and the sun knocked out of it
+  'light-mode': { solid: [0], cut: [1] },
+  // Like id-card: the card filled, the bust and the line knocked out
+  'id-card-check': { solid: [0], cut: [1, 2, 3] },
+  // Like lock-clock: the body filled, the shackle attached, the keyhole knocked out
+  'lock-alert': { solid: [0], wire: [1], cut: [2] },
+  // The disc filled, the shackle attached, the knob and its pointer knocked out
+  'lock-combination': { solid: [0], wire: [1], cut: [2, 3] },
+  // The padlock filled inside the arrow; the arrow stays a line
+  'lock-rotation': { solid: [2], wire: [3], lines: [0, 1] },
+  'key-x': { solid: [0], wire: [2, 3, 4], cut: [1] },
+  'key-rotate': { solid: [2], wire: [3, 4, 5], lines: [0, 1] },
+  // The bow filled with its hole knocked out; the shaft and the prongs attached, the dots solid
+  'single-sign-on': { solid: [0, 6, 7, 8], wire: [2, 3, 4, 5], cut: [1] },
+  // The hand filled; the scan corners stay lines
+  'palm-scan': { solid: [1], lines: [0] },
+  'shield-level': { solid: [0], cut: [1, 2, 3] },
+  'shield-eye': { solid: [0], cut: [1, 2] },
+  'shield-gear': { solid: [0] },
+  // Like progress-bar: the progress filled, the track and the limit stay lines
+  quota: { solid: [1], lines: [0, 2] },
+  'gear-wrench': { solid: [0] },
+  'status-review': { solid: [1], lines: [0] },
+  'alert-stack': { solid: [0] },
+  'alert-seal': { solid: [0], cut: [1, 2] },
+  'pause-octagon': { solid: [0], cut: [1, 2] },
+  // Like plug-disconnected: the plug and the socket filled, the prongs and the cables attached
+  'plug-connecting': { solid: [0, 4, 6, 7, 8], wire: [1, 2, 3, 5] },
 };
+// The person under a presence mark or a badge: head and body
+for (const name of ['person-online', 'person-away', 'person-offline']) FILL[name] = { solid: [0, 1] };
 // A shield, alert or status with its sign: the shape filled and the sign knocked out
 for (const name of ['shield-x', 'shield-alert', 'shield-plus', 'shield-minus', 'shield-lock', 'shield-person', 'shield-question', 'info', 'info-square', 'help', 'help-square', 'alert-octagon', 'close-octagon', 'alert-square', 'alert-diamond', 'check-circle', 'close-circle', 'plus-circle', 'minus-circle', 'check-square', 'close-square', 'plus-square', 'minus-square', 'block'])
   FILL[name] = { solid: [0], cut: icons[name].d.map((_, i) => i).slice(1) };
@@ -1279,6 +1781,20 @@ for (const [name, spec] of Object.entries(FILL)) {
 // Only open lines (or signs): their filled version is the outline itself
 for (const name of ['fingerprint', 'face-scan', 'scan', 'firewall', 'check-double', 'loader', 'spinner', 'status-pending', 'restart', 'update', 'command', 'minus', 'asterisk', 'sync'])
   icons[name].fill = false;
+// Round 5: the key glyphs and the dashed guest are lines only
+for (const name of ['option-key', 'escape-key', 'space-key', 'person-guest']) icons[name].fill = false;
+// Brightness: the right half of the disc filled (its edge the split line), the rest of the disc a
+// line attached to it, and the sunburst's points lines standing apart
+icons.brightness.fill = { solid: [`M12 8${arcTo(12, 12, 4, -90, 90)}Z`], wire: [icons.brightness.d[0]], lines: icons.brightness.d.slice(2) };
+// Lines and signs only (a badge stays solid on its own); status-change's empty circle stays empty
+for (const name of ['pattern-lock', 'fingerprint-plus', 'health-check', 'status-change', 'update-dot', 'sync-check', 'sync-alert', 'sync-pause', 'download-pending', 'download-pause', 'download-check', 'download-x'])
+  icons[name].fill = false;
+// The shield's right half filled (closed along the split), the rest of the outline and the split
+// attached to it
+icons['shield-half'].fill = { solid: [`${clip(SHIELD, ([x]) => x >= 12)}Z`], wire: icons['shield-half'].d };
+// The storage bar: what's used (up to the second divider) filled, the divider between the two kinds
+// knocked out, the free part an empty outline attached to it
+icons['storage-usage'].fill = { solid: [`${clip(TRACK, ([x]) => x <= 15.25)}Z`], wire: [TRACK, icons['storage-usage'].d[2]], cut: [icons['storage-usage'].d[1]] };
 
 // ── 16 px (DESIGN.md › 16 px): drawings with fewer pieces for the ones that clog up at 1x ──
 // A custom drawing isn't snapped automatically: its straight runs go on pixel centers (0.75 + 1.5k)
@@ -1326,6 +1842,98 @@ icons['heart-pulse'].small = small([icons['heart-pulse'].d[0], inside(line([2, 1
 // Medal and rosette without the inner ring.
 icons['medal-ribbon'].small = small([STRAP], [0], [], { badge: own([MEDAL], MEDAL, { solid: [MEDAL] }) });
 icons.award.small = small(icons.award.d, [Z(0), Z(1)], [], { badge: own([ROSETTE], ROSETTE, { solid: [ROSETTE] }) });
+// ── Round 5 at 16 px ──
+// Escape: the broken circle (r 6) and the arrow on the pixel diagonal, the head's arms on pixel
+// rows and columns; the gap leaves 2 pixels between the circle's ends and the arrow.
+icons['escape-key'].small = { d: [arc(12.75, 12.75, 6, 255, 555).d, line([12.75, 12.75], [3.75, 3.75]), line([8.25, 3.75], [3.75, 3.75], [3.75, 8.25])] };
+// Auto theme: the disc and the moon's edge on pixel centers, and three rays (the ones above and
+// below the disc don't fit the 16 pixels).
+{
+  const d = [circ(14.25, 12.75, 4.5), arc(8.25, 12.75, 7.5, -36.87, 36.87).d, line([6.75, 12.75], [3.75, 12.75]), line([8.25, 6.75], [6.75, 5.25]), line([8.25, 18.75], [6.75, 20.25])];
+  icons['theme-auto'].small = { d, fill: { solid: [d[0]], cut: [d[1]], lines: d.slice(2) } };
+}
+// The arrow keys 0.75 lower, so their edges land on pixel rows too (3-pixel keys, 1 pixel apart).
+{
+  const d = [sq(9.75, 6.75, 4.5, 4.5, 1.25), ...[2.25, 9.75, 17.25].map((x) => sq(x, 14.25, 4.5, 4.5, 1.25))];
+  icons['keycap-arrows'].small = { d, fill: { solid: d } };
+}
+// Brightness: the split disc and eight rays on the pixel grid (the sunburst's points blur at 1x).
+{
+  const c = 12.75;
+  const rays = [...[[0, -1], [1, 0], [0, 1], [-1, 0]].map(([x, y]) => line([c + 6 * x, c + 6 * y], [c + 9 * x, c + 9 * y])), ...[[1, -1], [1, 1], [-1, 1], [-1, -1]].map(([x, y]) => line([c + 4.5 * x, c + 4.5 * y], [c + 6 * x, c + 6 * y]))];
+  const d = [circ(c, c, 3), line([c, c - 3], [c, c + 3]), ...rays];
+  icons.brightness.small = { d, fill: { solid: [`M${c} ${c - 3}A3 3 0 0 1 ${c} ${c + 3}Z`], wire: [d[0]], lines: rays } };
+}
+// Night light: the moon at 71 % and its rays on pixel rows, columns and the diagonal.
+{
+  const d = [moonAt([14.25, 9.75], 6 / 8.5), line([5.25, 9.75], [2.25, 9.75]), line([6.75, 17.25], [5.25, 18.75]), line([14.25, 18.75], [14.25, 21.75])];
+  icons['night-light'].small = { d, fill: { solid: [d[0]], lines: d.slice(1) } };
+}
+// The crescent mark at 16 px: 2.5 pixels across at its middle, so its outline closes into a solid
+// crescent instead of a ring with a speck of a hole.
+{
+  const moon = crescent(BC, 3.75, [BC[0] + 2.25, BC[1] - 2.25], 3.25);
+  const mark = own([moon], RING, { solid: [moon] });
+  const bell = COM['bell-plus'].d.map(snapper(COM['bell-plus'].d));
+  icons['bell-moon'].small = { d: bell, fill: { solid: [bell[0], `${bell[1]}Z`] }, badge: mark };
+  const person = PERSON_L.map(snapper(PERSON_L));
+  icons['person-away'].small = { d: person, fill: { solid: person }, badge: mark };
+}
+// Switching accounts: the arrows on a circle of r 9 and a person of two pieces (a head of r 1.5
+// and the shoulders as a half disc) on pixel centers, 1 pixel apart.
+{
+  const [a, b] = [arc(11.25, 11.25, 9, -80, 45), arc(11.25, 11.25, 9, 100, 225)];
+  const d = [a.d, head(a.end, a.tangent, 3), b.d, head(b.end, b.tangent, 3), circ(11.25, 9.75, 1.5), 'M8.25 15.75A3 3 0 0 1 14.25 15.75Z'];
+  icons['person-switch'].small = { d, fill: { solid: [d[4], d[5]], lines: d.slice(0, 4) } };
+}
+// The guest: the person on pixel centers (on the column at 12.75, an odd width), the head in four
+// dashes on its sides and the shoulders in five, their gaps on the diagonals (at 12 the dashes fell
+// between pixels and the head and shoulders crossed into a gray x).
+{
+  const headD = circ(12.75, 6.75, 3);
+  const body = 'M6.75 20.25H18.75A1.5 1.5 0 0 0 20.25 18.75C20.25 15.25 16.9 12.75 12.75 12.75C8.6 12.75 5.25 15.25 5.25 18.75A1.5 1.5 0 0 0 6.75 20.25Z';
+  icons['person-guest'].small = { d: [...dashes(headD, 4, 3, 0), ...dashes(body, 4, 3, 6)] };
+}
+// Light mode: the track on pixel centers (one pixel higher, so the knob sits on a pixel row) and a
+// pixel sun, a 3 × 3 ring with four one-pixel rays (drawn whole, the rays merged into a plus).
+{
+  const d = [pill(2.25, 5.25, 19.5, 12), 'M6.75 9.75H9.75V12.75H6.75Z', ...[[8.25, 8.25], [11.25, 11.25], [8.25, 14.25], [5.25, 11.25]].map((p) => dot(...p, 0.1))];
+  icons['light-mode'].small = { d, fill: { solid: [d[0]], cut: d.slice(1) } };
+}
+// Adding a fingerprint: the outer ridge (r 7.5) and the inner one (r 3) 3 pixels apart on pixel
+// centers, up and left of the badge, and the center line.
+icons['fingerprint-plus'].small = {
+  d: [`M2.25 14.25V9.75${arcTo(9.75, 9.75, 7.5, 180, 340)}`, `M6.75 17.25V9.75${arcTo(9.75, 9.75, 3, 180, 360)}V11.25`, line([9.75, 9.75], [9.75, 15.75])],
+  badge: badge('plus', { size: 16 }),
+};
+// Single sign-on: a larger bow at the corner, the shaft on the pixel diagonal and three prongs
+// without their dots (at 16 px they ran together).
+{
+  const F = [12.75, 11.25];
+  const d = [circ(6, 18, 3.75), line([6 + 3.75 * Math.SQRT1_2, 18 - 3.75 * Math.SQRT1_2], F), ...[[12.75, 3.75], [18.75, 5.25], [20.25, 11.25]].map((e) => line(F, e))];
+  icons['single-sign-on'].small = { d, fill: { solid: [d[0]], wire: d.slice(1) } };
+}
+// Rotating keys: the arrow on an r 8.25 circle and a smaller key (a 3-pixel bow, one tooth) on the
+// pixel diagonal.
+{
+  const a = arc(12, 12, 8.25, 307, 20);
+  const d = [a.d, head(a.end, a.tangent, 3), circ(9.75, 14.25, 1.5), line([9.75 + 1.5 * Math.SQRT1_2, 14.25 - 1.5 * Math.SQRT1_2], [14.25, 9.75]), line([12.75, 11.25], [14.25, 12.75])];
+  icons['key-rotate'].small = { d, fill: { solid: [d[2]], wire: [d[3], d[4]], lines: [d[0], d[1]] } };
+}
+// Palm scan: the hand as a U on pixel columns (its sides are the outer fingers), one finger between
+// them and the thumb on the diagonal.
+{
+  const palm = 'M9.75 6.75V14.25A2.25 2.25 0 0 0 12 16.5H13.5A2.25 2.25 0 0 0 15.75 14.25V6.75';
+  const d = [SCAN, palm, line([12.75, 6.75], [12.75, 11.25]), line([9.75, 12.75], [7.5, 10.5])];
+  icons['palm-scan'].small = { d, fill: { solid: [`${palm}Z`], lines: [SCAN, d[3]], cut: [d[2]] } };
+}
+// The combination lock with its disc and shackle on pixel centers and the dial as its pointer alone,
+// on the pixel diagonal from the center (the knob's ring, one pixel inside the disc, ran into it).
+{
+  const legs = 14.25 - Math.sqrt(36 - 9);
+  const d = [circ(12.75, 14.25, 6), `M9.75 ${f(legs)}V6.75${arcTo(12.75, 6.75, 3, 180, 360)}V${f(legs)}`, line([12.75, 14.25], [15.75, 11.25])];
+  icons['lock-combination'].small = { d, fill: { solid: [d[0]], wire: [d[1]], cut: [d[2]] } };
+}
 
 // ── Variants (DESIGN.md › Automatic variants) ──
 const off = (names, v) => {
@@ -1343,11 +1951,27 @@ for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...ic
 // Loose lines, signs, statuses and the ones that already have a hand-drawn slashed version
 // (`shield-off`, `plug-disconnected`): no slash.
 off(['minus', 'asterisk', 'command', 'loader', 'spinner', 'status-pending', 'status-progress', 'progress-bar', 'block', 'restart', 'sync', 'update', 'shield-empty', 'toggle-on', 'toggle-off', 'plug-connected', 'plug-disconnected'], { slash: false });
+// Round 5: the broken circle of escape and the sunburst are round already; a slash through a key's
+// glyph says nothing.
+off(['escape-key', 'brightness'], { circle: false });
+off(['option-key', 'escape-key', 'caps-lock', 'delete-forward', 'space-key'], { slash: false });
+// Round 5: round already (the arrows' circle, the seal, the octagon, the status ring)
+off(['lock-rotation', 'key-rotate', 'person-switch', 'alert-seal', 'pause-octagon', 'status-review', 'sync-check', 'sync-alert', 'sync-pause'], { circle: false });
+// The keycap is a square key already, as the checkbox is
+off(['keycap'], { square: false });
+// The toggle and the scan corners, as dark-mode and face-scan
+off(['light-mode'], { circle: false, square: false });
+off(['palm-scan'], { square: false });
+// States, signs and bars: a slash through them says nothing (or contradicts them)
+off(['status-review', 'sync-check', 'sync-alert', 'sync-pause', 'plug-connecting', 'storage-usage', 'quota', 'health-check'], { slash: false });
 
 // ── Mirroring (DESIGN.md › Mirroring): what reads from left to right ──
 // The cursor at the end of the field, the toggles (in right-to-left the "on" position is on the
 // left) and the progress bar.
 for (const name of ['password', 'toggle-on', 'toggle-off', 'preferences', 'dark-mode', 'progress-bar']) icons[name].mirror = true;
+// Round 5: forward delete flips as backspace does; the light-mode toggle, the bars that fill from
+// the left, and the change that goes from left to right
+for (const name of ['delete-forward', 'light-mode', 'storage-usage', 'quota', 'status-change']) icons[name].mirror = true;
 
 // ── Named parts (DESIGN.md › Named parts): what animates, changes state or sits under a badge ──
 const PARTS = {
@@ -1407,7 +2031,57 @@ const PARTS = {
   'dark-mode': { track: [0], knob: [1] },
   language: { globe: [0, 1, 2] },
   wheelchair: { head: [0], wheel: [1] },
+
+  // ── Round 5 ──
+  'escape-key': { ring: [0], arrow: [1, 2] },
+  'caps-lock': { arrow: [0], bar: [1] },
+  'delete-forward': { key: [0], mark: [1, 2] },
+  keycap: { key: [0], face: [1] },
+  'keycap-combo': { keys: [0, 1], plus: [2, 3] },
+  'keycap-arrows': { keys: [0, 1, 2, 3] },
+  'theme-auto': { disc: [0], moon: [1], rays: [2, 3, 4, 5, 6] },
+  brightness: { disc: [0, 1], rays: [2, 3, 4, 5, 6, 7, 8, 9] },
+  'night-light': { moon: [0], rays: [1, 2, 3] },
+  'bell-moon': { body: [0], clapper: [1] },
+  'bell-alert': { body: [0], clapper: [1] },
+  'person-switch': { cycle: [0, 1, 2, 3], person: [4, 5] },
+  'person-guest': { head: [0, 1, 2, 3], body: [4, 5, 6, 7, 8, 9] },
+  'people-gear': { back: [0, 1, 2, 3], front: [4, 5] },
+  'light-mode': { track: [0], knob: [1] },
+  'id-card-check': { card: [0], person: [1, 2], text: [3] },
+  'lock-alert': { body: [0], shackle: [1], keyhole: [2] },
+  'lock-combination': { body: [0], shackle: [1], dial: [2, 3] },
+  'pattern-lock': { dots: [0, 1, 2, 3, 4, 5, 6, 7, 8], pattern: [9] },
+  'lock-rotation': { arrow: [0, 1], body: [2], shackle: [3] },
+  'key-x': { bow: [0, 1], shaft: [2, 3, 4] },
+  'key-rotate': { arrow: [0, 1], bow: [2], shaft: [3, 4, 5] },
+  'single-sign-on': { bow: [0, 1], shaft: [2, 3, 4, 5], doors: [6, 7, 8] },
+  'fingerprint-plus': { ridges: [0, 1, 2, 3] },
+  'palm-scan': { frame: [0], hand: [1] },
+  'shield-half': { shape: [0], split: [1] },
+  'shield-level': { shape: [0], level: [1, 2, 3] },
+  'shield-eye': { shape: [0], eye: [1], pupil: [2] },
+  'shield-gear': { shape: [0] },
+  'storage-usage': { track: [0], dividers: [1, 2] },
+  quota: { track: [0], usage: [1], limit: [2] },
+  'gear-wrench': { gear: [0] },
+  'health-check': { pulse: [0] },
+  'status-review': { ring: [0], progress: [1] },
+  'status-change': { from: [0], arrow: [1, 2] },
+  'alert-stack': { back: [0] },
+  'alert-seal': { shape: [0], mark: [1, 2] },
+  'pause-octagon': { shape: [0], mark: [1, 2] },
+  'plug-connecting': { plug: [0, 1, 2, 3], socket: [4, 5], dots: [6, 7, 8] },
+  'update-dot': { cycle: [0, 1, 2, 3], arrow: [4, 5] },
+  'sync-check': { cycle: [0, 1, 2, 3], mark: [4] },
+  'sync-alert': { cycle: [0, 1, 2, 3], mark: [4, 5] },
+  'sync-pause': { cycle: [0, 1, 2, 3], mark: [4, 5] },
+  'download-pending': { tray: [0], arrow: [1, 2, 3] },
+  'download-pause': { tray: [0], arrow: [1, 2] },
+  'download-check': { tray: [0], arrow: [1, 2] },
+  'download-x': { tray: [0], arrow: [1, 2] },
 };
+for (const name of ['person-online', 'person-away', 'person-offline']) PARTS[name] = { head: [0], body: [1] };
 // Shields, alerts and statuses: the shape and its sign
 for (const name of ['shield-x', 'shield-alert', 'shield-plus', 'shield-minus', 'shield-question', 'info', 'info-square', 'help', 'help-square', 'alert-octagon', 'close-octagon', 'alert-square', 'alert-diamond', 'check-circle', 'close-circle', 'plus-circle', 'minus-circle', 'check-square', 'close-square', 'plus-square', 'minus-square', 'block'])
   PARTS[name] = { shape: [0], mark: icons[name].d.map((_, i) => i).slice(1) };
@@ -1451,9 +2125,48 @@ const MOTION = {
   'security-camera': { effect: 'wiggle', parts: ['body'], origin: [13.5, 11.75] },
   // The plug moves toward the socket
   'plug-disconnected': { effect: 'slide', parts: ['plug'], vector: [1.25, -1.25] },
+
+  // ── Round 5 ──
+  // The escape arrow leaves through the gap; the caps arrow rises; the key is pressed
+  'escape-key': { effect: 'slide', parts: ['arrow'], vector: [-1.5, -1.5] },
+  'caps-lock': { effect: 'bounce', parts: ['arrow'], vector: [0, -1.5] },
+  keycap: { effect: 'bounce', parts: ['face'], vector: [0, 1] },
+  // The night light glows
+  'night-light': { effect: 'beat', parts: ['rays'], origin: [12, 12] },
+  // comunicacion's bell under a badge rings from its hanging point
+  'bell-moon': { effect: 'ring', parts: ['body', 'clapper'], origin: [8.75, 5.31] },
+  'bell-alert': { effect: 'ring', parts: ['body', 'clapper'], origin: [8.75, 5.31] },
+  'person-switch': { effect: 'spin', parts: ['cycle'], origin: [12, 12] },
+  'people-gear': { effect: 'spin', parts: ['badge'], origin: BC },
+  // The alerts shake from their base; the dial turns; the arrows go round; the gears spin
+  'lock-alert': { effect: 'wiggle', origin: [9.75, 20.25] },
+  'alert-stack': { effect: 'wiggle', origin: [12, 21] },
+  'alert-seal': { effect: 'wiggle', origin: [12, 21] },
+  'sync-alert': { effect: 'wiggle', parts: ['mark'], origin: [12, 16.65] },
+  'lock-combination': { effect: 'spin', parts: ['dial'], origin: [12, 14.25] },
+  'lock-rotation': { effect: 'spin', parts: ['arrow'], origin: [12, 12] },
+  'key-rotate': { effect: 'spin', parts: ['arrow'], origin: [12, 12] },
+  'sync-check': { effect: 'spin', parts: ['cycle'], origin: [12, 12] },
+  'shield-gear': { effect: 'spin', parts: ['badge'], origin: BC },
+  'gear-wrench': { effect: 'wiggle', parts: ['badge'], origin: [12, 12] },
+  // Keys wiggle from the bow, as the core key does
+  'key-x': { effect: 'wiggle', origin: [13.51, 6.49] },
+  'single-sign-on': { effect: 'wiggle', origin: [8.1, 15.9] },
+  // A heartbeat; the plug moves toward the socket; the download arrows drop
+  'health-check': { effect: 'beat', origin: [12, 12] },
+  'plug-connecting': { effect: 'slide', parts: ['plug'], vector: [1.25, -1.25] },
+  'update-dot': { effect: 'bounce', parts: ['arrow'], vector: [0, 1.25] },
+  'download-pending': { effect: 'bounce', parts: ['arrow'], vector: [0, 1.5] },
+  'download-pause': { effect: 'bounce', parts: ['arrow'], vector: [0, 1.25] },
+  'download-check': { effect: 'bounce', parts: ['arrow'], vector: [0, 1.25] },
+  'download-x': { effect: 'bounce', parts: ['arrow'], vector: [0, 1.25] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 // A value (0–1): the loader's arc is drawn that far, a determinate progress
 icons.loader.value = { draw: ['arc'] };
+// Levels: the sunburst's points light up clockwise from the top
+icons.brightness.levels = icons.brightness.d.slice(2).map((_, i) => [i + 2]);
+// The shield's bars light up from the shortest
+icons['shield-level'].levels = [[1], [2], [3]];
 
 export default { category: 'sistema', label: 'Sistema, seguridad y estado', icons };

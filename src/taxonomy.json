@@ -179,8 +179,8 @@
     {
       "id": "datos",
       "label": {
-        "es": "Datos y desarrollo",
-        "en": "Data and development"
+        "es": "Datos y analítica",
+        "en": "Data and analytics"
       },
       "domain": "technology",
       "drawn": true,

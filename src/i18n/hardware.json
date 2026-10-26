@@ -1,0 +1,821 @@
+{
+  "circuit-board": {
+    "label": { "es": "Placa de circuito", "en": "Circuit board", "pt": "Placa de circuito", "fr": "Circuit imprimé", "de": "Leiterplatte", "it": "Circuito stampato", "ja": "プリント基板", "zh": "电路板", "ko": "회로 기판", "ar": "لوحة دوائر مطبوعة" },
+    "keywords": {
+      "es": ["pcb", "tarjeta electrónica", "electrónica", "proyecto de hardware", "fabricar placas", "pistas de cobre", "componentes"],
+      "en": ["pcb", "printed circuit", "electronics", "hardware project", "pcb order", "copper traces", "components"]
+    }
+  },
+  "motherboard": {
+    "label": { "es": "Tarjeta madre", "en": "Motherboard", "pt": "Placa-mãe", "fr": "Carte mère", "de": "Mainboard", "it": "Scheda madre", "ja": "マザーボード", "zh": "主板", "ko": "메인보드", "ar": "اللوحة الأم" },
+    "keywords": {
+      "es": ["placa base", "armar pc", "especificaciones del equipo", "compatibilidad", "chipset", "componentes de computadora", "ensamblar"],
+      "en": ["mainboard", "pc build", "system specs", "compatibility", "chipset", "computer parts", "logic board"]
+    }
+  },
+  "graphics-card": {
+    "label": { "es": "Tarjeta de video", "en": "Graphics card", "pt": "Placa de vídeo", "fr": "Carte graphique", "de": "Grafikkarte", "it": "Scheda video", "ja": "グラフィックボード", "zh": "显卡", "ko": "그래픽 카드", "ar": "بطاقة الرسوميات" },
+    "keywords": {
+      "es": ["gpu", "tarjeta gráfica", "renderizado", "videojuegos", "cómputo acelerado", "instancia con gpu", "entrenar modelos"],
+      "en": ["gpu", "video card", "rendering", "gaming", "accelerated compute", "gpu instance", "model training"]
+    }
+  },
+  "expansion-card": {
+    "label": { "es": "Tarjeta de expansión", "en": "Expansion card", "pt": "Placa de expansão", "fr": "Carte d’extension", "de": "Erweiterungskarte", "it": "Scheda di espansione", "ja": "拡張カード", "zh": "扩展卡", "ko": "확장 카드", "ar": "بطاقة توسعة" },
+    "keywords": {
+      "es": ["tarjeta pcie", "tarjeta de sonido", "tarjeta de red", "capturadora", "componentes de pc", "actualizar equipo", "ranura"],
+      "en": ["pcie card", "sound card", "network card", "capture card", "pc components", "upgrade", "add-in card"]
+    }
+  },
+  "microchip": {
+    "label": { "es": "Circuito integrado", "en": "Microchip", "pt": "Circuito integrado", "fr": "Circuit intégré", "de": "Mikrochip", "it": "Circuito integrato", "ja": "ICチップ", "zh": "集成电路", "ko": "집적 회로", "ar": "دائرة متكاملة" },
+    "keywords": {
+      "es": ["chip", "componente electrónico", "catálogo de partes", "semiconductor", "encapsulado dip", "electrónica", "refacciones"],
+      "en": ["chip", "integrated circuit", "electronic component", "parts catalog", "semiconductor", "dip package", "ic"]
+    }
+  },
+  "microcontroller-board": {
+    "label": { "es": "Placa de microcontrolador", "en": "Microcontroller board", "pt": "Placa microcontroladora", "fr": "Carte microcontrôleur", "de": "Mikrocontroller-Board", "it": "Scheda microcontrollore", "ja": "マイコンボード", "zh": "单片机开发板", "ko": "마이크로컨트롤러 보드", "ar": "لوحة متحكم دقيق" },
+    "keywords": {
+      "es": ["arduino", "esp32", "tarjeta de desarrollo", "sistemas embebidos", "iot", "proyecto maker", "programar placa"],
+      "en": ["arduino", "esp32", "dev board", "embedded", "iot", "maker project", "mcu"]
+    }
+  },
+  "single-board-computer": {
+    "label": { "es": "Computadora de placa única", "en": "Single-board computer", "pt": "Computador de placa única", "fr": "Ordinateur monocarte", "de": "Einplatinencomputer", "it": "Computer a scheda singola", "ja": "シングルボードコンピューター", "zh": "单板计算机", "ko": "싱글 보드 컴퓨터", "ar": "حاسوب أحادي اللوحة" },
+    "keywords": {
+      "es": ["raspberry pi", "mini computadora", "homelab", "kiosco", "gateway iot", "servidor casero", "sbc"],
+      "en": ["raspberry pi", "mini computer", "homelab", "kiosk", "iot gateway", "home server", "sbc"]
+    }
+  },
+  "breadboard": {
+    "label": { "es": "Protoboard", "en": "Breadboard", "pt": "Protoboard", "fr": "Plaque d’essai", "de": "Steckbrett", "it": "Breadboard", "ja": "ブレッドボード", "zh": "面包板", "ko": "브레드보드", "ar": "لوحة تجارب" },
+    "keywords": {
+      "es": ["tablilla de prototipos", "prototipo de circuito", "sin soldar", "armar circuito", "tutorial de electrónica", "experimentar", "placa de pruebas"],
+      "en": ["solderless", "prototyping board", "circuit prototype", "wire up", "electronics tutorial", "experiment", "protoboard"]
+    }
+  },
+  "silicon-wafer": {
+    "label": { "es": "Oblea de silicio", "en": "Silicon wafer", "pt": "Wafer de silício", "fr": "Plaquette de silicium", "de": "Siliziumwafer", "it": "Wafer di silicio", "ja": "シリコンウェハー", "zh": "硅晶圆", "ko": "실리콘 웨이퍼", "ar": "رقاقة سيليكون" },
+    "keywords": {
+      "es": ["semiconductores", "fabricación de chips", "foundry", "industria de chips", "litografía", "cuarto limpio", "nanómetros"],
+      "en": ["semiconductor", "chip manufacturing", "foundry", "fab", "lithography", "cleanroom", "die"]
+    }
+  },
+  "cpu-socket": {
+    "label": { "es": "Socket del procesador", "en": "CPU socket", "pt": "Soquete do processador", "fr": "Socket du processeur", "de": "CPU-Sockel", "it": "Socket del processore", "ja": "CPUソケット", "zh": "CPU插槽", "ko": "CPU 소켓", "ar": "مقبس المعالج" },
+    "keywords": {
+      "es": ["zócalo", "armar pc", "compatibilidad", "montar cpu", "pines", "tarjeta madre", "lga"],
+      "en": ["processor socket", "pc build", "compatibility check", "install cpu", "pins", "motherboard", "lga"]
+    }
+  },
+  "wireless-module": {
+    "label": { "es": "Módulo inalámbrico", "en": "Wireless module", "pt": "Módulo sem fio", "fr": "Module sans fil", "de": "Funkmodul", "it": "Modulo wireless", "ja": "無線モジュール", "zh": "无线模块", "ko": "무선 모듈", "ar": "وحدة لاسلكية" },
+    "keywords": {
+      "es": ["wifi", "bluetooth", "lora", "módulo de radio", "antena", "conectividad iot", "emparejar"],
+      "en": ["wifi", "bluetooth", "lora", "radio module", "antenna", "iot connectivity", "rf module"]
+    }
+  },
+  "sensor-module": {
+    "label": { "es": "Módulo de sensor", "en": "Sensor module", "pt": "Módulo de sensor", "fr": "Module capteur", "de": "Sensormodul", "it": "Modulo sensore", "ja": "センサーモジュール", "zh": "传感器模块", "ko": "센서 모듈", "ar": "وحدة استشعار" },
+    "keywords": {
+      "es": ["sensor iot", "telemetría", "medición", "inventario de dispositivos", "temperatura y humedad", "lectura de datos", "detector"],
+      "en": ["iot sensor", "telemetry", "breakout board", "measurement", "device inventory", "sensor reading", "detector"]
+    }
+  },
+  "camera-module": {
+    "label": { "es": "Módulo de cámara", "en": "Camera module", "pt": "Módulo de câmera", "fr": "Module caméra", "de": "Kameramodul", "it": "Modulo fotocamera", "ja": "カメラモジュール", "zh": "摄像头模块", "ko": "카메라 모듈", "ar": "وحدة كاميرا" },
+    "keywords": {
+      "es": ["visión artificial", "cámara embebida", "robot", "kiosco", "sensor de imagen", "lente", "reconocimiento de objetos"],
+      "en": ["computer vision", "embedded camera", "robot", "kiosk", "image sensor", "lens", "machine vision"]
+    }
+  },
+  "display-module": {
+    "label": { "es": "Módulo de pantalla", "en": "Display module", "pt": "Módulo de tela", "fr": "Module d’affichage", "de": "Displaymodul", "it": "Modulo display", "ja": "ディスプレイモジュール", "zh": "显示模块", "ko": "디스플레이 모듈", "ar": "وحدة عرض" },
+    "keywords": {
+      "es": ["lcd", "oled", "mini pantalla", "pantalla embebida", "tft", "panel", "interfaz del dispositivo"],
+      "en": ["lcd", "oled", "small screen", "embedded display", "tft", "panel", "device ui"]
+    }
+  },
+  "seven-segment-display": {
+    "label": { "es": "Display de siete segmentos", "en": "Seven-segment display", "pt": "Display de sete segmentos", "fr": "Afficheur 7 segments", "de": "Siebensegmentanzeige", "it": "Display a sette segmenti", "ja": "7セグメント表示器", "zh": "七段数码管", "ko": "7세그먼트 디스플레이", "ar": "شاشة سباعية المقاطع" },
+    "keywords": {
+      "es": ["dígito", "contador", "número led", "lectura digital", "reloj retro", "marcador", "indicador numérico"],
+      "en": ["digit", "counter", "led number", "digital readout", "retro clock", "scoreboard", "numeric indicator"]
+    }
+  },
+  "led-matrix": {
+    "label": { "es": "Matriz de LED", "en": "LED matrix", "pt": "Matriz de LED", "fr": "Matrice de LED", "de": "LED-Matrix", "it": "Matrice LED", "ja": "LEDマトリクス", "zh": "LED点阵", "ko": "LED 매트릭스", "ar": "مصفوفة LED" },
+    "keywords": {
+      "es": ["matriz de puntos", "letrero", "anuncio luminoso", "pixeles", "cuadrícula de luces", "panel led", "señalización"],
+      "en": ["dot matrix", "sign", "signage", "pixels", "light grid", "led panel", "scrolling text"]
+    }
+  },
+  "resistor": {
+    "label": { "es": "Resistencia", "en": "Resistor", "pt": "Resistor", "fr": "Résistance", "de": "Widerstand", "it": "Resistore", "ja": "抵抗器", "zh": "电阻", "ko": "저항", "ar": "مقاومة" },
+    "keywords": {
+      "es": ["resistor", "componente electrónico", "ohms", "código de colores", "lista de materiales", "limitar corriente", "electrónica"],
+      "en": ["electronic component", "ohms", "color code", "bill of materials", "bom", "current limiting", "electronics"]
+    }
+  },
+  "potentiometer": {
+    "label": { "es": "Potenciómetro", "en": "Potentiometer", "pt": "Potenciômetro", "fr": "Potentiomètre", "de": "Potentiometer", "it": "Potenziometro", "ja": "ポテンショメーター", "zh": "电位器", "ko": "가변 저항", "ar": "مقاومة متغيرة" },
+    "keywords": {
+      "es": ["resistencia variable", "perilla", "volumen", "ajuste", "regular", "trimpot", "control analógico"],
+      "en": ["variable resistor", "knob", "volume", "adjust", "trimmer", "pot", "analog control"]
+    }
+  },
+  "capacitor": {
+    "label": { "es": "Capacitor", "en": "Capacitor", "pt": "Capacitor", "fr": "Condensateur", "de": "Kondensator", "it": "Condensatore", "ja": "コンデンサー", "zh": "电容", "ko": "커패시터", "ar": "مكثف" },
+    "keywords": {
+      "es": ["condensador", "electrolítico", "componente electrónico", "faradios", "filtro", "almacenar carga", "lista de materiales"],
+      "en": ["condenser", "electrolytic", "electronic component", "farads", "filter", "store charge", "bom"]
+    }
+  },
+  "diode": {
+    "label": { "es": "Diodo", "en": "Diode", "pt": "Diodo", "fr": "Diode", "de": "Diode", "it": "Diodo", "ja": "ダイオード", "zh": "二极管", "ko": "다이오드", "ar": "صمام ثنائي" },
+    "keywords": {
+      "es": ["rectificador", "rectificar", "protección", "polaridad", "corriente en un sentido", "componente electrónico", "semiconductor"],
+      "en": ["rectifier", "rectification", "protection", "polarity", "one-way current", "electronic component", "semiconductor"]
+    }
+  },
+  "led": {
+    "label": { "es": "LED", "en": "LED", "pt": "LED", "fr": "LED", "de": "LED", "it": "LED", "ja": "発光ダイオード", "zh": "发光二极管", "ko": "LED", "ar": "ثنائي باعث للضوء" },
+    "keywords": {
+      "es": ["foco led", "luz indicadora", "luz de estado", "diodo emisor de luz", "iluminación", "encendido", "componente electrónico"],
+      "en": ["light-emitting diode", "indicator light", "status light", "lighting", "power indicator", "electronic component", "diode"]
+    }
+  },
+  "led-strip": {
+    "label": { "es": "Tira de LED", "en": "LED strip", "pt": "Fita de LED", "fr": "Ruban LED", "de": "LED-Streifen", "it": "Striscia LED", "ja": "LEDテープ", "zh": "LED灯带", "ko": "LED 스트립", "ar": "شريط LED" },
+    "keywords": {
+      "es": ["cinta led", "iluminación ambiental", "luces decorativas", "rgb", "instalación de luz", "iluminación indirecta", "neón flexible"],
+      "en": ["led tape", "ambient lighting", "decorative lights", "rgb", "light installation", "backlight", "accent lighting"]
+    }
+  },
+  "transistor": {
+    "label": { "es": "Transistor", "en": "Transistor", "pt": "Transistor", "fr": "Transistor", "de": "Transistor", "it": "Transistor", "ja": "トランジスタ", "zh": "晶体管", "ko": "트랜지스터", "ar": "ترانزستور" },
+    "keywords": {
+      "es": ["conmutar", "amplificar", "interruptor electrónico", "to-92", "semiconductor", "componente electrónico", "bjt"],
+      "en": ["switching", "amplifier", "electronic switch", "to-92", "semiconductor", "electronic component", "bjt"]
+    }
+  },
+  "inductor": {
+    "label": { "es": "Inductor", "en": "Inductor", "pt": "Indutor", "fr": "Inductance", "de": "Spule", "it": "Induttore", "ja": "インダクター", "zh": "电感", "ko": "인덕터", "ar": "محث" },
+    "keywords": {
+      "es": ["bobina", "embobinado", "filtro", "fuente de poder", "henrios", "campo magnético", "componente electrónico"],
+      "en": ["coil", "choke", "filter", "power supply", "henries", "magnetic field", "electronic component"]
+    }
+  },
+  "relay": {
+    "label": { "es": "Relevador", "en": "Relay", "pt": "Relé", "fr": "Relais", "de": "Relais", "it": "Relè", "ja": "リレー", "zh": "继电器", "ko": "릴레이", "ar": "مُرحّل" },
+    "keywords": {
+      "es": ["relé", "conmutar cargas", "contacto", "interruptor inteligente", "bobina", "activar a distancia", "domótica"],
+      "en": ["switch a load", "contactor", "smart switch", "electromechanical", "coil", "remote switching", "home automation"]
+    }
+  },
+  "fuse": {
+    "label": { "es": "Fusible", "en": "Fuse", "pt": "Fusível", "fr": "Fusible", "de": "Sicherung", "it": "Fusibile", "ja": "ヒューズ", "zh": "保险丝", "ko": "퓨즈", "ar": "مصهر" },
+    "keywords": {
+      "es": ["protección del circuito", "sobrecorriente", "cortocircuito", "fundido", "reemplazar", "cartucho", "amperaje"],
+      "en": ["circuit protection", "overcurrent", "short circuit", "blown fuse", "replace", "cartridge", "amperage"]
+    }
+  },
+  "buzzer": {
+    "label": { "es": "Zumbador", "en": "Buzzer", "pt": "Buzzer", "fr": "Buzzer", "de": "Summer", "it": "Cicalino", "ja": "ブザー", "zh": "蜂鸣器", "ko": "부저", "ar": "طنّان" },
+    "keywords": {
+      "es": ["chicharra", "buzzer", "pitido", "alarma", "alerta sonora", "piezoeléctrico", "bip"],
+      "en": ["beep", "piezo", "alarm", "sound alert", "beeper", "tone", "audible alert"]
+    }
+  },
+  "vacuum-tube": {
+    "label": { "es": "Tubo de vacío", "en": "Vacuum tube", "pt": "Válvula termiônica", "fr": "Tube électronique", "de": "Elektronenröhre", "it": "Valvola termoionica", "ja": "真空管", "zh": "电子管", "ko": "진공관", "ar": "صمام مفرغ" },
+    "keywords": {
+      "es": ["bulbo", "válvula", "amplificador de bulbos", "electrónica vintage", "radio antiguo", "audio de tubos", "retro"],
+      "en": ["valve", "tube amp", "vintage electronics", "old radio", "tube audio", "retro", "thermionic"]
+    }
+  },
+  "dip-switch": {
+    "label": { "es": "Interruptor DIP", "en": "DIP switch", "pt": "Chave DIP", "fr": "Interrupteur DIP", "de": "DIP-Schalter", "it": "Interruttore DIP", "ja": "DIPスイッチ", "zh": "拨码开关", "ko": "DIP 스위치", "ar": "مفتاح DIP" },
+    "keywords": {
+      "es": ["microinterruptores", "configuración de hardware", "dirección", "selector", "ajustes físicos", "jumpers", "banco de switches"],
+      "en": ["switch bank", "hardware configuration", "address", "selector", "physical settings", "jumper", "config switches"]
+    }
+  },
+  "push-button": {
+    "label": { "es": "Botón pulsador", "en": "Push button", "pt": "Botão de pressão", "fr": "Bouton-poussoir", "de": "Taster", "it": "Pulsante", "ja": "押しボタン", "zh": "轻触按键", "ko": "푸시 버튼", "ar": "زر ضغط" },
+    "keywords": {
+      "es": ["push button", "botón táctil", "switch táctil", "entrada física", "presionar", "reset", "tecla"],
+      "en": ["tactile switch", "momentary switch", "hardware input", "press", "reset button", "key", "physical button"]
+    }
+  },
+  "toggle-switch": {
+    "label": { "es": "Interruptor de palanca", "en": "Toggle switch", "pt": "Chave alavanca", "fr": "Interrupteur à levier", "de": "Kippschalter", "it": "Interruttore a levetta", "ja": "トグルスイッチ", "zh": "钮子开关", "ko": "토글 스위치", "ar": "مفتاح قلّاب" },
+    "keywords": {
+      "es": ["switch", "encender y apagar", "panel de control", "apagador", "tablero", "corte de corriente", "cabina"],
+      "en": ["on off", "power switch", "control panel", "lever", "flip switch", "cockpit", "dashboard switch"]
+    }
+  },
+  "slide-switch": {
+    "label": { "es": "Interruptor deslizable", "en": "Slide switch", "pt": "Chave deslizante", "fr": "Interrupteur à glissière", "de": "Schiebeschalter", "it": "Interruttore a slitta", "ja": "スライドスイッチ", "zh": "拨动开关", "ko": "슬라이드 스위치", "ar": "مفتاح منزلق" },
+    "keywords": {
+      "es": ["encender y apagar", "selector de modo", "switch", "gadget", "juguete", "placa", "dos posiciones"],
+      "en": ["on off", "mode selector", "gadget", "toy", "board switch", "two-position", "spdt"]
+    }
+  },
+  "mechanical-switch": {
+    "label": { "es": "Switch mecánico", "en": "Mechanical switch", "pt": "Switch mecânico", "fr": "Switch mécanique", "de": "Mechanischer Tastenschalter", "it": "Switch meccanico", "ja": "メカニカルスイッチ", "zh": "机械轴", "ko": "기계식 스위치", "ar": "مفتاح ميكانيكي" },
+    "keywords": {
+      "es": ["teclado mecánico", "armar teclado", "tecla", "sensación al teclear", "cherry mx", "keycap", "lineal o táctil"],
+      "en": ["mechanical keyboard", "keyboard build", "key feel", "keycap", "cherry mx", "linear", "tactile"]
+    }
+  },
+  "electric-motor": {
+    "label": { "es": "Motor eléctrico", "en": "Electric motor", "pt": "Motor elétrico", "fr": "Moteur électrique", "de": "Elektromotor", "it": "Motore elettrico", "ja": "電気モーター", "zh": "电动机", "ko": "전기 모터", "ar": "محرك كهربائي" },
+    "keywords": {
+      "es": ["motor dc", "movimiento", "robótica", "rotación", "accionamiento", "giro", "tracción"],
+      "en": ["dc motor", "motion", "robotics", "rotation", "drive", "spin", "actuator"]
+    }
+  },
+  "servo-motor": {
+    "label": { "es": "Servomotor", "en": "Servo motor", "pt": "Servomotor", "fr": "Servomoteur", "de": "Servomotor", "it": "Servomotore", "ja": "サーボモーター", "zh": "舵机", "ko": "서보 모터", "ar": "محرك سيرفو" },
+    "keywords": {
+      "es": ["servo", "robótica", "posición", "ángulo", "brazo robótico", "radiocontrol", "pwm"],
+      "en": ["servo", "robotics", "positioning", "angle", "robot arm", "rc", "pwm"]
+    }
+  },
+  "stepper-motor": {
+    "label": { "es": "Motor a pasos", "en": "Stepper motor", "pt": "Motor de passo", "fr": "Moteur pas à pas", "de": "Schrittmotor", "it": "Motore passo-passo", "ja": "ステッピングモーター", "zh": "步进电机", "ko": "스테퍼 모터", "ar": "محرك خطوي" },
+    "keywords": {
+      "es": ["motor paso a paso", "impresora 3d", "cnc", "movimiento preciso", "nema 17", "ejes", "driver"],
+      "en": ["step motor", "3d printer", "cnc", "precise motion", "nema 17", "axis", "motor driver"]
+    }
+  },
+  "solenoid": {
+    "label": { "es": "Solenoide", "en": "Solenoid", "pt": "Solenoide", "fr": "Solénoïde", "de": "Hubmagnet", "it": "Solenoide", "ja": "ソレノイド", "zh": "电磁铁", "ko": "솔레노이드", "ar": "ملف لولبي" },
+    "keywords": {
+      "es": ["actuador", "cerradura eléctrica", "electroválvula", "émbolo", "empujador", "electroimán", "chapa eléctrica"],
+      "en": ["actuator", "electric lock", "solenoid valve", "plunger", "pusher", "electromagnet", "door strike"]
+    }
+  },
+  "vibration-motor": {
+    "label": { "es": "Motor de vibración", "en": "Vibration motor", "pt": "Motor de vibração", "fr": "Moteur vibrant", "de": "Vibrationsmotor", "it": "Motore a vibrazione", "ja": "振動モーター", "zh": "振动马达", "ko": "진동 모터", "ar": "محرك اهتزاز" },
+    "keywords": {
+      "es": ["háptica", "vibrar", "retroalimentación táctil", "celular", "wearable", "control de videojuegos", "modo silencio"],
+      "en": ["haptics", "buzz", "haptic feedback", "phone", "wearable", "game controller", "rumble"]
+    }
+  },
+  "photoresistor": {
+    "label": { "es": "Fotorresistencia", "en": "Photoresistor", "pt": "Fotorresistor", "fr": "Photorésistance", "de": "Fotowiderstand", "it": "Fotoresistenza", "ja": "フォトレジスタ", "zh": "光敏电阻", "ko": "포토레지스터", "ar": "مقاومة ضوئية" },
+    "keywords": {
+      "es": ["ldr", "sensor de luz", "fotocelda", "luz ambiental", "detectar oscuridad", "encendido automático", "luminosidad"],
+      "en": ["ldr", "light sensor", "photocell", "ambient light", "detect darkness", "auto on", "brightness"]
+    }
+  },
+  "ultrasonic-sensor": {
+    "label": { "es": "Sensor ultrasónico", "en": "Ultrasonic sensor", "pt": "Sensor ultrassônico", "fr": "Capteur à ultrasons", "de": "Ultraschallsensor", "it": "Sensore a ultrasuoni", "ja": "超音波センサー", "zh": "超声波传感器", "ko": "초음파 센서", "ar": "مستشعر بالموجات فوق الصوتية" },
+    "keywords": {
+      "es": ["sensor de distancia", "medir distancia", "robot", "sensor de estacionamiento", "nivel de tanque", "sonar", "obstáculos"],
+      "en": ["distance sensor", "rangefinder", "robot", "parking sensor", "level sensing", "sonar", "obstacle detection"]
+    }
+  },
+  "infrared-sensor": {
+    "label": { "es": "Sensor infrarrojo", "en": "Infrared sensor", "pt": "Sensor infravermelho", "fr": "Capteur infrarouge", "de": "Infrarotsensor", "it": "Sensore a infrarossi", "ja": "赤外線センサー", "zh": "红外传感器", "ko": "적외선 센서", "ar": "مستشعر بالأشعة تحت الحمراء" },
+    "keywords": {
+      "es": ["pir", "sensor de movimiento", "detector de presencia", "encender al pasar", "seguridad", "iot", "ocupación"],
+      "en": ["pir", "motion sensor", "presence detection", "occupancy", "security", "iot", "motion-activated"]
+    }
+  },
+  "moisture-sensor": {
+    "label": { "es": "Sensor de humedad del suelo", "en": "Soil moisture sensor", "pt": "Sensor de umidade do solo", "fr": "Capteur d’humidité du sol", "de": "Bodenfeuchtesensor", "it": "Sensore di umidità del terreno", "ja": "土壌水分センサー", "zh": "土壤湿度传感器", "ko": "토양 수분 센서", "ar": "مستشعر رطوبة التربة" },
+    "keywords": {
+      "es": ["riego automático", "plantas", "jardín", "huerto", "monitorear macetas", "agricultura", "sonda"],
+      "en": ["automatic watering", "plants", "garden", "irrigation", "plant monitor", "agriculture", "probe"]
+    }
+  },
+  "lidar": {
+    "label": { "es": "Sensor lidar", "en": "Lidar sensor", "pt": "Sensor lidar", "fr": "Capteur lidar", "de": "Lidar-Sensor", "it": "Sensore lidar", "ja": "LiDARセンサー", "zh": "激光雷达", "ko": "라이다 센서", "ar": "مستشعر ليدار" },
+    "keywords": {
+      "es": ["láser", "escaneo 3d", "mapeo", "vehículo autónomo", "robot", "nube de puntos", "medir profundidad"],
+      "en": ["laser scanner", "3d mapping", "autonomous vehicle", "self-driving", "robot", "point cloud", "depth sensing"]
+    }
+  },
+  "heat-sink": {
+    "label": { "es": "Disipador de calor", "en": "Heat sink", "pt": "Dissipador de calor", "fr": "Dissipateur thermique", "de": "Kühlkörper", "it": "Dissipatore di calore", "ja": "ヒートシンク", "zh": "散热片", "ko": "방열판", "ar": "مشتت حراري" },
+    "keywords": {
+      "es": ["enfriamiento", "aletas", "diseño térmico", "temperatura", "pasta térmica", "refrigeración pasiva", "aluminio"],
+      "en": ["cooling", "fins", "thermal design", "temperature", "thermal paste", "passive cooling", "heatsink"]
+    }
+  },
+  "case-fan": {
+    "label": { "es": "Ventilador del gabinete", "en": "Case fan", "pt": "Ventoinha do gabinete", "fr": "Ventilateur de boîtier", "de": "Gehäuselüfter", "it": "Ventola del case", "ja": "ケースファン", "zh": "机箱风扇", "ko": "케이스 팬", "ar": "مروحة الحاسوب" },
+    "keywords": {
+      "es": ["enfriamiento", "velocidad del ventilador", "rpm", "flujo de aire", "monitor de hardware", "abanico", "temperatura"],
+      "en": ["cooling", "fan speed", "rpm", "airflow", "hardware monitor", "cooler", "computer fan"]
+    }
+  },
+  "liquid-cooling": {
+    "label": { "es": "Enfriamiento líquido", "en": "Liquid cooling", "pt": "Refrigeração líquida", "fr": "Refroidissement liquide", "de": "Wasserkühlung", "it": "Raffreddamento a liquido", "ja": "水冷クーラー", "zh": "水冷散热", "ko": "수랭 쿨러", "ar": "تبريد سائل" },
+    "keywords": {
+      "es": ["watercooling", "radiador", "armar pc", "aio", "centro de datos", "bomba", "refrigerante"],
+      "en": ["water cooling", "aio cooler", "radiator", "pc build", "data center cooling", "pump", "coolant"]
+    }
+  },
+  "overheating": {
+    "label": { "es": "Sobrecalentamiento", "en": "Overheating", "pt": "Superaquecimento", "fr": "Surchauffe", "de": "Überhitzung", "it": "Surriscaldamento", "ja": "オーバーヒート", "zh": "过热", "ko": "과열", "ar": "ارتفاع درجة الحرارة" },
+    "keywords": {
+      "es": ["temperatura alta", "chip caliente", "thermal throttling", "alerta de hardware", "se calienta", "falla térmica", "baja de rendimiento"],
+      "en": ["high temperature", "hot chip", "thermal throttling", "hardware warning", "too hot", "thermal alert", "heat"]
+    }
+  },
+  "resistor-symbol": {
+    "label": { "es": "Símbolo de resistencia", "en": "Resistor symbol", "pt": "Símbolo de resistor", "fr": "Symbole de résistance", "de": "Widerstandssymbol", "it": "Simbolo del resistore", "ja": "抵抗の回路記号", "zh": "电阻符号", "ko": "저항 기호", "ar": "رمز المقاومة" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "zigzag", "eda", "diseño de circuitos", "ohms", "plano eléctrico"],
+      "en": ["circuit diagram", "schematic", "zigzag", "eda", "circuit design", "ohms", "wiring diagram"]
+    }
+  },
+  "capacitor-symbol": {
+    "label": { "es": "Símbolo de capacitor", "en": "Capacitor symbol", "pt": "Símbolo de capacitor", "fr": "Symbole de condensateur", "de": "Kondensatorsymbol", "it": "Simbolo del condensatore", "ja": "コンデンサーの回路記号", "zh": "电容符号", "ko": "커패시터 기호", "ar": "رمز المكثف" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "condensador", "placas paralelas", "eda", "diseño de circuitos", "faradios"],
+      "en": ["circuit diagram", "schematic", "condenser", "parallel plates", "eda", "circuit design", "farads"]
+    }
+  },
+  "inductor-symbol": {
+    "label": { "es": "Símbolo de inductor", "en": "Inductor symbol", "pt": "Símbolo de indutor", "fr": "Symbole d’inductance", "de": "Spulensymbol", "it": "Simbolo dell’induttore", "ja": "インダクターの回路記号", "zh": "电感符号", "ko": "인덕터 기호", "ar": "رمز المحث" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "bobina", "espiras", "eda", "diseño de circuitos", "henrios"],
+      "en": ["circuit diagram", "schematic", "coil", "loops", "eda", "circuit design", "henries"]
+    }
+  },
+  "diode-symbol": {
+    "label": { "es": "Símbolo de diodo", "en": "Diode symbol", "pt": "Símbolo de diodo", "fr": "Symbole de diode", "de": "Diodensymbol", "it": "Simbolo del diodo", "ja": "ダイオードの回路記号", "zh": "二极管符号", "ko": "다이오드 기호", "ar": "رمز الصمام الثنائي" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "ánodo y cátodo", "rectificador", "eda", "diseño de circuitos", "polaridad"],
+      "en": ["circuit diagram", "schematic", "anode cathode", "rectifier", "eda", "circuit design", "polarity"]
+    }
+  },
+  "led-symbol": {
+    "label": { "es": "Símbolo de LED", "en": "LED symbol", "pt": "Símbolo de LED", "fr": "Symbole de LED", "de": "LED-Symbol", "it": "Simbolo del LED", "ja": "LEDの回路記号", "zh": "发光二极管符号", "ko": "LED 기호", "ar": "رمز LED" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "diodo emisor de luz", "indicador luminoso", "eda", "diseño de circuitos", "flechas de luz"],
+      "en": ["circuit diagram", "schematic", "light-emitting diode", "indicator light", "eda", "circuit design", "light arrows"]
+    }
+  },
+  "transistor-symbol": {
+    "label": { "es": "Símbolo de transistor", "en": "Transistor symbol", "pt": "Símbolo de transistor", "fr": "Symbole de transistor", "de": "Transistorsymbol", "it": "Simbolo del transistor", "ja": "トランジスタの回路記号", "zh": "晶体管符号", "ko": "트랜지스터 기호", "ar": "رمز الترانزستور" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "npn", "base colector emisor", "eda", "diseño de circuitos", "amplificador"],
+      "en": ["circuit diagram", "schematic", "npn", "base collector emitter", "eda", "circuit design", "amplifier"]
+    }
+  },
+  "battery-symbol": {
+    "label": { "es": "Símbolo de batería", "en": "Battery symbol", "pt": "Símbolo de bateria", "fr": "Symbole de pile", "de": "Batteriesymbol", "it": "Simbolo della batteria", "ja": "電池の回路記号", "zh": "电池符号", "ko": "전지 기호", "ar": "رمز البطارية" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "fuente de voltaje", "pila", "clase de física", "positivo y negativo", "celda"],
+      "en": ["circuit diagram", "schematic", "voltage source", "cell", "physics lesson", "positive negative", "dc source"]
+    }
+  },
+  "switch-symbol": {
+    "label": { "es": "Símbolo de interruptor", "en": "Switch symbol", "pt": "Símbolo de interruptor", "fr": "Symbole d’interrupteur", "de": "Schaltersymbol", "it": "Simbolo dell’interruttore", "ja": "スイッチの回路記号", "zh": "开关符号", "ko": "스위치 기호", "ar": "رمز المفتاح" },
+    "keywords": {
+      "es": ["diagrama eléctrico", "esquemático", "circuito abierto", "estado del relevador", "apagado", "eda", "contacto abierto"],
+      "en": ["circuit diagram", "schematic", "open circuit", "relay state", "off", "eda", "open contact"]
+    }
+  },
+  "electrical-ground": {
+    "label": { "es": "Tierra física", "en": "Electrical ground", "pt": "Aterramento", "fr": "Mise à la terre", "de": "Erdung", "it": "Messa a terra", "ja": "接地", "zh": "接地", "ko": "접지", "ar": "التأريض" },
+    "keywords": {
+      "es": ["conexión a tierra", "gnd", "esquemático", "diagrama eléctrico", "cableado", "instalación eléctrica", "masa"],
+      "en": ["earth", "gnd", "grounding", "schematic", "circuit diagram", "wiring", "chassis ground"]
+    }
+  },
+  "electric-circuit": {
+    "label": { "es": "Circuito eléctrico", "en": "Electric circuit", "pt": "Circuito elétrico", "fr": "Circuit électrique", "de": "Stromkreis", "it": "Circuito elettrico", "ja": "電気回路", "zh": "电路", "ko": "전기 회로", "ar": "دائرة كهربائية" },
+    "keywords": {
+      "es": ["circuito cerrado", "electricidad", "clase de física", "simulador de circuitos", "corriente", "foco y pila", "ley de ohm"],
+      "en": ["closed circuit", "electricity", "physics lesson", "circuit simulator", "current", "bulb and battery", "ohm's law"]
+    }
+  },
+  "and-gate": {
+    "label": { "es": "Compuerta AND", "en": "AND gate", "pt": "Porta AND", "fr": "Porte ET", "de": "UND-Gatter", "it": "Porta AND", "ja": "ANDゲート", "zh": "与门", "ko": "AND 게이트", "ar": "بوابة AND" },
+    "keywords": {
+      "es": ["compuerta lógica", "lógica digital", "álgebra booleana", "y lógico", "diseño de circuitos", "tabla de verdad", "clase de electrónica"],
+      "en": ["logic gate", "digital logic", "boolean algebra", "logical and", "circuit design", "truth table", "electronics lesson"]
+    }
+  },
+  "or-gate": {
+    "label": { "es": "Compuerta OR", "en": "OR gate", "pt": "Porta OR", "fr": "Porte OU", "de": "ODER-Gatter", "it": "Porta OR", "ja": "ORゲート", "zh": "或门", "ko": "OR 게이트", "ar": "بوابة OR" },
+    "keywords": {
+      "es": ["compuerta lógica", "lógica digital", "álgebra booleana", "o lógico", "disyunción", "tabla de verdad", "diseño de circuitos"],
+      "en": ["logic gate", "digital logic", "boolean algebra", "logical or", "disjunction", "truth table", "circuit design"]
+    }
+  },
+  "not-gate": {
+    "label": { "es": "Compuerta NOT", "en": "NOT gate", "pt": "Porta NOT", "fr": "Porte NON", "de": "NICHT-Gatter", "it": "Porta NOT", "ja": "NOTゲート", "zh": "非门", "ko": "NOT 게이트", "ar": "بوابة NOT" },
+    "keywords": {
+      "es": ["inversor", "negación", "compuerta lógica", "lógica digital", "álgebra booleana", "tabla de verdad", "invertir señal"],
+      "en": ["inverter", "negation", "logic gate", "digital logic", "boolean algebra", "truth table", "invert signal"]
+    }
+  },
+  "xor-gate": {
+    "label": { "es": "Compuerta XOR", "en": "XOR gate", "pt": "Porta XOR", "fr": "Porte OU exclusif", "de": "XOR-Gatter", "it": "Porta XOR", "ja": "XORゲート", "zh": "异或门", "ko": "XOR 게이트", "ar": "بوابة XOR" },
+    "keywords": {
+      "es": ["o exclusivo", "compuerta lógica", "lógica digital", "álgebra booleana", "sumador", "paridad", "tabla de verdad"],
+      "en": ["exclusive or", "logic gate", "digital logic", "boolean algebra", "adder", "parity", "truth table"]
+    }
+  },
+  "nand-gate": {
+    "label": { "es": "Compuerta NAND", "en": "NAND gate", "pt": "Porta NAND", "fr": "Porte NON-ET", "de": "NAND-Gatter", "it": "Porta NAND", "ja": "NANDゲート", "zh": "与非门", "ko": "NAND 게이트", "ar": "بوابة NAND" },
+    "keywords": {
+      "es": ["no y", "compuerta universal", "compuerta lógica", "lógica digital", "álgebra booleana", "tabla de verdad", "memoria flash"],
+      "en": ["not and", "universal gate", "logic gate", "digital logic", "boolean algebra", "truth table", "flash memory"]
+    }
+  },
+  "nor-gate": {
+    "label": { "es": "Compuerta NOR", "en": "NOR gate", "pt": "Porta NOR", "fr": "Porte NON-OU", "de": "NOR-Gatter", "it": "Porta NOR", "ja": "NORゲート", "zh": "或非门", "ko": "NOR 게이트", "ar": "بوابة NOR" },
+    "keywords": {
+      "es": ["no o", "compuerta universal", "compuerta lógica", "lógica digital", "álgebra booleana", "tabla de verdad", "diseño de circuitos"],
+      "en": ["not or", "universal gate", "logic gate", "digital logic", "boolean algebra", "truth table", "circuit design"]
+    }
+  },
+  "xnor-gate": {
+    "label": { "es": "Compuerta XNOR", "en": "XNOR gate", "pt": "Porta XNOR", "fr": "Porte NON-OU exclusif", "de": "XNOR-Gatter", "it": "Porta XNOR", "ja": "XNORゲート", "zh": "同或门", "ko": "XNOR 게이트", "ar": "بوابة XNOR" },
+    "keywords": {
+      "es": ["equivalencia", "igualdad", "compuerta lógica", "lógica digital", "álgebra booleana", "comparador", "tabla de verdad"],
+      "en": ["equivalence", "equality", "logic gate", "digital logic", "boolean algebra", "comparator", "truth table"]
+    }
+  },
+  "sine-wave": {
+    "label": { "es": "Onda senoidal", "en": "Sine wave", "pt": "Onda senoidal", "fr": "Onde sinusoïdale", "de": "Sinuswelle", "it": "Onda sinusoidale", "ja": "正弦波", "zh": "正弦波", "ko": "사인파", "ar": "موجة جيبية" },
+    "keywords": {
+      "es": ["señal analógica", "corriente alterna", "oscilador", "sintetizador", "frecuencia", "seno", "ca"],
+      "en": ["analog signal", "alternating current", "ac", "oscillator", "synth", "frequency", "sinusoid"]
+    }
+  },
+  "square-wave": {
+    "label": { "es": "Onda cuadrada", "en": "Square wave", "pt": "Onda quadrada", "fr": "Signal carré", "de": "Rechteckwelle", "it": "Onda quadra", "ja": "矩形波", "zh": "方波", "ko": "구형파", "ar": "موجة مربعة" },
+    "keywords": {
+      "es": ["señal digital", "señal de reloj", "pwm", "pulsos", "oscilador", "sintetizador", "ciclo de trabajo"],
+      "en": ["digital signal", "clock signal", "pwm", "pulse", "oscillator", "synth", "duty cycle"]
+    }
+  },
+  "sawtooth-wave": {
+    "label": { "es": "Onda diente de sierra", "en": "Sawtooth wave", "pt": "Onda dente de serra", "fr": "Onde en dents de scie", "de": "Sägezahnwelle", "it": "Onda a dente di sega", "ja": "のこぎり波", "zh": "锯齿波", "ko": "톱니파", "ar": "موجة سن المنشار" },
+    "keywords": {
+      "es": ["rampa", "oscilador", "sintetizador", "señal de barrido", "frecuencia", "audio", "forma de onda"],
+      "en": ["ramp", "oscillator", "synth", "sweep signal", "frequency", "audio", "waveform"]
+    }
+  },
+  "triangle-wave": {
+    "label": { "es": "Onda triangular", "en": "Triangle wave", "pt": "Onda triangular", "fr": "Onde triangulaire", "de": "Dreieckwelle", "it": "Onda triangolare", "ja": "三角波", "zh": "三角波", "ko": "삼각파", "ar": "موجة مثلثية" },
+    "keywords": {
+      "es": ["oscilador", "sintetizador", "señal de prueba", "generador de funciones", "rampa", "frecuencia", "forma de onda"],
+      "en": ["oscillator", "synth", "test signal", "function generator", "ramp", "frequency", "waveform"]
+    }
+  },
+  "direct-current": {
+    "label": { "es": "Corriente directa", "en": "Direct current", "pt": "Corrente contínua", "fr": "Courant continu", "de": "Gleichstrom", "it": "Corrente continua", "ja": "直流", "zh": "直流电", "ko": "직류", "ar": "تيار مستمر" },
+    "keywords": {
+      "es": ["cd", "dc", "voltaje de entrada", "cargador", "eliminador", "especificaciones eléctricas", "adaptador de corriente"],
+      "en": ["dc", "input voltage", "charger", "power adapter", "power specs", "polarity", "volts dc"]
+    }
+  },
+  "cable": {
+    "label": { "es": "Cable", "en": "Cable", "pt": "Cabo", "fr": "Câble", "de": "Kabel", "it": "Cavo", "ja": "ケーブル", "zh": "线缆", "ko": "케이블", "ar": "كابل" },
+    "keywords": {
+      "es": ["conexión", "accesorio", "conectar", "cordón", "conector", "cargador", "extensión"],
+      "en": ["cord", "connection", "accessory", "plug in", "connector", "charging cord", "lead"]
+    }
+  },
+  "usb-c-port": {
+    "label": { "es": "Puerto USB-C", "en": "USB-C port", "pt": "Porta USB-C", "fr": "Port USB-C", "de": "USB-C-Anschluss", "it": "Porta USB-C", "ja": "USB-Cポート", "zh": "USB-C接口", "ko": "USB-C 포트", "ar": "منفذ USB-C" },
+    "keywords": {
+      "es": ["tipo c", "conector", "carga", "conectividad", "thunderbolt", "entrada", "especificaciones del equipo"],
+      "en": ["type-c", "connector", "charging port", "connectivity", "thunderbolt", "input", "device specs"]
+    }
+  },
+  "usb-a-port": {
+    "label": { "es": "Puerto USB-A", "en": "USB-A port", "pt": "Porta USB-A", "fr": "Port USB-A", "de": "USB-A-Anschluss", "it": "Porta USB-A", "ja": "USB-Aポート", "zh": "USB-A接口", "ko": "USB-A 포트", "ar": "منفذ USB-A" },
+    "keywords": {
+      "es": ["usb clásico", "conector", "entrada usb", "memoria usb", "periféricos", "conectividad", "puerto de la computadora"],
+      "en": ["standard usb", "connector", "usb input", "flash drive", "peripherals", "connectivity", "computer port"]
+    }
+  },
+  "micro-usb-port": {
+    "label": { "es": "Puerto micro-USB", "en": "Micro-USB port", "pt": "Porta micro-USB", "fr": "Port micro-USB", "de": "Micro-USB-Anschluss", "it": "Porta micro-USB", "ja": "micro-USBポート", "zh": "Micro-USB接口", "ko": "마이크로 USB 포트", "ar": "منفذ micro-USB" },
+    "keywords": {
+      "es": ["cargador viejo", "conector", "dispositivos antiguos", "carga", "celulares antiguos", "micro b", "control de videojuegos"],
+      "en": ["old charger", "connector", "legacy devices", "charging", "older phones", "micro b", "controller"]
+    }
+  },
+  "hdmi-port": {
+    "label": { "es": "Puerto HDMI", "en": "HDMI port", "pt": "Porta HDMI", "fr": "Port HDMI", "de": "HDMI-Anschluss", "it": "Porta HDMI", "ja": "HDMIポート", "zh": "HDMI接口", "ko": "HDMI 포트", "ar": "منفذ HDMI" },
+    "keywords": {
+      "es": ["salida de video", "pantalla", "monitor", "televisión", "proyector", "displayport", "conectar pantalla"],
+      "en": ["video output", "display", "monitor", "tv", "projector", "displayport", "connect screen"]
+    }
+  },
+  "serial-port": {
+    "label": { "es": "Puerto serial", "en": "Serial port", "pt": "Porta serial", "fr": "Port série", "de": "Serielle Schnittstelle", "it": "Porta seriale", "ja": "シリアルポート", "zh": "串口", "ko": "시리얼 포트", "ar": "منفذ تسلسلي" },
+    "keywords": {
+      "es": ["rs-232", "vga", "d-sub", "db9", "equipo industrial", "hardware antiguo", "consola"],
+      "en": ["rs-232", "vga", "d-sub", "db9", "industrial equipment", "legacy hardware", "console port"]
+    }
+  },
+  "power-inlet": {
+    "label": { "es": "Entrada de corriente", "en": "Power inlet", "pt": "Entrada de energia", "fr": "Prise d’alimentation", "de": "Kaltgerätebuchse", "it": "Presa di alimentazione", "ja": "電源インレット", "zh": "电源输入口", "ko": "전원 입력 단자", "ar": "مدخل الطاقة" },
+    "keywords": {
+      "es": ["iec", "cable de poder", "fuente de poder", "monitor", "servidor", "conector de alimentación", "c13"],
+      "en": ["iec", "power cord", "power supply", "monitor", "server", "kettle plug", "c13"]
+    }
+  },
+  "audio-jack": {
+    "label": { "es": "Conector de audio", "en": "Audio jack", "pt": "Conector de áudio", "fr": "Prise jack", "de": "Klinkenstecker", "it": "Jack audio", "ja": "オーディオプラグ", "zh": "音频插头", "ko": "오디오 잭", "ar": "مقبس الصوت" },
+    "keywords": {
+      "es": ["plug 3.5", "audífonos", "minijack", "entrada de línea", "salida de línea", "auxiliar", "sonido"],
+      "en": ["3.5 mm", "headphones", "aux", "line in", "line out", "headphone plug", "trs"]
+    }
+  },
+  "barrel-connector": {
+    "label": { "es": "Conector de barril", "en": "Barrel connector", "pt": "Plugue P4", "fr": "Fiche jack DC", "de": "Hohlstecker", "it": "Spinotto DC", "ja": "DCプラグ", "zh": "DC圆头插头", "ko": "DC 배럴 잭", "ar": "قابس DC أسطواني" },
+    "keywords": {
+      "es": ["eliminador", "adaptador de corriente", "plug dc", "router", "tarjeta de desarrollo", "cargador", "alimentación"],
+      "en": ["dc plug", "power adapter", "wall adapter", "router", "dev board", "charger", "dc jack"]
+    }
+  },
+  "jumper-wire": {
+    "label": { "es": "Cable jumper", "en": "Jumper wire", "pt": "Cabo jumper", "fr": "Fil de prototypage", "de": "Jumper-Kabel", "it": "Cavetto jumper", "ja": "ジャンパーワイヤー", "zh": "杜邦线", "ko": "점퍼 와이어", "ar": "سلك توصيل" },
+    "keywords": {
+      "es": ["dupont", "protoboard", "conexión rápida", "prototipo", "macho hembra", "puente", "cablear"],
+      "en": ["dupont", "breadboard", "quick connection", "prototype", "male to female", "bridge", "patch wire"]
+    }
+  },
+  "pin-header": {
+    "label": { "es": "Tira de pines", "en": "Pin header", "pt": "Barra de pinos", "fr": "Barrette de broches", "de": "Stiftleiste", "it": "Strip di pin", "ja": "ピンヘッダー", "zh": "排针", "ko": "핀 헤더", "ar": "شريط دبابيس" },
+    "keywords": {
+      "es": ["header", "gpio", "conexión de placa", "soldar", "pines macho", "conector", "puertos"],
+      "en": ["header", "gpio", "board connection", "solder", "male pins", "connector", "breakout"]
+    }
+  },
+  "cable-adapter": {
+    "label": { "es": "Adaptador de cable", "en": "Cable adapter", "pt": "Adaptador de cabo", "fr": "Adaptateur de câble", "de": "Kabeladapter", "it": "Adattatore per cavo", "ja": "変換アダプター", "zh": "转接头", "ko": "변환 어댑터", "ar": "محوّل كابل" },
+    "keywords": {
+      "es": ["dongle", "convertidor", "usb-c a hdmi", "convertir conector", "accesorio", "compatibilidad", "hub"],
+      "en": ["dongle", "converter", "usb-c to hdmi", "convert connector", "accessory", "compatibility", "hub"]
+    }
+  },
+  "cable-splitter": {
+    "label": { "es": "Cable divisor", "en": "Splitter cable", "pt": "Cabo divisor", "fr": "Câble répartiteur", "de": "Y-Kabel", "it": "Cavo sdoppiatore", "ja": "分岐ケーブル", "zh": "一分二线", "ko": "분배 케이블", "ar": "كابل مقسِّم" },
+    "keywords": {
+      "es": ["cable en y", "duplicador", "uno a dos", "bifurcación", "accesorio", "dos salidas", "audífonos dobles"],
+      "en": ["y cable", "one to two", "fork", "duplicator", "accessory", "dual output", "y adapter"]
+    }
+  },
+  "ssd": {
+    "label": { "es": "Unidad SSD", "en": "SSD", "pt": "Unidade SSD", "fr": "Disque SSD", "de": "SSD", "it": "Unità SSD", "ja": "SSD", "zh": "固态硬盘", "ko": "SSD", "ar": "قرص SSD" },
+    "keywords": {
+      "es": ["m.2", "nvme", "unidad de estado sólido", "almacenamiento", "ampliar almacenamiento", "especificaciones", "capacidad"],
+      "en": ["m.2", "nvme", "solid-state drive", "storage", "storage upgrade", "specs", "capacity"]
+    }
+  },
+  "power-supply": {
+    "label": { "es": "Fuente de poder", "en": "Power supply", "pt": "Fonte de alimentação", "fr": "Alimentation", "de": "Netzteil", "it": "Alimentatore", "ja": "電源ユニット", "zh": "电源", "ko": "파워 서플라이", "ar": "مزود الطاقة" },
+    "keywords": {
+      "es": ["psu", "armar pc", "watts", "alimentación del servidor", "80 plus", "fuente atx", "energía"],
+      "en": ["psu", "pc build", "watts", "server power", "80 plus", "atx", "power unit"]
+    }
+  },
+  "bench-power-supply": {
+    "label": { "es": "Fuente de laboratorio", "en": "Bench power supply", "pt": "Fonte de bancada", "fr": "Alimentation de laboratoire", "de": "Labornetzteil", "it": "Alimentatore da banco", "ja": "安定化電源", "zh": "直流稳压电源", "ko": "실험용 전원 공급기", "ar": "مزود طاقة معملي" },
+    "keywords": {
+      "es": ["fuente variable", "banco de electrónica", "pruebas", "voltaje ajustable", "límite de corriente", "taller", "fuente regulada"],
+      "en": ["lab power supply", "electronics bench", "testing", "adjustable voltage", "current limit", "workshop", "regulated supply"]
+    }
+  },
+  "ups": {
+    "label": { "es": "No break", "en": "UPS", "pt": "Nobreak", "fr": "Onduleur", "de": "USV", "it": "Gruppo di continuità", "ja": "無停電電源装置", "zh": "不间断电源", "ko": "무정전 전원 장치", "ar": "مزود طاقة غير منقطعة" },
+    "keywords": {
+      "es": ["ups", "respaldo de energía", "apagón", "cuarto de servidores", "batería de respaldo", "regulador", "corte de luz"],
+      "en": ["battery backup", "backup power", "power outage", "server room", "blackout", "surge protection", "uninterruptible power supply"]
+    }
+  },
+  "battery-cell": {
+    "label": { "es": "Pila", "en": "Battery cell", "pt": "Pilha", "fr": "Pile", "de": "Rundzelle", "it": "Pila", "ja": "円筒形電池", "zh": "圆柱电池", "ko": "원통형 배터리", "ar": "بطارية أسطوانية" },
+    "keywords": {
+      "es": ["aa", "aaa", "18650", "recargable", "alcalina", "cambiar baterías", "batería de litio"],
+      "en": ["aa", "aaa", "18650", "rechargeable", "alkaline", "replace batteries", "lithium cell"]
+    }
+  },
+  "coin-cell": {
+    "label": { "es": "Pila de botón", "en": "Coin cell", "pt": "Bateria de botão", "fr": "Pile bouton", "de": "Knopfzelle", "it": "Batteria a bottone", "ja": "コイン電池", "zh": "纽扣电池", "ko": "코인 전지", "ar": "بطارية قرصية" },
+    "keywords": {
+      "es": ["cr2032", "reloj", "control remoto", "tarjeta madre", "bios", "llave del auto", "báscula"],
+      "en": ["cr2032", "button cell", "watch battery", "remote control", "motherboard", "cmos battery", "key fob"]
+    }
+  },
+  "pouch-cell": {
+    "label": { "es": "Batería LiPo", "en": "LiPo battery", "pt": "Bateria LiPo", "fr": "Batterie LiPo", "de": "LiPo-Akku", "it": "Batteria LiPo", "ja": "リポバッテリー", "zh": "软包电池", "ko": "파우치형 배터리", "ar": "بطارية ليثيوم بوليمر" },
+    "keywords": {
+      "es": ["polímero de litio", "batería plana", "dron", "celular", "wearable", "batería inflada", "recargable"],
+      "en": ["lithium polymer", "pouch cell", "flat battery", "drone", "phone battery", "wearable", "swollen battery"]
+    }
+  },
+  "battery-pack": {
+    "label": { "es": "Paquete de baterías", "en": "Battery pack", "pt": "Pacote de baterias", "fr": "Bloc-batterie", "de": "Akkupack", "it": "Pacco batterie", "ja": "バッテリーパック", "zh": "电池组", "ko": "배터리 팩", "ar": "حزمة بطاريات" },
+    "keywords": {
+      "es": ["bicicleta eléctrica", "herramientas inalámbricas", "módulo de baterías", "celdas", "almacenamiento de energía", "batería de auto eléctrico", "autonomía"],
+      "en": ["e-bike", "cordless tools", "battery module", "cells", "energy storage", "ev battery", "runtime"]
+    }
+  },
+  "nine-volt-battery": {
+    "label": { "es": "Pila de 9 V", "en": "9-volt battery", "pt": "Bateria de 9 V", "fr": "Pile 9 V", "de": "9-Volt-Block", "it": "Batteria da 9 V", "ja": "9V電池", "zh": "9伏电池", "ko": "9V 배터리", "ar": "بطارية 9 فولت" },
+    "keywords": {
+      "es": ["pila cuadrada", "detector de humo", "multímetro", "equipo de prueba", "broche de conexión", "alarma", "micrófono inalámbrico"],
+      "en": ["pp3", "smoke alarm", "smoke detector", "multimeter", "test gear", "battery snap", "transistor radio"]
+    }
+  },
+  "multimeter": {
+    "label": { "es": "Multímetro", "en": "Multimeter", "pt": "Multímetro", "fr": "Multimètre", "de": "Multimeter", "it": "Multimetro", "ja": "マルチメーター", "zh": "万用表", "ko": "멀티미터", "ar": "جهاز قياس متعدد" },
+    "keywords": {
+      "es": ["medir voltaje", "medir corriente", "resistencia", "continuidad", "tester", "diagnóstico eléctrico", "voltímetro"],
+      "en": ["measure voltage", "measure current", "resistance", "continuity", "tester", "electrical diagnosis", "voltmeter"]
+    }
+  },
+  "oscilloscope": {
+    "label": { "es": "Osciloscopio", "en": "Oscilloscope", "pt": "Osciloscópio", "fr": "Oscilloscope", "de": "Oszilloskop", "it": "Oscilloscopio", "ja": "オシロスコープ", "zh": "示波器", "ko": "오실로스코프", "ar": "راسم الإشارات" },
+    "keywords": {
+      "es": ["análisis de señales", "forma de onda", "depurar hardware", "medición", "frecuencia", "laboratorio de electrónica", "sondas"],
+      "en": ["scope", "signal analysis", "waveform", "debug hardware", "measurement", "electronics lab", "probe"]
+    }
+  },
+  "clamp-meter": {
+    "label": { "es": "Amperímetro de gancho", "en": "Clamp meter", "pt": "Alicate amperímetro", "fr": "Pince ampèremétrique", "de": "Stromzange", "it": "Pinza amperometrica", "ja": "クランプメーター", "zh": "钳形表", "ko": "클램프 미터", "ar": "أميتر كلابي" },
+    "keywords": {
+      "es": ["medir corriente", "pinza amperimétrica", "electricista", "amperes", "instalación eléctrica", "consumo eléctrico", "sin cortar el cable"],
+      "en": ["measure current", "amp clamp", "electrician", "amps", "electrical installation", "power draw", "non-contact"]
+    }
+  },
+  "soldering-station": {
+    "label": { "es": "Estación de soldadura", "en": "Soldering station", "pt": "Estação de solda", "fr": "Station de soudage", "de": "Lötstation", "it": "Stazione saldante", "ja": "はんだステーション", "zh": "焊台", "ko": "납땜 스테이션", "ar": "محطة لحام" },
+    "keywords": {
+      "es": ["cautín", "soldar", "reparar placas", "estaño", "banco de electrónica", "reparación", "punta"],
+      "en": ["soldering iron", "solder", "board repair", "electronics bench", "repair", "rework", "iron tip"]
+    }
+  },
+  "wire-spool": {
+    "label": { "es": "Carrete de alambre", "en": "Wire spool", "pt": "Carretel de fio", "fr": "Bobine de fil", "de": "Drahtspule", "it": "Bobina di filo", "ja": "ワイヤーリール", "zh": "线轴", "ko": "와이어 릴", "ar": "بكرة سلك" },
+    "keywords": {
+      "es": ["soldadura", "estaño", "cable", "rollo", "insumos", "cablear", "material de taller"],
+      "en": ["solder wire", "hookup wire", "cable", "roll", "supplies", "wiring", "workshop material"]
+    }
+  },
+  "printer-3d": {
+    "label": { "es": "Impresora 3D", "en": "3D printer", "pt": "Impressora 3D", "fr": "Imprimante 3D", "de": "3D-Drucker", "it": "Stampante 3D", "ja": "3Dプリンター", "zh": "3D打印机", "ko": "3D 프린터", "ar": "طابعة ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["imprimir en 3d", "fdm", "manufactura aditiva", "granja de impresión", "espacio maker", "prototipo", "fabricación"],
+      "en": ["3d printing", "fdm", "additive manufacturing", "print farm", "maker space", "prototype", "fabrication"]
+    }
+  },
+  "printer-3d-resin": {
+    "label": { "es": "Impresora 3D de resina", "en": "Resin 3D printer", "pt": "Impressora 3D de resina", "fr": "Imprimante 3D à résine", "de": "Resin-3D-Drucker", "it": "Stampante 3D a resina", "ja": "光造形3Dプリンター", "zh": "光固化3D打印机", "ko": "레진 3D 프린터", "ar": "طابعة ثلاثية الأبعاد بالراتنج" },
+    "keywords": {
+      "es": ["sla", "msla", "alta definición", "dental", "joyería", "miniaturas", "fotocurado"],
+      "en": ["sla", "msla", "high detail", "dental", "jewelry", "miniatures", "photopolymer"]
+    }
+  },
+  "filament-spool": {
+    "label": { "es": "Carrete de filamento", "en": "Filament spool", "pt": "Carretel de filamento", "fr": "Bobine de filament", "de": "Filamentspule", "it": "Bobina di filamento", "ja": "フィラメントスプール", "zh": "耗材盘", "ko": "필라멘트 스풀", "ar": "بكرة خيوط الطباعة" },
+    "keywords": {
+      "es": ["pla", "petg", "abs", "material de impresión", "rollo", "ams", "insumos"],
+      "en": ["pla", "petg", "abs", "printing material", "ams slot", "roll", "supplies"]
+    }
+  },
+  "extruder": {
+    "label": { "es": "Extrusor", "en": "Extruder", "pt": "Extrusora", "fr": "Extrudeur", "de": "Extruder", "it": "Estrusore", "ja": "エクストルーダー", "zh": "喷头", "ko": "익스트루더", "ar": "رأس البثق" },
+    "keywords": {
+      "es": ["hotend", "boquilla", "cabezal de impresión", "temperatura de boquilla", "nozzle", "impresora 3d", "atasco"],
+      "en": ["hotend", "nozzle", "print head", "nozzle temperature", "3d printer", "clog", "toolhead"]
+    }
+  },
+  "heated-bed": {
+    "label": { "es": "Cama caliente", "en": "Heated bed", "pt": "Mesa aquecida", "fr": "Plateau chauffant", "de": "Heizbett", "it": "Piatto riscaldato", "ja": "ヒートベッド", "zh": "热床", "ko": "히팅 베드", "ar": "سطح طباعة ساخن" },
+    "keywords": {
+      "es": ["temperatura de la cama", "placa de impresión", "superficie de impresión", "adherencia", "nivelación", "impresora 3d", "warping"],
+      "en": ["bed temperature", "build plate", "print surface", "adhesion", "bed leveling", "3d printer", "warping"]
+    }
+  },
+  "model-slicing": {
+    "label": { "es": "Laminar modelo", "en": "Slice model", "pt": "Fatiar modelo", "fr": "Trancher le modèle", "de": "Modell slicen", "it": "Slicing del modello", "ja": "モデルをスライス", "zh": "模型切片", "ko": "모델 슬라이싱", "ar": "تقطيع النموذج" },
+    "keywords": {
+      "es": ["slicer", "capas", "preparar impresión", "gcode", "cura", "rebanar", "altura de capa"],
+      "en": ["slicer", "layers", "prepare print", "gcode", "layer height", "toolpath", "cura"]
+    }
+  },
+  "scan-3d": {
+    "label": { "es": "Escaneo 3D", "en": "3D scan", "pt": "Escaneamento 3D", "fr": "Numérisation 3D", "de": "3D-Scan", "it": "Scansione 3D", "ja": "3Dスキャン", "zh": "3D扫描", "ko": "3D 스캔", "ar": "مسح ثلاثي الأبعاد" },
+    "keywords": {
+      "es": ["escáner 3d", "fotogrametría", "digitalizar objeto", "modelo 3d", "nube de puntos", "ingeniería inversa", "captura"],
+      "en": ["3d scanner", "photogrammetry", "digitize object", "3d model", "point cloud", "reverse engineering", "capture"]
+    }
+  },
+  "laser-cutter": {
+    "label": { "es": "Cortadora láser", "en": "Laser cutter", "pt": "Cortadora a laser", "fr": "Découpeuse laser", "de": "Lasercutter", "it": "Tagliatrice laser", "ja": "レーザーカッター", "zh": "激光切割机", "ko": "레이저 커터", "ar": "آلة قطع بالليزر" },
+    "keywords": {
+      "es": ["grabado láser", "grabadora", "corte de acrílico", "mdf", "fabricación", "espacio maker", "co2"],
+      "en": ["laser engraver", "engraving", "acrylic cutting", "mdf", "fabrication", "maker space", "co2 laser"]
+    }
+  },
+  "qubit": {
+    "label": { "es": "Qubit", "en": "Qubit", "pt": "Qubit", "fr": "Qubit", "de": "Qubit", "it": "Qubit", "ja": "量子ビット", "zh": "量子比特", "ko": "큐비트", "ar": "كيوبت" },
+    "keywords": {
+      "es": ["computación cuántica", "estado cuántico", "superposición", "esfera de bloch", "bit cuántico", "entrelazamiento", "física cuántica"],
+      "en": ["quantum computing", "quantum state", "superposition", "bloch sphere", "quantum bit", "entanglement", "quantum physics"]
+    }
+  },
+  "firmware-update": {
+    "label": { "es": "Actualizar firmware", "en": "Update firmware", "pt": "Atualizar firmware", "fr": "Mettre à jour le firmware", "de": "Firmware aktualisieren", "it": "Aggiorna firmware", "ja": "ファームウェアを更新", "zh": "更新固件", "ko": "펌웨어 업데이트", "ar": "تحديث البرنامج الثابت" },
+    "keywords": {
+      "es": ["flashear", "grabar chip", "ota", "actualización del dispositivo", "nueva versión", "iot", "cargar programa"],
+      "en": ["flash", "flash chip", "ota update", "device update", "new version", "iot", "upload sketch"]
+    }
+  },
+  "microchip-lock": {
+    "label": { "es": "Chip de seguridad", "en": "Security chip", "pt": "Chip de segurança", "fr": "Puce de sécurité", "de": "Sicherheitschip", "it": "Chip di sicurezza", "ja": "セキュリティチップ", "zh": "安全芯片", "ko": "보안 칩", "ar": "شريحة أمان" },
+    "keywords": {
+      "es": ["tpm", "elemento seguro", "arranque seguro", "cifrado por hardware", "enclave seguro", "llaves criptográficas", "secure boot"],
+      "en": ["tpm", "secure element", "secure boot", "hardware encryption", "secure enclave", "cryptographic keys", "hardware security"]
+    }
+  },
+  "microchip-search": {
+    "label": { "es": "Buscar componente", "en": "Find component", "pt": "Buscar componente", "fr": "Rechercher un composant", "de": "Bauteil suchen", "it": "Cerca componente", "ja": "部品を検索", "zh": "查找元件", "ko": "부품 검색", "ar": "البحث عن مكوّن" },
+    "keywords": {
+      "es": ["buscar pieza", "catálogo de componentes", "tienda de electrónica", "número de parte", "biblioteca eda", "datasheet", "refacciones"],
+      "en": ["part search", "component catalog", "electronics store", "part number", "eda library", "datasheet", "sourcing"]
+    }
+  },
+  "sensor-module-alert": {
+    "label": { "es": "Falla del sensor", "en": "Sensor fault", "pt": "Falha do sensor", "fr": "Défaillance du capteur", "de": "Sensorfehler", "it": "Guasto del sensore", "ja": "センサーの異常", "zh": "传感器故障", "ko": "센서 오류", "ar": "عطل في المستشعر" },
+    "keywords": {
+      "es": ["sensor desconectado", "sin señal", "lectura anómala", "monitoreo iot", "dispositivo fuera de línea", "alerta", "telemetría"],
+      "en": ["sensor offline", "no signal", "abnormal reading", "iot monitoring", "device offline", "alert", "telemetry"]
+    }
+  },
+  "sensor-module-plus": {
+    "label": { "es": "Agregar sensor", "en": "Add sensor", "pt": "Adicionar sensor", "fr": "Ajouter un capteur", "de": "Sensor hinzufügen", "it": "Aggiungi sensore", "ja": "センサーを追加", "zh": "添加传感器", "ko": "센서 추가", "ar": "إضافة مستشعر" },
+    "keywords": {
+      "es": ["vincular", "emparejar dispositivo", "configurar iot", "registrar sensor", "nuevo dispositivo", "alta de dispositivo", "aprovisionar"],
+      "en": ["pair", "pair device", "iot setup", "register sensor", "new device", "onboard device", "provision"]
+    }
+  },
+  "microcontroller-board-check": {
+    "label": { "es": "Placa conectada", "en": "Board connected", "pt": "Placa conectada", "fr": "Carte connectée", "de": "Board verbunden", "it": "Scheda connessa", "ja": "ボード接続済み", "zh": "开发板已连接", "ko": "보드 연결됨", "ar": "اللوحة متصلة" },
+    "keywords": {
+      "es": ["placa detectada", "puerto encontrado", "listo para cargar", "ide", "flasheo correcto", "dispositivo reconocido", "carga exitosa"],
+      "en": ["board detected", "port found", "ready to upload", "ide", "flash succeeded", "device recognized", "upload complete"]
+    }
+  },
+  "printer-3d-alert": {
+    "label": { "es": "Error de impresión 3D", "en": "3D print error", "pt": "Erro de impressão 3D", "fr": "Erreur d’impression 3D", "de": "3D-Druckfehler", "it": "Errore di stampa 3D", "ja": "3Dプリントのエラー", "zh": "3D打印错误", "ko": "3D 프린트 오류", "ar": "خطأ في الطباعة ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["impresión fallida", "atasco", "espagueti", "falla de la impresora", "pausa por error", "panel de la impresora", "revisar impresora"],
+      "en": ["print failed", "clog", "spaghetti", "printer fault", "paused on error", "printer dashboard", "check printer"]
+    }
+  },
+  "printer-3d-check": {
+    "label": { "es": "Impresión 3D terminada", "en": "3D print finished", "pt": "Impressão 3D concluída", "fr": "Impression 3D terminée", "de": "3D-Druck fertig", "it": "Stampa 3D completata", "ja": "3Dプリント完了", "zh": "3D打印完成", "ko": "3D 프린트 완료", "ar": "اكتملت الطباعة ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["impresión lista", "trabajo completado", "pieza lista", "retirar pieza", "panel de la impresora", "éxito", "granja de impresión"],
+      "en": ["print done", "job complete", "part ready", "remove part", "printer dashboard", "success", "print farm"]
+    }
+  },
+  "printer-3d-clock": {
+    "label": { "es": "Tiempo de impresión 3D", "en": "3D print time", "pt": "Tempo de impressão 3D", "fr": "Durée d’impression 3D", "de": "3D-Druckdauer", "it": "Tempo di stampa 3D", "ja": "3Dプリントの残り時間", "zh": "3D打印剩余时间", "ko": "3D 프린트 남은 시간", "ar": "وقت الطباعة ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["tiempo restante", "en cola", "impresión programada", "progreso", "tiempo estimado", "panel de la impresora", "pendiente"],
+      "en": ["time remaining", "queued", "scheduled print", "progress", "eta", "printer dashboard", "pending"]
+    }
+  },
+  "filament-spool-alert": {
+    "label": { "es": "Filamento agotado", "en": "Filament runout", "pt": "Filamento esgotado", "fr": "Fin de filament", "de": "Filament aufgebraucht", "it": "Filamento esaurito", "ja": "フィラメント切れ", "zh": "耗材用尽", "ko": "필라멘트 소진", "ar": "نفاد خيوط الطباعة" },
+    "keywords": {
+      "es": ["sin filamento", "cambiar carrete", "rollo vacío", "pausa de impresión", "advertencia", "sensor de filamento", "reponer material"],
+      "en": ["out of filament", "change spool", "empty spool", "print paused", "warning", "runout sensor", "reload material"]
+    }
+  },
+  "power-supply-alert": {
+    "label": { "es": "Falla de la fuente de poder", "en": "Power supply fault", "pt": "Falha da fonte de alimentação", "fr": "Panne d’alimentation", "de": "Netzteilfehler", "it": "Guasto dell’alimentatore", "ja": "電源ユニットの異常", "zh": "电源故障", "ko": "파워 서플라이 오류", "ar": "عطل في مزود الطاقة" },
+    "keywords": {
+      "es": ["psu dañada", "sin energía", "sobrecarga", "monitor de hardware", "servidor", "alerta", "fuente redundante"],
+      "en": ["psu failure", "no power", "overload", "hardware monitor", "server health", "alert", "redundant psu"]
+    }
+  },
+  "case-fan-alert": {
+    "label": { "es": "Falla del ventilador", "en": "Fan failure", "pt": "Falha da ventoinha", "fr": "Panne de ventilateur", "de": "Lüfterausfall", "it": "Guasto della ventola", "ja": "ファンの異常", "zh": "风扇故障", "ko": "팬 고장", "ar": "عطل في المروحة" },
+    "keywords": {
+      "es": ["abanico detenido", "rpm en cero", "sobrecalentamiento", "monitor de hardware", "salud del servidor", "alerta", "falla de enfriamiento"],
+      "en": ["fan stopped", "zero rpm", "overheating", "hardware monitor", "server health", "alert", "cooling failure"]
+    }
+  }
+}

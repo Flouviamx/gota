@@ -1,0 +1,961 @@
+{
+  "model": {
+    "label": { "es": "Modelo de IA", "en": "AI model", "pt": "Modelo de IA", "fr": "Modèle d’IA", "de": "KI-Modell", "it": "Modello di IA", "ja": "AIモデル", "zh": "AI 模型", "ko": "AI 모델", "ar": "نموذج ذكاء اصطناعي" },
+    "keywords": {
+      "es": ["llm", "modelo de lenguaje", "lista de modelos", "ajustes del modelo", "motor de ia", "red entrenada", "desplegar"],
+      "en": ["llm", "language model", "model list", "model settings", "ai engine", "trained network", "deploy"]
+    }
+  },
+  "model-card": {
+    "label": { "es": "Ficha del modelo", "en": "Model card", "pt": "Ficha do modelo", "fr": "Fiche du modèle", "de": "Modellkarte", "it": "Scheda del modello", "ja": "モデルカード", "zh": "模型卡", "ko": "모델 카드", "ar": "بطاقة النموذج" },
+    "keywords": {
+      "es": ["documentación del modelo", "limitaciones", "licencia", "datos de entrenamiento", "uso previsto", "transparencia", "especificaciones"],
+      "en": ["model documentation", "limitations", "license", "training data", "intended use", "transparency", "specs"]
+    }
+  },
+  "model-picker": {
+    "label": { "es": "Elegir modelo", "en": "Choose model", "pt": "Escolher modelo", "fr": "Choisir le modèle", "de": "Modell auswählen", "it": "Scegli il modello", "ja": "モデルを選択", "zh": "选择模型", "ko": "모델 선택", "ar": "اختيار النموذج" },
+    "keywords": {
+      "es": ["selector de modelo", "cambiar de modelo", "menú de modelos", "playground", "caja del chat", "versión del modelo", "configuración"],
+      "en": ["model selector", "switch model", "model dropdown", "playground", "chat composer", "model version", "settings"]
+    }
+  },
+  "model-compare": {
+    "label": { "es": "Comparar modelos", "en": "Compare models", "pt": "Comparar modelos", "fr": "Comparer les modèles", "de": "Modelle vergleichen", "it": "Confronta i modelli", "ja": "モデルを比較", "zh": "比较模型", "ko": "모델 비교", "ar": "مقارنة النماذج" },
+    "keywords": {
+      "es": ["lado a lado", "arena", "prueba a/b", "evaluación", "benchmark", "elegir el mejor", "respuestas en paralelo"],
+      "en": ["side by side", "arena", "a/b test", "eval", "benchmark", "pick the best", "parallel answers"]
+    }
+  },
+  "model-training": {
+    "label": { "es": "Entrenamiento del modelo", "en": "Model training", "pt": "Treinamento do modelo", "fr": "Entraînement du modèle", "de": "Modelltraining", "it": "Addestramento del modello", "ja": "モデルの学習", "zh": "模型训练", "ko": "모델 학습", "ar": "تدريب النموذج" },
+    "keywords": {
+      "es": ["entrenar", "trabajo de entrenamiento", "ejecución", "épocas", "aprendizaje automático", "progreso", "gpu"],
+      "en": ["train", "training job", "training run", "epochs", "machine learning", "progress", "gpu"]
+    }
+  },
+  "model-fine-tune": {
+    "label": { "es": "Ajuste fino", "en": "Fine-tuning", "pt": "Ajuste fino", "fr": "Affinage du modèle", "de": "Feinabstimmung", "it": "Fine-tuning", "ja": "ファインチューニング", "zh": "模型微调", "ko": "파인튜닝", "ar": "الضبط الدقيق" },
+    "keywords": {
+      "es": ["fine-tuning", "entrenar con tus datos", "modelo personalizado", "modelo base", "adaptar", "lora", "especializar"],
+      "en": ["train on your data", "custom model", "base model", "adapt", "lora", "specialize", "domain adaptation"]
+    }
+  },
+  "model-distillation": {
+    "label": { "es": "Destilación de modelos", "en": "Model distillation", "pt": "Destilação de modelos", "fr": "Distillation de modèle", "de": "Modelldestillation", "it": "Distillazione del modello", "ja": "モデルの蒸留", "zh": "模型蒸馏", "ko": "모델 증류", "ar": "تقطير النموذج" },
+    "keywords": {
+      "es": ["modelo maestro", "modelo alumno", "comprimir", "modelo más pequeño", "más rápido", "reducir costo", "eficiencia"],
+      "en": ["teacher model", "student model", "compress", "smaller model", "faster", "reduce cost", "efficiency"]
+    }
+  },
+  "model-routing": {
+    "label": { "es": "Enrutamiento de modelos", "en": "Model routing", "pt": "Roteamento de modelos", "fr": "Routage des modèles", "de": "Modell-Routing", "it": "Instradamento dei modelli", "ja": "モデルルーティング", "zh": "模型路由", "ko": "모델 라우팅", "ar": "توجيه النماذج" },
+    "keywords": {
+      "es": ["gateway de ia", "router", "elegir modelo automáticamente", "balanceo de carga", "respaldo", "proveedores", "repartir solicitudes"],
+      "en": ["ai gateway", "router", "auto model selection", "load balancing", "fallback", "providers", "dispatch requests"]
+    }
+  },
+  "model-checkpoint": {
+    "label": { "es": "Punto de control del modelo", "en": "Model checkpoint", "pt": "Checkpoint do modelo", "fr": "Point de contrôle du modèle", "de": "Modell-Checkpoint", "it": "Checkpoint del modello", "ja": "モデルのチェックポイント", "zh": "模型检查点", "ko": "모델 체크포인트", "ar": "نقطة حفظ النموذج" },
+    "keywords": {
+      "es": ["checkpoint", "guardar estado", "reanudar entrenamiento", "revertir", "versión del modelo", "pesos guardados", "respaldo"],
+      "en": ["save state", "resume training", "roll back", "model version", "saved weights", "snapshot", "restore point"]
+    }
+  },
+  "model-drift": {
+    "label": { "es": "Deriva del modelo", "en": "Model drift", "pt": "Deriva do modelo", "fr": "Dérive du modèle", "de": "Modelldrift", "it": "Deriva del modello", "ja": "モデルドリフト", "zh": "模型漂移", "ko": "모델 드리프트", "ar": "انحراف النموذج" },
+    "keywords": {
+      "es": ["deriva de datos", "monitoreo del modelo", "degradación", "cambio en los datos", "producción", "reentrenar", "desviación"],
+      "en": ["data drift", "model monitoring", "degradation", "distribution shift", "production", "retrain", "concept drift"]
+    }
+  },
+  "inference": {
+    "label": { "es": "Inferencia", "en": "Inference", "pt": "Inferência", "fr": "Inférence", "de": "Inferenz", "it": "Inferenza", "ja": "推論", "zh": "推理", "ko": "추론", "ar": "الاستدلال" },
+    "keywords": {
+      "es": ["ejecutar modelo", "llamada a la api", "endpoint", "predicción", "entrada y salida", "servir modelo", "latencia"],
+      "en": ["run model", "api call", "endpoint", "prediction", "input and output", "model serving", "latency"]
+    }
+  },
+  "quantization": {
+    "label": { "es": "Cuantización", "en": "Quantization", "pt": "Quantização", "fr": "Quantification", "de": "Quantisierung", "it": "Quantizzazione", "ja": "量子化", "zh": "量化", "ko": "양자화", "ar": "التكميم" },
+    "keywords": {
+      "es": ["comprimir modelo", "menos bits", "int8", "4 bits", "modelo ligero", "precisión", "correr en local"],
+      "en": ["compress model", "fewer bits", "int8", "4-bit", "lightweight model", "precision", "run locally"]
+    }
+  },
+  "multimodal": {
+    "label": { "es": "Modelo multimodal", "en": "Multimodal model", "pt": "Modelo multimodal", "fr": "Modèle multimodal", "de": "Multimodales Modell", "it": "Modello multimodale", "ja": "マルチモーダルモデル", "zh": "多模态模型", "ko": "멀티모달 모델", "ar": "نموذج متعدد الوسائط" },
+    "keywords": {
+      "es": ["texto e imagen", "audio", "visión", "voz", "varios formatos", "entrada mixta", "video"],
+      "en": ["text and image", "audio", "vision", "voice", "mixed input", "multiple formats", "video"]
+    }
+  },
+  "mixture-of-experts": {
+    "label": { "es": "Mezcla de expertos", "en": "Mixture of experts", "pt": "Mistura de especialistas", "fr": "Mélange d’experts", "de": "Mixture of Experts", "it": "Mixture of experts", "ja": "混合エキスパート", "zh": "混合专家模型", "ko": "전문가 혼합", "ar": "خليط الخبراء" },
+    "keywords": {
+      "es": ["moe", "expertos", "enrutador", "subredes", "arquitectura", "activación dispersa", "modelo grande"],
+      "en": ["moe", "experts", "router", "subnetworks", "architecture", "sparse activation", "gating"]
+    }
+  },
+  "model-check": {
+    "label": { "es": "Modelo verificado", "en": "Verified model", "pt": "Modelo verificado", "fr": "Modèle vérifié", "de": "Geprüftes Modell", "it": "Modello verificato", "ja": "検証済みのモデル", "zh": "已验证的模型", "ko": "검증된 모델", "ar": "نموذج تم التحقق منه" },
+    "keywords": {
+      "es": ["aprobado", "pasó la evaluación", "validado", "listo para producción", "prueba superada", "certificado", "visto bueno"],
+      "en": ["approved", "passed eval", "validated", "production ready", "test passed", "certified", "signed off"]
+    }
+  },
+  "model-download": {
+    "label": { "es": "Descargar modelo", "en": "Download model", "pt": "Baixar modelo", "fr": "Télécharger le modèle", "de": "Modell herunterladen", "it": "Scarica il modello", "ja": "モデルをダウンロード", "zh": "下载模型", "ko": "모델 다운로드", "ar": "تنزيل النموذج" },
+    "keywords": {
+      "es": ["pesos", "correr en local", "modelo abierto", "sin conexión", "guardar en el equipo", "código abierto", "obtener"],
+      "en": ["weights", "run locally", "open model", "offline", "save to device", "open source", "pull"]
+    }
+  },
+  "model-plus": {
+    "label": { "es": "Agregar modelo", "en": "Add model", "pt": "Adicionar modelo", "fr": "Ajouter un modèle", "de": "Modell hinzufügen", "it": "Aggiungi modello", "ja": "モデルを追加", "zh": "添加模型", "ko": "모델 추가", "ar": "إضافة نموذج" },
+    "keywords": {
+      "es": ["nuevo modelo", "conectar proveedor", "proveedor de ia", "api key", "integrar", "registrar modelo", "añadir"],
+      "en": ["new model", "connect provider", "ai provider", "api key", "integrate", "register model", "create"]
+    }
+  },
+  "model-alert": {
+    "label": { "es": "Alerta del modelo", "en": "Model alert", "pt": "Alerta do modelo", "fr": "Alerte du modèle", "de": "Modellwarnung", "it": "Avviso sul modello", "ja": "モデルの警告", "zh": "模型警告", "ko": "모델 경고", "ar": "تنبيه بشأن النموذج" },
+    "keywords": {
+      "es": ["modelo degradado", "falla", "obsoleto", "fuera de servicio", "error", "atención", "retirado"],
+      "en": ["degraded model", "failing", "deprecated", "outage", "error", "attention", "sunset"]
+    }
+  },
+  "model-lock": {
+    "label": { "es": "Modelo restringido", "en": "Restricted model", "pt": "Modelo restrito", "fr": "Modèle restreint", "de": "Eingeschränktes Modell", "it": "Modello riservato", "ja": "制限されたモデル", "zh": "受限模型", "ko": "제한된 모델", "ar": "نموذج مقيد" },
+    "keywords": {
+      "es": ["privado", "bloqueado", "no incluido en tu plan", "mejorar plan", "permisos", "acceso limitado", "premium"],
+      "en": ["private", "locked", "not in your plan", "upgrade", "permissions", "limited access", "premium"]
+    }
+  },
+  "brain-circuit": {
+    "label": { "es": "Inteligencia artificial", "en": "Artificial intelligence", "pt": "Inteligência artificial", "fr": "Intelligence artificielle", "de": "Künstliche Intelligenz", "it": "Intelligenza artificiale", "ja": "人工知能", "zh": "机器智能", "ko": "인공지능", "ar": "ذكاء الآلة" },
+    "keywords": {
+      "es": ["cerebro artificial", "aprendizaje automático", "machine learning", "sección de ia", "funciones inteligentes", "cerebro digital", "cómputo cognitivo"],
+      "en": ["artificial brain", "machine learning", "ai section", "smart features", "digital brain", "cognitive computing", "machine intelligence"]
+    }
+  },
+  "brain-clock": {
+    "label": { "es": "Memoria del asistente", "en": "Assistant memory", "pt": "Memória do assistente", "fr": "Mémoire de l’assistant", "de": "Gedächtnis des Assistenten", "it": "Memoria dell’assistente", "ja": "アシスタントのメモリ", "zh": "助手记忆", "ko": "어시스턴트 메모리", "ar": "ذاكرة المساعد" },
+    "keywords": {
+      "es": ["recuerdos", "historial", "lo que recuerda", "contexto guardado", "entre conversaciones", "preferencias", "personalización"],
+      "en": ["memories", "history", "what it remembers", "saved context", "across chats", "preferences", "personalization"]
+    }
+  },
+  "perceptron": {
+    "label": { "es": "Perceptrón", "en": "Perceptron", "pt": "Perceptron", "fr": "Perceptron", "de": "Perzeptron", "it": "Percettrone", "ja": "パーセプトロン", "zh": "感知机", "ko": "퍼셉트론", "ar": "بيرسبترون" },
+    "keywords": {
+      "es": ["neurona artificial", "pesos", "entradas", "sesgo", "red neuronal", "clasificador lineal", "nodo"],
+      "en": ["artificial neuron", "weights", "inputs", "bias", "neural network", "linear classifier", "node"]
+    }
+  },
+  "self-attention": {
+    "label": { "es": "Autoatención", "en": "Self-attention", "pt": "Autoatenção", "fr": "Auto-attention", "de": "Self-Attention", "it": "Self-attention", "ja": "自己注意", "zh": "自注意力", "ko": "셀프 어텐션", "ar": "الانتباه الذاتي" },
+    "keywords": {
+      "es": ["mecanismo de atención", "transformer", "tokens", "pesos de atención", "contexto", "arquitectura", "cabezas de atención"],
+      "en": ["attention mechanism", "transformer", "tokens", "attention weights", "context", "architecture", "attention heads"]
+    }
+  },
+  "backpropagation": {
+    "label": { "es": "Retropropagación", "en": "Backpropagation", "pt": "Retropropagação", "fr": "Rétropropagation", "de": "Backpropagation", "it": "Retropropagazione", "ja": "誤差逆伝播", "zh": "反向传播", "ko": "역전파", "ar": "الانتشار العكسي" },
+    "keywords": {
+      "es": ["propagación del error", "gradientes", "entrenamiento", "red neuronal", "ajustar pesos", "backprop", "aprendizaje"],
+      "en": ["error propagation", "gradients", "training", "neural network", "update weights", "backprop", "learning"]
+    }
+  },
+  "gradient-descent": {
+    "label": { "es": "Descenso de gradiente", "en": "Gradient descent", "pt": "Gradiente descendente", "fr": "Descente de gradient", "de": "Gradientenabstieg", "it": "Discesa del gradiente", "ja": "勾配降下法", "zh": "梯度下降", "ko": "경사 하강법", "ar": "الانحدار التدرجي" },
+    "keywords": {
+      "es": ["optimización", "función de pérdida", "mínimo", "tasa de aprendizaje", "optimizador", "sgd", "converger"],
+      "en": ["optimization", "loss function", "minimum", "learning rate", "optimizer", "sgd", "converge"]
+    }
+  },
+  "activation-function": {
+    "label": { "es": "Función de activación", "en": "Activation function", "pt": "Função de ativação", "fr": "Fonction d’activation", "de": "Aktivierungsfunktion", "it": "Funzione di attivazione", "ja": "活性化関数", "zh": "激活函数", "ko": "활성화 함수", "ar": "دالة التنشيط" },
+    "keywords": {
+      "es": ["sigmoide", "relu", "curva en s", "neurona", "no linealidad", "red neuronal", "umbral"],
+      "en": ["sigmoid", "relu", "s-curve", "neuron", "nonlinearity", "neural network", "threshold"]
+    }
+  },
+  "autoencoder": {
+    "label": { "es": "Autocodificador", "en": "Autoencoder", "pt": "Autoencoder", "fr": "Autoencodeur", "de": "Autoencoder", "it": "Autoencoder", "ja": "オートエンコーダー", "zh": "自编码器", "ko": "오토인코더", "ar": "مُرمِّز تلقائي" },
+    "keywords": {
+      "es": ["autoencoder", "codificador", "decodificador", "compresión", "espacio latente", "reconstruir", "reducción de dimensiones"],
+      "en": ["encoder", "decoder", "compression", "latent space", "reconstruct", "dimensionality reduction", "bottleneck"]
+    }
+  },
+  "convolution": {
+    "label": { "es": "Convolución", "en": "Convolution", "pt": "Convolução", "fr": "Convolution", "de": "Faltung", "it": "Convoluzione", "ja": "畳み込み", "zh": "卷积", "ko": "합성곱", "ar": "الالتفاف" },
+    "keywords": {
+      "es": ["red convolucional", "cnn", "filtro", "kernel", "visión por computadora", "mapa de características", "procesar imágenes"],
+      "en": ["convolutional network", "cnn", "filter", "kernel", "computer vision", "feature map", "image processing"]
+    }
+  },
+  "loss-curve": {
+    "label": { "es": "Curva de pérdida", "en": "Loss curve", "pt": "Curva de perda", "fr": "Courbe de perte", "de": "Verlustkurve", "it": "Curva di perdita", "ja": "損失曲線", "zh": "损失曲线", "ko": "손실 곡선", "ar": "منحنى الخسارة" },
+    "keywords": {
+      "es": ["entrenamiento", "épocas", "función de pérdida", "métricas", "sobreajuste", "curva de aprendizaje", "validación"],
+      "en": ["training", "epochs", "loss function", "metrics", "overfitting", "learning curve", "validation"]
+    }
+  },
+  "roc-curve": {
+    "label": { "es": "Curva ROC", "en": "ROC curve", "pt": "Curva ROC", "fr": "Courbe ROC", "de": "ROC-Kurve", "it": "Curva ROC", "ja": "ROC曲線", "zh": "ROC 曲线", "ko": "ROC 곡선", "ar": "منحنى ROC" },
+    "keywords": {
+      "es": ["auc", "clasificador", "verdaderos positivos", "falsos positivos", "umbral", "rendimiento del modelo", "sensibilidad"],
+      "en": ["auc", "classifier", "true positives", "false positives", "threshold", "model performance", "sensitivity"]
+    }
+  },
+  "classification": {
+    "label": { "es": "Clasificación automática", "en": "Classification", "pt": "Classificação automática", "fr": "Classification", "de": "Klassifizierung", "it": "Classificazione", "ja": "分類", "zh": "分类", "ko": "분류", "ar": "التصنيف" },
+    "keywords": {
+      "es": ["categorías", "etiquetar", "aprendizaje automático", "asignar clase", "ordenar por tipo", "tarea de ml", "separar"],
+      "en": ["categories", "labeling", "machine learning", "assign class", "sort by type", "ml task", "categorize"]
+    }
+  },
+  "anomaly-detection": {
+    "label": { "es": "Detección de anomalías", "en": "Anomaly detection", "pt": "Detecção de anomalias", "fr": "Détection d’anomalies", "de": "Anomalieerkennung", "it": "Rilevamento di anomalie", "ja": "異常検知", "zh": "异常检测", "ko": "이상 탐지", "ar": "كشف الشذوذ" },
+    "keywords": {
+      "es": ["valores atípicos", "comportamiento inusual", "fraude", "picos", "monitoreo", "alertas", "tráfico sospechoso"],
+      "en": ["outliers", "unusual behavior", "fraud", "spikes", "monitoring", "alerts", "suspicious traffic"]
+    }
+  },
+  "reinforcement-learning": {
+    "label": { "es": "Aprendizaje por refuerzo", "en": "Reinforcement learning", "pt": "Aprendizado por reforço", "fr": "Apprentissage par renforcement", "de": "Bestärkendes Lernen", "it": "Apprendimento per rinforzo", "ja": "強化学習", "zh": "强化学习", "ko": "강화 학습", "ar": "التعلم المعزز" },
+    "keywords": {
+      "es": ["recompensa", "agente", "entorno", "rlhf", "acción y premio", "política", "prueba y error"],
+      "en": ["reward", "agent", "environment", "rlhf", "policy", "trial and error", "rl"]
+    }
+  },
+  "federated-learning": {
+    "label": { "es": "Aprendizaje federado", "en": "Federated learning", "pt": "Aprendizado federado", "fr": "Apprentissage fédéré", "de": "Föderiertes Lernen", "it": "Apprendimento federato", "ja": "連合学習", "zh": "联邦学习", "ko": "연합 학습", "ar": "التعلم الاتحادي" },
+    "keywords": {
+      "es": ["privacidad", "dispositivos", "entrenamiento distribuido", "datos locales", "sin compartir datos", "en el dispositivo", "descentralizado"],
+      "en": ["privacy", "devices", "distributed training", "local data", "data stays on device", "on-device", "decentralized"]
+    }
+  },
+  "dataset": {
+    "label": { "es": "Conjunto de datos", "en": "Dataset", "pt": "Conjunto de dados", "fr": "Jeu de données", "de": "Datensatz", "it": "Dataset", "ja": "データセット", "zh": "数据集", "ko": "데이터셋", "ar": "مجموعة بيانات" },
+    "keywords": {
+      "es": ["dataset", "datos de entrenamiento", "datos de evaluación", "corpus", "ejemplos", "tabla de datos", "colección"],
+      "en": ["training data", "evaluation data", "corpus", "examples", "data table", "collection", "benchmark data"]
+    }
+  },
+  "dataset-plus": {
+    "label": { "es": "Agregar datos", "en": "Add data", "pt": "Adicionar dados", "fr": "Ajouter des données", "de": "Daten hinzufügen", "it": "Aggiungi dati", "ja": "データを追加", "zh": "添加数据", "ko": "데이터 추가", "ar": "إضافة بيانات" },
+    "keywords": {
+      "es": ["subir archivos", "fuente de conocimiento", "nuevo dataset", "importar", "base de conocimiento", "ampliar datos", "cargar documentos"],
+      "en": ["upload files", "knowledge source", "new dataset", "import", "knowledge base", "expand data", "add documents"]
+    }
+  },
+  "dataset-check": {
+    "label": { "es": "Datos validados", "en": "Validated dataset", "pt": "Dados validados", "fr": "Données validées", "de": "Geprüfter Datensatz", "it": "Dataset convalidato", "ja": "検証済みのデータセット", "zh": "已验证的数据集", "ko": "검증된 데이터셋", "ar": "بيانات تم التحقق منها" },
+    "keywords": {
+      "es": ["listo para entrenar", "revisado", "datos limpios", "aprobado", "calidad de datos", "verificado", "dataset"],
+      "en": ["ready to train", "reviewed", "clean data", "approved", "data quality", "verified", "checked"]
+    }
+  },
+  "data-labeling": {
+    "label": { "es": "Etiquetado de datos", "en": "Data labeling", "pt": "Rotulagem de dados", "fr": "Étiquetage des données", "de": "Datenannotation", "it": "Etichettatura dei dati", "ja": "データのラベリング", "zh": "数据标注", "ko": "데이터 라벨링", "ar": "وسم البيانات" },
+    "keywords": {
+      "es": ["anotar", "etiquetas", "ejemplos", "clasificar a mano", "anotaciones", "datos de entrenamiento", "revisión humana"],
+      "en": ["annotate", "labels", "examples", "tagging", "annotations", "training data", "human review"]
+    }
+  },
+  "data-augmentation": {
+    "label": { "es": "Aumento de datos", "en": "Data augmentation", "pt": "Aumento de dados", "fr": "Augmentation de données", "de": "Datenaugmentation", "it": "Aumento dei dati", "ja": "データ拡張", "zh": "数据增强", "ko": "데이터 증강", "ar": "زيادة البيانات" },
+    "keywords": {
+      "es": ["nuevos ejemplos", "transformar", "rotar", "voltear", "variaciones", "datos de entrenamiento", "ampliar dataset"],
+      "en": ["new examples", "transform", "rotate", "flip", "variations", "training data", "expand dataset"]
+    }
+  },
+  "synthetic-data": {
+    "label": { "es": "Datos sintéticos", "en": "Synthetic data", "pt": "Dados sintéticos", "fr": "Données synthétiques", "de": "Synthetische Daten", "it": "Dati sintetici", "ja": "合成データ", "zh": "合成数据", "ko": "합성 데이터", "ar": "بيانات اصطناعية" },
+    "keywords": {
+      "es": ["datos generados", "generados por ia", "datos simulados", "datos falsos", "privacidad", "datos de prueba", "entrenamiento"],
+      "en": ["generated data", "ai generated", "simulated data", "fake data", "privacy", "test data", "training"]
+    }
+  },
+  "embedding": {
+    "label": { "es": "Embedding", "en": "Embedding", "pt": "Embedding", "fr": "Plongement", "de": "Embedding", "it": "Embedding", "ja": "埋め込み", "zh": "嵌入向量", "ko": "임베딩", "ar": "التضمين" },
+    "keywords": {
+      "es": ["vector", "incrustación", "representación vectorial", "texto a vector", "similitud", "búsqueda semántica", "codificar"],
+      "en": ["vector", "vector representation", "text to vector", "similarity", "semantic search", "encode", "feature vector"]
+    }
+  },
+  "vector-space": {
+    "label": { "es": "Espacio vectorial", "en": "Vector space", "pt": "Espaço vetorial", "fr": "Espace vectoriel", "de": "Vektorraum", "it": "Spazio vettoriale", "ja": "ベクトル空間", "zh": "向量空间", "ko": "벡터 공간", "ar": "فضاء متجهي" },
+    "keywords": {
+      "es": ["embeddings", "puntos", "proyección", "dimensiones", "clústeres", "espacio latente", "similitud"],
+      "en": ["embeddings", "points", "projection", "dimensions", "clusters", "latent space", "similarity"]
+    }
+  },
+  "database-vector": {
+    "label": { "es": "Base de datos vectorial", "en": "Vector database", "pt": "Banco de dados vetorial", "fr": "Base de données vectorielle", "de": "Vektordatenbank", "it": "Database vettoriale", "ja": "ベクトルデータベース", "zh": "向量数据库", "ko": "벡터 데이터베이스", "ar": "قاعدة بيانات متجهية" },
+    "keywords": {
+      "es": ["vector store", "embeddings", "índice", "búsqueda semántica", "rag", "almacenar vectores", "memoria a largo plazo"],
+      "en": ["vector store", "embeddings", "index", "semantic search", "rag", "store vectors", "long-term memory"]
+    }
+  },
+  "nearest-neighbors": {
+    "label": { "es": "Vecinos más cercanos", "en": "Nearest neighbors", "pt": "Vizinhos mais próximos", "fr": "Plus proches voisins", "de": "Nächste Nachbarn", "it": "Vicini più prossimi", "ja": "最近傍探索", "zh": "最近邻搜索", "ko": "최근접 이웃", "ar": "أقرب الجيران" },
+    "keywords": {
+      "es": ["búsqueda por similitud", "knn", "coincidencias", "parecidos", "distancia", "resultados similares", "búsqueda semántica"],
+      "en": ["similarity search", "knn", "closest matches", "similar items", "distance", "lookalikes", "semantic search"]
+    }
+  },
+  "chunking": {
+    "label": { "es": "Fragmentación", "en": "Chunking", "pt": "Divisão em blocos", "fr": "Découpage en segments", "de": "Chunking", "it": "Suddivisione in blocchi", "ja": "チャンク分割", "zh": "文本分块", "ko": "청킹", "ar": "التقسيم إلى أجزاء" },
+    "keywords": {
+      "es": ["chunks", "partir documentos", "segmentos", "rag", "recuperación", "trozos de texto", "preparar documentos"],
+      "en": ["chunks", "split documents", "segments", "rag", "retrieval", "text splitting", "document prep"]
+    }
+  },
+  "retrieval": {
+    "label": { "es": "Recuperación de fuentes", "en": "Source retrieval", "pt": "Recuperação de fontes", "fr": "Récupération de sources", "de": "Quellenabruf", "it": "Recupero delle fonti", "ja": "ソースの検索", "zh": "来源检索", "ko": "출처 검색", "ar": "استرجاع المصادر" },
+    "keywords": {
+      "es": ["rag", "generación aumentada", "base de conocimiento", "buscar documentos", "citas", "contexto", "grounding"],
+      "en": ["rag", "retrieval-augmented generation", "knowledge base", "document search", "citations", "context", "grounding"]
+    }
+  },
+  "rerank": {
+    "label": { "es": "Reordenar resultados", "en": "Rerank results", "pt": "Reordenar resultados", "fr": "Reclasser les résultats", "de": "Ergebnisse neu ordnen", "it": "Riordina i risultati", "ja": "結果を再ランク付け", "zh": "重新排序结果", "ko": "결과 재정렬", "ar": "إعادة ترتيب النتائج" },
+    "keywords": {
+      "es": ["reranking", "relevancia", "ranking", "ordenar por relevancia", "búsqueda", "rag", "mejores resultados"],
+      "en": ["reranking", "relevance", "ranking", "sort by relevance", "search", "rag", "top results"]
+    }
+  },
+  "tokens": {
+    "label": { "es": "Tokens", "en": "Tokens", "pt": "Tokens", "fr": "Jetons", "de": "Tokens", "it": "Token", "ja": "トークン", "zh": "词元", "ko": "토큰", "ar": "الرموز" },
+    "keywords": {
+      "es": ["tokenización", "conteo", "precio por millón", "consumo", "uso de la api", "texto dividido", "facturación"],
+      "en": ["tokenization", "count", "price per million", "consumption", "api usage", "text pieces", "billing"]
+    }
+  },
+  "token-limit": {
+    "label": { "es": "Límite de tokens", "en": "Token limit", "pt": "Limite de tokens", "fr": "Limite de jetons", "de": "Token-Limit", "it": "Limite di token", "ja": "トークン上限", "zh": "词元上限", "ko": "토큰 한도", "ar": "حد الرموز" },
+    "keywords": {
+      "es": ["límite alcanzado", "máximo de salida", "respuesta cortada", "demasiado largo", "cuota", "max tokens", "excedido"],
+      "en": ["limit reached", "max output", "truncated answer", "too long", "quota", "max tokens", "exceeded"]
+    }
+  },
+  "context-window": {
+    "label": { "es": "Ventana de contexto", "en": "Context window", "pt": "Janela de contexto", "fr": "Fenêtre de contexte", "de": "Kontextfenster", "it": "Finestra di contesto", "ja": "コンテキストウィンドウ", "zh": "上下文窗口", "ko": "컨텍스트 윈도우", "ar": "نافذة السياق" },
+    "keywords": {
+      "es": ["memoria de trabajo", "longitud máxima", "cuánto puede leer", "tokens", "contexto largo", "capacidad", "uso de contexto"],
+      "en": ["working memory", "max length", "how much it reads", "tokens", "long context", "capacity", "context usage"]
+    }
+  },
+  "context-compression": {
+    "label": { "es": "Compactar contexto", "en": "Compact context", "pt": "Compactar contexto", "fr": "Compacter le contexte", "de": "Kontext komprimieren", "it": "Compatta il contesto", "ja": "コンテキストを圧縮", "zh": "压缩上下文", "ko": "컨텍스트 압축", "ar": "ضغط السياق" },
+    "keywords": {
+      "es": ["comprimir", "resumir conversación", "liberar espacio", "conversación larga", "ahorrar tokens", "condensar", "acortar historial"],
+      "en": ["compress", "summarize conversation", "free up space", "long conversation", "save tokens", "condense", "trim history"]
+    }
+  },
+  "sampling-temperature": {
+    "label": { "es": "Temperatura del modelo", "en": "Model temperature", "pt": "Temperatura do modelo", "fr": "Température du modèle", "de": "Modelltemperatur", "it": "Temperatura del modello", "ja": "モデルの温度", "zh": "模型温度", "ko": "모델 온도", "ar": "درجة حرارة النموذج" },
+    "keywords": {
+      "es": ["creatividad", "aleatoriedad", "muestreo", "top p", "variedad", "parámetros", "más preciso"],
+      "en": ["creativity", "randomness", "sampling", "top p", "variety", "parameters", "more precise"]
+    }
+  },
+  "prompt-gear": {
+    "label": { "es": "Instrucciones del sistema", "en": "System prompt", "pt": "Prompt do sistema", "fr": "Prompt système", "de": "Systemprompt", "it": "Prompt di sistema", "ja": "システムプロンプト", "zh": "系统提示词", "ko": "시스템 프롬프트", "ar": "موجّه النظام" },
+    "keywords": {
+      "es": ["system prompt", "instrucciones personalizadas", "configurar asistente", "personalidad", "comportamiento", "reglas", "prompt del sistema"],
+      "en": ["custom instructions", "configure assistant", "persona", "behavior", "rules", "system message", "assistant settings"]
+    }
+  },
+  "prompt-edit": {
+    "label": { "es": "Editar prompt", "en": "Edit prompt", "pt": "Editar prompt", "fr": "Modifier le prompt", "de": "Prompt bearbeiten", "it": "Modifica il prompt", "ja": "プロンプトを編集", "zh": "编辑提示词", "ko": "프롬프트 편집", "ar": "تعديل الموجّه" },
+    "keywords": {
+      "es": ["corregir mensaje", "reescribir", "volver a enviar", "cambiar la pregunta", "editar mensaje", "lápiz", "reformular"],
+      "en": ["fix message", "rewrite", "resend", "change the question", "edit message", "pencil", "rephrase"]
+    }
+  },
+  "prompt-template": {
+    "label": { "es": "Plantilla de prompt", "en": "Prompt template", "pt": "Modelo de prompt", "fr": "Modèle de prompt", "de": "Prompt-Vorlage", "it": "Modello di prompt", "ja": "プロンプトテンプレート", "zh": "提示词模板", "ko": "프롬프트 템플릿", "ar": "قالب موجّه" },
+    "keywords": {
+      "es": ["variables", "espacios en blanco", "reutilizable", "rellenar campos", "estructura", "prompt base", "marcadores"],
+      "en": ["variables", "fill in the blanks", "reusable", "placeholders", "structure", "base prompt", "parameters"]
+    }
+  },
+  "prompt-library": {
+    "label": { "es": "Biblioteca de prompts", "en": "Prompt library", "pt": "Biblioteca de prompts", "fr": "Bibliothèque de prompts", "de": "Prompt-Bibliothek", "it": "Libreria di prompt", "ja": "プロンプトライブラリ", "zh": "提示词库", "ko": "프롬프트 라이브러리", "ar": "مكتبة الموجّهات" },
+    "keywords": {
+      "es": ["prompts guardados", "favoritos", "colección", "reutilizar", "atajos", "compartir con el equipo", "galería"],
+      "en": ["saved prompts", "favorites", "collection", "reuse", "shortcuts", "team sharing", "gallery"]
+    }
+  },
+  "prompt-image": {
+    "label": { "es": "Prompt con imagen", "en": "Image prompt", "pt": "Prompt com imagem", "fr": "Prompt avec image", "de": "Prompt mit Bild", "it": "Prompt con immagine", "ja": "画像付きプロンプト", "zh": "图片提示词", "ko": "이미지 프롬프트", "ar": "موجّه مع صورة" },
+    "keywords": {
+      "es": ["adjuntar imagen", "preguntar sobre una foto", "imagen de referencia", "visión", "subir foto", "multimodal", "describir imagen"],
+      "en": ["attach image", "ask about a photo", "reference image", "vision", "upload photo", "multimodal", "image input"]
+    }
+  },
+  "prompt-chain": {
+    "label": { "es": "Cadena de prompts", "en": "Prompt chain", "pt": "Cadeia de prompts", "fr": "Chaîne de prompts", "de": "Prompt-Kette", "it": "Catena di prompt", "ja": "プロンプトチェーン", "zh": "提示词链", "ko": "프롬프트 체인", "ar": "سلسلة موجّهات" },
+    "keywords": {
+      "es": ["encadenar", "pasos", "secuencia", "salida a entrada", "pipeline", "flujo de llamadas", "varios pasos"],
+      "en": ["chaining", "steps", "sequence", "output to input", "pipeline", "call flow", "multi-step"]
+    }
+  },
+  "prompt-injection": {
+    "label": { "es": "Inyección de prompts", "en": "Prompt injection", "pt": "Injeção de prompt", "fr": "Injection de prompt", "de": "Prompt-Injection", "it": "Prompt injection", "ja": "プロンプトインジェクション", "zh": "提示词注入", "ko": "프롬프트 인젝션", "ar": "حقن الموجّهات" },
+    "keywords": {
+      "es": ["ataque", "instrucciones ocultas", "jailbreak", "seguridad de ia", "manipulación", "secuestro del modelo", "vulnerabilidad"],
+      "en": ["attack", "hidden instructions", "jailbreak", "ai security", "manipulation", "model hijacking", "vulnerability"]
+    }
+  },
+  "prompt-suggestions": {
+    "label": { "es": "Prompts sugeridos", "en": "Suggested prompts", "pt": "Prompts sugeridos", "fr": "Prompts suggérés", "de": "Vorgeschlagene Prompts", "it": "Prompt suggeriti", "ja": "おすすめのプロンプト", "zh": "推荐提示词", "ko": "추천 프롬프트", "ar": "موجّهات مقترحة" },
+    "keywords": {
+      "es": ["preguntas sugeridas", "seguimiento", "siguiente pregunta", "ideas para preguntar", "atajos", "chips", "respuestas rápidas"],
+      "en": ["suggested questions", "follow-ups", "next question", "conversation starters", "shortcuts", "chips", "quick replies"]
+    }
+  },
+  "structured-output": {
+    "label": { "es": "Salida estructurada", "en": "Structured output", "pt": "Saída estruturada", "fr": "Sortie structurée", "de": "Strukturierte Ausgabe", "it": "Output strutturato", "ja": "構造化出力", "zh": "结构化输出", "ko": "구조화된 출력", "ar": "مخرجات منظمة" },
+    "keywords": {
+      "es": ["json", "esquema", "formato fijo", "modo json", "campos", "respuesta tipada", "extracción"],
+      "en": ["json", "schema", "fixed format", "json mode", "fields", "typed response", "extraction"]
+    }
+  },
+  "agent": {
+    "label": { "es": "Agente de IA", "en": "AI agent", "pt": "Agente de IA", "fr": "Agent d’IA", "de": "KI-Agent", "it": "Agente IA", "ja": "AIエージェント", "zh": "AI 智能体", "ko": "AI 에이전트", "ar": "وكيل ذكاء اصطناعي" },
+    "keywords": {
+      "es": ["agente autónomo", "automatizar", "realiza tareas", "asistente", "bot", "agéntico", "acciones"],
+      "en": ["autonomous agent", "automate", "does tasks", "assistant", "bot", "agentic", "actions"]
+    }
+  },
+  "agent-plus": {
+    "label": { "es": "Nuevo agente", "en": "New agent", "pt": "Novo agente", "fr": "Nouvel agent", "de": "Neuer Agent", "it": "Nuovo agente", "ja": "新規エージェント", "zh": "新建智能体", "ko": "새 에이전트", "ar": "وكيل جديد" },
+    "keywords": {
+      "es": ["crear agente", "agregar", "configurar desde cero", "constructor de agentes", "plantilla de agente", "añadir bot", "empezar"],
+      "en": ["create agent", "add", "build from scratch", "agent builder", "agent template", "add bot", "start"]
+    }
+  },
+  "agent-gear": {
+    "label": { "es": "Configuración del agente", "en": "Agent settings", "pt": "Configurações do agente", "fr": "Paramètres de l’agent", "de": "Agent-Einstellungen", "it": "Impostazioni dell’agente", "ja": "エージェントの設定", "zh": "智能体设置", "ko": "에이전트 설정", "ar": "إعدادات الوكيل" },
+    "keywords": {
+      "es": ["instrucciones", "herramientas", "permisos", "ajustes", "comportamiento", "modelo del agente", "personalizar"],
+      "en": ["instructions", "tools", "permissions", "configure", "behavior", "agent model", "customize"]
+    }
+  },
+  "agent-clock": {
+    "label": { "es": "Agente programado", "en": "Scheduled agent", "pt": "Agente agendado", "fr": "Agent planifié", "de": "Geplanter Agent", "it": "Agente pianificato", "ja": "スケジュールされたエージェント", "zh": "定时智能体", "ko": "예약된 에이전트", "ar": "وكيل مجدول" },
+    "keywords": {
+      "es": ["tarea programada", "en segundo plano", "cron", "recurrente", "ejecución automática", "horario", "rutina"],
+      "en": ["scheduled task", "background", "cron", "recurring", "automatic run", "timer", "routine"]
+    }
+  },
+  "agent-check": {
+    "label": { "es": "Tarea del agente completada", "en": "Agent task completed", "pt": "Tarefa do agente concluída", "fr": "Tâche de l’agent terminée", "de": "Agentenaufgabe erledigt", "it": "Attività dell’agente completata", "ja": "エージェントのタスク完了", "zh": "智能体任务已完成", "ko": "에이전트 작업 완료", "ar": "اكتملت مهمة الوكيل" },
+    "keywords": {
+      "es": ["terminado", "éxito", "hecho", "listo", "resultado", "ejecución exitosa", "finalizado"],
+      "en": ["finished", "success", "done", "ready", "result", "successful run", "wrapped up"]
+    }
+  },
+  "agent-question": {
+    "label": { "es": "Agente esperando respuesta", "en": "Agent awaiting input", "pt": "Agente aguardando resposta", "fr": "L’agent attend une réponse", "de": "Agent wartet auf Antwort", "it": "L’agente attende una risposta", "ja": "エージェントが回答待ち", "zh": "智能体等待回复", "ko": "에이전트 응답 대기", "ar": "الوكيل بانتظار ردك" },
+    "keywords": {
+      "es": ["aclaración", "pregunta", "necesita tu ayuda", "confirmar", "en pausa", "intervención", "duda"],
+      "en": ["clarification", "question", "needs your help", "confirm", "paused", "blocked on you", "follow-up question"]
+    }
+  },
+  "agent-alert": {
+    "label": { "es": "Alerta del agente", "en": "Agent alert", "pt": "Alerta do agente", "fr": "Alerte de l’agent", "de": "Agentenwarnung", "it": "Avviso dell’agente", "ja": "エージェントの警告", "zh": "智能体警告", "ko": "에이전트 경고", "ar": "تنبيه الوكيل" },
+    "keywords": {
+      "es": ["falló", "error", "requiere atención", "ejecución fallida", "detenido", "problema", "revisar"],
+      "en": ["failed", "error", "needs attention", "failed run", "stopped", "issue", "review"]
+    }
+  },
+  "agent-lock": {
+    "label": { "es": "Permisos del agente", "en": "Agent permissions", "pt": "Permissões do agente", "fr": "Autorisations de l’agent", "de": "Agentenberechtigungen", "it": "Autorizzazioni dell’agente", "ja": "エージェントの権限", "zh": "智能体权限", "ko": "에이전트 권한", "ar": "أذونات الوكيل" },
+    "keywords": {
+      "es": ["bloqueado", "acción no permitida", "acceso restringido", "seguridad", "aprobación requerida", "sandbox", "candado"],
+      "en": ["blocked", "action denied", "restricted access", "security", "approval required", "sandbox", "lock"]
+    }
+  },
+  "multi-agent": {
+    "label": { "es": "Sistema multiagente", "en": "Multi-agent system", "pt": "Sistema multiagente", "fr": "Système multi-agents", "de": "Multi-Agenten-System", "it": "Sistema multi-agente", "ja": "マルチエージェント", "zh": "多智能体系统", "ko": "멀티 에이전트", "ar": "نظام متعدد الوكلاء" },
+    "keywords": {
+      "es": ["varios agentes", "equipo de agentes", "colaboración", "trabajo en paralelo", "agentes juntos", "enjambre", "coordinación"],
+      "en": ["several agents", "agent team", "collaboration", "parallel work", "agents together", "swarm", "coordination"]
+    }
+  },
+  "subagent": {
+    "label": { "es": "Subagente", "en": "Subagent", "pt": "Subagente", "fr": "Sous-agent", "de": "Subagent", "it": "Sottoagente", "ja": "サブエージェント", "zh": "子智能体", "ko": "하위 에이전트", "ar": "وكيل فرعي" },
+    "keywords": {
+      "es": ["agente secundario", "delegar", "tarea aparte", "agente hijo", "dividir el trabajo", "encargo", "agente principal"],
+      "en": ["child agent", "delegate", "side task", "spawned agent", "split work", "helper agent", "main agent"]
+    }
+  },
+  "ai-teammate": {
+    "label": { "es": "Compañero de IA", "en": "AI teammate", "pt": "Colega de IA", "fr": "Coéquipier IA", "de": "KI-Teammitglied", "it": "Collega IA", "ja": "AIのチームメイト", "zh": "AI 队友", "ko": "AI 팀원", "ar": "زميل ذكاء اصطناعي" },
+    "keywords": {
+      "es": ["colaborar con ia", "copiloto", "persona y ia", "equipo", "asistente", "trabajo conjunto", "colega virtual"],
+      "en": ["work with ai", "copilot", "human and ai", "team", "assistant", "pairing", "virtual coworker"]
+    }
+  },
+  "agent-orchestration": {
+    "label": { "es": "Orquestación de agentes", "en": "Agent orchestration", "pt": "Orquestração de agentes", "fr": "Orchestration d’agents", "de": "Agenten-Orchestrierung", "it": "Orchestrazione degli agenti", "ja": "エージェントのオーケストレーション", "zh": "智能体编排", "ko": "에이전트 오케스트레이션", "ar": "تنسيق الوكلاء" },
+    "keywords": {
+      "es": ["orquestador", "delegar", "trabajadores", "coordinador", "repartir tareas", "multiagente", "supervisor"],
+      "en": ["orchestrator", "delegate", "workers", "coordinator", "distribute tasks", "multi-agent", "supervisor"]
+    }
+  },
+  "agent-handoff": {
+    "label": { "es": "Traspaso entre agentes", "en": "Agent handoff", "pt": "Transferência entre agentes", "fr": "Passation entre agents", "de": "Übergabe zwischen Agenten", "it": "Passaggio tra agenti", "ja": "エージェント間の引き継ぎ", "zh": "智能体交接", "ko": "에이전트 간 인계", "ar": "التسليم بين الوكلاء" },
+    "keywords": {
+      "es": ["transferir", "pasar la tarea", "relevo", "delegar", "otro agente", "continuar", "handoff"],
+      "en": ["transfer", "pass the task", "relay", "delegate", "another agent", "continue", "hand over"]
+    }
+  },
+  "agent-workflow": {
+    "label": { "es": "Flujo de trabajo con IA", "en": "AI workflow", "pt": "Fluxo de trabalho com IA", "fr": "Workflow IA", "de": "KI-Workflow", "it": "Flusso di lavoro con IA", "ja": "AIワークフロー", "zh": "AI 工作流", "ko": "AI 워크플로", "ar": "سير عمل بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["automatización", "pasos", "nodos", "pipeline", "flujo de agentes", "proceso", "integraciones"],
+      "en": ["automation", "steps", "nodes", "pipeline", "agent flow", "process", "integrations"]
+    }
+  },
+  "agent-plan": {
+    "label": { "es": "Plan del agente", "en": "Agent plan", "pt": "Plano do agente", "fr": "Plan de l’agent", "de": "Plan des Agenten", "it": "Piano dell’agente", "ja": "エージェントの計画", "zh": "智能体计划", "ko": "에이전트 계획", "ar": "خطة الوكيل" },
+    "keywords": {
+      "es": ["modo plan", "pendientes", "lista de tareas", "pasos", "planear", "antes de actuar", "estrategia"],
+      "en": ["plan mode", "to-dos", "task list", "steps", "planning", "before acting", "strategy"]
+    }
+  },
+  "tool-call": {
+    "label": { "es": "Llamada a herramienta", "en": "Tool call", "pt": "Chamada de ferramenta", "fr": "Appel d’outil", "de": "Tool-Aufruf", "it": "Chiamata a strumento", "ja": "ツール呼び出し", "zh": "工具调用", "ko": "도구 호출", "ar": "استدعاء أداة" },
+    "keywords": {
+      "es": ["function calling", "llamada a función", "usar herramienta", "api", "acción del agente", "mcp", "integración"],
+      "en": ["function calling", "function call", "use tool", "api", "agent action", "mcp", "integration"]
+    }
+  },
+  "agent-skill": {
+    "label": { "es": "Habilidad del agente", "en": "Agent skill", "pt": "Habilidade do agente", "fr": "Compétence de l’agent", "de": "Agenten-Skill", "it": "Abilità dell’agente", "ja": "エージェントのスキル", "zh": "智能体技能", "ko": "에이전트 스킬", "ar": "مهارة الوكيل" },
+    "keywords": {
+      "es": ["plugin", "complemento", "extensión", "capacidad", "cargar", "módulo", "skill"],
+      "en": ["plugin", "add-on", "extension", "capability", "load", "module", "ability"]
+    }
+  },
+  "computer-use": {
+    "label": { "es": "Control de la computadora", "en": "Computer use", "pt": "Uso do computador", "fr": "Utilisation de l’ordinateur", "de": "Computersteuerung", "it": "Uso del computer", "ja": "コンピューター操作", "zh": "电脑操控", "ko": "컴퓨터 사용", "ar": "استخدام الحاسوب" },
+    "keywords": {
+      "es": ["agente de navegador", "clics automáticos", "controlar la pantalla", "operar la interfaz", "automatizar escritorio", "cursor", "mouse"],
+      "en": ["browser agent", "automatic clicks", "control screen", "operate interface", "desktop automation", "cursor", "mouse"]
+    }
+  },
+  "deep-research": {
+    "label": { "es": "Investigación a fondo", "en": "Deep research", "pt": "Pesquisa aprofundada", "fr": "Recherche approfondie", "de": "Tiefenrecherche", "it": "Ricerca approfondita", "ja": "ディープリサーチ", "zh": "深度研究", "ko": "심층 리서치", "ar": "بحث معمّق" },
+    "keywords": {
+      "es": ["investigación profunda", "varias fuentes", "informe", "análisis", "buscar en la web", "citas", "revisión de fuentes"],
+      "en": ["multiple sources", "report", "analysis", "web search", "citations", "long-running research", "literature review"]
+    }
+  },
+  "human-in-the-loop": {
+    "label": { "es": "Revisión humana", "en": "Human in the loop", "pt": "Revisão humana", "fr": "Validation humaine", "de": "Menschliche Prüfung", "it": "Revisione umana", "ja": "人間による確認", "zh": "人工审核", "ko": "사람의 검토", "ar": "مراجعة بشرية" },
+    "keywords": {
+      "es": ["aprobar", "supervisión", "persona en el ciclo", "validar pasos", "control humano", "confirmación", "moderación"],
+      "en": ["approve", "oversight", "human review", "validate steps", "human control", "confirmation", "moderation"]
+    }
+  },
+  "human-handoff": {
+    "label": { "es": "Transferir a una persona", "en": "Hand off to a person", "pt": "Transferir para uma pessoa", "fr": "Transférer à un humain", "de": "An einen Menschen übergeben", "it": "Passa a un operatore", "ja": "担当者に引き継ぐ", "zh": "转人工", "ko": "상담원 연결", "ar": "التحويل إلى موظف" },
+    "keywords": {
+      "es": ["hablar con un agente", "atención humana", "escalar", "soporte en vivo", "operador", "asesor", "salir del bot"],
+      "en": ["talk to an agent", "human support", "escalate", "live support", "operator", "customer service", "leave the bot"]
+    }
+  },
+  "robot-humanoid": {
+    "label": { "es": "Robot humanoide", "en": "Humanoid robot", "pt": "Robô humanoide", "fr": "Robot humanoïde", "de": "Humanoider Roboter", "it": "Robot umanoide", "ja": "人型ロボット", "zh": "人形机器人", "ko": "휴머노이드 로봇", "ar": "روبوت بشري الشكل" },
+    "keywords": {
+      "es": ["androide", "ia física", "ia encarnada", "robótica", "autómata", "máquina", "robot de servicio"],
+      "en": ["android", "physical ai", "embodied ai", "robotics", "automaton", "machine", "service robot"]
+    }
+  },
+  "assistant-panel": {
+    "label": { "es": "Panel del asistente", "en": "Assistant panel", "pt": "Painel do assistente", "fr": "Panneau de l’assistant", "de": "Assistentenbereich", "it": "Pannello dell’assistente", "ja": "アシスタントパネル", "zh": "助手面板", "ko": "어시스턴트 패널", "ar": "لوحة المساعد" },
+    "keywords": {
+      "es": ["panel lateral", "copiloto", "chat integrado", "abrir asistente", "barra lateral", "ayuda con ia", "asistente de ia"],
+      "en": ["side panel", "copilot", "built-in chat", "open assistant", "sidebar", "ai help", "ai assistant"]
+    }
+  },
+  "assistant-canvas": {
+    "label": { "es": "Lienzo con IA", "en": "AI canvas", "pt": "Canvas com IA", "fr": "Canevas IA", "de": "KI-Canvas", "it": "Canvas con IA", "ja": "AIキャンバス", "zh": "AI 画布", "ko": "AI 캔버스", "ar": "مساحة الكتابة بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["canvas", "artifacts", "chat junto al documento", "editar con ia", "documento compartido", "redactar", "vista dividida"],
+      "en": ["document editor", "artifacts", "chat beside document", "edit with ai", "shared document", "drafting", "split view"]
+    }
+  },
+  "conversation-branch": {
+    "label": { "es": "Ramificar conversación", "en": "Branch conversation", "pt": "Ramificar conversa", "fr": "Bifurquer la conversation", "de": "Unterhaltung verzweigen", "it": "Ramifica la conversazione", "ja": "会話を分岐", "zh": "分支对话", "ko": "대화 분기", "ar": "تفريع المحادثة" },
+    "keywords": {
+      "es": ["bifurcar", "nueva rama", "desde este mensaje", "probar otra versión", "fork", "versiones del chat", "explorar alternativas"],
+      "en": ["fork", "new branch", "from this message", "try another path", "chat versions", "explore alternatives", "split chat"]
+    }
+  },
+  "inline-completion": {
+    "label": { "es": "Autocompletado en línea", "en": "Inline completion", "pt": "Autocompletar em linha", "fr": "Complétion en ligne", "de": "Inline-Vervollständigung", "it": "Completamento in linea", "ja": "インライン補完", "zh": "行内补全", "ko": "인라인 자동 완성", "ar": "إكمال تلقائي أثناء الكتابة" },
+    "keywords": {
+      "es": ["texto fantasma", "sugerencia al escribir", "tab para aceptar", "copiloto", "predicción de texto", "completar código", "escritura asistida"],
+      "en": ["ghost text", "suggestion while typing", "tab to accept", "copilot", "text prediction", "code completion", "autocomplete"]
+    }
+  },
+  "response-streaming": {
+    "label": { "es": "Respuesta en curso", "en": "Streaming response", "pt": "Resposta em andamento", "fr": "Réponse en cours", "de": "Antwort wird erstellt", "it": "Risposta in corso", "ja": "応答を生成中", "zh": "正在生成回答", "ko": "응답 생성 중", "ar": "جارٍ كتابة الرد" },
+    "keywords": {
+      "es": ["streaming", "escribiendo", "generando", "texto en vivo", "respuesta parcial", "cargando", "en tiempo real"],
+      "en": ["typing", "generating", "live text", "partial response", "loading", "real time", "token stream"]
+    }
+  },
+  "reasoning": {
+    "label": { "es": "Razonamiento", "en": "Reasoning", "pt": "Raciocínio", "fr": "Raisonnement", "de": "Denkprozess", "it": "Ragionamento", "ja": "思考中", "zh": "思考中", "ko": "생각 중", "ar": "جارٍ التفكير" },
+    "keywords": {
+      "es": ["pensando", "modo de pensamiento", "thinking", "deliberar", "analizar", "antes de responder", "reflexionar"],
+      "en": ["thinking", "thinking mode", "deliberate", "analyze", "before answering", "extended thinking", "reflect"]
+    }
+  },
+  "reasoning-effort": {
+    "label": { "es": "Nivel de razonamiento", "en": "Reasoning effort", "pt": "Nível de raciocínio", "fr": "Niveau de réflexion", "de": "Denkaufwand", "it": "Livello di ragionamento", "ja": "思考レベル", "zh": "思考强度", "ko": "추론 강도", "ar": "مستوى التفكير" },
+    "keywords": {
+      "es": ["esfuerzo", "bajo medio alto", "pensar más", "profundidad", "intensidad", "velocidad o calidad", "presupuesto de pensamiento"],
+      "en": ["thinking level", "low medium high", "think harder", "depth", "intensity", "speed vs quality", "thinking budget"]
+    }
+  },
+  "chain-of-thought": {
+    "label": { "es": "Cadena de pensamiento", "en": "Chain of thought", "pt": "Cadeia de pensamento", "fr": "Chaîne de pensée", "de": "Gedankenkette", "it": "Catena di pensiero", "ja": "思考の連鎖", "zh": "思维链", "ko": "사고의 사슬", "ar": "سلسلة الأفكار" },
+    "keywords": {
+      "es": ["paso a paso", "razonamiento visible", "traza", "proceso de pensamiento", "explicación", "pasos intermedios", "ver cómo pensó"],
+      "en": ["step by step", "visible reasoning", "trace", "thought process", "explanation", "intermediate steps", "cot"]
+    }
+  },
+  "regenerate": {
+    "label": { "es": "Regenerar respuesta", "en": "Regenerate response", "pt": "Gerar resposta novamente", "fr": "Régénérer la réponse", "de": "Antwort neu generieren", "it": "Rigenera la risposta", "ja": "回答を再生成", "zh": "重新生成回答", "ko": "답변 다시 생성", "ar": "إعادة إنشاء الرد" },
+    "keywords": {
+      "es": ["volver a intentar", "otra respuesta", "reintentar", "nueva versión", "repetir", "otra opción", "rehacer"],
+      "en": ["try again", "another answer", "retry", "new version", "redo", "another option", "reroll"]
+    }
+  },
+  "summarize": {
+    "label": { "es": "Resumir con IA", "en": "Summarize with AI", "pt": "Resumir com IA", "fr": "Résumer avec l’IA", "de": "Mit KI zusammenfassen", "it": "Riassumi con l’IA", "ja": "AIで要約", "zh": "AI 总结", "ko": "AI로 요약", "ar": "التلخيص بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["resumen", "puntos clave", "tl;dr", "acortar", "síntesis", "ideas principales", "condensar"],
+      "en": ["summary", "key points", "tl;dr", "shorten", "digest", "main ideas", "condense"]
+    }
+  },
+  "elaborate": {
+    "label": { "es": "Ampliar con IA", "en": "Expand with AI", "pt": "Expandir com IA", "fr": "Développer avec l’IA", "de": "Mit KI erweitern", "it": "Espandi con l’IA", "ja": "AIで詳しく書く", "zh": "AI 扩写", "ko": "AI로 늘려 쓰기", "ar": "التوسيع بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["alargar texto", "desarrollar", "más detalle", "extender", "profundizar", "escribir más", "elaborar"],
+      "en": ["lengthen", "elaborate", "more detail", "extend", "go deeper", "write more", "flesh out"]
+    }
+  },
+  "voice-assistant": {
+    "label": { "es": "Asistente de voz", "en": "Voice assistant", "pt": "Assistente de voz", "fr": "Assistant vocal", "de": "Sprachassistent", "it": "Assistente vocale", "ja": "音声アシスタント", "zh": "语音助手", "ko": "음성 어시스턴트", "ar": "مساعد صوتي" },
+    "keywords": {
+      "es": ["modo de voz", "hablar con la ia", "conversación por voz", "manos libres", "dictar", "ondas de sonido", "comandos de voz"],
+      "en": ["voice mode", "talk to ai", "voice chat", "hands-free", "speak", "sound waves", "voice commands"]
+    }
+  },
+  "smart-suggestion": {
+    "label": { "es": "Sugerencia de IA", "en": "AI suggestion", "pt": "Sugestão de IA", "fr": "Suggestion de l’IA", "de": "KI-Vorschlag", "it": "Suggerimento dell’IA", "ja": "AIの提案", "zh": "AI 建议", "ko": "AI 제안", "ar": "اقتراح الذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["consejo", "recomendación", "idea", "tip", "pista", "ayuda contextual", "mejora sugerida"],
+      "en": ["tip", "recommendation", "idea", "hint", "smart tip", "contextual help", "improvement"]
+    }
+  },
+  "text-to-image": {
+    "label": { "es": "Generar imagen", "en": "Generate image", "pt": "Gerar imagem", "fr": "Générer une image", "de": "Bild generieren", "it": "Genera immagine", "ja": "画像を生成", "zh": "生成图片", "ko": "이미지 생성", "ar": "إنشاء صورة" },
+    "keywords": {
+      "es": ["texto a imagen", "imagen con ia", "ilustración", "arte generativo", "desde un prompt", "crear foto", "diseño con ia"],
+      "en": ["text to image", "ai image", "illustration", "generative art", "from a prompt", "create picture", "ai art"]
+    }
+  },
+  "text-to-video": {
+    "label": { "es": "Generar video", "en": "Generate video", "pt": "Gerar vídeo", "fr": "Générer une vidéo", "de": "Video generieren", "it": "Genera video", "ja": "動画を生成", "zh": "生成视频", "ko": "동영상 생성", "ar": "إنشاء فيديو" },
+    "keywords": {
+      "es": ["texto a video", "video con ia", "clip", "animación", "desde un prompt", "escena", "cine generativo"],
+      "en": ["text to video", "ai video", "clip", "animation", "from a prompt", "scene", "generative film"]
+    }
+  },
+  "text-to-speech": {
+    "label": { "es": "Leer en voz alta", "en": "Read aloud", "pt": "Ler em voz alta", "fr": "Lire à voix haute", "de": "Vorlesen", "it": "Leggi ad alta voce", "ja": "読み上げ", "zh": "朗读", "ko": "소리 내어 읽기", "ar": "القراءة بصوت عالٍ" },
+    "keywords": {
+      "es": ["texto a voz", "voz sintética", "narración", "tts", "audio", "locución", "accesibilidad"],
+      "en": ["text to speech", "synthetic voice", "narration", "tts", "audio", "voiceover", "accessibility"]
+    }
+  },
+  "text-to-music": {
+    "label": { "es": "Generar música", "en": "Generate music", "pt": "Gerar música", "fr": "Générer de la musique", "de": "Musik generieren", "it": "Genera musica", "ja": "音楽を生成", "zh": "生成音乐", "ko": "음악 생성", "ar": "إنشاء موسيقى" },
+    "keywords": {
+      "es": ["texto a música", "canción con ia", "audio generativo", "efectos de sonido", "melodía", "pista", "componer"],
+      "en": ["text to music", "ai song", "generative audio", "sound effects", "melody", "track", "compose"]
+    }
+  },
+  "text-to-sql": {
+    "label": { "es": "Consulta en lenguaje natural", "en": "Natural language query", "pt": "Consulta em linguagem natural", "fr": "Requête en langage naturel", "de": "Abfrage in natürlicher Sprache", "it": "Query in linguaggio naturale", "ja": "自然言語クエリ", "zh": "自然语言查询", "ko": "자연어 쿼리", "ar": "استعلام باللغة الطبيعية" },
+    "keywords": {
+      "es": ["texto a sql", "preguntar a la base de datos", "consulta sql", "datos", "sin código", "reportes", "análisis"],
+      "en": ["text to sql", "ask your database", "sql query", "data", "no code", "reports", "analytics"]
+    }
+  },
+  "image-to-video": {
+    "label": { "es": "Animar imagen", "en": "Animate image", "pt": "Animar imagem", "fr": "Animer une image", "de": "Bild animieren", "it": "Anima l’immagine", "ja": "画像を動画に", "zh": "图片转视频", "ko": "이미지를 동영상으로", "ar": "تحريك الصورة" },
+    "keywords": {
+      "es": ["imagen a video", "foto en movimiento", "clip", "video con ia", "dar vida", "animación", "de foto a video"],
+      "en": ["image to video", "moving photo", "clip", "ai video", "bring to life", "animation", "still to motion"]
+    }
+  },
+  "style-transfer": {
+    "label": { "es": "Transferencia de estilo", "en": "Style transfer", "pt": "Transferência de estilo", "fr": "Transfert de style", "de": "Stilübertragung", "it": "Trasferimento di stile", "ja": "スタイル変換", "zh": "风格迁移", "ko": "스타일 전환", "ar": "نقل النمط" },
+    "keywords": {
+      "es": ["cambiar estilo", "filtro artístico", "imagen de referencia", "estilizar", "como pintura", "aplicar estética", "remix"],
+      "en": ["restyle", "art filter", "reference image", "stylize", "like a painting", "apply look", "remix"]
+    }
+  },
+  "image-captioning": {
+    "label": { "es": "Describir imagen", "en": "Describe image", "pt": "Descrever imagem", "fr": "Décrire l’image", "de": "Bild beschreiben", "it": "Descrivi l’immagine", "ja": "画像を説明", "zh": "描述图片", "ko": "이미지 설명", "ar": "وصف الصورة" },
+    "keywords": {
+      "es": ["texto alternativo", "alt text", "pie de foto", "accesibilidad", "descripción automática", "subtítulo", "lector de pantalla"],
+      "en": ["alt text", "caption", "accessibility", "automatic description", "photo caption", "screen reader", "visual description"]
+    }
+  },
+  "speech-recognition": {
+    "label": { "es": "Transcripción de voz", "en": "Speech to text", "pt": "Transcrição de voz", "fr": "Transcription vocale", "de": "Sprache zu Text", "it": "Trascrizione vocale", "ja": "音声の文字起こし", "zh": "语音转文字", "ko": "음성 텍스트 변환", "ar": "تحويل الكلام إلى نص" },
+    "keywords": {
+      "es": ["dictado", "reconocimiento de voz", "subtítulos en vivo", "stt", "voz a texto", "notas de voz", "minuta de reunión"],
+      "en": ["dictation", "live transcription", "speech recognition", "captions", "stt", "voice notes", "meeting notes"]
+    }
+  },
+  "voice-clone": {
+    "label": { "es": "Clon de voz", "en": "Voice clone", "pt": "Clone de voz", "fr": "Clone vocal", "de": "Stimmklon", "it": "Clone vocale", "ja": "音声クローン", "zh": "声音克隆", "ko": "음성 복제", "ar": "صوت مستنسخ" },
+    "keywords": {
+      "es": ["voz sintética", "doblaje", "voz personalizada", "imitar voz", "locución con ia", "copia de voz", "voz digital"],
+      "en": ["synthetic voice", "dubbing", "custom voice", "voice copy", "ai voiceover", "digital voice", "mimic voice"]
+    }
+  },
+  "generative-fill": {
+    "label": { "es": "Relleno generativo", "en": "Generative fill", "pt": "Preenchimento generativo", "fr": "Remplissage génératif", "de": "Generative Füllung", "it": "Riempimento generativo", "ja": "生成塗りつぶし", "zh": "生成式填充", "ko": "생성형 채우기", "ar": "التعبئة التوليدية" },
+    "keywords": {
+      "es": ["inpainting", "borrar objetos", "quitar elementos", "rellenar área", "editar con ia", "selección", "retoque"],
+      "en": ["inpainting", "remove objects", "erase elements", "fill area", "edit with ai", "selection", "retouch"]
+    }
+  },
+  "generative-expand": {
+    "label": { "es": "Expandir imagen", "en": "Expand image", "pt": "Expandir imagem", "fr": "Étendre l’image", "de": "Bild erweitern", "it": "Estendi l’immagine", "ja": "画像を拡張", "zh": "扩展图片", "ko": "이미지 확장", "ar": "توسيع الصورة" },
+    "keywords": {
+      "es": ["outpainting", "extender bordes", "cambiar proporción", "más fondo", "ampliar lienzo", "relleno generativo", "reencuadrar"],
+      "en": ["outpainting", "extend edges", "change aspect ratio", "more background", "enlarge canvas", "generative fill", "reframe"]
+    }
+  },
+  "background-removal": {
+    "label": { "es": "Quitar fondo", "en": "Remove background", "pt": "Remover fundo", "fr": "Supprimer l’arrière-plan", "de": "Hintergrund entfernen", "it": "Rimuovi lo sfondo", "ja": "背景を削除", "zh": "移除背景", "ko": "배경 제거", "ar": "إزالة الخلفية" },
+    "keywords": {
+      "es": ["recortar", "fondo transparente", "aislar sujeto", "png", "foto de producto", "recorte automático", "silueta"],
+      "en": ["cutout", "transparent background", "isolate subject", "png", "product photo", "erase background", "clipping path"]
+    }
+  },
+  "subject-select": {
+    "label": { "es": "Seleccionar sujeto", "en": "Select subject", "pt": "Selecionar assunto", "fr": "Sélectionner le sujet", "de": "Motiv auswählen", "it": "Seleziona soggetto", "ja": "被写体を選択", "zh": "选择主体", "ko": "피사체 선택", "ar": "تحديد العنصر الرئيسي" },
+    "keywords": {
+      "es": ["selección automática", "recortar persona", "máscara", "aislar", "detectar sujeto", "edición de fotos", "primer plano"],
+      "en": ["auto select", "cut out person", "mask", "isolate", "detect subject", "photo editing", "foreground"]
+    }
+  },
+  "upscale": {
+    "label": { "es": "Aumentar resolución", "en": "Upscale", "pt": "Aumentar resolução", "fr": "Augmenter la résolution", "de": "Auflösung erhöhen", "it": "Aumenta la risoluzione", "ja": "高解像度化", "zh": "提升分辨率", "ko": "해상도 향상", "ar": "رفع الدقة" },
+    "keywords": {
+      "es": ["escalar", "alta definición", "nitidez", "superresolución", "ampliar imagen", "4k", "mejorar calidad"],
+      "en": ["enhance", "high definition", "sharpen", "super resolution", "enlarge image", "4k", "improve quality"]
+    }
+  },
+  "variations": {
+    "label": { "es": "Generar variaciones", "en": "Generate variations", "pt": "Gerar variações", "fr": "Générer des variantes", "de": "Varianten generieren", "it": "Genera variazioni", "ja": "バリエーションを生成", "zh": "生成变体", "ko": "변형 생성", "ar": "إنشاء أشكال مختلفة" },
+    "keywords": {
+      "es": ["versiones", "alternativas", "opciones", "iterar", "similares", "explorar diseños", "remix"],
+      "en": ["versions", "alternatives", "options", "iterate", "similar", "explore designs", "remix"]
+    }
+  },
+  "diffusion": {
+    "label": { "es": "Modelo de difusión", "en": "Diffusion model", "pt": "Modelo de difusão", "fr": "Modèle de diffusion", "de": "Diffusionsmodell", "it": "Modello di diffusione", "ja": "拡散モデル", "zh": "扩散模型", "ko": "확산 모델", "ar": "نموذج الانتشار" },
+    "keywords": {
+      "es": ["ruido", "eliminar ruido", "generación de imágenes", "stable diffusion", "pasos de muestreo", "espacio latente", "imagen desde ruido"],
+      "en": ["noise", "denoising", "image generation", "stable diffusion", "sampling steps", "latent space", "image from noise"]
+    }
+  },
+  "computer-vision": {
+    "label": { "es": "Visión por computadora", "en": "Computer vision", "pt": "Visão computacional", "fr": "Vision par ordinateur", "de": "Maschinelles Sehen", "it": "Visione artificiale", "ja": "コンピュータービジョン", "zh": "计算机视觉", "ko": "컴퓨터 비전", "ar": "الرؤية الحاسوبية" },
+    "keywords": {
+      "es": ["visión artificial", "análisis de imágenes", "cámara", "reconocer imágenes", "ojo", "procesamiento de imágenes", "ver"],
+      "en": ["machine vision", "image analysis", "camera", "image recognition", "eye", "image processing", "see"]
+    }
+  },
+  "object-detection": {
+    "label": { "es": "Detección de objetos", "en": "Object detection", "pt": "Detecção de objetos", "fr": "Détection d’objets", "de": "Objekterkennung", "it": "Rilevamento di oggetti", "ja": "物体検出", "zh": "目标检测", "ko": "객체 탐지", "ar": "اكتشاف الكائنات" },
+    "keywords": {
+      "es": ["cuadros delimitadores", "bounding box", "reconocer objetos", "yolo", "visión por computadora", "localizar", "etiquetas"],
+      "en": ["bounding boxes", "recognize objects", "yolo", "computer vision", "locate", "labels", "find objects"]
+    }
+  },
+  "person-detection": {
+    "label": { "es": "Detección de personas", "en": "Person detection", "pt": "Detecção de pessoas", "fr": "Détection de personnes", "de": "Personenerkennung", "it": "Rilevamento di persone", "ja": "人物検出", "zh": "人体检测", "ko": "사람 감지", "ar": "اكتشاف الأشخاص" },
+    "keywords": {
+      "es": ["cámara de seguridad", "videovigilancia", "contar personas", "presencia", "movimiento", "cuerpo", "aforo"],
+      "en": ["security camera", "surveillance", "people counting", "presence", "motion", "human detection", "occupancy"]
+    }
+  },
+  "object-tracking": {
+    "label": { "es": "Seguimiento de objetos", "en": "Object tracking", "pt": "Rastreamento de objetos", "fr": "Suivi d’objets", "de": "Objektverfolgung", "it": "Tracciamento di oggetti", "ja": "物体追跡", "zh": "目标跟踪", "ko": "객체 추적", "ar": "تتبع الكائنات" },
+    "keywords": {
+      "es": ["rastrear", "fotogramas", "video", "trayectoria", "movimiento", "visión por computadora", "cámara inteligente"],
+      "en": ["follow", "frames", "video", "trajectory", "motion", "computer vision", "smart camera"]
+    }
+  },
+  "segmentation": {
+    "label": { "es": "Segmentación de imagen", "en": "Image segmentation", "pt": "Segmentação de imagem", "fr": "Segmentation d’image", "de": "Bildsegmentierung", "it": "Segmentazione dell’immagine", "ja": "画像セグメンテーション", "zh": "图像分割", "ko": "이미지 분할", "ar": "تجزئة الصورة" },
+    "keywords": {
+      "es": ["regiones", "máscaras", "píxeles", "separar áreas", "visión por computadora", "etiquetar zonas", "contornos"],
+      "en": ["regions", "masks", "pixels", "separate areas", "computer vision", "label areas", "outlines"]
+    }
+  },
+  "pose-estimation": {
+    "label": { "es": "Estimación de pose", "en": "Pose estimation", "pt": "Estimativa de pose", "fr": "Estimation de pose", "de": "Posenschätzung", "it": "Stima della posa", "ja": "姿勢推定", "zh": "姿态估计", "ko": "자세 추정", "ar": "تقدير الوضعية" },
+    "keywords": {
+      "es": ["esqueleto", "postura", "puntos clave", "cuerpo", "movimiento", "fitness", "captura de movimiento"],
+      "en": ["skeleton", "posture", "keypoints", "body", "movement", "fitness", "motion capture"]
+    }
+  },
+  "face-mesh": {
+    "label": { "es": "Malla facial", "en": "Face mesh", "pt": "Malha facial", "fr": "Maillage du visage", "de": "Gesichtsnetz", "it": "Mesh del volto", "ja": "フェイスメッシュ", "zh": "面部网格", "ko": "얼굴 메시", "ar": "شبكة الوجه" },
+    "keywords": {
+      "es": ["puntos del rostro", "filtros", "avatar", "realidad aumentada", "seguimiento facial", "expresiones", "cara"],
+      "en": ["face landmarks", "filters", "avatar", "augmented reality", "face tracking", "expressions", "face ar"]
+    }
+  },
+  "hand-tracking": {
+    "label": { "es": "Seguimiento de manos", "en": "Hand tracking", "pt": "Rastreamento de mãos", "fr": "Suivi des mains", "de": "Handtracking", "it": "Tracciamento delle mani", "ja": "ハンドトラッキング", "zh": "手部追踪", "ko": "핸드 트래킹", "ar": "تتبع اليدين" },
+    "keywords": {
+      "es": ["gestos", "dedos", "realidad virtual", "control sin tocar", "lengua de señas", "realidad mixta", "puntos de la mano"],
+      "en": ["gestures", "fingers", "virtual reality", "touchless control", "sign language", "mixed reality", "hand landmarks"]
+    }
+  },
+  "image-recognition": {
+    "label": { "es": "Reconocimiento de imágenes", "en": "Image recognition", "pt": "Reconhecimento de imagem", "fr": "Reconnaissance d’images", "de": "Bilderkennung", "it": "Riconoscimento delle immagini", "ja": "画像認識", "zh": "图像识别", "ko": "이미지 인식", "ar": "التعرف على الصور" },
+    "keywords": {
+      "es": ["etiquetar fotos", "identificar", "qué hay en la imagen", "clasificar imágenes", "etiquetas automáticas", "visión por computadora", "detectar contenido"],
+      "en": ["tag photos", "identify", "what's in the image", "image classification", "auto tags", "computer vision", "detect content"]
+    }
+  },
+  "visual-search": {
+    "label": { "es": "Búsqueda visual", "en": "Visual search", "pt": "Pesquisa visual", "fr": "Recherche visuelle", "de": "Visuelle Suche", "it": "Ricerca visiva", "ja": "画像で検索", "zh": "以图搜索", "ko": "이미지로 검색", "ar": "البحث المرئي" },
+    "keywords": {
+      "es": ["buscar con la cámara", "buscar por imagen", "lente", "búsqueda inversa", "encontrar parecidos", "foto", "identificar producto"],
+      "en": ["search with camera", "search by image", "lens", "reverse image search", "find similar", "photo", "identify product"]
+    }
+  },
+  "scan-handwriting": {
+    "label": { "es": "Reconocimiento de escritura a mano", "en": "Handwriting recognition", "pt": "Reconhecimento de escrita à mão", "fr": "Reconnaissance de l’écriture manuscrite", "de": "Handschrifterkennung", "it": "Riconoscimento della scrittura a mano", "ja": "手書き文字認識", "zh": "手写识别", "ko": "필기 인식", "ar": "التعرف على الكتابة اليدوية" },
+    "keywords": {
+      "es": ["ocr", "manuscrito", "digitalizar notas", "convertir a texto", "lápiz", "apuntes", "texto escrito a mano"],
+      "en": ["ocr", "handwritten notes", "digitize", "convert to text", "pen input", "scan notes", "ink to text"]
+    }
+  },
+  "voice-recognition": {
+    "label": { "es": "Identificación por voz", "en": "Voice ID", "pt": "Identificação por voz", "fr": "Identification vocale", "de": "Stimmerkennung", "it": "Identificazione vocale", "ja": "声紋認証", "zh": "声纹识别", "ko": "화자 인식", "ar": "التعرف على المتحدث" },
+    "keywords": {
+      "es": ["reconocimiento del hablante", "huella de voz", "biometría", "quién habla", "autenticación por voz", "verificar identidad", "seguridad"],
+      "en": ["speaker recognition", "voiceprint", "biometrics", "who is speaking", "voice authentication", "speaker diarization", "identity check"]
+    }
+  },
+  "sentiment-analysis": {
+    "label": { "es": "Análisis de sentimiento", "en": "Sentiment analysis", "pt": "Análise de sentimento", "fr": "Analyse des sentiments", "de": "Stimmungsanalyse", "it": "Analisi del sentiment", "ja": "感情分析", "zh": "情感分析", "ko": "감성 분석", "ar": "تحليل المشاعر" },
+    "keywords": {
+      "es": ["emociones", "opiniones", "reseñas", "positivo o negativo", "satisfacción", "tono", "voz del cliente"],
+      "en": ["emotions", "opinions", "reviews", "positive or negative", "satisfaction", "tone", "voice of customer"]
+    }
+  },
+  "entity-extraction": {
+    "label": { "es": "Extracción de entidades", "en": "Entity extraction", "pt": "Extração de entidades", "fr": "Extraction d’entités", "de": "Entitätenextraktion", "it": "Estrazione di entità", "ja": "エンティティ抽出", "zh": "实体提取", "ko": "개체 추출", "ar": "استخراج الكيانات" },
+    "keywords": {
+      "es": ["ner", "nombres", "fechas", "montos", "datos clave", "procesamiento de lenguaje", "resaltar"],
+      "en": ["ner", "names", "dates", "amounts", "key data", "nlp", "named entities"]
+    }
+  },
+  "document-parsing": {
+    "label": { "es": "Lectura de documentos", "en": "Document parsing", "pt": "Leitura de documentos", "fr": "Analyse de documents", "de": "Dokumentenanalyse", "it": "Analisi dei documenti", "ja": "ドキュメント解析", "zh": "文档解析", "ko": "문서 파싱", "ar": "تحليل المستندات" },
+    "keywords": {
+      "es": ["facturas", "formularios", "ocr", "extraer campos", "procesamiento de documentos", "recibos", "captura automática"],
+      "en": ["invoices", "forms", "ocr", "extract fields", "document processing", "receipts", "data capture"]
+    }
+  },
+  "prediction": {
+    "label": { "es": "Predicción del modelo", "en": "Model prediction", "pt": "Previsão do modelo", "fr": "Prédiction du modèle", "de": "Modellvorhersage", "it": "Previsione del modello", "ja": "モデルの予測", "zh": "模型预测", "ko": "모델 예측", "ar": "تنبؤ النموذج" },
+    "keywords": {
+      "es": ["pronóstico", "puntaje", "probabilidad", "estimación", "tendencia", "modelo predictivo", "resultado esperado"],
+      "en": ["forecast", "score", "probability", "estimate", "trend", "predictive model", "expected outcome"]
+    }
+  },
+  "recommendation": {
+    "label": { "es": "Recomendado para ti", "en": "Recommended for you", "pt": "Recomendado para você", "fr": "Recommandé pour vous", "de": "Für dich empfohlen", "it": "Consigliati per te", "ja": "あなたへのおすすめ", "zh": "为你推荐", "ko": "맞춤 추천", "ar": "مقترح لك" },
+    "keywords": {
+      "es": ["sugerencias", "personalizado", "te puede gustar", "selección", "productos similares", "descubrir", "algoritmo"],
+      "en": ["suggestions", "personalized", "you may like", "picks", "similar products", "discover", "algorithm"]
+    }
+  },
+  "guardrails": {
+    "label": { "es": "Barreras de protección", "en": "Guardrails", "pt": "Barreiras de proteção", "fr": "Garde-fous", "de": "Leitplanken", "it": "Guardrail", "ja": "ガードレール", "zh": "安全护栏", "ko": "가드레일", "ar": "ضوابط الأمان" },
+    "keywords": {
+      "es": ["guardrails", "seguridad de ia", "moderación", "filtros de contenido", "reglas", "políticas", "contenido bloqueado"],
+      "en": ["ai safety", "moderation", "content filters", "rules", "policies", "blocked content", "safety layer"]
+    }
+  },
+  "hallucination": {
+    "label": { "es": "Alucinación", "en": "Hallucination", "pt": "Alucinação", "fr": "Hallucination", "de": "Halluzination", "it": "Allucinazione", "ja": "ハルシネーション", "zh": "幻觉", "ko": "환각", "ar": "هلوسة" },
+    "keywords": {
+      "es": ["respuesta inventada", "dato falso", "sin fuentes", "inexacto", "verificar", "baja confiabilidad", "error del modelo"],
+      "en": ["made-up answer", "false claim", "ungrounded", "inaccurate", "fact check", "low grounding", "confabulation"]
+    }
+  },
+  "deepfake": {
+    "label": { "es": "Deepfake", "en": "Deepfake", "pt": "Deepfake", "fr": "Hypertrucage", "de": "Deepfake", "it": "Deepfake", "ja": "ディープフェイク", "zh": "深度伪造", "ko": "딥페이크", "ar": "تزييف عميق" },
+    "keywords": {
+      "es": ["contenido manipulado", "video falso", "suplantación", "rostro falso", "medios sintéticos", "desinformación", "voz falsa"],
+      "en": ["manipulated media", "fake video", "impersonation", "face swap", "synthetic media", "misinformation", "fake voice"]
+    }
+  },
+  "ai-detection": {
+    "label": { "es": "Detección de IA", "en": "AI detection", "pt": "Detecção de IA", "fr": "Détection d’IA", "de": "KI-Erkennung", "it": "Rilevamento dell’IA", "ja": "AI検出", "zh": "AI 检测", "ko": "AI 탐지", "ar": "كشف محتوى الذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["contenido generado", "texto con ia", "plagio", "autenticidad", "marca de agua", "verificar origen", "escrito por humano"],
+      "en": ["generated content", "ai text", "plagiarism", "authenticity", "watermark", "verify origin", "human written"]
+    }
+  },
+  "explainability": {
+    "label": { "es": "Explicabilidad", "en": "Explainability", "pt": "Explicabilidade", "fr": "Explicabilité", "de": "Erklärbarkeit", "it": "Spiegabilità", "ja": "説明可能性", "zh": "可解释性", "ko": "설명 가능성", "ar": "قابلية التفسير" },
+    "keywords": {
+      "es": ["interpretabilidad", "por qué decidió", "transparencia", "ia explicable", "xai", "importancia de variables", "auditoría"],
+      "en": ["interpretability", "why it decided", "transparency", "explainable ai", "xai", "feature importance", "audit"]
+    }
+  },
+  "evaluation": {
+    "label": { "es": "Evaluación de modelos", "en": "Model evaluation", "pt": "Avaliação de modelos", "fr": "Évaluation de modèles", "de": "Modellbewertung", "it": "Valutazione dei modelli", "ja": "モデルの評価", "zh": "模型评估", "ko": "모델 평가", "ar": "تقييم النماذج" },
+    "keywords": {
+      "es": ["evals", "casos de prueba", "benchmark", "calificar respuestas", "métricas", "probar prompt", "puntuación"],
+      "en": ["evals", "test cases", "benchmark", "grade answers", "metrics", "test prompt", "scoring"]
+    }
+  },
+  "confidence-score": {
+    "label": { "es": "Nivel de confianza", "en": "Confidence score", "pt": "Nível de confiança", "fr": "Score de confiance", "de": "Konfidenzwert", "it": "Livello di confidenza", "ja": "信頼度スコア", "zh": "置信度", "ko": "신뢰도 점수", "ar": "درجة الثقة" },
+    "keywords": {
+      "es": ["certeza", "probabilidad", "puntaje", "seguridad de la respuesta", "porcentaje", "umbral", "fiabilidad"],
+      "en": ["certainty", "probability", "how sure", "percentage", "threshold", "reliability", "likelihood"]
+    }
+  }
+}

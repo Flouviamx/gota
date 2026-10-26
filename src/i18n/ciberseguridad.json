@@ -1,0 +1,639 @@
+{
+  "malware": {
+    "label": { "es": "Malware detectado", "en": "Malware detected", "pt": "Malware detectado", "fr": "Logiciel malveillant détecté", "de": "Schadsoftware erkannt", "it": "Malware rilevato", "ja": "マルウェアを検出", "zh": "检测到恶意软件", "ko": "악성코드 감지됨", "ar": "تم اكتشاف برمجيات خبيثة" },
+    "keywords": {
+      "es": ["software malicioso", "virus", "amenaza", "archivo infectado", "código malicioso", "proceso sospechoso", "peligroso", "infección"],
+      "en": ["malicious software", "virus", "threat", "infected file", "malicious code", "suspicious process", "dangerous", "infection"]
+    }
+  },
+  "malware-blocked": {
+    "label": { "es": "Malware bloqueado", "en": "Malware blocked", "pt": "Malware bloqueado", "fr": "Logiciel malveillant bloqué", "de": "Schadsoftware blockiert", "it": "Malware bloccato", "ja": "マルウェアをブロック", "zh": "已拦截恶意软件", "ko": "악성코드 차단됨", "ar": "تم حظر البرمجيات الخبيثة" },
+    "keywords": {
+      "es": ["amenaza detenida", "protegido", "virus eliminado", "antivirus", "descarga bloqueada", "sistema a salvo", "infección evitada"],
+      "en": ["threat stopped", "protected", "virus removed", "antivirus", "download blocked", "system safe", "infection prevented"]
+    }
+  },
+  "bug-bounty": {
+    "label": { "es": "Recompensa por vulnerabilidades", "en": "Bug bounty", "pt": "Recompensa por bugs", "fr": "Prime aux bogues", "de": "Bug-Bounty", "it": "Bug bounty", "ja": "バグ報奨金", "zh": "漏洞赏金", "ko": "버그 바운티", "ar": "مكافأة اكتشاف الثغرات" },
+    "keywords": {
+      "es": ["reportar falla", "hackeo ético", "divulgación responsable", "investigador de seguridad", "premio", "pago por hallazgo", "cazador de bugs"],
+      "en": ["vulnerability reward", "report a bug", "ethical hacking", "responsible disclosure", "security researcher", "prize", "bug hunter"]
+    }
+  },
+  "malware-scan": {
+    "label": { "es": "Análisis de malware", "en": "Malware scan", "pt": "Verificação de malware", "fr": "Analyse antimalware", "de": "Malware-Scan", "it": "Scansione malware", "ja": "マルウェアスキャン", "zh": "恶意软件扫描", "ko": "악성코드 검사", "ar": "فحص البرمجيات الخبيثة" },
+    "keywords": {
+      "es": ["escanear", "antivirus", "revisar archivo", "detección de amenazas", "análisis completo", "buscar virus", "inspeccionar"],
+      "en": ["virus scan", "antivirus", "check file", "threat detection", "full scan", "inspect", "security check"]
+    }
+  },
+  "quarantine": {
+    "label": { "es": "Cuarentena", "en": "Quarantine", "pt": "Quarentena", "fr": "Quarantaine", "de": "Quarantäne", "it": "Quarantena", "ja": "隔離", "zh": "隔离", "ko": "격리", "ar": "العزل" },
+    "keywords": {
+      "es": ["aislar", "archivo infectado", "contener amenaza", "antivirus", "separar", "bloquear archivo", "zona segura"],
+      "en": ["isolate", "infected file", "contain threat", "antivirus", "separate", "sandbox", "hold"]
+    }
+  },
+  "ransomware": {
+    "label": { "es": "Ransomware", "en": "Ransomware", "pt": "Ransomware", "fr": "Rançongiciel", "de": "Erpressungssoftware", "it": "Ransomware", "ja": "ランサムウェア", "zh": "勒索软件", "ko": "랜섬웨어", "ar": "برمجيات الفدية" },
+    "keywords": {
+      "es": ["secuestro de datos", "rescate", "extorsión", "archivos cifrados", "pago en cripto", "archivos bloqueados", "malware"],
+      "en": ["data hostage", "ransom", "extortion", "encrypted files", "crypto payment", "locked files", "malware"]
+    }
+  },
+  "spyware": {
+    "label": { "es": "Software espía", "en": "Spyware", "pt": "Spyware", "fr": "Logiciel espion", "de": "Spionagesoftware", "it": "Spyware", "ja": "スパイウェア", "zh": "间谍软件", "ko": "스파이웨어", "ar": "برامج التجسس" },
+    "keywords": {
+      "es": ["espionaje", "vigilancia", "rastreo", "stalkerware", "monitoreo oculto", "robo de datos", "privacidad"],
+      "en": ["espionage", "surveillance", "tracking", "stalkerware", "hidden monitoring", "data theft", "privacy"]
+    }
+  },
+  "adware": {
+    "label": { "es": "Adware", "en": "Adware", "pt": "Adware", "fr": "Logiciel publicitaire", "de": "Adware", "it": "Adware", "ja": "アドウェア", "zh": "广告软件", "ko": "애드웨어", "ar": "برامج الإعلانات المزعجة" },
+    "keywords": {
+      "es": ["anuncios no deseados", "ventanas emergentes", "publicidad invasiva", "pop-ups", "software basura", "redireccionamiento", "malware"],
+      "en": ["unwanted ads", "pop-ups", "intrusive ads", "junkware", "browser hijacker", "redirects", "malware"]
+    }
+  },
+  "keylogger": {
+    "label": { "es": "Registrador de teclas", "en": "Keylogger", "pt": "Keylogger", "fr": "Enregistreur de frappe", "de": "Keylogger", "it": "Keylogger", "ja": "キーロガー", "zh": "键盘记录器", "ko": "키로거", "ar": "مسجّل ضغطات المفاتيح" },
+    "keywords": {
+      "es": ["registro de pulsaciones", "captura de teclado", "robo de contraseñas", "espionaje", "teclado", "vigilancia", "malware"],
+      "en": ["keystroke logging", "keyboard capture", "password theft", "espionage", "keyboard", "surveillance", "malware"]
+    }
+  },
+  "malicious-usb": {
+    "label": { "es": "USB malicioso", "en": "Malicious USB", "pt": "USB malicioso", "fr": "Clé USB piégée", "de": "Präparierter USB-Stick", "it": "Chiavetta USB malevola", "ja": "不正なUSBメモリ", "zh": "恶意U盘", "ko": "악성 USB", "ar": "ذاكرة USB خبيثة" },
+    "keywords": {
+      "es": ["memoria usb", "memoria abandonada", "dispositivo infectado", "baiting", "unidad extraíble", "cebo", "puerto usb"],
+      "en": ["usb drive", "usb drop attack", "infected device", "baiting", "removable drive", "rubber ducky", "flash drive"]
+    }
+  },
+  "zero-day": {
+    "label": { "es": "Vulnerabilidad de día cero", "en": "Zero-day vulnerability", "pt": "Vulnerabilidade de dia zero", "fr": "Vulnérabilité zero-day", "de": "Zero-Day-Lücke", "it": "Vulnerabilità zero-day", "ja": "ゼロデイ脆弱性", "zh": "零日漏洞", "ko": "제로데이 취약점", "ar": "ثغرة يوم الصفر" },
+    "keywords": {
+      "es": ["0-day", "falla desconocida", "sin parche", "exploit", "amenaza nueva", "vulnerabilidad crítica", "ataque inédito"],
+      "en": ["0-day", "unknown flaw", "unpatched", "exploit", "new threat", "critical vulnerability", "novel attack"]
+    }
+  },
+  "payload": {
+    "label": { "es": "Carga maliciosa", "en": "Malicious payload", "pt": "Carga maliciosa", "fr": "Charge malveillante", "de": "Schädliche Payload", "it": "Payload dannoso", "ja": "悪意のあるペイロード", "zh": "恶意载荷", "ko": "악성 페이로드", "ar": "حمولة خبيثة" },
+    "keywords": {
+      "es": ["carga útil", "código malicioso", "ejecución", "dropper", "archivo adjunto", "entrega del ataque", "shellcode"],
+      "en": ["cargo", "malicious code", "execution", "dropper", "attachment", "attack delivery", "shellcode"]
+    }
+  },
+  "supply-chain-attack": {
+    "label": { "es": "Ataque a la cadena de suministro", "en": "Supply chain attack", "pt": "Ataque à cadeia de suprimentos", "fr": "Attaque de la chaîne d’approvisionnement", "de": "Lieferkettenangriff", "it": "Attacco alla catena di fornitura", "ja": "サプライチェーン攻撃", "zh": "供应链攻击", "ko": "공급망 공격", "ar": "هجوم سلسلة التوريد" },
+    "keywords": {
+      "es": ["dependencia comprometida", "paquete malicioso", "proveedor", "npm", "actualización infectada", "librería de terceros", "sbom"],
+      "en": ["compromised dependency", "malicious package", "vendor", "npm", "poisoned update", "third-party library", "sbom"]
+    }
+  },
+  "rootkit": {
+    "label": { "es": "Rootkit", "en": "Rootkit", "pt": "Rootkit", "fr": "Rootkit", "de": "Rootkit", "it": "Rootkit", "ja": "ルートキット", "zh": "Rootkit", "ko": "루트킷", "ar": "روتكيت" },
+    "keywords": {
+      "es": ["malware oculto", "acceso raíz", "kernel", "persistencia", "nivel del sistema", "sigiloso", "difícil de detectar"],
+      "en": ["hidden malware", "root access", "kernel", "persistence", "system level", "stealth", "hard to detect"]
+    }
+  },
+  "cryptojacking": {
+    "label": { "es": "Criptominería oculta", "en": "Cryptojacking", "pt": "Cryptojacking", "fr": "Minage clandestin", "de": "Cryptojacking", "it": "Cryptojacking", "ja": "クリプトジャッキング", "zh": "挖矿劫持", "ko": "크립토재킹", "ar": "التعدين الخفي للعملات المشفرة" },
+    "keywords": {
+      "es": ["minería de criptomonedas", "minado sin permiso", "bitcoin", "uso de cpu", "equipo lento", "cripto", "malware"],
+      "en": ["crypto mining", "hidden miner", "bitcoin", "cpu usage", "slow computer", "unauthorized mining", "malware"]
+    }
+  },
+  "backdoor": {
+    "label": { "es": "Puerta trasera", "en": "Backdoor", "pt": "Backdoor", "fr": "Porte dérobée", "de": "Hintertür", "it": "Backdoor", "ja": "バックドア", "zh": "后门", "ko": "백도어", "ar": "باب خلفي" },
+    "keywords": {
+      "es": ["acceso oculto", "entrada secreta", "acceso remoto", "persistencia", "troyano", "acceso no autorizado", "credencial oculta"],
+      "en": ["hidden access", "secret entrance", "remote access", "persistence", "trojan", "unauthorized access", "hardcoded credentials"]
+    }
+  },
+  "eavesdropping": {
+    "label": { "es": "Escucha clandestina", "en": "Eavesdropping", "pt": "Escuta clandestina", "fr": "Écoute clandestine", "de": "Abhören", "it": "Intercettazione", "ja": "盗聴", "zh": "窃听", "ko": "도청", "ar": "التنصت" },
+    "keywords": {
+      "es": ["espionaje", "intervenir llamadas", "sniffing", "intercepción", "micrófono oculto", "vigilancia", "captura de paquetes"],
+      "en": ["espionage", "wiretap", "sniffing", "interception", "bugging", "surveillance", "packet capture"]
+    }
+  },
+  "honeypot": {
+    "label": { "es": "Honeypot", "en": "Honeypot", "pt": "Honeypot", "fr": "Pot de miel", "de": "Honeypot", "it": "Honeypot", "ja": "ハニーポット", "zh": "蜜罐", "ko": "허니팟", "ar": "مصيدة العسل" },
+    "keywords": {
+      "es": ["señuelo", "trampa", "carnada", "tarro de miel", "atraer atacantes", "engaño", "detectar intrusos"],
+      "en": ["decoy", "trap", "bait", "honey jar", "lure attackers", "deception", "detect intruders"]
+    }
+  },
+  "antivirus": {
+    "label": { "es": "Antivirus", "en": "Antivirus", "pt": "Antivírus", "fr": "Antivirus", "de": "Virenschutz", "it": "Antivirus", "ja": "ウイルス対策", "zh": "杀毒软件", "ko": "백신", "ar": "مضاد الفيروسات" },
+    "keywords": {
+      "es": ["protección", "eliminar virus", "antimalware", "escaneo", "limpiar computadora", "defensa", "desinfectar"],
+      "en": ["protection", "remove virus", "anti-malware", "scan", "clean computer", "defense", "disinfect"]
+    }
+  },
+  "worm": {
+    "label": { "es": "Gusano informático", "en": "Computer worm", "pt": "Worm", "fr": "Ver informatique", "de": "Computerwurm", "it": "Worm informatico", "ja": "ワーム", "zh": "蠕虫病毒", "ko": "웜 바이러스", "ar": "دودة حاسوبية" },
+    "keywords": {
+      "es": ["malware", "autorreplicante", "propagación", "se extiende solo", "contagio en red", "infección masiva", "virus de red"],
+      "en": ["malware", "self-replicating", "spreading", "network infection", "outbreak", "virus", "propagation"]
+    }
+  },
+  "trojan-horse": {
+    "label": { "es": "Troyano", "en": "Trojan horse", "pt": "Cavalo de Troia", "fr": "Cheval de Troie", "de": "Trojaner", "it": "Cavallo di Troia", "ja": "トロイの木馬", "zh": "特洛伊木马", "ko": "트로이 목마", "ar": "حصان طروادة" },
+    "keywords": {
+      "es": ["caballo de Troya", "malware", "programa disfrazado", "descarga falsa", "software engañoso", "puerta trasera", "app maliciosa"],
+      "en": ["trojan", "malware", "disguised program", "fake download", "deceptive software", "backdoor", "malicious app"]
+    }
+  },
+  "botnet": {
+    "label": { "es": "Red de bots", "en": "Botnet", "pt": "Botnet", "fr": "Botnet", "de": "Botnetz", "it": "Botnet", "ja": "ボットネット", "zh": "僵尸网络", "ko": "봇넷", "ar": "شبكة بوتات" },
+    "keywords": {
+      "es": ["equipos zombi", "bots", "red infectada", "comando y control", "ataque distribuido", "spam masivo", "computadoras secuestradas"],
+      "en": ["zombie computers", "bots", "infected network", "command and control", "distributed attack", "spam", "hijacked machines"]
+    }
+  },
+  "phishing": {
+    "label": { "es": "Phishing", "en": "Phishing", "pt": "Phishing", "fr": "Hameçonnage", "de": "Phishing", "it": "Phishing", "ja": "フィッシング", "zh": "网络钓鱼", "ko": "피싱", "ar": "التصيد الاحتيالي" },
+    "keywords": {
+      "es": ["suplantación", "correo fraudulento", "estafa", "anzuelo", "enlace falso", "robo de contraseñas", "fraude en línea"],
+      "en": ["scam", "fraudulent email", "bait", "fake link", "password theft", "online fraud", "hook"]
+    }
+  },
+  "smishing": {
+    "label": { "es": "Fraude por SMS", "en": "SMS phishing", "pt": "Golpe por SMS", "fr": "Hameçonnage par SMS", "de": "SMS-Phishing", "it": "Phishing via SMS", "ja": "スミッシング", "zh": "短信钓鱼", "ko": "스미싱", "ar": "التصيد عبر الرسائل النصية" },
+    "keywords": {
+      "es": ["mensaje de texto", "sms falso", "estafa por celular", "enlace sospechoso", "paquetería falsa", "phishing", "suplantación"],
+      "en": ["text message", "fake sms", "phone scam", "suspicious link", "delivery scam", "phishing", "mobile fraud"]
+    }
+  },
+  "vishing": {
+    "label": { "es": "Fraude telefónico", "en": "Voice phishing", "pt": "Golpe por telefone", "fr": "Hameçonnage vocal", "de": "Telefon-Phishing", "it": "Phishing vocale", "ja": "ボイスフィッシング", "zh": "语音钓鱼", "ko": "보이스피싱", "ar": "التصيد الصوتي" },
+    "keywords": {
+      "es": ["llamada falsa", "falso ejecutivo del banco", "extorsión telefónica", "suplantación", "phishing", "llamada sospechosa", "robo de datos por teléfono"],
+      "en": ["fake call", "phone scam", "bank impersonation", "phone extortion", "phishing", "suspicious call", "robocall"]
+    }
+  },
+  "spear-phishing": {
+    "label": { "es": "Phishing dirigido", "en": "Spear phishing", "pt": "Phishing direcionado", "fr": "Hameçonnage ciblé", "de": "Spear-Phishing", "it": "Phishing mirato", "ja": "標的型フィッシング", "zh": "鱼叉式网络钓鱼", "ko": "스피어 피싱", "ar": "التصيد الموجّه" },
+    "keywords": {
+      "es": ["ataque dirigido", "objetivo específico", "correo personalizado", "fraude al ceo", "whaling", "suplantación", "estafa"],
+      "en": ["targeted attack", "specific target", "personalized email", "ceo fraud", "whaling", "impersonation", "scam"]
+    }
+  },
+  "identity-theft": {
+    "label": { "es": "Robo de identidad", "en": "Identity theft", "pt": "Roubo de identidade", "fr": "Usurpation d’identité", "de": "Identitätsdiebstahl", "it": "Furto d’identità", "ja": "個人情報の盗用", "zh": "身份盗用", "ko": "명의 도용", "ar": "سرقة الهوية" },
+    "keywords": {
+      "es": ["suplantación de identidad", "fraude", "datos personales", "usurpación", "documentos robados", "crédito a tu nombre", "persona falsa"],
+      "en": ["impersonation", "fraud", "personal data", "stolen documents", "credit fraud", "fake persona", "stolen id"]
+    }
+  },
+  "social-engineering": {
+    "label": { "es": "Ingeniería social", "en": "Social engineering", "pt": "Engenharia social", "fr": "Ingénierie sociale", "de": "Social Engineering", "it": "Ingegneria sociale", "ja": "ソーシャルエンジニアリング", "zh": "社会工程学", "ko": "사회공학", "ar": "الهندسة الاجتماعية" },
+    "keywords": {
+      "es": ["manipulación", "engaño", "pretexting", "suplantación", "estafa", "factor humano", "abuso de confianza", "phishing"],
+      "en": ["manipulation", "deception", "pretexting", "impersonation", "scam", "human factor", "con artist", "phishing"]
+    }
+  },
+  "credential-theft": {
+    "label": { "es": "Robo de credenciales", "en": "Credential theft", "pt": "Roubo de credenciais", "fr": "Vol d’identifiants", "de": "Diebstahl von Zugangsdaten", "it": "Furto di credenziali", "ja": "認証情報の窃取", "zh": "凭据窃取", "ko": "계정 정보 탈취", "ar": "سرقة بيانات الاعتماد" },
+    "keywords": {
+      "es": ["contraseña robada", "usuario y contraseña", "phishing", "keylogger", "fuga de contraseñas", "cuenta vulnerada", "inicio de sesión"],
+      "en": ["stolen password", "username and password", "phishing", "keylogger", "password leak", "account compromise", "login"]
+    }
+  },
+  "clickjacking": {
+    "label": { "es": "Secuestro de clics", "en": "Clickjacking", "pt": "Sequestro de cliques", "fr": "Détournement de clic", "de": "Clickjacking", "it": "Clickjacking", "ja": "クリックジャッキング", "zh": "点击劫持", "ko": "클릭재킹", "ar": "اختطاف النقرات" },
+    "keywords": {
+      "es": ["capa oculta", "iframe invisible", "botón falso", "clic engañoso", "ui redressing", "x-frame-options", "vulnerabilidad web"],
+      "en": ["hidden overlay", "invisible iframe", "fake button", "deceptive click", "ui redressing", "x-frame-options", "web vulnerability"]
+    }
+  },
+  "session-hijack": {
+    "label": { "es": "Secuestro de sesión", "en": "Session hijacking", "pt": "Sequestro de sessão", "fr": "Détournement de session", "de": "Session-Hijacking", "it": "Dirottamento di sessione", "ja": "セッションハイジャック", "zh": "会话劫持", "ko": "세션 하이재킹", "ar": "اختطاف الجلسة" },
+    "keywords": {
+      "es": ["cookie robada", "token de sesión", "sesión activa", "suplantación", "acceso no autorizado", "cuenta tomada", "cerrar todas las sesiones"],
+      "en": ["stolen cookie", "session token", "active session", "impersonation", "unauthorized access", "account takeover", "sign out everywhere"]
+    }
+  },
+  "spoofing": {
+    "label": { "es": "Suplantación", "en": "Spoofing", "pt": "Spoofing", "fr": "Spoofing", "de": "Spoofing", "it": "Spoofing", "ja": "スプーフィング", "zh": "欺骗攻击", "ko": "스푸핑", "ar": "الانتحال" },
+    "keywords": {
+      "es": ["identidad falsa", "falsificación", "fuente falsa", "remitente falso", "imitación", "engaño", "ip falsa"],
+      "en": ["fake identity", "forgery", "fake source", "impersonation", "masquerade", "fake sender", "deception"]
+    }
+  },
+  "email-spoofing": {
+    "label": { "es": "Correo suplantado", "en": "Email spoofing", "pt": "E-mail falsificado", "fr": "Usurpation d’adresse e-mail", "de": "E-Mail-Spoofing", "it": "Email falsificata", "ja": "メールのなりすまし", "zh": "邮件欺骗", "ko": "이메일 스푸핑", "ar": "انتحال البريد الإلكتروني" },
+    "keywords": {
+      "es": ["remitente falso", "correo falso", "phishing", "spf", "dkim", "dmarc", "dominio falsificado"],
+      "en": ["fake sender", "forged email", "phishing", "spf", "dkim", "dmarc", "forged domain"]
+    }
+  },
+  "website-spoofing": {
+    "label": { "es": "Sitio web falso", "en": "Spoofed website", "pt": "Site falso", "fr": "Faux site web", "de": "Gefälschte Website", "it": "Sito web falso", "ja": "偽サイト", "zh": "仿冒网站", "ko": "가짜 웹사이트", "ar": "موقع ويب مزيّف" },
+    "keywords": {
+      "es": ["página clonada", "phishing", "dominio parecido", "typosquatting", "inicio de sesión falso", "liga sospechosa", "fraude en línea"],
+      "en": ["cloned page", "phishing", "lookalike domain", "typosquatting", "fake login", "suspicious link", "online fraud"]
+    }
+  },
+  "dark-web": {
+    "label": { "es": "Dark web", "en": "Dark web", "pt": "Dark web", "fr": "Dark web", "de": "Darknet", "it": "Dark web", "ja": "ダークウェブ", "zh": "暗网", "ko": "다크 웹", "ar": "الويب المظلم" },
+    "keywords": {
+      "es": ["internet oculto", "deep web", "tor", "mercado negro", "datos filtrados", "onion", "red anónima"],
+      "en": ["hidden internet", "deep web", "tor", "black market", "leaked data", "onion", "anonymous network"]
+    }
+  },
+  "man-in-the-middle": {
+    "label": { "es": "Ataque de intermediario", "en": "Man-in-the-middle attack", "pt": "Ataque man-in-the-middle", "fr": "Attaque de l’homme du milieu", "de": "Man-in-the-Middle-Angriff", "it": "Attacco man-in-the-middle", "ja": "中間者攻撃", "zh": "中间人攻击", "ko": "중간자 공격", "ar": "هجوم الوسيط" },
+    "keywords": {
+      "es": ["mitm", "intercepción", "espiar tráfico", "conexión interceptada", "suplantación", "secuestro de sesión", "red insegura"],
+      "en": ["mitm", "interception", "traffic sniffing", "on-path attack", "intercepted connection", "impersonation", "insecure network"]
+    }
+  },
+  "evil-twin": {
+    "label": { "es": "Red Wi-Fi falsa", "en": "Fake Wi-Fi network", "pt": "Rede Wi-Fi falsa", "fr": "Faux réseau Wi-Fi", "de": "Gefälschtes WLAN", "it": "Rete Wi-Fi falsa", "ja": "偽のWi-Fi", "zh": "钓鱼Wi-Fi", "ko": "가짜 와이파이", "ar": "شبكة Wi-Fi مزيّفة" },
+    "keywords": {
+      "es": ["punto de acceso falso", "hotspot", "red pública", "gemelo malvado", "wifi gratis", "suplantación de red", "intercepción"],
+      "en": ["rogue access point", "hotspot", "public wifi", "free wifi", "network impersonation", "interception", "wireless attack"]
+    }
+  },
+  "cyberattack": {
+    "label": { "es": "Ciberataque", "en": "Cyberattack", "pt": "Ataque cibernético", "fr": "Cyberattaque", "de": "Cyberangriff", "it": "Attacco informatico", "ja": "サイバー攻撃", "zh": "网络攻击", "ko": "사이버 공격", "ar": "هجوم إلكتروني" },
+    "keywords": {
+      "es": ["ataque informático", "amenaza", "intrusión", "incidente", "ofensiva", "objetivo", "hackeo"],
+      "en": ["hack", "threat", "intrusion", "incident", "offensive", "target", "under attack"]
+    }
+  },
+  "exploit": {
+    "label": { "es": "Exploit", "en": "Exploit", "pt": "Exploit", "fr": "Exploit", "de": "Exploit", "it": "Exploit", "ja": "エクスプロイト", "zh": "漏洞利用", "ko": "익스플로잇", "ar": "برمجية استغلال" },
+    "keywords": {
+      "es": ["aprovechar vulnerabilidad", "código de ataque", "prueba de concepto", "ejecución remota", "tomar control", "cve", "falla de seguridad"],
+      "en": ["abuse vulnerability", "attack code", "proof of concept", "remote code execution", "gain control", "cve", "security flaw"]
+    }
+  },
+  "threat-map": {
+    "label": { "es": "Mapa de amenazas", "en": "Threat map", "pt": "Mapa de ameaças", "fr": "Carte des menaces", "de": "Bedrohungskarte", "it": "Mappa delle minacce", "ja": "脅威マップ", "zh": "威胁地图", "ko": "위협 지도", "ar": "خريطة التهديدات" },
+    "keywords": {
+      "es": ["ataques en vivo", "mapa del mundo", "inteligencia de amenazas", "ciberataques", "monitoreo global", "regiones", "tiempo real"],
+      "en": ["live attacks", "world map", "threat intelligence", "cyberattacks", "global monitoring", "regions", "real time"]
+    }
+  },
+  "vulnerability": {
+    "label": { "es": "Vulnerabilidad", "en": "Vulnerability", "pt": "Vulnerabilidade", "fr": "Vulnérabilité", "de": "Sicherheitslücke", "it": "Vulnerabilità", "ja": "脆弱性", "zh": "漏洞", "ko": "취약점", "ar": "ثغرة أمنية" },
+    "keywords": {
+      "es": ["falla de seguridad", "brecha", "punto débil", "cve", "riesgo", "hueco", "parche pendiente"],
+      "en": ["security flaw", "weakness", "weak spot", "cve", "risk", "loophole", "needs patch"]
+    }
+  },
+  "data-breach": {
+    "label": { "es": "Brecha de datos", "en": "Data breach", "pt": "Violação de dados", "fr": "Violation de données", "de": "Datenschutzverletzung", "it": "Violazione dei dati", "ja": "データ侵害", "zh": "数据入侵", "ko": "데이터 침해", "ar": "اختراق البيانات" },
+    "keywords": {
+      "es": ["hackeo", "intrusión", "datos robados", "exfiltración", "incidente de seguridad", "perímetro vulnerado", "notificar a usuarios"],
+      "en": ["hack", "intrusion", "stolen data", "exfiltration", "security incident", "breached perimeter", "breach notification"]
+    }
+  },
+  "tamper-seal": {
+    "label": { "es": "Sello de seguridad", "en": "Tamper seal", "pt": "Lacre de segurança", "fr": "Scellé de sécurité", "de": "Sicherheitssiegel", "it": "Sigillo di garanzia", "ja": "改ざん防止シール", "zh": "防拆封条", "ko": "변조 방지 씰", "ar": "ختم كشف العبث" },
+    "keywords": {
+      "es": ["sello de garantía", "manipulación", "precinto", "a prueba de alteraciones", "evidencia de apertura", "inviolable", "integridad"],
+      "en": ["warranty seal", "tampering", "tamper-evident", "security tape", "opened evidence", "integrity", "void sticker"]
+    }
+  },
+  "injection": {
+    "label": { "es": "Inyección SQL", "en": "SQL injection", "pt": "Injeção de SQL", "fr": "Injection SQL", "de": "SQL-Injection", "it": "SQL injection", "ja": "SQLインジェクション", "zh": "SQL注入", "ko": "SQL 인젝션", "ar": "حقن SQL" },
+    "keywords": {
+      "es": ["base de datos", "consulta maliciosa", "entrada no validada", "inyección de código", "owasp", "vulnerabilidad web", "sanitizar datos"],
+      "en": ["database", "malicious query", "unsanitized input", "code injection", "owasp", "web vulnerability", "sqli"]
+    }
+  },
+  "script-injection": {
+    "label": { "es": "Inyección de scripts", "en": "Cross-site scripting", "pt": "Injeção de script", "fr": "Injection de script", "de": "Cross-Site-Scripting", "it": "Cross-site scripting", "ja": "クロスサイトスクリプティング", "zh": "跨站脚本攻击", "ko": "크로스 사이트 스크립팅", "ar": "البرمجة النصية عبر المواقع" },
+    "keywords": {
+      "es": ["xss", "cross-site scripting", "javascript malicioso", "código en la página", "owasp", "vulnerabilidad web", "robo de cookies"],
+      "en": ["xss", "malicious javascript", "injected code", "owasp", "web vulnerability", "cookie theft", "html injection"]
+    }
+  },
+  "brute-force": {
+    "label": { "es": "Ataque de fuerza bruta", "en": "Brute-force attack", "pt": "Ataque de força bruta", "fr": "Attaque par force brute", "de": "Brute-Force-Angriff", "it": "Attacco di forza bruta", "ja": "総当たり攻撃", "zh": "暴力破解", "ko": "무차별 대입 공격", "ar": "هجوم القوة الغاشمة" },
+    "keywords": {
+      "es": ["adivinar contraseñas", "intentos de acceso", "ataque de diccionario", "descifrar contraseña", "credential stuffing", "probar combinaciones", "bloqueo por intentos"],
+      "en": ["password guessing", "login attempts", "dictionary attack", "password cracking", "credential stuffing", "try every combination", "account lockout"]
+    }
+  },
+  "penetration-test": {
+    "label": { "es": "Prueba de penetración", "en": "Penetration test", "pt": "Teste de invasão", "fr": "Test d’intrusion", "de": "Penetrationstest", "it": "Penetration test", "ja": "ペネトレーションテスト", "zh": "渗透测试", "ko": "모의 해킹", "ar": "اختبار الاختراق" },
+    "keywords": {
+      "es": ["pentest", "hackeo ético", "red team", "evaluación de seguridad", "simulación de ataque", "encontrar vulnerabilidades", "auditoría técnica"],
+      "en": ["pentest", "ethical hacking", "red team", "security assessment", "attack simulation", "find vulnerabilities", "technical audit"]
+    }
+  },
+  "privilege-escalation": {
+    "label": { "es": "Escalada de privilegios", "en": "Privilege escalation", "pt": "Escalonamento de privilégios", "fr": "Élévation de privilèges", "de": "Rechteausweitung", "it": "Escalation dei privilegi", "ja": "権限昇格", "zh": "权限提升", "ko": "권한 상승", "ar": "تصعيد الصلاحيات" },
+    "keywords": {
+      "es": ["permisos de administrador", "acceso root", "superusuario", "elevar permisos", "acceso indebido", "movimiento lateral", "sudo"],
+      "en": ["admin rights", "root access", "superuser", "elevate permissions", "improper access", "lateral movement", "sudo"]
+    }
+  },
+  "hacker": {
+    "label": { "es": "Hacker", "en": "Hacker", "pt": "Hacker", "fr": "Pirate informatique", "de": "Hacker", "it": "Hacker", "ja": "ハッカー", "zh": "黑客", "ko": "해커", "ar": "مخترق" },
+    "keywords": {
+      "es": ["pirata informático", "atacante", "ciberdelincuente", "intruso", "sombrero negro", "actor de amenaza", "encapuchado"],
+      "en": ["attacker", "cybercriminal", "intruder", "black hat", "threat actor", "cracker", "hooded figure"]
+    }
+  },
+  "compromised-account": {
+    "label": { "es": "Cuenta comprometida", "en": "Compromised account", "pt": "Conta comprometida", "fr": "Compte compromis", "de": "Kompromittiertes Konto", "it": "Account compromesso", "ja": "乗っ取られたアカウント", "zh": "账户被盗", "ko": "탈취된 계정", "ar": "حساب مخترق" },
+    "keywords": {
+      "es": ["cuenta hackeada", "robo de cuenta", "acceso no autorizado", "contraseña filtrada", "restablecer contraseña", "actividad sospechosa", "recuperar cuenta"],
+      "en": ["hacked account", "account takeover", "unauthorized access", "leaked password", "reset password", "suspicious activity", "recover account"]
+    }
+  },
+  "insider-threat": {
+    "label": { "es": "Amenaza interna", "en": "Insider threat", "pt": "Ameaça interna", "fr": "Menace interne", "de": "Insider-Bedrohung", "it": "Minaccia interna", "ja": "内部脅威", "zh": "内部威胁", "ko": "내부자 위협", "ar": "تهديد داخلي" },
+    "keywords": {
+      "es": ["empleado malicioso", "infiltrado", "fuga interna", "abuso de privilegios", "persona de confianza", "sabotaje", "excolaborador"],
+      "en": ["rogue employee", "mole", "internal leak", "privilege abuse", "trusted person", "sabotage", "former employee"]
+    }
+  },
+  "traffic-flood": {
+    "label": { "es": "Ataque DDoS", "en": "DDoS attack", "pt": "Ataque DDoS", "fr": "Attaque DDoS", "de": "DDoS-Angriff", "it": "Attacco DDoS", "ja": "DDoS攻撃", "zh": "DDoS攻击", "ko": "디도스 공격", "ar": "هجوم حجب الخدمة الموزّع" },
+    "keywords": {
+      "es": ["denegación de servicio", "inundación de tráfico", "exceso de solicitudes", "caída del sitio", "saturación", "botnet", "mitigación"],
+      "en": ["denial of service", "flooding", "too many requests", "site down", "traffic spike", "botnet", "mitigation"]
+    }
+  },
+  "port-scan": {
+    "label": { "es": "Escaneo de puertos", "en": "Port scan", "pt": "Varredura de portas", "fr": "Balayage de ports", "de": "Portscan", "it": "Scansione delle porte", "ja": "ポートスキャン", "zh": "端口扫描", "ko": "포트 스캔", "ar": "فحص المنافذ" },
+    "keywords": {
+      "es": ["nmap", "puertos abiertos", "reconocimiento", "sondeo de red", "servicios expuestos", "auditoría de red", "tcp"],
+      "en": ["nmap", "open ports", "reconnaissance", "network probe", "exposed services", "network audit", "tcp"]
+    }
+  },
+  "data-leak": {
+    "label": { "es": "Fuga de datos", "en": "Data leak", "pt": "Vazamento de dados", "fr": "Fuite de données", "de": "Datenleck", "it": "Fuga di dati", "ja": "データ漏えい", "zh": "数据泄露", "ko": "데이터 유출", "ar": "تسريب البيانات" },
+    "keywords": {
+      "es": ["filtración", "datos expuestos", "información confidencial", "exposición accidental", "base de datos abierta", "privacidad", "goteo"],
+      "en": ["leakage", "exposed data", "confidential information", "accidental exposure", "open database", "privacy", "drip"]
+    }
+  },
+  "data-loss-prevention": {
+    "label": { "es": "Prevención de fuga de datos", "en": "Data loss prevention", "pt": "Prevenção contra perda de dados", "fr": "Prévention des pertes de données", "de": "Schutz vor Datenverlust", "it": "Prevenzione della perdita di dati", "ja": "情報漏えい対策", "zh": "数据防泄漏", "ko": "데이터 유출 방지", "ar": "منع فقدان البيانات" },
+    "keywords": {
+      "es": ["dlp", "datos sensibles", "bloquear envío", "información confidencial", "política de datos", "evitar filtraciones", "control de salida"],
+      "en": ["dlp", "sensitive data", "block sharing", "confidential information", "data policy", "prevent leaks", "egress control"]
+    }
+  },
+  "data-integrity": {
+    "label": { "es": "Integridad de datos", "en": "Data integrity", "pt": "Integridade dos dados", "fr": "Intégrité des données", "de": "Datenintegrität", "it": "Integrità dei dati", "ja": "データの完全性", "zh": "数据完整性", "ko": "데이터 무결성", "ar": "سلامة البيانات" },
+    "keywords": {
+      "es": ["sin alteraciones", "verificado", "hash", "consistencia", "autenticidad", "validación", "datos confiables"],
+      "en": ["unaltered", "verified", "hash", "consistency", "authenticity", "validation", "trustworthy data"]
+    }
+  },
+  "exposed-secret": {
+    "label": { "es": "Secreto expuesto", "en": "Exposed secret", "pt": "Segredo exposto", "fr": "Secret exposé", "de": "Offengelegter Schlüssel", "it": "Segreto esposto", "ja": "漏えいしたシークレット", "zh": "泄露的密钥", "ko": "노출된 비밀 키", "ar": "مفتاح سري مكشوف" },
+    "keywords": {
+      "es": ["clave api", "token filtrado", "credencial en el código", "repositorio", "github", "variable de entorno", "rotar clave"],
+      "en": ["api key", "leaked token", "hardcoded credential", "repository", "github", "environment variable", "rotate key"]
+    }
+  },
+  "encryption": {
+    "label": { "es": "Cifrar", "en": "Encrypt", "pt": "Criptografar", "fr": "Chiffrer", "de": "Verschlüsseln", "it": "Crittografa", "ja": "暗号化", "zh": "加密", "ko": "암호화", "ar": "تشفير" },
+    "keywords": {
+      "es": ["encriptar", "texto cifrado", "proteger datos", "aes", "clave", "criptografía", "cifrado de extremo a extremo"],
+      "en": ["ciphertext", "protect data", "aes", "cipher", "cryptography", "end-to-end", "scramble"]
+    }
+  },
+  "decryption": {
+    "label": { "es": "Descifrar", "en": "Decrypt", "pt": "Descriptografar", "fr": "Déchiffrer", "de": "Entschlüsseln", "it": "Decrittografa", "ja": "復号", "zh": "解密", "ko": "복호화", "ar": "فك التشفير" },
+    "keywords": {
+      "es": ["desencriptar", "texto plano", "clave privada", "leer datos cifrados", "criptografía", "recuperar archivos", "desbloquear"],
+      "en": ["plaintext", "private key", "read encrypted data", "cryptography", "recover files", "unlock", "unscramble"]
+    }
+  },
+  "hashing": {
+    "label": { "es": "Función hash", "en": "Hash function", "pt": "Função hash", "fr": "Fonction de hachage", "de": "Hashfunktion", "it": "Funzione di hash", "ja": "ハッシュ関数", "zh": "哈希函数", "ko": "해시 함수", "ar": "دالة التجزئة" },
+    "keywords": {
+      "es": ["sha-256", "huella digital", "resumen criptográfico", "guardar contraseñas", "bcrypt", "longitud fija", "unidireccional", "md5"],
+      "en": ["sha-256", "digest", "fingerprint", "password storage", "bcrypt", "fixed length", "one-way", "md5"]
+    }
+  },
+  "checksum": {
+    "label": { "es": "Suma de verificación", "en": "Checksum", "pt": "Soma de verificação", "fr": "Somme de contrôle", "de": "Prüfsumme", "it": "Checksum", "ja": "チェックサム", "zh": "校验和", "ko": "체크섬", "ar": "المجموع الاختباري" },
+    "keywords": {
+      "es": ["verificar archivo", "integridad", "sha-256", "md5", "archivo intacto", "descarga verificada", "hash"],
+      "en": ["verify file", "integrity", "sha-256", "md5", "intact file", "verified download", "hash"]
+    }
+  },
+  "digital-signature": {
+    "label": { "es": "Firma digital", "en": "Digital signature", "pt": "Assinatura digital", "fr": "Signature numérique", "de": "Digitale Signatur", "it": "Firma digitale", "ja": "デジタル署名", "zh": "数字签名", "ko": "디지털 서명", "ar": "التوقيع الرقمي" },
+    "keywords": {
+      "es": ["firma electrónica", "autenticidad", "certificado", "clave privada", "e.firma", "firmar código", "verificar autor"],
+      "en": ["electronic signature", "authenticity", "certificate", "private key", "code signing", "verify author", "pki"]
+    }
+  },
+  "chain-of-trust": {
+    "label": { "es": "Cadena de confianza", "en": "Chain of trust", "pt": "Cadeia de confiança", "fr": "Chaîne de confiance", "de": "Vertrauenskette", "it": "Catena di fiducia", "ja": "信頼の連鎖", "zh": "信任链", "ko": "신뢰 체인", "ar": "سلسلة الثقة" },
+    "keywords": {
+      "es": ["cadena de certificados", "autoridad certificadora", "certificado raíz", "ssl", "pki", "certificado intermedio", "validación"],
+      "en": ["certificate chain", "certificate authority", "root certificate", "ssl", "pki", "intermediate certificate", "validation"]
+    }
+  },
+  "secure-transfer": {
+    "label": { "es": "Transferencia segura", "en": "Secure transfer", "pt": "Transferência segura", "fr": "Transfert sécurisé", "de": "Sichere Übertragung", "it": "Trasferimento sicuro", "ja": "安全な転送", "zh": "安全传输", "ko": "보안 전송", "ar": "نقل آمن" },
+    "keywords": {
+      "es": ["sftp", "envío cifrado", "compartir archivos", "tls", "subir archivo", "canal seguro", "https"],
+      "en": ["sftp", "encrypted transfer", "file sharing", "tls", "upload", "secure channel", "https"]
+    }
+  },
+  "access-token": {
+    "label": { "es": "Token de acceso", "en": "Access token", "pt": "Token de acesso", "fr": "Jeton d’accès", "de": "Zugriffstoken", "it": "Token di accesso", "ja": "アクセストークン", "zh": "访问令牌", "ko": "액세스 토큰", "ar": "رمز الوصول" },
+    "keywords": {
+      "es": ["jwt", "oauth", "credencial", "api", "autorización", "boleto", "token bearer"],
+      "en": ["jwt", "oauth", "credential", "api", "authorization", "ticket", "bearer token"]
+    }
+  },
+  "access-card": {
+    "label": { "es": "Tarjeta de acceso", "en": "Access card", "pt": "Cartão de acesso", "fr": "Carte d’accès", "de": "Zutrittskarte", "it": "Badge di accesso", "ja": "入館カード", "zh": "门禁卡", "ko": "출입 카드", "ar": "بطاقة دخول" },
+    "keywords": {
+      "es": ["gafete", "credencial", "tarjeta de proximidad", "control de acceso", "rfid", "nfc", "abrir puerta"],
+      "en": ["badge", "key card", "proximity card", "access control", "rfid", "nfc", "door entry"]
+    }
+  },
+  "security-policy": {
+    "label": { "es": "Política de seguridad", "en": "Security policy", "pt": "Política de segurança", "fr": "Politique de sécurité", "de": "Sicherheitsrichtlinie", "it": "Politica di sicurezza", "ja": "セキュリティポリシー", "zh": "安全策略", "ko": "보안 정책", "ar": "سياسة الأمان" },
+    "keywords": {
+      "es": ["reglas", "normas", "lineamientos", "cumplimiento", "iso 27001", "reglamento", "gobernanza"],
+      "en": ["rules", "guidelines", "compliance", "iso 27001", "standards", "governance", "regulations"]
+    }
+  },
+  "security-key": {
+    "label": { "es": "Llave de seguridad", "en": "Security key", "pt": "Chave de segurança", "fr": "Clé de sécurité", "de": "Sicherheitsschlüssel", "it": "Chiave di sicurezza", "ja": "セキュリティキー", "zh": "安全密钥", "ko": "보안 키", "ar": "مفتاح الأمان" },
+    "keywords": {
+      "es": ["yubikey", "fido2", "u2f", "llave física", "token usb", "verificación en dos pasos", "iniciar sesión"],
+      "en": ["yubikey", "fido2", "u2f", "hardware key", "usb token", "two-factor", "sign in"]
+    }
+  },
+  "credential-vault": {
+    "label": { "es": "Bóveda de credenciales", "en": "Credential vault", "pt": "Cofre de credenciais", "fr": "Coffre-fort d’identifiants", "de": "Tresor für Zugangsdaten", "it": "Cassaforte delle credenziali", "ja": "認証情報の保管庫", "zh": "凭据保险库", "ko": "자격 증명 보관함", "ar": "خزنة بيانات الاعتماد" },
+    "keywords": {
+      "es": ["gestor de contraseñas", "caja fuerte", "secretos", "llavero", "almacén seguro", "claves api", "administrador de secretos"],
+      "en": ["password manager", "safe", "secrets", "keychain", "secure storage", "api keys", "secrets manager"]
+    }
+  },
+  "secure-boot": {
+    "label": { "es": "Arranque seguro", "en": "Secure boot", "pt": "Inicialização segura", "fr": "Démarrage sécurisé", "de": "Sicherer Start", "it": "Avvio protetto", "ja": "セキュアブート", "zh": "安全启动", "ko": "보안 부팅", "ar": "الإقلاع الآمن" },
+    "keywords": {
+      "es": ["uefi", "firmware", "software firmado", "encendido", "tpm", "cadena de arranque", "dispositivo confiable"],
+      "en": ["uefi", "firmware", "signed software", "startup", "tpm", "boot chain", "trusted device"]
+    }
+  },
+  "zero-trust": {
+    "label": { "es": "Confianza cero", "en": "Zero trust", "pt": "Zero Trust", "fr": "Zero Trust", "de": "Zero Trust", "it": "Zero Trust", "ja": "ゼロトラスト", "zh": "零信任", "ko": "제로 트러스트", "ar": "انعدام الثقة" },
+    "keywords": {
+      "es": ["verificar siempre", "nunca confiar", "mínimo privilegio", "microsegmentación", "identidad", "arquitectura de seguridad", "cada solicitud"],
+      "en": ["always verify", "never trust", "least privilege", "microsegmentation", "identity", "security architecture", "every request"]
+    }
+  },
+  "access-control": {
+    "label": { "es": "Control de acceso", "en": "Access control", "pt": "Controle de acesso", "fr": "Contrôle d’accès", "de": "Zugriffskontrolle", "it": "Controllo degli accessi", "ja": "アクセス制御", "zh": "访问控制", "ko": "접근 제어", "ar": "التحكم في الوصول" },
+    "keywords": {
+      "es": ["permisos", "roles", "autorización", "torniquete", "quién entra", "rbac", "restricción"],
+      "en": ["permissions", "roles", "authorization", "turnstile", "gatekeeping", "rbac", "restriction"]
+    }
+  },
+  "allowlist": {
+    "label": { "es": "Lista de permitidos", "en": "Allowlist", "pt": "Lista de permissões", "fr": "Liste d’autorisation", "de": "Zulassungsliste", "it": "Lista consentiti", "ja": "許可リスト", "zh": "允许列表", "ko": "허용 목록", "ar": "قائمة السماح" },
+    "keywords": {
+      "es": ["lista blanca", "aprobados", "confiables", "excepciones", "ip permitidas", "dominios autorizados", "whitelist"],
+      "en": ["whitelist", "approved", "trusted", "exceptions", "allowed ips", "authorized domains", "safe list"]
+    }
+  },
+  "blocklist": {
+    "label": { "es": "Lista de bloqueo", "en": "Blocklist", "pt": "Lista de bloqueio", "fr": "Liste de blocage", "de": "Sperrliste", "it": "Lista di blocco", "ja": "ブロックリスト", "zh": "阻止列表", "ko": "차단 목록", "ar": "قائمة الحظر" },
+    "keywords": {
+      "es": ["lista negra", "bloqueados", "vetados", "ip bloqueadas", "denegar", "spam", "blacklist"],
+      "en": ["blacklist", "blocked", "banned", "denied ips", "deny", "spam", "denylist"]
+    }
+  },
+  "watchlist": {
+    "label": { "es": "Lista de vigilancia", "en": "Watchlist", "pt": "Lista de observação", "fr": "Liste de surveillance", "de": "Beobachtungsliste", "it": "Lista di osservazione", "ja": "監視リスト", "zh": "监视列表", "ko": "감시 목록", "ar": "قائمة المراقبة" },
+    "keywords": {
+      "es": ["en observación", "monitoreo", "sospechosos", "lista gris", "seguimiento", "indicadores", "alertas"],
+      "en": ["under watch", "monitoring", "suspects", "graylist", "tracking", "indicators", "alerts"]
+    }
+  },
+  "endpoint-security": {
+    "label": { "es": "Seguridad de dispositivos", "en": "Endpoint security", "pt": "Segurança de endpoints", "fr": "Sécurité des terminaux", "de": "Endpoint-Sicherheit", "it": "Sicurezza degli endpoint", "ja": "エンドポイントセキュリティ", "zh": "终端安全", "ko": "엔드포인트 보안", "ar": "أمان نقاط النهاية" },
+    "keywords": {
+      "es": ["edr", "antivirus", "computadora protegida", "laptop", "agente de seguridad", "celular protegido", "mdm"],
+      "en": ["edr", "antivirus", "protected computer", "laptop", "security agent", "device protection", "mdm"]
+    }
+  },
+  "hardening": {
+    "label": { "es": "Reforzar seguridad", "en": "System hardening", "pt": "Reforço de segurança", "fr": "Durcissement du système", "de": "Systemhärtung", "it": "Rafforzamento della sicurezza", "ja": "システムの堅牢化", "zh": "系统加固", "ko": "시스템 보안 강화", "ar": "تقوية أمان النظام" },
+    "keywords": {
+      "es": ["bastionado", "blindar", "reducir superficie de ataque", "desactivar servicios", "cis", "configuración segura", "fortalecer"],
+      "en": ["lock down", "reduce attack surface", "disable services", "cis benchmark", "secure configuration", "strengthen", "fortify"]
+    }
+  },
+  "security-audit": {
+    "label": { "es": "Auditoría de seguridad", "en": "Security audit", "pt": "Auditoria de segurança", "fr": "Audit de sécurité", "de": "Sicherheitsaudit", "it": "Audit di sicurezza", "ja": "セキュリティ監査", "zh": "安全审计", "ko": "보안 감사", "ar": "تدقيق أمني" },
+    "keywords": {
+      "es": ["revisión", "controles", "cumplimiento", "soc 2", "iso 27001", "evaluación", "lista de verificación"],
+      "en": ["review", "controls", "compliance", "soc 2", "iso 27001", "assessment", "checklist"]
+    }
+  },
+  "security-update": {
+    "label": { "es": "Actualización de seguridad", "en": "Security update", "pt": "Atualização de segurança", "fr": "Mise à jour de sécurité", "de": "Sicherheitsupdate", "it": "Aggiornamento di sicurezza", "ja": "セキュリティ更新", "zh": "安全更新", "ko": "보안 업데이트", "ar": "تحديث أمني" },
+    "keywords": {
+      "es": ["parche", "corrección", "nueva versión", "instalar actualización", "vulnerabilidad corregida", "mantenimiento", "descargar"],
+      "en": ["patch", "fix", "new version", "install update", "fixed vulnerability", "maintenance", "hotfix"]
+    }
+  },
+  "remediation": {
+    "label": { "es": "Remediación", "en": "Remediation", "pt": "Remediação", "fr": "Remédiation", "de": "Schwachstellenbehebung", "it": "Correzione delle vulnerabilità", "ja": "脆弱性の修正", "zh": "漏洞修复", "ko": "취약점 조치", "ar": "معالجة الثغرات" },
+    "keywords": {
+      "es": ["corregir vulnerabilidad", "parchear", "mitigar", "resolver hallazgo", "plan de acción", "cerrar brecha", "arreglar"],
+      "en": ["fix vulnerability", "patch", "mitigate", "resolve finding", "action plan", "close gap", "repair"]
+    }
+  },
+  "secure-erase": {
+    "label": { "es": "Borrado seguro", "en": "Secure erase", "pt": "Apagamento seguro", "fr": "Effacement sécurisé", "de": "Sicheres Löschen", "it": "Cancellazione sicura", "ja": "完全消去", "zh": "安全擦除", "ko": "완전 삭제", "ar": "المسح الآمن" },
+    "keywords": {
+      "es": ["formatear", "eliminar definitivamente", "destruir datos", "triturar", "sin recuperación", "limpiar disco", "desechar equipo"],
+      "en": ["wipe", "delete permanently", "destroy data", "shred", "unrecoverable", "format drive", "decommission"]
+    }
+  },
+  "air-gap": {
+    "label": { "es": "Red aislada", "en": "Air gap", "pt": "Isolamento físico", "fr": "Isolement physique", "de": "Physische Trennung", "it": "Isolamento fisico", "ja": "エアギャップ", "zh": "物理隔离", "ko": "망분리", "ar": "الفصل المادي عن الشبكة" },
+    "keywords": {
+      "es": ["desconectado", "sin internet", "aislamiento físico", "fuera de línea", "infraestructura crítica", "respaldo offline", "máxima seguridad"],
+      "en": ["disconnected", "offline", "no internet", "physical isolation", "isolated network", "critical infrastructure", "offline backup"]
+    }
+  },
+  "suspicious-login": {
+    "label": { "es": "Inicio de sesión sospechoso", "en": "Suspicious sign-in", "pt": "Login suspeito", "fr": "Connexion suspecte", "de": "Verdächtige Anmeldung", "it": "Accesso sospetto", "ja": "不審なログイン", "zh": "可疑登录", "ko": "의심스러운 로그인", "ar": "تسجيل دخول مريب" },
+    "keywords": {
+      "es": ["acceso inusual", "ubicación desconocida", "nuevo dispositivo", "alerta de inicio de sesión", "intento de acceso", "actividad sospechosa", "fuiste tú"],
+      "en": ["unusual access", "unknown location", "new device", "login alert", "sign-in attempt", "suspicious activity", "was this you"]
+    }
+  },
+  "insecure-connection": {
+    "label": { "es": "Conexión no segura", "en": "Insecure connection", "pt": "Conexão não segura", "fr": "Connexion non sécurisée", "de": "Unsichere Verbindung", "it": "Connessione non sicura", "ja": "安全でない接続", "zh": "连接不安全", "ko": "안전하지 않은 연결", "ar": "اتصال غير آمن" },
+    "keywords": {
+      "es": ["http", "sin cifrar", "candado abierto", "certificado inválido", "sitio no seguro", "red pública", "advertencia del navegador"],
+      "en": ["http", "unencrypted", "unlocked padlock", "invalid certificate", "not secure", "public network", "browser warning"]
+    }
+  },
+  "misconfiguration": {
+    "label": { "es": "Configuración insegura", "en": "Misconfiguration", "pt": "Configuração incorreta", "fr": "Mauvaise configuration", "de": "Fehlkonfiguration", "it": "Configurazione errata", "ja": "設定ミス", "zh": "配置错误", "ko": "잘못된 설정", "ar": "إعداد خاطئ" },
+    "keywords": {
+      "es": ["ajuste incorrecto", "puerto abierto", "permisos públicos", "valores por defecto", "bucket expuesto", "error de configuración", "contraseña por defecto"],
+      "en": ["wrong setting", "open port", "public permissions", "default settings", "exposed bucket", "config error", "default password"]
+    }
+  },
+  "intrusion-detection": {
+    "label": { "es": "Detección de intrusos", "en": "Intrusion detection", "pt": "Detecção de intrusão", "fr": "Détection d’intrusion", "de": "Angriffserkennung", "it": "Rilevamento delle intrusioni", "ja": "侵入検知", "zh": "入侵检测", "ko": "침입 탐지", "ar": "كشف التسلل" },
+    "keywords": {
+      "es": ["ids", "ips", "acceso no autorizado", "monitoreo de red", "alarma", "intruso", "anomalía"],
+      "en": ["ids", "ips", "unauthorized access", "network monitoring", "alarm", "intruder", "anomaly"]
+    }
+  },
+  "threat-hunting": {
+    "label": { "es": "Caza de amenazas", "en": "Threat hunting", "pt": "Caça a ameaças", "fr": "Chasse aux menaces", "de": "Bedrohungssuche", "it": "Caccia alle minacce", "ja": "脅威ハンティング", "zh": "威胁狩猎", "ko": "위협 헌팅", "ar": "البحث عن التهديدات" },
+    "keywords": {
+      "es": ["búsqueda proactiva", "rastreo", "investigación", "indicadores de compromiso", "soc", "análisis", "ioc"],
+      "en": ["proactive search", "tracking", "investigation", "indicators of compromise", "soc", "analysis", "ioc"]
+    }
+  },
+  "digital-forensics": {
+    "label": { "es": "Análisis forense digital", "en": "Digital forensics", "pt": "Perícia digital", "fr": "Analyse forensique", "de": "IT-Forensik", "it": "Informatica forense", "ja": "デジタルフォレンジック", "zh": "数字取证", "ko": "디지털 포렌식", "ar": "التحليل الجنائي الرقمي" },
+    "keywords": {
+      "es": ["investigación", "evidencia", "peritaje", "cadena de custodia", "lupa", "análisis posterior", "rastro"],
+      "en": ["investigation", "evidence", "expert analysis", "chain of custody", "magnifier", "post-mortem", "trail"]
+    }
+  },
+  "audit-log": {
+    "label": { "es": "Bitácora de auditoría", "en": "Audit log", "pt": "Log de auditoria", "fr": "Journal d’audit", "de": "Audit-Protokoll", "it": "Registro di audit", "ja": "監査ログ", "zh": "审计日志", "ko": "감사 로그", "ar": "سجل التدقيق" },
+    "keywords": {
+      "es": ["registro de eventos", "historial", "trazabilidad", "quién hizo qué", "inalterable", "cumplimiento", "logs"],
+      "en": ["event log", "history", "traceability", "who did what", "tamper-evident", "compliance", "activity log"]
+    }
+  },
+  "immutable-backup": {
+    "label": { "es": "Respaldo inmutable", "en": "Immutable backup", "pt": "Backup imutável", "fr": "Sauvegarde immuable", "de": "Unveränderliches Backup", "it": "Backup immutabile", "ja": "変更不可のバックアップ", "zh": "不可变备份", "ko": "불변 백업", "ar": "نسخة احتياطية غير قابلة للتعديل" },
+    "keywords": {
+      "es": ["copia de seguridad", "contra ransomware", "solo lectura", "worm", "recuperación ante desastres", "no se puede borrar", "bloqueo de objetos"],
+      "en": ["ransomware protection", "read-only", "worm", "disaster recovery", "cannot be deleted", "object lock", "air-gapped copy"]
+    }
+  },
+  "incident-response": {
+    "label": { "es": "Respuesta a incidentes", "en": "Incident response", "pt": "Resposta a incidentes", "fr": "Réponse aux incidents", "de": "Vorfallsreaktion", "it": "Risposta agli incidenti", "ja": "インシデント対応", "zh": "事件响应", "ko": "침해 사고 대응", "ar": "الاستجابة للحوادث" },
+    "keywords": {
+      "es": ["csirt", "contención", "emergencia", "plan de respuesta", "soc", "alerta", "atender ataque"],
+      "en": ["csirt", "containment", "emergency", "response plan", "soc", "alert", "on call"]
+    }
+  }
+}

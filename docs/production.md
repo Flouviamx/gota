@@ -60,3 +60,4 @@ What round 4 added:
 - **A critic cut off partway** leaves some icons redrawn and others not: its relaunch is told so and judges the file as it is now, never from the illustrator's report.
 - **The next round's names can run while a round's critics finish** (they only read), but two workflows at once spend the usage limit about twice as fast: start them when the critics are few.
 - **After the critics, the main session looks at what they redrew** in one sheet (outline, fill, and 18 px for each) and drops or redraws what still doesn't read, before the owner's sample.
+- **Watch the disk.** Every agent's sheets and harnesses, the Chrome profiles a cut agent leaves in the system's temporary folder, and a clean copy of the repository for a build add up to gigabytes; round 5 filled the disk and every agent stopped. The round's monitor warns under 3 GB free, and its results are saved through a temporary file so a full disk never empties them.

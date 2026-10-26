@@ -1,8 +1,8 @@
 // Devices and media: screens, peripherals, power, connectivity, playback, audio and imaging.
 // Everything is computed with the engine (engine/geometry.mjs) and the rules in DESIGN.md: a 1.5
 // stroke, keylines, continuous corners and a square bottom-right corner on screens.
-import { arc, circ, dot, head, line, polar, rot, roundpoly, sq } from '../../engine/geometry.mjs';
-import { snap } from '../../engine/variants.mjs';
+import { arc, badge, circ, dot, head, line, polar, rot, roundpoly, sq, turn, turnPath } from '../../engine/geometry.mjs';
+import { snap, snapper, transform } from '../../engine/variants.mjs';
 import nucleo from './nucleo.mjs';
 
 // ── Local utilities ───────────────────────────────────────────────────────────────────────────
@@ -326,6 +326,9 @@ function withHoles(outer, ...holes) {
  * stuck to the tip of the slash).
  */
 const knockOf = (d) => `${twin(d)}Z`;
+
+/** An open body from the outline, closed for `fill.solid` (solid only takes closed shapes). */
+const shut = (d) => `${d}Z`;
 
 /**
  * "Off" version: the full icon with the slash on top as a badge; the engine clears the base with
@@ -1525,6 +1528,927 @@ const icons = {
   },
 };
 
+// ── Round 5: the devices themselves ──────────────────────────────────────────────────────────
+// Every new device is built on the bases above (smartphone, tablet, laptop, desktop, keyboard,
+// mouse, watch, power, battery, Wi-Fi, camera): referenced as they are, or rebuilt at another size
+// with the same proportions, corners and details. Badges are the engine's; custom pieces in the
+// badge's place (a person, a bolt, a shield, a leaf) are cleared by the engine like a badge.
+const D = (name) => icons[name].d;
+const add = (name, tags, d, extra = {}) => {
+  icons[name] = { tags, d, ...extra };
+};
+const BC = [17.25, 17.25];
+/** A custom piece on top of the base: its strokes, the area the engine clears and its fill. */
+const own = (d, knock, fill) => ({ d, knock, ...(fill && { fill }) });
+
+/**
+ * The smartphone with its top left corner at (x, y), at scale `s`: the same 11.5 × 18.5 body and
+ * 3.25 corner, scaled, and the speaker slit 3 under the top (3 long; 2 when the body is narrower
+ * than 9, so it keeps 2.85 from the sides). `slit: false` leaves it out (the back of the phone,
+ * phones too small for one).
+ */
+function phoneAt(x, y, s = 1, slit = true) {
+  const [w, h] = [11.5 * s, 18.5 * s];
+  const half = w < 9 ? 1 : 1.5;
+  return [sq(x, y, w, h, 3.25 * s, BR), ...(slit ? [line([x + w / 2 - half, y + 3], [x + w / 2 + half, y + 3])] : [])];
+}
+
+/**
+ * The watch centered on its case at (cx, cy), at scale `s`: the case, the two tapered straps and
+ * the crown, as in `watch` (s = 1 at 11.5, 12 is that icon). The straps keep at least 3 of length
+ * so the hole between them and the case stays open at bold.
+ */
+function watchAt(cx, cy, s = 1) {
+  const [w, h] = [11 * s, 11.5 * s];
+  const [x, y] = [cx - w / 2, cy - h / 2];
+  const L = Math.max(3.5 * s, 3);
+  const strap = (y0, y1) =>
+    roundline(
+      [
+        [cx - 3 * s, y0],
+        [cx - 2.5 * s, y1],
+        [cx + 2.5 * s, y1],
+        [cx + 3 * s, y0],
+      ],
+      [0, 0.75 * s, 0.75 * s, 0],
+    );
+  return [sq(x, y, w, h, 3 * s, BR), strap(y, y - L), strap(y + h, y + h + L), line([x + w, cy - 2 * s], [x + w + 2, cy - 2 * s])];
+}
+
+/** The bolt of `battery-charging` (one zigzag stroke), centered on `c` and scaled by `s`. */
+const BOLT = [
+  [11.75, 9.5],
+  [8.75, 12],
+  [12.25, 12],
+  [9.25, 14.5],
+];
+const boltAt = ([cx, cy], s) =>
+  roundline(
+    BOLT.map(([x, y]) => [cx + (x - 10.5) * s, cy + (y - 12) * s]),
+    [0, 0.4 * s, 0.4 * s, 0],
+  );
+/**
+ * Charging: a status badge (the engine's ring, solid in every style) with the bolt cut out of it.
+ * As a loose line the bolt left bits of the phone's corner between its arms at some weights. It
+ * clears a ring 0.1 narrower than its own (a hair no one sees): with the exact clearance, the
+ * watch's crown sat on its edge and the variable font found no clean interpolation.
+ */
+const CHARGE = (() => {
+  const ring = circ(...BC, 4.25);
+  const b = boltAt(BC, 1.1);
+  return own([ring, b], circ(...BC, 4.15), { solid: [ring], cut: [b] });
+})();
+/** The engine's gear, clearing a ring 0.1 narrower than its own, for the same reason (as archivos'
+ * file-gear, which clears one 0.15 wider). */
+const GEAR = (() => {
+  const g = badge('gear');
+  return own(g.d, circ(...BC, 4.15), g.fill);
+})();
+
+// ── Connectivity ──
+/**
+ * The Wi-Fi, smaller, for something in the badge's place: its dot at (8.75, 12.25) and its arcs
+ * 3.05 apart, the first 2.9 clear of the dot. At full size the dot falls inside the badge's
+ * clearance (the engine removes it) and the clearance leaves a hook of the first arc; here the dot
+ * stays out of the reach of the ring and of the padlock at every weight.
+ */
+const wifiSmall = (n = 3, c = [8.75, 12.25]) => [dot(...c), ...[3.6, 6.65, 9.7].slice(0, n).map((r) => arc(...c, r, 225, 315).d)];
+// A guest in the badge's place: calendario's small person (a head of r 1.6 and a half-disc of
+// shoulders, 2.45 apart), in the icon's style
+add('wifi-guest', ['wifi de invitados', 'red de invitados', 'visitantes', 'guest wifi', 'guest network', 'visitor'], wifiSmall(), {
+  badge: (() => {
+    const head = circ(17.25, 14.2, 1.6);
+    const body = `${arc(17.25, 21.25, 3, 180, 360).d}Z`;
+    return own([head, body], `${head}${body}`, { solid: [head, body] });
+  })(),
+});
+// The pause as a status badge (the engine's ring, a solid disc with the bars cut out): loose bars
+// beside the fan read as signal bars
+add('wifi-pause', ['pausar internet', 'wifi en pausa', 'control parental', 'pause wifi', 'internet paused', 'parental controls'], wifiSmall(), {
+  badge: (() => {
+    const ring = circ(...BC, 4.25);
+    const bars = [line([16, 15.25], [16, 19.25]), line([18.5, 15.25], [18.5, 19.25])];
+    return own([ring, ...bars], ring, { solid: [ring], cut: bars });
+  })(),
+});
+add('wifi-lock', ['wifi con contraseña', 'red segura', 'wifi protegido', 'secure wifi', 'locked network', 'password'], wifiSmall(), { badge: badge('lock') });
+add('wifi-alert', ['wifi sin internet', 'problema de red', 'sin conexión', 'wifi warning', 'no internet', 'network issue'], wifiSmall(), { badge: badge('alert') });
+// The rune and a short wave on each side, 3 clear of its points
+add('bluetooth-searching', ['buscando bluetooth', 'emparejar', 'modo de emparejamiento', 'bluetooth searching', 'pairing mode', 'discover'], [
+  ...bluetooth(),
+  arc(12, 12, 8.5, 160, 200).d,
+  arc(12, 12, 8.5, -20, 20).d,
+]);
+
+// ── Phones ──
+// The phone lying on its side: the body redrawn landscape (so its square corner stays at the
+// bottom right) and the slit turned with it to the left short side
+add('smartphone-landscape', ['celular horizontal', 'pantalla completa', 'girar', 'landscape', 'phone sideways', 'full screen'], [
+  sq(2.75, 6.25, 18.5, 11.5, 3.25, BR),
+  line(...turn(
+    [
+      [10.5, 5.75],
+      [13.5, 5.75],
+    ],
+    -90,
+  )),
+]);
+// The phone 3.5 to the left and an arc arrow around its upper right, clockwise toward landscape;
+// its tail and its arrowhead keep 3 from the body
+add('smartphone-rotate', ['girar pantalla', 'rotación automática', 'voltear celular', 'rotate', 'auto rotate', 'turn phone'], (() => {
+  const a = arc(10, 12, 9.5, -35, 20);
+  return [...phoneAt(2.75, 2.75), a.d, head(a.end, a.tangent, 3.4)];
+})());
+/**
+ * The two halves of a folding phone, joined at a hinge on the line from `a` to `b`: each half keeps
+ * the phone's 3.25 corners on its outer side and turns into the hinge with an r 2 corner, so the
+ * outline pinches in at both ends of the hinge (the waist says "it folds here"). `sides` are the two
+ * open runs, from one end of the hinge round to the other; the hinge itself is a line between them.
+ * The opened foldable is two panels side by side; the flip phone, two halves stacked (critic, round
+ * 5: the panels leaning toward each other read as archivos' book-open, and the flip phone's
+ * widening lower half as a cash register).
+ */
+function foldHalves(x, y, w, h, vertical) {
+  if (vertical) {
+    const m = x + w / 2;
+    return [
+      roundline([[m, y + 2], [m, y], [x, y], [x, y + h], [m, y + h], [m, y + h - 2]], [0, 2, 3.25, 3.25, 2, 0]),
+      roundline([[m, y + 2], [m, y], [x + w, y], [x + w, y + h], [m, y + h], [m, y + h - 2]], [0, 2, 3.25, 0, 2, 0]),
+      line([m, y + 2], [m, y + h - 2]),
+    ];
+  }
+  const m = y + h / 2;
+  return [
+    roundline([[x + 2, m], [x, m], [x, y], [x + w, y], [x + w, m], [x + w - 2, m]], [0, 2, 3.25, 3.25, 2, 0]),
+    roundline([[x + 2, m], [x, m], [x, y + h], [x + w, y + h], [x + w, m], [x + w - 2, m]], [0, 2, 3.25, 0, 2, 0]),
+    line([x + 2, m], [x + w - 2, m]),
+  ];
+}
+// A book-style foldable opened flat: two panels side by side, pinched at the hinge, and the front
+// camera's hole in the right panel, as on the inner screen
+add('smartphone-fold', ['celular plegable', 'pantalla plegable', 'desplegado', 'foldable', 'fold phone', 'unfolded'], [
+  ...foldHalves(3.25, 2.75, 17.5, 18.5, true),
+  dot(16.25, 6.25),
+]);
+// Clamshell, opened: the upper half with its screen and the lower one with two rows of keys, pinched
+// at the hinge between them, as the foldable is
+add('flip-phone', ['celular de tapa', 'plegable', 'teléfono de concha', 'flip phone', 'clamshell', 'flip'], [
+  ...foldHalves(6.25, 2.75, 11.5, 18.5, false),
+  sq(9.25, 5.5, 5.5, 3.25, 1, BR),
+  ...[15.25, 18.25].flatMap((y) => [9.25, 12, 14.75].map((x) => dot(x, y, 0.3))),
+]);
+// The phone's body with a small screen and a 3 × 3 keypad (dots 3 apart, as on the keyboard)
+add('feature-phone', ['celular básico', 'teléfono de teclas', 'sms', 'feature phone', 'basic phone', 'keypad phone'], [
+  ...phoneAt(6.25, 2.75, 1, false),
+  sq(9.25, 5.75, 5.5, 3.5, 1.25, BR),
+  ...[12.25, 15.25, 18.25].flatMap((y) => [9, 12, 15].map((x) => dot(x, y, 0.3))),
+]);
+// The handset standing in its base: the cradle sits in front and the engine clears the handset
+// under it; the keys stay 4.75 above the cradle, out of its clearance at every weight, and 3 under
+// the slit
+add('cordless-phone', ['teléfono inalámbrico', 'teléfono fijo', 'base', 'cordless phone', 'landline', 'home phone'], [
+  sq(8, 2.75, 8, 16.5, 2.5, BR),
+  line([11, 5.75], [13, 5.75]),
+  ...[9, 12].flatMap((y) => [10.5, 13.5].map((x) => dot(x, y, 0.3))),
+], { badge: front([sq(4.75, 16.75, 14.5, 4.5, 2.25, BR)]) });
+// The back: the body without its slit, the camera's two lenses at the upper left and the flash
+// beside them (two dots alone read as a pair of eyes)
+add('smartphone-back', ['parte trasera', 'cámara trasera', 'funda', 'phone back', 'rear camera', 'case'], [
+  ...phoneAt(6.25, 2.75, 1, false),
+  dot(9.75, 6.5),
+  dot(9.75, 10.75),
+  dot(13.75, 6.5),
+]);
+add('smartphone-charging', ['celular cargando', 'cargar teléfono', 'batería', 'phone charging', 'charging', 'power'], smartphone(), { badge: CHARGE });
+// Two phones at 60 % (too small for a slit) and the arrow over them, from one to the other
+add('smartphone-transfer', ['transferir datos', 'migrar', 'celular nuevo', 'transfer data', 'phone to phone', 'migrate'], [
+  ...phoneAt(2.5, 10.15, 0.6, false),
+  ...phoneAt(14.6, 10.15, 0.6, false),
+  line([6, 4.75], [18, 4.75]),
+  head([18, 4.75], [1, 0], 3.4),
+]);
+// Two phones at 84 %: the one behind, up and to the right, whole; the front one goes in as a piece
+// on top and the engine clears the other under it
+add('smartphone-stack', ['varios dispositivos', 'flota', 'dispositivos de prueba', 'devices', 'device fleet', 'test devices'], phoneAt(10.42, 2.75, 0.84, false), {
+  badge: (() => {
+    const p = phoneAt(3.92, 5.71, 0.84);
+    return front(p);
+  })(),
+});
+// The phone at the left and the watch (at 65 %) in front of its lower right, as `devices` puts the
+// phone in front of the monitor
+add('smartphone-watch', ['celular y reloj', 'reloj vinculado', 'wearable', 'phone and watch', 'paired watch', 'companion app'], phoneAt(2.75, 2.75), {
+  badge: (() => {
+    const [c, s1, s2, crown] = watchAt(16.5, 14.75, 0.65);
+    return own([c, s1, s2, crown], [c, shut(s1), shut(s2), knockOf(crown)].join(''), { solid: [c, shut(s1), shut(s2)], wire: [crown] });
+  })(),
+});
+// The phone at 75 %, tilted 15°, and two arcs around its center by the upper left and lower right
+// corners, 3 clear of them (and of the square corner)
+add('smartphone-shake', ['agitar celular', 'sacudir', 'deshacer', 'shake', 'shake phone', 'shake to undo'], (() => {
+  const p = phoneAt(12 - 11.5 * 0.375, 12 - 18.5 * 0.375, 0.75).map((d) => turnPath(d, 15));
+  return [...p, arc(12, 12, 10.5, -150, -120).d, arc(12, 12, 10.5, 30, 60).d];
+})());
+// The phone standing in a dock: the wedge base in front, the engine clears the phone under it
+add('smartphone-dock', ['base de carga', 'soporte', 'dock', 'phone dock', 'charging stand', 'cradle'], smartphone(), {
+  badge: front([
+    roundpoly(
+      [
+        [5.5, 16.75],
+        [18.5, 16.75],
+        [20, 21.25],
+        [4, 21.25],
+      ],
+      1.25,
+    ),
+  ]),
+});
+// The phone at 60 %, upright at the upper right, its front camera a dot 3 under the top (without it,
+// the head on the pole read as a hand mirror); the pole comes out from behind its lower edge and
+// runs down to the left, at 30°, to the grip (in line with the phone it read as a screwdriver, and
+// across it as a hammer)
+add('selfie-stick', ['palo selfie', 'autofoto', 'viaje', 'selfie stick', 'selfie', 'creator'], (() => {
+  const p = phoneAt(13.85, 2.75, 0.6, false);
+  const u = [-Math.cos(Math.PI / 6), Math.sin(Math.PI / 6)];
+  const S = [15.25, 2.75 + 18.5 * 0.6];
+  const E = [S[0] + u[0] * 6.25, S[1] + u[1] * 6.25];
+  const G = [E[0] + u[0] * 3.25, E[1] + u[1] * 3.25];
+  const grip = turnPath(capsule(G[0] - 3.25 - 1.75, G[1] - 1.75, 6.5 + 3.5, 3.5), -30, G);
+  return [...p, line(S, E), grip, dot(13.85 + 11.5 * 0.3, 5.75)];
+})());
+// The phone with the engine's badges: added, trusted, locked, removed, found, synced, set up,
+// installed, timed, at risk
+for (const [kind, name, tags] of [
+  ['plus', 'smartphone-plus', ['agregar dispositivo', 'vincular celular', 'nuevo teléfono', 'add device', 'pair phone', 'new phone']],
+  ['check', 'smartphone-check', ['dispositivo de confianza', 'verificado', 'compatible', 'trusted device', 'verified phone', 'compatible']],
+  ['lock', 'smartphone-lock', ['bloquear celular', 'dispositivo bloqueado', 'bloqueo remoto', 'lock phone', 'locked device', 'remote lock']],
+  ['x', 'smartphone-x', ['quitar dispositivo', 'borrar celular', 'no compatible', 'remove device', 'erase phone', 'unsupported']],
+  ['search', 'smartphone-search', ['buscar mi celular', 'localizar', 'teléfono perdido', 'find my phone', 'locate device', 'lost phone']],
+  ['sync', 'smartphone-sync', ['sincronizar celular', 'sincronización', 'respaldo', 'sync phone', 'sync', 'backup']],
+  ['arrow-down', 'smartphone-arrow-down', ['instalar app', 'descargar al celular', 'bajar', 'install app', 'download to phone', 'get app']],
+  ['clock', 'smartphone-clock', ['tiempo en pantalla', 'límite de uso', 'bienestar digital', 'screen time', 'app limits', 'digital wellbeing']],
+  ['alert', 'smartphone-alert', ['dispositivo en riesgo', 'no cumple', 'actualización pendiente', 'device at risk', 'non compliant', 'update required']],
+])
+  add(name, tags, smartphone(), { badge: badge(kind) });
+add('smartphone-gear', ['ajustes del celular', 'configurar', 'configuración', 'phone settings', 'device setup', 'configure'], smartphone(), { badge: GEAR });
+// The core shield at half size in the badge's place, in the icon's style: protected, compliant
+add('smartphone-shield', ['celular protegido', 'dispositivo administrado', 'cumplimiento', 'protected device', 'managed phone', 'compliance'], smartphone(), {
+  badge: (() => {
+    const s = transform(nucleo.icons.shield.d[0], 0.48, 17.25 - 12 * 0.48, 17.25 - 12.18 * 0.48);
+    return own([s], s, { solid: [s] });
+  })(),
+});
+
+// ── Tablets and e-readers ──
+add('tablet-landscape', ['tableta horizontal', 'pantalla horizontal', 'girar tableta', 'tablet landscape', 'landscape layout', 'orientation'], [
+  sq(2.75, 4, 18.5, 16, 3.5, BR),
+  dot(6.25, 12),
+]);
+// The tablet landscape tilted back on a keyboard slab: its top edge recedes (narrower) and its
+// camera dot sits on the left short side; the slab carries a row of keys, 3 below the screen as the
+// base of `laptop`
+add('tablet-keyboard', ['tableta con teclado', 'funda teclado', 'dos en uno', 'tablet keyboard', '2 in 1', 'keyboard cover'], [
+  roundpoly(
+    [
+      [5, 2.75],
+      [19, 2.75],
+      [20.25, 12.75],
+      [3.75, 12.75],
+    ],
+    [2.5, 2.5, 0, 2.5],
+  ),
+  dot(7.25, 7.75),
+  sq(2.5, 15.75, 19, 5.5, 2, BR),
+  ...[7.5, 10.5, 13.5, 16.5].map((x) => dot(x, 18.5, 0.3)),
+]);
+/**
+ * Stylus: from its tip `T` along `u` (unit), `L` long and `hw` half wide: a rounded cone of length
+ * `c` and a barrel with a round end. Every pen in the category comes from here.
+ */
+function stylusShape(T, u, L = 17, hw = 1.5, c = 4) {
+  const n = [-u[1], u[0]];
+  const P = (a, b) => [T[0] + u[0] * a + n[0] * b, T[1] + u[1] * a + n[1] * b];
+  return roundpoly([P(0, 0), P(c, hw), P(L, hw), P(L, -hw), P(c, -hw)], [0.6, 1.25, hw * 0.98, hw * 0.98, 1.25]);
+}
+const DIAG = [Math.SQRT1_2, -Math.SQRT1_2];
+// The tablet and a pen lying across its lower right corner, in front: the engine clears the tablet
+// under it and the corner shows past it
+add('tablet-stylus', ['tableta con lápiz', 'escribir a mano', 'dibujar', 'tablet pen', 'handwriting', 'sketch'], [...D('tablet')], {
+  badge: front([stylusShape([9.5, 21.75], DIAG, 17)]),
+});
+// Portrait slab, a thick bottom bezel (one line edge to edge) and three lines of text
+add('e-reader', ['lector electrónico', 'libro electrónico', 'lectura', 'e-reader', 'ebook', 'kindle'], [
+  sq(4.75, 2.75, 14.5, 18.5, 3.5, BR),
+  line([4.75, 16.5], [19.25, 16.5]),
+  line([8.25, 6.25], [15.75, 6.25]),
+  line([8.25, 9.25], [15.75, 9.25]),
+  line([8.25, 12.25], [13.25, 12.25]),
+]);
+// A pad with the corners of its active area and the pen resting on it, its tip near the center and
+// its end past the pad's corner (ending at the corner, it left a crumb of it at light); the corner
+// marks keep 5.3 from its axis, so the pen's clearance never meets them
+add('drawing-tablet', ['tableta gráfica', 'tableta de dibujo', 'ilustración', 'drawing tablet', 'pen tablet', 'graphics tablet'], [
+  sq(2.5, 6, 19, 12.5, 3, BR),
+  roundline(
+    [
+      [5.5, 11.75],
+      [5.5, 9],
+      [8.25, 9],
+    ],
+    [0, 1, 0],
+  ),
+  roundline(
+    [
+      [18, 12.75],
+      [18, 15.5],
+      [15.25, 15.5],
+    ],
+    [0, 1, 0],
+  ),
+], { badge: front([stylusShape([10.25, 13], DIAG, 14)]) });
+
+// ── Laptops ──
+// The laptop raised 1.75 on two slanted legs that stand on a short floor line
+add('laptop-stand', ['soporte para laptop', 'elevador', 'ergonomía', 'laptop stand', 'riser', 'ergonomic'], [
+  sq(4.25, 2.75, 15.5, 11, 2.75, BR),
+  line([2.5, 17], [21.5, 17]),
+  line([8, 17], [6.75, 21.25]),
+  line([16, 17], [17.25, 21.25]),
+  line([4.25, 21.25], [19.75, 21.25]),
+]);
+add('laptop-check', ['equipo de confianza', 'sesión aprobada', 'verificado', 'trusted computer', 'approved session', 'verified'], D('laptop'), { badge: badge('check') });
+add('laptop-lock', ['bloquear laptop', 'equipo cifrado', 'bloqueo remoto', 'lock laptop', 'encrypted', 'remote lock'], D('laptop'), { badge: badge('lock') });
+add('desktop-arrow-down', ['descargar para computadora', 'instalar app de escritorio', 'descarga', 'download for desktop', 'install', 'desktop app'], D('desktop'), { badge: badge('arrow-down') });
+
+// ── Computers and monitors ──
+// The stand of `desktop` (its stem and foot), under a screen whose bottom edge is at `y`
+const stand = (y) => [line([12, y], [12, 20.5]), line([8.25, 20.5], [15.75, 20.5])];
+// A tall case, boxier than the phone (13 wide, corner 2.5), two drive bays across its top and the
+// power button a dot near the bottom (one short bay and a ring read as the first iPhone's slit and
+// home button)
+add('computer-tower', ['torre', 'gabinete', 'pc de escritorio', 'computer tower', 'desktop pc', 'workstation'], [
+  sq(5.5, 2.75, 13, 18.5, 2.5, BR),
+  line([8.5, 6.25], [15.5, 6.25]),
+  line([8.5, 9.25], [15.5, 9.25]),
+  dot(12, 17.25),
+]);
+// The screen with a deep chin (one line edge to edge) on a single foot that narrows upward
+add('all-in-one', ['todo en uno', 'imac', 'computadora de escritorio', 'all in one', 'desktop', 'aio'], [
+  sq(2.5, 2.75, 19, 15, 3, BR),
+  line([2.5, 13.75], [21.5, 13.75]),
+  roundline(
+    [
+      [9.75, 17.75],
+      [8.75, 21.25],
+      [15.25, 21.25],
+      [14.25, 17.75],
+    ],
+    [0, 0.75, 0.75, 0],
+  ),
+]);
+// The compact classic: a boxy body, its small screen inset in the upper half, the floppy slot
+// under it to the right and the body on a short recessed base
+add('retro-computer', ['computadora retro', 'clásica', 'vintage', 'retro computer', 'classic computer', 'legacy'], [
+  sq(4.75, 2.75, 14.5, 15, 3, BR),
+  sq(7.75, 5.75, 8.5, 6, 1.5, BR),
+  line([12.25, 14.75], [16.25, 14.75]),
+  roundline(
+    [
+      [6.75, 17.75],
+      [6.75, 21.25],
+      [17.25, 21.25],
+      [17.25, 17.75],
+    ],
+    [0, 1, 1, 0],
+  ),
+]);
+// Two monitors: the one behind, up and to the right, whole with its stand; the front one goes in as
+// a piece on top (its stand attached in the fill) and the engine clears the other under it
+add('monitor-dual', ['dos monitores', 'pantalla extendida', 'multimonitor', 'dual monitor', 'extended display', 'multi monitor'], [
+  sq(9.5, 2.75, 12, 8.5, 2.25, BR),
+  line([18.25, 11.25], [18.25, 20.5]),
+  line([15.75, 20.5], [20.75, 20.5]),
+], {
+  badge: (() => {
+    const s = sq(2.5, 7.25, 12, 8.5, 2.25, BR);
+    const st = [line([8.5, 15.75], [8.5, 20.5]), line([5.5, 20.5], [11.5, 20.5])];
+    return own([s, ...st], s, { solid: [s], wire: st });
+  })(),
+});
+/**
+ * Curved ultrawide: its top and bottom edges are arcs that sag 1.25 at the middle (sampled every
+ * 1.19), the corners continuous and the bottom right one square.
+ */
+const curved = (() => {
+  const s = 1.25;
+  const R = (9.5 ** 2 + s ** 2) / (2 * s);
+  const edge = (y0) => Array.from({ length: 17 }, (_, i) => 2.5 + (19 * i) / 16).map((x) => [x, y0 + s - (R - Math.sqrt(R * R - (x - 12) ** 2))]);
+  const top = edge(3.75);
+  const bottom = edge(15.5).toReversed();
+  const pts = [...top, ...bottom];
+  const radii = pts.map((_, i) => (i === 0 || i === 16 || i === 33 ? 2.75 : 0));
+  return roundpoly(pts, radii);
+})();
+add('monitor-curved', ['monitor curvo', 'ultrawide', 'pantalla panorámica', 'curved monitor', 'ultrawide', 'gaming monitor'], [curved, ...stand(16.75)]);
+// A portrait screen on the stand of `desktop`
+add('monitor-vertical', ['monitor vertical', 'pantalla girada', 'retrato', 'vertical monitor', 'portrait display', 'rotated screen'], [sq(6.75, 2.75, 10.5, 14, 2.75, BR), ...stand(16.75)]);
+// The monitor at the upper right, held at the middle of its bottom edge by a two-part arm that
+// drops, bends down to the left and drops again into the clamp at the lower left (held by its
+// corner, the small screen read as the head of a desk lamp)
+add('monitor-arm', ['brazo para monitor', 'soporte articulado', 'escritorio', 'monitor arm', 'monitor mount', 'desk mount'], [
+  sq(8.75, 2.75, 12.75, 8.5, 2.5, BR),
+  roundline(
+    [
+      [15.13, 11.25],
+      [15.13, 13.75],
+      [7, 15.75],
+      [7, 18.25],
+    ],
+    [0, 1.25, 1.25, 0],
+  ),
+  sq(4.25, 18.25, 5.5, 3, 1),
+]);
+// A screen leaning back on a rounded speaker base: the base sits in front and the engine clears the
+// screen's bottom under it
+add('smart-display', ['pantalla inteligente', 'asistente', 'nest hub', 'smart display', 'smart screen', 'voice assistant'], [sq(3.25, 2.75, 17.5, 11.5, 2.75, BR)], {
+  badge: front([capsule(4.75, 15.25, 14.5, 6), ...[7.5, 10.5, 13.5, 16.5].map((x) => dot(x, 18.25, 0.3))]),
+});
+// ── Home media ──
+// The TV of `tv` at 77 % without its legs, and the box under it with its status light
+add('set-top-box', ['decodificador', 'caja de streaming', 'cable', 'set top box', 'streaming box', 'tv box'], [
+  sq(12 - 19 * 0.385, 2.75, 19 * 0.77, 10, 3.25 * 0.77, BR),
+  sq(6.5, 15.75, 11, 5.5, 1.75, BR),
+  dot(12, 18.5, 0.3),
+]);
+// The disc of `disc` at 88 %, up and to the left, and the play sign as a status badge (a solid disc
+// with the triangle cut out): physical media playing. Centered, the disc's hole fell inside the
+// badge's clearance; here it keeps 0.75 clear of it. The player itself read as a toaster with its
+// tray out and as a padlock with the disc standing on it (critic, round 5)
+const DISC_AT = (d) => transform(d, 0.88, -0.46, -0.46);
+add('disc-player', ['reproductor de dvd', 'blu-ray', 'disco', 'dvd player', 'blu-ray player', 'disc player'], D('disc').map(DISC_AT), {
+  badge: (() => {
+    const ring = circ(...BC, 4.25);
+    const play = tri(19.5, 17.25, 3.75, 4.25, 0.6);
+    return own([ring, play], ring, { solid: [ring], cut: [play] });
+  })(),
+});
+// The classic player: a screen in the top half and the click wheel with its center button below
+add('media-player', ['reproductor de música', 'ipod', 'mp3', 'media player', 'music player', 'mp3 player'], [
+  sq(5.25, 2.75, 13.5, 18.5, 3.5, BR),
+  sq(8.25, 5.75, 7.5, 3.5, 1.25, BR),
+  circ(12, 15.25, 3.25),
+  dot(12, 15.25),
+]);
+// A portable speaker standing up, its driver large on the face and the carry loop on top (on its
+// side, as a capsule with the driver, it read as an eye, and with the loop at one end, as a mug)
+add('portable-speaker', ['bocina portátil', 'bocina bluetooth', 'altavoz', 'portable speaker', 'bluetooth speaker', 'wireless speaker'], (() => {
+  const body = sq(5.5, 6.25, 13, 15, 4);
+  const loop = roundline(
+    [
+      toEdge([9, 9], [9, 2], body),
+      [9, 2.75],
+      [15, 2.75],
+      toEdge([15, 9], [15, 2], body),
+    ],
+    [0, 1.25, 1.25, 0],
+  );
+  return [body, circ(12, 14.25, 3.25), loop];
+})());
+/**
+ * The cabinet of `speaker-box` at 78 %, its top left at (x, y): the woofer r 2.5, 3 clear of the
+ * bottom and the sides, and the tweeter a dot (a ring of r 1 closes up).
+ */
+const speakerAt = (x, y) => [sq(x, y, 10.92, 14.43, 2.75, BR), dot(x + 5.46, y + 3.3, 0.3), circ(x + 5.46, y + 8.68, 2.5)];
+// Two speakers, a stereo pair: the one behind, up and to the right, and the front one in front, the
+// engine clears the other under it. The back one's tweeter sits just inside the clearance (kept at
+// light, removed at regular): it is left out (as two smart speakers with one line each, they read as
+// the digits 0 and 1)
+add('speaker-group', ['grupo de bocinas', 'multiroom', 'par estéreo', 'speaker group', 'multi room', 'stereo pair'], speakerAt(10.58, 2.75).filter((_, i) => i !== 1), {
+  badge: front(speakerAt(2.5, 6.82)),
+});
+// A slim recorder: its domed top is the mic grille (two stripes across it, as on
+// `microphone-studio`), then a small screen and the record dot
+add('voice-recorder', ['grabadora de voz', 'dictáfono', 'entrevista', 'voice recorder', 'dictaphone', 'memo'], [
+  roundpoly(
+    [
+      [7, 2.75],
+      [17, 2.75],
+      [17, 21.25],
+      [7, 21.25],
+    ],
+    [4.5, 4.5, 0, 2.5],
+  ),
+  line([7, 6.5], [17, 6.5]),
+  line([7, 9.5], [17, 9.5]),
+  sq(10, 12.5, 4, 2.5, 0.75, BR),
+  dot(12, 18),
+]);
+// Where the sound plays: two arcs over the point of a triangle (the casting mark)
+add('audio-output', ['salida de audio', 'reproducir en', 'transmitir audio', 'audio output', 'play on', 'airplay'], [
+  roundpoly(
+    [
+      [12, 13],
+      [17, 20.5],
+      [7, 20.5],
+    ],
+    1.25,
+  ),
+  arc(12, 12, 3.75, 165, 375).d,
+  arc(12, 12, 7.25, 160, 380).d,
+]);
+
+// ── Wearables ──
+// A ring in three-quarter view: its outer band (the top ellipse's far half, the sides and the bottom
+// ellipse's near half), the near rim of the top ellipse and the far inner edge seen through the
+// opening (the bottom ellipse's far half, from where it crosses the rim). Seen from higher up and
+// with a band 4.5 tall, it is a ring; with a band taller than the ellipse it read as a tin can, and
+// the sensor's dot had no room left on the inner face (critic, round 5)
+add('smart-ring', ['anillo inteligente', 'sueño', 'salud', 'smart ring', 'sleep tracking', 'health ring'], (() => {
+  const [cx, top, h, rx, ry] = [12, 9.75, 4.5, 9, 5.75];
+  const [L, Rt] = [cx - rx, cx + rx];
+  const e = `${N(rx)} ${N(ry)} 0`;
+  const y = top + h / 2;
+  const dx = rx * Math.sqrt(1 - ((y - top) / ry) ** 2);
+  const band = `M${pt([L, top])}A${e} 0 1 ${pt([Rt, top])}L${pt([Rt, top + h])}A${e} 0 1 ${pt([L, top + h])}Z`;
+  const rim = `M${pt([L, top])}A${e} 0 0 ${pt([Rt, top])}`;
+  const inner = `M${pt([cx - dx, y])}A${e} 0 1 ${pt([cx + dx, y])}`;
+  return [band, rim, inner];
+})());
+// A slim band: the module a tall capsule with a pill-shaped screen, the straps tapering out of it
+add('fitness-band', ['pulsera de actividad', 'pasos', 'sueño', 'fitness band', 'activity tracker', 'steps'], (() => {
+  const mod = capsule(7.5, 5.5, 9, 13);
+  const strap = (y0, y1) =>
+    roundline(
+      [
+        toEdge([9.5, 12], [9.5, y0], mod),
+        [9.75, y1],
+        [14.25, y1],
+        toEdge([14.5, 12], [14.5, y0], mod),
+      ],
+      [0, 0.75, 0.75, 0],
+    );
+  return [mod, capsule(10.5, 8.5, 3, 7), strap(1, 2.75), strap(23, 21.25)];
+})());
+// The watch with a round case: the straps and the crown of `watch`, no hands
+add('watch-round', ['reloj redondo', 'reloj inteligente', 'wearable', 'round watch', 'smartwatch', 'watch face'], (() => {
+  const [cx, cy, r] = [11, 12, 5.5];
+  const y0 = Math.sqrt(r * r - 9);
+  const strap = (s) =>
+    roundline(
+      [
+        [cx - 3, cy + s * y0],
+        [cx - 2.5, cy + s * 9.25],
+        [cx + 2.5, cy + s * 9.25],
+        [cx + 3, cy + s * y0],
+      ],
+      [0, 0.75, 0.75, 0],
+    );
+  return [circ(cx, cy, r), strap(-1), strap(1), line([cx + r, cy], [cx + r + 2, cy])];
+})());
+// The watch, 0.5 to the left, and a line on each side, 3 clear of the case and of the crown
+add('watch-vibrate', ['reloj vibrando', 'aviso háptico', 'toque', 'watch vibrate', 'haptic', 'wrist tap'], [
+  ...watchAt(11, 12),
+  line([2.5, 9.5], [2.5, 14.5]),
+  line([21.5, 9.5], [21.5, 14.5]),
+]);
+add('watch-charging', ['reloj cargando', 'cargar reloj', 'batería', 'watch charging', 'charging', 'power'], watchAt(11.5, 12), { badge: CHARGE });
+// The case open, its lid swung back out of sight: two earbuds of `earbuds` stand in it, their stems
+// going down behind its front (the case goes in front and the engine clears the stems under it).
+// With only their heads showing, the two rings read as a pair of eyes.
+add('earbuds-case', ['estuche de audífonos', 'estuche de carga', 'emparejar', 'earbuds case', 'charging case', 'pairing'], [
+  ...earbud(8, 6.75, 2.5, 1, 9),
+  ...earbud(16, 6.75, 2.5, -1, 9),
+], { badge: front([sq(3.75, 13.5, 16.5, 7.75, 3.5, BR)]) });
+// The pair of `earbuds`, smaller, their stems running on as cables that meet under them and go down
+// to the jack (round buds at the ends of a Y read as a branching diagram)
+add('earphones', ['audífonos con cable', 'manos libres', 'conector', 'wired earphones', 'earphones', 'headset'], [
+  ...earbud(7.25, 6, 3, 1, 3.75),
+  ...earbud(16.75, 6, 3, -1, 3.75),
+  'M10.25 9.75C10.25 12.25 12 12.25 12 14.5V15.5',
+  'M13.75 9.75C13.75 12.25 12 12.25 12 14.5',
+  capsule(10.5, 15.5, 3, 4),
+  line([12, 19.5], [12, 21.5]),
+]);
+
+// ── Gaming ──
+// A flat console with its disc slot and power dot; the gamepad of `gamepad`, at 55 %, in front of
+// its lower right (the engine clears the console under it)
+add('game-console', ['consola', 'videojuegos', 'consola de casa', 'game console', 'console', 'gaming'], [
+  sq(2.5, 3.5, 16.5, 10.5, 2.5, BR),
+  line([5.5, 7], [11.5, 7]),
+  dot(15.5, 7),
+], {
+  badge: (() => {
+    const g = transform(D('gamepad')[0], 0.55, 15.75 - 12 * 0.55, 16.75 - 12.375 * 0.55);
+    return own([g], g, { solid: [g] });
+  })(),
+});
+// A landscape handheld: the screen in the middle, the d-pad at the left and two buttons at the right,
+// each 2.85 or more clear of the screen and the body
+add('handheld-console', ['consola portátil', 'videojuego portátil', 'switch', 'handheld console', 'portable console', 'handheld'], [
+  sq(2, 6, 20, 12, 3.5, BR),
+  sq(9.75, 9, 6.25, 6, 1.25, BR),
+  line([4.85, 12], [6.85, 12]),
+  line([5.85, 11], [5.85, 13]),
+  dot(19.25, 10.5, 0.3),
+  dot(19.25, 13.5, 0.3),
+]);
+// The classic portrait handheld: the screen in the top half, the d-pad at the lower left and two
+// buttons at the lower right
+add('handheld-console-retro', ['consola retro', 'videojuego clásico', 'portátil', 'retro handheld', 'classic console', 'retro gaming'], [
+  sq(4.5, 2.75, 15, 18.5, 3, BR),
+  sq(7.5, 5.75, 9, 6.5, 1.5, BR),
+  line([7.5, 16.5], [10, 16.5]),
+  line([8.75, 15.25], [8.75, 17.75]),
+  dot(14, 17.5, 0.3),
+  dot(16.5, 15.5, 0.3),
+]);
+// The classic flat gamepad: the d-pad at the left and two round buttons at the right
+add('gamepad-retro', ['control retro', 'emulador', 'videojuego clásico', 'retro gamepad', 'classic controller', 'emulator'], [
+  sq(2.5, 7, 19, 10, 3, BR),
+  line([5.5, 12], [8.5, 12]),
+  line([7, 10.5], [7, 13.5]),
+  dot(15, 12.75),
+  dot(18.5, 11.25),
+]);
+// ── Cameras ──
+// A small square body with its large lens to one side, a status light and the mount below
+add('action-camera', ['cámara de acción', 'gopro', 'deportes', 'action camera', 'sports camera', 'helmet cam'], [
+  sq(3.25, 3.25, 17.5, 13.5, 3.5, BR),
+  circ(9.75, 10, 3.5),
+  dot(17, 6.75),
+  roundline(
+    [
+      [10, 16.75],
+      [10, 21],
+      [14, 21],
+      [14, 16.75],
+    ],
+    [0, 1, 1, 0],
+  ),
+]);
+// A boxy body, the lens in the middle, the flash at the top left and the print sliding out of its
+// bottom edge (with the drop's corner, like the printer's sheet)
+add('instant-camera', ['cámara instantánea', 'polaroid', 'foto impresa', 'instant camera', 'polaroid', 'instant photo'], [
+  sq(3.25, 2.75, 17.5, 13, 3.5, BR),
+  circ(12, 9.75, 3),
+  dot(7, 6.25),
+  roundline(
+    [
+      [5.75, 15.75],
+      [5.75, 21.25],
+      [18.25, 21.25],
+      [18.25, 15.75],
+    ],
+    [0, 1.5, 0, 0],
+  ),
+]);
+// A slim landscape body: the lens right of center, the flash window at the top left and the
+// shutter button on the top edge, a hump like the one on `camera`
+add('compact-camera', ['cámara compacta', 'cámara de bolsillo', 'apuntar y disparar', 'compact camera', 'point and shoot', 'digital camera'], [
+  sq(2.5, 6.75, 19, 12.5, 3, BR),
+  circ(14.75, 13, 3.25),
+  line([5.5, 10], [8.5, 10]),
+  roundline(
+    [
+      [15.5, 6.75],
+      [15.75, 4.25],
+      [18.25, 4.25],
+      [18.5, 6.75],
+    ],
+    [0, 0.75, 0.75, 0],
+  ),
+]);
+// The rangefinder: a wide body crossed by its band, the viewfinder at the top left and the wind
+// lever on top; the lens sits over the band (the engine clears the band under it), 4.8 or more
+// from the viewfinder, out of its reach at every weight
+add('film-camera', ['cámara de rollo', 'analógica', 'vintage', 'film camera', 'analog camera', 'rangefinder'], [
+  sq(2.5, 5.25, 19, 14, 3, BR),
+  line([2.5, 11], [21.5, 11]),
+  line([2.5, 16], [21.5, 16]),
+  dot(5.25, 8.25, 0.3),
+  roundline(
+    [
+      [16.75, 5.25],
+      [16.75, 2.75],
+      [19.75, 2.75],
+    ],
+    [0, 0.75, 0],
+  ),
+], { badge: front([circ(12, 13.5, 3.75)]) });
+// The ceiling plate and the half dome hanging from it, its lens in the middle, 3 from both; the
+// whole centered on the canvas (from the top edge, it sat in the upper half)
+add('dome-camera', ['cámara domo', 'cámara de techo', 'vigilancia', 'dome camera', 'security camera', 'cctv'], [
+  line([2, 7], [22, 7]),
+  arc(12, 7, 9.5, 0, 180).d,
+  circ(12, 11.75, 1.75),
+]);
+// The camera hanging from its windshield pad on a short stem, its lens in the middle
+add('dash-camera', ['cámara para auto', 'dashcam', 'grabación al conducir', 'dash cam', 'dashboard camera', 'car camera'], [
+  capsule(8.25, 2.75, 7.5, 3),
+  line([12, 5.75], [12, 9]),
+  sq(4.25, 9, 15.5, 10, 2.5, BR),
+  circ(12, 14, 2),
+]);
+
+// ── Keyboards and pointing ──
+// The keyboard, 2.75 up, and a chevron under it, pointing down
+add('keyboard-hide', ['ocultar teclado', 'cerrar teclado', 'teclado en pantalla', 'hide keyboard', 'dismiss keyboard', 'on-screen keyboard'], [
+  ...D('keyboard').map((d) => transform(d, 1, 0, -2.75)),
+  line([9.5, 18.75], [12, 21.25], [14.5, 18.75]),
+]);
+// A keyboard (16 wide, three keys a row) and the mouse in front of its lower right end, its
+// clearance 0.5 clear of the space bar's end at every weight
+add('keyboard-mouse', ['teclado y ratón', 'periféricos', 'escritorio', 'keyboard and mouse', 'peripherals', 'input devices'], [
+  sq(2.5, 3.75, 16, 12.75, 3.25, BR),
+  ...[6, 9, 12].map((x) => dot(x, 7.5, 0.3)),
+  ...[7.5, 10.5].map((x) => dot(x, 10.5, 0.3)),
+  line([9, 13.5], [12, 13.5]),
+], { badge: front([capsule(15.5, 10.25, 6.5, 11), line([18.75, 13.25], [18.75, 15.25])]) });
+// The keyboard, 3 down, and three short rays fanning out over its top edge
+add('keyboard-backlight', ['retroiluminación', 'luz del teclado', 'brillo', 'keyboard backlight', 'backlit keyboard', 'brightness'], [
+  ...D('keyboard').map((d) => transform(d, 1, 0, 3)),
+  line([12, 5.5], [12, 2.75]),
+  line([7.75, 5.5], [6.25, 3.25]),
+  line([16.25, 5.5], [17.75, 3.25]),
+]);
+// The keyboard under the gear, without the keys the badge covers: those within its reach at the
+// heaviest weight (9.4 from its center), which the engine removes at some weights and not others
+add('keyboard-gear', ['ajustes del teclado', 'distribución', 'métodos de entrada', 'keyboard settings', 'layout', 'input sources'], D('keyboard').filter((d) => {
+  const c = d.match(/^M(-?[\d.]+) (-?[\d.]+)A0\.3 /);
+  return !c || Math.hypot(+c[1] + 0.3 - BC[0], +c[2] - BC[1]) >= 9.4;
+}), { badge: GEAR });
+// A portrait key block: a grid of keys and the tall key at the bottom right
+add('numpad', ['teclado numérico', 'números', 'contabilidad', 'numpad', 'number pad', 'keypad'], [
+  sq(4.75, 2.75, 14.5, 18.5, 3, BR),
+  ...[6.25, 9.75, 13.25, 16.75].flatMap((y) => [8.25, 12, 15.75].filter((x) => !(x === 15.75 && y > 10)).map((x) => dot(x, y, 0.3))),
+  line([15.75, 13.25], [15.75, 16.75]),
+]);
+// The mouse with its ball on the upper side, concentric with the top, 3 in
+add('trackball', ['trackball', 'bola de seguimiento', 'ratón ergonómico', 'trackball', 'trackball mouse', 'ergonomic mouse'], [
+  D('mouse')[0],
+  circ(12, 8.5, 2.5),
+]);
+// The mouse with its wheel in the middle and a chevron above and below it
+add('mouse-scroll', ['desplazar', 'rueda del ratón', 'scroll', 'mouse scroll', 'scroll wheel', 'scroll down'], [
+  D('mouse')[0],
+  line([12, 10.75], [12, 13.25]),
+  line([10.25, 7.75], [12, 6], [13.75, 7.75]),
+  line([10.25, 16.25], [12, 18], [13.75, 16.25]),
+]);
+// A landscape pad with its button strip across the bottom, split in two
+add('trackpad', ['panel táctil', 'touchpad', 'gestos', 'trackpad', 'touchpad', 'gestures'], [
+  sq(2.5, 5, 19, 14, 3.5, BR),
+  line([2.5, 15.25], [21.5, 15.25]),
+  line([12, 15.25], [12, 19]),
+]);
+// The pen at 45°: a rounded cone, a smooth barrel with its round end and the side button, a bump
+// on its lower edge
+add('stylus', ['lápiz digital', 'stylus', 'pluma', 'stylus', 'digital pen', 'apple pencil'], (() => {
+  const T = [4, 20];
+  const u = DIAG;
+  const n = [-u[1], u[0]];
+  const [hw, L, c] = [1.75, 21, 4.25];
+  const P = (a, b) => [T[0] + u[0] * a + n[0] * b, T[1] + u[1] * a + n[1] * b];
+  return [
+    roundpoly(
+      [P(0, 0), P(c, hw), P(L, hw), P(L, -hw), P(12.5, -hw), P(12, -hw - 1.25), P(9.5, -hw - 1.25), P(9, -hw), P(c, -hw)],
+      [0.6, 1.25, hw * 0.98, hw * 0.98, 0.4, 0.5, 0.5, 0.4, 1.25],
+    ),
+  ];
+})());
+
+// ── Hubs, docks and chargers ──
+// A hub with three port slots along its face (2 long, 3 apart; upright, they read as a battery's
+// bars) and its cable leaving the right end, down to the plug
+add('usb-hub', ['hub usb', 'adaptador multipuerto', 'puertos', 'usb hub', 'multiport adapter', 'dongle'], [
+  sq(1.75, 8.5, 18, 6, 2.25, BR),
+  ...[4.75, 9.75, 14.75].map((x) => line([x, 11.5], [x + 2, 11.5])),
+  roundline(
+    [
+      [19.75, 11.5],
+      [20.75, 11.5],
+      [20.75, 17.5],
+    ],
+    [0, 1, 0],
+  ),
+  capsule(19.25, 17.5, 3, 4),
+]);
+/** The laptop with the left end of its base at (x, y) (the top of the screen), at scale `s`. */
+const laptopAt = (x, y, s) => [sq(x + 1.75 * s, y, 15.5 * s, 11 * s, 2.75 * s, BR), line([x, y + 11 * s + 3.25], [x + 19 * s, y + 11 * s + 3.25])];
+// The laptop at 65 % and its dock at the lower right, the cable running on from the end of its base
+// and down into the dock's top; the dock's port a dot
+add('docking-station', ['estación de acoplamiento', 'dock', 'puertos', 'docking station', 'laptop dock', 'thunderbolt dock'], [
+  ...laptopAt(2.5, 2.75, 0.65),
+  roundline(
+    [
+      [2.5 + 19 * 0.65, 2.75 + 11 * 0.65 + 3.25],
+      [18.5, 2.75 + 11 * 0.65 + 3.25],
+      [18.5, 15.25],
+    ],
+    [0, 1.5, 0],
+  ),
+  sq(15.5, 15.25, 6, 6, 1.5, BR),
+  dot(18.5, 18.25),
+]);
+// A portrait slab with its port on the top edge and four charge dots down its middle
+add('power-bank', ['batería portátil', 'cargador portátil', 'power bank', 'power bank', 'portable charger', 'battery pack'], [
+  sq(6.75, 5.25, 10.5, 16, 3, BR),
+  roundline(
+    [
+      [10.5, 5.25],
+      [10.5, 2.25],
+      [13.5, 2.25],
+      [13.5, 5.25],
+    ],
+    [0, 0.75, 0.75, 0],
+  ),
+  ...[18, 15, 12, 9].map((y) => dot(12, y, 0.3)),
+]);
+// A long bar with three outlets (rings 2.5 apart) and the cord leaving its right end
+add('power-strip', ['multicontacto', 'regleta', 'extensión', 'power strip', 'surge protector', 'extension'], [
+  sq(2, 7.75, 18.5, 8.5, 3, BR),
+  ...[6.25, 11.25, 16.25].map((x) => circ(x, 12, 1.25)),
+  roundline(
+    [
+      [20.5, 12],
+      [21.5, 12],
+      [21.5, 20.5],
+    ],
+    [0, 1, 0],
+  ),
+]);
+
+// ── Power and battery ──
+add('battery-alert', ['problema de batería', 'sobrecalentamiento', 'servicio', 'battery alert', 'battery problem', 'overheating'], battery(0), { badge: badge('alert') });
+add('battery-heart', ['salud de la batería', 'capacidad máxima', 'condición', 'battery health', 'maximum capacity', 'battery condition'], battery(0), { badge: badge('heart') });
+// The IEC on/off toggle: the ring of `power` closed, the line passing through its top
+add('power-toggle', ['encendido y apagado', 'interruptor', 'alternar', 'power toggle', 'on off', 'switch'], [circ(12, 12.75, 8.25), D('power')[1]]);
+// The ring of `power` with a crescent moon inside, where the line was
+add('power-sleep', ['suspender', 'reposo', 'dormir', 'sleep', 'standby', 'suspend'], (() => {
+  const [c1, r1] = [[11.75, 13], 4];
+  const [c2, r2] = [[14, 11], 3.25];
+  const d = Math.hypot(c2[0] - c1[0], c2[1] - c1[1]);
+  const a = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
+  const h = Math.sqrt(r1 * r1 - a * a);
+  const u = [(c2[0] - c1[0]) / d, (c2[1] - c1[1]) / d];
+  const m = [c1[0] + u[0] * a, c1[1] + u[1] * a];
+  const [p, q] = [
+    [m[0] - u[1] * h, m[1] + u[0] * h],
+    [m[0] + u[1] * h, m[1] - u[0] * h],
+  ];
+  // Along the moon's outer circle the long way round, back along the inner one
+  const moon = `M${pt(p)}A${N(r1)} ${N(r1)} 0 1 1 ${pt(q)}A${N(r2)} ${N(r2)} 0 0 0 ${pt(p)}Z`;
+  return [D('power')[0], moon];
+})());
+// The ring of `power` with a snowflake inside: three lines through its center and a short fork
+// near the tip of each of its six arms
+add('power-hibernate', ['hibernar', 'apagar guardando', 'suspensión profunda', 'hibernate', 'deep sleep', 'save session'], (() => {
+  const C = [12, 12.75];
+  const R = 5;
+  const arms = [90, 30, 150].map((deg) => line(polar(...C, R, deg), polar(...C, R, deg + 180)));
+  const forks = [0, 60, 120, 180, 240, 300].map((deg) => {
+    const v = polar(...C, 3.25, deg - 90);
+    return line(polar(...v, 1.6, deg - 90 - 35), v, polar(...v, 1.6, deg - 90 + 35));
+  });
+  return [D('power')[0], ...arms, ...forks];
+})());
+// The empty battery with a leaf at its lower right, in the icon's style, cleared like a badge. The
+// leaf is 5.8 wide, so its midrib (one stroke with the stem) keeps 2.85 from both edges and stops
+// past the middle, where they close in; without a midrib the leaf read as a magnifier (critic, round 5)
+const LEAF = (() => {
+  const [B, T] = [[14, 20.25], [19.25, 15]];
+  const c = Math.hypot(T[0] - B[0], T[1] - B[1]);
+  const s = 2.9;
+  const r = (c * c) / 4 / (2 * s) + s / 2;
+  const leaf = `M${pt(B)}A${N(r)} ${N(r)} 0 0 1 ${pt(T)}A${N(r)} ${N(r)} 0 0 1 ${pt(B)}Z`;
+  return { leaf, stem: line([12.5, 21.75], B), rib: line(B, lerp(B, T, 0.55)) };
+})();
+add('battery-saver', ['ahorro de batería', 'bajo consumo', 'modo eco', 'battery saver', 'low power mode', 'eco mode'], battery(0), {
+  badge: own([LEAF.leaf, LEAF.stem, LEAF.rib], `${LEAF.leaf}${knockOf(LEAF.stem)}`, { solid: [LEAF.leaf], cut: [LEAF.rib], wire: [LEAF.stem] }),
+});
+
+// The monitor and two corner marks inside its screen, the captured area
+add('screenshot', ['captura de pantalla', 'capturar', 'recortar pantalla', 'screenshot', 'screen capture', 'snip'], [
+  ...D('desktop'),
+  roundline(
+    [
+      [6, 9.75],
+      [6, 6.5],
+      [9.25, 6.5],
+    ],
+    [0, 1, 0],
+  ),
+  roundline(
+    [
+      [18, 10.25],
+      [18, 13.75],
+      [14.75, 13.75],
+    ],
+    [0, 1, 0],
+  ),
+]);
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index of d: `solid` is filled (and keeps its stroke, so the silhouette is identical); `close`
 // marks bodies that the outline leaves open against another piece (the camera's hump, the watch
@@ -1609,9 +2533,79 @@ const FILL = {
   tripod: { solid: [0], wire: [1, 2, 3] },
   drone: { solid: [0], wire: [1, 2, 3, 4, 5, 6, 7, 8] },
   'sim-card': { solid: [0], cut: [1, 2, 3] },
+  // ── Round 5 ──
+  'smartphone-landscape': { solid: [0], cut: [1] },
+  // The arrow stands 3 clear of the phone: a line with its clearance
+  'smartphone-rotate': { solid: [0], cut: [1], lines: [2, 3] },
+  'feature-phone': { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] },
+  'cordless-phone': { solid: [0], cut: [1, 2, 3, 4, 5] },
+  'smartphone-back': { solid: [0], cut: [1, 2, 3] },
+  'smartphone-charging': { solid: [0], cut: [1] },
+  'smartphone-transfer': { solid: [0, 1], lines: [2, 3] },
+  'smartphone-stack': { solid: [0] },
+  'smartphone-watch': { solid: [0], cut: [1] },
+  'smartphone-shake': { solid: [0], cut: [1], lines: [2, 3] },
+  'smartphone-dock': { solid: [0], cut: [1] },
+  'selfie-stick': { solid: [0, 2], wire: [1], cut: [3] },
+  screenshot: { solid: [0], wire: [1, 2], cut: [3, 4] },
+  'tablet-landscape': { solid: [0], cut: [1] },
+  'tablet-keyboard': { solid: [0, 2], cut: [1, 3, 4, 5, 6] },
+  'tablet-stylus': { solid: [0], cut: [1] },
+  'drawing-tablet': { solid: [0], cut: [1, 2] },
+  // The base, the legs and the floor stay lines, 3.25 clear of the screen
+  'laptop-stand': { solid: [0], lines: [1, 2, 3, 4] },
+  'laptop-check': { solid: [0], lines: [1] },
+  'laptop-lock': { solid: [0], lines: [1] },
+  'desktop-arrow-down': { solid: [0], wire: [1, 2] },
+  'computer-tower': { solid: [0], cut: [1, 2, 3] },
+  // The base is filled with the body, closed along its bottom edge
+  'retro-computer': { solid: [0], close: [3], cut: [1, 2] },
+  'monitor-dual': { solid: [0], wire: [1, 2] },
+  'monitor-curved': { solid: [0], wire: [1, 2] },
+  'monitor-vertical': { solid: [0], wire: [1, 2] },
+  'monitor-arm': { solid: [0, 2], wire: [1] },
+  'smart-display': { solid: [0] },
+  'set-top-box': { solid: [0, 1], cut: [2] },
+  'media-player': { solid: [0], cut: [1, 2, 3] },
+  'portable-speaker': { solid: [0], cut: [1], wire: [2] },
+  'speaker-group': { solid: [0], cut: [1] },
+
+  'audio-output': { solid: [0], lines: [1, 2] },
+  // The straps are filled up to the module or the case, as on `watch`
+  'fitness-band': { solid: [0], close: [2, 3], cut: [1] },
+  'watch-round': { solid: [0], close: [1, 2], wire: [3] },
+  'watch-vibrate': { solid: [0], close: [1, 2], wire: [3], lines: [4, 5] },
+  'watch-charging': { solid: [0], close: [1, 2], wire: [3] },
+  'earbuds-case': { close: [0, 1] },
+  'earphones': { solid: [4], close: [0, 1], wire: [2, 3, 5] },
+  'game-console': { solid: [0], cut: [1, 2] },
+  'handheld-console': { solid: [0], cut: [1, 2, 3, 4, 5] },
+  'handheld-console-retro': { solid: [0], cut: [1, 2, 3, 4, 5] },
+  'gamepad-retro': { solid: [0], cut: [1, 2, 3, 4] },
+  // The mount and the print hang from the body, attached
+  'action-camera': { solid: [0], cut: [1, 2], wire: [3] },
+  'instant-camera': { solid: [0], cut: [1, 2], wire: [3] },
+  'compact-camera': { solid: [0], close: [3], cut: [1, 2] },
+  'dash-camera': { solid: [0, 2], wire: [1], cut: [3] },
+  'keyboard-hide': { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], lines: [11] },
+  'keyboard-mouse': { solid: [0], cut: [1, 2, 3, 4, 5, 6] },
+  'keyboard-backlight': { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], lines: [11, 12, 13] },
+  'keyboard-gear': { solid: [0], cut: [1, 2, 3, 4, 5] },
+  numpad: { solid: [0], cut: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+  trackball: { solid: [0], cut: [1] },
+  'mouse-scroll': { solid: [0], cut: [1, 2, 3] },
+  stylus: { solid: [0] },
+  'usb-hub': { solid: [0, 5], cut: [1, 2, 3], wire: [4] },
+  // The base and the cable run on into the dock: attached
+  'docking-station': { solid: [0, 3], wire: [1, 2], cut: [4] },
+  'power-bank': { solid: [0], close: [1], cut: [2, 3, 4, 5] },
+  'power-strip': { solid: [0], cut: [1, 2, 3], wire: [4] },
+  // The moon is filled; the ring stays a line, as on `power`
+  'power-sleep': { solid: [1], lines: [0] },
 };
-/** An open body from the outline, closed for `fill.solid` (solid only takes closed shapes). */
-const shut = (d) => `${d}Z`;
+// The phone under a badge, filled as the phone
+for (const name of ['smartphone-plus', 'smartphone-check', 'smartphone-lock', 'smartphone-x', 'smartphone-search', 'smartphone-sync', 'smartphone-gear', 'smartphone-arrow-down', 'smartphone-clock', 'smartphone-alert', 'smartphone-shield'])
+  FILL[name] = { solid: [0], cut: [1] };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
   icons[name].fill = {
@@ -1676,6 +2670,8 @@ for (const [name, spec] of Object.entries(FILL)) {
   ])
     icons[name].fill = { solid: [withHoles(d(name)[0], hole)], cut: cut.map((i) => d(name)[i]) };
 }
+// The disc under the play badge, filled as the disc
+icons['disc-player'].fill = { solid: [withHoles(DISC_AT(D('disc')[0]), DISC_AT(circ(12, 12, 3)))], cut: D('disc-player').slice(1) };
 // Only open lines (waves, bars, arrows, the Bluetooth rune): their filled version is the outline
 // itself. The battery levels don't get one either: a solid body reads as a full battery, no matter
 // how many bars it has.
@@ -1683,8 +2679,36 @@ for (const name of [
   'power', 'wifi', 'wifi-medium', 'wifi-low', 'wifi-off', 'bluetooth', 'bluetooth-connected',
   'signal', 'signal-high', 'signal-medium', 'signal-low', 'repeat', 'repeat-one', 'shuffle', 'equalizer', 'audio-waveform',
   'battery-full', 'battery-half', 'battery-low', 'battery-empty',
+  'wifi-guest', 'wifi-pause', 'wifi-lock', 'wifi-alert', 'bluetooth-searching',
+  'battery-alert', 'battery-heart', 'battery-saver', 'power-toggle', 'power-hibernate',
 ])
   icons[name].fill = false;
+// Round 5: the cuts that reach the outline go all the way through (the foldable's hinge splits it
+// into its two panels; the flip phone's hinge, along the edge both halves share, splits its halves)
+{
+  // Each half is filled closed along the hinge, and the hinge is cut through the pinch at both ends
+  for (const name of ['smartphone-fold', 'flip-phone']) {
+    const [a, b, hinge, ...rest] = D(name);
+    icons[name].fill = { solid: [shut(a), shut(b)], cut: [extend(hinge, 2.5, 2.5), ...rest] };
+  }
+  // Cuts that reach the outline: the film camera's band, the trackpad's strip and its split
+  const fc = D('film-camera');
+  icons['film-camera'].fill = { solid: [fc[0]], cut: [extend(fc[1]), extend(fc[2]), fc[3]], wire: [fc[4]] };
+  const tp = D('trackpad');
+  icons.trackpad.fill = { solid: [tp[0]], cut: [extend(tp[1]), extend(tp[2], 0, 1)] };
+  // The dome is filled, closed along the plate; the plate stays a line, attached
+  const dc = D('dome-camera');
+  icons['dome-camera'].fill = { solid: [shut(dc[1])], wire: [dc[0]], cut: [dc[2]] };
+  // The ring: the band solid, its rim and inner edge cut (a hole for the opening didn't interpolate)
+  const ring = D('smart-ring');
+  icons['smart-ring'].fill = { solid: [ring[0]], cut: ring.slice(1) };
+  const vr = D('voice-recorder');
+  icons['voice-recorder'].fill = { solid: [vr[0]], cut: [extend(vr[1]), extend(vr[2]), vr[3], vr[4]] };
+  const aio = D('all-in-one');
+  icons['all-in-one'].fill = { solid: [aio[0]], cut: [extend(aio[1])], wire: [aio[2]] };
+  const er = D('e-reader');
+  icons['e-reader'].fill = { solid: [er[0]], cut: [extend(er[1]), ...er.slice(2)] };
+}
 
 // ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──────────────
 // At 16 px a pixel is 1.5 canvas units: straight runs go on pixel centers (0.75 + 1.5k), 45°
@@ -1891,15 +2915,138 @@ const sdot = (x, y) => dot(x, y, 1);
   small('slow-motion', [ring, ...dots, play], { solid: [...dots, play], lines: [ring] });
 }
 
+// Round 5. A custom badge doesn't switch to a pixel version on its own: the base snapped as the
+// engine would snap it, with the badge redrawn for the pixel grid (no ring, a larger sign, as the
+// engine's own at 16 px; PX(k) is a pixel center)
+{
+  const PX = (k) => 0.75 + 1.5 * k;
+  const RING = circ(...BC, 4.25);
+  const pixel = (d16, fill16) => ({ d: d16, knock: `${RING}${d16.join('')}`, ...(fill16 && { fill: fill16 }) });
+  const set16 = (name, badge16, d = icons[name].d, fill = icons[name].fill || null) => {
+    const sn = snapper([...d, ...Object.values(fill ?? {}).flat()]);
+    icons[name].small = {
+      d: d.map(sn),
+      ...(fill && { fill: Object.fromEntries(Object.entries(fill).map(([k, v]) => [k, v.map(sn)])) }),
+      badge: badge16,
+    };
+  };
+  // The bolt of `battery-charging` at 16 px, in the badge's place
+  const bolt16 = pixel([line([19.25, 13.25], [15, 17.5], [19.5, 17.5], [15.25, 21.75])]);
+  for (const name of ['smartphone-charging', 'watch-charging']) set16(name, bolt16);
+  const g16 = badge('gear', { size: 16 });
+  set16('smartphone-gear', pixel(g16.d, g16.fill));
+  // The small Wi-Fi: its dot (2 × 2 px) on a pixel corner and two arcs 2 px apart (three, 3.05
+  // apart, became a gray fan)
+  const fan = [dot(9, 12, 1), arc(9, 12, 5.25, 225, 315).d, arc(9, 12, 8.25, 225, 315).d];
+  set16('wifi-lock', badge('lock', { size: 16 }), fan, null);
+  set16('wifi-alert', badge('alert', { size: 16 }), fan, null);
+  set16('wifi-pause', pixel([line([PX(10), PX(9)], [PX(10), PX(13)]), line([PX(12), PX(9)], [PX(12), PX(13)])]), fan, null);
+  // The guest: the head a ring touching pixel centers, the shoulders a half disc, 2 px apart
+  const head = circ(PX(11), PX(9), 1.5);
+  const body = `${arc(PX(11), PX(14), 3, 180, 360).d}Z`;
+  set16('wifi-guest', { d: [head, body], knock: `${head}${body}`, fill: { solid: [head, body] } }, fan, null);
+  // Hibernate: the ring of `power` on a pixel center and the snowflake as a six-armed star whose
+  // arms run through pixel centers (the forks clogged into a blot)
+  const ring = arc(PX(8), PX(8), 7.5, -60, 240).d;
+  icons['power-hibernate'].small = { d: [ring, line([PX(8), PX(6)], [PX(8), PX(10)]), line([PX(6), PX(6)], [PX(10), PX(10)]), line([PX(10), PX(6)], [PX(6), PX(10)])] };
+  // Critic, round 5: keys as 1 px points (r 0.1, as the engine's alert point) and sockets as 3 px
+  // rings, on pixel centers and 1 px apart (snapped, the 0.3 dots grow into 2 × 2 px blocks 2 px
+  // apart and run together into a gray band)
+  const key = (k, j) => dot(PX(k), PX(j), 0.1);
+  // The keypad phones: the body 9 px wide, three columns of keys 1 px apart under the screen
+  {
+    const body = sq(PX(4), PX(1), 12, 19.5, 3, BR);
+    const screen = sq(PX(6), PX(3), 6, 3, 1, BR);
+    const keys = [7, 9, 11].flatMap((j) => [6, 8, 10].map((k) => key(k, j)));
+    small('feature-phone', [body, screen, ...keys], { solid: [body], cut: [screen, ...keys] });
+  }
+  {
+    const [a, b, hinge] = foldHalves(PX(4), PX(1), 12, 18, false);
+    const screen = sq(PX(6), PX(3), 6, 3, 1, BR);
+    const keys = [9, 11].flatMap((j) => [6, 8, 10].map((k) => key(k, j)));
+    small('flip-phone', [a, b, hinge, screen, ...keys], { solid: [shut(a), shut(b)], cut: [extend(hinge, 2.5, 2.5), screen, ...keys] });
+  }
+  {
+    // The handset 7 px wide with its slit and two rows of two keys, in the base
+    const set = sq(PX(5), PX(1), 9, 15, 2.25, BR);
+    const slit = line([PX(7), PX(3)], [PX(9), PX(3)]);
+    const keys = [5, 7].flatMap((j) => [7, 9].map((k) => key(k, j)));
+    const base = sq(PX(3), PX(10), 15, 6, 2.25, BR);
+    small('cordless-phone', [set, slit, ...keys], { solid: [set], cut: [slit, ...keys] }, front([base]));
+  }
+  {
+    // The numpad: four rows of three keys and the tall key at the bottom right
+    const body = sq(PX(3), PX(2), 12, 15, 3, BR);
+    const keys = [4, 6, 8, 10].flatMap((j) => [5, 7, 9].filter((k) => !(k === 9 && j > 6)).map((k) => key(k, j)));
+    const tall = line([PX(9), PX(8)], [PX(9), PX(10)]);
+    small('numpad', [body, ...keys, tall], { solid: [body], cut: [...keys, tall] });
+  }
+  // The keyboard's own 16 px drawing (two rows of three 2 px keys and the space bar), moved by `dy`
+  const kb16 = (dy) => [
+    sq(2.25, 6.75 + dy, 19.5, 12, 3, BR),
+    ...[9.75, 12.75].flatMap((y) => [6.75, 11.25, 15.75].map((x) => line([x, y + dy], [x + 1.5, y + dy]))),
+    line([8.25, 15.75 + dy], [15.75, 15.75 + dy]),
+  ];
+  {
+    const k = kb16(-3);
+    const chevron = line([PX(6), PX(12)], [PX(8), PX(14)], [PX(10), PX(12)]);
+    small('keyboard-hide', [...k, chevron], { solid: [k[0]], cut: k.slice(1), lines: [chevron] });
+  }
+  {
+    // The rays fan out over the keys, the middle one on the right pixel of the middle key
+    const k = kb16(3);
+    const rays = [line([PX(8), PX(4)], [PX(8), PX(2)]), line([PX(5), PX(4)], [PX(3), PX(2)]), line([PX(11), PX(4)], [PX(13), PX(2)])];
+    small('keyboard-backlight', [...k, ...rays], { solid: [k[0]], cut: k.slice(1), lines: rays });
+  }
+  {
+    // The gear clears the second row's middle and right keys and most of the bar: they are left out
+    const k = kb16(0).slice(0, 5);
+    small('keyboard-gear', k, { solid: [k[0]], cut: k.slice(1) }, pixel(g16.d, g16.fill));
+  }
+  {
+    // A smaller keyboard (keys 1 px) and the mouse in front of its right end
+    const body = sq(PX(1), PX(2), 15, 12, 3, BR);
+    const keys = [key(3, 4), key(5, 4), key(7, 4), key(4, 6), key(6, 6)];
+    const bar = line([PX(4), PX(8)], [PX(7), PX(8)]);
+    const mouse = capsule(PX(10), PX(7), 6, 10.5);
+    const wheel = line([PX(12), PX(9)], [PX(12), PX(10)]);
+    small('keyboard-mouse', [body, ...keys, bar], { solid: [body], cut: [...keys, bar] }, front([mouse, wheel]));
+  }
+  {
+    // Three 3 px sockets, 1 px apart, and the cord down from the bottom edge
+    const body = sq(PX(1), PX(4), 18, 9, 2.25, BR);
+    const sockets = [3, 7, 11].map((k) => circ(PX(k), PX(7), 1.5));
+    const cord = line([PX(12), PX(10)], [PX(12), PX(14)]);
+    small('power-strip', [body, ...sockets, cord], { solid: [body], cut: sockets, wire: [cord] });
+  }
+  {
+    // The disc as a ring touching pixel centers with a 3 px hole, and the play sign on its own
+    const disc = circ(PX(6), PX(6), 7.5);
+    const hole = circ(PX(6), PX(6), 1.5);
+    const play = roundpoly([[PX(10), PX(9)], [PX(13), PX(11)], [PX(10), PX(13)]], 0.4);
+    small('disc-player', [disc, hole], { solid: [disc], cut: [hole] }, pixel([play], { solid: [play] }));
+  }
+  {
+    // The leaf on the pixel diagonal, 5 px long, and its stem
+    const leaf = roundpoly([[PX(9), PX(13)], [PX(10), PX(10)], [PX(13), PX(9)], [PX(12), PX(12)]], [0.3, 1.2, 0.3, 1.2]);
+    const stem = line([PX(9), PX(13)], [PX(8), PX(14)]);
+    set16('battery-saver', { d: [leaf, stem], knock: `${RING}${leaf}${knockOf(stem)}`, fill: { solid: [leaf], wire: [stem] } });
+  }
+}
+
 // ── Levels (DESIGN.md › Levels): from least to most; the Wi-Fi dot and the body always stay ──
 icons.wifi.levels = [[1], [2], [3]];
 icons.signal.levels = [[0], [1], [2], [3]];
 icons['battery-full'].levels = [[2], [3], [4], [5]];
 icons['volume-high'].levels = [[1], [2]];
+// Round 5: the power bank's dots light up from the bottom
+icons['power-bank'].levels = [[2], [3], [4], [5]];
 
 // ── Mirroring (DESIGN.md › Mirroring): speakers and indented lists flip in right-to-left layouts.
 // Playback controls don't: they describe the direction of the tape, not the reading direction.
 for (const name of ['volume-low', 'volume-high', 'volume-off', 'volume-plus', 'volume-minus', 'playlist', 'playlist-play']) icons[name].mirror = true;
+// Round 5: the transfer reads from one phone to the other
+for (const name of ['smartphone-transfer', 'stylus']) icons[name].mirror = true;
 
 // ── Named parts (DESIGN.md › Named parts): what moves, changes state or is a badge ──
 const parts = {
@@ -1972,7 +3119,61 @@ const parts = {
   tripod: { head: [0], legs: [1, 2, 3] },
   drone: { body: [0], arms: [1, 2, 3, 4], rotors: [5, 6], legs: [7, 8] },
   'image-sparkle': { frame: [0], mountain: [1] },
+  // ── Round 5 ──
+  'wifi-guest': { dot: [0], level: [1, 2, 3] },
+  'wifi-pause': { dot: [0], level: [1, 2, 3] },
+  'wifi-lock': { dot: [0], level: [1, 2, 3] },
+  'wifi-alert': { dot: [0], level: [1, 2, 3] },
+  'bluetooth-searching': { rune: [0], wave: [1, 2] },
+  'smartphone-rotate': { body: [0, 1], arrow: [2, 3] },
+  'cordless-phone': { handset: [0, 1], keys: [2, 3, 4, 5] },
+  'smartphone-charging': { body: [0, 1] },
+  'smartphone-transfer': { phones: [0, 1], arrow: [2, 3] },
+  'smartphone-stack': { phone: [0] },
+  'smartphone-watch': { phone: [0, 1] },
+  'smartphone-shake': { body: [0, 1], wave: [2, 3] },
+  'smartphone-dock': { phone: [0, 1] },
+  'tablet-stylus': { tablet: [0, 1] },
+  'drawing-tablet': { pad: [0], area: [1, 2] },
+  'laptop-check': { screen: [0], base: [1] },
+  'laptop-lock': { screen: [0], base: [1] },
+  'desktop-arrow-down': { screen: [0], stand: [1, 2] },
+  'monitor-dual': { monitor: [0], stand: [1, 2] },
+  'smart-display': { screen: [0] },
+  'speaker-group': { speaker: [0, 1] },
+  'disc-player': { disc: [0, 1], shine: [2] },
+  'smartphone-fold': { body: [0, 1], hinge: [2], camera: [3] },
+  'flip-phone': { body: [0, 1], hinge: [2], screen: [3], keys: [4, 5, 6, 7, 8, 9] },
+  'set-top-box': { tv: [0], box: [1], light: [2] },
+  'portable-speaker': { body: [0], grille: [1], strap: [2] },
+  'voice-recorder': { body: [0, 1, 2, 3], record: [4] },
+  'audio-output': { triangle: [0], wave: [1, 2] },
+  'smart-ring': { band: [0, 1, 2] },
+  'watch-vibrate': { body: [0, 1, 2, 3], wave: [4, 5] },
+  'watch-charging': { watch: [0, 1, 2, 3] },
+  'earbuds-case': { earbuds: [0, 1] },
+  'game-console': { console: [0, 1, 2] },
+  'handheld-console': { body: [0], screen: [1], dpad: [2, 3], buttons: [4, 5] },
+  'handheld-console-retro': { body: [0], screen: [1], dpad: [2, 3], buttons: [4, 5] },
+  'gamepad-retro': { body: [0], dpad: [1, 2], buttons: [3, 4] },
+  'film-camera': { body: [0, 1, 2, 3, 4] },
+  'dome-camera': { mount: [0], dome: [1], lens: [2] },
+  'keyboard-hide': { keyboard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], chevron: [11] },
+  'keyboard-mouse': { keyboard: [0, 1, 2, 3, 4, 5, 6] },
+  'keyboard-backlight': { keyboard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], rays: [11, 12, 13] },
+  'keyboard-gear': { keyboard: [0, 1, 2, 3, 4, 5] },
+  'mouse-scroll': { body: [0], wheel: [1], arrows: [2, 3] },
+  'docking-station': { laptop: [0, 1], cable: [2], dock: [3, 4] },
+  'power-bank': { body: [0, 1], level: [2, 3, 4, 5] },
+  'battery-alert': { body: [0, 1] },
+  'battery-heart': { body: [0, 1] },
+  'battery-saver': { body: [0, 1] },
+  'power-toggle': { ring: [0], line: [1] },
+  'power-sleep': { ring: [0], moon: [1] },
+  'power-hibernate': { ring: [0], snowflake: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
 };
+for (const name of ['smartphone-plus', 'smartphone-check', 'smartphone-lock', 'smartphone-x', 'smartphone-search', 'smartphone-sync', 'smartphone-gear', 'smartphone-arrow-down', 'smartphone-clock', 'smartphone-alert', 'smartphone-shield'])
+  parts[name] = { body: [0, 1] };
 for (const [name, p] of Object.entries(parts)) icons[name].parts = p;
 
 // ── Automatic variants (DESIGN.md › Automatic variants) ──
@@ -1993,6 +3194,8 @@ variants(['repeat', 'repeat-one', 'audio-waveform', 'equalizer', 'signal', 'sign
 // Already enclosed in a circle: neither circle nor square (a circle inside a square says nothing more)
 variants(['play-circle', 'pause-circle', 'stop-circle', 'record', 'disc', 'vinyl', 'slow-motion', 'aperture'], { circle: false, square: false });
 variants(['power', 'podcast'], { circle: false });
+// Round 5: the power states are already in their ring
+variants(['power-toggle', 'power-sleep', 'power-hibernate'], { circle: false });
 // Already in a square
 variants(['outlet', 'ethernet', 'camera-focus', 'album'], { square: false });
 
@@ -2033,5 +3236,35 @@ icons['video-player'].motion = { effect: 'slide', parts: ['progress'], vector: [
 icons['music-note'].motion = { effect: 'float', vector: [0, -1.5] };
 icons['music-notes'].motion = { effect: 'float', vector: [0, -1.5] };
 icons.drone.motion = { effect: 'float', vector: [0, -1.5] };
+// Round 5
+icons['bluetooth-searching'].motion = { effect: 'beat', parts: ['wave'], origin: [12, 12] };
+icons['wifi-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: BC };
+icons['smartphone-rotate'].motion = { effect: 'spin', parts: ['arrow'], origin: [10, 12] };
+icons['smartphone-charging'].motion = { effect: 'beat', parts: ['badge'], origin: BC };
+icons['smartphone-transfer'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
+icons['smartphone-shake'].motion = { effect: 'wiggle', parts: ['body'], origin: [12, 12] };
+// The badge moves on its own: the arrows and the gear turn, the hands go round, the alert sways,
+// the download drops
+for (const name of ['smartphone-sync', 'smartphone-gear', 'smartphone-clock']) icons[name].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['smartphone-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: BC };
+for (const name of ['smartphone-arrow-down', 'desktop-arrow-down']) icons[name].motion = { effect: 'bounce', parts: ['badge'], vector: [0, 1.5] };
+icons['audio-output'].motion = { effect: 'beat', parts: ['wave'], origin: [12, 12] };
+icons['portable-speaker'].motion = { effect: 'beat', parts: ['grille'], origin: [12, 14.25] };
+icons['voice-recorder'].motion = { effect: 'beat', parts: ['record'], origin: [12, 18] };
+icons['set-top-box'].motion = { effect: 'beat', parts: ['light'], origin: [12, 18.5] };
+icons['watch-vibrate'].motion = { effect: 'wiggle', parts: ['body'], origin: [11, 12] };
+icons['watch-charging'].motion = { effect: 'beat', parts: ['badge'], origin: BC };
+for (const name of ['handheld-console', 'handheld-console-retro', 'gamepad-retro']) icons[name].motion = { effect: 'wiggle', origin: [12, 12] };
+icons['keyboard-hide'].motion = { effect: 'slide', parts: ['chevron'], vector: [0, 1.5] };
+icons['keyboard-backlight'].motion = { effect: 'beat', parts: ['rays'], origin: [12, 6] };
+icons['keyboard-gear'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['mouse-scroll'].motion = { effect: 'slide', parts: ['wheel'], vector: [0, 1.5] };
+icons.stylus.motion = { effect: 'wiggle', origin: [4, 20] };
+icons['battery-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: BC };
+icons['battery-heart'].motion = { effect: 'beat', parts: ['badge'], origin: [17.25, 17.5] };
+icons['battery-saver'].motion = { effect: 'wiggle', parts: ['badge'], origin: [14, 20.25] };
+icons['disc-player'].motion = { effect: 'spin', parts: ['shine'], origin: [10.1, 10.1] };
+icons['power-sleep'].motion = { effect: 'float', parts: ['moon'], vector: [0, -1] };
+icons['power-hibernate'].motion = { effect: 'spin', parts: ['snowflake'], origin: [12, 12.75] };
 
 export default { category: 'dispositivos', label: 'Dispositivos y multimedia', icons };

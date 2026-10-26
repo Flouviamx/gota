@@ -1,0 +1,709 @@
+{
+  "git-rebase": {
+    "label": { "es": "Rebase", "en": "Rebase", "pt": "Rebase", "fr": "Rebaser", "de": "Rebase", "it": "Rebase", "ja": "リベース", "zh": "变基", "ko": "리베이스", "ar": "إعادة التأسيس" },
+    "keywords": {
+      "es": ["reaplicar commits", "reescribir historial", "historial lineal", "mover commits a otra rama", "rebase y fusionar", "rebase interactivo", "git"],
+      "en": ["replay commits", "rewrite history", "linear history", "move commits", "rebase and merge", "interactive rebase", "git"]
+    }
+  },
+  "git-cherry-pick": {
+    "label": { "es": "Cherry-pick", "en": "Cherry-pick", "pt": "Cherry-pick", "fr": "Cherry-pick", "de": "Cherry-Pick", "it": "Cherry-pick", "ja": "チェリーピック", "zh": "拣选提交", "ko": "체리픽", "ar": "انتقاء إيداع" },
+    "keywords": {
+      "es": ["copiar commit", "elegir un commit", "traer un commit", "aplicar commit de otra rama", "backport", "hotfix", "git"],
+      "en": ["copy commit", "pick a commit", "apply commit", "port a fix", "backport", "hotfix", "git"]
+    }
+  },
+  "git-stash": {
+    "label": { "es": "Guardar en stash", "en": "Stash changes", "pt": "Guardar no stash", "fr": "Remiser les modifications", "de": "Stash erstellen", "it": "Accantona modifiche", "ja": "変更をスタッシュ", "zh": "储藏更改", "ko": "변경 사항 스태시", "ar": "تخبئة التغييرات" },
+    "keywords": {
+      "es": ["guardar cambios temporalmente", "apartar cambios", "cambios sin commit", "lista de stash", "limpiar directorio de trabajo", "cambiar de rama", "git"],
+      "en": ["shelve changes", "save for later", "uncommitted changes", "stash list", "clean working tree", "switch branches", "git"]
+    }
+  },
+  "git-stash-pop": {
+    "label": { "es": "Recuperar stash", "en": "Pop stash", "pt": "Recuperar stash", "fr": "Réappliquer la remise", "de": "Stash zurückholen", "it": "Recupera modifiche accantonate", "ja": "スタッシュをポップ", "zh": "弹出储藏", "ko": "스태시 꺼내기", "ar": "استعادة التغييرات المخبأة" },
+    "keywords": {
+      "es": ["aplicar stash", "restaurar cambios", "traer cambios guardados", "stash pop", "retomar trabajo", "último stash", "git"],
+      "en": ["apply stash", "restore changes", "unshelve", "bring back changes", "resume work", "latest stash", "git"]
+    }
+  },
+  "git-tag": {
+    "label": { "es": "Etiqueta de versión", "en": "Release tag", "pt": "Tag de versão", "fr": "Tag de version", "de": "Versions-Tag", "it": "Tag di versione", "ja": "バージョンタグ", "zh": "版本标签", "ko": "버전 태그", "ar": "وسم الإصدار" },
+    "keywords": {
+      "es": ["tag", "lanzamiento", "release", "marcar commit", "número de versión", "semver", "git"],
+      "en": ["git tag", "version", "version number", "mark commit", "semver", "changelog", "launch"]
+    }
+  },
+  "git-revert": {
+    "label": { "es": "Revertir commit", "en": "Revert commit", "pt": "Reverter commit", "fr": "Annuler un commit", "de": "Commit rückgängig machen", "it": "Annulla commit", "ja": "コミットを元に戻す", "zh": "还原提交", "ko": "커밋 되돌리기", "ar": "التراجع عن الإيداع" },
+    "keywords": {
+      "es": ["deshacer cambios", "anular commit", "regresar cambios", "deshacer fusión", "deshacer pull request", "commit inverso", "git"],
+      "en": ["undo changes", "undo commit", "back out", "undo merge", "undo pull request", "inverse commit", "git"]
+    }
+  },
+  "git-squash": {
+    "label": { "es": "Combinar commits", "en": "Squash commits", "pt": "Combinar commits", "fr": "Regrouper les commits", "de": "Commits zusammenfassen", "it": "Comprimi commit", "ja": "コミットをまとめる", "zh": "压缩提交", "ko": "커밋 합치기", "ar": "ضغط الإيداعات" },
+    "keywords": {
+      "es": ["squash", "squash and merge", "unir commits", "un solo commit", "rebase interactivo", "limpiar historial", "git"],
+      "en": ["combine commits", "squash and merge", "single commit", "interactive rebase", "fixup", "clean up history", "git"]
+    }
+  },
+  "git-push": {
+    "label": { "es": "Push", "en": "Push", "pt": "Push", "fr": "Pousser les modifications", "de": "Push", "it": "Push", "ja": "プッシュ", "zh": "推送", "ko": "푸시", "ar": "دفع التغييرات" },
+    "keywords": {
+      "es": ["subir cambios", "enviar commits", "publicar rama", "repositorio remoto", "origin", "sincronizar", "git"],
+      "en": ["upload changes", "send commits", "publish branch", "remote repository", "origin", "sync", "git"]
+    }
+  },
+  "git-pull": {
+    "label": { "es": "Pull", "en": "Pull", "pt": "Pull", "fr": "Tirer les modifications", "de": "Pull", "it": "Pull", "ja": "プル", "zh": "拉取", "ko": "끌어오기", "ar": "سحب التغييرات" },
+    "keywords": {
+      "es": ["bajar cambios", "jalar cambios", "traer commits", "actualizar rama", "repositorio remoto", "sincronizar", "git"],
+      "en": ["download changes", "get latest", "update branch", "fetch and merge", "remote repository", "sync", "git"]
+    }
+  },
+  "git-fetch": {
+    "label": { "es": "Fetch", "en": "Fetch", "pt": "Buscar alterações", "fr": "Récupérer les modifications", "de": "Änderungen abrufen", "it": "Recupera modifiche", "ja": "フェッチ", "zh": "提取更改", "ko": "페치", "ar": "جلب التغييرات" },
+    "keywords": {
+      "es": ["buscar actualizaciones", "descargar commits", "revisar el remoto", "sin fusionar", "actualizar referencias", "repositorio remoto", "git"],
+      "en": ["check for updates", "download commits", "without merging", "update refs", "remote repository", "refresh", "git"]
+    }
+  },
+  "git-clone": {
+    "label": { "es": "Clonar repositorio", "en": "Clone repository", "pt": "Clonar repositório", "fr": "Cloner le dépôt", "de": "Repository klonen", "it": "Clona repository", "ja": "リポジトリをクローン", "zh": "克隆仓库", "ko": "저장소 복제", "ar": "استنساخ المستودع" },
+    "keywords": {
+      "es": ["copiar repositorio", "descargar proyecto", "url para clonar", "copia local", "historial completo", "ssh", "git"],
+      "en": ["copy repository", "download project", "repo url", "local copy", "full history", "ssh", "git"]
+    }
+  },
+  "git-remote": {
+    "label": { "es": "Repositorio remoto", "en": "Remote repository", "pt": "Repositório remoto", "fr": "Dépôt distant", "de": "Remote-Repository", "it": "Repository remoto", "ja": "リモートリポジトリ", "zh": "远程仓库", "ko": "원격 저장소", "ar": "المستودع البعيد" },
+    "keywords": {
+      "es": ["origin", "upstream", "conectar repositorio", "url del repositorio", "servidor git", "agregar origin", "configuración de git"],
+      "en": ["origin", "upstream", "connect repository", "repository url", "git server", "link local repo", "git settings"]
+    }
+  },
+  "git-merge-queue": {
+    "label": { "es": "Cola de fusión", "en": "Merge queue", "pt": "Fila de mesclagem", "fr": "File d’attente de fusion", "de": "Merge-Warteschlange", "it": "Coda di merge", "ja": "マージキュー", "zh": "合并队列", "ko": "병합 대기열", "ar": "قائمة انتظار الدمج" },
+    "keywords": {
+      "es": ["pull requests en espera", "fusionar en orden", "turno para fusionar", "rama principal", "integración continua", "main", "git"],
+      "en": ["queued pull requests", "merge in order", "waiting to merge", "main branch", "continuous integration", "merge train", "git"]
+    }
+  },
+  "git-blame": {
+    "label": { "es": "Autoría por línea", "en": "Line authorship", "pt": "Autoria por linha", "fr": "Auteur par ligne", "de": "Autor pro Zeile", "it": "Autore per riga", "ja": "行ごとの変更者", "zh": "逐行追溯", "ko": "줄별 작성자", "ar": "مؤلف كل سطر" },
+    "keywords": {
+      "es": ["blame", "quién cambió esto", "anotar", "historial de la línea", "último cambio", "autor del commit", "git"],
+      "en": ["blame", "who changed this", "annotate", "line history", "last change", "commit author", "git"]
+    }
+  },
+  "git-submodule": {
+    "label": { "es": "Submódulo", "en": "Submodule", "pt": "Submódulo", "fr": "Sous-module", "de": "Submodul", "it": "Sottomodulo", "ja": "サブモジュール", "zh": "子模块", "ko": "서브모듈", "ar": "وحدة فرعية" },
+    "keywords": {
+      "es": ["repositorio anidado", "repositorio dentro de otro", "commit fijo", "dependencia fijada", "código externo", "monorepo", "git"],
+      "en": ["nested repository", "repo inside a repo", "pinned commit", "vendored code", "external repository", "monorepo", "git"]
+    }
+  },
+  "git-merge-conflict": {
+    "label": { "es": "Conflicto de fusión", "en": "Merge conflict", "pt": "Conflito de mesclagem", "fr": "Conflit de fusion", "de": "Merge-Konflikt", "it": "Conflitto di merge", "ja": "マージの競合", "zh": "合并冲突", "ko": "병합 충돌", "ar": "تعارض في الدمج" },
+    "keywords": {
+      "es": ["cambios en conflicto", "resolver conflictos", "no se puede fusionar", "mismas líneas", "rebase fallido", "error al fusionar", "git"],
+      "en": ["conflicting changes", "resolve conflicts", "can't merge", "same lines", "failed rebase", "merge failed", "git"]
+    }
+  },
+  "git-branch-plus": {
+    "label": { "es": "Nueva rama", "en": "New branch", "pt": "Nova branch", "fr": "Nouvelle branche", "de": "Neuer Branch", "it": "Nuovo branch", "ja": "新規ブランチ", "zh": "新建分支", "ko": "새 브랜치", "ar": "فرع جديد" },
+    "keywords": {
+      "es": ["crear rama", "ramificar", "checkout -b", "feature", "empezar un cambio", "desarrollo en paralelo", "git"],
+      "en": ["create branch", "branch off", "checkout -b", "feature branch", "start a change", "parallel work", "git"]
+    }
+  },
+  "git-branch-lock": {
+    "label": { "es": "Rama protegida", "en": "Protected branch", "pt": "Branch protegida", "fr": "Branche protégée", "de": "Geschützter Branch", "it": "Branch protetto", "ja": "保護されたブランチ", "zh": "受保护的分支", "ko": "보호된 브랜치", "ar": "فرع محمي" },
+    "keywords": {
+      "es": ["reglas de rama", "bloquear push", "revisión obligatoria", "checks requeridos", "main", "permisos", "git"],
+      "en": ["branch rules", "block pushes", "required reviews", "required checks", "main", "permissions", "git"]
+    }
+  },
+  "git-branch-sync": {
+    "label": { "es": "Actualizar rama", "en": "Update branch", "pt": "Atualizar branch", "fr": "Mettre à jour la branche", "de": "Branch aktualisieren", "it": "Aggiorna branch", "ja": "ブランチを更新", "zh": "更新分支", "ko": "브랜치 업데이트", "ar": "تحديث الفرع" },
+    "keywords": {
+      "es": ["sincronizar con upstream", "traer cambios de main", "rama base", "rama desactualizada", "sync fork", "ponerse al día", "git"],
+      "en": ["sync with upstream", "pull from main", "base branch", "out of date", "sync fork", "catch up", "git"]
+    }
+  },
+  "git-pull-request-check": {
+    "label": { "es": "Pull request aprobado", "en": "Approved pull request", "pt": "Pull request aprovado", "fr": "Pull request approuvée", "de": "Genehmigter Pull-Request", "it": "Pull request approvata", "ja": "承認済みのプルリクエスト", "zh": "已批准的拉取请求", "ko": "승인된 풀 리퀘스트", "ar": "طلب سحب معتمد" },
+    "keywords": {
+      "es": ["listo para fusionar", "checks en verde", "revisión aprobada", "visto bueno", "pruebas pasaron", "lgtm", "git"],
+      "en": ["ready to merge", "checks passed", "review approved", "lgtm", "tests passed", "green build", "git"]
+    }
+  },
+  "git-pull-request-plus": {
+    "label": { "es": "Nuevo pull request", "en": "New pull request", "pt": "Novo pull request", "fr": "Nouvelle pull request", "de": "Neuer Pull-Request", "it": "Nuova pull request", "ja": "新規プルリクエスト", "zh": "新建拉取请求", "ko": "새 풀 리퀘스트", "ar": "طلب سحب جديد" },
+    "keywords": {
+      "es": ["abrir pull request", "crear pr", "proponer cambios", "solicitar revisión", "merge request", "contribuir", "git"],
+      "en": ["open pull request", "create pr", "propose changes", "request review", "merge request", "contribute", "git"]
+    }
+  },
+  "git-commit-edit": {
+    "label": { "es": "Editar commit", "en": "Amend commit", "pt": "Corrigir commit", "fr": "Modifier le commit", "de": "Commit ändern", "it": "Modifica commit", "ja": "コミットを修正", "zh": "修改提交", "ko": "커밋 수정", "ar": "تعديل الإيداع" },
+    "keywords": {
+      "es": ["amend", "corregir último commit", "cambiar mensaje", "mensaje del commit", "reescribir commit", "agregar cambios olvidados", "git"],
+      "en": ["edit commit", "fix last commit", "change message", "reword", "rewrite commit", "add forgotten changes", "git"]
+    }
+  },
+  "issue": {
+    "label": { "es": "Issue", "en": "Issue", "pt": "Issue", "fr": "Ticket", "de": "Issue", "it": "Issue", "ja": "イシュー", "zh": "议题", "ko": "이슈", "ar": "مشكلة" },
+    "keywords": {
+      "es": ["incidencia", "ticket", "reporte", "tarea", "abierto", "seguimiento", "vincular a código", "backlog"],
+      "en": ["ticket", "report", "task", "open", "tracker", "link to code", "backlog", "bug report"]
+    }
+  },
+  "code-comment": {
+    "label": { "es": "Comentario de revisión", "en": "Review comment", "pt": "Comentário de revisão", "fr": "Commentaire de revue", "de": "Review-Kommentar", "it": "Commento di revisione", "ja": "レビューコメント", "zh": "审查评论", "ko": "리뷰 댓글", "ar": "تعليق مراجعة" },
+    "keywords": {
+      "es": ["comentario en línea", "revisión de código", "code review", "sugerencia", "pull request", "nota en el código", "conversación"],
+      "en": ["inline comment", "code review", "line comment", "suggestion", "pull request", "annotation", "conversation"]
+    }
+  },
+  "diff-split": {
+    "label": { "es": "Diff lado a lado", "en": "Split diff", "pt": "Diff lado a lado", "fr": "Diff côte à côte", "de": "Diff nebeneinander", "it": "Diff affiancato", "ja": "左右に並べた差分", "zh": "并排差异", "ko": "나란히 비교", "ar": "مقارنة جنبًا إلى جنب" },
+    "keywords": {
+      "es": ["vista dividida", "comparar versiones", "antes y después", "dos columnas", "diferencias", "revisión de código", "versión anterior"],
+      "en": ["side by side", "compare versions", "before and after", "two columns", "differences", "code review", "old and new"]
+    }
+  },
+  "diff-unified": {
+    "label": { "es": "Diff unificado", "en": "Unified diff", "pt": "Diff unificado", "fr": "Diff unifié", "de": "Unified-Diff", "it": "Diff unificato", "ja": "統合された差分", "zh": "统一差异", "ko": "통합 비교", "ar": "مقارنة موحّدة" },
+    "keywords": {
+      "es": ["una columna", "líneas agregadas", "líneas eliminadas", "vista en línea", "cambios", "comparar versiones", "patch"],
+      "en": ["one column", "added lines", "removed lines", "inline view", "changes", "compare versions", "patch"]
+    }
+  },
+  "merge-editor": {
+    "label": { "es": "Editor de fusión", "en": "Merge editor", "pt": "Editor de mesclagem", "fr": "Éditeur de fusion", "de": "Merge-Editor", "it": "Editor di merge", "ja": "マージエディター", "zh": "合并编辑器", "ko": "병합 편집기", "ar": "محرر الدمج" },
+    "keywords": {
+      "es": ["resolver conflictos", "fusión a tres vías", "cambios entrantes", "cambios actuales", "aceptar ambos", "resultado final", "git"],
+      "en": ["resolve conflicts", "three-way merge", "incoming changes", "current changes", "accept both", "final result", "git"]
+    }
+  },
+  "book-open-code": {
+    "label": { "es": "Documentación para desarrolladores", "en": "Developer docs", "pt": "Documentação para desenvolvedores", "fr": "Documentation développeur", "de": "Entwicklerdokumentation", "it": "Documentazione per sviluppatori", "ja": "開発者向けドキュメント", "zh": "开发者文档", "ko": "개발자 문서", "ar": "وثائق المطورين" },
+    "keywords": {
+      "es": ["referencia de api", "manual", "guía técnica", "docs", "ejemplos de código", "tutorial", "aprender"],
+      "en": ["api reference", "manual", "technical guide", "documentation", "code examples", "tutorial", "learn"]
+    }
+  },
+  "debug-breakpoint": {
+    "label": { "es": "Punto de interrupción", "en": "Breakpoint", "pt": "Ponto de interrupção", "fr": "Point d’arrêt", "de": "Haltepunkt", "it": "Punto di interruzione", "ja": "デバッグ用ブレークポイント", "zh": "断点", "ko": "중단점", "ar": "نقطة توقف" },
+    "keywords": {
+      "es": ["breakpoint", "depurar", "pausar ejecución", "depurador", "margen del editor", "detener aquí", "debug"],
+      "en": ["debug", "pause execution", "debugger", "editor gutter", "stop here", "toggle", "inspect"]
+    }
+  },
+  "debug-breakpoint-conditional": {
+    "label": { "es": "Punto de interrupción condicional", "en": "Conditional breakpoint", "pt": "Ponto de interrupção condicional", "fr": "Point d’arrêt conditionnel", "de": "Bedingter Haltepunkt", "it": "Punto di interruzione condizionale", "ja": "条件付きブレークポイント", "zh": "条件断点", "ko": "조건부 중단점", "ar": "نقطة توقف مشروطة" },
+    "keywords": {
+      "es": ["breakpoint", "condición", "expresión", "pausar solo si", "número de pasadas", "depurar", "debug"],
+      "en": ["condition", "expression", "pause only if", "hit count", "if true", "debugger", "debug"]
+    }
+  },
+  "debug-logpoint": {
+    "label": { "es": "Punto de registro", "en": "Logpoint", "pt": "Ponto de log", "fr": "Point de journalisation", "de": "Protokollpunkt", "it": "Punto di log", "ja": "ログポイント", "zh": "日志点", "ko": "로그 지점", "ar": "نقطة تسجيل" },
+    "keywords": {
+      "es": ["logpoint", "imprimir mensaje", "console.log", "registrar sin pausar", "tracepoint", "depurar", "debug"],
+      "en": ["log message", "console.log", "print", "log without pausing", "tracepoint", "debugger", "debug"]
+    }
+  },
+  "debug-continue": {
+    "label": { "es": "Continuar ejecución", "en": "Continue execution", "pt": "Continuar execução", "fr": "Continuer l’exécution", "de": "Ausführung fortsetzen", "it": "Continua esecuzione", "ja": "実行を続行", "zh": "继续执行", "ko": "계속 실행", "ar": "متابعة التنفيذ" },
+    "keywords": {
+      "es": ["reanudar", "siguiente breakpoint", "depurador", "f5", "barra de depuración", "seguir", "debug"],
+      "en": ["resume", "next breakpoint", "debugger", "f5", "debug toolbar", "play", "debug"]
+    }
+  },
+  "step-over": {
+    "label": { "es": "Paso por encima", "en": "Step over", "pt": "Passar por cima", "fr": "Pas à pas principal", "de": "Prozedurschritt", "it": "Passa oltre", "ja": "ステップオーバー", "zh": "单步跳过", "ko": "프로시저 단위 실행", "ar": "تجاوز الخطوة" },
+    "keywords": {
+      "es": ["step over", "siguiente línea", "ejecutar línea", "sin entrar a la función", "f10", "depurador", "depurar"],
+      "en": ["next line", "line by line", "run current line", "skip function call", "f10", "debugger", "debug"]
+    }
+  },
+  "step-back": {
+    "label": { "es": "Paso atrás", "en": "Step backward", "pt": "Voltar um passo", "fr": "Pas en arrière", "de": "Schritt zurück", "it": "Passo indietro", "ja": "ステップバック", "zh": "单步后退", "ko": "한 단계 뒤로", "ar": "الرجوع خطوة" },
+    "keywords": {
+      "es": ["step back", "depuración inversa", "retroceder", "instrucción anterior", "viaje en el tiempo", "deshacer paso", "depurar"],
+      "en": ["reverse debugging", "go back", "previous statement", "time travel debugging", "undo step", "rewind", "debug"]
+    }
+  },
+  "step-into": {
+    "label": { "es": "Entrar a la función", "en": "Step into", "pt": "Entrar na função", "fr": "Pas à pas détaillé", "de": "Einzelschritt", "it": "Entra nella funzione", "ja": "ステップイン", "zh": "单步进入", "ko": "한 단계씩 실행", "ar": "الدخول إلى الدالة" },
+    "keywords": {
+      "es": ["step into", "meterse a la función", "ver la llamada", "paso a paso", "f11", "depurador", "depurar"],
+      "en": ["enter function", "go into call", "function call", "line by line", "f11", "debugger", "debug"]
+    }
+  },
+  "step-out": {
+    "label": { "es": "Salir de la función", "en": "Step out", "pt": "Sair da função", "fr": "Pas à pas sortant", "de": "Ausführen bis Rücksprung", "it": "Esci dalla funzione", "ja": "ステップアウト", "zh": "单步跳出", "ko": "프로시저 나가기", "ar": "الخروج من الدالة" },
+    "keywords": {
+      "es": ["step out", "regresar al llamador", "terminar función", "subir un nivel", "shift f11", "depurador", "depurar"],
+      "en": ["return to caller", "finish function", "exit function", "up one level", "shift f11", "debugger", "debug"]
+    }
+  },
+  "run-to-cursor": {
+    "label": { "es": "Ejecutar hasta el cursor", "en": "Run to cursor", "pt": "Executar até o cursor", "fr": "Exécuter jusqu’au curseur", "de": "Ausführen bis Cursor", "it": "Esegui fino al cursore", "ja": "カーソル行の前まで実行", "zh": "运行到光标处", "ko": "커서까지 실행", "ar": "التشغيل حتى المؤشر" },
+    "keywords": {
+      "es": ["saltar a una línea", "breakpoint temporal", "continuar hasta aquí", "pausar en la línea", "depurador", "depurar", "debug"],
+      "en": ["jump to line", "temporary breakpoint", "continue to here", "pause at line", "run until", "debugger", "debug"]
+    }
+  },
+  "call-stack": {
+    "label": { "es": "Pila de llamadas", "en": "Call stack", "pt": "Pilha de chamadas", "fr": "Pile des appels", "de": "Aufrufliste", "it": "Stack di chiamate", "ja": "コールスタック", "zh": "调用堆栈", "ko": "호출 스택", "ar": "مكدس الاستدعاءات" },
+    "keywords": {
+      "es": ["stack trace", "traza de pila", "funciones activas", "marcos", "rastrear un error", "backtrace", "depurador"],
+      "en": ["stack trace", "function calls", "stack frames", "trace an error", "backtrace", "exception", "debugger"]
+    }
+  },
+  "watch-expression": {
+    "label": { "es": "Observar expresión", "en": "Watch expression", "pt": "Inspecionar expressão", "fr": "Surveiller une expression", "de": "Überwachungsausdruck", "it": "Espressione di controllo", "ja": "ウォッチ式", "zh": "监视表达式", "ko": "조사식", "ar": "مراقبة تعبير" },
+    "keywords": {
+      "es": ["watch", "vigilar variable", "valor de una variable", "inspeccionar", "panel de inspección", "depurador", "debug"],
+      "en": ["monitor variable", "variable value", "inspect", "track value", "evaluate", "debugger", "debug"]
+    }
+  },
+  "flame-graph": {
+    "label": { "es": "Gráfico de llamas", "en": "Flame graph", "pt": "Gráfico de chamas", "fr": "Graphique de flammes", "de": "Flammendiagramm", "it": "Grafico a fiamma", "ja": "フレームグラフ", "zh": "火焰图", "ko": "플레임 그래프", "ar": "مخطط اللهب" },
+    "keywords": {
+      "es": ["perfilador", "profiling", "rendimiento", "tiempo de cpu", "cuello de botella", "funciones lentas", "optimizar"],
+      "en": ["profiler", "profiling", "performance", "cpu time", "bottleneck", "slow functions", "optimize"]
+    }
+  },
+  "hot-reload": {
+    "label": { "es": "Recarga en caliente", "en": "Hot reload", "pt": "Recarga a quente", "fr": "Rechargement à chaud", "de": "Hot Reload", "it": "Ricaricamento a caldo", "ja": "ホットリロード", "zh": "热重载", "ko": "핫 리로드", "ar": "إعادة التحميل الفوري" },
+    "keywords": {
+      "es": ["hot reload", "live reload", "sin reiniciar", "cambios al instante", "servidor de desarrollo", "hmr", "fast refresh"],
+      "en": ["live reload", "hmr", "hot module replacement", "no restart", "instant changes", "dev server", "fast refresh"]
+    }
+  },
+  "recursion": {
+    "label": { "es": "Recursión", "en": "Recursion", "pt": "Recursão", "fr": "Récursivité", "de": "Rekursion", "it": "Ricorsione", "ja": "再帰", "zh": "递归", "ko": "재귀", "ar": "الاستدعاء الذاتي" },
+    "keywords": {
+      "es": ["se llama a sí misma", "caso base", "bucle", "algoritmo", "pila de llamadas", "divide y vencerás", "programación"],
+      "en": ["calls itself", "base case", "loop", "algorithm", "call stack", "divide and conquer", "programming"]
+    }
+  },
+  "memory-leak": {
+    "label": { "es": "Fuga de memoria", "en": "Memory leak", "pt": "Vazamento de memória", "fr": "Fuite de mémoire", "de": "Speicherleck", "it": "Perdita di memoria", "ja": "メモリリーク", "zh": "内存泄漏", "ko": "메모리 누수", "ar": "تسرّب الذاكرة" },
+    "keywords": {
+      "es": ["ram", "perfilador", "consumo excesivo", "heap", "recolector de basura", "rendimiento", "la app se alenta"],
+      "en": ["ram", "profiler", "high usage", "heap", "garbage collection", "performance", "app slowing down"]
+    }
+  },
+  "bug-play": {
+    "label": { "es": "Iniciar depuración", "en": "Start debugging", "pt": "Iniciar depuração", "fr": "Démarrer le débogage", "de": "Debugging starten", "it": "Avvia debug", "ja": "デバッグを開始", "zh": "开始调试", "ko": "디버깅 시작", "ar": "بدء التصحيح" },
+    "keywords": {
+      "es": ["debug", "ejecutar con depurador", "correr en modo debug", "adjuntar depurador", "lanzar app", "f5", "probar"],
+      "en": ["debug mode", "run with debugger", "attach debugger", "launch app", "f5", "run", "test"]
+    }
+  },
+  "bug-check": {
+    "label": { "es": "Error corregido", "en": "Bug fixed", "pt": "Bug corrigido", "fr": "Bug corrigé", "de": "Fehler behoben", "it": "Bug risolto", "ja": "バグ修正済み", "zh": "错误已修复", "ko": "버그 수정됨", "ar": "تم إصلاح الخلل" },
+    "keywords": {
+      "es": ["bug resuelto", "arreglado", "solucionado", "issue cerrado", "fix", "parche", "verificado"],
+      "en": ["resolved", "solved", "closed issue", "fix", "patch", "verified", "squashed bug"]
+    }
+  },
+  "bug-plus": {
+    "label": { "es": "Reportar error", "en": "Report bug", "pt": "Relatar bug", "fr": "Signaler un bug", "de": "Fehler melden", "it": "Segnala bug", "ja": "バグを報告", "zh": "报告错误", "ko": "버그 신고", "ar": "الإبلاغ عن خلل" },
+    "keywords": {
+      "es": ["nuevo bug", "levantar issue", "crear incidencia", "bug report", "registrar falla", "feedback", "soporte"],
+      "en": ["new bug", "file an issue", "create issue", "log a defect", "problem report", "feedback", "support"]
+    }
+  },
+  "bug-search": {
+    "label": { "es": "Rastreo de errores", "en": "Error tracking", "pt": "Rastreamento de erros", "fr": "Suivi des erreurs", "de": "Fehlerverfolgung", "it": "Monitoraggio degli errori", "ja": "エラー追跡", "zh": "错误跟踪", "ko": "오류 추적", "ar": "تتبع الأخطاء" },
+    "keywords": {
+      "es": ["buscar bugs", "monitoreo de fallas", "encontrar fallas", "excepciones", "reportes de crash", "diagnóstico", "depurar"],
+      "en": ["find bugs", "error monitoring", "crash reports", "exceptions", "diagnose", "troubleshoot", "debug"]
+    }
+  },
+  "braces-alert": {
+    "label": { "es": "Error en el código", "en": "Code error", "pt": "Erro no código", "fr": "Erreur de code", "de": "Codefehler", "it": "Errore nel codice", "ja": "コードエラー", "zh": "代码错误", "ko": "코드 오류", "ar": "خطأ في الكود" },
+    "keywords": {
+      "es": ["excepción", "error de sintaxis", "throw", "fallo de compilación", "error de ejecución", "crash", "stack trace"],
+      "en": ["exception", "syntax error", "throw", "compile error", "runtime error", "crash", "stack trace"]
+    }
+  },
+  "code-search": {
+    "label": { "es": "Buscar en el código", "en": "Code search", "pt": "Buscar no código", "fr": "Rechercher dans le code", "de": "Code durchsuchen", "it": "Cerca nel codice", "ja": "コードを検索", "zh": "搜索代码", "ko": "코드 검색", "ar": "البحث في الكود" },
+    "keywords": {
+      "es": ["buscar en archivos", "grep", "encontrar referencias", "base de código", "buscar símbolo", "buscar y reemplazar", "repositorio"],
+      "en": ["find in files", "grep", "find references", "codebase", "symbol search", "find and replace", "repository"]
+    }
+  },
+  "code-play": {
+    "label": { "es": "Ejecutar código", "en": "Run code", "pt": "Executar código", "fr": "Exécuter le code", "de": "Code ausführen", "it": "Esegui codice", "ja": "コードを実行", "zh": "运行代码", "ko": "코드 실행", "ar": "تشغيل الكود" },
+    "keywords": {
+      "es": ["correr", "run", "ejecutar celda", "ejecutar archivo", "probar fragmento", "playground", "compilar y correr"],
+      "en": ["execute", "run cell", "run file", "try snippet", "playground", "compile and run", "start"]
+    }
+  },
+  "code-snippet": {
+    "label": { "es": "Fragmento de código", "en": "Code snippet", "pt": "Trecho de código", "fr": "Extrait de code", "de": "Code-Snippet", "it": "Snippet di codice", "ja": "コードスニペット", "zh": "代码片段", "ko": "코드 스니펫", "ar": "مقتطف برمجي" },
+    "keywords": {
+      "es": ["snippet", "gist", "colección de snippets", "código guardado", "compartir código", "plantilla", "reutilizar"],
+      "en": ["gist", "saved code", "share code", "template", "reuse", "boilerplate", "code sample"]
+    }
+  },
+  "code-completion": {
+    "label": { "es": "Autocompletado de código", "en": "Code completion", "pt": "Autocompletar código", "fr": "Complétion de code", "de": "Codevervollständigung", "it": "Completamento del codice", "ja": "コード補完", "zh": "代码补全", "ko": "코드 자동 완성", "ar": "إكمال الكود تلقائيًا" },
+    "keywords": {
+      "es": ["sugerencias", "intellisense", "mientras escribes", "terminar la palabra", "ayuda al escribir", "editor", "ide"],
+      "en": ["autocomplete", "suggestions", "intellisense", "as you type", "typeahead", "editor", "ide"]
+    }
+  },
+  "code-notebook": {
+    "label": { "es": "Notebook de código", "en": "Code notebook", "pt": "Notebook de código", "fr": "Notebook de code", "de": "Code-Notebook", "it": "Notebook di codice", "ja": "コードノートブック", "zh": "代码笔记本", "ko": "코드 노트북", "ar": "دفتر أكواد تفاعلي" },
+    "keywords": {
+      "es": ["jupyter", "celdas", "cuaderno", "interactivo", "análisis de datos", "ciencia de datos", "python"],
+      "en": ["jupyter", "cells", "interactive", "data analysis", "data science", "python", "repl"]
+    }
+  },
+  "code-coverage": {
+    "label": { "es": "Cobertura de código", "en": "Code coverage", "pt": "Cobertura de código", "fr": "Couverture de code", "de": "Codeabdeckung", "it": "Copertura del codice", "ja": "コードカバレッジ", "zh": "代码覆盖率", "ko": "코드 커버리지", "ar": "تغطية الكود" },
+    "keywords": {
+      "es": ["pruebas", "porcentaje probado", "líneas sin probar", "badge", "reporte", "calidad del código", "tests"],
+      "en": ["tests", "percent tested", "untested lines", "badge", "report", "code quality", "lcov"]
+    }
+  },
+  "code-format": {
+    "label": { "es": "Formatear código", "en": "Format code", "pt": "Formatar código", "fr": "Formater le code", "de": "Code formatieren", "it": "Formatta codice", "ja": "コードを整形", "zh": "格式化代码", "ko": "코드 서식 지정", "ar": "تنسيق الكود" },
+    "keywords": {
+      "es": ["prettier", "sangría", "estilo de código", "acomodar código", "indentación", "al guardar", "formatter"],
+      "en": ["prettier", "indentation", "code style", "tidy code", "beautify", "on save", "formatter"]
+    }
+  },
+  "multi-cursor": {
+    "label": { "es": "Varios cursores", "en": "Multiple cursors", "pt": "Múltiplos cursores", "fr": "Curseurs multiples", "de": "Mehrere Cursor", "it": "Cursori multipli", "ja": "マルチカーソル", "zh": "多光标", "ko": "다중 커서", "ar": "مؤشرات متعددة" },
+    "keywords": {
+      "es": ["editar varias líneas", "selección múltiple", "edición simultánea", "editar a la vez", "selección en columna", "atajo de teclado", "editor"],
+      "en": ["multi-line edit", "multiple selections", "simultaneous editing", "edit at once", "column selection", "keyboard shortcut", "editor"]
+    }
+  },
+  "lint": {
+    "label": { "es": "Análisis estático", "en": "Linting", "pt": "Análise estática", "fr": "Analyse statique", "de": "Statische Analyse", "it": "Analisi statica", "ja": "静的解析", "zh": "代码检查", "ko": "정적 분석", "ar": "التحليل الثابت" },
+    "keywords": {
+      "es": ["linter", "lint", "advertencias", "panel de problemas", "eslint", "calidad de código", "reglas de estilo"],
+      "en": ["linter", "warnings", "problems panel", "static analysis", "eslint", "code quality", "style rules"]
+    }
+  },
+  "lightbulb-wrench": {
+    "label": { "es": "Corrección rápida", "en": "Quick fix", "pt": "Correção rápida", "fr": "Correctif rapide", "de": "Schnellkorrektur", "it": "Correzione rapida", "ja": "クイックフィックス", "zh": "快速修复", "ko": "빠른 수정", "ar": "إصلاح سريع" },
+    "keywords": {
+      "es": ["acción de código", "sugerencia", "arreglar problema", "foco", "ctrl punto", "refactorizar", "solución propuesta"],
+      "en": ["code action", "suggestion", "resolve problem", "lightbulb", "ctrl period", "refactor", "intention action"]
+    }
+  },
+  "minify": {
+    "label": { "es": "Minificar código", "en": "Minify code", "pt": "Minificar código", "fr": "Minifier le code", "de": "Code minifizieren", "it": "Minifica codice", "ja": "コードを最小化", "zh": "压缩代码", "ko": "코드 압축", "ar": "تصغير الكود" },
+    "keywords": {
+      "es": ["comprimir", "reducir tamaño", "quitar espacios", "build de producción", "uglify", "optimizar", "bundle"],
+      "en": ["compress", "reduce size", "strip whitespace", "production build", "uglify", "optimize", "bundle"]
+    }
+  },
+  "class-diagram": {
+    "label": { "es": "Diagrama de clases", "en": "Class diagram", "pt": "Diagrama de classes", "fr": "Diagramme de classes", "de": "Klassendiagramm", "it": "Diagramma delle classi", "ja": "クラス図", "zh": "类图", "ko": "클래스 다이어그램", "ar": "مخطط الفئات" },
+    "keywords": {
+      "es": ["clase", "uml", "campos y métodos", "programación orientada a objetos", "esquema del código", "atributos", "modelo"],
+      "en": ["class", "uml", "fields and methods", "object-oriented", "code outline", "attributes", "model"]
+    }
+  },
+  "inheritance": {
+    "label": { "es": "Herencia", "en": "Inheritance", "pt": "Herança", "fr": "Héritage", "de": "Vererbung", "it": "Ereditarietà", "ja": "継承", "zh": "继承", "ko": "상속", "ar": "الوراثة" },
+    "keywords": {
+      "es": ["extender clase", "jerarquía de tipos", "clase padre", "subclase", "extends", "programación orientada a objetos", "uml"],
+      "en": ["extends", "type hierarchy", "parent class", "subclass", "superclass", "object-oriented", "uml"]
+    }
+  },
+  "sequence-diagram": {
+    "label": { "es": "Diagrama de secuencia", "en": "Sequence diagram", "pt": "Diagrama de sequência", "fr": "Diagramme de séquence", "de": "Sequenzdiagramm", "it": "Diagramma di sequenza", "ja": "シーケンス図", "zh": "时序图", "ko": "시퀀스 다이어그램", "ar": "مخطط التسلسل" },
+    "keywords": {
+      "es": ["uml", "mensajes", "participantes", "línea de vida", "interacciones", "flujo de llamadas", "arquitectura"],
+      "en": ["uml", "messages", "participants", "lifeline", "interactions", "call flow", "architecture"]
+    }
+  },
+  "linked-list": {
+    "label": { "es": "Lista enlazada", "en": "Linked list", "pt": "Lista encadeada", "fr": "Liste chaînée", "de": "Verkettete Liste", "it": "Lista concatenata", "ja": "連結リスト", "zh": "链表", "ko": "연결 리스트", "ar": "قائمة مترابطة" },
+    "keywords": {
+      "es": ["estructura de datos", "nodos", "punteros", "referencias", "cadena", "secuencia", "algoritmos"],
+      "en": ["data structure", "nodes", "pointers", "next reference", "chain", "sequence", "algorithms"]
+    }
+  },
+  "binary-tree": {
+    "label": { "es": "Árbol binario", "en": "Binary tree", "pt": "Árvore binária", "fr": "Arbre binaire", "de": "Binärbaum", "it": "Albero binario", "ja": "二分木", "zh": "二叉树", "ko": "이진 트리", "ar": "شجرة ثنائية" },
+    "keywords": {
+      "es": ["estructura de datos", "nodos", "hijo izquierdo y derecho", "raíz", "jerarquía", "bst", "algoritmos"],
+      "en": ["data structure", "nodes", "left and right child", "root", "hierarchy", "bst", "algorithms"]
+    }
+  },
+  "hash-map": {
+    "label": { "es": "Tabla hash", "en": "Hash map", "pt": "Tabela hash", "fr": "Table de hachage", "de": "Hashtabelle", "it": "Tabella hash", "ja": "ハッシュマップ", "zh": "哈希表", "ko": "해시 맵", "ar": "جدول تجزئة" },
+    "keywords": {
+      "es": ["diccionario", "clave y valor", "mapa", "hashmap", "objeto", "búsqueda rápida", "estructura de datos"],
+      "en": ["dictionary", "key value", "object", "associative array", "lookup table", "fast lookup", "data structure"]
+    }
+  },
+  "ci-pipeline": {
+    "label": { "es": "Pipeline de CI/CD", "en": "CI/CD pipeline", "pt": "Pipeline de CI/CD", "fr": "Pipeline CI/CD", "de": "CI/CD-Pipeline", "it": "Pipeline CI/CD", "ja": "CI/CDパイプライン", "zh": "CI/CD 流水线", "ko": "CI/CD 파이프라인", "ar": "مسار CI/CD" },
+    "keywords": {
+      "es": ["integración continua", "entrega continua", "etapas", "workflow", "github actions", "compilar probar y desplegar", "ejecuciones"],
+      "en": ["continuous integration", "continuous delivery", "stages", "workflow run", "github actions", "build test deploy", "jobs"]
+    }
+  },
+  "ci-pipeline-check": {
+    "label": { "es": "Pipeline exitoso", "en": "Pipeline passed", "pt": "Pipeline aprovado", "fr": "Pipeline réussi", "de": "Pipeline erfolgreich", "it": "Pipeline riuscita", "ja": "パイプライン成功", "zh": "流水线已通过", "ko": "파이프라인 통과", "ar": "مسار CI/CD ناجح" },
+    "keywords": {
+      "es": ["build en verde", "pruebas pasaron", "ci aprobado", "ejecución correcta", "checks en verde", "listo para desplegar", "workflow"],
+      "en": ["green build", "tests passing", "ci success", "successful run", "all checks green", "ready to deploy", "workflow"]
+    }
+  },
+  "ci-pipeline-x": {
+    "label": { "es": "Pipeline fallido", "en": "Pipeline failed", "pt": "Pipeline com falha", "fr": "Pipeline en échec", "de": "Pipeline fehlgeschlagen", "it": "Pipeline non riuscita", "ja": "パイプライン失敗", "zh": "流水线失败", "ko": "파이프라인 실패", "ar": "مسار CI/CD فاشل" },
+    "keywords": {
+      "es": ["build en rojo", "pruebas fallaron", "error de ci", "ejecución con errores", "checks en rojo", "revisar logs", "workflow"],
+      "en": ["red build", "tests failing", "ci error", "broken build", "failing checks", "check logs", "workflow"]
+    }
+  },
+  "ci-pipeline-clock": {
+    "label": { "es": "Pipeline en cola", "en": "Pipeline queued", "pt": "Pipeline na fila", "fr": "Pipeline en attente", "de": "Pipeline in Warteschlange", "it": "Pipeline in coda", "ja": "パイプライン待機中", "zh": "流水线排队中", "ko": "파이프라인 대기 중", "ar": "مسار CI/CD في الانتظار" },
+    "keywords": {
+      "es": ["programado", "pendiente", "en espera", "cron", "ejecución nocturna", "esperando runner", "workflow"],
+      "en": ["scheduled", "pending", "in line", "cron", "nightly run", "waiting for runner", "workflow"]
+    }
+  },
+  "build": {
+    "label": { "es": "Compilar proyecto", "en": "Build project", "pt": "Compilar projeto", "fr": "Compiler le projet", "de": "Projekt erstellen", "it": "Compila progetto", "ja": "プロジェクトをビルド", "zh": "构建项目", "ko": "프로젝트 빌드", "ar": "بناء المشروع" },
+    "keywords": {
+      "es": ["build", "estado del build", "configuración de build", "construir", "empaquetar", "bundler", "make"],
+      "en": ["compile", "build status", "build settings", "make", "bundle", "bundler", "assemble"]
+    }
+  },
+  "build-artifact": {
+    "label": { "es": "Artefacto de build", "en": "Build artifact", "pt": "Artefato de build", "fr": "Artefact de build", "de": "Build-Artefakt", "it": "Artefatto di build", "ja": "ビルド成果物", "zh": "构建产物", "ko": "빌드 산출물", "ar": "ناتج البناء" },
+    "keywords": {
+      "es": ["resultado de compilación", "binario", "paquete generado", "ejecutable", "release", "dist", "registro de paquetes"],
+      "en": ["compiled output", "binary", "generated package", "executable", "release", "dist", "package registry"]
+    }
+  },
+  "test-results": {
+    "label": { "es": "Resultados de pruebas", "en": "Test results", "pt": "Resultados dos testes", "fr": "Résultats des tests", "de": "Testergebnisse", "it": "Risultati dei test", "ja": "テスト結果", "zh": "测试结果", "ko": "테스트 결과", "ar": "نتائج الاختبارات" },
+    "keywords": {
+      "es": ["reporte", "aprobadas y fallidas", "tests", "unit tests", "panel de testing", "control de calidad", "qa"],
+      "en": ["report", "passed and failed", "unit tests", "qa", "quality assurance", "junit", "spec"]
+    }
+  },
+  "deploy": {
+    "label": { "es": "Despliegue", "en": "Deploy", "pt": "Implantar", "fr": "Déployer", "de": "Bereitstellen", "it": "Distribuisci", "ja": "デプロイ", "zh": "部署", "ko": "배포", "ar": "نشر" },
+    "keywords": {
+      "es": ["desplegar", "lanzar a producción", "publicar", "entorno", "subir al servidor", "release", "enviar build"],
+      "en": ["ship", "go live", "publish", "environment", "push to production", "release", "launch"]
+    }
+  },
+  "deploy-check": {
+    "label": { "es": "Despliegue exitoso", "en": "Deployment succeeded", "pt": "Implantação concluída", "fr": "Déploiement réussi", "de": "Bereitstellung erfolgreich", "it": "Distribuzione riuscita", "ja": "デプロイ成功", "zh": "部署成功", "ko": "배포 성공", "ar": "نجح النشر" },
+    "keywords": {
+      "es": ["en vivo", "en producción", "publicado", "deploy listo", "activo", "versión en línea", "ready"],
+      "en": ["live", "in production", "published", "ready", "shipped", "active", "online"]
+    }
+  },
+  "deploy-x": {
+    "label": { "es": "Despliegue fallido", "en": "Deployment failed", "pt": "Falha na implantação", "fr": "Échec du déploiement", "de": "Bereitstellung fehlgeschlagen", "it": "Distribuzione non riuscita", "ja": "デプロイ失敗", "zh": "部署失败", "ko": "배포 실패", "ar": "فشل النشر" },
+    "keywords": {
+      "es": ["error de deploy", "no se publicó", "build roto", "revisar logs", "error en producción", "cancelado", "rollback"],
+      "en": ["deploy error", "not published", "broken build", "check logs", "production error", "canceled", "rollback"]
+    }
+  },
+  "rollback": {
+    "label": { "es": "Revertir despliegue", "en": "Rollback", "pt": "Reverter implantação", "fr": "Restaurer la version précédente", "de": "Rollback", "it": "Ripristina versione precedente", "ja": "ロールバック", "zh": "回滚", "ko": "롤백", "ar": "التراجع إلى النشر السابق" },
+    "keywords": {
+      "es": ["rollback", "versión anterior", "deshacer deploy", "regresar producción", "restaurar", "último deploy estable", "incidente"],
+      "en": ["revert deployment", "previous version", "undo deploy", "restore", "last stable release", "incident", "go back"]
+    }
+  },
+  "blue-green-deploy": {
+    "label": { "es": "Despliegue azul-verde", "en": "Blue-green deployment", "pt": "Implantação azul-verde", "fr": "Déploiement bleu-vert", "de": "Blue-Green-Deployment", "it": "Deployment blue-green", "ja": "ブルーグリーンデプロイ", "zh": "蓝绿部署", "ko": "블루-그린 배포", "ar": "النشر الأزرق والأخضر" },
+    "keywords": {
+      "es": ["blue green", "dos entornos", "cambiar tráfico", "sin tiempo de inactividad", "cambio de versión", "lanzamiento seguro", "infraestructura"],
+      "en": ["two environments", "switch traffic", "zero downtime", "cutover", "swap", "safe release", "infrastructure"]
+    }
+  },
+  "dependency": {
+    "label": { "es": "Dependencia", "en": "Dependency", "pt": "Dependência", "fr": "Dépendance", "de": "Abhängigkeit", "it": "Dipendenza", "ja": "依存関係", "zh": "依赖项", "ko": "종속성", "ar": "تبعية" },
+    "keywords": {
+      "es": ["paquete", "librería", "npm", "módulo", "grafo", "requisito", "package.json"],
+      "en": ["package", "library", "npm", "module", "graph", "requirement", "package.json"]
+    }
+  },
+  "dependency-arrow-up": {
+    "label": { "es": "Actualizar dependencias", "en": "Upgrade dependencies", "pt": "Atualizar dependências", "fr": "Mettre à jour les dépendances", "de": "Abhängigkeiten aktualisieren", "it": "Aggiorna dipendenze", "ja": "依存関係を更新", "zh": "升级依赖项", "ko": "종속성 업그레이드", "ar": "ترقية التبعيات" },
+    "keywords": {
+      "es": ["nueva versión", "npm update", "paquetes desactualizados", "subir versión", "parche de seguridad", "dependabot", "renovate"],
+      "en": ["new version", "npm update", "outdated packages", "bump version", "security patch", "dependabot", "renovate"]
+    }
+  },
+  "circular-dependency": {
+    "label": { "es": "Dependencia circular", "en": "Circular dependency", "pt": "Dependência circular", "fr": "Dépendance circulaire", "de": "Zirkuläre Abhängigkeit", "it": "Dipendenza circolare", "ja": "循環依存", "zh": "循环依赖", "ko": "순환 종속성", "ar": "تبعية دائرية" },
+    "keywords": {
+      "es": ["ciclo", "importaciones en bucle", "dependen entre sí", "módulos acoplados", "error de importación", "advertencia de build", "arquitectura"],
+      "en": ["cycle", "import cycle", "depend on each other", "coupled modules", "import error", "build warning", "architecture"]
+    }
+  },
+  "sdk": {
+    "label": { "es": "SDK", "en": "SDK", "pt": "SDK", "fr": "SDK", "de": "SDK", "it": "SDK", "ja": "SDK", "zh": "SDK", "ko": "SDK", "ar": "حزمة تطوير البرمجيات" },
+    "keywords": {
+      "es": ["kit de desarrollo", "librería cliente", "integración", "api", "paquete", "herramientas para desarrolladores", "instalar"],
+      "en": ["development kit", "client library", "integration", "api", "package", "developer tools", "install"]
+    }
+  },
+  "microservices": {
+    "label": { "es": "Microservicios", "en": "Microservices", "pt": "Microsserviços", "fr": "Microservices", "de": "Microservices", "it": "Microservizi", "ja": "マイクロサービス", "zh": "微服务", "ko": "마이크로서비스", "ar": "خدمات مصغّرة" },
+    "keywords": {
+      "es": ["arquitectura", "sistema distribuido", "servicios independientes", "dividir el monolito", "kubernetes", "api interna", "backend"],
+      "en": ["architecture", "distributed system", "independent services", "split monolith", "kubernetes", "internal api", "backend"]
+    }
+  },
+  "server-code": {
+    "label": { "es": "Infraestructura como código", "en": "Infrastructure as code", "pt": "Infraestrutura como código", "fr": "Infrastructure en tant que code", "de": "Infrastructure as Code", "it": "Infrastruttura come codice", "ja": "インフラのコード化", "zh": "基础设施即代码", "ko": "코드형 인프라", "ar": "البنية التحتية كرمز" },
+    "keywords": {
+      "es": ["iac", "terraform", "servidores", "configuración", "aprovisionar", "devops", "plantillas de nube"],
+      "en": ["iac", "terraform", "servers", "configuration", "provisioning", "devops", "cloud templates"]
+    }
+  },
+  "storage-bucket": {
+    "label": { "es": "Bucket de almacenamiento", "en": "Storage bucket", "pt": "Bucket de armazenamento", "fr": "Bucket de stockage", "de": "Speicher-Bucket", "it": "Bucket di archiviazione", "ja": "ストレージバケット", "zh": "存储桶", "ko": "스토리지 버킷", "ar": "حاوية التخزين" },
+    "keywords": {
+      "es": ["object storage", "s3", "blobs", "archivos en la nube", "subir archivos", "assets", "cdn"],
+      "en": ["object storage", "s3", "blobs", "cloud files", "upload files", "assets", "cdn"]
+    }
+  },
+  "container-image": {
+    "label": { "es": "Imagen de contenedor", "en": "Container image", "pt": "Imagem de contêiner", "fr": "Image de conteneur", "de": "Container-Image", "it": "Immagine container", "ja": "コンテナイメージ", "zh": "容器镜像", "ko": "컨테이너 이미지", "ar": "صورة الحاوية" },
+    "keywords": {
+      "es": ["docker", "capas", "dockerfile", "registro", "plantilla", "kubernetes", "despliegue"],
+      "en": ["docker", "layers", "dockerfile", "registry", "template", "kubernetes", "oci"]
+    }
+  },
+  "emulator": {
+    "label": { "es": "Emulador", "en": "Emulator", "pt": "Emulador", "fr": "Émulateur", "de": "Emulator", "it": "Emulatore", "ja": "エミュレーター", "zh": "模拟器", "ko": "에뮬레이터", "ar": "محاكي" },
+    "keywords": {
+      "es": ["simulador", "dispositivo virtual", "teléfono virtual", "probar app", "android", "ios", "desarrollo móvil"],
+      "en": ["simulator", "virtual device", "virtual phone", "test app", "android", "ios", "mobile development"]
+    }
+  },
+  "developer-mode": {
+    "label": { "es": "Modo desarrollador", "en": "Developer mode", "pt": "Modo de desenvolvedor", "fr": "Mode développeur", "de": "Entwicklermodus", "it": "Modalità sviluppatore", "ja": "開発者モード", "zh": "开发者模式", "ko": "개발자 모드", "ar": "وضع المطور" },
+    "keywords": {
+      "es": ["depuración usb", "desarrollo móvil", "ajustes avanzados", "configuración oculta", "android", "programar apps", "dispositivo"],
+      "en": ["usb debugging", "mobile development", "advanced settings", "hidden settings", "android", "build apps", "device"]
+    }
+  },
+  "distributed-trace": {
+    "label": { "es": "Traza distribuida", "en": "Distributed trace", "pt": "Rastreamento distribuído", "fr": "Trace distribuée", "de": "Verteilter Trace", "it": "Traccia distribuita", "ja": "分散トレース", "zh": "分布式追踪", "ko": "분산 추적", "ar": "تتبع موزّع" },
+    "keywords": {
+      "es": ["tracing", "spans", "apm", "observabilidad", "latencia", "recorrido de la solicitud", "opentelemetry"],
+      "en": ["tracing", "spans", "apm", "observability", "latency", "request path", "opentelemetry"]
+    }
+  },
+  "background-worker": {
+    "label": { "es": "Proceso en segundo plano", "en": "Background worker", "pt": "Worker em segundo plano", "fr": "Worker en arrière-plan", "de": "Hintergrund-Worker", "it": "Worker in background", "ja": "バックグラウンドワーカー", "zh": "后台任务处理器", "ko": "백그라운드 워커", "ar": "عامل في الخلفية" },
+    "keywords": {
+      "es": ["worker", "jobs", "tareas asíncronas", "procesar cola", "trabajos pendientes", "daemon", "sidekiq"],
+      "en": ["jobs", "async tasks", "process queue", "task runner", "consumer", "daemon", "sidekiq"]
+    }
+  },
+  "mock-server": {
+    "label": { "es": "Servidor simulado", "en": "Mock server", "pt": "Servidor simulado", "fr": "Serveur fictif", "de": "Mock-Server", "it": "Server fittizio", "ja": "モックサーバー", "zh": "模拟服务器", "ko": "모의 서버", "ar": "خادم وهمي" },
+    "keywords": {
+      "es": ["mock", "stub", "api falsa", "simular respuestas", "datos de prueba", "pruebas", "testing"],
+      "en": ["stub", "fake api", "simulated responses", "test data", "fixtures", "sandbox api", "testing"]
+    }
+  },
+  "api-key": {
+    "label": { "es": "Clave de API", "en": "API key", "pt": "Chave de API", "fr": "Clé d’API", "de": "API-Schlüssel", "it": "Chiave API", "ja": "APIキー", "zh": "API 密钥", "ko": "API 키", "ar": "مفتاح API" },
+    "keywords": {
+      "es": ["token de acceso", "credencial", "autenticación", "secreto", "ajustes de desarrollador", "llave", "bearer"],
+      "en": ["access token", "credential", "authentication", "secret", "developer settings", "token", "bearer"]
+    }
+  },
+  "api-gateway": {
+    "label": { "es": "Puerta de enlace de API", "en": "API gateway", "pt": "Gateway de API", "fr": "Passerelle d’API", "de": "API-Gateway", "it": "Gateway API", "ja": "APIゲートウェイ", "zh": "API 网关", "ko": "API 게이트웨이", "ar": "بوابة API" },
+    "keywords": {
+      "es": ["gateway", "punto de entrada", "enrutar solicitudes", "proxy", "microservicios", "balanceo de carga", "backend"],
+      "en": ["entry point", "route requests", "proxy", "reverse proxy", "microservices", "load balancing", "backend"]
+    }
+  },
+  "rate-limit": {
+    "label": { "es": "Límite de solicitudes", "en": "Rate limit", "pt": "Limite de requisições", "fr": "Limite de requêtes", "de": "Anfragelimit", "it": "Limite di richieste", "ja": "レート制限", "zh": "速率限制", "ko": "속도 제한", "ar": "حد معدل الطلبات" },
+    "keywords": {
+      "es": ["rate limit", "throttling", "429", "cuota", "ventana de tiempo", "frenar abusos", "too many requests"],
+      "en": ["throttling", "too many requests", "429", "quota", "time window", "prevent abuse", "usage cap"]
+    }
+  },
+  "request-response": {
+    "label": { "es": "Solicitud y respuesta", "en": "Request and response", "pt": "Requisição e resposta", "fr": "Requête et réponse", "de": "Anfrage und Antwort", "it": "Richiesta e risposta", "ja": "リクエストとレスポンス", "zh": "请求与响应", "ko": "요청과 응답", "ar": "الطلب والاستجابة" },
+    "keywords": {
+      "es": ["llamada a api", "petición", "http", "cliente http", "endpoint", "rest", "logs"],
+      "en": ["api call", "reply", "http", "http client", "endpoint", "rest", "logs"]
+    }
+  },
+  "websocket": {
+    "label": { "es": "WebSocket", "en": "WebSocket", "pt": "WebSocket", "fr": "WebSocket", "de": "WebSocket", "it": "WebSocket", "ja": "WebSocket", "zh": "WebSocket", "ko": "웹소켓", "ar": "مقبس ويب" },
+    "keywords": {
+      "es": ["tiempo real", "conexión persistente", "bidireccional", "socket", "eventos en vivo", "chat", "streaming"],
+      "en": ["realtime", "persistent connection", "two-way", "socket", "live events", "chat", "streaming"]
+    }
+  },
+  "pub-sub": {
+    "label": { "es": "Publicar y suscribir", "en": "Publish-subscribe", "pt": "Publicação e assinatura", "fr": "Publication-abonnement", "de": "Publish-Subscribe", "it": "Pubblicazione e sottoscrizione", "ja": "パブリッシュ/サブスクライブ", "zh": "发布订阅", "ko": "발행-구독", "ar": "النشر والاشتراك" },
+    "keywords": {
+      "es": ["pub sub", "tema", "topic", "mensajería", "eventos", "broadcast", "bus de eventos", "kafka"],
+      "en": ["pub sub", "topic", "messaging", "events", "broadcast", "event bus", "fan out", "kafka"]
+    }
+  },
+  "terminal-clock": {
+    "label": { "es": "Tarea programada", "en": "Cron job", "pt": "Tarefa agendada", "fr": "Tâche planifiée", "de": "Geplanter Job", "it": "Job pianificato", "ja": "スケジュールされたジョブ", "zh": "定时任务", "ko": "예약 작업", "ar": "مهمة مجدولة" },
+    "keywords": {
+      "es": ["cron", "crontab", "ejecución periódica", "automatizar script", "cada hora", "job nocturno", "horario"],
+      "en": ["crontab", "scheduled task", "recurring", "run script", "every hour", "nightly", "timer"]
+    }
+  },
+  "terminal-plus": {
+    "label": { "es": "Nueva terminal", "en": "New terminal", "pt": "Novo terminal", "fr": "Nouveau terminal", "de": "Neues Terminal", "it": "Nuovo terminale", "ja": "新規ターミナル", "zh": "新建终端", "ko": "새 터미널", "ar": "طرفية جديدة" },
+    "keywords": {
+      "es": ["abrir consola", "nueva sesión", "línea de comandos", "shell", "nueva pestaña", "bash", "cli"],
+      "en": ["open console", "new session", "command line", "shell", "new tab", "bash", "cli"]
+    }
+  },
+  "queue": {
+    "label": { "es": "Cola", "en": "Queue", "pt": "Fila", "fr": "File d’attente", "de": "Warteschlange", "it": "Coda", "ja": "キュー", "zh": "队列", "ko": "대기열", "ar": "قائمة انتظار" },
+    "keywords": {
+      "es": ["mensajes", "trabajos pendientes", "fifo", "procesamiento asíncrono", "en espera", "rabbitmq", "sqs"],
+      "en": ["messages", "pending jobs", "fifo", "async processing", "backlog", "rabbitmq", "sqs"]
+    }
+  },
+  "cache": {
+    "label": { "es": "Caché", "en": "Cache", "pt": "Cache", "fr": "Cache", "de": "Cache", "it": "Cache", "ja": "キャッシュ", "zh": "缓存", "ko": "캐시", "ar": "ذاكرة التخزين المؤقت" },
+    "keywords": {
+      "es": ["memoria temporal", "copia rápida", "almacenamiento temporal", "cdn", "redis", "rendimiento", "acelerar carga"],
+      "en": ["temporary storage", "fast copy", "memoize", "cdn", "redis", "performance", "speed up"]
+    }
+  },
+  "cache-x": {
+    "label": { "es": "Borrar caché", "en": "Clear cache", "pt": "Limpar cache", "fr": "Vider le cache", "de": "Cache leeren", "it": "Svuota cache", "ja": "キャッシュをクリア", "zh": "清除缓存", "ko": "캐시 지우기", "ar": "مسح ذاكرة التخزين المؤقت" },
+    "keywords": {
+      "es": ["purgar", "limpiar", "invalidar", "vaciar", "forzar recarga", "cdn", "datos temporales"],
+      "en": ["purge", "invalidate", "empty", "flush", "force refresh", "cdn", "temporary data"]
+    }
+  }
+}

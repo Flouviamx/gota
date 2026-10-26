@@ -7,7 +7,9 @@ import { pathToFileURL } from 'node:url';
 
 const DIR = new URL('../src/icons/', import.meta.url).pathname;
 const I18N = new URL('../src/i18n/', import.meta.url).pathname;
-const NAME = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+// English kebab-case that starts with a letter: an icon's component name (`printer-3d` →
+// `Printer3dIcon`) has to be a JavaScript identifier
+const NAME = /^[a-z][a-z0-9]*(-[a-z0-9]+)*$/;
 const PATH = /^M[-0-9.,\sMmLlHhVvCcSsQqTtAaZz]+$/;
 /** Effects with their own data; the generic ones (draw, bounce, replace) need nothing. */
 export const MOTION = ['ring', 'wiggle', 'spin', 'beat', 'slide', 'float', 'bounce'];

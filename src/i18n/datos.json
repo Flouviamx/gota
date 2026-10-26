@@ -747,5 +747,614 @@
       "es": ["división", "entre", "operación", "repartir", "cociente", "calculadora", "matemáticas"],
       "en": ["division", "divided by", "operation", "split", "quotient", "calculator", "math"]
     }
+  },
+  "chart-bar-grouped": {
+    "label": { "es": "Gráfica de barras agrupadas", "en": "Grouped bar chart", "pt": "Gráfico de barras agrupadas", "fr": "Graphique à barres groupées", "de": "Gruppiertes Balkendiagramm", "it": "Grafico a barre raggruppate", "ja": "集合棒グラフ", "zh": "分组柱状图", "ko": "그룹 막대 차트", "ar": "مخطط شريطي مجمّع" },
+    "keywords": {
+      "es": ["barras lado a lado", "comparar series", "columnas agrupadas", "año contra año", "comparación por categoría", "varias series", "barras dobles"],
+      "en": ["clustered bar", "side by side bars", "compare series", "clustered column", "year over year", "multi-series", "category comparison"]
+    }
+  },
+  "chart-bar-horizontal-stacked": {
+    "label": { "es": "Gráfica de barras horizontales apiladas", "en": "Stacked horizontal bar chart", "pt": "Gráfico de barras horizontais empilhadas", "fr": "Graphique à barres horizontales empilées", "de": "Gestapeltes horizontales Balkendiagramm", "it": "Grafico a barre orizzontali impilate", "ja": "積み上げ横棒グラフ", "zh": "堆积条形图", "ko": "누적 가로 막대 차트", "ar": "مخطط شريطي أفقي مكدس" },
+    "keywords": {
+      "es": ["escala Likert", "resultados de encuesta", "composición por fila", "porcentaje por categoría", "etiquetas largas", "partes de un total", "nivel de satisfacción"],
+      "en": ["Likert scale", "survey results", "composition per row", "percentage breakdown", "long labels", "part to whole", "satisfaction"]
+    }
+  },
+  "chart-bar-diverging": {
+    "label": { "es": "Gráfica de barras divergentes", "en": "Diverging bar chart", "pt": "Gráfico de barras divergentes", "fr": "Graphique à barres divergentes", "de": "Divergierendes Balkendiagramm", "it": "Grafico a barre divergenti", "ja": "ダイバージング棒グラフ", "zh": "发散条形图", "ko": "양방향 막대 차트", "ar": "مخطط شريطي متباعد" },
+    "keywords": {
+      "es": ["positivo y negativo", "pirámide de población", "a favor y en contra", "eje central", "ganancias y pérdidas", "de acuerdo y en desacuerdo", "superávit y déficit"],
+      "en": ["positive and negative", "population pyramid", "agree disagree", "center axis", "gains and losses", "for and against", "surplus and deficit"]
+    }
+  },
+  "chart-lollipop": {
+    "label": { "es": "Gráfica de paletas", "en": "Lollipop chart", "pt": "Gráfico de pirulito", "fr": "Graphique en sucettes", "de": "Lollipop-Diagramm", "it": "Grafico a lecca-lecca", "ja": "ロリポップチャート", "zh": "棒棒糖图", "ko": "롤리팝 차트", "ar": "مخطط المصاصة" },
+    "keywords": {
+      "es": ["ranking", "clasificación", "tallo y punto", "alternativa a las barras", "top 10", "valores ordenados", "comparar categorías"],
+      "en": ["ranking", "leaderboard", "stem and dot", "bar alternative", "top 10", "sorted values", "dot plot"]
+    }
+  },
+  "chart-bullet": {
+    "label": { "es": "Gráfica de viñetas", "en": "Bullet chart", "pt": "Gráfico de marcadores", "fr": "Graphique à puces", "de": "Bullet-Diagramm", "it": "Grafico bullet", "ja": "ブレットグラフ", "zh": "子弹图", "ko": "불릿 차트", "ar": "مخطط الرصاصة" },
+    "keywords": {
+      "es": ["KPI contra meta", "real contra objetivo", "avance de la meta", "indicador compacto", "rangos de desempeño", "cumplimiento", "presupuesto contra real"],
+      "en": ["KPI vs goal", "actual vs target", "goal progress", "compact gauge", "performance ranges", "attainment", "budget vs actual"]
+    }
+  },
+  "chart-error-bars": {
+    "label": { "es": "Barras de error", "en": "Error bars", "pt": "Barras de erro", "fr": "Barres d’erreur", "de": "Fehlerbalken", "it": "Barre di errore", "ja": "エラーバー", "zh": "误差线", "ko": "오차 막대", "ar": "أشرطة الخطأ" },
+    "keywords": {
+      "es": ["incertidumbre", "error estándar", "desviación estándar", "intervalo", "mínimo y máximo", "resultados del experimento", "margen de error", "estadística"],
+      "en": ["uncertainty", "standard error", "standard deviation", "interval", "min and max", "experiment results", "margin of error", "statistics"]
+    }
+  },
+  "chart-area-stacked": {
+    "label": { "es": "Gráfica de áreas apiladas", "en": "Stacked area chart", "pt": "Gráfico de áreas empilhadas", "fr": "Graphique en aires empilées", "de": "Gestapeltes Flächendiagramm", "it": "Grafico ad aree impilate", "ja": "積み上げ面グラフ", "zh": "堆积面积图", "ko": "누적 영역 차트", "ar": "مخطط مساحي مكدس" },
+    "keywords": {
+      "es": ["composición en el tiempo", "total acumulado", "participación de cada parte", "varias series", "tráfico por canal", "ingresos por producto", "evolución"],
+      "en": ["composition over time", "running total", "share of each part", "multiple series", "traffic by channel", "revenue by product", "evolution"]
+    }
+  },
+  "chart-streamgraph": {
+    "label": { "es": "Gráfica de flujo", "en": "Streamgraph", "pt": "Gráfico de fluxo", "fr": "Graphique en flux", "de": "Streamgraph", "it": "Grafico a flusso", "ja": "ストリームグラフ", "zh": "河流图", "ko": "스트림 그래프", "ar": "مخطط تيّاري" },
+    "keywords": {
+      "es": ["streamgraph", "temas en el tiempo", "popularidad", "auge y caída", "áreas apiladas", "evolución de categorías", "línea base central"],
+      "en": ["theme river", "topics over time", "popularity", "rise and fall", "stacked areas", "category trends", "central baseline"]
+    }
+  },
+  "chart-spline": {
+    "label": { "es": "Gráfica de líneas suavizadas", "en": "Smooth line chart", "pt": "Gráfico de linhas suavizadas", "fr": "Graphique en courbes lissées", "de": "Geglättetes Liniendiagramm", "it": "Grafico a linee smussate", "ja": "平滑線グラフ", "zh": "平滑折线图", "ko": "곡선 차트", "ar": "مخطط خطي منحني" },
+    "keywords": {
+      "es": ["spline", "curva", "línea curva", "línea redondeada", "interpolación", "serie continua", "tipo de gráfica"],
+      "en": ["spline", "curve", "curved line", "rounded line", "interpolation", "continuous series", "chart type"]
+    }
+  },
+  "chart-slope": {
+    "label": { "es": "Gráfica de pendiente", "en": "Slope chart", "pt": "Gráfico de inclinação", "fr": "Graphique de pente", "de": "Steigungsdiagramm", "it": "Grafico a pendenza", "ja": "スロープチャート", "zh": "斜率图", "ko": "슬로프 차트", "ar": "مخطط الميل" },
+    "keywords": {
+      "es": ["antes y después", "cambio entre dos fechas", "comparar dos momentos", "dos ejes", "subió o bajó", "variación", "cambio de ranking"],
+      "en": ["before and after", "change between two dates", "two points in time", "two axes", "went up or down", "variation", "ranking change"]
+    }
+  },
+  "chart-bump": {
+    "label": { "es": "Gráfica de posiciones", "en": "Bump chart", "pt": "Gráfico de classificação", "fr": "Graphique de classement", "de": "Ranglistendiagramm", "it": "Grafico delle posizioni", "ja": "順位変動チャート", "zh": "排名变化图", "ko": "순위 변동 차트", "ar": "مخطط تغيّر الترتيب" },
+    "keywords": {
+      "es": ["ranking", "clasificación", "tabla general", "liga", "encuestas", "lugar en el mercado", "quién sube y quién baja"],
+      "en": ["ranking", "standings", "league table", "polls", "market position", "rank over time", "leaderboard"]
+    }
+  },
+  "chart-regression": {
+    "label": { "es": "Línea de tendencia", "en": "Trend line", "pt": "Linha de tendência", "fr": "Courbe de tendance", "de": "Trendlinie", "it": "Linea di tendenza", "ja": "近似曲線", "zh": "趋势线", "ko": "추세선", "ar": "خط الاتجاه" },
+    "keywords": {
+      "es": ["regresión", "correlación", "ajuste lineal", "dispersión", "mínimos cuadrados", "predicción", "relación entre variables"],
+      "en": ["regression", "correlation", "line of best fit", "scatter", "least squares", "linear fit", "relationship between variables"]
+    }
+  },
+  "chart-moving-average": {
+    "label": { "es": "Promedio móvil", "en": "Moving average", "pt": "Média móvel", "fr": "Moyenne mobile", "de": "Gleitender Durchschnitt", "it": "Media mobile", "ja": "移動平均", "zh": "移动平均线", "ko": "이동 평균", "ar": "المتوسط المتحرك" },
+    "keywords": {
+      "es": ["suavizar", "tendencia suavizada", "media móvil", "promedio de 7 días", "quitar ruido", "análisis técnico", "bolsa"],
+      "en": ["smoothing", "rolling average", "smoothed trend", "7-day average", "reduce noise", "technical analysis", "stock chart"]
+    }
+  },
+  "chart-compare": {
+    "label": { "es": "Comparar periodos", "en": "Compare periods", "pt": "Comparar períodos", "fr": "Comparer les périodes", "de": "Zeiträume vergleichen", "it": "Confronta periodi", "ja": "期間を比較", "zh": "对比时段", "ko": "기간 비교", "ar": "مقارنة الفترات" },
+    "keywords": {
+      "es": ["periodo anterior", "mes contra mes", "año contra año", "semana pasada", "variación", "comparativo", "este mes contra el anterior"],
+      "en": ["previous period", "month over month", "year over year", "last week", "change", "versus", "this month vs last"]
+    }
+  },
+  "chart-anomaly": {
+    "label": { "es": "Anomalía detectada", "en": "Anomaly detected", "pt": "Anomalia detectada", "fr": "Anomalie détectée", "de": "Anomalie erkannt", "it": "Anomalia rilevata", "ja": "異常を検知", "zh": "检测到异常", "ko": "이상 감지", "ar": "تم رصد حالة شاذة" },
+    "keywords": {
+      "es": ["pico inesperado", "valor atípico", "outlier", "alerta de monitoreo", "comportamiento inusual", "desviación", "salto en la métrica"],
+      "en": ["unexpected spike", "outlier", "unusual behavior", "monitoring alert", "deviation", "metric spike", "irregularity"]
+    }
+  },
+  "chart-threshold": {
+    "label": { "es": "Línea de umbral", "en": "Threshold line", "pt": "Linha de limite", "fr": "Ligne de seuil", "de": "Schwellenwertlinie", "it": "Linea di soglia", "ja": "しきい値ライン", "zh": "阈值线", "ko": "임계값 선", "ar": "خط العتبة" },
+    "keywords": {
+      "es": ["meta", "límite", "línea objetivo", "SLO", "alerta", "tope", "nivel de servicio", "valor de referencia"],
+      "en": ["goal line", "limit", "target line", "SLO", "alert", "cap", "baseline", "service level"]
+    }
+  },
+  "chart-confidence": {
+    "label": { "es": "Intervalo de confianza", "en": "Confidence interval", "pt": "Intervalo de confiança", "fr": "Intervalle de confiance", "de": "Konfidenzintervall", "it": "Intervallo di confidenza", "ja": "信頼区間", "zh": "置信区间", "ko": "신뢰 구간", "ar": "فترة الثقة" },
+    "keywords": {
+      "es": ["banda de confianza", "incertidumbre", "pronóstico", "rango estimado", "gráfica de abanico", "margen de error", "estimación estadística"],
+      "en": ["confidence band", "uncertainty", "forecast", "estimated range", "fan chart", "margin of error", "prediction interval"]
+    }
+  },
+  "chart-realtime": {
+    "label": { "es": "Datos en tiempo real", "en": "Real-time data", "pt": "Dados em tempo real", "fr": "Données en temps réel", "de": "Echtzeitdaten", "it": "Dati in tempo reale", "ja": "リアルタイムデータ", "zh": "实时数据", "ko": "실시간 데이터", "ar": "بيانات في الوقت الفعلي" },
+    "keywords": {
+      "es": ["en vivo", "streaming", "métricas en vivo", "monitoreo", "actualización automática", "tablero en vivo", "transmisión"],
+      "en": ["live", "streaming", "live metrics", "monitoring", "auto refresh", "live dashboard", "ticker"]
+    }
+  },
+  "chart-retention": {
+    "label": { "es": "Curva de retención", "en": "Retention curve", "pt": "Curva de retenção", "fr": "Courbe de rétention", "de": "Retentionskurve", "it": "Curva di retention", "ja": "リテンションカーブ", "zh": "留存曲线", "ko": "리텐션 곡선", "ar": "منحنى الاحتفاظ" },
+    "keywords": {
+      "es": ["usuarios que regresan", "abandono", "churn", "analítica de producto", "fidelización", "permanencia", "cancelaciones"],
+      "en": ["returning users", "churn", "product analytics", "stickiness", "loyalty", "drop-off", "engagement"]
+    }
+  },
+  "chart-distribution-overlap": {
+    "label": { "es": "Comparación de distribuciones", "en": "Distribution comparison", "pt": "Comparação de distribuições", "fr": "Comparaison de distributions", "de": "Verteilungsvergleich", "it": "Confronto tra distribuzioni", "ja": "分布の比較", "zh": "分布对比", "ko": "분포 비교", "ar": "مقارنة التوزيعات" },
+    "keywords": {
+      "es": ["control contra variante", "resultado del experimento", "antes y después", "curvas superpuestas", "densidad", "prueba A/B", "significancia"],
+      "en": ["control vs variant", "experiment result", "before and after", "overlapping curves", "density plot", "A/B test", "significance"]
+    }
+  },
+  "chart-dumbbell": {
+    "label": { "es": "Gráfica de mancuernas", "en": "Dumbbell chart", "pt": "Gráfico de halteres", "fr": "Graphique en haltères", "de": "Hantel-Diagramm", "it": "Grafico a manubrio", "ja": "ダンベルチャート", "zh": "哑铃图", "ko": "덤벨 차트", "ar": "مخطط الدمبل" },
+    "keywords": {
+      "es": ["antes y después", "brecha", "diferencia entre grupos", "dos valores", "rango", "brecha de género", "comparar dos fechas"],
+      "en": ["before and after", "gap", "difference between groups", "two values", "range", "gender gap", "connected dot plot"]
+    }
+  },
+  "chart-box-plot": {
+    "label": { "es": "Diagrama de caja", "en": "Box plot", "pt": "Diagrama de caixa", "fr": "Boîte à moustaches", "de": "Boxplot", "it": "Diagramma a scatola", "ja": "箱ひげ図", "zh": "箱线图", "ko": "상자 그림", "ar": "مخطط الصندوق" },
+    "keywords": {
+      "es": ["caja y bigotes", "mediana", "cuartiles", "rango intercuartil", "valores atípicos", "estadística", "comparar grupos"],
+      "en": ["box and whisker", "median", "quartiles", "interquartile range", "outliers", "statistics", "compare groups"]
+    }
+  },
+  "chart-violin": {
+    "label": { "es": "Gráfica de violín", "en": "Violin plot", "pt": "Gráfico de violino", "fr": "Diagramme en violon", "de": "Violinplot", "it": "Grafico a violino", "ja": "バイオリン図", "zh": "小提琴图", "ko": "바이올린 플롯", "ar": "مخطط الكمان" },
+    "keywords": {
+      "es": ["forma de la distribución", "densidad", "ciencia de datos", "comparar distribuciones", "estadística", "caja y bigotes", "simetría"],
+      "en": ["distribution shape", "density", "data science", "compare distributions", "statistics", "kernel density", "symmetry"]
+    }
+  },
+  "chart-cluster": {
+    "label": { "es": "Clústeres de datos", "en": "Data clusters", "pt": "Clusters de dados", "fr": "Clusters de données", "de": "Datencluster", "it": "Cluster di dati", "ja": "データクラスター", "zh": "数据聚类", "ko": "데이터 클러스터", "ar": "عناقيد البيانات" },
+    "keywords": {
+      "es": ["agrupamiento", "k-means", "segmentación", "similitud", "grupos de clientes", "aprendizaje no supervisado", "puntos agrupados"],
+      "en": ["clustering", "k-means", "segmentation", "similarity", "customer segments", "unsupervised learning", "grouped points"]
+    }
+  },
+  "chart-sunburst": {
+    "label": { "es": "Gráfica de proyección solar", "en": "Sunburst chart", "pt": "Gráfico de explosão solar", "fr": "Graphique en rayons de soleil", "de": "Sunburst-Diagramm", "it": "Grafico sunburst", "ja": "サンバースト図", "zh": "旭日图", "ko": "선버스트 차트", "ar": "مخطط شمسي" },
+    "keywords": {
+      "es": ["jerarquía", "anillos", "niveles", "parte del todo", "explorar a detalle", "categorías y subcategorías", "dona de varios niveles"],
+      "en": ["hierarchy", "rings", "levels", "part to whole", "drill down", "multi-level pie", "nested categories"]
+    }
+  },
+  "chart-polar": {
+    "label": { "es": "Gráfica de área polar", "en": "Polar area chart", "pt": "Gráfico de área polar", "fr": "Graphique en aires polaires", "de": "Polarflächendiagramm", "it": "Grafico ad area polare", "ja": "鶏頭図", "zh": "南丁格尔玫瑰图", "ko": "극좌표 영역 차트", "ar": "مخطط مساحي قطبي" },
+    "keywords": {
+      "es": ["rosa de Nightingale", "datos cíclicos", "meses del año", "horas del día", "direcciones", "rosa de los vientos", "sectores"],
+      "en": ["Nightingale rose", "rose chart", "cyclical data", "months", "hours of the day", "wind rose", "coxcomb"]
+    }
+  },
+  "chart-sankey": {
+    "label": { "es": "Diagrama de Sankey", "en": "Sankey diagram", "pt": "Diagrama de Sankey", "fr": "Diagramme de Sankey", "de": "Sankey-Diagramm", "it": "Diagramma di Sankey", "ja": "サンキーダイアグラム", "zh": "桑基图", "ko": "생키 다이어그램", "ar": "مخطط سانكي" },
+    "keywords": {
+      "es": ["flujo de usuarios", "flujos entre etapas", "presupuesto", "energía", "origen y destino", "recorrido", "reparto del volumen"],
+      "en": ["user flow", "flows between stages", "budget", "energy flow", "source to target", "journey", "volume allocation"]
+    }
+  },
+  "chart-heatmap": {
+    "label": { "es": "Gráfica de mapa de calor", "en": "Heatmap chart", "pt": "Gráfico de mapa de calor", "fr": "Graphique de carte thermique", "de": "Heatmap-Diagramm", "it": "Grafico a mappa di calore", "ja": "ヒートマップチャート", "zh": "热力图表", "ko": "히트맵 차트", "ar": "مخطط الخريطة الحرارية" },
+    "keywords": {
+      "es": ["matriz de correlación", "actividad por hora", "celdas de color", "tabla resaltada", "intensidad", "matriz", "días y horas"],
+      "en": ["correlation matrix", "activity by hour", "colored cells", "highlight table", "intensity", "matrix", "punch card"]
+    }
+  },
+  "chart-cohort": {
+    "label": { "es": "Tabla de cohortes", "en": "Cohort table", "pt": "Tabela de coortes", "fr": "Tableau de cohortes", "de": "Kohortentabelle", "it": "Tabella di coorte", "ja": "コホート表", "zh": "同期群表", "ko": "코호트 표", "ar": "جدول الأفواج" },
+    "keywords": {
+      "es": ["retención por mes", "fecha de registro", "suscripciones", "churn", "analítica de producto", "usuarios nuevos", "triángulo de retención"],
+      "en": ["retention by month", "signup date", "subscriptions", "churn", "product analytics", "new users", "retention triangle"]
+    }
+  },
+  "chart-dendrogram": {
+    "label": { "es": "Dendrograma", "en": "Dendrogram", "pt": "Dendrograma", "fr": "Dendrogramme", "de": "Dendrogramm", "it": "Dendrogramma", "ja": "デンドログラム", "zh": "树状图", "ko": "덴드로그램", "ar": "مخطط التجميع الهرمي" },
+    "keywords": {
+      "es": ["agrupamiento jerárquico", "árbol de similitud", "taxonomía", "clasificación", "filogenia", "clústeres", "ramas"],
+      "en": ["hierarchical clustering", "similarity tree", "taxonomy", "classification", "phylogeny", "clusters", "tree diagram"]
+    }
+  },
+  "chart-small-multiples": {
+    "label": { "es": "Gráficas en cuadrícula", "en": "Small multiples", "pt": "Pequenos múltiplos", "fr": "Petits multiples", "de": "Diagrammraster", "it": "Piccoli multipli", "ja": "スモールマルチプル", "zh": "分面图", "ko": "스몰 멀티플", "ar": "مخططات صغيرة متعددة" },
+    "keywords": {
+      "es": ["múltiplos pequeños", "trellis", "paneles", "una gráfica por categoría", "comparar grupos", "facetas", "matriz de gráficas"],
+      "en": ["trellis", "panel chart", "faceted chart", "one chart per category", "compare groups", "grid of charts", "lattice"]
+    }
+  },
+  "chart-map": {
+    "label": { "es": "Gráfica de mapa", "en": "Map chart", "pt": "Gráfico de mapa", "fr": "Graphique en carte", "de": "Kartendiagramm", "it": "Grafico a mappa", "ja": "マップグラフ", "zh": "地图图表", "ko": "지도 차트", "ar": "مخطط خريطة" },
+    "keywords": {
+      "es": ["mapa coroplético", "por región", "por estado", "por país", "analítica geográfica", "ventas por zona", "distribución territorial"],
+      "en": ["choropleth", "by region", "by state", "by country", "geographic analytics", "sales by territory", "geo chart"]
+    }
+  },
+  "chart-axes": {
+    "label": { "es": "Ejes de la gráfica", "en": "Chart axes", "pt": "Eixos do gráfico", "fr": "Axes du graphique", "de": "Diagrammachsen", "it": "Assi del grafico", "ja": "グラフの軸", "zh": "图表坐标轴", "ko": "차트 축", "ar": "محاور المخطط" },
+    "keywords": {
+      "es": ["eje X", "eje Y", "gráfica vacía", "sin datos", "configurar ejes", "plano cartesiano", "lienzo en blanco"],
+      "en": ["x axis", "y axis", "empty chart", "no data yet", "axis settings", "cartesian plane", "blank chart"]
+    }
+  },
+  "data-point": {
+    "label": { "es": "Punto de datos", "en": "Data point", "pt": "Ponto de dados", "fr": "Point de données", "de": "Datenpunkt", "it": "Punto dati", "ja": "データポイント", "zh": "数据点", "ko": "데이터 포인트", "ar": "نقطة بيانات" },
+    "keywords": {
+      "es": ["valor", "coordenadas", "inspeccionar", "marcador", "tooltip", "lectura al pasar el cursor", "seleccionar valor"],
+      "en": ["value", "coordinates", "inspect", "marker", "tooltip", "hover readout", "plot point"]
+    }
+  },
+  "chart-bar-plus": {
+    "label": { "es": "Agregar gráfica", "en": "Add chart", "pt": "Adicionar gráfico", "fr": "Ajouter un graphique", "de": "Diagramm hinzufügen", "it": "Aggiungi grafico", "ja": "グラフを追加", "zh": "添加图表", "ko": "차트 추가", "ar": "إضافة مخطط" },
+    "keywords": {
+      "es": ["nueva visualización", "insertar", "nuevo widget", "agregar al tablero", "nuevo panel", "crear reporte", "visualizar datos"],
+      "en": ["new visualization", "insert", "new widget", "add to dashboard", "new panel", "create report", "visualize data"]
+    }
+  },
+  "chart-bar-edit": {
+    "label": { "es": "Editar gráfica", "en": "Edit chart", "pt": "Editar gráfico", "fr": "Modifier le graphique", "de": "Diagramm bearbeiten", "it": "Modifica grafico", "ja": "グラフを編集", "zh": "编辑图表", "ko": "차트 편집", "ar": "تعديل المخطط" },
+    "keywords": {
+      "es": ["configurar visualización", "cambiar tipo", "series", "ejes", "personalizar", "ajustes del widget", "formato"],
+      "en": ["configure visualization", "change type", "series", "axes", "customize", "widget settings", "format"]
+    }
+  },
+  "drill-down": {
+    "label": { "es": "Desglosar", "en": "Drill down", "pt": "Detalhar", "fr": "Explorer vers le bas", "de": "Drilldown", "it": "Esplora in dettaglio", "ja": "ドリルダウン", "zh": "向下钻取", "ko": "드릴다운", "ar": "التعمق في التفاصيل" },
+    "keywords": {
+      "es": ["drill down", "ver detalle", "abrir total", "profundizar", "del resumen al detalle", "subnivel", "explorar datos"],
+      "en": ["breakdown", "see details", "expand total", "go deeper", "summary to detail", "sublevel", "explore data"]
+    }
+  },
+  "drill-up": {
+    "label": { "es": "Volver al resumen", "en": "Drill up", "pt": "Voltar ao resumo", "fr": "Explorer vers le haut", "de": "Drillup", "it": "Torna al livello superiore", "ja": "ドリルアップ", "zh": "向上钻取", "ko": "드릴업", "ar": "العودة إلى الملخص" },
+    "keywords": {
+      "es": ["drill up", "roll up", "nivel superior", "agregar datos", "ver totales", "subir de nivel", "consolidar"],
+      "en": ["roll up", "parent level", "aggregate", "see totals", "level up", "back to summary", "consolidate"]
+    }
+  },
+  "trend-up-down": {
+    "label": { "es": "Tendencia variable", "en": "Mixed trend", "pt": "Tendência variável", "fr": "Tendance fluctuante", "de": "Schwankender Trend", "it": "Andamento altalenante", "ja": "変動傾向", "zh": "波动趋势", "ko": "변동 추세", "ar": "اتجاه متذبذب" },
+    "keywords": {
+      "es": ["altibajos", "volatilidad", "fluctuación", "sube y baja", "resultados mixtos", "inestable", "variación"],
+      "en": ["ups and downs", "volatility", "fluctuation", "up and down", "mixed results", "unstable", "swings"]
+    }
+  },
+  "gauge-zones": {
+    "label": { "es": "Medidor con umbrales", "en": "Threshold gauge", "pt": "Medidor com limites", "fr": "Jauge à seuils", "de": "Messanzeige mit Schwellenwerten", "it": "Indicatore a soglie", "ja": "しきい値ゲージ", "zh": "阈值仪表", "ko": "임계값 게이지", "ar": "مقياس بنطاقات" },
+    "keywords": {
+      "es": ["semáforo", "estado del KPI", "bueno, alerta y crítico", "puntaje de salud", "rangos", "nivel de riesgo", "velocímetro"],
+      "en": ["traffic light", "KPI status", "good warning critical", "health score", "ranges", "risk level", "speedometer"]
+    }
+  },
+  "gauge-linear": {
+    "label": { "es": "Medidor lineal", "en": "Linear gauge", "pt": "Medidor linear", "fr": "Jauge linéaire", "de": "Lineare Messanzeige", "it": "Indicatore lineare", "ja": "リニアゲージ", "zh": "线性仪表", "ko": "선형 게이지", "ar": "مقياس خطي" },
+    "keywords": {
+      "es": ["nivel", "escala horizontal", "puntaje", "termómetro", "barra de nivel", "lectura", "regla"],
+      "en": ["level", "horizontal scale", "score", "thermometer", "level bar", "reading", "meter"]
+    }
+  },
+  "gauge-progress": {
+    "label": { "es": "Medidor de porcentaje", "en": "Percent gauge", "pt": "Medidor de porcentagem", "fr": "Jauge de pourcentage", "de": "Prozentanzeige", "it": "Indicatore percentuale", "ja": "パーセントゲージ", "zh": "百分比仪表", "ko": "퍼센트 게이지", "ar": "مقياس النسبة المئوية" },
+    "keywords": {
+      "es": ["avance", "completado", "utilización", "puntaje", "medio anillo", "progreso", "capacidad usada"],
+      "en": ["completion", "progress", "utilization", "score", "half ring", "capacity used", "semicircle"]
+    }
+  },
+  "metric-card": {
+    "label": { "es": "Tarjeta de KPI", "en": "KPI card", "pt": "Cartão de KPI", "fr": "Carte KPI", "de": "KPI-Kachel", "it": "Scheda KPI", "ja": "KPIカード", "zh": "指标卡", "ko": "KPI 카드", "ar": "بطاقة مؤشر الأداء" },
+    "keywords": {
+      "es": ["métrica", "indicador clave", "número clave", "resumen", "cifra destacada", "estadística", "widget del tablero"],
+      "en": ["metric", "key number", "stat tile", "summary", "scorecard", "big number", "dashboard widget"]
+    }
+  },
+  "dashboard-plus": {
+    "label": { "es": "Nuevo tablero", "en": "New dashboard", "pt": "Novo painel", "fr": "Nouveau tableau de bord", "de": "Neues Dashboard", "it": "Nuova dashboard", "ja": "新規ダッシュボード", "zh": "新建仪表板", "ko": "새 대시보드", "ar": "لوحة معلومات جديدة" },
+    "keywords": {
+      "es": ["crear dashboard", "panel de control", "nuevo reporte", "vista de métricas", "agregar", "espacio de análisis", "plantilla"],
+      "en": ["create", "add board", "control panel", "new report", "metrics view", "analytics workspace", "template"]
+    }
+  },
+  "dashboard-edit": {
+    "label": { "es": "Editar tablero", "en": "Edit dashboard", "pt": "Editar painel", "fr": "Modifier le tableau de bord", "de": "Dashboard bearbeiten", "it": "Modifica dashboard", "ja": "ダッシュボードを編集", "zh": "编辑仪表板", "ko": "대시보드 편집", "ar": "تعديل لوحة المعلومات" },
+    "keywords": {
+      "es": ["personalizar", "acomodar paneles", "diseño", "mover widgets", "configurar", "organizar", "modo edición"],
+      "en": ["customize", "arrange panels", "layout", "move widgets", "configure", "rearrange", "edit mode"]
+    }
+  },
+  "database-cluster": {
+    "label": { "es": "Clúster de bases de datos", "en": "Database cluster", "pt": "Cluster de bancos de dados", "fr": "Cluster de bases de données", "de": "Datenbankcluster", "it": "Cluster di database", "ja": "データベースクラスター", "zh": "数据库集群", "ko": "데이터베이스 클러스터", "ar": "عنقود قواعد البيانات" },
+    "keywords": {
+      "es": ["varias bases de datos", "réplicas", "fuentes conectadas", "alta disponibilidad", "nodos", "almacenamiento distribuido", "grupo de servidores"],
+      "en": ["multiple databases", "replicas", "connected sources", "high availability", "nodes", "distributed storage", "data stores"]
+    }
+  },
+  "database-shard": {
+    "label": { "es": "Particionamiento de datos", "en": "Data sharding", "pt": "Fragmentação de dados", "fr": "Partitionnement des données", "de": "Datenpartitionierung", "it": "Partizionamento dei dati", "ja": "シャーディング", "zh": "数据分片", "ko": "데이터 샤딩", "ar": "تجزئة البيانات" },
+    "keywords": {
+      "es": ["sharding", "fragmentos", "shards", "dividir datos", "escalamiento horizontal", "segmentos", "distribuir carga"],
+      "en": ["partitioning", "shards", "split data", "horizontal scaling", "segments", "distribute load", "fragments"]
+    }
+  },
+  "database-cloud": {
+    "label": { "es": "Base de datos en la nube", "en": "Cloud database", "pt": "Banco de dados na nuvem", "fr": "Base de données cloud", "de": "Cloud-Datenbank", "it": "Database cloud", "ja": "クラウドデータベース", "zh": "云数据库", "ko": "클라우드 데이터베이스", "ar": "قاعدة بيانات سحابية" },
+    "keywords": {
+      "es": ["base administrada", "hosting de datos", "servicio gestionado", "DBaaS", "conexión remota", "serverless", "almacenamiento en línea"],
+      "en": ["managed", "hosted", "DBaaS", "remote data source", "remote connection", "serverless", "online storage"]
+    }
+  },
+  "database-transfer": {
+    "label": { "es": "Migración de datos", "en": "Data migration", "pt": "Migração de dados", "fr": "Migration de données", "de": "Datenmigration", "it": "Migrazione dei dati", "ja": "データ移行", "zh": "数据迁移", "ko": "데이터 마이그레이션", "ar": "ترحيل البيانات" },
+    "keywords": {
+      "es": ["transferir", "mover datos", "copiar base", "de una base a otra", "replicar", "cambio de servidor", "traspaso"],
+      "en": ["transfer", "move data", "copy database", "between databases", "replicate", "server change", "port data"]
+    }
+  },
+  "database-backup": {
+    "label": { "es": "Respaldo de base de datos", "en": "Database backup", "pt": "Backup do banco de dados", "fr": "Sauvegarde de la base de données", "de": "Datenbanksicherung", "it": "Backup del database", "ja": "データベースのバックアップ", "zh": "数据库备份", "ko": "데이터베이스 백업", "ar": "نسخة احتياطية لقاعدة البيانات" },
+    "keywords": {
+      "es": ["copia de seguridad", "punto de restauración", "restaurar", "recuperación", "snapshot", "instantánea", "proteger datos"],
+      "en": ["restore point", "restore", "recovery", "snapshot", "point in time recovery", "safety copy", "disaster recovery"]
+    }
+  },
+  "database-x": {
+    "label": { "es": "Base de datos no disponible", "en": "Database unavailable", "pt": "Banco de dados indisponível", "fr": "Base de données indisponible", "de": "Datenbank nicht verfügbar", "it": "Database non disponibile", "ja": "データベースを利用できません", "zh": "数据库不可用", "ko": "데이터베이스를 사용할 수 없음", "ar": "قاعدة البيانات غير متاحة" },
+    "keywords": {
+      "es": ["conexión fallida", "sin conexión", "fuente eliminada", "error de conexión", "caída", "inaccesible", "desconectar"],
+      "en": ["connection failed", "offline", "source removed", "connection error", "outage", "unreachable", "disconnect"]
+    }
+  },
+  "database-alert": {
+    "label": { "es": "Problema de datos", "en": "Data issue", "pt": "Problema nos dados", "fr": "Problème de données", "de": "Datenproblem", "it": "Problema nei dati", "ja": "データの問題", "zh": "数据问题", "ko": "데이터 문제", "ar": "مشكلة في البيانات" },
+    "keywords": {
+      "es": ["calidad de datos", "error de sincronización", "advertencia", "validación fallida", "datos inconsistentes", "aviso de base de datos", "revisar"],
+      "en": ["data quality", "sync error", "warning", "failed check", "inconsistent data", "database warning", "needs attention"]
+    }
+  },
+  "database-lock": {
+    "label": { "es": "Datos restringidos", "en": "Restricted data", "pt": "Dados restritos", "fr": "Données restreintes", "de": "Eingeschränkte Daten", "it": "Dati riservati", "ja": "アクセス制限されたデータ", "zh": "受限数据", "ko": "제한된 데이터", "ar": "بيانات مقيدة" },
+    "keywords": {
+      "es": ["cifrado en reposo", "acceso limitado", "permisos", "seguridad", "datos sensibles", "base protegida", "privacidad"],
+      "en": ["encrypted at rest", "limited access", "permissions", "security", "sensitive data", "protected database", "privacy"]
+    }
+  },
+  "database-clock": {
+    "label": { "es": "Actualización programada", "en": "Scheduled refresh", "pt": "Atualização agendada", "fr": "Actualisation planifiée", "de": "Geplante Aktualisierung", "it": "Aggiornamento pianificato", "ja": "スケジュール更新", "zh": "定时刷新", "ko": "예약된 새로 고침", "ar": "تحديث مجدول" },
+    "keywords": {
+      "es": ["última actualización", "frescura de datos", "próxima carga", "programar", "datos recientes", "cada hora", "vigencia"],
+      "en": ["last refreshed", "data freshness", "next update", "timing", "recent data", "hourly", "up to date"]
+    }
+  },
+  "database-gear": {
+    "label": { "es": "Configuración de base de datos", "en": "Database settings", "pt": "Configurações do banco de dados", "fr": "Paramètres de la base de données", "de": "Datenbankeinstellungen", "it": "Impostazioni del database", "ja": "データベース設定", "zh": "数据库设置", "ko": "데이터베이스 설정", "ar": "إعدادات قاعدة البيانات" },
+    "keywords": {
+      "es": ["conexión", "credenciales", "cadena de conexión", "parámetros", "ajustes de la fuente", "administrar", "host y puerto"],
+      "en": ["connection", "credentials", "connection string", "parameters", "data source config", "manage", "host and port"]
+    }
+  },
+  "database-edit": {
+    "label": { "es": "Editar datos", "en": "Edit data", "pt": "Editar dados", "fr": "Modifier les données", "de": "Daten bearbeiten", "it": "Modifica dati", "ja": "データを編集", "zh": "编辑数据", "ko": "데이터 편집", "ar": "تعديل البيانات" },
+    "keywords": {
+      "es": ["modificar registros", "actualizar filas", "cambiar valores", "corregir", "contenido de la tabla", "escribir en la base", "UPDATE"],
+      "en": ["modify records", "update rows", "change values", "fix", "table contents", "write to database", "UPDATE"]
+    }
+  },
+  "data-warehouse": {
+    "label": { "es": "Almacén de datos", "en": "Data warehouse", "pt": "Armazém de dados", "fr": "Entrepôt de données", "de": "Data Warehouse", "it": "Data warehouse", "ja": "データウェアハウス", "zh": "数据仓库", "ko": "데이터 웨어하우스", "ar": "مستودع البيانات" },
+    "keywords": {
+      "es": ["data warehouse", "datos modelados", "repositorio central", "inteligencia de negocios", "BI", "datos estructurados", "consultas analíticas"],
+      "en": ["DWH", "modeled data", "central repository", "business intelligence", "BI", "structured data", "analytical queries"]
+    }
+  },
+  "data-lake": {
+    "label": { "es": "Lago de datos", "en": "Data lake", "pt": "Lago de dados", "fr": "Lac de données", "de": "Data Lake", "it": "Data lake", "ja": "データレイク", "zh": "数据湖", "ko": "데이터 레이크", "ar": "بحيرة البيانات" },
+    "keywords": {
+      "es": ["data lake", "datos en crudo", "datos no estructurados", "almacenamiento masivo", "big data", "archivos sin procesar", "almacenamiento de objetos"],
+      "en": ["raw data", "unstructured data", "big data", "object storage", "mass storage", "unprocessed files", "schema on read"]
+    }
+  },
+  "data-lakehouse": {
+    "label": { "es": "Lakehouse de datos", "en": "Data lakehouse", "pt": "Lakehouse de dados", "fr": "Lakehouse de données", "de": "Data Lakehouse", "it": "Data lakehouse", "ja": "レイクハウス", "zh": "湖仓一体", "ko": "레이크하우스", "ar": "مستودع بحيرة البيانات" },
+    "keywords": {
+      "es": ["lago y almacén", "datos crudos y modelados", "arquitectura de datos", "plataforma unificada", "formato de tablas abiertas", "analítica a escala", "data lake con estructura"],
+      "en": ["lake and warehouse", "raw and modeled data", "data architecture", "unified platform", "open table format", "analytics at scale", "structured lake"]
+    }
+  },
+  "data-source": {
+    "label": { "es": "Fuente de datos", "en": "Data source", "pt": "Fonte de dados", "fr": "Source de données", "de": "Datenquelle", "it": "Origine dati", "ja": "データソース", "zh": "数据源", "ko": "데이터 소스", "ar": "مصدر البيانات" },
+    "keywords": {
+      "es": ["conector", "origen", "conexión", "integración", "elegir origen", "de dónde vienen los datos", "entrada de datos"],
+      "en": ["connector", "origin", "connection", "integration", "choose origin", "where data comes from", "input"]
+    }
+  },
+  "data-source-plus": {
+    "label": { "es": "Agregar fuente de datos", "en": "Add data source", "pt": "Adicionar fonte de dados", "fr": "Ajouter une source de données", "de": "Datenquelle hinzufügen", "it": "Aggiungi origine dati", "ja": "データソースを追加", "zh": "添加数据源", "ko": "데이터 소스 추가", "ar": "إضافة مصدر بيانات" },
+    "keywords": {
+      "es": ["nuevo conector", "conectar", "nueva integración", "vincular", "importar", "configurar conexión", "nueva conexión"],
+      "en": ["new connector", "connect", "new integration", "link", "import", "set up connection", "new connection"]
+    }
+  },
+  "table-export": {
+    "label": { "es": "Exportar tabla", "en": "Export table", "pt": "Exportar tabela", "fr": "Exporter le tableau", "de": "Tabelle exportieren", "it": "Esporta tabella", "ja": "表をエクスポート", "zh": "导出表格", "ko": "표 내보내기", "ar": "تصدير الجدول" },
+    "keywords": {
+      "es": ["descargar", "CSV", "Excel", "hoja de cálculo", "resultado de consulta", "guardar como", "bajar datos"],
+      "en": ["download", "CSV", "XLSX", "spreadsheet", "query result", "save as", "download data"]
+    }
+  },
+  "table-import": {
+    "label": { "es": "Importar a tabla", "en": "Import into table", "pt": "Importar para a tabela", "fr": "Importer dans le tableau", "de": "In Tabelle importieren", "it": "Importa nella tabella", "ja": "表にインポート", "zh": "导入到表格", "ko": "표로 가져오기", "ar": "استيراد إلى الجدول" },
+    "keywords": {
+      "es": ["cargar archivo", "CSV", "subir filas", "carga masiva", "hoja de cálculo", "agregar registros", "Excel"],
+      "en": ["upload file", "CSV", "load rows", "bulk upload", "spreadsheet", "add records", "XLSX"]
+    }
+  },
+  "data-stream": {
+    "label": { "es": "Flujo de eventos", "en": "Event stream", "pt": "Fluxo de eventos", "fr": "Flux d’événements", "de": "Ereignisstrom", "it": "Flusso di eventi", "ja": "イベントストリーム", "zh": "事件流", "ko": "이벤트 스트림", "ar": "تدفق الأحداث" },
+    "keywords": {
+      "es": ["streaming", "datos continuos", "ingesta en tiempo real", "eventos en vivo", "cola de mensajes", "pub/sub", "transmisión"],
+      "en": ["streaming", "continuous data", "real-time ingestion", "live events", "message queue", "pub/sub", "event feed"]
+    }
+  },
+  "data-batch": {
+    "label": { "es": "Procesamiento por lotes", "en": "Batch processing", "pt": "Processamento em lote", "fr": "Traitement par lots", "de": "Stapelverarbeitung", "it": "Elaborazione batch", "ja": "バッチ処理", "zh": "批处理", "ko": "일괄 처리", "ar": "المعالجة على دفعات" },
+    "keywords": {
+      "es": ["batch", "carga nocturna", "trabajo programado", "bloques de datos", "proceso masivo", "cron", "ejecución diaria"],
+      "en": ["batch job", "nightly load", "scheduled job", "data chunks", "bulk processing", "cron", "daily run"]
+    }
+  },
+  "data-pipeline": {
+    "label": { "es": "Pipeline de datos", "en": "Data pipeline", "pt": "Pipeline de dados", "fr": "Pipeline de données", "de": "Datenpipeline", "it": "Pipeline di dati", "ja": "データパイプライン", "zh": "数据管道", "ko": "데이터 파이프라인", "ar": "خط معالجة البيانات" },
+    "keywords": {
+      "es": ["ETL", "ELT", "flujo de datos", "orquestación", "integración de datos", "de origen a destino", "etapas"],
+      "en": ["ETL", "ELT", "data flow", "orchestration", "data integration", "source to destination", "stages"]
+    }
+  },
+  "data-pipeline-clock": {
+    "label": { "es": "Pipeline programado", "en": "Scheduled pipeline", "pt": "Pipeline agendado", "fr": "Pipeline planifié", "de": "Geplante Pipeline", "it": "Pipeline pianificata", "ja": "スケジュール済みのパイプライン", "zh": "定时管道", "ko": "예약된 파이프라인", "ar": "خط معالجة مجدول" },
+    "keywords": {
+      "es": ["próxima ejecución", "cron", "ejecución recurrente", "ETL diario", "horario", "calendario de cargas", "cada noche"],
+      "en": ["next run", "timing", "cron", "recurring run", "daily ETL", "run time", "job calendar"]
+    }
+  },
+  "data-pipeline-alert": {
+    "label": { "es": "Pipeline fallido", "en": "Failed pipeline", "pt": "Pipeline com falha", "fr": "Échec du pipeline", "de": "Pipeline fehlgeschlagen", "it": "Pipeline non riuscita", "ja": "パイプラインの失敗", "zh": "管道运行失败", "ko": "파이프라인 실패", "ar": "فشل خط المعالجة" },
+    "keywords": {
+      "es": ["error de ETL", "trabajo fallido", "requiere atención", "ejecución con error", "alerta", "reintentar", "datos sin cargar"],
+      "en": ["ETL error", "job failed", "needs attention", "run error", "alert", "retry", "data not loaded"]
+    }
+  },
+  "data-transform": {
+    "label": { "es": "Transformar datos", "en": "Transform data", "pt": "Transformar dados", "fr": "Transformer les données", "de": "Daten transformieren", "it": "Trasforma dati", "ja": "データを変換", "zh": "转换数据", "ko": "데이터 변환", "ar": "تحويل البيانات" },
+    "keywords": {
+      "es": ["ETL", "convertir", "limpiar datos", "dar formato", "reestructurar", "procesar", "normalizar"],
+      "en": ["ETL", "convert", "clean data", "reshape", "format", "process", "normalize"]
+    }
+  },
+  "data-mapping": {
+    "label": { "es": "Mapeo de campos", "en": "Field mapping", "pt": "Mapeamento de campos", "fr": "Mappage des champs", "de": "Feldzuordnung", "it": "Mappatura dei campi", "ja": "フィールドマッピング", "zh": "字段映射", "ko": "필드 매핑", "ar": "مطابقة الحقول" },
+    "keywords": {
+      "es": ["relacionar columnas", "origen y destino", "importación", "integración", "esquema", "correspondencia", "asignar columnas"],
+      "en": ["match columns", "source to destination", "import", "integration", "schema", "correspondence", "assign columns"]
+    }
+  },
+  "data-lineage": {
+    "label": { "es": "Linaje de datos", "en": "Data lineage", "pt": "Linhagem de dados", "fr": "Lignage des données", "de": "Datenherkunft", "it": "Lineage dei dati", "ja": "データリネージ", "zh": "数据血缘", "ko": "데이터 계보", "ar": "تتبع مصدر البيانات" },
+    "keywords": {
+      "es": ["origen de los datos", "dependencias", "trazabilidad", "upstream", "downstream", "impacto de cambios", "procedencia"],
+      "en": ["data origin", "dependencies", "traceability", "upstream", "downstream", "impact analysis", "provenance"]
+    }
+  },
+  "deduplicate": {
+    "label": { "es": "Quitar duplicados", "en": "Remove duplicates", "pt": "Remover duplicatas", "fr": "Supprimer les doublons", "de": "Duplikate entfernen", "it": "Rimuovi duplicati", "ja": "重複を削除", "zh": "删除重复项", "ko": "중복 제거", "ar": "إزالة التكرارات" },
+    "keywords": {
+      "es": ["deduplicar", "registros repetidos", "fusionar", "limpieza de datos", "valores únicos", "combinar contactos", "depurar"],
+      "en": ["dedupe", "repeated records", "merge", "data cleaning", "unique values", "merge contacts", "clean up"]
+    }
+  },
+  "join-inner": {
+    "label": { "es": "Combinación interna", "en": "Inner join", "pt": "Junção interna", "fr": "Jointure interne", "de": "Innerer Join", "it": "Join interno", "ja": "内部結合", "zh": "内连接", "ko": "내부 조인", "ar": "ربط داخلي" },
+    "keywords": {
+      "es": ["INNER JOIN", "registros en ambas tablas", "intersección", "SQL", "coincidencias", "unir tablas", "cruce de tablas"],
+      "en": ["matching rows", "rows in both tables", "intersection", "SQL", "matches only", "merge tables", "combine tables"]
+    }
+  },
+  "join-left": {
+    "label": { "es": "Combinación izquierda", "en": "Left join", "pt": "Junção à esquerda", "fr": "Jointure gauche", "de": "Linker Join", "it": "Join sinistro", "ja": "左外部結合", "zh": "左连接", "ko": "왼쪽 조인", "ar": "ربط يساري" },
+    "keywords": {
+      "es": ["LEFT JOIN", "todos los de la primera tabla", "combinación externa", "SQL", "coincidencias opcionales", "unir tablas", "BUSCARV"],
+      "en": ["outer join", "all rows from first table", "SQL", "optional matches", "merge tables", "VLOOKUP", "lookup"]
+    }
+  },
+  "join-right": {
+    "label": { "es": "Combinación derecha", "en": "Right join", "pt": "Junção à direita", "fr": "Jointure droite", "de": "Rechter Join", "it": "Join destro", "ja": "右外部結合", "zh": "右连接", "ko": "오른쪽 조인", "ar": "ربط يميني" },
+    "keywords": {
+      "es": ["RIGHT JOIN", "todos los de la segunda tabla", "combinación externa", "SQL", "coincidencias opcionales", "unir tablas", "cruce de datos"],
+      "en": ["outer join", "all rows from second table", "SQL", "optional matches", "merge tables", "lookup", "combine data"]
+    }
+  },
+  "join-anti": {
+    "label": { "es": "Anticombinación", "en": "Anti join", "pt": "Antijunção", "fr": "Anti-jointure", "de": "Anti-Join", "it": "Anti join", "ja": "アンチ結合", "zh": "反连接", "ko": "안티 조인", "ar": "ربط عكسي" },
+    "keywords": {
+      "es": ["ANTI JOIN", "sin coincidencia", "huérfanos", "registros faltantes", "los que no están", "diferencia entre tablas", "NOT EXISTS"],
+      "en": ["no match", "orphans", "missing records", "not in", "difference between tables", "NOT EXISTS", "left anti"]
+    }
+  },
+  "primary-key": {
+    "label": { "es": "Llave primaria", "en": "Primary key", "pt": "Chave primária", "fr": "Clé primaire", "de": "Primärschlüssel", "it": "Chiave primaria", "ja": "主キー", "zh": "主键", "ko": "기본 키", "ar": "المفتاح الأساسي" },
+    "keywords": {
+      "es": ["clave primaria", "PK", "identificador único", "ID", "columna única", "diseño de esquema", "índice"],
+      "en": ["PK", "unique identifier", "ID", "unique column", "schema design", "index", "row identifier"]
+    }
+  },
+  "foreign-key": {
+    "label": { "es": "Llave foránea", "en": "Foreign key", "pt": "Chave estrangeira", "fr": "Clé étrangère", "de": "Fremdschlüssel", "it": "Chiave esterna", "ja": "外部キー", "zh": "外键", "ko": "외래 키", "ar": "المفتاح الخارجي" },
+    "keywords": {
+      "es": ["clave foránea", "FK", "referencia", "relación entre tablas", "integridad referencial", "vincular tablas", "diseño de esquema"],
+      "en": ["FK", "reference", "table relationship", "referential integrity", "link tables", "schema design", "related record"]
+    }
+  },
+  "star-schema": {
+    "label": { "es": "Esquema de estrella", "en": "Star schema", "pt": "Esquema em estrela", "fr": "Schéma en étoile", "de": "Sternschema", "it": "Schema a stella", "ja": "スタースキーマ", "zh": "星型模型", "ko": "스타 스키마", "ar": "مخطط النجمة" },
+    "keywords": {
+      "es": ["tabla de hechos", "dimensiones", "modelo de datos", "almacén de datos", "modelado dimensional", "copo de nieve", "Kimball"],
+      "en": ["fact table", "dimensions", "data model", "data warehouse", "dimensional modeling", "snowflake model", "Kimball"]
+    }
+  },
+  "data-cube": {
+    "label": { "es": "Cubo OLAP", "en": "OLAP cube", "pt": "Cubo OLAP", "fr": "Cube OLAP", "de": "OLAP-Würfel", "it": "Cubo OLAP", "ja": "OLAPキューブ", "zh": "OLAP 立方体", "ko": "OLAP 큐브", "ar": "مكعب OLAP" },
+    "keywords": {
+      "es": ["cubo de datos", "multidimensional", "dimensiones", "rebanar y segmentar", "análisis", "tabla dinámica", "agregaciones"],
+      "en": ["data cube", "multidimensional", "dimensions", "slice and dice", "analysis", "pivot", "aggregations"]
+    }
+  },
+  "relation-one-to-one": {
+    "label": { "es": "Relación uno a uno", "en": "One-to-one relationship", "pt": "Relação um para um", "fr": "Relation un à un", "de": "1:1-Beziehung", "it": "Relazione uno a uno", "ja": "1対1のリレーション", "zh": "一对一关系", "ko": "일대일 관계", "ar": "علاقة واحد إلى واحد" },
+    "keywords": {
+      "es": ["1:1", "diagrama entidad relación", "ER", "cardinalidad", "modelo de datos", "pata de gallo", "esquema"],
+      "en": ["1:1", "entity relationship diagram", "ERD", "cardinality", "data model", "crow foot notation", "schema"]
+    }
+  },
+  "relation-one-to-many": {
+    "label": { "es": "Relación uno a muchos", "en": "One-to-many relationship", "pt": "Relação um para muitos", "fr": "Relation un à plusieurs", "de": "1:n-Beziehung", "it": "Relazione uno a molti", "ja": "1対多のリレーション", "zh": "一对多关系", "ko": "일대다 관계", "ar": "علاقة واحد إلى متعدد" },
+    "keywords": {
+      "es": ["1:N", "diagrama entidad relación", "ER", "cardinalidad", "llave foránea", "pata de gallo", "padre e hijos"],
+      "en": ["1:N", "ERD", "cardinality", "foreign key", "crow foot notation", "parent and children", "data model"]
+    }
+  },
+  "relation-many-to-many": {
+    "label": { "es": "Relación muchos a muchos", "en": "Many-to-many relationship", "pt": "Relação muitos para muitos", "fr": "Relation plusieurs à plusieurs", "de": "n:m-Beziehung", "it": "Relazione molti a molti", "ja": "多対多のリレーション", "zh": "多对多关系", "ko": "다대다 관계", "ar": "علاقة متعدد إلى متعدد" },
+    "keywords": {
+      "es": ["N:M", "tabla intermedia", "tabla pivote", "diagrama entidad relación", "cardinalidad", "pata de gallo", "modelo de datos"],
+      "en": ["N:M", "junction table", "join table", "ERD", "cardinality", "crow foot notation", "data model"]
+    }
+  },
+  "metadata": {
+    "label": { "es": "Metadatos", "en": "Metadata", "pt": "Metadados", "fr": "Métadonnées", "de": "Metadaten", "it": "Metadati", "ja": "メタデータ", "zh": "元数据", "ko": "메타데이터", "ar": "البيانات الوصفية" },
+    "keywords": {
+      "es": ["catálogo de datos", "descripción", "propietario", "etiquetas", "definiciones", "diccionario de datos", "información del conjunto"],
+      "en": ["data catalog", "description", "owner", "tags", "definitions", "data dictionary", "dataset info"]
+    }
+  },
+  "missing-value": {
+    "label": { "es": "Valores faltantes", "en": "Missing values", "pt": "Valores ausentes", "fr": "Valeurs manquantes", "de": "Fehlende Werte", "it": "Valori mancanti", "ja": "欠損値", "zh": "缺失值", "ko": "결측값", "ar": "قيم مفقودة" },
+    "keywords": {
+      "es": ["nulos", "celdas vacías", "NULL", "calidad de datos", "imputación", "datos incompletos", "huecos"],
+      "en": ["nulls", "empty cells", "NaN", "data quality", "imputation", "incomplete data", "gaps"]
+    }
+  },
+  "data-sample": {
+    "label": { "es": "Muestra de datos", "en": "Data sample", "pt": "Amostra de dados", "fr": "Échantillon de données", "de": "Datenstichprobe", "it": "Campione di dati", "ja": "データサンプル", "zh": "数据样本", "ko": "데이터 샘플", "ar": "عينة بيانات" },
+    "keywords": {
+      "es": ["muestreo", "subconjunto", "vista previa", "estadística", "selección aleatoria", "primeras filas", "porción"],
+      "en": ["sampling", "subset", "preview", "statistics", "random selection", "first rows", "portion"]
+    }
+  },
+  "data-notebook": {
+    "label": { "es": "Notebook de datos", "en": "Data notebook", "pt": "Notebook de dados", "fr": "Notebook de données", "de": "Daten-Notebook", "it": "Notebook di dati", "ja": "データノートブック", "zh": "数据笔记本", "ko": "데이터 노트북", "ar": "دفتر تحليل البيانات" },
+    "keywords": {
+      "es": ["Jupyter", "cuaderno de análisis", "celdas de código", "análisis exploratorio", "Python", "ciencia de datos", "resultados y gráficas"],
+      "en": ["Jupyter", "code cells", "exploratory analysis", "Python", "data science", "results and charts", "interactive analysis"]
+    }
   }
 }

@@ -4,6 +4,13 @@
 
 [← Index](./README.md)
 
+## 25 Oct 2026 — Round 5: technology (741 icons)
+- **Five new categories and three that grew** ([taxonomy](./taxonomy.md)): ia 137 (and the 10 it adopts from datos: the sparkle, the robot, the brain…), desarrollo 101 (and the git family, bug, terminal, code-window, api, and webhook it adopts from datos), redes 65, hardware 117, ciberseguridad 91, datos +87, sistema +52 (the keyboard keys round 3 deferred among them), dispositivos +91. With AI and code shown under ia and desarrollo, datos becomes *Datos y analítica*. The set has 3,542 icons in 31 categories.
+- **Names:** 839 proposed, 763 approved by the main session. Names proposed in two lists kept one home (`virtual-machine` and `auto-scaling` in redes, `sandbox` in desarrollo, `single-sign-on` in sistema, the `wifi-*` family in dispositivos, where it started).
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category; the critics redesigned 182 icons (ia's abstract concepts, ciberseguridad's stacked compositions as one subject and one mark, hardware's components on one leg length) and dropped what didn't reach the bar. After them the main session dropped `logic-analyzer` and `power-adapter`.
+- **Interruptions:** the usage limit four times and a full disk, which stopped every agent at once; the round's results were rebuilt from the workflows' journals, and the monitor now saves them through a temporary file and warns under 3 GB free ([production](./production.md)).
+- Tests: 61.
+
 ## 25 Oct 2026 — Round 4: business (863 icons)
 - **Seven new categories, the rest of `marcas`, and three that grew** ([taxonomy](./taxonomy.md)): negocios 58, marketing 88, rrhh 84, soporte 37, legal 72 (and the gavel and the balance scale it adopts from comercio), logistica 97, bienes-raices 88, marcas 91 (Cord's symbol among them, traced from its official favicon as a `mark`, like Flouvia's two), archivos +80, comercio +99, comunicacion +69. The set has 2,801 icons in 26 categories.
 - **Names:** 934 proposed, 896 approved by the main session; bathtub, shower, and toilet wait for hogar in round 6. soporte and negocios came in short (41 and 62): most of what they'd name exists already.

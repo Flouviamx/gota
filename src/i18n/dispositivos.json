@@ -754,5 +754,642 @@
       "es": ["generar imagen", "foto generada", "editar con ia", "inteligencia artificial", "mejorar foto", "crear ilustración", "retoque automático"],
       "en": ["generate image", "generated photo", "edit with ai", "artificial intelligence", "enhance photo", "create illustration", "auto retouch"]
     }
+  },
+  "wifi-guest": {
+    "label": { "es": "Wi-Fi para invitados", "en": "Guest Wi-Fi", "pt": "Wi-Fi para convidados", "fr": "Wi-Fi invités", "de": "Gäste-WLAN", "it": "Wi-Fi ospiti", "ja": "ゲストWi-Fi", "zh": "访客 Wi-Fi", "ko": "게스트 Wi-Fi", "ar": "شبكة واي فاي للضيوف" },
+    "keywords": {
+      "es": ["red para visitas", "contraseña de visitas", "internet para clientes", "wifi del local", "wifi de la oficina", "acceso temporal", "configuración del router"],
+      "en": ["visitor network", "visitor password", "customer wifi", "venue wifi", "office wifi", "temporary access", "router settings"]
+    }
+  },
+  "wifi-pause": {
+    "label": { "es": "Internet en pausa", "en": "Internet paused", "pt": "Internet pausada", "fr": "Internet en pause", "de": "Internet pausiert", "it": "Internet in pausa", "ja": "インターネット一時停止中", "zh": "已暂停上网", "ko": "인터넷 일시 중지됨", "ar": "الإنترنت متوقف مؤقتًا" },
+    "keywords": {
+      "es": ["control parental", "pausar wifi", "hora de dormir", "límite de conexión", "bloquear acceso", "perfil familiar", "app del router"],
+      "en": ["parental controls", "pause wifi", "bedtime", "connection limit", "block access", "family profile", "router app"]
+    }
+  },
+  "wifi-lock": {
+    "label": { "es": "Wi-Fi protegido", "en": "Secured Wi-Fi", "pt": "Wi-Fi protegido", "fr": "Wi-Fi sécurisé", "de": "Gesichertes WLAN", "it": "Wi-Fi protetto", "ja": "保護されたWi-Fi", "zh": "加密 Wi-Fi", "ko": "보안 Wi-Fi", "ar": "شبكة واي فاي محمية" },
+    "keywords": {
+      "es": ["contraseña", "red segura", "WPA", "candado", "red privada", "cifrado", "clave del wifi"],
+      "en": ["password", "protected network", "WPA", "padlock", "private network", "encrypted", "wifi key"]
+    }
+  },
+  "wifi-alert": {
+    "label": { "es": "Problema de Wi-Fi", "en": "Wi-Fi problem", "pt": "Problema no Wi-Fi", "fr": "Problème de Wi-Fi", "de": "WLAN-Problem", "it": "Problema Wi-Fi", "ja": "Wi-Fiの問題", "zh": "Wi-Fi 异常", "ko": "Wi-Fi 문제", "ar": "مشكلة في الواي فاي" },
+    "keywords": {
+      "es": ["sin internet", "conectado sin acceso", "error de red", "conexión limitada", "advertencia", "revisar router", "señal inestable"],
+      "en": ["no internet", "connected without access", "network error", "limited connectivity", "warning", "check router", "unstable signal"]
+    }
+  },
+  "bluetooth-searching": {
+    "label": { "es": "Buscando dispositivos Bluetooth", "en": "Searching for Bluetooth devices", "pt": "Procurando dispositivos Bluetooth", "fr": "Recherche d’appareils Bluetooth", "de": "Bluetooth-Gerätesuche", "it": "Ricerca dispositivi Bluetooth", "ja": "Bluetoothデバイスを検索中", "zh": "正在搜索蓝牙设备", "ko": "블루투스 기기 검색 중", "ar": "جارٍ البحث عن أجهزة بلوتوث" },
+    "keywords": {
+      "es": ["modo de emparejamiento", "vincular", "detectar", "escaneando", "conectar", "visible", "audífonos nuevos"],
+      "en": ["pairing mode", "pair", "discover", "scanning", "connect", "discoverable", "new headphones"]
+    }
+  },
+  "smartphone-landscape": {
+    "label": { "es": "Celular en horizontal", "en": "Phone in landscape", "pt": "Celular na horizontal", "fr": "Téléphone à l’horizontale", "de": "Smartphone im Querformat", "it": "Smartphone in orizzontale", "ja": "横向きのスマートフォン", "zh": "横屏手机", "ko": "가로 모드 스마트폰", "ar": "هاتف في الوضع الأفقي" },
+    "keywords": {
+      "es": ["vista apaisada", "orientación", "pantalla completa", "ver video", "voltear de lado", "pantalla ancha", "jugar"],
+      "en": ["horizontal", "orientation", "full screen", "watch video", "turn sideways", "widescreen", "gaming"]
+    }
+  },
+  "smartphone-rotate": {
+    "label": { "es": "Girar pantalla", "en": "Rotate screen", "pt": "Girar tela", "fr": "Faire pivoter l’écran", "de": "Bildschirm drehen", "it": "Ruota schermo", "ja": "画面の回転", "zh": "旋转屏幕", "ko": "화면 회전", "ar": "تدوير الشاشة" },
+    "keywords": {
+      "es": ["rotación automática", "voltear el celular", "orientación", "horizontal", "vertical", "bloqueo de rotación", "gira tu dispositivo"],
+      "en": ["auto-rotate", "turn your phone", "orientation", "landscape", "portrait", "rotation lock", "flip device"]
+    }
+  },
+  "smartphone-fold": {
+    "label": { "es": "Celular plegable", "en": "Foldable phone", "pt": "Celular dobrável", "fr": "Smartphone pliable", "de": "Faltbares Smartphone", "it": "Smartphone pieghevole", "ja": "折りたたみスマホ", "zh": "折叠屏手机", "ko": "폴더블폰", "ar": "هاتف قابل للطي" },
+    "keywords": {
+      "es": ["pantalla plegable", "desplegado", "tipo libro", "pantalla interior", "diseño adaptable", "pantalla doble", "multitarea"],
+      "en": ["folding screen", "unfolded", "book style", "inner display", "adaptive layout", "dual screen", "multitasking"]
+    }
+  },
+  "flip-phone": {
+    "label": { "es": "Celular de tapa", "en": "Flip phone", "pt": "Celular flip", "fr": "Téléphone à clapet", "de": "Klapphandy", "it": "Telefono a conchiglia", "ja": "二つ折り携帯", "zh": "翻盖手机", "ko": "폴더폰", "ar": "هاتف بغطاء قلاب" },
+    "keywords": {
+      "es": ["celular de concha", "plegable", "doblado a la mitad", "flip", "cerrar la tapa", "clásico", "celular retro"],
+      "en": ["clamshell", "foldable", "folded in half", "flip foldable", "close the lid", "classic phone", "retro phone"]
+    }
+  },
+  "feature-phone": {
+    "label": { "es": "Celular básico", "en": "Feature phone", "pt": "Celular básico", "fr": "Téléphone basique", "de": "Tastenhandy", "it": "Cellulare classico", "ja": "フィーチャーフォン", "zh": "功能手机", "ko": "피처폰", "ar": "هاتف بأزرار" },
+    "keywords": {
+      "es": ["celular de teclas", "solo SMS", "gama baja", "teclado físico", "celular clásico", "sin internet", "mensajes de texto"],
+      "en": ["keypad phone", "basic phone", "SMS only", "low-end device", "candybar", "dumb phone", "classic mobile"]
+    }
+  },
+  "cordless-phone": {
+    "label": { "es": "Teléfono inalámbrico", "en": "Cordless phone", "pt": "Telefone sem fio", "fr": "Téléphone sans fil", "de": "Schnurloses Telefon", "it": "Telefono cordless", "ja": "コードレス電話", "zh": "无绳电话", "ko": "무선 전화기", "ar": "هاتف لاسلكي" },
+    "keywords": {
+      "es": ["teléfono fijo", "teléfono de casa", "base de carga", "auricular", "línea fija", "extensión", "oficina"],
+      "en": ["landline", "home phone", "charging base", "handset", "DECT", "extension", "office phone"]
+    }
+  },
+  "smartphone-back": {
+    "label": { "es": "Parte trasera del celular", "en": "Back of phone", "pt": "Traseira do celular", "fr": "Dos du téléphone", "de": "Smartphone-Rückseite", "it": "Retro dello smartphone", "ja": "スマートフォンの背面", "zh": "手机背面", "ko": "스마트폰 뒷면", "ar": "الجهة الخلفية للهاتف" },
+    "keywords": {
+      "es": ["cámara trasera", "funda", "carcasa", "reverso", "tapa trasera", "modelo del celular", "lente"],
+      "en": ["rear camera", "phone case", "cover", "rear side", "back panel", "phone model", "camera lens"]
+    }
+  },
+  "smartphone-charging": {
+    "label": { "es": "Celular cargando", "en": "Phone charging", "pt": "Celular carregando", "fr": "Téléphone en charge", "de": "Smartphone lädt", "it": "Smartphone in carica", "ja": "スマートフォン充電中", "zh": "手机充电中", "ko": "스마트폰 충전 중", "ar": "الهاتف قيد الشحن" },
+    "keywords": {
+      "es": ["batería", "conectado a la corriente", "cargador", "nivel de batería", "app complementaria", "carga rápida", "enchufado"],
+      "en": ["battery", "plugged in", "charger", "battery level", "companion app", "fast charge", "power"]
+    }
+  },
+  "smartphone-transfer": {
+    "label": { "es": "Transferir a celular nuevo", "en": "Transfer to new phone", "pt": "Transferir para celular novo", "fr": "Transférer vers un nouveau téléphone", "de": "Auf neues Smartphone übertragen", "it": "Trasferisci su nuovo smartphone", "ja": "新しいスマートフォンへ移行", "zh": "迁移到新手机", "ko": "새 휴대폰으로 데이터 이전", "ar": "النقل إلى هاتف جديد" },
+    "keywords": {
+      "es": ["migrar datos", "cambiar de celular", "inicio rápido", "copiar contactos", "respaldo", "celular viejo", "configurar celular"],
+      "en": ["migrate data", "switch phones", "quick start", "copy contacts", "backup", "old phone", "phone setup"]
+    }
+  },
+  "smartphone-stack": {
+    "label": { "es": "Dispositivos móviles", "en": "Mobile devices", "pt": "Dispositivos móveis", "fr": "Appareils mobiles", "de": "Mobilgeräte", "it": "Dispositivi mobili", "ja": "モバイル端末", "zh": "移动设备", "ko": "모바일 기기", "ar": "الأجهزة المحمولة" },
+    "keywords": {
+      "es": ["flota de dispositivos", "dispositivos de prueba", "lista de equipos", "inventario", "administración de equipos", "MDM", "varios celulares"],
+      "en": ["device fleet", "test devices", "device list", "inventory", "device management", "MDM", "multiple phones"]
+    }
+  },
+  "smartphone-watch": {
+    "label": { "es": "Celular y reloj", "en": "Phone and watch", "pt": "Celular e relógio", "fr": "Téléphone et montre", "de": "Smartphone und Uhr", "it": "Smartphone e orologio", "ja": "スマートフォンとウォッチ", "zh": "手机和手表", "ko": "스마트폰과 워치", "ar": "الهاتف والساعة" },
+    "keywords": {
+      "es": ["vincular reloj", "app complementaria", "emparejar wearable", "reloj inteligente", "sincronizar", "dispositivos conectados", "notificaciones en la muñeca"],
+      "en": ["pair watch", "companion app", "wearable pairing", "smartwatch", "sync", "connected devices", "wrist notifications"]
+    }
+  },
+  "smartphone-shake": {
+    "label": { "es": "Agitar el celular", "en": "Shake phone", "pt": "Agitar o celular", "fr": "Secouer le téléphone", "de": "Smartphone schütteln", "it": "Scuoti lo smartphone", "ja": "スマートフォンを振る", "zh": "摇一摇", "ko": "흔들기", "ar": "هز الهاتف" },
+    "keywords": {
+      "es": ["sacudir", "deshacer", "reportar un error", "gesto", "movimiento", "acelerómetro", "enviar comentarios"],
+      "en": ["undo", "report a bug", "jiggle", "gesture", "motion", "accelerometer", "send feedback"]
+    }
+  },
+  "smartphone-dock": {
+    "label": { "es": "Celular en su base", "en": "Phone dock", "pt": "Celular na base", "fr": "Téléphone sur sa station", "de": "Smartphone im Dock", "it": "Smartphone sulla base", "ja": "充電スタンドのスマートフォン", "zh": "手机底座", "ko": "스마트폰 충전 독", "ar": "الهاتف على قاعدة الشحن" },
+    "keywords": {
+      "es": ["cargador de escritorio", "soporte", "estación de carga", "modo buró", "atril", "dock", "cargando"],
+      "en": ["charging stand", "desk stand", "desk charger", "charging station", "nightstand mode", "cradle", "standby mode"]
+    }
+  },
+  "selfie-stick": {
+    "label": { "es": "Palo de selfie", "en": "Selfie stick", "pt": "Pau de selfie", "fr": "Perche à selfie", "de": "Selfie-Stick", "it": "Bastone per selfie", "ja": "自撮り棒", "zh": "自拍杆", "ko": "셀카봉", "ar": "عصا السيلفي" },
+    "keywords": {
+      "es": ["autofoto", "cámara frontal", "viaje", "creador de contenido", "foto grupal", "vlog", "bastón extensible"],
+      "en": ["front camera", "travel", "content creator", "group photo", "vlog", "extendable pole", "self-portrait"]
+    }
+  },
+  "smartphone-plus": {
+    "label": { "es": "Agregar dispositivo", "en": "Add device", "pt": "Adicionar dispositivo", "fr": "Ajouter un appareil", "de": "Gerät hinzufügen", "it": "Aggiungi dispositivo", "ja": "デバイスを追加", "zh": "添加设备", "ko": "기기 추가", "ar": "إضافة جهاز" },
+    "keywords": {
+      "es": ["vincular celular", "registrar teléfono", "nuevo celular", "emparejar", "conectar celular", "dar de alta", "cuenta"],
+      "en": ["link phone", "register phone", "new phone", "pair", "connect phone", "enroll", "account"]
+    }
+  },
+  "smartphone-check": {
+    "label": { "es": "Dispositivo de confianza", "en": "Trusted device", "pt": "Dispositivo confiável", "fr": "Appareil de confiance", "de": "Vertrauenswürdiges Gerät", "it": "Dispositivo attendibile", "ja": "信頼済みデバイス", "zh": "受信任的设备", "ko": "신뢰할 수 있는 기기", "ar": "جهاز موثوق" },
+    "keywords": {
+      "es": ["verificado", "compatible", "autorizado", "aprobado", "celular registrado", "seguridad", "inicio de sesión"],
+      "en": ["verified", "compatible", "authorized", "approved", "registered phone", "security", "sign-in"]
+    }
+  },
+  "smartphone-lock": {
+    "label": { "es": "Bloquear dispositivo", "en": "Lock device", "pt": "Bloquear dispositivo", "fr": "Verrouiller l’appareil", "de": "Gerät sperren", "it": "Blocca dispositivo", "ja": "デバイスをロック", "zh": "锁定设备", "ko": "기기 잠금", "ar": "قفل الجهاز" },
+    "keywords": {
+      "es": ["candado", "a distancia", "celular perdido", "seguridad", "administración de dispositivos", "contraseña", "PIN", "proteger"],
+      "en": ["padlock", "remotely", "lost phone", "security", "device management", "passcode", "PIN", "protect"]
+    }
+  },
+  "smartphone-x": {
+    "label": { "es": "Quitar dispositivo", "en": "Remove device", "pt": "Remover dispositivo", "fr": "Supprimer l’appareil", "de": "Gerät entfernen", "it": "Rimuovi dispositivo", "ja": "デバイスを削除", "zh": "移除设备", "ko": "기기 제거", "ar": "إزالة الجهاز" },
+    "keywords": {
+      "es": ["desvincular", "borrar datos", "dar de baja", "no compatible", "cerrar sesión en el celular", "restablecer", "eliminar"],
+      "en": ["unlink", "erase", "wipe", "unsupported", "sign out of phone", "factory reset", "delete"]
+    }
+  },
+  "smartphone-search": {
+    "label": { "es": "Buscar mi dispositivo", "en": "Find my device", "pt": "Encontrar meu dispositivo", "fr": "Localiser mon appareil", "de": "Mein Gerät finden", "it": "Trova il mio dispositivo", "ja": "デバイスを探す", "zh": "查找我的设备", "ko": "내 기기 찾기", "ar": "العثور على جهازي" },
+    "keywords": {
+      "es": ["localizar", "celular perdido", "rastrear", "ubicación", "celular robado", "hacer sonar", "dónde está mi celular"],
+      "en": ["locate", "lost phone", "track", "location", "stolen phone", "play sound", "where is my phone"]
+    }
+  },
+  "smartphone-sync": {
+    "label": { "es": "Sincronizar con el celular", "en": "Sync with phone", "pt": "Sincronizar com o celular", "fr": "Synchroniser avec le téléphone", "de": "Mit Smartphone synchronisieren", "it": "Sincronizza con lo smartphone", "ja": "スマートフォンと同期", "zh": "与手机同步", "ko": "휴대폰과 동기화", "ar": "المزامنة مع الهاتف" },
+    "keywords": {
+      "es": ["contactos", "fotos", "respaldo", "actualizar", "nube", "ajustes", "mantener al día"],
+      "en": ["contacts", "photos", "backup", "refresh", "cloud", "settings", "keep in step"]
+    }
+  },
+  "smartphone-arrow-down": {
+    "label": { "es": "Instalar en el celular", "en": "Install on phone", "pt": "Instalar no celular", "fr": "Installer sur le téléphone", "de": "Auf dem Smartphone installieren", "it": "Installa sullo smartphone", "ja": "スマートフォンにインストール", "zh": "安装到手机", "ko": "휴대폰에 설치", "ar": "التثبيت على الهاتف" },
+    "keywords": {
+      "es": ["descargar la app", "bajar", "tienda de aplicaciones", "obtener la app", "app móvil", "guardar en el dispositivo", "versión móvil"],
+      "en": ["download the app", "get the app", "app store", "mobile app", "save to device", "mobile version", "sideload"]
+    }
+  },
+  "smartphone-clock": {
+    "label": { "es": "Tiempo en pantalla", "en": "Screen time", "pt": "Tempo de uso", "fr": "Temps d’écran", "de": "Bildschirmzeit", "it": "Tempo di utilizzo", "ja": "スクリーンタイム", "zh": "屏幕使用时间", "ko": "스크린 타임", "ar": "مدة استخدام الشاشة" },
+    "keywords": {
+      "es": ["límite de apps", "bienestar digital", "uso del celular", "control parental", "tiempo de uso", "desconectarse", "hábitos"],
+      "en": ["app limits", "digital wellbeing", "phone usage", "parental controls", "usage time", "downtime", "habits"]
+    }
+  },
+  "smartphone-alert": {
+    "label": { "es": "Dispositivo en riesgo", "en": "Device at risk", "pt": "Dispositivo em risco", "fr": "Appareil à risque", "de": "Gefährdetes Gerät", "it": "Dispositivo a rischio", "ja": "リスクのあるデバイス", "zh": "存在风险的设备", "ko": "위험이 감지된 기기", "ar": "جهاز معرّض للخطر" },
+    "keywords": {
+      "es": ["no cumple políticas", "actualización pendiente", "jailbreak", "root", "advertencia", "vulnerable", "MDM"],
+      "en": ["non-compliant", "update overdue", "jailbroken", "rooted", "warning", "vulnerable", "MDM"]
+    }
+  },
+  "smartphone-gear": {
+    "label": { "es": "Configuración del dispositivo", "en": "Device settings", "pt": "Configurações do dispositivo", "fr": "Paramètres de l’appareil", "de": "Geräteeinstellungen", "it": "Impostazioni dispositivo", "ja": "デバイスの設定", "zh": "设备设置", "ko": "기기 설정", "ar": "إعدادات الجهاز" },
+    "keywords": {
+      "es": ["ajustes del celular", "preferencias", "opciones", "engrane", "puesta en marcha", "primer uso", "sistema"],
+      "en": ["phone setup", "preferences", "options", "gear", "configuration", "first run", "system"]
+    }
+  },
+  "smartphone-shield": {
+    "label": { "es": "Dispositivo protegido", "en": "Protected device", "pt": "Dispositivo protegido", "fr": "Appareil protégé", "de": "Geschütztes Gerät", "it": "Dispositivo protetto", "ja": "保護されたデバイス", "zh": "受保护的设备", "ko": "보호된 기기", "ar": "جهاز محمي" },
+    "keywords": {
+      "es": ["cumple políticas", "administrado", "MDM", "seguridad", "antivirus", "celular de la empresa", "escudo"],
+      "en": ["compliant", "managed", "MDM", "security", "antivirus", "company phone", "shield"]
+    }
+  },
+  "tablet-landscape": {
+    "label": { "es": "Tableta en horizontal", "en": "Tablet in landscape", "pt": "Tablet na horizontal", "fr": "Tablette à l’horizontale", "de": "Tablet im Querformat", "it": "Tablet in orizzontale", "ja": "横向きのタブレット", "zh": "横屏平板", "ko": "가로 모드 태블릿", "ar": "جهاز لوحي في الوضع الأفقي" },
+    "keywords": {
+      "es": ["vista apaisada", "orientación", "vista previa del diseño", "pantalla ancha", "diseño responsivo", "ver películas"],
+      "en": ["horizontal", "orientation", "layout preview", "widescreen", "responsive design", "watch movies"]
+    }
+  },
+  "tablet-keyboard": {
+    "label": { "es": "Tableta con teclado", "en": "Tablet with keyboard", "pt": "Tablet com teclado", "fr": "Tablette avec clavier", "de": "Tablet mit Tastatur", "it": "Tablet con tastiera", "ja": "キーボード付きタブレット", "zh": "带键盘的平板", "ko": "키보드 장착 태블릿", "ar": "جهاز لوحي مع لوحة مفاتيح" },
+    "keywords": {
+      "es": ["2 en 1", "funda", "como laptop", "escribir", "productividad", "accesorio", "trabajo móvil"],
+      "en": ["2-in-1", "folio cover", "laptop mode", "typing", "productivity", "accessory", "mobile work"]
+    }
+  },
+  "tablet-stylus": {
+    "label": { "es": "Tableta con lápiz", "en": "Tablet with pen", "pt": "Tablet com caneta", "fr": "Tablette avec stylet", "de": "Tablet mit Stift", "it": "Tablet con penna", "ja": "ペン付きタブレット", "zh": "平板与手写笔", "ko": "펜과 태블릿", "ar": "جهاز لوحي مع قلم" },
+    "keywords": {
+      "es": ["escritura a mano", "dibujar", "tomar notas", "bocetos", "pluma digital", "apuntes", "firmar"],
+      "en": ["handwriting", "drawing", "note-taking", "sketching", "stylus", "annotate", "sign"]
+    }
+  },
+  "e-reader": {
+    "label": { "es": "Lector de libros electrónicos", "en": "E-reader", "pt": "Leitor de e-books", "fr": "Liseuse", "de": "E-Reader", "it": "Lettore di ebook", "ja": "電子書籍リーダー", "zh": "电子阅读器", "ko": "전자책 리더기", "ar": "قارئ الكتب الإلكترونية" },
+    "keywords": {
+      "es": ["ebook", "tinta electrónica", "leer", "biblioteca digital", "modo lectura", "novela"],
+      "en": ["ebook", "e-ink", "reading", "digital library", "reader mode", "novel"]
+    }
+  },
+  "drawing-tablet": {
+    "label": { "es": "Tableta de dibujo", "en": "Drawing tablet", "pt": "Mesa digitalizadora", "fr": "Tablette graphique", "de": "Grafiktablett", "it": "Tavoletta grafica", "ja": "ペンタブレット", "zh": "数位板", "ko": "드로잉 태블릿", "ar": "لوح الرسم الرقمي" },
+    "keywords": {
+      "es": ["tableta gráfica", "ilustración", "diseño gráfico", "lápiz digital", "pen tablet", "retoque", "arte digital"],
+      "en": ["graphics tablet", "pen tablet", "illustration", "graphic design", "digital pen", "retouching", "digital art"]
+    }
+  },
+  "laptop-stand": {
+    "label": { "es": "Base para laptop", "en": "Laptop stand", "pt": "Suporte para notebook", "fr": "Support pour ordinateur portable", "de": "Laptopständer", "it": "Supporto per portatile", "ja": "ノートパソコンスタンド", "zh": "笔记本电脑支架", "ko": "노트북 거치대", "ar": "حامل الحاسوب المحمول" },
+    "keywords": {
+      "es": ["ergonomía", "elevador", "soporte", "escritorio", "postura", "home office", "altura de la pantalla"],
+      "en": ["ergonomic", "riser", "desk setup", "posture", "home office", "screen height", "workstation"]
+    }
+  },
+  "laptop-check": {
+    "label": { "es": "Computadora de confianza", "en": "Trusted computer", "pt": "Computador confiável", "fr": "Ordinateur de confiance", "de": "Vertrauenswürdiger Computer", "it": "Computer attendibile", "ja": "信頼済みのコンピューター", "zh": "受信任的电脑", "ko": "신뢰할 수 있는 컴퓨터", "ar": "حاسوب موثوق" },
+    "keywords": {
+      "es": ["verificado", "sesión aprobada", "autorizado", "este equipo", "recordar dispositivo", "seguridad", "laptop registrada"],
+      "en": ["verified", "approved session", "authorized", "this device", "remember device", "security", "registered laptop"]
+    }
+  },
+  "laptop-lock": {
+    "label": { "es": "Laptop bloqueada", "en": "Locked laptop", "pt": "Notebook bloqueado", "fr": "Ordinateur portable verrouillé", "de": "Gesperrter Laptop", "it": "Portatile bloccato", "ja": "ロックされたノートパソコン", "zh": "已锁定的笔记本电脑", "ko": "잠긴 노트북", "ar": "حاسوب محمول مقفل" },
+    "keywords": {
+      "es": ["cifrado", "encriptado", "a distancia", "seguridad", "contraseña", "equipo perdido", "candado"],
+      "en": ["encrypted", "remotely", "security", "password", "lost computer", "padlock", "disk encryption"]
+    }
+  },
+  "desktop-arrow-down": {
+    "label": { "es": "Descargar para computadora", "en": "Download for desktop", "pt": "Baixar para computador", "fr": "Télécharger pour ordinateur", "de": "Für Desktop herunterladen", "it": "Scarica per computer", "ja": "デスクトップ版をダウンロード", "zh": "下载桌面版", "ko": "데스크톱용 다운로드", "ar": "التنزيل للحاسوب" },
+    "keywords": {
+      "es": ["instalar", "app de escritorio", "instalador", "versión de escritorio", "PC", "programa", "bajar"],
+      "en": ["install", "installer", "native app", "computer version", "PC", "program", "get the app"]
+    }
+  },
+  "computer-tower": {
+    "label": { "es": "Torre de PC", "en": "PC tower", "pt": "Gabinete de PC", "fr": "Tour de PC", "de": "PC-Tower", "it": "Torre PC", "ja": "タワー型PC", "zh": "台式机主机", "ko": "데스크톱 본체", "ar": "برج الحاسوب" },
+    "keywords": {
+      "es": ["CPU", "gabinete", "computadora de escritorio", "PC gamer", "estación de trabajo", "servidor", "hardware"],
+      "en": ["CPU", "case", "desktop computer", "gaming rig", "workstation", "server", "hardware"]
+    }
+  },
+  "all-in-one": {
+    "label": { "es": "Computadora todo en uno", "en": "All-in-one computer", "pt": "Computador tudo em um", "fr": "Ordinateur tout-en-un", "de": "All-in-One-PC", "it": "PC all-in-one", "ja": "一体型パソコン", "zh": "一体机", "ko": "일체형 PC", "ar": "حاسوب متكامل" },
+    "keywords": {
+      "es": ["AIO", "monitor integrado", "PC de escritorio", "equipo de oficina", "pantalla grande", "recepción", "escritorio"],
+      "en": ["AIO", "built-in display", "desktop PC", "office computer", "big screen", "front desk", "workstation"]
+    }
+  },
+  "retro-computer": {
+    "label": { "es": "Computadora retro", "en": "Retro computer", "pt": "Computador retrô", "fr": "Ordinateur rétro", "de": "Retro-Computer", "it": "Computer retrò", "ja": "レトロパソコン", "zh": "复古电脑", "ko": "레트로 컴퓨터", "ar": "حاسوب قديم الطراز" },
+    "keywords": {
+      "es": ["clásica", "vintage", "sistema heredado", "antigua", "años 80", "nostalgia", "equipo viejo"],
+      "en": ["classic", "vintage", "legacy system", "80s", "nostalgia", "old PC", "antique"]
+    }
+  },
+  "monitor-dual": {
+    "label": { "es": "Dos monitores", "en": "Dual monitors", "pt": "Dois monitores", "fr": "Deux écrans", "de": "Zwei Monitore", "it": "Doppio monitor", "ja": "デュアルモニター", "zh": "双显示器", "ko": "듀얼 모니터", "ar": "شاشتان" },
+    "keywords": {
+      "es": ["pantalla extendida", "escritorio extendido", "multimonitor", "organizar pantallas", "segunda pantalla", "duplicar", "estación de trabajo"],
+      "en": ["extended display", "extended desktop", "multi-monitor", "display arrangement", "second screen", "mirror", "workstation"]
+    }
+  },
+  "monitor-curved": {
+    "label": { "es": "Monitor curvo", "en": "Curved monitor", "pt": "Monitor curvo", "fr": "Écran incurvé", "de": "Curved-Monitor", "it": "Monitor curvo", "ja": "曲面モニター", "zh": "曲面显示器", "ko": "커브드 모니터", "ar": "شاشة منحنية" },
+    "keywords": {
+      "es": ["ultrawide", "ultrapanorámico", "pantalla ancha", "gaming", "inmersivo", "edición de video"],
+      "en": ["ultrawide", "widescreen", "gaming", "immersive", "panoramic", "video editing"]
+    }
+  },
+  "monitor-vertical": {
+    "label": { "es": "Monitor vertical", "en": "Vertical monitor", "pt": "Monitor vertical", "fr": "Écran vertical", "de": "Hochformat-Monitor", "it": "Monitor verticale", "ja": "縦向きモニター", "zh": "竖屏显示器", "ko": "세로 모니터", "ar": "شاشة عمودية" },
+    "keywords": {
+      "es": ["orientación retrato", "pantalla girada", "programar", "código", "leer documentos", "pivote"],
+      "en": ["portrait orientation", "rotated display", "coding", "reading documents", "pivot", "tall screen"]
+    }
+  },
+  "monitor-arm": {
+    "label": { "es": "Brazo para monitor", "en": "Monitor arm", "pt": "Braço para monitor", "fr": "Bras pour écran", "de": "Monitorarm", "it": "Braccio per monitor", "ja": "モニターアーム", "zh": "显示器支臂", "ko": "모니터 암", "ar": "ذراع الشاشة" },
+    "keywords": {
+      "es": ["soporte articulado", "escritorio", "ergonomía", "abrazadera", "VESA", "ajustar altura", "montaje"],
+      "en": ["articulated mount", "desk clamp", "ergonomics", "VESA", "adjustable height", "desk setup", "mounting"]
+    }
+  },
+  "smart-display": {
+    "label": { "es": "Pantalla inteligente", "en": "Smart display", "pt": "Tela inteligente", "fr": "Écran connecté", "de": "Smart Display", "it": "Smart display", "ja": "スマートディスプレイ", "zh": "智能屏", "ko": "스마트 디스플레이", "ar": "شاشة ذكية" },
+    "keywords": {
+      "es": ["asistente de voz", "casa inteligente", "domótica", "pantalla de cocina", "videollamada", "marco de fotos", "comandos de voz"],
+      "en": ["voice assistant", "smart home", "home automation", "kitchen display", "video call", "photo frame", "voice commands"]
+    }
+  },
+  "set-top-box": {
+    "label": { "es": "Decodificador", "en": "Set-top box", "pt": "Decodificador", "fr": "Décodeur", "de": "Set-Top-Box", "it": "Decoder", "ja": "セットトップボックス", "zh": "机顶盒", "ko": "셋톱박스", "ar": "جهاز فك التشفير" },
+    "keywords": {
+      "es": ["caja de cable", "TV de paga", "streaming", "reproductor multimedia", "TV box", "televisión por cable", "canales"],
+      "en": ["cable box", "streaming box", "media player", "TV box", "pay TV", "satellite receiver", "channels"]
+    }
+  },
+  "disc-player": {
+    "label": { "es": "Reproductor de discos", "en": "Disc player", "pt": "Leitor de discos", "fr": "Lecteur de disques", "de": "Disc-Player", "it": "Lettore di dischi", "ja": "ディスクプレーヤー", "zh": "光盘播放机", "ko": "디스크 플레이어", "ar": "مشغل الأقراص" },
+    "keywords": {
+      "es": ["DVD", "Blu-ray", "películas", "formato físico", "colección", "lector óptico", "bandeja"],
+      "en": ["DVD", "Blu-ray", "movies", "physical media", "collection", "optical drive", "tray"]
+    }
+  },
+  "media-player": {
+    "label": { "es": "Reproductor portátil", "en": "Portable media player", "pt": "Reprodutor portátil", "fr": "Baladeur multimédia", "de": "Tragbarer Mediaplayer", "it": "Lettore multimediale portatile", "ja": "ポータブルメディアプレーヤー", "zh": "便携式播放器", "ko": "휴대용 미디어 플레이어", "ar": "مشغل وسائط محمول" },
+    "keywords": {
+      "es": ["MP3", "MP4", "música sin conexión", "videos sin conexión", "canciones descargadas", "escuchar"],
+      "en": ["MP3", "MP4", "offline music", "offline video", "downloaded songs", "listen"]
+    }
+  },
+  "portable-speaker": {
+    "label": { "es": "Bocina portátil", "en": "Portable speaker", "pt": "Caixa de som portátil", "fr": "Enceinte portable", "de": "Tragbarer Lautsprecher", "it": "Cassa portatile", "ja": "ポータブルスピーカー", "zh": "便携音箱", "ko": "휴대용 스피커", "ar": "مكبر صوت محمول" },
+    "keywords": {
+      "es": ["bluetooth", "inalámbrica", "música", "fiesta", "al aire libre", "altavoz", "resistente al agua"],
+      "en": ["bluetooth", "wireless", "music", "party", "outdoor", "loudspeaker", "waterproof"]
+    }
+  },
+  "speaker-group": {
+    "label": { "es": "Grupo de bocinas", "en": "Speaker group", "pt": "Grupo de caixas de som", "fr": "Groupe d’enceintes", "de": "Lautsprechergruppe", "it": "Gruppo di altoparlanti", "ja": "スピーカーグループ", "zh": "音箱组", "ko": "스피커 그룹", "ar": "مجموعة مكبرات الصوت" },
+    "keywords": {
+      "es": ["audio multicuarto", "par estéreo", "sonido en toda la casa", "sincronizar audio", "multiroom", "habitaciones", "reproducir en varias"],
+      "en": ["multi-room audio", "stereo pair", "whole-home audio", "sync audio", "multiroom", "rooms", "play everywhere"]
+    }
+  },
+  "voice-recorder": {
+    "label": { "es": "Grabadora de voz", "en": "Voice recorder", "pt": "Gravador de voz", "fr": "Dictaphone", "de": "Diktiergerät", "it": "Registratore vocale", "ja": "ボイスレコーダー", "zh": "录音笔", "ko": "녹음기", "ar": "مسجل صوت" },
+    "keywords": {
+      "es": ["dictáfono", "entrevista", "notas de voz", "audio", "periodista", "reunión", "dictar"],
+      "en": ["dictaphone", "interview", "voice memo", "audio", "journalist", "meeting", "dictation"]
+    }
+  },
+  "audio-output": {
+    "label": { "es": "Salida de audio", "en": "Audio output", "pt": "Saída de áudio", "fr": "Sortie audio", "de": "Audioausgabe", "it": "Uscita audio", "ja": "オーディオ出力", "zh": "音频输出", "ko": "오디오 출력", "ar": "مخرج الصوت" },
+    "keywords": {
+      "es": ["reproducir en", "elegir bocina", "cambiar a audífonos", "dispositivo de sonido", "bluetooth", "enviar audio", "altavoz"],
+      "en": ["play on", "choose speaker", "switch to headphones", "sound device", "bluetooth", "route sound", "speaker picker"]
+    }
+  },
+  "smart-ring": {
+    "label": { "es": "Anillo inteligente", "en": "Smart ring", "pt": "Anel inteligente", "fr": "Bague connectée", "de": "Smart Ring", "it": "Anello smart", "ja": "スマートリング", "zh": "智能戒指", "ko": "스마트 링", "ar": "خاتم ذكي" },
+    "keywords": {
+      "es": ["wearable", "monitoreo del sueño", "salud", "ritmo cardiaco", "actividad", "recuperación", "temperatura corporal"],
+      "en": ["wearable", "sleep tracking", "health", "heart rate", "activity", "recovery", "body temperature"]
+    }
+  },
+  "fitness-band": {
+    "label": { "es": "Pulsera de actividad", "en": "Fitness tracker", "pt": "Pulseira fitness", "fr": "Bracelet connecté", "de": "Fitnessarmband", "it": "Braccialetto fitness", "ja": "フィットネスバンド", "zh": "运动手环", "ko": "피트니스 밴드", "ar": "سوار اللياقة البدنية" },
+    "keywords": {
+      "es": ["contador de pasos", "ejercicio", "sueño", "wearable", "salud", "calorías", "smartband"],
+      "en": ["step counter", "exercise", "sleep", "wearable", "health", "calories", "smart band"]
+    }
+  },
+  "watch-round": {
+    "label": { "es": "Reloj inteligente redondo", "en": "Round smartwatch", "pt": "Relógio inteligente redondo", "fr": "Montre connectée ronde", "de": "Runde Smartwatch", "it": "Smartwatch rotondo", "ja": "丸型スマートウォッチ", "zh": "圆形智能手表", "ko": "원형 스마트워치", "ar": "ساعة ذكية دائرية" },
+    "keywords": {
+      "es": ["wearable", "carátula", "reloj de pulsera", "actividad física", "notificaciones", "salud", "esfera circular"],
+      "en": ["wearable", "watch face", "wristwatch", "fitness", "notifications", "health", "circular dial"]
+    }
+  },
+  "watch-vibrate": {
+    "label": { "es": "Vibración del reloj", "en": "Watch haptics", "pt": "Vibração do relógio", "fr": "Vibration de la montre", "de": "Uhr-Vibration", "it": "Vibrazione dell’orologio", "ja": "ウォッチの振動", "zh": "手表振动", "ko": "워치 진동", "ar": "اهتزاز الساعة" },
+    "keywords": {
+      "es": ["háptico", "toque en la muñeca", "alerta", "aviso silencioso", "notificación", "reloj inteligente", "zumbido"],
+      "en": ["vibration", "wrist tap", "alert", "silent alert", "notification", "smartwatch", "buzz"]
+    }
+  },
+  "watch-charging": {
+    "label": { "es": "Reloj cargando", "en": "Watch charging", "pt": "Relógio carregando", "fr": "Montre en charge", "de": "Uhr lädt", "it": "Orologio in carica", "ja": "ウォッチ充電中", "zh": "手表充电中", "ko": "워치 충전 중", "ar": "الساعة قيد الشحن" },
+    "keywords": {
+      "es": ["reloj inteligente", "batería", "cargador magnético", "energía", "wearable", "conectado a la corriente", "pila"],
+      "en": ["smartwatch", "battery", "magnetic puck", "power", "wearable", "plugged in", "dock"]
+    }
+  },
+  "earbuds-case": {
+    "label": { "es": "Estuche de audífonos", "en": "Earbuds case", "pt": "Estojo dos fones", "fr": "Boîtier des écouteurs", "de": "Ladecase der Ohrhörer", "it": "Custodia degli auricolari", "ja": "イヤホンの充電ケース", "zh": "耳机充电盒", "ko": "이어폰 케이스", "ar": "علبة سماعات الأذن" },
+    "keywords": {
+      "es": ["batería", "cargador", "emparejar", "localizar", "inalámbricos", "bluetooth", "tapa"],
+      "en": ["battery", "charger", "pairing", "locate", "wireless", "bluetooth", "lid"]
+    }
+  },
+  "earphones": {
+    "label": { "es": "Audífonos con cable", "en": "Wired earphones", "pt": "Fones com fio", "fr": "Écouteurs filaires", "de": "Kabelgebundene Ohrhörer", "it": "Auricolari con filo", "ja": "有線イヤホン", "zh": "有线耳机", "ko": "유선 이어폰", "ar": "سماعات أذن سلكية" },
+    "keywords": {
+      "es": ["alámbricos", "jack", "conector de 3.5 mm", "manos libres", "música", "escuchar", "entrada de audio"],
+      "en": ["corded", "headphone jack", "3.5 mm", "hands-free", "music", "listen", "aux"]
+    }
+  },
+  "game-console": {
+    "label": { "es": "Consola de videojuegos", "en": "Game console", "pt": "Console de videogame", "fr": "Console de jeu", "de": "Spielkonsole", "it": "Console per videogiochi", "ja": "ゲーム機", "zh": "游戏主机", "ko": "게임 콘솔", "ar": "جهاز ألعاب" },
+    "keywords": {
+      "es": ["videojuegos", "jugar", "gaming", "sala", "multijugador", "tele", "entretenimiento"],
+      "en": ["video games", "play", "gaming", "living room", "multiplayer", "TV", "entertainment"]
+    }
+  },
+  "handheld-console": {
+    "label": { "es": "Consola portátil", "en": "Handheld console", "pt": "Console portátil", "fr": "Console portable", "de": "Handheld-Konsole", "it": "Console portatile", "ja": "携帯ゲーム機", "zh": "掌机", "ko": "휴대용 게임기", "ar": "جهاز ألعاب محمول" },
+    "keywords": {
+      "es": ["videojuegos", "jugar donde sea", "gaming", "viaje", "híbrida", "controles laterales", "pantalla táctil"],
+      "en": ["video games", "play anywhere", "gaming", "travel", "hybrid", "side controls", "touchscreen"]
+    }
+  },
+  "handheld-console-retro": {
+    "label": { "es": "Consola portátil retro", "en": "Retro handheld console", "pt": "Console portátil retrô", "fr": "Console portable rétro", "de": "Retro-Handheld", "it": "Console portatile retrò", "ja": "レトロ携帯ゲーム機", "zh": "复古掌机", "ko": "레트로 휴대용 게임기", "ar": "جهاز ألعاب محمول كلاسيكي" },
+    "keywords": {
+      "es": ["clásica", "videojuegos de antes", "8 bits", "nostalgia", "emulador", "vertical", "maquinita"],
+      "en": ["classic", "old-school games", "8-bit", "nostalgia", "emulator", "portrait", "pixel games"]
+    }
+  },
+  "gamepad-retro": {
+    "label": { "es": "Control retro", "en": "Retro gamepad", "pt": "Controle retrô", "fr": "Manette rétro", "de": "Retro-Gamepad", "it": "Controller retrò", "ja": "レトロゲームパッド", "zh": "复古手柄", "ko": "레트로 게임패드", "ar": "يد تحكم كلاسيكية" },
+    "keywords": {
+      "es": ["videojuegos clásicos", "cruceta", "emulador", "8 bits", "nostalgia", "dos botones", "consola antigua"],
+      "en": ["classic games", "d-pad", "emulator", "8-bit", "nostalgia", "two buttons", "old console"]
+    }
+  },
+  "action-camera": {
+    "label": { "es": "Cámara de acción", "en": "Action camera", "pt": "Câmera de ação", "fr": "Caméra d’action", "de": "Actioncam", "it": "Action cam", "ja": "アクションカメラ", "zh": "运动相机", "ko": "액션캠", "ar": "كاميرا الحركة" },
+    "keywords": {
+      "es": ["deportes extremos", "casco", "aventura", "grabar en movimiento", "bajo el agua", "ciclismo", "viaje"],
+      "en": ["extreme sports", "helmet", "adventure", "POV", "underwater", "cycling", "travel"]
+    }
+  },
+  "instant-camera": {
+    "label": { "es": "Cámara instantánea", "en": "Instant camera", "pt": "Câmera instantânea", "fr": "Appareil photo instantané", "de": "Sofortbildkamera", "it": "Fotocamera istantanea", "ja": "インスタントカメラ", "zh": "拍立得", "ko": "즉석 카메라", "ar": "كاميرا فورية" },
+    "keywords": {
+      "es": ["foto impresa", "revelado al momento", "recuerdo", "fiesta", "vintage", "imprimir foto", "boda"],
+      "en": ["printed photo", "print on the spot", "keepsake", "party", "vintage", "photo print", "wedding"]
+    }
+  },
+  "compact-camera": {
+    "label": { "es": "Cámara compacta", "en": "Compact camera", "pt": "Câmera compacta", "fr": "Appareil photo compact", "de": "Kompaktkamera", "it": "Fotocamera compatta", "ja": "コンパクトカメラ", "zh": "卡片相机", "ko": "컴팩트 카메라", "ar": "كاميرا مدمجة" },
+    "keywords": {
+      "es": ["digital", "apuntar y disparar", "fotografía", "de bolsillo", "viaje", "zoom", "tomar fotos"],
+      "en": ["point and shoot", "digital", "photography", "pocket", "travel", "zoom", "take photos"]
+    }
+  },
+  "film-camera": {
+    "label": { "es": "Cámara de rollo", "en": "Film camera", "pt": "Câmera analógica", "fr": "Appareil photo argentique", "de": "Analogkamera", "it": "Fotocamera analogica", "ja": "フィルムカメラ", "zh": "胶片相机", "ko": "필름 카메라", "ar": "كاميرا فيلم" },
+    "keywords": {
+      "es": ["fotografía analógica", "retro", "vintage", "filtros", "35 mm", "revelado", "nostalgia"],
+      "en": ["analog photography", "retro", "vintage", "filters", "35mm", "darkroom", "nostalgia"]
+    }
+  },
+  "dome-camera": {
+    "label": { "es": "Cámara domo", "en": "Dome camera", "pt": "Câmera dome", "fr": "Caméra dôme", "de": "Dome-Kamera", "it": "Telecamera dome", "ja": "ドームカメラ", "zh": "半球摄像机", "ko": "돔 카메라", "ar": "كاميرا قبة" },
+    "keywords": {
+      "es": ["videovigilancia", "seguridad", "CCTV", "techo", "interior", "monitoreo", "circuito cerrado"],
+      "en": ["surveillance", "security", "CCTV", "ceiling", "indoor", "monitoring", "closed circuit"]
+    }
+  },
+  "dash-camera": {
+    "label": { "es": "Cámara para auto", "en": "Dash cam", "pt": "Câmera veicular", "fr": "Caméra embarquée", "de": "Dashcam", "it": "Dashcam", "ja": "ドライブレコーダー", "zh": "行车记录仪", "ko": "블랙박스", "ar": "كاميرا السيارة" },
+    "keywords": {
+      "es": ["dashcam", "tablero", "grabar el camino", "manejo", "flotilla", "accidente", "evidencia"],
+      "en": ["dashboard camera", "driving recorder", "road", "fleet", "accident", "evidence", "driving"]
+    }
+  },
+  "keyboard-hide": {
+    "label": { "es": "Ocultar teclado", "en": "Hide keyboard", "pt": "Ocultar teclado", "fr": "Masquer le clavier", "de": "Tastatur ausblenden", "it": "Nascondi tastiera", "ja": "キーボードを隠す", "zh": "隐藏键盘", "ko": "키보드 숨기기", "ar": "إخفاء لوحة المفاتيح" },
+    "keywords": {
+      "es": ["cerrar", "minimizar", "bajar", "descartar", "en pantalla", "virtual", "más espacio"],
+      "en": ["dismiss", "close", "collapse", "on-screen", "virtual", "more space", "lower"]
+    }
+  },
+  "keyboard-mouse": {
+    "label": { "es": "Teclado y mouse", "en": "Keyboard and mouse", "pt": "Teclado e mouse", "fr": "Clavier et souris", "de": "Tastatur und Maus", "it": "Tastiera e mouse", "ja": "キーボードとマウス", "zh": "键盘和鼠标", "ko": "키보드와 마우스", "ar": "لوحة المفاتيح والفأرة" },
+    "keywords": {
+      "es": ["periféricos", "dispositivos de entrada", "accesorios", "ratón", "combo", "escritorio", "inalámbricos"],
+      "en": ["peripherals", "input devices", "accessories", "combo", "desk", "wireless", "PC gaming"]
+    }
+  },
+  "keyboard-backlight": {
+    "label": { "es": "Retroiluminación del teclado", "en": "Keyboard backlight", "pt": "Luz do teclado", "fr": "Rétroéclairage du clavier", "de": "Tastaturbeleuchtung", "it": "Retroilluminazione tastiera", "ja": "キーボードバックライト", "zh": "键盘背光", "ko": "키보드 백라이트", "ar": "إضاءة لوحة المفاتيح" },
+    "keywords": {
+      "es": ["brillo", "teclas iluminadas", "luz", "RGB", "a oscuras", "atenuar", "noche"],
+      "en": ["brightness", "illuminated keys", "light", "RGB", "dark room", "dim", "night"]
+    }
+  },
+  "keyboard-gear": {
+    "label": { "es": "Configuración del teclado", "en": "Keyboard settings", "pt": "Configurações do teclado", "fr": "Paramètres du clavier", "de": "Tastatureinstellungen", "it": "Impostazioni tastiera", "ja": "キーボード設定", "zh": "键盘设置", "ko": "키보드 설정", "ar": "إعدادات لوحة المفاتيح" },
+    "keywords": {
+      "es": ["distribución", "idioma de entrada", "reemplazo de texto", "atajos", "fuentes de entrada", "ajustes", "autocorrección"],
+      "en": ["layout", "input language", "text replacement", "shortcuts", "input sources", "preferences", "autocorrect"]
+    }
+  },
+  "numpad": {
+    "label": { "es": "Pad numérico", "en": "Numpad", "pt": "Teclado numérico externo", "fr": "Pavé numérique", "de": "Ziffernblock", "it": "Tastierino numerico esterno", "ja": "テンキー", "zh": "数字小键盘", "ko": "숫자 키패드", "ar": "لوحة أرقام منفصلة" },
+    "keywords": {
+      "es": ["capturar cifras", "teclado de números", "contabilidad", "calculadora", "periférico", "captura de datos", "cajero"],
+      "en": ["number entry", "ten-key", "accounting", "calculator", "peripheral", "data entry", "cashier"]
+    }
+  },
+  "trackball": {
+    "label": { "es": "Trackball", "en": "Trackball", "pt": "Trackball", "fr": "Trackball", "de": "Trackball", "it": "Trackball", "ja": "トラックボール", "zh": "轨迹球", "ko": "트랙볼", "ar": "كرة التتبع" },
+    "keywords": {
+      "es": ["mouse de bola", "ergonómico", "puntero", "periférico", "cursor", "sin mover la mano", "diseño CAD"],
+      "en": ["ball mouse", "ergonomic", "pointer", "peripheral", "cursor", "thumb ball", "CAD"]
+    }
+  },
+  "mouse-scroll": {
+    "label": { "es": "Desplazar con la rueda", "en": "Scroll wheel", "pt": "Rolar com a roda", "fr": "Défiler avec la molette", "de": "Mit dem Mausrad scrollen", "it": "Scorri con la rotella", "ja": "ホイールでスクロール", "zh": "滚轮滚动", "ko": "휠로 스크롤", "ar": "التمرير بعجلة الفأرة" },
+    "keywords": {
+      "es": ["scroll", "bajar", "seguir leyendo", "mouse", "deslizar", "más contenido abajo", "navegar"],
+      "en": ["mouse", "keep reading", "more below", "page down", "move down", "browse", "swipe"]
+    }
+  },
+  "trackpad": {
+    "label": { "es": "Trackpad", "en": "Trackpad", "pt": "Trackpad", "fr": "Pavé tactile", "de": "Trackpad", "it": "Trackpad", "ja": "トラックパッド", "zh": "触控板", "ko": "트랙패드", "ar": "لوحة اللمس" },
+    "keywords": {
+      "es": ["touchpad", "panel táctil", "gestos", "laptop", "puntero", "deslizar con dos dedos", "clic"],
+      "en": ["touchpad", "gestures", "laptop", "pointer", "multi-touch", "two-finger swipe", "click"]
+    }
+  },
+  "stylus": {
+    "label": { "es": "Lápiz digital", "en": "Stylus", "pt": "Caneta digital", "fr": "Stylet", "de": "Eingabestift", "it": "Penna digitale", "ja": "スタイラスペン", "zh": "触控笔", "ko": "스타일러스 펜", "ar": "قلم رقمي" },
+    "keywords": {
+      "es": ["pluma", "stylus", "escribir a mano", "dibujar", "firmar", "tomar notas", "pantalla táctil"],
+      "en": ["digital pen", "pencil", "handwriting", "drawing", "sign", "notes", "touchscreen"]
+    }
+  },
+  "usb-hub": {
+    "label": { "es": "Hub USB", "en": "USB hub", "pt": "Hub USB", "fr": "Hub USB", "de": "USB-Hub", "it": "Hub USB", "ja": "USBハブ", "zh": "USB 集线器", "ko": "USB 허브", "ar": "موزع USB" },
+    "keywords": {
+      "es": ["adaptador multipuerto", "concentrador", "puertos", "USB-C", "dongle", "conectar periféricos", "HDMI"],
+      "en": ["multiport adapter", "ports", "USB-C", "dongle", "connect peripherals", "HDMI", "splitter"]
+    }
+  },
+  "docking-station": {
+    "label": { "es": "Estación de acoplamiento", "en": "Docking station", "pt": "Estação de acoplamento", "fr": "Station d’accueil", "de": "Dockingstation", "it": "Docking station", "ja": "ドッキングステーション", "zh": "扩展坞", "ko": "도킹 스테이션", "ar": "محطة إرساء" },
+    "keywords": {
+      "es": ["dock", "laptop", "monitores", "puertos", "escritorio", "un solo cable", "USB-C"],
+      "en": ["dock", "laptop", "monitors", "ports", "desk setup", "single cable", "USB-C"]
+    }
+  },
+  "power-bank": {
+    "label": { "es": "Batería portátil", "en": "Power bank", "pt": "Carregador portátil", "fr": "Batterie externe", "de": "Powerbank", "it": "Power bank", "ja": "モバイルバッテリー", "zh": "充电宝", "ko": "보조배터리", "ar": "بطارية محمولة" },
+    "keywords": {
+      "es": ["power bank", "pila externa", "cargador portátil", "viaje", "sin enchufe", "carga de emergencia", "mAh"],
+      "en": ["portable charger", "battery pack", "external battery", "travel", "on the go", "emergency charge", "mAh"]
+    }
+  },
+  "power-strip": {
+    "label": { "es": "Multicontacto", "en": "Power strip", "pt": "Filtro de linha", "fr": "Multiprise", "de": "Steckdosenleiste", "it": "Ciabatta elettrica", "ja": "電源タップ", "zh": "插线板", "ko": "멀티탭", "ar": "مشترك كهربائي" },
+    "keywords": {
+      "es": ["regulador", "supresor de picos", "extensión", "contactos", "enchufes", "corriente", "protector de voltaje"],
+      "en": ["surge protector", "extension cord", "outlets", "sockets", "multi-plug", "electricity", "plug in devices"]
+    }
+  },
+  "battery-alert": {
+    "label": { "es": "Problema de batería", "en": "Battery issue", "pt": "Problema na bateria", "fr": "Problème de batterie", "de": "Akkuproblem", "it": "Problema della batteria", "ja": "バッテリーの問題", "zh": "电池异常", "ko": "배터리 문제", "ar": "مشكلة في البطارية" },
+    "keywords": {
+      "es": ["sobrecalentamiento", "requiere servicio", "carga en pausa", "advertencia", "temperatura", "falla", "pila inflada"],
+      "en": ["overheating", "service needed", "charging paused", "warning", "temperature", "fault", "swollen"]
+    }
+  },
+  "battery-heart": {
+    "label": { "es": "Salud de la batería", "en": "Battery health", "pt": "Saúde da bateria", "fr": "État de la batterie", "de": "Akkuzustand", "it": "Stato della batteria", "ja": "バッテリーの状態", "zh": "电池健康", "ko": "배터리 성능 상태", "ar": "حالة البطارية" },
+    "keywords": {
+      "es": ["capacidad máxima", "desgaste", "vida útil", "ciclos de carga", "rendimiento", "estado", "cambiar la pila"],
+      "en": ["maximum capacity", "wear", "lifespan", "charge cycles", "performance", "condition", "replacement"]
+    }
+  },
+  "power-toggle": {
+    "label": { "es": "Interruptor de encendido", "en": "Power toggle", "pt": "Interruptor liga/desliga", "fr": "Interrupteur marche/arrêt", "de": "Ein-/Aus-Schalter", "it": "Interruttore di accensione", "ja": "電源スイッチ", "zh": "电源开关", "ko": "전원 스위치", "ar": "مفتاح التشغيل والإيقاف" },
+    "keywords": {
+      "es": ["prender y apagar", "on/off", "switch", "botón de corriente", "activar", "desactivar", "IEC"],
+      "en": ["on/off", "switch", "turn on", "turn off", "single switch", "button", "IEC"]
+    }
+  },
+  "power-sleep": {
+    "label": { "es": "Suspender", "en": "Sleep mode", "pt": "Suspender", "fr": "Veille", "de": "Standby", "it": "Sospensione", "ja": "スリープ", "zh": "睡眠模式", "ko": "절전", "ar": "السكون" },
+    "keywords": {
+      "es": ["modo de reposo", "dormir", "luna", "ahorro de energía", "menú de energía", "pausar el equipo", "standby"],
+      "en": ["standby", "suspend", "moon", "energy saving", "power menu", "rest", "nap"]
+    }
+  },
+  "power-hibernate": {
+    "label": { "es": "Hibernar", "en": "Hibernate", "pt": "Hibernar", "fr": "Veille prolongée", "de": "Ruhezustand", "it": "Ibernazione", "ja": "休止状態", "zh": "休眠", "ko": "최대 절전 모드", "ar": "الإسبات" },
+    "keywords": {
+      "es": ["guardar sesión", "apagar sin cerrar", "menú de energía", "disco", "reanudar después", "ahorro de energía", "suspender en disco"],
+      "en": ["save session", "power off without closing", "power menu", "disk", "resume later", "energy saving", "suspend to disk"]
+    }
+  },
+  "battery-saver": {
+    "label": { "es": "Ahorro de batería", "en": "Battery saver", "pt": "Economia de bateria", "fr": "Économiseur de batterie", "de": "Stromsparmodus", "it": "Risparmio batteria", "ja": "省電力モード", "zh": "省电模式", "ko": "배터리 절약 모드", "ar": "توفير البطارية" },
+    "keywords": {
+      "es": ["bajo consumo", "modo eco", "que dure más", "energía", "acceso rápido", "rendimiento reducido", "pila"],
+      "en": ["low power mode", "eco mode", "last longer", "energy", "quick toggle", "reduced performance", "power saving"]
+    }
+  },
+  "screenshot": {
+    "label": { "es": "Captura de pantalla", "en": "Screenshot", "pt": "Captura de tela", "fr": "Capture d’écran", "de": "Bildschirmfoto", "it": "Screenshot", "ja": "スクリーンショット", "zh": "截图", "ko": "스크린샷", "ar": "لقطة شاشة" },
+    "keywords": {
+      "es": ["pantallazo", "capturar", "imagen de la pantalla", "screenshot", "imprimir pantalla", "recortar", "grabar pantalla"],
+      "en": ["screen capture", "snapshot", "print screen", "screen grab", "capture", "crop", "screen recording"]
+    }
   }
 }

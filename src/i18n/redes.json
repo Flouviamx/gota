@@ -1,0 +1,457 @@
+{
+  "server-plus": {
+    "label": { "es": "Agregar servidor", "en": "Add server", "pt": "Adicionar servidor", "fr": "Ajouter un serveur", "de": "Server hinzufügen", "it": "Aggiungi server", "ja": "サーバーを追加", "zh": "添加服务器", "ko": "서버 추가", "ar": "إضافة خادم" },
+    "keywords": {
+      "es": ["aprovisionar", "crear instancia", "lanzar", "desplegar", "consola de la nube", "panel de hosting", "contratar hosting"],
+      "en": ["provision", "create instance", "launch", "deploy", "cloud console", "hosting panel", "new node"]
+    }
+  },
+  "server-check": {
+    "label": { "es": "Servidor en funcionamiento", "en": "Server operational", "pt": "Servidor operacional", "fr": "Serveur opérationnel", "de": "Server betriebsbereit", "it": "Server operativo", "ja": "サーバー正常", "zh": "服务器运行正常", "ko": "서버 정상", "ar": "الخادم يعمل بشكل طبيعي" },
+    "keywords": {
+      "es": ["en línea", "operativo", "disponible", "sin incidentes", "página de estado", "monitoreo", "uptime", "todo en orden"],
+      "en": ["online", "healthy", "available", "no incidents", "status page", "monitoring", "uptime", "up and running"]
+    }
+  },
+  "server-alert": {
+    "label": { "es": "Problema en el servidor", "en": "Server issue", "pt": "Problema no servidor", "fr": "Problème de serveur", "de": "Serverproblem", "it": "Problema del server", "ja": "サーバーの問題", "zh": "服务器异常", "ko": "서버 문제", "ar": "مشكلة في الخادم" },
+    "keywords": {
+      "es": ["rendimiento degradado", "incidente", "error", "alerta de monitoreo", "lentitud", "servicio parcial", "advertencia", "página de estado"],
+      "en": ["degraded performance", "incident", "error", "monitoring alert", "slowdown", "partial outage", "warning", "status page"]
+    }
+  },
+  "server-x": {
+    "label": { "es": "Servidor caído", "en": "Server down", "pt": "Servidor fora do ar", "fr": "Serveur en panne", "de": "Server ausgefallen", "it": "Server non disponibile", "ja": "サーバーダウン", "zh": "服务器宕机", "ko": "서버 다운", "ar": "الخادم متوقف" },
+    "keywords": {
+      "es": ["se cayó el sitio", "fuera de línea", "sin servicio", "inaccesible", "interrupción", "incidente grave", "página de estado", "error 503"],
+      "en": ["outage", "offline", "unreachable", "no service", "downtime", "major incident", "status page", "503 error"]
+    }
+  },
+  "server-gear": {
+    "label": { "es": "Configuración del servidor", "en": "Server settings", "pt": "Configurações do servidor", "fr": "Paramètres du serveur", "de": "Servereinstellungen", "it": "Impostazioni del server", "ja": "サーバー設定", "zh": "服务器设置", "ko": "서버 설정", "ar": "إعدادات الخادم" },
+    "keywords": {
+      "es": ["ajustes", "administración", "panel de hosting", "herramientas de administración", "configurar", "opciones avanzadas", "parámetros"],
+      "en": ["configuration", "administration", "hosting panel", "admin tools", "configure", "advanced options", "sysadmin"]
+    }
+  },
+  "server-web": {
+    "label": { "es": "Servidor web", "en": "Web server", "pt": "Servidor web", "fr": "Serveur web", "de": "Webserver", "it": "Server web", "ja": "ウェブサーバー", "zh": "Web 服务器", "ko": "웹 서버", "ar": "خادم ويب" },
+    "keywords": {
+      "es": ["hosting", "alojamiento web", "página web", "http", "nginx", "apache", "publicar sitio", "plan de hosting"],
+      "en": ["hosting", "web hosting", "website", "http", "nginx", "apache", "publish site", "hosting plan"]
+    }
+  },
+  "server-mail": {
+    "label": { "es": "Servidor de correo", "en": "Mail server", "pt": "Servidor de e-mail", "fr": "Serveur de messagerie", "de": "Mailserver", "it": "Server di posta", "ja": "メールサーバー", "zh": "邮件服务器", "ko": "메일 서버", "ar": "خادم البريد" },
+    "keywords": {
+      "es": ["smtp", "imap", "pop3", "hosting de correo", "correo corporativo", "configuración de correo", "registro mx", "email"],
+      "en": ["smtp", "imap", "pop3", "email hosting", "business email", "email settings", "mx record", "email"]
+    }
+  },
+  "server-game": {
+    "label": { "es": "Servidor de juegos", "en": "Game server", "pt": "Servidor de jogos", "fr": "Serveur de jeu", "de": "Spieleserver", "it": "Server di gioco", "ja": "ゲームサーバー", "zh": "游戏服务器", "ko": "게임 서버", "ar": "خادم الألعاب" },
+    "keywords": {
+      "es": ["multijugador", "partida en línea", "lobby", "sala de juego", "hosting de juegos", "elegir región", "jugar con amigos"],
+      "en": ["multiplayer", "online match", "lobby", "game hosting", "region picker", "dedicated host", "matchmaking"]
+    }
+  },
+  "server-media": {
+    "label": { "es": "Servidor multimedia", "en": "Media server", "pt": "Servidor de mídia", "fr": "Serveur multimédia", "de": "Medienserver", "it": "Server multimediale", "ja": "メディアサーバー", "zh": "媒体服务器", "ko": "미디어 서버", "ar": "خادم وسائط" },
+    "keywords": {
+      "es": ["streaming", "biblioteca de películas", "videos", "música", "plex", "nas", "transmisión de video", "cine en casa"],
+      "en": ["streaming", "media library", "movies", "music", "plex", "nas", "video delivery", "home theater"]
+    }
+  },
+  "server-database": {
+    "label": { "es": "Servidor de base de datos", "en": "Database server", "pt": "Servidor de banco de dados", "fr": "Serveur de base de données", "de": "Datenbankserver", "it": "Server di database", "ja": "データベースサーバー", "zh": "数据库服务器", "ko": "데이터베이스 서버", "ar": "خادم قاعدة البيانات" },
+    "keywords": {
+      "es": ["sql", "postgres", "mysql", "instancia de datos", "almacenamiento de datos", "backend", "diagrama de infraestructura", "base de datos administrada"],
+      "en": ["sql", "postgres", "mysql", "db instance", "data storage", "backend", "infrastructure diagram", "managed database"]
+    }
+  },
+  "server-maintenance": {
+    "label": { "es": "Servidor en mantenimiento", "en": "Server maintenance", "pt": "Servidor em manutenção", "fr": "Serveur en maintenance", "de": "Serverwartung", "it": "Server in manutenzione", "ja": "サーバーメンテナンス中", "zh": "服务器维护中", "ko": "서버 점검 중", "ar": "الخادم قيد الصيانة" },
+    "keywords": {
+      "es": ["mantenimiento programado", "ventana de servicio", "página de estado", "actualización", "fuera de línea temporal", "aviso de infraestructura", "parche"],
+      "en": ["scheduled maintenance", "service window", "status page", "upgrade", "planned downtime", "infrastructure notice", "patching"]
+    }
+  },
+  "network-check": {
+    "label": { "es": "Red conectada", "en": "Network connected", "pt": "Rede conectada", "fr": "Réseau connecté", "de": "Netzwerk verbunden", "it": "Rete connessa", "ja": "ネットワーク接続済み", "zh": "网络已连接", "ko": "네트워크 연결됨", "ar": "الشبكة متصلة" },
+    "keywords": {
+      "es": ["en línea", "conexión estable", "con internet", "configuración completa", "estado de conexión", "listo", "sin problemas"],
+      "en": ["online", "stable connection", "internet access", "setup complete", "connection status", "ready", "all good"]
+    }
+  },
+  "network-alert": {
+    "label": { "es": "Problema de red", "en": "Network issue", "pt": "Problema de rede", "fr": "Problème de réseau", "de": "Netzwerkproblem", "it": "Problema di rete", "ja": "ネットワークの問題", "zh": "网络异常", "ko": "네트워크 문제", "ar": "مشكلة في الشبكة" },
+    "keywords": {
+      "es": ["conexión limitada", "sin internet", "falla de conexión", "conexión inestable", "diagnosticar", "solucionar problemas", "advertencia"],
+      "en": ["limited connectivity", "no internet", "connection failed", "unstable connection", "diagnose", "troubleshoot", "warning"]
+    }
+  },
+  "network-gear": {
+    "label": { "es": "Configuración de red", "en": "Network settings", "pt": "Configurações de rede", "fr": "Paramètres réseau", "de": "Netzwerkeinstellungen", "it": "Impostazioni di rete", "ja": "ネットワーク設定", "zh": "网络设置", "ko": "네트워크 설정", "ar": "إعدادات الشبكة" },
+    "keywords": {
+      "es": ["ajustes", "router", "ip", "dns", "proxy", "adaptador", "configurar conexión", "preferencias"],
+      "en": ["preferences", "router settings", "ip", "dns", "proxy", "adapter", "configure connection", "network options"]
+    }
+  },
+  "globe-plus": {
+    "label": { "es": "Agregar dominio", "en": "Add domain", "pt": "Adicionar domínio", "fr": "Ajouter un domaine", "de": "Domain hinzufügen", "it": "Aggiungi dominio", "ja": "ドメインを追加", "zh": "添加域名", "ko": "도메인 추가", "ar": "إضافة نطاق" },
+    "keywords": {
+      "es": ["conectar dominio", "dominio propio", "dirección web", "sitio web", "tienda en línea", "creador de sitios", "hosting"],
+      "en": ["connect domain", "custom domain", "web address", "website", "online store", "website builder", "hosting"]
+    }
+  },
+  "globe-check": {
+    "label": { "es": "Dominio verificado", "en": "Domain verified", "pt": "Domínio verificado", "fr": "Domaine vérifié", "de": "Domain verifiziert", "it": "Dominio verificato", "ja": "ドメイン確認済み", "zh": "域名已验证", "ko": "도메인 확인됨", "ar": "تم التحقق من النطاق" },
+    "keywords": {
+      "es": ["dominio conectado", "dns configurado", "sitio publicado", "ssl activo", "en línea", "con internet", "estado de conexión"],
+      "en": ["domain connected", "dns configured", "site live", "ssl active", "online", "internet reachable", "connection status"]
+    }
+  },
+  "globe-alert": {
+    "label": { "es": "Problema con el dominio", "en": "Domain issue", "pt": "Problema no domínio", "fr": "Problème de domaine", "de": "Domainproblem", "it": "Problema del dominio", "ja": "ドメインの問題", "zh": "域名异常", "ko": "도메인 문제", "ar": "مشكلة في النطاق" },
+    "keywords": {
+      "es": ["dns mal configurado", "error de dns", "sitio caído", "sin acceso", "certificado vencido", "dominio vencido", "monitoreo", "advertencia"],
+      "en": ["dns misconfigured", "dns error", "site down", "unreachable", "expired certificate", "domain expired", "monitoring", "warning"]
+    }
+  },
+  "globe-search": {
+    "label": { "es": "Buscar dominio", "en": "Domain search", "pt": "Buscar domínio", "fr": "Rechercher un domaine", "de": "Domain suchen", "it": "Cerca dominio", "ja": "ドメインを検索", "zh": "查询域名", "ko": "도메인 검색", "ar": "البحث عن نطاق" },
+    "keywords": {
+      "es": ["whois", "consulta dns", "disponibilidad", "registrar dominio", "nombre de dominio", "registrador", "creador de sitios"],
+      "en": ["whois", "dns lookup", "availability", "register domain", "domain name", "registrar", "website builder"]
+    }
+  },
+  "globe-pin": {
+    "label": { "es": "Ubicación por IP", "en": "IP location", "pt": "Localização por IP", "fr": "Localisation IP", "de": "IP-Standort", "it": "Posizione IP", "ja": "IPの位置情報", "zh": "IP 属地", "ko": "IP 위치", "ar": "الموقع حسب IP" },
+    "keywords": {
+      "es": ["geolocalización", "ubicación del servidor", "ubicación del visitante", "país de la vpn", "región", "geo ip", "dónde está alojado"],
+      "en": ["geolocation", "server location", "visitor location", "vpn location", "region", "geo-ip", "country"]
+    }
+  },
+  "cloud-region": {
+    "label": { "es": "Región de la nube", "en": "Cloud region", "pt": "Região da nuvem", "fr": "Région cloud", "de": "Cloud-Region", "it": "Regione cloud", "ja": "クラウドリージョン", "zh": "云区域", "ko": "클라우드 리전", "ar": "منطقة سحابية" },
+    "keywords": {
+      "es": ["ubicación", "centro de datos", "elegir región", "despliegue", "latencia", "zona geográfica", "residencia de datos"],
+      "en": ["location", "data center", "region picker", "deploy", "latency", "geography", "data residency"]
+    }
+  },
+  "power-over-ethernet": {
+    "label": { "es": "Alimentación por Ethernet", "en": "Power over Ethernet", "pt": "Alimentação via Ethernet", "fr": "Alimentation par Ethernet", "de": "Power over Ethernet", "it": "Alimentazione via Ethernet", "ja": "PoE給電", "zh": "以太网供电", "ko": "PoE 전원 공급", "ar": "الطاقة عبر الإيثرنت" },
+    "keywords": {
+      "es": ["poe", "corriente por cable de red", "cámaras ip", "puntos de acceso", "teléfonos ip", "puerto del switch", "inyector poe"],
+      "en": ["poe", "power through network cable", "ip cameras", "access points", "voip phones", "switch port", "poe injector"]
+    }
+  },
+  "qr-code-wifi": {
+    "label": { "es": "Código QR de Wi-Fi", "en": "Wi-Fi QR code", "pt": "QR code do Wi-Fi", "fr": "QR code Wi-Fi", "de": "WLAN-QR-Code", "it": "Codice QR del Wi-Fi", "ja": "Wi-FiのQRコード", "zh": "Wi-Fi 二维码", "ko": "Wi-Fi QR 코드", "ar": "رمز QR لشبكة Wi-Fi" },
+    "keywords": {
+      "es": ["compartir wifi", "contraseña del wifi", "red de invitados", "escanear", "wifi del local", "conectarse rápido", "acceso para visitas"],
+      "en": ["share wifi", "wifi password", "guest network", "scan", "venue wifi", "quick connect", "guest access"]
+    }
+  },
+  "network-switch": {
+    "label": { "es": "Switch de red", "en": "Network switch", "pt": "Switch de rede", "fr": "Commutateur réseau", "de": "Netzwerk-Switch", "it": "Switch di rete", "ja": "ネットワークスイッチ", "zh": "网络交换机", "ko": "네트워크 스위치", "ar": "مبدّل الشبكة" },
+    "keywords": {
+      "es": ["conmutador", "red local", "lan", "puertos", "conectar equipos", "inventario de equipos", "mapa de red", "rack"],
+      "en": ["ethernet switch", "lan", "ports", "managed switch", "wired network", "device inventory", "network map", "rack"]
+    }
+  },
+  "modem": {
+    "label": { "es": "Módem", "en": "Modem", "pt": "Modem", "fr": "Modem", "de": "Modem", "it": "Modem", "ja": "モデム", "zh": "调制解调器", "ko": "모뎀", "ar": "مودم" },
+    "keywords": {
+      "es": ["internet", "proveedor de internet", "cable", "dsl", "fibra", "configurar internet", "sin conexión", "reiniciar"],
+      "en": ["internet", "isp", "cable", "dsl", "fiber", "internet setup", "connection troubleshooting", "restart internet"]
+    }
+  },
+  "access-point": {
+    "label": { "es": "Punto de acceso", "en": "Access point", "pt": "Ponto de acesso", "fr": "Point d’accès", "de": "WLAN-Access-Point", "it": "Punto di accesso", "ja": "アクセスポイント", "zh": "无线接入点", "ko": "액세스 포인트", "ar": "نقطة وصول لاسلكية" },
+    "keywords": {
+      "es": ["ap", "wifi de oficina", "montaje en techo", "cobertura", "red inalámbrica", "wifi empresarial", "mapa de red", "lista de dispositivos"],
+      "en": ["ap", "wap", "ceiling mount", "office wifi", "coverage", "wireless network", "enterprise wifi", "network map"]
+    }
+  },
+  "wifi-extender": {
+    "label": { "es": "Repetidor de Wi-Fi", "en": "Wi-Fi extender", "pt": "Repetidor de Wi-Fi", "fr": "Répéteur Wi-Fi", "de": "WLAN-Repeater", "it": "Ripetitore Wi-Fi", "ja": "Wi-Fi中継機", "zh": "Wi-Fi 扩展器", "ko": "Wi-Fi 확장기", "ar": "مقوّي إشارة Wi-Fi" },
+    "keywords": {
+      "es": ["extensor de señal", "amplificador", "ampliar cobertura", "zona sin señal", "red doméstica", "conectar al enchufe", "wifi en toda la casa"],
+      "en": ["range extender", "repeater", "booster", "extend coverage", "dead zone", "home network", "plug-in"]
+    }
+  },
+  "wifi-mesh": {
+    "label": { "es": "Wi-Fi en malla", "en": "Mesh Wi-Fi", "pt": "Wi-Fi mesh", "fr": "Wi-Fi maillé", "de": "Mesh-WLAN", "it": "Wi-Fi mesh", "ja": "メッシュWi-Fi", "zh": "Mesh 组网", "ko": "메시 Wi-Fi", "ar": "شبكة Wi-Fi متداخلة" },
+    "keywords": {
+      "es": ["sistema mesh", "nodos", "satélites", "toda la casa", "cobertura total", "red doméstica", "una sola red", "oficina"],
+      "en": ["mesh system", "nodes", "satellites", "whole-home wifi", "coverage", "home network", "seamless roaming", "office network"]
+    }
+  },
+  "mobile-hotspot": {
+    "label": { "es": "Compartir internet", "en": "Personal hotspot", "pt": "Compartilhar internet", "fr": "Partage de connexion", "de": "Persönlicher Hotspot", "it": "Hotspot personale", "ja": "テザリング", "zh": "个人热点", "ko": "개인용 핫스팟", "ar": "نقطة الاتصال الشخصية" },
+    "keywords": {
+      "es": ["hotspot", "punto de acceso personal", "compartir datos", "anclaje de red", "celular como módem", "datos móviles", "internet de viaje"],
+      "en": ["hotspot", "tethering", "share connection", "mobile data", "phone as modem", "cellular", "travel internet"]
+    }
+  },
+  "network-adapter": {
+    "label": { "es": "Adaptador de red", "en": "Network adapter", "pt": "Adaptador de rede", "fr": "Adaptateur réseau", "de": "Netzwerkadapter", "it": "Adattatore di rete", "ja": "ネットワークアダプター", "zh": "网络适配器", "ko": "네트워크 어댑터", "ar": "محوّل الشبكة" },
+    "keywords": {
+      "es": ["tarjeta de red", "usb", "dongle", "antena wifi usb", "adaptador ethernet", "controlador", "configuración de red", "nic"],
+      "en": ["network card", "nic", "usb", "dongle", "wifi adapter", "ethernet adapter", "driver", "network settings"]
+    }
+  },
+  "patch-panel": {
+    "label": { "es": "Panel de parcheo", "en": "Patch panel", "pt": "Patch panel", "fr": "Panneau de brassage", "de": "Patchpanel", "it": "Pannello di permutazione", "ja": "パッチパネル", "zh": "配线架", "ko": "패치 패널", "ar": "لوحة توصيل الكابلات" },
+    "keywords": {
+      "es": ["cableado estructurado", "rack", "centro de datos", "puertos", "cuarto de telecomunicaciones", "diagrama de cableado", "rj45"],
+      "en": ["structured cabling", "rack", "data center", "ports", "wiring closet", "cabling diagram", "keystone"]
+    }
+  },
+  "antenna": {
+    "label": { "es": "Antena", "en": "Antenna", "pt": "Antena", "fr": "Antenne", "de": "Antenne", "it": "Antenna", "ja": "アンテナ", "zh": "天线", "ko": "안테나", "ar": "هوائي" },
+    "keywords": {
+      "es": ["señal", "recepción", "tv abierta", "radio", "direccional", "enlace de largo alcance", "azotea", "transmisión"],
+      "en": ["signal", "reception", "broadcast tv", "radio", "directional", "long range", "rooftop", "aerial"]
+    }
+  },
+  "fiber-optic": {
+    "label": { "es": "Fibra óptica", "en": "Fiber optics", "pt": "Fibra óptica", "fr": "Fibre optique", "de": "Glasfaser", "it": "Fibra ottica", "ja": "光ファイバー", "zh": "光纤", "ko": "광섬유", "ar": "ألياف ضوئية" },
+    "keywords": {
+      "es": ["internet por fibra", "fibra al hogar", "ftth", "plan de internet", "instalación", "tipo de conexión", "alta velocidad", "gigabit"],
+      "en": ["fiber internet", "fibre", "ftth", "internet plan", "installation", "connection type", "high speed", "gigabit"]
+    }
+  },
+  "ethernet-cable": {
+    "label": { "es": "Cable de red", "en": "Ethernet cable", "pt": "Cabo de rede", "fr": "Câble Ethernet", "de": "Netzwerkkabel", "it": "Cavo di rete", "ja": "LANケーブル", "zh": "网线", "ko": "LAN 케이블", "ar": "كابل إيثرنت" },
+    "keywords": {
+      "es": ["ethernet", "rj45", "cable utp", "cable de internet", "conexión alámbrica", "conectar el cable", "patch cord", "lan"],
+      "en": ["lan cable", "rj45", "patch cord", "cat6", "wired connection", "plug in", "network cord", "utp"]
+    }
+  },
+  "coaxial-cable": {
+    "label": { "es": "Cable coaxial", "en": "Coaxial cable", "pt": "Cabo coaxial", "fr": "Câble coaxial", "de": "Koaxialkabel", "it": "Cavo coassiale", "ja": "同軸ケーブル", "zh": "同轴电缆", "ko": "동축 케이블", "ar": "كابل محوري" },
+    "keywords": {
+      "es": ["internet por cable", "tv por cable", "televisión de paga", "conector f", "cable de antena", "módem de cable", "instalación"],
+      "en": ["cable internet", "cable tv", "coax", "f-connector", "antenna cable", "cable modem", "rg6"]
+    }
+  },
+  "data-center": {
+    "label": { "es": "Centro de datos", "en": "Data center", "pt": "Data center", "fr": "Centre de données", "de": "Rechenzentrum", "it": "Data center", "ja": "データセンター", "zh": "数据中心", "ko": "데이터 센터", "ar": "مركز البيانات" },
+    "keywords": {
+      "es": ["datacenter", "hosting", "infraestructura", "ubicación del servidor", "región", "colocation", "instalaciones", "granja de servidores"],
+      "en": ["datacenter", "hosting", "infrastructure", "server location", "region", "colocation", "facility", "server farm"]
+    }
+  },
+  "server-cluster": {
+    "label": { "es": "Clúster de servidores", "en": "Server cluster", "pt": "Cluster de servidores", "fr": "Cluster de serveurs", "de": "Servercluster", "it": "Cluster di server", "ja": "サーバークラスター", "zh": "服务器集群", "ko": "서버 클러스터", "ar": "عنقود خوادم" },
+    "keywords": {
+      "es": ["nodos", "cómputo distribuido", "kubernetes", "base de datos replicada", "alta disponibilidad", "escalar", "orquestación"],
+      "en": ["nodes", "distributed computing", "kubernetes", "database replicas", "high availability", "scaling", "orchestration"]
+    }
+  },
+  "server-blade": {
+    "label": { "es": "Servidor blade", "en": "Blade server", "pt": "Servidor blade", "fr": "Serveur lame", "de": "Blade-Server", "it": "Server blade", "ja": "ブレードサーバー", "zh": "刀片服务器", "ko": "블레이드 서버", "ar": "خادم نصلي" },
+    "keywords": {
+      "es": ["bare metal", "servidor dedicado", "chasis", "hardware", "inventario de hardware", "plan de hosting", "centro de datos"],
+      "en": ["bare metal", "dedicated server", "chassis", "hardware", "hardware inventory", "hosting plan", "enclosure"]
+    }
+  },
+  "virtual-machine": {
+    "label": { "es": "Máquina virtual", "en": "Virtual machine", "pt": "Máquina virtual", "fr": "Machine virtuelle", "de": "Virtuelle Maschine", "it": "Macchina virtuale", "ja": "仮想マシン", "zh": "虚拟机", "ko": "가상 머신", "ar": "جهاز افتراضي" },
+    "keywords": {
+      "es": ["vm", "vps", "instancia", "servidor virtual", "virtualización", "cómputo en la nube", "hipervisor", "plan de hosting"],
+      "en": ["vm", "vps", "instance", "virtual server", "virtualization", "cloud compute", "hypervisor", "guest os"]
+    }
+  },
+  "client-server": {
+    "label": { "es": "Cliente y servidor", "en": "Client and server", "pt": "Cliente e servidor", "fr": "Client et serveur", "de": "Client und Server", "it": "Client e server", "ja": "クライアントとサーバー", "zh": "客户端与服务器", "ko": "클라이언트와 서버", "ar": "العميل والخادم" },
+    "keywords": {
+      "es": ["arquitectura", "solicitud", "respuesta", "petición http", "backend", "frontend", "diagrama de sistema", "configuración de conexión"],
+      "en": ["architecture", "request", "response", "http request", "backend", "frontend", "system diagram", "connection settings"]
+    }
+  },
+  "peer-to-peer": {
+    "label": { "es": "Conexión entre pares", "en": "Peer-to-peer", "pt": "Conexão ponto a ponto", "fr": "Pair-à-pair", "de": "Peer-to-Peer", "it": "Peer-to-peer", "ja": "ピアツーピア", "zh": "点对点", "ko": "P2P 연결", "ar": "اتصال نظير إلى نظير" },
+    "keywords": {
+      "es": ["p2p", "sin servidor", "conexión directa", "compartir archivos", "webrtc", "descentralizado", "torrent", "entre dispositivos"],
+      "en": ["p2p", "no server", "direct connection", "file sharing", "webrtc", "decentralized", "torrent", "device to device"]
+    }
+  },
+  "server-proxy": {
+    "label": { "es": "Servidor proxy", "en": "Proxy server", "pt": "Servidor proxy", "fr": "Serveur proxy", "de": "Proxyserver", "it": "Server proxy", "ja": "プロキシサーバー", "zh": "代理服务器", "ko": "프록시 서버", "ar": "خادم وكيل" },
+    "keywords": {
+      "es": ["proxy inverso", "intermediario", "reenviar tráfico", "puerta de enlace", "configuración de red", "anonimato", "diagrama de arquitectura"],
+      "en": ["reverse proxy", "intermediary", "forward traffic", "gateway", "network settings", "anonymity", "relay"]
+    }
+  },
+  "dns": {
+    "label": { "es": "DNS", "en": "DNS", "pt": "DNS", "fr": "DNS", "de": "DNS", "it": "DNS", "ja": "DNS", "zh": "DNS", "ko": "DNS", "ar": "نظام أسماء النطاقات" },
+    "keywords": {
+      "es": ["registros", "servidores de nombres", "nameservers", "propagación", "resolver dominio", "registro a", "cname", "apuntar dominio"],
+      "en": ["records", "nameservers", "propagation", "resolve domain", "a record", "cname", "point domain", "resolver"]
+    }
+  },
+  "ip-address": {
+    "label": { "es": "Dirección IP", "en": "IP address", "pt": "Endereço IP", "fr": "Adresse IP", "de": "IP-Adresse", "it": "Indirizzo IP", "ja": "IPアドレス", "zh": "IP 地址", "ko": "IP 주소", "ar": "عنوان IP" },
+    "keywords": {
+      "es": ["ip fija", "ip pública", "ipv4", "ipv6", "reservada", "dhcp", "configuración de red", "consola de hosting"],
+      "en": ["static ip", "public ip", "ipv4", "ipv6", "reserved", "dhcp", "network settings", "elastic ip"]
+    }
+  },
+  "subnet": {
+    "label": { "es": "Subred", "en": "Subnet", "pt": "Sub-rede", "fr": "Sous-réseau", "de": "Subnetz", "it": "Sottorete", "ja": "サブネット", "zh": "子网", "ko": "서브넷", "ar": "شبكة فرعية" },
+    "keywords": {
+      "es": ["vlan", "segmento de red", "vpc", "máscara de red", "cidr", "rango de ip", "red en la nube"],
+      "en": ["vlan", "network segment", "vpc", "netmask", "cidr", "ip range", "cloud networking"]
+    }
+  },
+  "vpn-tunnel": {
+    "label": { "es": "Túnel VPN", "en": "VPN tunnel", "pt": "Túnel VPN", "fr": "Tunnel VPN", "de": "VPN-Tunnel", "it": "Tunnel VPN", "ja": "VPNトンネル", "zh": "VPN 隧道", "ko": "VPN 터널", "ar": "نفق VPN" },
+    "keywords": {
+      "es": ["vpn sitio a sitio", "conexión segura", "cifrado", "acceso remoto", "red privada", "wireguard", "exponer servidor local", "ipsec"],
+      "en": ["site-to-site vpn", "secure connection", "encryption", "remote access", "private network", "wireguard", "expose localhost", "ipsec"]
+    }
+  },
+  "vpn-split-tunnel": {
+    "label": { "es": "Túnel dividido", "en": "Split tunneling", "pt": "Túnel dividido", "fr": "Tunnel fractionné", "de": "Split Tunneling", "it": "Split tunneling", "ja": "スプリットトンネリング", "zh": "VPN 分流", "ko": "스플릿 터널링", "ar": "تقسيم نفق VPN" },
+    "keywords": {
+      "es": ["vpn", "excluir apps", "tráfico directo", "elegir apps", "enrutamiento", "configuración de vpn", "red local"],
+      "en": ["vpn", "exclude apps", "bypass vpn", "direct traffic", "app routing", "vpn settings", "local network"]
+    }
+  },
+  "cdn": {
+    "label": { "es": "CDN", "en": "CDN", "pt": "CDN", "fr": "CDN", "de": "CDN", "it": "CDN", "ja": "CDN", "zh": "CDN", "ko": "CDN", "ar": "شبكة توصيل المحتوى" },
+    "keywords": {
+      "es": ["red de distribución de contenido", "edge", "caché", "puntos de presencia", "velocidad de carga", "rendimiento", "hosting"],
+      "en": ["content delivery network", "edge", "cache", "points of presence", "load speed", "performance", "hosting"]
+    }
+  },
+  "availability-zones": {
+    "label": { "es": "Zonas de disponibilidad", "en": "Availability zones", "pt": "Zonas de disponibilidade", "fr": "Zones de disponibilité", "de": "Verfügbarkeitszonen", "it": "Zone di disponibilità", "ja": "アベイラビリティーゾーン", "zh": "可用区", "ko": "가용 영역", "ar": "مناطق التوافر" },
+    "keywords": {
+      "es": ["az", "multi-az", "redundancia", "resiliencia", "tolerancia a fallos", "región", "centros de datos"],
+      "en": ["az", "multi-az", "redundancy", "resilience", "fault tolerance", "region", "data centers"]
+    }
+  },
+  "hybrid-cloud": {
+    "label": { "es": "Nube híbrida", "en": "Hybrid cloud", "pt": "Nuvem híbrida", "fr": "Cloud hybride", "de": "Hybrid Cloud", "it": "Cloud ibrido", "ja": "ハイブリッドクラウド", "zh": "混合云", "ko": "하이브리드 클라우드", "ar": "سحابة هجينة" },
+    "keywords": {
+      "es": ["servidores locales", "on premise", "nube pública", "nube privada", "centro de datos propio", "infraestructura", "arquitectura"],
+      "en": ["on-premises", "on-prem", "public cloud", "private cloud", "own data center", "infrastructure", "architecture"]
+    }
+  },
+  "multi-cloud": {
+    "label": { "es": "Multinube", "en": "Multicloud", "pt": "Multinuvem", "fr": "Multicloud", "de": "Multi-Cloud", "it": "Multicloud", "ja": "マルチクラウド", "zh": "多云架构", "ko": "멀티 클라우드", "ar": "السحابة المتعددة" },
+    "keywords": {
+      "es": ["varios proveedores", "multicloud", "aws", "azure", "google cloud", "costos de nube", "arquitectura", "evitar dependencia de proveedor"],
+      "en": ["several providers", "aws", "azure", "google cloud", "cloud costs", "architecture", "vendor lock-in", "cloud agnostic"]
+    }
+  },
+  "cloud-network": {
+    "label": { "es": "Red en la nube", "en": "Cloud network", "pt": "Rede na nuvem", "fr": "Réseau cloud", "de": "Cloud-Netzwerk", "it": "Rete cloud", "ja": "クラウドネットワーク", "zh": "云网络", "ko": "클라우드 네트워크", "ar": "شبكة سحابية" },
+    "keywords": {
+      "es": ["dispositivos conectados", "iot", "internet de las cosas", "red administrada", "flota de dispositivos", "gestión remota", "sd-wan"],
+      "en": ["connected devices", "iot", "internet of things", "managed network", "device fleet", "remote management", "sd-wan"]
+    }
+  },
+  "cloud-migration": {
+    "label": { "es": "Migración a la nube", "en": "Cloud migration", "pt": "Migração para a nuvem", "fr": "Migration vers le cloud", "de": "Cloud-Migration", "it": "Migrazione al cloud", "ja": "クラウド移行", "zh": "迁移上云", "ko": "클라우드 마이그레이션", "ar": "الترحيل إلى السحابة" },
+    "keywords": {
+      "es": ["mover servidores", "pasar a la nube", "lift and shift", "plan de traslado", "trasladar cargas de trabajo", "modernizar", "dejar servidores locales"],
+      "en": ["move servers", "move to cloud", "lift and shift", "rehost", "move workloads", "modernize", "migration plan"]
+    }
+  },
+  "auto-scaling": {
+    "label": { "es": "Escalado automático", "en": "Auto scaling", "pt": "Escalonamento automático", "fr": "Mise à l’échelle automatique", "de": "Automatische Skalierung", "it": "Scalabilità automatica", "ja": "オートスケーリング", "zh": "自动伸缩", "ko": "오토스케일링", "ar": "التوسيع التلقائي" },
+    "keywords": {
+      "es": ["autoescalado", "capacidad", "demanda", "picos de tráfico", "política de escalado", "instancias", "elasticidad"],
+      "en": ["autoscale", "capacity", "demand", "scale out", "traffic spikes", "scaling policy", "instances", "elasticity"]
+    }
+  },
+  "failover": {
+    "label": { "es": "Conmutación por error", "en": "Failover", "pt": "Failover", "fr": "Basculement", "de": "Failover", "it": "Failover", "ja": "フェイルオーバー", "zh": "故障转移", "ko": "장애 조치", "ar": "التبديل عند الفشل" },
+    "keywords": {
+      "es": ["failover", "servidor de respaldo", "standby", "alta disponibilidad", "recuperación ante desastres", "redundancia", "continuidad del negocio"],
+      "en": ["backup server", "standby", "switchover", "high availability", "disaster recovery", "redundancy", "business continuity"]
+    }
+  },
+  "topology-ring": {
+    "label": { "es": "Topología en anillo", "en": "Ring topology", "pt": "Topologia em anel", "fr": "Topologie en anneau", "de": "Ringtopologie", "it": "Topologia ad anello", "ja": "リング型トポロジー", "zh": "环形拓扑", "ko": "링형 토폴로지", "ar": "طوبولوجيا الحلقة" },
+    "keywords": {
+      "es": ["diagrama de red", "nodos en círculo", "token ring", "estructura de red", "redes de computadoras", "clase de redes", "arquitectura"],
+      "en": ["network diagram", "circular", "token ring", "nodes", "network layout", "computer networking", "architecture"]
+    }
+  },
+  "topology-bus": {
+    "label": { "es": "Topología en bus", "en": "Bus topology", "pt": "Topologia em barramento", "fr": "Topologie en bus", "de": "Bustopologie", "it": "Topologia a bus", "ja": "バス型トポロジー", "zh": "总线拓扑", "ko": "버스형 토폴로지", "ar": "طوبولوجيا الناقل" },
+    "keywords": {
+      "es": ["diagrama de red", "cable troncal", "línea compartida", "nodos", "estructura de red", "redes de computadoras", "clase de redes"],
+      "en": ["network diagram", "backbone", "shared line", "nodes", "linear", "network layout", "computer networking"]
+    }
+  },
+  "topology-mesh": {
+    "label": { "es": "Topología en malla", "en": "Mesh topology", "pt": "Topologia em malha", "fr": "Topologie maillée", "de": "Vermaschte Topologie", "it": "Topologia a maglia", "ja": "メッシュ型トポロジー", "zh": "网状拓扑", "ko": "메시형 토폴로지", "ar": "طوبولوجيا شبكية" },
+    "keywords": {
+      "es": ["todos conectados", "red mallada", "p2p", "descentralizado", "nodos", "redundancia", "diagrama de red"],
+      "en": ["fully connected", "interconnected", "p2p", "decentralized", "nodes", "redundancy", "network diagram"]
+    }
+  },
+  "topology-tree": {
+    "label": { "es": "Topología en árbol", "en": "Tree topology", "pt": "Topologia em árvore", "fr": "Topologie en arbre", "de": "Baumtopologie", "it": "Topologia ad albero", "ja": "ツリー型トポロジー", "zh": "树形拓扑", "ko": "트리형 토폴로지", "ar": "طوبولوجيا شجرية" },
+    "keywords": {
+      "es": ["jerárquica", "ramas", "nodos", "diagrama de red", "estructura de red", "redes de computadoras", "clase de redes"],
+      "en": ["hierarchical", "branches", "parent and child", "nodes", "network diagram", "network layout", "computer networking"]
+    }
+  },
+  "ping": {
+    "label": { "es": "Ping", "en": "Ping", "pt": "Ping", "fr": "Ping", "de": "Ping", "it": "Ping", "ja": "Ping", "zh": "网络延迟", "ko": "핑", "ar": "اختبار Ping" },
+    "keywords": {
+      "es": ["latencia", "lag", "tiempo de respuesta", "milisegundos", "ida y vuelta", "conexión del juego", "monitoreo", "retraso"],
+      "en": ["latency", "lag", "response time", "milliseconds", "round-trip time", "rtt", "game connection", "monitoring"]
+    }
+  },
+  "bandwidth": {
+    "label": { "es": "Ancho de banda", "en": "Bandwidth", "pt": "Largura de banda", "fr": "Bande passante", "de": "Bandbreite", "it": "Larghezza di banda", "ja": "帯域幅", "zh": "带宽", "ko": "대역폭", "ar": "عرض النطاق الترددي" },
+    "keywords": {
+      "es": ["transferencia de datos", "consumo de datos", "tráfico", "megas", "throughput", "plan de hosting", "monitoreo de red", "capacidad"],
+      "en": ["throughput", "data transfer", "data usage", "traffic", "mbps", "hosting plan", "network monitoring", "capacity"]
+    }
+  },
+  "speed-test": {
+    "label": { "es": "Prueba de velocidad", "en": "Speed test", "pt": "Teste de velocidade", "fr": "Test de débit", "de": "Geschwindigkeitstest", "it": "Test di velocità", "ja": "スピードテスト", "zh": "网速测试", "ko": "속도 테스트", "ar": "اختبار السرعة" },
+    "keywords": {
+      "es": ["medir internet", "megas", "velocidad de descarga", "velocidad de subida", "speedtest", "internet lento", "proveedor de internet"],
+      "en": ["internet speed", "download speed", "upload speed", "mbps", "speedtest", "slow connection", "isp", "measure connection"]
+    }
+  },
+  "packet": {
+    "label": { "es": "Paquete de datos", "en": "Data packet", "pt": "Pacote de dados", "fr": "Paquet de données", "de": "Datenpaket", "it": "Pacchetto dati", "ja": "データパケット", "zh": "数据包", "ko": "데이터 패킷", "ar": "حزمة بيانات" },
+    "keywords": {
+      "es": ["paquete de red", "tráfico", "protocolo", "tcp", "udp", "inspeccionar tráfico", "wireshark", "trama"],
+      "en": ["network packet", "traffic", "protocol", "tcp", "udp", "packet sniffer", "wireshark", "frame"]
+    }
+  },
+  "packet-loss": {
+    "label": { "es": "Pérdida de paquetes", "en": "Packet loss", "pt": "Perda de pacotes", "fr": "Perte de paquets", "de": "Paketverlust", "it": "Perdita di pacchetti", "ja": "パケットロス", "zh": "丢包", "ko": "패킷 손실", "ar": "فقدان الحزم" },
+    "keywords": {
+      "es": ["conexión inestable", "lag", "cortes", "jitter", "llamada entrecortada", "calidad de llamada", "conexión del juego", "monitoreo de red"],
+      "en": ["unstable connection", "lag", "dropouts", "jitter", "choppy call", "call quality", "game connection", "network monitoring"]
+    }
+  },
+  "traceroute": {
+    "label": { "es": "Rastreo de ruta", "en": "Traceroute", "pt": "Rastreamento de rota", "fr": "Traceroute", "de": "Traceroute", "it": "Traceroute", "ja": "経路追跡", "zh": "路由追踪", "ko": "경로 추적", "ar": "تتبع المسار" },
+    "keywords": {
+      "es": ["traceroute", "tracert", "saltos", "ruta de red", "diagnóstico", "herramientas de red", "latencia por salto", "mtr"],
+      "en": ["tracert", "hops", "network path", "route", "diagnostics", "network tools", "hop latency", "mtr"]
+    }
+  },
+  "home-network": {
+    "label": { "es": "Red doméstica", "en": "Home network", "pt": "Rede doméstica", "fr": "Réseau domestique", "de": "Heimnetzwerk", "it": "Rete domestica", "ja": "ホームネットワーク", "zh": "家庭网络", "ko": "홈 네트워크", "ar": "الشبكة المنزلية" },
+    "keywords": {
+      "es": ["wifi de la casa", "router", "dispositivos conectados", "internet en casa", "app del router", "casa inteligente", "red local"],
+      "en": ["home wifi", "router app", "connected devices", "internet at home", "smart home", "lan", "household"]
+    }
+  }
+}
