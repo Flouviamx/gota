@@ -1,0 +1,604 @@
+{
+  "broom": {
+    "label": { "es": "Escoba", "en": "Broom", "pt": "Vassoura", "fr": "Balai", "de": "Besen", "it": "Scopa", "ja": "ほうき", "zh": "扫帚", "ko": "빗자루", "ar": "مكنسة" },
+    "keywords": {
+      "es": ["barrer", "limpiar", "aseo", "quehaceres", "tareas del hogar", "limpieza de casa", "limpiar todo", "ordenar"],
+      "en": ["sweep", "clean up", "house cleaning", "chores", "housework", "tidy", "clear all", "janitor"]
+    }
+  },
+  "broom-check": {
+    "label": { "es": "Limpieza terminada", "en": "Cleaning done", "pt": "Limpeza concluída", "fr": "Ménage terminé", "de": "Reinigung erledigt", "it": "Pulizia completata", "ja": "清掃完了", "zh": "清洁完成", "ko": "청소 완료", "ar": "اكتمل التنظيف" },
+    "keywords": {
+      "es": ["habitación limpia", "cuarto listo", "servicio completado", "visita terminada", "ama de llaves", "estado de limpieza", "lista para huéspedes"],
+      "en": ["room clean", "room ready", "job completed", "visit done", "housekeeping status", "inspected", "ready for guests"]
+    }
+  },
+  "broom-clock": {
+    "label": { "es": "Limpieza programada", "en": "Scheduled cleaning", "pt": "Limpeza agendada", "fr": "Ménage programmé", "de": "Geplante Reinigung", "it": "Pulizia programmata", "ja": "清掃予定", "zh": "清洁排期", "ko": "예정된 청소", "ar": "تنظيف مجدول" },
+    "keywords": {
+      "es": ["próxima visita", "limpieza pendiente", "cambio de huéspedes", "horario de limpieza", "agenda", "turno de limpieza", "por limpiar"],
+      "en": ["next visit", "pending cleaning", "turnover", "cleaning schedule", "appointment", "cleaning shift", "to be cleaned"]
+    }
+  },
+  "broom-alert": {
+    "label": { "es": "Requiere limpieza", "en": "Needs cleaning", "pt": "Precisa de limpeza", "fr": "Nettoyage requis", "de": "Reinigung nötig", "it": "Da pulire", "ja": "要清掃", "zh": "需要清洁", "ko": "청소 필요", "ar": "يحتاج إلى تنظيف" },
+    "keywords": {
+      "es": ["habitación sucia", "cuarto sucio", "limpieza atrasada", "limpieza omitida", "ama de llaves", "reporte de suciedad", "urgente"],
+      "en": ["dirty room", "overdue cleaning", "missed cleaning", "housekeeping", "urgent", "report a mess", "not cleaned"]
+    }
+  },
+  "broom-plus": {
+    "label": { "es": "Agendar limpieza", "en": "Book a cleaning", "pt": "Agendar limpeza", "fr": "Réserver un ménage", "de": "Reinigung buchen", "it": "Prenota una pulizia", "ja": "清掃を予約", "zh": "预约保洁", "ko": "청소 예약", "ar": "حجز تنظيف" },
+    "keywords": {
+      "es": ["reservar limpieza", "nueva limpieza", "agregar tarea", "solicitar servicio", "contratar limpieza", "nuevo trabajo", "pedir aseo"],
+      "en": ["schedule cleaning", "new cleaning", "add task", "request service", "hire a cleaner", "new job", "add cleaning"]
+    }
+  },
+  "broom-sync": {
+    "label": { "es": "Limpieza recurrente", "en": "Recurring cleaning", "pt": "Limpeza recorrente", "fr": "Ménage récurrent", "de": "Regelmäßige Reinigung", "it": "Pulizia ricorrente", "ja": "定期清掃", "zh": "定期清洁", "ko": "정기 청소", "ar": "تنظيف دوري" },
+    "keywords": {
+      "es": ["cada semana", "cada quince días", "plan de limpieza", "suscripción", "repetir", "limpieza periódica", "servicio fijo"],
+      "en": ["weekly", "biweekly", "cleaning plan", "subscription", "repeat", "regular cleaning", "standing appointment"]
+    }
+  },
+  "push-broom": {
+    "label": { "es": "Escoba industrial", "en": "Push broom", "pt": "Vassoura industrial", "fr": "Balai industriel", "de": "Saalbesen", "it": "Scopa industriale", "ja": "業務用ほうき", "zh": "推式扫帚", "ko": "밀대 빗자루", "ar": "مكنسة عريضة" },
+    "keywords": {
+      "es": ["barrer el piso", "intendencia", "conserje", "limpieza comercial", "barrido de calles", "bodega", "cepillo de piso"],
+      "en": ["floor sweeping", "janitorial", "commercial cleaning", "street sweeping", "warehouse", "garage", "floor brush"]
+    }
+  },
+  "dustpan": {
+    "label": { "es": "Recogedor", "en": "Dustpan and brush", "pt": "Pá de lixo", "fr": "Pelle et balayette", "de": "Kehrschaufel", "it": "Paletta", "ja": "ちりとり", "zh": "簸箕", "ko": "쓰레받기", "ar": "مجرفة القمامة" },
+    "keywords": {
+      "es": ["barrer", "migajas", "recoger la basura", "limpieza rápida", "cepillo de mano", "tiradero", "pequeño desorden"],
+      "en": ["sweep up", "crumbs", "hand brush", "quick tidy", "small mess", "pick up dirt", "dust brush"]
+    }
+  },
+  "mop": {
+    "label": { "es": "Trapeador", "en": "Mop", "pt": "Esfregão", "fr": "Balai à franges", "de": "Wischmopp", "it": "Mocio", "ja": "モップ", "zh": "拖把", "ko": "대걸레", "ar": "ممسحة" },
+    "keywords": {
+      "es": ["trapear", "limpiar el piso", "fregar", "limpieza de pisos", "mechudo", "jerga", "piso limpio"],
+      "en": ["mopping", "floor cleaning", "wet mop", "wash the floor", "string mop", "scrub floors", "janitor"]
+    }
+  },
+  "mop-flat": {
+    "label": { "es": "Trapeador plano", "en": "Flat mop", "pt": "Mop plano", "fr": "Balai plat", "de": "Flachmopp", "it": "Mop piatto", "ja": "フラットモップ", "zh": "平板拖把", "ko": "평면 밀대", "ar": "ممسحة مسطحة" },
+    "keywords": {
+      "es": ["microfibra", "trapear", "pisos duros", "piso laminado", "piso de madera", "mopa", "limpieza de pisos"],
+      "en": ["microfiber", "mopping", "hard floors", "laminate", "hardwood", "spray mop", "dust mop"]
+    }
+  },
+  "mop-bucket": {
+    "label": { "es": "Cubeta con exprimidor", "en": "Mop bucket", "pt": "Balde com espremedor", "fr": "Seau avec essoreur", "de": "Wischeimer", "it": "Secchio con strizzatore", "ja": "モップバケツ", "zh": "拖把桶", "ko": "대걸레 양동이", "ar": "دلو الممسحة" },
+    "keywords": {
+      "es": ["intendencia", "conserje", "limpieza comercial", "mantenimiento", "exprimir el trapeador", "carrito de limpieza", "personal de limpieza"],
+      "en": ["janitorial", "janitor", "commercial cleaning", "facility maintenance", "wringer", "cleaning cart", "cleaning crew"]
+    }
+  },
+  "bucket": {
+    "label": { "es": "Cubeta", "en": "Bucket", "pt": "Balde", "fr": "Seau", "de": "Eimer", "it": "Secchio", "ja": "バケツ", "zh": "水桶", "ko": "양동이", "ar": "دلو" },
+    "keywords": {
+      "es": ["balde", "agua", "agua con jabón", "quehaceres", "artículos de limpieza", "acarrear", "cubo"],
+      "en": ["pail", "water", "soapy water", "chores", "cleaning supplies", "carry", "container"]
+    }
+  },
+  "spray-bottle": {
+    "label": { "es": "Atomizador", "en": "Spray bottle", "pt": "Borrifador", "fr": "Vaporisateur", "de": "Sprühflasche", "it": "Spruzzino", "ja": "スプレーボトル", "zh": "喷雾瓶", "ko": "분무기", "ar": "بخاخة" },
+    "keywords": {
+      "es": ["productos de limpieza", "rociar", "limpiador", "desinfectante", "servicio de limpieza", "nivel de limpieza", "multiusos", "rociador"],
+      "en": ["cleaning products", "spray", "cleaner", "disinfectant", "cleaning service", "cleanliness rating", "all-purpose cleaner", "trigger sprayer"]
+    }
+  },
+  "spray-bottle-leaf": {
+    "label": { "es": "Limpieza ecológica", "en": "Eco-friendly cleaning", "pt": "Limpeza ecológica", "fr": "Nettoyage écologique", "de": "Umweltfreundliche Reinigung", "it": "Pulizia ecologica", "ja": "エコ清掃", "zh": "环保清洁", "ko": "친환경 청소", "ar": "تنظيف صديق للبيئة" },
+    "keywords": {
+      "es": ["productos ecológicos", "biodegradable", "sin químicos", "no tóxico", "limpieza verde", "natural", "sustentable", "preferencia de servicio"],
+      "en": ["green cleaning", "non-toxic", "biodegradable", "natural products", "chemical-free", "sustainable", "eco products", "booking preference"]
+    }
+  },
+  "spray-can": {
+    "label": { "es": "Aerosol", "en": "Spray can", "pt": "Lata de spray", "fr": "Bombe aérosol", "de": "Sprühdose", "it": "Bomboletta spray", "ja": "スプレー缶", "zh": "喷雾罐", "ko": "스프레이 캔", "ar": "علبة رذاذ" },
+    "keywords": {
+      "es": ["insecticida", "aromatizante", "desodorante ambiental", "desinfectante", "rociar", "lata", "fumigar", "plagas"],
+      "en": ["insecticide", "bug spray", "air freshener", "disinfectant", "aerosol", "room deodorizer", "pest control"]
+    }
+  },
+  "pump-sprayer": {
+    "label": { "es": "Bomba fumigadora", "en": "Pump sprayer", "pt": "Pulverizador", "fr": "Pulvérisateur", "de": "Drucksprüher", "it": "Pompa irroratrice", "ja": "噴霧器", "zh": "压力喷雾器", "ko": "압축 분무기", "ar": "مرشة ضغط" },
+    "keywords": {
+      "es": ["fumigación", "control de plagas", "exterminador", "fumigar", "aspersora", "plaguicida", "insecticida", "jardín"],
+      "en": ["fumigation", "pest control", "exterminator", "tank sprayer", "pesticide", "fumigate", "bug treatment", "garden sprayer"]
+    }
+  },
+  "sponge": {
+    "label": { "es": "Esponja", "en": "Sponge", "pt": "Esponja", "fr": "Éponge", "de": "Schwamm", "it": "Spugna", "ja": "スポンジ", "zh": "海绵", "ko": "스펀지", "ar": "إسفنجة" },
+    "keywords": {
+      "es": ["fibra", "tallar", "lavar trastes", "fregar", "estropajo", "limpiar la cocina", "tarja"],
+      "en": ["scrub", "scourer", "dishwashing", "wash dishes", "kitchen cleaning", "wipe", "scrubbing pad"]
+    }
+  },
+  "scrub-brush": {
+    "label": { "es": "Cepillo de tallar", "en": "Scrub brush", "pt": "Escova de limpeza", "fr": "Brosse à récurer", "de": "Scheuerbürste", "it": "Spazzola per pulizia", "ja": "掃除用ブラシ", "zh": "清洁刷", "ko": "청소 솔", "ar": "فرشاة تنظيف" },
+    "keywords": {
+      "es": ["tallar", "cepillar", "azulejos", "juntas", "lechada", "fregar el piso", "mugre", "limpieza profunda"],
+      "en": ["scrubbing", "brush", "tiles", "grout", "floor scrubbing", "grime", "deep clean", "stubborn dirt"]
+    }
+  },
+  "feather-duster": {
+    "label": { "es": "Plumero", "en": "Feather duster", "pt": "Espanador", "fr": "Plumeau", "de": "Staubwedel", "it": "Piumino", "ja": "はたき", "zh": "鸡毛掸子", "ko": "먼지떨이", "ar": "منفضة ريش" },
+    "keywords": {
+      "es": ["sacudir", "polvo", "quitar el polvo", "limpieza ligera", "muebles", "repisas", "sacudidor"],
+      "en": ["dusting", "dust", "dust off", "light cleaning", "shelves", "furniture", "tidy up"]
+    }
+  },
+  "squeegee": {
+    "label": { "es": "Limpiavidrios", "en": "Squeegee", "pt": "Rodo limpa-vidros", "fr": "Raclette", "de": "Fensterabzieher", "it": "Tergivetro", "ja": "スクイージー", "zh": "玻璃刮", "ko": "스퀴지", "ar": "ممسحة زجاج" },
+    "keywords": {
+      "es": ["ventanas", "vidrios", "cristales", "cancel de baño", "jalador", "limpiar ventanas", "escurrir el agua"],
+      "en": ["windows", "glass", "window cleaning", "shower glass", "wiper", "window washer", "streak-free"]
+    }
+  },
+  "rubber-glove": {
+    "label": { "es": "Guante de hule", "en": "Rubber glove", "pt": "Luva de borracha", "fr": "Gant de ménage", "de": "Gummihandschuh", "it": "Guanto di gomma", "ja": "ゴム手袋", "zh": "橡胶手套", "ko": "고무장갑", "ar": "قفاز مطاطي" },
+    "keywords": {
+      "es": ["guantes de limpieza", "lavar trastes", "proteger las manos", "químicos", "guante de látex", "fregar", "limpieza"],
+      "en": ["cleaning gloves", "dishwashing", "hand protection", "chemicals", "household gloves", "latex glove", "scrubbing"]
+    }
+  },
+  "cleaning-cloth": {
+    "label": { "es": "Paño de microfibra", "en": "Cleaning cloth", "pt": "Pano de limpeza", "fr": "Chiffon", "de": "Putztuch", "it": "Panno", "ja": "掃除用クロス", "zh": "抹布", "ko": "청소용 천", "ar": "خرقة تنظيف" },
+    "keywords": {
+      "es": ["trapo", "franela", "limpiar superficies", "sacudir", "pulir", "secar", "jerga"],
+      "en": ["rag", "microfiber", "wipe down", "wipe surfaces", "dusting", "polishing", "dishcloth"]
+    }
+  },
+  "paper-towel": {
+    "label": { "es": "Toallas de papel", "en": "Paper towels", "pt": "Papel toalha", "fr": "Essuie-tout", "de": "Küchenrolle", "it": "Carta da cucina", "ja": "キッチンペーパー", "zh": "厨房纸巾", "ko": "키친타월", "ar": "مناشف ورقية" },
+    "keywords": {
+      "es": ["servitoallas", "papel de cocina", "rollo de papel", "derrame", "secar", "limpiar la cocina", "insumos", "absorbente"],
+      "en": ["kitchen roll", "paper roll", "spills", "wipe up", "dry hands", "kitchen cleanup", "supplies", "absorbent"]
+    }
+  },
+  "disinfecting-wipes": {
+    "label": { "es": "Toallitas desinfectantes", "en": "Disinfecting wipes", "pt": "Lenços desinfetantes", "fr": "Lingettes désinfectantes", "de": "Desinfektionstücher", "it": "Salviette disinfettanti", "ja": "除菌シート", "zh": "消毒湿巾", "ko": "소독 물티슈", "ar": "مناديل مطهرة" },
+    "keywords": {
+      "es": ["desinfectar", "sanitizar", "superficies", "gérmenes", "higiene", "limpieza profunda", "antibacterial", "toallitas húmedas"],
+      "en": ["disinfect", "sanitize", "surfaces", "germs", "hygiene", "enhanced cleaning", "antibacterial", "sanitizing wipes"]
+    }
+  },
+  "cleaning-caddy": {
+    "label": { "es": "Kit de limpieza", "en": "Cleaning caddy", "pt": "Kit de limpeza", "fr": "Panier de ménage", "de": "Putzmittelkorb", "it": "Cestino per le pulizie", "ja": "掃除用具入れ", "zh": "清洁工具篮", "ko": "청소 도구함", "ar": "حقيبة أدوات التنظيف" },
+    "keywords": {
+      "es": ["artículos de limpieza", "productos de limpieza", "material de limpieza", "insumos", "inventario", "organizador", "herramientas de limpieza"],
+      "en": ["cleaning supplies", "cleaner's kit", "supply inventory", "cleaning products", "tote", "organizer", "cleaning tools"]
+    }
+  },
+  "wet-floor-sign": {
+    "label": { "es": "Piso mojado", "en": "Wet floor", "pt": "Piso molhado", "fr": "Sol glissant", "de": "Rutschgefahr", "it": "Pavimento bagnato", "ja": "床濡れ注意", "zh": "小心地滑", "ko": "미끄럼 주의", "ar": "أرضية مبللة" },
+    "keywords": {
+      "es": ["precaución", "resbaloso", "letrero", "señalamiento", "limpiando el piso", "limpieza en curso", "peligro de caída"],
+      "en": ["caution", "slippery", "caution sign", "floor being cleaned", "cleaning in progress", "slip hazard", "facility cleaning"]
+    }
+  },
+  "house-cleaning": {
+    "label": { "es": "Limpieza del hogar", "en": "House cleaning", "pt": "Limpeza residencial", "fr": "Ménage à domicile", "de": "Hausreinigung", "it": "Pulizie domestiche", "ja": "ハウスクリーニング", "zh": "家政保洁", "ko": "집 청소", "ar": "تنظيف المنزل" },
+    "keywords": {
+      "es": ["servicio doméstico", "trabajadora del hogar", "limpieza a domicilio", "reservar limpieza", "aseo de casa", "quehaceres", "limpieza profunda"],
+      "en": ["home cleaning", "maid service", "housekeeper", "cleaning booking", "housekeeping", "cleaning service", "deep clean"]
+    }
+  },
+  "trash-bag": {
+    "label": { "es": "Bolsa de basura", "en": "Trash bag", "pt": "Saco de lixo", "fr": "Sac poubelle", "de": "Müllbeutel", "it": "Sacco della spazzatura", "ja": "ゴミ袋", "zh": "垃圾袋", "ko": "쓰레기봉투", "ar": "كيس قمامة" },
+    "keywords": {
+      "es": ["sacar la basura", "desechos", "recolección", "residuos", "bolsa negra", "desperdicios", "insumos"],
+      "en": ["take out the trash", "garbage bag", "bin bag", "waste", "refuse", "waste collection", "supplies"]
+    }
+  },
+  "trash-bag-clock": {
+    "label": { "es": "Día de la basura", "en": "Trash day", "pt": "Dia da coleta de lixo", "fr": "Jour de collecte", "de": "Müllabfuhrtermin", "it": "Giorno di raccolta rifiuti", "ja": "ゴミの日", "zh": "垃圾收集日", "ko": "쓰레기 수거일", "ar": "يوم جمع القمامة" },
+    "keywords": {
+      "es": ["recolección de basura", "camión de la basura", "horario de recolección", "sacar la basura", "calendario", "recordatorio", "servicio de limpia"],
+      "en": ["garbage collection", "pickup schedule", "garbage truck", "collection day", "bin day", "reminder", "take out the trash"]
+    }
+  },
+  "dumpster": {
+    "label": { "es": "Contenedor de basura", "en": "Dumpster", "pt": "Caçamba", "fr": "Benne à ordures", "de": "Müllcontainer", "it": "Cassonetto", "ja": "ゴミコンテナ", "zh": "大型垃圾箱", "ko": "쓰레기 컨테이너", "ar": "حاوية نفايات" },
+    "keywords": {
+      "es": ["retiro de cachivaches", "vaciado de casa", "escombro", "basura voluminosa", "renta de contenedor", "desechos", "remodelación"],
+      "en": ["junk removal", "cleanout", "bulk waste", "dumpster rental", "debris", "roll-off", "construction waste"]
+    }
+  },
+  "dish-rack": {
+    "label": { "es": "Escurridor de trastes", "en": "Dish rack", "pt": "Escorredor de louça", "fr": "Égouttoir", "de": "Abtropfgestell", "it": "Scolapiatti", "ja": "水切りかご", "zh": "沥水架", "ko": "식기 건조대", "ar": "رف تجفيف الأطباق" },
+    "keywords": {
+      "es": ["lavar trastes", "secar platos", "lavar a mano", "escurrir", "vajilla", "cocina", "quehaceres"],
+      "en": ["washing up", "dishes", "dry dishes", "hand washing", "dish drainer", "kitchen", "chores"]
+    }
+  },
+  "dish-soap": {
+    "label": { "es": "Lavatrastes", "en": "Dish soap", "pt": "Detergente de louça", "fr": "Liquide vaisselle", "de": "Spülmittel", "it": "Detersivo per piatti", "ja": "食器用洗剤", "zh": "洗洁精", "ko": "주방 세제", "ar": "سائل غسيل الأطباق" },
+    "keywords": {
+      "es": ["jabón para trastes", "lavar trastes", "detergente", "jabón líquido", "desengrasante", "artículos de limpieza", "cocina"],
+      "en": ["dishwashing liquid", "washing-up liquid", "wash dishes", "detergent", "liquid soap", "degreaser", "kitchen supplies"]
+    }
+  },
+  "detergent": {
+    "label": { "es": "Detergente líquido", "en": "Laundry detergent", "pt": "Sabão líquido", "fr": "Lessive liquide", "de": "Flüssigwaschmittel", "it": "Detersivo liquido", "ja": "液体洗剤", "zh": "洗衣液", "ko": "액체 세제", "ar": "منظف غسيل سائل" },
+    "keywords": {
+      "es": ["lavar ropa", "jabón para ropa", "lavandería", "insumos", "preferencia de detergente", "suavizante", "hipoalergénico"],
+      "en": ["wash clothes", "laundry soap", "washing liquid", "supplies", "detergent preference", "fabric softener", "hypoallergenic"]
+    }
+  },
+  "detergent-alert": {
+    "label": { "es": "Poco detergente", "en": "Low detergent", "pt": "Pouco sabão", "fr": "Lessive bientôt épuisée", "de": "Waschmittel fast leer", "it": "Detersivo in esaurimento", "ja": "洗剤残量わずか", "zh": "洗衣液不足", "ko": "세제 부족", "ar": "المنظف على وشك النفاد" },
+    "keywords": {
+      "es": ["rellenar", "se está acabando", "reponer", "dosificación automática", "suscripción", "nivel bajo", "volver a comprar", "aviso de la lavadora"],
+      "en": ["refill", "running out", "restock", "auto-dosing", "subscription", "low level", "reorder", "washer alert"]
+    }
+  },
+  "washing-powder": {
+    "label": { "es": "Detergente en polvo", "en": "Washing powder", "pt": "Sabão em pó", "fr": "Lessive en poudre", "de": "Waschpulver", "it": "Detersivo in polvere", "ja": "粉末洗剤", "zh": "洗衣粉", "ko": "가루 세제", "ar": "مسحوق غسيل" },
+    "keywords": {
+      "es": ["jabón en polvo", "lavar ropa", "jabón para ropa", "lavandería", "insumos", "caja de detergente", "ropa blanca"],
+      "en": ["powder detergent", "soap powder", "laundry soap", "wash clothes", "supplies", "detergent box", "laundry"]
+    }
+  },
+  "plunger": {
+    "label": { "es": "Destapacaños", "en": "Plunger", "pt": "Desentupidor", "fr": "Ventouse", "de": "Saugglocke", "it": "Sturalavandini", "ja": "ラバーカップ", "zh": "马桶搋子", "ko": "뚫어뻥", "ar": "مكبس تسليك" },
+    "keywords": {
+      "es": ["destapar", "baño tapado", "drenaje", "coladera", "plomería", "plomero", "atasco", "bomba para baño"],
+      "en": ["unclog", "clogged toilet", "drain", "blocked sink", "plumbing", "plumber", "backed up"]
+    }
+  },
+  "laundry-basket": {
+    "label": { "es": "Canasta de ropa", "en": "Laundry basket", "pt": "Cesto de roupa", "fr": "Panier à linge", "de": "Wäschekorb", "it": "Cesto della biancheria", "ja": "洗濯かご", "zh": "洗衣篮", "ko": "빨래 바구니", "ar": "سلة الغسيل" },
+    "keywords": {
+      "es": ["lavar ropa", "ropa sucia", "lavandería", "pedido de lavandería", "lavar y doblar", "carga de ropa", "quehaceres"],
+      "en": ["do the laundry", "dirty clothes", "wash and fold", "laundry order", "load of washing", "hamper", "chores"]
+    }
+  },
+  "laundry-basket-check": {
+    "label": { "es": "Ropa lista", "en": "Laundry done", "pt": "Roupa pronta", "fr": "Linge prêt", "de": "Wäsche fertig", "it": "Bucato pronto", "ja": "洗濯完了", "zh": "衣物已洗好", "ko": "세탁 완료", "ar": "الغسيل جاهز" },
+    "keywords": {
+      "es": ["pedido entregado", "lavado y doblado", "ropa limpia", "pedido completo", "lavandería", "entrega a domicilio", "terminado"],
+      "en": ["order delivered", "washed and folded", "clean clothes", "order complete", "laundry delivered", "wash and fold", "finished"]
+    }
+  },
+  "laundry-basket-clock": {
+    "label": { "es": "Recolección de ropa", "en": "Laundry pickup", "pt": "Coleta de roupa", "fr": "Collecte du linge", "de": "Wäscheabholung", "it": "Ritiro del bucato", "ja": "洗濯物の集荷", "zh": "预约取衣", "ko": "세탁물 수거", "ar": "استلام الغسيل" },
+    "keywords": {
+      "es": ["recolección programada", "en proceso", "lavandería a domicilio", "pedido en curso", "cita de recolección", "pendiente", "en lavado"],
+      "en": ["scheduled pickup", "in progress", "laundry service", "order in progress", "pickup time", "pending", "being washed"]
+    }
+  },
+  "laundry-hamper": {
+    "label": { "es": "Cesto de ropa sucia", "en": "Laundry hamper", "pt": "Cesto de roupa suja", "fr": "Panier à linge sale", "de": "Wäschesammler", "it": "Portabiancheria", "ja": "ランドリーボックス", "zh": "脏衣篓", "ko": "빨래통", "ar": "سلة الملابس المتسخة" },
+    "keywords": {
+      "es": ["ropa sucia", "cesto con tapa", "ropa por lavar", "lavandería del hotel", "recolección de ropa", "baño", "habitación"],
+      "en": ["dirty clothes", "lidded basket", "clothes to wash", "hotel laundry", "laundry collection", "bathroom", "bedroom"]
+    }
+  },
+  "clothespin": {
+    "label": { "es": "Pinza para ropa", "en": "Clothespin", "pt": "Prendedor de roupa", "fr": "Pince à linge", "de": "Wäscheklammer", "it": "Molletta", "ja": "洗濯ばさみ", "zh": "衣夹", "ko": "빨래집게", "ar": "ملقط غسيل" },
+    "keywords": {
+      "es": ["tender ropa", "colgar", "secar al aire", "tendedero", "gancho", "broche", "sujetar"],
+      "en": ["hang laundry", "clothes peg", "air drying", "clothesline", "clip", "peg", "pin up"]
+    }
+  },
+  "clothesline": {
+    "label": { "es": "Tendedero", "en": "Clothesline", "pt": "Varal", "fr": "Corde à linge", "de": "Wäscheleine", "it": "Filo del bucato", "ja": "物干しロープ", "zh": "晾衣绳", "ko": "빨랫줄", "ar": "حبل الغسيل" },
+    "keywords": {
+      "es": ["tender ropa", "secar al sol", "secar al aire", "azotea", "patio", "lazo", "quehaceres"],
+      "en": ["hang out washing", "line drying", "air drying", "sun drying", "backyard", "washing line", "chores"]
+    }
+  },
+  "ironing-board": {
+    "label": { "es": "Burro de planchar", "en": "Ironing board", "pt": "Tábua de passar", "fr": "Planche à repasser", "de": "Bügelbrett", "it": "Asse da stiro", "ja": "アイロン台", "zh": "熨衣板", "ko": "다리미판", "ar": "طاولة الكي" },
+    "keywords": {
+      "es": ["planchar", "planchado", "servicio de planchado", "quitar arrugas", "camisas", "tabla de planchar", "quehaceres"],
+      "en": ["ironing", "pressing", "ironing service", "remove wrinkles", "shirts", "iron", "chores"]
+    }
+  },
+  "lint-roller": {
+    "label": { "es": "Rodillo quitapelusa", "en": "Lint roller", "pt": "Rolo tira-pelos", "fr": "Rouleau anti-peluches", "de": "Fusselrolle", "it": "Rullo levapelucchi", "ja": "粘着ローラー", "zh": "粘毛器", "ko": "먼지 제거 롤러", "ar": "أسطوانة إزالة الوبر" },
+    "keywords": {
+      "es": ["pelusa", "pelos de mascota", "rodillo adhesivo", "ropa oscura", "pelo de perro", "pelo de gato", "quitapelos"],
+      "en": ["pet hair", "fluff", "sticky roller", "fuzz", "dark clothes", "dog hair", "cat hair"]
+    }
+  },
+  "shirt-folded": {
+    "label": { "es": "Camisa doblada", "en": "Folded shirt", "pt": "Camisa dobrada", "fr": "Chemise pliée", "de": "Gefaltetes Hemd", "it": "Camicia piegata", "ja": "たたんだシャツ", "zh": "叠好的衬衫", "ko": "개어 놓은 셔츠", "ar": "قميص مطوي" },
+    "keywords": {
+      "es": ["lavar y doblar", "ropa doblada", "doblar ropa", "lavandería", "ropa limpia", "planchado", "pedido listo"],
+      "en": ["wash and fold", "folded laundry", "fold clothes", "laundry service", "clean clothes", "pressed", "neat"]
+    }
+  },
+  "shirt-stain": {
+    "label": { "es": "Camisa manchada", "en": "Stained shirt", "pt": "Camisa manchada", "fr": "Chemise tachée", "de": "Hemd mit Fleck", "it": "Camicia macchiata", "ja": "シミのついたシャツ", "zh": "有污渍的衬衫", "ko": "얼룩진 셔츠", "ar": "قميص ملطخ" },
+    "keywords": {
+      "es": ["quitar manchas", "tratamiento de manchas", "cuidado especial", "desmanchar", "tintorería", "prenda delicada", "ropa sucia"],
+      "en": ["stain removal", "stain treatment", "special care", "spot treatment", "dry cleaning", "garment care", "dirty clothes"]
+    }
+  },
+  "linens": {
+    "label": { "es": "Toallas y sábanas", "en": "Linens", "pt": "Roupa de cama e banho", "fr": "Linge de maison", "de": "Haushaltswäsche", "it": "Biancheria", "ja": "リネン類", "zh": "布草", "ko": "침구와 수건", "ar": "البياضات" },
+    "keywords": {
+      "es": ["blancos", "cambio de sábanas", "toallas limpias", "ropa de cama", "ama de llaves", "insumos de hotel", "lavandería"],
+      "en": ["bed linen", "towels", "sheets", "linen change", "fresh towels", "housekeeping supplies", "bedding"]
+    }
+  },
+  "garment-bag": {
+    "label": { "es": "Tintorería", "en": "Dry cleaning", "pt": "Lavagem a seco", "fr": "Pressing", "de": "Chemische Reinigung", "it": "Lavaggio a secco", "ja": "ドライクリーニング", "zh": "干洗", "ko": "드라이클리닝", "ar": "تنظيف جاف" },
+    "keywords": {
+      "es": ["lavado en seco", "portatrajes", "funda para traje", "solo lavado en seco", "guardar ropa", "traje", "vestido"],
+      "en": ["dry clean only", "garment bag", "suit bag", "garment storage", "suit", "dress", "cleaners"]
+    }
+  },
+  "garment-bag-check": {
+    "label": { "es": "Tintorería lista", "en": "Dry cleaning ready", "pt": "Lavagem a seco pronta", "fr": "Pressing prêt", "de": "Reinigung abholbereit", "it": "Lavaggio a secco pronto", "ja": "クリーニング仕上がり", "zh": "干洗完成", "ko": "드라이클리닝 완료", "ar": "التنظيف الجاف جاهز" },
+    "keywords": {
+      "es": ["listo para recoger", "pedido listo", "recoger en tintorería", "aviso de recolección", "prenda lista", "traje limpio", "entrega"],
+      "en": ["ready for pickup", "order ready", "pickup notice", "garment ready", "clean suit", "collect", "cleaners"]
+    }
+  },
+  "wash": {
+    "label": { "es": "Lavar a máquina", "en": "Machine wash", "pt": "Lavar na máquina", "fr": "Lavage en machine", "de": "Maschinenwäsche", "it": "Lavaggio in lavatrice", "ja": "洗濯機洗い可", "zh": "可机洗", "ko": "세탁기 사용 가능", "ar": "غسيل في الغسالة" },
+    "keywords": {
+      "es": ["símbolo de lavado", "etiqueta de cuidado", "lavable", "ciclo normal", "instrucciones de lavado", "lavadora", "cuidado de la ropa"],
+      "en": ["washing symbol", "care label", "washable", "normal cycle", "care instructions", "washing machine", "laundry symbol"]
+    }
+  },
+  "wash-30": {
+    "label": { "es": "Lavar a 30 °C", "en": "Wash at 30 °C", "pt": "Lavar a 30 °C", "fr": "Lavage à 30 °C", "de": "Waschen bei 30 °C", "it": "Lavaggio a 30 °C", "ja": "30 °Cで洗濯", "zh": "30 °C 洗涤", "ko": "30 °C 세탁", "ar": "الغسيل على 30 °C" },
+    "keywords": {
+      "es": ["agua fría", "lavado en frío", "ropa de color", "ciclo frío", "etiqueta de cuidado", "temperatura de lavado", "30 grados"],
+      "en": ["cold wash", "cold water", "colors", "cool cycle", "care label", "wash temperature", "30 degrees"]
+    }
+  },
+  "wash-40": {
+    "label": { "es": "Lavar a 40 °C", "en": "Wash at 40 °C", "pt": "Lavar a 40 °C", "fr": "Lavage à 40 °C", "de": "Waschen bei 40 °C", "it": "Lavaggio a 40 °C", "ja": "40 °Cで洗濯", "zh": "40 °C 洗涤", "ko": "40 °C 세탁", "ar": "الغسيل على 40 °C" },
+    "keywords": {
+      "es": ["agua tibia", "lavado tibio", "ropa de diario", "sintéticos", "etiqueta de cuidado", "temperatura de lavado", "40 grados"],
+      "en": ["warm wash", "warm water", "everyday wear", "synthetics", "care label", "wash temperature", "40 degrees"]
+    }
+  },
+  "wash-50": {
+    "label": { "es": "Lavar a 50 °C", "en": "Wash at 50 °C", "pt": "Lavar a 50 °C", "fr": "Lavage à 50 °C", "de": "Waschen bei 50 °C", "it": "Lavaggio a 50 °C", "ja": "50 °Cで洗濯", "zh": "50 °C 洗涤", "ko": "50 °C 세탁", "ar": "الغسيل على 50 °C" },
+    "keywords": {
+      "es": ["agua caliente", "lavado caliente", "ropa resistente", "mezclas de algodón", "etiqueta de cuidado", "temperatura de lavado", "50 grados"],
+      "en": ["hot wash", "hot water", "sturdy fabrics", "cotton blends", "care label", "wash temperature", "50 degrees"]
+    }
+  },
+  "wash-60": {
+    "label": { "es": "Lavar a 60 °C", "en": "Wash at 60 °C", "pt": "Lavar a 60 °C", "fr": "Lavage à 60 °C", "de": "Waschen bei 60 °C", "it": "Lavaggio a 60 °C", "ja": "60 °Cで洗濯", "zh": "60 °C 洗涤", "ko": "60 °C 세탁", "ar": "الغسيل على 60 °C" },
+    "keywords": {
+      "es": ["agua caliente", "toallas", "sábanas", "algodón", "etiqueta de cuidado", "temperatura de lavado", "60 grados"],
+      "en": ["hot wash", "towels", "bedding", "cotton", "care label", "wash temperature", "60 degrees"]
+    }
+  },
+  "wash-70": {
+    "label": { "es": "Lavar a 70 °C", "en": "Wash at 70 °C", "pt": "Lavar a 70 °C", "fr": "Lavage à 70 °C", "de": "Waschen bei 70 °C", "it": "Lavaggio a 70 °C", "ja": "70 °Cで洗濯", "zh": "70 °C 洗涤", "ko": "70 °C 세탁", "ar": "الغسيل على 70 °C" },
+    "keywords": {
+      "es": ["agua muy caliente", "lavado intenso", "ropa de trabajo", "desinfectar", "etiqueta de cuidado", "temperatura de lavado", "70 grados"],
+      "en": ["very hot wash", "intensive wash", "workwear", "sanitize", "care label", "wash temperature", "70 degrees"]
+    }
+  },
+  "wash-95": {
+    "label": { "es": "Lavar a 95 °C", "en": "Wash at 95 °C", "pt": "Lavar a 95 °C", "fr": "Lavage à 95 °C", "de": "Waschen bei 95 °C", "it": "Lavaggio a 95 °C", "ja": "95 °Cで洗濯", "zh": "95 °C 洗涤", "ko": "95 °C 세탁", "ar": "الغسيل على 95 °C" },
+    "keywords": {
+      "es": ["hervir", "lavado a ebullición", "ropa blanca", "algodón y lino", "etiqueta de cuidado", "temperatura de lavado", "95 grados"],
+      "en": ["boil wash", "boiling", "whites", "cotton and linen", "care label", "wash temperature", "95 degrees"]
+    }
+  },
+  "wash-by-hand": {
+    "label": { "es": "Lavar a mano", "en": "Hand wash", "pt": "Lavar à mão", "fr": "Lavage à la main", "de": "Handwäsche", "it": "Lavaggio a mano", "ja": "手洗い", "zh": "手洗", "ko": "손세탁", "ar": "غسيل يدوي" },
+    "keywords": {
+      "es": ["solo a mano", "etiqueta de cuidado", "ropa delicada", "no usar lavadora", "lavado manual", "agua tibia", "lana"],
+      "en": ["care label", "delicates", "do not machine wash", "wash manually", "lukewarm water", "wool", "gentle care"]
+    }
+  },
+  "wash-gentle": {
+    "label": { "es": "Ciclo suave", "en": "Gentle cycle", "pt": "Ciclo suave", "fr": "Cycle doux", "de": "Schonwaschgang", "it": "Ciclo moderato", "ja": "弱水流で洗濯", "zh": "轻柔洗涤", "ko": "약한 세탁", "ar": "دورة لطيفة" },
+    "keywords": {
+      "es": ["planchado permanente", "sintéticos", "etiqueta de cuidado", "centrifugado suave", "ciclo de lavado", "menos arrugas", "una barra"],
+      "en": ["permanent press", "synthetics", "care label", "reduced spin", "wash cycle", "fewer wrinkles", "one bar"]
+    }
+  },
+  "wash-delicate": {
+    "label": { "es": "Ciclo delicado", "en": "Delicate cycle", "pt": "Ciclo delicado", "fr": "Cycle délicat", "de": "Spezialschonwaschgang", "it": "Ciclo molto delicato", "ja": "非常に弱い水流で洗濯", "zh": "非常轻柔洗涤", "ko": "매우 약한 세탁", "ar": "دورة الملابس الرقيقة" },
+    "keywords": {
+      "es": ["ropa delicada", "lana", "seda", "muy suave", "lencería", "etiqueta de cuidado", "dos barras"],
+      "en": ["delicates", "wool", "silk", "very mild", "lingerie", "care label", "two bars"]
+    }
+  },
+  "wash-rinse": {
+    "label": { "es": "Enjuagar", "en": "Rinse", "pt": "Enxaguar", "fr": "Rinçage", "de": "Spülen", "it": "Risciacquo", "ja": "すすぎ", "zh": "漂洗", "ko": "헹굼", "ar": "شطف" },
+    "keywords": {
+      "es": ["ciclo de enjuague", "solo enjuague", "enjuague extra", "programa de lavado", "lavadora", "quitar el jabón", "agua limpia"],
+      "en": ["rinse cycle", "rinse only", "extra rinse", "laundry program", "washer", "remove soap", "clean water"]
+    }
+  },
+  "wring": {
+    "label": { "es": "Exprimir", "en": "Wring", "pt": "Torcer", "fr": "Tordre", "de": "Auswringen", "it": "Strizzare", "ja": "絞る", "zh": "拧干", "ko": "비틀어 짜기", "ar": "عصر" },
+    "keywords": {
+      "es": ["torcer", "escurrir", "quitar el agua", "no exprimir", "etiqueta de cuidado", "símbolo de cuidado", "secado"],
+      "en": ["twist", "squeeze out", "remove water", "do not wring", "care label", "care symbol", "drying"]
+    }
+  },
+  "bleach": {
+    "label": { "es": "Blanqueador permitido", "en": "Bleach allowed", "pt": "Alvejante permitido", "fr": "Javel autorisée", "de": "Bleichen erlaubt", "it": "Candeggio consentito", "ja": "漂白可", "zh": "可漂白", "ko": "표백 가능", "ar": "يُسمح بالتبييض" },
+    "keywords": {
+      "es": ["cloro", "blanquear", "ropa blanca", "quitar manchas", "triángulo", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["chlorine bleach", "whiten", "whites", "stain removal", "triangle", "care label", "care symbol"]
+    }
+  },
+  "bleach-non-chlorine": {
+    "label": { "es": "Blanqueador sin cloro", "en": "Non-chlorine bleach", "pt": "Alvejante sem cloro", "fr": "Blanchiment sans chlore", "de": "Nur Sauerstoffbleiche", "it": "Candeggio senza cloro", "ja": "酸素系漂白のみ可", "zh": "仅可用非氯漂白剂", "ko": "산소계 표백만 가능", "ar": "مبيّض خالٍ من الكلور فقط" },
+    "keywords": {
+      "es": ["blanqueador de oxígeno", "oxígeno activo", "ropa de color", "cuidado del color", "quitamanchas", "triángulo con rayas", "etiqueta de cuidado"],
+      "en": ["oxygen bleach", "color-safe bleach", "colors", "oxygen only", "stain remover", "striped triangle", "care label"]
+    }
+  },
+  "dry-tumble": {
+    "label": { "es": "Secar en secadora", "en": "Tumble dry", "pt": "Secar na secadora", "fr": "Sèche-linge autorisé", "de": "Trocknergeeignet", "it": "Asciugatrice consentita", "ja": "タンブル乾燥可", "zh": "可滚筒烘干", "ko": "건조기 사용 가능", "ar": "تجفيف في المجفف" },
+    "keywords": {
+      "es": ["secado normal", "secar a máquina", "apto para secadora", "ciclo de secado", "cuadro con círculo", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["dryer", "normal heat", "machine dry", "dryer safe", "drying cycle", "care label", "care symbol"]
+    }
+  },
+  "dry-tumble-low": {
+    "label": { "es": "Secadora a baja temperatura", "en": "Tumble dry low", "pt": "Secadora em temperatura baixa", "fr": "Sèche-linge basse température", "de": "Trockner: niedrige Temperatur", "it": "Asciugatrice a bassa temperatura", "ja": "低温でタンブル乾燥", "zh": "低温滚筒烘干", "ko": "저온 건조", "ar": "تجفيف على حرارة منخفضة" },
+    "keywords": {
+      "es": ["calor bajo", "secado delicado", "un punto", "evitar que encoja", "sintéticos", "ropa delicada", "etiqueta de cuidado"],
+      "en": ["low heat", "delicate dry", "one dot", "prevent shrinking", "synthetics", "gentle dry", "care label"]
+    }
+  },
+  "dry-tumble-medium": {
+    "label": { "es": "Secadora a temperatura media", "en": "Tumble dry medium", "pt": "Secadora em temperatura média", "fr": "Sèche-linge température moyenne", "de": "Trockner: mittlere Temperatur", "it": "Asciugatrice a media temperatura", "ja": "中温でタンブル乾燥", "zh": "中温滚筒烘干", "ko": "중온 건조", "ar": "تجفيف على حرارة متوسطة" },
+    "keywords": {
+      "es": ["calor medio", "dos puntos", "planchado permanente", "secado normal", "ropa de diario", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["medium heat", "two dots", "permanent press", "regular dry", "everyday clothes", "care label", "care symbol"]
+    }
+  },
+  "dry-tumble-high": {
+    "label": { "es": "Secadora a alta temperatura", "en": "Tumble dry high", "pt": "Secadora em temperatura alta", "fr": "Sèche-linge haute température", "de": "Trockner: hohe Temperatur", "it": "Asciugatrice ad alta temperatura", "ja": "高温でタンブル乾燥", "zh": "高温滚筒烘干", "ko": "고온 건조", "ar": "تجفيف على حرارة عالية" },
+    "keywords": {
+      "es": ["calor alto", "tres puntos", "algodón", "toallas", "secado rápido", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["high heat", "three dots", "cotton", "towels", "quick dry", "care label", "care symbol"]
+    }
+  },
+  "dry-line": {
+    "label": { "es": "Secar en tendedero", "en": "Line dry", "pt": "Secar no varal", "fr": "Séchage sur fil", "de": "Auf der Leine trocknen", "it": "Asciugare appeso", "ja": "つり干し", "zh": "悬挂晾干", "ko": "걸어서 건조", "ar": "تجفيف على الحبل" },
+    "keywords": {
+      "es": ["colgar", "secar al aire", "tender", "no usar secadora", "gancho", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["hang to dry", "air dry", "clothesline", "no dryer", "hanger", "care label", "care symbol"]
+    }
+  },
+  "dry-drip": {
+    "label": { "es": "Secado por goteo", "en": "Drip dry", "pt": "Secar sem torcer", "fr": "Séchage par égouttage", "de": "Tropfnass aufhängen", "it": "Asciugatura a goccia", "ja": "ぬれつり干し", "zh": "滴干", "ko": "젖은 채로 걸어서 건조", "ar": "تجفيف بالتقطير" },
+    "keywords": {
+      "es": ["sin exprimir", "colgar mojado", "no centrifugar", "secar al aire", "camisas", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["hang wet", "no wringing", "no spin", "air dry", "wrinkle-free", "care label", "care symbol"]
+    }
+  },
+  "dry-flat": {
+    "label": { "es": "Secar extendido", "en": "Dry flat", "pt": "Secar na horizontal", "fr": "Séchage à plat", "de": "Liegend trocknen", "it": "Asciugare in piano", "ja": "平干し", "zh": "平铺晾干", "ko": "뉘어서 건조", "ar": "تجفيف بشكل مسطح" },
+    "keywords": {
+      "es": ["en horizontal", "suéter", "tejidos", "lana", "no colgar", "evitar que se estire", "etiqueta de cuidado"],
+      "en": ["lay flat", "sweater", "knitwear", "wool", "do not hang", "keep shape", "care label"]
+    }
+  },
+  "dry-shade": {
+    "label": { "es": "Secar a la sombra", "en": "Dry in shade", "pt": "Secar à sombra", "fr": "Séchage à l’ombre", "de": "Im Schatten trocknen", "it": "Asciugare all’ombra", "ja": "陰干し", "zh": "阴干", "ko": "그늘에서 건조", "ar": "تجفيف في الظل" },
+    "keywords": {
+      "es": ["sin sol", "evitar que se decolore", "ropa de color", "proteger del sol", "secar al aire", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["no sun", "avoid fading", "colors", "sun protection", "air dry", "care label", "care symbol"]
+    }
+  },
+  "iron-low": {
+    "label": { "es": "Planchar a baja temperatura", "en": "Iron on low", "pt": "Passar em temperatura baixa", "fr": "Repassage à basse température", "de": "Bügeln bei niedriger Temperatur", "it": "Stirare a bassa temperatura", "ja": "低温でアイロン", "zh": "低温熨烫", "ko": "저온 다림질", "ar": "كي على حرارة منخفضة" },
+    "keywords": {
+      "es": ["un punto", "110 grados", "sintéticos", "acrílico", "nailon", "plancha tibia", "etiqueta de cuidado"],
+      "en": ["one dot", "110 degrees", "synthetics", "acrylic", "nylon", "cool iron", "care label"]
+    }
+  },
+  "iron-medium": {
+    "label": { "es": "Planchar a temperatura media", "en": "Iron on medium", "pt": "Passar em temperatura média", "fr": "Repassage à température moyenne", "de": "Bügeln bei mittlerer Temperatur", "it": "Stirare a media temperatura", "ja": "中温でアイロン", "zh": "中温熨烫", "ko": "중온 다림질", "ar": "كي على حرارة متوسطة" },
+    "keywords": {
+      "es": ["dos puntos", "150 grados", "lana", "seda", "poliéster", "calor moderado", "etiqueta de cuidado"],
+      "en": ["two dots", "150 degrees", "wool", "silk", "polyester", "warm iron", "care label"]
+    }
+  },
+  "iron-high": {
+    "label": { "es": "Planchar a alta temperatura", "en": "Iron on high", "pt": "Passar em temperatura alta", "fr": "Repassage à haute température", "de": "Bügeln bei hoher Temperatur", "it": "Stirare ad alta temperatura", "ja": "高温でアイロン", "zh": "高温熨烫", "ko": "고온 다림질", "ar": "كي على حرارة عالية" },
+    "keywords": {
+      "es": ["tres puntos", "200 grados", "algodón", "lino", "mezclilla", "plancha caliente", "etiqueta de cuidado"],
+      "en": ["three dots", "200 degrees", "cotton", "linen", "denim", "hot iron", "care label"]
+    }
+  },
+  "iron-steam": {
+    "label": { "es": "Planchar con vapor", "en": "Steam ironing", "pt": "Passar a vapor", "fr": "Repassage à la vapeur", "de": "Dampfbügeln", "it": "Stiratura a vapore", "ja": "スチームアイロン可", "zh": "可蒸汽熨烫", "ko": "스팀 다림질 가능", "ar": "الكي بالبخار" },
+    "keywords": {
+      "es": ["plancha de vapor", "vaporizador", "vaporizar", "quitar arrugas", "planchado", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["steam iron", "steamer", "steaming", "remove wrinkles", "pressing", "care label", "care symbol"]
+    }
+  },
+  "iron-steam-off": {
+    "label": { "es": "Sin vapor", "en": "No steam", "pt": "Sem vapor", "fr": "Sans vapeur", "de": "Ohne Dampf bügeln", "it": "Senza vapore", "ja": "スチーム不可", "zh": "禁止蒸汽熨烫", "ko": "스팀 사용 금지", "ar": "بدون بخار" },
+    "keywords": {
+      "es": ["planchar en seco", "no usar vapor", "plancha seca", "evitar marcas de agua", "prenda delicada", "etiqueta de cuidado", "símbolo de cuidado"],
+      "en": ["dry iron", "do not steam", "steam off", "avoid water marks", "delicate fabric", "care label", "care symbol"]
+    }
+  },
+  "fly-swatter": {
+    "label": { "es": "Matamoscas", "en": "Fly swatter", "pt": "Mata-moscas", "fr": "Tapette à mouches", "de": "Fliegenklatsche", "it": "Ammazzamosche", "ja": "ハエたたき", "zh": "苍蝇拍", "ko": "파리채", "ar": "مضرب ذباب" },
+    "keywords": {
+      "es": ["moscas", "insectos", "bichos", "mosquitos", "matar insectos", "control de plagas", "plaga"],
+      "en": ["flies", "insects", "bugs", "mosquitoes", "swat", "kill bugs", "pest control"]
+    }
+  },
+  "cockroach": {
+    "label": { "es": "Cucaracha", "en": "Cockroach", "pt": "Barata", "fr": "Cafard", "de": "Kakerlake", "it": "Scarafaggio", "ja": "ゴキブリ", "zh": "蟑螂", "ko": "바퀴벌레", "ar": "صرصور" },
+    "keywords": {
+      "es": ["plaga", "control de plagas", "fumigación", "infestación", "insecto", "bichos", "libre de plagas", "reporte de plagas"],
+      "en": ["roach", "pest control", "fumigation", "infestation", "insect", "bugs", "pest-free", "pest report"]
+    }
+  },
+  "rat": {
+    "label": { "es": "Rata", "en": "Rat", "pt": "Ratazana", "fr": "Rat", "de": "Ratte", "it": "Ratto", "ja": "ネズミ", "zh": "老鼠", "ko": "쥐", "ar": "جرذ" },
+    "keywords": {
+      "es": ["roedor", "ratón", "control de roedores", "desratización", "plaga", "fumigación", "infestación"],
+      "en": ["rodent", "mouse", "rodent control", "pest", "vermin", "exterminator", "infestation"]
+    }
+  },
+  "mosquito-coil": {
+    "label": { "es": "Espiral antimosquitos", "en": "Mosquito coil", "pt": "Espiral repelente", "fr": "Spirale anti-moustiques", "de": "Mückenspirale", "it": "Zampirone", "ja": "蚊取り線香", "zh": "蚊香", "ko": "모기향", "ar": "لفائف طاردة للبعوض" },
+    "keywords": {
+      "es": ["mosquitos", "zancudos", "repelente", "piquetes", "terraza", "jardín", "control de plagas"],
+      "en": ["mosquitoes", "repellent", "insect repellent", "bug bites", "patio", "outdoor", "pest control"]
+    }
+  },
+  "stain": {
+    "label": { "es": "Mancha", "en": "Stain", "pt": "Mancha", "fr": "Tache", "de": "Fleck", "it": "Macchia", "ja": "シミ", "zh": "污渍", "ko": "얼룩", "ar": "بقعة" },
+    "keywords": {
+      "es": ["quitar manchas", "desmanchar", "suciedad", "superficie sucia", "mugre", "tratar la mancha", "limpiar"],
+      "en": ["spot", "stain removal", "dirt", "dirty surface", "mark", "blot", "spot cleaning"]
+    }
+  },
+  "stain-check": {
+    "label": { "es": "Mancha eliminada", "en": "Stain removed", "pt": "Mancha removida", "fr": "Tache éliminée", "de": "Fleck entfernt", "it": "Macchia rimossa", "ja": "シミ抜き完了", "zh": "污渍已清除", "ko": "얼룩 제거 완료", "ar": "تمت إزالة البقعة" },
+    "keywords": {
+      "es": ["desmanchado", "tratamiento de manchas", "limpieza puntual", "prenda limpia", "sin manchas", "tintorería", "listo"],
+      "en": ["spot cleaned", "stain treatment", "spot cleaning done", "clean garment", "spotless", "treated", "dry cleaner"]
+    }
+  },
+  "dust": {
+    "label": { "es": "Polvo", "en": "Dust", "pt": "Poeira", "fr": "Poussière", "de": "Staub", "it": "Polvere", "ja": "ほこり", "zh": "灰尘", "ko": "먼지", "ar": "غبار" },
+    "keywords": {
+      "es": ["sacudir", "superficie con polvo", "polvoso", "alergia al polvo", "ácaros", "suciedad", "limpieza"],
+      "en": ["dusting", "dusty", "dust allergy", "dust mites", "dirt", "particles", "cleaning"]
+    }
+  },
+  "spill": {
+    "label": { "es": "Derrame", "en": "Spill", "pt": "Derramamento", "fr": "Liquide renversé", "de": "Verschüttete Flüssigkeit", "it": "Liquido versato", "ja": "こぼれた液体", "zh": "洒出的液体", "ko": "쏟아진 액체", "ar": "انسكاب" },
+    "keywords": {
+      "es": ["bebida derramada", "se tiró", "accidente", "líquido", "charco", "limpiar", "mancha"],
+      "en": ["spilled drink", "knocked over", "accident", "liquid", "puddle", "clean up", "mess"]
+    }
+  },
+  "bubbles": {
+    "label": { "es": "Burbujas", "en": "Bubbles", "pt": "Bolhas", "fr": "Bulles", "de": "Seifenblasen", "it": "Bolle", "ja": "泡", "zh": "泡泡", "ko": "거품", "ar": "فقاعات" },
+    "keywords": {
+      "es": ["jabón", "espuma", "lavado", "limpio", "frescura", "enjabonar", "baño de burbujas"],
+      "en": ["soap", "foam", "suds", "washing", "clean", "fresh", "lather"]
+    }
+  },
+  "mold": {
+    "label": { "es": "Moho", "en": "Mold", "pt": "Mofo", "fr": "Moisissure", "de": "Schimmel", "it": "Muffa", "ja": "カビ", "zh": "霉菌", "ko": "곰팡이", "ar": "عفن" },
+    "keywords": {
+      "es": ["hongos", "humedad", "pared húmeda", "salitre", "manchas negras", "filtración", "mal olor", "remediación"],
+      "en": ["mildew", "damp", "damp wall", "black mold", "fungus", "leak", "musty smell", "mold remediation"]
+    }
+  }
+}

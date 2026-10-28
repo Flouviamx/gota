@@ -1,0 +1,569 @@
+{
+  "dog": {
+    "label": { "es": "Perro", "en": "Dog", "pt": "Cachorro", "fr": "Chien", "de": "Hund", "it": "Cane", "ja": "犬", "zh": "狗", "ko": "개", "ar": "كلب" },
+    "keywords": {
+      "es": ["lomito", "perrito", "can", "mascota", "perfil del perro", "se aceptan perros", "tipo de mascota"],
+      "en": ["pet", "canine", "doggy", "pup", "dog profile", "dog friendly", "pet type"]
+    }
+  },
+  "dog-alert": {
+    "label": { "es": "Cuidado con el perro", "en": "Beware of dog", "pt": "Cuidado com o cão", "fr": "Attention au chien", "de": "Vorsicht, Hund", "it": "Attenti al cane", "ja": "猛犬注意", "zh": "当心恶犬", "ko": "개 조심", "ar": "احذر الكلب" },
+    "keywords": {
+      "es": ["perro en el domicilio", "aviso para repartidores", "perro bravo", "perro reactivo", "visitas", "precaución", "nota de entrega"],
+      "en": ["dog on premises", "courier note", "delivery instructions", "reactive dog", "visitors", "caution", "guard dog"]
+    }
+  },
+  "dog-bark": {
+    "label": { "es": "Perro ladrando", "en": "Barking dog", "pt": "Cachorro latindo", "fr": "Chien qui aboie", "de": "Bellender Hund", "it": "Cane che abbaia", "ja": "吠える犬", "zh": "吠叫的狗", "ko": "짖는 개", "ar": "كلب ينبح" },
+    "keywords": {
+      "es": ["ladrido", "ladridos detectados", "reconocimiento de sonido", "cámara para mascotas", "ruido", "queja de vecinos", "alerta de sonido"],
+      "en": ["bark", "bark detected", "sound recognition", "pet camera", "noise", "noise complaint", "sound alert"]
+    }
+  },
+  "cat-meow": {
+    "label": { "es": "Gato maullando", "en": "Meowing cat", "pt": "Gato miando", "fr": "Chat qui miaule", "de": "Miauende Katze", "it": "Gatto che miagola", "ja": "鳴く猫", "zh": "喵喵叫的猫", "ko": "야옹하는 고양이", "ar": "قطة تموء" },
+    "keywords": {
+      "es": ["maullido", "miau", "maullido detectado", "reconocimiento de sonido", "cámara para mascotas", "alerta de sonido", "llamando"],
+      "en": ["meow", "meow detected", "sound recognition", "pet camera", "sound alert", "cat sound", "calling"]
+    }
+  },
+  "pets": {
+    "label": { "es": "Perro y gato", "en": "Dog and cat", "pt": "Cachorro e gato", "fr": "Chien et chat", "de": "Hund und Katze", "it": "Cane e gatto", "ja": "犬と猫", "zh": "狗和猫", "ko": "개와 고양이", "ar": "كلب وقطة" },
+    "keywords": {
+      "es": ["mascotas", "mis mascotas", "varias mascotas", "animales de compañía", "familia peluda", "dueños de mascotas", "lomitos y michis"],
+      "en": ["pets", "my pets", "multi-pet household", "companion animals", "furry family", "pet owners", "animals"]
+    }
+  },
+  "pet-detection": {
+    "label": { "es": "Mascota detectada", "en": "Pet detected", "pt": "Pet detectado", "fr": "Animal détecté", "de": "Tier erkannt", "it": "Animale rilevato", "ja": "ペットを検知", "zh": "检测到宠物", "ko": "반려동물 감지", "ar": "رصد حيوان أليف" },
+    "keywords": {
+      "es": ["detección de animales", "cámara de seguridad", "timbre inteligente", "alerta de movimiento", "videovigilancia", "visión artificial", "reconocimiento"],
+      "en": ["animal detection", "security camera", "video doorbell", "motion alert", "surveillance", "computer vision", "smart alert"]
+    }
+  },
+  "paw-plus": {
+    "label": { "es": "Agregar mascota", "en": "Add pet", "pt": "Adicionar pet", "fr": "Ajouter un animal", "de": "Haustier hinzufügen", "it": "Aggiungi animale", "ja": "ペットを追加", "zh": "添加宠物", "ko": "반려동물 추가", "ar": "إضافة حيوان أليف" },
+    "keywords": {
+      "es": ["nueva mascota", "registrar mascota", "crear perfil", "dar de alta", "nuevo integrante", "añadir", "sumar a la familia"],
+      "en": ["new pet", "register pet", "create profile", "enroll", "new family member", "plus", "onboarding"]
+    }
+  },
+  "paw-check": {
+    "label": { "es": "Se aceptan mascotas", "en": "Pets allowed", "pt": "Aceita pets", "fr": "Animaux acceptés", "de": "Haustiere erlaubt", "it": "Animali ammessi", "ja": "ペット可", "zh": "允许携带宠物", "ko": "반려동물 동반 가능", "ar": "يُسمح بالحيوانات الأليفة" },
+    "keywords": {
+      "es": ["pet friendly", "mascotas permitidas", "mascota verificada", "aprobado", "admite mascotas", "bienvenidas las mascotas", "confirmado"],
+      "en": ["pet friendly", "pets welcome", "verified pet", "approved", "dogs allowed", "cats allowed", "confirmed"]
+    }
+  },
+  "paw-heart": {
+    "label": { "es": "Adoptar mascota", "en": "Adopt a pet", "pt": "Adotar um pet", "fr": "Adopter un animal", "de": "Haustier adoptieren", "it": "Adotta un animale", "ja": "里親になる", "zh": "领养宠物", "ko": "반려동물 입양", "ar": "تبنّي حيوان أليف" },
+    "keywords": {
+      "es": ["adopción", "mascotas favoritas", "amantes de los animales", "adopta no compres", "rescate", "favoritos", "me gusta"],
+      "en": ["adoption", "favorite pets", "pet lovers", "adopt don't shop", "rescue", "favorites", "like"]
+    }
+  },
+  "paw-search": {
+    "label": { "es": "Buscar mascota", "en": "Find a pet", "pt": "Encontrar um pet", "fr": "Trouver un animal", "de": "Haustier finden", "it": "Trova un animale", "ja": "ペットを探す", "zh": "寻找宠物", "ko": "반려동물 찾기", "ar": "البحث عن حيوان أليف" },
+    "keywords": {
+      "es": ["mascota extraviada", "perdidos y encontrados", "búsqueda de adopción", "se busca", "filtrar mascotas", "explorar", "localizar"],
+      "en": ["lost and found", "missing pet", "adoption search", "search", "browse pets", "filter", "locate"]
+    }
+  },
+  "paw-alert": {
+    "label": { "es": "Mascota perdida", "en": "Lost pet", "pt": "Pet perdido", "fr": "Animal perdu", "de": "Tier vermisst", "it": "Animale smarrito", "ja": "迷子のペット", "zh": "宠物走失", "ko": "반려동물 실종", "ar": "حيوان أليف مفقود" },
+    "keywords": {
+      "es": ["alerta", "extraviado", "se busca", "emergencia", "aviso a vecinos", "ayúdame a encontrarlo", "urgente"],
+      "en": ["missing pet", "alert", "emergency", "help find", "neighborhood alert", "urgent", "have you seen"]
+    }
+  },
+  "paw-edit": {
+    "label": { "es": "Editar perfil de mascota", "en": "Edit pet profile", "pt": "Editar perfil do pet", "fr": "Modifier le profil de l’animal", "de": "Haustierprofil bearbeiten", "it": "Modifica profilo dell’animale", "ja": "ペット情報を編集", "zh": "编辑宠物资料", "ko": "반려동물 정보 수정", "ar": "تعديل ملف الحيوان الأليف" },
+    "keywords": {
+      "es": ["datos de la mascota", "modificar", "actualizar", "cambiar nombre", "raza", "fecha de nacimiento", "ajustes"],
+      "en": ["pet details", "modify", "update", "rename", "breed", "birthday", "settings"]
+    }
+  },
+  "bone": {
+    "label": { "es": "Hueso", "en": "Bone", "pt": "Osso", "fr": "Os", "de": "Knochen", "it": "Osso", "ja": "骨", "zh": "骨头", "ko": "뼈다귀", "ar": "عظمة" },
+    "keywords": {
+      "es": ["premio", "golosina para perro", "mordedera", "sección de perros", "recompensa", "carnaza", "snack"],
+      "en": ["dog treat", "chew", "reward", "dog section", "snack", "rawhide", "good boy"]
+    }
+  },
+  "fish-bone": {
+    "label": { "es": "Espina de pescado", "en": "Fish bone", "pt": "Espinha de peixe", "fr": "Arête de poisson", "de": "Fischgräte", "it": "Lisca di pesce", "ja": "魚の骨", "zh": "鱼骨", "ko": "생선 뼈", "ar": "عظم سمكة" },
+    "keywords": {
+      "es": ["comida para gato", "premio para gato", "esqueleto de pez", "sobras", "restos", "atún", "pescado"],
+      "en": ["cat food", "cat treat", "fish skeleton", "leftovers", "scraps", "tuna", "skeleton"]
+    }
+  },
+  "pet-bowl": {
+    "label": { "es": "Plato de comida", "en": "Food bowl", "pt": "Comedouro", "fr": "Gamelle", "de": "Futternapf", "it": "Ciotola del cibo", "ja": "フードボウル", "zh": "食盆", "ko": "밥그릇", "ar": "وعاء الطعام" },
+    "keywords": {
+      "es": ["comedero", "tazón", "alimentar", "registro de comidas", "hora de comer", "croquetas", "porción"],
+      "en": ["pet bowl", "dish", "feeding", "food log", "meal tracking", "mealtime", "kibble"]
+    }
+  },
+  "pet-bowl-clock": {
+    "label": { "es": "Horario de comida", "en": "Feeding schedule", "pt": "Horário de alimentação", "fr": "Horaire des repas", "de": "Fütterungszeiten", "it": "Orario dei pasti", "ja": "ごはんの時間", "zh": "喂食时间", "ko": "급식 시간", "ar": "مواعيد الإطعام" },
+    "keywords": {
+      "es": ["próxima comida", "recordatorio", "hora de comer", "programar comidas", "rutina", "alimentación", "a tiempo"],
+      "en": ["next meal", "feeding reminder", "mealtime", "scheduled meals", "routine", "feeding time", "timer"]
+    }
+  },
+  "pet-bowl-water": {
+    "label": { "es": "Plato de agua", "en": "Water bowl", "pt": "Bebedouro", "fr": "Gamelle d’eau", "de": "Wassernapf", "it": "Ciotola dell’acqua", "ja": "水入れ", "zh": "水盆", "ko": "물그릇", "ar": "وعاء الماء" },
+    "keywords": {
+      "es": ["bebedero", "hidratación", "consumo de agua", "registro de agua", "agua fresca", "tomar agua", "rellenar"],
+      "en": ["hydration", "water intake", "drinking", "water log", "fresh water", "refill", "water dish"]
+    }
+  },
+  "pet-food": {
+    "label": { "es": "Alimento para mascotas", "en": "Pet food", "pt": "Ração", "fr": "Nourriture pour animaux", "de": "Tierfutter", "it": "Cibo per animali", "ja": "ペットフード", "zh": "宠物粮", "ko": "사료", "ar": "طعام الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["croquetas", "costal de alimento", "bulto", "despensa", "se está acabando", "comprar alimento", "inventario"],
+      "en": ["kibble", "food bag", "dog food", "cat food", "running low", "food stock", "restock"]
+    }
+  },
+  "pet-food-sync": {
+    "label": { "es": "Envío recurrente de alimento", "en": "Recurring food delivery", "pt": "Entrega recorrente de ração", "fr": "Livraison régulière de nourriture", "de": "Futter-Abo", "it": "Consegna periodica di cibo", "ja": "フードの定期便", "zh": "宠物粮定期配送", "ko": "사료 정기 배송", "ar": "توصيل دوري للطعام" },
+    "keywords": {
+      "es": ["suscripción", "compra programada", "suscríbete y ahorra", "pedido automático", "entrega periódica", "resurtir", "autoenvío"],
+      "en": ["autoship", "subscription", "subscribe and save", "auto reorder", "repeat delivery", "restock", "scheduled order"]
+    }
+  },
+  "dog-side": {
+    "label": { "es": "Perro de pie", "en": "Standing dog", "pt": "Cachorro em pé", "fr": "Chien debout", "de": "Stehender Hund", "it": "Cane in piedi", "ja": "立っている犬", "zh": "站立的狗", "ko": "서 있는 개", "ar": "كلب واقف" },
+    "keywords": {
+      "es": ["sección de perros", "se permiten perros", "perro de perfil", "raza", "ficha del perro", "tienda de mascotas", "lomito"],
+      "en": ["dog section", "dogs allowed", "dog in profile", "breed", "dog listing", "pet shop", "canine"]
+    }
+  },
+  "dog-running": {
+    "label": { "es": "Perro corriendo", "en": "Running dog", "pt": "Cachorro correndo", "fr": "Chien qui court", "de": "Laufender Hund", "it": "Cane che corre", "ja": "走る犬", "zh": "奔跑的狗", "ko": "달리는 개", "ar": "كلب يركض" },
+    "keywords": {
+      "es": ["actividad", "ejercicio", "hora de jugar", "minutos activos", "paseo", "energía", "seguimiento de actividad"],
+      "en": ["activity", "exercise", "play time", "active minutes", "zoomies", "fitness tracking", "energy"]
+    }
+  },
+  "dog-seated": {
+    "label": { "es": "Perro sentado", "en": "Sitting dog", "pt": "Cachorro sentado", "fr": "Chien assis", "de": "Sitzender Hund", "it": "Cane seduto", "ja": "おすわりする犬", "zh": "坐着的狗", "ko": "앉아 있는 개", "ar": "كلب جالس" },
+    "keywords": {
+      "es": ["orden de sentarse", "adiestramiento", "obediencia", "perro tranquilo", "en reposo", "comandos", "quieto"],
+      "en": ["sit command", "training", "obedience", "calm dog", "resting", "commands", "stay"]
+    }
+  },
+  "cat-seated": {
+    "label": { "es": "Gato sentado", "en": "Sitting cat", "pt": "Gato sentado", "fr": "Chat assis", "de": "Sitzende Katze", "it": "Gatto seduto", "ja": "座っている猫", "zh": "坐着的猫", "ko": "앉아 있는 고양이", "ar": "قطة جالسة" },
+    "keywords": {
+      "es": ["michi", "sección de gatos", "se aceptan gatos", "ficha del gato", "felino", "minino", "tienda de mascotas"],
+      "en": ["kitty", "cat section", "cat friendly", "cat listing", "feline", "pet shop", "cat profile"]
+    }
+  },
+  "puppy": {
+    "label": { "es": "Cachorro", "en": "Puppy", "pt": "Filhote de cachorro", "fr": "Chiot", "de": "Welpe", "it": "Cucciolo", "ja": "子犬", "zh": "幼犬", "ko": "강아지", "ar": "جرو" },
+    "keywords": {
+      "es": ["perrito", "adopción", "croquetas para cachorro", "clases para cachorros", "perro bebé", "primeras vacunas", "socialización"],
+      "en": ["pup", "adoption", "puppy food", "puppy classes", "young dog", "first vaccines", "socialization"]
+    }
+  },
+  "kitten": {
+    "label": { "es": "Gatito", "en": "Kitten", "pt": "Filhote de gato", "fr": "Chaton", "de": "Kätzchen", "it": "Gattino", "ja": "子猫", "zh": "小猫", "ko": "새끼 고양이", "ar": "قطة صغيرة" },
+    "keywords": {
+      "es": ["cachorro de gato", "michi bebé", "adopción", "alimento para gatito", "cuidados", "camada", "primeras vacunas"],
+      "en": ["baby cat", "kitty", "adoption", "kitten food", "kitten care", "litter of kittens", "first vaccines"]
+    }
+  },
+  "cat-sleeping": {
+    "label": { "es": "Gato dormido", "en": "Sleeping cat", "pt": "Gato dormindo", "fr": "Chat endormi", "de": "Schlafende Katze", "it": "Gatto che dorme", "ja": "眠る猫", "zh": "睡觉的猫", "ko": "자는 고양이", "ar": "قطة نائمة" },
+    "keywords": {
+      "es": ["siesta", "registro de sueño", "descanso", "en reposo", "inactivo", "hecho bolita", "modo tranquilo"],
+      "en": ["nap", "sleep log", "nap time", "rest", "idle", "curled up", "quiet mode"]
+    }
+  },
+  "rabbit": {
+    "label": { "es": "Conejo", "en": "Rabbit", "pt": "Coelho", "fr": "Lapin", "de": "Kaninchen", "it": "Coniglio", "ja": "うさぎ", "zh": "兔子", "ko": "토끼", "ar": "أرنب" },
+    "keywords": {
+      "es": ["conejito", "mascotas pequeñas", "accesorios para conejo", "heno", "conejera", "adopción", "orejas largas"],
+      "en": ["bunny", "small pets", "rabbit supplies", "hay", "hutch", "adoption", "easter"]
+    }
+  },
+  "goldfish": {
+    "label": { "es": "Pez dorado", "en": "Goldfish", "pt": "Peixinho-dourado", "fr": "Poisson rouge", "de": "Goldfisch", "it": "Pesce rosso", "ja": "金魚", "zh": "金鱼", "ko": "금붕어", "ar": "سمكة ذهبية" },
+    "keywords": {
+      "es": ["pececito", "pez de mascota", "acuario", "pecera", "alimento para peces", "accesorios de acuario", "pez naranja"],
+      "en": ["pet fish", "aquarium", "fish tank", "fish food", "aquarium supplies", "fishkeeping", "carp"]
+    }
+  },
+  "house-paw": {
+    "label": { "es": "Hogar con mascotas", "en": "Pet-friendly home", "pt": "Casa pet friendly", "fr": "Logement avec animaux", "de": "Tierfreundliches Zuhause", "it": "Casa con animali", "ja": "ペット可の住まい", "zh": "宠物友好之家", "ko": "반려동물 가능 숙소", "ar": "منزل صديق للحيوانات الأليفة" },
+    "keywords": {
+      "es": ["cuidador a domicilio", "pet sitting", "renta que acepta mascotas", "hospedaje pet friendly", "departamento con mascotas", "mascotas en casa", "guardería en casa"],
+      "en": ["pet sitting", "house sitting", "pets allowed rental", "pet-friendly lodging", "pet-friendly apartment", "pets at home", "in-home care"]
+    }
+  },
+  "store-paw": {
+    "label": { "es": "Tienda de mascotas", "en": "Pet store", "pt": "Pet shop", "fr": "Animalerie", "de": "Zoohandlung", "it": "Negozio di animali", "ja": "ペットショップ", "zh": "宠物店", "ko": "펫숍", "ar": "متجر الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["pet shop", "localizador de tiendas", "accesorios para mascotas", "comprar alimento", "sucursal", "veterinaria", "forrajera"],
+      "en": ["pet shop", "store finder", "pet supplies", "buy pet food", "branch", "retail", "pet boutique"]
+    }
+  },
+  "map-pin-paw": {
+    "label": { "es": "Lugar para mascotas", "en": "Pet-friendly place", "pt": "Local pet friendly", "fr": "Lieu adapté aux animaux", "de": "Tierfreundlicher Ort", "it": "Luogo pet friendly", "ja": "ペット可スポット", "zh": "宠物友好地点", "ko": "반려동물 동반 장소", "ar": "مكان صديق للحيوانات الأليفة" },
+    "keywords": {
+      "es": ["pet friendly", "veterinaria cercana", "parques cercanos", "estética canina", "mapa", "ubicación", "cerca de mí"],
+      "en": ["nearby vets", "dog parks", "pet stores nearby", "map", "location", "near me", "pet-friendly cafe"]
+    }
+  },
+  "passport-paw": {
+    "label": { "es": "Pasaporte de mascota", "en": "Pet passport", "pt": "Passaporte do pet", "fr": "Passeport pour animal", "de": "Heimtierausweis", "it": "Passaporto per animali", "ja": "ペットパスポート", "zh": "宠物护照", "ko": "반려동물 여권", "ar": "جواز سفر الحيوان الأليف" },
+    "keywords": {
+      "es": ["viajar con mascota", "documentos de viaje", "certificado de salud", "vacunas para viajar", "cartilla de vacunación", "aduana", "vuelo con mascota"],
+      "en": ["pet travel", "travel documents", "health certificate", "travel vaccinations", "rabies certificate", "customs", "flying with pets"]
+    }
+  },
+  "id-card-paw": {
+    "label": { "es": "Credencial de mascota", "en": "Pet ID card", "pt": "Carteirinha do pet", "fr": "Carte d’identité de l’animal", "de": "Tierausweis", "it": "Carta d’identità dell’animale", "ja": "ペットプロフィール", "zh": "宠物档案卡", "ko": "반려동물 프로필", "ar": "بطاقة هوية الحيوان الأليف" },
+    "keywords": {
+      "es": ["perfil de mascota", "identificación", "ficha", "datos de la mascota", "nombre y raza", "tarjeta", "registro"],
+      "en": ["pet profile", "identification", "profile card", "pet details", "name and breed", "pet id", "registration"]
+    }
+  },
+  "calendar-paw": {
+    "label": { "es": "Cita de mascota", "en": "Pet appointment", "pt": "Consulta do pet", "fr": "Rendez-vous de l’animal", "de": "Termin für Haustier", "it": "Appuntamento per l’animale", "ja": "ペットの予約", "zh": "宠物预约", "ko": "반려동물 예약", "ar": "موعد الحيوان الأليف" },
+    "keywords": {
+      "es": ["cita con el veterinario", "agenda", "estética", "vacunas", "recordatorio", "calendario de la mascota", "reservar"],
+      "en": ["vet appointment", "schedule", "grooming", "vaccination due", "reminder", "pet calendar", "book"]
+    }
+  },
+  "clipboard-paw": {
+    "label": { "es": "Expediente de mascota", "en": "Pet record", "pt": "Ficha do pet", "fr": "Dossier de l’animal", "de": "Gesundheitsakte", "it": "Cartella dell’animale", "ja": "カルテ", "zh": "宠物病历", "ko": "진료 기록", "ar": "سجل الحيوان الأليف" },
+    "keywords": {
+      "es": ["historial médico", "cartilla de vacunación", "historia clínica", "vacunas", "registro de salud", "documentos", "alergias"],
+      "en": ["medical history", "vaccination record", "health record", "vaccines", "chart", "documents", "allergies"]
+    }
+  },
+  "shield-paw": {
+    "label": { "es": "Protección de mascota", "en": "Pet protection", "pt": "Proteção do pet", "fr": "Protection de l’animal", "de": "Schutz für Haustiere", "it": "Protezione dell’animale", "ja": "ペットの安全", "zh": "宠物防护", "ko": "반려동물 보호", "ar": "حماية الحيوان الأليف" },
+    "keywords": {
+      "es": ["antipulgas", "garrapatas", "desparasitación", "vacunado", "prevención", "seguridad de mascota", "seguro"],
+      "en": ["flea and tick", "prevention", "vaccinated", "dewormed", "pet safety", "insurance", "parasite control"]
+    }
+  },
+  "vet": {
+    "label": { "es": "Atención veterinaria", "en": "Veterinary care", "pt": "Cuidados veterinários", "fr": "Soins vétérinaires", "de": "Tierärztliche Versorgung", "it": "Cure veterinarie", "ja": "動物病院", "zh": "宠物医疗", "ko": "동물병원", "ar": "رعاية بيطرية" },
+    "keywords": {
+      "es": ["veterinaria", "veterinario", "clínica veterinaria", "consulta", "salud animal", "hospital veterinario", "urgencias"],
+      "en": ["vet", "veterinarian", "vet clinic", "vet visit", "animal health", "animal hospital", "emergency"]
+    }
+  },
+  "pet-care": {
+    "label": { "es": "Cuidado de mascotas", "en": "Pet care", "pt": "Cuidados com pets", "fr": "Soins aux animaux", "de": "Tierpflege", "it": "Cura degli animali", "ja": "ペットケア", "zh": "宠物护理", "ko": "반려동물 돌봄", "ar": "رعاية الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["cuidador", "rescate", "adopción", "albergue", "bienestar animal", "guardería", "cariño"],
+      "en": ["pet sitter", "rescue", "adoption", "shelter", "animal welfare", "daycare", "love"]
+    }
+  },
+  "pet-scale": {
+    "label": { "es": "Peso de mascota", "en": "Pet weight", "pt": "Peso do pet", "fr": "Poids de l’animal", "de": "Gewicht des Tieres", "it": "Peso dell’animale", "ja": "ペットの体重", "zh": "宠物体重", "ko": "반려동물 체중", "ar": "وزن الحيوان الأليف" },
+    "keywords": {
+      "es": ["báscula", "pesar", "control de peso", "chequeo", "sobrepeso", "kilos", "dieta"],
+      "en": ["scale", "weigh-in", "weight tracking", "check-up", "overweight", "diet", "body condition"]
+    }
+  },
+  "paw-trail": {
+    "label": { "es": "Rastro de huellas", "en": "Paw print trail", "pt": "Rastro de pegadas", "fr": "Traces de pattes", "de": "Pfotenspur", "it": "Impronte di zampe", "ja": "足あと", "zh": "爪印足迹", "ko": "발자국", "ar": "آثار أقدام" },
+    "keywords": {
+      "es": ["huellitas", "ruta del paseo", "recorrido", "historial de actividad", "pisadas", "seguir el rastro", "patitas"],
+      "en": ["walk route", "tracks", "activity history", "footprints", "trail", "route map", "follow"]
+    }
+  },
+  "dog-walking": {
+    "label": { "es": "Paseo de perro", "en": "Dog walking", "pt": "Passeio com cachorro", "fr": "Promenade du chien", "de": "Gassi gehen", "it": "Passeggiata col cane", "ja": "犬の散歩", "zh": "遛狗", "ko": "강아지 산책", "ar": "تمشية الكلب" },
+    "keywords": {
+      "es": ["paseador de perros", "sacar a pasear", "registro de paseos", "perro con correa", "caminata", "servicio de paseo", "salir con el lomito"],
+      "en": ["dog walker", "walk log", "dogs on leash", "daily walk", "walking service", "leashed dog", "stroll"]
+    }
+  },
+  "pet-relief-area": {
+    "label": { "es": "Área de alivio para mascotas", "en": "Pet relief area", "pt": "Área de alívio para pets", "fr": "Aire de soulagement pour animaux", "de": "Tiertoilette", "it": "Area per i bisogni degli animali", "ja": "ペット用トイレ", "zh": "宠物如厕区", "ko": "반려동물 배변 구역", "ar": "منطقة قضاء حاجة الحيوانات" },
+    "keywords": {
+      "es": ["baño para mascotas", "aeropuerto", "hotel", "señalización", "zona de mascotas", "hacer del baño", "punto de servicio"],
+      "en": ["pet toilet", "airport", "hotel", "wayfinding", "pet zone", "potty area", "service animal"]
+    }
+  },
+  "pet-feeder": {
+    "label": { "es": "Comedero automático", "en": "Automatic feeder", "pt": "Comedouro automático", "fr": "Distributeur de croquettes", "de": "Futterautomat", "it": "Distributore automatico di cibo", "ja": "自動給餌器", "zh": "自动喂食器", "ko": "자동 급식기", "ar": "جهاز إطعام تلقائي" },
+    "keywords": {
+      "es": ["comedero inteligente", "dispensador de croquetas", "porciones", "comidas programadas", "alimentar a distancia", "dispositivo conectado", "casa inteligente"],
+      "en": ["smart feeder", "food dispenser", "portions", "scheduled meals", "remote feeding", "connected device", "smart home"]
+    }
+  },
+  "pet-fountain": {
+    "label": { "es": "Fuente de agua", "en": "Pet fountain", "pt": "Fonte de água", "fr": "Fontaine à eau", "de": "Trinkbrunnen", "it": "Fontanella", "ja": "給水器", "zh": "宠物饮水机", "ko": "급수기", "ar": "نافورة مياه للحيوانات" },
+    "keywords": {
+      "es": ["bebedero automático", "fuente inteligente", "cambio de filtro", "flujo de agua", "hidratación", "agua fresca", "bebedero para gato"],
+      "en": ["water fountain", "smart fountain", "filter change", "water flow", "hydration", "drinking fountain", "fresh water"]
+    }
+  },
+  "treat-jar": {
+    "label": { "es": "Frasco de premios", "en": "Treat jar", "pt": "Pote de petiscos", "fr": "Bocal à friandises", "de": "Leckerli-Glas", "it": "Barattolo di snack", "ja": "おやつ入れ", "zh": "零食罐", "ko": "간식 통", "ar": "مرطبان المكافآت" },
+    "keywords": {
+      "es": ["golosinas", "recompensas", "snacks", "presupuesto de golosinas", "galletas para perro", "bocadillos", "refuerzo positivo"],
+      "en": ["treats", "rewards", "snacks", "treat budget", "dog biscuits", "goodies", "positive reinforcement"]
+    }
+  },
+  "rope-toy": {
+    "label": { "es": "Juguete de cuerda", "en": "Rope toy", "pt": "Brinquedo de corda", "fr": "Jouet en corde", "de": "Seilspielzeug", "it": "Gioco di corda", "ja": "ロープのおもちゃ", "zh": "绳结玩具", "ko": "로프 장난감", "ar": "لعبة حبل" },
+    "keywords": {
+      "es": ["juguete para perro", "jugar a jalar", "estira y afloja", "mordedera", "nudo", "hora de jugar", "jugar con el perro"],
+      "en": ["dog toy", "tug toy", "tug of war", "chew", "play", "knot", "fetch"]
+    }
+  },
+  "chew-toy": {
+    "label": { "es": "Juguete para morder", "en": "Chew toy", "pt": "Mordedor", "fr": "Jouet à mâcher", "de": "Kauspielzeug", "it": "Gioco da masticare", "ja": "噛むおもちゃ", "zh": "磨牙玩具", "ko": "씹는 장난감", "ar": "لعبة مضغ" },
+    "keywords": {
+      "es": ["mordedera", "juguete de hule", "enriquecimiento", "juguete resistente", "dentición", "juguete de goma", "rellenar con premios"],
+      "en": ["rubber toy", "enrichment", "durable toy", "teething", "dog toy", "stuffable toy", "aggressive chewer"]
+    }
+  },
+  "feather-wand": {
+    "label": { "es": "Varita con plumas", "en": "Feather wand", "pt": "Varinha de penas", "fr": "Canne à plumes", "de": "Federangel", "it": "Bacchetta con piume", "ja": "猫じゃらし", "zh": "逗猫棒", "ko": "깃털 낚싯대", "ar": "عصا الريش" },
+    "keywords": {
+      "es": ["juguete para gato", "caña para gato", "hora de jugar", "plumas", "cazar", "juego interactivo", "michi"],
+      "en": ["cat toy", "cat teaser", "play time", "feathers", "hunting play", "interactive toy", "wand toy"]
+    }
+  },
+  "toy-mouse": {
+    "label": { "es": "Ratón de juguete", "en": "Toy mouse", "pt": "Ratinho de brinquedo", "fr": "Souris jouet", "de": "Spielzeugmaus", "it": "Topolino giocattolo", "ja": "ねずみのおもちゃ", "zh": "玩具老鼠", "ko": "쥐 장난감", "ar": "فأر لعبة" },
+    "keywords": {
+      "es": ["juguete para gato", "ratoncito", "hierba gatera", "cazar", "jugar", "accesorios para gato", "michi"],
+      "en": ["cat toy", "catnip", "plush mouse", "hunting", "play", "cat supplies", "kitty"]
+    }
+  },
+  "scratching-post": {
+    "label": { "es": "Rascador", "en": "Scratching post", "pt": "Arranhador", "fr": "Griffoir", "de": "Kratzsäule", "it": "Tiragraffi", "ja": "爪とぎ", "zh": "猫抓柱", "ko": "스크래처", "ar": "عمود خدش للقطط" },
+    "keywords": {
+      "es": ["muebles para gato", "afilar uñas", "rasguños", "proteger muebles", "sisal", "poste", "accesorios para gato"],
+      "en": ["cat furniture", "scratcher", "claws", "protect furniture", "sisal", "cat supplies", "scratching"]
+    }
+  },
+  "cat-tree": {
+    "label": { "es": "Árbol para gatos", "en": "Cat tree", "pt": "Torre para gatos", "fr": "Arbre à chat", "de": "Kratzbaum", "it": "Albero per gatti", "ja": "キャットタワー", "zh": "猫爬架", "ko": "캣타워", "ar": "برج القطط" },
+    "keywords": {
+      "es": ["gimnasio para gatos", "torre para gatos", "muebles para gato", "escalar", "repisas", "casita", "trepar"],
+      "en": ["cat tower", "cat condo", "cat furniture", "climbing", "perch", "kitty gym", "shelves"]
+    }
+  },
+  "leash": {
+    "label": { "es": "Correa", "en": "Leash", "pt": "Guia", "fr": "Laisse", "de": "Leine", "it": "Guinzaglio", "ja": "リード", "zh": "牵引绳", "ko": "리드줄", "ar": "مقود" },
+    "keywords": {
+      "es": ["paseo", "traílla", "uso obligatorio de correa", "accesorios de paseo", "sacar al perro", "control", "lomito"],
+      "en": ["lead", "walk", "leash rules", "walking gear", "dog walk", "leash required", "control"]
+    }
+  },
+  "leash-retractable": {
+    "label": { "es": "Correa retráctil", "en": "Retractable leash", "pt": "Guia retrátil", "fr": "Laisse à enrouleur", "de": "Rollleine", "it": "Guinzaglio allungabile", "ja": "伸縮リード", "zh": "伸缩牵引绳", "ko": "자동 리드줄", "ar": "مقود قابل للتمديد" },
+    "keywords": {
+      "es": ["correa extensible", "paseo", "accesorios de paseo", "carrete", "longitud ajustable", "freno", "más libertad"],
+      "en": ["extendable leash", "walk", "walking gear", "reel", "adjustable length", "lock button", "tape leash"]
+    }
+  },
+  "harness": {
+    "label": { "es": "Arnés", "en": "Harness", "pt": "Peitoral", "fr": "Harnais", "de": "Geschirr", "it": "Pettorina", "ja": "ハーネス", "zh": "胸背带", "ko": "하네스", "ar": "حزام صدري" },
+    "keywords": {
+      "es": ["pechera", "accesorios de paseo", "antijalones", "adiestramiento", "paseo", "chaleco", "ajustable"],
+      "en": ["chest strap", "walking gear", "no-pull", "training", "walk", "vest", "adjustable"]
+    }
+  },
+  "collar": {
+    "label": { "es": "Collar", "en": "Collar", "pt": "Coleira", "fr": "Collier", "de": "Halsband", "it": "Collare", "ja": "首輪", "zh": "项圈", "ko": "목걸이", "ar": "طوق" },
+    "keywords": {
+      "es": ["placa", "identificación", "accesorios", "cascabel", "hebilla", "ajustable", "datos de contacto"],
+      "en": ["tag", "id", "accessories", "bell", "buckle", "adjustable", "neckband"]
+    }
+  },
+  "muzzle": {
+    "label": { "es": "Bozal", "en": "Muzzle", "pt": "Focinheira", "fr": "Muselière", "de": "Maulkorb", "it": "Museruola", "ja": "口輪", "zh": "嘴套", "ko": "입마개", "ar": "كمامة الكلب" },
+    "keywords": {
+      "es": ["uso obligatorio", "seguridad", "visita al veterinario", "perro reactivo", "evitar mordidas", "transporte público", "canasta"],
+      "en": ["muzzle required", "safety", "vet visit", "reactive dog", "bite prevention", "public transport", "basket"]
+    }
+  },
+  "pet-tag": {
+    "label": { "es": "Placa de identificación", "en": "Pet ID tag", "pt": "Plaquinha de identificação", "fr": "Médaille d’identification", "de": "Adressanhänger", "it": "Medaglietta", "ja": "迷子札", "zh": "宠物身份牌", "ko": "인식표", "ar": "بطاقة تعريف الحيوان الأليف" },
+    "keywords": {
+      "es": ["placa para perro", "nombre grabado", "datos de contacto", "mascota perdida", "objetos perdidos", "medalla", "código qr"],
+      "en": ["dog tag", "engraved", "contact details", "lost pet", "lost and found", "name tag", "qr code"]
+    }
+  },
+  "poop-bag": {
+    "label": { "es": "Bolsas para desechos", "en": "Poop bags", "pt": "Saquinhos higiênicos", "fr": "Sacs à crottes", "de": "Kotbeutel", "it": "Sacchetti igienici", "ja": "うんち袋", "zh": "拾便袋", "ko": "배변 봉투", "ar": "أكياس الفضلات" },
+    "keywords": {
+      "es": ["bolsas para popó", "recoger", "dispensador", "estación de desechos", "levantar las heces", "paseo responsable", "limpieza"],
+      "en": ["waste bags", "pick up", "dispenser", "waste station", "scoop the poop", "responsible owner", "cleanup"]
+    }
+  },
+  "poop": {
+    "label": { "es": "Popó", "en": "Poop", "pt": "Cocô", "fr": "Crotte", "de": "Häufchen", "it": "Cacca", "ja": "うんち", "zh": "便便", "ko": "똥", "ar": "فضلات" },
+    "keywords": {
+      "es": ["heces", "desechos", "registro de baño", "entrenamiento para ir al baño", "hacer del baño", "estación de desechos", "digestión"],
+      "en": ["pet waste", "potty log", "house training", "potty", "waste station", "stool", "digestion"]
+    }
+  },
+  "puppy-pad": {
+    "label": { "es": "Tapete entrenador", "en": "Training pad", "pt": "Tapete higiênico", "fr": "Tapis éducateur", "de": "Welpenunterlage", "it": "Tappetino assorbente", "ja": "ペットシーツ", "zh": "宠物尿垫", "ko": "배변 패드", "ar": "فوطة تدريب" },
+    "keywords": {
+      "es": ["pañal para perro", "entrenamiento para ir al baño", "pipí", "tapete absorbente", "cachorro", "educar", "accidentes"],
+      "en": ["puppy pad", "pee pad", "potty training", "absorbent pad", "puppy", "housebreaking", "accidents"]
+    }
+  },
+  "dog-park": {
+    "label": { "es": "Parque para perros", "en": "Dog park", "pt": "Parque para cães", "fr": "Parc canin", "de": "Hundepark", "it": "Area cani", "ja": "ドッグラン", "zh": "狗狗公园", "ko": "반려견 놀이터", "ar": "حديقة الكلاب" },
+    "keywords": {
+      "es": ["área canina", "parque canino", "sin correa", "lugar para jugar", "buscar parques", "socializar", "correr libre"],
+      "en": ["off-leash area", "dog run", "play area", "park finder", "socializing", "dog-friendly park", "run free"]
+    }
+  },
+  "doghouse": {
+    "label": { "es": "Casa de perro", "en": "Doghouse", "pt": "Casinha de cachorro", "fr": "Niche", "de": "Hundehütte", "it": "Casetta per cani", "ja": "犬小屋", "zh": "狗屋", "ko": "개집", "ar": "بيت الكلب" },
+    "keywords": {
+      "es": ["casita para perro", "refugio", "patio", "exterior", "pensión canina", "hospedaje", "guarida"],
+      "en": ["kennel", "shelter", "backyard", "outdoor", "boarding", "dog hotel", "in the doghouse"]
+    }
+  },
+  "dog-crate": {
+    "label": { "es": "Jaula para perro", "en": "Dog crate", "pt": "Gaiola para cachorro", "fr": "Cage pour chien", "de": "Hundebox", "it": "Gabbia per cani", "ja": "ケージ", "zh": "狗笼", "ko": "강아지 케이지", "ar": "قفص الكلب" },
+    "keywords": {
+      "es": ["kennel", "entrenamiento en jaula", "pensión", "viaje", "jaula de alambre", "espacio seguro", "corral"],
+      "en": ["kennel", "crate training", "boarding", "travel", "wire crate", "safe space", "playpen"]
+    }
+  },
+  "pet-door": {
+    "label": { "es": "Puerta para mascotas", "en": "Pet door", "pt": "Portinhola para pets", "fr": "Porte pour animaux", "de": "Haustierklappe", "it": "Porta per animali", "ja": "ペットドア", "zh": "宠物门", "ko": "펫도어", "ar": "باب الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["gatera", "puerta inteligente", "entrada y salida", "horario de acceso", "trampilla", "salida al patio", "chip de acceso"],
+      "en": ["cat flap", "dog door", "smart pet door", "access schedule", "in and out", "flap", "microchip door"]
+    }
+  },
+  "pet-door-lock": {
+    "label": { "es": "Bloquear puerta para mascotas", "en": "Lock pet door", "pt": "Trancar portinhola", "fr": "Verrouiller la porte pour animaux", "de": "Haustierklappe sperren", "it": "Blocca la porta per animali", "ja": "ペットドアをロック", "zh": "锁定宠物门", "ko": "펫도어 잠금", "ar": "قفل باب الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["modo bloqueo", "solo entrada", "solo salida", "mantener adentro", "mantener afuera", "cerrar gatera", "toque de queda"],
+      "en": ["lock mode", "in only", "out only", "keep pets in", "keep pets out", "curfew", "locked flap"]
+    }
+  },
+  "pet-bed": {
+    "label": { "es": "Cama para mascota", "en": "Pet bed", "pt": "Caminha", "fr": "Panier", "de": "Körbchen", "it": "Cuccia", "ja": "ペットベッド", "zh": "宠物床", "ko": "반려동물 침대", "ar": "سرير الحيوان الأليف" },
+    "keywords": {
+      "es": ["camita", "descanso", "dormir", "colchoneta", "cojín", "pensión", "rincón"],
+      "en": ["dog bed", "cat bed", "rest", "sleep", "cushion", "mat", "boarding"]
+    }
+  },
+  "bird-cage": {
+    "label": { "es": "Jaula para pájaros", "en": "Birdcage", "pt": "Gaiola de pássaro", "fr": "Cage à oiseaux", "de": "Vogelkäfig", "it": "Gabbia per uccelli", "ja": "鳥かご", "zh": "鸟笼", "ko": "새장", "ar": "قفص الطيور" },
+    "keywords": {
+      "es": ["pajarera", "aves", "perico", "canario", "accesorios para aves", "alpiste", "mascotas con plumas"],
+      "en": ["pet bird", "aviary", "parrot", "canary", "bird supplies", "parakeet", "birdseed"]
+    }
+  },
+  "aquarium": {
+    "label": { "es": "Acuario", "en": "Aquarium", "pt": "Aquário", "fr": "Aquarium", "de": "Aquarium", "it": "Acquario", "ja": "水槽", "zh": "水族箱", "ko": "수조", "ar": "حوض أسماك" },
+    "keywords": {
+      "es": ["pecera", "peces", "cuidado del acuario", "filtro", "cambio de agua", "plantas acuáticas", "accesorios de acuario"],
+      "en": ["fish tank", "fish", "tank maintenance", "filter", "water change", "aquatic plants", "fishkeeping"]
+    }
+  },
+  "fishbowl": {
+    "label": { "es": "Pecera", "en": "Fishbowl", "pt": "Aquário redondo", "fr": "Bocal à poisson", "de": "Goldfischglas", "it": "Boccia per pesci", "ja": "金魚鉢", "zh": "鱼缸", "ko": "어항", "ar": "وعاء أسماك" },
+    "keywords": {
+      "es": ["bola de vidrio", "pececito", "mascota acuática", "acuario pequeño", "pez beta", "pecera de vidrio", "cambiar el agua"],
+      "en": ["goldfish bowl", "pet fish", "small aquarium", "betta", "glass bowl", "water change", "desk aquarium"]
+    }
+  },
+  "terrarium": {
+    "label": { "es": "Terrario", "en": "Terrarium", "pt": "Terrário", "fr": "Terrarium", "de": "Terrarium", "it": "Terrario", "ja": "爬虫類ケージ", "zh": "爬宠饲养箱", "ko": "파충류 사육장", "ar": "حوض الزواحف" },
+    "keywords": {
+      "es": ["reptiles", "anfibios", "tortuga", "iguana", "calor y humedad", "lámpara de calor", "hábitat"],
+      "en": ["reptiles", "amphibians", "vivarium", "gecko", "heat and humidity", "heat lamp", "habitat"]
+    }
+  },
+  "litter-box": {
+    "label": { "es": "Arenero", "en": "Litter box", "pt": "Caixa de areia", "fr": "Litière", "de": "Katzenklo", "it": "Lettiera", "ja": "猫トイレ", "zh": "猫砂盆", "ko": "고양이 화장실", "ar": "صندوق الرمل للقطط" },
+    "keywords": {
+      "es": ["arena para gato", "baño del gato", "recordatorio de limpieza", "autolimpiable", "michi", "olores", "palita"],
+      "en": ["cat litter", "cat toilet", "cleaning reminder", "self-cleaning", "scoop", "odor", "litter tray"]
+    }
+  },
+  "pet-microchip": {
+    "label": { "es": "Microchip de mascota", "en": "Pet microchip", "pt": "Microchip do pet", "fr": "Puce d’identification", "de": "Mikrochip", "it": "Microchip", "ja": "マイクロチップ", "zh": "宠物芯片", "ko": "마이크로칩", "ar": "شريحة تعريف الحيوان" },
+    "keywords": {
+      "es": ["registrar chip", "escanear chip", "identificación", "lector de chip", "chip", "mascota perdida", "número de chip"],
+      "en": ["chip registration", "scan chip", "identification", "chip reader", "id chip", "lost pet", "rfid"]
+    }
+  },
+  "pet-tracker": {
+    "label": { "es": "Localizador GPS", "en": "GPS tracker", "pt": "Rastreador GPS", "fr": "Traceur GPS", "de": "GPS-Tracker", "it": "Localizzatore GPS", "ja": "GPSトラッカー", "zh": "宠物定位器", "ko": "GPS 위치 추적기", "ar": "متتبع GPS" },
+    "keywords": {
+      "es": ["rastreador", "ubicación en tiempo real", "geocerca", "zona segura", "collar inteligente", "mascota perdida", "dónde está"],
+      "en": ["location tracker", "live location", "geofence", "safe zone", "smart collar", "lost pet", "find my pet"]
+    }
+  },
+  "pet-brush": {
+    "label": { "es": "Cepillo para mascotas", "en": "Pet brush", "pt": "Escova para pets", "fr": "Brosse pour animaux", "de": "Fellbürste", "it": "Spazzola per animali", "ja": "ペット用ブラシ", "zh": "宠物梳", "ko": "반려동물 브러시", "ar": "فرشاة الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["estética canina", "cepillado", "pelo", "muda de pelo", "aseo", "registro de cepillado", "carda"],
+      "en": ["grooming", "brushing", "fur", "shedding", "slicker brush", "brushing log", "deshedding"]
+    }
+  },
+  "claw-clipper": {
+    "label": { "es": "Cortaúñas", "en": "Claw clippers", "pt": "Cortador de unhas", "fr": "Coupe-griffes", "de": "Krallenschere", "it": "Tagliaunghie", "ja": "爪切り", "zh": "宠物指甲剪", "ko": "발톱깎이", "ar": "مقص أظافر الحيوانات" },
+    "keywords": {
+      "es": ["corte de uñas", "estética", "aseo", "uñas largas", "garras", "limar uñas", "cuidado de patas"],
+      "en": ["nail trim", "grooming", "nail clippers", "claws", "pedicure", "paw care", "trimmer"]
+    }
+  },
+  "pet-bath": {
+    "label": { "es": "Baño de mascota", "en": "Pet bath", "pt": "Banho do pet", "fr": "Bain pour animal", "de": "Tierbad", "it": "Bagnetto", "ja": "ペットのお風呂", "zh": "宠物洗澡", "ko": "반려동물 목욕", "ar": "استحمام الحيوان الأليف" },
+    "keywords": {
+      "es": ["bañar al perro", "cita de baño", "día de baño", "estética canina", "champú", "aseo", "limpieza"],
+      "en": ["dog wash", "bath appointment", "bath day", "grooming", "shampoo", "wash", "tub"]
+    }
+  },
+  "cone-collar": {
+    "label": { "es": "Collar isabelino", "en": "Cone collar", "pt": "Colar elisabetano", "fr": "Collerette", "de": "Halskrause", "it": "Collare elisabettiano", "ja": "エリザベスカラー", "zh": "伊丽莎白圈", "ko": "넥카라", "ar": "طوق إليزابيثي" },
+    "keywords": {
+      "es": ["cono", "recuperación", "después de la cirugía", "esterilización", "cuidados postoperatorios", "evitar lamido", "puntos"],
+      "en": ["cone of shame", "e-collar", "recovery", "post-surgery", "spay and neuter", "aftercare", "stitches"]
+    }
+  },
+  "training-clicker": {
+    "label": { "es": "Clicker de entrenamiento", "en": "Training clicker", "pt": "Clicker de adestramento", "fr": "Clicker d’éducation", "de": "Trainingsclicker", "it": "Clicker per addestramento", "ja": "トレーニングクリッカー", "zh": "训练响片", "ko": "훈련용 클리커", "ar": "كليكر التدريب" },
+    "keywords": {
+      "es": ["adiestramiento", "refuerzo positivo", "entrenamiento canino", "obediencia", "trucos", "premiar", "clic"],
+      "en": ["clicker training", "positive reinforcement", "dog training", "obedience", "tricks", "reward marker", "click"]
+    }
+  },
+  "pet-carrier": {
+    "label": { "es": "Transportadora", "en": "Pet carrier", "pt": "Caixa de transporte", "fr": "Caisse de transport", "de": "Transportbox", "it": "Trasportino", "ja": "キャリーバッグ", "zh": "宠物航空箱", "ko": "이동장", "ar": "حقيبة نقل الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["viaje", "ir al veterinario", "kennel", "transporte", "avión", "maleta para mascota", "mudanza"],
+      "en": ["travel", "vet trip", "crate", "kennel", "airline approved", "cat carrier", "transport"]
+    }
+  },
+  "pet-camera": {
+    "label": { "es": "Cámara para mascotas", "en": "Pet camera", "pt": "Câmera para pets", "fr": "Caméra pour animaux", "de": "Haustierkamera", "it": "Videocamera per animali", "ja": "ペットカメラ", "zh": "宠物摄像头", "ko": "펫캠", "ar": "كاميرا الحيوانات الأليفة" },
+    "keywords": {
+      "es": ["ver a mi mascota", "monitoreo remoto", "lanzar premio", "dispensador de premios", "video en vivo", "vigilar en casa", "cámara wifi"],
+      "en": ["watch my pet", "remote monitoring", "toss a treat", "treat dispenser", "live video", "pet cam", "home camera"]
+    }
+  },
+  "flying-disc": {
+    "label": { "es": "Disco volador", "en": "Flying disc", "pt": "Disco de arremesso", "fr": "Disque volant", "de": "Wurfscheibe", "it": "Disco da lancio", "ja": "フライングディスク", "zh": "飞盘", "ko": "원반", "ar": "قرص طائر" },
+    "keywords": {
+      "es": ["frisbee", "lanzar y traer", "juego al aire libre", "atrapar", "hora de jugar", "parque", "deporte canino"],
+      "en": ["frisbee", "fetch", "disc dog", "outdoor play", "catch", "play time", "park"]
+    }
+  }
+}

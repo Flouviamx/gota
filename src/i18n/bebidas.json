@@ -1,0 +1,681 @@
+{
+  "espresso": {
+    "label": { "es": "Espresso", "en": "Espresso", "pt": "Expresso", "fr": "Expresso", "de": "Espresso", "it": "Espresso", "ja": "エスプレッソ", "zh": "意式浓缩咖啡", "ko": "에스프레소", "ar": "إسبريسو" },
+    "keywords": {
+      "es": ["café exprés", "café corto", "shot", "cafetería", "tipos de café", "ristretto", "pedir café"],
+      "en": ["short coffee", "shot", "coffee shop", "café", "coffee menu", "ristretto", "doppio"]
+    }
+  },
+  "espresso-plus": {
+    "label": { "es": "Shot extra", "en": "Extra shot", "pt": "Dose extra", "fr": "Dose supplémentaire", "de": "Zusätzlicher Espresso", "it": "Espresso in più", "ja": "エスプレッソショット追加", "zh": "加一份浓缩", "ko": "샷 추가", "ar": "جرعة إسبريسو إضافية" },
+    "keywords": {
+      "es": ["carga extra", "más cafeína", "personalizar bebida", "doble", "agregar espresso", "más fuerte", "modificador"],
+      "en": ["add shot", "double shot", "more caffeine", "customize drink", "stronger", "add-on", "modifier"]
+    }
+  },
+  "cappuccino": {
+    "label": { "es": "Capuchino", "en": "Cappuccino", "pt": "Cappuccino", "fr": "Cappuccino", "de": "Cappuccino", "it": "Cappuccino", "ja": "カプチーノ", "zh": "卡布奇诺", "ko": "카푸치노", "ar": "كابتشينو" },
+    "keywords": {
+      "es": ["café con leche", "latte", "flat white", "arte latte", "espuma de leche", "taza de café", "cafetería"],
+      "en": ["milk coffee", "latte", "flat white", "latte art", "milk foam", "coffee cup", "café"]
+    }
+  },
+  "latte": {
+    "label": { "es": "Latte", "en": "Latte", "pt": "Café latte", "fr": "Café latte", "de": "Latte macchiato", "it": "Latte macchiato", "ja": "ラテ", "zh": "拿铁", "ko": "라테", "ar": "لاتيه" },
+    "keywords": {
+      "es": ["café con leche", "latte macchiato", "vaso de vidrio", "capas de leche", "café de especialidad", "cafetería", "bebida caliente"],
+      "en": ["milk coffee", "latte macchiato", "glass", "layered coffee", "café latte", "coffee shop", "hot drink"]
+    }
+  },
+  "iced-coffee": {
+    "label": { "es": "Café helado", "en": "Iced coffee", "pt": "Café gelado", "fr": "Café glacé", "de": "Eiskaffee", "it": "Caffè freddo", "ja": "アイスコーヒー", "zh": "冰咖啡", "ko": "아이스 커피", "ar": "قهوة مثلجة" },
+    "keywords": {
+      "es": ["cold brew", "café frío", "con hielo", "americano frío", "bebida fría", "verano", "vaso con popote"],
+      "en": ["cold brew", "cold coffee", "on ice", "iced latte", "iced americano", "cold drink", "summer"]
+    }
+  },
+  "frappe": {
+    "label": { "es": "Frappé", "en": "Frappé", "pt": "Frapê", "fr": "Frappé", "de": "Frappé", "it": "Frappè", "ja": "フラッペ", "zh": "冰沙", "ko": "프라페", "ar": "فرابيه" },
+    "keywords": {
+      "es": ["bebida licuada", "granizado", "frappuccino", "café frappé", "crema batida", "bebida fría", "raspado"],
+      "en": ["blended drink", "slush", "frappuccino", "blended coffee", "whipped cream", "cold drink", "ice blended"]
+    }
+  },
+  "takeaway-cup": {
+    "label": { "es": "Café para llevar", "en": "Coffee to go", "pt": "Café para viagem", "fr": "Café à emporter", "de": "Kaffee to go", "it": "Caffè da asporto", "ja": "テイクアウトのコーヒー", "zh": "外带咖啡", "ko": "테이크아웃 커피", "ar": "قهوة للاصطحاب" },
+    "keywords": {
+      "es": ["vaso desechable", "pickup", "recoger pedido", "bebida caliente", "vaso con tapa", "cafetería", "pedido en línea"],
+      "en": ["takeaway", "takeout", "paper cup", "pickup order", "hot drink", "cup with lid", "café"]
+    }
+  },
+  "takeaway-cup-check": {
+    "label": { "es": "Bebida lista", "en": "Drink ready", "pt": "Bebida pronta", "fr": "Boisson prête", "de": "Getränk fertig", "it": "Bevanda pronta", "ja": "ドリンクの準備完了", "zh": "饮品已备好", "ko": "음료 준비 완료", "ar": "المشروب جاهز" },
+    "keywords": {
+      "es": ["listo para recoger", "pedido listo", "estado del pedido", "recoger en tienda", "orden completada", "aviso al cliente", "app de café"],
+      "en": ["ready for pickup", "order ready", "order status", "pick up in store", "order complete", "notify customer", "coffee app"]
+    }
+  },
+  "takeaway-cup-clock": {
+    "label": { "es": "Pedir por adelantado", "en": "Order ahead", "pt": "Pedir com antecedência", "fr": "Commander à l’avance", "de": "Vorbestellen", "it": "Ordina in anticipo", "ja": "事前注文", "zh": "提前下单", "ko": "미리 주문", "ar": "اطلب مسبقًا" },
+    "keywords": {
+      "es": ["hora de recogida", "pedido programado", "preordenar", "recoger más tarde", "tiempo de espera", "app de café", "apartar pedido"],
+      "en": ["pickup time", "scheduled order", "preorder", "pick up later", "wait time", "coffee app", "mobile order"]
+    }
+  },
+  "coffee-bean": {
+    "label": { "es": "Grano de café", "en": "Coffee bean", "pt": "Grão de café", "fr": "Grain de café", "de": "Kaffeebohne", "it": "Chicco di caffè", "ja": "コーヒー豆", "zh": "咖啡豆", "ko": "커피 원두", "ar": "حبة قهوة" },
+    "keywords": {
+      "es": ["café en grano", "origen", "tueste", "café de especialidad", "arábica", "tienda de café", "cafetería"],
+      "en": ["whole bean", "origin", "roast", "specialty coffee", "arabica", "coffee shop", "beans for sale"]
+    }
+  },
+  "coffee-roast": {
+    "label": { "es": "Tueste de café", "en": "Coffee roast", "pt": "Torra do café", "fr": "Torréfaction du café", "de": "Kaffeeröstung", "it": "Tostatura del caffè", "ja": "焙煎度", "zh": "咖啡烘焙", "ko": "커피 로스팅", "ar": "تحميص القهوة" },
+    "keywords": {
+      "es": ["tostador", "nivel de tueste", "tueste claro", "tueste oscuro", "tostaduría", "recién tostado", "torrefacción"],
+      "en": ["roaster", "roast level", "light roast", "dark roast", "roastery", "freshly roasted", "medium roast"]
+    }
+  },
+  "coffee-bag": {
+    "label": { "es": "Bolsa de café", "en": "Bag of coffee", "pt": "Pacote de café", "fr": "Sachet de café", "de": "Kaffeepackung", "it": "Confezione di caffè", "ja": "コーヒー豆の袋", "zh": "袋装咖啡", "ko": "커피 봉지", "ar": "كيس قهوة" },
+    "keywords": {
+      "es": ["café en grano", "café molido", "comprar café", "tienda en línea", "tostador", "empaque", "kilo de café"],
+      "en": ["whole bean", "ground coffee", "buy coffee", "online shop", "roaster", "packaging", "retail coffee"]
+    }
+  },
+  "coffee-capsule": {
+    "label": { "es": "Cápsula de café", "en": "Coffee capsule", "pt": "Cápsula de café", "fr": "Capsule de café", "de": "Kaffeekapsel", "it": "Capsula di caffè", "ja": "コーヒーカプセル", "zh": "咖啡胶囊", "ko": "커피 캡슐", "ar": "كبسولة قهوة" },
+    "keywords": {
+      "es": ["monodosis", "cafetera de cápsulas", "pod", "una sola taza", "repuesto", "suscripción de café", "reciclaje de cápsulas"],
+      "en": ["pod", "single-serve", "capsule machine", "k-cup", "refill", "coffee subscription", "capsule recycling"]
+    }
+  },
+  "french-press": {
+    "label": { "es": "Prensa francesa", "en": "French press", "pt": "Prensa francesa", "fr": "Cafetière à piston", "de": "French Press", "it": "Caffettiera a stantuffo", "ja": "フレンチプレス", "zh": "法压壶", "ko": "프렌치 프레스", "ar": "مكبس فرنسي" },
+    "keywords": {
+      "es": ["método de preparación", "cafetera de émbolo", "café de especialidad", "infusión", "té", "barista en casa", "cafetera"],
+      "en": ["brew method", "plunger", "cafetière", "press pot", "steeping", "home barista", "tea press"]
+    }
+  },
+  "moka-pot": {
+    "label": { "es": "Cafetera italiana", "en": "Moka pot", "pt": "Cafeteira italiana", "fr": "Cafetière italienne", "de": "Espressokocher", "it": "Moka", "ja": "マキネッタ", "zh": "摩卡壶", "ko": "모카 포트", "ar": "إبريق موكا" },
+    "keywords": {
+      "es": ["moka", "cafetera de estufa", "método de preparación", "café italiano", "greca", "café en casa", "espresso casero"],
+      "en": ["stovetop espresso", "brew method", "italian coffee", "macchinetta", "home coffee", "stovetop coffee maker", "caffettiera"]
+    }
+  },
+  "pour-over": {
+    "label": { "es": "Café de filtro", "en": "Pour-over", "pt": "Café coado", "fr": "Café filtre", "de": "Handfilter", "it": "Caffè filtro", "ja": "ハンドドリップ", "zh": "手冲咖啡", "ko": "핸드드립", "ar": "قهوة مقطرة يدويًا" },
+    "keywords": {
+      "es": ["goteo manual", "gotero", "filtro de papel", "método de preparación", "café de especialidad", "dripper", "barra de métodos"],
+      "en": ["hand drip", "dripper", "paper filter", "brew method", "specialty coffee", "filter coffee", "slow bar"]
+    }
+  },
+  "coffee-pot": {
+    "label": { "es": "Jarra de café", "en": "Coffee pot", "pt": "Jarra de café", "fr": "Verseuse de café", "de": "Kaffeekanne", "it": "Caraffa di caffè", "ja": "コーヒーポット", "zh": "咖啡壶", "ko": "커피 포트", "ar": "إبريق قهوة" },
+    "keywords": {
+      "es": ["cafetera de goteo", "café americano", "rellenar taza", "refill", "desayuno", "cafetería", "café para compartir"],
+      "en": ["drip coffee", "carafe", "refill", "bottomless coffee", "diner", "breakfast", "coffee maker"]
+    }
+  },
+  "portafilter": {
+    "label": { "es": "Portafiltro", "en": "Portafilter", "pt": "Porta-filtro", "fr": "Porte-filtre", "de": "Siebträger", "it": "Portafiltro", "ja": "ポルタフィルター", "zh": "冲煮手柄", "ko": "포터필터", "ar": "حامل الفلتر" },
+    "keywords": {
+      "es": ["barista", "máquina de espresso", "extracción", "sacar un shot", "herramientas de barista", "molienda", "ajustes de espresso"],
+      "en": ["barista", "espresso machine", "extraction", "pull a shot", "barista tools", "grind", "espresso settings"]
+    }
+  },
+  "tea": {
+    "label": { "es": "Té", "en": "Tea", "pt": "Chá", "fr": "Thé", "de": "Tee", "it": "Tè", "ja": "お茶", "zh": "茶", "ko": "차", "ar": "شاي" },
+    "keywords": {
+      "es": ["té caliente", "infusión", "tisana", "hora del té", "taza de té", "bebida caliente", "manzanilla"],
+      "en": ["hot tea", "infusion", "herbal tea", "tea time", "cup of tea", "hot drink", "chamomile"]
+    }
+  },
+  "teapot": {
+    "label": { "es": "Tetera", "en": "Teapot", "pt": "Bule de chá", "fr": "Théière", "de": "Teekanne", "it": "Teiera", "ja": "ティーポット", "zh": "茶壶", "ko": "찻주전자", "ar": "إبريق شاي" },
+    "keywords": {
+      "es": ["servicio de té", "té para dos", "casa de té", "hora del té", "infusión", "servir té", "juego de té"],
+      "en": ["tea service", "tea for two", "tea house", "tea time", "kettle", "pour tea", "tea set"]
+    }
+  },
+  "tea-bag": {
+    "label": { "es": "Bolsita de té", "en": "Tea bag", "pt": "Saquinho de chá", "fr": "Sachet de thé", "de": "Teebeutel", "it": "Bustina di tè", "ja": "ティーバッグ", "zh": "茶包", "ko": "티백", "ar": "كيس شاي" },
+    "keywords": {
+      "es": ["infusión", "té en bolsa", "remojar", "sobre de té", "tisana", "caja de té", "té negro"],
+      "en": ["infusion", "steep", "teabag", "herbal tea", "box of tea", "black tea", "brew"]
+    }
+  },
+  "tea-infuser": {
+    "label": { "es": "Infusor de té", "en": "Tea infuser", "pt": "Infusor de chá", "fr": "Infuseur à thé", "de": "Tee-Ei", "it": "Infusore per tè", "ja": "茶こし", "zh": "滤茶器", "ko": "티 인퓨저", "ar": "مصفاة الشاي" },
+    "keywords": {
+      "es": ["té a granel", "té en hoja", "colador de té", "remojar", "infusión", "hojas sueltas", "bolita de té"],
+      "en": ["loose-leaf tea", "tea strainer", "tea ball", "steep", "infusion", "loose tea", "steeper"]
+    }
+  },
+  "tea-leaves": {
+    "label": { "es": "Hojas de té", "en": "Tea leaves", "pt": "Folhas de chá", "fr": "Feuilles de thé", "de": "Teeblätter", "it": "Foglie di tè", "ja": "茶葉", "zh": "茶叶", "ko": "찻잎", "ar": "أوراق الشاي" },
+    "keywords": {
+      "es": ["té verde", "té a granel", "origen del té", "tienda de té", "plantación de té", "té en hoja", "té orgánico"],
+      "en": ["green tea", "loose-leaf", "tea origin", "tea shop", "tea plantation", "organic tea", "herbal"]
+    }
+  },
+  "matcha": {
+    "label": { "es": "Matcha", "en": "Matcha", "pt": "Matcha", "fr": "Matcha", "de": "Matcha", "it": "Matcha", "ja": "抹茶", "zh": "抹茶", "ko": "말차", "ar": "ماتشا" },
+    "keywords": {
+      "es": ["té verde", "té japonés", "batidor de bambú", "matcha latte", "ceremonia del té", "té en polvo", "chasen"],
+      "en": ["green tea", "japanese tea", "bamboo whisk", "matcha latte", "tea ceremony", "powdered tea", "chasen"]
+    }
+  },
+  "yerba-mate": {
+    "label": { "es": "Mate", "en": "Yerba mate", "pt": "Chimarrão", "fr": "Maté", "de": "Mate", "it": "Mate", "ja": "マテ茶", "zh": "马黛茶", "ko": "마테차", "ar": "متة" },
+    "keywords": {
+      "es": ["yerba mate", "bombilla", "calabaza", "infusión", "Argentina", "Uruguay", "tereré"],
+      "en": ["mate", "bombilla", "gourd", "south american tea", "infusion", "terere", "argentina"]
+    }
+  },
+  "bubble-tea": {
+    "label": { "es": "Bubble tea", "en": "Bubble tea", "pt": "Bubble tea", "fr": "Bubble tea", "de": "Bubble Tea", "it": "Bubble tea", "ja": "タピオカミルクティー", "zh": "珍珠奶茶", "ko": "버블티", "ar": "شاي الفقاعات" },
+    "keywords": {
+      "es": ["boba", "té de tapioca", "perlas de tapioca", "té con leche", "té de burbujas", "popote grueso", "té taiwanés"],
+      "en": ["boba", "tapioca", "milk tea", "tapioca pearls", "pearl milk tea", "boba tea", "taiwanese drink"]
+    }
+  },
+  "iced-tea": {
+    "label": { "es": "Té helado", "en": "Iced tea", "pt": "Chá gelado", "fr": "Thé glacé", "de": "Eistee", "it": "Tè freddo", "ja": "アイスティー", "zh": "冰茶", "ko": "아이스티", "ar": "شاي مثلج" },
+    "keywords": {
+      "es": ["té frío", "con hielo", "bebida fría", "té de limón", "té de durazno", "verano", "jarra de té"],
+      "en": ["cold tea", "on ice", "cold drink", "lemon tea", "peach tea", "summer", "sweet tea"]
+    }
+  },
+  "glass": {
+    "label": { "es": "Vaso de agua", "en": "Glass of water", "pt": "Copo de água", "fr": "Verre d’eau", "de": "Glas Wasser", "it": "Bicchiere d’acqua", "ja": "コップ一杯の水", "zh": "一杯水", "ko": "물 한 잔", "ar": "كوب ماء" },
+    "keywords": {
+      "es": ["agua", "bebida", "hidratación", "tomar agua", "beber", "agua natural", "sed"],
+      "en": ["water", "drink", "hydration", "tumbler", "beverage", "thirst", "tap water"]
+    }
+  },
+  "glass-half": {
+    "label": { "es": "Vaso a la mitad", "en": "Half-full glass", "pt": "Copo pela metade", "fr": "Verre à moitié plein", "de": "Halbvolles Glas", "it": "Bicchiere mezzo pieno", "ja": "半分入ったコップ", "zh": "半杯水", "ko": "반쯤 찬 컵", "ar": "كوب نصف ممتلئ" },
+    "keywords": {
+      "es": ["progreso de hidratación", "medio vaso", "meta de agua", "mitad del día", "consumo de agua", "nivel", "seguimiento"],
+      "en": ["hydration progress", "halfway", "water goal", "water intake", "level", "tracker", "half empty"]
+    }
+  },
+  "glass-empty": {
+    "label": { "es": "Vaso vacío", "en": "Empty glass", "pt": "Copo vazio", "fr": "Verre vide", "de": "Leeres Glas", "it": "Bicchiere vuoto", "ja": "空のコップ", "zh": "空杯", "ko": "빈 컵", "ar": "كوب فارغ" },
+    "keywords": {
+      "es": ["sin registros", "rellenar", "terminado", "sin agua", "estado vacío", "otra ronda", "recargar"],
+      "en": ["refill", "finished", "nothing logged", "empty state", "no water", "another round", "drained"]
+    }
+  },
+  "glass-plus": {
+    "label": { "es": "Registrar un vaso", "en": "Log a glass", "pt": "Registrar um copo", "fr": "Ajouter un verre", "de": "Glas eintragen", "it": "Registra un bicchiere", "ja": "水を1杯記録", "zh": "记录一杯水", "ko": "물 한 잔 기록", "ar": "تسجيل كوب ماء" },
+    "keywords": {
+      "es": ["agregar agua", "consumo de agua", "hidratación", "sumar bebida", "registro diario", "contador de vasos", "app de agua"],
+      "en": ["add water", "water intake", "hydration", "add drink", "daily log", "water counter", "water tracker"]
+    }
+  },
+  "glass-clock": {
+    "label": { "es": "Recordatorio de agua", "en": "Water reminder", "pt": "Lembrete de água", "fr": "Rappel pour boire", "de": "Trinkerinnerung", "it": "Promemoria per bere", "ja": "水分補給リマインダー", "zh": "喝水提醒", "ko": "물 마시기 알림", "ar": "تذكير بشرب الماء" },
+    "keywords": {
+      "es": ["tomar agua", "hidratación", "horario", "alarma", "aviso", "hábito", "cada hora"],
+      "en": ["drink water", "hydration", "schedule", "alarm", "notification", "habit", "hourly"]
+    }
+  },
+  "glass-check": {
+    "label": { "es": "Meta de agua cumplida", "en": "Water goal reached", "pt": "Meta de água atingida", "fr": "Objectif d’eau atteint", "de": "Trinkziel erreicht", "it": "Obiettivo d’acqua raggiunto", "ja": "水分目標達成", "zh": "饮水目标达成", "ko": "물 목표 달성", "ar": "تم بلوغ هدف شرب الماء" },
+    "keywords": {
+      "es": ["hidratación", "objetivo diario", "logro", "completado", "consumo de agua", "racha", "bien hidratado"],
+      "en": ["hydration", "daily goal", "achievement", "completed", "water intake", "streak", "well hydrated"]
+    }
+  },
+  "glass-sparkling": {
+    "label": { "es": "Agua mineral", "en": "Sparkling water", "pt": "Água com gás", "fr": "Eau pétillante", "de": "Sprudelwasser", "it": "Acqua frizzante", "ja": "炭酸水", "zh": "气泡水", "ko": "탄산수", "ar": "مياه غازية" },
+    "keywords": {
+      "es": ["agua con gas", "soda", "burbujas", "agua gasificada", "efervescente", "mineralizada", "club soda"],
+      "en": ["seltzer", "soda water", "club soda", "fizzy water", "bubbles", "carbonated", "mineral water"]
+    }
+  },
+  "water-bottle": {
+    "label": { "es": "Botella reutilizable", "en": "Water bottle", "pt": "Garrafa reutilizável", "fr": "Gourde", "de": "Trinkflasche", "it": "Borraccia", "ja": "ウォーターボトル", "zh": "随身水瓶", "ko": "물병", "ar": "قارورة مياه" },
+    "keywords": {
+      "es": ["cilindro", "hidratación", "gimnasio", "deporte", "ecológico", "termo de agua", "cantimplora"],
+      "en": ["reusable bottle", "hydration", "gym", "sports bottle", "eco-friendly", "flask", "canteen"]
+    }
+  },
+  "bottle": {
+    "label": { "es": "Bebida embotellada", "en": "Bottled drink", "pt": "Bebida engarrafada", "fr": "Boisson en bouteille", "de": "Flaschengetränk", "it": "Bevanda in bottiglia", "ja": "ペットボトル飲料", "zh": "瓶装饮料", "ko": "병 음료", "ar": "مشروب معبأ" },
+    "keywords": {
+      "es": ["botella de plástico", "agua embotellada", "refresco", "botella de agua", "PET", "envase", "tienda de conveniencia"],
+      "en": ["plastic bottle", "bottled water", "soda", "water bottle", "PET", "container", "convenience store"]
+    }
+  },
+  "water-jug": {
+    "label": { "es": "Garrafón", "en": "Water jug", "pt": "Galão de água", "fr": "Bonbonne d’eau", "de": "Wasserkanister", "it": "Boccione d’acqua", "ja": "大型ウォーターボトル", "zh": "桶装水", "ko": "생수통", "ar": "جالون ماء" },
+    "keywords": {
+      "es": ["agua purificada", "rellenar", "entrega a domicilio", "galón", "20 litros", "agua para la oficina", "despachador"],
+      "en": ["5-gallon", "water delivery", "refill", "purified water", "water cooler", "office water", "big bottle"]
+    }
+  },
+  "drinking-water": {
+    "label": { "es": "Agua potable", "en": "Drinking water", "pt": "Água potável", "fr": "Eau potable", "de": "Trinkwasser", "it": "Acqua potabile", "ja": "飲料水", "zh": "饮用水", "ko": "식수", "ar": "مياه صالحة للشرب" },
+    "keywords": {
+      "es": ["bebedero", "llave de agua", "fuente", "agua segura", "señal", "servicio", "agua de la llave"],
+      "en": ["potable water", "drinking fountain", "tap", "safe water", "sign", "amenity", "faucet"]
+    }
+  },
+  "refill-station": {
+    "label": { "es": "Recarga de agua", "en": "Refill station", "pt": "Ponto de recarga de água", "fr": "Station de remplissage", "de": "Nachfüllstation", "it": "Punto di ricarica acqua", "ja": "給水スポット", "zh": "加水站", "ko": "급수대", "ar": "محطة تعبئة المياه" },
+    "keywords": {
+      "es": ["rellenar botella", "agua gratis", "bebedero", "punto de hidratación", "ecológico", "sin plástico", "fuente de agua"],
+      "en": ["bottle refill", "free water", "water fountain", "hydration point", "eco-friendly", "plastic-free", "refill point"]
+    }
+  },
+  "pitcher": {
+    "label": { "es": "Jarra", "en": "Pitcher", "pt": "Jarra", "fr": "Carafe", "de": "Krug", "it": "Brocca", "ja": "ピッチャー", "zh": "水罐", "ko": "피처", "ar": "إبريق" },
+    "keywords": {
+      "es": ["agua de sabor", "limonada", "jarra de cerveza", "sangría", "para compartir", "servir", "agua fresca"],
+      "en": ["jug", "lemonade", "beer pitcher", "sangria", "to share", "serve", "carafe"]
+    }
+  },
+  "milk-jug": {
+    "label": { "es": "Jarrita de leche", "en": "Milk jug", "pt": "Leiteira", "fr": "Pot à lait", "de": "Milchkännchen", "it": "Lattiera", "ja": "ミルクピッチャー", "zh": "奶盅", "ko": "밀크 저그", "ar": "إبريق حليب" },
+    "keywords": {
+      "es": ["cremera", "crema para café", "agregar leche", "espumar leche", "barista", "jarra para vaporizar", "lechera"],
+      "en": ["creamer", "add milk", "frothing pitcher", "steaming pitcher", "barista", "milk pitcher", "cream"]
+    }
+  },
+  "drink-dispenser": {
+    "label": { "es": "Vitrolero", "en": "Drink dispenser", "pt": "Suqueira", "fr": "Fontaine à boisson", "de": "Saftspender", "it": "Dispenser per bevande", "ja": "ドリンクディスペンサー", "zh": "带龙头饮料罐", "ko": "음료 디스펜서", "ar": "موزع مشروبات" },
+    "keywords": {
+      "es": ["aguas frescas", "barra de bebidas", "autoservicio", "buffet", "eventos", "llave", "fiesta"],
+      "en": ["aguas frescas", "beverage station", "self-serve", "buffet", "events", "spigot", "party"]
+    }
+  },
+  "juice": {
+    "label": { "es": "Jugo", "en": "Juice", "pt": "Suco", "fr": "Jus", "de": "Saft", "it": "Succo", "ja": "ジュース", "zh": "果汁", "ko": "주스", "ar": "عصير" },
+    "keywords": {
+      "es": ["recién exprimido", "jugo de naranja", "juguería", "zumo", "desayuno", "bebida de fruta", "barra de jugos"],
+      "en": ["fresh juice", "orange juice", "juice bar", "freshly squeezed", "breakfast", "fruit drink", "cold-pressed"]
+    }
+  },
+  "juice-box": {
+    "label": { "es": "Jugo de cajita", "en": "Juice box", "pt": "Caixinha de suco", "fr": "Brique de jus", "de": "Trinkpäckchen", "it": "Succo in brick", "ja": "紙パックジュース", "zh": "盒装果汁", "ko": "팩 주스", "ar": "علبة عصير" },
+    "keywords": {
+      "es": ["cajita", "lonchera", "bebida para niños", "envase de cartón", "popote", "recreo", "lunch escolar"],
+      "en": ["drink carton", "lunchbox", "kids' drink", "carton", "straw", "school lunch", "snack time"]
+    }
+  },
+  "smoothie": {
+    "label": { "es": "Licuado", "en": "Smoothie", "pt": "Smoothie", "fr": "Smoothie", "de": "Smoothie", "it": "Frullato", "ja": "スムージー", "zh": "思慕雪", "ko": "스무디", "ar": "سموذي" },
+    "keywords": {
+      "es": ["smoothie", "batido de fruta", "bebida saludable", "juguería", "licuadora", "frutos rojos", "desayuno"],
+      "en": ["blended drink", "fruit shake", "healthy drink", "juice bar", "blender", "berries", "breakfast"]
+    }
+  },
+  "lemonade": {
+    "label": { "es": "Limonada", "en": "Lemonade", "pt": "Limonada", "fr": "Citronnade", "de": "Zitronenlimonade", "it": "Limonata", "ja": "レモネード", "zh": "柠檬水", "ko": "레모네이드", "ar": "عصير ليمون" },
+    "keywords": {
+      "es": ["agua fresca", "agua de limón", "bebida de verano", "vaso con hielo", "agua de jamaica", "naranjada", "refrescante"],
+      "en": ["agua fresca", "lemon drink", "summer drink", "iced", "limeade", "refreshing", "fruit water"]
+    }
+  },
+  "coconut-drink": {
+    "label": { "es": "Agua de coco", "en": "Coconut water", "pt": "Água de coco", "fr": "Eau de coco", "de": "Kokoswasser", "it": "Acqua di cocco", "ja": "ココナッツウォーター", "zh": "椰子水", "ko": "코코넛 워터", "ar": "ماء جوز الهند" },
+    "keywords": {
+      "es": ["coco", "bebida tropical", "playa", "coco con popote", "coco frío", "vacaciones", "piña colada"],
+      "en": ["coconut", "tropical drink", "beach", "coconut with straw", "vacation", "piña colada", "fresh coconut"]
+    }
+  },
+  "shaker-bottle": {
+    "label": { "es": "Batido de proteína", "en": "Protein shake", "pt": "Shake de proteína", "fr": "Shaker protéiné", "de": "Proteinshake", "it": "Shaker per proteine", "ja": "プロテインシェイカー", "zh": "蛋白摇摇杯", "ko": "프로틴 쉐이커", "ar": "مخفوق البروتين" },
+    "keywords": {
+      "es": ["shaker", "suplementos", "gimnasio", "whey", "preentreno", "nutrición deportiva", "termo mezclador"],
+      "en": ["shaker bottle", "supplements", "gym", "whey", "pre-workout", "sports nutrition", "mixer bottle"]
+    }
+  },
+  "milk": {
+    "label": { "es": "Leche", "en": "Milk", "pt": "Leite", "fr": "Lait", "de": "Milch", "it": "Latte", "ja": "牛乳", "zh": "牛奶", "ko": "우유", "ar": "حليب" },
+    "keywords": {
+      "es": ["lácteos", "súper", "despensa", "cartón de leche", "leche para café", "desayuno", "abarrotes"],
+      "en": ["dairy", "groceries", "milk carton", "milk for coffee", "breakfast", "pantry", "whole milk"]
+    }
+  },
+  "plant-milk": {
+    "label": { "es": "Leche vegetal", "en": "Plant milk", "pt": "Leite vegetal", "fr": "Lait végétal", "de": "Pflanzenmilch", "it": "Latte vegetale", "ja": "植物性ミルク", "zh": "植物奶", "ko": "식물성 우유", "ar": "حليب نباتي" },
+    "keywords": {
+      "es": ["leche de avena", "leche de almendra", "leche de soya", "sin lactosa", "vegano", "sin lácteos", "alternativa a la leche"],
+      "en": ["oat milk", "almond milk", "soy milk", "dairy-free", "vegan", "lactose-free", "milk alternative"]
+    }
+  },
+  "milkshake": {
+    "label": { "es": "Malteada", "en": "Milkshake", "pt": "Milk-shake", "fr": "Milk-shake", "de": "Milchshake", "it": "Milkshake", "ja": "ミルクシェイク", "zh": "奶昔", "ko": "밀크셰이크", "ar": "ميلك شيك" },
+    "keywords": {
+      "es": ["batido", "helado", "postre", "crema batida", "fuente de sodas", "diner", "cereza"],
+      "en": ["shake", "ice cream", "dessert", "whipped cream", "diner", "soda fountain", "malt"]
+    }
+  },
+  "hot-chocolate": {
+    "label": { "es": "Chocolate caliente", "en": "Hot chocolate", "pt": "Chocolate quente", "fr": "Chocolat chaud", "de": "Heiße Schokolade", "it": "Cioccolata calda", "ja": "ホットチョコレート", "zh": "热巧克力", "ko": "핫초코", "ar": "شوكولاتة ساخنة" },
+    "keywords": {
+      "es": ["cocoa", "atole", "champurrado", "bebida caliente", "malvaviscos", "invierno", "chocolate de mesa"],
+      "en": ["cocoa", "hot cocoa", "atole", "champurrado", "marshmallows", "winter", "warm drink"]
+    }
+  },
+  "soda": {
+    "label": { "es": "Refresco", "en": "Soft drink", "pt": "Refrigerante", "fr": "Soda", "de": "Softdrink", "it": "Bibita", "ja": "ソフトドリンク", "zh": "汽水", "ko": "탄산음료", "ar": "مشروب غازي" },
+    "keywords": {
+      "es": ["soda", "refresco de máquina", "combo", "comida rápida", "vaso con popote", "bebida gaseosa", "refill"],
+      "en": ["soda", "fountain drink", "pop", "combo", "fast food", "fizzy drink", "cup with straw"]
+    }
+  },
+  "soda-can": {
+    "label": { "es": "Bebida en lata", "en": "Canned drink", "pt": "Lata de bebida", "fr": "Canette", "de": "Getränkedose", "it": "Lattina", "ja": "缶飲料", "zh": "罐装饮料", "ko": "캔 음료", "ar": "علبة مشروب" },
+    "keywords": {
+      "es": ["lata de refresco", "lata de cerveza", "chela", "six", "refresco", "reciclaje de latas", "bebida fría"],
+      "en": ["soda can", "beer can", "tin", "pop can", "canned soda", "aluminum can", "can recycling"]
+    }
+  },
+  "soda-fountain": {
+    "label": { "es": "Máquina de refrescos", "en": "Soda fountain", "pt": "Máquina de refrigerante", "fr": "Distributeur de sodas", "de": "Softdrink-Zapfanlage", "it": "Distributore di bibite", "ja": "ドリンクバー", "zh": "自助饮料机", "ko": "탄산음료 디스펜서", "ar": "آلة المشروبات الغازية" },
+    "keywords": {
+      "es": ["refill", "barra de refrescos", "autoservicio", "comida rápida", "vaso para llenar", "refresco de máquina", "cine"],
+      "en": ["refill", "self-serve drinks", "drink station", "fast food", "fountain drink", "free refills", "movie theater"]
+    }
+  },
+  "energy-drink": {
+    "label": { "es": "Bebida energética", "en": "Energy drink", "pt": "Energético", "fr": "Boisson énergisante", "de": "Energydrink", "it": "Energy drink", "ja": "エナジードリンク", "zh": "能量饮料", "ko": "에너지 드링크", "ar": "مشروب طاقة" },
+    "keywords": {
+      "es": ["cafeína", "energía", "deporte", "rendimiento", "desvelo", "lata", "gamer"],
+      "en": ["caffeine", "energy", "sports", "boost", "all-nighter", "can", "gaming"]
+    }
+  },
+  "beverages": {
+    "label": { "es": "Bebidas", "en": "Beverages", "pt": "Bebidas", "fr": "Boissons", "de": "Getränke", "it": "Bevande", "ja": "飲み物", "zh": "饮品", "ko": "음료", "ar": "مشروبات" },
+    "keywords": {
+      "es": ["pasillo de bebidas", "categoría", "súper", "app de entregas", "refrescos", "aguas", "tomar algo"],
+      "en": ["drinks", "drinks aisle", "category", "grocery", "delivery app", "soft drinks", "refreshments"]
+    }
+  },
+  "wine-glass": {
+    "label": { "es": "Vino", "en": "Wine", "pt": "Vinho", "fr": "Vin", "de": "Wein", "it": "Vino", "ja": "ワイン", "zh": "葡萄酒", "ko": "와인", "ar": "نبيذ" },
+    "keywords": {
+      "es": ["copa de vino", "vinoteca", "carta de vinos", "maridaje", "vino tinto", "sommelier", "cena"],
+      "en": ["wine glass", "wine bar", "wine list", "pairing", "red wine", "sommelier", "dinner"]
+    }
+  },
+  "wine-glass-star": {
+    "label": { "es": "Calificar vino", "en": "Rate wine", "pt": "Avaliar vinho", "fr": "Noter un vin", "de": "Wein bewerten", "it": "Valuta il vino", "ja": "ワインを評価", "zh": "为葡萄酒评分", "ko": "와인 평가", "ar": "تقييم النبيذ" },
+    "keywords": {
+      "es": ["reseña", "vino favorito", "puntuación", "nota de cata", "recomendado", "estrellas", "mis vinos"],
+      "en": ["review", "favorite wine", "score", "tasting note", "recommended", "stars", "my cellar"]
+    }
+  },
+  "wine-bottle": {
+    "label": { "es": "Botella de vino", "en": "Wine bottle", "pt": "Garrafa de vinho", "fr": "Bouteille de vin", "de": "Weinflasche", "it": "Bottiglia di vino", "ja": "ワインボトル", "zh": "葡萄酒瓶", "ko": "와인병", "ar": "زجاجة نبيذ" },
+    "keywords": {
+      "es": ["vinoteca", "tienda de vinos", "servicio de botella", "cava", "vino tinto", "regalo", "enoteca"],
+      "en": ["wine shop", "bottle service", "cellar", "red wine", "gift", "vineyard", "liquor store"]
+    }
+  },
+  "wine-pour": {
+    "label": { "es": "Vino por copa", "en": "Wine by the glass", "pt": "Vinho em taça", "fr": "Vin au verre", "de": "Offener Wein", "it": "Vino al calice", "ja": "グラスワイン", "zh": "单杯葡萄酒", "ko": "글라스 와인", "ar": "نبيذ بالكأس" },
+    "keywords": {
+      "es": ["servir vino", "copeo", "sommelier", "carta de vinos", "servicio", "una copa", "verter"],
+      "en": ["pour wine", "serving", "sommelier", "wine list", "house pour", "glass of wine", "wine service"]
+    }
+  },
+  "cheers": {
+    "label": { "es": "Salud", "en": "Cheers", "pt": "Saúde", "fr": "Santé", "de": "Prost", "it": "Cin cin", "ja": "乾杯", "zh": "干杯", "ko": "건배", "ar": "في صحتك" },
+    "keywords": {
+      "es": ["brindis", "brindar", "celebración", "fiesta", "salir de noche", "chocar copas", "plan con amigos"],
+      "en": ["toast", "celebration", "party", "night out", "clink glasses", "plans with friends", "happy hour"]
+    }
+  },
+  "champagne": {
+    "label": { "es": "Champaña", "en": "Champagne", "pt": "Champanhe", "fr": "Champagne", "de": "Champagner", "it": "Champagne", "ja": "シャンパン", "zh": "香槟", "ko": "샴페인", "ar": "شمبانيا" },
+    "keywords": {
+      "es": ["vino espumoso", "celebración", "año nuevo", "inauguración", "descorchar", "boda", "festejo"],
+      "en": ["sparkling wine", "celebration", "new year", "grand opening", "pop the cork", "wedding", "prosecco"]
+    }
+  },
+  "champagne-glass": {
+    "label": { "es": "Copa de champaña", "en": "Champagne flute", "pt": "Taça de espumante", "fr": "Flûte de champagne", "de": "Sektglas", "it": "Flûte", "ja": "シャンパングラス", "zh": "香槟杯", "ko": "샴페인 잔", "ar": "كأس شمبانيا" },
+    "keywords": {
+      "es": ["copa flauta", "vino espumoso", "brunch", "brindis", "mimosa", "prosecco", "celebración"],
+      "en": ["flute", "sparkling wine", "brunch", "toast", "mimosa", "prosecco", "celebration"]
+    }
+  },
+  "corkscrew": {
+    "label": { "es": "Sacacorchos", "en": "Corkscrew", "pt": "Saca-rolhas", "fr": "Tire-bouchon", "de": "Korkenzieher", "it": "Cavatappi", "ja": "コルク抜き", "zh": "红酒开瓶器", "ko": "코르크 따개", "ar": "فتاحة الفلين" },
+    "keywords": {
+      "es": ["descorchar", "abrir vino", "descorche", "botella de vino", "destapar", "sommelier", "tirabuzón"],
+      "en": ["uncork", "open wine", "corkage", "wine bottle", "wine key", "sommelier", "bottle opening"]
+    }
+  },
+  "decanter": {
+    "label": { "es": "Decantador", "en": "Decanter", "pt": "Decanter", "fr": "Carafe à décanter", "de": "Dekanter", "it": "Decanter", "ja": "デキャンタ", "zh": "醒酒器", "ko": "디캔터", "ar": "دورق النبيذ" },
+    "keywords": {
+      "es": ["jarra de vino", "decantar", "vino de la casa", "oxigenar", "garrafa", "servicio de vino", "carafe"],
+      "en": ["carafe", "decanting", "house wine", "aerate", "wine service", "let it breathe", "pour"]
+    }
+  },
+  "wine-barrel": {
+    "label": { "es": "Barrica", "en": "Barrel", "pt": "Barril", "fr": "Fût", "de": "Fass", "it": "Botte", "ja": "樽", "zh": "酒桶", "ko": "술통", "ar": "برميل" },
+    "keywords": {
+      "es": ["añejamiento", "bodega", "vinícola", "barril", "whisky", "roble", "crianza"],
+      "en": ["aging", "cask", "winery", "cellar", "oak", "whiskey", "distillery"]
+    }
+  },
+  "tasting-flight": {
+    "label": { "es": "Degustación", "en": "Tasting flight", "pt": "Degustação", "fr": "Dégustation", "de": "Verkostung", "it": "Degustazione", "ja": "飲み比べ", "zh": "品鉴组合", "ko": "시음 세트", "ar": "تشكيلة تذوق" },
+    "keywords": {
+      "es": ["cata", "muestras", "cerveza artesanal", "vinos", "tabla de degustación", "probadores", "cata de mezcal"],
+      "en": ["sampler", "tasting", "craft beer", "wine tasting", "flight board", "samples", "brewery"]
+    }
+  },
+  "sake": {
+    "label": { "es": "Sake", "en": "Sake", "pt": "Saquê", "fr": "Saké", "de": "Sake", "it": "Sakè", "ja": "日本酒", "zh": "清酒", "ko": "사케", "ar": "ساكي" },
+    "keywords": {
+      "es": ["bebida japonesa", "restaurante japonés", "licor de arroz", "tokkuri", "sushi", "ochoko", "vino de arroz"],
+      "en": ["japanese drink", "japanese restaurant", "rice wine", "tokkuri", "sushi bar", "ochoko", "nihonshu"]
+    }
+  },
+  "beer": {
+    "label": { "es": "Cerveza", "en": "Beer", "pt": "Cerveja", "fr": "Bière", "de": "Bier", "it": "Birra", "ja": "ビール", "zh": "啤酒", "ko": "맥주", "ar": "بيرة" },
+    "keywords": {
+      "es": ["chela", "tarro", "bar", "cantina", "carta de cervezas", "pub", "cheve"],
+      "en": ["brew", "beer mug", "bar", "pub", "beer list", "ale", "lager"]
+    }
+  },
+  "pint-glass": {
+    "label": { "es": "Pinta", "en": "Pint", "pt": "Copo de chope", "fr": "Pinte", "de": "Bierglas", "it": "Pinta", "ja": "パイント", "zh": "一品脱啤酒", "ko": "파인트", "ar": "كأس بيرة" },
+    "keywords": {
+      "es": ["cerveza de barril", "cerveza artesanal", "vaso de cerveza", "tamaño", "medio litro", "pub", "cervecería"],
+      "en": ["draft beer", "craft beer", "beer glass", "beer size", "half pint", "pub", "brewery"]
+    }
+  },
+  "beer-bottle": {
+    "label": { "es": "Cerveza en botella", "en": "Bottled beer", "pt": "Garrafa de cerveja", "fr": "Bière en bouteille", "de": "Bierflasche", "it": "Birra in bottiglia", "ja": "瓶ビール", "zh": "瓶装啤酒", "ko": "병맥주", "ar": "زجاجة بيرة" },
+    "keywords": {
+      "es": ["chela", "caguama", "cuartito", "botella de vidrio", "cheve fría", "cerveza artesanal", "envase"],
+      "en": ["beer bottle", "longneck", "brew", "glass bottle", "cold beer", "craft beer", "stubby"]
+    }
+  },
+  "beer-tap": {
+    "label": { "es": "Cerveza de barril", "en": "Draft beer", "pt": "Chope", "fr": "Bière pression", "de": "Bier vom Fass", "it": "Birra alla spina", "ja": "生ビール", "zh": "生啤", "ko": "생맥주", "ar": "بيرة من الصنبور" },
+    "keywords": {
+      "es": ["grifo", "tirador", "llave de cerveza", "cerveza artesanal", "barra", "servir cerveza", "cervecería"],
+      "en": ["on tap", "tap handle", "draught", "craft beer", "bar", "pour beer", "taproom"]
+    }
+  },
+  "keg": {
+    "label": { "es": "Barril de cerveza", "en": "Keg", "pt": "Barril de chope", "fr": "Fût de bière", "de": "Bierfass", "it": "Fusto di birra", "ja": "ビール樽", "zh": "啤酒桶", "ko": "맥주 케그", "ar": "برميل بيرة" },
+    "keywords": {
+      "es": ["inventario del bar", "evento", "fiesta", "cerveza de grifo", "existencias", "cervecería", "litros"],
+      "en": ["bar inventory", "draft beer", "event", "party", "stock", "brewery", "half barrel"]
+    }
+  },
+  "keg-alert": {
+    "label": { "es": "Barril por acabarse", "en": "Keg running low", "pt": "Barril acabando", "fr": "Fût presque vide", "de": "Fass fast leer", "it": "Fusto quasi vuoto", "ja": "樽の残量わずか", "zh": "酒桶即将见底", "ko": "케그 잔량 부족", "ar": "البرميل على وشك النفاد" },
+    "keywords": {
+      "es": ["inventario bajo", "barril vacío", "cambiar barril", "aviso", "existencias", "reordenar", "alerta del bar"],
+      "en": ["low stock", "empty keg", "change keg", "warning", "inventory", "reorder", "bar alert"]
+    }
+  },
+  "six-pack": {
+    "label": { "es": "Six-pack", "en": "Six-pack", "pt": "Pack com seis", "fr": "Pack de six", "de": "Sechserpack", "it": "Confezione da sei", "ja": "6本パック", "zh": "六罐装", "ko": "식스팩", "ar": "عبوة سداسية" },
+    "keywords": {
+      "es": ["six", "paquete de seis", "cervezas", "latas", "multipack", "promoción", "para llevar"],
+      "en": ["multipack", "pack of six", "beers", "cans", "bottles", "bundle", "carry pack"]
+    }
+  },
+  "bottle-opener": {
+    "label": { "es": "Destapador", "en": "Bottle opener", "pt": "Abridor de garrafas", "fr": "Décapsuleur", "de": "Flaschenöffner", "it": "Apribottiglie", "ja": "栓抜き", "zh": "开瓶器", "ko": "병따개", "ar": "فتاحة زجاجات" },
+    "keywords": {
+      "es": ["abrir cerveza", "abridor", "destapar", "corcholata", "abrir refresco", "bar", "fiesta"],
+      "en": ["open beer", "opener", "bottle cap", "crown cap", "open soda", "bar tool", "church key"]
+    }
+  },
+  "bottle-return": {
+    "label": { "es": "Envase retornable", "en": "Returnable bottle", "pt": "Garrafa retornável", "fr": "Bouteille consignée", "de": "Pfandflasche", "it": "Vuoto a rendere", "ja": "リターナブル瓶", "zh": "退瓶", "ko": "빈병 반환", "ar": "زجاجة مرتجعة" },
+    "keywords": {
+      "es": ["depósito", "reciclaje", "devolver botella", "ecológico", "cambio de envase", "reembolso", "reutilizar"],
+      "en": ["deposit", "bottle deposit", "recycling", "return bottle", "eco-friendly", "refund", "reuse"]
+    }
+  },
+  "hops": {
+    "label": { "es": "Lúpulo", "en": "Hops", "pt": "Lúpulo", "fr": "Houblon", "de": "Hopfen", "it": "Luppolo", "ja": "ホップ", "zh": "啤酒花", "ko": "홉", "ar": "حشيشة الدينار" },
+    "keywords": {
+      "es": ["cerveza artesanal", "ingrediente", "amargor", "IPA", "cervecería", "elaboración", "planta"],
+      "en": ["craft beer", "ingredient", "bitterness", "IPA", "brewery", "homebrew", "brewing"]
+    }
+  },
+  "cocktail": {
+    "label": { "es": "Coctel", "en": "Cocktail", "pt": "Coquetel", "fr": "Cocktail", "de": "Cocktail", "it": "Cocktail", "ja": "カクテル", "zh": "鸡尾酒", "ko": "칵테일", "ar": "كوكتيل" },
+    "keywords": {
+      "es": ["martini", "bar", "carta de cócteles", "mixología", "vida nocturna", "trago", "copa"],
+      "en": ["martini", "bar", "cocktail menu", "mixology", "nightlife", "mixed drink", "drinks"]
+    }
+  },
+  "cocktail-clock": {
+    "label": { "es": "Hora feliz", "en": "Happy hour", "pt": "Happy hour", "fr": "Happy hour", "de": "Happy Hour", "it": "Happy hour", "ja": "ハッピーアワー", "zh": "欢乐时光", "ko": "해피 아워", "ar": "الساعة السعيدة" },
+    "keywords": {
+      "es": ["happy hour", "2x1", "promoción de bebidas", "horario", "barra libre", "especiales", "después del trabajo"],
+      "en": ["drink specials", "2-for-1", "promotion", "after work", "time", "bar deals", "discount drinks"]
+    }
+  },
+  "margarita": {
+    "label": { "es": "Margarita", "en": "Margarita", "pt": "Margarita", "fr": "Margarita", "de": "Margarita", "it": "Margarita", "ja": "マルガリータ", "zh": "玛格丽特", "ko": "마르가리타", "ar": "مارغريتا" },
+    "keywords": {
+      "es": ["tequila", "escarchado con sal", "limón", "coctel mexicano", "bar", "cantina", "copa margarita"],
+      "en": ["tequila", "salted rim", "lime", "mexican cocktail", "bar", "frozen margarita", "cantina"]
+    }
+  },
+  "tropical-drink": {
+    "label": { "es": "Coctel tropical", "en": "Tropical cocktail", "pt": "Drinque tropical", "fr": "Cocktail tropical", "de": "Tropischer Cocktail", "it": "Cocktail tropicale", "ja": "トロピカルカクテル", "zh": "热带鸡尾酒", "ko": "트로피컬 칵테일", "ar": "كوكتيل استوائي" },
+    "keywords": {
+      "es": ["piña colada", "playa", "todo incluido", "sombrillita", "bar de playa", "vacaciones", "bebida tropical"],
+      "en": ["piña colada", "beach bar", "all-inclusive", "cocktail umbrella", "vacation", "tiki", "mai tai"]
+    }
+  },
+  "cocktail-shaker": {
+    "label": { "es": "Coctelera", "en": "Cocktail shaker", "pt": "Coqueteleira", "fr": "Shaker", "de": "Cocktailshaker", "it": "Shaker", "ja": "シェーカー", "zh": "调酒壶", "ko": "칵테일 셰이커", "ar": "خلاط الكوكتيل" },
+    "keywords": {
+      "es": ["mixología", "bartender", "preparar tragos", "receta", "agitar", "barra", "cantinero"],
+      "en": ["bartending", "mixology", "mix drinks", "recipe", "shake", "bar tools", "bartender"]
+    }
+  },
+  "whiskey": {
+    "label": { "es": "Whisky", "en": "Whiskey", "pt": "Uísque", "fr": "Whisky", "de": "Whisky", "it": "Whisky", "ja": "ウイスキー", "zh": "威士忌", "ko": "위스키", "ar": "ويسكي" },
+    "keywords": {
+      "es": ["en las rocas", "licor", "destilados", "bourbon", "vaso old fashioned", "carta de licores", "trago"],
+      "en": ["on the rocks", "spirits", "bourbon", "scotch", "liquor menu", "old fashioned", "neat"]
+    }
+  },
+  "shot-glass": {
+    "label": { "es": "Caballito", "en": "Shot glass", "pt": "Copo de shot", "fr": "Verre à shot", "de": "Schnapsglas", "it": "Bicchierino", "ja": "ショットグラス", "zh": "烈酒杯", "ko": "샷잔", "ar": "كأس شوت" },
+    "keywords": {
+      "es": ["tequila", "mezcal", "shot", "trago", "brindis", "destilado", "cantina"],
+      "en": ["shot", "tequila", "mezcal", "spirits", "toast", "liquor", "bar"]
+    }
+  },
+  "liquor": {
+    "label": { "es": "Licores", "en": "Liquor", "pt": "Destilados", "fr": "Spiritueux", "de": "Spirituosen", "it": "Liquori", "ja": "お酒", "zh": "烈酒", "ko": "주류", "ar": "مشروبات روحية" },
+    "keywords": {
+      "es": ["vinos y licores", "destilados", "alcohol", "licorería", "tequila", "ron", "depósito"],
+      "en": ["spirits", "liquor store", "alcohol", "booze", "rum", "vodka", "wine and spirits"]
+    }
+  },
+  "bar-counter": {
+    "label": { "es": "Bar", "en": "Bar", "pt": "Bar", "fr": "Bar", "de": "Bar", "it": "Bar", "ja": "バー", "zh": "酒吧", "ko": "바", "ar": "بار" },
+    "keywords": {
+      "es": ["cantina", "antro", "barra", "pub", "vida nocturna", "lugares para salir", "taburete"],
+      "en": ["pub", "bar counter", "nightlife", "night out", "bar stool", "lounge", "tavern"]
+    }
+  },
+  "ice-cubes": {
+    "label": { "es": "Hielo", "en": "Ice", "pt": "Gelo", "fr": "Glaçons", "de": "Eiswürfel", "it": "Ghiaccio", "ja": "氷", "zh": "冰块", "ko": "얼음", "ar": "مكعبات ثلج" },
+    "keywords": {
+      "es": ["cubos de hielo", "con hielo", "sin hielo", "poco hielo", "bebida fría", "frío", "personalizar bebida"],
+      "en": ["ice cubes", "with ice", "no ice", "light ice", "cold drink", "on the rocks", "customize drink"]
+    }
+  },
+  "ice-bucket": {
+    "label": { "es": "Cubeta de hielo", "en": "Ice bucket", "pt": "Balde de gelo", "fr": "Seau à glace", "de": "Sektkühler", "it": "Secchiello del ghiaccio", "ja": "アイスバケット", "zh": "冰桶", "ko": "아이스 버킷", "ar": "دلو ثلج" },
+    "keywords": {
+      "es": ["cubetazo", "servicio de botella", "cubeta de cervezas", "champaña", "enfriar", "botella fría", "antro"],
+      "en": ["bottle service", "bucket of beers", "champagne", "chill", "wine cooler", "cold bottle", "club"]
+    }
+  },
+  "ice-chest": {
+    "label": { "es": "Hielera", "en": "Cooler", "pt": "Caixa térmica", "fr": "Glacière", "de": "Kühlbox", "it": "Ghiacciaia", "ja": "クーラーボックス", "zh": "保温箱", "ko": "아이스박스", "ar": "صندوق تبريد" },
+    "keywords": {
+      "es": ["mantener frío", "pícnic", "playa", "carne asada", "paseo", "acampar", "bebidas frías"],
+      "en": ["ice chest", "keep cold", "picnic", "beach", "camping", "tailgate", "cold drinks"]
+    }
+  },
+  "beverage-cooler": {
+    "label": { "es": "Refrigerador de bebidas", "en": "Drinks fridge", "pt": "Geladeira expositora", "fr": "Vitrine réfrigérée", "de": "Getränkekühlschrank", "it": "Frigo vetrina", "ja": "冷蔵ショーケース", "zh": "饮料冷柜", "ko": "음료 냉장고", "ar": "ثلاجة مشروبات" },
+    "keywords": {
+      "es": ["enfriador", "vitrina refrigerada", "tiendita", "tienda de conveniencia", "bar", "distribución de bebidas", "refri"],
+      "en": ["beverage cooler", "glass door fridge", "convenience store", "display fridge", "bar", "beverage distribution", "merchandiser"]
+    }
+  },
+  "thermos": {
+    "label": { "es": "Termo", "en": "Thermos", "pt": "Garrafa térmica", "fr": "Bouteille isotherme", "de": "Thermoskanne", "it": "Thermos", "ja": "魔法瓶", "zh": "保温瓶", "ko": "보온병", "ar": "ترمس" },
+    "keywords": {
+      "es": ["bebida caliente", "café para llevar", "mantener caliente", "acero inoxidable", "paseo", "oficina", "botella térmica"],
+      "en": ["vacuum flask", "hot drinks", "keep warm", "insulated", "stainless steel", "flask", "to go"]
+    }
+  },
+  "travel-mug": {
+    "label": { "es": "Taza de viaje", "en": "Travel mug", "pt": "Copo térmico", "fr": "Mug de voyage", "de": "Thermobecher", "it": "Tazza da viaggio", "ja": "タンブラー", "zh": "随行杯", "ko": "텀블러", "ar": "كوب سفر" },
+    "keywords": {
+      "es": ["vaso reutilizable", "termo para café", "trayecto", "ecológico", "café para llevar", "oficina", "tapa"],
+      "en": ["reusable cup", "commute", "eco-friendly", "coffee to go", "tumbler", "keep cup", "lid"]
+    }
+  },
+  "straw": {
+    "label": { "es": "Popote", "en": "Straw", "pt": "Canudo", "fr": "Paille", "de": "Strohhalm", "it": "Cannuccia", "ja": "ストロー", "zh": "吸管", "ko": "빨대", "ar": "مصاصة" },
+    "keywords": {
+      "es": ["pajilla", "bombilla", "a petición", "sin plástico", "ecológico", "sorber", "bebida fría"],
+      "en": ["drinking straw", "no straw", "on request", "plastic-free", "eco-friendly", "sip", "paper straw"]
+    }
+  },
+  "drink-carrier": {
+    "label": { "es": "Portavasos para llevar", "en": "Drink carrier", "pt": "Porta-copos para viagem", "fr": "Porte-gobelets", "de": "Getränketräger", "it": "Portabicchieri da asporto", "ja": "ドリンクキャリー", "zh": "外卖杯托", "ko": "컵 캐리어", "ar": "حامل أكواب" },
+    "keywords": {
+      "es": ["pedido grupal", "entrega a domicilio", "varios vasos", "charola", "cafés para la oficina", "delivery", "cartón"],
+      "en": ["cup holder", "group order", "delivery", "takeaway", "cup tray", "office coffee run", "multiple drinks"]
+    }
+  },
+  "cup-sizes": {
+    "label": { "es": "Tamaños de bebida", "en": "Drink sizes", "pt": "Tamanhos de bebida", "fr": "Tailles de boisson", "de": "Getränkegrößen", "it": "Misure della bevanda", "ja": "ドリンクサイズ", "zh": "饮品杯型", "ko": "음료 사이즈", "ar": "أحجام المشروبات" },
+    "keywords": {
+      "es": ["chico", "mediano", "grande", "elegir tamaño", "selector", "porción", "tamaño del vaso"],
+      "en": ["small", "medium", "large", "size picker", "choose size", "cup size", "portion"]
+    }
+  }
+}

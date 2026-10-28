@@ -1,0 +1,758 @@
+{
+  "fridge": {
+    "label": { "es": "Refrigerador", "en": "Refrigerator", "pt": "Geladeira", "fr": "Réfrigérateur", "de": "Kühlschrank", "it": "Frigorifero", "ja": "冷蔵庫", "zh": "冰箱", "ko": "냉장고", "ar": "ثلاجة" },
+    "keywords": {
+      "es": ["refri", "nevera", "congelador arriba", "conservar alimentos", "comida fría", "línea blanca", "amenidad de cocina"],
+      "en": ["fridge", "top freezer", "food storage", "keep cold", "kitchen appliance", "smart fridge", "amenity"]
+    }
+  },
+  "fridge-side-by-side": {
+    "label": { "es": "Refrigerador dúplex", "en": "Side-by-side refrigerator", "pt": "Geladeira side by side", "fr": "Réfrigérateur américain", "de": "Side-by-Side-Kühlschrank", "it": "Frigorifero americano", "ja": "サイドバイサイド冷蔵庫", "zh": "对开门冰箱", "ko": "양문형 냉장고", "ar": "ثلاجة ببابين متجاورين" },
+    "keywords": {
+      "es": ["side by side", "dos puertas", "refri de dos puertas", "congelador lateral", "refri grande", "puertas verticales", "línea blanca"],
+      "en": ["two-door fridge", "double door", "side freezer", "large fridge", "American-style fridge", "fridge type", "full-height doors"]
+    }
+  },
+  "fridge-open": {
+    "label": { "es": "Refrigerador abierto", "en": "Open refrigerator", "pt": "Geladeira aberta", "fr": "Réfrigérateur ouvert", "de": "Offener Kühlschrank", "it": "Frigorifero aperto", "ja": "開いた冷蔵庫", "zh": "打开的冰箱", "ko": "열린 냉장고", "ar": "ثلاجة مفتوحة" },
+    "keywords": {
+      "es": ["puerta abierta", "alarma de puerta", "qué hay en el refri", "inventario de comida", "recetas", "despensa", "ingredientes"],
+      "en": ["door open", "door alarm", "what's in my fridge", "food inventory", "recipes", "pantry", "ingredients"]
+    }
+  },
+  "mini-fridge": {
+    "label": { "es": "Frigobar", "en": "Mini fridge", "pt": "Frigobar", "fr": "Mini-réfrigérateur", "de": "Minikühlschrank", "it": "Frigobar", "ja": "小型冷蔵庫", "zh": "迷你冰箱", "ko": "미니 냉장고", "ar": "ثلاجة صغيرة" },
+    "keywords": {
+      "es": ["minibar", "refri chico", "habitación de hotel", "dormitorio", "oficina", "amenidad", "bebidas frías"],
+      "en": ["minibar", "compact fridge", "bar fridge", "hotel room", "dorm", "amenity", "cold drinks"]
+    }
+  },
+  "freezer": {
+    "label": { "es": "Congelador", "en": "Freezer", "pt": "Freezer", "fr": "Congélateur", "de": "Gefriertruhe", "it": "Congelatore", "ja": "冷凍庫", "zh": "冰柜", "ko": "냉동고", "ar": "فريزر" },
+    "keywords": {
+      "es": ["congelador horizontal", "alimentos congelados", "hielo", "carne", "almacenamiento en frío", "inventario", "conservar"],
+      "en": ["chest freezer", "deep freezer", "frozen food", "ice", "cold storage", "inventory", "meat"]
+    }
+  },
+  "wine-cooler": {
+    "label": { "es": "Cava de vinos", "en": "Wine cooler", "pt": "Adega climatizada", "fr": "Cave à vin", "de": "Weinkühlschrank", "it": "Cantinetta", "ja": "ワインセラー", "zh": "酒柜", "ko": "와인 냉장고", "ar": "ثلاجة النبيذ" },
+    "keywords": {
+      "es": ["vinoteca", "enfriador de vino", "botellas", "bar", "cocina", "amenidad", "hotel"],
+      "en": ["wine fridge", "wine cellar", "bottles", "bar", "beverage cooler", "amenity", "hotel"]
+    }
+  },
+  "oven": {
+    "label": { "es": "Horno", "en": "Oven", "pt": "Forno", "fr": "Four", "de": "Backofen", "it": "Forno", "ja": "オーブン", "zh": "烤箱", "ko": "오븐", "ar": "فرن" },
+    "keywords": {
+      "es": ["empotrado", "hornear", "rostizar", "gratinar", "modos de cocción", "cocina integral", "repostería"],
+      "en": ["built-in", "wall oven", "bake", "roast", "broil", "cooking modes", "kitchen"]
+    }
+  },
+  "oven-convection": {
+    "label": { "es": "Convección", "en": "Convection", "pt": "Convecção", "fr": "Chaleur tournante", "de": "Umluft", "it": "Cottura ventilata", "ja": "コンベクション", "zh": "热风对流", "ko": "컨벡션", "ar": "الحمل الحراري" },
+    "keywords": {
+      "es": ["ventilador del horno", "aire caliente", "modo de cocción", "hornear parejo", "horno con ventilador", "turbo", "dorar"],
+      "en": ["fan oven", "fan bake", "hot air", "cooking mode", "even baking", "fan forced", "true convection"]
+    }
+  },
+  "stove": {
+    "label": { "es": "Estufa", "en": "Stove", "pt": "Fogão", "fr": "Cuisinière", "de": "Herd", "it": "Cucina con forno", "ja": "クッキングレンジ", "zh": "炉灶", "ko": "스토브", "ar": "موقد بفرن" },
+    "keywords": {
+      "es": ["quemadores", "parrillas", "horno abajo", "gas", "eléctrica", "cocinar", "amenidad"],
+      "en": ["range", "cooker", "burners", "gas", "electric", "freestanding range", "amenity"]
+    }
+  },
+  "cooktop": {
+    "label": { "es": "Parrilla de cocina", "en": "Cooktop", "pt": "Cooktop", "fr": "Plaque de cuisson", "de": "Kochfeld", "it": "Piano cottura", "ja": "コンロ", "zh": "灶台", "ko": "쿡탑", "ar": "سطح الطهي" },
+    "keywords": {
+      "es": ["quemadores", "hornillas", "cubierta", "empotrable", "elegir quemador", "cocina integral", "estufa sin horno"],
+      "en": ["hob", "burners", "stovetop", "built-in", "choose burner", "cooking zones", "kitchen"]
+    }
+  },
+  "induction-cooktop": {
+    "label": { "es": "Parrilla de inducción", "en": "Induction cooktop", "pt": "Cooktop de indução", "fr": "Plaque à induction", "de": "Induktionskochfeld", "it": "Piano a induzione", "ja": "IHクッキングヒーター", "zh": "电磁炉", "ko": "인덕션", "ar": "موقد حثي" },
+    "keywords": {
+      "es": ["vitrocerámica", "eléctrica", "sin flama", "zonas de cocción", "magnética", "ollas compatibles", "cocina sin gas"],
+      "en": ["induction hob", "electric", "glass top", "flameless", "cooking zones", "magnetic", "induction-ready pans"]
+    }
+  },
+  "microwave": {
+    "label": { "es": "Microondas", "en": "Microwave", "pt": "Micro-ondas", "fr": "Micro-ondes", "de": "Mikrowelle", "it": "Microonde", "ja": "電子レンジ", "zh": "微波炉", "ko": "전자레인지", "ar": "ميكروويف" },
+    "keywords": {
+      "es": ["horno de microondas", "calentar", "recalentar", "descongelar", "palomitas", "cocina", "amenidad"],
+      "en": ["microwave oven", "heat up", "reheat", "defrost", "popcorn", "kitchen", "amenity"]
+    }
+  },
+  "gas-burner": {
+    "label": { "es": "Quemador de gas", "en": "Gas burner", "pt": "Queimador a gás", "fr": "Brûleur à gaz", "de": "Gasbrenner", "it": "Bruciatore a gas", "ja": "ガスコンロの火", "zh": "燃气灶火焰", "ko": "가스 버너", "ar": "شعلة الغاز" },
+    "keywords": {
+      "es": ["flama", "fuego", "gas encendido", "nivel de flama", "estufa de gas", "llama", "gas natural"],
+      "en": ["flame", "fire", "gas on", "flame level", "gas stove", "lit burner", "natural gas"]
+    }
+  },
+  "range-hood": {
+    "label": { "es": "Extractor de cocina", "en": "Range hood", "pt": "Coifa", "fr": "Hotte aspirante", "de": "Dunstabzugshaube", "it": "Cappa aspirante", "ja": "レンジフード", "zh": "抽油烟机", "ko": "주방 후드", "ar": "شفاط المطبخ" },
+    "keywords": {
+      "es": ["campana extractora", "extractor de humo", "ventilación", "humo", "olores", "velocidad del extractor", "luz de la estufa"],
+      "en": ["extractor hood", "exhaust fan", "ventilation", "smoke", "cooking odors", "fan speed", "kitchen"]
+    }
+  },
+  "toaster": {
+    "label": { "es": "Tostador", "en": "Toaster", "pt": "Torradeira", "fr": "Grille-pain", "de": "Toaster", "it": "Tostapane", "ja": "ポップアップトースター", "zh": "烤面包机", "ko": "토스터", "ar": "محمصة خبز" },
+    "keywords": {
+      "es": ["pan tostado", "tostar", "desayuno", "rebanadas", "pan de caja", "cocina", "electrodoméstico"],
+      "en": ["toast", "bread slices", "breakfast", "toasting", "pop-up", "kitchen", "small appliance"]
+    }
+  },
+  "toaster-oven": {
+    "label": { "es": "Horno eléctrico", "en": "Toaster oven", "pt": "Forno elétrico", "fr": "Mini-four", "de": "Minibackofen", "it": "Fornetto elettrico", "ja": "オーブントースター", "zh": "电烤箱", "ko": "미니 오븐", "ar": "فرن كهربائي صغير" },
+    "keywords": {
+      "es": ["horno tostador", "hornito", "gratinar", "recalentar", "pizza", "de mesa", "cocina chica"],
+      "en": ["countertop oven", "electric oven", "mini oven", "broil", "reheat", "pizza", "small kitchen"]
+    }
+  },
+  "air-fryer": {
+    "label": { "es": "Freidora de aire", "en": "Air fryer", "pt": "Air fryer", "fr": "Friteuse sans huile", "de": "Heißluftfritteuse", "it": "Friggitrice ad aria", "ja": "ノンフライヤー", "zh": "空气炸锅", "ko": "에어프라이어", "ar": "قلاية هوائية" },
+    "keywords": {
+      "es": ["sin aceite", "freír", "papas", "comida crujiente", "airfryer", "cocina saludable", "recetas"],
+      "en": ["oil-free", "fry", "fries", "crispy", "healthy cooking", "recipes", "countertop"]
+    }
+  },
+  "rice-cooker": {
+    "label": { "es": "Arrocera", "en": "Rice cooker", "pt": "Panela de arroz", "fr": "Cuiseur à riz", "de": "Reiskocher", "it": "Cuociriso", "ja": "炊飯器", "zh": "电饭煲", "ko": "전기밥솥", "ar": "طباخة أرز" },
+    "keywords": {
+      "es": ["cocer arroz", "olla eléctrica", "vaporera", "mantener caliente", "cocina asiática", "granos", "sushi"],
+      "en": ["cook rice", "electric pot", "steamer", "keep warm", "Asian cooking", "grains", "sushi rice"]
+    }
+  },
+  "multicooker": {
+    "label": { "es": "Olla de presión eléctrica", "en": "Multicooker", "pt": "Panela elétrica de pressão", "fr": "Multicuiseur", "de": "Multikocher", "it": "Pentola multifunzione", "ja": "電気圧力鍋", "zh": "电压力锅", "ko": "전기 압력솥", "ar": "قدر ضغط كهربائي" },
+    "keywords": {
+      "es": ["multiolla", "olla exprés", "cocción rápida", "guisos", "frijoles", "recetas", "programas de cocción"],
+      "en": ["pressure cooker", "electric pot", "quick cooking", "stews", "one-pot meals", "recipes", "cooking programs"]
+    }
+  },
+  "slow-cooker": {
+    "label": { "es": "Olla de cocción lenta", "en": "Slow cooker", "pt": "Panela de cozimento lento", "fr": "Mijoteuse", "de": "Schongarer", "it": "Slow cooker", "ja": "スロークッカー", "zh": "慢炖锅", "ko": "슬로쿠커", "ar": "قدر الطهي البطيء" },
+    "keywords": {
+      "es": ["guisos", "estofado", "fuego lento", "caldos", "mantener caliente", "comida casera", "olla eléctrica"],
+      "en": ["stew", "braise", "simmer", "keep warm", "set and forget", "soups", "electric pot"]
+    }
+  },
+  "blender": {
+    "label": { "es": "Licuadora", "en": "Blender", "pt": "Liquidificador", "fr": "Blender", "de": "Standmixer", "it": "Frullatore", "ja": "ミキサー", "zh": "搅拌机", "ko": "믹서기", "ar": "خلاط" },
+    "keywords": {
+      "es": ["licuado", "licuar", "smoothie", "jarra", "batidos", "salsas", "cocina"],
+      "en": ["smoothie", "blend", "shake", "pitcher", "puree", "sauces", "countertop"]
+    }
+  },
+  "food-processor": {
+    "label": { "es": "Procesador de alimentos", "en": "Food processor", "pt": "Processador de alimentos", "fr": "Robot culinaire", "de": "Foodprozessor", "it": "Robot da cucina", "ja": "フードプロセッサー", "zh": "食物处理器", "ko": "푸드 프로세서", "ar": "محضرة طعام" },
+    "keywords": {
+      "es": ["picadora", "picar", "rallar", "rebanar", "salsas", "triturar", "cocina"],
+      "en": ["chopper", "chop", "shred", "slice", "dice", "dough", "kitchen"]
+    }
+  },
+  "stand-mixer": {
+    "label": { "es": "Batidora de pedestal", "en": "Stand mixer", "pt": "Batedeira planetária", "fr": "Robot pâtissier", "de": "Küchenmaschine", "it": "Impastatrice planetaria", "ja": "スタンドミキサー", "zh": "厨师机", "ko": "스탠드 믹서", "ar": "عجانة كهربائية" },
+    "keywords": {
+      "es": ["batidora de mesa", "repostería", "amasar", "pasteles", "masa", "panadería", "batir"],
+      "en": ["kitchen mixer", "baking", "knead", "dough", "cake", "whisk", "bakery"]
+    }
+  },
+  "hand-mixer": {
+    "label": { "es": "Batidora de mano", "en": "Hand mixer", "pt": "Batedeira de mão", "fr": "Batteur électrique", "de": "Handmixer", "it": "Sbattitore elettrico", "ja": "ハンドミキサー", "zh": "手持打蛋器", "ko": "핸드 믹서", "ar": "خفاقة كهربائية" },
+    "keywords": {
+      "es": ["batir", "batidor", "claras a punto de nieve", "repostería", "betún", "aspas", "pasteles"],
+      "en": ["electric whisk", "beaters", "whip", "baking", "frosting", "egg whites", "cake batter"]
+    }
+  },
+  "coffee-grinder": {
+    "label": { "es": "Molino de café", "en": "Coffee grinder", "pt": "Moedor de café", "fr": "Moulin à café", "de": "Kaffeemühle", "it": "Macinacaffè", "ja": "コーヒーグラインダー", "zh": "磨豆机", "ko": "커피 그라인더", "ar": "مطحنة قهوة" },
+    "keywords": {
+      "es": ["moler café", "café en grano", "molienda", "barista", "café de especialidad", "molino eléctrico", "espresso"],
+      "en": ["grind beans", "coffee beans", "grind size", "burr grinder", "barista", "specialty coffee", "espresso"]
+    }
+  },
+  "kettle": {
+    "label": { "es": "Hervidor eléctrico", "en": "Electric kettle", "pt": "Chaleira elétrica", "fr": "Bouilloire électrique", "de": "Wasserkocher", "it": "Bollitore elettrico", "ja": "電気ケトル", "zh": "电热水壶", "ko": "전기 주전자", "ar": "غلاية كهربائية" },
+    "keywords": {
+      "es": ["tetera", "hervir agua", "agua caliente", "té", "café soluble", "amenidad", "habitación de hotel"],
+      "en": ["boil water", "hot water", "tea", "instant coffee", "teapot", "amenity", "hotel room"]
+    }
+  },
+  "coffee-maker": {
+    "label": { "es": "Cafetera", "en": "Coffee maker", "pt": "Cafeteira", "fr": "Cafetière", "de": "Kaffeemaschine", "it": "Macchina da caffè americano", "ja": "コーヒーメーカー", "zh": "滴滤咖啡机", "ko": "커피메이커", "ar": "ماكينة قهوة" },
+    "keywords": {
+      "es": ["cafetera de goteo", "café americano", "jarra", "filtro de papel", "desayuno", "amenidad", "oficina"],
+      "en": ["drip coffee", "brewer", "carafe", "paper filter", "brew coffee", "amenity", "office"]
+    }
+  },
+  "espresso-machine": {
+    "label": { "es": "Cafetera espresso", "en": "Espresso machine", "pt": "Máquina de espresso", "fr": "Machine à expresso", "de": "Espressomaschine", "it": "Macchina per espresso", "ja": "エスプレッソマシン", "zh": "意式咖啡机", "ko": "에스프레소 머신", "ar": "ماكينة إسبريسو" },
+    "keywords": {
+      "es": ["barista", "capuchino", "latte", "portafiltro", "vaporizador de leche", "cafetería", "café de especialidad"],
+      "en": ["barista", "cappuccino", "latte", "portafilter", "milk frother", "cafe", "steam wand"]
+    }
+  },
+  "capsule-coffee-machine": {
+    "label": { "es": "Cafetera de cápsulas", "en": "Capsule coffee machine", "pt": "Cafeteira de cápsulas", "fr": "Machine à café à capsules", "de": "Kapselmaschine", "it": "Macchina da caffè a capsule", "ja": "カプセル式コーヒーマシン", "zh": "胶囊咖啡机", "ko": "캡슐 커피 머신", "ar": "ماكينة قهوة بالكبسولات" },
+    "keywords": {
+      "es": ["monodosis", "pods", "café rápido", "una taza", "amenidad", "oficina", "habitación de hotel"],
+      "en": ["pod machine", "coffee pods", "single serve", "single cup", "amenity", "office", "hotel room"]
+    }
+  },
+  "ice-maker": {
+    "label": { "es": "Máquina de hielo", "en": "Ice maker", "pt": "Máquina de gelo", "fr": "Machine à glaçons", "de": "Eiswürfelbereiter", "it": "Macchina per il ghiaccio", "ja": "製氷機", "zh": "制冰机", "ko": "제빙기", "ar": "صانعة الثلج" },
+    "keywords": {
+      "es": ["fabricador de hielo", "cubitos", "hielo picado", "encender hielo", "bebidas", "bar", "amenidad"],
+      "en": ["ice machine", "ice cubes", "crushed ice", "ice on", "drinks", "bar", "amenity"]
+    }
+  },
+  "water-filter": {
+    "label": { "es": "Filtro de agua", "en": "Water filter", "pt": "Filtro de água", "fr": "Filtre à eau", "de": "Wasserfilter", "it": "Filtro dell’acqua", "ja": "浄水フィルター", "zh": "滤水器滤芯", "ko": "정수 필터", "ar": "فلتر الماء" },
+    "keywords": {
+      "es": ["cartucho", "repuesto", "recordatorio de cambio", "purificador", "agua potable", "refri", "cafetera"],
+      "en": ["cartridge", "replace filter", "replacement", "purifier", "drinking water", "fridge filter", "coffee machine"]
+    }
+  },
+  "water-tank": {
+    "label": { "es": "Depósito de agua", "en": "Water tank", "pt": "Reservatório de água", "fr": "Réservoir d’eau", "de": "Wassertank", "it": "Serbatoio dell’acqua", "ja": "給水タンク", "zh": "水箱", "ko": "물탱크", "ar": "خزان الماء" },
+    "keywords": {
+      "es": ["rellenar", "nivel de agua", "tanque", "cafetera", "humidificador", "horno de vapor", "agua baja"],
+      "en": ["refill", "water level", "reservoir", "coffee machine", "humidifier", "steam oven", "low water"]
+    }
+  },
+  "dishwasher": {
+    "label": { "es": "Lavavajillas", "en": "Dishwasher", "pt": "Lava-louças", "fr": "Lave-vaisselle", "de": "Geschirrspüler", "it": "Lavastoviglie", "ja": "食器洗い乾燥機", "zh": "洗碗机", "ko": "식기세척기", "ar": "غسالة صحون" },
+    "keywords": {
+      "es": ["lavatrastes", "lavaplatos", "trastes", "platos", "cocina", "amenidad", "ciclo de lavado"],
+      "en": ["dishes", "dish rack", "kitchen", "wash cycle", "amenity", "rinse", "cleaning"]
+    }
+  },
+  "dryer": {
+    "label": { "es": "Secadora", "en": "Dryer", "pt": "Secadora", "fr": "Sèche-linge", "de": "Wäschetrockner", "it": "Asciugatrice", "ja": "衣類乾燥機", "zh": "干衣机", "ko": "건조기", "ar": "مجفف ملابس" },
+    "keywords": {
+      "es": ["secar ropa", "lavandería", "autoservicio", "tambor", "ropa limpia", "amenidad", "línea blanca"],
+      "en": ["tumble dryer", "clothes dryer", "laundry", "laundromat", "drum", "amenity", "dry clothes"]
+    }
+  },
+  "washer-dryer": {
+    "label": { "es": "Lavadora y secadora", "en": "Washer and dryer", "pt": "Lavadora e secadora", "fr": "Lave-linge et sèche-linge", "de": "Waschmaschine und Trockner", "it": "Lavatrice e asciugatrice", "ja": "洗濯機と乾燥機", "zh": "洗衣机和干衣机", "ko": "세탁기와 건조기", "ar": "غسالة ومجفف" },
+    "keywords": {
+      "es": ["torre de lavado", "centro de lavado", "apiladas", "cuarto de lavado", "lavandería", "amenidad", "línea blanca"],
+      "en": ["stacked laundry", "laundry center", "stackable", "laundry room", "in-unit laundry", "amenity", "washtower"]
+    }
+  },
+  "iron": {
+    "label": { "es": "Plancha", "en": "Iron", "pt": "Ferro de passar", "fr": "Fer à repasser", "de": "Bügeleisen", "it": "Ferro da stiro", "ja": "アイロン", "zh": "熨斗", "ko": "다리미", "ar": "مكواة" },
+    "keywords": {
+      "es": ["planchar", "planchaduría", "arrugas", "camisa", "vapor", "amenidad", "tintorería"],
+      "en": ["ironing", "pressing", "wrinkles", "shirt", "steam", "amenity", "dry cleaning"]
+    }
+  },
+  "garment-steamer": {
+    "label": { "es": "Vaporizador de ropa", "en": "Garment steamer", "pt": "Vaporizador de roupas", "fr": "Défroisseur vapeur", "de": "Dampfglätter", "it": "Vaporizzatore per abiti", "ja": "衣類スチーマー", "zh": "手持挂烫机", "ko": "의류 스티머", "ar": "مكواة بخار محمولة" },
+    "keywords": {
+      "es": ["planchar con vapor", "desarrugar", "vapor", "de viaje", "plancha vertical", "ropa", "amenidad"],
+      "en": ["clothes steamer", "steam", "wrinkle remover", "travel", "handheld", "vertical ironing", "amenity"]
+    }
+  },
+  "vacuum-cleaner": {
+    "label": { "es": "Aspiradora", "en": "Vacuum cleaner", "pt": "Aspirador de pó", "fr": "Aspirateur", "de": "Staubsauger", "it": "Aspirapolvere", "ja": "掃除機", "zh": "吸尘器", "ko": "청소기", "ar": "مكنسة كهربائية" },
+    "keywords": {
+      "es": ["aspirar", "limpieza", "servicio de limpieza", "polvo", "alfombras", "manguera", "limpiar la casa"],
+      "en": ["vacuum", "hoover", "cleaning", "cleaning service", "dust", "carpet", "canister vacuum"]
+    }
+  },
+  "upright-vacuum": {
+    "label": { "es": "Aspiradora vertical", "en": "Upright vacuum", "pt": "Aspirador de pó vertical", "fr": "Aspirateur vertical", "de": "Bürstsauger", "it": "Aspirapolvere verticale", "ja": "アップライト掃除機", "zh": "立式吸尘器", "ko": "업라이트 청소기", "ar": "مكنسة كهربائية عمودية" },
+    "keywords": {
+      "es": ["aspiradora de pie", "alfombras", "tapetes", "cepillo giratorio", "limpieza profunda", "servicio de limpieza", "hogar"],
+      "en": ["carpet", "rugs", "beater bar", "deep clean", "cleaning service", "household", "full-size vacuum"]
+    }
+  },
+  "stick-vacuum": {
+    "label": { "es": "Aspiradora de escoba", "en": "Stick vacuum", "pt": "Aspirador sem fio", "fr": "Aspirateur-balai", "de": "Akku-Stielsauger", "it": "Scopa elettrica", "ja": "スティック掃除機", "zh": "无线杆式吸尘器", "ko": "무선 스틱 청소기", "ar": "مكنسة كهربائية لاسلكية" },
+    "keywords": {
+      "es": ["inalámbrica", "aspiradora de bastón", "sin cable", "batería", "limpieza rápida", "pisos", "ligera"],
+      "en": ["cordless vacuum", "stick vac", "battery", "quick clean", "floors", "lightweight", "wireless"]
+    }
+  },
+  "handheld-vacuum": {
+    "label": { "es": "Aspiradora de mano", "en": "Handheld vacuum", "pt": "Aspirador de mão", "fr": "Aspirateur à main", "de": "Handstaubsauger", "it": "Aspirapolvere portatile", "ja": "ハンディクリーナー", "zh": "手持吸尘器", "ko": "핸디 청소기", "ar": "مكنسة كهربائية يدوية" },
+    "keywords": {
+      "es": ["aspiradora portátil", "para el auto", "migajas", "sin cable", "limpieza rápida", "sillones", "recargable"],
+      "en": ["portable vacuum", "car vacuum", "crumbs", "cordless", "quick cleanup", "upholstery", "rechargeable"]
+    }
+  },
+  "robot-vacuum": {
+    "label": { "es": "Aspiradora robot", "en": "Robot vacuum", "pt": "Robô aspirador", "fr": "Robot aspirateur", "de": "Saugroboter", "it": "Robot aspirapolvere", "ja": "ロボット掃除機", "zh": "扫地机器人", "ko": "로봇청소기", "ar": "مكنسة روبوت" },
+    "keywords": {
+      "es": ["limpieza automática", "robot de limpieza", "trapeador robot", "hogar inteligente", "barrer", "domótica", "mapeo"],
+      "en": ["robot cleaner", "automatic cleaning", "robot mop", "smart home", "sweeper", "autonomous", "home automation"]
+    }
+  },
+  "robot-vacuum-dock": {
+    "label": { "es": "Aspiradora en su base", "en": "Robot vacuum docked", "pt": "Robô na base", "fr": "Robot sur sa base", "de": "Saugroboter in der Ladestation", "it": "Robot alla base", "ja": "ロボット掃除機の充電台", "zh": "扫地机器人充电座", "ko": "로봇청소기 충전 중", "ar": "الروبوت في قاعدة الشحن" },
+    "keywords": {
+      "es": ["cargando", "regresar a la base", "estación de carga", "volver a casa", "base de vaciado", "acoplada", "batería"],
+      "en": ["charging", "return to base", "charging station", "go home", "self-empty station", "home base", "battery"]
+    }
+  },
+  "robot-vacuum-route": {
+    "label": { "es": "Ruta de limpieza", "en": "Cleaning route", "pt": "Rota de limpeza", "fr": "Trajet de nettoyage", "de": "Reinigungsroute", "it": "Percorso di pulizia", "ja": "清掃ルート", "zh": "清扫路线", "ko": "청소 경로", "ar": "مسار التنظيف" },
+    "keywords": {
+      "es": ["mapa de la casa", "limpiar habitación", "zonas", "cuartos", "mapa de limpieza", "recorrido", "aspiradora robot"],
+      "en": ["room map", "clean room", "zone cleaning", "rooms", "cleaning map", "path", "robot vacuum"]
+    }
+  },
+  "air-conditioner": {
+    "label": { "es": "Aire acondicionado", "en": "Air conditioner", "pt": "Ar-condicionado", "fr": "Climatiseur", "de": "Klimaanlage", "it": "Condizionatore", "ja": "エアコン", "zh": "空调", "ko": "에어컨", "ar": "مكيف هواء" },
+    "keywords": {
+      "es": ["minisplit", "clima", "enfriar", "climatización", "frío", "amenidad", "línea blanca"],
+      "en": ["AC", "split AC", "mini split", "cooling", "climate control", "amenity", "HVAC"]
+    }
+  },
+  "portable-air-conditioner": {
+    "label": { "es": "Aire acondicionado portátil", "en": "Portable air conditioner", "pt": "Ar-condicionado portátil", "fr": "Climatiseur mobile", "de": "Mobile Klimaanlage", "it": "Condizionatore portatile", "ja": "ポータブルエアコン", "zh": "移动空调", "ko": "이동식 에어컨", "ar": "مكيف هواء متنقل" },
+    "keywords": {
+      "es": ["clima móvil", "con ruedas", "manguera de salida", "enfriar el cuarto", "sin instalación", "de piso", "renta"],
+      "en": ["mobile AC", "on wheels", "exhaust hose", "room cooling", "no installation", "floor unit", "rental"]
+    }
+  },
+  "window-air-conditioner": {
+    "label": { "es": "Aire acondicionado de ventana", "en": "Window air conditioner", "pt": "Ar-condicionado de janela", "fr": "Climatiseur de fenêtre", "de": "Fensterklimagerät", "it": "Condizionatore da finestra", "ja": "窓用エアコン", "zh": "窗式空调", "ko": "창문형 에어컨", "ar": "مكيف شباك" },
+    "keywords": {
+      "es": ["clima de ventana", "aparato de ventana", "enfriar", "equipo compacto", "habitación", "instalación en muro", "amenidad"],
+      "en": ["window AC", "window unit", "cooling", "room AC", "wall sleeve", "compact unit", "amenity"]
+    }
+  },
+  "heat-pump": {
+    "label": { "es": "Bomba de calor", "en": "Heat pump", "pt": "Bomba de calor", "fr": "Pompe à chaleur", "de": "Wärmepumpe", "it": "Pompa di calore", "ja": "ヒートポンプ", "zh": "热泵", "ko": "히트펌프", "ar": "مضخة حرارية" },
+    "keywords": {
+      "es": ["condensadora", "unidad exterior", "calefacción", "minisplit", "climatización", "eficiencia energética", "compresor"],
+      "en": ["outdoor unit", "condenser", "heating", "cooling", "HVAC", "energy efficient", "compressor"]
+    }
+  },
+  "fan": {
+    "label": { "es": "Ventilador", "en": "Fan", "pt": "Ventilador", "fr": "Ventilateur", "de": "Ventilator", "it": "Ventilatore", "ja": "ファン", "zh": "风扇", "ko": "팬", "ar": "مروحة" },
+    "keywords": {
+      "es": ["solo ventilar", "ventilación", "aspas", "aire", "circulación de aire", "hélice", "enfriar"],
+      "en": ["fan mode", "ventilation", "blades", "airflow", "air circulation", "propeller", "cooling"]
+    }
+  },
+  "fan-speed": {
+    "label": { "es": "Velocidad del ventilador", "en": "Fan speed", "pt": "Velocidade do ventilador", "fr": "Vitesse du ventilateur", "de": "Lüfterstufe", "it": "Velocità della ventola", "ja": "風量", "zh": "风速", "ko": "풍량", "ar": "سرعة المروحة" },
+    "keywords": {
+      "es": ["intensidad", "niveles", "bajo medio alto", "potencia del aire", "turbo", "flujo de aire", "ajustar"],
+      "en": ["intensity", "levels", "low medium high", "airflow", "turbo", "fan level", "adjust"]
+    }
+  },
+  "fan-oscillate": {
+    "label": { "es": "Oscilación", "en": "Oscillation", "pt": "Oscilação", "fr": "Oscillation", "de": "Oszillation", "it": "Oscillazione", "ja": "首振り", "zh": "摇头", "ko": "회전", "ar": "التأرجح" },
+    "keywords": {
+      "es": ["girar", "de lado a lado", "barrido", "vaivén", "repartir el aire", "ventilador", "movimiento"],
+      "en": ["swing", "side to side", "sweep", "rotate", "spread air", "fan", "wide angle"]
+    }
+  },
+  "desk-fan": {
+    "label": { "es": "Ventilador de escritorio", "en": "Desk fan", "pt": "Ventilador de mesa", "fr": "Ventilateur de bureau", "de": "Tischventilator", "it": "Ventilatore da tavolo", "ja": "卓上扇風機", "zh": "台式风扇", "ko": "탁상용 선풍기", "ar": "مروحة مكتب" },
+    "keywords": {
+      "es": ["de mesa", "de buró", "oficina", "aire fresco", "calor", "aspas", "personal"],
+      "en": ["table fan", "personal fan", "office", "cool air", "hot weather", "blades", "small fan"]
+    }
+  },
+  "pedestal-fan": {
+    "label": { "es": "Ventilador de pedestal", "en": "Pedestal fan", "pt": "Ventilador de coluna", "fr": "Ventilateur sur pied", "de": "Standventilator", "it": "Ventilatore a piantana", "ja": "扇風機", "zh": "落地扇", "ko": "스탠드 선풍기", "ar": "مروحة عمودية" },
+    "keywords": {
+      "es": ["de pie", "de piso", "altura ajustable", "calor", "aspas", "recámara", "amenidad"],
+      "en": ["standing fan", "floor fan", "adjustable height", "hot weather", "blades", "bedroom", "amenity"]
+    }
+  },
+  "ceiling-fan": {
+    "label": { "es": "Ventilador de techo", "en": "Ceiling fan", "pt": "Ventilador de teto", "fr": "Ventilateur de plafond", "de": "Deckenventilator", "it": "Ventilatore da soffitto", "ja": "シーリングファン", "zh": "吊扇", "ko": "실링팬", "ar": "مروحة سقف" },
+    "keywords": {
+      "es": ["abanico de techo", "aspas", "recámara", "con luz", "aire", "plafón", "amenidad"],
+      "en": ["overhead fan", "blades", "bedroom", "fan light", "air circulation", "paddle fan", "amenity"]
+    }
+  },
+  "tower-fan": {
+    "label": { "es": "Ventilador de torre", "en": "Tower fan", "pt": "Ventilador de torre", "fr": "Ventilateur colonne", "de": "Turmventilator", "it": "Ventilatore a colonna", "ja": "タワーファン", "zh": "塔扇", "ko": "타워팬", "ar": "مروحة برجية" },
+    "keywords": {
+      "es": ["sin aspas", "de columna", "delgado", "silencioso", "oscilante", "recámara", "calor"],
+      "en": ["bladeless", "column fan", "slim", "quiet", "oscillating", "bedroom", "hot weather"]
+    }
+  },
+  "space-heater": {
+    "label": { "es": "Calefactor", "en": "Space heater", "pt": "Aquecedor portátil", "fr": "Radiateur d’appoint", "de": "Heizlüfter", "it": "Stufetta elettrica", "ja": "電気ヒーター", "zh": "取暖器", "ko": "전기히터", "ar": "مدفأة كهربائية" },
+    "keywords": {
+      "es": ["calentador eléctrico", "estufa eléctrica", "calefacción", "frío", "invierno", "portátil", "radiador"],
+      "en": ["portable heater", "electric heater", "heating", "cold", "winter", "radiator", "warm room"]
+    }
+  },
+  "heated-floor": {
+    "label": { "es": "Piso radiante", "en": "Heated floor", "pt": "Piso aquecido", "fr": "Plancher chauffant", "de": "Fußbodenheizung", "it": "Riscaldamento a pavimento", "ja": "床暖房", "zh": "地暖", "ko": "바닥 난방", "ar": "تدفئة أرضية" },
+    "keywords": {
+      "es": ["calefacción por piso", "suelo radiante", "termostato", "pies calientes", "baño", "amenidad", "invierno"],
+      "en": ["underfloor heating", "radiant floor", "thermostat", "warm floors", "bathroom", "amenity", "winter"]
+    }
+  },
+  "humidifier": {
+    "label": { "es": "Humidificador", "en": "Humidifier", "pt": "Umidificador", "fr": "Humidificateur", "de": "Luftbefeuchter", "it": "Umidificatore", "ja": "加湿器", "zh": "加湿器", "ko": "가습기", "ar": "مرطب الهواء" },
+    "keywords": {
+      "es": ["humedad", "vapor", "aire seco", "difusor", "bruma", "recámara", "bebé"],
+      "en": ["humidity", "mist", "dry air", "diffuser", "steam", "nursery", "vaporizer"]
+    }
+  },
+  "dehumidifier": {
+    "label": { "es": "Deshumidificador", "en": "Dehumidifier", "pt": "Desumidificador", "fr": "Déshumidificateur", "de": "Luftentfeuchter", "it": "Deumidificatore", "ja": "除湿機", "zh": "除湿机", "ko": "제습기", "ar": "مزيل الرطوبة" },
+    "keywords": {
+      "es": ["quitar humedad", "moho", "salitre", "sótano", "aire húmedo", "condensación", "clóset"],
+      "en": ["remove humidity", "mold", "damp", "basement", "moist air", "condensation", "mildew"]
+    }
+  },
+  "air-purifier": {
+    "label": { "es": "Purificador de aire", "en": "Air purifier", "pt": "Purificador de ar", "fr": "Purificateur d’air", "de": "Luftreiniger", "it": "Purificatore d’aria", "ja": "空気清浄機", "zh": "空气净化器", "ko": "공기청정기", "ar": "منقي الهواء" },
+    "keywords": {
+      "es": ["calidad del aire", "filtro HEPA", "alergias", "polvo", "humo", "mascotas", "aire limpio"],
+      "en": ["air quality", "HEPA filter", "allergies", "dust", "smoke", "pet dander", "clean air"]
+    }
+  },
+  "air-filter": {
+    "label": { "es": "Filtro de aire", "en": "Air filter", "pt": "Filtro de ar", "fr": "Filtre à air", "de": "Luftfilter", "it": "Filtro dell’aria", "ja": "エアフィルター", "zh": "空气滤网", "ko": "에어 필터", "ar": "فلتر الهواء" },
+    "keywords": {
+      "es": ["repuesto", "HEPA", "purificador", "minisplit", "climatización", "mantenimiento", "recordatorio de cambio"],
+      "en": ["replacement", "HEPA", "purifier", "AC filter", "HVAC", "maintenance", "replace filter"]
+    }
+  },
+  "air-vent": {
+    "label": { "es": "Rejilla de ventilación", "en": "Air vent", "pt": "Grelha de ventilação", "fr": "Grille d’aération", "de": "Lüftungsgitter", "it": "Bocchetta d’aria", "ja": "通気口", "zh": "通风口", "ko": "환기구", "ar": "فتحة تهوية" },
+    "keywords": {
+      "es": ["difusor", "salida de aire", "ducto", "flujo de aire", "clima central", "ventila inteligente", "registro"],
+      "en": ["register", "vent grille", "duct", "airflow", "ventilation", "smart vent", "diffuser"]
+    }
+  },
+  "heat-cool": {
+    "label": { "es": "Frío y calor", "en": "Heat and cool", "pt": "Aquecer e resfriar", "fr": "Chaud et froid", "de": "Heizen und Kühlen", "it": "Caldo e freddo", "ja": "冷暖房自動", "zh": "冷暖自动", "ko": "냉난방 자동", "ar": "تدفئة وتبريد" },
+    "keywords": {
+      "es": ["modo automático", "climatización", "calefacción", "enfriamiento", "termostato", "temperatura ideal", "minisplit"],
+      "en": ["auto mode", "heating", "cooling", "thermostat", "climate control", "HVAC", "comfort temperature"]
+    }
+  },
+  "defrost": {
+    "label": { "es": "Descongelar", "en": "Defrost", "pt": "Descongelar", "fr": "Décongélation", "de": "Auftauen", "it": "Scongelamento", "ja": "解凍", "zh": "解冻", "ko": "해동", "ar": "إذابة التجمد" },
+    "keywords": {
+      "es": ["deshielo", "quitar escarcha", "carne congelada", "congelador", "microondas", "refri", "hielo"],
+      "en": ["thaw", "frost removal", "frozen food", "freezer", "microwave", "fridge", "ice buildup"]
+    }
+  },
+  "thermostat": {
+    "label": { "es": "Termostato", "en": "Thermostat", "pt": "Termostato", "fr": "Thermostat", "de": "Thermostat", "it": "Termostato", "ja": "サーモスタット", "zh": "温控器", "ko": "온도 조절기", "ar": "منظم الحرارة" },
+    "keywords": {
+      "es": ["temperatura deseada", "calefacción", "enfriamiento", "clima", "hogar inteligente", "control de temperatura", "grados"],
+      "en": ["set point", "temperature", "heating", "cooling", "smart home", "climate control", "HVAC"]
+    }
+  },
+  "water-heater": {
+    "label": { "es": "Calentador de agua", "en": "Water heater", "pt": "Aquecedor de água", "fr": "Chauffe-eau", "de": "Warmwasserspeicher", "it": "Scaldabagno", "ja": "給湯器", "zh": "热水器", "ko": "온수기", "ar": "سخان مياه" },
+    "keywords": {
+      "es": ["boiler", "agua caliente", "regadera", "gas", "tanque", "amenidad", "baño"],
+      "en": ["boiler", "hot water", "storage tank", "shower", "gas", "amenity", "bathroom"]
+    }
+  },
+  "house-temperature": {
+    "label": { "es": "Temperatura interior", "en": "Indoor temperature", "pt": "Temperatura interna", "fr": "Température intérieure", "de": "Raumtemperatur", "it": "Temperatura interna", "ja": "室温", "zh": "室内温度", "ko": "실내 온도", "ar": "درجة الحرارة الداخلية" },
+    "keywords": {
+      "es": ["casa", "termómetro", "clima", "grados", "hogar inteligente", "sensor de temperatura", "confort"],
+      "en": ["home", "thermometer", "climate", "degrees", "smart home", "room sensor", "comfort"]
+    }
+  },
+  "hand-dryer": {
+    "label": { "es": "Secador de manos", "en": "Hand dryer", "pt": "Secador de mãos", "fr": "Sèche-mains", "de": "Händetrockner", "it": "Asciugamani elettrico", "ja": "ハンドドライヤー", "zh": "干手器", "ko": "핸드 드라이어", "ar": "مجفف الأيدي" },
+    "keywords": {
+      "es": ["baño público", "sanitarios", "aire caliente", "instalaciones", "oficina", "restaurante", "higiene"],
+      "en": ["restroom", "public bathroom", "warm air", "facilities", "office", "restaurant", "hygiene"]
+    }
+  },
+  "smart-plug": {
+    "label": { "es": "Enchufe inteligente", "en": "Smart plug", "pt": "Tomada inteligente", "fr": "Prise connectée", "de": "Smarte Steckdose", "it": "Presa smart", "ja": "スマートプラグ", "zh": "智能插座", "ko": "스마트 플러그", "ar": "قابس ذكي" },
+    "keywords": {
+      "es": ["contacto", "toma de corriente", "encender a distancia", "domótica", "wifi", "ahorro de energía", "hogar inteligente"],
+      "en": ["smart outlet", "socket", "remote on off", "home automation", "wifi", "energy saving", "smart home"]
+    }
+  },
+  "light-switch": {
+    "label": { "es": "Apagador", "en": "Light switch", "pt": "Interruptor de luz", "fr": "Interrupteur", "de": "Lichtschalter", "it": "Interruttore della luce", "ja": "照明スイッチ", "zh": "灯开关", "ko": "조명 스위치", "ar": "مفتاح الإضاءة" },
+    "keywords": {
+      "es": ["interruptor", "prender la luz", "apagar la luz", "encender", "iluminación", "hogar inteligente", "domótica"],
+      "en": ["switch", "lights on", "lights off", "toggle", "lighting", "smart home", "wall switch"]
+    }
+  },
+  "light-switch-double": {
+    "label": { "es": "Apagador doble", "en": "Double light switch", "pt": "Interruptor duplo", "fr": "Interrupteur double", "de": "Serienschalter", "it": "Interruttore doppio", "ja": "ダブルスイッチ", "zh": "双联开关", "ko": "2구 스위치", "ar": "مفتاح إضاءة مزدوج" },
+    "keywords": {
+      "es": ["interruptor doble", "dos luces", "dos botones", "iluminación", "escenas", "hogar inteligente", "domótica"],
+      "en": ["two-gang switch", "two lights", "two buttons", "lighting", "scenes", "smart home", "dual switch"]
+    }
+  },
+  "light-switch-dimmer": {
+    "label": { "es": "Atenuador", "en": "Dimmer switch", "pt": "Dimmer", "fr": "Variateur", "de": "Dimmer", "it": "Variatore di luce", "ja": "調光スイッチ", "zh": "调光开关", "ko": "디머 스위치", "ar": "مفتاح تعتيم" },
+    "keywords": {
+      "es": ["dimmer", "regular la luz", "intensidad", "brillo", "luz tenue", "ambiente", "iluminación"],
+      "en": ["dim lights", "brightness", "intensity", "slider", "mood lighting", "lighting", "smart home"]
+    }
+  },
+  "smart-lock": {
+    "label": { "es": "Cerradura inteligente", "en": "Smart lock", "pt": "Fechadura inteligente", "fr": "Serrure connectée", "de": "Smart Lock", "it": "Serratura smart", "ja": "スマートロック", "zh": "智能门锁", "ko": "스마트 도어락", "ar": "قفل ذكي" },
+    "keywords": {
+      "es": ["chapa", "cerrojo", "abrir desde el celular", "acceso", "seguridad", "check-in autónomo", "domótica"],
+      "en": ["deadbolt", "door lock", "unlock from phone", "access", "security", "self check-in", "keyless entry"]
+    }
+  },
+  "keypad-lock": {
+    "label": { "es": "Cerradura con teclado", "en": "Keypad lock", "pt": "Fechadura com teclado", "fr": "Serrure à code", "de": "Codeschloss", "it": "Serratura a codice", "ja": "暗証番号ロック", "zh": "密码锁", "ko": "번호키 도어락", "ar": "قفل برمز" },
+    "keywords": {
+      "es": ["chapa digital", "código", "contraseña numérica", "NIP", "sin llave", "acceso", "check-in autónomo"],
+      "en": ["code lock", "PIN", "passcode", "keyless", "access", "self check-in", "digital lock"]
+    }
+  },
+  "alarm-panel": {
+    "label": { "es": "Panel de alarma", "en": "Alarm panel", "pt": "Painel de alarme", "fr": "Clavier d’alarme", "de": "Alarmbedienteil", "it": "Tastiera dell’allarme", "ja": "セキュリティパネル", "zh": "报警控制面板", "ko": "보안 키패드", "ar": "لوحة الإنذار" },
+    "keywords": {
+      "es": ["armar", "desarmar", "sistema de seguridad", "seguridad", "teclado", "código", "monitoreo"],
+      "en": ["arm", "disarm", "security system", "keypad", "code", "monitoring", "home security"]
+    }
+  },
+  "video-doorbell": {
+    "label": { "es": "Timbre con cámara", "en": "Video doorbell", "pt": "Campainha com câmera", "fr": "Sonnette vidéo", "de": "Video-Türklingel", "it": "Videocitofono", "ja": "ビデオドアベル", "zh": "可视门铃", "ko": "비디오 초인종", "ar": "جرس باب بالفيديو" },
+    "keywords": {
+      "es": ["videoportero", "interfón", "visitas", "paquetería", "seguridad", "puerta principal", "ver quién toca"],
+      "en": ["doorbell camera", "intercom", "visitors", "package delivery", "security", "front door", "see who's there"]
+    }
+  },
+  "smart-home-hub": {
+    "label": { "es": "Centro de hogar inteligente", "en": "Smart home hub", "pt": "Central de casa inteligente", "fr": "Box domotique", "de": "Smart-Home-Zentrale", "it": "Hub per la casa smart", "ja": "スマートホームハブ", "zh": "智能家居网关", "ko": "스마트홈 허브", "ar": "محور المنزل الذكي" },
+    "keywords": {
+      "es": ["hub", "puente", "domótica", "Zigbee", "Matter", "controlador", "dispositivos conectados"],
+      "en": ["bridge", "gateway", "home automation", "Zigbee", "Matter", "controller", "connected devices"]
+    }
+  },
+  "appliances": {
+    "label": { "es": "Electrodomésticos", "en": "Appliances", "pt": "Eletrodomésticos", "fr": "Électroménager", "de": "Haushaltsgeräte", "it": "Elettrodomestici", "ja": "家電", "zh": "家用电器", "ko": "가전제품", "ar": "أجهزة منزلية" },
+    "keywords": {
+      "es": ["línea blanca", "aparatos del hogar", "cocina", "lavandería", "categoría", "tienda departamental", "enseres"],
+      "en": ["white goods", "household", "kitchen", "laundry", "category", "electronics store", "home goods"]
+    }
+  },
+  "lightbulb-smart": {
+    "label": { "es": "Foco inteligente", "en": "Smart bulb", "pt": "Lâmpada inteligente", "fr": "Ampoule connectée", "de": "Smarte Glühbirne", "it": "Lampadina smart", "ja": "スマート電球", "zh": "智能灯泡", "ko": "스마트 전구", "ar": "مصباح ذكي" },
+    "keywords": {
+      "es": ["bombilla", "luz wifi", "iluminación", "colores", "domótica", "LED", "atenuar"],
+      "en": ["light bulb", "wifi light", "lighting", "colors", "home automation", "LED", "dimmable"]
+    }
+  },
+  "floodlight": {
+    "label": { "es": "Reflector", "en": "Floodlight", "pt": "Refletor", "fr": "Projecteur extérieur", "de": "Außenstrahler", "it": "Faro da esterno", "ja": "投光器", "zh": "泛光灯", "ko": "투광등", "ar": "كشاف إضاءة" },
+    "keywords": {
+      "es": ["luz exterior", "seguridad", "cochera", "jardín", "con sensor", "cámara reflector", "patio"],
+      "en": ["outdoor light", "security light", "garage", "yard", "motion activated", "spotlight", "patio"]
+    }
+  },
+  "motion-sensor": {
+    "label": { "es": "Sensor de movimiento", "en": "Motion sensor", "pt": "Sensor de movimento", "fr": "Détecteur de mouvement", "de": "Bewegungsmelder", "it": "Sensore di movimento", "ja": "人感センサー", "zh": "人体感应器", "ko": "동작 감지 센서", "ar": "مستشعر الحركة" },
+    "keywords": {
+      "es": ["presencia", "detector", "PIR", "automatización", "seguridad", "encender al pasar", "domótica"],
+      "en": ["presence", "occupancy", "PIR", "automation", "security", "detector", "smart home"]
+    }
+  },
+  "door-sensor": {
+    "label": { "es": "Sensor de puerta", "en": "Door sensor", "pt": "Sensor de porta", "fr": "Détecteur d’ouverture", "de": "Türsensor", "it": "Sensore porta", "ja": "開閉センサー", "zh": "门窗传感器", "ko": "문 열림 센서", "ar": "مستشعر الباب" },
+    "keywords": {
+      "es": ["sensor de ventana", "contacto magnético", "abierto o cerrado", "seguridad", "alarma", "domótica", "apertura"],
+      "en": ["window sensor", "contact sensor", "open or closed", "security", "alarm", "magnetic", "entry sensor"]
+    }
+  },
+  "door-sensor-open": {
+    "label": { "es": "Puerta abierta", "en": "Door opened", "pt": "Porta aberta", "fr": "Porte ouverte", "de": "Tür geöffnet", "it": "Porta aperta", "ja": "ドアが開いています", "zh": "门已打开", "ko": "문 열림", "ar": "الباب مفتوح" },
+    "keywords": {
+      "es": ["ventana abierta", "aviso de apertura", "alguien entró", "acceso", "seguridad", "alarma", "sensor de contacto"],
+      "en": ["window opened", "open alert", "someone entered", "entry", "security", "alarm", "contact sensor"]
+    }
+  },
+  "leak-sensor": {
+    "label": { "es": "Sensor de fugas", "en": "Leak sensor", "pt": "Sensor de vazamento", "fr": "Détecteur de fuite", "de": "Wassermelder", "it": "Sensore di allagamento", "ja": "漏水センサー", "zh": "水浸传感器", "ko": "누수 감지 센서", "ar": "مستشعر تسرب المياه" },
+    "keywords": {
+      "es": ["fuga de agua", "inundación", "detector de agua", "humedad", "tubería", "domótica", "goteo"],
+      "en": ["water leak", "flood sensor", "water detector", "moisture", "pipes", "smart home", "drip"]
+    }
+  },
+  "smoke-detector": {
+    "label": { "es": "Detector de humo", "en": "Smoke detector", "pt": "Detector de fumaça", "fr": "Détecteur de fumée", "de": "Rauchmelder", "it": "Rilevatore di fumo", "ja": "煙感知器", "zh": "烟雾报警器", "ko": "연기 감지기", "ar": "كاشف الدخان" },
+    "keywords": {
+      "es": ["alarma de humo", "incendio", "fuego", "seguridad", "protección civil", "amenidad", "sensor"],
+      "en": ["smoke alarm", "fire", "fire safety", "amenity", "sensor", "ceiling alarm", "home safety"]
+    }
+  },
+  "smart-valve": {
+    "label": { "es": "Válvula inteligente", "en": "Smart water valve", "pt": "Válvula inteligente", "fr": "Vanne connectée", "de": "Smartes Absperrventil", "it": "Valvola smart", "ja": "スマート止水バルブ", "zh": "智能水阀", "ko": "스마트 차단 밸브", "ar": "صمام مياه ذكي" },
+    "keywords": {
+      "es": ["llave de paso", "cerrar el agua", "fuga", "corte de agua", "tubería", "domótica", "inundación"],
+      "en": ["shutoff valve", "turn off water", "leak", "main water line", "plumbing", "smart home", "flood protection"]
+    }
+  },
+  "blinds": {
+    "label": { "es": "Persianas", "en": "Blinds", "pt": "Persianas", "fr": "Stores vénitiens", "de": "Jalousie", "it": "Veneziane", "ja": "ブラインド", "zh": "百叶窗", "ko": "블라인드", "ar": "ستائر شرائح" },
+    "keywords": {
+      "es": ["cortinas", "ventana", "privacidad", "oscurecer", "domótica", "motorizadas", "lamas"],
+      "en": ["shades", "window", "privacy", "darken room", "smart home", "motorized", "slats"]
+    }
+  },
+  "blinds-open": {
+    "label": { "es": "Persianas abiertas", "en": "Blinds open", "pt": "Persianas abertas", "fr": "Stores relevés", "de": "Jalousie geöffnet", "it": "Veneziane alzate", "ja": "開いたブラインド", "zh": "百叶窗已打开", "ko": "블라인드 열림", "ar": "الستائر مفتوحة" },
+    "keywords": {
+      "es": ["subir persianas", "dejar entrar la luz", "luz natural", "ventana", "abrir cortinas", "domótica", "mañana"],
+      "en": ["raise blinds", "let light in", "natural light", "window", "open shades", "smart home", "morning"]
+    }
+  },
+  "roller-shade": {
+    "label": { "es": "Cortina enrollable", "en": "Roller shade", "pt": "Persiana rolô", "fr": "Store enrouleur", "de": "Rollo", "it": "Tenda a rullo", "ja": "ロールスクリーン", "zh": "卷帘", "ko": "롤 블라인드", "ar": "ستارة رول" },
+    "keywords": {
+      "es": ["persiana enrollable", "screen", "blackout", "a media altura", "ventana", "domótica", "motorizada"],
+      "en": ["roller blind", "blackout", "half lowered", "window", "smart home", "motorized", "solar shade"]
+    }
+  },
+  "fridge-alert": {
+    "label": { "es": "Alerta del refrigerador", "en": "Refrigerator alert", "pt": "Alerta da geladeira", "fr": "Alerte du réfrigérateur", "de": "Kühlschrankwarnung", "it": "Avviso del frigorifero", "ja": "冷蔵庫の警告", "zh": "冰箱警报", "ko": "냉장고 경고", "ar": "تنبيه الثلاجة" },
+    "keywords": {
+      "es": ["temperatura alta", "corte de luz", "falla", "se descongela", "alimentos en riesgo", "servicio técnico", "revisar el refri"],
+      "en": ["temperature too high", "power outage", "fault", "thawing", "food at risk", "repair service", "fridge warning"]
+    }
+  },
+  "oven-clock": {
+    "label": { "es": "Temporizador del horno", "en": "Oven timer", "pt": "Timer do forno", "fr": "Minuterie du four", "de": "Backofen-Timer", "it": "Timer del forno", "ja": "オーブンタイマー", "zh": "烤箱定时", "ko": "오븐 타이머", "ar": "مؤقت الفرن" },
+    "keywords": {
+      "es": ["cocción programada", "inicio diferido", "tiempo de horneado", "cuenta regresiva", "programar", "alarma de cocina", "apagado automático"],
+      "en": ["delay bake", "delayed start", "bake time", "countdown", "schedule", "kitchen timer", "auto shut-off"]
+    }
+  },
+  "oven-check": {
+    "label": { "es": "Horno precalentado", "en": "Oven preheated", "pt": "Forno pré-aquecido", "fr": "Four préchauffé", "de": "Backofen vorgeheizt", "it": "Forno preriscaldato", "ja": "予熱完了", "zh": "预热完成", "ko": "예열 완료", "ar": "اكتمل تسخين الفرن" },
+    "keywords": {
+      "es": ["listo para hornear", "temperatura alcanzada", "precalentamiento", "aviso de cocina", "horno caliente", "ya puedes cocinar"],
+      "en": ["ready to bake", "temperature reached", "preheat done", "kitchen notification", "hot oven", "ready to cook"]
+    }
+  },
+  "dishwasher-check": {
+    "label": { "es": "Trastes limpios", "en": "Dishes clean", "pt": "Louça limpa", "fr": "Vaisselle propre", "de": "Spülgang beendet", "it": "Stoviglie pulite", "ja": "食器洗い完了", "zh": "洗碗完成", "ko": "설거지 완료", "ar": "الصحون نظيفة" },
+    "keywords": {
+      "es": ["ciclo terminado", "lavado listo", "platos limpios", "vaciar", "secado completo", "aviso de fin", "lavatrastes"],
+      "en": ["cycle complete", "wash done", "clean dishes", "unload", "drying complete", "finished", "dishwasher done"]
+    }
+  },
+  "dryer-clock": {
+    "label": { "es": "Tiempo de secado", "en": "Drying time", "pt": "Tempo de secagem", "fr": "Temps de séchage", "de": "Trocknungszeit", "it": "Tempo di asciugatura", "ja": "乾燥の残り時間", "zh": "烘干剩余时间", "ko": "건조 남은 시간", "ar": "وقت التجفيف" },
+    "keywords": {
+      "es": ["tiempo restante", "temporizador", "secadora", "lavandería", "autoservicio", "cuánto falta", "ciclo"],
+      "en": ["time remaining", "timer", "dryer", "laundromat", "cycle", "minutes left", "coin dryer"]
+    }
+  },
+  "laundry-check": {
+    "label": { "es": "Lavado terminado", "en": "Wash complete", "pt": "Lavagem concluída", "fr": "Lavage terminé", "de": "Waschgang beendet", "it": "Lavaggio completato", "ja": "洗濯完了", "zh": "洗涤完成", "ko": "세탁 완료", "ar": "اكتمل الغسيل" },
+    "keywords": {
+      "es": ["ciclo terminado", "ropa lista", "lavadora", "sacar la ropa", "aviso", "lavandería", "ropa limpia"],
+      "en": ["cycle complete", "laundry done", "washer", "unload", "notification", "laundromat", "clean clothes"]
+    }
+  },
+  "air-conditioner-clock": {
+    "label": { "es": "Temporizador del aire", "en": "AC timer", "pt": "Timer do ar-condicionado", "fr": "Minuterie de la clim", "de": "Klimaanlagen-Timer", "it": "Timer del condizionatore", "ja": "エアコンのタイマー", "zh": "空调定时", "ko": "에어컨 타이머", "ar": "مؤقت المكيف" },
+    "keywords": {
+      "es": ["modo sueño", "apagado automático", "encendido programado", "horario", "minisplit", "clima", "dormir"],
+      "en": ["sleep mode", "auto off", "scheduled on", "schedule", "mini split", "climate", "bedtime"]
+    }
+  },
+  "air-filter-alert": {
+    "label": { "es": "Cambiar filtro", "en": "Replace filter", "pt": "Trocar filtro", "fr": "Remplacer le filtre", "de": "Filter wechseln", "it": "Sostituire il filtro", "ja": "フィルター交換", "zh": "更换滤网", "ko": "필터 교체", "ar": "استبدال الفلتر" },
+    "keywords": {
+      "es": ["filtro sucio", "mantenimiento", "recordatorio", "repuesto", "vida útil", "purificador", "minisplit"],
+      "en": ["dirty filter", "maintenance", "reminder", "replacement", "filter life", "purifier", "HVAC"]
+    }
+  },
+  "thermostat-clock": {
+    "label": { "es": "Horario del termostato", "en": "Thermostat schedule", "pt": "Programação do termostato", "fr": "Programmation du thermostat", "de": "Thermostat-Zeitplan", "it": "Programmazione del termostato", "ja": "サーモスタットのスケジュール", "zh": "温控器定时", "ko": "온도 조절기 예약", "ar": "جدول منظم الحرارة" },
+    "keywords": {
+      "es": ["programar temperatura", "rutina", "modo noche", "ahorro de energía", "clima", "fuera de casa", "calendario"],
+      "en": ["temperature schedule", "program", "routine", "night mode", "energy saving", "away mode", "climate"]
+    }
+  },
+  "smart-plug-clock": {
+    "label": { "es": "Encendido programado", "en": "Scheduled on and off", "pt": "Liga e desliga programado", "fr": "Marche/arrêt programmé", "de": "Zeitschaltung", "it": "Accensione programmata", "ja": "オン・オフのスケジュール", "zh": "定时开关", "ko": "예약 켜기/끄기", "ar": "تشغيل وإيقاف مجدول" },
+    "keywords": {
+      "es": ["temporizador", "apagado automático", "horario", "enchufe", "rutina", "ahorro de energía", "timer"],
+      "en": ["timer", "auto off", "on off schedule", "smart plug", "routine", "energy saving", "automation"]
+    }
+  },
+  "lightbulb-clock": {
+    "label": { "es": "Horario de luces", "en": "Light schedule", "pt": "Programação da luz", "fr": "Programmation de l’éclairage", "de": "Lichtzeitplan", "it": "Programmazione delle luci", "ja": "照明のタイマー", "zh": "灯光定时", "ko": "조명 예약", "ar": "جدول الإضاءة" },
+    "keywords": {
+      "es": ["temporizador", "encender luces", "apagado automático", "rutina", "simular presencia", "foco", "atardecer"],
+      "en": ["timer", "lights on", "auto off", "routine", "vacation mode", "bulb", "sunset"]
+    }
+  },
+  "motion-sensor-alert": {
+    "label": { "es": "Movimiento detectado", "en": "Motion detected", "pt": "Movimento detectado", "fr": "Mouvement détecté", "de": "Bewegung erkannt", "it": "Movimento rilevato", "ja": "動きを検知", "zh": "检测到移动", "ko": "움직임 감지됨", "ar": "تم رصد حركة" },
+    "keywords": {
+      "es": ["intruso", "alerta de seguridad", "alarma", "presencia", "alguien en casa", "aviso", "vigilancia"],
+      "en": ["intruder", "security alert", "alarm", "presence", "someone home", "notification", "surveillance"]
+    }
+  },
+  "leak-sensor-alert": {
+    "label": { "es": "Fuga de agua detectada", "en": "Water leak detected", "pt": "Vazamento detectado", "fr": "Fuite d’eau détectée", "de": "Wasserleck erkannt", "it": "Perdita d’acqua rilevata", "ja": "漏水を検知", "zh": "检测到漏水", "ko": "누수 감지됨", "ar": "تم رصد تسرب مياه" },
+    "keywords": {
+      "es": ["inundación", "alerta", "tubería rota", "cerrar la llave", "humedad", "emergencia", "goteo"],
+      "en": ["flood", "alert", "burst pipe", "shut off water", "moisture", "emergency", "drip"]
+    }
+  },
+  "smoke-detector-alert": {
+    "label": { "es": "Humo detectado", "en": "Smoke detected", "pt": "Fumaça detectada", "fr": "Fumée détectée", "de": "Rauch erkannt", "it": "Fumo rilevato", "ja": "煙を検知", "zh": "检测到烟雾", "ko": "연기 감지됨", "ar": "تم رصد دخان" },
+    "keywords": {
+      "es": ["incendio", "alarma", "fuego", "evacuar", "emergencia", "alerta", "peligro"],
+      "en": ["fire", "alarm", "evacuate", "emergency", "alert", "danger", "fire alarm"]
+    }
+  },
+  "smart-lock-alert": {
+    "label": { "es": "Alerta de cerradura", "en": "Lock alert", "pt": "Alerta da fechadura", "fr": "Alerte de serrure", "de": "Schlosswarnung", "it": "Avviso della serratura", "ja": "ロックの異常", "zh": "门锁警报", "ko": "도어락 경고", "ar": "تنبيه القفل" },
+    "keywords": {
+      "es": ["chapa atorada", "forzada", "intento de apertura", "manipulación", "batería baja", "seguridad", "error"],
+      "en": ["jammed", "tampered", "forced entry", "failed unlock", "low battery", "security", "error"]
+    }
+  },
+  "smart-lock-clock": {
+    "label": { "es": "Acceso temporal", "en": "Temporary access", "pt": "Acesso temporário", "fr": "Accès temporaire", "de": "Zeitlich begrenzter Zugang", "it": "Accesso temporaneo", "ja": "一時アクセス", "zh": "临时访问", "ko": "임시 출입", "ar": "وصول مؤقت" },
+    "keywords": {
+      "es": ["código de huésped", "acceso programado", "renta vacacional", "check-in", "visitas", "llave temporal", "horario de acceso"],
+      "en": ["guest code", "scheduled access", "vacation rental", "check-in", "visitors", "cleaner access", "access hours"]
+    }
+  },
+  "robot-vacuum-alert": {
+    "label": { "es": "Alerta de la aspiradora", "en": "Robot vacuum alert", "pt": "Alerta do robô aspirador", "fr": "Alerte du robot aspirateur", "de": "Saugroboter-Warnung", "it": "Avviso del robot aspirapolvere", "ja": "ロボット掃除機のエラー", "zh": "扫地机器人故障", "ko": "로봇청소기 경고", "ar": "تنبيه مكنسة الروبوت" },
+    "keywords": {
+      "es": ["atorada", "depósito lleno", "cepillo enredado", "necesita ayuda", "error", "atascada", "vaciar depósito"],
+      "en": ["stuck", "bin full", "brush tangled", "needs help", "error", "trapped", "empty bin"]
+    }
+  },
+  "robot-vacuum-clock": {
+    "label": { "es": "Limpieza programada", "en": "Scheduled cleaning", "pt": "Limpeza agendada", "fr": "Nettoyage programmé", "de": "Geplante Reinigung", "it": "Pulizia programmata", "ja": "清掃スケジュール", "zh": "定时清扫", "ko": "예약 청소", "ar": "تنظيف مجدول" },
+    "keywords": {
+      "es": ["horario de limpieza", "programar", "rutina", "todos los días", "mientras no estás", "aspiradora robot", "temporizador"],
+      "en": ["cleaning schedule", "schedule", "routine", "daily", "while away", "robot vacuum", "timer"]
+    }
+  },
+  "laundry-clock": {
+    "label": { "es": "Tiempo de lavado", "en": "Wash time", "pt": "Tempo de lavagem", "fr": "Durée du lavage", "de": "Waschzeit", "it": "Tempo di lavaggio", "ja": "洗濯の残り時間", "zh": "洗涤剩余时间", "ko": "세탁 남은 시간", "ar": "وقت الغسيل" },
+    "keywords": {
+      "es": ["tiempo restante", "inicio diferido", "programar lavado", "temporizador", "lavadora", "lavandería", "cuánto falta"],
+      "en": ["time remaining", "delay start", "schedule wash", "timer", "washer", "laundromat", "minutes left"]
+    }
+  }
+}

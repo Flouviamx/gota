@@ -1,0 +1,779 @@
+{
+  "apple": {
+    "label": { "es": "Manzana", "en": "Apple", "pt": "Maçã", "fr": "Pomme", "de": "Apfel", "it": "Mela", "ja": "りんご", "zh": "苹果", "ko": "사과", "ar": "تفاحة" },
+    "keywords": {
+      "es": ["fruta", "colación", "botana saludable", "frutas y verduras", "nutrición", "frutería", "comida sana"],
+      "en": ["fruit", "healthy snack", "produce aisle", "nutrition", "fresh produce", "grocery", "orchard"]
+    }
+  },
+  "apple-plus": {
+    "label": { "es": "Agregar fruta", "en": "Add fruit", "pt": "Adicionar fruta", "fr": "Ajouter un fruit", "de": "Obst hinzufügen", "it": "Aggiungi frutta", "ja": "果物を追加", "zh": "添加水果", "ko": "과일 추가", "ar": "إضافة فاكهة" },
+    "keywords": {
+      "es": ["registrar porción", "contador de nutrición", "lista del súper", "agregar al carrito", "porción de fruta", "diario de comidas", "comprar fruta"],
+      "en": ["log serving", "nutrition tracker", "shopping list", "add to cart", "fruit serving", "food diary", "buy produce"]
+    }
+  },
+  "apple-half": {
+    "label": { "es": "Media manzana", "en": "Halved apple", "pt": "Maçã cortada", "fr": "Pomme coupée", "de": "Halbierter Apfel", "it": "Mela tagliata", "ja": "半分に切ったりんご", "zh": "切开的苹果", "ko": "반으로 자른 사과", "ar": "نصف تفاحة" },
+    "keywords": {
+      "es": ["fruta picada", "fruta cortada", "preparar fruta", "receta", "kit de comida", "por dentro", "semillas"],
+      "en": ["cut fruit", "sliced fruit", "fruit prep", "recipe", "meal kit", "inside", "cross section"]
+    }
+  },
+  "apple-core": {
+    "label": { "es": "Corazón de manzana", "en": "Apple core", "pt": "Miolo de maçã", "fr": "Trognon de pomme", "de": "Abgenagter Apfel", "it": "Torsolo di mela", "ja": "りんごの芯", "zh": "苹果核", "ko": "먹고 남은 사과", "ar": "بقايا تفاحة" },
+    "keywords": {
+      "es": ["sobras", "desperdicio de comida", "composta", "residuos orgánicos", "colación terminada", "basura orgánica", "restos"],
+      "en": ["leftovers", "food waste", "compost", "organic waste", "snack finished", "food scraps", "eaten"]
+    }
+  },
+  "apple-worm": {
+    "label": { "es": "Manzana con gusano", "en": "Wormy apple", "pt": "Maçã bichada", "fr": "Pomme véreuse", "de": "Wurmiger Apfel", "it": "Mela bacata", "ja": "虫食いりんご", "zh": "有虫的苹果", "ko": "벌레 먹은 사과", "ar": "تفاحة بها دودة" },
+    "keywords": {
+      "es": ["fruta podrida", "producto dañado", "reportar producto", "en mal estado", "plaga", "echado a perder", "devolución", "calidad"],
+      "en": ["rotten fruit", "damaged produce", "report item", "spoiled", "pest", "bad item", "refund", "quality issue"]
+    }
+  },
+  "pear": {
+    "label": { "es": "Pera", "en": "Pear", "pt": "Pera", "fr": "Poire", "de": "Birne", "it": "Pera", "ja": "洋なし", "zh": "梨", "ko": "배", "ar": "كمثرى" },
+    "keywords": {
+      "es": ["fruta", "frutería", "receta", "lista del súper", "postre", "fruta de temporada", "huerto"],
+      "en": ["fruit", "produce", "recipe", "shopping list", "dessert", "seasonal fruit", "orchard"]
+    }
+  },
+  "banana": {
+    "label": { "es": "Plátano", "en": "Banana", "pt": "Banana", "fr": "Banane", "de": "Banane", "it": "Banana", "ja": "バナナ", "zh": "香蕉", "ko": "바나나", "ar": "موزة" },
+    "keywords": {
+      "es": ["fruta", "banana", "energía", "colación rápida", "potasio", "desayuno", "licuado", "fruta tropical"],
+      "en": ["fruit", "energy", "quick snack", "potassium", "breakfast", "smoothie", "tropical fruit"]
+    }
+  },
+  "banana-peeled": {
+    "label": { "es": "Plátano pelado", "en": "Peeled banana", "pt": "Banana descascada", "fr": "Banane épluchée", "de": "Geschälte Banane", "it": "Banana sbucciata", "ja": "皮をむいたバナナ", "zh": "剥开的香蕉", "ko": "껍질 벗긴 바나나", "ar": "موزة مقشرة" },
+    "keywords": {
+      "es": ["listo para comer", "hora de la colación", "botana", "fruta servida", "cáscara", "pelar fruta", "lonche"],
+      "en": ["ready to eat", "snack time", "fruit served", "peel", "lunchbox", "energy boost", "fruit"]
+    }
+  },
+  "banana-bunch": {
+    "label": { "es": "Racimo de plátanos", "en": "Bunch of bananas", "pt": "Cacho de bananas", "fr": "Régime de bananes", "de": "Bananenstaude", "it": "Casco di banane", "ja": "バナナの房", "zh": "一串香蕉", "ko": "바나나 송이", "ar": "عنقود موز" },
+    "keywords": {
+      "es": ["por racimo", "por kilo", "fruta tropical", "plátano macho", "frutería", "mayoreo", "banana", "plantación"],
+      "en": ["sold by the bunch", "plantains", "tropical produce", "fruit stand", "wholesale", "plantation", "cavendish"]
+    }
+  },
+  "orange": {
+    "label": { "es": "Naranja", "en": "Orange", "pt": "Laranja", "fr": "Orange", "de": "Orange", "it": "Arancia", "ja": "オレンジ", "zh": "橙子", "ko": "오렌지", "ar": "برتقالة" },
+    "keywords": {
+      "es": ["fruta", "cítrico", "vitamina C", "jugo natural", "desayuno", "gajos", "frutería"],
+      "en": ["fruit", "citrus", "vitamin C", "fresh juice", "breakfast", "segments", "navel"]
+    }
+  },
+  "tangerine": {
+    "label": { "es": "Mandarina", "en": "Tangerine", "pt": "Tangerina", "fr": "Mandarine", "de": "Mandarine", "it": "Mandarino", "ja": "みかん", "zh": "橘子", "ko": "귤", "ar": "يوسفي" },
+    "keywords": {
+      "es": ["cítrico", "fácil de pelar", "clementina", "lonche", "colación", "gajos", "fruta de invierno"],
+      "en": ["mandarin", "clementine", "easy peel", "citrus", "lunchbox snack", "segments", "satsuma"]
+    }
+  },
+  "lemon": {
+    "label": { "es": "Limón amarillo", "en": "Lemon", "pt": "Limão-siciliano", "fr": "Citron", "de": "Zitrone", "it": "Limone", "ja": "レモン", "zh": "柠檬", "ko": "레몬", "ar": "ليمونة" },
+    "keywords": {
+      "es": ["cítrico", "ácido", "agrio", "limonada", "ralladura", "aderezo", "bebidas"],
+      "en": ["citrus", "sour", "lemonade", "zest", "recipe", "drinks", "dressing"]
+    }
+  },
+  "lime": {
+    "label": { "es": "Limón", "en": "Lime", "pt": "Limão", "fr": "Citron vert", "de": "Limette", "it": "Lime", "ja": "ライム", "zh": "青柠", "ko": "라임", "ar": "ليمون أخضر" },
+    "keywords": {
+      "es": ["lima", "limón verde", "cítrico", "tacos", "michelada", "cocina mexicana", "cocina asiática", "cóctel"],
+      "en": ["citrus", "tacos", "cocktail", "margarita", "Mexican cooking", "Asian cooking", "drinks", "limón"]
+    }
+  },
+  "citrus": {
+    "label": { "es": "Cítricos", "en": "Citrus", "pt": "Cítricos", "fr": "Agrumes", "de": "Zitrusfrüchte", "it": "Agrumi", "ja": "柑橘類", "zh": "柑橘", "ko": "감귤류", "ar": "حمضيات" },
+    "keywords": {
+      "es": ["rodaja", "fresco", "vitamina C", "decoración de bebida", "naranja", "limón", "toronja", "coctelería"],
+      "en": ["slice", "fresh", "vitamin C", "drink garnish", "orange", "lemon", "grapefruit", "cocktail"]
+    }
+  },
+  "citrus-wedge": {
+    "label": { "es": "Gajo de limón", "en": "Citrus wedge", "pt": "Fatia de limão", "fr": "Quartier de citron", "de": "Zitronenspalte", "it": "Spicchio di limone", "ja": "くし切りのレモン", "zh": "柠檬角", "ko": "레몬 조각", "ar": "شريحة ليمون" },
+    "keywords": {
+      "es": ["exprimir", "unas gotas", "decorar bebida", "acompañamiento", "tacos", "cóctel", "lima", "cítrico"],
+      "en": ["squeeze", "garnish", "add lime", "lime wedge", "lemon slice", "cocktail", "drinks", "tacos"]
+    }
+  },
+  "grapes": {
+    "label": { "es": "Uvas", "en": "Grapes", "pt": "Uvas", "fr": "Raisin", "de": "Weintrauben", "it": "Uva", "ja": "ぶどう", "zh": "葡萄", "ko": "포도", "ar": "عنب" },
+    "keywords": {
+      "es": ["racimo", "fruta", "viñedo", "vino", "pasas", "vendimia", "vinícola"],
+      "en": ["bunch", "fruit", "vineyard", "wine", "raisins", "harvest", "winery"]
+    }
+  },
+  "strawberry": {
+    "label": { "es": "Fresa", "en": "Strawberry", "pt": "Morango", "fr": "Fraise", "de": "Erdbeere", "it": "Fragola", "ja": "いちご", "zh": "草莓", "ko": "딸기", "ar": "فراولة" },
+    "keywords": {
+      "es": ["frutos rojos", "berries", "fruta de temporada", "sabor", "postre", "licuado", "mermelada"],
+      "en": ["berries", "summer fruit", "flavor", "dessert", "smoothie", "jam", "red fruit"]
+    }
+  },
+  "blueberries": {
+    "label": { "es": "Arándanos", "en": "Blueberries", "pt": "Mirtilos", "fr": "Myrtilles", "de": "Heidelbeeren", "it": "Mirtilli", "ja": "ブルーベリー", "zh": "蓝莓", "ko": "블루베리", "ar": "توت أزرق" },
+    "keywords": {
+      "es": ["mora azul", "blueberries", "frutos rojos", "berries", "antioxidantes", "superalimento", "desayuno"],
+      "en": ["berries", "antioxidants", "superfood", "breakfast", "muffins", "smoothie bowl", "bilberries"]
+    }
+  },
+  "raspberry": {
+    "label": { "es": "Frambuesa", "en": "Raspberry", "pt": "Framboesa", "fr": "Framboise", "de": "Himbeere", "it": "Lampone", "ja": "ラズベリー", "zh": "树莓", "ko": "라즈베리", "ar": "توت العليق" },
+    "keywords": {
+      "es": ["frutos rojos", "berries", "zarzamora", "mora", "sabor", "postre", "mermelada"],
+      "en": ["berries", "blackberry", "red fruit", "flavor", "dessert", "jam", "bramble"]
+    }
+  },
+  "cherry": {
+    "label": { "es": "Cerezas", "en": "Cherries", "pt": "Cerejas", "fr": "Cerises", "de": "Kirschen", "it": "Ciliegie", "ja": "さくらんぼ", "zh": "樱桃", "ko": "체리", "ar": "كرز" },
+    "keywords": {
+      "es": ["fruta", "sabor", "decoración de postre", "pastel", "guinda", "fruta de verano", "cóctel"],
+      "en": ["fruit", "flavor", "dessert topping", "cake", "sundae", "summer fruit", "cocktail"]
+    }
+  },
+  "peach": {
+    "label": { "es": "Durazno", "en": "Peach", "pt": "Pêssego", "fr": "Pêche", "de": "Pfirsich", "it": "Pesca", "ja": "桃", "zh": "桃子", "ko": "복숭아", "ar": "خوخ" },
+    "keywords": {
+      "es": ["fruta de hueso", "chabacano", "nectarina", "melocotón", "fruta de verano", "almíbar", "postre"],
+      "en": ["stone fruit", "apricot", "nectarine", "summer fruit", "orchard", "canned fruit", "dessert"]
+    }
+  },
+  "plum": {
+    "label": { "es": "Ciruela", "en": "Plum", "pt": "Ameixa", "fr": "Prune", "de": "Pflaume", "it": "Prugna", "ja": "プラム", "zh": "李子", "ko": "자두", "ar": "برقوق" },
+    "keywords": {
+      "es": ["fruta de hueso", "fruta deshidratada", "fruta morada", "mermelada", "fruta de temporada", "fibra", "digestión"],
+      "en": ["stone fruit", "prunes", "dried fruit", "purple fruit", "jam", "seasonal fruit", "fiber"]
+    }
+  },
+  "mango": {
+    "label": { "es": "Mango", "en": "Mango", "pt": "Manga", "fr": "Mangue", "de": "Mango", "it": "Mango", "ja": "マンゴー", "zh": "芒果", "ko": "망고", "ar": "مانجو" },
+    "keywords": {
+      "es": ["fruta tropical", "sabor", "licuado", "smoothie", "ataúlfo", "manila", "chamoy"],
+      "en": ["tropical fruit", "flavor", "smoothie", "lassi", "salsa", "ataulfo", "dessert"]
+    }
+  },
+  "olive": {
+    "label": { "es": "Aceitunas", "en": "Olives", "pt": "Azeitonas", "fr": "Olives", "de": "Oliven", "it": "Olive", "ja": "オリーブ", "zh": "橄榄", "ko": "올리브", "ar": "زيتون" },
+    "keywords": {
+      "es": ["ingrediente", "comida mediterránea", "aceite de oliva", "pizza", "tapas", "botana", "menú", "encurtido"],
+      "en": ["ingredient", "Mediterranean food", "pizza topping", "tapas", "appetizer", "menu", "pickled", "martini"]
+    }
+  },
+  "avocado": {
+    "label": { "es": "Aguacate", "en": "Avocado", "pt": "Abacate", "fr": "Avocat", "de": "Avocado", "it": "Avocado", "ja": "アボカド", "zh": "牛油果", "ko": "아보카도", "ar": "أفوكادو" },
+    "keywords": {
+      "es": ["guacamole", "grasas saludables", "palta", "pan tostado", "hass", "ensalada", "keto"],
+      "en": ["guacamole", "healthy fats", "toast topping", "hass", "salad", "keto", "superfood"]
+    }
+  },
+  "avocado-clock": {
+    "label": { "es": "Madurando", "en": "Ripening", "pt": "Amadurecendo", "fr": "Mûrissement", "de": "Nachreifen", "it": "In maturazione", "ja": "追熟中", "zh": "正在成熟", "ko": "후숙 중", "ar": "قيد النضج" },
+    "keywords": {
+      "es": ["madurez", "listo en unos días", "para mañana", "para hoy", "elegir punto", "súper en línea", "aguacate"],
+      "en": ["ripeness", "ripe in a few days", "ripen at home", "ready tomorrow", "ripeness choice", "online grocery", "avocado"]
+    }
+  },
+  "pineapple": {
+    "label": { "es": "Piña", "en": "Pineapple", "pt": "Abacaxi", "fr": "Ananas", "de": "Ananas", "it": "Ananas", "ja": "パイナップル", "zh": "菠萝", "ko": "파인애플", "ar": "أناناس" },
+    "keywords": {
+      "es": ["fruta tropical", "piña colada", "tacos al pastor", "ananá", "agua fresca", "fruta picada", "verano"],
+      "en": ["tropical fruit", "piña colada", "cocktail", "ananas", "Hawaiian pizza", "summer", "fruit salad"]
+    }
+  },
+  "papaya": {
+    "label": { "es": "Papaya", "en": "Papaya", "pt": "Mamão", "fr": "Papaye", "de": "Papaya", "it": "Papaya", "ja": "パパイヤ", "zh": "木瓜", "ko": "파파야", "ar": "بابايا" },
+    "keywords": {
+      "es": ["fruta tropical", "desayuno", "fruta picada", "digestión", "licuado", "coctel de frutas", "fibra"],
+      "en": ["tropical fruit", "breakfast", "pawpaw", "fruit plate", "digestion", "smoothie", "fruit salad"]
+    }
+  },
+  "coconut": {
+    "label": { "es": "Coco", "en": "Coconut", "pt": "Coco", "fr": "Noix de coco", "de": "Kokosnuss", "it": "Cocco", "ja": "ココナッツ", "zh": "椰子", "ko": "코코넛", "ar": "جوز الهند" },
+    "keywords": {
+      "es": ["tropical", "bebida vegetal", "aceite vegetal", "a base de plantas", "vegano", "cocada", "palmera", "playa"],
+      "en": ["tropical", "plant-based", "vegan", "dairy-free", "palm tree", "beach", "piña colada", "cooking oil"]
+    }
+  },
+  "kiwi": {
+    "label": { "es": "Kiwi", "en": "Kiwi", "pt": "Kiwi", "fr": "Kiwi", "de": "Kiwi", "it": "Kiwi", "ja": "キウイ", "zh": "猕猴桃", "ko": "키위", "ar": "كيوي" },
+    "keywords": {
+      "es": ["fruta", "vitamina C", "fruta verde", "fruta exótica", "desayuno", "rebanada", "fibra"],
+      "en": ["fruit", "kiwifruit", "vitamin C", "green fruit", "breakfast", "fiber", "slice"]
+    }
+  },
+  "pomegranate": {
+    "label": { "es": "Granada", "en": "Pomegranate", "pt": "Romã", "fr": "Grenade", "de": "Granatapfel", "it": "Melagrana", "ja": "ザクロ", "zh": "石榴", "ko": "석류", "ar": "رمان" },
+    "keywords": {
+      "es": ["fruta", "antioxidantes", "temporada", "chiles en nogada", "semillas", "jugo", "otoño"],
+      "en": ["fruit", "antioxidants", "seasonal produce", "seeds", "arils", "juice", "autumn"]
+    }
+  },
+  "fig": {
+    "label": { "es": "Higo", "en": "Fig", "pt": "Figo", "fr": "Figue", "de": "Feige", "it": "Fico", "ja": "いちじく", "zh": "无花果", "ko": "무화과", "ar": "تين" },
+    "keywords": {
+      "es": ["fruta", "tabla de quesos", "fruta seca", "mermelada", "brevas", "postre", "mediterráneo"],
+      "en": ["fruit", "cheese board", "dried fruit", "jam", "charcuterie", "dessert", "Mediterranean"]
+    }
+  },
+  "passion-fruit": {
+    "label": { "es": "Maracuyá", "en": "Passion fruit", "pt": "Maracujá", "fr": "Fruit de la passion", "de": "Passionsfrucht", "it": "Frutto della passione", "ja": "パッションフルーツ", "zh": "百香果", "ko": "패션프루트", "ar": "فاكهة العاطفة" },
+    "keywords": {
+      "es": ["fruta de la pasión", "granadilla", "fruta tropical", "jugo", "postre", "agua fresca", "ácido"],
+      "en": ["maracuya", "granadilla", "tropical fruit", "juice", "dessert", "cocktail", "pulp"]
+    }
+  },
+  "lychee": {
+    "label": { "es": "Lichi", "en": "Lychee", "pt": "Lichia", "fr": "Litchi", "de": "Litschi", "it": "Litchi", "ja": "ライチ", "zh": "荔枝", "ko": "리치", "ar": "ليتشي" },
+    "keywords": {
+      "es": ["fruta tropical", "rambután", "postre asiático", "bubble tea", "bebidas", "fruta exótica", "litchi"],
+      "en": ["tropical fruit", "rambutan", "Asian dessert", "bubble tea", "drinks", "exotic fruit", "litchi"]
+    }
+  },
+  "persimmon": {
+    "label": { "es": "Caqui", "en": "Persimmon", "pt": "Caqui", "fr": "Kaki", "de": "Kaki", "it": "Cachi", "ja": "柿", "zh": "柿子", "ko": "감", "ar": "كاكا" },
+    "keywords": {
+      "es": ["kaki", "persimo", "fruta de otoño", "fruta de temporada", "fruta naranja", "fruta dulce", "sharon"],
+      "en": ["kaki", "sharon fruit", "autumn fruit", "seasonal fruit", "orange fruit", "fuyu", "hachiya"]
+    }
+  },
+  "watermelon": {
+    "label": { "es": "Sandía", "en": "Watermelon", "pt": "Melancia", "fr": "Pastèque", "de": "Wassermelone", "it": "Anguria", "ja": "スイカ", "zh": "西瓜", "ko": "수박", "ar": "بطيخ" },
+    "keywords": {
+      "es": ["rebanada", "verano", "fruta", "hidratación", "agua fresca", "picnic", "fruta fresca"],
+      "en": ["slice", "summer", "fruit", "hydration", "picnic", "refreshing", "juicy"]
+    }
+  },
+  "melon": {
+    "label": { "es": "Melón", "en": "Melon", "pt": "Melão", "fr": "Melon", "de": "Melone", "it": "Melone", "ja": "メロン", "zh": "甜瓜", "ko": "멜론", "ar": "شمام" },
+    "keywords": {
+      "es": ["cantalupo", "gota de miel", "fruta de verano", "agua fresca", "fruta picada", "desayuno"],
+      "en": ["cantaloupe", "honeydew", "muskmelon", "summer fruit", "fruit salad", "breakfast", "rockmelon"]
+    }
+  },
+  "carrot": {
+    "label": { "es": "Zanahoria", "en": "Carrot", "pt": "Cenoura", "fr": "Carotte", "de": "Karotte", "it": "Carota", "ja": "にんじん", "zh": "胡萝卜", "ko": "당근", "ar": "جزرة" },
+    "keywords": {
+      "es": ["verduras", "hortalizas", "verdura de raíz", "sección de verduras", "vitamina A", "vegetales", "jugo"],
+      "en": ["vegetables", "veggies", "root vegetable", "vegetable aisle", "vitamin A", "produce", "beta carotene"]
+    }
+  },
+  "carrot-forked": {
+    "label": { "es": "Zanahoria imperfecta", "en": "Wonky carrot", "pt": "Cenoura imperfeita", "fr": "Carotte moche", "de": "Krumme Karotte", "it": "Carota imperfetta", "ja": "規格外のにんじん", "zh": "不完美的胡萝卜", "ko": "못난이 당근", "ar": "جزرة غير مثالية" },
+    "keywords": {
+      "es": ["verdura fea", "fuera de norma", "rescate de alimentos", "caja de rescate", "desperdicio de comida", "sustentable", "precio rebajado"],
+      "en": ["ugly produce", "imperfect produce", "food rescue", "rescue box", "food waste", "misshapen", "sustainable"]
+    }
+  },
+  "potato": {
+    "label": { "es": "Papa", "en": "Potato", "pt": "Batata", "fr": "Pomme de terre", "de": "Kartoffel", "it": "Patata", "ja": "じゃがいも", "zh": "土豆", "ko": "감자", "ar": "بطاطس" },
+    "keywords": {
+      "es": ["tubérculo", "almidón", "puré", "carbohidratos", "patata", "guarnición", "a la francesa"],
+      "en": ["tuber", "root vegetable", "starch", "fries", "mashed", "carbs", "spud"]
+    }
+  },
+  "sweet-potato": {
+    "label": { "es": "Camote", "en": "Sweet potato", "pt": "Batata-doce", "fr": "Patate douce", "de": "Süßkartoffel", "it": "Patata dolce", "ja": "さつまいも", "zh": "红薯", "ko": "고구마", "ar": "بطاطا حلوة" },
+    "keywords": {
+      "es": ["batata", "boniato", "papa dulce", "tubérculo", "carbohidratos", "verdura de raíz", "otoño"],
+      "en": ["yam", "camote", "tuber", "root vegetable", "carbs", "fries", "autumn"]
+    }
+  },
+  "cassava": {
+    "label": { "es": "Yuca", "en": "Cassava", "pt": "Mandioca", "fr": "Manioc", "de": "Maniok", "it": "Manioca", "ja": "キャッサバ", "zh": "木薯", "ko": "카사바", "ar": "كسافا" },
+    "keywords": {
+      "es": ["mandioca", "tubérculo", "verdura de raíz", "cocina latinoamericana", "cocina africana", "tapioca", "harina"],
+      "en": ["yuca", "manioc", "tuber", "root vegetable", "Latin American cooking", "African cooking", "tapioca"]
+    }
+  },
+  "beet": {
+    "label": { "es": "Betabel", "en": "Beet", "pt": "Beterraba", "fr": "Betterave", "de": "Rote Bete", "it": "Barbabietola", "ja": "ビーツ", "zh": "甜菜根", "ko": "비트", "ar": "شمندر" },
+    "keywords": {
+      "es": ["remolacha", "verdura de raíz", "jugo", "ensalada", "hortaliza", "colorante natural", "betarraga"],
+      "en": ["beetroot", "root vegetable", "juice", "salad", "borscht", "natural dye", "red vegetable"]
+    }
+  },
+  "radish": {
+    "label": { "es": "Rábano", "en": "Radish", "pt": "Rabanete", "fr": "Radis", "de": "Radieschen", "it": "Ravanello", "ja": "ラディッシュ", "zh": "小萝卜", "ko": "래디시", "ar": "فجل" },
+    "keywords": {
+      "es": ["verdura de raíz", "ensalada", "guarnición", "daikon", "pozole", "tacos", "picante"],
+      "en": ["root vegetable", "salad", "garnish", "daikon", "crunchy", "pickled", "spicy"]
+    }
+  },
+  "turnip": {
+    "label": { "es": "Nabo", "en": "Turnip", "pt": "Nabo", "fr": "Navet", "de": "Weiße Rübe", "it": "Rapa", "ja": "カブ", "zh": "芜菁", "ko": "순무", "ar": "لفت" },
+    "keywords": {
+      "es": ["verdura de raíz", "rutabaga", "colinabo", "hortaliza", "sopa", "guiso", "invierno"],
+      "en": ["root vegetable", "rutabaga", "swede", "soup", "stew", "winter vegetable", "mash"]
+    }
+  },
+  "ginger": {
+    "label": { "es": "Jengibre", "en": "Ginger", "pt": "Gengibre", "fr": "Gingembre", "de": "Ingwer", "it": "Zenzero", "ja": "しょうが", "zh": "姜", "ko": "생강", "ar": "زنجبيل" },
+    "keywords": {
+      "es": ["raíz", "té", "cocina asiática", "cúrcuma", "especias", "resfriado", "picante"],
+      "en": ["root", "tea", "Asian cooking", "turmeric", "spice", "cold remedy", "stir fry"]
+    }
+  },
+  "onion": {
+    "label": { "es": "Cebolla", "en": "Onion", "pt": "Cebola", "fr": "Oignon", "de": "Zwiebel", "it": "Cipolla", "ja": "玉ねぎ", "zh": "洋葱", "ko": "양파", "ar": "بصلة" },
+    "keywords": {
+      "es": ["verdura", "condimento", "sofrito", "sazón", "aromáticos", "picar", "hortaliza"],
+      "en": ["vegetable", "aromatics", "sauté", "mirepoix", "chopped", "seasoning", "shallot"]
+    }
+  },
+  "onion-slice": {
+    "label": { "es": "Rodaja de cebolla", "en": "Sliced onion", "pt": "Rodela de cebola", "fr": "Rondelle d’oignon", "de": "Zwiebelring", "it": "Cipolla a rondelle", "ja": "玉ねぎの輪切り", "zh": "洋葱圈", "ko": "양파 슬라이스", "ar": "شريحة بصل" },
+    "keywords": {
+      "es": ["ingrediente extra", "hamburguesa", "torta", "sándwich", "cruda", "aros", "armar pedido"],
+      "en": ["topping", "burger", "sandwich", "raw", "rings", "build your burger", "add-on"]
+    }
+  },
+  "spring-onion": {
+    "label": { "es": "Cebolla cambray", "en": "Green onions", "pt": "Cebolinha", "fr": "Oignons verts", "de": "Frühlingszwiebeln", "it": "Cipollotti", "ja": "青ねぎ", "zh": "小葱", "ko": "쪽파", "ar": "بصل أخضر" },
+    "keywords": {
+      "es": ["cebollín", "cebolla verde", "cebolla de rabo", "decoración", "cocina asiática", "cocina mexicana", "carne asada"],
+      "en": ["scallions", "spring onions", "garnish", "Asian cooking", "Mexican cooking", "cebollín", "salad onion"]
+    }
+  },
+  "leek": {
+    "label": { "es": "Poro", "en": "Leek", "pt": "Alho-poró", "fr": "Poireau", "de": "Lauch", "it": "Porro", "ja": "リーキ", "zh": "韭葱", "ko": "리크", "ar": "كراث" },
+    "keywords": {
+      "es": ["puerro", "verdura", "sopa", "crema", "caldo", "hortaliza", "vichyssoise"],
+      "en": ["vegetable", "soup", "broth", "vichyssoise", "allium", "winter vegetable", "braised"]
+    }
+  },
+  "garlic": {
+    "label": { "es": "Ajo", "en": "Garlic", "pt": "Alho", "fr": "Ail", "de": "Knoblauch", "it": "Aglio", "ja": "にんにく", "zh": "大蒜", "ko": "마늘", "ar": "ثوم" },
+    "keywords": {
+      "es": ["condimento", "sabor", "aromáticos", "sazón", "bulbo", "cabeza", "mojo"],
+      "en": ["bulb", "aromatics", "flavor", "seasoning", "allium", "aioli", "head"]
+    }
+  },
+  "garlic-clove": {
+    "label": { "es": "Diente de ajo", "en": "Garlic clove", "pt": "Dente de alho", "fr": "Gousse d’ail", "de": "Knoblauchzehe", "it": "Spicchio d’aglio", "ja": "にんにくひとかけ", "zh": "蒜瓣", "ko": "마늘 한 쪽", "ar": "فص ثوم" },
+    "keywords": {
+      "es": ["medida de receta", "picado", "machacado", "ingrediente", "cantidad", "sazón", "pelar"],
+      "en": ["recipe unit", "minced", "crushed", "ingredient", "quantity", "seasoning", "peeled"]
+    }
+  },
+  "celery": {
+    "label": { "es": "Apio", "en": "Celery", "pt": "Aipo", "fr": "Céleri", "de": "Sellerie", "it": "Sedano", "ja": "セロリ", "zh": "芹菜", "ko": "셀러리", "ar": "كرفس" },
+    "keywords": {
+      "es": ["verdura", "alérgeno", "crudités", "jugo verde", "botana", "caldo", "tallos"],
+      "en": ["vegetable", "allergen", "crudités", "green juice", "stalks", "snack", "stock"]
+    }
+  },
+  "asparagus": {
+    "label": { "es": "Espárragos", "en": "Asparagus", "pt": "Aspargos", "fr": "Asperges", "de": "Spargel", "it": "Asparagi", "ja": "アスパラガス", "zh": "芦笋", "ko": "아스파라거스", "ar": "هليون" },
+    "keywords": {
+      "es": ["verdura de primavera", "guarnición", "a la parrilla", "verdura verde", "acompañamiento", "temporada", "brotes"],
+      "en": ["spring vegetable", "side dish", "grilled", "green vegetable", "spears", "seasonal", "roasted"]
+    }
+  },
+  "artichoke": {
+    "label": { "es": "Alcachofa", "en": "Artichoke", "pt": "Alcachofra", "fr": "Artichaut", "de": "Artischocke", "it": "Carciofo", "ja": "アーティチョーク", "zh": "洋蓟", "ko": "아티초크", "ar": "خرشوف" },
+    "keywords": {
+      "es": ["verdura", "cocina mediterránea", "corazones", "dip", "entrada", "hortaliza", "a la parrilla"],
+      "en": ["vegetable", "Mediterranean cooking", "hearts", "dip", "appetizer", "thistle", "steamed"]
+    }
+  },
+  "bamboo-shoot": {
+    "label": { "es": "Brotes de bambú", "en": "Bamboo shoots", "pt": "Broto de bambu", "fr": "Pousses de bambou", "de": "Bambussprossen", "it": "Germogli di bambù", "ja": "たけのこ", "zh": "竹笋", "ko": "죽순", "ar": "براعم الخيزران" },
+    "keywords": {
+      "es": ["cocina asiática", "ingrediente", "salteado", "comida china", "ramen", "verdura", "conserva"],
+      "en": ["Asian cooking", "ingredient", "stir fry", "Chinese food", "ramen", "vegetable", "canned"]
+    }
+  },
+  "nopal": {
+    "label": { "es": "Nopal", "en": "Cactus pad", "pt": "Cacto nopal", "fr": "Cactus nopal", "de": "Nopal-Kaktus", "it": "Cactus nopal", "ja": "食用サボテン", "zh": "食用仙人掌", "ko": "식용 선인장", "ar": "صبار صالح للأكل" },
+    "keywords": {
+      "es": ["cactus", "penca", "cocina mexicana", "ensalada", "prehispánico", "verdura", "a la plancha"],
+      "en": ["nopal", "nopales", "prickly pear", "Mexican cooking", "salad", "grilled", "vegetable"]
+    }
+  },
+  "lettuce": {
+    "label": { "es": "Lechuga", "en": "Lettuce", "pt": "Alface", "fr": "Laitue", "de": "Kopfsalat", "it": "Lattuga", "ja": "レタス", "zh": "生菜", "ko": "상추", "ar": "خس" },
+    "keywords": {
+      "es": ["hojas verdes", "ensalada", "romana", "orejona", "verduras de hoja", "fresco", "hamburguesa"],
+      "en": ["leafy greens", "salad", "romaine", "iceberg", "fresh", "burger topping", "butterhead"]
+    }
+  },
+  "cabbage": {
+    "label": { "es": "Col", "en": "Cabbage", "pt": "Repolho", "fr": "Chou", "de": "Kohl", "it": "Cavolo", "ja": "キャベツ", "zh": "卷心菜", "ko": "양배추", "ar": "ملفوف" },
+    "keywords": {
+      "es": ["repollo", "crucífera", "coleslaw", "verdura", "tostadas", "curtido", "chucrut"],
+      "en": ["cruciferous", "coleslaw", "sauerkraut", "vegetable", "kimchi", "greens", "tacos"]
+    }
+  },
+  "bok-choy": {
+    "label": { "es": "Bok choy", "en": "Bok choy", "pt": "Pak choi", "fr": "Pak-choï", "de": "Pak Choi", "it": "Pak choi", "ja": "チンゲン菜", "zh": "小白菜", "ko": "청경채", "ar": "بوك تشوي" },
+    "keywords": {
+      "es": ["pak choi", "col china", "verdura asiática", "salteado", "sopa", "ramen", "hojas verdes"],
+      "en": ["pak choi", "Chinese cabbage", "Asian greens", "stir fry", "soup", "ramen", "leafy greens"]
+    }
+  },
+  "kale": {
+    "label": { "es": "Kale", "en": "Kale", "pt": "Couve", "fr": "Chou kale", "de": "Grünkohl", "it": "Cavolo riccio", "ja": "ケール", "zh": "羽衣甘蓝", "ko": "케일", "ar": "كرنب أجعد" },
+    "keywords": {
+      "es": ["col rizada", "acelga", "hojas verdes", "superalimento", "jugo verde", "smoothie", "ensalada"],
+      "en": ["leafy greens", "superfood", "green smoothie", "chard", "salad", "collard greens", "curly"]
+    }
+  },
+  "spinach": {
+    "label": { "es": "Espinaca", "en": "Spinach", "pt": "Espinafre", "fr": "Épinards", "de": "Spinat", "it": "Spinaci", "ja": "ほうれん草", "zh": "菠菜", "ko": "시금치", "ar": "سبانخ" },
+    "keywords": {
+      "es": ["hojas verdes", "hierro", "ensalada", "verdura", "jugo verde", "popeye", "quelites"],
+      "en": ["leafy greens", "iron", "salad", "vegetable", "green smoothie", "Popeye", "baby greens"]
+    }
+  },
+  "broccoli": {
+    "label": { "es": "Brócoli", "en": "Broccoli", "pt": "Brócolis", "fr": "Brocoli", "de": "Brokkoli", "it": "Broccoli", "ja": "ブロッコリー", "zh": "西兰花", "ko": "브로콜리", "ar": "بروكلي" },
+    "keywords": {
+      "es": ["verduras verdes", "crucífera", "verdura", "guarnición", "al vapor", "comida saludable", "arbolitos"],
+      "en": ["green vegetables", "cruciferous", "vegetable", "side dish", "steamed", "healthy eating", "florets"]
+    }
+  },
+  "cauliflower": {
+    "label": { "es": "Coliflor", "en": "Cauliflower", "pt": "Couve-flor", "fr": "Chou-fleur", "de": "Blumenkohl", "it": "Cavolfiore", "ja": "カリフラワー", "zh": "花椰菜", "ko": "콜리플라워", "ar": "قرنبيط" },
+    "keywords": {
+      "es": ["crucífera", "bajo en carbohidratos", "keto", "verdura", "sustituto", "gratinado", "al vapor"],
+      "en": ["cruciferous", "low carb", "keto", "vegetable", "swap", "roasted", "florets"]
+    }
+  },
+  "brussels-sprouts": {
+    "label": { "es": "Coles de Bruselas", "en": "Brussels sprouts", "pt": "Couve-de-bruxelas", "fr": "Choux de Bruxelles", "de": "Rosenkohl", "it": "Cavoletti di Bruxelles", "ja": "芽キャベツ", "zh": "抱子甘蓝", "ko": "방울양배추", "ar": "كرنب بروكسل" },
+    "keywords": {
+      "es": ["crucífera", "guarnición", "verdura", "rostizadas", "al horno", "invierno", "cena navideña"],
+      "en": ["cruciferous", "side dish", "vegetable", "roasted", "sprouts", "winter", "holiday dinner"]
+    }
+  },
+  "pumpkin": {
+    "label": { "es": "Calabaza", "en": "Pumpkin", "pt": "Abóbora", "fr": "Citrouille", "de": "Kürbis", "it": "Zucca", "ja": "かぼちゃ", "zh": "南瓜", "ko": "호박", "ar": "يقطين" },
+    "keywords": {
+      "es": ["otoño", "halloween", "día de muertos", "pumpkin spice", "pay", "en tacha", "cosecha"],
+      "en": ["squash", "autumn", "Halloween", "pie", "harvest", "jack-o’-lantern", "Thanksgiving", "spiced latte"]
+    }
+  },
+  "butternut-squash": {
+    "label": { "es": "Calabaza butternut", "en": "Butternut squash", "pt": "Abóbora butternut", "fr": "Courge butternut", "de": "Butternut-Kürbis", "it": "Zucca violina", "ja": "バターナッツかぼちゃ", "zh": "奶油南瓜", "ko": "버터넛 스쿼시", "ar": "قرع العسل" },
+    "keywords": {
+      "es": ["calabaza de invierno", "squash", "calabaza mantequilla", "crema", "otoño", "al horno", "puré"],
+      "en": ["winter squash", "squash soup", "autumn", "roasted", "purée", "gourd", "acorn squash"]
+    }
+  },
+  "zucchini": {
+    "label": { "es": "Calabacita", "en": "Zucchini", "pt": "Abobrinha", "fr": "Courgette", "de": "Zucchini", "it": "Zucchina", "ja": "ズッキーニ", "zh": "西葫芦", "ko": "주키니", "ar": "كوسا" },
+    "keywords": {
+      "es": ["calabacín", "zucchini", "calabaza de verano", "verdura", "sopa", "rellenas", "guisado"],
+      "en": ["courgette", "summer squash", "vegetable", "zoodles", "grilled", "stuffed", "calabacita"]
+    }
+  },
+  "cucumber": {
+    "label": { "es": "Pepino", "en": "Cucumber", "pt": "Pepino", "fr": "Concombre", "de": "Gurke", "it": "Cetriolo", "ja": "きゅうり", "zh": "黄瓜", "ko": "오이", "ar": "خيار" },
+    "keywords": {
+      "es": ["ensalada", "encurtidos", "fresco", "botana", "con chile y limón", "verdura", "hidratante"],
+      "en": ["salad", "pickles", "fresh", "cool", "tzatziki", "vegetable", "spa water"]
+    }
+  },
+  "eggplant": {
+    "label": { "es": "Berenjena", "en": "Eggplant", "pt": "Berinjela", "fr": "Aubergine", "de": "Aubergine", "it": "Melanzana", "ja": "なす", "zh": "茄子", "ko": "가지", "ar": "باذنجان" },
+    "keywords": {
+      "es": ["verdura", "hortaliza", "baba ganoush", "a la parmesana", "a la parrilla", "cocina mediterránea", "morada"],
+      "en": ["aubergine", "vegetable", "baba ganoush", "parmigiana", "grilled", "Mediterranean cooking", "purple vegetable"]
+    }
+  },
+  "bell-pepper": {
+    "label": { "es": "Pimiento morrón", "en": "Bell pepper", "pt": "Pimentão", "fr": "Poivron", "de": "Paprika", "it": "Peperone", "ja": "パプリカ", "zh": "甜椒", "ko": "파프리카", "ar": "فلفل حلو" },
+    "keywords": {
+      "es": ["chile morrón", "pimiento dulce", "capsicum", "verdura", "fajitas", "ensalada", "relleno"],
+      "en": ["sweet pepper", "capsicum", "pimiento", "vegetable", "fajitas", "stuffed", "stir fry"]
+    }
+  },
+  "chili-pepper": {
+    "label": { "es": "Chile", "en": "Chili pepper", "pt": "Pimenta", "fr": "Piment", "de": "Chili", "it": "Peperoncino", "ja": "唐辛子", "zh": "辣椒", "ko": "고추", "ar": "فلفل حار" },
+    "keywords": {
+      "es": ["picante", "jalapeño", "serrano", "habanero", "nivel de picor", "salsa", "enchilado"],
+      "en": ["spicy", "hot pepper", "jalapeño", "habanero", "spice level", "hot sauce", "heat"]
+    }
+  },
+  "tomato": {
+    "label": { "es": "Jitomate", "en": "Tomato", "pt": "Tomate", "fr": "Tomate", "de": "Tomate", "it": "Pomodoro", "ja": "トマト", "zh": "番茄", "ko": "토마토", "ar": "طماطم" },
+    "keywords": {
+      "es": ["tomate", "salsa", "ensalada", "receta", "verdura", "pico de gallo", "caldillo"],
+      "en": ["sauce", "salad", "recipe", "vegetable", "salsa", "marinara", "ketchup"]
+    }
+  },
+  "corn": {
+    "label": { "es": "Elote", "en": "Corn", "pt": "Espiga de milho", "fr": "Épi de maïs", "de": "Maiskolben", "it": "Pannocchia", "ja": "とうもろこし", "zh": "玉米", "ko": "옥수수", "ar": "كوز ذرة" },
+    "keywords": {
+      "es": ["maíz", "mazorca", "esquite", "cereal", "milpa", "verdura", "tortilla"],
+      "en": ["maize", "cob", "grain", "elote", "kernels", "harvest", "barbecue"]
+    }
+  },
+  "okra": {
+    "label": { "es": "Okra", "en": "Okra", "pt": "Quiabo", "fr": "Gombo", "de": "Okra", "it": "Okra", "ja": "オクラ", "zh": "秋葵", "ko": "오크라", "ar": "بامية" },
+    "keywords": {
+      "es": ["quimbombó", "verdura", "gumbo", "curry", "guiso", "cocina sureña", "cocina india"],
+      "en": ["lady’s finger", "gumbo", "curry", "vegetable", "stew", "Southern cooking", "bhindi"]
+    }
+  },
+  "peas": {
+    "label": { "es": "Chícharos", "en": "Peas", "pt": "Ervilhas", "fr": "Petits pois", "de": "Erbsen", "it": "Piselli", "ja": "えんどう豆", "zh": "豌豆", "ko": "완두콩", "ar": "بازلاء" },
+    "keywords": {
+      "es": ["guisantes", "arvejas", "legumbres", "vaina", "verduras verdes", "sopa", "arroz"],
+      "en": ["legumes", "pod", "green vegetables", "sugar snap", "soup", "side dish", "frozen veg"]
+    }
+  },
+  "green-beans": {
+    "label": { "es": "Ejotes", "en": "Green beans", "pt": "Vagem", "fr": "Haricots verts", "de": "Grüne Bohnen", "it": "Fagiolini", "ja": "さやいんげん", "zh": "四季豆", "ko": "그린빈", "ar": "فاصوليا خضراء" },
+    "keywords": {
+      "es": ["judías verdes", "vainitas", "habichuelas", "verdura", "guarnición", "legumbres", "salteados"],
+      "en": ["string beans", "snap beans", "haricots verts", "vegetable", "side dish", "legumes", "casserole"]
+    }
+  },
+  "bean": {
+    "label": { "es": "Frijol", "en": "Bean", "pt": "Feijão", "fr": "Haricot", "de": "Bohne", "it": "Fagiolo", "ja": "豆", "zh": "豆子", "ko": "콩", "ar": "فاصوليا" },
+    "keywords": {
+      "es": ["legumbres", "proteína vegetal", "alubia", "de la olla", "refritos", "fibra", "vegano"],
+      "en": ["legumes", "frijoles", "plant protein", "kidney bean", "black beans", "pulses", "fiber", "vegan"]
+    }
+  },
+  "soybean": {
+    "label": { "es": "Soya", "en": "Soybeans", "pt": "Soja", "fr": "Soja", "de": "Sojabohnen", "it": "Soia", "ja": "大豆", "zh": "大豆", "ko": "대두", "ar": "فول الصويا" },
+    "keywords": {
+      "es": ["edamame", "soja", "legumbres", "alérgeno", "tofu", "proteína vegetal", "vegano"],
+      "en": ["edamame", "soy", "legumes", "allergen", "tofu", "plant protein", "vegan"]
+    }
+  },
+  "chickpea": {
+    "label": { "es": "Garbanzos", "en": "Chickpeas", "pt": "Grão-de-bico", "fr": "Pois chiches", "de": "Kichererbsen", "it": "Ceci", "ja": "ひよこ豆", "zh": "鹰嘴豆", "ko": "병아리콩", "ar": "حمص" },
+    "keywords": {
+      "es": ["legumbres", "hummus", "proteína vegetal", "falafel", "cocido", "ensalada", "vegano"],
+      "en": ["garbanzo", "legumes", "hummus", "falafel", "plant protein", "chana", "vegan"]
+    }
+  },
+  "lentils": {
+    "label": { "es": "Lentejas", "en": "Lentils", "pt": "Lentilhas", "fr": "Lentilles", "de": "Linsen", "it": "Lenticchie", "ja": "レンズ豆", "zh": "小扁豆", "ko": "렌틸콩", "ar": "عدس" },
+    "keywords": {
+      "es": ["legumbres", "proteína vegetal", "sopa", "hierro", "vegano", "dal", "guiso"],
+      "en": ["legumes", "plant protein", "soup", "dal", "pulses", "iron", "vegan"]
+    }
+  },
+  "peanut": {
+    "label": { "es": "Cacahuate", "en": "Peanut", "pt": "Amendoim", "fr": "Cacahuète", "de": "Erdnuss", "it": "Arachide", "ja": "ピーナッツ", "zh": "花生", "ko": "땅콩", "ar": "فول سوداني" },
+    "keywords": {
+      "es": ["maní", "crema untable", "alérgeno", "alergia", "botana", "japoneses", "frutos secos"],
+      "en": ["groundnut", "nut butter", "allergen", "allergy", "snack", "legume", "PB&J"]
+    }
+  },
+  "almond": {
+    "label": { "es": "Almendra", "en": "Almond", "pt": "Amêndoa", "fr": "Amande", "de": "Mandel", "it": "Mandorla", "ja": "アーモンド", "zh": "杏仁", "ko": "아몬드", "ar": "لوز" },
+    "keywords": {
+      "es": ["frutos secos", "nueces", "leche vegetal", "botana", "alérgeno", "mazapán", "harina sin gluten"],
+      "en": ["nuts", "tree nut", "plant milk", "snack", "allergen", "marzipan", "nut flour"]
+    }
+  },
+  "walnut": {
+    "label": { "es": "Nuez de Castilla", "en": "Walnut", "pt": "Noz", "fr": "Noix", "de": "Walnuss", "it": "Noce", "ja": "くるみ", "zh": "核桃", "ko": "호두", "ar": "جوز" },
+    "keywords": {
+      "es": ["frutos secos", "nueces", "nogada", "pecana", "botana", "alérgeno", "repostería"],
+      "en": ["tree nut", "nuts", "pecan", "baking", "snack", "allergen", "brain food"]
+    }
+  },
+  "hazelnut": {
+    "label": { "es": "Avellana", "en": "Hazelnut", "pt": "Avelã", "fr": "Noisette", "de": "Haselnuss", "it": "Nocciola", "ja": "ヘーゼルナッツ", "zh": "榛子", "ko": "헤이즐넛", "ar": "بندق" },
+    "keywords": {
+      "es": ["frutos secos", "untable de cacao", "praliné", "café de sabor", "alérgeno", "repostería", "nuez"],
+      "en": ["nuts", "filbert", "chocolate spread", "praline", "flavored coffee", "allergen", "baking"]
+    }
+  },
+  "cashew": {
+    "label": { "es": "Nuez de la India", "en": "Cashew", "pt": "Castanha-de-caju", "fr": "Noix de cajou", "de": "Cashewkern", "it": "Anacardo", "ja": "カシューナッツ", "zh": "腰果", "ko": "캐슈너트", "ar": "كاجو" },
+    "keywords": {
+      "es": ["marañón", "cajú", "frutos secos", "botana", "leche vegetal", "vegano", "alérgeno"],
+      "en": ["nuts", "tree nut", "snack", "plant milk", "vegan cheese", "allergen", "trail mix"]
+    }
+  },
+  "chestnut": {
+    "label": { "es": "Castaña", "en": "Chestnut", "pt": "Castanha portuguesa", "fr": "Châtaigne", "de": "Esskastanie", "it": "Castagna", "ja": "栗", "zh": "栗子", "ko": "밤", "ar": "كستناء" },
+    "keywords": {
+      "es": ["asadas", "otoño", "invierno", "fruto seco", "navidad", "marrón glacé", "puré"],
+      "en": ["roasted", "autumn", "winter", "nut", "Christmas", "marron glacé", "stuffing"]
+    }
+  },
+  "sunflower-seed": {
+    "label": { "es": "Semillas de girasol", "en": "Sunflower seeds", "pt": "Sementes de girassol", "fr": "Graines de tournesol", "de": "Sonnenblumenkerne", "it": "Semi di girasole", "ja": "ひまわりの種", "zh": "葵花籽", "ko": "해바라기씨", "ar": "بذور دوار الشمس" },
+    "keywords": {
+      "es": ["pepitas", "botana", "pipas", "granola", "ensalada", "topping", "con sal"],
+      "en": ["snack", "kernels", "granola", "salad topping", "trail mix", "salted", "shelled"]
+    }
+  },
+  "sesame": {
+    "label": { "es": "Ajonjolí", "en": "Sesame seeds", "pt": "Gergelim", "fr": "Sésame", "de": "Sesam", "it": "Sesamo", "ja": "ごま", "zh": "芝麻", "ko": "참깨", "ar": "سمسم" },
+    "keywords": {
+      "es": ["sésamo", "semillas", "alérgeno", "topping", "tahini", "pan de hamburguesa", "mole"],
+      "en": ["allergen", "topping", "tahini", "burger bun", "sushi", "seasoning", "benne"]
+    }
+  },
+  "herbs": {
+    "label": { "es": "Hierbas frescas", "en": "Fresh herbs", "pt": "Ervas frescas", "fr": "Herbes fraîches", "de": "Frische Kräuter", "it": "Erbe aromatiche", "ja": "フレッシュハーブ", "zh": "新鲜香草", "ko": "생허브", "ar": "أعشاب طازجة" },
+    "keywords": {
+      "es": ["manojo", "aromáticos", "condimentos", "especias", "huerto en casa", "sazón", "ramillete"],
+      "en": ["bunch", "aromatics", "seasoning", "spices", "kitchen garden", "greens", "bouquet garni"]
+    }
+  },
+  "basil": {
+    "label": { "es": "Albahaca", "en": "Basil", "pt": "Manjericão", "fr": "Basilic", "de": "Basilikum", "it": "Basilico", "ja": "バジル", "zh": "罗勒", "ko": "바질", "ar": "ريحان" },
+    "keywords": {
+      "es": ["hierba", "pesto", "cocina italiana", "pizza", "caprese", "aromática", "hojas"],
+      "en": ["herb", "pesto", "Italian cooking", "pizza", "caprese", "aromatic", "leaves"]
+    }
+  },
+  "mint": {
+    "label": { "es": "Menta", "en": "Mint", "pt": "Hortelã", "fr": "Menthe", "de": "Minze", "it": "Menta", "ja": "ミント", "zh": "薄荷", "ko": "민트", "ar": "نعناع" },
+    "keywords": {
+      "es": ["hierbabuena", "hierba", "mojito", "aliento fresco", "sabor", "té", "refrescante"],
+      "en": ["peppermint", "spearmint", "herb", "mojito", "fresh breath", "flavor", "tea"]
+    }
+  },
+  "rosemary": {
+    "label": { "es": "Romero", "en": "Rosemary", "pt": "Alecrim", "fr": "Romarin", "de": "Rosmarin", "it": "Rosmarino", "ja": "ローズマリー", "zh": "迷迭香", "ko": "로즈마리", "ar": "إكليل الجبل" },
+    "keywords": {
+      "es": ["hierba", "rostizado", "al horno", "condimento", "aromática", "papas al horno", "pollo"],
+      "en": ["herb", "roasting", "roast chicken", "seasoning", "aromatic", "focaccia", "sprig"]
+    }
+  },
+  "parsley": {
+    "label": { "es": "Perejil", "en": "Parsley", "pt": "Salsinha", "fr": "Persil", "de": "Petersilie", "it": "Prezzemolo", "ja": "パセリ", "zh": "欧芹", "ko": "파슬리", "ar": "بقدونس" },
+    "keywords": {
+      "es": ["hierba", "decoración", "tabule", "chimichurri", "condimento", "caldo", "aromática"],
+      "en": ["herb", "garnish", "tabbouleh", "chimichurri", "seasoning", "flat-leaf", "curly"]
+    }
+  },
+  "cilantro": {
+    "label": { "es": "Cilantro", "en": "Cilantro", "pt": "Coentro", "fr": "Coriandre", "de": "Koriander", "it": "Coriandolo", "ja": "パクチー", "zh": "香菜", "ko": "고수", "ar": "كزبرة" },
+    "keywords": {
+      "es": ["hierba", "culantro", "tacos", "salsa verde", "cocina mexicana", "cocina asiática", "pico de gallo"],
+      "en": ["coriander", "herb", "tacos", "salsa", "Mexican cooking", "Asian cooking", "Thai"]
+    }
+  },
+  "chives": {
+    "label": { "es": "Cebollino", "en": "Chives", "pt": "Cebolinha-francesa", "fr": "Ciboulette", "de": "Schnittlauch", "it": "Erba cipollina", "ja": "チャイブ", "zh": "细香葱", "ko": "차이브", "ar": "ثوم معمر" },
+    "keywords": {
+      "es": ["cebollín", "ciboulette", "hierba", "decoración", "papa al horno", "crema", "omelet"],
+      "en": ["herb", "garnish", "baked potato", "sour cream", "omelet", "snipped", "cebollín"]
+    }
+  },
+  "bay-leaf": {
+    "label": { "es": "Laurel", "en": "Bay leaves", "pt": "Louro", "fr": "Laurier", "de": "Lorbeerblätter", "it": "Alloro", "ja": "ローリエ", "zh": "月桂叶", "ko": "월계수 잎", "ar": "ورق الغار" },
+    "keywords": {
+      "es": ["hierba", "guiso", "caldo", "sopa", "frijoles de la olla", "condimento", "hojas secas"],
+      "en": ["laurel", "herb", "stew", "soup", "stock", "seasoning", "dried leaves"]
+    }
+  },
+  "mushroom": {
+    "label": { "es": "Champiñón", "en": "Mushroom", "pt": "Cogumelo", "fr": "Champignon", "de": "Pilz", "it": "Fungo", "ja": "きのこ", "zh": "蘑菇", "ko": "버섯", "ar": "فطر" },
+    "keywords": {
+      "es": ["hongos", "setas", "cremini", "botón", "receta", "pizza", "quesadilla"],
+      "en": ["fungi", "button", "cremini", "recipe", "pizza topping", "toadstool", "foraging"]
+    }
+  },
+  "shiitake": {
+    "label": { "es": "Shiitake", "en": "Shiitake", "pt": "Shiitake", "fr": "Shiitaké", "de": "Shiitake", "it": "Shiitake", "ja": "しいたけ", "zh": "香菇", "ko": "표고버섯", "ar": "فطر شيتاكي" },
+    "keywords": {
+      "es": ["hongo", "umami", "portobello", "cocina asiática", "ramen", "setas", "caldo"],
+      "en": ["Asian mushroom", "umami", "portobello", "Asian cooking", "ramen", "fungi", "broth"]
+    }
+  },
+  "wheat": {
+    "label": { "es": "Trigo", "en": "Wheat", "pt": "Trigo", "fr": "Blé", "de": "Weizen", "it": "Grano", "ja": "小麦", "zh": "小麦", "ko": "밀", "ar": "قمح" },
+    "keywords": {
+      "es": ["cereal", "harina", "pan", "gluten", "sin gluten", "espiga", "alérgeno", "cosecha"],
+      "en": ["grain", "flour", "bread", "gluten", "gluten-free", "ear", "allergen", "harvest"]
+    }
+  },
+  "barley": {
+    "label": { "es": "Cebada", "en": "Barley", "pt": "Cevada", "fr": "Orge", "de": "Gerste", "it": "Orzo", "ja": "大麦", "zh": "大麦", "ko": "보리", "ar": "شعير" },
+    "keywords": {
+      "es": ["cereal", "malta", "cerveza", "cervecería artesanal", "grano", "espiga", "whisky"],
+      "en": ["grain", "malt", "brewing", "beer", "craft brewery", "whisky", "ear"]
+    }
+  },
+  "oats": {
+    "label": { "es": "Avena", "en": "Oats", "pt": "Aveia", "fr": "Avoine", "de": "Hafer", "it": "Avena", "ja": "オーツ麦", "zh": "燕麦", "ko": "귀리", "ar": "شوفان" },
+    "keywords": {
+      "es": ["cereal", "granola", "fibra", "desayuno", "hojuelas", "leche vegetal", "atole"],
+      "en": ["grain", "oatmeal", "porridge", "granola", "fiber", "breakfast", "rolled flakes", "muesli"]
+    }
+  },
+  "grains": {
+    "label": { "es": "Granos integrales", "en": "Whole grains", "pt": "Grãos integrais", "fr": "Céréales complètes", "de": "Vollkorn", "it": "Cereali integrali", "ja": "全粒穀物", "zh": "全谷物", "ko": "통곡물", "ar": "حبوب كاملة" },
+    "keywords": {
+      "es": ["cereales", "semillas", "fibra", "carbohidratos", "arroz", "quinoa", "nutrición"],
+      "en": ["cereals", "kernels", "fiber", "carbs", "rice", "quinoa", "nutrition"]
+    }
+  },
+  "sugarcane": {
+    "label": { "es": "Caña de azúcar", "en": "Sugarcane", "pt": "Cana-de-açúcar", "fr": "Canne à sucre", "de": "Zuckerrohr", "it": "Canna da zucchero", "ja": "サトウキビ", "zh": "甘蔗", "ko": "사탕수수", "ar": "قصب السكر" },
+    "keywords": {
+      "es": ["guarapo", "piloncillo", "azúcar mascabado", "endulzante", "ponche", "trapiche", "zafra"],
+      "en": ["cane juice", "raw sugar", "sweetener", "molasses", "jaggery", "rum", "harvest"]
+    }
+  },
+  "cacao": {
+    "label": { "es": "Cacao", "en": "Cacao", "pt": "Cacau", "fr": "Cacao", "de": "Kakao", "it": "Cacao", "ja": "カカオ", "zh": "可可", "ko": "카카오", "ar": "كاكاو" },
+    "keywords": {
+      "es": ["chocolate", "mazorca", "cocoa", "del grano a la barra", "chocolatería", "origen", "semillas"],
+      "en": ["cocoa", "chocolate", "pod", "bean to bar", "cocoa beans", "chocolatier", "single origin"]
+    }
+  },
+  "produce": {
+    "label": { "es": "Frutas y verduras", "en": "Produce", "pt": "Hortifrúti", "fr": "Fruits et légumes", "de": "Obst und Gemüse", "it": "Frutta e verdura", "ja": "青果", "zh": "果蔬", "ko": "과일과 채소", "ar": "فواكه وخضروات" },
+    "keywords": {
+      "es": ["productos frescos", "frutería", "verdulería", "mercado", "cinco al día", "comida saludable", "súper"],
+      "en": ["fruits", "vegetables", "greengrocer", "farmers market", "five a day", "healthy eating", "grocery"]
+    }
+  },
+  "produce-crate": {
+    "label": { "es": "Caja de frutas y verduras", "en": "Produce box", "pt": "Caixa de hortifrúti", "fr": "Panier de fruits et légumes", "de": "Gemüsekiste", "it": "Cassetta di frutta e verdura", "ja": "青果ボックス", "zh": "果蔬箱", "ko": "과일·채소 상자", "ar": "صندوق خضار وفواكه" },
+    "keywords": {
+      "es": ["entrega a domicilio", "suscripción", "huacal", "productos frescos", "verdulería", "directo del campo", "canasta"],
+      "en": ["delivery", "veggie box", "subscription", "crate", "fresh produce", "greengrocer", "farm to table"]
+    }
+  },
+  "produce-crate-sync": {
+    "label": { "es": "Caja recurrente", "en": "Recurring box", "pt": "Caixa recorrente", "fr": "Panier récurrent", "de": "Gemüsekiste im Abo", "it": "Cassetta ricorrente", "ja": "青果の定期便", "zh": "定期果蔬箱", "ko": "정기 배송 상자", "ar": "اشتراك صندوق الخضار" },
+    "keywords": {
+      "es": ["suscripción", "cada semana", "envío periódico", "pedido automático", "renovación", "frutas y verduras", "membresía"],
+      "en": ["subscription", "weekly", "repeat delivery", "auto-renew", "standing order", "fruit and veg", "membership"]
+    }
+  },
+  "produce-crate-edit": {
+    "label": { "es": "Personalizar caja", "en": "Customize box", "pt": "Personalizar caixa", "fr": "Composer son panier", "de": "Kiste anpassen", "it": "Personalizza la cassetta", "ja": "ボックスの中身を選ぶ", "zh": "定制果蔬箱", "ko": "상자 구성 바꾸기", "ar": "تخصيص الصندوق" },
+    "keywords": {
+      "es": ["elegir productos", "editar pedido", "cambiar contenido", "esta semana", "preferencias", "intercambiar", "suscripción"],
+      "en": ["choose items", "edit order", "swap items", "this week", "preferences", "pick produce", "subscription"]
+    }
+  },
+  "produce-bag": {
+    "label": { "es": "Bolsa de malla", "en": "Mesh bag", "pt": "Saco de rede", "fr": "Sac en filet", "de": "Netzbeutel", "it": "Sacchetto a rete", "ja": "ネット袋", "zh": "网袋", "ko": "그물망 봉투", "ar": "كيس شبكي" },
+    "keywords": {
+      "es": ["arpilla", "red", "cebollas", "papas", "naranjas", "reutilizable", "cero residuos"],
+      "en": ["net bag", "sold by the bag", "onions", "potatoes", "citrus", "reusable", "zero waste"]
+    }
+  },
+  "fruit-bowl": {
+    "label": { "es": "Frutero", "en": "Fruit bowl", "pt": "Fruteira", "fr": "Corbeille de fruits", "de": "Obstschale", "it": "Fruttiera", "ja": "フルーツボウル", "zh": "果盘", "ko": "과일 그릇", "ar": "وعاء فواكه" },
+    "keywords": {
+      "es": ["fruta en casa", "colación saludable", "frutas", "plan de comidas", "cocina", "centro de mesa", "dieta"],
+      "en": ["fresh fruit", "healthy snacks", "meal plan", "kitchen counter", "centerpiece", "diet", "assorted"]
+    }
+  }
+}

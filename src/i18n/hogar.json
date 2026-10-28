@@ -1,0 +1,863 @@
+{
+  "sofa": {
+    "label": { "es": "Sofá", "en": "Sofa", "pt": "Sofá", "fr": "Canapé", "de": "Sofa", "it": "Divano", "ja": "ソファ", "zh": "沙发", "ko": "소파", "ar": "أريكة" },
+    "keywords": {
+      "es": ["sillón", "sala", "mueble de sala", "sofá de tres plazas", "asientos", "mueblería", "descansar"],
+      "en": ["couch", "settee", "three-seater", "living room seating", "furniture store", "lounge", "upholstered"]
+    }
+  },
+  "loveseat": {
+    "label": { "es": "Sofá de dos plazas", "en": "Loveseat", "pt": "Sofá de dois lugares", "fr": "Canapé deux places", "de": "Zweisitzer", "it": "Divano a due posti", "ja": "2人掛けソファ", "zh": "双人沙发", "ko": "2인용 소파", "ar": "أريكة لشخصين" },
+    "keywords": {
+      "es": ["sofá chico", "sillón para dos", "sofá pequeño", "sala compacta", "dos personas", "departamento pequeño", "tamaño de sofá"],
+      "en": ["two-seater", "small sofa", "compact couch", "settee", "apartment sofa", "sofa size", "couch for two"]
+    }
+  },
+  "armchair": {
+    "label": { "es": "Sillón", "en": "Armchair", "pt": "Poltrona", "fr": "Fauteuil", "de": "Sessel", "it": "Poltrona", "ja": "アームチェア", "zh": "扶手椅", "ko": "안락의자", "ar": "كرسي بذراعين" },
+    "keywords": {
+      "es": ["sillón individual", "butaca", "sillón ocasional", "sillón de lectura", "asiento tapizado", "sala", "descanso"],
+      "en": ["accent chair", "club chair", "lounge chair", "reading chair", "upholstered chair", "single seat", "living room"]
+    }
+  },
+  "sofa-sectional": {
+    "label": { "es": "Sofá en L", "en": "Sectional sofa", "pt": "Sofá de canto", "fr": "Canapé d’angle", "de": "Ecksofa", "it": "Divano angolare", "ja": "L字型ソファ", "zh": "转角沙发", "ko": "코너 소파", "ar": "أريكة زاوية" },
+    "keywords": {
+      "es": ["sala esquinera", "seccional", "sofá modular", "sofá de esquina", "sala en L", "mueblería"],
+      "en": ["sectional", "corner sofa", "L-shaped couch", "modular sofa", "corner couch", "chaise sectional"]
+    }
+  },
+  "sofa-bed": {
+    "label": { "es": "Sofá cama", "en": "Sofa bed", "pt": "Sofá-cama", "fr": "Canapé-lit", "de": "Schlafsofa", "it": "Divano letto", "ja": "ソファベッド", "zh": "沙发床", "ko": "소파 베드", "ar": "أريكة سرير" },
+    "keywords": {
+      "es": ["futón", "cama extra", "sofá convertible", "dónde dormir", "huéspedes", "cama en la sala", "abatible"],
+      "en": ["sleeper sofa", "pull-out couch", "futon", "convertible sofa", "extra bed", "sleeping arrangement", "guests"]
+    }
+  },
+  "chair": {
+    "label": { "es": "Silla", "en": "Chair", "pt": "Cadeira", "fr": "Chaise", "de": "Stuhl", "it": "Sedia", "ja": "椅子", "zh": "椅子", "ko": "의자", "ar": "كرسي" },
+    "keywords": {
+      "es": ["asiento", "silla de comedor", "comedor", "sentarse", "mueble", "juego de comedor", "lugares"],
+      "en": ["seat", "dining chair", "dining set", "sit", "furniture", "seating", "kitchen chair"]
+    }
+  },
+  "rocking-chair": {
+    "label": { "es": "Mecedora", "en": "Rocking chair", "pt": "Cadeira de balanço", "fr": "Fauteuil à bascule", "de": "Schaukelstuhl", "it": "Sedia a dondolo", "ja": "ロッキングチェア", "zh": "摇椅", "ko": "흔들의자", "ar": "كرسي هزاز" },
+    "keywords": {
+      "es": ["mecerse", "cuarto del bebé", "lactancia", "porche", "terraza", "abuelos", "descanso"],
+      "en": ["rocker", "nursery", "nursing chair", "porch", "glider", "veranda", "relax"]
+    }
+  },
+  "folding-chair": {
+    "label": { "es": "Silla plegable", "en": "Folding chair", "pt": "Cadeira dobrável", "fr": "Chaise pliante", "de": "Klappstuhl", "it": "Sedia pieghevole", "ja": "折りたたみ椅子", "zh": "折叠椅", "ko": "접이식 의자", "ar": "كرسي قابل للطي" },
+    "keywords": {
+      "es": ["silla extra", "renta de sillas", "eventos", "fiestas", "espacios pequeños", "silla portátil", "banquetes"],
+      "en": ["extra seating", "chair rental", "events", "party rental", "small spaces", "portable chair", "foldable"]
+    }
+  },
+  "deck-chair": {
+    "label": { "es": "Silla de lona", "en": "Deck chair", "pt": "Espreguiçadeira", "fr": "Transat", "de": "Liegestuhl", "it": "Sdraio", "ja": "デッキチェア", "zh": "沙滩椅", "ko": "데크체어", "ar": "كرسي استرخاء" },
+    "keywords": {
+      "es": ["silla de playa", "camastro", "jardín", "balcón", "terraza", "asolearse", "muebles de exterior"],
+      "en": ["beach chair", "lounge chair", "garden", "balcony", "patio", "sunbathing", "outdoor furniture"]
+    }
+  },
+  "stool": {
+    "label": { "es": "Taburete", "en": "Stool", "pt": "Banqueta", "fr": "Tabouret", "de": "Hocker", "it": "Sgabello", "ja": "スツール", "zh": "凳子", "ko": "스툴", "ar": "كرسي بلا ظهر" },
+    "keywords": {
+      "es": ["banco", "banquito", "banco de barra", "periquera", "asiento extra", "cocina", "banco para niños"],
+      "en": ["bar stool", "counter stool", "backless seat", "extra seat", "kids’ stool", "kitchen island", "step stool"]
+    }
+  },
+  "bench": {
+    "label": { "es": "Banca", "en": "Bench", "pt": "Banco corrido", "fr": "Banc", "de": "Sitzbank", "it": "Panca", "ja": "ベンチ", "zh": "长凳", "ko": "벤치", "ar": "مقعد طويل" },
+    "keywords": {
+      "es": ["banco", "recibidor", "banca de comedor", "banca de jardín", "asiento largo", "pie de cama", "exterior"],
+      "en": ["entryway bench", "dining bench", "garden bench", "seat", "end-of-bed bench", "park bench", "outdoor seating"]
+    }
+  },
+  "ottoman": {
+    "label": { "es": "Otomana", "en": "Ottoman", "pt": "Banqueta estofada", "fr": "Repose-pieds", "de": "Fußhocker", "it": "Poggiapiedi", "ja": "オットマン", "zh": "脚凳", "ko": "오토만", "ar": "مسند قدمين" },
+    "keywords": {
+      "es": ["reposapiés", "taburete tapizado", "otomán", "baúl de almacenamiento", "descansar los pies", "sala", "banco tapizado"],
+      "en": ["footstool", "footrest", "storage ottoman", "upholstered stool", "pouffe", "hassock", "put your feet up"]
+    }
+  },
+  "pouf": {
+    "label": { "es": "Puf", "en": "Pouf", "pt": "Pufe", "fr": "Pouf", "de": "Sitzpouf", "it": "Pouf", "ja": "プフ", "zh": "坐墩", "ko": "푸프", "ar": "بوف" },
+    "keywords": {
+      "es": ["puff", "asiento de piso", "reposapiés", "cojín de piso", "asiento casual", "sala", "decoración boho"],
+      "en": ["pouffe", "floor cushion", "footrest", "floor seat", "casual seating", "knitted pouf", "living room"]
+    }
+  },
+  "bean-bag": {
+    "label": { "es": "Sillón puff", "en": "Bean bag", "pt": "Pufe saco", "fr": "Pouf poire", "de": "Sitzsack", "it": "Pouf a sacco", "ja": "ビーズクッション", "zh": "懒人沙发", "ko": "빈백", "ar": "كرسي بين باغ" },
+    "keywords": {
+      "es": ["sillón de piso", "puff de bolitas", "sillón tipo pera", "asiento informal", "cuarto de niños", "sala de juegos", "gamer"],
+      "en": ["beanbag chair", "sack chair", "floor chair", "casual seating", "kids’ room", "game room", "lounger"]
+    }
+  },
+  "recliner": {
+    "label": { "es": "Sillón reclinable", "en": "Recliner", "pt": "Poltrona reclinável", "fr": "Fauteuil inclinable", "de": "Relaxsessel", "it": "Poltrona reclinabile", "ja": "リクライニングチェア", "zh": "沙发躺椅", "ko": "리클라이너", "ar": "كرسي قابل للإمالة" },
+    "keywords": {
+      "es": ["reposet", "sillón relax", "reposapiés", "sillón de descanso", "relajarse", "ver la tele", "sillón cómodo"],
+      "en": ["reclining chair", "footrest", "lounger", "comfort seating", "relax", "TV chair", "power recliner"]
+    }
+  },
+  "double-bed": {
+    "label": { "es": "Cama matrimonial", "en": "Double bed", "pt": "Cama de casal", "fr": "Lit double", "de": "Doppelbett", "it": "Letto matrimoniale", "ja": "ダブルベッド", "zh": "双人床", "ko": "더블 침대", "ar": "سرير مزدوج" },
+    "keywords": {
+      "es": ["cama doble", "cama queen", "cama king", "habitación doble", "para dos personas", "tamaño de cama", "pareja"],
+      "en": ["queen bed", "king bed", "full bed", "double room", "sleeps two", "bed size", "couple"]
+    }
+  },
+  "single-bed": {
+    "label": { "es": "Cama individual", "en": "Single bed", "pt": "Cama de solteiro", "fr": "Lit simple", "de": "Einzelbett", "it": "Letto singolo", "ja": "シングルベッド", "zh": "单人床", "ko": "싱글 침대", "ar": "سرير فردي" },
+    "keywords": {
+      "es": ["habitación sencilla", "una persona", "cama de una plaza", "residencia estudiantil", "hostal", "cuarto de niños", "cama sencilla"],
+      "en": ["single room", "one sleeper", "dorm", "hostel", "kids’ bed", "twin size", "solo traveler"]
+    }
+  },
+  "twin-beds": {
+    "label": { "es": "Dos camas individuales", "en": "Twin beds", "pt": "Duas camas de solteiro", "fr": "Lits jumeaux", "de": "Zwei Einzelbetten", "it": "Due letti singoli", "ja": "ツインベッド", "zh": "两张单人床", "ko": "트윈 침대", "ar": "سريران منفصلان" },
+    "keywords": {
+      "es": ["habitación twin", "habitación doble con dos camas", "camas separadas", "compartir cuarto", "hotel", "viaje con amigos", "camas gemelas"],
+      "en": ["twin room", "separate beds", "two singles", "shared room", "hotel room", "travel with friends", "double twin"]
+    }
+  },
+  "bunk-bed": {
+    "label": { "es": "Litera", "en": "Bunk bed", "pt": "Beliche", "fr": "Lits superposés", "de": "Etagenbett", "it": "Letto a castello", "ja": "二段ベッド", "zh": "上下铺", "ko": "이층 침대", "ar": "سرير بطابقين" },
+    "keywords": {
+      "es": ["camas encimadas", "cuarto de niños", "hostal", "albergue", "campamento", "cuarto compartido", "cama de arriba"],
+      "en": ["bunks", "kids’ room", "hostel", "dorm room", "summer camp", "shared room", "top bunk"]
+    }
+  },
+  "loft-bed": {
+    "label": { "es": "Cama alta", "en": "Loft bed", "pt": "Cama alta", "fr": "Lit mezzanine", "de": "Hochbett", "it": "Letto a soppalco", "ja": "ロフトベッド", "zh": "高架床", "ko": "로프트 침대", "ar": "سرير علوي" },
+    "keywords": {
+      "es": ["cama con escritorio", "litera con escritorio", "cuarto pequeño", "estudiantes", "ahorrar espacio", "cuarto juvenil", "cama tapanco"],
+      "en": ["bed over desk", "raised bed", "small room", "student", "space saving", "kids’ furniture", "dorm"]
+    }
+  },
+  "canopy-bed": {
+    "label": { "es": "Cama con dosel", "en": "Canopy bed", "pt": "Cama com dossel", "fr": "Lit à baldaquin", "de": "Himmelbett", "it": "Letto a baldacchino", "ja": "天蓋付きベッド", "zh": "四柱床", "ko": "캐노피 침대", "ar": "سرير بمظلة" },
+    "keywords": {
+      "es": ["cama de cuatro postes", "suite", "habitación de lujo", "estilo clásico", "romántico", "luna de miel", "tul"],
+      "en": ["four-poster bed", "suite", "luxury room", "classic style", "romantic", "honeymoon", "bed curtains"]
+    }
+  },
+  "wall-bed": {
+    "label": { "es": "Cama abatible", "en": "Murphy bed", "pt": "Cama retrátil", "fr": "Lit escamotable", "de": "Schrankbett", "it": "Letto a scomparsa", "ja": "壁収納ベッド", "zh": "隐形床", "ko": "머피 침대", "ar": "سرير قابل للطي في الحائط" },
+    "keywords": {
+      "es": ["cama murphy", "cama de pared", "cama oculta", "estudio", "loft", "ahorrar espacio", "departamento pequeño"],
+      "en": ["fold-down bed", "hidden bed", "pull-down bed", "studio apartment", "space saving", "small spaces", "cabinet bed"]
+    }
+  },
+  "nightstand": {
+    "label": { "es": "Buró", "en": "Nightstand", "pt": "Criado-mudo", "fr": "Table de chevet", "de": "Nachttisch", "it": "Comodino", "ja": "ナイトテーブル", "zh": "床头柜", "ko": "협탁", "ar": "طاولة بجانب السرير" },
+    "keywords": {
+      "es": ["mesa de noche", "mesita de noche", "recámara", "junto a la cama", "cajonera", "lámpara de buró", "muebles de recámara"],
+      "en": ["bedside table", "night table", "bedroom furniture", "next to the bed", "bedside drawer", "bedside cabinet"]
+    }
+  },
+  "bed-plus": {
+    "label": { "es": "Agregar cama", "en": "Add bed", "pt": "Adicionar cama", "fr": "Ajouter un lit", "de": "Bett hinzufügen", "it": "Aggiungi letto", "ja": "ベッドを追加", "zh": "加床", "ko": "침대 추가", "ar": "إضافة سرير" },
+    "keywords": {
+      "es": ["cama extra", "cama adicional", "pedir cama", "distribución de camas", "más huéspedes", "cuna", "dónde dormir"],
+      "en": ["extra bed", "rollaway bed", "request a bed", "sleeping arrangements", "more guests", "crib", "additional bed"]
+    }
+  },
+  "bed-check": {
+    "label": { "es": "Habitación lista", "en": "Room ready", "pt": "Quarto pronto", "fr": "Chambre prête", "de": "Zimmer bereit", "it": "Camera pronta", "ja": "客室準備完了", "zh": "房间已就绪", "ko": "객실 준비 완료", "ar": "الغرفة جاهزة" },
+    "keywords": {
+      "es": ["cama tendida", "limpieza", "ama de llaves", "habitación limpia", "lista para huéspedes", "estado de limpieza", "camarista"],
+      "en": ["bed made", "housekeeping", "cleaned room", "ready for guests", "turnover done", "cleaning status", "inspected"]
+    }
+  },
+  "mattress": {
+    "label": { "es": "Colchón", "en": "Mattress", "pt": "Colchão", "fr": "Matelas", "de": "Matratze", "it": "Materasso", "ja": "マットレス", "zh": "床垫", "ko": "매트리스", "ar": "مرتبة" },
+    "keywords": {
+      "es": ["firmeza", "tamaño de cama", "colchonería", "matrimonial", "king size", "descanso", "memory foam"],
+      "en": ["firmness", "bed size", "memory foam", "queen size", "king size", "sleep", "box spring"]
+    }
+  },
+  "air-mattress": {
+    "label": { "es": "Colchón inflable", "en": "Air mattress", "pt": "Colchão inflável", "fr": "Matelas gonflable", "de": "Luftmatratze", "it": "Materasso gonfiabile", "ja": "エアーマットレス", "zh": "充气床垫", "ko": "에어 매트리스", "ar": "مرتبة هوائية" },
+    "keywords": {
+      "es": ["cama inflable", "cama extra", "huéspedes", "campamento", "dormir en el piso", "dónde dormir", "colchón de aire"],
+      "en": ["inflatable bed", "airbed", "extra bed", "guests", "camping", "sleeping arrangements", "blow-up mattress"]
+    }
+  },
+  "pillow": {
+    "label": { "es": "Almohada", "en": "Pillow", "pt": "Travesseiro", "fr": "Oreiller", "de": "Kopfkissen", "it": "Cuscino", "ja": "枕", "zh": "枕头", "ko": "베개", "ar": "وسادة" },
+    "keywords": {
+      "es": ["almohadas extra", "menú de almohadas", "blancos", "ropa de cama", "dormir", "cabecera", "descanso"],
+      "en": ["extra pillows", "pillow menu", "bedding", "bed linens", "sleep", "headrest", "comfort"]
+    }
+  },
+  "cushion": {
+    "label": { "es": "Cojín", "en": "Cushion", "pt": "Almofada", "fr": "Coussin", "de": "Zierkissen", "it": "Cuscino decorativo", "ja": "クッション", "zh": "抱枕", "ko": "쿠션", "ar": "وسادة زينة" },
+    "keywords": {
+      "es": ["cojín decorativo", "almohadón", "decoración", "sofá", "textiles", "funda de cojín", "sala"],
+      "en": ["throw pillow", "decorative pillow", "sofa decor", "home textiles", "pillow cover", "accent pillow", "couch"]
+    }
+  },
+  "duvet": {
+    "label": { "es": "Edredón", "en": "Duvet", "pt": "Edredom", "fr": "Couette", "de": "Bettdecke", "it": "Piumone", "ja": "掛け布団", "zh": "被子", "ko": "이불", "ar": "لحاف" },
+    "keywords": {
+      "es": ["cobertor", "colcha", "ropa de cama", "blancos", "juego de cama", "plumón", "funda nórdica"],
+      "en": ["comforter", "quilt", "bedding", "bed set", "down comforter", "bedspread", "bed linens"]
+    }
+  },
+  "dining-table": {
+    "label": { "es": "Mesa de comedor", "en": "Dining table", "pt": "Mesa de jantar", "fr": "Table à manger", "de": "Esstisch", "it": "Tavolo da pranzo", "ja": "ダイニングテーブル", "zh": "餐桌", "ko": "식탁", "ar": "طاولة طعام" },
+    "keywords": {
+      "es": ["comedor", "mesa", "juego de comedor", "comer en casa", "muebles de comedor", "cena", "mesa familiar"],
+      "en": ["dining set", "kitchen table", "dinner table", "dining furniture", "family meal", "dining room", "eat"]
+    }
+  },
+  "coffee-table": {
+    "label": { "es": "Mesa de centro", "en": "Coffee table", "pt": "Mesa de centro", "fr": "Table basse", "de": "Couchtisch", "it": "Tavolino da salotto", "ja": "ローテーブル", "zh": "茶几", "ko": "커피 테이블", "ar": "طاولة قهوة" },
+    "keywords": {
+      "es": ["mesa baja", "sala", "muebles de sala", "mesita", "frente al sofá", "decoración", "mesa de sala"],
+      "en": ["low table", "cocktail table", "center table", "living room furniture", "in front of the sofa", "lounge table"]
+    }
+  },
+  "side-table": {
+    "label": { "es": "Mesa auxiliar", "en": "Side table", "pt": "Mesa lateral", "fr": "Table d’appoint", "de": "Beistelltisch", "it": "Tavolino", "ja": "サイドテーブル", "zh": "边几", "ko": "사이드 테이블", "ar": "طاولة جانبية" },
+    "keywords": {
+      "es": ["mesa lateral", "mesita", "mesa esquinera", "mesa redonda", "junto al sillón", "mesa decorativa", "buró de sala"],
+      "en": ["end table", "accent table", "occasional table", "round table", "next to the sofa", "small table", "lamp table"]
+    }
+  },
+  "folding-table": {
+    "label": { "es": "Mesa plegable", "en": "Folding table", "pt": "Mesa dobrável", "fr": "Table pliante", "de": "Klapptisch", "it": "Tavolo pieghevole", "ja": "折りたたみテーブル", "zh": "折叠桌", "ko": "접이식 테이블", "ar": "طاولة قابلة للطي" },
+    "keywords": {
+      "es": ["mesa extra", "renta de mesas", "eventos", "fiestas", "espacios pequeños", "mesa portátil", "tablón"],
+      "en": ["extra table", "table rental", "events", "party rental", "small spaces", "portable table", "banquet table"]
+    }
+  },
+  "dressing-table": {
+    "label": { "es": "Tocador", "en": "Dressing table", "pt": "Penteadeira", "fr": "Coiffeuse", "de": "Schminktisch", "it": "Toeletta", "ja": "ドレッサー", "zh": "梳妆台", "ko": "화장대", "ar": "طاولة زينة" },
+    "keywords": {
+      "es": ["mesa de maquillaje", "arreglarse", "espejo", "recámara", "peinador", "maquillaje", "muebles de recámara"],
+      "en": ["vanity", "makeup table", "getting ready", "mirror", "bedroom furniture", "makeup", "beauty station"]
+    }
+  },
+  "tv-stand": {
+    "label": { "es": "Mueble para TV", "en": "TV stand", "pt": "Rack de TV", "fr": "Meuble TV", "de": "TV-Lowboard", "it": "Mobile TV", "ja": "テレビ台", "zh": "电视柜", "ko": "TV 거실장", "ar": "طاولة تلفزيون" },
+    "keywords": {
+      "es": ["mesa para tele", "centro de entretenimiento", "consola", "rack de TV", "muebles de sala", "pantalla", "televisión"],
+      "en": ["media console", "entertainment center", "TV cabinet", "media unit", "living room furniture", "television", "TV unit"]
+    }
+  },
+  "wardrobe": {
+    "label": { "es": "Ropero", "en": "Wardrobe", "pt": "Guarda-roupa", "fr": "Armoire", "de": "Kleiderschrank", "it": "Armadio", "ja": "洋服ダンス", "zh": "衣柜", "ko": "옷장", "ar": "خزانة ملابس" },
+    "keywords": {
+      "es": ["clóset", "armario", "guardar ropa", "recámara", "colgar ropa", "muebles de recámara", "guardarropa"],
+      "en": ["closet", "armoire", "clothes storage", "bedroom furniture", "hang clothes", "clothes cabinet", "cupboard"]
+    }
+  },
+  "dresser": {
+    "label": { "es": "Cómoda", "en": "Dresser", "pt": "Cômoda", "fr": "Commode", "de": "Kommode", "it": "Cassettiera", "ja": "チェスト", "zh": "五斗柜", "ko": "서랍장", "ar": "خزانة أدراج" },
+    "keywords": {
+      "es": ["cajonera", "chifonier", "cajones", "guardar ropa", "recámara", "almacenamiento", "muebles de recámara"],
+      "en": ["chest of drawers", "drawers", "bureau", "clothes storage", "bedroom storage", "tallboy", "bedroom furniture"]
+    }
+  },
+  "sideboard": {
+    "label": { "es": "Aparador", "en": "Sideboard", "pt": "Aparador", "fr": "Buffet", "de": "Sideboard", "it": "Credenza", "ja": "サイドボード", "zh": "餐边柜", "ko": "사이드보드", "ar": "خزانة جانبية" },
+    "keywords": {
+      "es": ["trinchador", "bufetero", "credenza", "comedor", "guardar vajilla", "consola", "almacenamiento"],
+      "en": ["credenza", "buffet", "dining storage", "console", "media cabinet", "dinnerware storage", "living room storage"]
+    }
+  },
+  "display-cabinet": {
+    "label": { "es": "Vitrina de comedor", "en": "Display cabinet", "pt": "Cristaleira", "fr": "Vaisselier", "de": "Vitrinenschrank", "it": "Cristalliera", "ja": "ガラスキャビネット", "zh": "玻璃展示柜", "ko": "장식장", "ar": "خزانة عرض زجاجية" },
+    "keywords": {
+      "es": ["cristalero", "vitrina", "mueble con vidrio", "exhibir", "colecciones", "vajilla", "porcelana"],
+      "en": ["china cabinet", "curio cabinet", "vitrine", "glass cabinet", "showcase", "collectibles", "dinnerware"]
+    }
+  },
+  "shelf": {
+    "label": { "es": "Repisa", "en": "Shelf", "pt": "Prateleira", "fr": "Étagère murale", "de": "Wandregal", "it": "Mensola", "ja": "ウォールシェルフ", "zh": "墙面搁板", "ko": "벽 선반", "ar": "رف حائط" },
+    "keywords": {
+      "es": ["repisa flotante", "estante de pared", "entrepaño", "decoración", "almacenamiento", "libros", "colgar en la pared"],
+      "en": ["floating shelf", "wall shelf", "ledge", "decor", "storage", "books", "wall mounted"]
+    }
+  },
+  "shelving-unit": {
+    "label": { "es": "Estante", "en": "Shelving unit", "pt": "Estante", "fr": "Étagère", "de": "Regal", "it": "Scaffale aperto", "ja": "オープンシェルフ", "zh": "置物架", "ko": "선반장", "ar": "وحدة رفوف" },
+    "keywords": {
+      "es": ["librero", "estantería", "cubos", "organizador", "almacenamiento", "libros", "anaquel"],
+      "en": ["bookcase", "bookshelf", "cube storage", "open shelves", "storage", "organizer", "étagère"]
+    }
+  },
+  "shoe-rack": {
+    "label": { "es": "Zapatera", "en": "Shoe rack", "pt": "Sapateira", "fr": "Range-chaussures", "de": "Schuhregal", "it": "Scarpiera", "ja": "靴ラック", "zh": "鞋架", "ko": "신발장", "ar": "رف أحذية" },
+    "keywords": {
+      "es": ["organizador de zapatos", "recibidor", "entrada", "guardar zapatos", "calzado", "mueble de entrada", "tenis"],
+      "en": ["shoe storage", "shoe organizer", "entryway", "footwear", "shoe cabinet", "mudroom", "sneakers"]
+    }
+  },
+  "coat-rack": {
+    "label": { "es": "Perchero de pie", "en": "Coat rack", "pt": "Cabideiro", "fr": "Portemanteau", "de": "Garderobenständer", "it": "Appendiabiti", "ja": "コートスタンド", "zh": "衣帽架", "ko": "스탠드 옷걸이", "ar": "علاقة معاطف" },
+    "keywords": {
+      "es": ["perchero", "colgar abrigos", "recibidor", "entrada", "chamarras", "sombreros", "bolsas"],
+      "en": ["coat stand", "hall stand", "hat stand", "entryway", "hang coats", "jackets", "coat tree"]
+    }
+  },
+  "coat-hooks": {
+    "label": { "es": "Perchero de pared", "en": "Coat hooks", "pt": "Cabideiro de parede", "fr": "Patères", "de": "Wandgarderobe", "it": "Appendiabiti da parete", "ja": "壁掛けフック", "zh": "挂钩", "ko": "벽걸이 후크", "ar": "علاقات حائط" },
+    "keywords": {
+      "es": ["ganchos", "colgadero", "ganchos para ropa", "recibidor", "entrada", "llaves", "mochilas"],
+      "en": ["wall hooks", "hook rail", "peg rail", "entryway", "hang coats", "keys", "backpacks"]
+    }
+  },
+  "umbrella-stand": {
+    "label": { "es": "Paragüero", "en": "Umbrella stand", "pt": "Porta-guarda-chuvas", "fr": "Porte-parapluie", "de": "Schirmständer", "it": "Portaombrelli", "ja": "傘立て", "zh": "伞架", "ko": "우산꽂이", "ar": "حامل مظلات" },
+    "keywords": {
+      "es": ["sombrillas", "paraguas", "recibidor", "entrada", "lluvia", "porta paraguas", "bastones"],
+      "en": ["umbrella holder", "umbrella bin", "entryway", "rain", "hallway", "walking sticks", "rainy day"]
+    }
+  },
+  "storage-chest": {
+    "label": { "es": "Baúl", "en": "Storage chest", "pt": "Baú", "fr": "Coffre de rangement", "de": "Truhe", "it": "Baule", "ja": "収納トランク", "zh": "储物箱", "ko": "수납 트렁크", "ar": "صندوق تخزين خشبي" },
+    "keywords": {
+      "es": ["cofre", "arcón", "guardar cobijas", "juguetero", "almacenamiento", "pie de cama", "caja de madera"],
+      "en": ["trunk", "blanket chest", "toy box", "hope chest", "storage", "foot of the bed", "wooden box"]
+    }
+  },
+  "lamp": {
+    "label": { "es": "Lámpara", "en": "Lamp", "pt": "Abajur", "fr": "Lampe", "de": "Lampe", "it": "Lampada", "ja": "ランプ", "zh": "灯", "ko": "램프", "ar": "مصباح" },
+    "keywords": {
+      "es": ["lámpara de mesa", "lámpara de buró", "iluminación", "luz", "pantalla de lámpara", "luz de lectura", "luz de noche"],
+      "en": ["table lamp", "bedside lamp", "lighting", "light", "lampshade", "reading light", "accent light"]
+    }
+  },
+  "lamp-on": {
+    "label": { "es": "Lámpara encendida", "en": "Lamp on", "pt": "Abajur aceso", "fr": "Lampe allumée", "de": "Eingeschaltete Lampe", "it": "Lampada accesa", "ja": "点灯中のランプ", "zh": "灯已打开", "ko": "켜진 램프", "ar": "مصباح مضاء" },
+    "keywords": {
+      "es": ["prender la luz", "luz prendida", "encender", "iluminación", "casa inteligente", "estado de la luz", "brillo"],
+      "en": ["lights on", "turn on", "switch on", "lit", "smart home", "light status", "illuminated"]
+    }
+  },
+  "lamp-floor": {
+    "label": { "es": "Lámpara de pie", "en": "Floor lamp", "pt": "Luminária de chão", "fr": "Lampadaire", "de": "Stehlampe", "it": "Lampada da terra", "ja": "フロアランプ", "zh": "落地灯", "ko": "플로어 스탠드", "ar": "مصباح أرضي" },
+    "keywords": {
+      "es": ["lámpara de piso", "iluminación de sala", "luz de lectura", "lámpara alta", "rincón", "decoración", "luz ambiental"],
+      "en": ["standing lamp", "torchiere", "living room lighting", "reading light", "tall lamp", "corner lamp", "ambient light"]
+    }
+  },
+  "lamp-arc": {
+    "label": { "es": "Lámpara de arco", "en": "Arc lamp", "pt": "Luminária de arco", "fr": "Lampadaire arc", "de": "Bogenlampe", "it": "Lampada ad arco", "ja": "アーチ型フロアランプ", "zh": "弧形落地灯", "ko": "아크 플로어 램프", "ar": "مصباح قوسي" },
+    "keywords": {
+      "es": ["lámpara de pie curva", "lámpara arqueada", "luz de lectura", "sobre el sofá", "diseño moderno", "iluminación de sala", "mid century"],
+      "en": ["arc floor lamp", "arched lamp", "reading light", "over the sofa", "modern design", "mid-century", "curved lamp"]
+    }
+  },
+  "lamp-pendant": {
+    "label": { "es": "Lámpara colgante", "en": "Pendant light", "pt": "Luminária pendente", "fr": "Suspension", "de": "Pendelleuchte", "it": "Lampada a sospensione", "ja": "ペンダントライト", "zh": "吊灯", "ko": "펜던트 조명", "ar": "مصباح معلق" },
+    "keywords": {
+      "es": ["luminaria colgante", "sobre la mesa", "cocina", "comedor", "isla de cocina", "foco colgante", "iluminación"],
+      "en": ["pendant lamp", "hanging light", "ceiling lamp", "kitchen island", "dining light", "over the table", "suspended light"]
+    }
+  },
+  "lamp-ceiling": {
+    "label": { "es": "Lámpara de techo", "en": "Ceiling light", "pt": "Plafon", "fr": "Plafonnier", "de": "Deckenleuchte", "it": "Plafoniera", "ja": "シーリングライト", "zh": "吸顶灯", "ko": "천장등", "ar": "مصباح سقف" },
+    "keywords": {
+      "es": ["plafón", "luz del techo", "luminaria", "iluminación general", "foco", "cuarto", "luz principal"],
+      "en": ["flush mount", "overhead light", "dome light", "room lighting", "light fixture", "main light", "ceiling fixture"]
+    }
+  },
+  "lamp-wall": {
+    "label": { "es": "Lámpara de pared", "en": "Wall sconce", "pt": "Arandela", "fr": "Applique murale", "de": "Wandleuchte", "it": "Applique", "ja": "ブラケットライト", "zh": "壁灯", "ko": "벽등", "ar": "مصباح جداري" },
+    "keywords": {
+      "es": ["arbotante", "aplique", "luz de pared", "luz de entrada", "pasillo", "iluminación exterior", "cabecera"],
+      "en": ["sconce", "wall light", "porch light", "hallway light", "outdoor wall light", "bedside wall lamp", "wall fixture"]
+    }
+  },
+  "chandelier": {
+    "label": { "es": "Candil", "en": "Chandelier", "pt": "Lustre", "fr": "Lustre", "de": "Kronleuchter", "it": "Lampadario", "ja": "シャンデリア", "zh": "枝形吊灯", "ko": "샹들리에", "ar": "ثريا" },
+    "keywords": {
+      "es": ["araña", "lámpara de cristal", "comedor elegante", "candelabro", "lujo", "decoración", "salón"],
+      "en": ["crystal light", "formal dining", "luxury", "ceiling fixture", "ballroom", "decor", "candelabra"]
+    }
+  },
+  "downlight": {
+    "label": { "es": "Luz empotrada", "en": "Recessed light", "pt": "Spot embutido", "fr": "Spot encastré", "de": "Einbaustrahler", "it": "Faretto da incasso", "ja": "ダウンライト", "zh": "筒灯", "ko": "다운라이트", "ar": "إضاءة سقف مدمجة" },
+    "keywords": {
+      "es": ["spot", "foco empotrado", "ojo de buey", "plano de iluminación", "falso plafón", "LED", "luz directa"],
+      "en": ["can light", "pot light", "spotlight", "lighting plan", "ceiling spot", "LED", "drop ceiling"]
+    }
+  },
+  "track-light": {
+    "label": { "es": "Luces de riel", "en": "Track lighting", "pt": "Trilho de spots", "fr": "Rail de spots", "de": "Schienenstrahler", "it": "Faretti su binario", "ja": "ダクトレール照明", "zh": "轨道灯", "ko": "레일 조명", "ar": "إضاءة مسار" },
+    "keywords": {
+      "es": ["riel de spots", "spots", "iluminación dirigida", "cocina", "galería", "luz de acento", "reflectores"],
+      "en": ["rail lights", "spotlights", "directional lighting", "gallery lighting", "accent lighting", "kitchen lighting", "ceiling rail"]
+    }
+  },
+  "candle": {
+    "label": { "es": "Vela", "en": "Candle", "pt": "Vela", "fr": "Bougie", "de": "Kerze", "it": "Candela", "ja": "キャンドル", "zh": "蜡烛", "ko": "양초", "ar": "شمعة" },
+    "keywords": {
+      "es": ["veladora", "aromática", "ambiente", "decoración", "aroma para casa", "romántico", "relajación"],
+      "en": ["scented candle", "ambiance", "decor", "home fragrance", "candlelight", "romantic", "relax"]
+    }
+  },
+  "string-lights": {
+    "label": { "es": "Serie de luces", "en": "String lights", "pt": "Cordão de luz", "fr": "Guirlande lumineuse", "de": "Lichterkette", "it": "Filo di luci", "ja": "ストリングライト", "zh": "串灯", "ko": "줄전구", "ar": "سلسلة أضواء" },
+    "keywords": {
+      "es": ["foquitos", "luces navideñas", "luces de patio", "decoración", "guirnalda de luces", "fiesta", "terraza"],
+      "en": ["fairy lights", "Christmas lights", "patio lights", "bistro lights", "decor", "party", "festive"]
+    }
+  },
+  "garden-lamp": {
+    "label": { "es": "Farol de jardín", "en": "Garden light", "pt": "Luminária de jardim", "fr": "Lampadaire de jardin", "de": "Gartenleuchte", "it": "Lampione da giardino", "ja": "ガーデンライト", "zh": "庭院灯", "ko": "정원등", "ar": "مصباح حديقة" },
+    "keywords": {
+      "es": ["poste de luz", "luz exterior", "iluminación de jardín", "camino", "farola", "entrada", "luminaria exterior"],
+      "en": ["lamp post", "outdoor light", "path light", "pathway lighting", "yard light", "lantern", "driveway light"]
+    }
+  },
+  "mirror": {
+    "label": { "es": "Espejo", "en": "Mirror", "pt": "Espelho", "fr": "Miroir", "de": "Spiegel", "it": "Specchio", "ja": "鏡", "zh": "镜子", "ko": "거울", "ar": "مرآة" },
+    "keywords": {
+      "es": ["espejo de pared", "baño", "reflejo", "decoración", "tocador", "vista en espejo", "lavabo"],
+      "en": ["wall mirror", "bathroom", "reflection", "decor", "vanity", "mirror view", "looking glass"]
+    }
+  },
+  "floor-mirror": {
+    "label": { "es": "Espejo de cuerpo completo", "en": "Full-length mirror", "pt": "Espelho de chão", "fr": "Miroir sur pied", "de": "Standspiegel", "it": "Specchio da terra", "ja": "スタンドミラー", "zh": "落地镜", "ko": "전신 거울", "ar": "مرآة طولية" },
+    "keywords": {
+      "es": ["espejo de piso", "espejo largo", "vestidor", "probarse ropa", "recámara", "espejo de pie", "outfit"],
+      "en": ["standing mirror", "long mirror", "dressing mirror", "try on clothes", "bedroom", "outfit check", "cheval mirror"]
+    }
+  },
+  "wall-art": {
+    "label": { "es": "Cuadro", "en": "Wall art", "pt": "Quadro de parede", "fr": "Tableau mural", "de": "Wandbild", "it": "Quadro", "ja": "ウォールアート", "zh": "装饰画", "ko": "벽걸이 그림", "ar": "لوحة حائط" },
+    "keywords": {
+      "es": ["arte de pared", "pintura", "lámina", "decoración", "colgar cuadros", "galería", "póster enmarcado"],
+      "en": ["framed art", "painting", "print", "decor", "picture hanging", "gallery wall", "artwork"]
+    }
+  },
+  "picture-frame": {
+    "label": { "es": "Portarretratos", "en": "Picture frame", "pt": "Porta-retrato", "fr": "Cadre photo", "de": "Bilderrahmen", "it": "Cornice", "ja": "フォトフレーム", "zh": "相框", "ko": "사진 액자", "ar": "إطار صورة" },
+    "keywords": {
+      "es": ["marco de foto", "fotografía", "recuerdo", "regalo", "decoración", "foto familiar", "buró"],
+      "en": ["photo frame", "photograph", "memories", "gift", "decor", "family photo", "tabletop frame"]
+    }
+  },
+  "rug": {
+    "label": { "es": "Tapete", "en": "Rug", "pt": "Tapete", "fr": "Tapis", "de": "Teppich", "it": "Tappeto", "ja": "ラグ", "zh": "地毯", "ko": "러그", "ar": "سجادة" },
+    "keywords": {
+      "es": ["alfombra", "tapete de sala", "piso", "decoración", "textiles", "tapete persa", "alfombrado"],
+      "en": ["carpet", "area rug", "floor covering", "decor", "runner", "textiles", "persian rug"]
+    }
+  },
+  "doormat": {
+    "label": { "es": "Tapete de entrada", "en": "Doormat", "pt": "Capacho", "fr": "Paillasson", "de": "Fußmatte", "it": "Zerbino", "ja": "玄関マット", "zh": "门垫", "ko": "현관 매트", "ar": "ممسحة أرجل" },
+    "keywords": {
+      "es": ["bienvenida", "entrada", "puerta principal", "limpiapiés", "felpudo", "llegada", "dejar en la puerta"],
+      "en": ["welcome mat", "entrance", "front door", "entry mat", "arrival", "leave at door", "porch"]
+    }
+  },
+  "curtains": {
+    "label": { "es": "Cortinas", "en": "Curtains", "pt": "Cortinas", "fr": "Rideaux", "de": "Vorhänge", "it": "Tende", "ja": "カーテン", "zh": "窗帘", "ko": "커튼", "ar": "ستائر" },
+    "keywords": {
+      "es": ["persianas", "ventana", "decoración", "luz natural", "abrir", "visillos", "cortineros"],
+      "en": ["drapes", "open curtains", "window treatments", "decor", "natural light", "sheer", "blinds"]
+    }
+  },
+  "curtains-closed": {
+    "label": { "es": "Cortinas cerradas", "en": "Curtains closed", "pt": "Cortinas fechadas", "fr": "Rideaux fermés", "de": "Geschlossene Vorhänge", "it": "Tende chiuse", "ja": "閉じたカーテン", "zh": "窗帘已拉上", "ko": "닫힌 커튼", "ar": "ستائر مغلقة" },
+    "keywords": {
+      "es": ["blackout", "privacidad", "oscurecer", "cerrar cortinas", "persianas cerradas", "dormir", "modo noche"],
+      "en": ["blackout", "privacy", "room darkening", "close curtains", "drawn drapes", "sleep", "night mode"]
+    }
+  },
+  "room-divider": {
+    "label": { "es": "Biombo", "en": "Room divider", "pt": "Biombo", "fr": "Paravent", "de": "Paravent", "it": "Paravento", "ja": "パーテーション", "zh": "屏风", "ko": "칸막이", "ar": "حاجز غرفة" },
+    "keywords": {
+      "es": ["divisor de espacios", "mampara", "separador", "privacidad", "pantalla plegable", "dividir cuarto", "estudio"],
+      "en": ["folding screen", "partition", "privacy screen", "space divider", "split a room", "studio apartment", "paravent"]
+    }
+  },
+  "wallpaper-roll": {
+    "label": { "es": "Papel tapiz", "en": "Wallpaper", "pt": "Papel de parede", "fr": "Papier peint", "de": "Tapete", "it": "Carta da parati", "ja": "壁紙", "zh": "壁纸", "ko": "벽지", "ar": "ورق جدران" },
+    "keywords": {
+      "es": ["tapiz", "rollo de papel", "recubrimiento de pared", "decoración", "remodelación", "empapelar", "muro"],
+      "en": ["wall covering", "roll", "decor", "renovation", "redecorate", "pattern", "peel and stick"]
+    }
+  },
+  "living-room": {
+    "label": { "es": "Sala", "en": "Living room", "pt": "Sala de estar", "fr": "Salon", "de": "Wohnzimmer", "it": "Soggiorno", "ja": "リビングルーム", "zh": "客厅", "ko": "거실", "ar": "غرفة المعيشة" },
+    "keywords": {
+      "es": ["estancia", "sala de estar", "área social", "casa inteligente", "espacios de la casa", "filtro de cuartos", "tele"],
+      "en": ["lounge", "family room", "sitting room", "smart home room", "room filter", "den", "common area"]
+    }
+  },
+  "bedroom": {
+    "label": { "es": "Recámara", "en": "Bedroom", "pt": "Quarto", "fr": "Chambre", "de": "Schlafzimmer", "it": "Camera da letto", "ja": "寝室", "zh": "卧室", "ko": "침실", "ar": "غرفة النوم" },
+    "keywords": {
+      "es": ["habitación", "cuarto", "dormitorio", "número de recámaras", "casa inteligente", "filtro de cuartos", "dormir"],
+      "en": ["room", "sleeping room", "number of bedrooms", "master bedroom", "smart home room", "room filter", "sleep"]
+    }
+  },
+  "bathroom": {
+    "label": { "es": "Baño", "en": "Bathroom", "pt": "Banheiro", "fr": "Salle de bain", "de": "Badezimmer", "it": "Bagno", "ja": "バスルーム", "zh": "浴室", "ko": "욕실", "ar": "حمام" },
+    "keywords": {
+      "es": ["baño completo", "número de baños", "sanitarios", "aseo", "casa inteligente", "filtro de cuartos", "baño privado"],
+      "en": ["bath", "number of bathrooms", "restroom", "washroom", "smart home room", "room filter", "private bathroom"]
+    }
+  },
+  "dining-room": {
+    "label": { "es": "Comedor", "en": "Dining room", "pt": "Sala de jantar", "fr": "Salle à manger", "de": "Esszimmer", "it": "Sala da pranzo", "ja": "ダイニングルーム", "zh": "饭厅", "ko": "다이닝룸", "ar": "غرفة الطعام" },
+    "keywords": {
+      "es": ["área de comedor", "comer", "cena familiar", "mesa", "espacios de la casa", "filtro de cuartos", "antecomedor"],
+      "en": ["dining area", "eat-in", "family dinner", "dining space", "home spaces", "room filter", "breakfast nook"]
+    }
+  },
+  "guest-room": {
+    "label": { "es": "Cuarto de visitas", "en": "Guest room", "pt": "Quarto de hóspedes", "fr": "Chambre d’amis", "de": "Gästezimmer", "it": "Camera degli ospiti", "ja": "ゲストルーム", "zh": "客房", "ko": "손님방", "ar": "غرفة الضيوف" },
+    "keywords": {
+      "es": ["recámara de visitas", "habitación de huéspedes", "invitados", "visitas", "hospedar", "tipo de habitación", "cuarto extra"],
+      "en": ["spare room", "guest bedroom", "visitors", "hosting", "room type", "extra room", "overnight guests"]
+    }
+  },
+  "entryway": {
+    "label": { "es": "Recibidor", "en": "Entryway", "pt": "Hall de entrada", "fr": "Hall d’entrée", "de": "Eingangsbereich", "it": "Ingresso", "ja": "玄関", "zh": "玄关", "ko": "현관", "ar": "مدخل المنزل" },
+    "keywords": {
+      "es": ["vestíbulo", "entrada", "acceso", "pasillo", "lobby", "espacios de la casa", "filtro de cuartos"],
+      "en": ["foyer", "entrance hall", "hallway", "mudroom", "front entry", "lobby", "room filter"]
+    }
+  },
+  "home-theater": {
+    "label": { "es": "Cine en casa", "en": "Home theater", "pt": "Home theater", "fr": "Home cinéma", "de": "Heimkino", "it": "Home theater", "ja": "ホームシアター", "zh": "家庭影院", "ko": "홈시어터", "ar": "مسرح منزلي" },
+    "keywords": {
+      "es": ["sala de cine", "sala de TV", "cuarto de medios", "proyector", "ver películas", "amenidad", "sonido envolvente"],
+      "en": ["media room", "screening room", "TV room", "projector", "movie night", "amenity", "surround sound"]
+    }
+  },
+  "walk-in-closet": {
+    "label": { "es": "Vestidor", "en": "Walk-in closet", "pt": "Closet", "fr": "Dressing", "de": "Ankleidezimmer", "it": "Cabina armadio", "ja": "ウォークインクローゼット", "zh": "衣帽间", "ko": "드레스룸", "ar": "غرفة ملابس" },
+    "keywords": {
+      "es": ["clóset", "guardarropa", "cuarto de ropa", "almacenamiento", "tipo de habitación", "zapatos", "recámara principal"],
+      "en": ["closet", "dressing room", "wardrobe room", "clothes storage", "room type", "shoes", "master suite"]
+    }
+  },
+  "garage": {
+    "label": { "es": "Cochera", "en": "Garage", "pt": "Garagem", "fr": "Garage", "de": "Garage", "it": "Garage", "ja": "ガレージ", "zh": "车库", "ko": "차고", "ar": "مرآب" },
+    "keywords": {
+      "es": ["garaje", "estacionamiento", "puerta de cochera", "auto", "estacionar en casa", "taller", "bodega"],
+      "en": ["parking", "garage door", "car", "home parking", "attached garage", "workshop", "storage"]
+    }
+  },
+  "garage-open": {
+    "label": { "es": "Cochera abierta", "en": "Garage door open", "pt": "Garagem aberta", "fr": "Garage ouvert", "de": "Garagentor offen", "it": "Garage aperto", "ja": "開いたガレージ", "zh": "车库门已打开", "ko": "차고 문 열림", "ar": "المرآب مفتوح" },
+    "keywords": {
+      "es": ["abrir cochera", "puerta abierta", "portón eléctrico", "control remoto", "casa inteligente", "estado de la puerta", "acceso"],
+      "en": ["open garage", "garage door opener", "door status", "remote", "smart home", "access", "door up"]
+    }
+  },
+  "garage-double": {
+    "label": { "es": "Cochera para dos autos", "en": "Two-car garage", "pt": "Garagem para dois carros", "fr": "Garage double", "de": "Doppelgarage", "it": "Garage doppio", "ja": "2台用ガレージ", "zh": "双车位车库", "ko": "2대용 차고", "ar": "مرآب لسيارتين" },
+    "keywords": {
+      "es": ["cochera doble", "dos cajones", "estacionamiento", "plano", "amenidades", "garaje doble", "casa familiar"],
+      "en": ["double garage", "two parking spaces", "parking", "floor plan", "listing", "2-car garage", "family home"]
+    }
+  },
+  "room-plus": {
+    "label": { "es": "Agregar habitación", "en": "Add room", "pt": "Adicionar cômodo", "fr": "Ajouter une pièce", "de": "Raum hinzufügen", "it": "Aggiungi stanza", "ja": "部屋を追加", "zh": "添加房间", "ko": "방 추가", "ar": "إضافة غرفة" },
+    "keywords": {
+      "es": ["nuevo cuarto", "crear espacio", "casa inteligente", "configurar casa", "planta", "zona nueva", "distribución"],
+      "en": ["new room", "create space", "smart home", "home setup", "floor planner", "new zone", "layout"]
+    }
+  },
+  "windowpane": {
+    "label": { "es": "Ventana de casa", "en": "House window", "pt": "Janela de casa", "fr": "Fenêtre de maison", "de": "Hausfenster", "it": "Finestra di casa", "ja": "窓", "zh": "窗户", "ko": "창문", "ar": "نافذة المنزل" },
+    "keywords": {
+      "es": ["ventanal", "luz natural", "vidrio", "instalación de ventanas", "cancelería", "marco de ventana", "vista"],
+      "en": ["window frame", "natural light", "glass", "window install", "glazing", "sash", "view"]
+    }
+  },
+  "casement-window": {
+    "label": { "es": "Ventana abatible", "en": "Casement window", "pt": "Janela de abrir", "fr": "Fenêtre à battants", "de": "Drehfenster", "it": "Finestra a battente", "ja": "開き窓", "zh": "平开窗", "ko": "여닫이 창", "ar": "نافذة مفصلية" },
+    "keywords": {
+      "es": ["ventana abierta", "ventilación", "abrir ventana", "aire fresco", "tipo de ventana", "ventana de bisagras", "cancelería"],
+      "en": ["open window", "ventilation", "fresh air", "hinged window", "window type", "air out", "window opening"]
+    }
+  },
+  "sliding-window": {
+    "label": { "es": "Ventana corrediza", "en": "Sliding window", "pt": "Janela de correr", "fr": "Fenêtre coulissante", "de": "Schiebefenster", "it": "Finestra scorrevole", "ja": "引き違い窓", "zh": "推拉窗", "ko": "미닫이 창", "ar": "نافذة منزلقة" },
+    "keywords": {
+      "es": ["ventana de corredera", "cancel de aluminio", "tipo de ventana", "deslizar", "cancelería", "ventilación", "ventanal"],
+      "en": ["slider window", "glider window", "window type", "slide open", "aluminum window", "ventilation", "horizontal slider"]
+    }
+  },
+  "skylight": {
+    "label": { "es": "Tragaluz", "en": "Skylight", "pt": "Claraboia", "fr": "Puits de lumière", "de": "Dachfenster", "it": "Lucernario", "ja": "天窓", "zh": "天窗", "ko": "천창", "ar": "نافذة سقف" },
+    "keywords": {
+      "es": ["domo", "ventana en el techo", "luz natural", "claraboya", "luz cenital", "ático", "azotea"],
+      "en": ["roof window", "natural light", "rooflight", "sun tunnel", "daylight", "attic", "ceiling window"]
+    }
+  },
+  "shutters": {
+    "label": { "es": "Contraventanas", "en": "Shutters", "pt": "Venezianas", "fr": "Volets", "de": "Fensterläden", "it": "Persiane", "ja": "雨戸", "zh": "百叶窗", "ko": "덧문", "ar": "مصاريع النوافذ" },
+    "keywords": {
+      "es": ["postigos", "persianas exteriores", "privacidad", "protección contra huracanes", "tormenta", "fachada", "cerrar ventanas"],
+      "en": ["exterior shutters", "louvers", "privacy", "storm shutters", "hurricane protection", "facade", "close up"]
+    }
+  },
+  "broken-window": {
+    "label": { "es": "Ventana rota", "en": "Broken window", "pt": "Janela quebrada", "fr": "Vitre cassée", "de": "Kaputtes Fenster", "it": "Finestra rotta", "ja": "割れた窓", "zh": "破碎的窗户", "ko": "깨진 창문", "ar": "نافذة مكسورة" },
+    "keywords": {
+      "es": ["vidrio roto", "cristal estrellado", "daños", "robo", "allanamiento", "reclamo de seguro", "reparación"],
+      "en": ["shattered glass", "cracked glass", "damage", "break-in", "burglary", "insurance claim", "repair request"]
+    }
+  },
+  "door-double": {
+    "label": { "es": "Puerta doble", "en": "Double doors", "pt": "Porta dupla", "fr": "Porte double", "de": "Doppeltür", "it": "Porta a due ante", "ja": "両開きドア", "zh": "双开门", "ko": "양개문", "ar": "باب مزدوج" },
+    "keywords": {
+      "es": ["puerta francesa", "entrada principal", "puerta de dos hojas", "acceso", "fachada", "puerta de entrada", "recepción"],
+      "en": ["French doors", "main entrance", "double entry door", "front door", "entrance", "two-leaf door", "facade"]
+    }
+  },
+  "door-sliding": {
+    "label": { "es": "Puerta corrediza", "en": "Sliding door", "pt": "Porta de correr", "fr": "Baie coulissante", "de": "Schiebetür", "it": "Porta scorrevole", "ja": "引き戸", "zh": "推拉门", "ko": "미닫이문", "ar": "باب منزلق" },
+    "keywords": {
+      "es": ["puerta de cristal", "cancel", "salida al patio", "terraza", "cancelería", "jardín", "ventanal"],
+      "en": ["patio door", "glass door", "terrace", "backyard", "deck access", "slider", "balcony door"]
+    }
+  },
+  "barn-door": {
+    "label": { "es": "Puerta de granero", "en": "Barn door", "pt": "Porta de celeiro", "fr": "Porte de grange", "de": "Scheunentür", "it": "Porta stile fienile", "ja": "バーンドア", "zh": "谷仓门", "ko": "헛간 문", "ar": "باب حظيرة" },
+    "keywords": {
+      "es": ["puerta rústica", "puerta de madera", "riel", "estilo industrial", "estilo campestre", "diseño de interiores", "loft"],
+      "en": ["track door", "rustic door", "rail", "farmhouse style", "industrial style", "interior design", "wooden door"]
+    }
+  },
+  "door-handle": {
+    "label": { "es": "Manija de puerta", "en": "Door handle", "pt": "Maçaneta", "fr": "Poignée de porte", "de": "Türklinke", "it": "Maniglia", "ja": "ドアハンドル", "zh": "门把手", "ko": "문손잡이", "ar": "مقبض الباب" },
+    "keywords": {
+      "es": ["jaladera", "chapa", "herrajes", "cerradura", "reparación", "palanca", "abrir"],
+      "en": ["lever handle", "door lever", "hardware", "lock", "repair", "latch", "open door"]
+    }
+  },
+  "doorknob": {
+    "label": { "es": "Perilla de puerta", "en": "Doorknob", "pt": "Maçaneta redonda", "fr": "Bouton de porte", "de": "Türknauf", "it": "Pomello", "ja": "ドアノブ", "zh": "圆形门把手", "ko": "도어 노브", "ar": "مقبض باب دائري" },
+    "keywords": {
+      "es": ["perilla", "chapa", "pomo", "herrajes", "cerradura", "manija redonda", "girar"],
+      "en": ["knob", "hardware", "lock", "latch", "turn", "round handle", "passage knob"]
+    }
+  },
+  "stairs": {
+    "label": { "es": "Escaleras", "en": "Stairs", "pt": "Escada", "fr": "Escalier", "de": "Treppe", "it": "Scale", "ja": "階段", "zh": "楼梯", "ko": "계단", "ar": "درج" },
+    "keywords": {
+      "es": ["escalones", "subir", "bajar", "pisos", "planta alta", "escalinata", "niveles"],
+      "en": ["staircase", "steps", "upstairs", "downstairs", "floors", "stairway", "levels"]
+    }
+  },
+  "fireplace": {
+    "label": { "es": "Chimenea", "en": "Fireplace", "pt": "Lareira", "fr": "Cheminée", "de": "Kamin", "it": "Camino", "ja": "暖炉", "zh": "壁炉", "ko": "벽난로", "ar": "مدفأة" },
+    "keywords": {
+      "es": ["hogar", "fuego", "leña", "calefacción", "sala acogedora", "amenidad", "invierno"],
+      "en": ["hearth", "fire", "mantel", "heating", "cozy", "amenity", "winter"]
+    }
+  },
+  "wood-stove": {
+    "label": { "es": "Estufa de leña", "en": "Wood stove", "pt": "Fogão a lenha", "fr": "Poêle à bois", "de": "Holzofen", "it": "Stufa a legna", "ja": "薪ストーブ", "zh": "柴火炉", "ko": "장작 난로", "ar": "موقد حطب" },
+    "keywords": {
+      "es": ["calentador de leña", "calefacción", "cabaña", "chimenea de hierro", "frío", "campo", "fuego"],
+      "en": ["wood burner", "log burner", "heating", "cabin", "potbelly stove", "cast iron stove", "fire"]
+    }
+  },
+  "fire-pit": {
+    "label": { "es": "Fogatero", "en": "Fire pit", "pt": "Braseiro", "fr": "Brasero", "de": "Feuerschale", "it": "Braciere", "ja": "ファイヤーピット", "zh": "户外火盆", "ko": "화로대", "ar": "حفرة نار" },
+    "keywords": {
+      "es": ["brasero", "fogata", "patio", "jardín", "amenidad", "malvaviscos", "terraza"],
+      "en": ["brazier", "bonfire", "patio", "backyard", "amenity", "marshmallows", "outdoor fire"]
+    }
+  },
+  "firewood": {
+    "label": { "es": "Leña", "en": "Firewood", "pt": "Lenha", "fr": "Bois de chauffage", "de": "Brennholz", "it": "Legna da ardere", "ja": "薪", "zh": "木柴", "ko": "장작", "ar": "حطب" },
+    "keywords": {
+      "es": ["troncos", "madera", "chimenea", "encender fuego", "fogata", "calefacción", "insumos"],
+      "en": ["logs", "wood", "fireplace", "kindling", "light a fire", "campfire", "heating"]
+    }
+  },
+  "roof": {
+    "label": { "es": "Techo", "en": "Roof", "pt": "Telhado", "fr": "Toit", "de": "Dach", "it": "Tetto", "ja": "屋根", "zh": "屋顶", "ko": "지붕", "ar": "سقف المنزل" },
+    "keywords": {
+      "es": ["tejado", "azotea", "impermeabilización", "inspección de techo", "tejas", "fachada", "techumbre"],
+      "en": ["rooftop", "roofing", "shingles", "exterior", "roofline", "tiles", "inspection"]
+    }
+  },
+  "roof-leak": {
+    "label": { "es": "Gotera", "en": "Roof leak", "pt": "Goteira", "fr": "Fuite de toit", "de": "Undichtes Dach", "it": "Infiltrazione dal tetto", "ja": "雨漏り", "zh": "屋顶漏水", "ko": "지붕 누수", "ar": "تسرب السقف" },
+    "keywords": {
+      "es": ["filtración", "humedad", "impermeabilizar", "solicitud de mantenimiento", "reclamo de seguro", "lluvia", "daño"],
+      "en": ["leak", "dripping", "water infiltration", "maintenance request", "insurance claim", "rain damage", "waterproofing"]
+    }
+  },
+  "rain-gutter": {
+    "label": { "es": "Canaleta", "en": "Rain gutter", "pt": "Calha", "fr": "Gouttière", "de": "Dachrinne", "it": "Grondaia", "ja": "雨どい", "zh": "雨水槽", "ko": "빗물받이", "ar": "مزراب" },
+    "keywords": {
+      "es": ["bajante", "canalón", "desagüe pluvial", "destapar", "mantenimiento exterior", "temporada de lluvias", "alero"],
+      "en": ["downspout", "drainpipe", "eavestrough", "gutter cleaning", "exterior maintenance", "rainwater", "eaves"]
+    }
+  },
+  "fence": {
+    "label": { "es": "Cerca", "en": "Fence", "pt": "Cerca", "fr": "Clôture", "de": "Zaun", "it": "Recinzione", "ja": "フェンス", "zh": "围栏", "ko": "울타리", "ar": "سياج" },
+    "keywords": {
+      "es": ["reja", "barda", "valla", "jardín", "lindero", "patio", "límite del terreno"],
+      "en": ["picket fence", "fencing", "yard", "property line", "boundary", "backyard", "enclosure"]
+    }
+  },
+  "garden-gate": {
+    "label": { "es": "Puerta del jardín", "en": "Garden gate", "pt": "Portão do jardim", "fr": "Portillon", "de": "Gartentor", "it": "Cancelletto", "ja": "門扉", "zh": "花园门", "ko": "정원 문", "ar": "بوابة الحديقة" },
+    "keywords": {
+      "es": ["reja", "puerta de reja", "entrada", "jardín delantero", "acceso peatonal", "cerca", "patio"],
+      "en": ["gate", "wicket gate", "entrance", "front yard", "pedestrian gate", "fence", "yard"]
+    }
+  },
+  "driveway-gate": {
+    "label": { "es": "Portón", "en": "Driveway gate", "pt": "Portão de entrada", "fr": "Portail", "de": "Einfahrtstor", "it": "Cancello carrabile", "ja": "カーゲート", "zh": "车道大门", "ko": "대문", "ar": "بوابة المدخل" },
+    "keywords": {
+      "es": ["portón eléctrico", "zaguán", "acceso vehicular", "abridor de portón", "control de acceso", "entrada de autos", "privada"],
+      "en": ["automatic gate", "gate opener", "vehicle access", "access control", "entrance gate", "residential gate", "electric gate"]
+    }
+  },
+  "driveway-gate-open": {
+    "label": { "es": "Portón abierto", "en": "Gate open", "pt": "Portão aberto", "fr": "Portail ouvert", "de": "Tor offen", "it": "Cancello aperto", "ja": "開いたカーゲート", "zh": "大门已打开", "ko": "대문 열림", "ar": "البوابة مفتوحة" },
+    "keywords": {
+      "es": ["abrir portón", "acceso permitido", "portón eléctrico", "control remoto", "entrada libre", "estado del portón", "paso"],
+      "en": ["open gate", "access granted", "gate opener", "remote control", "entry allowed", "gate status", "driveway open"]
+    }
+  },
+  "porch": {
+    "label": { "es": "Porche", "en": "Porch", "pt": "Alpendre", "fr": "Porche", "de": "Veranda", "it": "Portico", "ja": "ポーチ", "zh": "门廊", "ko": "포치", "ar": "شرفة المدخل" },
+    "keywords": {
+      "es": ["pórtico", "entrada", "corredor", "fachada", "terraza de entrada", "escalones", "portal"],
+      "en": ["front porch", "veranda", "stoop", "entrance", "facade", "front steps", "covered entry"]
+    }
+  },
+  "shed": {
+    "label": { "es": "Caseta de jardín", "en": "Shed", "pt": "Galpão de jardim", "fr": "Abri de jardin", "de": "Gartenhaus", "it": "Casetta da giardino", "ja": "物置", "zh": "工具棚", "ko": "정원 창고", "ar": "سقيفة حديقة" },
+    "keywords": {
+      "es": ["bodega de jardín", "cobertizo", "cuarto de herramientas", "almacenamiento exterior", "jardín", "herramientas", "bodeguita"],
+      "en": ["tool storage", "outbuilding", "outdoor storage", "backyard", "tools", "lawn equipment", "garden storage"]
+    }
+  },
+  "gazebo": {
+    "label": { "es": "Gazebo", "en": "Gazebo", "pt": "Caramanchão", "fr": "Kiosque de jardin", "de": "Pavillon", "it": "Gazebo", "ja": "ガゼボ", "zh": "凉亭", "ko": "정자", "ar": "كشك الحديقة" },
+    "keywords": {
+      "es": ["kiosco", "cenador", "glorieta", "jardín", "eventos", "bodas", "sombra"],
+      "en": ["pavilion", "garden structure", "bandstand", "summerhouse", "event venue", "wedding", "shade"]
+    }
+  },
+  "pergola": {
+    "label": { "es": "Pérgola", "en": "Pergola", "pt": "Pérgola", "fr": "Pergola", "de": "Pergola", "it": "Pergolato", "ja": "パーゴラ", "zh": "花架", "ko": "퍼걸러", "ar": "برجولة" },
+    "keywords": {
+      "es": ["sombra", "terraza", "patio", "techo de madera", "enredadera", "jardín", "toldo"],
+      "en": ["arbor", "shade structure", "patio", "trellis", "deck", "climbing plants", "outdoor living"]
+    }
+  },
+  "hot-tub": {
+    "label": { "es": "Jacuzzi", "en": "Hot tub", "pt": "Hidromassagem", "fr": "Bain à remous", "de": "Whirlpool", "it": "Vasca idromassaggio", "ja": "ジャグジー", "zh": "按摩浴缸", "ko": "자쿠지", "ar": "جاكوزي" },
+    "keywords": {
+      "es": ["tina de hidromasaje", "spa", "amenidad", "renta vacacional", "burbujas", "agua caliente", "relajarse"],
+      "en": ["jacuzzi", "spa", "whirlpool", "amenity", "vacation rental", "bubbles", "relax"]
+    }
+  },
+  "bathtub": {
+    "label": { "es": "Tina", "en": "Bathtub", "pt": "Banheira", "fr": "Baignoire", "de": "Badewanne", "it": "Vasca da bagno", "ja": "浴槽", "zh": "浴缸", "ko": "욕조", "ar": "حوض استحمام" },
+    "keywords": {
+      "es": ["bañera", "baño completo", "número de baños", "amenidad", "baño de burbujas", "relajarse", "baño de tina"],
+      "en": ["bath", "tub", "full bath", "bath count", "amenity", "bubble bath", "soak"]
+    }
+  },
+  "shower": {
+    "label": { "es": "Regadera", "en": "Shower", "pt": "Chuveiro", "fr": "Douche", "de": "Dusche", "it": "Doccia", "ja": "シャワー", "zh": "淋浴", "ko": "샤워", "ar": "دش" },
+    "keywords": {
+      "es": ["ducha", "bañarse", "baño", "agua caliente", "amenidad", "cancel de baño", "higiene"],
+      "en": ["bathe", "bathroom", "hot water", "amenity", "rain head", "rinse", "hygiene"]
+    }
+  },
+  "toilet": {
+    "label": { "es": "Inodoro", "en": "Toilet", "pt": "Vaso sanitário", "fr": "Toilettes", "de": "Toilette", "it": "WC", "ja": "トイレ", "zh": "马桶", "ko": "변기", "ar": "مرحاض" },
+    "keywords": {
+      "es": ["excusado", "WC", "sanitario", "medio baño", "baños", "retrete", "taza del baño"],
+      "en": ["restroom", "WC", "lavatory", "half bath", "loo", "bathroom", "powder room"]
+    }
+  },
+  "bidet": {
+    "label": { "es": "Bidé", "en": "Bidet", "pt": "Bidê", "fr": "Bidet", "de": "Bidet", "it": "Bidet", "ja": "ビデ", "zh": "坐浴盆", "ko": "비데", "ar": "بيديه" },
+    "keywords": {
+      "es": ["baño", "higiene", "amenidad", "sanitario", "lavado", "aseo personal", "accesorios de baño"],
+      "en": ["bathroom", "hygiene", "amenity", "washlet", "toilet", "personal care", "bathroom fixture"]
+    }
+  },
+  "washbasin": {
+    "label": { "es": "Lavabo", "en": "Bathroom sink", "pt": "Pia do banheiro", "fr": "Lavabo", "de": "Waschbecken", "it": "Lavandino", "ja": "洗面台", "zh": "洗手盆", "ko": "세면대", "ar": "مغسلة" },
+    "keywords": {
+      "es": ["lavamanos", "ovalín", "llave del agua", "baño", "lavarse las manos", "muebles de baño", "mezcladora"],
+      "en": ["basin", "lavatory", "vanity", "faucet", "wash hands", "bathroom fixture", "tap"]
+    }
+  },
+  "toilet-paper": {
+    "label": { "es": "Papel higiénico", "en": "Toilet paper", "pt": "Papel higiênico", "fr": "Papier toilette", "de": "Toilettenpapier", "it": "Carta igienica", "ja": "トイレットペーパー", "zh": "卫生纸", "ko": "화장지", "ar": "ورق تواليت" },
+    "keywords": {
+      "es": ["papel de baño", "rollo", "artículos de baño", "insumos", "amenidades", "higiene", "reabastecer"],
+      "en": ["bath tissue", "loo roll", "TP", "bathroom supplies", "amenities", "hygiene", "restock"]
+    }
+  },
+  "towel-rack": {
+    "label": { "es": "Toallero", "en": "Towel rack", "pt": "Toalheiro", "fr": "Porte-serviettes", "de": "Handtuchhalter", "it": "Portasciugamani", "ja": "タオル掛け", "zh": "毛巾架", "ko": "수건걸이", "ar": "حامل مناشف" },
+    "keywords": {
+      "es": ["toallas", "accesorios de baño", "colgador", "barra de baño", "blancos", "baño", "herrajes"],
+      "en": ["towel bar", "towel holder", "towels", "bathroom fixture", "towel rail", "bathroom accessories", "hang towels"]
+    }
+  },
+  "medicine-cabinet": {
+    "label": { "es": "Botiquín", "en": "Medicine cabinet", "pt": "Armário de banheiro", "fr": "Armoire de toilette", "de": "Spiegelschrank", "it": "Pensile a specchio", "ja": "ミラーキャビネット", "zh": "镜柜", "ko": "욕실장", "ar": "خزانة أدوية بمرآة" },
+    "keywords": {
+      "es": ["gabinete de baño", "espejo con gabinete", "medicinas", "almacenamiento", "lavabo", "mueble de baño", "artículos de aseo"],
+      "en": ["mirror cabinet", "bathroom cabinet", "medicines", "bathroom storage", "vanity mirror", "first aid", "toiletries"]
+    }
+  },
+  "flooring": {
+    "label": { "es": "Piso de madera", "en": "Wood flooring", "pt": "Piso de madeira", "fr": "Parquet", "de": "Holzboden", "it": "Parquet", "ja": "フローリング", "zh": "木地板", "ko": "원목 마루", "ar": "أرضية خشبية" },
+    "keywords": {
+      "es": ["duela", "piso laminado", "parquet", "instalación de piso", "remodelación", "tarima", "pisos"],
+      "en": ["hardwood", "laminate", "parquet", "floor installation", "renovation", "floorboards", "planks"]
+    }
+  },
+  "tile-floor": {
+    "label": { "es": "Piso de loseta", "en": "Tile floor", "pt": "Piso de cerâmica", "fr": "Carrelage", "de": "Fliesenboden", "it": "Pavimento piastrellato", "ja": "タイル床", "zh": "瓷砖地面", "ko": "타일 바닥", "ar": "أرضية بلاط" },
+    "keywords": {
+      "es": ["azulejo", "porcelanato", "cerámica", "pisos de baño", "cocina", "instalación de piso", "colocación"],
+      "en": ["tiles", "tiling", "ceramic", "porcelain", "bathroom floor", "kitchen floor", "tile work"]
+    }
+  },
+  "flat-pack": {
+    "label": { "es": "Mueble para armar", "en": "Flat-pack furniture", "pt": "Móvel para montar", "fr": "Meuble en kit", "de": "Möbel zum Selbstaufbau", "it": "Mobile in kit", "ja": "組み立て家具", "zh": "组装家具", "ko": "조립식 가구", "ar": "أثاث للتركيب" },
+    "keywords": {
+      "es": ["armado", "servicio de armado", "instructivo", "en caja", "ensamblar", "hazlo tú mismo", "piezas"],
+      "en": ["ready to assemble", "assembly service", "instructions", "boxed furniture", "DIY", "assemble", "parts"]
+    }
+  },
+  "view-in-room": {
+    "label": { "es": "Ver en tu espacio", "en": "View in your room", "pt": "Ver no seu ambiente", "fr": "Voir chez vous", "de": "In deinem Raum ansehen", "it": "Vedi nella tua stanza", "ja": "部屋に置いてみる", "zh": "在房间中预览", "ko": "내 방에 배치해 보기", "ar": "اعرضه في غرفتك" },
+    "keywords": {
+      "es": ["realidad aumentada", "RA", "probar en casa", "vista 3D", "colocar mueble", "vista previa", "medir espacio"],
+      "en": ["augmented reality", "AR", "try at home", "3D view", "place furniture", "preview", "see it in your space"]
+    }
+  },
+  "water-damage": {
+    "label": { "es": "Daño por agua", "en": "Water damage", "pt": "Dano por água", "fr": "Dégât des eaux", "de": "Wasserschaden", "it": "Danni da acqua", "ja": "水濡れ被害", "zh": "水损", "ko": "누수 피해", "ar": "أضرار المياه" },
+    "keywords": {
+      "es": ["inundación", "fuga", "humedad", "reclamo de seguro", "siniestro", "filtración", "reporte de fuga"],
+      "en": ["flood", "leak", "moisture", "insurance claim", "leak report", "mold", "plumbing failure"]
+    }
+  }
+}

@@ -1,0 +1,513 @@
+{
+  "baby": {
+    "label": { "es": "Bebé", "en": "Baby", "pt": "Bebê", "fr": "Bébé", "de": "Baby", "it": "Neonato", "ja": "赤ちゃん", "zh": "婴儿", "ko": "아기", "ar": "رضيع" },
+    "keywords": {
+      "es": ["recién nacido", "infante", "lactante", "perfil del niño", "sección de bebés", "crianza", "maternidad"],
+      "en": ["infant", "newborn", "child profile", "kid", "baby section", "parenting", "toddler"]
+    }
+  },
+  "baby-plus": {
+    "label": { "es": "Agregar bebé", "en": "Add baby", "pt": "Adicionar bebê", "fr": "Ajouter un bébé", "de": "Baby hinzufügen", "it": "Aggiungi bambino", "ja": "赤ちゃんを追加", "zh": "添加宝宝", "ko": "아기 추가", "ar": "إضافة طفل" },
+    "keywords": {
+      "es": ["nuevo perfil", "agregar hijo", "añadir niño", "registrar hija", "cuenta familiar", "nuevo integrante", "perfil infantil"],
+      "en": ["new profile", "add child", "add kid", "register child", "family account", "new family member", "child profile"]
+    }
+  },
+  "baby-lock": {
+    "label": { "es": "Seguro para niños", "en": "Child lock", "pt": "Trava de segurança infantil", "fr": "Sécurité enfants", "de": "Kindersicherung", "it": "Blocco bambini", "ja": "チャイルドロック", "zh": "儿童锁", "ko": "어린이 보호 잠금", "ar": "قفل الأطفال" },
+    "keywords": {
+      "es": ["bloqueo infantil", "candado", "seguridad infantil", "puerta del auto", "electrodoméstico", "control parental", "a prueba de niños"],
+      "en": ["childproof", "child safety", "parental control", "car door lock", "appliance lock", "safety lock", "kid-proof"]
+    }
+  },
+  "baby-crying": {
+    "label": { "es": "Bebé llorando", "en": "Crying baby", "pt": "Bebê chorando", "fr": "Bébé qui pleure", "de": "Weinendes Baby", "it": "Neonato che piange", "ja": "泣いている赤ちゃん", "zh": "哭闹的宝宝", "ko": "우는 아기", "ar": "رضيع يبكي" },
+    "keywords": {
+      "es": ["llanto", "detección de llanto", "inquieto", "cólicos", "se despertó", "chillar", "consolar"],
+      "en": ["cry detection", "fussy", "fussiness log", "colic", "tears", "woke up", "soothe"]
+    }
+  },
+  "baby-swaddled": {
+    "label": { "es": "Recién nacido", "en": "Newborn", "pt": "Recém-nascido", "fr": "Nouveau-né", "de": "Neugeborenes", "it": "Neonato in fasce", "ja": "新生児", "zh": "新生儿", "ko": "신생아", "ar": "مولود جديد" },
+    "keywords": {
+      "es": ["nacimiento", "bebé envuelto", "cobijita", "fajar al bebé", "anuncio de nacimiento", "cuidados del bebé", "parto", "llegada del bebé"],
+      "en": ["birth", "swaddle", "wrapped baby", "baby blanket", "birth announcement", "baby care", "delivery", "baby arrival"]
+    }
+  },
+  "baby-sleep": {
+    "label": { "es": "Bebé dormido", "en": "Sleeping baby", "pt": "Bebê dormindo", "fr": "Bébé endormi", "de": "Schlafendes Baby", "it": "Neonato che dorme", "ja": "眠っている赤ちゃん", "zh": "熟睡的宝宝", "ko": "잠자는 아기", "ar": "رضيع نائم" },
+    "keywords": {
+      "es": ["sueño", "siesta", "registro de sueño", "modo noche", "dormir", "descanso", "horas de sueño"],
+      "en": ["sleep", "nap", "sleep log", "night mode", "asleep", "rest", "sleep tracking"]
+    }
+  },
+  "baby-crawling": {
+    "label": { "es": "Gateo", "en": "Crawling", "pt": "Engatinhar", "fr": "Bébé à quatre pattes", "de": "Krabbeln", "it": "Gattonamento", "ja": "はいはい", "zh": "爬行", "ko": "기어가기", "ar": "الحبو" },
+    "keywords": {
+      "es": ["gatear", "hito del desarrollo", "desarrollo motor", "registro de actividad", "a gatas", "estimulación temprana", "moverse"],
+      "en": ["crawl", "milestone", "motor development", "activity log", "on all fours", "early development", "moving"]
+    }
+  },
+  "tummy-time": {
+    "label": { "es": "Tiempo boca abajo", "en": "Tummy time", "pt": "Tempo de bruços", "fr": "Temps sur le ventre", "de": "Bauchlage", "it": "Tempo a pancia in giù", "ja": "うつぶせ遊び", "zh": "趴卧练习", "ko": "터미 타임", "ar": "وقت الاستلقاء على البطن" },
+    "keywords": {
+      "es": ["acostado sobre la panza", "estimulación temprana", "fortalecer el cuello", "actividad diaria", "pediatra", "desarrollo motor", "tapete de juego"],
+      "en": ["prone position", "on the belly", "neck strength", "daily activity", "pediatrician", "motor skills", "activity log"]
+    }
+  },
+  "baby-walking": {
+    "label": { "es": "Primeros pasos del bebé", "en": "First steps", "pt": "Primeiros passos do bebê", "fr": "Premiers pas", "de": "Erste Schritte", "it": "Primi passi", "ja": "はじめの一歩", "zh": "迈出第一步", "ko": "첫걸음", "ar": "خطوات الطفل الأولى" },
+    "keywords": {
+      "es": ["caminar", "andar", "hito", "aprender a caminar", "desarrollo", "niño pequeño", "andadera"],
+      "en": ["walking", "milestone", "learning to walk", "toddler", "toddling", "development", "walker"]
+    }
+  },
+  "baby-feet": {
+    "label": { "es": "Huellas de bebé", "en": "Baby footprints", "pt": "Pezinhos de bebê", "fr": "Empreintes de pieds de bébé", "de": "Babyfußabdrücke", "it": "Impronte del neonato", "ja": "赤ちゃんの足形", "zh": "婴儿脚印", "ko": "아기 발도장", "ar": "آثار أقدام المولود" },
+    "keywords": {
+      "es": ["piecitos", "huellitas", "anuncio de nacimiento", "recuerdo", "registro del recién nacido", "nacimiento", "pies"],
+      "en": ["tiny feet", "footprint", "birth announcement", "keepsake", "newborn record", "birth", "feet"]
+    }
+  },
+  "twins": {
+    "label": { "es": "Gemelos", "en": "Twins", "pt": "Gêmeos", "fr": "Jumeaux", "de": "Zwillinge", "it": "Gemelli", "ja": "双子", "zh": "双胞胎", "ko": "쌍둥이", "ar": "توائم" },
+    "keywords": {
+      "es": ["mellizos", "cuates", "embarazo múltiple", "trillizos", "hermanos", "dos bebés", "varios hijos"],
+      "en": ["multiples", "triplets", "siblings", "two babies", "multiple pregnancy", "more than one child", "fraternal"]
+    }
+  },
+  "baby-monitor": {
+    "label": { "es": "Monitor de bebé", "en": "Baby monitor", "pt": "Babá eletrônica", "fr": "Babyphone", "de": "Babyphone", "it": "Baby monitor", "ja": "ベビーモニター", "zh": "婴儿监视器", "ko": "베이비 모니터", "ar": "جهاز مراقبة الطفل" },
+    "keywords": {
+      "es": ["intercomunicador", "cámara del bebé", "escuchar al bebé", "vigilar", "audio", "video", "cuarto del bebé"],
+      "en": ["baby cam", "nursery camera", "audio monitor", "video monitor", "listen", "watch", "nursery"]
+    }
+  },
+  "baby-monitor-alert": {
+    "label": { "es": "Alerta del monitor", "en": "Monitor alert", "pt": "Alerta da babá eletrônica", "fr": "Alerte du babyphone", "de": "Babyphone-Alarm", "it": "Avviso del baby monitor", "ja": "ベビーモニターの通知", "zh": "婴儿监视器警报", "ko": "베이비 모니터 알림", "ar": "تنبيه جهاز مراقبة الطفل" },
+    "keywords": {
+      "es": ["llanto detectado", "movimiento", "fuera de alcance", "sin señal", "aviso", "notificación", "se despertó"],
+      "en": ["cry detected", "motion detected", "out of range", "no signal", "warning", "notification", "baby awake"]
+    }
+  },
+  "baby-on-board": {
+    "label": { "es": "Bebé a bordo", "en": "Baby on board", "pt": "Bebê a bordo", "fr": "Bébé à bord", "de": "Baby an Bord", "it": "Bimbo a bordo", "ja": "赤ちゃんが乗っています", "zh": "车内有宝宝", "ko": "아기가 타고 있어요", "ar": "طفل على متن السيارة" },
+    "keywords": {
+      "es": ["calcomanía", "letrero", "auto", "manejar con cuidado", "precaución", "niño en el auto", "señal"],
+      "en": ["sticker", "sign", "car", "drive carefully", "caution", "child in car", "decal"]
+    }
+  },
+  "daycare": {
+    "label": { "es": "Guardería", "en": "Daycare", "pt": "Creche", "fr": "Crèche", "de": "Kita", "it": "Asilo nido", "ja": "保育園", "zh": "托儿所", "ko": "어린이집", "ar": "حضانة الأطفال" },
+    "keywords": {
+      "es": ["estancia infantil", "kínder", "maternal", "cuidado infantil", "preescolar", "niñera", "escuelita"],
+      "en": ["childcare", "nursery school", "preschool", "kindergarten", "babysitter", "childminder", "creche"]
+    }
+  },
+  "baby-carrier": {
+    "label": { "es": "Cargador de bebé", "en": "Baby carrier", "pt": "Canguru", "fr": "Porte-bébé", "de": "Babytrage", "it": "Marsupio", "ja": "抱っこひも", "zh": "婴儿背带", "ko": "아기띠", "ar": "حمالة الأطفال" },
+    "keywords": {
+      "es": ["portabebé", "cangurera", "fular", "rebozo", "porteo", "brazos libres", "mochila"],
+      "en": ["wrap", "sling", "babywearing", "hands-free", "ring sling", "backpack"]
+    }
+  },
+  "pregnancy": {
+    "label": { "es": "Embarazo", "en": "Pregnancy", "pt": "Gravidez", "fr": "Grossesse", "de": "Schwangerschaft", "it": "Gravidanza", "ja": "妊娠", "zh": "怀孕", "ko": "임신", "ar": "الحمل" },
+    "keywords": {
+      "es": ["embarazada", "maternidad", "gestación", "esperando bebé", "panza", "prenatal", "futura mamá"],
+      "en": ["pregnant", "expecting", "maternity", "gestation", "bump", "prenatal", "mom-to-be"]
+    }
+  },
+  "fetus": {
+    "label": { "es": "Feto", "en": "Fetus", "pt": "Feto", "fr": "Fœtus", "de": "Fötus", "it": "Feto", "ja": "胎児", "zh": "胎儿", "ko": "태아", "ar": "الجنين" },
+    "keywords": {
+      "es": ["desarrollo fetal", "semana a semana", "embarazo", "gestación", "vientre", "bebé en camino", "tamaño del bebé"],
+      "en": ["fetal development", "week by week", "pregnancy", "gestation", "womb", "baby size", "embryo"]
+    }
+  },
+  "sonogram": {
+    "label": { "es": "Ultrasonido", "en": "Ultrasound", "pt": "Ultrassom", "fr": "Échographie", "de": "Ultraschallbild", "it": "Ecografia", "ja": "エコー写真", "zh": "B超图像", "ko": "초음파 사진", "ar": "صورة السونار" },
+    "keywords": {
+      "es": ["ecografía", "eco", "cita prenatal", "control prenatal", "primera foto", "imagen del bebé", "4D"],
+      "en": ["sonogram", "scan", "prenatal appointment", "anatomy scan", "first photo", "baby scan", "echo"]
+    }
+  },
+  "breastfeeding": {
+    "label": { "es": "Lactancia materna", "en": "Breastfeeding", "pt": "Amamentação", "fr": "Allaitement", "de": "Stillen", "it": "Allattamento al seno", "ja": "母乳育児", "zh": "母乳喂养", "ko": "모유 수유", "ar": "الرضاعة الطبيعية" },
+    "keywords": {
+      "es": ["amamantar", "dar pecho", "dar de mamar", "lactario", "sala de lactancia", "toma", "asesoría de lactancia"],
+      "en": ["nursing", "nursing room", "lactation", "lactation support", "chestfeeding", "feeding", "latch"]
+    }
+  },
+  "baby-bottle": {
+    "label": { "es": "Biberón", "en": "Baby bottle", "pt": "Mamadeira", "fr": "Biberon", "de": "Babyflasche", "it": "Biberon", "ja": "哺乳瓶", "zh": "奶瓶", "ko": "젖병", "ar": "زجاجة رضاعة" },
+    "keywords": {
+      "es": ["mamila", "toma", "leche", "fórmula", "alimentación", "dar de comer", "registro de tomas"],
+      "en": ["feeding bottle", "feed", "milk", "formula", "feeding", "nursing bottle", "feed tracker"]
+    }
+  },
+  "baby-bottle-clock": {
+    "label": { "es": "Próxima toma", "en": "Next feed", "pt": "Próxima mamada", "fr": "Prochain biberon", "de": "Nächste Mahlzeit", "it": "Prossima poppata", "ja": "次の授乳", "zh": "下次喂奶", "ko": "다음 수유", "ar": "الرضعة التالية" },
+    "keywords": {
+      "es": ["horario de tomas", "última toma", "cada cuánto come", "recordatorio", "tiempo desde la toma", "alimentación", "mamila"],
+      "en": ["feeding schedule", "last feed", "time since feed", "feeding reminder", "feed timer", "bottle", "feeding interval"]
+    }
+  },
+  "baby-bottle-plus": {
+    "label": { "es": "Registrar toma", "en": "Log feed", "pt": "Registrar mamada", "fr": "Ajouter un repas", "de": "Mahlzeit eintragen", "it": "Registra poppata", "ja": "授乳を記録", "zh": "记录喂奶", "ko": "수유 기록", "ar": "تسجيل رضعة" },
+    "keywords": {
+      "es": ["agregar toma", "nueva toma", "anotar biberón", "registro de alimentación", "cuántas onzas", "seguimiento", "mamila"],
+      "en": ["add feed", "new feed", "record bottle", "feeding log", "ounces", "tracker", "bottle"]
+    }
+  },
+  "bottle-feeding": {
+    "label": { "es": "Alimentación con biberón", "en": "Bottle feeding", "pt": "Alimentação com mamadeira", "fr": "Alimentation au biberon", "de": "Flaschenernährung", "it": "Allattamento con biberon", "ja": "哺乳瓶での授乳", "zh": "奶瓶喂养", "ko": "젖병 수유", "ar": "الرضاعة بالزجاجة" },
+    "keywords": {
+      "es": ["dar biberón", "tipo de toma", "mamila", "fórmula", "leche extraída", "alimentación mixta", "dar de comer"],
+      "en": ["feed type", "formula feeding", "expressed milk", "combination feeding", "giving a bottle", "paced feeding", "feeding log"]
+    }
+  },
+  "breast-pump": {
+    "label": { "es": "Extractor de leche", "en": "Breast pump", "pt": "Bomba tira-leite", "fr": "Tire-lait", "de": "Milchpumpe", "it": "Tiralatte", "ja": "搾乳器", "zh": "吸奶器", "ko": "유축기", "ar": "شفاط الحليب" },
+    "keywords": {
+      "es": ["sacaleches", "extracción", "sesión de extracción", "leche materna", "lactancia", "bombear", "banco de leche"],
+      "en": ["pumping", "pump session", "expressing milk", "breast milk", "lactation", "milk supply", "pumped milk"]
+    }
+  },
+  "bottle-warmer": {
+    "label": { "es": "Calentador de biberones", "en": "Bottle warmer", "pt": "Aquecedor de mamadeira", "fr": "Chauffe-biberon", "de": "Flaschenwärmer", "it": "Scaldabiberon", "ja": "哺乳瓶ウォーマー", "zh": "暖奶器", "ko": "젖병 워머", "ar": "مدفئ زجاجات الرضاعة" },
+    "keywords": {
+      "es": ["calentar leche", "temperatura", "entibiar", "mamila", "baño maría", "leche tibia", "preparar toma"],
+      "en": ["warm milk", "temperature", "heat bottle", "lukewarm", "milk warmer", "prepare feed", "warming"]
+    }
+  },
+  "bottle-sterilizer": {
+    "label": { "es": "Esterilizador de biberones", "en": "Bottle sterilizer", "pt": "Esterilizador de mamadeiras", "fr": "Stérilisateur de biberons", "de": "Flaschensterilisator", "it": "Sterilizzatore per biberon", "ja": "哺乳瓶の消毒器", "zh": "奶瓶消毒器", "ko": "젖병 소독기", "ar": "معقم زجاجات الرضاعة" },
+    "keywords": {
+      "es": ["esterilizar", "hervir mamilas", "desinfectar", "chupones", "limpieza", "vapor", "higiene"],
+      "en": ["sterilize", "sanitize", "pacifiers", "steam", "cleaning", "disinfect", "hygiene"]
+    }
+  },
+  "baby-formula": {
+    "label": { "es": "Fórmula infantil", "en": "Infant formula", "pt": "Fórmula infantil", "fr": "Lait infantile", "de": "Säuglingsnahrung", "it": "Latte artificiale", "ja": "粉ミルク", "zh": "婴儿配方奶粉", "ko": "분유", "ar": "حليب الأطفال الصناعي" },
+    "keywords": {
+      "es": ["leche en polvo", "lata de leche", "inventario", "tipo de alimentación", "marcas", "medida", "preparar biberón"],
+      "en": ["powdered milk", "formula tin", "stock", "feeding type", "brands", "scoop", "formula feeding"]
+    }
+  },
+  "baby-food-jar": {
+    "label": { "es": "Papilla", "en": "Baby food", "pt": "Papinha", "fr": "Petit pot", "de": "Babybrei", "it": "Omogeneizzato", "ja": "離乳食", "zh": "婴儿辅食", "ko": "이유식", "ar": "طعام الأطفال" },
+    "keywords": {
+      "es": ["puré", "frasco", "alimentos sólidos", "ablactación", "primeras comidas", "comida para bebé", "introducción de alimentos"],
+      "en": ["puree", "jar", "solids", "starting solids", "weaning", "first foods", "mash"]
+    }
+  },
+  "baby-food-pouch": {
+    "label": { "es": "Bolsita de papilla", "en": "Food pouch", "pt": "Papinha em sachê", "fr": "Gourde de compote", "de": "Quetschbeutel", "it": "Purea in pouch", "ja": "パウチ離乳食", "zh": "果泥吸吸袋", "ko": "파우치 이유식", "ar": "كيس هريس الأطفال" },
+    "keywords": {
+      "es": ["pouch", "puré para llevar", "colación", "snack", "compota", "comida en el camino", "lonchera"],
+      "en": ["squeeze pouch", "puree", "snack", "on the go", "fruit pouch", "toddler snack", "lunchbox"]
+    }
+  },
+  "sippy-cup": {
+    "label": { "es": "Vaso entrenador", "en": "Sippy cup", "pt": "Copo de transição", "fr": "Tasse d’apprentissage", "de": "Trinklernbecher", "it": "Tazza con beccuccio", "ja": "トレーニングマグ", "zh": "学饮杯", "ko": "트레이닝 컵", "ar": "كوب تدريب" },
+    "keywords": {
+      "es": ["vasito", "taza con boquilla", "dejar el biberón", "agua", "niño pequeño", "transición", "antiderrame"],
+      "en": ["training cup", "spout cup", "toddler cup", "spill-proof", "leaving the bottle", "transition", "water"]
+    }
+  },
+  "high-chair": {
+    "label": { "es": "Silla alta", "en": "High chair", "pt": "Cadeira de alimentação", "fr": "Chaise haute", "de": "Hochstuhl", "it": "Seggiolone", "ja": "ハイチェア", "zh": "儿童餐椅", "ko": "아기 식탁 의자", "ar": "كرسي طعام للأطفال" },
+    "keywords": {
+      "es": ["periquera", "silla para comer", "restaurante", "silla de bebé", "hora de comer", "silla infantil", "comedor"],
+      "en": ["feeding seat", "restaurant", "baby seat", "mealtime", "kids chair", "dining", "toddler chair"]
+    }
+  },
+  "bib": {
+    "label": { "es": "Babero", "en": "Bib", "pt": "Babador", "fr": "Bavoir", "de": "Lätzchen", "it": "Bavaglino", "ja": "スタイ", "zh": "围兜", "ko": "턱받이", "ar": "مريلة الطفل" },
+    "keywords": {
+      "es": ["comer", "papilla", "ropa de bebé", "mancharse", "baba", "hora de comer", "accesorio"],
+      "en": ["feeding", "baby clothes", "mealtime", "drool", "mess", "smock", "accessory"]
+    }
+  },
+  "pacifier": {
+    "label": { "es": "Chupón", "en": "Pacifier", "pt": "Chupeta", "fr": "Tétine", "de": "Schnuller", "it": "Ciuccio", "ja": "おしゃぶり", "zh": "安抚奶嘴", "ko": "공갈젖꼭지", "ar": "لهاية" },
+    "keywords": {
+      "es": ["chupete", "calmar", "ayuda para dormir", "productos para bebé", "consolar", "succión", "portachupón"],
+      "en": ["dummy", "binky", "soother", "soothing", "sleep aid", "baby products", "nipple"]
+    }
+  },
+  "teether": {
+    "label": { "es": "Mordedera", "en": "Teether", "pt": "Mordedor", "fr": "Anneau de dentition", "de": "Beißring", "it": "Massaggiagengive", "ja": "歯固め", "zh": "牙胶", "ko": "치발기", "ar": "عضاضة التسنين" },
+    "keywords": {
+      "es": ["dentición", "salen los dientes", "encías", "aro mordedor", "dolor de encías", "morder", "primeros dientes"],
+      "en": ["teething", "teething ring", "gums", "sore gums", "chew", "first teeth", "teething toy"]
+    }
+  },
+  "rattle": {
+    "label": { "es": "Sonaja", "en": "Rattle", "pt": "Chocalho", "fr": "Hochet", "de": "Rassel", "it": "Sonaglio", "ja": "ガラガラ", "zh": "摇铃", "ko": "딸랑이", "ar": "خشخيشة" },
+    "keywords": {
+      "es": ["sonajero", "juguete de bebé", "regalo de bebé", "estimulación sensorial", "sonido", "baby shower", "jugar"],
+      "en": ["baby toy", "newborn gift", "sensory play", "shaker", "baby shower", "sound", "play"]
+    }
+  },
+  "crib": {
+    "label": { "es": "Cuna", "en": "Crib", "pt": "Berço", "fr": "Lit de bébé", "de": "Babybett", "it": "Lettino", "ja": "ベビーベッド", "zh": "婴儿床", "ko": "아기 침대", "ar": "سرير الطفل" },
+    "keywords": {
+      "es": ["cama del bebé", "cuarto del bebé", "dormir", "recámara infantil", "colchón", "barandal", "sueño"],
+      "en": ["cot", "baby bed", "nursery", "sleep", "bedtime", "mattress", "bedroom"]
+    }
+  },
+  "crib-clock": {
+    "label": { "es": "Hora de la siesta", "en": "Nap time", "pt": "Hora da soneca", "fr": "Heure de la sieste", "de": "Schlafenszeit", "it": "Ora della nanna", "ja": "お昼寝の時間", "zh": "午睡时间", "ko": "낮잠 시간", "ar": "وقت القيلولة" },
+    "keywords": {
+      "es": ["horario de sueño", "rutina para dormir", "hora de dormir", "ventana de sueño", "recordatorio", "cuánto durmió", "descanso"],
+      "en": ["sleep schedule", "bedtime", "bedtime routine", "wake window", "daytime sleep", "reminder", "sleep timer"]
+    }
+  },
+  "bassinet": {
+    "label": { "es": "Moisés", "en": "Bassinet", "pt": "Moisés", "fr": "Couffin", "de": "Stubenwagen", "it": "Culla", "ja": "バシネット", "zh": "新生儿睡篮", "ko": "아기 바구니 침대", "ar": "سرير المولود" },
+    "keywords": {
+      "es": ["cuna de colecho", "primera cama", "recién nacido", "junto a la cama", "canasta para bebé", "cunero", "dormir"],
+      "en": ["bedside sleeper", "co-sleeper", "first bed", "newborn", "moses basket", "bedside crib", "sleep"]
+    }
+  },
+  "cradle": {
+    "label": { "es": "Cuna mecedora", "en": "Cradle", "pt": "Berço de balanço", "fr": "Berceau", "de": "Wiege", "it": "Culla a dondolo", "ja": "ゆりかご", "zh": "摇篮", "ko": "요람", "ar": "مهد" },
+    "keywords": {
+      "es": ["mecer", "arrullar", "dormir al bebé", "balancear", "vaivén", "cuna de madera", "calmar"],
+      "en": ["rocking", "lull to sleep", "sway", "baby bed", "soothe", "wooden crib", "rocker"]
+    }
+  },
+  "crib-mobile": {
+    "label": { "es": "Móvil de cuna", "en": "Crib mobile", "pt": "Móbile de berço", "fr": "Mobile de lit", "de": "Babymobile", "it": "Giostrina", "ja": "ベッドメリー", "zh": "床铃", "ko": "모빌", "ar": "دوّارة السرير" },
+    "keywords": {
+      "es": ["decoración", "cuarto del bebé", "colgante", "calmar", "estimulación visual", "música", "juguete de cuna"],
+      "en": ["nursery decor", "hanging toy", "soothing", "visual stimulation", "music", "nursery", "spinning"]
+    }
+  },
+  "sound-machine": {
+    "label": { "es": "Máquina de ruido blanco", "en": "Sound machine", "pt": "Máquina de ruído branco", "fr": "Machine à bruit blanc", "de": "White-Noise-Gerät", "it": "Macchina del rumore bianco", "ja": "ホワイトノイズマシン", "zh": "白噪音机", "ko": "백색소음기", "ar": "جهاز الضوضاء البيضاء" },
+    "keywords": {
+      "es": ["sonidos para dormir", "ruido rosa", "sonido ambiental", "arrullar", "dormir al bebé", "sonido de lluvia", "relajante"],
+      "en": ["white noise", "sleep sounds", "pink noise", "ambient sound", "sleep aid", "shush", "rain sounds"]
+    }
+  },
+  "lullaby": {
+    "label": { "es": "Canción de cuna", "en": "Lullaby", "pt": "Canção de ninar", "fr": "Berceuse", "de": "Schlaflied", "it": "Ninna nanna", "ja": "子守唄", "zh": "摇篮曲", "ko": "자장가", "ar": "تهويدة" },
+    "keywords": {
+      "es": ["arrullo", "música para dormir", "sonidos para dormir", "nana", "cantar al bebé", "melodía", "app de sueño"],
+      "en": ["sleep music", "sleep sounds", "cradle song", "bedtime song", "nursery rhyme", "melody", "sleep app"]
+    }
+  },
+  "nursery-light": {
+    "label": { "es": "Luz de noche", "en": "Nursery night light", "pt": "Luz de presença", "fr": "Veilleuse", "de": "Nachtlicht", "it": "Lucina notturna", "ja": "常夜灯", "zh": "小夜灯", "ko": "수면등", "ar": "ضوء ليلي" },
+    "keywords": {
+      "es": ["lamparita", "luz tenue", "cuarto del bebé", "lámpara de buró", "luz suave", "atenuar", "hora de dormir"],
+      "en": ["nursery lamp", "dim light", "lamp", "low light", "bedtime", "nursery", "soft glow"]
+    }
+  },
+  "playpen": {
+    "label": { "es": "Corral para bebé", "en": "Playpen", "pt": "Cercadinho", "fr": "Parc pour bébé", "de": "Laufstall", "it": "Box per bambini", "ja": "ベビーサークル", "zh": "游戏围栏", "ko": "아기 놀이울", "ar": "سياج لعب الأطفال" },
+    "keywords": {
+      "es": ["corralito", "cuna de viaje", "área de juego", "cuna portátil", "plegable", "viaje", "seguridad"],
+      "en": ["play yard", "travel cot", "travel crib", "pack and play", "play area", "safe space", "folding"]
+    }
+  },
+  "baby-swing": {
+    "label": { "es": "Columpio para bebé", "en": "Baby swing", "pt": "Balanço para bebê", "fr": "Balancelle", "de": "Babyschaukel", "it": "Altalena per neonati", "ja": "ベビースイング", "zh": "婴儿摇椅", "ko": "아기 그네", "ar": "أرجوحة الطفل" },
+    "keywords": {
+      "es": ["mecedora", "mecer", "columpio eléctrico", "calmar", "vaivén", "arrullar", "siesta"],
+      "en": ["rocker", "swing seat", "glider", "soothe", "rocking", "bouncer", "nap"]
+    }
+  },
+  "play-gym": {
+    "label": { "es": "Gimnasio para bebé", "en": "Play gym", "pt": "Tapete de atividades", "fr": "Tapis d’éveil", "de": "Spielbogen", "it": "Palestrina", "ja": "プレイジム", "zh": "健身架", "ko": "플레이짐", "ar": "صالة ألعاب الرضع" },
+    "keywords": {
+      "es": ["tapete de actividades", "tapete de juego", "estimulación temprana", "juguetes colgantes", "arco de juego", "tiempo boca abajo", "jugar"],
+      "en": ["activity gym", "play mat", "activity mat", "early learning", "hanging toys", "tummy time", "playtime"]
+    }
+  },
+  "diaper": {
+    "label": { "es": "Pañal", "en": "Diaper", "pt": "Fralda", "fr": "Couche", "de": "Windel", "it": "Pannolino", "ja": "おむつ", "zh": "纸尿裤", "ko": "기저귀", "ar": "حفاض" },
+    "keywords": {
+      "es": ["cambiar al bebé", "tallas", "desechables", "de tela", "higiene", "productos para bebé", "calzón entrenador"],
+      "en": ["nappy", "changing", "sizes", "disposable", "cloth", "baby care", "pull-ups"]
+    }
+  },
+  "diaper-plus": {
+    "label": { "es": "Registrar cambio de pañal", "en": "Log diaper change", "pt": "Registrar troca de fralda", "fr": "Ajouter un change", "de": "Wickeln eintragen", "it": "Registra cambio pannolino", "ja": "おむつ替えを記録", "zh": "记录换尿布", "ko": "기저귀 교체 기록", "ar": "تسجيل تغيير الحفاض" },
+    "keywords": {
+      "es": ["nuevo cambio", "agregar cambio", "anotar", "registro de pañales", "pipí", "popó", "seguimiento"],
+      "en": ["new change", "add change", "record", "diaper log", "pee", "poop", "tracker"]
+    }
+  },
+  "diaper-wet": {
+    "label": { "es": "Pañal mojado", "en": "Wet diaper", "pt": "Fralda molhada", "fr": "Couche mouillée", "de": "Nasse Windel", "it": "Pannolino bagnato", "ja": "おしっこのおむつ", "zh": "湿尿布", "ko": "젖은 기저귀", "ar": "حفاض مبلل" },
+    "keywords": {
+      "es": ["pipí", "orina", "registro de cambios", "hidratación", "cambio", "cuántos al día", "seguimiento"],
+      "en": ["pee", "urine", "wet nappy", "change log", "hydration", "diaper count", "tracking"]
+    }
+  },
+  "diaper-dirty": {
+    "label": { "es": "Pañal sucio", "en": "Dirty diaper", "pt": "Fralda suja", "fr": "Couche sale", "de": "Volle Windel", "it": "Pannolino sporco", "ja": "うんちのおむつ", "zh": "脏尿布", "ko": "대변 기저귀", "ar": "حفاض متسخ" },
+    "keywords": {
+      "es": ["popó", "evacuación", "registro de cambios", "digestión", "cambio", "color de las heces", "seguimiento"],
+      "en": ["poop", "poopy", "bowel movement", "stool", "change log", "messy nappy", "digestion"]
+    }
+  },
+  "baby-wipes": {
+    "label": { "es": "Toallitas húmedas", "en": "Baby wipes", "pt": "Lenços umedecidos", "fr": "Lingettes", "de": "Feuchttücher", "it": "Salviettine umidificate", "ja": "おしりふき", "zh": "婴儿湿巾", "ko": "아기 물티슈", "ar": "مناديل مبللة للأطفال" },
+    "keywords": {
+      "es": ["limpiar", "cambio de pañal", "higiene", "paquete", "productos para bebé", "pañalera", "toallas desechables"],
+      "en": ["wet wipes", "cleaning", "diaper change", "hygiene", "pack", "baby care", "wet towelettes"]
+    }
+  },
+  "diaper-bag": {
+    "label": { "es": "Pañalera", "en": "Diaper bag", "pt": "Bolsa de maternidade", "fr": "Sac à langer", "de": "Wickeltasche", "it": "Borsa fasciatoio", "ja": "マザーズバッグ", "zh": "妈咪包", "ko": "기저귀 가방", "ar": "حقيبة الحفاضات" },
+    "keywords": {
+      "es": ["bolsa de bebé", "qué llevar", "salidas", "mochila", "viaje", "lista de empaque", "paseo"],
+      "en": ["baby bag", "changing bag", "what to pack", "outing", "backpack", "packing list", "travel"]
+    }
+  },
+  "changing-table": {
+    "label": { "es": "Cambiador", "en": "Changing table", "pt": "Trocador", "fr": "Table à langer", "de": "Wickeltisch", "it": "Fasciatoio", "ja": "おむつ交換台", "zh": "尿布台", "ko": "기저귀 갈이대", "ar": "طاولة تغيير الحفاض" },
+    "keywords": {
+      "es": ["cuarto del bebé", "cómoda", "cambio de pañal", "colchoneta", "muebles de bebé", "mesa para cambiar", "recámara"],
+      "en": ["changing pad", "nursery furniture", "dresser", "diaper change", "nursery", "changer", "baby room"]
+    }
+  },
+  "baby-changing-station": {
+    "label": { "es": "Área de cambio de pañales", "en": "Baby changing station", "pt": "Fraldário", "fr": "Espace de change bébé", "de": "Wickelraum", "it": "Area cambio pannolini", "ja": "おむつ交換スペース", "zh": "母婴室", "ko": "기저귀 교환대", "ar": "مكان تغيير الحفاضات" },
+    "keywords": {
+      "es": ["baños", "sanitarios", "aeropuerto", "centro comercial", "señalética", "sala familiar", "cambiador", "instalaciones"],
+      "en": ["restroom", "baby room", "family restroom", "airport", "wayfinding", "changing facility", "public toilets", "mall"]
+    }
+  },
+  "baby-bath": {
+    "label": { "es": "Baño del bebé", "en": "Baby bath", "pt": "Banho do bebê", "fr": "Bain de bébé", "de": "Babybad", "it": "Bagnetto", "ja": "沐浴", "zh": "婴儿洗澡", "ko": "아기 목욕", "ar": "استحمام الطفل" },
+    "keywords": {
+      "es": ["tina para bebé", "bañera", "bañar", "bañito", "jabón", "agua tibia", "rutina nocturna"],
+      "en": ["bathtub", "bathing", "tub", "soap", "warm water", "bedtime routine", "wash"]
+    }
+  },
+  "potty": {
+    "label": { "es": "Bacinica", "en": "Potty", "pt": "Penico", "fr": "Pot", "de": "Töpfchen", "it": "Vasino", "ja": "おまる", "zh": "儿童便盆", "ko": "유아 변기", "ar": "نونية" },
+    "keywords": {
+      "es": ["control de esfínteres", "dejar el pañal", "entrenamiento", "nica", "orinal", "niño pequeño", "baño"],
+      "en": ["toilet training", "training seat", "toddler", "bathroom", "out of diapers", "toilet", "pee"]
+    }
+  },
+  "baby-powder": {
+    "label": { "es": "Talco para bebé", "en": "Baby powder", "pt": "Talco para bebê", "fr": "Talc pour bébé", "de": "Babypuder", "it": "Talco per bambini", "ja": "ベビーパウダー", "zh": "爽身粉", "ko": "베이비 파우더", "ar": "بودرة الأطفال" },
+    "keywords": {
+      "es": ["polvo", "rozaduras", "piel del bebé", "cuidado de la piel", "frasco", "productos para bebé", "fécula de maíz"],
+      "en": ["talc", "talcum", "diaper rash", "skin care", "bottle", "baby care", "cornstarch"]
+    }
+  },
+  "stroller": {
+    "label": { "es": "Carriola", "en": "Stroller", "pt": "Carrinho de bebê", "fr": "Poussette", "de": "Kinderwagen", "it": "Passeggino", "ja": "ベビーカー", "zh": "婴儿车", "ko": "유모차", "ar": "عربة أطفال" },
+    "keywords": {
+      "es": ["cochecito", "paseo", "salir a caminar", "acceso con rampa", "sistema de viaje", "ruedas", "transporte del bebé"],
+      "en": ["pram", "pushchair", "buggy", "walk", "travel system", "outing", "ramp access"]
+    }
+  },
+  "stroller-double": {
+    "label": { "es": "Carriola doble", "en": "Double stroller", "pt": "Carrinho duplo", "fr": "Poussette double", "de": "Geschwisterwagen", "it": "Passeggino gemellare", "ja": "二人乗りベビーカー", "zh": "双人婴儿车", "ko": "쌍둥이 유모차", "ar": "عربة أطفال مزدوجة" },
+    "keywords": {
+      "es": ["gemelos", "cuates", "hermanos", "dos bebés", "lado a lado", "en tándem", "gemelar"],
+      "en": ["twin stroller", "twins", "siblings", "two kids", "side by side", "tandem", "double pram"]
+    }
+  },
+  "car-seat": {
+    "label": { "es": "Autoasiento", "en": "Car seat", "pt": "Cadeirinha para carro", "fr": "Siège auto", "de": "Kindersitz", "it": "Seggiolino auto", "ja": "チャイルドシート", "zh": "儿童安全座椅", "ko": "카시트", "ar": "مقعد سيارة للأطفال" },
+    "keywords": {
+      "es": ["silla para auto", "silla de coche", "seguridad vial", "auto", "viaje en coche", "isofix", "arnés"],
+      "en": ["child seat", "road safety", "car", "car trip", "isofix", "harness", "latch"]
+    }
+  },
+  "car-seat-check": {
+    "label": { "es": "Autoasiento instalado", "en": "Car seat installed", "pt": "Cadeirinha instalada", "fr": "Siège auto installé", "de": "Kindersitz montiert", "it": "Seggiolino installato", "ja": "チャイルドシート取り付け済み", "zh": "安全座椅已安装", "ko": "카시트 장착 완료", "ar": "تم تثبيت مقعد السيارة" },
+    "keywords": {
+      "es": ["revisado", "inspección", "bien colocado", "verificado", "seguridad vial", "anclaje", "listo"],
+      "en": ["inspected", "inspection", "fitted", "verified", "road safety", "anchored", "checked"]
+    }
+  },
+  "car-seat-alert": {
+    "label": { "es": "Recordatorio de asiento trasero", "en": "Rear seat reminder", "pt": "Lembrete do banco traseiro", "fr": "Rappel siège arrière", "de": "Rücksitz-Erinnerung", "it": "Avviso antiabbandono", "ja": "後部座席リマインダー", "zh": "后排座椅提醒", "ko": "뒷좌석 알림", "ar": "تذكير المقعد الخلفي" },
+    "keywords": {
+      "es": ["niño en el auto", "niño olvidado", "sin abrochar", "alerta", "autoasiento", "golpe de calor", "revisa atrás"],
+      "en": ["child left in car", "forgotten child", "unlatched", "alert", "car seat", "heatstroke", "check back seat"]
+    }
+  },
+  "car-seat-infant": {
+    "label": { "es": "Portabebé para auto", "en": "Infant car seat", "pt": "Bebê conforto", "fr": "Siège coque", "de": "Babyschale", "it": "Ovetto", "ja": "ベビーシート", "zh": "婴儿提篮", "ko": "신생아 카시트", "ar": "مقعد سيارة للرضع" },
+    "keywords": {
+      "es": ["huevito", "recién nacido", "asa", "base para auto", "autoasiento", "contramarcha", "sistema de viaje"],
+      "en": ["infant carrier", "baby seat", "newborn", "rear-facing", "car seat base", "handle", "travel system"]
+    }
+  },
+  "baby-gate": {
+    "label": { "es": "Puerta de seguridad", "en": "Safety gate", "pt": "Portão de segurança", "fr": "Barrière de sécurité", "de": "Schutzgitter", "it": "Cancelletto di sicurezza", "ja": "ベビーゲート", "zh": "安全门栏", "ko": "안전문", "ar": "بوابة أمان" },
+    "keywords": {
+      "es": ["reja", "escaleras", "barrera", "protección infantil", "a prueba de niños", "entrada", "mascotas"],
+      "en": ["baby gate", "stair gate", "barrier", "childproofing", "doorway", "pet gate", "stairs"]
+    }
+  },
+  "outlet-cover": {
+    "label": { "es": "Protector de contactos", "en": "Outlet cover", "pt": "Protetor de tomada", "fr": "Cache-prise", "de": "Steckdosenschutz", "it": "Copripresa", "ja": "コンセントカバー", "zh": "插座保护盖", "ko": "콘센트 안전 커버", "ar": "غطاء المقبس الكهربائي" },
+    "keywords": {
+      "es": ["tapa de contacto", "enchufe", "toma de corriente", "a prueba de niños", "seguridad eléctrica", "descarga", "protección infantil"],
+      "en": ["socket cover", "plug cover", "electrical safety", "childproofing", "outlet plug", "shock", "socket"]
+    }
+  },
+  "cabinet-lock": {
+    "label": { "es": "Seguro para gabinetes", "en": "Cabinet lock", "pt": "Trava de armário", "fr": "Bloque-placard", "de": "Schranksicherung", "it": "Blocca ante", "ja": "戸棚ロック", "zh": "柜门锁", "ko": "서랍 잠금장치", "ar": "قفل الخزائن" },
+    "keywords": {
+      "es": ["cajones", "alacena", "a prueba de niños", "protección infantil", "productos de limpieza", "traba", "imán"],
+      "en": ["drawer lock", "cupboard", "childproofing", "child safety", "cleaning products", "latch", "magnetic lock"]
+    }
+  },
+  "pregnancy-test": {
+    "label": { "es": "Prueba de embarazo", "en": "Pregnancy test", "pt": "Teste de gravidez", "fr": "Test de grossesse", "de": "Schwangerschaftstest", "it": "Test di gravidanza", "ja": "妊娠検査薬", "zh": "验孕棒", "ko": "임신 테스트기", "ar": "اختبار الحمل" },
+    "keywords": {
+      "es": ["positivo", "negativo", "resultado", "dos rayitas", "prueba casera", "fertilidad", "retraso"],
+      "en": ["positive", "negative", "result", "two lines", "home test", "fertility", "late period"]
+    }
+  },
+  "growth-chart": {
+    "label": { "es": "Tabla de crecimiento", "en": "Growth chart", "pt": "Curva de crescimento infantil", "fr": "Courbe de croissance infantile", "de": "Perzentilenkurve", "it": "Percentili di crescita", "ja": "発育曲線", "zh": "生长曲线", "ko": "성장 도표", "ar": "مخطط نمو الطفل" },
+    "keywords": {
+      "es": ["percentiles", "peso", "talla", "estatura", "seguimiento", "pediatra", "desarrollo"],
+      "en": ["percentiles", "weight", "height", "length", "tracking", "pediatrician", "development"]
+    }
+  },
+  "height-chart": {
+    "label": { "es": "Medidor de estatura", "en": "Height chart", "pt": "Régua de altura", "fr": "Toise", "de": "Messlatte", "it": "Misuratore di altezza", "ja": "身長計", "zh": "身高尺", "ko": "키 재기", "ar": "مقياس الطول" },
+    "keywords": {
+      "es": ["medir", "cuánto mide", "talla", "altura mínima", "juegos mecánicos", "crecimiento", "estadímetro"],
+      "en": ["measure", "how tall", "growth", "must be this tall", "ride requirement", "stadiometer", "growth marks"]
+    }
+  },
+  "baby-scale": {
+    "label": { "es": "Báscula para bebé", "en": "Baby scale", "pt": "Balança para bebê", "fr": "Pèse-bébé", "de": "Babywaage", "it": "Bilancia pesaneonati", "ja": "ベビースケール", "zh": "婴儿秤", "ko": "아기 체중계", "ar": "ميزان الرضع" },
+    "keywords": {
+      "es": ["peso", "pesar", "peso al nacer", "control de peso", "kilos", "consulta pediátrica", "crecimiento"],
+      "en": ["weight", "weigh", "birth weight", "weight check", "pounds", "checkup", "growth"]
+    }
+  },
+  "onesie": {
+    "label": { "es": "Pañalero", "en": "Bodysuit", "pt": "Body de bebê", "fr": "Body bébé", "de": "Babybody", "it": "Body neonato", "ja": "ロンパース", "zh": "包屁衣", "ko": "바디슈트", "ar": "بدلة الرضيع" },
+    "keywords": {
+      "es": ["body", "mameluco", "ropa de bebé", "ropita", "tallas", "regalo de bebé", "algodón"],
+      "en": ["onesie", "romper", "baby clothes", "babygrow", "sizes", "baby gift", "cotton"]
+    }
+  },
+  "baby-booties": {
+    "label": { "es": "Zapatitos de bebé", "en": "Baby booties", "pt": "Sapatinhos de bebê", "fr": "Chaussons de bébé", "de": "Babyschuhe", "it": "Scarpine", "ja": "ベビーシューズ", "zh": "婴儿鞋", "ko": "아기 신발", "ar": "حذاء الرضيع" },
+    "keywords": {
+      "es": ["botitas", "patines", "calzado", "pantuflas", "tejido", "regalo de bebé", "anuncio de embarazo"],
+      "en": ["baby shoes", "footwear", "knitted", "slippers", "first shoes", "baby gift", "pregnancy announcement"]
+    }
+  }
+}

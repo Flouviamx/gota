@@ -1,15 +1,29 @@
 // Headless Chrome over the DevTools Protocol, with no dependencies: the review sheets use it to
 // render local HTML to PNG. The CHROME environment variable sets the browser path.
 import { spawn } from 'node:child_process';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
 const CHROME = process.env.CHROME ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+/** A new profile for one Chrome run. A run cut off before it closes (an agent stopped by a usage
+ *  limit) leaves its profile behind, about 130 MB: those older than three hours are removed first,
+ *  since no sheet or QA run lasts that long. */
+export function newProfile() {
+  for (const name of readdirSync(tmpdir())) {
+    if (!name.startsWith('fi-')) continue;
+    const dir = join(tmpdir(), name);
+    try {
+      if (Date.now() - statSync(dir).mtimeMs > 3 * 3600e3) rmSync(dir, { recursive: true, force: true });
+    } catch {}
+  }
+  return mkdtempSync(join(tmpdir(), 'fi-'));
+}
+
 export async function openChrome() {
-  const profile = mkdtempSync(join(tmpdir(), 'fi-'));
+  const profile = newProfile();
   const port = 9800 + Math.floor(Math.random() * 900);
   const chrome = spawn(CHROME, ['--headless=new', `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`, '--hide-scrollbars', 'about:blank'], { stdio: 'ignore' });
   let target;

@@ -1,0 +1,828 @@
+{
+  "fork": {
+    "label": { "es": "Tenedor", "en": "Fork", "pt": "Garfo", "fr": "Fourchette", "de": "Gabel", "it": "Forchetta", "ja": "フォーク", "zh": "叉子", "ko": "포크", "ar": "شوكة" },
+    "keywords": {
+      "es": ["cubiertos", "comer", "comida", "pinchar", "servicio de mesa", "elegir cubiertos", "platillo"],
+      "en": ["cutlery", "eat", "dining", "silverware", "flatware", "table setting", "meal"]
+    }
+  },
+  "spoon": {
+    "label": { "es": "Cuchara", "en": "Spoon", "pt": "Colher", "fr": "Cuillère", "de": "Löffel", "it": "Cucchiaio", "ja": "スプーン", "zh": "勺子", "ko": "숟가락", "ar": "ملعقة" },
+    "keywords": {
+      "es": ["cubiertos", "sopa", "postre", "cucharada", "comer", "caldo", "medida"],
+      "en": ["cutlery", "soup", "dessert", "spoonful", "eat", "silverware", "measure"]
+    }
+  },
+  "knife": {
+    "label": { "es": "Cuchillo de cocina", "en": "Kitchen knife", "pt": "Faca de cozinha", "fr": "Couteau de cuisine", "de": "Küchenmesser", "it": "Coltello da cucina", "ja": "包丁", "zh": "厨刀", "ko": "식칼", "ar": "سكين المطبخ" },
+    "keywords": {
+      "es": ["cuchillo de chef", "picar", "cortar", "rebanar", "preparación", "cuchillería", "filo"],
+      "en": ["chef's knife", "chop", "cut", "slice", "prep", "cutlery", "blade"]
+    }
+  },
+  "bread-knife": {
+    "label": { "es": "Cuchillo para pan", "en": "Bread knife", "pt": "Faca de pão", "fr": "Couteau à pain", "de": "Brotmesser", "it": "Coltello da pane", "ja": "パン切り包丁", "zh": "面包刀", "ko": "빵칼", "ar": "سكين الخبز" },
+    "keywords": {
+      "es": ["serrado", "rebanar", "sierra", "panadería", "pan de caja", "bolillo", "pastel"],
+      "en": ["serrated", "slice", "loaf", "bakery", "saw edge", "sourdough", "cake"]
+    }
+  },
+  "cleaver": {
+    "label": { "es": "Cuchilla de carnicero", "en": "Meat cleaver", "pt": "Cutelo", "fr": "Couperet", "de": "Hackbeil", "it": "Mannaia", "ja": "肉切り包丁", "zh": "剁骨刀", "ko": "정육 칼", "ar": "ساطور" },
+    "keywords": {
+      "es": ["carnicería", "cortar hueso", "destazar", "carne", "tablajero", "cortes", "machete"],
+      "en": ["butcher", "chop bone", "meat", "butcher shop", "hack", "cuts of meat", "heavy knife"]
+    }
+  },
+  "chopsticks": {
+    "label": { "es": "Palillos chinos", "en": "Chopsticks", "pt": "Hashi", "fr": "Baguettes", "de": "Essstäbchen", "it": "Bacchette", "ja": "箸", "zh": "筷子", "ko": "젓가락", "ar": "عيدان الأكل" },
+    "keywords": {
+      "es": ["hashi", "comida asiática", "sushi", "ramen", "comida china", "comida japonesa", "cubiertos"],
+      "en": ["asian food", "sushi", "ramen", "chinese food", "japanese food", "noodles", "cutlery"]
+    }
+  },
+  "soup-spoon": {
+    "label": { "es": "Cuchara china", "en": "Asian soup spoon", "pt": "Colher chinesa", "fr": "Cuillère chinoise", "de": "Asiatischer Suppenlöffel", "it": "Cucchiaio cinese", "ja": "レンゲ", "zh": "汤匙", "ko": "중국식 숟가락", "ar": "ملعقة صينية" },
+    "keywords": {
+      "es": ["ramen", "pho", "caldo", "sopa", "comida asiática", "cuchara sopera", "fideos"],
+      "en": ["ramen", "pho", "broth", "soup", "asian food", "noodle soup", "porcelain spoon"]
+    }
+  },
+  "ladle": {
+    "label": { "es": "Cucharón", "en": "Ladle", "pt": "Concha", "fr": "Louche", "de": "Schöpfkelle", "it": "Mestolo", "ja": "お玉", "zh": "汤勺", "ko": "국자", "ar": "مغرفة" },
+    "keywords": {
+      "es": ["servir sopa", "porción", "caldo", "olla", "servir", "pozole", "líquidos"],
+      "en": ["serve soup", "portion", "broth", "stockpot", "serving", "stew", "scoop liquid"]
+    }
+  },
+  "spatula": {
+    "label": { "es": "Espátula", "en": "Spatula", "pt": "Espátula", "fr": "Spatule", "de": "Pfannenwender", "it": "Paletta da cucina", "ja": "フライ返し", "zh": "锅铲", "ko": "뒤집개", "ar": "ملعقة التقليب" },
+    "keywords": {
+      "es": ["voltear", "volteador", "freír", "hot cakes", "hamburguesas", "plancha", "utensilio"],
+      "en": ["turner", "flip", "fry", "pancakes", "burgers", "flipper", "cooking utensil"]
+    }
+  },
+  "rubber-spatula": {
+    "label": { "es": "Espátula de silicón", "en": "Rubber spatula", "pt": "Espátula de silicone", "fr": "Maryse", "de": "Teigschaber", "it": "Spatola in silicone", "ja": "ゴムベラ", "zh": "硅胶刮刀", "ko": "실리콘 주걱", "ar": "مكشطة سيليكون" },
+    "keywords": {
+      "es": ["miserable", "raspar el tazón", "envolver", "incorporar", "repostería", "masa de pastel", "hornear"],
+      "en": ["scraper", "fold", "scrape the bowl", "batter", "baking", "pastry", "silicone"]
+    }
+  },
+  "slotted-spoon": {
+    "label": { "es": "Cuchara con ranuras", "en": "Slotted spoon", "pt": "Escumadeira", "fr": "Cuillère ajourée", "de": "Schaumlöffel", "it": "Schiumarola", "ja": "穴あきスプーン", "zh": "漏勺", "ko": "구멍 뚫린 스푼", "ar": "ملعقة مثقوبة" },
+    "keywords": {
+      "es": ["espumadera", "escurrir", "sacar del agua", "colar", "huevos pochados", "fritura", "servir"],
+      "en": ["skimmer", "drain", "lift out", "strain", "poached eggs", "fried food", "serve"]
+    }
+  },
+  "whisk": {
+    "label": { "es": "Batidor", "en": "Whisk", "pt": "Batedor", "fr": "Fouet", "de": "Schneebesen", "it": "Frusta", "ja": "泡立て器", "zh": "打蛋器", "ko": "거품기", "ar": "مخفقة" },
+    "keywords": {
+      "es": ["batir", "batir huevos", "montar crema", "merengue", "mezclar", "repostería", "globo"],
+      "en": ["beat", "beat eggs", "whip cream", "meringue", "mix", "baking", "batter"]
+    }
+  },
+  "tongs": {
+    "label": { "es": "Pinzas de cocina", "en": "Kitchen tongs", "pt": "Pinça de cozinha", "fr": "Pince de cuisine", "de": "Küchenzange", "it": "Pinza da cucina", "ja": "トング", "zh": "食物夹", "ko": "주방 집게", "ar": "ملقط الطعام" },
+    "keywords": {
+      "es": ["tenazas", "asar", "carne asada", "voltear", "servir", "parrilla", "agarrar"],
+      "en": ["grill", "barbecue", "turn", "flip meat", "serve", "grab", "salad"]
+    }
+  },
+  "rolling-pin": {
+    "label": { "es": "Rodillo", "en": "Rolling pin", "pt": "Rolo de massa", "fr": "Rouleau à pâtisserie", "de": "Nudelholz", "it": "Mattarello", "ja": "めん棒", "zh": "擀面杖", "ko": "밀대", "ar": "مرقاق العجين" },
+    "keywords": {
+      "es": ["extender masa", "palote", "amasar", "repostería", "galletas", "pasta", "hornear"],
+      "en": ["roll dough", "pastry", "baking", "cookies", "pie crust", "flatten", "pizza dough"]
+    }
+  },
+  "grater": {
+    "label": { "es": "Rallador", "en": "Grater", "pt": "Ralador", "fr": "Râpe", "de": "Reibe", "it": "Grattugia", "ja": "おろし器", "zh": "擦丝器", "ko": "강판", "ar": "مبشرة" },
+    "keywords": {
+      "es": ["rallar queso", "queso rallado", "zanahoria", "verduras", "ralladura", "picar fino", "preparación"],
+      "en": ["grate cheese", "shred", "shredded", "cheese", "zest", "vegetables", "carrot"]
+    }
+  },
+  "peeler": {
+    "label": { "es": "Pelador", "en": "Peeler", "pt": "Descascador", "fr": "Économe", "de": "Sparschäler", "it": "Pelapatate", "ja": "ピーラー", "zh": "削皮器", "ko": "필러", "ar": "مقشرة" },
+    "keywords": {
+      "es": ["pelar", "pelapapas", "papas", "zanahoria", "verduras", "cáscara", "preparación"],
+      "en": ["peel", "potatoes", "vegetables", "skin", "prep", "carrot", "julienne"]
+    }
+  },
+  "cutting-board": {
+    "label": { "es": "Tabla para picar", "en": "Cutting board", "pt": "Tábua de corte", "fr": "Planche à découper", "de": "Schneidebrett", "it": "Tagliere", "ja": "まな板", "zh": "砧板", "ko": "도마", "ar": "لوح التقطيع" },
+    "keywords": {
+      "es": ["picar", "cortar", "rebanar", "preparación", "tabla de madera", "verduras", "utensilios"],
+      "en": ["chopping board", "chop", "slice", "prep", "wooden board", "vegetables", "cookware"]
+    }
+  },
+  "measuring-cup": {
+    "label": { "es": "Taza medidora", "en": "Measuring cup", "pt": "Copo medidor", "fr": "Verre doseur", "de": "Messbecher", "it": "Caraffa graduata", "ja": "計量カップ", "zh": "量杯", "ko": "계량컵", "ar": "كوب القياس" },
+    "keywords": {
+      "es": ["jarra medidora", "medir líquidos", "mililitros", "litro", "cantidades", "receta", "ingredientes"],
+      "en": ["measuring jug", "measure liquids", "milliliters", "cups", "quantities", "recipe", "ingredients"]
+    }
+  },
+  "measuring-cup-sync": {
+    "label": { "es": "Convertir unidades", "en": "Convert units", "pt": "Converter unidades", "fr": "Convertir les unités", "de": "Einheiten umrechnen", "it": "Converti unità", "ja": "単位を換算", "zh": "换算单位", "ko": "단위 변환", "ar": "تحويل الوحدات" },
+    "keywords": {
+      "es": ["tazas a gramos", "sistema métrico", "sistema inglés", "equivalencias", "onzas", "conversión", "medidas de la receta"],
+      "en": ["cups to grams", "metric", "imperial", "equivalents", "ounces", "conversion", "recipe measurements"]
+    }
+  },
+  "measuring-spoons": {
+    "label": { "es": "Cucharas medidoras", "en": "Measuring spoons", "pt": "Colheres medidoras", "fr": "Cuillères à mesurer", "de": "Messlöffel", "it": "Cucchiai dosatori", "ja": "計量スプーン", "zh": "量勺", "ko": "계량스푼", "ar": "ملاعق القياس" },
+    "keywords": {
+      "es": ["cucharadita", "cucharada", "pizca", "medir", "especias", "receta", "cantidades"],
+      "en": ["teaspoon", "tablespoon", "pinch", "measure", "spices", "recipe", "quantities"]
+    }
+  },
+  "can-opener": {
+    "label": { "es": "Abrelatas", "en": "Can opener", "pt": "Abridor de latas", "fr": "Ouvre-boîte", "de": "Dosenöffner", "it": "Apriscatole", "ja": "缶切り", "zh": "开罐器", "ko": "캔 따개", "ar": "فتاحة العلب" },
+    "keywords": {
+      "es": ["abrir latas", "lata", "enlatados", "conservas", "atún", "despensa", "utensilio"],
+      "en": ["open cans", "tin opener", "canned food", "tin", "tuna", "pantry", "kitchen gadget"]
+    }
+  },
+  "pizza-cutter": {
+    "label": { "es": "Cortador de pizza", "en": "Pizza cutter", "pt": "Cortador de pizza", "fr": "Roulette à pizza", "de": "Pizzaschneider", "it": "Rotella tagliapizza", "ja": "ピザカッター", "zh": "披萨刀", "ko": "피자 커터", "ar": "قطاعة البيتزا" },
+    "keywords": {
+      "es": ["rebanar pizza", "rebanadas", "pizzería", "cortar masa", "ruedita", "hojaldre", "corte recto"],
+      "en": ["slice pizza", "slices", "pizzeria", "cut dough", "wheel", "pastry wheel", "rolling cutter"]
+    }
+  },
+  "pizza-peel": {
+    "label": { "es": "Pala para pizza", "en": "Pizza peel", "pt": "Pá de pizza", "fr": "Pelle à pizza", "de": "Pizzaschieber", "it": "Pala per pizza", "ja": "ピザピール", "zh": "披萨铲", "ko": "피자 삽", "ar": "مجرفة البيتزا" },
+    "keywords": {
+      "es": ["meter al horno", "sacar del horno", "horno de leña", "piedra para hornear", "pizzería", "pan artesanal", "masa"],
+      "en": ["launch pizza", "oven", "wood-fired oven", "baking stone", "pizzeria", "artisan bread", "bakery"]
+    }
+  },
+  "ice-cream-scoop": {
+    "label": { "es": "Cuchara para helado", "en": "Ice cream scoop", "pt": "Boleador de sorvete", "fr": "Cuillère à glace", "de": "Eisportionierer", "it": "Porzionatore per gelato", "ja": "アイスクリームディッシャー", "zh": "冰淇淋勺", "ko": "아이스크림 스쿱", "ar": "مغرفة الآيس كريم" },
+    "keywords": {
+      "es": ["bola de helado", "nieve", "sacabolas", "porcionar", "heladería", "postre", "servir"],
+      "en": ["disher", "gelato", "portion", "ice cream shop", "dessert", "serve", "cookie dough"]
+    }
+  },
+  "pepper-mill": {
+    "label": { "es": "Molino de pimienta", "en": "Pepper mill", "pt": "Moedor de pimenta", "fr": "Moulin à poivre", "de": "Pfeffermühle", "it": "Macinapepe", "ja": "ペッパーミル", "zh": "胡椒研磨器", "ko": "후추 그라인더", "ar": "مطحنة الفلفل" },
+    "keywords": {
+      "es": ["moler", "molinillo", "sazonar", "condimentar", "especias", "al gusto", "salero"],
+      "en": ["grind", "grinder", "season", "freshly ground", "spices", "to taste", "salt"]
+    }
+  },
+  "mortar-pestle": {
+    "label": { "es": "Molcajete", "en": "Mortar and pestle", "pt": "Pilão", "fr": "Mortier et pilon", "de": "Mörser", "it": "Mortaio", "ja": "すり鉢", "zh": "研钵", "ko": "절구", "ar": "هاون" },
+    "keywords": {
+      "es": ["mortero", "tejolote", "moler especias", "salsa", "guacamole", "machacar", "pasta de chiles"],
+      "en": ["molcajete", "grind spices", "salsa", "guacamole", "crush", "paste", "pesto"]
+    }
+  },
+  "piping-bag": {
+    "label": { "es": "Manga pastelera", "en": "Piping bag", "pt": "Saco de confeitar", "fr": "Poche à douille", "de": "Spritzbeutel", "it": "Sac à poche", "ja": "絞り袋", "zh": "裱花袋", "ko": "짤주머니", "ar": "كيس التزيين" },
+    "keywords": {
+      "es": ["decorar pasteles", "betún", "duya", "glaseado", "repostería", "cupcakes", "merengue"],
+      "en": ["decorate cakes", "frosting", "icing", "piping tip", "pastry", "cupcakes", "meringue"]
+    }
+  },
+  "citrus-squeezer": {
+    "label": { "es": "Exprimidor de limones", "en": "Citrus squeezer", "pt": "Espremedor de limão", "fr": "Presse-agrumes", "de": "Zitruspresse", "it": "Spremiagrumi", "ja": "レモン絞り", "zh": "柠檬榨汁器", "ko": "레몬 스퀴저", "ar": "عصارة الليمون" },
+    "keywords": {
+      "es": ["exprimir", "jugo de naranja", "jugo natural", "cítricos", "lima", "a mano", "limonada"],
+      "en": ["juicer", "lemons", "limes", "orange juice", "reamer", "by hand", "lemonade"]
+    }
+  },
+  "masher": {
+    "label": { "es": "Machacador de papas", "en": "Potato masher", "pt": "Amassador de batatas", "fr": "Presse-purée", "de": "Kartoffelstampfer", "it": "Schiacciapatate", "ja": "ポテトマッシャー", "zh": "土豆捣碎器", "ko": "감자 으깨기", "ar": "هراسة البطاطس" },
+    "keywords": {
+      "es": ["puré", "machacar", "aplastar", "frijoles refritos", "pasapuré", "triturar", "aguacate"],
+      "en": ["mash", "mashed potatoes", "puree", "crush", "refried beans", "smash", "ricer"]
+    }
+  },
+  "meat-mallet": {
+    "label": { "es": "Mazo para carne", "en": "Meat mallet", "pt": "Martelo de carne", "fr": "Attendrisseur à viande", "de": "Fleischklopfer", "it": "Batticarne", "ja": "ミートハンマー", "zh": "松肉锤", "ko": "고기 망치", "ar": "مطرقة اللحم" },
+    "keywords": {
+      "es": ["ablandar", "suavizar carne", "aplanar", "golpear", "milanesa", "bistec", "cortes"],
+      "en": ["tenderize", "tenderizer", "pound", "flatten", "cutlet", "schnitzel", "steak"]
+    }
+  },
+  "meat-thermometer": {
+    "label": { "es": "Termómetro para carne", "en": "Meat thermometer", "pt": "Termômetro para carne", "fr": "Thermomètre à viande", "de": "Fleischthermometer", "it": "Termometro per carne", "ja": "肉用温度計", "zh": "肉类温度计", "ko": "고기 온도계", "ar": "ميزان حرارة اللحم" },
+    "keywords": {
+      "es": ["temperatura interna", "punto de cocción", "sonda", "inocuidad", "asado", "horneado", "grados"],
+      "en": ["internal temperature", "doneness", "probe", "food safety", "roast", "instant read", "degrees"]
+    }
+  },
+  "colander": {
+    "label": { "es": "Escurridor", "en": "Colander", "pt": "Escorredor", "fr": "Passoire", "de": "Nudelsieb", "it": "Scolapasta", "ja": "ざる", "zh": "沥水篮", "ko": "소쿠리", "ar": "مصفاة" },
+    "keywords": {
+      "es": ["escurrir pasta", "coladera", "lavar verduras", "enjuagar", "fruta", "desaguar", "pasta"],
+      "en": ["drain pasta", "strainer", "wash produce", "rinse", "berries", "noodles", "pasta"]
+    }
+  },
+  "strainer": {
+    "label": { "es": "Colador", "en": "Strainer", "pt": "Coador", "fr": "Passoire fine", "de": "Feinsieb", "it": "Colino", "ja": "こし器", "zh": "滤网", "ko": "거름망", "ar": "مصفاة دقيقة" },
+    "keywords": {
+      "es": ["colar", "malla fina", "salsas", "caldo", "tamizar", "cernir", "té"],
+      "en": ["strain", "sieve", "fine mesh", "sauces", "broth", "sift", "tea"]
+    }
+  },
+  "sifter": {
+    "label": { "es": "Cernidor de harina", "en": "Flour sifter", "pt": "Peneira de farinha", "fr": "Tamis à farine", "de": "Mehlsieb", "it": "Setaccio per farina", "ja": "粉ふるい", "zh": "面粉筛", "ko": "밀가루 체", "ar": "منخل الدقيق" },
+    "keywords": {
+      "es": ["cernir", "tamizar", "azúcar glas", "quitar grumos", "repostería", "hornear", "cocoa"],
+      "en": ["sift", "sieve", "powdered sugar", "lumps", "pastry", "baking", "cocoa"]
+    }
+  },
+  "oven-mitt": {
+    "label": { "es": "Guante para horno", "en": "Oven mitt", "pt": "Luva de forno", "fr": "Gant de cuisine", "de": "Ofenhandschuh", "it": "Guanto da forno", "ja": "オーブンミトン", "zh": "隔热手套", "ko": "오븐 장갑", "ar": "قفاز الفرن" },
+    "keywords": {
+      "es": ["agarradera", "manopla", "sacar del horno", "protección contra calor", "caliente", "charola", "quemaduras"],
+      "en": ["pot holder", "mitten", "hot pan", "heat protection", "take out of the oven", "baking", "burns"]
+    }
+  },
+  "apron": {
+    "label": { "es": "Delantal", "en": "Apron", "pt": "Avental", "fr": "Tablier", "de": "Schürze", "it": "Grembiule", "ja": "エプロン", "zh": "围裙", "ko": "앞치마", "ar": "مريلة" },
+    "keywords": {
+      "es": ["mandil", "cocinar", "personal de cocina", "clase de cocina", "chef", "uniforme", "parrillero"],
+      "en": ["cooking", "kitchen staff", "cooking class", "chef", "uniform", "barbecue", "pinafore"]
+    }
+  },
+  "chef-hat": {
+    "label": { "es": "Gorro de chef", "en": "Chef's hat", "pt": "Chapéu de chef", "fr": "Toque de chef", "de": "Kochmütze", "it": "Cappello da chef", "ja": "コック帽", "zh": "厨师帽", "ko": "요리사 모자", "ar": "قبعة الطاهي" },
+    "keywords": {
+      "es": ["cocinero", "cocinar", "recetas", "gastronomía", "jefe de cocina", "app de cocina", "restaurante"],
+      "en": ["cook", "cooking", "recipes", "toque", "culinary", "cooking app", "kitchen"]
+    }
+  },
+  "chef-hat-star": {
+    "label": { "es": "Recomendación del chef", "en": "Chef's pick", "pt": "Escolha do chef", "fr": "Choix du chef", "de": "Empfehlung des Küchenchefs", "it": "Scelta dello chef", "ja": "シェフのおすすめ", "zh": "主厨推荐", "ko": "셰프 추천", "ar": "اختيار الطاهي" },
+    "keywords": {
+      "es": ["receta destacada", "recomendado", "selección", "elección editorial", "lo mejor", "sugerencia del día", "favorita"],
+      "en": ["featured recipe", "recommended", "editor's choice", "top pick", "staff pick", "best", "highlight"]
+    }
+  },
+  "person-chef": {
+    "label": { "es": "Chef", "en": "Chef", "pt": "Chef de cozinha", "fr": "Cuisinier", "de": "Koch", "it": "Cuoco", "ja": "シェフ", "zh": "厨师", "ko": "요리사", "ar": "طاهٍ" },
+    "keywords": {
+      "es": ["cocinero", "cocinera", "personal de cocina", "perfil del chef", "quien cocina", "jefe de cocina", "restaurante"],
+      "en": ["cook", "kitchen staff", "chef profile", "head cook", "culinary", "who cooks", "restaurant"]
+    }
+  },
+  "utensil-holder": {
+    "label": { "es": "Utensilios de cocina", "en": "Kitchen tools", "pt": "Utensílios de cozinha", "fr": "Ustensiles de cuisine", "de": "Küchenutensilien", "it": "Utensili da cucina", "ja": "調理器具", "zh": "厨具", "ko": "주방 도구", "ar": "أدوات المطبخ" },
+    "keywords": {
+      "es": ["herramientas", "lista de equipo", "lo que necesitas", "bote de utensilios", "accesorios de cocina", "cucharones", "categoría de tienda"],
+      "en": ["equipment", "equipment list", "what you need", "utensil crock", "utensils", "gadgets", "store category"]
+    }
+  },
+  "knife-block": {
+    "label": { "es": "Bloque de cuchillos", "en": "Knife block", "pt": "Cepo de facas", "fr": "Bloc à couteaux", "de": "Messerblock", "it": "Ceppo portacoltelli", "ja": "包丁スタンド", "zh": "刀座", "ko": "칼꽂이", "ar": "حامل السكاكين" },
+    "keywords": {
+      "es": ["juego de cuchillos", "portacuchillos", "cuchillería", "guardar", "organizar", "barra de cocina", "regalo de boda"],
+      "en": ["knife set", "knife storage", "cutlery", "kitchen storage", "organize", "countertop", "wedding registry"]
+    }
+  },
+  "whetstone": {
+    "label": { "es": "Afilar cuchillos", "en": "Sharpen knives", "pt": "Afiar facas", "fr": "Aiguiser les couteaux", "de": "Messer schärfen", "it": "Affilare i coltelli", "ja": "包丁を研ぐ", "zh": "磨刀", "ko": "칼 갈기", "ar": "شحذ السكاكين" },
+    "keywords": {
+      "es": ["piedra de afilar", "afilador", "chaira", "filo", "cuchillo sin filo", "mantenimiento", "asentar"],
+      "en": ["whetstone", "sharpener", "honing", "edge", "dull knife", "knife care", "maintenance"]
+    }
+  },
+  "pantry": {
+    "label": { "es": "Despensa", "en": "Pantry", "pt": "Despensa", "fr": "Garde-manger", "de": "Vorratskammer", "it": "Dispensa", "ja": "パントリー", "zh": "食品储藏室", "ko": "식료품 저장실", "ar": "مخزن المؤن" },
+    "keywords": {
+      "es": ["alacena", "lo que hay en casa", "inventario", "existencias", "abarrotes", "provisiones", "víveres"],
+      "en": ["cupboard", "in stock", "inventory", "groceries", "food storage", "supplies", "larder"]
+    }
+  },
+  "pantry-plus": {
+    "label": { "es": "Agregar a la despensa", "en": "Add to pantry", "pt": "Adicionar à despensa", "fr": "Ajouter au garde-manger", "de": "Zum Vorrat hinzufügen", "it": "Aggiungi alla dispensa", "ja": "パントリーに追加", "zh": "添加到储藏室", "ko": "저장실에 추가", "ar": "إضافة إلى المؤن" },
+    "keywords": {
+      "es": ["registrar compras", "lo que tengo", "abarrotes", "inventario", "alacena", "nuevo producto", "súper"],
+      "en": ["log groceries", "what I have", "stock up", "inventory", "cupboard", "new item", "shopping"]
+    }
+  },
+  "kitchen": {
+    "label": { "es": "Cocina", "en": "Kitchen", "pt": "Cozinha", "fr": "Cuisine", "de": "Küche", "it": "Cucina", "ja": "キッチン", "zh": "厨房", "ko": "주방", "ar": "مطبخ" },
+    "keywords": {
+      "es": ["habitación", "amenidades", "inmueble", "plano de la casa", "equipada", "estufa", "espacio para cocinar"],
+      "en": ["room", "amenities", "listing", "floor plan", "fully equipped", "stove", "cooking area"]
+    }
+  },
+  "kitchen-sink": {
+    "label": { "es": "Fregadero", "en": "Kitchen sink", "pt": "Pia da cozinha", "fr": "Évier", "de": "Spüle", "it": "Lavello", "ja": "キッチンシンク", "zh": "厨房水槽", "ko": "싱크대", "ar": "حوض المطبخ" },
+    "keywords": {
+      "es": ["tarja", "lavar trastes", "llave del agua", "plomería", "lavaplatos", "inmueble", "drenaje"],
+      "en": ["basin", "washing up", "faucet", "tap", "plumbing", "dishes", "fixture"]
+    }
+  },
+  "kitchen-island": {
+    "label": { "es": "Isla de cocina", "en": "Kitchen island", "pt": "Ilha de cozinha", "fr": "Îlot central", "de": "Kochinsel", "it": "Isola da cucina", "ja": "アイランドキッチン", "zh": "厨房岛台", "ko": "아일랜드 식탁", "ar": "جزيرة المطبخ" },
+    "keywords": {
+      "es": ["desayunador", "barra", "cocina integral", "cocina abierta", "amenidades", "inmueble", "bancos altos"],
+      "en": ["breakfast bar", "counter", "countertop", "open kitchen", "amenities", "listing", "stools"]
+    }
+  },
+  "food-container": {
+    "label": { "es": "Recipiente para alimentos", "en": "Food container", "pt": "Pote para alimentos", "fr": "Boîte de conservation", "de": "Frischhaltedose", "it": "Contenitore per alimenti", "ja": "保存容器", "zh": "保鲜盒", "ko": "밀폐 용기", "ar": "علبة حفظ الطعام" },
+    "keywords": {
+      "es": ["tóper", "sobras", "guardar comida", "hermético", "refrigerador", "meal prep", "comida preparada"],
+      "en": ["tupperware", "leftovers", "food storage", "airtight", "fridge", "meal prep", "lunch"]
+    }
+  },
+  "food-container-clock": {
+    "label": { "es": "Consumir antes de", "en": "Use by", "pt": "Consumir até", "fr": "À consommer avant", "de": "Verbrauchen bis", "it": "Da consumare entro", "ja": "消費期限", "zh": "食用期限", "ko": "소비기한", "ar": "يُستهلك قبل" },
+    "keywords": {
+      "es": ["caducidad", "vencimiento", "fecha de consumo", "sobras", "fecha de preparación", "meal prep", "cuánto dura"],
+      "en": ["expiration", "expiry date", "best before", "leftovers", "meal prep date", "shelf life", "how long it keeps"]
+    }
+  },
+  "food-container-plus": {
+    "label": { "es": "Guardar sobras", "en": "Add leftovers", "pt": "Adicionar sobras", "fr": "Ajouter des restes", "de": "Reste hinzufügen", "it": "Aggiungi avanzi", "ja": "作り置きを追加", "zh": "添加剩菜", "ko": "남은 음식 추가", "ar": "إضافة بقايا الطعام" },
+    "keywords": {
+      "es": ["comida preparada", "recalentado", "tóper", "meal prep", "refrigerador", "inventario", "registrar"],
+      "en": ["prepped meal", "meal prep", "batch cooking", "container", "fridge", "inventory", "log"]
+    }
+  },
+  "food-container-alert": {
+    "label": { "es": "Comida caducada", "en": "Expired food", "pt": "Alimento vencido", "fr": "Aliment périmé", "de": "Abgelaufenes Lebensmittel", "it": "Cibo scaduto", "ja": "期限切れの食品", "zh": "过期食品", "ko": "기한이 지난 음식", "ar": "طعام منتهي الصلاحية" },
+    "keywords": {
+      "es": ["echado a perder", "vencido", "en mal estado", "sobras viejas", "tirar", "desperdicio de comida", "aviso"],
+      "en": ["spoiled", "gone bad", "past date", "old leftovers", "throw out", "food waste", "warning"]
+    }
+  },
+  "lunch-box": {
+    "label": { "es": "Lonchera", "en": "Lunch box", "pt": "Lancheira", "fr": "Boîte à repas", "de": "Brotdose", "it": "Portapranzo", "ja": "弁当箱", "zh": "午餐盒", "ko": "도시락통", "ar": "علبة الغداء" },
+    "keywords": {
+      "es": ["lunch", "itacate", "comida para llevar", "escuela", "oficina", "refrigerio", "recreo"],
+      "en": ["packed lunch", "bento", "school lunch", "work lunch", "brown bag", "snack", "to go"]
+    }
+  },
+  "canning-jar": {
+    "label": { "es": "Frasco para conservas", "en": "Canning jar", "pt": "Pote de conserva", "fr": "Bocal de conserve", "de": "Einmachglas", "it": "Barattolo per conserve", "ja": "保存瓶", "zh": "密封罐", "ko": "밀폐 유리병", "ar": "مرطبان الحفظ" },
+    "keywords": {
+      "es": ["mermelada", "encurtidos", "chiles en vinagre", "envasar", "tarro", "mason jar", "almacenar"],
+      "en": ["preserves", "jam", "pickles", "mason jar", "jar", "storage", "homemade"]
+    }
+  },
+  "freezer-bag": {
+    "label": { "es": "Bolsa para congelar", "en": "Freezer bag", "pt": "Saco para congelar", "fr": "Sac de congélation", "de": "Gefrierbeutel", "it": "Sacchetto per congelatore", "ja": "フリーザーバッグ", "zh": "冷冻袋", "ko": "냉동 지퍼백", "ar": "كيس التجميد" },
+    "keywords": {
+      "es": ["bolsa hermética", "ziploc", "bolsa resellable", "congelador", "guardar comida", "porciones", "meal prep"],
+      "en": ["freeze", "zip bag", "resealable", "food storage", "portions", "meal prep", "batch cooking"]
+    }
+  },
+  "freezer-safe": {
+    "label": { "es": "Apto para congelador", "en": "Freezer safe", "pt": "Próprio para freezer", "fr": "Va au congélateur", "de": "Gefriergeeignet", "it": "Adatto al congelatore", "ja": "冷凍対応", "zh": "可冷冻", "ko": "냉동 가능", "ar": "مناسب للتجميد" },
+    "keywords": {
+      "es": ["congelar", "freezer", "resistente al frío", "etiqueta", "símbolo", "recipiente", "copo de nieve"],
+      "en": ["freeze", "cold resistant", "label", "symbol", "container", "snowflake", "storage"]
+    }
+  },
+  "dishwasher-safe": {
+    "label": { "es": "Apto para lavavajillas", "en": "Dishwasher safe", "pt": "Pode ir à lava-louças", "fr": "Va au lave-vaisselle", "de": "Spülmaschinenfest", "it": "Lavabile in lavastoviglie", "ja": "食洗機対応", "zh": "可用洗碗机清洗", "ko": "식기세척기 사용 가능", "ar": "مناسب لغسالة الأطباق" },
+    "keywords": {
+      "es": ["lavatrastes", "lavaplatos", "fácil de limpiar", "etiqueta", "símbolo", "vajilla", "cuidados"],
+      "en": ["easy to clean", "label", "symbol", "tableware", "cookware", "care instructions", "machine wash"]
+    }
+  },
+  "induction-safe": {
+    "label": { "es": "Apto para inducción", "en": "Induction compatible", "pt": "Compatível com indução", "fr": "Compatible induction", "de": "Induktionsgeeignet", "it": "Adatto all’induzione", "ja": "IH対応", "zh": "适用电磁炉", "ko": "인덕션 사용 가능", "ar": "مناسب لمواقد الحث" },
+    "keywords": {
+      "es": ["parrilla de inducción", "estufa eléctrica", "base magnética", "batería de cocina", "sartenes", "etiqueta", "símbolo"],
+      "en": ["induction cooktop", "electric stove", "magnetic base", "cookware", "pans", "label", "symbol"]
+    }
+  },
+  "food-safe": {
+    "label": { "es": "Apto para alimentos", "en": "Food safe", "pt": "Próprio para alimentos", "fr": "Contact alimentaire", "de": "Lebensmittelecht", "it": "Idoneo per alimenti", "ja": "食品用", "zh": "食品级", "ko": "식품용", "ar": "آمن للطعام" },
+    "keywords": {
+      "es": ["grado alimenticio", "contacto con alimentos", "copa y tenedor", "libre de BPA", "material seguro", "etiqueta", "recipiente"],
+      "en": ["food grade", "food contact", "glass and fork", "BPA free", "safe material", "label", "container"]
+    }
+  },
+  "plate": {
+    "label": { "es": "Plato", "en": "Plate", "pt": "Prato", "fr": "Assiette", "de": "Teller", "it": "Piatto", "ja": "お皿", "zh": "盘子", "ko": "접시", "ar": "طبق" },
+    "keywords": {
+      "es": ["comida", "platillo", "vajilla", "comer", "servir", "porción", "registro de comidas"],
+      "en": ["meal", "dish", "tableware", "dinnerware", "eat", "serve", "food log"]
+    }
+  },
+  "plate-plus": {
+    "label": { "es": "Registrar comida", "en": "Log a meal", "pt": "Registrar refeição", "fr": "Enregistrer un repas", "de": "Mahlzeit erfassen", "it": "Registra un pasto", "ja": "食事を記録", "zh": "记录饮食", "ko": "식사 기록", "ar": "تسجيل وجبة" },
+    "keywords": {
+      "es": ["diario de alimentos", "lo que comí", "agregar comida", "calorías", "nutrición", "dieta", "seguimiento"],
+      "en": ["food diary", "what I ate", "add food", "calories", "nutrition", "diet", "tracking"]
+    }
+  },
+  "plate-check": {
+    "label": { "es": "Comida registrada", "en": "Meal logged", "pt": "Refeição registrada", "fr": "Repas enregistré", "de": "Mahlzeit erfasst", "it": "Pasto registrato", "ja": "記録済みの食事", "zh": "已记录饮食", "ko": "식사 기록됨", "ar": "تم تسجيل الوجبة" },
+    "keywords": {
+      "es": ["ya comí", "comida terminada", "plan cumplido", "plato limpio", "dieta", "meta nutricional", "hecho"],
+      "en": ["ate", "finished meal", "plan kept", "clean plate", "diet", "nutrition goal", "done"]
+    }
+  },
+  "plate-clock": {
+    "label": { "es": "Hora de comer", "en": "Mealtime", "pt": "Hora da refeição", "fr": "Heure du repas", "de": "Essenszeit", "it": "Ora del pasto", "ja": "食事の時間", "zh": "用餐时间", "ko": "식사 시간", "ar": "وقت الوجبة" },
+    "keywords": {
+      "es": ["recordatorio de comida", "horario de comidas", "ayuno intermitente", "ventana de alimentación", "dieta", "alarma", "hora de la comida"],
+      "en": ["meal reminder", "meal schedule", "intermittent fasting", "eating window", "diet", "alarm", "lunch break"]
+    }
+  },
+  "bowl": {
+    "label": { "es": "Tazón", "en": "Bowl", "pt": "Tigela", "fr": "Bol", "de": "Schüssel", "it": "Ciotola", "ja": "ボウル", "zh": "碗", "ko": "그릇", "ar": "وعاء" },
+    "keywords": {
+      "es": ["plato hondo", "bowl", "cereal", "sopa", "ensalada", "vajilla", "porción"],
+      "en": ["deep plate", "cereal", "soup", "salad", "poke", "tableware", "serving"]
+    }
+  },
+  "dishes": {
+    "label": { "es": "Vajilla", "en": "Dishes", "pt": "Louça", "fr": "Vaisselle", "de": "Geschirr", "it": "Stoviglie", "ja": "食器", "zh": "餐具", "ko": "식기", "ar": "أطباق" },
+    "keywords": {
+      "es": ["trastes", "lavar trastes", "pila de platos", "platos sucios", "fregar", "lavavajillas", "loza"],
+      "en": ["washing up", "stack of plates", "dirty dishes", "tableware", "crockery", "dishwasher", "plates"]
+    }
+  },
+  "cake-stand": {
+    "label": { "es": "Base para pastel", "en": "Cake stand", "pt": "Boleira", "fr": "Présentoir à gâteau", "de": "Tortenständer", "it": "Alzatina per torte", "ja": "ケーキスタンド", "zh": "蛋糕架", "ko": "케이크 스탠드", "ar": "حامل الكعك" },
+    "keywords": {
+      "es": ["pastelería", "postres", "exhibidor", "vitrina", "panadería", "repostería", "servir"],
+      "en": ["bakery", "desserts", "display", "patisserie", "pastry", "cake plate", "serve"]
+    }
+  },
+  "cooking-pot": {
+    "label": { "es": "Olla", "en": "Cooking pot", "pt": "Panela", "fr": "Marmite", "de": "Kochtopf", "it": "Pentola", "ja": "鍋", "zh": "汤锅", "ko": "냄비", "ar": "قدر" },
+    "keywords": {
+      "es": ["cocinar", "batería de cocina", "guiso", "caldo", "sopa", "cacerola", "platillo"],
+      "en": ["stockpot", "cookware", "stew", "soup", "broth", "casserole", "dinner"]
+    }
+  },
+  "cooking-pot-clock": {
+    "label": { "es": "Tiempo de cocción", "en": "Cook time", "pt": "Tempo de cozimento", "fr": "Temps de cuisson", "de": "Garzeit", "it": "Tempo di cottura", "ja": "調理時間", "zh": "烹饪时间", "ko": "조리 시간", "ar": "مدة الطهي" },
+    "keywords": {
+      "es": ["receta", "minutos", "duración", "cuánto tarda", "temporizador", "tiempo total", "cocinar"],
+      "en": ["recipe", "minutes", "duration", "how long", "timer", "total time", "cooking"]
+    }
+  },
+  "cooking-pot-check": {
+    "label": { "es": "Platillo listo", "en": "Done cooking", "pt": "Cozimento concluído", "fr": "Cuisson terminée", "de": "Fertig gekocht", "it": "Cottura terminata", "ja": "調理完了", "zh": "烹饪完成", "ko": "조리 완료", "ar": "اكتمل الطهي" },
+    "keywords": {
+      "es": ["listo para servir", "comida lista", "paso completado", "terminado", "cocido", "ya está", "a la mesa"],
+      "en": ["ready to serve", "dish ready", "step complete", "finished", "cooked", "dinner is ready", "order up"]
+    }
+  },
+  "cooking": {
+    "label": { "es": "Cocinando", "en": "Cooking", "pt": "Cozinhando", "fr": "En cuisson", "de": "Wird gekocht", "it": "In cottura", "ja": "調理中", "zh": "烹饪中", "ko": "조리 중", "ar": "قيد الطهي" },
+    "keywords": {
+      "es": ["en preparación", "al fuego", "en proceso", "preparando", "estado del pedido", "estufa", "olla"],
+      "en": ["in progress", "on the stove", "on the heat", "preparing", "order status", "pot", "simmering"]
+    }
+  },
+  "boil": {
+    "label": { "es": "Hervir", "en": "Boil", "pt": "Ferver", "fr": "Faire bouillir", "de": "Aufkochen", "it": "Bollire", "ja": "茹でる", "zh": "煮", "ko": "끓이기", "ar": "غلي" },
+    "keywords": {
+      "es": ["hervor", "agua hirviendo", "cocer", "método de cocción", "punto de ebullición", "burbujas", "pasta"],
+      "en": ["bring to a boil", "boiling water", "rolling boil", "cooking method", "parboil", "bubbles", "pasta"]
+    }
+  },
+  "simmer": {
+    "label": { "es": "Fuego lento", "en": "Simmer", "pt": "Fogo baixo", "fr": "Mijoter", "de": "Köcheln", "it": "Fuoco lento", "ja": "弱火で煮る", "zh": "文火慢炖", "ko": "약불로 끓이기", "ar": "الطهي على نار هادئة" },
+    "keywords": {
+      "es": ["cocer despacio", "hervor suave", "tapa entreabierta", "guisar", "reducir", "paso de receta", "caldo"],
+      "en": ["low heat", "gentle boil", "lid ajar", "stew", "reduce", "braise", "recipe step"]
+    }
+  },
+  "saucepan": {
+    "label": { "es": "Cacerola", "en": "Saucepan", "pt": "Caçarola", "fr": "Casserole", "de": "Stieltopf", "it": "Casseruola", "ja": "片手鍋", "zh": "单柄锅", "ko": "편수 냄비", "ar": "قدر صغير" },
+    "keywords": {
+      "es": ["salsas", "olla chica", "con mango", "calentar leche", "lechera", "porciones pequeñas", "batería de cocina"],
+      "en": ["sauces", "small pot", "long handle", "heat milk", "sauce pot", "small batch", "cookware"]
+    }
+  },
+  "frying-pan": {
+    "label": { "es": "Sartén", "en": "Frying pan", "pt": "Frigideira", "fr": "Poêle", "de": "Bratpfanne", "it": "Padella", "ja": "フライパン", "zh": "煎锅", "ko": "프라이팬", "ar": "مقلاة" },
+    "keywords": {
+      "es": ["freír", "antiadherente", "hierro fundido", "huevos estrellados", "estufa", "batería de cocina", "cocinar"],
+      "en": ["skillet", "fry", "nonstick", "cast iron", "fried eggs", "stove", "cookware"]
+    }
+  },
+  "fry": {
+    "label": { "es": "Freír", "en": "Fry", "pt": "Fritar", "fr": "Poêler", "de": "Braten", "it": "Cuocere in padella", "ja": "焼く", "zh": "煎", "ko": "부치기", "ar": "قلي" },
+    "keywords": {
+      "es": ["sartén", "frito", "dorar", "aceite", "huevo frito", "método de cocción", "estufa"],
+      "en": ["pan fried", "frying pan", "brown", "sear", "oil", "fried egg", "cooking method"]
+    }
+  },
+  "saute": {
+    "label": { "es": "Saltear", "en": "Sauté", "pt": "Saltear", "fr": "Faire sauter", "de": "Sautieren", "it": "Saltare in padella", "ja": "炒める", "zh": "炒", "ko": "볶기", "ar": "تشويح" },
+    "keywords": {
+      "es": ["sofreír", "stir fry", "wok", "sartén", "mover la sartén", "dorar", "verduras"],
+      "en": ["stir-fry", "toss", "pan", "wok", "brown", "quick fry", "vegetables"]
+    }
+  },
+  "flambe": {
+    "label": { "es": "Flamear", "en": "Flambé", "pt": "Flambar", "fr": "Flamber", "de": "Flambieren", "it": "Flambare", "ja": "フランベ", "zh": "火焰烹调", "ko": "플랑베", "ar": "فلامبيه" },
+    "keywords": {
+      "es": ["flambeado", "encender alcohol", "llamarada", "fuego", "coñac", "crepas", "postre"],
+      "en": ["ignite", "alcohol", "flame", "brandy", "crepes", "dessert", "tableside"]
+    }
+  },
+  "deep-fry": {
+    "label": { "es": "Freír en aceite", "en": "Deep fry", "pt": "Fritar por imersão", "fr": "Frire", "de": "Frittieren", "it": "Friggere", "ja": "揚げる", "zh": "油炸", "ko": "튀기기", "ar": "قلي عميق" },
+    "keywords": {
+      "es": ["freidora", "fritura", "aceite abundante", "empanizado", "capeado", "papas fritas", "crujiente"],
+      "en": ["deep fryer", "fried", "hot oil", "battered", "french fries", "crispy", "tempura"]
+    }
+  },
+  "wok": {
+    "label": { "es": "Wok", "en": "Wok", "pt": "Wok", "fr": "Wok", "de": "Wok", "it": "Wok", "ja": "中華鍋", "zh": "炒锅", "ko": "웍", "ar": "مقلاة ووك" },
+    "keywords": {
+      "es": ["stir fry", "saltear", "comida asiática", "comida china", "sartén honda", "fuego alto", "arroz frito"],
+      "en": ["stir-fry", "sauté", "asian cooking", "chinese food", "high heat", "fried rice", "cookware"]
+    }
+  },
+  "pot-lid": {
+    "label": { "es": "Tapa de olla", "en": "Pot lid", "pt": "Tampa de panela", "fr": "Couvercle", "de": "Topfdeckel", "it": "Coperchio", "ja": "鍋ぶた", "zh": "锅盖", "ko": "냄비 뚜껑", "ar": "غطاء القدر" },
+    "keywords": {
+      "es": ["tapar", "cubrir", "cocinar tapado", "vapor", "conservar el calor", "batería de cocina", "cacerola"],
+      "en": ["cover", "covered", "simmer covered", "steam", "keep warm", "cookware", "saucepan"]
+    }
+  },
+  "griddle": {
+    "label": { "es": "Comal", "en": "Griddle", "pt": "Chapa", "fr": "Plancha", "de": "Bratplatte", "it": "Piastra", "ja": "鉄板", "zh": "铁板", "ko": "철판", "ar": "صاج" },
+    "keywords": {
+      "es": ["plancha", "tortillas", "quesadillas", "hot cakes", "tostar", "asar chiles", "barro"],
+      "en": ["comal", "flat top", "tortillas", "pancakes", "toast", "hot plate", "skillet"]
+    }
+  },
+  "pressure-cooker": {
+    "label": { "es": "Olla exprés", "en": "Pressure cooker", "pt": "Panela de pressão", "fr": "Cocotte-minute", "de": "Schnellkochtopf", "it": "Pentola a pressione", "ja": "圧力鍋", "zh": "压力锅", "ko": "압력솥", "ar": "قدر الضغط" },
+    "keywords": {
+      "es": ["olla de presión", "cocción rápida", "frijoles", "guisos", "válvula", "vapor", "ahorrar tiempo"],
+      "en": ["fast cooking", "braise", "beans", "stews", "valve", "steam", "instant pot"]
+    }
+  },
+  "steam": {
+    "label": { "es": "Cocinar al vapor", "en": "Steam", "pt": "Cozinhar no vapor", "fr": "Cuisson vapeur", "de": "Dämpfen", "it": "Cottura al vapore", "ja": "蒸す", "zh": "蒸", "ko": "찌기", "ar": "الطهي بالبخار" },
+    "keywords": {
+      "es": ["vaporera", "tamales", "verduras al vapor", "dim sum", "método de cocción", "vaporear", "saludable"],
+      "en": ["steamer", "dumplings", "steamed vegetables", "dim sum", "bamboo steamer", "cooking method", "healthy"]
+    }
+  },
+  "baking-sheet": {
+    "label": { "es": "Charola para hornear", "en": "Baking sheet", "pt": "Assadeira", "fr": "Plaque de cuisson", "de": "Backblech", "it": "Placca da forno", "ja": "天板", "zh": "烤盘", "ko": "베이킹 트레이", "ar": "صينية الخبز" },
+    "keywords": {
+      "es": ["bandeja", "galletas", "horno", "papel encerado", "verduras rostizadas", "repostería", "lámina"],
+      "en": ["sheet pan", "cookie sheet", "oven tray", "cookies", "parchment", "roasted vegetables", "bakeware"]
+    }
+  },
+  "baking-dish": {
+    "label": { "es": "Refractario", "en": "Baking dish", "pt": "Travessa refratária", "fr": "Plat à gratin", "de": "Auflaufform", "it": "Pirofila", "ja": "グラタン皿", "zh": "焗烤盘", "ko": "오븐 용기", "ar": "طبق الفرن" },
+    "keywords": {
+      "es": ["lasaña", "gratinado", "pyrex", "horno", "cacerola al horno", "pastel de carne", "del horno a la mesa"],
+      "en": ["casserole", "lasagna", "gratin", "pyrex", "oven", "oven to table", "bakeware"]
+    }
+  },
+  "roasting-pan": {
+    "label": { "es": "Charola para rostizar", "en": "Roasting pan", "pt": "Assadeira para assados", "fr": "Plat à rôtir", "de": "Bräter", "it": "Rostiera", "ja": "ロースティングパン", "zh": "烤肉盘", "ko": "로스팅 팬", "ar": "صينية التحمير" },
+    "keywords": {
+      "es": ["pavo", "pierna al horno", "pollo al horno", "asado", "cena de Navidad", "Acción de Gracias", "horno"],
+      "en": ["turkey", "roast", "roast chicken", "thanksgiving", "christmas dinner", "holiday", "oven"]
+    }
+  },
+  "loaf-pan": {
+    "label": { "es": "Molde para pan", "en": "Loaf pan", "pt": "Forma de pão", "fr": "Moule à cake", "de": "Kastenform", "it": "Stampo da plumcake", "ja": "パウンド型", "zh": "吐司模具", "ko": "식빵 틀", "ar": "قالب الخبز" },
+    "keywords": {
+      "es": ["panqué", "pan de caja", "pan de plátano", "budín", "molde rectangular", "hornear", "repostería"],
+      "en": ["pound cake", "bread pan", "banana bread", "meatloaf", "sandwich bread", "baking", "bakeware"]
+    }
+  },
+  "bake": {
+    "label": { "es": "Hornear", "en": "Bake", "pt": "Assar", "fr": "Cuire au four", "de": "Backen", "it": "Cuocere in forno", "ja": "オーブンで焼く", "zh": "烘烤", "ko": "오븐에 굽기", "ar": "الطهي في الفرن" },
+    "keywords": {
+      "es": ["horno", "al horno", "temperatura del horno", "repostería", "pan", "gratinar", "método de cocción"],
+      "en": ["oven", "oven baked", "oven temperature", "baking", "bread", "roast", "cooking method"]
+    }
+  },
+  "muffin-tin": {
+    "label": { "es": "Molde para muffins", "en": "Muffin tin", "pt": "Forma de muffin", "fr": "Moule à muffins", "de": "Muffinform", "it": "Stampo per muffin", "ja": "マフィン型", "zh": "玛芬烤盘", "ko": "머핀 틀", "ar": "صينية المافن" },
+    "keywords": {
+      "es": ["cupcakes", "panquecitos", "mantecadas", "capacillos", "magdalenas", "hornear", "repostería"],
+      "en": ["cupcakes", "cupcake pan", "cupcake liners", "mini quiches", "egg bites", "baking", "bakeware"]
+    }
+  },
+  "pie-dish": {
+    "label": { "es": "Molde para pay", "en": "Pie dish", "pt": "Forma de torta", "fr": "Moule à tarte", "de": "Tarteform", "it": "Tortiera", "ja": "パイ皿", "zh": "派盘", "ko": "파이 접시", "ar": "صينية الفطيرة" },
+    "keywords": {
+      "es": ["tarta", "pay de manzana", "quiche", "costra", "empanada", "hornear", "repostería"],
+      "en": ["tart", "apple pie", "quiche", "crust", "pie plate", "baking", "bakeware"]
+    }
+  },
+  "barbecue": {
+    "label": { "es": "Asador", "en": "Barbecue", "pt": "Churrasqueira", "fr": "Barbecue", "de": "Kugelgrill", "it": "Barbecue", "ja": "バーベキューグリル", "zh": "烧烤炉", "ko": "바비큐 그릴", "ar": "شواية" },
+    "keywords": {
+      "es": ["carne asada", "parrilla", "bbq", "parrillada", "carbón", "jardín", "amenidades"],
+      "en": ["bbq", "kettle grill", "cookout", "charcoal", "backyard", "grilling", "amenities"]
+    }
+  },
+  "grill": {
+    "label": { "es": "A la parrilla", "en": "Grill", "pt": "Grelhar", "fr": "Griller", "de": "Grillen", "it": "Grigliare", "ja": "網焼き", "zh": "炙烤", "ko": "그릴 구이", "ar": "الشوي" },
+    "keywords": {
+      "es": ["asar", "asado", "carne asada", "marcas de parrilla", "a las brasas", "braseado", "método de cocción"],
+      "en": ["grilled", "char", "chargrilled", "barbecue", "broil", "flame-cooked", "cooking method"]
+    }
+  },
+  "smoker-grill": {
+    "label": { "es": "Ahumador", "en": "Smoker", "pt": "Defumador", "fr": "Fumoir", "de": "Smoker", "it": "Affumicatore", "ja": "スモーカー", "zh": "烟熏炉", "ko": "훈연기", "ar": "مدخن اللحوم" },
+    "keywords": {
+      "es": ["carne ahumada", "bbq", "cocción lenta", "brisket", "costillas", "leña", "barbacoa texana"],
+      "en": ["smoked meat", "bbq", "low and slow", "brisket", "ribs", "pit", "wood chips"]
+    }
+  },
+  "rotisserie": {
+    "label": { "es": "Asador giratorio", "en": "Rotisserie", "pt": "Espeto giratório", "fr": "Rôtissoire", "de": "Drehspieß", "it": "Girarrosto", "ja": "ロティサリー", "zh": "旋转烤架", "ko": "로티세리", "ar": "شواية دوارة" },
+    "keywords": {
+      "es": ["pollo rostizado", "rosticería", "rostizador", "trompo", "al pastor", "espetón", "pollos asados"],
+      "en": ["spit roast", "rotating spit", "roast chicken", "chicken", "shawarma", "gyro", "turn"]
+    }
+  },
+  "pizza-oven": {
+    "label": { "es": "Horno de leña", "en": "Wood-fired oven", "pt": "Forno a lenha", "fr": "Four à bois", "de": "Holzofen", "it": "Forno a legna", "ja": "石窯", "zh": "柴火烤炉", "ko": "화덕", "ar": "فرن الحطب" },
+    "keywords": {
+      "es": ["pizza", "pizzería", "horno de piedra", "napolitana", "pan artesanal", "brasas", "horno de pizza"],
+      "en": ["pizza", "pizzeria", "stone oven", "brick oven", "neapolitan", "artisan bread", "embers"]
+    }
+  },
+  "chop": {
+    "label": { "es": "Picar", "en": "Chop", "pt": "Picar", "fr": "Hacher", "de": "Hacken", "it": "Tritare", "ja": "刻む", "zh": "切碎", "ko": "썰기", "ar": "تقطيع" },
+    "keywords": {
+      "es": ["cortar", "en cubos", "finamente", "trocear", "rebanar", "cebolla", "paso de receta"],
+      "en": ["cut", "dice", "mince", "slice", "onion", "prep", "recipe step"]
+    }
+  },
+  "mixing-bowl": {
+    "label": { "es": "Mezclar", "en": "Mix", "pt": "Misturar", "fr": "Mélanger", "de": "Vermengen", "it": "Mescolare", "ja": "混ぜ合わせる", "zh": "混合", "ko": "섞기", "ar": "خلط" },
+    "keywords": {
+      "es": ["tazón", "combinar ingredientes", "incorporar", "batir", "masa", "bowl para mezclar", "paso de receta"],
+      "en": ["mixing bowl", "combine", "blend", "whisk together", "batter", "dough", "recipe step"]
+    }
+  },
+  "seasoning": {
+    "label": { "es": "Sazonar", "en": "Seasoning", "pt": "Temperar", "fr": "Assaisonner", "de": "Würzen", "it": "Condire", "ja": "味付け", "zh": "调味", "ko": "간 맞추기", "ar": "تتبيل" },
+    "keywords": {
+      "es": ["sal y pimienta", "al gusto", "salpimentar", "condimentar", "especias", "aderezar", "salero"],
+      "en": ["salt and pepper", "to taste", "spices", "flavor", "sprinkle", "salt shaker", "condiments"]
+    }
+  },
+  "ferment": {
+    "label": { "es": "Fermentar", "en": "Ferment", "pt": "Fermentar", "fr": "Fermenter", "de": "Fermentieren", "it": "Fermentare", "ja": "発酵", "zh": "发酵", "ko": "발효", "ar": "تخمير" },
+    "keywords": {
+      "es": ["encurtir", "kimchi", "masa madre", "conservas", "tepache", "kombucha", "yogur"],
+      "en": ["pickle", "kimchi", "sourdough", "preserves", "kombucha", "sauerkraut", "yogurt"]
+    }
+  },
+  "pour": {
+    "label": { "es": "Verter", "en": "Pour", "pt": "Despejar", "fr": "Verser", "de": "Gießen", "it": "Versare", "ja": "注ぐ", "zh": "倒入", "ko": "붓기", "ar": "سكب" },
+    "keywords": {
+      "es": ["vaciar", "echar", "agregar líquido", "añadir", "chorrito", "jarra", "paso de receta"],
+      "en": ["add liquid", "empty", "drizzle", "splash", "jug", "fill", "recipe step"]
+    }
+  },
+  "rinse": {
+    "label": { "es": "Enjuagar", "en": "Rinse", "pt": "Enxaguar", "fr": "Rincer", "de": "Abspülen", "it": "Sciacquare", "ja": "水洗い", "zh": "冲洗", "ko": "헹구기", "ar": "شطف" },
+    "keywords": {
+      "es": ["lavar verduras", "lavar fruta", "chorro de agua", "escurrir", "desinfectar", "limpiar", "paso de receta"],
+      "en": ["wash produce", "wash fruit", "running water", "drain", "clean", "soak", "recipe step"]
+    }
+  },
+  "thaw": {
+    "label": { "es": "Descongelar", "en": "Thaw", "pt": "Descongelar", "fr": "Décongeler", "de": "Auftauen", "it": "Scongelare", "ja": "解凍", "zh": "解冻", "ko": "해동", "ar": "إذابة التجميد" },
+    "keywords": {
+      "es": ["antes de cocinar", "carne congelada", "refrigerador", "microondas", "temperatura ambiente", "derretir hielo", "paso de receta"],
+      "en": ["defrost", "before cooking", "frozen meat", "fridge", "microwave", "room temperature", "recipe step"]
+    }
+  },
+  "heat-level": {
+    "label": { "es": "Nivel de fuego", "en": "Heat level", "pt": "Nível do fogo", "fr": "Intensité du feu", "de": "Hitzestufe", "it": "Livello di fiamma", "ja": "火加減", "zh": "火候", "ko": "불 세기", "ar": "شدة النار" },
+    "keywords": {
+      "es": ["fuego bajo", "fuego medio", "fuego alto", "intensidad", "flama", "estufa", "temperatura"],
+      "en": ["low heat", "medium heat", "high heat", "intensity", "flame", "burner", "stove"]
+    }
+  },
+  "doneness": {
+    "label": { "es": "Término de la carne", "en": "Doneness", "pt": "Ponto da carne", "fr": "Cuisson de la viande", "de": "Garstufe", "it": "Cottura della carne", "ja": "焼き加減", "zh": "熟度", "ko": "굽기 정도", "ar": "درجة نضج اللحم" },
+    "keywords": {
+      "es": ["término medio", "tres cuartos", "bien cocido", "rojo", "punto de cocción", "jugoso", "bistec"],
+      "en": ["rare", "medium rare", "medium", "well done", "cooking point", "juicy", "steak"]
+    }
+  },
+  "recipe": {
+    "label": { "es": "Receta", "en": "Recipe", "pt": "Receita", "fr": "Recette", "de": "Rezept", "it": "Ricetta", "ja": "レシピ", "zh": "食谱", "ko": "레시피", "ar": "وصفة" },
+    "keywords": {
+      "es": ["instrucciones", "modo de preparación", "paso a paso", "cocinar", "platillo", "ficha", "ingredientes"],
+      "en": ["recipe card", "instructions", "method", "step by step", "how to cook", "dish", "ingredients"]
+    }
+  },
+  "recipe-plus": {
+    "label": { "es": "Agregar receta", "en": "Add recipe", "pt": "Adicionar receita", "fr": "Ajouter une recette", "de": "Rezept hinzufügen", "it": "Aggiungi ricetta", "ja": "レシピを追加", "zh": "添加食谱", "ko": "레시피 추가", "ar": "إضافة وصفة" },
+    "keywords": {
+      "es": ["crear", "importar", "escribir", "subir", "nuevo platillo", "recetario", "compartir"],
+      "en": ["create", "import", "write up", "upload", "new dish", "cookbook", "share"]
+    }
+  },
+  "recipe-heart": {
+    "label": { "es": "Receta favorita", "en": "Favorite recipe", "pt": "Receita favorita", "fr": "Recette favorite", "de": "Lieblingsrezept", "it": "Ricetta preferita", "ja": "お気に入りのレシピ", "zh": "收藏的食谱", "ko": "즐겨찾는 레시피", "ar": "وصفة مفضلة" },
+    "keywords": {
+      "es": ["guardada", "me gusta", "receta de la abuela", "de familia", "consentida", "marcar", "colección"],
+      "en": ["saved", "like", "family recipe", "grandma's recipe", "loved", "bookmark", "collection"]
+    }
+  },
+  "recipe-search": {
+    "label": { "es": "Buscar recetas", "en": "Find recipes", "pt": "Buscar receitas", "fr": "Rechercher des recettes", "de": "Rezepte suchen", "it": "Cerca ricette", "ja": "レシピを検索", "zh": "搜索食谱", "ko": "레시피 검색", "ar": "البحث عن وصفات" },
+    "keywords": {
+      "es": ["por ingrediente", "qué cocinar", "qué hay de comer", "ideas", "explorar", "buscador", "inspiración"],
+      "en": ["by ingredient", "what to cook", "dinner ideas", "ideas", "browse", "search", "inspiration"]
+    }
+  },
+  "recipe-check": {
+    "label": { "es": "Receta preparada", "en": "Recipe made", "pt": "Receita feita", "fr": "Recette réalisée", "de": "Rezept gekocht", "it": "Ricetta preparata", "ja": "作ったレシピ", "zh": "已做过的食谱", "ko": "만든 레시피", "ar": "وصفة تم إعدادها" },
+    "keywords": {
+      "es": ["ya la hice", "cocinada", "probada", "paso completado", "terminada", "palomita", "hecho"],
+      "en": ["cooked it", "made it", "tried", "step done", "completed", "checked off", "done"]
+    }
+  },
+  "cookbook": {
+    "label": { "es": "Recetario", "en": "Cookbook", "pt": "Livro de receitas", "fr": "Livre de cuisine", "de": "Kochbuch", "it": "Libro di cucina", "ja": "料理本", "zh": "烹饪书", "ko": "요리책", "ar": "كتاب الطبخ" },
+    "keywords": {
+      "es": ["libro de cocina", "colección de recetas", "biblioteca de recetas", "cocina casera", "chef", "manual", "leer"],
+      "en": ["recipe book", "recipe collection", "library", "home cooking", "chef", "guide", "read"]
+    }
+  },
+  "recipe-box": {
+    "label": { "es": "Caja de recetas", "en": "Recipe box", "pt": "Caixa de receitas", "fr": "Boîte à recettes", "de": "Rezeptbox", "it": "Scatola delle ricette", "ja": "レシピボックス", "zh": "食谱盒", "ko": "레시피 상자", "ar": "صندوق الوصفات" },
+    "keywords": {
+      "es": ["recetas guardadas", "colección", "fichas", "tarjetas", "biblioteca", "archivo", "organizar"],
+      "en": ["saved recipes", "collection", "index cards", "cards", "library", "file", "organize"]
+    }
+  },
+  "recipe-stand": {
+    "label": { "es": "Modo cocina", "en": "Cook mode", "pt": "Modo cozinha", "fr": "Mode cuisine", "de": "Kochmodus", "it": "Modalità cucina", "ja": "調理モード", "zh": "烹饪模式", "ko": "요리 모드", "ar": "وضع الطهي" },
+    "keywords": {
+      "es": ["atril", "receta abierta", "pantalla encendida", "mientras cocinas", "paso a paso", "tableta", "manos libres"],
+      "en": ["recipe stand", "recipe open", "screen awake", "while cooking", "step by step", "tablet", "hands free"]
+    }
+  },
+  "ingredients": {
+    "label": { "es": "Ingredientes", "en": "Ingredients", "pt": "Ingredientes", "fr": "Ingrédients", "de": "Zutaten", "it": "Ingredienti", "ja": "材料", "zh": "食材", "ko": "재료", "ar": "المكونات" },
+    "keywords": {
+      "es": ["lista del súper", "lo que necesitas", "receta", "cantidades", "despensa", "compras", "insumos"],
+      "en": ["shopping list", "what you need", "recipe", "quantities", "pantry", "groceries", "components"]
+    }
+  },
+  "servings": {
+    "label": { "es": "Porciones", "en": "Servings", "pt": "Porções", "fr": "Portions", "de": "Portionen", "it": "Porzioni", "ja": "人数分", "zh": "份数", "ko": "인분", "ar": "عدد الحصص" },
+    "keywords": {
+      "es": ["raciones", "para cuántos", "rinde", "comensales", "personas", "escalar receta", "ajustar cantidades"],
+      "en": ["portions", "how many", "yield", "serves", "people", "scale recipe", "adjust quantities"]
+    }
+  },
+  "knife-clock": {
+    "label": { "es": "Tiempo de preparación", "en": "Prep time", "pt": "Tempo de preparo", "fr": "Temps de préparation", "de": "Vorbereitungszeit", "it": "Tempo di preparazione", "ja": "下準備の時間", "zh": "准备时间", "ko": "준비 시간", "ar": "مدة التحضير" },
+    "keywords": {
+      "es": ["receta", "minutos", "picar", "preparar", "duración", "cuánto tarda", "antes de cocinar"],
+      "en": ["recipe", "minutes", "chopping", "preparation", "duration", "how long", "mise en place"]
+    }
+  },
+  "calendar-utensils": {
+    "label": { "es": "Plan de comidas", "en": "Meal plan", "pt": "Plano de refeições", "fr": "Planning des repas", "de": "Essensplan", "it": "Piano dei pasti", "ja": "献立", "zh": "膳食计划", "ko": "식단 계획", "ar": "خطة الوجبات" },
+    "keywords": {
+      "es": ["menú semanal", "planificador", "comidas de la semana", "qué comer", "organizar", "dieta", "calendario"],
+      "en": ["weekly menu", "meal planner", "meals for the week", "what to eat", "organize", "diet", "calendar"]
+    }
+  },
+  "meal-breakfast": {
+    "label": { "es": "Desayuno", "en": "Breakfast", "pt": "Café da manhã", "fr": "Petit-déjeuner", "de": "Frühstück", "it": "Colazione", "ja": "朝食", "zh": "早餐", "ko": "아침 식사", "ar": "الإفطار" },
+    "keywords": {
+      "es": ["mañana", "primera comida", "diario de alimentos", "planificador", "café", "huevos", "cereal"],
+      "en": ["morning", "first meal", "food log", "meal planner", "coffee", "eggs", "brunch"]
+    }
+  },
+  "meal-lunch": {
+    "label": { "es": "Almuerzo", "en": "Lunch", "pt": "Almoço", "fr": "Déjeuner", "de": "Mittagessen", "it": "Pranzo", "ja": "昼食", "zh": "午餐", "ko": "점심 식사", "ar": "الغداء" },
+    "keywords": {
+      "es": ["comida", "hora de la comida", "mediodía", "comida corrida", "lonche", "diario de alimentos", "planificador"],
+      "en": ["midday meal", "noon", "lunch break", "afternoon", "sandwich", "food log", "meal planner"]
+    }
+  },
+  "meal-dinner": {
+    "label": { "es": "Cena", "en": "Dinner", "pt": "Jantar", "fr": "Dîner", "de": "Abendessen", "it": "Cena", "ja": "夕食", "zh": "晚餐", "ko": "저녁 식사", "ar": "العشاء" },
+    "keywords": {
+      "es": ["noche", "última comida", "comida de la noche", "merienda", "velada", "diario de alimentos", "planificador"],
+      "en": ["evening", "supper", "last meal", "night", "family meal", "food log", "meal planner"]
+    }
+  }
+}

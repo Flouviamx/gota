@@ -1,0 +1,492 @@
+{
+  "menu-card": {
+    "label": { "es": "Menú del restaurante", "en": "Restaurant menu", "pt": "Cardápio", "fr": "Carte du restaurant", "de": "Speisekarte", "it": "Menù del ristorante", "ja": "料理メニュー", "zh": "餐厅菜单", "ko": "메뉴판", "ar": "قائمة الطعام" },
+    "keywords": {
+      "es": ["carta", "platillos", "lista de precios", "ordenar", "pedir comida", "comida", "app de comida"],
+      "en": ["dishes", "price list", "bill of fare", "carte", "order food", "dining", "food app"]
+    }
+  },
+  "menu-card-star": {
+    "label": { "es": "Recomendación del chef", "en": "Chef’s recommendation", "pt": "Sugestão do chef", "fr": "Suggestion du chef", "de": "Empfehlung des Küchenchefs", "it": "Consigliato dallo chef", "ja": "シェフのおすすめ", "zh": "主厨推荐", "ko": "셰프 추천", "ar": "توصية الشيف" },
+    "keywords": {
+      "es": ["especialidad de la casa", "platillo destacado", "lo más pedido", "favorito", "sugerencia", "recomendado", "platillo estrella"],
+      "en": ["house special", "featured dish", "signature dish", "best seller", "popular", "must try", "specialty"]
+    }
+  },
+  "menu-card-edit": {
+    "label": { "es": "Editar menú", "en": "Edit menu", "pt": "Editar cardápio", "fr": "Modifier le menu", "de": "Speisekarte bearbeiten", "it": "Modifica menù", "ja": "メニューを編集", "zh": "编辑菜单", "ko": "메뉴 편집", "ar": "تعديل قائمة الطعام" },
+    "keywords": {
+      "es": ["cambiar precios", "agregar platillos", "disponibilidad", "administrar la carta", "panel del restaurante", "modificar", "catálogo"],
+      "en": ["update prices", "add dishes", "item availability", "manage items", "restaurant dashboard", "modify", "catalog"]
+    }
+  },
+  "menu-board": {
+    "label": { "es": "Pizarrón de menú", "en": "Menu board", "pt": "Quadro de cardápio", "fr": "Menu à l’ardoise", "de": "Menütafel", "it": "Lavagna del menù", "ja": "メニューボード", "zh": "菜单板", "ko": "메뉴 보드", "ar": "لوحة قائمة الطعام" },
+    "keywords": {
+      "es": ["menú del día", "especiales del día", "pizarra", "cafetería", "comida corrida", "mostrador", "menú digital"],
+      "en": ["chalkboard", "daily specials", "today's menu", "café", "counter service", "digital signage", "fast food"]
+    }
+  },
+  "qr-menu": {
+    "label": { "es": "Menú QR", "en": "QR menu", "pt": "Cardápio por QR", "fr": "Menu QR", "de": "QR-Speisekarte", "it": "Menù QR", "ja": "QRメニュー", "zh": "扫码点餐", "ko": "QR 메뉴", "ar": "قائمة طعام برمز QR" },
+    "keywords": {
+      "es": ["escanear", "menú digital", "carta digital", "ordenar desde la mesa", "pagar en la mesa", "sin contacto", "celular"],
+      "en": ["scan", "digital menu", "order from the table", "pay at the table", "contactless", "mobile ordering", "table tent"]
+    }
+  },
+  "reservation": {
+    "label": { "es": "Reservación", "en": "Reservation", "pt": "Reserva", "fr": "Réservation", "de": "Reservierung", "it": "Prenotazione", "ja": "予約", "zh": "预订", "ko": "테이블 예약", "ar": "حجز" },
+    "keywords": {
+      "es": ["reservar mesa", "apartar lugar", "agenda", "cena", "restaurante", "hostess", "fecha y hora"],
+      "en": ["booking", "book a table", "reserve", "dinner", "restaurant", "host stand", "date and time"]
+    }
+  },
+  "reservation-check": {
+    "label": { "es": "Reservación confirmada", "en": "Confirmed reservation", "pt": "Reserva confirmada", "fr": "Réservation confirmée", "de": "Reservierung bestätigt", "it": "Prenotazione confermata", "ja": "予約確定", "zh": "预订已确认", "ko": "예약 확정", "ar": "حجز مؤكد" },
+    "keywords": {
+      "es": ["confirmado", "cliente llegó", "sentado", "en mesa", "registro de llegada", "check-in", "asistió"],
+      "en": ["confirmed", "guest arrived", "seated", "checked in", "arrival", "showed up", "booking confirmed"]
+    }
+  },
+  "reservation-clock": {
+    "label": { "es": "Próxima reservación", "en": "Upcoming reservation", "pt": "Próxima reserva", "fr": "Réservation à venir", "de": "Anstehende Reservierung", "it": "Prenotazione in arrivo", "ja": "今後の予約", "zh": "即将到来的预订", "ko": "다가오는 예약", "ar": "حجز قادم" },
+    "keywords": {
+      "es": ["hora de llegada", "pendiente", "por llegar", "retraso", "llega tarde", "horario", "recordatorio"],
+      "en": ["arrival time", "pending", "expected guests", "running late", "time slot", "reminder", "schedule"]
+    }
+  },
+  "reservation-plus": {
+    "label": { "es": "Nueva reservación", "en": "New reservation", "pt": "Nova reserva", "fr": "Nouvelle réservation", "de": "Neue Reservierung", "it": "Nuova prenotazione", "ja": "新規予約", "zh": "新建预订", "ko": "새 예약", "ar": "حجز جديد" },
+    "keywords": {
+      "es": ["reservar", "apartar mesa", "agendar", "agregar", "crear", "nuevo cliente", "anotar"],
+      "en": ["book", "book a table", "add booking", "schedule", "create", "online booking", "add guest"]
+    }
+  },
+  "walk-in": {
+    "label": { "es": "Cliente sin reservación", "en": "Walk-in", "pt": "Cliente sem reserva", "fr": "Client sans réservation", "de": "Gast ohne Reservierung", "it": "Cliente senza prenotazione", "ja": "予約なしの来店", "zh": "无预订到店", "ko": "예약 없는 손님", "ar": "زبون بدون حجز" },
+    "keywords": {
+      "es": ["sin cita", "llegar directo", "lista de espera", "entrada libre", "cliente de paso", "mesa al llegar", "bienvenidos"],
+      "en": ["no reservation", "drop-in", "walk-ins welcome", "waitlist", "unbooked guest", "first come, first served", "arrival"]
+    }
+  },
+  "seating-two": {
+    "label": { "es": "Mesa para dos", "en": "Table for two", "pt": "Mesa para dois", "fr": "Table pour deux", "de": "Tisch für zwei", "it": "Tavolo per due", "ja": "2名席", "zh": "双人桌", "ko": "2인석", "ar": "طاولة لشخصين" },
+    "keywords": {
+      "es": ["pareja", "cita", "dos comensales", "plano del salón", "punto de venta", "mesa chica", "cena romántica"],
+      "en": ["two-top", "couple", "date night", "party of two", "floor plan", "POS", "small table"]
+    }
+  },
+  "seating-four": {
+    "label": { "es": "Mesa para cuatro", "en": "Table for four", "pt": "Mesa para quatro", "fr": "Table pour quatre", "de": "Tisch für vier", "it": "Tavolo per quattro", "ja": "4名席", "zh": "四人桌", "ko": "4인석", "ar": "طاولة لأربعة أشخاص" },
+    "keywords": {
+      "es": ["cuatro comensales", "familia", "grupo", "plano del salón", "punto de venta", "mesa estándar", "salón"],
+      "en": ["four-top", "party of four", "family", "group", "floor plan", "POS", "standard table"]
+    }
+  },
+  "seating-four-check": {
+    "label": { "es": "Mesa disponible", "en": "Table available", "pt": "Mesa disponível", "fr": "Table disponible", "de": "Tisch frei", "it": "Tavolo disponibile", "ja": "空席", "zh": "空闲桌位", "ko": "빈 테이블", "ar": "طاولة متاحة" },
+    "keywords": {
+      "es": ["libre", "lista", "mesa limpia", "lista para sentar", "desocupada", "pasar a la mesa", "plano del salón"],
+      "en": ["free", "ready", "open table", "clean table", "ready to seat", "vacant", "floor plan"]
+    }
+  },
+  "seating-four-clock": {
+    "label": { "es": "Tiempo en mesa", "en": "Table time", "pt": "Tempo de mesa", "fr": "Durée à table", "de": "Tischzeit", "it": "Tempo al tavolo", "ja": "席の利用時間", "zh": "用餐时长", "ko": "테이블 이용 시간", "ar": "مدة استخدام الطاولة" },
+    "keywords": {
+      "es": ["límite de tiempo", "rotación de mesas", "tiempo de estancia", "turno", "duración", "liberar mesa", "cronómetro"],
+      "en": ["time limit", "turn time", "table turnover", "seating duration", "dwell time", "timer", "free up table"]
+    }
+  },
+  "seating-round": {
+    "label": { "es": "Mesa redonda", "en": "Round table", "pt": "Mesa redonda", "fr": "Table ronde", "de": "Runder Tisch", "it": "Tavolo rotondo", "ja": "円卓", "zh": "圆桌", "ko": "원형 테이블", "ar": "طاولة مستديرة" },
+    "keywords": {
+      "es": ["grupo grande", "banquete", "evento", "fiesta", "boda", "mesa familiar", "salón de eventos"],
+      "en": ["large party", "banquet", "event", "wedding", "group dining", "family table", "celebration"]
+    }
+  },
+  "seating-booth": {
+    "label": { "es": "Gabinete", "en": "Booth", "pt": "Mesa com sofá", "fr": "Banquette", "de": "Sitznische", "it": "Tavolo con divanetti", "ja": "ボックス席", "zh": "卡座", "ko": "부스석", "ar": "مقصورة جلوس" },
+    "keywords": {
+      "es": ["sillón", "mesa con sillones", "booth", "cafetería", "asiento acolchado", "rincón", "privado"],
+      "en": ["banquette", "diner", "padded bench", "corner table", "private seating", "café", "lounge"]
+    }
+  },
+  "seating-counter": {
+    "label": { "es": "Lugar en la barra", "en": "Counter seating", "pt": "Lugar no balcão", "fr": "Place au comptoir", "de": "Platz an der Theke", "it": "Posto al bancone", "ja": "カウンター席", "zh": "吧台座位", "ko": "카운터석", "ar": "مقعد على البار" },
+    "keywords": {
+      "es": ["banco alto", "taburete", "barra del chef", "bar", "sushi", "taquería", "comensal solo"],
+      "en": ["bar seating", "stool", "chef's counter", "bar", "sushi bar", "solo diner", "high seat"]
+    }
+  },
+  "seating-plan": {
+    "label": { "es": "Plano de mesas", "en": "Seating plan", "pt": "Mapa de mesas", "fr": "Plan de salle", "de": "Tischplan", "it": "Piantina dei tavoli", "ja": "座席表", "zh": "桌位图", "ko": "테이블 배치도", "ar": "مخطط الطاولات" },
+    "keywords": {
+      "es": ["plano del salón", "croquis", "distribución", "hostess", "punto de venta", "acomodar clientes", "mesas libres"],
+      "en": ["floor plan", "table map", "layout", "host stand", "POS", "seat guests", "dining room"]
+    }
+  },
+  "seating-transfer": {
+    "label": { "es": "Cambiar de mesa", "en": "Transfer table", "pt": "Trocar de mesa", "fr": "Changer de table", "de": "Tisch wechseln", "it": "Cambia tavolo", "ja": "席を移動", "zh": "换桌", "ko": "테이블 이동", "ar": "نقل إلى طاولة أخرى" },
+    "keywords": {
+      "es": ["mover", "transferir", "reubicar", "pasar la cuenta", "punto de venta", "otra mesa", "pasar a la terraza"],
+      "en": ["move party", "relocate", "reseat", "switch table", "transfer check", "POS", "change seats"]
+    }
+  },
+  "seating-merge": {
+    "label": { "es": "Juntar mesas", "en": "Combine tables", "pt": "Juntar mesas", "fr": "Regrouper des tables", "de": "Tische zusammenstellen", "it": "Unisci tavoli", "ja": "テーブルを結合", "zh": "合并桌台", "ko": "테이블 합치기", "ar": "دمج الطاولات" },
+    "keywords": {
+      "es": ["unir", "combinar", "grupo grande", "punto de venta", "fusionar cuentas", "más lugares", "mesa larga"],
+      "en": ["join tables", "merge", "large party", "POS", "merge checks", "push tables together", "long table"]
+    }
+  },
+  "bistro-table": {
+    "label": { "es": "Mesa de café", "en": "Bistro table", "pt": "Mesa de bistrô", "fr": "Table de bistrot", "de": "Bistrotisch", "it": "Tavolino da bistrot", "ja": "カフェテーブル", "zh": "咖啡馆小桌", "ko": "카페 테이블", "ar": "طاولة مقهى" },
+    "keywords": {
+      "es": ["cafetería", "terraza", "mesita", "dos sillas", "bistró", "mesa en la banqueta", "brunch"],
+      "en": ["café", "patio", "terrace", "two chairs", "small table", "coffee shop", "brunch"]
+    }
+  },
+  "picnic-table": {
+    "label": { "es": "Mesa de picnic", "en": "Picnic table", "pt": "Mesa de piquenique", "fr": "Table de pique-nique", "de": "Picknicktisch", "it": "Tavolo da picnic", "ja": "ピクニックテーブル", "zh": "野餐桌", "ko": "피크닉 테이블", "ar": "طاولة نزهة" },
+    "keywords": {
+      "es": ["al aire libre", "food truck", "parque", "jardín cervecero", "terraza", "día de campo", "mesa comunal"],
+      "en": ["outdoor seating", "food truck", "park", "beer garden", "patio", "communal table", "campground"]
+    }
+  },
+  "cloche": {
+    "label": { "es": "Platillo", "en": "Dish", "pt": "Prato", "fr": "Plat", "de": "Speise", "it": "Piatto", "ja": "料理", "zh": "菜品", "ko": "요리", "ar": "طبق" },
+    "keywords": {
+      "es": ["campana", "cubreplatos", "alta cocina", "plato fuerte", "servicio emplatado", "gourmet", "comida"],
+      "en": ["cloche", "fine dining", "main course", "plated service", "gourmet", "meal", "room service"]
+    }
+  },
+  "cloche-block": {
+    "label": { "es": "Platillo agotado", "en": "Dish sold out", "pt": "Prato esgotado", "fr": "Plat épuisé", "de": "Gericht ausverkauft", "it": "Piatto esaurito", "ja": "売り切れメニュー", "zh": "菜品已售罄", "ko": "품절 메뉴", "ar": "طبق نفد" },
+    "keywords": {
+      "es": ["no disponible", "sin existencia", "se acabó", "fuera de menú", "86", "ya no hay", "pausar platillo"],
+      "en": ["unavailable", "86'd", "eighty-sixed", "out of stock", "off the menu", "pause item", "none left"]
+    }
+  },
+  "cloche-clock": {
+    "label": { "es": "Tiempo de preparación", "en": "Prep time", "pt": "Tempo de preparo", "fr": "Temps de préparation", "de": "Zubereitungszeit", "it": "Tempo di preparazione", "ja": "調理時間", "zh": "备餐时间", "ko": "조리 시간", "ar": "وقت التحضير" },
+    "keywords": {
+      "es": ["en preparación", "cocinando", "pedido en proceso", "tiempo de espera", "minutos", "en cocina", "tiempo estimado"],
+      "en": ["preparing", "cooking", "order in progress", "wait time", "minutes", "in the kitchen", "estimated time"]
+    }
+  },
+  "cloche-check": {
+    "label": { "es": "Platillo servido", "en": "Dish served", "pt": "Prato servido", "fr": "Plat servi", "de": "Gericht serviert", "it": "Piatto servito", "ja": "提供済み", "zh": "已上菜", "ko": "서빙 완료", "ar": "تم تقديم الطبق" },
+    "keywords": {
+      "es": ["entregado", "orden completa", "en la mesa", "listo", "completado", "buen provecho", "ya salió"],
+      "en": ["delivered", "order complete", "at the table", "done", "fulfilled", "bon appétit", "out of the kitchen"]
+    }
+  },
+  "waiter": {
+    "label": { "es": "Mesero", "en": "Waiter", "pt": "Garçom", "fr": "Serveur en salle", "de": "Kellner", "it": "Cameriere", "ja": "ウェイター", "zh": "服务员", "ko": "웨이터", "ar": "نادل" },
+    "keywords": {
+      "es": ["mesera", "servicio a la mesa", "personal", "atender mesas", "asignar mesas", "propina", "garrotero"],
+      "en": ["server", "waitress", "table service", "staff", "assign server", "tip", "wait staff"]
+    }
+  },
+  "hand-platter": {
+    "label": { "es": "Servir", "en": "Serve", "pt": "Servir", "fr": "Servir", "de": "Servieren", "it": "Servire", "ja": "配膳", "zh": "上菜", "ko": "서빙", "ar": "تقديم الطبق" },
+    "keywords": {
+      "es": ["charola", "bandeja", "platillo", "hospitalidad", "atención", "comida servida", "banquete"],
+      "en": ["platter", "tray", "dish", "hospitality", "food is served", "catering", "silver service"]
+    }
+  },
+  "service-bell": {
+    "label": { "es": "Timbre de servicio", "en": "Service bell", "pt": "Campainha de serviço", "fr": "Sonnette de comptoir", "de": "Thekenklingel", "it": "Campanello da banco", "ja": "呼び鈴", "zh": "服务铃", "ko": "서비스 벨", "ar": "جرس الخدمة" },
+    "keywords": {
+      "es": ["orden lista", "pedido listo", "campanita", "cocina", "llamar al mesero", "recepción", "mostrador"],
+      "en": ["order up", "food ready", "the pass", "desk bell", "reception", "kitchen", "ding"]
+    }
+  },
+  "service-bell-ringing": {
+    "label": { "es": "Llamar al mesero", "en": "Call waiter", "pt": "Chamar o garçom", "fr": "Appeler le serveur", "de": "Bedienung rufen", "it": "Chiama il cameriere", "ja": "店員を呼ぶ", "zh": "呼叫服务员", "ko": "직원 호출", "ar": "استدعاء النادل" },
+    "keywords": {
+      "es": ["servicio solicitado", "atención a la mesa", "timbre", "campana sonando", "solicitud", "aviso", "ayuda"],
+      "en": ["service requested", "table request", "ring", "bell ringing", "need assistance", "alert", "attention"]
+    }
+  },
+  "call-button": {
+    "label": { "es": "Timbre de mesa", "en": "Table call button", "pt": "Botão de chamada", "fr": "Bouton d’appel", "de": "Rufknopf", "it": "Pulsante di chiamata", "ja": "呼び出しボタン", "zh": "服务呼叫器", "ko": "호출벨", "ar": "زر الاستدعاء" },
+    "keywords": {
+      "es": ["llamar al personal", "pedir servicio", "botón", "restaurante asiático", "app de mesa", "mesero", "pulsar"],
+      "en": ["call staff", "request service", "buzzer", "table bell", "Asian restaurant", "waiter call", "push button"]
+    }
+  },
+  "guest-pager": {
+    "label": { "es": "Localizador de mesa", "en": "Guest pager", "pt": "Localizador de mesa", "fr": "Bipeur de table", "de": "Gästepager", "it": "Avvisatore ospiti", "ja": "呼び出しベル", "zh": "取餐呼叫器", "ko": "진동벨", "ar": "جهاز استدعاء" },
+    "keywords": {
+      "es": ["beeper", "vibrador", "pedido listo", "mesa lista", "aviso", "zona de comida", "esperar turno"],
+      "en": ["buzzer", "coaster pager", "order ready", "table ready", "vibrate", "food court", "notify guest"]
+    }
+  },
+  "stanchion": {
+    "label": { "es": "Fila de espera", "en": "Waiting line", "pt": "Fila de espera", "fr": "File d’attente à l’entrée", "de": "Warteschlange am Eingang", "it": "Coda all’ingresso", "ja": "順番待ち", "zh": "排队", "ko": "대기 줄", "ar": "طابور الانتظار" },
+    "keywords": {
+      "es": ["formarse", "esperar mesa", "cordón", "poste separador", "entrada", "lista de espera", "VIP"],
+      "en": ["line", "wait to be seated", "velvet rope", "stanchion", "entrance", "waitlist", "VIP"]
+    }
+  },
+  "food-and-drink": {
+    "label": { "es": "Comida y bebida", "en": "Food and drink", "pt": "Comida e bebida", "fr": "Restauration", "de": "Essen und Trinken", "it": "Cibo e bevande", "ja": "飲食", "zh": "餐饮", "ko": "식음료", "ar": "طعام وشراب" },
+    "keywords": {
+      "es": ["restaurantes", "bares", "gastronomía", "cafeterías", "salir a comer", "vida nocturna", "categoría"],
+      "en": ["restaurants", "bars", "dining", "F&B", "eat out", "cafés", "category"]
+    }
+  },
+  "bill-presenter": {
+    "label": { "es": "La cuenta", "en": "Bill", "pt": "A conta", "fr": "L’addition", "de": "Rechnung, bitte", "it": "Il conto", "ja": "お会計", "zh": "结账", "ko": "계산서", "ar": "الفاتورة" },
+    "keywords": {
+      "es": ["cobrar", "pagar", "portacuentas", "ticket", "propina", "consumo", "total"],
+      "en": ["check", "pay", "check presenter", "receipt", "tip", "tab", "total"]
+    }
+  },
+  "bill-presenter-check": {
+    "label": { "es": "Cuenta pagada", "en": "Bill paid", "pt": "Conta paga", "fr": "Addition réglée", "de": "Rechnung bezahlt", "it": "Conto pagato", "ja": "会計済み", "zh": "已结账", "ko": "결제 완료", "ar": "تم دفع الفاتورة" },
+    "keywords": {
+      "es": ["mesa cerrada", "cobrado", "liquidado", "punto de venta", "recibo", "saldado", "propina incluida"],
+      "en": ["check closed", "settled", "table closed", "POS", "receipt", "payment complete", "cleared"]
+    }
+  },
+  "place-setting": {
+    "label": { "es": "Comer aquí", "en": "Dine-in", "pt": "Comer no local", "fr": "Sur place", "de": "Vor Ort essen", "it": "Mangiare sul posto", "ja": "店内飲食", "zh": "堂食", "ko": "매장 식사", "ar": "تناول الطعام في المطعم" },
+    "keywords": {
+      "es": ["cubierto", "plato y cubiertos", "comensal", "mesa puesta", "en el restaurante", "lugar en la mesa", "servicio de mesa"],
+      "en": ["place setting", "cover", "eat in", "plate and cutlery", "guest", "dining", "restaurant"]
+    }
+  },
+  "place-setting-alert": {
+    "label": { "es": "Aviso de alergia", "en": "Allergy alert", "pt": "Alerta de alergia", "fr": "Alerte allergie", "de": "Allergiehinweis", "it": "Avviso allergie", "ja": "アレルギー注意", "zh": "过敏提醒", "ko": "알레르기 주의", "ar": "تنبيه حساسية" },
+    "keywords": {
+      "es": ["alérgenos", "intolerancia", "sin gluten", "cacahuate", "restricción alimentaria", "nota para cocina", "precaución"],
+      "en": ["allergens", "intolerance", "gluten free", "peanut", "dietary restriction", "kitchen note", "caution"]
+    }
+  },
+  "place-setting-search": {
+    "label": { "es": "Buscar restaurantes", "en": "Find restaurants", "pt": "Buscar restaurantes", "fr": "Trouver un restaurant", "de": "Restaurant suchen", "it": "Cerca ristoranti", "ja": "飲食店を探す", "zh": "查找餐厅", "ko": "식당 찾기", "ar": "البحث عن مطعم" },
+    "keywords": {
+      "es": ["dónde comer", "lugares para comer", "cerca de mí", "explorar", "fondas", "guía gastronómica", "comer fuera"],
+      "en": ["where to eat", "places to eat", "near me", "explore", "food guide", "eat out", "discover"]
+    }
+  },
+  "takeout-bag": {
+    "label": { "es": "Pedido para llevar", "en": "Takeout order", "pt": "Pedido para viagem", "fr": "Commande à emporter", "de": "Bestellung zum Mitnehmen", "it": "Ordine da asporto", "ja": "持ち帰り注文", "zh": "外带订单", "ko": "포장 주문", "ar": "طلب للاستلام" },
+    "keywords": {
+      "es": ["bolsa de papel", "recoger en tienda", "pick up", "comida rápida", "entrega", "a domicilio", "compra"],
+      "en": ["paper bag", "pickup", "takeaway", "carryout", "to go", "delivery", "food order"]
+    }
+  },
+  "takeout-bag-check": {
+    "label": { "es": "Listo para recoger", "en": "Ready for pickup", "pt": "Pronto para retirada", "fr": "Commande prête", "de": "Abholbereit", "it": "Pronto per il ritiro", "ja": "受け取り可能", "zh": "可取餐", "ko": "픽업 준비 완료", "ar": "جاهز للاستلام" },
+    "keywords": {
+      "es": ["pedido listo", "pasar por tu pedido", "aviso al cliente", "completo", "entregado", "pick up", "mostrador"],
+      "en": ["order ready", "collect", "curbside", "completed", "notify customer", "handed over", "counter"]
+    }
+  },
+  "takeout-meal": {
+    "label": { "es": "Comida para llevar", "en": "Takeaway meal", "pt": "Refeição para viagem", "fr": "Repas à emporter", "de": "Essen zum Mitnehmen", "it": "Pasto da asporto", "ja": "持ち帰りセット", "zh": "外带套餐", "ko": "포장 세트", "ar": "وجبة للخارج" },
+    "keywords": {
+      "es": ["combo", "comida rápida", "bolsa y refresco", "paquete", "hamburguesa", "pedido", "to go"],
+      "en": ["combo meal", "fast food", "bag and drink", "meal deal", "to go", "drive-thru", "order"]
+    }
+  },
+  "takeout-box": {
+    "label": { "es": "Para llevar", "en": "Takeout", "pt": "Para viagem", "fr": "À emporter", "de": "Zum Mitnehmen", "it": "Da asporto", "ja": "テイクアウト", "zh": "外带", "ko": "테이크아웃", "ar": "طلب خارجي" },
+    "keywords": {
+      "es": ["caja de comida china", "envase", "fideos", "pedido", "comida rápida", "recoger", "cajita"],
+      "en": ["takeaway", "to go", "noodle box", "Chinese takeout", "carryout", "food container", "pickup"]
+    }
+  },
+  "clamshell-box": {
+    "label": { "es": "Envase para llevar", "en": "To-go box", "pt": "Embalagem para viagem", "fr": "Boîte à emporter", "de": "Mitnahmebox", "it": "Contenitore da asporto", "ja": "持ち帰り容器", "zh": "打包盒", "ko": "포장 용기", "ar": "علبة طعام" },
+    "keywords": {
+      "es": ["unicel", "recipiente", "sobras", "táper", "desechable", "comida corrida", "empacar"],
+      "en": ["clamshell", "leftovers", "doggy bag", "container", "takeout", "disposable", "styrofoam"]
+    }
+  },
+  "meal-tray": {
+    "label": { "es": "Charola de comida", "en": "Meal tray", "pt": "Bandeja de refeição", "fr": "Plateau-repas", "de": "Essenstablett", "it": "Vassoio pasto", "ja": "食事トレー", "zh": "餐盘", "ko": "식판", "ar": "صينية طعام" },
+    "keywords": {
+      "es": ["comida corrida", "comedor", "cafetería", "menú del día", "paquete", "bandeja", "escuela"],
+      "en": ["set meal", "canteen", "cafeteria", "school lunch", "combo", "food court", "mess hall"]
+    }
+  },
+  "pickup-counter": {
+    "label": { "es": "Mostrador de entrega", "en": "Pickup counter", "pt": "Balcão de retirada", "fr": "Comptoir de retrait", "de": "Abholtheke", "it": "Banco ritiro", "ja": "受け取りカウンター", "zh": "取餐台", "ko": "픽업 카운터", "ar": "منضدة الاستلام" },
+    "keywords": {
+      "es": ["recoger pedido", "recoger en tienda", "barra", "ventanilla", "pick up", "pasar por tu orden", "caja"],
+      "en": ["collect order", "pick up in store", "click and collect", "counter service", "takeaway", "window", "pass"]
+    }
+  },
+  "food-truck": {
+    "label": { "es": "Camión de comida", "en": "Food truck", "pt": "Food truck", "fr": "Camion-restaurant", "de": "Foodtruck", "it": "Food truck", "ja": "キッチンカー", "zh": "餐车", "ko": "푸드트럭", "ar": "شاحنة طعام" },
+    "keywords": {
+      "es": ["food truck", "comida callejera", "antojitos", "puesto", "tráiler de comida", "festival", "comida al paso"],
+      "en": ["street food", "mobile kitchen", "food van", "festival", "lunch truck", "catering truck", "outdoor"]
+    }
+  },
+  "food-cart": {
+    "label": { "es": "Carrito de comida", "en": "Food cart", "pt": "Carrinho de comida", "fr": "Chariot ambulant", "de": "Imbisswagen", "it": "Carretto ambulante", "ja": "屋台", "zh": "小吃推车", "ko": "푸드 카트", "ar": "عربة طعام" },
+    "keywords": {
+      "es": ["puesto ambulante", "hot dogs", "tacos", "elotes", "helados", "comida callejera", "vendedor"],
+      "en": ["street vendor", "hot dog stand", "tacos", "ice cream cart", "street food", "pushcart", "snack stand"]
+    }
+  },
+  "buffet": {
+    "label": { "es": "Buffet", "en": "Buffet", "pt": "Bufê", "fr": "Buffet", "de": "Buffet", "it": "Buffet", "ja": "ビュッフェ", "zh": "自助餐", "ko": "뷔페", "ar": "بوفيه" },
+    "keywords": {
+      "es": ["banquete", "catering", "chafer", "baño maría", "barra de comida", "evento", "autoservicio"],
+      "en": ["catering", "chafing dish", "banquet", "self-service", "brunch", "event", "food warmer"]
+    }
+  },
+  "order-kiosk": {
+    "label": { "es": "Kiosco de pedidos", "en": "Self-order kiosk", "pt": "Totem de autoatendimento", "fr": "Borne de commande", "de": "Bestellterminal", "it": "Totem self-service", "ja": "セルフオーダー端末", "zh": "自助点餐机", "ko": "키오스크", "ar": "كشك الطلب الذاتي" },
+    "keywords": {
+      "es": ["pantalla táctil", "pedir solo", "comida rápida", "terminal", "ordenar sin fila", "autoservicio", "tótem"],
+      "en": ["touchscreen", "self-service", "fast food", "ordering terminal", "skip the line", "digital ordering", "totem"]
+    }
+  },
+  "pastry-case": {
+    "label": { "es": "Vitrina de pan", "en": "Pastry case", "pt": "Vitrine de doces", "fr": "Vitrine de pâtisserie", "de": "Kuchenvitrine", "it": "Vetrina dei dolci", "ja": "ケーキショーケース", "zh": "糕点柜", "ko": "디저트 쇼케이스", "ar": "واجهة المعجنات" },
+    "keywords": {
+      "es": ["panadería", "pastelería", "pan dulce", "postres", "cafetería", "exhibidor", "pasteles"],
+      "en": ["bakery", "display case", "pastries", "desserts", "café", "cakes", "patisserie"]
+    }
+  },
+  "kitchen-open": {
+    "label": { "es": "Cocina abierta", "en": "Kitchen open", "pt": "Cozinha aberta", "fr": "Cuisine ouverte", "de": "Küche geöffnet", "it": "Cucina aperta", "ja": "キッチン営業中", "zh": "厨房营业中", "ko": "주방 운영 중", "ar": "المطبخ مفتوح" },
+    "keywords": {
+      "es": ["recibiendo pedidos", "en servicio", "aceptando órdenes", "horario de cocina", "disponible", "activo", "en línea"],
+      "en": ["taking orders", "now serving", "in service", "available", "online", "kitchen hours", "active"]
+    }
+  },
+  "kitchen-closed": {
+    "label": { "es": "Cocina cerrada", "en": "Kitchen closed", "pt": "Cozinha fechada", "fr": "Cuisine fermée", "de": "Küche geschlossen", "it": "Cucina chiusa", "ja": "キッチン営業時間外", "zh": "厨房已打烊", "ko": "주방 마감", "ar": "المطبخ مغلق" },
+    "keywords": {
+      "es": ["sin pedidos", "pausar pedidos", "fuera de horario", "no disponible", "fuera de línea", "última orden", "descanso"],
+      "en": ["not taking orders", "pause orders", "after hours", "unavailable", "offline", "last call", "break"]
+    }
+  },
+  "kitchen-display": {
+    "label": { "es": "Pantalla de cocina", "en": "Kitchen display", "pt": "Tela da cozinha", "fr": "Écran de cuisine", "de": "Küchenmonitor", "it": "Monitor di cucina", "ja": "キッチンディスプレイ", "zh": "厨房显示屏", "ko": "주방 디스플레이", "ar": "شاشة المطبخ" },
+    "keywords": {
+      "es": ["KDS", "comandas", "órdenes en cocina", "monitor", "punto de venta", "preparación", "pedidos entrantes"],
+      "en": ["KDS", "kitchen tickets", "order screen", "monitor", "POS", "prep", "incoming orders"]
+    }
+  },
+  "order-rail": {
+    "label": { "es": "Comandas", "en": "Order tickets", "pt": "Comandas", "fr": "Bons de commande", "de": "Bestellbons", "it": "Comande", "ja": "注文伝票", "zh": "订单小票", "ko": "주문 전표", "ar": "تذاكر الطلبات" },
+    "keywords": {
+      "es": ["órdenes en curso", "riel de comandas", "cocina", "tickets", "cola de pedidos", "en preparación", "chef"],
+      "en": ["ticket rail", "orders in progress", "kitchen", "order queue", "chits", "prep", "line cook"]
+    }
+  },
+  "portion-size": {
+    "label": { "es": "Tamaño de porción", "en": "Portion size", "pt": "Tamanho da porção", "fr": "Taille de la portion", "de": "Portionsgröße", "it": "Dimensione della porzione", "ja": "サイズ選択", "zh": "份量", "ko": "사이즈 선택", "ar": "حجم الحصة" },
+    "keywords": {
+      "es": ["chico", "mediano", "grande", "cantidad", "ración", "agrandar", "variante"],
+      "en": ["small", "medium", "large", "serving size", "amount", "upsize", "variant"]
+    }
+  },
+  "half-portion": {
+    "label": { "es": "Media orden", "en": "Half portion", "pt": "Meia porção", "fr": "Demi-portion", "de": "Halbe Portion", "it": "Mezza porzione", "ja": "ハーフサイズ", "zh": "半份", "ko": "하프 사이즈", "ar": "نصف حصة" },
+    "keywords": {
+      "es": ["media porción", "mitad", "porción chica", "ración pequeña", "medio", "compartir", "para niños"],
+      "en": ["half order", "half size", "smaller portion", "half", "light", "kids", "small plate"]
+    }
+  },
+  "sharing-plate": {
+    "label": { "es": "Para compartir", "en": "To share", "pt": "Para compartilhar", "fr": "À partager", "de": "Zum Teilen", "it": "Da condividere", "ja": "シェア用", "zh": "分享菜", "ko": "나눠 먹기", "ar": "للمشاركة" },
+    "keywords": {
+      "es": ["al centro", "botanas", "entradas", "estilo familiar", "platón", "para la mesa", "grupo"],
+      "en": ["family style", "for the table", "small plates", "tapas", "appetizers", "platter", "group"]
+    }
+  },
+  "price-level": {
+    "label": { "es": "Rango de precios", "en": "Price range", "pt": "Faixa de preço", "fr": "Gamme de prix", "de": "Preisniveau", "it": "Fascia di prezzo", "ja": "価格帯", "zh": "价格区间", "ko": "가격대", "ar": "فئة السعر" },
+    "keywords": {
+      "es": ["barato", "económico", "caro", "presupuesto", "accesible", "de lujo", "cuánto cuesta"],
+      "en": ["cheap", "affordable", "expensive", "pricey", "budget", "upscale", "cost"]
+    }
+  },
+  "calories": {
+    "label": { "es": "Calorías", "en": "Calories", "pt": "Calorias", "fr": "Calories", "de": "Kalorien", "it": "Calorie", "ja": "カロリー", "zh": "卡路里", "ko": "칼로리", "ar": "السعرات الحرارية" },
+    "keywords": {
+      "es": ["kcal", "información nutrimental", "energía", "dieta", "saludable", "fitness", "porción"],
+      "en": ["kcal", "nutrition facts", "energy", "diet", "healthy", "fitness", "food tracking"]
+    }
+  },
+  "served-hot": {
+    "label": { "es": "Se sirve caliente", "en": "Served hot", "pt": "Servido quente", "fr": "Servi chaud", "de": "Heiß serviert", "it": "Servito caldo", "ja": "温かい料理", "zh": "热菜", "ko": "따뜻한 요리", "ar": "يقدم ساخنًا" },
+    "keywords": {
+      "es": ["platillo caliente", "humeante", "recién hecho", "temperatura", "sopa", "caldo", "calientito"],
+      "en": ["hot dish", "steaming", "freshly made", "temperature", "soup", "warm", "fresh from the kitchen"]
+    }
+  },
+  "served-cold": {
+    "label": { "es": "Se sirve frío", "en": "Served cold", "pt": "Servido frio", "fr": "Servi froid", "de": "Kalt serviert", "it": "Servito freddo", "ja": "冷たい料理", "zh": "凉菜", "ko": "차가운 요리", "ar": "يقدم باردًا" },
+    "keywords": {
+      "es": ["platillo frío", "refrigerado", "helado", "fresco", "ensalada", "ceviche", "temperatura"],
+      "en": ["cold dish", "chilled", "iced", "refrigerated", "salad", "fresh", "temperature"]
+    }
+  },
+  "all-you-can-eat": {
+    "label": { "es": "Todo lo que puedas comer", "en": "All you can eat", "pt": "Coma à vontade", "fr": "À volonté", "de": "All you can eat", "it": "Mangia quanto vuoi", "ja": "食べ放題", "zh": "无限畅吃", "ko": "무한리필", "ar": "تناول بلا حدود" },
+    "keywords": {
+      "es": ["buffet", "barra libre", "sin límite", "ilimitado", "rodizio", "repetir", "precio fijo"],
+      "en": ["buffet", "unlimited", "bottomless", "refills", "fixed price", "rodizio", "Korean BBQ"]
+    }
+  },
+  "vegan": {
+    "label": { "es": "Vegano", "en": "Vegan", "pt": "Vegano", "fr": "Végan", "de": "Vegan", "it": "Vegano", "ja": "ヴィーガン", "zh": "纯素", "ko": "비건", "ar": "نباتي صرف" },
+    "keywords": {
+      "es": ["vegetal", "a base de plantas", "sin productos animales", "plant based", "sin lácteos", "sin huevo", "dieta"],
+      "en": ["plant-based", "no animal products", "dairy free", "egg free", "cruelty free", "diet", "green"]
+    }
+  },
+  "spicy": {
+    "label": { "es": "Picante", "en": "Spicy", "pt": "Picante", "fr": "Épicé", "de": "Scharf", "it": "Piccante", "ja": "辛い", "zh": "辣", "ko": "매운맛", "ar": "حار" },
+    "keywords": {
+      "es": ["enchiloso", "chile", "pica", "salsa", "habanero", "jalapeño", "sazón"],
+      "en": ["hot", "chili", "pepper", "jalapeño", "fiery", "heat", "hot sauce"]
+    }
+  },
+  "spice-level": {
+    "label": { "es": "Nivel de picante", "en": "Spice level", "pt": "Nível de pimenta", "fr": "Niveau de piquant", "de": "Schärfegrad", "it": "Livello di piccantezza", "ja": "辛さレベル", "zh": "辣度", "ko": "맵기 단계", "ar": "مستوى البهارات" },
+    "keywords": {
+      "es": ["suave", "medio", "bravo", "enchiloso", "escala", "chiles", "qué tanto pica"],
+      "en": ["mild", "medium", "hot", "extra hot", "heat level", "chili scale", "Scoville"]
+    }
+  },
+  "vegetarian": {
+    "label": { "es": "Vegetariano", "en": "Vegetarian", "pt": "Vegetariano", "fr": "Végétarien", "de": "Vegetarisch", "it": "Vegetariano", "ja": "ベジタリアン", "zh": "素食", "ko": "채식", "ar": "نباتي" },
+    "keywords": {
+      "es": ["sin carne", "verduras", "ovolactovegetariano", "huevo y lácteos", "veggie", "dieta", "ensalada"],
+      "en": ["meatless", "veggie", "lacto-ovo", "eggs and dairy", "diet", "greens", "salad"]
+    }
+  },
+  "pescatarian": {
+    "label": { "es": "Pescetariano", "en": "Pescatarian", "pt": "Pescetariano", "fr": "Pescétarien", "de": "Pescetarisch", "it": "Pescetariano", "ja": "ペスカタリアン", "zh": "鱼素", "ko": "페스코 채식", "ar": "نباتي يأكل السمك" },
+    "keywords": {
+      "es": ["pescado", "mariscos", "sin carne", "vegetariano con pescado", "dieta", "cuaresma", "ceviche"],
+      "en": ["fish", "seafood", "no meat", "vegetarian plus fish", "diet", "Lent", "omega-3"]
+    }
+  },
+  "veg-mark": {
+    "label": { "es": "Símbolo vegetariano", "en": "Vegetarian mark", "pt": "Símbolo vegetariano", "fr": "Symbole végétarien", "de": "Vegetarisch-Symbol", "it": "Simbolo vegetariano", "ja": "ベジタリアンマーク", "zh": "素食标志", "ko": "채식 표시", "ar": "علامة نباتي" },
+    "keywords": {
+      "es": ["India", "punto verde", "cuadro verde", "etiqueta", "empaque", "menú", "veg"],
+      "en": ["India", "green dot", "green square", "veg", "label", "packaging", "FSSAI"]
+    }
+  },
+  "non-veg-mark": {
+    "label": { "es": "Símbolo no vegetariano", "en": "Non-vegetarian mark", "pt": "Símbolo não vegetariano", "fr": "Symbole non végétarien", "de": "Nicht-vegetarisch-Symbol", "it": "Simbolo non vegetariano", "ja": "ノンベジマーク", "zh": "荤食标志", "ko": "비채식 표시", "ar": "علامة غير نباتي" },
+    "keywords": {
+      "es": ["India", "punto café", "triángulo café", "con carne", "contiene huevo", "etiqueta", "empaque"],
+      "en": ["India", "brown dot", "brown triangle", "non-veg", "contains meat", "label", "FSSAI"]
+    }
+  }
+}

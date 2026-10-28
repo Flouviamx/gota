@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 27 Oct 2026 — Round 6: home and food (972 icons)
+- **Ten new categories** ([taxonomy](./taxonomy.md)): hogar 123 (and bed, door, and door-open from lugares, the bathtub, shower, and toilet round 4 deferred among its own), electrodomesticos 108, limpieza 86 (the laundry care symbols on one grid), cocina 118 (and utensils), comida 105, frutas-verduras 111, bebidas 97 (and coffee), restaurante 70, bebes 73, mascotas 81 (and cat and paw). The set has 4,514 icons in 41 categories.
+- **Names:** the first round to ask for about 130 % of each target ([decision 85](./decisions.md#phase-3-23-oct-2026)): 1,186 proposed, 1,006 approved, against 1,020 planned. A food that is also an allergen keeps one drawing (the allergens are tags), and the families that two lists proposed kept one home.
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category; the critics redesigned about 135 icons, and after them the main session dropped `flea` and `chimney`.
+- **The machine:** six agents at once on an 8 GB Mac filled the memory, and the swap filled the disk. The drawing workflow now takes `slots` (at most that many categories at once; four on this machine), and a Gota script that opens Chrome first removes the profiles a cut-off run left behind (about 130 MB each, over three hours old).
+- **Interruptions:** the usage limit four times and the session three times; each relaunch went straight to the critics where the drawing was done, so an illustrator didn't spend an hour finding its place again.
+- Tests: 61.
+
 ## 25 Oct 2026 — Round 5: technology (741 icons)
 - **Five new categories and three that grew** ([taxonomy](./taxonomy.md)): ia 137 (and the 10 it adopts from datos: the sparkle, the robot, the brain…), desarrollo 101 (and the git family, bug, terminal, code-window, api, and webhook it adopts from datos), redes 65, hardware 117, ciberseguridad 91, datos +87, sistema +52 (the keyboard keys round 3 deferred among them), dispositivos +91. With AI and code shown under ia and desarrollo, datos becomes *Datos y analítica*. The set has 3,542 icons in 31 categories.
 - **Names:** 839 proposed, 763 approved by the main session. Names proposed in two lists kept one home (`virtual-machine` and `auto-scaling` in redes, `sandbox` in desarrollo, `single-sign-on` in sistema, the `wifi-*` family in dispositivos, where it started).

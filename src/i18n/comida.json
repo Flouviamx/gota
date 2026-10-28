@@ -1,0 +1,737 @@
+{
+  "bread": {
+    "label": { "es": "Pan", "en": "Bread", "pt": "Pão", "fr": "Pain", "de": "Brot", "it": "Pane", "ja": "パン", "zh": "面包", "ko": "빵", "ar": "خبز" },
+    "keywords": {
+      "es": ["panadería", "hogaza", "pan artesanal", "masa madre", "bolillo", "carbohidratos", "pasillo de pan"],
+      "en": ["bakery", "loaf", "sourdough", "artisan bread", "baked goods", "carbs", "bread aisle"]
+    }
+  },
+  "bread-slice": {
+    "label": { "es": "Rebanada de pan", "en": "Slice of bread", "pt": "Fatia de pão", "fr": "Tranche de pain", "de": "Brotscheibe", "it": "Fetta di pane", "ja": "食パン", "zh": "吐司片", "ko": "식빵", "ar": "شريحة خبز" },
+    "keywords": {
+      "es": ["pan de caja", "pan tostado", "tostador", "desayuno", "sándwich", "pan integral", "lonche"],
+      "en": ["toast", "sandwich bread", "white bread", "whole wheat", "breakfast", "sandwich", "toaster"]
+    }
+  },
+  "baguette": {
+    "label": { "es": "Baguette", "en": "Baguette", "pt": "Baguete", "fr": "Baguette", "de": "Baguette", "it": "Baguette", "ja": "バゲット", "zh": "法棍", "ko": "바게트", "ar": "خبز باغيت" },
+    "keywords": {
+      "es": ["pan francés", "barra de pan", "panadería", "comida francesa", "pan recién horneado", "pan crujiente", "boulangerie"],
+      "en": ["french loaf", "bakery", "french food", "fresh bread", "crusty bread", "boulangerie", "freshly baked"]
+    }
+  },
+  "croissant": {
+    "label": { "es": "Croissant", "en": "Croissant", "pt": "Croissant", "fr": "Croissant", "de": "Croissant", "it": "Cornetto", "ja": "クロワッサン", "zh": "牛角包", "ko": "크루아상", "ar": "كرواسون" },
+    "keywords": {
+      "es": ["cuernito", "desayuno", "cafetería", "pan dulce", "pan hojaldrado", "repostería", "pastelería francesa"],
+      "en": ["breakfast", "cafe", "pastry", "viennoiserie", "flaky pastry", "french bakery", "brunch"]
+    }
+  },
+  "pretzel": {
+    "label": { "es": "Pretzel", "en": "Pretzel", "pt": "Pretzel", "fr": "Bretzel", "de": "Brezel", "it": "Pretzel", "ja": "プレッツェル", "zh": "椒盐卷饼", "ko": "프레첼", "ar": "بريتزل" },
+    "keywords": {
+      "es": ["botana", "panadería", "cervecería", "pan salado", "oktoberfest", "comida alemana", "snack"],
+      "en": ["snack", "bakery", "beer hall", "salted bread", "oktoberfest", "german food", "beer garden"]
+    }
+  },
+  "bagel": {
+    "label": { "es": "Bagel", "en": "Bagel", "pt": "Bagel", "fr": "Bagel", "de": "Bagel", "it": "Bagel", "ja": "ベーグル", "zh": "贝果", "ko": "베이글", "ar": "خبز بيغل" },
+    "keywords": {
+      "es": ["desayuno", "panadería", "brunch", "queso crema", "pan con hoyo", "cafetería", "salmón ahumado"],
+      "en": ["breakfast", "bakery", "brunch", "cream cheese", "deli", "cafe", "lox"]
+    }
+  },
+  "concha": {
+    "label": { "es": "Concha", "en": "Concha", "pt": "Concha mexicana", "fr": "Concha mexicaine", "de": "Mexikanisches Süßbrot", "it": "Concha messicana", "ja": "メキシコの菓子パン", "zh": "墨西哥贝壳面包", "ko": "콘차 빵", "ar": "كونشا مكسيكية" },
+    "keywords": {
+      "es": ["pan dulce", "panadería", "pan mexicano", "merienda", "costra de azúcar", "cafecito", "chocolate caliente"],
+      "en": ["pan dulce", "mexican sweet bread", "sweet bun", "mexican bakery", "panaderia", "afternoon snack", "hot chocolate"]
+    }
+  },
+  "churro": {
+    "label": { "es": "Churro", "en": "Churro", "pt": "Churro", "fr": "Churro", "de": "Churro", "it": "Churro", "ja": "チュロス", "zh": "吉事果", "ko": "츄러스", "ar": "تشورو" },
+    "keywords": {
+      "es": ["churrería", "postre", "masa frita", "azúcar con canela", "comida callejera", "feria", "chocolate caliente"],
+      "en": ["fried dough", "dessert", "street food", "cinnamon sugar", "churreria", "fair food", "spanish dessert"]
+    }
+  },
+  "cinnamon-roll": {
+    "label": { "es": "Rol de canela", "en": "Cinnamon roll", "pt": "Rolinho de canela", "fr": "Roulé à la cannelle", "de": "Zimtschnecke", "it": "Girella alla cannella", "ja": "シナモンロール", "zh": "肉桂卷", "ko": "시나몬롤", "ar": "لفائف القرفة" },
+    "keywords": {
+      "es": ["panadería", "cafetería", "desayuno", "pan dulce", "repostería", "glaseado", "pan de canela"],
+      "en": ["bakery", "cafe", "breakfast", "sweet roll", "cinnamon bun", "pastry", "glaze"]
+    }
+  },
+  "flatbread": {
+    "label": { "es": "Pan plano", "en": "Flatbread", "pt": "Pão achatado", "fr": "Pain plat", "de": "Fladenbrot", "it": "Pane piatto", "ja": "フラットブレッド", "zh": "薄饼", "ko": "납작한 빵", "ar": "خبز مسطح" },
+    "keywords": {
+      "es": ["tortilla", "tortillería", "pan árabe", "pita", "naan", "arepa", "chapati"],
+      "en": ["tortilla", "naan", "pita", "arepa", "chapati", "wrap", "lavash"]
+    }
+  },
+  "donut": {
+    "label": { "es": "Dona", "en": "Donut", "pt": "Rosquinha", "fr": "Beignet", "de": "Donut", "it": "Ciambella", "ja": "ドーナツ", "zh": "甜甜圈", "ko": "도넛", "ar": "دونات" },
+    "keywords": {
+      "es": ["postre", "cafetería", "pan dulce", "glaseado", "chispas de colores", "antojo", "rosca"],
+      "en": ["doughnut", "dessert", "cafe", "glazed", "sprinkles", "sweets", "treat"]
+    }
+  },
+  "pancakes": {
+    "label": { "es": "Hot cakes", "en": "Pancakes", "pt": "Panquecas", "fr": "Pancakes", "de": "Pfannkuchen", "it": "Pancake", "ja": "パンケーキ", "zh": "松饼", "ko": "팬케이크", "ar": "فطائر بانكيك" },
+    "keywords": {
+      "es": ["desayuno", "brunch", "panqueques", "miel de maple", "mantequilla", "cafetería", "desayuno americano"],
+      "en": ["breakfast", "brunch", "flapjacks", "hotcakes", "maple syrup", "diner", "short stack"]
+    }
+  },
+  "waffle": {
+    "label": { "es": "Waffle", "en": "Waffle", "pt": "Waffle", "fr": "Gaufre", "de": "Waffel", "it": "Waffle", "ja": "ワッフル", "zh": "华夫饼", "ko": "와플", "ar": "وافل" },
+    "keywords": {
+      "es": ["desayuno", "postre", "wafle", "stroopwafel", "brunch", "miel de maple", "crema batida"],
+      "en": ["breakfast", "dessert", "stroopwafel", "brunch", "gaufre", "maple syrup", "whipped cream"]
+    }
+  },
+  "muffin": {
+    "label": { "es": "Muffin", "en": "Muffin", "pt": "Muffin", "fr": "Muffin", "de": "Muffin", "it": "Muffin", "ja": "マフィン", "zh": "玛芬", "ko": "머핀", "ar": "مافن" },
+    "keywords": {
+      "es": ["mantecada", "panqué", "panadería", "cafetería", "desayuno", "moras azules", "pan dulce"],
+      "en": ["bakery", "cafe", "breakfast", "blueberry", "baked goods", "pastry", "snack"]
+    }
+  },
+  "cupcake": {
+    "label": { "es": "Cupcake", "en": "Cupcake", "pt": "Cupcake", "fr": "Cupcake", "de": "Cupcake", "it": "Cupcake", "ja": "カップケーキ", "zh": "纸杯蛋糕", "ko": "컵케이크", "ar": "كب كيك" },
+    "keywords": {
+      "es": ["postre", "pastelería", "repostería", "panquecito", "betún", "cumpleaños", "antojo"],
+      "en": ["dessert", "bakery", "treat", "frosting", "birthday", "fairy cake", "sweets"]
+    }
+  },
+  "macaron": {
+    "label": { "es": "Macaron", "en": "Macaron", "pt": "Macaron", "fr": "Macaron", "de": "Macaron", "it": "Macaron", "ja": "マカロン", "zh": "马卡龙", "ko": "마카롱", "ar": "ماكرون" },
+    "keywords": {
+      "es": ["pastelería francesa", "postre", "repostería", "galleta de almendra", "dulces", "té de la tarde", "mesa de postres"],
+      "en": ["patisserie", "dessert", "french pastry", "almond cookie", "sweets", "afternoon tea", "dessert table"]
+    }
+  },
+  "pie": {
+    "label": { "es": "Pay", "en": "Pie", "pt": "Torta", "fr": "Tourte", "de": "Gedeckter Kuchen", "it": "Torta ripiena", "ja": "パイ", "zh": "派", "ko": "파이", "ar": "فطيرة" },
+    "keywords": {
+      "es": ["postre", "pastelería", "repostería", "pie", "relleno de manzana", "acción de gracias", "fiestas decembrinas"],
+      "en": ["dessert", "bakery", "baking", "apple filling", "pumpkin", "thanksgiving", "holidays"]
+    }
+  },
+  "tart": {
+    "label": { "es": "Tarta", "en": "Tart", "pt": "Tarte", "fr": "Tarte", "de": "Tarte", "it": "Crostata", "ja": "タルト", "zh": "挞", "ko": "타르트", "ar": "تارت" },
+    "keywords": {
+      "es": ["postre", "repostería", "tartaleta", "quiche", "frutos rojos", "pastelería francesa", "masa quebrada"],
+      "en": ["patisserie", "dessert", "fruit", "quiche", "tartlet", "pastry", "shortcrust"]
+    }
+  },
+  "cake-slice": {
+    "label": { "es": "Rebanada de pastel", "en": "Slice of cake", "pt": "Fatia de bolo", "fr": "Part de gâteau", "de": "Stück Kuchen", "it": "Fetta di torta", "ja": "カットケーキ", "zh": "一块蛋糕", "ko": "조각 케이크", "ar": "قطعة كيك" },
+    "keywords": {
+      "es": ["postre", "pastelería", "carta de postres", "cumpleaños", "cheesecake", "repostería", "antojo dulce"],
+      "en": ["dessert", "bakery", "dessert menu", "birthday", "cheesecake", "patisserie", "sweet treat"]
+    }
+  },
+  "flan": {
+    "label": { "es": "Flan", "en": "Flan", "pt": "Pudim", "fr": "Crème caramel", "de": "Karamellpudding", "it": "Crème caramel", "ja": "プリン", "zh": "焦糖布丁", "ko": "푸딩", "ar": "كريم كراميل" },
+    "keywords": {
+      "es": ["postre", "pudín", "crema volteada", "caramelo", "jericalla", "natilla", "postre casero"],
+      "en": ["pudding", "custard", "creme caramel", "caramel", "dessert", "panna cotta", "creme brulee"]
+    }
+  },
+  "gingerbread": {
+    "label": { "es": "Galleta de jengibre", "en": "Gingerbread cookie", "pt": "Biscoito de gengibre", "fr": "Bonhomme en pain d’épices", "de": "Lebkuchenmann", "it": "Omino di pan di zenzero", "ja": "ジンジャーブレッドマン", "zh": "姜饼人", "ko": "진저브레드 쿠키", "ar": "بسكويت الزنجبيل" },
+    "keywords": {
+      "es": ["navidad", "repostería navideña", "hombre de jengibre", "hornear", "fiestas decembrinas", "postres navideños", "especias"],
+      "en": ["christmas", "holiday baking", "gingerbread man", "festive", "spiced biscuit", "decorating", "winter holidays"]
+    }
+  },
+  "egg": {
+    "label": { "es": "Huevo", "en": "Egg", "pt": "Ovo", "fr": "Œuf", "de": "Ei", "it": "Uovo", "ja": "卵", "zh": "鸡蛋", "ko": "달걀", "ar": "بيضة" },
+    "keywords": {
+      "es": ["desayuno", "proteína", "despensa", "súper", "blanquillo", "cascarón", "pascua"],
+      "en": ["breakfast", "protein", "groceries", "pantry", "shell", "easter", "free range"]
+    }
+  },
+  "egg-fried": {
+    "label": { "es": "Huevo estrellado", "en": "Fried egg", "pt": "Ovo frito", "fr": "Œuf au plat", "de": "Spiegelei", "it": "Uovo al tegamino", "ja": "目玉焼き", "zh": "煎蛋", "ko": "달걀프라이", "ar": "بيضة مقلية" },
+    "keywords": {
+      "es": ["desayuno", "brunch", "huevo frito", "huevos rancheros", "sartén", "yema", "almuerzo"],
+      "en": ["breakfast", "brunch", "sunny side up", "over easy", "frying pan", "yolk", "cooking"]
+    }
+  },
+  "egg-cracked": {
+    "label": { "es": "Huevo roto", "en": "Cracked egg", "pt": "Ovo quebrado", "fr": "Œuf cassé", "de": "Aufgeschlagenes Ei", "it": "Uovo rotto", "ja": "割れた卵", "zh": "破壳的蛋", "ko": "깨진 달걀", "ar": "بيضة مكسورة" },
+    "keywords": {
+      "es": ["hornear", "empezar a cocinar", "receta", "cascarón", "eclosión", "nacimiento", "ingredientes"],
+      "en": ["baking", "start cooking", "recipe", "eggshell", "hatch", "new beginning", "ingredients"]
+    }
+  },
+  "egg-boiled": {
+    "label": { "es": "Huevo cocido", "en": "Boiled egg", "pt": "Ovo cozido", "fr": "Œuf dur", "de": "Gekochtes Ei", "it": "Uovo sodo", "ja": "ゆで卵", "zh": "水煮蛋", "ko": "삶은 달걀", "ar": "بيضة مسلوقة" },
+    "keywords": {
+      "es": ["huevo duro", "proteína", "ensalada", "desayuno", "yema", "colación", "dieta"],
+      "en": ["hard-boiled", "protein", "salad", "breakfast", "yolk", "deviled egg", "healthy snack"]
+    }
+  },
+  "egg-carton": {
+    "label": { "es": "Cartón de huevos", "en": "Egg carton", "pt": "Caixa de ovos", "fr": "Boîte d’œufs", "de": "Eierkarton", "it": "Confezione di uova", "ja": "卵パック", "zh": "鸡蛋盒", "ko": "달걀판", "ar": "علبة بيض" },
+    "keywords": {
+      "es": ["docena", "súper", "despensa", "lácteos y huevo", "lista del súper", "abarrotes", "granja"],
+      "en": ["dozen", "groceries", "pantry", "dairy aisle", "shopping list", "supermarket", "farm fresh"]
+    }
+  },
+  "cheese": {
+    "label": { "es": "Queso", "en": "Cheese", "pt": "Queijo", "fr": "Fromage", "de": "Käse", "it": "Formaggio", "ja": "チーズ", "zh": "奶酪", "ko": "치즈", "ar": "جبن" },
+    "keywords": {
+      "es": ["lácteos", "salchichonería", "quesería", "gratinar", "ingrediente extra", "botana", "gouda"],
+      "en": ["dairy", "deli", "toppings", "cheddar", "gouda", "fromagerie", "melted"]
+    }
+  },
+  "cheese-wheel": {
+    "label": { "es": "Rueda de queso", "en": "Cheese wheel", "pt": "Roda de queijo", "fr": "Meule de fromage", "de": "Käselaib", "it": "Forma di formaggio", "ja": "ホールチーズ", "zh": "奶酪轮", "ko": "치즈 휠", "ar": "قالب جبن" },
+    "keywords": {
+      "es": ["quesería", "salchichonería", "parmesano", "manchego", "tienda gourmet", "por kilo", "maduración"],
+      "en": ["cheesemonger", "deli", "parmesan", "aged", "gourmet shop", "by weight", "fromagerie"]
+    }
+  },
+  "cheese-slice": {
+    "label": { "es": "Rebanada de queso", "en": "Cheese slice", "pt": "Fatia de queijo", "fr": "Tranche de fromage", "de": "Käsescheibe", "it": "Fetta di formaggio", "ja": "スライスチーズ", "zh": "芝士片", "ko": "슬라이스 치즈", "ar": "شريحة جبن" },
+    "keywords": {
+      "es": ["queso amarillo", "sándwich", "hamburguesa", "sincronizadas", "tortas", "salchichonería", "rebanado"],
+      "en": ["sandwich", "burger", "american cheese", "deli", "grilled cheese", "melt", "topping"]
+    }
+  },
+  "butter": {
+    "label": { "es": "Mantequilla", "en": "Butter", "pt": "Manteiga", "fr": "Beurre", "de": "Butter", "it": "Burro", "ja": "バター", "zh": "黄油", "ko": "버터", "ar": "زبدة" },
+    "keywords": {
+      "es": ["lácteos", "hornear", "untable", "margarina", "repostería", "desayuno", "ghee"],
+      "en": ["dairy", "baking", "spread", "margarine", "stick", "ghee", "breakfast"]
+    }
+  },
+  "yogurt": {
+    "label": { "es": "Yogurt", "en": "Yogurt", "pt": "Iogurte", "fr": "Yaourt", "de": "Joghurt", "it": "Yogurt", "ja": "ヨーグルト", "zh": "酸奶", "ko": "요거트", "ar": "زبادي" },
+    "keywords": {
+      "es": ["lácteos", "desayuno", "colación", "probióticos", "granola", "parfait", "jocoque"],
+      "en": ["dairy", "breakfast", "snack", "probiotics", "granola", "parfait", "greek"]
+    }
+  },
+  "steak": {
+    "label": { "es": "Corte de carne", "en": "Steak", "pt": "Bife", "fr": "Steak", "de": "Steak", "it": "Bistecca", "ja": "ステーキ", "zh": "牛排", "ko": "스테이크", "ar": "شريحة لحم" },
+    "keywords": {
+      "es": ["carnicería", "parrilla", "carne asada", "bistec", "proteína", "res", "rib eye"],
+      "en": ["meat", "butcher", "grill", "barbecue", "protein", "beef", "t-bone"]
+    }
+  },
+  "ham": {
+    "label": { "es": "Jamón", "en": "Ham", "pt": "Presunto", "fr": "Jambon", "de": "Schinken", "it": "Prosciutto", "ja": "ハム", "zh": "火腿", "ko": "햄", "ar": "فخذ لحم مدخن" },
+    "keywords": {
+      "es": ["pierna al horno", "cena navideña", "cerdo", "salchichonería", "carnes frías", "serrano", "fiestas"],
+      "en": ["deli", "holiday roast", "pork", "christmas dinner", "gammon", "cold cuts", "prosciutto"]
+    }
+  },
+  "drumstick": {
+    "label": { "es": "Pierna de pollo", "en": "Chicken drumstick", "pt": "Coxa de frango", "fr": "Pilon de poulet", "de": "Hähnchenkeule", "it": "Coscia di pollo", "ja": "鶏もも肉", "zh": "鸡腿", "ko": "닭다리", "ar": "فخذ دجاج" },
+    "keywords": {
+      "es": ["pollo frito", "aves", "muslo", "pollería", "proteína", "carne blanca", "comida rápida"],
+      "en": ["poultry", "fried chicken", "chicken leg", "thigh", "meat", "protein", "fast food"]
+    }
+  },
+  "bacon": {
+    "label": { "es": "Tocino", "en": "Bacon", "pt": "Bacon", "fr": "Bacon", "de": "Speck", "it": "Pancetta", "ja": "ベーコン", "zh": "培根", "ko": "베이컨", "ar": "لحم مقدد" },
+    "keywords": {
+      "es": ["desayuno", "cerdo", "tiras", "crujiente", "bacon", "panceta", "hamburguesa"],
+      "en": ["breakfast", "pork", "strips", "crispy", "rasher", "pancetta", "brunch"]
+    }
+  },
+  "sausage": {
+    "label": { "es": "Salchichas", "en": "Sausages", "pt": "Linguiças", "fr": "Saucisses", "de": "Würstchen", "it": "Salsicce", "ja": "ソーセージ", "zh": "香肠", "ko": "소시지", "ar": "نقانق" },
+    "keywords": {
+      "es": ["chorizo", "longaniza", "parrilla", "asado", "salchichonería", "desayuno", "embutidos"],
+      "en": ["grill", "deli", "breakfast", "chorizo", "bratwurst", "barbecue", "links"]
+    }
+  },
+  "salami": {
+    "label": { "es": "Salami", "en": "Salami", "pt": "Salame", "fr": "Saucisson", "de": "Salami", "it": "Salame", "ja": "サラミ", "zh": "萨拉米", "ko": "살라미", "ar": "سلامي" },
+    "keywords": {
+      "es": ["carnes frías", "salchichonería", "embutidos", "tabla de quesos", "pepperoni", "charcutería", "botana"],
+      "en": ["deli", "charcuterie", "cold cuts", "pepperoni", "cured meat", "antipasto", "grazing board"]
+    }
+  },
+  "ribs": {
+    "label": { "es": "Costillas", "en": "Ribs", "pt": "Costela", "fr": "Travers de porc", "de": "Spareribs", "it": "Costine", "ja": "スペアリブ", "zh": "排骨", "ko": "갈비", "ar": "أضلاع مشوية" },
+    "keywords": {
+      "es": ["parrilla", "bbq", "ahumado", "asador", "carne de cerdo", "baby back", "parrillada"],
+      "en": ["barbecue", "bbq", "smokehouse", "rack", "grill", "baby back", "pitmaster"]
+    }
+  },
+  "pork-chop": {
+    "label": { "es": "Chuleta", "en": "Pork chop", "pt": "Costeleta", "fr": "Côtelette", "de": "Kotelett", "it": "Braciola", "ja": "ポークチョップ", "zh": "猪排", "ko": "포크찹", "ar": "ريش لحم" },
+    "keywords": {
+      "es": ["cerdo", "cordero", "milanesa", "carnicería", "corte con hueso", "a la plancha", "carne"],
+      "en": ["pork", "lamb chop", "cutlet", "butcher", "bone-in", "meat", "schnitzel"]
+    }
+  },
+  "roast-chicken": {
+    "label": { "es": "Pollo rostizado", "en": "Roast chicken", "pt": "Frango assado", "fr": "Poulet rôti", "de": "Brathähnchen", "it": "Pollo arrosto", "ja": "ローストチキン", "zh": "烤鸡", "ko": "통닭구이", "ar": "دجاج مشوي" },
+    "keywords": {
+      "es": ["pavo", "rosticería", "cena de navidad", "acción de gracias", "asado", "cena", "fiestas"],
+      "en": ["turkey", "rotisserie", "thanksgiving", "christmas dinner", "dinner", "holidays", "sunday roast"]
+    }
+  },
+  "skewer": {
+    "label": { "es": "Brocheta", "en": "Skewer", "pt": "Espetinho", "fr": "Brochette", "de": "Spieß", "it": "Spiedino", "ja": "串焼き", "zh": "烤串", "ko": "꼬치", "ar": "سيخ مشوي" },
+    "keywords": {
+      "es": ["kebab", "satay", "yakitori", "comida callejera", "parrilla", "alambre", "anticuchos"],
+      "en": ["kebab", "kabob", "satay", "yakitori", "street food", "grill", "souvlaki"]
+    }
+  },
+  "shawarma": {
+    "label": { "es": "Trompo", "en": "Shawarma", "pt": "Churrasco grego", "fr": "Kebab", "de": "Döner", "it": "Kebab", "ja": "シャワルマ", "zh": "沙威玛", "ko": "케밥", "ar": "شاورما" },
+    "keywords": {
+      "es": ["tacos al pastor", "shawarma", "kebab", "döner", "gyro", "taquería", "comida árabe"],
+      "en": ["doner", "gyro", "kebab", "tacos al pastor", "rotisserie", "middle eastern food", "vertical spit"]
+    }
+  },
+  "fish-plate": {
+    "label": { "es": "Platillo de pescado", "en": "Fish dish", "pt": "Prato de peixe", "fr": "Plat de poisson", "de": "Fischgericht", "it": "Piatto di pesce", "ja": "魚料理", "zh": "鱼类菜肴", "ko": "생선 요리", "ar": "طبق سمك" },
+    "keywords": {
+      "es": ["pesca del día", "mariscos", "marisquería", "carta", "huachinango", "cuaresma", "zarandeado"],
+      "en": ["catch of the day", "seafood", "seafood restaurant", "menu", "pescatarian", "grilled", "lent"]
+    }
+  },
+  "fish-fillet": {
+    "label": { "es": "Filete de pescado", "en": "Fish fillet", "pt": "Filé de peixe", "fr": "Filet de poisson", "de": "Fischfilet", "it": "Filetto di pesce", "ja": "魚の切り身", "zh": "鱼柳", "ko": "생선 필레", "ar": "فيليه سمك" },
+    "keywords": {
+      "es": ["pescadería", "salmón", "mariscos", "tilapia", "pescado fresco", "omega 3", "atún"],
+      "en": ["fish counter", "salmon", "seafood", "fishmonger", "tilapia", "omega-3", "cod"]
+    }
+  },
+  "shrimp": {
+    "label": { "es": "Camarón", "en": "Shrimp", "pt": "Camarão", "fr": "Crevette", "de": "Garnele", "it": "Gambero", "ja": "エビ", "zh": "虾", "ko": "새우", "ar": "روبيان" },
+    "keywords": {
+      "es": ["mariscos", "langostino", "marisquería", "aguachile", "gambas", "ceviche", "coctel"],
+      "en": ["seafood", "prawns", "scampi", "tempura", "ceviche", "cocktail", "shellfish"]
+    }
+  },
+  "sushi": {
+    "label": { "es": "Sushi", "en": "Sushi", "pt": "Sushi", "fr": "Sushi", "de": "Sushi", "it": "Sushi", "ja": "寿司", "zh": "寿司", "ko": "초밥", "ar": "سوشي" },
+    "keywords": {
+      "es": ["maki", "rollo", "comida japonesa", "restaurante japonés", "palillos", "wasabi", "soya"],
+      "en": ["maki", "roll", "japanese food", "japanese restaurant", "chopsticks", "wasabi", "soy sauce"]
+    }
+  },
+  "nigiri": {
+    "label": { "es": "Nigiri", "en": "Nigiri", "pt": "Niguiri", "fr": "Nigiri", "de": "Nigiri", "it": "Nigiri", "ja": "握り寿司", "zh": "握寿司", "ko": "니기리", "ar": "نيغيري" },
+    "keywords": {
+      "es": ["sushi", "sashimi", "salmón", "atún", "comida japonesa", "tipos de sushi", "barra japonesa"],
+      "en": ["sushi", "sashimi", "salmon", "tuna", "japanese food", "sushi types", "omakase"]
+    }
+  },
+  "onigiri": {
+    "label": { "es": "Onigiri", "en": "Onigiri", "pt": "Onigiri", "fr": "Onigiri", "de": "Onigiri", "it": "Onigiri", "ja": "おにぎり", "zh": "饭团", "ko": "주먹밥", "ar": "أونيغيري" },
+    "keywords": {
+      "es": ["bola de arroz", "comida japonesa", "almuerzo", "lonche", "alga nori", "tienda de conveniencia", "bento"],
+      "en": ["rice ball", "japanese snack", "lunch", "nori", "convenience store", "bento", "musubi"]
+    }
+  },
+  "burger": {
+    "label": { "es": "Hamburguesa", "en": "Burger", "pt": "Hambúrguer", "fr": "Burger", "de": "Burger", "it": "Hamburger", "ja": "ハンバーガー", "zh": "汉堡", "ko": "햄버거", "ar": "برغر" },
+    "keywords": {
+      "es": ["comida rápida", "burger", "combo", "a domicilio", "cheeseburger", "carne a la parrilla", "fast food"],
+      "en": ["fast food", "hamburger", "cheeseburger", "patty", "food delivery", "takeout", "diner"]
+    }
+  },
+  "pizza": {
+    "label": { "es": "Pizza", "en": "Pizza", "pt": "Pizza", "fr": "Pizza", "de": "Pizza", "it": "Pizza", "ja": "ピザ", "zh": "披萨", "ko": "피자", "ar": "بيتزا" },
+    "keywords": {
+      "es": ["pizzería", "comida italiana", "a domicilio", "para compartir", "mozzarella", "pepperoni", "horno de leña"],
+      "en": ["pizzeria", "italian food", "delivery", "takeout", "mozzarella", "pepperoni", "wood-fired"]
+    }
+  },
+  "pizza-slice": {
+    "label": { "es": "Rebanada de pizza", "en": "Slice of pizza", "pt": "Fatia de pizza", "fr": "Part de pizza", "de": "Pizzastück", "it": "Trancio di pizza", "ja": "ピザ一切れ", "zh": "一块披萨", "ko": "피자 조각", "ar": "شريحة بيتزا" },
+    "keywords": {
+      "es": ["comida rápida", "pizzería", "pepperoni", "queso derretido", "antojo", "comida callejera", "pizza al corte"],
+      "en": ["by the slice", "fast food", "pizzeria", "pepperoni", "melted cheese", "street food", "new york style"]
+    }
+  },
+  "hot-dog": {
+    "label": { "es": "Hot dog", "en": "Hot dog", "pt": "Cachorro-quente", "fr": "Hot-dog", "de": "Hotdog", "it": "Hot dog", "ja": "ホットドッグ", "zh": "热狗", "ko": "핫도그", "ar": "هوت دوغ" },
+    "keywords": {
+      "es": ["jocho", "dogo", "comida rápida", "estadio", "salchicha", "comida callejera", "partido"],
+      "en": ["frankfurter", "fast food", "stadium", "ballpark", "sausage", "street food", "wiener"]
+    }
+  },
+  "fries": {
+    "label": { "es": "Papas fritas", "en": "French fries", "pt": "Batata frita", "fr": "Frites", "de": "Pommes frites", "it": "Patatine fritte", "ja": "フライドポテト", "zh": "薯条", "ko": "감자튀김", "ar": "بطاطس مقلية" },
+    "keywords": {
+      "es": ["papas a la francesa", "comida rápida", "guarnición", "acompañamiento", "combo", "botana", "gajos"],
+      "en": ["chips", "fast food", "side dish", "combo", "potato", "wedges", "frites"]
+    }
+  },
+  "taco": {
+    "label": { "es": "Taco", "en": "Taco", "pt": "Taco", "fr": "Taco", "de": "Taco", "it": "Taco", "ja": "タコス", "zh": "塔可", "ko": "타코", "ar": "تاكو" },
+    "keywords": {
+      "es": ["comida mexicana", "taquería", "tortilla", "antojitos", "al pastor", "taquiza", "garnachas"],
+      "en": ["mexican food", "taqueria", "tortilla", "street food", "al pastor", "tex-mex", "carnitas"]
+    }
+  },
+  "burrito": {
+    "label": { "es": "Burrito", "en": "Burrito", "pt": "Burrito", "fr": "Burrito", "de": "Burrito", "it": "Burrito", "ja": "ブリトー", "zh": "墨西哥卷饼", "ko": "부리토", "ar": "بوريتو" },
+    "keywords": {
+      "es": ["comida mexicana", "tortilla de harina", "wrap", "comida del norte", "lonche", "para llevar", "machaca"],
+      "en": ["mexican food", "wrap", "flour tortilla", "tex-mex", "takeout", "lunch", "rolled"]
+    }
+  },
+  "nachos": {
+    "label": { "es": "Nachos", "en": "Nachos", "pt": "Nachos", "fr": "Nachos", "de": "Nachos", "it": "Nachos", "ja": "ナチョス", "zh": "墨西哥玉米片", "ko": "나초", "ar": "ناتشوز" },
+    "keywords": {
+      "es": ["totopos", "botana", "para compartir", "queso amarillo", "guacamole", "cine", "tex-mex"],
+      "en": ["tortilla chips", "sharing plate", "appetizer", "cheese dip", "guacamole", "game day", "tex-mex"]
+    }
+  },
+  "empanada": {
+    "label": { "es": "Empanada", "en": "Empanada", "pt": "Pastel", "fr": "Chausson", "de": "Empanada", "it": "Calzone", "ja": "エンパナーダ", "zh": "馅饼", "ko": "엠파나다", "ar": "فطيرة محشوة" },
+    "keywords": {
+      "es": ["masa rellena", "pastes", "calzone", "hojaldre", "comida argentina", "antojito", "horneada"],
+      "en": ["turnover", "pastry", "calzone", "hand pie", "pasty", "latin food", "stuffed pastry"]
+    }
+  },
+  "sandwich": {
+    "label": { "es": "Sándwich", "en": "Sandwich", "pt": "Sanduíche", "fr": "Sandwich", "de": "Sandwich", "it": "Panino", "ja": "サンドイッチ", "zh": "三明治", "ko": "샌드위치", "ar": "شطيرة" },
+    "keywords": {
+      "es": ["lonche", "almuerzo", "salchichonería", "pan de caja", "emparedado", "para llevar", "cafetería"],
+      "en": ["lunch", "deli", "packed lunch", "club", "toastie", "takeout", "cafe"]
+    }
+  },
+  "sub-sandwich": {
+    "label": { "es": "Torta", "en": "Sub sandwich", "pt": "Sanduíche de baguete", "fr": "Sandwich baguette", "de": "Baguette-Sandwich", "it": "Panino lungo", "ja": "サブマリンサンド", "zh": "潜艇堡", "ko": "서브 샌드위치", "ar": "شطيرة طويلة" },
+    "keywords": {
+      "es": ["sub", "baguette", "bolillo", "telera", "banh mi", "lonche", "salchichonería"],
+      "en": ["hoagie", "hero", "torta", "banh mi", "baguette", "grinder", "po’ boy"]
+    }
+  },
+  "dumpling": {
+    "label": { "es": "Dumpling", "en": "Dumpling", "pt": "Guioza", "fr": "Ravioli chinois", "de": "Teigtasche", "it": "Raviolo cinese", "ja": "餃子", "zh": "饺子", "ko": "만두", "ar": "دامبلينغ" },
+    "keywords": {
+      "es": ["dim sum", "gyoza", "pierogi", "comida china", "wonton", "al vapor", "ravioles"],
+      "en": ["dim sum", "gyoza", "pierogi", "potsticker", "chinese food", "wonton", "steamed"]
+    }
+  },
+  "bao": {
+    "label": { "es": "Bao", "en": "Bao", "pt": "Bao", "fr": "Bao", "de": "Bao", "it": "Bao", "ja": "肉まん", "zh": "包子", "ko": "찐빵", "ar": "باو" },
+    "keywords": {
+      "es": ["pan al vapor", "baozi", "dim sum", "comida china", "bollo relleno", "comida asiática", "char siu"],
+      "en": ["steamed bun", "baozi", "dim sum", "chinese food", "pork bun", "asian food", "char siu"]
+    }
+  },
+  "fast-food": {
+    "label": { "es": "Comida rápida", "en": "Fast food", "pt": "Fast-food", "fr": "Restauration rapide", "de": "Fast Food", "it": "Fast food", "ja": "ファストフード", "zh": "快餐", "ko": "패스트푸드", "ar": "وجبات سريعة" },
+    "keywords": {
+      "es": ["combo", "paquete", "antojo", "comida chatarra", "para llevar", "autoservicio", "drive-thru"],
+      "en": ["combo meal", "value meal", "quick bite", "junk food", "takeout", "drive-thru", "burger and fries"]
+    }
+  },
+  "popcorn": {
+    "label": { "es": "Palomitas", "en": "Popcorn", "pt": "Pipoca", "fr": "Pop-corn", "de": "Popcorn", "it": "Popcorn", "ja": "ポップコーン", "zh": "爆米花", "ko": "팝콘", "ar": "فشار" },
+    "keywords": {
+      "es": ["cine", "botana", "noche de películas", "dulcería", "maíz palomero", "streaming", "función"],
+      "en": ["cinema", "movie night", "snack", "concessions", "streaming", "kernels", "showtime"]
+    }
+  },
+  "soup": {
+    "label": { "es": "Sopa", "en": "Soup", "pt": "Sopa", "fr": "Soupe", "de": "Suppe", "it": "Zuppa", "ja": "スープ", "zh": "汤", "ko": "수프", "ar": "حساء" },
+    "keywords": {
+      "es": ["entrada", "caldo", "consomé", "comida casera", "pozole", "crema de verduras", "plato hondo"],
+      "en": ["starter", "broth", "comfort food", "stew", "bowl", "chowder", "bisque"]
+    }
+  },
+  "salad": {
+    "label": { "es": "Ensalada", "en": "Salad", "pt": "Salada", "fr": "Salade", "de": "Salat", "it": "Insalata", "ja": "サラダ", "zh": "沙拉", "ko": "샐러드", "ar": "سلطة" },
+    "keywords": {
+      "es": ["comida saludable", "entrada", "verduras", "vegetariano", "lechuga", "dieta", "bowl"],
+      "en": ["healthy food", "starter", "greens", "vegetarian", "lettuce", "diet", "vegan"]
+    }
+  },
+  "cereal": {
+    "label": { "es": "Cereal", "en": "Cereal", "pt": "Cereal", "fr": "Céréales", "de": "Müsli", "it": "Cereali", "ja": "シリアル", "zh": "麦片", "ko": "시리얼", "ar": "حبوب الإفطار" },
+    "keywords": {
+      "es": ["desayuno", "granola", "avena", "leche", "hojuelas de maíz", "tazón", "muesli"],
+      "en": ["breakfast", "granola", "oatmeal", "milk", "cornflakes", "muesli", "porridge"]
+    }
+  },
+  "rice-bowl": {
+    "label": { "es": "Tazón de arroz", "en": "Rice bowl", "pt": "Tigela de arroz", "fr": "Bol de riz", "de": "Reisschale", "it": "Ciotola di riso", "ja": "ご飯", "zh": "米饭", "ko": "밥", "ar": "وعاء أرز" },
+    "keywords": {
+      "es": ["donburi", "arroz frito", "poke", "bowl", "comida asiática", "guarnición", "gohan"],
+      "en": ["donburi", "fried rice", "poke", "asian food", "side dish", "steamed", "grain bowl"]
+    }
+  },
+  "noodles": {
+    "label": { "es": "Fideos", "en": "Noodles", "pt": "Macarrão oriental", "fr": "Nouilles", "de": "Asia-Nudeln", "it": "Noodles", "ja": "麺", "zh": "面条", "ko": "국수", "ar": "نودلز" },
+    "keywords": {
+      "es": ["ramen", "pho", "udon", "pad thai", "comida asiática", "palillos", "comida china"],
+      "en": ["ramen", "pho", "udon", "pad thai", "asian food", "chopsticks", "lo mein"]
+    }
+  },
+  "instant-noodles": {
+    "label": { "es": "Sopa instantánea", "en": "Instant noodles", "pt": "Macarrão instantâneo", "fr": "Nouilles instantanées", "de": "Instantnudeln", "it": "Noodles istantanei", "ja": "カップ麺", "zh": "方便面", "ko": "컵라면", "ar": "نودلز سريعة التحضير" },
+    "keywords": {
+      "es": ["sopa de vaso", "ramen instantáneo", "fideos", "comida rápida", "agua caliente", "comida de estudiante", "tres minutos"],
+      "en": ["cup noodles", "ramen", "quick meal", "student food", "hot water", "three minutes", "late-night snack"]
+    }
+  },
+  "pasta": {
+    "label": { "es": "Pasta", "en": "Pasta", "pt": "Massa", "fr": "Pâtes", "de": "Pasta", "it": "Pasta", "ja": "パスタ", "zh": "意大利面", "ko": "파스타", "ar": "معكرونة" },
+    "keywords": {
+      "es": ["espagueti", "comida italiana", "macarrones", "salsa boloñesa", "carbonara", "trattoria", "sopa seca"],
+      "en": ["spaghetti", "italian food", "macaroni", "bolognese", "carbonara", "trattoria", "penne"]
+    }
+  },
+  "lasagna": {
+    "label": { "es": "Lasaña", "en": "Lasagna", "pt": "Lasanha", "fr": "Lasagnes", "de": "Lasagne", "it": "Lasagne", "ja": "ラザニア", "zh": "千层面", "ko": "라자냐", "ar": "لازانيا" },
+    "keywords": {
+      "es": ["pasta al horno", "comida italiana", "gratinado", "boloñesa", "comida casera", "refractario", "capas"],
+      "en": ["baked pasta", "italian food", "casserole", "bolognese", "comfort food", "layers", "oven dish"]
+    }
+  },
+  "omelette": {
+    "label": { "es": "Omelette", "en": "Omelette", "pt": "Omelete", "fr": "Omelette", "de": "Omelett", "it": "Frittata", "ja": "オムレツ", "zh": "煎蛋卷", "ko": "오믈렛", "ar": "عجة" },
+    "keywords": {
+      "es": ["huevos", "brunch", "desayuno", "tortilla francesa", "huevos revueltos", "sartén", "almuerzo"],
+      "en": ["eggs", "brunch", "breakfast", "scrambled eggs", "frittata", "skillet", "diner"]
+    }
+  },
+  "curry": {
+    "label": { "es": "Curry", "en": "Curry", "pt": "Curry", "fr": "Curry", "de": "Curry", "it": "Curry", "ja": "カレー", "zh": "咖喱", "ko": "카레", "ar": "كاري" },
+    "keywords": {
+      "es": ["comida india", "comida japonesa", "especias", "masala", "picante", "guisado", "arroz"],
+      "en": ["indian food", "japanese food", "spices", "masala", "spicy", "stew", "tikka"]
+    }
+  },
+  "bento": {
+    "label": { "es": "Bento", "en": "Bento box", "pt": "Bentô", "fr": "Bento", "de": "Bento-Box", "it": "Bento", "ja": "弁当", "zh": "便当", "ko": "도시락", "ar": "علبة بينتو" },
+    "keywords": {
+      "es": ["comida japonesa", "lonchera", "comida para llevar", "meal prep", "almuerzo", "porciones", "comida del día"],
+      "en": ["japanese lunch", "lunch box", "meal prep", "takeout", "portions", "packed lunch", "japanese food"]
+    }
+  },
+  "chocolate": {
+    "label": { "es": "Chocolate", "en": "Chocolate", "pt": "Chocolate", "fr": "Chocolat", "de": "Schokolade", "it": "Cioccolato", "ja": "チョコレート", "zh": "巧克力", "ko": "초콜릿", "ar": "شوكولاتة" },
+    "keywords": {
+      "es": ["dulces", "cacao", "tableta", "golosinas", "postre", "regalo", "san valentín"],
+      "en": ["sweets", "cocoa", "cacao", "candy bar", "dessert", "gift", "valentine’s day"]
+    }
+  },
+  "candy": {
+    "label": { "es": "Dulce", "en": "Candy", "pt": "Bala", "fr": "Bonbon", "de": "Bonbon", "it": "Caramella", "ja": "キャンディ", "zh": "糖果", "ko": "사탕", "ar": "حلوى" },
+    "keywords": {
+      "es": ["golosinas", "caramelo", "premio", "recompensa", "piñata", "bolo", "halloween"],
+      "en": ["sweets", "treat", "reward", "bonbon", "halloween", "trick or treat", "piñata"]
+    }
+  },
+  "lollipop": {
+    "label": { "es": "Paleta de dulce", "en": "Lollipop", "pt": "Pirulito", "fr": "Sucette", "de": "Lutscher", "it": "Lecca-lecca", "ja": "ペロペロキャンディ", "zh": "棒棒糖", "ko": "막대사탕", "ar": "مصاصة" },
+    "keywords": {
+      "es": ["dulces", "caramelo", "niños", "golosina", "dulcería", "fiesta infantil", "premio"],
+      "en": ["sweets", "candy", "kids", "sucker", "lolly", "treat", "party favor"]
+    }
+  },
+  "candy-cane": {
+    "label": { "es": "Bastón de caramelo", "en": "Candy cane", "pt": "Bengala de doce", "fr": "Sucre d’orge", "de": "Zuckerstange", "it": "Bastoncino di zucchero", "ja": "キャンディケイン", "zh": "拐杖糖", "ko": "지팡이 사탕", "ar": "عصا الحلوى" },
+    "keywords": {
+      "es": ["navidad", "dulces", "fiestas decembrinas", "menta", "posada", "adorno navideño", "aguinaldo"],
+      "en": ["christmas", "holidays", "sweets", "peppermint", "festive", "stocking stuffer", "ornament"]
+    }
+  },
+  "gummy-bear": {
+    "label": { "es": "Gomita", "en": "Gummy bear", "pt": "Bala de goma", "fr": "Bonbon ourson", "de": "Gummibärchen", "it": "Orsetto gommoso", "ja": "グミ", "zh": "小熊软糖", "ko": "곰젤리", "ar": "حلوى الدببة الهلامية" },
+    "keywords": {
+      "es": ["dulces", "golosinas", "niños", "ositos de goma", "dulcería", "botana dulce", "premio"],
+      "en": ["sweets", "kids", "gummies", "jelly candy", "treat", "chewy", "candy store"]
+    }
+  },
+  "ice-cream": {
+    "label": { "es": "Helado", "en": "Ice cream", "pt": "Sorvete", "fr": "Glace", "de": "Eis", "it": "Gelato", "ja": "アイスクリーム", "zh": "冰淇淋", "ko": "아이스크림", "ar": "آيس كريم" },
+    "keywords": {
+      "es": ["nieve", "postre", "cono", "barquillo", "paletería", "gelato", "verano"],
+      "en": ["dessert", "gelato", "cone", "scoop", "summer", "creamery", "frozen dessert"]
+    }
+  },
+  "soft-serve": {
+    "label": { "es": "Helado de máquina", "en": "Soft serve", "pt": "Sorvete expresso", "fr": "Glace à l’italienne", "de": "Softeis", "it": "Gelato soft", "ja": "ソフトクリーム", "zh": "软冰淇淋", "ko": "소프트아이스크림", "ar": "مثلجات طرية" },
+    "keywords": {
+      "es": ["frozen yogurt", "conito", "postre", "vainilla", "remolino", "barquillo", "mixto"],
+      "en": ["frozen yogurt", "froyo", "cone", "dessert", "vanilla", "swirl", "twist"]
+    }
+  },
+  "ice-cream-cup": {
+    "label": { "es": "Copa de helado", "en": "Ice cream cup", "pt": "Taça de sorvete", "fr": "Coupe glacée", "de": "Eisbecher", "it": "Coppa di gelato", "ja": "カップアイス", "zh": "杯装冰淇淋", "ko": "컵 아이스크림", "ar": "كوب آيس كريم" },
+    "keywords": {
+      "es": ["sundae", "nieve", "gelato", "postre", "bolas", "heladería", "banana split"],
+      "en": ["sundae", "gelato", "dessert", "scoops", "banana split", "parlor", "frozen dessert"]
+    }
+  },
+  "ice-pop": {
+    "label": { "es": "Paleta helada", "en": "Ice pop", "pt": "Picolé", "fr": "Glace à l’eau", "de": "Wassereis", "it": "Ghiacciolo", "ja": "アイスキャンディー", "zh": "冰棍", "ko": "아이스바", "ar": "مثلجات على عود" },
+    "keywords": {
+      "es": ["paletería", "paleta de agua", "verano", "postre congelado", "hielito", "bolis", "refrescante"],
+      "en": ["paleta", "popsicle", "frozen treat", "summer", "ice lolly", "freezer pop", "refreshing"]
+    }
+  },
+  "flour": {
+    "label": { "es": "Harina", "en": "Flour", "pt": "Farinha", "fr": "Farine", "de": "Mehl", "it": "Farina", "ja": "小麦粉", "zh": "面粉", "ko": "밀가루", "ar": "طحين" },
+    "keywords": {
+      "es": ["hornear", "despensa", "repostería", "costal", "trigo", "masa", "ingredientes"],
+      "en": ["baking", "pantry", "pastry", "sack", "wheat", "dough", "ingredients"]
+    }
+  },
+  "sugar": {
+    "label": { "es": "Azúcar", "en": "Sugar", "pt": "Açúcar", "fr": "Sucre", "de": "Zucker", "it": "Zucchero", "ja": "砂糖", "zh": "糖", "ko": "설탕", "ar": "سكر" },
+    "keywords": {
+      "es": ["hornear", "endulzante", "despensa", "repostería", "terrones", "piloncillo", "glucosa"],
+      "en": ["baking", "sweetener", "pantry", "cubes", "glucose", "cane", "granulated"]
+    }
+  },
+  "salt-shaker": {
+    "label": { "es": "Salero", "en": "Salt shaker", "pt": "Saleiro", "fr": "Salière", "de": "Salzstreuer", "it": "Saliera", "ja": "塩入れ", "zh": "盐瓶", "ko": "소금통", "ar": "مملحة" },
+    "keywords": {
+      "es": ["sal", "sal y pimienta", "sazonar", "condimento", "pimentero", "mesa", "sodio"],
+      "en": ["salt and pepper", "seasoning", "condiment", "pepper shaker", "table", "sodium", "season to taste"]
+    }
+  },
+  "spice-jar": {
+    "label": { "es": "Frasco de especias", "en": "Spice jar", "pt": "Pote de tempero", "fr": "Pot d’épices", "de": "Gewürzglas", "it": "Barattolo di spezie", "ja": "スパイス瓶", "zh": "调料瓶", "ko": "향신료 병", "ar": "برطمان التوابل" },
+    "keywords": {
+      "es": ["especiero", "condimentos", "sazonador", "despensa", "hierbas", "orégano", "pimentón"],
+      "en": ["seasoning", "condiments", "pantry", "herbs", "oregano", "paprika", "rub"]
+    }
+  },
+  "cooking-oil": {
+    "label": { "es": "Aceite", "en": "Cooking oil", "pt": "Óleo de cozinha", "fr": "Huile", "de": "Speiseöl", "it": "Olio", "ja": "食用油", "zh": "食用油", "ko": "식용유", "ar": "زيت الطبخ" },
+    "keywords": {
+      "es": ["oliva", "vinagre", "aderezo", "freír", "cocinar", "despensa", "girasol"],
+      "en": ["olive", "vinegar", "dressing", "frying", "pantry", "vinaigrette", "sunflower"]
+    }
+  },
+  "hot-sauce": {
+    "label": { "es": "Salsa picante", "en": "Hot sauce", "pt": "Molho de pimenta", "fr": "Sauce piquante", "de": "Scharfe Soße", "it": "Salsa piccante", "ja": "ホットソース", "zh": "辣酱", "ko": "핫소스", "ar": "صلصة حارة" },
+    "keywords": {
+      "es": ["chile", "condimento", "picosito", "enchilado", "sriracha", "chipotle", "aderezo"],
+      "en": ["chili sauce", "condiment", "spicy", "sriracha", "chipotle", "pepper sauce", "habanero"]
+    }
+  },
+  "ketchup": {
+    "label": { "es": "Catsup", "en": "Ketchup", "pt": "Ketchup", "fr": "Ketchup", "de": "Ketchup", "it": "Ketchup", "ja": "ケチャップ", "zh": "番茄酱", "ko": "케첩", "ar": "كاتشب" },
+    "keywords": {
+      "es": ["mostaza", "mayonesa", "aderezos", "condimentos", "ketchup", "botella", "salsa de tomate"],
+      "en": ["mustard", "mayonnaise", "condiments", "squeeze bottle", "catsup", "tomato sauce", "dressing"]
+    }
+  },
+  "dip": {
+    "label": { "es": "Dip", "en": "Dip", "pt": "Pastinha", "fr": "Trempette", "de": "Dip", "it": "Salsa dip", "ja": "ディップ", "zh": "蘸酱", "ko": "딥 소스", "ar": "صلصة تغميس" },
+    "keywords": {
+      "es": ["salsa", "guacamole", "hummus", "botana", "totopos", "aderezo", "molcajete"],
+      "en": ["salsa", "guacamole", "hummus", "appetizer", "spread", "party snack", "queso"]
+    }
+  },
+  "honey": {
+    "label": { "es": "Miel", "en": "Honey", "pt": "Mel", "fr": "Miel", "de": "Honig", "it": "Miele", "ja": "はちみつ", "zh": "蜂蜜", "ko": "꿀", "ar": "عسل" },
+    "keywords": {
+      "es": ["untable", "endulzante", "abejas", "panal", "apicultura", "natural", "desayuno"],
+      "en": ["spread", "sweetener", "bees", "comb", "beekeeping", "natural", "organic"]
+    }
+  },
+  "jam": {
+    "label": { "es": "Mermelada", "en": "Jam", "pt": "Geleia", "fr": "Confiture", "de": "Marmelade", "it": "Marmellata", "ja": "ジャム", "zh": "果酱", "ko": "잼", "ar": "مربى" },
+    "keywords": {
+      "es": ["conservas", "frasco", "untable", "desayuno", "fresa", "jalea", "casero"],
+      "en": ["preserves", "marmalade", "jelly", "spread", "breakfast", "jar", "homemade"]
+    }
+  },
+  "pickles": {
+    "label": { "es": "Encurtidos", "en": "Pickles", "pt": "Picles", "fr": "Cornichons", "de": "Essiggurken", "it": "Sottaceti", "ja": "ピクルス", "zh": "腌菜", "ko": "피클", "ar": "مخللات" },
+    "keywords": {
+      "es": ["pepinillos", "conservas", "fermentados", "chiles en vinagre", "frasco", "escabeche", "kimchi"],
+      "en": ["pickled food", "preserves", "fermented", "gherkins", "jar", "brine", "kimchi"]
+    }
+  },
+  "canned-food": {
+    "label": { "es": "Comida enlatada", "en": "Canned food", "pt": "Enlatados", "fr": "Conserves", "de": "Konserven", "it": "Cibo in scatola", "ja": "缶詰", "zh": "罐头", "ko": "통조림", "ar": "طعام معلب" },
+    "keywords": {
+      "es": ["lata", "despensa", "abarrotes", "conservas", "atún", "súper", "no perecedero"],
+      "en": ["tin can", "pantry", "groceries", "preserves", "tuna", "supermarket", "non-perishable"]
+    }
+  },
+  "snack-bag": {
+    "label": { "es": "Bolsa de papitas", "en": "Bag of chips", "pt": "Pacote de salgadinho", "fr": "Paquet de chips", "de": "Chipstüte", "it": "Busta di patatine", "ja": "ポテトチップス", "zh": "薯片", "ko": "과자 봉지", "ar": "كيس رقائق البطاطس" },
+    "keywords": {
+      "es": ["botana", "frituras", "chips", "snacks", "churritos", "tiendita", "antojo"],
+      "en": ["snack", "crisps", "potato chips", "junk food", "convenience store", "munchies", "vending machine"]
+    }
+  },
+  "granola-bar": {
+    "label": { "es": "Barra de granola", "en": "Granola bar", "pt": "Barra de cereal", "fr": "Barre de céréales", "de": "Müsliriegel", "it": "Barretta ai cereali", "ja": "シリアルバー", "zh": "燕麦棒", "ko": "그래놀라 바", "ar": "لوح الجرانولا" },
+    "keywords": {
+      "es": ["barra de proteína", "barra de cereal", "colación", "snack saludable", "gimnasio", "energía", "lonchera"],
+      "en": ["protein bar", "cereal bar", "energy bar", "healthy snack", "gym", "on the go", "lunch box"]
+    }
+  },
+  "groceries": {
+    "label": { "es": "Compras del súper", "en": "Groceries", "pt": "Compras de mercado", "fr": "Courses", "de": "Lebensmitteleinkauf", "it": "Spesa", "ja": "食料品", "zh": "食品杂货", "ko": "장보기", "ar": "مشتريات البقالة" },
+    "keywords": {
+      "es": ["supermercado", "mandado", "despensa", "abarrotes", "bolsa de compras", "mercado", "tiendita"],
+      "en": ["supermarket", "shopping bag", "food shopping", "market", "provisions", "grocer", "weekly shop"]
+    }
+  },
+  "nutrition-label": {
+    "label": { "es": "Información nutricional", "en": "Nutrition facts", "pt": "Tabela nutricional", "fr": "Valeurs nutritionnelles", "de": "Nährwertangaben", "it": "Valori nutrizionali", "ja": "栄養成分表示", "zh": "营养成分表", "ko": "영양성분표", "ar": "القيم الغذائية" },
+    "keywords": {
+      "es": ["tabla nutrimental", "calorías", "etiquetado", "sellos de advertencia", "nutrientes", "porción", "alimentos empacados"],
+      "en": ["calories", "food label", "nutrients", "serving size", "packaged food", "macros", "daily value"]
+    }
+  },
+  "food-scan": {
+    "label": { "es": "Escanear comida", "en": "Scan food", "pt": "Escanear alimento", "fr": "Scanner un aliment", "de": "Lebensmittel scannen", "it": "Scansiona cibo", "ja": "食事をスキャン", "zh": "扫描食物", "ko": "음식 스캔", "ar": "مسح الطعام" },
+    "keywords": {
+      "es": ["reconocimiento de platillos", "contar calorías", "cámara", "nutrición", "registro de comidas", "dieta", "app de salud"],
+      "en": ["meal recognition", "calorie scan", "camera", "nutrition", "food log", "diet tracking", "health app"]
+    }
+  },
+  "groceries-plus": {
+    "label": { "es": "Agregar a las compras", "en": "Add to groceries", "pt": "Adicionar às compras", "fr": "Ajouter aux courses", "de": "Zur Einkaufsliste hinzufügen", "it": "Aggiungi alla spesa", "ja": "買い物リストに追加", "zh": "加入购物清单", "ko": "장보기 목록에 추가", "ar": "إضافة إلى قائمة المشتريات" },
+    "keywords": {
+      "es": ["lista del súper", "agregar producto", "anotar", "mandado", "lista de compras", "despensa", "añadir"],
+      "en": ["grocery list", "shopping list", "add item", "note down", "pantry", "restock", "plus"]
+    }
+  },
+  "groceries-check": {
+    "label": { "es": "Compras listas", "en": "Groceries done", "pt": "Compras feitas", "fr": "Courses faites", "de": "Einkauf erledigt", "it": "Spesa fatta", "ja": "買い物完了", "zh": "采购完成", "ko": "장보기 완료", "ar": "اكتملت المشتريات" },
+    "keywords": {
+      "es": ["lista completa", "entregado", "pedido recibido", "mandado hecho", "súper a domicilio", "tachado", "despensa surtida"],
+      "en": ["list complete", "delivered", "grocery delivery", "order received", "checked off", "stocked pantry", "all set"]
+    }
+  },
+  "groceries-minus": {
+    "label": { "es": "Quitar de las compras", "en": "Remove from groceries", "pt": "Remover das compras", "fr": "Retirer des courses", "de": "Von der Einkaufsliste entfernen", "it": "Rimuovi dalla spesa", "ja": "買い物リストから削除", "zh": "从购物清单移除", "ko": "장보기 목록에서 제거", "ar": "إزالة من قائمة المشتريات" },
+    "keywords": {
+      "es": ["lista del súper", "lista de compras", "eliminar", "tachar", "sacar del carrito", "ya no hace falta", "descartar"],
+      "en": ["grocery list", "shopping list", "delete item", "cross off", "take out", "no longer needed", "discard"]
+    }
+  },
+  "canned-food-heart": {
+    "label": { "es": "Donación de alimentos", "en": "Food donation", "pt": "Doação de alimentos", "fr": "Don alimentaire", "de": "Lebensmittelspende", "it": "Donazione di cibo", "ja": "食料寄付", "zh": "食物捐赠", "ko": "식품 기부", "ar": "التبرع بالطعام" },
+    "keywords": {
+      "es": ["banco de alimentos", "colecta", "centro de acopio", "caridad", "despensa solidaria", "voluntariado", "ayuda humanitaria"],
+      "en": ["food bank", "food drive", "charity", "pantry", "volunteer", "relief", "giving"]
+    }
+  },
+  "nutrition-label-search": {
+    "label": { "es": "Buscar información nutricional", "en": "Look up nutrition", "pt": "Consultar informação nutricional", "fr": "Rechercher les valeurs nutritionnelles", "de": "Nährwerte nachschlagen", "it": "Cerca valori nutrizionali", "ja": "栄養成分を検索", "zh": "查询营养成分", "ko": "영양 정보 검색", "ar": "البحث عن القيم الغذائية" },
+    "keywords": {
+      "es": ["ingredientes", "escáner de alimentos", "alérgenos", "calorías", "consultar etiqueta", "comparar productos", "tabla nutrimental"],
+      "en": ["ingredients", "food scanner", "allergens", "calories", "check label", "compare products", "barcode"]
+    }
+  }
+}

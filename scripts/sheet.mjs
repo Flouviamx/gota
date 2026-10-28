@@ -3,10 +3,10 @@
 // It also flags icons that leave the live area (a path outside 1.75–22.25).
 // Usage: node scripts/sheet.mjs <category|all>
 import { spawn } from 'node:child_process';
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { render } from '../engine/variants.mjs';
+import { newProfile } from './chrome.mjs';
 import { loadAll } from './load.mjs';
 
 const target = process.argv[2] ?? 'all';
@@ -30,7 +30,7 @@ body{margin:0;background:#161617;color:#fff;font:12px "Helvetica Neue",Helvetica
 
 const CHROME = process.env.CHROME ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const profile = mkdtempSync(join(tmpdir(), 'fi-'));
+const profile = newProfile();
 const port = 9800 + Math.floor(Math.random() * 900);
 const chrome = spawn(CHROME, ['--headless=new', `--remote-debugging-port=${port}`, `--user-data-dir=${profile}`, '--hide-scrollbars', 'about:blank'], { stdio: 'ignore' });
 let tgt;
