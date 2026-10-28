@@ -1,0 +1,569 @@
+{
+  "figure-standing": {
+    "label": { "es": "Persona de pie", "en": "Person standing", "pt": "Pessoa em pé", "fr": "Personne debout", "de": "Stehende Person", "it": "Persona in piedi", "ja": "立っている人", "zh": "站立的人", "ko": "서 있는 사람", "ar": "شخص واقف" },
+    "keywords": {
+      "es": ["adulto", "cuerpo completo", "boleto de adulto", "pasajero adulto", "parado aquí", "figura humana", "silueta"],
+      "en": ["adult", "full body", "adult ticket", "adult passenger", "stand here", "human figure", "silhouette"]
+    }
+  },
+  "figure-sitting": {
+    "label": { "es": "Persona sentada", "en": "Person sitting", "pt": "Pessoa sentada", "fr": "Personne assise", "de": "Sitzende Person", "it": "Persona seduta", "ja": "座っている人", "zh": "坐着的人", "ko": "앉아 있는 사람", "ar": "شخص جالس" },
+    "keywords": {
+      "es": ["asiento ocupado", "tome asiento", "sala de espera", "lugar ocupado", "postura", "silla", "esperar sentado"],
+      "en": ["seat taken", "please be seated", "waiting room", "occupied seat", "seated position", "chair", "sit down"]
+    }
+  },
+  "figure-kneeling": {
+    "label": { "es": "Persona arrodillada", "en": "Person kneeling", "pt": "Pessoa ajoelhada", "fr": "Personne à genoux", "de": "Kniende Person", "it": "Persona inginocchiata", "ja": "ひざまずく人", "zh": "单膝跪地的人", "ko": "무릎 꿇은 사람", "ar": "شخص جاثٍ على ركبته" },
+    "keywords": {
+      "es": ["hincarse", "de rodillas", "trabajo a ras de piso", "una rodilla en el suelo", "agacharse", "instalación en piso", "postura"],
+      "en": ["kneel", "on one knee", "floor-level work", "take a knee", "crouch", "floor installation", "posture"]
+    }
+  },
+  "figure-lifting": {
+    "label": { "es": "Levantar carga", "en": "Lift a load", "pt": "Levantar carga", "fr": "Soulever une charge", "de": "Last heben", "it": "Sollevare un carico", "ja": "荷物を持ち上げる", "zh": "搬起重物", "ko": "짐 들어 올리기", "ar": "رفع حمولة" },
+    "keywords": {
+      "es": ["manejo manual de cargas", "doblar las rodillas", "objeto pesado", "seguridad laboral", "ergonomía", "alzar", "almacén"],
+      "en": ["manual handling", "lift with your knees", "heavy item", "workplace safety", "ergonomics", "raise", "warehouse"]
+    }
+  },
+  "figure-carrying": {
+    "label": { "es": "Persona cargando una caja", "en": "Person carrying a box", "pt": "Pessoa carregando uma caixa", "fr": "Personne portant un carton", "de": "Person trägt einen Karton", "it": "Persona che porta una scatola", "ja": "箱を運ぶ人", "zh": "搬箱子的人", "ko": "상자를 나르는 사람", "ar": "شخص يحمل صندوقًا" },
+    "keywords": {
+      "es": ["mudanza", "acarrear", "transportar", "servicio de carga", "entrega en mano", "cargador", "paquete"],
+      "en": ["moving house", "carry items", "transport", "carry-in service", "hand delivery", "porter", "package"]
+    }
+  },
+  "figure-pushing": {
+    "label": { "es": "Persona empujando", "en": "Person pushing", "pt": "Pessoa empurrando", "fr": "Personne qui pousse", "de": "Schiebende Person", "it": "Persona che spinge", "ja": "押している人", "zh": "推东西的人", "ko": "미는 사람", "ar": "شخص يدفع" },
+    "keywords": {
+      "es": ["empujar carga", "carrito", "diablito", "puerta pesada", "esfuerzo", "fuerza", "mover"],
+      "en": ["push a load", "cart", "hand truck", "heavy door", "effort", "force", "shove"]
+    }
+  },
+  "figure-arms-raised": {
+    "label": { "es": "Celebrar", "en": "Celebrate", "pt": "Comemorar", "fr": "Célébrer", "de": "Jubeln", "it": "Festeggiare", "ja": "バンザイ", "zh": "欢呼庆祝", "ko": "환호하기", "ar": "ابتهاج" },
+    "keywords": {
+      "es": ["ganar", "éxito", "logro", "meta alcanzada", "festejo", "victoria", "todo listo", "alegría"],
+      "en": ["win", "success", "cheer", "goal reached", "victory", "achievement", "all done", "hooray"]
+    }
+  },
+  "figure-waving": {
+    "label": { "es": "Saludar", "en": "Wave hello", "pt": "Acenar", "fr": "Saluer de la main", "de": "Winken", "it": "Salutare con la mano", "ja": "手を振る", "zh": "挥手打招呼", "ko": "손 흔들어 인사하기", "ar": "التلويح بالتحية" },
+    "keywords": {
+      "es": ["hola", "bienvenida", "saludo", "decir hola", "primeros pasos", "presentación", "bienvenido a bordo"],
+      "en": ["hello", "welcome", "greeting", "say hi", "onboarding", "hi there", "introduction"]
+    }
+  },
+  "figure-falling": {
+    "label": { "es": "Caída", "en": "Person falling", "pt": "Queda", "fr": "Chute", "de": "Sturz", "it": "Caduta", "ja": "転倒", "zh": "跌倒", "ko": "넘어짐", "ar": "سقوط شخص" },
+    "keywords": {
+      "es": ["detección de caídas", "alerta de caída", "adulto mayor", "resbalón", "tropiezo", "accidente", "reloj inteligente", "reporte de incidente"],
+      "en": ["fall detection", "fall alert", "slip and fall", "trip", "elder care", "accident", "smartwatch", "incident report"]
+    }
+  },
+  "figure-jumping": {
+    "label": { "es": "Saltar", "en": "Jump", "pt": "Pular", "fr": "Sauter", "de": "Springen", "it": "Saltare", "ja": "ジャンプする人", "zh": "跳跃", "ko": "점프", "ar": "قفز" },
+    "keywords": {
+      "es": ["brincar", "brinco", "alegría", "rebotar", "energía", "emoción", "ejercicio"],
+      "en": ["hop", "leap", "joy", "bounce", "energy", "excitement", "exercise"]
+    }
+  },
+  "figure-entering": {
+    "label": { "es": "Persona entrando", "en": "Person entering", "pt": "Pessoa entrando", "fr": "Personne qui entre", "de": "Eintretende Person", "it": "Persona che entra", "ja": "入室する人", "zh": "进门的人", "ko": "들어오는 사람", "ar": "شخص يدخل" },
+    "keywords": {
+      "es": ["llegada", "entrada", "registro de entrada", "conteo de entradas", "visitante", "acceso", "check-in"],
+      "en": ["arrival", "entry", "entry count", "visitor in", "check-in", "access", "walk in"]
+    }
+  },
+  "figure-exiting": {
+    "label": { "es": "Persona saliendo", "en": "Person leaving", "pt": "Pessoa saindo", "fr": "Personne qui sort", "de": "Hinausgehende Person", "it": "Persona che esce", "ja": "退室する人", "zh": "出门的人", "ko": "나가는 사람", "ar": "شخص يغادر" },
+    "keywords": {
+      "es": ["salida", "partida", "registro de salida", "conteo de salidas", "abandonar el lugar", "check-out", "despedida"],
+      "en": ["exit", "departure", "check-out", "exit count", "leave the premises", "walk out", "sign out"]
+    }
+  },
+  "figure-working": {
+    "label": { "es": "Trabajando", "en": "Working", "pt": "Trabalhando", "fr": "Au travail", "de": "Bei der Arbeit", "it": "Al lavoro", "ja": "作業中", "zh": "工作中", "ko": "업무 중", "ar": "في العمل" },
+    "keywords": {
+      "es": ["en el trabajo", "escritorio", "concentración", "ocupado", "oficina", "home office", "no molestar"],
+      "en": ["at work", "desk", "focus time", "busy", "office", "desk job", "do not disturb"]
+    }
+  },
+  "child": {
+    "label": { "es": "Niño", "en": "Child", "pt": "Criança", "fr": "Enfant", "de": "Kind", "it": "Bambino", "ja": "子ども", "zh": "儿童", "ko": "어린이", "ar": "طفل" },
+    "keywords": {
+      "es": ["menor de edad", "infantil", "boleto de niño", "niña", "pasajero menor", "peque", "chamaco"],
+      "en": ["kid", "minor", "child ticket", "youngster", "boy", "girl", "child passenger"]
+    }
+  },
+  "child-check": {
+    "label": { "es": "Niño registrado", "en": "Child checked in", "pt": "Criança registrada", "fr": "Enfant enregistré", "de": "Kind angemeldet", "it": "Bambino registrato", "ja": "子どもの受付完了", "zh": "儿童已签到", "ko": "아이 체크인 완료", "ar": "تم تسجيل الطفل" },
+    "keywords": {
+      "es": ["guardería", "recoger al niño", "entrada a la escuela", "campamento", "asistencia", "entregado a su tutor", "salida escolar"],
+      "en": ["daycare", "school pickup", "child pickup", "camp", "attendance", "drop-off", "released to guardian"]
+    }
+  },
+  "child-alert": {
+    "label": { "es": "Niño extraviado", "en": "Missing child", "pt": "Criança desaparecida", "fr": "Enfant disparu", "de": "Vermisstes Kind", "it": "Bambino scomparso", "ja": "迷子", "zh": "儿童走失", "ko": "실종 아동", "ar": "طفل مفقود" },
+    "keywords": {
+      "es": ["niño perdido", "alerta amber", "menor desaparecido", "búsqueda", "emergencia", "seguridad infantil", "requiere atención"],
+      "en": ["lost child", "amber alert", "child safety", "search", "emergency", "needs attention", "missing minor"]
+    }
+  },
+  "children": {
+    "label": { "es": "Niños", "en": "Children", "pt": "Crianças", "fr": "Enfants", "de": "Kinder", "it": "Bambini", "ja": "子どもたち", "zh": "孩子们", "ko": "아이들", "ar": "أطفال" },
+    "keywords": {
+      "es": ["hermanos", "área infantil", "zona de niños", "menores", "grupo infantil", "peques", "chiquillos"],
+      "en": ["kids", "siblings", "kids' area", "play area", "minors", "kids' club", "youth"]
+    }
+  },
+  "elder": {
+    "label": { "es": "Adulto mayor", "en": "Senior", "pt": "Idoso", "fr": "Personne âgée", "de": "Ältere Person", "it": "Anziano", "ja": "高齢者", "zh": "老年人", "ko": "어르신", "ar": "كبير السن" },
+    "keywords": {
+      "es": ["tercera edad", "persona mayor", "tarifa de adulto mayor", "INAPAM", "abuelo", "cuidado de mayores", "jubilado"],
+      "en": ["older adult", "elderly", "senior fare", "elder care", "grandparent", "retiree", "aging"]
+    }
+  },
+  "elder-alert": {
+    "label": { "es": "Alerta de adulto mayor", "en": "Senior alert", "pt": "Alerta de idoso", "fr": "Alerte personne âgée", "de": "Seniorennotruf", "it": "Allarme anziano", "ja": "高齢者の緊急通知", "zh": "老人求助警报", "ko": "어르신 긴급 알림", "ar": "تنبيه طارئ لكبير السن" },
+    "keywords": {
+      "es": ["botón de pánico", "necesita ayuda", "no respondió", "emergencia médica", "teleasistencia", "aviso al cuidador", "cuidado de mayores"],
+      "en": ["panic button", "needs help", "missed check-in", "medical alert", "emergency", "caregiver notice", "personal alarm"]
+    }
+  },
+  "elder-walker": {
+    "label": { "es": "Persona con andadera", "en": "Person with walker", "pt": "Pessoa com andador", "fr": "Personne avec déambulateur", "de": "Person mit Rollator", "it": "Persona con deambulatore", "ja": "歩行器を使う人", "zh": "使用助行器的人", "ko": "보행기를 쓰는 사람", "ar": "شخص يستخدم مشاية" },
+    "keywords": {
+      "es": ["andador", "ayuda para caminar", "movilidad reducida", "adulto mayor", "accesibilidad", "rehabilitación", "caminar asistido"],
+      "en": ["walking frame", "rollator", "mobility aid", "assisted walking", "reduced mobility", "accessibility", "senior"]
+    }
+  },
+  "generations": {
+    "label": { "es": "Todas las edades", "en": "All ages", "pt": "Todas as idades", "fr": "Tous les âges", "de": "Alle Altersgruppen", "it": "Tutte le età", "ja": "全年齢", "zh": "全年龄段", "ko": "전 연령", "ar": "لجميع الأعمار" },
+    "keywords": {
+      "es": ["generaciones", "grupos de edad", "multigeneracional", "para toda la familia", "abuelos y nietos", "intergeneracional", "chicos y grandes"],
+      "en": ["generations", "age groups", "multigenerational", "for everyone", "family friendly", "grandparents", "intergenerational"]
+    }
+  },
+  "couple": {
+    "label": { "es": "Pareja", "en": "Couple", "pt": "Casal", "fr": "Couple", "de": "Paar", "it": "Coppia", "ja": "カップル", "zh": "伴侣", "ko": "커플", "ar": "زوجان" },
+    "keywords": {
+      "es": ["dos personas", "acompañante", "novios", "compañeros", "dos viajeros", "invitado extra", "para dos"],
+      "en": ["partners", "two people", "plus-one", "two travelers", "pair", "duo", "for two"]
+    }
+  },
+  "caregiver": {
+    "label": { "es": "Cuidador", "en": "Caregiver", "pt": "Cuidador", "fr": "Aide à domicile", "de": "Betreuungsperson", "it": "Badante", "ja": "介護者", "zh": "护理员", "ko": "돌봄 제공자", "ar": "مقدّم الرعاية" },
+    "keywords": {
+      "es": ["cuidado en casa", "cuidado de adultos mayores", "enfermera a domicilio", "asistente personal", "acompañante", "apoyo", "cuidados"],
+      "en": ["home care", "elder care", "carer", "support worker", "personal assistant", "home health aide", "companion"]
+    }
+  },
+  "shopper": {
+    "label": { "es": "De compras", "en": "Shopper", "pt": "Pessoa fazendo compras", "fr": "Personne faisant ses courses", "de": "Person beim Einkaufen", "it": "Persona che fa shopping", "ja": "買い物客", "zh": "购物者", "ko": "쇼핑객", "ar": "متسوّق" },
+    "keywords": {
+      "es": ["salir a comprar", "compras en tienda", "visita a la tienda", "bolsas de compra", "comprador", "centro comercial", "mandado"],
+      "en": ["shopping", "in-store shopping", "shopping trip", "store visit", "shopping bags", "mall", "retail"]
+    }
+  },
+  "traveler": {
+    "label": { "es": "Viajero", "en": "Traveler", "pt": "Viajante", "fr": "Voyageur", "de": "Reisender", "it": "Viaggiatore", "ja": "旅行者", "zh": "旅行者", "ko": "여행자", "ar": "مسافر" },
+    "keywords": {
+      "es": ["viaje", "llegadas", "turista", "maleta", "pasajero", "vacaciones", "mochilero"],
+      "en": ["trip", "arrivals", "tourist", "luggage", "passenger", "vacation", "backpacker"]
+    }
+  },
+  "waiting-line": {
+    "label": { "es": "Personas en fila", "en": "People in line", "pt": "Pessoas na fila", "fr": "Personnes dans la file", "de": "Menschen in der Schlange", "it": "Persone in coda", "ja": "列に並ぶ人々", "zh": "排队的人", "ko": "줄 선 사람들", "ar": "أشخاص في الطابور" },
+    "keywords": {
+      "es": ["hacer fila", "formarse", "cola", "fila de espera", "turno", "orden de llegada", "esperar"],
+      "en": ["queue", "line up", "waiting line", "wait your turn", "first come first served", "turn", "waiting"]
+    }
+  },
+  "skip-the-line": {
+    "label": { "es": "Acceso prioritario", "en": "Skip the line", "pt": "Acesso prioritário", "fr": "Coupe-file", "de": "Ohne Anstehen", "it": "Salta la fila", "ja": "優先入場", "zh": "免排队", "ko": "우선 입장", "ar": "دخول دون انتظار" },
+    "keywords": {
+      "es": ["pase rápido", "sin hacer fila", "abordaje prioritario", "fast pass", "VIP", "entrada preferente", "saltarse la fila"],
+      "en": ["priority access", "fast pass", "skip the queue", "priority boarding", "VIP", "fast track", "express entry"]
+    }
+  },
+  "social-distance": {
+    "label": { "es": "Sana distancia", "en": "Keep your distance", "pt": "Distanciamento social", "fr": "Distanciation sociale", "de": "Abstand halten", "it": "Distanziamento sociale", "ja": "ソーシャルディスタンス", "zh": "保持社交距离", "ko": "사회적 거리두기", "ar": "التباعد الاجتماعي" },
+    "keywords": {
+      "es": ["distanciamiento social", "guardar distancia", "espacio personal", "aviso de proximidad", "metro y medio", "separación", "aforo"],
+      "en": ["social distancing", "personal space", "proximity warning", "stay apart", "six feet", "spacing", "safe distance"]
+    }
+  },
+  "foot-traffic": {
+    "label": { "es": "Afluencia de personas", "en": "Foot traffic", "pt": "Fluxo de pessoas", "fr": "Fréquentation", "de": "Besucherfrequenz", "it": "Afflusso di persone", "ja": "人の往来", "zh": "人流量", "ko": "유동 인구", "ar": "حركة المارة" },
+    "keywords": {
+      "es": ["tráfico peatonal", "visitas a la tienda", "peatones", "conteo de personas", "analítica de tienda", "flujo de gente", "transeúntes"],
+      "en": ["footfall", "store visits", "pedestrian traffic", "people counting", "retail analytics", "passersby", "visitor flow"]
+    }
+  },
+  "patient": {
+    "label": { "es": "Paciente", "en": "Patient", "pt": "Paciente", "fr": "Patient", "de": "Patient", "it": "Paziente", "ja": "患者", "zh": "病人", "ko": "환자", "ar": "مريض" },
+    "keywords": {
+      "es": ["hospitalizado", "internado", "reposo en cama", "cama de hospital", "estancia hospitalaria", "ingreso", "enfermo"],
+      "en": ["inpatient", "admitted", "bed rest", "hospital bed", "hospital stay", "sick", "ward"]
+    }
+  },
+  "dentist": {
+    "label": { "es": "Dentista", "en": "Dentist", "pt": "Dentista", "fr": "Dentiste", "de": "Zahnarzt", "it": "Dentista", "ja": "歯科医", "zh": "牙医", "ko": "치과의사", "ar": "طبيب أسنان" },
+    "keywords": {
+      "es": ["odontólogo", "cita con el dentista", "cuidado dental", "consultorio dental", "limpieza dental", "ortodoncista", "salud bucal"],
+      "en": ["dental care", "dental appointment", "orthodontist", "teeth cleaning", "dental clinic", "oral health", "hygienist"]
+    }
+  },
+  "pharmacist": {
+    "label": { "es": "Farmacéutico", "en": "Pharmacist", "pt": "Farmacêutico", "fr": "Pharmacien", "de": "Apotheker", "it": "Farmacista", "ja": "薬剤師", "zh": "药剂师", "ko": "약사", "ar": "صيدلي" },
+    "keywords": {
+      "es": ["farmacia", "personal de farmacia", "pregunta en la farmacia", "medicamentos", "receta", "botica", "dependiente de farmacia"],
+      "en": ["pharmacy", "pharmacy staff", "ask your pharmacist", "medication", "prescription", "drugstore", "chemist"]
+    }
+  },
+  "technician": {
+    "label": { "es": "Técnico", "en": "Technician", "pt": "Técnico", "fr": "Technicien", "de": "Techniker", "it": "Tecnico", "ja": "技術者", "zh": "技术员", "ko": "기사", "ar": "فني" },
+    "keywords": {
+      "es": ["reparación", "servicio a domicilio", "mantenimiento", "visita técnica", "soporte en sitio", "instalador", "maestro"],
+      "en": ["repair person", "handyman", "field service", "maintenance", "on-site support", "installer", "service call"]
+    }
+  },
+  "electrician": {
+    "label": { "es": "Electricista", "en": "Electrician", "pt": "Eletricista", "fr": "Électricien", "de": "Elektriker", "it": "Elettricista", "ja": "電気工事士", "zh": "电工", "ko": "전기 기사", "ar": "كهربائي" },
+    "keywords": {
+      "es": ["instalación eléctrica", "servicios para el hogar", "cableado", "reparación eléctrica", "contactos", "corto circuito", "luz"],
+      "en": ["electrical work", "home services", "wiring", "electrical repair", "outlets", "short circuit", "lighting"]
+    }
+  },
+  "plumber": {
+    "label": { "es": "Plomero", "en": "Plumber", "pt": "Encanador", "fr": "Plombier", "de": "Klempner", "it": "Idraulico", "ja": "配管工", "zh": "水管工", "ko": "배관공", "ar": "سبّاك" },
+    "keywords": {
+      "es": ["plomería", "fontanero", "fuga de agua", "tubería", "servicios para el hogar", "destapar", "drenaje"],
+      "en": ["plumbing", "water leak", "pipes", "home services", "unclog", "drain", "pipe repair"]
+    }
+  },
+  "painter": {
+    "label": { "es": "Pintor", "en": "Painter", "pt": "Pintor", "fr": "Peintre", "de": "Maler", "it": "Imbianchino", "ja": "塗装職人", "zh": "油漆工", "ko": "페인트공", "ar": "دهّان" },
+    "keywords": {
+      "es": ["pintar la casa", "pintura de interiores", "decorador", "rodillo", "acabados", "impermeabilizar", "servicios para el hogar"],
+      "en": ["house painting", "decorator", "interior painting", "paint roller", "finishes", "wall painting", "home services"]
+    }
+  },
+  "cleaner": {
+    "label": { "es": "Personal de limpieza", "en": "Cleaner", "pt": "Profissional de limpeza", "fr": "Agent d’entretien", "de": "Reinigungskraft", "it": "Addetto alle pulizie", "ja": "清掃スタッフ", "zh": "保洁员", "ko": "청소 직원", "ar": "عامل نظافة" },
+    "keywords": {
+      "es": ["intendencia", "conserje", "trabajadora del hogar", "afanador", "servicio de aseo", "ama de llaves", "mantenimiento"],
+      "en": ["housekeeper", "janitor", "custodian", "domestic worker", "maid service", "housekeeping", "cleaning service"]
+    }
+  },
+  "gardener": {
+    "label": { "es": "Jardinero", "en": "Gardener", "pt": "Jardineiro", "fr": "Jardinier", "de": "Gärtner", "it": "Giardiniere", "ja": "庭師", "zh": "园丁", "ko": "정원사", "ar": "بستاني" },
+    "keywords": {
+      "es": ["paisajista", "jardinería", "servicios de jardín", "podar", "cortar el pasto", "áreas verdes", "plantas"],
+      "en": ["landscaper", "garden services", "lawn care", "pruning", "mow the lawn", "landscaping", "plants"]
+    }
+  },
+  "scientist": {
+    "label": { "es": "Científico", "en": "Scientist", "pt": "Cientista", "fr": "Scientifique", "de": "Wissenschaftler", "it": "Scienziato", "ja": "科学者", "zh": "科学家", "ko": "과학자", "ar": "عالِم" },
+    "keywords": {
+      "es": ["investigador", "laboratorista", "laboratorio", "ciencia", "experimento", "bata", "investigación"],
+      "en": ["researcher", "lab technician", "laboratory", "science", "experiment", "lab coat", "research"]
+    }
+  },
+  "developer": {
+    "label": { "es": "Desarrollador", "en": "Developer", "pt": "Desenvolvedor", "fr": "Développeur", "de": "Entwickler", "it": "Sviluppatore", "ja": "開発者", "zh": "开发者", "ko": "개발자", "ar": "مطوّر" },
+    "keywords": {
+      "es": ["programador", "ingeniero de software", "cuenta de desarrollador", "código", "programación", "dev", "API"],
+      "en": ["programmer", "software engineer", "engineer", "code", "coding", "dev", "API"]
+    }
+  },
+  "designer": {
+    "label": { "es": "Diseñador", "en": "Designer", "pt": "Designer", "fr": "Designer", "de": "Designer", "it": "Designer", "ja": "デザイナー", "zh": "设计师", "ko": "디자이너", "ar": "مصمم" },
+    "keywords": {
+      "es": ["diseño gráfico", "diseño de interfaz", "creativo", "diseño UX", "ilustrador", "estudio creativo", "portafolio"],
+      "en": ["graphic design", "UI design", "creative", "UX", "illustrator", "creative studio", "portfolio"]
+    }
+  },
+  "accountant": {
+    "label": { "es": "Contador", "en": "Accountant", "pt": "Contador", "fr": "Comptable", "de": "Buchhalter", "it": "Contabile", "ja": "会計士", "zh": "会计", "ko": "회계사", "ar": "محاسب" },
+    "keywords": {
+      "es": ["contabilidad", "declaración de impuestos", "SAT", "finanzas", "tenedor de libros", "contaduría", "despacho contable"],
+      "en": ["bookkeeper", "tax preparer", "finance staff", "accounting", "taxes", "CPA", "bookkeeping"]
+    }
+  },
+  "musician": {
+    "label": { "es": "Músico", "en": "Musician", "pt": "Músico", "fr": "Musicien", "de": "Musiker", "it": "Musicista", "ja": "ミュージシャン", "zh": "音乐人", "ko": "음악가", "ar": "موسيقي" },
+    "keywords": {
+      "es": ["perfil de artista", "intérprete", "integrante de la banda", "cantante", "guitarrista", "concierto", "en vivo"],
+      "en": ["artist profile", "performer", "band member", "singer", "guitarist", "concert", "live music"]
+    }
+  },
+  "hairstylist": {
+    "label": { "es": "Estilista", "en": "Hairstylist", "pt": "Cabeleireiro", "fr": "Coiffeur", "de": "Friseur", "it": "Parrucchiere", "ja": "美容師", "zh": "发型师", "ko": "헤어 디자이너", "ar": "مصفف شعر" },
+    "keywords": {
+      "es": ["peluquero", "barbero", "salón de belleza", "corte de cabello", "estética", "peinado", "barbería"],
+      "en": ["hairdresser", "barber", "salon staff", "haircut", "beauty salon", "hairstyle", "barbershop"]
+    }
+  },
+  "customer": {
+    "label": { "es": "Cliente", "en": "Customer", "pt": "Cliente", "fr": "Client", "de": "Kunde", "it": "Cliente", "ja": "お客様", "zh": "顾客", "ko": "손님", "ar": "عميل" },
+    "keywords": {
+      "es": ["comprador", "expediente", "cuenta de cliente", "consumidor", "usuario", "CRM", "clientela"],
+      "en": ["buyer", "client record", "shopper account", "consumer", "client", "CRM", "patron"]
+    }
+  },
+  "seller": {
+    "label": { "es": "Vendedor", "en": "Seller", "pt": "Vendedor", "fr": "Vendeur", "de": "Verkäufer", "it": "Venditore", "ja": "出品者", "zh": "卖家", "ko": "판매자", "ar": "بائع" },
+    "keywords": {
+      "es": ["comerciante", "proveedor", "tienda en línea", "perfil del vendedor", "marketplace", "negocio", "vender"],
+      "en": ["vendor", "merchant", "seller profile", "marketplace", "storefront", "sell", "shop owner"]
+    }
+  },
+  "mechanic": {
+    "label": { "es": "Mecánico", "en": "Mechanic", "pt": "Mecânico", "fr": "Mecánicien", "de": "Kfz-Mechaniker", "it": "Meccanico", "ja": "整備士", "zh": "汽车修理工", "ko": "정비사", "ar": "ميكانيكي" },
+    "keywords": {
+      "es": ["taller mecánico", "reparación de autos", "servicio automotriz", "afinación", "refacciones", "taller", "llave"],
+      "en": ["car repair", "auto technician", "garage", "auto shop", "tune-up", "car service", "wrench"]
+    }
+  },
+  "coach": {
+    "label": { "es": "Entrenador", "en": "Coach", "pt": "Treinador", "fr": "Entraîneur", "de": "Trainer", "it": "Allenatore", "ja": "コーチ", "zh": "教练", "ko": "코치", "ar": "مدرب" },
+    "keywords": {
+      "es": ["coach", "instructor", "director técnico", "entrenamiento", "silbato", "mentor", "equipo"],
+      "en": ["trainer", "instructor", "team coach", "training", "whistle", "mentor", "sports team"]
+    }
+  },
+  "builder": {
+    "label": { "es": "Obrero de construcción", "en": "Construction worker", "pt": "Operário da construção", "fr": "Ouvrier du bâtiment", "de": "Bauarbeiter", "it": "Operaio edile", "ja": "建設作業員", "zh": "建筑工人", "ko": "건설 근로자", "ar": "عامل بناء" },
+    "keywords": {
+      "es": ["albañil", "constructor", "ingeniero en obra", "contratista", "obra", "maestro de obras", "casco"],
+      "en": ["builder", "engineer on site", "contractor", "construction site", "hard hat", "laborer", "foreman"]
+    }
+  },
+  "graduate": {
+    "label": { "es": "Graduado", "en": "Graduate", "pt": "Formado", "fr": "Diplômé", "de": "Absolvent", "it": "Laureato", "ja": "卒業生", "zh": "毕业生", "ko": "졸업생", "ar": "خريج" },
+    "keywords": {
+      "es": ["egresado", "exalumnos", "título", "graduación", "toga y birrete", "generación", "carrera terminada"],
+      "en": ["alumni", "degree", "graduation", "cap and gown", "diploma", "class of", "commencement"]
+    }
+  },
+  "police-officer": {
+    "label": { "es": "Policía", "en": "Police officer", "pt": "Policial", "fr": "Policier", "de": "Polizist", "it": "Agente di polizia", "ja": "警察官", "zh": "警察", "ko": "경찰관", "ar": "شرطي" },
+    "keywords": {
+      "es": ["agente", "seguridad pública", "denunciar", "autoridades", "patrulla", "oficial", "levantar una denuncia"],
+      "en": ["police", "law enforcement", "report to police", "cop", "officer", "authorities", "patrol"]
+    }
+  },
+  "pilot": {
+    "label": { "es": "Piloto", "en": "Pilot", "pt": "Piloto", "fr": "Pilote", "de": "Pilot", "it": "Pilota", "ja": "パイロット", "zh": "飞行员", "ko": "조종사", "ar": "طيار" },
+    "keywords": {
+      "es": ["capitán", "tripulación", "aviador", "aerolínea", "cabina", "vuelo", "copiloto"],
+      "en": ["captain", "flight crew", "aviator", "airline", "cockpit", "flight", "first officer"]
+    }
+  },
+  "firefighter": {
+    "label": { "es": "Bombero", "en": "Firefighter", "pt": "Bombeiro", "fr": "Pompier", "de": "Feuerwehrmann", "it": "Vigile del fuoco", "ja": "消防士", "zh": "消防员", "ko": "소방관", "ar": "رجل إطفاء" },
+    "keywords": {
+      "es": ["cuerpo de bomberos", "protección civil", "brigadista", "emergencia", "incendio", "rescate", "jefe de brigada"],
+      "en": ["fire service", "fire warden", "fire department", "emergency", "rescue", "fire crew", "first responder"]
+    }
+  },
+  "farmer": {
+    "label": { "es": "Agricultor", "en": "Farmer", "pt": "Agricultor", "fr": "Agriculteur", "de": "Landwirt", "it": "Agricoltore", "ja": "農家", "zh": "农民", "ko": "농부", "ar": "مزارع" },
+    "keywords": {
+      "es": ["campesino", "productor", "cultivo", "jornalero", "campo", "cosecha", "rancho"],
+      "en": ["grower", "producer", "farm worker", "farming", "harvest", "crops", "rancher"]
+    }
+  },
+  "courier": {
+    "label": { "es": "Repartidor", "en": "Courier", "pt": "Entregador", "fr": "Livreur", "de": "Kurier", "it": "Corriere", "ja": "配達員", "zh": "快递员", "ko": "배달원", "ar": "مندوب التوصيل" },
+    "keywords": {
+      "es": ["mensajero", "cartero", "entrega a domicilio", "paquetería", "motociclista", "envío", "rider"],
+      "en": ["delivery person", "rider", "mail carrier", "delivery driver", "parcel", "messenger", "postman"]
+    }
+  },
+  "listener": {
+    "label": { "es": "Oyente", "en": "Listener", "pt": "Ouvinte", "fr": "Auditeur", "de": "Zuhörer", "it": "Ascoltatore", "ja": "リスナー", "zh": "听众", "ko": "청취자", "ar": "مستمع" },
+    "keywords": {
+      "es": ["audiencia", "oyentes mensuales", "fan de la música", "escuchar", "audífonos", "suscriptor", "reproducciones"],
+      "en": ["audience", "monthly listeners", "music fan", "listen", "headphones", "subscriber", "streams"]
+    }
+  },
+  "security-guard": {
+    "label": { "es": "Guardia de seguridad", "en": "Security guard", "pt": "Vigilante", "fr": "Agent de sécurité", "de": "Sicherheitskraft", "it": "Guardia giurata", "ja": "警備員", "zh": "保安", "ko": "경비원", "ar": "حارس أمن" },
+    "keywords": {
+      "es": ["vigilante", "cadenero", "seguridad del evento", "vigilancia", "control de acceso", "elemento de seguridad", "seguridad privada"],
+      "en": ["guard", "bouncer", "venue security", "watchman", "patrol", "access control", "private security"]
+    }
+  },
+  "doctor": {
+    "label": { "es": "Médico", "en": "Doctor", "pt": "Médico", "fr": "Médecin", "de": "Arzt", "it": "Medico", "ja": "医師", "zh": "医生", "ko": "의사", "ar": "طبيب" },
+    "keywords": {
+      "es": ["doctor", "personal médico", "consulta", "buscar atención", "especialista", "cita médica", "salud"],
+      "en": ["physician", "medical staff", "consultation", "find care", "specialist", "medical appointment", "healthcare"]
+    }
+  },
+  "doctor-search": {
+    "label": { "es": "Buscar médico", "en": "Find a doctor", "pt": "Encontrar médico", "fr": "Trouver un médecin", "de": "Arzt finden", "it": "Trova un medico", "ja": "医師を探す", "zh": "查找医生", "ko": "의사 찾기", "ar": "البحث عن طبيب" },
+    "keywords": {
+      "es": ["directorio médico", "atención cerca de ti", "especialistas", "red de proveedores", "consultorio cercano", "agendar consulta", "red médica"],
+      "en": ["provider search", "find care near you", "specialists", "doctor directory", "in-network", "book appointment", "nearby clinic"]
+    }
+  },
+  "nurse": {
+    "label": { "es": "Personal de enfermería", "en": "Nurse", "pt": "Enfermeiro", "fr": "Infirmier", "de": "Pflegekraft", "it": "Infermiere", "ja": "看護師", "zh": "护士", "ko": "간호사", "ar": "ممرض" },
+    "keywords": {
+      "es": ["enfermera", "enfermero", "equipo de cuidados", "trabajador de la salud", "primeros auxilios", "socorrista", "hospital"],
+      "en": ["nursing staff", "care team", "healthcare worker", "first aider", "medic", "caregiver", "hospital"]
+    }
+  },
+  "businessperson": {
+    "label": { "es": "Ejecutivo", "en": "Businessperson", "pt": "Executivo", "fr": "Professionnel", "de": "Geschäftsperson", "it": "Professionista", "ja": "ビジネスパーソン", "zh": "商务人士", "ko": "비즈니스 전문가", "ar": "رجل أعمال" },
+    "keywords": {
+      "es": ["cuenta empresarial", "gerente", "directivo", "profesionista", "negocios", "oficina", "traje"],
+      "en": ["business account", "executive", "manager", "professional", "corporate", "office", "suit"]
+    }
+  },
+  "shop-assistant": {
+    "label": { "es": "Empleado de tienda", "en": "Shop assistant", "pt": "Atendente de loja", "fr": "Employé de magasin", "de": "Verkaufsmitarbeiter", "it": "Commesso", "ja": "店員", "zh": "店员", "ko": "점원", "ar": "موظف المتجر" },
+    "keywords": {
+      "es": ["dependiente", "personal de tienda", "asesor de ventas", "barista", "cajero", "mostrador", "atención al cliente"],
+      "en": ["store staff", "sales associate", "barista", "cashier", "clerk", "counter staff", "retail worker"]
+    }
+  },
+  "volunteer": {
+    "label": { "es": "Voluntario", "en": "Volunteer", "pt": "Voluntário", "fr": "Bénévole", "de": "Freiwilliger", "it": "Volontario", "ja": "ボランティア", "zh": "志愿者", "ko": "자원봉사자", "ar": "متطوع" },
+    "keywords": {
+      "es": ["voluntariado", "ayudante", "organización sin fines de lucro", "labor social", "servicio comunitario", "ONG", "apoyo"],
+      "en": ["volunteering", "helper", "nonprofit", "charity", "community service", "NGO", "give back"]
+    }
+  },
+  "driver": {
+    "label": { "es": "Conductor", "en": "Driver", "pt": "Motorista", "fr": "Chauffeur", "de": "Fahrer", "it": "Autista", "ja": "ドライバー", "zh": "司机", "ko": "운전기사", "ar": "سائق" },
+    "keywords": {
+      "es": ["chofer", "viaje en app", "taxista", "transporte privado", "servicio de auto", "operador", "manejar"],
+      "en": ["ride-hailing", "chauffeur", "taxi", "rideshare", "private car", "operator", "pickup"]
+    }
+  },
+  "photographer": {
+    "label": { "es": "Fotógrafo", "en": "Photographer", "pt": "Fotógrafo", "fr": "Photographe", "de": "Fotograf", "it": "Fotografo", "ja": "カメラマン", "zh": "摄影师", "ko": "사진작가", "ar": "مصوّر" },
+    "keywords": {
+      "es": ["sesión de fotos", "camarógrafo", "fotografía", "cámara", "evento", "fotoestudio", "retratista"],
+      "en": ["photo shoot", "camera operator", "photography", "camera", "event", "photo studio", "camera crew"]
+    }
+  },
+  "podcaster": {
+    "label": { "es": "Conductor de podcast", "en": "Podcast host", "pt": "Apresentador de podcast", "fr": "Animateur de podcast", "de": "Podcast-Host", "it": "Conduttore di podcast", "ja": "ポッドキャスター", "zh": "播客主播", "ko": "팟캐스트 진행자", "ar": "مقدّم بودكاست" },
+    "keywords": {
+      "es": ["podcaster", "creador de audio", "locutor", "episodio", "micrófono", "grabar", "programa"],
+      "en": ["podcaster", "audio creator", "broadcaster", "episode", "microphone", "recording", "show"]
+    }
+  },
+  "technician-clock": {
+    "label": { "es": "Llegada del técnico", "en": "Technician arrival", "pt": "Chegada do técnico", "fr": "Arrivée du technicien", "de": "Ankunft des Technikers", "it": "Arrivo del tecnico", "ja": "技術者の到着時間", "zh": "技术员到达时间", "ko": "기사 도착 시간", "ar": "موعد وصول الفني" },
+    "keywords": {
+      "es": ["ventana de llegada", "cita de servicio", "técnico en camino", "hora de visita", "horario de instalación", "programar visita", "espera del servicio"],
+      "en": ["arrival window", "service appointment", "on the way", "visit time", "installation slot", "scheduled visit", "ETA"]
+    }
+  },
+  "seller-check": {
+    "label": { "es": "Vendedor verificado", "en": "Verified seller", "pt": "Vendedor verificado", "fr": "Vendeur vérifié", "de": "Verifizierter Verkäufer", "it": "Venditore verificato", "ja": "認証済み出品者", "zh": "认证卖家", "ko": "인증된 판매자", "ar": "بائع موثّق" },
+    "keywords": {
+      "es": ["vendedor confiable", "comercio verificado", "tienda oficial", "garantía", "reputación", "insignia", "compra segura"],
+      "en": ["trusted seller", "verified merchant", "official store", "reputation", "badge", "safe purchase", "top seller"]
+    }
+  },
+  "selfie": {
+    "label": { "es": "Tomar selfie", "en": "Take a selfie", "pt": "Tirar selfie", "fr": "Prendre un selfie", "de": "Selfie aufnehmen", "it": "Scatta un selfie", "ja": "自撮りする", "zh": "自拍", "ko": "셀카 찍기", "ar": "التقاط صورة سيلفي" },
+    "keywords": {
+      "es": ["autorretrato", "cámara frontal", "verificación de identidad", "foto del rostro", "validar identidad", "reconocimiento facial", "cámara"],
+      "en": ["self-portrait", "front camera", "identity check", "face photo", "verify identity", "face capture", "camera"]
+    }
+  },
+  "selfie-check": {
+    "label": { "es": "Selfie verificada", "en": "Selfie verified", "pt": "Selfie verificada", "fr": "Selfie vérifié", "de": "Selfie bestätigt", "it": "Selfie verificato", "ja": "自撮り認証済み", "zh": "自拍已验证", "ko": "셀카 인증 완료", "ar": "تم التحقق من صورة السيلفي" },
+    "keywords": {
+      "es": ["prueba de vida", "identidad confirmada", "coincide con la identificación", "validación facial", "KYC", "rostro verificado", "aprobado"],
+      "en": ["liveness check", "identity confirmed", "matches ID", "face match", "KYC", "verified face", "approved"]
+    }
+  },
+  "portrait": {
+    "label": { "es": "Retrato", "en": "Portrait", "pt": "Retrato", "fr": "Portrait", "de": "Porträt", "it": "Ritratto", "ja": "顔写真", "zh": "肖像照", "ko": "인물 사진", "ar": "صورة شخصية" },
+    "keywords": {
+      "es": ["foto de perfil", "foto tamaño infantil", "foto de credencial", "fotografía", "modo retrato", "foto del rostro", "avatar"],
+      "en": ["profile picture", "headshot", "ID photo", "passport photo", "photo", "face photo", "avatar"]
+    }
+  },
+  "avatar-placeholder": {
+    "label": { "es": "Sin foto de perfil", "en": "No profile photo", "pt": "Sem foto de perfil", "fr": "Aucune photo de profil", "de": "Kein Profilbild", "it": "Nessuna foto profilo", "ja": "プロフィール写真なし", "zh": "未设置头像", "ko": "프로필 사진 없음", "ar": "لا توجد صورة شخصية" },
+    "keywords": {
+      "es": ["avatar vacío", "sin asignar", "lugar disponible", "usuario anónimo", "imagen predeterminada", "marcador de posición", "vacante"],
+      "en": ["empty avatar", "unassigned", "open seat", "anonymous user", "default image", "placeholder", "vacant"]
+    }
+  },
+  "avatar-progress": {
+    "label": { "es": "Progreso del perfil", "en": "Profile completeness", "pt": "Progresso do perfil", "fr": "Progression du profil", "de": "Profilfortschritt", "it": "Completamento del profilo", "ja": "プロフィールの完成度", "zh": "资料完成度", "ko": "프로필 완성도", "ar": "اكتمال الملف الشخصي" },
+    "keywords": {
+      "es": ["completa tu perfil", "configuración de cuenta", "porcentaje", "pasos pendientes", "registro", "barra de avance", "datos faltantes"],
+      "en": ["complete your profile", "account setup", "percentage", "remaining steps", "onboarding", "progress ring", "missing details"]
+    }
+  },
+  "map-pin-person": {
+    "label": { "es": "Ubicación de una persona", "en": "Person’s location", "pt": "Localização da pessoa", "fr": "Position d’une personne", "de": "Standort einer Person", "it": "Posizione di una persona", "ja": "人の現在地", "zh": "人员位置", "ko": "사람의 위치", "ar": "موقع الشخص" },
+    "keywords": {
+      "es": ["ubicación en tiempo real", "punto de encuentro", "nos vemos aquí", "ubicación del contacto", "compartir ubicación", "dónde está", "rastrear"],
+      "en": ["live location", "meeting point", "meet here", "contact location", "share location", "find friends", "where are you"]
+    }
+  },
+  "face-to-face": {
+    "label": { "es": "Conversación en persona", "en": "Face to face", "pt": "Conversa presencial", "fr": "En tête-à-tête", "de": "Persönliches Gespräch", "it": "Faccia a faccia", "ja": "対面での会話", "zh": "面对面交谈", "ko": "대면 대화", "ar": "حديث وجهًا لوجه" },
+    "keywords": {
+      "es": ["cara a cara", "plática", "diálogo", "asesoría", "entrevista", "consulta presencial", "orientación"],
+      "en": ["in person", "in-person talk", "dialogue", "counseling", "one-on-one", "interview", "consultation"]
+    }
+  },
+  "people-group": {
+    "label": { "es": "Grupo grande", "en": "Large group", "pt": "Grupo grande", "fr": "Grand groupe", "de": "Große Gruppe", "it": "Gruppo numeroso", "ja": "大人数のグループ", "zh": "大型团体", "ko": "대규모 그룹", "ar": "مجموعة كبيرة" },
+    "keywords": {
+      "es": ["cinco o más personas", "reservación grupal", "equipo grande", "evento", "excursión", "muchos invitados", "colectivo"],
+      "en": ["party of five", "group booking", "big team", "event", "tour group", "many guests", "party"]
+    }
+  },
+  "crowd": {
+    "label": { "es": "Multitud", "en": "Crowd", "pt": "Multidão", "fr": "Foule", "de": "Menschenmenge", "it": "Folla", "ja": "群衆", "zh": "人群", "ko": "군중", "ar": "حشد" },
+    "keywords": {
+      "es": ["mucha gente", "lugar concurrido", "concentración masiva", "evento", "público", "gentío", "aglomeración"],
+      "en": ["busy place", "mass gathering", "many people", "audience", "event", "throng", "packed"]
+    }
+  },
+  "family": {
+    "label": { "es": "Familia", "en": "Family", "pt": "Família", "fr": "Famille", "de": "Familie", "it": "Famiglia", "ja": "家族", "zh": "家庭", "ko": "가족", "ar": "عائلة" },
+    "keywords": {
+      "es": ["plan familiar", "cuenta familiar", "integrantes", "padres e hijos", "hogar", "parientes", "seres queridos"],
+      "en": ["family plan", "family account", "family members", "parents and kids", "household", "relatives", "loved ones"]
+    }
+  },
+  "family-plus": {
+    "label": { "es": "Agregar familiar", "en": "Add family member", "pt": "Adicionar familiar", "fr": "Ajouter un membre de la famille", "de": "Familienmitglied hinzufügen", "it": "Aggiungi un familiare", "ja": "家族を追加", "zh": "添加家庭成员", "ko": "가족 추가", "ar": "إضافة فرد من العائلة" },
+    "keywords": {
+      "es": ["invitar al plan familiar", "nuevo integrante", "compartir suscripción", "invitar", "sumar miembro", "grupo familiar", "dependiente"],
+      "en": ["invite to family plan", "new member", "share subscription", "invite", "add member", "family group", "dependent"]
+    }
+  },
+  "family-tree": {
+    "label": { "es": "Árbol genealógico", "en": "Family tree", "pt": "Árvore genealógica", "fr": "Arbre généalogique", "de": "Stammbaum", "it": "Albero genealogico", "ja": "家系図", "zh": "家谱", "ko": "가계도", "ar": "شجرة العائلة" },
+    "keywords": {
+      "es": ["genealogía", "ancestros", "historia familiar", "parientes", "linaje", "descendencia", "antepasados"],
+      "en": ["genealogy", "ancestry", "family history", "relatives", "lineage", "descendants", "heritage"]
+    }
+  },
+  "guardian": {
+    "label": { "es": "Padre o tutor", "en": "Parent or guardian", "pt": "Responsável", "fr": "Parent ou tuteur", "de": "Elternteil oder Vormund", "it": "Genitore o tutore", "ja": "保護者", "zh": "家长或监护人", "ko": "보호자", "ar": "ولي الأمر" },
+    "keywords": {
+      "es": ["cuenta de padres", "dependientes", "cuenta supervisada", "tutela", "mamá", "papá", "menor a cargo"],
+      "en": ["parent account", "dependents", "supervised account", "custody", "mom", "dad", "legal guardian"]
+    }
+  }
+}

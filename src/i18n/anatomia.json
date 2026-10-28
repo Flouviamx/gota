@@ -1,0 +1,457 @@
+{
+  "body": {
+    "label": { "es": "Cuerpo humano", "en": "Human body", "pt": "Corpo humano", "fr": "Corps humain", "de": "Menschlicher Körper", "it": "Corpo umano", "ja": "人体", "zh": "人体", "ko": "인체", "ar": "جسم الإنسان" },
+    "keywords": {
+      "es": ["mapa corporal", "silueta", "anatomía", "chequeo general", "elegir síntoma", "revisión completa", "paciente"],
+      "en": ["body map", "silhouette", "anatomy", "full-body checkup", "symptom picker", "physical exam", "patient"]
+    }
+  },
+  "body-back": {
+    "label": { "es": "Cuerpo de espaldas", "en": "Body, back view", "pt": "Corpo de costas", "fr": "Corps de dos", "de": "Körper von hinten", "it": "Corpo di schiena", "ja": "人体の背面", "zh": "人体背面", "ko": "인체 뒷면", "ar": "الجسم من الخلف" },
+    "keywords": {
+      "es": ["vista posterior", "parte de atrás", "mapa corporal", "dolor de espalda", "ronchas en la espalda", "anatomía", "síntomas"],
+      "en": ["back view", "posterior view", "rear", "body map", "back pain", "rash on back", "symptoms"]
+    }
+  },
+  "body-search": {
+    "label": { "es": "Buscador de síntomas", "en": "Symptom checker", "pt": "Verificador de sintomas", "fr": "Recherche de symptômes", "de": "Symptom-Checker", "it": "Verifica dei sintomi", "ja": "症状チェック", "zh": "症状自查", "ko": "증상 확인", "ar": "فحص الأعراض" },
+    "keywords": {
+      "es": ["qué me duele", "dónde duele", "autodiagnóstico", "consultar síntoma", "mapa corporal", "triaje", "orientación médica"],
+      "en": ["what hurts", "where it hurts", "self-assessment", "look up symptom", "body map", "triage", "diagnosis"]
+    }
+  },
+  "body-alert": {
+    "label": { "es": "Reportar síntoma", "en": "Report symptom", "pt": "Relatar sintoma", "fr": "Signaler un symptôme", "de": "Symptom melden", "it": "Segnala un sintomo", "ja": "症状を報告", "zh": "报告症状", "ko": "증상 알리기", "ar": "الإبلاغ عن أعراض" },
+    "keywords": {
+      "es": ["dolor", "lesión", "zona afectada", "molestia", "malestar", "señalar zona", "alerta de salud"],
+      "en": ["pain", "injury", "affected area", "discomfort", "ache", "flag area", "health alert"]
+    }
+  },
+  "body-height": {
+    "label": { "es": "Estatura", "en": "Height", "pt": "Altura", "fr": "Taille", "de": "Körpergröße", "it": "Altezza", "ja": "身長", "zh": "身高", "ko": "키", "ar": "الطول" },
+    "keywords": {
+      "es": ["altura", "medir", "talla", "perfil de salud", "crecimiento", "centímetros", "índice de masa corporal"],
+      "en": ["stature", "measure", "how tall", "health profile", "growth", "centimeters", "BMI"]
+    }
+  },
+  "head-side": {
+    "label": { "es": "Cabeza de perfil", "en": "Head in profile", "pt": "Cabeça de perfil", "fr": "Tête de profil", "de": "Kopf im Profil", "it": "Testa di profilo", "ja": "頭部の側面", "zh": "头部侧面", "ko": "머리 옆모습", "ar": "الرأس من الجانب" },
+    "keywords": {
+      "es": ["dolor de cabeza", "migraña", "jaqueca", "neurología", "mareo", "mapa corporal", "silueta lateral"],
+      "en": ["headache", "migraine", "neurology", "dizziness", "body map", "side silhouette", "symptom picker"]
+    }
+  },
+  "head-side-brain": {
+    "label": { "es": "Mente", "en": "Mind", "pt": "Mente", "fr": "Esprit", "de": "Verstand", "it": "Mente", "ja": "頭脳", "zh": "头脑", "ko": "두뇌", "ar": "العقل" },
+    "keywords": {
+      "es": ["cerebro", "cognición", "memoria", "neurología", "pensar", "salud cerebral", "concentración"],
+      "en": ["brain", "cognition", "memory", "neurology", "thinking", "brain health", "focus"]
+    }
+  },
+  "abdomen": {
+    "label": { "es": "Abdomen", "en": "Abdomen", "pt": "Abdômen", "fr": "Abdomen", "de": "Bauch", "it": "Addome", "ja": "腹部", "zh": "腹部", "ko": "복부", "ar": "البطن" },
+    "keywords": {
+      "es": ["panza", "barriga", "vientre", "dolor de estómago", "cólico", "inflamación", "mapa corporal"],
+      "en": ["belly", "tummy", "stomach ache", "abdominal pain", "cramps", "bloating", "core"]
+    }
+  },
+  "lower-back": {
+    "label": { "es": "Espalda baja", "en": "Lower back", "pt": "Região lombar", "fr": "Bas du dos", "de": "Unterer Rücken", "it": "Zona lombare", "ja": "腰", "zh": "腰部", "ko": "허리", "ar": "أسفل الظهر" },
+    "keywords": {
+      "es": ["lumbar", "dolor de espalda", "lumbago", "ciática", "cintura", "postura", "columna"],
+      "en": ["lumbar", "back pain", "lumbago", "sciatica", "waist", "posture", "spine"]
+    }
+  },
+  "leg": {
+    "label": { "es": "Pierna", "en": "Leg", "pt": "Perna", "fr": "Jambe", "de": "Bein", "it": "Gamba", "ja": "脚", "zh": "腿", "ko": "다리", "ar": "الساق" },
+    "keywords": {
+      "es": ["dolor de pierna", "hinchazón", "calambre", "muslo", "pantorrilla", "extremidad inferior", "mapa corporal"],
+      "en": ["leg pain", "swelling", "cramp", "thigh", "calf", "lower limb", "body map"]
+    }
+  },
+  "foot": {
+    "label": { "es": "Pie", "en": "Foot", "pt": "Pé", "fr": "Pied", "de": "Fuß", "it": "Piede", "ja": "足", "zh": "脚", "ko": "발", "ar": "القدم" },
+    "keywords": {
+      "es": ["podología", "podólogo", "dolor de pie", "cuidado de los pies", "pedicura", "dedos del pie", "talón"],
+      "en": ["podiatry", "podiatrist", "foot pain", "foot care", "pedicure", "toes", "heel"]
+    }
+  },
+  "foot-sole": {
+    "label": { "es": "Planta del pie", "en": "Sole of the foot", "pt": "Planta do pé", "fr": "Plante du pied", "de": "Fußsohle", "it": "Pianta del piede", "ja": "足の裏", "zh": "脚底", "ko": "발바닥", "ar": "باطن القدم" },
+    "keywords": {
+      "es": ["plantillas", "fascitis plantar", "dolor plantar", "reflexología", "pisada", "arco del pie", "pie plano"],
+      "en": ["insoles", "plantar fasciitis", "plantar pain", "reflexology", "footprint", "arch", "flat feet"]
+    }
+  },
+  "knee": {
+    "label": { "es": "Rodilla", "en": "Knee", "pt": "Joelho", "fr": "Genou", "de": "Knie", "it": "Ginocchio", "ja": "膝", "zh": "膝盖", "ko": "무릎", "ar": "الركبة" },
+    "keywords": {
+      "es": ["dolor de rodilla", "fisioterapia", "ligamento cruzado", "menisco", "rótula", "articulación", "lesión deportiva"],
+      "en": ["knee pain", "physiotherapy", "ACL", "meniscus", "kneecap", "joint", "sports injury"]
+    }
+  },
+  "elbow": {
+    "label": { "es": "Codo", "en": "Elbow", "pt": "Cotovelo", "fr": "Coude", "de": "Ellenbogen", "it": "Gomito", "ja": "肘", "zh": "肘部", "ko": "팔꿈치", "ar": "المرفق" },
+    "keywords": {
+      "es": ["codo de tenista", "epicondilitis", "dolor de codo", "fisioterapia", "tendinitis", "articulación", "brazo"],
+      "en": ["tennis elbow", "epicondylitis", "elbow pain", "physiotherapy", "tendinitis", "joint", "arm"]
+    }
+  },
+  "skeleton": {
+    "label": { "es": "Esqueleto", "en": "Skeleton", "pt": "Esqueleto", "fr": "Squelette", "de": "Skelett", "it": "Scheletro", "ja": "骨格", "zh": "骨骼", "ko": "골격", "ar": "الهيكل العظمي" },
+    "keywords": {
+      "es": ["huesos", "ortopedia", "anatomía", "sistema óseo", "traumatología", "osteoporosis", "radiografía"],
+      "en": ["bones", "orthopedics", "anatomy", "skeletal system", "osteoporosis", "X-ray", "bone health"]
+    }
+  },
+  "skull": {
+    "label": { "es": "Cráneo", "en": "Skull", "pt": "Crânio", "fr": "Crâne", "de": "Schädel", "it": "Cranio", "ja": "頭蓋骨", "zh": "颅骨", "ko": "두개골", "ar": "الجمجمة" },
+    "keywords": {
+      "es": ["calavera", "anatomía", "traumatismo craneal", "golpe en la cabeza", "neurología", "huesos de la cabeza", "radiografía"],
+      "en": ["cranium", "anatomy", "head injury", "head trauma", "neurology", "bones", "X-ray"]
+    }
+  },
+  "spine": {
+    "label": { "es": "Columna vertebral", "en": "Spine", "pt": "Coluna vertebral", "fr": "Colonne vertébrale", "de": "Wirbelsäule", "it": "Colonna vertebrale", "ja": "背骨", "zh": "脊柱", "ko": "척추", "ar": "العمود الفقري" },
+    "keywords": {
+      "es": ["vértebras", "espalda", "postura", "quiropráctico", "escoliosis", "hernia de disco", "fisioterapia"],
+      "en": ["vertebrae", "backbone", "back health", "posture", "chiropractic", "scoliosis", "herniated disc"]
+    }
+  },
+  "ribcage": {
+    "label": { "es": "Caja torácica", "en": "Ribcage", "pt": "Caixa torácica", "fr": "Cage thoracique", "de": "Brustkorb", "it": "Gabbia toracica", "ja": "胸郭", "zh": "胸廓", "ko": "흉곽", "ar": "القفص الصدري" },
+    "keywords": {
+      "es": ["costillas", "esternón", "radiografía de tórax", "tórax", "respiración", "costilla rota", "pulmones"],
+      "en": ["ribs", "sternum", "chest X-ray", "thorax", "breathing", "broken rib", "lungs"]
+    }
+  },
+  "pelvis": {
+    "label": { "es": "Pelvis", "en": "Pelvis", "pt": "Pelve", "fr": "Bassin", "de": "Becken", "it": "Bacino", "ja": "骨盤", "zh": "骨盆", "ko": "골반", "ar": "الحوض" },
+    "keywords": {
+      "es": ["cadera", "piso pélvico", "ortopedia", "huesos", "sacro", "embarazo", "dolor pélvico"],
+      "en": ["hips", "pelvic floor", "orthopedics", "hip bones", "sacrum", "pregnancy", "pelvic pain"]
+    }
+  },
+  "muscle": {
+    "label": { "es": "Músculo", "en": "Muscle", "pt": "Músculo", "fr": "Muscle", "de": "Muskel", "it": "Muscolo", "ja": "筋肉", "zh": "肌肉", "ko": "근육", "ar": "العضلة" },
+    "keywords": {
+      "es": ["masa muscular", "musculatura", "fisioterapia", "fibras", "tejido muscular", "fuerza", "anatomía"],
+      "en": ["muscle mass", "musculature", "physiotherapy", "fibers", "muscle tissue", "strength", "anatomy"]
+    }
+  },
+  "muscle-strain": {
+    "label": { "es": "Desgarre muscular", "en": "Muscle strain", "pt": "Distensão muscular", "fr": "Claquage musculaire", "de": "Muskelzerrung", "it": "Stiramento muscolare", "ja": "肉離れ", "zh": "肌肉拉伤", "ko": "근육 손상", "ar": "تمزق عضلي" },
+    "keywords": {
+      "es": ["lesión deportiva", "jalón", "distensión", "desgarro", "dolor muscular", "fisioterapia", "rehabilitación"],
+      "en": ["pulled muscle", "torn muscle", "sports injury", "sprain", "muscle pain", "physiotherapy", "rehab"]
+    }
+  },
+  "abs": {
+    "label": { "es": "Abdominales", "en": "Abs", "pt": "Abdominais", "fr": "Abdominaux", "de": "Bauchmuskeln", "it": "Addominali", "ja": "腹筋", "zh": "腹肌", "ko": "복근", "ar": "عضلات البطن" },
+    "keywords": {
+      "es": ["six pack", "lavadero", "core", "abdomen marcado", "rutina de abdomen", "composición corporal", "gimnasio"],
+      "en": ["six-pack", "core", "abdominal muscles", "abs workout", "toned stomach", "body composition", "crunches"]
+    }
+  },
+  "ear": {
+    "label": { "es": "Oreja", "en": "Ear", "pt": "Orelha", "fr": "Oreille", "de": "Ohr", "it": "Orecchio", "ja": "耳", "zh": "耳朵", "ko": "귀", "ar": "الأذن" },
+    "keywords": {
+      "es": ["oído", "audición", "otorrino", "audiología", "dolor de oído", "pabellón auricular", "otitis"],
+      "en": ["hearing", "ENT", "audiology", "earache", "outer ear", "otitis", "auricle"]
+    }
+  },
+  "ear-sound": {
+    "label": { "es": "Audición", "en": "Hearing", "pt": "Audição", "fr": "Audition", "de": "Gehör", "it": "Udito", "ja": "聴覚", "zh": "听力", "ko": "청력", "ar": "السمع" },
+    "keywords": {
+      "es": ["prueba auditiva", "audiometría", "oír", "escuchar", "sensibilidad al sonido", "pérdida auditiva", "sordera"],
+      "en": ["hearing test", "audiometry", "listen", "sound sensitivity", "hearing loss", "deafness", "audiology"]
+    }
+  },
+  "nose": {
+    "label": { "es": "Nariz", "en": "Nose", "pt": "Nariz", "fr": "Nez", "de": "Nase", "it": "Naso", "ja": "鼻", "zh": "鼻子", "ko": "코", "ar": "الأنف" },
+    "keywords": {
+      "es": ["otorrino", "olfato", "congestión nasal", "rinitis", "sinusitis", "fosas nasales", "rinoplastia"],
+      "en": ["ENT", "smell", "nasal congestion", "stuffy nose", "sinusitis", "nostrils", "rhinoplasty"]
+    }
+  },
+  "nose-scent": {
+    "label": { "es": "Olfato", "en": "Smell", "pt": "Olfato", "fr": "Odorat", "de": "Geruchssinn", "it": "Olfatto", "ja": "嗅覚", "zh": "嗅觉", "ko": "후각", "ar": "حاسة الشم" },
+    "keywords": {
+      "es": ["olor", "aroma", "oler", "notas aromáticas", "anosmia", "perfume", "fragancia"],
+      "en": ["scent", "aroma", "sniff", "fragrance notes", "loss of smell", "anosmia", "perfume"]
+    }
+  },
+  "mouth": {
+    "label": { "es": "Boca", "en": "Mouth", "pt": "Boca", "fr": "Bouche", "de": "Mund", "it": "Bocca", "ja": "口", "zh": "嘴巴", "ko": "입", "ar": "الفم" },
+    "keywords": {
+      "es": ["labios", "salud bucal", "habla", "hablar", "pronunciación", "dentista", "cuidado de labios"],
+      "en": ["lips", "oral health", "speech", "speak", "pronunciation", "dentist", "lip care"]
+    }
+  },
+  "mouth-open": {
+    "label": { "es": "Boca abierta", "en": "Open mouth", "pt": "Boca aberta", "fr": "Bouche ouverte", "de": "Offener Mund", "it": "Bocca aperta", "ja": "開いた口", "zh": "张开的嘴", "ko": "벌린 입", "ar": "فم مفتوح" },
+    "keywords": {
+      "es": ["lengua", "revisión bucal", "di ah", "tragar", "dolor de garganta", "examen oral", "bostezo"],
+      "en": ["tongue", "oral exam", "say ah", "swallowing", "sore throat", "throat check", "yawn"]
+    }
+  },
+  "tongue": {
+    "label": { "es": "Lengua", "en": "Tongue", "pt": "Língua", "fr": "Langue", "de": "Zunge", "it": "Lingua", "ja": "舌", "zh": "舌头", "ko": "혀", "ar": "اللسان" },
+    "keywords": {
+      "es": ["gusto", "sabor", "papilas gustativas", "probar", "salud bucal", "boca", "examen oral"],
+      "en": ["taste", "flavor", "taste buds", "tasting", "oral health", "mouth", "oral exam"]
+    }
+  },
+  "teeth": {
+    "label": { "es": "Dientes", "en": "Teeth", "pt": "Dentes", "fr": "Dents", "de": "Zähne", "it": "Denti", "ja": "歯", "zh": "牙齿", "ko": "치아", "ar": "الأسنان" },
+    "keywords": {
+      "es": ["dentista", "sonrisa", "mordida", "salud dental", "odontología", "blanqueamiento", "dentadura"],
+      "en": ["dentist", "smile", "bite", "dental care", "dentistry", "whitening", "oral hygiene"]
+    }
+  },
+  "dental-arch": {
+    "label": { "es": "Arcada dental", "en": "Dental arch", "pt": "Arcada dentária", "fr": "Arcade dentaire", "de": "Zahnbogen", "it": "Arcata dentale", "ja": "歯列", "zh": "牙弓", "ko": "치열궁", "ar": "قوس الأسنان" },
+    "keywords": {
+      "es": ["odontograma", "elegir diente", "ortodoncia", "brackets", "dentadura", "software dental", "mapa dental"],
+      "en": ["tooth chart", "odontogram", "select tooth", "orthodontics", "braces", "dental software", "dentition"]
+    }
+  },
+  "eyeball": {
+    "label": { "es": "Globo ocular", "en": "Eyeball", "pt": "Globo ocular", "fr": "Globe oculaire", "de": "Augapfel", "it": "Bulbo oculare", "ja": "眼球", "zh": "眼球", "ko": "안구", "ar": "مقلة العين" },
+    "keywords": {
+      "es": ["ojo", "oftalmología", "salud visual", "examen de la vista", "oculista", "vista", "retina"],
+      "en": ["eye", "ophthalmology", "eye health", "eye exam", "vision", "retina", "optometry"]
+    }
+  },
+  "eyelashes": {
+    "label": { "es": "Pestañas", "en": "Eyelashes", "pt": "Cílios", "fr": "Cils", "de": "Wimpern", "it": "Ciglia", "ja": "まつげ", "zh": "睫毛", "ko": "속눈썹", "ar": "الرموش" },
+    "keywords": {
+      "es": ["extensiones de pestañas", "lifting de pestañas", "rímel", "enchinar", "postizas", "maquillaje", "mirada"],
+      "en": ["lash extensions", "lash lift", "mascara", "false lashes", "lash curler", "makeup", "lash salon"]
+    }
+  },
+  "brain-side": {
+    "label": { "es": "Cerebro humano", "en": "Human brain", "pt": "Cérebro humano", "fr": "Cerveau humain", "de": "Menschliches Gehirn", "it": "Cervello umano", "ja": "人間の脳", "zh": "人脑", "ko": "인간의 뇌", "ar": "الدماغ البشري" },
+    "keywords": {
+      "es": ["neurología", "derrame cerebral", "embolia", "conmoción cerebral", "salud cerebral", "anatomía", "neurocirugía"],
+      "en": ["neurology", "stroke", "concussion", "brain health", "anatomy", "neuroscience", "neurosurgery"]
+    }
+  },
+  "hair": {
+    "label": { "es": "Cabello", "en": "Hair", "pt": "Cabelo", "fr": "Cheveux", "de": "Haar", "it": "Capelli", "ja": "髪", "zh": "头发", "ko": "머리카락", "ar": "الشعر" },
+    "keywords": {
+      "es": ["pelo", "lacio", "mechón", "cuidado del cabello", "tipo de cabello", "peinado", "estética"],
+      "en": ["straight hair", "lock of hair", "haircare", "hair type", "hairstyle", "salon", "strand"]
+    }
+  },
+  "hair-wavy": {
+    "label": { "es": "Cabello ondulado", "en": "Wavy hair", "pt": "Cabelo ondulado", "fr": "Cheveux ondulés", "de": "Welliges Haar", "it": "Capelli mossi", "ja": "ウェーブヘア", "zh": "波浪发", "ko": "웨이브 머리", "ar": "شعر مموج" },
+    "keywords": {
+      "es": ["ondas", "pelo ondulado", "tipo 2", "tipo de cabello", "cuidado del cabello", "estética", "agendar cita"],
+      "en": ["waves", "type 2 hair", "hair type", "hair texture", "beach waves", "haircare", "salon booking"]
+    }
+  },
+  "hair-curly": {
+    "label": { "es": "Cabello rizado", "en": "Curly hair", "pt": "Cabelo cacheado", "fr": "Cheveux bouclés", "de": "Lockiges Haar", "it": "Capelli ricci", "ja": "カーリーヘア", "zh": "卷发", "ko": "곱슬머리", "ar": "شعر مجعد" },
+    "keywords": {
+      "es": ["rizos", "pelo chino", "tipo 3", "tipo de cabello", "método curly", "cuidado del cabello", "estética"],
+      "en": ["curls", "type 3 hair", "hair type", "hair texture", "curly girl method", "haircare", "salon booking"]
+    }
+  },
+  "hair-coily": {
+    "label": { "es": "Cabello afro", "en": "Coily hair", "pt": "Cabelo crespo", "fr": "Cheveux crépus", "de": "Krauses Haar", "it": "Capelli crespi", "ja": "縮毛", "zh": "紧密卷发", "ko": "강한 곱슬머리", "ar": "شعر مجعد جدًا" },
+    "keywords": {
+      "es": ["crespo", "rizos cerrados", "pelo muy chino", "tipo 4", "tipo de cabello", "cuidado del cabello", "estética"],
+      "en": ["coils", "tight curls", "afro hair", "type 4 hair", "4C", "hair type", "haircare"]
+    }
+  },
+  "hair-loss": {
+    "label": { "es": "Caída del cabello", "en": "Hair loss", "pt": "Queda de cabelo", "fr": "Chute de cheveux", "de": "Haarausfall", "it": "Caduta dei capelli", "ja": "抜け毛", "zh": "脱发", "ko": "탈모", "ar": "تساقط الشعر" },
+    "keywords": {
+      "es": ["calvicie", "alopecia", "entradas", "pelo ralo", "injerto capilar", "trasplante capilar", "tratamiento capilar"],
+      "en": ["baldness", "alopecia", "thinning hair", "receding hairline", "hair transplant", "hair restoration", "minoxidil"]
+    }
+  },
+  "skin": {
+    "label": { "es": "Piel", "en": "Skin", "pt": "Pele", "fr": "Peau", "de": "Haut", "it": "Pelle", "ja": "皮膚", "zh": "皮肤", "ko": "피부", "ar": "الجلد" },
+    "keywords": {
+      "es": ["dermatología", "dermatólogo", "skincare", "cuidado facial", "epidermis", "cutis", "poros"],
+      "en": ["dermatology", "dermatologist", "skincare", "epidermis", "dermis", "complexion", "pores"]
+    }
+  },
+  "skin-search": {
+    "label": { "es": "Revisión de la piel", "en": "Skin check", "pt": "Exame da pele", "fr": "Examen de la peau", "de": "Hautuntersuchung", "it": "Controllo della pelle", "ja": "皮膚チェック", "zh": "皮肤检查", "ko": "피부 검사", "ar": "فحص الجلد" },
+    "keywords": {
+      "es": ["autoexploración", "revisar lunares", "dermatoscopia", "escanear lunar", "detección de cáncer de piel", "dermatólogo", "chequeo"],
+      "en": ["self-exam", "mole check", "dermoscopy", "scan a mole", "skin cancer screening", "dermatologist", "full-body exam"]
+    }
+  },
+  "skin-mole": {
+    "label": { "es": "Lunar", "en": "Mole", "pt": "Pinta na pele", "fr": "Grain de beauté", "de": "Muttermal", "it": "Neo", "ja": "ほくろ", "zh": "痣", "ko": "피부 점", "ar": "شامة" },
+    "keywords": {
+      "es": ["mancha", "revisión de lunares", "cáncer de piel", "melanoma", "dermatología", "peca", "detección temprana"],
+      "en": ["spot", "mole check", "skin cancer", "melanoma", "dermatology", "freckle", "early detection"]
+    }
+  },
+  "skin-rash": {
+    "label": { "es": "Sarpullido", "en": "Rash", "pt": "Erupção cutânea", "fr": "Éruption cutanée", "de": "Hautausschlag", "it": "Eruzione cutanea", "ja": "発疹", "zh": "皮疹", "ko": "발진", "ar": "طفح جلدي" },
+    "keywords": {
+      "es": ["ronchas", "alergia", "eccema", "irritación", "comezón", "urticaria", "dermatitis"],
+      "en": ["hives", "allergy", "eczema", "irritation", "itching", "dermatitis", "redness"]
+    }
+  },
+  "skin-acne": {
+    "label": { "es": "Acné", "en": "Acne", "pt": "Acne", "fr": "Acné", "de": "Akne", "it": "Acne", "ja": "ニキビ", "zh": "痤疮", "ko": "여드름", "ar": "حب الشباب" },
+    "keywords": {
+      "es": ["granos", "espinillas", "barros", "puntos negros", "tipo de piel", "skincare", "dermatología"],
+      "en": ["pimples", "breakouts", "blackheads", "zits", "blemishes", "skin type", "skincare"]
+    }
+  },
+  "skin-dry": {
+    "label": { "es": "Piel seca", "en": "Dry skin", "pt": "Pele seca", "fr": "Peau sèche", "de": "Trockene Haut", "it": "Pelle secca", "ja": "乾燥肌", "zh": "干性皮肤", "ko": "건성 피부", "ar": "بشرة جافة" },
+    "keywords": {
+      "es": ["resequedad", "descamación", "tipo de piel", "hidratación", "crema hidratante", "eccema", "skincare"],
+      "en": ["dryness", "flaky", "skin type", "hydration", "moisturizer", "eczema", "skincare"]
+    }
+  },
+  "skin-oily": {
+    "label": { "es": "Piel grasa", "en": "Oily skin", "pt": "Pele oleosa", "fr": "Peau grasse", "de": "Fettige Haut", "it": "Pelle grassa", "ja": "脂性肌", "zh": "油性皮肤", "ko": "지성 피부", "ar": "بشرة دهنية" },
+    "keywords": {
+      "es": ["brillo", "grasa", "sebo", "poros abiertos", "tipo de piel", "matificante", "skincare"],
+      "en": ["shine", "sebum", "greasy", "large pores", "skin type", "mattifying", "skincare"]
+    }
+  },
+  "skin-wrinkles": {
+    "label": { "es": "Arrugas", "en": "Wrinkles", "pt": "Rugas", "fr": "Rides", "de": "Falten", "it": "Rughe", "ja": "しわ", "zh": "皱纹", "ko": "주름", "ar": "التجاعيد" },
+    "keywords": {
+      "es": ["antiedad", "envejecimiento", "líneas de expresión", "patas de gallo", "colágeno", "bótox", "skincare"],
+      "en": ["anti-aging", "aging skin", "fine lines", "crow's feet", "collagen", "Botox", "skincare"]
+    }
+  },
+  "anatomical-heart": {
+    "label": { "es": "Corazón humano", "en": "Anatomical heart", "pt": "Coração humano", "fr": "Cœur humain", "de": "Anatomisches Herz", "it": "Cuore anatomico", "ja": "心臓", "zh": "心脏", "ko": "심장", "ar": "القلب البشري" },
+    "keywords": {
+      "es": ["cardiología", "cardiólogo", "salud cardiovascular", "infarto", "cardiopatía", "órgano", "aorta"],
+      "en": ["cardiology", "cardiologist", "heart health", "heart attack", "heart disease", "organ", "cardiovascular"]
+    }
+  },
+  "lungs": {
+    "label": { "es": "Pulmones", "en": "Lungs", "pt": "Pulmões", "fr": "Poumons", "de": "Lunge", "it": "Polmoni", "ja": "肺", "zh": "肺", "ko": "폐", "ar": "الرئتان" },
+    "keywords": {
+      "es": ["respiración", "neumología", "salud respiratoria", "tráquea", "asma", "neumonía", "EPOC"],
+      "en": ["breathing", "pulmonology", "respiratory health", "trachea", "asthma", "pneumonia", "COPD"]
+    }
+  },
+  "kidneys": {
+    "label": { "es": "Riñones", "en": "Kidneys", "pt": "Rins", "fr": "Reins", "de": "Nieren", "it": "Reni", "ja": "腎臓", "zh": "肾脏", "ko": "신장", "ar": "الكليتان" },
+    "keywords": {
+      "es": ["nefrología", "salud renal", "diálisis", "donación de órganos", "cálculos renales", "trasplante", "insuficiencia renal"],
+      "en": ["nephrology", "renal", "dialysis", "organ donation", "kidney stones", "transplant", "kidney failure"]
+    }
+  },
+  "liver": {
+    "label": { "es": "Hígado", "en": "Liver", "pt": "Fígado", "fr": "Foie", "de": "Leber", "it": "Fegato", "ja": "肝臓", "zh": "肝脏", "ko": "간", "ar": "الكبد" },
+    "keywords": {
+      "es": ["hepatología", "salud hepática", "hepatitis", "cirrosis", "enzimas hepáticas", "hígado graso", "órgano"],
+      "en": ["hepatology", "liver health", "hepatitis", "cirrhosis", "liver enzymes", "fatty liver", "organ"]
+    }
+  },
+  "stomach": {
+    "label": { "es": "Estómago", "en": "Stomach", "pt": "Estômago", "fr": "Estomac", "de": "Magen", "it": "Stomaco", "ja": "胃", "zh": "胃", "ko": "위", "ar": "المعدة" },
+    "keywords": {
+      "es": ["digestión", "gastroenterología", "dolor de estómago", "gastritis", "agruras", "úlcera", "indigestión"],
+      "en": ["digestion", "gastroenterology", "stomach ache", "gastritis", "heartburn", "ulcer", "indigestion"]
+    }
+  },
+  "intestines": {
+    "label": { "es": "Intestinos", "en": "Intestines", "pt": "Intestinos", "fr": "Intestins", "de": "Darm", "it": "Intestino", "ja": "腸", "zh": "肠道", "ko": "장", "ar": "الأمعاء" },
+    "keywords": {
+      "es": ["salud intestinal", "digestión", "colon", "microbiota", "colitis", "estreñimiento", "gastroenterología"],
+      "en": ["gut health", "digestion", "bowel", "colon", "microbiome", "IBS", "constipation"]
+    }
+  },
+  "bladder": {
+    "label": { "es": "Vejiga", "en": "Bladder", "pt": "Bexiga", "fr": "Vessie", "de": "Harnblase", "it": "Vescica", "ja": "膀胱", "zh": "膀胱", "ko": "방광", "ar": "المثانة" },
+    "keywords": {
+      "es": ["urología", "salud urinaria", "infección urinaria", "orina", "cistitis", "incontinencia", "vías urinarias"],
+      "en": ["urology", "urinary health", "UTI", "urine", "cystitis", "incontinence", "urinary tract"]
+    }
+  },
+  "pancreas": {
+    "label": { "es": "Páncreas", "en": "Pancreas", "pt": "Pâncreas", "fr": "Pancréas", "de": "Bauchspeicheldrüse", "it": "Pancreas", "ja": "膵臓", "zh": "胰腺", "ko": "췌장", "ar": "البنكرياس" },
+    "keywords": {
+      "es": ["diabetes", "insulina", "endocrinología", "glucosa", "azúcar en la sangre", "pancreatitis", "digestión"],
+      "en": ["diabetes", "insulin", "endocrinology", "glucose", "blood sugar", "pancreatitis", "digestion"]
+    }
+  },
+  "thyroid": {
+    "label": { "es": "Tiroides", "en": "Thyroid", "pt": "Tireoide", "fr": "Thyroïde", "de": "Schilddrüse", "it": "Tiroide", "ja": "甲状腺", "zh": "甲状腺", "ko": "갑상선", "ar": "الغدة الدرقية" },
+    "keywords": {
+      "es": ["hormonas", "endocrinología", "hipotiroidismo", "hipertiroidismo", "glándula", "metabolismo", "cuello"],
+      "en": ["hormones", "endocrinology", "hypothyroidism", "hyperthyroidism", "gland", "metabolism", "TSH"]
+    }
+  },
+  "uterus": {
+    "label": { "es": "Útero", "en": "Uterus", "pt": "Útero", "fr": "Utérus", "de": "Gebärmutter", "it": "Utero", "ja": "子宮", "zh": "子宫", "ko": "자궁", "ar": "الرحم" },
+    "keywords": {
+      "es": ["matriz", "ginecología", "fertilidad", "salud menstrual", "ovarios", "periodo", "salud reproductiva"],
+      "en": ["womb", "gynecology", "fertility", "menstrual health", "ovaries", "period", "reproductive health"]
+    }
+  },
+  "red-blood-cell": {
+    "label": { "es": "Glóbulo rojo", "en": "Red blood cell", "pt": "Glóbulo vermelho", "fr": "Globule rouge", "de": "Rotes Blutkörperchen", "it": "Globulo rosso", "ja": "赤血球", "zh": "红细胞", "ko": "적혈구", "ar": "خلية دم حمراء" },
+    "keywords": {
+      "es": ["eritrocito", "hematología", "anemia", "biometría hemática", "hemoglobina", "hierro", "análisis de sangre"],
+      "en": ["erythrocyte", "hematology", "anemia", "CBC", "hemoglobin", "iron", "blood test"]
+    }
+  },
+  "white-blood-cell": {
+    "label": { "es": "Glóbulo blanco", "en": "White blood cell", "pt": "Glóbulo branco", "fr": "Globule blanc", "de": "Weißes Blutkörperchen", "it": "Globulo bianco", "ja": "白血球", "zh": "白细胞", "ko": "백혈구", "ar": "خلية دم بيضاء" },
+    "keywords": {
+      "es": ["leucocito", "sistema inmune", "defensas", "infección", "biometría hemática", "inmunidad", "hematología"],
+      "en": ["leukocyte", "immune system", "immunity", "infection", "CBC", "hematology", "blood test"]
+    }
+  },
+  "cancer-cell": {
+    "label": { "es": "Célula cancerosa", "en": "Cancer cell", "pt": "Célula cancerígena", "fr": "Cellule cancéreuse", "de": "Krebszelle", "it": "Cellula tumorale", "ja": "がん細胞", "zh": "癌细胞", "ko": "암세포", "ar": "خلية سرطانية" },
+    "keywords": {
+      "es": ["tumor", "oncología", "oncólogo", "quimioterapia", "metástasis", "biopsia", "tratamiento contra el cáncer"],
+      "en": ["tumor", "oncology", "oncologist", "chemotherapy", "metastasis", "biopsy", "cancer care"]
+    }
+  },
+  "neuron": {
+    "label": { "es": "Neurona", "en": "Neuron", "pt": "Neurônio", "fr": "Neurone", "de": "Nervenzelle", "it": "Neurone", "ja": "神経細胞", "zh": "神经元", "ko": "신경세포", "ar": "خلية عصبية" },
+    "keywords": {
+      "es": ["célula nerviosa", "neurología", "sistema nervioso", "neurociencia", "sinapsis", "axón", "cerebro"],
+      "en": ["nerve cell", "neurology", "nervous system", "neuroscience", "synapse", "axon", "brain"]
+    }
+  },
+  "sperm": {
+    "label": { "es": "Espermatozoide", "en": "Sperm", "pt": "Espermatozoide", "fr": "Spermatozoïde", "de": "Spermium", "it": "Spermatozoo", "ja": "精子", "zh": "精子", "ko": "정자", "ar": "حيوان منوي" },
+    "keywords": {
+      "es": ["fertilidad", "salud reproductiva", "espermograma", "concepción", "reproducción asistida", "esperma", "fertilidad masculina"],
+      "en": ["fertility", "reproductive health", "semen analysis", "conception", "male fertility", "IVF", "sperm count"]
+    }
+  },
+  "ovum": {
+    "label": { "es": "Óvulo", "en": "Egg cell", "pt": "Óvulo", "fr": "Ovule", "de": "Eizelle", "it": "Ovulo", "ja": "卵子", "zh": "卵子", "ko": "난자", "ar": "بويضة" },
+    "keywords": {
+      "es": ["fertilidad", "ovulación", "fecundación in vitro", "FIV", "concepción", "reproducción asistida", "congelar óvulos"],
+      "en": ["ovum", "fertility", "ovulation", "IVF", "conception", "egg freezing", "fertilization"]
+    }
+  },
+  "embryo": {
+    "label": { "es": "Embrión", "en": "Embryo", "pt": "Embrião", "fr": "Embryon", "de": "Embryo", "it": "Embrione", "ja": "胚", "zh": "胚胎", "ko": "배아", "ar": "جنين" },
+    "keywords": {
+      "es": ["FIV", "fecundación in vitro", "calidad embrionaria", "embarazo temprano", "blastocisto", "fertilidad", "transferencia embrionaria"],
+      "en": ["IVF", "embryo grading", "early pregnancy", "blastocyst", "fertility", "embryo transfer", "conception"]
+    }
+  },
+  "blood-vessel": {
+    "label": { "es": "Vaso sanguíneo", "en": "Blood vessel", "pt": "Vaso sanguíneo", "fr": "Vaisseau sanguin", "de": "Blutgefäß", "it": "Vaso sanguigno", "ja": "血管", "zh": "血管", "ko": "혈관", "ar": "وعاء دموي" },
+    "keywords": {
+      "es": ["circulación", "venas", "arterias", "salud vascular", "presión arterial", "várices", "colesterol"],
+      "en": ["circulation", "veins", "arteries", "vascular health", "blood pressure", "varicose veins", "cholesterol"]
+    }
+  }
+}

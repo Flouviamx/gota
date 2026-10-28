@@ -1,0 +1,786 @@
+{
+  "pill": {
+    "label": { "es": "Pastilla", "en": "Pill", "pt": "Pílula", "fr": "Gélule", "de": "Medikament", "it": "Pillola", "ja": "薬", "zh": "药丸", "ko": "알약", "ar": "حبة دواء" },
+    "keywords": {
+      "es": ["medicamento", "medicina", "cápsula", "farmacia", "tratamiento", "lista de medicamentos", "fármaco"],
+      "en": ["medication", "medicine", "capsule", "pharmacy", "drug", "treatment", "medication list"]
+    }
+  },
+  "pill-clock": {
+    "label": { "es": "Recordatorio de medicamento", "en": "Medication reminder", "pt": "Lembrete de remédio", "fr": "Rappel de médicament", "de": "Medikamentenerinnerung", "it": "Promemoria farmaco", "ja": "服薬リマインダー", "zh": "服药提醒", "ko": "복약 알림", "ar": "تذكير بالدواء" },
+    "keywords": {
+      "es": ["hora de la medicina", "toma pendiente", "alarma", "aviso", "horario", "dosis", "tratamiento"],
+      "en": ["dose due", "time to take", "alarm", "pill reminder", "schedule", "next dose", "notification"]
+    }
+  },
+  "pill-check": {
+    "label": { "es": "Dosis tomada", "en": "Dose taken", "pt": "Dose tomada", "fr": "Dose prise", "de": "Dosis eingenommen", "it": "Dose assunta", "ja": "服用済み", "zh": "已服药", "ko": "복용 완료", "ar": "تم تناول الجرعة" },
+    "keywords": {
+      "es": ["apego al tratamiento", "registro de tomas", "medicamento tomado", "cumplido", "bitácora", "marcar toma"],
+      "en": ["adherence", "medication log", "taken", "completed", "logged", "check off", "tracker"]
+    }
+  },
+  "pill-plus": {
+    "label": { "es": "Agregar medicamento", "en": "Add medication", "pt": "Adicionar remédio", "fr": "Ajouter un médicament", "de": "Medikament hinzufügen", "it": "Aggiungi farmaco", "ja": "薬を追加", "zh": "添加药物", "ko": "약 추가", "ar": "إضافة دواء" },
+    "keywords": {
+      "es": ["nuevo medicamento", "añadir", "lista de medicamentos", "tratamiento", "registrar", "esquema", "receta"],
+      "en": ["new medication", "add pill", "medication list", "regimen", "treatment", "log", "prescription"]
+    }
+  },
+  "pill-alert": {
+    "label": { "es": "Alerta de medicamento", "en": "Medication warning", "pt": "Alerta de medicamento", "fr": "Alerte sur un médicament", "de": "Arzneimittelwarnung", "it": "Avviso sul farmaco", "ja": "薬の警告", "zh": "药物警示", "ko": "약물 경고", "ar": "تحذير دوائي" },
+    "keywords": {
+      "es": ["interacción", "efectos secundarios", "contraindicación", "advertencia", "reacción adversa", "precaución", "alergia"],
+      "en": ["drug interaction", "side effects", "contraindication", "adverse reaction", "caution", "allergy", "recall"]
+    }
+  },
+  "pill-search": {
+    "label": { "es": "Buscar medicamento", "en": "Search medications", "pt": "Buscar remédio", "fr": "Rechercher un médicament", "de": "Medikament suchen", "it": "Cerca farmaco", "ja": "薬を検索", "zh": "查询药品", "ko": "약 검색", "ar": "البحث عن دواء" },
+    "keywords": {
+      "es": ["vademécum", "catálogo de medicamentos", "identificar pastilla", "consultar", "sustancia activa", "genérico", "farmacia"],
+      "en": ["drug database", "pill identifier", "look up", "active ingredient", "generic", "formulary", "drug info"]
+    }
+  },
+  "pill-x": {
+    "label": { "es": "Dosis omitida", "en": "Missed dose", "pt": "Dose esquecida", "fr": "Dose oubliée", "de": "Vergessene Dosis", "it": "Dose saltata", "ja": "飲み忘れ", "zh": "漏服", "ko": "복용 누락", "ar": "جرعة فائتة" },
+    "keywords": {
+      "es": ["toma olvidada", "no tomada", "apego al tratamiento", "registro de tomas", "saltada", "pendiente"],
+      "en": ["skipped", "forgot", "not taken", "adherence", "medication log", "late dose"]
+    }
+  },
+  "pill-round": {
+    "label": { "es": "Comprimido", "en": "Round tablet", "pt": "Comprimido", "fr": "Comprimé", "de": "Tablette", "it": "Compressa", "ja": "錠剤", "zh": "药片", "ko": "둥근 알약", "ar": "قرص دواء" },
+    "keywords": {
+      "es": ["tableta", "pastilla", "forma farmacéutica", "dosis", "presentación", "medicamento", "gragea"],
+      "en": ["pill", "dosage form", "dose", "medication", "caplet", "lozenge", "aspirin"]
+    }
+  },
+  "pill-bottle": {
+    "label": { "es": "Frasco de medicamento", "en": "Pill bottle", "pt": "Frasco de remédio", "fr": "Flacon de médicaments", "de": "Tablettendose", "it": "Flacone di pillole", "ja": "薬瓶", "zh": "药瓶", "ko": "약병", "ar": "عبوة دواء" },
+    "keywords": {
+      "es": ["receta surtida", "medicamento recetado", "recetas activas", "farmacia", "tratamiento", "envase", "pastillas"],
+      "en": ["prescription", "dispensed medication", "active prescriptions", "pharmacy", "rx", "pills", "treatment"]
+    }
+  },
+  "pill-bottle-sync": {
+    "label": { "es": "Resurtir receta", "en": "Refill prescription", "pt": "Renovar receita", "fr": "Renouveler l’ordonnance", "de": "Medikament nachbestellen", "it": "Rinnova ricetta", "ja": "リフィル処方", "zh": "续配处方", "ko": "재처방", "ar": "إعادة صرف الوصفة" },
+    "keywords": {
+      "es": ["resurtido", "volver a pedir", "pedido recurrente", "tratamiento crónico", "renovar", "mismo medicamento", "farmacia"],
+      "en": ["refill", "reorder", "repeat prescription", "recurring order", "renew", "chronic medication", "auto refill"]
+    }
+  },
+  "blister-pack": {
+    "label": { "es": "Blíster de pastillas", "en": "Blister pack", "pt": "Cartela de comprimidos", "fr": "Plaquette de comprimés", "de": "Blisterpackung", "it": "Blister", "ja": "PTPシート", "zh": "泡罩药板", "ko": "블리스터 포장", "ar": "شريط أقراص" },
+    "keywords": {
+      "es": ["tira de pastillas", "tabletas", "tratamiento", "anticonceptivos", "empaque", "dosis diaria", "caja de medicamento"],
+      "en": ["pill strip", "tablets", "course of treatment", "birth control", "contraceptive", "packaging", "daily dose"]
+    }
+  },
+  "pill-organizer": {
+    "label": { "es": "Pastillero", "en": "Pill organizer", "pt": "Porta-comprimidos", "fr": "Pilulier", "de": "Pillendose", "it": "Portapillole", "ja": "ピルケース", "zh": "分装药盒", "ko": "요일별 약통", "ar": "منظم أدوية أسبوعي" },
+    "keywords": {
+      "es": ["horario de medicamentos", "dosis por día", "semana", "organizador", "tratamiento", "adultos mayores", "caja de pastillas"],
+      "en": ["pill box", "medication schedule", "doses by day", "weekly", "dispenser", "treatment plan", "elder care"]
+    }
+  },
+  "medicine-bottle": {
+    "label": { "es": "Jarabe", "en": "Liquid medicine", "pt": "Xarope", "fr": "Sirop", "de": "Flüssiges Medikament", "it": "Sciroppo", "ja": "シロップ薬", "zh": "糖浆药", "ko": "물약", "ar": "شراب دوائي" },
+    "keywords": {
+      "es": ["medicina líquida", "jarabe para la tos", "suspensión", "frasco", "dosis infantil", "niños", "antigripal"],
+      "en": ["syrup", "cough medicine", "cough syrup", "suspension", "bottle", "children’s dose", "kids"]
+    }
+  },
+  "dosing-cup": {
+    "label": { "es": "Vaso dosificador", "en": "Dosing cup", "pt": "Copo dosador", "fr": "Gobelet doseur", "de": "Dosierbecher", "it": "Misurino", "ja": "薬の計量カップ", "zh": "量药杯", "ko": "약 계량컵", "ar": "كوب قياس الجرعة" },
+    "keywords": {
+      "es": ["medida", "mililitros", "cuánto tomar", "jarabe", "dosis", "medicina líquida"],
+      "en": ["measuring cup", "measured dose", "milliliters", "how much to take", "syrup", "liquid medicine"]
+    }
+  },
+  "ointment-tube": {
+    "label": { "es": "Pomada", "en": "Ointment", "pt": "Pomada", "fr": "Pommade", "de": "Salbe", "it": "Pomata", "ja": "軟膏", "zh": "药膏", "ko": "연고", "ar": "مرهم" },
+    "keywords": {
+      "es": ["crema", "ungüento", "tópico", "piel", "heridas", "gel", "tubo"],
+      "en": ["cream", "topical", "skin", "wound care", "gel", "tube", "rash"]
+    }
+  },
+  "medicine-box": {
+    "label": { "es": "Caja de medicamento", "en": "Medicine box", "pt": "Caixa de remédio", "fr": "Boîte de médicament", "de": "Medikamentenpackung", "it": "Confezione di farmaco", "ja": "薬の箱", "zh": "药品包装", "ko": "약 상자", "ar": "علبة دواء" },
+    "keywords": {
+      "es": ["sin receta", "venta libre", "producto de farmacia", "empaque", "catálogo", "genérico", "presentación"],
+      "en": ["over the counter", "otc", "pharmacy product", "packaging", "catalog", "generic", "drugstore"]
+    }
+  },
+  "herbal-medicine": {
+    "label": { "es": "Remedio herbal", "en": "Herbal remedy", "pt": "Fitoterápico", "fr": "Remède à base de plantes", "de": "Pflanzliches Heilmittel", "it": "Rimedio erboristico", "ja": "ハーブ療法", "zh": "草药", "ko": "약초", "ar": "علاج عشبي" },
+    "keywords": {
+      "es": ["remedio natural", "herbolaria", "suplemento", "medicina alternativa", "naturista", "plantas medicinales", "homeopatía"],
+      "en": ["natural remedy", "herbal supplement", "alternative medicine", "botanical", "naturopathy", "medicinal plants", "wellness"]
+    }
+  },
+  "vial": {
+    "label": { "es": "Frasco ámpula", "en": "Vial", "pt": "Frasco-ampola", "fr": "Flacon injectable", "de": "Durchstechflasche", "it": "Flaconcino", "ja": "バイアル", "zh": "注射药瓶", "ko": "바이알", "ar": "قارورة دواء" },
+    "keywords": {
+      "es": ["ampolleta", "medicamento inyectable", "dosis", "vacuna", "jeringa", "vial", "laboratorio"],
+      "en": ["ampoule", "injectable drug", "dose", "vaccine", "syringe", "medicine vial", "lab"]
+    }
+  },
+  "syringe": {
+    "label": { "es": "Jeringa", "en": "Syringe", "pt": "Seringa", "fr": "Seringue", "de": "Spritze", "it": "Siringa", "ja": "注射器", "zh": "注射器", "ko": "주사기", "ar": "حقنة" },
+    "keywords": {
+      "es": ["inyección", "piquete", "tratamiento inyectable", "aguja", "aplicar", "vacuna", "enfermería"],
+      "en": ["injection", "shot", "injectable treatment", "needle", "jab", "vaccine", "nursing"]
+    }
+  },
+  "syringe-check": {
+    "label": { "es": "Dosis aplicada", "en": "Dose given", "pt": "Dose aplicada", "fr": "Dose administrée", "de": "Dosis verabreicht", "it": "Dose somministrata", "ja": "接種済み", "zh": "已接种", "ko": "접종 완료", "ar": "تم إعطاء الجرعة" },
+    "keywords": {
+      "es": ["vacunado", "esquema completo", "estado de vacunación", "inmunizado", "inyección aplicada", "comprobante"],
+      "en": ["vaccinated", "immunization status", "fully vaccinated", "shot given", "immunized", "proof of vaccination"]
+    }
+  },
+  "syringe-clock": {
+    "label": { "es": "Próxima dosis", "en": "Next dose due", "pt": "Próxima dose", "fr": "Prochaine dose", "de": "Nächste Dosis fällig", "it": "Prossima dose", "ja": "次回の接種", "zh": "下次接种", "ko": "다음 접종", "ar": "الجرعة التالية" },
+    "keywords": {
+      "es": ["refuerzo", "calendario de vacunación", "segunda dosis", "recordatorio", "vacuna pendiente", "cita de vacunación"],
+      "en": ["booster", "vaccination schedule", "second dose", "reminder", "vaccine due", "upcoming shot"]
+    }
+  },
+  "vaccine": {
+    "label": { "es": "Vacuna", "en": "Vaccine", "pt": "Vacina", "fr": "Vaccin", "de": "Impfung", "it": "Vaccino", "ja": "ワクチン", "zh": "疫苗", "ko": "예방접종", "ar": "لقاح" },
+    "keywords": {
+      "es": ["vacunación", "inmunización", "campaña de vacunación", "módulo de vacunación", "centro de vacunación", "prevención", "inyección"],
+      "en": ["vaccination", "immunization", "vaccine program", "vaccination center", "prevention", "shot", "jab"]
+    }
+  },
+  "vaccination-record": {
+    "label": { "es": "Cartilla de vacunación", "en": "Vaccination record", "pt": "Carteira de vacinação", "fr": "Carnet de vaccination", "de": "Impfpass", "it": "Libretto vaccinale", "ja": "予防接種記録", "zh": "疫苗接种记录", "ko": "예방접종 기록", "ar": "سجل التطعيمات" },
+    "keywords": {
+      "es": ["historial de vacunas", "certificado de vacunación", "comprobante", "viaje", "escuela", "esquema de vacunación", "constancia"],
+      "en": ["immunization history", "vaccine certificate", "vaccine card", "proof of vaccination", "travel", "school", "vaccine passport"]
+    }
+  },
+  "insulin-pen": {
+    "label": { "es": "Pluma de insulina", "en": "Insulin pen", "pt": "Caneta de insulina", "fr": "Stylo à insuline", "de": "Insulinpen", "it": "Penna per insulina", "ja": "インスリンペン", "zh": "胰岛素笔", "ko": "인슐린 펜", "ar": "قلم الإنسولين" },
+    "keywords": {
+      "es": ["diabetes", "autoinyección", "inyector", "aplicador", "tratamiento inyectable", "dosis de insulina"],
+      "en": ["diabetes", "pen injector", "self-injection", "autoinjector", "injectable treatment", "insulin dose"]
+    }
+  },
+  "glucose-meter": {
+    "label": { "es": "Glucómetro", "en": "Glucose meter", "pt": "Glicosímetro", "fr": "Lecteur de glycémie", "de": "Blutzuckermessgerät", "it": "Glucometro", "ja": "血糖測定器", "zh": "血糖仪", "ko": "혈당 측정기", "ar": "جهاز قياس السكر" },
+    "keywords": {
+      "es": ["azúcar en la sangre", "glucosa", "diabetes", "medición", "tira reactiva", "registro de glucosa", "lectura"],
+      "en": ["blood sugar", "glucometer", "diabetes", "glucose reading", "test strip", "glucose log", "monitor"]
+    }
+  },
+  "inhaler": {
+    "label": { "es": "Inhalador", "en": "Inhaler", "pt": "Inalador", "fr": "Inhalateur", "de": "Inhalator", "it": "Inalatore", "ja": "吸入器", "zh": "吸入器", "ko": "흡입기", "ar": "بخاخ الربو" },
+    "keywords": {
+      "es": ["asma", "bomba", "medicamento respiratorio", "broncodilatador", "respirar", "pulmones", "salbutamol"],
+      "en": ["asthma", "puffer", "respiratory medication", "bronchodilator", "breathing", "lungs", "copd"]
+    }
+  },
+  "nasal-spray": {
+    "label": { "es": "Spray nasal", "en": "Nasal spray", "pt": "Spray nasal", "fr": "Spray nasal", "de": "Nasenspray", "it": "Spray nasale", "ja": "点鼻薬", "zh": "鼻喷雾剂", "ko": "코 스프레이", "ar": "بخاخ الأنف" },
+    "keywords": {
+      "es": ["descongestionante", "nariz tapada", "alergia", "atomizador", "gotas nasales", "rinitis"],
+      "en": ["decongestant", "stuffy nose", "allergy spray", "atomizer", "nose drops", "congestion"]
+    }
+  },
+  "eye-drops": {
+    "label": { "es": "Gotas para los ojos", "en": "Eye drops", "pt": "Colírio", "fr": "Collyre", "de": "Augentropfen", "it": "Collirio", "ja": "目薬", "zh": "眼药水", "ko": "안약", "ar": "قطرة العين" },
+    "keywords": {
+      "es": ["lágrimas artificiales", "gotero", "ojo seco", "medicamento oftálmico", "irritación", "conjuntivitis"],
+      "en": ["artificial tears", "dropper", "dry eyes", "eye medication", "eye irritation", "pink eye"]
+    }
+  },
+  "tissue-box": {
+    "label": { "es": "Pañuelos desechables", "en": "Tissues", "pt": "Lenços de papel", "fr": "Mouchoirs", "de": "Taschentücher", "it": "Fazzoletti", "ja": "ティッシュ", "zh": "纸巾", "ko": "티슈", "ar": "مناديل ورقية" },
+    "keywords": {
+      "es": ["gripa", "resfriado", "estornudo", "alergia", "caja de pañuelos", "temporada de frío", "nariz"],
+      "en": ["tissue box", "cold", "flu", "sneeze", "allergies", "cold and flu", "facial tissue"]
+    }
+  },
+  "hot-water-bottle": {
+    "label": { "es": "Bolsa de agua caliente", "en": "Hot water bottle", "pt": "Bolsa de água quente", "fr": "Bouillotte", "de": "Wärmflasche", "it": "Borsa dell’acqua calda", "ja": "湯たんぽ", "zh": "热水袋", "ko": "보온 물주머니", "ar": "قربة ماء ساخن" },
+    "keywords": {
+      "es": ["compresa caliente", "cólicos", "dolor menstrual", "calor", "alivio", "dolor muscular", "resfriado"],
+      "en": ["heat pack", "cramps", "period pain", "heat therapy", "relief", "aches", "warm"]
+    }
+  },
+  "ice-pack": {
+    "label": { "es": "Compresa fría", "en": "Ice pack", "pt": "Bolsa de gelo", "fr": "Poche de glace", "de": "Kühlpack", "it": "Borsa del ghiaccio", "ja": "アイスパック", "zh": "冰袋", "ko": "아이스팩", "ar": "كمادة باردة" },
+    "keywords": {
+      "es": ["bolsa de hielo", "torcedura", "esguince", "inflamación", "golpe", "primeros auxilios", "frío"],
+      "en": ["cold pack", "sprain", "swelling", "bruise", "first aid", "cold therapy", "injury"]
+    }
+  },
+  "prescription": {
+    "label": { "es": "Receta médica", "en": "Prescription", "pt": "Receita médica", "fr": "Ordonnance", "de": "Ärztliches Rezept", "it": "Ricetta medica", "ja": "処方箋", "zh": "处方", "ko": "처방전", "ar": "وصفة طبية" },
+    "keywords": {
+      "es": ["receta electrónica", "rx", "indicaciones del médico", "enviar a farmacia", "medicamento recetado", "prescripción"],
+      "en": ["rx", "e-prescription", "doctor’s orders", "send to pharmacy", "prescribed medication", "script"]
+    }
+  },
+  "prescription-check": {
+    "label": { "es": "Receta lista", "en": "Prescription ready", "pt": "Receita pronta", "fr": "Ordonnance prête", "de": "Rezept abholbereit", "it": "Ricetta pronta", "ja": "処方薬の準備完了", "zh": "处方已备好", "ko": "처방약 준비 완료", "ar": "الوصفة جاهزة" },
+    "keywords": {
+      "es": ["receta surtida", "lista para recoger", "pedido listo", "farmacia", "medicamento listo", "surtido"],
+      "en": ["filled", "ready for pickup", "order ready", "pharmacy", "dispensed", "pick up"]
+    }
+  },
+  "prescription-clock": {
+    "label": { "es": "Receta en proceso", "en": "Prescription in progress", "pt": "Receita em andamento", "fr": "Ordonnance en cours", "de": "Rezept in Bearbeitung", "it": "Ricetta in lavorazione", "ja": "処方薬を準備中", "zh": "处方处理中", "ko": "처방 처리 중", "ar": "الوصفة قيد التجهيز" },
+    "keywords": {
+      "es": ["surtiendo", "en espera de autorización", "pendiente", "en preparación", "farmacia", "estado del pedido"],
+      "en": ["being filled", "awaiting approval", "pending", "processing", "pharmacy", "order status"]
+    }
+  },
+  "medical-record": {
+    "label": { "es": "Expediente clínico", "en": "Medical record", "pt": "Prontuário médico", "fr": "Dossier médical", "de": "Patientenakte", "it": "Cartella clinica", "ja": "診療記録", "zh": "病历", "ko": "의료 기록", "ar": "سجل طبي" },
+    "keywords": {
+      "es": ["historia clínica", "historial médico", "expediente del paciente", "expediente electrónico", "antecedentes", "ficha médica"],
+      "en": ["health record", "patient history", "ehr", "emr", "medical file", "chart", "medical history"]
+    }
+  },
+  "medical-record-lock": {
+    "label": { "es": "Expediente protegido", "en": "Protected health record", "pt": "Prontuário protegido", "fr": "Dossier médical protégé", "de": "Geschützte Patientenakte", "it": "Cartella clinica protetta", "ja": "保護された診療記録", "zh": "受保护的病历", "ko": "보호된 의료 기록", "ar": "سجل طبي محمي" },
+    "keywords": {
+      "es": ["datos de salud", "confidencial", "privacidad del paciente", "expediente privado", "datos sensibles", "acceso restringido"],
+      "en": ["phi", "hipaa", "confidential", "patient privacy", "private record", "restricted access"]
+    }
+  },
+  "medical-record-plus": {
+    "label": { "es": "Agregar al expediente", "en": "Add health record", "pt": "Adicionar ao prontuário", "fr": "Ajouter au dossier médical", "de": "Zur Patientenakte hinzufügen", "it": "Aggiungi alla cartella clinica", "ja": "診療記録を追加", "zh": "添加病历", "ko": "의료 기록 추가", "ar": "إضافة سجل طبي" },
+    "keywords": {
+      "es": ["subir documentos", "nuevo registro", "perfil del paciente", "adjuntar estudios", "cargar archivo", "historial médico"],
+      "en": ["upload documents", "new record", "patient profile", "attach results", "add file", "medical history"]
+    }
+  },
+  "lab-results": {
+    "label": { "es": "Resultados de laboratorio", "en": "Lab results", "pt": "Resultados de exames", "fr": "Résultats d’analyses", "de": "Laborbefunde", "it": "Risultati degli esami", "ja": "検査結果", "zh": "化验结果", "ko": "검사 결과", "ar": "نتائج المختبر" },
+    "keywords": {
+      "es": ["estudios", "análisis clínicos", "química sanguínea", "reporte", "portal del paciente", "biometría hemática", "laboratorio"],
+      "en": ["test results", "blood work", "lab report", "patient portal", "labs", "panel", "diagnostics"]
+    }
+  },
+  "lab-results-clock": {
+    "label": { "es": "Resultados pendientes", "en": "Results pending", "pt": "Resultados pendentes", "fr": "Résultats en attente", "de": "Befunde ausstehend", "it": "Risultati in attesa", "ja": "検査結果待ち", "zh": "结果待出", "ko": "결과 대기 중", "ar": "النتائج قيد الانتظار" },
+    "keywords": {
+      "es": ["muestra enviada", "en proceso", "en análisis", "laboratorio", "tiempo de entrega", "en espera"],
+      "en": ["sample sent", "in progress", "processing", "lab", "turnaround time", "awaiting results"]
+    }
+  },
+  "lab-results-alert": {
+    "label": { "es": "Resultado anormal", "en": "Abnormal result", "pt": "Resultado alterado", "fr": "Résultat anormal", "de": "Auffälliger Befund", "it": "Risultato anomalo", "ja": "異常値", "zh": "异常结果", "ko": "이상 결과", "ar": "نتيجة غير طبيعية" },
+    "keywords": {
+      "es": ["fuera de rango", "valor crítico", "revisar", "alerta", "estudios", "atención médica"],
+      "en": ["out of range", "flagged", "critical value", "needs review", "lab alert", "high", "low"]
+    }
+  },
+  "calendar-medical": {
+    "label": { "es": "Cita médica", "en": "Medical appointment", "pt": "Consulta médica", "fr": "Rendez-vous médical", "de": "Arzttermin", "it": "Visita medica", "ja": "診察予約", "zh": "就诊预约", "ko": "진료 예약", "ar": "موعد طبي" },
+    "keywords": {
+      "es": ["agendar consulta", "reservar cita", "consulta", "doctor", "clínica", "agenda médica", "turno"],
+      "en": ["book a doctor", "schedule visit", "doctor visit", "clinic", "appointment booking", "checkup"]
+    }
+  },
+  "id-card-medical": {
+    "label": { "es": "Identificación médica", "en": "Medical ID", "pt": "Carteirinha de saúde", "fr": "Carte médicale", "de": "Gesundheitskarte", "it": "Tessera sanitaria", "ja": "診察券", "zh": "就诊卡", "ko": "환자 카드", "ar": "بطاقة طبية" },
+    "keywords": {
+      "es": ["carnet", "credencial del paciente", "datos de emergencia", "tipo de sangre", "afiliación", "número de paciente"],
+      "en": ["patient card", "health card", "emergency info", "blood type", "member id", "patient id"]
+    }
+  },
+  "insurance-health": {
+    "label": { "es": "Seguro médico", "en": "Health insurance", "pt": "Plano de saúde", "fr": "Assurance santé", "de": "Krankenversicherung", "it": "Assicurazione sanitaria", "ja": "医療保険", "zh": "医疗保险", "ko": "건강 보험", "ar": "تأمين صحي" },
+    "keywords": {
+      "es": ["gastos médicos mayores", "cobertura médica", "póliza", "aseguradora", "prestaciones", "beneficios"],
+      "en": ["medical coverage", "health plan", "policy", "insurer", "benefits", "coverage"]
+    }
+  },
+  "insurance-dental": {
+    "label": { "es": "Seguro dental", "en": "Dental insurance", "pt": "Plano odontológico", "fr": "Assurance dentaire", "de": "Zahnversicherung", "it": "Assicurazione dentale", "ja": "歯科保険", "zh": "牙科保险", "ko": "치아 보험", "ar": "تأمين الأسنان" },
+    "keywords": {
+      "es": ["cobertura dental", "póliza", "prestaciones", "dentista", "plan de beneficios", "aseguradora"],
+      "en": ["dental coverage", "dental plan", "benefits plan", "dentist", "policy", "insurer"]
+    }
+  },
+  "insurance-vision": {
+    "label": { "es": "Seguro de visión", "en": "Vision insurance", "pt": "Plano oftalmológico", "fr": "Assurance optique", "de": "Brillenversicherung", "it": "Assicurazione oculistica", "ja": "眼科保険", "zh": "视力保险", "ko": "안과 보험", "ar": "تأمين النظر" },
+    "keywords": {
+      "es": ["cobertura visual", "lentes", "anteojos", "oftalmólogo", "prestaciones", "plan de beneficios"],
+      "en": ["vision plan", "eye care coverage", "glasses", "eyewear", "benefits plan", "optometrist"]
+    }
+  },
+  "receipt-medical": {
+    "label": { "es": "Factura médica", "en": "Medical bill", "pt": "Conta médica", "fr": "Facture médicale", "de": "Arztrechnung", "it": "Fattura sanitaria", "ja": "医療費の明細", "zh": "医疗账单", "ko": "의료비 영수증", "ar": "فاتورة طبية" },
+    "keywords": {
+      "es": ["cobro", "cuenta del hospital", "reembolso", "copago", "deducible", "reclamación", "gastos médicos"],
+      "en": ["healthcare billing", "hospital bill", "claim", "copay", "deductible", "reimbursement", "statement"]
+    }
+  },
+  "telemedicine": {
+    "label": { "es": "Teleconsulta", "en": "Virtual visit", "pt": "Teleconsulta", "fr": "Téléconsultation", "de": "Videosprechstunde", "it": "Televisita", "ja": "オンライン診療", "zh": "远程问诊", "ko": "비대면 진료", "ar": "استشارة عن بُعد" },
+    "keywords": {
+      "es": ["consulta en línea", "videoconsulta", "telemedicina", "doctor en línea", "consulta a distancia", "atención virtual"],
+      "en": ["telehealth", "telemedicine", "video consultation", "online doctor", "remote care", "video visit"]
+    }
+  },
+  "message-medical": {
+    "label": { "es": "Chat médico", "en": "Medical chat", "pt": "Chat médico", "fr": "Messagerie médicale", "de": "Arzt-Chat", "it": "Chat con il medico", "ja": "医療チャット", "zh": "咨询医生", "ko": "의료 상담 채팅", "ar": "دردشة طبية" },
+    "keywords": {
+      "es": ["mensaje al doctor", "enfermera", "farmacéutico", "consulta por chat", "dudas médicas", "equipo de salud"],
+      "en": ["message a doctor", "nurse", "pharmacist", "ask a doctor", "care team", "secure messaging"]
+    }
+  },
+  "phone-medical": {
+    "label": { "es": "Línea médica", "en": "Medical hotline", "pt": "Linha de saúde", "fr": "Ligne d’assistance médicale", "de": "Medizinische Hotline", "it": "Linea medica", "ja": "医療相談ダイヤル", "zh": "医疗热线", "ko": "의료 상담 전화", "ar": "خط المساعدة الطبية" },
+    "keywords": {
+      "es": ["orientación médica", "enfermera por teléfono", "llamar al doctor", "consulta telefónica", "línea de salud", "emergencias"],
+      "en": ["nurse line", "call a doctor", "phone consultation", "health line", "advice line", "emergency"]
+    }
+  },
+  "map-pin-medical": {
+    "label": { "es": "Atención médica cercana", "en": "Nearby care", "pt": "Atendimento próximo", "fr": "Soins à proximité", "de": "Medizinische Versorgung in der Nähe", "it": "Strutture sanitarie vicine", "ja": "近くの医療機関", "zh": "附近医疗机构", "ko": "근처 의료 기관", "ar": "رعاية طبية قريبة" },
+    "keywords": {
+      "es": ["hospitales cercanos", "clínicas", "farmacias", "ubicación", "mapa", "red médica", "buscar doctor"],
+      "en": ["find care", "hospitals near me", "clinics", "pharmacies", "map", "provider network", "find a doctor"]
+    }
+  },
+  "house-medical": {
+    "label": { "es": "Atención a domicilio", "en": "Home care", "pt": "Atendimento domiciliar", "fr": "Soins à domicile", "de": "Häusliche Pflege", "it": "Assistenza domiciliare", "ja": "訪問医療", "zh": "居家医疗", "ko": "방문 진료", "ar": "رعاية منزلية" },
+    "keywords": {
+      "es": ["visita domiciliaria", "médico a domicilio", "enfermería a domicilio", "cuidados en casa", "cuidador", "adultos mayores"],
+      "en": ["home visit", "home health", "house call", "in-home care", "caregiver", "elder care"]
+    }
+  },
+  "healthcare": {
+    "label": { "es": "Salud", "en": "Healthcare", "pt": "Saúde", "fr": "Santé", "de": "Gesundheit", "it": "Salute", "ja": "ヘルスケア", "zh": "医疗保健", "ko": "헬스케어", "ar": "الرعاية الصحية" },
+    "keywords": {
+      "es": ["atención médica", "servicios de salud", "beneficios de salud", "bienestar", "sección de salud", "medicina"],
+      "en": ["health", "medical care", "health benefits", "wellness", "health section", "medicine"]
+    }
+  },
+  "blood-donation": {
+    "label": { "es": "Donación de sangre", "en": "Blood donation", "pt": "Doação de sangue", "fr": "Don du sang", "de": "Blutspende", "it": "Donazione di sangue", "ja": "献血", "zh": "献血", "ko": "헌혈", "ar": "التبرع بالدم" },
+    "keywords": {
+      "es": ["donar sangre", "donador", "campaña de donación", "banco de sangre", "donante", "solidaridad"],
+      "en": ["donate blood", "blood drive", "donor", "blood bank", "donor program", "give blood"]
+    }
+  },
+  "heart-pulse-alert": {
+    "label": { "es": "Ritmo cardiaco anormal", "en": "Heart rhythm alert", "pt": "Alerta de ritmo cardíaco", "fr": "Alerte de rythme cardiaque", "de": "Herzrhythmus-Warnung", "it": "Avviso battito cardiaco", "ja": "心拍の異常", "zh": "心律异常提醒", "ko": "심박 이상 알림", "ar": "تنبيه نبض القلب" },
+    "keywords": {
+      "es": ["arritmia", "frecuencia cardiaca", "taquicardia", "pulso irregular", "alerta cardiaca", "corazón"],
+      "en": ["arrhythmia", "irregular heartbeat", "heart rate alert", "afib", "tachycardia", "cardiac"]
+    }
+  },
+  "iv-drip": {
+    "label": { "es": "Suero intravenoso", "en": "IV drip", "pt": "Soro", "fr": "Perfusion", "de": "Infusion", "it": "Flebo", "ja": "点滴", "zh": "输液", "ko": "링거", "ar": "محلول وريدي" },
+    "keywords": {
+      "es": ["suero", "venoclisis", "infusión", "hospitalización", "hidratación", "goteo", "canalizar"],
+      "en": ["infusion", "iv", "fluids", "inpatient", "hydration", "saline", "drip bag"]
+    }
+  },
+  "blood-bag": {
+    "label": { "es": "Bolsa de sangre", "en": "Blood bag", "pt": "Bolsa de sangue", "fr": "Poche de sang", "de": "Blutbeutel", "it": "Sacca di sangue", "ja": "輸血バッグ", "zh": "血袋", "ko": "혈액 팩", "ar": "كيس دم" },
+    "keywords": {
+      "es": ["transfusión", "banco de sangre", "tipo de sangre", "plasma", "hemoderivados", "donación"],
+      "en": ["transfusion", "blood bank", "blood type", "plasma", "blood products", "donation"]
+    }
+  },
+  "blood-test": {
+    "label": { "es": "Análisis de sangre", "en": "Blood test", "pt": "Exame de sangue", "fr": "Prise de sang", "de": "Bluttest", "it": "Analisi del sangue", "ja": "血液検査", "zh": "验血", "ko": "혈액 검사", "ar": "تحليل الدم" },
+    "keywords": {
+      "es": ["toma de muestra", "extracción de sangre", "estudios de laboratorio", "biometría hemática", "química sanguínea", "tubo de ensayo"],
+      "en": ["blood work", "blood draw", "lab test", "sample", "complete blood count", "test tube"]
+    }
+  },
+  "medical-thermometer": {
+    "label": { "es": "Termómetro", "en": "Thermometer", "pt": "Termômetro", "fr": "Thermomètre", "de": "Fieberthermometer", "it": "Termometro", "ja": "体温計", "zh": "体温计", "ko": "체온계", "ar": "ميزان حرارة" },
+    "keywords": {
+      "es": ["temperatura corporal", "fiebre", "calentura", "tomar la temperatura", "registro de temperatura", "síntomas"],
+      "en": ["body temperature", "fever", "take temperature", "temperature log", "symptoms", "fever check"]
+    }
+  },
+  "blood-pressure": {
+    "label": { "es": "Presión arterial", "en": "Blood pressure", "pt": "Pressão arterial", "fr": "Tension artérielle", "de": "Blutdruck", "it": "Pressione sanguigna", "ja": "血圧", "zh": "血压", "ko": "혈압", "ar": "ضغط الدم" },
+    "keywords": {
+      "es": ["baumanómetro", "hipertensión", "toma de presión", "tensión", "lectura", "presión alta", "signos vitales"],
+      "en": ["blood pressure cuff", "hypertension", "bp reading", "sphygmomanometer", "high blood pressure", "vital signs"]
+    }
+  },
+  "patient-monitor": {
+    "label": { "es": "Monitor de signos vitales", "en": "Patient monitor", "pt": "Monitor de sinais vitais", "fr": "Moniteur de surveillance", "de": "Patientenmonitor", "it": "Monitor multiparametrico", "ja": "生体情報モニター", "zh": "监护仪", "ko": "생체 신호 모니터", "ar": "جهاز مراقبة المريض" },
+    "keywords": {
+      "es": ["terapia intensiva", "monitoreo", "frecuencia cardiaca", "electrocardiograma", "hospitalización", "cuidados intensivos"],
+      "en": ["vital signs", "icu", "intensive care", "bedside monitor", "heart rate", "ecg", "monitoring"]
+    }
+  },
+  "otoscope": {
+    "label": { "es": "Otoscopio", "en": "Otoscope", "pt": "Otoscópio", "fr": "Otoscope", "de": "Otoskop", "it": "Otoscopio", "ja": "耳鏡", "zh": "耳镜", "ko": "이경", "ar": "منظار الأذن" },
+    "keywords": {
+      "es": ["revisión de oído", "otorrino", "oído", "chequeo", "pediatra", "exploración"],
+      "en": ["ear exam", "ent", "ear", "checkup", "pediatrics", "examination"]
+    }
+  },
+  "x-ray": {
+    "label": { "es": "Rayos X", "en": "X-ray", "pt": "Raio X", "fr": "Radiographie", "de": "Röntgenbild", "it": "Radiografia", "ja": "レントゲン", "zh": "X光片", "ko": "엑스레이", "ar": "صورة أشعة سينية" },
+    "keywords": {
+      "es": ["radiografía", "placa", "radiología", "estudio de imagen", "huesos", "tórax"],
+      "en": ["radiograph", "radiology", "imaging", "imaging results", "bones", "chest x-ray"]
+    }
+  },
+  "medical-scanner": {
+    "label": { "es": "Escáner médico", "en": "Medical scanner", "pt": "Tomógrafo", "fr": "Scanner médical", "de": "Tomograf", "it": "Tomografo", "ja": "画像診断装置", "zh": "影像扫描仪", "ko": "영상 진단 장비", "ar": "جهاز تصوير طبي" },
+    "keywords": {
+      "es": ["tomografía", "resonancia magnética", "radiología", "estudio de imagen", "imagenología", "cita de estudio"],
+      "en": ["ct scan", "mri", "radiology", "imaging", "cat scan", "imaging appointment"]
+    }
+  },
+  "ultrasound": {
+    "label": { "es": "Estudio de ultrasonido", "en": "Ultrasound exam", "pt": "Exame de ultrassom", "fr": "Examen échographique", "de": "Ultraschalluntersuchung", "it": "Esame ecografico", "ja": "超音波検査", "zh": "超声波检查", "ko": "초음파 검사", "ar": "فحص بالموجات فوق الصوتية" },
+    "keywords": {
+      "es": ["ecografía", "eco", "sonograma", "transductor", "embarazo", "ultrasonido de abdomen", "imagenología"],
+      "en": ["sonogram", "sonography", "probe", "transducer", "pregnancy", "imaging", "scan"]
+    }
+  },
+  "swab-test": {
+    "label": { "es": "Prueba con hisopo", "en": "Swab test", "pt": "Teste com swab", "fr": "Prélèvement", "de": "Abstrich", "it": "Tampone", "ja": "スワブ検査", "zh": "拭子检测", "ko": "면봉 검사", "ar": "اختبار المسحة" },
+    "keywords": {
+      "es": ["pcr", "exudado", "muestra nasal", "muestra de garganta", "hisopado", "toma de muestra", "covid"],
+      "en": ["pcr", "nasal swab", "throat swab", "sample collection", "covid test", "specimen"]
+    }
+  },
+  "rapid-test": {
+    "label": { "es": "Prueba rápida", "en": "Rapid test", "pt": "Teste rápido", "fr": "Test rapide", "de": "Schnelltest", "it": "Test rapido", "ja": "迅速検査", "zh": "快速检测", "ko": "신속 검사", "ar": "اختبار سريع" },
+    "keywords": {
+      "es": ["prueba de antígeno", "autoprueba", "casete", "covid", "influenza", "prueba casera"],
+      "en": ["antigen test", "self-test", "test cassette", "home test", "covid", "lateral flow"]
+    }
+  },
+  "rapid-test-positive": {
+    "label": { "es": "Prueba positiva", "en": "Positive test", "pt": "Teste positivo", "fr": "Test positif", "de": "Positiver Test", "it": "Test positivo", "ja": "陽性", "zh": "检测阳性", "ko": "양성", "ar": "نتيجة إيجابية" },
+    "keywords": {
+      "es": ["positivo", "contagio", "dos líneas", "resultado", "aislamiento", "infectado"],
+      "en": ["positive", "infected", "two lines", "result", "isolate", "detected"]
+    }
+  },
+  "rapid-test-negative": {
+    "label": { "es": "Prueba negativa", "en": "Negative test", "pt": "Teste negativo", "fr": "Test négatif", "de": "Negativer Test", "it": "Test negativo", "ja": "陰性", "zh": "检测阴性", "ko": "음성", "ar": "نتيجة سلبية" },
+    "keywords": {
+      "es": ["negativo", "sin contagio", "una línea", "resultado", "libre", "no detectado"],
+      "en": ["negative", "not detected", "one line", "result", "clear", "all clear"]
+    }
+  },
+  "antibody": {
+    "label": { "es": "Anticuerpo", "en": "Antibody", "pt": "Anticorpo", "fr": "Anticorps", "de": "Antikörper", "it": "Anticorpo", "ja": "抗体", "zh": "抗体", "ko": "항체", "ar": "جسم مضاد" },
+    "keywords": {
+      "es": ["inmunidad", "prueba de anticuerpos", "inmunología", "sistema inmune", "defensas", "serología"],
+      "en": ["immunity", "antibody test", "immunology", "immune system", "serology", "immunoglobulin"]
+    }
+  },
+  "hospital-bed": {
+    "label": { "es": "Cama de hospital", "en": "Hospital bed", "pt": "Leito hospitalar", "fr": "Lit d’hôpital", "de": "Krankenhausbett", "it": "Letto d’ospedale", "ja": "病床", "zh": "病床", "ko": "병상", "ar": "سرير مستشفى" },
+    "keywords": {
+      "es": ["hospitalización", "internamiento", "camas disponibles", "paciente internado", "habitación", "ingreso"],
+      "en": ["inpatient", "hospital stay", "bed availability", "admission", "ward", "patient room"]
+    }
+  },
+  "stretcher": {
+    "label": { "es": "Camilla", "en": "Stretcher", "pt": "Maca", "fr": "Brancard", "de": "Trage", "it": "Barella", "ja": "ストレッチャー", "zh": "担架", "ko": "들것", "ar": "نقالة" },
+    "keywords": {
+      "es": ["traslado de pacientes", "urgencias", "emergencia", "paramédicos", "rescate", "ambulancia"],
+      "en": ["gurney", "patient transport", "emergency", "paramedics", "rescue", "er"]
+    }
+  },
+  "exam-table": {
+    "label": { "es": "Mesa de exploración", "en": "Exam table", "pt": "Maca de exame", "fr": "Table d’examen", "de": "Untersuchungsliege", "it": "Lettino da visita", "ja": "診察台", "zh": "检查床", "ko": "진찰대", "ar": "طاولة الفحص" },
+    "keywords": {
+      "es": ["consultorio", "revisión médica", "chequeo", "consulta", "exploración física", "camilla"],
+      "en": ["examination table", "doctor’s office", "checkup", "physical exam", "consultation", "clinic"]
+    }
+  },
+  "oxygen-tank": {
+    "label": { "es": "Tanque de oxígeno", "en": "Oxygen tank", "pt": "Cilindro de oxigênio", "fr": "Bouteille d’oxygène", "de": "Sauerstoffflasche", "it": "Bombola di ossigeno", "ja": "酸素ボンベ", "zh": "氧气瓶", "ko": "산소통", "ar": "أسطوانة أكسجين" },
+    "keywords": {
+      "es": ["oxigenoterapia", "cilindro", "gases medicinales", "respiración", "concentrador", "recarga de oxígeno"],
+      "en": ["oxygen cylinder", "oxygen therapy", "medical gas", "breathing", "concentrator", "o2"]
+    }
+  },
+  "oxygen-mask": {
+    "label": { "es": "Mascarilla de oxígeno", "en": "Oxygen mask", "pt": "Máscara de oxigênio", "fr": "Masque à oxygène", "de": "Sauerstoffmaske", "it": "Maschera per ossigeno", "ja": "酸素マスク", "zh": "氧气面罩", "ko": "산소마스크", "ar": "قناع الأكسجين" },
+    "keywords": {
+      "es": ["anestesia", "respiración asistida", "oxigenoterapia", "nebulizador", "respirar", "urgencias"],
+      "en": ["anesthesia mask", "breathing", "oxygen therapy", "nebulizer", "respiratory", "o2"]
+    }
+  },
+  "scalpel": {
+    "label": { "es": "Bisturí", "en": "Scalpel", "pt": "Bisturi", "fr": "Scalpel", "de": "Skalpell", "it": "Bisturi", "ja": "メス", "zh": "手术刀", "ko": "메스", "ar": "مشرط" },
+    "keywords": {
+      "es": ["cirugía", "operación", "procedimiento", "quirófano", "cirujano", "incisión"],
+      "en": ["surgery", "operation", "procedure", "operating room", "surgeon", "incision"]
+    }
+  },
+  "stitches": {
+    "label": { "es": "Puntos de sutura", "en": "Stitches", "pt": "Pontos", "fr": "Points de suture", "de": "Wundnaht", "it": "Punti di sutura", "ja": "縫合", "zh": "缝合", "ko": "봉합", "ar": "غرز جراحية" },
+    "keywords": {
+      "es": ["sutura", "herida cosida", "retirar puntos", "curación", "cicatriz", "cirugía"],
+      "en": ["sutures", "stitched wound", "stitch removal", "wound care", "scar", "surgery"]
+    }
+  },
+  "bandage-roll": {
+    "label": { "es": "Venda", "en": "Bandage roll", "pt": "Atadura", "fr": "Bande", "de": "Mullbinde", "it": "Benda", "ja": "包帯", "zh": "绷带", "ko": "붕대", "ar": "ضمادة ملفوفة" },
+    "keywords": {
+      "es": ["gasa", "vendaje", "venda elástica", "curación", "primeros auxilios", "botiquín"],
+      "en": ["gauze", "elastic bandage", "dressing", "wound dressing", "first aid", "first aid kit"]
+    }
+  },
+  "tooth": {
+    "label": { "es": "Diente", "en": "Tooth", "pt": "Dente", "fr": "Dent", "de": "Zahn", "it": "Dente", "ja": "歯", "zh": "牙齿", "ko": "치아", "ar": "سن" },
+    "keywords": {
+      "es": ["dentista", "odontología", "clínica dental", "muela", "salud bucal", "consultorio dental"],
+      "en": ["dentist", "dentistry", "dental care", "dental clinic", "molar", "oral health"]
+    }
+  },
+  "tooth-cavity": {
+    "label": { "es": "Caries", "en": "Cavity", "pt": "Cárie", "fr": "Carie", "de": "Karies", "it": "Carie", "ja": "虫歯", "zh": "蛀牙", "ko": "충치", "ar": "تسوس الأسنان" },
+    "keywords": {
+      "es": ["picadura", "diente picado", "muela picada", "resina pendiente", "dentista", "salud bucal"],
+      "en": ["tooth decay", "caries", "filling needed", "dentist", "oral health", "decay"]
+    }
+  },
+  "tooth-filling": {
+    "label": { "es": "Empaste", "en": "Filling", "pt": "Obturação", "fr": "Plombage", "de": "Zahnfüllung", "it": "Otturazione", "ja": "詰め物", "zh": "补牙", "ko": "충전 치료", "ar": "حشوة الأسنان" },
+    "keywords": {
+      "es": ["resina", "amalgama", "tapadura", "caries tratada", "restauración dental", "dentista"],
+      "en": ["dental filling", "treated cavity", "restorative dentistry", "composite", "amalgam", "dentist"]
+    }
+  },
+  "tooth-broken": {
+    "label": { "es": "Diente roto", "en": "Broken tooth", "pt": "Dente quebrado", "fr": "Dent cassée", "de": "Abgebrochener Zahn", "it": "Dente rotto", "ja": "欠けた歯", "zh": "牙齿折断", "ko": "깨진 치아", "ar": "سن مكسورة" },
+    "keywords": {
+      "es": ["diente despostillado", "fractura dental", "urgencia dental", "golpe", "dentista", "muela rota"],
+      "en": ["chipped tooth", "cracked tooth", "dental emergency", "dental fracture", "dentist", "injury"]
+    }
+  },
+  "toothache": {
+    "label": { "es": "Dolor de muelas", "en": "Toothache", "pt": "Dor de dente", "fr": "Mal de dents", "de": "Zahnschmerzen", "it": "Mal di denti", "ja": "歯痛", "zh": "牙痛", "ko": "치통", "ar": "ألم الأسنان" },
+    "keywords": {
+      "es": ["dolor dental", "urgencia dental", "sensibilidad", "inflamación", "dentista", "muela"],
+      "en": ["dental pain", "dental emergency", "sensitivity", "swelling", "dentist", "sore tooth"]
+    }
+  },
+  "tooth-implant": {
+    "label": { "es": "Implante dental", "en": "Dental implant", "pt": "Implante dentário", "fr": "Implant dentaire", "de": "Zahnimplantat", "it": "Impianto dentale", "ja": "インプラント", "zh": "种植牙", "ko": "임플란트", "ar": "زراعة الأسنان" },
+    "keywords": {
+      "es": ["tornillo", "prótesis dental", "corona", "diente postizo", "cirugía dental", "rehabilitación oral"],
+      "en": ["implant", "screw", "crown", "tooth replacement", "oral surgery", "prosthodontics"]
+    }
+  },
+  "tooth-whitening": {
+    "label": { "es": "Blanqueamiento dental", "en": "Teeth whitening", "pt": "Clareamento dental", "fr": "Blanchiment dentaire", "de": "Zahnaufhellung", "it": "Sbiancamento dentale", "ja": "ホワイトニング", "zh": "牙齿美白", "ko": "치아 미백", "ar": "تبييض الأسنان" },
+    "keywords": {
+      "es": ["dientes blancos", "odontología estética", "sonrisa", "limpieza", "brillo", "estética dental"],
+      "en": ["white teeth", "cosmetic dentistry", "bleaching", "smile", "bright smile", "dental aesthetics"]
+    }
+  },
+  "dental-braces": {
+    "label": { "es": "Brackets", "en": "Braces", "pt": "Aparelho dentário", "fr": "Appareil dentaire", "de": "Zahnspange", "it": "Apparecchio ortodontico", "ja": "歯列矯正", "zh": "牙套", "ko": "치아 교정기", "ar": "تقويم الأسنان" },
+    "keywords": {
+      "es": ["frenos", "ortodoncia", "ortodoncista", "alineadores", "dientes chuecos", "aparatos"],
+      "en": ["orthodontics", "orthodontist", "brackets", "aligners", "retainer", "teeth straightening"]
+    }
+  },
+  "dentures": {
+    "label": { "es": "Dentadura postiza", "en": "Dentures", "pt": "Dentadura", "fr": "Dentier", "de": "Zahnprothese", "it": "Dentiera", "ja": "入れ歯", "zh": "假牙", "ko": "틀니", "ar": "طقم أسنان" },
+    "keywords": {
+      "es": ["placa dental", "prótesis dental", "dientes postizos", "adultos mayores", "puente", "rehabilitación oral"],
+      "en": ["false teeth", "dental prosthesis", "partial denture", "elder care", "seniors", "bridge"]
+    }
+  },
+  "dental-chair": {
+    "label": { "es": "Sillón dental", "en": "Dental chair", "pt": "Cadeira odontológica", "fr": "Fauteuil dentaire", "de": "Zahnarztstuhl", "it": "Poltrona odontoiatrica", "ja": "歯科チェア", "zh": "牙科椅", "ko": "치과 의자", "ar": "كرسي الأسنان" },
+    "keywords": {
+      "es": ["consultorio dental", "visita al dentista", "cita con el dentista", "unidad dental", "odontología", "clínica dental"],
+      "en": ["dental office", "dentist visit", "dentist appointment", "dental unit", "dentistry", "dental clinic"]
+    }
+  },
+  "dental-tools": {
+    "label": { "es": "Instrumental dental", "en": "Dental tools", "pt": "Instrumentos odontológicos", "fr": "Instruments dentaires", "de": "Zahnarztinstrumente", "it": "Strumenti odontoiatrici", "ja": "歯科器具", "zh": "牙科器械", "ko": "치과 기구", "ar": "أدوات طب الأسنان" },
+    "keywords": {
+      "es": ["espejo dental", "explorador", "limpieza dental", "revisión", "dentista", "profilaxis"],
+      "en": ["dental mirror", "dental probe", "teeth cleaning", "checkup", "dentist", "hygienist"]
+    }
+  },
+  "eye-chart": {
+    "label": { "es": "Examen de la vista", "en": "Eye test", "pt": "Exame de vista", "fr": "Examen de la vue", "de": "Sehtest", "it": "Esame della vista", "ja": "視力検査", "zh": "视力检查", "ko": "시력 검사", "ar": "فحص النظر" },
+    "keywords": {
+      "es": ["cartilla de letras", "agudeza visual", "optometría", "graduación", "optometrista", "lentes"],
+      "en": ["eye chart", "snellen chart", "vision screening", "optometry", "prescription", "glasses"]
+    }
+  },
+  "contact-lens": {
+    "label": { "es": "Lentes de contacto", "en": "Contact lenses", "pt": "Lentes de contato", "fr": "Lentilles de contact", "de": "Kontaktlinsen", "it": "Lenti a contatto", "ja": "コンタクトレンズ", "zh": "隐形眼镜", "ko": "콘택트렌즈", "ar": "عدسات لاصقة" },
+    "keywords": {
+      "es": ["pupilentes", "óptica", "cuidado de los ojos", "graduación", "lentillas", "visión"],
+      "en": ["contacts", "optical store", "eye care", "vision", "lens prescription", "optician"]
+    }
+  },
+  "menstrual-cycle": {
+    "label": { "es": "Ciclo menstrual", "en": "Menstrual cycle", "pt": "Ciclo menstrual", "fr": "Cycle menstruel", "de": "Menstruationszyklus", "it": "Ciclo mestruale", "ja": "月経周期", "zh": "月经周期", "ko": "생리 주기", "ar": "الدورة الشهرية" },
+    "keywords": {
+      "es": ["periodo", "regla", "menstruación", "calendario menstrual", "ovulación", "días fértiles", "seguimiento del ciclo"],
+      "en": ["period", "period tracker", "menstruation", "ovulation", "fertility", "cycle tracking", "fertile window"]
+    }
+  },
+  "menstrual-cup": {
+    "label": { "es": "Copa menstrual", "en": "Menstrual cup", "pt": "Coletor menstrual", "fr": "Coupe menstruelle", "de": "Menstruationstasse", "it": "Coppetta mestruale", "ja": "月経カップ", "zh": "月经杯", "ko": "생리컵", "ar": "كأس الحيض" },
+    "keywords": {
+      "es": ["salud menstrual", "periodo", "regla", "higiene femenina", "reutilizable", "productos menstruales"],
+      "en": ["menstrual health", "period", "feminine hygiene", "reusable", "period products", "silicone cup"]
+    }
+  },
+  "sanitary-pad": {
+    "label": { "es": "Toalla femenina", "en": "Sanitary pad", "pt": "Absorvente", "fr": "Serviette hygiénique", "de": "Binde", "it": "Assorbente", "ja": "生理用ナプキン", "zh": "卫生巾", "ko": "생리대", "ar": "فوطة صحية" },
+    "keywords": {
+      "es": ["toalla sanitaria", "productos menstruales", "periodo", "regla", "higiene femenina", "protector diario"],
+      "en": ["pad", "period products", "menstrual pad", "period", "feminine hygiene", "panty liner"]
+    }
+  },
+  "tampon": {
+    "label": { "es": "Tampón", "en": "Tampon", "pt": "Absorvente interno", "fr": "Tampon", "de": "Tampon", "it": "Assorbente interno", "ja": "タンポン", "zh": "卫生棉条", "ko": "탐폰", "ar": "سدادة قطنية" },
+    "keywords": {
+      "es": ["productos menstruales", "periodo", "regla", "higiene femenina", "aplicador", "menstruación"],
+      "en": ["period products", "menstrual products", "period", "feminine hygiene", "applicator", "menstruation"]
+    }
+  },
+  "condom": {
+    "label": { "es": "Condón", "en": "Condom", "pt": "Camisinha", "fr": "Préservatif", "de": "Kondom", "it": "Preservativo", "ja": "コンドーム", "zh": "避孕套", "ko": "콘돔", "ar": "واقٍ ذكري" },
+    "keywords": {
+      "es": ["preservativo", "salud sexual", "anticonceptivo", "protección", "sexo seguro", "planificación familiar"],
+      "en": ["sexual health", "contraception", "protection", "safe sex", "birth control", "family planning"]
+    }
+  },
+  "awareness-ribbon": {
+    "label": { "es": "Listón de concientización", "en": "Awareness ribbon", "pt": "Laço de conscientização", "fr": "Ruban de sensibilisation", "de": "Solidaritätsschleife", "it": "Nastro di sensibilizzazione", "ja": "アウェアネスリボン", "zh": "公益丝带", "ko": "캠페인 리본", "ar": "شريط التوعية" },
+    "keywords": {
+      "es": ["moño rosa", "cáncer de mama", "lucha contra el cáncer", "causa", "campaña de salud", "solidaridad", "prevención"],
+      "en": ["pink ribbon", "cancer awareness", "breast cancer", "cause", "health campaign", "support", "solidarity"]
+    }
+  },
+  "medical-bag": {
+    "label": { "es": "Maletín médico", "en": "Medical bag", "pt": "Maleta médica", "fr": "Trousse médicale", "de": "Arztkoffer", "it": "Borsa medica", "ja": "往診かばん", "zh": "出诊包", "ko": "왕진 가방", "ar": "حقيبة طبيب" },
+    "keywords": {
+      "es": ["visita a domicilio", "doctor", "servicios médicos", "consulta", "médico general", "botiquín"],
+      "en": ["doctor’s bag", "house call", "medical services", "doctor", "physician", "medical kit"]
+    }
+  },
+  "medical-supplies": {
+    "label": { "es": "Insumos médicos", "en": "Medical supplies", "pt": "Suprimentos médicos", "fr": "Fournitures médicales", "de": "Medizinischer Bedarf", "it": "Forniture mediche", "ja": "医療用品", "zh": "医疗用品", "ko": "의료용품", "ar": "مستلزمات طبية" },
+    "keywords": {
+      "es": ["material de curación", "inventario hospitalario", "pedido de insumos", "abastecimiento", "almacén", "suministros"],
+      "en": ["hospital inventory", "supply order", "consumables", "stock", "procurement", "medical equipment"]
+    }
+  },
+  "medical-alert-pendant": {
+    "label": { "es": "Botón de emergencia", "en": "Medical alert button", "pt": "Botão de emergência", "fr": "Médaillon d’alerte", "de": "Notrufknopf", "it": "Pulsante di telesoccorso", "ja": "緊急通報ボタン", "zh": "紧急呼叫按钮", "ko": "응급 호출 버튼", "ar": "زر الطوارئ الطبية" },
+    "keywords": {
+      "es": ["botón de pánico", "alerta médica", "adultos mayores", "dije", "teleasistencia", "caídas"],
+      "en": ["panic button", "personal emergency response", "elderly", "pendant", "fall detection", "life alert"]
+    }
+  },
+  "bone-fracture": {
+    "label": { "es": "Fractura", "en": "Bone fracture", "pt": "Fratura", "fr": "Fracture", "de": "Knochenbruch", "it": "Frattura", "ja": "骨折", "zh": "骨折", "ko": "골절", "ar": "كسر في العظم" },
+    "keywords": {
+      "es": ["hueso roto", "lesión", "ortopedia", "traumatología", "accidente", "fisura"],
+      "en": ["broken bone", "injury", "orthopedics", "trauma", "accident", "break"]
+    }
+  },
+  "crutch": {
+    "label": { "es": "Muletas", "en": "Crutches", "pt": "Muletas", "fr": "Béquilles", "de": "Krücken", "it": "Stampelle", "ja": "松葉杖", "zh": "拐杖", "ko": "목발", "ar": "عكازات" },
+    "keywords": {
+      "es": ["lesión", "movilidad", "recuperación", "después de la operación", "ortopedia", "rehabilitación"],
+      "en": ["injury", "mobility", "recovery", "after surgery", "orthopedics", "rehab"]
+    }
+  },
+  "walker": {
+    "label": { "es": "Andadera", "en": "Walker", "pt": "Andador", "fr": "Déambulateur", "de": "Gehgestell", "it": "Deambulatore", "ja": "歩行器", "zh": "助行器", "ko": "보행기", "ar": "مشاية" },
+    "keywords": {
+      "es": ["andador", "apoyo para caminar", "movilidad", "adultos mayores", "rehabilitación", "ayuda técnica"],
+      "en": ["walking frame", "zimmer frame", "mobility aid", "elder care", "rehab", "seniors"]
+    }
+  },
+  "walking-cane": {
+    "label": { "es": "Bastón", "en": "Walking cane", "pt": "Bengala", "fr": "Canne", "de": "Gehstock", "it": "Bastone", "ja": "杖", "zh": "手杖", "ko": "지팡이", "ar": "عصا المشي" },
+    "keywords": {
+      "es": ["apoyo para caminar", "movilidad", "adultos mayores", "tercera edad", "ayuda técnica", "cojera"],
+      "en": ["walking stick", "mobility support", "elder care", "seniors", "mobility aid", "limp"]
+    }
+  },
+  "arm-sling": {
+    "label": { "es": "Cabestrillo", "en": "Arm sling", "pt": "Tipoia", "fr": "Bras en écharpe", "de": "Armschlinge", "it": "Reggibraccio", "ja": "三角巾", "zh": "手臂吊带", "ko": "팔걸이 붕대", "ar": "حمالة الذراع" },
+    "keywords": {
+      "es": ["brazo lastimado", "lesión", "recuperación", "inmovilizar", "fractura", "esguince"],
+      "en": ["arm injury", "injured arm", "recovery", "immobilize", "fracture", "sprain"]
+    }
+  },
+  "leg-cast": {
+    "label": { "es": "Pierna enyesada", "en": "Leg cast", "pt": "Perna engessada", "fr": "Jambe plâtrée", "de": "Gipsbein", "it": "Gamba ingessata", "ja": "脚のギプス", "zh": "腿部石膏", "ko": "다리 깁스", "ar": "جبيرة الساق" },
+    "keywords": {
+      "es": ["yeso", "pierna rota", "fractura", "férula", "ortopedia", "inmovilizar"],
+      "en": ["cast", "broken leg", "fracture", "splint", "orthopedic care", "immobilize"]
+    }
+  },
+  "ambulance": {
+    "label": { "es": "Ambulancia", "en": "Ambulance", "pt": "Ambulância", "fr": "Ambulance", "de": "Krankenwagen", "it": "Ambulanza", "ja": "救急車", "zh": "救护车", "ko": "구급차", "ar": "سيارة إسعاف" },
+    "keywords": {
+      "es": ["emergencia", "urgencias", "paramédicos", "traslado", "911", "servicios de emergencia", "cruz roja"],
+      "en": ["emergency", "paramedics", "ems", "patient transport", "911", "emergency services", "er"]
+    }
+  },
+  "pharmacy": {
+    "label": { "es": "Farmacia", "en": "Pharmacy", "pt": "Farmácia", "fr": "Pharmacie", "de": "Apotheke", "it": "Farmacia", "ja": "薬局", "zh": "药店", "ko": "약국", "ar": "صيدلية" },
+    "keywords": {
+      "es": ["botica", "droguería", "localizador de tiendas", "medicamentos", "sucursal", "farmacéutico"],
+      "en": ["drugstore", "chemist", "store locator", "medications", "pharmacist", "branch"]
+    }
+  },
+  "clinic": {
+    "label": { "es": "Clínica", "en": "Clinic", "pt": "Clínica", "fr": "Clinique", "de": "Arztpraxis", "it": "Ambulatorio", "ja": "診療所", "zh": "诊所", "ko": "의원", "ar": "عيادة" },
+    "keywords": {
+      "es": ["consultorio", "centro de salud", "consulta externa", "urgencias", "dispensario", "doctor"],
+      "en": ["doctor’s office", "health center", "outpatient", "urgent care", "medical center", "practice"]
+    }
+  },
+  "medical-mask": {
+    "label": { "es": "Cubrebocas", "en": "Face mask", "pt": "Máscara facial", "fr": "Masque de protection", "de": "Mundschutz", "it": "Mascherina", "ja": "医療用マスク", "zh": "口罩", "ko": "의료용 마스크", "ar": "كمامة" },
+    "keywords": {
+      "es": ["mascarilla", "uso obligatorio", "control de infecciones", "protección", "covid", "tapabocas", "contagio"],
+      "en": ["surgical mask", "masks required", "infection control", "protection", "covid", "n95", "face covering"]
+    }
+  },
+  "hand-sanitizer": {
+    "label": { "es": "Gel antibacterial", "en": "Hand sanitizer", "pt": "Álcool em gel", "fr": "Gel hydroalcoolique", "de": "Handdesinfektion", "it": "Gel igienizzante", "ja": "手指消毒", "zh": "免洗洗手液", "ko": "손 소독제", "ar": "معقم اليدين" },
+    "keywords": {
+      "es": ["desinfectante", "higiene", "manos limpias", "alcohol en gel", "estación de higiene", "control de infecciones"],
+      "en": ["sanitizer", "disinfectant", "hygiene", "clean hands", "hygiene station", "infection control"]
+    }
+  },
+  "allergy": {
+    "label": { "es": "Alergia", "en": "Allergy", "pt": "Alergia", "fr": "Allergie", "de": "Allergie", "it": "Allergia", "ja": "アレルギー", "zh": "过敏", "ko": "알레르기", "ar": "حساسية" },
+    "keywords": {
+      "es": ["polen", "alérgenos", "rinitis", "estornudos", "antihistamínico", "registro de alergias", "temporada de alergias"],
+      "en": ["pollen", "allergens", "hay fever", "sneezing", "antihistamine", "allergy record", "pollen alert"]
+    }
+  },
+  "medical-cross": {
+    "label": { "es": "Cruz médica", "en": "Medical cross", "pt": "Cruz médica", "fr": "Croix médicale", "de": "Medizinisches Kreuz", "it": "Croce medica", "ja": "医療十字", "zh": "医疗十字", "ko": "의료 십자", "ar": "رمز طبي" },
+    "keywords": {
+      "es": ["símbolo médico", "servicios médicos", "clínica", "salud", "hospital", "enfermería"],
+      "en": ["medical symbol", "medical services", "clinic", "health", "hospital", "nursing"]
+    }
+  }
+}

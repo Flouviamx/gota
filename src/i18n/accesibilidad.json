@@ -1,0 +1,485 @@
+{
+  "wheelchair-motion": {
+    "label": { "es": "Silla de ruedas en movimiento", "en": "Wheelchair in motion", "pt": "Cadeira de rodas em movimento", "fr": "Fauteuil roulant en mouvement", "de": "Rollstuhl in Bewegung", "it": "Sedia a rotelle in movimento", "ja": "移動中の車椅子", "zh": "行进中的轮椅", "ko": "이동 중인 휠체어", "ar": "كرسي متحرك أثناء التنقل" },
+    "keywords": {
+      "es": ["símbolo de accesibilidad activo", "ruta accesible", "entrada accesible", "movilidad reducida", "discapacidad", "autonomía", "inclusión"],
+      "en": ["accessible icon", "dynamic accessibility symbol", "accessible route", "accessible entrance", "reduced mobility", "disability", "independence"]
+    }
+  },
+  "wheelchair-check": {
+    "label": { "es": "Totalmente accesible", "en": "Fully accessible", "pt": "Totalmente acessível", "fr": "Entièrement accessible", "de": "Vollständig barrierefrei", "it": "Completamente accessibile", "ja": "完全バリアフリー", "zh": "完全无障碍", "ko": "휠체어 완전 이용 가능", "ar": "مهيأ بالكامل للكراسي المتحركة" },
+    "keywords": {
+      "es": ["verificado", "confirmado", "sin barreras", "acceso sin escalones", "mapa de accesibilidad", "lugar accesible", "baño accesible", "ruta accesible"],
+      "en": ["verified", "confirmed", "barrier-free", "step-free", "accessibility map", "accessible venue", "wheelchair friendly", "accessible route"]
+    }
+  },
+  "wheelchair-alert": {
+    "label": { "es": "Accesibilidad parcial", "en": "Partially accessible", "pt": "Parcialmente acessível", "fr": "Partiellement accessible", "de": "Teilweise barrierefrei", "it": "Parzialmente accessibile", "ja": "一部バリアフリー", "zh": "部分无障碍", "ko": "휠체어 일부 이용 가능", "ar": "مهيأ جزئيًا للكراسي المتحركة" },
+    "keywords": {
+      "es": ["acceso limitado", "escalón en la entrada", "sin baño accesible", "barrera", "precaución", "mapa de accesibilidad", "aviso"],
+      "en": ["limited access", "step at entrance", "no accessible toilet", "barrier", "caution", "accessibility map", "warning"]
+    }
+  },
+  "wheelchair-question": {
+    "label": { "es": "Accesibilidad desconocida", "en": "Accessibility unknown", "pt": "Acessibilidade desconhecida", "fr": "Accessibilité inconnue", "de": "Barrierefreiheit unbekannt", "it": "Accessibilità sconosciuta", "ja": "バリアフリー情報なし", "zh": "无障碍情况未知", "ko": "접근성 정보 없음", "ar": "إمكانية الوصول غير معروفة" },
+    "keywords": {
+      "es": ["sin información", "sin reportar", "agregar información", "colaborar", "mapa de accesibilidad", "por verificar", "pregunta"],
+      "en": ["no data", "not reported", "add info", "contribute", "accessibility map", "unverified", "question"]
+    }
+  },
+  "wheelchair-ramp": {
+    "label": { "es": "Rampa accesible", "en": "Accessible ramp", "pt": "Rampa acessível", "fr": "Rampe d’accès", "de": "Rollstuhlrampe", "it": "Rampa accessibile", "ja": "スロープ", "zh": "无障碍坡道", "ko": "경사로", "ar": "منحدر للكراسي المتحركة" },
+    "keywords": {
+      "es": ["acceso sin escalones", "pendiente", "entrada al edificio", "plano arquitectónico", "mapa de accesibilidad", "movilidad reducida", "carriola"],
+      "en": ["step-free access", "slope", "building entrance", "floor plan", "accessibility map", "reduced mobility", "stroller access"]
+    }
+  },
+  "wheelchair-lift": {
+    "label": { "es": "Plataforma elevadora", "en": "Wheelchair lift", "pt": "Plataforma elevatória", "fr": "Plateforme élévatrice", "de": "Rollstuhllift", "it": "Piattaforma elevatrice", "ja": "車椅子リフト", "zh": "轮椅升降台", "ko": "휠체어 리프트", "ar": "رافعة الكراسي المتحركة" },
+    "keywords": {
+      "es": ["elevador de plataforma", "elevador vertical", "camioneta adaptada", "autobús accesible", "desnivel", "escenario", "acceso sin escalones"],
+      "en": ["platform lift", "vertical lift", "accessible van", "bus lift", "level change", "stage access", "step-free access"]
+    }
+  },
+  "wheelchair-assistance": {
+    "label": { "es": "Asistencia en silla de ruedas", "en": "Wheelchair assistance", "pt": "Assistência com cadeira de rodas", "fr": "Assistance en fauteuil roulant", "de": "Rollstuhlservice", "it": "Assistenza in sedia a rotelle", "ja": "車椅子介助", "zh": "轮椅协助", "ko": "휠체어 지원", "ar": "مساعدة بالكرسي المتحرك" },
+    "keywords": {
+      "es": ["asistencia especial", "acompañante", "aeropuerto", "estación de tren", "solicitar apoyo", "personal de apoyo", "cuidador", "movilidad reducida"],
+      "en": ["special assistance", "escort", "airport", "train station", "request help", "helper", "caregiver", "PRM"]
+    }
+  },
+  "wheelchair-electric": {
+    "label": { "es": "Silla de ruedas eléctrica", "en": "Power wheelchair", "pt": "Cadeira de rodas motorizada", "fr": "Fauteuil roulant électrique", "de": "Elektrorollstuhl", "it": "Carrozzina elettrica", "ja": "電動車椅子", "zh": "电动轮椅", "ko": "전동 휠체어", "ar": "كرسي متحرك كهربائي" },
+    "keywords": {
+      "es": ["silla motorizada", "renta de equipo", "equipo de movilidad", "punto de carga", "batería", "movilidad reducida", "joystick"],
+      "en": ["electric wheelchair", "power chair rental", "mobility equipment", "charging point", "battery", "reduced mobility", "joystick"]
+    }
+  },
+  "wheelchair-empty": {
+    "label": { "es": "Silla de ruedas", "en": "Wheelchair", "pt": "Cadeira de rodas", "fr": "Fauteuil roulant", "de": "Rollstuhl", "it": "Sedia a rotelle", "ja": "車椅子", "zh": "轮椅", "ko": "휠체어", "ar": "كرسي متحرك" },
+    "keywords": {
+      "es": ["préstamo de silla", "renta", "equipo médico", "inventario", "hospital", "ortopedia", "traslado"],
+      "en": ["wheelchair loan", "rental", "medical equipment", "inventory", "hospital", "mobility aid", "transfer"]
+    }
+  },
+  "door-accessible": {
+    "label": { "es": "Entrada accesible", "en": "Accessible entrance", "pt": "Entrada acessível", "fr": "Entrée accessible", "de": "Barrierefreier Eingang", "it": "Ingresso accessibile", "ja": "バリアフリー入口", "zh": "无障碍入口", "ko": "장애인 출입구", "ar": "مدخل لذوي الإعاقة" },
+    "keywords": {
+      "es": ["sin escalones", "puerta amplia", "acceso principal", "señalización", "mapa", "silla de ruedas", "acceso universal"],
+      "en": ["step-free", "wide door", "way in", "signage", "map", "wheelchair", "universal access"]
+    }
+  },
+  "parking-accessible": {
+    "label": { "es": "Estacionamiento accesible", "en": "Accessible parking", "pt": "Vaga acessível", "fr": "Stationnement accessible", "de": "Behindertenparkplatz", "it": "Parcheggio per disabili", "ja": "障害者用駐車スペース", "zh": "无障碍停车位", "ko": "장애인 주차구역", "ar": "موقف لذوي الإعاقة" },
+    "keywords": {
+      "es": ["cajón reservado", "lugar azul", "discapacidad", "tarjetón", "app de estacionamiento", "cerca de la entrada", "mapa"],
+      "en": ["reserved bay", "blue badge", "disabled parking", "placard", "parking app", "near entrance", "map"]
+    }
+  },
+  "stair-lift": {
+    "label": { "es": "Silla salvaescaleras", "en": "Stair lift", "pt": "Elevador de escada", "fr": "Monte-escalier", "de": "Treppenlift", "it": "Montascale", "ja": "階段昇降機", "zh": "楼梯升降椅", "ko": "계단 리프트", "ar": "مصعد الدرج" },
+    "keywords": {
+      "es": ["silla elevadora", "elevador de escaleras", "adaptación del hogar", "adulto mayor", "riel", "subir escaleras", "movilidad reducida"],
+      "en": ["stair chair", "chair lift", "home adaptation", "seniors", "rail", "climb stairs", "reduced mobility"]
+    }
+  },
+  "mobility-scooter": {
+    "label": { "es": "Scooter de movilidad", "en": "Mobility scooter", "pt": "Scooter de mobilidade", "fr": "Scooter de mobilité", "de": "Elektromobil", "it": "Scooter per la mobilità", "ja": "電動カート", "zh": "电动代步车", "ko": "전동 스쿠터", "ar": "سكوتر للتنقل" },
+    "keywords": {
+      "es": ["carrito eléctrico", "renta en centro comercial", "parque", "adulto mayor", "movilidad reducida", "cuatro ruedas", "vehículo eléctrico"],
+      "en": ["electric scooter", "mall rental", "park", "seniors", "reduced mobility", "four-wheel scooter", "buggy"]
+    }
+  },
+  "rollator": {
+    "label": { "es": "Andadera con ruedas", "en": "Rollator", "pt": "Andador com rodas", "fr": "Déambulateur à roues", "de": "Rollator", "it": "Deambulatore", "ja": "歩行車", "zh": "带轮助行器", "ko": "롤레이터", "ar": "مشاية بعجلات" },
+    "keywords": {
+      "es": ["andador", "caminar", "freno de mano", "asiento", "adulto mayor", "rehabilitación", "apoyo para caminar"],
+      "en": ["wheeled walker", "walking aid", "hand brakes", "seat", "seniors", "rehabilitation", "walking frame"]
+    }
+  },
+  "prosthetic-leg": {
+    "label": { "es": "Prótesis de pierna", "en": "Prosthetic leg", "pt": "Prótese de perna", "fr": "Prothèse de jambe", "de": "Beinprothese", "it": "Protesi di gamba", "ja": "義足", "zh": "腿部假肢", "ko": "의족", "ar": "ساق صناعية" },
+    "keywords": {
+      "es": ["amputación", "diferencia de extremidad", "clínica de prótesis", "ortopedia", "rehabilitación", "amputado", "miembro inferior"],
+      "en": ["amputation", "limb difference", "prosthetics clinic", "orthopedics", "rehabilitation", "amputee", "artificial limb"]
+    }
+  },
+  "prosthetic-arm": {
+    "label": { "es": "Prótesis de brazo", "en": "Prosthetic arm", "pt": "Prótese de braço", "fr": "Prothèse de bras", "de": "Armprothese", "it": "Protesi di braccio", "ja": "義手", "zh": "手臂假肢", "ko": "의수", "ar": "ذراع صناعية" },
+    "keywords": {
+      "es": ["mano biónica", "miembro superior", "amputación", "rehabilitación", "mano robótica", "ortopedia", "terapia ocupacional"],
+      "en": ["bionic hand", "upper limb", "amputation", "rehabilitation", "robotic hand", "myoelectric", "occupational therapy"]
+    }
+  },
+  "prosthetic-blade": {
+    "label": { "es": "Prótesis para correr", "en": "Running blade", "pt": "Prótese de corrida", "fr": "Lame de course", "de": "Laufprothese", "it": "Protesi da corsa", "ja": "競技用義足", "zh": "跑步假肢", "ko": "스포츠 의족", "ar": "طرف صناعي للجري" },
+    "keywords": {
+      "es": ["paratleta", "deporte adaptado", "paralímpico", "fibra de carbono", "atletismo", "velocidad", "amputado"],
+      "en": ["para athlete", "adaptive sports", "Paralympics", "carbon fiber", "track and field", "sprint", "amputee runner"]
+    }
+  },
+  "door-width": {
+    "label": { "es": "Ancho de puerta", "en": "Door width", "pt": "Largura da porta", "fr": "Largeur de porte", "de": "Türbreite", "it": "Larghezza della porta", "ja": "ドア幅", "zh": "门宽", "ko": "문 너비", "ar": "عرض الباب" },
+    "keywords": {
+      "es": ["medida libre", "paso libre", "claro de puerta", "plano", "especificación", "silla de ruedas", "medidas del inmueble"],
+      "en": ["clear width", "clearance", "doorway", "floor plan", "spec", "wheelchair", "listing details"]
+    }
+  },
+  "door-automatic": {
+    "label": { "es": "Puerta automática", "en": "Automatic door", "pt": "Porta automática", "fr": "Porte automatique", "de": "Automatiktür", "it": "Porta automatica", "ja": "自動ドア", "zh": "自动门", "ko": "자동문", "ar": "باب أوتوماتيكي" },
+    "keywords": {
+      "es": ["puerta eléctrica", "sensor de presencia", "botón de apertura", "abre sola", "acceso sin contacto", "entrada", "puerta corrediza"],
+      "en": ["power door", "motion sensor", "push plate", "opens on approach", "touchless entry", "entrance", "sliding door"]
+    }
+  },
+  "toilet-accessible": {
+    "label": { "es": "Baño accesible", "en": "Accessible toilet", "pt": "Banheiro acessível", "fr": "Toilettes accessibles", "de": "Barrierefreies WC", "it": "Bagno accessibile", "ja": "多目的トイレ", "zh": "无障碍卫生间", "ko": "장애인 화장실", "ar": "دورة مياه لذوي الإعاقة" },
+    "keywords": {
+      "es": ["sanitario adaptado", "barras de apoyo", "WC", "baño para personas con discapacidad", "espacio de transferencia", "baño familiar", "servicios"],
+      "en": ["restroom", "grab bars", "WC", "disabled toilet", "transfer space", "family restroom", "bathroom"]
+    }
+  },
+  "shower-seat": {
+    "label": { "es": "Asiento de regadera", "en": "Shower seat", "pt": "Assento para chuveiro", "fr": "Siège de douche", "de": "Duschsitz", "it": "Seggiolino doccia", "ja": "シャワーチェア", "zh": "淋浴椅", "ko": "샤워 의자", "ar": "مقعد الاستحمام" },
+    "keywords": {
+      "es": ["silla de baño", "asiento abatible", "regadera sin escalón", "baño adaptado", "hotel accesible", "adulto mayor", "ducha"],
+      "en": ["shower chair", "fold-down seat", "roll-in shower", "adapted bathroom", "accessible hotel room", "seniors", "bath bench"]
+    }
+  },
+  "elevator-alert": {
+    "label": { "es": "Elevador fuera de servicio", "en": "Elevator out of service", "pt": "Elevador fora de serviço", "fr": "Ascenseur hors service", "de": "Aufzug außer Betrieb", "it": "Ascensore fuori servizio", "ja": "エレベーター停止中", "zh": "电梯停用", "ko": "엘리베이터 운행 중지", "ar": "المصعد معطل" },
+    "keywords": {
+      "es": ["falla de elevador", "aviso de transporte", "sin acceso", "mantenimiento", "metro", "estación", "ruta alterna", "interrupción"],
+      "en": ["lift outage", "transit alert", "no step-free access", "maintenance", "subway", "station", "alternative route", "disruption"]
+    }
+  },
+  "priority-seat": {
+    "label": { "es": "Asiento preferente", "en": "Priority seat", "pt": "Assento preferencial", "fr": "Place prioritaire", "de": "Bevorzugter Sitzplatz", "it": "Posto riservato", "ja": "優先席", "zh": "优先座位", "ko": "교통약자석", "ar": "مقعد ذو أولوية" },
+    "keywords": {
+      "es": ["asiento reservado", "transporte público", "adultos mayores", "embarazo", "discapacidad", "metro", "camión"],
+      "en": ["reserved seat", "public transit", "older people", "pregnancy", "disability", "subway", "bus"]
+    }
+  },
+  "quiet-room": {
+    "label": { "es": "Sala tranquila", "en": "Quiet room", "pt": "Sala silenciosa", "fr": "Salle calme", "de": "Ruheraum", "it": "Stanza tranquilla", "ja": "クワイエットルーム", "zh": "安静室", "ko": "조용한 공간", "ar": "غرفة هادئة" },
+    "keywords": {
+      "es": ["espacio sensorial", "hora silenciosa", "sin ruido", "descanso", "autismo", "sobrecarga sensorial", "calma"],
+      "en": ["sensory-friendly", "quiet hours", "no noise", "rest", "autism", "sensory overload", "calm space"]
+    }
+  },
+  "walking-white-cane": {
+    "label": { "es": "Persona con bastón blanco", "en": "Person with white cane", "pt": "Pessoa com bengala branca", "fr": "Personne avec canne blanche", "de": "Person mit Blindenstock", "it": "Persona con bastone bianco", "ja": "白杖を持つ人", "zh": "使用白手杖的人", "ko": "흰 지팡이를 짚은 사람", "ar": "شخص بعصا بيضاء" },
+    "keywords": {
+      "es": ["ceguera", "persona ciega", "discapacidad visual", "baja visión", "bastón guía", "orientación y movilidad", "invidente"],
+      "en": ["blind person", "visual impairment", "low vision", "long cane", "orientation and mobility", "mobility assistance", "sight loss"]
+    }
+  },
+  "guide-dog": {
+    "label": { "es": "Perro guía", "en": "Guide dog", "pt": "Cão-guia", "fr": "Chien guide", "de": "Blindenführhund", "it": "Cane guida", "ja": "盲導犬", "zh": "导盲犬", "ko": "안내견", "ar": "كلب مرشد" },
+    "keywords": {
+      "es": ["perro lazarillo", "ceguera", "animal de servicio", "se aceptan perros guía", "discapacidad visual", "arnés", "política de acceso"],
+      "en": ["seeing eye dog", "blind", "service animal", "guide dogs welcome", "visual impairment", "harness", "access policy"]
+    }
+  },
+  "eye-low-vision": {
+    "label": { "es": "Baja visión", "en": "Low vision", "pt": "Baixa visão", "fr": "Malvoyance", "de": "Sehbehinderung", "it": "Ipovisione", "ja": "ロービジョン", "zh": "低视力", "ko": "저시력", "ar": "ضعف البصر" },
+    "keywords": {
+      "es": ["debilidad visual", "discapacidad visual", "ver mejor", "ajustes de visión", "ampliar", "ceguera parcial", "vista"],
+      "en": ["partially sighted", "visual impairment", "vision settings", "visibility", "sight loss", "visually impaired", "eyesight"]
+    }
+  },
+  "braille": {
+    "label": { "es": "Braille", "en": "Braille", "pt": "Braille", "fr": "Braille", "de": "Brailleschrift", "it": "Braille", "ja": "点字", "zh": "盲文", "ko": "점자", "ar": "طريقة برايل" },
+    "keywords": {
+      "es": ["puntos en relieve", "lectura táctil", "señalética táctil", "ceguera", "edición para ciegos", "alfabeto táctil", "discapacidad visual"],
+      "en": ["raised dots", "tactile reading", "tactile signage", "blind", "embossed", "tactile alphabet", "visual impairment"]
+    }
+  },
+  "braille-display": {
+    "label": { "es": "Línea braille", "en": "Braille display", "pt": "Linha braille", "fr": "Plage braille", "de": "Braillezeile", "it": "Barra braille", "ja": "点字ディスプレイ", "zh": "盲文显示器", "ko": "점자 디스플레이", "ar": "شاشة برايل" },
+    "keywords": {
+      "es": ["pantalla braille", "dispositivo táctil", "lector de pantalla", "salida braille", "teclado braille", "tecnología de asistencia", "ceguera"],
+      "en": ["refreshable braille", "braille terminal", "screen reader", "braille output", "tactile display", "assistive device", "blind"]
+    }
+  },
+  "screen-reader": {
+    "label": { "es": "Lector de pantalla", "en": "Screen reader", "pt": "Leitor de tela", "fr": "Lecteur d’écran", "de": "Screenreader", "it": "Lettore di schermo", "ja": "スクリーンリーダー", "zh": "屏幕阅读器", "ko": "스크린 리더", "ar": "قارئ الشاشة" },
+    "keywords": {
+      "es": ["VoiceOver", "NVDA", "TalkBack", "JAWS", "leer en voz alta", "texto a voz", "ceguera", "tecnología de asistencia"],
+      "en": ["VoiceOver", "NVDA", "TalkBack", "JAWS", "read aloud", "text to speech", "blind", "assistive technology"]
+    }
+  },
+  "text-magnifier": {
+    "label": { "es": "Lupa de pantalla", "en": "Magnifier", "pt": "Lupa de tela", "fr": "Loupe d’écran", "de": "Bildschirmlupe", "it": "Lente d’ingrandimento", "ja": "拡大鏡", "zh": "放大镜", "ko": "돋보기", "ar": "المكبّر" },
+    "keywords": {
+      "es": ["ampliar", "zoom", "agrandar texto", "baja visión", "aumento", "ampliación con cámara", "ajustes de accesibilidad"],
+      "en": ["zoom", "enlarge", "magnification", "low vision", "zoom in with camera", "bigger text", "accessibility settings"]
+    }
+  },
+  "color-blindness": {
+    "label": { "es": "Daltonismo", "en": "Color blindness", "pt": "Daltonismo", "fr": "Daltonisme", "de": "Farbenblindheit", "it": "Daltonismo", "ja": "色覚異常", "zh": "色盲", "ko": "색각 이상", "ar": "عمى الألوان" },
+    "keywords": {
+      "es": ["modo daltónico", "filtros de color", "deficiencia de color", "protanopia", "deuteranopia", "tritanopia", "paleta accesible"],
+      "en": ["colorblind mode", "color filters", "color vision deficiency", "protanopia", "deuteranopia", "tritanopia", "accessible palette"]
+    }
+  },
+  "invert-colors": {
+    "label": { "es": "Invertir colores", "en": "Invert colors", "pt": "Inverter cores", "fr": "Inverser les couleurs", "de": "Farben umkehren", "it": "Inverti colori", "ja": "色を反転", "zh": "反转颜色", "ko": "색상 반전", "ar": "عكس الألوان" },
+    "keywords": {
+      "es": ["inversión inteligente", "inversión clásica", "negativo", "alto contraste", "ajustes de pantalla", "fondo oscuro", "baja visión"],
+      "en": ["smart invert", "classic invert", "negative", "high contrast", "display settings", "dark background", "low vision"]
+    }
+  },
+  "cursor-large": {
+    "label": { "es": "Puntero grande", "en": "Larger pointer", "pt": "Ponteiro grande", "fr": "Grand pointeur", "de": "Großer Mauszeiger", "it": "Puntatore grande", "ja": "大きいポインタ", "zh": "大号指针", "ko": "큰 포인터", "ar": "مؤشر كبير" },
+    "keywords": {
+      "es": ["tamaño del puntero", "cursor", "mouse", "baja visión", "ajustes del puntero", "flecha", "motricidad"],
+      "en": ["pointer size", "cursor", "mouse", "low vision", "pointer settings", "arrow", "motor needs"]
+    }
+  },
+  "cursor-highlight": {
+    "label": { "es": "Resaltar puntero", "en": "Highlight pointer", "pt": "Destacar ponteiro", "fr": "Mettre en évidence le pointeur", "de": "Zeiger hervorheben", "it": "Evidenzia puntatore", "ja": "ポインタを強調", "zh": "突出显示指针", "ko": "포인터 강조", "ar": "إبراز المؤشر" },
+    "keywords": {
+      "es": ["halo del cursor", "agitar para localizar", "encontrar el cursor", "foco de presentación", "mouse", "puntero visible", "señalar"],
+      "en": ["cursor halo", "shake to locate", "find cursor", "spotlight", "presentation", "mouse", "pointer visibility"]
+    }
+  },
+  "reduce-motion": {
+    "label": { "es": "Reducir movimiento", "en": "Reduce motion", "pt": "Reduzir movimento", "fr": "Réduire les animations", "de": "Bewegung reduzieren", "it": "Riduci movimento", "ja": "視差効果を減らす", "zh": "减弱动态效果", "ko": "동작 줄이기", "ar": "تقليل الحركة" },
+    "keywords": {
+      "es": ["sin animaciones", "pausar animaciones", "efecto parallax", "mareo", "transiciones", "sensibilidad al movimiento", "prefers-reduced-motion"],
+      "en": ["no animations", "pause animations", "parallax", "motion sickness", "transitions", "vestibular", "prefers-reduced-motion"]
+    }
+  },
+  "reading-guide": {
+    "label": { "es": "Guía de lectura", "en": "Reading guide", "pt": "Guia de leitura", "fr": "Guide de lecture", "de": "Lesehilfe", "it": "Guida alla lettura", "ja": "リーディングガイド", "zh": "阅读指引", "ko": "읽기 가이드", "ar": "دليل القراءة" },
+    "keywords": {
+      "es": ["regla de lectura", "dislexia", "renglón", "línea actual", "concentración", "TDAH", "seguir el texto"],
+      "en": ["reading ruler", "dyslexia", "line focus", "current line", "attention", "ADHD", "follow text"]
+    }
+  },
+  "reader-mode": {
+    "label": { "es": "Modo lectura", "en": "Reader mode", "pt": "Modo de leitura", "fr": "Mode lecture", "de": "Lesemodus", "it": "Modalità lettura", "ja": "リーダーモード", "zh": "阅读模式", "ko": "읽기 모드", "ar": "وضع القراءة" },
+    "keywords": {
+      "es": ["vista simplificada", "sin distracciones", "legibilidad", "texto limpio", "carga cognitiva", "artículo", "leer con calma"],
+      "en": ["simplified view", "distraction-free", "readability", "clean text", "cognitive load", "article view", "focus reading"]
+    }
+  },
+  "large-print": {
+    "label": { "es": "Letra grande", "en": "Large print", "pt": "Letras grandes", "fr": "Gros caractères", "de": "Großdruck", "it": "Caratteri grandi", "ja": "大活字", "zh": "大字版", "ko": "큰 글자", "ar": "طباعة بخط كبير" },
+    "keywords": {
+      "es": ["macrotipo", "texto ampliado", "libro de letra grande", "formato accesible", "baja visión", "impresión", "documento"],
+      "en": ["enlarged type", "large-type book", "accessible format", "low vision", "printing", "big text", "document"]
+    }
+  },
+  "audio-description": {
+    "label": { "es": "Audiodescripción", "en": "Audio description", "pt": "Audiodescrição", "fr": "Audiodescription", "de": "Audiodeskription", "it": "Audiodescrizione", "ja": "音声解説", "zh": "音频描述", "ko": "화면 해설", "ar": "الوصف الصوتي" },
+    "keywords": {
+      "es": ["AD", "narración", "cine accesible", "ceguera", "pista de audio", "series", "baja visión", "descripción de escenas"],
+      "en": ["AD", "narration", "described video", "blind", "audio track", "TV", "low vision", "scene description"]
+    }
+  },
+  "alt-text": {
+    "label": { "es": "Texto alternativo", "en": "Alt text", "pt": "Texto alternativo", "fr": "Texte alternatif", "de": "Alternativtext", "it": "Testo alternativo", "ja": "代替テキスト", "zh": "替代文本", "ko": "대체 텍스트", "ar": "النص البديل" },
+    "keywords": {
+      "es": ["atributo alt", "descripción de imagen", "CMS", "editor", "lector de pantalla", "SEO de imágenes", "describir imagen"],
+      "en": ["alt attribute", "image description", "CMS", "editor", "screen reader", "image SEO", "describe image"]
+    }
+  },
+  "hearing": {
+    "label": { "es": "Audición", "en": "Hearing", "pt": "Audição", "fr": "Audition", "de": "Hören", "it": "Udito", "ja": "聴覚", "zh": "听觉", "ko": "청각", "ar": "السمع" },
+    "keywords": {
+      "es": ["oído", "oreja", "sordera", "escucha asistida", "ajustes de audio", "discapacidad auditiva", "hipoacusia"],
+      "en": ["ear", "listening", "deaf", "assistive listening", "audio settings", "hearing impairment", "hard of hearing"]
+    }
+  },
+  "hearing-alert": {
+    "label": { "es": "Aviso de sonido fuerte", "en": "Loud sound warning", "pt": "Aviso de som alto", "fr": "Alerte de son fort", "de": "Lautstärkewarnung", "it": "Avviso di volume alto", "ja": "大音量の警告", "zh": "高音量警告", "ko": "큰 소리 경고", "ar": "تحذير من صوت مرتفع" },
+    "keywords": {
+      "es": ["volumen alto", "decibeles", "audífonos", "protección auditiva", "ruido ambiental", "daño auditivo", "nivel de audio"],
+      "en": ["high volume", "decibels", "headphones", "hearing protection", "environmental noise", "hearing damage", "headphone level"]
+    }
+  },
+  "hearing-aid": {
+    "label": { "es": "Aparato auditivo", "en": "Hearing aid", "pt": "Aparelho auditivo", "fr": "Appareil auditif", "de": "Hörgerät", "it": "Apparecchio acustico", "ja": "補聴器", "zh": "助听器", "ko": "보청기", "ar": "سماعة طبية" },
+    "keywords": {
+      "es": ["auxiliar auditivo", "audiología", "vincular dispositivo", "batería", "sordera", "hipoacusia", "pérdida auditiva"],
+      "en": ["hearing device", "audiology", "pairing", "battery", "hard of hearing", "hearing loss", "behind the ear"]
+    }
+  },
+  "hearing-loop": {
+    "label": { "es": "Bucle magnético", "en": "Hearing loop", "pt": "Aro magnético", "fr": "Boucle magnétique", "de": "Induktionsschleife", "it": "Anello induttivo", "ja": "ヒアリングループ", "zh": "感应环路", "ko": "히어링 루프", "ar": "حلقة سمعية" },
+    "keywords": {
+      "es": ["bucle de inducción", "telebobina", "posición T", "aparato auditivo", "sala con bucle", "escucha asistida", "ventanilla"],
+      "en": ["induction loop", "telecoil", "T setting", "hearing aid", "looped venue", "assistive listening", "counter loop"]
+    }
+  },
+  "hearing-test": {
+    "label": { "es": "Prueba de audición", "en": "Hearing test", "pt": "Teste auditivo", "fr": "Test auditif", "de": "Hörtest", "it": "Test dell’udito", "ja": "聴力検査", "zh": "听力测试", "ko": "청력 검사", "ar": "اختبار السمع" },
+    "keywords": {
+      "es": ["audiometría", "examen auditivo", "chequeo", "audiólogo", "salud auditiva", "tonos", "app de salud"],
+      "en": ["audiometry", "check-up", "screening", "audiologist", "ear health", "tones", "health app"]
+    }
+  },
+  "noise-level": {
+    "label": { "es": "Nivel de ruido", "en": "Noise level", "pt": "Nível de ruído", "fr": "Niveau sonore", "de": "Lärmpegel", "it": "Livello di rumore", "ja": "騒音レベル", "zh": "噪音水平", "ko": "소음 수준", "ar": "مستوى الضوضاء" },
+    "keywords": {
+      "es": ["decibeles", "dB", "sonómetro", "ruido ambiental", "exposición al ruido", "reloj inteligente", "medidor"],
+      "en": ["decibels", "dB", "sound meter", "environmental sound", "noise exposure", "smartwatch", "loudness"]
+    }
+  },
+  "audio-balance": {
+    "label": { "es": "Balance de audio", "en": "Audio balance", "pt": "Balanço de áudio", "fr": "Balance audio", "de": "Audiobalance", "it": "Bilanciamento audio", "ja": "オーディオバランス", "zh": "音频平衡", "ko": "오디오 밸런스", "ar": "توازن الصوت" },
+    "keywords": {
+      "es": ["audio mono", "izquierda y derecha", "canal", "pérdida auditiva unilateral", "estéreo", "audífonos", "ajustes de sonido"],
+      "en": ["mono audio", "left and right", "channel", "single-sided deafness", "stereo", "headphones", "sound settings"]
+    }
+  },
+  "sign-language": {
+    "label": { "es": "Lengua de señas", "en": "Sign language", "pt": "Língua de sinais", "fr": "Langue des signes", "de": "Gebärdensprache", "it": "Lingua dei segni", "ja": "手話", "zh": "手语", "ko": "수어", "ar": "لغة الإشارة" },
+    "keywords": {
+      "es": ["LSM", "interpretación", "sordera", "comunidad sorda", "señas", "contenido señado", "manos"],
+      "en": ["ASL", "BSL", "interpretation", "Deaf community", "signing", "signed content", "hands"]
+    }
+  },
+  "sign-language-interpreter": {
+    "label": { "es": "Intérprete de lengua de señas", "en": "Sign language interpreter", "pt": "Intérprete de língua de sinais", "fr": "Interprète en langue des signes", "de": "Gebärdensprachdolmetscher", "it": "Interprete di lingua dei segni", "ja": "手話通訳者", "zh": "手语翻译员", "ko": "수어 통역사", "ar": "مترجم لغة الإشارة" },
+    "keywords": {
+      "es": ["contratar intérprete", "videollamada", "evento accesible", "persona sorda", "LSM", "traducción simultánea", "recuadro en pantalla"],
+      "en": ["book an interpreter", "video call", "accessible event", "Deaf", "ASL", "live translation", "picture in picture"]
+    }
+  },
+  "text-telephone": {
+    "label": { "es": "Teléfono de texto (TTY)", "en": "Text telephone (TTY)", "pt": "Telefone de texto (TTY)", "fr": "Téléscripteur (TTY)", "de": "Schreibtelefon", "it": "Telefono per sordi (DTS)", "ja": "文字電話 (TTY)", "zh": "文本电话 (TTY)", "ko": "문자 전화 (TTY)", "ar": "هاتف نصي (TTY)" },
+    "keywords": {
+      "es": ["TDD", "servicio de relevo", "llamada escrita", "persona sorda", "teletipo", "RTT", "texto en tiempo real"],
+      "en": ["TDD", "relay service", "typed call", "deaf", "teletypewriter", "RTT", "real-time text"]
+    }
+  },
+  "phone-captions": {
+    "label": { "es": "Llamada con subtítulos", "en": "Captioned call", "pt": "Chamada com legendas", "fr": "Appel sous-titré", "de": "Anruf mit Untertiteln", "it": "Chiamata con sottotitoli", "ja": "字幕付き通話", "zh": "带字幕的通话", "ko": "자막 통화", "ar": "مكالمة مع ترجمة نصية" },
+    "keywords": {
+      "es": ["subtítulos en vivo", "transcripción", "teléfono", "hipoacusia", "CapTel", "texto de la llamada", "audición reducida"],
+      "en": ["live captions", "transcription", "telephone", "hard of hearing", "CapTel", "call transcript", "hearing loss"]
+    }
+  },
+  "flash-notification": {
+    "label": { "es": "Alertas con flash", "en": "Flash alerts", "pt": "Alertas com flash", "fr": "Alertes par flash", "de": "Blitzlicht-Hinweise", "it": "Flash LED per avvisi", "ja": "LEDフラッシュ通知", "zh": "LED 闪烁提醒", "ko": "LED 플래시 알림", "ar": "تنبيهات الفلاش" },
+    "keywords": {
+      "es": ["LED", "luz intermitente", "notificación visual", "llamada entrante", "sordera", "parpadeo", "aviso luminoso"],
+      "en": ["LED", "blinking light", "visual notification", "incoming call", "deaf", "strobe", "light alert"]
+    }
+  },
+  "easy-read": {
+    "label": { "es": "Lectura fácil", "en": "Easy read", "pt": "Leitura fácil", "fr": "Facile à lire", "de": "Leichte Sprache", "it": "Facile da leggere", "ja": "わかりやすい版", "zh": "易读版", "ko": "쉬운 글", "ar": "نسخة سهلة القراءة" },
+    "keywords": {
+      "es": ["lenguaje sencillo", "pictogramas", "discapacidad intelectual", "comprensión", "palabras claras", "texto con imágenes", "dificultades de aprendizaje"],
+      "en": ["plain language", "pictograms", "learning disability", "comprehension", "simple words", "picture supported", "intellectual disability"]
+    }
+  },
+  "communication-board": {
+    "label": { "es": "Tablero de comunicación", "en": "Communication board", "pt": "Prancha de comunicação", "fr": "Tableau de communication", "de": "Kommunikationstafel", "it": "Tabella di comunicazione", "ja": "コミュニケーションボード", "zh": "沟通板", "ko": "의사소통판", "ar": "لوحة التواصل" },
+    "keywords": {
+      "es": ["CAA", "pictogramas", "comunicación aumentativa", "autismo", "sintetizador de voz", "app de voz", "comunicación alternativa"],
+      "en": ["AAC", "picture symbols", "augmentative communication", "autism", "speech-generating device", "nonverbal", "symbol board"]
+    }
+  },
+  "cognition": {
+    "label": { "es": "Accesibilidad cognitiva", "en": "Cognitive accessibility", "pt": "Acessibilidade cognitiva", "fr": "Accessibilité cognitive", "de": "Kognitive Barrierefreiheit", "it": "Accessibilità cognitiva", "ja": "認知のアクセシビリティ", "zh": "认知无障碍", "ko": "인지 접근성", "ar": "إمكانية الوصول المعرفية" },
+    "keywords": {
+      "es": ["neurodivergencia", "memoria", "atención", "aprendizaje", "TDAH", "autismo", "cerebro", "carga cognitiva"],
+      "en": ["neurodivergent", "memory", "attention", "learning differences", "ADHD", "autism", "brain", "cognitive load"]
+    }
+  },
+  "accessibility-check": {
+    "label": { "es": "Accesibilidad aprobada", "en": "Accessibility passed", "pt": "Acessibilidade aprovada", "fr": "Accessibilité validée", "de": "Barrierefreiheit bestanden", "it": "Accessibilità verificata", "ja": "アクセシビリティ合格", "zh": "无障碍检查通过", "ko": "접근성 통과", "ar": "اجتياز فحص إمكانية الوصول" },
+    "keywords": {
+      "es": ["auditoría", "WCAG", "cumplimiento", "sin errores", "componente accesible", "a11y", "conformidad AA"],
+      "en": ["audit", "WCAG", "compliance", "no issues", "accessible component", "a11y", "AA conformance"]
+    }
+  },
+  "accessibility-alert": {
+    "label": { "es": "Problema de accesibilidad", "en": "Accessibility issue", "pt": "Problema de acessibilidade", "fr": "Problème d’accessibilité", "de": "Barrierefreiheitsproblem", "it": "Problema di accessibilità", "ja": "アクセシビリティの問題", "zh": "无障碍问题", "ko": "접근성 문제", "ar": "مشكلة في إمكانية الوصول" },
+    "keywords": {
+      "es": ["revisión fallida", "falta texto alternativo", "etiqueta faltante", "linter", "auditoría", "WCAG", "barrera", "a11y"],
+      "en": ["failed check", "missing alt text", "missing label", "linter", "audit", "WCAG", "barrier", "a11y"]
+    }
+  },
+  "accessibility-gear": {
+    "label": { "es": "Ajustes de accesibilidad", "en": "Accessibility settings", "pt": "Configurações de acessibilidade", "fr": "Paramètres d’accessibilité", "de": "Bedienungshilfen", "it": "Impostazioni di accessibilità", "ja": "アクセシビリティ設定", "zh": "辅助功能设置", "ko": "접근성 설정", "ar": "إعدادات إمكانية الوصول" },
+    "keywords": {
+      "es": ["preferencias", "configuración", "menú de accesibilidad", "opciones", "personalizar", "a11y", "barra de accesibilidad"],
+      "en": ["preferences", "configuration", "accessibility menu", "options", "customize", "a11y", "accessibility toolbar"]
+    }
+  },
+  "accessibility-search": {
+    "label": { "es": "Inspector de accesibilidad", "en": "Accessibility inspector", "pt": "Inspetor de acessibilidade", "fr": "Inspecteur d’accessibilité", "de": "Barrierefreiheits-Inspektor", "it": "Ispettore di accessibilità", "ja": "アクセシビリティインスペクタ", "zh": "无障碍检查器", "ko": "접근성 검사기", "ar": "فاحص إمكانية الوصول" },
+    "keywords": {
+      "es": ["árbol de accesibilidad", "escanear página", "auditar", "buscar barreras", "herramientas de desarrollo", "a11y", "revisar"],
+      "en": ["accessibility tree", "scan page", "audit", "find barriers", "devtools", "a11y", "axe"]
+    }
+  },
+  "contrast-check": {
+    "label": { "es": "Contraste suficiente", "en": "Contrast passes", "pt": "Contraste aprovado", "fr": "Contraste conforme", "de": "Kontrast ausreichend", "it": "Contrasto sufficiente", "ja": "コントラスト合格", "zh": "对比度合格", "ko": "대비 통과", "ar": "التباين مقبول" },
+    "keywords": {
+      "es": ["relación de contraste", "WCAG", "AA", "AAA", "verificador de colores", "legibilidad", "par de colores"],
+      "en": ["contrast ratio", "WCAG", "AA", "AAA", "contrast checker", "legibility", "color pair"]
+    }
+  },
+  "contrast-alert": {
+    "label": { "es": "Contraste bajo", "en": "Low contrast", "pt": "Contraste baixo", "fr": "Contraste insuffisant", "de": "Zu wenig Kontrast", "it": "Contrasto insufficiente", "ja": "コントラスト不足", "zh": "对比度不足", "ko": "대비 부족", "ar": "تباين منخفض" },
+    "keywords": {
+      "es": ["no cumple WCAG", "relación de contraste", "ilegible", "par de colores", "falla", "texto tenue", "auditoría"],
+      "en": ["fails WCAG", "contrast ratio", "hard to read", "color pair", "failed", "faint text", "audit"]
+    }
+  },
+  "file-accessible": {
+    "label": { "es": "Documento accesible", "en": "Accessible document", "pt": "Documento acessível", "fr": "Document accessible", "de": "Barrierefreies Dokument", "it": "Documento accessibile", "ja": "アクセシブルな文書", "zh": "无障碍文档", "ko": "접근 가능한 문서", "ar": "مستند ميسّر الوصول" },
+    "keywords": {
+      "es": ["PDF etiquetado", "declaración de accesibilidad", "informe de conformidad", "VPAT", "PDF/UA", "archivo", "formato accesible"],
+      "en": ["tagged PDF", "accessibility statement", "conformance report", "VPAT", "PDF/UA", "file", "accessible format"]
+    }
+  },
+  "link-highlight": {
+    "label": { "es": "Resaltar enlaces", "en": "Highlight links", "pt": "Destacar links", "fr": "Surligner les liens", "de": "Links hervorheben", "it": "Evidenzia link", "ja": "リンクを強調", "zh": "突出显示链接", "ko": "링크 강조", "ar": "إبراز الروابط" },
+    "keywords": {
+      "es": ["subrayar enlaces", "barra de accesibilidad", "vínculos", "hipervínculos", "navegación", "baja visión", "marcar enlaces"],
+      "en": ["underline links", "accessibility toolbar", "hyperlinks", "navigation", "low vision", "mark links", "URLs"]
+    }
+  },
+  "touch-target": {
+    "label": { "es": "Área táctil", "en": "Touch target", "pt": "Área de toque", "fr": "Zone tactile", "de": "Tippbereich", "it": "Area di tocco", "ja": "タップ領域", "zh": "触控区域", "ko": "터치 영역", "ar": "منطقة اللمس" },
+    "keywords": {
+      "es": ["tamaño mínimo", "44 px", "48 dp", "tap", "botón", "dedo", "auditoría de diseño"],
+      "en": ["minimum size", "44 px", "48 dp", "tap area", "button", "finger", "design audit"]
+    }
+  },
+  "focus-order": {
+    "label": { "es": "Orden de foco", "en": "Focus order", "pt": "Ordem de foco", "fr": "Ordre du focus", "de": "Fokusreihenfolge", "it": "Ordine del focus", "ja": "フォーカス順序", "zh": "焦点顺序", "ko": "포커스 순서", "ar": "ترتيب التركيز" },
+    "keywords": {
+      "es": ["tabulación", "navegación con teclado", "tecla Tab", "secuencia", "anotaciones", "entrega de diseño", "tabindex"],
+      "en": ["tab order", "keyboard navigation", "Tab key", "sequence", "annotations", "design handoff", "tabindex"]
+    }
+  },
+  "voice-control": {
+    "label": { "es": "Control por voz", "en": "Voice control", "pt": "Controle por voz", "fr": "Contrôle vocal", "de": "Sprachsteuerung", "it": "Controllo vocale", "ja": "音声コントロール", "zh": "语音控制", "ko": "음성 제어", "ar": "التحكم الصوتي" },
+    "keywords": {
+      "es": ["comandos de voz", "dictado", "manos libres", "acceso por voz", "hablar", "micrófono", "asistente"],
+      "en": ["voice commands", "dictation", "hands-free", "voice access", "speak", "microphone", "assistant"]
+    }
+  },
+  "adaptive-switch": {
+    "label": { "es": "Pulsador adaptado", "en": "Adaptive switch", "pt": "Acionador adaptado", "fr": "Contacteur adapté", "de": "Adaptiver Taster", "it": "Pulsante adattato", "ja": "外部スイッチ", "zh": "辅助开关", "ko": "보조 스위치", "ar": "مفتاح تكيفي" },
+    "keywords": {
+      "es": ["acceso por interruptor", "control por botón", "barrido", "botón grande", "motricidad", "tecnología de asistencia", "switch"],
+      "en": ["switch access", "switch control", "scanning", "big button", "motor disability", "assistive technology", "buddy button"]
+    }
+  },
+  "captcha-audio": {
+    "label": { "es": "Captcha de audio", "en": "Audio captcha", "pt": "Captcha de áudio", "fr": "Captcha audio", "de": "Audio-Captcha", "it": "Captcha audio", "ja": "音声CAPTCHA", "zh": "语音验证码", "ko": "오디오 캡차", "ar": "اختبار CAPTCHA صوتي" },
+    "keywords": {
+      "es": ["verificación", "no soy un robot", "escuchar el código", "reto de seguridad", "ceguera", "alternativa accesible", "reCAPTCHA"],
+      "en": ["verification", "I’m not a robot", "listen to code", "security challenge", "blind", "accessible alternative", "reCAPTCHA"]
+    }
+  }
+}

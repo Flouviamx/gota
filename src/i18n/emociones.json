@@ -1,0 +1,387 @@
+{
+  "face-grin": {
+    "label": { "es": "Cara con gran sonrisa", "en": "Grinning face", "pt": "Rosto com sorriso largo", "fr": "Visage au grand sourire", "de": "Grinsendes Gesicht", "it": "Faccina con un gran sorriso", "ja": "満面の笑み", "zh": "咧嘴笑", "ko": "활짝 웃는 얼굴", "ar": "وجه بابتسامة عريضة" },
+    "keywords": {
+      "es": ["muy satisfecho", "emocionado", "alegría", "excelente", "calificación máxima", "encantado", "emoji"],
+      "en": ["very satisfied", "excited", "joy", "excellent", "top rating", "delighted", "emoji"]
+    }
+  },
+  "face-happy": {
+    "label": { "es": "Cara feliz", "en": "Happy face", "pt": "Rosto feliz", "fr": "Visage heureux", "de": "Glückliches Gesicht", "it": "Faccina felice", "ja": "嬉しそうな顔", "zh": "开心", "ko": "행복한 얼굴", "ar": "وجه سعيد" },
+    "keywords": {
+      "es": ["contento", "alegre", "satisfecho", "a gusto", "ojos sonrientes", "buen humor", "bienestar"],
+      "en": ["glad", "content", "pleased", "cheerful", "smiling eyes", "good mood", "wellbeing"]
+    }
+  },
+  "face-tears-of-joy": {
+    "label": { "es": "Cara llorando de risa", "en": "Face with tears of joy", "pt": "Rosto chorando de rir", "fr": "Visage riant aux larmes", "de": "Gesicht mit Freudentränen", "it": "Faccina con lacrime di gioia", "ja": "笑い泣きの顔", "zh": "笑哭", "ko": "눈물 나게 웃는 얼굴", "ar": "وجه يبكي من الضحك" },
+    "keywords": {
+      "es": ["jajaja", "muy chistoso", "me muero de risa", "carcajada", "divertidísimo", "lol", "meme"],
+      "en": ["lol", "hilarious", "lmao", "so funny", "cracking up", "joke", "meme"]
+    }
+  },
+  "face-love": {
+    "label": { "es": "Cara enamorada", "en": "Lovestruck face", "pt": "Rosto apaixonado", "fr": "Visage amoureux", "de": "Verliebtes Gesicht", "it": "Faccina innamorata", "ja": "恋する顔", "zh": "心动", "ko": "반한 얼굴", "ar": "وجه مُغرم" },
+    "keywords": {
+      "es": ["amor", "me encanta", "ojos de corazón", "flechado", "crush", "adorar", "me gusta mucho"],
+      "en": ["in love", "adore", "heart eyes", "crush", "smitten", "obsessed", "favorite"]
+    }
+  },
+  "face-kiss": {
+    "label": { "es": "Cara dando un beso", "en": "Kissing face", "pt": "Rosto mandando beijo", "fr": "Visage qui fait un bisou", "de": "Küssendes Gesicht", "it": "Faccina che bacia", "ja": "キスする顔", "zh": "亲亲", "ko": "키스하는 얼굴", "ar": "وجه يقبّل" },
+    "keywords": {
+      "es": ["besito", "muak", "cariño", "mandar besos", "te quiero", "gracias con cariño", "afecto"],
+      "en": ["smooch", "blow a kiss", "xoxo", "affection", "love you", "thanks love", "mwah"]
+    }
+  },
+  "face-star-struck": {
+    "label": { "es": "Cara deslumbrada", "en": "Star-struck face", "pt": "Rosto deslumbrado", "fr": "Visage ébloui", "de": "Gesicht mit Sternenaugen", "it": "Faccina con occhi a stella", "ja": "キラキラ目の顔", "zh": "星星眼", "ko": "눈이 반짝이는 얼굴", "ar": "وجه منبهر" },
+    "keywords": {
+      "es": ["asombrado", "emocionado", "wow", "fan", "fascinado", "ojos de estrella", "increíble", "admiración"],
+      "en": ["amazed", "excited", "wow", "fan", "starry eyes", "awesome", "admiration", "dazzled"]
+    }
+  },
+  "face-cool": {
+    "label": { "es": "Cara con lentes de sol", "en": "Face with sunglasses", "pt": "Rosto de óculos escuros", "fr": "Visage avec lunettes de soleil", "de": "Gesicht mit Sonnenbrille", "it": "Faccina con occhiali da sole", "ja": "サングラスの顔", "zh": "戴墨镜", "ko": "선글라스 쓴 얼굴", "ar": "وجه بنظارة شمسية" },
+    "keywords": {
+      "es": ["buena onda", "chido", "seguro de sí", "relajado", "lo logré", "con estilo", "confianza"],
+      "en": ["cool", "confident", "chill", "nailed it", "swagger", "stylish", "relaxed"]
+    }
+  },
+  "face-nerd": {
+    "label": { "es": "Cara de nerd", "en": "Nerd face", "pt": "Rosto de nerd", "fr": "Visage d’intello", "de": "Strebergesicht", "it": "Faccina da secchione", "ja": "ガリ勉の顔", "zh": "书呆子", "ko": "공부벌레 얼굴", "ar": "وجه الطالب المجتهد" },
+    "keywords": {
+      "es": ["geek", "matado", "estudioso", "sabelotodo", "inteligente", "lentes", "dato curioso"],
+      "en": ["geek", "studious", "know-it-all", "smart", "glasses", "fun fact", "brainy"]
+    }
+  },
+  "face-thinking": {
+    "label": { "es": "Cara pensativa", "en": "Thinking face", "pt": "Rosto pensativo", "fr": "Visage qui réfléchit", "de": "Nachdenkliches Gesicht", "it": "Faccina pensierosa", "ja": "考える顔", "zh": "思考", "ko": "생각하는 얼굴", "ar": "وجه يفكر" },
+    "keywords": {
+      "es": ["hmm", "reflexionar", "considerar", "evaluar", "déjame ver", "idea", "analizar", "duda"],
+      "en": ["hmm", "ponder", "consider", "wonder", "let me see", "reflect", "figure out", "idea"]
+    }
+  },
+  "face-skeptical": {
+    "label": { "es": "Cara escéptica", "en": "Skeptical face", "pt": "Rosto desconfiado", "fr": "Visage sceptique", "de": "Skeptisches Gesicht", "it": "Faccina scettica", "ja": "疑わしげな顔", "zh": "怀疑", "ko": "의심하는 얼굴", "ar": "وجه متشكك" },
+    "keywords": {
+      "es": ["desconfiado", "sospecha", "dudoso", "ceja levantada", "no me convence", "¿en serio?", "incredulidad"],
+      "en": ["doubtful", "suspicious", "raised eyebrow", "not convinced", "really?", "disbelief", "questionable"]
+    }
+  },
+  "face-annoyed": {
+    "label": { "es": "Cara fastidiada", "en": "Annoyed face", "pt": "Rosto irritado", "fr": "Visage agacé", "de": "Genervtes Gesicht", "it": "Faccina infastidita", "ja": "うんざりした顔", "zh": "不爽", "ko": "짜증난 얼굴", "ar": "وجه منزعج" },
+    "keywords": {
+      "es": ["molesto", "harto", "irritado", "sin gracia", "no me impresiona", "cara de pocos amigos", "inexpresivo"],
+      "en": ["irritated", "unimpressed", "deadpan", "fed up", "bothered", "not amused", "meh"]
+    }
+  },
+  "face-eye-roll": {
+    "label": { "es": "Cara poniendo los ojos en blanco", "en": "Face rolling eyes", "pt": "Rosto revirando os olhos", "fr": "Visage qui lève les yeux au ciel", "de": "Augenrollendes Gesicht", "it": "Faccina che alza gli occhi al cielo", "ja": "あきれた顔", "zh": "翻白眼", "ko": "눈알을 굴리는 얼굴", "ar": "وجه يدير عينيه" },
+    "keywords": {
+      "es": ["ay, ajá", "sarcasmo", "lo que digas", "como sea", "exasperado", "qué flojera", "hartazgo"],
+      "en": ["exasperated", "whatever", "sarcasm", "ugh", "seriously", "fed up", "eye roll"]
+    }
+  },
+  "face-smirk": {
+    "label": { "es": "Cara con sonrisa pícara", "en": "Smirking face", "pt": "Rosto com sorriso malicioso", "fr": "Visage au sourire en coin", "de": "Süffisant lächelndes Gesicht", "it": "Faccina con sorrisetto", "ja": "ニヤリとした顔", "zh": "坏笑", "ko": "능글맞게 웃는 얼굴", "ar": "وجه بابتسامة ماكرة" },
+    "keywords": {
+      "es": ["presumido", "coqueto", "malicioso", "sonrisa de lado", "complicidad", "doble sentido", "creído"],
+      "en": ["smug", "sly", "flirty", "knowing look", "mischievous", "suggestive", "half smile"]
+    }
+  },
+  "face-upside-down": {
+    "label": { "es": "Cara al revés", "en": "Upside-down face", "pt": "Rosto de cabeça para baixo", "fr": "Visage à l’envers", "de": "Umgedrehtes Gesicht", "it": "Faccina sottosopra", "ja": "逆さまの顔", "zh": "倒脸", "ko": "거꾸로 된 얼굴", "ar": "وجه مقلوب" },
+    "keywords": {
+      "es": ["ironía", "sarcasmo", "todo bien", "tontería", "humor", "aquí no pasa nada", "nervios"],
+      "en": ["irony", "sarcasm", "it’s fine", "this is fine", "silly", "goofy", "awkward"]
+    }
+  },
+  "face-relieved": {
+    "label": { "es": "Cara aliviada", "en": "Relieved face", "pt": "Rosto aliviado", "fr": "Visage soulagé", "de": "Erleichtertes Gesicht", "it": "Faccina sollevata", "ja": "ほっとした顔", "zh": "松了口气", "ko": "안도하는 얼굴", "ar": "وجه مرتاح" },
+    "keywords": {
+      "es": ["tranquilo", "en paz", "sereno", "calma", "por fin", "relajado", "respirar hondo"],
+      "en": ["calm", "at peace", "serene", "phew", "finally", "relaxed", "content"]
+    }
+  },
+  "face-sleeping": {
+    "label": { "es": "Cara dormida", "en": "Sleeping face", "pt": "Rosto dormindo", "fr": "Visage endormi", "de": "Schlafendes Gesicht", "it": "Faccina che dorme", "ja": "寝ている顔", "zh": "睡觉", "ko": "잠자는 얼굴", "ar": "وجه نائم" },
+    "keywords": {
+      "es": ["ausente", "inactivo", "zzz", "posponer", "no molestar", "descanso", "siesta", "modo reposo"],
+      "en": ["away", "idle", "zzz", "snooze", "do not disturb", "rest", "nap", "inactive"]
+    }
+  },
+  "face-yawning": {
+    "label": { "es": "Cara bostezando", "en": "Yawning face", "pt": "Rosto bocejando", "fr": "Visage qui bâille", "de": "Gähnendes Gesicht", "it": "Faccina che sbadiglia", "ja": "あくびする顔", "zh": "打哈欠", "ko": "하품하는 얼굴", "ar": "وجه يتثاءب" },
+    "keywords": {
+      "es": ["sueño", "aburrido", "cansancio", "flojera", "desvelado", "hora de dormir", "monótono"],
+      "en": ["sleepy", "bored", "tired", "drowsy", "bedtime", "late night", "dull"]
+    }
+  },
+  "face-tired": {
+    "label": { "es": "Cara agotada", "en": "Exhausted face", "pt": "Rosto exausto", "fr": "Visage épuisé", "de": "Erschöpftes Gesicht", "it": "Faccina esausta", "ja": "疲れ果てた顔", "zh": "疲惫", "ko": "지친 얼굴", "ar": "وجه مُرهَق" },
+    "keywords": {
+      "es": ["cansado", "rendido", "sin energía", "fundido", "molido", "burnout", "ya no puedo"],
+      "en": ["tired", "weary", "worn out", "drained", "burnout", "no energy", "fatigue"]
+    }
+  },
+  "face-frustrated": {
+    "label": { "es": "Cara frustrada", "en": "Frustrated face", "pt": "Rosto frustrado", "fr": "Visage frustré", "de": "Frustriertes Gesicht", "it": "Faccina frustrata", "ja": "悔しそうな顔", "zh": "挫败", "ko": "괴로운 얼굴", "ar": "وجه محبط" },
+    "keywords": {
+      "es": ["estrés", "batallar", "esfuerzo", "dolor", "aguantar", "impotencia", "atorado", "no sale"],
+      "en": ["stressed", "struggling", "effort", "in pain", "persevering", "hang in there", "stuck", "helpless"]
+    }
+  },
+  "face-sick": {
+    "label": { "es": "Cara enferma", "en": "Sick face", "pt": "Rosto doente", "fr": "Visage malade", "de": "Krankes Gesicht", "it": "Faccina malata", "ja": "具合の悪い顔", "zh": "生病", "ko": "아픈 얼굴", "ar": "وجه مريض" },
+    "keywords": {
+      "es": ["fiebre", "malestar", "gripa", "resfriado", "incapacidad", "me siento mal", "termómetro", "salud"],
+      "en": ["fever", "unwell", "ill", "flu", "under the weather", "sick leave", "thermometer", "health"]
+    }
+  },
+  "face-disgusted": {
+    "label": { "es": "Cara de asco", "en": "Disgusted face", "pt": "Rosto com nojo", "fr": "Visage dégoûté", "de": "Angewidertes Gesicht", "it": "Faccina disgustata", "ja": "気持ち悪そうな顔", "zh": "恶心", "ko": "역겨워하는 얼굴", "ar": "وجه مشمئز" },
+    "keywords": {
+      "es": ["guácala", "fuchi", "repugnante", "náusea", "desagradable", "vomitar", "rechazo"],
+      "en": ["gross", "yuck", "eww", "nauseated", "revolting", "nasty", "vomit"]
+    }
+  },
+  "face-masked": {
+    "label": { "es": "Cara con cubrebocas", "en": "Face with medical mask", "pt": "Rosto de máscara", "fr": "Visage avec masque", "de": "Gesicht mit Mundschutz", "it": "Faccina con mascherina", "ja": "マスクをした顔", "zh": "戴口罩", "ko": "마스크 쓴 얼굴", "ar": "وجه يرتدي كمامة" },
+    "keywords": {
+      "es": ["mascarilla", "contagio", "enfermo", "temporada de gripa", "covid", "protección", "prevención", "taparse"],
+      "en": ["face mask", "contagious", "sick", "flu season", "covid", "protection", "prevention", "cover up"]
+    }
+  },
+  "face-hot": {
+    "label": { "es": "Cara acalorada", "en": "Overheated face", "pt": "Rosto com calor", "fr": "Visage qui a chaud", "de": "Erhitztes Gesicht", "it": "Faccina accaldata", "ja": "暑がる顔", "zh": "好热", "ko": "더워하는 얼굴", "ar": "وجه يشعر بالحر" },
+    "keywords": {
+      "es": ["calor", "sudor", "bochorno", "ola de calor", "derretirse", "sofocado", "temperatura alta"],
+      "en": ["hot", "sweating", "heatwave", "sweltering", "melting", "panting", "high temperature"]
+    }
+  },
+  "face-cold": {
+    "label": { "es": "Cara congelada", "en": "Freezing face", "pt": "Rosto com frio", "fr": "Visage qui a froid", "de": "Frierendes Gesicht", "it": "Faccina congelata", "ja": "寒がる顔", "zh": "好冷", "ko": "추워하는 얼굴", "ar": "وجه يشعر بالبرد" },
+    "keywords": {
+      "es": ["frío", "helado", "temblar", "tiritar", "invierno", "baja temperatura", "nieve"],
+      "en": ["cold", "frozen", "shivering", "chilly", "winter", "low temperature", "icy"]
+    }
+  },
+  "face-scared": {
+    "label": { "es": "Cara asustada", "en": "Scared face", "pt": "Rosto assustado", "fr": "Visage effrayé", "de": "Verängstigtes Gesicht", "it": "Faccina spaventata", "ja": "怖がる顔", "zh": "害怕", "ko": "겁먹은 얼굴", "ar": "وجه خائف" },
+    "keywords": {
+      "es": ["miedo", "terror", "grito", "pánico", "horror", "espantado", "halloween"],
+      "en": ["afraid", "fear", "horrified", "screaming", "panic", "terror", "halloween"]
+    }
+  },
+  "face-worried": {
+    "label": { "es": "Cara preocupada", "en": "Worried face", "pt": "Rosto preocupado", "fr": "Visage inquiet", "de": "Besorgtes Gesicht", "it": "Faccina preoccupata", "ja": "心配そうな顔", "zh": "担心", "ko": "걱정스러운 얼굴", "ar": "وجه قلق" },
+    "keywords": {
+      "es": ["ansiedad", "inquieto", "nervios", "angustia", "intranquilo", "incertidumbre", "estrés"],
+      "en": ["anxious", "concerned", "uneasy", "nervous", "uncertain", "stress", "distress"]
+    }
+  },
+  "face-nervous": {
+    "label": { "es": "Cara nerviosa", "en": "Grimacing face", "pt": "Rosto nervoso", "fr": "Visage crispé", "de": "Nervöses Gesicht", "it": "Faccina nervosa", "ja": "気まずい顔", "zh": "尴尬", "ko": "긴장한 얼굴", "ar": "وجه متوتر" },
+    "keywords": {
+      "es": ["incómodo", "oso", "qué pena", "tenso", "mueca", "cringe", "ups", "metida de pata"],
+      "en": ["awkward", "cringe", "eek", "yikes", "tense", "oops", "nervous", "uncomfortable"]
+    }
+  },
+  "face-crying": {
+    "label": { "es": "Cara llorando", "en": "Crying face", "pt": "Rosto chorando", "fr": "Visage qui pleure", "de": "Weinendes Gesicht", "it": "Faccina che piange", "ja": "泣いている顔", "zh": "哭泣", "ko": "우는 얼굴", "ar": "وجه باكٍ" },
+    "keywords": {
+      "es": ["triste", "lágrima", "dolido", "pena", "lamentar", "mala noticia", "decepción"],
+      "en": ["sad", "tear", "hurt", "upset", "sorry", "bad news", "heartache"]
+    }
+  },
+  "face-smile-tear": {
+    "label": { "es": "Cara sonriendo con una lágrima", "en": "Smiling face with tear", "pt": "Rosto sorrindo com lágrima", "fr": "Visage souriant avec une larme", "de": "Lächelndes Gesicht mit Träne", "it": "Faccina sorridente con lacrima", "ja": "涙を浮かべて笑う顔", "zh": "含泪微笑", "ko": "눈물 흘리며 웃는 얼굴", "ar": "وجه مبتسم بدمعة" },
+    "keywords": {
+      "es": ["conmovido", "agradecido", "agridulce", "emoción", "nostalgia", "orgullo", "aguantando", "sentimental"],
+      "en": ["touched", "grateful", "bittersweet", "moved", "nostalgia", "proud", "holding back tears", "sentimental"]
+    }
+  },
+  "face-pleading": {
+    "label": { "es": "Cara suplicante", "en": "Pleading face", "pt": "Rosto suplicante", "fr": "Visage suppliant", "de": "Flehendes Gesicht", "it": "Faccina supplichevole", "ja": "うるうる目の顔", "zh": "可怜巴巴", "ko": "애원하는 얼굴", "ar": "وجه متوسل" },
+    "keywords": {
+      "es": ["por favor", "porfis", "ojitos de cachorro", "rogar", "ilusión", "ternura", "pedir un favor"],
+      "en": ["please", "pretty please", "puppy eyes", "begging", "hopeful", "aww", "asking a favor"]
+    }
+  },
+  "face-shy": {
+    "label": { "es": "Cara sonrojada", "en": "Blushing face", "pt": "Rosto corado", "fr": "Visage qui rougit", "de": "Errötendes Gesicht", "it": "Faccina arrossita", "ja": "照れた顔", "zh": "害羞", "ko": "수줍은 얼굴", "ar": "وجه خجول" },
+    "keywords": {
+      "es": ["tímido", "chiveado", "apenado", "vergüenza", "halago", "cumplido", "rubor"],
+      "en": ["shy", "bashful", "embarrassed", "flattered", "compliment", "flustered", "aw shucks"]
+    }
+  },
+  "face-zipped": {
+    "label": { "es": "Cara con la boca cerrada", "en": "Zipper-mouth face", "pt": "Rosto com a boca fechada", "fr": "Visage bouche cousue", "de": "Gesicht mit Reißverschlussmund", "it": "Faccina con la bocca cucita", "ja": "口にチャックをした顔", "zh": "闭嘴", "ko": "입에 지퍼를 채운 얼굴", "ar": "وجه بفم مغلق بسحّاب" },
+    "keywords": {
+      "es": ["secreto", "callado", "no digo nada", "confidencial", "sin comentarios", "silencio", "cierre"],
+      "en": ["secret", "lips sealed", "keep quiet", "confidential", "no comment", "hush", "zipper"]
+    }
+  },
+  "face-speechless": {
+    "label": { "es": "Cara sin palabras", "en": "Speechless face", "pt": "Rosto sem palavras", "fr": "Visage sans voix", "de": "Sprachloses Gesicht", "it": "Faccina senza parole", "ja": "言葉を失った顔", "zh": "无语", "ko": "말문이 막힌 얼굴", "ar": "وجه عاجز عن الكلام" },
+    "keywords": {
+      "es": ["mudo", "en blanco", "atónito", "no sé qué decir", "impactado", "sin expresión", "callado"],
+      "en": ["no words", "mute", "blank", "dumbfounded", "at a loss", "silent", "expressionless"]
+    }
+  },
+  "face-dashed": {
+    "label": { "es": "Cara punteada", "en": "Dashed-line face", "pt": "Rosto pontilhado", "fr": "Visage en pointillés", "de": "Gestricheltes Gesicht", "it": "Faccina tratteggiata", "ja": "点線の顔", "zh": "虚线脸", "ko": "점선 얼굴", "ar": "وجه منقط" },
+    "keywords": {
+      "es": ["sin reacción", "invisible", "oculto", "elegir emoji", "marcador de posición", "vacío", "desaparecer"],
+      "en": ["no reaction", "invisible", "hidden", "pick an emoji", "placeholder", "empty", "fade away"]
+    }
+  },
+  "face-dizzy": {
+    "label": { "es": "Cara mareada", "en": "Dizzy face", "pt": "Rosto tonto", "fr": "Visage étourdi", "de": "Benommenes Gesicht", "it": "Faccina stordita", "ja": "目を回した顔", "zh": "晕", "ko": "어지러운 얼굴", "ar": "وجه مصاب بالدوار" },
+    "keywords": {
+      "es": ["aturdido", "noqueado", "abrumado", "error", "algo salió mal", "se rompió", "fuera de combate"],
+      "en": ["dazed", "knocked out", "overwhelmed", "error", "something went wrong", "broken", "woozy"]
+    }
+  },
+  "face-partying": {
+    "label": { "es": "Cara de fiesta", "en": "Partying face", "pt": "Rosto festejando", "fr": "Visage festif", "de": "Feierndes Gesicht", "it": "Faccina che festeggia", "ja": "お祝いする顔", "zh": "庆祝", "ko": "파티하는 얼굴", "ar": "وجه يحتفل" },
+    "keywords": {
+      "es": ["celebrar", "cumpleaños", "festejo", "felicidades", "logro", "pachanga", "año nuevo", "aniversario"],
+      "en": ["celebrate", "birthday", "congrats", "milestone", "achievement", "hooray", "new year", "anniversary"]
+    }
+  },
+  "face-tongue": {
+    "label": { "es": "Cara sacando la lengua", "en": "Face sticking out tongue", "pt": "Rosto mostrando a língua", "fr": "Visage qui tire la langue", "de": "Gesicht mit herausgestreckter Zunge", "it": "Faccina che fa la linguaccia", "ja": "舌を出した顔", "zh": "吐舌头", "ko": "혀를 내민 얼굴", "ar": "وجه يخرج لسانه" },
+    "keywords": {
+      "es": ["juguetón", "broma", "travieso", "payaso", "burla", "relajo", "chistoso"],
+      "en": ["playful", "silly", "joking", "cheeky", "teasing", "goofy", "just kidding"]
+    }
+  },
+  "face-yum": {
+    "label": { "es": "Cara saboreando", "en": "Face savoring food", "pt": "Rosto saboreando", "fr": "Visage qui se régale", "de": "Genießendes Gesicht", "it": "Faccina golosa", "ja": "おいしそうな顔", "zh": "好吃", "ko": "맛있어하는 얼굴", "ar": "وجه يتلذذ بالطعام" },
+    "keywords": {
+      "es": ["delicioso", "rico", "sabroso", "antojo", "hambre", "ñam", "comida", "reseña de restaurante"],
+      "en": ["yummy", "delicious", "tasty", "hungry", "craving", "nom", "food", "restaurant review"]
+    }
+  },
+  "face-disappointed": {
+    "label": { "es": "Cara decepcionada", "en": "Disappointed face", "pt": "Rosto decepcionado", "fr": "Visage déçu", "de": "Enttäuschtes Gesicht", "it": "Faccina delusa", "ja": "がっかりした顔", "zh": "失望", "ko": "실망한 얼굴", "ar": "وجه خائب الأمل" },
+    "keywords": {
+      "es": ["desilusión", "desanimado", "abatido", "pensativo", "cabizbajo", "bajón", "esperaba más"],
+      "en": ["let down", "dejected", "pensive", "downcast", "bummed", "expected more", "discouraged"]
+    }
+  },
+  "mood-up": {
+    "label": { "es": "Ánimo en alza", "en": "Mood improving", "pt": "Humor melhorando", "fr": "Moral en hausse", "de": "Stimmung steigt", "it": "Umore in miglioramento", "ja": "気分が上向き", "zh": "心情好转", "ko": "기분 상승", "ar": "تحسّن المزاج" },
+    "keywords": {
+      "es": ["sentirse mejor", "tendencia positiva", "mejoría", "bienestar", "progreso", "recuperación", "buen humor"],
+      "en": ["feeling better", "positive trend", "improvement", "wellbeing", "progress", "recovery", "uplift"]
+    }
+  },
+  "mood-down": {
+    "label": { "es": "Ánimo a la baja", "en": "Mood dropping", "pt": "Humor piorando", "fr": "Moral en baisse", "de": "Stimmung sinkt", "it": "Umore in calo", "ja": "気分が下向き", "zh": "心情变差", "ko": "기분 하락", "ar": "تراجع المزاج" },
+    "keywords": {
+      "es": ["sentirse peor", "tendencia negativa", "bajón", "decaído", "empeorar", "recaída", "mal humor"],
+      "en": ["feeling worse", "negative trend", "slump", "feeling low", "decline", "relapse", "bad mood"]
+    }
+  },
+  "mood-check": {
+    "label": { "es": "Ánimo registrado", "en": "Mood logged", "pt": "Humor registrado", "fr": "Humeur enregistrée", "de": "Stimmung erfasst", "it": "Umore registrato", "ja": "気分を記録済み", "zh": "心情已记录", "ko": "기분 기록 완료", "ar": "تم تسجيل المزاج" },
+    "keywords": {
+      "es": ["check-in hecho", "registro diario", "listo por hoy", "completado", "diario emocional", "seguimiento", "guardado"],
+      "en": ["check-in done", "daily log", "done for today", "completed", "mood journal", "tracked", "saved"]
+    }
+  },
+  "mood-clock": {
+    "label": { "es": "Recordatorio de ánimo", "en": "Mood reminder", "pt": "Lembrete de humor", "fr": "Rappel d’humeur", "de": "Stimmungserinnerung", "it": "Promemoria dell’umore", "ja": "気分記録のリマインダー", "zh": "心情打卡提醒", "ko": "기분 기록 알림", "ar": "تذكير بتسجيل المزاج" },
+    "keywords": {
+      "es": ["check-in programado", "historial de ánimo", "aviso diario", "hora de registrar", "rutina", "seguimiento", "notificación"],
+      "en": ["scheduled check-in", "mood history", "daily prompt", "time to log", "routine", "tracking", "notification"]
+    }
+  },
+  "mood-alert": {
+    "label": { "es": "Alerta de ánimo bajo", "en": "Low mood alert", "pt": "Alerta de humor baixo", "fr": "Alerte de baisse de moral", "de": "Warnung bei Stimmungstief", "it": "Avviso di umore basso", "ja": "気分の落ち込み警告", "zh": "情绪低落预警", "ko": "기분 저하 경고", "ar": "تنبيه انخفاض المزاج" },
+    "keywords": {
+      "es": ["bienestar", "requiere atención", "riesgo", "señal de alerta", "salud mental", "pedir ayuda", "apoyo"],
+      "en": ["wellbeing", "needs attention", "risk", "warning sign", "mental health", "reach out", "support"]
+    }
+  },
+  "mood-question": {
+    "label": { "es": "¿Cómo te sientes?", "en": "How are you feeling?", "pt": "Como você está se sentindo?", "fr": "Comment vous sentez-vous ?", "de": "Wie fühlst du dich?", "it": "Come ti senti?", "ja": "今の気分は？", "zh": "你感觉怎么样？", "ko": "기분이 어떠세요?", "ar": "كيف تشعر؟" },
+    "keywords": {
+      "es": ["check-in", "encuesta de ánimo", "encuesta de pulso", "pregunta diaria", "estado de ánimo", "clima laboral", "bienestar"],
+      "en": ["check-in prompt", "mood survey", "pulse survey", "daily question", "mood", "team morale", "wellbeing"]
+    }
+  },
+  "mood-edit": {
+    "label": { "es": "Editar ánimo", "en": "Edit mood", "pt": "Editar humor", "fr": "Modifier l’humeur", "de": "Stimmung bearbeiten", "it": "Modifica umore", "ja": "気分を編集", "zh": "编辑心情", "ko": "기분 수정", "ar": "تعديل المزاج" },
+    "keywords": {
+      "es": ["cambiar registro", "corregir", "reacción personalizada", "personalizar", "actualizar estado", "modificar", "ajustar"],
+      "en": ["change entry", "correct", "custom reaction", "customize", "update status", "modify", "adjust"]
+    }
+  },
+  "slider-mood": {
+    "label": { "es": "Escala de ánimo", "en": "Mood scale", "pt": "Escala de humor", "fr": "Échelle d’humeur", "de": "Stimmungsskala", "it": "Scala dell’umore", "ja": "気分スケール", "zh": "心情量表", "ko": "기분 척도", "ar": "مقياس المزاج" },
+    "keywords": {
+      "es": ["deslizador", "calificar cómo te sientes", "del 1 al 10", "nivel", "encuesta", "medir", "satisfacción"],
+      "en": ["slider", "rate how you feel", "1 to 10", "level", "survey", "measure", "satisfaction"]
+    }
+  },
+  "calendar-smile": {
+    "label": { "es": "Calendario de ánimo", "en": "Mood calendar", "pt": "Calendário de humor", "fr": "Calendrier d’humeur", "de": "Stimmungskalender", "it": "Calendario dell’umore", "ja": "気分カレンダー", "zh": "心情日历", "ko": "기분 달력", "ar": "تقويم المزاج" },
+    "keywords": {
+      "es": ["diario emocional", "registro diario", "ánimo por día", "historial", "seguimiento", "hábitos", "bitácora"],
+      "en": ["mood journal", "daily log", "mood by day", "history", "mood tracker", "habits", "diary"]
+    }
+  },
+  "heart-broken": {
+    "label": { "es": "Corazón roto", "en": "Broken heart", "pt": "Coração partido", "fr": "Cœur brisé", "de": "Gebrochenes Herz", "it": "Cuore spezzato", "ja": "割れたハート", "zh": "心碎", "ko": "깨진 하트", "ar": "قلب مكسور" },
+    "keywords": {
+      "es": ["desamor", "ruptura", "tristeza", "duelo", "terminar", "ya no me gusta", "dejar de seguir", "sin match"],
+      "en": ["heartbreak", "breakup", "grief", "sadness", "unlike", "unfollow", "unmatch", "loss"]
+    }
+  },
+  "heart-mended": {
+    "label": { "es": "Corazón sanado", "en": "Mended heart", "pt": "Coração curado", "fr": "Cœur réparé", "de": "Geheiltes Herz", "it": "Cuore guarito", "ja": "癒えたハート", "zh": "愈合的心", "ko": "회복 중인 마음", "ar": "قلب ملتئم" },
+    "keywords": {
+      "es": ["sanar", "recuperación", "apoyo emocional", "superar", "salud mental", "cuidado", "segunda oportunidad"],
+      "en": ["healing", "recovery", "emotional support", "moving on", "mental health", "care", "second chance"]
+    }
+  },
+  "heart-half": {
+    "label": { "es": "Medio corazón", "en": "Half heart", "pt": "Meio coração", "fr": "Demi-cœur", "de": "Halbes Herz", "it": "Mezzo cuore", "ja": "半分のハート", "zh": "半颗心", "ko": "반쪽 하트", "ar": "نصف قلب" },
+    "keywords": {
+      "es": ["calificación", "medio punto", "valoración", "reseña", "vidas", "videojuego", "cariño a medias"],
+      "en": ["rating", "half point", "partial", "review", "lives", "health bar", "game"]
+    }
+  },
+  "heart-exclamation": {
+    "label": { "es": "Exclamación de corazón", "en": "Heart exclamation", "pt": "Exclamação de coração", "fr": "Point d’exclamation en cœur", "de": "Herz als Ausrufezeichen", "it": "Punto esclamativo a cuore", "ja": "ハートの感嘆符", "zh": "心形感叹号", "ko": "하트 느낌표", "ar": "علامة تعجب على شكل قلب" },
+    "keywords": {
+      "es": ["¡me encanta!", "lo amo", "amor", "énfasis", "favorito", "reacción", "importante"],
+      "en": ["love this", "adore", "love", "emphasis", "favorite", "reaction", "must have"]
+    }
+  },
+  "heart-smile": {
+    "label": { "es": "Corazón sonriente", "en": "Smiling heart", "pt": "Coração sorridente", "fr": "Cœur souriant", "de": "Lächelndes Herz", "it": "Cuore sorridente", "ja": "笑顔のハート", "zh": "笑脸爱心", "ko": "웃는 하트", "ar": "قلب مبتسم" },
+    "keywords": {
+      "es": ["amabilidad", "cuidado", "bienestar", "amor propio", "gratitud", "buen trato", "autocuidado", "salud emocional"],
+      "en": ["kindness", "care", "wellbeing", "self-love", "gratitude", "happy heart", "self-care", "warmth"]
+    }
+  },
+  "eyes-glance": {
+    "label": { "es": "Mirada de reojo", "en": "Side glance", "pt": "Olhar de canto", "fr": "Regard en coin", "de": "Seitenblick", "it": "Sguardo laterale", "ja": "横目", "zh": "瞥一眼", "ko": "곁눈질", "ar": "نظرة جانبية" },
+    "keywords": {
+      "es": ["lo estoy revisando", "ojos", "observar", "visto", "echar un ojo", "vigilar", "chisme", "curiosidad"],
+      "en": ["looking into it", "eyes", "watching", "seen", "keep an eye on", "side-eye", "tea", "curious"]
+    }
+  },
+  "anger-symbol": {
+    "label": { "es": "Símbolo de enojo", "en": "Anger symbol", "pt": "Símbolo de raiva", "fr": "Symbole de colère", "de": "Wutsymbol", "it": "Simbolo di rabbia", "ja": "怒りマーク", "zh": "怒气符号", "ko": "분노 표시", "ar": "رمز الغضب" },
+    "keywords": {
+      "es": ["coraje", "furia", "rabia", "irritación", "vena saltada", "berrinche", "manga"],
+      "en": ["rage", "fury", "mad", "irritation", "popping vein", "tantrum", "manga"]
+    }
+  }
+}

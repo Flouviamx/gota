@@ -1,0 +1,352 @@
+{
+  "hand-tap": {
+    "label": { "es": "Tocar la pantalla", "en": "Tap the screen", "pt": "Tocar na tela", "fr": "Toucher l’écran", "de": "Bildschirm antippen", "it": "Tocca lo schermo", "ja": "画面をタップ", "zh": "点击屏幕", "ko": "화면 탭", "ar": "النقر على الشاشة" },
+    "keywords": {
+      "es": ["toca aquí", "toque", "pantalla táctil", "tutorial", "primeros pasos", "zona táctil", "presionar con el dedo"],
+      "en": ["tap here", "touch", "touchscreen", "tutorial", "onboarding", "touch target", "press with finger"]
+    }
+  },
+  "hand-double-tap": {
+    "label": { "es": "Doble toque", "en": "Double tap", "pt": "Toque duplo", "fr": "Double appui", "de": "Doppeltippen", "it": "Doppio tocco", "ja": "ダブルタップ", "zh": "轻点两下", "ko": "두 번 탭", "ar": "النقر المزدوج" },
+    "keywords": {
+      "es": ["tocar dos veces", "acercar", "zoom", "dar me gusta", "abrir", "toque rápido", "gesto táctil"],
+      "en": ["tap twice", "zoom in", "like a post", "open", "quick tap", "touch gesture", "heart a photo"]
+    }
+  },
+  "hand-long-press": {
+    "label": { "es": "Mantener presionado", "en": "Long press", "pt": "Manter pressionado", "fr": "Appui long", "de": "Lange drücken", "it": "Pressione prolungata", "ja": "長押し", "zh": "长按", "ko": "길게 누르기", "ar": "الضغط المطوّل" },
+    "keywords": {
+      "es": ["dejar apretado", "tocar y mantener", "menú contextual", "reordenar", "modo de edición", "más opciones", "gesto táctil"],
+      "en": ["touch and hold", "press and hold", "context menu", "reorder", "edit mode", "more options", "rearrange icons"]
+    }
+  },
+  "hand-deep-press": {
+    "label": { "es": "Presión firme", "en": "Firm press", "pt": "Pressão firme", "fr": "Appui ferme", "de": "Fester Druck", "it": "Pressione decisa", "ja": "強く押す", "zh": "用力按压", "ko": "세게 누르기", "ar": "الضغط القوي" },
+    "keywords": {
+      "es": ["presionar fuerte", "sensible a la presión", "vista previa", "3D Touch", "Force Touch", "apretar más", "presión táctil"],
+      "en": ["press harder", "pressure sensitive", "peek and pop", "preview", "3D Touch", "Force Touch", "haptic touch"]
+    }
+  },
+  "hand-drag": {
+    "label": { "es": "Tocar y arrastrar", "en": "Touch and drag", "pt": "Tocar e arrastar", "fr": "Toucher et faire glisser", "de": "Berühren und ziehen", "it": "Tocca e trascina", "ja": "タッチしてドラッグ", "zh": "按住拖动", "ko": "터치하여 끌기", "ar": "اللمس والسحب" },
+    "keywords": {
+      "es": ["arrastrar con el dedo", "mover elemento", "reacomodar", "reordenar", "soltar", "pantalla táctil", "mover en el celular"],
+      "en": ["drag with finger", "move item", "rearrange", "reorder", "drop", "touchscreen", "move on mobile"]
+    }
+  },
+  "hand-tap-gear": {
+    "label": { "es": "Ajustes táctiles", "en": "Touch settings", "pt": "Configurações de toque", "fr": "Réglages tactiles", "de": "Touch-Einstellungen", "it": "Impostazioni tocco", "ja": "タッチ設定", "zh": "触控设置", "ko": "터치 설정", "ar": "إعدادات اللمس" },
+    "keywords": {
+      "es": ["sensibilidad táctil", "configurar gestos", "atajos con gestos", "preferencias", "calibrar pantalla", "accesibilidad táctil", "gestos"],
+      "en": ["touch sensitivity", "gesture settings", "gesture shortcuts", "preferences", "calibrate screen", "touch accommodations", "configure gestures"]
+    }
+  },
+  "hand-tap-lock": {
+    "label": { "es": "Bloqueo táctil", "en": "Touch lock", "pt": "Bloqueio de toque", "fr": "Verrouillage tactile", "de": "Touch-Sperre", "it": "Blocco tocco", "ja": "タッチロック", "zh": "触控锁定", "ko": "터치 잠금", "ar": "قفل اللمس" },
+    "keywords": {
+      "es": ["ignorar toques", "fijar pantalla", "acceso guiado", "modo niños", "bloqueo de agua", "evitar toques accidentales", "pantalla bloqueada"],
+      "en": ["ignore touches", "screen pinning", "guided access", "child lock", "water lock", "accidental touch", "locked screen"]
+    }
+  },
+  "hand-haptic": {
+    "label": { "es": "Respuesta háptica", "en": "Haptic feedback", "pt": "Resposta tátil", "fr": "Retour haptique", "de": "Haptisches Feedback", "it": "Feedback aptico", "ja": "触覚フィードバック", "zh": "触感反馈", "ko": "햅틱 피드백", "ar": "الاستجابة اللمسية" },
+    "keywords": {
+      "es": ["vibración", "háptica", "vibrar al tocar", "retroalimentación táctil", "ajuste de vibración", "motor de vibración", "sentir el toque"],
+      "en": ["vibration", "haptics", "vibrate on touch", "tactile feedback", "vibration setting", "taptic", "buzz"]
+    }
+  },
+  "hand-hover": {
+    "label": { "es": "Pasar sin tocar", "en": "Touchless hover", "pt": "Passar sem tocar", "fr": "Survol sans contact", "de": "Schweben ohne Berührung", "it": "Passaggio senza contatto", "ja": "非接触ホバー", "zh": "悬停感应", "ko": "비접촉 호버", "ar": "التمرير دون لمس" },
+    "keywords": {
+      "es": ["hover", "lápiz óptico", "vista aérea", "proximidad", "pasar el puntero", "flotar el dedo", "vista previa"],
+      "en": ["contactless", "stylus hover", "air view", "proximity", "pen hover", "finger hover", "preview"]
+    }
+  },
+  "hand-draw": {
+    "label": { "es": "Dibujar con el dedo", "en": "Draw with finger", "pt": "Desenhar com o dedo", "fr": "Dessiner avec le doigt", "de": "Mit dem Finger zeichnen", "it": "Disegna con il dito", "ja": "指で描く", "zh": "手指绘图", "ko": "손가락으로 그리기", "ar": "الرسم بالإصبع" },
+    "keywords": {
+      "es": ["gesto personalizado", "atajo con gesto", "trazo", "garabato", "escribir en pantalla", "patrón", "dibujo libre"],
+      "en": ["custom gesture", "gesture shortcut", "stroke", "scribble", "write on screen", "pattern", "freehand"]
+    }
+  },
+  "hand-swipe-right": {
+    "label": { "es": "Deslizar a la derecha", "en": "Swipe right", "pt": "Deslizar para a direita", "fr": "Balayer vers la droite", "de": "Nach rechts wischen", "it": "Scorri a destra", "ja": "右にスワイプ", "zh": "向右滑动", "ko": "오른쪽으로 스와이프", "ar": "السحب لليمين" },
+    "keywords": {
+      "es": ["anterior", "aceptar", "regresar", "hacer match", "archivar", "marcar como leído", "gesto táctil"],
+      "en": ["previous", "accept", "go back", "match", "archive", "mark as read", "touch gesture"]
+    }
+  },
+  "hand-swipe-left": {
+    "label": { "es": "Deslizar a la izquierda", "en": "Swipe left", "pt": "Deslizar para a esquerda", "fr": "Balayer vers la gauche", "de": "Nach links wischen", "it": "Scorri a sinistra", "ja": "左にスワイプ", "zh": "向左滑动", "ko": "왼쪽으로 스와이프", "ar": "السحب لليسار" },
+    "keywords": {
+      "es": ["siguiente tarjeta", "descartar", "acciones de la fila", "borrar al deslizar", "pasar", "rechazar", "gesto táctil"],
+      "en": ["next card", "dismiss", "row actions", "swipe to delete", "pass", "reject", "touch gesture"]
+    }
+  },
+  "hand-swipe-up": {
+    "label": { "es": "Deslizar hacia arriba", "en": "Swipe upward", "pt": "Deslizar para cima", "fr": "Balayer vers le haut", "de": "Aufwärts wischen", "it": "Scorri in su", "ja": "上方向にスワイプ", "zh": "向上滑动", "ko": "위쪽으로 스와이프", "ar": "السحب للأعلى" },
+    "keywords": {
+      "es": ["abrir", "ir al inicio", "ver más", "barra de inicio", "cajón de apps", "subir", "gesto táctil"],
+      "en": ["open", "go home", "see more", "home indicator", "app drawer", "swipe home", "touch gesture"]
+    }
+  },
+  "hand-swipe-down": {
+    "label": { "es": "Deslizar hacia abajo", "en": "Swipe downward", "pt": "Deslizar para baixo", "fr": "Balayer vers le bas", "de": "Abwärts wischen", "it": "Scorri in giù", "ja": "下方向にスワイプ", "zh": "向下滑动", "ko": "아래쪽으로 스와이프", "ar": "السحب للأسفل" },
+    "keywords": {
+      "es": ["cerrar hoja", "abrir notificaciones", "descartar", "centro de control", "ocultar panel", "bajar", "gesto táctil"],
+      "en": ["close sheet", "open notifications", "dismiss", "control center", "hide panel", "pull down", "touch gesture"]
+    }
+  },
+  "hand-swipe-horizontal": {
+    "label": { "es": "Deslizar a los lados", "en": "Swipe sideways", "pt": "Deslizar para os lados", "fr": "Balayer latéralement", "de": "Seitlich wischen", "it": "Scorri ai lati", "ja": "左右にスワイプ", "zh": "左右滑动", "ko": "좌우로 스와이프", "ar": "السحب يمينًا ويسارًا" },
+    "keywords": {
+      "es": ["carrusel", "cambiar de página", "galería", "pasar fotos", "siguiente y anterior", "horizontal", "gesto táctil"],
+      "en": ["carousel", "change page", "gallery", "browse photos", "next and previous", "horizontal", "touch gesture"]
+    }
+  },
+  "hand-swipe-vertical": {
+    "label": { "es": "Deslizar arriba y abajo", "en": "Swipe up and down", "pt": "Deslizar para cima e para baixo", "fr": "Balayer vers le haut et le bas", "de": "Nach oben und unten wischen", "it": "Scorri in su e in giù", "ja": "上下にスワイプ", "zh": "上下滑动", "ko": "위아래로 스와이프", "ar": "السحب للأعلى والأسفل" },
+    "keywords": {
+      "es": ["desplazar", "scroll", "feed", "recorrer la lista", "ver publicaciones", "scroll infinito", "pantalla táctil"],
+      "en": ["scroll", "feed", "scroll the list", "browse posts", "infinite scroll", "vertical", "touchscreen"]
+    }
+  },
+  "hand-edge-swipe": {
+    "label": { "es": "Deslizar desde el borde", "en": "Edge swipe", "pt": "Deslizar da borda", "fr": "Balayer depuis le bord", "de": "Vom Rand wischen", "it": "Scorri dal bordo", "ja": "端からスワイプ", "zh": "边缘滑动", "ko": "가장자리에서 스와이프", "ar": "السحب من الحافة" },
+    "keywords": {
+      "es": ["gesto para regresar", "atrás del sistema", "abrir menú lateral", "cajón de navegación", "borde de la pantalla", "navegación por gestos", "gesto táctil"],
+      "en": ["back gesture", "system back", "open drawer", "navigation drawer", "screen edge", "gesture navigation", "side menu"]
+    }
+  },
+  "hand-pull-refresh": {
+    "label": { "es": "Deslizar para actualizar", "en": "Pull to refresh", "pt": "Puxar para atualizar", "fr": "Tirer pour actualiser", "de": "Zum Aktualisieren ziehen", "it": "Trascina per aggiornare", "ja": "引っ張って更新", "zh": "下拉刷新", "ko": "당겨서 새로고침", "ar": "اسحب للتحديث" },
+    "keywords": {
+      "es": ["recargar", "jalar hacia abajo", "refrescar la lista", "cargar nuevos", "sincronizar", "feed", "gesto táctil"],
+      "en": ["reload", "pull down", "refresh list", "load new", "sync", "feed", "touch gesture"]
+    }
+  },
+  "hand-flick": {
+    "label": { "es": "Deslizamiento rápido", "en": "Flick", "pt": "Deslize rápido", "fr": "Glissement rapide", "de": "Schnell wischen", "it": "Scorrimento veloce", "ja": "フリック", "zh": "轻弹", "ko": "플릭", "ar": "السحب السريع" },
+    "keywords": {
+      "es": ["lanzar la lista", "scroll rápido", "deslizar con fuerza", "inercia", "aventar", "barrido", "gesto táctil"],
+      "en": ["fling", "fast scroll", "throw content", "momentum", "quick swipe", "toss", "touch gesture"]
+    }
+  },
+  "hand-two-finger-tap": {
+    "label": { "es": "Toque con dos dedos", "en": "Two-finger tap", "pt": "Toque com dois dedos", "fr": "Toucher avec deux doigts", "de": "Mit zwei Fingern tippen", "it": "Tocco con due dita", "ja": "2本指でタップ", "zh": "双指轻点", "ko": "두 손가락으로 탭", "ar": "النقر بإصبعين" },
+    "keywords": {
+      "es": ["clic derecho", "clic secundario", "menú contextual", "trackpad", "panel táctil", "laptop", "más opciones"],
+      "en": ["right click", "secondary click", "context menu", "trackpad", "touchpad", "laptop", "more options"]
+    }
+  },
+  "hand-two-finger-scroll": {
+    "label": { "es": "Desplazar con dos dedos", "en": "Two-finger scroll", "pt": "Rolar com dois dedos", "fr": "Défiler avec deux doigts", "de": "Mit zwei Fingern scrollen", "it": "Scorrimento con due dita", "ja": "2本指でスクロール", "zh": "双指滚动", "ko": "두 손가락으로 스크롤", "ar": "التمرير بإصبعين" },
+    "keywords": {
+      "es": ["scroll", "trackpad", "panel táctil", "bajar la página", "subir la página", "desplazamiento natural", "laptop"],
+      "en": ["scrolling", "trackpad", "touchpad", "scroll down", "scroll up", "natural scrolling", "laptop"]
+    }
+  },
+  "hand-two-finger-swipe": {
+    "label": { "es": "Deslizar con dos dedos", "en": "Two-finger swipe", "pt": "Deslizar com dois dedos", "fr": "Balayer avec deux doigts", "de": "Mit zwei Fingern wischen", "it": "Swipe con due dita", "ja": "2本指でスワイプ", "zh": "双指轻扫", "ko": "두 손가락으로 스와이프", "ar": "السحب بإصبعين" },
+    "keywords": {
+      "es": ["atrás en el navegador", "adelante", "página anterior", "trackpad", "panel táctil", "historial", "navegar"],
+      "en": ["browser back", "forward", "previous page", "trackpad", "touchpad", "history", "navigate"]
+    }
+  },
+  "hand-three-finger-swipe": {
+    "label": { "es": "Deslizar con tres dedos", "en": "Three-finger swipe", "pt": "Deslizar com três dedos", "fr": "Balayer avec trois doigts", "de": "Mit drei Fingern wischen", "it": "Swipe con tre dita", "ja": "3本指でスワイプ", "zh": "三指轻扫", "ko": "세 손가락으로 스와이프", "ar": "السحب بثلاثة أصابع" },
+    "keywords": {
+      "es": ["cambiar de app", "cambiar de escritorio", "ver todas las ventanas", "Mission Control", "multitarea", "escritorios virtuales", "trackpad"],
+      "en": ["switch apps", "switch desktops", "show all windows", "Mission Control", "multitasking", "virtual desktops", "trackpad"]
+    }
+  },
+  "hand-pinch": {
+    "label": { "es": "Pellizcar", "en": "Pinch", "pt": "Pinçar", "fr": "Pincer", "de": "Zusammenziehen", "it": "Pizzica", "ja": "ピンチイン", "zh": "双指捏合", "ko": "핀치 인", "ar": "ضمّ الإصبعين" },
+    "keywords": {
+      "es": ["alejar", "reducir", "zoom", "contraer", "juntar los dedos", "achicar", "gesto con dos dedos"],
+      "en": ["zoom out", "shrink", "collapse", "fingers together", "make smaller", "pinch in", "two-finger gesture"]
+    }
+  },
+  "hand-spread": {
+    "label": { "es": "Separar los dedos", "en": "Spread", "pt": "Afastar os dedos", "fr": "Écarter les doigts", "de": "Auseinanderziehen", "it": "Allarga le dita", "ja": "ピンチアウト", "zh": "双指张开", "ko": "핀치 아웃", "ar": "فتح الإصبعين" },
+    "keywords": {
+      "es": ["acercar", "ampliar", "agrandar", "zoom", "expandir", "ver más grande", "gesto con dos dedos"],
+      "en": ["zoom in", "enlarge", "expand", "magnify", "pinch out", "fingers apart", "two-finger gesture"]
+    }
+  },
+  "hand-rotate": {
+    "label": { "es": "Girar con dos dedos", "en": "Two-finger rotate", "pt": "Girar com dois dedos", "fr": "Rotation à deux doigts", "de": "Mit zwei Fingern drehen", "it": "Ruota con due dita", "ja": "2本指で回転", "zh": "双指旋转", "ko": "두 손가락으로 회전", "ar": "التدوير بإصبعين" },
+    "keywords": {
+      "es": ["rotar imagen", "girar mapa", "rotar objeto", "orientación", "dar vuelta", "inclinar", "gesto táctil"],
+      "en": ["rotate image", "turn map", "rotate object", "orientation", "twist", "spin", "touch gesture"]
+    }
+  },
+  "hand-wave": {
+    "label": { "es": "Saludo", "en": "Wave hello", "pt": "Aceno", "fr": "Salut de la main", "de": "Winken", "it": "Saluto con la mano", "ja": "手を振る", "zh": "挥手", "ko": "손 흔들기", "ar": "تلويح باليد" },
+    "keywords": {
+      "es": ["hola", "adiós", "bienvenida", "decir hola", "nuevo miembro", "despedida", "presentarse"],
+      "en": ["hello", "hi", "goodbye", "welcome", "say hi", "new member", "greeting"]
+    }
+  },
+  "hand-stop": {
+    "label": { "es": "Detente", "en": "Halt", "pt": "Pare", "fr": "Halte", "de": "Halt", "it": "Alt", "ja": "ストップ", "zh": "停", "ko": "멈춰", "ar": "توقف" },
+    "keywords": {
+      "es": ["detener", "espera", "bloquear", "no avanzar", "prohibido", "basta", "mano levantada"],
+      "en": ["stop", "wait", "block", "do not proceed", "hold on", "no entry", "enough"]
+    }
+  },
+  "hand-ok": {
+    "label": { "es": "Señal de OK", "en": "OK hand", "pt": "Sinal de OK", "fr": "Signe OK", "de": "OK-Zeichen", "it": "Segno OK", "ja": "OKサイン", "zh": "OK手势", "ko": "OK 사인", "ar": "إشارة OK" },
+    "keywords": {
+      "es": ["todo bien", "de acuerdo", "perfecto", "va", "excelente", "aprobado", "sale"],
+      "en": ["all good", "agreed", "perfect", "okay", "fine", "approved", "got it"]
+    }
+  },
+  "hand-peace": {
+    "label": { "es": "Señal de paz", "en": "Peace sign", "pt": "Sinal de paz", "fr": "Signe de paix", "de": "Peace-Zeichen", "it": "Segno di pace", "ja": "ピースサイン", "zh": "胜利手势", "ko": "브이 사인", "ar": "علامة النصر" },
+    "keywords": {
+      "es": ["victoria", "amor y paz", "triunfo", "hola", "ganamos", "selfie", "buena onda"],
+      "en": ["victory", "V sign", "win", "hi", "selfie", "good vibes", "triumph"]
+    }
+  },
+  "hand-fist": {
+    "label": { "es": "Puño", "en": "Fist", "pt": "Punho", "fr": "Poing", "de": "Faust", "it": "Pugno", "ja": "握りこぶし", "zh": "拳头", "ko": "주먹", "ar": "قبضة اليد" },
+    "keywords": {
+      "es": ["fuerza", "determinación", "poder", "piedra", "piedra, papel o tijera", "lucha", "ánimo"],
+      "en": ["strength", "resolve", "power", "rock", "rock paper scissors", "fight", "solidarity"]
+    }
+  },
+  "hand-love-you": {
+    "label": { "es": "Te quiero en señas", "en": "I love you sign", "pt": "Sinal de eu te amo", "fr": "Signe je t’aime", "de": "Ich-liebe-dich-Zeichen", "it": "Segno ti amo", "ja": "アイラブユーのハンドサイン", "zh": "我爱你手势", "ko": "사랑해 수어", "ar": "إشارة أحبك" },
+    "keywords": {
+      "es": ["lengua de señas", "LSM", "amor", "reacción de amor", "rock", "cariño", "seña de mano"],
+      "en": ["sign language", "ASL", "love", "love reaction", "rock on", "affection", "handshape"]
+    }
+  },
+  "hand-sparkles": {
+    "label": { "es": "Manos limpias", "en": "Clean hands", "pt": "Mãos limpas", "fr": "Mains propres", "de": "Saubere Hände", "it": "Mani pulite", "ja": "清潔な手", "zh": "清洁双手", "ko": "깨끗한 손", "ar": "أيدٍ نظيفة" },
+    "keywords": {
+      "es": ["desinfectado", "higiene", "gel antibacterial", "sanitizado", "toque mágico", "limpieza", "impecable"],
+      "en": ["sanitized", "hygiene", "hand sanitizer", "disinfected", "magic touch", "spotless", "sparkling"]
+    }
+  },
+  "hand-point-up": {
+    "label": { "es": "Señalar hacia arriba", "en": "Point up", "pt": "Apontar para cima", "fr": "Pointer vers le haut", "de": "Nach oben zeigen", "it": "Indica in alto", "ja": "上を指す", "zh": "指向上方", "ko": "위 가리키기", "ar": "الإشارة إلى الأعلى" },
+    "keywords": {
+      "es": ["arriba", "ver más arriba", "volver al inicio", "mira arriba", "lo de arriba", "encima", "dedo índice"],
+      "en": ["above", "see above", "back to top", "look up", "this one", "upward", "index finger"]
+    }
+  },
+  "hand-point-right": {
+    "label": { "es": "Señalar a la derecha", "en": "Point right", "pt": "Apontar para a direita", "fr": "Pointer à droite", "de": "Nach rechts zeigen", "it": "Indica a destra", "ja": "右を指す", "zh": "指向右边", "ko": "오른쪽 가리키기", "ar": "الإشارة إلى اليمين" },
+    "keywords": {
+      "es": ["mira aquí", "siguiente", "por aquí", "dirección", "indicar", "continuar", "dedo índice"],
+      "en": ["look here", "next", "this way", "direction", "indicate", "continue", "index finger"]
+    }
+  },
+  "hand-point-down": {
+    "label": { "es": "Señalar hacia abajo", "en": "Point down", "pt": "Apontar para baixo", "fr": "Pointer vers le bas", "de": "Nach unten zeigen", "it": "Indica in basso", "ja": "下を指す", "zh": "指向下方", "ko": "아래 가리키기", "ar": "الإشارة إلى الأسفل" },
+    "keywords": {
+      "es": ["abajo", "ver más abajo", "desplázate", "hay más", "aquí abajo", "debajo", "dedo índice"],
+      "en": ["below", "see below", "scroll for more", "more below", "down here", "underneath", "index finger"]
+    }
+  },
+  "hand-point-left": {
+    "label": { "es": "Señalar a la izquierda", "en": "Point left", "pt": "Apontar para a esquerda", "fr": "Pointer à gauche", "de": "Nach links zeigen", "it": "Indica a sinistra", "ja": "左を指す", "zh": "指向左边", "ko": "왼쪽 가리키기", "ar": "الإشارة إلى اليسار" },
+    "keywords": {
+      "es": ["regresar", "anterior", "por allá", "dirección", "indicar", "atrás", "dedo índice"],
+      "en": ["back", "previous", "over there", "direction", "indicate", "that way", "index finger"]
+    }
+  },
+  "hand-give": {
+    "label": { "es": "Dar", "en": "Give", "pt": "Dar", "fr": "Donner", "de": "Geben", "it": "Dare", "ja": "渡す", "zh": "给予", "ko": "건네기", "ar": "إعطاء" },
+    "keywords": {
+      "es": ["enviar", "entregar", "repartir", "pagarle a alguien", "donar", "ofrecer", "compartir"],
+      "en": ["send", "hand over", "hand out", "pay someone", "donate", "offer", "share"]
+    }
+  },
+  "hand-receive": {
+    "label": { "es": "Recibir en la mano", "en": "Receive in hand", "pt": "Receber na mão", "fr": "Recevoir en main", "de": "Entgegennehmen", "it": "Ricevere in mano", "ja": "手で受け取る", "zh": "伸手接收", "ko": "손으로 받기", "ar": "استلام باليد" },
+    "keywords": {
+      "es": ["solicitar", "cobrar", "recolectar", "que te paguen", "pedir", "recoger", "obtener"],
+      "en": ["request", "collect", "get paid", "take", "ask for", "pick up", "obtain"]
+    }
+  },
+  "hand-sprout": {
+    "label": { "es": "Cultivar el crecimiento", "en": "Nurture growth", "pt": "Cultivar o crescimento", "fr": "Favoriser la croissance", "de": "Wachstum fördern", "it": "Coltivare la crescita", "ja": "成長を育む", "zh": "培育成长", "ko": "성장 육성", "ar": "رعاية النمو" },
+    "keywords": {
+      "es": ["sustentabilidad", "invertir", "iniciativa verde", "brote", "medio ambiente", "desarrollo", "ecológico"],
+      "en": ["sustainability", "invest in growth", "green initiative", "seedling", "environment", "development", "eco"]
+    }
+  },
+  "hand-lightbulb": {
+    "label": { "es": "Compartir una idea", "en": "Share an idea", "pt": "Compartilhar uma ideia", "fr": "Partager une idée", "de": "Idee teilen", "it": "Condividi un’idea", "ja": "アイデアを共有", "zh": "分享想法", "ko": "아이디어 공유", "ar": "مشاركة فكرة" },
+    "keywords": {
+      "es": ["buzón de sugerencias", "aportar", "proponer", "sugerencia", "lluvia de ideas", "innovación", "retroalimentación"],
+      "en": ["suggestion box", "contribute", "propose", "suggestion", "brainstorm", "innovation", "feedback"]
+    }
+  },
+  "hand-gift": {
+    "label": { "es": "Dar un regalo", "en": "Give a gift", "pt": "Dar um presente", "fr": "Offrir un cadeau", "de": "Geschenk überreichen", "it": "Fare un regalo", "ja": "プレゼントを贈る", "zh": "送礼", "ko": "선물하기", "ar": "تقديم هدية" },
+    "keywords": {
+      "es": ["beneficios", "obsequio", "sorteo", "regalar", "detalle", "recompensa", "premio"],
+      "en": ["perks", "gifting", "giveaway", "present", "reward", "bonus", "treat"]
+    }
+  },
+  "hand-person": {
+    "label": { "es": "Cuidar a las personas", "en": "Care for people", "pt": "Cuidar das pessoas", "fr": "Prendre soin des personnes", "de": "Fürsorge für Menschen", "it": "Prendersi cura delle persone", "ja": "人を大切にする", "zh": "关爱他人", "ko": "사람을 돌보기", "ar": "رعاية الأشخاص" },
+    "keywords": {
+      "es": ["cuidados", "atención al cliente", "bienestar laboral", "cuidador", "apoyo", "recursos humanos", "empatía"],
+      "en": ["caregiving", "customer care", "employee wellbeing", "caregiver", "support", "human resources", "empathy"]
+    }
+  },
+  "hand-shield": {
+    "label": { "es": "Garantía", "en": "Warranty", "pt": "Garantia", "fr": "Garantie", "de": "Garantie", "it": "Garanzia", "ja": "保証", "zh": "保修", "ko": "보증", "ar": "الضمان" },
+    "keywords": {
+      "es": ["póliza", "plan de protección", "cobertura", "respaldo", "seguro", "devolución", "servicio técnico"],
+      "en": ["guarantee", "protection plan", "coverage", "assurance", "insurance", "returns", "repair service"]
+    }
+  },
+  "hand-clock": {
+    "label": { "es": "Donar tiempo", "en": "Give time", "pt": "Doar tempo", "fr": "Donner de son temps", "de": "Zeit schenken", "it": "Donare tempo", "ja": "時間を提供する", "zh": "奉献时间", "ko": "시간 기부", "ar": "التبرع بالوقت" },
+    "keywords": {
+      "es": ["horas de voluntariado", "tiempo donado", "voluntariado", "tiempo otorgado", "dedicación", "servicio social", "días libres"],
+      "en": ["volunteer hours", "donated time", "volunteering", "time granted", "dedication", "community service", "time off"]
+    }
+  },
+  "hand-recycle": {
+    "label": { "es": "Devolver para reciclar", "en": "Take back to recycle", "pt": "Devolver para reciclar", "fr": "Reprise pour recyclage", "de": "Rücknahme zum Recycling", "it": "Ritiro per il riciclo", "ja": "回収してリサイクル", "zh": "回收再利用", "ko": "회수 후 재활용", "ar": "الاسترجاع لإعادة التدوير" },
+    "keywords": {
+      "es": ["programa de reciclaje", "desecho responsable", "centro de acopio", "economía circular", "residuos electrónicos", "residuos", "sustentable"],
+      "en": ["recycling program", "responsible disposal", "drop-off point", "circular economy", "e-waste", "waste", "sustainable"]
+    }
+  },
+  "hand-smartphone": {
+    "label": { "es": "Celular en mano", "en": "Phone in hand", "pt": "Celular na mão", "fr": "Téléphone en main", "de": "Handy in der Hand", "it": "Telefono in mano", "ja": "スマホを手に持つ", "zh": "手持手机", "ko": "손에 든 휴대폰", "ar": "هاتف في اليد" },
+    "keywords": {
+      "es": ["uso móvil", "pedir por celular", "primero móvil", "smartphone", "app", "teléfono", "en movimiento"],
+      "en": ["mobile use", "order by phone", "mobile-first", "smartphone", "app", "on the go", "handheld"]
+    }
+  },
+  "thumbs-up-down": {
+    "label": { "es": "Me gusta o no me gusta", "en": "Like or dislike", "pt": "Curtir ou não curtir", "fr": "J’aime ou je n’aime pas", "de": "Gefällt mir oder nicht", "it": "Mi piace o non mi piace", "ja": "いいね・よくないね", "zh": "赞或踩", "ko": "좋아요 또는 싫어요", "ar": "إعجاب أو عدم إعجاب" },
+    "keywords": {
+      "es": ["calificar", "opinión", "comentarios", "¿te fue útil?", "valoración", "encuesta rápida", "votar"],
+      "en": ["rate", "feedback", "was this helpful", "rating", "quick survey", "vote", "thumbs"]
+    }
+  },
+  "thumbs-up-double": {
+    "label": { "es": "Dos pulgares arriba", "en": "Two thumbs up", "pt": "Dois polegares para cima", "fr": "Deux pouces levés", "de": "Zwei Daumen hoch", "it": "Due pollici in su", "ja": "両手でいいね", "zh": "双手点赞", "ko": "엄지 두 개", "ar": "إعجاب مضاعف" },
+    "keywords": {
+      "es": ["me encanta", "muy recomendado", "excelente", "calificación máxima", "lo máximo", "súper", "aprobado"],
+      "en": ["love it", "highly recommended", "excellent", "top rating", "awesome", "five stars", "rave review"]
+    }
+  },
+  "hands-celebrate": {
+    "label": { "es": "Celebrar", "en": "Celebrate", "pt": "Comemorar", "fr": "Célébrer", "de": "Jubeln", "it": "Festeggiare", "ja": "バンザイ", "zh": "欢呼", "ko": "만세", "ar": "رفع اليدين فرحًا" },
+    "keywords": {
+      "es": ["hurra", "festejar", "alabanza", "manos en alto", "logro", "aleluya", "qué bien"],
+      "en": ["hooray", "praise", "raised hands", "woohoo", "achievement", "hallelujah", "cheer"]
+    }
+  }
+}

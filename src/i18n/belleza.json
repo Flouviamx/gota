@@ -1,0 +1,555 @@
+{
+  "lipstick": {
+    "label": { "es": "Labial", "en": "Lipstick", "pt": "Batom", "fr": "Rouge à lèvres", "de": "Lippenstift", "it": "Rossetto", "ja": "口紅", "zh": "口红", "ko": "립스틱", "ar": "أحمر شفاه" },
+    "keywords": {
+      "es": ["bilé", "pintura de labios", "maquillaje de labios", "tono", "labios rojos", "cosméticos", "selector de color"],
+      "en": ["lip color", "lip makeup", "shade", "red lips", "cosmetics", "makeup", "shade picker"]
+    }
+  },
+  "lip-balm": {
+    "label": { "es": "Bálsamo labial", "en": "Lip balm", "pt": "Hidratante labial", "fr": "Baume à lèvres", "de": "Lippenpflege", "it": "Balsamo labbra", "ja": "リップクリーム", "zh": "润唇膏", "ko": "립밤", "ar": "مرطب شفاه" },
+    "keywords": {
+      "es": ["manteca de cacao", "humectante de labios", "labios resecos", "labios partidos", "cuidado de labios", "protector solar labial", "chapstick"],
+      "en": ["chapstick", "lip care", "chapped lips", "dry lips", "lip SPF", "moisturizer", "lip butter"]
+    }
+  },
+  "mascara": {
+    "label": { "es": "Rímel", "en": "Mascara", "pt": "Máscara de cílios", "fr": "Mascara", "de": "Wimperntusche", "it": "Mascara", "ja": "マスカラ", "zh": "睫毛膏", "ko": "마스카라", "ar": "ماسكارا" },
+    "keywords": {
+      "es": ["máscara de pestañas", "pestañas", "maquillaje de ojos", "volumen de pestañas", "alargar pestañas", "a prueba de agua", "cosméticos"],
+      "en": ["lashes", "eye makeup", "lash volume", "lengthening", "waterproof", "lash wand", "cosmetics"]
+    }
+  },
+  "eyeliner": {
+    "label": { "es": "Delineador", "en": "Eyeliner", "pt": "Delineador", "fr": "Eye-liner", "de": "Eyeliner", "it": "Eyeliner", "ja": "アイライナー", "zh": "眼线笔", "ko": "아이라이너", "ar": "محدد عيون" },
+    "keywords": {
+      "es": ["kohl", "lápiz de ojos", "delineado de gato", "delineado alado", "maquillaje de ojos", "línea de agua", "cosméticos"],
+      "en": ["kohl", "eye pencil", "winged liner", "cat eye", "eye makeup", "waterline", "cosmetics"]
+    }
+  },
+  "brow-pencil": {
+    "label": { "es": "Lápiz de cejas", "en": "Brow pencil", "pt": "Lápis de sobrancelha", "fr": "Crayon à sourcils", "de": "Augenbrauenstift", "it": "Matita per sopracciglia", "ja": "アイブロウペンシル", "zh": "眉笔", "ko": "아이브로우 펜슬", "ar": "قلم حواجب" },
+    "keywords": {
+      "es": ["rellenar cejas", "diseño de cejas", "microblading", "maquillaje de cejas", "definir cejas", "productos para cejas", "cosméticos"],
+      "en": ["eyebrows", "fill in brows", "brow shaping", "microblading", "brow makeup", "brow definition", "brow products"]
+    }
+  },
+  "eyebrow": {
+    "label": { "es": "Ceja", "en": "Eyebrow", "pt": "Sobrancelha", "fr": "Sourcil", "de": "Augenbraue", "it": "Sopracciglio", "ja": "眉毛", "zh": "眉毛", "ko": "눈썹", "ar": "حاجب" },
+    "keywords": {
+      "es": ["diseño de cejas", "depilación de cejas", "laminado de cejas", "planchado de cejas", "tinte de cejas", "depilación con hilo", "servicio de cejas"],
+      "en": ["brow shaping", "brow tint", "brow lamination", "threading", "brow wax", "brow bar", "brow services"]
+    }
+  },
+  "eyeshadow-palette": {
+    "label": { "es": "Paleta de sombras", "en": "Eyeshadow palette", "pt": "Paleta de sombras", "fr": "Palette de fards à paupières", "de": "Lidschattenpalette", "it": "Palette di ombretti", "ja": "アイシャドウパレット", "zh": "眼影盘", "ko": "아이섀도 팔레트", "ar": "لوحة ظلال العيون" },
+    "keywords": {
+      "es": ["sombras de ojos", "maquillaje de ojos", "tonos", "gama de colores", "colección", "ojos ahumados", "cosméticos"],
+      "en": ["eye shadow", "eye makeup", "shades", "color range", "collection", "smoky eye", "cosmetics"]
+    }
+  },
+  "foundation": {
+    "label": { "es": "Base de maquillaje", "en": "Foundation", "pt": "Base", "fr": "Fond de teint", "de": "Foundation", "it": "Fondotinta", "ja": "ファンデーション", "zh": "粉底液", "ko": "파운데이션", "ar": "كريم أساس" },
+    "keywords": {
+      "es": ["base líquida", "maquillaje de rostro", "tono de piel", "igualar el tono", "cobertura", "cutis", "cosméticos"],
+      "en": ["liquid foundation", "complexion", "skin tone", "shade match", "coverage", "base makeup", "cosmetics"]
+    }
+  },
+  "powder-compact": {
+    "label": { "es": "Polvo compacto", "en": "Pressed powder", "pt": "Pó compacto", "fr": "Poudre compacte", "de": "Kompaktpuder", "it": "Cipria compatta", "ja": "コンパクトパウダー", "zh": "粉饼", "ko": "파우더 팩트", "ar": "بودرة مضغوطة" },
+    "keywords": {
+      "es": ["polvera", "polvo", "bronceador", "retoque", "matificar", "espejo de bolsillo", "maquillaje"],
+      "en": ["compact", "powder", "bronzer", "touch-up", "mattify", "pocket mirror", "makeup on the go"]
+    }
+  },
+  "makeup-brush": {
+    "label": { "es": "Brocha de maquillaje", "en": "Makeup brush", "pt": "Pincel de maquiagem", "fr": "Pinceau de maquillage", "de": "Make-up-Pinsel", "it": "Pennello da trucco", "ja": "メイクブラシ", "zh": "化妆刷", "ko": "메이크업 브러시", "ar": "فرشاة مكياج" },
+    "keywords": {
+      "es": ["maquillar", "aplicar maquillaje", "brochas", "pinceles", "maquillista", "herramientas de maquillaje", "belleza"],
+      "en": ["apply makeup", "brushes", "makeup tools", "makeup artist", "artistry", "powder brush", "beauty"]
+    }
+  },
+  "blush": {
+    "label": { "es": "Rubor", "en": "Blush", "pt": "Blush", "fr": "Blush", "de": "Rouge", "it": "Fard", "ja": "チーク", "zh": "腮红", "ko": "블러셔", "ar": "أحمر خدود" },
+    "keywords": {
+      "es": ["chapas", "color en mejillas", "bronceador", "contorno", "iluminador", "mejillas", "maquillaje"],
+      "en": ["cheek color", "rouge", "bronzer", "contour", "highlighter", "cheeks", "makeup"]
+    }
+  },
+  "makeup-sponge": {
+    "label": { "es": "Esponja de maquillaje", "en": "Makeup sponge", "pt": "Esponja de maquiagem", "fr": "Éponge de maquillage", "de": "Make-up-Schwamm", "it": "Spugnetta per trucco", "ja": "メイクスポンジ", "zh": "美妆蛋", "ko": "메이크업 스펀지", "ar": "إسفنجة مكياج" },
+    "keywords": {
+      "es": ["beauty blender", "difuminar", "aplicar base", "esponja de gota", "herramientas de maquillaje", "acabado natural", "maquillar"],
+      "en": ["beauty blender", "blend", "apply foundation", "blending sponge", "makeup tools", "airbrushed finish", "makeup egg"]
+    }
+  },
+  "eyelash-curler": {
+    "label": { "es": "Enchinador de pestañas", "en": "Eyelash curler", "pt": "Curvador de cílios", "fr": "Recourbe-cils", "de": "Wimpernzange", "it": "Piegaciglia", "ja": "ビューラー", "zh": "睫毛夹", "ko": "뷰러", "ar": "أداة تجعيد الرموش" },
+    "keywords": {
+      "es": ["rizador de pestañas", "enchinar pestañas", "curvar pestañas", "pestañas", "maquillaje de ojos", "herramientas de maquillaje", "mirada abierta"],
+      "en": ["lash curler", "curl lashes", "lashes", "eye makeup", "makeup tools", "lash lift", "beauty tools"]
+    }
+  },
+  "false-eyelashes": {
+    "label": { "es": "Pestañas postizas", "en": "False eyelashes", "pt": "Cílios postiços", "fr": "Faux cils", "de": "Künstliche Wimpern", "it": "Ciglia finte", "ja": "つけまつげ", "zh": "假睫毛", "ko": "인조 속눈썹", "ar": "رموش صناعية" },
+    "keywords": {
+      "es": ["extensiones de pestañas", "pestañas pelo a pelo", "volumen ruso", "tiras de pestañas", "pegamento de pestañas", "lashista", "servicio de pestañas"],
+      "en": ["lash extensions", "strip lashes", "individual lashes", "volume lashes", "lash glue", "lash tech", "lash services"]
+    }
+  },
+  "cosmetics": {
+    "label": { "es": "Cosméticos", "en": "Cosmetics", "pt": "Cosméticos", "fr": "Cosmétiques", "de": "Kosmetik", "it": "Cosmetici", "ja": "化粧品", "zh": "化妆品", "ko": "화장품", "ar": "مستحضرات تجميل" },
+    "keywords": {
+      "es": ["productos de belleza", "maquillaje", "belleza", "departamento de belleza", "perfumería", "cuidado personal", "tienda de belleza"],
+      "en": ["beauty products", "makeup", "beauty", "beauty department", "beauty aisle", "personal care", "beauty store"]
+    }
+  },
+  "makeup-mirror": {
+    "label": { "es": "Espejo de tocador", "en": "Vanity mirror", "pt": "Espelho de maquiagem", "fr": "Miroir de maquillage", "de": "Kosmetikspiegel", "it": "Specchio da trucco", "ja": "メイクミラー", "zh": "化妆镜", "ko": "화장 거울", "ar": "مرآة مكياج" },
+    "keywords": {
+      "es": ["espejo de maquillaje", "espejo de aumento", "tocador", "estación de maquillaje", "espejo con base", "arreglarse", "maquillarse"],
+      "en": ["makeup mirror", "magnifying mirror", "vanity", "makeup station", "tabletop mirror", "get ready", "dressing table"]
+    }
+  },
+  "hand-mirror": {
+    "label": { "es": "Espejo de mano", "en": "Hand mirror", "pt": "Espelho de mão", "fr": "Miroir à main", "de": "Handspiegel", "it": "Specchio a mano", "ja": "手鏡", "zh": "手持镜", "ko": "손거울", "ar": "مرآة يد" },
+    "keywords": {
+      "es": ["reflejo", "verse al espejo", "resultado final", "antes y después", "look", "arreglarse", "belleza"],
+      "en": ["reflection", "check your look", "the reveal", "final result", "before and after", "vanity", "beauty"]
+    }
+  },
+  "nail-polish": {
+    "label": { "es": "Esmalte de uñas", "en": "Nail polish", "pt": "Esmalte", "fr": "Vernis à ongles", "de": "Nagellack", "it": "Smalto per unghie", "ja": "マニキュア", "zh": "指甲油", "ko": "매니큐어", "ar": "طلاء أظافر" },
+    "keywords": {
+      "es": ["barniz de uñas", "color de uñas", "pintar uñas", "manicure", "salón de uñas", "esmalte en gel", "uñas"],
+      "en": ["nail varnish", "nail color", "paint nails", "manicure", "nail salon", "gel polish", "nails"]
+    }
+  },
+  "nail-file": {
+    "label": { "es": "Lima de uñas", "en": "Nail file", "pt": "Lixa de unha", "fr": "Lime à ongles", "de": "Nagelfeile", "it": "Lima per unghie", "ja": "爪やすり", "zh": "指甲锉", "ko": "손톱 줄", "ar": "مبرد أظافر" },
+    "keywords": {
+      "es": ["limar", "dar forma a las uñas", "cuidado de uñas", "manicure", "pulidor", "uñas quebradizas", "arreglo de uñas"],
+      "en": ["emery board", "file nails", "nail shaping", "nail care", "manicure", "buffer", "nail grooming"]
+    }
+  },
+  "nail-clipper": {
+    "label": { "es": "Cortaúñas", "en": "Nail clipper", "pt": "Cortador de unha", "fr": "Coupe-ongles", "de": "Nagelknipser", "it": "Tagliaunghie", "ja": "爪切り", "zh": "指甲刀", "ko": "손톱깎이", "ar": "قلامة أظافر" },
+    "keywords": {
+      "es": ["cortar uñas", "uñas", "uñas de los pies", "cuidado de uñas", "arreglo personal", "aseo personal", "higiene"],
+      "en": ["clip nails", "trim nails", "nails", "toenails", "nail care", "grooming", "hygiene"]
+    }
+  },
+  "manicure": {
+    "label": { "es": "Manicure", "en": "Manicure", "pt": "Manicure", "fr": "Manucure", "de": "Maniküre", "it": "Manicure", "ja": "ハンドネイル", "zh": "美甲", "ko": "네일 케어", "ar": "مانيكير" },
+    "keywords": {
+      "es": ["uñas", "salón de uñas", "cita de uñas", "uñas de gel", "uñas acrílicas", "arreglo de manos", "pintar uñas"],
+      "en": ["nails", "nail salon", "nail appointment", "gel nails", "acrylic nails", "hand care", "nail art"]
+    }
+  },
+  "pedicure": {
+    "label": { "es": "Pedicure", "en": "Pedicure", "pt": "Pedicure", "fr": "Pédicure", "de": "Pediküre", "it": "Pedicure", "ja": "フットネイル", "zh": "足部美甲", "ko": "페디큐어", "ar": "باديكير" },
+    "keywords": {
+      "es": ["pies", "uñas de los pies", "cuidado de pies", "spa de pies", "salón de uñas", "cita de uñas", "talones"],
+      "en": ["feet", "toenails", "foot care", "foot spa", "foot soak", "nail salon", "nail appointment"]
+    }
+  },
+  "nail-lamp": {
+    "label": { "es": "Lámpara de uñas", "en": "Gel nail lamp", "pt": "Cabine para unhas", "fr": "Lampe UV pour ongles", "de": "UV-Nagellampe", "it": "Lampada per unghie", "ja": "ジェルネイルライト", "zh": "美甲灯", "ko": "젤 네일 램프", "ar": "مصباح تجفيف الأظافر" },
+    "keywords": {
+      "es": ["lámpara UV", "lámpara LED", "uñas de gel", "secar esmalte", "esmalte semipermanente", "curado de gel", "equipo de salón"],
+      "en": ["UV lamp", "LED lamp", "gel nails", "shellac", "cure gel", "dry polish", "salon equipment"]
+    }
+  },
+  "perfume": {
+    "label": { "es": "Perfume", "en": "Perfume", "pt": "Perfume", "fr": "Parfum", "de": "Parfüm", "it": "Profumo", "ja": "香水", "zh": "香水", "ko": "향수", "ar": "عطر" },
+    "keywords": {
+      "es": ["fragancia", "loción", "colonia", "aroma", "perfumería", "eau de parfum", "regalo"],
+      "en": ["fragrance", "cologne", "scent", "eau de parfum", "perfumery", "atomizer", "gift"]
+    }
+  },
+  "cream-jar": {
+    "label": { "es": "Frasco de crema", "en": "Cream jar", "pt": "Pote de creme", "fr": "Pot de crème", "de": "Cremetiegel", "it": "Vasetto di crema", "ja": "クリーム", "zh": "面霜", "ko": "크림", "ar": "علبة كريم" },
+    "keywords": {
+      "es": ["humectante", "crema facial", "hidratante", "cuidado de la piel", "crema de noche", "manteca corporal", "skincare"],
+      "en": ["moisturizer", "face cream", "hydration", "skincare", "night cream", "body butter", "lotion"]
+    }
+  },
+  "cream-tube": {
+    "label": { "es": "Tubo de crema", "en": "Cosmetic tube", "pt": "Bisnaga de creme", "fr": "Tube de crème", "de": "Cremetube", "it": "Tubetto di crema", "ja": "チューブ入りクリーム", "zh": "软管护肤品", "ko": "튜브형 크림", "ar": "أنبوب كريم" },
+    "keywords": {
+      "es": ["crema de manos", "limpiador facial", "loción", "gel", "crema corporal", "cuidado de la piel", "tamaño de viaje"],
+      "en": ["hand cream", "cleanser", "lotion", "face wash", "body cream", "skincare", "squeeze tube"]
+    }
+  },
+  "serum": {
+    "label": { "es": "Sérum", "en": "Serum", "pt": "Sérum", "fr": "Sérum", "de": "Serum", "it": "Siero", "ja": "美容液", "zh": "精华液", "ko": "세럼", "ar": "سيروم" },
+    "keywords": {
+      "es": ["aceite facial", "gotero", "activos", "ácido hialurónico", "vitamina C", "cuidado de la piel", "rutina de skincare"],
+      "en": ["face oil", "dropper bottle", "actives", "hyaluronic acid", "vitamin C", "skincare", "skincare routine"]
+    }
+  },
+  "sunscreen": {
+    "label": { "es": "Protector solar", "en": "Sunscreen", "pt": "Protetor solar", "fr": "Crème solaire", "de": "Sonnencreme", "it": "Crema solare", "ja": "日焼け止め", "zh": "防晒霜", "ko": "선크림", "ar": "واقي الشمس" },
+    "keywords": {
+      "es": ["bloqueador", "FPS", "protección solar", "rayos UV", "playa", "quemaduras de sol", "cuidado de la piel"],
+      "en": ["sunblock", "SPF", "sun protection", "UV rays", "beach", "sunburn", "skincare"]
+    }
+  },
+  "sunscreen-clock": {
+    "label": { "es": "Reaplicar protector solar", "en": "Reapply sunscreen", "pt": "Reaplicar protetor solar", "fr": "Réappliquer la crème solaire", "de": "Sonnenschutz erneuern", "it": "Riapplicare la crema solare", "ja": "日焼け止めの塗り直し", "zh": "补涂防晒", "ko": "선크림 덧바르기", "ar": "إعادة وضع واقي الشمس" },
+    "keywords": {
+      "es": ["recordatorio", "cada dos horas", "bloqueador", "FPS", "temporizador", "protección solar", "exposición al sol"],
+      "en": ["reminder", "every two hours", "sunblock", "SPF", "timer", "sun protection", "sun exposure"]
+    }
+  },
+  "sheet-mask": {
+    "label": { "es": "Mascarilla de tela", "en": "Sheet mask", "pt": "Máscara de tecido", "fr": "Masque en tissu", "de": "Tuchmaske", "it": "Maschera in tessuto", "ja": "シートマスク", "zh": "面膜", "ko": "시트 마스크", "ar": "قناع ورقي للوجه" },
+    "keywords": {
+      "es": ["facial", "tratamiento facial", "mascarilla facial", "hidratación", "skincare coreano", "spa", "cuidado de la piel"],
+      "en": ["facial", "face mask", "facial treatment", "hydration", "K-beauty", "spa", "skincare"]
+    }
+  },
+  "face-roller": {
+    "label": { "es": "Rodillo facial", "en": "Face roller", "pt": "Rolo facial", "fr": "Rouleau visage", "de": "Gesichtsroller", "it": "Rullo viso", "ja": "美顔ローラー", "zh": "美容滚轮", "ko": "페이스 롤러", "ar": "أسطوانة تدليك الوجه" },
+    "keywords": {
+      "es": ["rodillo de jade", "cuarzo rosa", "masaje facial", "desinflamar", "gua sha", "rodillo de hielo", "herramientas de skincare"],
+      "en": ["jade roller", "rose quartz", "facial massage", "de-puff", "gua sha", "ice roller", "skincare tools"]
+    }
+  },
+  "cotton-pad": {
+    "label": { "es": "Disco de algodón", "en": "Cotton pad", "pt": "Disco de algodão", "fr": "Coton démaquillant", "de": "Wattepad", "it": "Dischetto di cotone", "ja": "化粧用コットン", "zh": "化妆棉", "ko": "화장솜", "ar": "قرص قطن" },
+    "keywords": {
+      "es": ["desmaquillar", "tónico", "agua micelar", "algodón", "limpieza facial", "quitaesmalte", "cuidado de la piel"],
+      "en": ["makeup remover", "toner", "micellar water", "cotton round", "cleansing", "nail polish remover", "skincare"]
+    }
+  },
+  "face-retouch": {
+    "label": { "es": "Retoque facial", "en": "Face retouch", "pt": "Retoque facial", "fr": "Retouche du visage", "de": "Gesichtsretusche", "it": "Ritocco viso", "ja": "美肌補正", "zh": "美颜", "ko": "얼굴 보정", "ar": "تنقيح الوجه" },
+    "keywords": {
+      "es": ["piel radiante", "filtro de belleza", "glow", "suavizar la piel", "piel perfecta", "resultados del facial", "embellecer foto"],
+      "en": ["glowing skin", "beauty filter", "glow", "smooth skin", "flawless skin", "facial results", "photo touch-up"]
+    }
+  },
+  "sachet": {
+    "label": { "es": "Sobre de muestra", "en": "Sample sachet", "pt": "Sachê de amostra", "fr": "Sachet échantillon", "de": "Probepäckchen", "it": "Bustina campione", "ja": "試供品パウチ", "zh": "试用小样", "ko": "샘플 파우치", "ar": "كيس عينة" },
+    "keywords": {
+      "es": ["muestra gratis", "sobrecito", "monodosis", "tamaño de viaje", "prueba", "obsequio", "regalo con tu compra"],
+      "en": ["free sample", "packet", "single use", "travel size", "trial", "freebie", "gift with purchase"]
+    }
+  },
+  "comb": {
+    "label": { "es": "Peine", "en": "Comb", "pt": "Pente", "fr": "Peigne", "de": "Kamm", "it": "Pettine", "ja": "くし", "zh": "梳子", "ko": "빗", "ar": "مشط" },
+    "keywords": {
+      "es": ["peinar", "cabello", "peinado", "arreglo personal", "estilismo", "estética", "barbería"],
+      "en": ["combing", "hair", "hairstyle", "grooming", "styling", "haircare", "barber"]
+    }
+  },
+  "hairbrush": {
+    "label": { "es": "Cepillo para el cabello", "en": "Hairbrush", "pt": "Escova de cabelo", "fr": "Brosse à cheveux", "de": "Haarbürste", "it": "Spazzola per capelli", "ja": "ヘアブラシ", "zh": "发刷", "ko": "헤어브러시", "ar": "فرشاة شعر" },
+    "keywords": {
+      "es": ["cepillar", "peinar", "desenredar", "cabello", "peinado", "cuidado del cabello", "estilismo"],
+      "en": ["brushing", "detangle", "hair", "hairstyle", "haircare", "styling", "paddle brush"]
+    }
+  },
+  "hair-pick": {
+    "label": { "es": "Peine afro", "en": "Hair pick", "pt": "Pente garfo", "fr": "Peigne afro", "de": "Afrokamm", "it": "Pettine afro", "ja": "アフロコーム", "zh": "叉梳", "ko": "헤어 픽", "ar": "مشط أفرو" },
+    "keywords": {
+      "es": ["cabello rizado", "pelo chino", "rizos", "cabello texturizado", "volumen", "esponjar", "peine de dientes anchos"],
+      "en": ["afro pick", "curly hair", "coily hair", "textured hair", "natural hair", "volume", "wide-tooth comb"]
+    }
+  },
+  "hair-dryer": {
+    "label": { "es": "Secadora de cabello", "en": "Hair dryer", "pt": "Secador de cabelo", "fr": "Sèche-cheveux", "de": "Föhn", "it": "Asciugacapelli", "ja": "ドライヤー", "zh": "吹风机", "ko": "헤어드라이어", "ar": "مجفف شعر" },
+    "keywords": {
+      "es": ["secar el pelo", "brushing", "peinado", "estilismo", "aire caliente", "amenidades de hotel", "salón de belleza"],
+      "en": ["blow dry", "blowout", "hairstyle", "styling", "hot air", "hotel amenity", "hair salon"]
+    }
+  },
+  "hair-straightener": {
+    "label": { "es": "Plancha para el cabello", "en": "Hair straightener", "pt": "Chapinha", "fr": "Lisseur", "de": "Glätteisen", "it": "Piastra per capelli", "ja": "ストレートアイロン", "zh": "直发夹板", "ko": "판고데기", "ar": "مكواة فرد الشعر" },
+    "keywords": {
+      "es": ["alaciar", "pelo lacio", "alisado", "cabello sin frizz", "estilismo", "herramientas de peinado", "aparatos de calor"],
+      "en": ["flat iron", "straighten", "sleek hair", "straight hair", "frizz control", "styling tools", "hot tools"]
+    }
+  },
+  "curling-iron": {
+    "label": { "es": "Tenaza para rizar", "en": "Curling iron", "pt": "Modelador de cachos", "fr": "Fer à boucler", "de": "Lockenstab", "it": "Arricciacapelli", "ja": "カールアイロン", "zh": "卷发棒", "ko": "봉고데기", "ar": "مكواة تجعيد الشعر" },
+    "keywords": {
+      "es": ["rizador", "rizos", "ondas", "chinos", "ondulado", "herramientas de peinado", "estilismo"],
+      "en": ["curling wand", "curls", "waves", "beach waves", "barrel", "styling tools", "hot tools"]
+    }
+  },
+  "bobby-pin": {
+    "label": { "es": "Pasador", "en": "Bobby pin", "pt": "Grampo de cabelo", "fr": "Pince à cheveux", "de": "Haarklemme", "it": "Forcina", "ja": "ヘアピン", "zh": "一字夹", "ko": "실핀", "ar": "دبوس شعر" },
+    "keywords": {
+      "es": ["invisible", "horquilla", "pinza", "sujetar el cabello", "accesorios para el cabello", "recogido", "chongo"],
+      "en": ["hairpin", "hair grip", "kirby grip", "pin hair", "hair accessories", "updo", "bun"]
+    }
+  },
+  "scrunchie": {
+    "label": { "es": "Liga para el cabello", "en": "Scrunchie", "pt": "Xuxinha", "fr": "Chouchou", "de": "Haargummi", "it": "Elastico per capelli", "ja": "シュシュ", "zh": "发圈", "ko": "곱창 머리끈", "ar": "ربطة شعر" },
+    "keywords": {
+      "es": ["scrunchie", "dona para el cabello", "cola de caballo", "coleta", "amarrar el cabello", "accesorios para el cabello", "chongo"],
+      "en": ["hair tie", "elastic", "ponytail", "tie back hair", "hair accessories", "hair band", "bun"]
+    }
+  },
+  "hair-dye": {
+    "label": { "es": "Tinte para el cabello", "en": "Hair dye", "pt": "Tintura de cabelo", "fr": "Coloration", "de": "Haarfarbe", "it": "Tinta per capelli", "ja": "ヘアカラー", "zh": "染发剂", "ko": "염색약", "ar": "صبغة شعر" },
+    "keywords": {
+      "es": ["color de cabello", "teñir", "pintarse el pelo", "rayitos", "mechas", "balayage", "decoloración"],
+      "en": ["hair color", "coloring", "highlights", "balayage", "bleach", "root touch-up", "colorist"]
+    }
+  },
+  "hair-dye-clock": {
+    "label": { "es": "Tiempo de reposo del tinte", "en": "Color processing time", "pt": "Tempo de pausa da tintura", "fr": "Temps de pose", "de": "Einwirkzeit", "it": "Tempo di posa", "ja": "カラーの放置時間", "zh": "染发计时", "ko": "염색 대기 시간", "ar": "مدة ترك الصبغة" },
+    "keywords": {
+      "es": ["temporizador", "tiempo de exposición", "dejar actuar", "tratamiento capilar", "minutos", "coloración", "salón de belleza"],
+      "en": ["timer", "development time", "leave on", "hair treatment", "minutes", "coloring", "hair salon"]
+    }
+  },
+  "shampoo": {
+    "label": { "es": "Shampoo", "en": "Shampoo", "pt": "Xampu", "fr": "Shampooing", "de": "Shampoo", "it": "Shampoo", "ja": "シャンプー", "zh": "洗发水", "ko": "샴푸", "ar": "شامبو" },
+    "keywords": {
+      "es": ["champú", "acondicionador", "lavar el cabello", "cuidado del cabello", "productos de baño", "amenidades de hotel", "regadera"],
+      "en": ["conditioner", "wash hair", "haircare", "bath products", "hotel amenity", "shower", "toiletries"]
+    }
+  },
+  "hair-braid": {
+    "label": { "es": "Trenza", "en": "Braid", "pt": "Trança", "fr": "Tresse", "de": "Zopf", "it": "Treccia", "ja": "三つ編み", "zh": "辫子", "ko": "땋은 머리", "ar": "ضفيرة" },
+    "keywords": {
+      "es": ["trenzar", "trenzas africanas", "trenzas pegadas", "box braids", "peinados protectores", "peinado", "cabello largo"],
+      "en": ["braiding", "plait", "box braids", "cornrows", "protective style", "hairstyle", "long hair"]
+    }
+  },
+  "hair-extensions": {
+    "label": { "es": "Extensiones de cabello", "en": "Hair extensions", "pt": "Mega hair", "fr": "Extensions capillaires", "de": "Haarverlängerung", "it": "Extension per capelli", "ja": "ヘアエクステ", "zh": "接发", "ko": "붙임머리", "ar": "وصلات شعر" },
+    "keywords": {
+      "es": ["extensiones de clip", "cortina", "tejido", "postizo", "cabello natural", "alargar el cabello", "volumen"],
+      "en": ["weave", "wefts", "clip-ins", "tape-ins", "hairpiece", "longer hair", "volume"]
+    }
+  },
+  "shower-cap": {
+    "label": { "es": "Gorro de baño", "en": "Shower cap", "pt": "Touca de banho", "fr": "Bonnet de douche", "de": "Duschhaube", "it": "Cuffia da doccia", "ja": "シャワーキャップ", "zh": "浴帽", "ko": "샤워캡", "ar": "قبعة استحمام" },
+    "keywords": {
+      "es": ["bonnet", "turbante de satín", "proteger el cabello", "cabello seco", "regadera", "amenidades de hotel", "baño"],
+      "en": ["bonnet", "satin bonnet", "protect hair", "keep hair dry", "shower", "hotel amenity", "bath"]
+    }
+  },
+  "wig": {
+    "label": { "es": "Peluca", "en": "Wig", "pt": "Peruca", "fr": "Perruque", "de": "Perücke", "it": "Parrucca", "ja": "ウィッグ", "zh": "假发", "ko": "가발", "ar": "شعر مستعار" },
+    "keywords": {
+      "es": ["postizo", "cabello sintético", "lace front", "caída del cabello", "alopecia", "cambio de look", "disfraz"],
+      "en": ["hairpiece", "synthetic hair", "lace front", "hair loss", "alopecia", "toupee", "new look"]
+    }
+  },
+  "razor": {
+    "label": { "es": "Rastrillo", "en": "Razor", "pt": "Aparelho de barbear", "fr": "Rasoir", "de": "Rasierer", "it": "Rasoio", "ja": "カミソリ", "zh": "手动剃须刀", "ko": "면도기", "ar": "شفرة حلاقة" },
+    "keywords": {
+      "es": ["rasurar", "afeitarse", "cuidado masculino", "cartuchos", "navajas", "depilar piernas", "suscripción"],
+      "en": ["shave", "shaving", "men's grooming", "cartridge", "blades", "leg shaving", "subscription"]
+    }
+  },
+  "straight-razor": {
+    "label": { "es": "Navaja de barbero", "en": "Straight razor", "pt": "Navalha", "fr": "Coupe-chou", "de": "Rasiermesser", "it": "Rasoio a mano libera", "ja": "西洋カミソリ", "zh": "折叠剃刀", "ko": "일자 면도칼", "ar": "موس حلاقة" },
+    "keywords": {
+      "es": ["rasurado clásico", "toalla caliente", "barbería", "perfilado", "delineado de barba", "afeitado al ras", "barbero"],
+      "en": ["cut-throat razor", "barbershop shave", "hot shave", "edge-up", "line-up", "classic shave", "barber"]
+    }
+  },
+  "electric-shaver": {
+    "label": { "es": "Rasuradora eléctrica", "en": "Electric shaver", "pt": "Barbeador elétrico", "fr": "Rasoir électrique", "de": "Elektrorasierer", "it": "Rasoio elettrico", "ja": "電気シェーバー", "zh": "电动剃须刀", "ko": "전기면도기", "ar": "ماكينة حلاقة كهربائية" },
+    "keywords": {
+      "es": ["rasurar", "afeitarse", "barba", "rasurado en seco", "recargable", "cuidado masculino", "aparatos de cuidado personal"],
+      "en": ["shave", "rotary shaver", "foil shaver", "beard", "dry shave", "rechargeable", "men's grooming"]
+    }
+  },
+  "hair-clipper": {
+    "label": { "es": "Cortadora de cabello", "en": "Hair clippers", "pt": "Máquina de cortar cabelo", "fr": "Tondeuse à cheveux", "de": "Haarschneidemaschine", "it": "Tagliacapelli", "ja": "バリカン", "zh": "理发推子", "ko": "바리캉", "ar": "ماكينة قص الشعر" },
+    "keywords": {
+      "es": ["maquinita", "corte de cabello", "degradado", "fade", "rapado", "barbería", "barbero"],
+      "en": ["haircut", "fade", "buzz cut", "taper", "trimmer", "barbershop", "barber"]
+    }
+  },
+  "shaving-brush": {
+    "label": { "es": "Brocha para rasurar", "en": "Shaving brush", "pt": "Pincel de barbear", "fr": "Blaireau", "de": "Rasierpinsel", "it": "Pennello da barba", "ja": "シェービングブラシ", "zh": "剃须刷", "ko": "면도 브러시", "ar": "فرشاة حلاقة" },
+    "keywords": {
+      "es": ["espuma", "jabón para rasurar", "rasurado clásico", "afeitado tradicional", "barba", "barbería", "barbero"],
+      "en": ["lather", "shaving soap", "wet shave", "classic shave", "badger brush", "barbershop", "barber"]
+    }
+  },
+  "shaving-cream": {
+    "label": { "es": "Espuma para rasurar", "en": "Shaving cream", "pt": "Espuma de barbear", "fr": "Mousse à raser", "de": "Rasierschaum", "it": "Schiuma da barba", "ja": "シェービングフォーム", "zh": "剃须泡沫", "ko": "셰이빙 폼", "ar": "رغوة حلاقة" },
+    "keywords": {
+      "es": ["crema para rasurar", "gel para afeitar", "rasurar", "productos de afeitado", "cuidado masculino", "aerosol", "barbería"],
+      "en": ["shaving foam", "shaving gel", "lather", "shave", "shaving products", "men's grooming", "aerosol can"]
+    }
+  },
+  "pomade": {
+    "label": { "es": "Pomada para peinar", "en": "Pomade", "pt": "Pomada modeladora", "fr": "Pommade coiffante", "de": "Haarpomade", "it": "Pomata per capelli", "ja": "ポマード", "zh": "发蜡", "ko": "포마드", "ar": "شمع الشعر" },
+    "keywords": {
+      "es": ["cera para el cabello", "gel", "fijador", "peinado", "acabado brillante", "productos para el cabello", "barbería"],
+      "en": ["hair wax", "styling wax", "hair gel", "hold", "slick back", "hair products", "barbershop"]
+    }
+  },
+  "barber-pole": {
+    "label": { "es": "Poste de barbería", "en": "Barber pole", "pt": "Poste de barbearia", "fr": "Enseigne de barbier", "de": "Barbierstange", "it": "Insegna da barbiere", "ja": "サインポール", "zh": "理发店转灯", "ko": "이발소 표시등", "ar": "عمود الحلاق" },
+    "keywords": {
+      "es": ["barbería", "peluquería", "barbero", "corte de caballero", "estética", "barbería cercana", "ubicación"],
+      "en": ["barbershop", "barber", "men's haircut", "haircut", "nearby barber", "map pin", "grooming"]
+    }
+  },
+  "salon-chair": {
+    "label": { "es": "Silla de estética", "en": "Salon chair", "pt": "Cadeira de salão", "fr": "Fauteuil de coiffure", "de": "Friseurstuhl", "it": "Poltrona da parrucchiere", "ja": "スタイリングチェア", "zh": "美发椅", "ko": "미용 의자", "ar": "كرسي صالون" },
+    "keywords": {
+      "es": ["salón de belleza", "estilista", "cita", "reservar lugar", "estación de trabajo", "renta de silla", "peluquería"],
+      "en": ["hair salon", "stylist", "appointment", "booking", "styling station", "chair rental", "barber chair"]
+    }
+  },
+  "salon-chair-clock": {
+    "label": { "es": "Tiempo de espera", "en": "Wait time", "pt": "Tempo de espera", "fr": "Temps d’attente", "de": "Wartezeit", "it": "Tempo di attesa", "ja": "待ち時間", "zh": "等待时间", "ko": "대기 시간", "ar": "وقت الانتظار" },
+    "keywords": {
+      "es": ["hora de la cita", "fila de espera", "sin cita", "próximo turno", "horario disponible", "estética", "agenda"],
+      "en": ["appointment time", "walk-in queue", "next available", "open slot", "ETA", "salon", "schedule"]
+    }
+  },
+  "salon-chair-check": {
+    "label": { "es": "Cita confirmada", "en": "Appointment confirmed", "pt": "Horário confirmado", "fr": "Rendez-vous confirmé", "de": "Termin bestätigt", "it": "Appuntamento confermato", "ja": "予約確定", "zh": "预约已确认", "ko": "예약 확정", "ar": "تم تأكيد الموعد" },
+    "keywords": {
+      "es": ["reservado", "lugar apartado", "silla disponible", "estación disponible", "agendado", "estética", "confirmación"],
+      "en": ["booked", "reserved", "chair booked", "available station", "scheduled", "salon", "confirmation"]
+    }
+  },
+  "shampoo-bowl": {
+    "label": { "es": "Lavacabezas", "en": "Shampoo bowl", "pt": "Lavatório", "fr": "Bac à shampooing", "de": "Haarwaschbecken", "it": "Lavatesta", "ja": "シャンプー台", "zh": "洗头台", "ko": "샴푸대", "ar": "حوض غسل الشعر" },
+    "keywords": {
+      "es": ["lavado de cabello", "lavabo", "silla de lavado", "masaje capilar", "tratamiento", "estética", "salón de belleza"],
+      "en": ["backwash", "hair wash", "salon sink", "wash station", "scalp massage", "treatment", "hair salon"]
+    }
+  },
+  "beard": {
+    "label": { "es": "Barba", "en": "Beard", "pt": "Barba", "fr": "Barbe", "de": "Bart", "it": "Barba", "ja": "あごひげ", "zh": "络腮胡", "ko": "수염", "ar": "لحية" },
+    "keywords": {
+      "es": ["recorte", "perfilado", "vello facial", "candado", "barbería", "arreglo personal", "avatar"],
+      "en": ["trim", "stubble", "facial hair", "goatee", "barbershop", "grooming", "avatar"]
+    }
+  },
+  "mustache": {
+    "label": { "es": "Bigote", "en": "Mustache", "pt": "Bigode", "fr": "Moustache", "de": "Schnurrbart", "it": "Baffi", "ja": "口ひげ", "zh": "八字胡", "ko": "콧수염", "ar": "شارب" },
+    "keywords": {
+      "es": ["vello facial", "recorte", "barbería", "arreglo personal", "movember", "avatar", "disfraz"],
+      "en": ["facial hair", "trim", "barbershop", "grooming", "movember", "avatar", "handlebar"]
+    }
+  },
+  "toothbrush": {
+    "label": { "es": "Cepillo de dientes", "en": "Toothbrush", "pt": "Escova de dentes", "fr": "Brosse à dents", "de": "Zahnbürste", "it": "Spazzolino", "ja": "歯ブラシ", "zh": "牙刷", "ko": "칫솔", "ar": "فرشاة أسنان" },
+    "keywords": {
+      "es": ["lavarse los dientes", "cepillado", "higiene bucal", "salud dental", "hábito", "dentista", "baño"],
+      "en": ["brush teeth", "brushing", "oral care", "dental hygiene", "habit", "dentist", "bathroom"]
+    }
+  },
+  "toothbrush-clock": {
+    "label": { "es": "Tiempo de cepillado", "en": "Brushing timer", "pt": "Tempo de escovação", "fr": "Minuteur de brossage", "de": "Zahnputz-Timer", "it": "Timer dello spazzolino", "ja": "歯みがきタイマー", "zh": "刷牙计时", "ko": "양치 타이머", "ar": "مؤقت تنظيف الأسنان" },
+    "keywords": {
+      "es": ["dos minutos", "temporizador", "recordatorio", "lavarse los dientes", "rutina", "niños", "higiene bucal"],
+      "en": ["two minutes", "countdown", "reminder", "brush teeth", "routine", "kids", "oral care"]
+    }
+  },
+  "electric-toothbrush": {
+    "label": { "es": "Cepillo de dientes eléctrico", "en": "Electric toothbrush", "pt": "Escova de dentes elétrica", "fr": "Brosse à dents électrique", "de": "Elektrische Zahnbürste", "it": "Spazzolino elettrico", "ja": "電動歯ブラシ", "zh": "电动牙刷", "ko": "전동칫솔", "ar": "فرشاة أسنان كهربائية" },
+    "keywords": {
+      "es": ["cabezal de repuesto", "recargable", "sónico", "cepillado", "limpieza profunda", "higiene bucal", "salud dental"],
+      "en": ["replacement brush head", "rechargeable", "sonic", "powered brush", "brushing", "oral care", "dental hygiene"]
+    }
+  },
+  "toothpaste": {
+    "label": { "es": "Pasta de dientes", "en": "Toothpaste", "pt": "Creme dental", "fr": "Dentifrice", "de": "Zahnpasta", "it": "Dentifricio", "ja": "歯みがき粉", "zh": "牙膏", "ko": "치약", "ar": "معجون أسنان" },
+    "keywords": {
+      "es": ["dentífrico", "flúor", "lavarse los dientes", "higiene bucal", "blanqueamiento", "artículos de viaje", "salud dental"],
+      "en": ["fluoride", "brush teeth", "dental hygiene", "oral care", "whitening", "travel toiletries", "tube"]
+    }
+  },
+  "dental-floss": {
+    "label": { "es": "Hilo dental", "en": "Dental floss", "pt": "Fio dental", "fr": "Fil dentaire", "de": "Zahnseide", "it": "Filo interdentale", "ja": "デンタルフロス", "zh": "牙线", "ko": "치실", "ar": "خيط الأسنان" },
+    "keywords": {
+      "es": ["limpieza entre dientes", "encías", "sarro", "higiene bucal", "salud dental", "dentista", "rutina"],
+      "en": ["flossing", "between teeth", "gums", "plaque", "oral care", "dental hygiene", "dentist"]
+    }
+  },
+  "mouthwash": {
+    "label": { "es": "Enjuague bucal", "en": "Mouthwash", "pt": "Enxaguante bucal", "fr": "Bain de bouche", "de": "Mundspülung", "it": "Collutorio", "ja": "マウスウォッシュ", "zh": "漱口水", "ko": "구강청결제", "ar": "غسول الفم" },
+    "keywords": {
+      "es": ["aliento fresco", "mal aliento", "gárgaras", "antiséptico", "frescura", "higiene bucal", "salud dental"],
+      "en": ["fresh breath", "bad breath", "oral rinse", "gargle", "antiseptic", "oral care", "dental hygiene"]
+    }
+  },
+  "soap-bar": {
+    "label": { "es": "Jabón", "en": "Bar soap", "pt": "Sabonete", "fr": "Savon", "de": "Seife", "it": "Saponetta", "ja": "固形石けん", "zh": "香皂", "ko": "비누", "ar": "صابونة" },
+    "keywords": {
+      "es": ["lavarse las manos", "higiene", "espuma", "limpieza", "productos de baño", "regadera", "amenidades de hotel"],
+      "en": ["handwashing", "hygiene", "lather", "clean", "bath products", "shower", "hotel amenity"]
+    }
+  },
+  "soap-dispenser": {
+    "label": { "es": "Botella con dosificador", "en": "Pump bottle", "pt": "Frasco pump", "fr": "Flacon pompe", "de": "Pumpflasche", "it": "Flacone con dosatore", "ja": "ポンプボトル", "zh": "按压瓶", "ko": "펌프 용기", "ar": "عبوة بمضخة" },
+    "keywords": {
+      "es": ["despachador de jabón", "jabón líquido", "jabón de manos", "crema corporal", "gel de baño", "lavarse las manos", "baño"],
+      "en": ["soap dispenser", "hand soap", "liquid soap", "lotion", "body wash", "handwashing", "bathroom"]
+    }
+  },
+  "deodorant": {
+    "label": { "es": "Desodorante", "en": "Deodorant", "pt": "Desodorante", "fr": "Déodorant", "de": "Deodorant", "it": "Deodorante", "ja": "デオドラント", "zh": "止汗露", "ko": "데오드란트", "ar": "مزيل العرق" },
+    "keywords": {
+      "es": ["antitranspirante", "sudor", "axilas", "roll-on", "aroma", "higiene", "cuidado personal"],
+      "en": ["antiperspirant", "sweat", "underarm", "roll-on", "body odor", "hygiene", "personal care"]
+    }
+  },
+  "loofah": {
+    "label": { "es": "Esponja de baño", "en": "Loofah", "pt": "Esponja de banho", "fr": "Fleur de douche", "de": "Duschschwamm", "it": "Fiore doccia", "ja": "ボディスポンジ", "zh": "沐浴球", "ko": "샤워볼", "ar": "ليفة استحمام" },
+    "keywords": {
+      "es": ["zacate", "estropajo", "regadera", "gel de baño", "exfoliar", "espuma", "productos de baño"],
+      "en": ["bath pouf", "shower puff", "shower", "body wash", "exfoliate", "lather", "bath products"]
+    }
+  },
+  "rolled-towel": {
+    "label": { "es": "Toallas", "en": "Towels", "pt": "Toalhas", "fr": "Serviettes", "de": "Handtücher", "it": "Asciugamani", "ja": "タオル", "zh": "毛巾", "ko": "수건", "ar": "مناشف" },
+    "keywords": {
+      "es": ["spa", "amenidades de hotel", "blancos", "servicio de blancos", "baño", "masaje", "alberca"],
+      "en": ["spa", "hotel amenity", "linens", "towel service", "bath", "massage", "pool"]
+    }
+  },
+  "hot-towel": {
+    "label": { "es": "Toalla caliente", "en": "Hot towel", "pt": "Toalha quente", "fr": "Serviette chaude", "de": "Heißes Handtuch", "it": "Asciugamano caldo", "ja": "蒸しタオル", "zh": "热毛巾", "ko": "핫타월", "ar": "منشفة ساخنة" },
+    "keywords": {
+      "es": ["rasurado clásico", "barbería", "facial", "vapor", "abrir poros", "tratamiento", "relajación"],
+      "en": ["hot shave", "barbershop", "facial", "steam", "open pores", "treatment", "relaxation"]
+    }
+  },
+  "cotton-swab": {
+    "label": { "es": "Cotonete", "en": "Cotton swab", "pt": "Cotonete", "fr": "Coton-tige", "de": "Wattestäbchen", "it": "Cotton fioc", "ja": "綿棒", "zh": "棉签", "ko": "면봉", "ar": "عود قطني" },
+    "keywords": {
+      "es": ["hisopo", "oídos", "retoque de maquillaje", "corregir delineado", "primeros auxilios", "limpieza", "algodón"],
+      "en": ["Q-tip", "cotton bud", "ear care", "makeup touch-up", "fix eyeliner", "first aid", "cleaning"]
+    }
+  },
+  "tweezers": {
+    "label": { "es": "Pinzas", "en": "Tweezers", "pt": "Pinça", "fr": "Pince à épiler", "de": "Pinzette", "it": "Pinzette", "ja": "毛抜き", "zh": "镊子", "ko": "족집게", "ar": "ملقط" },
+    "keywords": {
+      "es": ["depilar cejas", "sacar vellos", "diseño de cejas", "vellos enterrados", "astillas", "precisión", "arreglo personal"],
+      "en": ["pluck", "eyebrows", "brow shaping", "ingrown hair", "splinter", "precision", "grooming"]
+    }
+  },
+  "makeup-bag": {
+    "label": { "es": "Cosmetiquera", "en": "Makeup bag", "pt": "Nécessaire", "fr": "Trousse de maquillage", "de": "Kosmetiktasche", "it": "Trousse per il trucco", "ja": "メイクポーチ", "zh": "化妆包", "ko": "화장품 파우치", "ar": "حقيبة مكياج" },
+    "keywords": {
+      "es": ["bolsa de maquillaje", "neceser", "estuche", "kit de belleza", "artículos de tocador", "viaje", "maquillaje"],
+      "en": ["cosmetic pouch", "toiletry bag", "vanity case", "beauty kit", "zip case", "travel", "essentials"]
+    }
+  },
+  "toiletries": {
+    "label": { "es": "Artículos de aseo", "en": "Toiletries", "pt": "Itens de higiene", "fr": "Articles de toilette", "de": "Toilettenartikel", "it": "Articoli da bagno", "ja": "アメニティ", "zh": "洗漱用品", "ko": "세면도구", "ar": "أدوات النظافة الشخصية" },
+    "keywords": {
+      "es": ["amenidades", "tamaño de viaje", "botellitas", "kit de viaje", "productos de baño", "shampoo", "hotel"],
+      "en": ["amenities", "travel size", "mini bottles", "travel kit", "bath products", "shampoo", "hotel"]
+    }
+  }
+}

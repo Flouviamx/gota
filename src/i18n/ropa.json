@@ -1,0 +1,884 @@
+{
+  "shirt-long-sleeve": {
+    "label": { "es": "Camiseta de manga larga", "en": "Long-sleeve T-shirt", "pt": "Camiseta de manga longa", "fr": "T-shirt à manches longues", "de": "Langarmshirt", "it": "Maglietta a maniche lunghe", "ja": "長袖Tシャツ", "zh": "长袖T恤", "ko": "긴팔 티셔츠", "ar": "تي شيرت بأكمام طويلة" },
+    "keywords": {
+      "es": ["playera manga larga", "ropa para el frío", "capa base", "impresión bajo demanda", "largo de manga", "tipo de producto", "básicos"],
+      "en": ["longsleeve", "LS tee", "cold weather top", "base layer", "print on demand", "sleeve length", "basics"]
+    }
+  },
+  "shirt-polo": {
+    "label": { "es": "Camisa polo", "en": "Polo shirt", "pt": "Camisa polo", "fr": "Polo", "de": "Poloshirt", "it": "Polo", "ja": "ポロシャツ", "zh": "Polo衫", "ko": "폴로 셔츠", "ar": "قميص بولو" },
+    "keywords": {
+      "es": ["playera polo", "golf", "uniforme de trabajo", "casual elegante", "cuello con botones", "tipo de producto", "piqué"],
+      "en": ["golf shirt", "piqué", "smart casual", "staff uniform", "work polo", "collared tee", "product type"]
+    }
+  },
+  "shirt-v-neck": {
+    "label": { "es": "Camiseta cuello V", "en": "V-neck T-shirt", "pt": "Camiseta gola V", "fr": "T-shirt col V", "de": "T-Shirt mit V-Ausschnitt", "it": "Maglietta con scollo a V", "ja": "VネックTシャツ", "zh": "V领T恤", "ko": "브이넥 티셔츠", "ar": "تي شيرت بياقة على شكل V" },
+    "keywords": {
+      "es": ["playera cuello en V", "escote en V", "tipo de cuello", "filtro de cuello", "básicos", "ropa casual", "catálogo de ropa"],
+      "en": ["neckline", "neckline filter", "deep neck", "basics", "casual wear", "apparel catalog", "undershirt"]
+    }
+  },
+  "dress-shirt": {
+    "label": { "es": "Camisa de vestir", "en": "Dress shirt", "pt": "Camisa social", "fr": "Chemise", "de": "Hemd", "it": "Camicia", "ja": "ワイシャツ", "zh": "衬衫", "ko": "와이셔츠", "ar": "قميص رسمي" },
+    "keywords": {
+      "es": ["camisa formal", "camisa de botones", "ropa de oficina", "código de vestimenta", "ropa de caballero", "cuello", "camisa blanca"],
+      "en": ["button-up", "button-down", "office wear", "dress code", "menswear", "collared shirt", "formal shirt"]
+    }
+  },
+  "tank-top": {
+    "label": { "es": "Camiseta sin mangas", "en": "Tank top", "pt": "Regata", "fr": "Débardeur", "de": "Tanktop", "it": "Canottiera", "ja": "タンクトップ", "zh": "背心", "ko": "민소매 티셔츠", "ar": "قميص بلا أكمام" },
+    "keywords": {
+      "es": ["playera sin mangas", "tank top", "camiseta interior", "ropa de gym", "ropa de verano", "largo de manga", "tirantes"],
+      "en": ["sleeveless top", "singlet", "undershirt", "gym wear", "summer", "muscle tee", "sleeve length"]
+    }
+  },
+  "crop-top": {
+    "label": { "es": "Top corto", "en": "Crop top", "pt": "Cropped", "fr": "Crop top", "de": "Crop-Top", "it": "Crop top", "ja": "クロップトップ", "zh": "短款上衣", "ko": "크롭탑", "ar": "بلوزة قصيرة" },
+    "keywords": {
+      "es": ["crop top", "ombliguera", "blusa corta", "ropa deportiva", "tops de mujer", "filtro de largo", "athleisure"],
+      "en": ["belly top", "midriff", "short top", "activewear", "womens tops", "length filter", "athleisure"]
+    }
+  },
+  "camisole": {
+    "label": { "es": "Blusa de tirantes", "en": "Camisole", "pt": "Blusa de alcinha", "fr": "Caraco", "de": "Trägertop", "it": "Top a spalline", "ja": "キャミソール", "zh": "吊带背心", "ko": "캐미솔", "ar": "بلوزة بحمالات رفيعة" },
+    "keywords": {
+      "es": ["camisole", "lencería", "top de tirantes", "ropa de dormir", "prenda interior", "capas", "satín"],
+      "en": ["cami", "spaghetti strap top", "lingerie", "layering", "sleepwear", "slip top", "satin"]
+    }
+  },
+  "blouse": {
+    "label": { "es": "Blusa", "en": "Blouse", "pt": "Blusa", "fr": "Chemisier", "de": "Bluse", "it": "Camicetta", "ja": "ブラウス", "zh": "女式衬衫", "ko": "블라우스", "ar": "بلوزة" },
+    "keywords": {
+      "es": ["ropa de mujer", "tops", "ropa de oficina", "ocasión especial", "camisa de mujer", "elegante", "moda"],
+      "en": ["womens top", "top", "office wear", "occasion wear", "womens shirt", "dressy", "fashion"]
+    }
+  },
+  "sweater": {
+    "label": { "es": "Suéter", "en": "Sweater", "pt": "Suéter", "fr": "Pull", "de": "Pullover", "it": "Maglione", "ja": "セーター", "zh": "毛衣", "ko": "스웨터", "ar": "كنزة صوف" },
+    "keywords": {
+      "es": ["tejido", "punto", "jersey", "ropa de invierno", "frío", "lana", "abrigador"],
+      "en": ["jumper", "knitwear", "pullover", "knit", "wool", "cold weather", "winter"]
+    }
+  },
+  "sweatshirt": {
+    "label": { "es": "Sudadera", "en": "Sweatshirt", "pt": "Moletom", "fr": "Sweat-shirt", "de": "Sweatshirt", "it": "Felpa", "ja": "トレーナー", "zh": "卫衣", "ko": "맨투맨", "ar": "سويت شيرت" },
+    "keywords": {
+      "es": ["sudadera sin gorro", "cuello redondo", "ropa cómoda", "merch", "impresión bajo demanda", "loungewear", "felpa"],
+      "en": ["crewneck", "jumper", "loungewear", "merch", "print on demand", "fleece", "pullover"]
+    }
+  },
+  "turtleneck": {
+    "label": { "es": "Suéter de cuello alto", "en": "Turtleneck", "pt": "Gola alta", "fr": "Col roulé", "de": "Rollkragenpullover", "it": "Dolcevita", "ja": "タートルネック", "zh": "高领毛衣", "ko": "터틀넥", "ar": "كنزة بياقة عالية" },
+    "keywords": {
+      "es": ["cuello de tortuga", "tejido de punto", "ropa de invierno", "tipo de cuello", "frío", "básico de invierno", "ropa abrigadora"],
+      "en": ["polo neck", "roll neck", "mock neck", "knitwear", "neckline filter", "winter", "cold weather"]
+    }
+  },
+  "cardigan": {
+    "label": { "es": "Cárdigan", "en": "Cardigan", "pt": "Cardigã", "fr": "Cardigan", "de": "Strickjacke", "it": "Cardigan", "ja": "カーディガン", "zh": "开衫", "ko": "카디건", "ar": "كارديغان" },
+    "keywords": {
+      "es": ["suéter con botones", "saco tejido", "tejido", "punto", "capas", "entretiempo", "abrigo ligero"],
+      "en": ["button sweater", "knitwear", "knit jacket", "layering", "transitional", "light layer", "open front"]
+    }
+  },
+  "hoodie": {
+    "label": { "es": "Sudadera con gorro", "en": "Hoodie", "pt": "Moletom com capuz", "fr": "Sweat à capuche", "de": "Kapuzenpullover", "it": "Felpa con cappuccio", "ja": "パーカー", "zh": "连帽卫衣", "ko": "후드티", "ar": "هودي" },
+    "keywords": {
+      "es": ["hoodie", "sudadera con capucha", "streetwear", "merch", "ropa cómoda", "bolsa canguro", "impresión bajo demanda"],
+      "en": ["hooded sweatshirt", "streetwear", "merch", "loungewear", "zip hoodie", "kangaroo pocket", "print on demand"]
+    }
+  },
+  "jacket": {
+    "label": { "es": "Chamarra", "en": "Jacket", "pt": "Jaqueta", "fr": "Veste", "de": "Jacke", "it": "Giacca", "ja": "ジャケット", "zh": "夹克", "ko": "재킷", "ar": "جاكيت" },
+    "keywords": {
+      "es": ["chaqueta", "rompevientos", "ropa exterior", "capa ligera", "entretiempo", "sugerencia por clima", "cierre"],
+      "en": ["zip jacket", "outerwear", "windbreaker", "light layer", "track jacket", "weather outfit", "coat"]
+    }
+  },
+  "blazer": {
+    "label": { "es": "Saco", "en": "Blazer", "pt": "Blazer", "fr": "Blazer", "de": "Blazer", "it": "Blazer", "ja": "ブレザー", "zh": "西装外套", "ko": "블레이저", "ar": "بليزر" },
+    "keywords": {
+      "es": ["blazer", "americana", "saco sport", "casual elegante", "ropa de negocios", "sastrería", "oficina"],
+      "en": ["sport coat", "suit jacket", "smart casual", "business wear", "tailoring", "office", "tailored jacket"]
+    }
+  },
+  "coat": {
+    "label": { "es": "Abrigo", "en": "Coat", "pt": "Casaco", "fr": "Manteau", "de": "Mantel", "it": "Cappotto", "ja": "コート", "zh": "大衣", "ko": "코트", "ar": "معطف" },
+    "keywords": {
+      "es": ["sobretodo", "gabán", "chaquetón", "ropa exterior", "invierno", "guardarropa", "ropa de frío"],
+      "en": ["overcoat", "topcoat", "peacoat", "outerwear", "winter", "cloakroom", "coat check"]
+    }
+  },
+  "leather-jacket": {
+    "label": { "es": "Chamarra de piel", "en": "Leather jacket", "pt": "Jaqueta de couro", "fr": "Blouson en cuir", "de": "Lederjacke", "it": "Giacca di pelle", "ja": "レザージャケット", "zh": "皮夹克", "ko": "가죽 재킷", "ar": "جاكيت جلد" },
+    "keywords": {
+      "es": ["chaqueta de cuero", "biker", "motociclista", "ropa exterior", "rockero", "catálogo de moda", "piel sintética"],
+      "en": ["biker jacket", "moto jacket", "perfecto", "outerwear", "rock", "fashion", "faux leather"]
+    }
+  },
+  "puffer-jacket": {
+    "label": { "es": "Chamarra acolchada", "en": "Puffer jacket", "pt": "Jaqueta puffer", "fr": "Doudoune", "de": "Daunenjacke", "it": "Piumino", "ja": "ダウンジャケット", "zh": "羽绒服", "ko": "패딩 점퍼", "ar": "جاكيت منفوخ" },
+    "keywords": {
+      "es": ["chamarra de plumas", "puffer", "plumífero", "invierno", "nieve", "aislamiento térmico", "frío extremo"],
+      "en": ["down jacket", "quilted jacket", "parka", "winter coat", "insulated", "snow", "cold weather"]
+    }
+  },
+  "trench-coat": {
+    "label": { "es": "Gabardina", "en": "Trench coat", "pt": "Trench coat", "fr": "Trench", "de": "Trenchcoat", "it": "Trench", "ja": "トレンチコート", "zh": "风衣", "ko": "트렌치코트", "ar": "معطف ترنش" },
+    "keywords": {
+      "es": ["trench", "abrigo de lluvia", "temporada de lluvias", "ropa exterior", "abrigo con cinto", "otoño", "catálogo de moda"],
+      "en": ["trench", "mac", "rainy season", "outerwear", "belted coat", "autumn", "fashion catalog"]
+    }
+  },
+  "raincoat": {
+    "label": { "es": "Impermeable", "en": "Raincoat", "pt": "Capa de chuva", "fr": "Imperméable", "de": "Regenjacke", "it": "Impermeabile", "ja": "レインコート", "zh": "雨衣", "ko": "우비", "ar": "معطف مطر" },
+    "keywords": {
+      "es": ["capa de lluvia", "lluvia", "clima lluvioso", "equipo para lluvia", "tienda outdoor", "poncho", "chubasquero"],
+      "en": ["rain jacket", "rain gear", "rainy weather", "waterproof", "outdoor shop", "poncho", "slicker"]
+    }
+  },
+  "vest": {
+    "label": { "es": "Chaleco", "en": "Vest", "pt": "Colete", "fr": "Gilet de costume", "de": "Weste", "it": "Gilet", "ja": "ベスト", "zh": "马甲", "ko": "조끼", "ar": "صدرية" },
+    "keywords": {
+      "es": ["traje de tres piezas", "ropa formal", "boda", "uniforme de mesero", "sastrería", "etiqueta", "padrino"],
+      "en": ["waistcoat", "suit vest", "three-piece suit", "formal wear", "wedding", "waiter uniform", "tailoring"]
+    }
+  },
+  "suit": {
+    "label": { "es": "Traje", "en": "Suit", "pt": "Terno", "fr": "Costume", "de": "Anzug", "it": "Completo", "ja": "スーツ", "zh": "西装", "ko": "정장", "ar": "بدلة" },
+    "keywords": {
+      "es": ["traje sastre", "ropa formal", "ropa de negocios", "código de vestimenta", "sastrería", "ropa de caballero", "entrevista de trabajo"],
+      "en": ["business suit", "formal wear", "business attire", "dress code", "tailoring", "menswear", "job interview"]
+    }
+  },
+  "robe": {
+    "label": { "es": "Bata de baño", "en": "Bathrobe", "pt": "Roupão", "fr": "Peignoir", "de": "Bademantel", "it": "Accappatoio", "ja": "バスローブ", "zh": "浴袍", "ko": "목욕 가운", "ar": "رداء حمام" },
+    "keywords": {
+      "es": ["albornoz", "kimono", "spa", "amenidades del hotel", "ropa de dormir", "ropa de casa", "salida de baño"],
+      "en": ["dressing gown", "robe", "kimono", "spa", "hotel amenities", "sleepwear", "loungewear"]
+    }
+  },
+  "pants": {
+    "label": { "es": "Pantalón", "en": "Pants", "pt": "Calça", "fr": "Pantalon", "de": "Hose", "it": "Pantaloni", "ja": "ズボン", "zh": "裤子", "ko": "바지", "ar": "بنطال" },
+    "keywords": {
+      "es": ["prendas inferiores", "corte recto", "chinos", "ropa de oficina", "armar outfit", "talla de cintura", "largo de pierna"],
+      "en": ["trousers", "bottoms", "straight leg", "chinos", "slacks", "outfit builder", "inseam"]
+    }
+  },
+  "pants-skinny": {
+    "label": { "es": "Corte skinny", "en": "Skinny fit", "pt": "Modelagem skinny", "fr": "Coupe skinny", "de": "Skinny Fit", "it": "Vestibilità skinny", "ja": "スキニーパンツ", "zh": "紧身裤", "ko": "스키니 핏", "ar": "قصّة ضيقة" },
+    "keywords": {
+      "es": ["pantalón entubado", "ajustado", "pitillo", "corte de pierna", "filtro de corte", "slim", "jeans entubados"],
+      "en": ["skinny jeans", "tight fit", "slim fit", "leg shape", "fit filter", "tapered", "drainpipe"]
+    }
+  },
+  "pants-wide-leg": {
+    "label": { "es": "Corte de pierna ancha", "en": "Wide-leg fit", "pt": "Modelagem pantalona", "fr": "Coupe large", "de": "Weite Passform", "it": "Vestibilità ampia", "ja": "ワイドパンツ", "zh": "阔腿裤", "ko": "와이드 핏", "ar": "قصّة واسعة" },
+    "keywords": {
+      "es": ["palazzo", "pantalón ancho", "holgado", "baggy", "corte de pierna", "filtro de corte", "culotte"],
+      "en": ["palazzo", "wide trousers", "relaxed fit", "baggy", "leg shape", "fit filter", "culottes"]
+    }
+  },
+  "pants-flared": {
+    "label": { "es": "Corte acampanado", "en": "Flared fit", "pt": "Modelagem flare", "fr": "Coupe évasée", "de": "Ausgestellte Passform", "it": "Vestibilità a zampa", "ja": "フレアパンツ", "zh": "喇叭裤", "ko": "플레어 핏", "ar": "قصّة شارلستون" },
+    "keywords": {
+      "es": ["pata de elefante", "bootcut", "flare", "corte de pierna", "filtro de corte", "setentero", "jeans de campana"],
+      "en": ["bell bottoms", "bootcut", "flares", "leg shape", "fit filter", "70s", "kick flare"]
+    }
+  },
+  "pants-cargo": {
+    "label": { "es": "Pantalón cargo", "en": "Cargo pants", "pt": "Calça cargo", "fr": "Pantalon cargo", "de": "Cargohose", "it": "Pantaloni cargo", "ja": "カーゴパンツ", "zh": "工装裤", "ko": "카고 바지", "ar": "بنطال كارغو" },
+    "keywords": {
+      "es": ["bolsas laterales", "ropa de trabajo", "utilitario", "outdoor", "streetwear", "estilo militar", "pantalón de bolsas"],
+      "en": ["side pockets", "workwear", "utility", "outdoor", "streetwear", "combat pants", "military"]
+    }
+  },
+  "jeans": {
+    "label": { "es": "Jeans", "en": "Jeans", "pt": "Calça jeans", "fr": "Jean", "de": "Jeans", "it": "Jeans", "ja": "ジーンズ", "zh": "牛仔裤", "ko": "청바지", "ar": "جينز" },
+    "keywords": {
+      "es": ["pantalón de mezclilla", "mezclilla", "denim", "vaqueros", "ropa casual", "talla de cintura", "pantalón"],
+      "en": ["denim", "dark wash", "five pocket", "casual wear", "bottoms", "waist size", "inseam"]
+    }
+  },
+  "joggers": {
+    "label": { "es": "Pants deportivos", "en": "Joggers", "pt": "Calça de moletom", "fr": "Jogging", "de": "Jogginghose", "it": "Pantaloni della tuta", "ja": "ジョガーパンツ", "zh": "运动裤", "ko": "조거 팬츠", "ar": "بنطال رياضي" },
+    "keywords": {
+      "es": ["jogger", "pantalón de chándal", "ropa cómoda", "ropa deportiva", "loungewear", "felpa", "puño elástico"],
+      "en": ["sweatpants", "track pants", "trackies", "loungewear", "activewear", "tapered", "fleece"]
+    }
+  },
+  "leggings": {
+    "label": { "es": "Leggings", "en": "Leggings", "pt": "Legging", "fr": "Legging", "de": "Leggings", "it": "Leggings", "ja": "レギンス", "zh": "打底裤", "ko": "레깅스", "ar": "ليغينغ" },
+    "keywords": {
+      "es": ["mallas", "licras", "ropa de yoga", "athleisure", "ropa deportiva", "gym", "pantalón ajustado"],
+      "en": ["tights", "yoga pants", "athleisure", "activewear", "gym", "workout", "compression"]
+    }
+  },
+  "shorts": {
+    "label": { "es": "Shorts", "en": "Shorts", "pt": "Short", "fr": "Short", "de": "Shorts", "it": "Pantaloncini", "ja": "ショートパンツ", "zh": "短裤", "ko": "반바지", "ar": "شورت" },
+    "keywords": {
+      "es": ["bermuda", "pantalón corto", "verano", "calor", "ropa de playa", "short de mezclilla", "sugerencia por clima"],
+      "en": ["bermudas", "short pants", "summer", "warm weather", "beach", "cutoffs", "weather outfit"]
+    }
+  },
+  "skirt": {
+    "label": { "es": "Falda", "en": "Skirt", "pt": "Saia", "fr": "Jupe", "de": "Rock", "it": "Gonna", "ja": "スカート", "zh": "半身裙", "ko": "치마", "ar": "تنورة" },
+    "keywords": {
+      "es": ["ropa de mujer", "prendas inferiores", "minifalda", "armar outfit", "evasé", "línea A", "moda"],
+      "en": ["womens bottoms", "miniskirt", "a-line", "midi", "outfit builder", "fashion", "womenswear"]
+    }
+  },
+  "skirt-pleated": {
+    "label": { "es": "Falda plisada", "en": "Pleated skirt", "pt": "Saia plissada", "fr": "Jupe plissée", "de": "Faltenrock", "it": "Gonna a pieghe", "ja": "プリーツスカート", "zh": "百褶裙", "ko": "플리츠 스커트", "ar": "تنورة بكسرات" },
+    "keywords": {
+      "es": ["tablones", "falda tableada", "uniforme escolar", "falda de tenis", "colegiala", "escocesa", "moda"],
+      "en": ["pleats", "school uniform", "tennis skirt", "kilt", "preppy", "box pleat", "fashion"]
+    }
+  },
+  "skirt-pencil": {
+    "label": { "es": "Falda lápiz", "en": "Pencil skirt", "pt": "Saia lápis", "fr": "Jupe crayon", "de": "Bleistiftrock", "it": "Gonna a tubino", "ja": "タイトスカート", "zh": "铅笔裙", "ko": "펜슬 스커트", "ar": "تنورة ضيقة" },
+    "keywords": {
+      "es": ["falda tubo", "falda recta", "ropa de oficina", "ejecutiva", "ajustada", "silueta", "largo a la rodilla"],
+      "en": ["tube skirt", "straight skirt", "office wear", "fitted", "silhouette", "knee length", "workwear"]
+    }
+  },
+  "skirt-long": {
+    "label": { "es": "Falda larga", "en": "Maxi skirt", "pt": "Saia longa", "fr": "Jupe longue", "de": "Maxirock", "it": "Gonna lunga", "ja": "ロングスカート", "zh": "长裙", "ko": "롱스커트", "ar": "تنورة طويلة" },
+    "keywords": {
+      "es": ["maxifalda", "boho", "hippie", "verano", "filtro de largo", "hasta el tobillo", "playa"],
+      "en": ["long skirt", "boho", "hippie", "summer", "length filter", "ankle length", "flowy"]
+    }
+  },
+  "overalls": {
+    "label": { "es": "Overol", "en": "Overalls", "pt": "Jardineira", "fr": "Salopette", "de": "Latzhose", "it": "Salopette", "ja": "オーバーオール", "zh": "背带裤", "ko": "멜빵바지", "ar": "أفرول بحمالات" },
+    "keywords": {
+      "es": ["pantalón de peto", "peto", "jardinera", "ropa de trabajo", "ropa de niños", "mezclilla", "tirantes"],
+      "en": ["dungarees", "bib overalls", "workwear", "kids clothing", "denim", "casual wear", "suspenders"]
+    }
+  },
+  "dress": {
+    "label": { "es": "Vestido", "en": "Dress", "pt": "Vestido", "fr": "Robe", "de": "Kleid", "it": "Vestito", "ja": "ワンピース", "zh": "连衣裙", "ko": "원피스", "ar": "فستان" },
+    "keywords": {
+      "es": ["ropa de mujer", "ocasión especial", "fiesta", "armar outfit", "evento", "moda", "una pieza"],
+      "en": ["womenswear", "occasion wear", "party", "outfit builder", "frock", "sundress", "fashion"]
+    }
+  },
+  "gown": {
+    "label": { "es": "Vestido de gala", "en": "Evening gown", "pt": "Vestido de gala", "fr": "Robe de soirée", "de": "Abendkleid", "it": "Abito da sera", "ja": "イブニングドレス", "zh": "礼服", "ko": "이브닝드레스", "ar": "فستان سهرة" },
+    "keywords": {
+      "es": ["vestido de noche", "vestido de novia", "boda", "renta de vestidos", "etiqueta rigurosa", "graduación", "baile"],
+      "en": ["ball gown", "bridal gown", "wedding dress", "gala", "dress rental", "black tie", "prom"]
+    }
+  },
+  "jumpsuit": {
+    "label": { "es": "Jumpsuit", "en": "Jumpsuit", "pt": "Macacão", "fr": "Combinaison", "de": "Jumpsuit", "it": "Tuta intera", "ja": "オールインワン", "zh": "连体裤", "ko": "점프슈트", "ar": "جمبسوت" },
+    "keywords": {
+      "es": ["enterizo", "romper", "mono", "ropa de mujer", "una sola pieza", "playsuit", "overol de moda"],
+      "en": ["romper", "playsuit", "one piece", "all in one", "womenswear", "fashion"]
+    }
+  },
+  "underwear": {
+    "label": { "es": "Ropa interior", "en": "Underwear", "pt": "Roupa íntima", "fr": "Sous-vêtements", "de": "Unterwäsche", "it": "Intimo", "ja": "下着", "zh": "内裤", "ko": "속옷", "ar": "ملابس داخلية" },
+    "keywords": {
+      "es": ["calzones", "trusa", "pantaleta", "slip", "básicos", "lista de equipaje", "suscripción"],
+      "en": ["briefs", "panties", "undies", "knickers", "basics", "packing list", "subscription"]
+    }
+  },
+  "boxers": {
+    "label": { "es": "Bóxer", "en": "Boxers", "pt": "Cueca samba-canção", "fr": "Caleçon", "de": "Boxershorts", "it": "Boxer", "ja": "トランクス", "zh": "平角内裤", "ko": "트렁크 팬티", "ar": "بوكسر" },
+    "keywords": {
+      "es": ["calzoncillos", "ropa interior masculina", "calzones de hombre", "básicos", "lista de equipaje", "suscripción"],
+      "en": ["mens underwear", "undershorts", "trunks", "loose fit", "basics", "packing list"]
+    }
+  },
+  "bra": {
+    "label": { "es": "Brasier", "en": "Bra", "pt": "Sutiã", "fr": "Soutien-gorge", "de": "BH", "it": "Reggiseno", "ja": "ブラジャー", "zh": "文胸", "ko": "브래지어", "ar": "حمالة صدر" },
+    "keywords": {
+      "es": ["bra", "sostén", "lencería", "ropa interior", "guía de tallas", "copa", "contorno"],
+      "en": ["brassiere", "lingerie", "underwear", "size guide", "cup size", "band size", "bralette"]
+    }
+  },
+  "sports-bra": {
+    "label": { "es": "Top deportivo", "en": "Sports bra", "pt": "Top esportivo", "fr": "Brassière de sport", "de": "Sport-BH", "it": "Reggiseno sportivo", "ja": "スポーツブラ", "zh": "运动文胸", "ko": "스포츠 브라", "ar": "حمالة صدر رياضية" },
+    "keywords": {
+      "es": ["bra deportivo", "brasier deportivo", "ropa deportiva", "gym", "entrenamiento", "yoga", "alto impacto"],
+      "en": ["athletic bra", "activewear", "gym", "workout", "yoga", "high impact", "crop top"]
+    }
+  },
+  "socks": {
+    "label": { "es": "Calcetines", "en": "Socks", "pt": "Meias", "fr": "Chaussettes", "de": "Socken", "it": "Calzini", "ja": "靴下", "zh": "袜子", "ko": "양말", "ar": "جوارب" },
+    "keywords": {
+      "es": ["calcetas", "tines", "básicos", "lista de equipaje", "suscripción", "par", "tobilleras"],
+      "en": ["basics", "packing list", "subscription", "pair", "crew length", "ankle length", "no-show"]
+    }
+  },
+  "tights": {
+    "label": { "es": "Medias", "en": "Tights", "pt": "Meia-calça", "fr": "Collants", "de": "Strumpfhose", "it": "Collant", "ja": "タイツ", "zh": "连裤袜", "ko": "스타킹", "ar": "جوارب طويلة" },
+    "keywords": {
+      "es": ["pantimedias", "calcetería", "nylon", "mallas", "denier", "lencería"],
+      "en": ["pantyhose", "hosiery", "stockings", "nylons", "denier", "opaque"]
+    }
+  },
+  "pajamas": {
+    "label": { "es": "Pijama", "en": "Pajamas", "pt": "Pijama", "fr": "Pyjama", "de": "Schlafanzug", "it": "Pigiama", "ja": "パジャマ", "zh": "睡衣", "ko": "잠옷", "ar": "بيجامة" },
+    "keywords": {
+      "es": ["ropa de dormir", "piyama", "pijamada", "dormir", "lista de equipaje", "ropa de casa", "noche"],
+      "en": ["pjs", "sleepwear", "nightwear", "sleepover", "bedtime", "packing list", "loungewear"]
+    }
+  },
+  "swimsuit": {
+    "label": { "es": "Traje de baño", "en": "Swimsuit", "pt": "Maiô", "fr": "Maillot de bain", "de": "Badeanzug", "it": "Costume intero", "ja": "ワンピース水着", "zh": "连体泳衣", "ko": "원피스 수영복", "ar": "ملابس سباحة" },
+    "keywords": {
+      "es": ["bañador", "una pieza", "playa", "alberca", "natación", "vacaciones", "ropa de playa"],
+      "en": ["bathing suit", "one piece", "swimwear", "beach", "pool", "swimming", "vacation"]
+    }
+  },
+  "bikini": {
+    "label": { "es": "Bikini", "en": "Bikini", "pt": "Biquíni", "fr": "Bikini", "de": "Bikini", "it": "Bikini", "ja": "ビキニ", "zh": "比基尼", "ko": "비키니", "ar": "بيكيني" },
+    "keywords": {
+      "es": ["dos piezas", "traje de baño", "playa", "alberca", "vacaciones", "asolearse", "ropa de baño"],
+      "en": ["two piece", "swimwear", "beach", "pool", "vacation", "sunbathing", "swimsuit"]
+    }
+  },
+  "swim-trunks": {
+    "label": { "es": "Short de baño", "en": "Swim trunks", "pt": "Short de banho", "fr": "Short de bain", "de": "Badeshorts", "it": "Pantaloncini da bagno", "ja": "海水パンツ", "zh": "泳裤", "ko": "수영 반바지", "ar": "شورت سباحة" },
+    "keywords": {
+      "es": ["traje de baño de hombre", "bermuda de playa", "boardshort", "playa", "alberca", "vacaciones", "surf"],
+      "en": ["board shorts", "mens swimwear", "swim shorts", "beach", "pool", "vacation", "surf"]
+    }
+  },
+  "sneaker": {
+    "label": { "es": "Tenis", "en": "Sneaker", "pt": "Tênis", "fr": "Basket", "de": "Sneaker", "it": "Sneaker", "ja": "スニーカー", "zh": "运动鞋", "ko": "운동화", "ar": "حذاء رياضي" },
+    "keywords": {
+      "es": ["zapato deportivo", "calzado", "zapatería", "talla de calzado", "correr", "casual", "sneakers"],
+      "en": ["trainer", "running shoe", "footwear", "shoe store", "shoe size", "athletic shoe", "kicks"]
+    }
+  },
+  "sneaker-check": {
+    "label": { "es": "Tenis autenticados", "en": "Authenticated sneakers", "pt": "Tênis autenticado", "fr": "Baskets authentifiées", "de": "Verifizierte Sneaker", "it": "Sneaker autenticate", "ja": "鑑定済みスニーカー", "zh": "已鉴定的球鞋", "ko": "정품 인증 운동화", "ar": "حذاء رياضي موثّق" },
+    "keywords": {
+      "es": ["autenticidad", "original", "verificado", "reventa", "legit check", "no pirata", "marketplace"],
+      "en": ["authenticity", "legit check", "verified pair", "genuine", "resale", "not fake", "marketplace"]
+    }
+  },
+  "sneaker-clock": {
+    "label": { "es": "Lanzamiento de tenis", "en": "Sneaker drop", "pt": "Lançamento de tênis", "fr": "Sortie de baskets", "de": "Sneaker-Release", "it": "Uscita sneaker", "ja": "スニーカー発売予定", "zh": "球鞋发售", "ko": "운동화 발매 예정", "ar": "إصدار حذاء رياضي قادم" },
+    "keywords": {
+      "es": ["drop", "cuenta regresiva", "rifa", "preventa", "próximo lanzamiento", "edición limitada", "fecha de salida"],
+      "en": ["release date", "countdown", "raffle", "pre-order", "upcoming release", "limited edition", "launch"]
+    }
+  },
+  "sneaker-high-top": {
+    "label": { "es": "Tenis de bota", "en": "High-top sneaker", "pt": "Tênis cano alto", "fr": "Basket montante", "de": "High-Top-Sneaker", "it": "Sneaker alta", "ja": "ハイカットスニーカー", "zh": "高帮运动鞋", "ko": "하이탑 운동화", "ar": "حذاء رياضي برقبة عالية" },
+    "keywords": {
+      "es": ["tenis altos", "basquetbol", "streetwear", "lanzamiento", "caña alta", "sneakers", "patineta"],
+      "en": ["high tops", "basketball shoe", "streetwear", "sneaker release", "skate shoe", "kicks", "ankle support"]
+    }
+  },
+  "dress-shoe": {
+    "label": { "es": "Zapato de vestir", "en": "Dress shoe", "pt": "Sapato social", "fr": "Chaussure de ville", "de": "Anzugschuh", "it": "Scarpa elegante", "ja": "革靴", "zh": "正装皮鞋", "ko": "구두", "ar": "حذاء رسمي" },
+    "keywords": {
+      "es": ["oxford", "choclo", "calzado formal", "derby", "código de vestimenta", "boda", "zapato de piel"],
+      "en": ["oxford", "derby", "formal shoe", "brogue", "dress code", "leather shoe", "wedding"]
+    }
+  },
+  "loafer": {
+    "label": { "es": "Mocasín", "en": "Loafer", "pt": "Mocassim", "fr": "Mocassin", "de": "Loafer", "it": "Mocassino", "ja": "ローファー", "zh": "乐福鞋", "ko": "로퍼", "ar": "حذاء موكاسين" },
+    "keywords": {
+      "es": ["loafer", "sin agujetas", "slip-on", "calzado", "casual elegante", "penny loafer", "náutico"],
+      "en": ["slip-on", "penny loafer", "moccasin", "boat shoe", "footwear", "smart casual", "laceless"]
+    }
+  },
+  "high-heel": {
+    "label": { "es": "Zapato de tacón", "en": "High heel", "pt": "Salto alto", "fr": "Escarpin", "de": "Pumps", "it": "Scarpa con tacco", "ja": "ハイヒール", "zh": "高跟鞋", "ko": "하이힐", "ar": "حذاء بكعب عالٍ" },
+    "keywords": {
+      "es": ["zapatilla", "tacones", "stiletto", "calzado de mujer", "noche", "fiesta", "pump"],
+      "en": ["pump", "stiletto", "heels", "womens shoes", "evening wear", "party", "court shoe"]
+    }
+  },
+  "ballet-flat": {
+    "label": { "es": "Balerina", "en": "Ballet flat", "pt": "Sapatilha", "fr": "Ballerine", "de": "Ballerina", "it": "Ballerina", "ja": "バレエシューズ", "zh": "芭蕾平底鞋", "ko": "플랫 슈즈", "ar": "حذاء باليرينا" },
+    "keywords": {
+      "es": ["flats", "zapato bajo", "sin tacón", "calzado plano", "calzado de mujer", "cómodo"],
+      "en": ["flats", "ballerina", "flat shoe", "no heel", "womens shoes", "comfortable", "slip-on"]
+    }
+  },
+  "sandal": {
+    "label": { "es": "Sandalia", "en": "Sandal", "pt": "Sandália", "fr": "Sandale", "de": "Sandale", "it": "Sandalo", "ja": "サンダル", "zh": "凉鞋", "ko": "샌들", "ar": "صندل" },
+    "keywords": {
+      "es": ["huarache", "calzado de verano", "calor", "zapato abierto", "playa", "sugerencia por clima", "vacaciones"],
+      "en": ["summer shoes", "open toe", "strappy", "warm weather", "beach", "weather outfit", "vacation"]
+    }
+  },
+  "flip-flop": {
+    "label": { "es": "Chancla", "en": "Flip-flop", "pt": "Chinelo", "fr": "Tong", "de": "Flip-Flop", "it": "Infradito", "ja": "ビーチサンダル", "zh": "人字拖", "ko": "쪼리", "ar": "شبشب" },
+    "keywords": {
+      "es": ["chancletas", "sandalia de playa", "playa", "alberca", "verano", "lista de equipaje", "vacaciones"],
+      "en": ["thongs", "beach sandal", "beach", "pool", "summer", "packing list", "vacation"]
+    }
+  },
+  "boot": {
+    "label": { "es": "Botín", "en": "Ankle boot", "pt": "Bota de cano curto", "fr": "Bottine", "de": "Stiefelette", "it": "Stivaletto", "ja": "ショートブーツ", "zh": "短靴", "ko": "앵클부츠", "ar": "حذاء بوت قصير" },
+    "keywords": {
+      "es": ["botas", "bota corta", "chelsea", "otoño", "invierno", "calzado de temporada"],
+      "en": ["boots", "chelsea boot", "bootie", "autumn", "winter", "footwear", "short boot"]
+    }
+  },
+  "rain-boot": {
+    "label": { "es": "Bota de lluvia", "en": "Rain boot", "pt": "Galocha", "fr": "Botte de pluie", "de": "Gummistiefel", "it": "Stivale da pioggia", "ja": "レインブーツ", "zh": "雨靴", "ko": "장화", "ar": "حذاء مطر" },
+    "keywords": {
+      "es": ["botas de hule", "galocha", "lluvia", "charcos", "jardinería", "impermeable", "pronóstico"],
+      "en": ["wellies", "wellington", "rubber boot", "gumboot", "puddles", "gardening", "rain gear"]
+    }
+  },
+  "slipper": {
+    "label": { "es": "Pantufla", "en": "Slipper", "pt": "Pantufa", "fr": "Chausson", "de": "Hausschuh", "it": "Pantofola", "ja": "スリッパ", "zh": "拖鞋", "ko": "실내화", "ar": "خف منزلي" },
+    "keywords": {
+      "es": ["zapato de casa", "ropa de casa", "amenidades del hotel", "comodidad", "descanso", "loungewear", "spa"],
+      "en": ["house shoe", "loungewear", "hotel amenities", "home", "cozy", "spa", "mule"]
+    }
+  },
+  "hat": {
+    "label": { "es": "Sombrero", "en": "Hat", "pt": "Chapéu", "fr": "Chapeau", "de": "Hut", "it": "Cappello", "ja": "ハット", "zh": "帽子", "ko": "모자", "ar": "قبعة" },
+    "keywords": {
+      "es": ["fedora", "borsalino", "accesorios", "sombrerería", "ala", "panamá", "elegante"],
+      "en": ["fedora", "trilby", "accessories", "headwear", "brim", "panama", "milliner"]
+    }
+  },
+  "baseball-cap": {
+    "label": { "es": "Gorra", "en": "Baseball cap", "pt": "Boné", "fr": "Casquette", "de": "Baseballkappe", "it": "Cappellino", "ja": "キャップ", "zh": "棒球帽", "ko": "야구 모자", "ar": "قبعة بيسبول" },
+    "keywords": {
+      "es": ["cachucha", "visera", "merch", "impresión bajo demanda", "protección solar", "snapback", "beisbolera"],
+      "en": ["cap", "snapback", "trucker hat", "merch", "print on demand", "sun protection", "visor"]
+    }
+  },
+  "beanie": {
+    "label": { "es": "Gorro tejido", "en": "Beanie", "pt": "Gorro", "fr": "Bonnet", "de": "Mütze", "it": "Berretto di lana", "ja": "ニット帽", "zh": "针织帽", "ko": "비니", "ar": "قبعة صوفية" },
+    "keywords": {
+      "es": ["beanie", "gorro de invierno", "frío", "lana", "accesorios de invierno", "merch", "esquí"],
+      "en": ["knit hat", "toque", "winter hat", "wool", "cold weather", "merch", "ski"]
+    }
+  },
+  "sun-hat": {
+    "label": { "es": "Sombrero para el sol", "en": "Sun hat", "pt": "Chapéu de sol", "fr": "Chapeau de soleil", "de": "Sonnenhut", "it": "Cappello da sole", "ja": "日よけ帽子", "zh": "遮阳帽", "ko": "챙 넓은 모자", "ar": "قبعة شمس" },
+    "keywords": {
+      "es": ["sombrero de playa", "pamela", "sombrero de paja", "ala ancha", "playa", "verano", "protección solar"],
+      "en": ["beach hat", "floppy hat", "straw hat", "wide brim", "summer", "beach", "sun protection"]
+    }
+  },
+  "bucket-hat": {
+    "label": { "es": "Gorro de pescador", "en": "Bucket hat", "pt": "Chapéu bucket", "fr": "Bob", "de": "Fischerhut", "it": "Cappello da pescatore", "ja": "バケットハット", "zh": "渔夫帽", "ko": "버킷햇", "ar": "قبعة صياد" },
+    "keywords": {
+      "es": ["bucket hat", "streetwear", "festival", "pesca", "sol", "noventero", "campismo"],
+      "en": ["fisherman hat", "streetwear", "festival", "fishing", "sun", "90s", "camping"]
+    }
+  },
+  "top-hat": {
+    "label": { "es": "Sombrero de copa", "en": "Top hat", "pt": "Cartola", "fr": "Haut-de-forme", "de": "Zylinder", "it": "Cilindro", "ja": "シルクハット", "zh": "高礼帽", "ko": "실크해트", "ar": "قبعة رسمية عالية" },
+    "keywords": {
+      "es": ["chistera", "galera", "etiqueta", "evento formal", "disfraz", "mago", "frac"],
+      "en": ["topper", "black tie", "formal event", "costume", "magician", "tailcoat", "gentleman"]
+    }
+  },
+  "cowboy-hat": {
+    "label": { "es": "Sombrero vaquero", "en": "Cowboy hat", "pt": "Chapéu de caubói", "fr": "Chapeau de cowboy", "de": "Cowboyhut", "it": "Cappello da cowboy", "ja": "カウボーイハット", "zh": "牛仔帽", "ko": "카우보이모자", "ar": "قبعة رعاة البقر" },
+    "keywords": {
+      "es": ["texana", "rodeo", "ranchero", "jaripeo", "charreada", "country", "western"],
+      "en": ["ten gallon", "western wear", "rodeo", "country", "ranch", "cowgirl", "line dancing"]
+    }
+  },
+  "earmuffs": {
+    "label": { "es": "Orejeras", "en": "Earmuffs", "pt": "Protetor de orelhas", "fr": "Cache-oreilles", "de": "Ohrenwärmer", "it": "Paraorecchie", "ja": "イヤーマフ", "zh": "耳罩", "ko": "귀마개", "ar": "واقي أذن" },
+    "keywords": {
+      "es": ["invierno", "frío", "accesorios de invierno", "nieve", "abrigador", "peluche", "sugerencia por clima"],
+      "en": ["ear warmers", "winter", "cold weather", "winter accessories", "snow", "fluffy", "weather outfit"]
+    }
+  },
+  "glasses": {
+    "label": { "es": "Lentes", "en": "Glasses", "pt": "Óculos", "fr": "Lunettes", "de": "Brille", "it": "Occhiali", "ja": "メガネ", "zh": "眼镜", "ko": "안경", "ar": "نظارة" },
+    "keywords": {
+      "es": ["anteojos", "gafas", "óptica", "armazón", "graduación", "receta", "vista"],
+      "en": ["eyeglasses", "spectacles", "optician", "frames", "prescription", "eyewear", "vision"]
+    }
+  },
+  "sunglasses": {
+    "label": { "es": "Lentes de sol", "en": "Sunglasses", "pt": "Óculos de sol", "fr": "Lunettes de soleil", "de": "Sonnenbrille", "it": "Occhiali da sole", "ja": "サングラス", "zh": "太阳镜", "ko": "선글라스", "ar": "نظارة شمسية" },
+    "keywords": {
+      "es": ["gafas de sol", "lentes oscuros", "protección UV", "verano", "playa", "accesorios", "óptica"],
+      "en": ["shades", "sunnies", "UV protection", "summer", "beach", "accessories", "eyewear"]
+    }
+  },
+  "glasses-round": {
+    "label": { "es": "Armazón redondo", "en": "Round frames", "pt": "Armação redonda", "fr": "Monture ronde", "de": "Runde Fassung", "it": "Montatura rotonda", "ja": "丸メガネ", "zh": "圆框眼镜", "ko": "원형 안경테", "ar": "إطار دائري" },
+    "keywords": {
+      "es": ["lentes redondos", "forma del armazón", "retro", "vintage", "óptica", "filtro de forma", "intelectual"],
+      "en": ["round glasses", "frame shape", "retro", "vintage", "panto", "shape filter", "optician"]
+    }
+  },
+  "glasses-cat-eye": {
+    "label": { "es": "Armazón ojo de gato", "en": "Cat-eye frames", "pt": "Armação gatinho", "fr": "Monture œil-de-chat", "de": "Cat-Eye-Fassung", "it": "Montatura cat eye", "ja": "キャットアイフレーム", "zh": "猫眼框眼镜", "ko": "캣아이 안경테", "ar": "إطار عين القطة" },
+    "keywords": {
+      "es": ["cat eye", "lentes de gatita", "forma del armazón", "retro", "años 50", "filtro de forma", "lentes de mujer"],
+      "en": ["winged frames", "frame shape", "retro", "50s", "vintage", "shape filter", "womens eyewear"]
+    }
+  },
+  "glasses-aviator": {
+    "label": { "es": "Armazón de aviador", "en": "Aviator frames", "pt": "Armação aviador", "fr": "Monture aviateur", "de": "Pilotenfassung", "it": "Montatura aviator", "ja": "ティアドロップフレーム", "zh": "飞行员框眼镜", "ko": "보잉 안경테", "ar": "إطار طيّار" },
+    "keywords": {
+      "es": ["lentes de aviador", "lágrima", "piloto", "forma del armazón", "lentes de sol", "filtro de forma", "doble puente"],
+      "en": ["aviators", "teardrop", "pilot glasses", "frame shape", "sunglasses", "shape filter", "double bridge"]
+    }
+  },
+  "virtual-try-on": {
+    "label": { "es": "Probador virtual", "en": "Virtual try-on", "pt": "Provador virtual", "fr": "Essayage virtuel", "de": "Virtuelle Anprobe", "it": "Prova virtuale", "ja": "バーチャル試着", "zh": "虚拟试穿", "ko": "가상 피팅", "ar": "تجربة افتراضية" },
+    "keywords": {
+      "es": ["realidad aumentada", "AR", "probarse", "cámara", "probar lentes", "probar ropa", "espejo virtual"],
+      "en": ["augmented reality", "AR", "camera", "fitting", "virtual mirror", "try before you buy", "eyewear fitting"]
+    }
+  },
+  "necktie": {
+    "label": { "es": "Corbata", "en": "Tie", "pt": "Gravata", "fr": "Cravate", "de": "Krawatte", "it": "Cravatta", "ja": "ネクタイ", "zh": "领带", "ko": "넥타이", "ar": "ربطة عنق" },
+    "keywords": {
+      "es": ["ropa formal", "código de vestimenta", "traje", "oficina", "ropa de negocios", "nudo", "accesorios de caballero"],
+      "en": ["necktie", "formal wear", "dress code", "suit", "business attire", "knot", "menswear"]
+    }
+  },
+  "bow-tie": {
+    "label": { "es": "Corbata de moño", "en": "Bow tie", "pt": "Gravata-borboleta", "fr": "Nœud papillon", "de": "Fliege", "it": "Papillon", "ja": "蝶ネクタイ", "zh": "领结", "ko": "나비넥타이", "ar": "بابيون" },
+    "keywords": {
+      "es": ["moño", "pajarita", "smoking", "etiqueta", "evento formal", "boda", "accesorios de caballero"],
+      "en": ["bowtie", "black tie", "tuxedo", "formal event", "wedding", "menswear", "dickie bow"]
+    }
+  },
+  "scarf": {
+    "label": { "es": "Bufanda", "en": "Scarf", "pt": "Cachecol", "fr": "Écharpe", "de": "Schal", "it": "Sciarpa", "ja": "マフラー", "zh": "围巾", "ko": "목도리", "ar": "وشاح" },
+    "keywords": {
+      "es": ["mascada", "pashmina", "invierno", "frío", "accesorios de invierno", "cuello", "sugerencia por clima"],
+      "en": ["muffler", "shawl", "winter", "cold weather", "winter accessories", "wool", "weather outfit"]
+    }
+  },
+  "gloves": {
+    "label": { "es": "Guantes", "en": "Gloves", "pt": "Luvas", "fr": "Gants", "de": "Handschuhe", "it": "Guanti", "ja": "手袋", "zh": "手套", "ko": "장갑", "ar": "قفازات" },
+    "keywords": {
+      "es": ["manos", "invierno", "frío", "accesorios de invierno", "piel", "de vestir", "mitones"],
+      "en": ["mittens", "winter", "cold weather", "winter accessories", "leather", "hands"]
+    }
+  },
+  "belt": {
+    "label": { "es": "Cinturón", "en": "Belt", "pt": "Cinto", "fr": "Ceinture", "de": "Gürtel", "it": "Cintura", "ja": "ベルト", "zh": "腰带", "ko": "벨트", "ar": "حزام" },
+    "keywords": {
+      "es": ["cinto", "hebilla", "piel", "accesorios", "talla de cintura", "ropa de caballero", "ropa de dama"],
+      "en": ["buckle", "leather", "accessories", "waist size", "menswear", "womenswear", "strap"]
+    }
+  },
+  "handbag": {
+    "label": { "es": "Bolsa de mano", "en": "Handbag", "pt": "Bolsa", "fr": "Sac à main", "de": "Handtasche", "it": "Borsa", "ja": "ハンドバッグ", "zh": "手提包", "ko": "핸드백", "ar": "حقيبة يد" },
+    "keywords": {
+      "es": ["bolso", "cartera", "accesorios", "moda de mujer", "marroquinería", "piel", "diseñador"],
+      "en": ["purse", "bag", "accessories", "womens fashion", "leather goods", "designer"]
+    }
+  },
+  "crossbody-bag": {
+    "label": { "es": "Bolsa cruzada", "en": "Crossbody bag", "pt": "Bolsa transversal", "fr": "Sac bandoulière", "de": "Umhängetasche", "it": "Borsa a tracolla", "ja": "ショルダーバッグ", "zh": "斜挎包", "ko": "크로스백", "ar": "حقيبة كتف" },
+    "keywords": {
+      "es": ["bandolera", "bolsa de hombro", "bolso", "accesorios", "manos libres", "correa"],
+      "en": ["shoulder bag", "messenger bag", "sling bag", "purse", "hands free", "strap"]
+    }
+  },
+  "tote-bag": {
+    "label": { "es": "Bolsa de tela", "en": "Tote bag", "pt": "Ecobag", "fr": "Tote bag", "de": "Stofftasche", "it": "Borsa tote", "ja": "トートバッグ", "zh": "托特包", "ko": "토트백", "ar": "حقيبة قماشية" },
+    "keywords": {
+      "es": ["tote bag", "bolsa reutilizable", "ecobag", "merch", "impresión bajo demanda", "mandado", "playa"],
+      "en": ["canvas bag", "reusable bag", "shopper", "merch", "print on demand", "groceries", "beach bag"]
+    }
+  },
+  "backpack": {
+    "label": { "es": "Mochila", "en": "Backpack", "pt": "Mochila", "fr": "Sac à dos", "de": "Rucksack", "it": "Zaino", "ja": "リュック", "zh": "背包", "ko": "백팩", "ar": "حقيبة ظهر" },
+    "keywords": {
+      "es": ["escuela", "viaje", "uso diario", "merch", "laptop", "excursión", "útiles"],
+      "en": ["rucksack", "school bag", "daypack", "travel", "everyday carry", "merch", "laptop bag"]
+    }
+  },
+  "clutch-bag": {
+    "label": { "es": "Bolsa de noche", "en": "Clutch", "pt": "Clutch", "fr": "Pochette", "de": "Clutch", "it": "Pochette", "ja": "クラッチバッグ", "zh": "手拿包", "ko": "클러치백", "ar": "حقيبة سهرة" },
+    "keywords": {
+      "es": ["clutch", "sobre", "fiesta", "boda", "evento", "accesorios", "cartera de mano"],
+      "en": ["evening bag", "envelope bag", "party", "wedding", "occasion", "accessories", "prom"]
+    }
+  },
+  "belt-bag": {
+    "label": { "es": "Cangurera", "en": "Belt bag", "pt": "Pochete", "fr": "Banane", "de": "Bauchtasche", "it": "Marsupio", "ja": "ウエストポーチ", "zh": "腰包", "ko": "힙색", "ar": "حقيبة خصر" },
+    "keywords": {
+      "es": ["riñonera", "canguro", "festival", "viaje", "manos libres", "bolsa de cintura", "crossbody"],
+      "en": ["fanny pack", "bum bag", "waist bag", "festival", "travel", "hands free", "hip pack"]
+    }
+  },
+  "duffel-bag": {
+    "label": { "es": "Maleta deportiva", "en": "Duffel bag", "pt": "Bolsa esportiva", "fr": "Sac de sport", "de": "Sporttasche", "it": "Borsone", "ja": "ボストンバッグ", "zh": "旅行袋", "ko": "더플백", "ar": "حقيبة رياضية" },
+    "keywords": {
+      "es": ["bolsa de gym", "bolsa de viaje", "fin de semana", "equipo deportivo", "maletín", "petate", "escapada"],
+      "en": ["gym bag", "weekender", "holdall", "sports bag", "travel bag", "kit bag", "weekend trip"]
+    }
+  },
+  "ring": {
+    "label": { "es": "Anillo", "en": "Ring", "pt": "Anel", "fr": "Bague", "de": "Ring", "it": "Anello", "ja": "指輪", "zh": "戒指", "ko": "반지", "ar": "خاتم" },
+    "keywords": {
+      "es": ["sortija", "joyería", "compromiso", "argolla", "medida del dedo", "diamante", "oro"],
+      "en": ["jewelry", "engagement", "wedding band", "diamond", "gold", "solitaire", "jeweler"]
+    }
+  },
+  "ring-box": {
+    "label": { "es": "Estuche de anillo", "en": "Ring box", "pt": "Caixa de anel", "fr": "Écrin à bague", "de": "Ringschatulle", "it": "Astuccio per anello", "ja": "リングケース", "zh": "戒指盒", "ko": "반지 케이스", "ar": "علبة خاتم" },
+    "keywords": {
+      "es": ["compromiso", "pedida de mano", "propuesta", "regalo", "joyería", "matrimonio", "aniversario"],
+      "en": ["engagement", "proposal", "marry me", "gift", "jewelry", "anniversary", "pop the question"]
+    }
+  },
+  "necklace": {
+    "label": { "es": "Collar", "en": "Necklace", "pt": "Colar", "fr": "Collier", "de": "Halskette", "it": "Collana", "ja": "ネックレス", "zh": "项链", "ko": "목걸이", "ar": "قلادة" },
+    "keywords": {
+      "es": ["dije", "cadena", "joyería", "colgante", "gargantilla", "accesorios", "bisutería"],
+      "en": ["pendant", "chain", "jewelry", "choker", "locket", "accessories", "costume jewelry"]
+    }
+  },
+  "earrings": {
+    "label": { "es": "Aretes", "en": "Earrings", "pt": "Brincos", "fr": "Boucles d’oreilles", "de": "Ohrringe", "it": "Orecchini", "ja": "イヤリング", "zh": "耳环", "ko": "귀걸이", "ar": "أقراط" },
+    "keywords": {
+      "es": ["pendientes", "arracadas", "broqueles", "joyería", "colgantes", "bisutería", "perforación"],
+      "en": ["drops", "studs", "hoops", "jewelry", "dangles", "costume jewelry", "piercing"]
+    }
+  },
+  "bracelet": {
+    "label": { "es": "Pulsera", "en": "Bracelet", "pt": "Pulseira", "fr": "Bracelet", "de": "Armband", "it": "Bracciale", "ja": "ブレスレット", "zh": "手链", "ko": "팔찌", "ar": "سوار" },
+    "keywords": {
+      "es": ["brazalete", "esclava", "dijes", "joyería", "muñeca", "bisutería", "charms"],
+      "en": ["bangle", "charms", "cuff", "jewelry", "wrist", "costume jewelry", "chain"]
+    }
+  },
+  "sewing-needle": {
+    "label": { "es": "Aguja con hilo", "en": "Needle and thread", "pt": "Agulha e linha", "fr": "Aiguille et fil", "de": "Nadel und Faden", "it": "Ago e filo", "ja": "針と糸", "zh": "针线", "ko": "바늘과 실", "ar": "إبرة وخيط" },
+    "keywords": {
+      "es": ["costura", "coser", "arreglos", "remendar", "composturas", "zurcir", "reparación de ropa"],
+      "en": ["sewing", "stitch", "alterations", "mending", "repairs", "darning", "clothing repair"]
+    }
+  },
+  "thread-spool": {
+    "label": { "es": "Carrete de hilo", "en": "Spool of thread", "pt": "Carretel de linha", "fr": "Bobine de fil", "de": "Garnrolle", "it": "Rocchetto di filo", "ja": "糸巻き", "zh": "线轴", "ko": "실패", "ar": "بكرة خيط" },
+    "keywords": {
+      "es": ["bobina", "costura", "mercería", "material de costura", "manualidades", "bordado"],
+      "en": ["bobbin", "sewing supplies", "notions", "haberdashery", "crafts", "embroidery"]
+    }
+  },
+  "pincushion": {
+    "label": { "es": "Alfiletero", "en": "Pincushion", "pt": "Alfineteiro", "fr": "Pelote à épingles", "de": "Nadelkissen", "it": "Puntaspilli", "ja": "針山", "zh": "针插", "ko": "바늘꽂이", "ar": "وسادة دبابيس" },
+    "keywords": {
+      "es": ["alfileres", "costura", "mercería", "material de costura", "tienda de manualidades", "agujas"],
+      "en": ["pins", "sewing", "sewing supplies", "notions", "craft store", "needles"]
+    }
+  },
+  "safety-pin": {
+    "label": { "es": "Alfiler de seguridad", "en": "Safety pin", "pt": "Alfinete de segurança", "fr": "Épingle à nourrice", "de": "Sicherheitsnadel", "it": "Spilla da balia", "ja": "安全ピン", "zh": "别针", "ko": "옷핀", "ar": "دبوس أمان" },
+    "keywords": {
+      "es": ["seguro", "imperdible", "mercería", "arreglo rápido", "sujetar", "adjuntar", "prender"],
+      "en": ["pin", "notions", "quick fix", "fasten", "attach", "clip", "punk"]
+    }
+  },
+  "sewing-button": {
+    "label": { "es": "Botón de ropa", "en": "Sewing button", "pt": "Botão de roupa", "fr": "Bouton de couture", "de": "Kleiderknopf", "it": "Bottone", "ja": "服のボタン", "zh": "纽扣", "ko": "단추", "ar": "زر ملابس" },
+    "keywords": {
+      "es": ["mercería", "costura", "pegar botón", "botonadura", "detalle de la prenda", "abotonar", "manualidades"],
+      "en": ["notions", "haberdashery", "sew on", "garment detail", "fastening", "four hole", "craft"]
+    }
+  },
+  "zipper": {
+    "label": { "es": "Cierre", "en": "Zipper", "pt": "Zíper", "fr": "Fermeture éclair", "de": "Reißverschluss", "it": "Cerniera", "ja": "ファスナー", "zh": "拉链", "ko": "지퍼", "ar": "سحّاب" },
+    "keywords": {
+      "es": ["zíper", "cremallera", "mercería", "jalador", "detalles del producto", "abrochar", "costura"],
+      "en": ["zip", "fastener", "notions", "zip pull", "product details", "closure", "fly"]
+    }
+  },
+  "sewing-machine": {
+    "label": { "es": "Máquina de coser", "en": "Sewing machine", "pt": "Máquina de costura", "fr": "Machine à coudre", "de": "Nähmaschine", "it": "Macchina da cucire", "ja": "ミシン", "zh": "缝纫机", "ko": "재봉틀", "ar": "ماكينة خياطة" },
+    "keywords": {
+      "es": ["costura", "costurera", "sastrería", "arreglos", "taller", "confección", "maquila"],
+      "en": ["sewing", "seamstress", "tailoring", "alterations", "workshop", "garment making", "maker"]
+    }
+  },
+  "sewing-pattern": {
+    "label": { "es": "Patrón de costura", "en": "Sewing pattern", "pt": "Molde de costura", "fr": "Patron de couture", "de": "Schnittmuster", "it": "Cartamodello", "ja": "型紙", "zh": "裁剪纸样", "ko": "옷본", "ar": "باترون خياطة" },
+    "keywords": {
+      "es": ["molde", "patronaje", "hazlo tú mismo", "DIY", "a la medida", "confección", "corte"],
+      "en": ["DIY", "pattern making", "made to measure", "dressmaking", "template", "tissue paper", "cut out"]
+    }
+  },
+  "fabric-roll": {
+    "label": { "es": "Rollo de tela", "en": "Bolt of fabric", "pt": "Rolo de tecido", "fr": "Rouleau de tissu", "de": "Stoffballen", "it": "Rotolo di tessuto", "ja": "生地ロール", "zh": "布匹", "ko": "원단 롤", "ar": "لفّة قماش" },
+    "keywords": {
+      "es": ["textil", "materiales", "materia prima", "por metro", "proveedor textil", "mercería", "tapicería"],
+      "en": ["textile", "materials", "by the yard", "material supplier", "textile supply", "cloth", "upholstery"]
+    }
+  },
+  "fabric-swatch": {
+    "label": { "es": "Muestra de tela", "en": "Fabric swatch", "pt": "Amostra de tecido", "fr": "Échantillon de tissu", "de": "Stoffmuster", "it": "Campione di tessuto", "ja": "生地見本", "zh": "布样", "ko": "원단 샘플", "ar": "عيّنة قماش" },
+    "keywords": {
+      "es": ["muestrario", "material", "opciones de color", "textura", "elegir tela", "acabado", "catálogo"],
+      "en": ["sample", "material", "color options", "texture", "choose fabric", "finish", "swatch book"]
+    }
+  },
+  "fabric-striped": {
+    "label": { "es": "Estampado de rayas", "en": "Striped", "pt": "Listrado", "fr": "Rayures", "de": "Gestreift", "it": "A righe", "ja": "ストライプ柄", "zh": "条纹", "ko": "스트라이프", "ar": "نقش مخطط" },
+    "keywords": {
+      "es": ["rayado", "marinero", "filtro de diseño", "patrón", "líneas", "náutico"],
+      "en": ["lines", "pinstripe", "breton", "print", "pattern filter", "nautical"]
+    }
+  },
+  "fabric-polka-dot": {
+    "label": { "es": "Estampado de lunares", "en": "Polka dot", "pt": "Poá", "fr": "Pois", "de": "Gepunktet", "it": "A pois", "ja": "水玉模様", "zh": "波点", "ko": "도트 무늬", "ar": "نقش منقّط" },
+    "keywords": {
+      "es": ["puntos", "bolitas", "retro", "patrón", "filtro de diseño", "vintage", "topos"],
+      "en": ["spotted", "retro", "print", "pattern filter", "vintage", "spots", "pin dot"]
+    }
+  },
+  "fabric-plaid": {
+    "label": { "es": "Estampado de cuadros", "en": "Plaid", "pt": "Xadrez", "fr": "Carreaux", "de": "Kariert", "it": "A quadri", "ja": "チェック柄", "zh": "格纹", "ko": "체크무늬", "ar": "نقش مربعات" },
+    "keywords": {
+      "es": ["escocés", "tartán", "franela", "leñador", "vichy", "patrón", "filtro de diseño"],
+      "en": ["check", "tartan", "flannel", "gingham", "lumberjack", "print", "pattern filter"]
+    }
+  },
+  "fabric-waterproof": {
+    "label": { "es": "Tela impermeable", "en": "Waterproof fabric", "pt": "Tecido impermeável", "fr": "Tissu imperméable", "de": "Wasserdichter Stoff", "it": "Tessuto impermeabile", "ja": "防水素材", "zh": "防水面料", "ko": "방수 원단", "ar": "قماش مقاوم للماء" },
+    "keywords": {
+      "es": ["a prueba de agua", "repelente al agua", "lluvia", "outdoor", "ropa técnica", "membrana", "característica"],
+      "en": ["water resistant", "water repellent", "rain", "outdoor", "technical apparel", "membrane", "feature"]
+    }
+  },
+  "fabric-breathable": {
+    "label": { "es": "Tela transpirable", "en": "Breathable fabric", "pt": "Tecido respirável", "fr": "Tissu respirant", "de": "Atmungsaktiver Stoff", "it": "Tessuto traspirante", "ja": "通気性素材", "zh": "透气面料", "ko": "통기성 원단", "ar": "قماش جيد التهوية" },
+    "keywords": {
+      "es": ["ventilación", "absorbe el sudor", "secado rápido", "ropa deportiva", "ropa técnica", "fresco", "dry fit"],
+      "en": ["ventilation", "moisture wicking", "quick dry", "activewear", "technical apparel", "cool", "airflow"]
+    }
+  },
+  "fabric-stretch": {
+    "label": { "es": "Tela elástica", "en": "Stretch fabric", "pt": "Tecido elástico", "fr": "Tissu extensible", "de": "Stretchstoff", "it": "Tessuto elasticizzato", "ja": "ストレッチ素材", "zh": "弹力面料", "ko": "신축성 원단", "ar": "قماش مطاطي" },
+    "keywords": {
+      "es": ["stretch", "elastano", "spandex", "licra", "flexible", "ropa técnica", "comodidad"],
+      "en": ["elastane", "spandex", "lycra", "flex", "technical apparel", "comfort", "mobility"]
+    }
+  },
+  "fabric-sun-protection": {
+    "label": { "es": "Tela con protección UV", "en": "Sun-protective fabric", "pt": "Tecido com proteção UV", "fr": "Tissu anti-UV", "de": "Stoff mit UV-Schutz", "it": "Tessuto con protezione UV", "ja": "UVカット素材", "zh": "防晒面料", "ko": "자외선 차단 원단", "ar": "قماش واقٍ من الشمس" },
+    "keywords": {
+      "es": ["UPF", "protección solar", "filtro UV", "traje de baño", "outdoor", "playa", "ropa técnica"],
+      "en": ["UPF", "UV protection", "rash guard", "swimwear", "outdoor", "technical apparel"]
+    }
+  },
+  "cotton": {
+    "label": { "es": "Algodón", "en": "Cotton", "pt": "Algodão", "fr": "Coton", "de": "Baumwolle", "it": "Cotone", "ja": "コットン", "zh": "棉", "ko": "면", "ar": "قطن" },
+    "keywords": {
+      "es": ["orgánico", "fibra natural", "material", "composición", "etiqueta de la prenda", "textil", "suave"],
+      "en": ["organic", "natural fiber", "material", "composition", "care label", "textile", "soft"]
+    }
+  },
+  "leather": {
+    "label": { "es": "Cuero", "en": "Leather", "pt": "Couro", "fr": "Cuir", "de": "Leder", "it": "Pelle", "ja": "レザー", "zh": "皮革", "ko": "가죽", "ar": "جلد" },
+    "keywords": {
+      "es": ["piel", "genuino", "vegano", "sintético", "material", "marroquinería", "curtido"],
+      "en": ["genuine", "vegan", "faux", "hide", "material", "suede", "tanned"]
+    }
+  },
+  "scrubs": {
+    "label": { "es": "Uniforme médico", "en": "Scrubs", "pt": "Pijama cirúrgico", "fr": "Tenue médicale", "de": "Kasack", "it": "Divisa medica", "ja": "スクラブ", "zh": "刷手服", "ko": "수술복", "ar": "زي طبي" },
+    "keywords": {
+      "es": ["filipina médica", "pijama quirúrgica", "enfermería", "hospital", "personal de salud", "clínica", "doctor"],
+      "en": ["medical uniform", "nurse", "hospital", "healthcare", "uniform store", "staff apparel", "doctor"]
+    }
+  },
+  "chef-jacket": {
+    "label": { "es": "Filipina de chef", "en": "Chef jacket", "pt": "Dólmã", "fr": "Veste de cuisinier", "de": "Kochjacke", "it": "Giacca da chef", "ja": "コックコート", "zh": "厨师服", "ko": "조리복", "ar": "سترة الطاهي" },
+    "keywords": {
+      "es": ["chaqueta de cocinero", "uniforme de cocina", "restaurante", "cocinero", "personal", "gastronomía", "brigada"],
+      "en": ["chef coat", "kitchen uniform", "restaurant", "cook", "staff apparel", "culinary", "whites"]
+    }
+  },
+  "coveralls": {
+    "label": { "es": "Overol de trabajo", "en": "Coveralls", "pt": "Macacão de trabalho", "fr": "Combinaison de travail", "de": "Overall", "it": "Tuta da lavoro", "ja": "つなぎ", "zh": "连体工作服", "ko": "작업복", "ar": "بدلة عمل" },
+    "keywords": {
+      "es": ["mameluco", "ropa de trabajo", "mecánico", "fábrica", "uniforme industrial", "taller", "una pieza"],
+      "en": ["boiler suit", "workwear", "mechanic", "factory", "industrial uniform", "garage", "jumpsuit"]
+    }
+  },
+  "jersey": {
+    "label": { "es": "Jersey", "en": "Jersey", "pt": "Camisa de time", "fr": "Maillot", "de": "Trikot", "it": "Maglia", "ja": "ユニフォーム", "zh": "球衣", "ko": "유니폼", "ar": "قميص رياضي" },
+    "keywords": {
+      "es": ["playera de fútbol", "camiseta del equipo", "uniforme", "afición", "número y nombre", "merch", "liga"],
+      "en": ["sports shirt", "team kit", "uniform", "fan merch", "football shirt", "player number", "league"]
+    }
+  },
+  "outfit": {
+    "label": { "es": "Outfit", "en": "Outfit", "pt": "Look", "fr": "Tenue", "de": "Outfit", "it": "Outfit", "ja": "コーディネート", "zh": "穿搭", "ko": "코디", "ar": "إطلالة" },
+    "keywords": {
+      "es": ["conjunto", "look", "atuendo", "completa el look", "clóset", "estilismo", "combinar ropa"],
+      "en": ["look", "complete the look", "wardrobe", "styling", "ensemble", "OOTD", "mix and match"]
+    }
+  },
+  "outfit-plus": {
+    "label": { "es": "Crear outfit", "en": "Create outfit", "pt": "Criar look", "fr": "Créer une tenue", "de": "Outfit erstellen", "it": "Crea outfit", "ja": "コーデを作成", "zh": "创建穿搭", "ko": "코디 만들기", "ar": "إنشاء إطلالة" },
+    "keywords": {
+      "es": ["nuevo look", "armar conjunto", "agregar look", "clóset virtual", "estilismo", "combinar", "guardar look"],
+      "en": ["new look", "add look", "put together", "virtual closet", "styling", "mix and match", "save look"]
+    }
+  },
+  "shirt-sizes": {
+    "label": { "es": "Tallas", "en": "Sizes", "pt": "Tamanhos", "fr": "Tailles", "de": "Größen", "it": "Taglie", "ja": "サイズ", "zh": "尺码", "ko": "사이즈", "ar": "المقاسات" },
+    "keywords": {
+      "es": ["guía de tallas", "selector", "chica mediana grande", "CH M G", "ajuste", "tabla de medidas", "medidas"],
+      "en": ["size chart", "selector", "small medium large", "S M L", "fit", "measurements", "size range"]
+    }
+  },
+  "shirt-measurements": {
+    "label": { "es": "Medidas de la prenda", "en": "Garment measurements", "pt": "Medidas da peça", "fr": "Mesures du vêtement", "de": "Maße des Kleidungsstücks", "it": "Misure del capo", "ja": "実寸", "zh": "平铺尺寸", "ko": "실측 사이즈", "ar": "مقاسات القطعة" },
+    "keywords": {
+      "es": ["medidas en plano", "pecho", "largo", "ancho", "tabla de medidas", "reventa", "cinta métrica"],
+      "en": ["flat measurements", "pit to pit", "chest", "length", "size chart", "resale", "tape measure"]
+    }
+  },
+  "shirt-torn": {
+    "label": { "es": "Prenda dañada", "en": "Damaged garment", "pt": "Peça danificada", "fr": "Vêtement abîmé", "de": "Beschädigtes Kleidungsstück", "it": "Capo danneggiato", "ja": "破れた服", "zh": "破损衣物", "ko": "손상된 의류", "ar": "قطعة ملابس تالفة" },
+    "keywords": {
+      "es": ["roto", "rasgado", "arreglo", "remendar", "composturas", "devolución", "defecto"],
+      "en": ["torn", "ripped", "repair", "mending", "alterations", "return", "defect"]
+    }
+  },
+  "shirt-plus": {
+    "label": { "es": "Agregar prenda", "en": "Add garment", "pt": "Adicionar peça", "fr": "Ajouter un vêtement", "de": "Kleidungsstück hinzufügen", "it": "Aggiungi capo", "ja": "服を追加", "zh": "添加衣物", "ko": "옷 추가", "ar": "إضافة قطعة ملابس" },
+    "keywords": {
+      "es": ["clóset virtual", "guardarropa", "publicar", "vender ropa", "nuevo artículo", "subir foto", "inventario"],
+      "en": ["virtual closet", "wardrobe", "list item", "sell clothes", "new item", "upload", "inventory"]
+    }
+  },
+  "shirt-search": {
+    "label": { "es": "Buscar similares", "en": "Find similar", "pt": "Buscar semelhantes", "fr": "Articles similaires", "de": "Ähnliche finden", "it": "Trova simili", "ja": "似たアイテムを探す", "zh": "查找相似款", "ko": "비슷한 상품 찾기", "ar": "البحث عن منتجات مشابهة" },
+    "keywords": {
+      "es": ["búsqueda visual", "compra el look", "parecidos", "encontrar prenda", "inspiración", "recomendaciones"],
+      "en": ["visual search", "shop the look", "lookalike", "find item", "inspiration", "recommendations", "dupe"]
+    }
+  },
+  "shirt-sync": {
+    "label": { "es": "Intercambiar ropa", "en": "Swap clothes", "pt": "Trocar roupas", "fr": "Échanger des vêtements", "de": "Kleidertausch", "it": "Scambio di vestiti", "ja": "服の交換", "zh": "衣物交换", "ko": "옷 교환", "ar": "تبادل الملابس" },
+    "keywords": {
+      "es": ["segunda mano", "reventa", "moda circular", "ropa usada", "trueque", "ropa de paca", "bazar"],
+      "en": ["secondhand", "resell", "recommerce", "circular fashion", "thrift", "preloved", "consignment"]
+    }
+  },
+  "hanger-clock": {
+    "label": { "es": "Renta de ropa", "en": "Clothing rental", "pt": "Aluguel de roupas", "fr": "Location de vêtements", "de": "Kleidermiete", "it": "Noleggio abiti", "ja": "服のレンタル", "zh": "服装租赁", "ko": "의류 대여", "ar": "تأجير الملابس" },
+    "keywords": {
+      "es": ["alquiler", "periodo de renta", "fecha de devolución", "vestidos de gala", "trajes", "préstamo", "suscripción de ropa"],
+      "en": ["rent", "rental period", "due date", "return by", "dress rental", "suit hire", "wardrobe subscription"]
+    }
+  }
+}

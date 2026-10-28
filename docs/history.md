@@ -4,6 +4,13 @@
 
 [← Index](./README.md)
 
+## 28 Oct 2026 — Round 7: people and the body (773 icons)
+- **Ten new categories** ([taxonomy](./taxonomy.md)): personas 81, gestos 50 (and thumbs-up, thumbs-down, and hand-raised from comunicacion), emociones 55 (and comunicacion's eight faces), salud 112 (and heart-pulse, stethoscope, virus, first-aid, and hospital), anatomia 65, bienestar 68, fitness 68 (and dumbbell), belleza 79, ropa 126 (and shirt and hanger), accesibilidad 69 (and accessibility and wheelchair). The set has 5,287 icons in 51 categories.
+- **Names:** 1,099 proposed, 861 approved. What two lists named kept one home: the beard, the mustache, and the eyebrow in belleza; the period products in salud; the walker, the cane, and the crutch in salud and the prosthetics in accesibilidad; stretching and the yoga mat in bienestar; the robe in ropa. No garment that stands for a culture (the kimono, the poncho, the cape).
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category; the critics redesigned about 160 icons (ropa's coats on one long construction and its trousers on one crotch, the professions' objects at one size and place). What two subjects can't say at 24 px was dropped: gestures with two hands, the joints drawn as bones, the poses folded on the floor ([DESIGN.md](../DESIGN.md#what-failed-before-check-every-icon-against-it)), and the incubator round 6 left (four concepts, none read). After them the main session dropped 35 that still didn't read (among them `person-child`, `hug`, `pool-slides`, `wound`, `face-sobbing`, and anatomia's neck, hip, shoulder, and ankle) and redrew the electrician's bolt as one zigzag stroke.
+- **Interruptions:** the usage limit three times, twice in the middle of the drawing; each relaunch went straight to the critics where the drawing was done, and the half-drawn files were finished by their illustrators.
+- Tests: 61.
+
 ## 27 Oct 2026 — Round 6: home and food (972 icons)
 - **Ten new categories** ([taxonomy](./taxonomy.md)): hogar 123 (and bed, door, and door-open from lugares, the bathtub, shower, and toilet round 4 deferred among its own), electrodomesticos 108, limpieza 86 (the laundry care symbols on one grid), cocina 118 (and utensils), comida 105, frutas-verduras 111, bebidas 97 (and coffee), restaurante 70, bebes 73, mascotas 81 (and cat and paw). The set has 4,514 icons in 41 categories.
 - **Names:** the first round to ask for about 130 % of each target ([decision 85](./decisions.md#phase-3-23-oct-2026)): 1,186 proposed, 1,006 approved, against 1,020 planned. A food that is also an allergen keeps one drawing (the allergens are tags), and the families that two lists proposed kept one home.

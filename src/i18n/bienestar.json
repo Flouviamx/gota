@@ -1,0 +1,478 @@
+{
+  "meditation": {
+    "label": { "es": "Meditación", "en": "Meditation", "pt": "Meditação", "fr": "Méditation", "de": "Meditation", "it": "Meditazione", "ja": "瞑想", "zh": "冥想", "ko": "명상", "ar": "التأمل" },
+    "keywords": {
+      "es": ["mindfulness", "atención plena", "calma", "relajación", "postura de loto", "app de bienestar", "práctica diaria"],
+      "en": ["mindfulness", "calm", "relaxation", "lotus position", "wellness app", "daily practice", "inner peace"]
+    }
+  },
+  "meditation-clock": {
+    "label": { "es": "Temporizador de meditación", "en": "Meditation timer", "pt": "Temporizador de meditação", "fr": "Minuteur de méditation", "de": "Meditationstimer", "it": "Timer di meditazione", "ja": "瞑想タイマー", "zh": "冥想计时器", "ko": "명상 타이머", "ar": "مؤقت التأمل" },
+    "keywords": {
+      "es": ["minutos de atención plena", "duración de la sesión", "cuenta regresiva", "minutos acumulados", "cronómetro", "sesión programada", "recordatorio"],
+      "en": ["mindful minutes", "session length", "countdown", "minutes logged", "stopwatch", "scheduled session", "reminder"]
+    }
+  },
+  "meditation-audio": {
+    "label": { "es": "Meditación guiada", "en": "Guided meditation", "pt": "Meditação guiada", "fr": "Méditation guidée", "de": "Geführte Meditation", "it": "Meditazione guidata", "ja": "ガイド付き瞑想", "zh": "引导冥想", "ko": "가이드 명상", "ar": "تأمل موجّه" },
+    "keywords": {
+      "es": ["audio", "audífonos", "sesión de audio", "escuchar", "voz guía", "podcast", "relajación"],
+      "en": ["audio", "headphones", "audio session", "listen", "narrated", "podcast", "relaxation"]
+    }
+  },
+  "lotus": {
+    "label": { "es": "Flor de loto", "en": "Lotus", "pt": "Flor de lótus", "fr": "Fleur de lotus", "de": "Lotusblüte", "it": "Fior di loto", "ja": "蓮の花", "zh": "莲花", "ko": "연꽃", "ar": "زهرة اللوتس" },
+    "keywords": {
+      "es": ["spa", "bienestar", "calma", "relajación", "yoga", "centro holístico", "armonía"],
+      "en": ["spa", "wellness", "calm", "relaxation", "yoga", "holistic center", "harmony"]
+    }
+  },
+  "singing-bowl": {
+    "label": { "es": "Cuenco tibetano", "en": "Singing bowl", "pt": "Taça tibetana", "fr": "Bol chantant", "de": "Klangschale", "it": "Ciotola tibetana", "ja": "シンギングボウル", "zh": "颂钵", "ko": "싱잉볼", "ar": "وعاء غنائي" },
+    "keywords": {
+      "es": ["baño de sonido", "campana de meditación", "gong", "sonoterapia", "campanada", "aviso de intervalo", "cuenco de cuarzo"],
+      "en": ["sound bath", "meditation bell", "gong", "sound healing", "chime", "interval bell", "tibetan bowl"]
+    }
+  },
+  "stacked-stones": {
+    "label": { "es": "Piedras apiladas", "en": "Stacked stones", "pt": "Pedras empilhadas", "fr": "Pierres empilées", "de": "Gestapelte Steine", "it": "Pietre impilate", "ja": "積み石", "zh": "叠石", "ko": "돌탑", "ar": "حجارة متراصة" },
+    "keywords": {
+      "es": ["equilibrio", "calma", "zen", "estabilidad", "piedras calientes", "masaje con piedras", "armonía"],
+      "en": ["balance", "calm", "zen", "grounding", "hot stones", "stone massage", "cairn"]
+    }
+  },
+  "body-scan": {
+    "label": { "es": "Escaneo corporal", "en": "Body scan", "pt": "Escaneamento corporal", "fr": "Scan corporel", "de": "Body-Scan", "it": "Scansione corporea", "ja": "ボディスキャン", "zh": "身体扫描", "ko": "바디 스캔", "ar": "مسح الجسد" },
+    "keywords": {
+      "es": ["conciencia corporal", "atención plena", "relajación progresiva", "sensaciones", "meditación", "soltar tensión", "recorrido del cuerpo"],
+      "en": ["body awareness", "mindfulness", "progressive relaxation", "sensations", "meditation", "release tension", "head to toe"]
+    }
+  },
+  "mind-calm": {
+    "label": { "es": "Mente en calma", "en": "Calm mind", "pt": "Mente calma", "fr": "Esprit apaisé", "de": "Ruhiger Geist", "it": "Mente calma", "ja": "穏やかな心", "zh": "平静的心", "ko": "차분한 마음", "ar": "ذهن هادئ" },
+    "keywords": {
+      "es": ["tranquilidad", "atención plena", "paz mental", "serenidad", "relajado", "sin estrés", "silencio"],
+      "en": ["tranquility", "mindfulness", "peace of mind", "serenity", "relaxed", "stress free", "quiet"]
+    }
+  },
+  "mind-heart": {
+    "label": { "es": "Salud mental", "en": "Mental health", "pt": "Saúde mental", "fr": "Santé mentale", "de": "Psychische Gesundheit", "it": "Salute mentale", "ja": "メンタルヘルス", "zh": "心理健康", "ko": "정신 건강", "ar": "الصحة النفسية" },
+    "keywords": {
+      "es": ["bienestar emocional", "emociones", "autoestima", "psicología", "cuidar la mente", "estado de ánimo", "apoyo emocional"],
+      "en": ["emotional wellbeing", "emotions", "self-esteem", "psychology", "mind care", "mood", "emotional support"]
+    }
+  },
+  "mind-tangled": {
+    "label": { "es": "Ansiedad", "en": "Anxiety", "pt": "Ansiedade", "fr": "Anxiété", "de": "Angst", "it": "Ansia", "ja": "不安", "zh": "焦虑", "ko": "불안", "ar": "القلق" },
+    "keywords": {
+      "es": ["pensar de más", "sobrepensar", "pensamientos acelerados", "preocupación", "nervios", "confusión", "mente revuelta"],
+      "en": ["overthinking", "racing thoughts", "worry", "nervous", "confusion", "rumination", "tangled thoughts"]
+    }
+  },
+  "mind-focus": {
+    "label": { "es": "Concentración", "en": "Focus", "pt": "Foco", "fr": "Concentration", "de": "Fokus", "it": "Concentrazione", "ja": "集中", "zh": "专注", "ko": "집중", "ar": "التركيز" },
+    "keywords": {
+      "es": ["enfoque", "modo concentración", "atención", "productividad", "sin distracciones", "trabajo profundo", "objetivo"],
+      "en": ["concentration", "focus mode", "attention", "productivity", "no distractions", "deep work", "target"]
+    }
+  },
+  "breath": {
+    "label": { "es": "Respiración", "en": "Breathing", "pt": "Respiração", "fr": "Respiration", "de": "Atmung", "it": "Respirazione", "ja": "呼吸", "zh": "呼吸", "ko": "호흡", "ar": "التنفس" },
+    "keywords": {
+      "es": ["respirar", "inhalar y exhalar", "aire", "pulmones", "pranayama", "calmarse", "ejercicio guiado"],
+      "en": ["breathwork", "inhale and exhale", "air", "lungs", "pranayama", "calm down", "guided exercise"]
+    }
+  },
+  "breath-in": {
+    "label": { "es": "Inhalar", "en": "Breathe in", "pt": "Inspirar", "fr": "Inspirer", "de": "Einatmen", "it": "Inspirare", "ja": "息を吸う", "zh": "吸气", "ko": "들숨", "ar": "شهيق" },
+    "keywords": {
+      "es": ["inspirar", "tomar aire", "inhalación", "fase de respiración", "llenar los pulmones", "ejercicio de respiración", "respirar hondo"],
+      "en": ["inhale", "inspiration", "take a breath", "breathing phase", "fill lungs", "breathing exercise", "deep breath"]
+    }
+  },
+  "breath-out": {
+    "label": { "es": "Exhalar", "en": "Breathe out", "pt": "Expirar", "fr": "Expirer", "de": "Ausatmen", "it": "Espirare", "ja": "息を吐く", "zh": "呼气", "ko": "날숨", "ar": "زفير" },
+    "keywords": {
+      "es": ["espirar", "soltar el aire", "exhalación", "fase de respiración", "vaciar los pulmones", "suspiro", "relajar"],
+      "en": ["exhale", "expiration", "let the air out", "breathing phase", "empty lungs", "sigh", "release"]
+    }
+  },
+  "box-breathing": {
+    "label": { "es": "Respiración cuadrada", "en": "Box breathing", "pt": "Respiração quadrada", "fr": "Respiration carrée", "de": "Box-Atmung", "it": "Respirazione quadrata", "ja": "ボックス呼吸", "zh": "箱式呼吸", "ko": "박스 호흡", "ar": "التنفس المربع" },
+    "keywords": {
+      "es": ["4-4-4-4", "respiración en caja", "contar tiempos", "sostener el aire", "calmar la ansiedad", "ejercicio de respiración", "patrón"],
+      "en": ["square breathing", "4-4-4-4", "count to four", "hold breath", "calm anxiety", "breathing exercise", "pattern"]
+    }
+  },
+  "yoga-tree": {
+    "label": { "es": "Postura del árbol", "en": "Tree pose", "pt": "Postura da árvore", "fr": "Posture de l’arbre", "de": "Baumhaltung", "it": "Posizione dell’albero", "ja": "木のポーズ", "zh": "树式", "ko": "나무 자세", "ar": "وضعية الشجرة" },
+    "keywords": {
+      "es": ["yoga", "equilibrio", "vrikshasana", "sobre una pierna", "de pie", "estabilidad", "asana"],
+      "en": ["yoga", "balance", "vrksasana", "one leg", "standing pose", "stability", "asana"]
+    }
+  },
+  "yoga-warrior": {
+    "label": { "es": "Postura del guerrero", "en": "Warrior pose", "pt": "Postura do guerreiro", "fr": "Posture du guerrier", "de": "Kriegerhaltung", "it": "Posizione del guerriero", "ja": "戦士のポーズ", "zh": "战士式", "ko": "전사 자세", "ar": "وضعية المحارب" },
+    "keywords": {
+      "es": ["yoga", "fuerza", "virabhadrasana", "estocada", "secuencia de yoga", "vinyasa", "asana"],
+      "en": ["yoga", "strength", "virabhadrasana", "lunge", "yoga flow", "vinyasa", "asana"]
+    }
+  },
+  "yoga-cobra": {
+    "label": { "es": "Postura de la cobra", "en": "Cobra pose", "pt": "Postura da cobra", "fr": "Posture du cobra", "de": "Kobrahaltung", "it": "Posizione del cobra", "ja": "コブラのポーズ", "zh": "眼镜蛇式", "ko": "코브라 자세", "ar": "وضعية الكوبرا" },
+    "keywords": {
+      "es": ["yoga", "bhujangasana", "extensión de espalda", "flexión hacia atrás", "estiramiento", "saludo al sol", "asana"],
+      "en": ["yoga", "bhujangasana", "backbend", "back extension", "stretch", "sun salutation", "asana"]
+    }
+  },
+  "tai-chi": {
+    "label": { "es": "Tai chi", "en": "Tai chi", "pt": "Tai chi", "fr": "Tai-chi", "de": "Tai-Chi", "it": "Tai chi", "ja": "太極拳", "zh": "太极拳", "ko": "태극권", "ar": "تاي تشي" },
+    "keywords": {
+      "es": ["chi kung", "qigong", "meditación en movimiento", "artes marciales", "movimiento lento", "equilibrio", "energía"],
+      "en": ["qigong", "chi kung", "moving meditation", "martial arts", "slow movement", "balance", "energy flow"]
+    }
+  },
+  "stretching": {
+    "label": { "es": "Estiramiento", "en": "Stretching", "pt": "Alongamento", "fr": "Étirements", "de": "Dehnen", "it": "Stretching", "ja": "ストレッチ", "zh": "拉伸", "ko": "스트레칭", "ar": "تمارين الإطالة" },
+    "keywords": {
+      "es": ["flexibilidad", "movilidad", "pausa activa", "estirarse", "calentamiento", "recordatorio", "elongación"],
+      "en": ["flexibility", "mobility", "active break", "limber up", "warm up", "reminder", "loosen up"]
+    }
+  },
+  "posture": {
+    "label": { "es": "Postura", "en": "Posture", "pt": "Postura", "fr": "Posture", "de": "Körperhaltung", "it": "Postura", "ja": "姿勢", "zh": "姿势", "ko": "자세", "ar": "وضعية الجسم" },
+    "keywords": {
+      "es": ["siéntate derecho", "ergonomía", "espalda recta", "columna", "escritorio", "recordatorio", "dolor de espalda"],
+      "en": ["sit up straight", "ergonomics", "straight back", "spine", "desk", "reminder", "back pain"]
+    }
+  },
+  "outdoor-time": {
+    "label": { "es": "Tiempo al aire libre", "en": "Time outdoors", "pt": "Tempo ao ar livre", "fr": "Temps en plein air", "de": "Zeit im Freien", "it": "Tempo all’aperto", "ja": "屋外で過ごした時間", "zh": "户外时间", "ko": "야외 활동 시간", "ar": "الوقت في الهواء الطلق" },
+    "keywords": {
+      "es": ["naturaleza", "luz del día", "sol", "caminar afuera", "parque", "salir", "minutos afuera"],
+      "en": ["nature", "daylight", "sunlight", "walk outside", "park", "go outside", "fresh air"]
+    }
+  },
+  "sleep": {
+    "label": { "es": "Sueño", "en": "Sleep", "pt": "Sono", "fr": "Sommeil", "de": "Schlaf", "it": "Sonno", "ja": "睡眠", "zh": "睡眠", "ko": "수면", "ar": "النوم" },
+    "keywords": {
+      "es": ["dormir", "descanso", "noche", "irse a la cama", "siesta", "zzz", "monitoreo nocturno"],
+      "en": ["asleep", "rest", "night", "go to bed", "nap", "zzz", "night tracking"]
+    }
+  },
+  "sleep-check": {
+    "label": { "es": "Meta de sueño cumplida", "en": "Sleep goal met", "pt": "Meta de sono atingida", "fr": "Objectif de sommeil atteint", "de": "Schlafziel erreicht", "it": "Obiettivo di sonno raggiunto", "ja": "睡眠目標を達成", "zh": "已达成睡眠目标", "ko": "수면 목표 달성", "ar": "تم تحقيق هدف النوم" },
+    "keywords": {
+      "es": ["dormí bien", "horas suficientes", "descansado", "objetivo cumplido", "noche registrada", "buen descanso", "completado"],
+      "en": ["slept well", "enough hours", "well rested", "target reached", "night logged", "good rest", "completed"]
+    }
+  },
+  "snoring": {
+    "label": { "es": "Ronquidos", "en": "Snoring", "pt": "Ronco", "fr": "Ronflement", "de": "Schnarchen", "it": "Russare", "ja": "いびき", "zh": "打鼾", "ko": "코골이", "ar": "الشخير" },
+    "keywords": {
+      "es": ["roncar", "detección de ruido", "monitor de sueño", "apnea", "respiración nocturna", "grabación", "zzz"],
+      "en": ["snore", "noise detection", "sleep tracker", "apnea", "night breathing", "recording", "zzz"]
+    }
+  },
+  "sleep-score": {
+    "label": { "es": "Calidad del sueño", "en": "Sleep score", "pt": "Pontuação do sono", "fr": "Score de sommeil", "de": "Schlafwert", "it": "Punteggio del sonno", "ja": "睡眠スコア", "zh": "睡眠评分", "ko": "수면 점수", "ar": "تقييم النوم" },
+    "keywords": {
+      "es": ["puntaje", "calificación", "qué tan bien dormí", "métrica", "análisis nocturno", "reporte de la noche", "medidor"],
+      "en": ["quality of rest", "rating", "how well I slept", "metric", "night analysis", "night report", "gauge"]
+    }
+  },
+  "sleep-stages": {
+    "label": { "es": "Fases del sueño", "en": "Sleep stages", "pt": "Fases do sono", "fr": "Phases du sommeil", "de": "Schlafphasen", "it": "Fasi del sonno", "ja": "睡眠ステージ", "zh": "睡眠阶段", "ko": "수면 단계", "ar": "مراحل النوم" },
+    "keywords": {
+      "es": ["hipnograma", "REM", "profundo", "ligero", "despierto", "ciclos nocturnos", "gráfica de la noche"],
+      "en": ["hypnogram", "REM", "deep", "light", "awake", "night cycles", "night chart"]
+    }
+  },
+  "bedtime": {
+    "label": { "es": "Hora de dormir", "en": "Bedtime", "pt": "Hora de dormir", "fr": "Heure du coucher", "de": "Schlafenszeit", "it": "Ora di dormire", "ja": "就寝時間", "zh": "就寝时间", "ko": "취침 시간", "ar": "وقت النوم" },
+    "keywords": {
+      "es": ["recordatorio", "acostarse", "desconectarse", "rutina nocturna", "apagar pantallas", "relajarse", "horario"],
+      "en": ["reminder", "go to bed", "wind down", "night routine", "screens off", "lights out", "schedule"]
+    }
+  },
+  "wake-up": {
+    "label": { "es": "Despertar", "en": "Wake up", "pt": "Acordar", "fr": "Réveil", "de": "Aufwachen", "it": "Risveglio", "ja": "起床", "zh": "起床", "ko": "기상", "ar": "الاستيقاظ" },
+    "keywords": {
+      "es": ["levantarse", "mañana", "fin de la noche", "alarma", "registro de sueño", "amanecer", "buenos días"],
+      "en": ["get up", "morning", "end of night", "alarm", "sleep log", "sunrise", "good morning"]
+    }
+  },
+  "sleep-mask": {
+    "label": { "es": "Antifaz para dormir", "en": "Sleep mask", "pt": "Máscara de dormir", "fr": "Masque de sommeil", "de": "Schlafmaske", "it": "Mascherina per dormire", "ja": "アイマスク", "zh": "睡眠眼罩", "ko": "수면 안대", "ar": "قناع النوم" },
+    "keywords": {
+      "es": ["bloquear la luz", "viaje", "vuelo", "descanso", "oscuridad", "siesta", "ayuda para dormir"],
+      "en": ["eye mask", "blackout", "travel", "flight", "rest", "darkness", "nap"]
+    }
+  },
+  "earplugs": {
+    "label": { "es": "Tapones para los oídos", "en": "Earplugs", "pt": "Protetores auriculares", "fr": "Bouchons d’oreilles", "de": "Ohrstöpsel", "it": "Tappi per le orecchie", "ja": "耳栓", "zh": "耳塞", "ko": "귀마개", "ar": "سدادات الأذن" },
+    "keywords": {
+      "es": ["ruido", "silencio", "bloquear sonido", "dormir", "concentración", "viaje", "protección auditiva"],
+      "en": ["noise", "quiet", "block sound", "sleep", "concentration", "travel", "hearing protection"]
+    }
+  },
+  "insomnia": {
+    "label": { "es": "Insomnio", "en": "Insomnia", "pt": "Insônia", "fr": "Insomnie", "de": "Schlaflosigkeit", "it": "Insonnia", "ja": "不眠", "zh": "失眠", "ko": "불면증", "ar": "الأرق" },
+    "keywords": {
+      "es": ["no puedo dormir", "desvelo", "despierto de noche", "mal descanso", "trastorno del sueño", "madrugada", "cansancio"],
+      "en": ["can’t sleep", "sleepless", "awake at night", "poor sleep", "sleep disorder", "restless night", "tiredness"]
+    }
+  },
+  "dream": {
+    "label": { "es": "Sueños", "en": "Dreams", "pt": "Sonhos", "fr": "Rêves", "de": "Träume", "it": "Sogni", "ja": "夢", "zh": "梦境", "ko": "꿈", "ar": "الأحلام" },
+    "keywords": {
+      "es": ["soñar", "diario nocturno", "pesadilla", "imaginación", "nube", "fantasía", "onírico"],
+      "en": ["night journal", "nightmare", "imagination", "cloud", "fantasy", "lucid", "subconscious"]
+    }
+  },
+  "massage": {
+    "label": { "es": "Masaje", "en": "Massage", "pt": "Massagem", "fr": "Massage", "de": "Massage", "it": "Massaggio", "ja": "マッサージ", "zh": "按摩", "ko": "마사지", "ar": "التدليك" },
+    "keywords": {
+      "es": ["spa", "tratamiento", "reservar cita", "relajación", "terapia", "fisioterapia", "contracturas"],
+      "en": ["spa", "treatment", "book appointment", "relaxation", "therapy", "physiotherapy", "bodywork"]
+    }
+  },
+  "massage-chair": {
+    "label": { "es": "Sillón de masaje", "en": "Massage chair", "pt": "Poltrona de massagem", "fr": "Fauteuil de massage", "de": "Massagesessel", "it": "Poltrona massaggiante", "ja": "マッサージチェア", "zh": "按摩椅", "ko": "안마의자", "ar": "كرسي التدليك" },
+    "keywords": {
+      "es": ["sillón reclinable", "relajación", "spa en casa", "espalda", "descanso", "aparato", "shiatsu"],
+      "en": ["recliner", "relaxation", "home spa", "back", "rest", "device", "shiatsu"]
+    }
+  },
+  "sauna": {
+    "label": { "es": "Sauna", "en": "Sauna", "pt": "Sauna", "fr": "Sauna", "de": "Sauna", "it": "Sauna", "ja": "サウナ", "zh": "桑拿", "ko": "사우나", "ar": "الساونا" },
+    "keywords": {
+      "es": ["vapor", "baño de vapor", "spa", "calor", "temazcal", "sudar", "gimnasio"],
+      "en": ["steam room", "steam bath", "spa", "heat", "sweat", "gym", "hot room"]
+    }
+  },
+  "cold-plunge": {
+    "label": { "es": "Inmersión en agua fría", "en": "Cold plunge", "pt": "Imersão em água fria", "fr": "Bain froid", "de": "Eisbad", "it": "Bagno freddo", "ja": "冷水浴", "zh": "冷水浸泡", "ko": "냉수욕", "ar": "الغطس في الماء البارد" },
+    "keywords": {
+      "es": ["baño de hielo", "agua helada", "terapia de frío", "crioterapia", "recuperación", "tina de hielo", "regaderazo frío"],
+      "en": ["ice bath", "icy water", "cold therapy", "cryotherapy", "recovery", "ice tub", "cold shower"]
+    }
+  },
+  "bubble-bath": {
+    "label": { "es": "Baño de burbujas", "en": "Bubble bath", "pt": "Banho de espuma", "fr": "Bain moussant", "de": "Schaumbad", "it": "Bagno di schiuma", "ja": "泡風呂", "zh": "泡泡浴", "ko": "거품 목욕", "ar": "حمام الفقاعات" },
+    "keywords": {
+      "es": ["tina", "relajarse en casa", "espuma", "autocuidado", "bañera", "noche tranquila", "consentirse"],
+      "en": ["bathtub", "relax at home", "foam", "self-care", "soak", "quiet night", "pamper"]
+    }
+  },
+  "hammock": {
+    "label": { "es": "Hamaca", "en": "Hammock", "pt": "Rede", "fr": "Hamac", "de": "Hängematte", "it": "Amaca", "ja": "ハンモック", "zh": "吊床", "ko": "해먹", "ar": "أرجوحة شبكية" },
+    "keywords": {
+      "es": ["descanso", "relajación", "vacaciones", "playa", "siesta", "tiempo libre", "jardín"],
+      "en": ["rest", "relaxation", "vacation", "beach", "nap", "free time", "backyard"]
+    }
+  },
+  "relax": {
+    "label": { "es": "Relajarse", "en": "Relax", "pt": "Relaxar", "fr": "Se détendre", "de": "Entspannen", "it": "Rilassarsi", "ja": "リラックス", "zh": "放松", "ko": "휴식", "ar": "استرخاء" },
+    "keywords": {
+      "es": ["descansar", "tiempo libre", "pausa", "flojera", "desconectarse", "chill", "no hacer nada"],
+      "en": ["rest", "downtime", "break", "lazy", "unwind", "chill", "do nothing"]
+    }
+  },
+  "essential-oil": {
+    "label": { "es": "Aceite esencial", "en": "Essential oil", "pt": "Óleo essencial", "fr": "Huile essentielle", "de": "Ätherisches Öl", "it": "Olio essenziale", "ja": "エッセンシャルオイル", "zh": "精油", "ko": "에센셜 오일", "ar": "زيت عطري" },
+    "keywords": {
+      "es": ["aromaterapia", "para masaje", "gotero", "frasco", "aroma", "esencia", "cosmética natural"],
+      "en": ["aromatherapy", "for massage", "dropper", "bottle", "scent", "essence", "natural cosmetics"]
+    }
+  },
+  "aroma-diffuser": {
+    "label": { "es": "Difusor de aromas", "en": "Aroma diffuser", "pt": "Difusor de aromas", "fr": "Diffuseur d’arômes", "de": "Aroma-Diffusor", "it": "Diffusore di aromi", "ja": "アロマディフューザー", "zh": "香薰机", "ko": "아로마 디퓨저", "ar": "موزع الروائح" },
+    "keywords": {
+      "es": ["aromaterapia", "humidificador", "aceites esenciales", "vapor", "ambientador", "fragancia", "relajación"],
+      "en": ["aromatherapy", "humidifier", "essential oils", "mist", "air freshener", "fragrance", "relaxation"]
+    }
+  },
+  "lavender": {
+    "label": { "es": "Lavanda", "en": "Lavender", "pt": "Lavanda", "fr": "Lavande", "de": "Lavendel", "it": "Lavanda", "ja": "ラベンダー", "zh": "薰衣草", "ko": "라벤더", "ar": "الخزامى" },
+    "keywords": {
+      "es": ["aroma relajante", "ayuda para dormir", "flor", "aromaterapia", "calma", "planta", "esencia"],
+      "en": ["calming scent", "sleep aid", "flower", "aromatherapy", "calm", "herb", "essence"]
+    }
+  },
+  "journal-heart": {
+    "label": { "es": "Diario de gratitud", "en": "Gratitude journal", "pt": "Diário de gratidão", "fr": "Journal de gratitude", "de": "Dankbarkeitstagebuch", "it": "Diario della gratitudine", "ja": "感謝日記", "zh": "感恩日记", "ko": "감사 일기", "ar": "مذكرات الامتنان" },
+    "keywords": {
+      "es": ["agradecer", "dar gracias", "cosas buenas del día", "reflexión", "escritura", "bienestar emocional", "cuaderno"],
+      "en": ["thankful", "give thanks", "good things today", "reflection", "writing", "emotional wellbeing", "notebook"]
+    }
+  },
+  "journal-edit": {
+    "label": { "es": "Escribir en el diario", "en": "Write in journal", "pt": "Escrever no diário", "fr": "Écrire dans le journal", "de": "Ins Tagebuch schreiben", "it": "Scrivi nel diario", "ja": "日記を書く", "zh": "写日记", "ko": "일기 쓰기", "ar": "الكتابة في المذكرات" },
+    "keywords": {
+      "es": ["entrada de hoy", "journaling", "anotar", "reflexionar", "bitácora", "pensamientos", "cuaderno"],
+      "en": ["today’s entry", "journaling", "jot down", "reflect", "log", "thoughts", "notebook"]
+    }
+  },
+  "journal-lock": {
+    "label": { "es": "Diario privado", "en": "Private journal", "pt": "Diário privado", "fr": "Journal privé", "de": "Privates Tagebuch", "it": "Diario privato", "ja": "非公開の日記", "zh": "私密日记", "ko": "비공개 일기", "ar": "مذكرات خاصة" },
+    "keywords": {
+      "es": ["bloqueado", "con candado", "confidencial", "secreto", "privacidad", "contraseña", "solo para mí"],
+      "en": ["locked", "padlock", "confidential", "secret", "privacy", "passcode", "only me"]
+    }
+  },
+  "self-care": {
+    "label": { "es": "Autocuidado", "en": "Self-care", "pt": "Autocuidado", "fr": "Prendre soin de soi", "de": "Selbstfürsorge", "it": "Cura di sé", "ja": "セルフケア", "zh": "自我关怀", "ko": "자기 돌봄", "ar": "الرعاية الذاتية" },
+    "keywords": {
+      "es": ["amor propio", "autocompasión", "cuidarse", "tiempo para mí", "consentirse", "bienestar", "apapacho"],
+      "en": ["self-love", "self-compassion", "look after yourself", "me time", "pamper", "wellbeing", "kindness"]
+    }
+  },
+  "wellbeing": {
+    "label": { "es": "Bienestar", "en": "Wellbeing", "pt": "Bem-estar", "fr": "Bien-être", "de": "Wohlbefinden", "it": "Benessere", "ja": "ウェルビーイング", "zh": "身心健康", "ko": "웰빙", "ar": "العافية" },
+    "keywords": {
+      "es": ["salud integral", "salud holística", "equilibrio", "vida sana", "cuerpo y mente", "calidad de vida", "wellness"],
+      "en": ["wellness", "holistic health", "balance", "healthy living", "mind and body", "quality of life", "whole health"]
+    }
+  },
+  "calendar-heart": {
+    "label": { "es": "Día de autocuidado", "en": "Self-care day", "pt": "Dia de autocuidado", "fr": "Journée bien-être", "de": "Tag für mich", "it": "Giornata di cura di sé", "ja": "セルフケアの日", "zh": "自我关怀日", "ko": "자기 돌봄의 날", "ar": "يوم الرعاية الذاتية" },
+    "keywords": {
+      "es": ["día de salud mental", "día libre", "día de bienestar", "descanso programado", "calendario", "fecha especial", "consentirse"],
+      "en": ["mental health day", "day off", "wellness day", "scheduled rest", "calendar", "special date", "personal day"]
+    }
+  },
+  "therapy": {
+    "label": { "es": "Terapia", "en": "Therapy", "pt": "Terapia", "fr": "Thérapie", "de": "Therapie", "it": "Terapia", "ja": "セラピー", "zh": "心理治疗", "ko": "심리 치료", "ar": "العلاج النفسي" },
+    "keywords": {
+      "es": ["psicólogo", "consulta", "sesión", "orientación", "psicoterapia", "acompañamiento", "salud mental"],
+      "en": ["counseling", "psychologist", "session", "psychotherapy", "talk to someone", "mental health", "appointment"]
+    }
+  },
+  "online-therapy": {
+    "label": { "es": "Terapia en línea", "en": "Online therapy", "pt": "Terapia online", "fr": "Thérapie en ligne", "de": "Online-Therapie", "it": "Terapia online", "ja": "オンラインカウンセリング", "zh": "在线心理咨询", "ko": "온라인 상담", "ar": "العلاج النفسي عبر الإنترنت" },
+    "keywords": {
+      "es": ["videollamada", "consulta virtual", "psicólogo en línea", "sesión a distancia", "telemedicina", "teleconsulta", "salud mental"],
+      "en": ["video call", "virtual session", "remote counseling", "telehealth", "virtual appointment", "psychologist", "mental health"]
+    }
+  },
+  "support-group": {
+    "label": { "es": "Grupo de apoyo", "en": "Support group", "pt": "Grupo de apoio", "fr": "Groupe de soutien", "de": "Selbsthilfegruppe", "it": "Gruppo di supporto", "ja": "サポートグループ", "zh": "互助小组", "ko": "자조 모임", "ar": "مجموعة دعم" },
+    "keywords": {
+      "es": ["terapia grupal", "círculo", "comunidad", "reunión", "compartir", "acompañamiento", "pares"],
+      "en": ["group therapy", "circle", "community", "meeting", "sharing", "mutual aid", "peers"]
+    }
+  },
+  "peer-support": {
+    "label": { "es": "Apoyo entre pares", "en": "Peer support", "pt": "Apoio entre pares", "fr": "Soutien par les pairs", "de": "Peer-Unterstützung", "it": "Supporto tra pari", "ja": "ピアサポート", "zh": "同伴支持", "ko": "동료 지원", "ar": "دعم الأقران" },
+    "keywords": {
+      "es": ["compañero", "acompañante", "amigo", "alguien a tu lado", "padrino", "mentor", "confianza"],
+      "en": ["buddy", "companion", "friend", "someone by your side", "sponsor", "mentor", "trust"]
+    }
+  },
+  "helpline": {
+    "label": { "es": "Línea de ayuda", "en": "Helpline", "pt": "Linha de ajuda", "fr": "Ligne d’écoute", "de": "Hilfetelefon", "it": "Linea di ascolto", "ja": "相談ダイヤル", "zh": "求助热线", "ko": "상담 전화", "ar": "خط المساعدة" },
+    "keywords": {
+      "es": ["línea de crisis", "apoyo emocional", "llamar", "emergencia", "teléfono", "contención", "prevención"],
+      "en": ["crisis line", "emotional support", "call", "hotline", "phone", "emergency", "talk to someone"]
+    }
+  },
+  "social-battery": {
+    "label": { "es": "Batería social", "en": "Social battery", "pt": "Bateria social", "fr": "Batterie sociale", "de": "Soziale Batterie", "it": "Batteria sociale", "ja": "ソーシャルバッテリー", "zh": "社交电量", "ko": "소셜 배터리", "ar": "البطارية الاجتماعية" },
+    "keywords": {
+      "es": ["recargarse", "introvertido", "agotamiento", "tiempo a solas", "ganas de convivir", "límites", "nivel de energía"],
+      "en": ["recharge", "introvert", "drained", "alone time", "people energy", "boundaries", "energy level"]
+    }
+  },
+  "stress": {
+    "label": { "es": "Estrés", "en": "Stress", "pt": "Estresse", "fr": "Stress", "de": "Stress", "it": "Stress", "ja": "ストレス", "zh": "压力", "ko": "스트레스", "ar": "التوتر" },
+    "keywords": {
+      "es": ["tensión", "presión", "nervios", "preocupación", "carga", "medidor", "ansiedad"],
+      "en": ["tension", "pressure", "nervous", "strain", "load", "gauge", "anxiety"]
+    }
+  },
+  "heart-rate-variability": {
+    "label": { "es": "Variabilidad de la frecuencia cardiaca", "en": "Heart rate variability", "pt": "Variabilidade da frequência cardíaca", "fr": "Variabilité de la fréquence cardiaque", "de": "Herzfrequenzvariabilität", "it": "Variabilità della frequenza cardiaca", "ja": "心拍変動", "zh": "心率变异性", "ko": "심박 변이도", "ar": "تقلب معدل ضربات القلب" },
+    "keywords": {
+      "es": ["VFC", "HRV", "pulso", "recuperación", "estrés", "métrica de salud", "reloj inteligente"],
+      "en": ["HRV", "heartbeat", "pulse", "recovery", "stress", "health metric", "wearable"]
+    }
+  },
+  "recovery": {
+    "label": { "es": "Recuperación", "en": "Recovery", "pt": "Recuperação", "fr": "Récupération", "de": "Erholung", "it": "Recupero", "ja": "リカバリー", "zh": "恢复", "ko": "회복", "ar": "التعافي" },
+    "keywords": {
+      "es": ["descanso", "recargar", "puntaje", "reposo", "regenerar", "estado del cuerpo", "batería corporal"],
+      "en": ["rest", "recharge", "score", "restore", "regenerate", "body status", "body battery"]
+    }
+  },
+  "readiness": {
+    "label": { "es": "Energía del día", "en": "Readiness", "pt": "Prontidão", "fr": "Forme du jour", "de": "Tagesform", "it": "Prontezza", "ja": "コンディション", "zh": "准备度", "ko": "준비 상태", "ar": "الجاهزية" },
+    "keywords": {
+      "es": ["preparación", "listo para el día", "puntaje diario", "condición física", "rendimiento", "cómo amaneciste", "vitalidad"],
+      "en": ["energy score", "ready for the day", "daily score", "fitness", "performance", "morning check-in", "vitality"]
+    }
+  },
+  "resilience": {
+    "label": { "es": "Resiliencia", "en": "Resilience", "pt": "Resiliência", "fr": "Résilience", "de": "Resilienz", "it": "Resilienza", "ja": "レジリエンス", "zh": "心理韧性", "ko": "회복탄력성", "ar": "المرونة النفسية" },
+    "keywords": {
+      "es": ["fortaleza", "afrontar", "salir adelante", "superación", "levantarse", "aguante", "crecimiento personal"],
+      "en": ["strength", "coping", "bounce back", "overcome", "get back up", "grit", "personal growth"]
+    }
+  },
+  "habit": {
+    "label": { "es": "Hábito", "en": "Habit", "pt": "Hábito", "fr": "Habitude", "de": "Gewohnheit", "it": "Abitudine", "ja": "習慣", "zh": "习惯", "ko": "습관", "ar": "عادة" },
+    "keywords": {
+      "es": ["práctica diaria", "seguimiento", "constancia", "rutina", "registro", "tracker", "disciplina"],
+      "en": ["daily practice", "tracker", "consistency", "routine", "log", "discipline", "goal"]
+    }
+  },
+  "habit-plus": {
+    "label": { "es": "Nuevo hábito", "en": "New habit", "pt": "Novo hábito", "fr": "Nouvelle habitude", "de": "Neue Gewohnheit", "it": "Nuova abitudine", "ja": "新しい習慣", "zh": "新习惯", "ko": "새 습관", "ar": "عادة جديدة" },
+    "keywords": {
+      "es": ["agregar", "crear", "empezar", "meta nueva", "propósito", "añadir práctica", "cambio"],
+      "en": ["add", "create", "start", "new goal", "resolution", "add practice", "change"]
+    }
+  },
+  "habit-check": {
+    "label": { "es": "Hábito cumplido", "en": "Habit done", "pt": "Hábito concluído", "fr": "Habitude accomplie", "de": "Gewohnheit erledigt", "it": "Abitudine completata", "ja": "達成した習慣", "zh": "习惯已完成", "ko": "습관 완료", "ar": "تم إنجاز العادة" },
+    "keywords": {
+      "es": ["hecho hoy", "completado", "marcar", "logrado", "palomita", "meta alcanzada", "registro diario"],
+      "en": ["done today", "completed", "check off", "achieved", "checkmark", "goal met", "daily log"]
+    }
+  },
+  "habit-x": {
+    "label": { "es": "Hábito no cumplido", "en": "Habit missed", "pt": "Hábito não cumprido", "fr": "Habitude manquée", "de": "Gewohnheit verpasst", "it": "Abitudine saltata", "ja": "未達成の習慣", "zh": "习惯未完成", "ko": "습관 미완료", "ar": "عادة فائتة" },
+    "keywords": {
+      "es": ["fallado", "omitido", "saltado", "no hecho", "pendiente", "racha rota", "tache"],
+      "en": ["slip", "skipped", "failed", "not done", "pending", "broken streak", "cross"]
+    }
+  },
+  "streak": {
+    "label": { "es": "Racha", "en": "Streak", "pt": "Sequência", "fr": "Série", "de": "Serie", "it": "Serie", "ja": "連続記録", "zh": "连续打卡", "ko": "연속 기록", "ar": "سلسلة متتالية" },
+    "keywords": {
+      "es": ["días seguidos", "constancia", "fueguito", "récord", "continuidad", "sin fallar", "logro"],
+      "en": ["consecutive days", "consistency", "fire", "record", "in a row", "unbroken", "achievement"]
+    }
+  },
+  "cigarette": {
+    "label": { "es": "Cigarro", "en": "Cigarette", "pt": "Cigarro", "fr": "Cigarette", "de": "Zigarette", "it": "Sigaretta", "ja": "タバコ", "zh": "香烟", "ko": "담배", "ar": "سيجارة" },
+    "keywords": {
+      "es": ["fumar", "tabaco", "dejar de fumar", "no fumar", "área de fumar", "nicotina", "adicción"],
+      "en": ["smoking", "tobacco", "quit smoking", "no smoking", "smoking area", "nicotine", "addiction"]
+    }
+  },
+  "vape": {
+    "label": { "es": "Vapeador", "en": "Vape", "pt": "Cigarro eletrônico", "fr": "Vapoteuse", "de": "E-Zigarette", "it": "Sigaretta elettronica", "ja": "電子タバコ", "zh": "电子烟", "ko": "전자담배", "ar": "سيجارة إلكترونية" },
+    "keywords": {
+      "es": ["cigarro electrónico", "dejar de vapear", "nicotina", "vapor", "adicción", "contador", "pod"],
+      "en": ["e-cigarette", "quit vaping", "nicotine", "vapor", "addiction", "counter", "pod"]
+    }
+  },
+  "app-limit": {
+    "label": { "es": "Límite de apps", "en": "App limit", "pt": "Limite de apps", "fr": "Limite d’apps", "de": "App-Limit", "it": "Limite delle app", "ja": "アプリの使用制限", "zh": "应用使用限额", "ko": "앱 사용 제한", "ar": "حد استخدام التطبيقات" },
+    "keywords": {
+      "es": ["tiempo en pantalla", "control parental", "desintoxicación digital", "restringir", "uso del celular", "bienestar digital", "redes sociales"],
+      "en": ["screen time", "parental control", "digital detox", "restrict", "phone usage", "digital wellbeing", "social media"]
+    }
+  }
+}

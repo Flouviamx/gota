@@ -1,0 +1,478 @@
+{
+  "barbell": {
+    "label": { "es": "Barra con pesas", "en": "Barbell", "pt": "Barra com anilhas", "fr": "Barre de musculation", "de": "Langhantel", "it": "Bilanciere", "ja": "バーベル", "zh": "杠铃", "ko": "바벨", "ar": "قضيب الأثقال" },
+    "keywords": {
+      "es": ["pesas libres", "entrenamiento de fuerza", "levantamiento de pesas", "barra olímpica", "discos", "gym", "musculación"],
+      "en": ["free weights", "strength training", "weightlifting", "olympic bar", "plates", "gym", "powerlifting"]
+    }
+  },
+  "weight-plate": {
+    "label": { "es": "Disco de pesas", "en": "Weight plate", "pt": "Anilha", "fr": "Disque de musculation", "de": "Hantelscheibe", "it": "Disco per bilanciere", "ja": "ウェイトプレート", "zh": "杠铃片", "ko": "원판", "ar": "قرص أثقال" },
+    "keywords": {
+      "es": ["cargar la barra", "calculadora de discos", "peso levantado", "kilos", "libras", "placa olímpica", "pesas libres"],
+      "en": ["load the bar", "plate calculator", "weight lifted", "kilos", "pounds", "bumper plate", "free weights"]
+    }
+  },
+  "weight-bench": {
+    "label": { "es": "Banco de pesas", "en": "Weight bench", "pt": "Banco de musculação", "fr": "Banc de musculation", "de": "Hantelbank", "it": "Panca per pesi", "ja": "トレーニングベンチ", "zh": "健身凳", "ko": "운동 벤치", "ar": "مقعد تمارين" },
+    "keywords": {
+      "es": ["banco ajustable", "inclinado", "declinado", "press de banca", "equipo de gimnasio", "reservar equipo", "mancuernas"],
+      "en": ["adjustable bench", "incline", "decline", "bench press", "gym equipment", "book equipment", "dumbbells"]
+    }
+  },
+  "squat-rack": {
+    "label": { "es": "Rack de sentadillas", "en": "Squat rack", "pt": "Gaiola de agachamento", "fr": "Cage à squat", "de": "Power Rack", "it": "Rack per squat", "ja": "スクワットラック", "zh": "深蹲架", "ko": "스쿼트 랙", "ar": "حامل القرفصاء" },
+    "keywords": {
+      "es": ["jaula de potencia", "power rack", "estación de barra", "sentadilla con barra", "press militar", "mapa del gym", "barras de seguridad"],
+      "en": ["power rack", "power cage", "barbell station", "back squat", "overhead press", "gym floor map", "safety bars"]
+    }
+  },
+  "cable-machine": {
+    "label": { "es": "Máquina de poleas", "en": "Cable machine", "pt": "Máquina de polia", "fr": "Machine à poulies", "de": "Kabelzug", "it": "Macchina ai cavi", "ja": "ケーブルマシン", "zh": "绳索训练器", "ko": "케이블 머신", "ar": "جهاز الكابلات" },
+    "keywords": {
+      "es": ["jalón al pecho", "remo en polea", "cruce de poleas", "crossover", "polea alta", "máquinas de gym", "tríceps en polea"],
+      "en": ["pulley", "lat pulldown", "cable row", "cable crossover", "functional trainer", "machine exercises", "tricep pushdown"]
+    }
+  },
+  "leg-press": {
+    "label": { "es": "Prensa de piernas", "en": "Leg press", "pt": "Leg press", "fr": "Presse à cuisses", "de": "Beinpresse", "it": "Pressa per gambe", "ja": "レッグプレス", "zh": "腿举机", "ko": "레그 프레스", "ar": "جهاز ضغط الساقين" },
+    "keywords": {
+      "es": ["leg press", "cuádriceps", "glúteos", "tren inferior", "día de pierna", "máquinas de gym", "pantorrillas"],
+      "en": ["quads", "glutes", "lower body", "leg day", "machine exercises", "calf raises", "sled press"]
+    }
+  },
+  "pull-up-bar": {
+    "label": { "es": "Barra de dominadas", "en": "Pull-up bar", "pt": "Barra de porta", "fr": "Barre de traction", "de": "Klimmzugstange", "it": "Sbarra per trazioni", "ja": "懸垂バー", "zh": "引体向上杆", "ko": "문틀 철봉", "ar": "عقلة الباب" },
+    "keywords": {
+      "es": ["barra de puerta", "colgarse", "gym en casa", "calistenia", "chin-ups", "elevación de piernas", "barra fija"],
+      "en": ["doorway bar", "chin-up bar", "dead hang", "home gym", "calisthenics", "hanging leg raise", "horizontal bar"]
+    }
+  },
+  "gym-rings": {
+    "label": { "es": "Argollas de gimnasia", "en": "Gymnastic rings", "pt": "Argolas", "fr": "Anneaux de gymnastique", "de": "Turnringe", "it": "Anelli", "ja": "吊り輪", "zh": "吊环", "ko": "체조 링", "ar": "حلقات الجمباز" },
+    "keywords": {
+      "es": ["anillas", "calistenia", "peso corporal", "fondos en argollas", "muscle-up", "entrenamiento en suspensión", "gimnasia"],
+      "en": ["still rings", "calisthenics", "bodyweight", "ring dips", "muscle-up", "suspension training", "gymnastics"]
+    }
+  },
+  "plyo-box": {
+    "label": { "es": "Cajón pliométrico", "en": "Plyo box", "pt": "Caixa pliométrica", "fr": "Box de pliométrie", "de": "Plyo-Box", "it": "Box pliometrico", "ja": "プライオボックス", "zh": "跳箱", "ko": "플라이오 박스", "ar": "صندوق القفز" },
+    "keywords": {
+      "es": ["saltos al cajón", "box jump", "subidas al cajón", "step-up", "pliometría", "crossfit", "acondicionamiento"],
+      "en": ["box jumps", "step-ups", "plyometrics", "jump box", "conditioning", "crossfit", "station"]
+    }
+  },
+  "battle-ropes": {
+    "label": { "es": "Cuerdas de batalla", "en": "Battle ropes", "pt": "Cordas navais", "fr": "Cordes ondulatoires", "de": "Battle Ropes", "it": "Corde navali", "ja": "バトルロープ", "zh": "战绳", "ko": "배틀 로프", "ar": "حبال قتالية" },
+    "keywords": {
+      "es": ["battle ropes", "ondas con cuerda", "HIIT", "acondicionamiento", "cardio", "crossfit", "entrenamiento funcional"],
+      "en": ["rope waves", "heavy ropes", "HIIT", "conditioning", "cardio", "crossfit", "functional training"]
+    }
+  },
+  "resistance-band": {
+    "label": { "es": "Liga de resistencia", "en": "Resistance band", "pt": "Elástico de resistência", "fr": "Bande élastique", "de": "Widerstandsband", "it": "Elastico fitness", "ja": "レジスタンスバンド", "zh": "弹力带", "ko": "저항 밴드", "ar": "شريط المقاومة" },
+    "keywords": {
+      "es": ["banda elástica", "tubo con agarraderas", "ejercicio en casa", "rehabilitación", "fisioterapia", "tonificar", "entrenamiento portátil"],
+      "en": ["exercise band", "tube with handles", "home workout", "rehab", "physical therapy", "toning", "travel workout"]
+    }
+  },
+  "jump-rope": {
+    "label": { "es": "Cuerda para saltar", "en": "Jump rope", "pt": "Corda de pular", "fr": "Corde à sauter", "de": "Springseil", "it": "Corda per saltare", "ja": "縄跳び", "zh": "跳绳", "ko": "줄넘기", "ar": "حبل القفز" },
+    "keywords": {
+      "es": ["brincar la cuerda", "brincos", "cardio", "box", "calentamiento", "double unders", "acondicionamiento"],
+      "en": ["skipping rope", "skipping", "cardio", "boxing", "warm-up", "double unders", "conditioning"]
+    }
+  },
+  "exercise-ball": {
+    "label": { "es": "Pelota de ejercicio", "en": "Exercise ball", "pt": "Bola suíça", "fr": "Ballon de gym", "de": "Gymnastikball", "it": "Fitball", "ja": "バランスボール", "zh": "健身球", "ko": "짐볼", "ar": "كرة التمارين" },
+    "keywords": {
+      "es": ["pelota suiza", "fitball", "balón de pilates", "equilibrio", "core", "fisioterapia", "estabilidad"],
+      "en": ["stability ball", "swiss ball", "yoga ball", "balance", "core", "physio", "pilates ball"]
+    }
+  },
+  "ab-wheel": {
+    "label": { "es": "Rueda abdominal", "en": "Ab wheel", "pt": "Roda abdominal", "fr": "Roue abdominale", "de": "Bauchroller", "it": "Ruota addominale", "ja": "腹筋ローラー", "zh": "健腹轮", "ko": "복근 롤러", "ar": "عجلة البطن" },
+    "keywords": {
+      "es": ["rodillo abdominal", "ab roller", "core", "rollouts", "gym en casa", "marcar el abdomen", "accesorio de ejercicio"],
+      "en": ["ab roller", "rollouts", "core", "abs", "home gym", "six-pack", "workout accessory"]
+    }
+  },
+  "foam-roller": {
+    "label": { "es": "Rodillo de espuma", "en": "Foam roller", "pt": "Rolo de espuma", "fr": "Rouleau de massage", "de": "Faszienrolle", "it": "Rullo massaggiante", "ja": "フォームローラー", "zh": "泡沫轴", "ko": "폼롤러", "ar": "أسطوانة التدليك" },
+    "keywords": {
+      "es": ["foam roller", "liberación miofascial", "recuperación", "movilidad", "estiramientos", "automasaje", "contracturas"],
+      "en": ["myofascial release", "recovery", "mobility", "stretching", "self-massage", "muscle knots", "cool-down"]
+    }
+  },
+  "massage-gun": {
+    "label": { "es": "Pistola de masaje", "en": "Massage gun", "pt": "Pistola de massagem", "fr": "Pistolet de massage", "de": "Massagepistole", "it": "Pistola massaggiante", "ja": "マッサージガン", "zh": "筋膜枪", "ko": "마사지건", "ar": "مسدس التدليك" },
+    "keywords": {
+      "es": ["masajeador de percusión", "recuperación", "dolor muscular", "después de entrenar", "terapia de percusión", "contracturas", "relajar músculos"],
+      "en": ["percussion massager", "recovery", "sore muscles", "post-workout", "percussive therapy", "deep tissue", "muscle relief"]
+    }
+  },
+  "punching-bag": {
+    "label": { "es": "Costal de box", "en": "Punching bag", "pt": "Saco de pancada", "fr": "Sac de frappe", "de": "Boxsack", "it": "Sacco da boxe", "ja": "サンドバッグ", "zh": "沙袋", "ko": "샌드백", "ar": "كيس الملاكمة" },
+    "keywords": {
+      "es": ["saco de boxeo", "box", "kickboxing", "golpear", "artes marciales", "clases de combate", "muay thai"],
+      "en": ["heavy bag", "boxing", "kickboxing", "striking", "martial arts", "combat classes", "muay thai"]
+    }
+  },
+  "boxing-glove": {
+    "label": { "es": "Guante de box", "en": "Boxing glove", "pt": "Luva de boxe", "fr": "Gant de boxe", "de": "Boxhandschuh", "it": "Guantone da boxe", "ja": "ボクシンググローブ", "zh": "拳击手套", "ko": "권투 글러브", "ar": "قفاز الملاكمة" },
+    "keywords": {
+      "es": ["boxeo", "kickboxing", "pelea", "clase de combate", "sparring", "golpear", "ring"],
+      "en": ["boxing", "kickboxing", "fight", "combat class", "sparring", "punch", "ring"]
+    }
+  },
+  "treadmill": {
+    "label": { "es": "Caminadora", "en": "Treadmill", "pt": "Esteira", "fr": "Tapis de course", "de": "Laufband", "it": "Tapis roulant", "ja": "ランニングマシン", "zh": "跑步机", "ko": "러닝머신", "ar": "جهاز المشي" },
+    "keywords": {
+      "es": ["cinta de correr", "trotadora", "correr bajo techo", "caminar", "trotar", "máquinas de cardio", "inclinación"],
+      "en": ["running machine", "indoor run", "walking", "jogging", "cardio machine", "incline walk", "home gym"]
+    }
+  },
+  "exercise-bike": {
+    "label": { "es": "Bicicleta fija", "en": "Exercise bike", "pt": "Bicicleta ergométrica", "fr": "Vélo d’appartement", "de": "Heimtrainer", "it": "Cyclette", "ja": "エアロバイク", "zh": "健身车", "ko": "실내 자전거", "ar": "دراجة التمارين" },
+    "keywords": {
+      "es": ["spinning", "ciclismo bajo techo", "bicicleta estática", "indoor cycling", "pedalear", "clase de ciclismo", "máquinas de cardio"],
+      "en": ["stationary bike", "spin bike", "spin class", "indoor cycling", "pedaling", "cardio machine", "home gym"]
+    }
+  },
+  "rowing-machine": {
+    "label": { "es": "Remadora", "en": "Rowing machine", "pt": "Máquina de remo", "fr": "Rameur", "de": "Rudergerät", "it": "Vogatore", "ja": "ローイングマシン", "zh": "划船机", "ko": "로잉 머신", "ar": "جهاز التجديف" },
+    "keywords": {
+      "es": ["máquina de remo", "remo bajo techo", "ergómetro", "remar", "cuerpo completo", "máquinas de cardio", "crossfit"],
+      "en": ["rower", "indoor rowing", "erg", "row", "full body", "cardio machine", "crossfit"]
+    }
+  },
+  "elliptical": {
+    "label": { "es": "Elíptica", "en": "Elliptical", "pt": "Elíptico", "fr": "Vélo elliptique", "de": "Crosstrainer", "it": "Ellittica", "ja": "クロストレーナー", "zh": "椭圆机", "ko": "일립티컬 머신", "ar": "جهاز التمارين البيضاوي" },
+    "keywords": {
+      "es": ["caminadora elíptica", "bajo impacto", "cross trainer", "máquinas de cardio", "cuidar las rodillas", "quemar calorías", "cardio suave"],
+      "en": ["cross trainer", "low impact", "cardio machine", "joint friendly", "burn calories", "gentle cardio", "gym equipment"]
+    }
+  },
+  "stair-climber": {
+    "label": { "es": "Escaladora", "en": "Stair climber", "pt": "Simulador de escada", "fr": "Simulateur d’escalier", "de": "Treppensteiger", "it": "Simulatore di scale", "ja": "ステアクライマー", "zh": "爬楼机", "ko": "스텝밀", "ar": "جهاز صعود الدرج" },
+    "keywords": {
+      "es": ["subir escaleras", "stepper", "escalones", "step", "glúteos", "máquinas de cardio", "stair climber"],
+      "en": ["stair machine", "stepmill", "stepper", "step workout", "climbing stairs", "glutes", "cardio machine"]
+    }
+  },
+  "heart-rate-strap": {
+    "label": { "es": "Banda de frecuencia cardiaca", "en": "Heart rate strap", "pt": "Cinta cardíaca", "fr": "Ceinture cardio", "de": "Brustgurt", "it": "Fascia cardio", "ja": "胸部心拍センサー", "zh": "心率带", "ko": "가슴 심박계", "ar": "حزام نبضات القلب" },
+    "keywords": {
+      "es": ["pulsómetro", "monitor cardiaco", "sensor de pecho", "vincular sensor", "emparejar", "bluetooth", "pulsaciones"],
+      "en": ["chest strap", "HR monitor", "heart rate sensor", "pair sensor", "bluetooth", "pulse", "BPM"]
+    }
+  },
+  "swim-goggles": {
+    "label": { "es": "Goggles de natación", "en": "Swim goggles", "pt": "Óculos de natação", "fr": "Lunettes de natation", "de": "Schwimmbrille", "it": "Occhialini da nuoto", "ja": "スイムゴーグル", "zh": "泳镜", "ko": "수경", "ar": "نظارة السباحة" },
+    "keywords": {
+      "es": ["googles", "lentes de natación", "gafas de natación", "alberca", "nadar", "equipo de natación", "aguas abiertas"],
+      "en": ["swimming", "pool", "swim gear", "swim workout", "lap swimming", "open water", "eye protection"]
+    }
+  },
+  "protein-powder": {
+    "label": { "es": "Proteína en polvo", "en": "Protein powder", "pt": "Proteína em pó", "fr": "Protéine en poudre", "de": "Proteinpulver", "it": "Proteine in polvere", "ja": "プロテイン", "zh": "蛋白粉", "ko": "단백질 파우더", "ar": "مسحوق البروتين" },
+    "keywords": {
+      "es": ["suplementos", "whey", "nutrición deportiva", "licuado", "shake", "scoop", "ganar músculo"],
+      "en": ["supplements", "whey", "sports nutrition", "shake", "scoop", "muscle gain", "post-workout"]
+    }
+  },
+  "running": {
+    "label": { "es": "Correr", "en": "Running", "pt": "Corrida", "fr": "Course à pied", "de": "Laufen", "it": "Corsa", "ja": "ランニング", "zh": "跑步", "ko": "달리기", "ar": "الجري" },
+    "keywords": {
+      "es": ["carrera", "trotar", "running", "corredor", "tipo de actividad", "maratón", "al aire libre"],
+      "en": ["jogging", "runner", "run workout", "activity type", "marathon", "outdoor run", "5K"]
+    }
+  },
+  "trail-running": {
+    "label": { "es": "Carrera de montaña", "en": "Trail running", "pt": "Corrida em trilha", "fr": "Trail", "de": "Trailrunning", "it": "Trail running", "ja": "トレイルランニング", "zh": "越野跑", "ko": "트레일 러닝", "ar": "الجري على المسارات" },
+    "keywords": {
+      "es": ["trail", "correr en montaña", "fuera de carretera", "sendero", "ultra", "tipo de actividad", "terracería"],
+      "en": ["off-road run", "mountain running", "ultramarathon", "activity type", "singletrack", "skyrunning", "elevation"]
+    }
+  },
+  "cycling": {
+    "label": { "es": "Ciclismo", "en": "Cycling", "pt": "Ciclismo", "fr": "Cyclisme", "de": "Radfahren", "it": "Ciclismo", "ja": "サイクリング", "zh": "骑行", "ko": "사이클링", "ar": "ركوب الدراجات" },
+    "keywords": {
+      "es": ["bici", "rodada", "pedalear", "ciclista", "ruta", "tipo de actividad", "bicicleta de ruta"],
+      "en": ["ride", "bike", "road bike", "cyclist", "outdoor ride", "activity type", "pedaling"]
+    }
+  },
+  "mountain-biking": {
+    "label": { "es": "Ciclismo de montaña", "en": "Mountain biking", "pt": "Mountain bike", "fr": "VTT", "de": "Mountainbiken", "it": "Mountain bike", "ja": "マウンテンバイク", "zh": "山地骑行", "ko": "산악자전거", "ar": "ركوب الدراجات الجبلية" },
+    "keywords": {
+      "es": ["mtb", "bici de montaña", "fuera de carretera", "sendero", "downhill", "tipo de actividad", "terracería"],
+      "en": ["MTB", "off-road ride", "trail ride", "downhill", "singletrack", "activity type", "enduro"]
+    }
+  },
+  "swimming": {
+    "label": { "es": "Natación", "en": "Swimming", "pt": "Natação", "fr": "Natation", "de": "Schwimmen", "it": "Nuoto", "ja": "水泳", "zh": "游泳", "ko": "수영", "ar": "السباحة" },
+    "keywords": {
+      "es": ["nadar", "alberca", "largos", "estilo libre", "aguas abiertas", "tipo de actividad", "nadador"],
+      "en": ["swim", "pool", "laps", "freestyle", "open water", "activity type", "swimmer"]
+    }
+  },
+  "hiking": {
+    "label": { "es": "Senderismo", "en": "Hiking", "pt": "Trilha", "fr": "Randonnée", "de": "Wandern", "it": "Escursionismo", "ja": "ハイキング", "zh": "徒步", "ko": "하이킹", "ar": "المشي لمسافات طويلة" },
+    "keywords": {
+      "es": ["excursión", "caminata", "sendero", "montaña", "hiking", "tipo de actividad", "mochilero"],
+      "en": ["hike", "trail walk", "trekking", "mountain", "backpacking", "activity type", "outdoors"]
+    }
+  },
+  "dancing": {
+    "label": { "es": "Baile", "en": "Dancing", "pt": "Dança", "fr": "Danse", "de": "Tanzen", "it": "Danza", "ja": "ダンス", "zh": "跳舞", "ko": "춤", "ar": "الرقص" },
+    "keywords": {
+      "es": ["bailar", "zumba", "clase de baile", "danza", "coreografía", "salsa", "hip hop"],
+      "en": ["zumba", "dance class", "dance workout", "choreography", "salsa", "hip hop", "ballet"]
+    }
+  },
+  "weightlifting": {
+    "label": { "es": "Entrenamiento de fuerza", "en": "Strength training", "pt": "Treino de força", "fr": "Musculation", "de": "Krafttraining", "it": "Allenamento di forza", "ja": "筋力トレーニング", "zh": "力量训练", "ko": "근력 운동", "ar": "تمارين القوة" },
+    "keywords": {
+      "es": ["pesas", "levantar pesas", "halterofilia", "musculación", "tipo de actividad", "gym", "powerlifting"],
+      "en": ["weightlifting", "lifting", "weights", "resistance training", "activity type", "powerlifting", "gym"]
+    }
+  },
+  "pilates": {
+    "label": { "es": "Pilates", "en": "Pilates", "pt": "Pilates", "fr": "Pilates", "de": "Pilates", "it": "Pilates", "ja": "ピラティス", "zh": "普拉提", "ko": "필라테스", "ar": "بيلاتس" },
+    "keywords": {
+      "es": ["reformer", "mat", "core", "postura", "flexibilidad", "estudio", "bajo impacto"],
+      "en": ["reformer", "mat", "core", "posture", "flexibility", "studio class", "low impact"]
+    }
+  },
+  "push-up": {
+    "label": { "es": "Lagartija", "en": "Push-up", "pt": "Flexão", "fr": "Pompe", "de": "Liegestütz", "it": "Flessione", "ja": "腕立て伏せ", "zh": "俯卧撑", "ko": "팔굽혀펴기", "ar": "تمرين الضغط" },
+    "keywords": {
+      "es": ["flexiones", "pecho", "peso corporal", "tríceps", "calistenia", "biblioteca de ejercicios", "sin equipo"],
+      "en": ["press-up", "chest", "bodyweight", "triceps", "calisthenics", "exercise library", "no equipment"]
+    }
+  },
+  "squat": {
+    "label": { "es": "Sentadilla", "en": "Squat", "pt": "Agachamento", "fr": "Squat", "de": "Kniebeuge", "it": "Squat", "ja": "スクワット", "zh": "深蹲", "ko": "스쿼트", "ar": "تمرين القرفصاء" },
+    "keywords": {
+      "es": ["piernas", "glúteos", "tren inferior", "series", "día de pierna", "cuádriceps", "squat"],
+      "en": ["legs", "glutes", "lower body", "sets", "leg day", "quads", "bodyweight"]
+    }
+  },
+  "lunge": {
+    "label": { "es": "Desplante", "en": "Lunge", "pt": "Afundo", "fr": "Fente", "de": "Ausfallschritt", "it": "Affondo", "ja": "ランジ", "zh": "弓步", "ko": "런지", "ar": "تمرين الاندفاع" },
+    "keywords": {
+      "es": ["zancada", "lunge", "piernas", "glúteos", "tren inferior", "cuádriceps", "equilibrio"],
+      "en": ["walking lunge", "split squat", "legs", "glutes", "lower body", "quads", "balance"]
+    }
+  },
+  "sit-up": {
+    "label": { "es": "Abdominales", "en": "Sit-up", "pt": "Abdominal", "fr": "Abdominaux", "de": "Sit-up", "it": "Addominali", "ja": "腹筋運動", "zh": "仰卧起坐", "ko": "윗몸일으키기", "ar": "تمرين البطن" },
+    "keywords": {
+      "es": ["crunch", "encogimientos", "abdomen", "core", "six pack", "rutina de abdomen"],
+      "en": ["crunch", "abs", "core", "ab workout", "six-pack", "stomach", "floor exercise"]
+    }
+  },
+  "glute-bridge": {
+    "label": { "es": "Puente de glúteo", "en": "Glute bridge", "pt": "Elevação pélvica", "fr": "Pont fessier", "de": "Beckenheben", "it": "Ponte glutei", "ja": "ヒップリフト", "zh": "臀桥", "ko": "글루트 브릿지", "ar": "تمرين جسر الأرداف" },
+    "keywords": {
+      "es": ["hip thrust", "elevación de cadera", "pompas", "cadera", "isquiotibiales", "tren inferior", "activación"],
+      "en": ["hip thrust", "hip raise", "booty", "hips", "hamstrings", "lower body", "activation"]
+    }
+  },
+  "jumping-jack": {
+    "label": { "es": "Saltos de tijera", "en": "Jumping jack", "pt": "Polichinelo", "fr": "Jumping jack", "de": "Hampelmann", "it": "Jumping jack", "ja": "ジャンピングジャック", "zh": "开合跳", "ko": "팔벌려뛰기", "ar": "قفزة فتح وضم" },
+    "keywords": {
+      "es": ["jumping jacks", "calentamiento", "cardio", "peso corporal", "brincos", "rutina sin equipo", "activación"],
+      "en": ["star jumps", "warm-up", "cardio", "bodyweight", "jumps", "no equipment", "calisthenics"]
+    }
+  },
+  "pull-up": {
+    "label": { "es": "Dominada", "en": "Pull-up", "pt": "Barra fixa", "fr": "Traction", "de": "Klimmzug", "it": "Trazione", "ja": "懸垂", "zh": "引体向上", "ko": "턱걸이", "ar": "تمرين العقلة" },
+    "keywords": {
+      "es": ["chin-up", "espalda", "calistenia", "peso corporal", "tren superior", "barra", "colgarse"],
+      "en": ["chin-up", "back", "calisthenics", "bodyweight", "upper body", "bar", "lats"]
+    }
+  },
+  "deadlift": {
+    "label": { "es": "Peso muerto", "en": "Deadlift", "pt": "Levantamento terra", "fr": "Soulevé de terre", "de": "Kreuzheben", "it": "Stacco da terra", "ja": "デッドリフト", "zh": "硬拉", "ko": "데드리프트", "ar": "الرفعة الميتة" },
+    "keywords": {
+      "es": ["bisagra de cadera", "barra", "espalda baja", "isquiotibiales", "powerlifting", "programa de fuerza", "levantamiento"],
+      "en": ["hip hinge", "barbell", "lower back", "hamstrings", "powerlifting", "strength program", "pull from the floor"]
+    }
+  },
+  "bench-press": {
+    "label": { "es": "Press de banca", "en": "Bench press", "pt": "Supino", "fr": "Développé couché", "de": "Bankdrücken", "it": "Panca piana", "ja": "ベンチプレス", "zh": "卧推", "ko": "벤치 프레스", "ar": "ضغط البنش" },
+    "keywords": {
+      "es": ["pecho", "pectorales", "barra", "press plano", "powerlifting", "tren superior", "tríceps"],
+      "en": ["chest", "pecs", "barbell", "flat bench", "powerlifting", "upper body", "triceps"]
+    }
+  },
+  "kettlebell-swing": {
+    "label": { "es": "Swing con pesa rusa", "en": "Kettlebell swing", "pt": "Swing com kettlebell", "fr": "Swing kettlebell", "de": "Kettlebell-Swing", "it": "Swing con kettlebell", "ja": "ケトルベルスイング", "zh": "壶铃摆荡", "ko": "케틀벨 스윙", "ar": "تأرجح الكيتل بيل" },
+    "keywords": {
+      "es": ["kettlebell", "entrenamiento funcional", "bisagra de cadera", "crossfit", "tipo de actividad", "potencia", "glúteos"],
+      "en": ["functional strength", "functional training", "hip hinge", "crossfit", "activity type", "power", "russian swing"]
+    }
+  },
+  "box-jump": {
+    "label": { "es": "Salto al cajón", "en": "Box jump", "pt": "Salto na caixa", "fr": "Saut sur box", "de": "Kastensprung", "it": "Salto sul box", "ja": "ボックスジャンプ", "zh": "箱式跳跃", "ko": "박스 점프", "ar": "القفز على الصندوق" },
+    "keywords": {
+      "es": ["pliometría", "box jump", "explosividad", "potencia de piernas", "crossfit", "brinco", "salto vertical"],
+      "en": ["plyometrics", "explosive", "leg power", "crossfit", "vertical jump", "jump training", "plyo"]
+    }
+  },
+  "heart-rate-zone": {
+    "label": { "es": "Zona de frecuencia cardiaca", "en": "Heart rate zone", "pt": "Zona de frequência cardíaca", "fr": "Zone de fréquence cardiaque", "de": "Herzfrequenzzone", "it": "Zona di frequenza cardiaca", "ja": "心拍ゾーン", "zh": "心率区间", "ko": "심박수 구간", "ar": "نطاق معدل ضربات القلب" },
+    "keywords": {
+      "es": ["zonas de entrenamiento", "pulso", "intensidad", "tiempo en zona", "zona 2", "cardio", "esfuerzo"],
+      "en": ["training zones", "pulse", "intensity", "time in zone", "zone 2", "cardio", "effort level"]
+    }
+  },
+  "calories-burned": {
+    "label": { "es": "Calorías quemadas", "en": "Calories burned", "pt": "Calorias queimadas", "fr": "Calories brûlées", "de": "Verbrannte Kalorien", "it": "Calorie bruciate", "ja": "消費カロリー", "zh": "消耗热量", "ko": "소모 칼로리", "ar": "السعرات المحروقة" },
+    "keywords": {
+      "es": ["kcal", "energía activa", "gasto calórico", "meta de calorías", "anillo de actividad", "quemar grasa", "metabolismo"],
+      "en": ["kcal", "active energy", "energy expenditure", "burn goal", "activity ring", "fat burn", "metabolism"]
+    }
+  },
+  "distance": {
+    "label": { "es": "Distancia recorrida", "en": "Distance", "pt": "Distância", "fr": "Distance", "de": "Zurückgelegte Strecke", "it": "Distanza", "ja": "距離", "zh": "距离", "ko": "거리", "ar": "المسافة" },
+    "keywords": {
+      "es": ["kilómetros", "millas", "km", "trayecto", "ruta", "metros", "cuánto corrí"],
+      "en": ["kilometers", "miles", "km", "route", "covered", "meters", "mileage"]
+    }
+  },
+  "pace": {
+    "label": { "es": "Ritmo", "en": "Pace", "pt": "Ritmo", "fr": "Allure", "de": "Tempo", "it": "Passo", "ja": "ペース", "zh": "配速", "ko": "페이스", "ar": "الوتيرة" },
+    "keywords": {
+      "es": ["minutos por kilómetro", "min/km", "velocidad", "paso", "promedio", "cronómetro", "carrera"],
+      "en": ["min per km", "min/mile", "speed", "tempo", "average", "splits", "run speed"]
+    }
+  },
+  "lap": {
+    "label": { "es": "Vuelta", "en": "Lap", "pt": "Volta", "fr": "Tour", "de": "Runde", "it": "Giro", "ja": "ラップ", "zh": "单圈", "ko": "랩", "ar": "لفة" },
+    "keywords": {
+      "es": ["parcial", "split", "pista", "alberca", "contador", "largos", "circuito"],
+      "en": ["split", "track", "pool length", "counter", "circuit", "loop", "interval"]
+    }
+  },
+  "elevation-gain": {
+    "label": { "es": "Desnivel positivo", "en": "Elevation gain", "pt": "Ganho de elevação", "fr": "Dénivelé positif", "de": "Höhenmeter", "it": "Dislivello positivo", "ja": "獲得標高", "zh": "累计爬升", "ko": "누적 상승 고도", "ar": "الارتفاع المكتسب" },
+    "keywords": {
+      "es": ["altimetría", "subida", "metros ascendidos", "elevación", "montaña", "pendiente", "ascenso total"],
+      "en": ["climb", "total ascent", "altitude", "vertical", "hills", "gradient", "meters climbed"]
+    }
+  },
+  "floors-climbed": {
+    "label": { "es": "Pisos subidos", "en": "Floors climbed", "pt": "Andares subidos", "fr": "Étages gravis", "de": "Gestiegene Etagen", "it": "Piani saliti", "ja": "上った階数", "zh": "爬楼层数", "ko": "오른 층수", "ar": "الطوابق المصعودة" },
+    "keywords": {
+      "es": ["escaleras", "tramos de escalera", "escalones", "actividad diaria", "pasos", "altímetro", "salud"],
+      "en": ["stairs", "flights", "steps", "daily activity", "stair count", "altimeter", "health"]
+    }
+  },
+  "finish-line": {
+    "label": { "es": "Línea de meta", "en": "Finish line", "pt": "Linha de chegada", "fr": "Ligne d’arrivée", "de": "Ziellinie", "it": "Linea del traguardo", "ja": "ゴール", "zh": "终点线", "ko": "결승선", "ar": "خط النهاية" },
+    "keywords": {
+      "es": ["carrera", "llegada", "terminar", "bandera a cuadros", "reto cumplido", "maratón", "objetivo"],
+      "en": ["race", "checkered flag", "challenge complete", "goal reached", "marathon", "race day", "end"]
+    }
+  },
+  "personal-record": {
+    "label": { "es": "Récord personal", "en": "Personal record", "pt": "Recorde pessoal", "fr": "Record personnel", "de": "Persönliche Bestleistung", "it": "Record personale", "ja": "自己ベスト", "zh": "个人纪录", "ko": "개인 기록", "ar": "رقم قياسي شخصي" },
+    "keywords": {
+      "es": ["PR", "PB", "marca personal", "mejor tiempo", "logro", "superarse", "mejor levantamiento"],
+      "en": ["PR", "PB", "personal best", "best time", "achievement", "new best", "max lift"]
+    }
+  },
+  "reps": {
+    "label": { "es": "Repeticiones", "en": "Reps", "pt": "Repetições", "fr": "Répétitions", "de": "Wiederholungen", "it": "Ripetizioni", "ja": "レップ数", "zh": "次数", "ko": "반복 횟수", "ar": "التكرارات" },
+    "keywords": {
+      "es": ["reps", "series", "conteo", "contador", "meta por serie", "rutina", "cuántas veces"],
+      "en": ["repetitions", "sets", "count", "counter", "target", "routine", "rep range"]
+    }
+  },
+  "interval-training": {
+    "label": { "es": "Entrenamiento por intervalos", "en": "Interval training", "pt": "Treino intervalado", "fr": "Entraînement fractionné", "de": "Intervalltraining", "it": "Allenamento a intervalli", "ja": "インターバルトレーニング", "zh": "间歇训练", "ko": "인터벌 트레이닝", "ar": "التدريب المتقطع" },
+    "keywords": {
+      "es": ["HIIT", "tabata", "temporizador", "trabajo y descanso", "rondas", "alta intensidad", "EMOM"],
+      "en": ["HIIT", "tabata", "timer", "work and rest", "rounds", "high intensity", "EMOM"]
+    }
+  },
+  "circuit-training": {
+    "label": { "es": "Entrenamiento en circuito", "en": "Circuit training", "pt": "Treino em circuito", "fr": "Circuit training", "de": "Zirkeltraining", "it": "Allenamento a circuito", "ja": "サーキットトレーニング", "zh": "循环训练", "ko": "서킷 트레이닝", "ar": "التدريب الدائري" },
+    "keywords": {
+      "es": ["estaciones", "rondas", "bootcamp", "funcional", "cuerpo completo", "rotar ejercicios", "clase grupal"],
+      "en": ["stations", "rounds", "bootcamp", "functional", "full body", "rotation", "group class"]
+    }
+  },
+  "workout-plan": {
+    "label": { "es": "Plan de entrenamiento", "en": "Workout plan", "pt": "Plano de treino", "fr": "Programme d’entraînement", "de": "Trainingsplan", "it": "Scheda di allenamento", "ja": "トレーニングプラン", "zh": "训练计划", "ko": "운동 계획", "ar": "خطة التمرين" },
+    "keywords": {
+      "es": ["rutina", "programa", "sesión de hoy", "calendario de entrenamiento", "ejercicios", "coach", "semana"],
+      "en": ["routine", "program", "today's session", "training schedule", "exercises", "coach", "split"]
+    }
+  },
+  "rest-day": {
+    "label": { "es": "Día de descanso", "en": "Rest day", "pt": "Dia de descanso", "fr": "Jour de repos", "de": "Ruhetag", "it": "Giorno di riposo", "ja": "休息日", "zh": "休息日", "ko": "휴식일", "ar": "يوم راحة" },
+    "keywords": {
+      "es": ["recuperación", "sin entreno", "día libre", "relajarse", "dormir bien", "pausa", "calendario"],
+      "en": ["recovery", "off day", "no workout", "active recovery", "sleep", "break", "deload"]
+    }
+  },
+  "bathroom-scale": {
+    "label": { "es": "Báscula de baño", "en": "Bathroom scale", "pt": "Balança de banheiro", "fr": "Pèse-personne", "de": "Personenwaage", "it": "Bilancia pesapersone", "ja": "体重計", "zh": "体重秤", "ko": "체중계", "ar": "ميزان الوزن" },
+    "keywords": {
+      "es": ["pesarse", "peso corporal", "kilos", "pesaje", "control de peso", "IMC", "smart scale"],
+      "en": ["weigh-in", "body weight", "kilos", "pounds", "smart scale", "weight tracking", "BMI"]
+    }
+  },
+  "bathroom-scale-arrow-down": {
+    "label": { "es": "Bajar de peso", "en": "Weight loss", "pt": "Perda de peso", "fr": "Perte de poids", "de": "Gewichtsabnahme", "it": "Perdita di peso", "ja": "体重減少", "zh": "体重下降", "ko": "체중 감소", "ar": "فقدان الوزن" },
+    "keywords": {
+      "es": ["adelgazar", "perder peso", "dieta", "déficit calórico", "tendencia a la baja", "kilos menos", "progreso"],
+      "en": ["lose weight", "slimming", "diet", "calorie deficit", "trending down", "cutting", "progress"]
+    }
+  },
+  "bathroom-scale-arrow-up": {
+    "label": { "es": "Subir de peso", "en": "Weight gain", "pt": "Ganho de peso", "fr": "Prise de poids", "de": "Gewichtszunahme", "it": "Aumento di peso", "ja": "体重増加", "zh": "体重上升", "ko": "체중 증가", "ar": "زيادة الوزن" },
+    "keywords": {
+      "es": ["ganar peso", "volumen", "aumentar masa", "superávit calórico", "tendencia al alza", "kilos de más", "recuperar peso"],
+      "en": ["gain weight", "bulking", "mass gain", "calorie surplus", "trending up", "recovery", "progress"]
+    }
+  },
+  "waist-measure": {
+    "label": { "es": "Medida de cintura", "en": "Waist measurement", "pt": "Medida da cintura", "fr": "Tour de taille", "de": "Taillenumfang", "it": "Circonferenza vita", "ja": "ウエスト周囲", "zh": "腰围", "ko": "허리둘레", "ar": "قياس الخصر" },
+    "keywords": {
+      "es": ["cinta métrica", "medidas corporales", "centímetros", "progreso", "talla", "abdomen", "reducir cintura"],
+      "en": ["tape measure", "body measurements", "inches", "centimeters", "progress", "waistline", "size"]
+    }
+  },
+  "flexed-biceps": {
+    "label": { "es": "Bíceps flexionado", "en": "Flexed biceps", "pt": "Bíceps contraído", "fr": "Biceps contracté", "de": "Angespannter Bizeps", "it": "Bicipite contratto", "ja": "力こぶ", "zh": "鼓起的二头肌", "ko": "알통", "ar": "عضلة الذراع المشدودة" },
+    "keywords": {
+      "es": ["fuerza", "músculo", "fuerte", "ganar masa", "brazo", "poder", "logro"],
+      "en": ["strength", "muscle", "strong", "muscle gain", "arm", "power", "achievement"]
+    }
+  },
+  "dumbbell-plus": {
+    "label": { "es": "Agregar entrenamiento", "en": "Add workout", "pt": "Adicionar treino", "fr": "Ajouter une séance", "de": "Training hinzufügen", "it": "Aggiungi allenamento", "ja": "ワークアウトを追加", "zh": "添加训练", "ko": "운동 추가", "ar": "إضافة تمرين" },
+    "keywords": {
+      "es": ["nuevo ejercicio", "registrar", "crear rutina", "añadir ejercicio", "nueva sesión", "anotar", "gym"],
+      "en": ["new exercise", "log", "create routine", "add exercise", "new session", "track", "gym"]
+    }
+  },
+  "dumbbell-check": {
+    "label": { "es": "Entrenamiento completado", "en": "Workout completed", "pt": "Treino concluído", "fr": "Séance terminée", "de": "Training abgeschlossen", "it": "Allenamento completato", "ja": "ワークアウト完了", "zh": "训练完成", "ko": "운동 완료", "ar": "اكتمل التمرين" },
+    "keywords": {
+      "es": ["registrado", "terminado", "hecho", "sesión cumplida", "racha", "meta diaria", "check-in"],
+      "en": ["logged", "finished", "done", "session complete", "streak", "daily goal", "check-in"]
+    }
+  },
+  "dumbbell-clock": {
+    "label": { "es": "Entrenamiento programado", "en": "Scheduled workout", "pt": "Treino agendado", "fr": "Séance planifiée", "de": "Geplantes Training", "it": "Allenamento programmato", "ja": "予定のワークアウト", "zh": "已安排的训练", "ko": "예약된 운동", "ar": "تمرين مجدول" },
+    "keywords": {
+      "es": ["duración", "horario", "agenda", "recordatorio", "clase reservada", "tiempo de entrenamiento", "próxima sesión"],
+      "en": ["duration", "schedule", "calendar", "reminder", "booked class", "workout time", "upcoming session"]
+    }
+  }
+}

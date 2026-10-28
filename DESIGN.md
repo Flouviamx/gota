@@ -216,6 +216,11 @@ reach it in one pass. What the critics, QA, and the owner caught, so it isn't dr
   the snap leaves a smudge.
 - **QA at the end.** Round 1 closed with 268 warnings. Run `qa.mjs <category>` after every batch,
   not once before returning.
+- **Two subjects where one fits.** Two hands or two figures that overlap (clapping, a high five,
+  hands held, a hug, an adult holding a child) lose the one behind at 24 px; a joint drawn as its
+  bones (the hip, the shoulder, the ankle) reads as a tool; a pose folded on the floor (child's
+  pose, downward dog) reads as a line and a dot. Round 7 dropped every one: say it with one hand,
+  one figure, or the body part's outline.
 
 ## Process
 1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.
