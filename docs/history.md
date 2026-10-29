@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 29 Oct 2026 — Round 8: places and travel (703 icons)
+- **Eight new categories and lugares grown** ([taxonomy](./taxonomy.md)): vehiculos 102 (and car, taxi, bicycle, and scooter), conduccion 117 (and gas-station, ev-charger, parking, traffic-light, and road), aviacion 75 (and plane, plane-takeoff, and plane-landing), nautica 51 (and ship, sailboat, and anchor), transito 65 (and bus and train), viajes 58 (and luggage and passport), senales 61, camping 67 (and tent, campfire, and binoculars), and lugares 107 more (buildings, landmarks, and maps), which hands those 22 to the new categories and keeps 173. The set has 5,990 icons in 59 categories.
+- **Names:** 1,037 proposed, 766 approved. What lugares already draws wasn't drawn again (the turns, the ramps, and the tunnel), nor the car with every badge; what two lists named kept one home (the license plate in vehiculos, the igloo in viajes).
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category; the critics redesigned 143 icons and dropped 31 that no construction made read at 18 px (the canal lock, the sextant, the jet bridge, every truck from above). After them the main session dropped 27 more: the vehicles and parts seen out of their usual view or whole ([DESIGN.md](../DESIGN.md#what-failed-before-check-every-icon-against-it)), among them `exhaust`, `propeller`, `airline`, `canoe`, `tanker`, `barge`, and `ev-plug`, and five signs that read as other things (`lighter`, `quiet-zone`, `chewing-gum`, `photo-booth`, `hold-handrail`).
+- **Search:** a label or keyword that is exactly the query now beats a longer one that contains it (*campana* finds bell before the bell tent, *Tienda campana*), and the exact name folds plurals (*notifications* is notification) ([engine](./engine.md#search-enginesearchmjs)).
+- **Interruptions:** the usage limit twice, the second time with only senales's critic left; each relaunch ran only what was missing.
+- Tests: 61.
+
 ## 28 Oct 2026 — Round 7: people and the body (773 icons)
 - **Ten new categories** ([taxonomy](./taxonomy.md)): personas 81, gestos 50 (and thumbs-up, thumbs-down, and hand-raised from comunicacion), emociones 55 (and comunicacion's eight faces), salud 112 (and heart-pulse, stethoscope, virus, first-aid, and hospital), anatomia 65, bienestar 68, fitness 68 (and dumbbell), belleza 79, ropa 126 (and shirt and hanger), accesibilidad 69 (and accessibility and wheelchair). The set has 5,287 icons in 51 categories.
 - **Names:** 1,099 proposed, 861 approved. What two lists named kept one home: the beard, the mustache, and the eyebrow in belleza; the period products in salud; the walker, the cane, and the crutch in salud and the prosthetics in accesibilidad; stretching and the yoga mat in bienestar; the robe in ropa. No garment that stands for a culture (the kimono, the poncho, the cape).

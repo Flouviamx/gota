@@ -1,0 +1,408 @@
+{
+  "luggage-lock": {
+    "label": { "es": "Resguardo de equipaje", "en": "Luggage storage", "pt": "Guarda-volumes", "fr": "Consigne à bagages", "de": "Gepäckaufbewahrung", "it": "Deposito bagagli", "ja": "荷物預かり", "zh": "行李寄存", "ko": "짐 보관", "ar": "حفظ الأمتعة" },
+    "keywords": {
+      "es": ["guardaequipaje", "consigna", "dejar las maletas", "antes del check-in", "después del check-out", "locker", "maleta con candado"],
+      "en": ["left luggage", "bag drop", "store bags", "before check-in", "after check-out", "locker", "luggage lock"]
+    }
+  },
+  "luggage-check": {
+    "label": { "es": "Maleta lista", "en": "Bags packed", "pt": "Mala pronta", "fr": "Valise prête", "de": "Koffer gepackt", "it": "Valigia pronta", "ja": "荷造り完了", "zh": "行李已收拾好", "ko": "짐 싸기 완료", "ar": "الحقيبة جاهزة" },
+    "keywords": {
+      "es": ["empacado", "lista de empaque completa", "viaje confirmado", "checklist terminado", "listo para viajar", "equipaje revisado", "reservación confirmada"],
+      "en": ["packing list done", "trip confirmed", "all set", "ready to go", "booking confirmed", "checked off", "ready to travel"]
+    }
+  },
+  "luggage-rolling": {
+    "label": { "es": "Maleta con ruedas", "en": "Rolling suitcase", "pt": "Mala de rodinhas", "fr": "Valise à roulettes", "de": "Rollkoffer", "it": "Valigia trolley", "ja": "キャリーケース", "zh": "拉杆箱", "ko": "캐리어", "ar": "حقيبة سفر بعجلات" },
+    "keywords": {
+      "es": ["viajes", "mis viajes", "equipaje de mano", "valija", "carry-on", "maletas incluidas", "vacaciones"],
+      "en": ["trips", "my trips", "carry-on", "trolley", "baggage", "travel", "vacation"]
+    }
+  },
+  "luggage-hardside": {
+    "label": { "es": "Maleta rígida", "en": "Hard-shell suitcase", "pt": "Mala rígida", "fr": "Valise rigide", "de": "Hartschalenkoffer", "it": "Valigia rigida", "ja": "ハードケース", "zh": "硬壳行李箱", "ko": "하드 캐리어", "ar": "حقيبة سفر صلبة" },
+    "keywords": {
+      "es": ["maleta de cuatro ruedas", "spinner", "tienda de maletas", "tipo de equipaje", "equipaje documentado", "policarbonato", "valija"],
+      "en": ["spinner", "four-wheel suitcase", "luggage store", "bag type", "checked bag", "polycarbonate", "trolley"]
+    }
+  },
+  "luggage-set": {
+    "label": { "es": "Juego de maletas", "en": "Luggage set", "pt": "Conjunto de malas", "fr": "Ensemble de valises", "de": "Kofferset", "it": "Set di valigie", "ja": "スーツケースセット", "zh": "行李箱套装", "ko": "캐리어 세트", "ar": "طقم حقائب سفر" },
+    "keywords": {
+      "es": ["número de maletas", "maletas incluidas", "capacidad de equipaje", "cajuela", "cuántas maletas", "tienda de maletas", "equipaje familiar"],
+      "en": ["number of bags", "bags included", "luggage capacity", "trunk space", "how many bags", "luggage store", "family luggage"]
+    }
+  },
+  "luggage-cart": {
+    "label": { "es": "Carrito de equipaje", "en": "Luggage cart", "pt": "Carrinho de bagagem", "fr": "Chariot à bagages", "de": "Gepäckwagen", "it": "Carrello portabagagli", "ja": "荷物カート", "zh": "行李车", "ko": "수하물 카트", "ar": "عربة الأمتعة" },
+    "keywords": {
+      "es": ["botones", "maletero", "ayuda con el equipaje", "subir las maletas", "servicio de equipaje", "lobby", "llegada al hotel"],
+      "en": ["bellhop", "porter", "luggage assistance", "baggage trolley", "bell cart", "hotel lobby", "arrival"]
+    }
+  },
+  "luggage-tag": {
+    "label": { "es": "Etiqueta de equipaje", "en": "Luggage tag", "pt": "Etiqueta de bagagem", "fr": "Étiquette à bagages", "de": "Kofferanhänger", "it": "Etichetta per bagagli", "ja": "ネームタグ", "zh": "行李牌", "ko": "수하물 태그", "ar": "بطاقة الأمتعة" },
+    "keywords": {
+      "es": ["datos del viajero", "identificar maleta", "nombre en la maleta", "marbete", "etiquetar", "maleta perdida", "datos de contacto"],
+      "en": ["traveler details", "bag ID", "name tag", "label a bag", "lost bag", "contact details", "identification"]
+    }
+  },
+  "travel-pillow": {
+    "label": { "es": "Almohada de viaje", "en": "Travel pillow", "pt": "Travesseiro de viagem", "fr": "Coussin de voyage", "de": "Nackenkissen", "it": "Cuscino da viaggio", "ja": "ネックピロー", "zh": "颈枕", "ko": "목베개", "ar": "وسادة سفر" },
+    "keywords": {
+      "es": ["cojín para el cuello", "almohada cervical", "vuelo largo", "viaje de noche", "comodidad", "accesorios de viaje", "dormir en el avión"],
+      "en": ["neck pillow", "long flight", "red-eye", "overnight trip", "comfort", "travel accessories", "sleep on the plane"]
+    }
+  },
+  "travel-adapter": {
+    "label": { "es": "Adaptador de viaje", "en": "Travel adapter", "pt": "Adaptador de tomada", "fr": "Adaptateur de voyage", "de": "Reiseadapter", "it": "Adattatore da viaggio", "ja": "変換プラグ", "zh": "转换插头", "ko": "여행용 어댑터", "ar": "محول قابس للسفر" },
+    "keywords": {
+      "es": ["adaptador de enchufe", "tipo de enchufe", "contacto", "voltaje", "guía del destino", "imprescindibles de viaje", "clavija"],
+      "en": ["plug adapter", "plug type", "outlet", "voltage", "destination guide", "travel essentials", "socket"]
+    }
+  },
+  "passport-check": {
+    "label": { "es": "Pasaporte verificado", "en": "Passport verified", "pt": "Passaporte verificado", "fr": "Passeport vérifié", "de": "Reisepass geprüft", "it": "Passaporto verificato", "ja": "パスポート確認済み", "zh": "护照已验证", "ko": "여권 확인됨", "ar": "تم التحقق من جواز السفر" },
+    "keywords": {
+      "es": ["documento válido", "vigente", "identidad confirmada", "listo para viajar", "revisión de documentos", "aprobado", "requisitos cumplidos"],
+      "en": ["valid document", "cleared", "identity confirmed", "ready to travel", "document check", "approved", "requirements met"]
+    }
+  },
+  "passport-clock": {
+    "label": { "es": "Pasaporte por vencer", "en": "Passport expiring", "pt": "Passaporte a vencer", "fr": "Passeport bientôt expiré", "de": "Reisepass läuft ab", "it": "Passaporto in scadenza", "ja": "パスポート期限間近", "zh": "护照即将过期", "ko": "여권 만료 임박", "ar": "جواز السفر على وشك الانتهاء" },
+    "keywords": {
+      "es": ["renovar pasaporte", "vigencia", "fecha de vencimiento", "caducidad", "trámite", "recordatorio", "seis meses de vigencia"],
+      "en": ["renew passport", "expiry date", "validity", "renewal due", "reminder", "six-month rule", "paperwork"]
+    }
+  },
+  "passport-open": {
+    "label": { "es": "Datos del pasaporte", "en": "Passport details", "pt": "Dados do passaporte", "fr": "Données du passeport", "de": "Passdaten", "it": "Dati del passaporto", "ja": "パスポート情報", "zh": "护照信息", "ko": "여권 정보", "ar": "بيانات جواز السفر" },
+    "keywords": {
+      "es": ["página de datos", "escanear pasaporte", "número de pasaporte", "nacionalidad", "datos del viajero", "documento de identidad", "llenar datos"],
+      "en": ["data page", "scan passport", "passport number", "nationality", "traveler info", "identity document", "enter details"]
+    }
+  },
+  "travel-visa": {
+    "label": { "es": "Visa", "en": "Visa", "pt": "Visto", "fr": "Visa", "de": "Visum", "it": "Visto", "ja": "ビザ", "zh": "签证", "ko": "비자", "ar": "تأشيرة" },
+    "keywords": {
+      "es": ["permiso de entrada", "requisitos de entrada", "solicitud", "trámite consular", "embajada", "viaje internacional", "visado"],
+      "en": ["entry permit", "entry requirements", "application", "consulate", "embassy", "international travel", "e-visa"]
+    }
+  },
+  "travel-visa-check": {
+    "label": { "es": "Visa aprobada", "en": "Visa approved", "pt": "Visto aprovado", "fr": "Visa accordé", "de": "Visum genehmigt", "it": "Visto approvato", "ja": "ビザ承認", "zh": "签证已获批", "ko": "비자 승인", "ar": "تمت الموافقة على التأشيرة" },
+    "keywords": {
+      "es": ["otorgada", "permiso concedido", "solicitud aceptada", "entrada autorizada", "trámite completado", "listo para viajar"],
+      "en": ["granted", "permit issued", "application accepted", "entry authorized", "cleared to travel", "process complete"]
+    }
+  },
+  "travel-visa-x": {
+    "label": { "es": "Visa rechazada", "en": "Visa denied", "pt": "Visto negado", "fr": "Visa refusé", "de": "Visum abgelehnt", "it": "Visto negato", "ja": "ビザ却下", "zh": "签证被拒", "ko": "비자 거부", "ar": "تم رفض التأشيرة" },
+    "keywords": {
+      "es": ["negada", "solicitud rechazada", "entrada denegada", "permiso negado", "trámite fallido", "volver a solicitar"],
+      "en": ["refused", "application rejected", "entry denied", "permit refused", "reapply", "not approved"]
+    }
+  },
+  "insurance-travel": {
+    "label": { "es": "Seguro de viaje", "en": "Travel insurance", "pt": "Seguro viagem", "fr": "Assurance voyage", "de": "Reiseversicherung", "it": "Assicurazione di viaggio", "ja": "旅行保険", "zh": "旅行保险", "ko": "여행자 보험", "ar": "تأمين السفر" },
+    "keywords": {
+      "es": ["protección del viaje", "cancelación", "gastos médicos", "cobertura en el extranjero", "asistencia en viaje", "póliza", "equipaje perdido"],
+      "en": ["trip protection", "cancellation cover", "medical cover", "coverage abroad", "travel assistance", "policy", "lost luggage"]
+    }
+  },
+  "hotel": {
+    "label": { "es": "Hotel", "en": "Hotel", "pt": "Hotel", "fr": "Hôtel", "de": "Hotel", "it": "Hotel", "ja": "ホテル", "zh": "酒店", "ko": "호텔", "ar": "فندق" },
+    "keywords": {
+      "es": ["hospedaje", "alojamiento", "estancias", "reservar habitación", "dónde quedarse", "noches", "viaje"],
+      "en": ["lodging", "accommodation", "stays", "book a room", "where to stay", "nights", "listings"]
+    }
+  },
+  "hotel-search": {
+    "label": { "es": "Buscar hospedaje", "en": "Find stays", "pt": "Buscar hospedagem", "fr": "Rechercher un hébergement", "de": "Unterkunft suchen", "it": "Cerca alloggio", "ja": "宿泊先を検索", "zh": "搜索住宿", "ko": "숙소 검색", "ar": "البحث عن إقامة" },
+    "keywords": {
+      "es": ["buscar hotel", "dónde quedarse", "explorar estancias", "disponibilidad", "fechas y huéspedes", "comparar precios", "filtros"],
+      "en": ["search hotels", "where to stay", "browse stays", "availability", "dates and guests", "compare prices", "filters"]
+    }
+  },
+  "hotel-check": {
+    "label": { "es": "Hospedaje reservado", "en": "Stay booked", "pt": "Hospedagem reservada", "fr": "Séjour réservé", "de": "Unterkunft gebucht", "it": "Soggiorno prenotato", "ja": "宿泊予約済み", "zh": "住宿已预订", "ko": "숙소 예약 완료", "ar": "تم حجز الإقامة" },
+    "keywords": {
+      "es": ["reservación confirmada", "hotel reservado", "confirmación", "folio", "estancia confirmada", "comprobante", "próxima estancia"],
+      "en": ["reservation confirmed", "hotel booked", "confirmation", "booking reference", "confirmed stay", "receipt", "upcoming stay"]
+    }
+  },
+  "hotel-heart": {
+    "label": { "es": "Hospedajes guardados", "en": "Saved stays", "pt": "Hospedagens salvas", "fr": "Hébergements enregistrés", "de": "Gespeicherte Unterkünfte", "it": "Alloggi salvati", "ja": "保存した宿泊先", "zh": "收藏的住宿", "ko": "저장한 숙소", "ar": "أماكن الإقامة المحفوظة" },
+    "keywords": {
+      "es": ["favoritos", "lista de deseos", "me gusta", "guardar hotel", "para después", "colección", "viaje soñado"],
+      "en": ["favorites", "wishlist", "like", "save hotel", "for later", "collection", "dream trip"]
+    }
+  },
+  "motel": {
+    "label": { "es": "Motel", "en": "Motel", "pt": "Motel", "fr": "Motel", "de": "Motel", "it": "Motel", "ja": "モーテル", "zh": "汽车旅馆", "ko": "모텔", "ar": "موتيل" },
+    "keywords": {
+      "es": ["hospedaje en carretera", "parada en el camino", "viaje por carretera", "estacionamiento en la puerta", "tipo de propiedad", "una noche", "económico"],
+      "en": ["roadside lodging", "road trip", "overnight stop", "parking at the door", "property type", "budget stay", "highway"]
+    }
+  },
+  "inn": {
+    "label": { "es": "Posada", "en": "Inn", "pt": "Pousada", "fr": "Auberge", "de": "Gasthaus", "it": "Locanda", "ja": "民宿", "zh": "民宿", "ko": "민박", "ar": "نُزُل" },
+    "keywords": {
+      "es": ["casa de huéspedes", "bed and breakfast", "hostal", "casa rural", "hospedaje con desayuno", "tipo de propiedad", "hostería"],
+      "en": ["guesthouse", "bed and breakfast", "B&B", "lodge", "country inn", "property type", "pension"]
+    }
+  },
+  "resort": {
+    "label": { "es": "Resort", "en": "Resort", "pt": "Resort", "fr": "Complexe hôtelier", "de": "Ferienanlage", "it": "Resort", "ja": "リゾート", "zh": "度假村", "ko": "리조트", "ar": "منتجع" },
+    "keywords": {
+      "es": ["todo incluido", "complejo turístico", "hotel de playa", "vacaciones", "tipo de propiedad", "estilo de viaje", "spa"],
+      "en": ["all-inclusive", "vacation", "beach hotel", "property type", "trip style", "getaway", "spa"]
+    }
+  },
+  "overwater-bungalow": {
+    "label": { "es": "Villa sobre el agua", "en": "Overwater villa", "pt": "Bangalô sobre a água", "fr": "Bungalow sur pilotis", "de": "Überwasser-Bungalow", "it": "Bungalow sull’acqua", "ja": "水上ヴィラ", "zh": "水上屋", "ko": "수상 방갈로", "ar": "فيلا فوق الماء" },
+    "keywords": {
+      "es": ["bungalow", "palafito", "estancia tropical", "luna de miel", "Maldivas", "isla", "villa de lujo"],
+      "en": ["bungalow", "stilt house", "tropical stay", "honeymoon", "Maldives", "island", "luxury villa"]
+    }
+  },
+  "treehouse": {
+    "label": { "es": "Casa del árbol", "en": "Treehouse", "pt": "Casa na árvore", "fr": "Cabane dans les arbres", "de": "Baumhaus", "it": "Casa sull’albero", "ja": "ツリーハウス", "zh": "树屋", "ko": "트리하우스", "ar": "بيت الشجرة" },
+    "keywords": {
+      "es": ["hospedaje en el bosque", "renta vacacional", "estancia única", "cabaña elevada", "naturaleza", "glamping", "categoría de alojamiento"],
+      "en": ["forest stay", "vacation rental", "unique stay", "cabin in the trees", "nature", "glamping", "rental category"]
+    }
+  },
+  "dome-house": {
+    "label": { "es": "Domo de glamping", "en": "Glamping dome", "pt": "Domo de glamping", "fr": "Dôme de glamping", "de": "Glamping-Kuppel", "it": "Cupola glamping", "ja": "グランピングドーム", "zh": "球形帐篷", "ko": "글램핑 돔", "ar": "قبة تخييم فاخر" },
+    "keywords": {
+      "es": ["domo geodésico", "domo transparente", "burbuja", "ver las estrellas", "hospedaje único", "renta vacacional", "naturaleza"],
+      "en": ["geodesic dome", "bubble dome", "clear dome", "stargazing", "unique stay", "vacation rental", "nature"]
+    }
+  },
+  "yurt": {
+    "label": { "es": "Yurta", "en": "Yurt", "pt": "Iurta", "fr": "Yourte", "de": "Jurte", "it": "Yurta", "ja": "ゲル", "zh": "蒙古包", "ko": "유르트", "ar": "يورت" },
+    "keywords": {
+      "es": ["glamping", "tienda redonda", "campamento", "hospedaje rústico", "estancia única", "aire libre", "renta vacacional"],
+      "en": ["glamping", "ger", "round tent", "camp", "rustic stay", "unique stay", "outdoors"]
+    }
+  },
+  "igloo": {
+    "label": { "es": "Iglú", "en": "Igloo", "pt": "Iglu", "fr": "Igloo", "de": "Iglu", "it": "Igloo", "ja": "イグルー", "zh": "冰屋", "ko": "이글루", "ar": "كوخ ثلجي" },
+    "keywords": {
+      "es": ["hotel de hielo", "estancia en la nieve", "ártico", "auroras boreales", "viaje invernal", "Laponia", "iglú de cristal"],
+      "en": ["ice hotel", "snow stay", "arctic trip", "northern lights", "winter trip", "Lapland", "glass igloo"]
+    }
+  },
+  "cabana": {
+    "label": { "es": "Cabana de playa", "en": "Cabana", "pt": "Cabana de praia", "fr": "Cabane de plage", "de": "Cabana", "it": "Capanno da spiaggia", "ja": "カバナ", "zh": "私人凉亭", "ko": "카바나", "ar": "كابانا" },
+    "keywords": {
+      "es": ["cama balinesa", "camastro privado", "junto a la alberca", "club de playa", "sombra", "día de playa", "zona VIP"],
+      "en": ["day bed", "poolside", "beach club", "private shade", "resort amenity", "VIP area", "beach day"]
+    }
+  },
+  "palapa": {
+    "label": { "es": "Palapa", "en": "Palapa", "pt": "Guarda-sol de palha", "fr": "Paillote", "de": "Strohschirm", "it": "Ombrellone di paglia", "ja": "わらぶきパラソル", "zh": "茅草遮阳伞", "ko": "초가 파라솔", "ar": "مظلة من القش" },
+    "keywords": {
+      "es": ["sombrilla de palma", "techo de palma", "club de playa", "sombra en la playa", "resort", "restaurante de playa", "choza"],
+      "en": ["thatched umbrella", "straw umbrella", "beach shade", "beach club", "thatched roof", "tiki hut", "resort"]
+    }
+  },
+  "bellhop": {
+    "label": { "es": "Botones", "en": "Bellhop", "pt": "Mensageiro", "fr": "Bagagiste", "de": "Hotelpage", "it": "Facchino", "ja": "ベルスタッフ", "zh": "行李员", "ko": "벨맨", "ar": "حامل الحقائب" },
+    "keywords": {
+      "es": ["maletero", "servicio de equipaje", "subir las maletas", "ayuda con las maletas", "personal del hotel", "recepción", "llegada"],
+      "en": ["porter", "bell service", "luggage service", "carry bags", "hotel staff", "bell desk", "arrival"]
+    }
+  },
+  "concierge": {
+    "label": { "es": "Concierge", "en": "Concierge", "pt": "Concierge", "fr": "Concierge", "de": "Concierge", "it": "Concierge", "ja": "コンシェルジュ", "zh": "礼宾服务", "ko": "컨시어지", "ar": "خدمة الكونسيرج" },
+    "keywords": {
+      "es": ["recomendaciones", "solicitudes al hotel", "atención al huésped", "reservar restaurante", "conserjería", "ayuda personalizada", "personal del hotel"],
+      "en": ["recommendations", "hotel requests", "guest services", "restaurant reservations", "front desk", "personal assistance", "ask the hotel"]
+    }
+  },
+  "host": {
+    "label": { "es": "Anfitrión", "en": "Host", "pt": "Anfitrião", "fr": "Hôte", "de": "Gastgeber", "it": "Host", "ja": "ホスト", "zh": "房东", "ko": "호스트", "ar": "المضيف" },
+    "keywords": {
+      "es": ["contactar", "perfil", "dueño del alojamiento", "anfitriona", "renta vacacional", "bienvenida", "atención al huésped"],
+      "en": ["hosted by", "owner", "property manager", "profile", "vacation rental", "welcome", "message"]
+    }
+  },
+  "travel-agent": {
+    "label": { "es": "Agente de viajes", "en": "Travel agent", "pt": "Agente de viagens", "fr": "Agent de voyages", "de": "Reiseberater", "it": "Agente di viaggio", "ja": "旅行代理店", "zh": "旅行顾问", "ko": "여행 상담원", "ar": "وكيل سفر" },
+    "keywords": {
+      "es": ["agencia de viajes", "asesor de viajes", "reservar con un agente", "paquetes", "planear el viaje", "cotización de viaje", "atención personalizada"],
+      "en": ["travel agency", "travel advisor", "book with an agent", "packages", "trip planning", "travel quote", "personal service"]
+    }
+  },
+  "tour-guide": {
+    "label": { "es": "Guía de turistas", "en": "Tour guide", "pt": "Guia turístico", "fr": "Guide touristique", "de": "Reiseleiter", "it": "Guida turistica", "ja": "ツアーガイド", "zh": "导游", "ko": "투어 가이드", "ar": "مرشد سياحي" },
+    "keywords": {
+      "es": ["recorrido guiado", "visita guiada", "guía local", "tour", "excursión", "grupo de turistas", "city tour"],
+      "en": ["guided tour", "walking tour", "local guide", "excursion", "tour group", "city tour", "sightseeing"]
+    }
+  },
+  "room-service": {
+    "label": { "es": "Servicio a la habitación", "en": "Room service", "pt": "Serviço de quarto", "fr": "Service en chambre", "de": "Zimmerservice", "it": "Servizio in camera", "ja": "ルームサービス", "zh": "客房送餐", "ko": "룸서비스", "ar": "خدمة الغرف" },
+    "keywords": {
+      "es": ["comida en la habitación", "pedir comida", "charola", "campana", "menú del hotel", "desayuno en la cama", "servicio al cuarto"],
+      "en": ["in-room dining", "order food", "tray", "cloche", "hotel menu", "breakfast in bed", "food delivery"]
+    }
+  },
+  "door-hanger": {
+    "label": { "es": "Arreglar la habitación", "en": "Make up room", "pt": "Arrumar o quarto", "fr": "Faire la chambre", "de": "Zimmer reinigen", "it": "Rifare la camera", "ja": "清掃をお願いします", "zh": "请打扫房间", "ko": "객실 청소 요청", "ar": "يرجى تنظيف الغرفة" },
+    "keywords": {
+      "es": ["letrero de puerta", "limpieza", "ama de llaves", "solicitar limpieza", "colgante de puerta", "camarista", "toallas limpias"],
+      "en": ["door hanger", "door sign", "housekeeping request", "clean my room", "room sign", "tidy up", "fresh towels"]
+    }
+  },
+  "door-hanger-moon": {
+    "label": { "es": "Letrero de no molestar", "en": "Do not disturb sign", "pt": "Placa de não perturbe", "fr": "Panneau Ne pas déranger", "de": "Bitte-nicht-stören-Schild", "it": "Cartello Non disturbare", "ja": "起こさないでください", "zh": "请勿打扰牌", "ko": "방해 금지 팻말", "ar": "لافتة عدم الإزعاج" },
+    "keywords": {
+      "es": ["privacidad", "colgante de puerta", "dormir", "sin limpieza", "habitación ocupada", "silencio", "descanso"],
+      "en": ["privacy please", "door hanger", "sleeping", "no housekeeping", "room occupied", "quiet", "rest"]
+    }
+  },
+  "housekeeping-cart": {
+    "label": { "es": "Carrito de limpieza", "en": "Housekeeping cart", "pt": "Carrinho de camareira", "fr": "Chariot de ménage", "de": "Reinigungswagen", "it": "Carrello delle pulizie", "ja": "清掃カート", "zh": "客房清洁车", "ko": "청소 카트", "ar": "عربة التنظيف" },
+    "keywords": {
+      "es": ["ama de llaves", "camarista", "limpieza diaria", "estado de la habitación", "operación hotelera", "blancos", "amenidades"],
+      "en": ["maid service", "room attendant", "daily cleaning", "room status", "hotel operations", "linens", "amenities"]
+    }
+  },
+  "key-card": {
+    "label": { "es": "Tarjeta de habitación", "en": "Room key card", "pt": "Cartão do quarto", "fr": "Carte-clé", "de": "Schlüsselkarte", "it": "Tessera della camera", "ja": "カードキー", "zh": "房卡", "ko": "객실 카드 키", "ar": "بطاقة مفتاح الغرفة" },
+    "keywords": {
+      "es": ["llave de la habitación", "acceso a la habitación", "check-in", "llave perdida", "llave desactivada", "tarjeta magnética", "tarjeta de acceso"],
+      "en": ["room key", "room access", "check-in", "lost key", "deactivated key", "magnetic card", "access card"]
+    }
+  },
+  "smartphone-key": {
+    "label": { "es": "Llave digital", "en": "Mobile key", "pt": "Chave digital", "fr": "Clé numérique", "de": "Digitaler Zimmerschlüssel", "it": "Chiave digitale", "ja": "モバイルキー", "zh": "手机房卡", "ko": "모바일 키", "ar": "مفتاح رقمي" },
+    "keywords": {
+      "es": ["abrir con el celular", "llave móvil", "check-in digital", "acceso sin tarjeta", "NFC", "Bluetooth", "app del hotel"],
+      "en": ["open with phone", "digital key", "mobile check-in", "keyless entry", "NFC", "Bluetooth", "hotel app"]
+    }
+  },
+  "sea-view": {
+    "label": { "es": "Vista al mar", "en": "Sea view", "pt": "Vista para o mar", "fr": "Vue sur la mer", "de": "Meerblick", "it": "Vista mare", "ja": "オーシャンビュー", "zh": "海景", "ko": "바다 전망", "ar": "إطلالة على البحر" },
+    "keywords": {
+      "es": ["vista al océano", "frente al mar", "tipo de habitación", "habitación con balcón", "playa", "panorámica", "olas"],
+      "en": ["ocean view", "oceanfront", "room type", "balcony room", "beach", "panoramic", "waves"]
+    }
+  },
+  "city-view": {
+    "label": { "es": "Vista a la ciudad", "en": "City view", "pt": "Vista para a cidade", "fr": "Vue sur la ville", "de": "Stadtblick", "it": "Vista città", "ja": "シティビュー", "zh": "城景", "ko": "시티 뷰", "ar": "إطلالة على المدينة" },
+    "keywords": {
+      "es": ["vista urbana", "rascacielos", "horizonte", "tipo de habitación", "piso alto", "panorámica", "centro"],
+      "en": ["skyline", "urban view", "skyscrapers", "room type", "high floor", "panoramic", "downtown"]
+    }
+  },
+  "mountain-view": {
+    "label": { "es": "Vista a la montaña", "en": "Mountain view", "pt": "Vista para a montanha", "fr": "Vue sur la montagne", "de": "Bergblick", "it": "Vista montagna", "ja": "マウンテンビュー", "zh": "山景", "ko": "산 전망", "ar": "إطلالة على الجبل" },
+    "keywords": {
+      "es": ["vista al volcán", "paisaje", "tipo de habitación", "sierra", "naturaleza", "panorámica", "vista al valle"],
+      "en": ["landscape", "room type", "alpine", "nature", "panoramic", "peaks", "valley view"]
+    }
+  },
+  "calendar-bed": {
+    "label": { "es": "Fechas de la estancia", "en": "Stay dates", "pt": "Datas da estadia", "fr": "Dates du séjour", "de": "Aufenthaltsdaten", "it": "Date del soggiorno", "ja": "宿泊日", "zh": "住宿日期", "ko": "숙박 날짜", "ar": "تواريخ الإقامة" },
+    "keywords": {
+      "es": ["noches", "llegada y salida", "check-in", "check-out", "duración de la estancia", "elegir fechas", "disponibilidad"],
+      "en": ["nights", "arrival and departure", "check-in", "check-out", "length of stay", "select dates", "availability"]
+    }
+  },
+  "beach-umbrella": {
+    "label": { "es": "Sombrilla de playa", "en": "Beach umbrella", "pt": "Guarda-sol", "fr": "Parasol", "de": "Sonnenschirm", "it": "Ombrellone", "ja": "ビーチパラソル", "zh": "沙滩伞", "ko": "비치 파라솔", "ar": "مظلة شاطئ" },
+    "keywords": {
+      "es": ["acceso a la playa", "día de playa", "frente a la playa", "parasol", "vacaciones", "sombra", "verano"],
+      "en": ["beach access", "beach day", "beachfront", "parasol", "vacation", "shade", "summer"]
+    }
+  },
+  "sun-lounger": {
+    "label": { "es": "Camastro", "en": "Sun lounger", "pt": "Espreguiçadeira", "fr": "Transat", "de": "Sonnenliege", "it": "Lettino", "ja": "サンラウンジャー", "zh": "日光躺椅", "ko": "선베드", "ar": "كرسي استلقاء للتشمس" },
+    "keywords": {
+      "es": ["tumbona", "apartar lugar", "alberca", "playa", "asolearse", "descanso", "amenidad"],
+      "en": ["sunbed", "deck chair", "reserve a spot", "pool", "beach", "sunbathe", "amenity"]
+    }
+  },
+  "sandcastle": {
+    "label": { "es": "Castillo de arena", "en": "Sandcastle", "pt": "Castelo de areia", "fr": "Château de sable", "de": "Sandburg", "it": "Castello di sabbia", "ja": "砂の城", "zh": "沙堡", "ko": "모래성", "ar": "قلعة رملية" },
+    "keywords": {
+      "es": ["playa familiar", "niños", "actividades infantiles", "club de niños", "vacaciones en familia", "cubeta y pala", "juegos de playa"],
+      "en": ["family beach", "kids", "kids' activities", "kids club", "family vacation", "bucket and spade", "beach games"]
+    }
+  },
+  "beach-ball": {
+    "label": { "es": "Pelota de playa", "en": "Beach ball", "pt": "Bola de praia", "fr": "Ballon de plage", "de": "Wasserball", "it": "Pallone da spiaggia", "ja": "ビーチボール", "zh": "沙滩球", "ko": "비치볼", "ar": "كرة الشاطئ" },
+    "keywords": {
+      "es": ["diversión en la alberca", "juegos", "actividades familiares", "verano", "niños", "pelota inflable", "vacaciones"],
+      "en": ["pool fun", "games", "family activities", "summer", "kids", "inflatable ball", "vacation"]
+    }
+  },
+  "swimming-pool-indoor": {
+    "label": { "es": "Alberca techada", "en": "Indoor pool", "pt": "Piscina coberta", "fr": "Piscine couverte", "de": "Hallenbad", "it": "Piscina coperta", "ja": "屋内プール", "zh": "室内泳池", "ko": "실내 수영장", "ar": "مسبح داخلي" },
+    "keywords": {
+      "es": ["piscina cubierta", "alberca climatizada", "amenidad del hotel", "nadar", "spa", "todo el año", "instalaciones"],
+      "en": ["covered pool", "heated pool", "hotel amenity", "swim", "spa", "year-round", "facilities"]
+    }
+  },
+  "water-slide": {
+    "label": { "es": "Tobogán acuático", "en": "Water slide", "pt": "Toboágua", "fr": "Toboggan aquatique", "de": "Wasserrutsche", "it": "Scivolo d’acqua", "ja": "ウォータースライダー", "zh": "水滑梯", "ko": "워터 슬라이드", "ar": "زحليقة مائية" },
+    "keywords": {
+      "es": ["parque acuático", "resbaladilla", "alberca", "diversión", "niños", "atracción", "resort familiar"],
+      "en": ["water park", "flume", "pool", "fun", "kids", "attraction", "family resort"]
+    }
+  },
+  "zipline": {
+    "label": { "es": "Tirolesa", "en": "Zipline", "pt": "Tirolesa", "fr": "Tyrolienne", "de": "Seilrutsche", "it": "Zipline", "ja": "ジップライン", "zh": "高空滑索", "ko": "짚라인", "ar": "الانزلاق بالحبل" },
+    "keywords": {
+      "es": ["tour de aventura", "canopy", "ecoturismo", "adrenalina", "parque de aventura", "selva", "actividad al aire libre"],
+      "en": ["adventure tour", "canopy tour", "ecotourism", "adrenaline", "adventure park", "jungle", "outdoor activity"]
+    }
+  },
+  "audio-guide": {
+    "label": { "es": "Audioguía", "en": "Audio guide", "pt": "Audioguia", "fr": "Audioguide", "de": "Audioguide", "it": "Audioguida", "ja": "音声ガイド", "zh": "语音导览", "ko": "오디오 가이드", "ar": "دليل صوتي" },
+    "keywords": {
+      "es": ["museo", "recorrido", "visita autoguiada", "audífonos", "narración", "exposición", "escuchar"],
+      "en": ["museum", "self-guided tour", "headphones", "narration", "tour", "exhibition", "listen"]
+    }
+  },
+  "guidebook": {
+    "label": { "es": "Guía de viaje", "en": "Guidebook", "pt": "Guia de viagem", "fr": "Guide de voyage", "de": "Reiseführer", "it": "Guida di viaggio", "ja": "ガイドブック", "zh": "旅游指南", "ko": "여행 가이드북", "ar": "دليل السفر" },
+    "keywords": {
+      "es": ["guía del destino", "qué hacer", "lugares que visitar", "recomendaciones", "libro", "consejos de viaje", "explorar"],
+      "en": ["destination guide", "things to do", "places to visit", "recommendations", "book", "travel tips", "explore"]
+    }
+  },
+  "itinerary": {
+    "label": { "es": "Itinerario", "en": "Itinerary", "pt": "Itinerário", "fr": "Itinéraire", "de": "Reiseplan", "it": "Itinerario", "ja": "旅程", "zh": "行程", "ko": "여행 일정", "ar": "خط سير الرحلة" },
+    "keywords": {
+      "es": ["plan de viaje", "día por día", "agenda", "ruta", "planear", "actividades", "programa"],
+      "en": ["trip plan", "day by day", "schedule", "agenda", "plan", "activities", "route"]
+    }
+  },
+  "itinerary-plus": {
+    "label": { "es": "Agregar al itinerario", "en": "Add to itinerary", "pt": "Adicionar ao itinerário", "fr": "Ajouter à l’itinéraire", "de": "Zum Reiseplan hinzufügen", "it": "Aggiungi all’itinerario", "ja": "旅程に追加", "zh": "添加到行程", "ko": "일정에 추가", "ar": "إضافة إلى خط سير الرحلة" },
+    "keywords": {
+      "es": ["agregar al viaje", "nueva actividad", "planear", "guardar plan", "sumar parada", "agendar", "nuevo día"],
+      "en": ["add to trip", "new activity", "plan", "save plan", "add stop", "schedule", "add day"]
+    }
+  },
+  "step-pyramid": {
+    "label": { "es": "Pirámide escalonada", "en": "Step pyramid", "pt": "Pirâmide escalonada", "fr": "Pyramide à degrés", "de": "Stufenpyramide", "it": "Piramide a gradoni", "ja": "階段ピラミッド", "zh": "阶梯金字塔", "ko": "계단식 피라미드", "ar": "هرم مدرج" },
+    "keywords": {
+      "es": ["zona arqueológica", "ruinas", "Teotihuacán", "Chichén Itzá", "templo maya", "sitio histórico", "patrimonio"],
+      "en": ["archaeological site", "ruins", "Mayan temple", "Aztec", "Chichen Itza", "historic site", "heritage"]
+    }
+  },
+  "snow-globe": {
+    "label": { "es": "Esfera de nieve", "en": "Snow globe", "pt": "Globo de neve", "fr": "Boule à neige", "de": "Schneekugel", "it": "Palla di neve", "ja": "スノードーム", "zh": "雪花水晶球", "ko": "스노우볼", "ar": "كرة ثلجية" },
+    "keywords": {
+      "es": ["souvenir", "recuerdo de viaje", "tienda de regalos", "regalo", "artesanías", "coleccionable", "decoración"],
+      "en": ["souvenir", "gift shop", "keepsake", "gift", "memento", "collectible", "decoration"]
+    }
+  }
+}

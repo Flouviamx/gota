@@ -221,6 +221,12 @@ reach it in one pass. What the critics, QA, and the owner caught, so it isn't dr
   bones (the hip, the shoulder, the ankle) reads as a tool; a pose folded on the floor (child's
   pose, downward dog) reads as a line and a dot. Round 7 dropped every one: say it with one hand,
   one figure, or the body part's outline.
+- **A vehicle out of its view, a part out of its machine.** A vehicle from above or head-on loses
+  what tells it (a truck from above reads as a battery, a motorcycle head-on as a face); a part
+  drawn alone reads as a common object (a pedal as a lantern, an exhaust as a candy, a propeller as
+  a bone, a tail fin as a boot); a low hull with nothing on deck reads as a bowl or a saucer (a
+  canoe, a tanker, a barge). Round 8 dropped all but the car from above: draw the vehicle in
+  profile, the part on its machine, or the boat with what makes it that boat.
 
 ## Process
 1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.

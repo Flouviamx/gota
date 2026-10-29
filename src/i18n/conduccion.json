@@ -1,0 +1,821 @@
+{
+  "steering-wheel": {
+    "label": { "es": "Volante", "en": "Steering wheel", "pt": "Volante", "fr": "Volant", "de": "Lenkrad", "it": "Volante", "ja": "ハンドル", "zh": "方向盘", "ko": "핸들", "ar": "عجلة القيادة" },
+    "keywords": {
+      "es": ["manejar", "conducir", "conductor", "asiento del conductor", "modo de manejo", "tomar el volante", "auto"],
+      "en": ["drive", "driving", "driver", "driver’s seat", "driving mode", "take the wheel", "car"]
+    }
+  },
+  "steering-wheel-heated": {
+    "label": { "es": "Volante con calefacción", "en": "Heated steering wheel", "pt": "Volante aquecido", "fr": "Volant chauffant", "de": "Lenkradheizung", "it": "Volante riscaldato", "ja": "ステアリングヒーター", "zh": "方向盘加热", "ko": "열선 핸들", "ar": "تدفئة عجلة القيادة" },
+    "keywords": {
+      "es": ["calentar el volante", "clima del auto", "confort", "invierno", "manos frías", "app del auto", "panel de clima"],
+      "en": ["warm the wheel", "climate control", "comfort", "winter", "cold hands", "car app", "cabin heat"]
+    }
+  },
+  "steering-wheel-alert": {
+    "label": { "es": "Falla de dirección", "en": "Steering fault", "pt": "Falha na direção", "fr": "Défaut de direction", "de": "Lenkungsstörung", "it": "Guasto allo sterzo", "ja": "ステアリング警告", "zh": "转向系统故障", "ko": "조향 장치 경고", "ar": "عطل في التوجيه" },
+    "keywords": {
+      "es": ["dirección hidráulica", "dirección asistida", "luz testigo", "volante duro", "revisar dirección", "servicio", "avería"],
+      "en": ["power steering", "warning light", "tell-tale", "heavy steering", "steering service", "EPS fault", "malfunction"]
+    }
+  },
+  "gearstick": {
+    "label": { "es": "Transmisión manual", "en": "Manual transmission", "pt": "Câmbio manual", "fr": "Boîte manuelle", "de": "Schaltgetriebe", "it": "Cambio manuale", "ja": "マニュアルトランスミッション", "zh": "手动挡", "ko": "수동 변속기", "ar": "ناقل حركة يدوي" },
+    "keywords": {
+      "es": ["palanca de velocidades", "estándar", "cambiar de velocidad", "clutch", "embrague", "meter cambio", "filtro de transmisión"],
+      "en": ["gear stick", "stick shift", "gear shift", "manual gearbox", "clutch", "change gear", "transmission filter"]
+    }
+  },
+  "automatic-shifter": {
+    "label": { "es": "Transmisión automática", "en": "Automatic transmission", "pt": "Câmbio automático", "fr": "Boîte automatique", "de": "Automatikgetriebe", "it": "Cambio automatico", "ja": "オートマチックトランスミッション", "zh": "自动挡", "ko": "자동 변속기", "ar": "ناقل حركة أوتوماتيكي" },
+    "keywords": {
+      "es": ["palanca automática", "selector de marchas", "PRND", "modo de manejo", "drive", "poner en P", "filtro de transmisión"],
+      "en": ["gear selector", "shifter", "PRND", "drive mode", "auto gearbox", "park", "transmission filter"]
+    }
+  },
+  "gearbox": {
+    "label": { "es": "Caja de cambios", "en": "Gearbox", "pt": "Caixa de câmbio", "fr": "Boîte de vitesses", "de": "Getriebe", "it": "Scatola del cambio", "ja": "トランスミッション", "zh": "变速箱", "ko": "변속기", "ar": "علبة التروس" },
+    "keywords": {
+      "es": ["transmisión", "engranes", "reparar transmisión", "servicio de transmisión", "aceite de transmisión", "refacción", "taller mecánico"],
+      "en": ["transmission", "gears", "transmission repair", "transmission service", "transmission fluid", "car part", "mechanic"]
+    }
+  },
+  "four-wheel-drive": {
+    "label": { "es": "Tracción en las cuatro ruedas", "en": "Four-wheel drive", "pt": "Tração nas quatro rodas", "fr": "Quatre roues motrices", "de": "Allradantrieb", "it": "Trazione integrale", "ja": "四輪駆動", "zh": "四轮驱动", "ko": "사륜구동", "ar": "دفع رباعي" },
+    "keywords": {
+      "es": ["4x4", "doble tracción", "tracción integral", "AWD", "todoterreno", "off-road", "filtro de tracción"],
+      "en": ["4WD", "AWD", "all-wheel drive", "4x4", "off-road", "drivetrain", "traction"]
+    }
+  },
+  "pedal-brake": {
+    "label": { "es": "Pedal del freno", "en": "Brake pedal", "pt": "Pedal do freio", "fr": "Pédale de frein", "de": "Bremspedal", "it": "Pedale del freno", "ja": "ブレーキペダル", "zh": "刹车踏板", "ko": "브레이크 페달", "ar": "دواسة الفرامل" },
+    "keywords": {
+      "es": ["frenar", "frenado", "frenón", "frenado brusco", "revisión de frenos", "detenerse", "telemetría"],
+      "en": ["brake", "braking", "hard braking", "harsh braking", "brake check", "slow down", "telematics"]
+    }
+  },
+  "handbrake": {
+    "label": { "es": "Freno de mano", "en": "Parking brake", "pt": "Freio de mão", "fr": "Frein à main", "de": "Handbremse", "it": "Freno a mano", "ja": "パーキングブレーキ", "zh": "手刹", "ko": "주차 브레이크", "ar": "فرامل اليد" },
+    "keywords": {
+      "es": ["freno de estacionamiento", "poner el freno", "jalar el freno", "luz testigo", "estacionar", "freno eléctrico", "pendiente"],
+      "en": ["handbrake", "emergency brake", "e-brake", "engage brake", "warning light", "park", "hill hold"]
+    }
+  },
+  "ignition": {
+    "label": { "es": "Encendido", "en": "Ignition", "pt": "Ignição", "fr": "Démarrage", "de": "Zündung", "it": "Accensione", "ja": "エンジン始動", "zh": "点火", "ko": "시동", "ar": "تشغيل المحرك" },
+    "keywords": {
+      "es": ["arrancar", "encender el motor", "dar marcha", "llave", "botón de arranque", "arranque remoto", "switch"],
+      "en": ["start engine", "engine start", "key on", "push to start", "remote start", "start button", "crank"]
+    }
+  },
+  "engine": {
+    "label": { "es": "Motor", "en": "Engine", "pt": "Motor", "fr": "Moteur", "de": "Motor", "it": "Motore", "ja": "エンジン", "zh": "发动机", "ko": "엔진", "ar": "المحرك" },
+    "keywords": {
+      "es": ["check engine", "luz del motor", "testigo del motor", "tren motriz", "mecánica", "afinación", "servicio"],
+      "en": ["motor", "check engine", "engine light", "powertrain", "mechanic", "engine service", "horsepower"]
+    }
+  },
+  "engine-alert": {
+    "label": { "es": "Falla del motor", "en": "Engine fault", "pt": "Falha no motor", "fr": "Défaut moteur", "de": "Motorstörung", "it": "Guasto al motore", "ja": "エンジン警告", "zh": "发动机故障", "ko": "엔진 고장", "ar": "عطل في المحرك" },
+    "keywords": {
+      "es": ["check engine", "luz del motor encendida", "código de falla", "diagnóstico", "revisar motor", "avería", "testigo encendido"],
+      "en": ["check engine light", "fault code", "DTC", "diagnostics", "engine trouble", "breakdown", "malfunction"]
+    }
+  },
+  "oil-can": {
+    "label": { "es": "Presión de aceite", "en": "Oil pressure", "pt": "Pressão do óleo", "fr": "Pression d’huile", "de": "Öldruck", "it": "Pressione dell’olio", "ja": "油圧警告", "zh": "机油压力", "ko": "오일 압력", "ar": "ضغط الزيت" },
+    "keywords": {
+      "es": ["aceitera", "lubricación", "aceite de motor", "baja presión", "luz del aceite", "testigo", "lubricar"],
+      "en": ["oil can", "lubrication", "engine oil", "low oil pressure", "oil light", "warning light", "lubricate"]
+    }
+  },
+  "motor-oil": {
+    "label": { "es": "Aceite de motor", "en": "Motor oil", "pt": "Óleo de motor", "fr": "Huile moteur", "de": "Motoröl", "it": "Olio motore", "ja": "エンジンオイル", "zh": "机油", "ko": "엔진 오일", "ar": "زيت المحرك" },
+    "keywords": {
+      "es": ["botella de aceite", "lubricante", "rellenar aceite", "viscosidad", "aceite sintético", "nivel de aceite", "refacciones"],
+      "en": ["oil bottle", "lubricant", "top up oil", "oil grade", "synthetic oil", "viscosity", "auto parts"]
+    }
+  },
+  "oil-change": {
+    "label": { "es": "Cambio de aceite", "en": "Oil change", "pt": "Troca de óleo", "fr": "Vidange", "de": "Ölwechsel", "it": "Cambio dell’olio", "ja": "オイル交換", "zh": "更换机油", "ko": "오일 교환", "ar": "تغيير الزيت" },
+    "keywords": {
+      "es": ["servicio", "agendar servicio", "mantenimiento", "próximo servicio", "kilometraje", "taller", "lubricentro"],
+      "en": ["service", "book a service", "maintenance", "next service due", "mileage", "lube shop", "quick lube"]
+    }
+  },
+  "oil-filter": {
+    "label": { "es": "Filtro de aceite", "en": "Oil filter", "pt": "Filtro de óleo", "fr": "Filtre à huile", "de": "Ölfilter", "it": "Filtro dell’olio", "ja": "オイルフィルター", "zh": "机油滤清器", "ko": "오일 필터", "ar": "فلتر الزيت" },
+    "keywords": {
+      "es": ["refacción", "cambio de filtro", "reemplazo", "lista de servicio", "mantenimiento", "pieza", "afinación"],
+      "en": ["replacement part", "filter change", "service checklist", "maintenance", "car part", "spare part", "oil service"]
+    }
+  },
+  "car-battery": {
+    "label": { "es": "Batería del auto", "en": "Car battery", "pt": "Bateria do carro", "fr": "Batterie de voiture", "de": "Autobatterie", "it": "Batteria dell’auto", "ja": "車のバッテリー", "zh": "汽车电瓶", "ko": "자동차 배터리", "ar": "بطارية السيارة" },
+    "keywords": {
+      "es": ["acumulador", "12 V", "batería descargada", "testigo de carga", "cambio de batería", "alternador", "pasar corriente"],
+      "en": ["12V battery", "dead battery", "charging warning", "battery replacement", "alternator", "jump start", "battery service"]
+    }
+  },
+  "jumper-cables": {
+    "label": { "es": "Cables pasacorriente", "en": "Jumper cables", "pt": "Cabos de partida", "fr": "Câbles de démarrage", "de": "Starthilfekabel", "it": "Cavi per batteria", "ja": "ブースターケーブル", "zh": "搭电线", "ko": "점프 케이블", "ar": "كابلات توصيل البطارية" },
+    "keywords": {
+      "es": ["pasar corriente", "batería descargada", "auxilio vial", "arrancar el auto", "cables de batería", "sin batería", "emergencia"],
+      "en": ["jump start", "booster cables", "jump leads", "dead battery", "flat battery", "roadside assistance", "battery boost"]
+    }
+  },
+  "tire": {
+    "label": { "es": "Llanta", "en": "Tire", "pt": "Pneu", "fr": "Pneu", "de": "Reifen", "it": "Pneumatico", "ja": "タイヤ", "zh": "轮胎", "ko": "타이어", "ar": "إطار" },
+    "keywords": {
+      "es": ["neumático", "llantera", "vulcanizadora", "llantas nuevas", "cambio de llantas", "comprar llantas", "dibujo"],
+      "en": ["tyre", "tire shop", "new tires", "tire change", "buy tires", "tread", "rubber"]
+    }
+  },
+  "tire-pressure": {
+    "label": { "es": "Presión de llantas", "en": "Tire pressure", "pt": "Pressão dos pneus", "fr": "Pression des pneus", "de": "Reifendruck", "it": "Pressione degli pneumatici", "ja": "タイヤ空気圧", "zh": "胎压", "ko": "타이어 공기압", "ar": "ضغط الإطارات" },
+    "keywords": {
+      "es": ["TPMS", "llanta baja", "baja presión", "inflar llantas", "ponerle aire", "testigo del tablero", "monitoreo de llantas"],
+      "en": ["TPMS", "low tire pressure", "low tyre", "inflate", "air pressure", "warning light", "tire monitor"]
+    }
+  },
+  "wheel": {
+    "label": { "es": "Rin", "en": "Wheel", "pt": "Roda", "fr": "Jante", "de": "Felge", "it": "Cerchio", "ja": "ホイール", "zh": "轮毂", "ko": "휠", "ar": "جنط" },
+    "keywords": {
+      "es": ["rueda", "rines deportivos", "aleación", "rodada", "configurador", "personalizar auto", "birlos"],
+      "en": ["rim", "alloy wheels", "wheel size", "configurator", "customize", "lug nuts", "hubcap"]
+    }
+  },
+  "tire-flat": {
+    "label": { "es": "Llanta ponchada", "en": "Flat tire", "pt": "Pneu furado", "fr": "Pneu crevé", "de": "Reifenpanne", "it": "Gomma a terra", "ja": "パンク", "zh": "轮胎漏气", "ko": "펑크 난 타이어", "ar": "إطار مثقوب" },
+    "keywords": {
+      "es": ["ponchadura", "pinchazo", "auxilio vial", "vulcanizadora", "reparar llanta", "llanta de refacción", "cambiar llanta"],
+      "en": ["puncture", "flat", "roadside assistance", "tire repair", "spare tire", "change a tire", "blowout"]
+    }
+  },
+  "wheel-alignment": {
+    "label": { "es": "Alineación", "en": "Wheel alignment", "pt": "Alinhamento", "fr": "Parallélisme", "de": "Achsvermessung", "it": "Convergenza", "ja": "ホイールアライメント", "zh": "四轮定位", "ko": "휠 얼라인먼트", "ar": "ضبط زوايا العجلات" },
+    "keywords": {
+      "es": ["balanceo", "camber", "convergencia", "geometría", "servicio de llantas", "el auto se jala", "desgaste de llantas"],
+      "en": ["camber", "toe", "tracking", "wheel balancing", "pulls to one side", "uneven tire wear", "tire service"]
+    }
+  },
+  "wheel-clamp": {
+    "label": { "es": "Inmovilizador de rueda", "en": "Wheel clamp", "pt": "Trava de roda", "fr": "Sabot de Denver", "de": "Parkkralle", "it": "Ganascia bloccaruota", "ja": "タイヤロック", "zh": "车轮锁", "ko": "바퀴 잠금장치", "ar": "قفل العجلة" },
+    "keywords": {
+      "es": ["araña", "cepo", "infracción", "auto inmovilizado", "multa de estacionamiento", "mal estacionado", "tránsito"],
+      "en": ["boot", "Denver boot", "parking enforcement", "immobilized car", "parking violation", "clamped", "towing"]
+    }
+  },
+  "tire-rotation": {
+    "label": { "es": "Rotación de llantas", "en": "Tire rotation", "pt": "Rodízio de pneus", "fr": "Permutation des pneus", "de": "Reifentausch", "it": "Rotazione degli pneumatici", "ja": "タイヤローテーション", "zh": "轮胎换位", "ko": "타이어 위치 교환", "ar": "تبديل مواضع الإطارات" },
+    "keywords": {
+      "es": ["cambiar de posición", "delanteras atrás", "desgaste parejo", "servicio de llantas", "mantenimiento", "taller", "alineación"],
+      "en": ["rotate tires", "swap tires", "front to back", "even wear", "tire service", "maintenance", "tyre rotation"]
+    }
+  },
+  "snow-chains": {
+    "label": { "es": "Cadenas para nieve", "en": "Snow chains", "pt": "Correntes de neve", "fr": "Chaînes à neige", "de": "Schneeketten", "it": "Catene da neve", "ja": "タイヤチェーン", "zh": "防滑链", "ko": "스노 체인", "ar": "سلاسل الثلج" },
+    "keywords": {
+      "es": ["invierno", "nieve", "hielo", "manejo en invierno", "cadenas obligatorias", "carretera de montaña", "tracción"],
+      "en": ["tire chains", "winter driving", "snow", "ice", "chain control", "chains required", "mountain pass"]
+    }
+  },
+  "scissor-jack": {
+    "label": { "es": "Gato del auto", "en": "Car jack", "pt": "Macaco", "fr": "Cric", "de": "Wagenheber", "it": "Cric", "ja": "ジャッキ", "zh": "千斤顶", "ko": "자동차 잭", "ar": "رافعة السيارة" },
+    "keywords": {
+      "es": ["levantar el auto", "cambiar llanta", "gato de tijera", "herramienta", "puntos de elevación", "llanta ponchada", "taller"],
+      "en": ["scissor jack", "lift the car", "change a tire", "jack points", "lifting", "flat tire", "tool"]
+    }
+  },
+  "brake-warning": {
+    "label": { "es": "Falla de frenos", "en": "Brake warning", "pt": "Alerta de freio", "fr": "Alerte de freinage", "de": "Bremswarnung", "it": "Spia dei freni", "ja": "ブレーキ警告", "zh": "制动系统警告", "ko": "브레이크 경고", "ar": "تحذير الفرامل" },
+    "keywords": {
+      "es": ["testigo de frenos", "líquido de frenos", "nivel bajo", "luz del tablero", "revisar frenos", "sistema de frenos", "avería"],
+      "en": ["brake fault", "brake fluid", "low brake fluid", "warning light", "brake system", "check brakes", "tell-tale"]
+    }
+  },
+  "brake-antilock": {
+    "label": { "es": "Frenos antibloqueo", "en": "Anti-lock brakes", "pt": "Freios ABS", "fr": "Freinage ABS", "de": "Antiblockiersystem", "it": "Sistema ABS", "ja": "アンチロックブレーキ", "zh": "防抱死制动系统", "ko": "ABS 브레이크", "ar": "مكابح مانعة للانغلاق" },
+    "keywords": {
+      "es": ["ABS", "testigo ABS", "falla de ABS", "frenado de emergencia", "luz del tablero", "seguridad activa", "derrape"],
+      "en": ["ABS", "ABS light", "ABS fault", "antilock braking", "warning light", "emergency braking", "skid"]
+    }
+  },
+  "brake-disc": {
+    "label": { "es": "Disco de freno", "en": "Brake disc", "pt": "Disco de freio", "fr": "Disque de frein", "de": "Bremsscheibe", "it": "Disco del freno", "ja": "ブレーキディスク", "zh": "刹车盘", "ko": "브레이크 디스크", "ar": "قرص الفرامل" },
+    "keywords": {
+      "es": ["balatas", "caliper", "mordaza", "servicio de frenos", "rectificar discos", "cambio de frenos", "refacciones"],
+      "en": ["rotor", "brake pads", "caliper", "brake service", "brake job", "resurface rotors", "auto parts"]
+    }
+  },
+  "shock-absorber": {
+    "label": { "es": "Amortiguador", "en": "Shock absorber", "pt": "Amortecedor", "fr": "Amortisseur", "de": "Stoßdämpfer", "it": "Ammortizzatore", "ja": "ショックアブソーバー", "zh": "减震器", "ko": "쇼크 업소버", "ar": "ممتص الصدمات" },
+    "keywords": {
+      "es": ["suspensión", "struts", "resortes", "servicio de suspensión", "el auto rebota", "baches", "refacciones"],
+      "en": ["suspension", "shocks", "struts", "springs", "suspension service", "bouncy ride", "auto parts"]
+    }
+  },
+  "airbag": {
+    "label": { "es": "Bolsa de aire", "en": "Airbag", "pt": "Airbag", "fr": "Airbag", "de": "Airbag", "it": "Airbag", "ja": "エアバッグ", "zh": "安全气囊", "ko": "에어백", "ar": "الوسادة الهوائية" },
+    "keywords": {
+      "es": ["airbag", "falla de bolsa de aire", "testigo", "pasajero", "SRS", "choque", "seguridad"],
+      "en": ["SRS", "airbag fault", "passenger airbag", "warning light", "crash", "occupant protection", "safety"]
+    }
+  },
+  "seatbelt": {
+    "label": { "es": "Cinturón de seguridad", "en": "Seatbelt", "pt": "Cinto de segurança", "fr": "Ceinture de sécurité", "de": "Sicherheitsgurt", "it": "Cintura di sicurezza", "ja": "シートベルト", "zh": "安全带", "ko": "안전벨트", "ar": "حزام الأمان" },
+    "keywords": {
+      "es": ["abrocharse", "recordatorio", "testigo del tablero", "pasajeros", "ocupantes", "seguridad vial", "viajar seguro"],
+      "en": ["buckle up", "fasten", "reminder", "warning light", "passengers", "occupant safety", "safety belt"]
+    }
+  },
+  "coolant-temperature": {
+    "label": { "es": "Temperatura del motor", "en": "Coolant temperature", "pt": "Temperatura do motor", "fr": "Température moteur", "de": "Kühlmitteltemperatur", "it": "Temperatura motore", "ja": "水温警告", "zh": "冷却液温度", "ko": "냉각수 온도", "ar": "حرارة سائل التبريد" },
+    "keywords": {
+      "es": ["sobrecalentamiento", "se calentó el motor", "anticongelante", "refrigerante", "testigo", "termómetro", "radiador"],
+      "en": ["overheating", "engine temperature", "coolant", "antifreeze", "warning light", "hot engine", "radiator"]
+    }
+  },
+  "radiator": {
+    "label": { "es": "Radiador", "en": "Radiator", "pt": "Radiador", "fr": "Radiateur", "de": "Kühler", "it": "Radiatore", "ja": "ラジエーター", "zh": "散热器", "ko": "라디에이터", "ar": "مبرد السيارة" },
+    "keywords": {
+      "es": ["sistema de enfriamiento", "anticongelante", "refrigerante", "lavado de radiador", "sobrecalentamiento", "fuga", "servicio"],
+      "en": ["cooling system", "coolant flush", "antifreeze", "overheating", "coolant leak", "cooling service", "auto parts"]
+    }
+  },
+  "spark-plug": {
+    "label": { "es": "Bujía", "en": "Spark plug", "pt": "Vela de ignição", "fr": "Bougie d’allumage", "de": "Zündkerze", "it": "Candela", "ja": "スパークプラグ", "zh": "火花塞", "ko": "점화 플러그", "ar": "شمعة الاحتراق" },
+    "keywords": {
+      "es": ["afinación", "encendido", "chispa", "cambio de bujías", "motor", "mantenimiento", "refacciones"],
+      "en": ["tune-up", "ignition", "spark", "plug change", "engine", "maintenance", "auto parts"]
+    }
+  },
+  "piston": {
+    "label": { "es": "Pistón", "en": "Piston", "pt": "Pistão", "fr": "Piston", "de": "Kolben", "it": "Pistone", "ja": "ピストン", "zh": "活塞", "ko": "피스톤", "ar": "مكبس" },
+    "keywords": {
+      "es": ["motor", "potencia", "caballos de fuerza", "rendimiento", "reparación de motor", "cilindro", "ajuste de motor"],
+      "en": ["engine", "horsepower", "performance", "engine rebuild", "cylinder", "internals", "power"]
+    }
+  },
+  "headlight-high": {
+    "label": { "es": "Luces altas", "en": "High beams", "pt": "Farol alto", "fr": "Feux de route", "de": "Fernlicht", "it": "Abbaglianti", "ja": "ハイビーム", "zh": "远光灯", "ko": "상향등", "ar": "الضوء العالي" },
+    "keywords": {
+      "es": ["faros", "faros delanteros", "cambio de luces", "manejo nocturno", "testigo azul", "encandilar", "carretera de noche"],
+      "en": ["main beam", "full beam", "headlights", "brights", "night driving", "flash lights", "blue tell-tale"]
+    }
+  },
+  "headlight-low": {
+    "label": { "es": "Luces bajas", "en": "Low beams", "pt": "Farol baixo", "fr": "Feux de croisement", "de": "Abblendlicht", "it": "Anabbaglianti", "ja": "ロービーム", "zh": "近光灯", "ko": "하향등", "ar": "الضوء المنخفض" },
+    "keywords": {
+      "es": ["faros", "luces encendidas", "prender luces", "luces de cruce", "manejo nocturno", "testigo verde", "visibilidad"],
+      "en": ["dipped headlights", "dipped beam", "headlights on", "lights on", "night driving", "visibility", "green tell-tale"]
+    }
+  },
+  "fog-light": {
+    "label": { "es": "Faros de niebla", "en": "Fog lights", "pt": "Farol de neblina", "fr": "Antibrouillards avant", "de": "Nebelscheinwerfer", "it": "Fendinebbia anteriori", "ja": "フォグランプ", "zh": "前雾灯", "ko": "앞 안개등", "ar": "مصابيح الضباب الأمامية" },
+    "keywords": {
+      "es": ["niebla", "neblina", "antiniebla", "faros delanteros", "visibilidad", "mal clima", "testigo"],
+      "en": ["front fog lamps", "fog", "mist", "low visibility", "headlights", "bad weather", "warning light"]
+    }
+  },
+  "fog-light-rear": {
+    "label": { "es": "Luz de niebla trasera", "en": "Rear fog light", "pt": "Luz de neblina traseira", "fr": "Feu antibrouillard arrière", "de": "Nebelschlussleuchte", "it": "Retronebbia", "ja": "リアフォグランプ", "zh": "后雾灯", "ko": "뒤 안개등", "ar": "ضوء الضباب الخلفي" },
+    "keywords": {
+      "es": ["niebla", "neblina", "antiniebla trasero", "calavera", "visibilidad", "mal clima", "testigo"],
+      "en": ["fog", "rear fog lamp", "tail light", "mist", "low visibility", "bad weather", "warning light"]
+    }
+  },
+  "parking-lights": {
+    "label": { "es": "Luces de posición", "en": "Parking lights", "pt": "Luz de posição", "fr": "Feux de position", "de": "Standlicht", "it": "Luci di posizione", "ja": "車幅灯", "zh": "示廓灯", "ko": "차폭등", "ar": "أضواء الانتظار" },
+    "keywords": {
+      "es": ["cuartos", "luces de estacionamiento", "luces laterales", "encender luces", "atardecer", "testigo", "visibilidad"],
+      "en": ["side lights", "position lights", "marker lights", "lights on", "dusk", "warning light", "visibility"]
+    }
+  },
+  "turn-signals": {
+    "label": { "es": "Direccionales", "en": "Turn signals", "pt": "Setas", "fr": "Clignotants", "de": "Blinker", "it": "Indicatori di direzione", "ja": "ウインカー", "zh": "转向灯", "ko": "방향 지시등", "ar": "إشارات الانعطاف" },
+    "keywords": {
+      "es": ["señalar vuelta", "dar vuelta", "girar a la izquierda", "girar a la derecha", "cambio de carril", "flechas verdes", "luz de giro"],
+      "en": ["blinkers", "indicators", "signal a turn", "turn left", "turn right", "lane change", "green arrows"]
+    }
+  },
+  "hazard-lights": {
+    "label": { "es": "Intermitentes", "en": "Hazard lights", "pt": "Pisca-alerta", "fr": "Feux de détresse", "de": "Warnblinker", "it": "Luci di emergenza", "ja": "ハザードランプ", "zh": "危险警示灯", "ko": "비상등", "ar": "أضواء التحذير" },
+    "keywords": {
+      "es": ["luces de emergencia", "avería", "auto descompuesto", "orillarse", "precaución", "emergencia vial", "parada en carretera"],
+      "en": ["hazards", "flashers", "four-ways", "breakdown", "emergency", "pull over", "roadside stop"]
+    }
+  },
+  "warning-triangle": {
+    "label": { "es": "Triángulo de seguridad", "en": "Warning triangle", "pt": "Triângulo de sinalização", "fr": "Triangle de signalisation", "de": "Warndreieck", "it": "Triangolo di emergenza", "ja": "停止表示板", "zh": "三角警示牌", "ko": "안전 삼각대", "ar": "مثلث التحذير" },
+    "keywords": {
+      "es": ["reflejante", "auto descompuesto", "kit de emergencia", "avería", "señalamiento", "carretera", "accidente"],
+      "en": ["reflective triangle", "breakdown", "emergency kit", "roadside emergency", "safety triangle", "accident", "hazard"]
+    }
+  },
+  "cruise-control": {
+    "label": { "es": "Control de crucero", "en": "Cruise control", "pt": "Controle de cruzeiro", "fr": "Régulateur de vitesse", "de": "Tempomat", "it": "Cruise control", "ja": "クルーズコントロール", "zh": "定速巡航", "ko": "크루즈 컨트롤", "ar": "مثبت السرعة" },
+    "keywords": {
+      "es": ["velocidad constante", "fijar velocidad", "piloto automático", "carretera", "viaje largo", "testigo", "velocímetro"],
+      "en": ["set speed", "constant speed", "cruise on", "highway", "long drive", "warning light", "speedometer"]
+    }
+  },
+  "adaptive-cruise": {
+    "label": { "es": "Crucero adaptativo", "en": "Adaptive cruise control", "pt": "Piloto automático adaptativo", "fr": "Régulateur adaptatif", "de": "Abstandstempomat", "it": "Cruise control adattivo", "ja": "アダプティブクルーズ", "zh": "自适应巡航", "ko": "어댑티브 크루즈", "ar": "مثبت السرعة التكيفي" },
+    "keywords": {
+      "es": ["distancia de seguimiento", "radar", "ACC", "mantener distancia", "control de crucero", "asistencia al conductor", "tráfico"],
+      "en": ["ACC", "following distance", "radar cruise", "keep distance", "driver assistance", "ADAS", "traffic"]
+    }
+  },
+  "lane-assist": {
+    "label": { "es": "Asistente de carril", "en": "Lane assist", "pt": "Assistente de faixa", "fr": "Aide au maintien de voie", "de": "Spurhalteassistent", "it": "Mantenimento della corsia", "ja": "車線維持支援", "zh": "车道保持", "ko": "차선 유지 보조", "ar": "مساعد البقاء في المسار" },
+    "keywords": {
+      "es": ["mantenerse en el carril", "salida de carril", "alerta de carril", "asistencia al conductor", "ADAS", "testigo", "seguridad"],
+      "en": ["lane keeping", "lane departure warning", "LKAS", "stay in lane", "driver assistance", "ADAS", "drifting"]
+    }
+  },
+  "traction-control": {
+    "label": { "es": "Control de tracción", "en": "Traction control", "pt": "Controle de tração", "fr": "Antipatinage", "de": "Traktionskontrolle", "it": "Controllo di trazione", "ja": "横滑り防止装置", "zh": "车身稳定系统", "ko": "차체 자세 제어", "ar": "نظام التحكم بالجر" },
+    "keywords": {
+      "es": ["control de estabilidad", "ESC", "ESP", "derrape", "patinar", "piso mojado", "testigo"],
+      "en": ["stability control", "ESC", "ESP", "skid", "slip", "wet road", "warning light"]
+    }
+  },
+  "blind-spot": {
+    "label": { "es": "Punto ciego", "en": "Blind spot", "pt": "Ponto cego", "fr": "Angle mort", "de": "Toter Winkel", "it": "Angolo cieco", "ja": "ブラインドスポット", "zh": "盲区", "ko": "사각지대", "ar": "النقطة العمياء" },
+    "keywords": {
+      "es": ["vehículo al lado", "cambio de carril", "espejo lateral", "alerta de vehículo", "detector", "asistencia al conductor", "ADAS"],
+      "en": ["BSM", "BLIS", "car alongside", "lane change", "side mirror", "driver assistance", "ADAS"]
+    }
+  },
+  "parking-sensor": {
+    "label": { "es": "Sensor de estacionamiento", "en": "Parking sensor", "pt": "Sensor de estacionamento", "fr": "Radar de recul", "de": "Einparkhilfe", "it": "Sensore di parcheggio", "ja": "パーキングセンサー", "zh": "倒车雷达", "ko": "주차 센서", "ar": "حساس الركن" },
+    "keywords": {
+      "es": ["asistente de estacionamiento", "reversa", "obstáculo", "distancia", "pitido", "estacionarse", "cámara de reversa"],
+      "en": ["park assist", "parking aid", "reverse", "obstacle", "distance", "beep", "backing up"]
+    }
+  },
+  "self-driving": {
+    "label": { "es": "Manejo autónomo", "en": "Self-driving", "pt": "Direção autônoma", "fr": "Conduite autonome", "de": "Autonomes Fahren", "it": "Guida autonoma", "ja": "自動運転", "zh": "自动驾驶", "ko": "자율주행", "ar": "القيادة الذاتية" },
+    "keywords": {
+      "es": ["piloto automático", "robotaxi", "conducción asistida", "sin conductor", "auto autónomo", "asistencia al conductor", "ADAS"],
+      "en": ["autonomous", "autopilot", "robotaxi", "driverless", "assisted driving", "driver assistance", "ADAS"]
+    }
+  },
+  "windshield-wiper": {
+    "label": { "es": "Limpiaparabrisas", "en": "Windshield wipers", "pt": "Limpador de para-brisa", "fr": "Essuie-glace", "de": "Scheibenwischer", "it": "Tergicristallo", "ja": "ワイパー", "zh": "雨刮器", "ko": "와이퍼", "ar": "مساحات الزجاج" },
+    "keywords": {
+      "es": ["plumas", "limpiadores", "lluvia", "velocidad de limpieza", "cambiar plumas", "parabrisas", "hules"],
+      "en": ["wipers", "wiper blades", "rain", "wiper speed", "replace blades", "windscreen", "wipe"]
+    }
+  },
+  "windshield-defrost": {
+    "label": { "es": "Desempañador delantero", "en": "Front defrost", "pt": "Desembaçador dianteiro", "fr": "Désembuage avant", "de": "Frontscheibe enteisen", "it": "Sbrinamento parabrezza", "ja": "フロントデフロスター", "zh": "前挡除雾", "ko": "앞유리 김서림 제거", "ar": "إزالة ضباب الزجاج الأمامي" },
+    "keywords": {
+      "es": ["desempañar", "parabrisas empañado", "vaho", "escarcha", "aire acondicionado", "clima", "visibilidad"],
+      "en": ["defog", "demist", "foggy windshield", "frost", "ice", "climate control", "visibility"]
+    }
+  },
+  "windshield-washer": {
+    "label": { "es": "Lavaparabrisas", "en": "Washer fluid", "pt": "Fluido do limpador", "fr": "Lave-glace", "de": "Scheibenwaschwasser", "it": "Liquido lavavetri", "ja": "ウォッシャー液", "zh": "玻璃水", "ko": "워셔액", "ar": "سائل غسيل الزجاج" },
+    "keywords": {
+      "es": ["chisgueteros", "líquido limpiador", "nivel bajo", "rociar", "parabrisas sucio", "rellenar", "testigo"],
+      "en": ["washer", "low washer fluid", "spray", "windshield cleaner", "top up", "dirty windshield", "warning light"]
+    }
+  },
+  "windshield-crack": {
+    "label": { "es": "Parabrisas estrellado", "en": "Cracked windshield", "pt": "Para-brisa trincado", "fr": "Pare-brise fissuré", "de": "Steinschlag", "it": "Parabrezza incrinato", "ja": "フロントガラスのひび", "zh": "挡风玻璃破裂", "ko": "앞유리 파손", "ar": "زجاج أمامي متشقق" },
+    "keywords": {
+      "es": ["cuarteadura", "golpe de piedra", "reparar parabrisas", "cambio de cristal", "seguro de cristales", "reclamo al seguro", "vidrio roto"],
+      "en": ["chip", "crack", "rock chip", "windshield repair", "glass replacement", "auto glass", "insurance claim"]
+    }
+  },
+  "rear-window-defrost": {
+    "label": { "es": "Desempañador trasero", "en": "Rear defrost", "pt": "Desembaçador traseiro", "fr": "Dégivrage arrière", "de": "Heckscheibenheizung", "it": "Lunotto termico", "ja": "リアデフォッガー", "zh": "后挡除雾", "ko": "뒷유리 열선", "ar": "إزالة ضباب الزجاج الخلفي" },
+    "keywords": {
+      "es": ["medallón", "vidrio trasero", "desempañar", "resistencias", "vaho", "escarcha", "clima"],
+      "en": ["rear window heater", "heated rear window", "defog", "demist", "frost", "back window", "climate control"]
+    }
+  },
+  "head-up-display": {
+    "label": { "es": "Pantalla en el parabrisas", "en": "Head-up display", "pt": "Head-up display", "fr": "Affichage tête haute", "de": "Head-up-Display", "it": "Head-up display", "ja": "ヘッドアップディスプレイ", "zh": "抬头显示", "ko": "헤드업 디스플레이", "ar": "شاشة العرض الأمامية" },
+    "keywords": {
+      "es": ["HUD", "proyección", "velocidad", "indicaciones", "navegación", "head-up display", "vista al frente"],
+      "en": ["HUD", "projection", "speed", "directions", "navigation", "windshield display", "eyes on the road"]
+    }
+  },
+  "rearview-mirror": {
+    "label": { "es": "Espejo retrovisor", "en": "Rearview mirror", "pt": "Retrovisor interno", "fr": "Rétroviseur intérieur", "de": "Innenspiegel", "it": "Specchietto retrovisore", "ja": "ルームミラー", "zh": "内后视镜", "ko": "룸미러", "ar": "المرآة الخلفية" },
+    "keywords": {
+      "es": ["visibilidad trasera", "espejo interior", "cámara retrovisora", "espejo digital", "ver hacia atrás", "reversa", "antideslumbrante"],
+      "en": ["rear visibility", "interior mirror", "mirror camera", "digital mirror", "look behind", "rear view", "auto-dimming"]
+    }
+  },
+  "side-mirror": {
+    "label": { "es": "Espejo lateral", "en": "Side mirror", "pt": "Retrovisor externo", "fr": "Rétroviseur extérieur", "de": "Außenspiegel", "it": "Specchietto laterale", "ja": "サイドミラー", "zh": "外后视镜", "ko": "사이드 미러", "ar": "المرآة الجانبية" },
+    "keywords": {
+      "es": ["plegar espejos", "ajustar espejo", "espejo calefactable", "retrovisor exterior", "punto ciego", "puerta", "visibilidad"],
+      "en": ["wing mirror", "fold mirrors", "adjust mirror", "heated mirror", "door mirror", "blind spot", "visibility"]
+    }
+  },
+  "sunroof": {
+    "label": { "es": "Quemacocos", "en": "Sunroof", "pt": "Teto solar", "fr": "Toit ouvrant", "de": "Schiebedach", "it": "Tetto apribile", "ja": "サンルーフ", "zh": "天窗", "ko": "선루프", "ar": "فتحة السقف" },
+    "keywords": {
+      "es": ["techo solar", "techo panorámico", "abrir el techo", "inclinar", "ventilación", "luz natural", "equipamiento"],
+      "en": ["moonroof", "panoramic roof", "open the roof", "tilt", "ventilation", "natural light", "feature"]
+    }
+  },
+  "instrument-cluster": {
+    "label": { "es": "Tablero de instrumentos", "en": "Instrument cluster", "pt": "Painel de instrumentos", "fr": "Combiné d’instruments", "de": "Kombiinstrument", "it": "Quadro strumenti", "ja": "メーターパネル", "zh": "仪表盘", "ko": "계기판", "ar": "لوحة العدادات" },
+    "keywords": {
+      "es": ["velocímetro", "tacómetro", "medidores", "pantalla del conductor", "cuadro de instrumentos", "indicadores", "ajustes"],
+      "en": ["dashboard", "gauges", "speedometer", "tachometer", "driver display", "cluster settings", "dials"]
+    }
+  },
+  "seat-heater": {
+    "label": { "es": "Asientos con calefacción", "en": "Heated seats", "pt": "Bancos aquecidos", "fr": "Sièges chauffants", "de": "Sitzheizung", "it": "Sedili riscaldati", "ja": "シートヒーター", "zh": "座椅加热", "ko": "열선 시트", "ar": "تدفئة المقاعد" },
+    "keywords": {
+      "es": ["calentar asiento", "nivel de calor", "confort", "invierno", "frío", "clima", "app del auto"],
+      "en": ["seat warmer", "warm seat", "heat level", "comfort", "winter", "cold", "climate"]
+    }
+  },
+  "seat-ventilation": {
+    "label": { "es": "Asientos ventilados", "en": "Ventilated seats", "pt": "Bancos ventilados", "fr": "Sièges ventilés", "de": "Sitzbelüftung", "it": "Sedili ventilati", "ja": "シートベンチレーション", "zh": "座椅通风", "ko": "통풍 시트", "ar": "تهوية المقاعد" },
+    "keywords": {
+      "es": ["asientos enfriados", "enfriar asiento", "flujo de aire", "calor", "confort", "clima", "verano"],
+      "en": ["cooled seats", "seat cooling", "airflow", "hot weather", "comfort", "climate", "summer"]
+    }
+  },
+  "seat-adjust": {
+    "label": { "es": "Ajuste del asiento", "en": "Seat adjustment", "pt": "Ajuste do banco", "fr": "Réglage du siège", "de": "Sitzverstellung", "it": "Regolazione del sedile", "ja": "シート調整", "zh": "座椅调节", "ko": "시트 조절", "ar": "ضبط المقعد" },
+    "keywords": {
+      "es": ["posición del asiento", "asiento eléctrico", "memoria de asiento", "reclinar", "altura", "respaldo", "ergonomía"],
+      "en": ["seat position", "power seat", "memory seat", "recline", "height", "backrest", "lumbar"]
+    }
+  },
+  "air-recirculation": {
+    "label": { "es": "Recirculación de aire", "en": "Air recirculation", "pt": "Recirculação de ar", "fr": "Recyclage de l’air", "de": "Umluft", "it": "Ricircolo dell’aria", "ja": "内気循環", "zh": "内循环", "ko": "내기 순환", "ar": "تدوير الهواء الداخلي" },
+    "keywords": {
+      "es": ["aire interior", "recircular", "clima", "aire acondicionado", "evitar olores", "cabina", "contaminación"],
+      "en": ["recirculate", "cabin air", "inside air", "climate control", "AC", "block fumes", "air quality"]
+    }
+  },
+  "fresh-air": {
+    "label": { "es": "Aire exterior", "en": "Fresh air", "pt": "Ar externo", "fr": "Air extérieur", "de": "Frischluft", "it": "Aria esterna", "ja": "外気導入", "zh": "外循环", "ko": "외기 유입", "ar": "هواء خارجي" },
+    "keywords": {
+      "es": ["aire fresco", "toma de aire", "ventilación", "clima", "cabina", "renovar el aire", "desempañar"],
+      "en": ["outside air", "air intake", "ventilation", "climate control", "cabin", "air exchange", "demist"]
+    }
+  },
+  "car-key": {
+    "label": { "es": "Llave del auto", "en": "Car key", "pt": "Chave do carro", "fr": "Clé de voiture", "de": "Autoschlüssel", "it": "Chiave dell’auto", "ja": "車のキー", "zh": "车钥匙", "ko": "자동차 키", "ar": "مفتاح السيارة" },
+    "keywords": {
+      "es": ["control remoto", "llave abatible", "entrega de llaves", "renta de autos", "venta de autos", "duplicado", "cerrar el auto"],
+      "en": ["key fob", "flip key", "key handover", "car rental", "car sale", "spare key", "remote"]
+    }
+  },
+  "keyless-entry": {
+    "label": { "es": "Acceso sin llave", "en": "Keyless entry", "pt": "Acesso sem chave", "fr": "Accès sans clé", "de": "Schlüsselloser Zugang", "it": "Accesso senza chiave", "ja": "キーレスエントリー", "zh": "无钥匙进入", "ko": "스마트 키", "ar": "دخول بدون مفتاح" },
+    "keywords": {
+      "es": ["llave inteligente", "llave digital", "cerrar a distancia", "abrir con el control", "seguros", "proximidad", "celular como llave"],
+      "en": ["smart key", "digital key", "remote lock", "unlock", "key fob", "proximity", "phone as key"]
+    }
+  },
+  "fuel-nozzle": {
+    "label": { "es": "Pistola de gasolina", "en": "Fuel nozzle", "pt": "Bico de combustível", "fr": "Pistolet de carburant", "de": "Zapfpistole", "it": "Pistola erogatrice", "ja": "給油ノズル", "zh": "加油枪", "ko": "주유기", "ar": "مسدس الوقود" },
+    "keywords": {
+      "es": ["cargar gasolina", "bomba", "despachador", "tipo de combustible", "pagar en la bomba", "diésel", "magna y premium"],
+      "en": ["fuel pump", "refuel", "pay at the pump", "fuel type", "petrol", "diesel", "fill up"]
+    }
+  },
+  "jerrycan": {
+    "label": { "es": "Bidón de gasolina", "en": "Fuel can", "pt": "Galão de combustível", "fr": "Jerrican", "de": "Kanister", "it": "Tanica", "ja": "携行缶", "zh": "油桶", "ko": "연료통", "ar": "جالون وقود" },
+    "keywords": {
+      "es": ["sin gasolina", "garrafa", "galón", "auxilio vial", "entrega de combustible", "reserva", "combustible de repuesto"],
+      "en": ["jerrycan", "gas can", "out of fuel", "ran out of gas", "fuel delivery", "spare fuel", "roadside assistance"]
+    }
+  },
+  "ev-connector-type-1": {
+    "label": { "es": "Conector tipo 1", "en": "Type 1 connector", "pt": "Conector tipo 1", "fr": "Connecteur type 1", "de": "Typ-1-Stecker", "it": "Connettore di tipo 1", "ja": "タイプ1コネクタ", "zh": "1型充电接口", "ko": "타입 1 커넥터", "ar": "موصل النوع 1" },
+    "keywords": {
+      "es": ["J1772", "SAE", "carga en CA", "filtrar estaciones", "tipo de enchufe", "auto eléctrico", "electrolinera"],
+      "en": ["J1772", "SAE", "AC charging", "filter stations", "plug type", "electric car", "level 2"]
+    }
+  },
+  "ev-connector-type-2": {
+    "label": { "es": "Conector tipo 2", "en": "Type 2 connector", "pt": "Conector tipo 2", "fr": "Connecteur type 2", "de": "Typ-2-Stecker", "it": "Connettore di tipo 2", "ja": "タイプ2コネクタ", "zh": "2型充电接口", "ko": "타입 2 커넥터", "ar": "موصل النوع 2" },
+    "keywords": {
+      "es": ["Mennekes", "IEC 62196", "carga en CA", "filtrar estaciones", "tipo de enchufe", "auto eléctrico", "electrolinera"],
+      "en": ["Mennekes", "IEC 62196", "AC charging", "filter stations", "plug type", "electric car", "Europe"]
+    }
+  },
+  "ev-charger-clock": {
+    "label": { "es": "Carga programada", "en": "Scheduled charging", "pt": "Recarga programada", "fr": "Recharge programmée", "de": "Geplantes Laden", "it": "Ricarica programmata", "ja": "充電タイマー", "zh": "预约充电", "ko": "예약 충전", "ar": "شحن مجدول" },
+    "keywords": {
+      "es": ["horario de carga", "tarifa nocturna", "temporizador", "tiempo restante", "programar", "auto eléctrico", "horas de menor costo"],
+      "en": ["charge timer", "off-peak", "charging time", "time left", "schedule", "electric car", "overnight charging"]
+    }
+  },
+  "ev-charger-alert": {
+    "label": { "es": "Cargador fuera de servicio", "en": "Charger out of service", "pt": "Carregador fora de serviço", "fr": "Borne hors service", "de": "Ladestation außer Betrieb", "it": "Colonnina fuori servizio", "ja": "充電器の故障", "zh": "充电桩故障", "ko": "충전기 고장", "ar": "شاحن معطل" },
+    "keywords": {
+      "es": ["falla de carga", "error de carga", "estación averiada", "mapa de estaciones", "no disponible", "reportar falla", "auto eléctrico"],
+      "en": ["charging fault", "charging error", "broken charger", "station map", "unavailable", "report issue", "electric car"]
+    }
+  },
+  "car-wash": {
+    "label": { "es": "Autolavado", "en": "Car wash", "pt": "Lava-rápido", "fr": "Station de lavage", "de": "Autowäsche", "it": "Autolavaggio", "ja": "洗車", "zh": "洗车", "ko": "세차", "ar": "غسيل السيارات" },
+    "keywords": {
+      "es": ["lavar el auto", "lavado", "túnel de lavado", "membresía de lavado", "limpieza", "espuma", "lavado a mano"],
+      "en": ["wash", "wash bay", "wash tunnel", "wash subscription", "cleaning", "foam", "clean car"]
+    }
+  },
+  "car-detailing": {
+    "label": { "es": "Detallado de autos", "en": "Car detailing", "pt": "Estética automotiva", "fr": "Esthétique automobile", "de": "Fahrzeugaufbereitung", "it": "Detailing auto", "ja": "カーディテイリング", "zh": "汽车美容", "ko": "디테일링", "ar": "تلميع السيارات" },
+    "keywords": {
+      "es": ["pulido", "encerado", "limpieza interior", "limpieza exterior", "brillo", "lavado de vestiduras", "recubrimiento cerámico"],
+      "en": ["polish", "waxing", "interior cleaning", "exterior cleaning", "shine", "ceramic coating", "upholstery"]
+    }
+  },
+  "car-lift": {
+    "label": { "es": "Elevador de autos", "en": "Car lift", "pt": "Elevador automotivo", "fr": "Pont élévateur", "de": "Hebebühne", "it": "Ponte sollevatore", "ja": "カーリフト", "zh": "汽车举升机", "ko": "차량 리프트", "ar": "رافعة السيارات" },
+    "keywords": {
+      "es": ["taller mecánico", "rampa", "cita de servicio", "mecánico", "revisión", "bahía de servicio", "mantenimiento"],
+      "en": ["workshop", "mechanic", "service bay", "service appointment", "two-post lift", "inspection", "garage"]
+    }
+  },
+  "car-repair": {
+    "label": { "es": "Reparación de autos", "en": "Car repair", "pt": "Conserto de carros", "fr": "Réparation automobile", "de": "Autoreparatur", "it": "Riparazione auto", "ja": "車の修理", "zh": "汽车维修", "ko": "자동차 수리", "ar": "إصلاح السيارات" },
+    "keywords": {
+      "es": ["taller mecánico", "hojalatería y pintura", "presupuesto", "cotización", "mecánico", "carrocería", "avería"],
+      "en": ["repair shop", "auto repair", "estimate", "body work", "mechanic", "breakdown", "garage"]
+    }
+  },
+  "obd-port": {
+    "label": { "es": "Puerto OBD", "en": "OBD port", "pt": "Porta OBD", "fr": "Prise OBD", "de": "OBD-Anschluss", "it": "Presa OBD", "ja": "OBDポート", "zh": "OBD接口", "ko": "OBD 포트", "ar": "منفذ OBD" },
+    "keywords": {
+      "es": ["diagnóstico", "escáner", "códigos de falla", "telemetría", "dongle", "computadora del auto", "OBD2"],
+      "en": ["diagnostics", "scan tool", "fault codes", "telematics", "dongle", "OBD2", "DTC"]
+    }
+  },
+  "blade-fuse": {
+    "label": { "es": "Fusible automotriz", "en": "Blade fuse", "pt": "Fusível de lâmina", "fr": "Fusible à lame", "de": "Flachsicherung", "it": "Fusibile a lama", "ja": "ブレードヒューズ", "zh": "插片式保险丝", "ko": "블레이드 퓨즈", "ar": "فيوز السيارة" },
+    "keywords": {
+      "es": ["caja de fusibles", "sistema eléctrico", "fusible fundido", "cortocircuito", "reparación eléctrica", "amperaje", "refacciones"],
+      "en": ["fuse", "fuse box", "blown fuse", "electrical repair", "short circuit", "amperage", "auto parts"]
+    }
+  },
+  "trailer-hitch": {
+    "label": { "es": "Enganche de remolque", "en": "Trailer hitch", "pt": "Engate de reboque", "fr": "Attelage", "de": "Anhängerkupplung", "it": "Gancio di traino", "ja": "トレーラーヒッチ", "zh": "拖车钩", "ko": "견인 고리", "ar": "وصلة القطر" },
+    "keywords": {
+      "es": ["tirón", "remolque", "capacidad de arrastre", "jalar", "bola de enganche", "instalar enganche", "tráiler"],
+      "en": ["tow hitch", "towing", "towing capacity", "tow ball", "hitch install", "trailer", "hookup"]
+    }
+  },
+  "breathalyzer": {
+    "label": { "es": "Alcoholímetro", "en": "Breathalyzer", "pt": "Bafômetro", "fr": "Éthylotest", "de": "Alkoholtest", "it": "Etilometro", "ja": "アルコール検知器", "zh": "酒精检测仪", "ko": "음주 측정기", "ar": "جهاز فحص الكحول" },
+    "keywords": {
+      "es": ["prueba de alcohol", "operativo", "manejar sobrio", "aliento", "conductor designado", "bloqueo de encendido", "si tomas no manejes"],
+      "en": ["breath test", "sobriety checkpoint", "DUI", "drunk driving", "ignition interlock", "designated driver", "safe driving"]
+    }
+  },
+  "parking-meter": {
+    "label": { "es": "Parquímetro", "en": "Parking meter", "pt": "Parquímetro", "fr": "Horodateur", "de": "Parkuhr", "it": "Parchimetro", "ja": "パーキングメーター", "zh": "停车计时器", "ko": "주차 요금기", "ar": "عداد الوقوف" },
+    "keywords": {
+      "es": ["pagar estacionamiento", "estacionarse en la calle", "tiempo restante", "monedas", "cajón", "tarifa por hora", "app de estacionamiento"],
+      "en": ["pay for parking", "street parking", "meter time", "coins", "parking fee", "parking app", "curbside"]
+    }
+  },
+  "parking-garage": {
+    "label": { "es": "Estacionamiento de varios pisos", "en": "Parking garage", "pt": "Edifício-garagem", "fr": "Parking à étages", "de": "Parkhaus", "it": "Parcheggio multipiano", "ja": "立体駐車場", "zh": "立体停车场", "ko": "주차 빌딩", "ar": "مرآب متعدد الطوابق" },
+    "keywords": {
+      "es": ["estacionamiento techado", "niveles", "cubierto", "estacionamiento público", "lugares disponibles", "boleto de estacionamiento", "plaza comercial"],
+      "en": ["multi-storey car park", "parking structure", "covered parking", "levels", "car park", "spaces available", "parking deck"]
+    }
+  },
+  "parking-clock": {
+    "label": { "es": "Tiempo de estacionamiento", "en": "Parking time", "pt": "Tempo de estacionamento", "fr": "Durée de stationnement", "de": "Parkdauer", "it": "Durata della sosta", "ja": "駐車時間", "zh": "停车时长", "ko": "주차 시간", "ar": "مدة الوقوف" },
+    "keywords": {
+      "es": ["tiempo restante", "límite de tiempo", "estancia máxima", "sesión por vencer", "parquímetro", "estacionamiento por horas", "extender tiempo"],
+      "en": ["time left", "time limit", "max stay", "session expiring", "parking meter", "hourly parking", "extend time"]
+    }
+  },
+  "parking-ticket": {
+    "label": { "es": "Multa de estacionamiento", "en": "Parking ticket", "pt": "Multa de estacionamento", "fr": "Amende de stationnement", "de": "Strafzettel", "it": "Multa per divieto di sosta", "ja": "駐車違反切符", "zh": "停车罚单", "ko": "주차 위반 딱지", "ar": "مخالفة وقوف" },
+    "keywords": {
+      "es": ["infracción", "pagar multa", "boleta", "parabrisas", "tránsito", "mal estacionado", "sanción"],
+      "en": ["fine", "citation", "pay a fine", "parking violation", "windshield", "penalty", "traffic ticket"]
+    }
+  },
+  "toll-booth": {
+    "label": { "es": "Caseta de cobro", "en": "Toll booth", "pt": "Praça de pedágio", "fr": "Péage", "de": "Mautstelle", "it": "Casello", "ja": "料金所", "zh": "收费站", "ko": "톨게이트", "ar": "بوابة الرسوم" },
+    "keywords": {
+      "es": ["peaje", "autopista de cuota", "plaza de cobro", "costo del viaje", "ruta con cuota", "carretera", "evitar cuotas"],
+      "en": ["toll", "toll plaza", "toll road", "pay a toll", "highway", "avoid tolls", "turnpike"]
+    }
+  },
+  "speed-camera": {
+    "label": { "es": "Cámara de velocidad", "en": "Speed camera", "pt": "Radar de velocidade", "fr": "Radar automatique", "de": "Blitzer", "it": "Autovelox", "ja": "速度取締機", "zh": "测速摄像头", "ko": "과속 단속 카메라", "ar": "كاميرا السرعة" },
+    "keywords": {
+      "es": ["fotomulta", "radar", "exceso de velocidad", "alerta en la ruta", "semáforo en rojo", "pasarse el alto", "cámara de tránsito"],
+      "en": ["red light camera", "radar", "speed trap", "camera alert", "speeding", "traffic camera", "photo enforcement"]
+    }
+  },
+  "driver-license": {
+    "label": { "es": "Licencia de manejo", "en": "Driver’s license", "pt": "Carteira de motorista", "fr": "Permis de conduire", "de": "Führerschein", "it": "Patente di guida", "ja": "運転免許証", "zh": "驾驶证", "ko": "운전면허증", "ar": "رخصة القيادة" },
+    "keywords": {
+      "es": ["licencia de conducir", "agregar licencia", "identificación", "documento", "permiso de conducir", "vigencia", "renta de autos"],
+      "en": ["driving licence", "add license", "license on file", "ID", "permit", "expiration", "car rental"]
+    }
+  },
+  "driver-license-check": {
+    "label": { "es": "Conductor verificado", "en": "Verified driver", "pt": "Motorista verificado", "fr": "Conducteur vérifié", "de": "Verifizierter Fahrer", "it": "Conducente verificato", "ja": "認証済みドライバー", "zh": "已认证司机", "ko": "인증된 운전자", "ar": "سائق موثق" },
+    "keywords": {
+      "es": ["licencia aprobada", "licencia validada", "renta de autos", "viajes compartidos", "identidad verificada", "chofer", "aprobado"],
+      "en": ["license approved", "license verified", "car rental", "ride-hailing", "identity verified", "approved driver", "background check"]
+    }
+  },
+  "road-alert": {
+    "label": { "es": "Incidente en el camino", "en": "Incident ahead", "pt": "Incidente à frente", "fr": "Incident sur la route", "de": "Gefahr voraus", "it": "Pericolo sul percorso", "ja": "前方の事故・危険", "zh": "前方事故", "ko": "전방 사고", "ar": "حادث على الطريق" },
+    "keywords": {
+      "es": ["peligro en el camino", "accidente reportado", "choque", "alerta de tráfico", "obstáculo", "precaución", "reporte vial"],
+      "en": ["road hazard", "accident reported", "crash", "traffic alert", "obstacle", "caution", "incident report"]
+    }
+  },
+  "road-clock": {
+    "label": { "es": "Retraso por tráfico", "en": "Traffic delay", "pt": "Atraso no trânsito", "fr": "Retard dû au trafic", "de": "Verkehrsverzögerung", "it": "Ritardo per traffico", "ja": "渋滞による遅れ", "zh": "交通延误", "ko": "교통 지연", "ar": "تأخير بسبب الزحام" },
+    "keywords": {
+      "es": ["tráfico lento", "embotellamiento", "tiempo de llegada", "hora estimada", "minutos extra", "congestión", "hora pico"],
+      "en": ["slow traffic", "traffic jam", "ETA", "arrival time", "minutes added", "congestion", "rush hour"]
+    }
+  },
+  "road-block": {
+    "label": { "es": "Camino cerrado", "en": "Road closed", "pt": "Via interditada", "fr": "Route barrée", "de": "Straße gesperrt", "it": "Strada chiusa", "ja": "通行止め", "zh": "道路封闭", "ko": "도로 통제", "ar": "طريق مغلق" },
+    "keywords": {
+      "es": ["cierre vial", "calle cerrada", "desvío", "evitar este camino", "bloqueo", "obra", "ruta alterna"],
+      "en": ["closure", "roadblock", "detour", "avoid this road", "blocked", "diversion", "alternate route"]
+    }
+  },
+  "pothole": {
+    "label": { "es": "Bache", "en": "Pothole", "pt": "Buraco na pista", "fr": "Nid-de-poule", "de": "Schlagloch", "it": "Buca", "ja": "道路の穴", "zh": "坑洼", "ko": "포트홀", "ar": "حفرة في الطريق" },
+    "keywords": {
+      "es": ["reportar daño", "calle en mal estado", "pavimento", "hoyo", "estado del camino", "reporte ciudadano", "reparación de calles"],
+      "en": ["report road damage", "road condition", "pavement", "hole", "rough road", "city report", "street repair"]
+    }
+  },
+  "crosswalk": {
+    "label": { "es": "Paso de cebra", "en": "Crosswalk", "pt": "Faixa de pedestres", "fr": "Passage piéton", "de": "Zebrastreifen", "it": "Strisce pedonali", "ja": "横断歩道", "zh": "人行横道", "ko": "횡단보도", "ar": "ممر المشاة" },
+    "keywords": {
+      "es": ["paso peatonal", "cruce peatonal", "peatones", "cruzar la calle", "mapa", "esquina", "puntos de cruce"],
+      "en": ["zebra crossing", "pedestrian crossing", "pedestrians", "cross the street", "map", "intersection", "crossing points"]
+    }
+  },
+  "traffic-barrel": {
+    "label": { "es": "Tambo de tráfico", "en": "Traffic barrel", "pt": "Tambor de sinalização", "fr": "Fût de signalisation", "de": "Absperrfass", "it": "Barile segnaletico", "ja": "工事用ドラム", "zh": "交通防撞桶", "ko": "도로 공사 드럼", "ar": "برميل مروري" },
+    "keywords": {
+      "es": ["trafitambo", "obra vial", "zona de construcción", "carril cerrado", "precaución", "señalamiento", "desvío"],
+      "en": ["traffic drum", "roadworks", "construction zone", "lane closure", "work zone", "caution", "detour"]
+    }
+  },
+  "bollard": {
+    "label": { "es": "Bolardo", "en": "Bollard", "pt": "Balizador", "fr": "Potelet", "de": "Poller", "it": "Dissuasore", "ja": "ボラード", "zh": "路桩", "ko": "볼라드", "ar": "عمود حاجز" },
+    "keywords": {
+      "es": ["poste", "barrera vehicular", "zona peatonal", "punto de descenso", "acceso restringido", "banqueta", "pivote"],
+      "en": ["post", "vehicle barrier", "pedestrian zone", "drop-off point", "restricted access", "sidewalk", "pickup point"]
+    }
+  },
+  "crash-barrier": {
+    "label": { "es": "Barrera de contención", "en": "Guardrail", "pt": "Defensa metálica", "fr": "Glissière de sécurité", "de": "Leitplanke", "it": "Guardrail", "ja": "ガードレール", "zh": "护栏", "ko": "가드레일", "ar": "حاجز الأمان" },
+    "keywords": {
+      "es": ["defensa metálica", "valla de contención", "autopista", "orilla del camino", "acotamiento", "seguridad vial", "carretera"],
+      "en": ["crash barrier", "safety barrier", "highway", "road edge", "shoulder", "road safety", "median"]
+    }
+  },
+  "stop-sign": {
+    "label": { "es": "Señal de alto", "en": "Stop sign", "pt": "Placa de pare", "fr": "Panneau stop", "de": "Stoppschild", "it": "Segnale di stop", "ja": "一時停止", "zh": "停车标志", "ko": "정지 표지판", "ar": "إشارة قف" },
+    "keywords": {
+      "es": ["alto total", "detenerse", "parada obligatoria", "cuatro altos", "uno y uno", "crucero", "señalamiento"],
+      "en": ["full stop", "all-way stop", "four-way stop", "mandatory stop", "halt", "intersection", "road sign"]
+    }
+  },
+  "yield-sign": {
+    "label": { "es": "Ceda el paso", "en": "Yield sign", "pt": "Dê a preferência", "fr": "Cédez le passage", "de": "Vorfahrt gewähren", "it": "Dare precedenza", "ja": "道を譲れ", "zh": "让行标志", "ko": "양보 표지판", "ar": "إشارة إفساح الطريق" },
+    "keywords": {
+      "es": ["dar el paso", "preferencia", "triángulo invertido", "incorporación", "cruce", "precaución", "señalamiento"],
+      "en": ["give way", "right of way", "inverted triangle", "merge", "junction", "caution", "road sign"]
+    }
+  },
+  "speed-limit": {
+    "label": { "es": "Límite de velocidad", "en": "Speed limit", "pt": "Limite de velocidade", "fr": "Limitation de vitesse", "de": "Tempolimit", "it": "Limite di velocità", "ja": "最高速度", "zh": "限速", "ko": "제한 속도", "ar": "حد السرعة" },
+    "keywords": {
+      "es": ["velocidad máxima", "km/h", "exceso de velocidad", "radar", "límites en la ruta", "zona de velocidad", "señalamiento"],
+      "en": ["max speed", "mph", "km/h", "speeding", "radar", "route limits", "road sign"]
+    }
+  },
+  "no-entry": {
+    "label": { "es": "Prohibido el paso", "en": "No entry", "pt": "Sentido proibido", "fr": "Sens interdit", "de": "Einfahrt verboten", "it": "Senso vietato", "ja": "進入禁止", "zh": "禁止驶入", "ko": "진입 금지", "ar": "ممنوع الدخول" },
+    "keywords": {
+      "es": ["no entrar", "sentido contrario", "acceso prohibido", "calle prohibida", "contraflujo", "restricción", "señalamiento"],
+      "en": ["do not enter", "wrong way", "no access", "restricted", "forbidden", "one way", "road sign"]
+    }
+  },
+  "one-way": {
+    "label": { "es": "Un solo sentido", "en": "One way", "pt": "Mão única", "fr": "Sens unique", "de": "Einbahnstraße", "it": "Senso unico", "ja": "一方通行", "zh": "单行道", "ko": "일방통행", "ar": "اتجاه واحد" },
+    "keywords": {
+      "es": ["sentido de la calle", "circulación", "flecha", "dirección del tráfico", "sentido contrario", "calle", "señalamiento"],
+      "en": ["single direction", "traffic direction", "arrow", "street", "wrong way", "direction", "road sign"]
+    }
+  },
+  "roundabout": {
+    "label": { "es": "Glorieta", "en": "Roundabout", "pt": "Rotatória", "fr": "Rond-point", "de": "Kreisverkehr", "it": "Rotatoria", "ja": "ラウンドアバウト", "zh": "环岛", "ko": "회전 교차로", "ar": "دوار" },
+    "keywords": {
+      "es": ["rotonda", "tráfico circular", "tomar la salida", "dar la vuelta", "cruce", "intersección", "señalamiento"],
+      "en": ["traffic circle", "rotary", "take the exit", "circle", "junction", "intersection", "road sign"]
+    }
+  },
+  "height-limit": {
+    "label": { "es": "Altura máxima", "en": "Height limit", "pt": "Altura máxima", "fr": "Hauteur limitée", "de": "Höhenbegrenzung", "it": "Limite di altezza", "ja": "高さ制限", "zh": "限高", "ko": "높이 제한", "ar": "حد الارتفاع" },
+    "keywords": {
+      "es": ["altura libre", "gálibo", "puente bajo", "camiones", "casas rodantes", "ruta para camión", "paso a desnivel"],
+      "en": ["clearance", "low bridge", "low clearance", "truck route", "RV", "overpass", "max height"]
+    }
+  },
+  "railroad-crossing": {
+    "label": { "es": "Cruce de ferrocarril", "en": "Railroad crossing", "pt": "Passagem de nível", "fr": "Passage à niveau", "de": "Bahnübergang", "it": "Passaggio a livello", "ja": "踏切", "zh": "铁路道口", "ko": "철도 건널목", "ar": "تقاطع سكة الحديد" },
+    "keywords": {
+      "es": ["vías del tren", "paso a nivel", "tren", "barrera", "alto", "precaución", "señalamiento"],
+      "en": ["level crossing", "railway crossing", "train", "tracks", "gates", "caution", "road sign"]
+    }
+  },
+  "school-zone": {
+    "label": { "es": "Zona escolar", "en": "School zone", "pt": "Área escolar", "fr": "Zone scolaire", "de": "Schulzone", "it": "Zona scolastica", "ja": "スクールゾーン", "zh": "学校区域", "ko": "스쿨존", "ar": "منطقة مدرسية" },
+    "keywords": {
+      "es": ["escuela", "niños", "cruce escolar", "baja velocidad", "salida de clases", "precaución", "señalamiento"],
+      "en": ["school", "children", "school crossing", "slow down", "crossing guard", "caution", "road sign"]
+    }
+  },
+  "road-sign-curve": {
+    "label": { "es": "Curva peligrosa", "en": "Curve ahead", "pt": "Curva à frente", "fr": "Virage dangereux", "de": "Gefährliche Kurve", "it": "Curva pericolosa", "ja": "カーブあり", "zh": "前方弯道", "ko": "굽은 도로", "ar": "منعطف أمامك" },
+    "keywords": {
+      "es": ["vuelta cerrada", "camino sinuoso", "reducir velocidad", "señal preventiva", "precaución", "carretera", "señalamiento"],
+      "en": ["bend", "sharp turn", "winding road", "slow down", "warning sign", "caution", "road sign"]
+    }
+  },
+  "road-sign-pedestrian": {
+    "label": { "es": "Cruce de peatones", "en": "Pedestrian crossing", "pt": "Travessia de pedestres", "fr": "Attention piétons", "de": "Achtung Fußgänger", "it": "Attraversamento pedonale", "ja": "横断歩道あり", "zh": "注意行人", "ko": "보행자 주의", "ar": "عبور مشاة" },
+    "keywords": {
+      "es": ["peatones", "paso peatonal", "ceder el paso", "reducir velocidad", "señal preventiva", "precaución", "señalamiento"],
+      "en": ["pedestrians", "crosswalk ahead", "watch for pedestrians", "slow down", "warning sign", "caution", "road sign"]
+    }
+  },
+  "road-sign-slippery": {
+    "label": { "es": "Pavimento resbaloso", "en": "Slippery road", "pt": "Pista escorregadia", "fr": "Chaussée glissante", "de": "Schleudergefahr", "it": "Strada sdrucciolevole", "ja": "スリップ注意", "zh": "路滑", "ko": "미끄러운 도로", "ar": "طريق زلق" },
+    "keywords": {
+      "es": ["camino resbaladizo", "hielo", "lluvia", "piso mojado", "derrape", "grava suelta", "señal preventiva"],
+      "en": ["slick road", "ice", "rain", "wet road", "skid", "loose gravel", "warning sign"]
+    }
+  },
+  "road-sign-merge": {
+    "label": { "es": "Incorporación de tráfico", "en": "Merging traffic", "pt": "Confluência", "fr": "Insertion de circulation", "de": "Einmündender Verkehr", "it": "Immissione di traffico", "ja": "合流注意", "zh": "车道汇合", "ko": "합류 도로", "ar": "اندماج حركة المرور" },
+    "keywords": {
+      "es": ["carril de aceleración", "acceso a la vía", "unión de carriles", "entrar a la autopista", "ceder el paso", "señal preventiva", "precaución"],
+      "en": ["on-ramp", "lanes join", "acceleration lane", "zipper merge", "yield", "warning sign", "caution"]
+    }
+  },
+  "road-sign-narrows": {
+    "label": { "es": "Camino angosto", "en": "Road narrows", "pt": "Pista estreita", "fr": "Chaussée rétrécie", "de": "Verengte Fahrbahn", "it": "Strettoia", "ja": "幅員減少", "zh": "道路变窄", "ko": "도로 폭 좁아짐", "ar": "تضيق الطريق" },
+    "keywords": {
+      "es": ["estrechamiento", "reducción de carriles", "un solo carril", "puente angosto", "señal preventiva", "precaución", "carretera"],
+      "en": ["narrow road", "lane ends", "bottleneck", "narrow bridge", "single lane", "warning sign", "caution"]
+    }
+  },
+  "road-sign-bump": {
+    "label": { "es": "Tope", "en": "Speed bump", "pt": "Lombada", "fr": "Ralentisseur", "de": "Bodenschwelle", "it": "Dosso", "ja": "段差あり", "zh": "减速带", "ko": "과속 방지턱", "ar": "مطب" },
+    "keywords": {
+      "es": ["reductor de velocidad", "vibradores", "boya", "camino irregular", "bajar la velocidad", "señal preventiva", "precaución"],
+      "en": ["speed hump", "uneven road", "rumble strip", "traffic calming", "slow down", "warning sign", "caution"]
+    }
+  },
+  "road-sign-crossroads": {
+    "label": { "es": "Cruce de caminos", "en": "Crossroads ahead", "pt": "Cruzamento", "fr": "Intersection", "de": "Kreuzung", "it": "Incrocio", "ja": "交差点あり", "zh": "十字路口", "ko": "교차로", "ar": "تقاطع طرق" },
+    "keywords": {
+      "es": ["intersección", "crucero", "entronque", "esquina", "tráfico cruzado", "señal preventiva", "precaución"],
+      "en": ["intersection", "junction", "cross traffic", "four-way", "warning sign", "caution", "road sign"]
+    }
+  },
+  "lane-guidance": {
+    "label": { "es": "Guía de carriles", "en": "Lane guidance", "pt": "Orientação de faixa", "fr": "Guidage sur voie", "de": "Spurempfehlung", "it": "Indicazione delle corsie", "ja": "車線案内", "zh": "车道指引", "ko": "차로 안내", "ar": "إرشاد المسارات" },
+    "keywords": {
+      "es": ["qué carril tomar", "siguiente maniobra", "navegación", "indicaciones", "salida", "flechas de carril", "GPS"],
+      "en": ["which lane", "next maneuver", "navigation", "directions", "exit", "lane arrows", "GPS"]
+    }
+  },
+  "lane-change": {
+    "label": { "es": "Cambio de carril", "en": "Lane change", "pt": "Mudança de faixa", "fr": "Changement de voie", "de": "Spurwechsel", "it": "Cambio di corsia", "ja": "車線変更", "zh": "变道", "ko": "차로 변경", "ar": "تغيير المسار" },
+    "keywords": {
+      "es": ["rebasar", "adelantar", "maniobra", "poner direccional", "carril izquierdo", "incorporarse", "navegación"],
+      "en": ["overtake", "pass", "switch lanes", "maneuver", "signal", "merge", "navigation"]
+    }
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "train-side": {
+    "label": { "es": "Tren de pasajeros", "en": "Passenger train", "pt": "Trem de passageiros", "fr": "Train de voyageurs", "de": "Personenzug", "it": "Treno passeggeri", "ja": "旅客列車", "zh": "客运列车", "ko": "여객 열차", "ar": "قطار ركاب" },
+    "keywords": {
+      "es": ["ferrocarril", "trayecto en tren", "itinerario", "modo de transporte", "tren suburbano", "viaje en tren", "ruta ferroviaria"],
+      "en": ["railway", "rail leg", "itinerary", "transport mode", "commuter rail", "rail journey", "rail route"]
+    }
+  },
+  "train-carriage": {
+    "label": { "es": "Vagón", "en": "Train car", "pt": "Vagão", "fr": "Voiture de train", "de": "Wagen", "it": "Carrozza", "ja": "車両", "zh": "车厢", "ko": "객차", "ar": "عربة قطار" },
+    "keywords": {
+      "es": ["número de vagón", "carro", "elegir vagón", "posición en el andén", "asiento reservado", "composición del tren", "coche"],
+      "en": ["carriage", "coach number", "railcar", "choose a car", "car position", "seat reservation", "train formation"]
+    }
+  },
+  "train-sleeper": {
+    "label": { "es": "Tren nocturno", "en": "Night train", "pt": "Trem noturno", "fr": "Train de nuit", "de": "Nachtzug", "it": "Treno notturno", "ja": "夜行列車", "zh": "卧铺列车", "ko": "야간열차", "ar": "قطار ليلي" },
+    "keywords": {
+      "es": ["coche cama", "litera", "viaje de noche", "conexión nocturna", "compartimento", "dormir a bordo", "camarote"],
+      "en": ["sleeper train", "sleeping car", "couchette", "overnight", "berth", "sleeper cabin", "overnight connection"]
+    }
+  },
+  "train-high-speed": {
+    "label": { "es": "Tren de alta velocidad", "en": "High-speed train", "pt": "Trem de alta velocidade", "fr": "Train à grande vitesse", "de": "Hochgeschwindigkeitszug", "it": "Treno ad alta velocità", "ja": "高速列車", "zh": "高铁", "ko": "고속열차", "ar": "قطار فائق السرعة" },
+    "keywords": {
+      "es": ["tren bala", "tren rápido", "larga distancia", "entre ciudades", "shinkansen", "tren expreso", "clase de tarifa"],
+      "en": ["bullet train", "intercity express", "fast train", "long distance", "shinkansen", "express rail", "fare class"]
+    }
+  },
+  "bus-side": {
+    "label": { "es": "Autobús urbano", "en": "City bus", "pt": "Ônibus urbano", "fr": "Bus urbain", "de": "Stadtbus", "it": "Autobus urbano", "ja": "路線バス", "zh": "城市公交", "ko": "시내버스", "ar": "حافلة المدينة" },
+    "keywords": {
+      "es": ["camión", "trayecto en camión", "itinerario", "ruta de camión", "transporte público", "modo de transporte", "línea de autobús"],
+      "en": ["transit bus", "bus leg", "itinerary", "bus route", "public transit", "transport mode", "bus line"]
+    }
+  },
+  "bus-ramp": {
+    "label": { "es": "Abordaje accesible", "en": "Accessible boarding", "pt": "Embarque acessível", "fr": "Embarquement accessible", "de": "Barrierefreier Einstieg", "it": "Salita accessibile", "ja": "バリアフリー乗車", "zh": "无障碍上车", "ko": "휠체어 탑승", "ar": "صعود ميسّر" },
+    "keywords": {
+      "es": ["rampa", "piso bajo", "silla de ruedas", "accesibilidad", "movilidad reducida", "autobús arrodillable", "sin escalones"],
+      "en": ["ramp", "low floor", "wheelchair", "kneeling bus", "step-free", "reduced mobility", "accessibility"]
+    }
+  },
+  "bus-double-decker": {
+    "label": { "es": "Autobús de dos pisos", "en": "Double-decker bus", "pt": "Ônibus de dois andares", "fr": "Bus à impériale", "de": "Doppeldeckerbus", "it": "Autobus a due piani", "ja": "2階建てバス", "zh": "双层巴士", "ko": "2층 버스", "ar": "حافلة بطابقين" },
+    "keywords": {
+      "es": ["turibús", "recorrido turístico", "city tour", "doble piso", "paseo por la ciudad", "tipo de vehículo", "Londres"],
+      "en": ["sightseeing bus", "city tour", "hop-on hop-off", "tour bus", "London bus", "vehicle type", "open top"]
+    }
+  },
+  "bus-coach": {
+    "label": { "es": "Autobús foráneo", "en": "Intercity coach", "pt": "Ônibus rodoviário", "fr": "Autocar", "de": "Fernbus", "it": "Pullman", "ja": "高速バス", "zh": "长途汽车", "ko": "고속버스", "ar": "حافلة سفر" },
+    "keywords": {
+      "es": ["larga distancia", "central de autobuses", "viaje entre ciudades", "boleto de autobús", "primera clase", "autobús de lujo", "comprar boleto"],
+      "en": ["intercity bus", "long-distance bus", "motorcoach", "bus ticket", "bus booking", "express coach", "travel by bus"]
+    }
+  },
+  "school-bus": {
+    "label": { "es": "Autobús escolar", "en": "School bus", "pt": "Ônibus escolar", "fr": "Bus scolaire", "de": "Schulbus", "it": "Scuolabus", "ja": "スクールバス", "zh": "校车", "ko": "스쿨버스", "ar": "حافلة مدرسية" },
+    "keywords": {
+      "es": ["transporte escolar", "ruta escolar", "alumnos", "colegio", "recoger a los niños", "camión de la escuela", "parada escolar"],
+      "en": ["student transport", "school route", "students", "pupils", "school run", "pickup", "school stop"]
+    }
+  },
+  "minibus": {
+    "label": { "es": "Minibús", "en": "Minibus", "pt": "Micro-ônibus", "fr": "Minibus", "de": "Kleinbus", "it": "Minibus", "ja": "マイクロバス", "zh": "小巴", "ko": "미니버스", "ar": "حافلة صغيرة" },
+    "keywords": {
+      "es": ["pesero", "combi", "micro", "van", "transporte al aeropuerto", "transporte del hotel", "colectivo", "transporte bajo demanda"],
+      "en": ["shuttle", "van", "airport shuttle", "hotel shuttle", "shared taxi", "on-demand transit", "microtransit", "jitney"]
+    }
+  },
+  "locomotive": {
+    "label": { "es": "Locomotora de vapor", "en": "Steam locomotive", "pt": "Locomotiva a vapor", "fr": "Locomotive à vapeur", "de": "Dampflokomotive", "it": "Locomotiva a vapore", "ja": "蒸気機関車", "zh": "蒸汽机车", "ko": "증기기관차", "ar": "قاطرة بخارية" },
+    "keywords": {
+      "es": ["tren histórico", "tren turístico", "ruta panorámica", "máquina de vapor", "tren antiguo", "museo del ferrocarril", "chimenea"],
+      "en": ["heritage railway", "tourist train", "scenic railway", "steam engine", "vintage train", "railway museum", "choo choo"]
+    }
+  },
+  "subway": {
+    "label": { "es": "Metro", "en": "Subway", "pt": "Metrô", "fr": "Métro", "de": "U-Bahn", "it": "Metropolitana", "ja": "地下鉄", "zh": "地铁", "ko": "지하철", "ar": "مترو الأنفاق" },
+    "keywords": {
+      "es": ["subterráneo", "línea del metro", "tren urbano", "estación de metro", "transporte público", "metropolitano", "tren subterráneo"],
+      "en": ["metro", "underground", "tube", "rapid transit", "metro station", "public transit", "metro line"]
+    }
+  },
+  "tram": {
+    "label": { "es": "Tranvía", "en": "Tram", "pt": "Bonde", "fr": "Tramway", "de": "Straßenbahn", "it": "Tram", "ja": "路面電車", "zh": "有轨电车", "ko": "트램", "ar": "ترام" },
+    "keywords": {
+      "es": ["tren ligero", "catenaria", "parada de tranvía", "transporte urbano", "vías en la calle", "eléctrico", "modo de transporte"],
+      "en": ["streetcar", "light rail", "trolley", "tramway", "tram stop", "overhead line", "city transit"]
+    }
+  },
+  "monorail": {
+    "label": { "es": "Monorriel", "en": "Monorail", "pt": "Monotrilho", "fr": "Monorail", "de": "Einschienenbahn", "it": "Monorotaia", "ja": "モノレール", "zh": "单轨列车", "ko": "모노레일", "ar": "قطار أحادي السكة" },
+    "keywords": {
+      "es": ["tren elevado", "tren del aeropuerto", "aerotrén", "people mover", "tren automático", "sin conductor", "viaducto"],
+      "en": ["people mover", "airport train", "elevated train", "automated train", "driverless", "skytrain", "airport line"]
+    }
+  },
+  "funicular": {
+    "label": { "es": "Funicular", "en": "Funicular", "pt": "Funicular", "fr": "Funiculaire", "de": "Standseilbahn", "it": "Funicolare", "ja": "ケーブルカー", "zh": "缆索铁路", "ko": "강삭철도", "ar": "قطار مائل" },
+    "keywords": {
+      "es": ["tren de cremallera", "tren de montaña", "pendiente", "subida", "ladera", "cuesta empinada", "mirador"],
+      "en": ["rack railway", "cog railway", "incline", "inclined railway", "mountain railway", "steep slope", "cliff railway"]
+    }
+  },
+  "cable-car": {
+    "label": { "es": "Teleférico", "en": "Cable car", "pt": "Teleférico", "fr": "Téléphérique", "de": "Seilbahn", "it": "Funivia", "ja": "ロープウェイ", "zh": "缆车", "ko": "케이블카", "ar": "تلفريك" },
+    "keywords": {
+      "es": ["cablebús", "góndola", "telecabina", "transporte por cable", "cabina aérea", "montaña", "esquí"],
+      "en": ["aerial tramway", "gondola", "ropeway", "aerial lift", "cableway", "mountain", "ski lift"]
+    }
+  },
+  "bus-electric": {
+    "label": { "es": "Autobús eléctrico", "en": "Electric bus", "pt": "Ônibus elétrico", "fr": "Bus électrique", "de": "Elektrobus", "it": "Autobus elettrico", "ja": "電気バス", "zh": "电动公交车", "ko": "전기버스", "ar": "حافلة كهربائية" },
+    "keywords": {
+      "es": ["cero emisiones", "flota eléctrica", "trolebús", "batería", "transporte limpio", "movilidad sustentable", "recarga"],
+      "en": ["zero emission", "electric fleet", "e-bus", "battery bus", "clean transit", "sustainable mobility", "charging"]
+    }
+  },
+  "bus-night": {
+    "label": { "es": "Autobús nocturno", "en": "Night bus", "pt": "Ônibus noturno", "fr": "Bus de nuit", "de": "Nachtbus", "it": "Autobus notturno", "ja": "深夜バス", "zh": "夜班公交", "ko": "심야버스", "ar": "حافلة ليلية" },
+    "keywords": {
+      "es": ["servicio nocturno", "ruta de madrugada", "Nochebús", "búho", "último camión", "horario nocturno", "24 horas"],
+      "en": ["owl service", "late-night route", "overnight service", "night service", "last bus", "after midnight", "24 hours"]
+    }
+  },
+  "bus-alert": {
+    "label": { "es": "Servicio de autobús afectado", "en": "Bus service alert", "pt": "Alerta no serviço de ônibus", "fr": "Trafic bus perturbé", "de": "Störung im Busverkehr", "it": "Avviso sul servizio bus", "ja": "バス運行情報", "zh": "公交服务异常", "ko": "버스 운행 차질", "ar": "تنبيه خدمة الحافلات" },
+    "keywords": {
+      "es": ["desvío", "retraso", "interrupción", "afectación", "ruta suspendida", "aviso de servicio", "contingencia", "cambio de ruta"],
+      "en": ["detour", "delay", "disruption", "service change", "suspended route", "service notice", "reroute"]
+    }
+  },
+  "bus-clock": {
+    "label": { "es": "Próximo autobús", "en": "Next bus", "pt": "Próximo ônibus", "fr": "Prochain bus", "de": "Nächster Bus", "it": "Prossimo autobus", "ja": "次のバス", "zh": "下一班公交", "ko": "다음 버스", "ar": "الحافلة التالية" },
+    "keywords": {
+      "es": ["salidas", "horario", "hora de paso", "frecuencia", "cada cuánto pasa", "tiempo de espera", "programado"],
+      "en": ["departures", "schedule", "bus times", "frequency", "how often", "wait time", "scheduled"]
+    }
+  },
+  "bus-live": {
+    "label": { "es": "Autobús en tiempo real", "en": "Live bus tracking", "pt": "Ônibus em tempo real", "fr": "Bus en temps réel", "de": "Bus in Echtzeit", "it": "Autobus in tempo reale", "ja": "バスのリアルタイム位置", "zh": "实时公交", "ko": "실시간 버스", "ar": "تتبع الحافلة مباشرة" },
+    "keywords": {
+      "es": ["llegadas en vivo", "rastreo", "ubicación del camión", "dónde viene", "seguimiento", "GPS", "mapa en vivo"],
+      "en": ["real-time arrivals", "live tracking", "vehicle location", "where is my bus", "GPS", "live map", "realtime"]
+    }
+  },
+  "train-alert": {
+    "label": { "es": "Servicio de tren afectado", "en": "Rail service alert", "pt": "Alerta no serviço de trem", "fr": "Trafic ferroviaire perturbé", "de": "Störung im Bahnverkehr", "it": "Avviso sul servizio ferroviario", "ja": "鉄道運行情報", "zh": "列车运行异常", "ko": "열차 운행 차질", "ar": "تنبيه خدمة القطارات" },
+    "keywords": {
+      "es": ["estado de la línea", "retraso", "interrupción", "marcha lenta", "avería", "servicio suspendido", "afectación", "aviso de obras"],
+      "en": ["line status", "delay", "disruption", "service suspended", "engineering notice", "reduced service", "minor delays"]
+    }
+  },
+  "train-clock": {
+    "label": { "es": "Próximo tren", "en": "Next train", "pt": "Próximo trem", "fr": "Prochain train", "de": "Nächster Zug", "it": "Prossimo treno", "ja": "次の電車", "zh": "下一班列车", "ko": "다음 열차", "ar": "القطار التالي" },
+    "keywords": {
+      "es": ["salidas", "horario", "retraso", "hora de salida", "puntualidad", "tablero de salidas", "a tiempo"],
+      "en": ["departures", "timetable", "delay", "departure time", "on time", "departure board", "punctuality"]
+    }
+  },
+  "train-x": {
+    "label": { "es": "Tren cancelado", "en": "Cancelled train", "pt": "Trem cancelado", "fr": "Train supprimé", "de": "Zug fällt aus", "it": "Treno cancellato", "ja": "列車運休", "zh": "列车停运", "ko": "열차 운행 취소", "ar": "قطار ملغى" },
+    "keywords": {
+      "es": ["cancelación", "viaje cancelado", "suspendido", "sin servicio", "no circula", "salida cancelada", "reembolso"],
+      "en": ["cancellation", "trip cancelled", "suspended", "no service", "not running", "cancelled departure", "refund"]
+    }
+  },
+  "stop-display": {
+    "label": { "es": "Pantalla de llegadas", "en": "Arrivals display", "pt": "Painel de chegadas", "fr": "Écran des prochains passages", "de": "Echtzeitanzeige", "it": "Pannello arrivi", "ja": "接近案内表示", "zh": "电子站牌", "ko": "도착 안내판", "ar": "شاشة مواعيد الوصول" },
+    "keywords": {
+      "es": ["próximas llegadas", "minutos", "tablero", "parada", "tiempo real", "letrero electrónico", "en cuánto llega"],
+      "en": ["next arrivals", "minutes", "countdown", "stop sign", "real time", "passenger information", "departure board"]
+    }
+  },
+  "bus-stop": {
+    "label": { "es": "Parada de autobús", "en": "Bus stop", "pt": "Ponto de ônibus", "fr": "Arrêt de bus", "de": "Bushaltestelle", "it": "Fermata dell’autobus", "ja": "バス停", "zh": "公交站", "ko": "버스 정류장", "ar": "موقف الحافلات" },
+    "keywords": {
+      "es": ["paradero", "parada de tranvía", "paradas cercanas", "dónde se toma", "señal de parada", "detalles de la parada", "esperar el camión"],
+      "en": ["tram stop", "stop marker", "nearby stops", "stop sign", "stop details", "where to board", "wait for the bus"]
+    }
+  },
+  "bus-stop-star": {
+    "label": { "es": "Parada favorita", "en": "Favorite stop", "pt": "Ponto favorito", "fr": "Arrêt favori", "de": "Favorisierte Haltestelle", "it": "Fermata preferita", "ja": "お気に入りの停留所", "zh": "收藏的站点", "ko": "즐겨찾는 정류장", "ar": "موقف مفضّل" },
+    "keywords": {
+      "es": ["guardada", "favoritos", "mi parada", "casa", "trabajo", "acceso rápido", "destacar"],
+      "en": ["saved stop", "favorites", "my stop", "home stop", "starred", "quick access", "bookmark"]
+    }
+  },
+  "bus-shelter": {
+    "label": { "es": "Parabús", "en": "Bus shelter", "pt": "Abrigo de ônibus", "fr": "Abribus", "de": "Wartehäuschen", "it": "Pensilina", "ja": "屋根付きバス停", "zh": "候车亭", "ko": "버스 쉼터", "ar": "مظلة انتظار الحافلات" },
+    "keywords": {
+      "es": ["parada techada", "techo", "banca", "sombra", "lluvia", "servicios de la parada", "esperar sentado"],
+      "en": ["covered stop", "shelter", "bench", "roof", "rain cover", "stop amenities", "waiting area"]
+    }
+  },
+  "bus-station": {
+    "label": { "es": "Central de autobuses", "en": "Bus station", "pt": "Rodoviária", "fr": "Gare routière", "de": "Busbahnhof", "it": "Autostazione", "ja": "バスターミナル", "zh": "汽车站", "ko": "버스터미널", "ar": "محطة حافلات" },
+    "keywords": {
+      "es": ["terminal", "andenes", "salidas", "llegadas", "camionera", "terminal de camiones", "viajes foráneos"],
+      "en": ["coach station", "bus terminal", "bays", "departures", "arrivals", "coach terminal", "depot"]
+    }
+  },
+  "train-station": {
+    "label": { "es": "Estación de tren", "en": "Train station", "pt": "Estação de trem", "fr": "Gare", "de": "Bahnhof", "it": "Stazione ferroviaria", "ja": "駅", "zh": "火车站", "ko": "기차역", "ar": "محطة قطار" },
+    "keywords": {
+      "es": ["ferrocarril", "terminal", "andenes", "estación ferroviaria", "llegadas y salidas", "estación central", "información de la estación"],
+      "en": ["railway station", "rail station", "terminal", "platforms", "central station", "depot", "station info"]
+    }
+  },
+  "subway-entrance": {
+    "label": { "es": "Entrada del metro", "en": "Subway entrance", "pt": "Entrada do metrô", "fr": "Entrée du métro", "de": "U-Bahn-Eingang", "it": "Ingresso della metropolitana", "ja": "地下鉄の出入口", "zh": "地铁口", "ko": "지하철 출입구", "ar": "مدخل المترو" },
+    "keywords": {
+      "es": ["acceso", "salida del metro", "escaleras", "bajar al metro", "boca del metro", "accesos de la estación", "salidas"],
+      "en": ["metro entrance", "station exit", "stairs", "underground entrance", "station access", "way in", "exits"]
+    }
+  },
+  "train-platform": {
+    "label": { "es": "Andén", "en": "Platform", "pt": "Plataforma", "fr": "Quai", "de": "Bahnsteig", "it": "Binario", "ja": "乗り場", "zh": "站台", "ko": "승강장", "ar": "رصيف القطار" },
+    "keywords": {
+      "es": ["vía", "dónde abordar", "abordaje", "plataforma", "número de vía", "información de salida", "zona de abordaje"],
+      "en": ["track", "track number", "where to board", "boarding", "platform number", "gate", "departure info"]
+    }
+  },
+  "train-platform-sync": {
+    "label": { "es": "Cambio de andén", "en": "Platform change", "pt": "Mudança de plataforma", "fr": "Changement de quai", "de": "Gleiswechsel", "it": "Cambio di binario", "ja": "乗り場変更", "zh": "站台变更", "ko": "승강장 변경", "ar": "تغيير الرصيف" },
+    "keywords": {
+      "es": ["cambio de vía", "nuevo andén", "aviso", "reasignación", "otra vía", "actualización de salida", "moverse de andén"],
+      "en": ["track change", "new platform", "platform update", "reassigned", "different track", "departure update", "gate change"]
+    }
+  },
+  "train-doors": {
+    "label": { "es": "Lado de apertura de puertas", "en": "Door side", "pt": "Lado de abertura das portas", "fr": "Côté d’ouverture des portes", "de": "Ausstiegsseite", "it": "Lato apertura porte", "ja": "ドアの開く側", "zh": "开门侧", "ko": "내리실 문", "ar": "جهة فتح الأبواب" },
+    "keywords": {
+      "es": ["puertas", "abren del lado derecho", "abren del lado izquierdo", "posición de la puerta", "bajar del tren", "salida", "abordar"],
+      "en": ["doors open", "exit on the left", "exit on the right", "door position", "get off", "alight", "doors"]
+    }
+  },
+  "stop-request": {
+    "label": { "es": "Parada solicitada", "en": "Stop requested", "pt": "Parada solicitada", "fr": "Arrêt demandé", "de": "Haltewunsch", "it": "Fermata prenotata", "ja": "降車ボタン", "zh": "按铃下车", "ko": "하차 요청", "ar": "طلب التوقف" },
+    "keywords": {
+      "es": ["timbre", "botón de parada", "bajan", "tocar el timbre", "bajarse", "siguiente parada", "aviso al conductor"],
+      "en": ["bell", "stop button", "request stop", "ring the bell", "get off", "next stop", "alight"]
+    }
+  },
+  "grab-strap": {
+    "label": { "es": "Pasajeros de pie", "en": "Standing room", "pt": "Passageiros em pé", "fr": "Places debout", "de": "Stehplätze", "it": "Posti in piedi", "ja": "立ち席", "zh": "站立区", "ko": "입석", "ar": "أماكن للوقوف" },
+    "keywords": {
+      "es": ["agarradera", "asidero", "ir parado", "correa", "manija", "pasamanos", "lugares de pie"],
+      "en": ["handhold", "grab handle", "strap", "hand strap", "standing passengers", "hold on", "handrail"]
+    }
+  },
+  "occupancy": {
+    "label": { "es": "Ocupación", "en": "Occupancy", "pt": "Lotação", "fr": "Affluence", "de": "Auslastung", "it": "Affollamento", "ja": "混雑状況", "zh": "拥挤度", "ko": "혼잡도", "ar": "مستوى الازدحام" },
+    "keywords": {
+      "es": ["qué tan lleno", "aforo", "asientos disponibles", "lleno", "vacío", "cupo", "hora pico", "va lleno"],
+      "en": ["crowding", "how full", "seats available", "capacity", "busy", "full", "rush hour", "load factor"]
+    }
+  },
+  "ticket-office": {
+    "label": { "es": "Taquilla", "en": "Ticket office", "pt": "Bilheteria", "fr": "Guichet", "de": "Fahrkartenschalter", "it": "Biglietteria", "ja": "切符売り場", "zh": "售票处", "ko": "매표소", "ar": "شباك التذاكر" },
+    "keywords": {
+      "es": ["ventanilla", "venta de boletos", "comprar boleto", "atención al cliente", "boletería", "caja", "mostrador"],
+      "en": ["ticket window", "box office", "booking office", "buy tickets", "counter", "customer service", "ticket desk"]
+    }
+  },
+  "ticket-machine": {
+    "label": { "es": "Máquina de boletos", "en": "Ticket machine", "pt": "Máquina de bilhetes", "fr": "Distributeur de titres", "de": "Fahrkartenautomat", "it": "Biglietteria automatica", "ja": "券売機", "zh": "自动售票机", "ko": "승차권 발매기", "ar": "آلة بيع التذاكر" },
+    "keywords": {
+      "es": ["recargar", "comprar boleto", "autoservicio", "máquina de recarga", "pagar con tarjeta", "expendedora", "monedas"],
+      "en": ["vending machine", "buy ticket", "top up", "self-service", "kiosk", "pay by card", "fare machine"]
+    }
+  },
+  "fare-validator": {
+    "label": { "es": "Validador de tarjeta", "en": "Card validator", "pt": "Validador de cartão", "fr": "Valideur", "de": "Kartenlesegerät", "it": "Validatrice", "ja": "ICカード読み取り機", "zh": "刷卡机", "ko": "교통카드 단말기", "ar": "قارئ البطاقة" },
+    "keywords": {
+      "es": ["validar", "acercar la tarjeta", "lector de tarjeta", "pago sin contacto", "pagar pasaje", "poste validador", "NFC"],
+      "en": ["validate", "tap your card", "card reader", "contactless", "pay fare", "reader post", "NFC"]
+    }
+  },
+  "tap-in": {
+    "label": { "es": "Validar entrada", "en": "Tap in", "pt": "Validar na entrada", "fr": "Valider à l’entrée", "de": "Einchecken", "it": "Validazione in entrata", "ja": "入場タッチ", "zh": "进站刷卡", "ko": "승차 태그", "ar": "تمرير البطاقة عند الدخول" },
+    "keywords": {
+      "es": ["inicio de viaje", "acercar tarjeta", "entrada", "subir", "pago por uso", "check-in", "abordar"],
+      "en": ["start trip", "check in", "entry", "board", "pay as you go", "touch in", "contactless"]
+    }
+  },
+  "tap-out": {
+    "label": { "es": "Validar salida", "en": "Tap out", "pt": "Validar na saída", "fr": "Valider à la sortie", "de": "Auschecken", "it": "Validazione in uscita", "ja": "出場タッチ", "zh": "出站刷卡", "ko": "하차 태그", "ar": "تمرير البطاقة عند الخروج" },
+    "keywords": {
+      "es": ["fin del viaje", "acercar tarjeta", "salida", "bajar", "pago por uso", "check-out", "cobro por distancia"],
+      "en": ["end trip", "check out", "exit", "alight", "pay as you go", "touch out", "distance-based fare"]
+    }
+  },
+  "fare-gate": {
+    "label": { "es": "Barreras de acceso", "en": "Fare gates", "pt": "Bloqueios de acesso", "fr": "Portillons d’accès", "de": "Zugangssperren", "it": "Varchi d’accesso", "ja": "自動改札機", "zh": "检票闸机", "ko": "개찰구", "ar": "بوابات التذاكر" },
+    "keywords": {
+      "es": ["torniquetes", "entrada a la estación", "puertas automáticas", "control de acceso", "validar boleto", "pasar con tarjeta", "torniquete de cristal"],
+      "en": ["ticket barriers", "gateline", "station entry", "access control", "validate ticket", "ticket gate", "automatic gates"]
+    }
+  },
+  "transit-card": {
+    "label": { "es": "Tarjeta de transporte", "en": "Transit card", "pt": "Cartão de transporte", "fr": "Carte de transport", "de": "Fahrkarte", "it": "Tessera trasporti", "ja": "交通系ICカード", "zh": "交通卡", "ko": "교통카드", "ar": "بطاقة النقل" },
+    "keywords": {
+      "es": ["tarjeta de movilidad integrada", "saldo", "abono", "pase mensual", "tarjeta del metro", "monedero electrónico", "datos de la tarjeta"],
+      "en": ["travel card", "transit pass", "balance", "monthly pass", "metro card", "smart card", "card details"]
+    }
+  },
+  "transit-card-plus": {
+    "label": { "es": "Recargar tarjeta", "en": "Top up card", "pt": "Recarregar cartão", "fr": "Recharger la carte", "de": "Karte aufladen", "it": "Ricarica tessera", "ja": "ICカードにチャージ", "zh": "交通卡充值", "ko": "교통카드 충전", "ar": "شحن بطاقة النقل" },
+    "keywords": {
+      "es": ["recarga", "agregar saldo", "abonar", "añadir pase", "cargar saldo", "pase mensual", "pagar"],
+      "en": ["reload", "add balance", "add funds", "add a pass", "add value", "monthly pass", "recharge"]
+    }
+  },
+  "mobile-ticket": {
+    "label": { "es": "Boleto digital", "en": "Mobile ticket", "pt": "Bilhete no celular", "fr": "Billet mobile", "de": "Handyticket", "it": "Biglietto digitale", "ja": "モバイルチケット", "zh": "手机车票", "ko": "모바일 승차권", "ar": "تذكرة على الهاتف" },
+    "keywords": {
+      "es": ["boleto electrónico", "código QR", "en el celular", "app", "boleto en la app", "pase de abordar", "sin papel"],
+      "en": ["e-ticket", "QR code", "phone ticket", "in the app", "digital ticket", "boarding pass", "paperless"]
+    }
+  },
+  "timetable": {
+    "label": { "es": "Horario", "en": "Timetable", "pt": "Quadro de horários", "fr": "Horaires", "de": "Fahrplan", "it": "Orario", "ja": "時刻表", "zh": "时刻表", "ko": "시간표", "ar": "جدول المواعيد" },
+    "keywords": {
+      "es": ["horarios de salida", "itinerario", "corridas", "frecuencia", "programación", "horas de paso", "primer y último tren"],
+      "en": ["schedule", "departure times", "frequency", "service hours", "first and last train", "route schedule", "stop times"]
+    }
+  },
+  "transit-line": {
+    "label": { "es": "Recorrido y paradas", "en": "Route and stops", "pt": "Trajeto e paradas", "fr": "Ligne et arrêts", "de": "Linienverlauf", "it": "Percorso e fermate", "ja": "停車駅一覧", "zh": "线路站点", "ko": "노선 정류장", "ar": "المسار والمحطات" },
+    "keywords": {
+      "es": ["lista de paradas", "estaciones", "avance del viaje", "diagrama de ruta", "trayecto", "próximas paradas", "línea"],
+      "en": ["stop list", "stations", "trip progress", "route diagram", "line diagram", "upcoming stops", "journey"]
+    }
+  },
+  "transit-line-branch": {
+    "label": { "es": "Ramal", "en": "Branch line", "pt": "Ramal", "fr": "Embranchement", "de": "Linienverzweigung", "it": "Diramazione", "ja": "支線", "zh": "支线", "ko": "지선", "ar": "خط فرعي" },
+    "keywords": {
+      "es": ["bifurcación", "derivación", "servicio parcial", "destino alterno", "dos destinos", "división de la línea", "ramales"],
+      "en": ["fork", "split", "branch service", "short turn", "alternate terminus", "diverging route", "line split"]
+    }
+  },
+  "transit-map": {
+    "label": { "es": "Mapa de la red", "en": "Transit map", "pt": "Mapa da rede", "fr": "Plan du réseau", "de": "Liniennetzplan", "it": "Mappa della rete", "ja": "路線図", "zh": "线路图", "ko": "노선도", "ar": "خريطة الشبكة" },
+    "keywords": {
+      "es": ["mapa del metro", "red de transporte", "líneas", "plano", "esquema de líneas", "estaciones", "pestaña de mapa"],
+      "en": ["metro map", "network map", "subway map", "lines", "route map", "stations", "map tab"]
+    }
+  },
+  "interchange": {
+    "label": { "es": "Transbordo", "en": "Interchange", "pt": "Baldeação", "fr": "Correspondance", "de": "Umstieg", "it": "Interscambio", "ja": "乗り換え駅", "zh": "换乘站", "ko": "환승역", "ar": "محطة تبديل الخطوط" },
+    "keywords": {
+      "es": ["correspondencia", "cambiar de línea", "estación de transbordo", "conexión", "trasbordo", "combinación", "enlace"],
+      "en": ["transfer", "change lines", "transfer station", "connection", "interchange station", "connect", "hub"]
+    }
+  },
+  "walk-transfer": {
+    "label": { "es": "Transbordo a pie", "en": "Walking transfer", "pt": "Conexão a pé", "fr": "Correspondance à pied", "de": "Umstieg zu Fuß", "it": "Interscambio a piedi", "ja": "徒歩乗り換え", "zh": "步行换乘", "ko": "도보 환승", "ar": "تبديل سيرًا على الأقدام" },
+    "keywords": {
+      "es": ["caminar", "pasillo", "conexión entre estaciones", "tiempo caminando", "trayecto a pie", "cambio de andén", "minutos a pie"],
+      "en": ["walk", "walkway", "station connection", "walking time", "on foot", "change platforms", "minutes walk"]
+    }
+  },
+  "map-pin-bus": {
+    "label": { "es": "Parada en el mapa", "en": "Bus stop on map", "pt": "Ponto de ônibus no mapa", "fr": "Arrêt de bus sur la carte", "de": "Haltestelle auf der Karte", "it": "Fermata sulla mappa", "ja": "地図上のバス停", "zh": "地图上的公交站", "ko": "지도 위 버스 정류장", "ar": "موقف حافلات على الخريطة" },
+    "keywords": {
+      "es": ["marcador de parada", "paradas cercanas", "ubicación", "pin", "dónde tomar el camión", "cerca de mí", "localizar parada"],
+      "en": ["stop marker", "nearby stops", "location", "pin", "where to catch the bus", "near me", "find a stop"]
+    }
+  },
+  "map-pin-train": {
+    "label": { "es": "Estación en el mapa", "en": "Station on map", "pt": "Estação no mapa", "fr": "Gare sur la carte", "de": "Bahnhof auf der Karte", "it": "Stazione sulla mappa", "ja": "地図上の駅", "zh": "地图上的车站", "ko": "지도 위 역", "ar": "محطة على الخريطة" },
+    "keywords": {
+      "es": ["marcador de estación", "estación cercana", "ubicación", "pin", "metro cercano", "cerca de mí", "cómo llegar a la estación"],
+      "en": ["station marker", "nearby station", "location", "pin", "nearest metro", "near me", "directions to station"]
+    }
+  },
+  "train-track": {
+    "label": { "es": "Vía férrea", "en": "Railway track", "pt": "Via férrea", "fr": "Voie ferrée", "de": "Gleis", "it": "Binari", "ja": "線路", "zh": "铁轨", "ko": "철로", "ar": "سكة حديدية" },
+    "keywords": {
+      "es": ["vías del tren", "rieles", "durmientes", "ferrocarril", "línea férrea", "trabajos en la vía", "modo tren"],
+      "en": ["rails", "railroad", "sleepers", "ties", "rail line", "track work", "rail mode"]
+    }
+  },
+  "railway-signal": {
+    "label": { "es": "Señal ferroviaria", "en": "Railway signal", "pt": "Sinal ferroviário", "fr": "Signal ferroviaire", "de": "Eisenbahnsignal", "it": "Segnale ferroviario", "ja": "鉄道信号機", "zh": "铁路信号灯", "ko": "철도 신호기", "ar": "إشارة السكك الحديدية" },
+    "keywords": {
+      "es": ["semáforo del tren", "falla de señal", "señalización", "estado de la línea", "luz roja", "alto", "vía libre"],
+      "en": ["signal failure", "signaling", "line status", "red signal", "stop signal", "clear track", "rail light"]
+    }
+  },
+  "track-works": {
+    "label": { "es": "Obras en la vía", "en": "Track work", "pt": "Obras na via", "fr": "Travaux sur la voie", "de": "Gleisbauarbeiten", "it": "Lavori sulla linea", "ja": "線路工事", "zh": "线路施工", "ko": "선로 공사", "ar": "أعمال صيانة السكة" },
+    "keywords": {
+      "es": ["mantenimiento", "cierre de línea", "obras programadas", "servicio provisional", "cierre temporal", "transporte alterno", "trabajos nocturnos"],
+      "en": ["engineering works", "maintenance", "line closure", "planned works", "replacement bus", "temporary closure", "rail replacement"]
+    }
+  },
+  "bus-lane": {
+    "label": { "es": "Carril exclusivo", "en": "Bus lane", "pt": "Faixa exclusiva de ônibus", "fr": "Voie de bus", "de": "Busspur", "it": "Corsia preferenziale", "ja": "バス専用レーン", "zh": "公交专用道", "ko": "버스전용차로", "ar": "مسار الحافلات" },
+    "keywords": {
+      "es": ["Metrobús", "BRT", "carril confinado", "corredor", "tránsito rápido", "carril bus", "solo autobuses"],
+      "en": ["busway", "BRT", "bus rapid transit", "dedicated lane", "corridor", "bus only", "transit lane"]
+    }
+  },
+  "bike-dock": {
+    "label": { "es": "Bicis disponibles", "en": "Bikes available", "pt": "Bicicletas disponíveis", "fr": "Vélos disponibles", "de": "Fahrräder verfügbar", "it": "Bici disponibili", "ja": "利用可能な自転車", "zh": "可借车辆", "ko": "대여 가능 자전거", "ar": "دراجات متاحة" },
+    "keywords": {
+      "es": ["Ecobici", "bicicleta compartida", "cicloestación", "anclaje", "rentar bici", "préstamo de bicicleta", "estación de bicis"],
+      "en": ["bike share", "docking station", "bike dock", "rent a bike", "bike hire", "pick up a bike", "bike station"]
+    }
+  },
+  "bike-dock-empty": {
+    "label": { "es": "Anclajes libres", "en": "Docks available", "pt": "Vagas disponíveis", "fr": "Places disponibles", "de": "Freie Stellplätze", "it": "Stalli liberi", "ja": "空きドック", "zh": "可还车位", "ko": "반납 가능 거치대", "ar": "أماكن إرجاع متاحة" },
+    "keywords": {
+      "es": ["devolver bici", "regresar bicicleta", "lugar libre", "cicloestación", "terminar viaje", "Ecobici", "estación de bicis"],
+      "en": ["return bike", "free dock", "empty dock", "docking station", "end ride", "drop off", "bike share"]
+    }
+  },
+  "bike-rack": {
+    "label": { "es": "Biciestacionamiento", "en": "Bike parking", "pt": "Bicicletário", "fr": "Parking à vélos", "de": "Fahrradparkplatz", "it": "Parcheggio bici", "ja": "駐輪場", "zh": "自行车停放处", "ko": "자전거 보관대", "ar": "موقف دراجات" },
+    "keywords": {
+      "es": ["rack de bicis", "estacionar la bici", "bici y metro", "estacionamiento seguro", "candado", "ciclista", "aparcabicis"],
+      "en": ["bike rack", "cycle parking", "bike and ride", "secure parking", "lock", "cyclist", "bicycle stand"]
+    }
+  },
+  "scooter-parking": {
+    "label": { "es": "Estacionamiento de scooters", "en": "Scooter parking", "pt": "Estacionamento de patinetes", "fr": "Stationnement des trottinettes", "de": "E-Scooter-Parkzone", "it": "Parcheggio monopattini", "ja": "キックボード駐車エリア", "zh": "滑板车停放区", "ko": "킥보드 주차 구역", "ar": "موقف السكوترات" },
+    "keywords": {
+      "es": ["patín eléctrico", "zona permitida", "terminar viaje", "dejar el scooter", "micromovilidad", "estacionamiento preferente", "aquí termina tu viaje"],
+      "en": ["e-scooter", "parking zone", "end your ride", "drop zone", "micromobility", "preferred parking", "where to park"]
+    }
+  },
+  "carpool": {
+    "label": { "es": "Viaje compartido", "en": "Carpool", "pt": "Carona", "fr": "Covoiturage", "de": "Fahrgemeinschaft", "it": "Car pooling", "ja": "相乗り", "zh": "拼车", "ko": "카풀", "ar": "مشاركة الرحلة" },
+    "keywords": {
+      "es": ["aventón", "raite", "compartir auto", "compartir gastos", "ir juntos", "pasajeros", "auto compartido"],
+      "en": ["ride share", "shared ride", "lift", "split costs", "ride together", "passengers", "HOV"]
+    }
+  },
+  "taxi-stand": {
+    "label": { "es": "Sitio de taxis", "en": "Taxi stand", "pt": "Ponto de táxi", "fr": "Station de taxis", "de": "Taxistand", "it": "Posteggio taxi", "ja": "タクシー乗り場", "zh": "出租车上客点", "ko": "택시 승강장", "ar": "موقف سيارات الأجرة" },
+    "keywords": {
+      "es": ["base de taxis", "zona de ascenso", "punto de recogida", "taxi seguro", "taxi autorizado", "fila de taxis", "abordar taxi"],
+      "en": ["taxi rank", "cab stand", "pickup zone", "pickup point", "taxi line", "official taxi", "hail a cab"]
+    }
+  },
+  "park-and-ride": {
+    "label": { "es": "Estacionamiento de transbordo", "en": "Park and ride", "pt": "Estacionamento integrado", "fr": "Parking relais", "de": "Park & Ride", "it": "Parcheggio di interscambio", "ja": "パーク・アンド・ライド", "zh": "停车换乘", "ko": "환승 주차장", "ar": "مواقف اركن واركب" },
+    "keywords": {
+      "es": ["dejar el auto", "estacionamiento en la estación", "estaciona y viaja", "P+R", "auto y metro", "seguir en transporte", "cajones en la estación"],
+      "en": ["P+R", "station parking", "car park", "leave your car", "drive and ride", "commuter parking", "park at the station"]
+    }
+  }
+}

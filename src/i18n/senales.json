@@ -1,0 +1,429 @@
+{
+  "restroom": {
+    "label": { "es": "Baños", "en": "Restrooms", "pt": "Banheiros", "fr": "Toilettes", "de": "Toiletten", "it": "Servizi igienici", "ja": "トイレ", "zh": "卫生间", "ko": "화장실", "ar": "دورات المياه" },
+    "keywords": {
+      "es": ["sanitarios", "WC", "baño público", "unisex", "baño mixto", "servicios", "señalética", "amenidades"],
+      "en": ["toilets", "WC", "public toilet", "unisex", "gender-neutral", "lavatory", "bathroom", "wayfinding"]
+    }
+  },
+  "restroom-family": {
+    "label": { "es": "Baño familiar", "en": "Family restroom", "pt": "Banheiro família", "fr": "Toilettes familiales", "de": "Familien-WC", "it": "Bagno per famiglie", "ja": "ファミリートイレ", "zh": "家庭卫生间", "ko": "가족 화장실", "ar": "دورة مياه عائلية" },
+    "keywords": {
+      "es": ["baño con niños", "cambiador de pañales", "papás e hijos", "acompañante", "baño compartido", "centro comercial", "amenidades"],
+      "en": ["parent and child", "baby changing", "companion restroom", "kids", "caregiver", "toilets", "mall amenities"]
+    }
+  },
+  "urinal": {
+    "label": { "es": "Mingitorio", "en": "Urinal", "pt": "Mictório", "fr": "Urinoir", "de": "Urinal", "it": "Orinatoio", "ja": "小便器", "zh": "小便池", "ko": "소변기", "ar": "مبولة" },
+    "keywords": {
+      "es": ["baño de hombres", "sanitario", "mueble de baño", "limpieza de baños", "mantenimiento", "WC", "instalaciones"],
+      "en": ["men's room", "restroom fixture", "toilets", "cleaning checklist", "facility management", "WC", "plumbing"]
+    }
+  },
+  "toilet-stall": {
+    "label": { "es": "Cubículo de baño", "en": "Toilet stall", "pt": "Cabine do banheiro", "fr": "Cabine de toilettes", "de": "WC-Kabine", "it": "Cabina WC", "ja": "トイレの個室", "zh": "厕所隔间", "ko": "화장실 칸", "ar": "حجيرة مرحاض" },
+    "keywords": {
+      "es": ["privado", "gabinete", "baño disponible", "sanitario libre", "capacidad del baño", "rondas de limpieza", "WC"],
+      "en": ["cubicle", "WC", "available toilet", "restroom capacity", "cleaning round", "partition", "booth"]
+    }
+  },
+  "toilet-stall-lock": {
+    "label": { "es": "Ocupado", "en": "Occupied", "pt": "Ocupado", "fr": "Occupé", "de": "Besetzt", "it": "Occupato", "ja": "使用中", "zh": "有人使用", "ko": "사용 중", "ar": "مشغول" },
+    "keywords": {
+      "es": ["baño ocupado", "cubículo cerrado", "seguro de la puerta", "baño del avión", "baño del tren", "no disponible", "libre u ocupado"],
+      "en": ["engaged", "stall locked", "lavatory", "airplane toilet", "train toilet", "vacant or occupied", "in use"]
+    }
+  },
+  "toilet-squat": {
+    "label": { "es": "Baño turco", "en": "Squat toilet", "pt": "Vaso turco", "fr": "Toilettes à la turque", "de": "Hocktoilette", "it": "Bagno alla turca", "ja": "和式トイレ", "zh": "蹲厕", "ko": "화변기", "ar": "مرحاض أرضي" },
+    "keywords": {
+      "es": ["letrina", "sanitario en el piso", "estilo asiático", "en cuclillas", "puerta del cubículo", "baño público", "WC"],
+      "en": ["Asian toilet", "Turkish toilet", "floor toilet", "eastern-style", "squatting pan", "stall door", "public toilet"]
+    }
+  },
+  "portable-toilet": {
+    "label": { "es": "Baño portátil", "en": "Portable toilet", "pt": "Banheiro químico", "fr": "Toilettes mobiles", "de": "Mobiltoilette", "it": "Bagno chimico", "ja": "仮設トイレ", "zh": "移动厕所", "ko": "이동식 화장실", "ar": "مرحاض متنقل" },
+    "keywords": {
+      "es": ["baño químico", "festival", "obra", "evento al aire libre", "concierto", "renta de sanitarios", "caseta"],
+      "en": ["porta-potty", "chemical toilet", "festival", "construction site", "outdoor event", "porta-john", "portaloo"]
+    }
+  },
+  "hand-washing": {
+    "label": { "es": "Lávate las manos", "en": "Wash your hands", "pt": "Lave as mãos", "fr": "Lavez-vous les mains", "de": "Hände waschen", "it": "Lavarsi le mani", "ja": "手を洗う", "zh": "请洗手", "ko": "손 씻기", "ar": "اغسل يديك" },
+    "keywords": {
+      "es": ["higiene", "lavamanos", "estación de lavado", "jabón", "cocina", "clínica", "señal obligatoria", "sanitizar"],
+      "en": ["hygiene", "handwash station", "sink", "soap", "kitchen staff", "clinic", "mandatory sign", "sanitize"]
+    }
+  },
+  "toilet-paper-flush": {
+    "label": { "es": "Papel al inodoro", "en": "Paper in the toilet", "pt": "Papel no vaso", "fr": "Papier dans la cuvette", "de": "Papier in die Toilette", "it": "Carta nel WC", "ja": "紙は便器へ", "zh": "厕纸可冲入马桶", "ko": "휴지는 변기에", "ar": "ضع الورق في المرحاض" },
+    "keywords": {
+      "es": ["no tirar papel", "papel higiénico", "papel en el bote", "drenaje", "letrero del baño", "tapar el baño", "fosa séptica"],
+      "en": ["do not flush paper", "toilet paper", "bin for paper", "plumbing", "restroom notice", "septic system", "clog"]
+    }
+  },
+  "toilet-flush": {
+    "label": { "es": "Descarga del inodoro", "en": "Flush the toilet", "pt": "Dar descarga", "fr": "Tirer la chasse", "de": "Spülen", "it": "Tirare lo sciacquone", "ja": "水を流す", "zh": "冲水", "ko": "물 내리기", "ar": "تصريف المرحاض" },
+    "keywords": {
+      "es": ["jalar la palanca", "jalarle al baño", "botón de descarga", "tanque del inodoro", "baño inteligente", "ahorro de agua", "letrero del baño"],
+      "en": ["please flush", "flush button", "flush lever", "cistern", "smart toilet", "dual flush", "restroom sign"]
+    }
+  },
+  "escalator": {
+    "label": { "es": "Escalera eléctrica", "en": "Escalator", "pt": "Escada rolante", "fr": "Escalator", "de": "Rolltreppe", "it": "Scala mobile", "ja": "エスカレーター", "zh": "自动扶梯", "ko": "에스컬레이터", "ar": "سلم متحرك" },
+    "keywords": {
+      "es": ["escalera mecánica", "centro comercial", "plaza", "metro", "aeropuerto", "cambio de piso", "señalética"],
+      "en": ["moving stairs", "mall", "subway station", "airport", "next floor", "wayfinding", "department store"]
+    }
+  },
+  "escalator-up": {
+    "label": { "es": "Escalera eléctrica de subida", "en": "Up escalator", "pt": "Escada rolante de subida", "fr": "Escalator montant", "de": "Rolltreppe aufwärts", "it": "Scala mobile in salita", "ja": "上りエスカレーター", "zh": "上行扶梯", "ko": "상행 에스컬레이터", "ar": "سلم متحرك صاعد" },
+    "keywords": {
+      "es": ["subir", "piso de arriba", "planta alta", "sentido de subida", "dirección", "centro comercial", "metro"],
+      "en": ["going up", "upstairs", "upper floor", "upward", "direction", "mall", "station"]
+    }
+  },
+  "escalator-down": {
+    "label": { "es": "Escalera eléctrica de bajada", "en": "Down escalator", "pt": "Escada rolante de descida", "fr": "Escalator descendant", "de": "Rolltreppe abwärts", "it": "Scala mobile in discesa", "ja": "下りエスカレーター", "zh": "下行扶梯", "ko": "하행 에스컬레이터", "ar": "سلم متحرك نازل" },
+    "keywords": {
+      "es": ["bajar", "piso de abajo", "planta baja", "sentido de bajada", "salida", "andén", "estacionamiento"],
+      "en": ["going down", "downstairs", "lower floor", "downward", "to platforms", "exit", "parking level"]
+    }
+  },
+  "moving-walkway": {
+    "label": { "es": "Pasillo móvil", "en": "Moving walkway", "pt": "Esteira rolante", "fr": "Tapis roulant", "de": "Rollsteig", "it": "Tapis roulant", "ja": "動く歩道", "zh": "自动人行道", "ko": "무빙워크", "ar": "ممشى متحرك" },
+    "keywords": {
+      "es": ["banda móvil", "andador eléctrico", "aeropuerto", "terminal", "conexión", "puertas de abordaje", "estación"],
+      "en": ["travelator", "travolator", "airport", "terminal", "connecting flight", "gates", "people mover"]
+    }
+  },
+  "ramp": {
+    "label": { "es": "Rampa", "en": "Ramp", "pt": "Rampa", "fr": "Rampe", "de": "Rampe", "it": "Rampa", "ja": "スロープ", "zh": "坡道", "ko": "경사로", "ar": "منحدر" },
+    "keywords": {
+      "es": ["sin escalones", "pendiente", "carriola", "maletas", "acceso", "rodar", "entrada"],
+      "en": ["step-free", "slope", "stroller", "luggage", "incline", "access route", "entrance"]
+    }
+  },
+  "stairs-up": {
+    "label": { "es": "Escaleras de subida", "en": "Stairs up", "pt": "Escada de subida", "fr": "Escalier montant", "de": "Treppe nach oben", "it": "Scale in salita", "ja": "上り階段", "zh": "上楼楼梯", "ko": "올라가는 계단", "ar": "درج صاعد" },
+    "keywords": {
+      "es": ["subir", "piso de arriba", "planta alta", "escalones", "dirección", "señalética", "siguiente piso"],
+      "en": ["upstairs", "go up", "upper floor", "steps", "direction", "wayfinding", "next floor"]
+    }
+  },
+  "stairs-down": {
+    "label": { "es": "Escaleras de bajada", "en": "Stairs down", "pt": "Escada de descida", "fr": "Escalier descendant", "de": "Treppe nach unten", "it": "Scale in discesa", "ja": "下り階段", "zh": "下楼楼梯", "ko": "내려가는 계단", "ar": "درج نازل" },
+    "keywords": {
+      "es": ["bajar", "piso de abajo", "planta baja", "sótano", "escalones", "andén", "salida"],
+      "en": ["downstairs", "go down", "lower floor", "basement", "steps", "platform", "exit"]
+    }
+  },
+  "elevator-buttons": {
+    "label": { "es": "Llamar al elevador", "en": "Call the elevator", "pt": "Chamar o elevador", "fr": "Appeler l’ascenseur", "de": "Aufzug rufen", "it": "Chiamare l’ascensore", "ja": "エレベーターを呼ぶ", "zh": "呼叫电梯", "ko": "엘리베이터 호출", "ar": "استدعاء المصعد" },
+    "keywords": {
+      "es": ["botones de subir y bajar", "ascensor", "vestíbulo", "edificio inteligente", "piso", "flechas", "lobby"],
+      "en": ["up and down buttons", "lift", "elevator lobby", "smart building", "hall call", "floor", "lift button"]
+    }
+  },
+  "elevator-door-open": {
+    "label": { "es": "Abrir puertas", "en": "Door open", "pt": "Abrir portas", "fr": "Ouvrir les portes", "de": "Tür öffnen", "it": "Apri porte", "ja": "開ボタン", "zh": "开门键", "ko": "열림 버튼", "ar": "فتح الباب" },
+    "keywords": {
+      "es": ["botón del elevador", "detener las puertas", "esperar", "ascensor", "panel de botones", "accesibilidad", "flechas hacia afuera"],
+      "en": ["elevator button", "hold the doors", "keep doors open", "lift", "button panel", "accessibility", "car operating panel"]
+    }
+  },
+  "elevator-door-close": {
+    "label": { "es": "Cerrar puertas", "en": "Door close", "pt": "Fechar portas", "fr": "Fermer les portes", "de": "Tür schließen", "it": "Chiudi porte", "ja": "閉ボタン", "zh": "关门键", "ko": "닫힘 버튼", "ar": "إغلاق الباب" },
+    "keywords": {
+      "es": ["botón del elevador", "ascensor", "panel de botones", "flechas hacia adentro", "salir del piso", "apurar", "control del elevador"],
+      "en": ["elevator button", "lift", "button panel", "arrows inward", "depart", "hurry", "car operating panel"]
+    }
+  },
+  "door-revolving": {
+    "label": { "es": "Puerta giratoria", "en": "Revolving door", "pt": "Porta giratória", "fr": "Porte tambour", "de": "Drehtür", "it": "Porta girevole", "ja": "回転ドア", "zh": "旋转门", "ko": "회전문", "ar": "باب دوار" },
+    "keywords": {
+      "es": ["entrada", "hotel", "lobby", "edificio de oficinas", "aeropuerto", "acceso principal", "mapa del lugar"],
+      "en": ["entrance", "hotel", "lobby", "office building", "airport", "rotating door", "venue map"]
+    }
+  },
+  "door-push": {
+    "label": { "es": "Empuje", "en": "Push", "pt": "Empurre", "fr": "Poussez", "de": "Drücken", "it": "Spingere", "ja": "押す", "zh": "推", "ko": "미세요", "ar": "ادفع" },
+    "keywords": {
+      "es": ["puerta", "calcomanía", "abre hacia afuera", "letrero de puerta", "entrada", "vidrio", "placa de empuje"],
+      "en": ["door", "decal", "opens outward", "door sign", "entrance", "glass door", "door plate"]
+    }
+  },
+  "door-pull": {
+    "label": { "es": "Jale", "en": "Pull", "pt": "Puxe", "fr": "Tirez", "de": "Ziehen", "it": "Tirare", "ja": "引く", "zh": "拉", "ko": "당기세요", "ar": "اسحب" },
+    "keywords": {
+      "es": ["puerta", "calcomanía", "abre hacia ti", "letrero de puerta", "jaladera", "manija", "entrada"],
+      "en": ["door", "decal", "opens toward you", "door sign", "handle", "entrance", "glass door"]
+    }
+  },
+  "staff-only": {
+    "label": { "es": "Solo personal autorizado", "en": "Staff only", "pt": "Somente funcionários", "fr": "Réservé au personnel", "de": "Nur für Personal", "it": "Solo personale autorizzato", "ja": "関係者以外立入禁止", "zh": "员工专用", "ko": "관계자 외 출입금지", "ar": "للموظفين فقط" },
+    "keywords": {
+      "es": ["acceso restringido", "empleados", "área privada", "trastienda", "prohibido el paso", "zona de servicio", "puerta interna"],
+      "en": ["authorized personnel", "employees only", "restricted area", "back of house", "no entry", "private", "service area"]
+    }
+  },
+  "press-button": {
+    "label": { "es": "Presione el botón", "en": "Press the button", "pt": "Aperte o botão", "fr": "Appuyez sur le bouton", "de": "Taste drücken", "it": "Premere il pulsante", "ja": "ボタンを押す", "zh": "按下按钮", "ko": "버튼을 누르세요", "ar": "اضغط الزر" },
+    "keywords": {
+      "es": ["botón de apertura", "timbre", "llamar", "botón de ayuda", "puerta automática", "semáforo peatonal", "pulsar"],
+      "en": ["door opener", "push button", "call button", "help button", "automatic door", "crosswalk button", "tap"]
+    }
+  },
+  "info-point": {
+    "label": { "es": "Módulo de información", "en": "Information point", "pt": "Ponto de informação", "fr": "Point d’information", "de": "Infopunkt", "it": "Punto informazioni", "ja": "インフォメーション", "zh": "问讯处", "ko": "안내소", "ar": "نقطة استعلامات" },
+    "keywords": {
+      "es": ["informes", "atención al público", "recepción", "ayuda", "orientación", "turistas", "mostrador"],
+      "en": ["information desk", "help desk", "visitor center", "reception", "inquiries", "concierge", "tourist info"]
+    }
+  },
+  "help-point": {
+    "label": { "es": "Punto de ayuda", "en": "Help point", "pt": "Ponto de ajuda", "fr": "Borne d’appel", "de": "Hilferufsäule", "it": "Punto di assistenza", "ja": "係員呼び出し", "zh": "求助点", "ko": "도움 호출 인터폰", "ar": "نقطة طلب المساعدة" },
+    "keywords": {
+      "es": ["interfón", "llamar al personal", "andén", "estacionamiento", "campus", "emergencia", "botón de auxilio"],
+      "en": ["intercom", "call staff", "platform", "car park", "campus", "emergency call", "help phone"]
+    }
+  },
+  "service-window": {
+    "label": { "es": "Ventanilla", "en": "Service window", "pt": "Guichê", "fr": "Guichet", "de": "Schalter", "it": "Sportello", "ja": "窓口", "zh": "服务窗口", "ko": "창구", "ar": "شباك الخدمة" },
+    "keywords": {
+      "es": ["taquilla", "mostrador", "caja", "banco", "trámites", "oficina de gobierno", "atención al cliente"],
+      "en": ["ticket office", "counter", "teller", "bank", "box office", "government office", "front desk"]
+    }
+  },
+  "waiting-area": {
+    "label": { "es": "Sala de espera", "en": "Waiting area", "pt": "Sala de espera", "fr": "Salle d’attente", "de": "Wartebereich", "it": "Sala d’attesa", "ja": "待合室", "zh": "等候区", "ko": "대기실", "ar": "منطقة الانتظار" },
+    "keywords": {
+      "es": ["área de espera", "consultorio", "clínica", "terminal", "asientos", "turno", "recepción"],
+      "en": ["waiting room", "lounge", "clinic", "terminal", "seating", "queue", "lobby"]
+    }
+  },
+  "wait-here": {
+    "label": { "es": "Espere detrás de la línea", "en": "Wait behind the line", "pt": "Aguarde atrás da linha", "fr": "Attendez derrière la ligne", "de": "Hinter der Linie warten", "it": "Attendere dietro la linea", "ja": "線の手前でお待ちください", "zh": "请在线后等候", "ko": "선 뒤에서 기다리세요", "ar": "انتظر خلف الخط" },
+    "keywords": {
+      "es": ["fila", "turno", "sana distancia", "caja", "farmacia", "andén", "mostrador"],
+      "en": ["queue", "line up", "social distancing", "checkout", "pharmacy", "platform edge", "counter"]
+    }
+  },
+  "stand-here": {
+    "label": { "es": "Colóquese aquí", "en": "Stand here", "pt": "Fique aqui", "fr": "Placez-vous ici", "de": "Hier stehen", "it": "Posizionarsi qui", "ja": "立ち位置", "zh": "请站在此处", "ko": "여기 서세요", "ar": "قف هنا" },
+    "keywords": {
+      "es": ["calcomanía de piso", "huellas", "fila", "sana distancia", "lugar en la fila", "marca en el piso", "espere aquí"],
+      "en": ["floor decal", "footprints", "queue spot", "social distancing", "spacing marker", "floor sticker", "wait here"]
+    }
+  },
+  "meeting-point": {
+    "label": { "es": "Punto de encuentro", "en": "Meeting point", "pt": "Ponto de encontro", "fr": "Point de rencontre", "de": "Treffpunkt", "it": "Punto d’incontro", "ja": "待ち合わせ場所", "zh": "集合点", "ko": "만남의 장소", "ar": "نقطة الالتقاء" },
+    "keywords": {
+      "es": ["reunirse", "terminal", "llegadas", "grupo", "familia", "niños perdidos", "cita"],
+      "en": ["meet", "arrivals hall", "terminal", "group", "family", "lost children", "rendezvous"]
+    }
+  },
+  "lost-and-found": {
+    "label": { "es": "Objetos perdidos", "en": "Lost and found", "pt": "Achados e perdidos", "fr": "Objets trouvés", "de": "Fundbüro", "it": "Oggetti smarriti", "ja": "忘れ物取扱所", "zh": "失物招领", "ko": "분실물 센터", "ar": "المفقودات" },
+    "keywords": {
+      "es": ["cosas olvidadas", "reportar pérdida", "recoger", "artículos encontrados", "oficina", "olvidé algo", "pertenencias"],
+      "en": ["lost property", "lost items", "found items", "report a loss", "claim", "left behind", "belongings"]
+    }
+  },
+  "left-luggage": {
+    "label": { "es": "Guarda equipaje", "en": "Left luggage", "pt": "Guarda-volumes", "fr": "Consigne à bagages", "de": "Gepäckaufbewahrung", "it": "Deposito bagagli", "ja": "手荷物預かり所", "zh": "行李寄存处", "ko": "짐 보관소", "ar": "أمانات الأمتعة" },
+    "keywords": {
+      "es": ["paquetería", "consigna", "maletas", "aeropuerto", "central de autobuses", "hotel", "lockers"],
+      "en": ["baggage storage", "bag drop", "suitcases", "lockers", "station", "airport", "hotel"]
+    }
+  },
+  "coat-check": {
+    "label": { "es": "Guardarropa", "en": "Coat check", "pt": "Chapelaria", "fr": "Vestiaire", "de": "Garderobe", "it": "Guardaroba", "ja": "クローク", "zh": "衣帽寄存处", "ko": "외투 보관소", "ar": "غرفة المعاطف" },
+    "keywords": {
+      "es": ["abrigos", "paquetería", "teatro", "museo", "evento", "ficha", "perchero"],
+      "en": ["cloakroom", "coats", "theater", "museum", "event", "ticket", "hanger"]
+    }
+  },
+  "locker-key": {
+    "label": { "es": "Llave del casillero", "en": "Locker key", "pt": "Chave do armário", "fr": "Clé de casier", "de": "Spindschlüssel", "it": "Chiave dell’armadietto", "ja": "ロッカーキー", "zh": "储物柜钥匙", "ko": "사물함 열쇠", "ar": "مفتاح الخزانة" },
+    "keywords": {
+      "es": ["locker", "pulsera", "alberca", "gimnasio", "spa", "vestidor", "número"],
+      "en": ["wristband", "coil key", "pool", "gym", "spa", "changing room", "numbered tag"]
+    }
+  },
+  "charging-station": {
+    "label": { "es": "Estación de carga", "en": "Charging station", "pt": "Ponto de recarga", "fr": "Borne de recharge", "de": "Ladestation", "it": "Stazione di ricarica", "ja": "充電スポット", "zh": "充电站", "ko": "휴대폰 충전소", "ar": "محطة شحن" },
+    "keywords": {
+      "es": ["cargar celular", "batería baja", "cargador", "aeropuerto", "centro comercial", "enchufe", "evento"],
+      "en": ["charge phone", "low battery", "charger", "airport", "mall", "plug", "event"]
+    }
+  },
+  "power-bank-station": {
+    "label": { "es": "Renta de baterías portátiles", "en": "Power bank rental", "pt": "Aluguel de carregador portátil", "fr": "Location de batteries externes", "de": "Powerbank-Verleih", "it": "Noleggio power bank", "ja": "モバイルバッテリーレンタル", "zh": "共享充电宝", "ko": "보조배터리 대여", "ar": "تأجير شواحن متنقلة" },
+    "keywords": {
+      "es": ["power bank", "cargador portátil", "batería externa", "pila", "aeropuerto", "bar", "devolver"],
+      "en": ["portable charger", "battery pack", "kiosk", "airport", "bar", "borrow", "return anywhere"]
+    }
+  },
+  "outlet-usb": {
+    "label": { "es": "Contacto con USB", "en": "Outlet with USB", "pt": "Tomada com USB", "fr": "Prise avec USB", "de": "Steckdose mit USB", "it": "Presa con USB", "ja": "USB付きコンセント", "zh": "带USB的插座", "ko": "USB 콘센트", "ar": "مقبس مع منافذ USB" },
+    "keywords": {
+      "es": ["enchufe", "toma de corriente", "cargar", "asiento", "sala de abordaje", "escritorio", "puerto"],
+      "en": ["power socket", "plug", "charge", "seat power", "gate", "desk", "USB-A"]
+    }
+  },
+  "ashtray": {
+    "label": { "es": "Área de fumar", "en": "Smoking area", "pt": "Área de fumantes", "fr": "Espace fumeurs", "de": "Raucherbereich", "it": "Area fumatori", "ja": "喫煙所", "zh": "吸烟区", "ko": "흡연 구역", "ar": "منطقة التدخين" },
+    "keywords": {
+      "es": ["cenicero", "cigarro", "fumadores", "zona designada", "tabaco", "terraza", "no fumar"],
+      "en": ["ashtray", "cigarette", "smokers", "designated zone", "tobacco", "terrace", "no smoking"]
+    }
+  },
+  "litter-bin": {
+    "label": { "es": "Bote de basura", "en": "Litter bin", "pt": "Lixeira", "fr": "Poubelle", "de": "Abfalleimer", "it": "Cestino", "ja": "ごみ箱", "zh": "垃圾桶", "ko": "쓰레기통", "ar": "سلة المهملات" },
+    "keywords": {
+      "es": ["cesto", "basurero", "residuos", "parque", "vía pública", "tirar basura", "contenedor"],
+      "en": ["trash can", "garbage", "waste point", "park", "street", "rubbish", "receptacle"]
+    }
+  },
+  "figure-stroller": {
+    "label": { "es": "Acceso con carriola", "en": "Stroller access", "pt": "Acesso para carrinho de bebê", "fr": "Accès poussette", "de": "Kinderwagengerecht", "it": "Accesso passeggini", "ja": "ベビーカー対応", "zh": "婴儿车通道", "ko": "유모차 이용 가능", "ar": "مسار لعربات الأطفال" },
+    "keywords": {
+      "es": ["bebé", "ruta sin escalones", "elevador preferente", "familias", "mamás y papás", "cochecito", "accesibilidad"],
+      "en": ["pram", "pushchair", "baby", "step-free route", "priority elevator", "family facilities", "parents"]
+    }
+  },
+  "figure-climbing": {
+    "label": { "es": "Trepar", "en": "Climbing", "pt": "Escalar", "fr": "Escalader", "de": "Klettern", "it": "Arrampicarsi", "ja": "よじ登る", "zh": "攀爬", "ko": "기어오르기", "ar": "التسلق" },
+    "keywords": {
+      "es": ["no trepar", "subirse al barandal", "cerca", "reja", "peligro de caída", "vitrina", "prohibido escalar"],
+      "en": ["do not climb", "railing", "fence", "barrier", "fall hazard", "display", "scaling"]
+    }
+  },
+  "figure-leaning": {
+    "label": { "es": "Recargarse", "en": "Leaning", "pt": "Encostar-se", "fr": "S’appuyer", "de": "Anlehnen", "it": "Appoggiarsi", "ja": "寄りかかる", "zh": "倚靠", "ko": "기대기", "ar": "الاتكاء" },
+    "keywords": {
+      "es": ["no recargarse", "puerta del tren", "metro", "pared", "vidrio", "apoyarse", "riesgo"],
+      "en": ["do not lean", "train door", "subway", "wall", "glass panel", "resting against", "hazard"]
+    }
+  },
+  "figure-litter": {
+    "label": { "es": "Pon la basura en su lugar", "en": "Put litter in the bin", "pt": "Jogue o lixo no lixo", "fr": "Déchets à la poubelle", "de": "Abfall in den Mülleimer", "it": "Rifiuti nel cestino", "ja": "ごみはごみ箱へ", "zh": "垃圾入桶", "ko": "쓰레기는 쓰레기통에", "ar": "ضع القمامة في السلة" },
+    "keywords": {
+      "es": ["tirar basura", "no tirar basura", "bote", "limpieza", "parque", "multa", "cuidar el entorno"],
+      "en": ["no littering", "trash can", "throw away", "keep clean", "park", "fine", "tidyman"]
+    }
+  },
+  "figure-diving": {
+    "label": { "es": "Clavado", "en": "Diving", "pt": "Mergulho", "fr": "Plongeon", "de": "Kopfsprung", "it": "Tuffo", "ja": "飛び込み", "zh": "跳水", "ko": "다이빙", "ar": "القفز في الماء" },
+    "keywords": {
+      "es": ["no clavados", "alberca", "muelle", "aguas poco profundas", "salto", "prohibido aventarse", "natación"],
+      "en": ["no diving", "pool", "pier", "shallow water", "jump", "headfirst", "swimming"]
+    }
+  },
+  "feeding-birds": {
+    "label": { "es": "Dar de comer a las aves", "en": "Feeding birds", "pt": "Alimentar as aves", "fr": "Nourrir les oiseaux", "de": "Vögel füttern", "it": "Dare da mangiare agli uccelli", "ja": "鳥に餌をやる", "zh": "喂鸟", "ko": "새 먹이 주기", "ar": "إطعام الطيور" },
+    "keywords": {
+      "es": ["no alimentar", "palomas", "migajas", "parque", "plaza", "fauna", "pan"],
+      "en": ["do not feed", "pigeons", "breadcrumbs", "park", "plaza", "wildlife", "ducks"]
+    }
+  },
+  "lawn-footprint": {
+    "label": { "es": "Pisar el pasto", "en": "Walking on the grass", "pt": "Pisar na grama", "fr": "Marcher sur la pelouse", "de": "Rasen betreten", "it": "Calpestare l’erba", "ja": "芝生に入る", "zh": "踩踏草坪", "ko": "잔디 밟기", "ar": "المشي على العشب" },
+    "keywords": {
+      "es": ["no pisar el pasto", "jardín", "césped", "área verde", "parque", "cuidado del jardín", "huella"],
+      "en": ["keep off the grass", "lawn", "turf", "green area", "park", "garden", "footprint"]
+    }
+  },
+  "picking-flowers": {
+    "label": { "es": "Cortar flores", "en": "Picking flowers", "pt": "Colher flores", "fr": "Cueillir des fleurs", "de": "Blumen pflücken", "it": "Raccogliere fiori", "ja": "花を摘む", "zh": "采花", "ko": "꽃 꺾기", "ar": "قطف الأزهار" },
+    "keywords": {
+      "es": ["no cortar flores", "jardín", "parque", "plantas", "jardín botánico", "cuidar las plantas", "arrancar"],
+      "en": ["do not pick", "garden", "park", "plants", "botanical garden", "flower bed", "pluck"]
+    }
+  },
+  "hand-touch": {
+    "label": { "es": "Tocar", "en": "Touching", "pt": "Tocar", "fr": "Toucher", "de": "Berühren", "it": "Toccare", "ja": "触れる", "zh": "触摸", "ko": "만지기", "ar": "اللمس" },
+    "keywords": {
+      "es": ["no tocar", "museo", "obra de arte", "vitrina", "exhibición", "tienda", "superficie"],
+      "en": ["do not touch", "museum", "artwork", "exhibit", "display case", "store", "hands off"]
+    }
+  },
+  "shoes-off": {
+    "label": { "es": "Quítese los zapatos", "en": "Remove your shoes", "pt": "Tire os sapatos", "fr": "Retirez vos chaussures", "de": "Schuhe ausziehen", "it": "Togliersi le scarpe", "ja": "靴を脱いでください", "zh": "请脱鞋", "ko": "신발을 벗으세요", "ar": "اخلع حذاءك" },
+    "keywords": {
+      "es": ["sin zapatos", "descalzo", "entrada", "área de juegos", "laboratorio", "templo", "calcetines"],
+      "en": ["no shoes", "barefoot", "entrance", "soft play", "lab", "temple", "socks"]
+    }
+  },
+  "motorcycle-helmet": {
+    "label": { "es": "Casco de moto", "en": "Motorcycle helmet", "pt": "Capacete de moto", "fr": "Casque de moto", "de": "Motorradhelm", "it": "Casco da moto", "ja": "バイク用ヘルメット", "zh": "摩托车头盔", "ko": "오토바이 헬멧", "ar": "خوذة دراجة نارية" },
+    "keywords": {
+      "es": ["quítese el casco", "motociclista", "banco", "gasolinera", "tienda", "seguridad", "rostro descubierto"],
+      "en": ["remove your helmet", "motorcyclist", "bank", "gas station", "store", "security", "face visible"]
+    }
+  },
+  "directory-board": {
+    "label": { "es": "Directorio del edificio", "en": "Building directory", "pt": "Guia de andares", "fr": "Tableau des étages", "de": "Etagenverzeichnis", "it": "Elenco dei piani", "ja": "フロアガイド", "zh": "楼层指南", "ko": "층별 안내", "ar": "دليل المبنى" },
+    "keywords": {
+      "es": ["pisos", "locales", "inquilinos", "departamentos", "oficinas", "plaza comercial", "lobby"],
+      "en": ["floor guide", "tenants", "departments", "lobby board", "offices", "mall directory", "suites"]
+    }
+  },
+  "you-are-here": {
+    "label": { "es": "Usted está aquí", "en": "You are here", "pt": "Você está aqui", "fr": "Vous êtes ici", "de": "Sie sind hier", "it": "Voi siete qui", "ja": "現在地", "zh": "您在这里", "ko": "현재 위치", "ar": "أنت هنا" },
+    "keywords": {
+      "es": ["mapa del lugar", "ubicación actual", "plano", "centro comercial", "parque", "orientarse", "señalética"],
+      "en": ["venue map", "current location", "floor plan", "mall map", "park map", "orientation", "wayfinding"]
+    }
+  },
+  "map-kiosk": {
+    "label": { "es": "Mapa interactivo", "en": "Interactive map", "pt": "Mapa interativo", "fr": "Plan interactif", "de": "Interaktiver Lageplan", "it": "Mappa interattiva", "ja": "デジタル案内板", "zh": "电子导览屏", "ko": "디지털 안내도", "ar": "خريطة تفاعلية" },
+    "keywords": {
+      "es": ["pantalla táctil", "kiosco", "rutas", "buscar tienda", "orientarse", "señalética digital", "tótem"],
+      "en": ["touch screen", "wayfinding kiosk", "routes", "store finder", "digital signage", "self-service", "directory"]
+    }
+  },
+  "floor-arrow": {
+    "label": { "es": "Señalización en el piso", "en": "Floor marking", "pt": "Sinalização de piso", "fr": "Marquage au sol", "de": "Bodenmarkierung", "it": "Segnaletica a pavimento", "ja": "床面サイン", "zh": "地面标识", "ko": "바닥 유도선", "ar": "علامات أرضية" },
+    "keywords": {
+      "es": ["flechas en el piso", "líneas de colores", "ruta", "hospital", "almacén", "circulación", "seguir la línea"],
+      "en": ["painted arrows", "colored lines", "route", "hospital", "warehouse", "traffic flow", "follow the line"]
+    }
+  },
+  "sign-hanging": {
+    "label": { "es": "Señal colgante", "en": "Overhead sign", "pt": "Placa suspensa", "fr": "Panneau suspendu", "de": "Hängeschild", "it": "Cartello sospeso", "ja": "吊り下げサイン", "zh": "吊挂标识", "ko": "천장 안내판", "ar": "لافتة معلقة" },
+    "keywords": {
+      "es": ["letrero", "señalética", "techo", "terminal", "aeropuerto", "centro comercial", "indicaciones"],
+      "en": ["hanging sign", "signage", "ceiling", "terminal", "airport", "mall", "directions"]
+    }
+  },
+  "sign-totem": {
+    "label": { "es": "Tótem de señalización", "en": "Wayfinding totem", "pt": "Totem de sinalização", "fr": "Totem signalétique", "de": "Wegweiser-Stele", "it": "Totem segnaletico", "ja": "自立サイン", "zh": "导视立牌", "ko": "안내탑", "ar": "عمود إرشادي" },
+    "keywords": {
+      "es": ["pilón", "letrero", "entrada", "campus", "plaza", "monolito", "señalética"],
+      "en": ["pylon sign", "monolith", "entrance", "campus", "plaza", "signage", "directory sign"]
+    }
+  },
+  "wayfinding": {
+    "label": { "es": "Señalética", "en": "Wayfinding", "pt": "Sinalização", "fr": "Signalétique", "de": "Leitsystem", "it": "Segnaletica", "ja": "案内表示", "zh": "导视系统", "ko": "길 안내", "ar": "إرشاد الطريق" },
+    "keywords": {
+      "es": ["seguir las señales", "orientación", "indicaciones", "peatones", "rutas", "proyecto de señalización", "flechas"],
+      "en": ["follow the signs", "signage", "navigation", "directions", "pedestrians", "routes", "arrows"]
+    }
+  },
+  "tactile-paving": {
+    "label": { "es": "Guía podotáctil", "en": "Tactile paving", "pt": "Piso tátil", "fr": "Bande podotactile", "de": "Taktiles Leitsystem", "it": "Percorso tattile", "ja": "点字ブロック", "zh": "盲道", "ko": "점자 블록", "ar": "بلاط إرشادي للمكفوفين" },
+    "keywords": {
+      "es": ["ciegos", "baja visión", "piso táctil", "banqueta", "andén", "accesibilidad", "bastón"],
+      "en": ["blind", "low vision", "guidance strip", "sidewalk", "platform", "accessibility", "white cane"]
+    }
+  },
+  "tactile-map": {
+    "label": { "es": "Mapa táctil", "en": "Tactile map", "pt": "Mapa tátil", "fr": "Plan tactile", "de": "Tastplan", "it": "Mappa tattile", "ja": "触地図", "zh": "触觉地图", "ko": "촉지도", "ar": "خريطة لمسية" },
+    "keywords": {
+      "es": ["braille", "relieve", "ciegos", "baja visión", "plano", "museo", "accesibilidad"],
+      "en": ["braille", "raised map", "blind visitors", "low vision", "floor plan", "museum", "accessibility"]
+    }
+  }
+}

@@ -817,5 +817,754 @@
       "es": ["pesas", "ejercicio", "entrenar", "fitness", "fuerza", "rutina", "musculación"],
       "en": ["weights", "exercise", "workout", "fitness", "strength", "training", "weightlifting"]
     }
+  },
+  "map-pin-minus": {
+    "label": { "es": "Quitar parada", "en": "Remove stop", "pt": "Remover parada", "fr": "Retirer l’étape", "de": "Stopp entfernen", "it": "Rimuovi tappa", "ja": "経由地を削除", "zh": "删除途经点", "ko": "경유지 삭제", "ar": "إزالة محطة التوقف" },
+    "keywords": {
+      "es": ["eliminar lugar guardado", "borrar punto", "quitar destino", "menos paradas", "editar ruta", "descartar lugar", "quitar waypoint"],
+      "en": ["delete saved place", "remove point", "remove destination", "fewer stops", "edit route", "discard place", "remove waypoint"]
+    }
+  },
+  "map-pin-edit": {
+    "label": { "es": "Editar ubicación", "en": "Edit location", "pt": "Editar local", "fr": "Modifier le lieu", "de": "Ort bearbeiten", "it": "Modifica luogo", "ja": "場所を編集", "zh": "编辑位置", "ko": "위치 편집", "ar": "تعديل الموقع" },
+    "keywords": {
+      "es": ["corregir dirección", "mover marcador", "ajustar punto", "cambiar dirección", "actualizar domicilio", "reubicar", "dirección de entrega"],
+      "en": ["correct address", "move pin", "adjust point", "change address", "fix position", "relocate", "delivery address"]
+    }
+  },
+  "map-pin-search": {
+    "label": { "es": "Buscar lugar", "en": "Find a place", "pt": "Buscar local", "fr": "Rechercher un lieu", "de": "Ort suchen", "it": "Cerca un luogo", "ja": "場所を検索", "zh": "搜索地点", "ko": "장소 검색", "ar": "البحث عن مكان" },
+    "keywords": {
+      "es": ["buscar cerca", "lugares cercanos", "buscar dirección", "encontrar sucursal", "cerca de mí", "localizador", "explorar la zona"],
+      "en": ["search nearby", "nearby places", "look up address", "find a store", "near me", "locator", "explore area"]
+    }
+  },
+  "map-pin-star": {
+    "label": { "es": "Lugar destacado", "en": "Featured place", "pt": "Local em destaque", "fr": "Lieu à la une", "de": "Empfohlener Ort", "it": "Luogo in evidenza", "ja": "おすすめスポット", "zh": "精选地点", "ko": "추천 장소", "ar": "مكان مميز" },
+    "keywords": {
+      "es": ["punto de interés", "favorito", "lugar recomendado", "calificación", "imperdible", "reseñas", "mejor valorado"],
+      "en": ["point of interest", "favorite", "recommended place", "rating", "must-see", "reviews", "top rated"]
+    }
+  },
+  "map-pin-alert": {
+    "label": { "es": "Problema con la ubicación", "en": "Location issue", "pt": "Problema no local", "fr": "Problème de localisation", "de": "Problem mit dem Standort", "it": "Problema di posizione", "ja": "位置情報の問題", "zh": "位置问题", "ko": "위치 문제", "ar": "مشكلة في الموقع" },
+    "keywords": {
+      "es": ["dirección incorrecta", "ubicación imprecisa", "reportar peligro", "dirección no encontrada", "aviso en el lugar", "verificar dirección", "error de gps"],
+      "en": ["wrong address", "inaccurate location", "report hazard", "address not found", "warning at place", "verify address", "gps error"]
+    }
+  },
+  "map-pin-clock": {
+    "label": { "es": "Historial de ubicaciones", "en": "Location history", "pt": "Histórico de localização", "fr": "Historique des positions", "de": "Standortverlauf", "it": "Cronologia delle posizioni", "ja": "位置情報の履歴", "zh": "位置记录", "ko": "위치 기록", "ar": "سجل المواقع" },
+    "keywords": {
+      "es": ["lugares recientes", "cronología", "hora de llegada", "tiempo estimado de llegada", "visitas anteriores", "dónde estuve", "eta"],
+      "en": ["recent places", "timeline", "arrival time", "eta", "past visits", "where i've been", "check-in time"]
+    }
+  },
+  "map-pin-lock": {
+    "label": { "es": "Ubicación privada", "en": "Private location", "pt": "Localização privada", "fr": "Position privée", "de": "Privater Standort", "it": "Posizione privata", "ja": "非公開の場所", "zh": "私密位置", "ko": "비공개 위치", "ar": "موقع خاص" },
+    "keywords": {
+      "es": ["privacidad de ubicación", "ubicación precisa", "permiso de ubicación", "ocultar ubicación", "dirección protegida", "no compartir", "seguridad"],
+      "en": ["location privacy", "precise location", "location permission", "hide location", "protected address", "don't share", "security"]
+    }
+  },
+  "map-pin-gear": {
+    "label": { "es": "Configuración de ubicación", "en": "Location settings", "pt": "Configurações de localização", "fr": "Paramètres de localisation", "de": "Standorteinstellungen", "it": "Impostazioni di localizzazione", "ja": "位置情報の設定", "zh": "位置设置", "ko": "위치 설정", "ar": "إعدادات الموقع" },
+    "keywords": {
+      "es": ["servicios de ubicación", "permisos de ubicación", "gps", "activar ubicación", "preferencias", "ajustes", "precisión"],
+      "en": ["location services", "location permissions", "gps", "turn on location", "preferences", "configure", "accuracy"]
+    }
+  },
+  "map-plus": {
+    "label": { "es": "Nuevo mapa", "en": "New map", "pt": "Novo mapa", "fr": "Nouvelle carte", "de": "Neue Karte", "it": "Nuova mappa", "ja": "新しい地図", "zh": "新建地图", "ko": "새 지도", "ar": "خريطة جديدة" },
+    "keywords": {
+      "es": ["crear mapa", "mapa personalizado", "agregar mapa", "proyecto de mapa", "mis mapas", "lista de lugares", "empezar"],
+      "en": ["create map", "custom map", "add map", "map project", "my maps", "place list", "start"]
+    }
+  },
+  "map-search": {
+    "label": { "es": "Buscar en el mapa", "en": "Search the map", "pt": "Pesquisar no mapa", "fr": "Rechercher sur la carte", "de": "Karte durchsuchen", "it": "Cerca nella mappa", "ja": "地図を検索", "zh": "在地图中搜索", "ko": "지도 검색", "ar": "البحث في الخريطة" },
+    "keywords": {
+      "es": ["buscar en esta zona", "explorar", "encontrar lugares", "lupa", "área visible", "qué hay cerca", "filtrar lugares"],
+      "en": ["search this area", "explore", "find places", "magnifier", "visible area", "what's nearby", "filter places"]
+    }
+  },
+  "map-edit": {
+    "label": { "es": "Editar mapa", "en": "Edit map", "pt": "Editar mapa", "fr": "Modifier la carte", "de": "Karte bearbeiten", "it": "Modifica mappa", "ja": "地図を編集", "zh": "编辑地图", "ko": "지도 편집", "ar": "تعديل الخريطة" },
+    "keywords": {
+      "es": ["sugerir un cambio", "reportar lugar faltante", "agregar calle", "corregir mapa", "mapa personalizado", "dibujar", "colaborar"],
+      "en": ["suggest an edit", "report missing place", "add a road", "fix map", "custom map", "draw", "contribute"]
+    }
+  },
+  "map-arrow-down": {
+    "label": { "es": "Descargar mapa", "en": "Download map", "pt": "Baixar mapa", "fr": "Télécharger la carte", "de": "Karte herunterladen", "it": "Scarica mappa", "ja": "地図をダウンロード", "zh": "下载地图", "ko": "지도 다운로드", "ar": "تنزيل الخريطة" },
+    "keywords": {
+      "es": ["mapa sin conexión", "offline", "sin internet", "guardar mapa", "sin señal", "viaje", "zona descargada"],
+      "en": ["offline map", "no internet", "save map", "no signal", "roaming", "travel", "downloaded area"]
+    }
+  },
+  "route-plus": {
+    "label": { "es": "Agregar parada", "en": "Add stop", "pt": "Adicionar parada", "fr": "Ajouter une étape", "de": "Stopp hinzufügen", "it": "Aggiungi tappa", "ja": "経由地を追加", "zh": "添加途经点", "ko": "경유지 추가", "ar": "إضافة محطة توقف" },
+    "keywords": {
+      "es": ["varias paradas", "planear viaje", "punto intermedio", "escala", "itinerario", "nuevo destino", "pasar por"],
+      "en": ["multiple stops", "plan a trip", "waypoint", "stopover", "itinerary", "new destination", "via"]
+    }
+  },
+  "route-alert": {
+    "label": { "es": "Incidente en la ruta", "en": "Incident on route", "pt": "Incidente na rota", "fr": "Incident sur le trajet", "de": "Störung auf der Route", "it": "Problema sul percorso", "ja": "ルート上の障害", "zh": "路线警示", "ko": "경로 경고", "ar": "تنبيه على المسار" },
+    "keywords": {
+      "es": ["cierre de vialidad", "accidente", "retraso", "tráfico", "obras", "bloqueo", "alerta vial"],
+      "en": ["road closure", "accident", "delay", "traffic", "roadwork", "blockage", "travel alert"]
+    }
+  },
+  "route-check": {
+    "label": { "es": "Ruta completada", "en": "Route completed", "pt": "Rota concluída", "fr": "Trajet terminé", "de": "Route abgeschlossen", "it": "Percorso completato", "ja": "ルート完了", "zh": "路线已完成", "ko": "경로 완료", "ar": "اكتمل المسار" },
+    "keywords": {
+      "es": ["viaje terminado", "llegada", "entrega completa", "carrera terminada", "trayecto realizado", "meta", "registro de actividad"],
+      "en": ["trip finished", "arrived", "delivery done", "run finished", "journey done", "finish line", "activity log"]
+    }
+  },
+  "route-clock": {
+    "label": { "es": "Tiempo de recorrido", "en": "Travel time", "pt": "Tempo de viagem", "fr": "Durée du trajet", "de": "Fahrtdauer", "it": "Tempo di percorrenza", "ja": "所要時間", "zh": "行程时间", "ko": "소요 시간", "ar": "مدة الرحلة" },
+    "keywords": {
+      "es": ["hora de salida", "programar viaje", "duración", "cuánto tarda", "horario", "tiempo estimado", "llegar a tiempo"],
+      "en": ["departure time", "schedule trip", "duration", "how long", "timetable", "estimated time", "leave at"]
+    }
+  },
+  "geofence": {
+    "label": { "es": "Geocerca", "en": "Geofence", "pt": "Cerca virtual", "fr": "Géorepérage", "de": "Geofence", "it": "Recinto virtuale", "ja": "ジオフェンス", "zh": "地理围栏", "ko": "지오펜스", "ar": "سياج جغرافي" },
+    "keywords": {
+      "es": ["perímetro virtual", "zona delimitada", "alerta de entrada", "alerta de salida", "rastreo de flotillas", "límite geográfico", "zona de vigilancia"],
+      "en": ["virtual boundary", "zone", "entry alert", "exit alert", "fleet tracking", "perimeter", "location trigger"]
+    }
+  },
+  "geofence-alert": {
+    "label": { "es": "Alerta de geocerca", "en": "Geofence alert", "pt": "Alerta de cerca virtual", "fr": "Alerte de géorepérage", "de": "Geofence-Warnung", "it": "Avviso di recinto virtuale", "ja": "ジオフェンスの警告", "zh": "地理围栏警报", "ko": "지오펜스 알림", "ar": "تنبيه السياج الجغرافي" },
+    "keywords": {
+      "es": ["salió de la zona", "entró a la zona", "rastreo de vehículos", "flotilla", "aviso de perímetro", "fuera de ruta", "control vehicular"],
+      "en": ["left the zone", "entered the zone", "vehicle tracking", "fleet", "perimeter breach", "out of bounds", "asset tracking"]
+    }
+  },
+  "geofence-plus": {
+    "label": { "es": "Crear geocerca", "en": "Create geofence", "pt": "Criar cerca virtual", "fr": "Créer un géorepérage", "de": "Geofence erstellen", "it": "Crea recinto virtuale", "ja": "ジオフェンスを作成", "zh": "创建地理围栏", "ko": "지오펜스 만들기", "ar": "إنشاء سياج جغرافي" },
+    "keywords": {
+      "es": ["nueva zona", "delimitar área", "dibujar perímetro", "zona de vigilancia", "configurar alerta", "agregar zona", "radio"],
+      "en": ["new zone", "define area", "draw perimeter", "watch zone", "set up alert", "add zone", "radius"]
+    }
+  },
+  "map-pinned": {
+    "label": { "es": "Ver en el mapa", "en": "Show on map", "pt": "Ver no mapa", "fr": "Voir sur la carte", "de": "Auf Karte anzeigen", "it": "Mostra sulla mappa", "ja": "地図で表示", "zh": "在地图上显示", "ko": "지도에서 보기", "ar": "عرض على الخريطة" },
+    "keywords": {
+      "es": ["lugar guardado", "detalles de ubicación", "ubicación marcada", "marcador", "abrir mapa", "dirección", "localizar"],
+      "en": ["saved place", "location details", "pinned location", "marker", "open map", "address", "locate"]
+    }
+  },
+  "map-layers": {
+    "label": { "es": "Capas del mapa", "en": "Map layers", "pt": "Camadas do mapa", "fr": "Calques de la carte", "de": "Kartenebenen", "it": "Livelli della mappa", "ja": "地図のレイヤー", "zh": "地图图层", "ko": "지도 레이어", "ar": "طبقات الخريطة" },
+    "keywords": {
+      "es": ["tipo de mapa", "mapa base", "vista satelital", "relieve", "estilo de mapa", "cambiar vista", "tráfico"],
+      "en": ["map type", "base map", "satellite", "terrain", "map style", "switch view", "traffic"]
+    }
+  },
+  "map-3d": {
+    "label": { "es": "Mapa en 3D", "en": "3D map", "pt": "Mapa 3D", "fr": "Carte 3D", "de": "3D-Karte", "it": "Mappa 3D", "ja": "3Dマップ", "zh": "3D地图", "ko": "3D 지도", "ar": "خريطة ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["perspectiva", "inclinar mapa", "edificios", "relieve", "vista tridimensional", "modelo de la ciudad", "rotar vista"],
+      "en": ["perspective", "tilt map", "buildings", "terrain", "three-dimensional", "city model", "rotate view"]
+    }
+  },
+  "street-view": {
+    "label": { "es": "Vista de calle", "en": "Street-level view", "pt": "Vista da rua", "fr": "Vue de la rue", "de": "Straßenansicht", "it": "Vista stradale", "ja": "ストリートレベル表示", "zh": "街景", "ko": "거리 뷰", "ar": "عرض مستوى الشارع" },
+    "keywords": {
+      "es": ["360 grados", "imágenes de la calle", "a pie de calle", "recorrido virtual", "fachadas", "panorámica", "explorar la zona"],
+      "en": ["360 degrees", "street imagery", "ground level", "virtual tour", "storefronts", "panorama", "look around"]
+    }
+  },
+  "u-turn-left": {
+    "label": { "es": "Vuelta en U a la izquierda", "en": "U-turn left", "pt": "Retorno à esquerda", "fr": "Demi-tour par la gauche", "de": "Links wenden", "it": "Inversione a U a sinistra", "ja": "左Uターン", "zh": "向左掉头", "ko": "좌측 유턴", "ar": "دوران للخلف يسارًا" },
+    "keywords": {
+      "es": ["retorno", "dar la vuelta", "regresar", "cambiar de sentido", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["turn around", "go back", "reverse direction", "turn-by-turn", "driving instruction", "directions", "navigation"]
+    }
+  },
+  "u-turn-right": {
+    "label": { "es": "Vuelta en U a la derecha", "en": "U-turn right", "pt": "Retorno à direita", "fr": "Demi-tour par la droite", "de": "Rechts wenden", "it": "Inversione a U a destra", "ja": "右Uターン", "zh": "向右掉头", "ko": "우측 유턴", "ar": "دوران للخلف يمينًا" },
+    "keywords": {
+      "es": ["retorno", "dar la vuelta", "regresar", "cambiar de sentido", "navegación paso a paso", "instrucción de manejo", "manejo por la izquierda"],
+      "en": ["turn around", "go back", "reverse direction", "turn-by-turn", "driving instruction", "directions", "left-hand traffic"]
+    }
+  },
+  "turn-slight-left": {
+    "label": { "es": "Vuelta ligera a la izquierda", "en": "Slight left", "pt": "Curva suave à esquerda", "fr": "Légèrement à gauche", "de": "Leicht links", "it": "Leggermente a sinistra", "ja": "やや左", "zh": "稍向左转", "ko": "약간 왼쪽", "ar": "انعطاف خفيف لليسار" },
+    "keywords": {
+      "es": ["girar un poco", "curva suave", "desviarse", "navegación paso a paso", "instrucción de manejo", "indicaciones", "45 grados"],
+      "en": ["bear left", "gentle curve", "veer", "turn-by-turn", "driving instruction", "directions", "45 degrees"]
+    }
+  },
+  "turn-slight-right": {
+    "label": { "es": "Vuelta ligera a la derecha", "en": "Slight right", "pt": "Curva suave à direita", "fr": "Légèrement à droite", "de": "Leicht rechts", "it": "Leggermente a destra", "ja": "やや右", "zh": "稍向右转", "ko": "약간 오른쪽", "ar": "انعطاف خفيف لليمين" },
+    "keywords": {
+      "es": ["girar un poco", "curva suave", "desviarse", "navegación paso a paso", "instrucción de manejo", "indicaciones", "45 grados"],
+      "en": ["bear right", "gentle curve", "veer", "turn-by-turn", "driving instruction", "directions", "45 degrees"]
+    }
+  },
+  "turn-sharp-left": {
+    "label": { "es": "Vuelta cerrada a la izquierda", "en": "Sharp left", "pt": "Curva acentuada à esquerda", "fr": "Virage serré à gauche", "de": "Scharf links", "it": "Svolta stretta a sinistra", "ja": "鋭角に左折", "zh": "向左急转", "ko": "급좌회전", "ar": "انعطاف حاد لليسار" },
+    "keywords": {
+      "es": ["giro pronunciado", "ángulo agudo", "doblar", "esquina", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["hard left", "acute turn", "hairpin", "corner", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "turn-sharp-right": {
+    "label": { "es": "Vuelta cerrada a la derecha", "en": "Sharp right", "pt": "Curva acentuada à direita", "fr": "Virage serré à droite", "de": "Scharf rechts", "it": "Svolta stretta a destra", "ja": "鋭角に右折", "zh": "向右急转", "ko": "급우회전", "ar": "انعطاف حاد لليمين" },
+    "keywords": {
+      "es": ["giro pronunciado", "ángulo agudo", "doblar", "esquina", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["hard right", "acute turn", "hairpin", "corner", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "keep-left": {
+    "label": { "es": "Mantenerse a la izquierda", "en": "Keep left", "pt": "Mantenha-se à esquerda", "fr": "Restez à gauche", "de": "Links halten", "it": "Mantieni la sinistra", "ja": "分岐で左へ", "zh": "靠左行驶", "ko": "갈림길에서 왼쪽", "ar": "البقاء على اليسار" },
+    "keywords": {
+      "es": ["carril izquierdo", "bifurcación", "ramal", "entronque", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["left lane", "fork", "branch", "split", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "keep-right": {
+    "label": { "es": "Mantenerse a la derecha", "en": "Keep right", "pt": "Mantenha-se à direita", "fr": "Restez à droite", "de": "Rechts halten", "it": "Mantieni la destra", "ja": "分岐で右へ", "zh": "靠右行驶", "ko": "갈림길에서 오른쪽", "ar": "البقاء على اليمين" },
+    "keywords": {
+      "es": ["carril derecho", "bifurcación", "ramal", "entronque", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["right lane", "fork", "branch", "split", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "ramp-left": {
+    "label": { "es": "Rampa a la izquierda", "en": "Ramp left", "pt": "Rampa à esquerda", "fr": "Bretelle à gauche", "de": "Ausfahrt links", "it": "Rampa a sinistra", "ja": "左側ランプ", "zh": "左侧匝道", "ko": "왼쪽 진출로", "ar": "منحدر الخروج الأيسر" },
+    "keywords": {
+      "es": ["salida", "salida de autopista", "tomar la lateral", "desincorporarse", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["exit", "highway exit", "off-ramp", "slip road", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "ramp-right": {
+    "label": { "es": "Rampa a la derecha", "en": "Ramp right", "pt": "Rampa à direita", "fr": "Bretelle à droite", "de": "Ausfahrt rechts", "it": "Rampa a destra", "ja": "右側ランプ", "zh": "右侧匝道", "ko": "오른쪽 진출로", "ar": "منحدر الخروج الأيمن" },
+    "keywords": {
+      "es": ["salida", "salida de autopista", "tomar la lateral", "desincorporarse", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["exit", "highway exit", "off-ramp", "slip road", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "roundabout-left": {
+    "label": { "es": "Glorieta, salida a la izquierda", "en": "Roundabout, left exit", "pt": "Rotatória, saída à esquerda", "fr": "Rond-point, sortie à gauche", "de": "Kreisverkehr, Ausfahrt links", "it": "Rotonda, uscita a sinistra", "ja": "環状交差点で左へ", "zh": "环岛左侧出口", "ko": "회전교차로 좌측 출구", "ar": "الدوّار، المخرج الأيسر" },
+    "keywords": {
+      "es": ["rotonda", "redondel", "tomar la salida", "tercera salida", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["traffic circle", "rotary", "take the exit", "third exit", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "roundabout-right": {
+    "label": { "es": "Glorieta, salida a la derecha", "en": "Roundabout, right exit", "pt": "Rotatória, saída à direita", "fr": "Rond-point, sortie à droite", "de": "Kreisverkehr, Ausfahrt rechts", "it": "Rotonda, uscita a destra", "ja": "環状交差点で右へ", "zh": "环岛右侧出口", "ko": "회전교차로 우측 출구", "ar": "الدوّار، المخرج الأيمن" },
+    "keywords": {
+      "es": ["rotonda", "redondel", "tomar la salida", "primera salida", "navegación paso a paso", "instrucción de manejo", "indicaciones"],
+      "en": ["traffic circle", "rotary", "take the exit", "first exit", "turn-by-turn", "driving instruction", "directions"]
+    }
+  },
+  "map-legend": {
+    "label": { "es": "Leyenda del mapa", "en": "Map legend", "pt": "Legenda do mapa", "fr": "Légende de la carte", "de": "Kartenlegende", "it": "Legenda della mappa", "ja": "凡例", "zh": "图例", "ko": "범례", "ar": "مفتاح الخريطة" },
+    "keywords": {
+      "es": ["simbología", "clave de colores", "referencias", "símbolos", "guía del mapa", "convenciones", "explicación"],
+      "en": ["key", "symbols", "color key", "map key", "reference", "what it means", "guide"]
+    }
+  },
+  "indoor-map": {
+    "label": { "es": "Mapa de interiores", "en": "Indoor map", "pt": "Mapa interno", "fr": "Plan intérieur", "de": "Gebäudeplan", "it": "Mappa degli interni", "ja": "屋内マップ", "zh": "室内地图", "ko": "실내 지도", "ar": "خريطة داخلية" },
+    "keywords": {
+      "es": ["plano del lugar", "directorio", "plaza comercial", "aeropuerto", "campus", "orientarse adentro", "oficinas", "recinto"],
+      "en": ["venue map", "floor plan", "directory", "mall", "airport", "campus", "wayfinding", "office"]
+    }
+  },
+  "floor-selector": {
+    "label": { "es": "Selector de piso", "en": "Floor selector", "pt": "Seletor de andar", "fr": "Sélecteur d’étage", "de": "Etagenauswahl", "it": "Selettore di piano", "ja": "フロア切り替え", "zh": "楼层切换", "ko": "층 선택", "ar": "اختيار الطابق" },
+    "keywords": {
+      "es": ["nivel", "planta", "cambiar de nivel", "mapa de interiores", "edificio", "sótano", "planta baja"],
+      "en": ["level", "story", "switch floors", "indoor map", "building", "basement", "ground floor"]
+    }
+  },
+  "globe-stand": {
+    "label": { "es": "Globo terráqueo", "en": "Desk globe", "pt": "Globo terrestre", "fr": "Globe terrestre", "de": "Globus", "it": "Mappamondo", "ja": "地球儀", "zh": "地球仪", "ko": "지구본", "ar": "مجسم الكرة الأرضية" },
+    "keywords": {
+      "es": ["geografía", "mundo", "viajes internacionales", "países", "escuela", "configuración internacional", "planeta"],
+      "en": ["geography", "world", "world travel", "countries", "school", "international settings", "earth"]
+    }
+  },
+  "compass-rose": {
+    "label": { "es": "Rosa de los vientos", "en": "Compass rose", "pt": "Rosa dos ventos", "fr": "Rose des vents", "de": "Windrose", "it": "Rosa dei venti", "ja": "方位記号", "zh": "罗盘玫瑰", "ko": "방위표", "ar": "وردة البوصلة" },
+    "keywords": {
+      "es": ["puntos cardinales", "norte", "orientación del mapa", "brújula", "explorar", "direcciones", "cartografía"],
+      "en": ["cardinal directions", "north", "map orientation", "compass", "explore", "wind rose", "cartography"]
+    }
+  },
+  "scale-bar": {
+    "label": { "es": "Escala del mapa", "en": "Map scale", "pt": "Escala do mapa", "fr": "Échelle de la carte", "de": "Maßstabsleiste", "it": "Scala della mappa", "ja": "縮尺", "zh": "比例尺", "ko": "축척", "ar": "مقياس الرسم" },
+    "keywords": {
+      "es": ["regla gráfica", "unidades", "kilómetros", "millas", "distancia", "mapa impreso", "proporción"],
+      "en": ["units", "kilometers", "miles", "distance", "printed map", "ratio", "ruler"]
+    }
+  },
+  "coordinates": {
+    "label": { "es": "Coordenadas", "en": "Coordinates", "pt": "Coordenadas", "fr": "Coordonnées", "de": "Koordinaten", "it": "Coordinate", "ja": "座標", "zh": "坐标", "ko": "좌표", "ar": "إحداثيات" },
+    "keywords": {
+      "es": ["latitud y longitud", "gps", "copiar ubicación", "posición exacta", "geolocalización", "lat long", "georreferencia"],
+      "en": ["latitude and longitude", "gps", "copy location", "exact position", "geolocation", "lat long", "geotag"]
+    }
+  },
+  "latitude": {
+    "label": { "es": "Latitud", "en": "Latitude", "pt": "Latitude", "fr": "Latitude", "de": "Breitengrad", "it": "Latitudine", "ja": "緯度", "zh": "纬度", "ko": "위도", "ar": "خط العرض" },
+    "keywords": {
+      "es": ["paralelos", "coordenadas", "ecuador", "norte y sur", "geografía", "trópicos", "grados"],
+      "en": ["parallels", "coordinates", "equator", "north and south", "geography", "tropics", "degrees"]
+    }
+  },
+  "longitude": {
+    "label": { "es": "Longitud", "en": "Longitude", "pt": "Longitude", "fr": "Longitude", "de": "Längengrad", "it": "Longitudine", "ja": "経度", "zh": "经度", "ko": "경도", "ar": "خط الطول" },
+    "keywords": {
+      "es": ["meridianos", "coordenadas", "meridiano de Greenwich", "este y oeste", "zona horaria", "geografía", "grados"],
+      "en": ["meridians", "coordinates", "prime meridian", "east and west", "time zone", "geography", "degrees"]
+    }
+  },
+  "measure-distance": {
+    "label": { "es": "Medir distancia", "en": "Measure distance", "pt": "Medir distância", "fr": "Mesurer la distance", "de": "Entfernung messen", "it": "Misura distanza", "ja": "距離を測定", "zh": "测量距离", "ko": "거리 측정", "ar": "قياس المسافة" },
+    "keywords": {
+      "es": ["regla", "kilómetros", "entre dos puntos", "trazar línea", "qué tan lejos", "recorrido", "herramienta del mapa"],
+      "en": ["ruler", "kilometers", "between two points", "draw a line", "how far", "length", "map tool"]
+    }
+  },
+  "elevation-profile": {
+    "label": { "es": "Perfil de elevación", "en": "Elevation profile", "pt": "Perfil de elevação", "fr": "Profil altimétrique", "de": "Höhenprofil", "it": "Profilo altimetrico", "ja": "標高プロファイル", "zh": "海拔剖面", "ko": "고도 프로필", "ar": "مخطط الارتفاع" },
+    "keywords": {
+      "es": ["desnivel", "subidas y bajadas", "ascenso", "senderismo", "ciclismo", "altimetría", "pendiente"],
+      "en": ["elevation gain", "climbs and descents", "ascent", "hiking", "cycling", "grade", "terrain chart"]
+    }
+  },
+  "altitude": {
+    "label": { "es": "Altitud", "en": "Altitude", "pt": "Altitude", "fr": "Altitude", "de": "Meereshöhe", "it": "Altitudine", "ja": "高度", "zh": "海拔高度", "ko": "해발 고도", "ar": "الارتفاع عن سطح البحر" },
+    "keywords": {
+      "es": ["altura", "nivel del mar", "altímetro", "msnm", "cumbre", "elevación", "montaña"],
+      "en": ["height", "sea level", "altimeter", "elevation", "summit", "feet", "meters"]
+    }
+  },
+  "contour-lines": {
+    "label": { "es": "Curvas de nivel", "en": "Contour lines", "pt": "Curvas de nível", "fr": "Courbes de niveau", "de": "Höhenlinien", "it": "Curve di livello", "ja": "等高線", "zh": "等高线", "ko": "등고선", "ar": "خطوط الكنتور" },
+    "keywords": {
+      "es": ["mapa topográfico", "relieve", "terreno", "topografía", "altimetría", "vista de terreno", "cartografía"],
+      "en": ["topographic map", "topo", "terrain", "relief", "topography", "terrain view", "cartography"]
+    }
+  },
+  "satellite-view": {
+    "label": { "es": "Vista satelital", "en": "Satellite view", "pt": "Visualização de satélite", "fr": "Vue satellite", "de": "Satellitenansicht", "it": "Vista satellitare", "ja": "航空写真", "zh": "卫星视图", "ko": "위성 지도", "ar": "عرض القمر الصناعي" },
+    "keywords": {
+      "es": ["foto aérea", "vista aérea", "desde arriba", "cambiar tipo de mapa", "ortofoto", "mapa híbrido", "imágenes reales"],
+      "en": ["aerial photo", "aerial view", "imagery", "from above", "switch map type", "orthophoto", "hybrid map"]
+    }
+  },
+  "location-heading": {
+    "label": { "es": "Ubicación y orientación", "en": "Location and heading", "pt": "Localização e direção", "fr": "Position et orientation", "de": "Standort und Blickrichtung", "it": "Posizione e direzione", "ja": "現在地と向き", "zh": "位置与朝向", "ko": "위치와 방향", "ar": "الموقع والاتجاه" },
+    "keywords": {
+      "es": ["modo brújula", "hacia dónde miro", "dirección de vista", "realidad aumentada", "rumbo", "orientarse", "mi ubicación"],
+      "en": ["compass mode", "facing direction", "which way am i facing", "ar wayfinding", "bearing", "orient", "my location"]
+    }
+  },
+  "map-pin-live": {
+    "label": { "es": "Ubicación en tiempo real", "en": "Live location", "pt": "Localização em tempo real", "fr": "Position en direct", "de": "Live-Standort", "it": "Posizione in tempo reale", "ja": "リアルタイムの位置情報", "zh": "实时位置", "ko": "실시간 위치", "ar": "الموقع المباشر" },
+    "keywords": {
+      "es": ["compartir ubicación", "rastreo", "en vivo", "seguimiento", "localizar dispositivo", "en camino", "dónde va"],
+      "en": ["share location", "tracking", "real time", "follow", "find device", "on the way", "moving"]
+    }
+  },
+  "waypoint": {
+    "label": { "es": "Punto de paso", "en": "Waypoint", "pt": "Ponto de passagem", "fr": "Point de cheminement", "de": "Wegpunkt", "it": "Punto di passaggio", "ja": "ウェイポイント", "zh": "航点", "ko": "경유지", "ar": "نقطة طريق" },
+    "keywords": {
+      "es": ["waypoint", "gps", "punto intermedio", "parada", "punto guardado", "track", "marca de ruta"],
+      "en": ["gps", "intermediate point", "stop", "saved point", "track point", "via point", "route marker"]
+    }
+  },
+  "theodolite": {
+    "label": { "es": "Teodolito", "en": "Theodolite", "pt": "Teodolito", "fr": "Théodolite", "de": "Theodolit", "it": "Teodolite", "ja": "セオドライト", "zh": "经纬仪", "ko": "경위의", "ar": "مزواة" },
+    "keywords": {
+      "es": ["topografía", "estación total", "agrimensura", "levantamiento", "medición de terreno", "tripié", "cartografía"],
+      "en": ["surveying", "total station", "land survey", "site measurement", "tripod", "mapping", "transit"]
+    }
+  },
+  "route-alternate": {
+    "label": { "es": "Ruta alternativa", "en": "Alternate route", "pt": "Rota alternativa", "fr": "Itinéraire bis", "de": "Alternativroute", "it": "Percorso alternativo", "ja": "別のルート", "zh": "备选路线", "ko": "대체 경로", "ar": "مسار بديل" },
+    "keywords": {
+      "es": ["otro camino", "desvío", "recalcular", "opciones de ruta", "evitar tráfico", "variante", "cambiar ruta"],
+      "en": ["other way", "detour", "reroute", "route options", "avoid traffic", "bypass", "change route"]
+    }
+  },
+  "route-loop": {
+    "label": { "es": "Ruta circular", "en": "Loop route", "pt": "Rota circular", "fr": "Boucle", "de": "Rundweg", "it": "Percorso ad anello", "ja": "周回ルート", "zh": "环形路线", "ko": "순환 코스", "ar": "مسار دائري" },
+    "keywords": {
+      "es": ["circuito", "vuelta completa", "regreso al inicio", "senderismo", "correr", "recorrido redondo", "paseo"],
+      "en": ["circuit", "round trip", "back to start", "hiking", "running", "lap", "ring route"]
+    }
+  },
+  "route-out-and-back": {
+    "label": { "es": "Ruta de ida y vuelta", "en": "Out-and-back route", "pt": "Rota de ida e volta", "fr": "Aller-retour", "de": "Hin- und Rückweg", "it": "Percorso andata e ritorno", "ja": "往復ルート", "zh": "往返路线", "ko": "왕복 코스", "ar": "مسار ذهاب وعودة" },
+    "keywords": {
+      "es": ["mismo camino de regreso", "sendero", "correr", "regresar por donde viniste", "punto de retorno", "trayecto lineal", "caminata"],
+      "en": ["same way back", "trail", "running", "turnaround point", "linear route", "there and back", "hike"]
+    }
+  },
+  "post-office": {
+    "label": { "es": "Oficina de correos", "en": "Post office", "pt": "Agência dos Correios", "fr": "Bureau de poste", "de": "Postfiliale", "it": "Ufficio postale", "ja": "郵便局", "zh": "邮局", "ko": "우체국", "ar": "مكتب البريد" },
+    "keywords": {
+      "es": ["correo postal", "enviar paquete", "recoger paquete", "punto de envío", "cartas", "apartado postal", "paquetería"],
+      "en": ["mail", "send a package", "parcel pickup", "shipping point", "letters", "po box", "postal service"]
+    }
+  },
+  "police-station": {
+    "label": { "es": "Estación de policía", "en": "Police station", "pt": "Delegacia", "fr": "Commissariat", "de": "Polizeiwache", "it": "Commissariato", "ja": "警察署", "zh": "警察局", "ko": "경찰서", "ar": "مركز شرطة" },
+    "keywords": {
+      "es": ["denunciar un delito", "ministerio público", "comandancia", "seguridad pública", "emergencias", "patrulla", "agentes"],
+      "en": ["report a crime", "police department", "precinct", "public safety", "emergency", "patrol", "law enforcement"]
+    }
+  },
+  "fire-station": {
+    "label": { "es": "Estación de bomberos", "en": "Fire station", "pt": "Quartel de bombeiros", "fr": "Caserne de pompiers", "de": "Feuerwache", "it": "Caserma dei vigili del fuoco", "ja": "消防署", "zh": "消防站", "ko": "소방서", "ar": "مركز الإطفاء" },
+    "keywords": {
+      "es": ["incendio", "emergencias", "protección civil", "rescate", "autobomba", "911", "combatir incendios"],
+      "en": ["firefighters", "fire department", "emergency services", "fire truck", "rescue", "911", "firehouse"]
+    }
+  },
+  "library": {
+    "label": { "es": "Biblioteca pública", "en": "Public library", "pt": "Biblioteca pública", "fr": "Bibliothèque municipale", "de": "Stadtbibliothek", "it": "Biblioteca pubblica", "ja": "図書館", "zh": "图书馆", "ko": "도서관", "ar": "مكتبة عامة" },
+    "keywords": {
+      "es": ["libros", "préstamo de libros", "sala de lectura", "lugar para estudiar", "servicios culturales", "campus", "hemeroteca"],
+      "en": ["books", "book lending", "reading room", "study space", "civic services", "campus", "archive"]
+    }
+  },
+  "museum": {
+    "label": { "es": "Museo", "en": "Museum", "pt": "Museu", "fr": "Musée", "de": "Museum", "it": "Museo", "ja": "博物館", "zh": "博物馆", "ko": "박물관", "ar": "متحف" },
+    "keywords": {
+      "es": ["galería", "exposición", "cultura", "arte", "recinto cultural", "historia", "visita guiada"],
+      "en": ["gallery", "exhibition", "culture", "art", "cultural venue", "history", "guided tour"]
+    }
+  },
+  "place-of-worship": {
+    "label": { "es": "Lugar de culto", "en": "Place of worship", "pt": "Local de culto", "fr": "Lieu de culte", "de": "Gotteshaus", "it": "Luogo di culto", "ja": "礼拝所", "zh": "宗教场所", "ko": "예배 장소", "ar": "دار عبادة" },
+    "keywords": {
+      "es": ["templo", "iglesia", "mezquita", "sinagoga", "religión", "oración", "comunidad de fe", "espiritualidad"],
+      "en": ["temple", "church", "mosque", "synagogue", "religion", "prayer", "faith community", "spirituality"]
+    }
+  },
+  "community-center": {
+    "label": { "es": "Centro comunitario", "en": "Community center", "pt": "Centro comunitário", "fr": "Centre communautaire", "de": "Gemeindezentrum", "it": "Centro civico", "ja": "公民館", "zh": "社区中心", "ko": "주민센터", "ar": "مركز مجتمعي" },
+    "keywords": {
+      "es": ["salón de usos múltiples", "casa de la cultura", "servicios locales", "eventos vecinales", "colonia", "centro cívico", "talleres"],
+      "en": ["civic center", "neighborhood hall", "local services", "community events", "town hall", "workshops", "rec center"]
+    }
+  },
+  "skyscraper": {
+    "label": { "es": "Rascacielos", "en": "Skyscraper", "pt": "Arranha-céu", "fr": "Gratte-ciel", "de": "Wolkenkratzer", "it": "Grattacielo", "ja": "高層ビル", "zh": "摩天大楼", "ko": "고층 빌딩", "ar": "ناطحة سحاب" },
+    "keywords": {
+      "es": ["edificio alto", "torre de oficinas", "centro de la ciudad", "corporativo", "departamentos de lujo", "gran ciudad", "zona financiera"],
+      "en": ["high-rise", "office tower", "downtown", "corporate", "luxury apartments", "big city", "financial district"]
+    }
+  },
+  "castle": {
+    "label": { "es": "Castillo", "en": "Castle", "pt": "Castelo", "fr": "Château fort", "de": "Burg", "it": "Castello", "ja": "城", "zh": "城堡", "ko": "성", "ar": "قلعة" },
+    "keywords": {
+      "es": ["fortaleza", "sitio histórico", "patrimonio", "reino", "cuento de hadas", "turismo histórico", "medieval"],
+      "en": ["fortress", "historic site", "heritage", "kingdom", "fairy tale", "heritage tourism", "medieval"]
+    }
+  },
+  "observation-tower": {
+    "label": { "es": "Torre mirador", "en": "Observation tower", "pt": "Torre de observação", "fr": "Tour d’observation", "de": "Aussichtsturm", "it": "Torre panoramica", "ja": "展望タワー", "zh": "观光塔", "ko": "전망탑", "ar": "برج المشاهدة" },
+    "keywords": {
+      "es": ["torre de televisión", "vista panorámica", "atracción turística", "observatorio", "vista de la ciudad", "plataforma de observación", "silueta urbana"],
+      "en": ["tv tower", "panoramic view", "tourist attraction", "viewing deck", "city lookout", "skyline", "sightseeing"]
+    }
+  },
+  "lifeguard-tower": {
+    "label": { "es": "Torre de salvavidas", "en": "Lifeguard tower", "pt": "Posto de salva-vidas", "fr": "Poste de secours", "de": "Rettungsschwimmerturm", "it": "Torretta del bagnino", "ja": "ライフガード監視台", "zh": "救生员瞭望台", "ko": "인명구조 감시탑", "ar": "برج المنقذين" },
+    "keywords": {
+      "es": ["playa vigilada", "seguridad en la playa", "rescate acuático", "guardavidas", "bandera de playa", "costa", "nado seguro"],
+      "en": ["lifeguard stand", "supervised beach", "beach safety", "water rescue", "coastal map", "safe swimming", "beach patrol"]
+    }
+  },
+  "bridge": {
+    "label": { "es": "Puente", "en": "Bridge", "pt": "Ponte", "fr": "Pont", "de": "Brücke", "it": "Ponte", "ja": "橋", "zh": "桥", "ko": "다리", "ar": "جسر" },
+    "keywords": {
+      "es": ["cruce de río", "cierre de puente", "paso elevado", "conexión", "unir dos zonas", "viaducto", "cruzar"],
+      "en": ["river crossing", "bridge closure", "overpass", "connection", "link two areas", "viaduct", "cross"]
+    }
+  },
+  "bridge-suspension": {
+    "label": { "es": "Puente colgante", "en": "Suspension bridge", "pt": "Ponte pênsil", "fr": "Pont suspendu", "de": "Hängebrücke", "it": "Ponte sospeso", "ja": "吊り橋", "zh": "悬索桥", "ko": "현수교", "ar": "جسر معلق" },
+    "keywords": {
+      "es": ["puente grande", "bahía", "ciudad costera", "cables", "estrecho", "gran cruce", "ingeniería"],
+      "en": ["large bridge", "bay", "coastal city", "cables", "strait", "major crossing", "engineering"]
+    }
+  },
+  "tunnel": {
+    "label": { "es": "Túnel", "en": "Tunnel", "pt": "Túnel", "fr": "Tunnel", "de": "Tunnel", "it": "Galleria", "ja": "トンネル", "zh": "隧道", "ko": "터널", "ar": "نفق" },
+    "keywords": {
+      "es": ["paso subterráneo", "cruce de montaña", "cierre de vialidad", "paso a desnivel", "vía férrea", "carretera", "subterráneo"],
+      "en": ["underpass", "mountain crossing", "road closure", "underground passage", "railway", "highway", "subway"]
+    }
+  },
+  "monument": {
+    "label": { "es": "Monumento", "en": "Monument", "pt": "Monumento", "fr": "Monument", "de": "Denkmal", "it": "Monumento", "ja": "記念碑", "zh": "纪念碑", "ko": "기념비", "ar": "نصب تذكاري" },
+    "keywords": {
+      "es": ["memorial", "sitio histórico", "conmemoración", "obelisco", "punto de interés", "homenaje", "lugar emblemático"],
+      "en": ["memorial", "historic site", "commemoration", "obelisk", "point of interest", "tribute", "landmark"]
+    }
+  },
+  "statue": {
+    "label": { "es": "Estatua", "en": "Statue", "pt": "Estátua", "fr": "Statue", "de": "Statue", "it": "Statua", "ja": "銅像", "zh": "雕像", "ko": "동상", "ar": "تمثال" },
+    "keywords": {
+      "es": ["escultura", "arte público", "plaza", "punto de interés", "pedestal", "monumento", "figura de bronce"],
+      "en": ["sculpture", "public art", "square", "point of interest", "pedestal", "monument", "bronze figure"]
+    }
+  },
+  "fountain": {
+    "label": { "es": "Fuente", "en": "Fountain", "pt": "Chafariz", "fr": "Fontaine", "de": "Brunnen", "it": "Fontana", "ja": "噴水", "zh": "喷泉", "ko": "분수", "ar": "نافورة" },
+    "keywords": {
+      "es": ["plaza", "parque", "chorro de agua", "jardín", "espejo de agua", "punto de encuentro", "ornamental"],
+      "en": ["square", "park", "water jet", "garden", "water feature", "meeting point", "ornamental"]
+    }
+  },
+  "park": {
+    "label": { "es": "Parque", "en": "Park", "pt": "Parque", "fr": "Parc", "de": "Park", "it": "Parco", "ja": "公園", "zh": "公园", "ko": "공원", "ar": "حديقة عامة" },
+    "keywords": {
+      "es": ["área verde", "jardín", "naturaleza", "al aire libre", "picnic", "bosque urbano", "esparcimiento"],
+      "en": ["green space", "garden", "nature", "outdoors", "picnic", "urban forest", "recreation"]
+    }
+  },
+  "playground": {
+    "label": { "es": "Juegos infantiles", "en": "Playground", "pt": "Parquinho", "fr": "Aire de jeux", "de": "Spielplatz", "it": "Parco giochi", "ja": "遊び場", "zh": "儿童游乐场", "ko": "놀이터", "ar": "ملعب أطفال" },
+    "keywords": {
+      "es": ["área de juegos", "resbaladilla", "niños", "para familias", "parque", "amenidades", "kínder"],
+      "en": ["play area", "slide", "kids", "family-friendly", "park", "amenities", "jungle gym"]
+    }
+  },
+  "swing-set": {
+    "label": { "es": "Columpios", "en": "Swing set", "pt": "Balanço", "fr": "Balançoire", "de": "Schaukel", "it": "Altalena", "ja": "ブランコ", "zh": "秋千", "ko": "그네", "ar": "أرجوحة" },
+    "keywords": {
+      "es": ["área de juegos", "parque", "niños", "jugar al aire libre", "mecerse", "recreo", "patio"],
+      "en": ["playground", "park", "kids", "outdoor play", "swinging", "recess", "backyard"]
+    }
+  },
+  "seesaw": {
+    "label": { "es": "Subibaja", "en": "Seesaw", "pt": "Gangorra", "fr": "Bascule", "de": "Wippe", "it": "Altalena a bilico", "ja": "シーソー", "zh": "跷跷板", "ko": "시소", "ar": "أرجوحة التوازن" },
+    "keywords": {
+      "es": ["área de juegos", "parque", "equilibrio", "tomar turnos", "niños", "balancín", "jugar en pareja"],
+      "en": ["teeter-totter", "playground", "balance", "take turns", "kids", "park", "play together"]
+    }
+  },
+  "plaza": {
+    "label": { "es": "Plaza", "en": "Town square", "pt": "Praça", "fr": "Place", "de": "Stadtplatz", "it": "Piazza", "ja": "広場", "zh": "广场", "ko": "광장", "ar": "ساحة" },
+    "keywords": {
+      "es": ["zócalo", "explanada", "zona peatonal", "punto de encuentro", "kiosco", "centro", "jardín principal"],
+      "en": ["plaza", "esplanade", "pedestrian area", "meeting place", "main square", "town center", "piazza"]
+    }
+  },
+  "village": {
+    "label": { "es": "Pueblo", "en": "Village", "pt": "Vila", "fr": "Village", "de": "Dorf", "it": "Paese", "ja": "村", "zh": "村庄", "ko": "마을", "ar": "قرية" },
+    "keywords": {
+      "es": ["poblado", "comunidad rural", "localidad", "ranchería", "zona rural", "asentamiento", "campo"],
+      "en": ["small town", "hamlet", "rural community", "settlement", "countryside", "locality", "rural area"]
+    }
+  },
+  "ruins": {
+    "label": { "es": "Ruinas", "en": "Ruins", "pt": "Ruínas", "fr": "Ruines", "de": "Ruinen", "it": "Rovine", "ja": "遺跡", "zh": "遗迹", "ko": "유적", "ar": "أطلال" },
+    "keywords": {
+      "es": ["zona arqueológica", "sitio histórico", "patrimonio", "vestigios", "antigüedad", "excavación", "civilización antigua"],
+      "en": ["archaeological site", "historic site", "heritage", "remains", "antiquity", "excavation", "ancient civilization"]
+    }
+  },
+  "windmill": {
+    "label": { "es": "Molino de viento", "en": "Windmill", "pt": "Moinho de vento", "fr": "Moulin à vent", "de": "Windmühle", "it": "Mulino a vento", "ja": "風車", "zh": "风车", "ko": "풍차", "ar": "طاحونة هوائية" },
+    "keywords": {
+      "es": ["campo", "zona rural", "punto de interés", "paisaje rural", "harina", "aspas", "granja"],
+      "en": ["countryside", "rural landmark", "farm", "sails", "flour mill", "point of interest", "rural scenery"]
+    }
+  },
+  "watermill": {
+    "label": { "es": "Molino de agua", "en": "Watermill", "pt": "Moinho de água", "fr": "Moulin à eau", "de": "Wassermühle", "it": "Mulino ad acqua", "ja": "水車小屋", "zh": "水磨坊", "ko": "물레방아", "ar": "طاحونة مائية" },
+    "keywords": {
+      "es": ["rueda hidráulica", "río", "hacienda", "patrimonio", "zona rural", "arroyo", "molienda"],
+      "en": ["water wheel", "river", "heritage site", "rural", "stream", "grain mill", "historic mill"]
+    }
+  },
+  "cemetery": {
+    "label": { "es": "Cementerio", "en": "Cemetery", "pt": "Cemitério", "fr": "Cimetière", "de": "Friedhof", "it": "Cimitero", "ja": "墓地", "zh": "墓地", "ko": "묘지", "ar": "مقبرة" },
+    "keywords": {
+      "es": ["panteón", "camposanto", "tumba", "servicios funerarios", "memorial", "lápida", "Día de Muertos"],
+      "en": ["graveyard", "burial ground", "grave", "funeral services", "memorial", "tombstone", "remembrance"]
+    }
+  },
+  "shelter": {
+    "label": { "es": "Refugio", "en": "Shelter", "pt": "Abrigo", "fr": "Abri", "de": "Schutzhütte", "it": "Rifugio", "ja": "避難所", "zh": "避难所", "ko": "대피소", "ar": "ملجأ" },
+    "keywords": {
+      "es": ["albergue", "cabaña de montaña", "resguardo", "zona de descanso", "emergencia", "protección civil", "sendero"],
+      "en": ["refuge", "mountain hut", "rest stop", "evacuation center", "safe place", "trail", "cabin"]
+    }
+  },
+  "street-lamp": {
+    "label": { "es": "Poste de luz", "en": "Street light", "pt": "Poste de luz", "fr": "Lampadaire", "de": "Straßenlaterne", "it": "Lampione", "ja": "街灯", "zh": "路灯", "ko": "가로등", "ar": "عمود إنارة" },
+    "keywords": {
+      "es": ["alumbrado público", "luminaria", "farola", "reportar lámpara fundida", "calle", "seguridad de noche", "servicios municipales"],
+      "en": ["public lighting", "lamppost", "report outage", "street", "night safety", "city services", "lantern"]
+    }
+  },
+  "aqueduct": {
+    "label": { "es": "Acueducto", "en": "Aqueduct", "pt": "Aqueduto", "fr": "Aqueduc", "de": "Aquädukt", "it": "Acquedotto", "ja": "水道橋", "zh": "高架渠", "ko": "수도교", "ar": "قناطر مائية" },
+    "keywords": {
+      "es": ["arcos", "sitio histórico", "patrimonio", "infraestructura antigua", "canal de agua", "arquería", "obra colonial"],
+      "en": ["arches", "historic site", "heritage", "ancient infrastructure", "water channel", "viaduct", "old engineering"]
+    }
+  },
+  "footbridge": {
+    "label": { "es": "Puente peatonal", "en": "Footbridge", "pt": "Passarela", "fr": "Passerelle", "de": "Fußgängerbrücke", "it": "Passerella", "ja": "歩道橋", "zh": "人行天桥", "ko": "육교", "ar": "جسر مشاة" },
+    "keywords": {
+      "es": ["paso peatonal", "ruta a pie", "cruzar la calle", "cruce en el parque", "pasarela", "caminata", "sendero"],
+      "en": ["pedestrian bridge", "walkway", "walking route", "park crossing", "footpath", "overpass", "skywalk"]
+    }
+  },
+  "desert": {
+    "label": { "es": "Desierto", "en": "Desert", "pt": "Deserto", "fr": "Désert", "de": "Wüste", "it": "Deserto", "ja": "砂漠", "zh": "沙漠", "ko": "사막", "ar": "صحراء" },
+    "keywords": {
+      "es": ["dunas", "zona árida", "arena", "clima seco", "calor", "travesía", "sequía"],
+      "en": ["dunes", "arid region", "sand", "dry climate", "heat", "safari", "drought"]
+    }
+  },
+  "hills": {
+    "label": { "es": "Colinas", "en": "Hills", "pt": "Colinas", "fr": "Collines", "de": "Hügel", "it": "Colline", "ja": "丘陵", "zh": "丘陵", "ko": "언덕", "ar": "تلال" },
+    "keywords": {
+      "es": ["lomas", "cerros", "campo", "terreno ondulado", "zona rural", "pendientes", "paisaje"],
+      "en": ["countryside", "rolling terrain", "rural area", "slopes", "uphill", "knolls", "landscape"]
+    }
+  },
+  "island": {
+    "label": { "es": "Isla", "en": "Island", "pt": "Ilha", "fr": "Île", "de": "Insel", "it": "Isola", "ja": "島", "zh": "岛屿", "ko": "섬", "ar": "جزيرة" },
+    "keywords": {
+      "es": ["destino tropical", "playa", "lugar remoto", "mar", "vacaciones", "paraíso", "cayo"],
+      "en": ["tropical destination", "beach", "remote place", "ocean", "vacation", "paradise", "cay"]
+    }
+  },
+  "canyon": {
+    "label": { "es": "Cañón", "en": "Canyon", "pt": "Cânion", "fr": "Canyon", "de": "Schlucht", "it": "Canyon", "ja": "峡谷", "zh": "峡谷", "ko": "협곡", "ar": "أخدود" },
+    "keywords": {
+      "es": ["barranca", "garganta", "parque nacional", "senderismo", "precipicio", "desfiladero", "paisaje rocoso"],
+      "en": ["gorge", "ravine", "national park", "hiking", "chasm", "rock formations", "gulch"]
+    }
+  },
+  "lake": {
+    "label": { "es": "Lago", "en": "Lake", "pt": "Lago", "fr": "Lac", "de": "See", "it": "Lago", "ja": "湖", "zh": "湖泊", "ko": "호수", "ar": "بحيرة" },
+    "keywords": {
+      "es": ["laguna", "presa", "agua dulce", "a la orilla", "paseo en lancha", "pesca", "naturaleza"],
+      "en": ["pond", "reservoir", "fresh water", "shore", "boating", "fishing", "lagoon"]
+    }
+  },
+  "river": {
+    "label": { "es": "Río", "en": "River", "pt": "Rio", "fr": "Rivière", "de": "Fluss", "it": "Fiume", "ja": "川", "zh": "河流", "ko": "강", "ar": "نهر" },
+    "keywords": {
+      "es": ["arroyo", "corriente", "ribera", "cauce", "cruzar el agua", "afluente", "kayak"],
+      "en": ["stream", "creek", "waterway", "current", "tributary", "banks", "kayaking"]
+    }
+  },
+  "beach": {
+    "label": { "es": "Playa", "en": "Beach", "pt": "Praia", "fr": "Plage", "de": "Strand", "it": "Spiaggia", "ja": "ビーチ", "zh": "海滩", "ko": "해변", "ar": "شاطئ" },
+    "keywords": {
+      "es": ["costa", "mar", "arena", "litoral", "destino costero", "vacaciones", "orilla del mar"],
+      "en": ["coast", "seaside", "sand", "shoreline", "coastal destination", "vacation", "ocean"]
+    }
+  },
+  "forest": {
+    "label": { "es": "Bosque", "en": "Forest", "pt": "Floresta", "fr": "Forêt", "de": "Wald", "it": "Foresta", "ja": "森", "zh": "森林", "ko": "숲", "ar": "غابة" },
+    "keywords": {
+      "es": ["árboles", "naturaleza", "sendero", "área natural", "reserva", "selva", "arbolado"],
+      "en": ["woods", "woodland", "trees", "nature area", "trail", "reserve", "jungle"]
+    }
+  },
+  "cliff": {
+    "label": { "es": "Acantilado", "en": "Cliff", "pt": "Falésia", "fr": "Falaise", "de": "Klippe", "it": "Scogliera", "ja": "断崖", "zh": "悬崖", "ko": "절벽", "ar": "جرف" },
+    "keywords": {
+      "es": ["risco", "precipicio", "costa rocosa", "barranco", "peligro de caída", "despeñadero", "vista al mar"],
+      "en": ["bluff", "precipice", "rocky coast", "drop-off", "fall hazard", "escarpment", "ocean view"]
+    }
+  },
+  "waterfall": {
+    "label": { "es": "Cascada", "en": "Waterfall", "pt": "Cachoeira", "fr": "Cascade", "de": "Wasserfall", "it": "Cascata", "ja": "滝", "zh": "瀑布", "ko": "폭포", "ar": "شلال" },
+    "keywords": {
+      "es": ["caída de agua", "salto de agua", "atractivo natural", "senderismo", "río", "chorro", "ecoturismo"],
+      "en": ["falls", "cascade", "natural attraction", "hiking", "river", "rapids", "ecotourism"]
+    }
+  },
+  "cave": {
+    "label": { "es": "Cueva", "en": "Cave", "pt": "Caverna", "fr": "Grotte", "de": "Höhle", "it": "Grotta", "ja": "洞窟", "zh": "洞穴", "ko": "동굴", "ar": "كهف" },
+    "keywords": {
+      "es": ["caverna", "gruta", "subterráneo", "cenote", "espeleología", "estalactitas", "túnel natural"],
+      "en": ["cavern", "grotto", "underground", "caving", "spelunking", "stalactites", "sinkhole"]
+    }
+  },
+  "iceberg": {
+    "label": { "es": "Iceberg", "en": "Iceberg", "pt": "Iceberg", "fr": "Iceberg", "de": "Eisberg", "it": "Iceberg", "ja": "氷山", "zh": "冰山", "ko": "빙산", "ar": "جبل جليدي" },
+    "keywords": {
+      "es": ["témpano", "hielo flotante", "aguas polares", "lo que no se ve", "problema oculto", "Antártida", "Ártico"],
+      "en": ["floating ice", "ice floe", "polar waters", "below the surface", "hidden problem", "Antarctica", "Arctic"]
+    }
+  },
+  "wetland": {
+    "label": { "es": "Humedal", "en": "Wetland", "pt": "Zona úmida", "fr": "Zone humide", "de": "Feuchtgebiet", "it": "Zona umida", "ja": "湿地", "zh": "湿地", "ko": "습지", "ar": "أرض رطبة" },
+    "keywords": {
+      "es": ["pantano", "ciénaga", "marisma", "manglar", "área protegida", "aves", "reserva natural"],
+      "en": ["marsh", "swamp", "bog", "mangrove", "protected area", "birdwatching", "nature reserve"]
+    }
+  },
+  "hot-spring": {
+    "label": { "es": "Aguas termales", "en": "Hot spring", "pt": "Fonte termal", "fr": "Source chaude", "de": "Thermalquelle", "it": "Sorgente termale", "ja": "温泉", "zh": "温泉", "ko": "온천", "ar": "ينبوع حار" },
+    "keywords": {
+      "es": ["balneario", "termas", "spa natural", "pozas", "relajación", "manantial", "vapor"],
+      "en": ["thermal pool", "spa", "onsen", "geothermal", "bathing", "natural spring", "steam"]
+    }
+  },
+  "geyser": {
+    "label": { "es": "Géiser", "en": "Geyser", "pt": "Gêiser", "fr": "Geyser", "de": "Geysir", "it": "Geyser", "ja": "間欠泉", "zh": "间歇泉", "ko": "간헐천", "ar": "نافورة حارة" },
+    "keywords": {
+      "es": ["geotermia", "chorro de vapor", "parque nacional", "agua caliente", "erupción", "volcánico", "atractivo natural"],
+      "en": ["geothermal", "steam jet", "national park", "hot water", "eruption", "volcanic", "natural attraction"]
+    }
+  },
+  "natural-arch": {
+    "label": { "es": "Arco natural", "en": "Natural arch", "pt": "Arco natural", "fr": "Arche naturelle", "de": "Felsbogen", "it": "Arco naturale", "ja": "岩のアーチ", "zh": "天然石拱", "ko": "자연 아치", "ar": "قوس صخري طبيعي" },
+    "keywords": {
+      "es": ["formación rocosa", "puente de piedra", "parada panorámica", "paisaje", "erosión", "roca arenisca", "desierto"],
+      "en": ["rock formation", "stone bridge", "scenic stop", "landscape", "erosion", "sandstone", "desert"]
+    }
+  },
+  "viewpoint": {
+    "label": { "es": "Mirador", "en": "Viewpoint", "pt": "Mirante", "fr": "Point de vue", "de": "Aussichtspunkt", "it": "Belvedere", "ja": "展望台", "zh": "观景台", "ko": "전망대", "ar": "نقطة مشاهدة" },
+    "keywords": {
+      "es": ["vista panorámica", "parada escénica", "lugar para fotos", "paisaje", "punto alto", "atardecer", "balcón natural"],
+      "en": ["lookout", "scenic stop", "photo spot", "panorama", "vista", "overlook", "sunset"]
+    }
+  },
+  "plateau": {
+    "label": { "es": "Meseta", "en": "Plateau", "pt": "Planalto", "fr": "Plateau", "de": "Hochebene", "it": "Altopiano", "ja": "台地", "zh": "高原", "ko": "고원", "ar": "هضبة" },
+    "keywords": {
+      "es": ["altiplano", "mesa", "tipo de terreno", "paisaje desértico", "llanura elevada", "formación rocosa", "planicie"],
+      "en": ["mesa", "tableland", "terrain type", "desert landscape", "highland", "butte", "flat top"]
+    }
+  },
+  "oasis": {
+    "label": { "es": "Oasis", "en": "Oasis", "pt": "Oásis", "fr": "Oasis", "de": "Oase", "it": "Oasi", "ja": "オアシス", "zh": "绿洲", "ko": "오아시스", "ar": "واحة" },
+    "keywords": {
+      "es": ["desierto", "palmeras", "manantial", "descanso", "respiro", "parada", "lugar tranquilo"],
+      "en": ["desert", "palm trees", "spring", "rest", "respite", "stopover", "retreat"]
+    }
+  },
+  "archipelago": {
+    "label": { "es": "Archipiélago", "en": "Archipelago", "pt": "Arquipélago", "fr": "Archipel", "de": "Inselgruppe", "it": "Arcipelago", "ja": "群島", "zh": "群岛", "ko": "군도", "ar": "أرخبيل" },
+    "keywords": {
+      "es": ["islas", "grupo de islas", "recorrido por islas", "geografía", "cayos", "crucero", "mar"],
+      "en": ["islands", "island group", "island hopping", "geography", "keys", "cruise", "sea"]
+    }
   }
 }

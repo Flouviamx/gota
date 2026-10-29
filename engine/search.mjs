@@ -27,11 +27,14 @@ const terms = (text) => text.split(' ').filter((w) => w && !STOP.has(w)).map(ste
 export function buildIndex(icons, i18n = {}) {
   return Object.entries(icons).map(([name, icon]) => {
     const t = i18n[name] ?? {};
+    const phrases = [...Object.values(t.label ?? {}), ...(t.keywords?.es ?? []), ...(t.keywords?.en ?? [])];
     return {
       name,
       category: icon.category,
       label: t.label ?? {},
-      exact: fold(name.replace(/-/g, ' ')),
+      exact: terms(fold(name.replace(/-/g, ' '))).join(' '),
+      // Each label and keyword whole, so a query that is one of them beats a longer one containing it
+      phrases: new Set(phrases.map((p) => terms(fold(p)).join(' '))),
       fields: {
         name: terms(fold(name.replace(/-/g, ' '))),
         label: terms(fold(Object.values(t.label ?? {}).join(' '))),
@@ -68,8 +71,12 @@ export function search(index, query, { limit = 24, category } = {}) {
       score += best;
     }
     if (!matched) continue;
-    // A name that is exactly the query wins; shorter names win ties (the base before its variants)
-    if (entry.exact === fold(query)) score += 50;
+    // A name that is exactly the query wins (plurals fold: «notifications» is notification); then a
+    // label or keyword that is exactly the query («campana» is bell's keyword before it is a word of
+    // «Tienda campana»); shorter names win ties (the base before its variants)
+    const q = words.join(' ');
+    if (entry.exact === q) score += 50;
+    else if (entry.phrases.has(q)) score += 20;
     results.push({ name: entry.name, category: entry.category, label: entry.label, matched, score: score - entry.name.length * 0.01 });
   }
   const full = results.filter((r) => r.matched === words.length);

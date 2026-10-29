@@ -1,0 +1,716 @@
+{
+  "car-side": {
+    "label": { "es": "Auto de perfil", "en": "Car from the side", "pt": "Carro de perfil", "fr": "Voiture de profil", "de": "Auto von der Seite", "it": "Auto di profilo", "ja": "横から見た車", "zh": "汽车侧面", "ko": "옆에서 본 자동차", "ar": "سيارة من الجانب" },
+    "keywords": {
+      "es": ["vista lateral", "coche", "carro", "viaje", "selector de vehículo", "anuncio de auto", "vehículo"],
+      "en": ["side view", "profile", "vehicle", "trip", "vehicle picker", "car listing", "automobile"]
+    }
+  },
+  "car-rear": {
+    "label": { "es": "Auto visto de atrás", "en": "Car from behind", "pt": "Carro visto de trás", "fr": "Voiture vue de l’arrière", "de": "Auto von hinten", "it": "Auto vista da dietro", "ja": "後ろから見た車", "zh": "汽车背面", "ko": "뒤에서 본 자동차", "ar": "سيارة من الخلف" },
+    "keywords": {
+      "es": ["vista trasera", "parte de atrás", "vehículo de adelante", "daño trasero", "defensa trasera", "calaveras", "auto estacionado"],
+      "en": ["rear view", "back of the car", "vehicle ahead", "rear damage", "rear bumper", "tail lights", "parked car"]
+    }
+  },
+  "car-top": {
+    "label": { "es": "Auto visto desde arriba", "en": "Car from above", "pt": "Carro visto de cima", "fr": "Voiture vue du dessus", "de": "Auto von oben", "it": "Auto vista dall’alto", "ja": "上から見た車", "zh": "汽车俯视图", "ko": "위에서 본 자동차", "ar": "سيارة من الأعلى" },
+    "keywords": {
+      "es": ["marcador en el mapa", "viaje en vivo", "seguimiento", "rastreo de flotilla", "conductor en camino", "plano de estacionamiento", "vista aérea"],
+      "en": ["map marker", "live trip", "tracking", "fleet tracking", "driver on the way", "parking layout", "top-down view"]
+    }
+  },
+  "car-sedan": {
+    "label": { "es": "Sedán", "en": "Sedan", "pt": "Sedã", "fr": "Berline", "de": "Limousine", "it": "Berlina", "ja": "セダン", "zh": "轿车", "ko": "세단", "ar": "سيارة سيدان" },
+    "keywords": {
+      "es": ["auto de cuatro puertas", "tipo de carrocería", "tres volúmenes", "auto ejecutivo", "categoría de renta", "auto mediano", "cajuela"],
+      "en": ["saloon", "four-door car", "body type", "three-box", "rental class", "midsize car", "trunk"]
+    }
+  },
+  "car-hatchback": {
+    "label": { "es": "Hatchback", "en": "Hatchback", "pt": "Hatch", "fr": "Voiture à hayon", "de": "Schrägheck", "it": "Due volumi", "ja": "ハッチバック", "zh": "两厢车", "ko": "해치백", "ar": "سيارة هاتشباك" },
+    "keywords": {
+      "es": ["cinco puertas", "tres puertas", "portón trasero", "dos volúmenes", "tipo de carrocería", "auto chico", "categoría de renta"],
+      "en": ["hatch", "five-door", "three-door", "liftgate", "two-box", "body type", "small car"]
+    }
+  },
+  "car-suv": {
+    "label": { "es": "Camioneta SUV", "en": "SUV", "pt": "SUV", "fr": "SUV", "de": "SUV", "it": "SUV", "ja": "SUV", "zh": "SUV", "ko": "SUV", "ar": "سيارة رياضية متعددة الاستخدامات" },
+    "keywords": {
+      "es": ["camioneta", "crossover", "vehículo alto", "tipo de carrocería", "camioneta familiar", "posición de manejo alta", "categoría de renta"],
+      "en": ["sport utility vehicle", "crossover", "tall car", "high-riding", "body type", "rental class", "family vehicle"]
+    }
+  },
+  "car-wagon": {
+    "label": { "es": "Station wagon", "en": "Station wagon", "pt": "Perua", "fr": "Break", "de": "Kombi", "it": "Station wagon", "ja": "ステーションワゴン", "zh": "旅行车", "ko": "왜건", "ar": "سيارة ستيشن واجن" },
+    "keywords": {
+      "es": ["guayín", "vagoneta", "auto familiar", "techo largo", "cajuela amplia", "tipo de carrocería", "viaje familiar"],
+      "en": ["estate car", "family car", "long roof", "cargo space", "body type", "touring car", "road trip"]
+    }
+  },
+  "car-coupe": {
+    "label": { "es": "Cupé", "en": "Coupe", "pt": "Cupê", "fr": "Coupé", "de": "Coupé", "it": "Coupé", "ja": "クーペ", "zh": "轿跑车", "ko": "쿠페", "ar": "سيارة كوبيه" },
+    "keywords": {
+      "es": ["coupé", "dos puertas", "techo inclinado", "deportivo", "tipo de carrocería", "auto de lujo", "fastback"],
+      "en": ["coupé", "two-door", "sloping roof", "fastback", "body type", "sporty car", "grand tourer"]
+    }
+  },
+  "car-convertible": {
+    "label": { "es": "Convertible", "en": "Convertible", "pt": "Conversível", "fr": "Cabriolet", "de": "Cabrio", "it": "Cabriolet", "ja": "オープンカー", "zh": "敞篷车", "ko": "컨버터블", "ar": "سيارة مكشوفة" },
+    "keywords": {
+      "es": ["descapotable", "cabrio", "techo abierto", "toldo", "roadster", "auto de verano", "renta de lujo"],
+      "en": ["cabriolet", "drop-top", "open top", "soft top", "roadster", "top down", "luxury rental"]
+    }
+  },
+  "car-sports": {
+    "label": { "es": "Auto deportivo", "en": "Sports car", "pt": "Carro esportivo", "fr": "Voiture de sport", "de": "Sportwagen", "it": "Auto sportiva", "ja": "スポーツカー", "zh": "跑车", "ko": "스포츠카", "ar": "سيارة رياضية" },
+    "keywords": {
+      "es": ["superauto", "alto desempeño", "carreras", "gama premium", "auto de lujo", "velocidad", "auto rápido"],
+      "en": ["supercar", "performance car", "racing", "premium class", "luxury car", "speed", "fast car"]
+    }
+  },
+  "car-compact": {
+    "label": { "es": "Auto compacto", "en": "City car", "pt": "Carro compacto", "fr": "Citadine", "de": "Kleinstwagen", "it": "Citycar", "ja": "コンパクトカー", "zh": "微型车", "ko": "경차", "ar": "سيارة صغيرة" },
+    "keywords": {
+      "es": ["auto chico", "subcompacto", "auto económico", "auto urbano", "categoría más básica", "auto compartido", "fácil de estacionar"],
+      "en": ["microcar", "compact car", "economy car", "small car", "subcompact", "car sharing", "easy to park"]
+    }
+  },
+  "car-offroad": {
+    "label": { "es": "Todoterreno", "en": "Off-road 4x4", "pt": "Veículo off-road", "fr": "Tout-terrain", "de": "Geländewagen", "it": "Fuoristrada", "ja": "オフロード車", "zh": "越野车", "ko": "오프로드 차량", "ar": "سيارة دفع رباعي" },
+    "keywords": {
+      "es": ["4x4", "doble tracción", "terracería", "aventura", "renta para aventura", "brecha", "camioneta de campo"],
+      "en": ["four-wheel drive", "4WD", "terrain", "adventure", "adventure rental", "dirt road", "overland"]
+    }
+  },
+  "car-classic": {
+    "label": { "es": "Auto clásico", "en": "Classic car", "pt": "Carro clássico", "fr": "Voiture de collection", "de": "Oldtimer", "it": "Auto d’epoca", "ja": "クラシックカー", "zh": "老爷车", "ko": "클래식카", "ar": "سيارة كلاسيكية" },
+    "keywords": {
+      "es": ["auto antiguo", "vintage", "de colección", "coleccionista", "retro", "exhibición de autos", "auto restaurado"],
+      "en": ["vintage car", "antique car", "collector car", "retro", "car show", "restored car", "oldtimer"]
+    }
+  },
+  "limousine": {
+    "label": { "es": "Limusina", "en": "Limousine", "pt": "Limusine", "fr": "Limousine", "de": "Stretchlimousine", "it": "Limousine", "ja": "リムジン", "zh": "豪华轿车", "ko": "리무진", "ar": "ليموزين" },
+    "keywords": {
+      "es": ["chofer privado", "auto de lujo", "traslado ejecutivo", "boda", "graduación", "evento", "servicio VIP"],
+      "en": ["limo", "chauffeur", "luxury transfer", "wedding car", "prom", "VIP service", "black car"]
+    }
+  },
+  "minivan": {
+    "label": { "es": "Minivan", "en": "Minivan", "pt": "Minivan", "fr": "Monospace", "de": "Minivan", "it": "Monovolume", "ja": "ミニバン", "zh": "MPV", "ko": "미니밴", "ar": "ميني فان" },
+    "keywords": {
+      "es": ["camioneta familiar", "siete plazas", "puertas corredizas", "viaje en familia", "tipo de carrocería", "monovolumen", "renta para grupos"],
+      "en": ["people carrier", "MPV", "seven-seater", "sliding doors", "family trip", "body type", "family car"]
+    }
+  },
+  "pickup-truck": {
+    "label": { "es": "Camioneta pickup", "en": "Pickup truck", "pt": "Picape", "fr": "Pick-up", "de": "Pick-up", "it": "Pick-up", "ja": "ピックアップトラック", "zh": "皮卡", "ko": "픽업트럭", "ar": "شاحنة بيك أب" },
+    "keywords": {
+      "es": ["troca", "batea", "doble cabina", "vehículo de trabajo", "acarreo", "carga ligera", "tipo de carrocería"],
+      "en": ["pickup", "truck bed", "crew cab", "work truck", "hauling", "light cargo", "body type"]
+    }
+  },
+  "police-car": {
+    "label": { "es": "Patrulla", "en": "Police car", "pt": "Viatura policial", "fr": "Voiture de police", "de": "Streifenwagen", "it": "Auto della polizia", "ja": "パトカー", "zh": "警车", "ko": "경찰차", "ar": "سيارة شرطة" },
+    "keywords": {
+      "es": ["policía", "auto de policía", "emergencia", "seguridad pública", "reporte de incidente", "denuncia", "911"],
+      "en": ["cop car", "squad car", "patrol", "emergency services", "incident report", "law enforcement", "911"]
+    }
+  },
+  "car-door-open": {
+    "label": { "es": "Puerta del auto abierta", "en": "Car door open", "pt": "Porta do carro aberta", "fr": "Portière ouverte", "de": "Autotür offen", "it": "Portiera aperta", "ja": "車のドアが開いている", "zh": "车门未关", "ko": "차 문 열림", "ar": "باب السيارة مفتوح" },
+    "keywords": {
+      "es": ["puerta mal cerrada", "alerta de puerta", "listo para abordar", "auto desbloqueado", "check-in de renta", "subir al auto", "acceso al vehículo"],
+      "en": ["door ajar", "door alert", "ready to board", "unlocked", "rental check-in", "get in", "vehicle access"]
+    }
+  },
+  "car-trunk-open": {
+    "label": { "es": "Cajuela abierta", "en": "Trunk open", "pt": "Porta-malas aberto", "fr": "Coffre ouvert", "de": "Kofferraum offen", "it": "Bagagliaio aperto", "ja": "トランクが開いている", "zh": "后备箱打开", "ko": "트렁크 열림", "ar": "صندوق السيارة مفتوح" },
+    "keywords": {
+      "es": ["maletero", "alerta de cajuela", "entrega en cajuela", "espacio para equipaje", "maletas", "portón trasero", "cargar compras"],
+      "en": ["boot open", "trunk ajar", "in-trunk delivery", "luggage space", "cargo space", "tailgate", "load groceries"]
+    }
+  },
+  "car-hood-open": {
+    "label": { "es": "Cofre abierto", "en": "Hood open", "pt": "Capô aberto", "fr": "Capot ouvert", "de": "Motorhaube offen", "it": "Cofano aperto", "ja": "ボンネットが開いている", "zh": "引擎盖打开", "ko": "보닛 열림", "ar": "غطاء المحرك مفتوح" },
+    "keywords": {
+      "es": ["capó", "alerta de cofre", "revisar el motor", "cajuela delantera", "frunk", "mantenimiento", "nivel de aceite"],
+      "en": ["bonnet open", "hood ajar", "under the hood", "frunk", "front trunk", "engine check", "maintenance"]
+    }
+  },
+  "car-electric": {
+    "label": { "es": "Auto eléctrico", "en": "Electric car", "pt": "Carro elétrico", "fr": "Voiture électrique", "de": "Elektroauto", "it": "Auto elettrica", "ja": "電気自動車", "zh": "电动汽车", "ko": "전기차", "ar": "سيارة كهربائية" },
+    "keywords": {
+      "es": ["vehículo eléctrico", "EV", "cero emisiones", "flotilla eléctrica", "batería", "movilidad sustentable", "tipo de combustible"],
+      "en": ["EV", "battery electric", "zero emissions", "electric fleet", "fuel type", "green transport", "plug-in"]
+    }
+  },
+  "car-hybrid": {
+    "label": { "es": "Auto híbrido", "en": "Hybrid car", "pt": "Carro híbrido", "fr": "Voiture hybride", "de": "Hybridauto", "it": "Auto ibrida", "ja": "ハイブリッド車", "zh": "混合动力汽车", "ko": "하이브리드 자동차", "ar": "سيارة هجينة" },
+    "keywords": {
+      "es": ["híbrido enchufable", "gasolina y eléctrico", "tipo de combustible", "bajo consumo", "ahorro de gasolina", "menos emisiones", "motor dual"],
+      "en": ["plug-in hybrid", "PHEV", "gas and electric", "fuel type", "fuel efficient", "low emissions", "HEV"]
+    }
+  },
+  "car-connected": {
+    "label": { "es": "Auto conectado", "en": "Connected car", "pt": "Carro conectado", "fr": "Voiture connectée", "de": "Vernetztes Auto", "it": "Auto connessa", "ja": "コネクテッドカー", "zh": "车联网汽车", "ko": "커넥티드카", "ar": "سيارة متصلة" },
+    "keywords": {
+      "es": ["telemática", "acceso remoto", "vincular con la app", "GPS", "auto inteligente", "control desde el celular", "conectividad"],
+      "en": ["telematics", "remote access", "paired with the app", "smart car", "car app", "vehicle data", "remote control"]
+    }
+  },
+  "car-alarm": {
+    "label": { "es": "Alarma del auto", "en": "Car alarm", "pt": "Alarme do carro", "fr": "Alarme de voiture", "de": "Autoalarm", "it": "Antifurto auto", "ja": "車の警報", "zh": "汽车警报", "ko": "자동차 경보", "ar": "إنذار السيارة" },
+    "keywords": {
+      "es": ["alarma activada", "robo", "seguridad", "intento de robo", "alerta", "auto conectado", "antirrobo"],
+      "en": ["alarm triggered", "theft", "security alert", "break-in", "anti-theft", "connected car", "siren"]
+    }
+  },
+  "car-location": {
+    "label": { "es": "Ubicación del auto", "en": "Car location", "pt": "Localização do carro", "fr": "Position de la voiture", "de": "Standort des Autos", "it": "Posizione dell’auto", "ja": "車の位置", "zh": "车辆位置", "ko": "차량 위치", "ar": "موقع السيارة" },
+    "keywords": {
+      "es": ["dónde dejé el auto", "encontrar mi auto", "rastreo", "GPS", "localizar", "estacionado", "seguimiento del vehículo"],
+      "en": ["find my car", "where I parked", "vehicle tracking", "GPS", "locate", "parked car", "pin"]
+    }
+  },
+  "car-unlock": {
+    "label": { "es": "Abrir el auto", "en": "Unlock car", "pt": "Destravar o carro", "fr": "Déverrouiller la voiture", "de": "Auto entriegeln", "it": "Sblocca l’auto", "ja": "車のロック解除", "zh": "解锁车辆", "ko": "차 잠금 해제", "ar": "فتح قفل السيارة" },
+    "keywords": {
+      "es": ["desbloquear", "acceso sin llave", "auto compartido", "llave digital", "quitar seguros", "abrir puertas", "app del auto"],
+      "en": ["keyless entry", "car sharing", "digital key", "open doors", "remote unlock", "car app", "access"]
+    }
+  },
+  "car-remote-start": {
+    "label": { "es": "Encendido remoto", "en": "Remote start", "pt": "Partida remota", "fr": "Démarrage à distance", "de": "Fernstart", "it": "Avviamento a distanza", "ja": "リモートスタート", "zh": "远程启动", "ko": "원격 시동", "ar": "تشغيل عن بُعد" },
+    "keywords": {
+      "es": ["arrancar el auto", "prender el motor", "climatizar", "precalentar", "desde la app", "auto conectado", "control remoto"],
+      "en": ["start engine", "precondition", "warm up", "cool down", "from the app", "connected car", "key fob"]
+    }
+  },
+  "car-rental": {
+    "label": { "es": "Renta de autos", "en": "Car rental", "pt": "Aluguel de carros", "fr": "Location de voiture", "de": "Autovermietung", "it": "Noleggio auto", "ja": "レンタカー", "zh": "租车", "ko": "렌터카", "ar": "تأجير السيارات" },
+    "keywords": {
+      "es": ["arrendadora", "rentar auto", "alquiler", "mostrador de renta", "auto rentado", "categoría de renta", "reservar auto"],
+      "en": ["car hire", "rent a car", "rental counter", "rental class", "rental car", "book a car", "pick-up"]
+    }
+  },
+  "car-sale": {
+    "label": { "es": "Auto en venta", "en": "Car for sale", "pt": "Carro à venda", "fr": "Voiture à vendre", "de": "Auto zu verkaufen", "it": "Auto in vendita", "ja": "販売中の車", "zh": "汽车出售", "ko": "판매 중인 차", "ar": "سيارة للبيع" },
+    "keywords": {
+      "es": ["seminuevos", "agencia", "lote de autos", "anuncio", "comprar auto", "vender mi auto", "precio"],
+      "en": ["used cars", "dealer", "dealership", "car listing", "buy a car", "sell my car", "marketplace"]
+    }
+  },
+  "car-plus": {
+    "label": { "es": "Agregar vehículo", "en": "Add vehicle", "pt": "Adicionar veículo", "fr": "Ajouter un véhicule", "de": "Fahrzeug hinzufügen", "it": "Aggiungi veicolo", "ja": "車両を追加", "zh": "添加车辆", "ko": "차량 추가", "ar": "إضافة مركبة" },
+    "keywords": {
+      "es": ["registrar auto", "nuevo vehículo", "mi garaje", "flotilla", "dar de alta", "publicar auto", "perfil"],
+      "en": ["new vehicle", "register car", "my garage", "fleet", "create listing", "add car", "profile"]
+    }
+  },
+  "car-check": {
+    "label": { "es": "Vehículo verificado", "en": "Verified vehicle", "pt": "Veículo verificado", "fr": "Véhicule vérifié", "de": "Geprüftes Fahrzeug", "it": "Veicolo verificato", "ja": "確認済みの車両", "zh": "已验证的车辆", "ko": "확인된 차량", "ar": "مركبة تم التحقق منها" },
+    "keywords": {
+      "es": ["inspección aprobada", "verificación vehicular", "listo", "disponible", "anuncio aprobado", "revisado", "auto en orden"],
+      "en": ["inspection passed", "ready", "available", "approved listing", "checked", "roadworthy", "certified"]
+    }
+  },
+  "car-alert": {
+    "label": { "es": "Problema con el vehículo", "en": "Vehicle issue", "pt": "Problema no veículo", "fr": "Problème de véhicule", "de": "Fahrzeugproblem", "it": "Problema al veicolo", "ja": "車両の問題", "zh": "车辆问题", "ko": "차량 문제", "ar": "مشكلة في المركبة" },
+    "keywords": {
+      "es": ["llamado a revisión", "aviso de servicio", "requiere atención", "falla", "advertencia", "mantenimiento pendiente", "recall"],
+      "en": ["recall", "service warning", "needs attention", "fault", "warning", "maintenance due", "check vehicle"]
+    }
+  },
+  "car-clock": {
+    "label": { "es": "Horario del vehículo", "en": "Vehicle schedule", "pt": "Horário do veículo", "fr": "Horaire du véhicule", "de": "Fahrzeugzeiten", "it": "Orari del veicolo", "ja": "車両の予定時刻", "zh": "用车时间", "ko": "차량 일정", "ar": "مواعيد المركبة" },
+    "keywords": {
+      "es": ["periodo de renta", "hora de entrega", "hora de recogida", "servicio pendiente", "tiempo de uso", "reservación", "devolución"],
+      "en": ["rental period", "pick-up time", "return time", "service due", "booking", "time slot", "usage time"]
+    }
+  },
+  "car-lock": {
+    "label": { "es": "Auto cerrado", "en": "Car locked", "pt": "Carro travado", "fr": "Voiture verrouillée", "de": "Auto verriegelt", "it": "Auto chiusa", "ja": "ロックされた車", "zh": "车辆已锁定", "ko": "차 잠김", "ar": "السيارة مقفلة" },
+    "keywords": {
+      "es": ["bloquear", "bloqueo remoto", "seguros puestos", "vehículo asegurado", "antirrobo", "cierre central", "llave"],
+      "en": ["lock", "remote lock", "secured", "anti-theft", "central locking", "key fob", "doors locked"]
+    }
+  },
+  "car-search": {
+    "label": { "es": "Buscar auto", "en": "Find a car", "pt": "Buscar carro", "fr": "Chercher une voiture", "de": "Auto suchen", "it": "Cerca auto", "ja": "車を探す", "zh": "搜索车辆", "ko": "차량 검색", "ar": "البحث عن سيارة" },
+    "keywords": {
+      "es": ["inventario", "buscador de autos", "filtrar vehículos", "comparar autos", "seminuevos", "encontrar", "catálogo"],
+      "en": ["inventory search", "car finder", "filter vehicles", "compare cars", "browse cars", "search", "listings"]
+    }
+  },
+  "car-breakdown": {
+    "label": { "es": "Auto descompuesto", "en": "Broken-down car", "pt": "Carro quebrado", "fr": "Voiture en panne", "de": "Autopanne", "it": "Auto in panne", "ja": "故障車", "zh": "车辆抛锚", "ko": "고장 난 차", "ar": "سيارة معطلة" },
+    "keywords": {
+      "es": ["avería", "asistencia vial", "auxilio vial", "falla mecánica", "se quedó parado", "grúa", "cobertura de asistencia"],
+      "en": ["breakdown", "roadside assistance", "car trouble", "mechanical failure", "stranded", "breakdown cover", "tow"]
+    }
+  },
+  "car-crash": {
+    "label": { "es": "Choque", "en": "Car crash", "pt": "Colisão", "fr": "Accident de voiture", "de": "Autounfall", "it": "Incidente stradale", "ja": "衝突事故", "zh": "车祸", "ko": "자동차 충돌", "ar": "حادث سيارة" },
+    "keywords": {
+      "es": ["accidente", "colisión", "siniestro", "reclamación al seguro", "reporte de accidente", "detección de choques", "ajustador"],
+      "en": ["collision", "accident", "accident report", "insurance claim", "crash detection", "fender bender", "wreck"]
+    }
+  },
+  "car-damage": {
+    "label": { "es": "Daño en la carrocería", "en": "Body damage", "pt": "Dano na lataria", "fr": "Dégâts de carrosserie", "de": "Karosserieschaden", "it": "Danni alla carrozzeria", "ja": "車体の損傷", "zh": "车身损伤", "ko": "차체 손상", "ar": "ضرر في هيكل السيارة" },
+    "keywords": {
+      "es": ["rayón", "abolladura", "golpe", "inventario de daños", "entrega de renta", "devolución del auto", "hojalatería"],
+      "en": ["scratch", "dent", "damage report", "rental pick-up", "rental return", "minor claim", "bodywork"]
+    }
+  },
+  "car-towed": {
+    "label": { "es": "Auto remolcado", "en": "Towed car", "pt": "Carro guinchado", "fr": "Voiture remorquée", "de": "Abgeschlepptes Auto", "it": "Auto rimorchiata", "ja": "レッカー移動された車", "zh": "车辆被拖走", "ko": "견인된 차", "ar": "سيارة مسحوبة" },
+    "keywords": {
+      "es": ["grúa", "corralón", "arrastre", "mal estacionado", "infracción", "recuperar el auto", "auto retenido"],
+      "en": ["towed away", "impounded", "impound lot", "parking violation", "tow-away zone", "vehicle recovery", "parking ticket"]
+    }
+  },
+  "car-charging": {
+    "label": { "es": "Auto cargando", "en": "Car charging", "pt": "Carro carregando", "fr": "Voiture en charge", "de": "Auto lädt", "it": "Auto in ricarica", "ja": "充電中の車", "zh": "汽车充电中", "ko": "충전 중인 차", "ar": "سيارة قيد الشحن" },
+    "keywords": {
+      "es": ["sesión de carga", "estado de carga", "cargador", "enchufar", "batería", "electrolinera", "auto eléctrico"],
+      "en": ["charging session", "charge status", "plugged in", "EV charging", "battery level", "charging station", "electric car"]
+    }
+  },
+  "car-fast": {
+    "label": { "es": "Viaje exprés", "en": "Express ride", "pt": "Viagem expressa", "fr": "Course express", "de": "Expressfahrt", "it": "Corsa express", "ja": "急ぎの配車", "zh": "快速出行", "ko": "빠른 배차", "ar": "رحلة سريعة" },
+    "keywords": {
+      "es": ["rápido", "servicio exprés", "llegar pronto", "pasar por ti", "prioridad", "urgente", "tarifa rápida"],
+      "en": ["fast", "quick pick-up", "speed tier", "priority", "rush", "urgent", "arrive sooner"]
+    }
+  },
+  "car-roof-box": {
+    "label": { "es": "Portaequipaje de techo", "en": "Roof box", "pt": "Bagageiro de teto", "fr": "Coffre de toit", "de": "Dachbox", "it": "Box da tetto", "ja": "ルーフボックス", "zh": "车顶行李箱", "ko": "루프 박스", "ar": "صندوق سقف السيارة" },
+    "keywords": {
+      "es": ["canastilla", "caja de techo", "equipaje extra", "rack", "viaje largo", "accesorio de renta", "parrilla"],
+      "en": ["roof cargo box", "rooftop carrier", "extra luggage", "roof rack", "road trip", "rental add-on", "cargo carrier"]
+    }
+  },
+  "car-flood": {
+    "label": { "es": "Auto inundado", "en": "Flooded car", "pt": "Carro alagado", "fr": "Voiture inondée", "de": "Überflutetes Auto", "it": "Auto allagata", "ja": "冠水した車", "zh": "泡水车", "ko": "침수 차량", "ar": "سيارة غارقة" },
+    "keywords": {
+      "es": ["inundación", "daño por agua", "calle inundada", "reclamación al seguro", "encharcamiento", "lluvias", "siniestro"],
+      "en": ["flood damage", "water damage", "flooded road", "flood claim", "storm", "heavy rain", "insurance claim"]
+    }
+  },
+  "car-fire": {
+    "label": { "es": "Auto en llamas", "en": "Car on fire", "pt": "Carro em chamas", "fr": "Voiture en feu", "de": "Brennendes Auto", "it": "Auto in fiamme", "ja": "車両火災", "zh": "汽车起火", "ko": "차량 화재", "ar": "سيارة مشتعلة" },
+    "keywords": {
+      "es": ["incendio", "fuego", "siniestro", "reclamación al seguro", "incidente vehicular", "emergencia", "auto quemado"],
+      "en": ["vehicle fire", "burning car", "fire claim", "vehicle incident", "emergency", "insurance claim", "flames"]
+    }
+  },
+  "van": {
+    "label": { "es": "Van", "en": "Van", "pt": "Van", "fr": "Fourgon", "de": "Transporter", "it": "Furgone", "ja": "バン", "zh": "面包车", "ko": "밴", "ar": "شاحنة فان" },
+    "keywords": {
+      "es": ["camioneta", "camioneta de carga", "panel", "furgoneta", "renta de camionetas", "reparto", "clase de vehículo"],
+      "en": ["cargo van", "panel van", "minibus", "van rental", "delivery", "vehicle class", "commercial vehicle"]
+    }
+  },
+  "van-passenger": {
+    "label": { "es": "Van de pasajeros", "en": "Passenger van", "pt": "Van de passageiros", "fr": "Minibus", "de": "Kleinbus", "it": "Pulmino", "ja": "送迎バン", "zh": "载客面包车", "ko": "승합차", "ar": "حافلة ركاب صغيرة" },
+    "keywords": {
+      "es": ["combi", "transporte de personal", "traslado grupal", "transporte escolar", "shuttle", "12 pasajeros", "traslado al aeropuerto"],
+      "en": ["shuttle", "minibus", "group transfer", "12-seater", "airport shuttle", "staff transport", "school run"]
+    }
+  },
+  "van-camper": {
+    "label": { "es": "Van camper", "en": "Camper van", "pt": "Van camper", "fr": "Van aménagé", "de": "Campervan", "it": "Camper van", "ja": "キャンピングバン", "zh": "露营车", "ko": "캠핑카", "ar": "عربة تخييم" },
+    "keywords": {
+      "es": ["camper", "vanlife", "viaje por carretera", "acampar", "renta de camper", "casa rodante", "road trip"],
+      "en": ["campervan", "van life", "road trip", "camping", "camper rental", "RV", "conversion van"]
+    }
+  },
+  "van-front": {
+    "label": { "es": "Van de frente", "en": "Van from the front", "pt": "Van de frente", "fr": "Fourgon de face", "de": "Transporter von vorne", "it": "Furgone visto di fronte", "ja": "正面から見たバン", "zh": "面包车正面", "ko": "정면에서 본 밴", "ar": "شاحنة فان من الأمام" },
+    "keywords": {
+      "es": ["vista frontal", "camioneta", "clase de vehículo", "caseta de cobro", "ferri", "tarifa de estacionamiento", "vehículo utilitario"],
+      "en": ["front view", "vehicle class", "toll", "ferry", "parking rate", "minibus", "utility vehicle"]
+    }
+  },
+  "semi-truck": {
+    "label": { "es": "Tráiler", "en": "Semi truck", "pt": "Carreta", "fr": "Semi-remorque", "de": "Sattelzug", "it": "Autoarticolato", "ja": "トレーラートラック", "zh": "半挂卡车", "ko": "트레일러 트럭", "ar": "شاحنة بمقطورة" },
+    "keywords": {
+      "es": ["tractocamión", "autotransporte", "carga pesada", "transportista", "largas distancias", "quinta rueda", "caja seca"],
+      "en": ["tractor-trailer", "18-wheeler", "big rig", "long haul", "carrier", "trucking", "heavy vehicle"]
+    }
+  },
+  "truck-cab": {
+    "label": { "es": "Tractocamión sin caja", "en": "Tractor unit", "pt": "Cavalo mecânico", "fr": "Tracteur routier", "de": "Sattelzugmaschine", "it": "Trattore stradale", "ja": "トラクターヘッド", "zh": "牵引车头", "ko": "트랙터 헤드", "ar": "شاحنة جرّ" },
+    "keywords": {
+      "es": ["tracto", "cabina", "quinta rueda", "operador", "transportista", "viaje en vacío", "sin remolque"],
+      "en": ["semi tractor", "bobtail", "cab", "fifth wheel", "driver", "carrier", "deadhead"]
+    }
+  },
+  "flatbed-truck": {
+    "label": { "es": "Camión de plataforma", "en": "Flatbed truck", "pt": "Caminhão prancha", "fr": "Camion plateau", "de": "Pritschen-Lkw", "it": "Camion a pianale", "ja": "平ボディトラック", "zh": "平板卡车", "ko": "평판 트럭", "ar": "شاحنة مسطحة" },
+    "keywords": {
+      "es": ["plataforma", "carga sobredimensionada", "maquinaria", "cama baja", "carga abierta", "transporte de equipo", "carga pesada"],
+      "en": ["platform truck", "oversized load", "machinery", "lowboy", "open deck", "equipment hauling", "heavy haul"]
+    }
+  },
+  "dump-truck": {
+    "label": { "es": "Camión de volteo", "en": "Dump truck", "pt": "Caminhão basculante", "fr": "Camion benne", "de": "Kipper", "it": "Autocarro ribaltabile", "ja": "ダンプカー", "zh": "自卸车", "ko": "덤프트럭", "ar": "شاحنة قلابة" },
+    "keywords": {
+      "es": ["volteo", "movimiento de tierras", "acarreo de material", "grava y arena", "obra", "construcción", "escombro"],
+      "en": ["tipper", "earthworks", "aggregates", "gravel", "construction site", "hauling", "debris"]
+    }
+  },
+  "tow-truck": {
+    "label": { "es": "Grúa de arrastre", "en": "Tow truck", "pt": "Guincho", "fr": "Dépanneuse", "de": "Abschleppwagen", "it": "Carro attrezzi", "ja": "レッカー車", "zh": "清障车", "ko": "견인차", "ar": "شاحنة سحب" },
+    "keywords": {
+      "es": ["asistencia vial", "auxilio vial", "remolcar", "rescate de vehículos", "corralón", "auto descompuesto", "seguro de auto"],
+      "en": ["wrecker", "recovery truck", "roadside assistance", "breakdown service", "vehicle recovery", "impound", "car trouble"]
+    }
+  },
+  "garbage-truck": {
+    "label": { "es": "Camión de basura", "en": "Garbage truck", "pt": "Caminhão de lixo", "fr": "Camion poubelle", "de": "Müllwagen", "it": "Camion della spazzatura", "ja": "ゴミ収集車", "zh": "垃圾车", "ko": "쓰레기차", "ar": "شاحنة نفايات" },
+    "keywords": {
+      "es": ["recolección de basura", "horario de recolección", "servicios municipales", "residuos", "reciclaje", "limpia", "desechos"],
+      "en": ["trash truck", "refuse truck", "collection day", "waste pickup", "city services", "recycling", "bin day"]
+    }
+  },
+  "tanker-truck": {
+    "label": { "es": "Camión cisterna", "en": "Tanker truck", "pt": "Caminhão-tanque", "fr": "Camion-citerne", "de": "Tankwagen", "it": "Autocisterna", "ja": "タンクローリー", "zh": "罐车", "ko": "탱크로리", "ar": "شاحنة صهريج" },
+    "keywords": {
+      "es": ["pipa", "pipa de agua", "pipa de gas", "combustible", "líquidos a granel", "autotanque", "reparto de agua"],
+      "en": ["tank truck", "fuel truck", "water truck", "liquid bulk", "gas delivery", "petroleum", "bulk transport"]
+    }
+  },
+  "cement-mixer": {
+    "label": { "es": "Revolvedora de concreto", "en": "Concrete mixer truck", "pt": "Caminhão betoneira", "fr": "Camion toupie", "de": "Betonmischer", "it": "Betoniera", "ja": "コンクリートミキサー車", "zh": "水泥搅拌车", "ko": "레미콘 트럭", "ar": "شاحنة خلط الخرسانة" },
+    "keywords": {
+      "es": ["olla revolvedora", "trompo", "concreto premezclado", "colado", "obra", "construcción", "cemento"],
+      "en": ["cement mixer", "ready-mix", "concrete delivery", "pour", "construction", "cement truck", "building site"]
+    }
+  },
+  "crane-truck": {
+    "label": { "es": "Grúa móvil", "en": "Mobile crane", "pt": "Caminhão guindaste", "fr": "Grue mobile", "de": "Mobilkran", "it": "Autogrù", "ja": "クレーン車", "zh": "汽车起重机", "ko": "크레인 트럭", "ar": "رافعة متحركة" },
+    "keywords": {
+      "es": ["grúa hidráulica", "izaje", "levantar carga", "obra", "construcción", "pluma", "maniobras"],
+      "en": ["crane truck", "lifting", "hoist", "boom crane", "construction site", "heavy lift", "rigging"]
+    }
+  },
+  "car-carrier": {
+    "label": { "es": "Camión portaautos", "en": "Car transporter", "pt": "Cegonha", "fr": "Porte-voitures", "de": "Autotransporter", "it": "Bisarca", "ja": "車両運搬車", "zh": "轿运车", "ko": "차량 운반 트럭", "ar": "شاحنة نقل السيارات" },
+    "keywords": {
+      "es": ["madrina", "nodriza", "traslado de autos", "envío de vehículos", "entrega a agencias", "autos nuevos", "logística automotriz"],
+      "en": ["car carrier", "auto transport", "vehicle shipping", "dealer delivery", "car hauler", "new cars", "auto logistics"]
+    }
+  },
+  "street-sweeper": {
+    "label": { "es": "Barredora", "en": "Street sweeper", "pt": "Varredeira", "fr": "Balayeuse", "de": "Kehrmaschine", "it": "Spazzatrice", "ja": "道路清掃車", "zh": "扫路车", "ko": "노면 청소차", "ar": "مكنسة شوارع" },
+    "keywords": {
+      "es": ["limpieza de calles", "barrido", "servicios municipales", "horario de limpieza", "vía pública", "limpia", "aspiradora de calles"],
+      "en": ["road sweeper", "street cleaning", "sweeping schedule", "city services", "public works", "no parking day", "clean streets"]
+    }
+  },
+  "snowplow": {
+    "label": { "es": "Quitanieves", "en": "Snowplow", "pt": "Limpa-neve", "fr": "Chasse-neige", "de": "Schneepflug", "it": "Spazzaneve", "ja": "除雪車", "zh": "扫雪车", "ko": "제설차", "ar": "كاسحة ثلج" },
+    "keywords": {
+      "es": ["despeje de caminos", "nieve", "invierno", "estado de carreteras", "nevada", "camino cerrado", "sal en la carretera"],
+      "en": ["snow plough", "road clearing", "winter roads", "road conditions", "snowfall", "gritter", "plowed"]
+    }
+  },
+  "bucket-truck": {
+    "label": { "es": "Camión canastilla", "en": "Bucket truck", "pt": "Caminhão cesto aéreo", "fr": "Nacelle sur camion", "de": "Hubsteiger", "it": "Autocestello", "ja": "高所作業車", "zh": "高空作业车", "ko": "고소작업차", "ar": "شاحنة سلة رافعة" },
+    "keywords": {
+      "es": ["grúa canastilla", "trabajo en altura", "líneas eléctricas", "reparación de cables", "cuadrilla", "alumbrado público", "brazo hidráulico"],
+      "en": ["cherry picker", "aerial lift", "utility truck", "line repair", "power lines", "field crew", "street lights"]
+    }
+  },
+  "truck-refrigerated": {
+    "label": { "es": "Camión refrigerado", "en": "Refrigerated truck", "pt": "Caminhão frigorífico", "fr": "Camion frigorifique", "de": "Kühllaster", "it": "Camion frigorifero", "ja": "冷凍車", "zh": "冷藏车", "ko": "냉동탑차", "ar": "شاحنة مبردة" },
+    "keywords": {
+      "es": ["cadena de frío", "caja refrigerada", "termo", "alimentos frescos", "temperatura controlada", "perecederos", "congelados"],
+      "en": ["reefer", "cold chain", "fresh food", "temperature controlled", "perishables", "frozen goods", "chilled transport"]
+    }
+  },
+  "truck-electric": {
+    "label": { "es": "Camión eléctrico", "en": "Electric truck", "pt": "Caminhão elétrico", "fr": "Camion électrique", "de": "Elektro-Lkw", "it": "Camion elettrico", "ja": "電動トラック", "zh": "电动卡车", "ko": "전기 트럭", "ar": "شاحنة كهربائية" },
+    "keywords": {
+      "es": ["flotilla eléctrica", "cero emisiones", "reparto sustentable", "batería", "logística verde", "vehículo eléctrico", "carga eléctrica"],
+      "en": ["electric fleet", "zero emissions", "e-truck", "green delivery", "battery", "EV", "sustainable logistics"]
+    }
+  },
+  "armored-truck": {
+    "label": { "es": "Camión de valores", "en": "Armored truck", "pt": "Carro-forte", "fr": "Fourgon blindé", "de": "Geldtransporter", "it": "Furgone portavalori", "ja": "現金輸送車", "zh": "运钞车", "ko": "현금 수송차", "ar": "شاحنة نقل الأموال" },
+    "keywords": {
+      "es": ["blindado", "traslado de valores", "transporte de efectivo", "custodia", "seguridad", "camioneta blindada", "bancos"],
+      "en": ["armored car", "cash in transit", "security van", "valuables", "bank transport", "guarded transport", "cash delivery"]
+    }
+  },
+  "fire-truck": {
+    "label": { "es": "Camión de bomberos", "en": "Fire engine", "pt": "Caminhão de bombeiros", "fr": "Camion de pompiers", "de": "Feuerwehrauto", "it": "Camion dei pompieri", "ja": "消防車", "zh": "消防车", "ko": "소방차", "ar": "سيارة إطفاء" },
+    "keywords": {
+      "es": ["bomberos", "incendio", "emergencia", "estación de bomberos", "protección civil", "rescate", "911"],
+      "en": ["fire truck", "firefighters", "fire department", "fire station", "emergency response", "rescue", "911"]
+    }
+  },
+  "excavator": {
+    "label": { "es": "Excavadora", "en": "Excavator", "pt": "Escavadeira", "fr": "Pelleteuse", "de": "Bagger", "it": "Escavatore", "ja": "ショベルカー", "zh": "挖掘机", "ko": "굴착기", "ar": "حفارة" },
+    "keywords": {
+      "es": ["maquinaria pesada", "movimiento de tierras", "excavación", "obra", "renta de maquinaria", "pala", "construcción"],
+      "en": ["digger", "heavy equipment", "earthworks", "digging", "construction site", "equipment rental", "track excavator"]
+    }
+  },
+  "bulldozer": {
+    "label": { "es": "Bulldozer", "en": "Bulldozer", "pt": "Trator de esteira", "fr": "Bulldozer", "de": "Planierraupe", "it": "Apripista", "ja": "ブルドーザー", "zh": "推土机", "ko": "불도저", "ar": "جرافة" },
+    "keywords": {
+      "es": ["buldócer", "tractor de orugas", "nivelación", "desmonte", "despalme", "movimiento de tierras", "maquinaria pesada"],
+      "en": ["dozer", "crawler tractor", "grading", "land clearing", "site work", "earthmoving", "heavy equipment"]
+    }
+  },
+  "wheel-loader": {
+    "label": { "es": "Cargador frontal", "en": "Wheel loader", "pt": "Pá carregadeira", "fr": "Chargeuse sur pneus", "de": "Radlader", "it": "Pala gommata", "ja": "ホイールローダー", "zh": "轮式装载机", "ko": "휠 로더", "ar": "لودر بعجلات" },
+    "keywords": {
+      "es": ["trascabo", "payloader", "mover material", "cantera", "banco de material", "pala mecánica", "obra"],
+      "en": ["front loader", "payloader", "bucket loader", "quarry", "moving material", "stockpile", "construction site"]
+    }
+  },
+  "skid-steer": {
+    "label": { "es": "Minicargador", "en": "Skid steer loader", "pt": "Minicarregadeira", "fr": "Chargeuse compacte", "de": "Kompaktlader", "it": "Minipala", "ja": "スキッドステアローダー", "zh": "滑移装载机", "ko": "스키드 로더", "ar": "لودر انزلاقي" },
+    "keywords": {
+      "es": ["cargador compacto", "trabajos pequeños", "renta de equipo", "limpieza de obra", "jardinería", "maquinaria ligera", "espacios reducidos"],
+      "en": ["skid loader", "compact loader", "small jobs", "equipment rental", "landscaping", "site cleanup", "tight spaces"]
+    }
+  },
+  "road-roller": {
+    "label": { "es": "Aplanadora", "en": "Road roller", "pt": "Rolo compactador", "fr": "Rouleau compresseur", "de": "Straßenwalze", "it": "Rullo compressore", "ja": "ロードローラー", "zh": "压路机", "ko": "로드 롤러", "ar": "مدحلة" },
+    "keywords": {
+      "es": ["compactadora", "rodillo", "pavimentación", "asfalto", "obras viales", "bacheo", "compactar"],
+      "en": ["steamroller", "compactor", "paving", "asphalt", "road works", "compaction", "resurfacing"]
+    }
+  },
+  "scissor-lift": {
+    "label": { "es": "Plataforma de tijera", "en": "Scissor lift", "pt": "Plataforma tesoura", "fr": "Nacelle ciseaux", "de": "Scherenbühne", "it": "Piattaforma a forbice", "ja": "シザーリフト", "zh": "剪叉式升降机", "ko": "시저 리프트", "ar": "رافعة مقصية" },
+    "keywords": {
+      "es": ["elevador de tijera", "trabajo en altura", "plataforma elevadora", "renta de equipo", "mantenimiento", "andamio", "naves industriales"],
+      "en": ["aerial work platform", "working at height", "lift platform", "equipment rental", "MEWP", "maintenance", "warehouse"]
+    }
+  },
+  "boom-lift": {
+    "label": { "es": "Plataforma articulada", "en": "Boom lift", "pt": "Plataforma articulada", "fr": "Nacelle articulée", "de": "Gelenkteleskopbühne", "it": "Piattaforma articolata", "ja": "ブームリフト", "zh": "曲臂式升降机", "ko": "붐 리프트", "ar": "رافعة ذراعية" },
+    "keywords": {
+      "es": ["brazo articulado", "manlift", "trabajo en altura", "plataforma telescópica", "renta de equipo", "mantenimiento de fachadas", "canastilla"],
+      "en": ["cherry picker", "aerial work platform", "articulating lift", "telescopic boom", "working at height", "equipment rental", "MEWP"]
+    }
+  },
+  "motorcycle": {
+    "label": { "es": "Motocicleta", "en": "Motorcycle", "pt": "Motocicleta", "fr": "Moto", "de": "Motorrad", "it": "Moto", "ja": "オートバイ", "zh": "摩托车", "ko": "오토바이", "ar": "دراجة نارية" },
+    "keywords": {
+      "es": ["moto", "motociclista", "repartidor", "renta de motos", "dos ruedas", "viaje en moto", "motoclub"],
+      "en": ["motorbike", "bike", "rider", "motorbike rental", "two-wheeler", "ride", "biker"]
+    }
+  },
+  "motorcycle-electric": {
+    "label": { "es": "Moto eléctrica", "en": "Electric motorcycle", "pt": "Moto elétrica", "fr": "Moto électrique", "de": "Elektromotorrad", "it": "Moto elettrica", "ja": "電動バイク", "zh": "电动摩托车", "ko": "전기 오토바이", "ar": "دراجة نارية كهربائية" },
+    "keywords": {
+      "es": ["e-moto", "cero emisiones", "batería", "movilidad eléctrica", "recargar", "reparto eléctrico", "silenciosa"],
+      "en": ["e-motorcycle", "electric motorbike", "zero emissions", "battery", "e-mobility", "charging", "quiet ride"]
+    }
+  },
+  "motorcycle-sport": {
+    "label": { "es": "Moto deportiva", "en": "Sport bike", "pt": "Moto esportiva", "fr": "Moto sportive", "de": "Sportmotorrad", "it": "Moto sportiva", "ja": "スポーツバイク", "zh": "运动摩托车", "ko": "스포츠 바이크", "ar": "دراجة نارية رياضية" },
+    "keywords": {
+      "es": ["moto de pista", "superbike", "carreras", "alto cilindraje", "velocidad", "alto rendimiento", "motociclismo"],
+      "en": ["superbike", "racing bike", "track day", "crotch rocket", "high performance", "speed", "racer"]
+    }
+  },
+  "motorcycle-cruiser": {
+    "label": { "es": "Moto cruiser", "en": "Cruiser motorcycle", "pt": "Moto custom", "fr": "Moto custom", "de": "Chopper", "it": "Moto custom", "ja": "クルーザーバイク", "zh": "巡航摩托车", "ko": "크루저 바이크", "ar": "دراجة نارية كروزر" },
+    "keywords": {
+      "es": ["chopper", "moto custom", "carretera", "rodada", "motoclub", "touring", "bobber"],
+      "en": ["chopper", "custom bike", "touring", "highway ride", "bike club", "bobber", "V-twin"]
+    }
+  },
+  "motorcycle-dirt": {
+    "label": { "es": "Moto de cross", "en": "Dirt bike", "pt": "Moto de trilha", "fr": "Moto de cross", "de": "Crossmotorrad", "it": "Moto da cross", "ja": "オフロードバイク", "zh": "越野摩托车", "ko": "오프로드 바이크", "ar": "دراجة نارية للطرق الوعرة" },
+    "keywords": {
+      "es": ["motocross", "enduro", "brecha", "terracería", "todoterreno", "pista de tierra", "trail"],
+      "en": ["motocross", "enduro", "trail bike", "off-road", "dirt track", "MX", "scrambler"]
+    }
+  },
+  "moped": {
+    "label": { "es": "Motoneta", "en": "Moped", "pt": "Scooter", "fr": "Scooter", "de": "Motorroller", "it": "Scooter", "ja": "スクーター", "zh": "踏板摩托车", "ko": "스쿠터", "ar": "دراجة نارية صغيرة" },
+    "keywords": {
+      "es": ["scooter", "moto chica", "reparto", "movilidad urbana", "renta de motonetas", "dos ruedas", "ciudad"],
+      "en": ["scooter", "step-through", "motor scooter", "urban ride", "scooter rental", "two-wheeler", "delivery"]
+    }
+  },
+  "quad-bike": {
+    "label": { "es": "Cuatrimoto", "en": "Quad bike", "pt": "Quadriciclo", "fr": "Quad", "de": "Quad", "it": "Quad", "ja": "四輪バギー", "zh": "全地形车", "ko": "사륜 바이크", "ar": "دراجة رباعية" },
+    "keywords": {
+      "es": ["cuatri", "ATV", "todoterreno", "paseo en dunas", "tour de aventura", "trabajo de campo", "rancho"],
+      "en": ["ATV", "four-wheeler", "all-terrain vehicle", "off-road tour", "dunes", "farm work", "adventure"]
+    }
+  },
+  "snowmobile": {
+    "label": { "es": "Motonieve", "en": "Snowmobile", "pt": "Moto de neve", "fr": "Motoneige", "de": "Schneemobil", "it": "Motoslitta", "ja": "スノーモービル", "zh": "雪地摩托", "ko": "스노모빌", "ar": "دراجة ثلجية" },
+    "keywords": {
+      "es": ["moto de nieve", "nieve", "tour de invierno", "pistas de nieve", "montaña", "aventura", "trineo motorizado"],
+      "en": ["snow machine", "sled", "winter tour", "snow trail", "backcountry", "snow adventure", "mountain"]
+    }
+  },
+  "golf-cart": {
+    "label": { "es": "Carrito de golf", "en": "Golf cart", "pt": "Carrinho de golfe", "fr": "Voiturette de golf", "de": "Golfcart", "it": "Golf cart", "ja": "ゴルフカート", "zh": "高尔夫球车", "ko": "골프 카트", "ar": "عربة غولف" },
+    "keywords": {
+      "es": ["campo de golf", "resort", "traslado en el hotel", "campus", "carrito eléctrico", "fraccionamiento", "club"],
+      "en": ["golf buggy", "golf course", "resort", "campus shuttle", "electric cart", "club", "neighborhood cart"]
+    }
+  },
+  "personal-transporter": {
+    "label": { "es": "Vehículo autoequilibrado", "en": "Personal transporter", "pt": "Veículo autoequilibrado", "fr": "Gyropode", "de": "Elektro-Stehroller", "it": "Veicolo autobilanciato", "ja": "立ち乗り電動二輪車", "zh": "电动平衡车", "ko": "전동 이륜 평행차", "ar": "مركبة ذاتية التوازن" },
+    "keywords": {
+      "es": ["patín autoequilibrado", "tour urbano", "recorrido turístico", "patrullaje", "seguridad privada", "movilidad eléctrica", "dos ruedas"],
+      "en": ["self-balancing", "gyropod", "city tour", "security patrol", "mall patrol", "e-mobility", "two-wheeled"]
+    }
+  },
+  "bicycle-electric": {
+    "label": { "es": "Bicicleta eléctrica", "en": "E-bike", "pt": "Bicicleta elétrica", "fr": "Vélo électrique", "de": "E-Bike", "it": "Bici elettrica", "ja": "電動自転車", "zh": "电动自行车", "ko": "전기 자전거", "ar": "دراجة كهربائية" },
+    "keywords": {
+      "es": ["bici eléctrica", "pedaleo asistido", "renta de bicis", "movilidad urbana", "batería", "e-bike", "bici compartida"],
+      "en": ["electric bike", "pedal assist", "bike rental", "pedelec", "battery", "urban mobility", "bike share"]
+    }
+  },
+  "bicycle-road": {
+    "label": { "es": "Bicicleta de ruta", "en": "Road bike", "pt": "Bicicleta speed", "fr": "Vélo de route", "de": "Rennrad", "it": "Bici da corsa", "ja": "ロードバイク", "zh": "公路自行车", "ko": "로드 바이크", "ar": "دراجة طريق" },
+    "keywords": {
+      "es": ["bici de ruta", "bici de carreras", "ciclismo de ruta", "rodada", "pelotón", "triatlón", "ciclista"],
+      "en": ["racing bike", "road cycling", "group ride", "peloton", "triathlon", "drop bars", "cyclist"]
+    }
+  },
+  "bicycle-mountain": {
+    "label": { "es": "Bicicleta de montaña", "en": "Mountain bike", "pt": "Mountain bike", "fr": "VTT", "de": "Mountainbike", "it": "Mountain bike", "ja": "マウンテンバイク", "zh": "山地自行车", "ko": "산악자전거", "ar": "دراجة جبلية" },
+    "keywords": {
+      "es": ["bici de montaña", "MTB", "ciclismo de montaña", "sendero", "tienda de bicis", "renta de bicis", "suspensión"],
+      "en": ["MTB", "trail bike", "full suspension", "hardtail", "bike shop", "bike rental", "off-road bike"]
+    }
+  },
+  "bicycle-city": {
+    "label": { "es": "Bicicleta urbana", "en": "City bike", "pt": "Bicicleta urbana", "fr": "Vélo de ville", "de": "Stadtrad", "it": "Bici da città", "ja": "シティサイクル", "zh": "城市自行车", "ko": "시티 바이크", "ar": "دراجة المدينة" },
+    "keywords": {
+      "es": ["bici urbana", "ir al trabajo en bici", "ciclovía", "canastilla", "tienda de bicis", "bici de paseo", "trayecto diario"],
+      "en": ["commuter bike", "bike commute", "bike lane", "basket", "bike shop", "cruiser", "Dutch bike"]
+    }
+  },
+  "bicycle-folding": {
+    "label": { "es": "Bicicleta plegable", "en": "Folding bike", "pt": "Bicicleta dobrável", "fr": "Vélo pliant", "de": "Faltrad", "it": "Bici pieghevole", "ja": "折りたたみ自転車", "zh": "折叠自行车", "ko": "접이식 자전거", "ar": "دراجة قابلة للطي" },
+    "keywords": {
+      "es": ["bici plegable", "bici que se dobla", "transporte multimodal", "ocupa poco espacio", "llevar en el metro", "trayecto urbano", "portátil"],
+      "en": ["foldable bike", "folder", "compact bike", "multimodal commute", "take on the train", "small storage", "portable"]
+    }
+  },
+  "bicycle-tandem": {
+    "label": { "es": "Tándem", "en": "Tandem bicycle", "pt": "Bicicleta tandem", "fr": "Tandem", "de": "Tandem", "it": "Tandem", "ja": "タンデム自転車", "zh": "双人自行车", "ko": "2인용 자전거", "ar": "دراجة ثنائية" },
+    "keywords": {
+      "es": ["bici para dos", "bicicleta doble", "paseo en pareja", "dos ciclistas", "renta de bicis", "ciclismo adaptado", "paseo"],
+      "en": ["bicycle built for two", "two-seater bike", "couple ride", "two riders", "bike rental", "adaptive cycling", "leisure ride"]
+    }
+  },
+  "bicycle-kids": {
+    "label": { "es": "Bicicleta infantil", "en": "Kids’ bike", "pt": "Bicicleta infantil", "fr": "Vélo pour enfant", "de": "Kinderfahrrad", "it": "Bici per bambini", "ja": "子ども用自転車", "zh": "儿童自行车", "ko": "어린이 자전거", "ar": "دراجة أطفال" },
+    "keywords": {
+      "es": ["rueditas", "bici para niños", "ruedas de entrenamiento", "aprender a andar en bici", "niños", "juguete", "primera bici"],
+      "en": ["training wheels", "children’s bike", "stabilizers", "learn to ride", "kids", "first bike", "toy"]
+    }
+  },
+  "tricycle": {
+    "label": { "es": "Triciclo", "en": "Tricycle", "pt": "Triciclo", "fr": "Tricycle", "de": "Dreirad", "it": "Triciclo", "ja": "三輪車", "zh": "三轮车", "ko": "세발자전거", "ar": "دراجة ثلاثية العجلات" },
+    "keywords": {
+      "es": ["tres ruedas", "bici de tres ruedas", "niños pequeños", "para adultos", "juguete", "estable", "primeros pasos"],
+      "en": ["trike", "three-wheeler", "kids’ trike", "adult tricycle", "toy", "stable ride", "toddler"]
+    }
+  },
+  "handcycle": {
+    "label": { "es": "Bicicleta de mano", "en": "Handcycle", "pt": "Handbike", "fr": "Handbike", "de": "Handbike", "it": "Handbike", "ja": "ハンドサイクル", "zh": "手摇自行车", "ko": "핸드사이클", "ar": "دراجة يدوية" },
+    "keywords": {
+      "es": ["handbike", "ciclismo adaptado", "paraciclismo", "deporte adaptado", "silla de ruedas", "accesibilidad", "pedaleo con brazos"],
+      "en": ["handbike", "adaptive cycling", "para-cycling", "adaptive sport", "wheelchair user", "accessibility", "arm-powered"]
+    }
+  },
+  "balance-bike": {
+    "label": { "es": "Bicicleta de equilibrio", "en": "Balance bike", "pt": "Bicicleta de equilíbrio", "fr": "Draisienne", "de": "Laufrad", "it": "Bici senza pedali", "ja": "ペダルなし自転車", "zh": "儿童平衡车", "ko": "밸런스 바이크", "ar": "دراجة توازن" },
+    "keywords": {
+      "es": ["bici sin pedales", "primera bici", "niños pequeños", "aprender a andar en bici", "bici de aprendizaje", "infantil", "motricidad"],
+      "en": ["no-pedal bike", "first bike", "toddler bike", "learn to ride", "run bike", "kids", "push bike"]
+    }
+  },
+  "bicycle-wheel": {
+    "label": { "es": "Rueda de bicicleta", "en": "Bicycle wheel", "pt": "Roda de bicicleta", "fr": "Roue de vélo", "de": "Fahrrad-Laufrad", "it": "Ruota di bicicletta", "ja": "自転車の車輪", "zh": "自行车车轮", "ko": "자전거 바퀴", "ar": "عجلة دراجة" },
+    "keywords": {
+      "es": ["rin", "rayos", "llanta de bici", "ponchadura", "taller de bicis", "armado de ruedas", "cámara"],
+      "en": ["rim", "spokes", "bike tire", "flat tire", "bike shop", "wheel build", "inner tube"]
+    }
+  },
+  "bicycle-pump": {
+    "label": { "es": "Bomba de bicicleta", "en": "Bike pump", "pt": "Bomba de bicicleta", "fr": "Pompe à vélo", "de": "Fahrradpumpe", "it": "Pompa per bici", "ja": "空気入れ", "zh": "打气筒", "ko": "자전거 펌프", "ar": "منفاخ دراجة" },
+    "keywords": {
+      "es": ["inflador", "bomba de aire", "inflar llantas", "presión de llantas", "taller de bicis", "ponchadura", "aire"],
+      "en": ["tire pump", "inflator", "inflate tires", "tire pressure", "floor pump", "bike shop", "air"]
+    }
+  },
+  "bicycle-trailer": {
+    "label": { "es": "Remolque para bicicleta", "en": "Bike trailer", "pt": "Reboque para bicicleta", "fr": "Remorque vélo", "de": "Fahrradanhänger", "it": "Carrello per bici", "ja": "自転車用トレーラー", "zh": "自行车拖车", "ko": "자전거 트레일러", "ar": "مقطورة دراجة" },
+    "keywords": {
+      "es": ["carrito para niños", "llevar niños en bici", "carga en bici", "remolque infantil", "paseo en familia", "accesorio de bici", "jalar"],
+      "en": ["child trailer", "kid carrier", "cargo trailer", "tow kids", "family ride", "bike accessory", "pet trailer"]
+    }
+  },
+  "bicycle-chain": {
+    "label": { "es": "Cadena de bicicleta", "en": "Bike chain", "pt": "Corrente de bicicleta", "fr": "Chaîne de vélo", "de": "Fahrradkette", "it": "Catena della bici", "ja": "自転車のチェーン", "zh": "自行车链条", "ko": "자전거 체인", "ar": "سلسلة الدراجة" },
+    "keywords": {
+      "es": ["transmisión", "piñones", "plato", "lubricar", "taller de bicis", "refacciones", "cambios"],
+      "en": ["drivetrain", "sprocket", "chainring", "lube", "bike repair", "parts", "gears"]
+    }
+  },
+  "caravan": {
+    "label": { "es": "Caravana", "en": "Caravan", "pt": "Trailer", "fr": "Caravane", "de": "Wohnwagen", "it": "Roulotte", "ja": "キャンピングトレーラー", "zh": "拖挂式房车", "ko": "캠핑 트레일러", "ar": "كرفان" },
+    "keywords": {
+      "es": ["casa rodante", "tráiler de camping", "remolque habitable", "parque para casas rodantes", "acampar", "viaje por carretera", "renta vacacional"],
+      "en": ["travel trailer", "camper trailer", "RV park", "campground", "towable RV", "holiday rental", "road trip"]
+    }
+  },
+  "motorhome": {
+    "label": { "es": "Autocaravana", "en": "Motorhome", "pt": "Motorhome", "fr": "Camping-car", "de": "Wohnmobil", "it": "Camper", "ja": "キャンピングカー", "zh": "自行式房车", "ko": "모터홈", "ar": "منزل متنقل" },
+    "keywords": {
+      "es": ["casa rodante", "motorhome", "RV", "camper", "campamento", "renta de casas rodantes", "viaje en carretera"],
+      "en": ["RV", "recreational vehicle", "camper", "RV rental", "campground", "road trip", "home on wheels"]
+    }
+  },
+  "trailer": {
+    "label": { "es": "Remolque", "en": "Utility trailer", "pt": "Reboque", "fr": "Remorque", "de": "Anhänger", "it": "Rimorchio", "ja": "トレーラー", "zh": "挂车", "ko": "트레일러", "ar": "مقطورة" },
+    "keywords": {
+      "es": ["tráiler", "carreta", "enganche", "jalar carga", "mudanza", "renta", "carga abierta"],
+      "en": ["hitch", "towing", "tow behind", "hauling", "moving", "rental", "cargo"]
+    }
+  },
+  "trailer-enclosed": {
+    "label": { "es": "Remolque cerrado", "en": "Enclosed trailer", "pt": "Reboque fechado", "fr": "Remorque fermée", "de": "Kofferanhänger", "it": "Rimorchio chiuso", "ja": "箱型トレーラー", "zh": "封闭式挂车", "ko": "밀폐형 트레일러", "ar": "مقطورة مغلقة" },
+    "keywords": {
+      "es": ["caja cerrada", "remolque de carga", "mudanza", "transporte de equipo", "tráiler cerrado", "bodega móvil", "carga protegida"],
+      "en": ["cargo trailer", "box trailer", "moving", "equipment hauling", "covered trailer", "toy hauler", "secure cargo"]
+    }
+  },
+  "license-plate": {
+    "label": { "es": "Placa del vehículo", "en": "License plate", "pt": "Placa do carro", "fr": "Plaque d’immatriculation", "de": "Nummernschild", "it": "Targa", "ja": "ナンバープレート", "zh": "车牌", "ko": "번호판", "ar": "لوحة السيارة" },
+    "keywords": {
+      "es": ["placas", "matrícula", "número de placa", "lectura de placas", "registro vehicular", "emplacamiento", "tarjeta de circulación"],
+      "en": ["number plate", "registration plate", "plate number", "plate recognition", "ANPR", "vehicle registration", "tag"]
+    }
+  },
+  "license-plate-search": {
+    "label": { "es": "Consultar placa", "en": "Plate lookup", "pt": "Consultar placa", "fr": "Recherche d’immatriculation", "de": "Kennzeichenabfrage", "it": "Ricerca targa", "ja": "ナンバー照会", "zh": "车牌查询", "ko": "번호판 조회", "ar": "البحث عن لوحة السيارة" },
+    "keywords": {
+      "es": ["REPUVE", "historial del vehículo", "auto robado", "adeudos", "multas", "verificar placas", "registro vehicular"],
+      "en": ["plate check", "vehicle history", "stolen car check", "registry check", "VIN lookup", "fines", "registration search"]
+    }
+  }
+}

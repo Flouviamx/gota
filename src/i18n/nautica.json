@@ -1,0 +1,359 @@
+{
+  "boat": {
+    "label": { "es": "Lancha", "en": "Motorboat", "pt": "Lancha", "fr": "Bateau à moteur", "de": "Motorboot", "it": "Motoscafo", "ja": "モーターボート", "zh": "汽艇", "ko": "모터보트", "ar": "قارب بمحرك" },
+    "keywords": {
+      "es": ["bote", "embarcación", "renta de botes", "paseo en el mar", "tour en bote", "marina", "transporte acuático"],
+      "en": ["speedboat", "powerboat", "boat rental", "boat trip", "boat tour", "marina", "watercraft"]
+    }
+  },
+  "rowboat": {
+    "label": { "es": "Bote de remos", "en": "Rowboat", "pt": "Barco a remo", "fr": "Barque", "de": "Ruderboot", "it": "Barca a remi", "ja": "手漕ぎボート", "zh": "划艇", "ko": "노 젓는 배", "ar": "قارب تجديف" },
+    "keywords": {
+      "es": ["remar", "barca", "renta en el lago", "paseo en el parque", "bote pequeño", "embarcadero", "pesca en lago"],
+      "en": ["row", "oars", "skiff", "lake rental", "park boating", "small boat", "open boat"]
+    }
+  },
+  "kayak": {
+    "label": { "es": "Kayak", "en": "Kayak", "pt": "Caiaque", "fr": "Kayak", "de": "Kajak", "it": "Kayak", "ja": "カヤック", "zh": "皮划艇", "ko": "카약", "ar": "قارب كاياك" },
+    "keywords": {
+      "es": ["remar", "pala doble", "renta por hora", "tour en el mar", "aguas rápidas", "deporte acuático", "aventura"],
+      "en": ["paddle", "double paddle", "sea paddling", "whitewater", "hourly rental", "water sports", "adventure"]
+    }
+  },
+  "yacht": {
+    "label": { "es": "Yate", "en": "Yacht", "pt": "Iate", "fr": "Yacht", "de": "Motorjacht", "it": "Yacht", "ja": "モーターヨット", "zh": "游艇", "ko": "요트", "ar": "يخت" },
+    "keywords": {
+      "es": ["lujo", "chárter", "megayate", "embarcación privada", "fiesta en el mar", "paseo exclusivo", "renta premium"],
+      "en": ["luxury", "charter", "superyacht", "private boat", "boat party", "premium listing", "cruiser"]
+    }
+  },
+  "catamaran": {
+    "label": { "es": "Catamarán", "en": "Catamaran", "pt": "Catamarã", "fr": "Catamaran", "de": "Katamaran", "it": "Catamarano", "ja": "カタマラン", "zh": "双体船", "ko": "카타마란", "ar": "قارب كاتاماران" },
+    "keywords": {
+      "es": ["velero de dos cascos", "multicasco", "chárter de vela", "tour a las islas", "paseo en la bahía", "snorkel", "atardecer"],
+      "en": ["multihull", "twin hull", "sailing charter", "island hopping", "sunset cruise", "snorkel trip", "day sail"]
+    }
+  },
+  "jet-ski": {
+    "label": { "es": "Moto acuática", "en": "Jet ski", "pt": "Jet ski", "fr": "Scooter des mers", "de": "Jetski", "it": "Moto d’acqua", "ja": "水上バイク", "zh": "水上摩托", "ko": "제트스키", "ar": "دراجة مائية" },
+    "keywords": {
+      "es": ["jet ski", "renta en la playa", "deportes acuáticos", "velocidad", "adrenalina", "actividades de playa", "motonáutica"],
+      "en": ["personal watercraft", "PWC", "beach rental", "water sports", "speed", "thrill ride", "water scooter"]
+    }
+  },
+  "houseboat": {
+    "label": { "es": "Casa flotante", "en": "Houseboat", "pt": "Casa flutuante", "fr": "Péniche habitable", "de": "Hausboot", "it": "Casa galleggiante", "ja": "ハウスボート", "zh": "船屋", "ko": "하우스보트", "ar": "منزل عائم" },
+    "keywords": {
+      "es": ["hospedaje en el río", "canales", "vivir en el agua", "barco vivienda", "renta vacacional", "estancia única", "lago"],
+      "en": ["floating home", "canal boat", "narrowboat", "river stay", "vacation rental", "live aboard", "floating cabin"]
+    }
+  },
+  "fishing-boat": {
+    "label": { "es": "Barco pesquero", "en": "Fishing boat", "pt": "Barco de pesca", "fr": "Bateau de pêche", "de": "Fischerboot", "it": "Peschereccio", "ja": "漁船", "zh": "渔船", "ko": "어선", "ar": "قارب صيد" },
+    "keywords": {
+      "es": ["pesca deportiva", "pesca comercial", "arrastrero", "camaronero", "flota pesquera", "chárter de pesca", "salir a pescar"],
+      "en": ["trawler", "fishing charter", "sport fishing", "commercial fishing", "fishing fleet", "deep-sea fishing", "catch"]
+    }
+  },
+  "cruise-ship": {
+    "label": { "es": "Crucero", "en": "Cruise ship", "pt": "Navio de cruzeiro", "fr": "Paquebot de croisière", "de": "Kreuzfahrtschiff", "it": "Nave da crociera", "ja": "クルーズ船", "zh": "邮轮", "ko": "크루즈선", "ar": "سفينة سياحية" },
+    "keywords": {
+      "es": ["naviera", "vacaciones en el mar", "escala", "día en puerto", "transatlántico", "camarote", "todo incluido"],
+      "en": ["cruise booking", "cruise line", "ocean liner", "shore day", "port of call", "cabin", "sea vacation"]
+    }
+  },
+  "ferry": {
+    "label": { "es": "Ferry", "en": "Ferry", "pt": "Balsa", "fr": "Ferry", "de": "Fähre", "it": "Traghetto", "ja": "フェリー", "zh": "渡轮", "ko": "페리", "ar": "عبّارة" },
+    "keywords": {
+      "es": ["transbordador", "cruce en barco", "horarios de salida", "comprar boletos", "pasajeros y autos", "ir a la isla", "naviera"],
+      "en": ["crossing", "timetable", "tickets", "passenger boat", "vehicle deck", "ro-ro", "island trip"]
+    }
+  },
+  "cargo-ship": {
+    "label": { "es": "Buque portacontenedores", "en": "Container ship", "pt": "Navio porta-contêineres", "fr": "Porte-conteneurs", "de": "Containerschiff", "it": "Nave portacontainer", "ja": "コンテナ船", "zh": "集装箱船", "ko": "컨테이너선", "ar": "سفينة حاويات" },
+    "keywords": {
+      "es": ["carguero", "naviera", "flete marítimo", "transporte marítimo", "itinerario de buques", "importación", "exportación"],
+      "en": ["freighter", "shipping line", "ocean freight", "carrier", "vessel schedule", "import", "export"]
+    }
+  },
+  "tugboat": {
+    "label": { "es": "Remolcador", "en": "Tugboat", "pt": "Rebocador", "fr": "Remorqueur", "de": "Schlepper", "it": "Rimorchiatore", "ja": "タグボート", "zh": "拖船", "ko": "예인선", "ar": "قاطرة بحرية" },
+    "keywords": {
+      "es": ["remolcar", "maniobras en puerto", "servicios portuarios", "asistencia al atraque", "empujar barcos", "auxilio", "salvamento"],
+      "en": ["tow", "towing", "harbor assist", "port services", "berthing", "push boat", "salvage"]
+    }
+  },
+  "water-taxi": {
+    "label": { "es": "Taxi acuático", "en": "Water taxi", "pt": "Táxi aquático", "fr": "Bateau-taxi", "de": "Wassertaxi", "it": "Taxi acqueo", "ja": "水上タクシー", "zh": "水上出租车", "ko": "수상 택시", "ar": "تاكسي مائي" },
+    "keywords": {
+      "es": ["lancha colectiva", "traslado en lancha", "pedir viaje", "vaporetto", "transporte en canales", "transporte público", "muelle de abordaje"],
+      "en": ["water bus", "boat ride", "on-demand ride", "vaporetto", "canal transport", "shuttle boat", "public transit"]
+    }
+  },
+  "lifeboat": {
+    "label": { "es": "Bote salvavidas", "en": "Lifeboat", "pt": "Bote salva-vidas", "fr": "Canot de sauvetage", "de": "Rettungsboot", "it": "Scialuppa di salvataggio", "ja": "救命ボート", "zh": "救生艇", "ko": "구명정", "ar": "قارب نجاة" },
+    "keywords": {
+      "es": ["abandonar el barco", "simulacro", "rescate", "seguridad a bordo", "evacuación", "lancha de salvamento", "emergencia"],
+      "en": ["abandon ship", "drill", "rescue craft", "safety on board", "evacuation", "muster station", "emergency"]
+    }
+  },
+  "tall-ship": {
+    "label": { "es": "Velero histórico", "en": "Tall ship", "pt": "Veleiro histórico", "fr": "Grand voilier", "de": "Großsegler", "it": "Veliero storico", "ja": "大型帆船", "zh": "高桅帆船", "ko": "대형 범선", "ar": "سفينة شراعية تاريخية" },
+    "keywords": {
+      "es": ["galeón", "buque escuela", "barco pirata", "patrimonio naval", "recorrido histórico", "mástiles", "aventura"],
+      "en": ["galleon", "sail training", "pirate ship", "historic ship", "heritage tour", "square rigger", "adventure"]
+    }
+  },
+  "submarine": {
+    "label": { "es": "Submarino", "en": "Submarine", "pt": "Submarino", "fr": "Sous-marin", "de": "U-Boot", "it": "Sottomarino", "ja": "潜水艦", "zh": "潜水艇", "ko": "잠수함", "ar": "غواصة" },
+    "keywords": {
+      "es": ["sumergible", "bajo el agua", "fondo marino", "mar profundo", "inmersión", "tour bajo el mar", "museo naval"],
+      "en": ["sub", "submersible", "underwater tour", "deep sea", "dive", "below the surface", "naval museum"]
+    }
+  },
+  "shipwreck": {
+    "label": { "es": "Naufragio", "en": "Shipwreck", "pt": "Naufrágio", "fr": "Épave", "de": "Schiffswrack", "it": "Relitto", "ja": "難破船", "zh": "沉船", "ko": "난파선", "ar": "حطام سفينة" },
+    "keywords": {
+      "es": ["barco hundido", "pecio", "sitio de buceo", "hundirse", "se fue a pique", "fracaso", "proyecto hundido"],
+      "en": ["wreck", "sunken ship", "dive site", "sunk", "sinking", "failure", "lost at sea"]
+    }
+  },
+  "captain-hat": {
+    "label": { "es": "Gorra de capitán", "en": "Captain’s hat", "pt": "Quepe de capitão", "fr": "Casquette de capitaine", "de": "Kapitänsmütze", "it": "Cappello da capitano", "ja": "船長帽", "zh": "船长帽", "ko": "선장 모자", "ar": "قبعة القبطان" },
+    "keywords": {
+      "es": ["con capitán", "patrón de barco", "tripulación", "rol a bordo", "marinero", "almirante", "estilo náutico"],
+      "en": ["skipper", "skippered charter", "crew", "crew role", "sailor", "admiral", "nautical style"]
+    }
+  },
+  "ship-wheel": {
+    "label": { "es": "Timón", "en": "Ship’s wheel", "pt": "Leme", "fr": "Roue de gouvernail", "de": "Steuerrad", "it": "Timone", "ja": "舵輪", "zh": "船舵", "ko": "조타륜", "ar": "دفة السفينة" },
+    "keywords": {
+      "es": ["navegar", "dirigir", "gobernar", "capitán", "tomar el control", "llevar el rumbo", "ajustes de navegación"],
+      "en": ["helm", "steer", "take the helm", "captain", "set course", "steering wheel", "navigation settings"]
+    }
+  },
+  "boat-propeller": {
+    "label": { "es": "Hélice de barco", "en": "Boat propeller", "pt": "Hélice de barco", "fr": "Hélice de bateau", "de": "Schiffsschraube", "it": "Elica marina", "ja": "船のスクリュー", "zh": "船用螺旋桨", "ko": "선박 프로펠러", "ar": "مروحة القارب" },
+    "keywords": {
+      "es": ["propela", "empuje", "propulsión", "motor", "transmisión", "aspas", "reparación de lancha"],
+      "en": ["prop", "screw", "thrust", "propulsion", "drive", "blades", "boat repair"]
+    }
+  },
+  "sail": {
+    "label": { "es": "Vela de barco", "en": "Sail", "pt": "Vela de barco", "fr": "Voile", "de": "Segel", "it": "Vela", "ja": "帆", "zh": "船帆", "ko": "돛", "ar": "شراع" },
+    "keywords": {
+      "es": ["velear", "escuela de navegación", "zarpar", "viento", "velamen", "regata", "lona"],
+      "en": ["sailing", "sailing lessons", "set sail", "wind power", "canvas", "sailmaker", "regatta"]
+    }
+  },
+  "porthole": {
+    "label": { "es": "Ojo de buey", "en": "Porthole", "pt": "Vigia", "fr": "Hublot", "de": "Bullauge", "it": "Oblò", "ja": "舷窓", "zh": "舷窗", "ko": "현창", "ar": "كوّة السفينة" },
+    "keywords": {
+      "es": ["ventana redonda", "escotilla", "claraboya", "camarote exterior", "vista al mar", "habitación de crucero", "decoración náutica"],
+      "en": ["round window", "ship window", "hatch", "outside cabin", "ocean view", "cruise room", "nautical decor"]
+    }
+  },
+  "spyglass": {
+    "label": { "es": "Catalejo", "en": "Spyglass", "pt": "Luneta", "fr": "Longue-vue", "de": "Fernrohr", "it": "Cannocchiale", "ja": "望遠鏡", "zh": "单筒望远镜", "ko": "망원경", "ar": "منظار" },
+    "keywords": {
+      "es": ["otear", "explorar", "en el horizonte", "a la vista", "vigía", "telescopio", "visión"],
+      "en": ["look out", "explore", "on the horizon", "land ho", "scout", "telescope", "vision"]
+    }
+  },
+  "life-jacket": {
+    "label": { "es": "Chaleco salvavidas", "en": "Life jacket", "pt": "Colete salva-vidas", "fr": "Gilet de sauvetage", "de": "Rettungsweste", "it": "Giubbotto salvagente", "ja": "ライフジャケット", "zh": "救生衣", "ko": "구명조끼", "ar": "سترة نجاة" },
+    "keywords": {
+      "es": ["seguridad a bordo", "equipo obligatorio", "flotación", "renta con equipo", "niños a bordo", "nadar seguro", "protección personal"],
+      "en": ["life vest", "PFD", "buoyancy aid", "safety on board", "required gear", "flotation", "kids on board"]
+    }
+  },
+  "man-overboard": {
+    "label": { "es": "Hombre al agua", "en": "Man overboard", "pt": "Homem ao mar", "fr": "Homme à la mer", "de": "Mann über Bord", "it": "Uomo a mare", "ja": "落水者", "zh": "有人落水", "ko": "물에 빠진 사람", "ar": "شخص سقط في البحر" },
+    "keywords": {
+      "es": ["MOB", "alarma", "persona en el agua", "rescate", "emergencia", "riesgo de ahogamiento", "botón de pánico"],
+      "en": ["MOB", "person overboard", "alarm", "rescue", "emergency", "drowning", "panic button"]
+    }
+  },
+  "scuba-mask": {
+    "label": { "es": "Visor y snorkel", "en": "Mask and snorkel", "pt": "Máscara e snorkel", "fr": "Masque et tuba", "de": "Tauchmaske mit Schnorchel", "it": "Maschera e boccaglio", "ja": "シュノーケルマスク", "zh": "潜水面镜", "ko": "스노클 마스크", "ar": "قناع غوص" },
+    "keywords": {
+      "es": ["buceo", "careta", "renta de equipo", "arrecife", "cenote", "nado con tortugas", "excursión de buceo"],
+      "en": ["snorkeling", "diving", "dive mask", "gear rental", "reef", "snorkel tour", "underwater"]
+    }
+  },
+  "swim-fins": {
+    "label": { "es": "Aletas", "en": "Swim fins", "pt": "Nadadeiras", "fr": "Palmes", "de": "Schwimmflossen", "it": "Pinne", "ja": "フィン", "zh": "脚蹼", "ko": "오리발", "ar": "زعانف سباحة" },
+    "keywords": {
+      "es": ["patas de rana", "buceo", "snorkel", "nado", "renta de equipo", "actividades en el mar", "equipo de playa"],
+      "en": ["flippers", "diving", "snorkeling", "swimming", "gear rental", "sea activities", "beach gear"]
+    }
+  },
+  "pier": {
+    "label": { "es": "Muelle", "en": "Pier", "pt": "Píer", "fr": "Jetée", "de": "Steg", "it": "Molo", "ja": "桟橋", "zh": "码头", "ko": "부두", "ar": "رصيف بحري" },
+    "keywords": {
+      "es": ["embarcadero", "atracadero", "malecón", "espigón", "punto de abordaje", "frente al mar", "mapa costero"],
+      "en": ["dock", "jetty", "wharf", "quay", "boarding point", "waterfront", "boardwalk"]
+    }
+  },
+  "marina": {
+    "label": { "es": "Marina", "en": "Marina", "pt": "Marina", "fr": "Port de plaisance", "de": "Yachthafen", "it": "Porto turistico", "ja": "マリーナ", "zh": "游艇码头", "ko": "마리나", "ar": "مرسى اليخوت" },
+    "keywords": {
+      "es": ["club náutico", "puerto deportivo", "amarres", "estacionamiento de botes", "guardería náutica", "servicios náuticos", "combustible"],
+      "en": ["yacht harbor", "yacht club", "slips", "moorings", "boat parking", "marine services", "fuel dock"]
+    }
+  },
+  "berth": {
+    "label": { "es": "Amarre", "en": "Berth", "pt": "Vaga de atracação", "fr": "Place de port", "de": "Liegeplatz", "it": "Posto barca", "ja": "係留スペース", "zh": "泊位", "ko": "선석", "ar": "مرسى" },
+    "keywords": {
+      "es": ["reservar lugar", "espacio de atraque", "slip", "eslora disponible", "atracar", "lugar en la marina", "renta mensual"],
+      "en": ["slip", "mooring space", "book a spot", "dock space", "length available", "berthing", "monthly mooring"]
+    }
+  },
+  "boat-trailer": {
+    "label": { "es": "Remolque para lancha", "en": "Boat trailer", "pt": "Carreta para barco", "fr": "Remorque à bateau", "de": "Bootsanhänger", "it": "Carrello portabarca", "ja": "ボートトレーラー", "zh": "船只拖车", "ko": "보트 트레일러", "ar": "مقطورة قوارب" },
+    "keywords": {
+      "es": ["tráiler", "llevar el bote por carretera", "arrastre", "enganche", "remolcable", "bajar a la rampa", "guardar en tierra"],
+      "en": ["trailer", "tow by road", "hitch", "trailerable", "haul", "road trip", "dry storage"]
+    }
+  },
+  "lighthouse": {
+    "label": { "es": "Faro", "en": "Lighthouse", "pt": "Farol", "fr": "Phare", "de": "Leuchtturm", "it": "Faro", "ja": "灯台", "zh": "灯塔", "ko": "등대", "ar": "منارة" },
+    "keywords": {
+      "es": ["costa", "guía", "orientación", "paso seguro", "punto de referencia", "señal luminosa", "rumbo"],
+      "en": ["coast", "guidance", "beacon", "safe passage", "landmark", "light signal", "direction"]
+    }
+  },
+  "buoy": {
+    "label": { "es": "Boya", "en": "Buoy", "pt": "Boia", "fr": "Bouée", "de": "Boje", "it": "Boa", "ja": "ブイ", "zh": "浮标", "ko": "부표", "ar": "عوامة" },
+    "keywords": {
+      "es": ["señalización marítima", "marca de canal", "canal navegable", "carta náutica", "aguas seguras", "baliza", "flotador"],
+      "en": ["channel marker", "navigation mark", "fairway", "nautical chart", "safe water", "beacon", "float"]
+    }
+  },
+  "tide-high": {
+    "label": { "es": "Marea alta", "en": "High tide", "pt": "Maré alta", "fr": "Marée haute", "de": "Flut", "it": "Alta marea", "ja": "満潮", "zh": "满潮", "ko": "만조", "ar": "المد العالي" },
+    "keywords": {
+      "es": ["pleamar", "tabla de mareas", "creciente", "riesgo de inundación", "nivel del mar", "pronóstico costero", "playa"],
+      "en": ["high water", "flood tide", "tide table", "tide chart", "flood risk", "sea level", "coastal forecast"]
+    }
+  },
+  "tide-low": {
+    "label": { "es": "Marea baja", "en": "Low tide", "pt": "Maré baixa", "fr": "Marée basse", "de": "Ebbe", "it": "Bassa marea", "ja": "干潮", "zh": "干潮", "ko": "간조", "ar": "الجزر" },
+    "keywords": {
+      "es": ["bajamar", "tabla de mareas", "aguas someras", "poco fondo", "nivel del mar", "pozas", "playa descubierta"],
+      "en": ["low water", "ebb tide", "tide table", "shallow water", "sea level", "tide pools", "exposed shore"]
+    }
+  },
+  "wave-height": {
+    "label": { "es": "Altura de las olas", "en": "Wave height", "pt": "Altura das ondas", "fr": "Hauteur des vagues", "de": "Wellenhöhe", "it": "Altezza delle onde", "ja": "波の高さ", "zh": "浪高", "ko": "파고", "ar": "ارتفاع الأمواج" },
+    "keywords": {
+      "es": ["oleaje", "marejada", "mar de fondo", "estado del mar", "pronóstico marino", "condiciones para surfear", "navegación"],
+      "en": ["swell", "sea state", "rough sea", "marine forecast", "surf forecast", "surf conditions", "boating conditions"]
+    }
+  },
+  "sea-current": {
+    "label": { "es": "Corriente marina", "en": "Sea current", "pt": "Corrente marítima", "fr": "Courant marin", "de": "Meeresströmung", "it": "Corrente marina", "ja": "海流", "zh": "洋流", "ko": "해류", "ar": "تيار بحري" },
+    "keywords": {
+      "es": ["deriva", "flujo", "corriente de resaca", "dirección del agua", "pronóstico marino", "carta náutica", "navegación"],
+      "en": ["drift", "flow", "rip current", "tidal stream", "water direction", "marine forecast", "nautical chart"]
+    }
+  },
+  "water-depth": {
+    "label": { "es": "Profundidad del agua", "en": "Water depth", "pt": "Profundidade da água", "fr": "Profondeur de l’eau", "de": "Wassertiefe", "it": "Profondità dell’acqua", "ja": "水深", "zh": "水深", "ko": "수심", "ar": "عمق المياه" },
+    "keywords": {
+      "es": ["sonda", "ecosonda", "sonar", "calado", "fondo", "aguas someras", "batimetría"],
+      "en": ["depth sounder", "sonar", "fathom", "keel clearance", "draft", "shallow", "bathymetry"]
+    }
+  },
+  "sea-route": {
+    "label": { "es": "Ruta marítima", "en": "Sea route", "pt": "Rota marítima", "fr": "Route maritime", "de": "Seeroute", "it": "Rotta marittima", "ja": "航路", "zh": "海上航线", "ko": "해상 항로", "ar": "طريق بحري" },
+    "keywords": {
+      "es": ["línea de ferry", "cruce", "travesía", "rumbo", "ruta naviera", "itinerario", "corredor marítimo"],
+      "en": ["ferry line", "crossing", "shipping lane", "passage", "course", "itinerary", "voyage"]
+    }
+  },
+  "ship-departure": {
+    "label": { "es": "Salida del barco", "en": "Ship departure", "pt": "Saída do navio", "fr": "Départ du navire", "de": "Abfahrt des Schiffs", "it": "Partenza della nave", "ja": "出港", "zh": "离港", "ko": "출항", "ar": "مغادرة السفينة" },
+    "keywords": {
+      "es": ["zarpar", "tablero de salidas", "dejar el puerto", "hora de salida", "partida", "levar anclas", "embarque"],
+      "en": ["departures board", "sail out", "leave port", "departure time", "outbound", "set sail", "weigh anchor"]
+    }
+  },
+  "ship-arrival": {
+    "label": { "es": "Llegada del barco", "en": "Ship arrival", "pt": "Chegada do navio", "fr": "Arrivée du navire", "de": "Ankunft des Schiffs", "it": "Arrivo della nave", "ja": "入港", "zh": "抵港", "ko": "입항", "ar": "وصول السفينة" },
+    "keywords": {
+      "es": ["tablero de llegadas", "arribo", "entrar a puerto", "tocar puerto", "atracar", "hora de llegada", "desembarque"],
+      "en": ["arrivals board", "inbound", "enter port", "make port", "docking", "arrival time", "disembark"]
+    }
+  },
+  "ship-tracking": {
+    "label": { "es": "Rastreo de barcos", "en": "Vessel tracking", "pt": "Rastreamento de navios", "fr": "Suivi des navires", "de": "Schiffsortung", "it": "Tracciamento navi", "ja": "船舶追跡", "zh": "船舶追踪", "ko": "선박 추적", "ar": "تتبع السفن" },
+    "keywords": {
+      "es": ["AIS", "posición en vivo", "ubicación en tiempo real", "localizar buque", "monitoreo de flota", "mapa de barcos", "seguimiento de carga"],
+      "en": ["AIS", "live position", "real-time location", "ship finder", "fleet monitoring", "marine traffic", "cargo tracking"]
+    }
+  },
+  "ship-top": {
+    "label": { "es": "Barco visto desde arriba", "en": "Vessel from above", "pt": "Navio visto de cima", "fr": "Navire vu du dessus", "de": "Schiff von oben", "it": "Nave vista dall’alto", "ja": "船の上面図", "zh": "船只俯视图", "ko": "위에서 본 선박", "ar": "سفينة من الأعلى" },
+    "keywords": {
+      "es": ["marcador de barco", "posición del buque", "vista de flota", "vista aérea", "ícono de mapa", "rumbo", "embarcación"],
+      "en": ["vessel marker", "ship position", "fleet view", "aerial view", "top view", "map icon", "heading"]
+    }
+  },
+  "ship-clock": {
+    "label": { "es": "Horario de salidas", "en": "Sailing schedule", "pt": "Horário de saídas", "fr": "Horaires des traversées", "de": "Fahrplan", "it": "Orario delle partenze", "ja": "運航スケジュール", "zh": "船期表", "ko": "운항 시간표", "ar": "مواعيد الإبحار" },
+    "keywords": {
+      "es": ["retraso", "cruce demorado", "horarios del ferry", "próxima salida", "itinerario", "programado", "hora de abordaje"],
+      "en": ["departure times", "delayed", "delayed crossing", "ferry timetable", "next sailing", "scheduled", "boarding time"]
+    }
+  },
+  "ship-x": {
+    "label": { "es": "Salida cancelada", "en": "Sailing canceled", "pt": "Saída cancelada", "fr": "Traversée annulée", "de": "Fahrt abgesagt", "it": "Partenza annullata", "ja": "欠航", "zh": "停航", "ko": "결항", "ar": "إلغاء الرحلة البحرية" },
+    "keywords": {
+      "es": ["cruce cancelado", "mal clima", "nortes", "puerto cerrado", "sin servicio", "suspendido", "reembolso"],
+      "en": ["crossing canceled", "bad weather", "storm", "port closed", "no service", "suspended", "refund"]
+    }
+  },
+  "ship-check": {
+    "label": { "es": "Salida confirmada", "en": "Sailing confirmed", "pt": "Saída confirmada", "fr": "Traversée confirmée", "de": "Fahrt bestätigt", "it": "Partenza confermata", "ja": "運航確定", "zh": "船次已确认", "ko": "운항 확정", "ar": "تأكيد الرحلة البحرية" },
+    "keywords": {
+      "es": ["a tiempo", "sin retraso", "reserva confirmada", "cruce confirmado", "llegó", "boleto válido", "operación normal"],
+      "en": ["on time", "no delay", "booking confirmed", "crossing confirmed", "arrived", "valid ticket", "running normally"]
+    }
+  },
+  "ship-search": {
+    "label": { "es": "Buscar embarcación", "en": "Find a vessel", "pt": "Buscar embarcação", "fr": "Rechercher un navire", "de": "Schiff suchen", "it": "Cerca imbarcazione", "ja": "船舶を検索", "zh": "查找船舶", "ko": "선박 검색", "ar": "البحث عن سفينة" },
+    "keywords": {
+      "es": ["consultar buque", "localizador de barcos", "buscador", "número IMO", "nombre del barco", "registro de embarcaciones", "flota"],
+      "en": ["vessel lookup", "ship finder", "search", "IMO number", "ship name", "vessel registry", "fleet"]
+    }
+  },
+  "anchor-alert": {
+    "label": { "es": "Alarma de ancla", "en": "Anchor alarm", "pt": "Alarme de âncora", "fr": "Alarme de mouillage", "de": "Ankeralarm", "it": "Allarme ancora", "ja": "走錨アラーム", "zh": "走锚警报", "ko": "주묘 경보", "ar": "إنذار المرساة" },
+    "keywords": {
+      "es": ["ancla garreando", "guardia de fondeo", "deriva", "fondeadero", "radio de borneo", "aviso de posición", "noche anclados"],
+      "en": ["dragging anchor", "anchor watch", "drift", "anchorage", "swing radius", "position alert", "overnight anchoring"]
+    }
+  },
+  "message-bottle": {
+    "label": { "es": "Mensaje en una botella", "en": "Message in a bottle", "pt": "Mensagem na garrafa", "fr": "Bouteille à la mer", "de": "Flaschenpost", "it": "Messaggio in bottiglia", "ja": "ボトルメール", "zh": "漂流瓶", "ko": "유리병 편지", "ar": "رسالة في زجاجة" },
+    "keywords": {
+      "es": ["nota anónima", "carta al futuro", "cápsula del tiempo", "objetos perdidos", "a la deriva", "náufrago", "correo sorpresa"],
+      "en": ["anonymous note", "letter to the future", "time capsule", "lost and found", "adrift", "castaway", "random message"]
+    }
+  },
+  "water-temperature": {
+    "label": { "es": "Temperatura del agua", "en": "Water temperature", "pt": "Temperatura da água", "fr": "Température de l’eau", "de": "Wassertemperatur", "it": "Temperatura dell’acqua", "ja": "水温", "zh": "水温", "ko": "수온", "ar": "درجة حرارة الماء" },
+    "keywords": {
+      "es": ["pronóstico de playa", "pronóstico marino", "agua fría", "agua tibia", "condiciones para nadar", "termómetro", "clima en la costa"],
+      "en": ["sea temperature", "beach forecast", "marine forecast", "swimming conditions", "cold water", "warm water", "thermometer"]
+    }
+  },
+  "knot": {
+    "label": { "es": "Nudo", "en": "Knot", "pt": "Nó", "fr": "Nœud", "de": "Knoten", "it": "Nodo", "ja": "結び目", "zh": "绳结", "ko": "매듭", "ar": "عقدة" },
+    "keywords": {
+      "es": ["atar", "amarrar", "cuerda", "cabo", "lazo", "unir", "boda"],
+      "en": ["tie", "bind", "rope", "rope skills", "connect", "tie the knot", "wedding"]
+    }
+  }
+}

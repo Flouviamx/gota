@@ -1,0 +1,527 @@
+{
+  "plane-side": {
+    "label": { "es": "Avión de pasajeros", "en": "Airliner", "pt": "Avião de passageiros", "fr": "Avion de ligne", "de": "Verkehrsflugzeug", "it": "Aereo di linea", "ja": "旅客機", "zh": "客机", "ko": "여객기", "ar": "طائرة ركاب" },
+    "keywords": {
+      "es": ["avión", "aeronave", "vuelo", "tarjeta de vuelo", "estado del vuelo", "en vuelo", "aviación comercial"],
+      "en": ["airplane", "aircraft", "flight", "flight card", "flight status", "in flight", "commercial aviation"]
+    }
+  },
+  "plane-front": {
+    "label": { "es": "Tipo de aeronave", "en": "Aircraft type", "pt": "Tipo de aeronave", "fr": "Type d’appareil", "de": "Flugzeugtyp", "it": "Tipo di aeromobile", "ja": "機材", "zh": "机型", "ko": "기종", "ar": "نوع الطائرة" },
+    "keywords": {
+      "es": ["avión de frente", "modelo de avión", "equipo", "flota", "cabina", "aerolínea", "aviación"],
+      "en": ["airplane front view", "aircraft model", "equipment", "fleet", "cabin", "airline", "aviation"]
+    }
+  },
+  "private-jet": {
+    "label": { "es": "Jet privado", "en": "Private jet", "pt": "Jato particular", "fr": "Jet privé", "de": "Privatjet", "it": "Jet privato", "ja": "プライベートジェット", "zh": "私人飞机", "ko": "전용기", "ar": "طائرة خاصة" },
+    "keywords": {
+      "es": ["vuelo privado", "jet ejecutivo", "renta de avión", "vuelo chárter", "aviación ejecutiva", "aviación privada", "FBO"],
+      "en": ["business jet", "bizjet", "charter flight", "jet charter", "executive jet", "private aviation", "FBO"]
+    }
+  },
+  "propeller-plane": {
+    "label": { "es": "Avioneta", "en": "Light aircraft", "pt": "Avião monomotor", "fr": "Avion léger", "de": "Kleinflugzeug", "it": "Aereo leggero", "ja": "軽飛行機", "zh": "轻型飞机", "ko": "경비행기", "ar": "طائرة خفيفة" },
+    "keywords": {
+      "es": ["avión de hélice", "monomotor", "aviación general", "escuela de aviación", "clases de vuelo", "vuelo panorámico", "piloto privado"],
+      "en": ["propeller plane", "single-engine", "small plane", "general aviation", "flight school", "flying lessons", "scenic flight"]
+    }
+  },
+  "seaplane": {
+    "label": { "es": "Hidroavión", "en": "Seaplane", "pt": "Hidroavião", "fr": "Hydravion", "de": "Wasserflugzeug", "it": "Idrovolante", "ja": "水上飛行機", "zh": "水上飞机", "ko": "수상 비행기", "ar": "طائرة مائية" },
+    "keywords": {
+      "es": ["avión acuático", "acuatizaje", "avión anfibio", "flotadores", "traslado a la isla", "vuelo panorámico"],
+      "en": ["floatplane", "water landing", "amphibious aircraft", "island transfer", "island hopping", "scenic flight"]
+    }
+  },
+  "glider": {
+    "label": { "es": "Planeador", "en": "Glider", "pt": "Planador", "fr": "Planeur", "de": "Segelflugzeug", "it": "Aliante", "ja": "グライダー", "zh": "滑翔机", "ko": "글라이더", "ar": "طائرة شراعية" },
+    "keywords": {
+      "es": ["vuelo sin motor", "vuelo a vela", "club de vuelo a vela", "planear", "térmicas", "deporte aéreo"],
+      "en": ["sailplane", "soaring", "unpowered flight", "gliding club", "thermals", "air sports"]
+    }
+  },
+  "helicopter": {
+    "label": { "es": "Helicóptero", "en": "Helicopter", "pt": "Helicóptero", "fr": "Hélicoptère", "de": "Hubschrauber", "it": "Elicottero", "ja": "ヘリコプター", "zh": "直升机", "ko": "헬리콥터", "ar": "مروحية" },
+    "keywords": {
+      "es": ["traslado aéreo", "helipuerto", "recorrido aéreo", "vuelo chárter", "rescate aéreo", "ambulancia aérea"],
+      "en": ["chopper", "heli transfer", "helipad", "aerial tour", "charter flight", "air ambulance", "rotorcraft"]
+    }
+  },
+  "hot-air-balloon": {
+    "label": { "es": "Globo aerostático", "en": "Hot-air balloon", "pt": "Balão de ar quente", "fr": "Montgolfière", "de": "Heißluftballon", "it": "Mongolfiera", "ja": "熱気球", "zh": "热气球", "ko": "열기구", "ar": "منطاد هواء ساخن" },
+    "keywords": {
+      "es": ["vuelo en globo", "paseo en globo", "amanecer en globo", "experiencia aérea", "aerostación", "canastilla", "festival de globos"],
+      "en": ["balloon ride", "balloon flight", "sunrise flight", "aerial experience", "ballooning", "basket", "balloon festival"]
+    }
+  },
+  "airship": {
+    "label": { "es": "Dirigible", "en": "Airship", "pt": "Dirigível", "fr": "Dirigeable", "de": "Luftschiff", "it": "Dirigibile", "ja": "飛行船", "zh": "飞艇", "ko": "비행선", "ar": "منطاد موجّه" },
+    "keywords": {
+      "es": ["zepelín", "globo dirigible", "blimp", "publicidad aérea", "transmisión desde el aire", "recorrido aéreo"],
+      "en": ["blimp", "zeppelin", "dirigible", "aerial advertising", "aerial broadcast", "sightseeing flight"]
+    }
+  },
+  "plane-check": {
+    "label": { "es": "Vuelo a tiempo", "en": "Flight on time", "pt": "Voo no horário", "fr": "Vol à l’heure", "de": "Flug pünktlich", "it": "Volo in orario", "ja": "定刻運航", "zh": "航班准点", "ko": "정시 운항", "ar": "رحلة في موعدها" },
+    "keywords": {
+      "es": ["confirmado", "reservación confirmada", "puntual", "en horario", "estado del vuelo", "vuelo programado", "boleto emitido"],
+      "en": ["confirmed", "booking confirmed", "punctual", "on schedule", "flight status", "scheduled flight", "ticketed"]
+    }
+  },
+  "plane-x": {
+    "label": { "es": "Vuelo cancelado", "en": "Flight canceled", "pt": "Voo cancelado", "fr": "Vol annulé", "de": "Flug annulliert", "it": "Volo cancellato", "ja": "欠航", "zh": "航班取消", "ko": "결항", "ar": "رحلة ملغاة" },
+    "keywords": {
+      "es": ["cancelación", "vuelo suspendido", "estado del vuelo", "reembolso", "cambio de vuelo", "reprogramar", "anular reservación"],
+      "en": ["cancellation", "flight status", "refund", "rebook", "grounded", "cancel booking", "called off"]
+    }
+  },
+  "plane-clock": {
+    "label": { "es": "Vuelo retrasado", "en": "Flight delayed", "pt": "Voo atrasado", "fr": "Vol retardé", "de": "Flug verspätet", "it": "Volo in ritardo", "ja": "フライト遅延", "zh": "航班延误", "ko": "항공편 지연", "ar": "رحلة متأخرة" },
+    "keywords": {
+      "es": ["retraso", "demora", "nueva hora de salida", "hora estimada", "estado del vuelo", "compensación por retraso"],
+      "en": ["delay", "running late", "new departure time", "estimated departure", "flight status", "delay compensation"]
+    }
+  },
+  "plane-alert": {
+    "label": { "es": "Alerta de vuelo", "en": "Flight alert", "pt": "Alerta de voo", "fr": "Alerte sur le vol", "de": "Flugstörung", "it": "Avviso sul volo", "ja": "運航情報", "zh": "航班异常", "ko": "항공편 경고", "ar": "تنبيه بشأن الرحلة" },
+    "keywords": {
+      "es": ["afectaciones", "operaciones irregulares", "aviso de viaje", "contingencia", "mal clima", "interrupción del servicio", "aviso importante"],
+      "en": ["disruption", "irregular operations", "IROPS", "travel advisory", "weather disruption", "important notice", "warning"]
+    }
+  },
+  "plane-search": {
+    "label": { "es": "Buscar vuelos", "en": "Search flights", "pt": "Buscar voos", "fr": "Rechercher des vols", "de": "Flüge suchen", "it": "Cerca voli", "ja": "フライト検索", "zh": "搜索航班", "ko": "항공편 검색", "ar": "البحث عن رحلات" },
+    "keywords": {
+      "es": ["buscador de vuelos", "vuelos baratos", "encontrar vuelo", "comparar vuelos", "reservar vuelo", "boletos de avión", "destino"],
+      "en": ["flight search", "cheap flights", "find flights", "compare flights", "book a flight", "plane tickets", "airfare"]
+    }
+  },
+  "plane-wifi": {
+    "label": { "es": "Wi-Fi a bordo", "en": "In-flight Wi-Fi", "pt": "Wi-Fi a bordo", "fr": "Wi-Fi à bord", "de": "WLAN an Bord", "it": "Wi-Fi a bordo", "ja": "機内Wi-Fi", "zh": "机上 Wi-Fi", "ko": "기내 Wi-Fi", "ar": "واي فاي على متن الطائرة" },
+    "keywords": {
+      "es": ["internet en el avión", "wifi en vuelo", "conectividad", "amenidades", "mensajería gratis", "streaming a bordo"],
+      "en": ["in-flight internet", "onboard wifi", "connectivity", "amenities", "free messaging", "streaming on board"]
+    }
+  },
+  "flight-nonstop": {
+    "label": { "es": "Vuelo sin escalas", "en": "Nonstop flight", "pt": "Voo direto", "fr": "Vol sans escale", "de": "Nonstop-Flug", "it": "Volo diretto", "ja": "直行便", "zh": "直飞航班", "ko": "직항편", "ar": "رحلة دون توقف" },
+    "keywords": {
+      "es": ["vuelo directo", "ruta directa", "punto a punto", "filtro de escalas", "número de escalas", "más rápido"],
+      "en": ["direct flight", "no stops", "point to point", "stops filter", "number of stops", "fastest"]
+    }
+  },
+  "flight-layover": {
+    "label": { "es": "Vuelo con escala", "en": "Layover", "pt": "Voo com escala", "fr": "Vol avec escale", "de": "Flug mit Umstieg", "it": "Volo con scalo", "ja": "乗り継ぎ便", "zh": "中转航班", "ko": "경유 항공편", "ar": "رحلة بتوقف" },
+    "keywords": {
+      "es": ["conexión", "transbordo", "vuelo de conexión", "una escala", "tiempo de conexión", "escala larga", "filtro de escalas"],
+      "en": ["connection", "connecting flight", "stopover", "transfer", "one stop", "connection time", "stops filter"]
+    }
+  },
+  "flight-round-trip": {
+    "label": { "es": "Viaje redondo", "en": "Round trip", "pt": "Ida e volta", "fr": "Aller-retour", "de": "Hin- und Rückflug", "it": "Andata e ritorno", "ja": "往復", "zh": "往返", "ko": "왕복", "ar": "ذهاب وعودة" },
+    "keywords": {
+      "es": ["ida y vuelta", "vuelo redondo", "boleto redondo", "tipo de viaje", "vuelo de regreso", "fechas de ida y regreso"],
+      "en": ["return trip", "return flight", "return ticket", "there and back", "two-way", "trip type"]
+    }
+  },
+  "flight-multi-city": {
+    "label": { "es": "Varios destinos", "en": "Multi-city", "pt": "Várias cidades", "fr": "Multi-destinations", "de": "Mehrere Ziele", "it": "Più città", "ja": "複数都市", "zh": "多城市", "ko": "다구간", "ar": "مدن متعددة" },
+    "keywords": {
+      "es": ["multidestino", "varias ciudades", "itinerario", "varios tramos", "viaje por etapas", "tipo de viaje"],
+      "en": ["multiple destinations", "several cities", "itinerary", "multi-leg", "flight legs", "open jaw", "trip type"]
+    }
+  },
+  "flight-diverted": {
+    "label": { "es": "Vuelo desviado", "en": "Flight diverted", "pt": "Voo desviado", "fr": "Vol dérouté", "de": "Flug umgeleitet", "it": "Volo deviato", "ja": "目的地変更", "zh": "航班备降", "ko": "항공편 회항", "ar": "تحويل مسار الرحلة" },
+    "keywords": {
+      "es": ["desvío", "aeropuerto alterno", "cambio de destino", "aterrizaje en otro aeropuerto", "estado del vuelo", "contingencia"],
+      "en": ["diversion", "alternate airport", "rerouted", "destination change", "unscheduled landing", "flight status"]
+    }
+  },
+  "flight-overnight": {
+    "label": { "es": "Vuelo nocturno", "en": "Overnight flight", "pt": "Voo noturno", "fr": "Vol de nuit", "de": "Nachtflug", "it": "Volo notturno", "ja": "夜行便", "zh": "红眼航班", "ko": "야간 항공편", "ar": "رحلة ليلية" },
+    "keywords": {
+      "es": ["vuelo de madrugada", "red-eye", "salida en la noche", "filtro de horario", "hora del día", "dormir en el avión"],
+      "en": ["red-eye", "night flight", "late departure", "time of day", "departure time filter", "sleep on the plane"]
+    }
+  },
+  "flight-path": {
+    "label": { "es": "Ruta de vuelo", "en": "Flight route", "pt": "Rota do voo", "fr": "Trajet du vol", "de": "Flugroute", "it": "Rotta del volo", "ja": "飛行ルート", "zh": "飞行路线", "ko": "비행 경로", "ar": "مسار الرحلة" },
+    "keywords": {
+      "es": ["vuelo en curso", "seguimiento en vivo", "rastrear vuelo", "trayectoria", "origen y destino", "pase de abordar", "mapa del vuelo"],
+      "en": ["flight in progress", "live tracking", "track flight", "flight tracker", "origin and destination", "boarding pass", "flight map"]
+    }
+  },
+  "turbulence": {
+    "label": { "es": "Turbulencia", "en": "Turbulence", "pt": "Turbulência", "fr": "Turbulences", "de": "Turbulenzen", "it": "Turbolenza", "ja": "乱気流", "zh": "气流颠簸", "ko": "난기류", "ar": "مطبات هوائية" },
+    "keywords": {
+      "es": ["vuelo movido", "bolsas de aire", "pronóstico de turbulencia", "clima en ruta", "mareo", "cinturón abrochado"],
+      "en": ["bumpy flight", "rough air", "air pocket", "chop", "forecast", "en route weather", "airsickness"]
+    }
+  },
+  "globe-plane": {
+    "label": { "es": "Vuelos internacionales", "en": "International flights", "pt": "Voos internacionais", "fr": "Vols internationaux", "de": "Internationale Flüge", "it": "Voli internazionali", "ja": "国際線", "zh": "国际航班", "ko": "국제선", "ar": "رحلات دولية" },
+    "keywords": {
+      "es": ["viaje internacional", "vuelos al extranjero", "destinos en el mundo", "alrededor del mundo", "rutas globales", "conexiones internacionales"],
+      "en": ["international travel", "flights abroad", "worldwide", "around the world", "global routes", "overseas"]
+    }
+  },
+  "map-pin-plane": {
+    "label": { "es": "Aeropuerto cercano", "en": "Nearby airport", "pt": "Aeroporto próximo", "fr": "Aéroport à proximité", "de": "Flughafen in der Nähe", "it": "Aeroporto vicino", "ja": "近くの空港", "zh": "附近的机场", "ko": "근처 공항", "ar": "مطار قريب" },
+    "keywords": {
+      "es": ["ubicación del aeropuerto", "mapa de aeropuertos", "más cercano", "cerca de mí", "aeropuerto de origen", "punto de salida"],
+      "en": ["airport location", "airport map", "closest airport", "near me", "home airport", "origin airport"]
+    }
+  },
+  "control-tower": {
+    "label": { "es": "Torre de control", "en": "Control tower", "pt": "Torre de controle", "fr": "Tour de contrôle", "de": "Kontrollturm", "it": "Torre di controllo", "ja": "管制塔", "zh": "塔台", "ko": "관제탑", "ar": "برج المراقبة" },
+    "keywords": {
+      "es": ["control de tráfico aéreo", "controlador aéreo", "autorización de despegue", "comunicación con la torre", "aeródromo", "radar"],
+      "en": ["air traffic control", "ATC", "air traffic controller", "takeoff clearance", "tower frequency", "airfield", "radar"]
+    }
+  },
+  "airport": {
+    "label": { "es": "Aeropuerto", "en": "Airport", "pt": "Aeroporto", "fr": "Aéroport", "de": "Flughafen", "it": "Aeroporto", "ja": "空港", "zh": "机场", "ko": "공항", "ar": "مطار" },
+    "keywords": {
+      "es": ["terminal", "terminal aérea", "cómo llegar", "traslados", "filtro de aeropuertos", "estacionamiento", "aeródromo"],
+      "en": ["terminal", "air terminal", "directions", "transfers", "airport filter", "aerodrome", "airfield"]
+    }
+  },
+  "runway": {
+    "label": { "es": "Pista de aterrizaje", "en": "Runway", "pt": "Pista de pouso", "fr": "Piste d’atterrissage", "de": "Start- und Landebahn", "it": "Pista di atterraggio", "ja": "滑走路", "zh": "跑道", "ko": "활주로", "ar": "مدرج الطائرات" },
+    "keywords": {
+      "es": ["despegue", "aterrizaje", "pista de despegue", "asignación de pista", "cabecera de pista", "mapa del aeródromo"],
+      "en": ["takeoff", "landing", "airstrip", "runway assignment", "threshold", "tarmac", "airfield map"]
+    }
+  },
+  "hangar": {
+    "label": { "es": "Hangar", "en": "Hangar", "pt": "Hangar", "fr": "Hangar", "de": "Hangar", "it": "Hangar", "ja": "格納庫", "zh": "机库", "ko": "격납고", "ar": "حظيرة الطائرات" },
+    "keywords": {
+      "es": ["mantenimiento", "taller de aviones", "base de mantenimiento", "resguardo de aeronaves", "almacenamiento", "MRO"],
+      "en": ["maintenance", "repair station", "service center", "aircraft shelter", "aircraft storage", "MRO"]
+    }
+  },
+  "airstairs": {
+    "label": { "es": "Escalera de abordaje", "en": "Boarding stairs", "pt": "Escada de embarque", "fr": "Escalier d’embarquement", "de": "Fluggasttreppe", "it": "Scaletta d’imbarco", "ja": "タラップ", "zh": "登机梯", "ko": "탑승 계단", "ar": "سلم الطائرة" },
+    "keywords": {
+      "es": ["escalerilla", "abordaje remoto", "abordaje en plataforma", "posición remota", "subir al avión", "bajar del avión"],
+      "en": ["airstairs", "boarding steps", "remote stand", "apron boarding", "stair truck", "board the plane", "deplane"]
+    }
+  },
+  "boarding-gate": {
+    "label": { "es": "Puerta de abordaje", "en": "Boarding gate", "pt": "Portão de embarque", "fr": "Porte d’embarquement", "de": "Abfluggate", "it": "Uscita d’imbarco", "ja": "搭乗口", "zh": "登机口", "ko": "탑승구", "ar": "بوابة الصعود" },
+    "keywords": {
+      "es": ["sala", "número de sala", "ir a la sala", "sala de última espera", "abordaje", "llamado a abordar", "terminal"],
+      "en": ["gate number", "go to gate", "departure gate", "boarding area", "boarding call", "concourse", "terminal"]
+    }
+  },
+  "boarding-gate-sync": {
+    "label": { "es": "Cambio de puerta", "en": "Gate change", "pt": "Mudança de portão", "fr": "Changement de porte", "de": "Gatewechsel", "it": "Cambio di gate", "ja": "搭乗口の変更", "zh": "登机口变更", "ko": "탑승구 변경", "ar": "تغيير البوابة" },
+    "keywords": {
+      "es": ["cambio de sala", "nueva sala", "nueva puerta", "aviso de cambio", "notificación de vuelo", "puerta actualizada"],
+      "en": ["new gate", "gate update", "gate reassignment", "gate moved", "flight notification", "push notification"]
+    }
+  },
+  "departures-board": {
+    "label": { "es": "Tablero de salidas", "en": "Departures board", "pt": "Painel de partidas", "fr": "Tableau des départs", "de": "Abflugtafel", "it": "Tabellone delle partenze", "ja": "出発便案内", "zh": "出发信息屏", "ko": "출발 안내판", "ar": "لوحة المغادرة" },
+    "keywords": {
+      "es": ["pantalla de salidas", "vuelos de salida", "estado de vuelos", "horarios", "próximos vuelos", "información de vuelos"],
+      "en": ["departures screen", "outgoing flights", "flight status", "flight schedule", "upcoming flights", "flight information display", "FIDS"]
+    }
+  },
+  "arrivals-board": {
+    "label": { "es": "Tablero de llegadas", "en": "Arrivals board", "pt": "Painel de chegadas", "fr": "Tableau des arrivées", "de": "Ankunftstafel", "it": "Tabellone degli arrivi", "ja": "到着便案内", "zh": "到达信息屏", "ko": "도착 안내판", "ar": "لوحة الوصول" },
+    "keywords": {
+      "es": ["pantalla de llegadas", "vuelos que llegan", "estado de vuelos", "vuelos aterrizados", "horarios", "recoger a alguien"],
+      "en": ["arrivals screen", "incoming flights", "flight status", "landed flights", "flight schedule", "pick someone up", "FIDS"]
+    }
+  },
+  "airport-lounge": {
+    "label": { "es": "Sala VIP", "en": "Airport lounge", "pt": "Sala VIP", "fr": "Salon d’aéroport", "de": "Flughafen-Lounge", "it": "Lounge aeroportuale", "ja": "空港ラウンジ", "zh": "机场贵宾室", "ko": "공항 라운지", "ar": "صالة المطار" },
+    "keywords": {
+      "es": ["lounge", "sala ejecutiva", "acceso a sala", "pase de sala", "beneficio de tarjeta", "sala de espera"],
+      "en": ["VIP lounge", "lounge access", "business lounge", "lounge pass", "card perk", "waiting room"]
+    }
+  },
+  "deicing": {
+    "label": { "es": "Deshielo del avión", "en": "De-icing", "pt": "Degelo da aeronave", "fr": "Dégivrage", "de": "Enteisung", "it": "Sghiacciamento", "ja": "除氷作業", "zh": "飞机除冰", "ko": "항공기 제빙", "ar": "إزالة الجليد عن الطائرة" },
+    "keywords": {
+      "es": ["antihielo", "retraso por hielo", "invierno", "hielo en las alas", "nieve", "plataforma de deshielo", "líquido anticongelante"],
+      "en": ["anti-icing", "ice delay", "winter weather", "icy wings", "snow", "de-icing pad", "glycol"]
+    }
+  },
+  "boarding-pass": {
+    "label": { "es": "Pase de abordar", "en": "Boarding pass", "pt": "Cartão de embarque", "fr": "Carte d’embarquement", "de": "Bordkarte", "it": "Carta d’imbarco", "ja": "搭乗券", "zh": "登机牌", "ko": "탑승권", "ar": "بطاقة الصعود إلى الطائرة" },
+    "keywords": {
+      "es": ["boleto de avión", "tarjeta de embarque", "mis viajes", "reservación", "check-in", "itinerario", "asiento y sala"],
+      "en": ["plane ticket", "flight ticket", "my trips", "booking", "check-in", "itinerary", "e-ticket"]
+    }
+  },
+  "boarding-pass-check": {
+    "label": { "es": "Check-in realizado", "en": "Checked in", "pt": "Check-in feito", "fr": "Enregistrement effectué", "de": "Eingecheckt", "it": "Check-in effettuato", "ja": "チェックイン済み", "zh": "已值机", "ko": "체크인 완료", "ar": "تم تسجيل الوصول" },
+    "keywords": {
+      "es": ["documentado", "pase emitido", "pase de abordar listo", "listo para abordar", "check-in en línea", "confirmado"],
+      "en": ["check-in complete", "boarding pass issued", "ready to board", "online check-in", "confirmed", "all set"]
+    }
+  },
+  "boarding-pass-mobile": {
+    "label": { "es": "Pase de abordar móvil", "en": "Mobile boarding pass", "pt": "Cartão de embarque no celular", "fr": "Carte d’embarquement mobile", "de": "Mobile Bordkarte", "it": "Carta d’imbarco mobile", "ja": "モバイル搭乗券", "zh": "电子登机牌", "ko": "모바일 탑승권", "ar": "بطاقة صعود على الجوال" },
+    "keywords": {
+      "es": ["pase digital", "pase en el celular", "boleto electrónico", "wallet", "código QR", "check-in en línea", "sin imprimir"],
+      "en": ["digital pass", "phone ticket", "e-ticket", "wallet pass", "QR code", "online check-in", "paperless"]
+    }
+  },
+  "boarding-pass-scan": {
+    "label": { "es": "Escanear pase de abordar", "en": "Scan boarding pass", "pt": "Escanear cartão de embarque", "fr": "Scanner la carte d’embarquement", "de": "Bordkarte scannen", "it": "Scansiona la carta d’imbarco", "ja": "搭乗券をスキャン", "zh": "扫描登机牌", "ko": "탑승권 스캔", "ar": "مسح بطاقة الصعود" },
+    "keywords": {
+      "es": ["lector de pases", "validar pase", "abordaje", "control de acceso", "código de barras", "kiosco", "filtro de seguridad"],
+      "en": ["boarding pass reader", "validate pass", "boarding", "gate scan", "access control", "barcode", "kiosk"]
+    }
+  },
+  "check-in-counter": {
+    "label": { "es": "Mostrador de documentación", "en": "Check-in counter", "pt": "Balcão de check-in", "fr": "Comptoir d’enregistrement", "de": "Check-in-Schalter", "it": "Banco del check-in", "ja": "チェックインカウンター", "zh": "值机柜台", "ko": "체크인 카운터", "ar": "مكتب تسجيل الوصول" },
+    "keywords": {
+      "es": ["documentar", "check-in", "mostrador de aerolínea", "documentar maletas", "venta de boletos", "atención a pasajeros"],
+      "en": ["check-in desk", "ticketing", "ticket desk", "airline counter", "bag check", "passenger service"]
+    }
+  },
+  "check-in-kiosk": {
+    "label": { "es": "Kiosco de autoservicio", "en": "Self check-in kiosk", "pt": "Totem de check-in", "fr": "Borne d’enregistrement", "de": "Check-in-Automat", "it": "Totem self check-in", "ja": "自動チェックイン機", "zh": "自助值机机", "ko": "셀프 체크인 키오스크", "ar": "جهاز تسجيل الوصول الذاتي" },
+    "keywords": {
+      "es": ["autodocumentación", "check-in", "módulo de autoservicio", "imprimir pase", "imprimir etiqueta", "pantalla táctil"],
+      "en": ["self-service", "automated check-in", "check-in machine", "print boarding pass", "print bag tag", "touchscreen"]
+    }
+  },
+  "baggage-drop": {
+    "label": { "es": "Entrega de equipaje", "en": "Bag drop", "pt": "Despacho de bagagem", "fr": "Dépôt des bagages", "de": "Gepäckaufgabe", "it": "Consegna bagagli", "ja": "手荷物預け", "zh": "行李托运", "ko": "수하물 위탁", "ar": "تسليم الأمتعة" },
+    "keywords": {
+      "es": ["documentar maleta", "equipaje documentado", "dejar la maleta", "despacho de equipaje", "mostrador de equipaje", "entrega automática"],
+      "en": ["check a bag", "checked baggage", "drop off luggage", "bag check", "baggage counter", "self bag drop"]
+    }
+  },
+  "security-screening": {
+    "label": { "es": "Filtro de seguridad", "en": "Security check", "pt": "Inspeção de segurança", "fr": "Contrôle de sûreté", "de": "Sicherheitskontrolle", "it": "Controlli di sicurezza", "ja": "保安検査", "zh": "安检", "ko": "보안 검색", "ar": "التفتيش الأمني" },
+    "keywords": {
+      "es": ["arco detector", "detector de metales", "revisión", "inspección de pasajeros", "control de seguridad", "seguridad del aeropuerto"],
+      "en": ["metal detector", "walk-through scanner", "screening", "checkpoint", "TSA", "airport security"]
+    }
+  },
+  "security-screening-clock": {
+    "label": { "es": "Espera en el filtro de seguridad", "en": "Security wait time", "pt": "Tempo de espera na segurança", "fr": "Attente au contrôle de sûreté", "de": "Wartezeit an der Sicherheitskontrolle", "it": "Attesa ai controlli di sicurezza", "ja": "保安検査の待ち時間", "zh": "安检排队时间", "ko": "보안 검색 대기 시간", "ar": "وقت انتظار التفتيش الأمني" },
+    "keywords": {
+      "es": ["fila de seguridad", "cuánto tarda el filtro", "filas", "saturación", "hora pico", "llegar con tiempo"],
+      "en": ["security line", "queue time", "line length", "how long is security", "peak hours", "arrive early"]
+    }
+  },
+  "baggage-scanner": {
+    "label": { "es": "Escáner de equipaje", "en": "Baggage scanner", "pt": "Raio-X de bagagem", "fr": "Scanner à bagages", "de": "Gepäckscanner", "it": "Scanner bagagli", "ja": "手荷物検査機", "zh": "行李安检机", "ko": "수하물 엑스레이", "ar": "جهاز فحص الأمتعة" },
+    "keywords": {
+      "es": ["rayos X", "banda de revisión", "revisión de equipaje", "inspección de maletas", "filtro de seguridad", "artículos prohibidos"],
+      "en": ["X-ray", "bag screening", "luggage scanner", "conveyor belt", "security", "prohibited items"]
+    }
+  },
+  "liquids-bag": {
+    "label": { "es": "Bolsa de líquidos", "en": "Liquids bag", "pt": "Saco de líquidos", "fr": "Sachet de liquides", "de": "Flüssigkeitsbeutel", "it": "Sacchetto dei liquidi", "ja": "液体物用の袋", "zh": "液体透明袋", "ko": "액체류 지퍼백", "ar": "كيس السوائل الشفاف" },
+    "keywords": {
+      "es": ["regla de 100 ml", "bolsa transparente", "bolsa con cierre", "artículos de tocador", "geles y aerosoles", "filtro de seguridad"],
+      "en": ["100 ml rule", "3-1-1 rule", "clear bag", "zip bag", "toiletries", "carry-on liquids", "security"]
+    }
+  },
+  "baggage-claim": {
+    "label": { "es": "Reclamo de equipaje", "en": "Baggage claim", "pt": "Restituição de bagagem", "fr": "Retrait des bagages", "de": "Gepäckausgabe", "it": "Ritiro bagagli", "ja": "手荷物受取所", "zh": "行李提取处", "ko": "수하물 찾는 곳", "ar": "استلام الأمتعة" },
+    "keywords": {
+      "es": ["banda de equipaje", "recoger maletas", "recolección de equipaje", "carrusel", "llegadas", "maletas"],
+      "en": ["carousel", "luggage belt", "collect bags", "pick up luggage", "bag reclaim", "arrivals hall"]
+    }
+  },
+  "baggage-trolley": {
+    "label": { "es": "Carrito de equipaje", "en": "Luggage cart", "pt": "Carrinho de bagagem", "fr": "Chariot à bagages", "de": "Gepäckwagen", "it": "Carrello portabagagli", "ja": "手荷物カート", "zh": "行李推车", "ko": "수하물 카트", "ar": "عربة الأمتعة" },
+    "keywords": {
+      "es": ["carro de maletas", "llevar maletas", "transportar equipaje", "renta de carrito", "llegadas", "maletas"],
+      "en": ["luggage trolley", "baggage trolley", "bag cart", "carry luggage", "arrivals", "suitcases"]
+    }
+  },
+  "baggage-tag": {
+    "label": { "es": "Etiqueta de equipaje", "en": "Bag tag", "pt": "Etiqueta de bagagem", "fr": "Étiquette bagage", "de": "Gepäckanhänger", "it": "Etichetta bagaglio", "ja": "手荷物タグ", "zh": "行李牌", "ko": "수하물 태그", "ar": "بطاقة الأمتعة" },
+    "keywords": {
+      "es": ["etiqueta de maleta", "talón de equipaje", "comprobante de equipaje", "código de barras", "maleta documentada", "código de destino"],
+      "en": ["luggage tag", "baggage tag", "claim stub", "bag receipt", "barcode", "checked bag", "destination code"]
+    }
+  },
+  "baggage-tag-search": {
+    "label": { "es": "Rastrear equipaje", "en": "Track baggage", "pt": "Rastrear bagagem", "fr": "Suivi des bagages", "de": "Gepäckverfolgung", "it": "Rintraccia bagaglio", "ja": "手荷物の追跡", "zh": "行李追踪", "ko": "수하물 추적", "ar": "تتبع الأمتعة" },
+    "keywords": {
+      "es": ["maleta perdida", "equipaje extraviado", "maleta retrasada", "dónde está mi maleta", "buscar maleta", "reporte de equipaje", "reclamación"],
+      "en": ["lost luggage", "missing bag", "mishandled baggage", "delayed bag", "where is my bag", "find my bag", "baggage claim report"]
+    }
+  },
+  "carry-on": {
+    "label": { "es": "Equipaje de mano", "en": "Carry-on", "pt": "Bagagem de mão", "fr": "Bagage cabine", "de": "Handgepäck", "it": "Bagaglio a mano", "ja": "機内持ち込み手荷物", "zh": "手提行李", "ko": "기내 수하물", "ar": "حقيبة اليد" },
+    "keywords": {
+      "es": ["maleta de cabina", "maleta de mano", "tamaño permitido", "medidas de equipaje", "franquicia de equipaje", "compartimento superior"],
+      "en": ["cabin bag", "hand luggage", "carry-on allowance", "size limit", "bag dimensions", "roller bag"]
+    }
+  },
+  "carry-on-plus": {
+    "label": { "es": "Agregar equipaje de mano", "en": "Add carry-on", "pt": "Adicionar bagagem de mão", "fr": "Ajouter un bagage cabine", "de": "Handgepäck hinzufügen", "it": "Aggiungi bagaglio a mano", "ja": "機内持ち込み手荷物を追加", "zh": "添加手提行李", "ko": "기내 수하물 추가", "ar": "إضافة حقيبة يد" },
+    "keywords": {
+      "es": ["comprar maleta", "maleta adicional", "servicios adicionales", "mejorar tarifa", "tarifa básica", "cargo por equipaje"],
+      "en": ["buy a bag", "extra cabin bag", "add-ons", "fare upgrade", "basic economy", "baggage fee"]
+    }
+  },
+  "baggage-weight": {
+    "label": { "es": "Peso del equipaje", "en": "Baggage weight", "pt": "Peso da bagagem", "fr": "Poids des bagages", "de": "Gepäckgewicht", "it": "Peso del bagaglio", "ja": "手荷物の重量", "zh": "行李重量", "ko": "수하물 무게", "ar": "وزن الأمتعة" },
+    "keywords": {
+      "es": ["sobrepeso", "límite de peso", "báscula", "kilos permitidos", "cargo por sobrepeso", "pesar maleta", "franquicia"],
+      "en": ["overweight bag", "weight limit", "scale", "allowance", "excess baggage fee", "weigh luggage", "kilograms"]
+    }
+  },
+  "airline-seat": {
+    "label": { "es": "Asiento de avión", "en": "Airplane seat", "pt": "Assento de avião", "fr": "Siège d’avion", "de": "Flugzeugsitz", "it": "Sedile dell’aereo", "ja": "飛行機の座席", "zh": "飞机座位", "ko": "항공기 좌석", "ar": "مقعد الطائرة" },
+    "keywords": {
+      "es": ["clase turista", "clase económica", "butaca", "lugar", "cabina", "pasajero"],
+      "en": ["economy class", "coach", "main cabin", "passenger", "seating", "flight seat"]
+    }
+  },
+  "airline-seat-check": {
+    "label": { "es": "Asiento asignado", "en": "Seat assigned", "pt": "Assento marcado", "fr": "Siège attribué", "de": "Sitzplatz zugewiesen", "it": "Posto assegnato", "ja": "座席指定済み", "zh": "已选座位", "ko": "좌석 지정 완료", "ar": "تم تخصيص المقعد" },
+    "keywords": {
+      "es": ["asiento seleccionado", "elegir asiento", "selección de asiento", "lugar confirmado", "asiento reservado", "número de asiento"],
+      "en": ["seat selected", "choose seat", "seat selection", "seat confirmed", "reserved seat", "seat number"]
+    }
+  },
+  "airline-seat-arrow-up": {
+    "label": { "es": "Mejora de asiento", "en": "Seat upgrade", "pt": "Upgrade de assento", "fr": "Surclassement", "de": "Sitzplatz-Upgrade", "it": "Upgrade del posto", "ja": "座席のアップグレード", "zh": "升舱", "ko": "좌석 업그레이드", "ar": "ترقية المقعد" },
+    "keywords": {
+      "es": ["ascenso", "upgrade", "subir de clase", "clase ejecutiva", "pujar por un ascenso", "beneficio de socio"],
+      "en": ["class upgrade", "move up", "business class", "upgrade bid", "elite benefit", "premium cabin"]
+    }
+  },
+  "airline-seat-recline": {
+    "label": { "es": "Asiento reclinable", "en": "Reclining seat", "pt": "Assento reclinável", "fr": "Siège inclinable", "de": "Verstellbare Rückenlehne", "it": "Sedile reclinabile", "ja": "リクライニングシート", "zh": "座椅后仰", "ko": "좌석 젖히기", "ar": "مقعد قابل للإمالة" },
+    "keywords": {
+      "es": ["reclinar", "respaldo", "inclinar asiento", "comodidad", "descansar", "dormir en el vuelo"],
+      "en": ["recline", "seatback", "tilt seat", "comfort", "rest", "sleep on board"]
+    }
+  },
+  "airline-seat-flat": {
+    "label": { "es": "Asiento cama", "en": "Lie-flat seat", "pt": "Poltrona-cama", "fr": "Siège-lit", "de": "Flachbettsitz", "it": "Poltrona letto", "ja": "フルフラットシート", "zh": "全平躺座椅", "ko": "풀플랫 좌석", "ar": "مقعد يتحول إلى سرير" },
+    "keywords": {
+      "es": ["clase ejecutiva", "business", "primera clase", "cama a bordo", "vuelo de larga distancia", "suite", "cabina premium"],
+      "en": ["business class", "first class", "flat bed", "sleeper seat", "long-haul", "suite", "premium cabin"]
+    }
+  },
+  "airline-seat-legroom": {
+    "label": { "es": "Más espacio para piernas", "en": "Extra legroom", "pt": "Mais espaço para as pernas", "fr": "Plus d’espace pour les jambes", "de": "Mehr Beinfreiheit", "it": "Più spazio per le gambe", "ja": "足元の広い席", "zh": "宽敞腿部空间", "ko": "넓은 레그룸", "ar": "مساحة إضافية للساقين" },
+    "keywords": {
+      "es": ["asiento con espacio extra", "espacio entre filas", "asiento preferente", "confort", "premium económica", "asiento amplio"],
+      "en": ["extra space seat", "seat pitch", "preferred seat", "comfort", "premium economy", "roomy seat"]
+    }
+  },
+  "personal-item": {
+    "label": { "es": "Artículo personal", "en": "Personal item", "pt": "Item pessoal", "fr": "Article personnel", "de": "Persönlicher Gegenstand", "it": "Articolo personale", "ja": "身の回り品", "zh": "随身物品", "ko": "개인 소지품", "ar": "غرض شخصي" },
+    "keywords": {
+      "es": ["bolsa de mano", "mochila", "bajo el asiento", "bolso", "portafolio", "tarifa básica"],
+      "en": ["under-seat bag", "backpack", "purse", "handbag", "laptop bag", "basic economy"]
+    }
+  },
+  "exit-row": {
+    "label": { "es": "Fila de emergencia", "en": "Exit row", "pt": "Fileira da saída de emergência", "fr": "Rangée issue de secours", "de": "Notausgangsreihe", "it": "Fila dell’uscita di emergenza", "ja": "非常口座席", "zh": "紧急出口座位", "ko": "비상구 좌석", "ar": "صف مخرج الطوارئ" },
+    "keywords": {
+      "es": ["salida de emergencia", "asiento de emergencia", "más espacio", "salida sobre el ala", "tarjeta de seguridad", "requisitos de la fila"],
+      "en": ["emergency exit", "exit seat", "emergency row", "more legroom", "over-wing exit", "safety card"]
+    }
+  },
+  "seat-map": {
+    "label": { "es": "Mapa de asientos", "en": "Seat map", "pt": "Mapa de assentos", "fr": "Plan de cabine", "de": "Sitzplan", "it": "Mappa dei posti", "ja": "シートマップ", "zh": "座位图", "ko": "좌석 배치도", "ar": "خريطة المقاعد" },
+    "keywords": {
+      "es": ["selección de asientos", "elegir asiento", "plano de cabina", "distribución de asientos", "asientos disponibles", "configuración del avión"],
+      "en": ["seat selection", "choose seat", "cabin layout", "seat layout", "available seats", "aircraft configuration"]
+    }
+  },
+  "cabin-window": {
+    "label": { "es": "Asiento de ventanilla", "en": "Window seat", "pt": "Assento na janela", "fr": "Place côté hublot", "de": "Fensterplatz", "it": "Posto finestrino", "ja": "窓側の席", "zh": "靠窗座位", "ko": "창가 좌석", "ar": "مقعد بجانب النافذة" },
+    "keywords": {
+      "es": ["ventanilla", "ventana del avión", "vista desde el avión", "vista aérea", "lado de la ventana", "paisaje"],
+      "en": ["window", "plane window", "porthole", "view from the plane", "aerial view", "scenery"]
+    }
+  },
+  "fasten-seatbelt": {
+    "label": { "es": "Abrocharse el cinturón", "en": "Fasten seatbelt", "pt": "Aperte os cintos", "fr": "Attachez votre ceinture", "de": "Bitte anschnallen", "it": "Allacciare le cinture", "ja": "シートベルト着用", "zh": "系好安全带", "ko": "좌석벨트 착용", "ar": "اربط حزام الأمان" },
+    "keywords": {
+      "es": ["cinturón de seguridad", "señal de cinturón", "aviso de cabina", "permanecer sentado", "despegue", "aterrizaje", "turbulencia"],
+      "en": ["seatbelt sign", "seat belt", "buckle up", "cabin sign", "stay seated", "takeoff", "landing"]
+    }
+  },
+  "attendant-call": {
+    "label": { "es": "Llamar al sobrecargo", "en": "Call attendant", "pt": "Chamar comissário", "fr": "Appeler le personnel de bord", "de": "Flugbegleiter rufen", "it": "Chiama l’assistente di volo", "ja": "客室乗務員を呼ぶ", "zh": "呼叫空乘", "ko": "승무원 호출", "ar": "استدعاء طاقم الضيافة" },
+    "keywords": {
+      "es": ["botón de llamada", "asistencia a bordo", "aeromoza", "azafata", "pedir ayuda", "servicio a bordo"],
+      "en": ["call button", "call light", "flight attendant", "cabin assistance", "request help", "onboard service"]
+    }
+  },
+  "seatback-screen": {
+    "label": { "es": "Entretenimiento a bordo", "en": "In-flight entertainment", "pt": "Entretenimento de bordo", "fr": "Divertissement à bord", "de": "Bordunterhaltung", "it": "Intrattenimento a bordo", "ja": "機内エンターテインメント", "zh": "机上娱乐", "ko": "기내 엔터테인먼트", "ar": "الترفيه على متن الطائرة" },
+    "keywords": {
+      "es": ["pantalla del asiento", "películas a bordo", "series", "música", "juegos", "mapa en vivo"],
+      "en": ["seatback screen", "IFE", "movies", "TV shows", "music", "moving map"]
+    }
+  },
+  "tray-table": {
+    "label": { "es": "Mesita plegable", "en": "Tray table", "pt": "Mesinha do assento", "fr": "Tablette", "de": "Klapptisch", "it": "Tavolino", "ja": "座席テーブル", "zh": "小桌板", "ko": "좌석 테이블", "ar": "طاولة المقعد" },
+    "keywords": {
+      "es": ["mesa del asiento", "charola", "posición vertical", "comida a bordo", "trabajar en el vuelo", "respaldo"],
+      "en": ["seatback tray", "fold-down table", "upright position", "meal service", "work on board", "laptop space"]
+    }
+  },
+  "overhead-bin": {
+    "label": { "es": "Compartimento superior", "en": "Overhead bin", "pt": "Bagageiro", "fr": "Coffre à bagages", "de": "Gepäckfach", "it": "Cappelliera", "ja": "手荷物収納棚", "zh": "行李架", "ko": "기내 선반", "ar": "خزانة الأمتعة العلوية" },
+    "keywords": {
+      "es": ["portaequipaje", "maletero", "guardar equipaje de mano", "espacio en cabina", "compartimento de equipaje", "abordaje por grupos"],
+      "en": ["overhead locker", "overhead compartment", "luggage rack", "cabin storage", "stow carry-on", "bin space"]
+    }
+  },
+  "cabin-crew": {
+    "label": { "es": "Sobrecargo", "en": "Flight attendant", "pt": "Comissário de bordo", "fr": "Personnel de cabine", "de": "Kabinenpersonal", "it": "Assistente di volo", "ja": "客室乗務員", "zh": "空乘人员", "ko": "객실 승무원", "ar": "طاقم الضيافة" },
+    "keywords": {
+      "es": ["aeromoza", "azafata", "tripulación de cabina", "personal de vuelo", "jefe de cabina", "servicio a bordo"],
+      "en": ["cabin crew", "crew member", "steward", "stewardess", "purser", "onboard service"]
+    }
+  },
+  "control-yoke": {
+    "label": { "es": "Volante de avión", "en": "Control yoke", "pt": "Manche", "fr": "Manche de pilotage", "de": "Steuerhorn", "it": "Cloche", "ja": "操縦桿", "zh": "驾驶盘", "ko": "조종간", "ar": "مقود الطائرة" },
+    "keywords": {
+      "es": ["cabina de mando", "simulador de vuelo", "escuela de aviación", "pilotear", "mandos de vuelo", "piloto"],
+      "en": ["cockpit", "flight simulator", "flight school", "fly the plane", "flight controls", "pilot"]
+    }
+  },
+  "artificial-horizon": {
+    "label": { "es": "Horizonte artificial", "en": "Artificial horizon", "pt": "Horizonte artificial", "fr": "Horizon artificiel", "de": "Künstlicher Horizont", "it": "Orizzonte artificiale", "ja": "姿勢指示器", "zh": "姿态仪", "ko": "자세계", "ar": "الأفق الاصطناعي" },
+    "keywords": {
+      "es": ["indicador de actitud", "instrumentos de vuelo", "cabeceo", "alabeo", "inclinación", "cabina de mando", "simulador de vuelo"],
+      "en": ["attitude indicator", "flight instruments", "pitch", "bank", "roll", "cockpit", "flight simulator"]
+    }
+  },
+  "jet-engine": {
+    "label": { "es": "Turbina", "en": "Jet engine", "pt": "Motor a jato", "fr": "Réacteur", "de": "Triebwerk", "it": "Motore a reazione", "ja": "ジェットエンジン", "zh": "喷气发动机", "ko": "제트 엔진", "ar": "محرك نفاث" },
+    "keywords": {
+      "es": ["motor de avión", "motor a reacción", "turborreactor", "reactor", "propulsión", "mantenimiento de aeronaves"],
+      "en": ["aircraft engine", "turbine", "turbofan", "jet", "propulsion", "aircraft maintenance"]
+    }
+  },
+  "landing-gear": {
+    "label": { "es": "Tren de aterrizaje", "en": "Landing gear", "pt": "Trem de pouso", "fr": "Train d’atterrissage", "de": "Fahrwerk", "it": "Carrello d’atterraggio", "ja": "着陸装置", "zh": "起落架", "ko": "착륙 장치", "ar": "عجلات الهبوط" },
+    "keywords": {
+      "es": ["tren abajo", "llantas del avión", "ruedas", "aterrizaje", "despegue", "mantenimiento"],
+      "en": ["gear down", "undercarriage", "wheels", "aircraft tires", "landing", "touchdown"]
+    }
+  },
+  "aviator-wings": {
+    "label": { "es": "Alas de piloto", "en": "Pilot wings", "pt": "Asas de piloto", "fr": "Ailes de pilote", "de": "Pilotenschwingen", "it": "Ali da pilota", "ja": "ウイングマーク", "zh": "飞行员徽章", "ko": "조종사 휘장", "ar": "شارة جناحي الطيار" },
+    "keywords": {
+      "es": ["insignia de piloto", "aviador", "piloto", "tripulación", "estatus de viajero frecuente", "nivel élite", "programa de lealtad"],
+      "en": ["pilot badge", "crew badge", "aviator", "frequent flyer status", "elite status", "loyalty program"]
+    }
+  }
+}

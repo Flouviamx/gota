@@ -95,6 +95,6 @@ Tried and rejected, so they swap in (no clean shape halfway): play ↔ pause, su
 `buildIndex(icons, i18n)` indexes each icon by its name, its labels in 10 languages, its keywords (es/en), and its tags. `search(index, query, { limit, category })` scores each query word by the best field it matches: name 10, label 7, keyword 5, tag 3; a whole word counts double, a prefix once, and a substring (words over 3 letters) half.
 - `fold` lowercases and strips accents and punctuation but keeps the ñ (*campaña* is not *campana*).
 - Empty words in Spanish and English are ignored, and plurals count as singulars (*notificaciones* = *notificación*).
-- Icons that match every word come first; if none does ("descargar pdf"), the ones that match the most. A name that is exactly the query wins; shorter names win ties.
+- Icons that match every word come first; if none does ("descargar pdf"), the ones that match the most. A name that is exactly the query wins (plurals fold); then an icon with a label or keyword that is exactly the query (*campana* finds bell, whose keyword it is, before the bell tent, *Tienda campana*); shorter names win ties.
 
 `engine/search-api.mjs` (`dist/search.js`) adds `searchIcons(query, options)`, which builds the index on first use from the generated `dist/search-data.js`.

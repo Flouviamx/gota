@@ -1,0 +1,471 @@
+{
+  "tent-dome": {
+    "label": { "es": "Tienda tipo domo", "en": "Dome tent", "pt": "Barraca iglu", "fr": "Tente dôme", "de": "Kuppelzelt", "it": "Tenda a cupola", "ja": "ドーム型テント", "zh": "圆顶帐篷", "ko": "돔 텐트", "ar": "خيمة قبة" },
+    "keywords": {
+      "es": ["casa de campaña", "autoportante", "mochilero", "acampar", "tipo de tienda", "equipo de camping", "iglú"],
+      "en": ["freestanding tent", "backpacking tent", "camping gear", "tent type", "shelter", "pitch a tent", "two-person tent"]
+    }
+  },
+  "tent-tunnel": {
+    "label": { "es": "Tienda túnel", "en": "Tunnel tent", "pt": "Barraca túnel", "fr": "Tente tunnel", "de": "Tunnelzelt", "it": "Tenda a tunnel", "ja": "トンネル型テント", "zh": "隧道帐篷", "ko": "터널 텐트", "ar": "خيمة نفقية" },
+    "keywords": {
+      "es": ["casa de campaña familiar", "tienda grande", "camping en familia", "varios cuartos", "tipo de tienda", "equipo de camping"],
+      "en": ["family tent", "large tent", "family camping", "multi-room tent", "tent type", "camping gear"]
+    }
+  },
+  "tent-bell": {
+    "label": { "es": "Tienda campana", "en": "Bell tent", "pt": "Tenda sino", "fr": "Tente cloche", "de": "Glockenzelt", "it": "Tenda a campana", "ja": "ベルテント", "zh": "钟形帐篷", "ko": "벨텐트", "ar": "خيمة جرسية" },
+    "keywords": {
+      "es": ["glamping", "tienda de lona", "hospedaje", "campamento de lujo", "acampar con estilo", "yurta", "ecoturismo"],
+      "en": ["glamping", "canvas tent", "luxury camping", "lodging", "yurt", "safari tent", "boutique campsite"]
+    }
+  },
+  "rooftop-tent": {
+    "label": { "es": "Tienda de techo", "en": "Rooftop tent", "pt": "Barraca de teto", "fr": "Tente de toit", "de": "Dachzelt", "it": "Tenda da tetto", "ja": "ルーフテント", "zh": "车顶帐篷", "ko": "루프탑 텐트", "ar": "خيمة سقف السيارة" },
+    "keywords": {
+      "es": ["overlanding", "acampar en auto", "camioneta", "viaje por carretera", "camping 4x4", "acceso en coche", "autocamping"],
+      "en": ["overlanding", "car camping", "SUV", "road trip", "4x4", "drive-in site", "vehicle camping"]
+    }
+  },
+  "tarp": {
+    "label": { "es": "Lona", "en": "Tarp", "pt": "Lona", "fr": "Bâche", "de": "Tarp", "it": "Telo tarp", "ja": "タープ", "zh": "天幕", "ko": "타프", "ar": "مظلة قماشية" },
+    "keywords": {
+      "es": ["refugio ultraligero", "toldo", "sombra", "protección contra lluvia", "cocina de campamento", "techo improvisado", "vivac"],
+      "en": ["ultralight shelter", "rain fly", "shade", "canopy", "camp kitchen", "bivouac", "rain cover"]
+    }
+  },
+  "campground": {
+    "label": { "es": "Área de acampar", "en": "Campground", "pt": "Área de camping", "fr": "Camping", "de": "Campingplatz", "it": "Campeggio", "ja": "キャンプ場", "zh": "露营地", "ko": "캠핑장", "ar": "مخيم" },
+    "keywords": {
+      "es": ["camping", "campamentos cercanos", "sitios para acampar", "mapa del parque", "zona de casas de campaña", "reservar", "parque"],
+      "en": ["campsite", "camping area", "campgrounds near me", "park map", "RV park", "book a site", "camping"]
+    }
+  },
+  "base-camp": {
+    "label": { "es": "Campamento base", "en": "Base camp", "pt": "Acampamento-base", "fr": "Camp de base", "de": "Basislager", "it": "Campo base", "ja": "ベースキャンプ", "zh": "大本营", "ko": "베이스캠프", "ar": "المعسكر الأساسي" },
+    "keywords": {
+      "es": ["expedición", "alpinismo", "montañismo", "alta montaña", "cumbre", "aclimatación", "escalada"],
+      "en": ["expedition", "mountaineering", "high altitude", "summit push", "acclimatization", "climbing", "high camp"]
+    }
+  },
+  "mountain-hut": {
+    "label": { "es": "Refugio de montaña", "en": "Mountain hut", "pt": "Refúgio de montanha", "fr": "Refuge de montagne", "de": "Berghütte", "it": "Rifugio alpino", "ja": "山小屋", "zh": "山间小屋", "ko": "산장", "ar": "كوخ جبلي" },
+    "keywords": {
+      "es": ["albergue", "cabaña", "refugio alpino", "hospedaje en ruta", "travesía", "pernoctar", "senderismo"],
+      "en": ["refuge", "alpine hut", "shelter", "cabin", "hut-to-hut", "overnight stay", "lodge"]
+    }
+  },
+  "map-pin-tent": {
+    "label": { "es": "Ubicación del campamento", "en": "Campsite location", "pt": "Local de acampamento", "fr": "Emplacement de camping", "de": "Campingplatz-Standort", "it": "Posizione del campeggio", "ja": "キャンプ場の場所", "zh": "露营地位置", "ko": "캠핑장 위치", "ar": "موقع التخييم" },
+    "keywords": {
+      "es": ["mapa", "acampar cerca", "dónde acampar", "lugar para acampar", "pin", "cómo llegar", "punto de camping"],
+      "en": ["map", "camping near me", "where to camp", "camping spot", "pin", "directions", "site location"]
+    }
+  },
+  "tent-check": {
+    "label": { "es": "Camping reservado", "en": "Campsite booked", "pt": "Camping reservado", "fr": "Emplacement réservé", "de": "Zeltplatz gebucht", "it": "Piazzola prenotata", "ja": "キャンプ場予約済み", "zh": "营位已预订", "ko": "캠핑 예약 완료", "ar": "تم حجز موقع التخييم" },
+    "keywords": {
+      "es": ["reserva confirmada", "apartado", "lugar asegurado", "registro", "check-in", "confirmación", "listo para acampar"],
+      "en": ["booking confirmed", "reserved", "confirmed site", "checked in", "reservation", "spot secured", "ready to camp"]
+    }
+  },
+  "tent-search": {
+    "label": { "es": "Buscar camping", "en": "Find a campsite", "pt": "Buscar camping", "fr": "Trouver un camping", "de": "Zeltplatz suchen", "it": "Cerca campeggio", "ja": "キャンプ場を探す", "zh": "查找营地", "ko": "캠핑장 찾기", "ar": "البحث عن موقع تخييم" },
+    "keywords": {
+      "es": ["dónde acampar", "buscador", "disponibilidad", "explorar campamentos", "filtrar sitios", "encontrar lugar", "reservar"],
+      "en": ["search campgrounds", "where to camp", "availability", "browse sites", "filter sites", "explore", "book"]
+    }
+  },
+  "campsite-hookup": {
+    "label": { "es": "Conexión de luz y agua", "en": "Campsite hookup", "pt": "Ligação de luz e água", "fr": "Branchement eau et électricité", "de": "Strom- und Wasseranschluss", "it": "Allaccio luce e acqua", "ja": "電源・水道付きサイト", "zh": "营地水电接口", "ko": "전기·수도 연결", "ar": "توصيلة كهرباء وماء" },
+    "keywords": {
+      "es": ["toma de corriente", "electricidad", "agua potable", "casa rodante", "motorhome", "servicios del sitio", "filtro de reserva"],
+      "en": ["electric hookup", "water hookup", "full hookup", "RV", "power", "site amenities", "booking filter"]
+    }
+  },
+  "sleeping-bag": {
+    "label": { "es": "Bolsa de dormir", "en": "Sleeping bag", "pt": "Saco de dormir", "fr": "Sac de couchage", "de": "Schlafsack", "it": "Sacco a pelo", "ja": "寝袋", "zh": "睡袋", "ko": "침낭", "ar": "كيس نوم" },
+    "keywords": {
+      "es": ["sleeping", "equipo para dormir", "temperatura de confort", "dormir al aire libre", "abrigo", "lista de equipo", "tipo momia"],
+      "en": ["sleep gear", "temperature rating", "down bag", "mummy bag", "gear list", "warmth", "overnight"]
+    }
+  },
+  "sleeping-pad": {
+    "label": { "es": "Colchoneta", "en": "Sleeping pad", "pt": "Isolante térmico", "fr": "Matelas de sol", "de": "Isomatte", "it": "Materassino", "ja": "スリーピングマット", "zh": "防潮垫", "ko": "캠핑 매트", "ar": "حصيرة نوم" },
+    "keywords": {
+      "es": ["aislante", "colchón inflable", "tapete", "espuma", "valor R", "sistema de descanso", "equipo para dormir"],
+      "en": ["sleeping mat", "inflatable pad", "foam pad", "R-value", "insulation", "sleep system", "air mattress"]
+    }
+  },
+  "camping-cot": {
+    "label": { "es": "Catre", "en": "Camping cot", "pt": "Cama de camping", "fr": "Lit de camp", "de": "Feldbett", "it": "Brandina", "ja": "キャンプコット", "zh": "行军床", "ko": "야전침대", "ar": "سرير تخييم" },
+    "keywords": {
+      "es": ["cama de campamento", "cama plegable", "renta de equipo", "descanso", "sitios con catre", "dormir elevado"],
+      "en": ["camp bed", "folding bed", "gear rental", "army cot", "off the ground", "rest"]
+    }
+  },
+  "camp-chair": {
+    "label": { "es": "Silla de campamento", "en": "Camp chair", "pt": "Cadeira de camping", "fr": "Chaise de camping", "de": "Campingstuhl", "it": "Sedia da campeggio", "ja": "キャンプチェア", "zh": "露营椅", "ko": "캠핑 의자", "ar": "كرسي تخييم" },
+    "keywords": {
+      "es": ["silla plegable", "mobiliario de camping", "asiento", "renta de equipo", "descansar", "playa", "fogata"],
+      "en": ["folding chair", "camp furniture", "seating", "gear rental", "lawn chair", "tailgate", "portable seat"]
+    }
+  },
+  "campfire-out": {
+    "label": { "es": "Fogata apagada", "en": "Campfire out", "pt": "Fogueira apagada", "fr": "Feu éteint", "de": "Gelöschtes Lagerfeuer", "it": "Fuoco spento", "ja": "消火済みの焚き火", "zh": "篝火已熄灭", "ko": "꺼진 모닥불", "ar": "نار مطفأة" },
+    "keywords": {
+      "es": ["extinguir", "sofocar", "cenizas", "apagar el fuego", "remover brasas", "prevenir incendios", "seguridad"],
+      "en": ["extinguished", "drown and stir", "ashes", "put out fire", "fire safety", "leave no trace", "cold embers"]
+    }
+  },
+  "marshmallow-stick": {
+    "label": { "es": "Asar malvaviscos", "en": "Roasting marshmallows", "pt": "Marshmallow na fogueira", "fr": "Guimauves grillées", "de": "Marshmallows rösten", "it": "Marshmallow arrostiti", "ja": "焼きマシュマロ", "zh": "烤棉花糖", "ko": "마시멜로 굽기", "ar": "شوي المارشميلو" },
+    "keywords": {
+      "es": ["s'mores", "bombones", "dulces", "fogata", "actividad familiar", "postre de campamento", "niños"],
+      "en": ["s'mores", "campfire treats", "roasting stick", "dessert", "family activity", "kids", "sweets"]
+    }
+  },
+  "matchstick": {
+    "label": { "es": "Cerillo encendido", "en": "Lit match", "pt": "Fósforo aceso", "fr": "Allumette enflammée", "de": "Brennendes Streichholz", "it": "Fiammifero acceso", "ja": "マッチの火", "zh": "点燃的火柴", "ko": "켜진 성냥", "ar": "عود ثقاب مشتعل" },
+    "keywords": {
+      "es": ["encender fuego", "prender", "ignición", "flama", "fósforo", "chispa", "prender la fogata"],
+      "en": ["start a fire", "ignite", "ignition", "flame", "light", "spark", "fire starter"]
+    }
+  },
+  "fire-danger": {
+    "label": { "es": "Riesgo de incendio", "en": "Fire danger", "pt": "Risco de incêndio", "fr": "Risque d’incendie", "de": "Waldbrandgefahr", "it": "Pericolo di incendio", "ja": "火災危険度", "zh": "火险等级", "ko": "산불 위험", "ar": "خطر الحرائق" },
+    "keywords": {
+      "es": ["nivel de peligro", "restricciones de fuego", "prohibido hacer fogatas", "alerta", "temporada seca", "incendio forestal", "índice de riesgo"],
+      "en": ["fire risk", "fire restrictions", "burn ban", "danger level", "wildfire", "red flag warning", "dry season"]
+    }
+  },
+  "camp-stove": {
+    "label": { "es": "Estufa de campamento", "en": "Camp stove", "pt": "Fogareiro", "fr": "Réchaud de camping", "de": "Campingkocher", "it": "Fornelletto da campeggio", "ja": "キャンプ用バーナー", "zh": "露营炉", "ko": "캠핑 버너", "ar": "موقد تخييم" },
+    "keywords": {
+      "es": ["hornilla", "quemador", "cocinar", "gas", "parrilla portátil", "lista de equipo", "cocina permitida"],
+      "en": ["backpacking stove", "burner", "camp cooking", "gas stove", "gear list", "cooking allowed", "boil water"]
+    }
+  },
+  "fuel-canister": {
+    "label": { "es": "Cartucho de gas", "en": "Fuel canister", "pt": "Cartucho de gás", "fr": "Cartouche de gaz", "de": "Gaskartusche", "it": "Cartuccia di gas", "ja": "ガス缶", "zh": "气罐", "ko": "가스 캔", "ar": "عبوة غاز" },
+    "keywords": {
+      "es": ["combustible", "tanque de gas", "butano", "propano", "estufa", "gas restante", "recarga"],
+      "en": ["gas canister", "stove fuel", "butane", "propane", "isobutane", "fuel left", "refill"]
+    }
+  },
+  "mess-kit": {
+    "label": { "es": "Kit de cocina", "en": "Mess kit", "pt": "Kit de panelas", "fr": "Popote", "de": "Kochset", "it": "Set di pentole da campo", "ja": "クッカー", "zh": "野营炊具", "ko": "코펠", "ar": "طقم أواني التخييم" },
+    "keywords": {
+      "es": ["ollas", "trastes", "utensilios de campamento", "batería de cocina", "ollas apilables", "plato", "cocinar"],
+      "en": ["cookware", "nesting pots", "cook kit", "camp pots", "pan", "camp dishes", "cooking"]
+    }
+  },
+  "bear-canister": {
+    "label": { "es": "Contenedor antiosos", "en": "Bear canister", "pt": "Contêiner antiursos", "fr": "Bidon anti-ours", "de": "Bärenkanister", "it": "Contenitore anti-orso", "ja": "ベアキャニスター", "zh": "防熊罐", "ko": "곰 방지 식량통", "ar": "حاوية مقاومة للدببة" },
+    "keywords": {
+      "es": ["guardar comida", "osos", "fauna silvestre", "almacenamiento obligatorio", "reglas del parque", "zona de osos", "recipiente hermético"],
+      "en": ["food storage", "bear country", "wildlife", "required storage", "bear-proof", "park rules", "food locker"]
+    }
+  },
+  "cooler-bag": {
+    "label": { "es": "Bolsa térmica", "en": "Soft cooler", "pt": "Bolsa térmica", "fr": "Sac isotherme", "de": "Kühltasche", "it": "Borsa frigo", "ja": "ソフトクーラー", "zh": "保温包", "ko": "소프트 쿨러", "ar": "حقيبة تبريد" },
+    "keywords": {
+      "es": ["hielera", "lonchera", "pícnic", "mantener frío", "bebidas frías", "paseo de un día", "playa"],
+      "en": ["cooler", "lunch bag", "picnic", "keep cold", "cold drinks", "day trip", "insulated bag"]
+    }
+  },
+  "picnic-basket": {
+    "label": { "es": "Canasta de pícnic", "en": "Picnic basket", "pt": "Cesta de piquenique", "fr": "Panier de pique-nique", "de": "Picknickkorb", "it": "Cestino da picnic", "ja": "ピクニックバスケット", "zh": "野餐篮", "ko": "피크닉 바구니", "ar": "سلة نزهة" },
+    "keywords": {
+      "es": ["día de campo", "zona de mesas", "comer al aire libre", "paseo", "parque", "almuerzo", "mantel"],
+      "en": ["outdoor meal", "hamper", "lunch in the park", "day trip", "eating outside", "park", "family outing"]
+    }
+  },
+  "canteen": {
+    "label": { "es": "Cantimplora", "en": "Canteen", "pt": "Cantil", "fr": "Gourde", "de": "Feldflasche", "it": "Borraccia", "ja": "水筒", "zh": "水壶", "ko": "수통", "ar": "زمزمية" },
+    "keywords": {
+      "es": ["agua", "hidratación", "botella", "sendero", "reserva de agua", "beber", "termo"],
+      "en": ["water bottle", "hydration", "water supply", "trail water", "drink", "flask", "water carry"]
+    }
+  },
+  "water-filter-straw": {
+    "label": { "es": "Popote filtrante", "en": "Water filter straw", "pt": "Canudo filtrante", "fr": "Paille filtrante", "de": "Trinkhalm-Wasserfilter", "it": "Cannuccia filtrante", "ja": "ストロー型浄水器", "zh": "吸管净水器", "ko": "빨대형 정수기", "ar": "مصاصة لتنقية المياه" },
+    "keywords": {
+      "es": ["agua segura", "purificar", "beber del arroyo", "potabilizar", "filtro de agua", "supervivencia", "sendero"],
+      "en": ["safe water", "purify", "drink from streams", "water purifier", "treat water", "survival", "backcountry"]
+    }
+  },
+  "hand-pump": {
+    "label": { "es": "Bomba de agua", "en": "Water pump", "pt": "Bomba d’água", "fr": "Pompe à eau", "de": "Wasserpumpe", "it": "Pompa dell’acqua", "ja": "手押しポンプ", "zh": "手压水泵", "ko": "수동 펌프", "ar": "مضخة ماء يدوية" },
+    "keywords": {
+      "es": ["agua potable", "toma de agua", "pozo", "punto de agua", "mapa del parque", "servicios", "llenar garrafones"],
+      "en": ["drinking water", "water point", "well", "spigot", "park map", "amenities", "potable water"]
+    }
+  },
+  "camp-shower": {
+    "label": { "es": "Regadera de campamento", "en": "Camp shower", "pt": "Chuveiro de camping", "fr": "Douche de camping", "de": "Campingdusche", "it": "Doccia da campeggio", "ja": "キャンプシャワー", "zh": "露营淋浴", "ko": "캠핑 샤워", "ar": "دش التخييم" },
+    "keywords": {
+      "es": ["ducha", "bañarse", "ducha solar", "bolsa de agua", "baños del camping", "higiene", "servicios"],
+      "en": ["solar shower", "shower bag", "showers", "wash", "hygiene", "amenities", "bathhouse"]
+    }
+  },
+  "outhouse": {
+    "label": { "es": "Letrina", "en": "Outhouse", "pt": "Latrina", "fr": "Toilettes sèches", "de": "Plumpsklo", "it": "Latrina", "ja": "屋外トイレ", "zh": "旱厕", "ko": "간이 화장실", "ar": "مرحاض خارجي" },
+    "keywords": {
+      "es": ["baño", "sanitario", "retrete seco", "baño de pozo", "baño en el sendero", "servicios", "WC"],
+      "en": ["toilet", "vault toilet", "pit toilet", "privy", "restroom", "latrine", "trailhead toilet"]
+    }
+  },
+  "lantern": {
+    "label": { "es": "Lámpara de campamento", "en": "Camping lantern", "pt": "Lampião", "fr": "Lanterne", "de": "Campinglaterne", "it": "Lanterna", "ja": "ランタン", "zh": "露营灯", "ko": "랜턴", "ar": "فانوس" },
+    "keywords": {
+      "es": ["farol", "linterna", "iluminación", "luz", "lista de equipo", "quinqué", "noche"],
+      "en": ["light", "lamp", "lighting", "gear list", "camp light", "night", "oil lamp"]
+    }
+  },
+  "lantern-on": {
+    "label": { "es": "Farol encendido", "en": "Lantern on", "pt": "Lampião aceso", "fr": "Lanterne allumée", "de": "Eingeschaltete Laterne", "it": "Lanterna accesa", "ja": "点灯したランタン", "zh": "点亮的露营灯", "ko": "켜진 랜턴", "ar": "فانوس مضاء" },
+    "keywords": {
+      "es": ["luz prendida", "modo noche", "iluminar", "prender", "alumbrar", "campamento de noche", "lámpara"],
+      "en": ["light on", "night mode", "illuminate", "turn on", "glow", "camp at night", "lamp"]
+    }
+  },
+  "headlamp": {
+    "label": { "es": "Lámpara de cabeza", "en": "Headlamp", "pt": "Lanterna de cabeça", "fr": "Lampe frontale", "de": "Stirnlampe", "it": "Lampada frontale", "ja": "ヘッドランプ", "zh": "头灯", "ko": "헤드랜턴", "ar": "مصباح رأس" },
+    "keywords": {
+      "es": ["linterna frontal", "manos libres", "caminata nocturna", "luz", "lista de equipo", "espeleología", "correr de noche"],
+      "en": ["head torch", "hands-free light", "night hiking", "flashlight", "gear list", "caving", "night running"]
+    }
+  },
+  "backpack-hiking": {
+    "label": { "es": "Mochila de excursión", "en": "Hiking backpack", "pt": "Mochila de trilha", "fr": "Sac de randonnée", "de": "Wanderrucksack", "it": "Zaino da escursionismo", "ja": "登山用リュック", "zh": "登山背包", "ko": "등산 배낭", "ar": "حقيبة ظهر للرحلات" },
+    "keywords": {
+      "es": ["mochilero", "travesía", "varios días", "peso de carga", "senderismo", "equipaje", "litros"],
+      "en": ["backpacking", "multi-day pack", "pack weight", "trekking", "rucksack", "daypack", "liters"]
+    }
+  },
+  "dry-bag": {
+    "label": { "es": "Bolsa seca", "en": "Dry bag", "pt": "Saco estanque", "fr": "Sac étanche", "de": "Wasserdichter Packsack", "it": "Sacca stagna", "ja": "ドライバッグ", "zh": "防水袋", "ko": "드라이백", "ar": "حقيبة مقاومة للماء" },
+    "keywords": {
+      "es": ["impermeable", "kayak", "remo", "rafting", "proteger del agua", "almacenamiento", "playa"],
+      "en": ["waterproof", "kayaking", "paddling", "rafting", "keep dry", "storage", "stuff sack"]
+    }
+  },
+  "carabiner": {
+    "label": { "es": "Mosquetón", "en": "Carabiner", "pt": "Mosquetão", "fr": "Mousqueton", "de": "Karabiner", "it": "Moschettone", "ja": "カラビナ", "zh": "登山扣", "ko": "카라비너", "ar": "مشبك التسلق" },
+    "keywords": {
+      "es": ["escalada", "asegurar", "enganchar", "equipo de escalada", "colgar equipo", "seguro", "rápel"],
+      "en": ["climbing gear", "clip in", "clip", "belay", "attach gear", "rappel", "locking"]
+    }
+  },
+  "rope": {
+    "label": { "es": "Cuerda", "en": "Rope", "pt": "Corda", "fr": "Corde", "de": "Seil", "it": "Corda", "ja": "ロープ", "zh": "绳索", "ko": "로프", "ar": "حبل" },
+    "keywords": {
+      "es": ["soga", "mecate", "paracord", "escalada", "nudo", "tendedero", "amarrar"],
+      "en": ["climbing rope", "paracord", "knot", "rigging", "line", "tie down", "cord"]
+    }
+  },
+  "folding-knife": {
+    "label": { "es": "Navaja", "en": "Folding knife", "pt": "Canivete", "fr": "Couteau pliant", "de": "Taschenmesser", "it": "Coltello pieghevole", "ja": "折りたたみナイフ", "zh": "折叠刀", "ko": "접이식 칼", "ar": "سكين قابلة للطي" },
+    "keywords": {
+      "es": ["cuchillo plegable", "cuchillo de bolsillo", "cortar", "herramienta de campamento", "hoja", "supervivencia", "pesca"],
+      "en": ["pocket knife", "camp tool", "cut", "blade", "survival", "jackknife", "everyday carry"]
+    }
+  },
+  "multi-tool": {
+    "label": { "es": "Multiherramienta", "en": "Multi-tool", "pt": "Multiferramenta", "fr": "Outil multifonction", "de": "Multitool", "it": "Multiutensile", "ja": "マルチツール", "zh": "多功能工具", "ko": "멀티툴", "ar": "أداة متعددة الاستخدامات" },
+    "keywords": {
+      "es": ["navaja suiza", "pinzas", "reparaciones", "herramienta de campamento", "desarmador", "kit de herramientas", "todo en uno"],
+      "en": ["swiss army knife", "pliers", "repairs", "camp tool", "screwdriver", "utility tool", "all-in-one"]
+    }
+  },
+  "emergency-beacon": {
+    "label": { "es": "Baliza de emergencia", "en": "Emergency beacon", "pt": "Sinalizador de emergência", "fr": "Balise de détresse", "de": "Notrufsender", "it": "Localizzatore d’emergenza", "ja": "緊急ビーコン", "zh": "应急信标", "ko": "비상 신호기", "ar": "منارة طوارئ" },
+    "keywords": {
+      "es": ["SOS", "rescate", "localizador personal", "mensajería satelital", "pedir ayuda", "GPS", "zona sin señal"],
+      "en": ["SOS", "rescue", "personal locator beacon", "PLB", "satellite messenger", "call for help", "no signal"]
+    }
+  },
+  "trekking-poles": {
+    "label": { "es": "Bastones de senderismo", "en": "Trekking poles", "pt": "Bastões de caminhada", "fr": "Bâtons de randonnée", "de": "Wanderstöcke", "it": "Bastoncini da trekking", "ja": "トレッキングポール", "zh": "登山杖", "ko": "등산 스틱", "ar": "عصي المشي" },
+    "keywords": {
+      "es": ["equipo de senderismo", "caminata nórdica", "apoyo", "rodillas", "montaña", "trekking", "estabilidad"],
+      "en": ["hiking poles", "hiking gear", "nordic walking", "walking sticks", "support", "knees", "stability"]
+    }
+  },
+  "boot-hiking": {
+    "label": { "es": "Bota de montaña", "en": "Hiking boot", "pt": "Bota de trilha", "fr": "Chaussure de randonnée", "de": "Wanderschuh", "it": "Scarpone da trekking", "ja": "登山靴", "zh": "登山靴", "ko": "등산화", "ar": "حذاء التنزه الجبلي" },
+    "keywords": {
+      "es": ["calzado de senderismo", "zapato de excursión", "caminata", "suela", "impermeable", "lista de equipo", "tobillo"],
+      "en": ["hiking footwear", "trail shoe", "ankle support", "sole", "waterproof", "gear list", "trek"]
+    }
+  },
+  "ranger-hat": {
+    "label": { "es": "Guardaparques", "en": "Park ranger", "pt": "Guarda-parque", "fr": "Garde forestier", "de": "Parkranger", "it": "Guardaparco", "ja": "パークレンジャー", "zh": "公园护林员", "ko": "공원 레인저", "ar": "حارس المنتزه" },
+    "keywords": {
+      "es": ["guardabosques", "ranger", "programas guiados", "información", "vigilancia", "parque nacional", "sombrero"],
+      "en": ["warden", "park staff", "guided program", "visitor info", "campaign hat", "national park", "patrol"]
+    }
+  },
+  "waders": {
+    "label": { "es": "Vadeador de pesca", "en": "Fishing waders", "pt": "Macacão de pesca", "fr": "Waders de pêche", "de": "Wathose", "it": "Waders da pesca", "ja": "ウェーダー", "zh": "涉水裤", "ko": "웨이더", "ar": "سروال صيد مقاوم للماء" },
+    "keywords": {
+      "es": ["pesca con mosca", "pescar en río", "botas pecheras", "waders", "equipo de pesca", "arroyo", "impermeable"],
+      "en": ["fly fishing", "stream fishing", "chest waders", "fishing gear", "river", "waterproof", "wading"]
+    }
+  },
+  "ice-axe": {
+    "label": { "es": "Piolet", "en": "Ice axe", "pt": "Piolet", "fr": "Piolet", "de": "Eispickel", "it": "Piccozza", "ja": "ピッケル", "zh": "冰镐", "ko": "피켈", "ar": "فأس الجليد" },
+    "keywords": {
+      "es": ["alpinismo", "glaciar", "escalada alpina", "montañismo", "hielo", "autodetención", "alta montaña"],
+      "en": ["mountaineering", "glacier travel", "alpine climbing", "self-arrest", "crampons", "snow climb", "summit"]
+    }
+  },
+  "sled": {
+    "label": { "es": "Trineo", "en": "Sled", "pt": "Trenó", "fr": "Luge", "de": "Schlitten", "it": "Slittino", "ja": "そり", "zh": "雪橇", "ko": "썰매", "ar": "مزلجة" },
+    "keywords": {
+      "es": ["deslizarse", "nieve", "juego de invierno", "zona de nieve", "niños", "bajada", "invierno"],
+      "en": ["sledding", "toboggan", "snow play", "winter fun", "snow area", "kids", "hill"]
+    }
+  },
+  "trail": {
+    "label": { "es": "Sendero", "en": "Hiking trail", "pt": "Trilha", "fr": "Sentier", "de": "Wanderweg", "it": "Sentiero", "ja": "ハイキングコース", "zh": "徒步小径", "ko": "등산로", "ar": "مسار المشي" },
+    "keywords": {
+      "es": ["senderismo", "caminata", "rutas cercanas", "ruta", "naturaleza", "excursión", "camino"],
+      "en": ["hiking", "path", "trails near me", "route", "nature walk", "footpath", "track"]
+    }
+  },
+  "trail-check": {
+    "label": { "es": "Sendero completado", "en": "Trail completed", "pt": "Trilha concluída", "fr": "Sentier terminé", "de": "Wanderung abgeschlossen", "it": "Sentiero completato", "ja": "踏破したコース", "zh": "已完成的步道", "ko": "완주한 코스", "ar": "مسار مكتمل" },
+    "keywords": {
+      "es": ["ruta terminada", "caminata hecha", "logro", "historial", "recorrido", "meta", "registro"],
+      "en": ["hike done", "completed route", "achievement", "history", "logged hike", "finished", "goal"]
+    }
+  },
+  "trail-alert": {
+    "label": { "es": "Alerta de sendero", "en": "Trail alert", "pt": "Alerta de trilha", "fr": "Alerte sur le sentier", "de": "Wegwarnung", "it": "Avviso sul sentiero", "ja": "登山道の注意情報", "zh": "步道警报", "ko": "등산로 경보", "ar": "تنبيه بشأن المسار" },
+    "keywords": {
+      "es": ["cierre", "peligro", "condiciones actuales", "aviso", "ruta cerrada", "precaución", "riesgo"],
+      "en": ["closure", "hazard", "trail conditions", "warning", "closed route", "caution", "notice"]
+    }
+  },
+  "trailhead": {
+    "label": { "es": "Inicio del sendero", "en": "Trailhead", "pt": "Início da trilha", "fr": "Départ du sentier", "de": "Ausgangspunkt der Wanderung", "it": "Inizio del sentiero", "ja": "登山口", "zh": "步道起点", "ko": "등산로 입구", "ar": "بداية المسار" },
+    "keywords": {
+      "es": ["punto de partida", "letrero", "tablero de información", "estacionamiento", "punto de reunión", "acceso", "salida"],
+      "en": ["starting point", "trail sign", "info board", "parking", "meeting point", "access point", "start"]
+    }
+  },
+  "switchbacks": {
+    "label": { "es": "Subida en zigzag", "en": "Switchbacks", "pt": "Trilha em zigue-zague", "fr": "Lacets", "de": "Serpentinen", "it": "Tornanti", "ja": "つづら折り", "zh": "之字形山路", "ko": "지그재그 길", "ar": "منعطفات متعرجة" },
+    "keywords": {
+      "es": ["pendiente", "cuesta", "curvas", "desnivel", "ascenso", "dificultad", "inclinación"],
+      "en": ["steep climb", "zigzag", "incline", "elevation gain", "hairpin turns", "trail steepness", "ascent"]
+    }
+  },
+  "stream-crossing": {
+    "label": { "es": "Cruce de arroyo", "en": "Stream crossing", "pt": "Travessia de riacho", "fr": "Passage à gué", "de": "Bachquerung", "it": "Guado", "ja": "渡渉", "zh": "涉水过溪", "ko": "개울 건너기", "ar": "عبور الجدول" },
+    "keywords": {
+      "es": ["vado", "cruzar el río", "paso de agua", "río", "obstáculo", "piedras", "mojarse"],
+      "en": ["ford", "water crossing", "creek", "river crossing", "wade", "stepping stones", "obstacle"]
+    }
+  },
+  "national-park": {
+    "label": { "es": "Parque nacional", "en": "National park", "pt": "Parque nacional", "fr": "Parc national", "de": "Nationalpark", "it": "Parco nazionale", "ja": "国立公園", "zh": "国家公园", "ko": "국립공원", "ar": "حديقة وطنية" },
+    "keywords": {
+      "es": ["área protegida", "reserva natural", "naturaleza", "bosque", "ecoturismo", "visitar", "conservación"],
+      "en": ["protected area", "nature reserve", "wilderness", "forest", "park page", "conservation", "visit"]
+    }
+  },
+  "park-pass": {
+    "label": { "es": "Pase del parque", "en": "Park pass", "pt": "Passe do parque", "fr": "Pass d’accès au parc", "de": "Parkpass", "it": "Pass del parco", "ja": "公園パス", "zh": "公园通行证", "ko": "공원 입장권", "ar": "تصريح دخول المنتزه" },
+    "keywords": {
+      "es": ["boleto", "permiso de entrada", "anual", "acceso", "uso diurno", "cuota", "brazalete"],
+      "en": ["entry permit", "ticket", "admission", "day use", "entrance fee", "annual permit", "access"]
+    }
+  },
+  "fire-lookout": {
+    "label": { "es": "Torre de vigilancia", "en": "Fire lookout", "pt": "Torre de vigia", "fr": "Tour de guet", "de": "Feuerwachturm", "it": "Torre di avvistamento", "ja": "山火事監視塔", "zh": "火情瞭望塔", "ko": "산불 감시탑", "ar": "برج مراقبة الحرائق" },
+    "keywords": {
+      "es": ["mirador", "incendios forestales", "vista panorámica", "atalaya", "hospedaje rústico", "observación", "bosque"],
+      "en": ["watchtower", "viewpoint", "wildfire", "panoramic view", "fire watch", "rental cabin", "forest"]
+    }
+  },
+  "fishing-rod": {
+    "label": { "es": "Caña de pescar", "en": "Fishing rod", "pt": "Vara de pesca", "fr": "Canne à pêche", "de": "Angelrute", "it": "Canna da pesca", "ja": "釣り竿", "zh": "钓竿", "ko": "낚싯대", "ar": "صنارة صيد" },
+    "keywords": {
+      "es": ["pesca", "equipo de pesca", "sitios de pesca", "lanzar", "río", "lago", "anzuelo"],
+      "en": ["angling", "fishing pole", "tackle", "places to fish", "cast", "lake", "river"]
+    }
+  },
+  "fishing-reel": {
+    "label": { "es": "Carrete de pesca", "en": "Fishing reel", "pt": "Molinete", "fr": "Moulinet", "de": "Angelrolle", "it": "Mulinello", "ja": "リール", "zh": "渔轮", "ko": "낚시 릴", "ar": "بكرة صيد" },
+    "keywords": {
+      "es": ["lanzar", "recoger línea", "sedal", "tienda de pesca", "equipo de pesca", "caña", "pesca deportiva"],
+      "en": ["casting", "fishing line", "tackle shop", "spinning", "baitcaster", "rod", "sport fishing"]
+    }
+  },
+  "fish-hook": {
+    "label": { "es": "Anzuelo", "en": "Fish hook", "pt": "Anzol", "fr": "Hameçon", "de": "Angelhaken", "it": "Amo", "ja": "釣り針", "zh": "鱼钩", "ko": "낚싯바늘", "ar": "خطاف صيد" },
+    "keywords": {
+      "es": ["pesca", "aparejos", "carnada", "atrapar", "picar", "sedal", "enganchar"],
+      "en": ["fishing", "tackle", "bait", "catch", "barb", "line", "snag"]
+    }
+  },
+  "fishing-lure": {
+    "label": { "es": "Señuelo", "en": "Fishing lure", "pt": "Isca artificial", "fr": "Leurre", "de": "Kunstköder", "it": "Esca artificiale", "ja": "ルアー", "zh": "拟饵", "ko": "루어", "ar": "طُعم صناعي" },
+    "keywords": {
+      "es": ["carnada artificial", "aparejos", "cucharilla", "pesca deportiva", "atraer peces", "anzuelo", "pesca"],
+      "en": ["bait", "tackle", "spinner", "crankbait", "attract fish", "sport fishing", "jig"]
+    }
+  },
+  "bait": {
+    "label": { "es": "Carnada viva", "en": "Live bait", "pt": "Isca viva", "fr": "Appât vivant", "de": "Lebendköder", "it": "Esca viva", "ja": "生き餌", "zh": "活饵", "ko": "생미끼", "ar": "طُعم حي" },
+    "keywords": {
+      "es": ["lombrices", "gusanos", "cebo", "venta de cebos", "anzuelo", "pesca", "camarón"],
+      "en": ["worms", "nightcrawlers", "minnows", "tackle shop", "hook", "fishing", "lure"]
+    }
+  },
+  "bobber": {
+    "label": { "es": "Flotador de pesca", "en": "Bobber", "pt": "Boia de pesca", "fr": "Flotteur", "de": "Angelpose", "it": "Galleggiante", "ja": "浮き", "zh": "浮漂", "ko": "찌", "ar": "عوامة صيد" },
+    "keywords": {
+      "es": ["boya", "corcho", "pique", "picada", "indicador", "sedal", "pesca"],
+      "en": ["float", "float fishing", "bite indicator", "cork", "strike", "line", "fishing"]
+    }
+  },
+  "landing-net": {
+    "label": { "es": "Red de mano", "en": "Landing net", "pt": "Puçá", "fr": "Épuisette", "de": "Kescher", "it": "Guadino", "ja": "タモ網", "zh": "抄网", "ko": "뜰채", "ar": "شبكة الصيد اليدوية" },
+    "keywords": {
+      "es": ["sacadera", "copo", "atrapar el pez", "equipo de pesca", "sacar la pesca", "captura", "malla"],
+      "en": ["fish net", "dip net", "net a catch", "fishing gear", "catch", "scoop", "mesh"]
+    }
+  },
+  "tackle-box": {
+    "label": { "es": "Caja de pesca", "en": "Tackle box", "pt": "Caixa de pesca", "fr": "Boîte de pêche", "de": "Angelbox", "it": "Cassetta da pesca", "ja": "タックルボックス", "zh": "钓具箱", "ko": "태클 박스", "ar": "صندوق أدوات الصيد" },
+    "keywords": {
+      "es": ["aparejos", "organizador", "anzuelos", "señuelos", "equipo de pesca", "guardar", "estuche"],
+      "en": ["fishing tackle", "organizer", "hooks", "lures", "fishing gear", "storage", "kit"]
+    }
+  },
+  "fish-catch": {
+    "label": { "es": "Captura", "en": "Catch", "pt": "Captura", "fr": "Prise", "de": "Fang", "it": "Pescato", "ja": "釣果", "zh": "渔获", "ko": "조과", "ar": "حصيلة الصيد" },
+    "keywords": {
+      "es": ["pez atrapado", "registro de pesca", "historial", "resultados", "trofeo", "pescado", "bitácora"],
+      "en": ["caught fish", "fishing log", "history", "results", "trophy", "logbook", "haul"]
+    }
+  },
+  "fishing": {
+    "label": { "es": "Pesca", "en": "Fishing", "pt": "Pesca", "fr": "Pêche", "de": "Angeln", "it": "Pesca", "ja": "釣り", "zh": "钓鱼", "ko": "낚시", "ar": "صيد السمك" },
+    "keywords": {
+      "es": ["pescar", "actividades", "permitido", "excursión", "lago", "río", "deporte"],
+      "en": ["angling", "things to do", "activity", "angler", "lake", "river", "allowed"]
+    }
+  },
+  "id-card-fish": {
+    "label": { "es": "Permiso de pesca", "en": "Fishing license", "pt": "Licença de pesca", "fr": "Permis de pêche", "de": "Angelschein", "it": "Licenza di pesca", "ja": "遊漁券", "zh": "钓鱼许可证", "ko": "낚시 허가증", "ar": "رخصة صيد" },
+    "keywords": {
+      "es": ["licencia", "autorización", "pesca deportiva", "credencial", "trámite", "identificación", "vigente"],
+      "en": ["permit", "angler ID", "credential", "authorization", "valid", "renewal", "regulations"]
+    }
+  }
+}
