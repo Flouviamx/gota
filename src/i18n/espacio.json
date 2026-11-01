@@ -1,0 +1,359 @@
+{
+  "comet": {
+    "label": { "es": "Cometa", "en": "Comet", "pt": "Cometa", "fr": "Comète", "de": "Komet", "it": "Cometa", "ja": "彗星", "zh": "彗星", "ko": "혜성", "ar": "مذنب" },
+    "keywords": {
+      "es": ["astronomía", "cola luminosa", "cielo nocturno", "evento astronómico", "Halley", "cuerpo helado", "algo que pasa"],
+      "en": ["astronomy", "glowing tail", "night sky", "sky event", "Halley", "icy body", "passing through"]
+    }
+  },
+  "asteroid": {
+    "label": { "es": "Asteroide", "en": "Asteroid", "pt": "Asteroide", "fr": "Astéroïde", "de": "Asteroid", "it": "Asteroide", "ja": "小惑星", "zh": "小行星", "ko": "소행성", "ar": "كويكب" },
+    "keywords": {
+      "es": ["roca espacial", "cuerpo menor", "defensa planetaria", "impacto", "juego espacial", "meteoroide", "minería espacial"],
+      "en": ["space rock", "minor planet", "planetary defense", "impact", "space game", "meteoroid", "space mining"]
+    }
+  },
+  "asteroid-belt": {
+    "label": { "es": "Cinturón de asteroides", "en": "Asteroid belt", "pt": "Cinturão de asteroides", "fr": "Ceinture d’astéroïdes", "de": "Asteroidengürtel", "it": "Fascia degli asteroidi", "ja": "小惑星帯", "zh": "小行星带", "ko": "소행성대", "ar": "حزام الكويكبات" },
+    "keywords": {
+      "es": ["cinturón de Kuiper", "sistema solar", "rocas espaciales", "entre Marte y Júpiter", "anillo de rocas", "cuerpos menores", "órbita"],
+      "en": ["Kuiper belt", "solar system", "space rocks", "between Mars and Jupiter", "debris ring", "minor bodies", "orbit"]
+    }
+  },
+  "meteor": {
+    "label": { "es": "Meteoro", "en": "Meteor", "pt": "Meteoro", "fr": "Météore", "de": "Meteor", "it": "Meteora", "ja": "流星", "zh": "流星", "ko": "유성", "ar": "شهاب" },
+    "keywords": {
+      "es": ["estrella fugaz", "bola de fuego", "bólido", "roca en llamas", "atmósfera", "cielo nocturno", "impacto"],
+      "en": ["shooting star", "fireball", "bolide", "burning rock", "atmosphere", "night sky", "impact"]
+    }
+  },
+  "meteor-shower": {
+    "label": { "es": "Lluvia de meteoros", "en": "Meteor shower", "pt": "Chuva de meteoros", "fr": "Pluie de météores", "de": "Meteorschauer", "it": "Pioggia di meteore", "ja": "流星群", "zh": "流星雨", "ko": "유성우", "ar": "زخة شهب" },
+    "keywords": {
+      "es": ["estrellas fugaces", "Perseidas", "Gemínidas", "evento astronómico", "calendario astronómico", "cielo nocturno", "aviso de observación"],
+      "en": ["shooting stars", "Perseids", "Geminids", "sky event", "astronomy calendar", "night sky", "stargazing alert"]
+    }
+  },
+  "galaxy": {
+    "label": { "es": "Galaxia", "en": "Galaxy", "pt": "Galáxia", "fr": "Galaxie", "de": "Galaxie", "it": "Galassia", "ja": "銀河", "zh": "星系", "ko": "은하", "ar": "مجرة" },
+    "keywords": {
+      "es": ["Vía Láctea", "espiral", "universo", "cosmos", "cielo profundo", "Andrómeda", "estrellas"],
+      "en": ["Milky Way", "spiral", "universe", "cosmos", "deep sky", "Andromeda", "stars"]
+    }
+  },
+  "nebula": {
+    "label": { "es": "Nebulosa", "en": "Nebula", "pt": "Nebulosa", "fr": "Nébuleuse", "de": "Gasnebel", "it": "Nebulosa", "ja": "星雲", "zh": "星云", "ko": "성운", "ar": "سديم" },
+    "keywords": {
+      "es": ["nube de gas", "polvo cósmico", "nacimiento de estrellas", "cielo profundo", "Orión", "catálogo Messier", "cosmos"],
+      "en": ["gas cloud", "cosmic dust", "star nursery", "deep sky", "Orion", "Messier catalog", "cosmos"]
+    }
+  },
+  "supernova": {
+    "label": { "es": "Supernova", "en": "Supernova", "pt": "Supernova", "fr": "Supernova", "de": "Supernova", "it": "Supernova", "ja": "超新星", "zh": "超新星", "ko": "초신성", "ar": "مستعر أعظم" },
+    "keywords": {
+      "es": ["explosión estelar", "estrella que explota", "evento cósmico", "estallido", "astrofísica", "ráfaga de energía", "muerte de una estrella"],
+      "en": ["stellar explosion", "exploding star", "cosmic event", "burst", "astrophysics", "energy blast", "dying star"]
+    }
+  },
+  "binary-star": {
+    "label": { "es": "Estrella binaria", "en": "Binary star", "pt": "Estrela binária", "fr": "Étoile binaire", "de": "Doppelstern", "it": "Stella binaria", "ja": "連星", "zh": "双星", "ko": "쌍성", "ar": "نجم ثنائي" },
+    "keywords": {
+      "es": ["estrella doble", "sistema binario", "dos estrellas", "órbita mutua", "catálogo estelar", "astronomía", "pareja"],
+      "en": ["double star", "binary system", "two stars", "mutual orbit", "star catalog", "astronomy", "pair"]
+    }
+  },
+  "star-cluster": {
+    "label": { "es": "Cúmulo estelar", "en": "Star cluster", "pt": "Aglomerado estelar", "fr": "Amas d’étoiles", "de": "Sternhaufen", "it": "Ammasso stellare", "ja": "星団", "zh": "星团", "ko": "성단", "ar": "عنقود نجمي" },
+    "keywords": {
+      "es": ["cúmulo abierto", "cúmulo globular", "Pléyades", "cielo profundo", "grupo de estrellas", "observación", "objeto Messier"],
+      "en": ["open cluster", "globular cluster", "Pleiades", "deep sky", "group of stars", "stargazing", "Messier object"]
+    }
+  },
+  "constellation": {
+    "label": { "es": "Constelación", "en": "Constellation", "pt": "Constelação", "fr": "Constellation", "de": "Sternbild", "it": "Costellazione", "ja": "星座", "zh": "星座", "ko": "별자리", "ar": "كوكبة" },
+    "keywords": {
+      "es": ["mapa estelar", "patrón de estrellas", "zodiaco", "guía del cielo", "Osa Mayor", "red de puntos", "conexiones"],
+      "en": ["star map", "star pattern", "zodiac", "sky guide", "Big Dipper", "network of points", "connections"]
+    }
+  },
+  "solar-system": {
+    "label": { "es": "Sistema solar", "en": "Solar system", "pt": "Sistema solar", "fr": "Système solaire", "de": "Sonnensystem", "it": "Sistema solare", "ja": "太陽系", "zh": "太阳系", "ko": "태양계", "ar": "النظام الشمسي" },
+    "keywords": {
+      "es": ["planetas", "órbitas", "sol", "astronomía", "educación", "modelo planetario", "vista general"],
+      "en": ["planets", "orbits", "sun", "astronomy", "education", "orrery", "overview"]
+    }
+  },
+  "orbit": {
+    "label": { "es": "Órbita", "en": "Orbit", "pt": "Órbita", "fr": "Orbite", "de": "Umlaufbahn", "it": "Orbita", "ja": "軌道", "zh": "轨道", "ko": "궤도", "ar": "مدار" },
+    "keywords": {
+      "es": ["girar alrededor", "trayectoria orbital", "satélite", "gravedad", "ciclo", "ecosistema", "rotación"],
+      "en": ["circling", "orbital path", "satellite", "gravity", "cycle", "ecosystem", "revolve"]
+    }
+  },
+  "trajectory": {
+    "label": { "es": "Trayectoria de la misión", "en": "Mission trajectory", "pt": "Trajetória da missão", "fr": "Trajectoire de mission", "de": "Flugbahn", "it": "Traiettoria della missione", "ja": "飛行経路", "zh": "任务轨迹", "ko": "비행 궤적", "ar": "مسار المهمة" },
+    "keywords": {
+      "es": ["órbita de transferencia", "plan de vuelo", "ruta interplanetaria", "maniobra", "asistencia gravitacional", "rumbo", "navegación espacial"],
+      "en": ["transfer orbit", "flight plan", "interplanetary route", "maneuver", "gravity assist", "flight path", "space navigation"]
+    }
+  },
+  "planet-moon": {
+    "label": { "es": "Planeta con luna", "en": "Planet with moon", "pt": "Planeta com lua", "fr": "Planète et sa lune", "de": "Planet mit Mond", "it": "Pianeta con luna", "ja": "衛星のある惑星", "zh": "行星与卫星", "ko": "위성이 있는 행성", "ar": "كوكب وقمره" },
+    "keywords": {
+      "es": ["satélite natural", "lunas", "Tierra y Luna", "órbita", "sistema planetario", "guía de planetas", "astronomía"],
+      "en": ["natural satellite", "moons", "Earth and Moon", "orbit", "planetary system", "planet guide", "astronomy"]
+    }
+  },
+  "gas-giant": {
+    "label": { "es": "Gigante gaseoso", "en": "Gas giant", "pt": "Gigante gasoso", "fr": "Géante gazeuse", "de": "Gasriese", "it": "Gigante gassoso", "ja": "巨大ガス惑星", "zh": "气态巨行星", "ko": "거대 가스 행성", "ar": "عملاق غازي" },
+    "keywords": {
+      "es": ["Júpiter", "Saturno", "planeta con franjas", "tipos de planetas", "atmósfera", "Gran Mancha Roja", "planetas exteriores"],
+      "en": ["Jupiter", "Saturn", "banded planet", "planet types", "atmosphere", "Great Red Spot", "outer planets"]
+    }
+  },
+  "eclipse": {
+    "label": { "es": "Eclipse solar", "en": "Solar eclipse", "pt": "Eclipse solar", "fr": "Éclipse solaire", "de": "Sonnenfinsternis", "it": "Eclissi solare", "ja": "日食", "zh": "日食", "ko": "일식", "ar": "كسوف الشمس" },
+    "keywords": {
+      "es": ["eclipse total", "luna frente al sol", "corona solar", "franja de totalidad", "mapa de visibilidad", "alerta astronómica", "anillo de fuego"],
+      "en": ["total eclipse", "moon covers the sun", "solar corona", "path of totality", "visibility map", "astronomy alert", "ring of fire"]
+    }
+  },
+  "moon-new": {
+    "label": { "es": "Luna nueva", "en": "New moon", "pt": "Lua nova", "fr": "Nouvelle lune", "de": "Neumond", "it": "Luna nuova", "ja": "新月", "zh": "新月", "ko": "신월", "ar": "المحاق" },
+    "keywords": {
+      "es": ["fase lunar", "novilunio", "luna oscura", "inicio del ciclo lunar", "calendario lunar", "mareas", "pesca"],
+      "en": ["lunar phase", "dark moon", "start of the lunar cycle", "lunar calendar", "tides", "fishing", "dark sky"]
+    }
+  },
+  "moon-waxing-crescent": {
+    "label": { "es": "Luna creciente", "en": "Waxing crescent moon", "pt": "Lua crescente", "fr": "Premier croissant", "de": "Zunehmende Sichel", "it": "Luna crescente", "ja": "三日月", "zh": "蛾眉月", "ko": "초승달", "ar": "الهلال المتزايد" },
+    "keywords": {
+      "es": ["fase lunar", "media luna", "luna joven", "luna en aumento", "luna de la tarde", "calendario lunar"],
+      "en": ["lunar phase", "young moon", "growing moon", "sliver of moon", "evening moon", "lunar calendar"]
+    }
+  },
+  "moon-first-quarter": {
+    "label": { "es": "Cuarto creciente", "en": "First quarter moon", "pt": "Quarto crescente", "fr": "Premier quartier", "de": "Erstes Viertel", "it": "Primo quarto", "ja": "上弦の月", "zh": "上弦月", "ko": "상현달", "ar": "التربيع الأول" },
+    "keywords": {
+      "es": ["fase lunar", "luna a la mitad", "primer cuarto", "luna en aumento", "calendario lunar", "mareas muertas"],
+      "en": ["lunar phase", "half moon", "growing moon", "lunar calendar", "neap tide", "midway to full"]
+    }
+  },
+  "moon-waxing-gibbous": {
+    "label": { "es": "Luna gibosa creciente", "en": "Waxing gibbous moon", "pt": "Lua crescente gibosa", "fr": "Lune gibbeuse croissante", "de": "Zunehmender Mond", "it": "Luna gibbosa crescente", "ja": "満ちていく凸月", "zh": "盈凸月", "ko": "차오르는 볼록달", "ar": "القمر الأحدب المتزايد" },
+    "keywords": {
+      "es": ["fase lunar", "casi llena", "luna en aumento", "antes de la luna llena", "calendario lunar", "ciclo lunar"],
+      "en": ["lunar phase", "almost full", "growing moon", "before the full moon", "lunar calendar", "lunar cycle"]
+    }
+  },
+  "moon-full": {
+    "label": { "es": "Luna llena", "en": "Full moon", "pt": "Lua cheia", "fr": "Pleine lune", "de": "Vollmond", "it": "Luna piena", "ja": "満月", "zh": "满月", "ko": "보름달", "ar": "البدر" },
+    "keywords": {
+      "es": ["fase lunar", "plenilunio", "la Luna", "satélite natural", "superficie lunar", "calendario lunar", "astronomía"],
+      "en": ["lunar phase", "the Moon", "natural satellite", "lunar surface", "moonlight", "lunar calendar", "astronomy"]
+    }
+  },
+  "moon-waning-gibbous": {
+    "label": { "es": "Luna gibosa menguante", "en": "Waning gibbous moon", "pt": "Lua minguante gibosa", "fr": "Lune gibbeuse décroissante", "de": "Abnehmender Mond", "it": "Luna gibbosa calante", "ja": "欠けていく凸月", "zh": "亏凸月", "ko": "기우는 볼록달", "ar": "القمر الأحدب المتناقص" },
+    "keywords": {
+      "es": ["fase lunar", "después de la luna llena", "luna que se achica", "luna de madrugada", "calendario lunar", "ciclo lunar"],
+      "en": ["lunar phase", "after the full moon", "shrinking moon", "late-night moon", "lunar calendar", "lunar cycle"]
+    }
+  },
+  "moon-last-quarter": {
+    "label": { "es": "Cuarto menguante", "en": "Last quarter moon", "pt": "Quarto minguante", "fr": "Dernier quartier", "de": "Letztes Viertel", "it": "Ultimo quarto", "ja": "下弦の月", "zh": "下弦月", "ko": "하현달", "ar": "التربيع الأخير" },
+    "keywords": {
+      "es": ["fase lunar", "luna a la mitad", "último cuarto", "tercer cuarto", "luna que se achica", "calendario lunar", "mareas muertas"],
+      "en": ["lunar phase", "half moon", "third quarter", "shrinking moon", "lunar calendar", "neap tide"]
+    }
+  },
+  "moon-waning-crescent": {
+    "label": { "es": "Luna menguante", "en": "Waning crescent moon", "pt": "Lua minguante", "fr": "Dernier croissant", "de": "Abnehmende Sichel", "it": "Luna calante", "ja": "有明月", "zh": "残月", "ko": "그믐달", "ar": "الهلال المتناقص" },
+    "keywords": {
+      "es": ["fase lunar", "media luna", "luna vieja", "fin del ciclo lunar", "luna del amanecer", "calendario lunar"],
+      "en": ["lunar phase", "old moon", "end of the lunar cycle", "sliver of moon", "morning moon", "lunar calendar"]
+    }
+  },
+  "moonrise": {
+    "label": { "es": "Salida de la luna", "en": "Moonrise", "pt": "Nascer da lua", "fr": "Lever de lune", "de": "Mondaufgang", "it": "Sorgere della luna", "ja": "月の出", "zh": "月出", "ko": "월출", "ar": "شروق القمر" },
+    "keywords": {
+      "es": ["hora de salida", "orto lunar", "horizonte", "astronomía", "mareas", "pesca", "fotografía nocturna"],
+      "en": ["rise time", "horizon", "astronomy", "tides", "fishing", "night photography", "moon schedule"]
+    }
+  },
+  "moonset": {
+    "label": { "es": "Puesta de la luna", "en": "Moonset", "pt": "Pôr da lua", "fr": "Coucher de lune", "de": "Monduntergang", "it": "Tramonto della luna", "ja": "月の入り", "zh": "月落", "ko": "월몰", "ar": "غروب القمر" },
+    "keywords": {
+      "es": ["hora de puesta", "ocaso lunar", "horizonte", "astronomía", "mareas", "pesca", "fotografía nocturna"],
+      "en": ["set time", "horizon", "astronomy", "tides", "fishing", "night photography", "moon schedule"]
+    }
+  },
+  "telescope": {
+    "label": { "es": "Telescopio", "en": "Telescope", "pt": "Telescópio", "fr": "Télescope", "de": "Teleskop", "it": "Telescopio", "ja": "望遠鏡", "zh": "望远镜", "ko": "망원경", "ar": "تلسكوب" },
+    "keywords": {
+      "es": ["observar estrellas", "astronomía", "catalejo", "descubrir", "explorar", "observación", "cielo nocturno"],
+      "en": ["stargazing", "astronomy", "spyglass", "discover", "explore", "observation", "night sky"]
+    }
+  },
+  "radio-telescope": {
+    "label": { "es": "Radiotelescopio", "en": "Radio telescope", "pt": "Radiotelescópio", "fr": "Radiotélescope", "de": "Radioteleskop", "it": "Radiotelescopio", "ja": "電波望遠鏡", "zh": "射电望远镜", "ko": "전파 망원경", "ar": "تلسكوب راديوي" },
+    "keywords": {
+      "es": ["radioastronomía", "estación terrena", "antena parabólica", "red de espacio profundo", "seguimiento de naves", "señales", "SETI"],
+      "en": ["radio astronomy", "ground station", "dish antenna", "Deep Space Network", "spacecraft tracking", "signals", "SETI"]
+    }
+  },
+  "observatory": {
+    "label": { "es": "Observatorio", "en": "Observatory", "pt": "Observatório", "fr": "Observatoire", "de": "Sternwarte", "it": "Osservatorio", "ja": "天文台", "zh": "天文台", "ko": "천문대", "ar": "مرصد" },
+    "keywords": {
+      "es": ["astronomía", "cúpula", "investigación", "observar estrellas", "telescopio", "centro científico", "noche de estrellas"],
+      "en": ["astronomy", "dome", "research", "stargazing", "telescope", "science center", "star party"]
+    }
+  },
+  "planetarium": {
+    "label": { "es": "Planetario", "en": "Planetarium", "pt": "Planetário", "fr": "Planétarium", "de": "Planetarium", "it": "Planetario", "ja": "プラネタリウム", "zh": "天文馆", "ko": "천체투영관", "ar": "قبة فلكية" },
+    "keywords": {
+      "es": ["función", "cielo nocturno", "cúpula", "educación", "museo de ciencias", "proyección de estrellas", "visita escolar"],
+      "en": ["show", "night sky", "dome", "education", "science museum", "star projection", "school trip"]
+    }
+  },
+  "satellite": {
+    "label": { "es": "Satélite", "en": "Satellite", "pt": "Satélite", "fr": "Satellite", "de": "Satellit", "it": "Satellite", "ja": "人工衛星", "zh": "人造卫星", "ko": "인공위성", "ar": "قمر صناعي" },
+    "keywords": {
+      "es": ["órbita", "conectividad", "comunicaciones", "GPS", "internet satelital", "activo remoto", "espacio"],
+      "en": ["orbit", "connectivity", "communications", "GPS", "satellite internet", "remote asset", "space"]
+    }
+  },
+  "satellite-alert": {
+    "label": { "es": "Falla de satélite", "en": "Satellite anomaly", "pt": "Anomalia no satélite", "fr": "Anomalie du satellite", "de": "Satellitenstörung", "it": "Anomalia del satellite", "ja": "衛星の異常", "zh": "卫星异常", "ko": "위성 이상", "ar": "عطل في القمر الصناعي" },
+    "keywords": {
+      "es": ["pérdida de contacto", "sin señal", "error", "anomalía", "alerta", "operaciones satelitales", "fuera de servicio"],
+      "en": ["lost contact", "no signal", "fault", "error", "alert", "satellite operations", "outage"]
+    }
+  },
+  "satellite-signal": {
+    "label": { "es": "Enlace satelital", "en": "Satellite link", "pt": "Conexão via satélite", "fr": "Liaison satellite", "de": "Satellitenverbindung", "it": "Collegamento satellitare", "ja": "衛星通信", "zh": "卫星链路", "ko": "위성 연결", "ar": "اتصال عبر القمر الصناعي" },
+    "keywords": {
+      "es": ["conectado por satélite", "transmitir", "recibir", "señal", "cobertura", "comunicación", "internet satelital"],
+      "en": ["connected via satellite", "transmit", "receive", "signal", "uplink", "downlink", "communication"]
+    }
+  },
+  "space-station": {
+    "label": { "es": "Estación espacial", "en": "Space station", "pt": "Estação espacial", "fr": "Station spatiale", "de": "Raumstation", "it": "Stazione spaziale", "ja": "宇宙ステーション", "zh": "空间站", "ko": "우주 정거장", "ar": "محطة فضائية" },
+    "keywords": {
+      "es": ["ISS", "estación internacional", "base orbital", "tripulación", "rastreo", "módulos", "centro de operaciones"],
+      "en": ["ISS", "international station", "orbital outpost", "crew", "station tracker", "modules", "hub"]
+    }
+  },
+  "space-shuttle": {
+    "label": { "es": "Transbordador espacial", "en": "Space shuttle", "pt": "Ônibus espacial", "fr": "Navette spatiale", "de": "Raumfähre", "it": "Navetta spaziale", "ja": "スペースシャトル", "zh": "航天飞机", "ko": "우주왕복선", "ar": "مكوك فضائي" },
+    "keywords": {
+      "es": ["avión espacial", "nave reutilizable", "viaje espacial", "orbitador", "despegue", "aterrizaje", "NASA"],
+      "en": ["spaceplane", "reusable spacecraft", "space travel", "orbiter", "liftoff", "landing", "NASA"]
+    }
+  },
+  "space-capsule": {
+    "label": { "es": "Cápsula espacial", "en": "Crew capsule", "pt": "Cápsula tripulada", "fr": "Capsule spatiale", "de": "Raumkapsel", "it": "Capsula spaziale", "ja": "宇宙カプセル", "zh": "太空舱", "ko": "우주 캡슐", "ar": "كبسولة فضائية" },
+    "keywords": {
+      "es": ["cápsula tripulada", "lanzamiento tripulado", "misión", "turismo espacial", "tripulación", "nave espacial", "módulo de mando"],
+      "en": ["space capsule", "crewed launch", "mission", "space tourism", "crew", "spacecraft", "command module"]
+    }
+  },
+  "splashdown": {
+    "label": { "es": "Amerizaje", "en": "Splashdown", "pt": "Amerissagem", "fr": "Amerrissage", "de": "Wasserlandung", "it": "Ammaraggio", "ja": "着水", "zh": "溅落", "ko": "해상 착수", "ar": "الهبوط في البحر" },
+    "keywords": {
+      "es": ["acuatizaje", "paracaídas", "cápsula", "aterrizaje en el mar", "rescate de la cápsula", "fin de la misión", "océano"],
+      "en": ["water landing", "parachutes", "capsule", "mission recovery", "end of mission", "ocean", "homecoming"]
+    }
+  },
+  "lander": {
+    "label": { "es": "Módulo de aterrizaje", "en": "Lander", "pt": "Módulo de pouso", "fr": "Atterrisseur", "de": "Landefähre", "it": "Modulo di atterraggio", "ja": "着陸機", "zh": "着陆器", "ko": "착륙선", "ar": "مركبة هبوط" },
+    "keywords": {
+      "es": ["alunizaje", "módulo lunar", "misión a Marte", "descenso", "Apolo", "contacto con la superficie", "exploración"],
+      "en": ["moon landing", "lunar module", "Mars mission", "descent", "Apollo", "touchdown", "exploration"]
+    }
+  },
+  "rover": {
+    "label": { "es": "Vehículo explorador", "en": "Rover", "pt": "Veículo explorador", "fr": "Rover planétaire", "de": "Planetenrover", "it": "Rover planetario", "ja": "探査車", "zh": "探测车", "ko": "탐사 로버", "ar": "مركبة جوالة" },
+    "keywords": {
+      "es": ["rover", "exploración de Marte", "explorador lunar", "vehículo remoto", "Curiosity", "Perseverance", "superficie planetaria"],
+      "en": ["Mars exploration", "lunar rover", "remote vehicle", "Curiosity", "Perseverance", "planetary surface", "robotic explorer"]
+    }
+  },
+  "launch-pad": {
+    "label": { "es": "Plataforma de lanzamiento", "en": "Launch pad", "pt": "Plataforma de lançamento", "fr": "Pas de tir", "de": "Startrampe", "it": "Rampa di lancio", "ja": "発射台", "zh": "发射台", "ko": "발사대", "ar": "منصة إطلاق" },
+    "keywords": {
+      "es": ["puerto espacial", "base de lanzamiento", "calendario de lanzamientos", "cohete", "cuenta regresiva", "torre de servicio", "Cabo Cañaveral"],
+      "en": ["spaceport", "launch site", "launch schedule", "rocket", "countdown", "service tower", "Cape Canaveral"]
+    }
+  },
+  "rocket-heavy": {
+    "label": { "es": "Cohete pesado", "en": "Heavy-lift rocket", "pt": "Foguete pesado", "fr": "Lanceur lourd", "de": "Schwerlastrakete", "it": "Lanciatore pesante", "ja": "大型ロケット", "zh": "重型运载火箭", "ko": "대형 로켓", "ar": "صاروخ ثقيل" },
+    "keywords": {
+      "es": ["vehículo de lanzamiento", "propulsores laterales", "carga pesada", "lanzador", "Falcon Heavy", "tipos de cohete", "despegue"],
+      "en": ["launch vehicle", "strap-on boosters", "heavy payload", "launcher", "Falcon Heavy", "rocket types", "liftoff"]
+    }
+  },
+  "rocket-landing": {
+    "label": { "es": "Aterrizaje de cohete", "en": "Booster landing", "pt": "Pouso do foguete", "fr": "Atterrissage du lanceur", "de": "Raketenlandung", "it": "Atterraggio del razzo", "ja": "ロケットの着陸", "zh": "火箭着陆回收", "ko": "로켓 착륙", "ar": "هبوط الصاروخ" },
+    "keywords": {
+      "es": ["cohete reutilizable", "propulsor", "regreso", "aterrizaje vertical", "recuperación", "plataforma marina", "reutilización"],
+      "en": ["reusable rocket", "booster return", "vertical landing", "recovery", "drone ship", "touchdown", "reuse"]
+    }
+  },
+  "rocket-check": {
+    "label": { "es": "Lanzamiento exitoso", "en": "Successful launch", "pt": "Lançamento bem-sucedido", "fr": "Lancement réussi", "de": "Erfolgreicher Start", "it": "Lancio riuscito", "ja": "打ち上げ成功", "zh": "发射成功", "ko": "발사 성공", "ar": "إطلاق ناجح" },
+    "keywords": {
+      "es": ["misión cumplida", "despegue completado", "resultado del lanzamiento", "en órbita", "seguimiento de misiones", "publicado", "cohete"],
+      "en": ["mission accomplished", "liftoff complete", "launch outcome", "reached orbit", "mission tracker", "shipped", "rocket"]
+    }
+  },
+  "astronaut": {
+    "label": { "es": "Astronauta", "en": "Astronaut", "pt": "Astronauta", "fr": "Astronaute", "de": "Astronaut", "it": "Astronauta", "ja": "宇宙飛行士", "zh": "宇航员", "ko": "우주비행사", "ar": "رائد فضاء" },
+    "keywords": {
+      "es": ["cosmonauta", "tripulación", "viaje espacial", "explorador", "avatar", "misión", "NASA"],
+      "en": ["cosmonaut", "crew", "space travel", "explorer", "avatar", "mission", "spacefarer"]
+    }
+  },
+  "spacesuit": {
+    "label": { "es": "Traje espacial", "en": "Space suit", "pt": "Traje espacial", "fr": "Combinaison spatiale", "de": "Raumanzug", "it": "Tuta spaziale", "ja": "宇宙服", "zh": "航天服", "ko": "우주복", "ar": "بدلة فضاء" },
+    "keywords": {
+      "es": ["traje de astronauta", "caminata espacial", "equipo de tripulación", "traje presurizado", "EVA", "escafandra", "soporte vital"],
+      "en": ["astronaut suit", "spacewalk", "crew gear", "pressure suit", "EVA", "life support", "protection"]
+    }
+  },
+  "space-helmet": {
+    "label": { "es": "Casco espacial", "en": "Space helmet", "pt": "Capacete espacial", "fr": "Casque spatial", "de": "Raumhelm", "it": "Casco spaziale", "ja": "宇宙ヘルメット", "zh": "航天头盔", "ko": "우주 헬멧", "ar": "خوذة فضاء" },
+    "keywords": {
+      "es": ["casco de astronauta", "visor", "equipo de tripulación", "avatar", "ciencia ficción", "videojuego", "escafandra"],
+      "en": ["astronaut helmet", "visor", "crew gear", "avatar", "sci-fi", "video game", "fishbowl helmet"]
+    }
+  },
+  "jetpack": {
+    "label": { "es": "Mochila propulsora", "en": "Jetpack", "pt": "Mochila a jato", "fr": "Jetpack", "de": "Jetpack", "it": "Jetpack", "ja": "ジェットパック", "zh": "喷气背包", "ko": "제트팩", "ar": "حقيبة نفاثة" },
+    "keywords": {
+      "es": ["jetpack", "vuelo personal", "propulsor", "unidad de maniobra", "volar", "ciencia ficción", "videojuego"],
+      "en": ["rocket pack", "personal flight", "thruster", "maneuvering unit", "fly", "sci-fi", "video game"]
+    }
+  },
+  "alien": {
+    "label": { "es": "Extraterrestre", "en": "Alien", "pt": "Alienígena", "fr": "Extraterrestre", "de": "Außerirdischer", "it": "Alieno", "ja": "宇宙人", "zh": "外星人", "ko": "외계인", "ar": "كائن فضائي" },
+    "keywords": {
+      "es": ["alien", "marciano", "ciencia ficción", "usuario desconocido", "página 404", "invasor", "otro planeta"],
+      "en": ["extraterrestrial", "martian", "sci-fi", "unknown user", "404 page", "invader", "ET"]
+    }
+  },
+  "flying-saucer": {
+    "label": { "es": "Platillo volador", "en": "Flying saucer", "pt": "Disco voador", "fr": "Soucoupe volante", "de": "Fliegende Untertasse", "it": "Disco volante", "ja": "空飛ぶ円盤", "zh": "飞碟", "ko": "비행접시", "ar": "صحن طائر" },
+    "keywords": {
+      "es": ["ovni", "nave extraterrestre", "ciencia ficción", "lo desconocido", "estado vacío", "invasión", "avistamiento"],
+      "en": ["UFO", "alien spaceship", "sci-fi", "the unknown", "empty state", "invasion", "sighting"]
+    }
+  },
+  "flying-saucer-beam": {
+    "label": { "es": "Abducción", "en": "Abduction", "pt": "Abdução", "fr": "Enlèvement par un ovni", "de": "Ufo-Entführung", "it": "Rapimento alieno", "ja": "アブダクション", "zh": "外星人绑架", "ko": "외계인 납치", "ar": "اختطاف فضائي" },
+    "keywords": {
+      "es": ["ovni", "rayo tractor", "platillo volador", "teletransportar", "recoger", "levantar", "videojuego"],
+      "en": ["UFO", "tractor beam", "flying saucer", "teleport", "pick up", "beam me up", "video game"]
+    }
+  }
+}

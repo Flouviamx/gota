@@ -1,0 +1,457 @@
+{
+  "barn": {
+    "label": { "es": "Granero", "en": "Barn", "pt": "Celeiro", "fr": "Grange", "de": "Scheune", "it": "Fienile", "ja": "納屋", "zh": "谷仓", "ko": "헛간", "ar": "حظيرة" },
+    "keywords": {
+      "es": ["establo", "rancho", "granja", "propiedad rural", "bodega agrícola", "caballeriza", "instalaciones ganaderas"],
+      "en": ["farm building", "stable", "ranch", "farmstead", "livestock housing", "rural property", "shed"]
+    }
+  },
+  "farm": {
+    "label": { "es": "Granja", "en": "Farm", "pt": "Fazenda", "fr": "Ferme", "de": "Bauernhof", "it": "Fattoria", "ja": "農場", "zh": "农场", "ko": "농장", "ar": "مزرعة" },
+    "keywords": {
+      "es": ["rancho", "agricultura", "sector agropecuario", "explotación agrícola", "finca", "campo", "productor agrícola", "agronegocio"],
+      "en": ["ranch", "agriculture", "agribusiness", "homestead", "countryside", "grower", "rural business", "agricultural sector"]
+    }
+  },
+  "silo": {
+    "label": { "es": "Silo", "en": "Silo", "pt": "Silo", "fr": "Silo", "de": "Silo", "it": "Silo", "ja": "サイロ", "zh": "筒仓", "ko": "사일로", "ar": "صومعة" },
+    "keywords": {
+      "es": ["almacén de granos", "bodega de grano", "forraje", "ensilado", "almacenamiento", "nivel de llenado", "acopio", "cereales"],
+      "en": ["grain storage", "grain bin", "feed storage", "silage", "storage level", "elevator", "stored crops", "fill level"]
+    }
+  },
+  "greenhouse": {
+    "label": { "es": "Invernadero", "en": "Greenhouse", "pt": "Estufa", "fr": "Serre", "de": "Gewächshaus", "it": "Serra", "ja": "温室", "zh": "温室", "ko": "온실", "ar": "دفيئة زجاجية" },
+    "keywords": {
+      "es": ["vivero", "cultivo protegido", "agricultura protegida", "cultivo bajo techo", "plantas", "horticultura", "cultivo de interior"],
+      "en": ["glasshouse", "nursery", "protected crops", "indoor growing", "hothouse", "horticulture", "controlled climate"]
+    }
+  },
+  "polytunnel": {
+    "label": { "es": "Macrotúnel", "en": "Polytunnel", "pt": "Túnel de cultivo", "fr": "Serre tunnel", "de": "Folientunnel", "it": "Tunnel serra", "ja": "ビニールハウス", "zh": "塑料大棚", "ko": "비닐하우스", "ar": "نفق بلاستيكي" },
+    "keywords": {
+      "es": ["túnel de plástico", "microtúnel", "invernadero de plástico", "cultivo protegido", "berries", "horticultura", "cubierta plástica", "agricultura protegida"],
+      "en": ["hoop house", "high tunnel", "plastic tunnel", "low tunnel", "protected cropping", "horticulture", "season extension", "plastic greenhouse"]
+    }
+  },
+  "chicken-coop": {
+    "label": { "es": "Gallinero", "en": "Chicken coop", "pt": "Galinheiro", "fr": "Poulailler", "de": "Hühnerstall", "it": "Pollaio", "ja": "鶏小屋", "zh": "鸡舍", "ko": "닭장", "ar": "قن الدجاج" },
+    "keywords": {
+      "es": ["gallinas", "avicultura", "granja avícola", "producción de huevo", "pollos", "aves de corral", "gallinas de traspatio", "ponedoras"],
+      "en": ["henhouse", "poultry", "hens", "egg production", "backyard chickens", "laying hens", "poultry farm", "free range"]
+    }
+  },
+  "orchard": {
+    "label": { "es": "Huerta", "en": "Orchard", "pt": "Pomar", "fr": "Verger", "de": "Obstgarten", "it": "Frutteto", "ja": "果樹園", "zh": "果园", "ko": "과수원", "ar": "بستان" },
+    "keywords": {
+      "es": ["árboles frutales", "huerto", "fruticultura", "plantación", "aguacate", "cítricos", "manzanos", "cultivo de frutas"],
+      "en": ["fruit trees", "fruit farm", "tree rows", "grove", "plantation", "fruit growing", "citrus", "apples"]
+    }
+  },
+  "vineyard": {
+    "label": { "es": "Viñedo", "en": "Vineyard", "pt": "Vinhedo", "fr": "Vignoble", "de": "Weinberg", "it": "Vigneto", "ja": "ぶどう畑", "zh": "葡萄园", "ko": "포도밭", "ar": "كرم العنب" },
+    "keywords": {
+      "es": ["viña", "uvas", "vid", "vinícola", "viticultura", "vino", "vendimia", "hileras de vid"],
+      "en": ["vines", "grapes", "winery", "wine estate", "viticulture", "wine", "grape harvest", "vine rows"]
+    }
+  },
+  "rice-paddy": {
+    "label": { "es": "Arrozal", "en": "Rice paddy", "pt": "Arrozal", "fr": "Rizière", "de": "Reisfeld", "it": "Risaia", "ja": "田んぼ", "zh": "稻田", "ko": "논", "ar": "حقل أرز" },
+    "keywords": {
+      "es": ["campo de arroz", "cultivo de arroz", "terreno inundado", "cultivo de riego", "tierras bajas", "parcela anegada", "paisaje asiático"],
+      "en": ["rice field", "flooded field", "rice farming", "irrigated crops", "wetland farming", "lowland rice", "Asian landscape"]
+    }
+  },
+  "terraced-field": {
+    "label": { "es": "Terrazas de cultivo", "en": "Terraced field", "pt": "Cultivo em terraços", "fr": "Cultures en terrasses", "de": "Terrassenfeld", "it": "Campo terrazzato", "ja": "段々畑", "zh": "梯田", "ko": "계단식 밭", "ar": "مدرجات زراعية" },
+    "keywords": {
+      "es": ["agricultura de montaña", "ladera", "bancales", "control de erosión", "cultivo en pendiente", "conservación de suelo", "arroz de montaña", "cafetal"],
+      "en": ["hillside farming", "mountain agriculture", "rice terraces", "erosion control", "slope", "contour farming", "step farming", "soil conservation"]
+    }
+  },
+  "farmland": {
+    "label": { "es": "Tierras agrícolas", "en": "Farmland", "pt": "Terras agrícolas", "fr": "Terres agricoles", "de": "Agrarflächen", "it": "Terreni agricoli", "ja": "農地", "zh": "农田", "ko": "농지", "ar": "أراضٍ زراعية" },
+    "keywords": {
+      "es": ["parcelas", "vista aérea", "uso de suelo", "mapa de campos", "predios rurales", "mosaico de cultivos", "ejido", "catastro rural"],
+      "en": ["fields from above", "aerial view", "land use", "field map", "rural parcels", "arable land", "agricultural land", "patchwork fields"]
+    }
+  },
+  "pasture": {
+    "label": { "es": "Pastizal", "en": "Pasture", "pt": "Pastagem", "fr": "Pâturage", "de": "Weide", "it": "Pascolo", "ja": "牧草地", "zh": "牧草地", "ko": "목초지", "ar": "مرعى" },
+    "keywords": {
+      "es": ["potrero", "pastoreo", "agostadero", "pradera", "rotación de potreros", "ganado", "forraje", "pasto"],
+      "en": ["grazing land", "rangeland", "paddock", "meadow", "rotational grazing", "grassland", "livestock", "forage"]
+    }
+  },
+  "water-well": {
+    "label": { "es": "Pozo de agua", "en": "Water well", "pt": "Poço de água", "fr": "Puits", "de": "Brunnen", "it": "Pozzo", "ja": "井戸", "zh": "水井", "ko": "우물", "ar": "بئر ماء" },
+    "keywords": {
+      "es": ["noria", "agua subterránea", "fuente de agua", "abastecimiento rural", "aljibe", "bomba de agua", "acuífero", "papalote"],
+      "en": ["groundwater", "water source", "borehole", "rural water", "aquifer", "water supply", "wishing well"]
+    }
+  },
+  "vertical-farm": {
+    "label": { "es": "Granja vertical", "en": "Vertical farm", "pt": "Fazenda vertical", "fr": "Ferme verticale", "de": "Vertikale Farm", "it": "Fattoria verticale", "ja": "垂直農場", "zh": "垂直农场", "ko": "수직 농장", "ar": "مزرعة عمودية" },
+    "keywords": {
+      "es": ["cultivo en interior", "agricultura urbana", "ambiente controlado", "estantes de cultivo", "cultivo apilado", "luces LED", "agtech", "hidroponía"],
+      "en": ["indoor farming", "urban farming", "controlled environment", "CEA", "stacked growing", "grow racks", "LED growing", "agtech"]
+    }
+  },
+  "hydroponics": {
+    "label": { "es": "Hidroponía", "en": "Hydroponics", "pt": "Hidroponia", "fr": "Hydroponie", "de": "Hydrokultur", "it": "Idroponica", "ja": "水耕栽培", "zh": "水培", "ko": "수경 재배", "ar": "الزراعة المائية" },
+    "keywords": {
+      "es": ["cultivo sin suelo", "solución nutritiva", "cultivo en agua", "raíces flotantes", "lechugas", "acuaponía", "nutrientes", "huerto urbano"],
+      "en": ["soilless growing", "nutrient solution", "water culture", "aquaponics", "NFT", "nutrients", "indoor garden", "lettuce"]
+    }
+  },
+  "farm-gate": {
+    "label": { "es": "Portón de campo", "en": "Farm gate", "pt": "Porteira", "fr": "Barrière de champ", "de": "Weidetor", "it": "Cancello di campagna", "ja": "牧場のゲート", "zh": "农场大门", "ko": "농장 출입문", "ar": "بوابة المزرعة" },
+    "keywords": {
+      "es": ["tranca", "puerta de potrero", "entrada del rancho", "acceso al campo", "cerca", "puerta abierta", "corral"],
+      "en": ["five-bar gate", "ranch entrance", "field access", "gate open", "fence", "paddock", "cattle gate"]
+    }
+  },
+  "electric-fence": {
+    "label": { "es": "Cerca eléctrica", "en": "Electric fence", "pt": "Cerca elétrica", "fr": "Clôture électrique", "de": "Elektrozaun", "it": "Recinto elettrico", "ja": "電気柵", "zh": "电围栏", "ko": "전기 울타리", "ar": "سياج كهربائي" },
+    "keywords": {
+      "es": ["pastor eléctrico", "electrificador", "voltaje de la cerca", "contención de ganado", "alarma de falla", "alambre electrificado", "potrero", "cerco perimetral"],
+      "en": ["energizer", "fence charger", "fence voltage", "livestock containment", "hot wire", "fence alert", "paddock", "electric wire"]
+    }
+  },
+  "barbed-wire": {
+    "label": { "es": "Alambre de púas", "en": "Barbed wire", "pt": "Arame farpado", "fr": "Fil barbelé", "de": "Stacheldraht", "it": "Filo spinato", "ja": "有刺鉄線", "zh": "带刺铁丝网", "ko": "철조망", "ar": "أسلاك شائكة" },
+    "keywords": {
+      "es": ["alambrado", "cercado", "lindero", "perímetro", "potrero", "rancho", "postes", "prohibido el paso"],
+      "en": ["wire fence", "fencing", "perimeter", "rangeland", "ranch", "boundary", "no trespassing", "fence posts"]
+    }
+  },
+  "map-pin-sprout": {
+    "label": { "es": "Ubicación de la granja", "en": "Farm location", "pt": "Localização da fazenda", "fr": "Emplacement de la ferme", "de": "Hofstandort", "it": "Posizione della fattoria", "ja": "農場の場所", "zh": "农场位置", "ko": "농장 위치", "ar": "موقع المزرعة" },
+    "keywords": {
+      "es": ["productores locales", "cerca de mí", "del campo a la mesa", "mercado de productores", "localizador", "huerta", "punto en el mapa", "kilómetro cero"],
+      "en": ["local producers", "near me", "farm to table", "farmers market", "farm locator", "grower", "map pin", "locally grown"]
+    }
+  },
+  "scarecrow": {
+    "label": { "es": "Espantapájaros", "en": "Scarecrow", "pt": "Espantalho", "fr": "Épouvantail", "de": "Vogelscheuche", "it": "Spaventapasseri", "ja": "かかし", "zh": "稻草人", "ko": "허수아비", "ar": "فزاعة" },
+    "keywords": {
+      "es": ["espantajo", "ahuyentar aves", "pájaros", "cosecha", "otoño", "milpa", "decoración de campo", "Halloween"],
+      "en": ["bird deterrent", "crows", "harvest season", "fall", "farm decoration", "straw", "cornfield", "Halloween"]
+    }
+  },
+  "beehive": {
+    "label": { "es": "Colmena", "en": "Beehive", "pt": "Colmeia", "fr": "Ruche", "de": "Bienenstock", "it": "Alveare", "ja": "ミツバチの巣", "zh": "蜂巢", "ko": "벌집", "ar": "خلية نحل" },
+    "keywords": {
+      "es": ["abejas", "apicultura", "miel", "apiario", "panal", "polinización", "meliponas", "enjambre"],
+      "en": ["bees", "beekeeping", "honey", "apiary", "honeycomb", "pollination", "swarm", "honey producer"]
+    }
+  },
+  "beehive-box": {
+    "label": { "es": "Caja de colmena", "en": "Hive box", "pt": "Caixa de colmeia", "fr": "Ruche à cadres", "de": "Bienenkasten", "it": "Arnia", "ja": "巣箱", "zh": "蜂箱", "ko": "벌통", "ar": "صندوق خلية النحل" },
+    "keywords": {
+      "es": ["apiario", "inspección de colmenas", "conteo de colmenas", "cajón", "bastidores", "apicultura", "alza", "Langstroth"],
+      "en": ["apiary management", "hive inspection", "hive count", "frames", "super", "Langstroth", "beekeeping", "brood box"]
+    }
+  },
+  "beekeeper": {
+    "label": { "es": "Apicultor", "en": "Beekeeper", "pt": "Apicultor", "fr": "Apiculteur", "de": "Imker", "it": "Apicoltore", "ja": "養蜂家", "zh": "养蜂人", "ko": "양봉가", "ar": "نحّال" },
+    "keywords": {
+      "es": ["apicultura", "careta", "traje protector", "abejas", "productor de miel", "servicios apícolas", "colmenero", "apiario"],
+      "en": ["apiarist", "beekeeping", "bee suit", "veil", "bees", "honey producer", "apiary", "hive keeper"]
+    }
+  },
+  "tractor": {
+    "label": { "es": "Tractor", "en": "Tractor", "pt": "Trator", "fr": "Tracteur", "de": "Traktor", "it": "Trattore", "ja": "トラクター", "zh": "拖拉机", "ko": "트랙터", "ar": "جرار" },
+    "keywords": {
+      "es": ["maquinaria agrícola", "campo", "labranza", "sector agropecuario", "trabajo de campo", "agricultura", "implementos", "barbecho"],
+      "en": ["farm machinery", "agriculture", "field work", "farming", "farm equipment", "tillage", "agricultural sector", "farm vehicle"]
+    }
+  },
+  "tractor-loader": {
+    "label": { "es": "Tractor con cargador", "en": "Tractor loader", "pt": "Trator com carregadeira", "fr": "Tracteur chargeur", "de": "Traktor mit Frontlader", "it": "Trattore con caricatore", "ja": "フロントローダー付きトラクター", "zh": "前装载拖拉机", "ko": "프론트 로더 트랙터", "ar": "جرار بمحمّل أمامي" },
+    "keywords": {
+      "es": ["cargador frontal", "pala", "mover pacas", "alimento para ganado", "movimiento de tierra", "maquinaria agrícola", "cucharón", "carga"],
+      "en": ["front loader", "bucket", "moving bales", "feed", "earth moving", "farm machinery", "compact tractor", "material handling"]
+    }
+  },
+  "tractor-autonomous": {
+    "label": { "es": "Tractor autónomo", "en": "Autonomous tractor", "pt": "Trator autônomo", "fr": "Tracteur autonome", "de": "Autonomer Traktor", "it": "Trattore autonomo", "ja": "自動運転トラクター", "zh": "自动驾驶拖拉机", "ko": "자율주행 트랙터", "ar": "جرار ذاتي القيادة" },
+    "keywords": {
+      "es": ["autoguiado", "telemetría", "agricultura de precisión", "tractor conectado", "GPS", "piloto automático", "robótica agrícola", "sin conductor"],
+      "en": ["auto-guidance", "telematics", "precision agriculture", "connected tractor", "GPS", "autosteer", "driverless", "robotic farming"]
+    }
+  },
+  "crop-duster": {
+    "label": { "es": "Avioneta fumigadora", "en": "Crop duster", "pt": "Avião agrícola", "fr": "Avion agricole", "de": "Agrarflugzeug", "it": "Aereo agricolo", "ja": "農薬散布機", "zh": "农用飞机", "ko": "농업용 항공기", "ar": "طائرة رش المحاصيل" },
+    "keywords": {
+      "es": ["fumigación aérea", "aplicación aérea", "avión agrícola", "plaguicidas", "rociado de cultivos", "aviación agrícola", "fertilización aérea"],
+      "en": ["aerial application", "crop spraying", "agricultural aircraft", "ag plane", "agricultural aviation", "pesticides", "topdressing"]
+    }
+  },
+  "drone-spraying": {
+    "label": { "es": "Dron fumigador", "en": "Spraying drone", "pt": "Drone pulverizador", "fr": "Drone de pulvérisation", "de": "Sprühdrohne", "it": "Drone irroratore", "ja": "散布ドローン", "zh": "植保无人机", "ko": "방제 드론", "ar": "طائرة رش مسيّرة" },
+    "keywords": {
+      "es": ["aspersión aérea", "aplicación aérea", "aspersión de precisión", "agricultura de precisión", "plaguicidas", "aplicación variable", "agtech", "rociado"],
+      "en": ["crop spraying", "aerial application", "precision spraying", "precision agriculture", "pesticides", "variable rate", "agtech", "UAV"]
+    }
+  },
+  "drone-mapping": {
+    "label": { "es": "Dron de mapeo", "en": "Mapping drone", "pt": "Drone de mapeamento", "fr": "Drone de cartographie", "de": "Kartierungsdrohne", "it": "Drone per mappatura", "ja": "マッピングドローン", "zh": "测绘无人机", "ko": "매핑 드론", "ar": "طائرة مسيّرة للمسح" },
+    "keywords": {
+      "es": ["levantamiento aéreo", "imágenes aéreas", "ortofoto", "monitoreo de cultivos", "NDVI", "fotogrametría", "agricultura de precisión", "vuelo de inspección"],
+      "en": ["aerial survey", "aerial imagery", "orthophoto", "crop monitoring", "NDVI", "photogrammetry", "crop scouting", "precision agriculture"]
+    }
+  },
+  "sprinkler": {
+    "label": { "es": "Aspersor", "en": "Sprinkler", "pt": "Aspersor", "fr": "Arroseur", "de": "Regner", "it": "Irrigatore", "ja": "スプリンクラー", "zh": "洒水器", "ko": "스프링클러", "ar": "رشاش ري" },
+    "keywords": {
+      "es": ["riego", "regar", "zona de riego", "riego por aspersión", "encender riego", "jardín", "pasto", "sistema de riego"],
+      "en": ["irrigation", "watering", "watering zone", "lawn", "irrigation on", "garden", "spray irrigation", "yard"]
+    }
+  },
+  "sprinkler-clock": {
+    "label": { "es": "Programa de riego", "en": "Irrigation schedule", "pt": "Programação de irrigação", "fr": "Programme d’arrosage", "de": "Bewässerungsplan", "it": "Programma di irrigazione", "ja": "灌水スケジュール", "zh": "灌溉计划", "ko": "관수 일정", "ar": "جدول الري" },
+    "keywords": {
+      "es": ["temporizador", "horario de riego", "próximo riego", "tiempo de riego", "programador", "riego automático", "turnos de riego", "ciclo"],
+      "en": ["timer", "watering schedule", "next watering", "run time", "irrigation controller", "automatic watering", "watering days"]
+    }
+  },
+  "drip-irrigation": {
+    "label": { "es": "Riego por goteo", "en": "Drip irrigation", "pt": "Irrigação por gotejamento", "fr": "Irrigation goutte à goutte", "de": "Tropfbewässerung", "it": "Irrigazione a goccia", "ja": "点滴灌漑", "zh": "滴灌", "ko": "점적 관수", "ar": "الري بالتنقيط" },
+    "keywords": {
+      "es": ["microrriego", "cintilla", "goteros", "ahorro de agua", "fertirriego", "manguera de riego", "riego localizado", "eficiencia hídrica"],
+      "en": ["micro-irrigation", "drip line", "emitters", "water saving", "fertigation", "drip tape", "water efficiency", "trickle irrigation"]
+    }
+  },
+  "corn-stalk": {
+    "label": { "es": "Planta de maíz", "en": "Corn plant", "pt": "Pé de milho", "fr": "Plant de maïs", "de": "Maispflanze", "it": "Pianta di mais", "ja": "トウモロコシの株", "zh": "玉米植株", "ko": "옥수숫대", "ar": "نبتة الذرة" },
+    "keywords": {
+      "es": ["milpa", "elote", "mazorca", "maizal", "jilote", "selección de cultivo", "grano", "cereal"],
+      "en": ["maize", "corn stalk", "cornfield", "ear of corn", "corn crop", "crop selection", "grain", "cereal"]
+    }
+  },
+  "coffee-plant": {
+    "label": { "es": "Cafeto", "en": "Coffee plant", "pt": "Pé de café", "fr": "Caféier", "de": "Kaffeepflanze", "it": "Pianta di caffè", "ja": "コーヒーの木", "zh": "咖啡树", "ko": "커피나무", "ar": "شجرة البن" },
+    "keywords": {
+      "es": ["cafetal", "café de origen", "cafeticultores", "cereza de café", "grano de café", "finca cafetalera", "arábica", "comercio justo"],
+      "en": ["coffee farm", "single origin", "coffee growers", "coffee cherries", "coffee beans", "arabica", "fair trade", "plantation"]
+    }
+  },
+  "agave": {
+    "label": { "es": "Agave", "en": "Agave", "pt": "Agave", "fr": "Agave", "de": "Agave", "it": "Agave", "ja": "アガベ", "zh": "龙舌兰", "ko": "용설란", "ar": "نبات الأغاف" },
+    "keywords": {
+      "es": ["maguey", "tequila", "mezcal", "jima", "pulque", "suculenta", "zona árida", "jimador"],
+      "en": ["maguey", "tequila", "mezcal", "succulent", "dryland crop", "blue weber", "pulque", "jimador"]
+    }
+  },
+  "germination": {
+    "label": { "es": "Germinación", "en": "Germination", "pt": "Germinação", "fr": "Germination", "de": "Keimung", "it": "Germinazione", "ja": "発芽", "zh": "发芽", "ko": "발아", "ar": "إنبات" },
+    "keywords": {
+      "es": ["germinar", "semilla", "brote", "emergencia", "plántula", "nacencia", "almácigo", "viabilidad de semilla"],
+      "en": ["sprouting", "seed", "seed starting", "emergence", "seedling", "seed viability", "radicle", "new growth"]
+    }
+  },
+  "seedling-tray": {
+    "label": { "es": "Charola de germinación", "en": "Seedling tray", "pt": "Bandeja de mudas", "fr": "Plaque de semis", "de": "Anzuchtplatte", "it": "Vassoio alveolare", "ja": "育苗トレイ", "zh": "育苗盘", "ko": "모종 트레이", "ar": "صينية الشتلات" },
+    "keywords": {
+      "es": ["almácigo", "vivero", "plántulas", "propagación", "trasplante", "semillero", "cavidades", "invernadero"],
+      "en": ["plug tray", "nursery", "seedlings", "propagation", "transplants", "seed starting", "cell tray", "greenhouse"]
+    }
+  },
+  "growth-stages": {
+    "label": { "es": "Etapas de crecimiento", "en": "Growth stages", "pt": "Estágios de crescimento", "fr": "Stades de croissance", "de": "Wachstumsstadien", "it": "Fasi di crescita", "ja": "生育段階", "zh": "生长阶段", "ko": "생육 단계", "ar": "مراحل النمو" },
+    "keywords": {
+      "es": ["fenología", "desarrollo del cultivo", "madurez", "ciclo del cultivo", "avance", "estadios", "de semilla a planta", "evolución"],
+      "en": ["phenology", "crop development", "maturity", "crop cycle", "progress", "seed to plant", "lifecycle", "BBCH"]
+    }
+  },
+  "roots": {
+    "label": { "es": "Raíces", "en": "Roots", "pt": "Raízes", "fr": "Racines", "de": "Wurzeln", "it": "Radici", "ja": "根", "zh": "根系", "ko": "뿌리", "ar": "جذور" },
+    "keywords": {
+      "es": ["zona radicular", "sistema radicular", "causa raíz", "origen", "arraigo", "subsuelo", "planta", "fundamentos"],
+      "en": ["root zone", "root cause", "origin", "underground", "plant health", "foundation", "rhizome", "taproot"]
+    }
+  },
+  "grow-light": {
+    "label": { "es": "Lámpara de cultivo", "en": "Grow light", "pt": "Luz de cultivo", "fr": "Lampe horticole", "de": "Pflanzenlampe", "it": "Lampada per coltivazione", "ja": "植物育成ライト", "zh": "植物生长灯", "ko": "식물 성장등", "ar": "مصباح نمو النباتات" },
+    "keywords": {
+      "es": ["luz LED", "cultivo en interior", "fotoperiodo", "horario de luz", "iluminación", "plantas de interior", "foco para plantas", "invernadero"],
+      "en": ["LED", "indoor growing", "photoperiod", "lighting schedule", "plant lamp", "lighting", "houseplants", "full spectrum"]
+    }
+  },
+  "wilted-plant": {
+    "label": { "es": "Planta marchita", "en": "Wilted plant", "pt": "Planta murcha", "fr": "Plante fanée", "de": "Welke Pflanze", "it": "Pianta appassita", "ja": "しおれた植物", "zh": "枯萎的植物", "ko": "시든 식물", "ar": "نبتة ذابلة" },
+    "keywords": {
+      "es": ["estrés hídrico", "sequía", "necesita agua", "regar", "marchitez", "planta seca", "falta de riego", "deshidratada"],
+      "en": ["water stress", "drought stress", "needs water", "thirsty plant", "dry", "drooping", "underwatered", "dying plant"]
+    }
+  },
+  "plant-genetics": {
+    "label": { "es": "Genética vegetal", "en": "Plant genetics", "pt": "Genética vegetal", "fr": "Génétique végétale", "de": "Pflanzengenetik", "it": "Genetica vegetale", "ja": "植物遺伝学", "zh": "植物遗传学", "ko": "식물 유전학", "ar": "علم الوراثة النباتية" },
+    "keywords": {
+      "es": ["variedades", "semillas mejoradas", "mejoramiento genético", "transgénicos", "OGM", "ADN", "libre de transgénicos", "híbridos"],
+      "en": ["seed varieties", "plant breeding", "GMO", "genetically modified", "DNA", "GMO-free", "hybrids", "biotech"]
+    }
+  },
+  "weed": {
+    "label": { "es": "Maleza", "en": "Weed", "pt": "Erva daninha", "fr": "Mauvaise herbe", "de": "Unkraut", "it": "Erba infestante", "ja": "雑草", "zh": "杂草", "ko": "잡초", "ar": "عشبة ضارة" },
+    "keywords": {
+      "es": ["hierba mala", "deshierbe", "herbicida", "presión de malezas", "zacate", "escarda", "control de plagas", "terreno limpio"],
+      "en": ["weeding", "herbicide", "weed control", "weed-free", "invasive plant", "unwanted plant", "hoeing", "pest plant"]
+    }
+  },
+  "harvest": {
+    "label": { "es": "Cosecha", "en": "Harvest", "pt": "Colheita", "fr": "Récolte", "de": "Ernte", "it": "Raccolto", "ja": "収穫", "zh": "收获", "ko": "수확", "ar": "حصاد" },
+    "keywords": {
+      "es": ["cosechar", "recolección", "pizca", "corte", "zafra", "registros de recolección", "temporada", "productos del campo"],
+      "en": ["reaping", "picking", "gathering", "crops gathered", "season", "harvest records", "produce", "bounty"]
+    }
+  },
+  "crop-yield": {
+    "label": { "es": "Rendimiento del cultivo", "en": "Crop yield", "pt": "Produtividade da lavoura", "fr": "Rendement des cultures", "de": "Ernteertrag", "it": "Resa del raccolto", "ja": "収量", "zh": "作物产量", "ko": "작물 수확량", "ar": "إنتاجية المحصول" },
+    "keywords": {
+      "es": ["toneladas por hectárea", "productividad", "producción", "resultados de cosecha", "métricas agrícolas", "rinde", "estimación de cosecha", "kilos por parcela"],
+      "en": ["productivity", "production", "harvest results", "farm metrics", "bushels per acre", "tons per hectare", "output", "harvest estimate"]
+    }
+  },
+  "crop-rotation": {
+    "label": { "es": "Rotación de cultivos", "en": "Crop rotation", "pt": "Rotação de culturas", "fr": "Rotation des cultures", "de": "Fruchtfolge", "it": "Rotazione delle colture", "ja": "輪作", "zh": "轮作", "ko": "윤작", "ar": "تناوب المحاصيل" },
+    "keywords": {
+      "es": ["planificación agrícola", "alternancia", "planeación por temporada", "ciclo agrícola", "descanso del suelo", "cultivo de cobertura", "barbecho", "sucesión de cultivos"],
+      "en": ["rotation plan", "crop planning", "season planning", "cover crop", "fallow", "soil health", "crop sequence", "alternating crops"]
+    }
+  },
+  "leaf-disease": {
+    "label": { "es": "Enfermedad de la planta", "en": "Plant disease", "pt": "Doença da planta", "fr": "Maladie des plantes", "de": "Pflanzenkrankheit", "it": "Malattia delle piante", "ja": "植物の病気", "zh": "植物病害", "ko": "식물 병해", "ar": "مرض النبات" },
+    "keywords": {
+      "es": ["hongos", "tizón", "roya", "chahuixtle", "manchas en hojas", "monitoreo de cultivos", "fitosanidad", "plaga"],
+      "en": ["blight", "fungus", "rust", "leaf spots", "crop scouting", "plant health", "disease report", "mildew"]
+    }
+  },
+  "leaf-bitten": {
+    "label": { "es": "Daño por plagas", "en": "Pest damage", "pt": "Dano por pragas", "fr": "Dégâts de ravageurs", "de": "Schädlingsbefall", "it": "Danni da parassiti", "ja": "害虫被害", "zh": "虫害", "ko": "해충 피해", "ar": "ضرر الآفات" },
+    "keywords": {
+      "es": ["insectos", "hoja mordida", "gusano cogollero", "orugas", "chapulines", "monitoreo de plagas", "insecticida", "cultivo dañado"],
+      "en": ["insect damage", "chewed leaf", "caterpillar", "insects", "pest report", "crop damage", "insecticide", "bugs"]
+    }
+  },
+  "leaf-scan": {
+    "label": { "es": "Escanear planta", "en": "Scan plant", "pt": "Escanear planta", "fr": "Scanner une plante", "de": "Pflanze scannen", "it": "Scansiona pianta", "ja": "植物をスキャン", "zh": "扫描植物", "ko": "식물 스캔", "ar": "مسح النبتة" },
+    "keywords": {
+      "es": ["identificar planta", "diagnóstico por foto", "detectar enfermedad", "reconocimiento de plantas", "cámara", "inteligencia artificial", "app de plantas", "visión artificial"],
+      "en": ["identify plant", "plant ID", "photo diagnosis", "disease detection", "plant recognition", "camera", "AI", "plant app"]
+    }
+  },
+  "shield-leaf": {
+    "label": { "es": "Protección de cultivos", "en": "Crop protection", "pt": "Proteção de cultivos", "fr": "Protection des cultures", "de": "Pflanzenschutz", "it": "Protezione delle colture", "ja": "作物保護", "zh": "作物保护", "ko": "작물 보호", "ar": "وقاية المحاصيل" },
+    "keywords": {
+      "es": ["agroquímicos", "plaguicidas", "fitosanitarios", "cultivo protegido", "fungicidas", "insecticidas", "sanidad vegetal", "manejo integrado de plagas"],
+      "en": ["pesticides", "agrochemicals", "protected crops", "fungicides", "insecticides", "plant health", "IPM", "crop care"]
+    }
+  },
+  "seal-leaf": {
+    "label": { "es": "Certificado orgánico", "en": "Certified organic", "pt": "Certificado orgânico", "fr": "Certifié bio", "de": "Bio-zertifiziert", "it": "Certificato biologico", "ja": "有機認証", "zh": "有机认证", "ko": "유기농 인증", "ar": "شهادة عضوية" },
+    "keywords": {
+      "es": ["sello", "etiqueta", "ecológico", "bio", "agricultura orgánica", "sin agroquímicos", "natural", "granja certificada"],
+      "en": ["organic label", "eco label", "bio", "organic farming", "USDA organic", "natural", "certified farm", "chemical-free"]
+    }
+  },
+  "fertilizer": {
+    "label": { "es": "Fertilizante", "en": "Fertilizer", "pt": "Fertilizante", "fr": "Engrais", "de": "Dünger", "it": "Fertilizzante", "ja": "肥料", "zh": "肥料", "ko": "비료", "ar": "سماد" },
+    "keywords": {
+      "es": ["abono", "nutrientes", "fertilizar", "urea", "NPK", "composta", "inventario de insumos", "costal"],
+      "en": ["manure", "nutrients", "fertilizing", "nutrient application", "urea", "NPK", "compost", "farm inputs"]
+    }
+  },
+  "soil": {
+    "label": { "es": "Suelo", "en": "Soil", "pt": "Solo", "fr": "Sol", "de": "Boden", "it": "Suolo", "ja": "土壌", "zh": "土壤", "ko": "토양", "ar": "تربة" },
+    "keywords": {
+      "es": ["tierra", "salud del terreno", "textura", "análisis de tierra", "capas", "perfil edáfico", "terreno", "fertilidad"],
+      "en": ["dirt", "ground", "earth", "texture", "layers", "topsoil", "fertility", "land"]
+    }
+  },
+  "soil-moisture": {
+    "label": { "es": "Humedad del suelo", "en": "Soil moisture", "pt": "Umidade do solo", "fr": "Humidité du sol", "de": "Bodenfeuchte", "it": "Umidità del suolo", "ja": "土壌水分", "zh": "土壤湿度", "ko": "토양 수분", "ar": "رطوبة التربة" },
+    "keywords": {
+      "es": ["sensor", "cuándo regar", "riego", "agua en la tierra", "estrés hídrico", "tensiómetro", "capacidad de campo", "sonda"],
+      "en": ["moisture sensor", "irrigation trigger", "when to water", "water content", "tensiometer", "field capacity", "probe", "wet ground"]
+    }
+  },
+  "soil-temperature": {
+    "label": { "es": "Temperatura del suelo", "en": "Soil temperature", "pt": "Temperatura do solo", "fr": "Température du sol", "de": "Bodentemperatur", "it": "Temperatura del suolo", "ja": "地温", "zh": "土壤温度", "ko": "토양 온도", "ar": "درجة حرارة التربة" },
+    "keywords": {
+      "es": ["termómetro", "sonda", "ventana de siembra", "lectura del sensor", "heladas", "germinación", "tierra fría", "clima del campo"],
+      "en": ["thermometer", "probe", "planting window", "sensor reading", "frost", "germination", "ground heat", "cold ground"]
+    }
+  },
+  "calendar-sprout": {
+    "label": { "es": "Calendario agrícola", "en": "Crop calendar", "pt": "Calendário agrícola", "fr": "Calendrier cultural", "de": "Anbaukalender", "it": "Calendario agricolo", "ja": "栽培カレンダー", "zh": "农事日历", "ko": "농사 달력", "ar": "تقويم زراعي" },
+    "keywords": {
+      "es": ["fechas de siembra", "temporada de cosecha", "ciclo agrícola", "temporal", "primavera-verano", "otoño-invierno", "planeación de cultivos", "estaciones"],
+      "en": ["planting dates", "sowing dates", "harvest season", "growing season", "crop planning", "schedule", "seasons", "farm planner"]
+    }
+  },
+  "clipboard-sprout": {
+    "label": { "es": "Registro de campo", "en": "Field record", "pt": "Registro de campo", "fr": "Registre de culture", "de": "Feldprotokoll", "it": "Registro di campo", "ja": "圃場記録", "zh": "田间记录", "ko": "영농 일지", "ar": "سجل الحقل" },
+    "keywords": {
+      "es": ["bitácora de cultivo", "reporte de monitoreo", "cuaderno de campo", "registros agrícolas", "inspección", "trazabilidad", "lista de verificación", "agrónomo"],
+      "en": ["crop log", "scouting report", "farm records", "field notes", "inspection", "traceability", "checklist", "agronomist"]
+    }
+  },
+  "insurance-crop": {
+    "label": { "es": "Seguro agrícola", "en": "Crop insurance", "pt": "Seguro agrícola", "fr": "Assurance récolte", "de": "Ernteversicherung", "it": "Assicurazione agricola", "ja": "農作物保険", "zh": "农作物保险", "ko": "농작물 보험", "ar": "تأمين المحاصيل" },
+    "keywords": {
+      "es": ["cobertura de cosecha", "siniestro", "pérdidas por clima", "reclamación", "granizo", "sequía", "póliza", "indemnización"],
+      "en": ["harvest coverage", "claim", "weather losses", "hail", "drought", "policy", "indemnity", "risk management"]
+    }
+  },
+  "hay-bale": {
+    "label": { "es": "Paca de heno", "en": "Hay bale", "pt": "Fardo de feno", "fr": "Balle de foin", "de": "Heuballen", "it": "Balla di fieno", "ja": "牧草ロール", "zh": "干草捆", "ko": "건초 뭉치", "ar": "بالة قش" },
+    "keywords": {
+      "es": ["paca redonda", "rollo", "forraje", "pastura", "alfalfa", "zacate", "inventario de alimento", "ensilaje"],
+      "en": ["round bale", "forage", "baler", "straw", "feed inventory", "fodder", "alfalfa", "silage wrap"]
+    }
+  },
+  "haystack": {
+    "label": { "es": "Pajar", "en": "Haystack", "pt": "Palheiro", "fr": "Meule de foin", "de": "Heuhaufen", "it": "Pagliaio", "ja": "干し草の山", "zh": "干草堆", "ko": "건초 더미", "ar": "كومة قش" },
+    "keywords": {
+      "es": ["almiar", "heno", "paja", "almacenamiento de forraje", "escena rural", "buscar una aguja", "difícil de encontrar", "otoño"],
+      "en": ["hay", "straw", "hay storage", "rural scene", "needle", "hard to find", "search", "hayrick"]
+    }
+  },
+  "milk-can": {
+    "label": { "es": "Bote lechero", "en": "Milk can", "pt": "Latão de leite", "fr": "Bidon de lait", "de": "Milchkanne", "it": "Bidone del latte", "ja": "ミルク缶", "zh": "奶桶", "ko": "우유통", "ar": "وعاء الحليب" },
+    "keywords": {
+      "es": ["lechera", "cántaro", "leche bronca", "lechería", "establo", "acopio de leche", "ganado lechero", "ordeña"],
+      "en": ["milk churn", "dairy farm", "raw milk", "milk collection", "dairy", "milking", "creamery", "farm fresh"]
+    }
+  },
+  "horseshoe": {
+    "label": { "es": "Herradura", "en": "Horseshoe", "pt": "Ferradura", "fr": "Fer à cheval", "de": "Hufeisen", "it": "Ferro di cavallo", "ja": "蹄鉄", "zh": "马蹄铁", "ko": "편자", "ar": "حدوة حصان" },
+    "keywords": {
+      "es": ["herrero", "caballos", "caballeriza", "cuidado equino", "buena suerte", "amuleto", "herraje", "charrería"],
+      "en": ["farrier", "horses", "stable", "horse care", "good luck", "lucky charm", "equestrian", "blacksmith"]
+    }
+  },
+  "pitchfork": {
+    "label": { "es": "Horquilla", "en": "Pitchfork", "pt": "Forcado", "fr": "Fourche", "de": "Heugabel", "it": "Forcone", "ja": "ピッチフォーク", "zh": "干草叉", "ko": "쇠스랑", "ar": "مذراة" },
+    "keywords": {
+      "es": ["bieldo", "trinche", "heno", "paja", "establo", "herramienta de campo", "faena", "aperos de labranza"],
+      "en": ["hay fork", "farm tool", "barn chores", "hay", "straw", "manure fork", "garden fork", "stable"]
+    }
+  },
+  "sickle": {
+    "label": { "es": "Hoz", "en": "Sickle", "pt": "Foice", "fr": "Faucille", "de": "Sichel", "it": "Falcetto", "ja": "鎌", "zh": "镰刀", "ko": "낫", "ar": "منجل" },
+    "keywords": {
+      "es": ["cosecha a mano", "segar", "cortar zacate", "rozadera", "herramienta de campo", "siega", "trigo", "cereal"],
+      "en": ["hand harvesting", "reaping", "cutting grass", "grain", "farm tool", "reap hook", "harvest", "blade"]
+    }
+  },
+  "scythe": {
+    "label": { "es": "Guadaña", "en": "Scythe", "pt": "Gadanha", "fr": "Faux", "de": "Sense", "it": "Falce fienaia", "ja": "大鎌", "zh": "长柄镰刀", "ko": "큰 낫", "ar": "منجل طويل" },
+    "keywords": {
+      "es": ["segar", "cortar pasto", "chapeo", "heno", "siega a mano", "herramienta de campo", "cortar maleza", "desmonte"],
+      "en": ["mowing", "cutting hay", "grain", "farm tool", "grim reaper", "cutting grass", "blade", "Halloween"]
+    }
+  }
+}

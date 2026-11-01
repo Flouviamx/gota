@@ -1,0 +1,415 @@
+{
+  "solar-panel": {
+    "label": { "es": "Panel solar", "en": "Solar panel", "pt": "Painel solar", "fr": "Panneau solaire", "de": "Solarmodul", "it": "Pannello solare", "ja": "ソーラーパネル", "zh": "太阳能电池板", "ko": "태양광 패널", "ar": "لوح شمسي" },
+    "keywords": {
+      "es": ["fotovoltaico", "celdas solares", "instalación solar", "generación solar", "monitoreo de paneles", "techo solar", "energía del sol"],
+      "en": ["photovoltaic", "PV", "solar cells", "solar installation", "solar generation", "panel monitoring", "rooftop solar"]
+    }
+  },
+  "house-solar": {
+    "label": { "es": "Casa con paneles solares", "en": "Solar home", "pt": "Casa com energia solar", "fr": "Maison solaire", "de": "Haus mit Solaranlage", "it": "Casa con pannelli solari", "ja": "太陽光発電の家", "zh": "太阳能住宅", "ko": "태양광 주택", "ar": "منزل بألواح شمسية" },
+    "keywords": {
+      "es": ["solar residencial", "paneles en el techo", "cotización solar", "autoconsumo", "casa autosuficiente", "instalación en casa", "ahorro en el recibo"],
+      "en": ["residential solar", "rooftop panels", "solar quote", "self-consumption", "self-powered home", "home installation", "net metering"]
+    }
+  },
+  "solar-energy": {
+    "label": { "es": "Energía solar", "en": "Solar power", "pt": "Energia solar", "fr": "Énergie solaire", "de": "Solarenergie", "it": "Energia solare", "ja": "太陽光エネルギー", "zh": "太阳能", "ko": "태양 에너지", "ar": "الطاقة الشمسية" },
+    "keywords": {
+      "es": ["electricidad del sol", "fuente solar", "mezcla energética", "tarifa solar", "generación fotovoltaica", "energía limpia", "sol"],
+      "en": ["sun-generated electricity", "solar source", "energy mix", "solar tariff", "photovoltaic generation", "clean energy", "sun"]
+    }
+  },
+  "solar-water-heater": {
+    "label": { "es": "Calentador solar", "en": "Solar water heater", "pt": "Aquecedor solar", "fr": "Chauffe-eau solaire", "de": "Solarthermieanlage", "it": "Scaldacqua solare", "ja": "太陽熱温水器", "zh": "太阳能热水器", "ko": "태양열 온수기", "ar": "سخان مياه شمسي" },
+    "keywords": {
+      "es": ["agua caliente solar", "colector solar", "tubos al vacío", "termotanque", "boiler solar", "calentar agua", "azotea"],
+      "en": ["solar hot water", "solar collector", "evacuated tubes", "storage tank", "solar thermal", "heat water", "rooftop"]
+    }
+  },
+  "inverter": {
+    "label": { "es": "Inversor", "en": "Inverter", "pt": "Inversor", "fr": "Onduleur solaire", "de": "Wechselrichter", "it": "Inverter", "ja": "インバーター", "zh": "逆变器", "ko": "인버터", "ar": "عاكس كهربائي" },
+    "keywords": {
+      "es": ["inversor solar", "corriente directa a alterna", "CD a CA", "inversor de batería", "estado del sistema", "conversión de corriente", "microinversor"],
+      "en": ["solar inverter", "DC to AC", "battery inverter", "hybrid inverter", "system status", "power conversion", "microinverter"]
+    }
+  },
+  "wind-turbine": {
+    "label": { "es": "Aerogenerador", "en": "Wind turbine", "pt": "Turbina eólica", "fr": "Éolienne", "de": "Windkraftanlage", "it": "Turbina eolica", "ja": "風力発電機", "zh": "风力发电机", "ko": "풍력 터빈", "ar": "توربين رياح" },
+    "keywords": {
+      "es": ["energía eólica", "molino de viento", "turbina eólica", "viento", "fuente de generación", "aspas", "energía renovable"],
+      "en": ["wind power", "windmill", "wind energy", "wind generator", "generation source", "blades", "renewable"]
+    }
+  },
+  "wind-turbine-offshore": {
+    "label": { "es": "Eólica marina", "en": "Offshore wind", "pt": "Eólica offshore", "fr": "Éolien en mer", "de": "Offshore-Windkraft", "it": "Eolico offshore", "ja": "洋上風力", "zh": "海上风电", "ko": "해상 풍력", "ar": "طاقة الرياح البحرية" },
+    "keywords": {
+      "es": ["aerogenerador en el mar", "costa afuera", "offshore", "parque eólico marino", "mar", "energía del viento", "turbina marina"],
+      "en": ["offshore turbine", "at sea", "marine wind", "offshore wind farm", "ocean", "wind power", "sea turbine"]
+    }
+  },
+  "wind-farm": {
+    "label": { "es": "Parque eólico", "en": "Wind farm", "pt": "Parque eólico", "fr": "Parc éolien", "de": "Windpark", "it": "Parco eolico", "ja": "風力発電所", "zh": "风电场", "ko": "풍력 발전 단지", "ar": "مزرعة رياح" },
+    "keywords": {
+      "es": ["aerogeneradores", "granja eólica", "generación eólica", "central eólica", "sitio de generación", "activo de energía", "molinos de viento"],
+      "en": ["wind turbines", "wind park", "utility-scale wind", "wind power station", "generation site", "energy asset", "windmills"]
+    }
+  },
+  "dam": {
+    "label": { "es": "Presa", "en": "Dam", "pt": "Barragem", "fr": "Barrage hydroélectrique", "de": "Staudamm", "it": "Diga", "ja": "ダム", "zh": "水坝", "ko": "댐", "ar": "سد" },
+    "keywords": {
+      "es": ["hidroeléctrica", "embalse", "nivel de la presa", "almacenamiento de agua", "represa", "cortina", "central hidroeléctrica"],
+      "en": ["hydroelectric", "reservoir", "water level", "water storage", "hydro plant", "spillway", "barrage"]
+    }
+  },
+  "hydropower": {
+    "label": { "es": "Energía hidroeléctrica", "en": "Hydropower", "pt": "Energia hidrelétrica", "fr": "Hydroélectricité", "de": "Wasserkraft", "it": "Energia idroelettrica", "ja": "水力発電", "zh": "水力发电", "ko": "수력 발전", "ar": "الطاقة الكهرومائية" },
+    "keywords": {
+      "es": ["hidroelectricidad", "energía del agua", "fuente hidráulica", "mezcla energética", "tarifa", "energía renovable", "turbina de agua"],
+      "en": ["hydroelectricity", "water power", "hydro", "energy mix", "tariff", "renewable", "water turbine"]
+    }
+  },
+  "geothermal": {
+    "label": { "es": "Energía geotérmica", "en": "Geothermal energy", "pt": "Energia geotérmica", "fr": "Géothermie", "de": "Geothermie", "it": "Energia geotermica", "ja": "地熱エネルギー", "zh": "地热能", "ko": "지열 에너지", "ar": "الطاقة الحرارية الأرضية" },
+    "keywords": {
+      "es": ["geotermia", "calor de la tierra", "bomba de calor geotérmica", "vapor", "planta geotérmica", "subsuelo", "energía renovable"],
+      "en": ["ground heat", "ground-source heat pump", "earth energy", "steam", "geothermal plant", "underground", "renewable"]
+    }
+  },
+  "biomass": {
+    "label": { "es": "Biomasa", "en": "Biomass", "pt": "Biomassa", "fr": "Biomasse", "de": "Biomasse", "it": "Biomassa", "ja": "バイオマス", "zh": "生物质能", "ko": "바이오매스", "ar": "الكتلة الحيوية" },
+    "keywords": {
+      "es": ["astillas de madera", "pellets", "residuos agrícolas", "leña", "caldera de biomasa", "bioenergía", "energía renovable"],
+      "en": ["wood chips", "pellets", "crop waste", "firewood", "biomass boiler", "bioenergy", "renewable"]
+    }
+  },
+  "biofuel": {
+    "label": { "es": "Biocombustible", "en": "Biofuel", "pt": "Biocombustível", "fr": "Biocarburant", "de": "Biokraftstoff", "it": "Biocarburante", "ja": "バイオ燃料", "zh": "生物燃料", "ko": "바이오 연료", "ar": "وقود حيوي" },
+    "keywords": {
+      "es": ["biodiésel", "etanol", "combustible vegetal", "bioetanol", "aceite de cocina reciclado", "gasolina verde", "combustible renovable"],
+      "en": ["biodiesel", "ethanol", "plant-based fuel", "bioethanol", "green diesel", "E85", "renewable fuel"]
+    }
+  },
+  "power-plant": {
+    "label": { "es": "Central termoeléctrica", "en": "Power plant", "pt": "Usina termelétrica", "fr": "Centrale thermique", "de": "Kraftwerk", "it": "Centrale termoelettrica", "ja": "火力発電所", "zh": "火力发电厂", "ko": "화력 발전소", "ar": "محطة توليد كهرباء" },
+    "keywords": {
+      "es": ["planta de energía", "carbón", "gas natural", "combustóleo", "generación eléctrica", "chimeneas", "ciclo combinado"],
+      "en": ["thermal plant", "coal plant", "gas plant", "power station", "electricity generation", "smokestacks", "fossil fuel"]
+    }
+  },
+  "nuclear-plant": {
+    "label": { "es": "Central nuclear", "en": "Nuclear power plant", "pt": "Usina nuclear", "fr": "Centrale nucléaire", "de": "Kernkraftwerk", "it": "Centrale nucleare", "ja": "原子力発電所", "zh": "核电站", "ko": "원자력 발전소", "ar": "محطة طاقة نووية" },
+    "keywords": {
+      "es": ["planta nuclear", "nucleoeléctrica", "reactor", "energía atómica", "uranio", "fisión nuclear", "baja emisión"],
+      "en": ["nuclear plant", "reactor", "atomic energy", "uranium", "fission", "nuclear station", "low carbon"]
+    }
+  },
+  "cooling-tower": {
+    "label": { "es": "Torre de enfriamiento", "en": "Cooling tower", "pt": "Torre de resfriamento", "fr": "Tour de refroidissement", "de": "Kühlturm", "it": "Torre di raffreddamento", "ja": "冷却塔", "zh": "冷却塔", "ko": "냉각탑", "ar": "برج تبريد" },
+    "keywords": {
+      "es": ["vapor", "planta térmica", "industria", "enfriamiento urbano", "torre de refrigeración", "columna de vapor", "central eléctrica"],
+      "en": ["steam", "thermal plant", "industrial", "district cooling", "hyperboloid", "vapor plume", "power station"]
+    }
+  },
+  "generator": {
+    "label": { "es": "Generador", "en": "Generator", "pt": "Gerador", "fr": "Groupe électrogène", "de": "Stromgenerator", "it": "Generatore", "ja": "発電機", "zh": "发电机", "ko": "발전기", "ar": "مولد كهرباء" },
+    "keywords": {
+      "es": ["planta de luz", "planta de emergencia", "respaldo", "apagón", "generador portátil", "diésel", "corte de luz"],
+      "en": ["backup generator", "genset", "standby power", "power outage", "portable generator", "diesel", "emergency power"]
+    }
+  },
+  "pylon": {
+    "label": { "es": "Torre de alta tensión", "en": "Electricity pylon", "pt": "Torre de alta tensão", "fr": "Pylône électrique", "de": "Hochspannungsmast", "it": "Traliccio elettrico", "ja": "送電鉄塔", "zh": "输电塔", "ko": "송전탑", "ar": "برج كهرباء" },
+    "keywords": {
+      "es": ["red eléctrica", "líneas de transmisión", "alto voltaje", "torre eléctrica", "flujo de energía", "conexión a la red", "transmisión"],
+      "en": ["power grid", "transmission lines", "high voltage", "transmission tower", "energy flow", "grid connection", "grid import"]
+    }
+  },
+  "utility-pole": {
+    "label": { "es": "Poste eléctrico", "en": "Utility pole", "pt": "Poste de energia", "fr": "Poteau électrique", "de": "Strommast", "it": "Palo della luce", "ja": "電柱", "zh": "电线杆", "ko": "전봇대", "ar": "عمود كهرباء" },
+    "keywords": {
+      "es": ["poste de luz", "cables de luz", "red de distribución", "acometida", "línea de baja tensión", "cableado aéreo", "transformador de poste"],
+      "en": ["power pole", "telephone pole", "distribution network", "service drop", "local power lines", "overhead wires", "pole transformer"]
+    }
+  },
+  "utility-pole-alert": {
+    "label": { "es": "Corte de luz", "en": "Power outage", "pt": "Falta de energia", "fr": "Panne de courant", "de": "Stromausfall", "it": "Interruzione di corrente", "ja": "停電", "zh": "停电", "ko": "정전", "ar": "انقطاع الكهرباء" },
+    "keywords": {
+      "es": ["apagón", "reportar falla", "sin luz", "falla en mi zona", "se fue la luz", "interrupción del servicio", "mapa de cortes"],
+      "en": ["blackout", "report an outage", "no power", "outage in my area", "power cut", "service interruption", "outage map"]
+    }
+  },
+  "home-battery": {
+    "label": { "es": "Batería doméstica", "en": "Home battery", "pt": "Bateria residencial", "fr": "Batterie domestique", "de": "Heimspeicher", "it": "Batteria domestica", "ja": "家庭用蓄電池", "zh": "家用储能电池", "ko": "가정용 배터리", "ar": "بطارية منزلية" },
+    "keywords": {
+      "es": ["almacenamiento solar", "respaldo", "nivel de carga", "acumulador", "energía guardada", "apagón", "autonomía"],
+      "en": ["solar storage", "backup power", "charge level", "energy storage", "stored energy", "state of charge", "outage"]
+    }
+  },
+  "grid-battery": {
+    "label": { "es": "Batería de red", "en": "Grid battery", "pt": "Bateria de rede", "fr": "Batterie réseau", "de": "Batteriegroßspeicher", "it": "Batteria di rete", "ja": "系統用蓄電池", "zh": "电网储能电池", "ko": "전력망용 배터리", "ar": "بطارية الشبكة" },
+    "keywords": {
+      "es": ["baterías a gran escala", "contenedor de baterías", "BESS", "almacenamiento de energía", "respaldo de la red", "estabilidad de la red", "parque de baterías"],
+      "en": ["utility-scale battery", "battery container", "BESS", "energy storage system", "grid storage", "grid balancing", "peak shaving"]
+    }
+  },
+  "electric-meter": {
+    "label": { "es": "Medidor de luz", "en": "Electricity meter", "pt": "Medidor de energia", "fr": "Compteur électrique", "de": "Stromzähler", "it": "Contatore elettrico", "ja": "電力量計", "zh": "电表", "ko": "전력량계", "ar": "عداد الكهرباء" },
+    "keywords": {
+      "es": ["lectura del medidor", "consumo de electricidad", "kWh", "contador", "punto de servicio", "número de servicio", "kilowatts"],
+      "en": ["meter reading", "electricity usage", "kWh", "power meter", "service point", "account number", "consumption"]
+    }
+  },
+  "electric-meter-edit": {
+    "label": { "es": "Enviar lectura de luz", "en": "Submit electricity reading", "pt": "Enviar leitura de luz", "fr": "Transmettre un relevé d’électricité", "de": "Stromzählerstand melden", "it": "Invia lettura della luce", "ja": "電気の検針値を入力", "zh": "提交电表读数", "ko": "전기 검침값 입력", "ar": "إرسال قراءة عداد الكهرباء" },
+    "keywords": {
+      "es": ["capturar lectura", "autolectura", "lectura del medidor", "reportar consumo", "kWh", "corregir lectura", "medidor de luz"],
+      "en": ["enter reading", "self-reading", "meter reading", "report usage", "kWh", "correct reading", "electricity meter"]
+    }
+  },
+  "smart-meter": {
+    "label": { "es": "Medidor inteligente", "en": "Smart meter", "pt": "Medidor inteligente", "fr": "Compteur communicant", "de": "Intelligenter Zähler", "it": "Contatore intelligente", "ja": "スマートメーター", "zh": "智能电表", "ko": "스마트 미터", "ar": "عداد ذكي" },
+    "keywords": {
+      "es": ["medidor digital", "lectura remota", "telemedición", "consumo en tiempo real", "medidor conectado", "sin visita del lecturista", "AMI"],
+      "en": ["digital meter", "remote reading", "AMI", "real-time usage", "connected meter", "automatic reading", "telemetry"]
+    }
+  },
+  "water-meter": {
+    "label": { "es": "Medidor de agua", "en": "Water meter", "pt": "Hidrômetro", "fr": "Compteur d’eau", "de": "Wasserzähler", "it": "Contatore dell’acqua", "ja": "水道メーター", "zh": "水表", "ko": "수도 계량기", "ar": "عداد المياه" },
+    "keywords": {
+      "es": ["lectura de agua", "consumo de agua", "metros cúbicos", "toma de agua", "servicio de agua", "fuga", "contador"],
+      "en": ["water reading", "water usage", "cubic meters", "water service", "service point", "leak detection", "meter reading"]
+    }
+  },
+  "water-meter-edit": {
+    "label": { "es": "Enviar lectura de agua", "en": "Submit water reading", "pt": "Enviar leitura de água", "fr": "Transmettre un relevé d’eau", "de": "Wasserzählerstand melden", "it": "Invia lettura dell’acqua", "ja": "水道の検針値を入力", "zh": "提交水表读数", "ko": "수도 검침값 입력", "ar": "إرسال قراءة عداد المياه" },
+    "keywords": {
+      "es": ["capturar lectura", "autolectura", "consumo de agua", "metros cúbicos", "reportar lectura", "corregir lectura", "medidor de agua"],
+      "en": ["enter reading", "self-reading", "water usage", "cubic meters", "report reading", "correct reading", "water meter"]
+    }
+  },
+  "receipt-electricity": {
+    "label": { "es": "Recibo de luz", "en": "Electricity bill", "pt": "Conta de luz", "fr": "Facture d’électricité", "de": "Stromrechnung", "it": "Bolletta della luce", "ja": "電気料金の請求書", "zh": "电费账单", "ko": "전기 요금 고지서", "ar": "فاتورة الكهرباء" },
+    "keywords": {
+      "es": ["pagar la luz", "factura de electricidad", "consumo bimestral", "adeudo", "estado de cuenta", "fecha límite de pago", "kWh"],
+      "en": ["pay electricity", "power bill", "energy statement", "amount due", "due date", "utility bill", "kWh"]
+    }
+  },
+  "receipt-water": {
+    "label": { "es": "Recibo de agua", "en": "Water bill", "pt": "Conta de água", "fr": "Facture d’eau", "de": "Wasserrechnung", "it": "Bolletta dell’acqua", "ja": "水道料金の請求書", "zh": "水费账单", "ko": "수도 요금 고지서", "ar": "فاتورة المياه" },
+    "keywords": {
+      "es": ["pagar el agua", "factura de agua", "consumo de agua", "adeudo", "estado de cuenta", "fecha límite de pago", "servicio de agua"],
+      "en": ["pay water", "water statement", "water usage", "amount due", "due date", "utility bill", "water service"]
+    }
+  },
+  "receipt-gas": {
+    "label": { "es": "Recibo de gas", "en": "Gas bill", "pt": "Conta de gás", "fr": "Facture de gaz", "de": "Gasrechnung", "it": "Bolletta del gas", "ja": "ガス料金の請求書", "zh": "燃气费账单", "ko": "가스 요금 고지서", "ar": "فاتورة الغاز" },
+    "keywords": {
+      "es": ["pagar el gas", "factura de gas", "gas natural", "adeudo", "estado de cuenta", "fecha límite de pago", "consumo de gas"],
+      "en": ["pay gas", "gas statement", "natural gas", "amount due", "due date", "utility bill", "gas usage"]
+    }
+  },
+  "price-tag-bolt": {
+    "label": { "es": "Tarifa eléctrica", "en": "Energy tariff", "pt": "Tarifa de energia", "fr": "Tarif de l’électricité", "de": "Stromtarif", "it": "Tariffa elettrica", "ja": "電気料金プラン", "zh": "电价", "ko": "전기 요금제", "ar": "تعريفة الكهرباء" },
+    "keywords": {
+      "es": ["precio de la luz", "precio por kWh", "tarifa dinámica", "tarifa horaria", "costo de la energía", "plan de luz", "cambiar de tarifa"],
+      "en": ["electricity price", "price per kWh", "dynamic pricing", "time-of-use rate", "energy cost", "power plan", "switch tariff"]
+    }
+  },
+  "house-energy": {
+    "label": { "es": "Energía del hogar", "en": "Home energy", "pt": "Energia da casa", "fr": "Énergie de la maison", "de": "Energie im Haushalt", "it": "Energia di casa", "ja": "家庭のエネルギー", "zh": "家庭用电", "ko": "가정 에너지", "ar": "طاقة المنزل" },
+    "keywords": {
+      "es": ["consumo del hogar", "electricidad en casa", "flujo de energía", "domicilio", "servicio eléctrico", "uso doméstico", "tablero de energía"],
+      "en": ["household consumption", "home electricity", "energy flow", "service address", "electric service", "domestic use", "energy dashboard"]
+    }
+  },
+  "house-heat-loss": {
+    "label": { "es": "Pérdida de calor", "en": "Heat loss", "pt": "Perda de calor", "fr": "Déperdition de chaleur", "de": "Wärmeverlust", "it": "Dispersione di calore", "ja": "住宅の熱損失", "zh": "房屋热量流失", "ko": "주택 열 손실", "ar": "فقدان الحرارة من المنزل" },
+    "keywords": {
+      "es": ["aislamiento térmico", "auditoría energética", "fugas de aire", "corrientes de aire", "termografía", "eficiencia de la casa", "sellar ventanas"],
+      "en": ["insulation", "energy assessment", "air leaks", "draft-proofing", "thermal imaging", "home efficiency", "weatherization"]
+    }
+  },
+  "power-usage": {
+    "label": { "es": "Consumo de energía", "en": "Power usage", "pt": "Consumo de energia", "fr": "Consommation d’énergie", "de": "Stromverbrauch", "it": "Consumo energetico", "ja": "電力使用量", "zh": "用电量", "ko": "전력 사용량", "ar": "استهلاك الطاقة" },
+    "keywords": {
+      "es": ["consumo actual", "demanda", "kW", "nivel de consumo", "potencia", "gasto de luz", "en tiempo real"],
+      "en": ["current draw", "power draw", "load", "kW", "consumption level", "demand", "live usage"]
+    }
+  },
+  "energy-saving": {
+    "label": { "es": "Ahorro de energía", "en": "Energy saving", "pt": "Economia de energia", "fr": "Économie d’énergie", "de": "Energiesparen", "it": "Risparmio energetico", "ja": "省エネ", "zh": "节能", "ko": "에너지 절약", "ar": "توفير الطاقة" },
+    "keywords": {
+      "es": ["modo eco", "eficiencia energética", "ahorrar luz", "bajo consumo", "programa de ahorro", "consumo responsable", "ecológico"],
+      "en": ["eco mode", "energy efficiency", "save power", "low consumption", "savings program", "efficient setting", "green"]
+    }
+  },
+  "renewable-energy": {
+    "label": { "es": "Energía renovable", "en": "Renewable energy", "pt": "Energia renovável", "fr": "Énergie renouvelable", "de": "Erneuerbare Energie", "it": "Energia rinnovabile", "ja": "再生可能エネルギー", "zh": "可再生能源", "ko": "재생 에너지", "ar": "الطاقة المتجددة" },
+    "keywords": {
+      "es": ["energía limpia", "energía verde", "plan verde", "porcentaje renovable", "sustentable", "cero emisiones", "fuentes limpias"],
+      "en": ["clean energy", "green energy", "green plan", "renewable share", "sustainable", "zero emissions", "green tariff"]
+    }
+  },
+  "energy-rating": {
+    "label": { "es": "Etiqueta energética", "en": "Energy rating", "pt": "Selo de eficiência energética", "fr": "Étiquette énergie", "de": "Energielabel", "it": "Etichetta energetica", "ja": "省エネラベル", "zh": "能效标识", "ko": "에너지 효율 등급", "ar": "ملصق كفاءة الطاقة" },
+    "keywords": {
+      "es": ["eficiencia energética", "clase A", "calificación", "certificado energético", "consumo del aparato", "ahorro", "escala de eficiencia"],
+      "en": ["energy label", "efficiency class", "A rating", "energy certificate", "efficiency scale", "appliance rating", "EPC"]
+    }
+  },
+  "peak-hours": {
+    "label": { "es": "Horas pico", "en": "Peak hours", "pt": "Horário de ponta", "fr": "Heures pleines", "de": "Hochtarifzeit", "it": "Ore di punta", "ja": "ピーク時間帯", "zh": "用电高峰", "ko": "피크 시간대", "ar": "ساعات الذروة" },
+    "keywords": {
+      "es": ["horario punta", "tarifa horaria", "energía más cara", "alta demanda", "tarifa por horario", "evitar consumo", "precio alto"],
+      "en": ["on-peak", "time-of-use", "higher price", "high demand", "peak rate", "demand response", "expensive hours"]
+    }
+  },
+  "off-peak": {
+    "label": { "es": "Fuera de horas pico", "en": "Off-peak", "pt": "Horário fora de ponta", "fr": "Heures creuses", "de": "Niedertarifzeit", "it": "Ore fuori punta", "ja": "オフピーク時間帯", "zh": "用电低谷", "ko": "경부하 시간대", "ar": "خارج ساعات الذروة" },
+    "keywords": {
+      "es": ["horario base", "tarifa nocturna", "energía más barata", "noche", "baja demanda", "cargar de noche", "ahorro"],
+      "en": ["night rate", "cheaper energy", "night-time", "low demand", "valley hours", "charge overnight", "savings"]
+    }
+  },
+  "oil-barrel": {
+    "label": { "es": "Barril de petróleo", "en": "Oil barrel", "pt": "Barril de petróleo", "fr": "Baril de pétrole", "de": "Ölfass", "it": "Barile di petrolio", "ja": "石油バレル", "zh": "石油桶", "ko": "석유 배럴", "ar": "برميل نفط" },
+    "keywords": {
+      "es": ["crudo", "precio del petróleo", "tambo", "combustible", "inventario de combustible", "mezcla mexicana", "hidrocarburos"],
+      "en": ["crude oil", "oil price", "drum", "fuel stock", "petroleum", "Brent", "commodity"]
+    }
+  },
+  "oil-drop": {
+    "label": { "es": "Petróleo", "en": "Oil", "pt": "Petróleo", "fr": "Pétrole", "de": "Erdöl", "it": "Petrolio", "ja": "石油", "zh": "石油", "ko": "석유", "ar": "النفط" },
+    "keywords": {
+      "es": ["crudo", "combustible fósil", "materia prima", "aceite", "hidrocarburo", "gota negra", "mercado petrolero"],
+      "en": ["crude", "fossil fuel", "commodity", "petroleum", "hydrocarbon", "black drop", "oil market"]
+    }
+  },
+  "pumpjack": {
+    "label": { "es": "Pozo petrolero", "en": "Pumpjack", "pt": "Poço de petróleo", "fr": "Chevalet de pompage", "de": "Pferdekopfpumpe", "it": "Pompa a cavalletto", "ja": "油井ポンプ", "zh": "抽油机", "ko": "유정 펌프", "ar": "مضخة بئر نفط" },
+    "keywords": {
+      "es": ["balancín", "extracción de petróleo", "bombeo mecánico", "pozo terrestre", "campo petrolero", "crudo", "perforación"],
+      "en": ["oil well", "nodding donkey", "oil extraction", "onshore well", "oil field", "crude", "drilling"]
+    }
+  },
+  "coal": {
+    "label": { "es": "Carbón", "en": "Coal", "pt": "Carvão", "fr": "Charbon", "de": "Kohle", "it": "Carbone", "ja": "石炭", "zh": "煤炭", "ko": "석탄", "ar": "الفحم" },
+    "keywords": {
+      "es": ["combustible fósil", "mina", "mineral", "termoeléctrica", "mezcla energética", "emisiones", "hulla"],
+      "en": ["fossil fuel", "mining", "lump", "coal power", "energy mix", "emissions", "anthracite"]
+    }
+  },
+  "gas-cylinder": {
+    "label": { "es": "Cilindro de gas", "en": "Gas cylinder", "pt": "Botijão de gás", "fr": "Bouteille de gaz", "de": "Gasflasche", "it": "Bombola del gas", "ja": "ガスボンベ", "zh": "液化气罐", "ko": "가스통", "ar": "أسطوانة غاز" },
+    "keywords": {
+      "es": ["tanque de gas", "gas LP", "pedir gas", "recarga", "gas en casa", "gasero", "tanque de 20 kilos"],
+      "en": ["LPG", "propane bottle", "bottled gas", "order refill", "gas delivery", "butane", "home gas"]
+    }
+  },
+  "water-tower": {
+    "label": { "es": "Tanque elevado", "en": "Water tower", "pt": "Caixa-d’água elevada", "fr": "Château d’eau", "de": "Wasserturm", "it": "Torre idrica", "ja": "給水塔", "zh": "水塔", "ko": "급수탑", "ar": "برج مياه" },
+    "keywords": {
+      "es": ["torre de agua", "suministro municipal", "almacenamiento de agua", "presión del agua", "red de agua", "abastecimiento", "agua potable"],
+      "en": ["water supply", "municipal water", "water storage", "water pressure", "water network", "potable water", "standpipe"]
+    }
+  },
+  "water-tap": {
+    "label": { "es": "Llave de agua", "en": "Water tap", "pt": "Torneira", "fr": "Robinet", "de": "Wasserhahn", "it": "Rubinetto", "ja": "蛇口", "zh": "水龙头", "ko": "수도꼭지", "ar": "صنبور مياه" },
+    "keywords": {
+      "es": ["grifo", "servicio de agua", "suministro", "agua potable", "toma de agua", "corte de agua", "abrir el agua"],
+      "en": ["faucet", "water service", "water supply", "drinking water", "running water", "water shutoff", "spigot"]
+    }
+  },
+  "hot-water": {
+    "label": { "es": "Agua caliente", "en": "Hot water", "pt": "Água quente", "fr": "Eau chaude", "de": "Warmwasser", "it": "Acqua calda", "ja": "給湯", "zh": "热水", "ko": "온수", "ar": "ماء ساخن" },
+    "keywords": {
+      "es": ["boiler", "calentador", "temperatura del agua", "regadera", "agua sanitaria", "calefacción", "termostato"],
+      "en": ["water heater", "domestic hot water", "DHW", "water temperature", "shower", "heating", "thermostat"]
+    }
+  },
+  "water-treatment": {
+    "label": { "es": "Planta de tratamiento", "en": "Water treatment plant", "pt": "Estação de tratamento de água", "fr": "Station de traitement des eaux", "de": "Wasseraufbereitungsanlage", "it": "Impianto di trattamento delle acque", "ja": "水処理施設", "zh": "水处理厂", "ko": "수처리 시설", "ar": "محطة معالجة المياه" },
+    "keywords": {
+      "es": ["aguas residuales", "potabilizadora", "purificación", "drenaje", "filtración", "saneamiento", "reciclaje de agua"],
+      "en": ["wastewater", "sewage treatment", "purification", "filtration", "sanitation", "water recycling", "drinking water"]
+    }
+  },
+  "heating-radiator": {
+    "label": { "es": "Radiador de calefacción", "en": "Heating radiator", "pt": "Radiador de aquecimento", "fr": "Radiateur de chauffage", "de": "Heizkörper", "it": "Termosifone", "ja": "暖房用ラジエーター", "zh": "暖气片", "ko": "난방 라디에이터", "ar": "مشعاع تدفئة" },
+    "keywords": {
+      "es": ["calefacción central", "zona de la habitación", "termostato", "calor", "válvula termostática", "calentar el cuarto", "calefactor"],
+      "en": ["heating", "central heating", "room zone", "thermostat", "heat", "radiator valve", "warm room"]
+    }
+  },
+  "boiler": {
+    "label": { "es": "Caldera", "en": "Boiler", "pt": "Caldeira", "fr": "Chaudière", "de": "Heizkessel", "it": "Caldaia", "ja": "ボイラー", "zh": "锅炉", "ko": "보일러", "ar": "غلاية تدفئة" },
+    "keywords": {
+      "es": ["calefacción central", "agua caliente", "calentador de gas", "mantenimiento", "visita técnica", "servicio anual", "piloto"],
+      "en": ["central heating", "hot water", "gas heating", "service visit", "maintenance", "combi", "annual service"]
+    }
+  },
+  "furnace": {
+    "label": { "es": "Calefactor central", "en": "Furnace", "pt": "Aquecedor central", "fr": "Générateur d’air chaud", "de": "Warmluftheizung", "it": "Generatore d’aria calda", "ja": "温風暖房機", "zh": "暖风炉", "ko": "온풍 난방기", "ar": "فرن تدفئة" },
+    "keywords": {
+      "es": ["calefacción", "aire forzado", "sistema HVAC", "ductos", "calentador de gas", "servicio de climatización", "filtro de aire"],
+      "en": ["heating system", "forced air", "HVAC", "ductwork", "gas heater", "air filter", "technician visit"]
+    }
+  },
+  "lightbulb-spiral": {
+    "label": { "es": "Foco ahorrador", "en": "Energy-saving bulb", "pt": "Lâmpada fluorescente compacta", "fr": "Ampoule fluocompacte", "de": "Energiesparlampe", "it": "Lampadina a risparmio energetico", "ja": "電球形蛍光灯", "zh": "节能灯", "ko": "절전형 전구", "ar": "مصباح موفر للطاقة" },
+    "keywords": {
+      "es": ["foco espiral", "fluorescente compacto", "bajo consumo", "lámpara ahorradora", "CFL", "iluminación", "cambiar foco"],
+      "en": ["CFL", "compact fluorescent", "spiral bulb", "low energy", "light bulb", "lighting", "bulb swap"]
+    }
+  },
+  "lightbulb-led": {
+    "label": { "es": "Foco LED", "en": "LED bulb", "pt": "Lâmpada LED", "fr": "Ampoule LED", "de": "LED-Lampe", "it": "Lampadina LED", "ja": "LED電球", "zh": "LED灯泡", "ko": "LED 전구", "ar": "مصباح LED" },
+    "keywords": {
+      "es": ["iluminación eficiente", "cambiar focos", "bajo consumo", "luz blanca", "luz cálida", "ahorro de luz", "lúmenes"],
+      "en": ["efficient lighting", "bulb swap", "low energy", "cool white", "warm white", "lumens", "light bulb"]
+    }
+  },
+  "lightbulb-filament": {
+    "label": { "es": "Foco de filamento", "en": "Filament bulb", "pt": "Lâmpada de filamento", "fr": "Ampoule à filament", "de": "Glühbirne", "it": "Lampadina a filamento", "ja": "フィラメント電球", "zh": "灯丝灯泡", "ko": "필라멘트 전구", "ar": "مصباح بفتيل" },
+    "keywords": {
+      "es": ["foco incandescente", "Edison", "vintage", "foco retro", "luz cálida", "decoración", "bombilla"],
+      "en": ["incandescent", "Edison bulb", "vintage", "retro bulb", "warm light", "decor", "tungsten"]
+    }
+  },
+  "outlet-type-a": {
+    "label": { "es": "Contacto tipo A", "en": "Type A outlet", "pt": "Tomada tipo A", "fr": "Prise de type A", "de": "Steckdose Typ A", "it": "Presa di tipo A", "ja": "タイプAのコンセント", "zh": "A型插座", "ko": "A형 콘센트", "ar": "مقبس من النوع A" },
+    "keywords": {
+      "es": ["dos patas planas", "Norteamérica", "México", "Japón", "adaptador de viaje", "enchufe de viaje", "127 volts"],
+      "en": ["two flat pins", "North America", "Mexico", "Japan", "travel adapter", "plug type", "NEMA 1"]
+    }
+  },
+  "outlet-type-b": {
+    "label": { "es": "Contacto tipo B", "en": "Type B outlet", "pt": "Tomada tipo B", "fr": "Prise de type B", "de": "Steckdose Typ B", "it": "Presa di tipo B", "ja": "タイプBのコンセント", "zh": "B型插座", "ko": "B형 콘센트", "ar": "مقبس من النوع B" },
+    "keywords": {
+      "es": ["tierra física", "tres patas", "patas planas y una redonda", "Estados Unidos", "Canadá", "adaptador de viaje", "contacto aterrizado"],
+      "en": ["grounded outlet", "three-prong", "flat pins and ground pin", "United States", "Canada", "travel adapter", "NEMA 5"]
+    }
+  },
+  "outlet-type-d": {
+    "label": { "es": "Contacto tipo D", "en": "Type D outlet", "pt": "Tomada tipo D", "fr": "Prise de type D", "de": "Steckdose Typ D", "it": "Presa di tipo D", "ja": "タイプDのコンセント", "zh": "D型插座", "ko": "D형 콘센트", "ar": "مقبس من النوع D" },
+    "keywords": {
+      "es": ["tres patas redondas", "triángulo", "India", "Nepal", "adaptador de viaje", "enchufe de viaje", "enchufe indio"],
+      "en": ["three round pins", "triangle", "India", "Nepal", "travel adapter", "plug type", "BS 546"]
+    }
+  },
+  "outlet-type-g": {
+    "label": { "es": "Contacto tipo G", "en": "Type G outlet", "pt": "Tomada tipo G", "fr": "Prise de type G", "de": "Steckdose Typ G", "it": "Presa di tipo G", "ja": "タイプGのコンセント", "zh": "G型插座", "ko": "G형 콘센트", "ar": "مقبس من النوع G" },
+    "keywords": {
+      "es": ["tres patas rectangulares", "Reino Unido", "Irlanda", "Singapur", "adaptador de viaje", "enchufe británico", "Hong Kong"],
+      "en": ["three rectangular pins", "UK plug", "Ireland", "Singapore", "travel adapter", "British socket", "BS 1363"]
+    }
+  },
+  "outlet-type-i": {
+    "label": { "es": "Contacto tipo I", "en": "Type I outlet", "pt": "Tomada tipo I", "fr": "Prise de type I", "de": "Steckdose Typ I", "it": "Presa di tipo I", "ja": "タイプIのコンセント", "zh": "I型插座", "ko": "I형 콘센트", "ar": "مقبس من النوع I" },
+    "keywords": {
+      "es": ["patas inclinadas", "Australia", "China", "Argentina", "Nueva Zelanda", "adaptador de viaje", "enchufe australiano"],
+      "en": ["angled pins", "Australia", "China", "Argentina", "New Zealand", "travel adapter", "AS/NZS 3112"]
+    }
+  }
+}

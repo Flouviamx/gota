@@ -1,0 +1,527 @@
+{
+  "wrench-clock": {
+    "label": { "es": "Mantenimiento programado", "en": "Scheduled maintenance", "pt": "Manutenção programada", "fr": "Maintenance planifiée", "de": "Geplante Wartung", "it": "Manutenzione programmata", "ja": "定期メンテナンス", "zh": "定期维护", "ko": "정기 점검", "ar": "صيانة مجدولة" },
+    "keywords": {
+      "es": ["mantenimiento preventivo", "próximo servicio", "servicio pendiente", "agenda de mantenimiento", "revisión periódica", "afinación", "recordatorio de servicio"],
+      "en": ["preventive maintenance", "next service", "service due", "maintenance schedule", "periodic inspection", "tune-up", "service reminder"]
+    }
+  },
+  "wrench-ring": {
+    "label": { "es": "Llave de estrías", "en": "Box-end wrench", "pt": "Chave estrela", "fr": "Clé polygonale", "de": "Ringschlüssel", "it": "Chiave poligonale", "ja": "メガネレンチ", "zh": "梅花扳手", "ko": "링 스패너", "ar": "مفتاح حلقي" },
+    "keywords": {
+      "es": ["llave estriada", "mecánico", "tuerca", "taller mecánico", "juego de llaves", "apretar", "herramienta de mano"],
+      "en": ["ring spanner", "box wrench", "mechanic", "nut", "auto repair", "wrench set", "tighten"]
+    }
+  },
+  "wrench-adjustable": {
+    "label": { "es": "Llave ajustable", "en": "Adjustable wrench", "pt": "Chave inglesa", "fr": "Clé à molette", "de": "Rollgabelschlüssel", "it": "Chiave inglese", "ja": "モンキーレンチ", "zh": "活动扳手", "ko": "몽키 스패너", "ar": "مفتاح إنجليزي" },
+    "keywords": {
+      "es": ["llave perica", "perico", "llave inglesa", "apretar tuerca", "reparaciones", "plomería", "armado"],
+      "en": ["spanner", "crescent wrench", "tighten nut", "loosen bolt", "repairs", "plumbing", "assembly"]
+    }
+  },
+  "pipe-wrench": {
+    "label": { "es": "Llave para tubo", "en": "Pipe wrench", "pt": "Chave de grifo", "fr": "Clé à griffe", "de": "Rohrzange", "it": "Giratubi", "ja": "パイプレンチ", "zh": "管钳", "ko": "파이프 렌치", "ar": "مفتاح أنابيب" },
+    "keywords": {
+      "es": ["llave stillson", "plomería", "plomero", "tubería", "tubo galvanizado", "fontanería", "apretar tubo"],
+      "en": ["stillson wrench", "plumbing", "plumber", "grip pipe", "pipe fitting", "monkey wrench", "water pipe"]
+    }
+  },
+  "torque-wrench": {
+    "label": { "es": "Torquímetro", "en": "Torque wrench", "pt": "Torquímetro", "fr": "Clé dynamométrique", "de": "Drehmomentschlüssel", "it": "Chiave dinamometrica", "ja": "トルクレンチ", "zh": "扭力扳手", "ko": "토크 렌치", "ar": "مفتاح عزم" },
+    "keywords": {
+      "es": ["llave de torque", "apriete preciso", "birlos", "taller mecánico", "servicio automotriz", "ensamble de precisión", "par de apriete"],
+      "en": ["torque setting", "precise tightening", "lug nuts", "auto service", "mechanic", "precision assembly", "click wrench"]
+    }
+  },
+  "lug-wrench": {
+    "label": { "es": "Llave de cruz", "en": "Lug wrench", "pt": "Chave de roda", "fr": "Clé en croix", "de": "Kreuzschlüssel", "it": "Chiave a croce", "ja": "十字レンチ", "zh": "十字扳手", "ko": "십자 렌치", "ar": "مفتاح عجلات" },
+    "keywords": {
+      "es": ["cruceta", "birlos", "llanta ponchada", "cambiar llanta", "auxilio vial", "vulcanizadora", "llantera"],
+      "en": ["tire iron", "wheel nuts", "flat tire", "change tire", "roadside assistance", "tire shop", "cross wrench"]
+    }
+  },
+  "hex-key": {
+    "label": { "es": "Llave Allen", "en": "Hex key", "pt": "Chave Allen", "fr": "Clé Allen", "de": "Inbusschlüssel", "it": "Chiave a brugola", "ja": "六角レンチ", "zh": "内六角扳手", "ko": "육각 렌치", "ar": "مفتاح ألن" },
+    "keywords": {
+      "es": ["llave hexagonal", "armar muebles", "bicicleta", "instructivo de armado", "tornillo allen", "ensamble", "muebles para armar"],
+      "en": ["allen key", "allen wrench", "furniture assembly", "flat pack", "bicycle", "assembly instructions", "hex screw"]
+    }
+  },
+  "pliers": {
+    "label": { "es": "Pinzas universales", "en": "Pliers", "pt": "Alicate universal", "fr": "Pince universelle", "de": "Kombizange", "it": "Pinza universale", "ja": "ペンチ", "zh": "钢丝钳", "ko": "펜치", "ar": "كماشة" },
+    "keywords": {
+      "es": ["pinzas de electricista", "pinzas mecánicas", "alicates", "sujetar", "doblar alambre", "torcer", "ferretería", "reparaciones"],
+      "en": ["combination pliers", "linesman pliers", "grip", "bend wire", "twist", "hand tool", "repairs", "hardware store"]
+    }
+  },
+  "pliers-needle-nose": {
+    "label": { "es": "Pinzas de punta", "en": "Needle-nose pliers", "pt": "Alicate de bico", "fr": "Pince à bec long", "de": "Spitzzange", "it": "Pinza a becchi lunghi", "ja": "ラジオペンチ", "zh": "尖嘴钳", "ko": "롱노즈 플라이어", "ar": "كماشة مدببة" },
+    "keywords": {
+      "es": ["pinzas de punta larga", "electrónica", "joyería", "bisutería", "espacios reducidos", "trabajo fino", "doblar alambre"],
+      "en": ["long-nose pliers", "electronics", "jewelry making", "tight spots", "fine work", "bend wire", "small repairs"]
+    }
+  },
+  "wire-cutter": {
+    "label": { "es": "Pinzas de corte", "en": "Wire cutters", "pt": "Alicate de corte", "fr": "Pince coupante", "de": "Seitenschneider", "it": "Tronchesino", "ja": "ニッパー", "zh": "斜口钳", "ko": "니퍼", "ar": "قطّاعة أسلاك" },
+    "keywords": {
+      "es": ["pinzas de corte diagonal", "cortar cable", "cortar alambre", "electricidad", "electrónica", "alicate de corte", "cableado"],
+      "en": ["diagonal cutters", "side cutters", "snip wire", "cut cable", "electrical work", "electronics", "cable management"]
+    }
+  },
+  "wire-stripper": {
+    "label": { "es": "Pinzas pelacables", "en": "Wire stripper", "pt": "Alicate desencapador", "fr": "Pince à dénuder", "de": "Abisolierzange", "it": "Spelafili", "ja": "ワイヤーストリッパー", "zh": "剥线钳", "ko": "와이어 스트리퍼", "ar": "مقشرة أسلاك" },
+    "keywords": {
+      "es": ["pinzas peladoras", "pelar cable", "quitar aislante", "electricista", "instalación eléctrica", "cableado", "conectar cables"],
+      "en": ["strip wire", "remove insulation", "electrician", "wiring", "electrical installation", "crimper", "cable prep"]
+    }
+  },
+  "bolt-cutter": {
+    "label": { "es": "Cortapernos", "en": "Bolt cutter", "pt": "Corta-vergalhão", "fr": "Coupe-boulons", "de": "Bolzenschneider", "it": "Tagliabulloni", "ja": "ボルトクリッパー", "zh": "断线钳", "ko": "볼트 커터", "ar": "قاطعة مسامير" },
+    "keywords": {
+      "es": ["cizalla", "cortar candado", "cortar cadena", "cerrajero", "varilla", "corte de metal", "acceso de emergencia"],
+      "en": ["cut padlock", "cut chain", "locksmith", "rebar cutter", "cut metal", "break lock", "heavy cutter"]
+    }
+  },
+  "mallet": {
+    "label": { "es": "Mazo", "en": "Mallet", "pt": "Macete", "fr": "Maillet", "de": "Holzhammer", "it": "Mazzuolo", "ja": "木槌", "zh": "木槌", "ko": "나무망치", "ar": "مطرقة خشبية" },
+    "keywords": {
+      "es": ["mazo de hule", "mazo de madera", "golpear sin marcar", "armado", "carpintería", "colocar azulejo", "piso laminado"],
+      "en": ["rubber mallet", "wooden mallet", "tap", "assembly", "woodworking", "tiling", "laminate flooring"]
+    }
+  },
+  "sledgehammer": {
+    "label": { "es": "Marro", "en": "Sledgehammer", "pt": "Marreta", "fr": "Masse", "de": "Vorschlaghammer", "it": "Mazza", "ja": "スレッジハンマー", "zh": "大锤", "ko": "대형 해머", "ar": "مطرقة ثقيلة" },
+    "keywords": {
+      "es": ["mazo grande", "almádena", "demolición", "romper muro", "golpe fuerte", "trabajo pesado", "obra"],
+      "en": ["maul", "demolition", "break wall", "heavy blow", "heavy work", "smash", "construction"]
+    }
+  },
+  "crowbar": {
+    "label": { "es": "Pata de cabra", "en": "Crowbar", "pt": "Pé de cabra", "fr": "Pied-de-biche", "de": "Brecheisen", "it": "Piede di porco", "ja": "バール", "zh": "撬棍", "ko": "쇠지렛대", "ar": "عتلة" },
+    "keywords": {
+      "es": ["barreta", "barra de palanca", "hacer palanca", "demolición", "sacar clavos", "abrir cajas", "desmontar"],
+      "en": ["pry bar", "prying", "lever", "demolition", "pull nails", "open crate", "wrecking bar"]
+    }
+  },
+  "axe": {
+    "label": { "es": "Hacha", "en": "Axe", "pt": "Machado", "fr": "Hache", "de": "Axt", "it": "Ascia", "ja": "斧", "zh": "斧头", "ko": "도끼", "ar": "فأس" },
+    "keywords": {
+      "es": ["cortar leña", "leñador", "tala", "silvicultura", "madera", "partir troncos", "bosque"],
+      "en": ["chop wood", "lumberjack", "felling", "forestry", "firewood", "split logs", "woodcutter"]
+    }
+  },
+  "hatchet": {
+    "label": { "es": "Hachuela", "en": "Hatchet", "pt": "Machadinha", "fr": "Hachette", "de": "Beil", "it": "Accetta", "ja": "手斧", "zh": "手斧", "ko": "손도끼", "ar": "بلطة" },
+    "keywords": {
+      "es": ["hacha de mano", "acampar", "leña", "astillas", "cortar ramas", "campamento", "fogata"],
+      "en": ["hand axe", "camping", "kindling", "chop branches", "campfire", "firewood", "small axe"]
+    }
+  },
+  "pickaxe": {
+    "label": { "es": "Pico", "en": "Pickaxe", "pt": "Picareta", "fr": "Pioche", "de": "Spitzhacke", "it": "Piccone", "ja": "つるはし", "zh": "鹤嘴锄", "ko": "곡괭이", "ar": "معول" },
+    "keywords": {
+      "es": ["zapapico", "minería", "excavar", "romper roca", "picar tierra", "mina", "excavación"],
+      "en": ["pick", "mining", "dig", "break rock", "excavation", "mine", "quarry"]
+    }
+  },
+  "shovel": {
+    "label": { "es": "Pala", "en": "Shovel", "pt": "Pá", "fr": "Pelle", "de": "Schaufel", "it": "Pala", "ja": "シャベル", "zh": "铁锹", "ko": "삽", "ar": "مجرفة" },
+    "keywords": {
+      "es": ["cavar", "excavar", "palear tierra", "jardinería", "obra", "construcción", "quitar nieve"],
+      "en": ["spade", "dig", "move earth", "gardening", "construction site", "earthworks", "snow"]
+    }
+  },
+  "hand-saw": {
+    "label": { "es": "Serrucho", "en": "Hand saw", "pt": "Serrote", "fr": "Scie égoïne", "de": "Handsäge", "it": "Sega a mano", "ja": "のこぎり", "zh": "手锯", "ko": "톱", "ar": "منشار يدوي" },
+    "keywords": {
+      "es": ["sierra de mano", "cortar madera", "carpintería", "carpintero", "ebanistería", "aserrar", "trabajo en madera"],
+      "en": ["cut wood", "carpentry", "carpenter", "woodworking", "crosscut", "sawing", "panel saw"]
+    }
+  },
+  "hacksaw": {
+    "label": { "es": "Segueta", "en": "Hacksaw", "pt": "Arco de serra", "fr": "Scie à métaux", "de": "Metallsäge", "it": "Seghetto per metalli", "ja": "金切りのこ", "zh": "钢锯", "ko": "쇠톱", "ar": "منشار معادن" },
+    "keywords": {
+      "es": ["arco con segueta", "sierra para metal", "cortar metal", "cortar tubo", "herrería", "plomería", "cortar pvc"],
+      "en": ["cut metal", "metal saw", "cut pipe", "metalwork", "plumbing", "cut pvc", "fine-tooth saw"]
+    }
+  },
+  "utility-knife": {
+    "label": { "es": "Cúter", "en": "Utility knife", "pt": "Estilete", "fr": "Cutter", "de": "Cuttermesser", "it": "Taglierino", "ja": "カッターナイフ", "zh": "美工刀", "ko": "커터칼", "ar": "مشرط" },
+    "keywords": {
+      "es": ["navaja retráctil", "exacto", "cortador", "abrir cajas", "cortar cartón", "cortar tablaroca", "cortar alfombra"],
+      "en": ["box cutter", "retractable blade", "open boxes", "cut drywall", "cut carpet", "snap-off blade", "craft knife"]
+    }
+  },
+  "chisel": {
+    "label": { "es": "Formón", "en": "Chisel", "pt": "Formão", "fr": "Ciseau à bois", "de": "Stechbeitel", "it": "Scalpello da legno", "ja": "のみ", "zh": "凿子", "ko": "끌", "ar": "إزميل" },
+    "keywords": {
+      "es": ["escoplo", "cincel", "tallar madera", "ensambles", "caja y espiga", "ebanistería", "carpintería"],
+      "en": ["wood chisel", "carving", "joinery", "mortise", "woodworking", "carpentry", "gouge"]
+    }
+  },
+  "metal-file": {
+    "label": { "es": "Lima", "en": "Metal file", "pt": "Lima", "fr": "Lime", "de": "Feile", "it": "Lima", "ja": "やすり", "zh": "锉刀", "ko": "줄칼", "ar": "مبرد" },
+    "keywords": {
+      "es": ["escofina", "limar", "pulir metal", "rebabas", "dar forma", "herrería", "afilar"],
+      "en": ["rasp", "filing", "smooth metal", "deburr", "shape", "metalwork", "sharpen"]
+    }
+  },
+  "hand-plane": {
+    "label": { "es": "Cepillo de carpintero", "en": "Hand plane", "pt": "Plaina manual", "fr": "Rabot", "de": "Hobel", "it": "Pialla", "ja": "かんな", "zh": "刨子", "ko": "대패", "ar": "مسحاج خشب" },
+    "keywords": {
+      "es": ["cepillar madera", "garlopa", "alisar", "rebajar madera", "carpintería", "ebanistería", "acabado"],
+      "en": ["plane wood", "smoothing", "jack plane", "shave", "flatten board", "woodworking", "carpentry"]
+    }
+  },
+  "putty-knife": {
+    "label": { "es": "Espátula para resanar", "en": "Putty knife", "pt": "Espátula de massa", "fr": "Couteau à enduire", "de": "Spachtel", "it": "Spatola", "ja": "パテベラ", "zh": "腻子刀", "ko": "퍼티 나이프", "ar": "سكين معجون" },
+    "keywords": {
+      "es": ["rasqueta", "raspador", "pasta", "tapar hoyos", "rascar pintura", "preparar pared", "yeso"],
+      "en": ["scraper", "spackle", "patch wall", "fill holes", "scrape paint", "paint prep", "drywall knife"]
+    }
+  },
+  "sandpaper": {
+    "label": { "es": "Lija", "en": "Sandpaper", "pt": "Lixa", "fr": "Papier de verre", "de": "Schleifpapier", "it": "Carta vetrata", "ja": "紙やすり", "zh": "砂纸", "ko": "사포", "ar": "ورق صنفرة" },
+    "keywords": {
+      "es": ["lijar", "grano", "abrasivo", "papel abrasivo", "pulir", "acabado", "preparar superficie"],
+      "en": ["sanding", "grit", "abrasive", "emery paper", "smooth", "polish", "surface finish"]
+    }
+  },
+  "saw-blade": {
+    "label": { "es": "Disco de sierra", "en": "Saw blade", "pt": "Disco de serra", "fr": "Lame de scie circulaire", "de": "Kreissägeblatt", "it": "Lama circolare", "ja": "丸ノコ刃", "zh": "圆锯片", "ko": "원형 톱날", "ar": "شفرة منشار دائري" },
+    "keywords": {
+      "es": ["disco de corte", "hoja de sierra", "dientes", "accesorios de corte", "sierra circular", "medidas", "carpintería"],
+      "en": ["circular blade", "cutting disc", "teeth", "cutting accessories", "blade size", "replacement blade", "woodworking"]
+    }
+  },
+  "drill-bit": {
+    "label": { "es": "Broca", "en": "Drill bit", "pt": "Broca", "fr": "Foret", "de": "Bohrer", "it": "Punta da trapano", "ja": "ドリルビット", "zh": "钻头", "ko": "드릴 비트", "ar": "لقمة مثقاب" },
+    "keywords": {
+      "es": ["barrena", "barrenar", "perforar", "taladrar", "medidas", "accesorios de taladro", "punta para concreto"],
+      "en": ["twist bit", "drilling", "bore", "bit set", "sizes", "drill accessories", "masonry bit"]
+    }
+  },
+  "screw": {
+    "label": { "es": "Tornillo", "en": "Screw", "pt": "Parafuso", "fr": "Vis", "de": "Schraube", "it": "Vite", "ja": "ねじ", "zh": "螺丝", "ko": "나사", "ar": "برغي" },
+    "keywords": {
+      "es": ["pija", "tornillería", "atornillar", "fijación", "sujetador", "armado", "ferretería"],
+      "en": ["fastener", "wood screw", "drywall screw", "screw in", "fixing", "assembly", "hardware"]
+    }
+  },
+  "hex-bolt": {
+    "label": { "es": "Perno hexagonal", "en": "Hex bolt", "pt": "Parafuso sextavado", "fr": "Boulon hexagonal", "de": "Sechskantschraube", "it": "Bullone esagonale", "ja": "六角ボルト", "zh": "六角螺栓", "ko": "육각 볼트", "ar": "برغي سداسي" },
+    "keywords": {
+      "es": ["tornillo hexagonal", "cabeza hexagonal", "tuerca", "tornillería", "sujeción", "maquinaria", "ferretería"],
+      "en": ["bolt", "hex head", "machine bolt", "nut", "fastener", "assembly", "hardware"]
+    }
+  },
+  "nail": {
+    "label": { "es": "Clavo", "en": "Nail", "pt": "Prego", "fr": "Clou", "de": "Nagel", "it": "Chiodo", "ja": "釘", "zh": "钉子", "ko": "못", "ar": "مسمار" },
+    "keywords": {
+      "es": ["clavar", "martillo", "fijación", "colgar", "estructuras", "carpintería", "ferretería"],
+      "en": ["hammer", "pin", "fastener", "hang", "framing", "carpentry", "hardware"]
+    }
+  },
+  "washer": {
+    "label": { "es": "Rondana", "en": "Washer", "pt": "Arruela", "fr": "Rondelle", "de": "Unterlegscheibe", "it": "Rondella", "ja": "ワッシャー", "zh": "垫圈", "ko": "와셔", "ar": "حلقة معدنية" },
+    "keywords": {
+      "es": ["arandela", "plana", "tornillería", "tuerca", "sujeción", "repuesto", "ferretería"],
+      "en": ["ring", "spacer", "shim", "nut", "bolt", "fastener", "hardware"]
+    }
+  },
+  "rivet": {
+    "label": { "es": "Remache", "en": "Rivet", "pt": "Rebite", "fr": "Rivet", "de": "Niete", "it": "Rivetto", "ja": "リベット", "zh": "铆钉", "ko": "리벳", "ar": "برشام" },
+    "keywords": {
+      "es": ["remachadora", "remachar", "pop", "unir metal", "lámina", "herrería", "ferretería"],
+      "en": ["riveting", "join metal", "sheet metal", "metalwork", "aircraft", "fastener", "hardware"]
+    }
+  },
+  "wall-plug": {
+    "label": { "es": "Taquete", "en": "Wall plug", "pt": "Bucha", "fr": "Cheville", "de": "Dübel", "it": "Tassello", "ja": "壁用アンカー", "zh": "膨胀管", "ko": "벽 앵커", "ar": "خابور جدار" },
+    "keywords": {
+      "es": ["ancla", "tablaroca", "concreto", "fijar a la pared", "colgar", "pija", "montaje"],
+      "en": ["anchor", "drywall anchor", "dowel", "masonry", "fix to wall", "hang", "mounting"]
+    }
+  },
+  "eye-bolt": {
+    "label": { "es": "Armella", "en": "Eye bolt", "pt": "Parafuso olhal", "fr": "Boulon à œil", "de": "Ringschraube", "it": "Golfare", "ja": "アイボルト", "zh": "吊环螺栓", "ko": "아이볼트", "ar": "برغي حلقي" },
+    "keywords": {
+      "es": ["tornillo de ojo", "izar", "anclaje", "gancho", "colgar", "maniobras", "carga"],
+      "en": ["lifting eye", "anchor point", "rigging", "hoist", "hang loads", "hook", "lifting"]
+    }
+  },
+  "drill": {
+    "label": { "es": "Taladro", "en": "Drill", "pt": "Furadeira", "fr": "Perceuse", "de": "Bohrmaschine", "it": "Trapano", "ja": "電動ドリル", "zh": "电钻", "ko": "전동 드릴", "ar": "مثقاب كهربائي" },
+    "keywords": {
+      "es": ["inalámbrico", "atornillador", "perforar", "barrenar", "herramienta eléctrica", "instalación", "colgar cuadros", "montaje"],
+      "en": ["cordless", "drill driver", "power tool", "drilling", "screwdriver", "installation", "mounting", "hang pictures"]
+    }
+  },
+  "heat-gun": {
+    "label": { "es": "Pistola de calor", "en": "Heat gun", "pt": "Soprador térmico", "fr": "Décapeur thermique", "de": "Heißluftpistole", "it": "Pistola termica", "ja": "ヒートガン", "zh": "热风枪", "ko": "열풍기", "ar": "مسدس هواء ساخن" },
+    "keywords": {
+      "es": ["aire caliente", "decapar pintura", "termoencogible", "doblar plástico", "secar", "despegar", "calentar"],
+      "en": ["hot air", "strip paint", "heat shrink", "bend plastic", "drying", "remove adhesive", "heat"]
+    }
+  },
+  "paint-sprayer": {
+    "label": { "es": "Pistola para pintar", "en": "Paint sprayer", "pt": "Pistola de pintura", "fr": "Pistolet à peinture", "de": "Farbsprühpistole", "it": "Pistola a spruzzo", "ja": "スプレーガン", "zh": "喷漆枪", "ko": "스프레이 건", "ar": "مسدس رش الطلاء" },
+    "keywords": {
+      "es": ["rociar pintura", "compresor de pintura", "aerógrafo", "pintura en aerosol", "recubrimientos", "pintor", "servicio de pintura"],
+      "en": ["spray gun", "spray painting", "airbrush", "hvlp", "coatings", "painter", "painting services"]
+    }
+  },
+  "staple-gun": {
+    "label": { "es": "Engrapadora industrial", "en": "Staple gun", "pt": "Grampeador de tapeceiro", "fr": "Agrafeuse murale", "de": "Handtacker", "it": "Sparapunti", "ja": "タッカー", "zh": "码钉枪", "ko": "타카", "ar": "دباسة تنجيد" },
+    "keywords": {
+      "es": ["engrapar", "grapas", "tapicería", "tapicero", "aislante", "pegar carteles", "cercas"],
+      "en": ["stapler", "staples", "tacker", "upholstery", "insulation", "posters", "fencing"]
+    }
+  },
+  "soldering-iron": {
+    "label": { "es": "Cautín", "en": "Soldering iron", "pt": "Ferro de solda", "fr": "Fer à souder", "de": "Lötkolben", "it": "Saldatore", "ja": "はんだごて", "zh": "电烙铁", "ko": "납땜 인두", "ar": "كاوية لحام" },
+    "keywords": {
+      "es": ["soldar", "soldadura", "estaño", "electrónica", "reparación de circuitos", "punta de soldar", "cableado"],
+      "en": ["solder", "tin", "electronics repair", "circuit board", "pcb", "wiring", "soldering station"]
+    }
+  },
+  "circular-saw": {
+    "label": { "es": "Sierra circular", "en": "Circular saw", "pt": "Serra circular", "fr": "Scie circulaire", "de": "Kreissäge", "it": "Sega circolare", "ja": "丸ノコ", "zh": "电圆锯", "ko": "원형톱", "ar": "منشار دائري" },
+    "keywords": {
+      "es": ["sierra eléctrica", "cortar tablas", "cortar triplay", "corte recto", "herramienta eléctrica", "carpintería", "disco"],
+      "en": ["skill saw", "power saw", "cut boards", "cut plywood", "straight cut", "power tool", "carpentry"]
+    }
+  },
+  "jigsaw": {
+    "label": { "es": "Caladora", "en": "Jigsaw", "pt": "Serra tico-tico", "fr": "Scie sauteuse", "de": "Stichsäge", "it": "Seghetto alternativo", "ja": "ジグソー", "zh": "曲线锯", "ko": "직소", "ar": "منشار تخريم" },
+    "keywords": {
+      "es": ["sierra caladora", "sierra de vaivén", "cortes curvos", "calar", "recortes", "herramienta eléctrica", "carpintería"],
+      "en": ["bayonet saw", "curved cuts", "scroll cuts", "cutouts", "power saw", "power tool", "woodworking"]
+    }
+  },
+  "chainsaw": {
+    "label": { "es": "Motosierra", "en": "Chainsaw", "pt": "Motosserra", "fr": "Tronçonneuse", "de": "Kettensäge", "it": "Motosega", "ja": "チェーンソー", "zh": "链锯", "ko": "체인톱", "ar": "منشار سلسلي" },
+    "keywords": {
+      "es": ["tala de árboles", "poda", "cortar leña", "troncos", "silvicultura", "leñador", "jardinería"],
+      "en": ["tree felling", "pruning", "firewood", "cut logs", "forestry", "logging", "tree service"]
+    }
+  },
+  "miter-saw": {
+    "label": { "es": "Ingleteadora", "en": "Miter saw", "pt": "Serra de meia-esquadria", "fr": "Scie à onglet", "de": "Kappsäge", "it": "Troncatrice", "ja": "卓上丸ノコ", "zh": "斜切锯", "ko": "각도 절단기", "ar": "منشار زوايا" },
+    "keywords": {
+      "es": ["sierra de inglete", "sierra de corte", "cortes en ángulo", "molduras", "marcos", "zoclo", "taller"],
+      "en": ["chop saw", "angled cuts", "bevel", "trim", "framing", "molding", "crosscut"]
+    }
+  },
+  "table-saw": {
+    "label": { "es": "Sierra de mesa", "en": "Table saw", "pt": "Serra de bancada", "fr": "Scie sur table", "de": "Tischkreissäge", "it": "Sega da banco", "ja": "テーブルソー", "zh": "台锯", "ko": "테이블 쏘", "ar": "منشار طاولة" },
+    "keywords": {
+      "es": ["sierra de banco", "taller", "cortar tablas", "corte al hilo", "maquinaria", "carpintería", "ebanistería"],
+      "en": ["bench saw", "cabinet saw", "workshop", "rip cut", "cut boards", "woodworking machine", "carpentry"]
+    }
+  },
+  "jackhammer": {
+    "label": { "es": "Martillo demoledor", "en": "Jackhammer", "pt": "Martelo demolidor", "fr": "Marteau-piqueur", "de": "Abbruchhammer", "it": "Martello demolitore", "ja": "削岩機", "zh": "风镐", "ko": "착암기", "ar": "مطرقة هدم" },
+    "keywords": {
+      "es": ["rompedor", "martillo neumático", "romper concreto", "demolición", "obra vial", "pavimento", "rotomartillo"],
+      "en": ["demolition hammer", "pneumatic drill", "breaker", "break concrete", "demolition", "roadworks", "pavement"]
+    }
+  },
+  "drill-press": {
+    "label": { "es": "Taladro de banco", "en": "Drill press", "pt": "Furadeira de bancada", "fr": "Perceuse à colonne", "de": "Standbohrmaschine", "it": "Trapano a colonna", "ja": "ボール盤", "zh": "台钻", "ko": "탁상 드릴", "ar": "مثقاب عمودي" },
+    "keywords": {
+      "es": ["taladro de columna", "taladro vertical", "taller", "perforación precisa", "maquinaria", "makerspace", "barrenar"],
+      "en": ["bench drill", "pillar drill", "workshop", "precise drilling", "machine tool", "makerspace", "boring"]
+    }
+  },
+  "cord-reel": {
+    "label": { "es": "Carrete de extensión", "en": "Cord reel", "pt": "Extensão com carretel", "fr": "Enrouleur électrique", "de": "Kabeltrommel", "it": "Avvolgicavo", "ja": "電工ドラム", "zh": "电源线卷盘", "ko": "전선 릴", "ar": "بكرة تمديد كهربائي" },
+    "keywords": {
+      "es": ["extensión eléctrica", "enrollador de cable", "corriente en obra", "contactos", "multicontacto", "cable largo", "taller"],
+      "en": ["extension cord", "cable reel", "site power", "workshop power", "outlets", "long cable", "power supply"]
+    }
+  },
+  "tape-measure": {
+    "label": { "es": "Flexómetro", "en": "Tape measure", "pt": "Trena", "fr": "Mètre ruban", "de": "Maßband", "it": "Metro a nastro", "ja": "メジャー", "zh": "卷尺", "ko": "줄자", "ar": "شريط قياس" },
+    "keywords": {
+      "es": ["cinta métrica", "metro", "medir", "medidas", "dimensiones", "remodelación", "cotización"],
+      "en": ["measuring tape", "tape rule", "measure", "dimensions", "length", "renovation", "quote"]
+    }
+  },
+  "spirit-level": {
+    "label": { "es": "Nivel de burbuja", "en": "Spirit level", "pt": "Nível de bolha", "fr": "Niveau à bulle", "de": "Wasserwaage", "it": "Livella a bolla", "ja": "水平器", "zh": "水平尺", "ko": "수평계", "ar": "ميزان ماء" },
+    "keywords": {
+      "es": ["nivel de gota", "nivelar", "horizontal", "plomada", "derecho", "instalación", "albañilería"],
+      "en": ["bubble level", "leveling", "plumb", "horizontal", "straight", "installation", "masonry"]
+    }
+  },
+  "carpenter-square": {
+    "label": { "es": "Escuadra de carpintero", "en": "Framing square", "pt": "Esquadro de carpinteiro", "fr": "Équerre de charpentier", "de": "Zimmermannswinkel", "it": "Squadra da carpentiere", "ja": "さしがね", "zh": "木工角尺", "ko": "직각자", "ar": "زاوية نجار" },
+    "keywords": {
+      "es": ["ángulo recto", "90 grados", "trazo", "marcar cortes", "escuadra de acero", "carpintería", "carpintero"],
+      "en": ["carpenter square", "steel square", "right angle", "90 degrees", "layout", "marking", "carpentry"]
+    }
+  },
+  "voltage-tester": {
+    "label": { "es": "Detector de voltaje", "en": "Voltage tester", "pt": "Detector de tensão", "fr": "Détecteur de tension", "de": "Spannungsprüfer", "it": "Cercafase", "ja": "検電器", "zh": "测电笔", "ko": "검전기", "ar": "كاشف جهد" },
+    "keywords": {
+      "es": ["probador de corriente", "buscapolos", "pluma detectora", "electricista", "seguridad eléctrica", "cable vivo", "fase"],
+      "en": ["voltage pen", "non-contact tester", "electrician", "electrical safety", "live wire", "test circuit", "phase"]
+    }
+  },
+  "hinge": {
+    "label": { "es": "Bisagra", "en": "Hinge", "pt": "Dobradiça", "fr": "Charnière", "de": "Scharnier", "it": "Cerniera", "ja": "蝶番", "zh": "合页", "ko": "경첩", "ar": "مفصلة" },
+    "keywords": {
+      "es": ["puertas", "gabinetes", "alacenas", "herrajes", "pivote", "abatir", "carpintería"],
+      "en": ["door hinge", "cabinet", "pivot", "swing", "fittings", "hardware", "carpentry"]
+    }
+  },
+  "shelf-bracket": {
+    "label": { "es": "Ménsula", "en": "Shelf bracket", "pt": "Mão-francesa", "fr": "Équerre d’étagère", "de": "Regalwinkel", "it": "Staffa per mensola", "ja": "棚受け", "zh": "层板托", "ko": "선반 받침대", "ar": "حامل رف" },
+    "keywords": {
+      "es": ["escuadra para repisa", "repisa", "estante", "soporte", "colgar repisas", "herrajes", "escuadra"],
+      "en": ["l bracket", "angle bracket", "shelf", "shelving", "support", "wall mount", "hardware"]
+    }
+  },
+  "chain": {
+    "label": { "es": "Cadena", "en": "Chain", "pt": "Corrente", "fr": "Chaîne", "de": "Kette", "it": "Catena", "ja": "チェーン", "zh": "链条", "ko": "체인", "ar": "سلسلة" },
+    "keywords": {
+      "es": ["eslabones", "venta por metro", "izar", "asegurar", "amarrar", "candado", "ferretería"],
+      "en": ["links", "sold by the meter", "lifting", "secure", "tow", "padlock", "hardware"]
+    }
+  },
+  "bungee-cord": {
+    "label": { "es": "Cuerda elástica", "en": "Bungee cord", "pt": "Elástico extensor", "fr": "Tendeur élastique", "de": "Expanderseil", "it": "Corda elastica", "ja": "荷締めゴム", "zh": "弹力绳", "ko": "고무 로프", "ar": "حبل مطاطي" },
+    "keywords": {
+      "es": ["pulpo", "pulpo elástico", "liga con ganchos", "amarrar", "asegurar carga", "parrilla", "mudanza"],
+      "en": ["shock cord", "elastic strap", "tie-down", "hooks", "secure load", "roof rack", "luggage"]
+    }
+  },
+  "toolbox": {
+    "label": { "es": "Caja de herramientas", "en": "Toolbox", "pt": "Caixa de ferramentas", "fr": "Boîte à outils", "de": "Werkzeugkasten", "it": "Cassetta degli attrezzi", "ja": "工具箱", "zh": "工具箱", "ko": "공구함", "ar": "صندوق أدوات" },
+    "keywords": {
+      "es": ["kit de herramientas", "estuche", "reparaciones", "mantenimiento", "servicio a domicilio", "mil usos", "taller"],
+      "en": ["tool kit", "tool case", "repairs", "maintenance", "handyman", "home repair", "workshop"]
+    }
+  },
+  "toolbox-open": {
+    "label": { "es": "Caja de herramientas abierta", "en": "Open toolbox", "pt": "Caixa de ferramentas aberta", "fr": "Boîte à outils ouverte", "de": "Offener Werkzeugkasten", "it": "Cassetta degli attrezzi aperta", "ja": "開いた工具箱", "zh": "打开的工具箱", "ko": "열린 공구함", "ar": "صندوق أدوات مفتوح" },
+    "keywords": {
+      "es": ["herramientas disponibles", "kit completo", "préstamo de herramientas", "inventario", "equipo", "listo para trabajar", "reparar"],
+      "en": ["toolkit", "available tools", "tool library", "inventory", "equipment", "ready to work", "repair"]
+    }
+  },
+  "tool-bag": {
+    "label": { "es": "Bolsa de herramientas", "en": "Tool bag", "pt": "Bolsa de ferramentas", "fr": "Sac à outils", "de": "Werkzeugtasche", "it": "Borsa portautensili", "ja": "ツールバッグ", "zh": "工具包", "ko": "공구 가방", "ar": "حقيبة أدوات" },
+    "keywords": {
+      "es": ["maletín de herramientas", "bolsa de lona", "técnico", "servicio en campo", "electricista", "a domicilio", "kit de oficio"],
+      "en": ["tool tote", "tradesperson", "field service", "technician", "electrician", "carry tools", "on site"]
+    }
+  },
+  "tool-chest": {
+    "label": { "es": "Carro de herramientas", "en": "Tool chest", "pt": "Carrinho de ferramentas", "fr": "Servante d’atelier", "de": "Werkstattwagen", "it": "Carrello portautensili", "ja": "ツールワゴン", "zh": "工具车", "ko": "공구 카트", "ar": "عربة أدوات" },
+    "keywords": {
+      "es": ["gabinete de herramientas", "cajonera", "cochera", "taller mecánico", "almacenamiento", "ruedas", "organizar herramientas"],
+      "en": ["tool cabinet", "rolling cabinet", "roll cab", "drawers", "garage", "workshop storage", "mechanic"]
+    }
+  },
+  "parts-organizer": {
+    "label": { "es": "Organizador de piezas", "en": "Parts organizer", "pt": "Organizador de peças", "fr": "Boîte à compartiments", "de": "Sortimentskasten", "it": "Contenitore per minuteria", "ja": "パーツケース", "zh": "零件收纳盒", "ko": "부품 정리함", "ar": "منظم قطع صغيرة" },
+    "keywords": {
+      "es": ["caja organizadora", "compartimentos", "tornillería", "piezas pequeñas", "gaveteros", "inventario de taller", "almacenamiento"],
+      "en": ["small parts", "compartments", "screw storage", "bin", "sorting", "storage case", "workshop inventory"]
+    }
+  },
+  "pegboard": {
+    "label": { "es": "Panel perforado", "en": "Pegboard", "pt": "Painel perfurado", "fr": "Panneau perforé", "de": "Lochwand", "it": "Pannello forato", "ja": "有孔ボード", "zh": "洞洞板", "ko": "타공판", "ar": "لوح مثقب" },
+    "keywords": {
+      "es": ["tablero de herramientas", "pared de herramientas", "colgar herramientas", "ganchos", "organizar taller", "cochera", "almacenamiento"],
+      "en": ["tool wall", "tool board", "hang tools", "hooks", "workshop organization", "garage storage", "wall storage"]
+    }
+  },
+  "workbench": {
+    "label": { "es": "Banco de trabajo", "en": "Workbench", "pt": "Bancada de trabalho", "fr": "Établi", "de": "Werkbank", "it": "Banco da lavoro", "ja": "作業台", "zh": "工作台", "ko": "작업대", "ar": "طاولة عمل" },
+    "keywords": {
+      "es": ["mesa de trabajo", "taller", "makerspace", "hazlo tú mismo", "bricolaje", "proyectos", "carpintería"],
+      "en": ["work table", "workshop", "makerspace", "diy", "maker", "projects", "carpentry"]
+    }
+  },
+  "sawhorse": {
+    "label": { "es": "Caballete", "en": "Sawhorse", "pt": "Cavalete", "fr": "Tréteau", "de": "Sägebock", "it": "Cavalletto", "ja": "ソーホース", "zh": "锯木架", "ko": "작업 받침대", "ar": "حامل نشر" },
+    "keywords": {
+      "es": ["burro de carpintero", "soporte", "apoyar tablas", "mesa provisional", "obra", "carpintería", "taller"],
+      "en": ["trestle", "horse", "work support", "temporary table", "job site", "carpentry", "workshop"]
+    }
+  },
+  "clamp": {
+    "label": { "es": "Prensa tipo C", "en": "C-clamp", "pt": "Grampo C", "fr": "Presse en C", "de": "C-Zwinge", "it": "Morsetto a C", "ja": "Cクランプ", "zh": "C形夹", "ko": "C형 클램프", "ar": "ملزمة على شكل C" },
+    "keywords": {
+      "es": ["abrazadera", "sujetar", "apretar", "fijar", "pegar madera", "soldadura", "carpintería"],
+      "en": ["g-clamp", "hold", "grip", "fix in place", "gluing", "welding", "woodworking"]
+    }
+  },
+  "ladder": {
+    "label": { "es": "Escalera", "en": "Ladder", "pt": "Escada", "fr": "Échelle", "de": "Leiter", "it": "Scala", "ja": "はしご", "zh": "梯子", "ko": "사다리", "ar": "سلم" },
+    "keywords": {
+      "es": ["peldaños", "subir", "altura", "azotea", "techo", "ventanas", "mantenimiento"],
+      "en": ["rungs", "climb", "height", "roof", "gutter", "windows", "maintenance"]
+    }
+  },
+  "stepladder": {
+    "label": { "es": "Escalera de tijera", "en": "Stepladder", "pt": "Escada de abrir", "fr": "Escabeau", "de": "Stehleiter", "it": "Scala doppia", "ja": "脚立", "zh": "人字梯", "ko": "A형 사다리", "ar": "سلم قابل للطي" },
+    "keywords": {
+      "es": ["tijera", "plegable", "peldaños", "pintar", "tareas del hogar", "altura", "renta de equipo"],
+      "en": ["a-frame ladder", "step stool", "folding", "painting", "home tasks", "reach high", "rental"]
+    }
+  },
+  "paint-can": {
+    "label": { "es": "Bote de pintura", "en": "Paint can", "pt": "Lata de tinta", "fr": "Pot de peinture", "de": "Farbdose", "it": "Barattolo di vernice", "ja": "ペンキ缶", "zh": "油漆桶", "ko": "페인트 통", "ar": "علبة طلاء" },
+    "keywords": {
+      "es": ["galón", "cubeta", "vinílica", "esmalte", "colores", "pintar", "pintor"],
+      "en": ["gallon", "paint bucket", "tin", "primer", "colors", "painting", "painter"]
+    }
+  },
+  "flat-brush": {
+    "label": { "es": "Brocha", "en": "Flat paintbrush", "pt": "Trincha", "fr": "Brosse plate", "de": "Flachpinsel", "it": "Pennellessa", "ja": "平刷毛", "zh": "油漆刷", "ko": "평붓", "ar": "فرشاة طلاء" },
+    "keywords": {
+      "es": ["pincel", "pintar", "pintor", "paredes", "marcos", "decorar", "acabados"],
+      "en": ["brush", "painting", "painter", "walls", "trim", "decorating", "finishing"]
+    }
+  },
+  "glue": {
+    "label": { "es": "Pegamento", "en": "Glue", "pt": "Cola", "fr": "Colle", "de": "Klebstoff", "it": "Colla", "ja": "接着剤", "zh": "胶水", "ko": "접착제", "ar": "غراء" },
+    "keywords": {
+      "es": ["adhesivo", "cola", "pegar", "unir", "reparar", "tubo", "manualidades"],
+      "en": ["adhesive", "super glue", "stick", "bond", "repair", "tube", "crafts"]
+    }
+  },
+  "duct-tape": {
+    "label": { "es": "Cinta adhesiva", "en": "Adhesive tape", "pt": "Fita adesiva", "fr": "Ruban adhésif", "de": "Klebeband", "it": "Nastro adesivo", "ja": "粘着テープ", "zh": "胶带", "ko": "접착 테이프", "ar": "شريط لاصق" },
+    "keywords": {
+      "es": ["cinta gris", "cinta canela", "cinta de aislar", "masking", "sellar", "arreglo rápido", "empacar"],
+      "en": ["duct tape", "masking tape", "electrical tape", "packing tape", "quick fix", "seal", "taping"]
+    }
+  },
+  "engine-hoist": {
+    "label": { "es": "Grúa de taller", "en": "Engine hoist", "pt": "Guincho girafa", "fr": "Grue d’atelier", "de": "Werkstattkran", "it": "Gru da officina", "ja": "エンジンクレーン", "zh": "发动机吊架", "ko": "엔진 크레인", "ar": "رافعة محركات" },
+    "keywords": {
+      "es": ["pluma", "grúa para motor", "levantar motor", "piezas pesadas", "polipasto", "taller mecánico", "garaje"],
+      "en": ["shop crane", "cherry picker", "lift engine", "heavy parts", "hoist", "garage", "mechanic"]
+    }
+  },
+  "work-light": {
+    "label": { "es": "Lámpara de trabajo", "en": "Work light", "pt": "Luz de trabalho", "fr": "Lampe de chantier", "de": "Arbeitsleuchte", "it": "Lampada da lavoro", "ja": "作業灯", "zh": "工作灯", "ko": "작업등", "ar": "مصباح عمل" },
+    "keywords": {
+      "es": ["lámpara de obra", "reflector", "iluminación de obra", "luz portátil", "linterna", "led", "taller"],
+      "en": ["job site light", "floodlight", "portable light", "workshop lighting", "lantern", "led", "trouble light"]
+    }
+  },
+  "bar-clamp": {
+    "label": { "es": "Prensa de barra", "en": "Bar clamp", "pt": "Grampo sargento", "fr": "Serre-joint", "de": "Schraubzwinge", "it": "Strettoio", "ja": "F型クランプ", "zh": "F夹", "ko": "F형 클램프", "ar": "ملزمة قضيب" },
+    "keywords": {
+      "es": ["sargento", "prensa f", "encolar tablas", "pegar madera", "sujetar", "ebanistería", "carpintería"],
+      "en": ["f-clamp", "quick clamp", "glue up", "edge gluing", "hold boards", "cabinetry", "woodworking"]
+    }
+  }
+}

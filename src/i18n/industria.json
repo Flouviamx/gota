@@ -1,0 +1,366 @@
+{
+  "refinery": {
+    "label": { "es": "Refinería", "en": "Refinery", "pt": "Refinaria", "fr": "Raffinerie", "de": "Raffinerie", "it": "Raffineria", "ja": "製油所", "zh": "炼油厂", "ko": "정유 공장", "ar": "مصفاة نفط" },
+    "keywords": {
+      "es": ["petróleo y gas", "petroquímica", "planta de proceso", "refinación de crudo", "industria petrolera", "combustibles", "destilación"],
+      "en": ["oil and gas", "petrochemicals", "process plant", "crude oil", "downstream", "fuel production", "distillation"]
+    }
+  },
+  "oil-rig": {
+    "label": { "es": "Plataforma petrolera", "en": "Oil platform", "pt": "Plataforma de petróleo", "fr": "Plateforme pétrolière", "de": "Bohrinsel", "it": "Piattaforma petrolifera", "ja": "石油プラットフォーム", "zh": "海上石油平台", "ko": "해상 석유 플랫폼", "ar": "منصة نفط بحرية" },
+    "keywords": {
+      "es": ["costa afuera", "perforación marina", "aguas profundas", "extracción de crudo", "petróleo y gas", "producción en altamar", "offshore"],
+      "en": ["offshore", "offshore drilling", "offshore rig", "deepwater", "upstream", "oil and gas", "crude production"]
+    }
+  },
+  "drilling-rig": {
+    "label": { "es": "Torre de perforación", "en": "Drilling rig", "pt": "Sonda de perfuração", "fr": "Tour de forage", "de": "Bohrturm", "it": "Torre di perforazione", "ja": "掘削リグ", "zh": "钻井架", "ko": "시추탑", "ar": "برج حفر" },
+    "keywords": {
+      "es": ["pozo petrolero", "perforar pozos", "en tierra", "exploración", "operaciones de perforación", "gas natural", "pozo de agua"],
+      "en": ["oil well", "onshore", "derrick", "exploration", "well site", "fracking", "upstream"]
+    }
+  },
+  "smokestack": {
+    "label": { "es": "Chimenea industrial", "en": "Smokestack", "pt": "Chaminé industrial", "fr": "Cheminée industrielle", "de": "Fabrikschornstein", "it": "Ciminiera", "ja": "工場の煙突", "zh": "工业烟囱", "ko": "공장 굴뚝", "ar": "مدخنة مصنع" },
+    "keywords": {
+      "es": ["emisiones", "gases de combustión", "contaminación", "monitoreo de emisiones", "planta industrial", "humo", "calidad del aire"],
+      "en": ["emissions", "flue gas", "pollution", "stack monitoring", "factory", "smoke", "air quality"]
+    }
+  },
+  "machine": {
+    "label": { "es": "Máquina", "en": "Machine", "pt": "Máquina", "fr": "Machine", "de": "Maschine", "it": "Macchina", "ja": "機械", "zh": "机器", "ko": "기계", "ar": "آلة" },
+    "keywords": {
+      "es": ["centro de maquinado", "CNC", "equipo de producción", "activo", "centro de trabajo", "MES", "mantenimiento"],
+      "en": ["CNC", "machining center", "production equipment", "asset", "work center", "MES", "CMMS"]
+    }
+  },
+  "machine-check": {
+    "label": { "es": "Máquina operando", "en": "Machine running", "pt": "Máquina em operação", "fr": "Machine en marche", "de": "Maschine läuft", "it": "Macchina in funzione", "ja": "稼働中の機械", "zh": "机器运行正常", "ko": "기계 정상 가동", "ar": "الآلة تعمل" },
+    "keywords": {
+      "es": ["buen estado", "disponibilidad", "tiempo productivo", "sin fallas", "estado OK", "equipo disponible", "OEE"],
+      "en": ["uptime", "good condition", "OK status", "available", "no faults", "productive", "OEE"]
+    }
+  },
+  "machine-alert": {
+    "label": { "es": "Falla de máquina", "en": "Machine fault", "pt": "Falha na máquina", "fr": "Panne de machine", "de": "Maschinenstörung", "it": "Guasto alla macchina", "ja": "機械の異常", "zh": "机器故障", "ko": "기계 고장", "ar": "عطل في الآلة" },
+    "keywords": {
+      "es": ["alarma activa", "paro no programado", "avería", "requiere atención", "descompostura", "orden de mantenimiento", "tiempo muerto"],
+      "en": ["active alarm", "breakdown", "unplanned downtime", "needs attention", "error", "maintenance request", "machine down"]
+    }
+  },
+  "machine-clock": {
+    "label": { "es": "Máquina en espera", "en": "Machine idle", "pt": "Máquina em espera", "fr": "Machine en attente", "de": "Maschine im Leerlauf", "it": "Macchina in attesa", "ja": "待機中の機械", "zh": "机器待机", "ko": "기계 대기", "ar": "الآلة في وضع الانتظار" },
+    "keywords": {
+      "es": ["tiempo ocioso", "paro programado", "tiempo de ciclo", "espera de material", "inactiva", "cambio de modelo", "mantenimiento planeado"],
+      "en": ["idle time", "waiting", "scheduled stop", "cycle time", "planned downtime", "standby", "changeover"]
+    }
+  },
+  "machine-vibration": {
+    "label": { "es": "Vibración anormal", "en": "Abnormal vibration", "pt": "Vibração anormal", "fr": "Vibration anormale", "de": "Ungewöhnliche Vibration", "it": "Vibrazione anomala", "ja": "異常振動", "zh": "异常振动", "ko": "이상 진동", "ar": "اهتزاز غير طبيعي" },
+    "keywords": {
+      "es": ["mantenimiento predictivo", "monitoreo de condición", "sensor de vibración", "desbalanceo", "desgaste", "desalineación", "falla incipiente"],
+      "en": ["predictive maintenance", "condition monitoring", "vibration sensor", "imbalance", "wear", "misalignment", "early fault"]
+    }
+  },
+  "milling-machine": {
+    "label": { "es": "Fresadora", "en": "Milling machine", "pt": "Fresadora", "fr": "Fraiseuse", "de": "Fräsmaschine", "it": "Fresatrice", "ja": "フライス盤", "zh": "铣床", "ko": "밀링 머신", "ar": "آلة تفريز" },
+    "keywords": {
+      "es": ["fresado", "maquinado", "taller mecánico", "tipo rodilla", "corte de metal", "ranurado", "fresador"],
+      "en": ["milling", "machining", "machine shop", "knee mill", "metal cutting", "slotting", "mill"]
+    }
+  },
+  "stamping-press": {
+    "label": { "es": "Prensa troqueladora", "en": "Stamping press", "pt": "Prensa de estampagem", "fr": "Presse d’emboutissage", "de": "Stanzpresse", "it": "Pressa per stampaggio", "ja": "プレス機", "zh": "冲压机", "ko": "프레스 기계", "ar": "مكبس ختم" },
+    "keywords": {
+      "es": ["troquelado", "estampado", "prensa hidráulica", "prensa mecánica", "forja", "lámina", "troquel"],
+      "en": ["stamping", "hydraulic press", "mechanical press", "forging press", "sheet metal", "die", "punch press"]
+    }
+  },
+  "stack-light": {
+    "label": { "es": "Torreta de señalización", "en": "Stack light", "pt": "Torre de sinalização", "fr": "Colonne lumineuse", "de": "Signalsäule", "it": "Colonna luminosa", "ja": "積層信号灯", "zh": "信号灯塔", "ko": "적층형 신호등", "ar": "برج إشارات ضوئية" },
+    "keywords": {
+      "es": ["andon", "semáforo de máquina", "estado de la línea", "luz de alarma", "torre de luces", "paro de línea", "estatus de máquina"],
+      "en": ["andon", "signal tower", "tower light", "line status", "alarm light", "machine status", "beacon"]
+    }
+  },
+  "control-panel": {
+    "label": { "es": "Panel de operador", "en": "Operator panel", "pt": "Painel do operador", "fr": "Pupitre opérateur", "de": "Bedienpanel", "it": "Pannello operatore", "ja": "操作パネル", "zh": "操作面板", "ko": "조작 패널", "ar": "لوحة المشغل" },
+    "keywords": {
+      "es": ["HMI", "interfaz hombre máquina", "pantalla táctil", "SCADA", "control de máquina", "consola", "botonera"],
+      "en": ["HMI", "human machine interface", "touch screen", "SCADA", "machine control", "console", "pushbuttons"]
+    }
+  },
+  "control-cabinet": {
+    "label": { "es": "Gabinete eléctrico", "en": "Control cabinet", "pt": "Painel elétrico", "fr": "Armoire électrique", "de": "Schaltschrank", "it": "Quadro elettrico", "ja": "制御盤", "zh": "电气控制柜", "ko": "제어반", "ar": "خزانة تحكم كهربائية" },
+    "keywords": {
+      "es": ["tablero eléctrico", "tablero de control", "armado de tableros", "automatización", "centro de control de motores", "cableado", "interruptores"],
+      "en": ["electrical panel", "enclosure", "panel building", "automation panel", "motor control center", "wiring", "switchgear"]
+    }
+  },
+  "factory-connected": {
+    "label": { "es": "Fábrica conectada", "en": "Connected factory", "pt": "Fábrica conectada", "fr": "Usine connectée", "de": "Vernetzte Fabrik", "it": "Fabbrica connessa", "ja": "スマート工場", "zh": "互联工厂", "ko": "스마트 공장", "ar": "مصنع متصل" },
+    "keywords": {
+      "es": ["fábrica inteligente", "IIoT", "Industria 4.0", "internet de las cosas", "conectividad de planta", "sensores", "monitoreo remoto"],
+      "en": ["smart factory", "IIoT", "Industry 4.0", "internet of things", "plant connectivity", "sensors", "remote monitoring"]
+    }
+  },
+  "industrial-furnace": {
+    "label": { "es": "Horno industrial", "en": "Industrial furnace", "pt": "Forno industrial", "fr": "Four industriel", "de": "Industrieofen", "it": "Forno industriale", "ja": "工業炉", "zh": "工业炉", "ko": "산업용 가열로", "ar": "فرن صناعي" },
+    "keywords": {
+      "es": ["tratamiento térmico", "recocido", "curado", "temple", "horneado", "alta temperatura", "secado"],
+      "en": ["heat treatment", "annealing", "curing", "oven", "tempering", "high temperature", "kiln"]
+    }
+  },
+  "crucible": {
+    "label": { "es": "Crisol", "en": "Crucible", "pt": "Cadinho", "fr": "Creuset", "de": "Schmelztiegel", "it": "Crogiolo", "ja": "るつぼ", "zh": "坩埚", "ko": "도가니", "ar": "بوتقة" },
+    "keywords": {
+      "es": ["fundición", "metal fundido", "colada", "vaciado de metal", "fundidora", "derretir metal", "aleación"],
+      "en": ["foundry", "molten metal", "melting", "pouring", "metal casting", "smelting", "alloy"]
+    }
+  },
+  "anvil": {
+    "label": { "es": "Yunque", "en": "Anvil", "pt": "Bigorna", "fr": "Enclume", "de": "Amboss", "it": "Incudine", "ja": "金床", "zh": "铁砧", "ko": "모루", "ar": "سندان" },
+    "keywords": {
+      "es": ["forja", "herrería", "herrero", "metalurgia", "trabajo en metal", "martillo", "fragua"],
+      "en": ["forging", "blacksmith", "smithy", "metalworking", "hammer", "forge", "ironwork"]
+    }
+  },
+  "mine-cart": {
+    "label": { "es": "Vagoneta minera", "en": "Mine cart", "pt": "Vagonete de mina", "fr": "Wagonnet de mine", "de": "Grubenwagen", "it": "Carrello da miniera", "ja": "トロッコ", "zh": "矿车", "ko": "광차", "ar": "عربة منجم" },
+    "keywords": {
+      "es": ["minería", "mina", "acarreo de mineral", "extracción", "sector minero", "carbón", "carro minero"],
+      "en": ["mining", "ore haulage", "extraction", "mining sector", "coal", "ore car", "tram"]
+    }
+  },
+  "robotic-arm": {
+    "label": { "es": "Brazo robótico", "en": "Robotic arm", "pt": "Braço robótico", "fr": "Bras robotisé", "de": "Roboterarm", "it": "Braccio robotico", "ja": "ロボットアーム", "zh": "机械臂", "ko": "로봇 팔", "ar": "ذراع روبوتية" },
+    "keywords": {
+      "es": ["robot industrial", "automatización", "celda robótica", "cobot", "manufactura", "ensamble automático", "soldadura robotizada"],
+      "en": ["industrial robot", "automation", "robotic cell", "cobot", "manufacturing", "automated assembly", "robot welding"]
+    }
+  },
+  "assembly-line": {
+    "label": { "es": "Línea de ensamble", "en": "Assembly line", "pt": "Linha de montagem", "fr": "Chaîne de montage", "de": "Montagelinie", "it": "Catena di montaggio", "ja": "組立ライン", "zh": "装配线", "ko": "조립 라인", "ar": "خط تجميع" },
+    "keywords": {
+      "es": ["línea de producción", "estaciones", "estado de la línea", "manufactura", "producción en serie", "armadora", "flujo de producción"],
+      "en": ["production line", "workstations", "line status", "manufacturing", "mass production", "takt time", "flow line"]
+    }
+  },
+  "bottling-line": {
+    "label": { "es": "Línea de embotellado", "en": "Bottling line", "pt": "Linha de envase", "fr": "Ligne d’embouteillage", "de": "Abfüllanlage", "it": "Linea di imbottigliamento", "ja": "充填ライン", "zh": "灌装线", "ko": "병입 라인", "ar": "خط تعبئة" },
+    "keywords": {
+      "es": ["llenado", "envasado", "bebidas", "alimentos", "farmacéutica", "botellas", "embotelladora"],
+      "en": ["filling", "packaging", "beverages", "food production", "pharma", "bottles", "bottler"]
+    }
+  },
+  "induction-motor": {
+    "label": { "es": "Motor eléctrico", "en": "Electric motor", "pt": "Motor elétrico", "fr": "Moteur électrique", "de": "Elektromotor", "it": "Motore elettrico", "ja": "電動機", "zh": "电动机", "ko": "전동기", "ar": "محرك كهربائي" },
+    "keywords": {
+      "es": ["motor de inducción", "motor trifásico", "equipo rotativo", "activo de mantenimiento", "variador", "potencia", "caballos de fuerza"],
+      "en": ["AC motor", "three-phase motor", "rotating equipment", "maintenance asset", "VFD", "horsepower", "drive"]
+    }
+  },
+  "hydraulic-cylinder": {
+    "label": { "es": "Cilindro hidráulico", "en": "Hydraulic cylinder", "pt": "Cilindro hidráulico", "fr": "Vérin hydraulique", "de": "Hydraulikzylinder", "it": "Cilindro idraulico", "ja": "油圧シリンダー", "zh": "液压缸", "ko": "유압 실린더", "ar": "أسطوانة هيدروليكية" },
+    "keywords": {
+      "es": ["pistón", "actuador", "cilindro neumático", "vástago", "émbolo", "fuerza lineal", "aceite a presión"],
+      "en": ["piston", "actuator", "pneumatic cylinder", "ram", "rod", "linear force", "fluid power"]
+    }
+  },
+  "ball-bearing": {
+    "label": { "es": "Balero", "en": "Ball bearing", "pt": "Rolamento de esferas", "fr": "Roulement à billes", "de": "Kugellager", "it": "Cuscinetto a sfere", "ja": "ボールベアリング", "zh": "滚珠轴承", "ko": "볼 베어링", "ar": "محمل كروي" },
+    "keywords": {
+      "es": ["rodamiento", "cojinete", "refacciones", "equipo rotativo", "lubricación", "mantenimiento", "chumacera"],
+      "en": ["bearing", "spare parts", "rotating equipment", "lubrication", "maintenance", "roller bearing", "pillow block"]
+    }
+  },
+  "coil-spring": {
+    "label": { "es": "Resorte", "en": "Coil spring", "pt": "Mola", "fr": "Ressort", "de": "Schraubenfeder", "it": "Molla", "ja": "コイルばね", "zh": "螺旋弹簧", "ko": "코일 스프링", "ar": "نابض لولبي" },
+    "keywords": {
+      "es": ["muelle", "refacciones", "tensión", "compresión", "elementos de máquina", "amortiguación", "elasticidad"],
+      "en": ["spare parts", "tension", "compression", "machine elements", "suspension", "elasticity", "damping"]
+    }
+  },
+  "pulley": {
+    "label": { "es": "Polea", "en": "Pulley", "pt": "Polia", "fr": "Poulie", "de": "Seilrolle", "it": "Carrucola", "ja": "滑車", "zh": "滑轮", "ko": "도르래", "ar": "بكرة" },
+    "keywords": {
+      "es": ["garrucha", "levantar cargas", "ventaja mecánica", "cuerda", "mecanismo", "aparejo", "física"],
+      "en": ["sheave", "lifting", "mechanical advantage", "rope", "mechanism", "block and tackle", "physics"]
+    }
+  },
+  "belt-drive": {
+    "label": { "es": "Transmisión por banda", "en": "Belt drive", "pt": "Transmissão por correia", "fr": "Transmission par courroie", "de": "Riemenantrieb", "it": "Trasmissione a cinghia", "ja": "ベルト駆動", "zh": "皮带传动", "ko": "벨트 구동", "ar": "نقل الحركة بالسير" },
+    "keywords": {
+      "es": ["banda", "poleas", "transmisión de potencia", "elementos de máquina", "correa", "motor", "refacciones"],
+      "en": ["V-belt", "pulleys", "power transmission", "machine elements", "drive belt", "motor", "timing belt"]
+    }
+  },
+  "rack-and-pinion": {
+    "label": { "es": "Piñón y cremallera", "en": "Rack and pinion", "pt": "Pinhão e cremalheira", "fr": "Pignon et crémaillère", "de": "Zahnstangengetriebe", "it": "Pignone e cremagliera", "ja": "ラックアンドピニオン", "zh": "齿轮齿条", "ko": "랙 앤 피니언", "ar": "ترس وجريدة مسننة" },
+    "keywords": {
+      "es": ["movimiento lineal", "engranes", "actuador", "mecanismo", "transmisión", "dirección", "elementos de máquina"],
+      "en": ["linear motion", "gears", "actuator", "mechanism", "transmission", "steering", "gear rack"]
+    }
+  },
+  "overhead-crane": {
+    "label": { "es": "Grúa viajera", "en": "Overhead crane", "pt": "Ponte rolante", "fr": "Pont roulant", "de": "Brückenkran", "it": "Carroponte", "ja": "天井クレーン", "zh": "桥式起重机", "ko": "천장 크레인", "ar": "رافعة علوية" },
+    "keywords": {
+      "es": ["grúa puente", "polipasto", "izaje", "carga pesada", "nave industrial", "elevación en planta", "maniobras"],
+      "en": ["bridge crane", "hoist", "lifting", "heavy load", "factory bay", "in-plant lifting", "EOT crane"]
+    }
+  },
+  "gantry-crane": {
+    "label": { "es": "Grúa pórtico", "en": "Gantry crane", "pt": "Pórtico rolante", "fr": "Portique de levage", "de": "Portalkran", "it": "Gru a portale", "ja": "門型クレーン", "zh": "龙门起重机", "ko": "갠트리 크레인", "ar": "رافعة قنطرية" },
+    "keywords": {
+      "es": ["izaje", "patio de maniobras", "patio de contenedores", "carga pesada", "grúa de patio", "elevación", "puerto"],
+      "en": ["lifting", "yard crane", "container yard", "heavy load", "goliath crane", "rail-mounted", "port"]
+    }
+  },
+  "flange": {
+    "label": { "es": "Brida", "en": "Flange", "pt": "Flange", "fr": "Bride", "de": "Flansch", "it": "Flangia", "ja": "フランジ", "zh": "法兰", "ko": "플랜지", "ar": "شفة توصيل" },
+    "keywords": {
+      "es": ["unión bridada", "tubería", "conexión", "empaque", "tornillería", "junta", "ductos"],
+      "en": ["flanged joint", "piping", "pipe connection", "gasket", "bolts", "joint", "pipe fitting"]
+    }
+  },
+  "pipeline": {
+    "label": { "es": "Ducto", "en": "Pipeline", "pt": "Duto", "fr": "Pipeline", "de": "Pipeline", "it": "Condotta", "ja": "パイプライン", "zh": "管道", "ko": "파이프라인", "ar": "خط أنابيب" },
+    "keywords": {
+      "es": ["tubería", "gasoducto", "oleoducto", "petróleo y gas", "tubería de proceso", "acueducto", "conducción"],
+      "en": ["piping", "gas line", "oil line", "oil and gas", "process piping", "pipe network", "midstream"]
+    }
+  },
+  "pipeline-leak": {
+    "label": { "es": "Fuga en ducto", "en": "Pipeline leak", "pt": "Vazamento em duto", "fr": "Fuite de pipeline", "de": "Leck in der Pipeline", "it": "Perdita nella condotta", "ja": "パイプラインの漏れ", "zh": "管道泄漏", "ko": "파이프라인 누출", "ar": "تسرب في خط الأنابيب" },
+    "keywords": {
+      "es": ["derrame", "pérdida de contención", "goteo", "tubería rota", "escape de gas", "incidente", "emergencia ambiental"],
+      "en": ["spill", "loss of containment", "drip", "burst pipe", "gas escape", "incident", "environmental emergency"]
+    }
+  },
+  "pump": {
+    "label": { "es": "Bomba", "en": "Pump", "pt": "Bomba", "fr": "Pompe", "de": "Pumpe", "it": "Pompa", "ja": "ポンプ", "zh": "泵", "ko": "펌프", "ar": "مضخة" },
+    "keywords": {
+      "es": ["centrífuga", "estación de bombeo", "bombeo", "equipo rotativo", "agua", "impulsor", "presión"],
+      "en": ["centrifugal", "pumping station", "pumping", "rotating equipment", "water", "impeller", "transfer"]
+    }
+  },
+  "valve": {
+    "label": { "es": "Válvula", "en": "Valve", "pt": "Válvula", "fr": "Vanne", "de": "Ventil", "it": "Valvola", "ja": "バルブ", "zh": "阀门", "ko": "밸브", "ar": "صمام" },
+    "keywords": {
+      "es": ["llave de paso", "compuerta", "globo", "tubería", "control de flujo", "cerrar el paso", "volante"],
+      "en": ["shutoff", "gate", "globe", "piping", "flow control", "handwheel", "isolation"]
+    }
+  },
+  "control-valve": {
+    "label": { "es": "Válvula de control", "en": "Control valve", "pt": "Válvula de controle", "fr": "Vanne de régulation", "de": "Regelventil", "it": "Valvola di regolazione", "ja": "調節弁", "zh": "调节阀", "ko": "제어 밸브", "ar": "صمام تحكم" },
+    "keywords": {
+      "es": ["actuador", "automatizada", "control de proceso", "regulación", "neumática", "posicionador", "lazo de control"],
+      "en": ["actuator", "automated", "process control", "regulation", "pneumatic", "positioner", "control loop"]
+    }
+  },
+  "pressure-gauge": {
+    "label": { "es": "Manómetro", "en": "Pressure gauge", "pt": "Manômetro", "fr": "Manomètre", "de": "Manometer", "it": "Manometro", "ja": "圧力計", "zh": "压力表", "ko": "압력계", "ar": "مقياس الضغط" },
+    "keywords": {
+      "es": ["presión", "carátula", "medidor", "aguja", "psi", "tanque", "indicador"],
+      "en": ["manometer", "readout", "gauge needle", "psi", "tank", "dial", "indicator"]
+    }
+  },
+  "air-compressor": {
+    "label": { "es": "Compresor de aire", "en": "Air compressor", "pt": "Compressor de ar", "fr": "Compresseur d’air", "de": "Luftkompressor", "it": "Compressore d’aria", "ja": "エアコンプレッサー", "zh": "空气压缩机", "ko": "공기 압축기", "ar": "ضاغط هواء" },
+    "keywords": {
+      "es": ["aire comprimido", "neumática", "tanque de aire", "presión", "herramientas neumáticas", "red de aire", "mantenimiento"],
+      "en": ["compressed air", "pneumatics", "air tank", "pressure", "pneumatic tools", "air system", "receiver"]
+    }
+  },
+  "storage-tank": {
+    "label": { "es": "Tanque de almacenamiento", "en": "Storage tank", "pt": "Tanque de armazenamento", "fr": "Réservoir de stockage", "de": "Lagertank", "it": "Serbatoio di stoccaggio", "ja": "貯蔵タンク", "zh": "储罐", "ko": "저장 탱크", "ar": "خزان تخزين" },
+    "keywords": {
+      "es": ["nivel", "patio de tanques", "inventario de líquidos", "depósito", "combustible", "agua", "cisterna"],
+      "en": ["level", "tank farm", "liquid inventory", "reservoir", "fuel", "water", "vessel"]
+    }
+  },
+  "mixing-tank": {
+    "label": { "es": "Tanque mezclador", "en": "Mixing tank", "pt": "Tanque de mistura", "fr": "Cuve de mélange", "de": "Rührbehälter", "it": "Serbatoio di miscelazione", "ja": "撹拌槽", "zh": "搅拌罐", "ko": "혼합 탱크", "ar": "خزان خلط" },
+    "keywords": {
+      "es": ["agitador", "reactor", "proceso por lotes", "batch", "formulación", "homogeneizar", "química"],
+      "en": ["agitator", "mixer", "reactor", "batch processing", "blending", "formulation", "chemical"]
+    }
+  },
+  "fermentation-tank": {
+    "label": { "es": "Fermentador", "en": "Fermenter", "pt": "Fermentador", "fr": "Fermenteur", "de": "Gärtank", "it": "Fermentatore", "ja": "発酵タンク", "zh": "发酵罐", "ko": "발효 탱크", "ar": "خزان تخمير" },
+    "keywords": {
+      "es": ["tanque cónico", "cervecería", "cerveza artesanal", "biotecnología", "vino", "alimentos", "farmacéutica"],
+      "en": ["conical tank", "brewery", "craft beer", "biotech", "bioreactor", "food production", "pharma"]
+    }
+  },
+  "tote-tank": {
+    "label": { "es": "Contenedor IBC", "en": "IBC tote", "pt": "Contêiner IBC", "fr": "Conteneur IBC", "de": "IBC-Container", "it": "Cisternetta IBC", "ja": "IBCコンテナ", "zh": "IBC 吨桶", "ko": "IBC 탱크", "ar": "حاوية IBC" },
+    "keywords": {
+      "es": ["tote", "líquidos a granel", "químicos", "contenedor de 1000 litros", "almacenamiento de líquidos", "transporte de líquidos", "materiales peligrosos"],
+      "en": ["intermediate bulk container", "bulk liquids", "chemicals", "1000 liter container", "pallet tank", "liquid storage", "hazmat"]
+    }
+  },
+  "hopper": {
+    "label": { "es": "Tolva", "en": "Hopper", "pt": "Tremonha", "fr": "Trémie", "de": "Fülltrichter", "it": "Tramoggia", "ja": "ホッパー", "zh": "料斗", "ko": "호퍼", "ar": "قادوس" },
+    "keywords": {
+      "es": ["alimentación", "granel", "dosificación", "silo", "embudo", "materia prima", "carga de material"],
+      "en": ["feed bin", "bulk material", "dosing", "silo", "funnel", "feeder", "raw material"]
+    }
+  },
+  "workpiece": {
+    "label": { "es": "Pieza", "en": "Part", "pt": "Peça", "fr": "Pièce", "de": "Werkstück", "it": "Pezzo", "ja": "部品", "zh": "工件", "ko": "부품", "ar": "قطعة" },
+    "keywords": {
+      "es": ["componente", "número de parte", "SKU", "producto", "artículo", "refacción", "manufactura"],
+      "en": ["piece", "component", "part number", "SKU", "item", "product", "manufacturing"]
+    }
+  },
+  "workpiece-batch": {
+    "label": { "es": "Lote de piezas", "en": "Batch of parts", "pt": "Lote de peças", "fr": "Lot de pièces", "de": "Fertigungslos", "it": "Lotto di pezzi", "ja": "部品ロット", "zh": "零件批次", "ko": "부품 로트", "ar": "دفعة من القطع" },
+    "keywords": {
+      "es": ["cantidad", "orden de producción", "trazabilidad", "inventario", "corrida", "batch", "producción por turno"],
+      "en": ["lot", "production quantity", "work order", "traceability", "inventory", "production run", "parts count"]
+    }
+  },
+  "workpiece-check": {
+    "label": { "es": "Pieza aprobada", "en": "Passed part", "pt": "Peça aprovada", "fr": "Pièce conforme", "de": "Gutteil", "it": "Pezzo conforme", "ja": "合格品", "zh": "合格品", "ko": "합격품", "ar": "قطعة مطابقة" },
+    "keywords": {
+      "es": ["control de calidad", "conforme", "inspección aprobada", "sin defectos", "liberada", "calidad OK", "dentro de especificación"],
+      "en": ["QC pass", "conforming", "inspection passed", "no defects", "released", "quality OK", "within spec"]
+    }
+  },
+  "workpiece-x": {
+    "label": { "es": "Pieza rechazada", "en": "Rejected part", "pt": "Peça rejeitada", "fr": "Pièce rejetée", "de": "Ausschussteil", "it": "Pezzo scartato", "ja": "不良品", "zh": "不合格品", "ko": "불량품", "ar": "قطعة مرفوضة" },
+    "keywords": {
+      "es": ["scrap", "merma", "no conforme", "defecto", "inspección fallida", "desperdicio", "retrabajo"],
+      "en": ["scrap", "nonconforming", "defect", "failed inspection", "NCR", "waste", "rework"]
+    }
+  },
+  "workpiece-search": {
+    "label": { "es": "Inspeccionar pieza", "en": "Inspect part", "pt": "Inspecionar peça", "fr": "Inspecter la pièce", "de": "Werkstück prüfen", "it": "Ispeziona pezzo", "ja": "部品を検査", "zh": "检验零件", "ko": "부품 검사", "ar": "فحص القطعة" },
+    "keywords": {
+      "es": ["revisión de calidad", "buscar pieza", "revisar", "lupa", "muestreo", "auditoría", "número de parte"],
+      "en": ["quality check", "find a part", "examine", "magnifier", "sampling", "audit", "part lookup"]
+    }
+  },
+  "workpiece-dimensions": {
+    "label": { "es": "Dimensiones de la pieza", "en": "Part dimensions", "pt": "Dimensões da peça", "fr": "Cotes de la pièce", "de": "Werkstückmaße", "it": "Dimensioni del pezzo", "ja": "部品の寸法", "zh": "工件尺寸", "ko": "부품 치수", "ar": "أبعاد القطعة" },
+    "keywords": {
+      "es": ["tolerancias", "especificaciones", "metrología", "medidas", "cotas", "plano", "calibración"],
+      "en": ["tolerances", "specs", "metrology", "measurements", "drawing", "GD&T", "size"]
+    }
+  },
+  "exploded-view": {
+    "label": { "es": "Vista explosionada", "en": "Exploded view", "pt": "Vista explodida", "fr": "Vue éclatée", "de": "Explosionszeichnung", "it": "Vista esplosa", "ja": "分解図", "zh": "爆炸图", "ko": "분해도", "ar": "مخطط تفكيكي" },
+    "keywords": {
+      "es": ["lista de materiales", "BOM", "ensamble", "componentes", "despiece", "refacciones", "dibujo técnico"],
+      "en": ["bill of materials", "BOM", "assembly", "components", "parts breakdown", "spare parts", "technical drawing"]
+    }
+  },
+  "platform-scale": {
+    "label": { "es": "Báscula de piso", "en": "Floor scale", "pt": "Balança de plataforma", "fr": "Balance plateforme", "de": "Bodenwaage", "it": "Bilancia a piattaforma", "ja": "台はかり", "zh": "台秤", "ko": "플랫폼 저울", "ar": "ميزان أرضي" },
+    "keywords": {
+      "es": ["pesaje", "pesar tarimas", "tambos", "lotes", "peso neto", "kilos", "control de peso"],
+      "en": ["weighing", "weigh pallets", "drums", "batches", "net weight", "kilograms", "load cell"]
+    }
+  }
+}

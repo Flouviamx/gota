@@ -1,0 +1,352 @@
+{
+  "university": {
+    "label": { "es": "Universidad", "en": "University", "pt": "Universidade", "fr": "Université", "de": "Universität", "it": "Università", "ja": "大学", "zh": "大学", "ko": "대학교", "ar": "جامعة" },
+    "keywords": {
+      "es": ["facultad", "educación superior", "campus universitario", "admisiones", "licenciatura", "carrera", "posgrado"],
+      "en": ["college", "higher education", "campus", "admissions", "undergraduate", "faculty", "graduate school"]
+    }
+  },
+  "kindergarten": {
+    "label": { "es": "Preescolar", "en": "Kindergarten", "pt": "Pré-escola", "fr": "École maternelle", "de": "Kindergarten", "it": "Scuola dell’infanzia", "ja": "幼稚園", "zh": "幼儿园", "ko": "유치원", "ar": "روضة أطفال" },
+    "keywords": {
+      "es": ["kínder", "jardín de niños", "educación inicial", "primera infancia", "guardería", "inscripciones", "niños pequeños"],
+      "en": ["preschool", "pre-k", "early years", "early childhood education", "nursery school", "daycare", "enrollment"]
+    }
+  },
+  "dormitory": {
+    "label": { "es": "Residencia estudiantil", "en": "Student housing", "pt": "Alojamento estudantil", "fr": "Résidence universitaire", "de": "Studentenwohnheim", "it": "Residenza universitaria", "ja": "学生寮", "zh": "学生宿舍", "ko": "기숙사", "ar": "سكن طلابي" },
+    "keywords": {
+      "es": ["dormitorio", "casa de estudiantes", "vivienda universitaria", "alojamiento", "roomie", "internado", "campus"],
+      "en": ["dorm", "dormitory", "residence hall", "campus housing", "roommate", "accommodation", "boarding school"]
+    }
+  },
+  "homeschool": {
+    "label": { "es": "Educación en casa", "en": "Homeschooling", "pt": "Ensino domiciliar", "fr": "Instruction en famille", "de": "Hausunterricht", "it": "Istruzione parentale", "ja": "ホームスクーリング", "zh": "在家教育", "ko": "홈스쿨링", "ar": "التعليم المنزلي" },
+    "keywords": {
+      "es": ["homeschool", "escuela en casa", "aprender en familia", "padres que enseñan", "plan de estudios", "cooperativa educativa", "educación libre"],
+      "en": ["home education", "learning at home", "home learning", "parent-led learning", "curriculum", "co-op", "unschooling"]
+    }
+  },
+  "map-pin-school": {
+    "label": { "es": "Ubicación de la escuela", "en": "School location", "pt": "Localização da escola", "fr": "Emplacement de l’école", "de": "Schulstandort", "it": "Posizione della scuola", "ja": "学校の場所", "zh": "学校位置", "ko": "학교 위치", "ar": "موقع المدرسة" },
+    "keywords": {
+      "es": ["escuelas cercanas", "cómo llegar a la escuela", "mapa del campus", "punto de recogida", "plantel", "dirección de la escuela", "buscar escuela"],
+      "en": ["schools nearby", "directions to school", "campus map", "pickup point", "school address", "find a school", "school district"]
+    }
+  },
+  "chalkboard": {
+    "label": { "es": "Pizarrón", "en": "Chalkboard", "pt": "Quadro-negro", "fr": "Tableau noir", "de": "Tafel", "it": "Lavagna", "ja": "黒板", "zh": "黑板", "ko": "칠판", "ar": "سبورة" },
+    "keywords": {
+      "es": ["pizarra", "enseñar", "lección", "clase", "maestro", "explicar", "gis"],
+      "en": ["blackboard", "teaching", "lesson", "class", "teacher", "explain", "chalk"]
+    }
+  },
+  "chalkboard-play": {
+    "label": { "es": "Clase en video", "en": "Video lesson", "pt": "Videoaula", "fr": "Cours en vidéo", "de": "Videolektion", "it": "Videolezione", "ja": "動画レッスン", "zh": "视频课程", "ko": "동영상 강의", "ar": "درس بالفيديو" },
+    "keywords": {
+      "es": ["clase grabada", "reproducir lección", "videoclase", "curso en línea", "tutorial", "ver la clase", "contenido del curso"],
+      "en": ["recorded class", "play lesson", "video lecture", "online course", "tutorial", "watch class", "course content"]
+    }
+  },
+  "school-bell": {
+    "label": { "es": "Campana escolar", "en": "School bell", "pt": "Sinal da escola", "fr": "Cloche de l’école", "de": "Schulglocke", "it": "Campanella della scuola", "ja": "学校のチャイム", "zh": "上课铃", "ko": "학교 종", "ar": "جرس المدرسة" },
+    "keywords": {
+      "es": ["timbre", "hora de entrada", "recreo", "horario de clases", "inicio de clase", "salida", "cambio de hora"],
+      "en": ["bell schedule", "class period", "start of class", "recess", "dismissal", "class change", "tardy bell"]
+    }
+  },
+  "satchel": {
+    "label": { "es": "Bolsa escolar", "en": "Satchel", "pt": "Bolsa escolar", "fr": "Cartable", "de": "Schultasche", "it": "Cartella", "ja": "通学かばん", "zh": "单肩书包", "ko": "통학 가방", "ar": "حقيبة مدرسية" },
+    "keywords": {
+      "es": ["morral", "cartera escolar", "portafolios", "maletín", "libros", "útiles", "bandolera"],
+      "en": ["bookbag", "school bag", "messenger bag", "shoulder bag", "books", "school supplies", "briefcase"]
+    }
+  },
+  "calculator-graphing": {
+    "label": { "es": "Calculadora graficadora", "en": "Graphing calculator", "pt": "Calculadora gráfica", "fr": "Calculatrice graphique", "de": "Grafikrechner", "it": "Calcolatrice grafica", "ja": "グラフ電卓", "zh": "图形计算器", "ko": "그래프 계산기", "ar": "آلة حاسبة بيانية" },
+    "keywords": {
+      "es": ["calculadora científica", "matemáticas", "graficar funciones", "examen", "álgebra", "cálculo", "trigonometría"],
+      "en": ["scientific calculator", "math class", "plot functions", "exam", "algebra", "calculus", "trigonometry"]
+    }
+  },
+  "abacus": {
+    "label": { "es": "Ábaco", "en": "Abacus", "pt": "Ábaco", "fr": "Boulier", "de": "Abakus", "it": "Abaco", "ja": "そろばん", "zh": "算盘", "ko": "주판", "ar": "معداد" },
+    "keywords": {
+      "es": ["contar", "matemáticas básicas", "aritmética", "sumas y restas", "cuentas", "cálculo mental", "preescolar"],
+      "en": ["counting", "early math", "arithmetic", "addition", "beads", "mental math", "counting frame"]
+    }
+  },
+  "alphabet-blocks": {
+    "label": { "es": "Cubos con letras", "en": "Alphabet blocks", "pt": "Blocos do alfabeto", "fr": "Cubes alphabet", "de": "Buchstabenwürfel", "it": "Cubi dell’alfabeto", "ja": "アルファベットブロック", "zh": "字母积木", "ko": "알파벳 블록", "ar": "مكعبات الحروف" },
+    "keywords": {
+      "es": ["abecedario", "ABC", "aprender a leer", "preescolar", "juguete didáctico", "estimulación temprana", "bloques"],
+      "en": ["ABC", "letters", "learn to read", "preschool", "toddler", "educational toy", "early learning"]
+    }
+  },
+  "multiplication-table": {
+    "label": { "es": "Tablas de multiplicar", "en": "Times tables", "pt": "Tabuada", "fr": "Tables de multiplication", "de": "Einmaleins", "it": "Tabelline", "ja": "九九", "zh": "乘法表", "ko": "구구단", "ar": "جدول الضرب" },
+    "keywords": {
+      "es": ["multiplicaciones", "repasar", "memorizar", "matemáticas", "primaria", "cálculo mental", "productos"],
+      "en": ["multiplication", "multiplication table", "memorize", "math facts", "elementary math", "mental math", "practice"]
+    }
+  },
+  "exam": {
+    "label": { "es": "Examen", "en": "Exam", "pt": "Prova", "fr": "Examen", "de": "Prüfung", "it": "Esame", "ja": "試験", "zh": "考试", "ko": "시험", "ar": "امتحان" },
+    "keywords": {
+      "es": ["prueba", "evaluación", "opción múltiple", "parcial", "test", "reactivos", "final"],
+      "en": ["test", "assessment", "multiple choice", "midterm", "final", "evaluation", "test paper"]
+    }
+  },
+  "exam-check": {
+    "label": { "es": "Examen aprobado", "en": "Exam passed", "pt": "Prova aprovada", "fr": "Examen réussi", "de": "Prüfung bestanden", "it": "Esame superato", "ja": "試験合格", "zh": "考试通过", "ko": "시험 통과", "ar": "اجتياز الامتحان" },
+    "keywords": {
+      "es": ["calificado", "revisado", "acreditado", "pasé", "resultados", "evaluación completada", "nota aprobatoria"],
+      "en": ["graded", "marked", "test results", "assessment complete", "pass mark", "checked", "score"]
+    }
+  },
+  "answer-key": {
+    "label": { "es": "Clave de respuestas", "en": "Answer key", "pt": "Gabarito", "fr": "Corrigé", "de": "Lösungsblatt", "it": "Soluzioni", "ja": "模範解答", "zh": "标准答案", "ko": "정답지", "ar": "مفتاح الإجابات" },
+    "keywords": {
+      "es": ["soluciones", "respuestas correctas", "solucionario", "calificar", "corregir examen", "hoja de respuestas", "guía del maestro"],
+      "en": ["solutions", "correct answers", "marking scheme", "grading", "correct the test", "answer sheet", "teacher edition"]
+    }
+  },
+  "proctoring": {
+    "label": { "es": "Examen supervisado", "en": "Exam proctoring", "pt": "Prova supervisionada", "fr": "Surveillance d’examen", "de": "Prüfungsaufsicht", "it": "Sorveglianza dell’esame", "ja": "試験監督", "zh": "监考", "ko": "시험 감독", "ar": "مراقبة الامتحان" },
+    "keywords": {
+      "es": ["vigilancia", "examen en línea", "monitoreo con cámara", "integridad académica", "antitrampas", "aplicador", "evaluación remota"],
+      "en": ["online exam", "invigilation", "supervised exam", "webcam monitoring", "academic integrity", "anti-cheating", "remote proctoring"]
+    }
+  },
+  "plagiarism": {
+    "label": { "es": "Detección de plagio", "en": "Plagiarism check", "pt": "Verificação de plágio", "fr": "Détection de plagiat", "de": "Plagiatsprüfung", "it": "Controllo antiplagio", "ja": "剽窃チェック", "zh": "抄袭检测", "ko": "표절 검사", "ar": "كشف الانتحال" },
+    "keywords": {
+      "es": ["originalidad", "copia", "copiar y pegar", "integridad académica", "trabajo copiado", "citas", "similitud"],
+      "en": ["originality check", "copied work", "copy and paste", "academic integrity", "similarity", "citations", "cheating"]
+    }
+  },
+  "quiz": {
+    "label": { "es": "Cuestionario", "en": "Quiz", "pt": "Quiz", "fr": "Quiz", "de": "Quiz", "it": "Quiz", "ja": "クイズ", "zh": "测验", "ko": "퀴즈", "ar": "اختبار قصير" },
+    "keywords": {
+      "es": ["quiz", "preguntas", "trivia", "examen rápido", "repaso", "comprobar conocimientos", "test"],
+      "en": ["questions", "trivia", "knowledge check", "pop quiz", "review", "test", "questionnaire"]
+    }
+  },
+  "fill-in-the-blank": {
+    "label": { "es": "Completar espacios", "en": "Fill in the blank", "pt": "Preencher lacunas", "fr": "Texte à trous", "de": "Lückentext", "it": "Esercizio di completamento", "ja": "穴埋め問題", "zh": "填空题", "ko": "빈칸 채우기", "ar": "ملء الفراغات" },
+    "keywords": {
+      "es": ["llenar huecos", "palabra faltante", "completar oraciones", "texto con huecos", "ejercicio de gramática", "cloze", "reactivo"],
+      "en": ["cloze", "missing word", "complete the sentence", "gap fill", "exercise", "grammar practice", "worksheet"]
+    }
+  },
+  "essay": {
+    "label": { "es": "Ensayo", "en": "Essay", "pt": "Redação", "fr": "Dissertation", "de": "Aufsatz", "it": "Tema", "ja": "作文", "zh": "作文", "ko": "에세이", "ar": "مقال" },
+    "keywords": {
+      "es": ["redacción", "composición", "tarea escrita", "respuesta larga", "escribir", "texto", "reseña"],
+      "en": ["composition", "written assignment", "long answer", "writing", "paper", "report", "term paper"]
+    }
+  },
+  "homework": {
+    "label": { "es": "Tarea escolar", "en": "Homework", "pt": "Lição de casa", "fr": "Devoirs", "de": "Hausaufgaben", "it": "Compiti", "ja": "宿題", "zh": "作业", "ko": "숙제", "ar": "واجب منزلي" },
+    "keywords": {
+      "es": ["actividad", "trabajo escolar", "entregable", "deberes", "asignación", "ejercicios", "pendientes"],
+      "en": ["assignment", "coursework", "schoolwork", "to hand in", "exercises", "task", "worksheet"]
+    }
+  },
+  "homework-check": {
+    "label": { "es": "Tarea entregada", "en": "Assignment turned in", "pt": "Tarefa entregue", "fr": "Devoir rendu", "de": "Aufgabe abgegeben", "it": "Compito consegnato", "ja": "提出済みの課題", "zh": "作业已提交", "ko": "제출한 과제", "ar": "تم تسليم الواجب" },
+    "keywords": {
+      "es": ["completada", "hecha", "lista", "revisada", "terminada", "enviada", "cumplida"],
+      "en": ["done", "completed", "submitted", "handed in", "finished", "reviewed", "on time"]
+    }
+  },
+  "homework-clock": {
+    "label": { "es": "Tarea por vencer", "en": "Assignment due", "pt": "Tarefa com prazo", "fr": "Devoir à rendre", "de": "Aufgabe fällig", "it": "Compito in scadenza", "ja": "提出期限が近い課題", "zh": "作业即将截止", "ko": "마감 임박 과제", "ar": "واجب يقترب موعد تسليمه" },
+    "keywords": {
+      "es": ["fecha de entrega", "fecha límite", "atrasada", "entrega tardía", "pendiente", "recordatorio", "vence hoy"],
+      "en": ["due date", "deadline", "late", "overdue", "pending", "reminder", "due soon"]
+    }
+  },
+  "homework-arrow-up": {
+    "label": { "es": "Entregar tarea", "en": "Turn in assignment", "pt": "Enviar tarefa", "fr": "Rendre un devoir", "de": "Aufgabe abgeben", "it": "Consegna compito", "ja": "課題を提出", "zh": "提交作业", "ko": "과제 제출", "ar": "تسليم الواجب" },
+    "keywords": {
+      "es": ["subir tarea", "enviar trabajo", "cargar archivo", "mandar", "entrega", "subir archivo", "plataforma escolar"],
+      "en": ["submit", "upload assignment", "hand in", "send work", "upload file", "submission", "dropbox"]
+    }
+  },
+  "report-card": {
+    "label": { "es": "Boleta de calificaciones", "en": "Report card", "pt": "Boletim escolar", "fr": "Bulletin scolaire", "de": "Zeugnis", "it": "Pagella", "ja": "通知表", "zh": "成绩单", "ko": "성적표", "ar": "كشف الدرجات" },
+    "keywords": {
+      "es": ["notas", "historial académico", "kárdex", "promedio", "reporte de avance", "certificado de estudios", "resultados"],
+      "en": ["grades", "transcript", "progress report", "GPA", "academic record", "school report", "results"]
+    }
+  },
+  "attendance": {
+    "label": { "es": "Asistencia", "en": "Attendance", "pt": "Lista de presença", "fr": "Présences", "de": "Anwesenheit", "it": "Presenze", "ja": "出欠", "zh": "考勤", "ko": "출석", "ar": "تسجيل الحضور" },
+    "keywords": {
+      "es": ["pasar lista", "presente", "faltas", "ausente", "retardos", "inasistencias", "control escolar"],
+      "en": ["roll call", "present", "absent", "absences", "tardy", "check in", "register"]
+    }
+  },
+  "dictionary": {
+    "label": { "es": "Diccionario", "en": "Dictionary", "pt": "Dicionário", "fr": "Dictionnaire", "de": "Wörterbuch", "it": "Dizionario", "ja": "辞書", "zh": "词典", "ko": "사전", "ar": "قاموس" },
+    "keywords": {
+      "es": ["definiciones", "vocabulario", "significado", "idiomas", "glosario", "traducir", "buscar palabra"],
+      "en": ["definitions", "vocabulary", "meaning", "language learning", "glossary", "translate", "look up a word"]
+    }
+  },
+  "course": {
+    "label": { "es": "Curso", "en": "Course", "pt": "Curso", "fr": "Cours", "de": "Kurs", "it": "Corso", "ja": "コース", "zh": "课程", "ko": "강좌", "ar": "دورة دراسية" },
+    "keywords": {
+      "es": ["catálogo", "materia", "asignatura", "programa", "módulos", "clases", "plan de estudios"],
+      "en": ["catalog", "subject", "class", "program", "modules", "curriculum", "enroll"]
+    }
+  },
+  "course-progress": {
+    "label": { "es": "Avance del curso", "en": "Course progress", "pt": "Progresso do curso", "fr": "Progression du cours", "de": "Kursfortschritt", "it": "Avanzamento del corso", "ja": "コースの進捗", "zh": "课程进度", "ko": "강좌 진도", "ar": "التقدم في الدورة" },
+    "keywords": {
+      "es": ["progreso", "porcentaje completado", "lecciones terminadas", "seguimiento", "módulos vistos", "anillo de progreso", "cuánto falta"],
+      "en": ["completion", "percent complete", "lessons completed", "tracking", "progress ring", "modules done", "learning progress"]
+    }
+  },
+  "graduation-cap-check": {
+    "label": { "es": "Curso completado", "en": "Course completed", "pt": "Curso concluído", "fr": "Cours terminé", "de": "Kurs abgeschlossen", "it": "Corso completato", "ja": "修了済み", "zh": "课程已完成", "ko": "과정 수료", "ar": "إتمام الدورة" },
+    "keywords": {
+      "es": ["graduado", "egresado", "titulado", "terminado", "certificación", "aprobado", "logro"],
+      "en": ["graduated", "finished", "certified", "passed", "achievement", "alumni", "degree earned"]
+    }
+  },
+  "online-learning": {
+    "label": { "es": "Educación en línea", "en": "Online learning", "pt": "Ensino online", "fr": "Formation en ligne", "de": "Online-Lernen", "it": "Formazione online", "ja": "オンライン学習", "zh": "在线学习", "ko": "온라인 학습", "ar": "التعلم عبر الإنترنت" },
+    "keywords": {
+      "es": ["clases en línea", "educación a distancia", "e-learning", "clases virtuales", "cursos en línea", "aula virtual", "videoclase"],
+      "en": ["e-learning", "online classes", "distance learning", "virtual classroom", "online course", "remote learning", "webinar"]
+    }
+  },
+  "ai-tutor": {
+    "label": { "es": "Tutor con IA", "en": "AI tutor", "pt": "Tutor com IA", "fr": "Tuteur IA", "de": "KI-Tutor", "it": "Tutor con IA", "ja": "AIチューター", "zh": "AI 导师", "ko": "AI 튜터", "ar": "مدرس بالذكاء الاصطناعي" },
+    "keywords": {
+      "es": ["asistente de estudio", "inteligencia artificial", "resolver dudas", "chatbot educativo", "explicaciones", "aprendizaje personalizado", "ayuda con la tarea"],
+      "en": ["study assistant", "artificial intelligence", "homework help", "ask questions", "learning chatbot", "personalized learning", "explain"]
+    }
+  },
+  "calendar-graduation-cap": {
+    "label": { "es": "Calendario escolar", "en": "Academic calendar", "pt": "Calendário acadêmico", "fr": "Calendrier scolaire", "de": "Akademischer Kalender", "it": "Calendario accademico", "ja": "学年暦", "zh": "校历", "ko": "학사 일정", "ar": "التقويم الأكاديمي" },
+    "keywords": {
+      "es": ["ciclo escolar", "semestre", "trimestre", "periodo de exámenes", "fechas importantes", "vacaciones", "inicio de clases"],
+      "en": ["school year", "semester", "term dates", "exam period", "holidays", "first day of class", "school calendar"]
+    }
+  },
+  "study": {
+    "label": { "es": "Estudiar", "en": "Study", "pt": "Estudar", "fr": "Étudier", "de": "Lernzeit", "it": "Studiare", "ja": "勉強", "zh": "自习", "ko": "공부", "ar": "المذاكرة" },
+    "keywords": {
+      "es": ["tiempo de estudio", "sesión de concentración", "repasar", "prepararse para el examen", "lectura", "biblioteca", "cubículo"],
+      "en": ["study time", "focus session", "revise", "study space", "exam prep", "reading", "homework"]
+    }
+  },
+  "student": {
+    "label": { "es": "Estudiante", "en": "Student", "pt": "Estudante", "fr": "Élève", "de": "Schüler", "it": "Studente", "ja": "学生", "zh": "学生", "ko": "학생", "ar": "طالب" },
+    "keywords": {
+      "es": ["alumno", "alumna", "perfil del alumno", "lista de alumnos", "aprendiz", "matrícula", "universitario"],
+      "en": ["pupil", "learner", "profile", "class roster", "enrollee", "undergraduate", "classmate"]
+    }
+  },
+  "student-plus": {
+    "label": { "es": "Inscribir estudiante", "en": "Enroll student", "pt": "Matricular aluno", "fr": "Inscrire un élève", "de": "Schüler anmelden", "it": "Iscrivi studente", "ja": "生徒を登録", "zh": "添加学生", "ko": "학생 등록", "ar": "تسجيل طالب" },
+    "keywords": {
+      "es": ["agregar alumno", "inscripción", "matricular", "nuevo alumno", "dar de alta", "sumar al grupo", "registro"],
+      "en": ["add student", "enrollment", "register", "new student", "join class", "sign up", "add to roster"]
+    }
+  },
+  "student-check": {
+    "label": { "es": "Estudiante verificado", "en": "Verified student", "pt": "Estudante verificado", "fr": "Élève vérifié", "de": "Verifizierter Schüler", "it": "Studente verificato", "ja": "認証済みの学生", "zh": "已认证学生", "ko": "인증된 학생", "ar": "طالب موثّق" },
+    "keywords": {
+      "es": ["presente", "credencial vigente", "alumno regular", "descuento estudiantil", "inscrito", "validado", "asistió"],
+      "en": ["present", "student status", "student discount", "active student", "validated", "attended", "enrolled"]
+    }
+  },
+  "teacher": {
+    "label": { "es": "Maestro", "en": "Teacher", "pt": "Professor", "fr": "Enseignant", "de": "Lehrkraft", "it": "Insegnante", "ja": "先生", "zh": "老师", "ko": "선생님", "ar": "معلم" },
+    "keywords": {
+      "es": ["profesor", "docente", "instructor", "maestra", "educador", "perfil del docente", "profesores del curso"],
+      "en": ["instructor", "educator", "professor", "teacher profile", "faculty", "lecturer", "course instructors"]
+    }
+  },
+  "tutor": {
+    "label": { "es": "Tutor", "en": "Tutor", "pt": "Professor particular", "fr": "Professeur particulier", "de": "Nachhilfe", "it": "Insegnante privato", "ja": "家庭教師", "zh": "家教", "ko": "과외 선생님", "ar": "مدرس خصوصي" },
+    "keywords": {
+      "es": ["asesor", "clases particulares", "regularización", "asesoría", "maestro particular", "mentor", "clases a domicilio"],
+      "en": ["private lessons", "tutoring", "one-on-one", "coach", "mentor", "homework help", "private teacher"]
+    }
+  },
+  "study-group": {
+    "label": { "es": "Grupo de estudio", "en": "Study group", "pt": "Grupo de estudo", "fr": "Groupe d’étude", "de": "Lerngruppe", "it": "Gruppo di studio", "ja": "勉強会", "zh": "学习小组", "ko": "스터디 그룹", "ar": "مجموعة دراسية" },
+    "keywords": {
+      "es": ["trabajo en equipo", "compañeros de clase", "estudiar juntos", "colaborar", "círculo de estudio", "proyecto grupal", "asesoría entre pares"],
+      "en": ["group work", "classmates", "study together", "collaborate", "team project", "peer learning", "study circle"]
+    }
+  },
+  "diploma": {
+    "label": { "es": "Diploma", "en": "Diploma", "pt": "Diploma", "fr": "Diplôme", "de": "Abschlusszeugnis", "it": "Diploma", "ja": "卒業証書", "zh": "毕业证书", "ko": "졸업장", "ar": "شهادة تخرج" },
+    "keywords": {
+      "es": ["título", "graduación", "certificado de estudios", "grado académico", "constancia", "credencial académica", "egreso"],
+      "en": ["degree", "graduation", "academic credential", "certificate", "qualification", "transcript", "commencement"]
+    }
+  },
+  "diploma-check": {
+    "label": { "es": "Título verificado", "en": "Verified degree", "pt": "Diploma verificado", "fr": "Diplôme vérifié", "de": "Verifizierter Abschluss", "it": "Titolo verificato", "ja": "認証済みの学位", "zh": "学历已认证", "ko": "인증된 학위", "ar": "شهادة موثّقة" },
+    "keywords": {
+      "es": ["cédula profesional", "validar estudios", "credencial auténtica", "comprobar diploma", "antecedentes académicos", "certificado válido", "reclutamiento"],
+      "en": ["credential verification", "degree check", "authentic diploma", "education verification", "background check", "valid certificate", "hiring"]
+    }
+  },
+  "id-card-student": {
+    "label": { "es": "Credencial de estudiante", "en": "Student ID", "pt": "Carteirinha de estudante", "fr": "Carte d’étudiant", "de": "Schülerausweis", "it": "Tessera studentesca", "ja": "学生証", "zh": "学生证", "ko": "학생증", "ar": "بطاقة طالب" },
+    "keywords": {
+      "es": ["identificación escolar", "matrícula", "descuento estudiantil", "acceso al campus", "gafete", "número de cuenta", "tarjeta de alumno"],
+      "en": ["student card", "school ID", "identification", "student discount", "campus access", "badge", "student number"]
+    }
+  },
+  "library-card": {
+    "label": { "es": "Credencial de biblioteca", "en": "Library card", "pt": "Carteirinha da biblioteca", "fr": "Carte de bibliothèque", "de": "Bibliotheksausweis", "it": "Tessera della biblioteca", "ja": "図書館利用カード", "zh": "借书证", "ko": "도서관 회원증", "ar": "بطاقة المكتبة" },
+    "keywords": {
+      "es": ["préstamo de libros", "membresía", "pedir prestado", "socio", "devolver libros", "usuario lector", "acervo"],
+      "en": ["borrow books", "library membership", "lending", "member", "check out", "return books", "patron"]
+    }
+  },
+  "honors": {
+    "label": { "es": "Mención honorífica", "en": "Academic honors", "pt": "Menção honrosa", "fr": "Distinction", "de": "Auszeichnung", "it": "Menzione d’onore", "ja": "優等賞", "zh": "学业荣誉", "ko": "우등", "ar": "مرتبة الشرف" },
+    "keywords": {
+      "es": ["cuadro de honor", "excelencia académica", "con honores", "promedio alto", "distinción", "reconocimiento", "cum laude"],
+      "en": ["honor roll", "dean's list", "with distinction", "cum laude", "high GPA", "academic excellence", "recognition"]
+    }
+  },
+  "tuition": {
+    "label": { "es": "Colegiatura", "en": "Tuition", "pt": "Mensalidade escolar", "fr": "Frais de scolarité", "de": "Studiengebühren", "it": "Tasse scolastiche", "ja": "授業料", "zh": "学费", "ko": "등록금", "ar": "الرسوم الدراسية" },
+    "keywords": {
+      "es": ["cuotas escolares", "inscripción", "mensualidad", "pago escolar", "préstamo estudiantil", "reinscripción", "costo de la carrera"],
+      "en": ["school fees", "enrollment fee", "student loan", "payment", "semester fee", "cost of college", "installments"]
+    }
+  },
+  "scholarship": {
+    "label": { "es": "Beca", "en": "Scholarship", "pt": "Bolsa de estudos", "fr": "Bourse d’études", "de": "Stipendium", "it": "Borsa di studio", "ja": "奨学金", "zh": "奖学金", "ko": "장학금", "ar": "منحة دراسية" },
+    "keywords": {
+      "es": ["apoyo económico", "ayuda financiera", "becario", "descuento en colegiatura", "convocatoria", "financiamiento educativo", "subsidio"],
+      "en": ["grant", "financial aid", "bursary", "fellowship", "tuition discount", "funding", "award"]
+    }
+  },
+  "back-to-school": {
+    "label": { "es": "Regreso a clases", "en": "Back to school", "pt": "Volta às aulas", "fr": "Rentrée scolaire", "de": "Schulanfang", "it": "Ritorno a scuola", "ja": "新学期", "zh": "开学季", "ko": "개학", "ar": "العودة إلى المدرسة" },
+    "keywords": {
+      "es": ["útiles escolares", "primer día de clases", "inicio del ciclo escolar", "mochila", "temporada escolar", "uniformes", "ofertas escolares"],
+      "en": ["school supplies", "first day of school", "new school year", "school shopping", "supply list", "uniforms", "school season"]
+    }
+  },
+  "permission-slip": {
+    "label": { "es": "Autorización de los padres", "en": "Permission slip", "pt": "Autorização dos pais", "fr": "Autorisation parentale", "de": "Einverständniserklärung", "it": "Autorizzazione dei genitori", "ja": "保護者の同意書", "zh": "家长同意书", "ko": "보호자 동의서", "ar": "إذن ولي الأمر" },
+    "keywords": {
+      "es": ["permiso", "consentimiento", "firma de los papás", "excursión", "salida escolar", "responsiva", "carta permiso"],
+      "en": ["parental consent", "consent form", "field trip", "parent signature", "school trip", "waiver", "authorization"]
+    }
+  }
+}

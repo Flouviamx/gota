@@ -1,0 +1,352 @@
+{
+  "tower-crane": {
+    "label": { "es": "Grúa torre", "en": "Tower crane", "pt": "Grua de torre", "fr": "Grue à tour", "de": "Turmdrehkran", "it": "Gru a torre", "ja": "タワークレーン", "zh": "塔式起重机", "ko": "타워 크레인", "ar": "رافعة برجية" },
+    "keywords": {
+      "es": ["obra en construcción", "proyecto de construcción", "edificación", "constructora", "edificio en obra", "desarrollo inmobiliario", "grúa pluma"],
+      "en": ["construction project", "building site", "under construction", "contractor", "high-rise", "development", "jib crane"]
+    }
+  },
+  "crane-lift": {
+    "label": { "es": "Izaje con grúa", "en": "Crane lift", "pt": "Içamento com guindaste", "fr": "Levage à la grue", "de": "Kranhub", "it": "Sollevamento con gru", "ja": "クレーン吊り上げ", "zh": "起重吊装", "ko": "크레인 인양", "ar": "رفع بالرافعة" },
+    "keywords": {
+      "es": ["izar", "maniobra de izaje", "plan de izaje", "programa de grúa", "carga suspendida", "elevar material", "gancho"],
+      "en": ["hoist", "lifting operation", "lift plan", "crane schedule", "suspended load", "rigging", "hook"]
+    }
+  },
+  "scaffolding": {
+    "label": { "es": "Andamio", "en": "Scaffolding", "pt": "Andaime", "fr": "Échafaudage", "de": "Gerüst", "it": "Ponteggio", "ja": "足場", "zh": "脚手架", "ko": "비계", "ar": "سقالة" },
+    "keywords": {
+      "es": ["trabajo en altura", "fachada", "plataforma de trabajo", "estructura temporal", "renta de equipo", "pintura exterior", "obra"],
+      "en": ["work at height", "facade", "work platform", "temporary structure", "equipment hire", "access", "staging"]
+    }
+  },
+  "construction-site": {
+    "label": { "es": "Obra", "en": "Construction site", "pt": "Canteiro de obras", "fr": "Chantier de construction", "de": "Baugelände", "it": "Cantiere edile", "ja": "建設現場", "zh": "建筑工地", "ko": "공사 현장", "ar": "موقع البناء" },
+    "keywords": {
+      "es": ["sitio de construcción", "ubicación del proyecto", "lista de proyectos", "terreno", "frente de trabajo", "mapa de proyectos", "predio"],
+      "en": ["building site", "project location", "job site", "project list", "work site", "site picker", "plot"]
+    }
+  },
+  "wheelbarrow": {
+    "label": { "es": "Carretilla", "en": "Wheelbarrow", "pt": "Carrinho de mão", "fr": "Brouette", "de": "Schubkarre", "it": "Carriola", "ja": "一輪車", "zh": "手推车", "ko": "외바퀴 손수레", "ar": "عربة يد" },
+    "keywords": {
+      "es": ["acarreo", "mover material", "albañilería", "jardinería", "trabajo de obra", "cargar tierra", "paisajismo"],
+      "en": ["barrow", "haul materials", "site work", "landscaping", "gardening", "move soil", "masonry"]
+    }
+  },
+  "plumb-bob": {
+    "label": { "es": "Plomada", "en": "Plumb bob", "pt": "Prumo", "fr": "Fil à plomb", "de": "Senklot", "it": "Filo a piombo", "ja": "下げ振り", "zh": "铅垂", "ko": "다림추", "ar": "شاقول" },
+    "keywords": {
+      "es": ["verticalidad", "aplomar", "alineación", "trazo", "albañilería", "topografía", "medir vertical"],
+      "en": ["plumb line", "vertical", "alignment", "setting out", "true vertical", "masonry", "surveying"]
+    }
+  },
+  "trowel": {
+    "label": { "es": "Cuchara de albañil", "en": "Trowel", "pt": "Colher de pedreiro", "fr": "Truelle", "de": "Maurerkelle", "it": "Cazzuola", "ja": "こて", "zh": "砌刀", "ko": "흙손", "ar": "مسطرين" },
+    "keywords": {
+      "es": ["albañilería", "pegar tabique", "mezcla", "mortero", "aplanado", "construir muro", "llana"],
+      "en": ["masonry", "bricklaying", "mortar", "pointing", "plastering", "mason", "wall building"]
+    }
+  },
+  "groundbreaking": {
+    "label": { "es": "Arranque de obra", "en": "Groundbreaking", "pt": "Início da obra", "fr": "Lancement des travaux", "de": "Spatenstich", "it": "Avvio dei lavori", "ja": "起工", "zh": "开工", "ko": "착공", "ar": "بدء أعمال البناء" },
+    "keywords": {
+      "es": ["primera piedra", "inicio de proyecto", "palada inicial", "ceremonia", "primer hito", "banderazo", "comienzo"],
+      "en": ["break ground", "project kickoff", "first shovel", "ceremony", "first milestone", "start of works", "launch"]
+    }
+  },
+  "gravel": {
+    "label": { "es": "Grava", "en": "Gravel", "pt": "Brita", "fr": "Gravier", "de": "Kies", "it": "Ghiaia", "ja": "砂利", "zh": "砾石", "ko": "자갈", "ar": "حصى" },
+    "keywords": {
+      "es": ["arena", "agregados", "material a granel", "piedra triturada", "material pétreo", "entrega de material", "tezontle"],
+      "en": ["sand", "aggregate", "bulk material", "crushed stone", "ballast", "material delivery", "hardcore"]
+    }
+  },
+  "wrecking-ball": {
+    "label": { "es": "Demolición", "en": "Demolition", "pt": "Demolição", "fr": "Démolition", "de": "Abriss", "it": "Demolizione", "ja": "解体", "zh": "拆除", "ko": "철거", "ar": "هدم" },
+    "keywords": {
+      "es": ["derribar", "tirar un edificio", "licencia de demolición", "desmantelar", "escombro", "bola de acero", "derrumbe controlado"],
+      "en": ["wrecking ball", "tear down", "knock down", "demolition permit", "rubble", "dismantle", "strip out"]
+    }
+  },
+  "building-foundation": {
+    "label": { "es": "Cimentación", "en": "Foundations", "pt": "Fundação", "fr": "Fondations", "de": "Fundament", "it": "Fondazioni", "ja": "基礎", "zh": "地基", "ko": "기초", "ar": "أساسات" },
+    "keywords": {
+      "es": ["cimientos", "zapatas", "contratrabes", "losa de desplante", "reparación de cimientos", "obra negra", "base del edificio"],
+      "en": ["footings", "slab on grade", "underpinning", "groundworks", "substructure", "base", "basement walls"]
+    }
+  },
+  "house-frame": {
+    "label": { "es": "Casa en construcción", "en": "House framing", "pt": "Casa em construção", "fr": "Maison en construction", "de": "Haus im Rohbau", "it": "Casa in costruzione", "ja": "建築中の家", "zh": "在建房屋", "ko": "건축 중인 주택", "ar": "منزل قيد الإنشاء" },
+    "keywords": {
+      "es": ["vivienda nueva", "obra negra", "estructura de madera", "construcción residencial", "fraccionamiento", "autoconstrucción", "hogar nuevo"],
+      "en": ["new home", "new build", "timber frame", "residential construction", "stud walls", "homebuilder", "self-build"]
+    }
+  },
+  "building-frame": {
+    "label": { "es": "Estructura de edificio", "en": "Building frame", "pt": "Estrutura do edifício", "fr": "Ossature du bâtiment", "de": "Gebäudetragwerk", "it": "Struttura dell’edificio", "ja": "建物の骨組み", "zh": "建筑框架", "ko": "건물 골조", "ar": "هيكل المبنى" },
+    "keywords": {
+      "es": ["construcción comercial", "acero estructural", "marcos de concreto", "obra gris", "torre en construcción", "esqueleto", "vigas y columnas"],
+      "en": ["commercial construction", "structural steel", "reinforced concrete", "high-rise", "skeleton", "beams and columns", "superstructure"]
+    }
+  },
+  "house-renovation": {
+    "label": { "es": "Remodelación", "en": "Home renovation", "pt": "Reforma da casa", "fr": "Rénovation", "de": "Hausrenovierung", "it": "Ristrutturazione", "ja": "住宅リフォーム", "zh": "房屋翻新", "ko": "주택 리모델링", "ar": "تجديد المنزل" },
+    "keywords": {
+      "es": ["renovación", "reparaciones", "mejoras al hogar", "obra en casa", "arreglos", "reforma", "contratista"],
+      "en": ["remodel", "refurbishment", "home improvement", "repairs", "makeover", "fixer-upper", "contractor"]
+    }
+  },
+  "house-extension": {
+    "label": { "es": "Ampliación de casa", "en": "Home extension", "pt": "Ampliação da casa", "fr": "Extension de maison", "de": "Anbau", "it": "Ampliamento della casa", "ja": "増築", "zh": "房屋扩建", "ko": "주택 증축", "ar": "توسعة المنزل" },
+    "keywords": {
+      "es": ["cuarto adicional", "segundo piso", "anexo", "licencia de construcción", "construir otro cuarto", "agregar recámara", "obra nueva"],
+      "en": ["addition", "add a room", "annex", "second story", "planning application", "building permit", "loft conversion"]
+    }
+  },
+  "modular-building": {
+    "label": { "es": "Construcción modular", "en": "Modular building", "pt": "Construção modular", "fr": "Construction modulaire", "de": "Modulbau", "it": "Edilizia modulare", "ja": "モジュール建築", "zh": "模块化建筑", "ko": "모듈러 건축", "ar": "مبنى معياري" },
+    "keywords": {
+      "es": ["prefabricado", "casa prefabricada", "industrializado", "montaje en sitio", "casa contenedor", "piezas de fábrica", "edificación rápida"],
+      "en": ["prefab", "factory-built", "volumetric", "offsite construction", "container home", "kit home", "installed on site"]
+    }
+  },
+  "bricklaying": {
+    "label": { "es": "Albañilería", "en": "Bricklaying", "pt": "Alvenaria", "fr": "Maçonnerie", "de": "Mauerarbeiten", "it": "Muratura", "ja": "れんが積み", "zh": "砌砖", "ko": "벽돌 쌓기", "ar": "بناء بالطوب" },
+    "keywords": {
+      "es": ["pegar tabique", "levantar muro", "barda", "mampostería", "albañil", "muro de ladrillo", "obra negra"],
+      "en": ["masonry", "brickwork", "build a wall", "mason", "blockwork", "wall construction", "mortar joints"]
+    }
+  },
+  "roofing": {
+    "label": { "es": "Techado", "en": "Roofing", "pt": "Cobertura de telhado", "fr": "Couverture", "de": "Dacharbeiten", "it": "Lavori sul tetto", "ja": "屋根工事", "zh": "屋面施工", "ko": "지붕 공사", "ar": "تركيب السقف" },
+    "keywords": {
+      "es": ["colocar tejas", "cubierta", "reparación de goteras", "losa", "lámina", "impermeabilizar", "trabajo en azotea"],
+      "en": ["shingles", "roofer", "tiling", "leak repair", "rooftop", "cladding", "eaves"]
+    }
+  },
+  "i-beam": {
+    "label": { "es": "Viga de acero", "en": "Steel beam", "pt": "Viga de aço", "fr": "Poutre en acier", "de": "Stahlträger", "it": "Trave in acciaio", "ja": "I形鋼", "zh": "工字钢", "ko": "I형강", "ar": "عارضة فولاذية" },
+    "keywords": {
+      "es": ["IPR", "perfil I", "estructura metálica", "trabe", "herrería estructural", "proveedor de perfiles", "larguero"],
+      "en": ["I-beam", "girder", "H-beam", "joist", "rolled section", "structural member", "steelwork"]
+    }
+  },
+  "truss": {
+    "label": { "es": "Armadura", "en": "Truss", "pt": "Treliça", "fr": "Treillis", "de": "Fachwerkträger", "it": "Travatura reticolare", "ja": "トラス", "zh": "桁架", "ko": "트러스", "ar": "جمالون" },
+    "keywords": {
+      "es": ["celosía", "estructura reticular", "claro largo", "puente", "nave industrial", "joist", "triangulado"],
+      "en": ["lattice", "long span", "bridge", "girder", "framework", "space frame", "triangulated"]
+    }
+  },
+  "roof-truss": {
+    "label": { "es": "Armadura de techo", "en": "Roof truss", "pt": "Tesoura de telhado", "fr": "Ferme de toit", "de": "Dachbinder", "it": "Capriata", "ja": "小屋組", "zh": "屋架", "ko": "지붕 트러스", "ar": "جمالون السقف" },
+    "keywords": {
+      "es": ["tijera", "cubierta", "dos aguas", "cumbrera", "vigas de madera", "carpintería", "polines"],
+      "en": ["rafters", "king post", "gable", "ridge", "carpentry", "timber framing", "pitched"]
+    }
+  },
+  "arch": {
+    "label": { "es": "Arco arquitectónico", "en": "Arch", "pt": "Arco arquitetônico", "fr": "Arche", "de": "Torbogen", "it": "Arco architettonico", "ja": "アーチ", "zh": "拱门", "ko": "아치", "ar": "قوس معماري" },
+    "keywords": {
+      "es": ["arquitectura", "mampostería", "bóveda", "portal", "clásico", "acueducto", "medio punto"],
+      "en": ["architecture", "masonry", "vault", "portal", "classical", "aqueduct", "keystone"]
+    }
+  },
+  "dome": {
+    "label": { "es": "Cúpula", "en": "Dome", "pt": "Cúpula", "fr": "Dôme", "de": "Kuppel", "it": "Cupola", "ja": "ドーム", "zh": "穹顶", "ko": "돔", "ar": "قبة" },
+    "keywords": {
+      "es": ["arquitectura", "domo", "techo abovedado", "catedral", "iglesia", "observatorio", "bóveda"],
+      "en": ["architecture", "cupola", "basilica", "cathedral", "rotunda", "observatory", "vault"]
+    }
+  },
+  "brick": {
+    "label": { "es": "Ladrillo", "en": "Brick", "pt": "Tijolo", "fr": "Brique", "de": "Ziegel", "it": "Mattone", "ja": "れんが", "zh": "砖", "ko": "벽돌", "ar": "طوب" },
+    "keywords": {
+      "es": ["tabique", "material de construcción", "barro cocido", "mampostería", "muro", "tabicón", "barda"],
+      "en": ["building material", "fired clay", "masonry", "wall", "terracotta", "construction supplies", "paver"]
+    }
+  },
+  "concrete-block": {
+    "label": { "es": "Block de concreto", "en": "Concrete block", "pt": "Bloco de concreto", "fr": "Parpaing", "de": "Hohlblockstein", "it": "Blocco di cemento", "ja": "コンクリートブロック", "zh": "混凝土砌块", "ko": "콘크리트 블록", "ar": "بلوك خرساني" },
+    "keywords": {
+      "es": ["bloque hueco", "tabicón", "material de construcción", "muro", "mampostería", "barda", "blockera"],
+      "en": ["cinder block", "breeze block", "CMU", "blockwork", "wall", "masonry", "building material"]
+    }
+  },
+  "cement-bag": {
+    "label": { "es": "Bulto de cemento", "en": "Cement bag", "pt": "Saco de cimento", "fr": "Sac de ciment", "de": "Zementsack", "it": "Sacco di cemento", "ja": "セメント袋", "zh": "水泥袋", "ko": "시멘트 포대", "ar": "كيس إسمنت" },
+    "keywords": {
+      "es": ["mortero", "yeso", "cal", "mezcla", "materiales secos", "costal", "material de construcción"],
+      "en": ["mortar", "plaster", "lime", "sack", "dry mix", "building supplies", "grout"]
+    }
+  },
+  "lumber": {
+    "label": { "es": "Madera", "en": "Lumber", "pt": "Madeira", "fr": "Bois de construction", "de": "Bauholz", "it": "Legname", "ja": "木材", "zh": "木材", "ko": "목재", "ar": "أخشاب" },
+    "keywords": {
+      "es": ["tablones", "carpintería", "maderería", "vigas", "polines", "triplay", "material de construcción"],
+      "en": ["timber", "wood", "planks", "boards", "carpentry", "two-by-four", "joinery"]
+    }
+  },
+  "insulation": {
+    "label": { "es": "Aislamiento", "en": "Insulation", "pt": "Isolamento", "fr": "Isolation", "de": "Dämmung", "it": "Isolamento", "ja": "断熱材", "zh": "保温材料", "ko": "단열재", "ar": "عزل حراري" },
+    "keywords": {
+      "es": ["fibra de vidrio", "ahorro de energía", "colchoneta", "unicel", "poliestireno", "instalador", "confort térmico"],
+      "en": ["thermal", "fiberglass", "energy saving", "batts", "foam board", "installer", "R-value"]
+    }
+  },
+  "soundproofing": {
+    "label": { "es": "Aislamiento acústico", "en": "Soundproofing", "pt": "Isolamento acústico", "fr": "Isolation phonique", "de": "Schalldämmung", "it": "Insonorizzazione", "ja": "防音", "zh": "隔音", "ko": "방음", "ar": "عزل صوتي" },
+    "keywords": {
+      "es": ["insonorizar", "ruido", "paneles de espuma", "muro doble", "estudio de grabación", "vecinos", "silencio"],
+      "en": ["acoustic insulation", "noise", "foam panels", "double wall", "recording studio", "neighbors", "quiet"]
+    }
+  },
+  "wall-crack": {
+    "label": { "es": "Grieta en muro", "en": "Wall crack", "pt": "Rachadura na parede", "fr": "Fissure murale", "de": "Riss in der Wand", "it": "Crepa nel muro", "ja": "壁のひび割れ", "zh": "墙体裂缝", "ko": "벽 균열", "ar": "تشقق في الجدار" },
+    "keywords": {
+      "es": ["fisura", "cuarteadura", "defecto", "inspección", "reparación", "resane", "lista de pendientes"],
+      "en": ["fissure", "defect", "inspection", "snagging", "repair", "damage", "patching"]
+    }
+  },
+  "house-crack": {
+    "label": { "es": "Daño estructural", "en": "Structural damage", "pt": "Dano estrutural", "fr": "Dommage structurel", "de": "Bauschaden", "it": "Danno strutturale", "ja": "家屋の構造被害", "zh": "结构损坏", "ko": "구조 손상", "ar": "ضرر إنشائي" },
+    "keywords": {
+      "es": ["sismo", "terremoto", "hundimiento", "asentamiento", "casa cuarteada", "peritaje", "reparación de cimientos"],
+      "en": ["earthquake", "subsidence", "settlement", "cracked house", "surveyor report", "foundation repair", "insurance claim"]
+    }
+  },
+  "roof-pitch": {
+    "label": { "es": "Pendiente del techo", "en": "Roof pitch", "pt": "Inclinação do telhado", "fr": "Pente de toit", "de": "Dachneigung", "it": "Pendenza del tetto", "ja": "屋根勾配", "zh": "屋顶坡度", "ko": "지붕 경사", "ar": "ميل السقف" },
+    "keywords": {
+      "es": ["inclinación", "caída", "ángulo", "calculadora", "dos aguas", "desnivel", "grados"],
+      "en": ["slope", "rise over run", "angle", "calculator", "gradient", "degrees", "gable"]
+    }
+  },
+  "blueprint": {
+    "label": { "es": "Plano", "en": "Blueprint", "pt": "Desenho técnico", "fr": "Plan", "de": "Bauplan", "it": "Disegno tecnico", "ja": "設計図", "zh": "图纸", "ko": "설계도", "ar": "مخطط" },
+    "keywords": {
+      "es": ["juego de láminas", "dibujo técnico", "proyecto arquitectónico", "diseño", "arquitecto", "ingeniería", "cianotipo"],
+      "en": ["construction drawings", "plans", "drawing set", "sheets", "technical drawing", "architect", "design"]
+    }
+  },
+  "blueprint-check": {
+    "label": { "es": "Plano aprobado", "en": "Approved drawing", "pt": "Desenho aprovado", "fr": "Plan approuvé", "de": "Freigegebener Plan", "it": "Disegno approvato", "ja": "承認済みの図面", "zh": "已批准的图纸", "ko": "승인된 도면", "ar": "مخطط معتمد" },
+    "keywords": {
+      "es": ["visto bueno", "para construcción", "liberado", "autorizado", "versión final", "as built", "revisado"],
+      "en": ["approved for construction", "issued for construction", "as-built", "signed off", "final", "checked", "released"]
+    }
+  },
+  "blueprint-edit": {
+    "label": { "es": "Editar plano", "en": "Edit drawing", "pt": "Editar desenho", "fr": "Modifier le plan", "de": "Plan bearbeiten", "it": "Modifica disegno", "ja": "図面を編集", "zh": "编辑图纸", "ko": "도면 편집", "ar": "تعديل المخطط" },
+    "keywords": {
+      "es": ["marcar", "anotaciones", "revisión", "orden de cambio", "corrección", "comentarios", "marcas en rojo"],
+      "en": ["markup", "redline", "revision", "change order", "annotate", "correction", "comments"]
+    }
+  },
+  "site-plan": {
+    "label": { "es": "Plano de conjunto", "en": "Site plan", "pt": "Planta de situação", "fr": "Plan de masse", "de": "Lageplan", "it": "Planimetria generale", "ja": "配置図", "zh": "总平面图", "ko": "배치도", "ar": "مخطط الموقع" },
+    "keywords": {
+      "es": ["terreno", "lote", "huella del edificio", "ubicación", "licencia de construcción", "arquitectura", "colindancias"],
+      "en": ["plot", "lot", "building footprint", "site layout", "building permit", "architecture", "boundaries"]
+    }
+  },
+  "drafting-table": {
+    "label": { "es": "Restirador", "en": "Drafting table", "pt": "Prancheta", "fr": "Table à dessin", "de": "Zeichentisch", "it": "Tavolo da disegno", "ja": "製図台", "zh": "绘图桌", "ko": "제도대", "ar": "طاولة رسم هندسي" },
+    "keywords": {
+      "es": ["mesa de dibujo", "arquitecto", "despacho de arquitectura", "dibujo técnico", "estudio de diseño", "dibujar planos", "escuadras"],
+      "en": ["drawing board", "architect", "architecture studio", "technical drawing", "design studio", "T-square", "draftsman"]
+    }
+  },
+  "building-model": {
+    "label": { "es": "Modelo 3D de edificio", "en": "3D building model", "pt": "Modelo 3D do edifício", "fr": "Maquette 3D du bâtiment", "de": "3D-Gebäudemodell", "it": "Modello 3D dell’edificio", "ja": "建物の3Dモデル", "zh": "建筑3D模型", "ko": "건물 3D 모델", "ar": "نموذج ثلاثي الأبعاد للمبنى" },
+    "keywords": {
+      "es": ["BIM", "maqueta", "volumetría", "render", "visualización", "modelado arquitectónico", "isométrico"],
+      "en": ["BIM", "massing", "maquette", "render", "visualization", "isometric", "digital twin"]
+    }
+  },
+  "pipe-elbow": {
+    "label": { "es": "Codo de tubería", "en": "Pipe elbow", "pt": "Joelho de cano", "fr": "Coude de tuyau", "de": "Rohrbogen", "it": "Gomito per tubi", "ja": "エルボ継手", "zh": "弯头", "ko": "배관 엘보", "ar": "كوع أنابيب" },
+    "keywords": {
+      "es": ["plomería", "conexión a 90 grados", "fontanería", "instalación hidráulica", "PVC", "cobre", "drenaje"],
+      "en": ["plumbing", "pipes", "90 degree fitting", "bend", "pipework", "PVC", "copper"]
+    }
+  },
+  "pipe-tee": {
+    "label": { "es": "Te de tubería", "en": "Pipe tee", "pt": "Tê de tubulação", "fr": "Raccord en T", "de": "T-Stück", "it": "Raccordo a T", "ja": "T字継手", "zh": "三通", "ko": "T자 배관 이음", "ar": "وصلة على شكل T" },
+    "keywords": {
+      "es": ["conexión T", "derivación", "ramal", "plomería", "bifurcación", "tres vías", "instalación hidráulica"],
+      "en": ["T fitting", "branch", "junction", "plumbing", "three-way", "split", "pipework"]
+    }
+  },
+  "pipe-leak": {
+    "label": { "es": "Tubería con fuga", "en": "Leaking pipe", "pt": "Cano vazando", "fr": "Fuite de tuyau", "de": "Undichtes Rohr", "it": "Tubo che perde", "ja": "配管の水漏れ", "zh": "管道漏水", "ko": "배관 누수", "ar": "تسرب من الأنبوب" },
+    "keywords": {
+      "es": ["goteo", "agua tirada", "emergencia de plomería", "plomero", "tubo roto", "humedad", "alerta"],
+      "en": ["water leak", "drip", "plumbing emergency", "plumber", "burst", "damp", "alert"]
+    }
+  },
+  "sink-trap": {
+    "label": { "es": "Céspol", "en": "Sink trap", "pt": "Sifão", "fr": "Siphon", "de": "Siphon", "it": "Sifone", "ja": "排水トラップ", "zh": "存水弯", "ko": "배수 트랩", "ar": "سيفون الحوض" },
+    "keywords": {
+      "es": ["sifón", "drenaje", "desagüe", "tarja", "lavabo", "plomería", "trampa de agua"],
+      "en": ["P-trap", "U-bend", "drain", "waste pipe", "plumbing", "basin", "odor seal"]
+    }
+  },
+  "sink-trap-clog": {
+    "label": { "es": "Drenaje tapado", "en": "Clogged drain", "pt": "Ralo entupido", "fr": "Évacuation bouchée", "de": "Verstopfter Abfluss", "it": "Scarico intasato", "ja": "排水管のつまり", "zh": "下水道堵塞", "ko": "배수구 막힘", "ar": "انسداد التصريف" },
+    "keywords": {
+      "es": ["destapar", "atasco", "desazolve", "destapacaños", "céspol", "plomero", "agua estancada"],
+      "en": ["blockage", "unclog", "drain cleaning", "plunger", "plumber", "standing water", "backed up"]
+    }
+  },
+  "faucet": {
+    "label": { "es": "Llave de agua", "en": "Faucet", "pt": "Torneira", "fr": "Robinet", "de": "Wasserhahn", "it": "Rubinetto", "ja": "蛇口", "zh": "水龙头", "ko": "수도꼭지", "ar": "صنبور" },
+    "keywords": {
+      "es": ["grifo", "mezcladora", "monomando", "instalación", "plomería", "lavabo", "tarja"],
+      "en": ["tap", "mixer tap", "fixture", "plumbing", "installation", "sink", "basin"]
+    }
+  },
+  "faucet-drip": {
+    "label": { "es": "Llave goteando", "en": "Dripping faucet", "pt": "Torneira pingando", "fr": "Robinet qui fuit", "de": "Tropfender Wasserhahn", "it": "Rubinetto che gocciola", "ja": "水漏れする蛇口", "zh": "滴水的水龙头", "ko": "물이 새는 수도꼭지", "ar": "صنبور يقطر" },
+    "keywords": {
+      "es": ["goteo", "fuga", "desperdicio de agua", "reparación", "plomero", "empaque", "gota"],
+      "en": ["leak", "water waste", "repair", "plumber", "washer", "leaky tap", "water bill"]
+    }
+  },
+  "spigot": {
+    "label": { "es": "Llave de jardín", "en": "Outdoor spigot", "pt": "Torneira externa", "fr": "Robinet extérieur", "de": "Außenwasserhahn", "it": "Rubinetto esterno", "ja": "屋外水栓", "zh": "室外水龙头", "ko": "야외 수도꼭지", "ar": "صنبور خارجي" },
+    "keywords": {
+      "es": ["toma de agua exterior", "patio", "riego", "manguera", "lavar el auto", "jardinería", "muro exterior"],
+      "en": ["hose bib", "sillcock", "outdoor tap", "hose", "garden", "watering", "yard"]
+    }
+  },
+  "ductwork": {
+    "label": { "es": "Ductos", "en": "Ductwork", "pt": "Dutos", "fr": "Gaines de ventilation", "de": "Lüftungskanäle", "it": "Canalizzazioni", "ja": "ダクト", "zh": "风管", "ko": "덕트", "ar": "مجاري الهواء" },
+    "keywords": {
+      "es": ["aire acondicionado", "ventilación", "climatización", "HVAC", "rejilla", "extracción", "calefacción"],
+      "en": ["HVAC", "ventilation", "air distribution", "duct cleaning", "air conditioning", "vents", "extraction"]
+    }
+  },
+  "breaker-panel": {
+    "label": { "es": "Centro de carga", "en": "Electrical panel", "pt": "Quadro de distribuição", "fr": "Tableau électrique", "de": "Sicherungskasten", "it": "Quadro elettrico", "ja": "分電盤", "zh": "配电箱", "ko": "분전반", "ar": "لوحة الكهرباء" },
+    "keywords": {
+      "es": ["tablero eléctrico", "pastillas", "caja de fusibles", "electricista", "instalación eléctrica", "breakers", "acometida"],
+      "en": ["breaker box", "fuse box", "consumer unit", "breakers", "electrician", "electrical work", "load center"]
+    }
+  },
+  "circuit-breaker": {
+    "label": { "es": "Interruptor termomagnético", "en": "Circuit breaker", "pt": "Disjuntor", "fr": "Disjoncteur", "de": "Leitungsschutzschalter", "it": "Interruttore magnetotermico", "ja": "ブレーカー", "zh": "断路器", "ko": "차단기", "ar": "قاطع الدائرة" },
+    "keywords": {
+      "es": ["pastilla", "breaker", "protección eléctrica", "circuito activo", "centro de carga", "electricista", "encendido"],
+      "en": ["breaker", "MCB", "electrical protection", "circuit on", "power on", "fuse", "electrician"]
+    }
+  },
+  "circuit-breaker-tripped": {
+    "label": { "es": "Interruptor disparado", "en": "Tripped breaker", "pt": "Disjuntor desarmado", "fr": "Disjoncteur déclenché", "de": "Ausgelöste Sicherung", "it": "Interruttore scattato", "ja": "落ちたブレーカー", "zh": "跳闸的断路器", "ko": "내려간 차단기", "ar": "قاطع دائرة مفصول" },
+    "keywords": {
+      "es": ["se botó la pastilla", "sin luz", "apagón", "falla eléctrica", "sobrecarga", "corto circuito", "restablecer"],
+      "en": ["no power", "electrical fault", "overload", "short circuit", "reset breaker", "outage", "blown fuse"]
+    }
+  }
+}

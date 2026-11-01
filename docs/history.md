@@ -4,6 +4,13 @@
 
 [← Index](./README.md)
 
+## 1 Nov 2026 — Round 9: science and industry (524 icons)
+- **Nine new categories** ([taxonomy](./taxonomy.md)): ciencia 79 (and flask, test-tube, and atom from datos, and magnet), herramientas 75 (and wrench, screwdriver, hammer, tools, and hex-nut from sistema), agricultura 65, industria 52 (and factory), energia 59, espacio 51 (and planet, shooting-star, and rocket), construccion 50, educacion 50 (and graduation-cap and school), and seguridad-laboral 43 (and hard-hat, traffic-cone, and barrier). The set has 6,514 icons in 68 categories.
+- **Names:** 995 proposed, 719 approved. What another category already draws wasn't drawn again (the gauge stays in datos), and no weapons: the axe and the hatchet are tools.
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category, three categories at a time; the critics redesigned 118 icons and dropped 56 (the angle grinder, the caliper, the band saw, the blast furnace, the loom, the combine harvester, the black hole). After them the main session dropped 131 more, the most of any round, each with its reason in the owner's sample: the tools held by a pistol grip, which read as weapons, and the materials, processes, and machines drawn alone ([DESIGN.md](../DESIGN.md#what-failed-before-check-every-icon-against-it)), among them `reciprocating-saw`, `caulking-gun`, `concrete`, `rebar`, `ore`, `mitosis`, `nuclear-fission`, `lathe`, `transformer`, and `classroom`.
+- **Interruptions:** the owner paused the round twice and the machine shut down once in the middle of the drawing; with three illustrators at once the 8 GB Mac filled its memory and swap and froze, but the run held. Each relaunch ran only what was missing, and the half-drawn files were finished by their illustrators.
+- Tests: 61.
+
 ## 29 Oct 2026 — Round 8: places and travel (703 icons)
 - **Eight new categories and lugares grown** ([taxonomy](./taxonomy.md)): vehiculos 102 (and car, taxi, bicycle, and scooter), conduccion 117 (and gas-station, ev-charger, parking, traffic-light, and road), aviacion 75 (and plane, plane-takeoff, and plane-landing), nautica 51 (and ship, sailboat, and anchor), transito 65 (and bus and train), viajes 58 (and luggage and passport), senales 61, camping 67 (and tent, campfire, and binoculars), and lugares 107 more (buildings, landmarks, and maps), which hands those 22 to the new categories and keeps 173. The set has 5,990 icons in 59 categories.
 - **Names:** 1,037 proposed, 766 approved. What lugares already draws wasn't drawn again (the turns, the ramps, and the tunnel), nor the car with every badge; what two lists named kept one home (the license plate in vehiculos, the igloo in viajes).

@@ -1,0 +1,555 @@
+{
+  "beaker": {
+    "label": { "es": "Vaso de precipitados", "en": "Beaker", "pt": "Béquer", "fr": "Bécher", "de": "Becherglas", "it": "Becher", "ja": "ビーカー", "zh": "烧杯", "ko": "비커", "ar": "كأس مخبرية" },
+    "keywords": {
+      "es": ["química", "laboratorio", "material de laboratorio", "mezclar líquidos", "medir líquidos", "ciencias", "experimento"],
+      "en": ["chemistry", "lab", "lab glassware", "mixing liquids", "measuring liquids", "science", "experiment"]
+    }
+  },
+  "flask-round": {
+    "label": { "es": "Matraz de fondo redondo", "en": "Round-bottom flask", "pt": "Balão de fundo redondo", "fr": "Ballon à fond rond", "de": "Rundkolben", "it": "Pallone a fondo tondo", "ja": "丸底フラスコ", "zh": "圆底烧瓶", "ko": "둥근바닥 플라스크", "ar": "دورق دائري القاع" },
+    "keywords": {
+      "es": ["química orgánica", "destilación", "calentar", "reflujo", "síntesis", "laboratorio", "cristalería"],
+      "en": ["organic chemistry", "distillation", "heating", "reflux", "synthesis", "lab", "glassware"]
+    }
+  },
+  "flask-volumetric": {
+    "label": { "es": "Matraz aforado", "en": "Volumetric flask", "pt": "Balão volumétrico", "fr": "Fiole jaugée", "de": "Messkolben", "it": "Matraccio tarato", "ja": "メスフラスコ", "zh": "容量瓶", "ko": "부피 플라스크", "ar": "دورق حجمي" },
+    "keywords": {
+      "es": ["dilución", "solución estándar", "volumen exacto", "aforar", "química analítica", "concentración", "preparar soluciones"],
+      "en": ["dilution", "standard solution", "exact volume", "fill to the mark", "analytical chemistry", "concentration", "preparing solutions"]
+    }
+  },
+  "graduated-cylinder": {
+    "label": { "es": "Probeta graduada", "en": "Graduated cylinder", "pt": "Proveta graduada", "fr": "Éprouvette graduée", "de": "Messzylinder", "it": "Cilindro graduato", "ja": "メスシリンダー", "zh": "量筒", "ko": "눈금 실린더", "ar": "مخبار مدرج" },
+    "keywords": {
+      "es": ["medir volumen", "mililitros", "dosificar", "medición de líquidos", "laboratorio", "escala", "cristalería"],
+      "en": ["measure volume", "milliliters", "dosing", "liquid measurement", "lab", "measuring cylinder", "glassware"]
+    }
+  },
+  "test-tube-rack": {
+    "label": { "es": "Gradilla de tubos de ensayo", "en": "Test tube rack", "pt": "Estante de tubos de ensaio", "fr": "Portoir à tubes", "de": "Reagenzglasständer", "it": "Portaprovette", "ja": "試験管立て", "zh": "试管架", "ko": "시험관 거치대", "ar": "حامل أنابيب الاختبار" },
+    "keywords": {
+      "es": ["muestras", "lote de muestras", "pruebas de laboratorio", "análisis", "panel de pruebas", "ensayos", "laboratorio clínico"],
+      "en": ["samples", "sample batch", "lab tests", "analysis", "test panel", "assays", "clinical lab"]
+    }
+  },
+  "microtube": {
+    "label": { "es": "Microtubo", "en": "Microcentrifuge tube", "pt": "Microtubo", "fr": "Microtube", "de": "Reaktionsgefäß", "it": "Microprovetta", "ja": "マイクロチューブ", "zh": "离心管", "ko": "마이크로튜브", "ar": "أنبوب طرد مركزي دقيق" },
+    "keywords": {
+      "es": ["tubo eppendorf", "PCR", "alícuota", "muestra biológica", "biología molecular", "tubo de centrífuga", "ADN"],
+      "en": ["eppendorf tube", "PCR tube", "aliquot", "biological sample", "molecular biology", "microtube", "DNA sample"]
+    }
+  },
+  "micropipette": {
+    "label": { "es": "Micropipeta", "en": "Micropipette", "pt": "Micropipeta", "fr": "Micropipette", "de": "Mikropipette", "it": "Micropipetta", "ja": "マイクロピペット", "zh": "移液器", "ko": "마이크로피펫", "ar": "ماصة دقيقة" },
+    "keywords": {
+      "es": ["pipetear", "dosificar", "volumen pequeño", "microlitros", "puntas", "manejo de líquidos", "laboratorio"],
+      "en": ["pipetting", "dispense", "small volume", "microliters", "pipette tips", "liquid handling", "lab"]
+    }
+  },
+  "multichannel-pipette": {
+    "label": { "es": "Pipeta multicanal", "en": "Multichannel pipette", "pt": "Pipeta multicanal", "fr": "Pipette multicanal", "de": "Mehrkanalpipette", "it": "Pipetta multicanale", "ja": "マルチチャンネルピペット", "zh": "多道移液器", "ko": "멀티채널 피펫", "ar": "ماصة متعددة القنوات" },
+    "keywords": {
+      "es": ["llenar placas", "placa de pocillos", "alto rendimiento", "pipetear en paralelo", "ensayos", "microplaca", "manejo de líquidos"],
+      "en": ["filling plates", "well plate", "high throughput", "parallel pipetting", "assays", "microplate", "liquid handling"]
+    }
+  },
+  "petri-dish": {
+    "label": { "es": "Caja de Petri", "en": "Petri dish", "pt": "Placa de Petri", "fr": "Boîte de Petri", "de": "Petrischale", "it": "Piastra di Petri", "ja": "シャーレ", "zh": "培养皿", "ko": "페트리 접시", "ar": "طبق بتري" },
+    "keywords": {
+      "es": ["microbiología", "cultivo", "colonias", "bacterias", "agar", "hongos", "incubar"],
+      "en": ["microbiology", "culture", "colonies", "bacteria", "agar", "mold", "incubate"]
+    }
+  },
+  "microplate": {
+    "label": { "es": "Microplaca", "en": "Well plate", "pt": "Microplaca", "fr": "Microplaque", "de": "Mikrotiterplatte", "it": "Micropiastra", "ja": "マイクロプレート", "zh": "微孔板", "ko": "마이크로플레이트", "ar": "صفيحة آبار دقيقة" },
+    "keywords": {
+      "es": ["placa de 96 pocillos", "ELISA", "ensayo", "cribado", "lector de placas", "alto rendimiento", "pocillos"],
+      "en": ["96-well plate", "microplate", "ELISA", "assay", "screening", "plate reader", "high throughput"]
+    }
+  },
+  "microscope": {
+    "label": { "es": "Microscopio", "en": "Microscope", "pt": "Microscópio", "fr": "Microscope", "de": "Mikroskop", "it": "Microscopio", "ja": "顕微鏡", "zh": "显微镜", "ko": "현미경", "ar": "مجهر" },
+    "keywords": {
+      "es": ["biología", "investigación", "laboratorio", "observar muestras", "ampliar", "ciencia", "biotecnología", "análisis"],
+      "en": ["biology", "research", "lab", "examine samples", "magnify", "science", "biotech", "analysis"]
+    }
+  },
+  "microscope-slide": {
+    "label": { "es": "Portaobjetos", "en": "Microscope slide", "pt": "Lâmina de microscópio", "fr": "Lame de microscope", "de": "Objektträger", "it": "Vetrino", "ja": "スライドガラス", "zh": "载玻片", "ko": "슬라이드 글라스", "ar": "شريحة مجهرية" },
+    "keywords": {
+      "es": ["muestra", "laminilla", "histología", "preparación", "tinción", "cubreobjetos", "patología"],
+      "en": ["specimen", "glass slide", "histology", "sample prep", "staining", "cover slip", "pathology"]
+    }
+  },
+  "bunsen-burner": {
+    "label": { "es": "Mechero Bunsen", "en": "Bunsen burner", "pt": "Bico de Bunsen", "fr": "Bec Bunsen", "de": "Bunsenbrenner", "it": "Becco Bunsen", "ja": "ブンゼンバーナー", "zh": "本生灯", "ko": "분젠 버너", "ar": "موقد بنسن" },
+    "keywords": {
+      "es": ["calentar", "flama", "fuego", "experimento", "química", "laboratorio escolar", "esterilizar"],
+      "en": ["heating", "flame", "fire", "experiment", "chemistry", "school lab", "sterilize"]
+    }
+  },
+  "lab-coat": {
+    "label": { "es": "Bata de laboratorio", "en": "Lab coat", "pt": "Jaleco", "fr": "Blouse de laboratoire", "de": "Laborkittel", "it": "Camice da laboratorio", "ja": "白衣", "zh": "实验服", "ko": "실험 가운", "ar": "معطف المختبر" },
+    "keywords": {
+      "es": ["investigador", "científico", "personal de laboratorio", "bata blanca", "rol", "acceso al laboratorio", "uniforme", "equipo de protección"],
+      "en": ["researcher", "scientist", "lab staff", "white coat", "role", "lab access", "uniform", "protective wear"]
+    }
+  },
+  "separatory-funnel": {
+    "label": { "es": "Embudo de separación", "en": "Separatory funnel", "pt": "Funil de separação", "fr": "Ampoule à décanter", "de": "Scheidetrichter", "it": "Imbuto separatore", "ja": "分液漏斗", "zh": "分液漏斗", "ko": "분액 깔때기", "ar": "قمع الفصل" },
+    "keywords": {
+      "es": ["extracción", "líquido-líquido", "separar fases", "decantar", "capas", "química orgánica", "llave de paso"],
+      "en": ["extraction", "liquid-liquid", "separate phases", "decant", "layers", "organic chemistry", "stopcock"]
+    }
+  },
+  "wash-bottle": {
+    "label": { "es": "Piseta", "en": "Wash bottle", "pt": "Pisseta", "fr": "Pissette", "de": "Spritzflasche", "it": "Spruzzetta", "ja": "洗浄瓶", "zh": "洗瓶", "ko": "세척병", "ar": "زجاجة غسيل مخبرية" },
+    "keywords": {
+      "es": ["enjuagar", "agua destilada", "solvente", "lavar material", "consumibles", "botella de lavado", "limpiar"],
+      "en": ["rinse", "distilled water", "solvent", "squeeze bottle", "consumables", "cleaning glassware", "lab supplies"]
+    }
+  },
+  "reagent-bottle": {
+    "label": { "es": "Frasco de reactivo", "en": "Reagent bottle", "pt": "Frasco de reagente", "fr": "Flacon de réactif", "de": "Reagenzienflasche", "it": "Bottiglia per reagenti", "ja": "試薬瓶", "zh": "试剂瓶", "ko": "시약병", "ar": "زجاجة كاشف" },
+    "keywords": {
+      "es": ["sustancias químicas", "solución madre", "inventario químico", "almacén", "compuesto", "etiqueta", "frasco ámbar"],
+      "en": ["chemicals", "stock solution", "chemical inventory", "storage", "compound", "label", "amber bottle"]
+    }
+  },
+  "specimen-jar": {
+    "label": { "es": "Frasco de especímenes", "en": "Specimen jar", "pt": "Frasco de espécimes", "fr": "Bocal à spécimens", "de": "Präparateglas", "it": "Barattolo per campioni", "ja": "標本瓶", "zh": "标本瓶", "ko": "표본병", "ar": "وعاء عينات" },
+    "keywords": {
+      "es": ["colección biológica", "historia natural", "conservar", "formol", "museo", "muestra preservada", "biología"],
+      "en": ["biological collection", "natural history", "preserve", "formaldehyde", "museum", "preserved sample", "biology"]
+    }
+  },
+  "bell-jar": {
+    "label": { "es": "Campana de vidrio", "en": "Bell jar", "pt": "Campânula", "fr": "Cloche à vide", "de": "Glasglocke", "it": "Campana di vetro", "ja": "ベルジャー", "zh": "钟罩", "ko": "벨자", "ar": "ناقوس زجاجي" },
+    "keywords": {
+      "es": ["vacío", "atmósfera controlada", "aislar", "experimento", "proteger muestra", "cámara de vacío", "cúpula"],
+      "en": ["vacuum", "controlled atmosphere", "isolate", "experiment", "protect sample", "vacuum chamber", "glass dome"]
+    }
+  },
+  "hydrometer": {
+    "label": { "es": "Densímetro", "en": "Hydrometer", "pt": "Densímetro", "fr": "Densimètre", "de": "Aräometer", "it": "Densimetro", "ja": "比重計", "zh": "比重计", "ko": "비중계", "ar": "مقياس الكثافة" },
+    "keywords": {
+      "es": ["densidad", "gravedad específica", "cerveza artesanal", "vino", "ácido de batería", "grados Brix", "fermentación"],
+      "en": ["density", "specific gravity", "homebrewing", "winemaking", "battery acid", "brix", "fermentation"]
+    }
+  },
+  "gel-electrophoresis": {
+    "label": { "es": "Electroforesis en gel", "en": "Gel electrophoresis", "pt": "Eletroforese em gel", "fr": "Électrophorèse sur gel", "de": "Gelelektrophorese", "it": "Elettroforesi su gel", "ja": "ゲル電気泳動", "zh": "凝胶电泳", "ko": "겔 전기영동", "ar": "الرحلان الكهربائي الهلامي" },
+    "keywords": {
+      "es": ["ADN", "proteínas", "bandas", "separar fragmentos", "biología molecular", "resultados", "agarosa", "PCR"],
+      "en": ["DNA", "proteins", "bands", "separating fragments", "molecular biology", "results", "agarose", "western blot"]
+    }
+  },
+  "titration": {
+    "label": { "es": "Titulación", "en": "Titration", "pt": "Titulação", "fr": "Titrage", "de": "Titration", "it": "Titolazione", "ja": "滴定", "zh": "滴定", "ko": "적정", "ar": "معايرة" },
+    "keywords": {
+      "es": ["bureta", "análisis volumétrico", "gota a gota", "punto de equivalencia", "química analítica", "indicador", "concentración"],
+      "en": ["burette", "volumetric analysis", "drop by drop", "endpoint", "analytical chemistry", "indicator", "concentration"]
+    }
+  },
+  "analytical-balance": {
+    "label": { "es": "Balanza analítica", "en": "Analytical balance", "pt": "Balança analítica", "fr": "Balance analytique", "de": "Analysenwaage", "it": "Bilancia analitica", "ja": "分析天秤", "zh": "分析天平", "ko": "분석 저울", "ar": "ميزان تحليلي" },
+    "keywords": {
+      "es": ["pesar", "precisión", "reactivos", "gramos", "báscula de laboratorio", "medir masa", "tarar"],
+      "en": ["weigh", "precision", "reagents", "grams", "lab scale", "measure mass", "tare"]
+    }
+  },
+  "magnetic-stirrer": {
+    "label": { "es": "Agitador magnético", "en": "Magnetic stirrer", "pt": "Agitador magnético", "fr": "Agitateur magnétique", "de": "Magnetrührer", "it": "Agitatore magnetico", "ja": "マグネチックスターラー", "zh": "磁力搅拌器", "ko": "자석 교반기", "ar": "خلاط مغناطيسي" },
+    "keywords": {
+      "es": ["parrilla de calentamiento", "mezclar", "agitar", "calentar soluciones", "barra magnética", "disolver", "equipo de laboratorio"],
+      "en": ["hot plate", "mixing", "stir bar", "heating solutions", "dissolve", "lab equipment", "blend"]
+    }
+  },
+  "lab-stand": {
+    "label": { "es": "Soporte universal", "en": "Ring stand", "pt": "Suporte universal", "fr": "Support de laboratoire", "de": "Stativ", "it": "Supporto da laboratorio", "ja": "実験用スタンド", "zh": "铁架台", "ko": "실험용 스탠드", "ar": "حامل مخبري" },
+    "keywords": {
+      "es": ["pinzas", "aro", "sostener", "montaje", "laboratorio escolar", "cristalería", "nuez"],
+      "en": ["clamp", "retort stand", "hold glassware", "setup", "school lab", "support", "iron ring"]
+    }
+  },
+  "spring-scale": {
+    "label": { "es": "Dinamómetro", "en": "Spring scale", "pt": "Dinamômetro", "fr": "Dynamomètre", "de": "Federwaage", "it": "Dinamometro", "ja": "ばねばかり", "zh": "弹簧秤", "ko": "용수철저울", "ar": "ميزان نابضي" },
+    "keywords": {
+      "es": ["medir fuerza", "newtons", "resorte", "peso", "física", "laboratorio escolar", "tensión"],
+      "en": ["force meter", "newtons", "spring", "weight", "physics", "school lab", "tension"]
+    }
+  },
+  "geiger-counter": {
+    "label": { "es": "Contador Geiger", "en": "Geiger counter", "pt": "Contador Geiger", "fr": "Compteur Geiger", "de": "Geigerzähler", "it": "Contatore Geiger", "ja": "ガイガーカウンター", "zh": "盖革计数器", "ko": "가이거 계수기", "ar": "عداد غايغر" },
+    "keywords": {
+      "es": ["radiación", "radiactividad", "detector", "dosímetro", "medir radiación", "nuclear", "contaminación"],
+      "en": ["radiation", "radioactivity", "detector", "dosimeter", "measure radiation", "nuclear", "contamination"]
+    }
+  },
+  "seismograph": {
+    "label": { "es": "Sismógrafo", "en": "Seismograph", "pt": "Sismógrafo", "fr": "Sismographe", "de": "Seismograf", "it": "Sismografo", "ja": "地震計", "zh": "地震仪", "ko": "지진계", "ar": "مقياس الزلازل" },
+    "keywords": {
+      "es": ["sismo", "temblor", "actividad sísmica", "terremoto", "vibración", "monitoreo", "magnitud"],
+      "en": ["earthquake", "tremor", "seismic activity", "quake", "vibration", "monitoring", "magnitude"]
+    }
+  },
+  "molecule": {
+    "label": { "es": "Molécula", "en": "Molecule", "pt": "Molécula", "fr": "Molécule", "de": "Molekül", "it": "Molecola", "ja": "分子", "zh": "分子", "ko": "분자", "ar": "جزيء" },
+    "keywords": {
+      "es": ["compuesto", "química", "átomos", "enlace", "materiales", "estructura", "registro de compuestos"],
+      "en": ["compound", "chemistry", "atoms", "bond", "materials", "structure", "compound registry"]
+    }
+  },
+  "water-molecule": {
+    "label": { "es": "Molécula de agua", "en": "Water molecule", "pt": "Molécula de água", "fr": "Molécule d’eau", "de": "Wassermolekül", "it": "Molecola d’acqua", "ja": "水分子", "zh": "水分子", "ko": "물 분자", "ar": "جزيء الماء" },
+    "keywords": {
+      "es": ["H2O", "química del agua", "hidratación", "tratamiento de agua", "hidrógeno", "oxígeno", "potabilización"],
+      "en": ["H2O", "water chemistry", "hydration", "water treatment", "hydrogen", "oxygen", "purification"]
+    }
+  },
+  "benzene-ring": {
+    "label": { "es": "Anillo de benceno", "en": "Benzene ring", "pt": "Anel benzênico", "fr": "Cycle benzénique", "de": "Benzolring", "it": "Anello benzenico", "ja": "ベンゼン環", "zh": "苯环", "ko": "벤젠 고리", "ar": "حلقة البنزين" },
+    "keywords": {
+      "es": ["aromático", "química orgánica", "hexágono", "estructura química", "hidrocarburo", "enlaces dobles", "compuesto"],
+      "en": ["aromatic", "organic chemistry", "hexagon", "chemical structure", "hydrocarbon", "double bonds", "compound"]
+    }
+  },
+  "chemical-reaction": {
+    "label": { "es": "Reacción química", "en": "Chemical reaction", "pt": "Reação química", "fr": "Réaction chimique", "de": "Chemische Reaktion", "it": "Reazione chimica", "ja": "化学反応", "zh": "化学反应", "ko": "화학 반응", "ar": "تفاعل كيميائي" },
+    "keywords": {
+      "es": ["reactivos", "productos", "síntesis", "ecuación química", "rendimiento", "combinar", "experimento"],
+      "en": ["reactants", "products", "synthesis", "chemical equation", "yield", "combine", "experiment"]
+    }
+  },
+  "reversible-reaction": {
+    "label": { "es": "Reacción reversible", "en": "Reversible reaction", "pt": "Reação reversível", "fr": "Réaction réversible", "de": "Reversible Reaktion", "it": "Reazione reversibile", "ja": "可逆反応", "zh": "可逆反应", "ko": "가역 반응", "ar": "تفاعل عكسي" },
+    "keywords": {
+      "es": ["equilibrio químico", "ida y vuelta", "doble flecha", "constante de equilibrio", "Le Chatelier", "dinámico", "química"],
+      "en": ["chemical equilibrium", "both directions", "double arrow", "equilibrium constant", "Le Chatelier", "dynamic", "chemistry"]
+    }
+  },
+  "periodic-table": {
+    "label": { "es": "Tabla periódica", "en": "Periodic table", "pt": "Tabela periódica", "fr": "Tableau périodique", "de": "Periodensystem", "it": "Tavola periodica", "ja": "周期表", "zh": "元素周期表", "ko": "주기율표", "ar": "الجدول الدوري" },
+    "keywords": {
+      "es": ["elementos químicos", "química", "consulta", "referencia", "número atómico", "grupos", "metales"],
+      "en": ["chemical elements", "chemistry", "lookup", "reference", "atomic number", "groups", "metals"]
+    }
+  },
+  "crystal-lattice": {
+    "label": { "es": "Red cristalina", "en": "Crystal lattice", "pt": "Rede cristalina", "fr": "Réseau cristallin", "de": "Kristallgitter", "it": "Reticolo cristallino", "ja": "結晶格子", "zh": "晶格", "ko": "결정 격자", "ar": "شبكة بلورية" },
+    "keywords": {
+      "es": ["celda unitaria", "estructura cristalina", "ciencia de materiales", "átomos", "estado sólido", "cristalografía", "cúbico"],
+      "en": ["unit cell", "crystal structure", "materials science", "atoms", "solid state", "crystallography", "cubic"]
+    }
+  },
+  "electron-shells": {
+    "label": { "es": "Capas de electrones", "en": "Electron shells", "pt": "Camadas eletrônicas", "fr": "Couches électroniques", "de": "Elektronenschalen", "it": "Gusci elettronici", "ja": "電子殻", "zh": "电子层", "ko": "전자 껍질", "ar": "مستويات الطاقة الإلكترونية" },
+    "keywords": {
+      "es": ["modelo de Bohr", "configuración electrónica", "estructura atómica", "órbitas", "niveles de energía", "átomo", "valencia"],
+      "en": ["Bohr model", "electron configuration", "atomic structure", "orbits", "energy levels", "atom", "valence"]
+    }
+  },
+  "ph-strip": {
+    "label": { "es": "Tira de pH", "en": "pH test strip", "pt": "Fita de pH", "fr": "Bandelette de pH", "de": "pH-Teststreifen", "it": "Cartina indicatrice di pH", "ja": "pH試験紙", "zh": "pH试纸", "ko": "pH 시험지", "ar": "شريط قياس الحموضة" },
+    "keywords": {
+      "es": ["acidez", "alcalinidad", "papel tornasol", "alberca", "acuario", "análisis de suelo", "calidad del agua"],
+      "en": ["acidity", "alkalinity", "litmus paper", "pool", "aquarium", "soil test", "water quality"]
+    }
+  },
+  "dna": {
+    "label": { "es": "ADN", "en": "DNA", "pt": "DNA", "fr": "ADN", "de": "DNA", "it": "DNA", "ja": "DNA", "zh": "DNA", "ko": "DNA", "ar": "الحمض النووي" },
+    "keywords": {
+      "es": ["genética", "doble hélice", "genoma", "biotecnología", "ancestría", "herencia", "secuenciación"],
+      "en": ["genetics", "double helix", "genome", "biotech", "ancestry", "heredity", "sequencing"]
+    }
+  },
+  "rna": {
+    "label": { "es": "ARN", "en": "RNA", "pt": "RNA", "fr": "ARN", "de": "RNA", "it": "RNA", "ja": "RNA", "zh": "RNA", "ko": "RNA", "ar": "الحمض النووي الريبوزي" },
+    "keywords": {
+      "es": ["ARNm", "transcripción", "vacuna", "cadena sencilla", "genética", "terapia génica", "síntesis de proteínas"],
+      "en": ["mRNA", "transcription", "vaccine", "single strand", "genetics", "therapeutics", "protein synthesis"]
+    }
+  },
+  "chromosome": {
+    "label": { "es": "Cromosoma", "en": "Chromosome", "pt": "Cromossomo", "fr": "Chromosome", "de": "Chromosom", "it": "Cromosoma", "ja": "染色体", "zh": "染色体", "ko": "염색체", "ar": "كروموسوم" },
+    "keywords": {
+      "es": ["herencia", "cariotipo", "genética", "condición genética", "cromátida", "genes", "trisomía"],
+      "en": ["heredity", "karyotype", "genetics", "genetic condition", "chromatid", "genes", "trisomy"]
+    }
+  },
+  "gene-editing": {
+    "label": { "es": "Edición genética", "en": "Gene editing", "pt": "Edição genética", "fr": "Édition génomique", "de": "Genom-Editierung", "it": "Editing genetico", "ja": "ゲノム編集", "zh": "基因编辑", "ko": "유전자 편집", "ar": "تعديل الجينات" },
+    "keywords": {
+      "es": ["CRISPR", "ingeniería genética", "modificar ADN", "cortar gen", "biotecnología", "terapia génica", "mutación"],
+      "en": ["CRISPR", "genetic engineering", "modify DNA", "gene cut", "biotech", "gene therapy", "mutation"]
+    }
+  },
+  "dna-replication": {
+    "label": { "es": "Replicación del ADN", "en": "DNA replication", "pt": "Replicação do DNA", "fr": "Réplication de l’ADN", "de": "DNA-Replikation", "it": "Replicazione del DNA", "ja": "DNA複製", "zh": "DNA复制", "ko": "DNA 복제", "ar": "تضاعف الحمض النووي" },
+    "keywords": {
+      "es": ["copiar genoma", "duplicar", "biología celular", "horquilla", "polimerasa", "división celular", "hebras"],
+      "en": ["copy genome", "duplicate", "cell biology", "fork", "polymerase", "cell division", "strands"]
+    }
+  },
+  "animal-cell": {
+    "label": { "es": "Célula animal", "en": "Animal cell", "pt": "Célula animal", "fr": "Cellule animale", "de": "Tierzelle", "it": "Cellula animale", "ja": "動物細胞", "zh": "动物细胞", "ko": "동물 세포", "ar": "خلية حيوانية" },
+    "keywords": {
+      "es": ["biología celular", "núcleo", "citoplasma", "clase de biología", "ciencias de la vida", "organelos", "membrana"],
+      "en": ["cell biology", "nucleus", "cytoplasm", "biology class", "life sciences", "organelles", "membrane"]
+    }
+  },
+  "plant-cell": {
+    "label": { "es": "Célula vegetal", "en": "Plant cell", "pt": "Célula vegetal", "fr": "Cellule végétale", "de": "Pflanzenzelle", "it": "Cellula vegetale", "ja": "植物細胞", "zh": "植物细胞", "ko": "식물 세포", "ar": "خلية نباتية" },
+    "keywords": {
+      "es": ["botánica", "pared celular", "biología vegetal", "cloroplastos", "vacuola", "clase de biología", "plantas"],
+      "en": ["botany", "cell wall", "plant biology", "chloroplasts", "vacuole", "biology class", "plants"]
+    }
+  },
+  "mitochondrion": {
+    "label": { "es": "Mitocondria", "en": "Mitochondrion", "pt": "Mitocôndria", "fr": "Mitochondrie", "de": "Mitochondrium", "it": "Mitocondrio", "ja": "ミトコンドリア", "zh": "线粒体", "ko": "미토콘드리아", "ar": "ميتوكوندريا" },
+    "keywords": {
+      "es": ["energía celular", "metabolismo", "ATP", "respiración celular", "organelo", "biología celular", "central energética"],
+      "en": ["cellular energy", "metabolism", "ATP", "cellular respiration", "organelle", "cell biology", "powerhouse"]
+    }
+  },
+  "chloroplast": {
+    "label": { "es": "Cloroplasto", "en": "Chloroplast", "pt": "Cloroplasto", "fr": "Chloroplaste", "de": "Chloroplast", "it": "Cloroplasto", "ja": "葉緑体", "zh": "叶绿体", "ko": "엽록체", "ar": "بلاستيدة خضراء" },
+    "keywords": {
+      "es": ["fotosíntesis", "clorofila", "biología vegetal", "organelo", "plantas", "célula vegetal", "tilacoides"],
+      "en": ["photosynthesis", "chlorophyll", "plant biology", "organelle", "plants", "plant cell", "thylakoids"]
+    }
+  },
+  "photosynthesis": {
+    "label": { "es": "Fotosíntesis", "en": "Photosynthesis", "pt": "Fotossíntese", "fr": "Photosynthèse", "de": "Fotosynthese", "it": "Fotosintesi", "ja": "光合成", "zh": "光合作用", "ko": "광합성", "ar": "التمثيل الضوئي" },
+    "keywords": {
+      "es": ["plantas", "luz solar", "hoja", "clorofila", "oxígeno", "biología vegetal", "dióxido de carbono"],
+      "en": ["plants", "sunlight", "leaf", "chlorophyll", "oxygen", "plant biology", "carbon dioxide"]
+    }
+  },
+  "pendulum": {
+    "label": { "es": "Péndulo", "en": "Pendulum", "pt": "Pêndulo", "fr": "Pendule", "de": "Pendel", "it": "Pendolo", "ja": "振り子", "zh": "单摆", "ko": "진자", "ar": "بندول" },
+    "keywords": {
+      "es": ["oscilación", "periodo", "vaivén", "ritmo", "física", "movimiento armónico", "balanceo"],
+      "en": ["oscillation", "period", "swing", "rhythm", "physics", "harmonic motion", "metronome"]
+    }
+  },
+  "spring-mass": {
+    "label": { "es": "Masa y resorte", "en": "Spring and mass", "pt": "Massa e mola", "fr": "Système masse-ressort", "de": "Federpendel", "it": "Massa e molla", "ja": "ばねとおもり", "zh": "弹簧振子", "ko": "용수철과 추", "ar": "نابض وكتلة" },
+    "keywords": {
+      "es": ["ley de Hooke", "oscilación", "elasticidad", "muelle", "rebote", "física", "vibración"],
+      "en": ["Hooke's law", "oscillation", "elasticity", "bounce", "harmonic oscillator", "physics", "vibration"]
+    }
+  },
+  "newtons-cradle": {
+    "label": { "es": "Péndulo de Newton", "en": "Newton’s cradle", "pt": "Pêndulo de Newton", "fr": "Pendule de Newton", "de": "Newtonpendel", "it": "Pendolo di Newton", "ja": "ニュートンのゆりかご", "zh": "牛顿摆", "ko": "뉴턴의 요람", "ar": "مهد نيوتن" },
+    "keywords": {
+      "es": ["cantidad de movimiento", "transferencia de energía", "choque", "esferas", "física", "inercia", "juguete de escritorio"],
+      "en": ["momentum", "energy transfer", "collision", "balls", "physics", "inertia", "desk toy"]
+    }
+  },
+  "inclined-plane": {
+    "label": { "es": "Plano inclinado", "en": "Inclined plane", "pt": "Plano inclinado", "fr": "Plan incliné", "de": "Schiefe Ebene", "it": "Piano inclinato", "ja": "斜面", "zh": "斜面", "ko": "빗면", "ar": "مستوى مائل" },
+    "keywords": {
+      "es": ["rampa", "pendiente", "fuerzas", "máquina simple", "física", "deslizar", "ángulo"],
+      "en": ["ramp", "slope", "forces", "simple machine", "physics", "slide", "angle"]
+    }
+  },
+  "projectile-motion": {
+    "label": { "es": "Tiro parabólico", "en": "Projectile motion", "pt": "Lançamento oblíquo", "fr": "Mouvement d’un projectile", "de": "Schiefer Wurf", "it": "Moto del proiettile", "ja": "放物運動", "zh": "抛体运动", "ko": "포물선 운동", "ar": "حركة المقذوفات" },
+    "keywords": {
+      "es": ["trayectoria", "ángulo de lanzamiento", "parábola", "balística", "proyectil", "alcance", "física"],
+      "en": ["trajectory", "launch angle", "parabola", "ballistic arc", "throw", "range", "physics"]
+    }
+  },
+  "circular-motion": {
+    "label": { "es": "Movimiento circular", "en": "Circular motion", "pt": "Movimento circular", "fr": "Mouvement circulaire", "de": "Kreisbewegung", "it": "Moto circolare", "ja": "円運動", "zh": "圆周运动", "ko": "원운동", "ar": "الحركة الدائرية" },
+    "keywords": {
+      "es": ["fuerza centrípeta", "rotación", "órbita", "velocidad angular", "girar", "física", "radio"],
+      "en": ["centripetal force", "rotation", "orbit", "angular velocity", "spin", "physics", "radius"]
+    }
+  },
+  "force": {
+    "label": { "es": "Fuerza", "en": "Force", "pt": "Força", "fr": "Force", "de": "Kraft", "it": "Forza", "ja": "力", "zh": "力", "ko": "힘", "ar": "قوة" },
+    "keywords": {
+      "es": ["empujar", "jalar", "resultante", "leyes de Newton", "vector", "dinámica", "física"],
+      "en": ["push", "pull", "resultant", "Newton's laws", "vector", "dynamics", "physics"]
+    }
+  },
+  "friction": {
+    "label": { "es": "Fricción", "en": "Friction", "pt": "Atrito", "fr": "Frottement", "de": "Reibung", "it": "Attrito", "ja": "摩擦", "zh": "摩擦力", "ko": "마찰", "ar": "الاحتكاك" },
+    "keywords": {
+      "es": ["rozamiento", "resistencia", "superficies", "agarre", "arrastre", "desgaste", "física"],
+      "en": ["resistance", "surfaces", "grip", "drag", "traction", "wear", "physics"]
+    }
+  },
+  "velocity": {
+    "label": { "es": "Velocidad", "en": "Velocity", "pt": "Velocidade", "fr": "Vitesse", "de": "Geschwindigkeit", "it": "Velocità", "ja": "速度", "zh": "速度", "ko": "속도", "ar": "السرعة" },
+    "keywords": {
+      "es": ["rapidez", "dirección", "movimiento", "vector", "cinemática", "metros por segundo", "física"],
+      "en": ["speed", "direction", "motion", "vector", "kinematics", "meters per second", "physics"]
+    }
+  },
+  "heat-transfer": {
+    "label": { "es": "Transferencia de calor", "en": "Heat transfer", "pt": "Transferência de calor", "fr": "Transfert de chaleur", "de": "Wärmeübertragung", "it": "Trasferimento di calore", "ja": "熱伝達", "zh": "热传递", "ko": "열전달", "ar": "انتقال الحرارة" },
+    "keywords": {
+      "es": ["conducción térmica", "convección", "radiación térmica", "temperatura", "termodinámica", "física térmica", "aislamiento"],
+      "en": ["thermal conduction", "convection", "thermal radiation", "temperature", "thermodynamics", "thermal physics", "insulation"]
+    }
+  },
+  "electric-charge": {
+    "label": { "es": "Carga eléctrica", "en": "Electric charge", "pt": "Carga elétrica", "fr": "Charge électrique", "de": "Elektrische Ladung", "it": "Carica elettrica", "ja": "電荷", "zh": "电荷", "ko": "전하", "ar": "شحنة كهربائية" },
+    "keywords": {
+      "es": ["positivo y negativo", "electrostática", "atracción", "repulsión", "iones", "protones y electrones", "física"],
+      "en": ["positive and negative", "electrostatics", "attraction", "repulsion", "ions", "protons and electrons", "physics"]
+    }
+  },
+  "wavelength": {
+    "label": { "es": "Longitud de onda", "en": "Wavelength", "pt": "Comprimento de onda", "fr": "Longueur d’onde", "de": "Wellenlänge", "it": "Lunghezza d’onda", "ja": "波長", "zh": "波长", "ko": "파장", "ar": "الطول الموجي" },
+    "keywords": {
+      "es": ["frecuencia", "periodo", "señal", "oscilación", "amplitud", "ciclo", "física"],
+      "en": ["frequency", "period", "signal", "oscillation", "amplitude", "cycle", "physics"]
+    }
+  },
+  "convex-lens": {
+    "label": { "es": "Lente convergente", "en": "Converging lens", "pt": "Lente convergente", "fr": "Lentille convergente", "de": "Sammellinse", "it": "Lente convergente", "ja": "凸レンズ", "zh": "凸透镜", "ko": "볼록 렌즈", "ar": "عدسة محدبة" },
+    "keywords": {
+      "es": ["convexa", "óptica", "enfocar", "punto focal", "lupa", "rayos de luz", "física"],
+      "en": ["convex", "optics", "focus", "focal point", "magnifying glass", "light rays", "physics"]
+    }
+  },
+  "concave-lens": {
+    "label": { "es": "Lente divergente", "en": "Diverging lens", "pt": "Lente divergente", "fr": "Lentille divergente", "de": "Zerstreuungslinse", "it": "Lente divergente", "ja": "凹レンズ", "zh": "凹透镜", "ko": "오목 렌즈", "ar": "عدسة مقعرة" },
+    "keywords": {
+      "es": ["cóncava", "óptica", "dispersar luz", "miopía", "rayos de luz", "anteojos", "física"],
+      "en": ["concave", "optics", "spreading light", "nearsightedness", "light rays", "glasses", "physics"]
+    }
+  },
+  "light-reflection": {
+    "label": { "es": "Reflexión de la luz", "en": "Light reflection", "pt": "Reflexão da luz", "fr": "Réflexion de la lumière", "de": "Lichtreflexion", "it": "Riflessione della luce", "ja": "光の反射", "zh": "光的反射", "ko": "빛의 반사", "ar": "انعكاس الضوء" },
+    "keywords": {
+      "es": ["espejo", "óptica", "ángulo de incidencia", "rebote", "rayo", "superficie", "física"],
+      "en": ["mirror", "optics", "angle of incidence", "bounce", "ray", "surface", "physics"]
+    }
+  },
+  "light-refraction": {
+    "label": { "es": "Refracción de la luz", "en": "Light refraction", "pt": "Refração da luz", "fr": "Réfraction de la lumière", "de": "Lichtbrechung", "it": "Rifrazione della luce", "ja": "光の屈折", "zh": "光的折射", "ko": "빛의 굴절", "ar": "انكسار الضوء" },
+    "keywords": {
+      "es": ["desviación", "agua", "vidrio", "óptica", "ley de Snell", "rayo", "física"],
+      "en": ["bending light", "water", "glass", "optics", "Snell's law", "ray", "physics"]
+    }
+  },
+  "light-dispersion": {
+    "label": { "es": "Dispersión de la luz", "en": "Light dispersion", "pt": "Dispersão da luz", "fr": "Dispersion de la lumière", "de": "Lichtzerlegung", "it": "Dispersione della luce", "ja": "光の分散", "zh": "光的色散", "ko": "빛의 분산", "ar": "تشتت الضوء" },
+    "keywords": {
+      "es": ["prisma", "arcoíris", "espectro", "luz blanca", "colores", "óptica", "física"],
+      "en": ["prism", "rainbow", "spectrum", "white light", "colors", "optics", "physics"]
+    }
+  },
+  "electromagnetic-spectrum": {
+    "label": { "es": "Espectro electromagnético", "en": "Electromagnetic spectrum", "pt": "Espectro eletromagnético", "fr": "Spectre électromagnétique", "de": "Elektromagnetisches Spektrum", "it": "Spettro elettromagnetico", "ja": "電磁スペクトル", "zh": "电磁波谱", "ko": "전자기 스펙트럼", "ar": "الطيف الكهرومغناطيسي" },
+    "keywords": {
+      "es": ["longitudes de onda", "ondas de radio", "rayos gamma", "luz visible", "infrarrojo", "ultravioleta", "frecuencias"],
+      "en": ["wavelengths", "radio waves", "gamma rays", "visible light", "infrared", "ultraviolet", "frequencies"]
+    }
+  },
+  "nuclear-fusion": {
+    "label": { "es": "Fusión nuclear", "en": "Nuclear fusion", "pt": "Fusão nuclear", "fr": "Fusion nucléaire", "de": "Kernfusion", "it": "Fusione nucleare", "ja": "核融合", "zh": "核聚变", "ko": "핵융합", "ar": "الاندماج النووي" },
+    "keywords": {
+      "es": ["unir núcleos", "energía limpia", "estrellas", "Sol", "hidrógeno", "plasma", "tokamak"],
+      "en": ["joining nuclei", "clean energy", "stars", "sun", "hydrogen", "plasma", "tokamak"]
+    }
+  },
+  "radioactive-decay": {
+    "label": { "es": "Desintegración radiactiva", "en": "Radioactive decay", "pt": "Decaimento radioativo", "fr": "Désintégration radioactive", "de": "Radioaktiver Zerfall", "it": "Decadimento radioattivo", "ja": "放射性崩壊", "zh": "放射性衰变", "ko": "방사성 붕괴", "ar": "الاضمحلال الإشعاعي" },
+    "keywords": {
+      "es": ["radiación", "núcleo inestable", "partícula alfa", "rayos beta", "isótopo", "emisión", "física nuclear"],
+      "en": ["radiation", "unstable nucleus", "alpha particle", "beta rays", "isotope", "emission", "nuclear physics"]
+    }
+  },
+  "half-life": {
+    "label": { "es": "Vida media", "en": "Half-life", "pt": "Meia-vida", "fr": "Demi-vie", "de": "Halbwertszeit", "it": "Emivita", "ja": "半減期", "zh": "半衰期", "ko": "반감기", "ar": "عمر النصف" },
+    "keywords": {
+      "es": ["decaimiento exponencial", "datación por carbono", "radioisótopo", "eliminación de fármacos", "curva", "semivida", "farmacocinética"],
+      "en": ["exponential decay", "carbon dating", "radioisotope", "drug elimination", "decay curve", "radiometric dating", "pharmacokinetics"]
+    }
+  },
+  "aerodynamics": {
+    "label": { "es": "Aerodinámica", "en": "Aerodynamics", "pt": "Aerodinâmica", "fr": "Aérodynamique", "de": "Aerodynamik", "it": "Aerodinamica", "ja": "空気力学", "zh": "空气动力学", "ko": "공기역학", "ar": "الديناميكا الهوائية" },
+    "keywords": {
+      "es": ["flujo de aire", "resistencia al aire", "túnel de viento", "arrastre", "sustentación", "perfil", "dinámica de fluidos"],
+      "en": ["airflow", "air resistance", "wind tunnel", "drag", "lift", "streamline", "fluid dynamics"]
+    }
+  },
+  "fossil": {
+    "label": { "es": "Fósil", "en": "Fossil", "pt": "Fóssil", "fr": "Fossile", "de": "Fossil", "it": "Fossile", "ja": "化石", "zh": "化石", "ko": "화석", "ar": "أحفورة" },
+    "keywords": {
+      "es": ["paleontología", "amonita", "dinosaurio", "historia natural", "vida antigua", "prehistoria", "museo"],
+      "en": ["paleontology", "ammonite", "dinosaur", "natural history", "ancient life", "prehistoric", "museum"]
+    }
+  },
+  "crystal": {
+    "label": { "es": "Cristal", "en": "Crystal", "pt": "Cristal", "fr": "Cristal", "de": "Kristall", "it": "Cristallo", "ja": "結晶", "zh": "晶体", "ko": "결정", "ar": "بلورة" },
+    "keywords": {
+      "es": ["mineral", "cuarzo", "geología", "mineralogía", "gema", "piedra", "roca"],
+      "en": ["mineral", "quartz", "geology", "mineralogy", "gem", "stone", "rock"]
+    }
+  },
+  "geode": {
+    "label": { "es": "Geoda", "en": "Geode", "pt": "Geodo", "fr": "Géode", "de": "Geode", "it": "Geode", "ja": "ジオード", "zh": "晶洞", "ko": "정동", "ar": "جيودة" },
+    "keywords": {
+      "es": ["geología", "rocas y minerales", "cristales", "amatista", "cavidad", "piedra", "colección"],
+      "en": ["geology", "rocks and minerals", "crystals", "amethyst", "cavity", "stone", "collection"]
+    }
+  },
+  "rock-strata": {
+    "label": { "es": "Estratos de roca", "en": "Rock strata", "pt": "Estratos rochosos", "fr": "Strates rocheuses", "de": "Gesteinsschichten", "it": "Strati rocciosi", "ja": "地層", "zh": "岩层", "ko": "암석 지층", "ar": "طبقات صخرية" },
+    "keywords": {
+      "es": ["capas sedimentarias", "estratigrafía", "geología", "sedimentos", "corte geológico", "suelo", "eras geológicas"],
+      "en": ["sedimentary layers", "stratigraphy", "geology", "sediment", "cross section", "soil", "geologic time"]
+    }
+  },
+  "tectonic-plates": {
+    "label": { "es": "Placas tectónicas", "en": "Tectonic plates", "pt": "Placas tectônicas", "fr": "Plaques tectoniques", "de": "Tektonische Platten", "it": "Placche tettoniche", "ja": "地殻プレート", "zh": "构造板块", "ko": "지각판", "ar": "الصفائح التكتونية" },
+    "keywords": {
+      "es": ["falla", "sismo", "terremoto", "deriva continental", "geología", "subducción", "volcanes"],
+      "en": ["fault line", "earthquake", "seismic", "continental drift", "geology", "subduction", "volcanoes"]
+    }
+  },
+  "research-paper": {
+    "label": { "es": "Artículo científico", "en": "Research paper", "pt": "Artigo científico", "fr": "Article scientifique", "de": "Wissenschaftlicher Artikel", "it": "Articolo scientifico", "ja": "研究論文", "zh": "研究论文", "ko": "연구 논문", "ar": "ورقة بحثية" },
+    "keywords": {
+      "es": ["publicación", "revista científica", "paper", "preprint", "investigación", "tesis", "estudio"],
+      "en": ["publication", "journal article", "preprint", "study", "academic", "thesis", "manuscript"]
+    }
+  },
+  "research-paper-search": {
+    "label": { "es": "Búsqueda bibliográfica", "en": "Literature search", "pt": "Pesquisa bibliográfica", "fr": "Recherche bibliographique", "de": "Literaturrecherche", "it": "Ricerca bibliografica", "ja": "文献検索", "zh": "文献检索", "ko": "문헌 검색", "ar": "البحث في المراجع" },
+    "keywords": {
+      "es": ["buscar artículos", "referencias", "bibliografía", "estado del arte", "citas", "base de datos académica", "revisión"],
+      "en": ["find papers", "references", "bibliography", "state of the art", "citations", "academic database", "systematic review"]
+    }
+  },
+  "flask-check": {
+    "label": { "es": "Experimento exitoso", "en": "Successful experiment", "pt": "Experimento bem-sucedido", "fr": "Expérience réussie", "de": "Erfolgreiches Experiment", "it": "Esperimento riuscito", "ja": "実験成功", "zh": "实验成功", "ko": "실험 성공", "ar": "تجربة ناجحة" },
+    "keywords": {
+      "es": ["resultado significativo", "validado", "confirmado", "prueba superada", "hipótesis comprobada", "aprobado", "listo"],
+      "en": ["significant result", "validated", "confirmed", "test passed", "hypothesis supported", "approved", "done"]
+    }
+  },
+  "test-tube-check": {
+    "label": { "es": "Muestra aprobada", "en": "Sample approved", "pt": "Amostra aprovada", "fr": "Échantillon approuvé", "de": "Probe freigegeben", "it": "Campione approvato", "ja": "合格したサンプル", "zh": "样品合格", "ko": "샘플 합격", "ar": "عينة مقبولة" },
+    "keywords": {
+      "es": ["control de calidad", "pasó la prueba", "conforme", "liberado", "validado", "análisis correcto", "visto bueno"],
+      "en": ["quality control", "passed", "compliant", "released", "validated", "QC pass", "signed off"]
+    }
+  },
+  "test-tube-x": {
+    "label": { "es": "Muestra rechazada", "en": "Sample rejected", "pt": "Amostra rejeitada", "fr": "Échantillon rejeté", "de": "Probe abgelehnt", "it": "Campione rifiutato", "ja": "不合格のサンプル", "zh": "样品不合格", "ko": "샘플 불합격", "ar": "عينة مرفوضة" },
+    "keywords": {
+      "es": ["no conforme", "falló", "control de calidad", "contaminada", "descartar", "fuera de especificación", "error de análisis"],
+      "en": ["nonconforming", "failed", "quality control", "contaminated", "discard", "out of spec", "test failed"]
+    }
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "safety-glasses": {
+    "label": { "es": "Lentes de seguridad", "en": "Safety glasses", "pt": "Óculos de segurança", "fr": "Lunettes de sécurité", "de": "Schutzbrille", "it": "Occhiali di sicurezza", "ja": "保護メガネ", "zh": "安全眼镜", "ko": "보안경", "ar": "نظارات السلامة" },
+    "keywords": {
+      "es": ["protección ocular", "EPP", "equipo de protección personal", "micas laterales", "uso obligatorio", "taller", "inspección de seguridad"],
+      "en": ["eye protection", "PPE", "protective eyewear", "side shields", "mandatory", "workshop", "safety checklist"]
+    }
+  },
+  "safety-goggles": {
+    "label": { "es": "Goggles de seguridad", "en": "Safety goggles", "pt": "Óculos ampla visão", "fr": "Lunettes-masque", "de": "Vollsichtbrille", "it": "Occhiali a maschera", "ja": "保護ゴーグル", "zh": "护目镜", "ko": "보호 고글", "ar": "نظارة واقية محكمة" },
+    "keywords": {
+      "es": ["laboratorio", "salpicaduras", "químicos", "polvo", "protección ocular", "sellado", "EPP"],
+      "en": ["lab goggles", "chemical splash", "dust", "sealed eyewear", "eye protection", "laboratory", "PPE"]
+    }
+  },
+  "face-shield": {
+    "label": { "es": "Careta protectora", "en": "Face shield", "pt": "Protetor facial", "fr": "Écran facial", "de": "Gesichtsschutzschild", "it": "Visiera protettiva", "ja": "フェイスシールド", "zh": "防护面罩", "ko": "안면 보호구", "ar": "واقي الوجه" },
+    "keywords": {
+      "es": ["visor", "protección facial", "esmeriladora", "chispas", "salpicaduras", "rebabas", "EPP"],
+      "en": ["visor", "face protection", "grinding", "sparks", "splash protection", "debris", "PPE"]
+    }
+  },
+  "welding-mask": {
+    "label": { "es": "Careta para soldar", "en": "Welding helmet", "pt": "Máscara de solda", "fr": "Masque de soudeur", "de": "Schweißhelm", "it": "Maschera da saldatore", "ja": "溶接面", "zh": "焊接面罩", "ko": "용접 마스크", "ar": "قناع اللحام" },
+    "keywords": {
+      "es": ["soldadura", "soldador", "trabajos en caliente", "arco eléctrico", "oscurecimiento automático", "protección de ojos", "EPP"],
+      "en": ["welding", "welder", "hot work", "arc flash", "auto-darkening", "eye protection", "PPE"]
+    }
+  },
+  "gas-mask": {
+    "label": { "es": "Máscara antigás", "en": "Gas mask", "pt": "Máscara de gás", "fr": "Masque à gaz", "de": "Gasmaske", "it": "Maschera antigas", "ja": "ガスマスク", "zh": "防毒面具", "ko": "방독면", "ar": "قناع الغاز" },
+    "keywords": {
+      "es": ["gas tóxico", "cara completa", "emergencia química", "materiales peligrosos", "fuga química", "protección respiratoria", "respirador"],
+      "en": ["toxic gas", "full-face respirator", "chemical emergency", "hazmat", "chemical leak", "respiratory protection", "CBRN"]
+    }
+  },
+  "safety-glove": {
+    "label": { "es": "Guante de seguridad", "en": "Safety glove", "pt": "Luva de proteção", "fr": "Gant de protection", "de": "Schutzhandschuh", "it": "Guanto di protezione", "ja": "保護手袋", "zh": "防护手套", "ko": "안전 장갑", "ar": "قفاز واقٍ" },
+    "keywords": {
+      "es": ["protección de manos", "anticorte", "carnaza", "nitrilo", "resistente al calor", "químicos", "EPP"],
+      "en": ["hand protection", "cut-resistant", "leather", "nitrile", "heat-resistant", "chemical-resistant", "PPE"]
+    }
+  },
+  "safety-vest": {
+    "label": { "es": "Chaleco reflejante", "en": "Hi-vis vest", "pt": "Colete refletivo", "fr": "Gilet haute visibilité", "de": "Warnweste", "it": "Gilet ad alta visibilità", "ja": "安全ベスト", "zh": "反光背心", "ko": "안전 조끼", "ar": "سترة عاكسة" },
+    "keywords": {
+      "es": ["alta visibilidad", "obra", "visitantes", "trabajo en carretera", "banderero", "uso obligatorio", "EPP"],
+      "en": ["high visibility", "reflective", "construction site", "road workers", "visitors", "flagger", "mandatory", "PPE"]
+    }
+  },
+  "safety-boot": {
+    "label": { "es": "Bota de seguridad", "en": "Safety boot", "pt": "Bota de segurança", "fr": "Chaussure de sécurité", "de": "Sicherheitsschuh", "it": "Scarpa antinfortunistica", "ja": "安全靴", "zh": "安全靴", "ko": "안전화", "ar": "حذاء السلامة" },
+    "keywords": {
+      "es": ["casquillo de acero", "calzado industrial", "protección de pies", "dieléctrica", "antiderrapante", "uso obligatorio", "EPP"],
+      "en": ["steel toe", "work boot", "foot protection", "safety footwear", "slip-resistant", "mandatory", "PPE"]
+    }
+  },
+  "hard-hat-lamp": {
+    "label": { "es": "Casco con lámpara", "en": "Hard hat with lamp", "pt": "Capacete com lanterna", "fr": "Casque avec lampe", "de": "Helm mit Lampe", "it": "Casco con lampada", "ja": "ライト付きヘルメット", "zh": "头灯安全帽", "ko": "헤드랜턴 안전모", "ar": "خوذة بمصباح" },
+    "keywords": {
+      "es": ["minería", "minero", "mina", "túnel", "trabajo subterráneo", "espacio confinado", "linterna frontal"],
+      "en": ["mining", "miner", "mine shaft", "tunnel", "underground work", "confined space", "night shift"]
+    }
+  },
+  "hard-hat-check": {
+    "label": { "es": "EPP verificado", "en": "PPE compliant", "pt": "EPI em conformidade", "fr": "EPI conforme", "de": "PSA geprüft", "it": "DPI conforme", "ja": "保護具確認済み", "zh": "防护装备已核查", "ko": "보호구 착용 확인", "ar": "معدات الوقاية مكتملة" },
+    "keywords": {
+      "es": ["inducción de seguridad", "acceso a obra", "trabajador autorizado", "cumplimiento", "casco", "lista de verificación", "contratistas"],
+      "en": ["site induction", "site access", "cleared to work", "compliance", "hard hat", "safety checklist", "contractor onboarding"]
+    }
+  },
+  "flammable": {
+    "label": { "es": "Inflamable", "en": "Flammable", "pt": "Inflamável", "fr": "Inflammable", "de": "Entzündbar", "it": "Infiammabile", "ja": "引火性", "zh": "易燃", "ko": "인화성", "ar": "قابل للاشتعال" },
+    "keywords": {
+      "es": ["pictograma SGA", "líquidos", "gases", "combustible", "etiqueta de químicos", "fuego", "almacén de químicos", "NOM-018"],
+      "en": ["GHS pictogram", "flammable liquids", "flammable gas", "combustible", "chemical label", "fire hazard", "chemical storage", "inventory"]
+    }
+  },
+  "oxidizer": {
+    "label": { "es": "Comburente", "en": "Oxidizer", "pt": "Oxidante", "fr": "Comburant", "de": "Brandfördernd", "it": "Comburente", "ja": "酸化性", "zh": "氧化性", "ko": "산화성", "ar": "مادة مؤكسدة" },
+    "keywords": {
+      "es": ["oxidante", "peróxidos", "pictograma SGA", "llama sobre círculo", "etiqueta de químicos", "aviva el fuego", "reactivos"],
+      "en": ["oxidizing", "peroxides", "GHS pictogram", "flame over circle", "chemical label", "fuels fire", "reagents"]
+    }
+  },
+  "explosive": {
+    "label": { "es": "Explosivo", "en": "Explosive", "pt": "Explosivo", "fr": "Explosif", "de": "Explosiv", "it": "Esplosivo", "ja": "爆発物", "zh": "爆炸物", "ko": "폭발성", "ar": "مادة متفجرة" },
+    "keywords": {
+      "es": ["explosión", "pirotecnia", "voladura", "sustancias inestables", "pictograma SGA", "dinamita", "zona de detonación"],
+      "en": ["explosion", "fireworks", "blasting", "unstable substances", "GHS pictogram", "dynamite", "detonation"]
+    }
+  },
+  "corrosive": {
+    "label": { "es": "Corrosivo", "en": "Corrosive", "pt": "Corrosivo", "fr": "Corrosif", "de": "Ätzend", "it": "Corrosivo", "ja": "腐食性", "zh": "腐蚀性", "ko": "부식성", "ar": "مادة أكالة" },
+    "keywords": {
+      "es": ["ácidos", "álcalis", "sosa cáustica", "quemaduras químicas", "daña metales", "pictograma SGA", "etiqueta de químicos"],
+      "en": ["acids", "alkalis", "caustic", "chemical burns", "corrodes metal", "GHS pictogram", "chemical label"]
+    }
+  },
+  "skull-crossbones": {
+    "label": { "es": "Tóxico", "en": "Toxic", "pt": "Tóxico", "fr": "Toxique", "de": "Giftig", "it": "Tossico", "ja": "毒物", "zh": "有毒", "ko": "독성", "ar": "مادة سامة" },
+    "keywords": {
+      "es": ["veneno", "calavera", "toxicidad aguda", "pictograma SGA", "plaguicidas", "letal", "peligro de muerte"],
+      "en": ["poison", "skull and crossbones", "acute toxicity", "GHS pictogram", "pesticides", "lethal", "deadly"]
+    }
+  },
+  "health-hazard": {
+    "label": { "es": "Peligro para la salud", "en": "Health hazard", "pt": "Perigo à saúde", "fr": "Danger pour la santé", "de": "Gesundheitsgefahr", "it": "Pericolo per la salute", "ja": "健康有害性", "zh": "健康危害", "ko": "건강 유해성", "ar": "خطر على الصحة" },
+    "keywords": {
+      "es": ["cancerígeno", "sensibilizante respiratorio", "toxicidad en órganos", "mutágeno", "tóxico para la reproducción", "pictograma SGA", "exposición crónica"],
+      "en": ["carcinogen", "respiratory sensitizer", "organ toxicity", "mutagen", "reproductive toxicity", "GHS pictogram", "chronic exposure"]
+    }
+  },
+  "radioactive": {
+    "label": { "es": "Radiactivo", "en": "Radioactive", "pt": "Radioativo", "fr": "Radioactif", "de": "Radioaktiv", "it": "Radioattivo", "ja": "放射能", "zh": "放射性", "ko": "방사능", "ar": "مادة مشعة" },
+    "keywords": {
+      "es": ["radiación ionizante", "rayos X", "nuclear", "zona controlada", "medicina nuclear", "dosimetría", "trébol"],
+      "en": ["ionizing radiation", "X-ray room", "nuclear", "controlled area", "nuclear medicine", "dosimetry", "trefoil"]
+    }
+  },
+  "biohazard": {
+    "label": { "es": "Riesgo biológico", "en": "Biohazard", "pt": "Risco biológico", "fr": "Risque biologique", "de": "Biogefährdung", "it": "Rischio biologico", "ja": "バイオハザード", "zh": "生物危害", "ko": "생물학적 위험", "ar": "خطر بيولوجي" },
+    "keywords": {
+      "es": ["RPBI", "residuos infecciosos", "infeccioso", "laboratorio", "bioseguridad", "patógenos", "hospital"],
+      "en": ["infectious waste", "medical waste", "pathogens", "laboratory", "biosafety", "contamination", "hospital"]
+    }
+  },
+  "hazard-electric": {
+    "label": { "es": "Riesgo eléctrico", "en": "Electrical hazard", "pt": "Risco elétrico", "fr": "Danger électrique", "de": "Hochspannung", "it": "Pericolo elettrico", "ja": "感電注意", "zh": "当心触电", "ko": "감전 주의", "ar": "خطر كهربائي" },
+    "keywords": {
+      "es": ["alto voltaje", "alta tensión", "descarga eléctrica", "electrocución", "tablero eléctrico", "señalamiento", "rayo"],
+      "en": ["high voltage", "electric shock", "electrocution", "danger", "electrical panel", "warning sign", "lightning bolt"]
+    }
+  },
+  "electrical-fire": {
+    "label": { "es": "Incendio eléctrico", "en": "Electrical fire", "pt": "Incêndio elétrico", "fr": "Feu électrique", "de": "Elektrobrand", "it": "Incendio elettrico", "ja": "電気火災", "zh": "电气火灾", "ko": "전기 화재", "ar": "حريق كهربائي" },
+    "keywords": {
+      "es": ["contacto sobrecargado", "cortocircuito", "fuego clase C", "instalación defectuosa", "chispas", "extintor de CO2", "enchufe"],
+      "en": ["overloaded outlet", "short circuit", "class C fire", "faulty wiring", "sparks", "CO2 extinguisher", "plug"]
+    }
+  },
+  "suspended-load": {
+    "label": { "es": "Carga suspendida", "en": "Suspended load", "pt": "Carga suspensa", "fr": "Charge suspendue", "de": "Schwebende Last", "it": "Carichi sospesi", "ja": "吊り荷注意", "zh": "当心吊物", "ko": "매달린 물체 주의", "ar": "حمولة معلقة" },
+    "keywords": {
+      "es": ["grúa", "polipasto", "izaje", "maniobras", "no pasar por debajo", "eslingas", "señalamiento"],
+      "en": ["crane", "hoist", "lifting", "rigging", "do not stand underneath", "slings", "overhead load"]
+    }
+  },
+  "fire-extinguisher": {
+    "label": { "es": "Extintor", "en": "Fire extinguisher", "pt": "Extintor", "fr": "Extincteur", "de": "Feuerlöscher", "it": "Estintore", "ja": "消火器", "zh": "灭火器", "ko": "소화기", "ar": "طفاية حريق" },
+    "keywords": {
+      "es": ["equipo contra incendios", "PQS", "CO2", "ubicación de extintores", "protección civil", "plano", "fuego"],
+      "en": ["fire equipment", "dry chemical", "CO2", "extinguisher location", "fire safety", "floor plan", "fire"]
+    }
+  },
+  "fire-extinguisher-clock": {
+    "label": { "es": "Recarga de extintor", "en": "Extinguisher inspection due", "pt": "Recarga do extintor", "fr": "Vérification de l’extincteur", "de": "Feuerlöscherprüfung fällig", "it": "Revisione estintore", "ja": "消火器の点検期限", "zh": "灭火器待检", "ko": "소화기 점검 예정", "ar": "موعد فحص الطفاية" },
+    "keywords": {
+      "es": ["inspección mensual", "mantenimiento", "vencimiento", "por vencer", "bitácora", "revisión pendiente", "protección civil"],
+      "en": ["monthly inspection", "maintenance", "expiration", "recharge", "service tag", "overdue", "fire safety log"]
+    }
+  },
+  "fire-hydrant": {
+    "label": { "es": "Hidrante", "en": "Fire hydrant", "pt": "Hidrante", "fr": "Bouche d’incendie", "de": "Hydrant", "it": "Idrante", "ja": "消火栓", "zh": "消防栓", "ko": "소화전", "ar": "صنبور إطفاء الحريق" },
+    "keywords": {
+      "es": ["toma de agua", "bomberos", "red contra incendios", "toma siamesa", "suministro de agua", "inspección", "calle"],
+      "en": ["water supply", "fire department", "fire main", "standpipe", "fireplug", "inspection", "street"]
+    }
+  },
+  "fire-hose": {
+    "label": { "es": "Manguera contra incendios", "en": "Fire hose", "pt": "Mangueira de incêndio", "fr": "Robinet d’incendie armé", "de": "Löschschlauch", "it": "Naspo antincendio", "ja": "消火ホース", "zh": "消防卷盘", "ko": "소방 호스", "ar": "خرطوم إطفاء" },
+    "keywords": {
+      "es": ["gabinete contra incendios", "carrete", "hidrante interior", "equipo contra incendios", "señalamiento", "red húmeda", "bomberos"],
+      "en": ["hose reel", "hose cabinet", "fire equipment", "standpipe", "sign", "wet riser", "firefighting"]
+    }
+  },
+  "fire-alarm": {
+    "label": { "es": "Alarma contra incendios", "en": "Fire alarm", "pt": "Alarme de incêndio", "fr": "Alarme incendie", "de": "Feuermelder", "it": "Allarme antincendio", "ja": "火災報知器", "zh": "火警报警器", "ko": "화재경보기", "ar": "إنذار الحريق" },
+    "keywords": {
+      "es": ["estación manual", "palanca", "pulsador", "dar la voz de alerta", "incendio", "emergencia", "evacuación"],
+      "en": ["pull station", "call point", "manual call point", "raise the alarm", "fire", "emergency", "evacuation"]
+    }
+  },
+  "fire-sprinkler": {
+    "label": { "es": "Rociador contra incendios", "en": "Fire sprinkler", "pt": "Sprinkler", "fr": "Sprinkler", "de": "Sprinkler", "it": "Sprinkler antincendio", "ja": "スプリンクラー", "zh": "消防喷淋头", "ko": "스프링클러", "ar": "رشاش إطفاء الحريق" },
+    "keywords": {
+      "es": ["sprinkler", "sistema de supresión", "red contra incendios", "techo", "inspección", "detección de calor", "agua"],
+      "en": ["sprinkler head", "suppression system", "fire protection", "ceiling", "inspection", "heat activated", "water"]
+    }
+  },
+  "house-fire": {
+    "label": { "es": "Casa en llamas", "en": "House fire", "pt": "Casa em chamas", "fr": "Maison en feu", "de": "Hausbrand", "it": "Casa in fiamme", "ja": "住宅火災", "zh": "房屋火灾", "ko": "주택 화재", "ar": "حريق منزل" },
+    "keywords": {
+      "es": ["incendio", "emergencia", "alerta", "siniestro", "seguro de hogar", "reclamación", "bomberos"],
+      "en": ["fire", "emergency", "alert", "insurance claim", "home insurance", "disaster", "fire department"]
+    }
+  },
+  "emergency-exit": {
+    "label": { "es": "Salida de emergencia", "en": "Emergency exit", "pt": "Saída de emergência", "fr": "Sortie de secours", "de": "Notausgang", "it": "Uscita di emergenza", "ja": "非常口", "zh": "紧急出口", "ko": "비상구", "ar": "مخرج الطوارئ" },
+    "keywords": {
+      "es": ["evacuación", "señalamiento", "plano de evacuación", "puerta", "protección civil", "desalojo", "ruta de escape"],
+      "en": ["fire exit", "exit sign", "evacuation", "evacuation plan", "door", "egress", "way out"]
+    }
+  },
+  "emergency-exit-accessible": {
+    "label": { "es": "Salida de emergencia accesible", "en": "Accessible emergency exit", "pt": "Saída de emergência acessível", "fr": "Sortie de secours accessible", "de": "Barrierefreier Notausgang", "it": "Uscita di emergenza accessibile", "ja": "車いす対応の非常口", "zh": "无障碍紧急出口", "ko": "장애인용 비상구", "ar": "مخرج طوارئ ميسّر" },
+    "keywords": {
+      "es": ["silla de ruedas", "discapacidad", "evacuación", "rampa", "accesibilidad", "señalamiento", "inclusión"],
+      "en": ["wheelchair", "disability", "evacuation", "ramp", "accessibility", "exit sign", "inclusive"]
+    }
+  },
+  "evacuation-route": {
+    "label": { "es": "Ruta de evacuación", "en": "Evacuation route", "pt": "Rota de fuga", "fr": "Itinéraire d’évacuation", "de": "Fluchtweg", "it": "Via di fuga", "ja": "避難経路", "zh": "疏散路线", "ko": "대피 경로", "ar": "مسار الإخلاء" },
+    "keywords": {
+      "es": ["ruta de escape", "plano", "simulacro", "señalamiento", "flecha", "protección civil", "salida"],
+      "en": ["escape route", "floor plan", "fire drill", "exit sign", "arrow", "wayfinding", "exit"]
+    }
+  },
+  "assembly-point": {
+    "label": { "es": "Punto de reunión", "en": "Assembly point", "pt": "Ponto de encontro", "fr": "Point de rassemblement", "de": "Sammelplatz", "it": "Punto di raccolta", "ja": "集合場所", "zh": "紧急集合点", "ko": "비상 집결지", "ar": "نقطة التجمع" },
+    "keywords": {
+      "es": ["zona de seguridad", "evacuación", "simulacro", "conteo de personal", "protección civil", "pase de lista", "punto de encuentro"],
+      "en": ["muster point", "meeting point", "evacuation", "fire drill", "headcount", "roll call", "safe zone"]
+    }
+  },
+  "medical-emergency": {
+    "label": { "es": "Emergencia médica", "en": "Medical emergency", "pt": "Emergência médica", "fr": "Urgence médicale", "de": "Medizinischer Notfall", "it": "Emergenza medica", "ja": "救急医療", "zh": "医疗急救", "ko": "응급 의료", "ar": "طوارئ طبية" },
+    "keywords": {
+      "es": ["paramédicos", "ambulancia", "atención prehospitalaria", "estrella de la vida", "urgencias", "primeros auxilios", "Cruz Roja"],
+      "en": ["EMS", "paramedics", "ambulance", "star of life", "emergency care", "first aid", "first responders"]
+    }
+  },
+  "phone-emergency": {
+    "label": { "es": "Llamada de emergencia", "en": "Emergency call", "pt": "Chamada de emergência", "fr": "Appel d’urgence", "de": "Notruf", "it": "Chiamata di emergenza", "ja": "緊急通報", "zh": "紧急呼叫", "ko": "긴급 전화", "ar": "اتصال طوارئ" },
+    "keywords": {
+      "es": ["911", "SOS", "servicios de emergencia", "pedir ayuda", "teléfono", "auxilio", "Cruz Roja"],
+      "en": ["911", "112", "SOS", "emergency services", "call for help", "phone", "hotline"]
+    }
+  },
+  "emergency-shower": {
+    "label": { "es": "Regadera de emergencia", "en": "Safety shower", "pt": "Chuveiro de emergência", "fr": "Douche de sécurité", "de": "Notdusche", "it": "Doccia di emergenza", "ja": "緊急シャワー", "zh": "紧急喷淋", "ko": "비상 샤워기", "ar": "دش الطوارئ" },
+    "keywords": {
+      "es": ["descontaminación", "derrame químico", "laboratorio", "quemadura química", "lavaojos", "planta química", "primeros auxilios"],
+      "en": ["decontamination", "chemical spill", "laboratory", "chemical burn", "drench shower", "eyewash", "first aid"]
+    }
+  },
+  "defibrillator": {
+    "label": { "es": "Desfibrilador", "en": "Defibrillator", "pt": "Desfibrilador", "fr": "Défibrillateur", "de": "Defibrillator", "it": "Defibrillatore", "ja": "AED", "zh": "除颤器", "ko": "자동심장충격기", "ar": "جهاز إزالة الرجفان" },
+    "keywords": {
+      "es": ["DEA", "paro cardiaco", "RCP", "reanimación", "corazón", "primeros auxilios", "espacio cardioprotegido"],
+      "en": ["AED", "cardiac arrest", "CPR", "resuscitation", "heart", "first aid", "cardiac emergency"]
+    }
+  },
+  "lone-worker": {
+    "label": { "es": "Trabajador en solitario", "en": "Lone worker", "pt": "Trabalhador isolado", "fr": "Travailleur isolé", "de": "Alleinarbeiter", "it": "Lavoratore isolato", "ja": "単独作業者", "zh": "单独作业人员", "ko": "단독 작업자", "ar": "عامل منفرد" },
+    "keywords": {
+      "es": ["hombre caído", "monitoreo", "check-in", "botón de pánico", "trabajo aislado", "turno nocturno", "seguimiento"],
+      "en": ["man down", "check-in", "monitoring", "panic button", "solo work", "night shift", "welfare check"]
+    }
+  },
+  "break-glass": {
+    "label": { "es": "Romper el vidrio", "en": "Break glass", "pt": "Quebre o vidro", "fr": "Briser la glace", "de": "Scheibe einschlagen", "it": "Rompere il vetro", "ja": "ガラスを割る", "zh": "击碎玻璃", "ko": "유리 깨기", "ar": "اكسر الزجاج" },
+    "keywords": {
+      "es": ["martillo de emergencia", "rompecristales", "en caso de emergencia", "autobús", "caja de alarma", "cristal", "señalamiento"],
+      "en": ["emergency hammer", "glass breaker", "in case of emergency", "bus window", "alarm box", "pane", "sign"]
+    }
+  },
+  "lockout": {
+    "label": { "es": "Bloqueo y etiquetado", "en": "Lockout tagout", "pt": "Bloqueio e etiquetagem", "fr": "Consignation", "de": "Lockout-Tagout", "it": "Lucchettaggio", "ja": "ロックアウト・タグアウト", "zh": "上锁挂牌", "ko": "잠금 및 표지 부착", "ar": "القفل والوسم" },
+    "keywords": {
+      "es": ["LOTO", "candado de seguridad", "aislar energía", "mantenimiento", "tarjeta de peligro", "energía cero", "NOM-004"],
+      "en": ["LOTO", "safety padlock", "energy isolation", "maintenance", "danger tag", "zero energy", "machine guarding"]
+    }
+  },
+  "caution-tape": {
+    "label": { "es": "Cinta de precaución", "en": "Caution tape", "pt": "Fita zebrada", "fr": "Ruban de signalisation", "de": "Absperrband", "it": "Nastro segnaletico", "ja": "立入禁止テープ", "zh": "警戒线", "ko": "경고 테이프", "ar": "شريط تحذيري" },
+    "keywords": {
+      "es": ["acordonar", "área restringida", "no pasar", "escena del incidente", "delimitar", "acceso prohibido", "zona de riesgo"],
+      "en": ["cordon off", "restricted area", "do not cross", "incident scene", "barrier tape", "keep out", "danger zone"]
+    }
+  },
+  "wheel-chock": {
+    "label": { "es": "Calza de llanta", "en": "Wheel chock", "pt": "Calço de roda", "fr": "Cale de roue", "de": "Unterlegkeil", "it": "Cuneo fermaruota", "ja": "輪止め", "zh": "轮挡", "ko": "고임목", "ar": "مصد العجلات" },
+    "keywords": {
+      "es": ["andén de carga", "tráiler", "vehículo estacionado", "inmovilizar", "camión", "patio de maniobras", "calzar"],
+      "en": ["loading dock", "trailer", "parked vehicle", "immobilize", "truck", "yard", "anti-roll"]
+    }
+  },
+  "safety-data-sheet": {
+    "label": { "es": "Hoja de datos de seguridad", "en": "Safety data sheet", "pt": "Ficha de dados de segurança", "fr": "Fiche de données de sécurité", "de": "Sicherheitsdatenblatt", "it": "Scheda di sicurezza", "ja": "安全データシート", "zh": "安全数据表", "ko": "물질안전보건자료", "ar": "صحيفة بيانات السلامة" },
+    "keywords": {
+      "es": ["HDS", "MSDS", "inventario de químicos", "NOM-018", "cumplimiento", "sustancias peligrosas", "comunicación de riesgos"],
+      "en": ["SDS", "MSDS", "chemical inventory", "hazard communication", "compliance", "hazardous substances", "HazCom"]
+    }
+  },
+  "work-permit": {
+    "label": { "es": "Permiso de trabajo", "en": "Permit to work", "pt": "Permissão de trabalho", "fr": "Permis de travail", "de": "Arbeitsfreigabe", "it": "Permesso di lavoro", "ja": "作業許可証", "zh": "作业许可证", "ko": "작업 허가서", "ar": "تصريح بدء العمل" },
+    "keywords": {
+      "es": ["trabajos en caliente", "espacio confinado", "trabajo en alturas", "autorización", "trabajos peligrosos", "firma del supervisor", "formato"],
+      "en": ["PTW", "hot work", "confined space", "working at height", "authorization", "high-risk work", "supervisor sign-off"]
+    }
+  }
+}

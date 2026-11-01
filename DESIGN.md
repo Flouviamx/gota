@@ -227,6 +227,14 @@ reach it in one pass. What the critics, QA, and the owner caught, so it isn't dr
   a bone, a tail fin as a boot); a low hull with nothing on deck reads as a bowl or a saucer (a
   canoe, a tanker, a barge). Round 8 dropped all but the car from above: draw the vehicle in
   profile, the part on its machine, or the boat with what makes it that boat.
+- **A pistol grip, a material, a process.** A tool held by a pistol grip with its working end
+  straight ahead reads as a weapon (the reciprocating saw, the pressure washer, the caulking gun,
+  the infrared thermometer); a material drawn alone reads as a common object (concrete as a die,
+  ore as a cookie, a weld seam as a zipper, a steel coil as a snail); a process or a field drawn as
+  its diagram reads as a shape (mitosis as glasses, fission as a pacman, a magnetic field as a
+  burger); an industrial machine drawn as its parts reads as boxes (the lathe, the transformer,
+  the injection molder). Round 9 dropped 131 like these after its critics: hold the tool another
+  way or drop it, and say a material, a process, or a machine by what it makes.
 
 ## Process
 1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.
