@@ -4,6 +4,14 @@
 
 [← Index](./README.md)
 
+## 10 Nov 2026 — Round 10: leisure and culture (523 icons)
+- **Eight new categories** ([taxonomy](./taxonomy.md)): deportes 93, juegos 87, musica 92, foto-video 83, lectura 44 (and book, book-open, bookshelf, books, and newspaper from archivos), arte 39, entretenimiento 42, and fiestas 43 (and cake and party-popper from comunicacion). The set has 7,037 icons in 76 categories.
+- **Names:** 911 proposed, 596 approved. What the set already draws wasn't drawn again (the trophy, the medal, the podium, the playground, the palette, the brush), and nothing reads as a weapon, a casino, or a religious symbol.
+- **Drawing:** an illustrator, a languages agent, and an independent critic per category, two categories at a time; the critics redesigned 101 icons, and the illustrators and critics dropped 52 (the tuba, the backgammon board, the high jump, the braille book, the bookworm, the printing press, the red carpet). After them the main session dropped 21 more, each with its reason in the owner's sample: an object that lives by its print and a frame of dots read as something else (`race-bib`, `bingo-card`, `storyboard`, `film-grain`), a machine or a stand in profile reads as furniture (`pinball`, `monkey-bars`, `lamp-banker`), and some compositions are already other symbols (`spot-removal` as the male sign, `color-wheel` as a lifebuoy, `juggling` as a loading spinner) ([DESIGN.md](../DESIGN.md#what-failed-before-check-every-icon-against-it)).
+- **Interruptions:** on 4 Nov the disk filled in the middle of the drawing and every agent stopped with four categories done; on 9 Nov, with 12.7 GB freed, the relaunch ran only what was missing. Round 11's names and first drawings ran beside it, so the round was built, checked, and set in the fonts in a clean worktree holding only its files.
+- **Search:** hopscotch's Italian label is «Gioco della campana» (as «Campana» it came before the bell for «campana»), and file-pdf carries «descargar en PDF», so «descargar pdf» finds it before the book and the score downloaded as PDFs.
+- Tests: 61.
+
 ## 1 Nov 2026 — Round 9: science and industry (524 icons)
 - **Nine new categories** ([taxonomy](./taxonomy.md)): ciencia 79 (and flask, test-tube, and atom from datos, and magnet), herramientas 75 (and wrench, screwdriver, hammer, tools, and hex-nut from sistema), agricultura 65, industria 52 (and factory), energia 59, espacio 51 (and planet, shooting-star, and rocket), construccion 50, educacion 50 (and graduation-cap and school), and seguridad-laboral 43 (and hard-hat, traffic-cone, and barrier). The set has 6,514 icons in 68 categories.
 - **Names:** 995 proposed, 719 approved. What another category already draws wasn't drawn again (the gauge stays in datos), and no weapons: the axe and the hatchet are tools.

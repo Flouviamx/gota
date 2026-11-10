@@ -1,0 +1,611 @@
+{
+  "dice-1": {
+    "label": { "es": "Cara de dado 1", "en": "Die face 1", "pt": "Face do dado 1", "fr": "Face de dé 1", "de": "Würfelseite 1", "it": "Faccia del dado 1", "ja": "サイコロの1の目", "zh": "骰子1点", "ko": "주사위 눈 1", "ar": "وجه النرد 1" },
+    "keywords": {
+      "es": ["tirada", "resultado", "uno", "un punto", "tirar el dado", "número al azar", "valor mínimo"],
+      "en": ["roll", "result", "one", "single pip", "roll the die", "random number", "lowest roll"]
+    }
+  },
+  "dice-2": {
+    "label": { "es": "Cara de dado 2", "en": "Die face 2", "pt": "Face do dado 2", "fr": "Face de dé 2", "de": "Würfelseite 2", "it": "Faccia del dado 2", "ja": "サイコロの2の目", "zh": "骰子2点", "ko": "주사위 눈 2", "ar": "وجه النرد 2" },
+    "keywords": {
+      "es": ["tirada", "resultado", "dos", "dos puntos", "tirar el dado", "número al azar", "juego de mesa"],
+      "en": ["roll", "result", "two", "two pips", "roll the die", "random number", "board game"]
+    }
+  },
+  "dice-3": {
+    "label": { "es": "Cara de dado 3", "en": "Die face 3", "pt": "Face do dado 3", "fr": "Face de dé 3", "de": "Würfelseite 3", "it": "Faccia del dado 3", "ja": "サイコロの3の目", "zh": "骰子3点", "ko": "주사위 눈 3", "ar": "وجه النرد 3" },
+    "keywords": {
+      "es": ["tirada", "resultado", "tres", "tres puntos", "tirar el dado", "número al azar", "juego de mesa"],
+      "en": ["roll", "result", "three", "three pips", "roll the die", "random number", "board game"]
+    }
+  },
+  "dice-4": {
+    "label": { "es": "Cara de dado 4", "en": "Die face 4", "pt": "Face do dado 4", "fr": "Face de dé 4", "de": "Würfelseite 4", "it": "Faccia del dado 4", "ja": "サイコロの4の目", "zh": "骰子4点", "ko": "주사위 눈 4", "ar": "وجه النرد 4" },
+    "keywords": {
+      "es": ["tirada", "resultado", "cuatro", "cuatro puntos", "tirar el dado", "número al azar", "juego de mesa"],
+      "en": ["roll", "result", "four", "four pips", "roll the die", "random number", "board game"]
+    }
+  },
+  "dice-5": {
+    "label": { "es": "Cara de dado 5", "en": "Die face 5", "pt": "Face do dado 5", "fr": "Face de dé 5", "de": "Würfelseite 5", "it": "Faccia del dado 5", "ja": "サイコロの5の目", "zh": "骰子5点", "ko": "주사위 눈 5", "ar": "وجه النرد 5" },
+    "keywords": {
+      "es": ["tirada", "resultado", "cinco", "cinco puntos", "tirar el dado", "número al azar", "juego de mesa"],
+      "en": ["roll", "result", "five", "five pips", "roll the die", "random number", "board game"]
+    }
+  },
+  "dice-6": {
+    "label": { "es": "Cara de dado 6", "en": "Die face 6", "pt": "Face do dado 6", "fr": "Face de dé 6", "de": "Würfelseite 6", "it": "Faccia del dado 6", "ja": "サイコロの6の目", "zh": "骰子6点", "ko": "주사위 눈 6", "ar": "وجه النرد 6" },
+    "keywords": {
+      "es": ["tirada", "resultado", "seis", "seis puntos", "tirar el dado", "número al azar", "valor máximo"],
+      "en": ["roll", "result", "six", "six pips", "roll the die", "random number", "highest roll"]
+    }
+  },
+  "dice": {
+    "label": { "es": "Dado", "en": "Dice", "pt": "Dado", "fr": "Dé", "de": "Würfel", "it": "Dado", "ja": "サイコロ", "zh": "骰子", "ko": "주사위", "ar": "نرد" },
+    "keywords": {
+      "es": ["tirar", "azar", "aleatorio", "suerte", "juego de mesa", "sorteo", "probabilidad"],
+      "en": ["roll", "random", "chance", "luck", "board game", "random pick", "probability"]
+    }
+  },
+  "dice-pair": {
+    "label": { "es": "Par de dados", "en": "Pair of dice", "pt": "Par de dados", "fr": "Paire de dés", "de": "Würfelpaar", "it": "Coppia di dadi", "ja": "2つのサイコロ", "zh": "一对骰子", "ko": "주사위 두 개", "ar": "زوج من النرد" },
+    "keywords": {
+      "es": ["tirar los dados", "noche de juegos", "casino", "apuesta", "juego de mesa", "suerte", "tirada doble"],
+      "en": ["roll the dice", "game night", "casino", "craps", "gamble", "board game", "luck"]
+    }
+  },
+  "chess-pawn": {
+    "label": { "es": "Peón de ajedrez", "en": "Chess pawn", "pt": "Peão do xadrez", "fr": "Pion d’échecs", "de": "Schachbauer", "it": "Pedone degli scacchi", "ja": "チェスのポーン", "zh": "国际象棋兵", "ko": "체스 폰", "ar": "جندي الشطرنج" },
+    "keywords": {
+      "es": ["pieza básica", "primera jugada", "apertura", "estrategia", "ficha", "principiante", "tablero"],
+      "en": ["basic piece", "first move", "opening", "strategy", "chess piece", "beginner", "board"]
+    }
+  },
+  "chess-king": {
+    "label": { "es": "Rey de ajedrez", "en": "Chess king", "pt": "Rei do xadrez", "fr": "Roi d’échecs", "de": "Schachkönig", "it": "Re degli scacchi", "ja": "チェスのキング", "zh": "国际象棋王", "ko": "체스 킹", "ar": "ملك الشطرنج" },
+    "keywords": {
+      "es": ["jaque mate", "jaque", "pieza más valiosa", "estrategia", "partida", "tablero", "corona"],
+      "en": ["checkmate", "check", "most valuable piece", "strategy", "match", "board", "crown"]
+    }
+  },
+  "chess-queen": {
+    "label": { "es": "Reina de ajedrez", "en": "Chess queen", "pt": "Rainha do xadrez", "fr": "Dame d’échecs", "de": "Schachdame", "it": "Regina degli scacchi", "ja": "チェスのクイーン", "zh": "国际象棋后", "ko": "체스 퀸", "ar": "وزير الشطرنج" },
+    "keywords": {
+      "es": ["dama", "pieza más fuerte", "coronar", "estrategia", "partida", "tablero", "jugada"],
+      "en": ["strongest piece", "chess piece", "promotion", "strategy", "match", "board", "move"]
+    }
+  },
+  "chess-rook": {
+    "label": { "es": "Torre de ajedrez", "en": "Chess rook", "pt": "Torre do xadrez", "fr": "Tour d’échecs", "de": "Schachturm", "it": "Torre degli scacchi", "ja": "チェスのルーク", "zh": "国际象棋车", "ko": "체스 룩", "ar": "رخ الشطرنج" },
+    "keywords": {
+      "es": ["enroque", "defensa", "castillo", "pieza", "estrategia", "partida", "tablero"],
+      "en": ["castling", "defense", "castle", "chess piece", "strategy", "match", "board"]
+    }
+  },
+  "chess-bishop": {
+    "label": { "es": "Alfil de ajedrez", "en": "Chess bishop", "pt": "Bispo do xadrez", "fr": "Fou d’échecs", "de": "Schachläufer", "it": "Alfiere degli scacchi", "ja": "チェスのビショップ", "zh": "国际象棋象", "ko": "체스 비숍", "ar": "فيل الشطرنج" },
+    "keywords": {
+      "es": ["diagonal", "movimiento en diagonal", "pieza", "estrategia", "partida", "tablero", "obispo"],
+      "en": ["diagonal", "diagonal move", "chess piece", "strategy", "match", "board", "mitre"]
+    }
+  },
+  "chess-knight": {
+    "label": { "es": "Caballo de ajedrez", "en": "Chess knight", "pt": "Cavalo do xadrez", "fr": "Cavalier d’échecs", "de": "Schachspringer", "it": "Cavallo degli scacchi", "ja": "チェスのナイト", "zh": "国际象棋马", "ko": "체스 나이트", "ar": "حصان الشطرنج" },
+    "keywords": {
+      "es": ["estrategia", "juegos de estrategia", "movimiento en L", "pieza", "táctica", "partida", "tablero"],
+      "en": ["strategy", "strategy games", "L-shaped move", "chess piece", "tactics", "horse", "match"]
+    }
+  },
+  "game-piece": {
+    "label": { "es": "Ficha de jugador", "en": "Game piece", "pt": "Peão de jogo", "fr": "Pion de jeu", "de": "Spielfigur", "it": "Pedina", "ja": "ゲームの駒", "zh": "游戏棋子", "ko": "게임 말", "ar": "قطعة اللعب" },
+    "keywords": {
+      "es": ["turno", "jugadores", "peón", "avanzar casillas", "juego de mesa", "mi turno", "pieza"],
+      "en": ["player token", "turn", "players", "pawn", "move ahead", "board game", "meeple"]
+    }
+  },
+  "game-spinner": {
+    "label": { "es": "Ruleta de juego", "en": "Game spinner", "pt": "Roleta de jogo", "fr": "Flèche tournante", "de": "Drehpfeil", "it": "Freccia girevole", "ja": "ゲームのルーレット", "zh": "游戏转盘", "ko": "게임 돌림판", "ar": "مؤشر دوّار" },
+    "keywords": {
+      "es": ["girar", "elección al azar", "sorteo", "turno", "avanzar", "suerte", "juego de mesa"],
+      "en": ["spin", "random choice", "draw", "turn", "move", "luck", "board game"]
+    }
+  },
+  "go-board": {
+    "label": { "es": "Tablero de go", "en": "Go board", "pt": "Tabuleiro de go", "fr": "Goban", "de": "Go-Brett", "it": "Tavola da go", "ja": "碁盤", "zh": "围棋棋盘", "ko": "바둑판", "ar": "لوحة لعبة غو" },
+    "keywords": {
+      "es": ["piedras blancas y negras", "estrategia", "juego de mesa", "baduk", "weiqi", "igo", "territorio"],
+      "en": ["black and white stones", "strategy", "board game", "baduk", "weiqi", "igo", "territory"]
+    }
+  },
+  "tic-tac-toe": {
+    "label": { "es": "Juego del gato", "en": "Tic-tac-toe", "pt": "Jogo da velha", "fr": "Morpion", "de": "Tic-Tac-Toe", "it": "Tris", "ja": "三目並べ", "zh": "井字棋", "ko": "틱택토", "ar": "إكس أو" },
+    "keywords": {
+      "es": ["tres en línea", "equis y ceros", "juego rápido", "juego sencillo", "dos jugadores", "cuadrícula", "pasatiempo"],
+      "en": ["noughts and crosses", "X and O", "quick game", "simple game", "two players", "grid", "three in a row"]
+    }
+  },
+  "domino": {
+    "label": { "es": "Ficha de dominó", "en": "Domino", "pt": "Peça de dominó", "fr": "Domino", "de": "Dominostein", "it": "Tessera del domino", "ja": "ドミノ牌", "zh": "多米诺骨牌", "ko": "도미노 패", "ar": "قطعة دومينو" },
+    "keywords": {
+      "es": ["juego de fichas", "mula", "puntos", "partida", "juego de mesa", "en parejas", "reunión familiar"],
+      "en": ["tile game", "double", "pips", "match", "table game", "boneyard", "chain reaction"]
+    }
+  },
+  "dartboard": {
+    "label": { "es": "Tablero de dardos", "en": "Dartboard", "pt": "Alvo de dardos", "fr": "Cible de fléchettes", "de": "Dartscheibe", "it": "Bersaglio per freccette", "ja": "ダーツボード", "zh": "飞镖靶", "ko": "다트판", "ar": "لوحة السهام" },
+    "keywords": {
+      "es": ["diana", "tiro al blanco", "puntería", "juego de bar", "puntuación", "centro", "lanzar"],
+      "en": ["darts", "bullseye", "aim", "pub game", "score", "target", "throw"]
+    }
+  },
+  "spade-suit": {
+    "label": { "es": "Picas", "en": "Spades", "pt": "Espadas", "fr": "Pique", "de": "Pik", "it": "Picche", "ja": "スペード", "zh": "黑桃", "ko": "스페이드", "ar": "البستوني" },
+    "keywords": {
+      "es": ["palo", "baraja", "juegos de cartas", "naipes", "póker", "elegir palo", "espadas"],
+      "en": ["suit", "deck", "card games", "playing cards", "poker", "pick a suit", "black suit"]
+    }
+  },
+  "club-suit": {
+    "label": { "es": "Tréboles", "en": "Clubs", "pt": "Paus", "fr": "Trèfle", "de": "Kreuz", "it": "Fiori", "ja": "クラブ", "zh": "梅花", "ko": "클로버", "ar": "السباتي" },
+    "keywords": {
+      "es": ["palo", "baraja", "juegos de cartas", "naipes", "póker", "elegir palo", "bastos"],
+      "en": ["suit", "deck", "card games", "playing cards", "poker", "pick a suit", "clover"]
+    }
+  },
+  "diamond-suit": {
+    "label": { "es": "Diamantes", "en": "Diamonds", "pt": "Ouros", "fr": "Carreau", "de": "Karo", "it": "Quadri", "ja": "ダイヤ", "zh": "方块", "ko": "다이아몬드", "ar": "الديناري" },
+    "keywords": {
+      "es": ["palo", "baraja", "juegos de cartas", "naipes", "póker", "elegir palo", "rombos"],
+      "en": ["suit", "deck", "card games", "playing cards", "poker", "pick a suit", "red suit"]
+    }
+  },
+  "playing-card": {
+    "label": { "es": "Carta de baraja", "en": "Playing card", "pt": "Carta de baralho", "fr": "Carte à jouer", "de": "Spielkarte", "it": "Carta da gioco", "ja": "トランプのカード", "zh": "扑克牌", "ko": "트럼프 카드", "ar": "ورقة لعب" },
+    "keywords": {
+      "es": ["naipe", "juego de cartas", "carta en mano", "póker", "solitario", "as", "magia"],
+      "en": ["card game", "deck", "card in hand", "poker", "solitaire", "ace", "magic trick"]
+    }
+  },
+  "playing-card-fan": {
+    "label": { "es": "Mano de cartas", "en": "Hand of cards", "pt": "Mão de cartas", "fr": "Main de cartes", "de": "Karten auf der Hand", "it": "Mano di carte", "ja": "手札", "zh": "手牌", "ko": "손패", "ar": "أوراق اللعب في اليد" },
+    "keywords": {
+      "es": ["juegos de cartas", "póker", "baraja", "naipes", "abanico", "casino", "repartir"],
+      "en": ["card games", "poker", "deck", "playing cards", "fanned cards", "casino", "deal"]
+    }
+  },
+  "trading-card": {
+    "label": { "es": "Carta coleccionable", "en": "Trading card", "pt": "Carta colecionável", "fr": "Carte à collectionner", "de": "Sammelkarte", "it": "Carta collezionabile", "ja": "トレーディングカード", "zh": "集换式卡牌", "ko": "트레이딩 카드", "ar": "بطاقة قابلة للتجميع" },
+    "keywords": {
+      "es": ["colección", "TCG", "intercambiar", "valor de la carta", "tienda de cartas", "carta rara", "sobre de cartas"],
+      "en": ["collection", "TCG", "trade", "card value", "card marketplace", "rare card", "booster pack"]
+    }
+  },
+  "poker-chip": {
+    "label": { "es": "Ficha de póker", "en": "Poker chip", "pt": "Ficha de pôquer", "fr": "Jeton de poker", "de": "Pokerchip", "it": "Fiche da poker", "ja": "ポーカーチップ", "zh": "扑克筹码", "ko": "포커 칩", "ar": "فيشة بوكر" },
+    "keywords": {
+      "es": ["apuesta", "casino", "apostar", "juegos de cartas", "all in", "torneo", "banca"],
+      "en": ["bet", "casino", "wager", "card games", "all in", "tournament", "game token"]
+    }
+  },
+  "jigsaw-puzzle": {
+    "label": { "es": "Rompecabezas", "en": "Jigsaw puzzle", "pt": "Quebra-cabeça", "fr": "Puzzle", "de": "Puzzle", "it": "Puzzle", "ja": "ジグソーパズル", "zh": "拼图", "ko": "직소 퍼즐", "ar": "أحجية الصور" },
+    "keywords": {
+      "es": ["pieza", "armar", "pieza faltante", "acertijo", "juegos de ingenio", "encajar", "pasatiempo"],
+      "en": ["piece", "missing piece", "assemble", "puzzle games", "brain teaser", "fit together", "pastime"]
+    }
+  },
+  "puzzle-cube": {
+    "label": { "es": "Cubo mágico", "en": "Puzzle cube", "pt": "Cubo mágico", "fr": "Cube casse-tête", "de": "Zauberwürfel", "it": "Cubo magico", "ja": "パズルキューブ", "zh": "魔方", "ko": "큐브 퍼즐", "ar": "مكعب الألغاز" },
+    "keywords": {
+      "es": ["rompecabezas", "resolver", "juegos de ingenio", "agilidad mental", "speedcubing", "girar caras", "lógica"],
+      "en": ["magic cube", "speedcubing", "solve", "brain games", "twisty puzzle", "logic", "brain teaser"]
+    }
+  },
+  "crossword": {
+    "label": { "es": "Crucigrama", "en": "Crossword", "pt": "Palavras cruzadas", "fr": "Mots croisés", "de": "Kreuzworträtsel", "it": "Cruciverba", "ja": "クロスワード", "zh": "填字游戏", "ko": "십자말풀이", "ar": "الكلمات المتقاطعة" },
+    "keywords": {
+      "es": ["pasatiempo", "juego de palabras", "acertijo diario", "periódico", "letras", "pistas", "sopa de letras"],
+      "en": ["word puzzle", "daily puzzle", "newspaper", "letters", "clues", "word game", "brain teaser"]
+    }
+  },
+  "arcade-cabinet": {
+    "label": { "es": "Máquina de arcade", "en": "Arcade machine", "pt": "Fliperama", "fr": "Borne d’arcade", "de": "Arcade-Automat", "it": "Cabinato arcade", "ja": "アーケードゲーム機", "zh": "街机", "ko": "오락실 게임기", "ar": "آلة ألعاب أركيد" },
+    "keywords": {
+      "es": ["maquinitas", "videojuegos retro", "sala de juegos", "fichas", "videojuegos clásicos", "nostalgia", "gamer"],
+      "en": ["arcade games", "retro gaming", "game room", "coin-op", "classic games", "nostalgia", "8-bit"]
+    }
+  },
+  "claw-machine": {
+    "label": { "es": "Máquina de peluches", "en": "Claw machine", "pt": "Máquina de pelúcia", "fr": "Machine à pince", "de": "Greifautomat", "it": "Macchinetta dei peluche", "ja": "クレーンゲーム", "zh": "抓娃娃机", "ko": "인형뽑기", "ar": "آلة الملقط" },
+    "keywords": {
+      "es": ["garra", "grúa", "premios", "probar suerte", "maquinitas", "juguete", "centro de entretenimiento"],
+      "en": ["crane game", "claw", "prizes", "try your luck", "arcade games", "plush toy", "UFO catcher"]
+    }
+  },
+  "gumball-machine": {
+    "label": { "es": "Máquina de chicles", "en": "Gumball machine", "pt": "Máquina de chicletes", "fr": "Distributeur de bonbons", "de": "Kaugummiautomat", "it": "Distributore di caramelle", "ja": "ガムボールマシン", "zh": "泡泡糖机", "ko": "껌볼 머신", "ar": "آلة العلكة" },
+    "keywords": {
+      "es": ["juguetes en cápsula", "gacha", "cápsulas", "dulces", "premio por una moneda", "maquinita", "sorpresa"],
+      "en": ["capsule toys", "gacha", "candy", "prize for a coin", "vending", "coin-operated", "surprise"]
+    }
+  },
+  "game-cartridge": {
+    "label": { "es": "Cartucho de videojuego", "en": "Game cartridge", "pt": "Cartucho de jogo", "fr": "Cartouche de jeu", "de": "Spielmodul", "it": "Cartuccia di gioco", "ja": "ゲームカセット", "zh": "游戏卡带", "ko": "게임 카트리지", "ar": "خرطوشة ألعاب" },
+    "keywords": {
+      "es": ["videojuegos retro", "biblioteca de juegos", "insertar juego", "consola antigua", "colección", "8 bits", "nostalgia"],
+      "en": ["retro games", "game library", "insert game", "old console", "collection", "8-bit", "nostalgia"]
+    }
+  },
+  "gamepad-clock": {
+    "label": { "es": "Tiempo de juego", "en": "Playtime", "pt": "Tempo de jogo", "fr": "Temps de jeu", "de": "Spielzeit", "it": "Tempo di gioco", "ja": "プレイ時間", "zh": "游戏时长", "ko": "플레이 시간", "ar": "وقت اللعب" },
+    "keywords": {
+      "es": ["horas jugadas", "límite de tiempo", "control parental", "tiempo en pantalla", "videojuegos", "niños", "descanso"],
+      "en": ["time played", "time limit", "parental controls", "screen time", "video games", "kids", "break"]
+    }
+  },
+  "directional-pad": {
+    "label": { "es": "Cruceta", "en": "D-pad", "pt": "Botão direcional", "fr": "Croix directionnelle", "de": "Steuerkreuz", "it": "Croce direzionale", "ja": "十字キー", "zh": "十字方向键", "ko": "방향 패드", "ar": "لوحة الاتجاهات" },
+    "keywords": {
+      "es": ["controles", "mover", "flechas", "dirección", "mando", "control de videojuegos", "arriba y abajo"],
+      "en": ["directional pad", "controls", "move", "arrows", "direction", "game input", "controller"]
+    }
+  },
+  "achievement": {
+    "label": { "es": "Logro desbloqueado", "en": "Achievement unlocked", "pt": "Conquista desbloqueada", "fr": "Succès débloqué", "de": "Erfolg freigeschaltet", "it": "Obiettivo sbloccato", "ja": "実績解除", "zh": "成就解锁", "ko": "업적 달성", "ar": "تم فتح إنجاز" },
+    "keywords": {
+      "es": ["meta alcanzada", "insignia", "medalla", "recompensa", "trofeo", "gamificación", "objetivo cumplido"],
+      "en": ["goal reached", "badge", "medal", "reward", "trophy", "gamification", "milestone"]
+    }
+  },
+  "achievement-lock": {
+    "label": { "es": "Logro bloqueado", "en": "Locked achievement", "pt": "Conquista bloqueada", "fr": "Succès verrouillé", "de": "Gesperrter Erfolg", "it": "Obiettivo bloccato", "ja": "未解除の実績", "zh": "未解锁的成就", "ko": "잠긴 업적", "ar": "إنجاز مقفل" },
+    "keywords": {
+      "es": ["sin desbloquear", "oculto", "por conseguir", "secreto", "insignia pendiente", "meta futura", "gamificación"],
+      "en": ["not yet earned", "hidden", "secret", "to unlock", "pending badge", "future goal", "gamification"]
+    }
+  },
+  "level-up": {
+    "label": { "es": "Subir de nivel", "en": "Level up", "pt": "Subir de nível", "fr": "Niveau supérieur", "de": "Levelaufstieg", "it": "Salire di livello", "ja": "レベルアップ", "zh": "升级", "ko": "레벨 업", "ar": "ترقية المستوى" },
+    "keywords": {
+      "es": ["siguiente etapa", "progreso", "ascenso", "experiencia", "subir de rango", "avanzar", "XP"],
+      "en": ["next stage", "progression", "rank up", "experience", "XP", "advance", "promotion"]
+    }
+  },
+  "level-map": {
+    "label": { "es": "Mapa de niveles", "en": "Level map", "pt": "Mapa de fases", "fr": "Carte des niveaux", "de": "Levelkarte", "it": "Mappa dei livelli", "ja": "ステージマップ", "zh": "关卡地图", "ko": "스테이지 맵", "ar": "خريطة المراحل" },
+    "keywords": {
+      "es": ["selección de etapa", "etapas", "progreso", "mundos", "ruta", "siguiente etapa", "avance del jugador"],
+      "en": ["stage select", "stages", "progress", "worlds", "path", "next stage", "journey"]
+    }
+  },
+  "skill-tree": {
+    "label": { "es": "Árbol de habilidades", "en": "Skill tree", "pt": "Árvore de habilidades", "fr": "Arbre de compétences", "de": "Fertigkeitenbaum", "it": "Albero delle abilità", "ja": "スキルツリー", "zh": "技能树", "ko": "스킬 트리", "ar": "شجرة المهارات" },
+    "keywords": {
+      "es": ["desbloquear", "mejoras", "talentos", "progresión", "ramas", "RPG", "ruta de aprendizaje"],
+      "en": ["unlock", "upgrades", "talents", "progression", "branches", "RPG", "learning path"]
+    }
+  },
+  "health-bar": {
+    "label": { "es": "Barra de vida", "en": "Health bar", "pt": "Barra de vida", "fr": "Barre de vie", "de": "Lebensbalken", "it": "Barra della vita", "ja": "体力ゲージ", "zh": "血条", "ko": "체력 바", "ar": "شريط الصحة" },
+    "keywords": {
+      "es": ["puntos de vida", "HP", "salud", "daño", "energía", "HUD", "golpe"],
+      "en": ["hit points", "HP", "life", "damage", "energy", "HUD", "stamina"]
+    }
+  },
+  "power-up": {
+    "label": { "es": "Potenciador", "en": "Power-up", "pt": "Power-up", "fr": "Bonus", "de": "Power-up", "it": "Potenziamento", "ja": "パワーアップ", "zh": "强化道具", "ko": "파워업", "ar": "معزّز القوة" },
+    "keywords": {
+      "es": ["power-up", "bonus", "mejora", "habilidad especial", "impulso", "estrella", "ventaja"],
+      "en": ["boost", "bonus", "special ability", "upgrade", "buff", "star", "advantage"]
+    }
+  },
+  "potion": {
+    "label": { "es": "Poción", "en": "Potion", "pt": "Poção", "fr": "Potion", "de": "Trank", "it": "Pozione", "ja": "ポーション", "zh": "药水", "ko": "포션", "ar": "جرعة سحرية" },
+    "keywords": {
+      "es": ["consumible", "curación", "magia", "maná", "elixir", "frasco", "RPG"],
+      "en": ["consumable", "healing", "magic", "mana", "elixir", "flask", "RPG"]
+    }
+  },
+  "cooldown": {
+    "label": { "es": "Tiempo de recarga", "en": "Cooldown", "pt": "Tempo de recarga", "fr": "Temps de recharge", "de": "Abklingzeit", "it": "Tempo di ricarica", "ja": "クールダウン", "zh": "冷却时间", "ko": "쿨타임", "ar": "فترة إعادة الشحن" },
+    "keywords": {
+      "es": ["cooldown", "espera", "habilidad", "enfriamiento", "disponible pronto", "temporizador", "volver a usar"],
+      "en": ["recharging", "wait", "ability", "timer", "ready soon", "use again", "MOBA"]
+    }
+  },
+  "treasure-chest": {
+    "label": { "es": "Cofre del tesoro", "en": "Treasure chest", "pt": "Baú do tesouro", "fr": "Coffre au trésor", "de": "Schatztruhe", "it": "Forziere", "ja": "宝箱", "zh": "宝箱", "ko": "보물 상자", "ar": "صندوق الكنز" },
+    "keywords": {
+      "es": ["botín", "recompensa", "caja de botín", "premio", "loot", "sorpresa", "piratas"],
+      "en": ["loot", "reward", "loot box", "prize", "bounty", "surprise", "pirates"]
+    }
+  },
+  "treasure-map": {
+    "label": { "es": "Mapa del tesoro", "en": "Treasure map", "pt": "Mapa do tesouro", "fr": "Carte au trésor", "de": "Schatzkarte", "it": "Mappa del tesoro", "ja": "宝の地図", "zh": "藏宝图", "ko": "보물 지도", "ar": "خريطة الكنز" },
+    "keywords": {
+      "es": ["búsqueda del tesoro", "rally", "misión", "exploración", "aventura", "la equis marca el lugar", "piratas"],
+      "en": ["treasure hunt", "scavenger hunt", "quest", "exploration", "adventure", "X marks the spot", "pirates"]
+    }
+  },
+  "quest": {
+    "label": { "es": "Misión", "en": "Quest", "pt": "Missão", "fr": "Quête", "de": "Quest", "it": "Missione", "ja": "クエスト", "zh": "游戏任务", "ko": "퀘스트", "ar": "مهمة في اللعبة" },
+    "keywords": {
+      "es": ["tareas", "objetivo", "reto", "desafío", "encargo", "aventura", "gamificación"],
+      "en": ["mission", "task", "objective", "challenge", "assignment", "adventure", "gamification"]
+    }
+  },
+  "quest-check": {
+    "label": { "es": "Misión cumplida", "en": "Quest complete", "pt": "Missão cumprida", "fr": "Quête terminée", "de": "Quest abgeschlossen", "it": "Missione completata", "ja": "クエスト達成", "zh": "任务完成", "ko": "퀘스트 완료", "ar": "مهمة مكتملة" },
+    "keywords": {
+      "es": ["completada", "reto superado", "objetivo logrado", "tarea hecha", "desafío cumplido", "recompensa", "terminado"],
+      "en": ["completed", "challenge cleared", "objective done", "task done", "mission accomplished", "reward", "checked off"]
+    }
+  },
+  "leaderboard": {
+    "label": { "es": "Tabla de posiciones", "en": "Standings", "pt": "Tabela de classificação", "fr": "Tableau des scores", "de": "Bestenliste", "it": "Tabella della classifica", "ja": "ランキング表", "zh": "积分榜", "ko": "리더보드", "ar": "لوحة المتصدرين" },
+    "keywords": {
+      "es": ["ranking", "mejores jugadores", "clasificación", "puntuaciones", "primer lugar", "competencia", "marcador"],
+      "en": ["leaderboard", "rankings", "top players", "high scores", "first place", "competition", "scoreboard"]
+    }
+  },
+  "coin-flip": {
+    "label": { "es": "Volado", "en": "Coin toss", "pt": "Cara ou coroa", "fr": "Pile ou face", "de": "Münzwurf", "it": "Testa o croce", "ja": "コイントス", "zh": "抛硬币", "ko": "동전 던지기", "ar": "رمي العملة" },
+    "keywords": {
+      "es": ["águila o sol", "lanzar una moneda", "al azar", "quién empieza", "decidir", "sorteo", "suerte"],
+      "en": ["heads or tails", "flip a coin", "random choice", "who goes first", "decide", "draw", "luck"]
+    }
+  },
+  "minimap": {
+    "label": { "es": "Minimapa", "en": "Minimap", "pt": "Minimapa", "fr": "Mini-carte", "de": "Minikarte", "it": "Minimappa", "ja": "ミニマップ", "zh": "小地图", "ko": "미니맵", "ar": "خريطة مصغرة" },
+    "keywords": {
+      "es": ["HUD", "ubicación del jugador", "radar", "mapa del juego", "orientación", "dónde estoy", "exploración"],
+      "en": ["HUD", "player location", "radar", "game map", "overview", "where am I", "exploration"]
+    }
+  },
+  "monster": {
+    "label": { "es": "Monstruo", "en": "Monster", "pt": "Monstro", "fr": "Monstre", "de": "Monster", "it": "Mostro", "ja": "モンスター", "zh": "怪物", "ko": "몬스터", "ar": "وحش" },
+    "keywords": {
+      "es": ["criatura", "enemigo", "jefe final", "personaje", "infantil", "Halloween", "bicho"],
+      "en": ["creature", "enemy", "boss", "character", "kids", "Halloween", "beast"]
+    }
+  },
+  "knight-helmet": {
+    "label": { "es": "Yelmo de caballero", "en": "Knight helmet", "pt": "Elmo de cavaleiro", "fr": "Heaume de chevalier", "de": "Ritterhelm", "it": "Elmo da cavaliere", "ja": "騎士の兜", "zh": "骑士头盔", "ko": "기사 투구", "ar": "خوذة الفارس" },
+    "keywords": {
+      "es": ["medieval", "fantasía", "guerrero", "armadura", "clase de personaje", "RPG", "caballería"],
+      "en": ["medieval", "fantasy", "warrior", "armor", "character class", "RPG", "helm"]
+    }
+  },
+  "teddy-bear": {
+    "label": { "es": "Oso de peluche", "en": "Teddy bear", "pt": "Ursinho de pelúcia", "fr": "Ours en peluche", "de": "Teddybär", "it": "Orsacchiotto", "ja": "テディベア", "zh": "泰迪熊", "ko": "곰 인형", "ar": "دبدوب" },
+    "keywords": {
+      "es": ["juguete", "osito", "niños", "regalo", "apapacho", "consuelo", "juguetería"],
+      "en": ["plush", "toy", "stuffed animal", "kids", "gift", "comfort", "cuddly"]
+    }
+  },
+  "doll": {
+    "label": { "es": "Muñeca", "en": "Doll", "pt": "Boneca", "fr": "Poupée", "de": "Puppe", "it": "Bambola", "ja": "人形", "zh": "洋娃娃", "ko": "인형", "ar": "دمية" },
+    "keywords": {
+      "es": ["juguete", "juego de roles", "jugar a la casita", "niñas y niños", "muñeco", "juguetería", "vestir"],
+      "en": ["toy", "pretend play", "role play", "kids", "toy store", "gift", "dress up"]
+    }
+  },
+  "nesting-doll": {
+    "label": { "es": "Matrioska", "en": "Nesting doll", "pt": "Matrioska", "fr": "Poupée russe", "de": "Matroschka", "it": "Matrioska", "ja": "マトリョーシカ", "zh": "俄罗斯套娃", "ko": "마트료시카", "ar": "دمية ماتريوشكا" },
+    "keywords": {
+      "es": ["muñeca rusa", "capas", "una dentro de otra", "anidado", "artesanía", "juguete tradicional", "souvenir"],
+      "en": ["matryoshka", "Russian doll", "layers", "one inside another", "nested", "folk toy", "souvenir"]
+    }
+  },
+  "dollhouse": {
+    "label": { "es": "Casa de muñecas", "en": "Dollhouse", "pt": "Casa de bonecas", "fr": "Maison de poupée", "de": "Puppenhaus", "it": "Casa delle bambole", "ja": "ドールハウス", "zh": "娃娃屋", "ko": "인형의 집", "ar": "بيت الدمى" },
+    "keywords": {
+      "es": ["jugar a la casita", "miniaturas", "juguete", "juego de roles", "maqueta", "muebles de juguete", "niños"],
+      "en": ["pretend play", "miniatures", "toy", "role play", "miniature home", "toy furniture", "kids"]
+    }
+  },
+  "rocking-horse": {
+    "label": { "es": "Caballito mecedor", "en": "Rocking horse", "pt": "Cavalinho de balanço", "fr": "Cheval à bascule", "de": "Schaukelpferd", "it": "Cavallo a dondolo", "ja": "揺り木馬", "zh": "摇摇马", "ko": "흔들 목마", "ar": "حصان هزاز" },
+    "keywords": {
+      "es": ["juguete clásico", "niños pequeños", "cuarto del bebé", "mecerse", "de madera", "vaivén", "infancia"],
+      "en": ["classic toy", "toddlers", "nursery", "sway", "wooden toy", "ride-on", "childhood"]
+    }
+  },
+  "toy-car": {
+    "label": { "es": "Carrito de juguete", "en": "Toy car", "pt": "Carrinho de brinquedo", "fr": "Petite voiture", "de": "Spielzeugauto", "it": "Macchinina", "ja": "おもちゃの車", "zh": "玩具车", "ko": "장난감 자동차", "ar": "سيارة لعبة" },
+    "keywords": {
+      "es": ["cochecito", "vehículos de juguete", "niños", "jugar", "miniatura", "colección", "pista"],
+      "en": ["toy vehicle", "kids", "play", "die-cast", "miniature", "collection", "race track"]
+    }
+  },
+  "remote-control-car": {
+    "label": { "es": "Carro a control remoto", "en": "Remote-control car", "pt": "Carrinho de controle remoto", "fr": "Voiture télécommandée", "de": "Ferngesteuertes Auto", "it": "Auto radiocomandata", "ja": "ラジコンカー", "zh": "遥控车", "ko": "RC카", "ar": "سيارة بجهاز تحكم" },
+    "keywords": {
+      "es": ["RC", "radiocontrol", "juguete", "hobby", "carreras", "a escala", "todoterreno"],
+      "en": ["RC", "radio control", "toy", "hobby", "racing", "scale model", "off-road"]
+    }
+  },
+  "toy-robot": {
+    "label": { "es": "Robot de juguete", "en": "Toy robot", "pt": "Robô de brinquedo", "fr": "Robot jouet", "de": "Spielzeugroboter", "it": "Robot giocattolo", "ja": "ロボットのおもちゃ", "zh": "玩具机器人", "ko": "장난감 로봇", "ar": "روبوت لعبة" },
+    "keywords": {
+      "es": ["STEM", "hojalata", "de cuerda", "ciencia para niños", "programación para niños", "retro", "androide"],
+      "en": ["STEM", "tin toy", "wind-up", "science for kids", "coding for kids", "retro", "android"]
+    }
+  },
+  "toy-train": {
+    "label": { "es": "Trenecito", "en": "Toy train", "pt": "Trenzinho", "fr": "Petit train", "de": "Spielzeugeisenbahn", "it": "Trenino", "ja": "おもちゃの汽車", "zh": "玩具火车", "ko": "장난감 기차", "ar": "قطار لعبة" },
+    "keywords": {
+      "es": ["tren de madera", "juguete", "niños", "vías", "locomotora", "maqueta", "chu chu"],
+      "en": ["wooden train", "toy", "kids", "tracks", "locomotive", "model railway", "choo choo"]
+    }
+  },
+  "rubber-duck": {
+    "label": { "es": "Patito de hule", "en": "Rubber duck", "pt": "Patinho de borracha", "fr": "Canard de bain", "de": "Quietscheentchen", "it": "Paperella di gomma", "ja": "ラバーダック", "zh": "橡皮鸭", "ko": "러버덕", "ar": "بطة مطاطية" },
+    "keywords": {
+      "es": ["juguete de baño", "tina", "bebés", "hora del baño", "depurar código", "programación", "flotar"],
+      "en": ["bath toy", "bathtub", "kids", "bath time", "debugging", "explain your code", "squeaky toy"]
+    }
+  },
+  "toy-brick": {
+    "label": { "es": "Bloque armable", "en": "Building brick", "pt": "Peça de montar", "fr": "Brique de construction", "de": "Klemmbaustein", "it": "Mattoncino", "ja": "ブロック", "zh": "拼插积木", "ko": "조립 블록", "ar": "قطعة تركيب" },
+    "keywords": {
+      "es": ["juguetes de construcción", "armar", "piezas", "ensamblar", "set de construcción", "creatividad", "ladrillito"],
+      "en": ["construction toys", "build", "pieces", "snap together", "construction set", "creativity", "studs"]
+    }
+  },
+  "building-blocks": {
+    "label": { "es": "Bloques de juguete", "en": "Building blocks", "pt": "Blocos de brinquedo", "fr": "Cubes en bois", "de": "Bauklötze", "it": "Cubi da costruzione", "ja": "積み木", "zh": "积木", "ko": "쌓기 블록", "ar": "مكعبات البناء" },
+    "keywords": {
+      "es": ["cubos", "apilar", "estimulación temprana", "juguete didáctico", "niños pequeños", "construir torres", "abecedario"],
+      "en": ["wooden cubes", "stacking", "early learning", "educational toy", "toddlers", "build a tower", "ABC blocks"]
+    }
+  },
+  "marbles": {
+    "label": { "es": "Canicas", "en": "Marbles", "pt": "Bolinhas de gude", "fr": "Billes", "de": "Murmeln", "it": "Biglie", "ja": "ビー玉", "zh": "弹珠", "ko": "구슬", "ar": "كرات زجاجية" },
+    "keywords": {
+      "es": ["bolitas de vidrio", "tiro", "colección", "juego tradicional", "recreo", "juego de patio", "agüitas"],
+      "en": ["glass toys", "shooter", "collecting", "traditional game", "recess", "playground game", "glass balls"]
+    }
+  },
+  "kite": {
+    "label": { "es": "Papalote", "en": "Kite", "pt": "Pipa", "fr": "Cerf-volant", "de": "Drachen", "it": "Aquilone", "ja": "凧", "zh": "风筝", "ko": "연", "ar": "طائرة ورقية" },
+    "keywords": {
+      "es": ["cometa", "viento", "aire libre", "volar", "parque", "hilo", "día de campo"],
+      "en": ["wind", "outdoor play", "fly", "park", "string", "breeze", "beach"]
+    }
+  },
+  "yo-yo": {
+    "label": { "es": "Yoyo", "en": "Yo-yo", "pt": "Ioiô", "fr": "Yo-yo", "de": "Jo-Jo", "it": "Yo-yo", "ja": "ヨーヨー", "zh": "溜溜球", "ko": "요요", "ar": "يويو" },
+    "keywords": {
+      "es": ["juguete clásico", "trucos", "cuerda", "subir y bajar", "habilidad", "juego tradicional", "vaivén"],
+      "en": ["classic toy", "tricks", "string", "up and down", "skill toy", "spin", "retro toy"]
+    }
+  },
+  "cup-and-ball": {
+    "label": { "es": "Juego del balero", "en": "Cup-and-ball", "pt": "Bilboquê", "fr": "Bilboquet", "de": "Becherfangspiel", "it": "Bilboquet", "ja": "けん玉", "zh": "剑玉", "ko": "켄다마", "ar": "لعبة الكأس والكرة" },
+    "keywords": {
+      "es": ["kendama", "juguete tradicional", "atrapar la bola", "habilidad", "juguete mexicano", "puntería", "artesanía"],
+      "en": ["kendama", "balero", "catch the ball", "skill toy", "traditional toy", "aim", "wooden toy"]
+    }
+  },
+  "spinning-top": {
+    "label": { "es": "Trompo de juguete", "en": "Spinning top", "pt": "Pião", "fr": "Toupie", "de": "Kreisel", "it": "Trottola", "ja": "コマ", "zh": "陀螺", "ko": "팽이", "ar": "خذروف" },
+    "keywords": {
+      "es": ["girar", "juguete clásico", "equilibrio", "cordel", "juego tradicional", "pirinola", "madera"],
+      "en": ["spin", "classic toy", "balance", "string", "traditional toy", "whirl", "wooden toy"]
+    }
+  },
+  "pinwheel": {
+    "label": { "es": "Rehilete", "en": "Pinwheel", "pt": "Cata-vento", "fr": "Moulinet", "de": "Windrad", "it": "Girandola", "ja": "かざぐるま", "zh": "纸风车", "ko": "바람개비", "ar": "دوّارة الريح" },
+    "keywords": {
+      "es": ["molinillo de viento", "viento", "juguete de aire libre", "girar", "fiesta infantil", "colores", "jardín"],
+      "en": ["whirligig", "wind", "outdoor toy", "spin", "kids party", "colors", "garden"]
+    }
+  },
+  "fidget-spinner": {
+    "label": { "es": "Spinner", "en": "Fidget spinner", "pt": "Fidget spinner", "fr": "Hand spinner", "de": "Fidget Spinner", "it": "Fidget spinner", "ja": "ハンドスピナー", "zh": "指尖陀螺", "ko": "피젯 스피너", "ar": "سبينر" },
+    "keywords": {
+      "es": ["juguete antiestrés", "concentración", "girar", "ansiedad", "fidget", "TDAH", "relajación"],
+      "en": ["fidget toy", "focus", "stress relief", "spin", "anxiety", "ADHD", "hand spinner"]
+    }
+  },
+  "spring-toy": {
+    "label": { "es": "Resorte de juguete", "en": "Spring toy", "pt": "Mola maluca", "fr": "Ressort jouet", "de": "Treppenläufer", "it": "Molla giocattolo", "ja": "バネのおもちゃ", "zh": "彩虹圈", "ko": "스프링 장난감", "ar": "لعبة الزنبرك" },
+    "keywords": {
+      "es": ["baja escaleras", "juguete de escritorio", "espiral", "juguete clásico", "elástico", "arcoíris", "estirar"],
+      "en": ["walks down stairs", "desk toy", "coil", "classic toy", "stretch", "rainbow", "helix"]
+    }
+  },
+  "bubble-wand": {
+    "label": { "es": "Burbujas de jabón", "en": "Soap bubbles", "pt": "Bolhas de sabão", "fr": "Bulles de savon", "de": "Seifenblasenstab", "it": "Bolle di sapone", "ja": "シャボン玉", "zh": "肥皂泡", "ko": "비눗방울", "ar": "فقاعات الصابون" },
+    "keywords": {
+      "es": ["pompas", "varita", "soplar", "aire libre", "fiesta infantil", "jugar", "verano"],
+      "en": ["wand", "blow", "outdoor fun", "kids party", "play", "summer", "float"]
+    }
+  },
+  "jack-in-the-box": {
+    "label": { "es": "Caja sorpresa", "en": "Jack-in-the-box", "pt": "Caixa surpresa", "fr": "Diable en boîte", "de": "Schachtelteufel", "it": "Scatola a sorpresa", "ja": "びっくり箱", "zh": "弹簧玩偶盒", "ko": "깜짝 상자", "ar": "صندوق المفاجآت" },
+    "keywords": {
+      "es": ["susto", "payaso", "juguete de cuerda", "manivela", "resorte", "juguete antiguo", "inesperado"],
+      "en": ["surprise", "jump scare", "clown", "wind-up toy", "crank", "spring", "vintage toy"]
+    }
+  },
+  "stacking-rings": {
+    "label": { "es": "Torre de aros", "en": "Stacking rings", "pt": "Torre de argolas", "fr": "Pyramide d’anneaux", "de": "Ringpyramide", "it": "Anelli impilabili", "ja": "スタッキングリング", "zh": "套圈塔", "ko": "링 쌓기", "ar": "حلقات التكديس" },
+    "keywords": {
+      "es": ["apilar", "estimulación temprana", "bebés", "colores", "tamaños", "juguete didáctico", "motricidad"],
+      "en": ["stack", "early learning", "toddlers", "colors", "sizes", "sorting", "fine motor skills"]
+    }
+  },
+  "shape-sorter": {
+    "label": { "es": "Encaje de figuras", "en": "Shape sorter", "pt": "Encaixe de formas", "fr": "Boîte à formes", "de": "Formensortierer", "it": "Incastro delle forme", "ja": "型はめパズル", "zh": "形状分类盒", "ko": "모양 맞추기", "ar": "لعبة مطابقة الأشكال" },
+    "keywords": {
+      "es": ["formas", "estimulación temprana", "niños pequeños", "clasificar", "juguete didáctico", "embonar", "Montessori"],
+      "en": ["geometric", "early learning", "toddlers", "sorting", "educational toy", "fit", "Montessori"]
+    }
+  },
+  "boomerang": {
+    "label": { "es": "Bumerán", "en": "Boomerang", "pt": "Bumerangue", "fr": "Boomerang", "de": "Bumerang", "it": "Boomerang", "ja": "ブーメラン", "zh": "回旋镖", "ko": "부메랑", "ar": "بوميرانغ" },
+    "keywords": {
+      "es": ["lanzar", "regresa", "aire libre", "juguete para lanzar", "Australia", "puntería", "parque"],
+      "en": ["throw", "comes back", "outdoor games", "throwing toy", "Australia", "return", "park"]
+    }
+  },
+  "sand-pail": {
+    "label": { "es": "Cubeta y pala", "en": "Sand pail", "pt": "Baldinho de praia", "fr": "Seau et pelle", "de": "Sandeimer", "it": "Secchiello e paletta", "ja": "砂遊びバケツ", "zh": "沙滩桶", "ko": "모래 놀이 양동이", "ar": "دلو الرمل" },
+    "keywords": {
+      "es": ["playa", "arenero", "castillo de arena", "juguetes de arena", "vacaciones", "niños", "verano"],
+      "en": ["beach", "sandbox", "sandcastle", "spade", "sand toys", "vacation", "kids"]
+    }
+  },
+  "bounce-house": {
+    "label": { "es": "Brincolín", "en": "Bounce house", "pt": "Pula-pula inflável", "fr": "Château gonflable", "de": "Hüpfburg", "it": "Castello gonfiabile", "ja": "ふわふわ遊具", "zh": "充气城堡", "ko": "에어바운스", "ar": "قلعة نطاطة" },
+    "keywords": {
+      "es": ["castillo inflable", "fiesta infantil", "renta para fiestas", "brincar", "cumpleaños", "salón de fiestas", "centro de juegos"],
+      "en": ["inflatable castle", "bouncy castle", "kids party", "party rental", "jump", "birthday", "play center"]
+    }
+  },
+  "sandbox": {
+    "label": { "es": "Arenero infantil", "en": "Sandbox", "pt": "Tanque de areia", "fr": "Bac à sable", "de": "Sandkasten", "it": "Sabbiera", "ja": "砂場", "zh": "沙坑", "ko": "모래 놀이터", "ar": "صندوق الرمل" },
+    "keywords": {
+      "es": ["parque", "área de juegos", "juegos infantiles", "arena", "castillos de arena", "kínder", "patio"],
+      "en": ["playground", "play area", "kids", "sand", "sandcastles", "preschool", "backyard"]
+    }
+  },
+  "ball-pit": {
+    "label": { "es": "Alberca de pelotas", "en": "Ball pit", "pt": "Piscina de bolinhas", "fr": "Piscine à balles", "de": "Bällebad", "it": "Piscina di palline", "ja": "ボールプール", "zh": "海洋球池", "ko": "볼풀", "ar": "مسبح الكرات" },
+    "keywords": {
+      "es": ["centro de juegos", "área infantil", "pelotitas", "fiesta infantil", "niños pequeños", "ludoteca", "brincar"],
+      "en": ["play center", "kids area", "plastic balls", "kids party", "toddlers", "soft play", "indoor playground"]
+    }
+  },
+  "tire-swing": {
+    "label": { "es": "Columpio de llanta", "en": "Tire swing", "pt": "Balanço de pneu", "fr": "Balançoire en pneu", "de": "Reifenschaukel", "it": "Altalena con pneumatico", "ja": "タイヤブランコ", "zh": "轮胎秋千", "ko": "타이어 그네", "ar": "أرجوحة الإطار" },
+    "keywords": {
+      "es": ["patio", "jardín", "mecerse", "árbol", "juego al aire libre", "rancho", "niños"],
+      "en": ["backyard", "garden", "rope", "tree", "outdoor play", "farm", "kids"]
+    }
+  },
+  "hopscotch": {
+    "label": { "es": "Avioncito", "en": "Hopscotch", "pt": "Amarelinha", "fr": "Marelle", "de": "Himmel und Hölle", "it": "Gioco della campana", "ja": "ケンケンパ", "zh": "跳房子", "ko": "사방치기", "ar": "لعبة الحجلة" },
+    "keywords": {
+      "es": ["bebeleche", "rayuela", "juegos de patio", "gis", "brincar", "recreo", "juego tradicional"],
+      "en": ["playground games", "chalk", "hop", "jump", "recess", "traditional game", "sidewalk game"]
+    }
+  },
+  "trampoline": {
+    "label": { "es": "Trampolín", "en": "Trampoline", "pt": "Cama elástica", "fr": "Trampoline", "de": "Trampolin", "it": "Tappeto elastico", "ja": "トランポリン", "zh": "蹦床", "ko": "트램펄린", "ar": "ترامبولين" },
+    "keywords": {
+      "es": ["brincolín", "rebotar", "brincar", "patio", "jardín", "parque de saltos", "acrobacias"],
+      "en": ["bounce", "jump", "backyard", "garden", "jump park", "flips", "rebound"]
+    }
+  },
+  "ring-toss": {
+    "label": { "es": "Tiro de aros", "en": "Ring toss", "pt": "Jogo de argolas", "fr": "Lancer d’anneaux", "de": "Ringwurfspiel", "it": "Lancio degli anelli", "ja": "輪投げ", "zh": "套圈", "ko": "고리 던지기", "ar": "رمي الحلقات" },
+    "keywords": {
+      "es": ["argollas", "feria", "kermés", "fiesta", "lanzar", "puntería", "premio"],
+      "en": ["fair game", "carnival", "party game", "toss", "aim", "prize", "hoop"]
+    }
+  }
+}

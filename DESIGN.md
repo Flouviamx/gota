@@ -235,6 +235,15 @@ reach it in one pass. What the critics, QA, and the owner caught, so it isn't dr
   burger); an industrial machine drawn as its parts reads as boxes (the lathe, the transformer,
   the injection molder). Round 9 dropped 131 like these after its critics: hold the tool another
   way or drop it, and say a material, a process, or a machine by what it makes.
+- **Print, dots, and symbols already taken.** An object that says what it is with its letters or
+  numbers reads as something else without them (a race bib as a cassette, a bingo card as a die, a
+  storyboard as «000»); a frame or a card scattered with dots reads as a die (film grain); a
+  machine, a stand, or a frame in profile reads as furniture (the pinball machine as a chair, the
+  monkey bars as a table, a banker's lamp as a beach umbrella); and some compositions are already
+  other symbols (two rings joined by an arrow as the male sign, a ring with spokes as a lifebuoy,
+  balls on an arch as a loading spinner, a triangle on a ring as a network). Round 10 dropped 21
+  like these after its critics: say the object by its shape, never by its print, and check the
+  drawing against the symbols everyone already knows.
 
 ## Process
 1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.

@@ -1,0 +1,646 @@
+{
+  "guitar": {
+    "label": { "es": "Guitarra", "en": "Guitar", "pt": "Violão", "fr": "Guitare", "de": "Gitarre", "it": "Chitarra", "ja": "ギター", "zh": "吉他", "ko": "기타", "ar": "غيتار" },
+    "keywords": {
+      "es": ["acústica", "clases de guitarra", "cuerdas", "acordes", "rasgueo", "instrumento de cuerda", "pista de guitarra", "trova"],
+      "en": ["acoustic", "guitar lessons", "strings", "chords", "strumming", "string instrument", "guitar track", "folk"]
+    }
+  },
+  "guitar-electric": {
+    "label": { "es": "Guitarra eléctrica", "en": "Electric guitar", "pt": "Guitarra elétrica", "fr": "Guitare électrique", "de": "E-Gitarre", "it": "Chitarra elettrica", "ja": "エレキギター", "zh": "电吉他", "ko": "일렉트릭 기타", "ar": "غيتار كهربائي" },
+    "keywords": {
+      "es": ["rock", "riff", "solo de guitarra", "ampli", "distorsión", "pista de guitarra", "simulador de amplificador", "equipo musical"],
+      "en": ["rock", "riff", "guitar solo", "amp", "distortion", "guitar track", "amp simulator", "music gear"]
+    }
+  },
+  "banjo": {
+    "label": { "es": "Banjo", "en": "Banjo", "pt": "Banjo", "fr": "Banjo", "de": "Banjo", "it": "Banjo", "ja": "バンジョー", "zh": "班卓琴", "ko": "밴조", "ar": "بانجو" },
+    "keywords": {
+      "es": ["bluegrass", "country", "folk", "cuerdas", "instrumento de cuerda", "música tradicional", "punteo"],
+      "en": ["bluegrass", "country", "folk", "strings", "string instrument", "americana", "picking"]
+    }
+  },
+  "violin": {
+    "label": { "es": "Violín", "en": "Violin", "pt": "Violino", "fr": "Violon", "de": "Geige", "it": "Violino", "ja": "バイオリン", "zh": "小提琴", "ko": "바이올린", "ar": "كمان" },
+    "keywords": {
+      "es": ["música clásica", "cuerdas", "orquesta", "arco", "clases de violín", "sección de cuerdas", "fiddle", "mariachi"],
+      "en": ["fiddle", "classical music", "strings", "orchestra", "bow", "violin lessons", "string section", "viola"]
+    }
+  },
+  "cello": {
+    "label": { "es": "Violonchelo", "en": "Cello", "pt": "Violoncelo", "fr": "Violoncelle", "de": "Cello", "it": "Violoncello", "ja": "チェロ", "zh": "大提琴", "ko": "첼로", "ar": "تشيلو" },
+    "keywords": {
+      "es": ["chelo", "orquesta", "cuerdas", "sección de cuerdas", "arco", "clases de chelo", "música clásica", "contrabajo"],
+      "en": ["violoncello", "orchestra", "strings", "string section", "bow", "cello lessons", "classical music", "double bass"]
+    }
+  },
+  "harp": {
+    "label": { "es": "Arpa", "en": "Harp", "pt": "Harpa", "fr": "Harpe", "de": "Harfe", "it": "Arpa", "ja": "ハープ", "zh": "竖琴", "ko": "하프", "ar": "آلة الهارب" },
+    "keywords": {
+      "es": ["música clásica", "cuerdas", "orquesta", "música relajante", "ambiental", "arpa jarocha", "instrumento de cuerda"],
+      "en": ["classical music", "strings", "orchestra", "relaxing music", "ambient", "angelic", "string instrument"]
+    }
+  },
+  "lyre": {
+    "label": { "es": "Lira", "en": "Lyre", "pt": "Lira", "fr": "Lyre", "de": "Leier", "it": "Lira", "ja": "竪琴", "zh": "里拉琴", "ko": "리라", "ar": "قيثارة" },
+    "keywords": {
+      "es": ["música", "poesía", "arte", "música antigua", "grecia", "escuela de música", "conservatorio", "bellas artes"],
+      "en": ["music", "poetry", "arts", "ancient music", "greek", "music school", "conservatory", "fine arts"]
+    }
+  },
+  "guitar-pick": {
+    "label": { "es": "Púa", "en": "Guitar pick", "pt": "Palheta", "fr": "Médiator", "de": "Plektrum", "it": "Plettro", "ja": "ピック", "zh": "拨片", "ko": "기타 피크", "ar": "ريشة الغيتار" },
+    "keywords": {
+      "es": ["plumilla", "uñeta", "plectro", "accesorios de guitarra", "punteo", "rasgueo", "merch de la banda", "equipo musical"],
+      "en": ["plectrum", "guitar gear", "picking", "strumming", "band merch", "guitar accessories", "flatpick"]
+    }
+  },
+  "piano": {
+    "label": { "es": "Piano", "en": "Piano", "pt": "Piano", "fr": "Piano", "de": "Klavier", "it": "Pianoforte", "ja": "ピアノ", "zh": "钢琴", "ko": "피아노", "ar": "بيانو" },
+    "keywords": {
+      "es": ["piano de cola", "clases de piano", "música clásica", "recital", "pianista", "concierto", "pista de piano", "teclas"],
+      "en": ["grand piano", "piano lessons", "classical music", "recital", "pianist", "concert", "piano track", "keys"]
+    }
+  },
+  "upright-piano": {
+    "label": { "es": "Piano vertical", "en": "Upright piano", "pt": "Piano vertical", "fr": "Piano droit", "de": "Pianino", "it": "Pianoforte verticale", "ja": "アップライトピアノ", "zh": "立式钢琴", "ko": "업라이트 피아노", "ar": "بيانو عمودي" },
+    "keywords": {
+      "es": ["piano de pared", "práctica en casa", "escuela de música", "salón de ensayo", "clases de piano", "estudiar", "pianista"],
+      "en": ["home practice", "music school", "practice room", "piano lessons", "studying", "pianist", "acoustic piano"]
+    }
+  },
+  "piano-keys": {
+    "label": { "es": "Teclas de piano", "en": "Piano keys", "pt": "Teclas de piano", "fr": "Touches de piano", "de": "Klaviertasten", "it": "Tasti del pianoforte", "ja": "鍵盤", "zh": "琴键", "ko": "건반", "ar": "مفاتيح البيانو" },
+    "keywords": {
+      "es": ["teclado", "instrumentos de teclado", "entrada midi", "escalas", "acordes", "teclas blancas y negras", "melodía", "tocar"],
+      "en": ["keyboard", "keyboard instruments", "midi input", "scales", "chords", "ivories", "melody", "play"]
+    }
+  },
+  "synthesizer": {
+    "label": { "es": "Sintetizador", "en": "Synthesizer", "pt": "Sintetizador", "fr": "Synthétiseur", "de": "Synthesizer", "it": "Sintetizzatore", "ja": "シンセサイザー", "zh": "合成器", "ko": "신시사이저", "ar": "مُركِّب الأصوات" },
+    "keywords": {
+      "es": ["synth", "teclado midi", "música electrónica", "diseño sonoro", "controlador de teclado", "teclado electrónico", "osciladores", "pista de synth"],
+      "en": ["synth", "midi keyboard", "electronic music", "sound design", "keyboard controller", "synth track", "oscillator", "keys"]
+    }
+  },
+  "pipe-organ": {
+    "label": { "es": "Órgano", "en": "Pipe organ", "pt": "Órgão de tubos", "fr": "Orgue", "de": "Orgel", "it": "Organo a canne", "ja": "パイプオルガン", "zh": "管风琴", "ko": "파이프 오르간", "ar": "أرغن" },
+    "keywords": {
+      "es": ["órgano de tubos", "iglesia", "música sacra", "sala de conciertos", "repertorio clásico", "organista", "catedral", "bach"],
+      "en": ["church organ", "sacred music", "concert hall", "classical repertoire", "organist", "cathedral", "bach", "organ music"]
+    }
+  },
+  "piano-accordion": {
+    "label": { "es": "Acordeón de teclado", "en": "Piano accordion", "pt": "Acordeão de teclas", "fr": "Accordéon piano", "de": "Pianoakkordeon", "it": "Fisarmonica a tastiera", "ja": "アコーディオン", "zh": "手风琴", "ko": "아코디언", "ar": "أكورديون" },
+    "keywords": {
+      "es": ["acordeón", "norteño", "vallenato", "tango", "polka", "música folclórica", "regional mexicano", "instrumento de fuelle"],
+      "en": ["accordion", "squeezebox", "folk", "tango", "polka", "norteño", "bellows", "zydeco"]
+    }
+  },
+  "harmonica": {
+    "label": { "es": "Armónica", "en": "Harmonica", "pt": "Gaita", "fr": "Harmonica", "de": "Mundharmonika", "it": "Armonica a bocca", "ja": "ハーモニカ", "zh": "口琴", "ko": "하모니카", "ar": "هارمونيكا" },
+    "keywords": {
+      "es": ["blues", "folk", "tablaturas", "clases", "instrumento de viento", "rock", "música country"],
+      "en": ["mouth organ", "blues harp", "blues", "folk", "tabs", "lessons", "country", "wind instrument"]
+    }
+  },
+  "drum": {
+    "label": { "es": "Tambor", "en": "Drum", "pt": "Tambor", "fr": "Tambour", "de": "Trommel", "it": "Tamburo", "ja": "ドラム", "zh": "鼓", "ko": "드럼", "ar": "طبل" },
+    "keywords": {
+      "es": ["tarola", "redoblante", "percusión", "batería", "clases de batería", "ritmo", "hacer beats", "baquetas"],
+      "en": ["snare", "percussion", "drums", "drum lessons", "rhythm", "beat making", "drumsticks", "drum track"]
+    }
+  },
+  "drum-kit": {
+    "label": { "es": "Batería", "en": "Drum kit", "pt": "Bateria", "fr": "Batterie", "de": "Schlagzeug", "it": "Batteria", "ja": "ドラムセット", "zh": "架子鼓", "ko": "드럼 세트", "ar": "طقم طبول" },
+    "keywords": {
+      "es": ["baterista", "banda", "pista de batería", "sala de ensayo", "percusión", "tambores", "platillos", "ensayo"],
+      "en": ["drums", "drummer", "band setup", "drum stem", "rehearsal room", "trap set", "percussion", "cymbals"]
+    }
+  },
+  "cymbal": {
+    "label": { "es": "Platillo de batería", "en": "Cymbal", "pt": "Prato", "fr": "Cymbale", "de": "Becken", "it": "Piatto", "ja": "シンバル", "zh": "镲片", "ko": "심벌즈", "ar": "صنج" },
+    "keywords": {
+      "es": ["címbalo", "crash", "ride", "hi-hat", "batería", "caja de ritmos", "percusión", "contratiempo"],
+      "en": ["crash", "ride", "hi-hat", "drum kit", "drum machine", "percussion", "splash"]
+    }
+  },
+  "gong": {
+    "label": { "es": "Gong", "en": "Gong", "pt": "Gongo", "fr": "Gong", "de": "Gong", "it": "Gong", "ja": "銅鑼", "zh": "锣", "ko": "징", "ar": "غونغ" },
+    "keywords": {
+      "es": ["percusión", "meditación", "fin del temporizador", "anuncio", "baño de sonido", "campanada", "fin de la sesión"],
+      "en": ["percussion", "meditation", "timer end", "announcement", "sound bath", "session end", "chime"]
+    }
+  },
+  "tambourine": {
+    "label": { "es": "Pandero", "en": "Tambourine", "pt": "Pandeiro", "fr": "Tambourin", "de": "Tamburin", "it": "Tamburello", "ja": "タンバリン", "zh": "铃鼓", "ko": "탬버린", "ar": "دف" },
+    "keywords": {
+      "es": ["pandereta", "percusión", "folk", "pop", "música infantil", "ritmo", "cascabeles"],
+      "en": ["percussion", "jingles", "folk", "pop", "kids' music", "rhythm", "frame drum"]
+    }
+  },
+  "maracas": {
+    "label": { "es": "Maracas", "en": "Maracas", "pt": "Maracas", "fr": "Maracas", "de": "Maracas", "it": "Maracas", "ja": "マラカス", "zh": "沙锤", "ko": "마라카스", "ar": "ماراكاس" },
+    "keywords": {
+      "es": ["sonajas", "percusión", "música latina", "salsa", "cumbia", "instrumentos para niños", "ritmo", "fiesta"],
+      "en": ["shakers", "percussion", "latin music", "salsa", "rattle", "kids' instruments", "rhythm", "party"]
+    }
+  },
+  "xylophone": {
+    "label": { "es": "Xilófono", "en": "Xylophone", "pt": "Xilofone", "fr": "Xylophone", "de": "Xylofon", "it": "Xilofono", "ja": "木琴", "zh": "木琴", "ko": "실로폰", "ar": "زيلوفون" },
+    "keywords": {
+      "es": ["marimba", "glockenspiel", "metalófono", "percusión melódica", "música infantil", "baquetas", "escala", "juguete musical"],
+      "en": ["marimba", "glockenspiel", "vibraphone", "melodic percussion", "kids' music", "mallets", "scale", "toy instrument"]
+    }
+  },
+  "triangle-instrument": {
+    "label": { "es": "Triángulo musical", "en": "Musical triangle", "pt": "Triângulo musical", "fr": "Triangle musical", "de": "Triangel", "it": "Triangolo musicale", "ja": "トライアングル", "zh": "三角铁", "ko": "트라이앵글", "ar": "آلة المثلث" },
+    "keywords": {
+      "es": ["percusión", "orquesta", "música infantil", "tintineo", "ding", "campanita", "instrumento de metal"],
+      "en": ["percussion", "orchestra", "kids' music", "ding", "ting", "jingle", "metal instrument"]
+    }
+  },
+  "bongos": {
+    "label": { "es": "Bongós", "en": "Bongos", "pt": "Bongôs", "fr": "Bongos", "de": "Bongos", "it": "Bongo", "ja": "ボンゴ", "zh": "邦戈鼓", "ko": "봉고", "ar": "طبول البونغو" },
+    "keywords": {
+      "es": ["percusión latina", "tambores de mano", "salsa", "son cubano", "ritmo", "conga", "música tropical"],
+      "en": ["latin percussion", "hand drums", "salsa", "cuban music", "rhythm", "congas", "tropical"]
+    }
+  },
+  "djembe": {
+    "label": { "es": "Djembé", "en": "Djembe", "pt": "Djembê", "fr": "Djembé", "de": "Djembe", "it": "Djembe", "ja": "ジャンベ", "zh": "非洲鼓", "ko": "젬베", "ar": "طبل الجيمبي" },
+    "keywords": {
+      "es": ["tambor africano", "tambores de mano", "círculo de tambores", "percusión del mundo", "ritmo", "tamborada", "yembé"],
+      "en": ["african drum", "hand drum", "drum circle", "world percussion", "rhythm", "jam session", "goblet drum"]
+    }
+  },
+  "cowbell": {
+    "label": { "es": "Cencerro", "en": "Cowbell", "pt": "Sino de vaca", "fr": "Cloche de vache", "de": "Kuhglocke", "it": "Campanaccio", "ja": "カウベル", "zh": "牛铃", "ko": "카우벨", "ar": "جرس البقر" },
+    "keywords": {
+      "es": ["percusión", "caja de ritmos", "campana", "salsa", "cumbia", "sonido de percusión", "ritmo"],
+      "en": ["percussion", "drum machine", "bell", "salsa", "latin", "drum sound", "agogo"]
+    }
+  },
+  "chimes": {
+    "label": { "es": "Carillón", "en": "Chimes", "pt": "Carrilhão", "fr": "Carillon", "de": "Klangspiel", "it": "Campanelli", "ja": "チャイム", "zh": "风铃", "ko": "차임벨", "ar": "أجراس الرياح" },
+    "keywords": {
+      "es": ["campanas de viento", "campanas tubulares", "sonido de aviso", "tono de alerta", "ambiental", "relajación", "percusión", "móvil de viento"],
+      "en": ["wind chimes", "tubular bells", "chime sound", "alert tone", "ambient", "relaxation", "percussion", "doorbell"]
+    }
+  },
+  "trumpet": {
+    "label": { "es": "Trompeta", "en": "Trumpet", "pt": "Trompete", "fr": "Trompette", "de": "Trompete", "it": "Tromba", "ja": "トランペット", "zh": "小号", "ko": "트럼펫", "ar": "بوق" },
+    "keywords": {
+      "es": ["metales", "jazz", "fanfarria", "anuncio", "mariachi", "banda", "instrumento de viento", "clarín"],
+      "en": ["brass", "jazz", "fanfare", "announcement", "mariachi", "horn", "bugle", "wind instrument"]
+    }
+  },
+  "trombone": {
+    "label": { "es": "Trombón", "en": "Trombone", "pt": "Trombone", "fr": "Trombone", "de": "Posaune", "it": "Trombone", "ja": "トロンボーン", "zh": "长号", "ko": "트롬본", "ar": "ترومبون" },
+    "keywords": {
+      "es": ["metales", "jazz", "banda de marcha", "banda sinfónica", "vara", "ska", "banda sinaloense", "instrumento de viento"],
+      "en": ["brass", "jazz", "marching band", "slide", "ska", "big band", "wind instrument"]
+    }
+  },
+  "french-horn": {
+    "label": { "es": "Corno francés", "en": "French horn", "pt": "Trompa", "fr": "Cor d’harmonie", "de": "Waldhorn", "it": "Corno francese", "ja": "ホルン", "zh": "圆号", "ko": "호른", "ar": "بوق فرنسي" },
+    "keywords": {
+      "es": ["corno", "trompa", "orquesta", "sección de metales", "metales", "música clásica", "banda sinfónica", "instrumento de viento"],
+      "en": ["horn", "orchestra", "brass section", "brass", "classical music", "symphonic band", "wind instrument"]
+    }
+  },
+  "saxophone": {
+    "label": { "es": "Saxofón", "en": "Saxophone", "pt": "Saxofone", "fr": "Saxophone", "de": "Saxofon", "it": "Sassofono", "ja": "サックス", "zh": "萨克斯", "ko": "색소폰", "ar": "ساكسفون" },
+    "keywords": {
+      "es": ["sax", "jazz", "soul", "pista de sax", "blues", "instrumento de viento", "smooth jazz", "lounge"],
+      "en": ["sax", "jazz", "soul", "sax track", "blues", "woodwind", "smooth jazz", "lounge"]
+    }
+  },
+  "clarinet": {
+    "label": { "es": "Clarinete", "en": "Clarinet", "pt": "Clarinete", "fr": "Clarinette", "de": "Klarinette", "it": "Clarinetto", "ja": "クラリネット", "zh": "单簧管", "ko": "클라리넷", "ar": "كلارينيت" },
+    "keywords": {
+      "es": ["maderas", "instrumento de viento", "orquesta", "banda escolar", "banda sinfónica", "música clásica", "boquilla", "jazz"],
+      "en": ["woodwinds", "wind instrument", "orchestra", "school band", "concert band", "classical music", "reed", "jazz"]
+    }
+  },
+  "flute": {
+    "label": { "es": "Flauta", "en": "Flute", "pt": "Flauta", "fr": "Flûte", "de": "Querflöte", "it": "Flauto", "ja": "フルート", "zh": "长笛", "ko": "플루트", "ar": "فلوت" },
+    "keywords": {
+      "es": ["flauta transversal", "maderas", "instrumento de viento", "música clásica", "música tranquila", "orquesta", "flautista", "flautín"],
+      "en": ["transverse flute", "woodwinds", "wind instrument", "classical music", "calm music", "orchestra", "flutist", "piccolo"]
+    }
+  },
+  "pan-flute": {
+    "label": { "es": "Flauta de Pan", "en": "Pan flute", "pt": "Flauta de Pã", "fr": "Flûte de Pan", "de": "Panflöte", "it": "Flauto di Pan", "ja": "パンフルート", "zh": "排箫", "ko": "팬플루트", "ar": "ناي بان" },
+    "keywords": {
+      "es": ["zampoña", "siku", "música andina", "música folclórica", "música relajante", "instrumento de viento", "flauta andina"],
+      "en": ["panpipes", "syrinx", "andean music", "folk music", "relaxing music", "wind instrument", "zampoña"]
+    }
+  },
+  "mixing-console": {
+    "label": { "es": "Consola de mezcla", "en": "Mixing console", "pt": "Mesa de som", "fr": "Table de mixage", "de": "Mischpult", "it": "Mixer audio", "ja": "ミキシングコンソール", "zh": "调音台", "ko": "믹싱 콘솔", "ar": "طاولة مزج الصوت" },
+    "keywords": {
+      "es": ["mezcladora", "mezcla", "mixer", "sonido en vivo", "ingeniero de audio", "faders", "canales", "mesa de sonido"],
+      "en": ["mixer", "mixing desk", "soundboard", "live sound", "faders", "channels", "audio engineer", "mixdown"]
+    }
+  },
+  "audio-interface": {
+    "label": { "es": "Interfaz de audio", "en": "Audio interface", "pt": "Interface de áudio", "fr": "Interface audio", "de": "Audio-Interface", "it": "Interfaccia audio", "ja": "オーディオインターフェース", "zh": "音频接口", "ko": "오디오 인터페이스", "ar": "واجهة صوتية" },
+    "keywords": {
+      "es": ["tarjeta de sonido", "home studio", "grabación", "entradas y salidas", "preamplificador", "dispositivo de entrada", "conectar micrófono", "audio usb"],
+      "en": ["sound card", "home studio", "recording setup", "inputs and outputs", "preamp", "input device", "output device", "usb audio"]
+    }
+  },
+  "drum-machine": {
+    "label": { "es": "Caja de ritmos", "en": "Drum machine", "pt": "Bateria eletrônica", "fr": "Boîte à rythmes", "de": "Drumcomputer", "it": "Drum machine", "ja": "ドラムマシン", "zh": "鼓机", "ko": "드럼 머신", "ar": "آلة الإيقاع" },
+    "keywords": {
+      "es": ["sampler", "pads", "hacer beats", "muestras", "controlador de pads", "producción musical", "mpc", "disparar samples"],
+      "en": ["sampler", "pads", "beat making", "samples", "pad controller", "music production", "mpc", "groovebox"]
+    }
+  },
+  "midi-port": {
+    "label": { "es": "Puerto MIDI", "en": "MIDI port", "pt": "Porta MIDI", "fr": "Port MIDI", "de": "MIDI-Anschluss", "it": "Porta MIDI", "ja": "MIDI端子", "zh": "MIDI 接口", "ko": "MIDI 포트", "ar": "منفذ MIDI" },
+    "keywords": {
+      "es": ["conector midi", "midi in", "midi out", "controlador conectado", "dispositivo midi", "cable midi", "din de 5 pines"],
+      "en": ["midi connector", "midi in", "midi out", "controller connected", "midi device", "midi cable", "5-pin din"]
+    }
+  },
+  "dj-controller": {
+    "label": { "es": "Controlador de DJ", "en": "DJ controller", "pt": "Controladora de DJ", "fr": "Contrôleur DJ", "de": "DJ-Controller", "it": "Controller DJ", "ja": "DJコントローラー", "zh": "DJ 控制器", "ko": "DJ 컨트롤러", "ar": "وحدة تحكم DJ" },
+    "keywords": {
+      "es": ["tornamesas", "mezclar canciones", "deejay", "app de dj", "fiesta", "mezcla en vivo", "decks", "set"],
+      "en": ["djing", "decks", "turntables", "mix two tracks", "dj app", "party", "live mix", "jog wheel"]
+    }
+  },
+  "guitar-amp": {
+    "label": { "es": "Amplificador", "en": "Guitar amp", "pt": "Amplificador", "fr": "Ampli guitare", "de": "Gitarrenverstärker", "it": "Amplificatore", "ja": "ギターアンプ", "zh": "吉他音箱", "ko": "기타 앰프", "ar": "مضخم الغيتار" },
+    "keywords": {
+      "es": ["ampli", "ampli de guitarra", "simulador de amplificador", "backline", "cabezal", "gabinete", "equipo de escenario", "tono"],
+      "en": ["amplifier", "amp", "amp simulator", "backline", "speaker cabinet", "amp head", "stage gear", "tone"]
+    }
+  },
+  "pa-speaker": {
+    "label": { "es": "Bafle", "en": "PA speaker", "pt": "Caixa acústica", "fr": "Enceinte de sonorisation", "de": "PA-Lautsprecher", "it": "Diffusore PA", "ja": "PAスピーカー", "zh": "扩声音箱", "ko": "PA 스피커", "ar": "مكبر صوت للحفلات" },
+    "keywords": {
+      "es": ["bocina amplificada", "sonido en vivo", "eventos", "sistema de sonido", "perifoneo", "tripié", "audio profesional", "fiesta"],
+      "en": ["loudspeaker", "live sound", "events", "sound system", "public address", "speaker stand", "pro audio", "party"]
+    }
+  },
+  "subwoofer": {
+    "label": { "es": "Subwoofer", "en": "Subwoofer", "pt": "Subwoofer", "fr": "Caisson de basses", "de": "Subwoofer", "it": "Subwoofer", "ja": "サブウーファー", "zh": "低音炮", "ko": "서브우퍼", "ar": "مكبر صوت جهير" },
+    "keywords": {
+      "es": ["graves", "bajos", "teatro en casa", "sistema de sonido", "woofer", "bocina de graves", "retumbar"],
+      "en": ["bass", "low end", "home theater", "sound system", "woofer", "sub", "boom"]
+    }
+  },
+  "soundbar": {
+    "label": { "es": "Barra de sonido", "en": "Soundbar", "pt": "Soundbar", "fr": "Barre de son", "de": "Soundbar", "it": "Soundbar", "ja": "サウンドバー", "zh": "条形音箱", "ko": "사운드바", "ar": "مكبر صوت شريطي" },
+    "keywords": {
+      "es": ["audio de la tele", "teatro en casa", "televisión", "bocina", "sonido envolvente", "sala", "salida de audio"],
+      "en": ["tv audio", "home theater", "television", "speaker", "surround sound", "living room", "audio output"]
+    }
+  },
+  "microphone-stand": {
+    "label": { "es": "Micrófono con pedestal", "en": "Microphone stand", "pt": "Microfone no pedestal", "fr": "Micro sur pied", "de": "Mikrofonständer", "it": "Microfono con asta", "ja": "マイクスタンド", "zh": "麦克风支架", "ko": "마이크 스탠드", "ar": "حامل الميكروفون" },
+    "keywords": {
+      "es": ["cantar en vivo", "micrófono abierto", "escenario", "open mic", "karaoke", "stand up", "concierto", "presentación"],
+      "en": ["live singing", "open mic", "stage", "stage setup", "karaoke", "stand-up", "concert", "performance"]
+    }
+  },
+  "microphone-arm": {
+    "label": { "es": "Micrófono con brazo", "en": "Microphone arm", "pt": "Microfone com braço articulado", "fr": "Micro sur bras articulé", "de": "Mikrofonarm", "it": "Microfono con braccio", "ja": "マイクアーム", "zh": "悬臂麦克风", "ko": "마이크 암", "ar": "ميكروفون بذراع" },
+    "keywords": {
+      "es": ["podcast", "streaming", "transmisión en vivo", "grabar desde el escritorio", "brazo articulado", "setup de streamer", "locución", "youtuber"],
+      "en": ["podcast", "streaming", "live stream", "desk recording", "boom arm", "streamer setup", "voiceover", "creator"]
+    }
+  },
+  "microphone-vintage": {
+    "label": { "es": "Micrófono retro", "en": "Vintage microphone", "pt": "Microfone vintage", "fr": "Micro vintage", "de": "Vintage-Mikrofon", "it": "Microfono vintage", "ja": "ヴィンテージマイク", "zh": "复古麦克风", "ko": "빈티지 마이크", "ar": "ميكروفون كلاسيكي" },
+    "keywords": {
+      "es": ["vintage", "programa de radio", "cantante de jazz", "audio retro", "crooner", "locutor", "años cincuenta", "clásico"],
+      "en": ["retro", "radio show", "jazz singer", "retro audio", "crooner", "announcer", "fifties", "classic"]
+    }
+  },
+  "pop-filter": {
+    "label": { "es": "Filtro antipop", "en": "Pop filter", "pt": "Filtro anti-pop", "fr": "Filtre anti-pop", "de": "Popschutz", "it": "Filtro anti-pop", "ja": "ポップガード", "zh": "防喷罩", "ko": "팝 필터", "ar": "فلتر البوب" },
+    "keywords": {
+      "es": ["grabación de voz", "estudio de grabación", "locución", "pantalla de micrófono", "voces", "podcast", "home studio"],
+      "en": ["vocal recording", "studio setup", "voiceover", "mic screen", "windscreen", "plosives", "podcast", "home studio"]
+    }
+  },
+  "vu-meter": {
+    "label": { "es": "Vúmetro", "en": "VU meter", "pt": "Medidor VU", "fr": "Vumètre", "de": "VU-Meter", "it": "Vu-meter", "ja": "VUメーター", "zh": "VU 表", "ko": "VU 미터", "ar": "مقياس VU" },
+    "keywords": {
+      "es": ["nivel de audio", "niveles de grabación", "aguja", "audio analógico", "decibeles", "medidor", "señal", "retro"],
+      "en": ["audio level", "recording levels", "needle", "analog audio", "decibels", "meter", "signal", "retro"]
+    }
+  },
+  "level-meter": {
+    "label": { "es": "Medidor de nivel", "en": "Level meter", "pt": "Medidor de nível", "fr": "Indicateur de niveau", "de": "Pegelanzeige", "it": "Indicatore di livello", "ja": "レベルメーター", "zh": "电平表", "ko": "레벨 미터", "ar": "مقياس مستوى الصوت" },
+    "keywords": {
+      "es": ["nivel de entrada", "nivel del micrófono", "volumen", "picos", "decibeles", "grabación", "streaming", "saturación"],
+      "en": ["input level", "mic level", "volume", "peaks", "decibels", "recording", "streaming", "clipping"]
+    }
+  },
+  "boombox": {
+    "label": { "es": "Radiograbadora", "en": "Boombox", "pt": "Rádio portátil", "fr": "Radiocassette", "de": "Ghettoblaster", "it": "Stereo portatile", "ja": "ラジカセ", "zh": "手提音响", "ko": "붐박스", "ar": "مسجل محمول" },
+    "keywords": {
+      "es": ["grabadora", "boombox", "música retro", "hip-hop", "fiesta", "audio portátil", "años ochenta", "estéreo"],
+      "en": ["ghetto blaster", "retro music", "hip-hop", "party", "portable audio", "eighties", "stereo", "cassette radio"]
+    }
+  },
+  "jukebox": {
+    "label": { "es": "Rocola", "en": "Jukebox", "pt": "Jukebox", "fr": "Juke-box", "de": "Jukebox", "it": "Jukebox", "ja": "ジュークボックス", "zh": "自动点唱机", "ko": "주크박스", "ar": "جوك بوكس" },
+    "keywords": {
+      "es": ["sinfonola", "pedir canciones", "cafetería", "fila de canciones", "votar canciones", "música retro", "diner", "cola de reproducción"],
+      "en": ["song requests", "diner", "guest queue", "vote songs", "retro music", "coin-operated", "queue", "party playlist"]
+    }
+  },
+  "gramophone": {
+    "label": { "es": "Gramófono", "en": "Gramophone", "pt": "Gramofone", "fr": "Gramophone", "de": "Grammophon", "it": "Grammofono", "ja": "蓄音機", "zh": "留声机", "ko": "축음기", "ar": "غرامافون" },
+    "keywords": {
+      "es": ["fonógrafo", "tocadiscos", "música antigua", "discos", "vinil", "grabaciones antiguas", "vintage", "victrola"],
+      "en": ["phonograph", "record player", "vintage music", "records", "old recordings", "antique", "victrola", "78 rpm"]
+    }
+  },
+  "cassette-player": {
+    "label": { "es": "Reproductor de casetes", "en": "Cassette player", "pt": "Toca-fitas", "fr": "Baladeur cassette", "de": "Kassettenspieler", "it": "Lettore di cassette", "ja": "カセットプレーヤー", "zh": "磁带播放器", "ko": "카세트 플레이어", "ar": "مشغل الكاسيت" },
+    "keywords": {
+      "es": ["walkman", "mixtape", "música retro", "cinta", "reproductor portátil", "audífonos", "años ochenta"],
+      "en": ["walkman", "mixtape", "retro music", "tape", "portable player", "headphones", "eighties"]
+    }
+  },
+  "radio-retro": {
+    "label": { "es": "Radio antiguo", "en": "Vintage radio", "pt": "Rádio antigo", "fr": "Radio rétro", "de": "Altes Radio", "it": "Radio d’epoca", "ja": "レトロなラジオ", "zh": "复古收音机", "ko": "레트로 라디오", "ar": "راديو قديم" },
+    "keywords": {
+      "es": ["radio vintage", "estación de clásicos", "nostalgia", "audio retro", "sintonizar", "radio de bulbos", "radionovela", "música de antes"],
+      "en": ["retro radio", "oldies station", "nostalgia", "retro audio", "tune in", "tube radio", "wireless", "old-time radio"]
+    }
+  },
+  "music-box": {
+    "label": { "es": "Caja de música", "en": "Music box", "pt": "Caixa de música", "fr": "Boîte à musique", "de": "Spieluhr", "it": "Carillon", "ja": "オルゴール", "zh": "音乐盒", "ko": "오르골", "ar": "علبة موسيقى" },
+    "keywords": {
+      "es": ["canción de cuna", "música infantil", "sonidos para dormir", "bebé", "cajita musical", "nana", "dormir", "manivela"],
+      "en": ["lullaby", "kids' music", "sleep sounds", "baby", "nursery", "bedtime", "wind-up", "keepsake"]
+    }
+  },
+  "treble-clef": {
+    "label": { "es": "Clave de sol", "en": "Treble clef", "pt": "Clave de sol", "fr": "Clé de sol", "de": "Violinschlüssel", "it": "Chiave di violino", "ja": "ト音記号", "zh": "高音谱号", "ko": "높은음자리표", "ar": "مفتاح صول" },
+    "keywords": {
+      "es": ["notación musical", "partitura", "pentagrama", "teoría musical", "solfeo", "lectura musical", "música"],
+      "en": ["g clef", "notation", "sheet music", "staff", "music theory", "sight reading", "music"]
+    }
+  },
+  "bass-clef": {
+    "label": { "es": "Clave de fa", "en": "Bass clef", "pt": "Clave de fá", "fr": "Clé de fa", "de": "Bassschlüssel", "it": "Chiave di basso", "ja": "ヘ音記号", "zh": "低音谱号", "ko": "낮은음자리표", "ar": "مفتاح فا" },
+    "keywords": {
+      "es": ["notación musical", "partitura", "pentagrama", "notas graves", "teoría musical", "solfeo", "bajo"],
+      "en": ["f clef", "notation", "sheet music", "low staff", "music theory", "bass notes", "low register"]
+    }
+  },
+  "sharp-sign": {
+    "label": { "es": "Sostenido", "en": "Sharp", "pt": "Sustenido", "fr": "Dièse", "de": "Kreuzvorzeichen", "it": "Diesis", "ja": "シャープ", "zh": "升号", "ko": "올림표", "ar": "علامة الدييز" },
+    "keywords": {
+      "es": ["alteración", "subir medio tono", "notación musical", "armadura", "tonalidad", "accidente", "semitono"],
+      "en": ["accidental", "raise a semitone", "notation", "key signature", "sharp keys", "semitone", "half step up"]
+    }
+  },
+  "flat-sign": {
+    "label": { "es": "Bemol", "en": "Flat", "pt": "Bemol", "fr": "Bémol", "de": "b-Vorzeichen", "it": "Bemolle", "ja": "フラット", "zh": "降号", "ko": "내림표", "ar": "علامة البيمول" },
+    "keywords": {
+      "es": ["alteración", "bajar medio tono", "notación musical", "armadura", "tonalidad", "accidente", "semitono"],
+      "en": ["accidental", "lower a semitone", "notation", "key signature", "flat keys", "semitone", "half step down"]
+    }
+  },
+  "quarter-rest": {
+    "label": { "es": "Silencio de negra", "en": "Quarter rest", "pt": "Pausa de semínima", "fr": "Soupir", "de": "Viertelpause", "it": "Pausa di semiminima", "ja": "4分休符", "zh": "四分休止符", "ko": "4분 쉼표", "ar": "سكتة الربع" },
+    "keywords": {
+      "es": ["pausa", "un tiempo", "ritmo", "notación musical", "lectura rítmica", "descanso", "figura musical"],
+      "en": ["rest", "silence", "one beat", "rhythm", "notation", "rhythm practice", "crotchet rest"]
+    }
+  },
+  "music-note-whole": {
+    "label": { "es": "Redonda", "en": "Whole note", "pt": "Semibreve", "fr": "Ronde", "de": "Ganze Note", "it": "Semibreve", "ja": "全音符", "zh": "全音符", "ko": "온음표", "ar": "نوتة مستديرة" },
+    "keywords": {
+      "es": ["figura musical", "duración", "cuatro tiempos", "notación musical", "ritmo", "editor de partituras", "solfeo"],
+      "en": ["semibreve", "note duration", "four beats", "notation", "rhythm", "score editor", "rhythm lessons"]
+    }
+  },
+  "music-note-half": {
+    "label": { "es": "Blanca", "en": "Half note", "pt": "Mínima", "fr": "Blanche", "de": "Halbe Note", "it": "Minima", "ja": "2分音符", "zh": "二分音符", "ko": "2분음표", "ar": "نوتة بيضاء" },
+    "keywords": {
+      "es": ["figura musical", "duración", "dos tiempos", "notación musical", "ritmo", "editor de partituras", "solfeo"],
+      "en": ["minim", "note duration", "two beats", "notation", "rhythm", "score editor", "rhythm lessons"]
+    }
+  },
+  "music-note-quarter": {
+    "label": { "es": "Negra", "en": "Quarter note", "pt": "Semínima", "fr": "Noire", "de": "Viertelnote", "it": "Semiminima", "ja": "4分音符", "zh": "四分音符", "ko": "4분음표", "ar": "نوتة سوداء" },
+    "keywords": {
+      "es": ["figura musical", "pulso", "un tiempo", "duración", "ritmo", "notación musical", "compás"],
+      "en": ["crotchet", "beat", "one beat", "note duration", "rhythm", "notation", "tempo"]
+    }
+  },
+  "music-note-sixteenth": {
+    "label": { "es": "Semicorchea", "en": "Sixteenth note", "pt": "Semicolcheia", "fr": "Double croche", "de": "Sechzehntelnote", "it": "Semicroma", "ja": "16分音符", "zh": "十六分音符", "ko": "16분음표", "ar": "نوتة ذات السنين" },
+    "keywords": {
+      "es": ["figura musical", "duración", "ritmo rápido", "notación musical", "subdivisión", "corcheas", "solfeo"],
+      "en": ["semiquaver", "note duration", "fast rhythm", "notation", "subdivision", "beamed notes", "rhythm lessons"]
+    }
+  },
+  "music-staff": {
+    "label": { "es": "Pentagrama", "en": "Music staff", "pt": "Pauta", "fr": "Portée", "de": "Notensystem", "it": "Pentagramma", "ja": "五線譜", "zh": "五线谱", "ko": "오선보", "ar": "المدرج الموسيقي" },
+    "keywords": {
+      "es": ["componer", "escribir música", "partitura", "notación musical", "vista de partitura", "líneas", "notas"],
+      "en": ["stave", "compose", "write music", "score view", "notation", "sheet music", "notes"]
+    }
+  },
+  "sheet-music": {
+    "label": { "es": "Partitura", "en": "Sheet music", "pt": "Partitura", "fr": "Partition", "de": "Noten", "it": "Spartito", "ja": "楽譜", "zh": "乐谱", "ko": "악보", "ar": "نوتة موسيقية" },
+    "keywords": {
+      "es": ["cancionero", "notas", "parte de instrumento", "leer música", "atril", "repertorio", "arreglo", "música escrita"],
+      "en": ["score", "songbook", "parts", "read music", "repertoire", "arrangement", "lead sheet", "music book"]
+    }
+  },
+  "sheet-music-arrow-down": {
+    "label": { "es": "Descargar partitura", "en": "Download sheet music", "pt": "Baixar partitura", "fr": "Télécharger la partition", "de": "Noten herunterladen", "it": "Scarica spartito", "ja": "楽譜をダウンロード", "zh": "下载乐谱", "ko": "악보 다운로드", "ar": "تنزيل النوتة الموسيقية" },
+    "keywords": {
+      "es": ["bajar", "tienda de partituras", "sin conexión", "pdf", "guardar", "imprimir", "partes"],
+      "en": ["save", "score store", "offline", "pdf", "print", "parts", "get score"]
+    }
+  },
+  "chord-diagram": {
+    "label": { "es": "Diagrama de acordes", "en": "Chord diagram", "pt": "Diagrama de acordes", "fr": "Diagramme d’accords", "de": "Akkorddiagramm", "it": "Diagramma degli accordi", "ja": "コードダイアグラム", "zh": "和弦图", "ko": "코드 다이어그램", "ar": "مخطط الكوردات" },
+    "keywords": {
+      "es": ["acordes de guitarra", "ukulele", "posiciones", "trastes", "cifrado", "cancionero", "tablatura", "biblioteca de acordes"],
+      "en": ["guitar chords", "ukulele", "fingering", "frets", "chord chart", "tab", "chord library", "songbook"]
+    }
+  },
+  "transpose": {
+    "label": { "es": "Cambiar tonalidad", "en": "Change key", "pt": "Transpor", "fr": "Transposer", "de": "Transponieren", "it": "Trasporre", "ja": "移調", "zh": "移调", "ko": "조옮김", "ar": "نقل الطبقة" },
+    "keywords": {
+      "es": ["transportar", "transponer", "cambiar de tono", "subir tono", "bajar tono", "capo", "semitonos"],
+      "en": ["transpose", "key", "pitch up", "pitch down", "pitch shift", "capo", "semitones"]
+    }
+  },
+  "metronome": {
+    "label": { "es": "Metrónomo", "en": "Metronome", "pt": "Metrônomo", "fr": "Métronome", "de": "Metronom", "it": "Metronomo", "ja": "メトロノーム", "zh": "节拍器", "ko": "메트로놈", "ar": "ميترونوم" },
+    "keywords": {
+      "es": ["tempo", "bpm", "click", "pulso", "practicar", "ritmo", "compás", "velocidad"],
+      "en": ["tempo", "bpm", "click track", "beat", "practice", "rhythm", "time signature", "timing"]
+    }
+  },
+  "tuning-fork": {
+    "label": { "es": "Diapasón", "en": "Tuning fork", "pt": "Diapasão", "fr": "Diapason", "de": "Stimmgabel", "it": "Diapason", "ja": "音叉", "zh": "音叉", "ko": "소리굽쇠", "ar": "شوكة رنانة" },
+    "keywords": {
+      "es": ["afinar", "la 440", "tono de referencia", "afinación", "sanación con sonido", "frecuencia", "vibración"],
+      "en": ["tune", "a440", "pitch reference", "tuning", "sound healing", "frequency", "vibration"]
+    }
+  },
+  "music-stand": {
+    "label": { "es": "Atril de partituras", "en": "Music stand", "pt": "Estante de partitura", "fr": "Pupitre", "de": "Notenständer", "it": "Leggio", "ja": "譜面台", "zh": "谱架", "ko": "보면대", "ar": "حامل النوتة" },
+    "keywords": {
+      "es": ["partitura", "ensayo", "práctica", "orquesta", "leer música", "estudiar", "banda", "concierto"],
+      "en": ["sheet music", "rehearsal", "practice", "orchestra", "read music", "lectern", "band", "recital"]
+    }
+  },
+  "multitrack": {
+    "label": { "es": "Pistas", "en": "Tracks", "pt": "Faixas", "fr": "Pistes", "de": "Spuren", "it": "Tracce", "ja": "トラック", "zh": "音轨", "ko": "트랙", "ar": "المسارات" },
+    "keywords": {
+      "es": ["multipista", "sesión", "vista de arreglo", "stems", "daw", "grabación", "mezcla", "producción musical"],
+      "en": ["multitrack", "session", "arrangement view", "stems", "daw", "recording", "mixing", "timeline"]
+    }
+  },
+  "piano-roll": {
+    "label": { "es": "Piano roll", "en": "Piano roll", "pt": "Piano roll", "fr": "Piano roll", "de": "Pianorolle", "it": "Piano roll", "ja": "ピアノロール", "zh": "钢琴卷帘", "ko": "피아노 롤", "ar": "لفافة البيانو" },
+    "keywords": {
+      "es": ["editor midi", "rejilla de notas", "secuenciador", "editar notas", "midi", "producción musical", "daw", "melodía"],
+      "en": ["midi editor", "note grid", "sequencer", "edit notes", "midi", "music production", "daw", "melody"]
+    }
+  },
+  "audio-loop": {
+    "label": { "es": "Loop de audio", "en": "Audio loop", "pt": "Loop de áudio", "fr": "Boucle audio", "de": "Audio-Loop", "it": "Loop audio", "ja": "オーディオループ", "zh": "音频循环", "ko": "오디오 루프", "ar": "حلقة صوتية" },
+    "keywords": {
+      "es": ["bucle", "repetir región", "navegador de loops", "samples", "ciclo", "beat", "repetición", "producción musical"],
+      "en": ["looping", "repeat region", "loop browser", "samples", "cycle", "beat", "repeat", "music production"]
+    }
+  },
+  "stem-separation": {
+    "label": { "es": "Separar pistas", "en": "Stem separation", "pt": "Separação de faixas", "fr": "Séparation de pistes", "de": "Stem-Trennung", "it": "Separazione delle tracce", "ja": "ステム分離", "zh": "音轨分离", "ko": "스템 분리", "ar": "فصل المسارات" },
+    "keywords": {
+      "es": ["stems", "aislar voz", "quitar voz", "karaoke", "separar batería", "remix", "acapella", "instrumental"],
+      "en": ["stems", "isolate vocals", "vocal remover", "karaoke", "split drums", "remix", "acapella", "instrumental"]
+    }
+  },
+  "eq-curve": {
+    "label": { "es": "Ecualizador paramétrico", "en": "Parametric EQ", "pt": "Equalizador paramétrico", "fr": "Égaliseur paramétrique", "de": "Parametrischer EQ", "it": "Equalizzatore parametrico", "ja": "パラメトリックEQ", "zh": "参数均衡器", "ko": "파라메트릭 EQ", "ar": "معادل بارامتري" },
+    "keywords": {
+      "es": ["curva de ecualización", "eq", "filtros", "frecuencias", "graves", "agudos", "mezcla", "pasa altas"],
+      "en": ["eq curve", "equalizer", "filters", "frequency", "bass", "treble", "mixing", "high-pass"]
+    }
+  },
+  "synth-envelope": {
+    "label": { "es": "Envolvente ADSR", "en": "ADSR envelope", "pt": "Envelope ADSR", "fr": "Enveloppe ADSR", "de": "ADSR-Hüllkurve", "it": "Inviluppo ADSR", "ja": "ADSRエンベロープ", "zh": "ADSR 包络", "ko": "ADSR 엔벨로프", "ar": "غلاف ADSR" },
+    "keywords": {
+      "es": ["ataque", "decaimiento", "sostenimiento", "liberación", "sintetizador", "sampler", "diseño sonoro"],
+      "en": ["attack", "decay", "sustain", "release", "synth", "sampler", "sound design"]
+    }
+  },
+  "step-sequencer": {
+    "label": { "es": "Secuenciador por pasos", "en": "Step sequencer", "pt": "Sequenciador de passos", "fr": "Séquenceur pas à pas", "de": "Step-Sequencer", "it": "Sequencer a passi", "ja": "ステップシーケンサー", "zh": "步进音序器", "ko": "스텝 시퀀서", "ar": "مُسلسِل الخطوات" },
+    "keywords": {
+      "es": ["patrón de batería", "cuadrícula de ritmos", "beats", "caja de ritmos", "16 pasos", "programar ritmos", "patrón", "producción musical"],
+      "en": ["drum pattern", "beat grid", "beats", "drum machine", "16 steps", "program beats", "pattern", "music production"]
+    }
+  },
+  "crossfade": {
+    "label": { "es": "Fundido cruzado", "en": "Crossfade", "pt": "Crossfade", "fr": "Fondu enchaîné", "de": "Überblendung", "it": "Dissolvenza incrociata", "ja": "クロスフェード", "zh": "交叉淡化", "ko": "크로스페이드", "ar": "تلاشٍ متداخل" },
+    "keywords": {
+      "es": ["crossfade", "transición", "mezclar canciones", "entre canciones", "reproducción continua", "transición de dj", "sin pausas", "ajustes de reproducción"],
+      "en": ["transition", "blend songs", "between songs", "gapless", "dj transition", "playback settings", "segue", "mix"]
+    }
+  },
+  "audio-fade-in": {
+    "label": { "es": "Fundido de entrada", "en": "Fade in", "pt": "Fade in", "fr": "Fondu en entrée", "de": "Einblenden", "it": "Dissolvenza in entrata", "ja": "フェードイン", "zh": "淡入", "ko": "페이드 인", "ar": "ظهور تدريجي للصوت" },
+    "keywords": {
+      "es": ["fade in", "subir volumen", "inicio del clip", "editor de audio", "entrada suave", "aparecer", "transición", "rampa de volumen"],
+      "en": ["volume up", "clip start", "audio editor", "gradual start", "intro", "ramp up", "transition", "swell"]
+    }
+  },
+  "audio-fade-out": {
+    "label": { "es": "Fundido de salida", "en": "Fade out", "pt": "Fade out", "fr": "Fondu en sortie", "de": "Ausblenden", "it": "Dissolvenza in uscita", "ja": "フェードアウト", "zh": "淡出", "ko": "페이드 아웃", "ar": "اختفاء تدريجي للصوت" },
+    "keywords": {
+      "es": ["fade out", "bajar volumen", "final del clip", "editor de audio", "salida suave", "desvanecer", "transición", "cierre"],
+      "en": ["volume down", "clip end", "audio editor", "gradual end", "outro", "ramp down", "transition", "ending"]
+    }
+  },
+  "album-stack": {
+    "label": { "es": "Biblioteca musical", "en": "Music library", "pt": "Biblioteca de músicas", "fr": "Bibliothèque musicale", "de": "Musikbibliothek", "it": "Libreria musicale", "ja": "ミュージックライブラリ", "zh": "音乐库", "ko": "음악 보관함", "ar": "مكتبة الموسيقى" },
+    "keywords": {
+      "es": ["álbumes", "discografía", "colección", "mis discos", "música guardada", "artistas", "catálogo"],
+      "en": ["albums", "discography", "collection", "my records", "saved music", "artists", "catalog"]
+    }
+  },
+  "album-plus": {
+    "label": { "es": "Guardar álbum", "en": "Save album", "pt": "Salvar álbum", "fr": "Enregistrer l’album", "de": "Album speichern", "it": "Salva album", "ja": "アルバムを保存", "zh": "收藏专辑", "ko": "앨범 저장", "ar": "حفظ الألبوم" },
+    "keywords": {
+      "es": ["agregar a la biblioteca", "añadir disco", "colección", "mis discos", "favoritos", "guardar en mi música", "biblioteca musical"],
+      "en": ["add to library", "add album", "collection", "my records", "favorites", "save to my music", "music library"]
+    }
+  },
+  "lyrics": {
+    "label": { "es": "Letra", "en": "Lyrics", "pt": "Letra", "fr": "Paroles", "de": "Songtext", "it": "Testo", "ja": "歌詞", "zh": "歌词", "ko": "가사", "ar": "كلمات الأغنية" },
+    "keywords": {
+      "es": ["letras de canciones", "karaoke", "cantar", "ver la letra", "cantar juntos", "versos", "coro", "subtítulos"],
+      "en": ["song lyrics", "karaoke", "sing along", "lyrics view", "words", "verses", "chorus", "captions"]
+    }
+  },
+  "spatial-audio": {
+    "label": { "es": "Audio espacial", "en": "Spatial audio", "pt": "Áudio espacial", "fr": "Audio spatial", "de": "Räumliches Audio", "it": "Audio spaziale", "ja": "空間オーディオ", "zh": "空间音频", "ko": "공간 음향", "ar": "صوت مكاني" },
+    "keywords": {
+      "es": ["sonido 3d", "sonido envolvente", "inmersivo", "surround", "audífonos", "360", "seguimiento de cabeza"],
+      "en": ["3d audio", "surround sound", "immersive", "360 audio", "headphones", "head tracking", "binaural"]
+    }
+  },
+  "music-note-plus": {
+    "label": { "es": "Agregar canción", "en": "Add song", "pt": "Adicionar música", "fr": "Ajouter un titre", "de": "Song hinzufügen", "it": "Aggiungi brano", "ja": "曲を追加", "zh": "添加歌曲", "ko": "노래 추가", "ar": "إضافة أغنية" },
+    "keywords": {
+      "es": ["añadir música", "música para publicación", "subir canción", "biblioteca", "playlist", "pista", "sonido para video"],
+      "en": ["add music", "music to post", "upload song", "library", "playlist", "track", "add sound"]
+    }
+  },
+  "music-note-heart": {
+    "label": { "es": "Canciones favoritas", "en": "Liked songs", "pt": "Músicas curtidas", "fr": "Titres likés", "de": "Lieblingssongs", "it": "Brani che ti piacciono", "ja": "お気に入りの曲", "zh": "喜欢的歌曲", "ko": "좋아요 표시한 곡", "ar": "الأغاني المفضلة" },
+    "keywords": {
+      "es": ["me gusta", "me encanta", "marcar canción", "corazón", "guardar canción", "dar like", "mis favoritas"],
+      "en": ["like", "love", "favorite", "heart", "save song", "loved tracks", "my favorites"]
+    }
+  },
+  "music-note-search": {
+    "label": { "es": "Buscar música", "en": "Search music", "pt": "Buscar música", "fr": "Rechercher de la musique", "de": "Musik suchen", "it": "Cerca musica", "ja": "音楽を検索", "zh": "搜索音乐", "ko": "음악 검색", "ar": "البحث عن موسيقى" },
+    "keywords": {
+      "es": ["reconocer canción", "qué canción suena", "identificar canción", "encontrar canción", "buscar artista", "explorar", "descubrir"],
+      "en": ["identify song", "what's playing", "song recognition", "find song", "find artist", "browse", "discover"]
+    }
+  },
+  "playlist-plus": {
+    "label": { "es": "Agregar a playlist", "en": "Add to playlist", "pt": "Adicionar à playlist", "fr": "Ajouter à une playlist", "de": "Zur Playlist hinzufügen", "it": "Aggiungi alla playlist", "ja": "プレイリストに追加", "zh": "添加到播放列表", "ko": "재생목록에 추가", "ar": "إضافة إلى قائمة التشغيل" },
+    "keywords": {
+      "es": ["crear playlist", "nueva lista", "lista de reproducción", "añadir canción", "cola", "guardar en lista", "mezcla"],
+      "en": ["create playlist", "new playlist", "add song", "queue", "save to list", "mix", "song list"]
+    }
+  },
+  "playlist-check": {
+    "label": { "es": "Agregado a playlist", "en": "Added to playlist", "pt": "Adicionado à playlist", "fr": "Ajouté à la playlist", "de": "Zur Playlist hinzugefügt", "it": "Aggiunto alla playlist", "ja": "プレイリストに追加済み", "zh": "已添加到播放列表", "ko": "재생목록에 추가됨", "ar": "تمت الإضافة إلى قائمة التشغيل" },
+    "keywords": {
+      "es": ["guardado", "listo", "en la lista", "confirmado", "lista de reproducción", "canción guardada", "seleccionado"],
+      "en": ["saved", "done", "in playlist", "confirmed", "song added", "selected", "already added"]
+    }
+  },
+  "playlist-arrow-down": {
+    "label": { "es": "Descargar playlist", "en": "Download playlist", "pt": "Baixar playlist", "fr": "Télécharger la playlist", "de": "Playlist herunterladen", "it": "Scarica playlist", "ja": "プレイリストをダウンロード", "zh": "下载播放列表", "ko": "재생목록 다운로드", "ar": "تنزيل قائمة التشغيل" },
+    "keywords": {
+      "es": ["sin conexión", "escuchar offline", "bajar canciones", "guardar en el dispositivo", "modo avión", "ahorrar datos", "lista de reproducción"],
+      "en": ["offline", "listen offline", "save songs", "save to device", "airplane mode", "data saver", "song list"]
+    }
+  }
+}

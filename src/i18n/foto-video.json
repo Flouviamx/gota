@@ -1,0 +1,583 @@
+{
+  "lens": {
+    "label": { "es": "Lente", "en": "Lens", "pt": "Lente", "fr": "Objectif photo", "de": "Objektiv", "it": "Obiettivo fotografico", "ja": "レンズ", "zh": "镜头", "ko": "렌즈", "ar": "عدسة الكاميرا" },
+    "keywords": {
+      "es": ["objetivo", "óptica", "cámara réflex", "mirrorless", "equipo fotográfico", "distancia focal", "montura", "tienda de fotografía"],
+      "en": ["optics", "camera glass", "DSLR", "mirrorless", "photo gear", "focal length", "mount", "camera shop"]
+    }
+  },
+  "lens-telephoto": {
+    "label": { "es": "Teleobjetivo", "en": "Telephoto lens", "pt": "Teleobjetiva", "fr": "Téléobjectif", "de": "Teleobjektiv", "it": "Teleobiettivo", "ja": "望遠レンズ", "zh": "长焦镜头", "ko": "망원 렌즈", "ar": "عدسة مقربة" },
+    "keywords": {
+      "es": ["zoom", "lente largo", "acercar", "fotografía de fauna", "deportes", "3x", "5x", "toma a distancia"],
+      "en": ["zoom", "long lens", "zoom in", "wildlife photography", "sports", "3x", "5x", "long-range shot"]
+    }
+  },
+  "lens-flare": {
+    "label": { "es": "Destello de lente", "en": "Lens flare", "pt": "Reflexo de lente", "fr": "Reflet parasite", "de": "Blendenfleck", "it": "Riflesso dell’obiettivo", "ja": "レンズフレア", "zh": "镜头光晕", "ko": "렌즈 플레어", "ar": "توهج العدسة" },
+    "keywords": {
+      "es": ["reflejo", "contraluz", "efecto de luz", "brillo del sol", "efecto cinematográfico", "editar foto", "halo"],
+      "en": ["glare", "backlight", "light effect", "sun flare", "cinematic effect", "photo edit", "halo"]
+    }
+  },
+  "studio-light": {
+    "label": { "es": "Luz de estudio", "en": "Studio light", "pt": "Luz de estúdio", "fr": "Projecteur de studio", "de": "Studioleuchte", "it": "Luce da studio", "ja": "スタジオライト", "zh": "影棚灯", "ko": "스튜디오 조명", "ar": "ضوء الاستوديو" },
+    "keywords": {
+      "es": ["foco", "fresnel", "luz continua", "iluminación", "set de filmación", "renta de equipo", "reflector", "producción"],
+      "en": ["spotlight", "fresnel", "continuous light", "lighting", "film set", "gear rental", "lighting kit", "production"]
+    }
+  },
+  "softbox": {
+    "label": { "es": "Softbox", "en": "Softbox", "pt": "Softbox", "fr": "Boîte à lumière", "de": "Softbox", "it": "Softbox", "ja": "ソフトボックス", "zh": "柔光箱", "ko": "소프트박스", "ar": "صندوق الإضاءة الناعمة" },
+    "keywords": {
+      "es": ["caja de luz", "luz suave", "difusor", "iluminación de estudio", "modificador de luz", "retrato", "foto de producto"],
+      "en": ["light box", "soft light", "diffuser", "studio lighting", "light modifier", "portrait", "product photography"]
+    }
+  },
+  "ring-light": {
+    "label": { "es": "Aro de luz", "en": "Ring light", "pt": "Ring light", "fr": "Anneau lumineux", "de": "Ringlicht", "it": "Luce ad anello", "ja": "リングライト", "zh": "环形补光灯", "ko": "링 라이트", "ar": "إضاءة حلقية" },
+    "keywords": {
+      "es": ["lámpara de aro", "selfie", "videollamada", "creador de contenido", "maquillaje", "transmisión en vivo", "luz para celular"],
+      "en": ["ring lamp", "selfie light", "video call", "content creator", "makeup", "livestream", "phone light"]
+    }
+  },
+  "studio-umbrella": {
+    "label": { "es": "Sombrilla de estudio", "en": "Photo umbrella", "pt": "Sombrinha fotográfica", "fr": "Parapluie de studio", "de": "Studioschirm", "it": "Ombrello da studio", "ja": "撮影用アンブレラ", "zh": "摄影伞", "ko": "촬영용 우산", "ar": "مظلة التصوير" },
+    "keywords": {
+      "es": ["paraguas fotográfico", "luz rebotada", "flash de estudio", "luz suave", "difusor", "modificador de luz", "retrato"],
+      "en": ["reflective umbrella", "shoot-through", "bounce flash", "soft light", "diffuser", "light modifier", "portrait lighting"]
+    }
+  },
+  "speedlight": {
+    "label": { "es": "Flash externo", "en": "External flash", "pt": "Flash externo", "fr": "Flash cobra", "de": "Aufsteckblitz", "it": "Flash esterno", "ja": "外付けフラッシュ", "zh": "外置闪光灯", "ko": "외장 플래시", "ar": "فلاش خارجي" },
+    "keywords": {
+      "es": ["speedlight", "zapata", "destello", "ajustes del flash", "luz de relleno", "rebotar luz", "fotografía de eventos"],
+      "en": ["speedlight", "hot shoe", "flash settings", "fill light", "bounce flash", "strobe", "event photography"]
+    }
+  },
+  "gimbal": {
+    "label": { "es": "Gimbal", "en": "Gimbal", "pt": "Gimbal", "fr": "Stabilisateur", "de": "Gimbal", "it": "Gimbal", "ja": "ジンバル", "zh": "手持云台", "ko": "짐벌", "ar": "مثبت جيمبال" },
+    "keywords": {
+      "es": ["estabilizador de mano", "video fluido", "celular", "tomas suaves", "grabar en movimiento", "vlog", "cardán"],
+      "en": ["handheld stabilizer", "smooth video", "phone stabilizer", "steady shot", "filming on the move", "vlog", "steadicam"]
+    }
+  },
+  "camera-slider": {
+    "label": { "es": "Slider de cámara", "en": "Camera slider", "pt": "Slider de câmera", "fr": "Slider vidéo", "de": "Kameraslider", "it": "Slider per videocamera", "ja": "カメラスライダー", "zh": "摄影滑轨", "ko": "카메라 슬라이더", "ar": "منزلق الكاميرا" },
+    "keywords": {
+      "es": ["riel", "dolly", "travelling", "toma deslizante", "movimiento de cámara", "video de producto", "plano en movimiento"],
+      "en": ["rail", "dolly", "tracking shot", "sliding shot", "camera movement", "product video", "motion control"]
+    }
+  },
+  "movie-camera": {
+    "label": { "es": "Cámara de cine", "en": "Movie camera", "pt": "Câmera de cinema", "fr": "Caméra de cinéma", "de": "Filmkamera", "it": "Cinepresa", "ja": "映画カメラ", "zh": "电影摄影机", "ko": "영화 카메라", "ar": "كاميرا سينمائية" },
+    "keywords": {
+      "es": ["filmación", "cineasta", "producción de cine", "rodaje", "cinta", "cine clásico", "hacer películas", "productora"],
+      "en": ["filmmaking", "filmmaker", "film production", "shooting", "cinema", "vintage", "movie making", "production company"]
+    }
+  },
+  "film-reel": {
+    "label": { "es": "Bobina de película", "en": "Film reel", "pt": "Rolo de filme", "fr": "Bobine de film", "de": "Filmspule", "it": "Bobina cinematografica", "ja": "フィルムリール", "zh": "胶片盘", "ko": "필름 릴", "ar": "بكرة فيلم" },
+    "keywords": {
+      "es": ["películas", "cine", "metraje", "archivo fílmico", "cinta", "carrete", "festival de cine"],
+      "en": ["movies", "cinema", "footage", "film archive", "spool", "celluloid", "film festival"]
+    }
+  },
+  "film-roll": {
+    "label": { "es": "Rollo fotográfico", "en": "Film roll", "pt": "Filme fotográfico", "fr": "Pellicule photo", "de": "Kleinbildfilm", "it": "Rullino", "ja": "写真フィルム", "zh": "胶卷", "ko": "필름 롤", "ar": "فيلم تصوير" },
+    "keywords": {
+      "es": ["35 mm", "fotografía analógica", "revelado", "película fotográfica", "carrete", "negativos", "foto retro", "cartucho"],
+      "en": ["35mm", "analog photography", "developing", "camera roll", "negatives", "canister", "retro photo", "film photography"]
+    }
+  },
+  "videotape": {
+    "label": { "es": "Videocasete", "en": "Videotape", "pt": "Fita de vídeo", "fr": "Cassette vidéo", "de": "Videokassette", "it": "Videocassetta", "ja": "ビデオテープ", "zh": "录像带", "ko": "비디오테이프", "ar": "شريط فيديو" },
+    "keywords": {
+      "es": ["VHS", "casete", "cinta de video", "videos caseros", "digitalizar", "archivo de cintas", "retro", "videograbadora"],
+      "en": ["VHS", "cassette", "video cassette", "home videos", "digitize", "tape archive", "retro", "VCR"]
+    }
+  },
+  "director-chair": {
+    "label": { "es": "Silla de director", "en": "Director’s chair", "pt": "Cadeira de diretor", "fr": "Fauteuil de réalisateur", "de": "Regiestuhl", "it": "Sedia da regista", "ja": "ディレクターズチェア", "zh": "导演椅", "ko": "감독 의자", "ar": "كرسي المخرج" },
+    "keywords": {
+      "es": ["set de filmación", "director de cine", "producción", "rodaje", "equipo de producción", "cine", "dirigir"],
+      "en": ["film set", "filmmaker", "production", "shoot", "crew", "cinema", "directing"]
+    }
+  },
+  "screenplay": {
+    "label": { "es": "Guion", "en": "Screenplay", "pt": "Roteiro de cinema", "fr": "Scénario", "de": "Drehbuch", "it": "Sceneggiatura", "ja": "脚本", "zh": "剧本", "ko": "각본", "ar": "سيناريو" },
+    "keywords": {
+      "es": ["libreto", "guionista", "diálogos", "escenas", "escribir película", "argumento", "lectura de mesa"],
+      "en": ["script", "screenwriting", "screenwriter", "dialogue", "scenes", "teleplay", "table read"]
+    }
+  },
+  "microphone-boom": {
+    "label": { "es": "Micrófono boom", "en": "Boom mic", "pt": "Microfone boom", "fr": "Perche micro", "de": "Mikrofonangel", "it": "Microfono a giraffa", "ja": "ブームマイク", "zh": "吊杆麦克风", "ko": "붐 마이크", "ar": "ميكروفون بذراع" },
+    "keywords": {
+      "es": ["caña", "jirafa", "sonido directo", "grabación de audio", "set de filmación", "sonidista", "shotgun"],
+      "en": ["boom pole", "fishpole", "location sound", "audio recording", "film set", "sound mixer", "shotgun mic"]
+    }
+  },
+  "green-screen": {
+    "label": { "es": "Pantalla verde", "en": "Green screen", "pt": "Tela verde", "fr": "Fond vert", "de": "Greenscreen", "it": "Schermo verde", "ja": "グリーンバック", "zh": "绿幕", "ko": "그린 스크린", "ar": "شاشة خضراء" },
+    "keywords": {
+      "es": ["chroma key", "croma", "fondo virtual", "efectos visuales", "set de estudio", "recortar fondo", "estudio de grabación"],
+      "en": ["chroma key", "backdrop", "virtual background", "visual effects", "studio set", "keying", "VFX"]
+    }
+  },
+  "film-projector": {
+    "label": { "es": "Proyector de cine", "en": "Film projector", "pt": "Projetor de cinema", "fr": "Projecteur de cinéma", "de": "Filmprojektor", "it": "Proiettore cinematografico", "ja": "映写機", "zh": "电影放映机", "ko": "영사기", "ar": "آلة عرض الأفلام" },
+    "keywords": {
+      "es": ["función de cine", "proyección", "cine clásico", "cineclub", "historia del cine", "película", "sala de cine"],
+      "en": ["screening", "projection", "classic cinema", "film club", "cinema history", "movie night", "movie theater"]
+    }
+  },
+  "time-lapse": {
+    "label": { "es": "Time-lapse", "en": "Time-lapse", "pt": "Time-lapse", "fr": "Accéléré", "de": "Zeitraffer", "it": "Time-lapse", "ja": "タイムラプス", "zh": "延时摄影", "ko": "타임랩스", "ar": "التصوير بفاصل زمني" },
+    "keywords": {
+      "es": ["cámara rápida", "video acelerado", "intervalómetro", "modo de cámara", "paso del tiempo", "atardecer", "fotos por intervalos"],
+      "en": ["fast motion", "sped-up video", "intervalometer", "camera mode", "passage of time", "sunset", "interval shooting"]
+    }
+  },
+  "burst-mode": {
+    "label": { "es": "Modo ráfaga", "en": "Burst mode", "pt": "Disparo contínuo", "fr": "Mode rafale", "de": "Serienaufnahme", "it": "Scatto a raffica", "ja": "連写", "zh": "连拍", "ko": "연속 촬영", "ar": "التصوير المتتابع" },
+    "keywords": {
+      "es": ["fotos continuas", "disparo continuo", "varias fotos", "acción", "deportes", "fotos en serie", "captura rápida"],
+      "en": ["continuous shooting", "rapid fire", "multiple shots", "action", "sports", "photo sequence", "high-speed shooting"]
+    }
+  },
+  "macro-mode": {
+    "label": { "es": "Modo macro", "en": "Macro mode", "pt": "Modo macro", "fr": "Mode macro", "de": "Makromodus", "it": "Modalità macro", "ja": "マクロモード", "zh": "微距模式", "ko": "매크로 모드", "ar": "وضع الماكرو" },
+    "keywords": {
+      "es": ["primer plano", "acercamiento", "foto de cerca", "enfoque cercano", "detalles", "flores", "insectos"],
+      "en": ["close-up", "close focus", "extreme detail", "up close", "flowers", "insects", "tiny objects"]
+    }
+  },
+  "rule-of-thirds": {
+    "label": { "es": "Regla de los tercios", "en": "Rule of thirds", "pt": "Regra dos terços", "fr": "Règle des tiers", "de": "Drittelregel", "it": "Regola dei terzi", "ja": "三分割法", "zh": "三分法构图", "ko": "3분할 구도", "ar": "قاعدة الأثلاث" },
+    "keywords": {
+      "es": ["cuadrícula", "composición", "guías", "encuadre", "recortar foto", "rejilla de la cámara", "consejos de foto"],
+      "en": ["grid overlay", "composition", "guides", "framing", "crop view", "camera grid", "photo tips"]
+    }
+  },
+  "metering-matrix": {
+    "label": { "es": "Medición matricial", "en": "Matrix metering", "pt": "Medição matricial", "fr": "Mesure matricielle", "de": "Mehrfeldmessung", "it": "Misurazione matrix", "ja": "評価測光", "zh": "矩阵测光", "ko": "매트릭스 측광", "ar": "قياس الضوء المصفوفي" },
+    "keywords": {
+      "es": ["medición evaluativa", "fotómetro", "exposición", "modo de medición", "luz de la escena", "multizona", "modo manual"],
+      "en": ["evaluative metering", "light meter", "exposure", "metering mode", "multi-zone", "scene light", "manual mode"]
+    }
+  },
+  "metering-spot": {
+    "label": { "es": "Medición puntual", "en": "Spot metering", "pt": "Medição pontual", "fr": "Mesure spot", "de": "Spotmessung", "it": "Misurazione spot", "ja": "スポット測光", "zh": "点测光", "ko": "스폿 측광", "ar": "قياس الضوء النقطي" },
+    "keywords": {
+      "es": ["fotómetro", "exposición", "modo de medición", "contraluz", "punto de luz", "sujeto", "modo manual"],
+      "en": ["light meter", "exposure", "metering mode", "backlit subject", "center spot", "subject", "manual mode"]
+    }
+  },
+  "focus-point": {
+    "label": { "es": "Punto de enfoque", "en": "Focus point", "pt": "Ponto de foco", "fr": "Point de mise au point", "de": "Fokuspunkt", "it": "Punto di messa a fuoco", "ja": "フォーカスポイント", "zh": "对焦点", "ko": "초점 지점", "ar": "نقطة التركيز" },
+    "keywords": {
+      "es": ["tocar para enfocar", "autoenfoque", "AF", "nitidez", "zona de enfoque", "seguimiento", "sujeto"],
+      "en": ["tap to focus", "autofocus", "AF point", "focus area", "sharpness", "tracking", "subject"]
+    }
+  },
+  "panorama": {
+    "label": { "es": "Panorámica", "en": "Panorama", "pt": "Panorama", "fr": "Panorama", "de": "Panorama", "it": "Panorama", "ja": "パノラマ", "zh": "全景", "ko": "파노라마", "ar": "صورة بانورامية" },
+    "keywords": {
+      "es": ["pano", "paisaje", "vista amplia", "barrido", "360 grados", "foto ancha", "modo de cámara"],
+      "en": ["pano", "landscape", "wide view", "sweep", "360 degrees", "panoramic photo", "camera mode"]
+    }
+  },
+  "stabilization": {
+    "label": { "es": "Estabilización", "en": "Stabilization", "pt": "Estabilização", "fr": "Stabilisation", "de": "Bildstabilisierung", "it": "Stabilizzazione", "ja": "手ぶれ補正", "zh": "防抖", "ko": "흔들림 보정", "ar": "تثبيت الصورة" },
+    "keywords": {
+      "es": ["antivibración", "estabilizador de imagen", "video estable", "OIS", "evitar fotos movidas", "sin temblor", "modo acción"],
+      "en": ["image stabilization", "anti-shake", "steady video", "OIS", "shake reduction", "blur-free", "action mode"]
+    }
+  },
+  "auto-framing": {
+    "label": { "es": "Encuadre automático", "en": "Auto-framing", "pt": "Enquadramento automático", "fr": "Cadrage automatique", "de": "Automatischer Bildausschnitt", "it": "Inquadratura automatica", "ja": "自動フレーミング", "zh": "自动取景", "ko": "자동 프레이밍", "ar": "تأطير تلقائي" },
+    "keywords": {
+      "es": ["encuadre centrado", "seguir a la persona", "videollamada", "cámara inteligente", "seguimiento facial", "mantener en cuadro", "webcam"],
+      "en": ["center stage", "follow me", "video call", "smart camera", "face tracking", "keep in frame", "webcam"]
+    }
+  },
+  "field-of-view": {
+    "label": { "es": "Campo de visión", "en": "Field of view", "pt": "Campo de visão", "fr": "Champ de vision", "de": "Sichtfeld", "it": "Campo visivo", "ja": "画角", "zh": "视野", "ko": "화각", "ar": "مجال الرؤية" },
+    "keywords": {
+      "es": ["ángulo de visión", "distancia focal", "gran angular", "FOV", "zoom", "encuadre", "milímetros"],
+      "en": ["angle of view", "focal length", "wide angle", "FOV", "zoom", "framing", "millimeters"]
+    }
+  },
+  "screen-recording": {
+    "label": { "es": "Grabar pantalla", "en": "Record screen", "pt": "Gravar tela", "fr": "Enregistrer l’écran", "de": "Bildschirm aufnehmen", "it": "Registra lo schermo", "ja": "画面を録画", "zh": "录制屏幕", "ko": "화면 녹화", "ar": "تسجيل الشاشة" },
+    "keywords": {
+      "es": ["screencast", "captura en video", "tutorial", "demostración", "grabar partida", "presentación", "reporte de error"],
+      "en": ["screencast", "screen capture", "tutorial", "demo", "gameplay recording", "walkthrough", "bug report"]
+    }
+  },
+  "horizon-level": {
+    "label": { "es": "Nivel de cámara", "en": "Camera level", "pt": "Nível da câmera", "fr": "Indicateur de niveau", "de": "Kamera-Wasserwaage", "it": "Livella", "ja": "水準器", "zh": "水平仪", "ko": "카메라 수평계", "ar": "ميزان الاستواء" },
+    "keywords": {
+      "es": ["horizonte recto", "burbuja", "foto derecha", "inclinación", "alinear", "foto chueca", "guía de cámara"],
+      "en": ["straight horizon", "spirit level", "tilt", "align", "crooked photo", "gyro", "camera guide"]
+    }
+  },
+  "camera-pan": {
+    "label": { "es": "Paneo", "en": "Camera pan", "pt": "Pan de câmera", "fr": "Panoramique", "de": "Kameraschwenk", "it": "Panoramica", "ja": "カメラパン", "zh": "摇镜头", "ko": "카메라 패닝", "ar": "تحريك الكاميرا أفقيًا" },
+    "keywords": {
+      "es": ["movimiento de cámara", "girar cámara", "panorámica horizontal", "PTZ", "storyboard", "plano", "barrido"],
+      "en": ["camera movement", "pan left", "pan right", "PTZ", "storyboard", "shot", "sweep"]
+    }
+  },
+  "camera-plus": {
+    "label": { "es": "Nueva foto", "en": "New photo", "pt": "Nova foto", "fr": "Nouvelle photo", "de": "Neues Foto", "it": "Nuova foto", "ja": "新しい写真", "zh": "拍摄新照片", "ko": "새 사진", "ar": "صورة جديدة" },
+    "keywords": {
+      "es": ["tomar foto", "agregar foto", "capturar", "cámara", "subir foto", "foto de perfil", "añadir imagen"],
+      "en": ["take photo", "add photo", "capture", "camera", "upload photo", "profile picture", "add image"]
+    }
+  },
+  "camera-clock": {
+    "label": { "es": "Temporizador de cámara", "en": "Self-timer", "pt": "Temporizador da câmera", "fr": "Retardateur", "de": "Selbstauslöser", "it": "Autoscatto", "ja": "セルフタイマー", "zh": "定时拍摄", "ko": "셀프타이머", "ar": "المؤقت الذاتي" },
+    "keywords": {
+      "es": ["autodisparador", "cuenta regresiva", "foto grupal", "selfie", "disparo retardado", "3 segundos", "10 segundos"],
+      "en": ["timer", "countdown", "group photo", "selfie", "delayed shot", "3 seconds", "10 seconds"]
+    }
+  },
+  "camera-gear": {
+    "label": { "es": "Ajustes de cámara", "en": "Camera settings", "pt": "Configurações da câmera", "fr": "Réglages de l’appareil photo", "de": "Kameraeinstellungen", "it": "Impostazioni fotocamera", "ja": "カメラ設定", "zh": "相机设置", "ko": "카메라 설정", "ar": "إعدادات الكاميرا" },
+    "keywords": {
+      "es": ["configuración", "opciones", "preferencias", "resolución", "formato de foto", "permisos de cámara", "calidad"],
+      "en": ["configuration", "options", "preferences", "resolution", "photo format", "camera permissions", "quality"]
+    }
+  },
+  "video-camera-plus": {
+    "label": { "es": "Nuevo video", "en": "New video", "pt": "Novo vídeo", "fr": "Nouvelle vidéo", "de": "Neues Video", "it": "Nuovo video", "ja": "新しい動画", "zh": "新视频", "ko": "새 동영상", "ar": "فيديو جديد" },
+    "keywords": {
+      "es": ["grabar video", "agregar video", "subir video", "filmar", "crear video", "clip", "publicar video"],
+      "en": ["record video", "add video", "upload video", "film", "create video", "clip", "post video"]
+    }
+  },
+  "exposure": {
+    "label": { "es": "Exposición", "en": "Exposure", "pt": "Exposição", "fr": "Exposition", "de": "Belichtung", "it": "Esposizione", "ja": "露出", "zh": "曝光", "ko": "노출", "ar": "التعريض الضوئي" },
+    "keywords": {
+      "es": ["compensación", "brillo", "aclarar", "oscurecer", "EV", "foto oscura", "sobreexpuesta"],
+      "en": ["compensation", "brightness", "lighten", "darken", "EV", "underexposed", "overexposed"]
+    }
+  },
+  "highlights": {
+    "label": { "es": "Altas luces", "en": "Highlights", "pt": "Realces", "fr": "Hautes lumières", "de": "Lichter", "it": "Alte luci", "ja": "ハイライト", "zh": "高光", "ko": "밝은 영역", "ar": "المناطق الساطعة" },
+    "keywords": {
+      "es": ["iluminaciones", "luces", "zonas claras", "cielo quemado", "recuperar detalle", "editor de fotos", "ajuste de tono"],
+      "en": ["bright areas", "blown-out sky", "recover detail", "photo editor", "tone adjustment", "light tones", "whites"]
+    }
+  },
+  "shadows": {
+    "label": { "es": "Sombras", "en": "Shadows", "pt": "Sombras", "fr": "Ombres", "de": "Tiefen", "it": "Ombre", "ja": "シャドウ", "zh": "阴影", "ko": "어두운 영역", "ar": "الظلال" },
+    "keywords": {
+      "es": ["zonas oscuras", "recuperar detalle", "contraluz", "editor de fotos", "ajuste de tono", "negros", "subexpuesta"],
+      "en": ["dark areas", "recover detail", "backlit", "photo editor", "tone adjustment", "blacks", "dark tones"]
+    }
+  },
+  "tone-curve": {
+    "label": { "es": "Curva de tonos", "en": "Tone curve", "pt": "Curva de tons", "fr": "Courbe des tonalités", "de": "Gradationskurve", "it": "Curva tonale", "ja": "トーンカーブ", "zh": "色调曲线", "ko": "톤 곡선", "ar": "منحنى الدرجات اللونية" },
+    "keywords": {
+      "es": ["curvas", "contraste", "edición de fotos", "RGB", "ajuste avanzado", "corrección de color", "luces y sombras"],
+      "en": ["curves", "contrast", "photo editing", "RGB", "advanced adjustment", "color correction", "lights and darks"]
+    }
+  },
+  "histogram-levels": {
+    "label": { "es": "Niveles", "en": "Levels", "pt": "Níveis", "fr": "Niveaux", "de": "Tonwertkorrektur", "it": "Livelli tonali", "ja": "レベル補正", "zh": "色阶", "ko": "레벨", "ar": "مستويات الألوان" },
+    "keywords": {
+      "es": ["histograma", "distribución tonal", "exposición", "blancos y negros", "rango tonal", "ajuste de tonos", "edición de fotos"],
+      "en": ["histogram", "tonal range", "exposure", "black and white point", "tone distribution", "photo editing", "input levels"]
+    }
+  },
+  "vignette": {
+    "label": { "es": "Viñeteado", "en": "Vignette", "pt": "Vinheta", "fr": "Vignettage", "de": "Vignettierung", "it": "Vignettatura", "ja": "ビネット", "zh": "暗角", "ko": "비네트", "ar": "تعتيم الحواف" },
+    "keywords": {
+      "es": ["bordes oscuros", "esquinas", "efecto de foto", "filtro", "efecto retro", "centrar la atención", "edición de fotos"],
+      "en": ["dark edges", "corners", "photo effect", "filter", "retro effect", "draw attention", "photo editing"]
+    }
+  },
+  "motion-blur": {
+    "label": { "es": "Desenfoque de movimiento", "en": "Motion blur", "pt": "Desfoque de movimento", "fr": "Flou de mouvement", "de": "Bewegungsunschärfe", "it": "Sfocatura di movimento", "ja": "モーションブラー", "zh": "动态模糊", "ko": "모션 블러", "ar": "ضبابية الحركة" },
+    "keywords": {
+      "es": ["barrido", "efecto de velocidad", "foto movida", "larga exposición", "estelas", "efecto dinámico", "velocidad de obturación"],
+      "en": ["panning", "speed effect", "long exposure", "trails", "dynamic effect", "shutter speed", "streaks"]
+    }
+  },
+  "bokeh": {
+    "label": { "es": "Bokeh", "en": "Bokeh", "pt": "Bokeh", "fr": "Bokeh", "de": "Bokeh", "it": "Bokeh", "ja": "ボケ", "zh": "焦外虚化", "ko": "보케", "ar": "تأثير البوكيه" },
+    "keywords": {
+      "es": ["fondo desenfocado", "modo retrato", "profundidad de campo", "desenfoque de lente", "luces difusas", "efecto de profundidad", "apertura amplia"],
+      "en": ["blurred background", "portrait mode", "depth of field", "lens blur", "soft lights", "depth effect", "wide aperture"]
+    }
+  },
+  "straighten": {
+    "label": { "es": "Enderezar", "en": "Straighten", "pt": "Endireitar", "fr": "Redresser", "de": "Ausrichten", "it": "Raddrizza", "ja": "傾き補正", "zh": "拉直", "ko": "수평 맞추기", "ar": "تقويم الصورة" },
+    "keywords": {
+      "es": ["nivelar", "horizonte", "rotar", "foto chueca", "inclinación", "alinear", "corregir ángulo"],
+      "en": ["level", "horizon", "rotate", "crooked photo", "tilt", "align", "fix angle"]
+    }
+  },
+  "crop-rotate": {
+    "label": { "es": "Recortar y rotar", "en": "Crop and rotate", "pt": "Cortar e girar", "fr": "Recadrer et faire pivoter", "de": "Zuschneiden und drehen", "it": "Ritaglia e ruota", "ja": "切り抜きと回転", "zh": "裁剪和旋转", "ko": "자르기 및 회전", "ar": "اقتصاص وتدوير" },
+    "keywords": {
+      "es": ["encuadre", "girar", "voltear", "relación de aspecto", "editor de fotos", "ajustar foto", "reencuadrar"],
+      "en": ["frame", "turn", "flip", "aspect ratio", "photo editor", "adjust photo", "reframe"]
+    }
+  },
+  "before-after": {
+    "label": { "es": "Antes y después", "en": "Before and after", "pt": "Antes e depois", "fr": "Avant/après", "de": "Vorher/Nachher", "it": "Prima e dopo", "ja": "ビフォーアフター", "zh": "前后对比", "ko": "전후 비교", "ar": "قبل وبعد" },
+    "keywords": {
+      "es": ["comparar", "edición", "original", "vista dividida", "cambios", "resultado", "retoque"],
+      "en": ["compare", "edit", "original", "split view", "changes", "result", "retouch"]
+    }
+  },
+  "background-replace": {
+    "label": { "es": "Cambiar fondo", "en": "Replace background", "pt": "Trocar fundo", "fr": "Remplacer l’arrière-plan", "de": "Hintergrund ersetzen", "it": "Sostituisci sfondo", "ja": "背景を置き換え", "zh": "替换背景", "ko": "배경 바꾸기", "ar": "استبدال الخلفية" },
+    "keywords": {
+      "es": ["fondo virtual", "quitar fondo", "videollamada", "recortar persona", "fotomontaje", "fondo de estudio", "editar foto"],
+      "en": ["virtual background", "remove background", "video call", "cut out", "photo montage", "backdrop", "photo edit"]
+    }
+  },
+  "radial-filter": {
+    "label": { "es": "Filtro radial", "en": "Radial filter", "pt": "Filtro radial", "fr": "Filtre radial", "de": "Radialfilter", "it": "Filtro radiale", "ja": "円形フィルター", "zh": "径向滤镜", "ko": "원형 필터", "ar": "مرشح شعاعي" },
+    "keywords": {
+      "es": ["máscara", "ajuste local", "selección circular", "resaltar sujeto", "edición de fotos", "área específica", "retoque"],
+      "en": ["mask", "local adjustment", "circular selection", "highlight subject", "photo editing", "specific area", "retouch"]
+    }
+  },
+  "photo-filter": {
+    "label": { "es": "Filtros de foto", "en": "Photo filters", "pt": "Filtros de foto", "fr": "Filtres photo", "de": "Fotofilter", "it": "Filtri foto", "ja": "写真フィルター", "zh": "照片滤镜", "ko": "사진 필터", "ar": "فلاتر الصور" },
+    "keywords": {
+      "es": ["preajustes", "presets", "estilos", "efectos", "look", "editar video", "tonos de color"],
+      "en": ["presets", "looks", "styles", "effects", "video filters", "color tone", "edit video"]
+    }
+  },
+  "color-grading": {
+    "label": { "es": "Gradación de color", "en": "Color grading", "pt": "Gradação de cor", "fr": "Étalonnage", "de": "Color Grading", "it": "Gradazione colore", "ja": "カラーグレーディング", "zh": "调色", "ko": "컬러 그레이딩", "ar": "معالجة الألوان" },
+    "keywords": {
+      "es": ["corrección de color", "ruedas de color", "etalonaje", "tono cinematográfico", "LUT", "colorización", "balance de color"],
+      "en": ["color correction", "color wheels", "cinematic look", "LUT", "color balance", "teal and orange", "film look"]
+    }
+  },
+  "pan-and-zoom": {
+    "label": { "es": "Paneo y zoom", "en": "Pan and zoom", "pt": "Pan e zoom", "fr": "Panoramique et zoom", "de": "Schwenken und Zoomen", "it": "Panoramica e zoom", "ja": "パンとズーム", "zh": "平移和缩放", "ko": "이동 및 확대", "ar": "تحريك وتكبير" },
+    "keywords": {
+      "es": ["efecto Ken Burns", "foto en movimiento", "presentación de fotos", "acercamiento lento", "animar foto", "video de fotos", "slideshow"],
+      "en": ["Ken Burns effect", "moving photo", "slideshow", "slow zoom", "animate photo", "photo video", "photo montage"]
+    }
+  },
+  "reframe": {
+    "label": { "es": "Reencuadrar", "en": "Reframe", "pt": "Reenquadrar", "fr": "Recadrage automatique", "de": "Bildformat anpassen", "it": "Reinquadra", "ja": "リフレーム", "zh": "重新构图", "ko": "리프레임", "ar": "إعادة التأطير" },
+    "keywords": {
+      "es": ["horizontal a vertical", "relación de aspecto", "9:16", "reels", "formato para redes", "cambiar formato", "video vertical"],
+      "en": ["horizontal to vertical", "aspect ratio", "9:16", "reels", "social format", "change format", "vertical video"]
+    }
+  },
+  "video-timeline": {
+    "label": { "es": "Línea de tiempo de video", "en": "Video timeline", "pt": "Linha do tempo de vídeo", "fr": "Timeline vidéo", "de": "Videozeitleiste", "it": "Timeline video", "ja": "動画タイムライン", "zh": "视频时间线", "ko": "동영상 타임라인", "ar": "المخطط الزمني للفيديو" },
+    "keywords": {
+      "es": ["editor de video", "pistas", "clips", "montaje", "secuencia", "capas", "proyecto de edición"],
+      "en": ["video editor", "tracks", "clips", "montage", "sequence", "layers", "editing project"]
+    }
+  },
+  "playhead": {
+    "label": { "es": "Cabezal de reproducción", "en": "Playhead", "pt": "Cursor de reprodução", "fr": "Tête de lecture", "de": "Abspielkopf", "it": "Indicatore di riproduzione", "ja": "再生ヘッド", "zh": "播放头", "ko": "재생 헤드", "ar": "مؤشر التشغيل" },
+    "keywords": {
+      "es": ["indicador de tiempo", "posición actual", "cursor", "línea de tiempo", "fotograma actual", "minuto exacto", "edición"],
+      "en": ["current time", "time indicator", "cursor", "timeline", "current frame", "scrub", "editing"]
+    }
+  },
+  "clip-split": {
+    "label": { "es": "Dividir clip", "en": "Split clip", "pt": "Dividir clipe", "fr": "Scinder le clip", "de": "Clip teilen", "it": "Dividi clip", "ja": "クリップを分割", "zh": "拆分片段", "ko": "클립 분할", "ar": "تقسيم المقطع" },
+    "keywords": {
+      "es": ["cortar", "partir", "separar", "editar video", "tijeras", "dos partes", "línea de tiempo"],
+      "en": ["cut", "separate", "break apart", "video editing", "scissors", "two parts", "timeline"]
+    }
+  },
+  "clip-trim": {
+    "label": { "es": "Recortar clip", "en": "Trim clip", "pt": "Aparar clipe", "fr": "Rogner le clip", "de": "Clip trimmen", "it": "Rifila clip", "ja": "クリップをトリミング", "zh": "修剪片段", "ko": "클립 다듬기", "ar": "قص المقطع" },
+    "keywords": {
+      "es": ["acortar", "quitar el inicio", "quitar el final", "duración", "editar video", "ajustar largo", "extremos"],
+      "en": ["shorten", "cut the start", "cut the end", "duration", "video editing", "adjust length", "handles"]
+    }
+  },
+  "clip-transition": {
+    "label": { "es": "Transición entre clips", "en": "Clip transition", "pt": "Transição entre clipes", "fr": "Transition entre clips", "de": "Clipübergang", "it": "Transizione tra clip", "ja": "クリップのトランジション", "zh": "片段转场", "ko": "클립 전환", "ar": "انتقال بين المقاطع" },
+    "keywords": {
+      "es": ["fundido", "disolvencia", "barrido", "cortinilla", "efecto entre escenas", "editar video", "encadenado"],
+      "en": ["fade", "dissolve", "crossfade", "wipe", "fade to black", "video editing", "scene change"]
+    }
+  },
+  "audio-detach": {
+    "label": { "es": "Separar audio", "en": "Detach audio", "pt": "Separar áudio", "fr": "Détacher l’audio", "de": "Audio trennen", "it": "Separa audio", "ja": "オーディオを分離", "zh": "分离音频", "ko": "오디오 분리", "ar": "فصل الصوت" },
+    "keywords": {
+      "es": ["extraer audio", "quitar sonido", "pista de audio", "desvincular", "editar video", "música", "silenciar clip"],
+      "en": ["extract audio", "remove sound", "audio track", "unlink", "video editing", "music", "mute clip"]
+    }
+  },
+  "mark-in": {
+    "label": { "es": "Marcar entrada", "en": "Set in point", "pt": "Marcar entrada", "fr": "Point d’entrée", "de": "In-Punkt setzen", "it": "Punto di attacco", "ja": "インポイントを設定", "zh": "设置入点", "ko": "시작 지점 표시", "ar": "تحديد نقطة البداية" },
+    "keywords": {
+      "es": ["punto de entrada", "inicio del clip", "seleccionar rango", "edición de video", "tecla I", "línea de tiempo", "desde aquí"],
+      "en": ["mark in", "clip start", "select range", "video editing", "I key", "timeline", "start here"]
+    }
+  },
+  "mark-out": {
+    "label": { "es": "Marcar salida", "en": "Set out point", "pt": "Marcar saída", "fr": "Point de sortie", "de": "Out-Punkt setzen", "it": "Punto di stacco", "ja": "アウトポイントを設定", "zh": "设置出点", "ko": "종료 지점 표시", "ar": "تحديد نقطة النهاية" },
+    "keywords": {
+      "es": ["punto de salida", "fin del clip", "seleccionar rango", "edición de video", "tecla O", "línea de tiempo", "hasta aquí"],
+      "en": ["mark out", "clip end", "select range", "video editing", "O key", "timeline", "end here"]
+    }
+  },
+  "timeline-marker": {
+    "label": { "es": "Marcador de línea de tiempo", "en": "Timeline marker", "pt": "Marcador da linha do tempo", "fr": "Marqueur de timeline", "de": "Zeitleistenmarke", "it": "Marcatore timeline", "ja": "タイムラインマーカー", "zh": "时间线标记", "ko": "타임라인 마커", "ar": "علامة المخطط الزمني" },
+    "keywords": {
+      "es": ["capítulo", "marca", "nota", "punto clave", "edición de video", "momento importante", "índice"],
+      "en": ["chapter", "flag", "note", "key point", "video editing", "important moment", "cue"]
+    }
+  },
+  "blade-tool": {
+    "label": { "es": "Herramienta cuchilla", "en": "Blade tool", "pt": "Ferramenta Lâmina", "fr": "Outil Lame", "de": "Rasierklinge", "it": "Strumento lama", "ja": "ブレードツール", "zh": "剃刀工具", "ko": "자르기 도구", "ar": "أداة الشفرة" },
+    "keywords": {
+      "es": ["navaja", "cortar clips", "editor de video", "tecla B", "dividir", "tijeras", "herramienta de corte"],
+      "en": ["razor", "cut clips", "video editor", "B key", "split", "scissors", "slice"]
+    }
+  },
+  "keyframe": {
+    "label": { "es": "Fotograma clave", "en": "Keyframe", "pt": "Quadro-chave", "fr": "Image clé", "de": "Keyframe", "it": "Fotogramma chiave", "ja": "キーフレーム", "zh": "关键帧", "ko": "키프레임", "ar": "إطار مفتاحي" },
+    "keywords": {
+      "es": ["keyframe", "animación", "interpolación", "línea de tiempo", "motion graphics", "propiedades", "rombo"],
+      "en": ["animation", "interpolation", "timeline", "motion graphics", "properties", "diamond", "tween"]
+    }
+  },
+  "keyframe-ease": {
+    "label": { "es": "Fotograma clave suavizado", "en": "Eased keyframe", "pt": "Quadro-chave suavizado", "fr": "Image clé lissée", "de": "Keyframe mit Easing", "it": "Fotogramma chiave ammorbidito", "ja": "イージング付きキーフレーム", "zh": "缓动关键帧", "ko": "이징 키프레임", "ar": "إطار مفتاحي منعّم" },
+    "keywords": {
+      "es": ["easing", "entrada suave", "salida suave", "curva de velocidad", "aceleración", "animación fluida", "ease in out"],
+      "en": ["easing", "ease in", "ease out", "speed curve", "acceleration", "smooth animation", "bezier"]
+    }
+  },
+  "motion-path": {
+    "label": { "es": "Trayectoria de movimiento", "en": "Motion path", "pt": "Trajetória de movimento", "fr": "Trajectoire d’animation", "de": "Bewegungspfad", "it": "Percorso di movimento", "ja": "モーションパス", "zh": "运动路径", "ko": "모션 경로", "ar": "مسار الحركة" },
+    "keywords": {
+      "es": ["animación", "recorrido", "capa animada", "motion graphics", "curva", "desplazamiento", "fotogramas clave"],
+      "en": ["animation", "trajectory", "animated layer", "motion graphics", "curve", "movement", "keyframes"]
+    }
+  },
+  "onion-skin": {
+    "label": { "es": "Papel cebolla", "en": "Onion skin", "pt": "Papel de cebola", "fr": "Pelure d’oignon", "de": "Zwiebelschalen", "it": "Onion skin", "ja": "オニオンスキン", "zh": "洋葱皮", "ko": "어니언 스킨", "ar": "قشرة البصل" },
+    "keywords": {
+      "es": ["cuadro por cuadro", "fotogramas", "cuadro anterior", "cuadro siguiente", "transparencia", "animación 2D", "stop motion"],
+      "en": ["frame by frame", "frames", "previous frame", "next frame", "transparency", "2D animation", "stop motion"]
+    }
+  },
+  "render": {
+    "label": { "es": "Renderizar", "en": "Render", "pt": "Renderizar", "fr": "Rendu", "de": "Rendern", "it": "Rendering", "ja": "レンダリング", "zh": "渲染", "ko": "렌더링", "ar": "تصيير الفيديو" },
+    "keywords": {
+      "es": ["exportar", "procesar video", "generar video", "MP4", "descargar video", "codificar", "video final"],
+      "en": ["export", "process video", "generate video", "MP4", "encode", "final video", "output"]
+    }
+  },
+  "lower-third": {
+    "label": { "es": "Cintillo", "en": "Lower third", "pt": "Tarja de título", "fr": "Bandeau de titre", "de": "Bauchbinde", "it": "Sottopancia", "ja": "テロップ", "zh": "下方字幕条", "ko": "하단 자막", "ar": "شريط العنوان السفلي" },
+    "keywords": {
+      "es": ["rótulo", "súper", "nombre en pantalla", "título", "noticiero", "entrevista", "motion graphics"],
+      "en": ["name title", "caption", "chyron", "title graphic", "news", "interview", "motion graphics"]
+    }
+  },
+  "credits-roll": {
+    "label": { "es": "Créditos finales", "en": "End credits", "pt": "Créditos finais", "fr": "Générique de fin", "de": "Abspann", "it": "Titoli di coda", "ja": "エンドロール", "zh": "片尾字幕", "ko": "엔딩 크레딧", "ar": "شارة النهاية" },
+    "keywords": {
+      "es": ["reparto", "equipo de producción", "fin de la película", "texto en movimiento", "agradecimientos", "rodillo", "cierre del video"],
+      "en": ["cast", "crew", "end of movie", "scrolling text", "thanks", "rolling titles", "outro"]
+    }
+  },
+  "photo-print": {
+    "label": { "es": "Foto impresa", "en": "Photo print", "pt": "Foto impressa", "fr": "Tirage photo", "de": "Fotoabzug", "it": "Stampa fotografica", "ja": "写真プリント", "zh": "冲印照片", "ko": "인화 사진", "ar": "صورة مطبوعة" },
+    "keywords": {
+      "es": ["foto instantánea", "polaroid", "revelado", "recuerdo", "foto en papel", "copia", "cámara instantánea"],
+      "en": ["instant photo", "polaroid", "snapshot", "keepsake", "paper photo", "copy", "instant camera"]
+    }
+  },
+  "photo-printer": {
+    "label": { "es": "Impresora de fotos", "en": "Photo printer", "pt": "Impressora de fotos", "fr": "Imprimante photo", "de": "Fotodrucker", "it": "Stampante fotografica", "ja": "フォトプリンター", "zh": "照片打印机", "ko": "포토 프린터", "ar": "طابعة صور" },
+    "keywords": {
+      "es": ["imprimir fotos", "portátil", "desde el celular", "papel fotográfico", "foto instantánea", "revelado en casa", "calcomanías"],
+      "en": ["print photos", "portable", "from your phone", "photo paper", "instant print", "home printing", "sticker prints"]
+    }
+  },
+  "photo-album": {
+    "label": { "es": "Álbum de fotos", "en": "Photo album", "pt": "Álbum de fotos", "fr": "Album photo", "de": "Fotoalbum", "it": "Album fotografico", "ja": "フォトアルバム", "zh": "相册", "ko": "사진 앨범", "ar": "ألبوم الصور" },
+    "keywords": {
+      "es": ["recuerdos", "fotos familiares", "colección", "galería", "boda", "fotolibro", "viaje"],
+      "en": ["memories", "family photos", "collection", "gallery", "wedding", "photo book", "scrapbook"]
+    }
+  },
+  "hanging-photos": {
+    "label": { "es": "Fotos colgadas", "en": "Hanging photos", "pt": "Fotos penduradas", "fr": "Photos suspendues", "de": "Aufgehängte Fotos", "it": "Foto appese", "ja": "吊るした写真", "zh": "悬挂的照片", "ko": "걸려 있는 사진", "ar": "صور معلقة" },
+    "keywords": {
+      "es": ["muro de fotos", "mood board", "tendedero de fotos", "cuarto oscuro", "secar fotos", "inspiración", "pinzas"],
+      "en": ["photo wall", "mood board", "photo line", "darkroom", "drying prints", "inspiration", "clothespins"]
+    }
+  },
+  "video-library": {
+    "label": { "es": "Biblioteca de videos", "en": "Video library", "pt": "Biblioteca de vídeos", "fr": "Vidéothèque", "de": "Videobibliothek", "it": "Libreria video", "ja": "動画ライブラリ", "zh": "视频库", "ko": "동영상 보관함", "ar": "مكتبة الفيديو" },
+    "keywords": {
+      "es": ["colección", "mis videos", "galería", "catálogo", "lista de reproducción", "videoteca", "contenido guardado"],
+      "en": ["collection", "my videos", "gallery", "catalog", "playlist", "media library", "saved content"]
+    }
+  },
+  "image-edit": {
+    "label": { "es": "Editar foto", "en": "Edit photo", "pt": "Editar foto", "fr": "Modifier la photo", "de": "Foto bearbeiten", "it": "Modifica foto", "ja": "写真を編集", "zh": "编辑照片", "ko": "사진 편집", "ar": "تعديل الصورة" },
+    "keywords": {
+      "es": ["retocar", "editor de fotos", "ajustar imagen", "modificar", "lápiz", "filtros", "recortar"],
+      "en": ["retouch", "photo editor", "adjust image", "modify", "pencil", "filters", "crop"]
+    }
+  },
+  "image-heart": {
+    "label": { "es": "Foto favorita", "en": "Favorite photo", "pt": "Foto favorita", "fr": "Photo favorite", "de": "Lieblingsfoto", "it": "Foto preferita", "ja": "お気に入りの写真", "zh": "收藏的照片", "ko": "즐겨찾는 사진", "ar": "صورة مفضلة" },
+    "keywords": {
+      "es": ["me gusta", "me encanta", "guardar", "reacción", "corazón", "mejores fotos", "destacada"],
+      "en": ["like", "save", "reaction", "heart", "best shots", "loved", "highlight"]
+    }
+  },
+  "image-check": {
+    "label": { "es": "Foto seleccionada", "en": "Selected photo", "pt": "Foto selecionada", "fr": "Photo sélectionnée", "de": "Ausgewähltes Foto", "it": "Foto selezionata", "ja": "選択した写真", "zh": "已选照片", "ko": "선택한 사진", "ar": "صورة محددة" },
+    "keywords": {
+      "es": ["aprobada", "elegida", "marcada", "verificada", "lista", "visto bueno", "foto final"],
+      "en": ["approved", "chosen", "checked", "verified", "ready", "signed off", "final pick"]
+    }
+  },
+  "image-arrow-down": {
+    "label": { "es": "Descargar foto", "en": "Download photo", "pt": "Baixar foto", "fr": "Télécharger la photo", "de": "Foto herunterladen", "it": "Scarica foto", "ja": "写真をダウンロード", "zh": "下载照片", "ko": "사진 다운로드", "ar": "تنزيل الصورة" },
+    "keywords": {
+      "es": ["guardar foto", "bajar imagen", "exportar", "guardar en el celular", "galería", "alta resolución", "copia local"],
+      "en": ["save photo", "save image", "export", "save to phone", "camera roll", "high resolution", "local copy"]
+    }
+  },
+  "image-arrow-up": {
+    "label": { "es": "Subir foto", "en": "Upload photo", "pt": "Enviar foto", "fr": "Importer une photo", "de": "Foto hochladen", "it": "Carica foto", "ja": "写真をアップロード", "zh": "上传照片", "ko": "사진 업로드", "ar": "رفع صورة" },
+    "keywords": {
+      "es": ["cargar imagen", "publicar", "compartir", "foto de perfil", "adjuntar", "enviar", "nube"],
+      "en": ["add image", "post", "share", "profile picture", "attach", "send", "cloud"]
+    }
+  },
+  "image-lock": {
+    "label": { "es": "Foto privada", "en": "Private photo", "pt": "Foto privada", "fr": "Photo privée", "de": "Privates Foto", "it": "Foto privata", "ja": "非公開の写真", "zh": "私密照片", "ko": "비공개 사진", "ar": "صورة خاصة" },
+    "keywords": {
+      "es": ["oculta", "protegida", "candado", "álbum oculto", "privacidad", "bloqueada", "solo yo"],
+      "en": ["hidden", "protected", "lock", "hidden album", "privacy", "only me", "secure"]
+    }
+  },
+  "image-x": {
+    "label": { "es": "Quitar foto", "en": "Remove photo", "pt": "Remover foto", "fr": "Retirer la photo", "de": "Foto entfernen", "it": "Rimuovi foto", "ja": "写真を削除", "zh": "移除照片", "ko": "사진 삭제", "ar": "إزالة الصورة" },
+    "keywords": {
+      "es": ["eliminar", "borrar", "descartar", "papelera", "rechazar", "foto de perfil", "cancelar"],
+      "en": ["delete", "erase", "discard", "trash", "reject", "profile picture", "cancel"]
+    }
+  }
+}

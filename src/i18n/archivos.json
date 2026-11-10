@@ -142,8 +142,8 @@
   "file-pdf": {
     "label": { "es": "Archivo PDF", "en": "PDF file", "pt": "Arquivo PDF", "fr": "Fichier PDF", "de": "PDF-Datei", "it": "File PDF", "ja": "PDFファイル", "zh": "PDF 文件", "ko": "PDF 파일", "ar": "ملف PDF" },
     "keywords": {
-      "es": ["documento para imprimir", "documento final", "factura", "contrato", "informe", "formato portátil", "acrobat"],
-      "en": ["printable document", "final document", "invoice", "contract", "report", "portable document format", "acrobat"]
+      "es": ["documento para imprimir", "documento final", "descargar en PDF", "factura", "contrato", "informe", "formato portátil", "acrobat"],
+      "en": ["printable document", "final document", "download as PDF", "invoice", "contract", "report", "portable document format", "acrobat"]
     }
   },
   "file-zip": {

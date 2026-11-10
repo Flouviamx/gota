@@ -1,0 +1,653 @@
+{
+  "soccer-ball": {
+    "label": { "es": "Balón de fútbol", "en": "Soccer ball", "pt": "Bola de futebol", "fr": "Ballon de football", "de": "Fußball", "it": "Pallone da calcio", "ja": "サッカーボール", "zh": "足球", "ko": "축구공", "ar": "كرة قدم" },
+    "keywords": {
+      "es": ["futbol", "soccer", "gol", "partido", "marcador en vivo", "liga", "deportes"],
+      "en": ["football", "goal", "match", "live scores", "league", "sports", "kickoff"]
+    }
+  },
+  "basketball": {
+    "label": { "es": "Balón de básquetbol", "en": "Basketball", "pt": "Bola de basquete", "fr": "Ballon de basket", "de": "Basketball", "it": "Pallone da basket", "ja": "バスケットボール", "zh": "篮球", "ko": "농구공", "ar": "كرة سلة" },
+    "keywords": {
+      "es": ["basquet", "baloncesto", "canasta", "aro", "partido", "marcador", "deportes"],
+      "en": ["hoops", "court", "game score", "dribble", "slam dunk", "league", "sports"]
+    }
+  },
+  "american-football": {
+    "label": { "es": "Balón de fútbol americano", "en": "American football", "pt": "Bola de futebol americano", "fr": "Ballon de football américain", "de": "American-Football-Ball", "it": "Pallone da football americano", "ja": "アメフトのボール", "zh": "美式橄榄球", "ko": "미식축구공", "ar": "كرة القدم الأمريكية" },
+    "keywords": {
+      "es": ["emparrillado", "touchdown", "anotación", "ovoide", "fantasy", "tochito", "temporada"],
+      "en": ["gridiron", "touchdown", "pigskin", "fantasy football", "football game", "quarterback", "season"]
+    }
+  },
+  "baseball": {
+    "label": { "es": "Pelota de béisbol", "en": "Baseball", "pt": "Bola de beisebol", "fr": "Balle de baseball", "de": "Baseball", "it": "Palla da baseball", "ja": "野球ボール", "zh": "棒球", "ko": "야구공", "ar": "كرة بيسبول" },
+    "keywords": {
+      "es": ["beis", "softbol", "entradas", "jonrón", "lanzamiento", "diamante", "partido"],
+      "en": ["softball", "innings", "home run", "pitch", "ballgame", "stitches", "sports"]
+    }
+  },
+  "tennis-ball": {
+    "label": { "es": "Pelota de tenis", "en": "Tennis ball", "pt": "Bola de tênis", "fr": "Balle de tennis", "de": "Tennisball", "it": "Pallina da tennis", "ja": "テニスボール", "zh": "网球", "ko": "테니스공", "ar": "كرة تنس" },
+    "keywords": {
+      "es": ["pádel", "frontenis", "cancha", "deporte de raqueta", "set", "clase", "reservar cancha"],
+      "en": ["padel", "court", "racket sports", "match", "lesson", "court session", "serve"]
+    }
+  },
+  "volleyball": {
+    "label": { "es": "Balón de voleibol", "en": "Volleyball", "pt": "Bola de vôlei", "fr": "Ballon de volley", "de": "Volleyball", "it": "Pallone da pallavolo", "ja": "バレーボール", "zh": "排球", "ko": "배구공", "ar": "كرة طائرة" },
+    "keywords": {
+      "es": ["voli", "vóley de playa", "voleibol de sala", "remate", "red", "deporte de equipo", "torneo"],
+      "en": ["beach volleyball", "indoor volleyball", "spike", "net", "team sports", "serve", "tournament"]
+    }
+  },
+  "rugby-ball": {
+    "label": { "es": "Balón de rugby", "en": "Rugby ball", "pt": "Bola de rúgbi", "fr": "Ballon de rugby", "de": "Rugbyball", "it": "Pallone da rugby", "ja": "ラグビーボール", "zh": "英式橄榄球", "ko": "럭비공", "ar": "كرة رغبي" },
+    "keywords": {
+      "es": ["ovoide", "try", "melé", "scrum", "club", "fútbol australiano", "partido"],
+      "en": ["try", "scrum", "Aussie rules", "rugby union", "rugby league", "club", "match"]
+    }
+  },
+  "golf-ball": {
+    "label": { "es": "Pelota de golf", "en": "Golf ball", "pt": "Bola de golfe", "fr": "Balle de golf", "de": "Golfball", "it": "Pallina da golf", "ja": "ゴルフボール", "zh": "高尔夫球", "ko": "골프공", "ar": "كرة غولف" },
+    "keywords": {
+      "es": ["tee", "salida", "campo de práctica", "hoyo", "green", "golfista", "torneo"],
+      "en": ["tee", "tee off", "driving range", "hole", "green", "golfer", "dimples"]
+    }
+  },
+  "bowling-ball": {
+    "label": { "es": "Bola de boliche", "en": "Bowling ball", "pt": "Bola de boliche", "fr": "Boule de bowling", "de": "Bowlingkugel", "it": "Palla da bowling", "ja": "ボウリングのボール", "zh": "保龄球", "ko": "볼링공", "ar": "كرة بولينغ" },
+    "keywords": {
+      "es": ["bolos", "carril", "liga", "chuza", "pinos", "noche de bolos", "torneo"],
+      "en": ["alley", "lanes", "league", "strike", "spare", "pins", "tenpin"]
+    }
+  },
+  "billiard-ball": {
+    "label": { "es": "Bola de billar", "en": "Billiard ball", "pt": "Bola de bilhar", "fr": "Boule de billard", "de": "Billardkugel", "it": "Palla da biliardo", "ja": "ビリヤードボール", "zh": "台球", "ko": "당구공", "ar": "كرة بلياردو" },
+    "keywords": {
+      "es": ["pool", "bola ocho", "snooker", "carambola", "taco", "buchaca", "salón de pool"],
+      "en": ["pool", "eight ball", "snooker", "cue sports", "cue", "pocket", "pool hall"]
+    }
+  },
+  "pickleball": {
+    "label": { "es": "Pelota de pickleball", "en": "Pickleball", "pt": "Bola de pickleball", "fr": "Balle de pickleball", "de": "Pickleball-Ball", "it": "Pallina da pickleball", "ja": "ピックルボールのボール", "zh": "匹克球", "ko": "피클볼 공", "ar": "كرة بيكلبول" },
+    "keywords": {
+      "es": ["cancha", "juego libre", "deporte de pala", "paleta", "dobles", "club", "partido"],
+      "en": ["court", "open play", "paddle sports", "wiffle ball", "doubles", "dink", "club"]
+    }
+  },
+  "shuttlecock": {
+    "label": { "es": "Gallito de bádminton", "en": "Shuttlecock", "pt": "Volante de badminton", "fr": "Volant de badminton", "de": "Federball", "it": "Volano", "ja": "バドミントンのシャトル", "zh": "羽毛球", "ko": "셔틀콕", "ar": "ريشة البادمنتون" },
+    "keywords": {
+      "es": ["volante", "pluma", "raqueta", "cancha", "deporte de raqueta", "remate", "dobles"],
+      "en": ["badminton", "birdie", "shuttle", "court", "racket sports", "smash", "doubles"]
+    }
+  },
+  "hockey-puck": {
+    "label": { "es": "Disco de hockey", "en": "Hockey puck", "pt": "Disco de hóquei", "fr": "Palet de hockey", "de": "Eishockey-Puck", "it": "Disco da hockey", "ja": "ホッケーのパック", "zh": "冰球", "ko": "하키 퍽", "ar": "قرص الهوكي" },
+    "keywords": {
+      "es": ["puck", "hockey sobre hielo", "pista de hielo", "partido", "liga", "palo", "portería"],
+      "en": ["ice hockey", "rink", "hockey game", "face-off", "slapshot", "goal", "league"]
+    }
+  },
+  "tennis-racket": {
+    "label": { "es": "Raqueta de tenis", "en": "Tennis racket", "pt": "Raquete de tênis", "fr": "Raquette de tennis", "de": "Tennisschläger", "it": "Racchetta da tennis", "ja": "テニスラケット", "zh": "网球拍", "ko": "테니스 라켓", "ar": "مضرب تنس" },
+    "keywords": {
+      "es": ["frontenis", "squash", "renta de raquetas", "cancha", "deporte de raqueta", "clase", "encordado"],
+      "en": ["squash", "racket rental", "court sports", "racquet", "lesson", "strings", "serve"]
+    }
+  },
+  "padel-racket": {
+    "label": { "es": "Raqueta de pádel", "en": "Padel racket", "pt": "Raquete de padel", "fr": "Raquette de padel", "de": "Padelschläger", "it": "Racchetta da padel", "ja": "パデルラケット", "zh": "板式网球拍", "ko": "파델 라켓", "ar": "مضرب بادل" },
+    "keywords": {
+      "es": ["pala", "reservar cancha", "cancha de cristal", "club deportivo", "dobles", "torneo", "clase"],
+      "en": ["paddle tennis", "court booking", "glass court", "sports club", "doubles", "racket sports", "lesson"]
+    }
+  },
+  "badminton-racket": {
+    "label": { "es": "Raqueta de bádminton", "en": "Badminton racket", "pt": "Raquete de badminton", "fr": "Raquette de badminton", "de": "Badmintonschläger", "it": "Racchetta da badminton", "ja": "バドミントンラケット", "zh": "羽毛球拍", "ko": "배드민턴 라켓", "ar": "مضرب الريشة الطائرة" },
+    "keywords": {
+      "es": ["gallito", "volante", "cancha", "deporte de raqueta", "raqueta ligera", "dobles", "club"],
+      "en": ["shuttlecock", "birdie", "court", "racket sports", "light racket", "doubles", "smash"]
+    }
+  },
+  "table-tennis-paddle": {
+    "label": { "es": "Raqueta de ping-pong", "en": "Table tennis paddle", "pt": "Raquete de pingue-pongue", "fr": "Raquette de ping-pong", "de": "Tischtennisschläger", "it": "Racchetta da ping-pong", "ja": "卓球のラケット", "zh": "乒乓球拍", "ko": "탁구채", "ar": "مضرب تنس الطاولة" },
+    "keywords": {
+      "es": ["tenis de mesa", "paleta", "pelota", "club", "sala de juegos", "mesa", "partido"],
+      "en": ["ping pong", "paddle", "bat", "club", "game room", "rally", "spin"]
+    }
+  },
+  "baseball-bat": {
+    "label": { "es": "Bate de béisbol", "en": "Baseball bat", "pt": "Taco de beisebol", "fr": "Batte de baseball", "de": "Baseballschläger", "it": "Mazza da baseball", "ja": "野球のバット", "zh": "棒球棒", "ko": "야구 방망이", "ar": "مضرب بيسبول" },
+    "keywords": {
+      "es": ["batear", "softbol", "jonrón", "turno al bat", "bateador", "pelota", "beis"],
+      "en": ["batting", "softball", "home run", "at bat", "batter", "slugger", "hit"]
+    }
+  },
+  "cricket-bat": {
+    "label": { "es": "Bate de críquet", "en": "Cricket bat", "pt": "Taco de críquete", "fr": "Batte de cricket", "de": "Cricketschläger", "it": "Mazza da cricket", "ja": "クリケットのバット", "zh": "板球拍", "ko": "크리켓 배트", "ar": "مضرب كريكيت" },
+    "keywords": {
+      "es": ["batear", "club", "carreras", "bateador", "partido", "wicket", "entradas"],
+      "en": ["batting", "cricket club", "runs", "batsman", "batter", "match", "willow"]
+    }
+  },
+  "golf-club": {
+    "label": { "es": "Palo de golf", "en": "Golf club", "pt": "Taco de golfe", "fr": "Club de golf", "de": "Golfschläger", "it": "Mazza da golf", "ja": "ゴルフクラブ", "zh": "高尔夫球杆", "ko": "골프채", "ar": "مضرب غولف" },
+    "keywords": {
+      "es": ["driver", "hierro", "putter", "swing", "tienda de golf", "ajuste de palos", "golfista"],
+      "en": ["driver", "iron", "putter", "swing", "golf shop", "club fitting", "wedge"]
+    }
+  },
+  "hockey-stick": {
+    "label": { "es": "Palo de hockey", "en": "Hockey stick", "pt": "Taco de hóquei", "fr": "Crosse de hockey", "de": "Eishockeyschläger", "it": "Bastone da hockey", "ja": "ホッケースティック", "zh": "冰球杆", "ko": "하키 스틱", "ar": "عصا الهوكي" },
+    "keywords": {
+      "es": ["hockey sobre hielo", "disco", "puck", "equipo de hockey", "pista de hielo", "tiro", "jugador"],
+      "en": ["ice hockey", "puck", "hockey gear", "rink", "slapshot", "player", "equipment"]
+    }
+  },
+  "baseball-glove": {
+    "label": { "es": "Guante de béisbol", "en": "Baseball glove", "pt": "Luva de beisebol", "fr": "Gant de baseball", "de": "Baseballhandschuh", "it": "Guantone da baseball", "ja": "野球のグローブ", "zh": "棒球手套", "ko": "야구 글러브", "ar": "قفاز بيسبول" },
+    "keywords": {
+      "es": ["manopla", "atrapar", "fildear", "cácher", "softbol", "jardinero", "defensa"],
+      "en": ["mitt", "catch", "fielding", "catcher", "softball", "outfield", "defense"]
+    }
+  },
+  "golf-bag": {
+    "label": { "es": "Bolsa de golf", "en": "Golf bag", "pt": "Bolsa de golfe", "fr": "Sac de golf", "de": "Golftasche", "it": "Sacca da golf", "ja": "ゴルフバッグ", "zh": "高尔夫球包", "ko": "골프백", "ar": "حقيبة غولف" },
+    "keywords": {
+      "es": ["palos", "equipo de golf", "caddie", "guardar palos", "campo", "renta de equipo", "golfista"],
+      "en": ["clubs", "golf equipment", "caddie", "club storage", "golf gear", "equipment rental", "course"]
+    }
+  },
+  "soccer-goal": {
+    "label": { "es": "Portería de fútbol", "en": "Soccer goal", "pt": "Gol de futebol", "fr": "But de football", "de": "Fußballtor", "it": "Porta da calcio", "ja": "サッカーゴール", "zh": "足球门", "ko": "축구 골대", "ar": "مرمى كرة القدم" },
+    "keywords": {
+      "es": ["gol", "anotar", "arco", "portero", "red", "fútbol rápido", "golazo"],
+      "en": ["goal scored", "net", "goalkeeper", "score", "five-a-side", "goalie", "pitch"]
+    }
+  },
+  "basketball-hoop": {
+    "label": { "es": "Canasta de básquetbol", "en": "Basketball hoop", "pt": "Cesta de basquete", "fr": "Panier de basket", "de": "Basketballkorb", "it": "Canestro", "ja": "バスケットゴール", "zh": "篮筐", "ko": "농구 골대", "ar": "سلة كرة السلة" },
+    "keywords": {
+      "es": ["aro", "tablero", "encestar", "tiro libre", "cancha", "clavada", "triple"],
+      "en": ["backboard", "rim", "shooting", "court", "free throw", "slam dunk", "three-pointer"]
+    }
+  },
+  "volleyball-net": {
+    "label": { "es": "Red de voleibol", "en": "Volleyball net", "pt": "Rede de vôlei", "fr": "Filet de volley", "de": "Volleyballnetz", "it": "Rete da pallavolo", "ja": "バレーボールのネット", "zh": "排球网", "ko": "배구 네트", "ar": "شبكة الكرة الطائرة" },
+    "keywords": {
+      "es": ["red de tenis", "red de bádminton", "postes", "cancha", "deportes de red", "vóley de playa", "remate"],
+      "en": ["tennis net", "badminton net", "posts", "court", "net sports", "beach volleyball", "spike"]
+    }
+  },
+  "goalpost": {
+    "label": { "es": "Postes de gol", "en": "Goalpost", "pt": "Traves em H", "fr": "Poteaux de but", "de": "Torstangen", "it": "Pali della porta", "ja": "ゴールポスト", "zh": "球门柱", "ko": "골포스트", "ar": "قائما المرمى" },
+    "keywords": {
+      "es": ["gol de campo", "punto extra", "patada", "conversión", "rugby", "fútbol americano", "anotación"],
+      "en": ["field goal", "extra point", "kick", "conversion", "rugby", "uprights", "crossbar"]
+    }
+  },
+  "cricket-wicket": {
+    "label": { "es": "Wicket de críquet", "en": "Cricket wicket", "pt": "Wicket de críquete", "fr": "Guichet de cricket", "de": "Cricket-Wicket", "it": "Wicket da cricket", "ja": "クリケットのウィケット", "zh": "板球三柱门", "ko": "크리켓 위켓", "ar": "ويكت الكريكيت" },
+    "keywords": {
+      "es": ["postes", "travesaños", "eliminado", "fuera", "lanzador", "partido", "palos"],
+      "en": ["stumps", "bails", "out", "wicket taken", "bowled", "bowler", "match"]
+    }
+  },
+  "archery-target": {
+    "label": { "es": "Diana de tiro con arco", "en": "Archery target", "pt": "Alvo de tiro com arco", "fr": "Cible de tir à l’arc", "de": "Bogenscheibe", "it": "Bersaglio per tiro con l’arco", "ja": "アーチェリーの的", "zh": "射箭靶", "ko": "양궁 과녁", "ar": "هدف الرماية بالقوس" },
+    "keywords": {
+      "es": ["arquería", "blanco", "flecha", "práctica de tiro", "campo de tiro", "puntería", "centro"],
+      "en": ["archery", "bullseye", "arrow", "target practice", "archery range", "aim", "bow"]
+    }
+  },
+  "bowling-pin": {
+    "label": { "es": "Pino de boliche", "en": "Bowling pin", "pt": "Pino de boliche", "fr": "Quille de bowling", "de": "Bowling-Pin", "it": "Birillo da bowling", "ja": "ボウリングのピン", "zh": "保龄球瓶", "ko": "볼링 핀", "ar": "قارورة بولينغ" },
+    "keywords": {
+      "es": ["bolos", "chuza", "carril", "liga", "spare", "bola", "torneo"],
+      "en": ["strike", "alley", "lanes", "league", "spare", "tenpin", "skittle"]
+    }
+  },
+  "curling-stone": {
+    "label": { "es": "Piedra de curling", "en": "Curling stone", "pt": "Pedra de curling", "fr": "Pierre de curling", "de": "Curlingstein", "it": "Stone da curling", "ja": "カーリングストーン", "zh": "冰壶", "ko": "컬링 스톤", "ar": "حجر الكيرلنغ" },
+    "keywords": {
+      "es": ["deportes de invierno", "hielo", "escoba", "barrer", "pista de hielo", "casa", "lanzamiento"],
+      "en": ["winter sports", "ice", "broom", "sweeping", "sheet", "house", "rink"]
+    }
+  },
+  "football-helmet": {
+    "label": { "es": "Casco de fútbol americano", "en": "Football helmet", "pt": "Capacete de futebol americano", "fr": "Casque de football américain", "de": "Football-Helm", "it": "Casco da football americano", "ja": "アメフトのヘルメット", "zh": "橄榄球头盔", "ko": "미식축구 헬멧", "ar": "خوذة كرة القدم الأمريكية" },
+    "keywords": {
+      "es": ["equipo", "protección", "jugador", "seguridad", "emparrillado", "tochito", "uniforme"],
+      "en": ["team", "gear", "player safety", "protection", "gridiron", "quarterback", "uniform"]
+    }
+  },
+  "bike-helmet": {
+    "label": { "es": "Casco de ciclismo", "en": "Bike helmet", "pt": "Capacete de ciclismo", "fr": "Casque de vélo", "de": "Fahrradhelm", "it": "Casco da bici", "ja": "自転車用ヘルメット", "zh": "自行车头盔", "ko": "자전거 헬멧", "ar": "خوذة دراجة" },
+    "keywords": {
+      "es": ["bici", "carrera de ruta", "bici de montaña", "protección", "seguridad vial", "rodada", "ciclista"],
+      "en": ["cycling", "road racing", "mountain biking", "protection", "safety", "bike ride", "cyclist"]
+    }
+  },
+  "racing-helmet": {
+    "label": { "es": "Casco de carreras", "en": "Racing helmet", "pt": "Capacete de corrida", "fr": "Casque de course", "de": "Rennhelm", "it": "Casco da corsa", "ja": "レーシングヘルメット", "zh": "赛车头盔", "ko": "레이싱 헬멧", "ar": "خوذة سباق" },
+    "keywords": {
+      "es": ["automovilismo", "piloto", "fórmula", "motociclismo", "karting", "deportes de motor", "gran premio"],
+      "en": ["motorsport", "driver", "formula racing", "motorcycle racing", "karting", "grand prix", "rider"]
+    }
+  },
+  "ski-goggles": {
+    "label": { "es": "Goggles de esquí", "en": "Ski goggles", "pt": "Óculos de esqui", "fr": "Masque de ski", "de": "Skibrille", "it": "Maschera da sci", "ja": "スキーゴーグル", "zh": "滑雪护目镜", "ko": "스키 고글", "ar": "نظارة تزلج" },
+    "keywords": {
+      "es": ["esquiar", "snowboard", "lentes", "nieve", "tienda de esquí", "visor", "montaña"],
+      "en": ["skiing", "snowboarding", "eyewear", "snow", "ski shop", "visor", "mountain"]
+    }
+  },
+  "soccer-cleat": {
+    "label": { "es": "Zapato de fútbol", "en": "Soccer cleat", "pt": "Chuteira", "fr": "Chaussure de football", "de": "Fußballschuh", "it": "Scarpa da calcio", "ja": "サッカースパイク", "zh": "足球鞋", "ko": "축구화", "ar": "حذاء كرة القدم" },
+    "keywords": {
+      "es": ["tacos", "tachones", "botines", "calzado deportivo", "cancha", "tienda deportiva", "jugador"],
+      "en": ["football boots", "studs", "cleats", "sports shoes", "pitch", "sporting goods", "player"]
+    }
+  },
+  "referee-shirt": {
+    "label": { "es": "Playera de árbitro", "en": "Referee shirt", "pt": "Camisa de árbitro", "fr": "Maillot d’arbitre", "de": "Schiedsrichtertrikot", "it": "Maglia da arbitro", "ja": "審判のシャツ", "zh": "裁判服", "ko": "심판 셔츠", "ar": "قميص الحكم" },
+    "keywords": {
+      "es": ["arbitraje", "juez", "silbante", "oficiales", "rayas", "uniforme", "réferi"],
+      "en": ["officials", "umpire", "refereeing", "ref", "stripes", "uniform", "match official"]
+    }
+  },
+  "wrestling-mask": {
+    "label": { "es": "Máscara de luchador", "en": "Wrestling mask", "pt": "Máscara de luta livre", "fr": "Masque de catch", "de": "Wrestling-Maske", "it": "Maschera da wrestling", "ja": "プロレスのマスク", "zh": "摔跤面具", "ko": "레슬링 마스크", "ar": "قناع المصارعة" },
+    "keywords": {
+      "es": ["lucha libre", "enmascarado", "función de lucha", "arena", "rudos y técnicos", "cuadrilátero"],
+      "en": ["lucha libre", "pro wrestling", "masked wrestler", "luchador", "wrestling event", "ring", "Mexican wrestling"]
+    }
+  },
+  "skis": {
+    "label": { "es": "Esquís", "en": "Skis", "pt": "Esquis", "fr": "Skis", "de": "Ski", "it": "Sci", "ja": "スキー板", "zh": "双板滑雪板", "ko": "스키", "ar": "زلاجات" },
+    "keywords": {
+      "es": ["esquiar", "renta de equipo", "centro de esquí", "pista", "nieve", "montaña", "bastones"],
+      "en": ["skiing", "ski rental", "ski resort", "slopes", "snow", "mountain", "poles"]
+    }
+  },
+  "snowboard": {
+    "label": { "es": "Tabla de snowboard", "en": "Snowboard", "pt": "Prancha de snowboard", "fr": "Planche de snowboard", "de": "Snowboard", "it": "Tavola da snowboard", "ja": "スノーボードの板", "zh": "单板滑雪板", "ko": "스노보드", "ar": "لوح تزلج على الثلج" },
+    "keywords": {
+      "es": ["renta de equipo", "snowpark", "nieve", "montaña", "freestyle", "deportes de invierno", "centro de esquí"],
+      "en": ["snowboarding", "board rental", "terrain park", "snow", "mountain", "freestyle", "winter sports"]
+    }
+  },
+  "ice-skate": {
+    "label": { "es": "Patín de hielo", "en": "Ice skate", "pt": "Patim de gelo", "fr": "Patin à glace", "de": "Schlittschuh", "it": "Pattino da ghiaccio", "ja": "アイススケート靴", "zh": "冰刀鞋", "ko": "스케이트화", "ar": "زلاجة الجليد" },
+    "keywords": {
+      "es": ["patinaje", "pista de hielo", "renta de patines", "patinaje artístico", "cuchilla", "hockey", "invierno"],
+      "en": ["skating", "rink", "skate rental", "figure skating", "blade", "hockey", "winter"]
+    }
+  },
+  "roller-skate": {
+    "label": { "es": "Patín de ruedas", "en": "Roller skate", "pt": "Patim de rodas", "fr": "Patin à roulettes", "de": "Rollschuh", "it": "Pattino a rotelle", "ja": "ローラースケート", "zh": "旱冰鞋", "ko": "롤러스케이트", "ar": "زلاجة بعجلات" },
+    "keywords": {
+      "es": ["patinar", "roller derby", "pista de patinaje", "retro", "rollerdisco", "cuatro ruedas", "renta de patines"],
+      "en": ["roller skating", "quad skate", "roller derby", "rink", "retro", "roller disco", "skate rental"]
+    }
+  },
+  "skateboard": {
+    "label": { "es": "Patineta", "en": "Skateboard", "pt": "Skate", "fr": "Skateboard", "de": "Skateboard", "it": "Skateboard", "ja": "スケートボード", "zh": "滑板", "ko": "스케이트보드", "ar": "لوح تزلج" },
+    "keywords": {
+      "es": ["skate", "patinar", "tienda de skate", "skatepark", "calle", "trucos", "deportes urbanos"],
+      "en": ["skating", "skate shop", "skatepark", "street", "tricks", "deck", "street sports"]
+    }
+  },
+  "surfboard": {
+    "label": { "es": "Tabla de surf", "en": "Surfboard", "pt": "Prancha de surfe", "fr": "Planche de surf", "de": "Surfbrett", "it": "Tavola da surf", "ja": "サーフボード", "zh": "冲浪板", "ko": "서핑보드", "ar": "لوح ركوب الأمواج" },
+    "keywords": {
+      "es": ["surfear", "escuela de surf", "renta de tablas", "olas", "playa", "surfista", "deportes acuáticos"],
+      "en": ["surfing", "surf school", "board rental", "waves", "beach", "surfer", "water sports"]
+    }
+  },
+  "chairlift": {
+    "label": { "es": "Telesilla", "en": "Chairlift", "pt": "Teleférico de cadeiras", "fr": "Télésiège", "de": "Sessellift", "it": "Seggiovia", "ja": "チェアリフト", "zh": "吊椅缆车", "ko": "체어리프트", "ar": "مصعد التزلج بالكراسي" },
+    "keywords": {
+      "es": ["centro de esquí", "remonte", "teleférico", "estado de pistas", "montaña", "subir", "pase de esquí"],
+      "en": ["ski resort", "ski lift", "lift status", "mountain", "lift pass", "gondola", "slopes"]
+    }
+  },
+  "half-pipe": {
+    "label": { "es": "Rampa half-pipe", "en": "Half-pipe", "pt": "Half-pipe", "fr": "Half-pipe", "de": "Halfpipe", "it": "Half-pipe", "ja": "ハーフパイプ", "zh": "U型池", "ko": "하프파이프", "ar": "منحدر نصف أنبوبي" },
+    "keywords": {
+      "es": ["skatepark", "snowpark", "freestyle", "trucos", "medio tubo", "patineta", "snowboard"],
+      "en": ["skatepark", "terrain park", "freestyle", "tricks", "ramp", "vert", "snowboarding"]
+    }
+  },
+  "stadium": {
+    "label": { "es": "Estadio", "en": "Stadium", "pt": "Estádio", "fr": "Stade", "de": "Stadion", "it": "Stadio", "ja": "スタジアム", "zh": "体育场", "ko": "경기장", "ar": "ملعب" },
+    "keywords": {
+      "es": ["partido", "sede", "boletos", "recinto", "afición", "eventos deportivos", "arena"],
+      "en": ["match", "venue", "sports tickets", "arena", "fans", "sporting events", "ballpark"]
+    }
+  },
+  "stadium-lights": {
+    "label": { "es": "Reflectores de estadio", "en": "Stadium lights", "pt": "Refletores do estádio", "fr": "Projecteurs de stade", "de": "Flutlicht", "it": "Riflettori dello stadio", "ja": "スタジアムの照明", "zh": "球场照明灯", "ko": "경기장 조명", "ar": "أضواء الملعب" },
+    "keywords": {
+      "es": ["partido nocturno", "cancha iluminada", "iluminación", "luminarias", "torre de luz", "alumbrado", "horario nocturno"],
+      "en": ["night game", "floodlights", "lit court", "lighting", "light tower", "night match", "lit field"]
+    }
+  },
+  "soccer-field": {
+    "label": { "es": "Cancha de fútbol", "en": "Soccer field", "pt": "Campo de futebol", "fr": "Terrain de football", "de": "Fußballplatz", "it": "Campo da calcio", "ja": "サッカー場", "zh": "足球场", "ko": "축구장", "ar": "ملعب كرة قدم" },
+    "keywords": {
+      "es": ["campo", "fútbol rápido", "fútbol 7", "sede", "pasto", "renta de cancha", "partido"],
+      "en": ["pitch", "five-a-side", "venue", "turf", "field rental", "match", "football ground"]
+    }
+  },
+  "soccer-field-clock": {
+    "label": { "es": "Reservar cancha", "en": "Book a pitch", "pt": "Reservar campo", "fr": "Réserver un terrain", "de": "Platz buchen", "it": "Prenota il campo", "ja": "グラウンドを予約", "zh": "预订球场", "ko": "구장 예약", "ar": "حجز ملعب" },
+    "keywords": {
+      "es": ["renta de cancha", "horario", "apartar", "horarios disponibles", "fútbol rápido", "agenda", "turno"],
+      "en": ["field rental", "time slot", "reserve", "available slots", "five-a-side", "schedule", "booking"]
+    }
+  },
+  "football-field": {
+    "label": { "es": "Campo de fútbol americano", "en": "Football field", "pt": "Campo de futebol americano", "fr": "Terrain de football américain", "de": "Footballfeld", "it": "Campo da football americano", "ja": "アメフトのフィールド", "zh": "橄榄球场", "ko": "미식축구장", "ar": "ملعب كرة القدم الأمريكية" },
+    "keywords": {
+      "es": ["emparrillado", "yardas", "zona de anotación", "sede", "estadio", "tochito", "partido"],
+      "en": ["gridiron", "yard lines", "end zone", "venue", "stadium", "game", "football ground"]
+    }
+  },
+  "basketball-court": {
+    "label": { "es": "Cancha de básquetbol", "en": "Basketball court", "pt": "Quadra de basquete", "fr": "Terrain de basket", "de": "Basketballplatz", "it": "Campo da basket", "ja": "バスケットボールコート", "zh": "篮球场", "ko": "농구장", "ar": "ملعب كرة السلة" },
+    "keywords": {
+      "es": ["duela", "sede", "reservar cancha", "gimnasio", "liga", "aro", "partido"],
+      "en": ["hardwood", "venue", "court booking", "gym", "league", "hoops", "game"]
+    }
+  },
+  "tennis-court": {
+    "label": { "es": "Cancha de tenis", "en": "Tennis court", "pt": "Quadra de tênis", "fr": "Court de tennis", "de": "Tennisplatz", "it": "Campo da tennis", "ja": "テニスコート", "zh": "网球场", "ko": "테니스장", "ar": "ملعب تنس" },
+    "keywords": {
+      "es": ["pádel", "reservas", "club", "arcilla", "superficie", "partido", "clase"],
+      "en": ["padel court", "bookings", "club", "clay", "hard court", "match", "lesson"]
+    }
+  },
+  "baseball-diamond": {
+    "label": { "es": "Diamante de béisbol", "en": "Baseball diamond", "pt": "Campo de beisebol", "fr": "Terrain de baseball", "de": "Baseballfeld", "it": "Diamante da baseball", "ja": "野球場", "zh": "棒球场", "ko": "야구장", "ar": "ملعب بيسبول" },
+    "keywords": {
+      "es": ["parque de pelota", "campo", "bases", "softbol", "estadio", "jardín", "home"],
+      "en": ["ballpark", "infield", "bases", "softball field", "home plate", "outfield", "stadium"]
+    }
+  },
+  "golf-course": {
+    "label": { "es": "Campo de golf", "en": "Golf course", "pt": "Campo de golfe", "fr": "Parcours de golf", "de": "Golfplatz", "it": "Campo da golf", "ja": "ゴルフ場", "zh": "高尔夫球场", "ko": "골프장", "ar": "ملعب غولف" },
+    "keywords": {
+      "es": ["green", "bandera", "hoyo", "club campestre", "ronda", "fairway", "reservar salida"],
+      "en": ["green", "flag", "hole", "country club", "round", "fairway", "tee time"]
+    }
+  },
+  "boxing-ring": {
+    "label": { "es": "Ring de box", "en": "Boxing ring", "pt": "Ringue de boxe", "fr": "Ring de boxe", "de": "Boxring", "it": "Ring di pugilato", "ja": "ボクシングリング", "zh": "拳击台", "ko": "복싱 링", "ar": "حلبة ملاكمة" },
+    "keywords": {
+      "es": ["cuadrilátero", "pelea", "boxeo", "deportes de combate", "función", "esquina", "cuerdas"],
+      "en": ["fight", "combat sports", "bout", "corner", "ropes", "fight night", "wrestling"]
+    }
+  },
+  "diving-board": {
+    "label": { "es": "Trampolín de clavados", "en": "Diving board", "pt": "Trampolim", "fr": "Plongeoir", "de": "Sprungbrett", "it": "Trampolino", "ja": "飛び込み板", "zh": "跳水板", "ko": "다이빙대", "ar": "منصة الغطس" },
+    "keywords": {
+      "es": ["clavadista", "alberca", "fosa", "salto", "plataforma", "natación", "tirarse al agua"],
+      "en": ["diving", "springboard", "pool", "jump", "platform", "high dive", "swimming"]
+    }
+  },
+  "billiard-table": {
+    "label": { "es": "Mesa de billar", "en": "Billiard table", "pt": "Mesa de bilhar", "fr": "Table de billard", "de": "Billardtisch", "it": "Tavolo da biliardo", "ja": "ビリヤード台", "zh": "台球桌", "ko": "당구대", "ar": "طاولة بلياردو" },
+    "keywords": {
+      "es": ["pool", "snooker", "salón de pool", "taco", "buchacas", "carambola", "bar"],
+      "en": ["pool table", "snooker", "pool hall", "cue", "pockets", "cue sports", "bar"]
+    }
+  },
+  "whistle": {
+    "label": { "es": "Silbato", "en": "Whistle", "pt": "Apito", "fr": "Sifflet", "de": "Trillerpfeife", "it": "Fischietto", "ja": "ホイッスル", "zh": "哨子", "ko": "호루라기", "ar": "صفارة" },
+    "keywords": {
+      "es": ["árbitro", "entrenador", "pitazo", "inicio del partido", "entrenamiento", "deportes", "falta"],
+      "en": ["referee", "coach", "kickoff", "training", "sports", "foul", "PE class"]
+    }
+  },
+  "scoreboard": {
+    "label": { "es": "Marcador", "en": "Scoreboard", "pt": "Placar", "fr": "Tableau d’affichage", "de": "Anzeigetafel", "it": "Tabellone segnapunti", "ja": "スコアボード", "zh": "记分牌", "ko": "점수판", "ar": "لوحة النتائج" },
+    "keywords": {
+      "es": ["resultados", "en vivo", "puntuación", "partido", "tablero", "goles", "score"],
+      "en": ["live scores", "results", "match score", "points", "board", "game", "tally"]
+    }
+  },
+  "penalty-card": {
+    "label": { "es": "Tarjeta del árbitro", "en": "Penalty card", "pt": "Cartão do árbitro", "fr": "Carton de l’arbitre", "de": "Schiedsrichterkarte", "it": "Cartellino dell’arbitro", "ja": "審判のカード", "zh": "裁判牌", "ko": "심판 카드", "ar": "بطاقة الحكم" },
+    "keywords": {
+      "es": ["tarjeta amarilla", "tarjeta roja", "amonestación", "expulsión", "falta", "sanción", "amonestado"],
+      "en": ["yellow card", "red card", "booking", "caution", "sent off", "foul", "referee"]
+    }
+  },
+  "corner-flag": {
+    "label": { "es": "Banderín de tiro de esquina", "en": "Corner flag", "pt": "Bandeira de escanteio", "fr": "Drapeau de corner", "de": "Eckfahne", "it": "Bandierina del calcio d’angolo", "ja": "コーナーフラッグ", "zh": "角旗", "ko": "코너 깃발", "ar": "راية الركنية" },
+    "keywords": {
+      "es": ["córner", "saque de esquina", "esquina de la cancha", "balón parado", "fútbol", "línea de fondo"],
+      "en": ["corner kick", "corner", "set piece", "pitch", "soccer", "touchline", "flag post"]
+    }
+  },
+  "checkered-flag": {
+    "label": { "es": "Bandera a cuadros", "en": "Checkered flag", "pt": "Bandeira quadriculada", "fr": "Drapeau à damier", "de": "Zielflagge", "it": "Bandiera a scacchi", "ja": "チェッカーフラッグ", "zh": "方格旗", "ko": "체커기", "ar": "العلم ذو المربعات" },
+    "keywords": {
+      "es": ["meta", "llegada", "ganador", "carrera", "automovilismo", "fin de la carrera", "podio"],
+      "en": ["finish", "finish line", "race won", "winner", "motorsport", "end of race", "victory"]
+    }
+  },
+  "tournament-bracket": {
+    "label": { "es": "Cuadro del torneo", "en": "Tournament bracket", "pt": "Chaveamento do torneio", "fr": "Tableau du tournoi", "de": "Turnierbaum", "it": "Tabellone del torneo", "ja": "トーナメント表", "zh": "淘汰赛对阵图", "ko": "대진표", "ar": "جدول البطولة" },
+    "keywords": {
+      "es": ["llaves", "eliminatoria", "liguilla", "sorteo", "playoffs", "bracket", "competencia"],
+      "en": ["playoffs", "knockout", "draw", "elimination", "seeding", "competition", "finals"]
+    }
+  },
+  "lineup": {
+    "label": { "es": "Alineación", "en": "Lineup", "pt": "Escalação", "fr": "Composition d’équipe", "de": "Aufstellung", "it": "Formazione", "ja": "メンバー表", "zh": "首发阵容", "ko": "라인업", "ar": "تشكيلة الفريق" },
+    "keywords": {
+      "es": ["formación", "once inicial", "titulares", "posiciones", "plantilla", "táctica", "convocatoria"],
+      "en": ["formation", "starting eleven", "starters", "positions", "roster", "tactics", "team sheet"]
+    }
+  },
+  "tactics-board": {
+    "label": { "es": "Pizarra táctica", "en": "Tactics board", "pt": "Prancheta tática", "fr": "Tableau tactique", "de": "Taktiktafel", "it": "Lavagna tattica", "ja": "作戦ボード", "zh": "战术板", "ko": "작전판", "ar": "لوحة التكتيك" },
+    "keywords": {
+      "es": ["jugadas", "estrategia", "entrenador", "ejercicios", "plan de juego", "pizarrón", "director técnico"],
+      "en": ["plays", "strategy", "coach", "drills", "game plan", "playbook", "clipboard"]
+    }
+  },
+  "team-crest": {
+    "label": { "es": "Escudo del equipo", "en": "Team crest", "pt": "Escudo do time", "fr": "Écusson de l’équipe", "de": "Vereinswappen", "it": "Stemma della squadra", "ja": "チームエンブレム", "zh": "队徽", "ko": "팀 엠블럼", "ar": "شعار الفريق" },
+    "keywords": {
+      "es": ["club", "página del equipo", "insignia", "emblema", "franquicia", "afición", "liga"],
+      "en": ["club", "team page", "badge", "emblem", "franchise", "fans", "league"]
+    }
+  },
+  "matchup": {
+    "label": { "es": "Enfrentamiento", "en": "Matchup", "pt": "Confronto", "fr": "Affrontement", "de": "Begegnung", "it": "Sfida", "ja": "対戦カード", "zh": "对阵", "ko": "맞대결", "ar": "مواجهة" },
+    "keywords": {
+      "es": ["contra", "versus", "partido", "duelo", "cara a cara", "rival", "jornada"],
+      "en": ["head to head", "versus", "fixture", "game", "rivalry", "vs", "opponent"]
+    }
+  },
+  "calendar-ball": {
+    "label": { "es": "Día de partido", "en": "Match day", "pt": "Dia de jogo", "fr": "Jour de match", "de": "Spieltag", "it": "Giorno della partita", "ja": "試合日", "zh": "比赛日", "ko": "경기일", "ar": "يوم المباراة" },
+    "keywords": {
+      "es": ["calendario deportivo", "jornada", "fecha", "próximos partidos", "programación", "temporada", "rol de juegos"],
+      "en": ["fixtures", "game schedule", "sports calendar", "upcoming games", "season", "game day", "matchweek"]
+    }
+  },
+  "pennant": {
+    "label": { "es": "Banderín del equipo", "en": "Team pennant", "pt": "Flâmula do time", "fr": "Fanion de l’équipe", "de": "Vereinswimpel", "it": "Gagliardetto", "ja": "ペナント", "zh": "球队锦旗", "ko": "팀 페넌트", "ar": "راية الفريق" },
+    "keywords": {
+      "es": ["afición", "porra", "espíritu de equipo", "recuerdo", "artículos del club", "fan", "campeonato"],
+      "en": ["fans", "team spirit", "club merch", "souvenir", "supporters", "championship", "banner"]
+    }
+  },
+  "foam-finger": {
+    "label": { "es": "Mano de espuma", "en": "Foam finger", "pt": "Mão de espuma", "fr": "Main en mousse", "de": "Schaumstoffhand", "it": "Mano di gommapiuma", "ja": "フォームフィンガー", "zh": "泡沫加油手", "ko": "응원 폼 핑거", "ar": "إصبع إسفنجي للتشجيع" },
+    "keywords": {
+      "es": ["afición", "porra", "animar", "zona de fans", "número uno", "tribuna", "apoyar al equipo"],
+      "en": ["fans", "cheering", "fan zone", "number one", "supporters", "go team", "stands"]
+    }
+  },
+  "relay-torch": {
+    "label": { "es": "Antorcha de relevos", "en": "Relay torch", "pt": "Tocha do revezamento", "fr": "Flambeau du relais", "de": "Staffelfackel", "it": "Fiaccola", "ja": "聖火トーチ", "zh": "接力火炬", "ko": "성화봉", "ar": "شعلة التتابع" },
+    "keywords": {
+      "es": ["ceremonia de inauguración", "los juegos", "llama", "fuego", "competencia", "encendido", "justa deportiva"],
+      "en": ["opening ceremony", "the games", "flame", "fire", "competition", "lighting", "torchbearer"]
+    }
+  },
+  "hurdle": {
+    "label": { "es": "Valla", "en": "Hurdle", "pt": "Barreira", "fr": "Haie", "de": "Hürde", "it": "Ostacolo", "ja": "ハードル", "zh": "跨栏架", "ko": "허들", "ar": "حاجز" },
+    "keywords": {
+      "es": ["carrera con vallas", "atletismo", "obstáculo", "pista", "equipo de atletismo", "salto", "entrenamiento"],
+      "en": ["hurdles race", "athletics", "obstacle", "track", "track and field", "barrier", "training"]
+    }
+  },
+  "hurdling": {
+    "label": { "es": "Carrera con vallas", "en": "Hurdling", "pt": "Corrida com barreiras", "fr": "Course de haies", "de": "Hürdenlauf", "it": "Corsa a ostacoli", "ja": "ハードル走", "zh": "跨栏", "ko": "허들 달리기", "ar": "سباق الحواجز" },
+    "keywords": {
+      "es": ["vallista", "atletismo", "saltar obstáculo", "pista", "velocista", "110 metros", "competencia"],
+      "en": ["hurdles", "athletics", "track", "clearing a hurdle", "sprinter", "110m", "track and field"]
+    }
+  },
+  "soccer-player": {
+    "label": { "es": "Jugar fútbol", "en": "Playing soccer", "pt": "Jogar futebol", "fr": "Jouer au football", "de": "Fußball spielen", "it": "Giocare a calcio", "ja": "サッカーをする", "zh": "踢足球", "ko": "축구하기", "ar": "لعب كرة القدم" },
+    "keywords": {
+      "es": ["futbolista", "jugador", "patear el balón", "cancha", "cascarita", "partido", "driblar"],
+      "en": ["soccer player", "footballer", "kick", "pitch", "pickup game", "match", "dribble"]
+    }
+  },
+  "goalkeeper": {
+    "label": { "es": "Portero", "en": "Goalkeeper", "pt": "Goleiro", "fr": "Gardien de but", "de": "Torwart", "it": "Portiere", "ja": "ゴールキーパー", "zh": "守门员", "ko": "골키퍼", "ar": "حارس المرمى" },
+    "keywords": {
+      "es": ["atajada", "arquero", "guardameta", "parada", "portería", "lance", "guantes"],
+      "en": ["save", "goalie", "keeper", "diving save", "goal", "gloves", "clean sheet"]
+    }
+  },
+  "basketball-player": {
+    "label": { "es": "Jugar básquetbol", "en": "Playing basketball", "pt": "Jogar basquete", "fr": "Jouer au basket", "de": "Basketball spielen", "it": "Giocare a basket", "ja": "バスケットボールをする", "zh": "打篮球", "ko": "농구하기", "ar": "لعب كرة السلة" },
+    "keywords": {
+      "es": ["basquetbolista", "jugador", "tiro a la canasta", "encestar", "cancha", "clavada", "botar el balón"],
+      "en": ["basketball player", "shooting", "jump shot", "court", "dunk", "dribble", "hoops"]
+    }
+  },
+  "tennis-player": {
+    "label": { "es": "Jugar tenis", "en": "Playing tennis", "pt": "Jogar tênis", "fr": "Jouer au tennis", "de": "Tennis spielen", "it": "Giocare a tennis", "ja": "テニスをする", "zh": "打网球", "ko": "테니스 치기", "ar": "لعب التنس" },
+    "keywords": {
+      "es": ["tenista", "saque", "servicio", "raqueta", "cancha", "partido", "golpe"],
+      "en": ["tennis player", "serve", "racket", "court", "match", "forehand", "rally"]
+    }
+  },
+  "baseball-player": {
+    "label": { "es": "Batear", "en": "Batting", "pt": "Rebater", "fr": "Frapper la balle", "de": "Schlagmann", "it": "Battuta", "ja": "バッティング", "zh": "击球", "ko": "타격", "ar": "ضرب الكرة" },
+    "keywords": {
+      "es": ["bateador", "beisbolista", "softbol", "turno al bat", "jonrón", "bate", "beis"],
+      "en": ["batter", "baseball player", "softball", "at bat", "home run", "swing", "slugger"]
+    }
+  },
+  "hockey-player": {
+    "label": { "es": "Jugar hockey", "en": "Playing hockey", "pt": "Jogar hóquei", "fr": "Jouer au hockey", "de": "Eishockey spielen", "it": "Giocare a hockey", "ja": "アイスホッケーをする", "zh": "打冰球", "ko": "하키하기", "ar": "لعب الهوكي" },
+    "keywords": {
+      "es": ["jugador de hockey", "hockey sobre hielo", "pista de hielo", "palo", "disco", "patinar", "partido"],
+      "en": ["hockey player", "ice hockey", "rink", "stick", "puck", "skating", "game"]
+    }
+  },
+  "skiing": {
+    "label": { "es": "Esquí alpino", "en": "Downhill skiing", "pt": "Esqui alpino", "fr": "Ski alpin", "de": "Skifahren", "it": "Sci alpino", "ja": "アルペンスキー", "zh": "高山滑雪", "ko": "알파인 스키", "ar": "التزلج على المنحدرات" },
+    "keywords": {
+      "es": ["esquiar", "esquiador", "pista", "descenso", "viaje de esquí", "nieve", "montaña"],
+      "en": ["skier", "ski trip", "slopes", "descent", "snow", "mountain", "ski resort"]
+    }
+  },
+  "snowboarding": {
+    "label": { "es": "Snowboard", "en": "Snowboarding", "pt": "Snowboard", "fr": "Snowboard", "de": "Snowboarden", "it": "Snowboard", "ja": "スノーボード", "zh": "单板滑雪", "ko": "스노보드 타기", "ar": "التزلج على اللوح الثلجي" },
+    "keywords": {
+      "es": ["snowboarder", "nieve", "montaña", "snowpark", "deportes de invierno", "freestyle", "pista"],
+      "en": ["snowboarder", "snow", "mountain", "terrain park", "winter sports", "freestyle", "slopes"]
+    }
+  },
+  "surfing": {
+    "label": { "es": "Surf", "en": "Surfing", "pt": "Surfe", "fr": "Surf", "de": "Surfen", "it": "Surf", "ja": "サーフィン", "zh": "冲浪", "ko": "서핑", "ar": "ركوب الأمواج" },
+    "keywords": {
+      "es": ["surfear", "surfista", "olas", "playa", "clases de surf", "deportes acuáticos", "tabla"],
+      "en": ["surfer", "waves", "beach", "surf lessons", "water sports", "board", "ride a wave"]
+    }
+  },
+  "windsurfing": {
+    "label": { "es": "Windsurf", "en": "Windsurfing", "pt": "Windsurfe", "fr": "Planche à voile", "de": "Windsurfen", "it": "Windsurf", "ja": "ウィンドサーフィン", "zh": "帆板", "ko": "윈드서핑", "ar": "التزلج الشراعي" },
+    "keywords": {
+      "es": ["tabla vela", "vela", "viento", "playa", "deportes acuáticos", "laguna", "kitesurf"],
+      "en": ["sailboard", "sail", "wind", "beach", "water sports", "board sailing", "kitesurfing"]
+    }
+  },
+  "skateboarding": {
+    "label": { "es": "Andar en patineta", "en": "Skateboarding", "pt": "Andar de skate", "fr": "Faire du skate", "de": "Skateboarden", "it": "Andare in skateboard", "ja": "スケートボードをする", "zh": "玩滑板", "ko": "스케이트보드 타기", "ar": "التزلج على اللوح" },
+    "keywords": {
+      "es": ["skate", "patinador", "trucos", "skatepark", "calle", "ollie", "deportes urbanos"],
+      "en": ["skating", "skater", "tricks", "skatepark", "street", "ollie", "street sports"]
+    }
+  },
+  "ice-skating": {
+    "label": { "es": "Patinaje sobre hielo", "en": "Ice skating", "pt": "Patinação no gelo", "fr": "Patinage sur glace", "de": "Eislaufen", "it": "Pattinaggio su ghiaccio", "ja": "アイススケート", "zh": "滑冰", "ko": "아이스 스케이팅", "ar": "التزلج على الجليد" },
+    "keywords": {
+      "es": ["patinaje artístico", "patinador", "pista de hielo", "giros", "invierno", "danza sobre hielo", "clases de patinaje"],
+      "en": ["figure skating", "skater", "rink", "spins", "winter", "ice dance", "skating lessons"]
+    }
+  },
+  "gymnastics": {
+    "label": { "es": "Gimnasia", "en": "Gymnastics", "pt": "Ginástica", "fr": "Gymnastique", "de": "Turnen", "it": "Ginnastica", "ja": "体操", "zh": "体操", "ko": "체조", "ar": "الجمباز" },
+    "keywords": {
+      "es": ["gimnasta", "acrobacia", "voltereta", "barras asimétricas", "viga de equilibrio", "rutina", "piso"],
+      "en": ["gymnast", "acrobatics", "flip", "uneven bars", "balance beam", "routine", "floor exercise"]
+    }
+  },
+  "martial-arts": {
+    "label": { "es": "Artes marciales", "en": "Martial arts", "pt": "Artes marciais", "fr": "Arts martiaux", "de": "Kampfsport", "it": "Arti marziali", "ja": "武道", "zh": "武术", "ko": "무술", "ar": "الفنون القتالية" },
+    "keywords": {
+      "es": ["karate", "taekwondo", "kickboxing", "patada", "dojo", "clases", "defensa personal"],
+      "en": ["karate", "taekwondo", "kickboxing", "kick", "dojo", "classes", "self-defense"]
+    }
+  },
+  "horse-riding": {
+    "label": { "es": "Equitación", "en": "Horse riding", "pt": "Equitação", "fr": "Équitation", "de": "Reiten", "it": "Equitazione", "ja": "乗馬", "zh": "骑马", "ko": "승마", "ar": "ركوب الخيل" },
+    "keywords": {
+      "es": ["caballo", "jinete", "salto ecuestre", "clases de montar", "deportes ecuestres", "charrería", "cabalgata"],
+      "en": ["horse", "rider", "show jumping", "riding school", "equestrian", "dressage", "trail ride"]
+    }
+  },
+  "wheelchair-basketball": {
+    "label": { "es": "Básquetbol en silla de ruedas", "en": "Wheelchair basketball", "pt": "Basquete em cadeira de rodas", "fr": "Basket fauteuil", "de": "Rollstuhlbasketball", "it": "Basket in carrozzina", "ja": "車いすバスケットボール", "zh": "轮椅篮球", "ko": "휠체어 농구", "ar": "كرة السلة على الكراسي المتحركة" },
+    "keywords": {
+      "es": ["deporte adaptado", "paradeporte", "inclusión", "discapacidad", "accesibilidad", "cancha", "jugador"],
+      "en": ["adaptive sports", "para sports", "inclusion", "disability", "accessibility", "court", "player"]
+    }
+  },
+  "parachute": {
+    "label": { "es": "Paracaídas", "en": "Parachute", "pt": "Paraquedas", "fr": "Parachute", "de": "Fallschirm", "it": "Paracadute", "ja": "パラシュート", "zh": "降落伞", "ko": "낙하산", "ar": "مظلة هبوط" },
+    "keywords": {
+      "es": ["paracaidismo", "salto", "caída libre", "aterrizaje", "tándem", "deportes extremos", "avioneta"],
+      "en": ["skydiving", "jump", "freefall", "landing", "tandem jump", "extreme sports", "airdrop"]
+    }
+  },
+  "race-car": {
+    "label": { "es": "Auto de carreras", "en": "Race car", "pt": "Carro de corrida", "fr": "Voiture de course", "de": "Rennwagen", "it": "Auto da corsa", "ja": "レーシングカー", "zh": "赛车", "ko": "레이싱카", "ar": "سيارة سباق" },
+    "keywords": {
+      "es": ["automovilismo", "fórmula", "piloto", "gran premio", "monoplaza", "velocidad", "pits"],
+      "en": ["motorsport", "formula racing", "driver", "grand prix", "single-seater", "speed", "pit stop"]
+    }
+  },
+  "go-kart": {
+    "label": { "es": "Go-kart", "en": "Go-kart", "pt": "Kart", "fr": "Kart", "de": "Gokart", "it": "Go-kart", "ja": "ゴーカート", "zh": "卡丁车", "ko": "고카트", "ar": "سيارة كارت" },
+    "keywords": {
+      "es": ["karting", "kartódromo", "pista de karts", "carreras", "diversión", "piloto", "fiesta de cumpleaños"],
+      "en": ["karting", "kart track", "racing", "fun", "driver", "birthday party", "indoor karting"]
+    }
+  }
+}

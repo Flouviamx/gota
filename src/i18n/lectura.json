@@ -1,0 +1,310 @@
+{
+  "book-plus": {
+    "label": { "es": "Agregar libro", "en": "Add book", "pt": "Adicionar livro", "fr": "Ajouter un livre", "de": "Buch hinzufügen", "it": "Aggiungi libro", "ja": "本を追加", "zh": "添加图书", "ko": "책 추가", "ar": "إضافة كتاب" },
+    "keywords": {
+      "es": ["quiero leer", "por leer", "agregar a mi biblioteca", "guardar para después", "nueva lectura", "estante", "lista de deseos", "registrar un título"],
+      "en": ["want to read", "to-read shelf", "add to library", "save for later", "new read", "shelve", "reading wishlist", "log a title"]
+    }
+  },
+  "book-check": {
+    "label": { "es": "Libro leído", "en": "Marked as read", "pt": "Livro lido", "fr": "Livre lu", "de": "Gelesenes Buch", "it": "Libro letto", "ja": "読了", "zh": "读完的书", "ko": "다 읽은 책", "ar": "كتاب مقروء" },
+    "keywords": {
+      "es": ["terminado", "marcar como leído", "lectura completada", "préstamo registrado", "libro prestado", "reto de lectura", "ya lo leí"],
+      "en": ["finished", "read shelf", "completed", "checked out", "loan confirmed", "reading challenge", "done reading"]
+    }
+  },
+  "book-clock": {
+    "label": { "es": "Fecha de devolución", "en": "Loan due date", "pt": "Data de devolução", "fr": "Date de retour", "de": "Rückgabedatum", "it": "Data di restituzione", "ja": "返却期限", "zh": "还书日期", "ko": "반납 기한", "ar": "موعد إرجاع الكتاب" },
+    "keywords": {
+      "es": ["vencimiento del préstamo", "renovar préstamo", "apartado en espera", "reserva de libro", "tiempo de lectura", "minutos de lectura", "recordatorio", "multa por retraso"],
+      "en": ["due back", "renew loan", "hold waiting", "book reservation", "reading time", "minutes to read", "reminder", "overdue"]
+    }
+  },
+  "book-heart": {
+    "label": { "es": "Libros favoritos", "en": "Favorite books", "pt": "Livros favoritos", "fr": "Livres préférés", "de": "Lieblingsbücher", "it": "Libri preferiti", "ja": "お気に入りの本", "zh": "喜爱的书", "ko": "좋아하는 책", "ar": "الكتب المفضلة" },
+    "keywords": {
+      "es": ["me encanta", "recomendación", "imprescindible", "lo más querido", "lista de deseos", "guardados", "club de lectura"],
+      "en": ["loved", "recommended", "must read", "all-time favorites", "wishlist", "saved", "book club"]
+    }
+  },
+  "book-search": {
+    "label": { "es": "Buscar libros", "en": "Search books", "pt": "Buscar livros", "fr": "Rechercher des livres", "de": "Bücher suchen", "it": "Cerca libri", "ja": "本を探す", "zh": "搜索图书", "ko": "책 검색", "ar": "البحث عن كتب" },
+    "keywords": {
+      "es": ["catálogo de la biblioteca", "buscar por título", "buscar por autor", "librería", "consultar acervo", "encontrar un libro", "ISBN"],
+      "en": ["library catalog", "search by title", "search by author", "bookstore", "find a book", "browse titles", "ISBN lookup"]
+    }
+  },
+  "book-lock": {
+    "label": { "es": "Libro protegido", "en": "Locked book", "pt": "Livro protegido", "fr": "Livre protégé", "de": "Geschütztes Buch", "it": "Libro protetto", "ja": "保護された本", "zh": "受保护的图书", "ko": "보호된 책", "ar": "كتاب محمي" },
+    "keywords": {
+      "es": ["solo para miembros", "contenido exclusivo", "compra requerida", "DRM", "acceso restringido", "suscripción", "derechos de autor"],
+      "en": ["members only", "exclusive content", "purchase required", "DRM", "restricted access", "subscription", "copy protected"]
+    }
+  },
+  "book-download": {
+    "label": { "es": "Descargar libro", "en": "Download book", "pt": "Baixar livro", "fr": "Télécharger le livre", "de": "Buch herunterladen", "it": "Scarica libro", "ja": "本をダウンロード", "zh": "下载图书", "ko": "책 다운로드", "ar": "تنزيل الكتاب" },
+    "keywords": {
+      "es": ["libro electrónico", "audiolibro", "leer sin conexión", "préstamo digital", "biblioteca digital", "guardar en el dispositivo", "EPUB", "PDF"],
+      "en": ["e-book", "audiobook", "read offline", "digital loan", "borrow", "save to device", "EPUB", "PDF"]
+    }
+  },
+  "book-edit": {
+    "label": { "es": "Escribir un libro", "en": "Write a book", "pt": "Escrever um livro", "fr": "Écrire un livre", "de": "Buch schreiben", "it": "Scrivi un libro", "ja": "本を書く", "zh": "写书", "ko": "책 쓰기", "ar": "تأليف كتاب" },
+    "keywords": {
+      "es": ["anotar", "notas al margen", "subrayar", "resaltados", "redactar", "autoría", "editar texto", "comentarios de lectura"],
+      "en": ["annotate", "margin notes", "highlights", "underline", "draft", "authoring", "edit text", "reading notes"]
+    }
+  },
+  "book-barcode": {
+    "label": { "es": "ISBN del libro", "en": "Book ISBN", "pt": "ISBN do livro", "fr": "ISBN du livre", "de": "ISBN des Buchs", "it": "ISBN del libro", "ja": "書籍のISBN", "zh": "图书 ISBN", "ko": "도서 ISBN", "ar": "رقم ISBN للكتاب" },
+    "keywords": {
+      "es": ["código de barras", "escanear libro", "agregar por código", "registrar libro", "inventario", "número de libro", "catalogar"],
+      "en": ["barcode", "scan book", "add by barcode", "catalog", "inventory", "book number", "lookup"]
+    }
+  },
+  "hardcover": {
+    "label": { "es": "Pasta dura", "en": "Hardcover", "pt": "Capa dura", "fr": "Relié", "de": "Gebundene Ausgabe", "it": "Copertina rigida", "ja": "ハードカバー", "zh": "精装本", "ko": "양장본", "ar": "طبعة بغلاف مقوّى" },
+    "keywords": {
+      "es": ["tapa dura", "edición de lujo", "libro impreso", "formato", "edición de coleccionista", "encuadernado", "libro físico"],
+      "en": ["hardback", "deluxe edition", "print edition", "format", "collector's edition", "bound book", "physical book"]
+    }
+  },
+  "paperback": {
+    "label": { "es": "Pasta blanda", "en": "Paperback", "pt": "Brochura", "fr": "Broché", "de": "Taschenbuch", "it": "Copertina flessibile", "ja": "ペーパーバック", "zh": "平装本", "ko": "페이퍼백", "ar": "طبعة بغلاف ورقي" },
+    "keywords": {
+      "es": ["tapa blanda", "edición de bolsillo", "rústica", "libro impreso", "formato", "edición económica", "libro físico"],
+      "en": ["softcover", "pocket edition", "mass market", "print edition", "format", "budget edition", "physical book"]
+    }
+  },
+  "ebook": {
+    "label": { "es": "Libro electrónico", "en": "E-book", "pt": "Livro digital", "fr": "Livre numérique", "de": "E-Book", "it": "E-book", "ja": "電子書籍", "zh": "电子书", "ko": "전자책", "ar": "كتاب إلكتروني" },
+    "keywords": {
+      "es": ["ebook", "lector electrónico", "tinta electrónica", "EPUB", "edición digital", "formato", "leer en el celular", "tableta"],
+      "en": ["digital book", "e-reader", "e-ink", "EPUB", "digital edition", "format", "read on phone", "tablet"]
+    }
+  },
+  "audiobook": {
+    "label": { "es": "Audiolibro", "en": "Audiobook", "pt": "Audiolivro", "fr": "Livre audio", "de": "Hörbuch", "it": "Audiolibro", "ja": "オーディオブック", "zh": "有声书", "ko": "오디오북", "ar": "كتاب صوتي" },
+    "keywords": {
+      "es": ["escuchar un libro", "narración", "audífonos", "libro narrado", "pódcast", "formato", "lectura en voz alta"],
+      "en": ["listen to a book", "narration", "headphones", "narrated", "spoken word", "format", "read aloud"]
+    }
+  },
+  "atlas": {
+    "label": { "es": "Atlas", "en": "Atlas", "pt": "Atlas", "fr": "Atlas", "de": "Atlas", "it": "Atlante", "ja": "地図帳", "zh": "地图集", "ko": "지도책", "ar": "أطلس" },
+    "keywords": {
+      "es": ["geografía", "mapas", "mapamundi", "libro de mapas", "países", "cartografía", "escuela", "viajes"],
+      "en": ["geography", "maps", "world map", "map book", "countries", "cartography", "school", "travel"]
+    }
+  },
+  "book-award": {
+    "label": { "es": "Libro premiado", "en": "Award-winning book", "pt": "Livro premiado", "fr": "Livre primé", "de": "Preisgekröntes Buch", "it": "Libro premiato", "ja": "受賞作品", "zh": "获奖图书", "ko": "수상작", "ar": "كتاب حائز على جائزة" },
+    "keywords": {
+      "es": ["premio literario", "galardón", "ganador", "mejor libro", "reconocimiento", "medalla", "finalista"],
+      "en": ["literary prize", "winner", "best book", "honor", "medal", "acclaimed", "shortlist"]
+    }
+  },
+  "book-fantasy": {
+    "label": { "es": "Libros de fantasía", "en": "Fantasy books", "pt": "Livros de fantasia", "fr": "Livres de fantasy", "de": "Fantasy-Bücher", "it": "Libri fantasy", "ja": "ファンタジー小説", "zh": "奇幻小说", "ko": "판타지 소설", "ar": "كتب الفانتازيا" },
+    "keywords": {
+      "es": ["magia", "dragones", "espada y hechicería", "mundos imaginarios", "género literario", "cuentos de hadas", "épica", "novela"],
+      "en": ["magic", "dragons", "sword and sorcery", "imaginary worlds", "genre", "fairy tales", "epic quest", "novel"]
+    }
+  },
+  "book-sci-fi": {
+    "label": { "es": "Libros de ciencia ficción", "en": "Science fiction books", "pt": "Livros de ficção científica", "fr": "Livres de science-fiction", "de": "Science-Fiction-Bücher", "it": "Libri di fantascienza", "ja": "SF小説", "zh": "科幻小说", "ko": "SF 소설", "ar": "كتب الخيال العلمي" },
+    "keywords": {
+      "es": ["sci-fi", "futuro", "espacio", "robots", "naves espaciales", "distopía", "género literario", "viaje en el tiempo"],
+      "en": ["sci-fi", "future", "space", "robots", "spaceships", "dystopia", "genre", "time travel"]
+    }
+  },
+  "book-mystery": {
+    "label": { "es": "Libros de misterio", "en": "Mystery books", "pt": "Livros de mistério", "fr": "Romans policiers", "de": "Krimis", "it": "Gialli", "ja": "ミステリー小説", "zh": "悬疑小说", "ko": "추리 소설", "ar": "كتب الغموض" },
+    "keywords": {
+      "es": ["novela policiaca", "suspenso", "detective", "crimen", "thriller", "intriga", "quién lo hizo", "género literario"],
+      "en": ["detective", "crime fiction", "thriller", "suspense", "whodunit", "crime novel", "genre", "noir"]
+    }
+  },
+  "book-cover": {
+    "label": { "es": "Portada del libro", "en": "Book cover", "pt": "Capa do livro", "fr": "Couverture du livre", "de": "Buchcover", "it": "Copertina del libro", "ja": "本の表紙", "zh": "书籍封面", "ko": "책 표지", "ar": "غلاف الكتاب" },
+    "keywords": {
+      "es": ["diseño de portada", "subir portada", "ilustración de portada", "carátula", "arte de tapa", "miniatura", "editorial"],
+      "en": ["cover design", "upload cover", "cover art", "dust jacket", "front cover", "thumbnail", "publishing"]
+    }
+  },
+  "antique-book": {
+    "label": { "es": "Libro antiguo", "en": "Antique book", "pt": "Livro antigo", "fr": "Livre ancien", "de": "Antiquarisches Buch", "it": "Libro antico", "ja": "古書", "zh": "古籍", "ko": "고서", "ar": "كتاب عتيق" },
+    "keywords": {
+      "es": ["libro raro", "clásico", "primera edición", "librería de viejo", "anticuario", "coleccionable", "reliquia", "ejemplar histórico"],
+      "en": ["rare book", "classic", "first edition", "antiquarian", "secondhand bookshop", "collectible", "old book", "heirloom"]
+    }
+  },
+  "picture-book": {
+    "label": { "es": "Libro ilustrado", "en": "Picture book", "pt": "Livro ilustrado", "fr": "Album illustré", "de": "Bilderbuch", "it": "Libro illustrato", "ja": "絵本", "zh": "绘本", "ko": "그림책", "ar": "كتاب أطفال مصوّر" },
+    "keywords": {
+      "es": ["cuento infantil", "libro para niños", "ilustraciones", "primeros lectores", "literatura infantil", "dibujos", "preescolar"],
+      "en": ["children's book", "kids' story", "illustrations", "early readers", "children's literature", "drawings", "preschool"]
+    }
+  },
+  "comic-book": {
+    "label": { "es": "Cómic", "en": "Comic book", "pt": "Revista em quadrinhos", "fr": "Bande dessinée", "de": "Comicheft", "it": "Fumetto", "ja": "コミック", "zh": "漫画书", "ko": "만화책", "ar": "مجلة قصص مصورة" },
+    "keywords": {
+      "es": ["novela gráfica", "historieta", "manga", "superhéroes", "viñetas", "revista de cómics", "tienda de cómics"],
+      "en": ["graphic novel", "manga", "superheroes", "panels", "comic shop", "single issue", "illustrated story"]
+    }
+  },
+  "pop-up-book": {
+    "label": { "es": "Libro desplegable", "en": "Pop-up book", "pt": "Livro pop-up", "fr": "Livre animé", "de": "Pop-up-Buch", "it": "Libro pop-up", "ja": "飛び出す絵本", "zh": "立体书", "ko": "팝업북", "ar": "كتاب مجسّم" },
+    "keywords": {
+      "es": ["libro pop-up", "cuentos infantiles", "libro interactivo", "figuras en 3D", "libro para niños", "sorpresa", "manualidad de papel"],
+      "en": ["children's stories", "interactive book", "3D pages", "kids' book", "paper engineering", "movable book", "surprise"]
+    }
+  },
+  "bedtime-story": {
+    "label": { "es": "Cuento para dormir", "en": "Bedtime story", "pt": "História para dormir", "fr": "Histoire du soir", "de": "Gutenachtgeschichte", "it": "Favola della buonanotte", "ja": "寝る前のお話", "zh": "睡前故事", "ko": "잠자리 동화", "ar": "قصة قبل النوم" },
+    "keywords": {
+      "es": ["hora del cuento", "leer a los niños", "lectura en voz alta", "rutina de sueño", "cuentos infantiles", "buenas noches", "fábula"],
+      "en": ["story time", "read to kids", "read aloud", "bedtime routine", "fairy tale", "good night", "children's stories"]
+    }
+  },
+  "book-quote": {
+    "label": { "es": "Cita del libro", "en": "Book quote", "pt": "Citação do livro", "fr": "Citation du livre", "de": "Buchzitat", "it": "Citazione dal libro", "ja": "本の引用", "zh": "书摘", "ko": "책 속 인용구", "ar": "اقتباس من كتاب" },
+    "keywords": {
+      "es": ["frase", "subrayado", "fragmento", "pasaje", "frase célebre", "compartir", "resaltado"],
+      "en": ["quotation", "highlight", "excerpt", "passage", "famous line", "share", "underlined"]
+    }
+  },
+  "book-tabs": {
+    "label": { "es": "Páginas marcadas", "en": "Flagged pages", "pt": "Páginas marcadas", "fr": "Pages marquées", "de": "Markierte Seiten", "it": "Pagine segnate", "ja": "付箋を貼ったページ", "zh": "标记的书页", "ko": "표시한 페이지", "ar": "صفحات معلَّمة" },
+    "keywords": {
+      "es": ["banderitas adhesivas", "pestañas", "notas adhesivas", "pasajes", "subrayados", "estudio", "referencias", "separadores"],
+      "en": ["page flags", "sticky tabs", "sticky notes", "passages", "annotations", "study", "references", "index tabs"]
+    }
+  },
+  "book-review": {
+    "label": { "es": "Reseña de libro", "en": "Book review", "pt": "Resenha de livro", "fr": "Critique de livre", "de": "Buchrezension", "it": "Recensione del libro", "ja": "書評", "zh": "书评", "ko": "서평", "ar": "مراجعة كتاب" },
+    "keywords": {
+      "es": ["opinión", "crítica literaria", "calificación", "estrellas", "comentarios de lectores", "club de lectura", "recomendación"],
+      "en": ["opinion", "literary criticism", "rating", "stars", "reader comments", "book club", "recommendation"]
+    }
+  },
+  "book-open-flip": {
+    "label": { "es": "Pasar la página", "en": "Turn the page", "pt": "Virar a página", "fr": "Tourner la page", "de": "Umblättern", "it": "Gira pagina", "ja": "ページをめくる", "zh": "翻页", "ko": "페이지 넘기기", "ar": "قلب الصفحة" },
+    "keywords": {
+      "es": ["hojear", "siguiente página", "recorrer el libro", "lector electrónico", "vista previa", "echar un vistazo", "pasar hojas"],
+      "en": ["flip through", "next page", "browse book", "e-reader", "preview", "look inside", "leaf through"]
+    }
+  },
+  "book-open-dog-ear": {
+    "label": { "es": "Esquina doblada", "en": "Dog-eared page", "pt": "Página com orelha", "fr": "Page cornée", "de": "Eselsohr", "it": "Pagina con orecchia", "ja": "角を折ったページ", "zh": "折角页", "ko": "모서리를 접은 페이지", "ar": "صفحة مطويّة الزاوية" },
+    "keywords": {
+      "es": ["marcar página", "doblar la hoja", "dónde me quedé", "seguir leyendo", "lector electrónico", "separador", "página guardada"],
+      "en": ["mark page", "fold corner", "where I left off", "continue reading", "e-reader", "bookmark", "saved page"]
+    }
+  },
+  "book-open-progress": {
+    "label": { "es": "Progreso de lectura", "en": "Reading progress", "pt": "Progresso de leitura", "fr": "Progression de lecture", "de": "Lesefortschritt", "it": "Progresso di lettura", "ja": "読書の進捗", "zh": "阅读进度", "ko": "독서 진행률", "ar": "تقدّم القراءة" },
+    "keywords": {
+      "es": ["porcentaje leído", "páginas leídas", "seguir leyendo", "capítulo actual", "meta de lectura", "barra de avance", "lectura en curso"],
+      "en": ["percent read", "pages read", "continue reading", "current chapter", "reading goal", "progress bar", "currently reading"]
+    }
+  },
+  "book-list": {
+    "label": { "es": "Lista de lectura", "en": "Reading list", "pt": "Lista de leitura", "fr": "Liste de lectures", "de": "Leseliste", "it": "Lista di lettura", "ja": "読書リスト", "zh": "书单", "ko": "독서 목록", "ar": "قائمة القراءة" },
+    "keywords": {
+      "es": ["por leer", "pendientes", "bibliografía", "recomendaciones", "colección", "programa del curso", "reto de lectura", "listado de libros"],
+      "en": ["to read", "backlog", "bibliography", "recommendations", "collection", "syllabus", "reading challenge", "book list"]
+    }
+  },
+  "person-reading": {
+    "label": { "es": "Persona leyendo", "en": "Person reading", "pt": "Pessoa lendo", "fr": "Personne qui lit", "de": "Lesende Person", "it": "Persona che legge", "ja": "読書する人", "zh": "看书的人", "ko": "책 읽는 사람", "ar": "شخص يقرأ" },
+    "keywords": {
+      "es": ["lector", "lectores", "hora de leer", "tiempo de lectura", "club de lectura", "estudiar", "biblioteca", "comunidad lectora"],
+      "en": ["reader", "readers", "reading time", "book club", "study", "library", "readership", "quiet time"]
+    }
+  },
+  "author": {
+    "label": { "es": "Autor", "en": "Author", "pt": "Autor", "fr": "Auteur", "de": "Autor", "it": "Autore", "ja": "著者", "zh": "作者", "ko": "저자", "ar": "مؤلف" },
+    "keywords": {
+      "es": ["escritor", "novelista", "semblanza", "firma de libros", "creador", "redacción", "poeta", "obra"],
+      "en": ["writer", "novelist", "bio", "book signing", "creator", "writing", "poet", "byline"]
+    }
+  },
+  "librarian": {
+    "label": { "es": "Bibliotecario", "en": "Librarian", "pt": "Bibliotecário", "fr": "Bibliothécaire", "de": "Bibliothekar", "it": "Bibliotecario", "ja": "司書", "zh": "图书管理员", "ko": "사서", "ar": "أمين المكتبة" },
+    "keywords": {
+      "es": ["biblioteca", "préstamo de libros", "atención al lector", "acervo", "catalogar", "orientación", "sala de lectura"],
+      "en": ["library", "book lending", "reference desk", "collection", "cataloging", "help desk", "archivist"]
+    }
+  },
+  "tassel-bookmark": {
+    "label": { "es": "Separador de libro", "en": "Paper bookmark", "pt": "Marcador de papel", "fr": "Marque-page", "de": "Papierlesezeichen", "it": "Segnalibro di carta", "ja": "しおり", "zh": "纸质书签", "ko": "종이 책갈피", "ar": "فاصل كتاب ورقي" },
+    "keywords": {
+      "es": ["borla", "dónde me quedé", "marcar página", "libro físico", "regalo para lectores", "listón", "papelería"],
+      "en": ["tassel", "where I left off", "mark page", "physical book", "gift for readers", "ribbon", "stationery"]
+    }
+  },
+  "glasses-reading": {
+    "label": { "es": "Lentes para leer", "en": "Reading glasses", "pt": "Óculos de leitura", "fr": "Lunettes de lecture", "de": "Lesebrille", "it": "Occhiali da lettura", "ja": "老眼鏡", "zh": "老花镜", "ko": "돋보기안경", "ar": "نظارة القراءة" },
+    "keywords": {
+      "es": ["anteojos", "lentes de media luna", "vista cansada", "graduación", "letra pequeña", "óptica", "leer de cerca"],
+      "en": ["eyeglasses", "half-moon glasses", "readers", "farsighted", "small print", "optician", "close-up reading"]
+    }
+  },
+  "bookstore": {
+    "label": { "es": "Librería", "en": "Bookstore", "pt": "Livraria", "fr": "Librairie", "de": "Buchhandlung", "it": "Negozio di libri", "ja": "書店", "zh": "书店", "ko": "서점", "ar": "متجر كتب" },
+    "keywords": {
+      "es": ["comprar libros", "tienda de libros", "novedades editoriales", "librería de viejo", "punto de venta", "papelería", "más vendidos"],
+      "en": ["buy books", "book shop", "new releases", "secondhand books", "store", "bestsellers", "retail"]
+    }
+  },
+  "newsstand": {
+    "label": { "es": "Puesto de periódicos", "en": "Newsstand", "pt": "Banca de jornal", "fr": "Kiosque à journaux", "de": "Zeitungskiosk", "it": "Edicola", "ja": "新聞スタンド", "zh": "报刊亭", "ko": "가판대", "ar": "كشك الصحف" },
+    "keywords": {
+      "es": ["kiosco", "revistas", "prensa", "voceador", "puesto de revistas", "comprar el periódico", "esquina"],
+      "en": ["kiosk", "magazines", "press", "news vendor", "magazine stand", "buy a paper", "street corner"]
+    }
+  },
+  "newspaper-digital": {
+    "label": { "es": "Periódico digital", "en": "Digital newspaper", "pt": "Jornal digital", "fr": "Journal numérique", "de": "Digitale Zeitung", "it": "Giornale digitale", "ja": "電子版新聞", "zh": "电子报", "ko": "디지털 신문", "ar": "صحيفة رقمية" },
+    "keywords": {
+      "es": ["edición digital", "e-paper", "noticias en línea", "suscripción digital", "réplica de la edición impresa", "hemeroteca digital", "leer en el celular"],
+      "en": ["digital edition", "e-paper", "online news", "digital subscription", "replica edition", "digital archive", "read on phone"]
+    }
+  },
+  "newspaper-world": {
+    "label": { "es": "Sección internacional", "en": "World section", "pt": "Seção internacional", "fr": "Rubrique internationale", "de": "Auslandsnachrichten", "it": "Sezione esteri", "ja": "国際面", "zh": "国际版", "ko": "국제면", "ar": "قسم الأخبار الدولية" },
+    "keywords": {
+      "es": ["mundo", "noticias del extranjero", "política internacional", "corresponsales", "global", "geopolítica", "otros países"],
+      "en": ["international", "foreign news", "global affairs", "correspondents", "abroad", "geopolitics", "world news"]
+    }
+  },
+  "newspaper-business": {
+    "label": { "es": "Sección de negocios", "en": "Business section", "pt": "Seção de economia", "fr": "Rubrique économie", "de": "Wirtschaftsteil", "it": "Sezione economia", "ja": "経済面", "zh": "财经版", "ko": "경제면", "ar": "قسم المال والأعمال" },
+    "keywords": {
+      "es": ["economía", "finanzas", "mercados", "bolsa de valores", "empresas", "sección financiera", "indicadores"],
+      "en": ["economy", "finance", "markets", "stock market", "companies", "financial pages", "earnings"]
+    }
+  },
+  "newspaper-opinion": {
+    "label": { "es": "Sección de opinión", "en": "Opinion section", "pt": "Seção de opinião", "fr": "Rubrique opinions", "de": "Meinungsseite", "it": "Sezione opinioni", "ja": "オピニオン面", "zh": "评论版", "ko": "오피니언면", "ar": "قسم الرأي" },
+    "keywords": {
+      "es": ["editorial", "columnas", "columnista", "artículo de opinión", "cartas al editor", "análisis", "punto de vista"],
+      "en": ["editorial", "columns", "columnist", "op-ed", "letters to the editor", "commentary", "point of view"]
+    }
+  },
+  "newspaper-sports": {
+    "label": { "es": "Sección de deportes", "en": "Sports section", "pt": "Seção de esportes", "fr": "Rubrique sports", "de": "Sportteil", "it": "Sezione sport", "ja": "スポーツ面", "zh": "体育版", "ko": "스포츠면", "ar": "قسم الرياضة" },
+    "keywords": {
+      "es": ["futbol", "resultados", "marcador", "liga", "crónica deportiva", "partidos", "torneo"],
+      "en": ["football", "scores", "results", "league", "match report", "games", "tournament"]
+    }
+  },
+  "comic-bubble": {
+    "label": { "es": "Globo de cómic", "en": "Comic burst", "pt": "Balão de quadrinhos", "fr": "Bulle de BD", "de": "Comic-Sprechblase", "it": "Nuvoletta del fumetto", "ja": "漫画の吹き出し", "zh": "漫画气泡", "ko": "만화 말풍선", "ar": "فقاعة قصص مصورة" },
+    "keywords": {
+      "es": ["onomatopeya", "grito", "efecto de sonido", "pum", "explosión", "exclamación", "impacto", "historieta"],
+      "en": ["shout", "sound effect", "pow", "boom", "explosion", "exclamation", "onomatopoeia", "impact"]
+    }
+  }
+}

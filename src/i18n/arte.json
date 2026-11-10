@@ -1,0 +1,275 @@
+{
+  "easel": {
+    "label": { "es": "Caballete de pintor", "en": "Easel", "pt": "Cavalete", "fr": "Chevalet", "de": "Staffelei", "it": "Cavalletto", "ja": "イーゼル", "zh": "画架", "ko": "이젤", "ar": "حامل رسم" },
+    "keywords": {
+      "es": ["pintar", "clases de pintura", "taller de arte", "estudio de pintura", "material de arte", "cuadro", "artista"],
+      "en": ["painting", "art class", "art studio", "art supplies", "canvas stand", "artist", "workshop"]
+    }
+  },
+  "paint-tube": {
+    "label": { "es": "Tubo de pintura", "en": "Paint tube", "pt": "Tubo de tinta", "fr": "Tube de peinture", "de": "Farbtube", "it": "Tubetto di colore", "ja": "絵の具チューブ", "zh": "颜料管", "ko": "물감 튜브", "ar": "أنبوب ألوان" },
+    "keywords": {
+      "es": ["óleo", "acrílico", "pinturas", "colores", "material de arte", "pincel de óleo", "exprimir", "pigmento"],
+      "en": ["oil paint", "acrylic", "paints", "colors", "art supplies", "oil brush", "squeeze", "pigment"]
+    }
+  },
+  "palette-knife": {
+    "label": { "es": "Espátula de pintor", "en": "Palette knife", "pt": "Espátula de pintura", "fr": "Couteau à peindre", "de": "Malmesser", "it": "Spatola da pittore", "ja": "ペインティングナイフ", "zh": "调色刀", "ko": "팔레트 나이프", "ar": "سكين رسم" },
+    "keywords": {
+      "es": ["empaste", "impasto", "mezclar colores", "textura", "herramientas de pintura", "óleo", "aplicar pintura"],
+      "en": ["impasto", "painting knife", "mix colors", "texture", "painting tools", "oil paint", "spread paint"]
+    }
+  },
+  "brushes": {
+    "label": { "es": "Juego de pinceles", "en": "Brushes", "pt": "Pincéis", "fr": "Pinceaux", "de": "Pinselset", "it": "Pennelli", "ja": "ブラシセット", "zh": "画笔组", "ko": "브러시 세트", "ar": "مجموعة فرش" },
+    "keywords": {
+      "es": ["biblioteca de pinceles", "preajustes de pincel", "material de pintura", "brochas", "pintar", "herramientas de dibujo", "estilos de pincel"],
+      "en": ["brush library", "brush presets", "painting supplies", "paintbrushes", "paint", "drawing tools", "brush styles"]
+    }
+  },
+  "brush-cup": {
+    "label": { "es": "Vaso con pinceles", "en": "Brush cup", "pt": "Copo para pincéis", "fr": "Pot à pinceaux", "de": "Pinselbecher", "it": "Barattolo dei pennelli", "ja": "筆洗い", "zh": "洗笔杯", "ko": "붓 물통", "ar": "كوب غسل الفرش" },
+    "keywords": {
+      "es": ["limpiar pincel", "agua para enjuagar", "enjuagar", "mezcla húmeda", "taller de pintura", "acuarela", "estudio de arte"],
+      "en": ["clean brush", "rinse water", "water jar", "wet mixing", "painting studio", "watercolor", "wash brush"]
+    }
+  },
+  "spray-paint": {
+    "label": { "es": "Pintura en aerosol", "en": "Spray paint", "pt": "Tinta spray", "fr": "Peinture en aérosol", "de": "Sprühfarbe", "it": "Vernice spray", "ja": "スプレー塗料", "zh": "喷漆", "ko": "스프레이 페인트", "ar": "طلاء بخاخ" },
+    "keywords": {
+      "es": ["grafiti", "arte urbano", "lata de spray", "pincel de aerosol", "rociar", "mural", "pintar paredes"],
+      "en": ["graffiti", "street art", "spray can", "airbrush", "spray brush", "mural", "tagging"]
+    }
+  },
+  "sketchbook": {
+    "label": { "es": "Cuaderno de bocetos", "en": "Sketchbook", "pt": "Caderno de esboços", "fr": "Carnet de croquis", "de": "Skizzenbuch", "it": "Album da disegno", "ja": "スケッチブック", "zh": "素描本", "ko": "스케치북", "ar": "كراسة رسم" },
+    "keywords": {
+      "es": ["bocetos", "libreta de dibujo", "practicar dibujo", "estudios", "apuntes", "croquis", "ideas", "bitácora"],
+      "en": ["sketches", "drawing pad", "drawing practice", "studies", "doodles", "art journal", "ideas", "notebook"]
+    }
+  },
+  "crayon": {
+    "label": { "es": "Crayón", "en": "Crayon", "pt": "Giz de cera", "fr": "Crayon de cire", "de": "Wachsmalstift", "it": "Pastello a cera", "ja": "クレヨン", "zh": "蜡笔", "ko": "크레용", "ar": "قلم تلوين شمعي" },
+    "keywords": {
+      "es": ["crayola", "colorear", "dibujo infantil", "niños", "cera", "pincel de crayón", "garabatear"],
+      "en": ["wax", "coloring", "kids drawing", "children", "crayon brush", "doodle", "draw"]
+    }
+  },
+  "crayon-box": {
+    "label": { "es": "Caja de crayones", "en": "Crayon box", "pt": "Caixa de giz de cera", "fr": "Boîte de crayons de cire", "de": "Wachsmalstifte", "it": "Scatola di pastelli a cera", "ja": "クレヨンの箱", "zh": "蜡笔盒", "ko": "크레용 상자", "ar": "علبة أقلام شمعية" },
+    "keywords": {
+      "es": ["crayolas", "útiles escolares", "colorear", "material de arte infantil", "juego de colores", "regreso a clases", "niños"],
+      "en": ["crayons", "school supplies", "coloring set", "kids art supplies", "back to school", "children", "colors"]
+    }
+  },
+  "colored-pencils": {
+    "label": { "es": "Lápices de colores", "en": "Colored pencils", "pt": "Lápis de cor", "fr": "Crayons de couleur", "de": "Buntstifte", "it": "Matite colorate", "ja": "色鉛筆", "zh": "彩色铅笔", "ko": "색연필", "ar": "أقلام ملونة" },
+    "keywords": {
+      "es": ["colores", "colorear", "material de ilustración", "útiles escolares", "dibujar", "sombreado", "pincel de lápiz de color"],
+      "en": ["coloring", "illustration supplies", "school supplies", "drawing", "shading", "pencil crayons", "colored-pencil brush"]
+    }
+  },
+  "coloring-page": {
+    "label": { "es": "Página para colorear", "en": "Coloring page", "pt": "Desenho para colorir", "fr": "Coloriage", "de": "Malvorlage", "it": "Disegno da colorare", "ja": "ぬりえ", "zh": "填色页", "ko": "색칠 도안", "ar": "صفحة تلوين" },
+    "keywords": {
+      "es": ["libro para colorear", "app para colorear", "niños", "adultos", "mandalas", "pasatiempo", "actividad infantil", "relajarse"],
+      "en": ["coloring book", "coloring app", "kids", "adults", "mandala", "line art", "activity", "relaxing"]
+    }
+  },
+  "paint-drips": {
+    "label": { "es": "Pintura escurriendo", "en": "Paint drips", "pt": "Tinta escorrendo", "fr": "Coulures de peinture", "de": "Tropfende Farbe", "it": "Colature di colore", "ja": "垂れる絵の具", "zh": "滴落的颜料", "ko": "흘러내리는 물감", "ar": "طلاء يقطر" },
+    "keywords": {
+      "es": ["efecto goteo", "pintura fresca", "chorreado", "gotas", "estilo desordenado", "grafiti", "derretido"],
+      "en": ["drip effect", "wet paint", "dripping", "drops", "messy style", "graffiti", "melting"]
+    }
+  },
+  "paint-splatter": {
+    "label": { "es": "Salpicadura de pintura", "en": "Paint splatter", "pt": "Respingo de tinta", "fr": "Éclaboussure de peinture", "de": "Farbklecks", "it": "Schizzo di vernice", "ja": "絵の具の飛び散り", "zh": "颜料飞溅", "ko": "물감 튀김", "ar": "بقعة طلاء" },
+    "keywords": {
+      "es": ["mancha", "salpicar", "efecto splash", "pintura de acción", "mancha de tinta", "arte infantil", "explosión de color"],
+      "en": ["splash", "splat", "ink splat", "action painting", "blot", "kids art", "color burst"]
+    }
+  },
+  "pixel-art": {
+    "label": { "es": "Arte en píxeles", "en": "Pixel art", "pt": "Pixel art", "fr": "Pixel art", "de": "Pixel-Art", "it": "Pixel art", "ja": "ドット絵", "zh": "像素画", "ko": "픽셀 아트", "ar": "فن البكسل" },
+    "keywords": {
+      "es": ["pixel art", "sprites", "retro", "8 bits", "videojuegos", "pincel de píxel", "estilo con IA", "corazón pixelado"],
+      "en": ["8-bit", "sprites", "retro", "pixelated", "video games", "pixel brush", "ai style", "pixel heart"]
+    }
+  },
+  "stencil": {
+    "label": { "es": "Esténcil", "en": "Stencil", "pt": "Estêncil", "fr": "Pochoir", "de": "Schablone", "it": "Stencil", "ja": "ステンシル", "zh": "镂空模板", "ko": "스텐실", "ar": "استنسل" },
+    "keywords": {
+      "es": ["plantilla", "plantilla recortada", "estarcido", "molde", "pincel de esténcil", "grafiti", "silueta"],
+      "en": ["template", "cut-out", "stenciling", "mask", "stencil brush", "graffiti", "silhouette"]
+    }
+  },
+  "mosaic": {
+    "label": { "es": "Mosaico", "en": "Mosaic", "pt": "Mosaico", "fr": "Mosaïque", "de": "Mosaik", "it": "Mosaico", "ja": "モザイク", "zh": "马赛克", "ko": "모자이크", "ar": "فسيفساء" },
+    "keywords": {
+      "es": ["teselas", "azulejos", "filtro mosaico", "manualidades", "fragmentos", "arte con azulejos", "arte decorativo"],
+      "en": ["tiles", "tesserae", "mosaic filter", "crafts", "fragments", "tile art", "decorative art"]
+    }
+  },
+  "calligraphy": {
+    "label": { "es": "Caligrafía", "en": "Calligraphy", "pt": "Caligrafia", "fr": "Calligraphie", "de": "Kalligrafie", "it": "Calligrafia", "ja": "カリグラフィー", "zh": "书法", "ko": "캘리그래피", "ar": "فن الخط" },
+    "keywords": {
+      "es": ["lettering", "letra a mano", "plumilla", "entintar", "rotulación", "letras decorativas", "pincel de tinta"],
+      "en": ["hand lettering", "lettering", "nib pen", "inking", "script", "decorative letters", "ink brush"]
+    }
+  },
+  "ink-bottle": {
+    "label": { "es": "Frasco de tinta", "en": "Ink bottle", "pt": "Frasco de tinta", "fr": "Flacon d’encre", "de": "Tintenfass", "it": "Boccetta d’inchiostro", "ja": "インク瓶", "zh": "墨水瓶", "ko": "잉크병", "ar": "زجاجة حبر" },
+    "keywords": {
+      "es": ["tinta china", "entintar", "tintero", "recarga de tinta", "pincel de tinta", "caligrafía", "plumilla", "dibujo a tinta"],
+      "en": ["india ink", "inking", "inkwell", "ink refill", "ink brush", "calligraphy", "dip pen", "ink drawing"]
+    }
+  },
+  "bust": {
+    "label": { "es": "Busto", "en": "Bust", "pt": "Busto", "fr": "Buste", "de": "Büste", "it": "Busto", "ja": "胸像", "zh": "半身像", "ko": "흉상", "ar": "تمثال نصفي" },
+    "keywords": {
+      "es": ["escultura", "arte clásico", "museo", "colección", "estatua", "mármol", "antigüedad", "retrato esculpido"],
+      "en": ["sculpture", "classical art", "museum", "collection", "statue", "marble", "antiquity", "portrait"]
+    }
+  },
+  "pottery-wheel": {
+    "label": { "es": "Torno de alfarero", "en": "Pottery wheel", "pt": "Torno de oleiro", "fr": "Tour de potier", "de": "Töpferscheibe", "it": "Tornio da vasaio", "ja": "ろくろ", "zh": "陶轮", "ko": "도예 물레", "ar": "دولاب الفخار" },
+    "keywords": {
+      "es": ["alfarería", "cerámica", "clases de cerámica", "taller de cerámica", "barro", "modelar", "vasijas", "arcilla"],
+      "en": ["pottery class", "ceramics", "ceramics studio", "clay", "throwing pots", "potter", "handmade"]
+    }
+  },
+  "vase": {
+    "label": { "es": "Jarrón", "en": "Vase", "pt": "Vaso", "fr": "Vase", "de": "Vase", "it": "Vaso", "ja": "花瓶", "zh": "花瓶", "ko": "꽃병", "ar": "مزهرية" },
+    "keywords": {
+      "es": ["cerámica", "alfarería", "florero", "decoración", "barro", "objeto decorativo", "artesanía", "porcelana"],
+      "en": ["ceramics", "pottery", "decor", "clay", "decorative object", "handicraft", "porcelain", "urn"]
+    }
+  },
+  "amphora": {
+    "label": { "es": "Ánfora", "en": "Amphora", "pt": "Ânfora", "fr": "Amphore", "de": "Amphore", "it": "Anfora", "ja": "アンフォラ", "zh": "双耳瓶", "ko": "암포라", "ar": "أمفورا" },
+    "keywords": {
+      "es": ["antigüedades", "arqueología", "museo", "colección", "arte antiguo", "vasija", "griego", "romano"],
+      "en": ["antiquities", "archaeology", "museum", "collection", "ancient art", "jar", "greek", "roman"]
+    }
+  },
+  "yarn": {
+    "label": { "es": "Estambre", "en": "Yarn", "pt": "Novelo de lã", "fr": "Pelote de laine", "de": "Wollknäuel", "it": "Gomitolo", "ja": "毛糸", "zh": "毛线团", "ko": "털실", "ar": "كرة صوف" },
+    "keywords": {
+      "es": ["lana", "madeja", "ovillo", "manualidades textiles", "mercería", "fibras", "hilo", "tejer"],
+      "en": ["wool", "skein", "ball of wool", "fiber crafts", "craft store", "knitting supplies", "thread", "fiber"]
+    }
+  },
+  "yarn-knitting": {
+    "label": { "es": "Tejido con agujas", "en": "Knitting", "pt": "Tricô", "fr": "Tricot", "de": "Stricken", "it": "Lavoro a maglia", "ja": "棒針編み", "zh": "棒针编织", "ko": "대바늘 뜨개질", "ar": "حياكة بالإبر" },
+    "keywords": {
+      "es": ["tejer", "agujas de tejer", "patrones de tejido", "proyectos", "clases de tejido", "estambre", "suéter", "puntadas"],
+      "en": ["knit", "needles", "patterns", "projects", "knitting class", "yarn", "sweater", "stitches"]
+    }
+  },
+  "yarn-crochet": {
+    "label": { "es": "Crochet", "en": "Crochet", "pt": "Crochê", "fr": "Crochet", "de": "Häkeln", "it": "Uncinetto", "ja": "かぎ針編み", "zh": "钩针编织", "ko": "코바늘 뜨개질", "ar": "كروشيه" },
+    "keywords": {
+      "es": ["tejer a gancho", "ganchillo", "patrones", "amigurumi", "proyectos", "clases de tejido", "estambre"],
+      "en": ["hook", "patterns", "amigurumi", "granny square", "projects", "crochet class", "yarn"]
+    }
+  },
+  "spinning-wheel": {
+    "label": { "es": "Rueca", "en": "Spinning wheel", "pt": "Roda de fiar", "fr": "Rouet", "de": "Spinnrad", "it": "Filatoio", "ja": "糸車", "zh": "纺车", "ko": "물레", "ar": "دولاب الغزل" },
+    "keywords": {
+      "es": ["hilar", "hilado a mano", "estambre artesanal", "fibras", "lana", "arte textil", "huso"],
+      "en": ["spin", "handspun yarn", "fiber arts", "wool", "spindle", "textile", "roving"]
+    }
+  },
+  "origami": {
+    "label": { "es": "Origami", "en": "Origami", "pt": "Origami", "fr": "Origami", "de": "Origami", "it": "Origami", "ja": "折り紙", "zh": "折纸", "ko": "종이접기", "ar": "أوريغامي" },
+    "keywords": {
+      "es": ["papiroflexia", "doblar papel", "grulla", "manualidades de papel", "plegado", "figuras de papel", "japonés"],
+      "en": ["paper folding", "paper crane", "crane", "paper crafts", "fold", "paper figures", "japanese"]
+    }
+  },
+  "paper-boat": {
+    "label": { "es": "Barco de papel", "en": "Paper boat", "pt": "Barquinho de papel", "fr": "Bateau en papier", "de": "Papierschiff", "it": "Barchetta di carta", "ja": "紙の船", "zh": "纸船", "ko": "종이배", "ar": "قارب ورقي" },
+    "keywords": {
+      "es": ["barquito", "doblar papel", "manualidades infantiles", "origami", "niños", "juego", "actividad"],
+      "en": ["folded boat", "paper folding", "kids crafts", "origami", "children", "play", "activity"]
+    }
+  },
+  "scissors-cut-line": {
+    "label": { "es": "Cortar aquí", "en": "Cut here", "pt": "Recorte aqui", "fr": "Découper ici", "de": "Hier ausschneiden", "it": "Ritaglia qui", "ja": "切り取り線", "zh": "沿此剪下", "ko": "절취선", "ar": "قص هنا" },
+    "keywords": {
+      "es": ["recortar", "tijeras", "línea punteada", "cupón", "recortables", "guía de corte", "desprender"],
+      "en": ["scissors", "dotted line", "coupon", "cut-outs", "cutting guide", "paper cutting", "tear off"]
+    }
+  },
+  "glue-stick": {
+    "label": { "es": "Lápiz adhesivo", "en": "Glue stick", "pt": "Cola bastão", "fr": "Bâton de colle", "de": "Klebestift", "it": "Colla stick", "ja": "スティックのり", "zh": "固体胶", "ko": "고체 풀", "ar": "قلم صمغ" },
+    "keywords": {
+      "es": ["pegamento en barra", "pegar papel", "útiles escolares", "manualidades", "collage", "papelería", "scrapbook"],
+      "en": ["paste", "gluing paper", "school supplies", "craft supplies", "collage", "stationery", "adhesive"]
+    }
+  },
+  "washi-tape": {
+    "label": { "es": "Cinta washi", "en": "Washi tape", "pt": "Fita washi", "fr": "Ruban washi", "de": "Washi-Tape", "it": "Nastro washi", "ja": "マスキングテープ", "zh": "和纸胶带", "ko": "마스킹 테이프", "ar": "شريط واشي" },
+    "keywords": {
+      "es": ["cinta decorativa", "bullet journal", "scrapbook", "diario", "agenda", "papelería", "decorar"],
+      "en": ["decorative tape", "journaling", "scrapbooking", "planner", "stationery", "masking tape", "crafts"]
+    }
+  },
+  "craft-knife": {
+    "label": { "es": "Cúter de precisión", "en": "Craft knife", "pt": "Estilete de precisão", "fr": "Cutter de précision", "de": "Bastelmesser", "it": "Taglierino di precisione", "ja": "デザインナイフ", "zh": "笔刀", "ko": "아트나이프", "ar": "مشرط دقيق" },
+    "keywords": {
+      "es": ["exacto", "navaja", "cortar papel", "maquetas", "corte preciso", "bisturí", "modelismo"],
+      "en": ["hobby knife", "precision knife", "scalpel", "paper cutting", "model making", "precise cuts", "crafts"]
+    }
+  },
+  "cut-paper-banner": {
+    "label": { "es": "Papel picado", "en": "Cut-paper banner", "pt": "Bandeirolas de papel recortado", "fr": "Guirlande de papier découpé", "de": "Scherenschnitt-Girlande", "it": "Festone di carta traforata", "ja": "切り絵のガーランド", "zh": "剪纸彩旗", "ko": "종이 오림 가랜드", "ar": "زينة ورقية مخرّمة" },
+    "keywords": {
+      "es": ["decoración de fiesta", "fiestas patrias", "día de muertos", "banderitas", "papel recortado", "arte en papel", "fiesta mexicana", "guirnalda"],
+      "en": ["papel picado", "paper cutting", "festive decoration", "bunting", "garland", "day of the dead", "mexican party", "fiesta"]
+    }
+  },
+  "beads": {
+    "label": { "es": "Cuentas de bisutería", "en": "Beads", "pt": "Miçangas", "fr": "Perles", "de": "Perlen", "it": "Perline", "ja": "ビーズ", "zh": "串珠", "ko": "비즈", "ar": "خرز" },
+    "keywords": {
+      "es": ["chaquira", "hacer joyería", "pulseras", "collares", "ensartar", "manualidades", "hilo elástico"],
+      "en": ["beading", "jewelry making", "bracelets", "necklaces", "thread", "craft supplies", "seed beads"]
+    }
+  },
+  "exhibition": {
+    "label": { "es": "Exposición", "en": "Exhibition", "pt": "Exposição", "fr": "Exposition", "de": "Ausstellung", "it": "Mostra", "ja": "展覧会", "zh": "展览", "ko": "전시회", "ar": "معرض فني" },
+    "keywords": {
+      "es": ["obra destacada", "en exhibición", "galería", "muestra", "museo", "inauguración", "cartelera"],
+      "en": ["featured artwork", "now showing", "on view", "gallery", "show", "museum", "art opening"]
+    }
+  },
+  "gallery-wall": {
+    "label": { "es": "Pared de galería", "en": "Gallery wall", "pt": "Parede de quadros", "fr": "Mur de cadres", "de": "Bilderwand", "it": "Parete di quadri", "ja": "ギャラリーウォール", "zh": "画廊墙", "ko": "갤러리 월", "ar": "جدار لوحات" },
+    "keywords": {
+      "es": ["galería de arte", "colección de arte", "portafolio", "cuadros", "obras enmarcadas", "exposición", "acervo"],
+      "en": ["art gallery", "art collection", "portfolio", "framed art", "paintings", "exhibition", "wall decor"]
+    }
+  },
+  "ornate-frame": {
+    "label": { "es": "Marco ornamentado", "en": "Ornate frame", "pt": "Moldura ornamentada", "fr": "Cadre orné", "de": "Zierrahmen", "it": "Cornice decorata", "ja": "装飾額縁", "zh": "华丽画框", "ko": "장식 액자", "ar": "إطار مزخرف" },
+    "keywords": {
+      "es": ["enmarcar", "bellas artes", "pintura clásica", "cuadro", "barroco", "dorado", "museo"],
+      "en": ["framing", "fine art", "classic painting", "old masters", "baroque", "gilded", "museum"]
+    }
+  },
+  "artist": {
+    "label": { "es": "Artista", "en": "Artist", "pt": "Artista", "fr": "Artiste", "de": "Künstler", "it": "Artista", "ja": "アーティスト", "zh": "艺术家", "ko": "아티스트", "ar": "فنان" },
+    "keywords": {
+      "es": ["creador", "pintor", "ilustrador", "perfil", "mercado de arte", "portafolio", "autor de la obra"],
+      "en": ["creator", "painter", "illustrator", "profile", "art marketplace", "portfolio", "maker"]
+    }
+  },
+  "tattoo-machine": {
+    "label": { "es": "Máquina para tatuar", "en": "Tattoo machine", "pt": "Máquina de tatuagem", "fr": "Machine à tatouer", "de": "Tätowiermaschine", "it": "Macchinetta per tatuaggi", "ja": "タトゥーマシン", "zh": "纹身机", "ko": "타투 머신", "ar": "آلة الوشم" },
+    "keywords": {
+      "es": ["tatuaje", "estudio de tatuajes", "tatuador", "agendar cita", "arte corporal", "tinta", "tattoo"],
+      "en": ["tattoo gun", "tattoo artist", "studio", "body art", "book appointment", "ink", "parlor"]
+    }
+  }
+}

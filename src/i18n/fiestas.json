@@ -1,0 +1,303 @@
+{
+  "balloon": {
+    "label": { "es": "Globo", "en": "Balloon", "pt": "Balão", "fr": "Ballon de baudruche", "de": "Luftballon", "it": "Palloncino", "ja": "風船", "zh": "气球", "ko": "풍선", "ar": "بالون" },
+    "keywords": {
+      "es": ["cumpleaños", "fiesta", "celebrar", "festejo", "decoración", "evento", "felicidades"],
+      "en": ["birthday", "party", "celebrate", "celebration", "decoration", "event", "congrats"]
+    }
+  },
+  "balloon-bunch": {
+    "label": { "es": "Globos", "en": "Balloons", "pt": "Balões", "fr": "Grappe de ballons", "de": "Luftballons", "it": "Palloncini", "ja": "風船の束", "zh": "一束气球", "ko": "풍선 다발", "ar": "باقة بالونات" },
+    "keywords": {
+      "es": ["racimo", "fiesta de cumpleaños", "decoración de fiesta", "paquete de fiesta", "complementos", "salón de fiestas", "fiesta infantil"],
+      "en": ["bunch", "birthday party", "party decor", "party package", "add-ons", "party venue", "kids party"]
+    }
+  },
+  "heart-balloon": {
+    "label": { "es": "Globo de corazón", "en": "Heart balloon", "pt": "Balão de coração", "fr": "Ballon cœur", "de": "Herzluftballon", "it": "Palloncino a cuore", "ja": "ハートの風船", "zh": "爱心气球", "ko": "하트 풍선", "ar": "بالون على شكل قلب" },
+    "keywords": {
+      "es": ["San Valentín", "14 de febrero", "día del amor y la amistad", "aniversario", "amor", "te quiero", "romance"],
+      "en": ["Valentine’s Day", "February 14", "anniversary", "love", "romance", "I love you", "sweetheart"]
+    }
+  },
+  "balloon-dog": {
+    "label": { "es": "Perrito de globo", "en": "Balloon dog", "pt": "Cachorrinho de balão", "fr": "Chien en ballon", "de": "Ballonhund", "it": "Cagnolino di palloncino", "ja": "バルーンドッグ", "zh": "气球狗", "ko": "풍선 강아지", "ar": "كلب من البالونات" },
+    "keywords": {
+      "es": ["globoflexia", "figuras con globos", "fiesta infantil", "payaso", "animador", "show infantil", "cumpleaños", "extras de fiesta"],
+      "en": ["balloon animal", "balloon twisting", "kids party", "clown", "party entertainer", "children’s show", "birthday", "party add-on"]
+    }
+  },
+  "party-hat": {
+    "label": { "es": "Gorro de fiesta", "en": "Party hat", "pt": "Chapéu de festa", "fr": "Chapeau de fête", "de": "Partyhut", "it": "Cappellino da festa", "ja": "パーティーハット", "zh": "派对帽", "ko": "고깔모자", "ar": "قبعة الحفلة" },
+    "keywords": {
+      "es": ["gorrito", "cumpleaños", "celebración", "evento", "invitación", "pachanga", "festejo", "tipo de evento"],
+      "en": ["cone hat", "birthday", "celebration", "event", "invitation", "event type", "festive", "kids party"]
+    }
+  },
+  "party-blower": {
+    "label": { "es": "Espantasuegras", "en": "Party blower", "pt": "Língua de sogra", "fr": "Langue de belle-mère", "de": "Luftrüssel", "it": "Lingua di Menelik", "ja": "吹き戻し", "zh": "派对吹龙", "ko": "파티 블로워", "ar": "صفارة الحفلة" },
+    "keywords": {
+      "es": ["Año Nuevo", "cumpleaños", "trompetita", "matraca", "silbato de fiesta", "ruido", "reacción", "festejo"],
+      "en": ["noisemaker", "party horn", "New Year’s Eve", "birthday", "blowout", "festive sound", "reaction", "celebrate"]
+    }
+  },
+  "confetti": {
+    "label": { "es": "Confeti", "en": "Confetti", "pt": "Confete", "fr": "Confettis", "de": "Konfetti", "it": "Coriandoli", "ja": "紙吹雪", "zh": "彩纸屑", "ko": "컨페티", "ar": "قصاصات ورق ملونة" },
+    "keywords": {
+      "es": ["felicidades", "éxito", "logro", "celebración", "pantalla de éxito", "efecto de festejo", "meta cumplida", "lo lograste"],
+      "en": ["congratulations", "success", "achievement", "celebration", "success screen", "celebration effect", "milestone", "well done"]
+    }
+  },
+  "party-streamers": {
+    "label": { "es": "Serpentinas", "en": "Streamers", "pt": "Serpentinas", "fr": "Serpentins", "de": "Luftschlangen", "it": "Stelle filanti", "ja": "紙テープ", "zh": "彩带", "ko": "종이 테이프", "ar": "أشرطة ورقية ملونة" },
+    "keywords": {
+      "es": ["decoración de fiesta", "carnaval", "adornos de papel", "festejo", "fiesta temática", "cumpleaños", "guirnalda"],
+      "en": ["party decoration", "carnival", "paper decorations", "festive theme", "crepe paper", "birthday", "celebration"]
+    }
+  },
+  "bunting": {
+    "label": { "es": "Banderines", "en": "Bunting", "pt": "Bandeirinhas", "fr": "Guirlande de fanions", "de": "Wimpelkette", "it": "Festone di bandierine", "ja": "ガーランド", "zh": "三角彩旗", "ko": "가랜드", "ar": "أعلام الزينة" },
+    "keywords": {
+      "es": ["papel picado", "guirnalda", "fiesta mexicana", "kermés", "inauguración", "decoración", "feria", "sección de fiestas"],
+      "en": ["garland", "pennant banner", "papel picado", "fiesta", "grand opening", "party decor", "fair", "festive section"]
+    }
+  },
+  "pinata": {
+    "label": { "es": "Piñata", "en": "Piñata", "pt": "Piñata", "fr": "Piñata", "de": "Piñata", "it": "Pignatta", "ja": "ピニャータ", "zh": "皮纳塔", "ko": "피냐타", "ar": "بينياتا" },
+    "keywords": {
+      "es": ["fiesta infantil", "posada", "dulces", "cumpleaños", "fiesta mexicana", "sorpresa", "recompensa", "romper"],
+      "en": ["kids party", "candy", "birthday", "Mexican fiesta", "surprise", "reward", "break open", "posada"]
+    }
+  },
+  "birthday-candle": {
+    "label": { "es": "Vela de cumpleaños", "en": "Birthday candle", "pt": "Vela de aniversário", "fr": "Bougie d’anniversaire", "de": "Geburtstagskerze", "it": "Candelina di compleanno", "ja": "誕生日のろうそく", "zh": "生日蜡烛", "ko": "생일 초", "ar": "شمعة عيد الميلاد" },
+    "keywords": {
+      "es": ["pastel", "pedir un deseo", "soplar", "edad", "años cumplidos", "aniversario", "felicitar"],
+      "en": ["cake", "make a wish", "blow out", "age", "turning a year older", "anniversary", "wishes"]
+    }
+  },
+  "cake-wedding": {
+    "label": { "es": "Pastel de bodas", "en": "Wedding cake", "pt": "Bolo de casamento", "fr": "Gâteau de mariage", "de": "Hochzeitstorte", "it": "Torta nuziale", "ja": "ウェディングケーキ", "zh": "婚礼蛋糕", "ko": "웨딩 케이크", "ar": "كعكة الزفاف" },
+    "keywords": {
+      "es": ["recepción", "banquete", "pisos", "pastelería", "proveedores de boda", "novios", "XV años", "aniversario"],
+      "en": ["reception", "tiers", "bakery", "wedding vendors", "newlyweds", "banquet", "anniversary", "cake topper"]
+    }
+  },
+  "greeting-card": {
+    "label": { "es": "Tarjeta de felicitación", "en": "Greeting card", "pt": "Cartão de felicitações", "fr": "Carte de vœux", "de": "Grußkarte", "it": "Biglietto d’auguri", "ja": "グリーティングカード", "zh": "贺卡", "ko": "축하 카드", "ar": "بطاقة تهنئة" },
+    "keywords": {
+      "es": ["cumpleaños", "postal", "nota de agradecimiento", "tarjeta digital", "felicitar", "dedicatoria", "fiestas decembrinas", "buenos deseos"],
+      "en": ["birthday card", "holiday card", "thank-you note", "e-card", "send wishes", "postcard", "congratulations"]
+    }
+  },
+  "fireworks": {
+    "label": { "es": "Fuegos artificiales", "en": "Fireworks", "pt": "Fogos de artifício", "fr": "Feux d’artifice", "de": "Feuerwerk", "it": "Fuochi d’artificio", "ja": "花火", "zh": "烟花", "ko": "불꽃놀이", "ar": "ألعاب نارية" },
+    "keywords": {
+      "es": ["Año Nuevo", "cohetes", "pirotecnia", "lanzamiento", "fiestas patrias", "gran logro", "festejo", "castillo"],
+      "en": ["New Year’s Eve", "pyrotechnics", "launch", "Fourth of July", "big milestone", "holidays", "celebration", "firecrackers"]
+    }
+  },
+  "sparkler": {
+    "label": { "es": "Luz de bengala", "en": "Sparkler", "pt": "Estrelinha", "fr": "Cierge magique", "de": "Wunderkerze", "it": "Stellina", "ja": "手持ち花火", "zh": "仙女棒", "ko": "막대 불꽃", "ar": "عصا الألعاب النارية" },
+    "keywords": {
+      "es": ["chispitas", "Año Nuevo", "salida de los novios", "boda", "festejo", "fiesta", "brindis"],
+      "en": ["New Year’s Eve", "wedding send-off", "wedding exit", "small celebration", "sparks", "Fourth of July", "festive"]
+    }
+  },
+  "champagne-pop": {
+    "label": { "es": "Descorchar champaña", "en": "Popping champagne", "pt": "Estourar o champanhe", "fr": "Déboucher le champagne", "de": "Champagner öffnen", "it": "Stappare lo champagne", "ja": "シャンパンを開ける", "zh": "开香槟", "ko": "샴페인 터뜨리기", "ar": "فتح الشمبانيا" },
+    "keywords": {
+      "es": ["brindis", "Año Nuevo", "lanzamiento", "corcho", "salud", "celebrar", "logro", "inauguración"],
+      "en": ["toast", "New Year’s Eve", "launch", "cork", "cheers", "celebrate", "milestone", "bubbly"]
+    }
+  },
+  "wedding-rings": {
+    "label": { "es": "Argollas de matrimonio", "en": "Wedding rings", "pt": "Alianças de casamento", "fr": "Alliances", "de": "Eheringe", "it": "Fedi nuziali", "ja": "結婚指輪", "zh": "婚戒", "ko": "결혼반지", "ar": "خواتم الزفاف" },
+    "keywords": {
+      "es": ["boda", "casados", "estado civil", "aniversario", "compromiso", "esposos", "unión", "sí, acepto"],
+      "en": ["marriage", "married", "marital status", "anniversary", "newlyweds", "spouses", "vows", "engagement"]
+    }
+  },
+  "bouquet": {
+    "label": { "es": "Ramo de flores", "en": "Bouquet", "pt": "Buquê", "fr": "Bouquet de fleurs", "de": "Blumenstrauß", "it": "Mazzo di fiori", "ja": "花束", "zh": "花束", "ko": "꽃다발", "ar": "باقة زهور" },
+    "keywords": {
+      "es": ["novia", "florería", "boda", "Día de las Madres", "10 de mayo", "arreglo floral", "felicidades", "regalo"],
+      "en": ["bride", "florist", "wedding", "Mother’s Day", "flower arrangement", "congratulations", "flowers", "gift"]
+    }
+  },
+  "wedding-arch": {
+    "label": { "es": "Arco de boda", "en": "Wedding arch", "pt": "Arco de casamento", "fr": "Arche de mariage", "de": "Hochzeitsbogen", "it": "Arco nuziale", "ja": "ウェディングアーチ", "zh": "婚礼拱门", "ko": "웨딩 아치", "ar": "قوس الزفاف" },
+    "keywords": {
+      "es": ["ceremonia", "altar", "salón de eventos", "jardín para bodas", "organización de eventos", "wedding planner", "decoración floral", "novios"],
+      "en": ["ceremony", "altar", "venue", "event planning", "planner", "arbor", "outdoor ceremony", "backdrop"]
+    }
+  },
+  "tiara": {
+    "label": { "es": "Tiara", "en": "Tiara", "pt": "Tiara", "fr": "Diadème", "de": "Diadem", "it": "Diadema", "ja": "ティアラ", "zh": "皇冠发饰", "ko": "티아라", "ar": "تاج صغير" },
+    "keywords": {
+      "es": ["XV años", "quinceañera", "graduación", "novia", "princesa", "certamen de belleza", "reina", "fiesta temática"],
+      "en": ["quinceañera", "prom", "bride", "princess", "pageant", "homecoming queen", "diadem", "crown"]
+    }
+  },
+  "love-letter": {
+    "label": { "es": "Carta de amor", "en": "Love letter", "pt": "Carta de amor", "fr": "Lettre d’amour", "de": "Liebesbrief", "it": "Lettera d’amore", "ja": "ラブレター", "zh": "情书", "ko": "연애편지", "ar": "رسالة حب" },
+    "keywords": {
+      "es": ["San Valentín", "romance", "mensaje romántico", "te quiero", "día del amor y la amistad", "declaración", "sobre con corazón", "pareja"],
+      "en": ["Valentine’s Day", "romance", "romantic message", "sweetheart", "secret admirer", "valentine", "heart envelope", "confession"]
+    }
+  },
+  "heart-arrow": {
+    "label": { "es": "Corazón flechado", "en": "Heart with arrow", "pt": "Coração flechado", "fr": "Cœur percé d’une flèche", "de": "Herz mit Pfeil", "it": "Cuore trafitto", "ja": "矢が刺さったハート", "zh": "一箭穿心", "ko": "화살이 꽂힌 하트", "ar": "قلب يخترقه سهم" },
+    "keywords": {
+      "es": ["Cupido", "enamorarse", "San Valentín", "flechazo", "match", "amor a primera vista", "romance", "pareja"],
+      "en": ["Cupid", "falling in love", "Valentine’s Day", "match", "love at first sight", "crush", "romance", "smitten"]
+    }
+  },
+  "tree-decorated": {
+    "label": { "es": "Árbol navideño", "en": "Holiday tree", "pt": "Árvore de Natal", "fr": "Sapin de Noël", "de": "Weihnachtsbaum", "it": "Albero di Natale", "ja": "クリスマスツリー", "zh": "圣诞树", "ko": "크리스마스트리", "ar": "شجرة عيد الميلاد" },
+    "keywords": {
+      "es": ["Navidad", "fiestas decembrinas", "pino", "ofertas de temporada", "decoración", "invierno", "regalos", "fin de año"],
+      "en": ["Christmas tree", "winter holidays", "seasonal sale", "seasonal theme", "decorations", "presents", "festive season", "evergreen"]
+    }
+  },
+  "ornament": {
+    "label": { "es": "Esfera navideña", "en": "Ornament", "pt": "Bola de Natal", "fr": "Boule de Noël", "de": "Christbaumkugel", "it": "Pallina di Natale", "ja": "オーナメントボール", "zh": "圣诞彩球", "ko": "트리 장식볼", "ar": "كرة زينة" },
+    "keywords": {
+      "es": ["adorno", "decoración", "árbol de Navidad", "colgante", "colección de temporada", "invierno", "fiestas decembrinas"],
+      "en": ["bauble", "Christmas ornament", "decoration", "tree decoration", "seasonal collection", "winter theme", "holiday decor"]
+    }
+  },
+  "wreath": {
+    "label": { "es": "Corona navideña", "en": "Wreath", "pt": "Guirlanda de Natal", "fr": "Couronne de Noël", "de": "Weihnachtskranz", "it": "Ghirlanda natalizia", "ja": "クリスマスリース", "zh": "圣诞花环", "ko": "크리스마스 리스", "ar": "إكليل عيد الميلاد" },
+    "keywords": {
+      "es": ["corona para puerta", "Navidad", "decoración de puerta", "fiestas decembrinas", "felicitaciones de temporada", "corona fúnebre", "homenaje", "follaje"],
+      "en": ["Christmas wreath", "door decor", "winter holidays", "seasonal greetings", "memorial", "funeral wreath", "garland", "evergreen"]
+    }
+  },
+  "snowman": {
+    "label": { "es": "Muñeco de nieve", "en": "Snowman", "pt": "Boneco de neve", "fr": "Bonhomme de neige", "de": "Schneemann", "it": "Pupazzo di neve", "ja": "雪だるま", "zh": "雪人", "ko": "눈사람", "ar": "رجل الثلج" },
+    "keywords": {
+      "es": ["invierno", "nevada", "fiestas decembrinas", "día de nieve", "frío", "promoción de invierno", "Navidad", "temporada"],
+      "en": ["winter", "snow day", "snowfall", "holidays", "cold", "winter sale", "frosty", "Christmas"]
+    }
+  },
+  "holiday-stocking": {
+    "label": { "es": "Bota navideña", "en": "Holiday stocking", "pt": "Meia de Natal", "fr": "Chaussette de Noël", "de": "Weihnachtsstrumpf", "it": "Calza natalizia", "ja": "クリスマスの靴下", "zh": "圣诞袜", "ko": "크리스마스 양말", "ar": "جورب عيد الميلاد" },
+    "keywords": {
+      "es": ["Navidad", "calcetín", "regalitos", "detalles", "fiestas decembrinas", "sorpresas", "chimenea", "aguinaldo"],
+      "en": ["Christmas stocking", "stocking stuffers", "small gifts", "treats", "winter holidays", "fireplace", "mantel", "goodies"]
+    }
+  },
+  "gingerbread-house": {
+    "label": { "es": "Casita de jengibre", "en": "Gingerbread house", "pt": "Casinha de gengibre", "fr": "Maison en pain d’épices", "de": "Lebkuchenhaus", "it": "Casetta di pan di zenzero", "ja": "お菓子の家", "zh": "姜饼屋", "ko": "진저브레드 하우스", "ar": "بيت خبز الزنجبيل" },
+    "keywords": {
+      "es": ["repostería navideña", "galleta de jengibre", "kit para decorar", "Navidad", "hornear", "dulces", "fiestas decembrinas", "manualidad"],
+      "en": ["holiday baking", "gingerbread", "decorating kit", "Christmas", "icing", "candy house", "winter festivities", "holiday kit"]
+    }
+  },
+  "sleigh": {
+    "label": { "es": "Trineo navideño", "en": "Sleigh", "pt": "Trenó de Natal", "fr": "Traîneau", "de": "Weihnachtsschlitten", "it": "Slitta", "ja": "サンタのそり", "zh": "圣诞雪橇", "ko": "산타 썰매", "ar": "زلاجة بابا نويل" },
+    "keywords": {
+      "es": ["Santa Claus", "renos", "entrega de regalos", "envío de temporada", "fiestas decembrinas", "invierno", "nieve", "paseo"],
+      "en": ["Santa’s sleigh", "holiday delivery", "reindeer", "sleigh ride", "winter festivities", "Christmas", "gift delivery", "snow"]
+    }
+  },
+  "jingle-bell": {
+    "label": { "es": "Cascabel", "en": "Jingle bell", "pt": "Guizo", "fr": "Grelot", "de": "Schelle", "it": "Sonaglio", "ja": "鈴", "zh": "铃铛", "ko": "방울", "ar": "جلجل" },
+    "keywords": {
+      "es": ["Navidad", "sonido festivo", "fiestas decembrinas", "campanita", "trineo", "tema navideño", "jingle bells", "invierno"],
+      "en": ["sleigh bell", "Christmas", "festive sound", "winter holidays", "holiday theme", "ringing", "Jingle Bells", "chime"]
+    }
+  },
+  "holly": {
+    "label": { "es": "Acebo", "en": "Holly", "pt": "Azevinho", "fr": "Houx", "de": "Stechpalme", "it": "Agrifoglio", "ja": "ヒイラギ", "zh": "冬青", "ko": "호랑가시나무", "ar": "غصن البهشية" },
+    "keywords": {
+      "es": ["Navidad", "hojas y bayas", "decoración navideña", "fiestas decembrinas", "adorno", "tema de temporada", "invierno"],
+      "en": ["Christmas", "leaves and berries", "festive decoration", "winter holidays", "holiday theme", "evergreen", "sprig"]
+    }
+  },
+  "santa-hat": {
+    "label": { "es": "Gorro de Santa", "en": "Santa hat", "pt": "Gorro de Papai Noel", "fr": "Bonnet de Père Noël", "de": "Weihnachtsmütze", "it": "Cappello di Babbo Natale", "ja": "サンタ帽", "zh": "圣诞帽", "ko": "산타 모자", "ar": "قبعة بابا نويل" },
+    "keywords": {
+      "es": ["gorro navideño", "Navidad", "modo navideño", "avatar de temporada", "fiestas decembrinas", "Santa Claus", "disfraz"],
+      "en": ["Christmas hat", "holiday mode", "seasonal avatar", "winter holidays", "Father Christmas", "costume", "holiday theme"]
+    }
+  },
+  "pumpkin-carved": {
+    "label": { "es": "Calabaza de Halloween", "en": "Jack-o’-lantern", "pt": "Abóbora de Halloween", "fr": "Citrouille d’Halloween", "de": "Kürbislaterne", "it": "Zucca di Halloween", "ja": "ジャック・オー・ランタン", "zh": "南瓜灯", "ko": "잭오랜턴", "ar": "فانوس اليقطين" },
+    "keywords": {
+      "es": ["noche de brujas", "otoño", "calabaza tallada", "terror", "31 de octubre", "dulce o truco", "espeluznante", "decoración de miedo"],
+      "en": ["Halloween", "carved pumpkin", "autumn", "fall festivities", "spooky", "trick or treat", "October 31", "scary decor"]
+    }
+  },
+  "witch-hat": {
+    "label": { "es": "Sombrero de bruja", "en": "Witch hat", "pt": "Chapéu de bruxa", "fr": "Chapeau de sorcière", "de": "Hexenhut", "it": "Cappello da strega", "ja": "魔女の帽子", "zh": "女巫帽", "ko": "마녀 모자", "ar": "قبعة الساحرة" },
+    "keywords": {
+      "es": ["Halloween", "disfraz", "magia", "hechicera", "fantasía", "mago", "conjuro", "hechizo"],
+      "en": ["Halloween", "costume", "magic", "sorcerer", "fantasy", "wizard", "spell", "witchcraft"]
+    }
+  },
+  "cauldron": {
+    "label": { "es": "Caldero", "en": "Cauldron", "pt": "Caldeirão", "fr": "Chaudron", "de": "Hexenkessel", "it": "Calderone", "ja": "大釜", "zh": "女巫大锅", "ko": "마녀의 가마솥", "ar": "مرجل" },
+    "keywords": {
+      "es": ["Halloween", "poción", "brujería", "alquimia", "elaborar", "crafteo", "hechizo", "olla mágica"],
+      "en": ["Halloween", "potion", "brewing", "witchcraft", "alchemy", "crafting", "spell", "bubbling pot"]
+    }
+  },
+  "gravestone": {
+    "label": { "es": "Lápida", "en": "Headstone", "pt": "Lápide", "fr": "Pierre tombale", "de": "Grabstein", "it": "Lapide", "ja": "墓石", "zh": "墓碑", "ko": "묘비", "ar": "شاهد قبر" },
+    "keywords": {
+      "es": ["tumba", "Halloween", "en memoria", "QEPD", "Día de Muertos", "panteón", "cuenta conmemorativa", "homenaje"],
+      "en": ["grave", "tombstone", "Halloween", "in memoriam", "RIP", "memorial", "memorialized account", "cemetery"]
+    }
+  },
+  "sugar-skull": {
+    "label": { "es": "Calaverita de azúcar", "en": "Sugar skull", "pt": "Caveira de açúcar", "fr": "Crâne en sucre", "de": "Zuckerschädel", "it": "Teschio di zucchero", "ja": "シュガースカル", "zh": "糖骷髅", "ko": "슈가 스컬", "ar": "جمجمة السكر" },
+    "keywords": {
+      "es": ["Día de Muertos", "calavera", "ofrenda", "2 de noviembre", "catrina", "fiesta mexicana", "tradición", "cempasúchil"],
+      "en": ["Day of the Dead", "Día de los Muertos", "calavera", "skull", "Mexican fiesta", "ofrenda", "November 2", "Catrina"]
+    }
+  },
+  "egg-painted": {
+    "label": { "es": "Huevo pintado", "en": "Painted egg", "pt": "Ovo pintado", "fr": "Œuf décoré", "de": "Bemaltes Ei", "it": "Uovo decorato", "ja": "絵付けした卵", "zh": "彩蛋", "ko": "색칠한 달걀", "ar": "بيضة ملونة" },
+    "keywords": {
+      "es": ["huevo de Pascua", "primavera", "búsqueda de huevos", "easter egg", "secreto oculto", "sorpresa escondida", "fiesta de primavera"],
+      "en": ["Easter egg", "spring", "egg hunt", "hidden feature", "secret", "surprise", "spring festival"]
+    }
+  },
+  "egg-basket": {
+    "label": { "es": "Canasta de huevos", "en": "Egg basket", "pt": "Cesta de ovos", "fr": "Panier d’œufs", "de": "Eierkorb", "it": "Cestino di uova", "ja": "卵のかご", "zh": "彩蛋篮", "ko": "달걀 바구니", "ar": "سلة بيض" },
+    "keywords": {
+      "es": ["búsqueda de huevos", "Pascua", "primavera", "promoción de temporada", "conejo", "fiesta de primavera", "cesta"],
+      "en": ["egg hunt", "Easter basket", "spring", "seasonal promotion", "bunny", "spring festival", "Easter"]
+    }
+  },
+  "paper-lantern": {
+    "label": { "es": "Farol de papel", "en": "Paper lantern", "pt": "Lanterna de papel", "fr": "Lanterne en papier", "de": "Papierlaterne", "it": "Lanterna di carta", "ja": "提灯", "zh": "灯笼", "ko": "종이 등", "ar": "فانوس ورقي" },
+    "keywords": {
+      "es": ["Año Nuevo chino", "Año Nuevo lunar", "festival de linternas", "mercado nocturno", "decoración", "linterna china", "fiesta"],
+      "en": ["Lunar New Year", "Chinese New Year", "lantern festival", "night market", "festive decor", "Chinese lantern", "celebration"]
+    }
+  },
+  "punch-bowl": {
+    "label": { "es": "Ponchera", "en": "Punch bowl", "pt": "Poncheira", "fr": "Bol à punch", "de": "Bowlenschüssel", "it": "Ciotola per punch", "ja": "パンチボウル", "zh": "潘趣酒碗", "ko": "펀치 볼", "ar": "وعاء البنش" },
+    "keywords": {
+      "es": ["ponche", "fiesta", "recepción", "barra de bebidas", "aguas frescas", "brindis", "posada", "cucharón"],
+      "en": ["refreshments", "party", "reception", "drinks station", "beverage table", "ladle", "sangria", "eggnog"]
+    }
+  },
+  "flower-crown": {
+    "label": { "es": "Corona de flores", "en": "Flower crown", "pt": "Coroa de flores", "fr": "Couronne de fleurs", "de": "Blumenkranz", "it": "Coroncina di fiori", "ja": "花冠", "zh": "花冠", "ko": "화관", "ar": "تاج من الزهور" },
+    "keywords": {
+      "es": ["festival de primavera", "despedida de soltera", "tocado", "diadema floral", "look de festival", "boho", "novia"],
+      "en": ["spring festival", "bridal shower", "headpiece", "floral headband", "festival look", "boho", "bride", "May Day"]
+    }
+  },
+  "party-tent": {
+    "label": { "es": "Carpa para eventos", "en": "Party tent", "pt": "Tenda para festas", "fr": "Tente de réception", "de": "Festzelt", "it": "Tendone per feste", "ja": "イベントテント", "zh": "派对帐篷", "ko": "행사 천막", "ar": "خيمة الحفلات" },
+    "keywords": {
+      "es": ["renta para eventos", "recepción de boda", "fiesta al aire libre", "toldo", "jardín de eventos", "lona", "banquete", "kermés"],
+      "en": ["marquee", "event rental", "wedding reception", "outdoor celebration", "canopy", "pavilion", "banquet", "garden party"]
+    }
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "theater": {
+    "label": { "es": "Teatro", "en": "Theater", "pt": "Teatro", "fr": "Théâtre", "de": "Theater", "it": "Teatro", "ja": "劇場", "zh": "剧院", "ko": "극장", "ar": "مسرح" },
+    "keywords": {
+      "es": ["escenario", "obra de teatro", "función en vivo", "artes escénicas", "cartelera", "espectáculo", "puesta en escena"],
+      "en": ["stage", "play", "live show", "performing arts", "playbill", "performance", "stage production"]
+    }
+  },
+  "theater-screen": {
+    "label": { "es": "Cine", "en": "Movie theater", "pt": "Cinema", "fr": "Cinéma", "de": "Kino", "it": "Cinema", "ja": "映画館", "zh": "电影院", "ko": "영화관", "ar": "سينما" },
+    "keywords": {
+      "es": ["sala de cine", "en cartelera", "horarios de funciones", "estreno", "película", "pantalla grande", "complejo de cines"],
+      "en": ["cinema", "now in theaters", "showtimes", "premiere", "movie", "big screen", "multiplex"]
+    }
+  },
+  "theater-curtain": {
+    "label": { "es": "Telón cerrado", "en": "Closed curtain", "pt": "Cortina fechada", "fr": "Rideau fermé", "de": "Geschlossener Vorhang", "it": "Sipario chiuso", "ja": "閉じた幕", "zh": "拉上的幕布", "ko": "닫힌 무대 막", "ar": "ستارة مسرح مغلقة" },
+    "keywords": {
+      "es": ["función por comenzar", "tercera llamada", "intermedio", "próximamente", "revelación", "antes del show", "escenario"],
+      "en": ["show about to start", "curtain up", "intermission", "coming soon", "reveal", "before the show", "stage"]
+    }
+  },
+  "cinema-seat": {
+    "label": { "es": "Butaca", "en": "Theater seat", "pt": "Assento", "fr": "Siège", "de": "Sitzplatz", "it": "Poltrona", "ja": "座席", "zh": "座位", "ko": "좌석", "ar": "مقعد" },
+    "keywords": {
+      "es": ["asiento", "elegir lugar", "selección de asientos", "lugar disponible", "sala de cine", "teatro", "auditorio"],
+      "en": ["seat selection", "choose a seat", "available seat", "cinema", "auditorium", "seating", "venue"]
+    }
+  },
+  "cinema-seat-check": {
+    "label": { "es": "Butaca seleccionada", "en": "Selected seat", "pt": "Assento selecionado", "fr": "Siège sélectionné", "de": "Ausgewählter Sitzplatz", "it": "Posto selezionato", "ja": "選択した座席", "zh": "已选座位", "ko": "선택한 좌석", "ar": "مقعد مختار" },
+    "keywords": {
+      "es": ["tu lugar", "asiento elegido", "reservado", "apartado", "lugar asignado", "compra confirmada", "mapa de asientos"],
+      "en": ["your seat", "chosen seat", "booked", "reserved", "assigned seat", "confirmed booking", "seat map"]
+    }
+  },
+  "cinema-seat-row": {
+    "label": { "es": "Fila de butacas", "en": "Row of seats", "pt": "Fileira de assentos", "fr": "Rangée de sièges", "de": "Sitzreihe", "it": "Posti vicini", "ja": "連席", "zh": "一排座位", "ko": "나란한 좌석", "ar": "صف مقاعد" },
+    "keywords": {
+      "es": ["asientos juntos", "reservación grupal", "número de boletos", "cuántos lugares", "grupo", "familia", "lugares contiguos"],
+      "en": ["seats together", "group booking", "number of tickets", "how many seats", "party size", "adjacent seats", "family"]
+    }
+  },
+  "marquee-sign": {
+    "label": { "es": "Marquesina", "en": "Marquee", "pt": "Letreiro luminoso", "fr": "Enseigne lumineuse", "de": "Leuchtschild", "it": "Insegna luminosa", "ja": "電飾看板", "zh": "灯光招牌", "ko": "조명 간판", "ar": "لافتة مضيئة" },
+    "keywords": {
+      "es": ["en cartelera", "estelar", "artista principal", "evento destacado", "anuncio luminoso", "letrero de foquitos", "hoy se presenta"],
+      "en": ["now showing", "headliner", "featured event", "lit sign", "billboard", "tonight", "top billing"]
+    }
+  },
+  "drive-in": {
+    "label": { "es": "Autocinema", "en": "Drive-in theater", "pt": "Cinema drive-in", "fr": "Cinéma drive-in", "de": "Autokino", "it": "Cinema drive-in", "ja": "ドライブインシアター", "zh": "汽车影院", "ko": "자동차 극장", "ar": "سينما السيارات" },
+    "keywords": {
+      "es": ["cine al aire libre", "ver películas desde el auto", "cine en el coche", "función nocturna", "pantalla exterior", "noche de película"],
+      "en": ["outdoor movies", "car cinema", "open-air cinema", "movie night", "outdoor screen", "watch from the car", "parking lot screening"]
+    }
+  },
+  "glasses-3d": {
+    "label": { "es": "Lentes 3D", "en": "3D glasses", "pt": "Óculos 3D", "fr": "Lunettes 3D", "de": "3D-Brille", "it": "Occhiali 3D", "ja": "3Dメガネ", "zh": "3D眼镜", "ko": "3D 안경", "ar": "نظارات ثلاثية الأبعاد" },
+    "keywords": {
+      "es": ["función 3D", "formato 3D", "película en tres dimensiones", "cine", "estereoscópico", "anteojos", "efectos especiales"],
+      "en": ["3D screening", "3D format", "stereoscopic", "cinema", "movie", "special effects", "showtime format"]
+    }
+  },
+  "opera-glasses": {
+    "label": { "es": "Binoculares de teatro", "en": "Opera glasses", "pt": "Binóculo de teatro", "fr": "Jumelles de théâtre", "de": "Opernglas", "it": "Binocolo da teatro", "ja": "オペラグラス", "zh": "观剧望远镜", "ko": "오페라글라스", "ar": "منظار الأوبرا" },
+    "keywords": {
+      "es": ["ópera", "teatro", "vista desde el asiento", "palco", "balcón", "gemelos", "gala"],
+      "en": ["opera", "theater", "view from the seat", "balcony", "box seat", "binoculars", "gala"]
+    }
+  },
+  "spotlight": {
+    "label": { "es": "Reflector de escenario", "en": "Spotlight", "pt": "Holofote", "fr": "Projecteur", "de": "Scheinwerfer", "it": "Riflettore", "ja": "スポットライト", "zh": "聚光灯", "ko": "스포트라이트", "ar": "كشاف ضوئي" },
+    "keywords": {
+      "es": ["iluminación escénica", "destacar", "protagonista", "centro de atención", "resaltar", "foco", "spotlight"],
+      "en": ["stage lighting", "highlight", "featured", "center stage", "stage light", "in the limelight", "focus"]
+    }
+  },
+  "comedy-mask": {
+    "label": { "es": "Máscara de comedia", "en": "Comedy mask", "pt": "Máscara da comédia", "fr": "Masque de la comédie", "de": "Komödienmaske", "it": "Maschera della commedia", "ja": "喜劇の仮面", "zh": "喜剧面具", "ko": "희극 가면", "ar": "قناع الكوميديا" },
+    "keywords": {
+      "es": ["género de comedia", "humor", "risa", "chistoso", "teatro", "show cómico", "alegría", "sonrisa"],
+      "en": ["comedy genre", "humor", "laughter", "funny", "theater", "comedy show", "happy", "smile"]
+    }
+  },
+  "tragedy-mask": {
+    "label": { "es": "Máscara de tragedia", "en": "Tragedy mask", "pt": "Máscara da tragédia", "fr": "Masque de la tragédie", "de": "Tragödienmaske", "it": "Maschera della tragedia", "ja": "悲劇の仮面", "zh": "悲剧面具", "ko": "비극 가면", "ar": "قناع التراجيديا" },
+    "keywords": {
+      "es": ["drama", "género dramático", "tristeza", "teatro", "melodrama", "llanto", "dramón"],
+      "en": ["drama", "sadness", "theater", "melodrama", "sorrow", "tearjerker", "serious play"]
+    }
+  },
+  "masquerade-mask": {
+    "label": { "es": "Antifaz", "en": "Masquerade mask", "pt": "Máscara de baile", "fr": "Masque de bal", "de": "Venezianische Maske", "it": "Maschera di carnevale", "ja": "仮面舞踏会のマスク", "zh": "化装舞会面具", "ko": "가면무도회 가면", "ar": "قناع حفلة تنكرية" },
+    "keywords": {
+      "es": ["carnaval", "baile de máscaras", "fiesta de disfraces", "mascarada", "veneciano", "misterio", "gala"],
+      "en": ["carnival", "masquerade ball", "costume party", "Venetian mask", "Mardi Gras", "disguise", "gala"]
+    }
+  },
+  "jester-hat": {
+    "label": { "es": "Gorro de bufón", "en": "Jester hat", "pt": "Chapéu de bobo da corte", "fr": "Bonnet de bouffon", "de": "Narrenkappe", "it": "Cappello da giullare", "ja": "道化師の帽子", "zh": "小丑帽", "ko": "어릿광대 모자", "ar": "قبعة مهرج البلاط" },
+    "keywords": {
+      "es": ["comedia", "carnaval", "día de los inocentes", "broma", "bromista", "arlequín", "medieval"],
+      "en": ["comedy", "fool", "carnival", "April Fools", "prank", "harlequin", "joker", "medieval"]
+    }
+  },
+  "magic-hat": {
+    "label": { "es": "Sombrero de mago", "en": "Magic hat", "pt": "Cartola de mágico", "fr": "Chapeau de magicien", "de": "Zauberhut", "it": "Cappello del mago", "ja": "マジシャンの帽子", "zh": "魔术帽", "ko": "마술사 모자", "ar": "قبعة الساحر" },
+    "keywords": {
+      "es": ["show de magia", "truco", "sorpresa", "conejo", "ilusionista", "chistera", "abracadabra"],
+      "en": ["magic show", "trick", "surprise", "rabbit", "magician", "top hat", "abracadabra"]
+    }
+  },
+  "face-clown": {
+    "label": { "es": "Payaso", "en": "Clown", "pt": "Palhaço", "fr": "Clown", "de": "Clown", "it": "Pagliaccio", "ja": "ピエロ", "zh": "小丑", "ko": "광대", "ar": "مهرج" },
+    "keywords": {
+      "es": ["circo", "chistes", "fiesta infantil", "cumpleaños", "nariz roja", "animador", "show para niños"],
+      "en": ["circus", "clowning", "jokes", "kids’ party", "birthday", "red nose", "children’s entertainer"]
+    }
+  },
+  "crystal-ball": {
+    "label": { "es": "Bola de cristal", "en": "Crystal ball", "pt": "Bola de cristal", "fr": "Boule de cristal", "de": "Kristallkugel", "it": "Sfera di cristallo", "ja": "水晶玉", "zh": "水晶球", "ko": "수정 구슬", "ar": "كرة بلورية" },
+    "keywords": {
+      "es": ["adivinación", "predicciones", "vidente", "futuro", "horóscopo", "atracción de feria", "lectura de la suerte", "pronóstico"],
+      "en": ["fortune telling", "predictions", "psychic", "future", "horoscope", "fair attraction", "forecast", "magic show"]
+    }
+  },
+  "marionette": {
+    "label": { "es": "Marioneta", "en": "Marionette", "pt": "Marionete", "fr": "Marionnette à fils", "de": "Marionette", "it": "Marionetta", "ja": "操り人形", "zh": "提线木偶", "ko": "마리오네트", "ar": "دمية الخيوط" },
+    "keywords": {
+      "es": ["títeres", "función de títeres", "teatro infantil", "teatro guiñol", "hilos", "muñeco", "titiritero"],
+      "en": ["puppet show", "puppetry", "kids’ theater", "string puppet", "puppeteer", "strings", "doll"]
+    }
+  },
+  "stand-up-comedy": {
+    "label": { "es": "Stand-up", "en": "Stand-up comedy", "pt": "Stand-up", "fr": "Stand-up", "de": "Stand-up-Comedy", "it": "Stand-up comedy", "ja": "スタンダップコメディ", "zh": "脱口秀", "ko": "스탠드업 코미디", "ar": "ستاند أب كوميدي" },
+    "keywords": {
+      "es": ["comedia en vivo", "micrófono abierto", "comediante", "club de comedia", "monólogo", "chistes", "noche de comedia"],
+      "en": ["open mic", "comedian", "comedy club", "live comedy", "monologue", "jokes", "comedy night"]
+    }
+  },
+  "circus-tent": {
+    "label": { "es": "Carpa de circo", "en": "Circus tent", "pt": "Tenda de circo", "fr": "Chapiteau", "de": "Zirkuszelt", "it": "Tendone del circo", "ja": "サーカスのテント", "zh": "马戏团帐篷", "ko": "서커스 텐트", "ar": "خيمة السيرك" },
+    "keywords": {
+      "es": ["circo", "feria", "festival", "función principal", "espectáculo", "kermés", "carnaval"],
+      "en": ["circus", "big top", "carnival", "festival", "fair", "main show", "spectacle"]
+    }
+  },
+  "unicycle": {
+    "label": { "es": "Monociclo", "en": "Unicycle", "pt": "Monociclo", "fr": "Monocycle", "de": "Einrad", "it": "Monociclo", "ja": "一輪車", "zh": "独轮车", "ko": "외발자전거", "ar": "دراجة أحادية العجلة" },
+    "keywords": {
+      "es": ["acto de circo", "equilibrio", "artista callejero", "acrobacia", "una rueda", "malabarista", "destreza"],
+      "en": ["circus act", "balance", "street performance", "acrobatics", "one wheel", "busker", "stunt"]
+    }
+  },
+  "ferris-wheel": {
+    "label": { "es": "Rueda de la fortuna", "en": "Ferris wheel", "pt": "Roda-gigante", "fr": "Grande roue", "de": "Riesenrad", "it": "Ruota panoramica", "ja": "観覧車", "zh": "摩天轮", "ko": "대관람차", "ar": "عجلة فيريس" },
+    "keywords": {
+      "es": ["parque de diversiones", "feria", "juegos mecánicos", "atracciones", "parque temático", "noria", "vista panorámica"],
+      "en": ["amusement park", "fair", "rides", "attractions", "theme park", "observation wheel", "funfair"]
+    }
+  },
+  "roller-coaster": {
+    "label": { "es": "Montaña rusa", "en": "Roller coaster", "pt": "Montanha-russa", "fr": "Montagnes russes", "de": "Achterbahn", "it": "Montagne russe", "ja": "ジェットコースター", "zh": "过山车", "ko": "롤러코스터", "ar": "أفعوانية" },
+    "keywords": {
+      "es": ["juegos extremos", "parque de diversiones", "parque temático", "adrenalina", "atracciones", "juegos mecánicos", "emoción"],
+      "en": ["thrill ride", "theme park", "amusement park", "adrenaline", "attractions", "rides", "loop"]
+    }
+  },
+  "carousel": {
+    "label": { "es": "Carrusel de caballitos", "en": "Merry-go-round", "pt": "Carrossel", "fr": "Manège", "de": "Karussell", "it": "Giostra", "ja": "メリーゴーランド", "zh": "旋转木马", "ko": "회전목마", "ar": "دوامة الخيل" },
+    "keywords": {
+      "es": ["feria", "juegos infantiles", "parque de diversiones", "juegos mecánicos", "tiovivo", "atracción para niños", "vueltas"],
+      "en": ["carousel", "fair", "kids’ rides", "amusement park", "funfair", "carnival ride", "horses"]
+    }
+  },
+  "bumper-car": {
+    "label": { "es": "Carrito chocón", "en": "Bumper car", "pt": "Carrinho bate-bate", "fr": "Auto tamponneuse", "de": "Autoscooter", "it": "Autoscontro", "ja": "バンパーカー", "zh": "碰碰车", "ko": "범퍼카", "ar": "سيارة تصادم" },
+    "keywords": {
+      "es": ["autos de choque", "feria", "juego mecánico", "parque de diversiones", "atracción", "pista", "manejar"],
+      "en": ["dodgems", "fair ride", "amusement park", "carnival ride", "attraction", "funfair", "dodgem track"]
+    }
+  },
+  "teacup-ride": {
+    "label": { "es": "Tazas giratorias", "en": "Teacup ride", "pt": "Xícara maluca", "fr": "Tasses tournantes", "de": "Teetassen-Karussell", "it": "Tazze rotanti", "ja": "コーヒーカップ", "zh": "旋转茶杯", "ko": "회전 찻잔", "ar": "الفناجين الدوارة" },
+    "keywords": {
+      "es": ["tazas locas", "juego infantil", "juegos tranquilos", "feria", "parque de diversiones", "dar vueltas", "atracción familiar"],
+      "en": ["kids’ ride", "gentle ride", "fair", "amusement park", "family ride", "spinning cups", "spin"]
+    }
+  },
+  "haunted-house": {
+    "label": { "es": "Casa embrujada", "en": "Haunted house", "pt": "Casa mal-assombrada", "fr": "Maison hantée", "de": "Spukhaus", "it": "Casa stregata", "ja": "お化け屋敷", "zh": "鬼屋", "ko": "귀신의 집", "ar": "بيت مسكون" },
+    "keywords": {
+      "es": ["casa del terror", "atracción de terror", "Halloween", "sustos", "fantasmas", "túnel del terror", "eventos de miedo"],
+      "en": ["horror attraction", "dark ride", "Halloween", "scare", "ghosts", "spooky", "fright night"]
+    }
+  },
+  "cotton-candy": {
+    "label": { "es": "Algodón de azúcar", "en": "Cotton candy", "pt": "Algodão-doce", "fr": "Barbe à papa", "de": "Zuckerwatte", "it": "Zucchero filato", "ja": "わたあめ", "zh": "棉花糖", "ko": "솜사탕", "ar": "غزل البنات" },
+    "keywords": {
+      "es": ["dulces de feria", "golosinas", "feria", "carnaval", "kermés", "fiesta infantil", "postre"],
+      "en": ["fair food", "candy floss", "sweets", "carnival", "fairground", "kids’ party", "treat"]
+    }
+  },
+  "ticket-roll": {
+    "label": { "es": "Rollo de boletos", "en": "Ticket roll", "pt": "Rolo de bilhetes", "fr": "Rouleau de tickets", "de": "Ticketrolle", "it": "Rotolo di biglietti", "ja": "チケットロール", "zh": "一卷票", "ko": "티켓 롤", "ar": "لفافة تذاكر" },
+    "keywords": {
+      "es": ["rifa", "sorteo", "boletos de feria", "fichas de arcade", "boletos de entrada", "números", "tómbola"],
+      "en": ["raffle", "draw", "fair tickets", "arcade tickets", "admission", "numbered tickets", "tombola"]
+    }
+  },
+  "ticket-scan": {
+    "label": { "es": "Escanear boleto", "en": "Scan ticket", "pt": "Escanear ingresso", "fr": "Scanner le billet", "de": "Ticket scannen", "it": "Scansiona biglietto", "ja": "チケットをスキャン", "zh": "扫描门票", "ko": "티켓 스캔", "ar": "مسح التذكرة" },
+    "keywords": {
+      "es": ["control de acceso", "registro de entrada", "validar entrada", "código QR", "check-in", "puerta", "lector"],
+      "en": ["check-in", "entry validation", "access control", "QR code", "door", "barcode", "admit"]
+    }
+  },
+  "ticket-arrow-right": {
+    "label": { "es": "Transferir boleto", "en": "Transfer ticket", "pt": "Transferir ingresso", "fr": "Transférer le billet", "de": "Ticket übertragen", "it": "Trasferisci biglietto", "ja": "チケットを譲渡", "zh": "转让门票", "ko": "티켓 양도", "ar": "تحويل التذكرة" },
+    "keywords": {
+      "es": ["enviar boleto", "regalar entrada", "compartir con un amigo", "ceder", "reenviar", "pasar boleto", "invitar"],
+      "en": ["send ticket", "give a ticket", "share with a friend", "forward", "pass on", "gift", "invite"]
+    }
+  },
+  "wristband": {
+    "label": { "es": "Pulsera de acceso", "en": "Wristband", "pt": "Pulseira de acesso", "fr": "Bracelet d’accès", "de": "Festivalbändchen", "it": "Braccialetto d’accesso", "ja": "リストバンド", "zh": "入场手环", "ko": "입장 팔찌", "ar": "سوار الدخول" },
+    "keywords": {
+      "es": ["festival", "entrada", "acceso", "pago sin efectivo", "concierto", "brazalete", "cashless"],
+      "en": ["festival", "entry", "access", "cashless payment", "concert", "admission band", "RFID"]
+    }
+  },
+  "wristband-check": {
+    "label": { "es": "Pulsera activada", "en": "Wristband activated", "pt": "Pulseira ativada", "fr": "Bracelet activé", "de": "Bändchen aktiviert", "it": "Braccialetto attivato", "ja": "認証済みのリストバンド", "zh": "手环已激活", "ko": "활성화된 팔찌", "ar": "سوار مفعّل" },
+    "keywords": {
+      "es": ["entrada verificada", "acceso concedido", "registrado", "validado", "listo para entrar", "saldo cargado", "check-in"],
+      "en": ["entry verified", "access granted", "checked in", "validated", "ready to enter", "credit loaded", "activation"]
+    }
+  },
+  "backstage-pass": {
+    "label": { "es": "Pase backstage", "en": "Backstage pass", "pt": "Credencial de backstage", "fr": "Pass backstage", "de": "Backstage-Pass", "it": "Pass backstage", "ja": "バックステージパス", "zh": "后台通行证", "ko": "백스테이지 패스", "ar": "تصريح الكواليس" },
+    "keywords": {
+      "es": ["tras bambalinas", "acceso total", "VIP", "staff", "gafete", "credencial", "camerinos", "prensa"],
+      "en": ["all access", "VIP", "staff credentials", "lanyard", "laminate", "crew", "press pass"]
+    }
+  },
+  "hand-stamp": {
+    "label": { "es": "Sello en la mano", "en": "Hand stamp", "pt": "Carimbo na mão", "fr": "Tampon sur la main", "de": "Einlassstempel", "it": "Timbro sulla mano", "ja": "入場スタンプ", "zh": "手背印章", "ko": "손등 도장", "ar": "ختم على اليد" },
+    "keywords": {
+      "es": ["reingreso", "entrada al antro", "cover pagado", "acceso", "club", "fiesta", "marca de entrada"],
+      "en": ["re-entry", "club admission", "paid entry", "cover charge", "access", "nightclub", "entry mark"]
+    }
+  },
+  "tally-counter": {
+    "label": { "es": "Contador manual", "en": "Tally counter", "pt": "Contador manual", "fr": "Compteur manuel", "de": "Handzähler", "it": "Contapersone", "ja": "数取器", "zh": "计数器", "ko": "계수기", "ar": "عداد يدوي" },
+    "keywords": {
+      "es": ["aforo", "conteo de personas", "asistencia", "capacidad", "clicker", "puerta", "control de acceso"],
+      "en": ["headcount", "clicker", "capacity", "attendance", "door count", "people counter", "occupancy"]
+    }
+  },
+  "member-list-check": {
+    "label": { "es": "Invitados registrados", "en": "Checked-in guests", "pt": "Convidados com check-in", "fr": "Invités enregistrés", "de": "Eingecheckte Gäste", "it": "Ospiti registrati", "ja": "チェックイン済みのゲスト", "zh": "已签到宾客", "ko": "체크인한 게스트", "ar": "ضيوف سجّلوا وصولهم" },
+    "keywords": {
+      "es": ["lista de invitados", "llegadas", "asistentes", "check-in", "registro en puerta", "confirmados", "pase de lista"],
+      "en": ["guest list", "arrivals", "attendees", "door list", "RSVP", "registration", "roll call"]
+    }
+  },
+  "calendar-ticket": {
+    "label": { "es": "Evento con boleto", "en": "Ticketed event", "pt": "Evento com ingresso", "fr": "Événement avec billet", "de": "Veranstaltung mit Ticket", "it": "Evento con biglietto", "ja": "チケット制イベント", "zh": "门票活动", "ko": "예매한 행사", "ar": "فعالية بتذكرة" },
+    "keywords": {
+      "es": ["función reservada", "día del evento", "fecha del show", "agenda", "boletos comprados", "concierto", "recordatorio"],
+      "en": ["booked show", "event day", "show date", "schedule", "tickets purchased", "concert", "reminder"]
+    }
+  },
+  "statuette": {
+    "label": { "es": "Estatuilla", "en": "Award statuette", "pt": "Estatueta", "fr": "Statuette", "de": "Preisstatuette", "it": "Statuetta", "ja": "受賞トロフィー", "zh": "奖座", "ko": "수상 트로피", "ar": "تمثال الجائزة" },
+    "keywords": {
+      "es": ["premiación", "nominado", "ganador", "lo mejor del año", "ceremonia de premios", "galardón", "reconocimiento"],
+      "en": ["awards night", "nominee", "winner", "best of", "award ceremony", "accolade", "recognition"]
+    }
+  },
+  "disco-ball": {
+    "label": { "es": "Bola disco", "en": "Disco ball", "pt": "Globo espelhado", "fr": "Boule à facettes", "de": "Discokugel", "it": "Palla da discoteca", "ja": "ミラーボール", "zh": "迪斯科球", "ko": "미러볼", "ar": "كرة الديسكو" },
+    "keywords": {
+      "es": ["antro", "fiesta", "discoteca", "vida nocturna", "bailar", "pista de baile", "bola de espejos"],
+      "en": ["nightclub", "dance party", "nightlife", "dance floor", "party", "mirror ball", "club"]
+    }
+  },
+  "quiz-buzzer": {
+    "label": { "es": "Botón de concurso", "en": "Quiz buzzer", "pt": "Botão de resposta", "fr": "Buzzer de quiz", "de": "Quiz-Buzzer", "it": "Pulsante del quiz", "ja": "早押しボタン", "zh": "抢答器", "ko": "퀴즈 부저", "ar": "جرس المسابقة" },
+    "keywords": {
+      "es": ["noche de trivia", "quiz", "preguntas y respuestas", "chicharra", "apretar primero", "programa de concursos", "juego de preguntas"],
+      "en": ["quiz night", "trivia", "game show", "buzz in", "answer first", "Q&A", "contest"]
+    }
+  }
+}
