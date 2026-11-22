@@ -6,13 +6,6 @@
       "en": ["hardwood", "strength", "longevity", "deciduous tree", "tree species", "park", "woodland", "shade tree"]
     }
   },
-  "tree-willow": {
-    "label": { "es": "Sauce llorón", "en": "Weeping willow", "pt": "Salgueiro-chorão", "fr": "Saule pleureur", "de": "Trauerweide", "it": "Salice piangente", "ja": "シダレヤナギ", "zh": "垂柳", "ko": "수양버들", "ar": "صفصاف باكٍ" },
-    "keywords": {
-      "es": ["sauce", "árbol junto al agua", "orilla del lago", "estanque", "calma", "parque", "ramas colgantes"],
-      "en": ["willow", "waterside tree", "lakeside", "pond", "calm", "park", "drooping branches"]
-    }
-  },
   "tree-bare": {
     "label": { "es": "Árbol sin hojas", "en": "Bare tree", "pt": "Árvore sem folhas", "fr": "Arbre dénudé", "de": "Kahler Baum", "it": "Albero spoglio", "ja": "葉のない木", "zh": "光秃的树", "ko": "앙상한 나무", "ar": "شجرة عارية" },
     "keywords": {
@@ -34,13 +27,6 @@
       "en": ["columnar tree", "formal garden", "Mediterranean landscaping", "windbreak", "evergreen", "conifer", "Tuscany", "privacy screen"]
     }
   },
-  "tree-baobab": {
-    "label": { "es": "Baobab", "en": "Baobab", "pt": "Baobá", "fr": "Baobab", "de": "Affenbrotbaum", "it": "Baobab", "ja": "バオバブ", "zh": "猴面包树", "ko": "바오밥나무", "ar": "شجرة الباوباب" },
-    "keywords": {
-      "es": ["sabana", "África", "Madagascar", "árbol milenario", "zona árida", "guía de viaje", "árbol gigante", "naturaleza"],
-      "en": ["savanna", "Africa", "Madagascar", "ancient tree", "drylands", "travel guide", "giant tree", "nature"]
-    }
-  },
   "tree-acacia": {
     "label": { "es": "Acacia", "en": "Acacia tree", "pt": "Acácia", "fr": "Acacia", "de": "Akazie", "it": "Acacia", "ja": "アカシア", "zh": "金合欢树", "ko": "아카시아", "ar": "شجرة أكاسيا" },
     "keywords": {
@@ -60,13 +46,6 @@
     "keywords": {
       "es": ["árbol talado", "tala", "derribo de árbol", "retiro de árbol", "triturar tocones", "deforestación", "leña", "tronco cortado"],
       "en": ["felled tree", "tree removal", "logging", "stump grinding", "deforestation", "cut tree", "firewood", "tree service"]
-    }
-  },
-  "tree-rings": {
-    "label": { "es": "Anillos del tronco", "en": "Tree rings", "pt": "Anéis de crescimento", "fr": "Cernes du bois", "de": "Jahresringe", "it": "Anelli degli alberi", "ja": "年輪", "zh": "年轮", "ko": "나이테", "ar": "حلقات الشجرة" },
-    "keywords": {
-      "es": ["edad del árbol", "crecimiento", "paso del tiempo", "madera", "historial", "versiones", "corte transversal", "antigüedad"],
-      "en": ["growth rings", "tree age", "growth over time", "wood", "history", "versions", "cross-section", "timber"]
     }
   },
   "tree-branch": {
@@ -174,25 +153,11 @@
       "en": ["zen", "spa", "sustainable material", "cane", "Asia", "eco-friendly", "stalk", "panda"]
     }
   },
-  "aloe-vera": {
-    "label": { "es": "Sábila", "en": "Aloe vera", "pt": "Babosa", "fr": "Aloe vera", "de": "Aloe vera", "it": "Aloe vera", "ja": "アロエ", "zh": "芦荟", "ko": "알로에", "ar": "ألوفيرا" },
-    "keywords": {
-      "es": ["aloe vera", "cuidado de la piel", "después del sol", "gel natural", "quemaduras", "hidratante", "remedio natural", "suculenta"],
-      "en": ["soothing", "skincare", "after-sun", "natural gel", "sunburn relief", "moisturizer", "natural remedy", "succulent"]
-    }
-  },
   "succulent": {
     "label": { "es": "Suculenta", "en": "Succulent", "pt": "Suculenta", "fr": "Plante succulente", "de": "Sukkulente", "it": "Pianta grassa", "ja": "多肉植物", "zh": "多肉植物", "ko": "다육식물", "ar": "نبات عصاري" },
     "keywords": {
       "es": ["crasa", "echeveria", "poco riego", "planta de interior", "roseta", "bajo mantenimiento", "planta resistente", "jardín seco"],
       "en": ["echeveria", "rosette", "low water", "drought tolerant", "houseplant", "low maintenance", "xeriscape", "hardy plant"]
-    }
-  },
-  "cactus-barrel": {
-    "label": { "es": "Cactus en maceta", "en": "Potted cactus", "pt": "Cacto em vaso", "fr": "Cactus en pot", "de": "Kaktus im Topf", "it": "Cactus in vaso", "ja": "鉢植えのサボテン", "zh": "盆栽仙人掌", "ko": "화분 선인장", "ar": "صبار في أصيص" },
-    "keywords": {
-      "es": ["biznaga", "cactácea", "planta del desierto", "poco riego", "planta de interior", "vivero", "espinas", "venta de plantas"],
-      "en": ["barrel cactus", "desert plant", "low water", "houseplant", "nursery", "spines", "plant shop", "succulent"]
     }
   },
   "snake-plant": {
@@ -244,13 +209,6 @@
       "en": ["trailing plant", "wall cover", "climber", "evergreen", "ground cover", "facade", "english ivy"]
     }
   },
-  "bush": {
-    "label": { "es": "Arbusto", "en": "Shrub", "pt": "Arbusto", "fr": "Arbuste", "de": "Strauch", "it": "Arbusto", "ja": "低木", "zh": "灌木", "ko": "관목", "ar": "شجيرة" },
-    "keywords": {
-      "es": ["mata", "paisajismo", "jardinería", "plantas de jardín", "follaje", "matorral", "planta ornamental", "área verde"],
-      "en": ["bush", "landscaping", "gardening", "garden plants", "foliage", "thicket", "ornamental plant", "greenery"]
-    }
-  },
   "hedge": {
     "label": { "es": "Seto", "en": "Hedge", "pt": "Cerca viva", "fr": "Haie", "de": "Hecke", "it": "Siepe", "ja": "生け垣", "zh": "树篱", "ko": "산울타리", "ar": "سياج نباتي" },
     "keywords": {
@@ -263,13 +221,6 @@
     "keywords": {
       "es": ["planta ornamental", "jardín formal", "poda decorativa", "arbusto podado", "entrada", "decoración", "maceta", "figura de planta"],
       "en": ["ornamental plant", "formal garden", "decorative pruning", "clipped shrub", "entrance", "decor", "boxwood", "sculpted plant"]
-    }
-  },
-  "trellis": {
-    "label": { "es": "Enrejado de jardín", "en": "Garden trellis", "pt": "Treliça", "fr": "Treillis", "de": "Rankgitter", "it": "Graticcio", "ja": "トレリス", "zh": "花架", "ko": "트렐리스", "ar": "تعريشة" },
-    "keywords": {
-      "es": ["celosía", "soporte para enredaderas", "huerto vertical", "jardín vertical", "trepadoras", "espaldera", "guía para plantas", "pérgola"],
-      "en": ["lattice", "plant support", "climbing support", "vertical gardening", "climbers", "espalier", "plant frame", "arbor"]
     }
   },
   "leaf-pile": {
@@ -447,13 +398,6 @@
       "en": ["transplant", "bigger pot", "plant care", "gardening task", "fresh soil", "roots", "move plant"]
     }
   },
-  "window-box": {
-    "label": { "es": "Jardinera de ventana", "en": "Window box", "pt": "Floreira de janela", "fr": "Jardinière de fenêtre", "de": "Blumenkasten", "it": "Fioriera da finestra", "ja": "窓辺のプランター", "zh": "窗台花箱", "ko": "창가 화분", "ar": "صندوق زهور للنافذة" },
-    "keywords": {
-      "es": ["balcón", "alféizar", "jardín pequeño", "departamento", "espacio reducido", "macetero", "flores en la ventana", "huerto urbano"],
-      "en": ["balcony", "windowsill", "small space", "apartment", "planter", "urban garden", "window planter", "container garden"]
-    }
-  },
   "plant-terrarium": {
     "label": { "es": "Terrario de plantas", "en": "Plant terrarium", "pt": "Terrário de plantas", "fr": "Terrarium végétal", "de": "Pflanzenterrarium", "it": "Terrario per piante", "ja": "テラリウム", "zh": "植物微景观", "ko": "식물 테라리움", "ar": "تيراريوم نباتات" },
     "keywords": {
@@ -473,13 +417,6 @@
     "keywords": {
       "es": ["otoño", "encino", "roble", "pequeños comienzos", "ahorro", "ardilla", "fruto seco", "guardar"],
       "en": ["autumn", "oak tree", "small beginnings", "savings", "squirrel", "nut", "save up", "stash"]
-    }
-  },
-  "pinecone": {
-    "label": { "es": "Piña de pino", "en": "Pine cone", "pt": "Pinha", "fr": "Pomme de pin", "de": "Kiefernzapfen", "it": "Pigna", "ja": "松ぼっくり", "zh": "松果", "ko": "솔방울", "ar": "كوز صنوبر" },
-    "keywords": {
-      "es": ["bosque", "invierno", "conífera", "cono", "decoración navideña", "piñón", "otoño"],
-      "en": ["forest", "winter", "conifer", "cone", "holiday decor", "pine nut", "autumn"]
     }
   },
   "seed-packet": {
@@ -615,20 +552,6 @@
       "en": ["watering reminder", "next watering", "watering schedule", "plant reminder", "overdue", "alarm", "watering frequency", "time to water"]
     }
   },
-  "garden-hose": {
-    "label": { "es": "Manguera de jardín", "en": "Garden hose", "pt": "Mangueira de jardim", "fr": "Tuyau d’arrosage", "de": "Gartenschlauch", "it": "Tubo da giardino", "ja": "散水ホース", "zh": "花园水管", "ko": "정원 호스", "ar": "خرطوم الحديقة" },
-    "keywords": {
-      "es": ["regar", "llave de agua", "toma de agua exterior", "lavar el carro", "patio", "carrete", "rociador", "jardín"],
-      "en": ["watering", "outdoor tap", "spigot", "washing", "car wash", "yard", "hose reel", "spray nozzle"]
-    }
-  },
-  "pruning-shears": {
-    "label": { "es": "Tijeras de podar", "en": "Pruning shears", "pt": "Tesoura de poda", "fr": "Sécateur", "de": "Gartenschere", "it": "Cesoie da potatura", "ja": "剪定ばさみ", "zh": "修枝剪", "ko": "전정가위", "ar": "مقص تقليم" },
-    "keywords": {
-      "es": ["podar", "recortar", "cortar ramas", "flores cortadas", "jardinería", "despuntar", "herramienta de jardín", "tijera de jardín"],
-      "en": ["prune", "trim", "cut back", "secateurs", "clippers", "gardening", "garden tool", "deadheading"]
-    }
-  },
   "lawn-mower": {
     "label": { "es": "Podadora de pasto", "en": "Lawn mower", "pt": "Cortador de grama", "fr": "Tondeuse à gazon", "de": "Rasenmäher", "it": "Tosaerba", "ja": "芝刈り機", "zh": "割草机", "ko": "잔디깎이", "ar": "جزازة العشب" },
     "keywords": {
@@ -641,27 +564,6 @@
     "keywords": {
       "es": ["podadora con asiento", "jardines grandes", "mantenimiento de áreas verdes", "campo de golf", "cortar el pasto", "jardinería", "terreno amplio", "minitractor"],
       "en": ["lawn tractor", "large lawn", "groundskeeping", "golf course", "mowing", "ride-on mower", "acreage", "estate"]
-    }
-  },
-  "robot-mower": {
-    "label": { "es": "Podadora robot", "en": "Robot lawn mower", "pt": "Cortador de grama robô", "fr": "Tondeuse robot", "de": "Mähroboter", "it": "Robot tagliaerba", "ja": "ロボット芝刈り機", "zh": "割草机器人", "ko": "로봇 잔디깎이", "ar": "جزازة عشب آلية" },
-    "keywords": {
-      "es": ["jardín inteligente", "corte automático", "podadora autónoma", "casa inteligente", "domótica", "pasto", "programar corte", "robot de jardín"],
-      "en": ["smart garden", "automatic mowing", "autonomous mower", "smart home", "robotic mower", "lawn", "mowing schedule", "garden robot"]
-    }
-  },
-  "robot-mower-dock": {
-    "label": { "es": "Base de la podadora robot", "en": "Mower charging base", "pt": "Base de carregamento do cortador", "fr": "Station de charge de la tondeuse", "de": "Ladestation des Mähroboters", "it": "Base di ricarica del robot tagliaerba", "ja": "芝刈りロボットの充電台", "zh": "割草机器人充电座", "ko": "잔디깎이 충전 스테이션", "ar": "قاعدة شحن الجزازة" },
-    "keywords": {
-      "es": ["cargando", "base de carga", "estación de carga", "regresar a la base", "acoplada", "en espera", "batería", "estacionada"],
-      "en": ["charging", "docked", "return to base", "docking station", "battery", "standby", "parked", "home base"]
-    }
-  },
-  "robot-mower-alert": {
-    "label": { "es": "La podadora necesita atención", "en": "Mower needs attention", "pt": "O cortador precisa de atenção", "fr": "La tondeuse nécessite une intervention", "de": "Mähroboter braucht Hilfe", "it": "Il robot tagliaerba richiede attenzione", "ja": "芝刈りロボットの確認が必要", "zh": "割草机器人需要处理", "ko": "잔디깎이 점검 필요", "ar": "الجزازة تحتاج إلى تدخل" },
-    "keywords": {
-      "es": ["atorada", "levantada", "falla de cuchilla", "error", "aviso", "fuera de zona", "batería baja", "revisar"],
-      "en": ["stuck", "lifted", "blade fault", "error", "warning", "out of bounds", "low battery", "check mower"]
     }
   },
   "string-trimmer": {
@@ -683,13 +585,6 @@
     "keywords": {
       "es": ["rociar", "humedad", "pulverizador", "cuidado de plantas", "spray", "hojas", "planta de interior", "brisa"],
       "en": ["misting", "humidity", "spray bottle", "plant care", "sprayer", "leaves", "houseplant", "fine mist"]
-    }
-  },
-  "compost-bin": {
-    "label": { "es": "Compostero", "en": "Compost bin", "pt": "Composteira", "fr": "Composteur", "de": "Komposter", "it": "Compostiera", "ja": "コンポスト", "zh": "堆肥箱", "ko": "퇴비통", "ar": "حاوية تسميد" },
-    "keywords": {
-      "es": ["composta", "residuos orgánicos", "desechos de jardín", "abono", "reciclaje", "tierra fértil", "lombricomposta", "sustentable"],
-      "en": ["composting", "organic waste", "garden waste", "fertilizer", "recycling", "soil", "worm bin", "sustainable"]
     }
   },
   "garden-arch": {

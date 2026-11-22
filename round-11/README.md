@@ -8,7 +8,7 @@ The `round-11` branch carries the round while it's drawn, so any machine can pic
 | `animales` | 92 | 76 | Done: illustrator, critic, the main session's review (6 dropped), languages |
 | `aves-insectos` | 88 | 79 | Done (2 dropped by the main session) |
 | `mar` | 61 | 52, and `fish` adopted | Done (4 dropped by the main session) |
-| `plantas` | 107 | 101, and 7 adopted | Drawn; its critic is next |
+| `plantas` | 107 | 86, and 7 adopted | Done: critic (23 redesigned, 17 dropped), the main session's review (4 dropped), languages |
 | `clima` | 76 | 40, and 26 adopted | Half drawn: its illustrator continues from the file, then its critic |
 | `medio-ambiente` | 68 | — | Not started: illustrator, languages, and critic |
 

@@ -52,5 +52,23 @@
    "name": "hammerhead-shark",
    "reason": "the head bar over the body reads as the letter T"
   }
+ ],
+ "plantas": [
+  {
+   "name": "bush",
+   "reason": "the three lobes on a ground line read as a cloud, and clima has its own"
+  },
+  {
+   "name": "tree-rings",
+   "reason": "the cross-section reads as a target at 18 px; the crack and the off-center heart do not rescue it"
+  },
+  {
+   "name": "tree-baobab",
+   "reason": "the bottle trunk under its flat branches reads as a lab flask with a crown"
+  },
+  {
+   "name": "aloe-vera",
+   "reason": "the toothed leaf on the diagonal dripping its gel reads as a carrot"
+  }
  ]
 }

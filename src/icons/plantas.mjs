@@ -27,6 +27,18 @@ const angOf = ([cx, cy], [x, y]) => (Math.atan2(y - cy, x - cx) * 180) / Math.PI
 const place = (d, s, c, to = c) => transform(d, s, to[0] - c[0] * s, to[1] - c[1] * s);
 /** A point scaled by `s` about `c` and set down with `c` at `to`. */
 const placePt = (p, s, c, to = c) => [to[0] + (p[0] - c[0]) * s, to[1] + (p[1] - c[1]) * s];
+/** Where roundpoly's corner at vertex i, rounded to r, reaches farthest: the middle of its arc. */
+const apex = (pts, i, r) => {
+  const n = pts.length;
+  const V = pts[i];
+  const u = unit(sub(pts[(i - 1 + n) % n], V));
+  const v = unit(sub(pts[(i + 1) % n], V));
+  const th = Math.acos(Math.max(-1, Math.min(1, u[0] * v[0] + u[1] * v[1])));
+  return plus(V, scale(unit(plus(u, v)), r / Math.sin(th / 2) - r));
+};
+/** A point k past `from` toward `to`: a stem run 0.75 into its leaf's tip (hidden in the tip's ink in
+ *  outline, a clean overlap in the fill). */
+const into = (from, to, k = 0.75) => plus(from, scale(unit(sub(to, from)), k));
 /** Closes an open stroke for `fill.solid` (it only takes closed shapes). */
 const shut = (d) =>
   d
@@ -185,22 +197,6 @@ function scallops(c, r, n, depth, a0 = -90) {
 }
 
 /**
- * Smooth closed curve through points (a Catmull-Rom spline as cubics): the wobble of a trunk's
- * cross-section.
- */
-function smooth(pts, t = 1 / 6) {
-  const n = pts.length;
-  let d = `M${pt(pts[0])}`;
-  for (let i = 0; i < n; i++) {
-    const [p0, p1, p2, p3] = [pts[(i - 1 + n) % n], pts[i], pts[(i + 1) % n], pts[(i + 2) % n]];
-    const c1 = plus(p1, scale(sub(p2, p0), t));
-    const c2 = sub(p2, scale(sub(p3, p1), t));
-    d += `C${pt(c1)} ${pt(c2)} ${pt(p2)}`;
-  }
-  return `${d}Z`;
-}
-
-/**
  * A heart-shaped leaflet (the engine's heart: two lobes of radius r, `a` apart from its axis, and the
  * tangents that run to its point), its point at `tip` and its lobes `h` away along `deg`.
  */
@@ -223,9 +219,7 @@ const GROUND = 20.75;
 const L = lugares.icons;
 // lugares's tree: its crown (three circles), its trunk (entering the crown up to 10.25) and branch
 const TREE = L.tree.d;
-const CROWN = [[7.5, 11, 4.25], [12, 6.75, 4.75], [16.5, 11, 4.25]];
-// lugares's leaf: the lens along the diagonal and its stem, which runs into it as the midrib
-const LEAF = L.leaf.d;
+// lugares's leaf lies along the diagonal, its stem from this foot running into it as the midrib
 const STEM_FOOT = [3.25, 20.75];
 /** A drawing made upright (stem down, along x = 12) laid on the leaf's diagonal. */
 const onLeaf = (d) => turnPath(d, 45, [12, 12]);
@@ -282,23 +276,6 @@ const add = (name, tags, d, extra = {}) => {
     line([9.25, 12], [12, 17.5], [14.75, 12]),
   ]);
 }
-{
-  // Weeping willow: the trunk splits at its top into strands that arch over and fall straight
-  // down like a curtain, each a little shorter than the one outside it.
-  const T = [12, 12];
-  const strand = (x, top, foot) => {
-    const ax = (12 + x) / 2;
-    const k = Math.abs(ax - x);
-    return `M${pt(T)}C${pt([12, top + (T[1] - top) * 0.35])} ${pt([ax + (12 - ax) * 0.55, top])} ${pt([ax, top])}C${pt([ax - (ax - x) * 0.55, top])} ${pt([x, top + k * 0.45])} ${pt([x, top + k])}V${N(foot)}`;
-  };
-  add('tree-willow', ['sauce llorón', 'sauce', 'árbol', 'estanque', 'willow', 'weeping willow', 'pond'], [
-    line([12, 21.25], T),
-    strand(3, 3, 18.25),
-    strand(6.5, 6.5, 15.5),
-    strand(21, 3, 17.5),
-    strand(17.5, 6.5, 14.75),
-  ]);
-}
 // Bare tree: a trunk that forks twice, its limbs bare, one reaching up and one out.
 add('tree-bare', ['árbol sin hojas', 'invierno', 'árbol seco', 'latente', 'bare tree', 'winter', 'dormant'], [
   line([12, 21.25], [12, 14.25]),
@@ -309,20 +286,11 @@ add('tree-bare', ['árbol sin hojas', 'invierno', 'árbol seco', 'latente', 'bar
 ]);
 // Fruit tree: the tree's crown and trunk, a fruit hanging in each lobe.
 add('tree-fruit', ['árbol frutal', 'huerto', 'frutas', 'jardín comestible', 'fruit tree', 'orchard', 'backyard'], [TREE[0], TREE[1], dot(7.5, 11.25, 1), dot(12, 6, 1), dot(16.5, 11.25, 1)]);
-// Cypress: a tall narrow crown like a flame on a very short trunk (tree-pine's construction).
+// Cypress: a tall narrow crown like a flame, twice as tall as it is wide, on a short trunk that
+// enters it (tree-pine's construction).
 add('tree-cypress', ['ciprés', 'árbol', 'jardín formal', 'mediterráneo', 'cypress', 'columnar tree'], [
-  'M12 2.5C14.25 5.25 16.5 9.5 16.5 13.75C16.5 16.5 14.5 18.25 12 18.25C9.5 18.25 7.5 16.5 7.5 13.75C7.5 9.5 9.75 5.25 12 2.5Z',
-  line([12, 21.25], [12, 9.5]),
-  line([12, 15], [13.5, 13.5]),
-]);
-// Baobab: a fat bottle of a trunk, short stubby branches spread flat from its top.
-add('tree-baobab', ['baobab', 'sabana', 'árbol', 'África', 'baobab', 'savanna', 'ancient tree'], [
-  'M7 21.25C7 16.5 10 15 10 10.75H14C14 15 17 16.5 17 21.25Z',
-  roundline([[10, 10.75], [7, 8.25], [3, 8.25]], [0, 1.25, 0]),
-  line([7, 8.25], [5.75, 4.75]),
-  line([12, 10.75], [12, 4.25]),
-  roundline([[14, 10.75], [17, 8.25], [21, 8.25]], [0, 1.25, 0]),
-  line([17, 8.25], [18.25, 4.75]),
+  'M12 2.25C14.25 5.25 15.75 9.25 15.75 13.5C15.75 16.5 14.25 18.25 12 18.25C9.75 18.25 8.25 16.5 8.25 13.5C8.25 9.25 9.75 5.25 12 2.25Z',
+  line([12, 21.25], [12, 14]),
 ]);
 // Umbrella acacia: a thin trunk leaning up into a fork, under a wide crown flat on top and bumpy
 // underneath.
@@ -354,26 +322,13 @@ add('tree-acacia', ['acacia', 'sabana', 'safari', 'árbol', 'acacia', 'savanna',
     ringArc(C, 3.5, 1.4, 200, 500),
   ]);
 }
-{
-  // Rings: a trunk's cross-section, a little uneven, two growth rings inside, and a crack from its
-  // edge to its heart.
-  const C = [12, 12];
-  const wob = [9, 8.6, 9.05, 8.75, 9, 8.55, 8.95, 8.7, 9.05, 8.6];
-  const ring = (k) => smooth(wob.map((r, i) => polar(...C, r * k, -90 + i * 36)));
-  add('tree-rings', ['anillos de árbol', 'tronco', 'madera', 'edad', 'historial', 'tree rings', 'wood', 'growth'], [
-    ring(1),
-    ring(0.62),
-    ring(0.3),
-    line(polar(...C, 8.9, -60), polar(...C, 4.5, -44), C),
-  ]);
-}
 // Branch: a diagonal twig with a side shoot, and three leaves along it.
 add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'twig', 'nature'], [
-  line([3.25, 20.75], [14.25, 9.75]),
-  line([8.5, 15.5], [8.5, 10]),
+  line([3.25, 20.75], [17.5, 6.5]),
+  line([8.5, 15.5], [8.5, 10], into([8.5, 10], [5.25, 3.25])),
   leaf([14.25, 9.75], [20.75, 3.25], 4.25),
   leaf([8.5, 10], [5.25, 3.25], 3.75),
-  leaf([11.5, 12.5], [19.75, 14], 3.75),
+  leaf([10.75, 13.25], [18.75, 16], 3.75),
 ]);
 {
   // Plant a tree: the tree, moved up and left and a little smaller, with the engine's plus (as
@@ -392,20 +347,15 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
   ]);
 }
 {
-  // Sapling: a young tree (the tree's crown, small) tied to a straight stake on the ground; the
-  // stake rises behind the crown.
+  // Sapling: a young tree (the tree, small, its thin trunk on the ground) held up by a straight
+  // stake leaning in to it from the ground.
   const s = 0.55;
-  const at = [10.5, 11.25];
-  const right = placePt(CROWN[2], s, [12, 11], at);
-  const r = CROWN[2][2] * s;
-  const xs = 14;
-  const ys = right[1] + Math.sqrt(r * r - (xs - right[0]) ** 2);
+  const at = [10, 3.25];
   add('sapling', ['árbol joven', 'plantón', 'reforestación', 'tutor', 'sapling', 'young tree', 'reforestation'], [
-    place(TREE[0], s, [12, 11], at),
-    line([at[0], GROUND], [at[0], at[1] - 0.4]),
-    line([xs, GROUND], [xs, ys]),
-    ell([(at[0] + xs) / 2, 16.75], (xs - at[0]) / 2 + 1.25, 1.25),
-    line([5.75, GROUND], [18.25, GROUND]),
+    place(TREE[0], s, [12, 2], at),
+    line([at[0], GROUND], placePt([12, 10.25], s, [12, 2], at)),
+    line([17, GROUND], [at[0], 14.25]),
+    line([4.75, GROUND], [19.25, GROUND]),
   ]);
 }
 {
@@ -426,9 +376,10 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
 // Every leaf lies on the leaf's diagonal, drawn upright here (stem down along x = 12) and turned;
 // its stem is the leaf's, running into the blade as its midrib.
 {
-  // Maple: a palmate leaf, three pointed lobes above and two below, each with its teeth.
-  const half = [[1.25, 5.25], [3.25, 4], [2.75, 8.5], [5.75, 6.75], [6.25, 8.5], [9, 7.5], [7, 11.25], [8.25, 13], [4.25, 12.75], [5.5, 16.5], [1.5, 15], [0, 17]];
-  const R = [0.4, 0.7, 0.35, 0.7, 0.35, 0.7, 0.35, 0.4, 0.7, 0.35, 0.7, 0.4];
+  // Maple: a palmate leaf, three pointed lobes above (the side ones with a tooth) and two below; every
+  // lobe joins the blade through a neck at least 3.75 wide, so none pinches off at bold.
+  const half = [[1.75, 6.75], [4.75, 4.25], [5.5, 6.25], [9, 5.75], [5, 11], [7.75, 14], [2.5, 14.25], [0, 17.25]];
+  const R = [0.6, 0.4, 0.5, 0.4, 0.6, 0.4, 0.6, 0.4];
   const pts = [[12, 2.25], ...half.map(([x, y]) => [12 + x, y]), ...half.slice(0, -1).reverse().map(([x, y]) => [12 - x, y])];
   const rr = [0.35, ...R, ...R.slice(0, -1).reverse()];
   add('leaf-maple', ['hoja de maple', 'arce', 'otoño', 'hoja', 'maple leaf', 'autumn', 'fall'], [onLeaf(roundpoly(pts, rr)), line(STEM_FOOT, onLeafPt([12, 11]))]);
@@ -448,13 +399,26 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
   add('leaf-oak', ['hoja de roble', 'roble', 'bosque', 'otoño', 'oak leaf', 'woodland', 'autumn'], [onLeaf(`${d}Z`), line(STEM_FOOT, onLeafPt([12, 10.5]))]);
 }
 {
-  // Ginkgo: a fan narrowing to its stem, two lobes on its wide edge with a notch between them, on
-  // a long thin stem.
-  const F = [12, 16.75];
-  const R = [20.5, 8.5];
-  const Lf = [3.5, 8.5];
-  const notch = [12, 6.5];
-  const fan = `M${pt(F)}Q15.75 13.5 ${pt(R)}A6.5 6.5 0 0 0 ${pt(notch)}A6.5 6.5 0 0 0 ${pt(Lf)}Q8.25 13.5 ${pt(F)}Z`;
+  // Ginkgo: a wide fan opening from its stem, its outer edge two round lobes with a notch between
+  // them, laid on the leaf's diagonal.
+  const F = [12, 17.75];
+  const Rad = 10.75;
+  const open = 63;
+  const [Lc, Rc] = [polar(...F, Rad, -90 - open), polar(...F, Rad, -90 + open)];
+  const notch = polar(...F, Rad - 3, -90);
+  // Each lobe an arc through its corner, a point just past the fan's circle and the notch
+  const lobe = (a, deg, b) => {
+    const m = polar(...F, Rad + 0.5, deg);
+    const [ax, ay, bx, by, cx, cy] = [...a, ...m, ...b];
+    const D = 2 * (ax * (by - cy) + bx * (cy - ay) + cx * (ay - by));
+    const ux = ((ax * ax + ay * ay) * (by - cy) + (bx * bx + by * by) * (cy - ay) + (cx * cx + cy * cy) * (ay - by)) / D;
+    const uy = ((ax * ax + ay * ay) * (cx - bx) + (bx * bx + by * by) * (ax - cx) + (cx * cx + cy * cy) * (bx - ax)) / D;
+    const r = len(sub(a, [ux, uy]));
+    const cw = (m[0] - a[0]) * (b[1] - m[1]) - (m[1] - a[1]) * (b[0] - m[0]) > 0 ? 1 : 0;
+    return `A${N(r)} ${N(r)} 0 0 ${cw} ${pt(b)}`;
+  };
+  const side = (to) => pt(lerp(F, plus(lerp(F, to, 0.5), scale(unit(sub([12, 0], lerp(F, to, 0.5))), 0.9)), 1));
+  const fan = `M${pt(F)}Q${side(Rc)} ${pt(Rc)}${lobe(Rc, -90 + open / 2, notch)}${lobe(notch, -90 - open / 2, Lc)}Q${side(Lc)} ${pt(F)}Z`;
   add('leaf-ginkgo', ['ginkgo', 'hoja de ginkgo', 'memoria', 'herbolaria', 'ginkgo', 'ginkgo leaf', 'ancient'], [onLeaf(fan), line(STEM_FOOT, onLeafPt(F))]);
 }
 {
@@ -503,16 +467,22 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
   ]);
 }
 {
-  // Fern: a frond on a curved midrib, its paired leaflets pointed and shrinking toward the tip.
-  const right = [[3, 19.25], [8.75, 15.5], [3, 15], [8, 11], [3, 10.75], [6.75, 7], [2.75, 7], [4.5, 4.25]];
-  const pts = [[12, 2.25], ...right.slice().reverse().map(([x, y]) => [12 + x, y]), [12, 19.5], ...right.map(([x, y]) => [12 - x, y])];
-  // reorder: tip, right side from top down, base, left side from bottom up
-  const ordered = [[12, 2.25], ...right.slice().reverse().map(([x, y]) => [12 + x, y]), ...right.map(([x, y]) => [12 - x, y])];
-  void pts;
-  const bend = (d) => turnPath(d, 12, [12, 21.25]);
+  // Fern: a frond arching over to one side, its leaflets in pairs along the midrib, reaching
+  // forward and shrinking toward the tip; one stroke each, so no leaflet's inside pinches off at
+  // bold (a fir is upright, straight and closed: this one bows and stays open).
+  const [B, K, T] = [[8, 21.25], [6.75, 9.5], [18.75, 3.5]];
+  const Q = (t) => [(1 - t) ** 2 * B[0] + 2 * (1 - t) * t * K[0] + t * t * T[0], (1 - t) ** 2 * B[1] + 2 * (1 - t) * t * K[1] + t * t * T[1]];
+  const dir = (t) => unit([2 * (1 - t) * (K[0] - B[0]) + 2 * t * (T[0] - K[0]), 2 * (1 - t) * (K[1] - B[1]) + 2 * t * (T[1] - K[1])]);
+  const leaflet = (t, side, l) => {
+    const u = dir(t);
+    const a = (Math.atan2(u[1], u[0]) * 180) / Math.PI + side * (side > 0 ? 78 : 56);
+    return line(Q(t), polar(...Q(t), side > 0 ? l * 0.8 : l, a));
+  };
+  const at = [0.3, 0.5, 0.69, 0.86];
+  const lens = [5, 4.25, 3.5, 2.75];
   add('fern', ['helecho', 'fronda', 'sombra', 'bosque', 'fern', 'frond', 'forest'], [
-    bend(roundpoly(ordered, ordered.map((_, i) => (i === 0 ? 0.5 : i % 2 ? 0.6 : 0.9)))),
-    bend(line([12, 21.25], [12, 9.5])),
+    `M${pt(B)}Q${pt(K)} ${pt(T)}`,
+    ...at.flatMap((t, i) => [leaflet(t, -1, lens[i]), leaflet(t, 1, lens[i])]),
   ]);
 }
 {
@@ -563,17 +533,6 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
   ]);
 }
 {
-  // Aloe vera: a thick fleshy leaf on the diagonal, its edges finely toothed, cut flat at its foot,
-  // and a drop of gel falling from the cut.
-  const up = [[9, 17.5], [9, 12.5], [8.25, 11.75], [9.25, 11.25], [9.75, 8], [9.25, 7.25], [10.25, 6.75], [12, 1.75], [13.75, 6.75], [14.75, 7.25], [14.25, 8], [14.75, 11.25], [15.75, 11.75], [15, 12.5], [15, 17.5]];
-  const rr = [0.6, 0.4, 0.15, 0.4, 0.5, 0.15, 0.4, 0.3, 0.4, 0.15, 0.5, 0.4, 0.15, 0.4, 0.6];
-  const T = (d) => transform(turnPath(d, 40, [12, 17.5]), 1, -3.5, 0);
-  add('aloe-vera', ['sábila', 'aloe vera', 'gel', 'cuidado de la piel', 'aloe vera', 'skincare', 'after sun'], [
-    T(roundpoly(up, rr)),
-    place(L.droplet.d[0], 0.28, [12, 13.5], [6, 18.5]),
-  ]);
-}
-{
   // Succulent: an echeveria seen from above, two rings of pointed fleshy leaves.
   const rosette = (c, n, rt, rn, a0) => {
     let d = '';
@@ -590,19 +549,6 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
   add('succulent', ['suculenta', 'echeveria', 'planta de poco riego', 'roseta', 'succulent', 'echeveria', 'low water'], [rosette([12, 12], 8, 9.25, 6.75, -90), rosette([12, 12], 5, 4.75, 2.5, -90)]);
 }
 {
-  // Barrel cactus: a squat round ribbed body in a small pot, a small flower on its top.
-  const P = pot(12, 16, 11, 5.25);
-  const bloom = [12, 5.1];
-  const cs = petals(bloom, 0.32);
-  add('cactus-barrel', ['cactus', 'biznaga', 'planta de interior', 'desierto', 'barrel cactus', 'cacti', 'houseplant'], [
-    ...P,
-    `M7.5 16A6.75 5.25 0 1 1 16.5 16`,
-    'M10 16C9.5 14 9.5 12.25 10.25 10.75',
-    'M14 16C14.5 14 14.5 12.25 13.75 10.75',
-    union(cs, bloom).d,
-  ]);
-}
-{
   // Snake plant: tall sword-shaped leaves of different heights rising from the pot.
   const P = pot(12, 13.5, 12, 7.75);
   const sword = (x0, x1, tip, lean) => `M${pt([x0, 13.5])}C${pt([x0 + lean * 0.2, 10])} ${pt([tip[0] - 0.75, tip[1] + 3])} ${pt(tip)}C${pt([tip[0] + 0.75, tip[1] + 3])} ${pt([x1 + lean * 0.2, 10])} ${pt([x1, 13.5])}`;
@@ -614,26 +560,31 @@ add('tree-branch', ['rama', 'ramita', 'naturaleza', 'decoración', 'branch', 'tw
   ]);
 }
 {
-  // Venus flytrap: a stem ending in a trap of two lobes hinged at its top and opened wide, a row of
-  // teeth along each rim.
-  const H = [12, 14.5];
-  const A = [4, 7.25];
-  const B = [20, 7.25];
-  const lobe = (E, sweep) => `M${pt(H)}L${pt(E)}A6 6 0 0 ${sweep} ${pt(H)}Z`;
-  const teeth = (E, side) => {
+  // Venus flytrap: in profile, a trap of two plump lobes hinged at the top of its stem and open
+  // like a jaw, the teeth along each rim pointing into the gap.
+  const H = [7.75, 13.5];
+  const U = [19.25, 4.75];
+  const D = [20.25, 16.25];
+  const lobe = (E, toward) => {
+    const m = lerp(H, E, 0.5);
     const u = unit(sub(E, H));
-    const n = side > 0 ? [u[1], -u[0]] : [-u[1], u[0]];
-    return [0.46, 0.73, 1].map((t) => {
+    const n = toward * 1 > 0 ? [u[1], -u[0]] : [-u[1], u[0]];
+    return `M${pt(H)}L${pt(E)}Q${pt(plus(m, scale(n, 8)))} ${pt(H)}Z`;
+  };
+  const teeth = (E, toward) => {
+    const u = unit(sub(E, H));
+    const n = toward > 0 ? [-u[1], u[0]] : [u[1], -u[0]];
+    return [0.62, 0.92].map((t) => {
       const p = lerp(H, E, t);
-      return line(p, plus(p, scale(n, 2.25)));
+      return line(p, plus(p, scale(n, 2.1)));
     });
   };
   add('venus-flytrap', ['planta carnívora', 'venus atrapamoscas', 'trampa', 'atrapar', 'venus flytrap', 'carnivorous plant', 'trap'], [
-    line([12, 21.25], H),
-    lobe(A, 0),
-    lobe(B, 1),
-    ...teeth(A, -1),
-    ...teeth(B, 1),
+    'M7.75 13.5C7.25 16.5 6.25 19 4.75 21.25',
+    lobe(U, 1),
+    lobe(D, -1),
+    ...teeth(U, 1),
+    ...teeth(D, -1),
   ]);
 }
 // Grass: a tuft of five pointed blades of different heights rising from the ground.
@@ -669,22 +620,17 @@ add('cattail', ['tule', 'espadaña', 'humedal', 'estanque', 'cattail', 'reeds', 
   line([2.75, GROUND], [21.25, GROUND]),
 ]);
 {
-  // Vine: a curving stem ending in a spiral tendril, three leaves along it.
-  const curl = (c, r0, r1, a0, a1, steps = 6) => {
-    let d = '';
-    for (let i = 0; i <= steps; i++) {
-      const t = i / steps;
-      const p = polar(...c, r0 + (r1 - r0) * t, a0 + (a1 - a0) * t);
-      d += `${i ? 'L' : 'M'}${pt(p)}`;
-    }
-    return d;
-  };
-  void curl;
+  // Vine: a curving stem ending in a curled tendril, three leaves along it.
+  // The tendril is one open loop (a tight spiral closes up at bold); the leaves sit on the stem
+  const S = [[3.25, 20.75], [7, 18.5], [8.5, 14.5], [10.75, 11]];
+  const S2 = [[10.75, 11], [12.25, 9], [14.65, 9.7], [16.25, 8.5]];
+  const on = (P, t) => [0, 1].map((k) => (1 - t) ** 3 * P[0][k] + 3 * (1 - t) ** 2 * t * P[1][k] + 3 * (1 - t) * t * t * P[2][k] + t ** 3 * P[3][k]);
+  const tendril = arc(17.75, 10.5, 2.5, -126.87, 120);
   add('vine', ['enredadera', 'trepadora', 'crecimiento', 'planta', 'vine', 'climber', 'creeper'], [
-    'M3.25 20.75C7 18.5 8.5 14.5 10.75 11C12.75 8 16 7.5 17.25 9.25A2.25 2.25 0 0 1 13.75 11.5A1.25 1.25 0 0 1 15.25 9.75',
-    leaf([6.75, 17.5], [3.25, 12.5], 3.5),
-    leaf([9.25, 13.25], [15.75, 15.25], 3.5),
-    leaf([12, 9.5], [9.75, 3.25], 3.5),
+    `M3.25 20.75C7 18.5 8.5 14.5 10.75 11C12.25 9 14.65 9.7 16.25 8.5${tendril.d.replace(/^M[^A]*/, '')}`,
+    leaf(on(S, 0.38), [3.25, 12.5], 3.5),
+    leaf(on(S, 0.86), [14, 17.75], 3.5),
+    leaf(on(S2, 0.2), [9.75, 3.25], 3.5),
   ]);
 }
 {
@@ -696,14 +642,14 @@ add('cattail', ['tule', 'espadaña', 'humedal', 'estanque', 'cattail', 'reeds', 
   };
   add('ivy', ['hiedra', 'enredadera', 'colgante', 'muro verde', 'ivy', 'trailing plant', 'climbing'], [
     line([3.25, 3.25], [20.75, 3.25]),
-    'M11.5 3.25C11.5 7.5 13.25 9.25 13.25 12.5C13.25 15 12.25 16.5 11.25 17.5',
-    ivy([12.25, 7.25], 145, 0.85),
-    ivy([13.25, 12.5], 40, 0.85),
-    ivy([11.25, 17.5], 125, 0.65),
+    'M11.5 3.25C11.5 7 9.25 8.75 9.25 12C9.25 14.25 10.25 15.5 11.5 16.25',
+    ivy([13.5, 7], 15, 0.8),
+    ivy([6.75, 13], 165, 0.8),
+    ivy([11.5, 16.25], 60, 0.8),
+    line([10.5, 6.5], [13.5, 7]),
+    line([9.25, 12.25], [6.75, 13]),
   ]);
 }
-// Bush: three rounded lobes merged into one mound, sitting on the ground.
-add('bush', ['arbusto', 'matorral', 'jardinería', 'paisajismo', 'bush', 'shrub', 'landscaping'], [mound([[7, 16.75, 4.25], [12, 11.25, 5.25], [17, 16.75, 4.25]], GROUND), line([2.75, GROUND], [21.25, GROUND])]);
 // Hedge: a long trimmed block, straight sides and a softly bumpy top, on the ground.
 add('hedge', ['seto', 'cerco vivo', 'privacidad', 'poda de setos', 'hedge', 'privacy hedge', 'hedge trimming'], [
   'M3.75 20.75V11.25A2 2 0 0 1 5.75 9A2.1 2.1 0 0 1 9.25 8.5A2.1 2.1 0 0 1 12.75 8.5A2.1 2.1 0 0 1 16.25 8.5A2.1 2.1 0 0 1 18.25 9A2 2 0 0 1 20.25 11.25V20.75',
@@ -716,16 +662,6 @@ add('topiary', ['topiario', 'planta podada', 'jardín formal', 'entrada', 'topia
   sq(7.75, 15.75, 8.5, 5.5, 1.25, { square: ['br'] }),
   line([6.75, 15.75], [17.25, 15.75]),
 ]);
-{
-  // Trellis: a diamond lattice in its frame, a vine with two leaves climbing up through it (on
-  // top, so the engine clears the lattice around it).
-  const lat = [line([6.25, 3.25], [19.25, 16.25]), line([17.75, 3.25], [4.75, 16.25])];
-  const vine = 'M12 21.25C12 17.25 8.5 15.25 8.5 11.5C8.5 8.25 11.5 6.5 14.25 6';
-  const lv = [leaf([8.75, 13.25], [3.75, 10.75], 3.5), leaf([10.75, 7.5], [15.25, 11.25], 3.5)];
-  add('trellis', ['enrejado', 'celosía', 'trepadoras', 'jardín vertical', 'trellis', 'lattice', 'climbing plants'], [sq(4.75, 3.25, 14.5, 17.5, 1.5, { square: ['br'] }), ...lat], {
-    badge: { d: [vine, ...lv], knock: `${vine}${lv.join('')}`, fill: { solid: lv, wire: [vine] } },
-  });
-}
 // Leaf pile: a low mound on the ground with three leaves sticking out of it at odd angles.
 add('leaf-pile', ['montón de hojas', 'hojarasca', 'otoño', 'limpieza de jardín', 'leaf pile', 'fall cleanup', 'yard waste'], [
   'M3.5 20.75C4.25 17 7.75 14.75 12 14.75C16.25 14.75 19.75 17 20.5 20.75',
@@ -749,7 +685,7 @@ const stem = (top) => line(top, [12, 21.25]);
     'M6.35 9C8 10.75 10.75 10.75 12.25 9.25C13.25 8.25 13 6.75 12 5.75',
     stem([12, 13.5]),
     STEM_LEAF,
-    line([12, 17.25], [9.75, 16]),
+    line([12, 18], [9.75, 16.75]),
   ]);
 }
 // Tulip: a cup of three pointed petals on a straight stem, a long leaf curving up beside it.
@@ -759,17 +695,17 @@ add('tulip', ['tulipán', 'primavera', 'bulbos', 'florería', 'tulip', 'spring',
   'M12 20.25C9 19.5 6.5 17.25 6.25 13.75C8.75 14.5 10.5 16 12 17.75',
 ]);
 {
-  // Sunflower: a ring of short pointed petals around a large round center, on the stem with a leaf
-  // on each side.
+  // Sunflower: a ring of ten pointed petals around a large round center (wide enough at their
+  // feet to stay open at bold), on the stem with a leaf on each side.
   const C = [12, 8.25];
-  const n = 14;
-  const pts = Array.from({ length: 2 * n }, (_, i) => polar(...C, i % 2 ? 4.85 : 6.5, -90 + (i * 180) / n));
+  const n = 10;
+  const pts = Array.from({ length: 2 * n }, (_, i) => polar(...C, i % 2 ? 4.5 : 6.5, -72 + (i * 180) / n));
   add('sunflower', ['girasol', 'verano', 'sol', 'alegría', 'sunflower', 'summer', 'sunshine'], [
-    roundpoly(pts, pts.map((_, i) => (i % 2 ? 0.5 : 0.3))),
-    circ(...C, 2),
-    stem([12, C[1] + 4.85]),
+    roundpoly(pts, pts.map((_, i) => (i % 2 ? 0.5 : 0.4))),
+    circ(...C, 1.65),
+    stem([12, C[1] + 4.5]),
     STEM_LEAF,
-    transform(flipPath(STEM_LEAF), 1, 0, -2),
+    flipPath(STEM_LEAF),
   ]);
 }
 {
@@ -807,10 +743,16 @@ add('tulip', ['tulipán', 'primavera', 'bulbos', 'florería', 'tulip', 'spring',
   add('cherry-blossom', ['flor de cerezo', 'sakura', 'primavera', 'hanami', 'cherry blossom', 'sakura', 'spring'], [`${d}Z`, ...[0, 1, 2, 3, 4].map((i) => dot(...polar(...C, 2.5, -54 + i * 72), 0.4))]);
 }
 {
-  // Hibiscus: five broad petals, and the long stamen column reaching out past them from the center.
-  const C = [11, 13];
-  const cs = petals(C, 1.25, -72);
-  add('hibiscus', ['hibisco', 'jamaica', 'trópico', 'isla', 'hibiscus', 'tropical', 'island'], [union(cs, C).d, line(C, [18.75, 5.25]), dot(19.25, 4.75, 1)]);
+  // Hibiscus: five broad round petals, deeply parted (a soft ring of lobes reads as a cloud), and
+  // the long stamen column reaching out from the heart past the petal it crosses, its anthers a
+  // knob at its end (a ring at the heart besides reads as a guitar).
+  const C = [10.5, 13.5];
+  const cs = [0, 1, 2, 3, 4].map((i) => [...polar(...C, 4.6, -45 + i * 72), 3.3]);
+  add('hibiscus', ['hibisco', 'jamaica', 'trópico', 'isla', 'hibiscus', 'tropical', 'island'], [
+    union(cs, C).d,
+    line(C, [17.5, 6.5]),
+    dot(18.6, 5.4, 1.55),
+  ]);
 }
 {
   // Orchid: wide side petals around a narrow top and two narrow lower sepals, the pouched lip at
@@ -849,11 +791,12 @@ add('tulip', ['tulipán', 'primavera', 'bulbos', 'florería', 'tulip', 'spring',
 {
   // Dandelion: a seed head of rays with a seed at each tip, on a thin stem.
   const C = [12, 9.75];
-  const rays = [162, -162, -126, -90, -54, -18, 18];
+  const rays = [180, -135, -90, -45, 0];
   add('dandelion', ['diente de león', 'pide un deseo', 'semillas', 'fragilidad', 'dandelion', 'make a wish', 'seeds'], [
-    ...rays.map((a) => line(C, polar(...C, 6.25, a))),
+    ...rays.map((a) => line(polar(...C, 0.7, a), polar(...C, 5.55, a))),
     ...rays.map((a) => dot(...polar(...C, 6.25, a), 0.7)),
-    `M${pt(C)}C12 14 12.5 17.5 13.5 21.25`,
+    `M${pt([C[0], C[1] + 0.7])}C12 14 12.5 17.5 13.5 21.25`,
+    dot(...C),
   ]);
 }
 {
@@ -861,7 +804,7 @@ add('tulip', ['tulipán', 'primavera', 'bulbos', 'florería', 'tulip', 'spring',
   const C = [12, 8.5];
   const pts = Array.from({ length: 12 }, (_, i) => polar(...C, i % 2 ? 4 : 6.75, -90 + i * 30));
   const cup = scallops(C, 3, 8, 0.6);
-  add('daffodil', ['narciso', 'primavera', 'floración temprana', 'jardín', 'daffodil', 'narcissus', 'spring'], [roundpoly(pts, pts.map((_, i) => (i % 2 ? 0.75 : 0.4))), stem([12, C[1] + 6.75]), STEM_LEAF], {
+  add('daffodil', ['narciso', 'primavera', 'floración temprana', 'jardín', 'daffodil', 'narcissus', 'spring'], [roundpoly(pts, pts.map((_, i) => (i % 2 ? 0.75 : 0.4))), stem(apex(pts, 6, 0.4)), STEM_LEAF], {
     badge: { d: [cup], knock: cup, fill: { solid: [cup] } },
   });
 }
@@ -877,15 +820,15 @@ add('tulip', ['tulipán', 'primavera', 'bulbos', 'florería', 'tulip', 'spring',
   ]);
 }
 {
-  // Marigold: a dense round pompom of short ruffled petals around its round heart, on the stem
-  // with the leaf.
-  const C = [12, 9];
-  add('marigold', ['cempasúchil', 'caléndula', 'Día de Muertos', 'guirnalda', 'marigold', 'cempasuchil', 'garland'], [scallops(C, 5.75, 12, 1.25), circ(...C, 2.25), stem([12, C[1] + 5.75]), STEM_LEAF]);
+  // Marigold: a dense pompom, a ruffle of short round petals inside another (a sunflower has one
+  // ring of pointed petals around a round heart), on the stem with the leaf.
+  const C = [12, 8.75];
+  add('marigold', ['cempasúchil', 'caléndula', 'Día de Muertos', 'guirnalda', 'marigold', 'cempasuchil', 'garland'], [scallops(C, 5.5, 12, 1.1), scallops(C, 2.1, 6, 0.55), stem([12, C[1] + 5.5]), STEM_LEAF]);
 }
 // Flower bud: a closed teardrop held by two small pointed sepals (one outline), on the stem with
 // the leaf.
 add('flower-bud', ['capullo', 'botón', 'próximamente', 'por florecer', 'flower bud', 'coming soon', 'bloom'], [
-  'M12 15C10 14.5 8.25 12.75 7.25 10.25C8.25 10.5 8.75 10.75 9.25 11.25C8.75 8.25 10 5.25 12 2.75C14 5.25 15.25 8.25 14.75 11.25C15.25 10.75 15.75 10.5 16.75 10.25C15.75 12.75 14 14.5 12 15Z',
+  'M12 15C10 14.5 8.25 12.75 7.25 10.25C8.25 10.75 9 11.25 9.75 11.5C9 8.5 10 5.25 12 2.75C14 5.25 15 8.5 14.25 11.5C15 11.25 15.75 10.75 16.75 10.25C15.75 12.75 14 14.5 12 15Z',
   stem([12, 15]),
   STEM_LEAF,
 ]);
@@ -920,11 +863,11 @@ add('flower-bud', ['capullo', 'botón', 'próximamente', 'por florecer', 'flower
 // a little smaller, so the badge takes only the pot's corner.
 const POTTED = [
   ...pot(12, 13.25, 12, 8),
-  line([12, 13.25], [12, 9.25]),
+  line([12, 13.25], [12, 8.5]),
   leaf([12, 9.25], [12, 2.75], 4),
-  'M10.25 13.25C10.25 11.5 9.25 10.25 7.75 10',
+  `M10.25 13.25C10.25 11.5 9.25 10.25 7.75 10L${pt(into([7.75, 10], [3.25, 5.25]))}`,
   leaf([7.75, 10], [3.25, 5.25], 3.75),
-  'M13.75 13.25C13.75 11.5 14.75 10.25 16.25 10',
+  `M13.75 13.25C13.75 11.5 14.75 10.25 16.25 10L${pt(into([16.25, 10], [20.75, 5.25]))}`,
   leaf([16.25, 10], [20.75, 5.25], 3.75),
 ];
 add('potted-plant', ['planta en maceta', 'planta de interior', 'mis plantas', 'vivero', 'potted plant', 'houseplant', 'plant shop'], POTTED);
@@ -939,52 +882,42 @@ add('plant-pot', ['maceta', 'macetero', 'trasplante', 'tamaño de maceta', 'plan
   roundpoly([[4.5, 18.25], [19.5, 18.25], [18.25, 21], [5.75, 21]], [0.5, 0.5, 0.75, 0.75]),
 ]);
 {
-  // Hanging plant: a round pot held by three cords that meet at a hook, two leafy strands trailing
-  // from it.
+  // Hanging plant: potted-plant's pot held by three cords that meet at a hook, two leafy strands
+  // spilling over its rim and trailing below it.
   const K = [12, 5.5];
+  const P = pot(12, 11.25, 10, 5.5, 2.25);
   add('hanging-plant', ['planta colgante', 'macramé', 'maceta colgante', 'colgante', 'hanging plant', 'hanging basket', 'macrame'], [
     `M${pt(K)}V3.5A1.5 1.5 0 1 1 15 3.5`,
-    line(K, [6.5, 11.5]),
-    line(K, [12, 11.5]),
-    line(K, [17.5, 11.5]),
-    'M6.5 11.5H17.5A5.5 5.5 0 0 1 6.5 11.5Z',
-    'M6.5 11.5C4.5 12.5 3.5 14.75 3.5 17',
-    leaf([3.5, 17], [3.75, 21.25], 2.6),
-    'M17.5 11.5C19.5 12.5 20.5 14.75 20.5 17',
-    leaf([20.5, 17], [20.25, 21.25], 2.6),
+    line(K, [8.25, 11.25]),
+    line(K, [12, 11.25]),
+    line(K, [15.75, 11.25]),
+    ...P,
+    'M7 12.25C4.75 12.75 4 14.75 4 17',
+    leaf([4, 17], [4.5, 21.25], 2.6),
+    'M17 12.25C19.25 12.75 20 14.75 20 17',
+    leaf([20, 17], [19.5, 21.25], 2.6),
   ]);
 }
 // Plant cutting: a stem with two leaves standing in a glass of water, short roots under it.
 add('plant-cutting', ['esqueje', 'propagación', 'enraizar', 'compartir planta', 'plant cutting', 'propagation', 'rooting'], [
   roundline([[6.75, 9.75], [7.75, 21.25], [16.25, 21.25], [17.25, 9.75]], [0, 1.5, 1.5, 0]),
   line([7.05, 13.25], [16.95, 13.25]),
-  line([12, 17.25], [12, 5.75]),
-  leaf([12, 5.75], [7.25, 2.75], 3),
-  leaf([12, 7.25], [17.5, 5], 3),
-  'M12 17.25C11.75 17.75 11.25 18 10.5 18.25',
-  'M12 17.25C12.25 17.75 12.75 18 13.5 18.25',
+  line([12, 16.25], [12, 5.75]),
+  leaf(into([12, 5.75], [7.25, 2.75], -0.75), [7.25, 2.75], 3),
+  leaf([12, 7], [17.25, 3.75], 3),
+  line([12, 16.25], [10.75, 18.1]),
+  line([12, 16.25], [13.25, 18.1]),
 ]);
 {
-  // Repotting: the plant lifted out with its root ball above an empty pot, a short arc arrow
-  // showing the move down into it.
-  const a = arc(13.5, 13, 5.25, -60, 40);
+  // Repotting: the plant lifted out with its root ball (the old pot's shape) above a bigger empty
+  // pot, an arc arrow on its side showing the move down into it.
+  const a = arc(16.5, 9.25, 4, -100, 50);
   add('repotting', ['trasplantar', 'cambiar de maceta', 'cuidado de plantas', 'maceta más grande', 'repotting', 'repot', 'plant care'], [
-    ...pot(9.5, 15.5, 11, 5.75),
-    ell([9.5, 10.25], 3, 2.25),
-    ...sprig(0.34, [9.5, 8]),
+    ...pot(10, 15.5, 14, 5.75),
+    roundpoly([[6.5, 9.25], [13.5, 9.25], [12.5, 12.5], [7.5, 12.5]], [1, 1, 1.25, 1.25]),
+    ...sprig(0.42, [10, 9.25]),
     a.d,
-    head(a.end, a.tangent, 3),
-  ]);
-}
-{
-  // Window box: a long planter resting on the window's sill, three small flowers growing in it.
-  const heads = [[6.75, 9.5], [12, 5.25], [17.25, 9.5]];
-  const cs = heads.map((c) => petals(c, 0.32));
-  add('window-box', ['jardinera de ventana', 'balcón', 'alféizar', 'jardín pequeño', 'window box', 'balcony garden', 'window sill'], [
-    roundline([[4.25, GROUND], [4.25, 14.75], [19.75, 14.75], [19.75, GROUND]], [0, 1, 1, 0]),
-    line([2.75, GROUND], [21.25, GROUND]),
-    ...cs.map((c, i) => union(c, heads[i]).d),
-    ...heads.map((h, i) => line([h[0], 14.75], rayOut(cs[i], h, [0, 1]))),
+    head(a.end, a.tangent, 2.75),
   ]);
 }
 // Terrarium: a rounded glass jar under its lid, a layer of soil and a small plant growing in it.
@@ -1007,22 +940,6 @@ add('acorn', ['bellota', 'otoño', 'roble', 'ahorro', 'acorn', 'autumn', 'saving
   line([8.75, 6], [11.75, 11.25]),
   line([15.25, 6], [12.25, 11.25]),
 ]);
-{
-  // Pine cone: an egg-shaped cone of overlapping scales in rows, a short stem on top.
-  const C = [12, 13];
-  const rx = 5.5;
-  const ry = 8;
-  const at = (y) => rx * Math.sqrt(Math.max(0, 1 - ((y - C[1]) / ry) ** 2));
-  const row = (y, n) => {
-    const w = at(y);
-    const x0 = C[0] - w;
-    const step = (2 * w) / n;
-    let d = `M${pt([x0, y])}`;
-    for (let i = 1; i <= n; i++) d += `A${N(step / 2)} ${N(step / 2)} 0 0 0 ${pt([x0 + i * step, y])}`;
-    return d;
-  };
-  add('pinecone', ['piña de pino', 'bosque', 'invierno', 'conífera', 'pine cone', 'forest', 'conifer'], [ell(C, rx, ry), line([12, 5], [12, 2.5]), row(9.25, 2), row(13.25, 3), row(17.25, 2)]);
-}
 // Seed packet: a paper packet, its top folded over, a sprout drawn on its face.
 add('seed-packet', ['sobre de semillas', 'sembrar', 'semillas', 'vivero', 'seed packet', 'sowing', 'seeds'], [
   sq(5.25, 2.75, 13.5, 18.5, 2, { square: ['br'] }),
@@ -1033,9 +950,9 @@ add('seed-packet', ['sobre de semillas', 'sembrar', 'semillas', 'vivero', 'seed 
 add('flower-bulb', ['bulbo', 'plantar bulbos', 'tulipanes', 'otoño', 'flower bulb', 'bulbs', 'planting'], [
   'M12 6.25C14.25 8.5 17.25 11 17.25 14.5C17.25 17.25 15 18.75 12 18.75C9 18.75 6.75 17.25 6.75 14.5C6.75 11 9.75 8.5 12 6.25Z',
   leaf([12, 6.25], [13.25, 2], 2.6),
-  'M10.25 18.6C9.75 19.75 9 20.5 8 21.25',
+  'M8.9 18.35C8.5 19.5 7.75 20.5 6.75 21.25',
   line([12, 18.75], [12, 21.25]),
-  'M13.75 18.6C14.25 19.75 15 20.5 16 21.25',
+  'M15.1 18.35C15.5 19.5 16.25 20.5 17.25 21.25',
 ]);
 // Toadstool: a domed cap with round spots, on a stem with a skirt ring.
 add('toadstool', ['hongo silvestre', 'amanita', 'venenoso', 'cuento de hadas', 'toadstool', 'wild mushroom', 'poisonous'], [
@@ -1048,8 +965,8 @@ add('toadstool', ['hongo silvestre', 'amanita', 'venenoso', 'cuento de hadas', '
 ]);
 {
   // Plant light: a sprout under a sun whose rays light up as levels (low, medium, bright).
-  const S = [12, 8.5];
-  const ray = (a) => line(polar(...S, 4.6, a), polar(...S, 6.6, a));
+  const S = [12, 8.75];
+  const ray = (a) => line(polar(...S, 4.75, a), polar(...S, 6.85, a));
   add('plant-light', ['luz para plantas', 'necesidad de luz', 'sol', 'sombra', 'plant light', 'light needs', 'sunlight'], [
     circ(...S, 1.75),
     ray(-90),
@@ -1057,7 +974,7 @@ add('toadstool', ['hongo silvestre', 'amanita', 'venenoso', 'cuento de hadas', '
     ray(-45),
     ray(180),
     ray(0),
-    ...sprig(0.48, [12, 21.25], { ground: true }),
+    ...sprig(0.5, [12, 21], { ground: true }),
   ]);
 }
 {
@@ -1095,13 +1012,16 @@ add('pet-safe-plant', ['planta segura para mascotas', 'no tóxica', 'gatos', 'pe
     ...sprig(0.45, [17, GROUND]),
   ]);
 }
-// Potting mix: a soft bag folded over at its top, a sprout on its face, a mound of soil beside it.
-add('potting-mix', ['sustrato', 'tierra para macetas', 'abono', 'insumos de jardín', 'potting mix', 'potting soil', 'garden supplies'], [
-  'M4.75 6.5L5.5 3.25H14.5L15.25 6.5C16 10 16 17.5 15.25 21.25H4.75C4 17.5 4 10 4.75 6.5Z',
-  line([4.75, 6.5], [15.25, 6.5]),
-  ...sprig(0.4, [10, 17.75]),
-  'M15.25 21.25C16.75 18.75 18 17.75 19 17.75C20 17.75 20.75 19.5 21.25 21.25',
-]);
+// Potting mix: a soft bag folded over at its top, a sprout on its face, and a heap of soil spilled
+// in front of its foot (on top, so the engine clears the bag behind it).
+{
+  const heap = 'M12.25 21.25C13 18.25 15 16.5 17 16.5C19 16.5 21 18.25 21.5 21.25Z';
+  add('potting-mix', ['sustrato', 'tierra para macetas', 'abono', 'insumos de jardín', 'potting mix', 'potting soil', 'garden supplies'], [
+    'M4.75 6.5L5.5 3.25H14.5L15.25 6.5C16 10 16 17.5 15.25 21.25H4.75C4 17.5 4 10 4.75 6.5Z',
+    line([4.75, 6.5], [15.25, 6.5]),
+    ...sprig(0.38, [9.5, 15.5]),
+  ], { badge: { d: [heap], knock: heap, fill: { solid: [heap] } } });
+}
 {
   // Garden: a short picket fence, a bush and a flower rising behind it (the fence goes on top,
   // so the engine clears what is behind it).
@@ -1109,22 +1029,22 @@ add('potting-mix', ['sustrato', 'tierra para macetas', 'abono', 'insumos de jard
   const pickets = [pk(6), pk(12), pk(18)];
   const rails = [line([7.5, 16.5], [10.5, 16.5]), line([13.5, 16.5], [16.5, 16.5])];
   const fence = `M4.5 21.25V14L6 12.25L7.5 14V15.5H10.5V14L12 12.25L13.5 14V15.5H16.5V14L18 12.25L19.5 14V21.25Z`;
-  const flower = [17.25, 5.5];
+  const flower = [18.5, 5.5];
   const fc = petals(flower, 0.45);
   add('garden', ['jardín', 'jardinería', 'amenidad', 'patio', 'garden', 'gardening', 'backyard'], [
     mound([[6.5, 12.25, 3.5], [10, 9.25, 3.25], [12.75, 12.25, 2.75]], 14.5).replace(/^M/, 'M'),
     union(fc, flower).d,
-    line(rayOut(fc, flower, [0, 1]), [17.25, 18]),
+    line(rayOut(fc, flower, [0, 1]), [18.5, 18]),
   ], { badge: { d: [...pickets, ...rails], knock: fence, fill: { solid: pickets, wire: rails } } });
 }
 {
   // Raised bed: a box of planks seen a little from the side, sprouts in a row on top.
   add('raised-bed', ['cama elevada', 'huerto urbano', 'hortalizas', 'huerto en casa', 'raised bed', 'vegetable garden', 'kitchen garden'], [
-    sq(2.75, 14, 14.5, 7.25, 1, { square: ['br'] }),
-    'M17.25 14L21.25 11.25V18.5L17.25 21.25',
-    line([2.75, 17.5], [17.25, 17.5]),
-    ...sprig(0.45, [5.75, 14]),
-    ...sprig(0.45, [15, 14]),
+    sq(2.75, 15, 15.75, 6.25, 1, { square: ['br', 'tr'] }),
+    'M18.5 15L21.25 12.75V18.75L18.5 21.25',
+    line([2.75, 18.25], [18.5, 18.25]),
+    ...sprig(0.42, [5.75, 15]),
+    ...sprig(0.42, [15.25, 15]),
   ]);
 }
 
@@ -1138,7 +1058,7 @@ add('garden-trowel', ['desplantador', 'pala de mano', 'plantar', 'jardinería', 
   lean('M8.5 11.5Q12 9.75 15.5 11.5C15.75 15.75 14 19.5 12 22C10 19.5 8.25 15.75 8.5 11.5Z'),
   lean(GRIP),
   lean(line([12, 8], [12, 10.5])),
-  lean(line([12, 13.5], [12, 16.75])),
+  lean(line([12, 14], [12, 16])),
 ]);
 // Hand fork: three short tines curving from a yoke, on the same round handle.
 add('hand-fork', ['bieldo de mano', 'tenedor de jardín', 'escardar', 'aflojar tierra', 'hand fork', 'weeding', 'cultivator'], [
@@ -1175,40 +1095,18 @@ add('spade', ['pala recta', 'cavar', 'bordear', 'remover tierra', 'spade', 'digg
   lean(roundpoly([[8.75, 1.5], [15.25, 1.5], [13.75, 6.25], [10.25, 6.25]], [0.75, 0.75, 1.25, 1.25])),
 ]);
 {
-  // Watering can: a rounded can with a handle arching over its top, a long spout ending in a rose.
-  const S0 = [14.5, 16];
-  const S1 = [18.5, 9.5];
+  // Watering can: a low rounded can, wider than it is tall, its handle arching over the top from
+  // back to front, a long spout rising from its foot and ending in the rose, a bar across it.
+  const S0 = [14.25, 18];
+  const S1 = [19, 10.25];
   const u = unit(sub(S1, S0));
   const n = [-u[1], u[0]];
-  const rose = roundpoly([plus(S1, scale(n, 0.9)), plus(plus(S1, scale(u, 2.5)), scale(n, 2.5)), sub(plus(S1, scale(u, 2.5)), scale(n, 2.5)), sub(S1, scale(n, 0.9))], [0.3, 0.6, 0.6, 0.3]);
-  const can = [sq(3.25, 10, 11.25, 10.75, 2.5), 'M5.5 10V9C5.5 5.5 12.25 5.5 12.25 9V10', line(S0, S1), rose];
+  const rose = line(plus(S1, scale(n, 2.25)), sub(S1, scale(n, 2.25)));
+  const can = [sq(2.75, 11.75, 11.5, 9, 2.75), 'M4.5 11.75C5 6.5 11.75 6.5 12.5 11.75', line(S0, S1), rose];
   add('watering-can', ['regadera', 'regar', 'riego', 'cuidado de plantas', 'watering can', 'water plants', 'plant care'], can);
-  add('watering-can-clock', ['hora de regar', 'recordatorio de riego', 'próximo riego', 'regadera', 'watering reminder', 'watering due', 'schedule'], can, { badge: badge('clock') });
+  // Under its badge the can moves up and left, a little smaller, so its spout stays clear
+  add('watering-can-clock', ['hora de regar', 'recordatorio de riego', 'próximo riego', 'regadera', 'watering reminder', 'watering due', 'schedule'], can.map((d) => transform(d, 0.8, -0.25, -2)), { badge: badge('clock') });
 }
-{
-  // Garden hose: a coil of hose, its end running out to a straight spray nozzle.
-  const C = [9.25, 13.5];
-  const pts = [];
-  for (let i = 0; i <= 40; i++) {
-    const t = i / 40;
-    const a = -90 + t * 540;
-    pts.push(polar(...C, 2.25 + t * 4.75, a));
-  }
-  let d = `M${pt(pts[0])}`;
-  for (let i = 1; i < pts.length; i++) d += `L${pt(pts[i])}`;
-  add('garden-hose', ['manguera', 'regar', 'llave de jardín', 'lavar', 'garden hose', 'hose', 'watering'], [
-    `${d}C14 6.5 15.25 6 16.5 6`,
-    capsule(16.5, 4.5, 5, 3),
-  ]);
-}
-// Pruning shears: the two short curved blades closed together into one hooked beak, the two
-// handles spreading below it, a small spring between them.
-add('pruning-shears', ['tijeras de podar', 'podar', 'recortar', 'jardinería', 'pruning shears', 'secateurs', 'pruning'], [
-  'M10 11.25C9.25 8 10.25 4.75 12.75 2.5C13.5 4.75 14.25 7.5 14 11.25Z',
-  'M10 11.25C9.25 14.5 8 17.75 6.5 21',
-  'M14 11.25C14.75 14.5 16 17.75 17.5 21',
-  line([9.15, 15.5], [11, 14.75], [13, 16.25], [14.85, 15.5]),
-]);
 
 // ── Machines (in profile, facing right, their wheels on the ground) ───────────────────────────
 /** A wheel under a sill: the arc of its circle below `sill`, its ends on the sill (vehiculos's). */
@@ -1225,33 +1123,17 @@ add('lawn-mower', ['podadora', 'cortacésped', 'cortar el pasto', 'jardinería',
   line([9.75, 13.75], [4.5, 3.75]),
   line([3, 4.75], [6, 2.75]),
 ]);
-// Riding mower: a small lawn tractor, the seat with its back, the steering wheel, the deck under
-// it and its two wheels.
+// Riding mower: a small lawn tractor in profile, its low body rising into the hood at the front,
+// the seat with its tall back standing on it (apart from it: drawn as one outline it reads as a
+// bathtub), the steering wheel on its column and its two wheels.
 add('riding-mower', ['tractor podador', 'podadora de montar', 'jardines grandes', 'mantenimiento', 'riding mower', 'lawn tractor', 'groundskeeping'], [
-  roundpoly([[3, 15], [3, 7.25], [5, 7.25], [5, 11.5], [10.25, 11.5], [11, 12.75], [17.75, 12.75], [21.25, 15], [21.25, 17], [3, 17]], [0.75, 0.75, 0.75, 0.75, 0.6, 0.6, 1, 1, 0.75, 0]),
-  wheelUnder(6.5, 3.25, 17),
+  roundpoly([[3.25, 17], [3.25, 14.5], [12, 14.5], [13, 12.25], [18.75, 12.25], [21.25, 14.5], [21.25, 17]], [0, 0.75, 0.6, 0.6, 1, 1, 0]),
+  wheelUnder(7, 3.25, 17),
   wheelUnder(18.25, 2.25, 17),
-  line([13.75, 12.75], [13, 8]),
-  line([11.25, 8.5], [14.75, 7.5]),
-  roundline([[10.75, 17], [10.75, 19.5], [14.75, 19.5], [14.75, 17]], [0, 0.6, 0.6, 0]),
+  line([13.25, 12.25], [12.25, 8.25]),
+  line([10.5, 8.75], [14, 7.75]),
+  roundline([[3.75, 5.75], [4.5, 11.5], [9, 11.5]], [0, 0.75, 0]),
 ]);
-{
-  // Robot mower: a low dome on two wheels, a small sensor bump on top. It docks on a base plate
-  // with a post at its back.
-  const robot = (x0, x1, sill = 17.25, top = 9.75) => {
-    const cx = (x0 + x1) / 2;
-    const rx = (x1 - x0) / 2;
-    const ry = sill - top;
-    const dome = `M${pt([x0, sill])}A${N(rx)} ${N(ry)} 0 0 1 ${pt([x1, sill])}Z`;
-    const bump = `M${pt([cx - 1.75, top + 0.1])}A1.75 1.75 0 0 1 ${pt([cx + 1.75, top + 0.1])}`;
-    return [dome, bump, wheelUnder(x0 + rx * 0.45, 2.25, sill), wheelUnder(x1 - rx * 0.45, 2.25, sill)];
-  };
-  const R = robot(3.25, 20.75);
-  add('robot-mower', ['podadora robot', 'jardín inteligente', 'corte automático', 'robot', 'robot mower', 'robotic lawn mower', 'smart garden'], R);
-  add('robot-mower-dock', ['base de carga', 'acoplado', 'cargando', 'volver a la base', 'mower dock', 'charging base', 'docked'], [...robot(7.75, 21.25, 17), line([2.75, GROUND], [21.25, GROUND]), capsule(2.75, 9.75, 2.75, 11)]);
-  // Under its badge the mower moves up and left, a little smaller (as potted-plant's siblings)
-  add('robot-mower-alert', ['podadora atascada', 'falla de cuchilla', 'levantada', 'robot', 'mower alert', 'mower stuck', 'blade fault'], R.map((d) => place(d, 0.8, [3.25, 9.75], [3.25, 7.5])), { badge: badge('alert') });
-}
 // String trimmer: a long diagonal shaft with a handle at its middle, its round head spinning at the
 // bottom under a guard.
 add('string-trimmer', ['desbrozadora', 'orilladora', 'bordes de pasto', 'recortar maleza', 'string trimmer', 'weed eater', 'edging'], [
@@ -1293,25 +1175,18 @@ add('string-trimmer', ['desbrozadora', 'orilladora', 'bordes de pasto', 'recorta
   add('garden-glove', ['guante de jardín', 'guante de jardinería', 'protección', 'insumos de jardín', 'garden glove', 'gardening glove', 'garden supplies'], [d, line(lerp([P[0] - 3.75, P[1] + 3.5], [P[0] - 6, 21.25], (17.25 - P[1] - 3.5) / (21.25 - P[1] - 3.5)), lerp([P[0] + 3.75, P[1] + 3.5], [P[0] + 6, 21.25], (17.25 - P[1] - 3.5) / (21.25 - P[1] - 3.5)))]);
 }
 {
-  // Plant mister: a slim bottle under its pump head, a fan of fine mist leaving the nozzle.
+  // Plant mister: a bottle under its pump head with a leaf on its face, a fan of mist leaving the
+  // nozzle (without the leaf it is belleza's soap dispenser, round-bellied a perfume atomizer).
   add('plant-mister', ['atomizador', 'pulverizador', 'humedad', 'cuidado de plantas', 'plant mister', 'spray bottle', 'misting'], [
-    sq(6.25, 10.5, 7.5, 10.75, 2),
-    line([8.5, 10.5], [8.5, 7.5], [11.5, 7.5], [11.5, 10.5]),
-    roundline([[8.5, 7.5], [8.5, 5], [14.25, 5]], [0, 1, 0]),
-    dot(17.75, 5, 0.5),
-    dot(20.5, 2.75, 0.5),
-    dot(20.5, 7.25, 0.5),
+    sq(4.25, 11, 10.5, 10.25, 2.5),
+    line([7.75, 11], [7.75, 8.5], [11.25, 8.5], [11.25, 11]),
+    roundline([[9.5, 8.5], [9.5, 5.75], [14.25, 5.75]], [0, 1, 0]),
+    leaf([7.25, 18.5], [11.75, 13.75], 3.25),
+    dot(17.75, 5.75, 0.5),
+    dot(20.25, 3.5, 0.5),
+    dot(20.25, 8, 0.5),
   ]);
 }
-// Compost bin: a slatted box, a heap of matter on top of it and a leaf sticking out of the heap.
-add('compost-bin', ['composta', 'compostero', 'residuos de jardín', 'abono', 'compost bin', 'composting', 'garden waste'], [
-  sq(4, 12, 16, 9.25, 1.5, { square: ['br'] }),
-  line([8, 12], [8, 21.25]),
-  line([12, 12], [12, 21.25]),
-  line([16, 12], [16, 21.25]),
-  'M5 12C5.75 9 8.5 7.25 12 7.25C15.5 7.25 18.25 9 19 12',
-  leaf([12.5, 7.25], [16.5, 2.75], 3),
-]);
 {
   // Garden arch: a rounded arch on two posts, leaves of a climbing vine on it (on top, so the engine
   // clears the arch under them).
@@ -1333,44 +1208,39 @@ add('stepping-stones', ['pasos japoneses', 'sendero', 'camino', 'paisajismo', 's
 
 // ── Fill, parts and the rest, in blocks (as in nucleo.mjs) ────────────────────────────────────
 // Each icon's fill by path index: `solid` closed shapes (an index written 's3' closes that open
-// stroke along its chord first), `cut` knocked out, `lines` apart with a clearance, `wire` attached.
+// stroke along its chord first; a path given whole is taken as it is), `cut` knocked out, `lines`
+// apart with a clearance, `wire` attached.
 // Stems and trunks are attached to what they hold up; a pot's rim stays apart from its body with a
-// cut along its foot.
+// cut along its foot that stops short of its ends.
 const rimCut = (d) => {
   const v = [...d.matchAll(/-?\d+(?:\.\d+)?/g)].map(Number);
   const xs = v.filter((_, i) => i % 2 === 0);
   const ys = v.filter((_, i) => i % 2 === 1);
-  return line([Math.min(...xs), Math.max(...ys)], [Math.max(...xs), Math.max(...ys)]);
+  return line([Math.min(...xs) + 1.5, Math.max(...ys)], [Math.max(...xs) - 1.5, Math.max(...ys)]);
 };
 const FILL = {
   'tree-oak': { solid: [0], wire: [1, 2] },
   'tree-fruit': { solid: [0], wire: [1], cut: [2, 3, 4] },
-  'tree-baobab': { solid: [0], wire: [1, 2, 3, 4, 5] },
   'tree-acacia': { solid: [0], wire: [1, 2] },
   'tree-blossom': { solid: [0, 1, 2], wire: [3, 4, 5] },
-  'tree-rings': { solid: [0], cut: [1, 2, 3] },
-  'tree-branch': { solid: [2, 3, 4], wire: [0, 1] },
+  'tree-branch': { solid: [2, 3, 4], wire: [line([3.25, 20.75], [14.25, 9.75]), 1], cut: [line([15.65, 8.35], [17.5, 6.5])] },
   'tree-plus': { solid: [0], wire: [1] },
   bonsai: { solid: [0, 2, 3], wire: [1] },
-  sapling: { solid: [0], wire: [1, 2, 3, 4] },
+  sapling: { solid: [0], wire: [1, 2, 3] },
   'leaf-palm': { solid: [0], wire: [1], cut: [2, 3, 4, 5] },
   clover: { solid: [0, 1, 2], wire: [3] },
   'four-leaf-clover': { solid: [0, 1, 2, 3], wire: [4] },
   eucalyptus: { solid: [1, 2, 3, 4], wire: [0, 5, 6, 7, 8] },
   bamboo: { solid: [0, 1, 5, 6], cut: [2, 3, 4] },
-  'aloe-vera': { solid: [0, 1] },
   succulent: { solid: [0], cut: [1] },
-  'cactus-barrel': { solid: [0, 's1', 's2', 5], cut: [3, 4] },
   'snake-plant': { solid: [0, 's1', 's2', 's3', 's4'] },
-  'venus-flytrap': { solid: [1, 2], wire: [0, 3, 4, 5, 6, 7, 8] },
+  'venus-flytrap': { solid: [1, 2], wire: [0, 3, 4, 5, 6] },
   wildflowers: { solid: [0, 1, 2], wire: [3, 4, 5, 6] },
   cattail: { solid: [0, 1, 's6'], wire: [2, 3, 4, 5, 7] },
   vine: { solid: [1, 2, 3], wire: [0] },
-  ivy: { solid: [2, 3, 4], wire: [0, 1] },
-  bush: { solid: ['s0'], wire: [1] },
+  ivy: { solid: [2, 3, 4], wire: [0, 1, 5, 6] },
   hedge: { solid: ['s0'], wire: [1] },
   topiary: { solid: [0, 2], wire: [1, 3] },
-  trellis: { solid: [0], cut: [1, 2] },
   'leaf-pile': { solid: ['s0', 1, 2, 3], wire: [4] },
   rose: { solid: [0, 3], cut: [1], wire: [2, 4] },
   tulip: { solid: [0, 's2'], wire: [1] },
@@ -1391,13 +1261,11 @@ const FILL = {
   'potted-plant-alert': { solid: [0, 's1', 3, 5, 7], wire: [2, 4, 6] },
   'potted-sprout': { solid: [0, 's1', 3, 4], wire: [2] },
   'plant-pot': { solid: [0, 's1', 2] },
-  'hanging-plant': { solid: [4, 6, 8], wire: [0, 1, 2, 3, 5, 7] },
+  'hanging-plant': { solid: [4, 's5', 7, 9], wire: [0, 1, 2, 3, 6, 8] },
   repotting: { solid: [0, 's1', 2, 4, 5], wire: [3], lines: [6, 7] },
-  'window-box': { solid: ['s0', 2, 3, 4], wire: [1, 5, 6, 7] },
   'plant-terrarium': { solid: [0, 1], cut: [2, 3, 4, 5] },
   seed: { solid: [0], cut: [1] },
   acorn: { solid: ['s0', 1], wire: [2], cut: [3, 4] },
-  pinecone: { solid: [0], wire: [1], cut: [2, 3, 4] },
   'seed-packet': { solid: [0], cut: [1, 2, 3, 4] },
   'flower-bulb': { solid: [0, 1], wire: [2, 3, 4] },
   toadstool: { solid: [0, 's1', 's2'], cut: [3, 4, 5] },
@@ -1406,79 +1274,68 @@ const FILL = {
   'plant-humidity': { solid: [0], wire: [1], lines: [2, 3, 4] },
   'pet-safe-plant': { solid: [0], wire: [1], cut: [2, 3, 4, 5, 6] },
   'plant-label': { solid: [0, 4, 5], wire: [1, 2, 3] },
-  'potting-mix': { solid: [0, 's5'], cut: [1, 2, 3, 4] },
+  'potting-mix': { solid: [0], cut: [1, 2, 3, 4] },
   garden: { solid: ['s0', 1], wire: [2] },
   'raised-bed': { solid: [0, 's1', 4, 5, 7, 8], cut: [2], wire: [3, 6] },
   'garden-trowel': { solid: [0, 1], wire: [2], cut: [3] },
   'hand-fork': { solid: [2], wire: [0, 1, 3] },
   hoe: { solid: [1], wire: [0] },
   spade: { solid: [0, 2], wire: [1] },
-  'watering-can': { solid: [0, 3], wire: [1, 2] },
-  'watering-can-clock': { solid: [0, 3], wire: [1, 2] },
-  'garden-hose': { solid: [1], wire: [0] },
-  'pruning-shears': { solid: [0], wire: [1, 2, 3] },
+  'watering-can': { solid: [0], wire: [1, 2, 3] },
+  'watering-can-clock': { solid: [0], wire: [1, 2, 3] },
   'lawn-mower': { solid: [0, 's1', 's2'], wire: [3, 4] },
-  'riding-mower': { solid: [0, 's1', 's2', 's5'], wire: [3, 4] },
-  'robot-mower': { solid: [0, 's1', 's2', 's3'] },
-  'robot-mower-dock': { solid: [0, 's1', 's2', 's3', 5], wire: [4] },
-  'robot-mower-alert': { solid: [0, 's1', 's2', 's3'] },
+  'riding-mower': { solid: [0, 's1', 's2'], wire: [3, 4], lines: [5] },
   'string-trimmer': { solid: [1, 3], wire: [0, 2], lines: [4] },
   'garden-glove': { solid: [0], cut: [1] },
-  'plant-mister': { solid: [0, 's1', 3, 4, 5], wire: [2] },
-  'compost-bin': { solid: [0, 's4', 5], cut: [1, 2, 3] },
+  'plant-mister': { solid: [0, 's1', 4, 5, 6], wire: [2], cut: [3] },
   'stepping-stones': { solid: [0, 1, 2] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const d = icons[name].d;
-  const pick = (ix) => ix.map((i) => (typeof i === 'string' ? shut(d[Number(i.slice(1))]) : d[i]));
+  const pick = (ix) => ix.map((i) => (typeof i !== 'string' ? d[i] : i.startsWith('M') ? i : shut(d[Number(i.slice(1))])));
   icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
 }
 // A pot's rim and its body stay apart in the fill: a cut along the rim's foot
-for (const name of ['cactus-barrel', 'snake-plant', 'potted-plant', 'potted-plant-plus', 'potted-plant-alert', 'potted-sprout', 'plant-pot', 'repotting']) {
+for (const name of ['snake-plant', 'potted-plant', 'potted-plant-plus', 'potted-plant-alert', 'potted-sprout', 'plant-pot', 'repotting', 'hanging-plant']) {
   const f = icons[name].fill;
-  f.cut = [...(f.cut ?? []), rimCut(icons[name].d[0])];
+  f.cut = [...(f.cut ?? []), rimCut(icons[name].d[name === 'hanging-plant' ? 4 : 0])];
 }
 // The plant pot's foot stays apart from its saucer; the glove's cuff from its hand
 icons['plant-pot'].fill.cut.push(line([4.5, 18.25], [19.5, 18.25]));
 icons['garden-glove'].fill.cut = [line([5.5, 17.25], [18.5, 17.25])];
 {
-  // Cypress (as tree-pine): the trunk a wire under the crown, a cut inside it with its branch
+  // Cypress (as tree-pine): the trunk a wire under the crown and a cut inside it
   const d = icons['tree-cypress'].d;
-  icons['tree-cypress'].fill = { solid: [d[0]], wire: [line([12, 21.25], [12, 18.25])], cut: [line([12, 16.75], [12, 9.5]), d[2]] };
+  icons['tree-cypress'].fill = { solid: [d[0]], wire: [line([12, 21.25], [12, 18.25])], cut: [line([12, 16.75], [12, 14])] };
 }
 {
   // Stump: its top face apart from its body (a cut along the top's front edge), the ring cut out
   const d = icons['tree-stump'].d;
-  icons['tree-stump'].fill = { solid: [d[0], shut(d[1])], cut: [d[2], ringArc([12, 7.75], 7.25, 4, 0, 180)] };
+  icons['tree-stump'].fill = { solid: [d[0], shut(d[1])], cut: [ell([12, 7.75], 3.5, 1.4), ringArc([12, 7.75], 7.25, 4, 35, 145)] };
 }
 {
   // The leaves: the blade solid, the stem a wire up to it and a cut inside it (lugares's leaf)
-  const stems = { 'leaf-maple': [17, 11], 'leaf-oak': [19.5, 10.5], 'leaf-monstera': [17.25, 8.5] };
+  const stems = { 'leaf-maple': [17.25, 11], 'leaf-oak': [19.5, 10.5], 'leaf-monstera': [17.25, 8.5] };
   for (const [name, [base, end]] of Object.entries(stems))
     icons[name].fill = { solid: [icons[name].d[0]], wire: [line(STEM_FOOT, onLeafPt([12, base]))], cut: [line(onLeafPt([12, base - 2.5]), onLeafPt([12, end]))] };
   icons['leaf-ginkgo'].fill = { solid: [icons['leaf-ginkgo'].d[0]], wire: [icons['leaf-ginkgo'].d[1]] };
-  // Fern: its midrib a wire below the frond and a cut up it
-  const bend = (d) => turnPath(d, 12, [12, 21.25]);
-  icons.fern.fill = { solid: [icons.fern.d[0]], wire: [bend(line([12, 21.25], [12, 19.25]))], cut: [bend(line([12, 16.75], [12, 9.5]))] };
 }
 {
-  // Hibiscus: the stamen a cut inside the petals and a wire beyond them, its tip solid
+  // Hibiscus: the stamen a cut inside the petals and a wire beyond them, the anthers solid
   const d = icons.hibiscus.d;
-  const C = [11, 13];
-  const exit = rayOut(petals(C, 1.25, -72), C, sub([18.75, 5.25], C));
-  icons.hibiscus.fill = { solid: [d[0], d[2]], cut: [line(C, exit)], wire: [line(exit, [18.75, 5.25])] };
+  const C = [10.5, 13.5];
+  const exit = rayOut([0, 1, 2, 3, 4].map((i) => [...polar(...C, 4.6, -45 + i * 72), 3.3]), C, sub([17.5, 6.5], C));
+  icons.hibiscus.fill = { solid: [d[0], d[2]], cut: [line(C, exit)], wire: [line(exit, [17.5, 6.5])] };
 }
 {
   // Plant cutting: the glass solid with its water line, the stem and the roots cut out under the
   // rim, the stem a wire above it
   const d = icons['plant-cutting'].d;
-  icons['plant-cutting'].fill = { solid: [shut(d[0]), d[3], d[4]], cut: [d[1], line([12, 17.25], [12, 9.75]), d[5], d[6]], wire: [line([12, 9.75], [12, 5.75])] };
+  icons['plant-cutting'].fill = { solid: [shut(d[0]), d[3], d[4]], cut: [line([5.25, 13.25], [18.75, 13.25]), line([12, 16.25], [12, 11.5]), d[5], d[6]], wire: [line([12, 9.75], [12, 5.75])] };
 }
-// The cap apart from what it covers (a cut along its foot): the acorn, the toadstool and its ring,
-// and the compost's heap on its bin
+// The cap apart from what it covers (a cut along its foot): the acorn, the toadstool and its ring
 icons.acorn.fill.cut.push(line([4.75, 11.25], [19.25, 11.25]));
 icons.toadstool.fill.cut.push(line([3.25, 12], [20.75, 12]), line([8, 16.5], [16, 16.5]));
-icons['compost-bin'].fill.cut.push(line([4, 12], [20, 12]));
 {
   // Garden arch: the band between its two outlines solid, the ground a wire
   const C = [12, 11.25];
@@ -1486,49 +1343,42 @@ icons['compost-bin'].fill.cut.push(line([4, 12], [20, 12]));
   icons['garden-arch'].fill = { solid: [band], wire: [icons['garden-arch'].d[2]] };
 }
 // Open lines only: their filled version is the outline itself
-for (const name of ['tree-willow', 'tree-bare', 'pine-branch', 'grass', 'dandelion', 'rake', 'leaf-rake']) icons[name].fill = false;
+for (const name of ['tree-bare', 'fern', 'pine-branch', 'grass', 'dandelion', 'rake', 'leaf-rake']) icons[name].fill = false;
 
 // Named parts
 const PARTS = {
   'tree-oak': { crown: [0], trunk: [1, 2] },
-  'tree-willow': { trunk: [0], strands: [1, 2, 3, 4] },
   'tree-bare': { trunk: [0], branches: [1, 2, 3, 4] },
   'tree-fruit': { crown: [0], trunk: [1], fruit: [2, 3, 4] },
-  'tree-cypress': { crown: [0], trunk: [1], branch: [2] },
-  'tree-baobab': { trunk: [0], branches: [1, 2, 3, 4, 5] },
+  'tree-cypress': { crown: [0], trunk: [1] },
   'tree-acacia': { crown: [0], trunk: [1, 2] },
   'tree-blossom': { blossoms: [0, 1, 2], trunk: [3, 4, 5] },
   'tree-stump': { top: [0], trunk: [1], ring: [2] },
-  'tree-rings': { bark: [0], rings: [1, 2], crack: [3] },
   'tree-branch': { twig: [0, 1], leaves: [2, 3, 4] },
   'tree-plus': { crown: [0], trunk: [1], branch: [2] },
   bonsai: { tray: [0], trunk: [1], pads: [2, 3] },
-  sapling: { crown: [0], trunk: [1], stake: [2, 3], ground: [4] },
+  sapling: { crown: [0], trunk: [1], stake: [2], ground: [3] },
   'pine-branch': { twig: [0, 1], needles: [2, 3, 4, 5, 6, 7, 8, 9] },
   'leaf-maple': { leaf: [0], stem: [1] },
   'leaf-oak': { leaf: [0], stem: [1] },
   'leaf-ginkgo': { leaf: [0], stem: [1] },
   'leaf-monstera': { leaf: [0], stem: [1] },
   'leaf-palm': { leaf: [0], stem: [1], pleats: [2, 3, 4, 5] },
-  fern: { frond: [0], stem: [1] },
+  fern: { midrib: [0], leaflets: [1, 2, 3, 4, 5, 6, 7, 8] },
   clover: { leaves: [0, 1, 2], stem: [3] },
   'four-leaf-clover': { leaves: [0, 1, 2, 3], stem: [4] },
   eucalyptus: { stem: [0, 5, 6, 7, 8], leaves: [1, 2, 3, 4] },
   bamboo: { stalks: [0, 1], nodes: [2, 3, 4], leaves: [5, 6] },
-  'aloe-vera': { leaf: [0], drop: [1] },
   succulent: { outer: [0], inner: [1] },
-  'cactus-barrel': { pot: [0, 1], cactus: [2, 3, 4], flower: [5] },
   'snake-plant': { pot: [0, 1], leaves: [2, 3, 4] },
-  'venus-flytrap': { stem: [0], trap: [1, 2], teeth: [3, 4, 5, 6, 7, 8] },
+  'venus-flytrap': { stem: [0], trap: [1, 2], teeth: [3, 4, 5, 6] },
   grass: { blades: [0, 1, 2, 3, 4], ground: [5] },
   wildflowers: { flowers: [0, 1, 2], stems: [3, 4, 5], ground: [6] },
   cattail: { heads: [0, 1], stems: [2, 3, 4, 5], leaf: [6], ground: [7] },
   vine: { stem: [0], leaves: [1, 2, 3] },
-  ivy: { support: [0], strand: [1], leaves: [2, 3, 4] },
-  bush: { bush: [0], ground: [1] },
+  ivy: { support: [0], strand: [1, 5, 6], leaves: [2, 3, 4] },
   hedge: { hedge: [0], ground: [1] },
   topiary: { ball: [0], stem: [1], planter: [2, 3] },
-  trellis: { frame: [0], lattice: [1, 2] },
   'leaf-pile': { pile: [0], leaves: [1, 2, 3], ground: [4] },
   rose: { bloom: [0, 1], stem: [2, 4], leaf: [3] },
   tulip: { bloom: [0], stem: [1], leaf: [2] },
@@ -1539,7 +1389,7 @@ const PARTS = {
   orchid: { petals: [0], lip: [1], stem: [2] },
   lily: { bloom: [0], stem: [1], leaf: [2] },
   'water-lily': { pad: [0], bloom: [1, 2, 3] },
-  dandelion: { rays: [0, 1, 2, 3, 4, 5, 6], seeds: [7, 8, 9, 10, 11, 12, 13], stem: [14] },
+  dandelion: { rays: [0, 1, 2, 3, 4], seeds: [5, 6, 7, 8, 9], stem: [10], heart: [11] },
   daffodil: { petals: [0], stem: [1], leaf: [2] },
   poppy: { petals: [0], center: [1], stem: [2] },
   marigold: { petals: [0, 1], stem: [2], leaf: [3] },
@@ -1551,14 +1401,12 @@ const PARTS = {
   'potted-plant-alert': { pot: [0, 1], plant: [2, 3, 4, 5, 6, 7] },
   'potted-sprout': { pot: [0, 1], sprout: [2, 3, 4] },
   'plant-pot': { pot: [0, 1], saucer: [2] },
-  'hanging-plant': { hook: [0], cords: [1, 2, 3], pot: [4], strands: [5, 6, 7, 8] },
+  'hanging-plant': { hook: [0], cords: [1, 2, 3], pot: [4, 5], strands: [6, 7, 8, 9] },
   'plant-cutting': { glass: [0], water: [1], cutting: [2, 3, 4], roots: [5, 6] },
   repotting: { pot: [0, 1], plant: [2, 3, 4, 5], arrow: [6, 7] },
-  'window-box': { box: [0], sill: [1], flowers: [2, 3, 4], stems: [5, 6, 7] },
   'plant-terrarium': { jar: [0], lid: [1], soil: [2], plant: [3, 4, 5] },
   seed: { seed: [0], seam: [1] },
   acorn: { nut: [0], cap: [1, 3, 4], stem: [2] },
-  pinecone: { cone: [0], stem: [1], scales: [2, 3, 4] },
   'seed-packet': { packet: [0, 1], sprout: [2, 3, 4] },
   'flower-bulb': { bulb: [0], shoot: [1], roots: [2, 3, 4] },
   toadstool: { cap: [0], stem: [1], ring: [2], spots: [3, 4, 5] },
@@ -1567,7 +1415,7 @@ const PARTS = {
   'plant-humidity': { leaf: [0, 1], vapor: [2, 3, 4] },
   'pet-safe-plant': { leaf: [0, 1], paw: [2, 3, 4, 5, 6] },
   'plant-label': { label: [0, 1], ground: [2], sprout: [3, 4, 5] },
-  'potting-mix': { bag: [0, 1], sprout: [2, 3, 4], soil: [5] },
+  'potting-mix': { bag: [0, 1], sprout: [2, 3, 4] },
   garden: { bush: [0], flower: [1, 2] },
   'raised-bed': { bed: [0, 1, 2], sprouts: [3, 4, 5, 6, 7, 8] },
   'garden-trowel': { blade: [0, 3], handle: [1, 2] },
@@ -1578,17 +1426,11 @@ const PARTS = {
   spade: { blade: [0], handle: [1, 2] },
   'watering-can': { can: [0, 1], spout: [2, 3] },
   'watering-can-clock': { can: [0, 1], spout: [2, 3] },
-  'garden-hose': { hose: [0], nozzle: [1] },
-  'pruning-shears': { blades: [0], handles: [1, 2], spring: [3] },
   'lawn-mower': { body: [0], wheels: [1, 2], handle: [3, 4] },
-  'riding-mower': { body: [0], wheels: [1, 2], steering: [3, 4], deck: [5] },
-  'robot-mower': { body: [0, 1], wheels: [2, 3] },
-  'robot-mower-dock': { body: [0, 1], wheels: [2, 3], dock: [4, 5] },
-  'robot-mower-alert': { body: [0, 1], wheels: [2, 3] },
+  'riding-mower': { body: [0], wheels: [1, 2], steering: [3, 4], seat: [5] },
   'string-trimmer': { shaft: [0, 1, 2], head: [3, 4] },
   'garden-glove': { glove: [0], seam: [1] },
-  'plant-mister': { bottle: [0, 1, 2], mist: [3, 4, 5] },
-  'compost-bin': { bin: [0, 1, 2, 3], heap: [4, 5] },
+  'plant-mister': { bottle: [0, 1, 2, 3], mist: [4, 5, 6] },
   'garden-arch': { arch: [0, 1], ground: [2] },
   'stepping-stones': { stones: [0, 1, 2] },
 };
@@ -1598,15 +1440,13 @@ for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 const sway = (origin, parts) => ({ effect: 'wiggle', origin, ...(parts && { parts }) });
 const MOTION = {
   'tree-oak': sway([12, 21.25]),
-  'tree-willow': sway([12, 12], ['strands']),
   'tree-bare': sway([12, 21.25]),
   'tree-fruit': sway([12, 21.25]),
   'tree-cypress': sway([12, 21.25]),
-  'tree-baobab': sway([12, 21.25]),
   'tree-acacia': sway([13.25, 21.25]),
   'tree-blossom': sway([12, 21.25]),
   'tree-plus': sway([9.75, 21.25], ['crown', 'trunk', 'branch']),
-  sapling: sway([10.5, 16.75], ['crown']),
+  sapling: sway([10, 8], ['crown']),
   'pine-branch': sway([3.75, 20.25]),
   'tree-branch': sway([3.25, 20.75]),
   'leaf-maple': sway([3.25, 20.75]),
@@ -1614,13 +1454,12 @@ const MOTION = {
   'leaf-ginkgo': sway([3.25, 20.75]),
   'leaf-monstera': sway([3.25, 20.75]),
   'leaf-palm': sway([3.25, 20.75]),
-  fern: sway([12, 21.25]),
+  fern: sway([8, 21.25]),
   clover: sway([9, 21.25]),
   'four-leaf-clover': sway([15, 21.25]),
   eucalyptus: sway([12, 21.25]),
-  'aloe-vera': { effect: 'bounce', parts: ['drop'], vector: [0, 1.5] },
   'snake-plant': sway([12, 13.5], ['leaves']),
-  'venus-flytrap': { effect: 'beat', parts: ['trap', 'teeth'], origin: [12, 14.5] },
+  'venus-flytrap': { effect: 'beat', parts: ['trap', 'teeth'], origin: [7.75, 13.5] },
   grass: sway([12, 20.75], ['blades']),
   wildflowers: sway([12, 20.75], ['flowers', 'stems']),
   cattail: sway([12, 20.75], ['heads', 'stems', 'leaf']),
@@ -1631,7 +1470,7 @@ const MOTION = {
   sunflower: sway([12, 21.25]),
   daisy: { effect: 'spin', parts: ['petals'], origin: [12, 12] },
   'cherry-blossom': { effect: 'spin', parts: ['petals'], origin: [12, 12.25] },
-  hibiscus: { effect: 'beat', origin: [11, 13] },
+  hibiscus: { effect: 'beat', origin: [10.5, 13.5] },
   orchid: sway([3.25, 21.25]),
   lily: sway([12, 21.25]),
   'water-lily': { effect: 'float', vector: [0, -1] },
@@ -1645,14 +1484,10 @@ const MOTION = {
   'potted-sprout': { effect: 'beat', parts: ['sprout'], origin: [12, 14.25] },
   'hanging-plant': { effect: 'ring', origin: [12, 3.5] },
   repotting: { effect: 'bounce', parts: ['plant'], vector: [0, 2] },
-  'plant-mister': { effect: 'beat', parts: ['mist'], origin: [17.25, 5] },
+  'plant-mister': { effect: 'beat', parts: ['mist'], origin: [17.75, 6] },
   'watering-can': { effect: 'wiggle', origin: [9, 20.75] },
-  'garden-hose': { effect: 'wiggle', parts: ['nozzle'], origin: [16.5, 6] },
-  'pruning-shears': { effect: 'wiggle', parts: ['blades'], origin: [12, 11.25] },
   'lawn-mower': { effect: 'slide', vector: [2, 0] },
   'riding-mower': { effect: 'slide', vector: [2, 0] },
-  'robot-mower': { effect: 'slide', vector: [2, 0] },
-  'robot-mower-dock': { effect: 'slide', parts: ['body', 'wheels'], vector: [1.5, 0] },
   'string-trimmer': { effect: 'spin', parts: ['head'], origin: [7, 18.25] },
   rake: sway([3.05, 20.95]),
   'leaf-rake': sway([3.05, 20.95]),
@@ -1664,19 +1499,14 @@ const MOTION = {
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
 // Mirror: the machines move forward, facing right (agricultura's tractors flip the same way)
-for (const name of ['lawn-mower', 'riding-mower', 'robot-mower', 'robot-mower-dock', 'robot-mower-alert']) icons[name].mirror = true;
+for (const name of ['lawn-mower', 'riding-mower']) icons[name].mirror = true;
 
 // Levels, from least to most: the sun's rays, the drops, the lines of vapor
 icons['plant-light'].levels = [[1], [2, 3], [4, 5]];
 icons['plant-water'].levels = [[0], [1], [2]];
 icons['plant-humidity'].levels = [[2], [3], [4]];
 
-// 16 px: the cross-section keeps one ring and its crack, its edge a plain circle
-icons['tree-rings'].small = { d: [circ(12, 12, 9), circ(12, 12, 4.5), line(polar(12, 12, 9, -60), [12, 12])] };
-icons['tree-rings'].small.fill = { solid: [icons['tree-rings'].small.d[0]], cut: icons['tree-rings'].small.d.slice(1) };
-
-// Already enclosed: a cross-section is its own circle, a framed trellis its own square
-icons['tree-rings'].variants = { circle: false };
-icons.trellis.variants = { square: false };
+// The long-handled tools shrunk into an enclosure read as a check mark: no circle or square
+for (const name of ['rake', 'leaf-rake', 'hoe']) icons[name].variants = { circle: false, square: false };
 
 export default { category: 'plantas', label: 'Plantas y jardín', icons };
