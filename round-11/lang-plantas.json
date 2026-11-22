@@ -1,0 +1,3813 @@
+{
+ "category": "plantas",
+ "i18n": {
+  "tree-oak": {
+   "label": {
+    "es": "Roble",
+    "en": "Oak tree",
+    "pt": "Carvalho",
+    "fr": "Chêne",
+    "de": "Eiche",
+    "it": "Quercia",
+    "ja": "オークの木",
+    "zh": "橡树",
+    "ko": "참나무",
+    "ar": "شجرة بلوط"
+   },
+   "keywords": {
+    "es": [
+     "encino",
+     "madera dura",
+     "fortaleza",
+     "longevidad",
+     "árbol frondoso",
+     "especie de árbol",
+     "parque",
+     "bosque"
+    ],
+    "en": [
+     "hardwood",
+     "strength",
+     "longevity",
+     "deciduous tree",
+     "tree species",
+     "park",
+     "woodland",
+     "shade tree"
+    ]
+   }
+  },
+  "tree-willow": {
+   "label": {
+    "es": "Sauce llorón",
+    "en": "Weeping willow",
+    "pt": "Salgueiro-chorão",
+    "fr": "Saule pleureur",
+    "de": "Trauerweide",
+    "it": "Salice piangente",
+    "ja": "シダレヤナギ",
+    "zh": "垂柳",
+    "ko": "수양버들",
+    "ar": "صفصاف باكٍ"
+   },
+   "keywords": {
+    "es": [
+     "sauce",
+     "árbol junto al agua",
+     "orilla del lago",
+     "estanque",
+     "calma",
+     "parque",
+     "ramas colgantes"
+    ],
+    "en": [
+     "willow",
+     "waterside tree",
+     "lakeside",
+     "pond",
+     "calm",
+     "park",
+     "drooping branches"
+    ]
+   }
+  },
+  "tree-bare": {
+   "label": {
+    "es": "Árbol sin hojas",
+    "en": "Bare tree",
+    "pt": "Árvore sem folhas",
+    "fr": "Arbre dénudé",
+    "de": "Kahler Baum",
+    "it": "Albero spoglio",
+    "ja": "葉のない木",
+    "zh": "光秃的树",
+    "ko": "앙상한 나무",
+    "ar": "شجرة عارية"
+   },
+   "keywords": {
+    "es": [
+     "invierno",
+     "árbol seco",
+     "planta muerta",
+     "inactivo",
+     "temporada de frío",
+     "caducifolio",
+     "latencia",
+     "otoño tardío"
+    ],
+    "en": [
+     "winter",
+     "leafless",
+     "dormant",
+     "dead plant",
+     "inactive",
+     "deciduous",
+     "cold season",
+     "dry tree"
+    ]
+   }
+  },
+  "tree-fruit": {
+   "label": {
+    "es": "Árbol frutal",
+    "en": "Fruit tree",
+    "pt": "Árvore frutífera",
+    "fr": "Arbre fruitier",
+    "de": "Obstbaum",
+    "it": "Albero da frutto",
+    "ja": "果樹",
+    "zh": "果树",
+    "ko": "과일나무",
+    "ar": "شجرة مثمرة"
+   },
+   "keywords": {
+    "es": [
+     "frutales",
+     "huerto en casa",
+     "patio",
+     "manzano",
+     "limonero",
+     "jardín comestible",
+     "vivero",
+     "cosecha casera"
+    ],
+    "en": [
+     "orchard",
+     "backyard",
+     "apple tree",
+     "lemon tree",
+     "edible garden",
+     "nursery",
+     "trees for sale",
+     "homegrown"
+    ]
+   }
+  },
+  "tree-cypress": {
+   "label": {
+    "es": "Ciprés",
+    "en": "Cypress",
+    "pt": "Cipreste",
+    "fr": "Cyprès",
+    "de": "Zypresse",
+    "it": "Cipresso",
+    "ja": "イトスギ",
+    "zh": "柏树",
+    "ko": "사이프러스",
+    "ar": "شجرة سرو"
+   },
+   "keywords": {
+    "es": [
+     "árbol columnar",
+     "jardín formal",
+     "paisajismo mediterráneo",
+     "rompevientos",
+     "cerca viva",
+     "conífera",
+     "Toscana",
+     "árbol perenne"
+    ],
+    "en": [
+     "columnar tree",
+     "formal garden",
+     "Mediterranean landscaping",
+     "windbreak",
+     "evergreen",
+     "conifer",
+     "Tuscany",
+     "privacy screen"
+    ]
+   }
+  },
+  "tree-baobab": {
+   "label": {
+    "es": "Baobab",
+    "en": "Baobab",
+    "pt": "Baobá",
+    "fr": "Baobab",
+    "de": "Affenbrotbaum",
+    "it": "Baobab",
+    "ja": "バオバブ",
+    "zh": "猴面包树",
+    "ko": "바오밥나무",
+    "ar": "شجرة الباوباب"
+   },
+   "keywords": {
+    "es": [
+     "sabana",
+     "África",
+     "Madagascar",
+     "árbol milenario",
+     "zona árida",
+     "guía de viaje",
+     "árbol gigante",
+     "naturaleza"
+    ],
+    "en": [
+     "savanna",
+     "Africa",
+     "Madagascar",
+     "ancient tree",
+     "drylands",
+     "travel guide",
+     "giant tree",
+     "nature"
+    ]
+   }
+  },
+  "tree-acacia": {
+   "label": {
+    "es": "Acacia",
+    "en": "Acacia tree",
+    "pt": "Acácia",
+    "fr": "Acacia",
+    "de": "Akazie",
+    "it": "Acacia",
+    "ja": "アカシア",
+    "zh": "金合欢树",
+    "ko": "아카시아",
+    "ar": "شجرة أكاسيا"
+   },
+   "keywords": {
+    "es": [
+     "sabana",
+     "safari",
+     "paisaje árido",
+     "África",
+     "copa plana",
+     "árbol sombrilla",
+     "parque nacional"
+    ],
+    "en": [
+     "savanna",
+     "safari",
+     "dry landscape",
+     "Africa",
+     "flat-topped tree",
+     "umbrella thorn",
+     "national park"
+    ]
+   }
+  },
+  "tree-blossom": {
+   "label": {
+    "es": "Árbol en flor",
+    "en": "Tree in bloom",
+    "pt": "Árvore florida",
+    "fr": "Arbre en fleurs",
+    "de": "Blühender Baum",
+    "it": "Albero in fiore",
+    "ja": "花の咲いた木",
+    "zh": "开花的树",
+    "ko": "꽃이 핀 나무",
+    "ar": "شجرة مزهرة"
+   },
+   "keywords": {
+    "es": [
+     "primavera",
+     "floración",
+     "cerezo",
+     "jacaranda",
+     "temporada de flores",
+     "árbol florido",
+     "sakura",
+     "árbol ornamental"
+    ],
+    "en": [
+     "spring",
+     "blossom season",
+     "cherry tree",
+     "flowering tree",
+     "jacaranda",
+     "sakura",
+     "ornamental tree"
+    ]
+   }
+  },
+  "tree-stump": {
+   "label": {
+    "es": "Tocón",
+    "en": "Tree stump",
+    "pt": "Toco de árvore",
+    "fr": "Souche d’arbre",
+    "de": "Baumstumpf",
+    "it": "Ceppo",
+    "ja": "切り株",
+    "zh": "树桩",
+    "ko": "나무 그루터기",
+    "ar": "جذع شجرة مقطوعة"
+   },
+   "keywords": {
+    "es": [
+     "árbol talado",
+     "tala",
+     "derribo de árbol",
+     "retiro de árbol",
+     "triturar tocones",
+     "deforestación",
+     "leña",
+     "tronco cortado"
+    ],
+    "en": [
+     "felled tree",
+     "tree removal",
+     "logging",
+     "stump grinding",
+     "deforestation",
+     "cut tree",
+     "firewood",
+     "tree service"
+    ]
+   }
+  },
+  "tree-rings": {
+   "label": {
+    "es": "Anillos del tronco",
+    "en": "Tree rings",
+    "pt": "Anéis de crescimento",
+    "fr": "Cernes du bois",
+    "de": "Jahresringe",
+    "it": "Anelli degli alberi",
+    "ja": "年輪",
+    "zh": "年轮",
+    "ko": "나이테",
+    "ar": "حلقات الشجرة"
+   },
+   "keywords": {
+    "es": [
+     "edad del árbol",
+     "crecimiento",
+     "paso del tiempo",
+     "madera",
+     "historial",
+     "versiones",
+     "corte transversal",
+     "antigüedad"
+    ],
+    "en": [
+     "growth rings",
+     "tree age",
+     "growth over time",
+     "wood",
+     "history",
+     "versions",
+     "cross-section",
+     "timber"
+    ]
+   }
+  },
+  "tree-branch": {
+   "label": {
+    "es": "Rama",
+    "en": "Branch",
+    "pt": "Galho",
+    "fr": "Branche",
+    "de": "Zweig",
+    "it": "Ramo",
+    "ja": "枝",
+    "zh": "树枝",
+    "ko": "나뭇가지",
+    "ar": "غصن"
+   },
+   "keywords": {
+    "es": [
+     "ramita",
+     "follaje",
+     "productos naturales",
+     "decoración natural",
+     "hojas",
+     "orgánico",
+     "naturaleza"
+    ],
+    "en": [
+     "twig",
+     "leafy branch",
+     "foliage",
+     "natural products",
+     "nature decor",
+     "organic",
+     "greenery"
+    ]
+   }
+  },
+  "tree-fallen": {
+   "label": {
+    "es": "Árbol caído",
+    "en": "Fallen tree",
+    "pt": "Árvore caída",
+    "fr": "Arbre tombé",
+    "de": "Umgestürzter Baum",
+    "it": "Albero caduto",
+    "ja": "倒木",
+    "zh": "倒下的树",
+    "ko": "쓰러진 나무",
+    "ar": "شجرة ساقطة"
+   },
+   "keywords": {
+    "es": [
+     "daños por tormenta",
+     "camino bloqueado",
+     "sendero cerrado",
+     "reclamación de seguro",
+     "siniestro",
+     "vendaval",
+     "obstrucción",
+     "huracán"
+    ],
+    "en": [
+     "storm damage",
+     "blocked road",
+     "trail closed",
+     "insurance claim",
+     "windstorm",
+     "obstruction",
+     "hurricane",
+     "downed tree"
+    ]
+   }
+  },
+  "tree-plus": {
+   "label": {
+    "es": "Plantar un árbol",
+    "en": "Plant a tree",
+    "pt": "Plantar uma árvore",
+    "fr": "Planter un arbre",
+    "de": "Baum pflanzen",
+    "it": "Pianta un albero",
+    "ja": "木を植える",
+    "zh": "种一棵树",
+    "ko": "나무 심기",
+    "ar": "ازرع شجرة"
+   },
+   "keywords": {
+    "es": [
+     "reforestar",
+     "donar árboles",
+     "compensación de carbono",
+     "agregar árbol",
+     "contador de árboles",
+     "huella de carbono",
+     "sumar",
+     "campaña verde"
+    ],
+    "en": [
+     "reforest",
+     "tree donation",
+     "carbon offset",
+     "add tree",
+     "tree counter",
+     "carbon footprint",
+     "green campaign",
+     "eco pledge"
+    ]
+   }
+  },
+  "bonsai": {
+   "label": {
+    "es": "Bonsái",
+    "en": "Bonsai",
+    "pt": "Bonsai",
+    "fr": "Bonsaï",
+    "de": "Bonsai",
+    "it": "Bonsai",
+    "ja": "盆栽",
+    "zh": "盆景",
+    "ko": "분재",
+    "ar": "بونساي"
+   },
+   "keywords": {
+    "es": [
+     "árbol miniatura",
+     "paciencia",
+     "cuidado",
+     "jardinería japonesa",
+     "poda",
+     "zen",
+     "planta de interior",
+     "arte japonés"
+    ],
+    "en": [
+     "miniature tree",
+     "patience",
+     "care",
+     "Japanese gardening",
+     "pruning",
+     "zen",
+     "indoor plant",
+     "Japanese art"
+    ]
+   }
+  },
+  "sapling": {
+   "label": {
+    "es": "Árbol joven",
+    "en": "Sapling",
+    "pt": "Muda de árvore",
+    "fr": "Jeune arbre",
+    "de": "Jungbaum",
+    "it": "Alberello",
+    "ja": "若木",
+    "zh": "树苗",
+    "ko": "묘목",
+    "ar": "شتلة شجرة"
+   },
+   "keywords": {
+    "es": [
+     "arbolito",
+     "recién plantado",
+     "reforestación",
+     "tutor",
+     "estaca",
+     "vivero",
+     "crecimiento",
+     "cuidar"
+    ],
+    "en": [
+     "young tree",
+     "newly planted",
+     "reforestation",
+     "staked tree",
+     "nursery",
+     "growth",
+     "nurture",
+     "tree planting"
+    ]
+   }
+  },
+  "pine-branch": {
+   "label": {
+    "es": "Rama de pino",
+    "en": "Pine branch",
+    "pt": "Ramo de pinheiro",
+    "fr": "Branche de sapin",
+    "de": "Tannenzweig",
+    "it": "Ramo di pino",
+    "ja": "松の枝",
+    "zh": "松枝",
+    "ko": "솔가지",
+    "ar": "غصن صنوبر"
+   },
+   "keywords": {
+    "es": [
+     "conífera",
+     "invierno",
+     "aroma a bosque",
+     "follaje perenne",
+     "Navidad",
+     "abeto",
+     "decoración navideña",
+     "agujas de pino"
+    ],
+    "en": [
+     "evergreen",
+     "conifer",
+     "winter",
+     "forest scent",
+     "fir",
+     "Christmas",
+     "holiday greenery",
+     "pine needles"
+    ]
+   }
+  },
+  "leaf-maple": {
+   "label": {
+    "es": "Hoja de arce",
+    "en": "Maple leaf",
+    "pt": "Folha de bordo",
+    "fr": "Feuille d’érable",
+    "de": "Ahornblatt",
+    "it": "Foglia d’acero",
+    "ja": "カエデの葉",
+    "zh": "枫叶",
+    "ko": "단풍잎",
+    "ar": "ورقة القيقب"
+   },
+   "keywords": {
+    "es": [
+     "otoño",
+     "maple",
+     "colores de otoño",
+     "hojas secas",
+     "Canadá",
+     "follaje",
+     "temporada"
+    ],
+    "en": [
+     "autumn",
+     "fall colors",
+     "fall foliage",
+     "Canada",
+     "maple tree",
+     "seasonal",
+     "dry leaves"
+    ]
+   }
+  },
+  "leaf-oak": {
+   "label": {
+    "es": "Hoja de roble",
+    "en": "Oak leaf",
+    "pt": "Folha de carvalho",
+    "fr": "Feuille de chêne",
+    "de": "Eichenblatt",
+    "it": "Foglia di quercia",
+    "ja": "オークの葉",
+    "zh": "橡树叶",
+    "ko": "참나무 잎",
+    "ar": "ورقة البلوط"
+   },
+   "keywords": {
+    "es": [
+     "encino",
+     "bosque",
+     "otoño",
+     "especie de roble",
+     "follaje",
+     "arbolado",
+     "hojas secas"
+    ],
+    "en": [
+     "oak tree",
+     "woodland",
+     "autumn",
+     "forest",
+     "foliage",
+     "fall",
+     "oak species"
+    ]
+   }
+  },
+  "leaf-ginkgo": {
+   "label": {
+    "es": "Hoja de ginkgo",
+    "en": "Ginkgo leaf",
+    "pt": "Folha de ginkgo",
+    "fr": "Feuille de ginkgo",
+    "de": "Ginkgoblatt",
+    "it": "Foglia di ginkgo",
+    "ja": "イチョウの葉",
+    "zh": "银杏叶",
+    "ko": "은행잎",
+    "ar": "ورقة الجنكة"
+   },
+   "keywords": {
+    "es": [
+     "memoria",
+     "suplemento",
+     "herbolaria",
+     "especie milenaria",
+     "diseño asiático",
+     "Japón",
+     "fósil viviente",
+     "naturista"
+    ],
+    "en": [
+     "memory",
+     "supplement",
+     "herbal remedy",
+     "ancient species",
+     "East Asian design",
+     "Japan",
+     "living fossil",
+     "ginkgo biloba"
+    ]
+   }
+  },
+  "leaf-monstera": {
+   "label": {
+    "es": "Hoja de monstera",
+    "en": "Monstera leaf",
+    "pt": "Folha de costela-de-adão",
+    "fr": "Feuille de monstera",
+    "de": "Monstera-Blatt",
+    "it": "Foglia di monstera",
+    "ja": "モンステラの葉",
+    "zh": "龟背竹叶",
+    "ko": "몬스테라 잎",
+    "ar": "ورقة المونستيرا"
+   },
+   "keywords": {
+    "es": [
+     "costilla de Adán",
+     "planta de interior",
+     "decoración tropical",
+     "diseño de interiores",
+     "hoja tropical",
+     "selva",
+     "planta de moda"
+    ],
+    "en": [
+     "swiss cheese plant",
+     "houseplant",
+     "tropical decor",
+     "interior design",
+     "tropical leaf",
+     "jungle",
+     "trendy plant"
+    ]
+   }
+  },
+  "leaf-palm": {
+   "label": {
+    "es": "Hoja de palma",
+    "en": "Palm leaf",
+    "pt": "Folha de palmeira",
+    "fr": "Feuille de palmier",
+    "de": "Palmblatt",
+    "it": "Foglia di palma",
+    "ja": "ヤシの葉",
+    "zh": "棕榈叶",
+    "ko": "야자잎",
+    "ar": "سعفة نخيل"
+   },
+   "keywords": {
+    "es": [
+     "tropical",
+     "palmera",
+     "abanico",
+     "sombra",
+     "playa",
+     "palmas",
+     "trópico"
+    ],
+    "en": [
+     "tropical",
+     "palm tree",
+     "fan palm",
+     "shade",
+     "beach",
+     "palms",
+     "frond"
+    ]
+   }
+  },
+  "fern": {
+   "label": {
+    "es": "Helecho",
+    "en": "Fern",
+    "pt": "Samambaia",
+    "fr": "Fougère",
+    "de": "Farn",
+    "it": "Felce",
+    "ja": "シダ",
+    "zh": "蕨类植物",
+    "ko": "고사리",
+    "ar": "سرخس"
+   },
+   "keywords": {
+    "es": [
+     "fronda",
+     "planta de sombra",
+     "bosque",
+     "planta de interior",
+     "humedad",
+     "follaje",
+     "selva húmeda"
+    ],
+    "en": [
+     "frond",
+     "shade plant",
+     "forest",
+     "houseplant",
+     "humidity",
+     "foliage",
+     "boston fern"
+    ]
+   }
+  },
+  "clover": {
+   "label": {
+    "es": "Trébol",
+    "en": "Clover",
+    "pt": "Trevo",
+    "fr": "Trèfle",
+    "de": "Klee",
+    "it": "Trifoglio",
+    "ja": "クローバー",
+    "zh": "三叶草",
+    "ko": "클로버",
+    "ar": "برسيم"
+   },
+   "keywords": {
+    "es": [
+     "pasto",
+     "planta silvestre",
+     "pradera",
+     "tres hojas",
+     "jardín",
+     "campo",
+     "hierba"
+    ],
+    "en": [
+     "lawn",
+     "wild plant",
+     "meadow",
+     "three leaves",
+     "shamrock",
+     "field",
+     "weed"
+    ]
+   }
+  },
+  "four-leaf-clover": {
+   "label": {
+    "es": "Trébol de cuatro hojas",
+    "en": "Four-leaf clover",
+    "pt": "Trevo de quatro folhas",
+    "fr": "Trèfle à quatre feuilles",
+    "de": "Vierblättriges Kleeblatt",
+    "it": "Quadrifoglio",
+    "ja": "四つ葉のクローバー",
+    "zh": "四叶草",
+    "ko": "네잎클로버",
+    "ar": "برسيم رباعي الأوراق"
+   },
+   "keywords": {
+    "es": [
+     "suerte",
+     "rifa",
+     "sorteo",
+     "buena fortuna",
+     "concurso",
+     "premio",
+     "San Patricio",
+     "lotería"
+    ],
+    "en": [
+     "luck",
+     "raffle",
+     "giveaway",
+     "lucky draw",
+     "good fortune",
+     "prize",
+     "St. Patrick’s Day",
+     "sweepstakes"
+    ]
+   }
+  },
+  "eucalyptus": {
+   "label": {
+    "es": "Eucalipto",
+    "en": "Eucalyptus",
+    "pt": "Eucalipto",
+    "fr": "Eucalyptus",
+    "de": "Eukalyptus",
+    "it": "Eucalipto",
+    "ja": "ユーカリ",
+    "zh": "桉树",
+    "ko": "유칼립투스",
+    "ar": "أوكالبتوس"
+   },
+   "keywords": {
+    "es": [
+     "spa",
+     "aromaterapia",
+     "ingrediente natural",
+     "aceite esencial",
+     "decoración",
+     "ramita",
+     "vaporizaciones",
+     "frescura"
+    ],
+    "en": [
+     "spa",
+     "aromatherapy",
+     "natural ingredient",
+     "essential oil",
+     "decor",
+     "sprig",
+     "steam",
+     "fresh scent"
+    ]
+   }
+  },
+  "bamboo": {
+   "label": {
+    "es": "Bambú",
+    "en": "Bamboo",
+    "pt": "Bambu",
+    "fr": "Bambou",
+    "de": "Bambus",
+    "it": "Bambù",
+    "ja": "竹",
+    "zh": "竹子",
+    "ko": "대나무",
+    "ar": "خيزران"
+   },
+   "keywords": {
+    "es": [
+     "zen",
+     "spa",
+     "material sustentable",
+     "caña",
+     "Asia",
+     "ecológico",
+     "tallo",
+     "panda"
+    ],
+    "en": [
+     "zen",
+     "spa",
+     "sustainable material",
+     "cane",
+     "Asia",
+     "eco-friendly",
+     "stalk",
+     "panda"
+    ]
+   }
+  },
+  "aloe-vera": {
+   "label": {
+    "es": "Sábila",
+    "en": "Aloe vera",
+    "pt": "Babosa",
+    "fr": "Aloe vera",
+    "de": "Aloe vera",
+    "it": "Aloe vera",
+    "ja": "アロエ",
+    "zh": "芦荟",
+    "ko": "알로에",
+    "ar": "ألوفيرا"
+   },
+   "keywords": {
+    "es": [
+     "aloe vera",
+     "cuidado de la piel",
+     "después del sol",
+     "gel natural",
+     "quemaduras",
+     "hidratante",
+     "remedio natural",
+     "suculenta"
+    ],
+    "en": [
+     "soothing",
+     "skincare",
+     "after-sun",
+     "natural gel",
+     "sunburn relief",
+     "moisturizer",
+     "natural remedy",
+     "succulent"
+    ]
+   }
+  },
+  "succulent": {
+   "label": {
+    "es": "Suculenta",
+    "en": "Succulent",
+    "pt": "Suculenta",
+    "fr": "Plante succulente",
+    "de": "Sukkulente",
+    "it": "Pianta grassa",
+    "ja": "多肉植物",
+    "zh": "多肉植物",
+    "ko": "다육식물",
+    "ar": "نبات عصاري"
+   },
+   "keywords": {
+    "es": [
+     "crasa",
+     "echeveria",
+     "poco riego",
+     "planta de interior",
+     "roseta",
+     "bajo mantenimiento",
+     "planta resistente",
+     "jardín seco"
+    ],
+    "en": [
+     "echeveria",
+     "rosette",
+     "low water",
+     "drought tolerant",
+     "houseplant",
+     "low maintenance",
+     "xeriscape",
+     "hardy plant"
+    ]
+   }
+  },
+  "cactus-barrel": {
+   "label": {
+    "es": "Cactus en maceta",
+    "en": "Potted cactus",
+    "pt": "Cacto em vaso",
+    "fr": "Cactus en pot",
+    "de": "Kaktus im Topf",
+    "it": "Cactus in vaso",
+    "ja": "鉢植えのサボテン",
+    "zh": "盆栽仙人掌",
+    "ko": "화분 선인장",
+    "ar": "صبار في أصيص"
+   },
+   "keywords": {
+    "es": [
+     "biznaga",
+     "cactácea",
+     "planta del desierto",
+     "poco riego",
+     "planta de interior",
+     "vivero",
+     "espinas",
+     "venta de plantas"
+    ],
+    "en": [
+     "barrel cactus",
+     "desert plant",
+     "low water",
+     "houseplant",
+     "nursery",
+     "spines",
+     "plant shop",
+     "succulent"
+    ]
+   }
+  },
+  "snake-plant": {
+   "label": {
+    "es": "Lengua de suegra",
+    "en": "Snake plant",
+    "pt": "Espada-de-são-jorge",
+    "fr": "Langue de belle-mère",
+    "de": "Bogenhanf",
+    "it": "Sansevieria",
+    "ja": "サンスベリア",
+    "zh": "虎尾兰",
+    "ko": "산세베리아",
+    "ar": "نبات الثعبان"
+   },
+   "keywords": {
+    "es": [
+     "sansevieria",
+     "espada de San Jorge",
+     "poca luz",
+     "fácil de cuidar",
+     "purifica el aire",
+     "planta de interior",
+     "resistente",
+     "oficina"
+    ],
+    "en": [
+     "sansevieria",
+     "mother-in-law’s tongue",
+     "low light",
+     "easy care",
+     "air purifying",
+     "houseplant",
+     "hardy",
+     "office plant"
+    ]
+   }
+  },
+  "venus-flytrap": {
+   "label": {
+    "es": "Atrapamoscas",
+    "en": "Venus flytrap",
+    "pt": "Dioneia",
+    "fr": "Dionée attrape-mouche",
+    "de": "Venusfliegenfalle",
+    "it": "Dionea",
+    "ja": "ハエトリグサ",
+    "zh": "捕蝇草",
+    "ko": "파리지옥",
+    "ar": "مصيدة فينوس"
+   },
+   "keywords": {
+    "es": [
+     "planta carnívora",
+     "trampa",
+     "atrapar",
+     "planta exótica",
+     "insectos",
+     "dionea",
+     "captura",
+     "planta rara"
+    ],
+    "en": [
+     "carnivorous plant",
+     "trap",
+     "catch",
+     "exotic plant",
+     "insects",
+     "unusual plant",
+     "snap",
+     "bait"
+    ]
+   }
+  },
+  "grass": {
+   "label": {
+    "es": "Pasto",
+    "en": "Grass",
+    "pt": "Grama",
+    "fr": "Herbe",
+    "de": "Gras",
+    "it": "Erba",
+    "ja": "草",
+    "zh": "草",
+    "ko": "풀",
+    "ar": "عشب"
+   },
+   "keywords": {
+    "es": [
+     "césped",
+     "jardín",
+     "patio",
+     "cuidado del césped",
+     "pasto sintético",
+     "zacate",
+     "área verde",
+     "prado"
+    ],
+    "en": [
+     "lawn",
+     "turf",
+     "yard",
+     "lawn care",
+     "artificial turf",
+     "green area",
+     "meadow",
+     "sod"
+    ]
+   }
+  },
+  "wildflowers": {
+   "label": {
+    "es": "Flores silvestres",
+    "en": "Wildflowers",
+    "pt": "Flores silvestres",
+    "fr": "Fleurs sauvages",
+    "de": "Wildblumen",
+    "it": "Fiori di campo",
+    "ja": "野の花",
+    "zh": "野花",
+    "ko": "들꽃",
+    "ar": "زهور برية"
+   },
+   "keywords": {
+    "es": [
+     "pradera",
+     "plantas nativas",
+     "polinizadores",
+     "jardín para abejas",
+     "flores de campo",
+     "biodiversidad",
+     "jardín natural",
+     "campo"
+    ],
+    "en": [
+     "meadow",
+     "native plants",
+     "pollinator garden",
+     "bee-friendly",
+     "field flowers",
+     "biodiversity",
+     "rewilding",
+     "natural garden"
+    ]
+   }
+  },
+  "cattail": {
+   "label": {
+    "es": "Tule",
+    "en": "Cattails",
+    "pt": "Taboa",
+    "fr": "Massettes",
+    "de": "Rohrkolben",
+    "it": "Tifa",
+    "ja": "ガマ",
+    "zh": "香蒲",
+    "ko": "부들",
+    "ar": "قصب البرك"
+   },
+   "keywords": {
+    "es": [
+     "juncos",
+     "carrizo",
+     "estanque",
+     "humedal",
+     "planta acuática",
+     "espadaña",
+     "pantano",
+     "orilla"
+    ],
+    "en": [
+     "reeds",
+     "bulrush",
+     "pond",
+     "wetland",
+     "water plant",
+     "marsh",
+     "bog",
+     "shoreline"
+    ]
+   }
+  },
+  "vine": {
+   "label": {
+    "es": "Enredadera",
+    "en": "Climbing vine",
+    "pt": "Trepadeira",
+    "fr": "Plante grimpante",
+    "de": "Kletterpflanze",
+    "it": "Rampicante",
+    "ja": "つる植物",
+    "zh": "藤蔓",
+    "ko": "덩굴식물",
+    "ar": "نبتة متسلقة"
+   },
+   "keywords": {
+    "es": [
+     "trepadora",
+     "bugambilia",
+     "rastrera",
+     "crecimiento",
+     "expansión",
+     "zarcillo",
+     "se extiende",
+     "pérgola"
+    ],
+    "en": [
+     "climber",
+     "creeper",
+     "tendril",
+     "growth",
+     "spreading",
+     "bougainvillea",
+     "pergola",
+     "trailing"
+    ]
+   }
+  },
+  "ivy": {
+   "label": {
+    "es": "Hiedra",
+    "en": "Ivy",
+    "pt": "Hera",
+    "fr": "Lierre",
+    "de": "Efeu",
+    "it": "Edera",
+    "ja": "ツタ",
+    "zh": "常春藤",
+    "ko": "아이비",
+    "ar": "لبلاب"
+   },
+   "keywords": {
+    "es": [
+     "planta colgante",
+     "cubrir muros",
+     "trepadora",
+     "follaje perenne",
+     "planta rastrera",
+     "fachada",
+     "pared cubierta"
+    ],
+    "en": [
+     "trailing plant",
+     "wall cover",
+     "climber",
+     "evergreen",
+     "ground cover",
+     "facade",
+     "english ivy"
+    ]
+   }
+  },
+  "bush": {
+   "label": {
+    "es": "Arbusto",
+    "en": "Shrub",
+    "pt": "Arbusto",
+    "fr": "Arbuste",
+    "de": "Strauch",
+    "it": "Arbusto",
+    "ja": "低木",
+    "zh": "灌木",
+    "ko": "관목",
+    "ar": "شجيرة"
+   },
+   "keywords": {
+    "es": [
+     "mata",
+     "paisajismo",
+     "jardinería",
+     "plantas de jardín",
+     "follaje",
+     "matorral",
+     "planta ornamental",
+     "área verde"
+    ],
+    "en": [
+     "bush",
+     "landscaping",
+     "gardening",
+     "garden plants",
+     "foliage",
+     "thicket",
+     "ornamental plant",
+     "greenery"
+    ]
+   }
+  },
+  "hedge": {
+   "label": {
+    "es": "Seto",
+    "en": "Hedge",
+    "pt": "Cerca viva",
+    "fr": "Haie",
+    "de": "Hecke",
+    "it": "Siepe",
+    "ja": "生け垣",
+    "zh": "树篱",
+    "ko": "산울타리",
+    "ar": "سياج نباتي"
+   },
+   "keywords": {
+    "es": [
+     "cerca viva",
+     "privacidad",
+     "lindero",
+     "poda de setos",
+     "barda verde",
+     "jardinería",
+     "límite",
+     "arbusto recortado"
+    ],
+    "en": [
+     "privacy hedge",
+     "boundary",
+     "hedge trimming",
+     "living fence",
+     "border",
+     "garden fence",
+     "trimmed shrub",
+     "landscaping"
+    ]
+   }
+  },
+  "topiary": {
+   "label": {
+    "es": "Topiario",
+    "en": "Topiary",
+    "pt": "Topiaria",
+    "fr": "Topiaire",
+    "de": "Formschnitt",
+    "it": "Topiaria",
+    "ja": "トピアリー",
+    "zh": "植物造型",
+    "ko": "토피어리",
+    "ar": "شجيرة مشذبة"
+   },
+   "keywords": {
+    "es": [
+     "planta ornamental",
+     "jardín formal",
+     "poda decorativa",
+     "arbusto podado",
+     "entrada",
+     "decoración",
+     "maceta",
+     "figura de planta"
+    ],
+    "en": [
+     "ornamental plant",
+     "formal garden",
+     "decorative pruning",
+     "clipped shrub",
+     "entrance",
+     "decor",
+     "boxwood",
+     "sculpted plant"
+    ]
+   }
+  },
+  "trellis": {
+   "label": {
+    "es": "Enrejado de jardín",
+    "en": "Garden trellis",
+    "pt": "Treliça",
+    "fr": "Treillis",
+    "de": "Rankgitter",
+    "it": "Graticcio",
+    "ja": "トレリス",
+    "zh": "花架",
+    "ko": "트렐리스",
+    "ar": "تعريشة"
+   },
+   "keywords": {
+    "es": [
+     "celosía",
+     "soporte para enredaderas",
+     "huerto vertical",
+     "jardín vertical",
+     "trepadoras",
+     "espaldera",
+     "guía para plantas",
+     "pérgola"
+    ],
+    "en": [
+     "lattice",
+     "plant support",
+     "climbing support",
+     "vertical gardening",
+     "climbers",
+     "espalier",
+     "plant frame",
+     "arbor"
+    ]
+   }
+  },
+  "leaf-pile": {
+   "label": {
+    "es": "Montón de hojas",
+    "en": "Leaf pile",
+    "pt": "Monte de folhas",
+    "fr": "Tas de feuilles",
+    "de": "Laubhaufen",
+    "it": "Mucchio di foglie",
+    "ja": "落ち葉の山",
+    "zh": "落叶堆",
+    "ko": "낙엽 더미",
+    "ar": "كومة أوراق"
+   },
+   "keywords": {
+    "es": [
+     "hojas secas",
+     "limpieza de otoño",
+     "residuos de jardín",
+     "barrer hojas",
+     "recolección de hojas",
+     "hojarasca",
+     "otoño",
+     "jardinería"
+    ],
+    "en": [
+     "fallen leaves",
+     "fall cleanup",
+     "yard waste",
+     "leaf removal",
+     "raking",
+     "autumn",
+     "leaf litter",
+     "yard work"
+    ]
+   }
+  },
+  "rose": {
+   "label": {
+    "es": "Rosa",
+    "en": "Rose",
+    "pt": "Rosa",
+    "fr": "Rose",
+    "de": "Rose",
+    "it": "Rosa",
+    "ja": "バラ",
+    "zh": "玫瑰",
+    "ko": "장미",
+    "ar": "وردة"
+   },
+   "keywords": {
+    "es": [
+     "amor",
+     "regalo",
+     "florería",
+     "romance",
+     "San Valentín",
+     "rosal",
+     "aniversario",
+     "ramo"
+    ],
+    "en": [
+     "love",
+     "gift",
+     "florist",
+     "romance",
+     "Valentine’s Day",
+     "rose garden",
+     "anniversary",
+     "bouquet"
+    ]
+   }
+  },
+  "tulip": {
+   "label": {
+    "es": "Tulipán",
+    "en": "Tulip",
+    "pt": "Tulipa",
+    "fr": "Tulipe",
+    "de": "Tulpe",
+    "it": "Tulipano",
+    "ja": "チューリップ",
+    "zh": "郁金香",
+    "ko": "튤립",
+    "ar": "زهرة التوليب"
+   },
+   "keywords": {
+    "es": [
+     "primavera",
+     "florería",
+     "bulbo",
+     "jardín",
+     "Holanda",
+     "ramo",
+     "regalo"
+    ],
+    "en": [
+     "spring",
+     "florist",
+     "bulb",
+     "garden",
+     "Holland",
+     "bouquet",
+     "gift"
+    ]
+   }
+  },
+  "sunflower": {
+   "label": {
+    "es": "Girasol",
+    "en": "Sunflower",
+    "pt": "Girassol",
+    "fr": "Tournesol",
+    "de": "Sonnenblume",
+    "it": "Girasole",
+    "ja": "ひまわり",
+    "zh": "向日葵",
+    "ko": "해바라기",
+    "ar": "عباد الشمس"
+   },
+   "keywords": {
+    "es": [
+     "verano",
+     "sol",
+     "alegría",
+     "optimismo",
+     "jardín",
+     "campo",
+     "flor amarilla"
+    ],
+    "en": [
+     "summer",
+     "sunshine",
+     "cheerful",
+     "optimism",
+     "garden",
+     "field",
+     "yellow flower"
+    ]
+   }
+  },
+  "daisy": {
+   "label": {
+    "es": "Margarita",
+    "en": "Daisy",
+    "pt": "Margarida",
+    "fr": "Marguerite",
+    "de": "Gänseblümchen",
+    "it": "Margherita",
+    "ja": "デイジー",
+    "zh": "雏菊",
+    "ko": "데이지",
+    "ar": "زهرة الأقحوان"
+   },
+   "keywords": {
+    "es": [
+     "flor sencilla",
+     "frescura",
+     "manzanilla",
+     "primavera",
+     "me quiere no me quiere",
+     "flor blanca",
+     "campo"
+    ],
+    "en": [
+     "simple flower",
+     "freshness",
+     "chamomile",
+     "spring",
+     "he loves me not",
+     "white flower",
+     "meadow"
+    ]
+   }
+  },
+  "cherry-blossom": {
+   "label": {
+    "es": "Flor de cerezo",
+    "en": "Cherry blossom",
+    "pt": "Flor de cerejeira",
+    "fr": "Fleur de cerisier",
+    "de": "Kirschblüte",
+    "it": "Fiore di ciliegio",
+    "ja": "桜",
+    "zh": "樱花",
+    "ko": "벚꽃",
+    "ar": "زهرة الكرز"
+   },
+   "keywords": {
+    "es": [
+     "sakura",
+     "hanami",
+     "primavera",
+     "Japón",
+     "temporada de flores",
+     "cerezo",
+     "flor rosa"
+    ],
+    "en": [
+     "sakura",
+     "hanami",
+     "spring",
+     "Japan",
+     "blossom season",
+     "pink flower",
+     "cherry tree"
+    ]
+   }
+  },
+  "hibiscus": {
+   "label": {
+    "es": "Hibisco",
+    "en": "Hibiscus",
+    "pt": "Hibisco",
+    "fr": "Hibiscus",
+    "de": "Hibiskus",
+    "it": "Ibisco",
+    "ja": "ハイビスカス",
+    "zh": "扶桑花",
+    "ko": "히비스커스",
+    "ar": "زهرة الكركديه"
+   },
+   "keywords": {
+    "es": [
+     "flor de jamaica",
+     "tropical",
+     "agua de jamaica",
+     "islas",
+     "Hawái",
+     "playa",
+     "viaje tropical",
+     "flor tropical"
+    ],
+    "en": [
+     "tropical",
+     "island travel",
+     "Hawaii",
+     "herbal tea",
+     "beach",
+     "tropical flower",
+     "aloha",
+     "vacation"
+    ]
+   }
+  },
+  "orchid": {
+   "label": {
+    "es": "Orquídea",
+    "en": "Orchid",
+    "pt": "Orquídea",
+    "fr": "Orchidée",
+    "de": "Orchidee",
+    "it": "Orchidea",
+    "ja": "蘭",
+    "zh": "兰花",
+    "ko": "난초",
+    "ar": "أوركيد"
+   },
+   "keywords": {
+    "es": [
+     "florería",
+     "lujo",
+     "spa",
+     "planta de interior",
+     "elegancia",
+     "flor exótica",
+     "regalo",
+     "phalaenopsis"
+    ],
+    "en": [
+     "florist",
+     "luxury",
+     "spa",
+     "houseplant",
+     "elegance",
+     "exotic flower",
+     "gift",
+     "phalaenopsis"
+    ]
+   }
+  },
+  "lily": {
+   "label": {
+    "es": "Lirio",
+    "en": "Lily",
+    "pt": "Lírio",
+    "fr": "Lys",
+    "de": "Lilie",
+    "it": "Giglio",
+    "ja": "ユリ",
+    "zh": "百合",
+    "ko": "백합",
+    "ar": "زنبق"
+   },
+   "keywords": {
+    "es": [
+     "elegancia",
+     "condolencias",
+     "florería",
+     "azucena",
+     "arreglo fúnebre",
+     "pésame",
+     "flor blanca",
+     "boda"
+    ],
+    "en": [
+     "elegance",
+     "sympathy flowers",
+     "florist",
+     "condolences",
+     "funeral arrangement",
+     "white flower",
+     "wedding",
+     "easter lily"
+    ]
+   }
+  },
+  "water-lily": {
+   "label": {
+    "es": "Nenúfar",
+    "en": "Water lily",
+    "pt": "Lírio-d’água",
+    "fr": "Nénuphar",
+    "de": "Seerose",
+    "it": "Ninfea",
+    "ja": "スイレン",
+    "zh": "睡莲",
+    "ko": "수련",
+    "ar": "زنبق الماء"
+   },
+   "keywords": {
+    "es": [
+     "estanque",
+     "jardín acuático",
+     "planta acuática",
+     "lirio acuático",
+     "loto",
+     "lago",
+     "flor flotante",
+     "Monet"
+    ],
+    "en": [
+     "pond",
+     "water garden",
+     "aquatic plant",
+     "lotus",
+     "lily pad",
+     "lake",
+     "floating flower",
+     "Monet"
+    ]
+   }
+  },
+  "dandelion": {
+   "label": {
+    "es": "Diente de león",
+    "en": "Dandelion",
+    "pt": "Dente-de-leão",
+    "fr": "Pissenlit",
+    "de": "Pusteblume",
+    "it": "Soffione",
+    "ja": "タンポポの綿毛",
+    "zh": "蒲公英",
+    "ko": "민들레 홀씨",
+    "ar": "هندباء برية"
+   },
+   "keywords": {
+    "es": [
+     "pedir un deseo",
+     "soplar",
+     "fragilidad",
+     "semillas al viento",
+     "dispersar",
+     "propagación",
+     "libertad",
+     "maleza"
+    ],
+    "en": [
+     "make a wish",
+     "blow",
+     "fragility",
+     "seeds in the wind",
+     "scatter",
+     "spreading",
+     "freedom",
+     "weed"
+    ]
+   }
+  },
+  "daffodil": {
+   "label": {
+    "es": "Narciso",
+    "en": "Daffodil",
+    "pt": "Narciso",
+    "fr": "Jonquille",
+    "de": "Osterglocke",
+    "it": "Narciso",
+    "ja": "スイセン",
+    "zh": "水仙花",
+    "ko": "수선화",
+    "ar": "نرجس"
+   },
+   "keywords": {
+    "es": [
+     "primavera",
+     "floración temprana",
+     "bulbo",
+     "jardín",
+     "flor amarilla",
+     "Pascua",
+     "junquillo"
+    ],
+    "en": [
+     "spring",
+     "early bloom",
+     "bulb",
+     "garden",
+     "yellow flower",
+     "Easter",
+     "narcissus"
+    ]
+   }
+  },
+  "poppy": {
+   "label": {
+    "es": "Amapola",
+    "en": "Poppy",
+    "pt": "Papoula",
+    "fr": "Coquelicot",
+    "de": "Mohnblume",
+    "it": "Papavero",
+    "ja": "ポピー",
+    "zh": "罂粟花",
+    "ko": "양귀비",
+    "ar": "شقائق النعمان"
+   },
+   "keywords": {
+    "es": [
+     "flor silvestre",
+     "campo",
+     "pradera de verano",
+     "flor roja",
+     "verano",
+     "flores de campo",
+     "conmemoración"
+    ],
+    "en": [
+     "wildflower",
+     "field",
+     "summer meadow",
+     "red flower",
+     "summer",
+     "remembrance",
+     "field flower"
+    ]
+   }
+  },
+  "marigold": {
+   "label": {
+    "es": "Cempasúchil",
+    "en": "Marigold",
+    "pt": "Cravo-de-defunto",
+    "fr": "Œillet d’Inde",
+    "de": "Studentenblume",
+    "it": "Tagete",
+    "ja": "マリーゴールド",
+    "zh": "万寿菊",
+    "ko": "메리골드",
+    "ar": "زهرة القطيفة"
+   },
+   "keywords": {
+    "es": [
+     "Día de Muertos",
+     "ofrenda",
+     "flor de muerto",
+     "guirnalda",
+     "flor naranja",
+     "camino de flores",
+     "borde de jardín",
+     "caléndula"
+    ],
+    "en": [
+     "Day of the Dead",
+     "altar",
+     "garland",
+     "orange flower",
+     "garden border",
+     "cempasuchil",
+     "festival",
+     "tagetes"
+    ]
+   }
+  },
+  "hydrangea": {
+   "label": {
+    "es": "Hortensia",
+    "en": "Hydrangea",
+    "pt": "Hortênsia",
+    "fr": "Hortensia",
+    "de": "Hortensie",
+    "it": "Ortensia",
+    "ja": "アジサイ",
+    "zh": "绣球花",
+    "ko": "수국",
+    "ar": "هيدرانجيا"
+   },
+   "keywords": {
+    "es": [
+     "arbusto de jardín",
+     "ramo",
+     "arreglo floral",
+     "cambia de color",
+     "flor azul",
+     "florería",
+     "boda",
+     "racimo de flores"
+    ],
+    "en": [
+     "garden shrub",
+     "bouquet",
+     "floral arrangement",
+     "color-changing",
+     "blue flower",
+     "florist",
+     "wedding",
+     "flower cluster"
+    ]
+   }
+  },
+  "flower-bud": {
+   "label": {
+    "es": "Botón de flor",
+    "en": "Flower bud",
+    "pt": "Botão de flor",
+    "fr": "Bouton de fleur",
+    "de": "Blütenknospe",
+    "it": "Bocciolo",
+    "ja": "つぼみ",
+    "zh": "花苞",
+    "ko": "꽃봉오리",
+    "ar": "برعم زهرة"
+   },
+   "keywords": {
+    "es": [
+     "capullo",
+     "por florecer",
+     "próximamente",
+     "etapa inicial",
+     "en desarrollo",
+     "brote",
+     "potencial",
+     "nuevo comienzo"
+    ],
+    "en": [
+     "about to bloom",
+     "coming soon",
+     "early stage",
+     "in progress",
+     "budding",
+     "potential",
+     "upcoming",
+     "new beginning"
+    ]
+   }
+  },
+  "flower-wilted": {
+   "label": {
+    "es": "Flor marchita",
+    "en": "Wilted flower",
+    "pt": "Flor murcha",
+    "fr": "Fleur fanée",
+    "de": "Verwelkte Blume",
+    "it": "Fiore appassito",
+    "ja": "しおれた花",
+    "zh": "枯萎的花",
+    "ko": "시든 꽃",
+    "ar": "زهرة ذابلة"
+   },
+   "keywords": {
+    "es": [
+     "caducado",
+     "vencido",
+     "tristeza",
+     "decaimiento",
+     "flor seca",
+     "fin de ciclo",
+     "sin riego",
+     "nostalgia"
+    ],
+    "en": [
+     "expired",
+     "fading",
+     "past its best",
+     "sadness",
+     "decline",
+     "dried flower",
+     "neglected",
+     "drooping"
+    ]
+   }
+  },
+  "flower-vase": {
+   "label": {
+    "es": "Florero",
+    "en": "Flowers in a vase",
+    "pt": "Vaso de flores",
+    "fr": "Bouquet dans un vase",
+    "de": "Blumenvase",
+    "it": "Vaso di fiori",
+    "ja": "花瓶の花",
+    "zh": "花瓶插花",
+    "ko": "꽃병",
+    "ar": "مزهرية"
+   },
+   "keywords": {
+    "es": [
+     "florería",
+     "ramo",
+     "decoración del hogar",
+     "centro de mesa",
+     "envío de flores",
+     "arreglo floral",
+     "regalo",
+     "mesa puesta"
+    ],
+    "en": [
+     "florist",
+     "bouquet",
+     "home decor",
+     "centerpiece",
+     "flower delivery",
+     "floral arrangement",
+     "gift",
+     "table setting"
+    ]
+   }
+  },
+  "potted-plant": {
+   "label": {
+    "es": "Planta en maceta",
+    "en": "Potted plant",
+    "pt": "Planta em vaso",
+    "fr": "Plante en pot",
+    "de": "Topfpflanze",
+    "it": "Pianta in vaso",
+    "ja": "鉢植え",
+    "zh": "盆栽",
+    "ko": "화분 식물",
+    "ar": "نبتة في أصيص"
+   },
+   "keywords": {
+    "es": [
+     "planta de interior",
+     "mis plantas",
+     "vivero",
+     "tienda de plantas",
+     "decoración",
+     "plantita",
+     "verde en casa",
+     "cuidado de plantas"
+    ],
+    "en": [
+     "houseplant",
+     "indoor plant",
+     "my plants",
+     "plant shop",
+     "nursery",
+     "decor",
+     "plant care",
+     "greenery"
+    ]
+   }
+  },
+  "potted-plant-plus": {
+   "label": {
+    "es": "Agregar planta",
+    "en": "Add plant",
+    "pt": "Adicionar planta",
+    "fr": "Ajouter une plante",
+    "de": "Pflanze hinzufügen",
+    "it": "Aggiungi pianta",
+    "ja": "植物を追加",
+    "zh": "添加植物",
+    "ko": "식물 추가",
+    "ar": "إضافة نبتة"
+   },
+   "keywords": {
+    "es": [
+     "nueva planta",
+     "añadir a mis plantas",
+     "colección",
+     "registrar planta",
+     "sumar",
+     "crear",
+     "inventario de plantas"
+    ],
+    "en": [
+     "new plant",
+     "add to my plants",
+     "collection",
+     "register plant",
+     "create",
+     "plant inventory",
+     "new entry"
+    ]
+   }
+  },
+  "potted-plant-alert": {
+   "label": {
+    "es": "La planta necesita atención",
+    "en": "Plant needs attention",
+    "pt": "A planta precisa de atenção",
+    "fr": "La plante a besoin de soins",
+    "de": "Pflanze braucht Pflege",
+    "it": "La pianta ha bisogno di cure",
+    "ja": "植物の手入れが必要",
+    "zh": "植物需要照料",
+    "ko": "식물 관리 필요",
+    "ar": "النبتة تحتاج إلى عناية"
+   },
+   "keywords": {
+    "es": [
+     "cuidado atrasado",
+     "problema",
+     "plaga",
+     "riego pendiente",
+     "aviso",
+     "revisar planta",
+     "planta enferma",
+     "salud de la planta"
+    ],
+    "en": [
+     "overdue care",
+     "problem detected",
+     "pests",
+     "watering overdue",
+     "warning",
+     "check plant",
+     "sick plant",
+     "plant health"
+    ]
+   }
+  },
+  "potted-sprout": {
+   "label": {
+    "es": "Brote en maceta",
+    "en": "Potted seedling",
+    "pt": "Muda no vaso",
+    "fr": "Pousse en pot",
+    "de": "Setzling im Topf",
+    "it": "Germoglio in vaso",
+    "ja": "鉢の芽",
+    "zh": "盆栽幼苗",
+    "ko": "화분 새싹",
+    "ar": "شتلة في أصيص"
+   },
+   "keywords": {
+    "es": [
+     "plántula",
+     "plan básico",
+     "principiante",
+     "nuevo proyecto",
+     "empezar",
+     "crecimiento",
+     "germinado",
+     "cuidar"
+    ],
+    "en": [
+     "sprout",
+     "starter plan",
+     "beginner",
+     "new project",
+     "getting started",
+     "growth",
+     "nurture",
+     "seed stage"
+    ]
+   }
+  },
+  "plant-pot": {
+   "label": {
+    "es": "Maceta",
+    "en": "Plant pot",
+    "pt": "Vaso de planta",
+    "fr": "Pot de fleurs",
+    "de": "Blumentopf",
+    "it": "Vaso per piante",
+    "ja": "植木鉢",
+    "zh": "花盆",
+    "ko": "빈 화분",
+    "ar": "أصيص"
+   },
+   "keywords": {
+    "es": [
+     "macetero",
+     "terracota",
+     "jardinera",
+     "tamaño de maceta",
+     "trasplante",
+     "barro",
+     "artículos de jardinería",
+     "contenedor"
+    ],
+    "en": [
+     "planter",
+     "empty pot",
+     "pot size",
+     "repotting",
+     "terracotta",
+     "garden supplies",
+     "container",
+     "flower pot"
+    ]
+   }
+  },
+  "hanging-plant": {
+   "label": {
+    "es": "Planta colgante",
+    "en": "Hanging plant",
+    "pt": "Planta pendente",
+    "fr": "Plante suspendue",
+    "de": "Hängepflanze",
+    "it": "Pianta pendente",
+    "ja": "ハンギングプラント",
+    "zh": "悬挂盆栽",
+    "ko": "걸이 화분",
+    "ar": "نبتة معلقة"
+   },
+   "keywords": {
+    "es": [
+     "macramé",
+     "maceta colgante",
+     "canasta colgante",
+     "planta rastrera",
+     "colgador",
+     "decoración",
+     "balcón",
+     "terraza"
+    ],
+    "en": [
+     "macrame hanger",
+     "hanging basket",
+     "trailing plant",
+     "planter hook",
+     "decor",
+     "balcony",
+     "pothos",
+     "suspended pot"
+    ]
+   }
+  },
+  "plant-cutting": {
+   "label": {
+    "es": "Esqueje",
+    "en": "Plant cutting",
+    "pt": "Muda em água",
+    "fr": "Bouture",
+    "de": "Steckling",
+    "it": "Talea",
+    "ja": "挿し木",
+    "zh": "扦插",
+    "ko": "꺾꽂이",
+    "ar": "عُقلة نبات"
+   },
+   "keywords": {
+    "es": [
+     "propagación",
+     "enraizar",
+     "en frasco con agua",
+     "compartir planta",
+     "clonar planta",
+     "multiplicar",
+     "raíces",
+     "hijuelo"
+    ],
+    "en": [
+     "propagation",
+     "rooting",
+     "water propagation",
+     "share a plant",
+     "clone plant",
+     "roots",
+     "multiply",
+     "plant swap"
+    ]
+   }
+  },
+  "repotting": {
+   "label": {
+    "es": "Trasplantar",
+    "en": "Repot",
+    "pt": "Replantar",
+    "fr": "Rempoter",
+    "de": "Umtopfen",
+    "it": "Rinvasare",
+    "ja": "植え替え",
+    "zh": "换盆",
+    "ko": "분갈이",
+    "ar": "تغيير الأصيص"
+   },
+   "keywords": {
+    "es": [
+     "cambiar de maceta",
+     "maceta más grande",
+     "cuidado de plantas",
+     "tarea de jardinería",
+     "sustrato nuevo",
+     "raíces",
+     "mover planta"
+    ],
+    "en": [
+     "transplant",
+     "bigger pot",
+     "plant care",
+     "gardening task",
+     "fresh soil",
+     "roots",
+     "move plant"
+    ]
+   }
+  },
+  "window-box": {
+   "label": {
+    "es": "Jardinera de ventana",
+    "en": "Window box",
+    "pt": "Floreira de janela",
+    "fr": "Jardinière de fenêtre",
+    "de": "Blumenkasten",
+    "it": "Fioriera da finestra",
+    "ja": "窓辺のプランター",
+    "zh": "窗台花箱",
+    "ko": "창가 화분",
+    "ar": "صندوق زهور للنافذة"
+   },
+   "keywords": {
+    "es": [
+     "balcón",
+     "alféizar",
+     "jardín pequeño",
+     "departamento",
+     "espacio reducido",
+     "macetero",
+     "flores en la ventana",
+     "huerto urbano"
+    ],
+    "en": [
+     "balcony",
+     "windowsill",
+     "small space",
+     "apartment",
+     "planter",
+     "urban garden",
+     "window planter",
+     "container garden"
+    ]
+   }
+  },
+  "plant-terrarium": {
+   "label": {
+    "es": "Terrario de plantas",
+    "en": "Plant terrarium",
+    "pt": "Terrário de plantas",
+    "fr": "Terrarium végétal",
+    "de": "Pflanzenterrarium",
+    "it": "Terrario per piante",
+    "ja": "テラリウム",
+    "zh": "植物微景观",
+    "ko": "식물 테라리움",
+    "ar": "تيراريوم نباتات"
+   },
+   "keywords": {
+    "es": [
+     "jardín de vidrio",
+     "ecosistema cerrado",
+     "decoración",
+     "frasco",
+     "suculentas",
+     "musgo",
+     "miniatura",
+     "botella"
+    ],
+    "en": [
+     "glass garden",
+     "closed ecosystem",
+     "decor",
+     "jar",
+     "moss",
+     "miniature garden",
+     "succulents",
+     "bottle garden"
+    ]
+   }
+  },
+  "seed": {
+   "label": {
+    "es": "Semilla",
+    "en": "Seed",
+    "pt": "Semente",
+    "fr": "Graine",
+    "de": "Samen",
+    "it": "Seme",
+    "ja": "種",
+    "zh": "种子",
+    "ko": "씨앗",
+    "ar": "بذرة"
+   },
+   "keywords": {
+    "es": [
+     "ronda de inversión inicial",
+     "capital inicial",
+     "datos de prueba",
+     "origen",
+     "potencial",
+     "sembrar",
+     "germinar",
+     "inicio"
+    ],
+    "en": [
+     "funding round",
+     "startup funding",
+     "fixture data",
+     "origin",
+     "potential",
+     "sow",
+     "germinate",
+     "beginning"
+    ]
+   }
+  },
+  "acorn": {
+   "label": {
+    "es": "Bellota",
+    "en": "Acorn",
+    "pt": "Bolota",
+    "fr": "Gland",
+    "de": "Eichel",
+    "it": "Ghianda",
+    "ja": "どんぐり",
+    "zh": "橡子",
+    "ko": "도토리",
+    "ar": "ثمرة البلوط"
+   },
+   "keywords": {
+    "es": [
+     "otoño",
+     "encino",
+     "roble",
+     "pequeños comienzos",
+     "ahorro",
+     "ardilla",
+     "fruto seco",
+     "guardar"
+    ],
+    "en": [
+     "autumn",
+     "oak tree",
+     "small beginnings",
+     "savings",
+     "squirrel",
+     "nut",
+     "save up",
+     "stash"
+    ]
+   }
+  },
+  "pinecone": {
+   "label": {
+    "es": "Piña de pino",
+    "en": "Pine cone",
+    "pt": "Pinha",
+    "fr": "Pomme de pin",
+    "de": "Kiefernzapfen",
+    "it": "Pigna",
+    "ja": "松ぼっくり",
+    "zh": "松果",
+    "ko": "솔방울",
+    "ar": "كوز صنوبر"
+   },
+   "keywords": {
+    "es": [
+     "bosque",
+     "invierno",
+     "conífera",
+     "cono",
+     "decoración navideña",
+     "piñón",
+     "otoño"
+    ],
+    "en": [
+     "forest",
+     "winter",
+     "conifer",
+     "cone",
+     "holiday decor",
+     "pine nut",
+     "autumn"
+    ]
+   }
+  },
+  "seed-packet": {
+   "label": {
+    "es": "Sobre de semillas",
+    "en": "Seed packet",
+    "pt": "Pacote de sementes",
+    "fr": "Sachet de graines",
+    "de": "Samentüte",
+    "it": "Bustina di semi",
+    "ja": "種の袋",
+    "zh": "种子包",
+    "ko": "씨앗 봉투",
+    "ar": "كيس بذور"
+   },
+   "keywords": {
+    "es": [
+     "comprar",
+     "siembra",
+     "tienda de semillas",
+     "huerto",
+     "hortalizas",
+     "kit de cultivo",
+     "vivero",
+     "almácigo"
+    ],
+    "en": [
+     "buy",
+     "sowing",
+     "seed shop",
+     "vegetable garden",
+     "planting",
+     "nursery",
+     "grow kit",
+     "heirloom"
+    ]
+   }
+  },
+  "flower-bulb": {
+   "label": {
+    "es": "Bulbo de flor",
+    "en": "Flower bulb",
+    "pt": "Bulbo de flor",
+    "fr": "Bulbe à fleurs",
+    "de": "Blumenzwiebel",
+    "it": "Bulbo da fiore",
+    "ja": "球根",
+    "zh": "花卉球根",
+    "ko": "구근",
+    "ar": "بصلة زهرة"
+   },
+   "keywords": {
+    "es": [
+     "sembrar en otoño",
+     "tulipanes",
+     "narcisos",
+     "temporada de siembra",
+     "raíz",
+     "jardinería",
+     "lirios",
+     "floración de primavera"
+    ],
+    "en": [
+     "fall planting",
+     "tulips",
+     "daffodils",
+     "planting season",
+     "root",
+     "gardening",
+     "lilies",
+     "spring bloom"
+    ]
+   }
+  },
+  "toadstool": {
+   "label": {
+    "es": "Hongo silvestre",
+    "en": "Toadstool",
+    "pt": "Cogumelo selvagem",
+    "fr": "Champignon sauvage",
+    "de": "Wildpilz",
+    "it": "Fungo selvatico",
+    "ja": "野生のキノコ",
+    "zh": "野蘑菇",
+    "ko": "야생 버섯",
+    "ar": "فطر بري"
+   },
+   "keywords": {
+    "es": [
+     "bosque",
+     "recolección",
+     "hongo venenoso",
+     "cuento de hadas",
+     "seta",
+     "amanita",
+     "fantasía",
+     "naturaleza"
+    ],
+    "en": [
+     "forest",
+     "foraging",
+     "poisonous mushroom",
+     "fairy tale",
+     "amanita",
+     "fantasy",
+     "wild mushroom",
+     "fungi"
+    ]
+   }
+  },
+  "garden-trowel": {
+   "label": {
+    "es": "Palita de jardín",
+    "en": "Garden trowel",
+    "pt": "Pazinha de jardim",
+    "fr": "Transplantoir",
+    "de": "Pflanzkelle",
+    "it": "Trapiantatoio",
+    "ja": "移植ごて",
+    "zh": "移植铲",
+    "ko": "모종삽",
+    "ar": "مجرفة يدوية"
+   },
+   "keywords": {
+    "es": [
+     "plantar",
+     "cavar",
+     "jardinería",
+     "trasplantador",
+     "hacer hoyos",
+     "herramienta de jardín",
+     "pala de mano",
+     "sembrar"
+    ],
+    "en": [
+     "planting",
+     "digging",
+     "gardening",
+     "transplanter",
+     "hand shovel",
+     "garden tool",
+     "dig holes",
+     "potting"
+    ]
+   }
+  },
+  "hand-fork": {
+   "label": {
+    "es": "Horquilla de mano",
+    "en": "Hand fork",
+    "pt": "Garfo de jardinagem",
+    "fr": "Fourche à main",
+    "de": "Handgabel",
+    "it": "Forca a mano",
+    "ja": "ハンドフォーク",
+    "zh": "园艺手叉",
+    "ko": "원예용 손포크",
+    "ar": "شوكة حديقة يدوية"
+   },
+   "keywords": {
+    "es": [
+     "aflojar la tierra",
+     "deshierbar",
+     "escardar",
+     "trinche",
+     "rastrillo de mano",
+     "herramienta de jardín",
+     "airear suelo",
+     "trabajos pequeños"
+    ],
+    "en": [
+     "loosen soil",
+     "weeding",
+     "cultivator",
+     "hand rake",
+     "garden tool",
+     "aerate soil",
+     "small garden tasks",
+     "tines"
+    ]
+   }
+  },
+  "rake": {
+   "label": {
+    "es": "Rastrillo de jardín",
+    "en": "Garden rake",
+    "pt": "Ancinho",
+    "fr": "Râteau",
+    "de": "Rechen",
+    "it": "Rastrello",
+    "ja": "レーキ",
+    "zh": "耙子",
+    "ko": "쇠갈퀴",
+    "ar": "مشط الحديقة"
+   },
+   "keywords": {
+    "es": [
+     "rastrillar",
+     "nivelar tierra",
+     "trabajo de jardín",
+     "preparar camas",
+     "remover tierra",
+     "herramienta de jardín",
+     "jardinería",
+     "patio"
+    ],
+    "en": [
+     "raking",
+     "level soil",
+     "yard work",
+     "prepare beds",
+     "garden tool",
+     "gardening",
+     "bow rake",
+     "spread mulch"
+    ]
+   }
+  },
+  "leaf-rake": {
+   "label": {
+    "es": "Rastrillo para hojas",
+    "en": "Leaf rake",
+    "pt": "Ancinho para folhas",
+    "fr": "Râteau à feuilles",
+    "de": "Laubrechen",
+    "it": "Rastrello per foglie",
+    "ja": "熊手",
+    "zh": "落叶耙",
+    "ko": "낙엽 갈퀴",
+    "ar": "مشط أوراق الشجر"
+   },
+   "keywords": {
+    "es": [
+     "limpieza de otoño",
+     "juntar hojas",
+     "barrer el jardín",
+     "cuidado del pasto",
+     "escoba de jardín",
+     "hojarasca",
+     "patio",
+     "rastrillo de abanico"
+    ],
+    "en": [
+     "fall cleanup",
+     "gather leaves",
+     "lawn care",
+     "fan rake",
+     "lawn rake",
+     "yard cleanup",
+     "leaf litter",
+     "raking"
+    ]
+   }
+  },
+  "hoe": {
+   "label": {
+    "es": "Azadón",
+    "en": "Hoe",
+    "pt": "Enxada",
+    "fr": "Binette",
+    "de": "Hacke",
+    "it": "Zappa",
+    "ja": "鍬",
+    "zh": "锄头",
+    "ko": "괭이",
+    "ar": "معزقة"
+   },
+   "keywords": {
+    "es": [
+     "deshierbar",
+     "labrar",
+     "cultivar",
+     "surcos",
+     "remover tierra",
+     "huerto",
+     "azada",
+     "herramienta de campo"
+    ],
+    "en": [
+     "weeding",
+     "tilling",
+     "cultivating",
+     "furrows",
+     "break up soil",
+     "vegetable garden",
+     "farm tool",
+     "garden beds"
+    ]
+   }
+  },
+  "spade": {
+   "label": {
+    "es": "Pala de jardín",
+    "en": "Garden spade",
+    "pt": "Pá de jardim",
+    "fr": "Bêche",
+    "de": "Spaten",
+    "it": "Vanga",
+    "ja": "園芸用スコップ",
+    "zh": "园艺锹",
+    "ko": "정원용 삽",
+    "ar": "مجرفة الحديقة"
+   },
+   "keywords": {
+    "es": [
+     "cavar",
+     "pala recta",
+     "voltear la tierra",
+     "preparar camas",
+     "bordes",
+     "jardinería",
+     "hoyo",
+     "herramienta de jardín"
+    ],
+    "en": [
+     "digging",
+     "turn soil",
+     "edging",
+     "prepare beds",
+     "gardening",
+     "dig hole",
+     "garden tool",
+     "flat shovel"
+    ]
+   }
+  },
+  "watering-can": {
+   "label": {
+    "es": "Regadera de jardín",
+    "en": "Watering can",
+    "pt": "Regador",
+    "fr": "Arrosoir",
+    "de": "Gießkanne",
+    "it": "Annaffiatoio",
+    "ja": "じょうろ",
+    "zh": "洒水壶",
+    "ko": "물뿌리개",
+    "ar": "إبريق سقي"
+   },
+   "keywords": {
+    "es": [
+     "regar plantas",
+     "riego",
+     "cuidado de plantas",
+     "tarea de riego",
+     "agua",
+     "jardinería",
+     "plantas de interior"
+    ],
+    "en": [
+     "water plants",
+     "watering",
+     "plant care",
+     "watering task",
+     "water",
+     "gardening",
+     "houseplants"
+    ]
+   }
+  },
+  "watering-can-clock": {
+   "label": {
+    "es": "Hora de regar",
+    "en": "Watering due",
+    "pt": "Hora de regar",
+    "fr": "Arrosage à faire",
+    "de": "Gießen fällig",
+    "it": "Da annaffiare",
+    "ja": "水やりの時間",
+    "zh": "该浇水了",
+    "ko": "물 줄 시간",
+    "ar": "موعد السقي"
+   },
+   "keywords": {
+    "es": [
+     "recordatorio de riego",
+     "próximo riego",
+     "calendario de riego",
+     "programar riego",
+     "toca regar",
+     "pendiente",
+     "alarma",
+     "frecuencia de riego"
+    ],
+    "en": [
+     "watering reminder",
+     "next watering",
+     "watering schedule",
+     "plant reminder",
+     "overdue",
+     "alarm",
+     "watering frequency",
+     "time to water"
+    ]
+   }
+  },
+  "garden-hose": {
+   "label": {
+    "es": "Manguera de jardín",
+    "en": "Garden hose",
+    "pt": "Mangueira de jardim",
+    "fr": "Tuyau d’arrosage",
+    "de": "Gartenschlauch",
+    "it": "Tubo da giardino",
+    "ja": "散水ホース",
+    "zh": "花园水管",
+    "ko": "정원 호스",
+    "ar": "خرطوم الحديقة"
+   },
+   "keywords": {
+    "es": [
+     "regar",
+     "llave de agua",
+     "toma de agua exterior",
+     "lavar el carro",
+     "patio",
+     "carrete",
+     "rociador",
+     "jardín"
+    ],
+    "en": [
+     "watering",
+     "outdoor tap",
+     "spigot",
+     "washing",
+     "car wash",
+     "yard",
+     "hose reel",
+     "spray nozzle"
+    ]
+   }
+  },
+  "pruning-shears": {
+   "label": {
+    "es": "Tijeras de podar",
+    "en": "Pruning shears",
+    "pt": "Tesoura de poda",
+    "fr": "Sécateur",
+    "de": "Gartenschere",
+    "it": "Cesoie da potatura",
+    "ja": "剪定ばさみ",
+    "zh": "修枝剪",
+    "ko": "전정가위",
+    "ar": "مقص تقليم"
+   },
+   "keywords": {
+    "es": [
+     "podar",
+     "recortar",
+     "cortar ramas",
+     "flores cortadas",
+     "jardinería",
+     "despuntar",
+     "herramienta de jardín",
+     "tijera de jardín"
+    ],
+    "en": [
+     "prune",
+     "trim",
+     "cut back",
+     "secateurs",
+     "clippers",
+     "gardening",
+     "garden tool",
+     "deadheading"
+    ]
+   }
+  },
+  "lawn-mower": {
+   "label": {
+    "es": "Podadora de pasto",
+    "en": "Lawn mower",
+    "pt": "Cortador de grama",
+    "fr": "Tondeuse à gazon",
+    "de": "Rasenmäher",
+    "it": "Tosaerba",
+    "ja": "芝刈り機",
+    "zh": "割草机",
+    "ko": "잔디깎이",
+    "ar": "جزازة العشب"
+   },
+   "keywords": {
+    "es": [
+     "cortar el pasto",
+     "cortacésped",
+     "jardinería",
+     "servicio de jardinería",
+     "cuidado del césped",
+     "mantenimiento de áreas verdes",
+     "patio"
+    ],
+    "en": [
+     "mowing",
+     "cut the grass",
+     "lawn care",
+     "lawn service",
+     "yard work",
+     "push mower",
+     "landscaping"
+    ]
+   }
+  },
+  "riding-mower": {
+   "label": {
+    "es": "Tractor podador",
+    "en": "Riding mower",
+    "pt": "Trator cortador de grama",
+    "fr": "Tondeuse autoportée",
+    "de": "Aufsitzmäher",
+    "it": "Trattorino tosaerba",
+    "ja": "乗用芝刈り機",
+    "zh": "驾驶式割草机",
+    "ko": "승용 잔디깎이",
+    "ar": "جزازة عشب بمقعد"
+   },
+   "keywords": {
+    "es": [
+     "podadora con asiento",
+     "jardines grandes",
+     "mantenimiento de áreas verdes",
+     "campo de golf",
+     "cortar el pasto",
+     "jardinería",
+     "terreno amplio",
+     "minitractor"
+    ],
+    "en": [
+     "lawn tractor",
+     "large lawn",
+     "groundskeeping",
+     "golf course",
+     "mowing",
+     "ride-on mower",
+     "acreage",
+     "estate"
+    ]
+   }
+  },
+  "robot-mower": {
+   "label": {
+    "es": "Podadora robot",
+    "en": "Robot lawn mower",
+    "pt": "Cortador de grama robô",
+    "fr": "Tondeuse robot",
+    "de": "Mähroboter",
+    "it": "Robot tagliaerba",
+    "ja": "ロボット芝刈り機",
+    "zh": "割草机器人",
+    "ko": "로봇 잔디깎이",
+    "ar": "جزازة عشب آلية"
+   },
+   "keywords": {
+    "es": [
+     "jardín inteligente",
+     "corte automático",
+     "podadora autónoma",
+     "casa inteligente",
+     "domótica",
+     "pasto",
+     "programar corte",
+     "robot de jardín"
+    ],
+    "en": [
+     "smart garden",
+     "automatic mowing",
+     "autonomous mower",
+     "smart home",
+     "robotic mower",
+     "lawn",
+     "mowing schedule",
+     "garden robot"
+    ]
+   }
+  },
+  "robot-mower-dock": {
+   "label": {
+    "es": "Base de la podadora robot",
+    "en": "Mower charging base",
+    "pt": "Base de carregamento do cortador",
+    "fr": "Station de charge de la tondeuse",
+    "de": "Ladestation des Mähroboters",
+    "it": "Base di ricarica del robot tagliaerba",
+    "ja": "芝刈りロボットの充電台",
+    "zh": "割草机器人充电座",
+    "ko": "잔디깎이 충전 스테이션",
+    "ar": "قاعدة شحن الجزازة"
+   },
+   "keywords": {
+    "es": [
+     "cargando",
+     "base de carga",
+     "estación de carga",
+     "regresar a la base",
+     "acoplada",
+     "en espera",
+     "batería",
+     "estacionada"
+    ],
+    "en": [
+     "charging",
+     "docked",
+     "return to base",
+     "docking station",
+     "battery",
+     "standby",
+     "parked",
+     "home base"
+    ]
+   }
+  },
+  "robot-mower-alert": {
+   "label": {
+    "es": "La podadora necesita atención",
+    "en": "Mower needs attention",
+    "pt": "O cortador precisa de atenção",
+    "fr": "La tondeuse nécessite une intervention",
+    "de": "Mähroboter braucht Hilfe",
+    "it": "Il robot tagliaerba richiede attenzione",
+    "ja": "芝刈りロボットの確認が必要",
+    "zh": "割草机器人需要处理",
+    "ko": "잔디깎이 점검 필요",
+    "ar": "الجزازة تحتاج إلى تدخل"
+   },
+   "keywords": {
+    "es": [
+     "atorada",
+     "levantada",
+     "falla de cuchilla",
+     "error",
+     "aviso",
+     "fuera de zona",
+     "batería baja",
+     "revisar"
+    ],
+    "en": [
+     "stuck",
+     "lifted",
+     "blade fault",
+     "error",
+     "warning",
+     "out of bounds",
+     "low battery",
+     "check mower"
+    ]
+   }
+  },
+  "string-trimmer": {
+   "label": {
+    "es": "Desbrozadora",
+    "en": "String trimmer",
+    "pt": "Aparador de grama",
+    "fr": "Coupe-bordure",
+    "de": "Rasentrimmer",
+    "it": "Tagliabordi",
+    "ja": "刈払機",
+    "zh": "打草机",
+    "ko": "예초기",
+    "ar": "قاطعة أعشاب"
+   },
+   "keywords": {
+    "es": [
+     "orilladora",
+     "recortar bordes",
+     "maleza",
+     "deshierbe",
+     "orillas del pasto",
+     "cortadora de hilo",
+     "jardinería",
+     "terreno baldío"
+    ],
+    "en": [
+     "weed eater",
+     "weed whacker",
+     "edging",
+     "lawn borders",
+     "trim edges",
+     "brush cutter",
+     "yard work",
+     "weeds"
+    ]
+   }
+  },
+  "garden-glove": {
+   "label": {
+    "es": "Guante de jardinería",
+    "en": "Gardening glove",
+    "pt": "Luva de jardinagem",
+    "fr": "Gant de jardinage",
+    "de": "Gartenhandschuh",
+    "it": "Guanto da giardinaggio",
+    "ja": "園芸用手袋",
+    "zh": "园艺手套",
+    "ko": "원예 장갑",
+    "ar": "قفاز البستنة"
+   },
+   "keywords": {
+    "es": [
+     "protección",
+     "artículos de jardinería",
+     "jardinero",
+     "manos",
+     "espinas",
+     "tierra",
+     "trabajo de jardín",
+     "equipo"
+    ],
+    "en": [
+     "hand protection",
+     "garden supplies",
+     "gardener",
+     "hands",
+     "thorns",
+     "dirt",
+     "yard work",
+     "work glove"
+    ]
+   }
+  },
+  "plant-mister": {
+   "label": {
+    "es": "Atomizador para plantas",
+    "en": "Plant mister",
+    "pt": "Borrifador de plantas",
+    "fr": "Brumisateur pour plantes",
+    "de": "Pflanzensprüher",
+    "it": "Nebulizzatore per piante",
+    "ja": "霧吹き",
+    "zh": "植物喷壶",
+    "ko": "분무기",
+    "ar": "بخاخ النباتات"
+   },
+   "keywords": {
+    "es": [
+     "rociar",
+     "humedad",
+     "pulverizador",
+     "cuidado de plantas",
+     "spray",
+     "hojas",
+     "planta de interior",
+     "brisa"
+    ],
+    "en": [
+     "misting",
+     "humidity",
+     "spray bottle",
+     "plant care",
+     "sprayer",
+     "leaves",
+     "houseplant",
+     "fine mist"
+    ]
+   }
+  },
+  "plant-label": {
+   "label": {
+    "es": "Etiqueta de planta",
+    "en": "Plant marker",
+    "pt": "Etiqueta de planta",
+    "fr": "Étiquette de plante",
+    "de": "Pflanzenstecker",
+    "it": "Etichetta per piante",
+    "ja": "植物ラベル",
+    "zh": "植物标签",
+    "ko": "식물 이름표",
+    "ar": "بطاقة النبات"
+   },
+   "keywords": {
+    "es": [
+     "nombrar planta",
+     "identificar",
+     "letrero",
+     "estaca",
+     "nombre científico",
+     "huerto",
+     "rótulo",
+     "marcar"
+    ],
+    "en": [
+     "plant tag",
+     "name a plant",
+     "identify",
+     "garden label",
+     "stake",
+     "scientific name",
+     "marker stick",
+     "seed row"
+    ]
+   }
+  },
+  "potting-mix": {
+   "label": {
+    "es": "Tierra para macetas",
+    "en": "Potting mix",
+    "pt": "Substrato",
+    "fr": "Terreau",
+    "de": "Blumenerde",
+    "it": "Terriccio",
+    "ja": "培養土",
+    "zh": "盆栽土",
+    "ko": "분갈이 흙",
+    "ar": "تربة الأصص"
+   },
+   "keywords": {
+    "es": [
+     "sustrato",
+     "tierra preparada",
+     "costal de tierra",
+     "abono",
+     "tierra negra",
+     "artículos de jardinería",
+     "composta",
+     "turba"
+    ],
+    "en": [
+     "soil",
+     "potting soil",
+     "compost",
+     "garden supplies",
+     "peat",
+     "bag of soil",
+     "fertilizer",
+     "substrate"
+    ]
+   }
+  },
+  "garden": {
+   "label": {
+    "es": "Jardín",
+    "en": "Garden",
+    "pt": "Jardim",
+    "fr": "Jardin",
+    "de": "Garten",
+    "it": "Giardino",
+    "ja": "庭",
+    "zh": "花园",
+    "ko": "정원",
+    "ar": "حديقة"
+   },
+   "keywords": {
+    "es": [
+     "jardinería",
+     "área verde",
+     "plantas",
+     "patio",
+     "amenidad",
+     "huerto",
+     "paisajismo",
+     "exteriores"
+    ],
+    "en": [
+     "gardening",
+     "green space",
+     "plants",
+     "backyard",
+     "amenity",
+     "flower bed",
+     "landscaping",
+     "outdoors"
+    ]
+   }
+  },
+  "garden-layout": {
+   "label": {
+    "es": "Plano del jardín",
+    "en": "Garden plan",
+    "pt": "Planta do jardim",
+    "fr": "Plan du jardin",
+    "de": "Gartenplan",
+    "it": "Progetto del giardino",
+    "ja": "庭の設計図",
+    "zh": "花园规划图",
+    "ko": "정원 설계도",
+    "ar": "مخطط الحديقة"
+   },
+   "keywords": {
+    "es": [
+     "diseño de jardín",
+     "paisajismo",
+     "distribución de camas",
+     "planificador",
+     "croquis",
+     "huerto",
+     "arquitectura de paisaje",
+     "proyecto"
+    ],
+    "en": [
+     "garden planner",
+     "bed layout",
+     "landscape design",
+     "garden design",
+     "sketch",
+     "blueprint",
+     "landscape architecture",
+     "plot plan"
+    ]
+   }
+  },
+  "raised-bed": {
+   "label": {
+    "es": "Huerto elevado",
+    "en": "Raised bed",
+    "pt": "Canteiro elevado",
+    "fr": "Potager surélevé",
+    "de": "Hochbeet",
+    "it": "Orto rialzato",
+    "ja": "レイズドベッド",
+    "zh": "抬高种植床",
+    "ko": "틀밭",
+    "ar": "حوض زراعة مرتفع"
+   },
+   "keywords": {
+    "es": [
+     "huerto urbano",
+     "hortalizas",
+     "cama de cultivo",
+     "huerto en casa",
+     "verduras",
+     "jardinera",
+     "huerto comunitario",
+     "cultivo"
+    ],
+    "en": [
+     "vegetable garden",
+     "kitchen garden",
+     "allotment",
+     "garden bed",
+     "planter box",
+     "urban garden",
+     "community garden",
+     "grow your own"
+    ]
+   }
+  },
+  "green-wall": {
+   "label": {
+    "es": "Muro verde",
+    "en": "Green wall",
+    "pt": "Parede verde",
+    "fr": "Mur végétal",
+    "de": "Pflanzenwand",
+    "it": "Parete verde",
+    "ja": "壁面緑化",
+    "zh": "绿植墙",
+    "ko": "식물 벽",
+    "ar": "جدار أخضر"
+   },
+   "keywords": {
+    "es": [
+     "jardín vertical",
+     "muro vivo",
+     "diseño biofílico",
+     "fachada verde",
+     "oficina",
+     "plantas en pared",
+     "arquitectura sustentable",
+     "decoración"
+    ],
+    "en": [
+     "living wall",
+     "vertical garden",
+     "biophilic design",
+     "green facade",
+     "plant wall",
+     "office",
+     "sustainable architecture",
+     "moss wall"
+    ]
+   }
+  },
+  "compost-bin": {
+   "label": {
+    "es": "Compostero",
+    "en": "Compost bin",
+    "pt": "Composteira",
+    "fr": "Composteur",
+    "de": "Komposter",
+    "it": "Compostiera",
+    "ja": "コンポスト",
+    "zh": "堆肥箱",
+    "ko": "퇴비통",
+    "ar": "حاوية تسميد"
+   },
+   "keywords": {
+    "es": [
+     "composta",
+     "residuos orgánicos",
+     "desechos de jardín",
+     "abono",
+     "reciclaje",
+     "tierra fértil",
+     "lombricomposta",
+     "sustentable"
+    ],
+    "en": [
+     "composting",
+     "organic waste",
+     "garden waste",
+     "fertilizer",
+     "recycling",
+     "soil",
+     "worm bin",
+     "sustainable"
+    ]
+   }
+  },
+  "garden-arch": {
+   "label": {
+    "es": "Arco de jardín",
+    "en": "Garden arch",
+    "pt": "Arco de jardim",
+    "fr": "Arche de jardin",
+    "de": "Rosenbogen",
+    "it": "Arco da giardino",
+    "ja": "ガーデンアーチ",
+    "zh": "花园拱门",
+    "ko": "정원 아치",
+    "ar": "قوس الحديقة"
+   },
+   "keywords": {
+    "es": [
+     "arco de rosas",
+     "entrada al jardín",
+     "salón de eventos",
+     "boda",
+     "pérgola",
+     "jardín para eventos",
+     "enredadera",
+     "ceremonia"
+    ],
+    "en": [
+     "rose arch",
+     "garden entrance",
+     "wedding venue",
+     "wedding",
+     "pergola",
+     "arbor",
+     "ceremony",
+     "event garden"
+    ]
+   }
+  },
+  "stepping-stones": {
+   "label": {
+    "es": "Camino de piedras",
+    "en": "Stepping stones",
+    "pt": "Caminho de pedras",
+    "fr": "Pas japonais",
+    "de": "Trittsteine",
+    "it": "Sentiero di pietre",
+    "ja": "飛び石",
+    "zh": "汀步石",
+    "ko": "디딤돌",
+    "ar": "حجارة الممشى"
+   },
+   "keywords": {
+    "es": [
+     "sendero de jardín",
+     "paisajismo",
+     "pasaderas",
+     "andador",
+     "piedras planas",
+     "paso a paso",
+     "jardín japonés"
+    ],
+    "en": [
+     "garden path",
+     "landscaping",
+     "walkway",
+     "flat stones",
+     "step by step",
+     "path through",
+     "pavers",
+     "Japanese garden"
+    ]
+   }
+  },
+  "zen-garden": {
+   "label": {
+    "es": "Jardín zen",
+    "en": "Zen garden",
+    "pt": "Jardim zen",
+    "fr": "Jardin zen",
+    "de": "Zen-Garten",
+    "it": "Giardino zen",
+    "ja": "枯山水",
+    "zh": "枯山水",
+    "ko": "젠 가든",
+    "ar": "حديقة زِن"
+   },
+   "keywords": {
+    "es": [
+     "calma",
+     "meditación",
+     "atención plena",
+     "jardín de piedras",
+     "Japón",
+     "arena rastrillada",
+     "relajación",
+     "equilibrio"
+    ],
+    "en": [
+     "calm",
+     "meditation",
+     "mindfulness",
+     "rock garden",
+     "Japan",
+     "raked sand",
+     "relaxation",
+     "balance"
+    ]
+   }
+  },
+  "garden-gnome": {
+   "label": {
+    "es": "Gnomo de jardín",
+    "en": "Garden gnome",
+    "pt": "Gnomo de jardim",
+    "fr": "Nain de jardin",
+    "de": "Gartenzwerg",
+    "it": "Nano da giardino",
+    "ja": "ガーデンノーム",
+    "zh": "花园小矮人",
+    "ko": "가든 노움",
+    "ar": "قزم الحديقة"
+   },
+   "keywords": {
+    "es": [
+     "decoración de jardín",
+     "adorno",
+     "figura",
+     "duende",
+     "jardín divertido",
+     "ornamento exterior",
+     "estatuilla",
+     "kitsch"
+    ],
+    "en": [
+     "garden decor",
+     "ornament",
+     "figurine",
+     "lawn ornament",
+     "playful",
+     "statue",
+     "kitsch",
+     "elf"
+    ]
+   }
+  },
+  "plant-light": {
+   "label": {
+    "es": "Necesidad de luz",
+    "en": "Light needs",
+    "pt": "Necessidade de luz",
+    "fr": "Besoin en lumière",
+    "de": "Lichtbedarf",
+    "it": "Esigenze di luce",
+    "ja": "日当たりの条件",
+    "zh": "光照需求",
+    "ko": "필요 광량",
+    "ar": "احتياج الضوء"
+   },
+   "keywords": {
+    "es": [
+     "luz solar",
+     "sol directo",
+     "luz indirecta",
+     "sombra",
+     "poca luz",
+     "luz brillante",
+     "cuidado de plantas",
+     "ubicación"
+    ],
+    "en": [
+     "sunlight",
+     "full sun",
+     "indirect light",
+     "shade",
+     "low light",
+     "bright light",
+     "plant care",
+     "placement"
+    ]
+   }
+  },
+  "plant-water": {
+   "label": {
+    "es": "Necesidad de riego",
+    "en": "Water needs",
+    "pt": "Necessidade de rega",
+    "fr": "Besoin en eau",
+    "de": "Wasserbedarf",
+    "it": "Esigenze d’acqua",
+    "ja": "水やりの目安",
+    "zh": "浇水需求",
+    "ko": "수분 요구량",
+    "ar": "احتياج الماء"
+   },
+   "keywords": {
+    "es": [
+     "cuánta agua",
+     "frecuencia de riego",
+     "poco riego",
+     "riego abundante",
+     "cuidado de plantas",
+     "agua",
+     "tolerancia a la sequía",
+     "humedad del suelo"
+    ],
+    "en": [
+     "how much water",
+     "watering frequency",
+     "drought tolerant",
+     "keep moist",
+     "plant care",
+     "water",
+     "soil moisture",
+     "thirsty plant"
+    ]
+   }
+  },
+  "plant-humidity": {
+   "label": {
+    "es": "Necesidad de humedad",
+    "en": "Humidity needs",
+    "pt": "Necessidade de umidade",
+    "fr": "Besoin en humidité",
+    "de": "Luftfeuchtigkeitsbedarf",
+    "it": "Esigenze di umidità",
+    "ja": "湿度の目安",
+    "zh": "湿度需求",
+    "ko": "적정 습도",
+    "ar": "احتياج الرطوبة"
+   },
+   "keywords": {
+    "es": [
+     "aire seco",
+     "ambiente húmedo",
+     "clima",
+     "humidificador",
+     "cuidado de plantas",
+     "plantas tropicales",
+     "baño",
+     "vaporizar"
+    ],
+    "en": [
+     "dry air",
+     "humid air",
+     "air moisture",
+     "humidifier",
+     "plant care",
+     "tropical plants",
+     "bathroom plant",
+     "misting"
+    ]
+   }
+  },
+  "pet-safe-plant": {
+   "label": {
+    "es": "Planta segura para mascotas",
+    "en": "Pet-safe plant",
+    "pt": "Planta segura para pets",
+    "fr": "Plante sans danger pour les animaux",
+    "de": "Haustierfreundliche Pflanze",
+    "it": "Pianta sicura per animali",
+    "ja": "ペットに安全な植物",
+    "zh": "对宠物安全的植物",
+    "ko": "반려동물에 안전한 식물",
+    "ar": "نبتة آمنة للحيوانات الأليفة"
+   },
+   "keywords": {
+    "es": [
+     "no tóxica",
+     "gatos",
+     "perros",
+     "apta para mascotas",
+     "tóxica para mascotas",
+     "plantas venenosas",
+     "seguridad",
+     "pet friendly"
+    ],
+    "en": [
+     "non-toxic",
+     "cats",
+     "dogs",
+     "pet friendly",
+     "toxic to pets",
+     "poisonous plants",
+     "safety",
+     "animal safe"
+    ]
+   }
+  }
+ }
+}

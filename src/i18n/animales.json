@@ -1,0 +1,534 @@
+{
+  "tiger": {
+    "label": { "es": "Tigre", "en": "Tiger", "pt": "Tigre", "fr": "Tigre", "de": "Tiger", "it": "Tigre", "ja": "トラ", "zh": "老虎", "ko": "호랑이", "ar": "نمر" },
+    "keywords": {
+      "es": ["felino", "rayas", "selva", "zoológico", "especie en peligro", "conservación", "fuerza"],
+      "en": ["big cat", "stripes", "jungle", "zoo", "endangered species", "conservation", "strength"]
+    }
+  },
+  "lion": {
+    "label": { "es": "León", "en": "Lion", "pt": "Leão", "fr": "Lion", "de": "Löwe", "it": "Leone", "ja": "ライオン", "zh": "狮子", "ko": "사자", "ar": "أسد" },
+    "keywords": {
+      "es": ["rey de la selva", "melena", "felino", "zoológico", "valentía", "liderazgo", "safari"],
+      "en": ["king of the jungle", "mane", "big cat", "zoo", "courage", "leadership", "safari"]
+    }
+  },
+  "leopard": {
+    "label": { "es": "Leopardo", "en": "Leopard", "pt": "Leopardo", "fr": "Léopard", "de": "Leopard", "it": "Leopardo", "ja": "ヒョウ", "zh": "豹", "ko": "표범", "ar": "نمر مرقط" },
+    "keywords": {
+      "es": ["pantera", "jaguar", "felino", "manchas", "safari", "vida salvaje", "zoológico"],
+      "en": ["panther", "jaguar", "big cat", "spots", "safari", "wildlife", "zoo"]
+    }
+  },
+  "cheetah": {
+    "label": { "es": "Guepardo", "en": "Cheetah", "pt": "Guepardo", "fr": "Guépard", "de": "Gepard", "it": "Ghepardo", "ja": "チーター", "zh": "猎豹", "ko": "치타", "ar": "فهد صياد" },
+    "keywords": {
+      "es": ["chita", "velocidad", "carrera", "modo rápido", "el más rápido", "felino", "sabana"],
+      "en": ["speed", "sprint", "fast mode", "fastest", "big cat", "savanna", "wildlife"]
+    }
+  },
+  "wolf": {
+    "label": { "es": "Lobo", "en": "Wolf", "pt": "Lobo", "fr": "Loup", "de": "Wolf", "it": "Lupo", "ja": "オオカミ", "zh": "狼", "ko": "늑대", "ar": "ذئب" },
+    "keywords": {
+      "es": ["manada", "cánido", "bosque", "vida salvaje", "naturaleza", "depredador", "salvaje"],
+      "en": ["pack", "canine", "forest", "wildlife", "wilderness", "predator", "wild"]
+    }
+  },
+  "wolf-howling": {
+    "label": { "es": "Lobo aullando", "en": "Howling wolf", "pt": "Lobo uivando", "fr": "Loup qui hurle", "de": "Heulender Wolf", "it": "Lupo che ulula", "ja": "遠吠えするオオカミ", "zh": "嚎叫的狼", "ko": "울부짖는 늑대", "ar": "ذئب يعوي" },
+    "keywords": {
+      "es": ["aullido", "luna llena", "noche", "llamar a la manada", "naturaleza salvaje", "modo nocturno", "Halloween"],
+      "en": ["howl", "full moon", "night", "call the pack", "wilderness", "night mode", "Halloween"]
+    }
+  },
+  "fox": {
+    "label": { "es": "Zorro", "en": "Fox", "pt": "Raposa", "fr": "Renard", "de": "Fuchs", "it": "Volpe", "ja": "キツネ", "zh": "狐狸", "ko": "여우", "ar": "ثعلب" },
+    "keywords": {
+      "es": ["zorra", "astucia", "bosque", "vida salvaje", "listo", "mascota de la marca", "cola esponjada"],
+      "en": ["vixen", "cunning", "forest", "wildlife", "clever", "brand mascot", "sly"]
+    }
+  },
+  "fennec-fox": {
+    "label": { "es": "Fénec", "en": "Fennec fox", "pt": "Feneco", "fr": "Fennec", "de": "Fennek", "it": "Fennec", "ja": "フェネック", "zh": "耳廓狐", "ko": "사막여우", "ar": "فنك" },
+    "keywords": {
+      "es": ["zorro del desierto", "orejas grandes", "desierto", "Sahara", "buen oído", "app infantil", "animal tierno"],
+      "en": ["desert fox", "big ears", "desert", "Sahara", "keen hearing", "kids app", "cute animal"]
+    }
+  },
+  "bear": {
+    "label": { "es": "Oso", "en": "Bear", "pt": "Urso", "fr": "Ours", "de": "Bär", "it": "Orso", "ja": "クマ", "zh": "熊", "ko": "곰", "ar": "دب" },
+    "keywords": {
+      "es": ["oso pardo", "grizzly", "bosque", "parque nacional", "vida salvaje", "acampar", "naturaleza"],
+      "en": ["brown bear", "grizzly", "forest", "national park", "wildlife", "camping", "wilderness"]
+    }
+  },
+  "bear-alert": {
+    "label": { "es": "Alerta de osos", "en": "Bear warning", "pt": "Alerta de ursos", "fr": "Alerte aux ours", "de": "Bärenwarnung", "it": "Attenzione orsi", "ja": "クマ出没注意", "zh": "当心熊出没", "ko": "곰 출몰 주의", "ar": "تحذير من الدببة" },
+    "keywords": {
+      "es": ["osos en la zona", "sendero", "campamento", "precaución", "actividad de osos", "parque nacional", "advertencia"],
+      "en": ["bear activity", "trail advisory", "campground", "caution", "bears in area", "national park", "trail closed"]
+    }
+  },
+  "polar-bear": {
+    "label": { "es": "Oso polar", "en": "Polar bear", "pt": "Urso-polar", "fr": "Ours polaire", "de": "Eisbär", "it": "Orso polare", "ja": "ホッキョクグマ", "zh": "北极熊", "ko": "북극곰", "ar": "دب قطبي" },
+    "keywords": {
+      "es": ["Ártico", "Polo Norte", "frío", "hielo", "cambio climático", "deshielo", "oso blanco"],
+      "en": ["Arctic", "North Pole", "cold", "ice", "climate change", "melting ice", "white bear"]
+    }
+  },
+  "bear-standing": {
+    "label": { "es": "Oso de pie", "en": "Standing bear", "pt": "Urso em pé", "fr": "Ours debout", "de": "Stehender Bär", "it": "Orso in piedi", "ja": "立ち上がるクマ", "zh": "站立的熊", "ko": "서 있는 곰", "ar": "دب واقف" },
+    "keywords": {
+      "es": ["en dos patas", "encuentro con oso", "tamaño", "fuerza", "grizzly", "amenaza", "vida salvaje"],
+      "en": ["on hind legs", "bear encounter", "size", "strength", "grizzly", "threat", "wildlife"]
+    }
+  },
+  "bear-sleeping": {
+    "label": { "es": "Oso dormido", "en": "Sleeping bear", "pt": "Urso dormindo", "fr": "Ours endormi", "de": "Schlafender Bär", "it": "Orso che dorme", "ja": "眠るクマ", "zh": "睡觉的熊", "ko": "잠자는 곰", "ar": "دب نائم" },
+    "keywords": {
+      "es": ["hibernación", "modo reposo", "cuenta inactiva", "temporada baja", "invierno", "dormir", "en pausa"],
+      "en": ["hibernation", "sleep mode", "dormant account", "off-season", "winter", "sleep", "paused"]
+    }
+  },
+  "bear-face": {
+    "label": { "es": "Cara de oso", "en": "Bear face", "pt": "Cara de urso", "fr": "Tête d’ours", "de": "Bärenkopf", "it": "Muso d’orso", "ja": "クマの顔", "zh": "熊脸", "ko": "곰 얼굴", "ar": "وجه دب" },
+    "keywords": {
+      "es": ["avatar", "osito", "osito de peluche", "mascota", "app infantil", "sticker", "emoji"],
+      "en": ["avatar", "teddy bear", "cub", "mascot", "kids app", "sticker", "emoji"]
+    }
+  },
+  "panda-face": {
+    "label": { "es": "Cara de panda", "en": "Panda face", "pt": "Cara de panda", "fr": "Tête de panda", "de": "Pandakopf", "it": "Muso di panda", "ja": "パンダの顔", "zh": "熊猫脸", "ko": "판다 얼굴", "ar": "وجه باندا" },
+    "keywords": {
+      "es": ["avatar", "sticker", "emoji", "app infantil", "tierno", "bambú", "osito"],
+      "en": ["avatar", "sticker", "emoji", "kids app", "cute", "bamboo", "kawaii"]
+    }
+  },
+  "koala-face": {
+    "label": { "es": "Cara de koala", "en": "Koala face", "pt": "Cara de coala", "fr": "Tête de koala", "de": "Koalakopf", "it": "Muso di koala", "ja": "コアラの顔", "zh": "考拉脸", "ko": "코알라 얼굴", "ar": "وجه كوالا" },
+    "keywords": {
+      "es": ["avatar", "app infantil", "sticker", "emoji", "Australia", "tierno", "orejas peludas"],
+      "en": ["avatar", "kids app", "sticker", "emoji", "Australia", "cute", "fluffy ears"]
+    }
+  },
+  "monkey-face": {
+    "label": { "es": "Cara de mono", "en": "Monkey face", "pt": "Cara de macaco", "fr": "Tête de singe", "de": "Affenkopf", "it": "Muso di scimmia", "ja": "サルの顔", "zh": "猴子脸", "ko": "원숭이 얼굴", "ar": "وجه قرد" },
+    "keywords": {
+      "es": ["chango", "avatar", "sticker", "emoji", "travieso", "relajo", "primate"],
+      "en": ["avatar", "sticker", "emoji", "cheeky", "mischief", "primate", "silly"]
+    }
+  },
+  "elephant-face": {
+    "label": { "es": "Cara de elefante", "en": "Elephant face", "pt": "Cara de elefante", "fr": "Tête d’éléphant", "de": "Elefantenkopf", "it": "Muso di elefante", "ja": "ゾウの顔", "zh": "大象脸", "ko": "코끼리 얼굴", "ar": "وجه فيل" },
+    "keywords": {
+      "es": ["avatar", "app infantil", "trompa", "orejas grandes", "sticker", "emoji", "mascota"],
+      "en": ["avatar", "kids app", "trunk", "big ears", "sticker", "emoji", "mascot"]
+    }
+  },
+  "pig-face": {
+    "label": { "es": "Cara de cerdo", "en": "Pig face", "pt": "Cara de porco", "fr": "Tête de cochon", "de": "Schweinekopf", "it": "Muso di maiale", "ja": "ブタの顔", "zh": "猪脸", "ko": "돼지 얼굴", "ar": "وجه خنزير" },
+    "keywords": {
+      "es": ["carne de puerco", "menú", "cochinita", "granja", "avatar", "emoji", "trompita"],
+      "en": ["pork", "menu", "pork dish", "farm app", "avatar", "emoji", "oink"]
+    }
+  },
+  "cow-face": {
+    "label": { "es": "Cara de vaca", "en": "Cow face", "pt": "Cara de vaca", "fr": "Tête de vache", "de": "Kuhkopf", "it": "Muso di mucca", "ja": "ウシの顔", "zh": "牛脸", "ko": "소 얼굴", "ar": "وجه بقرة" },
+    "keywords": {
+      "es": ["res", "carne de res", "menú", "platillo con res", "granja", "avatar", "emoji"],
+      "en": ["beef", "menu", "beef dish", "farm app", "avatar", "emoji", "moo"]
+    }
+  },
+  "lion-face": {
+    "label": { "es": "Cara de león", "en": "Lion face", "pt": "Cara de leão", "fr": "Tête de lion", "de": "Löwenkopf", "it": "Muso di leone", "ja": "ライオンの顔", "zh": "狮子脸", "ko": "사자 얼굴", "ar": "وجه أسد" },
+    "keywords": {
+      "es": ["avatar", "sticker", "mascota del equipo", "emoji", "melena", "felino", "elegir animal"],
+      "en": ["avatar", "sticker", "team mascot", "emoji", "mane", "big cat", "animal picker"]
+    }
+  },
+  "tiger-face": {
+    "label": { "es": "Cara de tigre", "en": "Tiger face", "pt": "Cara de tigre", "fr": "Tête de tigre", "de": "Tigerkopf", "it": "Muso di tigre", "ja": "トラの顔", "zh": "老虎脸", "ko": "호랑이 얼굴", "ar": "وجه نمر" },
+    "keywords": {
+      "es": ["avatar", "sticker", "emoji", "rayas", "felino", "mascota del equipo", "elegir animal"],
+      "en": ["avatar", "sticker", "emoji", "stripes", "big cat", "team mascot", "animal picker"]
+    }
+  },
+  "wolf-face": {
+    "label": { "es": "Cara de lobo", "en": "Wolf face", "pt": "Cara de lobo", "fr": "Tête de loup", "de": "Wolfskopf", "it": "Muso di lupo", "ja": "オオカミの顔", "zh": "狼脸", "ko": "늑대 얼굴", "ar": "وجه ذئب" },
+    "keywords": {
+      "es": ["avatar", "mascota del equipo", "nombre del equipo", "escudo", "manada", "sticker", "emoji"],
+      "en": ["avatar", "team mascot", "team name", "crest", "pack", "sticker", "emoji"]
+    }
+  },
+  "fox-face": {
+    "label": { "es": "Cara de zorro", "en": "Fox face", "pt": "Cara de raposa", "fr": "Tête de renard", "de": "Fuchskopf", "it": "Muso di volpe", "ja": "キツネの顔", "zh": "狐狸脸", "ko": "여우 얼굴", "ar": "وجه ثعلب" },
+    "keywords": {
+      "es": ["usuario anónimo", "avatar", "perfil anónimo", "incógnito", "mascota", "sticker", "emoji"],
+      "en": ["anonymous user", "avatar", "anonymous profile", "incognito", "mascot", "sticker", "emoji"]
+    }
+  },
+  "unicorn-face": {
+    "label": { "es": "Cara de unicornio", "en": "Unicorn face", "pt": "Cara de unicórnio", "fr": "Tête de licorne", "de": "Einhornkopf", "it": "Muso di unicorno", "ja": "ユニコーンの顔", "zh": "独角兽脸", "ko": "유니콘 얼굴", "ar": "وجه حصان وحيد القرن" },
+    "keywords": {
+      "es": ["avatar", "sticker", "emoji", "magia", "fantasía", "app infantil", "cuerno mágico"],
+      "en": ["avatar", "sticker", "emoji", "magic", "fantasy", "kids app", "magical horn"]
+    }
+  },
+  "horse": {
+    "label": { "es": "Caballo", "en": "Horse", "pt": "Cavalo", "fr": "Cheval", "de": "Pferd", "it": "Cavallo", "ja": "ウマ", "zh": "马", "ko": "말", "ar": "حصان" },
+    "keywords": {
+      "es": ["equino", "granja", "establo", "rancho", "equitación", "cabalgata", "caballos de fuerza"],
+      "en": ["equine", "farm", "stable", "ranch", "equestrian", "horseback riding", "horsepower"]
+    }
+  },
+  "horse-running": {
+    "label": { "es": "Caballo al galope", "en": "Galloping horse", "pt": "Cavalo a galope", "fr": "Cheval au galop", "de": "Galoppierendes Pferd", "it": "Cavallo al galoppo", "ja": "疾走する馬", "zh": "奔跑的马", "ko": "달리는 말", "ar": "حصان يركض" },
+    "keywords": {
+      "es": ["galope", "carreras de caballos", "hipódromo", "velocidad", "libertad", "correr", "caballo salvaje"],
+      "en": ["gallop", "horse racing", "racetrack", "speed", "freedom", "running", "mustang"]
+    }
+  },
+  "zebra": {
+    "label": { "es": "Cebra", "en": "Zebra", "pt": "Zebra", "fr": "Zèbre", "de": "Zebra", "it": "Zebra", "ja": "シマウマ", "zh": "斑马", "ko": "얼룩말", "ar": "حمار وحشي" },
+    "keywords": {
+      "es": ["rayas", "sabana", "zoológico", "safari", "blanco y negro", "África", "manada"],
+      "en": ["stripes", "savanna", "zoo", "safari", "black and white", "Africa", "herd"]
+    }
+  },
+  "donkey": {
+    "label": { "es": "Burro", "en": "Donkey", "pt": "Burro", "fr": "Âne", "de": "Esel", "it": "Asino", "ja": "ロバ", "zh": "驴", "ko": "당나귀", "ar": "حمار" },
+    "keywords": {
+      "es": ["asno", "mula", "granja", "animal de carga", "terco", "rancho", "burrito"],
+      "en": ["burro", "mule", "farm", "pack animal", "work animal", "stubborn", "ranch"]
+    }
+  },
+  "unicorn": {
+    "label": { "es": "Unicornio", "en": "Unicorn", "pt": "Unicórnio", "fr": "Licorne", "de": "Einhorn", "it": "Unicorno", "ja": "ユニコーン", "zh": "独角兽", "ko": "유니콘", "ar": "حصان وحيد القرن" },
+    "keywords": {
+      "es": ["fantasía", "magia", "cuento de hadas", "app infantil", "startup unicornio", "arcoíris", "mítico"],
+      "en": ["fantasy", "magic", "fairy tale", "kids app", "billion-dollar startup", "rainbow", "mythical"]
+    }
+  },
+  "saddle": {
+    "label": { "es": "Silla de montar", "en": "Saddle", "pt": "Sela", "fr": "Selle", "de": "Sattel", "it": "Sella", "ja": "馬の鞍", "zh": "马鞍", "ko": "안장", "ar": "سرج" },
+    "keywords": {
+      "es": ["montura", "equitación", "clases de equitación", "establo", "talabartería", "cabalgata", "jinete"],
+      "en": ["tack", "horseback riding", "riding lessons", "stable", "equestrian", "rider", "saddlery"]
+    }
+  },
+  "cow": {
+    "label": { "es": "Vaca", "en": "Cow", "pt": "Vaca", "fr": "Vache", "de": "Kuh", "it": "Mucca", "ja": "ウシ", "zh": "奶牛", "ko": "젖소", "ar": "بقرة" },
+    "keywords": {
+      "es": ["ganado", "lechería", "establo", "rancho", "leche", "res", "ganadería"],
+      "en": ["cattle", "dairy farm", "livestock", "ranch", "milk", "farm animal", "moo"]
+    }
+  },
+  "cow-plus": {
+    "label": { "es": "Agregar animal", "en": "Add animal", "pt": "Adicionar animal", "fr": "Ajouter un animal", "de": "Tier hinzufügen", "it": "Aggiungi animale", "ja": "家畜を追加", "zh": "添加牲畜", "ko": "가축 추가", "ar": "إضافة حيوان" },
+    "keywords": {
+      "es": ["alta de ganado", "registrar res", "nuevo becerro", "hato", "inventario de ganado", "nacimiento", "compra de ganado"],
+      "en": ["register livestock", "new calf", "herd", "livestock register", "herd inventory", "birth", "cattle purchase"]
+    }
+  },
+  "cow-alert": {
+    "label": { "es": "Animal requiere atención", "en": "Animal needs attention", "pt": "Animal precisa de atenção", "fr": "Animal à surveiller", "de": "Tier braucht Aufmerksamkeit", "it": "Animale da controllare", "ja": "要観察の家畜", "zh": "牲畜需关注", "ko": "가축 이상 알림", "ar": "حيوان يحتاج إلى رعاية" },
+    "keywords": {
+      "es": ["enfermo", "lesionado", "revisión veterinaria", "cojera", "chequeo pendiente", "salud del ganado", "aislar"],
+      "en": ["sick", "injured", "vet check", "lameness", "missed check", "herd health", "quarantine"]
+    }
+  },
+  "bull": {
+    "label": { "es": "Toro", "en": "Bull", "pt": "Touro", "fr": "Taureau", "de": "Stier", "it": "Toro", "ja": "雄牛", "zh": "公牛", "ko": "황소", "ar": "ثور" },
+    "keywords": {
+      "es": ["fuerza", "rancho", "jaripeo", "rodeo", "embestida", "cuernos", "mercado alcista"],
+      "en": ["strength", "ranch", "rodeo", "charge", "horns", "bull market", "livestock"]
+    }
+  },
+  "bison": {
+    "label": { "es": "Bisonte", "en": "Bison", "pt": "Bisão", "fr": "Bison", "de": "Bison", "it": "Bisonte", "ja": "バイソン", "zh": "野牛", "ko": "들소", "ar": "بيسون" },
+    "keywords": {
+      "es": ["búfalo", "pradera", "llanura", "parque nacional", "Yellowstone", "manada", "Norteamérica"],
+      "en": ["buffalo", "prairie", "plains", "national park", "Yellowstone", "herd", "North America"]
+    }
+  },
+  "yak": {
+    "label": { "es": "Yak", "en": "Yak", "pt": "Iaque", "fr": "Yack", "de": "Yak", "it": "Yak", "ja": "ヤク", "zh": "牦牛", "ko": "야크", "ar": "ياك" },
+    "keywords": {
+      "es": ["Himalaya", "Tíbet", "gran altitud", "montaña", "lana", "yak shaving", "trabajo innecesario"],
+      "en": ["Himalayas", "Tibet", "high altitude", "mountains", "wool", "yak shaving", "rabbit hole"]
+    }
+  },
+  "cow-skull": {
+    "label": { "es": "Cráneo de res", "en": "Cow skull", "pt": "Crânio de vaca", "fr": "Crâne de vache", "de": "Kuhschädel", "it": "Teschio di mucca", "ja": "ウシの頭骨", "zh": "牛头骨", "ko": "소 두개골", "ar": "جمجمة بقرة" },
+    "keywords": {
+      "es": ["calavera de vaca", "desierto", "sequía", "viejo oeste", "vaquero", "cuernos", "western"],
+      "en": ["bull skull", "desert", "drought", "Old West", "cowboy", "horns", "longhorn"]
+    }
+  },
+  "sheep": {
+    "label": { "es": "Oveja", "en": "Sheep", "pt": "Ovelha", "fr": "Mouton", "de": "Schaf", "it": "Pecora", "ja": "ヒツジ", "zh": "绵羊", "ko": "양", "ar": "خروف" },
+    "keywords": {
+      "es": ["borrego", "rebaño", "lana", "granja", "cordero", "pastoreo", "ganado ovino"],
+      "en": ["lamb", "flock", "wool", "farm", "ewe", "grazing", "livestock"]
+    }
+  },
+  "sheep-jumping": {
+    "label": { "es": "Contar ovejas", "en": "Counting sheep", "pt": "Contar carneirinhos", "fr": "Compter les moutons", "de": "Schäfchen zählen", "it": "Contare le pecore", "ja": "羊を数える", "zh": "数羊", "ko": "양 세기", "ar": "عدّ الخراف" },
+    "keywords": {
+      "es": ["insomnio", "hora de dormir", "dormir", "no puedo dormir", "app de sueño", "borrego saltando", "conciliar el sueño"],
+      "en": ["insomnia", "bedtime", "sleep", "can't sleep", "sleep app", "jumping sheep", "fall asleep"]
+    }
+  },
+  "goat": {
+    "label": { "es": "Cabra", "en": "Goat", "pt": "Cabra", "fr": "Chèvre", "de": "Ziege", "it": "Capra", "ja": "ヤギ", "zh": "山羊", "ko": "염소", "ar": "ماعز" },
+    "keywords": {
+      "es": ["chivo", "cabrito", "caprino", "granja", "lácteos", "queso", "granja didáctica"],
+      "en": ["kid", "billy goat", "farm", "dairy", "cheese", "petting zoo", "greatest of all time"]
+    }
+  },
+  "pig": {
+    "label": { "es": "Cerdo", "en": "Pig", "pt": "Porco", "fr": "Cochon", "de": "Schwein", "it": "Maiale", "ja": "ブタ", "zh": "猪", "ko": "돼지", "ar": "خنزير" },
+    "keywords": {
+      "es": ["puerco", "cochino", "marrano", "porcino", "granja", "lodo", "abundancia"],
+      "en": ["hog", "swine", "piglet", "farm", "pork", "mud", "abundance"]
+    }
+  },
+  "boar": {
+    "label": { "es": "Jabalí", "en": "Wild boar", "pt": "Javali", "fr": "Sanglier", "de": "Wildschwein", "it": "Cinghiale", "ja": "イノシシ", "zh": "野猪", "ko": "멧돼지", "ar": "خنزير بري" },
+    "keywords": {
+      "es": ["cerdo salvaje", "colmillos", "bosque", "vida salvaje", "daño a cultivos", "caza", "plaga"],
+      "en": ["wild pig", "tusks", "forest", "wildlife", "crop damage", "hunting", "feral hog"]
+    }
+  },
+  "deer": {
+    "label": { "es": "Venado", "en": "Deer", "pt": "Cervo", "fr": "Cerf", "de": "Hirsch", "it": "Cervo", "ja": "シカ", "zh": "鹿", "ko": "사슴", "ar": "أيل" },
+    "keywords": {
+      "es": ["ciervo", "cornamenta", "astas", "bosque", "vida salvaje", "naturaleza", "cola blanca"],
+      "en": ["stag", "antlers", "buck", "forest", "wildlife", "nature", "whitetail"]
+    }
+  },
+  "fawn": {
+    "label": { "es": "Cervatillo", "en": "Fawn", "pt": "Filhote de cervo", "fr": "Faon", "de": "Rehkitz", "it": "Cerbiatto", "ja": "子鹿", "zh": "小鹿", "ko": "아기 사슴", "ar": "غزال صغير" },
+    "keywords": {
+      "es": ["venadito", "cría de venado", "manchas", "primavera", "ternura", "bosque", "animal bebé"],
+      "en": ["baby deer", "young deer", "spots", "spring", "gentle", "forest", "baby animal"]
+    }
+  },
+  "moose": {
+    "label": { "es": "Alce", "en": "Moose", "pt": "Alce", "fr": "Élan", "de": "Elch", "it": "Alce", "ja": "ヘラジカ", "zh": "驼鹿", "ko": "무스", "ar": "موظ" },
+    "keywords": {
+      "es": ["ciervo gigante", "cornamenta ancha", "Canadá", "Escandinavia", "bosque boreal", "norte", "Alaska"],
+      "en": ["elk", "antlers", "Canada", "Scandinavia", "boreal forest", "north woods", "Alaska"]
+    }
+  },
+  "reindeer": {
+    "label": { "es": "Reno", "en": "Reindeer", "pt": "Rena", "fr": "Renne", "de": "Rentier", "it": "Renna", "ja": "トナカイ", "zh": "驯鹿", "ko": "순록", "ar": "رنة" },
+    "keywords": {
+      "es": ["caribú", "Ártico", "invierno", "Navidad", "Santa Claus", "trineo", "Laponia"],
+      "en": ["caribou", "Arctic", "winter", "Christmas", "Santa", "sleigh", "holidays"]
+    }
+  },
+  "gazelle": {
+    "label": { "es": "Gacela", "en": "Gazelle", "pt": "Gazela", "fr": "Gazelle", "de": "Gazelle", "it": "Gazzella", "ja": "ガゼル", "zh": "瞪羚", "ko": "가젤", "ar": "غزال" },
+    "keywords": {
+      "es": ["antílope", "salto", "elegancia", "velocidad", "sabana", "agilidad", "impala"],
+      "en": ["antelope", "leap", "grace", "speed", "savanna", "agility", "impala"]
+    }
+  },
+  "camel": {
+    "label": { "es": "Camello", "en": "Camel", "pt": "Camelo", "fr": "Dromadaire", "de": "Dromedar", "it": "Dromedario", "ja": "ラクダ", "zh": "骆驼", "ko": "낙타", "ar": "جمل" },
+    "keywords": {
+      "es": ["dromedario", "desierto", "caravana", "joroba", "resistencia", "Sahara", "oasis"],
+      "en": ["dromedary", "desert", "caravan", "hump", "endurance", "Sahara", "oasis"]
+    }
+  },
+  "camel-bactrian": {
+    "label": { "es": "Camello bactriano", "en": "Bactrian camel", "pt": "Camelo-bactriano", "fr": "Chameau de Bactriane", "de": "Trampeltier", "it": "Cammello", "ja": "フタコブラクダ", "zh": "双峰骆驼", "ko": "쌍봉낙타", "ar": "جمل ذو سنامين" },
+    "keywords": {
+      "es": ["dos jorobas", "estepa", "Asia Central", "Mongolia", "desierto de Gobi", "desierto frío", "Ruta de la Seda"],
+      "en": ["two humps", "steppe", "Central Asia", "Mongolia", "Gobi Desert", "cold desert", "Silk Road"]
+    }
+  },
+  "llama": {
+    "label": { "es": "Llama", "en": "Llama", "pt": "Lhama", "fr": "Lama", "de": "Lama", "it": "Lama", "ja": "リャマ", "zh": "美洲驼", "ko": "라마", "ar": "لاما" },
+    "keywords": {
+      "es": ["alpaca", "Andes", "Perú", "lana", "animal de carga", "vicuña", "guanaco"],
+      "en": ["alpaca", "Andes", "Peru", "wool", "pack animal", "vicuña", "guanaco"]
+    }
+  },
+  "giraffe": {
+    "label": { "es": "Jirafa", "en": "Giraffe", "pt": "Girafa", "fr": "Girafe", "de": "Giraffe", "it": "Giraffa", "ja": "キリン", "zh": "长颈鹿", "ko": "기린", "ar": "زرافة" },
+    "keywords": {
+      "es": ["sabana", "cuello largo", "altura", "alto", "zoológico", "safari", "app infantil"],
+      "en": ["savanna", "long neck", "height", "tall", "zoo", "safari", "kids app"]
+    }
+  },
+  "elephant": {
+    "label": { "es": "Elefante", "en": "Elephant", "pt": "Elefante", "fr": "Éléphant", "de": "Elefant", "it": "Elefante", "ja": "ゾウ", "zh": "大象", "ko": "코끼리", "ar": "فيل" },
+    "keywords": {
+      "es": ["trompa", "memoria", "big data", "carga pesada", "safari", "zoológico", "paquidermo"],
+      "en": ["trunk", "memory", "big data", "heavy load", "safari", "zoo", "pachyderm"]
+    }
+  },
+  "mammoth": {
+    "label": { "es": "Mamut", "en": "Mammoth", "pt": "Mamute", "fr": "Mammouth", "de": "Mammut", "it": "Mammut", "ja": "マンモス", "zh": "猛犸象", "ko": "매머드", "ar": "ماموث" },
+    "keywords": {
+      "es": ["lanudo", "prehistoria", "era de hielo", "extinto", "museo", "colmillos", "fósil"],
+      "en": ["woolly", "prehistoric", "ice age", "extinct", "museum", "tusks", "fossil"]
+    }
+  },
+  "hippo": {
+    "label": { "es": "Hipopótamo", "en": "Hippo", "pt": "Hipopótamo", "fr": "Hippopotame", "de": "Nilpferd", "it": "Ippopotamo", "ja": "カバ", "zh": "河马", "ko": "하마", "ar": "فرس النهر" },
+    "keywords": {
+      "es": ["río", "África", "zoológico", "pesado", "safari", "pantano", "boca grande"],
+      "en": ["hippopotamus", "river", "Africa", "zoo", "heavy", "safari", "swamp"]
+    }
+  },
+  "rhino": {
+    "label": { "es": "Rinoceronte", "en": "Rhino", "pt": "Rinoceronte", "fr": "Rhinocéros", "de": "Nashorn", "it": "Rinoceronte", "ja": "サイ", "zh": "犀牛", "ko": "코뿔소", "ar": "وحيد القرن" },
+    "keywords": {
+      "es": ["cuerno", "especie en peligro", "sabana", "conservación", "safari", "caza furtiva", "África"],
+      "en": ["rhinoceros", "horn", "endangered species", "savanna", "conservation", "safari", "poaching"]
+    }
+  },
+  "kangaroo": {
+    "label": { "es": "Canguro", "en": "Kangaroo", "pt": "Canguru", "fr": "Kangourou", "de": "Känguru", "it": "Canguro", "ja": "カンガルー", "zh": "袋鼠", "ko": "캥거루", "ar": "كنغر" },
+    "keywords": {
+      "es": ["wallaby", "Australia", "marsupial", "saltar", "brinco", "marsupio", "cría en la bolsa"],
+      "en": ["wallaby", "Australia", "marsupial", "hop", "jump", "pouch", "joey"]
+    }
+  },
+  "monkey": {
+    "label": { "es": "Mono", "en": "Monkey", "pt": "Macaco", "fr": "Singe", "de": "Affe", "it": "Scimmia", "ja": "サル", "zh": "猴子", "ko": "원숭이", "ar": "قرد" },
+    "keywords": {
+      "es": ["chango", "primate", "zoológico", "travesura", "jugar", "selva", "pruebas de caos"],
+      "en": ["primate", "chimp", "zoo", "mischief", "play", "jungle", "chaos testing"]
+    }
+  },
+  "panda": {
+    "label": { "es": "Panda", "en": "Panda", "pt": "Panda", "fr": "Panda", "de": "Panda", "it": "Panda", "ja": "パンダ", "zh": "大熊猫", "ko": "판다", "ar": "باندا" },
+    "keywords": {
+      "es": ["oso panda", "panda gigante", "bambú", "China", "conservación", "zoológico", "ternura"],
+      "en": ["giant panda", "panda bear", "bamboo", "China", "conservation", "zoo", "gentle"]
+    }
+  },
+  "koala": {
+    "label": { "es": "Koala", "en": "Koala", "pt": "Coala", "fr": "Koala", "de": "Koala", "it": "Koala", "ja": "コアラ", "zh": "考拉", "ko": "코알라", "ar": "كوالا" },
+    "keywords": {
+      "es": ["Australia", "eucalipto", "marsupial", "dormilón", "abrazo", "peluche", "árbol"],
+      "en": ["Australia", "eucalyptus", "marsupial", "sleepy", "cuddly", "plush", "tree hugger"]
+    }
+  },
+  "platypus": {
+    "label": { "es": "Ornitorrinco", "en": "Platypus", "pt": "Ornitorrinco", "fr": "Ornithorynque", "de": "Schnabeltier", "it": "Ornitorinco", "ja": "カモノハシ", "zh": "鸭嘴兽", "ko": "오리너구리", "ar": "خلد الماء" },
+    "keywords": {
+      "es": ["Australia", "pico de pato", "mamífero raro", "rareza", "curiosidad", "aprender jugando", "monotrema"],
+      "en": ["Australia", "duck-billed", "odd mammal", "oddity", "weird", "kids learning", "monotreme"]
+    }
+  },
+  "armadillo": {
+    "label": { "es": "Armadillo", "en": "Armadillo", "pt": "Tatu", "fr": "Tatou", "de": "Gürteltier", "it": "Armadillo", "ja": "アルマジロ", "zh": "犰狳", "ko": "아르마딜로", "ar": "أرماديلو" },
+    "keywords": {
+      "es": ["caparazón", "armadura", "protección", "América", "defensa", "enrollarse", "coraza"],
+      "en": ["shell", "armor", "protection", "the Americas", "defense", "roll up", "Texas"]
+    }
+  },
+  "squirrel": {
+    "label": { "es": "Ardilla", "en": "Squirrel", "pt": "Esquilo", "fr": "Écureuil", "de": "Eichhörnchen", "it": "Scoiattolo", "ja": "リス", "zh": "松鼠", "ko": "다람쥐", "ar": "سنجاب" },
+    "keywords": {
+      "es": ["parque", "bellota", "nueces", "guardar", "ahorrar", "otoño", "roedor"],
+      "en": ["park", "acorn", "nuts", "stash", "save up", "autumn", "rodent"]
+    }
+  },
+  "porcupine": {
+    "label": { "es": "Puercoespín", "en": "Porcupine", "pt": "Porco-espinho", "fr": "Porc-épic", "de": "Stachelschwein", "it": "Istrice", "ja": "ヤマアラシ", "zh": "豪猪", "ko": "호저", "ar": "شيهم" },
+    "keywords": {
+      "es": ["púas", "espinas", "defensa", "bosque", "roedor", "protección", "no tocar"],
+      "en": ["quills", "spines", "defense", "forest", "rodent", "protection", "prickly"]
+    }
+  },
+  "field-mouse": {
+    "label": { "es": "Ratón de campo", "en": "Field mouse", "pt": "Rato-do-campo", "fr": "Mulot", "de": "Feldmaus", "it": "Topo di campagna", "ja": "野ネズミ", "zh": "田鼠", "ko": "들쥐", "ar": "فأر الحقل" },
+    "keywords": {
+      "es": ["roedor", "ratoncito", "cosecha", "fauna pequeña", "milpa", "granero", "pradera"],
+      "en": ["rodent", "wild mouse", "harvest", "small wildlife", "meadow", "barn", "vole"]
+    }
+  },
+  "hedgehog": {
+    "label": { "es": "Erizo", "en": "Hedgehog", "pt": "Ouriço", "fr": "Hérisson", "de": "Igel", "it": "Riccio", "ja": "ハリネズミ", "zh": "刺猬", "ko": "고슴도치", "ar": "قنفذ" },
+    "keywords": {
+      "es": ["púas", "jardín", "espinoso", "protección", "bolita", "nocturno", "tierno"],
+      "en": ["spines", "garden", "prickly", "protection", "curl up", "nocturnal", "cute"]
+    }
+  },
+  "raccoon": {
+    "label": { "es": "Mapache", "en": "Raccoon", "pt": "Guaxinim", "fr": "Raton laveur", "de": "Waschbär", "it": "Procione", "ja": "アライグマ", "zh": "浣熊", "ko": "라쿤", "ar": "راكون" },
+    "keywords": {
+      "es": ["fauna urbana", "bote de basura", "hurgar", "antifaz", "nocturno", "ladronzuelo", "travieso"],
+      "en": ["urban wildlife", "trash panda", "scavenging", "mask", "nocturnal", "bandit", "trash can"]
+    }
+  },
+  "skunk": {
+    "label": { "es": "Zorrillo", "en": "Skunk", "pt": "Zorrilho", "fr": "Mouffette", "de": "Stinktier", "it": "Puzzola", "ja": "スカンク", "zh": "臭鼬", "ko": "스컹크", "ar": "ظربان" },
+    "keywords": {
+      "es": ["mofeta", "mal olor", "apestoso", "hedor", "fauna nocturna", "rayas blancas", "cola esponjada"],
+      "en": ["polecat", "bad smell", "stink", "stinky", "nocturnal wildlife", "white stripe", "fluffy tail"]
+    }
+  },
+  "meerkat": {
+    "label": { "es": "Suricata", "en": "Meerkat", "pt": "Suricata", "fr": "Suricate", "de": "Erdmännchen", "it": "Suricato", "ja": "ミーアキャット", "zh": "狐獴", "ko": "미어캣", "ar": "سرقاط" },
+    "keywords": {
+      "es": ["vigía", "vigilar", "atento", "monitoreo", "centinela", "de pie", "desierto"],
+      "en": ["lookout", "watch", "alert", "monitoring", "sentinel", "standing guard", "Kalahari"]
+    }
+  },
+  "bat": {
+    "label": { "es": "Murciélago", "en": "Bat", "pt": "Morcego", "fr": "Chauve-souris", "de": "Fledermaus", "it": "Pipistrello", "ja": "コウモリ", "zh": "蝙蝠", "ko": "박쥐", "ar": "خفاش" },
+    "keywords": {
+      "es": ["noche", "cueva", "modo nocturno", "Halloween", "vampiro", "alas", "ecolocalización"],
+      "en": ["night", "cave", "night mode", "Halloween", "vampire", "wings", "echolocation"]
+    }
+  },
+  "bat-hanging": {
+    "label": { "es": "Murciélago colgado", "en": "Roosting bat", "pt": "Morcego pendurado", "fr": "Chauve-souris suspendue", "de": "Hängende Fledermaus", "it": "Pipistrello appeso", "ja": "ぶら下がるコウモリ", "zh": "倒挂的蝙蝠", "ko": "매달린 박쥐", "ar": "خفاش معلق" },
+    "keywords": {
+      "es": ["de cabeza", "dormir de día", "cueva", "horas de silencio", "no molestar", "descanso", "colonia"],
+      "en": ["upside down", "sleeping by day", "cave", "quiet hours", "do not disturb", "resting", "roost"]
+    }
+  },
+  "hoof-print": {
+    "label": { "es": "Huella de pezuña", "en": "Hoof print", "pt": "Pegada de casco", "fr": "Empreinte de sabot", "de": "Hufspur", "it": "Impronta di zoccolo", "ja": "ひづめの足跡", "zh": "蹄印", "ko": "발굽 자국", "ar": "أثر حافر" },
+    "keywords": {
+      "es": ["rastro", "rastreo de fauna", "venado", "jabalí", "cabra", "pisada", "pezuña hendida"],
+      "en": ["track", "wildlife tracking", "deer", "boar", "goat", "cloven hoof", "footprint"]
+    }
+  },
+  "bear-print": {
+    "label": { "es": "Huella de oso", "en": "Bear track", "pt": "Pegada de urso", "fr": "Empreinte d’ours", "de": "Bärenspur", "it": "Impronta d’orso", "ja": "クマの足跡", "zh": "熊爪印", "ko": "곰 발자국", "ar": "أثر دب" },
+    "keywords": {
+      "es": ["rastro", "rastreo de fauna", "zona de osos", "pisada", "garras", "sendero", "pata"],
+      "en": ["paw print", "wildlife tracking", "bear country", "footprint", "claws", "trail", "grizzly"]
+    }
+  },
+  "claw-marks": {
+    "label": { "es": "Marcas de garras", "en": "Claw marks", "pt": "Marcas de garras", "fr": "Traces de griffes", "de": "Kratzspuren", "it": "Segni di artigli", "ja": "爪痕", "zh": "爪痕", "ko": "발톱 자국", "ar": "آثار مخالب" },
+    "keywords": {
+      "es": ["arañazo", "rasguño", "zarpazo", "daño", "animal salvaje", "ataque", "rasgadura"],
+      "en": ["scratch", "swipe", "slash", "damage", "wild animal", "attack", "torn"]
+    }
+  },
+  "livestock-tag": {
+    "label": { "es": "Arete de ganado", "en": "Livestock ear tag", "pt": "Brinco de gado", "fr": "Boucle auriculaire", "de": "Ohrmarke", "it": "Marca auricolare", "ja": "耳標", "zh": "牲畜耳标", "ko": "가축 귀표", "ar": "علامة أذن للماشية" },
+    "keywords": {
+      "es": ["identificación del ganado", "trazabilidad", "registro del hato", "SINIIGA", "número de animal", "control de ganado", "inventario del rancho"],
+      "en": ["livestock ID", "traceability", "herd records", "animal number", "cattle tag", "RFID tag", "herd inventory"]
+    }
+  },
+  "trail-camera": {
+    "label": { "es": "Cámara trampa", "en": "Trail camera", "pt": "Armadilha fotográfica", "fr": "Piège photographique", "de": "Wildkamera", "it": "Fototrappola", "ja": "トレイルカメラ", "zh": "红外相机", "ko": "무인 카메라", "ar": "كاميرا الحياة البرية" },
+    "keywords": {
+      "es": ["fototrampeo", "monitoreo de fauna", "cámara de caza", "sensor de movimiento", "vigilancia", "visión nocturna", "conservación"],
+      "en": ["camera trap", "wildlife monitoring", "game camera", "motion sensor", "surveillance", "night vision", "conservation"]
+    }
+  }
+}

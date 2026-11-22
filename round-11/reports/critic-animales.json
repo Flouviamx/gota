@@ -1,0 +1,73 @@
+{
+ "category": "animales",
+ "count": 82,
+ "redesigned": [
+  "bison",
+  "bull",
+  "yak",
+  "boar",
+  "rhino",
+  "lion-face",
+  "tiger-face",
+  "bat",
+  "saddle",
+  "sheep-jumping",
+  "bear-standing",
+  "bear-sleeping",
+  "kangaroo",
+  "gorilla",
+  "beaver",
+  "raccoon",
+  "red-panda",
+  "leopard",
+  "gazelle",
+  "bear-print",
+  "feed-trough",
+  "trail-camera",
+  "hedgehog"
+ ],
+ "dropped": [
+  {
+   "name": "groundhog",
+   "reason": "Three redraws didn't get there. Front-on, its round head and ears read as juegos' teddy-bear. In profile, rising from a mound (the mound as a piece on top), the plump upright rodent read as a hooded bird or a ghost. Nothing in it says groundhog at 24 px."
+  },
+  {
+   "name": "anteater",
+   "reason": "Three redraws didn't get there. Drawn in one outline on stroke legs, the tube snout and brush tail read as a bird's head and tail, or a dinosaur, even with the snout made half the body long and the tail set apart by a dip."
+  },
+  {
+   "name": "opossum",
+   "reason": "Hung by its tail from a branch, the body is a symmetric drop and reads as a plumb bob or an acorn on a string. Walking in profile, a pointed snout and bare tail would read as a rat."
+  },
+  {
+   "name": "deer-crossing",
+   "reason": "It has to sit on conduccion's warning diamond (lugares' directions sign), the frame the road-sign family shares. The symbol must keep 2.85 from the sign's edge, which leaves a diamond about 5.5 from the centre: the deer could be about 7 wide and 6 tall, with no room at all for antlers. A stick doe that small reads as any animal."
+  },
+  {
+   "name": "mountain-goat",
+   "reason": "On a ledge as wide as itself, its four short legs read as a table, or a cake on its plate. Balanced on a narrow peak with its legs angled in, the crag and legs read as an hourglass or a rocking chair. The plain goat already covers the animal."
+  },
+  {
+   "name": "orangutan",
+   "reason": "Front-on, hanging from a bar by straight arms over a round head and body, it reads as a trophy cup or a child on monkey bars, not as an ape."
+  },
+  {
+   "name": "ox",
+   "reason": "Dropped by the illustrator, not drawn again (their reason: the yoke only reads with a pair of oxen). I didn't verify it."
+  },
+  {
+   "name": "sloth",
+   "reason": "Dropped by the illustrator, not drawn again (their reason: it reads as the orangutan or a pot on a bar, and its eye masks need more room than a 24 px face has). I didn't verify it."
+  },
+  {
+   "name": "mole",
+   "reason": "Dropped by the illustrator, not drawn again (their reason: the spade paws read as a crab, crown or fin, and the molehill alone doesn't say mole). I didn't verify it."
+  },
+  {
+   "name": "sheep-ram",
+   "reason": "Dropped by the illustrator, not drawn again (their reason: the curled horn either cut the muzzle into a fragment or left slivers that closed at 2.1). I didn't verify it."
+  }
+ ],
+ "qaWarnings": 0,
+ "notes": "I reviewed all 88 icons and redrew 23 of them, and dropped 6 more, so the category now has 82. Checks on the final file (/Users/andrevalleortega/Desktop/flouvia-icons/src/icons/animales.mjs):\n- `node scripts/build.mjs --check animales` reports 82 valid icons. The only errors left are the i18n ones, which belong to the language agent.\n- `node scripts/qa.mjs animales` checks 82 icons and finds 0 warnings. That includes the near-duplicate check against the whole set and the weights check.\n- `node scripts/weights-sheet.mjs animales --all` shows every icon green, in outline and in fill.\n- I looked at every page of the sheet and the variants sheet at the end.\n\nI edited only animales.mjs. `git status` also shows DESIGN.md, docs/*, scripts/type.mjs and src/i18n/archivos.json as modified; those are other agents' changes, not mine. The file still imports only geometry and variants. I didn't commit, push or install anything, and didn't read ~/Desktop/flouvia. My temporary folder and the one preview I generated under another name are deleted.\n\n**For the language agent:** src/i18n/animales.json must not have entries for the 6 icons I dropped (groundhog, anteater, opossum, deer-crossing, mountain-goat, orangutan), or they will be reported as orphans.\n\nWhat I redrew, and why:\n- **Families now share their body, as the brief asks.** Bull and yak are rebuilt on the cow's body (rump, back, belly, legs, tail). The bison keeps the cow's rump and belly, with legs drawn into the outline like the other heavy animals; it read as a cloud raining even with stroke legs. The leopard now lies on the tiger's body along its branch, with four spots in two offset rows; three in a row read as bus windows. The boar is built on the pig, with a bristled crest and a tusk. The red panda uses the raccoon's structure: tail drawn into the outline with two rings cut from edge to edge.\n- **Silhouettes that didn't say their animal:**\n  - The bison and boar both read as a cloud raining.\n  - The rhino's horns had been rounded away, so it read as a bear.\n  - The bat read as a moustache, so I redrew it with pointed ears and scalloped wings.\n  - The kangaroo read as a triangle, and the gorilla as a bear, then a hut.\n  - The beaver read as a chess piece, then an elephant. It is now low, with a paddle tail lying on the ground.\n  - The gazelle's legs were tangled.\n- **Faces:** the lion face read as a flower. Its face and ears are now one outline in a wider-set mane. The tiger face read as a bowling ball; it now has 3-long stripes. Both noses are dots: a small triangle opened and closed a hole between weights.\n- **Things:**\n  - The saddle read as a bar stool; its stirrup is now an arch over a tread, on a slanted leather.\n  - The sheep-jumping fence read as a box; its rails now run past the posts.\n  - The standing bear has a bigger head and its foreleg lower.\n  - The sleeping bear lies inside a low dome for a den.\n  - The bear print is now built on mascotas' paw pad.\n  - The feed trough read as a flying saucer; it now has hay strands and splayed legs.\n  - The trail camera read as a spaceship; it is now mounted on one trunk.\n  - The hedgehog's spines are sharpened; rounded, they read as a cloud.\n\n**One engine-level change:** the file's outline helper now takes a `tip` flag. A convex point (a horn, bristle or spine) keeps its own small radius instead of the 0.6 minimum. It's documented in the file header.\n\n**Kept, but weaker than the rest:** bat-hanging, fennec-fox (front-on), unicorn-face, koala, panda, platypus, armadillo, and the beaver (no teeth or eye fit at 2.1). The deer-family bodies (moose, reindeer, fawn, gazelle) are still separate drawings; the brief doesn't require that family to share one."
+}

@@ -5,7 +5,7 @@
 ## What it is
 Gota is Flouvia's icon library (`@flouvia/gota`, MIT license): drawn by hand with its own geometry engine, with continuous corners, a single-color 1.5 stroke, and a signature — containers have a square bottom-right corner, like the drop in Flouvia's logomark, and speech bubbles are the drop itself (*gota* is Spanish for "drop"). It was born on 21 Oct 2026 from the `flouvia-web` set ([history](./docs/history.md)).
 
-**The v1 goal: 10,000 icons** ([phased plan](./docs/roadmap.md)). The source is public at `github.com/Flouviamx/gota` (since 23 Oct 2026, unannounced); npm, the release ZIP, and the announcement wait for v1. The site is `gota.flouvia.com`.
+**v1 ships with about 7,500 icons, once round 11 closes; 10,000 comes in the versions after it** ([decision 86](./docs/decisions.md#v1-20-nov-2026), [phased plan](./docs/roadmap.md)). The source is public at `github.com/Flouviamx/gota` (since 23 Oct 2026, unannounced); npm, the release ZIP, and the announcement wait for v1. The site is `gota.flouvia.com`.
 
 ## Required first steps
 1. `git status --short`: preserve other people's work (agents or parallel sessions may be editing `src/icons/`).
@@ -43,7 +43,7 @@ Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different pa
 - **The signature** (square bottom-right corner on containers, `drop()` for bubbles) and the keylines from [`DESIGN.md`](./DESIGN.md) on every icon.
 - **Data, not files:** each icon is a definition in `src/icons/<category>.mjs`; every SVG, package, and sheet is generated. `svg/`, `dist/`, and `previews/` never go into the repo.
 - **No clutter:** no test icons, temporary files, or one-off scripts in the repo.
-- **npm and the announcement wait for 10,000**, with zero QA warnings and the owner's review; the GitHub source is public meanwhile, without promotion.
+- **npm and the announcement wait for v1** (round 11 closed, about 7,500 icons), with zero QA warnings, the owner's review, and the owner's OK to publish; the GitHub source is public meanwhile, without promotion.
 - Icon names in English kebab-case.
 - All repository text is in English (docs, comments, scripts, commit messages); icon labels and search keywords stay multilingual (src/i18n, tags). The owner is addressed in Spanish in conversation.
 

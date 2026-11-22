@@ -1,0 +1,86 @@
+{
+ "category": "mar",
+ "count": 56,
+ "names": [
+  "fish-school",
+  "fish-plus",
+  "fish-search",
+  "fish-alert",
+  "tropical-fish",
+  "clownfish",
+  "pufferfish",
+  "swordfish",
+  "anglerfish",
+  "salmon",
+  "seahorse",
+  "catfish",
+  "piranha",
+  "koi",
+  "shark",
+  "shark-fin",
+  "shark-alert",
+  "manta-ray",
+  "coral",
+  "coral-alert",
+  "whale",
+  "whale-tail",
+  "whale-spout",
+  "orca",
+  "narwhal",
+  "dolphin",
+  "manatee",
+  "walrus",
+  "sea-lion",
+  "harbor-seal",
+  "octopus",
+  "squid",
+  "nautilus",
+  "jellyfish",
+  "jellyfish-alert",
+  "coral-reef",
+  "sea-anemone",
+  "crab",
+  "lobster",
+  "starfish",
+  "sand-dollar",
+  "seashell",
+  "hermit-crab",
+  "scallop",
+  "clam",
+  "mussel",
+  "oyster",
+  "sea-turtle",
+  "sea-turtle-hatchling",
+  "seaweed",
+  "kelp",
+  "underwater",
+  "lionfish",
+  "eel",
+  "hammerhead-shark",
+  "stingray"
+ ],
+ "dropped": [
+  {
+   "name": "sea-urchin",
+   "reason": "A round body with spines all round it reads as the sun (rays round a disc) at 24 px, at 12 or 16 spines, with or without a mark at its middle; drawn denser it turns to a smudge, and a shallow spiky outline reads as the rosette."
+  },
+  {
+   "name": "flounder",
+   "reason": "Seen from above, the flat oval with its fin fringe reads as a plain round fish, a target (concentric ovals) or a cloud with eyes (frilled edge); both eyes on one side don't carry at 18 px. Four versions tried."
+  },
+  {
+   "name": "sea-otter",
+   "reason": "Floating on its back at 24 px the otter reads as a bean, a whale or a hat on the water, and the shell on its chest as a lid or a ball. Five versions tried."
+  },
+  {
+   "name": "tide-pool",
+   "reason": "The canvas can't hold both a ring of rocks and a starfish that fills it: the rim reads as a stop sign or a badge, separate stones as a flower or a paw, and the starfish shrinks to a star rating."
+  },
+  {
+   "name": "fish-farm",
+   "reason": "The floating ring over a hanging net reads as a bucket or cup with a fish (mascotas' fishbowl), and the net's mesh as an X over the fish; with no ring it is a caught fish (camping)."
+  }
+ ],
+ "qaWarnings": 0,
+ "notes": "Round 11 is done: I finished src/icons/mar.mjs, which an earlier run had left half done. Of the 61 approved icons, 56 are drawn and 5 are dropped (reasons above). With lugares's adopted fish, the category checks 57 icons. Final state: `node scripts/build.mjs --check mar` is valid. `node scripts/qa.mjs mar` has 0 warnings, including near-duplicates against the whole set. `node scripts/weights-sheet.mjs mar` reports that every icon keeps its structure from 0.9 to 2.1. I looked at every page of the sheet and the variants sheet.\n\n**What I redrew from the earlier run:** I rewrote everything that didn't read or didn't hold across weights:\n- **Fish and whales:** tropical-fish (round disc, streamer, a band broken by the eye), swordfish, salmon (leaping nose-up over a wave), whale, orca, narwhal, dolphin, manatee (a flat paddle tail instead of a fish's fan).\n- **Groups and badge icons:** fish-school (two fish at fish-catch's 0.82 scale, the front one a badge that clears the one behind), shark-alert (a smaller shark clear of the badge), coral-alert (its own three-finger coral).\n- **Reef and plants:** coral-reef (branching coral and a lumpy brain-coral dome), seaweed (holdfast in front as a badge), kelp.\n- **Shells and others:** hermit-crab, oyster (side view, opened on its hinge, the pearl as a knockout piece), sea-turtle-hatchling, starfish (plump, with no dots; a ring of dots read as a flower), underwater, whale-spout (two curling jets).\n\n**The eight that were missing:** I drew lionfish, eel, hammerhead-shark and stingray. The other four (flounder, sea-otter, tide-pool, fish-farm) became drops, along with sea-urchin.\n\n**Fixes for weights and 16 px:**\n- Corals are open at the foot, so they never double the seabed line, and the gap between two branches is a sharp corner (a smooth curve there looped back on itself).\n- Flippers and fins are open strokes on the body.\n- The tail stocks on the flukes are wide enough that the inside stays open at bold.\n- Small eyes are moved in from the edge.\n- I added `small` drawings for 18 icons that smudged at 16 px. They are snapped to the pixel grid and carry their badge.\n- sand-dollar has its circle variant turned off.\n\n**Owner calls:** Three icons pass QA but are the weakest:\n- **hammerhead-shark:** may still read as a T or an anchor.\n- **orca:** its patch can read as a big eye in outline.\n- **koi:** its whiskers are left out, because at 24 px they drew a cross over its head.\n\nI edited only src/icons/mar.mjs and wrote no src/i18n files. Nothing is committed. The temp folder is deleted."
+}

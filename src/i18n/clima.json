@@ -1,0 +1,282 @@
+{
+  "cloud-lightning": {
+    "label": { "es": "Tormenta seca", "en": "Dry thunderstorm", "pt": "Trovoada seca", "fr": "Orage sec", "de": "Trockengewitter", "it": "Temporale secco", "ja": "雨のない雷", "zh": "干雷暴", "ko": "마른 뇌우", "ar": "عاصفة رعدية جافة" },
+    "keywords": {
+      "es": ["rayos", "relámpagos", "truenos", "tormenta eléctrica", "sin lluvia", "nube con rayo", "pronóstico"],
+      "en": ["lightning", "thunder", "electrical storm", "no rain", "thundercloud", "bolt", "forecast"]
+    }
+  },
+  "storm-hail": {
+    "label": { "es": "Tormenta con granizo", "en": "Thunderstorm with hail", "pt": "Tempestade com granizo", "fr": "Orage de grêle", "de": "Hagelgewitter", "it": "Temporale con grandine", "ja": "ひょうを伴う雷雨", "zh": "冰雹雷暴", "ko": "우박을 동반한 뇌우", "ar": "عاصفة رعدية مصحوبة بالبرد" },
+    "keywords": {
+      "es": ["tormenta severa", "granizada", "rayos", "tormenta eléctrica", "daños por granizo", "alerta meteorológica", "mal tiempo"],
+      "en": ["severe storm", "hailstorm", "lightning", "thunder", "hail damage", "weather alert", "supercell"]
+    }
+  },
+  "storm-alert": {
+    "label": { "es": "Alerta meteorológica", "en": "Severe weather warning", "pt": "Alerta meteorológico", "fr": "Alerte météo", "de": "Unwetterwarnung", "it": "Allerta meteo", "ja": "気象警報", "zh": "恶劣天气预警", "ko": "기상 특보", "ar": "تحذير من الطقس القاسي" },
+    "keywords": {
+      "es": ["aviso de tormenta", "mal tiempo", "tormenta severa", "protección civil", "alerta temprana", "emergencia", "notificación"],
+      "en": ["storm warning", "weather alert", "severe storm", "bad weather", "emergency alert", "early warning", "notification"]
+    }
+  },
+  "cloud-rain-heavy": {
+    "label": { "es": "Lluvia intensa", "en": "Heavy rain", "pt": "Chuva forte", "fr": "Fortes pluies", "de": "Starkregen", "it": "Pioggia intensa", "ja": "大雨", "zh": "大雨", "ko": "폭우", "ar": "أمطار غزيرة" },
+    "keywords": {
+      "es": ["aguacero", "tromba", "chaparrón", "lluvia torrencial", "diluvio", "inundación", "alerta de lluvias"],
+      "en": ["downpour", "torrential rain", "cloudburst", "pouring", "deluge", "flooding", "rain warning"]
+    }
+  },
+  "cloud-snow-heavy": {
+    "label": { "es": "Nevada intensa", "en": "Heavy snow", "pt": "Neve forte", "fr": "Fortes chutes de neige", "de": "Starker Schneefall", "it": "Nevicata intensa", "ja": "大雪", "zh": "大雪", "ko": "폭설", "ar": "ثلوج كثيفة" },
+    "keywords": {
+      "es": ["tormenta de nieve", "mucha nieve", "acumulación de nieve", "temporal invernal", "alerta de nieve", "caminos cerrados", "invierno"],
+      "en": ["snowstorm", "deep snow", "snow accumulation", "winter storm", "snow warning", "road closures", "snowed in"]
+    }
+  },
+  "cloud-flurries": {
+    "label": { "es": "Nieve ligera", "en": "Flurries", "pt": "Neve fraca", "fr": "Faibles chutes de neige", "de": "Leichter Schneefall", "it": "Neve debole", "ja": "小雪", "zh": "小雪", "ko": "약한 눈", "ar": "ثلوج خفيفة" },
+    "keywords": {
+      "es": ["copos", "nevisca", "nevando poquito", "primera nevada", "frío", "invierno", "pronóstico"],
+      "en": ["light snow", "snowflakes", "dusting", "first snow", "cold", "winter", "forecast"]
+    }
+  },
+  "cloud-sleet": {
+    "label": { "es": "Aguanieve", "en": "Sleet", "pt": "Chuva com neve", "fr": "Neige fondue", "de": "Schneeregen", "it": "Pioggia mista a neve", "ja": "みぞれ", "zh": "雨夹雪", "ko": "진눈깨비", "ar": "مطر مع ثلج" },
+    "keywords": {
+      "es": ["lluvia y nieve", "lluvia mezclada con nieve", "nieve húmeda", "caminos resbalosos", "frío", "invierno", "pronóstico"],
+      "en": ["wintry mix", "rain and snow", "wet snow", "ice pellets", "slushy roads", "winter", "forecast"]
+    }
+  },
+  "cloud-freezing-rain": {
+    "label": { "es": "Lluvia helada", "en": "Freezing rain", "pt": "Chuva congelante", "fr": "Pluie verglaçante", "de": "Eisregen", "it": "Pioggia gelata", "ja": "着氷性の雨", "zh": "冻雨", "ko": "어는비", "ar": "مطر متجمد" },
+    "keywords": {
+      "es": ["tormenta de hielo", "hielo en el camino", "pavimento congelado", "resbaloso", "alerta de hielo", "escarcha", "invierno"],
+      "en": ["ice storm", "glaze", "black ice", "icy roads", "slippery", "ice warning", "winter"]
+    }
+  },
+  "cloud-rain-wind": {
+    "label": { "es": "Lluvia con viento", "en": "Wind-driven rain", "pt": "Chuva com vento", "fr": "Pluie et vent", "de": "Regen mit Wind", "it": "Pioggia e vento", "ja": "風雨", "zh": "风雨", "ko": "비바람", "ar": "أمطار مع رياح" },
+    "keywords": {
+      "es": ["chubasco", "ventarrón", "temporal", "lluvia de lado", "ráfagas", "tormenta", "pronóstico"],
+      "en": ["rain squall", "driving rain", "sideways rain", "gusts", "stormy", "blustery", "forecast"]
+    }
+  },
+  "cloud-wind": {
+    "label": { "es": "Nublado con viento", "en": "Windy and cloudy", "pt": "Nublado com vento", "fr": "Nuageux et venteux", "de": "Bewölkt und windig", "it": "Nuvoloso e ventoso", "ja": "曇りで風が強い", "zh": "多云有风", "ko": "흐리고 바람", "ar": "غائم مع رياح" },
+    "keywords": {
+      "es": ["ventoso", "cielo cubierto", "brisa", "ráfagas", "día gris", "aire", "pronóstico"],
+      "en": ["breezy", "overcast", "gusty", "blustery", "grey sky", "wind", "forecast"]
+    }
+  },
+  "cloud-sun-lightning": {
+    "label": { "es": "Tormentas de día", "en": "Daytime thunderstorms", "pt": "Trovoadas durante o dia", "fr": "Orages en journée", "de": "Gewitter am Tag", "it": "Temporali di giorno", "ja": "昼の雷雨", "zh": "白天雷阵雨", "ko": "낮 뇌우", "ar": "عواصف رعدية نهارية" },
+    "keywords": {
+      "es": ["tormentas aisladas", "tormentas dispersas", "sol y rayos", "tormenta eléctrica", "tarde de tormenta", "clima variable", "pronóstico"],
+      "en": ["isolated storms", "scattered storms", "sun and lightning", "thunder", "afternoon storms", "changeable weather", "forecast"]
+    }
+  },
+  "cloud-moon-lightning": {
+    "label": { "es": "Tormentas de noche", "en": "Nighttime thunderstorms", "pt": "Trovoadas à noite", "fr": "Orages nocturnes", "de": "Nächtliche Gewitter", "it": "Temporali notturni", "ja": "夜の雷雨", "zh": "夜间雷阵雨", "ko": "밤 뇌우", "ar": "عواصف رعدية ليلية" },
+    "keywords": {
+      "es": ["tormenta nocturna", "rayos de noche", "luna y rayos", "tormenta eléctrica", "truenos", "madrugada", "pronóstico de la noche"],
+      "en": ["night storm", "lightning at night", "moon and lightning", "electrical storm", "thunder", "evening storms", "overnight forecast"]
+    }
+  },
+  "cloud-sun-rain": {
+    "label": { "es": "Chubascos de día", "en": "Daytime showers", "pt": "Pancadas de chuva durante o dia", "fr": "Averses en journée", "de": "Schauer am Tag", "it": "Rovesci di giorno", "ja": "昼のにわか雨", "zh": "白天阵雨", "ko": "낮 소나기", "ar": "زخات مطر نهارية" },
+    "keywords": {
+      "es": ["lluvia con sol", "lluvias dispersas", "sol y lluvia", "aguacero", "lluvia por la tarde", "clima variable", "pronóstico"],
+      "en": ["sun shower", "scattered showers", "sun and rain", "rain", "afternoon showers", "mixed weather", "forecast"]
+    }
+  },
+  "cloud-moon-rain": {
+    "label": { "es": "Chubascos de noche", "en": "Nighttime showers", "pt": "Pancadas de chuva à noite", "fr": "Averses nocturnes", "de": "Nächtliche Schauer", "it": "Rovesci notturni", "ja": "夜のにわか雨", "zh": "夜间阵雨", "ko": "밤 소나기", "ar": "زخات مطر ليلية" },
+    "keywords": {
+      "es": ["lluvia nocturna", "luna y lluvia", "noche lluviosa", "aguacero", "madrugada", "precipitación", "pronóstico de la noche"],
+      "en": ["night rain", "moon and rain", "rainy night", "rain overnight", "evening showers", "precipitation", "overnight forecast"]
+    }
+  },
+  "cloud-sun-drizzle": {
+    "label": { "es": "Llovizna de día", "en": "Daytime drizzle", "pt": "Garoa durante o dia", "fr": "Bruine en journée", "de": "Nieselregen am Tag", "it": "Pioviggine di giorno", "ja": "昼の霧雨", "zh": "白天毛毛雨", "ko": "낮 이슬비", "ar": "رذاذ نهاري" },
+    "keywords": {
+      "es": ["lluvia ligera", "chipi chipi", "sol y llovizna", "lloviznando", "chubasco leve", "garúa", "pronóstico"],
+      "en": ["light rain", "sprinkle", "sun and drizzle", "spitting rain", "light showers", "damp", "forecast"]
+    }
+  },
+  "cloud-moon-drizzle": {
+    "label": { "es": "Llovizna de noche", "en": "Nighttime drizzle", "pt": "Garoa à noite", "fr": "Bruine nocturne", "de": "Nächtlicher Nieselregen", "it": "Pioviggine notturna", "ja": "夜の霧雨", "zh": "夜间毛毛雨", "ko": "밤 이슬비", "ar": "رذاذ ليلي" },
+    "keywords": {
+      "es": ["lluvia ligera", "chipi chipi", "luna y llovizna", "lloviznando", "sereno", "noche húmeda", "pronóstico de la noche"],
+      "en": ["light rain at night", "sprinkle", "moon and drizzle", "damp night", "light showers", "mist", "overnight forecast"]
+    }
+  },
+  "cloud-sun-snow": {
+    "label": { "es": "Nevadas de día", "en": "Daytime snow showers", "pt": "Neve durante o dia", "fr": "Averses de neige en journée", "de": "Schneeschauer am Tag", "it": "Rovesci di neve di giorno", "ja": "昼のにわか雪", "zh": "白天阵雪", "ko": "낮 소낙눈", "ar": "زخات ثلج نهارية" },
+    "keywords": {
+      "es": ["nieve con sol", "nevada ligera", "sol y nieve", "copos", "nevando", "invierno", "pronóstico"],
+      "en": ["sun flurries", "light snow", "sun and snow", "flurries", "snowing", "winter", "forecast"]
+    }
+  },
+  "cloud-moon-snow": {
+    "label": { "es": "Nieve de noche", "en": "Nighttime snow", "pt": "Neve à noite", "fr": "Neige nocturne", "de": "Nächtlicher Schneefall", "it": "Neve notturna", "ja": "夜の雪", "zh": "夜间降雪", "ko": "밤에 내리는 눈", "ar": "ثلوج ليلية" },
+    "keywords": {
+      "es": ["nevada nocturna", "luna y nieve", "nevando de noche", "noche fría", "helada nocturna", "invierno", "pronóstico de la noche"],
+      "en": ["snow overnight", "moon and snow", "snowing at night", "cold night", "flurries at night", "winter", "overnight forecast"]
+    }
+  },
+  "cloud-sun-hail": {
+    "label": { "es": "Granizo de día", "en": "Daytime hail", "pt": "Granizo durante o dia", "fr": "Grêle en journée", "de": "Hagel am Tag", "it": "Grandine di giorno", "ja": "昼のひょう", "zh": "白天冰雹", "ko": "낮 우박", "ar": "تساقط البرد نهارًا" },
+    "keywords": {
+      "es": ["granizada", "sol y granizo", "tormenta de granizo", "hielo", "daños por granizo", "tarde de tormenta", "pronóstico"],
+      "en": ["hailstorm", "sun and hail", "hailstones", "ice pellets", "hail damage", "afternoon storm", "forecast"]
+    }
+  },
+  "cloud-moon-hail": {
+    "label": { "es": "Granizo de noche", "en": "Nighttime hail", "pt": "Granizo à noite", "fr": "Grêle nocturne", "de": "Nächtlicher Hagel", "it": "Grandine notturna", "ja": "夜のひょう", "zh": "夜间冰雹", "ko": "밤 우박", "ar": "تساقط البرد ليلًا" },
+    "keywords": {
+      "es": ["granizada nocturna", "luna y granizo", "tormenta de granizo", "hielo", "daños por granizo", "madrugada", "pronóstico de la noche"],
+      "en": ["night hailstorm", "moon and hail", "hailstones", "ice pellets", "hail damage", "storm at night", "overnight forecast"]
+    }
+  },
+  "wind-alert": {
+    "label": { "es": "Alerta de viento", "en": "Wind advisory", "pt": "Alerta de ventania", "fr": "Alerte vents violents", "de": "Sturmwarnung", "it": "Allerta vento", "ja": "強風注意報", "zh": "大风预警", "ko": "강풍 주의보", "ar": "تحذير من الرياح" },
+    "keywords": {
+      "es": ["vientos fuertes", "aviso de vendaval", "ventarrón", "rachas", "ráfagas", "protección civil", "mal tiempo"],
+      "en": ["gale warning", "high winds", "strong gusts", "windstorm", "dangerous winds", "weather alert", "wind warning"]
+    }
+  },
+  "hurricane": {
+    "label": { "es": "Huracán", "en": "Hurricane", "pt": "Furacão", "fr": "Ouragan", "de": "Hurrikan", "it": "Uragano", "ja": "ハリケーン", "zh": "飓风", "ko": "허리케인", "ar": "إعصار" },
+    "keywords": {
+      "es": ["ciclón tropical", "tormenta tropical", "tifón", "temporada de huracanes", "ojo del huracán", "alerta de huracán", "evacuación"],
+      "en": ["tropical cyclone", "tropical storm", "typhoon", "hurricane season", "eye of the storm", "hurricane warning", "evacuation"]
+    }
+  },
+  "hurricane-track": {
+    "label": { "es": "Trayectoria del huracán", "en": "Hurricane track", "pt": "Trajetória do furacão", "fr": "Trajectoire de l’ouragan", "de": "Zugbahn des Hurrikans", "it": "Traiettoria dell’uragano", "ja": "ハリケーンの進路", "zh": "飓风路径", "ko": "허리케인 경로", "ar": "مسار الإعصار" },
+    "keywords": {
+      "es": ["cono de incertidumbre", "ruta del ciclón", "pronóstico de huracán", "seguimiento", "tocar tierra", "zona de impacto", "mapa de trayectoria"],
+      "en": ["cone of uncertainty", "storm path", "hurricane forecast", "storm tracking", "landfall", "impact zone", "projected path"]
+    }
+  },
+  "sandstorm": {
+    "label": { "es": "Tormenta de arena", "en": "Sandstorm", "pt": "Tempestade de areia", "fr": "Tempête de sable", "de": "Sandsturm", "it": "Tempesta di sabbia", "ja": "砂嵐", "zh": "沙尘暴", "ko": "모래 폭풍", "ar": "عاصفة رملية" },
+    "keywords": {
+      "es": ["tolvanera", "tormenta de polvo", "polvareda", "haboob", "desierto", "mala calidad del aire", "poca visibilidad"],
+      "en": ["dust storm", "haboob", "blowing dust", "dust", "desert", "poor air quality", "low visibility"]
+    }
+  },
+  "blizzard": {
+    "label": { "es": "Ventisca", "en": "Blizzard", "pt": "Nevasca", "fr": "Blizzard", "de": "Schneesturm", "it": "Bufera di neve", "ja": "猛吹雪", "zh": "暴风雪", "ko": "눈보라", "ar": "عاصفة ثلجية" },
+    "keywords": {
+      "es": ["tormenta de nieve", "nieve con viento", "nevada fuerte", "poca visibilidad", "alerta invernal", "frío extremo", "invierno"],
+      "en": ["snowstorm", "blowing snow", "whiteout", "low visibility", "winter storm", "extreme cold", "winter warning"]
+    }
+  },
+  "smoke": {
+    "label": { "es": "Humo", "en": "Smoke", "pt": "Fumaça", "fr": "Fumée", "de": "Rauch", "it": "Fumo", "ja": "煙", "zh": "烟雾", "ko": "연기", "ar": "دخان" },
+    "keywords": {
+      "es": ["incendio forestal", "humo de incendios", "mala calidad del aire", "contingencia ambiental", "neblina de humo", "quemas", "calidad del aire"],
+      "en": ["wildfire smoke", "smoky", "poor air quality", "air quality alert", "smoke haze", "fire", "burning"]
+    }
+  },
+  "lightning-strike": {
+    "label": { "es": "Caída de rayo", "en": "Lightning strike", "pt": "Queda de raio", "fr": "Impact de foudre", "de": "Blitzeinschlag", "it": "Caduta di un fulmine", "ja": "落雷", "zh": "雷击", "ko": "낙뢰", "ar": "صاعقة" },
+    "keywords": {
+      "es": ["rayo", "relámpago", "descarga eléctrica", "rayos cerca", "detector de rayos", "tormenta eléctrica", "peligro"],
+      "en": ["lightning", "bolt", "electrical discharge", "lightning nearby", "lightning detector", "thunderstorm", "danger"]
+    }
+  },
+  "heat-wave": {
+    "label": { "es": "Ola de calor", "en": "Heat wave", "pt": "Onda de calor", "fr": "Vague de chaleur", "de": "Hitzewelle", "it": "Ondata di calore", "ja": "熱波", "zh": "热浪", "ko": "폭염", "ar": "موجة حر" },
+    "keywords": {
+      "es": ["calor extremo", "canícula", "golpe de calor", "temperatura alta", "bochorno", "alerta de calor", "verano"],
+      "en": ["extreme heat", "scorching", "heatstroke", "high temperature", "hot spell", "heat advisory", "summer"]
+    }
+  },
+  "cold-wave": {
+    "label": { "es": "Ola de frío", "en": "Cold wave", "pt": "Onda de frio", "fr": "Vague de froid", "de": "Kältewelle", "it": "Ondata di freddo", "ja": "寒波", "zh": "寒潮", "ko": "한파", "ar": "موجة برد" },
+    "keywords": {
+      "es": ["frío extremo", "aire polar", "vórtice polar", "heladas", "bajo cero", "alerta de frío", "invierno"],
+      "en": ["cold snap", "polar air", "polar vortex", "extreme cold", "below freezing", "cold weather alert", "winter"]
+    }
+  },
+  "mist": {
+    "label": { "es": "Neblina", "en": "Mist", "pt": "Névoa", "fr": "Brume", "de": "Dunst", "it": "Foschia", "ja": "もや", "zh": "薄雾", "ko": "옅은 안개", "ar": "ضباب خفيف" },
+    "keywords": {
+      "es": ["bruma", "niebla baja", "niebla ligera", "poca visibilidad", "humedad", "mañana brumosa", "pronóstico"],
+      "en": ["haze", "low fog", "light fog", "low visibility", "damp", "misty morning", "forecast"]
+    }
+  },
+  "sun-haze": {
+    "label": { "es": "Sol con bruma", "en": "Hazy sun", "pt": "Sol com névoa", "fr": "Soleil voilé", "de": "Sonne mit Dunst", "it": "Sole velato", "ja": "日中のもや", "zh": "白天薄雾", "ko": "낮 안개", "ar": "ضباب نهاري" },
+    "keywords": {
+      "es": ["neblina de día", "niebla matutina", "cielo brumoso", "calima", "smog", "poca visibilidad", "pronóstico"],
+      "en": ["daytime fog", "morning fog", "hazy sky", "sun through fog", "smog", "low visibility", "forecast"]
+    }
+  },
+  "sun-wind": {
+    "label": { "es": "Soleado con viento", "en": "Sunny and windy", "pt": "Sol com vento", "fr": "Ensoleillé et venteux", "de": "Sonnig und windig", "it": "Soleggiato e ventoso", "ja": "晴れで風が強い", "zh": "晴天有风", "ko": "맑고 바람", "ar": "مشمس مع رياح" },
+    "keywords": {
+      "es": ["día ventoso", "despejado", "brisa", "ráfagas", "aire fresco", "volar papalote", "pronóstico"],
+      "en": ["breezy", "clear and windy", "gusty", "fresh breeze", "blustery", "kite weather", "forecast"]
+    }
+  },
+  "sun-moon": {
+    "label": { "es": "Día y noche", "en": "Day and night", "pt": "Dia e noite", "fr": "Jour et nuit", "de": "Tag und Nacht", "it": "Giorno e notte", "ja": "昼と夜", "zh": "昼夜", "ko": "낮과 밤", "ar": "الليل والنهار" },
+    "keywords": {
+      "es": ["tema automático", "modo claro y oscuro", "según el sistema", "24 horas", "abierto todo el día", "ciclo del día", "horario"],
+      "en": ["auto theme", "light and dark mode", "system theme", "24 hours", "open 24/7", "around the clock", "day cycle"]
+    }
+  },
+  "uv-index": {
+    "label": { "es": "Índice UV", "en": "UV index", "pt": "Índice UV", "fr": "Indice UV", "de": "UV-Index", "it": "Indice UV", "ja": "紫外線指数", "zh": "紫外线指数", "ko": "자외선 지수", "ar": "مؤشر الأشعة فوق البنفسجية" },
+    "keywords": {
+      "es": ["rayos ultravioleta", "radiación solar", "bloqueador", "protector solar", "quemaduras de sol", "intensidad del sol", "insolación"],
+      "en": ["ultraviolet", "solar radiation", "sunscreen", "sunburn", "sun intensity", "sun protection", "spf"]
+    }
+  },
+  "aurora": {
+    "label": { "es": "Aurora boreal", "en": "Northern lights", "pt": "Aurora boreal", "fr": "Aurore boréale", "de": "Polarlicht", "it": "Aurora boreale", "ja": "オーロラ", "zh": "极光", "ko": "오로라", "ar": "الشفق القطبي" },
+    "keywords": {
+      "es": ["aurora austral", "luces del norte", "auroras polares", "cielo nocturno", "tormenta geomagnética", "Ártico", "cazar auroras"],
+      "en": ["aurora borealis", "aurora australis", "polar lights", "night sky", "geomagnetic storm", "Arctic", "aurora hunting"]
+    }
+  },
+  "sundial": {
+    "label": { "es": "Reloj de sol", "en": "Sundial", "pt": "Relógio de sol", "fr": "Cadran solaire", "de": "Sonnenuhr", "it": "Meridiana", "ja": "日時計", "zh": "日晷", "ko": "해시계", "ar": "مزولة شمسية" },
+    "keywords": {
+      "es": ["hora solar", "sombra", "gnomon", "medir el tiempo", "posición del sol", "mediodía", "antiguo"],
+      "en": ["solar time", "shadow", "gnomon", "timekeeping", "sun position", "noon", "ancient"]
+    }
+  },
+  "frost": {
+    "label": { "es": "Helada", "en": "Frost", "pt": "Geada", "fr": "Gelée", "de": "Frost", "it": "Gelata", "ja": "霜", "zh": "霜冻", "ko": "서리", "ar": "صقيع" },
+    "keywords": {
+      "es": ["escarcha", "helada matutina", "bajo cero", "pasto congelado", "cristales de hielo", "cultivos", "invierno"],
+      "en": ["hoarfrost", "ground frost", "below freezing", "frozen grass", "ice crystals", "crops", "winter"]
+    }
+  },
+  "icicles": {
+    "label": { "es": "Carámbanos", "en": "Icicles", "pt": "Pingentes de gelo", "fr": "Stalactites de glace", "de": "Eiszapfen", "it": "Ghiaccioli", "ja": "つらら", "zh": "冰柱", "ko": "고드름", "ar": "دلايات جليدية" },
+    "keywords": {
+      "es": ["hielo", "congelado", "calles con hielo", "resbaloso", "techo congelado", "escarcha", "invierno"],
+      "en": ["ice", "icy", "frozen", "icy roads", "slippery", "freezing", "winter"]
+    }
+  },
+  "snow-depth": {
+    "label": { "es": "Nieve acumulada", "en": "Snow depth", "pt": "Profundidade da neve", "fr": "Hauteur de neige", "de": "Schneehöhe", "it": "Altezza della neve", "ja": "積雪", "zh": "积雪深度", "ko": "적설량", "ar": "عمق الثلج" },
+    "keywords": {
+      "es": ["profundidad de nieve", "acumulación", "centímetros de nieve", "espesor", "estación de esquí", "nevada", "medición"],
+      "en": ["snow accumulation", "snowfall total", "snowpack", "inches of snow", "ski report", "snow level", "measurement"]
+    }
+  },
+  "calendar-cloud-sun": {
+    "label": { "es": "Pronóstico diario", "en": "Daily forecast", "pt": "Previsão diária", "fr": "Prévisions quotidiennes", "de": "Tagesvorhersage", "it": "Previsioni giornaliere", "ja": "日別の天気予報", "zh": "每日天气预报", "ko": "일별 날씨 예보", "ar": "توقعات الطقس اليومية" },
+    "keywords": {
+      "es": ["pronóstico de 10 días", "pronóstico extendido", "clima de la semana", "clima por fecha", "el tiempo mañana", "planear un viaje", "calendario"],
+      "en": ["10-day forecast", "extended forecast", "weekly weather", "weather by date", "tomorrow's weather", "trip planning", "calendar"]
+    }
+  }
+}

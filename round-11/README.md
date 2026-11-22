@@ -1,0 +1,38 @@
+# Round 11 — Nature (in progress)
+
+The `round-11` branch carries the round while it's drawn, so any machine can pick it up. `main` only gets what is ready to be served (a push to `main` deploys `gota.flouvia.com`): when the round closes, this folder is deleted and the branch merges into `main`. The process is [Production with agents](../docs/production.md); this round ships v1 ([decision 86](../docs/decisions.md#v1-20-nov-2026)).
+
+## Status (22 Nov 2026)
+| Category | Approved | In its file | Step |
+|---|---|---|---|
+| `animales` | 92 | 76 | Done: illustrator, critic, the main session's review (6 dropped), languages |
+| `aves-insectos` | 88 | 79 | Done (2 dropped by the main session) |
+| `mar` | 61 | 52, and `fish` adopted | Done (4 dropped by the main session) |
+| `plantas` | 107 | 101, and 7 adopted | Drawn; its critic is next |
+| `clima` | 76 | 40, and 26 adopted | Half drawn: its illustrator continues from the file, then its critic |
+| `medio-ambiente` | 68 | — | Not started: illustrator, languages, and critic |
+
+Names: 730 proposed by six agents, 492 approved by the main session. The finished categories are at zero QA warnings and validate with their languages; `plantas` and `clima` carry the languages of the icons drawn so far.
+
+## Files
+- `approved.json`: the approved names, `{ category: [{ name, meaning, drawing }] }`.
+- `draw-args.json`: the drawing workflow's arguments (round, slots, each category's neighbors and note). Before launching, add `authorization` (the owner's words that asked for the run, quoted) and `todo`.
+- `draw.template.js`: the drawing workflow. Replace `__APPROVED__` with the contents of `approved.json` and `__REPORTS__` with `{}`, and point `ROOT` at this machine's checkout.
+- `lang-plantas.json`, `lang-clima.json`: the languages agents' data, written to `src/i18n/` with `write-i18n.mjs` once each critic is done.
+- `reports/`: the illustrators' and critics' reports of the finished categories (counts, redesigns, drops), for the history entry.
+- `main-drops.json`: what the main session dropped after the critics, with the reason for each, for the owner's sample.
+- `write-i18n.mjs`, `drop-blocks.mjs`: the helpers for languages and for drops.
+
+## Resume
+Launch the workflow with `slots: 2` and only what is left:
+```json
+{ "plantas": ["critic"], "clima": ["draw", "critic"], "medio-ambiente": ["draw", "lang", "critic"] }
+```
+The illustrator of `clima` continues from its file; the critic of `plantas` runs without the illustrator's report (it was cut) and judges the file as it is. Watch the disk: every agent runs its own Chrome, and a full disk stops them all.
+
+## Close
+As round 10 did ([What round 10 added](../docs/production.md)):
+1. Each category: languages with `write-i18n.mjs`, `build.mjs --check`, its sheet looked at by the main session, what still doesn't read dropped with `drop-blocks.mjs` and added to `main-drops.json`.
+2. In a clean worktree holding only the round's files: the full build, the full QA, the tests, and the fonts (`src/codepoints.json` gets the new codepoints).
+3. The owner's sample, then the docs: `history.md`, `roadmap.md`, and a `DESIGN.md` lesson if the round taught one.
+4. Delete `round-11/`, merge into `main`, push, and run `npm run gota:sync` in `flouvia-web` for the explorer.

@@ -1,0 +1,2966 @@
+{
+ "clima": [
+  {
+   "name": "cloud-lightning",
+   "meaning": "Lightning without rain (dry thunderstorm); the thunder condition in a forecast.",
+   "drawing": "The cloud with a single bolt under it and no drops.",
+   "closest": "storm: cloud + bolt + drops (a rainy thunderstorm); this one has no rain."
+  },
+  {
+   "name": "cloud-sun-lightning",
+   "meaning": "Thunderstorms by day (scattered or isolated storms).",
+   "drawing": "cloud-sun (sun behind the cloud) with a bolt under the cloud.",
+   "closest": "storm: no sun, so it cannot say by day."
+  },
+  {
+   "name": "cloud-moon-lightning",
+   "meaning": "Thunderstorms at night.",
+   "drawing": "cloud-moon (crescent behind the cloud) with a bolt under the cloud.",
+   "closest": "storm: no moon, so it cannot say at night."
+  },
+  {
+   "name": "cloud-sun-rain",
+   "meaning": "Showers by day (sun showers, scattered showers).",
+   "drawing": "cloud-sun with three short slanted drops under the cloud.",
+   "closest": "cloud-rain (contains hit): steady rain with no sun; this is the day version."
+  },
+  {
+   "name": "cloud-moon-rain",
+   "meaning": "Showers at night.",
+   "drawing": "cloud-moon with three short slanted drops under the cloud.",
+   "closest": "cloud-rain (contains hit): no moon; this is the night version."
+  },
+  {
+   "name": "cloud-sun-drizzle",
+   "meaning": "Light rain or drizzle by day.",
+   "drawing": "cloud-sun with a row of short dashes (drizzle) under the cloud.",
+   "closest": "cloud-drizzle (contains hit): no sun; day version of the light-rain condition."
+  },
+  {
+   "name": "cloud-moon-drizzle",
+   "meaning": "Light rain or drizzle at night.",
+   "drawing": "cloud-moon with a row of short dashes under the cloud.",
+   "closest": "cloud-drizzle (contains hit): no moon; night version."
+  },
+  {
+   "name": "cloud-sun-snow",
+   "meaning": "Snow showers by day (sun flurries).",
+   "drawing": "cloud-sun with two snowflake asterisks under the cloud.",
+   "closest": "cloud-snow (contains hit): no sun; day version."
+  },
+  {
+   "name": "cloud-moon-snow",
+   "meaning": "Snow at night.",
+   "drawing": "cloud-moon with two snowflake asterisks under the cloud.",
+   "closest": "cloud-snow (contains hit): no moon; night version."
+  },
+  {
+   "name": "cloud-sun-hail",
+   "meaning": "Hail by day.",
+   "drawing": "cloud-sun with hailstone dots under the cloud.",
+   "closest": "cloud-hail (contains hit): no sun; the scope asks for hail by day and night."
+  },
+  {
+   "name": "cloud-moon-hail",
+   "meaning": "Hail at night.",
+   "drawing": "cloud-moon with hailstone dots under the cloud.",
+   "closest": "cloud-hail (contains hit): no moon; night version."
+  },
+  {
+   "name": "cloud-rain-heavy",
+   "meaning": "Heavy rain, downpour, torrential rain.",
+   "drawing": "The cloud with four long, close streaks reaching the bottom of the canvas.",
+   "closest": "cloud-rain: three short drops (moderate rain); this is the heavy intensity a radar legend needs."
+  },
+  {
+   "name": "cloud-snow-heavy",
+   "meaning": "Heavy snow, snowstorm.",
+   "drawing": "The cloud with two rows of flakes, denser and larger than cloud-snow.",
+   "closest": "cloud-snow: moderate snowfall; this is the heavy intensity."
+  },
+  {
+   "name": "cloud-flurries",
+   "meaning": "Light snow, flurries.",
+   "drawing": "The cloud with one small flake and one dot falling, sparse.",
+   "closest": "cloud-snow: steady snowfall; flurries are the light end, as drizzle is for rain."
+  },
+  {
+   "name": "cloud-sleet",
+   "meaning": "Sleet, wintry mix: rain and snow falling together.",
+   "drawing": "The cloud with a drop and a flake alternating underneath.",
+   "closest": "cloud-hail (search hit, tagged sleet): ice balls; this is the rain-and-snow mix, so the sleet tag should move here."
+  },
+  {
+   "name": "cloud-freezing-rain",
+   "meaning": "Freezing rain, ice storm: rain that freezes on contact.",
+   "drawing": "The cloud with two drops falling onto a ground line that has two short icicles hanging under it.",
+   "closest": "cloud-rain (contains hit): liquid rain; the iced ground line makes it the freezing hazard."
+  },
+  {
+   "name": "cloud-rain-wind",
+   "meaning": "Wind-driven rain, rain squall.",
+   "drawing": "The cloud with steeply slanted streaks and one gust curl sweeping under them.",
+   "closest": "cloud-rain: vertical drops and no wind."
+  },
+  {
+   "name": "cloud-wind",
+   "meaning": "Windy and cloudy, breezy overcast.",
+   "drawing": "The cloud with two gust lines curling out from its lower edge.",
+   "closest": "wind (contains hit): gusts with no cloud (a clear windy day)."
+  },
+  {
+   "name": "calendar-cloud-sun",
+   "meaning": "Daily or 10-day forecast, the weather for a date.",
+   "drawing": "The calendar with a small cloud-sun inside.",
+   "closest": "calendar-sun (calendario, contains hit): a holiday; this is the forecast for a day."
+  },
+  {
+   "name": "storm-hail",
+   "meaning": "Severe thunderstorm with hail.",
+   "drawing": "The storm cloud with its bolt and hail dots instead of drops.",
+   "closest": "cloud-hail (search hit): hail with no lightning; storm: rain and lightning; this is the severe kind the alerts name."
+  },
+  {
+   "name": "storm-alert",
+   "meaning": "Severe weather warning.",
+   "drawing": "storm with the engine's alert badge.",
+   "closest": "storm (search hit): the condition; this is the warning state."
+  },
+  {
+   "name": "wind-alert",
+   "meaning": "Wind advisory, gale warning.",
+   "drawing": "wind gusts with the engine's alert badge.",
+   "closest": "wind: the condition; this is the advisory. chimes (musica, search hit via 'wind chimes') is unrelated."
+  },
+  {
+   "name": "hurricane",
+   "meaning": "Hurricane, typhoon, tropical cyclone, tropical storm.",
+   "drawing": "The tropical cyclone symbol: a small eye circle with two curved arms sweeping out from opposite sides.",
+   "closest": "tornado (search hit, tagged huracán): a funnel; the hurricane is the two-armed spiral. shutters (hogar) is a search hit only."
+  },
+  {
+   "name": "hurricane-track",
+   "meaning": "Hurricane forecast track, cone of uncertainty.",
+   "drawing": "A small hurricane symbol at the start of a dashed path that widens into a cone.",
+   "closest": "route (lugares): a travel route; this is a storm's forecast path."
+  },
+  {
+   "name": "sandstorm",
+   "meaning": "Sandstorm, dust storm, haboob.",
+   "drawing": "Three long gust lines with grains (dots) scattered between them.",
+   "closest": "dust (limpieza): household dust on a surface; this is airborne sand in the wind."
+  },
+  {
+   "name": "blizzard",
+   "meaning": "Blizzard, blowing snow.",
+   "drawing": "Two snowflakes driven sideways by long gust lines, no cloud.",
+   "closest": "cloud-snow (search hit): snow falling; this is snow carried by strong wind."
+  },
+  {
+   "name": "smoke",
+   "meaning": "Smoke in the air, smoky conditions from fires.",
+   "drawing": "Two wavy plumes rising and curling to the right.",
+   "closest": "smokestack (industria, search hit): a chimney's emissions; range-hood and air-purifier are appliances. This is the weather condition, with no source drawn."
+  },
+  {
+   "name": "lightning-strike",
+   "meaning": "Lightning strike, lightning detected nearby.",
+   "drawing": "A jagged bolt hitting a ground line with two short impact rays.",
+   "closest": "bolt (nucleo): fast or flash; this one strikes the ground."
+  },
+  {
+   "name": "heat-wave",
+   "meaning": "Heat wave, extreme heat.",
+   "drawing": "The sun above three wavy horizontal lines (heat shimmer).",
+   "closest": "thermometer-up (search hit): rising temperature; this is the heat event. wave (lugares) and waves (nucleo) are contains hits only."
+  },
+  {
+   "name": "cold-wave",
+   "meaning": "Cold wave, cold snap, polar air.",
+   "drawing": "A snowflake above three wavy horizontal lines, the pair of heat-wave.",
+   "closest": "snowflake: cold or frozen; this is the cold event. wave and waves are contains hits only."
+  },
+  {
+   "name": "mist",
+   "meaning": "Mist, low-lying haze, light fog without a cloud.",
+   "drawing": "Three staggered horizontal lines of different lengths, no cloud.",
+   "closest": "fog (search hit, tagged mist): cloud + two lines. The scope lists mist separately; keep it only if the judge wants both, otherwise mist stays a tag of fog."
+  },
+  {
+   "name": "sun-haze",
+   "meaning": "Haze or fog by day.",
+   "drawing": "The upper half of the sun with rays, sinking behind three horizontal lines.",
+   "closest": "fog: cloud + lines with no sun; this is the daytime haze."
+  },
+  {
+   "name": "sun-wind",
+   "meaning": "Sunny and windy.",
+   "drawing": "The sun upper left with two gust lines passing under it.",
+   "closest": "wind (contains hit): no sun; clear and windy at once."
+  },
+  {
+   "name": "sun-moon",
+   "meaning": "Day and night, 24 hours, automatic theme.",
+   "drawing": "A half sun with rays on the left fitted against a crescent on the right.",
+   "closest": "eclipse (espacio, search hit, tagged sun and moon): the moon covering the sun; these sit side by side."
+  },
+  {
+   "name": "uv-index",
+   "meaning": "UV index, sun intensity.",
+   "drawing": "The upper half of a sun above three bars rising in height.",
+   "closest": "sunscreen (belleza): the product; this is the reading."
+  },
+  {
+   "name": "aurora",
+   "meaning": "Aurora, northern lights.",
+   "drawing": "Three wavy vertical curtain strokes rising from a horizon line, with one star.",
+   "closest": "rainbow: an arc of color by day; the aurora hangs in curtains at night. igloo (viajes) is a search hit only."
+  },
+  {
+   "name": "sundial",
+   "meaning": "Sundial, sun time.",
+   "drawing": "A flat elliptical dial with a triangular gnomon standing on it.",
+   "closest": "clock (nucleo): mechanical time; this tells time by the sun's shadow."
+  },
+  {
+   "name": "frost",
+   "meaning": "Frost, ground frost, hoarfrost.",
+   "drawing": "A ground line with three small spiky ice crystals growing from it.",
+   "closest": "snowflake: falling snow or cold; frost is ice formed on a surface. thermometer-down, windshield-defrost, and soil-temperature are search hits on other concepts."
+  },
+  {
+   "name": "icicles",
+   "meaning": "Ice, icy conditions, icicles.",
+   "drawing": "An eave line with three hanging icicles of different lengths.",
+   "closest": "snowflake: snow; icicles are ice."
+  },
+  {
+   "name": "snow-depth",
+   "meaning": "Snow depth, snowfall accumulation.",
+   "drawing": "A ruler stake standing in a snow mound, with ticks above it.",
+   "closest": "cloud-snow: snow falling; this is how much has piled up."
+  },
+  {
+   "name": "windsock",
+   "meaning": "Windsock: wind direction and strength (airfields, drones).",
+   "drawing": "A cone-shaped sock on a pole, blowing right, with two cut stripes.",
+   "closest": "wind: the condition; the windsock is the instrument."
+  },
+  {
+   "name": "weathervane",
+   "meaning": "Wind vane, wind direction.",
+   "drawing": "An arrow on top of a post above a cross of cardinal arms.",
+   "closest": "compass (lugares): heading and navigation; this shows where the wind blows from."
+  },
+  {
+   "name": "anemometer",
+   "meaning": "Anemometer, wind speed.",
+   "drawing": "Three cups on spokes atop a short pole.",
+   "closest": "gauge (datos): speed in general; the cups make it wind speed."
+  },
+  {
+   "name": "wind-direction",
+   "meaning": "Wind direction indicator in a forecast row.",
+   "drawing": "An arrow pointing right with two gust curls trailing from its tail.",
+   "closest": "compass-rose (lugares, search hit): cardinal points for navigation; directions (contains hit): route turns; weathervane: the object. Weakest of the wind group; drop it if the judge sees it as an arrow."
+  },
+  {
+   "name": "umbrella-inside-out",
+   "meaning": "Strong wind, umbrella not recommended.",
+   "drawing": "An umbrella whose canopy is flipped upward by a gust line.",
+   "closest": "umbrella: rain protection; flipped by the wind, it means wind."
+  },
+  {
+   "name": "humidity-high",
+   "meaning": "High humidity, muggy.",
+   "drawing": "A droplet with a level line near its top.",
+   "closest": "droplets (tagged humidity): the general reading; this is the high level a thermostat or forecast shows."
+  },
+  {
+   "name": "humidity-low",
+   "meaning": "Low humidity, dry air.",
+   "drawing": "A droplet with a level line near its bottom.",
+   "closest": "droplets: general humidity; this is the low level."
+  },
+  {
+   "name": "droplet-percent",
+   "meaning": "Relative humidity, percent of moisture.",
+   "drawing": "The droplet with a percent sign inside.",
+   "closest": "droplets (contains hit): no number; this is the measured percentage."
+  },
+  {
+   "name": "dew",
+   "meaning": "Dew, morning dew, leaf wetness.",
+   "drawing": "A bent grass blade with a droplet hanging from its tip.",
+   "closest": "droplets (search hit): humidity in the air; thermometer-droplet: the dew point temperature; this is the dew itself."
+  },
+  {
+   "name": "hygrometer",
+   "meaning": "Hygrometer, humidity meter.",
+   "drawing": "A round dial with a needle and a droplet in its lower half.",
+   "closest": "droplets: the condition; this is the instrument."
+  },
+  {
+   "name": "barometer",
+   "meaning": "Barometer, air pressure.",
+   "drawing": "A round dial with an arc of ticks across the top, a needle, and a small wave mark under the pivot.",
+   "closest": "pressure-gauge (industria): a manometer on a pipe; this is the weather glass, freestanding."
+  },
+  {
+   "name": "barometer-arrow-up",
+   "meaning": "Rising pressure, improving weather.",
+   "drawing": "barometer with the engine's arrow-up badge.",
+   "closest": "barometer: the reading; the trend is a state forecast screens show."
+  },
+  {
+   "name": "barometer-arrow-down",
+   "meaning": "Falling pressure, worsening weather.",
+   "drawing": "barometer with the engine's arrow-down badge.",
+   "closest": "barometer: the reading; the falling trend."
+  },
+  {
+   "name": "thermometer-sun",
+   "meaning": "Hot weather, daytime high, heat index.",
+   "drawing": "The thermometer with a small sun at its upper right.",
+   "closest": "thermometer-up: temperature rising; this is the hot day or the day's high."
+  },
+  {
+   "name": "thermometer-snowflake",
+   "meaning": "Freezing temperature, below zero.",
+   "drawing": "The thermometer with a small snowflake at its upper right.",
+   "closest": "thermometer-down: temperature falling; this is the freezing point."
+  },
+  {
+   "name": "thermometer-wind",
+   "meaning": "Wind chill.",
+   "drawing": "The thermometer with two gust lines flowing past its bulb.",
+   "closest": "thermometer: air temperature; the wind makes it wind chill."
+  },
+  {
+   "name": "thermometer-person",
+   "meaning": "Feels-like temperature, apparent temperature.",
+   "drawing": "The thermometer beside a simple standing figure.",
+   "closest": "house-temperature (electrodomesticos): indoor reading; this is how the weather feels to a person."
+  },
+  {
+   "name": "umbrella-closed",
+   "meaning": "No rain, umbrella not needed, dry.",
+   "drawing": "A furled umbrella standing upright with its handle hook.",
+   "closest": "umbrella: open, rain; the closed one is the dry state."
+  },
+  {
+   "name": "rain-gauge",
+   "meaning": "Rain gauge, rainfall amount.",
+   "drawing": "A narrow tube with tick marks and a funnel top, two drops falling in.",
+   "closest": "cloud-rain: rain falling; this measures how much fell. gauge (datos) is a contains hit only."
+  },
+  {
+   "name": "puddle",
+   "meaning": "Puddle, wet ground after rain.",
+   "drawing": "A flat ellipse with a drop falling into its center and one ripple ring.",
+   "closest": "spill (limpieza, search hit): a spilled drink indoors; droplet: water in general. This is rain on the ground."
+  },
+  {
+   "name": "shield-rain",
+   "meaning": "Weatherproof, all-weather protection.",
+   "drawing": "The shield with three rain streaks falling onto its top.",
+   "closest": "fabric-waterproof (ropa): a technical fabric; this is a weather rating for any product."
+  },
+  {
+   "name": "visibility-range",
+   "meaning": "Visibility distance in a forecast.",
+   "drawing": "An eye above a horizontal double-headed arrow.",
+   "closest": "eye (edicion): show or hide; with the distance it is weather visibility."
+  },
+  {
+   "name": "season-spring",
+   "meaning": "Spring.",
+   "drawing": "A two-leaf sprout with a raindrop falling at its left.",
+   "closest": "sprout: growth; the raindrop makes it the season of showers."
+  },
+  {
+   "name": "season-summer",
+   "meaning": "Summer.",
+   "drawing": "The sun above a single wave line.",
+   "closest": "sun: clear weather; with the wave it is the season."
+  },
+  {
+   "name": "season-autumn",
+   "meaning": "Autumn, fall.",
+   "drawing": "A leaf falling along a curved motion line.",
+   "closest": "leaf: a leaf at rest; falling, it is the season. trench-coat (ropa) is a search hit only."
+  },
+  {
+   "name": "season-winter",
+   "meaning": "Winter.",
+   "drawing": "A snowflake above a rounded snow-covered hill line.",
+   "closest": "snowflake: snow or freeze; with the snowy ground it is the season."
+  },
+  {
+   "name": "weather-station",
+   "meaning": "Weather station.",
+   "drawing": "A mast with a cup anemometer on top and a small louvered box on legs at its foot.",
+   "closest": "anemometer: one instrument; this is the whole station."
+  },
+  {
+   "name": "weather-balloon",
+   "meaning": "Weather balloon, radiosonde.",
+   "drawing": "A large round balloon with a thin line down to a small instrument box.",
+   "closest": "hot-air-balloon (aviacion): a basket for people; this carries an instrument."
+  },
+  {
+   "name": "weather-radar",
+   "meaning": "Weather radar.",
+   "drawing": "A radome sphere on a short lattice tower.",
+   "closest": "radar (sistema, contains hit): a sweep screen; this is the dome that watches the rain."
+  },
+  {
+   "name": "satellite-cloud",
+   "meaning": "Weather satellite, satellite imagery of clouds.",
+   "drawing": "A satellite with a cloud beneath it.",
+   "closest": "satellite (espacio): the spacecraft; satellite-view (lugares): the map imagery of the ground. The cloud makes it weather imagery."
+  },
+  {
+   "name": "map-weather",
+   "meaning": "Weather map.",
+   "drawing": "The folded map with a cloud over it.",
+   "closest": "map-layers (lugares): the layer picker; this is the weather map itself."
+  },
+  {
+   "name": "map-pin-sun",
+   "meaning": "Local weather, weather at a location.",
+   "drawing": "The map pin with a sun inside its head.",
+   "closest": "map-pin: a place; with the sun it is the weather there. map-pins and pin are contains hits only."
+  },
+  {
+   "name": "cold-front",
+   "meaning": "Cold front on a weather map.",
+   "drawing": "A gently curved line with three triangles on one side.",
+   "closest": "None in the set; the nearest is wind, which is the air itself, not the map symbol."
+  },
+  {
+   "name": "warm-front",
+   "meaning": "Warm front on a weather map.",
+   "drawing": "A gently curved line with three semicircles on one side.",
+   "closest": "cold-front: triangles; semicircles make the warm one."
+  },
+  {
+   "name": "water-cycle",
+   "meaning": "Water cycle: evaporation, condensation, precipitation.",
+   "drawing": "A cloud at the top, rain falling on its left, and a curved arrow rising from a wave line on its right.",
+   "closest": "cloud-rain: just the rain; this is the loop. wash-30 and wash-rinse (limpieza) are search hits only."
+  },
+  {
+   "name": "evaporation",
+   "meaning": "Evaporation, evapotranspiration.",
+   "drawing": "A wave line with three wavy lines rising from it, ending in arrowheads.",
+   "closest": "hot-spring (lugares): a place with steam; this is the process."
+  }
+ ],
+ "mar": [
+  {
+   "name": "fish-school",
+   "meaning": "A school of fish: shoals, fish populations, group sightings in dive logs and marine guides.",
+   "drawing": "Two or three smaller copies of the fish base, staggered on a diagonal, all heading the same way.",
+   "closest": "fish: one animal; this is the group moving together. Contains `school` (educacion), an unrelated building."
+  },
+  {
+   "name": "fish-plus",
+   "meaning": "Add a species or a sighting to a dive log, life list, or marine survey.",
+   "drawing": "The fish base with the engine plus badge.",
+   "closest": "fish: the badge sibling for the add action; pescatarian (restaurante): a diet label."
+  },
+  {
+   "name": "fish-search",
+   "meaning": "Identify a species, search the marine life guide or the species catalog.",
+   "drawing": "The fish base with the engine search glyph.",
+   "closest": "fish-question: a state; this is the action."
+  },
+  {
+   "name": "fish-alert",
+   "meaning": "Advisory on a species: toxic or venomous fish, consumption advisory, invasive species report.",
+   "drawing": "The fish base with the engine alert badge.",
+   "closest": "shark-alert and jellyfish-alert: beach warnings for one animal; this is the general species advisory."
+  },
+  {
+   "name": "tropical-fish",
+   "meaning": "A reef fish: tropical destinations, reef life, dive sites, warm-water species.",
+   "drawing": "A tall, nearly round disc body with a pointed snout, a long trailing streamer off the dorsal fin, and one vertical band knocked out through the eye.",
+   "closest": "fish: an oval body; goldfish (mascotas): a pet with a flowing tail. The disc and streamer make it this kind."
+  },
+  {
+   "name": "clownfish",
+   "meaning": "The banded reef fish that lives in anemones: reef life, symbiosis, kids content.",
+   "drawing": "A rounded oval fish with rounded fins and three vertical bands cut across the body.",
+   "closest": "fish: no bands; tropical-fish: a tall disc. The three bands are what tell it."
+  },
+  {
+   "name": "pufferfish",
+   "meaning": "The inflated puffer: a toxic species, self-defense, something blown up.",
+   "drawing": "A circle body ringed with short spikes, a small tail on one side, an eye and a tiny round mouth.",
+   "closest": "sea-urchin: spines all around with no tail, eye or mouth."
+  },
+  {
+   "name": "swordfish",
+   "meaning": "A billfish: offshore sportfishing species, speed, seafood market species (also marlin).",
+   "drawing": "A torpedo body with a long straight bill, a high crescent dorsal fin and a crescent tail.",
+   "closest": "sailfish: a tall sail along the back; sawfish: a toothed flat saw on a ray body."
+  },
+  {
+   "name": "anglerfish",
+   "meaning": "The deep-sea fish with a glowing lure: the deep sea, bioluminescence, darkness, bait.",
+   "drawing": "A big round head with a wide mouth of a few teeth, and a stalk curving from the forehead to a dot (the lure).",
+   "closest": "piranha: teeth on a deep body with no lure."
+  },
+  {
+   "name": "lionfish",
+   "meaning": "The venomous fish with a mane of spines: invasive species, venomous animals, reef hazard.",
+   "drawing": "A small body with long spiny fin rays fanning back and down from it like a mane.",
+   "closest": "pufferfish: a round body with short spikes."
+  },
+  {
+   "name": "flounder",
+   "meaning": "A flatfish (flounder, sole, halibut): bottom dwellers, seafood species, camouflage.",
+   "drawing": "Seen from above: a flat oval with a fin fringe all the way around and both eyes on one side, a short tail.",
+   "closest": "stingray: a round disc with a long thin tail and no fringe."
+  },
+  {
+   "name": "salmon",
+   "meaning": "The leaping salmon: the salmon run, rivers and sea, origin of seafood.",
+   "drawing": "A fish body arched mid-leap, hooked jaw, over a short wave line.",
+   "closest": "fish: level, with no water; fish-fillet and nigiri (comida): salmon as food. The leap and the hooked jaw make it this kind."
+  },
+  {
+   "name": "seahorse",
+   "meaning": "The seahorse: reefs, kids content, aquarium exhibits, a symbol of the sea.",
+   "drawing": "An upright body with a horse-like head and tube snout, a small crest, and the tail curled into a spiral at the bottom.",
+   "closest": "None: no upright fish in the set."
+  },
+  {
+   "name": "eel",
+   "meaning": "A moray or sea eel: reef dwellers, something slippery.",
+   "drawing": "A long body in an S with an open jaw and eye at one end and a fin line along the back.",
+   "closest": "A snake (aves-insectos) has no fin; tuna and barracuda have a tail fin."
+  },
+  {
+   "name": "catfish",
+   "meaning": "The whiskered catfish: freshwater fishing species, bottom feeders. Freshwater, but no other category holds fish.",
+   "drawing": "A fish with a broad flat head and long whiskers (barbels) curving from the mouth.",
+   "closest": "fish: no whiskers."
+  },
+  {
+   "name": "piranha",
+   "meaning": "The piranha: danger, aggression, rivers. Freshwater, but no other category holds fish.",
+   "drawing": "A deep round body with a jutting lower jaw and a zigzag row of teeth.",
+   "closest": "anglerfish: a lure and a huge head."
+  },
+  {
+   "name": "koi",
+   "meaning": "The koi carp seen from above: Japanese gardens and restaurants, ponds, luck.",
+   "drawing": "Seen from above, a fish curving in an S, whiskers at the mouth, fins spread at the sides, a flowing tail.",
+   "closest": "goldfish (mascotas): a pet fish in profile. The only fish from above with a curving body; a judge may send it to mascotas."
+  },
+  {
+   "name": "shark",
+   "meaning": "A shark in profile: ocean predators, danger, aquarium exhibits, aggressive.",
+   "drawing": "A long body with a tall triangular dorsal fin, three gill slits, a pectoral fin, and a crescent tail.",
+   "closest": "fish: an oval with no tall fin; orca: rounded head and an eye patch."
+  },
+  {
+   "name": "shark-fin",
+   "meaning": "A shark fin cutting the surface: danger in the water, a hidden threat, a sighting.",
+   "drawing": "A curved triangular fin rising out of a wave line.",
+   "closest": "shark: the whole body; whale-tail: a fluke, not a dorsal fin."
+  },
+  {
+   "name": "shark-alert",
+   "meaning": "Shark sighting warning, beach closed for sharks.",
+   "drawing": "The shark with the engine alert badge.",
+   "closest": "shark-fin: a sighting without the warning state."
+  },
+  {
+   "name": "hammerhead-shark",
+   "meaning": "The hammerhead shark: a distinctive species, dive sites.",
+   "drawing": "Seen from above: a slim body with side fins and tail under a T-shaped head bar with the eyes at its tips.",
+   "closest": "shark: a pointed snout in profile."
+  },
+  {
+   "name": "manta-ray",
+   "meaning": "The manta ray: graceful giants, dive sites.",
+   "drawing": "Seen from above: wide triangular wings, two horn-like head fins in front, a thin tail.",
+   "closest": "stingray: a round disc with a long barbed tail and no horns."
+  },
+  {
+   "name": "stingray",
+   "meaning": "The stingray: a beach hazard (shuffle your feet), touch pools.",
+   "drawing": "Seen from above: a round disc with a long thin tail ending in a barb.",
+   "closest": "manta-ray: pointed wings and horns; flounder: a fin fringe and eyes on one side."
+  },
+  {
+   "name": "whale",
+   "meaning": "A humpback whale in profile: whales, whale-watching, something huge.",
+   "drawing": "A long body with a broad head, throat grooves, a long pectoral flipper, and a horizontal fluke.",
+   "closest": "sperm-whale: a boxy blunt head; dolphin: a beak and a curved fin; brand-docker (marcas): a logo, not the animal."
+  },
+  {
+   "name": "whale-tail",
+   "meaning": "The whale fluke raised above the water: a whale diving, whale-watching tours.",
+   "drawing": "A forked fluke rising out of a wave line.",
+   "closest": "shark-fin: a dorsal fin at the waterline; whale: the whole animal."
+  },
+  {
+   "name": "whale-spout",
+   "meaning": "A whale surfacing with its blow: a whale sighting, a whale breathing.",
+   "drawing": "The arch of a whale back above a wave line with a V of spray above its blowhole.",
+   "closest": "whale: the whole body underwater; fountain (lugares): water with no animal. The emoji draws both whales."
+  },
+  {
+   "name": "orca",
+   "meaning": "The orca (killer whale): apex predators, black-and-white sea life.",
+   "drawing": "A stout body with a tall straight dorsal fin, an eye patch knocked out behind the eye, and a fluke.",
+   "closest": "dolphin: a short curved fin and a beak; shark: gills and a vertical tail."
+  },
+  {
+   "name": "narwhal",
+   "meaning": "The narwhal: the tusked arctic whale, something rare or magical.",
+   "drawing": "A whale body with a long straight spiral tusk from the head and a fluke.",
+   "closest": "swordfish: a bill on a fish with a vertical tail."
+  },
+  {
+   "name": "dolphin",
+   "meaning": "A dolphin mid-leap: dolphins, intelligence, playfulness, ocean tours.",
+   "drawing": "An arched body with a short beak, a curved dorsal fin, and a horizontal fluke.",
+   "closest": "orca: a tall fin and an eye patch; shark: gill slits and a vertical tail."
+  },
+  {
+   "name": "manatee",
+   "meaning": "The manatee (sea cow, dugong): slow, gentle, coastal conservation.",
+   "drawing": "A plump rounded body with a whiskered snout, a small front flipper, and a round paddle tail.",
+   "closest": "harbor-seal: rear flippers instead of a paddle."
+  },
+  {
+   "name": "walrus",
+   "meaning": "The walrus: arctic life, tusks.",
+   "drawing": "A heavy body propped on its front flippers, two long tusks down from a whiskered muzzle.",
+   "closest": "sea-lion: no tusks."
+  },
+  {
+   "name": "sea-lion",
+   "meaning": "The sea lion: upright on its flippers, playful, coastal wildlife.",
+   "drawing": "A sleek body raised on its front flippers with the head held high and a small ear flap.",
+   "closest": "harbor-seal: lies on its belly with no ears; walrus: tusks."
+  },
+  {
+   "name": "harbor-seal",
+   "meaning": "The seal (the animal): coastal wildlife, seal colonies. `seal` is taken by the rosette in formas.",
+   "drawing": "A plump body lying on its belly, a round head lifted with whiskers and no ear flap, rear flippers together.",
+   "closest": "seal (formas): a quality rosette, a different concept; sea-lion: upright with ears."
+  },
+  {
+   "name": "sea-otter",
+   "meaning": "The sea otter: floating on its back, cute coastal wildlife (otters in general).",
+   "drawing": "Floating on its back, paws on its chest holding a small shell, tail and feet out of the water line.",
+   "closest": "harbor-seal: lies on its belly."
+  },
+  {
+   "name": "octopus",
+   "meaning": "The octopus: intelligence, many arms (multitasking), sea creatures.",
+   "drawing": "A round head with two eyes over eight short curling arms.",
+   "closest": "squid: a torpedo body with fins and two long tentacles."
+  },
+  {
+   "name": "squid",
+   "meaning": "The squid: calamari species, deep sea.",
+   "drawing": "A torpedo mantle with arrow fins at the top, short arms, and two long tentacles hanging below.",
+   "closest": "octopus: a round head and curling arms; cuttlefish: an oval with a fin skirt."
+  },
+  {
+   "name": "nautilus",
+   "meaning": "The chambered nautilus: living fossils, golden spiral, deep sea.",
+   "drawing": "A coiled shell with stripes on its outer whorl and short tentacles out of the opening.",
+   "closest": "fossil (ciencia): a flat ammonite coil with no animal; seashell: a pointed spiral cone."
+  },
+  {
+   "name": "jellyfish",
+   "meaning": "The jellyfish: stings, floating, translucent sea life.",
+   "drawing": "A dome bell with three or four wavy tentacles hanging below.",
+   "closest": "man-o-war: a float with a crest on the surface."
+  },
+  {
+   "name": "jellyfish-alert",
+   "meaning": "Jellyfish warning at the beach, sting risk.",
+   "drawing": "The jellyfish with the engine alert badge.",
+   "closest": "jellyfish: the animal with no warning state."
+  },
+  {
+   "name": "coral",
+   "meaning": "A branching coral: reefs, marine biology, reef conservation.",
+   "drawing": "A short base forking into several branches with rounded tips.",
+   "closest": "tree (plantas): a trunk and a canopy; seaweed: wavy ribbons."
+  },
+  {
+   "name": "coral-alert",
+   "meaning": "Coral bleaching alert, reef under stress (reef monitoring).",
+   "drawing": "The coral with the engine alert badge.",
+   "closest": "coral: the colony with no state."
+  },
+  {
+   "name": "coral-reef",
+   "meaning": "A coral reef: the habitat, reef dive sites, reef ecosystems.",
+   "drawing": "A branching coral, a brain-coral dome and a fan standing side by side on one seabed line.",
+   "closest": "coral: one colony; this is the reef."
+  },
+  {
+   "name": "sea-anemone",
+   "meaning": "The sea anemone: reef life, the clownfish home, stinging tentacles.",
+   "drawing": "A short column topped by a crown of wavy tentacles reaching up.",
+   "closest": "coral: rigid branches; jellyfish: tentacles hanging down."
+  },
+  {
+   "name": "crab",
+   "meaning": "The crab: seafood species, beach life, sideways.",
+   "drawing": "A wide shell from above with two raised claws and legs at the sides.",
+   "closest": "lobster: a long body; hermit-crab: lives in a spiral shell."
+  },
+  {
+   "name": "hermit-crab",
+   "meaning": "The hermit crab: borrowed homes, moving house, beach life.",
+   "drawing": "A spiral shell with claws, legs and eye stalks coming out of its opening.",
+   "closest": "seashell: the empty shell; crab: a shell of its own."
+  },
+  {
+   "name": "lobster",
+   "meaning": "The lobster: seafood species, fine dining, fisheries.",
+   "drawing": "A long segmented body from above with two big claws, long antennae, and a fan tail.",
+   "closest": "crab: a wide body; shrimp (comida): a curled food with no claws."
+  },
+  {
+   "name": "starfish",
+   "meaning": "The starfish (sea star): beach life, tide pools.",
+   "drawing": "A five-armed star with rounded arm tips and a few dots on it.",
+   "closest": "star (edicion): a sharp rating star with no texture."
+  },
+  {
+   "name": "sea-urchin",
+   "meaning": "The sea urchin: spines underfoot, reef life, seafood (uni).",
+   "drawing": "A round body with radiating spines all around it.",
+   "closest": "pufferfish: a body with spikes, a tail, an eye and a mouth."
+  },
+  {
+   "name": "sand-dollar",
+   "meaning": "The sand dollar: beachcombing, beach finds.",
+   "drawing": "A flat disc with a five-petal flower pattern in its center.",
+   "closest": "starfish: arms; dollar (comercio): a currency sign. Contains `dollar`; a different concept."
+  },
+  {
+   "name": "seashell",
+   "meaning": "A spiral seashell: the beach, beachcombing, souvenirs, the sound of the sea.",
+   "drawing": "A conch-like spiral with a pointed spire and a flared opening.",
+   "closest": "fossil (ciencia): a flat ammonite coil; scallop: a fan; nautilus: the living animal."
+  },
+  {
+   "name": "scallop",
+   "meaning": "The scallop: the classic fan shell, seafood, beach finds.",
+   "drawing": "A fan shell with radiating ribs and two small ears at the hinge.",
+   "closest": "clam: smooth with growth lines; seashell: a spiral."
+  },
+  {
+   "name": "oyster",
+   "meaning": "The oyster with its pearl: pearls, seafood, hidden value.",
+   "drawing": "A lower half-shell with the upper shell open at an angle and a pearl inside.",
+   "closest": "clam: closed; giant-clam: open with a wavy lip and no pearl."
+  },
+  {
+   "name": "clam",
+   "meaning": "The clam: seafood, shellfish, staying closed.",
+   "drawing": "A closed rounded-triangle shell with concentric growth lines and the seam across.",
+   "closest": "scallop: ribs and ears; clamshell-box (restaurante): a takeout box."
+  },
+  {
+   "name": "mussel",
+   "meaning": "The mussel: seafood (moules), shellfish farms.",
+   "drawing": "A long teardrop shell, narrow at the hinge, with the seam along it.",
+   "closest": "clam: a rounded triangle."
+  },
+  {
+   "name": "sea-turtle",
+   "meaning": "The sea turtle: ocean conservation, reefs, migration.",
+   "drawing": "From above: an oval patterned shell, a head, four long flippers.",
+   "closest": "The turtle in aves-insectos walks on legs; this one has flippers."
+  },
+  {
+   "name": "sea-turtle-hatchling",
+   "meaning": "A sea turtle hatchling leaving its egg: turtle release events, nesting beaches, conservation camps.",
+   "drawing": "A small sea turtle from above crawling out of a broken half eggshell.",
+   "closest": "sea-turtle: the adult; egg-cracked (comida): a cooking egg."
+  },
+  {
+   "name": "seaweed",
+   "meaning": "Seaweed: marine plants, algae, nori.",
+   "drawing": "Three wavy ribbons rising from one holdfast.",
+   "closest": "weed (agricultura): an unwanted land plant; coral: rigid branches."
+  },
+  {
+   "name": "kelp",
+   "meaning": "Giant kelp: kelp forests, cold-water reefs.",
+   "drawing": "One tall stalk with long blades and round floats along it.",
+   "closest": "seaweed: wavy ribbons with no floats. A weaker kind if the list is long."
+  },
+  {
+   "name": "tide-pool",
+   "meaning": "A tide pool: rocky-shore habitats, low-tide exploring, park maps.",
+   "drawing": "A ring of rounded rocks around a shallow pool with a starfish filling it.",
+   "closest": "tide-low (nautica): the tide itself; starfish: the animal alone. A weaker scene if the list is long."
+  },
+  {
+   "name": "underwater",
+   "meaning": "Below the surface: underwater mode, marine habitat, life under the sea.",
+   "drawing": "A wave line across the top with a fish below it and two small bubbles rising.",
+   "closest": "wave: the surface only; water-depth, scuba-mask and submarine (nautica): a reading, gear and a vessel, not the habitat."
+  },
+  {
+   "name": "fish-farm",
+   "meaning": "Aquaculture: farmed fish, net pens, farmed versus wild-caught seafood.",
+   "drawing": "A round floating ring at the waterline with a net hanging below and the fish base inside.",
+   "closest": "fish: wild; a judge may send it to agricultura, which has no aquaculture."
+  }
+ ],
+ "aves-insectos": [
+  {
+   "name": "bird",
+   "meaning": "A songbird: birds, wildlife, nature sections, bird categories in nature and pet apps.",
+   "drawing": "A small songbird perched in profile on a short twig: round head, short pointed beak, one wing line, tail tipped up.",
+   "closest": "bird-cage (mascotas) is the cage; feeding-birds (senales) is a sign with a person. Neither draws the bird itself."
+  },
+  {
+   "name": "bird-flying",
+   "meaning": "A bird in flight: flight, freedom, let go, release.",
+   "drawing": "The same songbird in profile, no perch, both wings raised in a V above the body.",
+   "closest": "bird: the perched view; this is its flying view."
+  },
+  {
+   "name": "bird-flock",
+   "meaning": "A flock: migration, seasons, groups of birds.",
+   "drawing": "Three gliding birds as shallow m-strokes rising in a V formation.",
+   "closest": "bird-flying: one bird in profile; this is the group, told by its formation."
+  },
+  {
+   "name": "birdsong",
+   "meaning": "Bird calls: nature sounds, sound identification, a gentle alarm tone.",
+   "drawing": "The perched songbird with its beak open and two short sound arcs ahead of it.",
+   "closest": "bird: silent; the arcs make it the sound."
+  },
+  {
+   "name": "bird-plus",
+   "meaning": "Log a sighting, add a species to a checklist or life list.",
+   "drawing": "bird with the engine's plus badge.",
+   "closest": "bird; contains plus (nucleo) as its badge."
+  },
+  {
+   "name": "map-pin-bird",
+   "meaning": "A sighting on the map, a birding hotspot, a nesting site.",
+   "drawing": "lugares' map pin with the songbird's silhouette in its head, like map-pin-paw.",
+   "closest": "map-pin-paw (mascotas): a pet-friendly place; this marks wild birds. Contains map-pins/pin only as its family base."
+  },
+  {
+   "name": "bird-tracks",
+   "meaning": "Bird footprints: tracking, trail signs, wildlife was here.",
+   "drawing": "Two three-toed stick prints, like small arrows, walking up a diagonal.",
+   "closest": "footprints (lugares): human soles; paw-trail (mascotas): padded paws."
+  },
+  {
+   "name": "birdhouse",
+   "meaning": "A nest box: garden, attracting birds, a home for wildlife.",
+   "drawing": "A small house on a post: pitched roof, round entrance hole, a perch peg under it.",
+   "closest": "doghouse (mascotas): arched door, on the ground, no post or perch."
+  },
+  {
+   "name": "bird-feeder",
+   "meaning": "Feeding wild birds: garden, backyard birding.",
+   "drawing": "A roofed tube hanging from a hook, seed ports down its side and a tray at its base.",
+   "closest": "feeding-birds (senales): a person tossing food, as a sign; pet-feeder (mascotas): an automatic bowl."
+  },
+  {
+   "name": "birdbath",
+   "meaning": "A garden birdbath: garden decor, water for wildlife.",
+   "drawing": "A wide shallow basin with a water line, on a slender pedestal.",
+   "closest": "pet-fountain (mascotas): a pet's water dispenser; nothing in the set draws the garden basin."
+  },
+  {
+   "name": "nest",
+   "meaning": "A bird's nest: nesting, home, a cozy place; nested items as a metaphor.",
+   "drawing": "A woven bowl of crossing twig strokes with three egg tops showing over the rim.",
+   "closest": "egg (comida): one egg as food; search finds retirement (nest egg) and indent-increase (nesting), other concepts."
+  },
+  {
+   "name": "egg-hatching",
+   "meaning": "Hatching: new, launch, beta, first steps, onboarding.",
+   "drawing": "comida's egg broken along a zigzag, the chick's head and beak rising out of the lower shell.",
+   "closest": "egg-cracked (comida): an egg cracked for cooking, no chick. Same egg base, so it joins the egg family."
+  },
+  {
+   "name": "feather",
+   "meaning": "A feather: lightweight, a light plan, softness, birds.",
+   "drawing": "A single curved feather: a shaft down its middle and two notches in its vane.",
+   "closest": "quill (legal): a feather in an inkwell, for writing; feather-wand (mascotas): a cat toy; feather-duster (limpieza): a duster."
+  },
+  {
+   "name": "chick",
+   "meaning": "A newborn chick: beginner level, newcomer, spring, baby animals.",
+   "drawing": "A round fluffy body, a small head with a tiny beak, two stick feet, no comb.",
+   "closest": "hen: adult with comb and tail; egg-hatching: still in its shell."
+  },
+  {
+   "name": "hen",
+   "meaning": "A hen: poultry, eggs, the farm.",
+   "drawing": "A plump body in profile, small comb and wattle, short upturned tail, standing.",
+   "closest": "chicken-coop (agricultura): the coop; roast-chicken and drumstick (comida): the food."
+  },
+  {
+   "name": "rooster",
+   "meaning": "A rooster crowing: morning, wake-up, dawn.",
+   "drawing": "Upright in profile, tall serrated comb, beak open, long arched sickle tail.",
+   "closest": "hen: rounder, small comb, short tail, beak closed."
+  },
+  {
+   "name": "turkey",
+   "meaning": "A turkey: the farm, holiday dinners, poultry.",
+   "drawing": "A round body with a large fanned tail spread behind it as a half disk, small head with a snood.",
+   "closest": "roast-chicken (comida), tagged turkey, is the cooked bird; peacock fans a tail of eyes. Search also finds currency-lira (the country)."
+  },
+  {
+   "name": "duck",
+   "meaning": "A duck: ponds, parks, the farm.",
+   "drawing": "A mallard floating in profile on a water line: flat rounded bill, curled tail.",
+   "closest": "rubber-duck (juegos): a bath toy, no water line, a toy's shape."
+  },
+  {
+   "name": "goose",
+   "meaning": "A goose: the farm, honking, wild geese.",
+   "drawing": "Standing upright on two legs, long straight neck stretched up, knobbed bill.",
+   "closest": "swan: floating, S-curved neck; duck: floating, short neck."
+  },
+  {
+   "name": "swan",
+   "meaning": "A swan: elegance, lakes, weddings.",
+   "drawing": "Floating on a water line, a deep S-curved neck and one raised arched wing.",
+   "closest": "duck and goose: short neck, or standing."
+  },
+  {
+   "name": "eagle",
+   "meaning": "An eagle: sharp vision, focus, oversight, birds of prey.",
+   "drawing": "Head and neck in profile: deep hooked beak, heavy brow ridge. No shield or spread wings, so it is no emblem.",
+   "closest": "bird: a small songbird; falcon: the whole raptor in a dive."
+  },
+  {
+   "name": "vulture",
+   "meaning": "A vulture: scavenging, waiting, the desert.",
+   "drawing": "Hunched on a branch, a bald head on a bare neck rising from a ruff collar.",
+   "closest": "eagle: feathered head, no ruff, not perched."
+  },
+  {
+   "name": "owl",
+   "meaning": "An owl: night mode, wisdom, learning, late hours.",
+   "drawing": "Front view: rounded body, two ear tufts, two large round eyes, a small beak between.",
+   "closest": "bus-night (transito) is tagged owl but draws a bus; brand-tripadvisor (marcas) is a trademark."
+  },
+  {
+   "name": "parrot",
+   "meaning": "A parrot: talk, repeat, echo, tropical birds.",
+   "drawing": "Perched in profile: a large curved hooked beak and a long tail hanging below the perch.",
+   "closest": "bird-cage (mascotas), tagged perico, draws the cage; cockatoo has a crest."
+  },
+  {
+   "name": "penguin",
+   "meaning": "A penguin: cold, polar, winter.",
+   "drawing": "Front view: a tall oval body with a belly line, flippers held out, two feet.",
+   "closest": "brand-linux (marcas) draws a trademarked mascot, not the animal."
+  },
+  {
+   "name": "flamingo",
+   "meaning": "A flamingo: tropical, summer, pool parties, wetlands.",
+   "drawing": "Standing on one long leg with the other bent, S-curved neck and a sharply bent bill.",
+   "closest": "heron: both legs, straight bill, neck folded."
+  },
+  {
+   "name": "hummingbird",
+   "meaning": "A hummingbird: speed, hovering, small and light, nectar.",
+   "drawing": "Hovering in profile, body angled up, a long needle bill, one wing raised and one lowered.",
+   "closest": "bird-flying: level flight with both wings up; kingfisher: perched."
+  },
+  {
+   "name": "pigeon",
+   "meaning": "A pigeon: city birds, parks, plazas.",
+   "drawing": "A plump puffed chest, small head, short bill, walking in profile on two legs.",
+   "closest": "feeding-birds (senales): the sign, with a person; bird: a perched songbird."
+  },
+  {
+   "name": "carrier-pigeon",
+   "meaning": "A messenger bird: send a message, old-school mail, delivery.",
+   "drawing": "The pigeon in flight with a small rolled letter held in its beak.",
+   "closest": "send (nucleo): a paper plane; pigeon: on the ground, no message."
+  },
+  {
+   "name": "crow",
+   "meaning": "A crow or raven: Halloween, omen, cleverness.",
+   "drawing": "A heavy perched bird with a thick straight bill, shaggy throat, and wings reaching the tail tip.",
+   "closest": "bird: small, short beak, tail tipped up; scarecrow (agricultura) shares a word only."
+  },
+  {
+   "name": "toucan",
+   "meaning": "A toucan: tropical, the jungle, rainforests.",
+   "drawing": "Perched, with a huge banana-shaped bill as long as its body.",
+   "closest": "parrot: a short hooked beak; pelican: a pouched bill."
+  },
+  {
+   "name": "peacock",
+   "meaning": "A peacock: showcase, pride, display, beauty.",
+   "drawing": "A small body in front of a large fanned tail ringed with eye dots.",
+   "closest": "turkey: a fanned tail with no eyes; peacock-feather: one feather."
+  },
+  {
+   "name": "ostrich",
+   "meaning": "An ostrich: big birds, fast runners, head in the sand.",
+   "drawing": "A round feathered body on two long bare legs and a long thin neck.",
+   "closest": "flamingo: thin, bent bill, standing on one leg; roadrunner: running, crest and long tail."
+  },
+  {
+   "name": "pelican",
+   "meaning": "A pelican: the coast, harbors, fishing birds.",
+   "drawing": "In profile with a long bill and a deep throat pouch hanging under it.",
+   "closest": "toucan: a bill with no pouch."
+  },
+  {
+   "name": "woodpecker",
+   "meaning": "A woodpecker: knocking, pecking away, persistence.",
+   "drawing": "Clinging upright to a vertical trunk line, tail braced on it, beak at the bark.",
+   "closest": "bird: perched on a twig, not on a trunk."
+  },
+  {
+   "name": "seagull",
+   "meaning": "A seagull: the coast, beaches, harbors.",
+   "drawing": "Gliding seen from the front: wings crooked at the wrists, head down, hooked bill.",
+   "closest": "bird-flock: small m-strokes; bird-flying: a songbird in profile."
+  },
+  {
+   "name": "stork",
+   "meaning": "A stork: arrivals, birth announcements, migration.",
+   "drawing": "In flight in profile: neck stretched forward with a long bill, long legs trailing behind.",
+   "closest": "heron: standing in water; bird-flying: short legs, wings up."
+  },
+  {
+   "name": "puffin",
+   "meaning": "A puffin: seabirds, cliffs, the coast.",
+   "drawing": "A stout upright body with a large triangular bill marked by two bands.",
+   "closest": "penguin: front view, no bill."
+  },
+  {
+   "name": "swallow",
+   "meaning": "A swallow: spring, return, travel.",
+   "drawing": "Flying with swept-back pointed wings and a long forked tail.",
+   "closest": "bird-flying: wings up, short tail; falcon: wings folded in a dive. Search finds mouth-open (anatomia, swallowing) by a word only."
+  },
+  {
+   "name": "kiwi-bird",
+   "meaning": "A kiwi bird: flightless birds, island fauna.",
+   "drawing": "A round body with no tail or wings, a long thin down-curved bill, sturdy legs.",
+   "closest": "kiwi (frutas-verduras) is the fruit; the name says it is the bird, not a variant of the fruit."
+  },
+  {
+   "name": "dodo",
+   "meaning": "A dodo: extinct, deprecated, legacy.",
+   "drawing": "A plump body, big hooked bill, a tiny wing, a curly tuft for a tail.",
+   "closest": "turkey and hen: farm birds; nothing in the set draws extinction with an animal."
+  },
+  {
+   "name": "bee",
+   "meaning": "A bee: honey, being busy, work, pollination.",
+   "drawing": "Top view: an oval body with three stripes, two rounded wings, two antennae.",
+   "closest": "beehive and beekeeper (agricultura), honey (comida): the hive, the person, the food; bug (datos): an error, no stripes."
+  },
+  {
+   "name": "pollination",
+   "meaning": "Pollination: nature, pollinators, gardens in bloom.",
+   "drawing": "A small bee hovering above an open five-petal flower, apart from it.",
+   "closest": "flower (plantas): no bee; bee: no flower; beehive (agricultura): the hive."
+  },
+  {
+   "name": "wasp",
+   "meaning": "A wasp or hornet: stings, pest control.",
+   "drawing": "Side view: slim thorax, pinched waist, a pointed striped abdomen ending in a stinger, narrow wings.",
+   "closest": "bee: round body seen from the top; ant: no wings, no stinger."
+  },
+  {
+   "name": "wasp-nest",
+   "meaning": "A paper wasp nest: pest removal, a hazard near home.",
+   "drawing": "A rounded nest hanging from a twig, horizontal bands, an opening at its bottom.",
+   "closest": "beehive (agricultura): a hive kept by beekeepers, standing on its base."
+  },
+  {
+   "name": "butterfly",
+   "meaning": "A butterfly: transformation, spring, freedom.",
+   "drawing": "Top view: four rounded wings, large above and small below, a thin body with clubbed antennae.",
+   "closest": "brand-bluesky (marcas): a trademark; moth: wings folded in a triangle."
+  },
+  {
+   "name": "moth",
+   "meaning": "A moth: night, drawn to light, clothes moths as pests.",
+   "drawing": "Top view: wings folded back into one wide triangle, feathery comb antennae.",
+   "closest": "butterfly: four open wings, clubbed antennae."
+  },
+  {
+   "name": "ant",
+   "meaning": "An ant: work, teamwork, small tasks, a colony.",
+   "drawing": "Side view: three beads for head, thorax, and abdomen, six bent legs, elbowed antennae.",
+   "closest": "bug (datos): a software error drawn as a beetle from the top. Search hits (column-insert-left, brand-x, before-after) only share letters."
+  },
+  {
+   "name": "ladybug",
+   "meaning": "A ladybug: luck, gardens, spring, kids.",
+   "drawing": "Top view: a round dome split down the middle, dots on each half, a small head.",
+   "closest": "bug (datos): an error, no split shell or dots."
+  },
+  {
+   "name": "beetle",
+   "meaning": "A beetle: insects, entomology, collections.",
+   "drawing": "Profile: a high domed shell over six walking legs, short antennae.",
+   "closest": "bug (datos): the software error, a beetle from the top. This is the animal, in profile."
+  },
+  {
+   "name": "stag-beetle",
+   "meaning": "A stag beetle: strength, insect collections, kids.",
+   "drawing": "Top view with long antler-like mandibles reaching ahead of the head.",
+   "closest": "beetle: no mandibles; bug (datos): an error."
+  },
+  {
+   "name": "dragonfly",
+   "meaning": "A dragonfly: agility, summer, ponds.",
+   "drawing": "Top view: a long thin body, a big head, four long narrow wings straight out.",
+   "closest": "butterfly: broad rounded wings, short body."
+  },
+  {
+   "name": "mosquito",
+   "meaning": "A mosquito: bites, dengue and malaria, repellent.",
+   "drawing": "Side view: a long needle proboscis, thin body, long bent legs, narrow wings.",
+   "closest": "mosquito-coil and fly-swatter (limpieza): the repellent coil and the swatter, not the insect."
+  },
+  {
+   "name": "mosquito-alert",
+   "meaning": "Mosquito warnings: activity forecasts, outbreak alerts.",
+   "drawing": "mosquito with the engine's alert badge.",
+   "closest": "mosquito; contains alert (nucleo) as its badge."
+  },
+  {
+   "name": "housefly",
+   "meaning": "A housefly: hygiene, food safety, pests.",
+   "drawing": "Top view: a stout body, two clear wings angled back, big round eyes.",
+   "closest": "fly-swatter (limpieza): the swatter; mosquito: long legs and a proboscis."
+  },
+  {
+   "name": "caterpillar",
+   "meaning": "A caterpillar: growth, an early stage, slow progress.",
+   "drawing": "Profile: a row of round segments arching along, a round head with two antennae, short legs.",
+   "closest": "worm (ciberseguridad): an arched tube with no head or legs; apple-worm (frutas-verduras); leaf-bitten (agricultura): the damage only."
+  },
+  {
+   "name": "chrysalis",
+   "meaning": "A chrysalis or cocoon: transformation in progress, coming soon.",
+   "drawing": "A banded teardrop pod hanging from a twig by a short thread.",
+   "closest": "caterpillar and butterfly: the stages before and after; nothing draws the pod."
+  },
+  {
+   "name": "grasshopper",
+   "meaning": "A grasshopper, cricket, or locust: jumping, summer, crickets for silence.",
+   "drawing": "Profile: a long body, the big hind leg folded in a sharp Z, long antennae.",
+   "closest": "cricket-bat (deportes) shares a word only; mantis: raised forelegs."
+  },
+  {
+   "name": "firefly",
+   "meaning": "A firefly: glow, night, a small light.",
+   "drawing": "Profile of a small beetle with its tail lit by three short rays.",
+   "closest": "beetle: no glow."
+  },
+  {
+   "name": "mantis",
+   "meaning": "A praying mantis: patience, focus, stillness.",
+   "drawing": "Profile: a thin upright body, triangular head, folded forelegs raised.",
+   "closest": "grasshopper: horizontal body, big hind leg."
+  },
+  {
+   "name": "bedbug",
+   "meaning": "A bed bug: hotels, pest inspection, infestations.",
+   "drawing": "Top view: a flat oval body with horizontal bands, a small head, six short legs.",
+   "closest": "cockroach (limpieza): a long oval with long antennae; ladybug: a split dome with dots."
+  },
+  {
+   "name": "deer-tick",
+   "meaning": "A tick: Lyme disease, tick checks after hikes, flea-and-tick protection.",
+   "drawing": "Top view: a teardrop body with a small head shield and eight short legs bunched forward. Named deer-tick because tick alone means a check mark.",
+   "closest": "spider: two body parts and long bent legs; shield-paw (mascotas): flea prevention for pets."
+  },
+  {
+   "name": "spider",
+   "meaning": "A spider: crawler bots, Halloween, arachnids.",
+   "drawing": "Top view: a round body and head, eight bent legs, four on each side.",
+   "closest": "chart-radar (datos), tagged araña, is a chart."
+  },
+  {
+   "name": "spider-web",
+   "meaning": "A spider web or cobweb: a trap, an abandoned place, Halloween.",
+   "drawing": "Eight spokes from a center joined by rings of straight segments.",
+   "closest": "dark-web (ciberseguridad): a mask and a globe; chart-radar (datos): a chart."
+  },
+  {
+   "name": "spider-hanging",
+   "meaning": "A spider dangling: Halloween, drop-down, hanging by a thread.",
+   "drawing": "The spider seen from the front, hanging from a single vertical thread from the top edge.",
+   "closest": "spider: the top view, no thread."
+  },
+  {
+   "name": "scorpion",
+   "meaning": "A scorpion: venom, the desert, danger.",
+   "drawing": "Top view: pincers forward, a segmented tail curling over the body to a stinger.",
+   "closest": "earwig: forceps at the tail but no claws."
+  },
+  {
+   "name": "centipede",
+   "meaning": "A centipede or millipede: pests, many legs.",
+   "drawing": "A wavy segmented body with short paired legs along it and two antennae.",
+   "closest": "caterpillar: arching segments, few legs; worm (ciberseguridad): no legs."
+  },
+  {
+   "name": "snail",
+   "meaning": "A snail: slow, a slow connection, the garden.",
+   "drawing": "Profile: a spiral shell on a soft body with two eye stalks.",
+   "closest": "turtle: also slow, another animal; slug: no shell. Search finds mail-postal (snail mail) by a tag only."
+  },
+  {
+   "name": "butterfly-net",
+   "meaning": "A butterfly net: catching insects, collecting, nature play.",
+   "drawing": "A hoop with a deep cone of net hanging behind it, on a long handle.",
+   "closest": "landing-net (camping): a fishing net with a shallow bag."
+  },
+  {
+   "name": "insect-hotel",
+   "meaning": "A bug hotel: gardens, pollinators, biodiversity.",
+   "drawing": "A pitched-roof box filled with a grid of round tube openings.",
+   "closest": "birdhouse: one hole and a perch; contains hotel (viajes), a building for people, another concept."
+  },
+  {
+   "name": "snake",
+   "meaning": "A snake: the snake game, reptiles, slithering.",
+   "drawing": "An S-curved body ending in a raised head with a forked tongue.",
+   "closest": "underscore (simbolos), tagged snake case, is a glyph."
+  },
+  {
+   "name": "snake-alert",
+   "meaning": "Snakes reported: a trail hazard, venomous snakes nearby.",
+   "drawing": "snake with the engine's alert badge.",
+   "closest": "trail-alert (camping): any trail hazard; contains alert (nucleo) as its badge."
+  },
+  {
+   "name": "cobra",
+   "meaning": "A cobra: danger, venom.",
+   "drawing": "Upright with its hood spread wide, on a coiled base.",
+   "closest": "snake: an S-curve with no hood; yoga-cobra (bienestar) is a yoga pose."
+  },
+  {
+   "name": "lizard",
+   "meaning": "A lizard: reptiles, the desert, basking.",
+   "drawing": "Profile on a rock line: a long low body, four short legs, a tapering tail.",
+   "closest": "gecko: the top view with toe pads; iguana: a crest of spikes."
+  },
+  {
+   "name": "gecko",
+   "meaning": "A gecko: climbing, sticky grip, small reptiles.",
+   "drawing": "Top view: sprawled bent legs ending in round toe pads, a curving tail.",
+   "closest": "lizard: the profile, no toe pads; terrarium (mascotas): the tank."
+  },
+  {
+   "name": "chameleon",
+   "meaning": "A chameleon: adapting, camouflage, theme switching.",
+   "drawing": "On a twig: a spiral curled tail, a casque head, a round turret eye.",
+   "closest": "lizard: a straight tail, no casque."
+  },
+  {
+   "name": "turtle",
+   "meaning": "A turtle or tortoise: slow, patience, slow mode.",
+   "drawing": "Profile: a high domed shell with plate lines, head and stubby legs out.",
+   "closest": "snail: slow too; sea turtles with flippers stay in mar."
+  },
+  {
+   "name": "crocodile",
+   "meaning": "A crocodile or alligator: danger, swamps.",
+   "drawing": "Profile: long flat jaws with a zigzag tooth line, a ridge of scutes, a long tail, short legs.",
+   "closest": "lizard: short snout, no teeth or scutes."
+  },
+  {
+   "name": "dragon",
+   "meaning": "A dragon: fantasy, games, legends.",
+   "drawing": "Profile: a horned head on a long neck, one raised bat wing, a curling tail.",
+   "closest": "dinosaur: no wings; pterodactyl: wings with no body behind them."
+  },
+  {
+   "name": "dinosaur",
+   "meaning": "A dinosaur: offline, prehistory, kids.",
+   "drawing": "A T. rex in profile: big head with jaw, tiny arms, thick legs, a long balancing tail.",
+   "closest": "fossil (ciencia): an ammonite shell."
+  },
+  {
+   "name": "brachiosaurus",
+   "meaning": "A long-necked dinosaur: tall, a gentle giant.",
+   "drawing": "Four pillar legs, a long neck rising to a small head, a tail.",
+   "closest": "dinosaur: walks on two legs, big head."
+  },
+  {
+   "name": "triceratops",
+   "meaning": "A triceratops: defense, horned dinosaurs.",
+   "drawing": "Profile: a big frill behind the head, three horns, four legs.",
+   "closest": "dinosaur: no frill or horns."
+  },
+  {
+   "name": "stegosaurus",
+   "meaning": "A stegosaurus: plated dinosaurs, kids.",
+   "drawing": "An arched back with a row of plates, spikes at the end of the tail.",
+   "closest": "ankylosaurus: low armor and a club tail."
+  },
+  {
+   "name": "pterodactyl",
+   "meaning": "A pterodactyl: prehistoric flight.",
+   "drawing": "Seen from below: wide bony wings, a crested pointed head.",
+   "closest": "dragon: a body with legs and tail; bird-flying: feathers."
+  },
+  {
+   "name": "dinosaur-skull",
+   "meaning": "A dinosaur skull: museums, paleontology, natural history.",
+   "drawing": "A T. rex skull in profile with an eye socket and a row of teeth.",
+   "closest": "contains skull (anatomia): a human skull, another concept; fossil (ciencia): an ammonite."
+  },
+  {
+   "name": "dinosaur-footprint",
+   "meaning": "A dinosaur track: fossil footprints, giant steps.",
+   "drawing": "One large three-toed print with pointed toes.",
+   "closest": "contains footprints (lugares): human steps, another concept; bird-tracks: a trail of small stick prints."
+  },
+  {
+   "name": "frog",
+   "meaning": "A frog or toad: ponds, rain, jumping.",
+   "drawing": "Front view, sitting: two eye bumps on top, a wide mouth, bent legs.",
+   "closest": "frog-jumping: the side view in a leap."
+  },
+  {
+   "name": "axolotl",
+   "meaning": "An axolotl: regeneration, cute mascots, kids.",
+   "drawing": "Front view of a smiling head with three feathery gill fronds on each side.",
+   "closest": "salamander: no gills, in profile."
+  }
+ ],
+ "plantas": [
+  {
+   "name": "tree-oak",
+   "meaning": "An oak tree: hardwood, strength, longevity, a tree species in nature and park apps.",
+   "drawing": "A wide lobed cloud crown on a short thick trunk that forks into two limbs; broader and bumpier than the generic tree.",
+   "closest": "tree (lugares): the generic round crown on a thin trunk; this is a named species with the oak's lobed, wide crown."
+  },
+  {
+   "name": "tree-willow",
+   "meaning": "A weeping willow: waterside tree, calm, parks and ponds.",
+   "drawing": "A trunk that splits at the top into strands arching over and falling straight down like a curtain.",
+   "closest": "tree (lugares): an upright crown; the willow's falling strands are its whole silhouette."
+  },
+  {
+   "name": "tree-bare",
+   "meaning": "A leafless tree: winter, dormant, deciduous, inactive or dead plant states.",
+   "drawing": "A trunk branching twice into bare forked limbs with no crown.",
+   "closest": "tree (lugares): has a crown; the bare tree is the same object with no leaves, a state."
+  },
+  {
+   "name": "tree-fruit",
+   "meaning": "A single fruit tree in a garden: fruit trees for sale, backyard orchard, edible garden.",
+   "drawing": "The round crown and trunk with three small round fruits hanging inside the crown.",
+   "closest": "orchard (agricultura): rows of trees as a farm; this is one garden tree bearing fruit."
+  },
+  {
+   "name": "tree-cypress",
+   "meaning": "A columnar cypress: Mediterranean landscaping, formal gardens, windbreaks.",
+   "drawing": "A tall narrow flame-shaped crown pointed at the top on a very short trunk.",
+   "closest": "tree-pine (lugares): a stepped triangular conifer; the cypress is a smooth, narrow column."
+  },
+  {
+   "name": "tree-baobab",
+   "meaning": "A baobab: savanna tree, drylands, ancient trees in nature and travel guides.",
+   "drawing": "A fat bottle-shaped trunk topped by a flat spread of short stubby branches.",
+   "closest": "tree-acacia: also savanna, but a thin angled trunk under an umbrella crown; the baobab is all trunk."
+  },
+  {
+   "name": "tree-acacia",
+   "meaning": "An umbrella acacia: savanna, safari, dry landscapes.",
+   "drawing": "A thin trunk leaning and forking into a wide, flat-topped umbrella crown.",
+   "closest": "tree (lugares): round crown; the acacia's flat wide crown on a forked trunk."
+  },
+  {
+   "name": "tree-blossom",
+   "meaning": "A tree in bloom: spring, cherry blossom season, flowering trees.",
+   "drawing": "The tree's trunk with a crown made of five-petal blossoms instead of a solid outline.",
+   "closest": "cherry-blossom: a single flower head-on; this is the whole tree in flower."
+  },
+  {
+   "name": "tree-stump",
+   "meaning": "A cut tree stump: tree removal, felled tree, logging, stump grinding services.",
+   "drawing": "A short trunk with an elliptical cut top showing a ring, and two roots flaring at its base.",
+   "closest": "firewood (hogar): stacked logs to burn; the stump is what is left in the ground. Medio-ambiente's deforestation may want a stump too: judge's call."
+  },
+  {
+   "name": "tree-rings",
+   "meaning": "A trunk cross-section: a tree's age, growth over time, wood, history and versions.",
+   "drawing": "A slightly irregular circle with two inner rings and a crack running from the edge to the center.",
+   "closest": "tree-stump: the stump in profile; this is the flat cut seen head-on. Contains ring (ropa, jewelry) only as a word."
+  },
+  {
+   "name": "tree-branch",
+   "meaning": "A leafy branch: natural products, nature decoration, a twig.",
+   "drawing": "A diagonal twig with a side shoot and three leaves along it, no trunk.",
+   "closest": "leaf (lugares): a single leaf; the branch is a woody twig carrying several. Search also finds skill-tree, decision-tree, and topology-tree: diagrams, not plants."
+  },
+  {
+   "name": "tree-fallen",
+   "meaning": "A fallen tree: storm damage, a blocked road or trail, insurance claims.",
+   "drawing": "The tree lying on its side across a ground line, its root plate lifted at one end.",
+   "closest": "tree-stump: what remains after cutting; this is the whole tree down, a hazard."
+  },
+  {
+   "name": "tree-plus",
+   "meaning": "Plant a tree: tree-planting donations, offsets, add a tree to a counter.",
+   "drawing": "The generic tree with the engine's plus badge at bottom right.",
+   "closest": "sapling: a young tree as an object; tree-plus is the action of planting one. Medio-ambiente's reforestation is the broader cause."
+  },
+  {
+   "name": "bonsai",
+   "meaning": "A bonsai: miniature trees, patience, care, Japanese gardening.",
+   "drawing": "A shallow wide tray pot under a twisted S-shaped trunk carrying two flat cloud pads.",
+   "closest": "potted-tree: a straight indoor tree in a deep pot; the bonsai is miniature, shaped, in a tray."
+  },
+  {
+   "name": "sapling",
+   "meaning": "A young tree tied to a stake: newly planted tree, reforestation, nurture.",
+   "drawing": "A thin trunk with a small leafy crown, tied to a straight stake beside it, on a ground line.",
+   "closest": "sprout (lugares): two leaves out of the ground; the sapling is already a small tree with a stake."
+  },
+  {
+   "name": "pine-branch",
+   "meaning": "An evergreen branch: winter, forest scent, conifer greenery.",
+   "drawing": "A diagonal twig with short needle tufts fanning out on both sides.",
+   "closest": "tree-pine (lugares): the whole conifer; this is a cut branch of needles."
+  },
+  {
+   "name": "leaf-maple",
+   "meaning": "A maple leaf: autumn, maple species, fall colors.",
+   "drawing": "A palmate leaf with five pointed lobes and a short stem.",
+   "closest": "leaf (lugares): the generic oval leaf; the maple's pointed lobes are a distinct kind."
+  },
+  {
+   "name": "leaf-oak",
+   "meaning": "An oak leaf: oak species, woodland, autumn.",
+   "drawing": "An elongated leaf whose edges ripple in rounded lobes, with a central vein and stem.",
+   "closest": "leaf (lugares): generic smooth leaf; the oak leaf has rounded lobes."
+  },
+  {
+   "name": "leaf-ginkgo",
+   "meaning": "A ginkgo leaf: memory and herbal supplements, ancient species, East Asian design.",
+   "drawing": "A fan-shaped leaf with a notch in the middle of its wide edge and a long thin stem.",
+   "closest": "leaf (lugares): oval leaf; the ginkgo is a fan."
+  },
+  {
+   "name": "leaf-monstera",
+   "meaning": "A monstera leaf: houseplants, tropical decor, interior design.",
+   "drawing": "A large heart-shaped leaf with three slits cutting in from the edge and a short stem.",
+   "closest": "leaf (lugares): a plain leaf; the monstera is defined by its split edge."
+  },
+  {
+   "name": "leaf-palm",
+   "meaning": "A fan palm leaf: tropical, palms as a plant group, shade.",
+   "drawing": "A fan of pleated pointed segments radiating from the top of a stem.",
+   "closest": "palm-tree (lugares): the whole palm with trunk; this is one leaf, a fan."
+  },
+  {
+   "name": "fern",
+   "meaning": "A fern frond: shade plants, forests, ferns as a houseplant group.",
+   "drawing": "An upright curved midrib with paired small leaflets that shrink toward the tip.",
+   "closest": "leaf-palm: a fan from one point; the fern is a feather of leaflets along a rib."
+  },
+  {
+   "name": "clover",
+   "meaning": "A three-leaf clover: lawns, wild plants, meadows.",
+   "drawing": "Three heart-shaped leaflets meeting at a point on a short curved stem.",
+   "closest": "four-leaf-clover: luck; club-suit (juegos): the card suit. This is the three-leaf plant."
+  },
+  {
+   "name": "four-leaf-clover",
+   "meaning": "A four-leaf clover: luck, raffles, giveaways, lucky draw.",
+   "drawing": "Four heart-shaped leaflets in a cross with a short curved stem.",
+   "closest": "horseshoe (agricultura, tagged luck): the clover is the plant symbol of luck. Contains leaf only as a word."
+  },
+  {
+   "name": "eucalyptus",
+   "meaning": "A eucalyptus sprig: spa, aromatherapy, natural ingredients, decor.",
+   "drawing": "A gently curved stem with round coin-shaped leaves alternating along it.",
+   "closest": "tree-branch: pointed leaves on a twig; eucalyptus reads by its round leaves. essential-oil (bienestar) is the dropper bottle, not the plant."
+  },
+  {
+   "name": "bamboo",
+   "meaning": "Bamboo stalks: zen, spa, bamboo as a sustainable material.",
+   "drawing": "Two upright segmented stalks with node lines and two narrow leaves sprouting from a node.",
+   "closest": "bamboo-shoot (frutas-verduras): the edible conical shoot; this is the grown plant. Search also finds steam and matcha, only through a bamboo tag on a steamer and a whisk."
+  },
+  {
+   "name": "aloe-vera",
+   "meaning": "Aloe vera: soothing skincare, after-sun, natural gel.",
+   "drawing": "A thick fleshy leaf cut flat at its base with a drop of gel falling from the cut.",
+   "closest": "agave (agricultura): a whole rosette crop; aloe shows one cut leaf and its gel."
+  },
+  {
+   "name": "succulent",
+   "meaning": "A succulent rosette: succulents as a plant group, low-water plants.",
+   "drawing": "An echeveria seen from above: two rings of pointed fleshy leaves around a small center.",
+   "closest": "agave (agricultura): a rosette crop in side view; cactus (lugares): a spiny column. The succulent is a leafy rosette seen from above."
+  },
+  {
+   "name": "cactus-barrel",
+   "meaning": "A potted barrel cactus: houseplant cacti, desert plants for sale.",
+   "drawing": "A round ribbed body with a small flower on top, sitting in a small pot.",
+   "closest": "cactus (lugares): the tall armed desert cactus; this is the round potted kind."
+  },
+  {
+   "name": "snake-plant",
+   "meaning": "A snake plant: low-light, easy-care, air-purifying houseplants.",
+   "drawing": "Tall upright sword-shaped leaves of different heights rising from a pot.",
+   "closest": "potted-plant: soft leaves on stems; the snake plant is stiff vertical blades."
+  },
+  {
+   "name": "venus-flytrap",
+   "meaning": "A carnivorous plant: unusual plants; a trap or catch metaphor.",
+   "drawing": "A stem ending in two open hinged lobes edged with short teeth.",
+   "closest": "none: no carnivorous or trap plant in the set."
+  },
+  {
+   "name": "grass",
+   "meaning": "Grass: lawns, turf, yard, lawn care.",
+   "drawing": "A tuft of five pointed blades of different heights rising from a ground line.",
+   "closest": "weed (agricultura): a weed to remove; grass is the lawn itself."
+  },
+  {
+   "name": "wildflowers",
+   "meaning": "Wildflowers: meadows, native planting, pollinator gardens.",
+   "drawing": "Three small flowers of different heights on thin stems rising from a ground line.",
+   "closest": "flower (lugares): one generic flower; this is a meadow of several."
+  },
+  {
+   "name": "cattail",
+   "meaning": "Cattails and reeds: ponds, wetlands, water plants.",
+   "drawing": "Two tall stems topped by sausage-shaped heads, with a long narrow leaf curving beside them.",
+   "closest": "wetland (lugares): the landscape; the cattail is the plant."
+  },
+  {
+   "name": "vine",
+   "meaning": "A climbing vine: climbers, creepers, growth that spreads.",
+   "drawing": "A curving stem ending in a spiral tendril, with three leaves along it.",
+   "closest": "vineyard (agricultura): grape rows on a farm; this is the plant's climbing habit."
+  },
+  {
+   "name": "ivy",
+   "meaning": "Trailing ivy: climbing and covering walls, evergreen trailing plants.",
+   "drawing": "A strand hanging from a top line, curving down with three-lobed pointed leaves along it.",
+   "closest": "vine: a climbing stem ending in a spiral tendril; ivy hangs and trails with its lobed leaves."
+  },
+  {
+   "name": "bush",
+   "meaning": "A bush or shrub: shrubs, landscaping, garden planting.",
+   "drawing": "Three rounded lobes merged into one mound sitting on a ground line, with no trunk.",
+   "closest": "tree (lugares): crown on a trunk; the bush sits on the ground."
+  },
+  {
+   "name": "hedge",
+   "meaning": "A trimmed hedge: privacy hedges, boundaries, hedge trimming services.",
+   "drawing": "A long rectangular block with straight sides and a slightly rounded top, on a ground line.",
+   "closest": "fence (hogar): a picket fence; the hedge is a living boundary."
+  },
+  {
+   "name": "topiary",
+   "meaning": "A topiary: clipped ornamental plants, formal gardens, entrance decor.",
+   "drawing": "A clipped ball on a straight thin stem, standing in a square planter.",
+   "closest": "potted-tree: a natural crown in a round pot; topiary is a geometric ball in a square planter."
+  },
+  {
+   "name": "trellis",
+   "meaning": "A garden trellis: climbing supports, vertical gardening.",
+   "drawing": "A diamond lattice panel with a vine and two leaves climbing up through it.",
+   "closest": "pergola (hogar): an overhead shade structure; the trellis is a flat climbing panel. Search also finds chart-small-multiples (a grid chart)."
+  },
+  {
+   "name": "leaf-pile",
+   "meaning": "A pile of fallen leaves: fall cleanup, yard waste, leaf removal service.",
+   "drawing": "A low mound on a ground line with three leaf shapes sticking out of it.",
+   "closest": "leaf (lugares): one leaf; the pile is the cleanup job."
+  },
+  {
+   "name": "rose",
+   "meaning": "A rose: love, gifts, florists, rose gardens.",
+   "drawing": "A cupped bloom with a spiral center on a stem with one leaf and one thorn.",
+   "closest": "flower (lugares): a generic open flower; compass-rose (lugares) is a map symbol. The rose's spiral bloom is a distinct kind."
+  },
+  {
+   "name": "tulip",
+   "meaning": "A tulip: spring, florists, bulbs, gardens.",
+   "drawing": "A cup of three pointed petals on a straight stem with a long leaf curving up beside it.",
+   "closest": "flower (lugares): open round petals; the tulip is a closed pointed cup."
+  },
+  {
+   "name": "sunflower",
+   "meaning": "A sunflower: summer, sunshine, cheerfulness, gardens.",
+   "drawing": "A large round center ringed by short pointed petals, on a thick stem with two leaves.",
+   "closest": "sunflower-seed (frutas-verduras): the snack seed; daisy: a small center and long round petals. Search also finds cooking-oil, through a sunflower-oil tag."
+  },
+  {
+   "name": "daisy",
+   "meaning": "A daisy: simple flowers, freshness, chamomile, spring.",
+   "drawing": "A flower head-on: a small round center with eight long rounded petals, no stem.",
+   "closest": "flower (lugares): a side view with stem; the daisy is a head-on radial bloom."
+  },
+  {
+   "name": "cherry-blossom",
+   "meaning": "A cherry blossom: spring, sakura, hanami, Japanese themes.",
+   "drawing": "Five rounded petals each with a small notch at the tip, around a few stamen dots.",
+   "closest": "cherry (frutas-verduras): the fruit; this is the flower, so it contains cherry only as a word."
+  },
+  {
+   "name": "hibiscus",
+   "meaning": "A hibiscus: tropical, island travel, hibiscus tea.",
+   "drawing": "Five broad overlapping petals with a long stamen column reaching out from the center.",
+   "closest": "cherry-blossom: small notched petals; the hibiscus has its long protruding stamen."
+  },
+  {
+   "name": "orchid",
+   "meaning": "An orchid: florists, luxury, spa, orchids as a houseplant group.",
+   "drawing": "A three-quarter bloom with two wide side petals and a pouched lip, on an arching stem.",
+   "closest": "lily: a symmetric trumpet; the orchid is asymmetric with its lip."
+  },
+  {
+   "name": "lily",
+   "meaning": "A lily: elegance, sympathy flowers, florists.",
+   "drawing": "A trumpet of six pointed petals curling back at the tips, with three stamens out of the throat.",
+   "closest": "tulip: a closed cup; the lily opens and curls back."
+  },
+  {
+   "name": "water-lily",
+   "meaning": "A water lily: ponds, water gardens, aquatic plants.",
+   "drawing": "A round floating pad with a wedge notch, a pointed bloom on it, and a short water line.",
+   "closest": "lotus (bienestar): a symmetric bloom used as the spa symbol; this is the pond plant with its pad. Contains water only as a word."
+  },
+  {
+   "name": "dandelion",
+   "meaning": "A dandelion seed head: make a wish, fragility, spreading.",
+   "drawing": "A circle of radiating lines with small dots at their tips, on a thin stem.",
+   "closest": "allergy (salud): pollen grains; the dandelion is the puffball plant."
+  },
+  {
+   "name": "daffodil",
+   "meaning": "A daffodil: spring, early bloom, gardens.",
+   "drawing": "A star of six pointed petals with a trumpet cup in front, on a stem.",
+   "closest": "lily: curled petals with stamens; the daffodil reads by its central trumpet."
+  },
+  {
+   "name": "poppy",
+   "meaning": "A poppy: wild field flowers, summer meadows.",
+   "drawing": "A shallow cup of four rounded petals with a dotted dark center, on a thin curving stem.",
+   "closest": "tulip: a pointed closed cup on a straight stem; the poppy is an open bowl on a bent stem."
+  },
+  {
+   "name": "marigold",
+   "meaning": "A marigold: festive garlands, garden borders, cempasuchil.",
+   "drawing": "A dense round pompom of short ruffled petals on a stem with a feathery leaf.",
+   "closest": "carnation: a fan above a calyx; the marigold is a full round ball."
+  },
+  {
+   "name": "hydrangea",
+   "meaning": "A hydrangea: garden shrubs, bouquets, color-changing flowers.",
+   "drawing": "A round cluster of small four-petal florets packed together, with one leaf below.",
+   "closest": "marigold: one dense bloom; the hydrangea is many small florets."
+  },
+  {
+   "name": "flower-bud",
+   "meaning": "A closed bud: about to bloom, coming soon, early stage.",
+   "drawing": "A closed teardrop bud held by small pointed sepals on a stem with one leaf.",
+   "closest": "flower (lugares): the open bloom; the bud is the same flower before opening."
+  },
+  {
+   "name": "flower-wilted",
+   "meaning": "A wilted flower: expired, fading, past its best, sadness.",
+   "drawing": "The flower on a stem that bends over so its head hangs down, one petal falling.",
+   "closest": "wilted-plant (agricultura): a crop under water stress; this is the flower's fading state."
+  },
+  {
+   "name": "flower-vase",
+   "meaning": "Flowers in a vase: florists, home decor, table settings, flower delivery.",
+   "drawing": "A narrow-necked vase holding two stems with small blooms and a leaf.",
+   "closest": "flower (lugares): a single flower; the vase is cut flowers as decor. The wrapped bouquet stays with fiestas."
+  },
+  {
+   "name": "potted-plant",
+   "meaning": "A potted houseplant: indoor plants, my plants, plant shops, decor.",
+   "drawing": "A tapered pot with a rim, three leaves on stems rising out of it.",
+   "closest": "sprout (lugares): a seedling in the ground; this is a grown plant in a pot."
+  },
+  {
+   "name": "potted-plant-plus",
+   "meaning": "Add a plant: add to my plants, new plant in a collection.",
+   "drawing": "The potted plant with the engine's plus badge.",
+   "closest": "potted-plant: the badge adds the action."
+  },
+  {
+   "name": "potted-plant-alert",
+   "meaning": "Plant needs attention: overdue care, a problem detected on a plant.",
+   "drawing": "The potted plant with the engine's alert badge.",
+   "closest": "wilted-plant (agricultura): the symptom drawn; this is the app's alert state."
+  },
+  {
+   "name": "potted-sprout",
+   "meaning": "A seedling in a small pot: starter plan, beginner, nurturing something new.",
+   "drawing": "A small pot with a two-leaf sprout coming out of it.",
+   "closest": "sprout (lugares): in the ground; with potted-plant and potted-tree it forms the small-medium-large growth trio. Contains sprout as its subject."
+  },
+  {
+   "name": "plant-pot",
+   "meaning": "An empty plant pot: pots and planters, pot size, repotting supplies.",
+   "drawing": "A tapered pot with a thick rim sitting on a saucer, nothing in it.",
+   "closest": "potted-plant: the same pot holding a plant; the empty pot is the product."
+  },
+  {
+   "name": "hanging-plant",
+   "meaning": "A hanging plant: trailing plants, macrame hangers, hanging baskets.",
+   "drawing": "A round pot held by three cords meeting at a hook, with two leafy strands trailing below.",
+   "closest": "potted-plant: stands on a surface; this hangs, with trailing leaves."
+  },
+  {
+   "name": "plant-cutting",
+   "meaning": "Propagation: a cutting rooting in water, share or clone a plant.",
+   "drawing": "A stem with two leaves standing in a glass of water, short roots visible under the water line.",
+   "closest": "germination (agricultura): a seed sprouting; this grows a new plant from a cutting."
+  },
+  {
+   "name": "repotting",
+   "meaning": "Repot a plant: a plant care task, move to a bigger pot.",
+   "drawing": "A plant with its root ball lifted above an empty pot, a short arc arrow showing the move.",
+   "closest": "plant-pot: the empty pot; repotting is the care action."
+  },
+  {
+   "name": "window-box",
+   "meaning": "A window box: balcony and window-sill gardens, small-space planting.",
+   "drawing": "A long rectangular planter under a window sill line, with three small plants growing in it.",
+   "closest": "raised-bed: a ground vegetable bed; the window box hangs on a sill. Contains box (nucleo) only as a word; search's service-window, modal, and break-glass are windows, not planters."
+  },
+  {
+   "name": "plant-terrarium",
+   "meaning": "A plant terrarium: glass gardens, closed ecosystems, decor.",
+   "drawing": "A rounded glass jar with a lid knob, a layer of soil and two tiny plants inside.",
+   "closest": "terrarium (mascotas): a reptile tank with a heat lamp; this is a glass jar garden."
+  },
+  {
+   "name": "seed",
+   "meaning": "A seed: seed round, seed data, origin, potential.",
+   "drawing": "A plump oval seed with a curved seam line along one side and a small pointed tip.",
+   "closest": "sunflower-seed (frutas-verduras): a striped snack seed; germination (agricultura): a seed already sprouting. Search's pomegranate is a fruit full of seeds."
+  },
+  {
+   "name": "acorn",
+   "meaning": "An acorn: autumn, oak trees, small beginnings, saving up.",
+   "drawing": "An oval nut under a textured cap with a short stem on top.",
+   "closest": "chestnut (frutas-verduras): an edible nut; the acorn is the oak's seed with its cap. Search's butternut-squash is only a word match."
+  },
+  {
+   "name": "pinecone",
+   "meaning": "A pine cone: forests, winter, conifers.",
+   "drawing": "An egg-shaped cone of overlapping scale rows with a short stem at the top.",
+   "closest": "tree-pine (lugares): the tree; the cone is its seed. Written as one word to stay clear of cone (formas)."
+  },
+  {
+   "name": "seed-packet",
+   "meaning": "A packet of seeds: buy seeds, sowing, seed shops.",
+   "drawing": "A paper packet with a folded top edge and a sprout drawn on its face.",
+   "closest": "seedling-tray (agricultura): seeds already sown; the packet is seeds for sale. Contains packet (redes, a network packet) only as a word."
+  },
+  {
+   "name": "flower-bulb",
+   "meaning": "A flower bulb: planting bulbs, tulips and daffodils before they grow.",
+   "drawing": "A teardrop bulb with a pointed sprout tip on top and short roots at its base.",
+   "closest": "onion (frutas-verduras): a vegetable; the bulb is planted to flower."
+  },
+  {
+   "name": "toadstool",
+   "meaning": "A wild toadstool: forests, foraging, poisonous mushrooms, fairy tales.",
+   "drawing": "A domed cap with round spots on a stem with a skirt ring.",
+   "closest": "mushroom (frutas-verduras): a button mushroom to eat; the toadstool is wild and spotted."
+  },
+  {
+   "name": "garden-trowel",
+   "meaning": "A garden trowel: planting, digging small holes, gardening.",
+   "drawing": "A pointed, scooped blade on a short round handle, shown diagonally.",
+   "closest": "trowel (construccion): a flat masonry trowel for mortar; the garden trowel is a scoop for soil."
+  },
+  {
+   "name": "hand-fork",
+   "meaning": "A hand fork: loosening soil, weeding, small garden tasks.",
+   "drawing": "Three short curved tines on a short round handle, shown diagonally.",
+   "closest": "pitchfork (agricultura): a long hay fork; fork (cocina): cutlery. This is a small soil tool."
+  },
+  {
+   "name": "rake",
+   "meaning": "A garden rake: raking soil, yard work, leveling beds.",
+   "drawing": "A long handle ending in a straight crossbar with short tines pointing down.",
+   "closest": "leaf-rake: a fan of long tines; this is the straight bow rake."
+  },
+  {
+   "name": "leaf-rake",
+   "meaning": "A leaf rake: fall cleanup, gathering leaves, lawn care.",
+   "drawing": "A long handle ending in a wide fan of spread springy tines.",
+   "closest": "rake: a straight head; the leaf rake is a fan."
+  },
+  {
+   "name": "hoe",
+   "meaning": "A hoe: weeding, tilling, cultivating beds.",
+   "drawing": "A long handle with a flat blade bent at a right angle at its end.",
+   "closest": "rake: tines; the hoe has a single flat blade."
+  },
+  {
+   "name": "spade",
+   "meaning": "A garden spade: digging beds, edging, turning soil.",
+   "drawing": "A flat rectangular blade with a straight edge on a shaft with a D-shaped grip.",
+   "closest": "shovel (herramientas): a rounded scoop for construction; spade-suit (juegos): the card suit. This is the flat garden spade."
+  },
+  {
+   "name": "watering-can",
+   "meaning": "A watering can: water plants, watering tasks, plant care.",
+   "drawing": "A rounded can with a handle over the top and a long spout ending in a rose head.",
+   "closest": "sprinkler (agricultura): automatic irrigation; the can is watering by hand."
+  },
+  {
+   "name": "watering-can-clock",
+   "meaning": "Watering due: watering reminder, next watering.",
+   "drawing": "The watering can with the engine's clock badge.",
+   "closest": "sprinkler-clock (agricultura): an irrigation timer; this is a reminder to water by hand."
+  },
+  {
+   "name": "garden-hose",
+   "meaning": "A garden hose: watering, outdoor tap, washing.",
+   "drawing": "A coiled hose loop ending in a spray nozzle with a trigger.",
+   "closest": "spigot (construccion): the outdoor tap; fire-hose (seguridad-laboral): a fire reel. This is the hose with its nozzle."
+  },
+  {
+   "name": "pruning-shears",
+   "meaning": "Pruning shears: prune, trim, cut back plants.",
+   "drawing": "Two short curved bypass blades over two handles joined by a small spring.",
+   "closest": "scissors (edicion): straight blades for paper; the pruners have curved blades and a spring."
+  },
+  {
+   "name": "lawn-mower",
+   "meaning": "A lawn mower: mowing, lawn care services.",
+   "drawing": "A low mower deck on two wheels with an angled handle rising behind it.",
+   "closest": "scythe (agricultura): mowing by hand; this is the push mower."
+  },
+  {
+   "name": "riding-mower",
+   "meaning": "A riding mower: large lawns, groundskeeping.",
+   "drawing": "A small lawn tractor with a seat, a steering wheel, a deck underneath, and two wheels.",
+   "closest": "tractor (agricultura): a farm tractor; the riding mower is lower, with a cutting deck."
+  },
+  {
+   "name": "robot-mower",
+   "meaning": "A robot lawn mower: smart garden, automatic mowing.",
+   "drawing": "A low dome-shaped body on two wheels with a small sensor bump on top.",
+   "closest": "robot-vacuum (electrodomesticos): a flat disc indoors; the mower is a domed wheeled body."
+  },
+  {
+   "name": "robot-mower-dock",
+   "meaning": "The mower's charging base: docked, charging, return to base.",
+   "drawing": "The robot mower parked on a flat base plate with a short upright post at its back.",
+   "closest": "robot-vacuum-dock (electrodomesticos): the vacuum's base; dock (ventanas) is the app dock. This is the mower's charging base."
+  },
+  {
+   "name": "robot-mower-alert",
+   "meaning": "Mower needs attention: stuck, lifted, blade fault.",
+   "drawing": "The robot mower with the engine's alert badge.",
+   "closest": "robot-vacuum-alert (electrodomesticos): the same state for the vacuum."
+  },
+  {
+   "name": "string-trimmer",
+   "meaning": "A string trimmer: edging, weed whacking, lawn borders.",
+   "drawing": "A long diagonal shaft with a mid handle, ending at the bottom in a round spinning head with a guard.",
+   "closest": "lawn-mower: a wheeled deck; the trimmer is a handheld shaft."
+  },
+  {
+   "name": "garden-glove",
+   "meaning": "A gardening glove: protective gardening, garden supplies.",
+   "drawing": "A single glove with spread fingers and a long flared cuff with a seam.",
+   "closest": "gloves (ropa): a winter pair; safety-glove (seguridad-laboral): work PPE; rubber-glove (limpieza). This is the garden glove, the weakest of the four: judge's call."
+  },
+  {
+   "name": "plant-mister",
+   "meaning": "A plant mister: misting, humidity for plants, a plant care task.",
+   "drawing": "A slim bottle with a pump top and a fan of fine mist dots leaving its nozzle.",
+   "closest": "spray-bottle (limpieza): a trigger cleaner; the mister is a pump bottle for plants."
+  },
+  {
+   "name": "plant-label",
+   "meaning": "A plant marker: name a plant, tag plants, garden labels.",
+   "drawing": "A pointed stake pushed into a ground line with a blank rounded label at its top.",
+   "closest": "price-tag (comercio): a hanging price tag; this is a stake label in soil."
+  },
+  {
+   "name": "potting-mix",
+   "meaning": "A bag of potting mix: soil for pots, garden supplies.",
+   "drawing": "A soft bag folded at the top with a small sprout on its face and a mound of soil beside it.",
+   "closest": "soil (agricultura): a soil profile in the ground; fertilizer (agricultura): nutrients. This is bagged mix to buy."
+  },
+  {
+   "name": "garden",
+   "meaning": "A garden: the planted garden, gardening as a category, garden amenity.",
+   "drawing": "A short picket fence segment with a bush and a flower rising behind it.",
+   "closest": "yard (bienes-raices): a house with a tree, the property's outdoor space; park (lugares): public green space. This is the planted garden, the gardening category head."
+  },
+  {
+   "name": "garden-layout",
+   "meaning": "A garden plan: garden planner, bed layout, landscape design.",
+   "drawing": "A rounded square seen from above with three rectangular beds holding rows of plant dots.",
+   "closest": "farmland (agricultura): fields from above; layout (navegacion) is a page layout. This is a home garden plan."
+  },
+  {
+   "name": "raised-bed",
+   "meaning": "A raised garden bed: vegetable gardens, kitchen gardens, allotments.",
+   "drawing": "A plank box seen in perspective with three sprouts in a row on top.",
+   "closest": "flower-bed: a mounded border. Contains bed (hogar) only as a word; search's loft-bed is furniture."
+  },
+  {
+   "name": "green-wall",
+   "meaning": "A green wall: living walls, vertical gardens, biophilic design.",
+   "drawing": "A square frame divided into a grid, each cell holding a small leafy tuft.",
+   "closest": "vertical-farm (agricultura): stacked growing shelves; the green wall is a planted facade."
+  },
+  {
+   "name": "compost-bin",
+   "meaning": "A garden compost bin: composting garden waste, soil making.",
+   "drawing": "A slatted box with a heap of matter on top and a leaf sticking out.",
+   "closest": "recycle (adopted by medio-ambiente): recycling; the compost bin is a garden fixture. Both scopes list compost: one icon, judge's call."
+  },
+  {
+   "name": "garden-arch",
+   "meaning": "A garden arch: rose arches, garden entrances, wedding venues.",
+   "drawing": "A rounded arch of two posts with a vine and leaves climbing over it.",
+   "closest": "pergola and gazebo (hogar): a flat beam roof and a roofed pavilion; arch (construccion) is masonry. This is a curved arch with climbers."
+  },
+  {
+   "name": "stepping-stones",
+   "meaning": "Stepping stones: garden paths, landscaping, a path through.",
+   "drawing": "Three oval stones diminishing in perspective along a curve.",
+   "closest": "stacked-stones (bienestar): a balance cairn; these are laid flat as a path."
+  },
+  {
+   "name": "zen-garden",
+   "meaning": "A zen garden: calm, mindfulness, Japanese rock gardens.",
+   "drawing": "Two rounded rocks with concentric raked lines circling them inside a rounded rectangle.",
+   "closest": "stacked-stones (bienestar): a cairn; the zen garden is raked sand around rocks."
+  },
+  {
+   "name": "garden-gnome",
+   "meaning": "A garden gnome: garden decor, playful outdoor ornaments.",
+   "drawing": "A small figure with a tall pointed hat, a beard triangle, and a round body.",
+   "closest": "none: no garden ornament in the set."
+  },
+  {
+   "name": "plant-light",
+   "meaning": "Light needs: low, medium, or bright light for a plant.",
+   "drawing": "A small sprout under a sun whose rays light up as levels.",
+   "closest": "grow-light (agricultura): a lamp; sun (lugares): the weather. This is a plant's requirement scale."
+  },
+  {
+   "name": "plant-water",
+   "meaning": "Water needs: how much water a plant needs.",
+   "drawing": "A small sprout under three droplets that light up as levels.",
+   "closest": "watering-can: the action of watering; this is the requirement scale. Contains water only as a word; search's water-treatment, dam, and wilted-plant are infrastructure and a crop symptom."
+  },
+  {
+   "name": "plant-humidity",
+   "meaning": "Humidity needs: dry, average, or humid air for a plant.",
+   "drawing": "A leaf with three short wavy vapor lines beside it that light up as levels.",
+   "closest": "plant-mister: the misting tool; this is the requirement scale."
+  },
+  {
+   "name": "pet-safe-plant",
+   "meaning": "Pet-safe plant: non-toxic to cats and dogs; with the slash, toxic to pets.",
+   "drawing": "A leaf with a small paw print inside it.",
+   "closest": "pets (mascotas): the pets category; this is a plant attribute. The engine's slash gives the toxic-to-pets version."
+  }
+ ],
+ "animales": [
+  {
+   "name": "lion",
+   "meaning": "A lion, the maned big cat: zoos, wildlife, kids' apps, courage and leadership.",
+   "drawing": "Big cat standing in profile, its head ringed by a scalloped mane, a tufted tail; the mane alone tells it.",
+   "closest": "cat (mascotas): a small house cat with no mane."
+  },
+  {
+   "name": "lion-face",
+   "meaning": "The lion's face front-on: avatars, stickers, mascots, animal pickers.",
+   "drawing": "Round face with ears, eyes and muzzle, framed by a scalloped mane ring.",
+   "closest": "lion: the full body in profile; this is the head for avatars."
+  },
+  {
+   "name": "tiger",
+   "meaning": "A tiger: wildlife, zoos, conservation, strength.",
+   "drawing": "Big cat walking in profile with three or four stripe cuts across the back and a long tail; no mane.",
+   "closest": "lion: maneless, the stripes tell it."
+  },
+  {
+   "name": "tiger-face",
+   "meaning": "The tiger's face front-on: avatars, stickers, animal pickers.",
+   "drawing": "Round cat face with small round ears and stripe strokes on the forehead and cheeks.",
+   "closest": "lion-face: no mane, stripes instead."
+  },
+  {
+   "name": "leopard",
+   "meaning": "A leopard (panther as a tag): wildlife and zoo apps, safaris.",
+   "drawing": "Spotted big cat lying along a branch, legs and tail hanging down; a few dots on the body.",
+   "closest": "tiger: spots and a branch instead of stripes on the ground."
+  },
+  {
+   "name": "cheetah",
+   "meaning": "A cheetah at full sprint: speed, fast mode, wildlife.",
+   "drawing": "Lean cat stretched mid-stride, legs reaching fore and aft, small head, a tear line from the eye.",
+   "closest": "leopard: the sprint and the tear line; fast-forward (dispositivos) is the media control."
+  },
+  {
+   "name": "wolf",
+   "meaning": "A wolf: wildlife, packs, forests, the wild.",
+   "drawing": "Lean canine trotting, long legs, pointed ears, long muzzle, bushy tail held low.",
+   "closest": "dog-side (mascotas): longer legs and muzzle, tail low, a wild animal."
+  },
+  {
+   "name": "wolf-howling",
+   "meaning": "A wolf howling: night, wilderness, calling the pack.",
+   "drawing": "Wolf seated in profile, muzzle raised straight up toward a small crescent moon.",
+   "closest": "wolf: the seated howl; dog-bark (mascotas) is a pet barking."
+  },
+  {
+   "name": "wolf-face",
+   "meaning": "The wolf's face front-on: avatars, mascots, team names.",
+   "drawing": "Long narrow muzzle, tall pointed ears and a ruff of cheek fur in a V.",
+   "closest": "fox-face: a longer muzzle and a ruff, no white cheeks."
+  },
+  {
+   "name": "fox",
+   "meaning": "A fox: wildlife, forests, cleverness, mascots.",
+   "drawing": "Fox trotting in profile, pointed ears, narrow snout, a big brush tail with an outlined tip.",
+   "closest": "dog-side (mascotas): the brush tail and narrow snout."
+  },
+  {
+   "name": "fox-face",
+   "meaning": "The fox's face front-on: anonymous-user avatars, mascots, stickers.",
+   "drawing": "Triangular face with tall pointed ears and two cheek tufts meeting at the nose.",
+   "closest": "fox: the full body; this is the head for avatars."
+  },
+  {
+   "name": "fennec-fox",
+   "meaning": "A fennec fox: deserts, keen hearing, kids' apps.",
+   "drawing": "Tiny fox seated, its ears nearly as tall as its body.",
+   "closest": "fox: the giant ears and seated pose."
+  },
+  {
+   "name": "bear",
+   "meaning": "A brown bear (grizzly as a tag): wildlife, forests, national parks.",
+   "drawing": "Bear walking on all fours in profile, a shoulder hump, small round ears, no visible tail.",
+   "closest": "teddy-bear (juegos): a toy front-on; bear-market (comercio) is the falling market."
+  },
+  {
+   "name": "bear-standing",
+   "meaning": "A bear on its hind legs: size, encounters, strength.",
+   "drawing": "Bear upright in profile, forelegs raised, head turned forward.",
+   "closest": "bear: the upright pose."
+  },
+  {
+   "name": "bear-sleeping",
+   "meaning": "A sleeping bear: hibernation, sleep mode, dormant accounts, off-season.",
+   "drawing": "Bear lying curled on its side with a closed-eye arc, under the arch of a den.",
+   "closest": "power-hibernate (dispositivos): a power symbol; cat-sleeping (mascotas) is a pet napping."
+  },
+  {
+   "name": "bear-face",
+   "meaning": "The bear's face front-on: avatars, mascots, kids' apps.",
+   "drawing": "Round head, two round ears on top, an oval muzzle with the nose.",
+   "closest": "teddy-bear (juegos): the toy's whole body; this is the wild bear's head."
+  },
+  {
+   "name": "bear-alert",
+   "meaning": "Bear activity warning: trails and campgrounds under advisory.",
+   "drawing": "The bear on all fours with the engine's alert badge.",
+   "closest": "trail-alert (camping): a trail hazard in general; dog-alert (mascotas) is a dog at home."
+  },
+  {
+   "name": "polar-bear",
+   "meaning": "A polar bear: the Arctic, cold, climate change.",
+   "drawing": "Bear with a long neck and small head held low, no hump, walking on an ice-floe line.",
+   "closest": "bear: the long neck, no hump, the ice."
+  },
+  {
+   "name": "panda",
+   "meaning": "A giant panda: conservation, China, zoos, gentleness.",
+   "drawing": "Panda seated front-on holding a bamboo stalk, round ears, oval eye patches outlined.",
+   "closest": "bear: the seated front view, the patches and bamboo."
+  },
+  {
+   "name": "panda-face",
+   "meaning": "The panda's face front-on: avatars, stickers, kids' apps.",
+   "drawing": "Round head, round ears, two slanted oval eye patches and a small nose.",
+   "closest": "bear-face: the eye patches."
+  },
+  {
+   "name": "red-panda",
+   "meaning": "A red panda: Himalayan wildlife, zoos, cute mascots.",
+   "drawing": "Small animal walking along a branch, white-rimmed ears, a long ringed tail.",
+   "closest": "raccoon: on a branch and with no mask; panda is another animal."
+  },
+  {
+   "name": "koala",
+   "meaning": "A koala: Australia, eucalyptus, sleep, cuddly mascots.",
+   "drawing": "Koala clinging to a vertical trunk, big round fluffy ears, a large oval nose.",
+   "closest": "bear: clings to a trunk, the ears and nose."
+  },
+  {
+   "name": "koala-face",
+   "meaning": "The koala's face front-on: avatars, kids' apps.",
+   "drawing": "Wide round fluffy ears set out to the sides and a big oval nose.",
+   "closest": "bear-face: ears set wide and the big nose."
+  },
+  {
+   "name": "monkey",
+   "meaning": "A monkey: zoos, play, mischief, chaos testing.",
+   "drawing": "Monkey seated in profile, a round ear, a long tail curled into a spiral.",
+   "closest": "gorilla and chimpanzee: the spiral tail."
+  },
+  {
+   "name": "monkey-face",
+   "meaning": "The monkey's face front-on: avatars, stickers, mischief.",
+   "drawing": "Heart-shaped face outline inside a round head, big round ears on the sides.",
+   "closest": "bear-face: ears on the sides and the heart-shaped face."
+  },
+  {
+   "name": "gorilla",
+   "meaning": "A gorilla: strength, jungles, zoos, conservation.",
+   "drawing": "Gorilla knuckle-walking in profile, massive shoulders, low head, short legs.",
+   "closest": "monkey: no tail, the bulk and the knuckle-walk."
+  },
+  {
+   "name": "orangutan",
+   "meaning": "An orangutan: rainforests, palm-oil conservation, zoos.",
+   "drawing": "Shaggy ape hanging by long arms from a branch, short legs tucked.",
+   "closest": "sloth: hangs by its arms, not by claws, with a shaggy outline."
+  },
+  {
+   "name": "lemur",
+   "meaning": "A ring-tailed lemur: Madagascar, zoos, kids' apps.",
+   "drawing": "Lemur on all fours with its tail raised in a tall S, ring bands cut across it.",
+   "closest": "monkey: the banded upright tail."
+  },
+  {
+   "name": "elephant",
+   "meaning": "An elephant: wildlife, memory, big data, heavy loads.",
+   "drawing": "Elephant in profile, a large ear flap, the trunk curling down, a tusk.",
+   "closest": "mammoth: no fur, a smaller tusk, a flat back."
+  },
+  {
+   "name": "elephant-face",
+   "meaning": "The elephant's face front-on: avatars, kids' apps.",
+   "drawing": "Domed head between two wide ear flaps, the trunk hanging down the middle.",
+   "closest": "elephant: the head front-on."
+  },
+  {
+   "name": "mammoth",
+   "meaning": "A woolly mammoth: prehistory, extinction, museums, kids' learning.",
+   "drawing": "Elephant with a domed head, a back sloping from a hump, long tusks curving up, a shaggy fringe.",
+   "closest": "elephant: the dome, hump, curved tusks and fur."
+  },
+  {
+   "name": "giraffe",
+   "meaning": "A giraffe: savanna, height, zoos, kids' apps.",
+   "drawing": "Giraffe in profile with its long neck up, two ossicones, a few patch outlines on the body.",
+   "closest": "none: the neck is unique."
+  },
+  {
+   "name": "zebra",
+   "meaning": "A zebra: savanna, stripes, zoos.",
+   "drawing": "Horse-like profile with an upright brush mane and three stripe cuts across body and neck.",
+   "closest": "horse: the stripes and stiff mane; stripes (formas) is a pattern."
+  },
+  {
+   "name": "hippo",
+   "meaning": "A hippopotamus: rivers, Africa, zoos, heaviness.",
+   "drawing": "Barrel body on short legs, a huge square muzzle, tiny ears, standing at a water line.",
+   "closest": "rhino: no horns, the square muzzle."
+  },
+  {
+   "name": "rhino",
+   "meaning": "A rhinoceros: endangered wildlife, savanna, conservation.",
+   "drawing": "Heavy body in profile with two horns rising from the snout, small ears.",
+   "closest": "hippo: the horns."
+  },
+  {
+   "name": "horse",
+   "meaning": "A horse: farms, stables, equestrian centers, horsepower.",
+   "drawing": "Horse standing in profile, arched neck, flowing mane and tail.",
+   "closest": "horse-riding (deportes): a rider on the horse; chess-knight (juegos): a carved head on a base; rocking-horse (juegos): the toy."
+  },
+  {
+   "name": "horse-running",
+   "meaning": "A galloping horse: racing, speed, freedom.",
+   "drawing": "Horse mid-gallop, legs stretched fore and aft, mane and tail flying.",
+   "closest": "horse: the gallop."
+  },
+  {
+   "name": "donkey",
+   "meaning": "A donkey (burro, mule as tags): farms, work animals, stubbornness.",
+   "drawing": "Small stocky horse with long upright ears, a short brush mane, a tufted tail.",
+   "closest": "horse: the long ears and short mane."
+  },
+  {
+   "name": "unicorn",
+   "meaning": "A unicorn: fantasy, kids' apps, magic, startup unicorns.",
+   "drawing": "Horse in profile, head high, a spiral horn on the forehead.",
+   "closest": "horse: the horn."
+  },
+  {
+   "name": "unicorn-face",
+   "meaning": "The unicorn's face front-on: avatars, stickers, kids' apps, magic.",
+   "drawing": "The horse's long face front-on with a spiral horn rising from the forelock.",
+   "closest": "horse-face: the horn."
+  },
+  {
+   "name": "saddle",
+   "meaning": "A horse saddle: riding lessons, stables, tack.",
+   "drawing": "Saddle seat with a raised pommel and cantle, a stirrup hanging below.",
+   "closest": "horse-riding (deportes): the rider and horse; this is the tack alone."
+  },
+  {
+   "name": "cow",
+   "meaning": "A cow: dairy farms, livestock, ranching, milk.",
+   "drawing": "Dairy cow in profile with short horns, an udder, and one or two patch outlines.",
+   "closest": "bull: the udder and patches; milk (bebidas) is the carton."
+  },
+  {
+   "name": "cow-face",
+   "meaning": "The cow's face front-on: beef on menus, farm apps, avatars.",
+   "drawing": "Wide head with short horns, ears out to the sides, a broad muzzle with two nostrils.",
+   "closest": "cow: the head front-on, the label for beef."
+  },
+  {
+   "name": "cow-plus",
+   "meaning": "Add an animal to the herd: livestock registers and farm apps.",
+   "drawing": "The cow with the engine's plus badge.",
+   "closest": "paw-plus (mascotas): adds a pet profile."
+  },
+  {
+   "name": "cow-alert",
+   "meaning": "An animal needing attention: illness, injury, a missed check.",
+   "drawing": "The cow with the engine's alert badge.",
+   "closest": "paw-alert (mascotas): a lost pet."
+  },
+  {
+   "name": "cow-skull",
+   "meaning": "A cattle skull with horns: deserts, drought, the Old West.",
+   "drawing": "Bovine skull front-on, a long tapered face, two eye holes, horns sweeping out.",
+   "closest": "skull (anatomia): a human skull; skull-crossbones (seguridad-laboral) is the poison sign."
+  },
+  {
+   "name": "highland-cow",
+   "meaning": "A Highland cow: shaggy cattle, cold pastures, a popular farm mascot.",
+   "drawing": "Shaggy bovine with a fringe falling over its eyes and wide horns curving out and up.",
+   "closest": "yak: the fringe over the eyes and wide open horns, no skirt to the hooves."
+  },
+  {
+   "name": "bull",
+   "meaning": "A bull: strength, ranching, rodeos, charging.",
+   "drawing": "Muscular bovine in profile, head lowered, wide horns pointing forward, no udder.",
+   "closest": "cow: horns forward, charging; bull-market (comercio) is the rising market."
+  },
+  {
+   "name": "ox",
+   "meaning": "An ox in a yoke: draft work, plowing, traditional farming.",
+   "drawing": "Bovine walking with a wooden yoke bar across its neck.",
+   "closest": "bull: the yoke makes it a working animal."
+  },
+  {
+   "name": "bison",
+   "meaning": "A bison (buffalo as a tag): prairies, national parks.",
+   "drawing": "Huge shaggy hump over the shoulders, a bearded low head, short horns, slim hindquarters.",
+   "closest": "bull: the shaggy hump and beard."
+  },
+  {
+   "name": "yak",
+   "meaning": "A yak: the Himalayas, high altitude, yak shaving in developer slang.",
+   "drawing": "Bovine with a long hair skirt hanging to its hooves and upturned horns.",
+   "closest": "bison: the hair skirt and upturned horns."
+  },
+  {
+   "name": "sheep",
+   "meaning": "A sheep: farms, wool, flocks.",
+   "drawing": "Woolly cloud body with a scalloped outline, a small head and thin legs.",
+   "closest": "none: the scalloped wool tells it."
+  },
+  {
+   "name": "sheep-jumping",
+   "meaning": "A sheep leaping a fence: counting sheep, bedtime, insomnia, sleep apps.",
+   "drawing": "The sheep mid-leap over a short two-rail fence.",
+   "closest": "sleep (bienestar): sleep tracking; sheep stands still."
+  },
+  {
+   "name": "sheep-ram",
+   "meaning": "A ram, the horned male sheep (bighorn as a tag): strength, butting heads, mountains.",
+   "drawing": "The sheep's base with big horns curled in a spiral beside the head.",
+   "closest": "sheep and goat: the spiral horns; named after its family because a bare ram collides with RAM memory (memory in datos)."
+  },
+  {
+   "name": "goat",
+   "meaning": "A goat: farms, dairy, petting zoos, cheese.",
+   "drawing": "Goat in profile with a beard, horns curving back, a short upturned tail.",
+   "closest": "sheep: a smooth coat, the beard and horns."
+  },
+  {
+   "name": "mountain-goat",
+   "meaning": "A mountain goat (ibex as a tag): mountains, climbing, hiking apps.",
+   "drawing": "Goat with long backswept horns standing on a rocky peak.",
+   "closest": "goat: the peak and the long horns."
+  },
+  {
+   "name": "pig",
+   "meaning": "A pig: farms, pork, mud, abundance.",
+   "drawing": "Round body in profile, a disc snout, a folded ear and a curly tail.",
+   "closest": "piggy-bank (comercio): the coin slot and savings; this is the animal."
+  },
+  {
+   "name": "pig-face",
+   "meaning": "The pig's face front-on: pork on menus, farm apps, avatars.",
+   "drawing": "Round head with folded ears and a big oval snout with two nostrils.",
+   "closest": "piggy-bank (comercio): a savings object in profile."
+  },
+  {
+   "name": "boar",
+   "meaning": "A wild boar: forests, wildlife, crop damage.",
+   "drawing": "Pig with a bristly ridged back, a long snout, small tusks and a straight tail.",
+   "closest": "pig: the bristles, tusks and straight tail."
+  },
+  {
+   "name": "deer",
+   "meaning": "A deer (stag): forests, wildlife, nature apps.",
+   "drawing": "Stag standing in profile with branched antlers and a short tail.",
+   "closest": "moose and reindeer: thin branched antlers, no ruff."
+  },
+  {
+   "name": "deer-crossing",
+   "meaning": "The deer-crossing road sign: wildlife on the road ahead.",
+   "drawing": "A rounded warning diamond with the deer leaping inside, the deer large enough to be the subject.",
+   "closest": "deer-alert: a hazard report on the deer; this is the road sign, which conduccion's crossings don't include (the judge may move it there)."
+  },
+  {
+   "name": "fawn",
+   "meaning": "A fawn: young wildlife, spring, gentleness.",
+   "drawing": "Young deer with long legs, big ears, no antlers, and spot dots on the back.",
+   "closest": "deer: no antlers, the spots."
+  },
+  {
+   "name": "moose",
+   "meaning": "A moose (elk as a tag in Europe): northern forests, Canada, Scandinavia.",
+   "drawing": "Heavy deer with broad palmate antlers, a long drooping muzzle, a hump and a dewlap.",
+   "closest": "deer: the flat antlers and drooping muzzle."
+  },
+  {
+   "name": "reindeer",
+   "meaning": "A reindeer (caribou): the Arctic, winter, holidays.",
+   "drawing": "Deer with tall sweeping antlers, a forward brow tine and a shaggy neck ruff.",
+   "closest": "deer: the ruff and brow tine; moose has flat antlers."
+  },
+  {
+   "name": "gazelle",
+   "meaning": "A gazelle: leaping, grace, speed.",
+   "drawing": "Small antelope mid-leap with lyre-shaped horns and legs tucked.",
+   "closest": "antelope: the leap and lyre horns."
+  },
+  {
+   "name": "camel",
+   "meaning": "A camel (dromedary): deserts, caravans, endurance.",
+   "drawing": "One-humped camel in profile with a long curved neck and long legs.",
+   "closest": "camel-bactrian: one hump."
+  },
+  {
+   "name": "camel-bactrian",
+   "meaning": "A Bactrian camel: Central Asian steppes, cold deserts.",
+   "drawing": "The camel's base with two humps.",
+   "closest": "camel: two humps."
+  },
+  {
+   "name": "llama",
+   "meaning": "A llama (alpaca as a tag): the Andes, wool, pack animals.",
+   "drawing": "Woolly body with a long upright neck and tall banana-shaped ears.",
+   "closest": "camel: no hump, the upright neck and ears."
+  },
+  {
+   "name": "kangaroo",
+   "meaning": "A kangaroo (wallaby as a tag): Australia, hopping, leaps.",
+   "drawing": "Kangaroo mid-hop on big hind legs, a thick tail behind, small forelegs.",
+   "closest": "hare: upright, the thick tail."
+  },
+  {
+   "name": "opossum",
+   "meaning": "An opossum (tlacuache): night wildlife, playing dead.",
+   "drawing": "Opossum hanging upside down from a branch by its bare tail, pointed snout.",
+   "closest": "field-mouse: hangs by its tail."
+  },
+  {
+   "name": "platypus",
+   "meaning": "A platypus: Australia, oddities, kids' learning.",
+   "drawing": "Flat body with a duck bill, webbed feet and a paddle tail.",
+   "closest": "beaver: the bill."
+  },
+  {
+   "name": "sloth",
+   "meaning": "A sloth: slow mode, rest, rainforests.",
+   "drawing": "Sloth hanging under a branch by hooked claws, a round face with eye masks.",
+   "closest": "orangutan: hooked claws and the masked face; slow-motion (dispositivos) is the video speed."
+  },
+  {
+   "name": "armadillo",
+   "meaning": "An armadillo: the Americas, armor, protection.",
+   "drawing": "Low animal with a domed shell of bands, a small pointed head and a tapering tail.",
+   "closest": "pangolin: bands, not scales."
+  },
+  {
+   "name": "anteater",
+   "meaning": "A giant anteater: the Americas, ants, kids' learning.",
+   "drawing": "Long tube snout, a low head, a big bushy tail as long as its body.",
+   "closest": "aardvark: no ears to speak of, the huge tail."
+  },
+  {
+   "name": "squirrel",
+   "meaning": "A squirrel: parks, saving and stashing, autumn.",
+   "drawing": "Squirrel sitting up holding an acorn, a bushy tail curled up in an S.",
+   "closest": "rat (limpieza): a pest with a thin tail."
+  },
+  {
+   "name": "beaver",
+   "meaning": "A beaver: rivers, building, hard work.",
+   "drawing": "Beaver in profile with a flat paddle tail and big front teeth, beside a gnawed log.",
+   "closest": "platypus: teeth and a log, not a bill."
+  },
+  {
+   "name": "porcupine",
+   "meaning": "A porcupine: quills, defense, forests.",
+   "drawing": "Rodent with long quills fanned back from head to tail.",
+   "closest": "hedgehog: long fanned quills, not a short dome."
+  },
+  {
+   "name": "field-mouse",
+   "meaning": "A wild mouse: fields, harvest, small wildlife.",
+   "drawing": "Small mouse sitting up on its hind legs, a big round ear, holding a seed, a thin tail.",
+   "closest": "rat (limpieza): a pest on all fours; mouse (dispositivos) is the computer mouse."
+  },
+  {
+   "name": "groundhog",
+   "meaning": "A groundhog (marmot): Groundhog Day, emerging, repetition.",
+   "drawing": "Rodent standing upright out of a burrow mound, paws at its chest.",
+   "closest": "meerkat: rises out of a burrow; mole digs out face-first."
+  },
+  {
+   "name": "hedgehog",
+   "meaning": "A hedgehog: gardens, prickliness, protection.",
+   "drawing": "Domed back edged with short zigzag spines, a small pointed snout and tiny feet.",
+   "closest": "porcupine: a short spiny dome."
+  },
+  {
+   "name": "mole",
+   "meaning": "A mole: digging, whack-a-mole, an insider.",
+   "drawing": "Mole emerging face-first from a molehill, spade-like front paws.",
+   "closest": "groundhog: a pointed snout and spade paws; the search also finds skin-mole (anatomia, a spot on the skin), sesame (frutas-verduras, tagged for mole sauce) and insider-threat (ciberseguridad, tagged mole): other meanings of the word, not this animal."
+  },
+  {
+   "name": "raccoon",
+   "meaning": "A raccoon: city wildlife, scavenging, night.",
+   "drawing": "Raccoon walking in profile, a mask band across the eyes, a ringed bushy tail.",
+   "closest": "red-panda: the mask, on the ground."
+  },
+  {
+   "name": "skunk",
+   "meaning": "A skunk: bad smells, stink, night wildlife.",
+   "drawing": "Skunk with its bushy tail raised in a tall plume and a stripe from head to tail.",
+   "closest": "squirrel: the stripe and plume tail."
+  },
+  {
+   "name": "meerkat",
+   "meaning": "A meerkat: lookout, watching, monitoring.",
+   "drawing": "Slim animal standing upright on the ground, paws held in front, head turned to look.",
+   "closest": "groundhog: slimmer, standing on the ground and watching."
+  },
+  {
+   "name": "bat",
+   "meaning": "A bat: night, caves, nocturnal mode.",
+   "drawing": "Bat flying, wings spread in scalloped points, a small eared head.",
+   "closest": "fiestas lists a Halloween bat: one drawing should serve both and the animal lives here; baseball-bat and cricket-bat (deportes) are sports bats."
+  },
+  {
+   "name": "bat-hanging",
+   "meaning": "A bat roosting: sleeping by day, caves, quiet hours.",
+   "drawing": "Bat hanging upside down from a line, wings folded around its body.",
+   "closest": "bat: folded and upside down."
+  },
+  {
+   "name": "hoof-print",
+   "meaning": "A cloven hoof track: wildlife tracking, deer, boar, goats.",
+   "drawing": "Two teardrop halves side by side, pointed ends forward.",
+   "closest": "paw (mascotas): pad and toes; horseshoe (agricultura) is the shoe."
+  },
+  {
+   "name": "bear-print",
+   "meaning": "A bear track: wildlife tracking, bear country.",
+   "drawing": "Wide kidney-shaped pad with five toe ovals in an arc and claw tips.",
+   "closest": "paw (mascotas): five toes, claws and a wide pad."
+  },
+  {
+   "name": "claw-marks",
+   "meaning": "Claw marks: scratches, damage, wild animals.",
+   "drawing": "Three parallel curved slashes tapering at both ends.",
+   "closest": "scratching-post (mascotas): the cat's post."
+  },
+  {
+   "name": "livestock-tag",
+   "meaning": "An ear tag: livestock ID, traceability, herd records.",
+   "drawing": "Rounded tag hanging from a round stud, a hole at the top.",
+   "closest": "pet-tag (mascotas): a pet's collar tag."
+  },
+  {
+   "name": "feed-trough",
+   "meaning": "A feed trough: livestock feeding, ranches.",
+   "drawing": "Long trapezoid trough on two legs with a mound of feed.",
+   "closest": "pet-bowl (mascotas): one pet's bowl; hay-bale (agricultura) is the forage."
+  },
+  {
+   "name": "trail-camera",
+   "meaning": "A trail camera: wildlife monitoring, camera traps.",
+   "drawing": "Small boxy camera with a round lens, strapped to a tree trunk.",
+   "closest": "pet-camera (mascotas): an indoor pet cam; security-camera (sistema) is on a wall."
+  }
+ ],
+ "medio-ambiente": [
+  {
+   "name": "bin-recycling",
+   "meaning": "Mixed recycling bin: the recycling stream in a waste-sorting guide, a pickup type, or a map filter.",
+   "drawing": "The family's sorting bin (an open tapered body with a rim) with a looping arrow rising out of its mouth.",
+   "closest": "recycle (the chasing-arrows mark alone) and litter-bin (a street bin): this is the household recycling bin, the base of the bin-* family; bin-location (logistica) is a warehouse shelf, another object."
+  },
+  {
+   "name": "bin-paper",
+   "meaning": "Paper and cardboard stream of waste sorting.",
+   "drawing": "The family's bin with a folded sheet dropping into its mouth.",
+   "closest": "crumpled-paper (a discarded draft in files): this is the paper recycling stream."
+  },
+  {
+   "name": "bin-plastic",
+   "meaning": "Plastic and packaging stream of waste sorting.",
+   "drawing": "The family's bin with a crushed, ribbed bottle dropping in.",
+   "closest": "bottle (a drink): this is the plastics stream. storage-bin (logistica) is a warehouse picking bin, another object."
+  },
+  {
+   "name": "bin-glass",
+   "meaning": "Glass stream of waste sorting (bottle bank).",
+   "drawing": "The family's bin with a lidded jar dropping in.",
+   "closest": "canning-jar (preserving food): this is the glass stream. Contains glass (bebidas), the drinking glass: another concept."
+  },
+  {
+   "name": "bin-organic",
+   "meaning": "Organic and food-scrap stream of waste sorting.",
+   "drawing": "The family's bin with an apple core dropping in.",
+   "closest": "apple-core (the scrap alone, tagged compost): this is the organics collection stream."
+  },
+  {
+   "name": "bin-metal",
+   "meaning": "Metal and cans stream of waste sorting.",
+   "drawing": "The family's bin with a crushed can dropping in.",
+   "closest": "soda-can (a drink): this is the metals stream."
+  },
+  {
+   "name": "bin-electronics",
+   "meaning": "E-waste drop-off stream: phones, cables, small devices.",
+   "drawing": "The family's bin with a plug and its cord dropping in.",
+   "closest": "smartphone-recycle (a device trade-in program): this is the e-waste sorting stream."
+  },
+  {
+   "name": "bin-batteries",
+   "meaning": "Battery collection point.",
+   "drawing": "The family's bin with a cylindrical battery cell dropping in.",
+   "closest": "battery-cell (hardware part): this is where batteries are disposed of."
+  },
+  {
+   "name": "bin-hazardous",
+   "meaning": "Household hazardous waste: paint, solvents, chemicals.",
+   "drawing": "The family's bin with a paint tin dripping one drop as it drops in.",
+   "closest": "toxic-waste (a leaking drum, the pollution): this is the sorting stream for hazardous items."
+  },
+  {
+   "name": "bin-general",
+   "meaning": "General or residual waste stream (landfill bin).",
+   "drawing": "The family's bin with a tied garbage bag dropping in.",
+   "closest": "trash (the interface delete) and trash-bag (taking out the trash): this is the non-recyclable sorting stream."
+  },
+  {
+   "name": "bin-level",
+   "meaning": "Smart bin fill level, for waste-collection routing and sensors.",
+   "drawing": "The family's bin with three stacked level lines inside, drawn as levels from empty to full.",
+   "closest": "trash-full (an interface trash with items): this is a measured fill level. bin-location and silo (search hits) are a warehouse slot and a grain silo."
+  },
+  {
+   "name": "waste-sorting",
+   "meaning": "Separate collection, the whole sorting system.",
+   "drawing": "Three small open bins side by side on one baseline.",
+   "closest": "bin-recycling (one stream): this is the act of sorting into several."
+  },
+  {
+   "name": "compost",
+   "meaning": "Composting, the process and the pile.",
+   "drawing": "A mound of scraps with two steam curls rising and a sprout on top.",
+   "closest": "apple-core (a scrap) and compost-caddy (the kitchen pail). plantas also lists compost in its scope and may propose a garden compost bin, so the judge picks one owner. fertilizer (agricultura) is a bought input, not scraps breaking down."
+  },
+  {
+   "name": "landfill",
+   "meaning": "Landfill site; waste diverted from landfill in reports.",
+   "drawing": "A broad mound drawn in section with layered strata and a stake on top.",
+   "closest": "dumpster (a container) and garbage-pile (an illegal dump): this is the disposal site."
+  },
+  {
+   "name": "garbage-pile",
+   "meaning": "Illegally dumped or uncollected waste, to report to the city.",
+   "drawing": "Three tied bags heaped on a ground line.",
+   "closest": "trash-bag (one bag): this is a dumped heap, what a 311 app takes as a report."
+  },
+  {
+   "name": "toxic-waste",
+   "meaning": "Hazardous or chemical waste, contamination from it.",
+   "drawing": "A steel drum lying on its side leaking a drop into a puddle.",
+   "closest": "oil-barrel (the commodity, upright) and biohazard (a sign): this is waste spilling."
+  },
+  {
+   "name": "plastic-bag",
+   "meaning": "Single-use plastic bag; with the engine's slash, plastic-bag bans.",
+   "drawing": "A thin T-shirt bag with two loop handles and a crease.",
+   "closest": "bag (a shopping bag; contains hit) and produce-bag (mesh, reusable): this is the single-use kind. poly-mailer (logistica) is a shipping envelope."
+  },
+  {
+   "name": "ocean-plastic",
+   "meaning": "Marine litter, plastic in the ocean.",
+   "drawing": "A crushed bottle and a scrap half-sunk among wave lines, the waves cutting through them.",
+   "closest": "message-bottle (nautica: a corked bottle with a note, floating): this is debris with no cork or note, sinking."
+  },
+  {
+   "name": "storm-drain",
+   "meaning": "Storm drain: only rain down the drain, or a clogged drain to report.",
+   "drawing": "A curb grate of short bars with a drop falling into it.",
+   "closest": "water-pollution (a pipe discharging) and sink-trap-clog (a household drain): this is the street drain that leads to rivers and the sea."
+  },
+  {
+   "name": "map-pin-recycle",
+   "meaning": "Recycling point or drop-off location on a map.",
+   "drawing": "The map pin with a looping arrow in place of its dot.",
+   "closest": "map-pin-sprout (a local grower): same family, a recycling location. Contains map-pins, recycle, pin: family bases, expected."
+  },
+  {
+   "name": "calendar-recycle",
+   "meaning": "Recycling collection day, a waste-pickup schedule.",
+   "drawing": "The calendar with a looping arrow on its page.",
+   "closest": "calendar-sprout (planting dates): same family, the pickup schedule."
+  },
+  {
+   "name": "smartphone-recycle",
+   "meaning": "Device trade-in and recycling program.",
+   "drawing": "The smartphone with a looping arrow piece over its lower right corner.",
+   "closest": "bin-electronics (the sorting stream): this is the trade-in program a store offers."
+  },
+  {
+   "name": "refill-pouch",
+   "meaning": "Refill packs for soap, detergent, and cosmetics.",
+   "drawing": "A stand-up pouch with a spout, tilted and pouring into a bottle.",
+   "closest": "refill-station (water) and detergent (laundry): this is the refill pack format."
+  },
+  {
+   "name": "zero-waste",
+   "meaning": "Zero-waste lifestyle: little or no trash.",
+   "drawing": "A mason jar holding a single crumpled scrap.",
+   "closest": "canning-jar (preserving) and bulk-dispenser: this is the zero-waste jar metaphor. produce-bag (search hit) is one reusable bag."
+  },
+  {
+   "name": "leaf-cycle",
+   "meaning": "Sustainability, a renewable cycle.",
+   "drawing": "A leaf inside a single circling arrow.",
+   "closest": "recycle (three chasing arrows) and renewable-energy (energia): this is the sustainability mark."
+  },
+  {
+   "name": "biodegradable",
+   "meaning": "Biodegradable or compostable material.",
+   "drawing": "A leaf whose tip breaks into three dots.",
+   "closest": "leaf-cycle (sustainability): this shows breaking down. spray-bottle-leaf (limpieza) is eco cleaning."
+  },
+  {
+   "name": "eco-score",
+   "meaning": "Sustainability or eco rating of a product.",
+   "drawing": "A leaf over three ascending level bars.",
+   "closest": "energy-rating (an energy label) and seal-leaf: this is a graded score."
+  },
+  {
+   "name": "bag-leaf",
+   "meaning": "Sustainable product or purchase, an eco filter in a store.",
+   "drawing": "The shopping bag with a leaf.",
+   "closest": "tote-bag and produce-bag (reusable bags): this marks a sustainable purchase."
+  },
+  {
+   "name": "route-leaf",
+   "meaning": "Eco-friendly route, the lowest-emission option in maps.",
+   "drawing": "The route with a leaf.",
+   "closest": "route family: same family, the eco route."
+  },
+  {
+   "name": "footprint-carbon",
+   "meaning": "Carbon footprint of a person, product, or trip.",
+   "drawing": "One footprint sole with a smoke puff rising from its heel.",
+   "closest": "footprints (lugares: a pair of steps; contains hit): this is the carbon metric. parcel-leaf (search hit) is eco shipping."
+  },
+  {
+   "name": "footprint-water",
+   "meaning": "Water footprint.",
+   "drawing": "The same footprint sole with a drop at its heel.",
+   "closest": "footprint-carbon: same base, the water metric."
+  },
+  {
+   "name": "carbon-credit",
+   "meaning": "Carbon credit or offset purchase.",
+   "drawing": "A coin with a leaf on its face.",
+   "closest": "coin-stack (savings): this is a tradable credit."
+  },
+  {
+   "name": "carbon-neutral",
+   "meaning": "Carbon neutral or net zero.",
+   "drawing": "A level balance beam with a smoke puff on one pan and a leaf on the other.",
+   "closest": "carbon-credit (buying offsets) and the scales in legal: this is the balance reached. parcel-leaf (search hit) is eco shipping."
+  },
+  {
+   "name": "smokestack-arrow-down",
+   "meaning": "Emissions reduced, a reduction target in a sustainability report.",
+   "drawing": "The smokestack with the engine's arrow-down badge.",
+   "closest": "smokestack (industria: emissions): the badge is the real state, emissions going down."
+  },
+  {
+   "name": "car-emissions",
+   "meaning": "Car tailpipe emissions.",
+   "drawing": "The car in profile with puffs trailing from its exhaust.",
+   "closest": "car-electric and car-hybrid (fuel types): this shows the exhaust."
+  },
+  {
+   "name": "plane-emissions",
+   "meaning": "Flight emissions.",
+   "drawing": "The plane with a cloud trail behind its tail.",
+   "closest": "plane and flight-path (aviacion): this is the emissions of a flight."
+  },
+  {
+   "name": "earth",
+   "meaning": "Planet Earth: Earth Day, the planet, nature.",
+   "drawing": "A circle with two abstract landmasses.",
+   "closest": "globe (nucleo, a meridian grid: web and language): this is the planet itself. Lucide's earth maps to globe today, so the judge decides. globe-stand (a desk globe) and soil are other objects."
+  },
+  {
+   "name": "earth-warming",
+   "meaning": "Global warming, climate change.",
+   "drawing": "The earth with a thermometer standing in front at its right.",
+   "closest": "thermometer-up (temperature rising): this is the climate."
+  },
+  {
+   "name": "earth-heart",
+   "meaning": "Love the planet, Earth Day.",
+   "drawing": "The earth with the engine's heart badge.",
+   "closest": "hand-earth (caring for the planet): the badge is the like."
+  },
+  {
+   "name": "hand-earth",
+   "meaning": "Caring for the planet, a pledge.",
+   "drawing": "An open hand palm up under the earth.",
+   "closest": "hand-sprout (gestos: nurturing growth): same hand, the planet."
+  },
+  {
+   "name": "glacier-melt",
+   "meaning": "Melting glaciers.",
+   "drawing": "A glacier tongue between two peaks, drops falling from its snout.",
+   "closest": "iceberg (lugares: floating ice) and mountain-snow: this is ice retreating."
+  },
+  {
+   "name": "sea-level-rise",
+   "meaning": "Sea level rise.",
+   "drawing": "Water rising up a shore slope toward a house on top, an up arrow over the water.",
+   "closest": "tide-high (nautica: a staff gauge with a rising level, the daily tide): this is the coast and the long-term rise."
+  },
+  {
+   "name": "green-city",
+   "meaning": "Green city: urban greening, sustainable cities.",
+   "drawing": "Two buildings with a round tree in front.",
+   "closest": "city (contains hit) and park: this is urban sustainability."
+  },
+  {
+   "name": "air-quality",
+   "meaning": "Air quality index.",
+   "drawing": "A half dial with a needle, a wind curl under it, drawn with levels.",
+   "closest": "fresh-air (conduccion: car air intake) and air-purifier: this is the outdoor index."
+  },
+  {
+   "name": "air-quality-alert",
+   "meaning": "Poor air quality warning.",
+   "drawing": "The air-quality dial with the engine's alert badge.",
+   "closest": "air-quality: the badge is the warning state."
+  },
+  {
+   "name": "smog",
+   "meaning": "Smog over a city.",
+   "drawing": "A city skyline under a thick wavy band.",
+   "closest": "fog (clima: weather) and smokestack: this is pollution over a city; clima keeps haze and smoke."
+  },
+  {
+   "name": "water-pollution",
+   "meaning": "Water pollution: discharge into rivers and seas.",
+   "drawing": "A pipe from the left pouring a stream into wave lines.",
+   "closest": "pipeline-leak (industria: a leak): this is a discharge into water."
+  },
+  {
+   "name": "oil-spill",
+   "meaning": "Oil spill at sea.",
+   "drawing": "A large drop resting on waves with a ring spreading around it.",
+   "closest": "spill (limpieza: a spilled drink; contains hit) and oil-drop (energia: fuel): this is the slick on water."
+  },
+  {
+   "name": "noise-pollution",
+   "meaning": "Noise pollution.",
+   "drawing": "A house with jagged zigzag waves arriving at it from the left.",
+   "closest": "noise-level (accesibilidad: a decibel meter): this is the nuisance."
+  },
+  {
+   "name": "light-pollution",
+   "meaning": "Light pollution.",
+   "drawing": "A city skyline with a dome of rays above it and a single faint star.",
+   "closest": "city and street-lamp: this is the glow that hides the stars."
+  },
+  {
+   "name": "deforestation",
+   "meaning": "Deforestation: forest loss.",
+   "drawing": "One standing pine beside two stumps.",
+   "closest": "tree-stump (one felled tree) and forest: this is the loss of a stand."
+  },
+  {
+   "name": "tree-planting",
+   "meaning": "Reforestation, tree planting.",
+   "drawing": "A sapling in a mound with a shovel stuck beside it.",
+   "closest": "sprout and hand-sprout: this is the planting action."
+  },
+  {
+   "name": "wildfire",
+   "meaning": "Wildfire, forest fire.",
+   "drawing": "A pine tree with a flame rising at its side.",
+   "closest": "fire-danger (camping: a risk dial), fire-lookout, and flame: this is the fire."
+  },
+  {
+   "name": "wildfire-alert",
+   "meaning": "Wildfire warning, an evacuation or smoke alert.",
+   "drawing": "The wildfire with the engine's alert badge.",
+   "closest": "wildfire and fire-danger (a standing risk rating): the badge is an active warning."
+  },
+  {
+   "name": "wildlife-crossing",
+   "meaning": "Wildlife crossing (ecoduct) over a road.",
+   "drawing": "A bridge arch with a tree on top, a road below.",
+   "closest": "bridge (lugares): this is for animals."
+  },
+  {
+   "name": "hand-droplet",
+   "meaning": "Save water.",
+   "drawing": "An open hand palm up holding a drop.",
+   "closest": "hand-sprout (nurturing): same hand, water. Contains droplet: the hand family's piece."
+  },
+  {
+   "name": "rain-barrel",
+   "meaning": "Rainwater harvesting.",
+   "drawing": "A barrel under a downspout, drops falling in.",
+   "closest": "rain-gutter (hogar: a roof gutter) and water-tank: this is collecting rain."
+  },
+  {
+   "name": "water-recycling",
+   "meaning": "Water recycling and reuse.",
+   "drawing": "A drop inside a single circling arrow.",
+   "closest": "leaf-cycle (sustainability) and water-treatment (energia: a plant): this is water reuse."
+  },
+  {
+   "name": "drought",
+   "meaning": "Drought.",
+   "drawing": "Cracked ground under a blazing sun.",
+   "closest": "desert (landform) and wilted-plant (crop stress): this is the hazard. insurance-crop (agricultura) is crop insurance."
+  },
+  {
+   "name": "flood",
+   "meaning": "Flood.",
+   "drawing": "The roof of a house poking above three wave lines.",
+   "closest": "water-damage (hogar: a wave and a drop inside a house) and car-flood: this is the flood itself. leak-sensor-alert (electrodomesticos) is a home water sensor."
+  },
+  {
+   "name": "flood-alert",
+   "meaning": "Flood warning.",
+   "drawing": "The flood with the engine's alert badge.",
+   "closest": "flood: the badge is the warning. leak-sensor-alert is a home leak, not a flood warning."
+  },
+  {
+   "name": "earthquake",
+   "meaning": "Earthquake.",
+   "drawing": "A ground line split by a zigzag fissure, short shake marks on both sides.",
+   "closest": "seismograph (an instrument), tectonic-plates (geology), and house-crack (damage): this is the event."
+  },
+  {
+   "name": "earthquake-alert",
+   "meaning": "Earthquake early warning (seismic alert).",
+   "drawing": "The earthquake with the engine's alert badge.",
+   "closest": "earthquake: the badge is the warning."
+  },
+  {
+   "name": "landslide",
+   "meaning": "Landslide.",
+   "drawing": "A slope with three rocks tumbling down to its foot.",
+   "closest": "mountain: this is the slide."
+  },
+  {
+   "name": "tsunami",
+   "meaning": "Tsunami.",
+   "drawing": "A towering curling wave over a small house on the shore.",
+   "closest": "wave (lugares: one wave, ocean or surf): this is the disaster."
+  },
+  {
+   "name": "avalanche",
+   "meaning": "Avalanche.",
+   "drawing": "A peak with snow slabs breaking off down its side.",
+   "closest": "mountain-snow: this is the slide."
+  },
+  {
+   "name": "sandbags",
+   "meaning": "Flood defense with sandbags.",
+   "drawing": "A stack of three pillow-shaped bags, two below and one on top.",
+   "closest": "cement-bag (construccion: one sack): this is a flood barrier."
+  },
+  {
+   "name": "storm-damage",
+   "meaning": "Storm damage, an insurance claim.",
+   "drawing": "A house with its roof peeling up and a wind stroke.",
+   "closest": "house-crack (structural) and water-damage: this is wind damage. cloud-hail and car-flood (search hits) are weather and a flooded car."
+  }
+ ]
+}

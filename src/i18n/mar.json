@@ -1,0 +1,366 @@
+{
+  "fish-school": {
+    "label": { "es": "Cardumen", "en": "School of fish", "pt": "Cardume", "fr": "Banc de poissons", "de": "Fischschwarm", "it": "Banco di pesci", "ja": "魚の群れ", "zh": "鱼群", "ko": "물고기 떼", "ar": "سرب أسماك" },
+    "keywords": {
+      "es": ["banco de peces", "población de peces", "avistamiento", "bitácora de buceo", "guía marina", "vida marina", "peces"],
+      "en": ["shoal", "fish population", "group of fish", "sighting", "dive log", "marine guide", "sea life"]
+    }
+  },
+  "fish-plus": {
+    "label": { "es": "Agregar especie", "en": "Add species", "pt": "Adicionar espécie", "fr": "Ajouter une espèce", "de": "Art hinzufügen", "it": "Aggiungi specie", "ja": "種を追加", "zh": "添加物种", "ko": "종 추가", "ar": "إضافة نوع" },
+    "keywords": {
+      "es": ["registrar avistamiento", "nuevo avistamiento", "bitácora de buceo", "lista de especies", "censo marino", "nuevo registro", "monitoreo"],
+      "en": ["log sighting", "new sighting", "dive log", "life list", "marine survey", "new record", "species count"]
+    }
+  },
+  "fish-search": {
+    "label": { "es": "Identificar especie", "en": "Identify species", "pt": "Identificar espécie", "fr": "Identifier une espèce", "de": "Art bestimmen", "it": "Identifica specie", "ja": "魚種を調べる", "zh": "识别鱼种", "ko": "어종 식별", "ar": "التعرف على النوع" },
+    "keywords": {
+      "es": ["buscar pez", "guía de vida marina", "catálogo de especies", "qué pez es", "reconocer", "ficha de especie", "buceo"],
+      "en": ["search fish", "marine life guide", "species catalog", "fish ID", "what fish is this", "species lookup", "field guide"]
+    }
+  },
+  "fish-alert": {
+    "label": { "es": "Alerta de especie", "en": "Species advisory", "pt": "Alerta sobre espécie", "fr": "Avis sur une espèce", "de": "Warnhinweis zur Fischart", "it": "Avviso su una specie", "ja": "魚種の注意情報", "zh": "鱼种警示", "ko": "어종 주의보", "ar": "تحذير بشأن نوع من الأسماك" },
+    "keywords": {
+      "es": ["pez tóxico", "pez venenoso", "especie invasora", "consumo responsable", "veda", "marea roja", "advertencia sanitaria"],
+      "en": ["toxic fish", "venomous fish", "invasive species", "consumption advisory", "mercury warning", "health advisory", "report species"]
+    }
+  },
+  "tropical-fish": {
+    "label": { "es": "Pez tropical", "en": "Tropical fish", "pt": "Peixe tropical", "fr": "Poisson tropical", "de": "Tropenfisch", "it": "Pesce tropicale", "ja": "熱帯魚", "zh": "热带鱼", "ko": "열대어", "ar": "سمكة استوائية" },
+    "keywords": {
+      "es": ["pez de arrecife", "arrecife", "destino tropical", "esnórquel", "sitio de buceo", "Caribe", "aguas cálidas"],
+      "en": ["reef fish", "reef life", "tropical destination", "snorkeling", "dive site", "warm water", "angelfish"]
+    }
+  },
+  "clownfish": {
+    "label": { "es": "Pez payaso", "en": "Clownfish", "pt": "Peixe-palhaço", "fr": "Poisson-clown", "de": "Clownfisch", "it": "Pesce pagliaccio", "ja": "クマノミ", "zh": "小丑鱼", "ko": "흰동가리", "ar": "سمكة المهرج" },
+    "keywords": {
+      "es": ["anémona", "arrecife de coral", "simbiosis", "contenido infantil", "pez naranja", "acuario", "vida de arrecife"],
+      "en": ["anemonefish", "anemone", "coral reef", "symbiosis", "kids", "orange fish", "aquarium"]
+    }
+  },
+  "pufferfish": {
+    "label": { "es": "Pez globo", "en": "Pufferfish", "pt": "Baiacu", "fr": "Poisson-globe", "de": "Kugelfisch", "it": "Pesce palla", "ja": "フグ", "zh": "河豚", "ko": "복어", "ar": "سمكة منتفخة" },
+    "keywords": {
+      "es": ["botete", "pez tóxico", "inflado", "espinas", "defensa", "fugu", "hinchado"],
+      "en": ["blowfish", "fugu", "toxic fish", "inflated", "spiky", "self-defense", "puffed up"]
+    }
+  },
+  "swordfish": {
+    "label": { "es": "Pez espada", "en": "Swordfish", "pt": "Peixe-espada", "fr": "Espadon", "de": "Schwertfisch", "it": "Pesce spada", "ja": "メカジキ", "zh": "剑鱼", "ko": "황새치", "ar": "سمكة أبو سيف" },
+    "keywords": {
+      "es": ["marlín", "pez vela", "picudo", "pesca deportiva", "pesca de altura", "velocidad", "pescadería"],
+      "en": ["marlin", "billfish", "sailfish", "sportfishing", "offshore fishing", "speed", "seafood market"]
+    }
+  },
+  "anglerfish": {
+    "label": { "es": "Pez abisal", "en": "Anglerfish", "pt": "Peixe-diabo", "fr": "Baudroie abyssale", "de": "Tiefsee-Anglerfisch", "it": "Pesce abissale", "ja": "チョウチンアンコウ", "zh": "鮟鱇鱼", "ko": "초롱아귀", "ar": "سمكة أبو الشص" },
+    "keywords": {
+      "es": ["pez rape", "pez linterna", "mar profundo", "bioluminiscencia", "abismo", "oscuridad", "señuelo luminoso", "carnada"],
+      "en": ["deep sea", "bioluminescence", "glowing lure", "abyss", "darkness", "bait", "monkfish"]
+    }
+  },
+  "salmon": {
+    "label": { "es": "Salmón", "en": "Salmon", "pt": "Salmão", "fr": "Saumon", "de": "Lachs", "it": "Salmone", "ja": "サケ", "zh": "鲑鱼", "ko": "연어", "ar": "سمك السلمون" },
+    "keywords": {
+      "es": ["remontar el río", "migración", "desove", "río", "trucha", "origen del pescado", "pescado fresco"],
+      "en": ["upstream", "spawning run", "migration", "river", "trout", "seafood origin", "wild-caught"]
+    }
+  },
+  "seahorse": {
+    "label": { "es": "Caballito de mar", "en": "Seahorse", "pt": "Cavalo-marinho", "fr": "Hippocampe", "de": "Seepferdchen", "it": "Cavalluccio marino", "ja": "タツノオトシゴ", "zh": "海马", "ko": "해마", "ar": "حصان البحر" },
+    "keywords": {
+      "es": ["hipocampo", "arrecife", "acuario", "contenido infantil", "símbolo del mar", "vida marina", "exhibición"],
+      "en": ["hippocampus", "reef", "aquarium exhibit", "kids", "sea symbol", "marine life", "ocean"]
+    }
+  },
+  "catfish": {
+    "label": { "es": "Bagre", "en": "Catfish", "pt": "Bagre", "fr": "Poisson-chat", "de": "Wels", "it": "Pesce gatto", "ja": "ナマズ", "zh": "鲶鱼", "ko": "메기", "ar": "سمك السلور" },
+    "keywords": {
+      "es": ["pez gato", "agua dulce", "pesca en río", "bigotes", "fondo del río", "presa", "pesca deportiva"],
+      "en": ["freshwater fish", "whiskers", "river fishing", "bottom feeder", "lake", "barbels", "sport fishing"]
+    }
+  },
+  "piranha": {
+    "label": { "es": "Piraña", "en": "Piranha", "pt": "Piranha", "fr": "Piranha", "de": "Piranha", "it": "Piranha", "ja": "ピラニア", "zh": "食人鱼", "ko": "피라냐", "ar": "سمكة البيرانا" },
+    "keywords": {
+      "es": ["peligro", "dientes", "agresivo", "Amazonas", "río", "depredador", "mordida"],
+      "en": ["danger", "teeth", "aggressive", "Amazon", "river", "predator", "bite"]
+    }
+  },
+  "koi": {
+    "label": { "es": "Carpa koi", "en": "Koi", "pt": "Carpa koi", "fr": "Carpe koï", "de": "Koi", "it": "Carpa koi", "ja": "錦鯉", "zh": "锦鲤", "ko": "비단잉어", "ar": "سمكة الكوي" },
+    "keywords": {
+      "es": ["estanque", "jardín japonés", "restaurante japonés", "buena suerte", "fuente", "prosperidad", "pez de colores"],
+      "en": ["carp", "pond", "Japanese garden", "Japanese restaurant", "good luck", "prosperity", "water garden"]
+    }
+  },
+  "shark": {
+    "label": { "es": "Tiburón", "en": "Shark", "pt": "Tubarão", "fr": "Requin", "de": "Hai", "it": "Squalo", "ja": "サメ", "zh": "鲨鱼", "ko": "상어", "ar": "قرش" },
+    "keywords": {
+      "es": ["depredador", "peligro", "océano", "acuario", "agresivo", "mandíbulas", "escualo"],
+      "en": ["predator", "danger", "ocean", "aquarium exhibit", "aggressive", "jaws", "great white"]
+    }
+  },
+  "shark-fin": {
+    "label": { "es": "Aleta de tiburón", "en": "Shark fin", "pt": "Barbatana de tubarão", "fr": "Aileron de requin", "de": "Haifischflosse", "it": "Pinna di squalo", "ja": "サメのひれ", "zh": "鲨鱼鳍", "ko": "상어 지느러미", "ar": "زعنفة قرش" },
+    "keywords": {
+      "es": ["peligro en el agua", "amenaza oculta", "avistamiento", "acecho", "nadar con cuidado", "océano", "riesgo"],
+      "en": ["danger in the water", "hidden threat", "sighting", "lurking", "circling", "ocean", "risk"]
+    }
+  },
+  "shark-alert": {
+    "label": { "es": "Alerta de tiburón", "en": "Shark warning", "pt": "Alerta de tubarão", "fr": "Alerte requin", "de": "Haiwarnung", "it": "Allerta squali", "ja": "サメ注意", "zh": "鲨鱼警报", "ko": "상어 경보", "ar": "تحذير من أسماك القرش" },
+    "keywords": {
+      "es": ["avistamiento", "playa cerrada", "prohibido nadar", "bandera roja", "salvavidas", "peligro en el mar", "aviso de playa"],
+      "en": ["shark sighting", "beach closed", "no swimming", "red flag", "lifeguard", "beach warning", "danger"]
+    }
+  },
+  "manta-ray": {
+    "label": { "es": "Manta gigante", "en": "Manta ray", "pt": "Raia-manta", "fr": "Raie manta", "de": "Mantarochen", "it": "Manta", "ja": "マンタ", "zh": "蝠鲼", "ko": "쥐가오리", "ar": "شيطان البحر" },
+    "keywords": {
+      "es": ["mantarraya", "manta oceánica", "sitio de buceo", "gigante del mar", "elegancia", "buceo", "Revillagigedo"],
+      "en": ["giant manta", "devil ray", "dive site", "gentle giant", "graceful", "scuba diving", "ocean"]
+    }
+  },
+  "coral": {
+    "label": { "es": "Coral", "en": "Coral", "pt": "Coral", "fr": "Corail", "de": "Koralle", "it": "Corallo", "ja": "サンゴ", "zh": "珊瑚", "ko": "산호", "ar": "مرجان" },
+    "keywords": {
+      "es": ["arrecife", "biología marina", "conservación de arrecifes", "pólipos", "ecosistema marino", "buceo", "Caribe"],
+      "en": ["reef", "marine biology", "reef conservation", "polyps", "staghorn", "marine ecosystem", "snorkeling"]
+    }
+  },
+  "coral-alert": {
+    "label": { "es": "Blanqueamiento de coral", "en": "Coral bleaching", "pt": "Branqueamento de corais", "fr": "Blanchiment des coraux", "de": "Korallenbleiche", "it": "Sbiancamento dei coralli", "ja": "サンゴの白化", "zh": "珊瑚白化", "ko": "산호 백화", "ar": "ابيضاض المرجان" },
+    "keywords": {
+      "es": ["arrecife en riesgo", "estrés térmico", "monitoreo de arrecifes", "calentamiento del mar", "cambio climático", "alerta ambiental", "ecosistema dañado"],
+      "en": ["reef under stress", "heat stress", "reef monitoring", "ocean warming", "climate change", "environmental alert", "reef health"]
+    }
+  },
+  "whale": {
+    "label": { "es": "Ballena", "en": "Whale", "pt": "Baleia", "fr": "Baleine", "de": "Wal", "it": "Balena", "ja": "クジラ", "zh": "鲸鱼", "ko": "고래", "ar": "حوت" },
+    "keywords": {
+      "es": ["ballena jorobada", "avistamiento de ballenas", "gigante", "cetáceo", "océano", "enorme", "mamífero marino"],
+      "en": ["humpback", "whale-watching", "cetacean", "giant", "huge", "ocean", "marine mammal"]
+    }
+  },
+  "whale-tail": {
+    "label": { "es": "Cola de ballena", "en": "Whale tail", "pt": "Cauda de baleia", "fr": "Queue de baleine", "de": "Walfluke", "it": "Coda di balena", "ja": "クジラの尾びれ", "zh": "鲸尾", "ko": "고래 꼬리", "ar": "ذيل الحوت" },
+    "keywords": {
+      "es": ["aleta caudal", "ballena sumergiéndose", "avistamiento de ballenas", "tour de ballenas", "inmersión", "cetáceo", "Los Cabos"],
+      "en": ["fluke", "diving whale", "whale-watching tour", "sounding", "boat tour", "cetacean", "sighting"]
+    }
+  },
+  "whale-spout": {
+    "label": { "es": "Soplo de ballena", "en": "Whale spout", "pt": "Borrifo de baleia", "fr": "Souffle de baleine", "de": "Walfontäne", "it": "Soffio di balena", "ja": "クジラの潮吹き", "zh": "鲸鱼喷水", "ko": "고래 물줄기", "ar": "نفث الحوت" },
+    "keywords": {
+      "es": ["chorro", "ballena en la superficie", "avistamiento", "respiración", "espiráculo", "tour de ballenas", "ahí sopla"],
+      "en": ["blow", "surfacing", "sighting", "breathing", "blowhole", "there she blows", "whale-watching"]
+    }
+  },
+  "orca": {
+    "label": { "es": "Orca", "en": "Orca", "pt": "Orca", "fr": "Orque", "de": "Orca", "it": "Orca", "ja": "シャチ", "zh": "虎鲸", "ko": "범고래", "ar": "حوت قاتل" },
+    "keywords": {
+      "es": ["ballena asesina", "superdepredador", "blanco y negro", "cetáceo", "manada", "océano", "mamífero marino"],
+      "en": ["killer whale", "apex predator", "black and white", "pod", "cetacean", "ocean", "marine mammal"]
+    }
+  },
+  "narwhal": {
+    "label": { "es": "Narval", "en": "Narwhal", "pt": "Narval", "fr": "Narval", "de": "Narwal", "it": "Narvalo", "ja": "イッカク", "zh": "独角鲸", "ko": "일각고래", "ar": "حريش البحر" },
+    "keywords": {
+      "es": ["unicornio del mar", "colmillo", "ártico", "raro", "mágico", "ballena", "fantasía"],
+      "en": ["sea unicorn", "tusk", "arctic", "rare", "magical", "whale", "fantasy"]
+    }
+  },
+  "dolphin": {
+    "label": { "es": "Delfín", "en": "Dolphin", "pt": "Golfinho", "fr": "Dauphin", "de": "Delfin", "it": "Delfino", "ja": "イルカ", "zh": "海豚", "ko": "돌고래", "ar": "دلفين" },
+    "keywords": {
+      "es": ["tonina", "salto", "inteligencia", "juguetón", "tour en lancha", "nado con delfines", "cetáceo"],
+      "en": ["porpoise", "jump", "intelligence", "playful", "boat tour", "swim with dolphins", "cetacean"]
+    }
+  },
+  "manatee": {
+    "label": { "es": "Manatí", "en": "Manatee", "pt": "Peixe-boi", "fr": "Lamantin", "de": "Seekuh", "it": "Lamantino", "ja": "マナティー", "zh": "海牛", "ko": "매너티", "ar": "خروف البحر" },
+    "keywords": {
+      "es": ["vaca marina", "dugongo", "lento", "tranquilo", "conservación costera", "especie protegida", "laguna"],
+      "en": ["sea cow", "dugong", "slow", "gentle", "coastal conservation", "protected species", "lagoon"]
+    }
+  },
+  "walrus": {
+    "label": { "es": "Morsa", "en": "Walrus", "pt": "Morsa", "fr": "Morse", "de": "Walross", "it": "Tricheco", "ja": "セイウチ", "zh": "海象", "ko": "바다코끼리", "ar": "فظ" },
+    "keywords": {
+      "es": ["colmillos", "ártico", "polo norte", "bigotes", "hielo", "mamífero marino", "frío"],
+      "en": ["tusks", "arctic", "north pole", "whiskers", "ice floe", "marine mammal", "cold"]
+    }
+  },
+  "sea-lion": {
+    "label": { "es": "Lobo marino", "en": "Sea lion", "pt": "Leão-marinho", "fr": "Otarie", "de": "Seelöwe", "it": "Leone marino", "ja": "アシカ", "zh": "海狮", "ko": "바다사자", "ar": "أسد البحر" },
+    "keywords": {
+      "es": ["foca", "aletas", "juguetón", "fauna costera", "lobera", "mamífero marino", "Mar de Cortés"],
+      "en": ["seal", "flippers", "playful", "coastal wildlife", "rookery", "marine mammal", "pier"]
+    }
+  },
+  "harbor-seal": {
+    "label": { "es": "Foca", "en": "Harbor seal", "pt": "Foca", "fr": "Phoque", "de": "Robbe", "it": "Foca", "ja": "アザラシ", "zh": "海豹", "ko": "물범", "ar": "فقمة" },
+    "keywords": {
+      "es": ["foca común", "fauna costera", "colonia de focas", "mamífero marino", "pinnípedo", "costa rocosa", "cría"],
+      "en": ["seal", "coastal wildlife", "seal colony", "marine mammal", "pinniped", "rocky shore", "pup"]
+    }
+  },
+  "octopus": {
+    "label": { "es": "Pulpo", "en": "Octopus", "pt": "Polvo", "fr": "Pieuvre", "de": "Krake", "it": "Polpo", "ja": "タコ", "zh": "章鱼", "ko": "문어", "ar": "أخطبوط" },
+    "keywords": {
+      "es": ["tentáculos", "inteligencia", "multitarea", "ocho brazos", "criatura marina", "cefalópodo", "mariscos"],
+      "en": ["tentacles", "intelligence", "multitasking", "eight arms", "sea creature", "cephalopod", "kraken"]
+    }
+  },
+  "squid": {
+    "label": { "es": "Calamar", "en": "Squid", "pt": "Lula", "fr": "Calmar", "de": "Kalmar", "it": "Calamaro", "ja": "イカ", "zh": "鱿鱼", "ko": "오징어", "ar": "حبار" },
+    "keywords": {
+      "es": ["chipirón", "jibia", "mar profundo", "tinta", "cefalópodo", "tentáculos", "mariscos"],
+      "en": ["calamari", "cuttlefish", "deep sea", "ink", "cephalopod", "tentacles", "seafood"]
+    }
+  },
+  "nautilus": {
+    "label": { "es": "Nautilo", "en": "Nautilus", "pt": "Náutilo", "fr": "Nautile", "de": "Nautilus", "it": "Nautilo", "ja": "オウムガイ", "zh": "鹦鹉螺", "ko": "앵무조개", "ar": "النوتيلوس" },
+    "keywords": {
+      "es": ["fósil viviente", "espiral áurea", "proporción áurea", "concha en espiral", "mar profundo", "cefalópodo", "Fibonacci"],
+      "en": ["living fossil", "golden spiral", "golden ratio", "spiral shell", "deep sea", "cephalopod", "Fibonacci"]
+    }
+  },
+  "jellyfish": {
+    "label": { "es": "Medusa", "en": "Jellyfish", "pt": "Água-viva", "fr": "Méduse", "de": "Qualle", "it": "Medusa", "ja": "クラゲ", "zh": "水母", "ko": "해파리", "ar": "قنديل البحر" },
+    "keywords": {
+      "es": ["aguamala", "picadura", "flotar", "translúcido", "tentáculos", "urticante", "vida marina"],
+      "en": ["sea jelly", "sting", "floating", "translucent", "tentacles", "drifting", "marine life"]
+    }
+  },
+  "jellyfish-alert": {
+    "label": { "es": "Alerta de medusas", "en": "Jellyfish warning", "pt": "Alerta de águas-vivas", "fr": "Alerte méduses", "de": "Quallenwarnung", "it": "Allerta meduse", "ja": "クラゲ注意", "zh": "水母警报", "ko": "해파리 주의보", "ar": "تحذير من قناديل البحر" },
+    "keywords": {
+      "es": ["aguamala", "riesgo de picadura", "aviso de playa", "bandera morada", "prohibido nadar", "salvavidas", "proliferación"],
+      "en": ["sting risk", "beach warning", "purple flag", "no swimming", "lifeguard", "bloom", "stinger season"]
+    }
+  },
+  "coral-reef": {
+    "label": { "es": "Arrecife de coral", "en": "Coral reef", "pt": "Recife de coral", "fr": "Récif corallien", "de": "Korallenriff", "it": "Barriera corallina", "ja": "サンゴ礁", "zh": "珊瑚礁", "ko": "산호초", "ar": "شعاب مرجانية" },
+    "keywords": {
+      "es": ["hábitat marino", "sitio de buceo", "esnórquel", "ecosistema", "parque marino", "Cozumel", "biodiversidad"],
+      "en": ["habitat", "dive site", "snorkeling", "ecosystem", "marine park", "biodiversity", "tropical sea"]
+    }
+  },
+  "sea-anemone": {
+    "label": { "es": "Anémona de mar", "en": "Sea anemone", "pt": "Anêmona-do-mar", "fr": "Anémone de mer", "de": "Seeanemone", "it": "Anemone di mare", "ja": "イソギンチャク", "zh": "海葵", "ko": "말미잘", "ar": "شقائق النعمان البحرية" },
+    "keywords": {
+      "es": ["arrecife", "casa del pez payaso", "tentáculos", "urticante", "simbiosis", "pozas de marea", "vida marina"],
+      "en": ["reef life", "clownfish home", "tentacles", "stinging", "symbiosis", "tide pool", "invertebrate"]
+    }
+  },
+  "crab": {
+    "label": { "es": "Cangrejo", "en": "Crab", "pt": "Caranguejo", "fr": "Crabe", "de": "Krabbe", "it": "Granchio", "ja": "カニ", "zh": "螃蟹", "ko": "게", "ar": "سلطعون" },
+    "keywords": {
+      "es": ["jaiba", "mariscos", "playa", "de lado", "tenazas", "crustáceo", "marisquería"],
+      "en": ["seafood", "shellfish", "beach life", "sideways", "claws", "crustacean"]
+    }
+  },
+  "lobster": {
+    "label": { "es": "Langosta", "en": "Lobster", "pt": "Lagosta", "fr": "Homard", "de": "Hummer", "it": "Aragosta", "ja": "ロブスター", "zh": "龙虾", "ko": "랍스터", "ar": "كركند" },
+    "keywords": {
+      "es": ["mariscos", "alta cocina", "pesquería", "cena especial", "tenazas", "crustáceo", "langostino"],
+      "en": ["seafood", "fine dining", "fisheries", "claws", "crustacean", "surf and turf", "shellfish"]
+    }
+  },
+  "starfish": {
+    "label": { "es": "Estrella de mar", "en": "Starfish", "pt": "Estrela-do-mar", "fr": "Étoile de mer", "de": "Seestern", "it": "Stella marina", "ja": "ヒトデ", "zh": "海星", "ko": "불가사리", "ar": "نجم البحر" },
+    "keywords": {
+      "es": ["playa", "pozas de marea", "equinodermo", "vida marina", "verano", "conchas", "orilla"],
+      "en": ["sea star", "beach", "tide pool", "echinoderm", "marine life", "summer", "shoreline"]
+    }
+  },
+  "sand-dollar": {
+    "label": { "es": "Galleta de mar", "en": "Sand dollar", "pt": "Bolacha-da-praia", "fr": "Dollar des sables", "de": "Sanddollar", "it": "Dollaro della sabbia", "ja": "カシパン", "zh": "沙钱", "ko": "연잎성게", "ar": "دولار الرمل" },
+    "keywords": {
+      "es": ["dólar de arena", "hallazgos de playa", "recolectar conchas", "caminata en la playa", "recuerdo", "equinodermo", "arena"],
+      "en": ["beachcombing", "beach find", "shell collecting", "souvenir", "echinoderm", "sea biscuit", "shoreline"]
+    }
+  },
+  "seashell": {
+    "label": { "es": "Caracol de mar", "en": "Seashell", "pt": "Concha", "fr": "Coquillage", "de": "Muschel", "it": "Conchiglia", "ja": "巻き貝", "zh": "海螺", "ko": "소라 껍데기", "ar": "صدفة بحرية" },
+    "keywords": {
+      "es": ["concha", "caracola", "playa", "recolectar conchas", "recuerdo", "sonido del mar", "vacaciones"],
+      "en": ["conch", "beach", "beachcombing", "souvenir", "sound of the sea", "summer", "vacation"]
+    }
+  },
+  "hermit-crab": {
+    "label": { "es": "Cangrejo ermitaño", "en": "Hermit crab", "pt": "Caranguejo-eremita", "fr": "Bernard-l’ermite", "de": "Einsiedlerkrebs", "it": "Paguro", "ja": "ヤドカリ", "zh": "寄居蟹", "ko": "소라게", "ar": "سلطعون ناسك" },
+    "keywords": {
+      "es": ["mudanza", "casa prestada", "concha", "reubicación", "playa", "crustáceo", "hogar portátil"],
+      "en": ["moving house", "borrowed home", "shell", "relocation", "beach life", "crustacean", "portable home"]
+    }
+  },
+  "scallop": {
+    "label": { "es": "Vieira", "en": "Scallop", "pt": "Vieira", "fr": "Coquille Saint-Jacques", "de": "Jakobsmuschel", "it": "Capasanta", "ja": "ホタテ", "zh": "扇贝", "ko": "가리비", "ar": "إسكالوب" },
+    "keywords": {
+      "es": ["concha de abanico", "callo de hacha", "mariscos", "hallazgos de playa", "molusco", "bivalvo", "Camino de Santiago"],
+      "en": ["fan shell", "seafood", "beach find", "shell", "mollusk", "bivalve", "Camino de Santiago"]
+    }
+  },
+  "clam": {
+    "label": { "es": "Almeja", "en": "Clam", "pt": "Amêijoa", "fr": "Palourde", "de": "Venusmuschel", "it": "Vongola", "ja": "アサリ", "zh": "蛤蜊", "ko": "조개", "ar": "بطلينوس" },
+    "keywords": {
+      "es": ["mariscos", "molusco", "bivalvo", "concha", "cerrado", "hermético", "chocolata"],
+      "en": ["shellfish", "seafood", "bivalve", "shell", "closed", "tight-lipped", "chowder"]
+    }
+  },
+  "mussel": {
+    "label": { "es": "Mejillón", "en": "Mussel", "pt": "Mexilhão", "fr": "Moule", "de": "Miesmuschel", "it": "Cozza", "ja": "ムール貝", "zh": "贻贝", "ko": "홍합", "ar": "بلح البحر" },
+    "keywords": {
+      "es": ["mariscos", "molusco", "bivalvo", "granja marina", "acuicultura", "paella", "moules"],
+      "en": ["shellfish", "seafood", "bivalve", "moules frites", "aquaculture", "steamed", "paella"]
+    }
+  },
+  "sea-turtle": {
+    "label": { "es": "Tortuga marina", "en": "Sea turtle", "pt": "Tartaruga marinha", "fr": "Tortue marine", "de": "Meeresschildkröte", "it": "Tartaruga marina", "ja": "ウミガメ", "zh": "海龟", "ko": "바다거북", "ar": "سلحفاة بحرية" },
+    "keywords": {
+      "es": ["caguama", "carey", "conservación del océano", "arrecife", "migración", "especie protegida", "esnórquel"],
+      "en": ["loggerhead", "hawksbill", "ocean conservation", "reef", "migration", "protected species", "snorkeling"]
+    }
+  },
+  "seaweed": {
+    "label": { "es": "Alga marina", "en": "Seaweed", "pt": "Alga marinha", "fr": "Algue", "de": "Seetang", "it": "Alga marina", "ja": "海藻", "zh": "海藻", "ko": "해조류", "ar": "أعشاب بحرية" },
+    "keywords": {
+      "es": ["planta marina", "nori", "sargazo", "fondo marino", "sushi", "vegetación acuática", "acuario"],
+      "en": ["algae", "marine plant", "nori", "sargassum", "seabed", "sushi", "aquatic plants"]
+    }
+  },
+  "underwater": {
+    "label": { "es": "Bajo el agua", "en": "Underwater", "pt": "Debaixo d’água", "fr": "Sous l’eau", "de": "Unter Wasser", "it": "Sott’acqua", "ja": "水中", "zh": "水下", "ko": "수중", "ar": "تحت الماء" },
+    "keywords": {
+      "es": ["submarino", "modo subacuático", "hábitat marino", "fondo del mar", "buceo", "profundidad", "vida marina"],
+      "en": ["subsea", "dive mode", "marine habitat", "under the sea", "diving", "depth", "below the surface"]
+    }
+  },
+  "lionfish": {
+    "label": { "es": "Pez león", "en": "Lionfish", "pt": "Peixe-leão", "fr": "Rascasse volante", "de": "Rotfeuerfisch", "it": "Pesce leone", "ja": "ミノカサゴ", "zh": "狮子鱼", "ko": "쏠배감펭", "ar": "سمكة الأسد" },
+    "keywords": {
+      "es": ["especie invasora", "pez venenoso", "espinas", "peligro en el arrecife", "pez escorpión", "plaga marina", "Caribe"],
+      "en": ["invasive species", "venomous fish", "spines", "reef hazard", "scorpionfish", "turkeyfish", "venomous animal"]
+    }
+  },
+  "eel": {
+    "label": { "es": "Morena", "en": "Moray eel", "pt": "Moreia", "fr": "Murène", "de": "Muräne", "it": "Murena", "ja": "ウツボ", "zh": "海鳝", "ko": "곰치", "ar": "ثعبان الموراي" },
+    "keywords": {
+      "es": ["anguila", "congrio", "arrecife", "escondite", "resbaloso", "vida marina", "buceo"],
+      "en": ["sea eel", "conger", "reef dweller", "slippery", "hiding spot", "dive site", "marine life"]
+    }
+  },
+  "stingray": {
+    "label": { "es": "Raya", "en": "Stingray", "pt": "Arraia", "fr": "Raie pastenague", "de": "Stachelrochen", "it": "Pastinaca", "ja": "エイ", "zh": "魟鱼", "ko": "가오리", "ar": "سمكة الراي اللاسعة" },
+    "keywords": {
+      "es": ["mantarraya", "picadura", "arrastrar los pies", "peligro en la playa", "estanque de contacto", "aguijón", "arena"],
+      "en": ["sting", "barb", "shuffle your feet", "beach hazard", "touch pool", "sandy bottom", "ray"]
+    }
+  }
+}

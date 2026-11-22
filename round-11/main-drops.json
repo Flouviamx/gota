@@ -1,0 +1,56 @@
+{
+ "animales": [
+  {
+   "name": "highland-cow",
+   "reason": "the front-on head with its wide horns reads as cow-skull"
+  },
+  {
+   "name": "gorilla",
+   "reason": "the knuckle-walking body reads as a rock"
+  },
+  {
+   "name": "lemur",
+   "reason": "the body with its tail raised in an S reads as a dragon"
+  },
+  {
+   "name": "red-panda",
+   "reason": "the animal along its branch reads as a lizard"
+  },
+  {
+   "name": "beaver",
+   "reason": "the low hunched body reads as a seal"
+  },
+  {
+   "name": "feed-trough",
+   "reason": "the hay rising from the trough reads as a pot giving off steam"
+  }
+ ],
+ "aves-insectos": [
+  {
+   "name": "rooster",
+   "reason": "the arched sickle tail reads as a squirrel"
+  },
+  {
+   "name": "grasshopper",
+   "reason": "the folded hind legs read as the letter M"
+  }
+ ],
+ "mar": [
+  {
+   "name": "oyster",
+   "reason": "the open shell with its pearl reads as the letter G"
+  },
+  {
+   "name": "sea-turtle-hatchling",
+   "reason": "the turtle in its eggshell reads as a potted plant"
+  },
+  {
+   "name": "kelp",
+   "reason": "the stalk with blades and floats reads as an olive branch"
+  },
+  {
+   "name": "hammerhead-shark",
+   "reason": "the head bar over the body reads as the letter T"
+  }
+ ]
+}
