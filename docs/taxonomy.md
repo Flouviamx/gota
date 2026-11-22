@@ -17,9 +17,9 @@ The first 1,033 icons (rounds 1 and 2) cover the interface and the most common b
 | 8 | Places and travel | vehiculos, conduccion, aviacion, nautica, transito, viajes, senales, camping; lugares grows |
 | 9 | Science and industry | ciencia, espacio, educacion, industria, construccion, herramientas, energia, seguridad-laboral, agricultura |
 | 10 | Leisure and culture | deportes, juegos, musica, foto-video, arte, entretenimiento, fiestas, lectura |
-| 11 | Nature, and v1 | animales, aves-insectos, mar, plantas, clima, medio-ambiente |
+| 11 | Nature | animales, aves-insectos, mar, plantas, clima, medio-ambiente |
 
-The targets add up to 8,650 new icons. With the first thousand that left about 320 for **the sweep**: the names the migration maps still can't place (Lucide, Heroicons, SF Symbols) and the gaps the rounds left, each assigned to the category whose scope holds it, until the set lands on exactly 10,000. The rounds landed below their targets, so v1 ships when round 11 closes, with about 7,500 icons, and the sweep, now about 2,500, comes in the versions after it ([decision 86](./decisions.md#v1-20-nov-2026)).
+The targets add up to 8,650 new icons. With the first thousand that left about 320 for **the sweep**: the names the migration maps still can't place (Lucide, Heroicons, SF Symbols) and the gaps the rounds left, each assigned to the category whose scope holds it, until the set lands on exactly 10,000. The rounds landed below their targets, so the sweep is now about 2,500: it runs in rounds of its own after round 11, and v1 waits for it ([decision 87](./decisions.md#v1-20-nov-2026)).
 
 The order puts first what the teams that use Gota reach for most (interface, business, technology), then the broad consumer domains, then nature.
 

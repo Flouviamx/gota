@@ -1,6 +1,6 @@
 # Round 11 — Nature (in progress)
 
-The `round-11` branch carries the round while it's drawn, so any machine can pick it up. `main` only gets what is ready to be served (a push to `main` deploys `gota.flouvia.com`): when the round closes, this folder is deleted and the branch merges into `main`. The process is [Production with agents](../docs/production.md); this round ships v1 ([decision 86](../docs/decisions.md#v1-20-nov-2026)).
+The `round-11` branch carries the round while it's drawn, so any machine can pick it up. `main` only gets what is ready to be served (a push to `main` deploys `gota.flouvia.com`): when the round closes, this folder is deleted and the branch merges into `main`. The process is [Production with agents](../docs/production.md); after it comes the sweep, and then v1 ([decision 87](../docs/decisions.md#v1-20-nov-2026)).
 
 ## Status (22 Nov 2026)
 | Category | Approved | In its file | Step |
