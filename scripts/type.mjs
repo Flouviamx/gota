@@ -5,9 +5,10 @@
 // axes with their width and side bearings (each weight may draw a glyph its own way: wider, spaced
 // apart differently), marks and the accented letters composed from them, alternates (glyphs named
 // `<base>.<feature>` without a character, such as `hyphen.case` or `one.tnum`), kerning, the pen and
-// the words to write as outlines (docs/build.md, Typefaces). A glyph's `d` holds strokes, and solids
+// the words to write as outlines (docs/build.md, Typefaces). A glyph's `d` holds strokes, solids
 // (`{ solid: d }`: a closed shape filled as it is, its ink, without the stroke: a dot, which the
-// pen can't draw as a stroke that small). This writes, in that folder:
+// pen can't draw as a stroke that small) and strokes of their own weight (`{ weight: k, d }`: k
+// times the glyph's stroke, for a superior figure or the letters of a ™). This writes, in that folder:
 //   fonts/<Family>[wght].ttf · .woff2          variable, weight 300–700 (Gota's 0.9 to 2.1 stroke)
 //   fonts/<Family>-{Light,Regular,Bold}.ttf · .woff2   static, at the masters (300 · 400 · 700)
 //   fonts/<family>.css · specimen.png · proof.png   the @font-face rules, a specimen set in the fonts,
@@ -35,6 +36,7 @@ import { transform } from '../engine/variants.mjs';
 import { openChrome, sleep } from './chrome.mjs';
 import { clockwise, parse, sameShape } from './contours.mjs';
 import { masters } from './masters.mjs';
+import { outline } from './outline.mjs';
 import { font, woff2 } from './sfnt.mjs';
 
 const args = process.argv.slice(2);
@@ -77,7 +79,8 @@ function glyphsOf(face) {
     if (!base) throw new Error(`${c.name}: no base ${c.base}`);
     const dy = c.cap && c.mark !== 'cedilla' ? face.capMarkShift : 0;
     const place = (d) => transform(d, 1, base.w / 2, dy);
-    return { ...base, char: c.char, name: c.name, base: base.name, d: [...base.d, ...face.marks[c.mark].map((d) => (d.solid ? { solid: place(d.solid) } : place(d)))] };
+    const placed = (d) => (typeof d === 'string' ? place(d) : d.solid ? { ...d, solid: place(d.solid) } : { ...d, d: place(d.d) });
+    return { ...base, char: c.char, name: c.name, base: base.name, d: [...base.d, ...face.marks[c.mark].map(placed)] };
   });
   return [...face.glyphs, ...composed];
 }
@@ -122,15 +125,16 @@ const outlined = all.map((g) => {
   const advances = at.map((m) => Math.round((m.l + m.w + m.r) * U));
   if (!g.d.length) return { ...g, at, advances, sets: [[], [], []] };
   // The glyph drawn for a stroke, on the canvas (the masters ask for the pen's thinner stroke); its
-  // solids filled as they are, as the engine draws a brand mark's (`mark`), its strokes on top
+  // solids filled as they are, as the engine draws a brand mark's (`mark`), and so are the strokes
+  // of their own weight, outlined at it; its strokes on top
   const icon = (w) => {
     const d = glyphsAt(w / PEN).get(g.name).d;
-    const strokes = d.filter((p) => !p.solid).map(onCanvas);
-    const solids = d.filter((p) => p.solid).map((p) => onCanvas(p.solid));
+    const strokes = d.filter((p) => typeof p === 'string').map(onCanvas);
+    const solids = d.filter((p) => typeof p !== 'string').map((p) => (p.solid ? onCanvas(p.solid) : outline({ name: g.name, d: [onCanvas(p.d)] }, { style: 'outline', weight: w * p.weight })));
     return solids.length ? { name: g.name, mark: true, d: [...strokes, ...solids], fill: { solid: solids, wire: strokes } } : { name: g.name, d: strokes };
   };
   try {
-    const m = masters(icon, { style: g.d.some((p) => p.solid) ? 'fill' : 'outline' }, STROKES.map((s) => s * PEN));
+    const m = masters(icon, { style: g.d.some((p) => typeof p !== 'string') ? 'fill' : 'outline' }, STROKES.map((s) => s * PEN));
     const sets = clockwise(m.ds.map((d, k) => toFont(at[k])(parse(d))));
     if (!sets.every((s) => sameShape(s, sets[REG]))) throw new Error('masters differ in shape');
     return { ...g, at, advances, sets, overlap: m.mode.startsWith('overlap') };
@@ -238,6 +242,12 @@ mkdirSync(OUT, { recursive: true });
 const file = T.family.replace(/\s+/g, '');
 const m = T.metrics;
 const metrics = Object.fromEntries(Object.entries({ ascender: m.ascender, descender: m.descender, lineGap: m.lineGap, xHeight: m.xHeight, capHeight: m.capHeight, winAscent: m.winAscent, winDescent: m.winDescent }).map(([k, v]) => [k, Math.round(v * U)]));
+// Windows clips what passes usWinAscent and usWinDescent: they reach the highest and lowest ink of any master
+for (const g of outlined)
+  for (const p of g.sets.flat(2)) {
+    metrics.winAscent = Math.max(metrics.winAscent, p.y);
+    metrics.winDescent = Math.min(metrics.winDescent, p.y);
+  }
 const license = readFileSync(join(dir, 'LICENSE'), 'utf8');
 const meta = { copyright: T.copyright, trademark: T.trademark, manufacturer: T.manufacturer, designer: T.designer, url: T.url, license: T.licenseShort ?? license.trim(), licenseUrl: T.licenseUrl };
 const notdef = { name: '.notdef', advance: Math.round(8 * U), contours: [] };
