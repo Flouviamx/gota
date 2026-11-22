@@ -6,6 +6,7 @@ import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'n
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { test } from 'node:test';
+import { fileURLToPath } from 'node:url';
 import { readGlyphs } from '../scripts/sfnt.mjs';
 
 const SOURCE = `export default ({ circ, line, dot, stroke = 1.5 }) => ({
@@ -36,7 +37,7 @@ test('type: a typeface as fonts (variable and static), its glyphs read back, its
   try {
     writeFileSync(join(dir, 'glyphs.mjs'), SOURCE);
     writeFileSync(join(dir, 'LICENSE'), 'Probe: all rights reserved.\n');
-    execFileSync(process.execPath, [new URL('../scripts/type.mjs', import.meta.url).pathname, dir, '--no-specimen']);
+    execFileSync(process.execPath, [fileURLToPath(new URL('../scripts/type.mjs', import.meta.url)), dir, '--no-specimen']);
     assert.deepEqual(readdirSync(join(dir, 'fonts')).sort(), ['ProbeSans-Bold.ttf', 'ProbeSans-Bold.woff2', 'ProbeSans-Light.ttf', 'ProbeSans-Light.woff2', 'ProbeSans-Regular.ttf', 'ProbeSans-Regular.woff2', 'ProbeSans[wght].ttf', 'ProbeSans[wght].woff2', 'probe-sans.css']);
     // .notdef, o, i, T, hyphen, hyphen.case, space, x, oacute; the o a ring (two contours), the i a stem and its dot (a solid), the space empty
     const regular = readGlyphs(readFileSync(join(dir, 'fonts', 'ProbeSans-Regular.ttf')));
@@ -60,7 +61,7 @@ test('type: a typeface as fonts (variable and static), its glyphs read back, its
     assert.equal(word('bold').letters[1].x, 8);
     // A subset keeps those characters, their alternates and the kerning between them
     const out = join(dir, 'subset');
-    execFileSync(process.execPath, [new URL('../scripts/type.mjs', import.meta.url).pathname, dir, '--subset', 'T-', '--out', out]);
+    execFileSync(process.execPath, [fileURLToPath(new URL('../scripts/type.mjs', import.meta.url)), dir, '--subset', 'T-', '--out', out]);
     assert.deepEqual(readGlyphs(readFileSync(join(out, 'ProbeSans-Regular.ttf'))).map((g) => g.contours.length), [0, 1, 1, 1]);
   } finally {
     rmSync(dir, { recursive: true, force: true });

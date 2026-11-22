@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 22 Nov 2026 — The scripts and tests run on Windows
+- **Paths:** `load.mjs`, the Figma cover script, and the MCP and type tests turned their file URLs into paths with `.pathname`, which on Windows gives `/C:/…` and broke the build (`C:\C:\…`). They use `fileURLToPath`, which works on both systems.
+- **`npm test`:** the glob goes in double quotes; npm runs scripts with `cmd.exe` on Windows, which passed the single quotes through and matched no file (0 tests). Node expands the glob itself on both systems.
+- Tests: 61.
+
 ## 10 Nov 2026 — Round 10: leisure and culture (523 icons)
 - **Eight new categories** ([taxonomy](./taxonomy.md)): deportes 93, juegos 87, musica 92, foto-video 83, lectura 44 (and book, book-open, bookshelf, books, and newspaper from archivos), arte 39, entretenimiento 42, and fiestas 43 (and cake and party-popper from comunicacion). The set has 7,037 icons in 76 categories.
 - **Names:** 911 proposed, 596 approved. What the set already draws wasn't drawn again (the trophy, the medal, the podium, the playground, the palette, the brush), and nothing reads as a weapon, a casino, or a religious symbol.

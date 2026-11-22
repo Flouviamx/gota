@@ -3,10 +3,10 @@
 // sheet and QA scripts.
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const DIR = new URL('../src/icons/', import.meta.url).pathname;
-const I18N = new URL('../src/i18n/', import.meta.url).pathname;
+const DIR = fileURLToPath(new URL('../src/icons/', import.meta.url));
+const I18N = fileURLToPath(new URL('../src/i18n/', import.meta.url));
 // English kebab-case that starts with a letter: an icon's component name (`printer-3d` →
 // `Printer3dIcon`) has to be a JavaScript identifier
 const NAME = /^[a-z][a-z0-9]*(-[a-z0-9]+)*$/;
@@ -205,7 +205,7 @@ export function takes(icons, name, variant) {
 function loadMigrate(icons, errors) {
   const maps = {};
   for (const [set, file] of Object.entries(MIGRATE)) {
-    const path = new URL(`../src/migrate/${file}`, import.meta.url).pathname;
+    const path = fileURLToPath(new URL(`../src/migrate/${file}`, import.meta.url));
     try {
       maps[set] = JSON.parse(readFileSync(path, 'utf8'));
     } catch (e) {
