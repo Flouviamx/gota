@@ -1,56 +1,20 @@
 {
  "animales": [
-  {
-   "name": "highland-cow",
-   "reason": "the front-on head with its wide horns reads as cow-skull"
-  },
-  {
-   "name": "gorilla",
-   "reason": "the knuckle-walking body reads as a rock"
-  },
-  {
-   "name": "lemur",
-   "reason": "the body with its tail raised in an S reads as a dragon"
-  },
-  {
-   "name": "red-panda",
-   "reason": "the animal along its branch reads as a lizard"
-  },
-  {
-   "name": "beaver",
-   "reason": "the low hunched body reads as a seal"
-  },
-  {
-   "name": "feed-trough",
-   "reason": "the hay rising from the trough reads as a pot giving off steam"
-  }
+  { "name": "highland-cow", "reason": "La cabeza de frente con sus cuernos anchos se confunde con cow-skull." },
+  { "name": "gorilla", "reason": "El cuerpo caminando sobre los nudillos se lee como una piedra." },
+  { "name": "lemur", "reason": "El cuerpo con la cola en S se lee como un dragón." },
+  { "name": "red-panda", "reason": "El animal sobre su rama se lee como una lagartija." },
+  { "name": "beaver", "reason": "El cuerpo bajo y encorvado se lee como una foca." },
+  { "name": "feed-trough", "reason": "El pasto que sale del comedero se lee como una olla con vapor." }
  ],
  "aves-insectos": [
-  {
-   "name": "rooster",
-   "reason": "the arched sickle tail reads as a squirrel"
-  },
-  {
-   "name": "grasshopper",
-   "reason": "the folded hind legs read as the letter M"
-  }
+  { "name": "rooster", "reason": "La cola en hoz se lee como la de una ardilla." },
+  { "name": "grasshopper", "reason": "Las patas dobladas se leen como una letra M." }
  ],
  "mar": [
-  {
-   "name": "oyster",
-   "reason": "the open shell with its pearl reads as the letter G"
-  },
-  {
-   "name": "sea-turtle-hatchling",
-   "reason": "the turtle in its eggshell reads as a potted plant"
-  },
-  {
-   "name": "kelp",
-   "reason": "the stalk with blades and floats reads as an olive branch"
-  },
-  {
-   "name": "hammerhead-shark",
-   "reason": "the head bar over the body reads as the letter T"
-  }
+  { "name": "oyster", "reason": "La concha abierta con su perla se lee como una letra G." },
+  { "name": "sea-turtle-hatchling", "reason": "La tortuga saliendo del cascarón se lee como una maceta." },
+  { "name": "kelp", "reason": "El tallo con hojas y flotadores se lee como una rama de olivo." },
+  { "name": "hammerhead-shark", "reason": "La cabeza en barra sobre el cuerpo se lee como una letra T." }
  ]
 }
