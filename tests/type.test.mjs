@@ -21,6 +21,8 @@ const SOURCE = `export default ({ circ, line, dot, stroke = 1.5 }) => ({
     { char: '-', name: 'hyphen', w: 3.6, l: 1.1, r: 1.1, d: [line([0, -5], [3.6, -5])] },
     { char: null, name: 'hyphen.case', w: 3.6, l: 1.1, r: 1.1, d: [line([0, -7], [3.6, -7])] },
     { char: ' ', name: 'space', w: 0, l: 2.1, r: 2.1, d: [] },
+    // A stroke of its own weight: 0.8 of the glyph's
+    { char: 'x', name: 'x', w: 4, l: 1, r: 1, d: [{ weight: 0.8, d: line([0, -9.25], [4, -0.75]) }] },
   ],
   marks: { acute: [line([-0.7, -11.5], [0.9, -13.5])] },
   composites: [{ char: 'ó', name: 'oacute', base: 'o', mark: 'acute', cap: false }],
@@ -36,9 +38,9 @@ test('type: a typeface as fonts (variable and static), its glyphs read back, its
     writeFileSync(join(dir, 'LICENSE'), 'Probe: all rights reserved.\n');
     execFileSync(process.execPath, [new URL('../scripts/type.mjs', import.meta.url).pathname, dir, '--no-specimen']);
     assert.deepEqual(readdirSync(join(dir, 'fonts')).sort(), ['ProbeSans-Bold.ttf', 'ProbeSans-Bold.woff2', 'ProbeSans-Light.ttf', 'ProbeSans-Light.woff2', 'ProbeSans-Regular.ttf', 'ProbeSans-Regular.woff2', 'ProbeSans[wght].ttf', 'ProbeSans[wght].woff2', 'probe-sans.css']);
-    // .notdef, o, i, T, hyphen, hyphen.case, space, oacute; the o a ring (two contours), the i a stem and its dot (a solid), the space empty
+    // .notdef, o, i, T, hyphen, hyphen.case, space, x, oacute; the o a ring (two contours), the i a stem and its dot (a solid), the space empty
     const regular = readGlyphs(readFileSync(join(dir, 'fonts', 'ProbeSans-Regular.ttf')));
-    assert.deepEqual(regular.map((g) => g.contours.length), [0, 2, 2, 1, 1, 1, 0, 3]);
+    assert.deepEqual(regular.map((g) => g.contours.length), [0, 2, 2, 1, 1, 1, 0, 1, 3]);
     // The variable font moves every point between Light and Bold, and the o's advance with them
     const sfnt = readFileSync(join(dir, 'fonts', 'ProbeSans[wght].ttf'));
     const variable = readGlyphs(sfnt);
