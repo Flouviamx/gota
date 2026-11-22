@@ -4,6 +4,7 @@
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { test } from 'node:test';
+import { fileURLToPath } from 'node:url';
 import * as remote from '../api/mcp.mjs';
 import { autoWeight, iconData, icons, pick, render, sprite, svg, toSvg, WEIGHTS } from '../dist/index.js';
 import * as perIcon from '../dist/icons/index.js';
@@ -127,7 +128,7 @@ test('outline ↔ fill: the liquid, from one drawing to the other, one color, on
 });
 
 test('MCP server: initialize, list tools, search and get an icon', async () => {
-  const server = spawn(process.execPath, [new URL('../mcp/server.mjs', import.meta.url).pathname]);
+  const server = spawn(process.execPath, [fileURLToPath(new URL('../mcp/server.mjs', import.meta.url))]);
   const lines = [];
   server.stdout.on('data', (b) => lines.push(...b.toString().split('\n').filter(Boolean)));
   const send = (m) => server.stdin.write(`${JSON.stringify(m)}\n`);

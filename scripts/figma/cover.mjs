@@ -8,6 +8,7 @@
 // and the logo is left out. Used as the file's thumbnail and, at v1, the Community one.
 import { existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { openChrome, sleep } from '../chrome.mjs';
 
 const W = 960; // CSS px, shot at 2x
@@ -15,7 +16,7 @@ const H = 540;
 const PITCH = 50;
 const SIZE = 22;
 const GRAPHITE = '#161617';
-const BRAND = new URL('../../../flouvia/', import.meta.url).pathname;
+const BRAND = fileURLToPath(new URL('../../../flouvia/', import.meta.url));
 const LOGO_H = 22; // the mark (isotype and name), a signature under the name
 const NAME = 72; // the name's cap height, the cover's only headline
 
