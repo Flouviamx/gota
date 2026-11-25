@@ -17,6 +17,7 @@
 // Usage: node scripts/qa.mjs [category]   (weights needs npm ci: canvaskit-wasm)
 import { writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { render } from '../engine/variants.mjs';
 import { openChrome, sleep } from './chrome.mjs';
 import { loadAll } from './load.mjs';
@@ -48,8 +49,10 @@ const file = join(process.cwd(), 'previews', `_qa-${process.pid}.html`);
 writeFileSync(file, `<!doctype html><svg id="probe" width="0" height="0"></svg><script>window.DATA = ${JSON.stringify(data)};</script>`);
 const browser = await openChrome();
 await browser.send('Page.enable');
-await browser.send('Page.navigate', { url: `file://${file}` });
-await sleep(500);
+await browser.send('Page.navigate', { url: pathToFileURL(file).href });
+// The page carries the whole set (tens of MB): wait until its data has loaded, not a fixed time, or a
+// slow disk leaves window.DATA undefined
+for (let i = 0; i < 600 && !(await browser.evaluate('typeof window.DATA !== "undefined"')); i++) await sleep(100);
 const result = await browser.evaluate(`(async () => {
   const load = (src) => new Promise((r) => { const i = new Image(); i.onload = () => r(i); i.src = 'data:image/svg+xml;base64,' + src; });
   const c = document.createElement('canvas'); c.width = c.height = 32; const ctx = c.getContext('2d', { willReadFrequently: true });
