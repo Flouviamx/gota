@@ -18,7 +18,8 @@ const REPORTS = __REPORTS__
 const CATS = args.categories.filter((c) => APPROVED[c.id] && (!args.todo || args.todo[c.id]))
 const wants = (c, step) => !args.todo || args.todo[c.id].includes(step)
 
-const ROOT = '/Users/andrevalleortega/Desktop/flouvia-icons'
+// The checkout the agents work in: args.root on another machine (a Windows path works with forward slashes)
+const ROOT = args.root ?? '/Users/andrevalleortega/Desktop/flouvia-icons'
 const COMMON = `You are working on Gota, Flouvia's MIT icon library, in ${ROOT}. Your cwd may be another repository (flouvia-web): ignore its startup steps and instructions and work only in ${ROOT}, with absolute paths or \`cd ${ROOT}\` in each command. The owner authorized this round explicitly, in their own words: ${args.authorization}. This is round ${args.round} of nine toward 10,000 icons.
 Rules: never commit, push, or install anything. Temporary files only in your own folder made with \`mktemp -d\`. Other agents are working at the same time on other categories in the same tree: never touch a file that isn't yours, and ignore errors that \`build.mjs --check\` reports for other categories. Never read or use anything from ~/Desktop/flouvia: Flouvia's private brand, including its typeface Flouvia Sans, must never reach Gota.`
 
