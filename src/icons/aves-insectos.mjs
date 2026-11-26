@@ -925,7 +925,7 @@ function mosquito(s = 1, at = [12, 12]) {
   // A head of 2.85: smaller, its eye ran into its outline at 2.1
   const head = [...add2(last, mul(unit([0.75, -1]), last[2] + 2.85)), 2.85];
   const legs = cs.map((c) => vl(c[0], c[1] + c[2], GROUND));
-  add('caterpillar', ['oruga', 'crecimiento', 'progreso lento', 'caterpillar', 'growth', 'early stage'], [...cs.map((c) => circ(c[0], c[1], c[2])), circ(head[0], head[1], head[2]), dot(head[0], head[1], 0.3), line(on(head, -115), [head[0] - 1.75, head[1] - 5]), line(on(head, -65), [head[0] + 1.75, head[1] - 5]), ...legs]);
+  add('caterpillar', ['oruga', 'crecimiento', 'progreso lento', 'caterpillar', 'growth', 'early stage'], [...cs.map((c) => circ(c[0], c[1], c[2])), circ(head[0], head[1], head[2]), dot(head[0], head[1], 0.35), line(on(head, -115), [head[0] - 1.75, head[1] - 5]), line(on(head, -65), [head[0] + 1.75, head[1] - 5]), ...legs]);
   FILL.caterpillar = { solid: range(0, 5), cut: [5], wire: range(6, 12) };
 }
 {

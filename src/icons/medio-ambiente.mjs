@@ -628,7 +628,7 @@ icons['earth-heart'] = { tags: ['amor al planeta', 'día de la tierra', 'cuidar'
   const house = L.house.d.slice(0, 2).map((d) => place(d, 0.52, [21.25, 20.75]));
   const front = (r) => {
     const pts = [];
-    for (let i = 0; i <= 6; i++) pts.push(polar(-3.5, 15.25, r + (i % 2 ? 0.75 : -0.75), -28 + (56 * i) / 6));
+    for (let i = 0; i <= 6; i++) pts.push(polar(-3.5, 15.25, r + (i % 2 ? 0.75 : -0.75), -27.5 + (55 * i) / 6));
     return line(...pts);
   };
   icons['noise-pollution'] = { tags: ['contaminación acústica', 'ruido', 'molestia', 'noise pollution', 'noise'], d: [...house, front(7.25), front(11.25)] };

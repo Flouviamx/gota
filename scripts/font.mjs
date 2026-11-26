@@ -251,7 +251,8 @@ for (const name of Object.keys(files)) {
 }
 for (const { style, fixed } of report) {
   const family = `Check ${style === 'fill' ? 'gota-fill' : 'gota'}`;
-  const items = names.map((name) => ({ name, code: code(name), vary: !fixed.includes(name) }));
+  // A brand mark is solid by nature (as qa.mjs's density knows): its weight axis does nothing on purpose
+  const items = names.map((name) => ({ name, code: code(name), vary: !fixed.includes(name) && !icons[name].mark }));
   for (let i = 0; i < items.length; i += 200) failures.push(...(await browser.evaluate(`probe(${JSON.stringify(family)}, ${JSON.stringify(items.slice(i, i + 200))})`)).map((f) => `${family}: ${f}`));
 }
 rmSync(page);
