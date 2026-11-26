@@ -66,3 +66,6 @@ What round 4 added:
 What round 10 added:
 - **Close in a clean worktree.** When the next round's illustrators are already drawing in the tree, the main session builds, checks, and makes the fonts of the finished round in a git worktree holding only that round's files (with the repository's `node_modules` linked), and commits those files from the main tree; the next round's files stay out of the commit.
 - **Search against the round's languages.** A label in any language can outrank an older icon's keyword (hopscotch's Italian «Campana» before the bell for «campana»), and a new icon whose keywords hold every word of a query hides the partial matches (the book downloaded as a PDF hid file-pdf for «descargar pdf»). The search tests catch both; the fix is the label or the keyword, never the ranking.
+
+What round 11 added:
+- **A round can move to another machine.** The approved lists, the drawing workflow's arguments and template, the languages not yet written, and the agents' reports live in the session that launched the round. To pick it up elsewhere, the round's branch (`round-N`) carries them in `round-N/` with a README of where each category stands and what is left; `main` gets the round only when it closes, without that folder.

@@ -1,10 +1,10 @@
 # Roadmap
 
-> Status as of 10 Nov 2026. When a subphase moves forward, mark it here and log it in [History](./history.md).
+> Status as of 22 Nov 2026. When a subphase moves forward, mark it here and log it in [History](./history.md).
 
 [← Index](./README.md)
 
-**The v1 goal: 10,000 icons.** The source is public on GitHub since 23 Oct 2026, without promotion ([decision 78](./decisions.md#outputs-23-oct-2026)); npm, the release ZIP, and the announcement wait for v1. Each round of ~1,000 takes about 3 hours of agents.
+**v1 is 10,000 icons: round 11, then the sweep of about 2,500** ([decision 87](./decisions.md#v1-20-nov-2026)). The source is public on GitHub since 23 Oct 2026, without promotion ([decision 78](./decisions.md#outputs-23-oct-2026)); npm, the release ZIP, and the announcement wait for v1. Each round of ~1,000 takes about 3 hours of agents.
 
 ## Phase 0 · Foundations ✅
 - [x] Geometry engine: continuous corners, keylines, the drop (`engine/geometry.mjs`).
@@ -34,10 +34,11 @@ It comes before scaling: a format change is cheap with 1,000 icons and very expe
 ## Phase 3 · Scaling to 10,000
 - [x] 3.1 Taxonomy for the remaining ~9,000 by domain (health, education, food, sports, tools, science, industry, home, animals, AI, transportation…), without repeating concepts: 81 categories in 11 domains, nine rounds, and the names stage that keeps concepts from repeating ([taxonomy](./taxonomy.md), `src/taxonomy.json`, [decision 80](./decisions.md#phase-3-23-oct-2026)).
 - [x] 3.2 Curated modifiers in the engine: badges with knockouts (+, −, ✓, ×, clock, lock, alert, star), directions, and levels. Those badges and levels (`levels`, `value`) were already there; 3.2 moved into the engine the badges four categories drew by hand (`question`, `block`, `arrow-left`, and the glyphs `search`, `heart`, `sync`, `edit`, `gear`, each with its 16 px version) and added the directions (`turn`, `turnPath`, `flipPath`) ([engine](./engine.md#geometry-enginegeometrymjs), [decision 79](./decisions.md#phase-3-23-oct-2026)).
-- [ ] 3.3 Nine rounds of ~1,000: each agent delivers everything at once, with a critic, QA, and a sample for the owner. Round 3 ✅ (24 Oct 2026, 903 icons: 1,936 in all). Round 4 ✅ (25 Oct 2026, 863 icons: 2,801 in all). Round 5 ✅ (25 Oct 2026, 741 icons: 3,542 in all). Round 6 ✅ (27 Oct 2026, 972 icons: 4,514 in all). Round 7 ✅ (28 Oct 2026, 773 icons: 5,287 in all). Round 8 ✅ (29 Oct 2026, 703 icons: 5,990 in all). Round 9 ✅ (1 Nov 2026, 524 icons: 6,514 in all). Round 10 ✅ (10 Nov 2026, 523 icons: 7,037 in all).
+- [x] 3.3 Nine rounds of ~1,000: each agent delivers everything at once, with a critic, QA, and a sample for the owner. Round 3 ✅ (24 Oct 2026, 903 icons: 1,936 in all). Round 4 ✅ (25 Oct 2026, 863 icons: 2,801 in all). Round 5 ✅ (25 Oct 2026, 741 icons: 3,542 in all). Round 6 ✅ (27 Oct 2026, 972 icons: 4,514 in all). Round 7 ✅ (28 Oct 2026, 773 icons: 5,287 in all). Round 8 ✅ (29 Oct 2026, 703 icons: 5,990 in all). Round 9 ✅ (1 Nov 2026, 524 icons: 6,514 in all). Round 10 ✅ (10 Nov 2026, 523 icons: 7,037 in all). Round 11 ✅ (26 Nov 2026, 423 icons: 7,460 in all).
+- [ ] 3.4 The sweep, about 2,540 icons in rounds of its own after round 11 ([decision 87](./decisions.md#v1-20-nov-2026)): the names the migration maps still can't place (Lucide, Heroicons, SF Symbols) and the gaps the rounds left, each in the category whose scope holds it, until the set lands on 10,000. The rounds landed below their taxonomy targets, so it is about 2,500, not the ~320 the taxonomy planned.
 
 ## Phase 4 · Launching v1 (10,000)
-- [ ] 4.1 A site to browse, search, and copy (SVG, JSX, Figma) at `gota.flouvia.com`. Being built in `flouvia-web` by the site's session, at the owner's request (23 Oct 2026): the page, the explorer (`/icons`), a guide, a showcase, and the license, English at the root and Spanish under `/es`, served at `gota.flouvia.com` through this project ([decision 72](./decisions.md#outputs-23-oct-2026)). Not in production yet.
+- [ ] 4.1 A site to browse, search, and copy (SVG, JSX, Figma) at `gota.flouvia.com`. Being built in `flouvia-web` by the site's session, at the owner's request (23 Oct 2026): the page, the explorer (`/icons`), a guide, a showcase, and the license, English at the root and Spanish under `/es`, served at `gota.flouvia.com` through this project ([decision 72](./decisions.md#outputs-23-oct-2026)). Live since 23 Oct 2026; its explorer takes each round with `npm run gota:sync` in `flouvia-web`.
 - [ ] 4.2 GitHub with the source only (public at `github.com/Flouviamx/gota` since 23 Oct 2026, unannounced); a GitHub Action that publishes the ZIP for each version; npm `@flouvia/gota`.
 - [ ] 4.3 Zero QA warnings, the owner's full review, documentation, and announcement.
 - [ ] 4.4 Commercial README in English, plus `README.es.md` in Spanish for Latin America (today's README files are a short placeholder).

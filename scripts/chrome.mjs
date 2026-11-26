@@ -1,11 +1,16 @@
 // Headless Chrome over the DevTools Protocol, with no dependencies: the review sheets use it to
-// render local HTML to PNG. The CHROME environment variable sets the browser path.
+// render local HTML to PNG. The CHROME environment variable sets the browser path; without it, each
+// system's default install.
 import { spawn } from 'node:child_process';
 import { mkdtempSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const CHROME = process.env.CHROME ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+export const CHROME =
+  process.env.CHROME ??
+  (process.platform === 'win32'
+    ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome');
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 /** A new profile for one Chrome run. A run cut off before it closes (an agent stopped by a usage

@@ -244,6 +244,15 @@ reach it in one pass. What the critics, QA, and the owner caught, so it isn't dr
   balls on an arch as a loading spinner, a triangle on a ring as a network). Round 10 dropped 21
   like these after its critics: say the object by its shape, never by its print, and check the
   drawing against the symbols everyone already knows.
+- **Look-alikes, letters, and a mark too small for a badge.** An animal drawn by its outline reads
+  as the animal it resembles (the lemur as a dragon, the red panda as a lizard, the beaver as a
+  seal, the gorilla on its knuckles as a stone); a creature, or an instrument on a pole, reads as a
+  letter (the oyster as G, the hammerhead as T, the grasshopper's legs as M, the anemometer's cups
+  as T); a cross-section reads as a target (a tree's rings); a barrier drawn without what it holds
+  back reads as stones (sandbags without the water); and a mark made of three parts (the recycling
+  arrows) turns into blobs under 9 wide, as a badge. Round 11 dropped every one: draw an animal
+  by what only it has, check the drawing against the alphabet, and keep a three-part mark as the
+  subject, never as a badge.
 
 ## Process
 1. Draw in batches of ~20 in `src/icons/<category>.mjs` with the engine's functions.

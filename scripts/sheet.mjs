@@ -6,7 +6,7 @@ import { spawn } from 'node:child_process';
 import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { render } from '../engine/variants.mjs';
-import { newProfile } from './chrome.mjs';
+import { CHROME, newProfile } from './chrome.mjs';
 import { loadAll } from './load.mjs';
 
 const target = process.argv[2] ?? 'all';
@@ -28,7 +28,6 @@ body{margin:0;background:#161617;color:#fff;font:12px "Helvetica Neue",Helvetica
 .l{background:#f5f5f7;color:#1d1d1f;border-radius:8px;padding:4px;line-height:0}
 </style><div class="g">${items.map(([name, icon]) => `<div class="c" data-name="${name}">${svg(icon, 96, 1.5, KEYS)}<div class="r">${svg(icon, 24, 1.5)}${svg(icon, 18, 1.8)}<span class="p">${svg(icon, 15, 1.8)}</span><span class="l">${svg(icon, 20, 1.5)}</span></div><span class="n">${name}</span></div>`).join('')}</div>`;
 
-const CHROME = process.env.CHROME ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const profile = newProfile();
 const port = 9800 + Math.floor(Math.random() * 900);

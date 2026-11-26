@@ -1,0 +1,555 @@
+{
+  "bird": {
+    "label": { "es": "Pájaro", "en": "Bird", "pt": "Pássaro", "fr": "Oiseau", "de": "Vogel", "it": "Uccello", "ja": "鳥", "zh": "鸟", "ko": "새", "ar": "طائر" },
+    "keywords": {
+      "es": ["ave", "pajarito", "fauna silvestre", "naturaleza", "observación de aves", "ave canora", "pájaros de jaula"],
+      "en": ["songbird", "wildlife", "nature", "birding", "birdwatching", "avian", "pet bird"]
+    }
+  },
+  "bird-flying": {
+    "label": { "es": "Pájaro volando", "en": "Flying bird", "pt": "Pássaro voando", "fr": "Oiseau en vol", "de": "Fliegender Vogel", "it": "Uccello in volo", "ja": "飛ぶ鳥", "zh": "飞翔的鸟", "ko": "나는 새", "ar": "طائر يطير" },
+    "keywords": {
+      "es": ["volar", "vuelo", "libertad", "soltar", "liberar", "dejar ir", "alzar el vuelo"],
+      "en": ["flight", "freedom", "let go", "release", "take off", "soar", "fly away"]
+    }
+  },
+  "bird-flock": {
+    "label": { "es": "Parvada", "en": "Flock of birds", "pt": "Bando de pássaros", "fr": "Volée d’oiseaux", "de": "Vogelschwarm", "it": "Stormo di uccelli", "ja": "鳥の群れ", "zh": "鸟群", "ko": "새 떼", "ar": "سرب طيور" },
+    "keywords": {
+      "es": ["migración", "aves migratorias", "temporada", "cambio de estación", "grupo de aves", "bandada", "otoño"],
+      "en": ["migration", "migratory birds", "seasons", "group of birds", "flight formation", "autumn", "swarm"]
+    }
+  },
+  "birdsong": {
+    "label": { "es": "Canto de pájaros", "en": "Birdsong", "pt": "Canto dos pássaros", "fr": "Chant d’oiseaux", "de": "Vogelgesang", "it": "Canto degli uccelli", "ja": "鳥のさえずり", "zh": "鸟鸣", "ko": "새소리", "ar": "تغريد الطيور" },
+    "keywords": {
+      "es": ["trino", "sonidos de la naturaleza", "identificar sonido", "alarma suave", "tono de despertador", "gorjeo", "llamado de aves"],
+      "en": ["bird call", "chirp", "tweet", "nature sounds", "sound identification", "gentle alarm", "wake-up tone"]
+    }
+  },
+  "bird-plus": {
+    "label": { "es": "Registrar avistamiento", "en": "Log sighting", "pt": "Registrar avistamento", "fr": "Ajouter une observation", "de": "Sichtung erfassen", "it": "Registra avvistamento", "ja": "観察を記録", "zh": "添加观察记录", "ko": "관찰 기록 추가", "ar": "تسجيل مشاهدة" },
+    "keywords": {
+      "es": ["agregar especie", "nueva especie", "lista de aves", "lista de vida", "conteo de aves", "anotar ave", "bitácora de campo"],
+      "en": ["add species", "new species", "checklist", "life list", "bird count", "birding log", "field notes"]
+    }
+  },
+  "map-pin-bird": {
+    "label": { "es": "Punto de avistamiento", "en": "Sighting location", "pt": "Local de avistamento", "fr": "Lieu d’observation", "de": "Beobachtungsort", "it": "Luogo di avvistamento", "ja": "観察地点", "zh": "观鸟地点", "ko": "새 관찰 장소", "ar": "موقع مشاهدة الطيور" },
+    "keywords": {
+      "es": ["mapa de aves", "zona de observación", "sitio de anidación", "ubicación", "reserva natural", "humedal", "ruta de aves"],
+      "en": ["birding hotspot", "nesting site", "map pin", "location", "nature reserve", "wetland", "bird map"]
+    }
+  },
+  "bird-tracks": {
+    "label": { "es": "Huellas de pájaro", "en": "Bird tracks", "pt": "Pegadas de pássaro", "fr": "Empreintes d’oiseau", "de": "Vogelspuren", "it": "Impronte di uccello", "ja": "鳥の足跡", "zh": "鸟的足迹", "ko": "새 발자국", "ar": "آثار أقدام طائر" },
+    "keywords": {
+      "es": ["pisadas", "rastreo", "señales en el sendero", "fauna silvestre", "patitas", "rastro animal", "pasó por aquí"],
+      "en": ["footprints", "tracking", "trail signs", "wildlife sign", "bird feet", "trail", "passed by here"]
+    }
+  },
+  "birdhouse": {
+    "label": { "es": "Casita para pájaros", "en": "Birdhouse", "pt": "Casinha de passarinho", "fr": "Nichoir", "de": "Nistkasten", "it": "Casetta per uccelli", "ja": "巣箱", "zh": "鸟屋", "ko": "새집", "ar": "بيت الطيور" },
+    "keywords": {
+      "es": ["caja nido", "nido artificial", "jardín", "atraer aves", "pajarera", "refugio", "fauna urbana"],
+      "en": ["nest box", "garden", "attract birds", "backyard", "shelter", "wildlife home", "nesting"]
+    }
+  },
+  "bird-feeder": {
+    "label": { "es": "Comedero para pájaros", "en": "Bird feeder", "pt": "Comedouro para pássaros", "fr": "Mangeoire à oiseaux", "de": "Vogelfutterhaus", "it": "Mangiatoia per uccelli", "ja": "鳥の餌台", "zh": "喂鸟器", "ko": "새 모이통", "ar": "معلف الطيور" },
+    "keywords": {
+      "es": ["alpiste", "semillas", "alimentar aves", "jardín", "patio", "observar aves", "aves silvestres"],
+      "en": ["birdseed", "seeds", "feed birds", "garden", "backyard birding", "wild birds", "suet"]
+    }
+  },
+  "birdbath": {
+    "label": { "es": "Bebedero para pájaros", "en": "Birdbath", "pt": "Bebedouro para pássaros", "fr": "Bain d’oiseaux", "de": "Vogeltränke", "it": "Abbeveratoio per uccelli", "ja": "バードバス", "zh": "鸟浴盆", "ko": "새 물그릇", "ar": "مسقاة الطيور" },
+    "keywords": {
+      "es": ["baño para aves", "fuente de jardín", "decoración de jardín", "agua para aves", "pila", "fauna", "jardinería"],
+      "en": ["garden fountain", "garden decor", "water for wildlife", "basin", "pedestal", "backyard", "drinking water"]
+    }
+  },
+  "nest": {
+    "label": { "es": "Nido", "en": "Nest", "pt": "Ninho", "fr": "Nid", "de": "Nest", "it": "Nido", "ja": "巣", "zh": "鸟巢", "ko": "둥지", "ar": "عش" },
+    "keywords": {
+      "es": ["anidar", "hogar", "lugar acogedor", "huevos", "elementos anidados", "jerarquía", "refugio"],
+      "en": ["nesting", "home", "cozy", "eggs", "nested items", "hierarchy", "shelter"]
+    }
+  },
+  "egg-hatching": {
+    "label": { "es": "Huevo eclosionando", "en": "Hatching egg", "pt": "Ovo eclodindo", "fr": "Œuf qui éclot", "de": "Schlüpfendes Ei", "it": "Uovo che si schiude", "ja": "孵化する卵", "zh": "破壳的蛋", "ko": "부화하는 알", "ar": "بيضة تفقس" },
+    "keywords": {
+      "es": ["eclosión", "nuevo", "lanzamiento", "beta", "primeros pasos", "onboarding", "nacer", "romper el cascarón"],
+      "en": ["hatch", "new", "launch", "beta", "first steps", "onboarding", "newborn", "break out"]
+    }
+  },
+  "feather": {
+    "label": { "es": "Pluma", "en": "Feather", "pt": "Pena", "fr": "Plume", "de": "Feder", "it": "Piuma", "ja": "羽根", "zh": "羽毛", "ko": "깃털", "ar": "ريشة" },
+    "keywords": {
+      "es": ["ligero", "plan básico", "suave", "aves", "plumaje", "versión lite", "poco peso"],
+      "en": ["lightweight", "light plan", "soft", "birds", "plumage", "lite version", "quill"]
+    }
+  },
+  "chick": {
+    "label": { "es": "Pollito", "en": "Chick", "pt": "Pintinho", "fr": "Poussin", "de": "Küken", "it": "Pulcino", "ja": "ひよこ", "zh": "小鸡", "ko": "병아리", "ar": "كتكوت" },
+    "keywords": {
+      "es": ["principiante", "novato", "recién llegado", "primavera", "cría", "nivel básico", "Pascua"],
+      "en": ["beginner", "newbie", "newcomer", "spring", "baby animal", "starter level", "Easter"]
+    }
+  },
+  "hen": {
+    "label": { "es": "Gallina", "en": "Hen", "pt": "Galinha", "fr": "Poule", "de": "Henne", "it": "Gallina", "ja": "ニワトリ", "zh": "母鸡", "ko": "암탉", "ar": "دجاجة" },
+    "keywords": {
+      "es": ["aves de corral", "huevos", "granja", "pollo", "avicultura", "gallinero", "corral"],
+      "en": ["poultry", "eggs", "farm", "chicken", "layer", "coop", "barnyard"]
+    }
+  },
+  "turkey": {
+    "label": { "es": "Guajolote", "en": "Turkey", "pt": "Peru", "fr": "Dinde", "de": "Truthahn", "it": "Tacchino", "ja": "七面鳥", "zh": "火鸡", "ko": "칠면조", "ar": "ديك رومي" },
+    "keywords": {
+      "es": ["pavo", "cena navideña", "Acción de Gracias", "granja", "aves de corral", "fiestas decembrinas", "mole"],
+      "en": ["Thanksgiving", "holiday dinner", "Christmas dinner", "farm", "poultry", "gobble", "roast"]
+    }
+  },
+  "duck": {
+    "label": { "es": "Pato", "en": "Duck", "pt": "Pato", "fr": "Canard", "de": "Ente", "it": "Anatra", "ja": "アヒル", "zh": "鸭子", "ko": "오리", "ar": "بطة" },
+    "keywords": {
+      "es": ["estanque", "parque", "lago", "granja", "patito", "cuac", "aves acuáticas"],
+      "en": ["pond", "park", "lake", "farm", "duckling", "quack", "waterfowl"]
+    }
+  },
+  "goose": {
+    "label": { "es": "Ganso", "en": "Goose", "pt": "Ganso", "fr": "Oie", "de": "Gans", "it": "Oca", "ja": "ガチョウ", "zh": "鹅", "ko": "거위", "ar": "إوزة" },
+    "keywords": {
+      "es": ["oca", "granja", "graznido", "aves silvestres", "aves acuáticas", "migración", "corral"],
+      "en": ["farm", "honk", "wild geese", "waterfowl", "migration", "gander", "gosling"]
+    }
+  },
+  "swan": {
+    "label": { "es": "Cisne", "en": "Swan", "pt": "Cisne", "fr": "Cygne", "de": "Schwan", "it": "Cigno", "ja": "白鳥", "zh": "天鹅", "ko": "백조", "ar": "بجعة" },
+    "keywords": {
+      "es": ["elegancia", "lago", "boda", "gracia", "belleza", "aves acuáticas", "romance"],
+      "en": ["elegance", "lake", "wedding", "grace", "beauty", "waterfowl", "romance"]
+    }
+  },
+  "eagle": {
+    "label": { "es": "Águila", "en": "Eagle", "pt": "Águia", "fr": "Aigle", "de": "Adler", "it": "Aquila", "ja": "ワシ", "zh": "鹰", "ko": "독수리", "ar": "نسر" },
+    "keywords": {
+      "es": ["visión aguda", "enfoque", "supervisión", "aves rapaces", "halcón", "precisión", "vigilancia"],
+      "en": ["sharp vision", "focus", "oversight", "bird of prey", "raptor", "hawk", "precision"]
+    }
+  },
+  "owl": {
+    "label": { "es": "Búho", "en": "Owl", "pt": "Coruja", "fr": "Hibou", "de": "Eule", "it": "Gufo", "ja": "フクロウ", "zh": "猫头鹰", "ko": "부엉이", "ar": "بومة" },
+    "keywords": {
+      "es": ["modo nocturno", "sabiduría", "aprendizaje", "lechuza", "noche", "desvelo", "estudiar"],
+      "en": ["night mode", "wisdom", "learning", "late hours", "study", "nocturnal", "knowledge"]
+    }
+  },
+  "parrot": {
+    "label": { "es": "Loro", "en": "Parrot", "pt": "Papagaio", "fr": "Perroquet", "de": "Papagei", "it": "Pappagallo", "ja": "オウム", "zh": "鹦鹉", "ko": "앵무새", "ar": "ببغاء" },
+    "keywords": {
+      "es": ["perico", "guacamaya", "hablar", "repetir", "eco", "aves tropicales", "imitar"],
+      "en": ["macaw", "parakeet", "talk", "repeat", "echo", "tropical bird", "mimic"]
+    }
+  },
+  "penguin": {
+    "label": { "es": "Pingüino", "en": "Penguin", "pt": "Pinguim", "fr": "Manchot", "de": "Pinguin", "it": "Pinguino", "ja": "ペンギン", "zh": "企鹅", "ko": "펭귄", "ar": "بطريق" },
+    "keywords": {
+      "es": ["frío", "polar", "invierno", "Antártida", "hielo", "nieve", "aves marinas"],
+      "en": ["cold", "polar", "winter", "Antarctica", "ice", "snow", "seabird"]
+    }
+  },
+  "flamingo": {
+    "label": { "es": "Flamenco", "en": "Flamingo", "pt": "Flamingo", "fr": "Flamant rose", "de": "Flamingo", "it": "Fenicottero", "ja": "フラミンゴ", "zh": "火烈鸟", "ko": "플라밍고", "ar": "فلامنغو" },
+    "keywords": {
+      "es": ["tropical", "verano", "fiesta en la alberca", "humedal", "ave rosa", "playa", "flotador"],
+      "en": ["tropical", "summer", "pool party", "wetlands", "pink bird", "beach", "pool float"]
+    }
+  },
+  "hummingbird": {
+    "label": { "es": "Colibrí", "en": "Hummingbird", "pt": "Beija-flor", "fr": "Colibri", "de": "Kolibri", "it": "Colibrì", "ja": "ハチドリ", "zh": "蜂鸟", "ko": "벌새", "ar": "طائر الطنان" },
+    "keywords": {
+      "es": ["chuparrosa", "velocidad", "suspendido en el aire", "pequeño y ligero", "néctar", "flores", "aleteo"],
+      "en": ["speed", "hovering", "small", "lightweight", "nectar", "flowers", "fluttering"]
+    }
+  },
+  "pigeon": {
+    "label": { "es": "Paloma", "en": "Pigeon", "pt": "Pombo", "fr": "Pigeon", "de": "Taube", "it": "Piccione", "ja": "ハト", "zh": "鸽子", "ko": "비둘기", "ar": "حمامة" },
+    "keywords": {
+      "es": ["aves urbanas", "ciudad", "parque", "plaza", "pichón", "zócalo", "migajas"],
+      "en": ["city bird", "urban", "park", "plaza", "dove", "town square", "breadcrumbs"]
+    }
+  },
+  "carrier-pigeon": {
+    "label": { "es": "Paloma mensajera", "en": "Carrier pigeon", "pt": "Pombo-correio", "fr": "Pigeon voyageur", "de": "Brieftaube", "it": "Piccione viaggiatore", "ja": "伝書鳩", "zh": "信鸽", "ko": "전서구", "ar": "حمام زاجل" },
+    "keywords": {
+      "es": ["enviar mensaje", "correo", "carta", "entrega", "mensajería", "a la antigua", "recado"],
+      "en": ["send message", "mail", "letter", "delivery", "messenger", "old-school", "note"]
+    }
+  },
+  "crow": {
+    "label": { "es": "Cuervo", "en": "Crow", "pt": "Corvo", "fr": "Corbeau", "de": "Krähe", "it": "Corvo", "ja": "カラス", "zh": "乌鸦", "ko": "까마귀", "ar": "غراب" },
+    "keywords": {
+      "es": ["Halloween", "presagio", "mal agüero", "astucia", "inteligencia", "ave negra", "misterio"],
+      "en": ["raven", "Halloween", "omen", "clever", "intelligence", "blackbird", "spooky"]
+    }
+  },
+  "toucan": {
+    "label": { "es": "Tucán", "en": "Toucan", "pt": "Tucano", "fr": "Toucan", "de": "Tukan", "it": "Tucano", "ja": "オオハシ", "zh": "巨嘴鸟", "ko": "큰부리새", "ar": "طوقان" },
+    "keywords": {
+      "es": ["tropical", "selva", "jungla", "bosque tropical", "pico grande", "aves exóticas", "ecoturismo"],
+      "en": ["tropical", "jungle", "rainforest", "big beak", "exotic bird", "ecotourism", "Amazon"]
+    }
+  },
+  "ostrich": {
+    "label": { "es": "Avestruz", "en": "Ostrich", "pt": "Avestruz", "fr": "Autruche", "de": "Strauß", "it": "Struzzo", "ja": "ダチョウ", "zh": "鸵鸟", "ko": "타조", "ar": "نعامة" },
+    "keywords": {
+      "es": ["ave grande", "corredor veloz", "esconder la cabeza", "evadir", "sabana", "África", "no vuela"],
+      "en": ["big bird", "fast runner", "head in the sand", "avoidance", "savanna", "Africa", "flightless"]
+    }
+  },
+  "pelican": {
+    "label": { "es": "Pelícano", "en": "Pelican", "pt": "Pelicano", "fr": "Pélican", "de": "Pelikan", "it": "Pellicano", "ja": "ペリカン", "zh": "鹈鹕", "ko": "펠리컨", "ar": "بليكان" },
+    "keywords": {
+      "es": ["costa", "puerto", "muelle", "pesca", "aves marinas", "malecón", "playa"],
+      "en": ["coast", "harbor", "pier", "fishing", "seabird", "waterfront", "beak pouch"]
+    }
+  },
+  "woodpecker": {
+    "label": { "es": "Pájaro carpintero", "en": "Woodpecker", "pt": "Pica-pau", "fr": "Pic", "de": "Specht", "it": "Picchio", "ja": "キツツキ", "zh": "啄木鸟", "ko": "딱따구리", "ar": "نقار الخشب" },
+    "keywords": {
+      "es": ["tocar", "picotear", "constancia", "persistencia", "tronco", "golpeteo", "insistir"],
+      "en": ["knock", "pecking", "persistence", "tree trunk", "tapping", "keep at it", "drumming"]
+    }
+  },
+  "puffin": {
+    "label": { "es": "Frailecillo", "en": "Puffin", "pt": "Papagaio-do-mar", "fr": "Macareux", "de": "Papageitaucher", "it": "Pulcinella di mare", "ja": "ツノメドリ", "zh": "海鹦", "ko": "퍼핀", "ar": "طائر البفن" },
+    "keywords": {
+      "es": ["aves marinas", "acantilado", "costa", "Atlántico Norte", "Islandia", "pico de colores", "colonia"],
+      "en": ["seabird", "cliffs", "coast", "North Atlantic", "Iceland", "colorful beak", "colony"]
+    }
+  },
+  "swallow": {
+    "label": { "es": "Golondrina", "en": "Swallow", "pt": "Andorinha", "fr": "Hirondelle", "de": "Schwalbe", "it": "Rondine", "ja": "ツバメ", "zh": "燕子", "ko": "제비", "ar": "سنونو" },
+    "keywords": {
+      "es": ["primavera", "regreso", "viaje", "migración", "temporada", "vuelo rápido", "tatuaje marinero"],
+      "en": ["spring", "return", "coming back", "travel", "migration", "season", "sailor tattoo"]
+    }
+  },
+  "kiwi-bird": {
+    "label": { "es": "Ave kiwi", "en": "Kiwi bird", "pt": "Pássaro kiwi", "fr": "Oiseau kiwi", "de": "Kiwivogel", "it": "Uccello kiwi", "ja": "キーウィ", "zh": "几维鸟", "ko": "키위새", "ar": "طائر الكيوي" },
+    "keywords": {
+      "es": ["no vuela", "Nueva Zelanda", "fauna isleña", "especie endémica", "nocturno", "pico largo"],
+      "en": ["flightless", "New Zealand", "island fauna", "endemic species", "nocturnal", "long beak"]
+    }
+  },
+  "dodo": {
+    "label": { "es": "Dodo", "en": "Dodo", "pt": "Dodô", "fr": "Dodo", "de": "Dodo", "it": "Dodo", "ja": "ドードー", "zh": "渡渡鸟", "ko": "도도새", "ar": "طائر الدودو" },
+    "keywords": {
+      "es": ["extinto", "obsoleto", "en desuso", "código heredado", "descontinuado", "cosa del pasado", "ave que no vuela"],
+      "en": ["extinct", "deprecated", "legacy", "obsolete", "discontinued", "sunset", "thing of the past"]
+    }
+  },
+  "bee": {
+    "label": { "es": "Abeja", "en": "Bee", "pt": "Abelha", "fr": "Abeille", "de": "Biene", "it": "Ape", "ja": "ミツバチ", "zh": "蜜蜂", "ko": "꿀벌", "ar": "نحلة" },
+    "keywords": {
+      "es": ["miel", "ocupado", "trabajo", "polinización", "abejorro", "zumbido", "laborioso"],
+      "en": ["honey", "busy", "work", "pollination", "bumblebee", "buzz", "hardworking"]
+    }
+  },
+  "pollination": {
+    "label": { "es": "Polinización", "en": "Pollination", "pt": "Polinização", "fr": "Pollinisation", "de": "Bestäubung", "it": "Impollinazione", "ja": "受粉", "zh": "授粉", "ko": "꽃가루받이", "ar": "تلقيح الأزهار" },
+    "keywords": {
+      "es": ["polinizadores", "abejas", "flores", "jardín en flor", "néctar", "naturaleza", "biodiversidad"],
+      "en": ["pollinators", "bees", "flowers", "garden in bloom", "nectar", "nature", "biodiversity"]
+    }
+  },
+  "wasp": {
+    "label": { "es": "Avispa", "en": "Wasp", "pt": "Vespa", "fr": "Guêpe", "de": "Wespe", "it": "Vespa", "ja": "スズメバチ", "zh": "黄蜂", "ko": "말벌", "ar": "دبور" },
+    "keywords": {
+      "es": ["piquete", "aguijón", "avispón", "control de plagas", "fumigación", "plaga", "alergia"],
+      "en": ["hornet", "sting", "yellowjacket", "pest control", "exterminator", "pest", "allergy"]
+    }
+  },
+  "wasp-nest": {
+    "label": { "es": "Avispero", "en": "Wasp nest", "pt": "Vespeiro", "fr": "Nid de guêpes", "de": "Wespennest", "it": "Vespaio", "ja": "ハチの巣", "zh": "马蜂窝", "ko": "말벌집", "ar": "عش الدبابير" },
+    "keywords": {
+      "es": ["panal de avispas", "control de plagas", "retirar nido", "peligro", "fumigación", "plaga en casa", "riesgo"],
+      "en": ["hornet nest", "pest removal", "pest control", "hazard", "exterminator", "paper nest", "danger"]
+    }
+  },
+  "butterfly": {
+    "label": { "es": "Mariposa", "en": "Butterfly", "pt": "Borboleta", "fr": "Papillon", "de": "Schmetterling", "it": "Farfalla", "ja": "蝶", "zh": "蝴蝶", "ko": "나비", "ar": "فراشة" },
+    "keywords": {
+      "es": ["transformación", "primavera", "libertad", "monarca", "metamorfosis", "jardín", "alas"],
+      "en": ["transformation", "spring", "freedom", "monarch", "metamorphosis", "garden", "wings"]
+    }
+  },
+  "moth": {
+    "label": { "es": "Polilla", "en": "Moth", "pt": "Mariposa", "fr": "Papillon de nuit", "de": "Nachtfalter", "it": "Falena", "ja": "蛾", "zh": "飞蛾", "ko": "나방", "ar": "عثة" },
+    "keywords": {
+      "es": ["palomilla", "noche", "atraída por la luz", "plaga de ropa", "naftalina", "insecto nocturno", "clóset"],
+      "en": ["night", "drawn to light", "lamp", "clothes pest", "mothballs", "nocturnal insect", "closet"]
+    }
+  },
+  "ant": {
+    "label": { "es": "Hormiga", "en": "Ant", "pt": "Formiga", "fr": "Fourmi", "de": "Ameise", "it": "Formica", "ja": "アリ", "zh": "蚂蚁", "ko": "개미", "ar": "نملة" },
+    "keywords": {
+      "es": ["trabajo en equipo", "tareas pequeñas", "colonia", "hormiguero", "constancia", "esfuerzo", "plaga"],
+      "en": ["work", "teamwork", "small tasks", "colony", "anthill", "diligence", "pest"]
+    }
+  },
+  "ladybug": {
+    "label": { "es": "Catarina", "en": "Ladybug", "pt": "Joaninha", "fr": "Coccinelle", "de": "Marienkäfer", "it": "Coccinella", "ja": "テントウムシ", "zh": "瓢虫", "ko": "무당벌레", "ar": "دعسوقة" },
+    "keywords": {
+      "es": ["mariquita", "buena suerte", "jardín", "primavera", "niños", "insecto rojo", "puntos negros"],
+      "en": ["ladybird", "good luck", "garden", "spring", "kids", "red bug", "spots"]
+    }
+  },
+  "beetle": {
+    "label": { "es": "Escarabajo", "en": "Beetle", "pt": "Besouro", "fr": "Scarabée", "de": "Käfer", "it": "Scarabeo", "ja": "甲虫", "zh": "甲虫", "ko": "딱정벌레", "ar": "خنفساء" },
+    "keywords": {
+      "es": ["insecto", "bicho", "entomología", "colección de insectos", "coleóptero", "caparazón", "naturaleza"],
+      "en": ["insect", "bug", "entomology", "insect collection", "scarab", "shell", "nature"]
+    }
+  },
+  "stag-beetle": {
+    "label": { "es": "Escarabajo ciervo", "en": "Stag beetle", "pt": "Besouro-veado", "fr": "Lucane", "de": "Hirschkäfer", "it": "Cervo volante", "ja": "クワガタ", "zh": "锹甲", "ko": "사슴벌레", "ar": "خنفساء الأيل" },
+    "keywords": {
+      "es": ["ciervo volante", "fuerza", "pinzas", "colección de insectos", "niños", "insecto grande", "cuernos"],
+      "en": ["strength", "pincers", "mandibles", "insect collection", "kids", "big bug", "horns"]
+    }
+  },
+  "dragonfly": {
+    "label": { "es": "Libélula", "en": "Dragonfly", "pt": "Libélula", "fr": "Libellule", "de": "Libelle", "it": "Libellula", "ja": "トンボ", "zh": "蜻蜓", "ko": "잠자리", "ar": "يعسوب" },
+    "keywords": {
+      "es": ["agilidad", "verano", "estanque", "caballito del diablo", "alas", "vuelo", "humedal"],
+      "en": ["agility", "summer", "pond", "damselfly", "wings", "flight", "wetland"]
+    }
+  },
+  "mosquito": {
+    "label": { "es": "Mosquito", "en": "Mosquito", "pt": "Mosquito", "fr": "Moustique", "de": "Mücke", "it": "Zanzara", "ja": "蚊", "zh": "蚊子", "ko": "모기", "ar": "بعوضة" },
+    "keywords": {
+      "es": ["piquete", "zancudo", "dengue", "paludismo", "repelente", "zika", "mosquitero"],
+      "en": ["bite", "dengue", "malaria", "repellent", "Zika", "itch", "bug spray"]
+    }
+  },
+  "mosquito-alert": {
+    "label": { "es": "Alerta de mosquitos", "en": "Mosquito alert", "pt": "Alerta de mosquitos", "fr": "Alerte moustiques", "de": "Mückenwarnung", "it": "Allerta zanzare", "ja": "蚊の注意報", "zh": "蚊虫预警", "ko": "모기 경보", "ar": "تحذير من البعوض" },
+    "keywords": {
+      "es": ["brote de dengue", "aviso sanitario", "pronóstico de actividad", "temporada de lluvias", "epidemia", "salud pública", "fumigación"],
+      "en": ["dengue outbreak", "health advisory", "activity forecast", "rainy season", "epidemic", "public health", "warning"]
+    }
+  },
+  "housefly": {
+    "label": { "es": "Mosca", "en": "Housefly", "pt": "Mosca", "fr": "Mouche", "de": "Stubenfliege", "it": "Mosca", "ja": "ハエ", "zh": "苍蝇", "ko": "파리", "ar": "ذبابة" },
+    "keywords": {
+      "es": ["higiene", "inocuidad alimentaria", "plaga", "basura", "insecto", "matamoscas", "suciedad"],
+      "en": ["fly", "hygiene", "food safety", "pest", "garbage", "fly swatter", "dirty"]
+    }
+  },
+  "caterpillar": {
+    "label": { "es": "Oruga", "en": "Caterpillar", "pt": "Lagarta", "fr": "Chenille", "de": "Raupe", "it": "Bruco", "ja": "イモムシ", "zh": "毛毛虫", "ko": "애벌레", "ar": "يرقة" },
+    "keywords": {
+      "es": ["gusano", "crecimiento", "etapa temprana", "avance lento", "larva", "en desarrollo", "metamorfosis"],
+      "en": ["worm", "growth", "early stage", "slow progress", "larva", "in development", "inchworm"]
+    }
+  },
+  "chrysalis": {
+    "label": { "es": "Crisálida", "en": "Chrysalis", "pt": "Crisálida", "fr": "Chrysalide", "de": "Puppe", "it": "Crisalide", "ja": "さなぎ", "zh": "蛹", "ko": "번데기", "ar": "شرنقة" },
+    "keywords": {
+      "es": ["capullo", "transformación", "en proceso", "próximamente", "metamorfosis", "pupa", "en espera"],
+      "en": ["cocoon", "transformation", "in progress", "coming soon", "metamorphosis", "pupa", "incubating"]
+    }
+  },
+  "firefly": {
+    "label": { "es": "Luciérnaga", "en": "Firefly", "pt": "Vaga-lume", "fr": "Luciole", "de": "Glühwürmchen", "it": "Lucciola", "ja": "ホタル", "zh": "萤火虫", "ko": "반딧불이", "ar": "يراعة" },
+    "keywords": {
+      "es": ["brillo", "noche", "lucecita", "resplandor", "verano", "bosque", "magia"],
+      "en": ["glow", "night", "small light", "lightning bug", "summer", "forest", "sparkle"]
+    }
+  },
+  "mantis": {
+    "label": { "es": "Mantis religiosa", "en": "Praying mantis", "pt": "Louva-a-deus", "fr": "Mante religieuse", "de": "Gottesanbeterin", "it": "Mantide religiosa", "ja": "カマキリ", "zh": "螳螂", "ko": "사마귀", "ar": "فرس النبي" },
+    "keywords": {
+      "es": ["campamocha", "paciencia", "concentración", "quietud", "acecho", "insecto verde", "meditación"],
+      "en": ["patience", "focus", "stillness", "ambush", "green insect", "meditation", "predator"]
+    }
+  },
+  "bedbug": {
+    "label": { "es": "Chinche", "en": "Bed bug", "pt": "Percevejo", "fr": "Punaise de lit", "de": "Bettwanze", "it": "Cimice dei letti", "ja": "トコジラミ", "zh": "臭虫", "ko": "빈대", "ar": "بق الفراش" },
+    "keywords": {
+      "es": ["hotel", "inspección de plagas", "infestación", "fumigación", "piquetes", "colchón", "hospedaje"],
+      "en": ["hotel", "pest inspection", "infestation", "exterminator", "bites", "mattress", "lodging"]
+    }
+  },
+  "deer-tick": {
+    "label": { "es": "Garrapata", "en": "Tick", "pt": "Carrapato", "fr": "Tique", "de": "Zecke", "it": "Zecca", "ja": "マダニ", "zh": "蜱虫", "ko": "진드기", "ar": "قراد" },
+    "keywords": {
+      "es": ["enfermedad de Lyme", "revisar después de excursión", "antipulgas", "parásito", "mascotas", "senderismo", "ácaro"],
+      "en": ["Lyme disease", "parasite", "flea prevention", "pets", "hiking", "arachnid", "deer"]
+    }
+  },
+  "spider": {
+    "label": { "es": "Araña", "en": "Spider", "pt": "Aranha", "fr": "Araignée", "de": "Spinne", "it": "Ragno", "ja": "クモ", "zh": "蜘蛛", "ko": "거미", "ar": "عنكبوت" },
+    "keywords": {
+      "es": ["rastreador", "bot", "crawler", "Halloween", "arácnido", "tarántula", "bichos"],
+      "en": ["crawler", "web crawler", "bot", "Halloween", "arachnid", "tarantula", "creepy"]
+    }
+  },
+  "spider-web": {
+    "label": { "es": "Telaraña", "en": "Spider web", "pt": "Teia de aranha", "fr": "Toile d’araignée", "de": "Spinnennetz", "it": "Ragnatela", "ja": "クモの巣", "zh": "蜘蛛网", "ko": "거미줄", "ar": "شبكة عنكبوت" },
+    "keywords": {
+      "es": ["trampa", "abandonado", "lugar viejo", "Halloween", "polvo", "red", "sin actividad"],
+      "en": ["cobweb", "trap", "abandoned", "Halloween", "dusty", "neglected", "inactive"]
+    }
+  },
+  "spider-hanging": {
+    "label": { "es": "Araña colgando", "en": "Hanging spider", "pt": "Aranha pendurada", "fr": "Araignée suspendue", "de": "Hängende Spinne", "it": "Ragno appeso", "ja": "ぶら下がるクモ", "zh": "垂挂的蜘蛛", "ko": "매달린 거미", "ar": "عنكبوت معلّق" },
+    "keywords": {
+      "es": ["Halloween", "menú desplegable", "bajar", "pender de un hilo", "hilo", "susto", "terror"],
+      "en": ["Halloween", "drop-down", "hanging by a thread", "dangling", "thread", "scare", "spooky"]
+    }
+  },
+  "centipede": {
+    "label": { "es": "Ciempiés", "en": "Centipede", "pt": "Centopeia", "fr": "Mille-pattes", "de": "Tausendfüßer", "it": "Millepiedi", "ja": "ムカデ", "zh": "蜈蚣", "ko": "지네", "ar": "أم أربعة وأربعين" },
+    "keywords": {
+      "es": ["milpiés", "plaga", "muchas patas", "bicho", "insecto rastrero", "jardín", "humedad"],
+      "en": ["millipede", "pest", "many legs", "creepy crawly", "bug", "garden", "damp"]
+    }
+  },
+  "snail": {
+    "label": { "es": "Caracol", "en": "Snail", "pt": "Caracol", "fr": "Escargot", "de": "Schnecke", "it": "Chiocciola", "ja": "カタツムリ", "zh": "蜗牛", "ko": "달팽이", "ar": "حلزون" },
+    "keywords": {
+      "es": ["lento", "conexión lenta", "jardín", "a paso de tortuga", "babosa", "concha", "lluvia"],
+      "en": ["slow", "slow connection", "garden", "sluggish", "slug", "shell", "lag"]
+    }
+  },
+  "butterfly-net": {
+    "label": { "es": "Red para mariposas", "en": "Butterfly net", "pt": "Rede para borboletas", "fr": "Filet à papillons", "de": "Schmetterlingsnetz", "it": "Retino per farfalle", "ja": "虫取り網", "zh": "捕虫网", "ko": "잠자리채", "ar": "شبكة صيد الفراشات" },
+    "keywords": {
+      "es": ["atrapar insectos", "colección", "entomología", "juego al aire libre", "excursión", "naturaleza", "campamento de verano"],
+      "en": ["catch insects", "bug catching", "collecting", "entomology", "outdoor play", "nature walk", "summer camp"]
+    }
+  },
+  "insect-hotel": {
+    "label": { "es": "Hotel de insectos", "en": "Bug hotel", "pt": "Hotel de insetos", "fr": "Hôtel à insectes", "de": "Insektenhotel", "it": "Hotel per insetti", "ja": "昆虫ホテル", "zh": "昆虫旅馆", "ko": "곤충 호텔", "ar": "فندق الحشرات" },
+    "keywords": {
+      "es": ["jardín", "polinizadores", "biodiversidad", "refugio", "abejas solitarias", "huerto urbano", "ecología"],
+      "en": ["garden", "pollinators", "biodiversity", "shelter", "solitary bees", "urban garden", "ecology"]
+    }
+  },
+  "snake": {
+    "label": { "es": "Serpiente", "en": "Snake", "pt": "Cobra", "fr": "Serpent", "de": "Schlange", "it": "Serpente", "ja": "ヘビ", "zh": "蛇", "ko": "뱀", "ar": "ثعبان" },
+    "keywords": {
+      "es": ["víbora", "culebra", "juego de la viborita", "reptil", "reptar", "ofidio", "zigzag"],
+      "en": ["serpent", "viper", "retro game", "reptile", "slither", "python", "zigzag"]
+    }
+  },
+  "snake-alert": {
+    "label": { "es": "Aviso de serpientes", "en": "Snake warning", "pt": "Aviso de cobras", "fr": "Alerte serpents", "de": "Schlangenwarnung", "it": "Attenzione serpenti", "ja": "ヘビ注意", "zh": "蛇出没警告", "ko": "뱀 주의", "ar": "تحذير من الثعابين" },
+    "keywords": {
+      "es": ["víboras venenosas", "peligro en el sendero", "cuidado", "senderismo", "avistamiento reportado", "mordedura", "fauna peligrosa"],
+      "en": ["venomous", "trail hazard", "caution", "hiking", "reported sighting", "bite", "dangerous wildlife"]
+    }
+  },
+  "cobra": {
+    "label": { "es": "Cobra", "en": "Cobra", "pt": "Naja", "fr": "Cobra", "de": "Kobra", "it": "Cobra", "ja": "コブラ", "zh": "眼镜蛇", "ko": "코브라", "ar": "كوبرا" },
+    "keywords": {
+      "es": ["peligro", "veneno", "serpiente venenosa", "naja", "amenaza", "encantador de serpientes", "ataque"],
+      "en": ["danger", "venom", "venomous snake", "threat", "snake charmer", "hood", "strike"]
+    }
+  },
+  "lizard": {
+    "label": { "es": "Lagartija", "en": "Lizard", "pt": "Lagarto", "fr": "Lézard", "de": "Eidechse", "it": "Lucertola", "ja": "トカゲ", "zh": "蜥蜴", "ko": "도마뱀", "ar": "سحلية" },
+    "keywords": {
+      "es": ["reptil", "desierto", "tomar el sol", "iguana", "lagarto", "sangre fría", "escamas"],
+      "en": ["reptile", "desert", "basking", "iguana", "terrarium", "cold-blooded", "scales"]
+    }
+  },
+  "gecko": {
+    "label": { "es": "Geco", "en": "Gecko", "pt": "Lagartixa", "fr": "Gecko", "de": "Gecko", "it": "Geco", "ja": "ヤモリ", "zh": "壁虎", "ko": "게코도마뱀", "ar": "أبو بريص" },
+    "keywords": {
+      "es": ["gecko", "cuija", "trepar", "adherencia", "reptil pequeño", "terrario", "mascota exótica"],
+      "en": ["climbing", "sticky grip", "wall climber", "small reptile", "terrarium", "exotic pet", "house lizard"]
+    }
+  },
+  "chameleon": {
+    "label": { "es": "Camaleón", "en": "Chameleon", "pt": "Camaleão", "fr": "Caméléon", "de": "Chamäleon", "it": "Camaleonte", "ja": "カメレオン", "zh": "变色龙", "ko": "카멜레온", "ar": "حرباء" },
+    "keywords": {
+      "es": ["adaptarse", "camuflaje", "cambiar de tema", "cambiar de color", "modo oscuro", "personalizar", "reptil"],
+      "en": ["adapt", "camouflage", "theme switcher", "change color", "dark mode", "customize", "reptile"]
+    }
+  },
+  "turtle": {
+    "label": { "es": "Tortuga", "en": "Turtle", "pt": "Tartaruga", "fr": "Tortue", "de": "Schildkröte", "it": "Tartaruga", "ja": "カメ", "zh": "乌龟", "ko": "거북이", "ar": "سلحفاة" },
+    "keywords": {
+      "es": ["lento", "paciencia", "modo lento", "caparazón", "calma", "reptil", "galápago"],
+      "en": ["slow", "patience", "slow mode", "tortoise", "shell", "calm", "reptile"]
+    }
+  },
+  "crocodile": {
+    "label": { "es": "Cocodrilo", "en": "Crocodile", "pt": "Crocodilo", "fr": "Crocodile", "de": "Krokodil", "it": "Coccodrillo", "ja": "ワニ", "zh": "鳄鱼", "ko": "악어", "ar": "تمساح" },
+    "keywords": {
+      "es": ["caimán", "lagarto", "peligro", "pantano", "manglar", "reptil", "mandíbula"],
+      "en": ["alligator", "gator", "danger", "swamp", "mangrove", "reptile", "jaws"]
+    }
+  },
+  "dinosaur": {
+    "label": { "es": "Dinosaurio", "en": "Dinosaur", "pt": "Dinossauro", "fr": "Dinosaure", "de": "Dinosaurier", "it": "Dinosauro", "ja": "恐竜", "zh": "恐龙", "ko": "공룡", "ar": "ديناصور" },
+    "keywords": {
+      "es": ["sin conexión", "offline", "prehistoria", "niños", "T. rex", "jurásico", "fósil"],
+      "en": ["offline", "no internet", "prehistoric", "kids", "T. rex", "Jurassic", "fossil"]
+    }
+  },
+  "brachiosaurus": {
+    "label": { "es": "Braquiosaurio", "en": "Brachiosaurus", "pt": "Braquiossauro", "fr": "Brachiosaure", "de": "Brachiosaurus", "it": "Brachiosauro", "ja": "ブラキオサウルス", "zh": "腕龙", "ko": "브라키오사우루스", "ar": "براكيوصور" },
+    "keywords": {
+      "es": ["cuello largo", "alto", "gigante gentil", "dinosaurio herbívoro", "saurópodo", "jurásico", "niños"],
+      "en": ["long neck", "tall", "gentle giant", "herbivore", "sauropod", "Jurassic", "kids"]
+    }
+  },
+  "triceratops": {
+    "label": { "es": "Tricerátops", "en": "Triceratops", "pt": "Tricerátopo", "fr": "Tricératops", "de": "Triceratops", "it": "Triceratopo", "ja": "トリケラトプス", "zh": "三角龙", "ko": "트리케라톱스", "ar": "ترايسيراتوبس" },
+    "keywords": {
+      "es": ["defensa", "dinosaurio con cuernos", "herbívoro", "cretácico", "niños", "escudo", "prehistoria"],
+      "en": ["defense", "horned dinosaur", "herbivore", "Cretaceous", "kids", "frill", "prehistoric"]
+    }
+  },
+  "stegosaurus": {
+    "label": { "es": "Estegosaurio", "en": "Stegosaurus", "pt": "Estegossauro", "fr": "Stégosaure", "de": "Stegosaurus", "it": "Stegosauro", "ja": "ステゴサウルス", "zh": "剑龙", "ko": "스테고사우루스", "ar": "ستيغوصور" },
+    "keywords": {
+      "es": ["dinosaurio con placas", "púas en la cola", "niños", "herbívoro", "jurásico", "prehistoria"],
+      "en": ["plated dinosaur", "tail spikes", "kids", "herbivore", "Jurassic", "prehistoric"]
+    }
+  },
+  "dinosaur-skull": {
+    "label": { "es": "Cráneo de dinosaurio", "en": "Dinosaur skull", "pt": "Crânio de dinossauro", "fr": "Crâne de dinosaure", "de": "Dinosaurierschädel", "it": "Cranio di dinosauro", "ja": "恐竜の頭骨", "zh": "恐龙头骨", "ko": "공룡 두개골", "ar": "جمجمة ديناصور" },
+    "keywords": {
+      "es": ["museo", "paleontología", "historia natural", "fósil", "excavación", "esqueleto", "T. rex"],
+      "en": ["museum", "paleontology", "natural history", "fossil", "excavation", "skeleton", "T. rex"]
+    }
+  },
+  "dinosaur-footprint": {
+    "label": { "es": "Huella de dinosaurio", "en": "Dinosaur footprint", "pt": "Pegada de dinossauro", "fr": "Empreinte de dinosaure", "de": "Dinosaurierspur", "it": "Impronta di dinosauro", "ja": "恐竜の足跡", "zh": "恐龙脚印", "ko": "공룡 발자국", "ar": "أثر قدم ديناصور" },
+    "keywords": {
+      "es": ["fósil", "icnita", "pasos gigantes", "pisada", "paleontología", "rastro", "prehistoria"],
+      "en": ["fossil", "trackway", "giant steps", "stomp", "paleontology", "prehistoric", "trace fossil"]
+    }
+  },
+  "frog": {
+    "label": { "es": "Rana", "en": "Frog", "pt": "Sapo", "fr": "Grenouille", "de": "Frosch", "it": "Rana", "ja": "カエル", "zh": "青蛙", "ko": "개구리", "ar": "ضفدع" },
+    "keywords": {
+      "es": ["sapo", "estanque", "lluvia", "saltar", "anfibio", "renacuajo", "croar"],
+      "en": ["toad", "pond", "rain", "jump", "amphibian", "tadpole", "ribbit"]
+    }
+  },
+  "axolotl": {
+    "label": { "es": "Ajolote", "en": "Axolotl", "pt": "Axolote", "fr": "Axolotl", "de": "Axolotl", "it": "Axolotl", "ja": "ウーパールーパー", "zh": "美西螈", "ko": "아홀로틀", "ar": "أكسولوتل" },
+    "keywords": {
+      "es": ["regeneración", "Xochimilco", "personaje tierno", "anfibio", "niños", "especie endémica", "en peligro de extinción"],
+      "en": ["regeneration", "cute mascot", "Mexico", "amphibian", "kids", "endemic species", "endangered"]
+    }
+  }
+}
