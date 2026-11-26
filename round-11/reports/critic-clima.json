@@ -1,0 +1,33 @@
+{
+ "category": "clima",
+ "count": 70,
+ "redesigned": [
+  "hurricane",
+  "hurricane-track",
+  "sandstorm",
+  "snow-depth",
+  "season-winter",
+  "frost",
+  "cloud-freezing-rain"
+ ],
+ "dropped": [
+  {
+   "name": "weathervane",
+   "reason": "At 18 px no version read as a weathervane. The arrow on its post with the cardinal bar under it read as the glyph 午, or as a cross on a grave. Set on a roof it read as a clothes hanger or an easel, and alone on its post as a signpost. Four versions were tried, with fletched and finned tails."
+  },
+  {
+   "name": "anemometer",
+   "reason": "The cups on an arm atop a pole read as a T, as lugares's street lamp, as a table or as a dumbbell on a stick. This held with the cups opening up and down, opening sideways, or drawn larger with a base. A rotor seen from above is juegos's pinwheel."
+  },
+  {
+   "name": "weather-station",
+   "reason": "Its mast carries the anemometer's cups, which read as a T, or the vane, which reads as a signpost. The louvered box on legs at its foot reads as a radiator or a battery. The approved drawing depends on the anemometer, which was dropped."
+  },
+  {
+   "name": "sundial",
+   "reason": "An earlier critic dropped it, and I confirmed the drop. A flat dial with its gnomon read as a sailboat on a pond, a hat on a plate or a wedge of cheese. Its entry in src/i18n/clima.json is now an orphan."
+  }
+ ],
+ "qaWarnings": 0,
+ "notes": "I judged every icon in C:/Users/PC/Desktop/flouvia-icons/src/icons/clima.mjs as the file stands now, against the core sheet, DESIGN.md and the neighbors in lugares, espacio, plantas, fiestas, cocina and nautica. clima.mjs is the only file I changed. The file now holds 70 icons, and the category sheet shows 96 with the 26 adopted from lugares.\n\nChecks:\n- `node scripts/qa.mjs clima`: 0 warnings across all 96. The file I picked up had 8 warnings, in frost and freezing rain, left by the critic who was stopped.\n- `node scripts/weights-sheet.mjs clima`: every icon keeps its structure from 0.9 to 2.1.\n- `node scripts/build.mjs --check clima`: no drawing errors. What remains is `i18n/clima/... missing` and the orphan `sundial`.\n- I looked at every page of `previews/clima-1..3.png` and `clima-variantes-1..4.png`.\n- While I worked, the other agent's medio-ambiente had two icons that failed to render (toxic-waste, ocean-plastic), and that crashed QA once. It renders again now.\n\nRedesigns:\n- **hurricane:** now the tropical cyclone map symbol, an eye with two hooked arms tilted 30°. The old long, gentle arms read as a bead on a string. Arms wrapped round the eye are espacio's galaxy.\n- **hurricane-track:** uses the same symbol, smaller, with a 2-dash arc arrow. Its custom 16 px drawing follows it.\n- **sandstorm:** lugares's wind blowing over lugares's desert dunes, with the front dune and ground as the desert's custom piece. The old gusts with grains read as sliders or a list.\n- **snow-depth:** a wind-cut snow drift, nautica's wave-height arrow measuring it, and the family's flake. The ruler in a mound read as fiestas's gravestone, and a round dome as an igloo.\n- **season-winter:** plantas's bare tree with two family flakes. The flake over a hill read as a frowning face and as frost. clima.mjs now imports plantas.mjs.\n- **frost:** the bigger snowflake (lugares's six arms with their Vs) over the ground. lugares's snowflake scaled to 0.85 left 6 near-misses. Its custom 16 px drawing follows it.\n- **cloud-freezing-rain:** the icicles moved so each drop starts 2.9 clear of their corners, which fixed 2 near-misses.\n\nBorderline icons I kept:\n- **heat-wave and season-summer** both draw a sun over waves. Three tight shimmer lines and one sea wave keep them apart, but the vocabulary is shared.\n- **cold-front and warm-front** are drawn on a convex arc, as instructed. At 24 px cold-front can read as a crown.\n- **smoke** (two S plumes) is close to cocina's steam.\n- **aurora** (curtains over a ridge, with a star).\n- At true 16 px, **dew, droplet-percent and hygrometer** smudge.\n\nFor the main session: round-11/lang-clima.json probably has entries for weathervane, anemometer and weather-station. Leave them out when writing the languages, or they become orphans. The meanings of the redesigned icons did not change."
+}

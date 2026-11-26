@@ -244,13 +244,6 @@
       "en": ["aurora borealis", "aurora australis", "polar lights", "night sky", "geomagnetic storm", "Arctic", "aurora hunting"]
     }
   },
-  "sundial": {
-    "label": { "es": "Reloj de sol", "en": "Sundial", "pt": "Relógio de sol", "fr": "Cadran solaire", "de": "Sonnenuhr", "it": "Meridiana", "ja": "日時計", "zh": "日晷", "ko": "해시계", "ar": "مزولة شمسية" },
-    "keywords": {
-      "es": ["hora solar", "sombra", "gnomon", "medir el tiempo", "posición del sol", "mediodía", "antiguo"],
-      "en": ["solar time", "shadow", "gnomon", "timekeeping", "sun position", "noon", "ancient"]
-    }
-  },
   "frost": {
     "label": { "es": "Helada", "en": "Frost", "pt": "Geada", "fr": "Gelée", "de": "Frost", "it": "Gelata", "ja": "霜", "zh": "霜冻", "ko": "서리", "ar": "صقيع" },
     "keywords": {
@@ -277,6 +270,223 @@
     "keywords": {
       "es": ["pronóstico de 10 días", "pronóstico extendido", "clima de la semana", "clima por fecha", "el tiempo mañana", "planear un viaje", "calendario"],
       "en": ["10-day forecast", "extended forecast", "weekly weather", "weather by date", "tomorrow's weather", "trip planning", "calendar"]
+    }
+  },
+  "windsock": {
+    "label": { "es": "Manga de viento", "en": "Windsock", "pt": "Biruta", "fr": "Manche à air", "de": "Windsack", "it": "Manica a vento", "ja": "吹き流し", "zh": "风向袋", "ko": "윈드삭", "ar": "كم الرياح" },
+    "keywords": {
+      "es": ["dirección del viento", "intensidad del viento", "aeródromo", "helipuerto", "volar drones", "aeropuerto", "pista"],
+      "en": ["wind direction", "wind strength", "airfield", "helipad", "drone flying", "airport", "runway"]
+    }
+  },
+  "wind-direction": {
+    "label": { "es": "Dirección del viento", "en": "Wind direction", "pt": "Direção do vento", "fr": "Direction du vent", "de": "Windrichtung", "it": "Direzione del vento", "ja": "風向", "zh": "风向", "ko": "풍향", "ar": "اتجاه الرياح" },
+    "keywords": {
+      "es": ["de dónde sopla", "flecha de viento", "rumbo", "puntos cardinales", "viento del norte", "brújula", "pronóstico"],
+      "en": ["wind from", "wind arrow", "bearing", "cardinal points", "heading", "compass", "forecast"]
+    }
+  },
+  "humidity-high": {
+    "label": { "es": "Humedad alta", "en": "High humidity", "pt": "Umidade alta", "fr": "Humidité élevée", "de": "Hohe Luftfeuchtigkeit", "it": "Umidità alta", "ja": "高湿度", "zh": "高湿度", "ko": "높은 습도", "ar": "رطوبة عالية" },
+    "keywords": {
+      "es": ["bochorno", "húmedo", "pegajoso", "sofocante", "calor húmedo", "punto de rocío", "condensación"],
+      "en": ["muggy", "humid", "sticky", "sultry", "damp heat", "dew point", "condensation"]
+    }
+  },
+  "humidity-low": {
+    "label": { "es": "Humedad baja", "en": "Low humidity", "pt": "Umidade baixa", "fr": "Humidité faible", "de": "Niedrige Luftfeuchtigkeit", "it": "Umidità bassa", "ja": "低湿度", "zh": "低湿度", "ko": "낮은 습도", "ar": "رطوبة منخفضة" },
+    "keywords": {
+      "es": ["aire seco", "clima seco", "resequedad", "piel seca", "deshidratación", "riesgo de incendio", "humidificador"],
+      "en": ["dry air", "dry weather", "arid", "dry skin", "dehydration", "fire risk", "humidifier"]
+    }
+  },
+  "droplet-percent": {
+    "label": { "es": "Humedad relativa", "en": "Relative humidity", "pt": "Umidade relativa", "fr": "Humidité relative", "de": "Relative Luftfeuchtigkeit", "it": "Umidità relativa", "ja": "相対湿度", "zh": "相对湿度", "ko": "상대 습도", "ar": "الرطوبة النسبية" },
+    "keywords": {
+      "es": ["porcentaje de humedad", "humedad del aire", "nivel de humedad", "probabilidad de lluvia", "punto de rocío", "sensor de humedad", "pronóstico"],
+      "en": ["humidity percentage", "air moisture", "moisture level", "chance of rain", "dew point", "humidity sensor", "forecast"]
+    }
+  },
+  "dew": {
+    "label": { "es": "Rocío", "en": "Dew", "pt": "Orvalho", "fr": "Rosée", "de": "Tau", "it": "Rugiada", "ja": "露", "zh": "露水", "ko": "이슬", "ar": "ندى" },
+    "keywords": {
+      "es": ["gotas en la hoja", "sereno", "humedad de la hoja", "pasto mojado", "mañana húmeda", "punto de rocío", "condensación"],
+      "en": ["morning dew", "dewdrops", "leaf wetness", "wet grass", "damp morning", "dew point", "condensation"]
+    }
+  },
+  "hygrometer": {
+    "label": { "es": "Higrómetro", "en": "Hygrometer", "pt": "Higrômetro", "fr": "Hygromètre", "de": "Hygrometer", "it": "Igrometro", "ja": "湿度計", "zh": "湿度计", "ko": "습도계", "ar": "مقياس الرطوبة" },
+    "keywords": {
+      "es": ["medidor de humedad", "medir la humedad", "sensor de humedad", "humedad relativa", "termohigrómetro", "invernadero", "control de clima"],
+      "en": ["humidity meter", "measure humidity", "humidity sensor", "relative humidity", "thermo-hygrometer", "greenhouse", "climate control"]
+    }
+  },
+  "barometer": {
+    "label": { "es": "Barómetro", "en": "Barometer", "pt": "Barômetro", "fr": "Baromètre", "de": "Barometer", "it": "Barometro", "ja": "気圧計", "zh": "气压计", "ko": "기압계", "ar": "بارومتر" },
+    "keywords": {
+      "es": ["presión atmosférica", "presión del aire", "hPa", "milibares", "cambio de clima", "estación meteorológica", "manómetro"],
+      "en": ["air pressure", "atmospheric pressure", "hPa", "millibars", "weather change", "weather station", "pressure gauge"]
+    }
+  },
+  "barometer-arrow-up": {
+    "label": { "es": "Presión en aumento", "en": "Rising pressure", "pt": "Pressão em alta", "fr": "Pression en hausse", "de": "Steigender Luftdruck", "it": "Pressione in aumento", "ja": "気圧上昇", "zh": "气压上升", "ko": "기압 상승", "ar": "ارتفاع الضغط الجوي" },
+    "keywords": {
+      "es": ["sube la presión", "mejora el clima", "buen tiempo", "alta presión", "anticiclón", "cielo despejado", "barómetro"],
+      "en": ["pressure up", "improving weather", "fair weather", "high pressure", "anticyclone", "clearing skies", "barometer"]
+    }
+  },
+  "barometer-arrow-down": {
+    "label": { "es": "Presión en descenso", "en": "Falling pressure", "pt": "Pressão em queda", "fr": "Pression en baisse", "de": "Fallender Luftdruck", "it": "Pressione in calo", "ja": "気圧低下", "zh": "气压下降", "ko": "기압 하강", "ar": "انخفاض الضغط الجوي" },
+    "keywords": {
+      "es": ["baja la presión", "empeora el clima", "mal tiempo", "baja presión", "se acerca una tormenta", "dolor de cabeza", "barómetro"],
+      "en": ["pressure drop", "worsening weather", "bad weather", "low pressure", "storm approaching", "migraine", "barometer"]
+    }
+  },
+  "thermometer-sun": {
+    "label": { "es": "Clima caluroso", "en": "Hot weather", "pt": "Tempo quente", "fr": "Temps chaud", "de": "Heißes Wetter", "it": "Caldo", "ja": "暑い天気", "zh": "炎热天气", "ko": "더운 날씨", "ar": "طقس حار" },
+    "keywords": {
+      "es": ["temperatura máxima", "índice de calor", "día caluroso", "hace calor", "sol", "grados", "verano"],
+      "en": ["daytime high", "heat index", "hot day", "max temperature", "sunny and hot", "degrees", "summer"]
+    }
+  },
+  "thermometer-snowflake": {
+    "label": { "es": "Bajo cero", "en": "Below freezing", "pt": "Abaixo de zero", "fr": "Sous zéro", "de": "Unter null", "it": "Sotto zero", "ja": "氷点下", "zh": "零下", "ko": "영하", "ar": "تحت الصفر" },
+    "keywords": {
+      "es": ["congelación", "helada", "frío extremo", "temperatura mínima", "0 °C", "invierno", "congelador"],
+      "en": ["freezing temperature", "frost", "extreme cold", "overnight low", "32 °F", "winter", "freezer"]
+    }
+  },
+  "thermometer-wind": {
+    "label": { "es": "Enfriamiento por viento", "en": "Wind chill", "pt": "Resfriamento pelo vento", "fr": "Refroidissement éolien", "de": "Windchill", "it": "Raffreddamento da vento", "ja": "ウインドチル", "zh": "风寒效应", "ko": "풍속 냉각", "ar": "برودة الرياح" },
+    "keywords": {
+      "es": ["sensación térmica", "frío por viento", "viento helado", "índice de frío", "se siente más frío", "aire frío", "invierno"],
+      "en": ["feels colder", "cold wind", "icy wind", "wind chill factor", "chill index", "frostbite risk", "winter"]
+    }
+  },
+  "thermometer-person": {
+    "label": { "es": "Sensación térmica", "en": "Feels-like temperature", "pt": "Sensação térmica", "fr": "Température ressentie", "de": "Gefühlte Temperatur", "it": "Temperatura percepita", "ja": "体感温度", "zh": "体感温度", "ko": "체감 온도", "ar": "درجة الحرارة المحسوسة" },
+    "keywords": {
+      "es": ["se siente como", "temperatura aparente", "confort térmico", "índice de calor", "qué ponerse", "pronóstico", "grados"],
+      "en": ["feels like", "apparent temperature", "real feel", "thermal comfort", "heat index", "what to wear", "forecast"]
+    }
+  },
+  "umbrella-closed": {
+    "label": { "es": "Sin lluvia", "en": "No rain", "pt": "Sem chuva", "fr": "Pas de pluie", "de": "Kein Regen", "it": "Niente pioggia", "ja": "雨なし", "zh": "无雨", "ko": "비 없음", "ar": "لا أمطار" },
+    "keywords": {
+      "es": ["no necesitas paraguas", "paraguas cerrado", "día seco", "seco", "despejado", "sin precipitación", "pronóstico"],
+      "en": ["no umbrella needed", "closed umbrella", "dry day", "dry", "fair weather", "no precipitation", "forecast"]
+    }
+  },
+  "rain-gauge": {
+    "label": { "es": "Pluviómetro", "en": "Rain gauge", "pt": "Pluviômetro", "fr": "Pluviomètre", "de": "Regenmesser", "it": "Pluviometro", "ja": "雨量計", "zh": "雨量计", "ko": "우량계", "ar": "مقياس المطر" },
+    "keywords": {
+      "es": ["cantidad de lluvia", "milímetros de lluvia", "precipitación acumulada", "medir la lluvia", "lluvia del día", "estación meteorológica", "riego"],
+      "en": ["rainfall amount", "rainfall total", "inches of rain", "measure rain", "precipitation", "weather station", "irrigation"]
+    }
+  },
+  "puddle": {
+    "label": { "es": "Charco", "en": "Puddle", "pt": "Poça", "fr": "Flaque", "de": "Pfütze", "it": "Pozzanghera", "ja": "水たまり", "zh": "水坑", "ko": "물웅덩이", "ar": "بركة ماء" },
+    "keywords": {
+      "es": ["suelo mojado", "después de la lluvia", "encharcamiento", "agua estancada", "piso resbaloso", "salpicar", "lluvia"],
+      "en": ["wet ground", "after the rain", "standing water", "waterlogged", "slippery floor", "splash", "rain"]
+    }
+  },
+  "shield-rain": {
+    "label": { "es": "A prueba de intemperie", "en": "Weatherproof", "pt": "À prova de intempéries", "fr": "Résistant aux intempéries", "de": "Wetterfest", "it": "Resistente alle intemperie", "ja": "全天候対応", "zh": "全天候防护", "ko": "전천후 보호", "ar": "مقاوم للعوامل الجوية" },
+    "keywords": {
+      "es": ["impermeable", "resistente al agua", "contra la lluvia", "todo clima", "protección", "uso exterior", "garantía"],
+      "en": ["waterproof", "water resistant", "rainproof", "all-weather", "protection", "outdoor use", "rain cover"]
+    }
+  },
+  "visibility-range": {
+    "label": { "es": "Visibilidad", "en": "Visibility", "pt": "Visibilidade", "fr": "Visibilité", "de": "Sichtweite", "it": "Visibilità", "ja": "視程", "zh": "能见度", "ko": "가시거리", "ar": "مدى الرؤية" },
+    "keywords": {
+      "es": ["alcance visual", "distancia visible", "kilómetros", "niebla", "poca visibilidad", "aviación", "pronóstico"],
+      "en": ["visual range", "visible distance", "miles", "fog", "low visibility", "aviation", "forecast"]
+    }
+  },
+  "season-spring": {
+    "label": { "es": "Primavera", "en": "Spring", "pt": "Primavera", "fr": "Printemps", "de": "Frühling", "it": "Primavera", "ja": "春", "zh": "春天", "ko": "봄", "ar": "الربيع" },
+    "keywords": {
+      "es": ["estación del año", "flores", "floración", "marzo", "equinoccio", "renovación", "Semana Santa"],
+      "en": ["season", "flowers", "bloom", "March", "equinox", "renewal", "Easter"]
+    }
+  },
+  "season-summer": {
+    "label": { "es": "Verano", "en": "Summer", "pt": "Verão", "fr": "Été", "de": "Sommer", "it": "Estate", "ja": "夏", "zh": "夏天", "ko": "여름", "ar": "الصيف" },
+    "keywords": {
+      "es": ["estación del año", "calor", "vacaciones", "sol", "playa", "solsticio", "temporada alta"],
+      "en": ["season", "hot", "vacation", "sun", "beach", "solstice", "holidays"]
+    }
+  },
+  "season-autumn": {
+    "label": { "es": "Otoño", "en": "Autumn", "pt": "Outono", "fr": "Automne", "de": "Herbst", "it": "Autunno", "ja": "秋", "zh": "秋天", "ko": "가을", "ar": "الخريف" },
+    "keywords": {
+      "es": ["estación del año", "hojas secas", "hojas que caen", "septiembre", "equinoccio", "cosecha", "regreso a clases"],
+      "en": ["fall", "season", "falling leaves", "September", "equinox", "harvest", "back to school"]
+    }
+  },
+  "season-winter": {
+    "label": { "es": "Invierno", "en": "Winter", "pt": "Inverno", "fr": "Hiver", "de": "Winter", "it": "Inverno", "ja": "冬", "zh": "冬天", "ko": "겨울", "ar": "الشتاء" },
+    "keywords": {
+      "es": ["estación del año", "frío", "nieve", "diciembre", "solsticio", "fiestas decembrinas", "ropa abrigadora"],
+      "en": ["season", "cold", "snow", "December", "solstice", "holiday season", "warm clothes"]
+    }
+  },
+  "weather-balloon": {
+    "label": { "es": "Globo meteorológico", "en": "Weather balloon", "pt": "Balão meteorológico", "fr": "Ballon-sonde", "de": "Wetterballon", "it": "Pallone sonda", "ja": "気象観測気球", "zh": "气象气球", "ko": "기상 관측 기구", "ar": "منطاد الطقس" },
+    "keywords": {
+      "es": ["radiosonda", "globo sonda", "sondeo", "atmósfera", "gran altitud", "meteorología", "medición"],
+      "en": ["radiosonde", "sounding", "sonde", "atmosphere", "high altitude", "upper air", "meteorology"]
+    }
+  },
+  "weather-radar": {
+    "label": { "es": "Radar meteorológico", "en": "Weather radar", "pt": "Radar meteorológico", "fr": "Radar météo", "de": "Wetterradar", "it": "Radar meteo", "ja": "気象レーダー", "zh": "气象雷达", "ko": "기상 레이더", "ar": "رادار الطقس" },
+    "keywords": {
+      "es": ["radar de lluvia", "mapa de lluvia", "precipitación en vivo", "doppler", "seguimiento de tormentas", "nubes de lluvia", "pronóstico inmediato"],
+      "en": ["rain radar", "precipitation map", "live radar", "doppler", "storm tracking", "rain clouds", "nowcast"]
+    }
+  },
+  "satellite-cloud": {
+    "label": { "es": "Satélite meteorológico", "en": "Weather satellite", "pt": "Satélite meteorológico", "fr": "Satellite météo", "de": "Wettersatellit", "it": "Satellite meteorologico", "ja": "気象衛星", "zh": "气象卫星", "ko": "기상 위성", "ar": "قمر صناعي للطقس" },
+    "keywords": {
+      "es": ["imagen satelital", "nubosidad", "vista desde el espacio", "infrarrojo", "GOES", "observación de la Tierra", "pronóstico"],
+      "en": ["satellite imagery", "cloud cover", "view from space", "infrared", "GOES", "earth observation", "forecast"]
+    }
+  },
+  "map-weather": {
+    "label": { "es": "Mapa del tiempo", "en": "Weather map", "pt": "Mapa do tempo", "fr": "Carte météo", "de": "Wetterkarte", "it": "Mappa meteo", "ja": "天気図", "zh": "天气图", "ko": "일기도", "ar": "خريطة الطقس" },
+    "keywords": {
+      "es": ["mapa del clima", "pronóstico por región", "temperaturas por zona", "isobaras", "frentes", "clima nacional", "noticiero"],
+      "en": ["forecast map", "regional forecast", "temperature map", "isobars", "fronts", "national weather", "weather report"]
+    }
+  },
+  "cold-front": {
+    "label": { "es": "Frente frío", "en": "Cold front", "pt": "Frente fria", "fr": "Front froid", "de": "Kaltfront", "it": "Fronte freddo", "ja": "寒冷前線", "zh": "冷锋", "ko": "한랭 전선", "ar": "جبهة باردة" },
+    "keywords": {
+      "es": ["masa de aire frío", "descenso de temperatura", "nortes", "triángulos azules", "mapa del tiempo", "sistema frontal", "meteorología"],
+      "en": ["cold air mass", "temperature drop", "blue triangles", "weather map", "frontal system", "front", "meteorology"]
+    }
+  },
+  "warm-front": {
+    "label": { "es": "Frente cálido", "en": "Warm front", "pt": "Frente quente", "fr": "Front chaud", "de": "Warmfront", "it": "Fronte caldo", "ja": "温暖前線", "zh": "暖锋", "ko": "온난 전선", "ar": "جبهة دافئة" },
+    "keywords": {
+      "es": ["masa de aire cálido", "aumento de temperatura", "semicírculos rojos", "lloviznas", "mapa del tiempo", "sistema frontal", "meteorología"],
+      "en": ["warm air mass", "temperature rise", "red semicircles", "drizzle", "weather map", "frontal system", "meteorology"]
+    }
+  },
+  "water-cycle": {
+    "label": { "es": "Ciclo del agua", "en": "Water cycle", "pt": "Ciclo da água", "fr": "Cycle de l’eau", "de": "Wasserkreislauf", "it": "Ciclo dell’acqua", "ja": "水の循環", "zh": "水循环", "ko": "물의 순환", "ar": "دورة المياه" },
+    "keywords": {
+      "es": ["ciclo hidrológico", "evaporación", "condensación", "precipitación", "lluvia", "ciencias naturales", "escuela"],
+      "en": ["hydrologic cycle", "evaporation", "condensation", "precipitation", "rain", "earth science", "school"]
+    }
+  },
+  "evaporation": {
+    "label": { "es": "Evaporación", "en": "Evaporation", "pt": "Evaporação", "fr": "Évaporation", "de": "Verdunstung", "it": "Evaporazione", "ja": "蒸発", "zh": "蒸发", "ko": "증발", "ar": "تبخر" },
+    "keywords": {
+      "es": ["evapotranspiración", "vapor", "agua que sube", "secado", "calor del sol", "pérdida de agua", "riego"],
+      "en": ["evapotranspiration", "vapor", "rising water", "drying", "solar heat", "water loss", "irrigation"]
     }
   }
 }

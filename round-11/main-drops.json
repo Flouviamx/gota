@@ -22,5 +22,10 @@
   { "name": "tree-rings", "reason": "El corte del tronco se lee como una diana a 18 px; la grieta y el centro corrido no lo salvan." },
   { "name": "tree-baobab", "reason": "El tronco de botella bajo sus ramas planas se lee como un matraz de laboratorio con corona." },
   { "name": "aloe-vera", "reason": "La hoja dentada en diagonal que gotea su gel se lee como una zanahoria." }
+ ],
+ "medio-ambiente": [
+  { "name": "bin-level", "reason": "El bote solo, con las dos líneas del nivel, se lee como una maceta o un cajón: no dice que se llena." },
+  { "name": "waste-sorting", "reason": "Los tres botes en fila con la tapa abierta se leen como una cerca; los bin-* ya dicen qué va en cada uno." },
+  { "name": "sandbags", "reason": "Los tres costales apilados, sin el agua que detienen, se leen como piedras o almohadas." }
  ]
 }

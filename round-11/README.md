@@ -2,23 +2,23 @@
 
 The `round-11` branch carries the round while it's drawn, so any machine can pick it up. `main` only gets what is ready to be served (a push to `main` deploys `gota.flouvia.com`): when the round closes, this folder is deleted and the branch merges into `main`. The process is [Production with agents](../docs/production.md); after it comes the sweep, and then v1 ([decision 87](../docs/decisions.md#v1-20-nov-2026)).
 
-## Status (22 Nov 2026)
+## Status (26 Nov 2026)
 | Category | Approved | In its file | Step |
 |---|---|---|---|
 | `animales` | 92 | 76 | Done: illustrator, critic, the main session's review (6 dropped), languages |
 | `aves-insectos` | 88 | 79 | Done (2 dropped by the main session) |
 | `mar` | 61 | 52, and `fish` adopted | Done (4 dropped by the main session) |
 | `plantas` | 107 | 86, and 7 adopted | Done: critic (23 redesigned, 17 dropped), the main session's review (4 dropped), languages |
-| `clima` | 76 | 40, and 26 adopted | Half drawn: its illustrator continues from the file, then its critic |
-| `medio-ambiente` | 68 | — | Not started: illustrator, languages, and critic |
+| `clima` | 76 | 70, and 26 adopted | Done: critic (7 redesigned, 4 dropped), the main session's review (nothing dropped), languages |
+| `medio-ambiente` | 68 | 60, and `recycle` adopted | Done: critic (22 redesigned, 5 dropped, QA from 57 warnings to 0), the main session's review (3 dropped), languages |
 
-Names: 730 proposed by six agents, 492 approved by the main session. The finished categories are at zero QA warnings and validate with their languages; `plantas` and `clima` carry the languages of the icons drawn so far.
+Names: 730 proposed by six agents, 492 approved by the main session; 423 new icons drawn. The six categories are done, at zero QA warnings and valid with their languages: what's left is the close.
 
 ## Files
 - `approved.json`: the approved names, `{ category: [{ name, meaning, drawing }] }`.
 - `draw-args.json`: the drawing workflow's arguments (round, slots, each category's neighbors and note). Before launching, add `authorization` (the owner's words that asked for the run, quoted) and `todo`.
 - `draw.template.js`: the drawing workflow, with the exact prompt each illustrator, critic, and languages agent receives. Replace `__APPROVED__` with the contents of `approved.json` and `__REPORTS__` with `{}`; the agents' checkout is `args.root`.
-- `lang-plantas.json`, `lang-clima.json`: the languages agents' data, written to `src/i18n/` with `write-i18n.mjs` once each critic is done. The languages agent of `medio-ambiente` hasn't run: its data comes back from the workflow (save it here as `lang-medio-ambiente.json` before writing it).
+- `lang-plantas.json`, `lang-clima.json`, `lang-medio-ambiente.json`: the languages agents' data, written to `src/i18n/` with `write-i18n.mjs` after each critic and after every drop.
 - `reports/`: the illustrators' and critics' reports of the finished categories (counts, redesigns, drops), for the history entry and the sample. Add each new report as it comes back.
 - `main-drops.json`: what the main session dropped after the critics, with the reason for each in Spanish (the owner reads them in the sample).
 - `write-i18n.mjs`, `drop-blocks.mjs`: the helpers for languages and for drops.
@@ -30,11 +30,7 @@ Names: 730 proposed by six agents, 492 approved by the main session. The finishe
 - The main session does what the agents don't: it writes the languages, looks at every category's sheet against [DESIGN.md](../DESIGN.md) › "What failed before" and drops what doesn't read at 24 px, and closes the round. Nothing is committed to `main` until the round closes.
 
 ## Resume
-Launch the workflow with `slots: 2` and only what is left:
-```json
-{ "plantas": ["critic"], "clima": ["draw", "critic"], "medio-ambiente": ["draw", "lang", "critic"] }
-```
-The illustrator of `clima` continues from its file; the critic of `plantas` runs without the illustrator's report (it was cut) and judges the file as it is. Relaunch with `todo`, not with a resume of an earlier run: a resume can rerun critics that had finished. Watch the disk: every agent runs its own Chrome, and a full disk stops them all; under 4 GB free, stop the run and relaunch what's left later.
+Nothing is left to draw: the next step is the close, below. If a category has to be drawn again, launch the workflow with `slots: 2` and only that category in `todo` (for example `{ "clima": ["critic"] }`), never with a resume of an earlier run: a resume can rerun critics that had finished. Watch the disk: every agent runs its own Chrome, and a full disk stops them all; under 4 GB free, stop the run and relaunch what's left later.
 
 ## Close
 As round 10 did ([What round 10 added](../docs/production.md)):

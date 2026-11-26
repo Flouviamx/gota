@@ -10,8 +10,9 @@
 //   the engine clears it (lugares's `cloudBadge`).
 // - thermometer-* builds on lugares's thermometer (its glass, moved left), umbrella-* on its umbrella,
 //   calendar-cloud-sun on calendario's calendar-sun, map-weather on lugares's map, weather-radar on
-//   sistema's radar, frost on lugares's snowflake, snow-depth on edicion's ruler; the droplets are
-//   lugares's droplet.
+//   sistema's radar, frost on lugares's snowflake, sandstorm on lugares's desert and wind, snow-depth
+//   on nautica's wave-height arrow, season-winter on plantas's bare tree; the droplets are lugares's
+//   droplet.
 import { arc, badge, circ, dot, f, halfChord, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snapper, transform } from '../../engine/variants.mjs';
 import calendario from './calendario.mjs';
@@ -19,6 +20,7 @@ import edicion from './edicion.mjs';
 import lugares from './lugares.mjs';
 import nucleo from './nucleo.mjs';
 import personas from './personas.mjs';
+import plantas from './plantas.mjs';
 import sistema from './sistema.mjs';
 
 // ── Local utilities ───────────────────────────────────────────────────────────────────────────
@@ -230,7 +232,7 @@ function moon(c, R, ic, r) {
   return `M${pt(p)}A${f(R)} ${f(R)} 0 1 0 ${pt(q)}A${f(r)} ${f(r)} 0 0 1 ${pt(p)}Z`;
 }
 /**
- * The bigger snowflake (heat-wave's pair, winter, the cold thermometer): lugares's six arms, here
+ * The bigger snowflake (frost's): lugares's six arms, here
  * through the center (its hollow doesn't fit at this size), each with a V that opens outward at 0.63
  * of the arm. At 30° its ends keep 3 from the next arm's.
  */
@@ -297,17 +299,18 @@ add('cloud-sleet', ['aguanieve', 'lluvia y nieve', 'mezcla invernal', 'sleet', '
 {
   // Freezing rain: two drops land on the ground and the ground hangs two icicles beside them, the
   // icicles' own wedges (4 wide: their hole stays open at every weight). Thin spikes read as lines, and
-  // with the drops crossing the ground the whole read as a fence or a hash.
+  // with the drops crossing the ground the whole read as a fence or a hash. Each drop starts 2.9 clear
+  // of the icicles' corners and lands between them.
   const G = 17.75;
   const icicle = (x, h) => roundpoly([[x - 2, G], [x + 2, G], [x, G + h]], [0, 0, 0.6]);
   const h = G - 15.5;
   add('cloud-freezing-rain', ['lluvia helada', 'lluvia engelante', 'tormenta de hielo', 'freezing rain', 'ice storm', 'glaze'], [
     HIGH_CLOUD,
-    streak([8, 15.5], h),
-    streak([14.5, 15.5], h),
-    line([3.5, G], [20.5, G]),
-    icicle(10.75, 4),
-    icicle(17.5, 3.5),
+    streak([7.65, 15.5], h),
+    streak([15.4, 15.5], h),
+    line([2.75, G], [21.25, G]),
+    icicle(11.5, 4),
+    icicle(19.25, 3.5),
   ]);
 }
 {
@@ -364,24 +367,25 @@ for (const [kind, marks] of Object.entries(SKY_MARKS)) {
 // lugares's wind: its top gust whole, the middle one straight and ending clear of the badge.
 add('wind-alert', ['alerta de viento', 'vendaval', 'aviso de viento', 'wind advisory', 'gale warning', 'high wind'], [L.wind.d[0], line([2.75, 12.75], [11.25, 12.75]), L.wind.d[2]], { badge: badge('alert') });
 // Hurricane: the tropical cyclone's map symbol, an eye and two arms that leave it on opposite sides
-// (the top one to the left, the bottom one to the right) and curve away from it.
-const hurricaneSymbol = (c, r, R) => {
-  const arm = arc(c[0], c[1] - r - R, R, 90, 180).d;
+// and hook away from it, turned 30° as the symbol is drawn. Long, gentle arms read as a bead on a
+// string; arms wrapped round the eye, as espacio's galaxy.
+const hurricaneSymbol = (c, r, R, sweep = 120, tilt = 30) => {
+  const arm = turnPath(arc(c[0], c[1] - r - R, R, 90, 90 + sweep).d, tilt, c);
   return [circ(...c, r), arm, turnPath(arm, 180, c)];
 };
-add('hurricane', ['huracán', 'tifón', 'ciclón tropical', 'tormenta tropical', 'hurricane', 'typhoon', 'tropical cyclone'], hurricaneSymbol([12, 12], 3, 6.5));
+add('hurricane', ['huracán', 'tifón', 'ciclón tropical', 'tormenta tropical', 'hurricane', 'typhoon', 'tropical cyclone'], hurricaneSymbol([12, 12], 3.25, 4.25, 115));
 let HT_TRACK;
 {
   // Forecast track: the hurricane at the bottom left and, ahead of it, the forecast's dashed track,
   // an arc arrow curving from up and right to the right (a closed cone read as a pizza slice, a flag
   // or an ice-cream cone). The dashes are 3.1 apart, so their ends never meet at bold.
-  const c = [6.5, 16.5];
-  const Rt = 14;
-  const start = polar(...c, 5, -62);
-  // Clockwise from heading -62° to heading -2°: the center sits 90° to the right of the heading
-  const O = plus(start, scale([Math.cos(rad(28)), Math.sin(rad(28))], Rt));
-  const [a0, a1] = [-152, -92];
-  const n = 3;
+  const c = [6.25, 15.75];
+  const Rt = 10.5;
+  const start = polar(...c, 5.75, -22);
+  // Clockwise from heading -60° to heading 0°: the center sits 90° to the right of the heading
+  const O = plus(start, scale([Math.cos(rad(30)), Math.sin(rad(30))], Rt));
+  const [a0, a1] = [-150, -90];
+  const n = 2;
   const g = 3.1;
   const dl = (((a1 - a0) * Math.PI * Rt) / 180 - (n - 1) * g) / n;
   const [da, ga] = [dl, g].map((s) => (s / (Math.PI * Rt)) * 180);
@@ -389,22 +393,19 @@ let HT_TRACK;
   const last = dashes[n - 1];
   HT_TRACK = arc(...O, Rt, a0, a1);
   add('hurricane-track', ['trayectoria del huracán', 'cono de incertidumbre', 'pronóstico de huracán', 'hurricane track', 'forecast cone', 'storm path'], [
-    ...hurricaneSymbol(c, 1.75, 3.25),
+    ...hurricaneSymbol(c, 1.75, 2.5),
     ...dashes.map((x) => x.d),
     head(last.end, last.tangent, 3.4),
   ]);
 }
-{
-  // Sandstorm: three long gusts, the middle one curling, with grains in the gaps between them.
-  add('sandstorm', ['tormenta de arena', 'tolvanera', 'polvo', 'haboob', 'sandstorm', 'dust storm', 'dust'], [
-    line([2.75, 5], [13, 5]),
-    gust(2.75, 12.25, 16.5, 2.5),
-    line([6.5, 19.5], [21.25, 19.5]),
-    hail([8, 8.6]),
-    hail([12, 15.9]),
-    hail([19.25, 15.9]),
-  ]);
-}
+// Sandstorm: lugares's wind (its top gust and a straight one) blowing over lugares's desert, its two
+// dunes lower; the front dune and the ground go on top as a custom piece, as in the desert. Gusts with
+// grains between them read as a set of sliders or a list.
+const DUNE_BACK = 'M2.75 20.75C5.5 19 8 15.25 10.5 15.25C12.25 15.25 13.25 18 15 20.75';
+const DUNE_FRONT = 'M9.75 20.75C12.5 19.5 14.5 17 16.75 17C18.5 17 19.75 19 21.25 20.75';
+add('sandstorm', ['tormenta de arena', 'tolvanera', 'polvo', 'haboob', 'sandstorm', 'dust storm', 'dust'], [gust(2.75, 7.5, 14.5), line([2.75, 11.25], [18.5, 11.25]), DUNE_BACK], {
+  badge: { d: [DUNE_FRONT, line([2.75, 20.75], [21.25, 20.75])], knock: `${DUNE_FRONT}Z`, fill: { solid: [`${DUNE_FRONT}Z`], wire: [line([2.75, 20.75], [21.25, 20.75])] } },
+});
 // Blizzard: two flakes driven sideways by long gusts, no cloud.
 add('blizzard', ['ventisca', 'tormenta de nieve', 'nieve y viento', 'blizzard', 'blowing snow', 'snowstorm'], [
   line([10.5, 5.5], [21.25, 5.5]),
@@ -516,13 +517,11 @@ add('mist', ['neblina', 'bruma', 'calima', 'niebla ligera', 'mist', 'haze', 'lig
 // on either rim.
 
 // ── Frost, ice and snow ───────────────────────────────────────────────────────────────────────
-{
-  // Frost: lugares's snowflake (0.85) over the ground, its lowest arm 3 above it. Half a flake growing
-  // from the ground, its branches as Vs, read as a fern or a bush at 18 px; fans of plain lines, as grass.
-  const G = 20.5;
-  const k = 0.85;
-  add('frost', ['escarcha', 'helada', 'hielo', 'frost', 'ground frost', 'hoarfrost'], [...L.snowflake.d.map((d) => place(d, k, [12, 12], [12, G - 3 - 9 * k])), line([2.75, G], [21.25, G])]);
-}
+// Frost: the bigger snowflake (lugares's six arms and their Vs) settled over the ground, 3.5 above it.
+// Half a flake growing from the ground, its branches as Vs, read as a fern or a bush at 18 px; fans of
+// plain lines, as grass; lugares's snowflake shrunk to fit brought its arms' ends within 2.55 of its Vs.
+const FROST_G = 19.25;
+add('frost', ['escarcha', 'helada', 'hielo', 'frost', 'ground frost', 'hoarfrost'], [...bigFlake([12, 9.75], 6), line([2.75, FROST_G], [21.25, FROST_G])]);
 {
   // Icicles hanging from an eave, three lengths.
   const E = 5;
@@ -530,19 +529,19 @@ add('mist', ['neblina', 'bruma', 'calima', 'niebla ligera', 'mist', 'haze', 'lig
   add('icicles', ['carámbanos', 'hielo', 'congelado', 'superficie helada', 'icicles', 'ice', 'icy'], [line([2.75, E], [21.25, E]), icicle(6.5, 14), icicle(12, 9), icicle(17.5, 12)]);
 }
 {
-  // Snow depth: edicion's ruler stood up (its corners and its ticks, long and short, 3 apart) and stuck
-  // in a snow mound, with the family's flake falling beside it, 3 clear; the mound goes on top as a
-  // custom piece and the engine clears the ruler where it goes into the snow. A narrower stake with even
-  // ticks, alone on the mound, read as a lighthouse or a tower on a hill.
-  const mound = 'M2.75 20.5C5.5 15.25 18.5 15.25 21.25 20.5Z';
-  const x = 6.75;
+  // Snow depth: a snow drift, round where the wind piled it and cut short on its lee side, nautica's
+  // wave-height arrow beside it measuring it from the ground to its crest, and the family's flake falling
+  // above (a round dome read as an igloo or a bell). A ruler stuck in a mound read as a gravestone (fiestas
+  // has one); a narrower stake with even ticks, as a lighthouse or a tower on a hill.
+  const top = 13;
+  const ax = 20;
   add('snow-depth', ['espesor de nieve', 'acumulación de nieve', 'nieve acumulada', 'snow depth', 'snowfall', 'snow accumulation'], [
-    sq(x, 2.75, 6.5, 17, 2),
-    line([x, 6], [x + 3.5, 6]),
-    line([x, 9], [x + 2, 9]),
-    line([x, 12], [x + 3.5, 12]),
-    ...flake([18.25, 7.5], 2.25),
-  ], { badge: { d: [mound], knock: mound, fill: { solid: [mound] } } });
+    `M2.75 20.75C3 17.5 5 ${f(top)} 7.5 ${f(top)}C10.5 ${f(top)} 12 15.5 14.75 16C15 17.75 15 19.5 14.75 20.75Z`,
+    line([ax, top + 0.25], [ax, 20.5]),
+    head([ax, top], [0, -1], 3),
+    head([ax, 20.75], [0, 1], 3),
+    ...flake([12.5, 6.5], 2.25),
+  ]);
 }
 
 // ── Forecast ──────────────────────────────────────────────────────────────────────────────────
@@ -576,33 +575,11 @@ let CAL_CLOUD;
     band(14.75),
   ]);
 }
-{
-  // Weathervane: on top of the post, the vane: an arrow with a broad fin at its tail (the plate the
-  // wind pushes; a feather drawn as a chevron made it a double arrow), and lower down the cardinal
-  // arms, a bar with a ball at each end.
-  const Y = 6;
-  const fin = roundpoly([[2.75, Y - 3.25], [5.75, Y - 3.25], [8.5, Y], [5.75, Y + 3.25], [2.75, Y + 3.25]], 0.6);
-  add('weathervane', ['veleta', 'dirección del viento', 'rosa de los vientos', 'weathervane', 'wind vane', 'wind direction'], [
-    line([12, 21.25], [12, Y]),
-    fin,
-    line([8.5, Y], [20.5, Y]),
-    head([20.75, Y], [1, 0], 3.25),
-    line([5.75, 13.5], [18.25, 13.5]),
-    dot(5.75, 13.5),
-    dot(18.25, 13.5),
-  ]);
-}
-{
-  // Anemometer: its cups on an arm atop a short pole, seen from the side: the left one open downward,
-  // the right one upward, as they turn. A third cup face on at the hub only made a knot of it.
-  const Y = 8;
-  add('anemometer', ['anemómetro', 'velocidad del viento', 'medidor de viento', 'anemometer', 'wind speed', 'wind gauge'], [
-    `M2.75 ${f(Y)}A3 3 0 0 1 8.75 ${f(Y)}Z`,
-    `M15.25 ${f(Y)}A3 3 0 0 0 21.25 ${f(Y)}Z`,
-    line([8.75, Y], [15.25, Y]),
-    line([12, Y], [12, 21.25]),
-  ]);
-}
+// weathervane is not drawn: the arrow on its post with the cardinal bar under it read as the glyph 午
+// or as a cross on a grave at 18 px; on a roof, as a clothes hanger or an easel; alone on its post, as a
+// signpost. anemometer neither: its cups on an arm atop a pole read as a T, lugares's street lamp, a
+// table or a dumbbell on a stick, with the cups opening up and down, sideways, or larger; a rotor seen
+// from above is juegos's pinwheel.
 // Wind direction: an arrow pointing right and two gusts trailing from its tail, curling away.
 add('wind-direction', ['dirección del viento', 'rumbo del viento', 'viento', 'wind direction', 'wind heading', 'wind'], [
   line([8.5, 12], [20.5, 12]),
@@ -729,22 +706,17 @@ add('season-spring', ['primavera', 'brote', 'lluvia de primavera', 'estación', 
   const trail = [[174, 152], [134, 110]].map(([a0, a1]) => arc(12.5, 3, 9.3, a0, a1).d);
   add('season-autumn', ['otoño', 'hoja que cae', 'caída de hojas', 'estación', 'autumn', 'fall', 'season'], [...L.leaf.d.map((d) => place(d, 0.55, [12, 12], [15.75, 15.75])), ...trail]);
 }
-// Winter: the bigger snowflake above a snowy hill.
-add('season-winter', ['invierno', 'nieve', 'temporada de frío', 'estación', 'winter', 'wintertime', 'season'], [...bigFlake([12, 7.85], 6), 'M2.75 21C6.5 15.5 17.5 15.5 21.25 21']);
+// Winter: plantas's bare tree (0.8), its leaves gone after autumn's, and the family's flakes falling
+// beside it, 3 clear of its branches. A snowflake over a snowy hill read as a frowning face, and as frost.
+add('season-winter', ['invierno', 'nieve', 'temporada de frío', 'estación', 'winter', 'wintertime', 'season'], [
+  ...plantas.icons['tree-bare'].d.map((d) => place(d, 0.8, [12, 21.25], [10.25, 21.25])),
+  ...flake([18.75, 5.25]),
+  ...flake([19, 14.25]),
+]);
 
 // ── Stations and maps ─────────────────────────────────────────────────────────────────────────
-// Weather station: a mast with the anemometer's cups on top (as big: smaller, they close up at bold)
-// on one bar and, beside its foot, a louvered box on legs.
-add('weather-station', ['estación meteorológica', 'observatorio', 'mediciones', 'weather station', 'weather observatory', 'measurements'], [
-  'M1.75 5.5A2.5 2.5 0 0 1 6.75 5.5Z',
-  'M8.25 5.5A2.5 2.5 0 0 0 13.25 5.5Z',
-  line([1.75, 5.5], [13.25, 5.5]),
-  line([7.5, 5.5], [7.5, 21.25]),
-  sq(14, 10, 7, 9, 1.5),
-  line([14, 13], [21, 13]),
-  line([14, 16], [21, 16]),
-  'M15.75 19V21.25M19.25 19V21.25',
-]);
+// weather-station is not drawn: its mast carries the anemometer's cups (a T at 18 px) or the vane (a
+// signpost), and the louvered box on legs at its foot reads as a radiator or a battery.
 // Weather balloon: a big round balloon rising past a cloud, its line swaying down to the small box of
 // its instruments (alone on the axis, balloon, line and box made a Venus sign).
 add('weather-balloon', ['globo meteorológico', 'radiosonda', 'sondeo', 'weather balloon', 'radiosonde', 'sounding'], [
@@ -847,8 +819,9 @@ const FILL = {
   'cloud-wind': { solid: [0], lines: [1, 2] },
   'wind-alert': false,
   hurricane: { solid: [0], wire: [1, 2] },
-  'hurricane-track': { solid: [0], wire: [1, 2], lines: [3, 4, 5, 6] },
-  sandstorm: false,
+  'hurricane-track': { solid: [0], wire: [1, 2], lines: [3, 4, 5] },
+  // The back dune is solid and the gusts stay lines; the front dune is the custom piece's own fill.
+  sandstorm: { solid: [shut(DUNE_BACK)], lines: [0, 1] },
   blizzard: false,
   smoke: false,
   'lightning-strike': false,
@@ -864,15 +837,13 @@ const FILL = {
   aurora: { solid: [4], lines: [0, 1, 2, 3] },
   frost: false,
   icicles: { solid: [1, 2, 3], wire: [0] },
-  'snow-depth': { solid: [0], cut: [1, 2, 3], lines: [4, 5, 6] },
+  'snow-depth': { solid: [0], lines: [1, 2, 3, 4, 5, 6] },
   // calendario's calendar-sun, the header and the sun knocked out; its rings are attached to the body
   // here: kept apart, the sliver of fill under them at light weights split away once the cloud opens
   // the body's corner, and the weights no longer matched.
   'calendar-cloud-sun': { solid: [0], wire: [1, 2], cut: rest('calendar-cloud-sun', 3) },
   windsock: { solid: [0], wire: [1], cut: [2, 3] },
   // The vane's fin and the arms' balls are solid; the arrow, the post and the bar stay attached to them.
-  weathervane: { solid: [1, 5, 6], wire: [0, 2, 3, 4] },
-  anemometer: { solid: [0, 1], wire: [2, 3] },
   'wind-direction': false,
   // The water under the level line is solid; the drop above it stays a line.
   'humidity-high': { solid: [HUMID.high.water], wire: [0] },
@@ -900,7 +871,6 @@ const FILL = {
   // lugares's leaf: the stem outside the leaf attached to it, the rib inside knocked out.
   'season-autumn': { solid: [0], wire: [place(line([3.25, 20.75], [5.5, 18.5]), 0.55, [12, 12], [15.75, 15.75])], cut: [place(line([7.5, 16.5], [14.25, 9.75]), 0.55, [12, 12], [15.75, 15.75])], lines: [2, 3] },
   'season-winter': false,
-  'weather-station': { solid: [0, 1, 4], wire: [2, 3, 7], cut: [5, 6] },
   'weather-balloon': { solid: [0, 2, 3], wire: [1] },
   // sistema's radar: the scope filled, its hub, sweep and echo knocked out
   'weather-radar': { solid: [0], cut: [1, 2, 3] },
@@ -937,8 +907,8 @@ const PARTS = {
   'cloud-wind': { cloud: [0], gusts: [1, 2] },
   'wind-alert': { gusts: [0, 1, 2] },
   hurricane: { eye: [0], arms: [1, 2] },
-  'hurricane-track': { storm: [0, 1, 2], track: [3, 4, 5, 6] },
-  sandstorm: { gusts: [0, 1, 2], grains: [3, 4, 5] },
+  'hurricane-track': { storm: [0, 1, 2], track: [3, 4, 5] },
+  sandstorm: { gusts: [0, 1], dunes: [2] },
   blizzard: { gusts: [0, 1, 2], flakes: range(3, 9) },
   smoke: { plumes: [0, 1] },
   'lightning-strike': { bolt: [0], ground: [1], sparks: [2, 3] },
@@ -950,13 +920,11 @@ const PARTS = {
   'sun-moon': { sun: [0], rays: rest('sun-moon', 1) },
   'uv-index': { sun: [0], rays: [1, 2, 3, 4, 5], level: [6, 7, 8] },
   aurora: { ridge: [0], curtains: [1, 2, 3], star: [4] },
-  frost: { crystal: range(0, 12), ground: [12] },
+  frost: { crystal: range(0, 9), ground: [9] },
   icicles: { eave: [0], icicles: [1, 2, 3] },
-  'snow-depth': { ruler: [0], ticks: [1, 2, 3], flake: [4, 5, 6] },
+  'snow-depth': { drift: [0], arrow: [1, 2, 3], flake: [4, 5, 6] },
   'calendar-cloud-sun': { body: [0], rings: [1, 2], header: [3], sun: rest('calendar-cloud-sun', 4) },
   windsock: { sock: [0, 2, 3], pole: [1] },
-  weathervane: { post: [0], vane: [1, 2, 3], arms: [4, 5, 6] },
-  anemometer: { cups: [0, 1], arms: [2], pole: [3] },
   'wind-direction': { arrow: [0, 1], gusts: [2, 3] },
   'humidity-high': { drop: [0], level: [1] },
   'humidity-low': { drop: [0], level: [1] },
@@ -978,8 +946,7 @@ const PARTS = {
   'season-spring': { stem: [0], leaves: [1, 2], ground: [3], drop: [4] },
   'season-summer': { sun: [0], rays: range(1, icons['season-summer'].d.length - 1), wave: tail('season-summer', 1) },
   'season-autumn': { leaf: [0, 1], trail: [2, 3] },
-  'season-winter': { flake: range(0, 9), hill: [9] },
-  'weather-station': { anemometer: [0, 1, 2], mast: [3], box: [4, 5, 6], legs: [7] },
+  'season-winter': { tree: [0, 1, 2, 3, 4], flakes: range(5, 11) },
   'weather-balloon': { balloon: [0], line: [1], box: [2], cloud: [3] },
   'weather-radar': { face: [0, 1], sweep: [2], blip: [3] },
   'satellite-cloud': { satellite: range(0, 7), cloud: [7] },
@@ -1003,8 +970,8 @@ const MOTION = {
   'cloud-wind': { effect: 'slide', parts: ['gusts'], vector: [2, 0] },
   'wind-alert': { effect: 'wiggle', parts: ['badge'], origin: [17.25, 21.5] },
   hurricane: { effect: 'spin', origin: [12, 12] },
-  'hurricane-track': { effect: 'spin', parts: ['storm'], origin: [6.5, 16.5] },
-  sandstorm: { effect: 'slide', vector: [2, 0] },
+  'hurricane-track': { effect: 'spin', parts: ['storm'], origin: [6.25, 15.75] },
+  sandstorm: { effect: 'slide', parts: ['gusts'], vector: [2, 0] },
   blizzard: { effect: 'slide', vector: [2, 0] },
   smoke: { effect: 'float', vector: [0, -1.5] },
   'lightning-strike': { effect: 'beat', parts: ['bolt'], origin: [11.5, 20.5] },
@@ -1012,15 +979,13 @@ const MOTION = {
   'cold-wave': { effect: 'float', parts: ['waves'], vector: [1.5, 0] },
   mist: { effect: 'float', vector: [1.5, 0] },
   'sun-moon': { effect: 'float', parts: ['badge'], vector: [1.5, 0] },
-  frost: { effect: 'spin', parts: ['crystal'], origin: [12, 9.85] },
+  frost: { effect: 'spin', parts: ['crystal'], origin: [12, 9.75] },
   'snow-depth': { effect: 'float', parts: ['flake'], vector: [0, 1.5] },
   'sun-haze': { effect: 'float', parts: ['haze'], vector: [1.5, 0] },
   'sun-wind': { effect: 'slide', parts: ['gusts'], vector: [2, 0] },
   aurora: { effect: 'float', parts: ['curtains'], vector: [0, -1] },
   'calendar-cloud-sun': { effect: 'float', parts: ['badge'], vector: [1.5, 0] },
   windsock: { effect: 'wiggle', parts: ['sock'], origin: [4.5, 7.25] },
-  weathervane: { effect: 'wiggle', parts: ['vane'], origin: [12, 6] },
-  anemometer: { effect: 'wiggle', parts: ['cups', 'arms'], origin: [12, 8] },
   'wind-direction': { effect: 'slide', vector: [2, 0] },
   'humidity-high': { effect: 'bounce', vector: [0, 1.5] },
   'humidity-low': { effect: 'bounce', vector: [0, 1.5] },
@@ -1041,8 +1006,7 @@ const MOTION = {
   'season-summer': { effect: 'float', parts: ['wave'], vector: [1.5, 0] },
   'season-autumn': { effect: 'float', parts: ['leaf'], vector: [1, 1.5] },
   'weather-radar': { effect: 'spin', parts: ['sweep'], origin: [12, 12] },
-  'season-winter': { effect: 'spin', parts: ['flake'], origin: [12, 7.85] },
-  'weather-station': { effect: 'wiggle', parts: ['anemometer'], origin: [7.5, 5.5] },
+  'season-winter': { effect: 'float', parts: ['flakes'], vector: [0, 1.5] },
   'weather-balloon': { effect: 'float', parts: ['balloon', 'line', 'box'], vector: [0, -1.5] },
   'satellite-cloud': { effect: 'float', parts: ['satellite'], vector: [1.5, -0.75] },
   'map-weather': { effect: 'float', parts: ['badge'], vector: [1.5, 0] },
@@ -1113,9 +1077,9 @@ const SMALL = {};
   SMALL['cold-wave'] = { d: [...flake([12, 7.6], 4.75), ...waves] };
   const ht = icons['hurricane-track'].d;
   SMALL['hurricane-track'] = { d: [ht[0], ht[1], ht[2], HT_TRACK.d, head(HT_TRACK.end, HT_TRACK.tangent, 3.4)], fill: { solid: [0], wire: [1, 2], lines: [3, 4] } };
-  // Frost: lugares's snowflake at 0.75 closed up into a blob; the family's six-armed flake, larger, over
+  // Frost: the bigger snowflake's Vs closed up into a blob; the family's six-armed flake, larger, over
   // the ground.
-  SMALL.frost = { d: [...flake([12, 10.5], 5.25), line([2.75, 20.25], [21.25, 20.25])] };
+  SMALL.frost = { d: [...flake([12, 9.75], 5.25), line([2.75, FROST_G], [21.25, FROST_G])] };
   // The fronts: their gentle curve stepped into gray pixels. Straight, on a pixel row, with the same
   // symbols at the same places.
   const FY = 15.75;
