@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 26 Nov 2026 — The migration maps catch up with rounds 3 to 11 (Lucide and Heroicons)
+- **Lucide** ([build](./build.md#migration-srcmigrate-flouviagotamigrate-gota-migrate)): from 973 of its 1,903 icons to 1,601 of 2,123 (lucide-static 1.81, which renamed many: `circle-alert` is now `circle-exclamation-point`, `copyright` is `circle-letter-c`), and 241 of its 313 old names, which take their icon's entry (the same SVG). **Heroicons:** from 285 of 324 to 299.
+- **How** ([decision 75](./decisions.md#outputs-23-oct-2026)): the packages' names and SVGs in a temporary folder, nothing of theirs committed; a judge per chunk compared each icon with its candidates from Gota's own search on side-by-side sheets, an independent checker per Lucide chunk rejected what wasn't the same thing, and the main session looked at every new pair. Left out on purpose: a different count (two trees, three pines), direction (sort arrows, a mirrored log-in), or badge (a shield on a user, a person in a shield), and a related object (Gota's place of worship has no faith's sign, Lucide's church has a cross); plain currency signs map to Gota's coins, as `pound-sterling` already did. `load.mjs` refused 8 entries asking for an enclosure or slash their icon doesn't take (`refresh` crossed out, `power` in a circle); they stay out.
+- **SF Symbols** stays as it was: its glyphs live only in Apple's fonts, so its pairs are checked by eye on a Mac.
+
 ## 26 Nov 2026 — Round 11: nature (423 icons)
 - **Six new categories** ([taxonomy](./taxonomy.md)): animales 76, aves-insectos 79, mar 52 (and fish), plantas 86 (and leaf, tree, tree-pine, palm-tree, flower, sprout, and cactus from lugares), clima 70 (and lugares's 26 weather icons: the sun, the moon, the clouds and what falls from them, the thermometer, the umbrella, sunrise, and sunset), and medio-ambiente 60 (and recycle). The set has 7,460 icons in 82 categories: every category the taxonomy plans now exists, and the sweep comes next ([decision 87](./decisions.md#v1-20-nov-2026)).
 - **Names:** 730 proposed, 492 approved. What the set already draws wasn't drawn again: every `cloud-*` builds on lugares's cloud, sun, or moon, with one set of drops, flakes, and bolts, and medio-ambiente's bins share one sorting bin.
