@@ -5,7 +5,7 @@
 ## What it is
 Gota is Flouvia's icon library (`@flouvia/gota`, MIT license): drawn by hand with its own geometry engine, with continuous corners, a single-color 1.5 stroke, and a signature — containers have a square bottom-right corner, like the drop in Flouvia's logomark, and speech bubbles are the drop itself (*gota* is Spanish for "drop"). It was born on 21 Oct 2026 from the `flouvia-web` set ([history](./docs/history.md)).
 
-**v1 is 10,000 icons: after round 11, the sweep draws the ~2,500 it still lacks** ([decision 87](./docs/decisions.md#v1-20-nov-2026), [phased plan](./docs/roadmap.md)). The source is public at `github.com/Flouviamx/gota` (since 23 Oct 2026, unannounced); npm, the release ZIP, and the announcement wait for v1. The site is `gota.flouvia.com`.
+**v1 is the set as round 12, the sweep, leaves it: about 8,050 icons** ([decision 89](./docs/decisions.md#v1-20-nov-2026), [phased plan](./docs/roadmap.md)). The source is public at `github.com/Flouviamx/gota` (since 23 Oct 2026, unannounced); npm, the release ZIP, and the announcement wait for v1. The site is `gota.flouvia.com`.
 
 ## Required first steps
 1. `git status --short`: preserve other people's work (agents or parallel sessions may be editing `src/icons/`).
@@ -43,7 +43,7 @@ Node ≥ 22. The system's Chrome renders the sheets (`CHROME` for a different pa
 - **The signature** (square bottom-right corner on containers, `drop()` for bubbles) and the keylines from [`DESIGN.md`](./DESIGN.md) on every icon.
 - **Data, not files:** each icon is a definition in `src/icons/<category>.mjs`; every SVG, package, and sheet is generated. `svg/`, `dist/`, and `previews/` never go into the repo.
 - **No clutter:** no test icons, temporary files, or one-off scripts in the repo.
-- **npm and the announcement wait for v1** (10,000 icons, the sweep included), with zero QA warnings, the owner's review, and the owner's OK to publish; the GitHub source is public meanwhile, without promotion.
+- **npm and the announcement wait for v1** (the set after round 12, the sweep, about 8,050 icons), with zero QA warnings, the owner's review, and the owner's OK to publish; the GitHub source is public meanwhile, without promotion.
 - Icon names in English kebab-case.
 - All repository text is in English (docs, comments, scripts, commit messages); icon labels and search keywords stay multilingual (src/i18n, tags). The owner is addressed in Spanish in conversation.
 
@@ -67,7 +67,7 @@ migrate/              The codemod, gota-migrate (cli.mjs; transform.mjs: React, 
 src/icons/*.mjs       One category per file: { category, label, icons: { name: definition } }. Source of truth.
 src/i18n/*.json       Labels in 10 languages and search keywords (es/en) for each category.
 src/migrate/*.json    Migration maps: Lucide, Heroicons, and SF Symbols names → Gota (checked by load.mjs).
-src/taxonomy.json     The plan to 10,000: domains, categories, rounds, targets, scopes, adoptions (checked by load.mjs).
+src/taxonomy.json     The plan: domains, categories, rounds, targets, scopes, adoptions (checked by load.mjs).
 scripts/              load (loads and validates), names (a round's names, deduplicated), build, sheet, variants-sheet, transitions-sheet, sheets, qa, outline (icons as checked filled shapes, Skia), masters (compatible masters across weights), native (Android, Xcode, Figma; the Figma plugin's own code in scripts/figma/), font and sfnt (icon fonts), type (typefaces drawn with the engine), contours (path data → TrueType), chrome (headless Chrome).
 tests/                Engine tests, phase 2 feature tests, and outline tests.
 DESIGN.md             Drawing rules (read by every agent that draws).

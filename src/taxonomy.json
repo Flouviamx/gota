@@ -1,6 +1,6 @@
 {
   "$comment": "Gota's taxonomy: every category, the domain it is browsed under, the round that draws or grows it, how many new icons it takes, its scope, what belongs elsewhere, and the icons it adopts from the first thousand. See docs/taxonomy.md.",
-  "goal": 10000,
+  "v1": "The set as round 12, the sweep, leaves it: about 8,050 icons (decision 89).",
   "rounds": {
     "3": "Interface and work",
     "4": "Business",
@@ -10,7 +10,8 @@
     "8": "Places and travel",
     "9": "Science and industry",
     "10": "Leisure and culture",
-    "11": "Nature, and v1"
+    "11": "Nature",
+    "12": "The sweep, and v1"
   },
   "domains": [
     {

@@ -4,7 +4,7 @@
 
 [← Index](./README.md)
 
-**v1 is 10,000 icons: round 11, then the sweep of about 2,500** ([decision 87](./decisions.md#v1-20-nov-2026)). The source is public on GitHub since 23 Oct 2026, without promotion ([decision 78](./decisions.md#outputs-23-oct-2026)); npm, the release ZIP, and the announcement wait for v1. Each round of ~1,000 takes about 3 hours of agents.
+**v1 is the set as round 12, the sweep, leaves it: about 8,050 icons** ([decision 89](./decisions.md#v1-20-nov-2026)). The source is public on GitHub since 23 Oct 2026, without promotion ([decision 78](./decisions.md#outputs-23-oct-2026)); npm, the release ZIP, and the announcement wait for v1. Each round of ~1,000 takes about 3 hours of agents.
 
 ## Phase 0 · Foundations ✅
 - [x] Geometry engine: continuous corners, keylines, the drop (`engine/geometry.mjs`).
@@ -21,7 +21,7 @@
 - [x] 1.7 Owner's review of a sample, and course corrections — the 53 icons redrawn while the weights were unified (102 variants, before and after) and the scale of weights, approved by the owner on 23 Oct 2026.
 
 ## Phase 2 · Outputs, tested on those 1,000 ✅
-It comes before scaling: a format change is cheap with 1,000 icons and very expensive with 10,000.
+It comes before scaling: a format change is cheap with 1,000 icons and very expensive with 8,000.
 - [x] 2.1 Web animations: draw, bounce, replace (generic) and the icons' own effects (`ring`, `wiggle`, `spin`, `beat`, `slide`, `float`, `bounce`), levels with a value: engine (`render(icon, { animate })`), CSS (`engine/motion.css`), React, Vue, and Svelte (`effect`, `play`), checked frame by frame ([engine](./engine.md#motion)).
 - [x] 2.2 Transitions between icons, done differently ([decision 41](./decisions.md#phase-2-22-oct-2026)): every frame drawn by the engine; badge pairs found on their own (bell ↔ bell-off, file ↔ file-check: 30 in the set today) and the automatic slash on any icon; 20 curated morphs and 7 turns that passed the frame-by-frame sheet (`scripts/transitions-sheet.mjs`); the rest swap in. React, Vue, and Svelte play them (`transition`). Outline ↔ fill: the fill rises like a liquid (`liquid`, [decision 74](./decisions.md#outputs-23-oct-2026)), played when a component's `variant` changes. More pairs come as phase 3 adds icons.
 - [x] 2.3 Icons with a live value (`--gota-value` with `@property`), one color: the 20 with levels (wifi, signal, battery, volume, sun…), plus strokes drawn that far (timer, loader) and parts that turn (gauge, stopwatch, compass, navigation, the timer's hand). A progress bar and a liquid's level need drawings of their own first.
@@ -31,13 +31,13 @@ It comes before scaling: a format change is cheap with 1,000 icons and very expe
 - [x] 2.7 Search by meaning (es/en) and a remote MCP server at `gota.flouvia.com/mcp`: search (`@flouvia/gota/search`), the local MCP server (`mcp/server.mjs`, `gota-mcp`), and the remote one (`api/mcp.mjs`, Streamable HTTP on Vercel, with the owner's OK; [decision 71](./decisions.md#outputs-23-oct-2026)), both on the same tools (`mcp/handler.mjs`).
 - [x] 2.8 Migration map from Lucide, Heroicons, and SF Symbols, with a codemod: the maps (`src/migrate/`: Lucide 1,601 of 2,123, Heroicons 299 of 324, SF Symbols 1,814 of 8,091 names), `@flouvia/gota/migrate`, the `gota-migrate` codemod (React, Vue, Astro, Swift), and `find_equivalent` in the MCP server ([build](./build.md#migration-srcmigrate-flouviagotamigrate-gota-migrate), [decision 75](./decisions.md#outputs-23-oct-2026)). The maps grow with the set.
 
-## Phase 3 · Scaling to 10,000
+## Phase 3 · Scaling the set
 - [x] 3.1 Taxonomy for the remaining ~9,000 by domain (health, education, food, sports, tools, science, industry, home, animals, AI, transportation…), without repeating concepts: 81 categories in 11 domains, nine rounds, and the names stage that keeps concepts from repeating ([taxonomy](./taxonomy.md), `src/taxonomy.json`, [decision 80](./decisions.md#phase-3-23-oct-2026)).
 - [x] 3.2 Curated modifiers in the engine: badges with knockouts (+, −, ✓, ×, clock, lock, alert, star), directions, and levels. Those badges and levels (`levels`, `value`) were already there; 3.2 moved into the engine the badges four categories drew by hand (`question`, `block`, `arrow-left`, and the glyphs `search`, `heart`, `sync`, `edit`, `gear`, each with its 16 px version) and added the directions (`turn`, `turnPath`, `flipPath`) ([engine](./engine.md#geometry-enginegeometrymjs), [decision 79](./decisions.md#phase-3-23-oct-2026)).
 - [x] 3.3 Nine rounds of ~1,000: each agent delivers everything at once, with a critic, QA, and a sample for the owner. Round 3 ✅ (24 Oct 2026, 903 icons: 1,936 in all). Round 4 ✅ (25 Oct 2026, 863 icons: 2,801 in all). Round 5 ✅ (25 Oct 2026, 741 icons: 3,542 in all). Round 6 ✅ (27 Oct 2026, 972 icons: 4,514 in all). Round 7 ✅ (28 Oct 2026, 773 icons: 5,287 in all). Round 8 ✅ (29 Oct 2026, 703 icons: 5,990 in all). Round 9 ✅ (1 Nov 2026, 524 icons: 6,514 in all). Round 10 ✅ (10 Nov 2026, 523 icons: 7,037 in all). Round 11 ✅ (26 Nov 2026, 423 icons: 7,460 in all).
-- [ ] 3.4 The sweep, about 2,540 icons in rounds of its own after round 11 ([decision 87](./decisions.md#v1-20-nov-2026)): the names the migration maps still can't place (Lucide, Heroicons, SF Symbols) and the gaps the rounds left, each in the category whose scope holds it, until the set lands on 10,000. The rounds landed below their taxonomy targets, so it is about 2,500, not the ~320 the taxonomy planned.
+- [ ] 3.4 The sweep, one round (round 12) of 684 names ([decision 89](./decisions.md#v1-20-nov-2026)): what each category still lacked and what Lucide, Heroicons, SF Symbols, Tabler, Phosphor, and Material Symbols name that Gota didn't, each in the category whose scope holds it, plus a few badge states families lacked. It closes the set for v1.
 
-## Phase 4 · Launching v1 (10,000)
+## Phase 4 · Launching v1 (about 8,050)
 - [ ] 4.1 A site to browse, search, and copy (SVG, JSX, Figma) at `gota.flouvia.com`. Being built in `flouvia-web` by the site's session, at the owner's request (23 Oct 2026): the page, the explorer (`/icons`), a guide, a showcase, and the license, English at the root and Spanish under `/es`, served at `gota.flouvia.com` through this project ([decision 72](./decisions.md#outputs-23-oct-2026)). Live since 23 Oct 2026; its explorer takes each round with `npm run gota:sync` in `flouvia-web`.
 - [ ] 4.2 GitHub with the source only (public at `github.com/Flouviamx/gota` since 23 Oct 2026, unannounced); a GitHub Action that publishes the ZIP for each version; npm `@flouvia/gota`.
 - [ ] 4.3 Zero QA warnings, the owner's full review, documentation, and announcement.

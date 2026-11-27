@@ -4,6 +4,11 @@
 
 [← Index](./README.md)
 
+## 27 Nov 2026 — The sweep's names, and v1 with about 8,050 (decision 89)
+- **First pass** ([taxonomy](./taxonomy.md#how-a-round-uses-it)): a names agent per domain, with each category's gap to its target plus 30 % and the names Lucide, Heroicons, and SF Symbols have and Gota lacks. They returned about 690 names against a quota of 2,600: checked concept by concept, most of what the scopes still list is already drawn, often in another category (the elevator in bienes-raices, the scuba mask in nautica), and most of the rest is what [DESIGN.md](../DESIGN.md#what-failed-before-check-every-icon-against-it) says doesn't read. The main session approved 621; it dropped 62, among them 16 that round 11 had dropped and others rounds 8 to 10 had (the tuba, the loom, the black hole, the high jump).
+- **Second pass:** the names of Tabler (5,509), Phosphor (1,494), and Material Symbols (3,945), names only and nothing of theirs committed, folded into 8,709 concepts; `names.mjs` left 4,918 that Gota doesn't have by name, and nine agents judged them, adding a few badge states families lack. 63 passed: the rest were drawn under another name, a variant of a drawing (a numbered alternative, a filled or outlined style, one more badge), or letters, file types, and brands.
+- **Decision 89** ([decisions](./decisions.md#v1-20-nov-2026)): with 684 names, the set lands at about 8,050 once the critics drop what doesn't read; 10,000 would take about 1,950 more badge states or invented concepts. The owner chose to ship v1 after this one sweep round (round 12). `taxonomy.json` says so in `v1` and round 12, and its test no longer asks the targets to reach 10,000.
+
 ## 26 Nov 2026 — The migration maps catch up with rounds 3 to 11 (Lucide and Heroicons)
 - **Lucide** ([build](./build.md#migration-srcmigrate-flouviagotamigrate-gota-migrate)): from 973 of its 1,903 icons to 1,601 of 2,123 (lucide-static 1.81, which renamed many: `circle-alert` is now `circle-exclamation-point`, `copyright` is `circle-letter-c`), and 241 of its 313 old names, which take their icon's entry (the same SVG). **Heroicons:** from 285 of 324 to 299.
 - **How** ([decision 75](./decisions.md#outputs-23-oct-2026)): the packages' names and SVGs in a temporary folder, nothing of theirs committed; a judge per chunk compared each icon with its candidates from Gota's own search on side-by-side sheets, an independent checker per Lucide chunk rejected what wasn't the same thing, and the main session looked at every new pair. Left out on purpose: a different count (two trees, three pines), direction (sort arrows, a mirrored log-in), or badge (a shield on a user, a person in a shield), and a related object (Gota's place of worship has no faith's sign, Lucide's church has a cross); plain currency signs map to Gota's coins, as `pound-sterling` already did. `load.mjs` refused 8 entries asking for an enclosure or slash their icon doesn't take (`refresh` crossed out, `power` in a circle); they stay out.
@@ -95,7 +100,7 @@
 
 ## 23 Oct 2026 — The taxonomy (3.1 closes)
 - **`src/taxonomy.json` and [Taxonomy](./taxonomy.md)** ([decision 80](./decisions.md#phase-3-23-oct-2026)): 81 categories in 11 domains, each with its round, target, scope, exclusions, and the icons it adopts from the first thousand; nine rounds of about 1,000, the order set by what the teams that use Gota reach for first. The loader checks it (every category file planned, under the same label; adopted icons exist) and applies adoptions once the adopting category exists.
-- [Production](./production.md#rounds-3-onward--scaling-to-10000) now starts each round with its names: an agent per category, deduplication in code, and one judge.
+- [Production](./production.md#rounds-3-onward--scaling-the-set) now starts each round with its names: an agent per category, deduplication in code, and one judge.
 - Tests: 61.
 
 ## 23 Oct 2026 — Phase 3 starts: the modifiers in the engine (3.2 closes)

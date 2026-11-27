@@ -55,7 +55,7 @@ After the build; it needs `npm ci` (Skia). Written by `scripts/sfnt.mjs`, with n
 | `dist/fonts/gota-{light,regular,bold}[-fill].woff2` (and `.ttf`) | Static, each master as it is (300 · 400 · 700) |
 | `dist/fonts/gota.css` · `codepoints.json` | The `@font-face` rules and the `.gota` and `.gota-fill` classes; each icon's codepoint |
 
-- **Codepoints** are stable, in the Supplementary Private Use Area-A (from U+F0000: the BMP's 6,400 wouldn't hold 10,000 icons): `src/codepoints.json` is committed, a new icon gets the next one, and a codepoint is never given to another icon.
+- **Codepoints** are stable, in the Supplementary Private Use Area-A (from U+F0000: the BMP's 6,400 wouldn't hold the set): `src/codepoints.json` is committed, a new icon gets the next one, and a codepoint is never given to another icon.
 - **Ligatures:** an icon's name typed as text becomes the icon; the letters themselves are empty and zero wide.
 - **Grid:** 4,800 units per em (200 per canvas unit), the 24 canvas filling the em from the baseline up; points within 0.0025, so rounding never tips an interpolated weight past the check.
 - **An icon without compatible masters** keeps its regular drawing at every weight of the variable font (6 per style, reported); the static fonts have every icon at its own weight.

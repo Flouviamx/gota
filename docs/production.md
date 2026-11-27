@@ -43,7 +43,7 @@ The core set (`nucleo`, 50) was drawn by the main session and is the reference.
    - **Languages:** `src/i18n/<category>.json` with the 10 labels and ≥ 6 search keywords in es and en, chosen by meaning and use. It doesn't touch the `.mjs` files.
 3. The main session runs the full `qa.mjs`, fixes, presents a sample to the owner, and commits.
 
-## Rounds 3 onward — scaling to 10,000
+## Rounds 3 onward — scaling the set
 Each round draws the categories the [taxonomy](./taxonomy.md) gives it, about 1,000 icons:
 1. **Names** for the whole round first: an agent per category, deduplication in code, and the main session as judge ([how](./taxonomy.md#how-a-round-uses-it)). What comes out is the list each illustrator draws.
 2. **A pipeline per category: illustrator → critic, with languages beside them.** The illustrator delivers **every drawing at once** (outline, fill, 16 px, parts, motion, levels, mirroring), starting a new file from its taxonomy entry (`category` is its `id`, `label` its Spanish label). The critic, independent as in round 1, opens every sheet, redesigns what's weak, and leaves the category at zero QA warnings; it may drop an icon, never rename or add one. Meanwhile a languages agent writes `src/i18n/<category>.json` from the approved names and meanings, as in round 2 (it touches no `.mjs`).

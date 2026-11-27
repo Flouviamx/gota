@@ -1,4 +1,4 @@
-// Engine tests: if one of these fails, it fails across all 10,000 icons at once.
+// Engine tests: if one of these fails, it fails across the whole set at once.
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { badge, circ, cursor, drop, f, flipPath, head, roundpoly, sq, turnPath } from '../engine/geometry.mjs';

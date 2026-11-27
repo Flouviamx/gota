@@ -19,7 +19,7 @@ The first 1,033 icons (rounds 1 and 2) cover the interface and the most common b
 | 10 | Leisure and culture | deportes, juegos, musica, foto-video, arte, entretenimiento, fiestas, lectura |
 | 11 | Nature | animales, aves-insectos, mar, plantas, clima, medio-ambiente |
 
-The targets add up to 8,650 new icons. With the first thousand that left about 320 for **the sweep**: the names the migration maps still can't place (Lucide, Heroicons, SF Symbols) and the gaps the rounds left, each assigned to the category whose scope holds it, until the set lands on exactly 10,000. The rounds landed below their targets (7,460 icons after round 11), so the sweep is now about 2,540: it runs in rounds of its own after round 11, and v1 waits for it ([decision 87](./decisions.md#v1-20-nov-2026)).
+The targets add up to 8,650 new icons, which with the first thousand would have made 10,000. The rounds landed below them (7,460 icons after round 11) because the categories overlap more than the plan knew: a concept one scope lists is often drawn in another. **The sweep** (round 12) looked for what is still missing: every category's gap, the names Lucide, Heroicons, SF Symbols, Tabler, Phosphor, and Material Symbols have and Gota lacks, and a few badge states families lack. It approved 684 names, and v1 ships with the set it leaves, about 8,050 ([decision 89](./decisions.md#v1-20-nov-2026)).
 
 The order puts first what the teams that use Gota reach for most (interface, business, technology), then the broad consumer domains, then nature.
 
@@ -36,6 +36,6 @@ The order puts first what the teams that use Gota reach for most (interface, bus
 1. **Names first** (one agent per category): about 30 % more candidates than the target ([decision 85](./decisions.md#phase-3-23-oct-2026); 15 % until round 5), each with its meaning, the closest existing icon, and why it isn't the same. It reads the category's scope and exclusions, the other categories' scopes, the set's names and tags, and the names the migration maps can't place yet.
 2. **Deduplication in code** (`node scripts/names.mjs <proposals.json>`, which reads `{ category: [{ name, meaning }] }`): names already taken, names proposed twice in the round, the same words in another order, names that contain an existing one (a family's base aside), and what the set's search finds for each name become a conflict list. The names agents run it on their own lists before returning.
 3. **The main session judges** the whole round ([decision 82](./decisions.md#phase-3-23-oct-2026)): it reads the lists and the script's report and keeps, renames, moves, or drops. The approved lists are what the illustrators draw; they may drop a name, never add one.
-4. Then drawing, critic, languages, and QA as in [Production](./production.md#rounds-3-onward--scaling-to-10000).
+4. Then drawing, critic, languages, and QA as in [Production](./production.md#rounds-3-onward--scaling-the-set).
 
-A category's target is a goal, not a quota: the critic drops what doesn't reach the bar, and the sweep makes up the difference.
+A category's target is a goal, not a quota: the critic drops what doesn't reach the bar, and a gap that only padding would fill stays open.
