@@ -59,6 +59,8 @@ A custom path parser (M L H V C S Q T A Z, absolute and relative, implicit L aft
 - the moving pieces go in a `.gota-m` group with `transform-box: view-box`, their pivot (`transform-origin` in canvas units), and their offset (`--dx`, `--dy`);
 - `draw` and `levels` use `pathLength="1"` with the drawing order (`--i`) and the level (`--l`);
 - `data-play`: `hover` (and focus), `once`, or `loop`; under `prefers-reduced-motion` everything stays still.
+- The gestures come from Cauce, Open Water Design's motion system ([decision 88](./decisions.md#v1-20-nov-2026)): what leaves and comes back (`ring`, `wiggle`, `beat`, `slide`, `bounce`) is an impulse, a spring's response to a kick that returns to rest (the bell rings 16° and is still at 1293 ms); `spin` and `draw` reach their destination with a spring (`draw` 31 ms between strokes). Their frames sit between `cauce:begin` and `cauce:end` in `engine/motion.css`, written by Cauce's `npm run gota:motion` as even keyframes with `linear` between them, so they run in every browser: don't edit that region by hand. `float` (a loop), `levels`, the replace and the live value keep their own timing.
+- A gesture that is still playing is not replayed: before setting `data-play="once"` again, check that `svg.getAnimations({ subtree: true })` has nothing running.
 
 ## Transitions (`engine/morph.mjs`)
 Every frame of a transition is drawn by `render`, so masks, fill, enclosures, weight, and 16 px apply to each one: no frame approximates the set's rules.
