@@ -1,0 +1,306 @@
+{
+ "electrodomesticos": [
+  {
+   "name": "robot-mower",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  }
+ ],
+ "animales": [
+  {
+   "name": "hare",
+   "reason": "Se lee como el conejo, que ya existe."
+  },
+  {
+   "name": "anteater",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "highland-cow",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "lamb",
+   "reason": "Se lee como la oveja."
+  },
+  {
+   "name": "foal",
+   "reason": "Se lee como el caballo."
+  },
+  {
+   "name": "molehill",
+   "reason": "La ronda 11 quitó el topo: no se leía."
+  },
+  {
+   "name": "lynx",
+   "reason": "Se lee como un gato."
+  },
+  {
+   "name": "dragon",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "sheep-face",
+   "reason": "La cara de lana redonda se lee como una nube."
+  },
+  {
+   "name": "llama-face",
+   "reason": "Se lee como la cara de conejo."
+  }
+ ],
+ "aves-insectos": [
+  {
+   "name": "rooster",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "stork",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "vulture",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "scorpion",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "iguana",
+   "reason": "Se lee como la lagartija."
+  },
+  {
+   "name": "pterodactyl",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  }
+ ],
+ "mar": [
+  {
+   "name": "otter",
+   "reason": "La ronda 11 quitó la nutria marina."
+  },
+  {
+   "name": "sea-urchin",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "beluga",
+   "reason": "Se lee como el delfín."
+  },
+  {
+   "name": "tuna",
+   "reason": "Se lee como el pez genérico."
+  }
+ ],
+ "plantas": [
+  {
+   "name": "tree-baobab",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "shrub",
+   "reason": "La ronda 11 quitó el arbusto: se lee como una nube."
+  },
+  {
+   "name": "pinecone",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "leaf-cannabis",
+   "reason": "Es el mismo concepto que cannabis de agricultura."
+  },
+  {
+   "name": "pruning-shears",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "garden-hose",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  }
+ ],
+ "clima": [
+  {
+   "name": "weather-station",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  },
+  {
+   "name": "sun-horizon",
+   "reason": "Sin flecha queda entre el amanecer y el sol con bruma, que ya existen."
+  }
+ ],
+ "medio-ambiente": [
+  {
+   "name": "waste-sorting",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  }
+ ],
+ "negocios": [
+  {
+   "name": "lightbulb-coin",
+   "reason": "La idea de negocio es débil: el foco y la moneda dicen dos cosas."
+  }
+ ],
+ "vehiculos": [
+  {
+   "name": "bicycle-bmx",
+   "reason": "Se lee como la bicicleta."
+  }
+ ],
+ "aviacion": [
+  {
+   "name": "jet-bridge",
+   "reason": "La ronda 8 lo quitó: no se leía."
+  }
+ ],
+ "nautica": [
+  {
+   "name": "sextant",
+   "reason": "La ronda 8 lo quitó: no se leía."
+  }
+ ],
+ "viajes": [
+  {
+   "name": "earth-house",
+   "reason": "Demasiado específico."
+  }
+ ],
+ "senales": [
+  {
+   "name": "handrail",
+   "reason": "La ronda 8 quitó el pasamanos: se leía como otra cosa."
+  }
+ ],
+ "camping": [
+  {
+   "name": "lighter",
+   "reason": "La ronda 8 quitó el encendedor."
+  }
+ ],
+ "deportes": [
+  {
+   "name": "high-jump",
+   "reason": "La ronda 10 quitó el salto de altura."
+  }
+ ],
+ "juegos": [
+  {
+   "name": "backgammon",
+   "reason": "La ronda 10 quitó el tablero de backgammon."
+  }
+ ],
+ "musica": [
+  {
+   "name": "ukulele",
+   "reason": "Se lee como la guitarra."
+  },
+  {
+   "name": "mandolin",
+   "reason": "Se lee como la guitarra."
+  },
+  {
+   "name": "tuba",
+   "reason": "La ronda 10 quitó la tuba."
+  },
+  {
+   "name": "music-notes-sixteenth",
+   "reason": "Choca con music-note-sixteenth (las mismas palabras)."
+  }
+ ],
+ "arte": [
+  {
+   "name": "color-wheel",
+   "reason": "La ronda 10 lo quitó: se lee como un salvavidas."
+  },
+  {
+   "name": "weaving-loom",
+   "reason": "La ronda 9 quitó el telar."
+  }
+ ],
+ "entretenimiento": [
+  {
+   "name": "juggling",
+   "reason": "La ronda 10 lo quitó: se lee como el indicador de carga."
+  }
+ ],
+ "fiestas": [
+  {
+   "name": "stork-bundle",
+   "reason": "La ronda 11 quitó la cigüeña."
+  },
+  {
+   "name": "photo-booth",
+   "reason": "La ronda 8 quitó la cabina de fotos."
+  }
+ ],
+ "lectura": [
+  {
+   "name": "printing-press",
+   "reason": "La ronda 10 quitó la imprenta."
+  }
+ ],
+ "ciencia": [
+  {
+   "name": "rock",
+   "reason": "Un material suelto se lee como otra cosa (la ronda 9 quitó la mena)."
+  }
+ ],
+ "espacio": [
+  {
+   "name": "black-hole",
+   "reason": "La ronda 9 quitó el agujero negro."
+  },
+  {
+   "name": "zodiac-ophiuchus",
+   "reason": "Demasiado de nicho frente a los doce signos."
+  }
+ ],
+ "educacion": [
+  {
+   "name": "classroom",
+   "reason": "La ronda 9 quitó el salón de clases."
+  },
+  {
+   "name": "block-coding",
+   "reason": "Es el mismo concepto que block-code de desarrollo."
+  }
+ ],
+ "herramientas": [
+  {
+   "name": "angle-grinder",
+   "reason": "La ronda 9 quitó la esmeriladora."
+  },
+  {
+   "name": "nail-gun",
+   "reason": "Una herramienta con empuñadura de pistola se lee como arma."
+  },
+  {
+   "name": "caliper",
+   "reason": "La ronda 9 quitó el vernier."
+  }
+ ],
+ "agricultura": [
+  {
+   "name": "combine-harvester",
+   "reason": "La ronda 9 quitó la cosechadora."
+  }
+ ],
+ "producto": [
+  {
+   "name": "touchpoint",
+   "reason": "Abstracto: un momento del recorrido no tiene forma propia."
+  },
+  {
+   "name": "heuristic-evaluation",
+   "reason": "Abstracto: una revisión experta no tiene forma propia."
+  },
+  {
+   "name": "design-qa",
+   "reason": "Abstracto: revisar el diseño contra lo construido no tiene forma propia."
+  }
+ ],
+ "calendario": [
+  {
+   "name": "sundial",
+   "reason": "La ronda 11 ya lo quitó: no se leía a 24 px."
+  }
+ ]
+}

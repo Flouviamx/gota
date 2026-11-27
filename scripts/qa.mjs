@@ -14,7 +14,7 @@
 //   (between 0.35 and 2.85 center to center: either touch, or leave 1.5 of clearance between edges),
 // - weights: the structure changes between weights 0.9 and 2.1 (no compatible masters for the
 //   variable font and Xcode symbols): pieces that merge or split, holes that open or close.
-// Usage: node scripts/qa.mjs [category]   (weights needs npm ci: canvaskit-wasm)
+// Usage: node scripts/qa.mjs [category[,category…]]   (weights needs npm ci: canvaskit-wasm)
 import { writeFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -22,7 +22,9 @@ import { render } from '../engine/variants.mjs';
 import { openChrome, sleep } from './chrome.mjs';
 import { loadAll } from './load.mjs';
 
+// One category, or several separated by commas (a sweep round checks its group in one pass)
 const only = process.argv[2];
+const cats = only ? new Set(only.split(',')) : null;
 const { categories, errors } = await loadAll();
 if (errors.length) console.warn(`(validation warnings: ${errors.length}; run build --check)`);
 // An icon with an empty or missing path (one being drawn in another category) would break the
@@ -101,7 +103,7 @@ const result = await browser.evaluate(`(async () => {
 await browser.close();
 rmSync(file);
 
-const mine = (r) => !only || r.cat === only;
+const mine = (r) => !cats || cats.has(r.cat);
 const issues = [];
 // Live area
 for (const r of result.filter(mine)) {
@@ -145,7 +147,7 @@ for (let i = 0; i < result.length; i++)
 // Weights: one structure from 0.9 to 2.1, so the variable font and Xcode symbols can interpolate
 // (compatible masters, checked; it needs the dev dependency, npm ci)
 const { masters } = await import('./masters.mjs');
-for (const { name, cat, icon } of all.filter((it) => !only || it.cat === only))
+for (const { name, cat, icon } of all.filter((it) => !cats || cats.has(it.cat)))
   for (const style of icon.fill ? ['outline', 'fill'] : ['outline'])
     try {
       masters({ name, ...icon }, { style });

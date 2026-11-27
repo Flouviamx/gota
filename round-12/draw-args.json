@@ -1,0 +1,378 @@
+{
+ "round": 12,
+ "slots": 3,
+ "groups": [
+  {
+   "id": "interface",
+   "domains": [
+    "interface"
+   ],
+   "categories": [
+    {
+     "id": "controles",
+     "count": 14
+    },
+    {
+     "id": "edicion",
+     "count": 29
+    },
+    {
+     "id": "formas",
+     "count": 8
+    },
+    {
+     "id": "navegacion",
+     "count": 14
+    },
+    {
+     "id": "producto",
+     "count": 10
+    },
+    {
+     "id": "simbolos",
+     "count": 21
+    },
+    {
+     "id": "ventanas",
+     "count": 15
+    }
+   ],
+   "count": 111
+  },
+  {
+   "id": "work-tech-media",
+   "domains": [
+    "work",
+    "technology",
+    "media",
+    "brands"
+   ],
+   "categories": [
+    {
+     "id": "archivos",
+     "count": 1
+    },
+    {
+     "id": "calendario",
+     "count": 8
+    },
+    {
+     "id": "ciberseguridad",
+     "count": 5
+    },
+    {
+     "id": "comunicacion",
+     "count": 2
+    },
+    {
+     "id": "datos",
+     "count": 6
+    },
+    {
+     "id": "desarrollo",
+     "count": 7
+    },
+    {
+     "id": "dispositivos",
+     "count": 7
+    },
+    {
+     "id": "hardware",
+     "count": 3
+    },
+    {
+     "id": "ia",
+     "count": 3
+    },
+    {
+     "id": "oficina",
+     "count": 10
+    },
+    {
+     "id": "redes",
+     "count": 2
+    },
+    {
+     "id": "social",
+     "count": 9
+    }
+   ],
+   "count": 63
+  },
+  {
+   "id": "business",
+   "domains": [
+    "business"
+   ],
+   "categories": [
+    {
+     "id": "bienes-raices",
+     "count": 2
+    },
+    {
+     "id": "comercio",
+     "count": 9
+    },
+    {
+     "id": "legal",
+     "count": 8
+    },
+    {
+     "id": "logistica",
+     "count": 10
+    },
+    {
+     "id": "marketing",
+     "count": 10
+    },
+    {
+     "id": "negocios",
+     "count": 12
+    },
+    {
+     "id": "rrhh",
+     "count": 7
+    },
+    {
+     "id": "soporte",
+     "count": 11
+    }
+   ],
+   "count": 69
+  },
+  {
+   "id": "places-home",
+   "domains": [
+    "places",
+    "home"
+   ],
+   "categories": [
+    {
+     "id": "aviacion",
+     "count": 5
+    },
+    {
+     "id": "camping",
+     "count": 3
+    },
+    {
+     "id": "comida",
+     "count": 10
+    },
+    {
+     "id": "conduccion",
+     "count": 20
+    },
+    {
+     "id": "electrodomesticos",
+     "count": 6
+    },
+    {
+     "id": "frutas-verduras",
+     "count": 6
+    },
+    {
+     "id": "hogar",
+     "count": 4
+    },
+    {
+     "id": "limpieza",
+     "count": 2
+    },
+    {
+     "id": "lugares",
+     "count": 3
+    },
+    {
+     "id": "nautica",
+     "count": 6
+    },
+    {
+     "id": "restaurante",
+     "count": 7
+    },
+    {
+     "id": "senales",
+     "count": 1
+    },
+    {
+     "id": "transito",
+     "count": 4
+    },
+    {
+     "id": "vehiculos",
+     "count": 20
+    },
+    {
+     "id": "viajes",
+     "count": 7
+    }
+   ],
+   "count": 104
+  },
+  {
+   "id": "people",
+   "domains": [
+    "people"
+   ],
+   "categories": [
+    {
+     "id": "anatomia",
+     "count": 3
+    },
+    {
+     "id": "belleza",
+     "count": 6
+    },
+    {
+     "id": "bienestar",
+     "count": 7
+    },
+    {
+     "id": "emociones",
+     "count": 14
+    },
+    {
+     "id": "fitness",
+     "count": 15
+    },
+    {
+     "id": "gestos",
+     "count": 13
+    },
+    {
+     "id": "personas",
+     "count": 28
+    },
+    {
+     "id": "ropa",
+     "count": 4
+    },
+    {
+     "id": "salud",
+     "count": 16
+    }
+   ],
+   "count": 106
+  },
+  {
+   "id": "leisure",
+   "domains": [
+    "leisure"
+   ],
+   "categories": [
+    {
+     "id": "arte",
+     "count": 4
+    },
+    {
+     "id": "deportes",
+     "count": 34
+    },
+    {
+     "id": "entretenimiento",
+     "count": 4
+    },
+    {
+     "id": "fiestas",
+     "count": 3
+    },
+    {
+     "id": "foto-video",
+     "count": 9
+    },
+    {
+     "id": "juegos",
+     "count": 5
+    },
+    {
+     "id": "lectura",
+     "count": 12
+    },
+    {
+     "id": "musica",
+     "count": 9
+    }
+   ],
+   "count": 80
+  },
+  {
+   "id": "science",
+   "domains": [
+    "science"
+   ],
+   "categories": [
+    {
+     "id": "agricultura",
+     "count": 5
+    },
+    {
+     "id": "ciencia",
+     "count": 12
+    },
+    {
+     "id": "construccion",
+     "count": 3
+    },
+    {
+     "id": "educacion",
+     "count": 9
+    },
+    {
+     "id": "energia",
+     "count": 18
+    },
+    {
+     "id": "espacio",
+     "count": 17
+    },
+    {
+     "id": "herramientas",
+     "count": 8
+    },
+    {
+     "id": "industria",
+     "count": 3
+    },
+    {
+     "id": "seguridad-laboral",
+     "count": 18
+    }
+   ],
+   "count": 93
+  },
+  {
+   "id": "nature",
+   "domains": [
+    "nature"
+   ],
+   "categories": [
+    {
+     "id": "animales",
+     "count": 20
+    },
+    {
+     "id": "aves-insectos",
+     "count": 5
+    },
+    {
+     "id": "clima",
+     "count": 11
+    },
+    {
+     "id": "mar",
+     "count": 2
+    },
+    {
+     "id": "medio-ambiente",
+     "count": 12
+    },
+    {
+     "id": "plantas",
+     "count": 8
+    }
+   ],
+   "count": 58
+  }
+ ]
+}
