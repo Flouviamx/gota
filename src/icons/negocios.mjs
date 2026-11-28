@@ -12,6 +12,7 @@
 import { arc, badge, circ, dot, f, flipPath, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snap, transform } from '../../engine/variants.mjs';
 import archivos from './archivos.mjs';
+import bebidas from './bebidas.mjs';
 import comercio from './comercio.mjs';
 import datos from './datos.mjs';
 import lugares from './lugares.mjs';
@@ -923,6 +924,85 @@ addIcon('value-stream', ['flujo de valor', 'mapa de flujo de valor', 'lean', 'va
   ]);
 }
 
+// ── Round 12 ──
+// The states the families lacked: the target missed, the deal still open, a supplier added, and the
+// deal under the engine's heart (a partnership built on trust)
+addIcon('target-x', ['objetivo no alcanzado', 'meta fallida', 'okr incumplido', 'goal missed', 'target missed', 'missed objective'], TARGET_B, { badge: badge('x') });
+addIcon('deal-clock', ['trato pendiente', 'en negociación', 'oportunidad abierta', 'deal pending', 'open deal', 'in negotiation'], DEAL_UP.d, { badge: badge('clock') });
+addIcon('supplier-plus', ['agregar proveedor', 'nuevo proveedor', 'alta de proveedor', 'add supplier', 'new vendor', 'onboard supplier'], SUPPLIER, { badge: badge('plus') });
+addIcon('handshake-heart', ['alianza de confianza', 'causa social', 'colaboración solidaria', 'trusted partnership', 'charity partner', 'community partnership'], DEAL_UP.d, { badge: badge('heart') });
+// Acquisition and spin-off: lugares' tower at 78% and a small company (a square with the signature
+// corner and one window), the elbow arrow between them standing 3 from each: into the tower from the
+// small one, or out of the tower into the small one
+const SMALL_CO = (x) => [box(x, 15.25, 5, 6, 1.5), dot(x + 2.5, 18.25, 0.3)];
+addIcon('acquisition', ['adquisición', 'comprar empresa', 'absorción', 'acquisition', 'buyout', 'takeover'], [
+  ...SMALL_CO(2.75),
+  ...officeAt(0.78, [18.75, 21.25], [21.25, 21.25]),
+  rline([[5.25, 12.25], [5.25, 9.5], [7.72, 9.5]], [0, 1.25, 0]),
+  head([7.72, 9.5], [1, 0], 2.4),
+]);
+addIcon('spin-off', ['escisión', 'desinversión', 'separar empresa', 'spin-off', 'divestiture', 'carve-out'], [
+  ...officeAt(0.78, [5.25, 21.25], [2.75, 21.25]),
+  ...SMALL_CO(16.25),
+  rline([[16.28, 9.5], [18.75, 9.5], [18.75, 12.25]], [0, 1.25, 0]),
+  head([18.75, 12.25], [0, 1], 2.4),
+]);
+// Enterprise: a complex of three buildings joined wall to wall, lugares' city carried one building
+// further: the tall tower in the middle (its windows and its door), a low wing on its left and a
+// middle one on its right, the complex's bottom-right corner the signature
+addIcon('enterprise', ['empresa', 'corporativo', 'grupo empresarial', 'enterprise', 'corporation', 'enterprise plan'], [
+  sq(8.25, 2.75, 7.5, 18.5, 2.5, { square: ['bl', 'br'] }),
+  rline([[8.25, 11.25], [2.75, 11.25], [2.75, 21.25], [8.25, 21.25]], [0, 2.25, 2.25, 0]),
+  rline([[15.75, 7.75], [21.25, 7.75], [21.25, 21.25], [15.75, 21.25]], [0, 2.25, 0, 0]),
+  rline([[10.75, 21.25], [10.75, 18], [13.25, 18], [13.25, 21.25]], [0, 1, 1, 0]),
+  ...[7, 11].map((y) => dot(12, y, 0.3)),
+  dot(5.5, 15.25, 0.3),
+  ...[11.75, 15.5].map((y) => dot(18.5, y, 0.3)),
+]);
+// Burn rate: comercio's banknote high on the left at 0.8 (as banknote-check carries it) and bebidas'
+// corner flame (coffee-roast's: two tongues over a round base, at 0.9 from its foot) at its corner, a piece in front the
+// engine clears the note around. (lugares' flame, small and without its inner tongue, read as a drop.)
+const NOTE_B = comercio.icons.banknote.d.map((d) => transform(d, 0.8, 0.5, -1.65));
+const FLAME_B = transform(bebidas.icons['coffee-roast'].badge.d[0], 0.9, 17.5 * 0.1, 21.25 * 0.1);
+addIcon('burn-rate', ['tasa de quema', 'gasto mensual', 'consumo de efectivo', 'burn rate', 'cash burn', 'runway'], NOTE_B, {
+  badge: own([FLAME_B], FLAME_B, { solid: [FLAME_B] }),
+});
+// Market share: the market as a pie drawn in dashes, and the company's share, 40 %, solid and pulled
+// out along its middle, its sides 3.4 from the pie's
+const SHARE = (() => {
+  const [c, r, a0, a1] = [[10.75, 12.75], 7.75, -90, 60];
+  const mid = (a0 + a1) / 2;
+  const off = polar(0, 0, 3.4 / Math.sin(((a1 - a0) / 2 / 180) * Math.PI), mid);
+  const s = add(c, off);
+  const slice = `M${P(s)}L${P(polar(...s, r, a0))}A${f(r)} ${f(r)} 0 0 1 ${P(polar(...s, r, a1))}Z`;
+  const rest = `M${P(c)}L${P(polar(...c, r, a1))}A${f(r)} ${f(r)} 0 1 1 ${P(polar(...c, r, a0 + 360))}L${P(c)}`;
+  return [slice, ...run(rest, 9, 3)];
+})();
+addIcon('market-share', ['cuota de mercado', 'participación de mercado', 'porción del mercado', 'market share', 'share of market', 'market position'], SHARE);
+// Purchase request: archivos' clipboard with a line of the request and comercio's cart, small, cut
+// out of its lower right (as logistica's packing list carries its parcel): the basket, the handle and
+// two wheels as dots
+const REQ_CART = (() => {
+  const basket = roundpoly([[13, 14.5], [14, 18.25], [21.25, 18.25], [21.25, 14.5]], [0, 0.9, 0, 0.9]);
+  const handle = rline([[11.5, 12.75], [12.5, 12.75], [13, 14.5]], [0, 0.6, 0]);
+  const wheels = [dot(15.5, 21.25), dot(19.75, 21.25)];
+  return own([basket, handle, ...wheels], [basket, handle, ...wheels].join(''), { solid: [basket, ...wheels], wire: [handle] });
+})();
+addIcon('purchase-requisition', ['solicitud de compra', 'requisición', 'pedido interno', 'purchase requisition', 'purchase request', 'procurement'], [
+  ...archivos.icons.clipboard.d,
+  line([8.25, 9.25], [15.75, 9.25]),
+], { badge: REQ_CART });
+// Value proposition: comercio's open hand, palm up (loan's), offering a gem (display-case's, larger):
+// its outline and its girdle
+const GEM_V = (() => {
+  const k = 1.3;
+  const at = ([x, y]) => [13.75 + (x - 12) * k, 7.75 + (y - 9) * k];
+  // Its side corners sharp, so the girdle ends on them
+  const gem = roundpoly([[10, 6], [14, 6], [16, 9], [12, 12.75], [8, 9]].map(at), [0.6 * k, 0.6 * k, 0, 0.6 * k, 0]);
+  return [gem, line(at([8, 9]), at([16, 9]))];
+})();
+addIcon('value-proposition', ['propuesta de valor', 'oferta de valor', 'beneficio para el cliente', 'value proposition', 'value offer', 'customer value'], [...GEM_V, ...comercio.icons.donation.d.slice(1)]);
+
 // ── Fill, parts, motion, mirror, levels and variants ──────────────────────────────────────────
 const pick = (name, ix) => ix.map((i) => icons[name].d[i]);
 const range = (a, b) => Array.from({ length: b - a }, (_, i) => a + i);
@@ -974,15 +1054,33 @@ const FILL = {
   shareholder: { solid: [0, 1] },
   'business-canvas': { solid: [0], cut: range(1, 9) },
   playbook: { solid: [0], cut: [1, 2, 3, 4, 5] },
+  // Round 12
+  'target-x': { solid: [0], cut: [1, 2] },
+  'supplier-plus': { solid: [0], lines: [1, 2] },
+  // The two companies filled, their windows and the door knocked out; the arrow a line apart
+  acquisition: { solid: [0, 2], cut: [1, ...range(3, 10)], lines: [10, 11] },
+  'spin-off': { solid: [0, 8], cut: [...range(1, 8), 9], lines: [10, 11] },
+  'burn-rate': { solid: [0], cut: [1, 2, 3] },
+  // The share filled; the market stays dashed lines
+  'market-share': { solid: [0], lines: range(1, 10) },
+  'value-proposition': { solid: [0, 2], cut: [1] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   icons[name].fill = Object.fromEntries(Object.entries(spec).map(([k, ix]) => [k, pick(name, ix)]));
 }
 // Open outlines that fill closed: the flag and the pennant along their pole
-const closing = { headquarters: [9] };
+const closing = { headquarters: [9], 'value-proposition': [3] };
 for (const [name, ix] of Object.entries(closing)) icons[name].fill.solid.push(...ix.map((i) => shut(icons[name].d[i])));
 // The deal family: both hands filled, the one behind closed along what the front one clears
-for (const name of ['deal-check', 'deal-x']) icons[name].fill = DEAL_UP.fill;
+for (const name of ['deal-check', 'deal-x', 'deal-clock', 'handshake-heart']) icons[name].fill = DEAL_UP.fill;
+// The complex: the tower and the wings (closed along the tower's walls) filled, the walls between them,
+// the windows and the door knocked out
+{
+  const d = icons.enterprise.d;
+  icons.enterprise.fill = { solid: [d[0], shut(d[1]), shut(d[2])], cut: [line([8.25, 11.25], [8.25, 21.25]), line([15.75, 7.75], [15.75, 21.25]), ...d.slice(3)] };
+}
+// The clipboard as archivos fills it, its lines knocked out
+icons['purchase-requisition'].fill = { solid: archivos.icons.clipboard.fill.solid, cut: [...(archivos.icons.clipboard.fill.cut ?? []), ...icons['purchase-requisition'].d.slice(2)] };
 icons.benchmark.fill = BENCH.fill;
 icons['mountain-flag'].fill = SUMMIT.fill;
 // Open lines only: their filled version is the outline itself
@@ -1043,6 +1141,17 @@ const PARTS = {
   'business-canvas': { frame: [0], blocks: range(1, 9) },
   playbook: { book: [0, 1], player: [2, 3], play: [4, 5] },
   maze: { walls: [0, 1, 2, 3, 4] },
+  'target-x': { rings: [0, 1], center: [2] },
+  'deal-clock': { hands: [0, 2], cuffs: [1, 3] },
+  'handshake-heart': { hands: [0, 2], cuffs: [1, 3] },
+  'supplier-plus': { factory: [0], arrow: [1, 2] },
+  acquisition: { acquired: [0, 1], acquirer: range(2, 10), arrow: [10, 11] },
+  'spin-off': { parent: range(0, 8), spun: [8, 9], arrow: [10, 11] },
+  enterprise: { tower: [0, 3, 4, 5], wings: [1, 2, 6, 7, 8] },
+  'burn-rate': { note: [0, 1, 2, 3] },
+  'market-share': { share: [0], market: range(1, 10) },
+  'purchase-requisition': { board: [0], clip: [1], line: [2] },
+  'value-proposition': { gem: [0, 1], cuff: [2], hand: [3] },
 };
 for (const name of ['office-building-plus', 'office-building-search', 'office-building-check', 'office-building-gear']) PARTS[name] = { body: [0], windows: [1, 2, 3] };
 for (const [name, p] of Object.entries(PARTS)) icons[name].parts = p;
@@ -1084,6 +1193,15 @@ const MOTION = {
 };
 for (const [name, icon] of Object.entries(icons)) if (icon.badge?.kind && !MOTION[name]) MOTION[name] = BADGE_MOTION[icon.badge.kind];
 MOTION.shareholder = { effect: 'beat', parts: ['badge'], origin: [17.25, 17.25] };
+// Round 12: the clock and the heart badges, the arrows that carry a company in or out, the flame, the
+// share pulled further out, the gem offered
+MOTION['deal-clock'] = { effect: 'spin', parts: ['badge'], origin: BC };
+MOTION['handshake-heart'] = { effect: 'beat', parts: ['badge'], origin: [17.25, 17.5] };
+MOTION.acquisition = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
+MOTION['spin-off'] = { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] };
+MOTION['burn-rate'] = { effect: 'beat', parts: ['badge'], origin: [17.25, 18] };
+MOTION['market-share'] = { effect: 'slide', parts: ['share'], vector: [1.45, -0.39] };
+MOTION['value-proposition'] = { effect: 'bounce', parts: ['gem'], vector: [0, -1.5] };
 for (const [name, m] of Object.entries(MOTION)) icons[name].motion = m;
 
 // Levels: priority lights its chevrons from the bottom up (value 0–1)
@@ -1093,7 +1211,7 @@ icons.priority.levels = [[0], [1], [2]];
 // languages; the objects themselves (a store, a building, a wheel that turns clockwise) do not
 for (const name of [
   'strategy', 'pivot', 'scenarios', 'competitive-edge', 'growth', 'decline', 'growth-curve', 'breakthrough', 'turnaround', 'decision-tree',
-  'contingency', 'domino-effect', 'bottleneck', 'merger', 'supplier', 'supplier-check', 'supplier-search',
+  'contingency', 'domino-effect', 'bottleneck', 'merger', 'supplier', 'supplier-check', 'supplier-search', 'supplier-plus', 'acquisition', 'spin-off',
   'fishbone', 'chart-pareto', 'chart-break-even', 'process', 'value-stream', 'playbook',
 ])
   icons[name].mirror = true;
@@ -1102,7 +1220,7 @@ for (const name of [
 for (const name of ['scenarios', 'competitive-edge', 'pros-cons', 'turnaround', 'contingency']) icons[name].variants = { ...icons[name].variants, slash: false };
 icons.maze.variants = { ...icons.maze.variants, circle: false, square: false };
 // Already round: nested rings and the target don't get enclosed in another circle
-for (const name of ['market-size', 'target-plus', 'target-alert']) icons[name].variants = { ...icons[name].variants, circle: false };
+for (const name of ['market-size', 'target-plus', 'target-alert', 'target-x']) icons[name].variants = { ...icons[name].variants, circle: false };
 
 // ── 16 px (DESIGN.md › 16 px): own drawings where snapping leaves a smudge ──
 // At 16 px a pixel is 1.5 of the canvas and pixel centers fall at 0.75 + 1.5k; g(column, row) is the
@@ -1231,7 +1349,7 @@ for (const icon of Object.values(icons)) if (icon.small) icon.small = crisp(icon
 
 // Drawn after the snap: their windows and centers are single pixels (the snap makes a dot 2 × 2)
 // Target under a badge: two rings a pixel apart and the one-pixel center, with the pixel badge.
-for (const name of ['target-plus', 'target-alert']) {
+for (const name of ['target-plus', 'target-alert', 'target-x']) {
   const d = [circ(...g(6, 6), 6), circ(...g(6, 6), 3), dot(...g(6, 6), 0.1)];
   icons[name].small = { d, fill: { solid: [d[0]], cut: [d[1], d[2]] }, badge: badge(icons[name].badge.kind, { size: 16 }) };
 }

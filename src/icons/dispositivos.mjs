@@ -2449,6 +2449,42 @@ add('screenshot', ['captura de pantalla', 'capturar', 'recortar pantalla', 'scre
   ),
 ]);
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────────────
+// The desktop and the small Wi-Fi with the badges their siblings lack: not found or removed, set
+// up (the gear that clears a ring 0.1 narrower, as smartphone-gear), reconnecting.
+add('desktop-x', ['pantalla no detectada', 'equipo desconectado', 'quitar computadora', 'display not detected', 'computer offline', 'remove device'], D('desktop'), { badge: badge('x') });
+add('desktop-gear', ['ajustes de la computadora', 'configuración de pantalla', 'preferencias del sistema', 'computer settings', 'display settings', 'system preferences'], D('desktop'), { badge: GEAR });
+add('wifi-gear', ['ajustes de wifi', 'configurar red', 'red inalámbrica', 'wifi settings', 'configure network', 'wireless settings'], wifiSmall(), { badge: GEAR });
+add('wifi-sync', ['reconectando wifi', 'actualizar conexión', 'sincronizar red', 'wifi reconnecting', 'refresh connection', 'wifi sync'], wifiSmall(), { badge: badge('sync') });
+// Captions made by AI: the caption track and image-sparkle's spark on its top corner.
+add('captions-sparkle', ['subtítulos con ia', 'subtítulos automáticos', 'transcripción', 'ai captions', 'auto captions', 'generated subtitles'], [...D('captions')], {
+  badge: (() => {
+    const spark = aiSpark(19.25, 5, 3);
+    return { d: [spark], knock: spark, fill: { solid: [spark] } };
+  })(),
+});
+// Install a plan: sim-card under the download badge. The card moves 1.75 left and its chip (5.5, with
+// the one contact the 16 px card keeps: its cross closed up at bold at this size) up under the
+// chamfer's corner, so the badge's clearance crosses only the card's corner: in place, it took a
+// quarter of the chip.
+add('sim-card-arrow-down', ['instalar esim', 'descargar plan', 'activar línea', 'esim', 'install esim', 'download plan', 'activate line'], [
+  roundpoly([[3.5, 2.75], [13, 2.75], [17, 6.75], [17, 21.25], [3.5, 21.25]], [2.5, 1, 1, 0, 2.5]),
+  sq(6.75, 6.25, 5.5, 5.5, 1.25),
+  line([6.75, 9], [12.25, 9]),
+], { badge: badge('arrow-down') });
+// Item tracker: pet-tracker's composition on a key ring: the round tag hangs from the ring on a
+// short link, and its signal goes out to both sides in two waves, concentric with the tag, 3 apart.
+{
+  const [c, r] = [[12, 14.75], 4.25];
+  const waves = [-1, 1].flatMap((k) => [r + 3, r + 6].map((R) => arc(...c, R, k > 0 ? -28 : 152, k > 0 ? 28 : 208).d));
+  add('tracker-tag', ['rastreador', 'localizador de llaves', 'etiqueta bluetooth', 'objetos perdidos', 'item tracker', 'bluetooth tag', 'key finder'], [
+    circ(...c, r),
+    circ(12, 4.75, 2.5),
+    line([12, 7.25], [12, c[1] - r]),
+    ...waves,
+  ]);
+}
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index of d: `solid` is filled (and keeps its stroke, so the silhouette is identical); `close`
 // marks bodies that the outline leaves open against another piece (the camera's hump, the watch
@@ -2557,6 +2593,11 @@ const FILL = {
   'laptop-check': { solid: [0], lines: [1] },
   'laptop-lock': { solid: [0], lines: [1] },
   'desktop-arrow-down': { solid: [0], wire: [1, 2] },
+  'desktop-x': { solid: [0], wire: [1, 2] },
+  'desktop-gear': { solid: [0], wire: [1, 2] },
+  'captions-sparkle': { solid: [0], cut: [1, 2] },
+  'sim-card-arrow-down': { solid: [0], cut: [1, 2] },
+  'tracker-tag': { solid: [0], wire: [1, 2], lines: [3, 4, 5, 6] },
   'computer-tower': { solid: [0], cut: [1, 2, 3] },
   // The base is filled with the body, closed along its bottom edge
   'retro-computer': { solid: [0], close: [3], cut: [1, 2] },
@@ -2679,7 +2720,7 @@ for (const name of [
   'power', 'wifi', 'wifi-medium', 'wifi-low', 'wifi-off', 'bluetooth', 'bluetooth-connected',
   'signal', 'signal-high', 'signal-medium', 'signal-low', 'repeat', 'repeat-one', 'shuffle', 'equalizer', 'audio-waveform',
   'battery-full', 'battery-half', 'battery-low', 'battery-empty',
-  'wifi-guest', 'wifi-pause', 'wifi-lock', 'wifi-alert', 'bluetooth-searching',
+  'wifi-guest', 'wifi-pause', 'wifi-lock', 'wifi-alert', 'bluetooth-searching', 'wifi-gear', 'wifi-sync',
   'battery-alert', 'battery-heart', 'battery-saver', 'power-toggle', 'power-hibernate',
 ])
   icons[name].fill = false;
@@ -2940,6 +2981,9 @@ const sdot = (x, y) => dot(x, y, 1);
   const fan = [dot(9, 12, 1), arc(9, 12, 5.25, 225, 315).d, arc(9, 12, 8.25, 225, 315).d];
   set16('wifi-lock', badge('lock', { size: 16 }), fan, null);
   set16('wifi-alert', badge('alert', { size: 16 }), fan, null);
+  set16('wifi-gear', pixel(g16.d, g16.fill), fan, null);
+  set16('wifi-sync', badge('sync', { size: 16 }), fan, null);
+  set16('desktop-gear', pixel(g16.d, g16.fill));
   set16('wifi-pause', pixel([line([PX(10), PX(9)], [PX(10), PX(13)]), line([PX(12), PX(9)], [PX(12), PX(13)])]), fan, null);
   // The guest: the head a ring touching pixel centers, the shoulders a half disc, 2 px apart
   const head = circ(PX(11), PX(9), 1.5);
@@ -3123,6 +3167,8 @@ const parts = {
   'wifi-guest': { dot: [0], level: [1, 2, 3] },
   'wifi-pause': { dot: [0], level: [1, 2, 3] },
   'wifi-lock': { dot: [0], level: [1, 2, 3] },
+  'wifi-gear': { dot: [0], level: [1, 2, 3] },
+  'wifi-sync': { dot: [0], level: [1, 2, 3] },
   'wifi-alert': { dot: [0], level: [1, 2, 3] },
   'bluetooth-searching': { rune: [0], wave: [1, 2] },
   'smartphone-rotate': { body: [0, 1], arrow: [2, 3] },
@@ -3138,6 +3184,11 @@ const parts = {
   'laptop-check': { screen: [0], base: [1] },
   'laptop-lock': { screen: [0], base: [1] },
   'desktop-arrow-down': { screen: [0], stand: [1, 2] },
+  'desktop-x': { screen: [0], stand: [1, 2] },
+  'desktop-gear': { screen: [0], stand: [1, 2] },
+  'captions-sparkle': { frame: [0], text: [1, 2] },
+  'sim-card-arrow-down': { card: [0], chip: [1, 2] },
+  'tracker-tag': { tag: [0], ring: [1], link: [2], signal: [3, 4, 5, 6] },
   'monitor-dual': { monitor: [0], stand: [1, 2] },
   'smart-display': { screen: [0] },
   'speaker-group': { speaker: [0, 1] },
@@ -3224,6 +3275,10 @@ icons.equalizer.motion = { effect: 'beat', origin: [12, 20] };
 icons['audio-waveform'].motion = { effect: 'beat', origin: [12, 12] };
 icons['camera-focus'].motion = { effect: 'beat', parts: ['lens'], origin: [12, 12] };
 icons['image-sparkle'].motion = { effect: 'beat', parts: ['badge'], origin: [19.25, 5] };
+icons['captions-sparkle'].motion = { effect: 'beat', parts: ['badge'], origin: [19.25, 5] };
+for (const name of ['desktop-gear', 'wifi-gear', 'wifi-sync']) icons[name].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['sim-card-arrow-down'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, 1.5] };
+icons['tracker-tag'].motion = { effect: 'beat', parts: ['signal'], origin: [12, 14.75] };
 icons['fast-forward'].motion = { effect: 'slide', vector: [2, 0] };
 icons.rewind.motion = { effect: 'slide', vector: [-2, 0] };
 icons['skip-forward'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };

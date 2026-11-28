@@ -1,0 +1,2353 @@
+{
+  "group": "business",
+  "i18n": {
+    "property-tax": {
+      "label": {
+        "es": "Impuesto predial",
+        "en": "Property tax",
+        "pt": "Imposto predial",
+        "fr": "Taxe foncière",
+        "de": "Grundsteuer",
+        "it": "Imposta sugli immobili",
+        "ja": "固定資産税",
+        "zh": "房产税",
+        "ko": "재산세",
+        "ar": "ضريبة العقار"
+      },
+      "keywords": {
+        "es": [
+          "pagar el predial",
+          "impuesto a la propiedad",
+          "contribución municipal",
+          "pago anual",
+          "valor catastral",
+          "tesorería municipal",
+          "adeudo del inmueble"
+        ],
+        "en": [
+          "real estate tax",
+          "council tax",
+          "tax bill",
+          "tax assessment",
+          "assessed value",
+          "municipal tax",
+          "homeowner costs"
+        ]
+      }
+    },
+    "lease-check": {
+      "label": {
+        "es": "Contrato de renta firmado",
+        "en": "Signed lease",
+        "pt": "Contrato de aluguel assinado",
+        "fr": "Bail signé",
+        "de": "Unterschriebener Mietvertrag",
+        "it": "Contratto di affitto firmato",
+        "ja": "締結済みの賃貸借契約",
+        "zh": "已签署的租约",
+        "ko": "체결된 임대차 계약",
+        "ar": "عقد إيجار موقّع"
+      },
+      "keywords": {
+        "es": [
+          "arrendamiento vigente",
+          "renta cerrada",
+          "firmado por ambas partes",
+          "contrato en vigor",
+          "inquilino confirmado",
+          "departamento rentado",
+          "firmado digitalmente"
+        ],
+        "en": [
+          "executed lease",
+          "lease in effect",
+          "signed by both parties",
+          "rental agreement signed",
+          "tenant confirmed",
+          "unit rented",
+          "e-signed"
+        ]
+      }
+    },
+    "card-minus": {
+      "label": {
+        "es": "Eliminar tarjeta",
+        "en": "Remove card",
+        "pt": "Remover cartão",
+        "fr": "Supprimer la carte",
+        "de": "Karte entfernen",
+        "it": "Rimuovi carta",
+        "ja": "カードを削除",
+        "zh": "删除银行卡",
+        "ko": "카드 삭제",
+        "ar": "إزالة بطاقة"
+      },
+      "keywords": {
+        "es": [
+          "quitar método de pago",
+          "desvincular tarjeta",
+          "borrar tarjeta guardada",
+          "dar de baja tarjeta",
+          "tarjeta vieja",
+          "administrar tarjetas",
+          "datos de pago"
+        ],
+        "en": [
+          "delete card",
+          "unlink card",
+          "remove payment method",
+          "saved cards",
+          "old card",
+          "manage cards",
+          "payment details"
+        ]
+      }
+    },
+    "hand-coins": {
+      "label": {
+        "es": "Dinero recibido",
+        "en": "Money received",
+        "pt": "Dinheiro recebido",
+        "fr": "Argent reçu",
+        "de": "Geld erhalten",
+        "it": "Denaro ricevuto",
+        "ja": "お金の受け取り",
+        "zh": "收到款项",
+        "ko": "돈 받기",
+        "ar": "استلام المال"
+      },
+      "keywords": {
+        "es": [
+          "cobrar",
+          "pago recibido",
+          "sueldo",
+          "mesada",
+          "préstamo",
+          "ingreso",
+          "recibir propina",
+          "apoyo económico"
+        ],
+        "en": [
+          "get paid",
+          "payment received",
+          "wages",
+          "allowance",
+          "loan",
+          "income",
+          "receive a tip",
+          "cash in hand"
+        ]
+      }
+    },
+    "banknote-check": {
+      "label": {
+        "es": "Pagado en efectivo",
+        "en": "Paid in cash",
+        "pt": "Pago em dinheiro",
+        "fr": "Payé en espèces",
+        "de": "Bar bezahlt",
+        "it": "Pagato in contanti",
+        "ja": "現金で支払い済み",
+        "zh": "已现金支付",
+        "ko": "현금 결제 완료",
+        "ar": "مدفوع نقدًا"
+      },
+      "keywords": {
+        "es": [
+          "cobrado en efectivo",
+          "efectivo recibido",
+          "pago en caja",
+          "efectivo en mostrador",
+          "liquidado",
+          "punto de venta",
+          "corte de caja"
+        ],
+        "en": [
+          "cash received",
+          "cash collected",
+          "paid at the till",
+          "cash at the counter",
+          "settled",
+          "point of sale",
+          "cash drawer"
+        ]
+      }
+    },
+    "bag-question": {
+      "label": {
+        "es": "Ayuda con el pedido",
+        "en": "Order help",
+        "pt": "Ajuda com o pedido",
+        "fr": "Aide sur la commande",
+        "de": "Hilfe zur Bestellung",
+        "it": "Assistenza ordine",
+        "ja": "注文に関するお問い合わせ",
+        "zh": "订单帮助",
+        "ko": "주문 문의",
+        "ar": "المساعدة بشأن الطلب"
+      },
+      "keywords": {
+        "es": [
+          "duda sobre mi compra",
+          "problema con la compra",
+          "atención al cliente",
+          "dudas de envío",
+          "contactar a la tienda",
+          "soporte de pedidos",
+          "estado del pedido"
+        ],
+        "en": [
+          "question about my order",
+          "order issue",
+          "customer service",
+          "purchase problem",
+          "contact the store",
+          "order support",
+          "order status"
+        ]
+      }
+    },
+    "receipt-x": {
+      "label": {
+        "es": "Transacción anulada",
+        "en": "Voided transaction",
+        "pt": "Transação cancelada",
+        "fr": "Transaction annulée",
+        "de": "Stornierte Transaktion",
+        "it": "Transazione annullata",
+        "ja": "取り消された取引",
+        "zh": "已撤销的交易",
+        "ko": "취소된 거래",
+        "ar": "معاملة ملغاة"
+      },
+      "keywords": {
+        "es": [
+          "venta cancelada",
+          "anular cobro",
+          "ticket cancelado",
+          "recibo rechazado",
+          "gasto rechazado",
+          "reverso",
+          "punto de venta"
+        ],
+        "en": [
+          "void sale",
+          "canceled sale",
+          "void receipt",
+          "rejected receipt",
+          "rejected expense",
+          "reversal",
+          "POS"
+        ]
+      }
+    },
+    "price-tag-arrow-up": {
+      "label": {
+        "es": "Subió de precio",
+        "en": "Price rise",
+        "pt": "Preço subiu",
+        "fr": "Prix en hausse",
+        "de": "Preisanstieg",
+        "it": "Prezzo in aumento",
+        "ja": "値上げ",
+        "zh": "涨价",
+        "ko": "가격 인상",
+        "ar": "زيادة السعر"
+      },
+      "keywords": {
+        "es": [
+          "más caro",
+          "aumento",
+          "historial de precios",
+          "alerta de precio",
+          "cambio de precio",
+          "inflación",
+          "precio actualizado"
+        ],
+        "en": [
+          "more expensive",
+          "price went up",
+          "price history",
+          "price alert",
+          "repricing",
+          "markup",
+          "inflation"
+        ]
+      }
+    },
+    "invoice-x": {
+      "label": {
+        "es": "Factura cancelada",
+        "en": "Voided invoice",
+        "pt": "Fatura cancelada",
+        "fr": "Facture annulée",
+        "de": "Stornierte Rechnung",
+        "it": "Fattura annullata",
+        "ja": "無効になった請求書",
+        "zh": "已作废的发票",
+        "ko": "무효 처리된 청구서",
+        "ar": "فاتورة ملغاة"
+      },
+      "keywords": {
+        "es": [
+          "anular factura",
+          "cancelar CFDI",
+          "factura sin efecto",
+          "cancelación de factura",
+          "ya no se cobra",
+          "error de facturación",
+          "factura inválida"
+        ],
+        "en": [
+          "void invoice",
+          "cancel invoice",
+          "invalid invoice",
+          "no longer payable",
+          "billing error",
+          "canceled bill",
+          "void status"
+        ]
+      }
+    },
+    "bank-check": {
+      "label": {
+        "es": "Cuenta bancaria verificada",
+        "en": "Verified bank account",
+        "pt": "Conta bancária verificada",
+        "fr": "Compte bancaire vérifié",
+        "de": "Verifiziertes Bankkonto",
+        "it": "Conto bancario verificato",
+        "ja": "確認済みの銀行口座",
+        "zh": "已验证的银行账户",
+        "ko": "인증된 은행 계좌",
+        "ar": "حساب بنكي موثّق"
+      },
+      "keywords": {
+        "es": [
+          "cuenta confirmada",
+          "microdepósitos",
+          "CLABE validada",
+          "cuenta para depósitos",
+          "domiciliación",
+          "cuenta vinculada",
+          "listo para recibir pagos"
+        ],
+        "en": [
+          "confirmed account",
+          "micro-deposits",
+          "account verified",
+          "payout account",
+          "direct debit",
+          "linked account",
+          "ready for payouts"
+        ]
+      }
+    },
+    "budget-alert": {
+      "label": {
+        "es": "Presupuesto excedido",
+        "en": "Over budget",
+        "pt": "Orçamento estourado",
+        "fr": "Budget dépassé",
+        "de": "Budget überschritten",
+        "it": "Budget superato",
+        "ja": "予算超過",
+        "zh": "超出预算",
+        "ko": "예산 초과",
+        "ar": "تجاوز الميزانية"
+      },
+      "keywords": {
+        "es": [
+          "gasto excesivo",
+          "límite superado",
+          "alerta de gastos",
+          "te pasaste",
+          "sobregasto",
+          "control de gastos",
+          "categoría excedida"
+        ],
+        "en": [
+          "overspending",
+          "overspent",
+          "limit reached",
+          "spending alert",
+          "spent too much",
+          "expense control",
+          "category over limit"
+        ]
+      }
+    },
+    "cookie-x": {
+      "label": {
+        "es": "Cookies rechazadas",
+        "en": "Cookies rejected",
+        "pt": "Cookies recusados",
+        "fr": "Cookies refusés",
+        "de": "Cookies abgelehnt",
+        "it": "Cookie rifiutati",
+        "ja": "Cookieを拒否済み",
+        "zh": "已拒绝 Cookie",
+        "ko": "쿠키 거부됨",
+        "ar": "تم رفض ملفات تعريف الارتباط"
+      },
+      "keywords": {
+        "es": [
+          "rechazar todo",
+          "no aceptar",
+          "sin rastreo",
+          "solo necesarias",
+          "consentimiento negado",
+          "aviso de cookies",
+          "rgpd"
+        ],
+        "en": [
+          "reject all",
+          "decline cookies",
+          "no tracking",
+          "necessary only",
+          "consent refused",
+          "opt out",
+          "gdpr"
+        ]
+      }
+    },
+    "consent-x": {
+      "label": {
+        "es": "Consentimiento retirado",
+        "en": "Consent withdrawn",
+        "pt": "Consentimento revogado",
+        "fr": "Consentement retiré",
+        "de": "Einwilligung widerrufen",
+        "it": "Consenso revocato",
+        "ja": "同意の撤回",
+        "zh": "撤回同意",
+        "ko": "동의 철회",
+        "ar": "سحب الموافقة"
+      },
+      "keywords": {
+        "es": [
+          "revocar consentimiento",
+          "retirar autorización",
+          "derechos arco",
+          "oposición",
+          "revocación",
+          "opt-out",
+          "ya no acepto"
+        ],
+        "en": [
+          "revoke consent",
+          "withdraw permission",
+          "opt-out",
+          "revocation",
+          "gdpr",
+          "right to object",
+          "no longer agree"
+        ]
+      }
+    },
+    "personal-data-block": {
+      "label": {
+        "es": "No vender ni compartir mis datos",
+        "en": "Do not sell or share my data",
+        "pt": "Não vender nem compartilhar meus dados",
+        "fr": "Ne pas vendre ni partager mes données",
+        "de": "Meine Daten nicht verkaufen oder teilen",
+        "it": "Non vendere né condividere i miei dati",
+        "ja": "個人情報の販売・共有を拒否",
+        "zh": "不出售或共享我的个人信息",
+        "ko": "개인정보 판매 및 공유 거부",
+        "ar": "عدم بيع بياناتي أو مشاركتها"
+      },
+      "keywords": {
+        "es": [
+          "ccpa",
+          "excluirse de la venta",
+          "opt-out",
+          "privacidad en california",
+          "publicidad dirigida",
+          "compartir con terceros",
+          "derechos de privacidad"
+        ],
+        "en": [
+          "ccpa",
+          "cpra",
+          "opt out of sale",
+          "do not sell my personal information",
+          "targeted advertising",
+          "third-party sharing",
+          "privacy rights"
+        ]
+      }
+    },
+    "license-check": {
+      "label": {
+        "es": "Permiso aprobado",
+        "en": "Permit approved",
+        "pt": "Licença aprovada",
+        "fr": "Permis approuvé",
+        "de": "Genehmigung erteilt",
+        "it": "Permesso approvato",
+        "ja": "許可取得済み",
+        "zh": "许可已批准",
+        "ko": "허가 승인",
+        "ar": "تمت الموافقة على التصريح"
+      },
+      "keywords": {
+        "es": [
+          "licencia aprobada",
+          "autorización otorgada",
+          "permiso vigente",
+          "trámite concluido",
+          "todo en orden",
+          "documento oficial",
+          "permiso municipal"
+        ],
+        "en": [
+          "license granted",
+          "permit issued",
+          "authorized",
+          "approved application",
+          "valid license",
+          "compliant business",
+          "municipal permit"
+        ]
+      }
+    },
+    "patent-clock": {
+      "label": {
+        "es": "Patente en trámite",
+        "en": "Patent pending",
+        "pt": "Patente pendente",
+        "fr": "Brevet en instance",
+        "de": "Patent angemeldet",
+        "it": "Brevetto in attesa",
+        "ja": "特許出願中",
+        "zh": "专利申请中",
+        "ko": "특허 출원 중",
+        "ar": "براءة اختراع قيد التسجيل"
+      },
+      "keywords": {
+        "es": [
+          "solicitud de patente",
+          "patente solicitada",
+          "registro en trámite",
+          "impi",
+          "invención protegida",
+          "propiedad intelectual",
+          "revisión del IMPI"
+        ],
+        "en": [
+          "patent applied for",
+          "patent application",
+          "pending approval",
+          "uspto",
+          "ip protection",
+          "intellectual property",
+          "under examination"
+        ]
+      }
+    },
+    "contract-search": {
+      "label": {
+        "es": "Revisión de contrato",
+        "en": "Contract review",
+        "pt": "Revisão de contrato",
+        "fr": "Analyse de contrat",
+        "de": "Vertragsprüfung",
+        "it": "Revisione del contratto",
+        "ja": "契約書レビュー",
+        "zh": "合同审查",
+        "ko": "계약서 검토",
+        "ar": "مراجعة العقد"
+      },
+      "keywords": {
+        "es": [
+          "buscar cláusula",
+          "análisis de contrato",
+          "due diligence",
+          "revisión legal",
+          "letra chica",
+          "auditoría de contratos",
+          "riesgos del contrato"
+        ],
+        "en": [
+          "search clauses",
+          "contract analysis",
+          "due diligence",
+          "legal review",
+          "fine print",
+          "contract audit",
+          "redlining"
+        ]
+      }
+    },
+    "protest-sign": {
+      "label": {
+        "es": "Protesta",
+        "en": "Protest",
+        "pt": "Protesto",
+        "fr": "Manifestation",
+        "de": "Protest",
+        "it": "Protesta",
+        "ja": "抗議デモ",
+        "zh": "抗议",
+        "ko": "시위",
+        "ar": "احتجاج"
+      },
+      "keywords": {
+        "es": [
+          "manifestación",
+          "marcha",
+          "pancarta",
+          "cartel",
+          "huelga",
+          "movimiento social",
+          "derecho a manifestarse"
+        ],
+        "en": [
+          "demonstration",
+          "protest march",
+          "picket sign",
+          "placard",
+          "strike",
+          "rally",
+          "activism"
+        ]
+      }
+    },
+    "international-law": {
+      "label": {
+        "es": "Derecho internacional",
+        "en": "International law",
+        "pt": "Direito internacional",
+        "fr": "Droit international",
+        "de": "Völkerrecht",
+        "it": "Diritto internazionale",
+        "ja": "国際法",
+        "zh": "国际法",
+        "ko": "국제법",
+        "ar": "القانون الدولي"
+      },
+      "keywords": {
+        "es": [
+          "tratados",
+          "comercio internacional",
+          "casos transfronterizos",
+          "jurisdicción",
+          "derecho comercial",
+          "relaciones exteriores",
+          "arbitraje internacional"
+        ],
+        "en": [
+          "treaties",
+          "cross-border",
+          "trade law",
+          "jurisdiction",
+          "foreign affairs",
+          "international arbitration",
+          "global justice"
+        ]
+      }
+    },
+    "doorstep-delivery": {
+      "label": {
+        "es": "Dejado en la puerta",
+        "en": "Left at door",
+        "pt": "Deixado na porta",
+        "fr": "Déposé devant la porte",
+        "de": "Vor der Tür abgelegt",
+        "it": "Lasciato alla porta",
+        "ja": "置き配",
+        "zh": "已放在门口",
+        "ko": "문 앞에 배송됨",
+        "ar": "تُرك عند الباب"
+      },
+      "keywords": {
+        "es": [
+          "entrega sin contacto",
+          "nadie en casa",
+          "paquete en la puerta",
+          "lugar seguro",
+          "dejado en el porche",
+          "estatus de entrega",
+          "dejar en la entrada"
+        ],
+        "en": [
+          "doorstep",
+          "contactless delivery",
+          "no one home",
+          "safe place",
+          "left on the porch",
+          "delivery status",
+          "package at the door"
+        ]
+      }
+    },
+    "parcel-edit": {
+      "label": {
+        "es": "Editar envío",
+        "en": "Edit shipment",
+        "pt": "Editar envio",
+        "fr": "Modifier l’envoi",
+        "de": "Sendung bearbeiten",
+        "it": "Modifica spedizione",
+        "ja": "発送を編集",
+        "zh": "编辑运单",
+        "ko": "배송 정보 수정",
+        "ar": "تعديل الشحنة"
+      },
+      "keywords": {
+        "es": [
+          "cambiar dirección",
+          "corregir destinatario",
+          "modificar paquete",
+          "actualizar guía",
+          "cambiar contenido",
+          "datos del envío",
+          "redirigir"
+        ],
+        "en": [
+          "change address",
+          "update recipient",
+          "modify package",
+          "update label",
+          "change contents",
+          "shipment details",
+          "redirect"
+        ]
+      }
+    },
+    "parcel-question": {
+      "label": {
+        "es": "Paquete perdido",
+        "en": "Missing package",
+        "pt": "Pacote extraviado",
+        "fr": "Colis introuvable",
+        "de": "Vermisstes Paket",
+        "it": "Pacco smarrito",
+        "ja": "行方不明の荷物",
+        "zh": "包裹丢失",
+        "ko": "분실 택배",
+        "ar": "طرد مفقود"
+      },
+      "keywords": {
+        "es": [
+          "dónde está mi pedido",
+          "no llegó",
+          "extraviado",
+          "paquete sin identificar",
+          "reclamo de envío",
+          "no recibí mi pedido",
+          "aclaración"
+        ],
+        "en": [
+          "where is my order",
+          "never arrived",
+          "lost parcel",
+          "unidentified package",
+          "shipping claim",
+          "didn’t receive",
+          "wismo"
+        ]
+      }
+    },
+    "parcel-minus": {
+      "label": {
+        "es": "Quitar paquete",
+        "en": "Remove package",
+        "pt": "Remover pacote",
+        "fr": "Retirer un colis",
+        "de": "Paket entfernen",
+        "it": "Rimuovi pacco",
+        "ja": "荷物を削除",
+        "zh": "移除包裹",
+        "ko": "택배 제외",
+        "ar": "إزالة طرد"
+      },
+      "keywords": {
+        "es": [
+          "sacar del envío",
+          "eliminar bulto",
+          "menos cajas",
+          "dividir pedido",
+          "ajustar envío",
+          "retirar del pedido",
+          "bulto de más"
+        ],
+        "en": [
+          "take out of shipment",
+          "delete parcel",
+          "fewer boxes",
+          "split order",
+          "adjust shipment",
+          "remove from order",
+          "one box less"
+        ]
+      }
+    },
+    "truck-clock": {
+      "label": {
+        "es": "Hora de llegada del camión",
+        "en": "Truck arrival time",
+        "pt": "Horário de chegada do caminhão",
+        "fr": "Heure d’arrivée du camion",
+        "de": "Ankunftszeit des Lkw",
+        "it": "Orario di arrivo del camion",
+        "ja": "トラックの到着時刻",
+        "zh": "货车到达时间",
+        "ko": "트럭 도착 시간",
+        "ar": "موعد وصول الشاحنة"
+      },
+      "keywords": {
+        "es": [
+          "cita de andén",
+          "hora estimada",
+          "ventana de descarga",
+          "llegada a la parada",
+          "programación de andenes",
+          "unidad en camino",
+          "tiempo de llegada"
+        ],
+        "en": [
+          "dock appointment",
+          "ETA",
+          "unloading window",
+          "stop arrival",
+          "dock scheduling",
+          "arrival slot",
+          "truck on the way"
+        ]
+      }
+    },
+    "do-not-stack": {
+      "label": {
+        "es": "No apilar",
+        "en": "Do not stack",
+        "pt": "Não empilhar",
+        "fr": "Ne pas empiler",
+        "de": "Nicht stapeln",
+        "it": "Non sovrapporre",
+        "ja": "段積み禁止",
+        "zh": "禁止堆码",
+        "ko": "적재 금지",
+        "ar": "ممنوع التكديس"
+      },
+      "keywords": {
+        "es": [
+          "no encimar",
+          "símbolo de embalaje",
+          "carga frágil",
+          "nada encima",
+          "manejo de carga",
+          "ISO 780",
+          "una sola estiba"
+        ],
+        "en": [
+          "no stacking",
+          "handling mark",
+          "nothing on top",
+          "fragile load",
+          "ISO 780",
+          "single layer",
+          "non-stackable"
+        ]
+      }
+    },
+    "customs-duty": {
+      "label": {
+        "es": "Aranceles",
+        "en": "Customs duty",
+        "pt": "Imposto de importação",
+        "fr": "Droits de douane",
+        "de": "Einfuhrzoll",
+        "it": "Dazi doganali",
+        "ja": "関税",
+        "zh": "关税",
+        "ko": "관세",
+        "ar": "الرسوم الجمركية"
+      },
+      "keywords": {
+        "es": [
+          "impuesto de importación",
+          "tarifa aduanera",
+          "derechos de importación",
+          "comercio exterior",
+          "IGI",
+          "pedimento",
+          "impuestos al importar"
+        ],
+        "en": [
+          "import tax",
+          "tariff",
+          "import duties",
+          "trade tariff",
+          "customs fees",
+          "landed cost",
+          "DDP"
+        ]
+      }
+    },
+    "container-snowflake": {
+      "label": {
+        "es": "Contenedor refrigerado",
+        "en": "Reefer container",
+        "pt": "Contêiner refrigerado",
+        "fr": "Conteneur frigorifique",
+        "de": "Kühlcontainer",
+        "it": "Container refrigerato",
+        "ja": "冷凍コンテナ",
+        "zh": "冷藏集装箱",
+        "ko": "냉동 컨테이너",
+        "ar": "حاوية مبردة"
+      },
+      "keywords": {
+        "es": [
+          "reefer",
+          "cadena de frío",
+          "perecederos",
+          "congelados",
+          "temperatura controlada",
+          "flete marítimo refrigerado",
+          "exportación de alimentos"
+        ],
+        "en": [
+          "refrigerated container",
+          "cold chain",
+          "perishables",
+          "frozen cargo",
+          "temperature controlled",
+          "reefer shipping",
+          "food export"
+        ]
+      }
+    },
+    "weigh-station": {
+      "label": {
+        "es": "Báscula para camiones",
+        "en": "Weigh station",
+        "pt": "Balança rodoviária",
+        "fr": "Pont-bascule",
+        "de": "Fahrzeugwaage",
+        "it": "Pesa a ponte",
+        "ja": "トラックスケール",
+        "zh": "地磅",
+        "ko": "계근대",
+        "ar": "ميزان الشاحنات"
+      },
+      "keywords": {
+        "es": [
+          "báscula camionera",
+          "pesaje",
+          "peso bruto",
+          "control de peso",
+          "sobrepeso",
+          "patio de maniobras",
+          "boleta de pesaje"
+        ],
+        "en": [
+          "weighbridge",
+          "truck scale",
+          "gross weight",
+          "weigh-in",
+          "overweight",
+          "truck yard",
+          "weight ticket"
+        ]
+      }
+    },
+    "shipping-label-x": {
+      "label": {
+        "es": "Guía cancelada",
+        "en": "Voided label",
+        "pt": "Etiqueta cancelada",
+        "fr": "Étiquette annulée",
+        "de": "Storniertes Versandetikett",
+        "it": "Etichetta annullata",
+        "ja": "取り消した配送ラベル",
+        "zh": "已作废的面单",
+        "ko": "취소된 운송장",
+        "ar": "ملصق شحن ملغى"
+      },
+      "keywords": {
+        "es": [
+          "anular guía",
+          "cancelar etiqueta",
+          "reembolso de guía",
+          "guía sin usar",
+          "error en la guía",
+          "reimprimir",
+          "paquetería"
+        ],
+        "en": [
+          "void label",
+          "cancel label",
+          "label refund",
+          "unused label",
+          "wrong label",
+          "postage refund",
+          "reprint"
+        ]
+      }
+    },
+    "attribution-linear": {
+      "label": {
+        "es": "Atribución lineal",
+        "en": "Linear attribution",
+        "pt": "Atribuição linear",
+        "fr": "Attribution linéaire",
+        "de": "Lineare Attribution",
+        "it": "Attribuzione lineare",
+        "ja": "線形アトリビューション",
+        "zh": "线性归因",
+        "ko": "선형 기여",
+        "ar": "الإسناد الخطي"
+      },
+      "keywords": {
+        "es": [
+          "crédito equitativo",
+          "todos los puntos de contacto",
+          "multitoque",
+          "modelo de atribución",
+          "reparto igual",
+          "canales de marketing",
+          "recorrido del cliente"
+        ],
+        "en": [
+          "equal credit",
+          "every touchpoint",
+          "multi-touch",
+          "attribution model",
+          "even split",
+          "marketing channels",
+          "customer journey"
+        ]
+      }
+    },
+    "attribution-time-decay": {
+      "label": {
+        "es": "Atribución por decaimiento temporal",
+        "en": "Time-decay attribution",
+        "pt": "Atribuição com redução de tempo",
+        "fr": "Attribution par décroissance temporelle",
+        "de": "Zeitverlauf-Attribution",
+        "it": "Attribuzione con decadimento temporale",
+        "ja": "減衰アトリビューション",
+        "zh": "时间衰减归因",
+        "ko": "시간 가치 하락 기여",
+        "ar": "الإسناد بالتناقص الزمني"
+      },
+      "keywords": {
+        "es": [
+          "más crédito al final",
+          "contactos recientes",
+          "multitoque",
+          "modelo de atribución",
+          "cercanía a la conversión",
+          "ciclo de venta",
+          "recorrido del cliente"
+        ],
+        "en": [
+          "recent touches",
+          "more credit near conversion",
+          "multi-touch",
+          "attribution model",
+          "decay",
+          "sales cycle",
+          "customer journey"
+        ]
+      }
+    },
+    "attribution-position-based": {
+      "label": {
+        "es": "Atribución basada en la posición",
+        "en": "Position-based attribution",
+        "pt": "Atribuição com base na posição",
+        "fr": "Attribution basée sur la position",
+        "de": "Positionsbasierte Attribution",
+        "it": "Attribuzione basata sulla posizione",
+        "ja": "接点ベースアトリビューション",
+        "zh": "基于位置的归因",
+        "ko": "위치 기반 기여",
+        "ar": "الإسناد حسب الموضع"
+      },
+      "keywords": {
+        "es": [
+          "en forma de U",
+          "primer y último contacto",
+          "multitoque",
+          "modelo de atribución",
+          "40-20-40",
+          "inicio y cierre",
+          "recorrido del cliente"
+        ],
+        "en": [
+          "U-shaped",
+          "first and last touch",
+          "multi-touch",
+          "attribution model",
+          "40-20-40",
+          "bathtub model",
+          "customer journey"
+        ]
+      }
+    },
+    "feather-flag": {
+      "label": {
+        "es": "Bandera publicitaria",
+        "en": "Feather flag",
+        "pt": "Wind banner",
+        "fr": "Oriflamme",
+        "de": "Beachflag",
+        "it": "Bandiera a vela",
+        "ja": "フェザーフラッグ",
+        "zh": "羽毛旗",
+        "ko": "윈드 배너",
+        "ar": "علم إعلاني"
+      },
+      "keywords": {
+        "es": [
+          "bandera tipo pluma",
+          "banderola",
+          "publicidad exterior",
+          "afuera de la tienda",
+          "agencia de autos",
+          "señalización de eventos",
+          "punto de venta"
+        ],
+        "en": [
+          "sail flag",
+          "beach flag",
+          "swooper flag",
+          "outdoor advertising",
+          "storefront",
+          "car dealership",
+          "event signage"
+        ]
+      }
+    },
+    "advertising-column": {
+      "label": {
+        "es": "Columna publicitaria",
+        "en": "Advertising column",
+        "pt": "Coluna publicitária",
+        "fr": "Colonne Morris",
+        "de": "Litfaßsäule",
+        "it": "Colonna pubblicitaria",
+        "ja": "広告塔",
+        "zh": "广告柱",
+        "ko": "광고탑",
+        "ar": "عمود إعلانات"
+      },
+      "keywords": {
+        "es": [
+          "columna Morris",
+          "carteles",
+          "afiches",
+          "publicidad exterior",
+          "mobiliario urbano",
+          "vía pública",
+          "anuncios en la calle"
+        ],
+        "en": [
+          "Morris column",
+          "poster pillar",
+          "billposting",
+          "out of home",
+          "street furniture",
+          "street advertising",
+          "advertising pillar"
+        ]
+      }
+    },
+    "print-ad": {
+      "label": {
+        "es": "Anuncio en prensa",
+        "en": "Print ad",
+        "pt": "Anúncio impresso",
+        "fr": "Publicité imprimée",
+        "de": "Printanzeige",
+        "it": "Annuncio stampa",
+        "ja": "紙面広告",
+        "zh": "平面广告",
+        "ko": "지면 광고",
+        "ar": "إعلان مطبوع"
+      },
+      "keywords": {
+        "es": [
+          "anuncio en periódico",
+          "anuncio en revista",
+          "publicidad impresa",
+          "medios impresos",
+          "espacio pagado",
+          "plana",
+          "inserción"
+        ],
+        "en": [
+          "newspaper ad",
+          "magazine ad",
+          "print media",
+          "paid space",
+          "full-page ad",
+          "classified ad",
+          "insertion"
+        ]
+      }
+    },
+    "upsell": {
+      "label": {
+        "es": "Upselling",
+        "en": "Upsell",
+        "pt": "Upsell",
+        "fr": "Montée en gamme",
+        "de": "Upselling",
+        "it": "Upselling",
+        "ja": "アップセル",
+        "zh": "向上销售",
+        "ko": "업셀링",
+        "ar": "البيع بالترقية"
+      },
+      "keywords": {
+        "es": [
+          "venta ascendente",
+          "subir de plan",
+          "mejorar plan",
+          "versión superior",
+          "producto premium",
+          "ticket promedio",
+          "venta de mayor valor"
+        ],
+        "en": [
+          "upgrade",
+          "higher tier",
+          "premium plan",
+          "bigger package",
+          "average order value",
+          "upgrade offer",
+          "trade up"
+        ]
+      }
+    },
+    "ribbon-cutting": {
+      "label": {
+        "es": "Inauguración",
+        "en": "Grand opening",
+        "pt": "Inauguração",
+        "fr": "Inauguration",
+        "de": "Eröffnung",
+        "it": "Inaugurazione",
+        "ja": "テープカット",
+        "zh": "剪彩",
+        "ko": "테이프 커팅식",
+        "ar": "حفل الافتتاح"
+      },
+      "keywords": {
+        "es": [
+          "corte de listón",
+          "gran apertura",
+          "abrimos nueva tienda",
+          "nueva sucursal",
+          "evento de lanzamiento",
+          "estreno",
+          "corte inaugural"
+        ],
+        "en": [
+          "ribbon cutting",
+          "opening ceremony",
+          "new store",
+          "launch event",
+          "now open",
+          "new location",
+          "inauguration"
+        ]
+      }
+    },
+    "aerial-banner": {
+      "label": {
+        "es": "Publicidad aérea",
+        "en": "Aerial advertising",
+        "pt": "Publicidade aérea",
+        "fr": "Publicité aérienne",
+        "de": "Luftwerbung",
+        "it": "Pubblicità aerea",
+        "ja": "空中広告",
+        "zh": "空中广告",
+        "ko": "항공 광고",
+        "ar": "إعلان جوي"
+      },
+      "keywords": {
+        "es": [
+          "avioneta con manta",
+          "manta remolcada",
+          "anuncio en el cielo",
+          "publicidad en playas",
+          "evento masivo",
+          "publicidad exterior",
+          "avión publicitario"
+        ],
+        "en": [
+          "banner towing",
+          "plane banner",
+          "sky ad",
+          "flying banner",
+          "beach advertising",
+          "out of home",
+          "ad plane"
+        ]
+      }
+    },
+    "gift-clock": {
+      "label": {
+        "es": "Prueba gratis",
+        "en": "Free trial",
+        "pt": "Teste grátis",
+        "fr": "Essai gratuit",
+        "de": "Kostenlose Testversion",
+        "it": "Prova gratuita",
+        "ja": "無料トライアル",
+        "zh": "免费试用",
+        "ko": "무료 체험",
+        "ar": "تجربة مجانية"
+      },
+      "keywords": {
+        "es": [
+          "periodo de prueba",
+          "días gratis",
+          "demo",
+          "prueba sin costo",
+          "suscripción",
+          "por tiempo limitado",
+          "pruébalo"
+        ],
+        "en": [
+          "trial period",
+          "free days",
+          "try it free",
+          "limited time",
+          "subscription",
+          "demo",
+          "freemium"
+        ]
+      }
+    },
+    "target-x": {
+      "label": {
+        "es": "Meta no cumplida",
+        "en": "Goal missed",
+        "pt": "Meta não atingida",
+        "fr": "Objectif manqué",
+        "de": "Ziel verfehlt",
+        "it": "Obiettivo mancato",
+        "ja": "未達成の目標",
+        "zh": "目标未达成",
+        "ko": "목표 미달성",
+        "ar": "لم يتحقق الهدف"
+      },
+      "keywords": {
+        "es": [
+          "okr fallido",
+          "no se logró",
+          "objetivo fallido",
+          "cierre de trimestre",
+          "resultado por debajo",
+          "kpi no alcanzado",
+          "meta cerrada"
+        ],
+        "en": [
+          "missed target",
+          "failed okr",
+          "not achieved",
+          "quarter close",
+          "below target",
+          "kpi missed",
+          "unmet objective"
+        ]
+      }
+    },
+    "deal-clock": {
+      "label": {
+        "es": "Trato en negociación",
+        "en": "Deal pending",
+        "pt": "Negócio em andamento",
+        "fr": "Affaire en cours",
+        "de": "Offener Deal",
+        "it": "Trattativa in corso",
+        "ja": "交渉中の取引",
+        "zh": "洽谈中的交易",
+        "ko": "협상 중인 거래",
+        "ar": "صفقة قيد التفاوض"
+      },
+      "keywords": {
+        "es": [
+          "oportunidad abierta",
+          "negociación abierta",
+          "embudo de ventas",
+          "trato abierto",
+          "crm",
+          "seguimiento",
+          "propuesta enviada"
+        ],
+        "en": [
+          "open deal",
+          "in negotiation",
+          "sales pipeline",
+          "crm",
+          "open opportunity",
+          "follow-up",
+          "proposal sent"
+        ]
+      }
+    },
+    "supplier-plus": {
+      "label": {
+        "es": "Agregar proveedor",
+        "en": "Add supplier",
+        "pt": "Adicionar fornecedor",
+        "fr": "Ajouter un fournisseur",
+        "de": "Lieferant hinzufügen",
+        "it": "Aggiungi fornitore",
+        "ja": "仕入先を追加",
+        "zh": "添加供应商",
+        "ko": "공급업체 추가",
+        "ar": "إضافة مورّد"
+      },
+      "keywords": {
+        "es": [
+          "nuevo proveedor",
+          "alta de proveedor",
+          "registrar proveedor",
+          "padrón de proveedores",
+          "área de compras",
+          "abastecimiento",
+          "dar de alta"
+        ],
+        "en": [
+          "new vendor",
+          "vendor onboarding",
+          "register supplier",
+          "vendor list",
+          "procurement",
+          "sourcing",
+          "add vendor"
+        ]
+      }
+    },
+    "acquisition": {
+      "label": {
+        "es": "Adquisición",
+        "en": "Acquisition",
+        "pt": "Aquisição",
+        "fr": "Acquisition",
+        "de": "Übernahme",
+        "it": "Acquisizione",
+        "ja": "買収",
+        "zh": "收购",
+        "ko": "인수",
+        "ar": "استحواذ"
+      },
+      "keywords": {
+        "es": [
+          "comprar una empresa",
+          "absorción",
+          "fusiones y adquisiciones",
+          "adquirir",
+          "toma de control",
+          "integración",
+          "compra corporativa"
+        ],
+        "en": [
+          "buyout",
+          "takeover",
+          "company purchase",
+          "absorb a company",
+          "mergers and acquisitions",
+          "acquire",
+          "buy a company"
+        ]
+      }
+    },
+    "spin-off": {
+      "label": {
+        "es": "Escisión",
+        "en": "Spin-off",
+        "pt": "Cisão",
+        "fr": "Scission",
+        "de": "Abspaltung",
+        "it": "Scissione",
+        "ja": "スピンオフ",
+        "zh": "分拆",
+        "ko": "분사",
+        "ar": "انفصال شركة"
+      },
+      "keywords": {
+        "es": [
+          "spin-off",
+          "desinversión",
+          "separar empresa",
+          "nueva compañía",
+          "división independiente",
+          "desincorporación",
+          "filial"
+        ],
+        "en": [
+          "divestiture",
+          "carve-out",
+          "demerger",
+          "split off",
+          "new company",
+          "independent unit",
+          "divest"
+        ]
+      }
+    },
+    "enterprise": {
+      "label": {
+        "es": "Grupo empresarial",
+        "en": "Enterprise",
+        "pt": "Grupo empresarial",
+        "fr": "Groupe d’entreprises",
+        "de": "Konzern",
+        "it": "Gruppo aziendale",
+        "ja": "企業グループ",
+        "zh": "企业集团",
+        "ko": "기업 그룹",
+        "ar": "مجموعة شركات"
+      },
+      "keywords": {
+        "es": [
+          "corporativo",
+          "conglomerado",
+          "plan empresarial",
+          "cuenta empresarial",
+          "holding",
+          "gran empresa",
+          "multinacional"
+        ],
+        "en": [
+          "corporate group",
+          "conglomerate",
+          "enterprise plan",
+          "enterprise account",
+          "holding company",
+          "large company",
+          "multinational"
+        ]
+      }
+    },
+    "handshake-heart": {
+      "label": {
+        "es": "Alianza de confianza",
+        "en": "Trusted partnership",
+        "pt": "Parceria de confiança",
+        "fr": "Partenariat de confiance",
+        "de": "Vertrauensvolle Partnerschaft",
+        "it": "Partnership di fiducia",
+        "ja": "信頼のパートナーシップ",
+        "zh": "信任合作",
+        "ko": "신뢰 파트너십",
+        "ar": "شراكة قائمة على الثقة"
+      },
+      "keywords": {
+        "es": [
+          "solidaridad",
+          "caridad",
+          "alianza comunitaria",
+          "apoyo mutuo",
+          "responsabilidad social",
+          "voluntariado",
+          "causa social"
+        ],
+        "en": [
+          "charity",
+          "community partnership",
+          "care",
+          "mutual support",
+          "social responsibility",
+          "volunteering",
+          "nonprofit partner"
+        ]
+      }
+    },
+    "burn-rate": {
+      "label": {
+        "es": "Tasa de quema",
+        "en": "Burn rate",
+        "pt": "Taxa de queima",
+        "fr": "Burn rate",
+        "de": "Burn Rate",
+        "it": "Burn rate",
+        "ja": "バーンレート",
+        "zh": "烧钱率",
+        "ko": "번 레이트",
+        "ar": "معدل حرق النقد"
+      },
+      "keywords": {
+        "es": [
+          "burn rate",
+          "gasto mensual",
+          "pista de efectivo",
+          "meses de caja",
+          "consumo de caja",
+          "startup",
+          "salida de efectivo"
+        ],
+        "en": [
+          "cash burn",
+          "monthly spend",
+          "cash runway",
+          "startup metrics",
+          "cash outflow",
+          "spending rate",
+          "net burn"
+        ]
+      }
+    },
+    "cost-cutting": {
+      "label": {
+        "es": "Recorte de gastos",
+        "en": "Cost cutting",
+        "pt": "Corte de custos",
+        "fr": "Réduction des coûts",
+        "de": "Kostensenkung",
+        "it": "Taglio dei costi",
+        "ja": "コスト削減",
+        "zh": "削减成本",
+        "ko": "비용 절감",
+        "ar": "خفض التكاليف"
+      },
+      "keywords": {
+        "es": [
+          "reducir costos",
+          "ahorro",
+          "austeridad",
+          "eficiencia",
+          "optimizar gastos",
+          "recorte presupuestal",
+          "bajar gastos"
+        ],
+        "en": [
+          "reduce costs",
+          "savings",
+          "austerity",
+          "efficiency",
+          "budget cut",
+          "spend reduction",
+          "lean"
+        ]
+      }
+    },
+    "market-share": {
+      "label": {
+        "es": "Participación de mercado",
+        "en": "Market share",
+        "pt": "Participação de mercado",
+        "fr": "Part de marché",
+        "de": "Marktanteil",
+        "it": "Quota di mercato",
+        "ja": "市場シェア",
+        "zh": "市场份额",
+        "ko": "시장 점유율",
+        "ar": "الحصة السوقية"
+      },
+      "keywords": {
+        "es": [
+          "cuota de mercado",
+          "porcentaje del mercado",
+          "competencia",
+          "líder del mercado",
+          "posición en el mercado",
+          "rebanada",
+          "análisis de la competencia"
+        ],
+        "en": [
+          "share of market",
+          "competitors",
+          "market position",
+          "market leader",
+          "slice",
+          "percentage",
+          "competitive analysis"
+        ]
+      }
+    },
+    "purchase-requisition": {
+      "label": {
+        "es": "Solicitud de compra",
+        "en": "Purchase request",
+        "pt": "Requisição de compra",
+        "fr": "Demande d’achat",
+        "de": "Bestellanforderung",
+        "it": "Richiesta d’acquisto",
+        "ja": "購買依頼",
+        "zh": "采购申请",
+        "ko": "구매 요청",
+        "ar": "طلب شراء"
+      },
+      "keywords": {
+        "es": [
+          "requisición",
+          "pedir material",
+          "aprobación de compra",
+          "compras internas",
+          "paso previo a la orden de compra",
+          "abastecimiento",
+          "presupuesto del área"
+        ],
+        "en": [
+          "purchase requisition",
+          "PR",
+          "requisition",
+          "approval request",
+          "internal request",
+          "procurement",
+          "before the PO"
+        ]
+      }
+    },
+    "value-proposition": {
+      "label": {
+        "es": "Propuesta de valor",
+        "en": "Value proposition",
+        "pt": "Proposta de valor",
+        "fr": "Proposition de valeur",
+        "de": "Wertversprechen",
+        "it": "Proposta di valore",
+        "ja": "価値提案",
+        "zh": "价值主张",
+        "ko": "가치 제안",
+        "ar": "عرض القيمة"
+      },
+      "keywords": {
+        "es": [
+          "qué ofrecemos",
+          "beneficio para el cliente",
+          "oferta para el cliente",
+          "valor agregado",
+          "por qué elegirnos",
+          "promesa de marca",
+          "lienzo de propuesta"
+        ],
+        "en": [
+          "what we offer",
+          "customer benefit",
+          "core offer",
+          "added value",
+          "why choose us",
+          "USP",
+          "value prop"
+        ]
+      }
+    },
+    "candidate-x": {
+      "label": {
+        "es": "Rechazar candidato",
+        "en": "Reject candidate",
+        "pt": "Reprovar candidato",
+        "fr": "Refuser le candidat",
+        "de": "Bewerber ablehnen",
+        "it": "Scarta candidato",
+        "ja": "不採用にする",
+        "zh": "淘汰候选人",
+        "ko": "지원자 불합격 처리",
+        "ar": "رفض المرشح"
+      },
+      "keywords": {
+        "es": [
+          "descartar",
+          "no seleccionado",
+          "proceso cerrado",
+          "carta de rechazo",
+          "no avanza",
+          "ATS",
+          "reclutamiento"
+        ],
+        "en": [
+          "disqualify",
+          "not selected",
+          "decline applicant",
+          "rejection email",
+          "not moving forward",
+          "ATS",
+          "recruiting"
+        ]
+      }
+    },
+    "candidate-star": {
+      "label": {
+        "es": "Candidato preseleccionado",
+        "en": "Shortlisted candidate",
+        "pt": "Candidato pré-selecionado",
+        "fr": "Candidat présélectionné",
+        "de": "Bewerber in der engeren Auswahl",
+        "it": "Candidato preselezionato",
+        "ja": "最終候補者",
+        "zh": "入围候选人",
+        "ko": "최종 후보",
+        "ar": "مرشح ضمن القائمة المختصرة"
+      },
+      "keywords": {
+        "es": [
+          "lista corta",
+          "finalista",
+          "candidato favorito",
+          "perfil destacado",
+          "buen perfil",
+          "siguiente ronda",
+          "ATS"
+        ],
+        "en": [
+          "shortlist",
+          "finalist",
+          "top pick",
+          "favorite candidate",
+          "strong fit",
+          "next round",
+          "ATS"
+        ]
+      }
+    },
+    "job-offer-check": {
+      "label": {
+        "es": "Oferta de trabajo aceptada",
+        "en": "Job offer accepted",
+        "pt": "Proposta de emprego aceita",
+        "fr": "Offre d’embauche acceptée",
+        "de": "Jobangebot angenommen",
+        "it": "Offerta di lavoro accettata",
+        "ja": "内定承諾",
+        "zh": "已接受录用",
+        "ko": "채용 제안 수락",
+        "ar": "تم قبول عرض العمل"
+      },
+      "keywords": {
+        "es": [
+          "candidato aceptó",
+          "carta oferta firmada",
+          "contratación confirmada",
+          "sí al puesto",
+          "fecha de ingreso",
+          "reclutamiento",
+          "listo para onboarding"
+        ],
+        "en": [
+          "candidate accepted",
+          "signed offer letter",
+          "hire confirmed",
+          "joining date",
+          "yes to the job",
+          "recruiting",
+          "ready for onboarding"
+        ]
+      }
+    },
+    "job-offer-x": {
+      "label": {
+        "es": "Oferta de trabajo rechazada",
+        "en": "Job offer declined",
+        "pt": "Proposta de emprego recusada",
+        "fr": "Offre d’embauche refusée",
+        "de": "Jobangebot abgelehnt",
+        "it": "Offerta di lavoro rifiutata",
+        "ja": "内定辞退",
+        "zh": "婉拒录用",
+        "ko": "채용 제안 거절",
+        "ar": "تم رفض عرض العمل"
+      },
+      "keywords": {
+        "es": [
+          "candidato declinó",
+          "no aceptó",
+          "contraoferta",
+          "otra oferta",
+          "declinar puesto",
+          "reclutamiento",
+          "volver a buscar"
+        ],
+        "en": [
+          "candidate declined",
+          "turned down",
+          "not accepted",
+          "counteroffer",
+          "other offer",
+          "recruiting",
+          "reopen search"
+        ]
+      }
+    },
+    "overtime": {
+      "label": {
+        "es": "Horas extra",
+        "en": "Overtime",
+        "pt": "Horas extras",
+        "fr": "Heures supplémentaires",
+        "de": "Überstunden",
+        "it": "Straordinari",
+        "ja": "残業",
+        "zh": "加班",
+        "ko": "초과 근무",
+        "ar": "ساعات العمل الإضافية"
+      },
+      "keywords": {
+        "es": [
+          "tiempo extra",
+          "jornada extendida",
+          "pago doble",
+          "pago en nómina",
+          "horas trabajadas",
+          "control de asistencia",
+          "fuera de horario"
+        ],
+        "en": [
+          "extra hours",
+          "OT",
+          "time and a half",
+          "payroll item",
+          "hours worked",
+          "attendance tracking",
+          "after hours"
+        ]
+      }
+    },
+    "flexible-hours": {
+      "label": {
+        "es": "Horario flexible",
+        "en": "Flexible hours",
+        "pt": "Horário flexível",
+        "fr": "Horaires flexibles",
+        "de": "Gleitzeit",
+        "it": "Orario flessibile",
+        "ja": "フレックスタイム",
+        "zh": "弹性工作时间",
+        "ko": "유연 근무제",
+        "ar": "ساعات عمل مرنة"
+      },
+      "keywords": {
+        "es": [
+          "flextime",
+          "elegir horario",
+          "entrada flexible",
+          "jornada flexible",
+          "beneficio laboral",
+          "bienestar laboral",
+          "conciliación"
+        ],
+        "en": [
+          "flextime",
+          "flexitime",
+          "choose your hours",
+          "flexible schedule",
+          "perk",
+          "employee wellbeing",
+          "core hours"
+        ]
+      }
+    },
+    "meal-voucher": {
+      "label": {
+        "es": "Vales de comida",
+        "en": "Meal voucher",
+        "pt": "Vale-refeição",
+        "fr": "Titre-restaurant",
+        "de": "Essensgutschein",
+        "it": "Buono pasto",
+        "ja": "食事補助券",
+        "zh": "餐券",
+        "ko": "식권",
+        "ar": "قسيمة وجبات"
+      },
+      "keywords": {
+        "es": [
+          "vales de despensa",
+          "tarjeta de vales",
+          "prestación para empleados",
+          "ayuda para comida",
+          "monedero electrónico",
+          "beneficio de alimentos",
+          "comida en el trabajo"
+        ],
+        "en": [
+          "meal card",
+          "lunch voucher",
+          "food benefit",
+          "ticket restaurant",
+          "employee perk",
+          "meal allowance",
+          "luncheon voucher"
+        ]
+      }
+    },
+    "ticket-x": {
+      "label": {
+        "es": "Ticket cerrado",
+        "en": "Closed ticket",
+        "pt": "Chamado fechado",
+        "fr": "Ticket fermé",
+        "de": "Geschlossenes Ticket",
+        "it": "Ticket chiuso",
+        "ja": "クローズしたチケット",
+        "zh": "已关闭的工单",
+        "ko": "종료된 티켓",
+        "ar": "تذكرة مغلقة"
+      },
+      "keywords": {
+        "es": [
+          "cancelado",
+          "marcado como spam",
+          "sin solución",
+          "ticket descartado",
+          "cerrado sin resolver",
+          "boleto cancelado",
+          "filtro de cerrados"
+        ],
+        "en": [
+          "canceled",
+          "marked as spam",
+          "won’t fix",
+          "dismissed request",
+          "closed without fix",
+          "canceled ticket",
+          "closed filter"
+        ]
+      }
+    },
+    "ticket-search": {
+      "label": {
+        "es": "Buscar ticket",
+        "en": "Find ticket",
+        "pt": "Buscar chamado",
+        "fr": "Rechercher un ticket",
+        "de": "Ticket suchen",
+        "it": "Cerca ticket",
+        "ja": "チケットを検索",
+        "zh": "搜索工单",
+        "ko": "티켓 검색",
+        "ar": "البحث عن تذكرة"
+      },
+      "keywords": {
+        "es": [
+          "buscar caso",
+          "número de ticket",
+          "filtrar cola",
+          "folio",
+          "historial de tickets",
+          "mesa de ayuda",
+          "localizar reporte"
+        ],
+        "en": [
+          "search cases",
+          "ticket number",
+          "filter queue",
+          "lookup",
+          "ticket history",
+          "help desk",
+          "find case"
+        ]
+      }
+    },
+    "sla-check": {
+      "label": {
+        "es": "SLA cumplido",
+        "en": "SLA met",
+        "pt": "SLA cumprido",
+        "fr": "SLA respecté",
+        "de": "SLA eingehalten",
+        "it": "SLA rispettato",
+        "ja": "SLA達成",
+        "zh": "SLA 已达成",
+        "ko": "SLA 충족",
+        "ar": "تم الالتزام باتفاقية الخدمة"
+      },
+      "keywords": {
+        "es": [
+          "atención puntual",
+          "dentro del plazo",
+          "tiempo de respuesta cumplido",
+          "meta de servicio cumplida",
+          "compromiso de servicio",
+          "reporte de SLA",
+          "sin retraso"
+        ],
+        "en": [
+          "no delay",
+          "within target",
+          "response time met",
+          "target achieved",
+          "service commitment",
+          "SLA report",
+          "compliant"
+        ]
+      }
+    },
+    "status-page-alert": {
+      "label": {
+        "es": "Incidente activo",
+        "en": "Active incident",
+        "pt": "Incidente ativo",
+        "fr": "Incident en cours",
+        "de": "Aktiver Vorfall",
+        "it": "Incidente in corso",
+        "ja": "障害発生中",
+        "zh": "故障进行中",
+        "ko": "장애 발생 중",
+        "ar": "حادثة جارية"
+      },
+      "keywords": {
+        "es": [
+          "caída del servicio",
+          "interrupción",
+          "falla en curso",
+          "servicio degradado",
+          "estamos investigando",
+          "estado del servicio",
+          "aviso de incidente"
+        ],
+        "en": [
+          "outage",
+          "service disruption",
+          "degraded performance",
+          "investigating",
+          "downtime",
+          "system status",
+          "incident notice"
+        ]
+      }
+    },
+    "smartphone-repair-clock": {
+      "label": {
+        "es": "Reparación en proceso",
+        "en": "Repair in progress",
+        "pt": "Conserto em andamento",
+        "fr": "Réparation en cours",
+        "de": "Reparatur läuft",
+        "it": "Riparazione in corso",
+        "ja": "修理中",
+        "zh": "维修中",
+        "ko": "수리 중",
+        "ar": "الإصلاح قيد التنفيذ"
+      },
+      "keywords": {
+        "es": [
+          "equipo en taller",
+          "aún no está listo",
+          "esperando refacción",
+          "estatus de reparación",
+          "orden de servicio",
+          "tiempo estimado",
+          "diagnóstico del equipo"
+        ],
+        "en": [
+          "still in the shop",
+          "being repaired",
+          "awaiting parts",
+          "repair status",
+          "service order",
+          "estimated time",
+          "device diagnosis"
+        ]
+      }
+    },
+    "smartphone-water-damage": {
+      "label": {
+        "es": "Celular mojado",
+        "en": "Water-damaged phone",
+        "pt": "Celular molhado",
+        "fr": "Téléphone mouillé",
+        "de": "Wasserschaden am Handy",
+        "it": "Telefono bagnato",
+        "ja": "スマホの水没",
+        "zh": "手机进水",
+        "ko": "휴대폰 침수",
+        "ar": "هاتف تضرر بالماء"
+      },
+      "keywords": {
+        "es": [
+          "daño por líquido",
+          "se cayó al agua",
+          "humedad en el equipo",
+          "no prende",
+          "corrosión",
+          "recepción de equipo",
+          "taller de celulares"
+        ],
+        "en": [
+          "liquid damage",
+          "dropped in water",
+          "moisture",
+          "won’t turn on",
+          "corrosion",
+          "repair intake",
+          "wet phone"
+        ]
+      }
+    },
+    "laptop-repair": {
+      "label": {
+        "es": "Reparación de laptop",
+        "en": "Laptop repair",
+        "pt": "Conserto de notebook",
+        "fr": "Réparation d’ordinateur portable",
+        "de": "Laptop-Reparatur",
+        "it": "Riparazione del portatile",
+        "ja": "ノートパソコン修理",
+        "zh": "笔记本电脑维修",
+        "ko": "노트북 수리",
+        "ar": "إصلاح الحاسوب المحمول"
+      },
+      "keywords": {
+        "es": [
+          "servicio técnico",
+          "computadora descompuesta",
+          "taller de cómputo",
+          "cambio de pantalla",
+          "orden de servicio",
+          "reparación en garantía",
+          "soporte técnico"
+        ],
+        "en": [
+          "computer repair",
+          "tech support",
+          "broken laptop",
+          "screen replacement",
+          "service order",
+          "warranty repair",
+          "repair shop"
+        ]
+      }
+    },
+    "appliance-repair": {
+      "label": {
+        "es": "Reparación de electrodomésticos",
+        "en": "Appliance repair",
+        "pt": "Conserto de eletrodomésticos",
+        "fr": "Réparation d’électroménager",
+        "de": "Reparatur von Haushaltsgeräten",
+        "it": "Riparazione elettrodomestici",
+        "ja": "家電修理",
+        "zh": "家电维修",
+        "ko": "가전 수리",
+        "ar": "إصلاح الأجهزة المنزلية"
+      },
+      "keywords": {
+        "es": [
+          "lavadora",
+          "arreglar refrigerador",
+          "línea blanca",
+          "servicio técnico",
+          "técnico a domicilio",
+          "visita de mantenimiento",
+          "reparación en garantía"
+        ],
+        "en": [
+          "washing machine",
+          "fridge repair",
+          "white goods",
+          "appliance service",
+          "home repair",
+          "maintenance visit",
+          "warranty repair"
+        ]
+      }
+    },
+    "complaint-book": {
+      "label": {
+        "es": "Libro de reclamaciones",
+        "en": "Complaints book",
+        "pt": "Livro de reclamações",
+        "fr": "Registre des réclamations",
+        "de": "Beschwerdebuch",
+        "it": "Registro dei reclami",
+        "ja": "苦情受付簿",
+        "zh": "投诉登记簿",
+        "ko": "불만 접수 대장",
+        "ar": "سجل الشكاوى"
+      },
+      "keywords": {
+        "es": [
+          "hoja de reclamaciones",
+          "reclamo formal",
+          "protección al consumidor",
+          "libro de quejas",
+          "Indecopi",
+          "derechos del consumidor",
+          "registro oficial"
+        ],
+        "en": [
+          "complaint register",
+          "complaints form",
+          "formal complaint",
+          "consumer protection",
+          "consumer rights",
+          "official register",
+          "complaints sheet"
+        ]
+      }
+    },
+    "field-service": {
+      "label": {
+        "es": "Servicio técnico en sitio",
+        "en": "Field service",
+        "pt": "Serviço de campo",
+        "fr": "Intervention sur site",
+        "de": "Außendienst",
+        "it": "Assistenza in loco",
+        "ja": "出張サービス",
+        "zh": "上门服务",
+        "ko": "출장 서비스",
+        "ar": "خدمة ميدانية"
+      },
+      "keywords": {
+        "es": [
+          "servicio a domicilio",
+          "visita técnica",
+          "técnico a domicilio",
+          "camioneta de servicio",
+          "servicio de campo",
+          "despacho de técnicos",
+          "unidad de servicio"
+        ],
+        "en": [
+          "on-site service",
+          "service visit",
+          "service van",
+          "mobile technician",
+          "house call",
+          "dispatch",
+          "field technician"
+        ]
+      }
+    },
+    "ticket-minus": {
+      "label": {
+        "es": "Quitar boleto",
+        "en": "Remove ticket",
+        "pt": "Remover ingresso",
+        "fr": "Retirer un billet",
+        "de": "Ticket entfernen",
+        "it": "Rimuovi biglietto",
+        "ja": "チケットを減らす",
+        "zh": "移除门票",
+        "ko": "티켓 빼기",
+        "ar": "إزالة تذكرة"
+      },
+      "keywords": {
+        "es": [
+          "menos boletos",
+          "menos entradas",
+          "cambiar cantidad",
+          "editar carrito",
+          "eliminar entrada",
+          "pago de boletos",
+          "ajustar pedido"
+        ],
+        "en": [
+          "fewer tickets",
+          "decrease quantity",
+          "edit cart",
+          "delete ticket",
+          "checkout",
+          "adjust order",
+          "one ticket less"
+        ]
+      }
+    }
+  }
+}

@@ -246,6 +246,7 @@ add('globe-plus', ['agregar dominio', 'conectar dominio', 'nuevo sitio', 'add do
 add('globe-check', ['dominio verificado', 'conectado a internet', 'sitio publicado', 'domain verified', 'connected', 'published'], GLOBE, { badge: badge('check') });
 add('globe-alert', ['error de dominio', 'dns mal configurado', 'sitio caído', 'domain error', 'dns issue', 'site unreachable'], GLOBE, { badge: badge('alert') });
 add('globe-search', ['buscar dominio', 'whois', 'consulta dns', 'domain search', 'dns lookup', 'find domain'], GLOBE, { badge: badge('search') });
+add('globe-x', ['sitio caído', 'sin internet', 'sitio inaccesible', 'sin conexión', 'website down', 'no internet', 'site unreachable'], GLOBE, { badge: badge('x') });
 add('globe-pin', ['ubicación ip', 'geolocalización', 'ubicación del servidor', 'ip location', 'geo ip', 'vpn location'], GLOBE, { badge: PIN_B });
 
 // Custom pieces on other bases
@@ -650,6 +651,19 @@ const NODE = 2;
   ]);
 }
 
+// Star: topology-ring's six nodes around a hub at the center, each linked only to it (datos' network
+// is the generic graph of three). The hub is r 3: at the nodes' r 2 its six spokes met around it and
+// closed its hole.
+{
+  const A = [-90, -30, 30, 90, 150, 210];
+  const N = A.map((a) => polar(12, 12, 8, a));
+  add('topology-star', ['topología en estrella', 'estrella', 'concentrador', 'nodo central', 'star topology', 'hub and spoke', 'central hub'], [
+    circ(12, 12, 3),
+    ...N.map((p) => circ(...p, NODE)),
+    ...N.map((p) => edge([12, 12], p, 3, NODE)),
+  ]);
+}
+
 // ── Measures ──────────────────────────────────────────────────────────────────────────────────
 // Ping: a node sends an arrow to another and a second arrow comes back beneath it
 add('ping', ['ping', 'latencia', 'tiempo de respuesta', 'ping', 'latency', 'round trip'], [
@@ -756,6 +770,7 @@ const FILL = {
   'topology-bus': { solid: range(7, 10), wire: range(0, 6) },
   'topology-mesh': { solid: range(0, 3), wire: range(4, 9) },
   'topology-tree': { solid: range(0, 6), wire: range(7, 12) },
+  'topology-star': { solid: range(0, 6), wire: range(7, 12) },
   ping: { solid: [0, 1], wire: [2, 3, 4, 5] },
   'speed-test': { solid: [1], lines: [0], wire: [2, 3, 4, 5, 6] },
   packet: { solid: [0], cut: [1], wire: [2, 3] },
@@ -776,7 +791,7 @@ for (const [name, { solid = [], cut = [], lines = [], wire = [] }] of Object.ent
 for (const name of ['server-plus', 'server-check', 'server-alert', 'server-x', 'server-gear', 'server-web', 'server-mail', 'server-game', 'server-media', 'server-database', 'server-maintenance'])
   icons[name].fill = SERVER_FILL;
 for (const name of ['network-check', 'network-alert', 'network-gear']) icons[name].fill = { solid: pick(NETWORK_B, NETWORK_FILL.solid), wire: pick(NETWORK_B, NETWORK_FILL.wire) };
-for (const name of ['globe-plus', 'globe-check', 'globe-alert', 'globe-search', 'globe-pin']) icons[name].fill = GLOBE_LOCK.fill;
+for (const name of ['globe-plus', 'globe-check', 'globe-alert', 'globe-search', 'globe-pin', 'globe-x']) icons[name].fill = GLOBE_LOCK.fill;
 icons['cloud-region'].fill = { solid: [CLOUD] };
 // Antenna and bandwidth are lines only: their filled version is the outline
 for (const name of ['antenna', 'bandwidth']) icons[name].fill = false;
@@ -846,6 +861,7 @@ const PARTS = {
   'topology-bus': { backbone: [0, 1, 2], links: range(3, 6), nodes: range(7, 10) },
   'topology-mesh': { nodes: range(0, 3), links: range(4, 9) },
   'topology-tree': { nodes: range(0, 6), links: range(7, 12) },
+  'topology-star': { hub: [0], nodes: range(1, 6), links: range(7, 12) },
   ping: { nodes: [0, 1], arrow: [2, 3, 4, 5] },
   bandwidth: { pipe: [0, 1], level: [2, 3, 4] },
   'speed-test': { dial: [0], pivot: [1], needle: [2], arrows: [3, 4, 5, 6] },
@@ -857,7 +873,7 @@ const PARTS = {
 for (const name of ['server-plus', 'server-check', 'server-alert', 'server-x', 'server-gear', 'server-web', 'server-mail', 'server-game', 'server-media', 'server-database', 'server-maintenance'])
   PARTS[name] = SERVER_PARTS;
 for (const name of ['network-check', 'network-alert', 'network-gear']) PARTS[name] = { hub: [0], links: [1, 2, 3], nodes: [4, 5, 6] };
-for (const name of ['globe-plus', 'globe-check', 'globe-alert', 'globe-search', 'globe-pin']) PARTS[name] = GLOBE_LOCK.parts;
+for (const name of ['globe-plus', 'globe-check', 'globe-alert', 'globe-search', 'globe-pin', 'globe-x']) PARTS[name] = GLOBE_LOCK.parts;
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ── Levels: the wifi fans light up from the inside out, the chevrons from the first ─────────────
@@ -882,7 +898,7 @@ const variants = (names, v) => {
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, circle: false, square: false, slash: false };
 // Already enclosed: a frame or a circle of their own
 variants(['availability-zones', 'virtual-machine', 'subnet', 'power-over-ethernet', 'qr-code-wifi'], { square: false });
-variants(['topology-ring'], { circle: false });
+variants(['topology-ring', 'topology-star'], { circle: false });
 
 // ── Motion ────────────────────────────────────────────────────────────────────────────────────
 icons['server-gear'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
@@ -915,6 +931,7 @@ icons['multi-cloud'].motion = { effect: 'float', parts: ['clouds'], vector: [0, 
 icons['hybrid-cloud'].motion = { effect: 'float', parts: ['cloud'], vector: [0, -1] };
 icons['cloud-network'].motion = { effect: 'float', parts: ['cloud'], vector: [0, -1] };
 icons['topology-ring'].motion = { effect: 'spin', origin: [12, 12] };
+icons['topology-star'].motion = { effect: 'spin', parts: ['nodes', 'links'], origin: [12, 12] };
 
 // ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──────────────
 // At 16 px a pixel is 1.5 of the canvas: straight runs go on pixel centers (0.75 + 1.5k), 45°

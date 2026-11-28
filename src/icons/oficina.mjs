@@ -5,7 +5,7 @@
 // are the engine's (`badge`): it clears the base with exact clearance, nothing is trimmed by hand.
 // The rubber stamp, the printer, the sticky note and the kanban board are the set's own drawings,
 // read from their categories, so a `-check` or a `-plus` only adds its badge.
-import { arc, badge, circ, dot, drop, flipPath, head, line, polar, rot, roundpoly, sq, turn, turnPath } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, flipPath, halfChord, head, line, polar, rot, roundpoly, sq, turn, turnPath } from '../../engine/geometry.mjs';
 import { snapper } from '../../engine/variants.mjs';
 import comercio from './comercio.mjs';
 import datos from './datos.mjs';
@@ -749,6 +749,60 @@ add('date-stamp', ['fechador', 'sello de fecha', 'recibido', 'date stamp', 'date
   hl(21.25, 6.25, 17.75),
 ]);
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────────────
+// The task with a time on it, and one that comes back: the engine's clock, and calendario's
+// recurrence loop (calendar-repeat's racetrack and its one arrowhead) as a glyph badge in the
+// badge's circle, in the icon's style.
+add('task-clock', ['tarea con hora', 'recordatorio', 'vence a las', 'programada', 'task reminder', 'due time', 'scheduled task'], TASK, { badge: badge('clock') });
+{
+  const [dx, dy] = [BC[0] - 12, BC[1] - 16.15];
+  const loop = `M${pt([13.5 + 2 * Math.cos(-Math.PI / 3) + dx, 16.15 + 2 * Math.sin(-Math.PI / 3) + dy])}${arc(13.5 + dx, 16.15 + dy, 2, -60, 90).d.replace(/^M[^A]*/, '')}H${N(10.5 + dx)}${arc(10.5 + dx, 16.15 + dy, 2, 90, 270).d.replace(/^M[^A]*/, '')}H${N(12 + dx)}`;
+  const tip = head([12 + dx, 14.15 + dy], [1, 0], 2.15);
+  add('task-recurring', ['tarea recurrente', 'repetir tarea', 'se repite', 'periódica', 'recurring task', 'repeat task', 'routine'], TASK, { badge: { d: [loop, tip], knock: RING } });
+}
+// The printer added, as printer-check is the printer done.
+add('printer-plus', ['agregar impresora', 'nueva impresora', 'instalar impresora', 'add printer', 'new printer', 'install printer'], PRINTER.d, { badge: badge('plus') });
+// More or fewer decimals: the decimal point and its zeros (the places are the concept), and the
+// arrow under them toward the side the places grow or shrink. Numbers don't mirror.
+{
+  const zero = (x) => pill(x, 4, 4.75, 8.5);
+  add('decimal-increase', ['aumentar decimales', 'más decimales', 'precisión', 'formato de número', 'increase decimals', 'add decimal place', 'number format'], [
+    dot(5, 11.75),
+    zero(8.5),
+    zero(16.25),
+    ...arrow([6.25, 18.25], [17.75, 18.25]),
+  ]);
+  add('decimal-decrease', ['disminuir decimales', 'menos decimales', 'redondear', 'formato de número', 'decrease decimals', 'remove decimal place', 'number format'], [
+    dot(8.75, 11.75),
+    zero(12.25),
+    ...arrow([17.75, 18.25], [6.25, 18.25]),
+  ]);
+}
+// Data validation: the row strip, and the check above it where its family puts what happens to it.
+add('data-validation', ['validación de datos', 'regla de celda', 'valores permitidos', 'lista desplegable', 'data validation', 'cell rule', 'allowed values'], turned([
+  ...strip(SY),
+  line([8.25, 7.9], [10.75, 10.4], [15.75, 5.4]),
+]));
+// Ballpoint pen: the click pen at 45°, the point at the bottom left, the cone, the barrel with its
+// rounded cap, the plunger out of the cap and the clip along the barrel, 2.85 clear of it.
+{
+  const T = [3.25, 20.75];
+  const at = (s, o) => [T[0] + (s + o) * Math.SQRT1_2, T[1] + (o - s) * Math.SQRT1_2];
+  const [hw, s1, s2] = [1.75, 4, 16.5];
+  const R = halfChord(at(s2, -hw), at(s2, hw));
+  const body = `M${pt(at(0, 0))}L${pt(at(s1, -hw))}L${pt(at(s2, -hw))}A${R} ${R} 0 0 1 ${pt(at(s2, hw))}L${pt(at(s1, hw))}Z`;
+  const plunger = line(at(s2 + hw, 0), at(s2 + hw + 2.25, 0));
+  const clip = roundline([at(s2, -hw), at(s2, -hw - 2.85), at(s2 - 7.5, -hw - 2.85)], [0, 1, 0]);
+  add('ballpoint-pen', ['bolígrafo', 'pluma', 'escribir', 'útiles de escritorio', 'ballpoint pen', 'pen', 'click pen'], [body, clip, plunger]);
+}
+// Index card: the landscape card, its heading rule from edge to edge and two ruled lines under it.
+add('index-card', ['ficha', 'tarjeta de notas', 'tarjeta de estudio', 'fichero', 'index card', 'note card', 'flashcard'], [
+  box(2.5, 5, 19, 14, 3.5),
+  hl(9, 2.5, 21.5),
+  hl(12.5, 6, 18),
+  hl(15.75, 6, 18),
+]);
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index into d: `solid` is filled (only closed shapes: `close` closes the open outlines along
 // an edge that is already solid), `cut` is knocked out, `lines` stays a line with clearance and
@@ -829,6 +883,10 @@ const FILL = {
   photocopier: { solid: [1], cut: [2, 3], lines: [0] },
   'approval-chain': { solid: [0, 1, 2, 3], lines: [4, 5] },
   'date-stamp': { solid: [0, 3], wire: [1, 2], cut: [4, 5, 6], lines: [7] },
+  // Round 12
+  'data-validation': { solid: [0], cut: [1, 2], lines: [3] },
+  'ballpoint-pen': { solid: [0], wire: [1, 2] },
+  'index-card': { solid: [0], cut: [1, 2, 3] },
 };
 // The spreadsheet's families share their fill: the strip or the card is filled, its dividers
 // knocked out, and the glyph beside it stays a line.
@@ -836,7 +894,7 @@ for (const name of ['row-insert-above', 'row-insert-below', 'column-insert-left'
   FILL[name] = { solid: [0], cut: [1, 2], lines: [3, 4] };
 for (const name of ['row-freeze', 'column-freeze', 'table-freeze', 'row-header', 'column-header', 'row-banded', 'table-lock', 'cell-merge', 'cell-split', 'formula-bar'])
   FILL[name] = { solid: [0], cut: icons[name].d.map((_, i) => i).slice(1) };
-for (const name of ['task-plus', 'task-blocked', 'task-star', 'task-assign', 'task-reopen']) FILL[name] = FILL.task;
+for (const name of ['task-plus', 'task-blocked', 'task-star', 'task-assign', 'task-reopen', 'task-clock', 'task-recurring']) FILL[name] = FILL.task;
 for (const name of ['notepad-lock', 'meeting-notes']) FILL[name] = FILL.notepad;
 FILL['slide-plus'] = FILL.slide;
 for (const [name, spec] of Object.entries(FILL)) {
@@ -847,7 +905,7 @@ for (const [name, spec] of Object.entries(FILL)) {
 // The reused drawings keep their own fill
 icons['kanban-plus'].fill = KANBAN.fill;
 for (const name of ['sticky-note-plus', 'sticky-note-pin']) icons[name].fill = STICKY.fill;
-for (const name of ['printer-check', 'printer-alert']) icons[name].fill = PRINTER.fill;
+for (const name of ['printer-check', 'printer-alert', 'printer-plus']) icons[name].fill = PRINTER.fill;
 // The stamp's own fill meets its knob with the stem's corners on the circle; with a badge that seam
 // changed between weights, so here the knob and its stem are one outline (same silhouette).
 for (const name of ['rubber-stamp-check', 'rubber-stamp-clock', 'rubber-stamp-x'])
@@ -856,6 +914,8 @@ for (const name of ['rubber-stamp-check', 'rubber-stamp-clock', 'rubber-stamp-x'
 icons.binder.fill.cut.push(vl(12.25, 1.5, 22.5));
 // Lines only: the group brackets, the rubber band and the signature
 for (const name of ['row-group', 'column-group', 'rubber-band', 'sign-off']) icons[name].fill = false;
+// Round 12: the decimal point and its zeros are a glyph; filled, a zero would read as a bar
+for (const name of ['decimal-increase', 'decimal-decrease']) icons[name].fill = false;
 
 // ── Named parts (DESIGN.md › Named parts) ─────────────────────────────────────────────────────
 const PARTS = {
@@ -948,6 +1008,12 @@ const PARTS = {
   'sign-off': { signature: [0], line: [1] },
   'approval-chain': { first: [0, 1], second: [2, 3], arrow: [4, 5] },
   'date-stamp': { handle: [0, 1, 2], body: [3], wheels: [4, 5, 6], base: [7] },
+  // Round 12
+  'decimal-increase': { point: [0], zeros: [1, 2], arrow: [3, 4] },
+  'decimal-decrease': { point: [0], zeros: [1], arrow: [2, 3] },
+  'data-validation': { row: [0, 1, 2], mark: [3] },
+  'ballpoint-pen': { body: [0], clip: [1], plunger: [2] },
+  'index-card': { card: [0], heading: [1], lines: [2, 3] },
 };
 const famPart = (names, spec) => {
   for (const n of names) PARTS[n] = spec;
@@ -956,12 +1022,12 @@ famPart(['row-insert-above', 'row-insert-below', 'row-delete'], { row: [0, 1, 2]
 famPart(['column-insert-left', 'column-insert-right', 'column-delete'], { column: [0, 1, 2], mark: [3, 4] });
 famPart(['row-move-up', 'row-move-down'], { row: [0, 1, 2], arrow: [3, 4] });
 famPart(['column-move-left', 'column-move-right'], { column: [0, 1, 2], arrow: [3, 4] });
-famPart(['task-plus', 'task-blocked', 'task-star', 'task-assign', 'task-reopen'], PARTS.task);
+famPart(['task-plus', 'task-blocked', 'task-star', 'task-assign', 'task-reopen', 'task-clock', 'task-recurring'], PARTS.task);
 famPart(['notepad-lock', 'meeting-notes'], PARTS.notepad);
 famPart(['slide-plus'], PARTS.slide);
 famPart(['kanban-plus'], { columns: [0, 1, 2] });
 famPart(['sticky-note-plus', 'sticky-note-pin'], { note: [0], fold: [1] });
-famPart(['printer-check', 'printer-alert'], PRINTER.parts);
+famPart(['printer-check', 'printer-alert', 'printer-plus'], PRINTER.parts);
 famPart(['rubber-stamp-check', 'rubber-stamp-clock', 'rubber-stamp-x'], STAMP.parts);
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
@@ -1013,6 +1079,13 @@ const MOTION = {
   'rubber-stamp-x': { effect: 'bounce', parts: ['handle', 'pad'], vector: [0, 1.5] },
   'date-stamp': { effect: 'bounce', parts: ['handle', 'body', 'wheels'], vector: [0, 1.5] },
   'sign-off': { effect: 'wiggle', origin: [12, 19.75] },
+  // Round 12
+  'task-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'task-recurring': { effect: 'spin', parts: ['badge'], origin: BC },
+  'printer-plus': { effect: 'beat', parts: ['badge'], origin: BC },
+  'decimal-increase': { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] },
+  'decimal-decrease': { effect: 'slide', parts: ['arrow'], vector: [-1.5, 0] },
+  'ballpoint-pen': { effect: 'wiggle', origin: [3.25, 20.75] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
@@ -1024,6 +1097,8 @@ for (const name of [
   'task-dependency', 'subtask', 'kanban-move', 'meeting-agenda', 'slide-transition', 'slide-animation', 'speaker-notes',
   'row-height', 'row-expand', 'row-group', 'column-freeze', 'column-header', 'table-freeze', 'table-pivot', 'table-transpose',
   'formula-bar', 'worksheet', 'cell-autofill', 'cell-range', 'sign-off', 'approval-chain', 'presenter-view',
+  // Round 12: the bars that grow out of the first column, the pen
+  'ballpoint-pen',
 ])
   icons[name].mirror = true;
 
@@ -1051,6 +1126,13 @@ const small = (name, d, fill) => {
   const a = `M${pt(g(9, 11))}A3 3 0 1 0 ${pt(g(11, 9))}`;
   const h = pl([12, 8], [11, 9], [12, 10]);
   snapped16('task-reopen', { d: [a, h], knock: `${RING}${a}${h}` });
+}
+// Recurring: the racetrack loop on pixel centers (rows 10 and 12, its caps out to columns 8 and 14),
+// open at the top right, and its head at the end of the top run
+{
+  const a = `M${pt(g(13, 10))}A1.5 1.5 0 0 1 ${pt(g(13, 12))}H${N(px(9))}A1.5 1.5 0 0 1 ${pt(g(9, 10))}H${N(px(11))}`;
+  const h = pl([10, 9], [11, 10], [10, 11]);
+  snapped16('task-recurring', { d: [a, h], knock: `${RING}${a}${h}` });
 }
 // Moving a card: the card upright between the columns, the arrow under it
 {

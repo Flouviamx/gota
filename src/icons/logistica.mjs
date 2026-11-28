@@ -1375,6 +1375,81 @@ const icons = {
     tags: ['rastreador gps', 'localizador', 'rastreo de activos', 'asset tracker', 'gps tracker'],
     d: [sq(3.25, 9.75, 11, 11, 3.5, SQ), dot(6.75, 13.25), arc(14.25, 9.75, 3.25, -85, -5).d, arc(14.25, 9.75, 6.25, -85, -5).d],
   },
+
+  // ── Round 12 ──
+  'parcel-edit': { tags: ['editar envío', 'cambiar dirección', 'modificar paquete', 'edit shipment', 'change address'], d: PARCEL_B, badge: badge('edit') },
+  'parcel-question': { tags: ['paquete perdido', 'dónde está mi pedido', 'paquete sin identificar', 'missing package', 'where is my order'], d: PARCEL_B, badge: badge('question') },
+  'parcel-minus': { tags: ['quitar paquete', 'retirar del envío', 'menos paquetes', 'remove package', 'remove parcel'], d: PARCEL_B, badge: badge('minus') },
+  'truck-clock': { tags: ['hora de llegada', 'cita de andén', 'llegada estimada', 'truck eta', 'arrival time', 'dock appointment'], d: TRUCK.d, badge: badge('clock') },
+  // Left at the door: lugares's door, narrower and to the left (its leaf, the floor and the knob),
+  // and a parcel (comercio's box, untaped) standing on the floor in front of its lower right, a piece
+  // the engine clears from the door and the floor
+  'doorstep-delivery': {
+    tags: ['entregado en la puerta', 'dejado en la entrada', 'entrega sin contacto', 'left at door', 'doorstep delivery', 'contactless delivery'],
+    d: [
+      roundline(
+        [
+          [4.25, 21.25],
+          [4.25, 2.75],
+          [14.75, 2.75],
+          [14.75, 21.25],
+        ],
+        [0, 2.5, 2.5, 0],
+      ),
+      line([2.75, 21.25], [10.25, 21.25]),
+      dot(10.25, 11),
+    ],
+    badge: (() => {
+      const box = box3(17, 13.17, 4, 3.75);
+      return own(box, box[0], { solid: [box[0]], cut: box.slice(1) });
+    })(),
+  },
+  // Do not stack (the ISO 780 mark): a taped box, and over it a second box crossed out by an x that
+  // runs past its edges, crossing them 2.25 from their corners; the x stops 3 above the lower box
+  'do-not-stack': {
+    tags: ['no estibar', 'no apilar', 'no encimar', 'do not stack', 'no stacking'],
+    d: [front(4.75, 14.75, 14.5, 6.5), line([12, 14.75], [12, 17]), front(6.5, 3.75, 11, 6.5), line([7.25, 2.25], [16.75, 11.75]), line([16.75, 2.25], [7.25, 11.75])],
+  },
+  // Customs duty: datos's container as freight-sea carries it (its three short ribs) and, under it,
+  // comercio's percent sign (receipt-tax's): the tariff on what it carries. (The percent on the
+  // container's side, between two ribs, read as a coupon.)
+  'customs-duty': {
+    tags: ['arancel', 'impuesto de importación', 'aranceles aduanales', 'customs duty', 'import tax', 'tariff'],
+    d: [sq(3.25, 2.5, 17.5, 8, 3, SQ), ...[7.63, 12, 16.38].map((x) => line([x, 5.5], [x, 7.5])), circ(9, 14.7, 1.35), circ(15, 20.7, 1.35), line([8.75, 20.95], [15.25, 14.45])],
+  },
+  // Reefer: datos's container (freight-sea's, its ribs short and high) across the top, and the snowflake
+  // of the cold chain cut out of its lower right; the ribs end 7.75 from the badge, clear of it
+  'container-snowflake': {
+    tags: ['contenedor refrigerado', 'reefer', 'cadena de frío', 'reefer container', 'refrigerated container', 'cold chain'],
+    d: [sq(2.5, 3.25, 19, 10.5, 3, SQ), ...[7.25, 12, 16.75].map((x) => line([x, 6.25], [x, 9.5]))],
+    badge: PIECE.snowflake(),
+  },
+  // Weigh station: comercio's truck at 0.75 standing on the weighbridge, a long low deck with a ramp at
+  // each end; its wheels keep their size and stand on the deck, 3 below the body
+  'weigh-station': {
+    tags: ['báscula de camiones', 'pesaje', 'báscula camionera', 'weigh station', 'weighbridge', 'truck scale'],
+    d: [
+      ...TRUCK.d.slice(0, 2).map((d) => transform(d, 0.75, 3, 1.5)),
+      circ(8.25, 16.5, 1.5),
+      circ(16.31, 16.5, 1.5),
+      roundpoly(
+        [
+          [2.25, 21.25],
+          [5, 18],
+          [19, 18],
+          [21.75, 21.25],
+        ],
+        [0.5, 0.75, 0.75, 0.5],
+      ),
+    ],
+  },
+  // Voided label: the label's barcode moved up to its top left (three bars, all 7.6 or more from the
+  // badge's center, clear of it at every weight) and its address line below; the engine's x on its corner
+  'shipping-label-x': {
+    tags: ['anular guía', 'guía cancelada', 'cancelar etiqueta', 'void label', 'cancel label'],
+    d: [LABEL, ...[5.75, 8.75, 11.75].map((x) => line([x, 8], [x, 11.75])), line([5.75, 15.5], [9.75, 15.5])],
+    badge: badge('x'),
+  },
 };
 
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
@@ -1446,6 +1521,7 @@ const FILL = {
   'truck-loading': { solid: [z(1), 2, 3, 4], cut: [5, 6], wire: [0, 7, 8] },
   'truck-return': { solid: [0, z(1), 2, 3], cut: [transform(flipPath(SEAM), 0.75, 3, 20.75 - 20.5 * 0.75)], wire: [4, 5] },
   'truck-alert': TRUCK_FILL,
+  'truck-clock': TRUCK_FILL,
   'calendar-truck': { solid: [0], lines: [1, 2], cut: [3, 4, 5] },
   'freight-sea': { solid: [0], cut: [1, 2, 3], lines: [4, 5] },
   'freight-air': PARCEL_FILL,
@@ -1478,6 +1554,9 @@ const FILL = {
   'parcel-alert': PARCEL_FILL,
   'parcel-search': PARCEL_FILL,
   'parcel-plus': PARCEL_FILL,
+  'parcel-edit': PARCEL_FILL,
+  'parcel-question': PARCEL_FILL,
+  'parcel-minus': PARCEL_FILL,
   'parcel-camera': PARCEL_FILL,
   'parcel-heavy': PARCEL_FILL,
   'inventory-level': INVENTORY_FILL,
@@ -1502,6 +1581,15 @@ const FILL = {
   // The swung door fills against the frame, separated from it by the hinge
   'container-open': { solid: [0, z(3)], cut: [1, 2, 'M15 4.5V19.5'] },
   'air-container': { solid: [0], cut: [1] },
+  // Round 12. The door closes along the floor (the leaf filled, the knob knocked out, the floor attached)
+  'doorstep-delivery': { solid: [z(0)], wire: [1], cut: [2] },
+  // The boxes filled; the tape knocked out; the x a line with its clearance across the box it crosses
+  'do-not-stack': { solid: [0, 2], cut: [1], lines: [3, 4] },
+  'customs-duty': { solid: [0, 4, 5], cut: [1, 2, 3], lines: [6] },
+  'container-snowflake': { solid: [0], cut: [1, 2, 3] },
+  // The truck as the truck fills (its cab closed against the box, the seam knocked out), the wheels and the deck filled
+  'weigh-station': { solid: [0, z(1), 2, 3, 4], cut: [transform(SEAM, 0.75, 3, 1.5)] },
+  'shipping-label-x': { solid: [0], cut: [1, 2, 3, 4] },
   'shipping-lane': { solid: [0, 1], wire: [2, 3] },
   'asset-tracker': { solid: [0], cut: [1], lines: [2, 3] },
 };
@@ -1564,6 +1652,7 @@ const PARTS = {
   'truck-loading': { body: [0], cab: [1], wheels: [2, 3], parcel: [4, 5, 6], arrow: [7, 8] },
   'truck-return': { ...TRUCK_PARTS, arrow: [4, 5] },
   'truck-alert': TRUCK_PARTS,
+  'truck-clock': TRUCK_PARTS,
   'calendar-truck': { body: [0], rings: [1, 2], days: [4, 5] },
   'freight-sea': { container: [0, 1, 2, 3], waves: [4, 5] },
   'freight-air': PARCEL_PARTS,
@@ -1597,6 +1686,9 @@ const PARTS = {
   'parcel-alert': PARCEL_PARTS,
   'parcel-search': PARCEL_PARTS,
   'parcel-plus': PARCEL_PARTS,
+  'parcel-edit': PARCEL_PARTS,
+  'parcel-question': PARCEL_PARTS,
+  'parcel-minus': PARCEL_PARTS,
   'parcel-camera': PARCEL_PARTS,
   'parcel-heavy': PARCEL_PARTS,
   'inventory-level': { frame: [0, 1, 2, 3], level: [4, 5, 6] },
@@ -1621,6 +1713,12 @@ const PARTS = {
   'container-open': { body: [0, 1, 2], door: [3] },
   'shipping-lane': { stops: [0, 1], arc: [2, 3] },
   'asset-tracker': { body: [0], hole: [1], level: [2, 3] },
+  'doorstep-delivery': { door: [0], floor: [1], knob: [2] },
+  'do-not-stack': { box: [0, 1], stacked: [2], cross: [3, 4] },
+  'customs-duty': { container: [0, 1, 2, 3], mark: [4, 5, 6] },
+  'container-snowflake': { body: [0], ribs: [1, 2, 3] },
+  'weigh-station': { body: [0], cab: [1], wheels: [2, 3], deck: [4] },
+  'shipping-label-x': { label: [0], barcode: [1, 2, 3], address: [4] },
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
@@ -1632,7 +1730,7 @@ for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...ic
 for (const name of ['this-side-up', 'cross-dock']) icons[name].variants = { ...icons[name].variants, slash: false };
 
 // ── Mirroring: whatever moves forward, goes back or points to one side ────────────────────────
-for (const name of ['forklift', 'delivery-robot', 'delivery-moped', 'cargo-bike', 'curbside-pickup', 'fleet', 'truck-location', 'truck-capacity', 'truck-loading', 'truck-return', 'truck-alert', 'freight-air', 'freight-road', 'parcel-transit', 'cross-dock', 'warehouse-inbound', 'warehouse-outbound', 'picking', 'putaway', 'stock-transfer', 'shipping-lane', 'return-label'])
+for (const name of ['forklift', 'delivery-robot', 'delivery-moped', 'cargo-bike', 'curbside-pickup', 'fleet', 'truck-location', 'truck-capacity', 'truck-loading', 'truck-return', 'truck-alert', 'truck-clock', 'weigh-station', 'freight-air', 'freight-road', 'parcel-transit', 'cross-dock', 'warehouse-inbound', 'warehouse-outbound', 'picking', 'putaway', 'stock-transfer', 'shipping-lane', 'return-label'])
   icons[name].mirror = true;
 
 // ── Levels (value 0–1) ────────────────────────────────────────────────────────────────────────
@@ -1696,6 +1794,11 @@ const MOTION = {
   'this-side-up': { effect: 'slide', parts: ['arrows'], vector: [0, -1.5] },
   'cargo-hook': { effect: 'wiggle', origin: [12, 2.75] },
   'shipping-lane': { effect: 'slide', parts: ['arc'], vector: [1.5, 0] },
+  'truck-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'parcel-question': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'parcel-edit': { effect: 'wiggle', parts: ['badge'], origin: [12.5, 21] },
+  'container-snowflake': { effect: 'spin', parts: ['badge'], origin: BC },
+  'doorstep-delivery': { effect: 'bounce', parts: ['badge'], vector: [0, -1.5] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
@@ -1787,6 +1890,9 @@ for (const [name, kind] of [
     ['parcel-alert', 'alert'],
     ['parcel-search', 'search'],
     ['parcel-plus', 'plus'],
+    ['parcel-edit', 'edit'],
+    ['parcel-question', 'question'],
+    ['parcel-minus', 'minus'],
   ])
     icons[name].small = { ...base, badge: PIECE16[kind] ? PIECE16[kind]() : badge(kind, { size: 16 }) };
 }
@@ -1965,7 +2071,8 @@ function pixelCube(c, top, hw, h) {
   const box = sq(px(1), px(1), 9, 7.5, 1.2, SQ);
   const cab = pl([7, 3], [9, 3], [11, 5], [11, 6], [7, 6]);
   const wheels = [circ(...g(2, 8), 0.1), circ(...g(6, 8), 0.1)];
-  icons['truck-alert'].small = { d: [box, cab, ...wheels], fill: { solid: [box, shut(cab), ...wheels] }, badge: badge('alert', { size: 16 }) };
+  for (const [name, kind] of [['truck-alert', 'alert'], ['truck-clock', 'clock']])
+    icons[name].small = { d: [box, cab, ...wheels], fill: { solid: [box, shut(cab), ...wheels] }, badge: badge(kind, { size: 16 }) };
 }
 
 export default { category: 'logistica', label: 'Logística', icons };

@@ -1576,6 +1576,12 @@ Object.assign(icons, {
     tags: ['mensajes temporales', 'autodestrucción', 'efímero', 'disappearing messages', 'ephemeral'],
     d: [dashedDrop(12, 11.75, 8.75, 10)],
   },
+  // Round 12: written and not sent yet, Núcleo's message with its text and its bubble still dashed
+  // (empty, the dashed bubble is message-disappearing)
+  'message-draft': {
+    tags: ['borrador de mensaje', 'sin enviar', 'mensaje pendiente', 'redactando', 'draft message', 'unsent message', 'draft'],
+    d: [dashedDrop(12, 11.75, 8.75, 10), ...N.message.d.slice(1)],
+  },
   'message-image': {
     tags: ['foto', 'mensaje con imagen', 'mms', 'photo message', 'image'],
     // The landscape fills the bubble: the mountains run from edge to edge, the sun above them
@@ -2023,6 +2029,12 @@ Object.assign(icons, {
     // phone-incoming's arrow over the camera's lens
     d: [...CAMERA_S, line([21.25, 2.75], [16, 8]), head([16, 8], [-1, 1], 4.5)],
   },
+  // Round 12: a video call nobody answered, phone-missed's mark over the camera where
+  // video-call-incoming has its arrow
+  'video-call-missed': {
+    tags: ['videollamada perdida', 'sin contestar', 'llamada de video perdida', 'missed video call', 'unanswered video call', 'missed facetime'],
+    d: [...CAMERA_S, ...ex(18, 6, 2.75)],
+  },
 });
 
 // ── Round 4: telephones, devices and contacts ──────────────────────────────────────────────
@@ -2252,6 +2264,7 @@ Object.assign(FILL, {
   'conference-call': { solid: [2, 3], lines: [0, 1] },
   'caller-id': { solid: [0, 1] },
   'video-call-incoming': { solid: [0], closed: [1], cut: [2, 3], lines: [4, 5] },
+  'video-call-missed': { solid: [0], closed: [1], cut: [2, 3], lines: [4, 5] },
   // The body closes under the handset along the cradle; the dial and its hub are knocked out
   'rotary-phone': { solid: [0], closed: [1], cut: [2, 3] },
   payphone: { solid: [0, 1], cut: rest('payphone', 2) },
@@ -2284,7 +2297,7 @@ icons['thumbs-down'].fill.cut = [xf(THUMB_SEAM, { flipY: true })];
 for (const name of ['reply-all', 'at-sign', 'hashtag', 'broadcast-off', 'rss', 'translate']) icons[name].fill = false;
 // Round 4: the dashes of a disappearing bubble, the history arrow and the hashtag under their badges
 // (the drop in message-history's corner brings its own fill)
-for (const name of ['message-disappearing', 'message-history', 'hashtag-lock', 'hashtag-plus']) icons[name].fill = false;
+for (const name of ['message-disappearing', 'message-history', 'hashtag-lock', 'hashtag-plus', 'message-draft']) icons[name].fill = false;
 
 // ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──
 // At 16 px one pixel is 1.5 canvas units: centers fall on 0.75 + 1.5k and edges on 1.5k. The
@@ -2311,6 +2324,8 @@ for (const name of Object.keys(icons).filter((n) => n.startsWith('message-') && 
 }
 // Disappearing messages: the small bubble's outline in eight dashes (ten fell under a pixel apart)
 icons['message-disappearing'].small = { d: [dashedDrop(12, 12, 8.25, 8)] };
+// The draft: the same eight dashes and the message's two lines on pixel centers
+icons['message-draft'].small = { d: [dashedDrop(12, 12, 8.25, 8), line([8.25, 9.75], [15.75, 9.75]), line([8.25, 12.75], [12.75, 12.75])] };
 // Rotary phone: without the dial's hub (at 16 px it ran into the ring)
 {
   const [hand, body] = icons['rotary-phone'].d;
@@ -2467,6 +2482,8 @@ Object.assign(PARTS, {
   'conference-call': { people: [0, 1, 2, 3] },
   'caller-id': { head: [0], body: [1] },
   'video-call-incoming': { body: [0], lens: [1], caller: [2, 3], arrow: [4, 5] },
+  'video-call-missed': { body: [0], lens: [1], caller: [2, 3], mark: [4, 5] },
+  'message-draft': { body: [0], lines: [1, 2] },
   'rotary-phone': { handset: [0], body: [1], dial: [2, 3] },
   payphone: { unit: [0], handset: [1], slot: [2], keypad: rest('payphone', 3) },
   intercom: { panel: [0], grille: [1, 2, 3], button: [4] },

@@ -5,7 +5,7 @@
 // corner on containers. The law family is built on the two icons this category adopts from
 // comercio, the gavel and the balance scale; the badges are the engine's, and a piece on top of
 // another (the gavel on a page, the shield on a policy) is a custom badge the engine clears.
-import { arc, badge, circ, dot, drop, f, flipPath, halfChord, head, line, polar, roundpoly, sq } from '../../engine/geometry.mjs';
+import { arc, badge, circ, dot, drop, f, flipPath, halfChord, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snapper, transform } from '../../engine/variants.mjs';
 import comercio from './comercio.mjs';
 import comunicacion from './comunicacion.mjs';
@@ -1187,6 +1187,49 @@ const icons = {
     d: LICENSE.map((d) => xf(d, 0.7, [2.75, 2.75])),
     badge: badge('clock'),
   },
+
+  // ── Round 12 ──
+  'license-check': {
+    tags: ['permiso aprobado', 'licencia otorgada', 'permiso vigente', 'permit approved', 'license granted'],
+    d: LICENSE.map((d) => xf(d, 0.7, [2.75, 2.75])),
+    badge: badge('check'),
+  },
+  'contract-search': {
+    tags: ['revisar contrato', 'revisión de cláusulas', 'buscar en contrato', 'contract review', 'clause search'],
+    d: CONTRACT,
+    badge: badge('search'),
+  },
+  'cookie-x': {
+    tags: ['rechazar cookies', 'cookies rechazadas', 'rechazar todas', 'reject cookies', 'cookies rejected', 'reject all'],
+    d: COOKIE_B,
+    badge: badge('x'),
+  },
+  'personal-data-block': {
+    tags: ['no vender mis datos', 'no compartir mis datos', 'exclusión', 'do not sell', 'do not share', 'opt out of sale'],
+    d: PERSONAL_DATA,
+    badge: badge('block'),
+  },
+  // Consent withdrawn: consent's open hand, palm up, under an x where the check was, as wide and as
+  // high
+  'consent-x': {
+    tags: ['retirar consentimiento', 'revocar permiso', 'consentimiento retirado', 'withdraw consent', 'revoke consent', 'opt-out'],
+    d: [...cross([13.25, 7.5], 2.9), CO.donation.d[1], CO.donation.d[2]],
+  },
+  // A protest: a blank picket sign (a board with the signature corner) on its stick, raised and a
+  // little tilted, as a sign held up in a march; no slogan on it
+  'protest-sign': {
+    tags: ['protesta', 'manifestación', 'marcha', 'pancarta', 'protest', 'demonstration', 'picket sign'],
+    d: [sq(3.25, 2.75, 16.5, 10.25, 2.75, SQ), line([11.5, 13], [11.5, 21.25])].map((d) => transform(turnPath(d, -8, [11.5, 21.25]), 1, 1.25, 0)),
+  },
+  // International law: comercio's balance scale (legal-aid's small pans) standing on the core globe:
+  // its post rises from the globe's pole, its pans hang 3 clear of the globe
+  'international-law': {
+    tags: ['derecho internacional', 'tratados', 'comercio exterior', 'international law', 'treaties', 'cross-border'],
+    d: (() => {
+      const [post, , beam, ...pans] = scales({ cx: 12, y: 4.25, B: 6.5, a: 1.75, h: 3.75, top: 2.75, bottom: 10.45, foot: 2, cup: true });
+      return [post, beam, ...pans, ...NU.globe.d.map((d) => xf(d, 0.6, [12, 12], 0, 3.85))];
+    })(),
+  },
 };
 
 // ── Fill (DESIGN.md › Fill) ──────────────────────────────────────────────────────────────────
@@ -1240,9 +1283,15 @@ const FILL = {
   license: { solid: [0, 2], wire: [1], cut: [3] },
   'license-clock': { solid: [0, 2], wire: [1], cut: [3] },
   immigration: { solid: [0, 1], lines: [2, 3, 4, 5, 6, 7] },
+  'license-check': { solid: [0, 2], wire: [1], cut: [3] },
+  'consent-x': { solid: [2, z('consent-x', 3)], lines: [0, 1] },
+  // The board filled, its stick attached
+  'protest-sign': { solid: [0], wire: [1] },
+  // The pans and the globe filled (its meridian and equator knocked out), the post and beam attached
+  'international-law': { solid: [2, 3, 4], wire: [0, 1], cut: [5, 6] },
 };
 // The same fill on every member of a family
-for (const name of ['contract-plus', 'contract-clock', 'contract-x', 'contract-lock', 'contract-renewal']) FILL[name] = FILL.contract;
+for (const name of ['contract-plus', 'contract-clock', 'contract-x', 'contract-lock', 'contract-renewal', 'contract-search']) FILL[name] = FILL.contract;
 FILL['ballot-box-check'] = FILL['ballot-box'];
 for (const name of ['judge', 'lawyer', 'notary', 'voter', 'inmate']) FILL[name] = { solid: [0, 1] };
 // The law book: its bands stand out past the spine, so on the fill they are knocked out across
@@ -1254,14 +1303,14 @@ for (const name of ['law-book', 'law-book-check', 'law-book-search']) {
 }
 // The person in front of the database: the person filled, the database's top filled, the rest of
 // it lines (they already stand 1.5 apart from the person)
-for (const name of ['personal-data', 'personal-data-download', 'personal-data-x', 'personal-data-edit']) FILL[name] = { solid: [0, 1, 2], lines: [3, 4] };
+for (const name of ['personal-data', 'personal-data-download', 'personal-data-x', 'personal-data-edit', 'personal-data-block']) FILL[name] = { solid: [0, 1, 2], lines: [3, 4] };
 for (const [name, spec] of Object.entries(FILL)) {
   const d = icons[name].d;
   icons[name].fill = Object.fromEntries(Object.entries(spec).map(([k, v]) => [k, v.map((x) => (typeof x === 'number' ? d[x] : x))]));
 }
 // Shapes reused whole keep their own fill
 icons['data-residency'].fill = NU.database.fill;
-for (const name of ['cookie-gear', 'cookie-check']) icons[name].fill = { solid: sistema.icons.cookie.fill.solid.map(cookieB), cut: sistema.icons.cookie.fill.cut.filter((d) => COOKIE_KEEP.includes(d)).map(cookieB) };
+for (const name of ['cookie-gear', 'cookie-check', 'cookie-x']) icons[name].fill = { solid: sistema.icons.cookie.fill.solid.map(cookieB), cut: sistema.icons.cookie.fill.cut.filter((d) => COOKIE_KEEP.includes(d)).map(cookieB) };
 icons['archive-lock'].fill = edicion.icons.archive.fill;
 for (const name of ['patent', 'lightbulb-lock']) icons[name].fill = producto.icons['lightbulb-check'].fill;
 // Open lines only: the filled version is the outline itself
@@ -1313,19 +1362,24 @@ const PARTS = {
   immigration: { person: [0, 1], border: [2, 3, 4, 5], arrow: [6, 7] },
   checkpoint: { arm: [0, 4, 5], post: [1, 2, 3] },
   license: { frame: [0], string: [1], nail: [2], seal: [3] },
+  'consent-x': { mark: [0, 1], hand: [2, 3] },
+  'protest-sign': { board: [0], stick: [1] },
+  'international-law': { post: [0], beam: [1], pans: [2, 3], globe: [4, 5, 6] },
 };
-for (const name of ['contract-plus', 'contract-clock', 'contract-x', 'contract-lock', 'contract-renewal']) PARTS[name] = CONTRACT_PARTS;
+for (const name of ['contract-plus', 'contract-clock', 'contract-x', 'contract-lock', 'contract-renewal', 'contract-search']) PARTS[name] = CONTRACT_PARTS;
 PARTS['ballot-box-check'] = PARTS['ballot-box'];
 for (const name of ['law-book-check', 'law-book-search']) PARTS[name] = PARTS['law-book'];
-for (const name of ['personal-data-download', 'personal-data-x', 'personal-data-edit']) PARTS[name] = PARTS['personal-data'];
+for (const name of ['personal-data-download', 'personal-data-x', 'personal-data-edit', 'personal-data-block']) PARTS[name] = PARTS['personal-data'];
 PARTS['cookie-check'] = PARTS['cookie-gear'];
+PARTS['cookie-x'] = PARTS['cookie-gear'];
 PARTS['lightbulb-lock'] = PARTS.patent;
 PARTS['license-clock'] = PARTS.license;
+PARTS['license-check'] = PARTS.license;
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ── Variants, mirroring and motion ───────────────────────────────────────────────────────────
 // Already round or framed: no enclosure of the same shape
-for (const name of ['copyleft', 'wax-seal', 'cookie-gear', 'cookie-check']) icons[name].variants = { circle: false };
+for (const name of ['copyleft', 'wax-seal', 'cookie-gear', 'cookie-check', 'cookie-x']) icons[name].variants = { circle: false };
 icons.prison.variants = { square: false };
 // Writing runs to the right, and the arrow crosses the border to the right
 for (const name of ['fountain-pen', 'quill', 'e-signature', 'immigration']) icons[name].mirror = true;
@@ -1352,6 +1406,10 @@ icons.license.motion = { effect: 'ring', origin: [12, 3.5] };
 icons['data-residency'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, -2] };
 icons['personal-data-download'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, 2] };
 icons.handcuffs.motion = { effect: 'wiggle', origin: [12, 10.9] };
+// Round 12: the magnifier looks over the contract; the sign is waved from its stick; the beam rocks
+icons['contract-search'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 17.25] };
+icons['protest-sign'].motion = { effect: 'wiggle', origin: [12.75, 21.25] };
+icons['international-law'].motion = { effect: 'wiggle', parts: ['beam', 'pans'], origin: [12, 4.25] };
 
 // ── 16 px (DESIGN.md › 16 px) ─────────────────────────────────────────────────────────────────
 // At 16 px a pixel is 1.5 of the canvas and pixel centers fall on 0.75 + 1.5k: g(column, row) is
@@ -1390,7 +1448,7 @@ const zig16 = (c, r, n = 6) => dots16(...Array.from({ length: n }, (_, i) => [c 
 
 // The contract: one line of text, the cross (3 × 3 pixels, clear of every badge) and the rule
 const CONTRACT16 = [DOC, pl([5, 3], [10, 3]), ...dots16([5, 5], [7, 5], [6, 6], [5, 7], [7, 7]), pl([5, 10], [10, 10])];
-for (const name of ['contract', 'contract-plus', 'contract-clock', 'contract-x', 'contract-lock', 'contract-renewal']) body16(name, CONTRACT16);
+for (const name of ['contract', 'contract-plus', 'contract-clock', 'contract-x', 'contract-lock', 'contract-renewal', 'contract-search']) body16(name, CONTRACT16);
 // The section sign in pixels: top bar, the hook down to the loop, the loop, the hook to the foot
 body16('legal-document', [DOC, pl([7, 5], [9, 5]), pl([7, 7], [8, 7]), pl([7, 9], [8, 9]), pl([6, 11], [8, 11]), ...dots16([6, 6], [6, 8], [9, 8], [9, 10])]);
 // Two rows, each a tick and a line

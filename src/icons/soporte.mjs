@@ -17,6 +17,7 @@ import lugares from './lugares.mjs';
 import navegacion from './navegacion.mjs';
 import nucleo from './nucleo.mjs';
 import sistema from './sistema.mjs';
+import vehiculos from './vehiculos.mjs';
 
 // ── Local helpers ─────────────────────────────────────────────────────────────────────────────
 const P = (p) => `${f(p[0])} ${f(p[1])}`;
@@ -429,6 +430,63 @@ add('status-page', ['página de estado', 'estado del servicio', 'disponibilidad'
   ...[12, 16.5].flatMap((y) => [hl(y, 7, 13), dot(16.75, y)]),
 ]);
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────────────
+// The ticket's remaining states, the status page's incident and the SLA met, each on its family's base
+add('ticket-x', ['ticket cerrado', 'caso cancelado', 'sin solución', 'closed ticket', 'canceled ticket'], TICKET_B, { badge: badge('x') });
+add('ticket-minus', ['quitar boleto', 'eliminar ticket', 'menos boletos', 'remove ticket', 'ticket minus'], TICKET_B, { badge: badge('minus') });
+add('ticket-search', ['buscar ticket', 'buscar caso', 'filtrar cola', 'find ticket', 'search tickets'], TICKET_B, { badge: badge('search') });
+add('sla-check', ['sla cumplido', 'a tiempo', 'dentro del plazo', 'sla met', 'on time'], [SHIELD, SLA_HANDS], { badge: badge('check') });
+// The status page with the engine's alert: the badge takes the status dots and the rows' ends, the
+// alert is the page's status now
+add('status-page-alert', ['incidente activo', 'servicio caído', 'interrupción', 'active incident', 'outage'], [
+  ...BROWSER,
+  ...[12, 16.5].map((y) => hl(y, 7, 13)),
+], { badge: badge('alert') });
+// Repair in progress: the phone in for repair with the wrench and the engine's clock, as
+// smartphone-repair-check carries its check
+add('smartphone-repair-clock', ['reparación en proceso', 'en el taller', 'reparación pendiente', 'repair in progress', 'repair pending'], REPAIR, {
+  badge: own([RING, badge('clock').d[1], REPAIR_WRENCH], `${RING}${REPAIR_WRENCH}`, { solid: [RING], cut: [badge('clock').d[1]], wire: [REPAIR_WRENCH] }),
+});
+// Liquid damage: the phone in for repair (moved left, as the repairs) and lugares' droplet in front of
+// its lower right, a piece the engine clears
+const DAMAGE_DROP = transform(lugares.icons.droplet.d[0], 0.55, 16.5 - 12 * 0.55, 16.75 - 13.5 * 0.55);
+add('smartphone-water-damage', ['daño por líquido', 'celular mojado', 'cayó al agua', 'water damage', 'liquid damage', 'wet phone'], REPAIR, {
+  badge: own([DAMAGE_DROP], DAMAGE_DROP, { solid: [DAMAGE_DROP] }),
+});
+// Laptop repair: dispositivos' laptop at 0.9, 1.25 to the left, and the repairs' wrench with its head
+// straddling the screen's right edge at mid-height, its handle on the screen
+const LAPTOP_R = dispositivos.icons.laptop.d.map((d) => move(d, 0.9, [12, 18.75], -1.25));
+const LAPTOP_WRENCH = wrenchAt(17.97, 10.88);
+add('laptop-repair', ['reparar laptop', 'servicio técnico', 'reparación de computadora', 'laptop repair', 'computer repair'], LAPTOP_R, {
+  badge: own([LAPTOP_WRENCH], LAPTOP_WRENCH),
+});
+// Appliance and field repairs: the object at 0.75 low on the left (bienes-raices' washer, vehiculos'
+// van) and the wrench at its top right, in front of its corner, its handle reaching onto it. The washer
+// goes without the knob on its panel, which the handle would leave a stub of
+const WASHER = [
+  'M13.65 2.75c1.96 0 2.94 0 3.69 0.38a3.5 3.5 0 0 1 1.53 1.53c0.38 0.75 0.38 1.73 0.38 3.69L19.25 21.25L10.35 21.25c-1.96 0 -2.94 0 -3.69 -0.38a3.5 3.5 0 0 1 -1.53 -1.53c-0.38 -0.75 -0.38 -1.73 -0.38 -3.69L4.75 8.35c0 -1.96 0 -2.94 0.38 -3.69a3.5 3.5 0 0 1 1.53 -1.53c0.75 -0.38 1.73 -0.38 3.69 -0.38Z',
+  line([4.75, 8.75], [19.25, 8.75]),
+  circ(12, 15.25, 3.5),
+].map((d) => move(d, 0.75, [4.75, 21.25], -2));
+const CORNER_WRENCH = wrenchAt(18.25, 6.5);
+add('appliance-repair', ['reparación de electrodomésticos', 'servicio a lavadoras', 'técnico de línea blanca', 'appliance repair', 'appliance service'], WASHER, {
+  badge: own([CORNER_WRENCH], CORNER_WRENCH),
+});
+// Complaints book: the repair guide's book (archivos', moved left) and a speech drop with the alert cut
+// out of it on its corner, as community-help's drop carries its question: the register for complaints
+const COMPLAINT_MARK = (() => {
+  const b = drop(...BC, 4.25);
+  const m = badge('alert').d.slice(1);
+  return own([RING, b, ...m], b, { solid: [RING, b], cut: m });
+})();
+add('complaint-book', ['libro de reclamaciones', 'hoja de reclamaciones', 'registro de quejas', 'complaints book', 'complaint register'], GUIDE, { badge: COMPLAINT_MARK });
+// Field service: vehiculos' van at 0.75, low on the left, and the wrench at its top right, as the
+// appliance's; the van without its door seam, which the wrench's clearance left a stub of
+const VAN = vehiculos.icons.van.d.slice(0, 5).map((d) => move(d, 0.75, [2.5, 19], 0, 2.25));
+add('field-service', ['servicio en sitio', 'técnico a domicilio', 'visita técnica', 'field service', 'on-site service', 'service van'], VAN, {
+  badge: own([CORNER_WRENCH], CORNER_WRENCH),
+});
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index into d: `solid` filled (closed shapes), `cut` knocked out, `lines` on top with a
 // clearance of paper, `wire` on top and attached. Badges carry their own.
@@ -461,8 +519,16 @@ const FILL = {
   'smartphone-cracked': { solid: [0], cut: [1, 2] },
   'service-center': { solid: [0], cut: [1, 2] },
   'status-page': { solid: [0], cut: range(1, 5) },
+  // Round 12
+  'sla-check': { solid: [0], cut: [1] },
+  'status-page-alert': { solid: [0], cut: [1, 2, 3] },
+  'smartphone-repair-clock': { solid: [0], cut: [1] },
+  'smartphone-water-damage': { solid: [0], cut: [1] },
+  'laptop-repair': { solid: [0], lines: [1] },
+  'appliance-repair': { solid: [0], cut: [1, 2] },
+  'complaint-book': { solid: [0], cut: [1] },
 };
-const TICKETS = ['ticket-plus', 'ticket-check', 'ticket-clock', 'ticket-alert', 'ticket-escalated', 'ticket-reopen', 'ticket-hold'];
+const TICKETS = ['ticket-plus', 'ticket-check', 'ticket-clock', 'ticket-alert', 'ticket-escalated', 'ticket-reopen', 'ticket-hold', 'ticket-x', 'ticket-minus', 'ticket-search'];
 for (const name of TICKETS) FILL[name] = TICKET_FILL;
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
@@ -471,6 +537,8 @@ for (const [name, spec] of Object.entries(FILL)) {
 // Made only of lines: the dashed bubble, the magnifier (as the core search and its family), the detour
 // and the ring arrow (as the core refresh)
 for (const name of ['internal-note', 'search-question', 'workaround', 'around-the-clock']) icons[name].fill = false;
+// The van filled as vehiculos fills it, at its size here
+icons['field-service'].fill = { solid: vehiculos.icons.van.fill.solid.map((d) => move(d, 0.75, [2.5, 19], 0, 2.25)), cut: vehiculos.icons.van.fill.cut.slice(0, 2).map((d) => move(d, 0.75, [2.5, 19], 0, 2.25)) };
 
 // ── Named parts (DESIGN.md › Named parts) ─────────────────────────────────────────────────────
 const PARTS = {
@@ -504,6 +572,14 @@ const PARTS = {
   'smartphone-cracked': { phone: [0], speaker: [1], crack: [2] },
   'service-center': { pin: [0], wrench: [1, 2] },
   'status-page': { window: [0], bar: [1], rows: [2, 4], status: [3, 5] },
+  'sla-check': { shield: [0], hands: [1] },
+  'status-page-alert': { window: [0], bar: [1], rows: [2, 3] },
+  'smartphone-repair-clock': { phone: [0], speaker: [1] },
+  'smartphone-water-damage': { phone: [0], speaker: [1] },
+  'laptop-repair': { screen: [0], base: [1] },
+  'appliance-repair': { body: [0], panel: [1], door: [2] },
+  'complaint-book': { cover: [0], spine: [1] },
+  'field-service': { body: [0], wheels: [1, 2], windows: [3, 4] },
 };
 for (const name of TICKETS) PARTS[name] = { body: [0], perforation: [1] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
@@ -531,13 +607,22 @@ const MOTION = {
   workaround: { effect: 'slide', parts: ['detour'], vector: [1.5, 0] },
   'smartphone-repair': { effect: 'wiggle', parts: ['badge'], origin: [16.5, 10.25] },
   'service-center': { effect: 'bounce', vector: [0, -2] },
+  'ticket-search': { effect: 'wiggle', parts: ['badge'], origin: BC },
+  'sla-check': { effect: 'spin', parts: ['hands'], origin: [12, 12] },
+  'status-page-alert': { effect: 'wiggle', parts: ['badge'], origin: [17.25, 21.5] },
+  'smartphone-repair-clock': { effect: 'wiggle', parts: ['badge'], origin: [16.5, 10.25] },
+  'smartphone-water-damage': { effect: 'bounce', parts: ['badge'], vector: [0, 1.5] },
+  'laptop-repair': { effect: 'wiggle', parts: ['badge'], origin: [17.97, 10.88] },
+  'appliance-repair': { effect: 'wiggle', parts: ['badge'], origin: [17.75, 6.25] },
+  'complaint-book': { effect: 'wiggle', parts: ['badge'], origin: [17.25, 21.5] },
+  'field-service': { effect: 'slide', vector: [2, 0] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
 // ── Mirroring (DESIGN.md › Mirroring) ─────────────────────────────────────────────────────────
 // What reads in a direction: the merge that flows into the ticket, the menu that branches out, the
 // stairs that rise and the detour that carries on
-for (const name of ['ticket-merge', 'phone-menu', 'escalate', 'workaround']) icons[name].mirror = true;
+for (const name of ['ticket-merge', 'phone-menu', 'escalate', 'workaround', 'field-service']) icons[name].mirror = true;
 
 // ── Automatic variants ────────────────────────────────────────────────────────────────────────
 // Already a ring: no circle around it. A slash through a detour says nothing.
@@ -626,6 +711,8 @@ const snapped16 = (name, badge16) => {
   small('smartphone-repair', phone, { solid: [phone[0]], cut: [phone[1]] }, { d: w, knock });
   const chk = badge('check', { size: 16 });
   small('smartphone-repair-check', phone, { solid: [phone[0]], cut: [phone[1]] }, { d: [...w, ...chk.d], knock: `${knock}${chk.knock}` });
+  const clk = badge('clock', { size: 16 });
+  small('smartphone-repair-clock', phone, { solid: [phone[0]], cut: [phone[1]] }, { d: [...w, ...clk.d], knock: `${knock}${clk.knock}` });
 }
 
 export default { category: 'soporte', label: 'Soporte y servicio', icons };

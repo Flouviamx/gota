@@ -1451,6 +1451,19 @@ const icons = {
     // datos' gauge, its needle high on the right, turning on the sparkle
     d: [arc(12, 15, 9, 180, 360).d, line(polar(12, 15, 4.5, -45), polar(12, 15, 9, -45)), spark(12, 15)],
   },
+
+  // Round 12 -----------------------------------------------------------------------------------
+  'agent-minus': { tags: ['quitar agente', 'desactivar agente', 'eliminar bot', 'remove agent', 'deactivate agent', 'delete bot'], d: AGENT_B, badge: badge('minus') },
+  'brain-gear': {
+    tags: ['ajustes de ia', 'configurar inteligencia artificial', 'preferencias de ia', 'ai settings', 'ai preferences', 'ai features'],
+    d: BRAIN,
+    badge: badge('gear'),
+  },
+  'text-to-3d': {
+    tags: ['texto a 3d', 'generar modelo 3d', 'objeto 3d con ia', 'text to 3d', '3d generation', 'generate 3d model'],
+    // The family's text and arc, and the core box at half size centered on the result's place
+    d: [...SRC.text, ...FLOW, ...N.box.d.map((d) => place(d, 0.5, [12, 12], [17, 16.75]))],
+  },
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -1475,6 +1488,8 @@ const FILL = {
   // Each hemisphere closes against the middle line, as datos' brain
   'brain-circuit': { closed: [0, 1], cut: ix(2, 6) },
   'brain-clock': { closed: [0, 1], cut: ix(2, 6) },
+  'brain-gear': { closed: [0, 1], cut: ix(2, 6) },
+  'text-to-3d': { solid: [6], cut: [4, 5], lines: FLOW_LINES },
   perceptron: { solid: [0], wire: ix(1, 5) },
   'self-attention': { solid: [0, 1, 2, 3], wire: [4, 5, 6] },
   backpropagation: { solid: [0, 1, 2], wire: [3, 4], lines: [5, 6] },
@@ -1581,7 +1596,7 @@ for (const name of ['model-fine-tune', 'model-check', 'model-download', 'model-p
 // The pennant filled, its pole a line attached to the cube
 FILL['model-checkpoint'] = { solid: [0, 5], cut: [1, 2, 3], wire: [4] };
 for (const name of ['dataset-plus', 'dataset-check']) FILL[name] = FILL.dataset;
-for (const name of ['agent-plus', 'agent-gear', 'agent-clock', 'agent-check', 'agent-question', 'agent-alert', 'agent-lock']) FILL[name] = FILL.agent;
+for (const name of ['agent-plus', 'agent-gear', 'agent-clock', 'agent-check', 'agent-question', 'agent-alert', 'agent-lock', 'agent-minus']) FILL[name] = FILL.agent;
 for (const [name, spec] of Object.entries(FILL)) {
   const d = icons[name].d;
   const pick = (list) => (list ?? []).map((i) => d[i]);
@@ -1625,6 +1640,8 @@ const PARTS = {
   'model-drift': { curve: [0], drifted: [1], axis: [2], arrow: [3, 4] },
   inference: { input: [0], cube: [1, 2, 3], output: [4, 5] },
   'brain-clock': { brain: ix(0, 6) },
+  'brain-gear': { brain: ix(0, 6) },
+  'text-to-3d': { text: [0, 1], arrow: [2, 3], cube: [4, 5, 6] },
   'reinforcement-learning': { agent: [0], reward: [1], loop: [2, 3, 4, 5] },
   'gradient-descent': { valley: [0], ball: [1], arrow: [2, 3] },
   'dataset-plus': { cards: [0, 1, 2], grid: ix(3, 8) },
@@ -1662,7 +1679,7 @@ const PARTS = {
 };
 for (const name of ['model-fine-tune', 'model-check', 'model-download', 'model-plus', 'model-alert', 'model-lock']) PARTS[name] = PARTS.model;
 PARTS['model-checkpoint'] = { ...PARTS.model, flag: [4, 5] };
-for (const name of ['agent-plus', 'agent-gear', 'agent-clock', 'agent-check', 'agent-question', 'agent-alert', 'agent-lock']) PARTS[name] = PARTS.agent;
+for (const name of ['agent-plus', 'agent-gear', 'agent-clock', 'agent-check', 'agent-question', 'agent-alert', 'agent-lock', 'agent-minus']) PARTS[name] = PARTS.agent;
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ---------------------------------------------------------------------------------------------
@@ -1687,6 +1704,7 @@ icons['hand-tracking'].motion = { effect: 'wiggle', origin: [12, 20.75] };
 icons.prediction.motion = { effect: 'beat', parts: ['spark'], origin: [12, 9.25] };
 icons.recommendation.motion = { effect: 'beat', origin: [10.75, 13] };
 icons['confidence-score'].motion = { effect: 'wiggle', parts: ['needle'], origin: [12, 15] };
+icons['brain-gear'].motion = { effect: 'spin', parts: ['badge'], origin: [17.25, 17.25] };
 // A value: the needle sweeps the dial, from its left end (180°) at 0 to its right end (360°) at 1
 icons['confidence-score'].value = { turn: { parts: ['needle'], origin: [12, 15], from: 180, to: 360, at: 315 } };
 
@@ -1706,7 +1724,7 @@ for (const name of [
   'token-limit', 'sampling-temperature', 'prompt-gear', 'prompt-edit', 'prompt-template', 'prompt-library', 'prompt-image',
   'prompt-chain', 'prompt-injection', 'prompt-suggestions', 'subagent', 'agent-handoff', 'agent-workflow', 'agent-plan',
   'human-handoff', 'assistant-panel', 'assistant-canvas', 'inline-completion', 'response-streaming', 'reasoning-effort',
-  'chain-of-thought', 'text-to-image', 'text-to-video', 'text-to-speech', 'text-to-music', 'text-to-sql', 'image-to-video',
+  'chain-of-thought', 'text-to-image', 'text-to-3d', 'text-to-video', 'text-to-speech', 'text-to-music', 'text-to-sql', 'image-to-video',
   'style-transfer', 'data-augmentation', 'data-labeling', 'image-captioning', 'speech-recognition', 'voice-clone', 'object-tracking', 'entity-extraction',
   'document-parsing',
 ])

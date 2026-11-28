@@ -298,6 +298,29 @@ function rline(pts, r) {
   return `${d}L${P(pts[pts.length - 1])}`;
 }
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────
+/**
+ * The top and right edges of a box that stands behind another (a page under the front one): from
+ * `x0` on its top edge, round its continuous top-right corner and down its right edge to `y1`.
+ */
+const backEdge = (x, y, w, h, r, x0, y1) => {
+  const d = box(x, y, w, h, r);
+  return `M${P([x0, y])}L${d.slice(1, d.indexOf('L'))}L${P([x + w, y1])}`;
+};
+// edicion's copy (the back page's corner and the front page) at 0.52 of its size, in the badge's place
+const COPY_K = 0.52;
+const copyAt = ([x, y]) => [12.75 + (x - 3.25) * COPY_K, 12.75 + (y - 3.25) * COPY_K];
+const COPY_PIECE = (() => {
+  const back = rline([[13.75, 7.25], [13.75, 3.25], [3.25, 3.25], [3.25, 13.75], [7.25, 13.75]].map(copyAt), 2.5 * COPY_K);
+  const [x0, y0] = copyAt([10.25, 10.25]);
+  const front = box(x0, y0, 10.5 * COPY_K, 10.5 * COPY_K, 2.5 * COPY_K);
+  const [a, b] = [copyAt([3.25, 3.25]), copyAt([20.75, 20.75])];
+  const knock = roundpoly([a, [copyAt([13.75, 0])[0], a[1]], [copyAt([13.75, 0])[0], y0], [b[0], y0], b, [x0, b[1]], [x0, copyAt([0, 13.75])[1]], [a[0], copyAt([0, 13.75])[1]]], 1.3);
+  return piece([back, front], knock, { solid: [front], lines: [back] });
+})();
+// A signature written across the field's band: a rising stroke, one loop and a trailing wave
+const SIGNATURE = 'M5.75 14.5C7 11 8.75 9 9.5 10C10.25 11 8 14.5 9 14.75C10 15 11.25 12 12.75 12C14 12 13.5 14 14.75 14C15.75 14 16.75 13.25 18.25 12.75';
+
 const icons = {
   // ── Text fields ──
   input: {
@@ -474,11 +497,43 @@ const icons = {
     // The value and a key: its bow (r 1.75, so its hole stays open at 18 px), its shaft and its bit
     d: [FIELD, hl(6.25, 9, 12), circ(13.75, 12, 1.75), line([15.5, 12], [18.5, 12], [18.5, 14.25])],
   },
+  'input-copy': {
+    tags: ['campo para copiar', 'clave de api', 'enlace de invitación', 'copy field', 'api key', 'invite link'],
+    // A value and edicion's copy in the badge's place: no caret, the field is read-only
+    d: [FIELD, hl(6.25, 10.5, 12)],
+    badge: COPY_PIECE,
+  },
+  'input-card': {
+    tags: ['número de tarjeta', 'pago', 'tarjeta de crédito', 'card number', 'card field', 'checkout'],
+    // The core card (its stripe 3 below the top) in the badge's place: inside the band it read as a box
+    d: [FIELD, CARET],
+    badge: (() => {
+      const card = box(12.75, 14, 9, 7, 1.75);
+      const stripe = hl(12.75, 21.75, 17);
+      return piece([card, stripe], card, { solid: [card], cut: [stripe] });
+    })(),
+  },
+  'input-signature': {
+    tags: ['campo de firma', 'firmar', 'firma electrónica', 'signature field', 'e-sign', 'sign here'],
+    d: [FIELD, SIGNATURE],
+  },
+  'input-formula': {
+    tags: ['campo de fórmula', 'calculado', 'valor calculado', 'formula field', 'computed', 'calculated field'],
+    // oficina's formula-bar equals sign at the field's left end and the value it gives
+    d: [FIELD, hl(5.75, 8.75, 10.5), hl(5.75, 8.75, 13.5), hl(11.75, 17.25, 12)],
+  },
   textarea: {
     tags: ['área de texto', 'texto largo', 'descripción', 'textarea', 'multi-line', 'long answer'],
     // Three lines of decreasing length and the resize grip in the square corner: two parallel
     // strokes 3 apart, 3 inside its edges
     d: [box(3.25, 3.25, 17.5, 17.5, 4), hl(7.25, 16.75, 7.75), hl(7.25, 13.5, 11), hl(7.25, 9.75, 14.25), line([15.25, 17.75], [17.75, 15.25]), line([12.26, 16.5], [16.5, 12.26])],
+  },
+
+  'textarea-rich': {
+    tags: ['texto enriquecido', 'editor', 'formato', 'rich text', 'wysiwyg', 'text editor'],
+    // textarea's text formatted as a list, each line with its bullet, and the grip (a toolbar across the
+    // top read as a browser window, its buttons as the window's three dots)
+    d: [box(3.25, 3.25, 17.5, 17.5, 4), dot(7.25, 7.25), hl(11, 16.75, 7.25), dot(7.25, 10.5), hl(11, 14, 10.5), line([15.25, 17.75], [17.75, 15.25]), line([12.26, 16.5], [16.5, 12.26])],
   },
 
   // ── Selects and lists ──
@@ -501,6 +556,16 @@ const icons = {
     tags: ['crear opción', 'nueva etiqueta', 'agregar categoría', 'creatable select', 'add option', 'new tag'],
     d: select(-3.25),
     badge: badge('plus'),
+  },
+  'select-multiple': {
+    tags: ['selección múltiple', 'varias opciones', 'desplegable múltiple', 'multi-select', 'multiple select', 'multiselect'],
+    // select-open with two options, both checked: its panel 15 × 20 so each check stands 3 clear
+    d: [box(4.5, 2, 15, 20, 3.5), hl(4.5, 19.5, 9.5), chevron(15, 5.75, 3, 1.5, true), hl(13.75, 16.5, 13.75), hl(13.75, 15.75, 18.5), check(9.25, 13.75, 3.5), check(9.25, 18.5, 3.5)],
+  },
+  'select-cascade': {
+    tags: ['selector en cascada', 'país estado ciudad', 'selección dependiente', 'cascader', 'cascading select', 'dependent dropdown'],
+    // Two selects, the second hanging from the first on an elbow: chosen level by level
+    d: [box(2.5, 2.5, 14, 7.5, 2.5), chevron(12, 6.25, 3, 1.5), rline([[5.5, 10], [5.5, 17.75], [7.5, 17.75]], 1.5), box(7.5, 14, 14, 7.5, 2.5), chevron(17, 17.75, 3, 1.5)],
   },
   combobox: {
     tags: ['cuadro combinado', 'sugerencias', 'escribir o elegir', 'combobox', 'suggestions', 'typeahead'],
@@ -541,6 +606,12 @@ const icons = {
   'radio-group': {
     tags: ['opción única', 'botones de opción', 'elegir una', 'radio buttons', 'single choice', 'multiple choice question'],
     d: [circ(6.5, 7.25, 3.25), dot(6.5, 7.25), hl(12.75, 20.75, 7.25), circ(6.5, 16.75, 3.25), hl(12.75, 18, 16.75)],
+  },
+  'radio-group-alert': {
+    tags: ['opción requerida', 'error de selección', 'elegir una opción', 'required choice', 'radio error', 'select an option'],
+    // radio-group with nothing chosen and the alert in the second label's place
+    d: [circ(6.5, 7.25, 3.25), hl(12.75, 20.75, 7.25), circ(6.5, 16.75, 3.25)],
+    badge: badge('alert'),
   },
   'choice-grid': {
     tags: ['cuadrícula', 'matriz', 'escala por fila', 'grid question', 'matrix', 'likert grid'],
@@ -652,10 +723,21 @@ const icons = {
     tags: ['botón cargando', 'enviando', 'procesando', 'button loading', 'submitting', 'busy button'],
     d: [PILL, arc(12, 12, 2.75, -90, 180).d],
   },
+  'button-check': {
+    tags: ['botón listo', 'acción completada', 'enviado', 'button done', 'success button', 'completed'],
+    // button-loading's next state: the pill and its check
+    d: [PILL, check(12, 12, 5.5)],
+  },
   'button-floating': {
     tags: ['botón flotante', 'acción principal', 'crear', 'floating action button', 'fab', 'primary action'],
     // The screen's bottom-right corner (square: the signature) and the round button with its plus
     d: [line([21, 3.25], [21, 21], [3.25, 21]), circ(12.5, 12.5, 5.25), ...plus(12.5, 12.5, 2.25)],
+  },
+  'button-floating-menu': {
+    tags: ['marcación rápida', 'botón flotante abierto', 'acciones rápidas', 'speed dial', 'fab menu', 'quick actions'],
+    // button-floating opened: smaller, its plus turned into an x, and its two actions above and beside
+    // it as solid discs
+    d: [line([21, 3.25], [21, 21], [3.25, 21]), circ(13.25, 13.25, 4.75), ...ex(13.25, 13.25, 1.3), dot(13.25, 4.65, 1), dot(4.65, 13.25, 1)],
   },
   'segmented-control': {
     tags: ['control segmentado', 'pestañas', 'modo de vista', 'segmented control', 'toggle group', 'view switcher'],
@@ -829,6 +911,11 @@ const icons = {
     d: FORM,
     badge: badge('gear'),
   },
+  'form-reset': {
+    tags: ['restablecer formulario', 'valores por defecto', 'limpiar formulario', 'reset form', 'clear form', 'defaults'],
+    d: FORM,
+    badge: badge('sync'),
+  },
   'form-columns': {
     tags: ['formulario en columnas', 'dos columnas', 'diseño de formulario', 'two-column form', 'form layout', 'columns'],
     d: [hl(4.25, 8.25, 3.25), slot(3.25, 6.25, 7.25), hl(14.5, 18.5, 3.25), slot(13.5, 6.25, 7.25), hl(4.25, 10.25, 13.5), slot(3.25, 16.5, 17.5)],
@@ -848,6 +935,11 @@ const icons = {
     // read as a notepad's): the legend 3 from the frame on each side
     d: [box(3.25, 4.5, 17.5, 16, 2.25).replace(/Z$/, '').replace(/^M/, 'M16.35 4.5L'), hl(9.85, 13.35, 4.5), hl(6.25, 17.75, 10), hl(6.25, 13.5, 15)],
   },
+  'fieldset-plus': {
+    tags: ['repetir grupo', 'agregar otra dirección', 'grupo repetible', 'repeatable group', 'add another', 'repeat fields'],
+    d: [box(3.25, 4.5, 17.5, 16, 2.25).replace(/Z$/, '').replace(/^M/, 'M16.35 4.5L'), hl(9.85, 13.35, 4.5), hl(6.25, 17.75, 10), hl(6.25, 13.5, 15)],
+    badge: badge('plus'),
+  },
   'form-steps': {
     tags: ['formulario por pasos', 'asistente', 'varios pasos', 'multi-step form', 'wizard', 'form steps'],
     // The steps across the top (the first one current, solid) and the step's fields below
@@ -866,6 +958,11 @@ const icons = {
     tags: ['encuesta', 'cuestionario', 'responder', 'survey', 'questionnaire', 'poll'],
     // A page with two answers: the chosen one solid
     d: [box(4.75, 2.75, 14.5, 18.5, 3.75), dot(9.25, 9, 1), hl(13.75, 16.25, 9), circ(9.25, 15, 1.5), hl(13.75, 16.25, 15)],
+  },
+  'form-responses': {
+    tags: ['respuestas', 'envíos', 'resultados del formulario', 'form responses', 'submissions', 'entries'],
+    // survey's page answered, with the edges of the one under it: the answers piling up
+    d: [backEdge(6.75, 3.25, 14, 14.5, 3.25, 6.75, 17.75), box(3.25, 7, 14, 14.25, 3.25), dot(7.5, 12, 1), hl(12, 14.25, 12), circ(7.5, 17, 1.5), hl(12, 14.25, 17)],
   },
   accordion: {
     tags: ['acordeón', 'secciones plegables', 'preguntas frecuentes', 'accordion', 'collapsible', 'faq'],
@@ -981,10 +1078,21 @@ const FILL = {
   'form-logic': { solid: [0, 3, 4], wire: [1, 2] },
   survey: { solid: [0], cut: [1, 2, 3, 4] },
   accordion: { solid: [0], cut: [1, 2, 3, 4] },
+  'input-copy': { solid: [0], cut: [1] },
+  'input-card': { solid: [0], cut: [1] },
+  'input-signature': { solid: [0], cut: [1] },
+  'input-formula': { solid: [0], cut: [1, 2, 3] },
+  'textarea-rich': { solid: [0], cut: [1, 2, 3, 4, 5, 6] },
+  'select-multiple': { solid: [0], cut: [1, 2, 3, 4, 5, 6] },
+  'select-cascade': { solid: [0, 3], cut: [1, 4], wire: [2] },
+  'radio-group-alert': { solid: [0, 2], lines: [1] },
+  'button-check': { solid: [0], cut: [1] },
+  'button-floating-menu': { solid: [1, 4, 5], cut: [2, 3], lines: [0] },
+  'form-responses': { solid: [1], cut: [2, 3, 4, 5], lines: [0] },
 };
 for (const name of ['input-check', 'input-alert', 'input-x', 'input-lock', 'input-plus', 'input-required', 'input-time', 'input-currency', 'input-date', 'input-voice']) FILL[name] = { solid: [0], cut: [1] };
 // The form keeps edicion's fill: its fields solid, its labels lines
-for (const name of ['form-check', 'form-alert', 'form-plus', 'form-lock', 'form-edit', 'form-gear']) FILL[name] = { solid: [1, 3], lines: [0, 2] };
+for (const name of ['form-check', 'form-alert', 'form-plus', 'form-lock', 'form-edit', 'form-gear', 'form-reset']) FILL[name] = { solid: [1, 3], lines: [0, 2] };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
   icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
@@ -992,7 +1100,7 @@ for (const [name, spec] of Object.entries(FILL)) {
 // Open lines, dashes and bare marks: their filled version is the outline itself (a dashed outline
 // can't be filled, and the fieldset's frame is open for its legend). Rows of options and steps too:
 // their state is a solid disc among rings, and filling the rings would erase it.
-for (const name of ['inline-edit', 'input-hidden', 'ranking', 'chip-add', 'dropzone', 'rating-emoji', 'validation-rules', 'fieldset', 'choice-grid', 'rating-scale', 'passcode', 'progress-steps'])
+for (const name of ['inline-edit', 'input-hidden', 'ranking', 'chip-add', 'dropzone', 'rating-emoji', 'validation-rules', 'fieldset', 'fieldset-plus', 'choice-grid', 'rating-scale', 'passcode', 'progress-steps'])
   icons[name].fill = false;
 
 // ── Named parts ───────────────────────────────────────────────────────────────────────────
@@ -1090,9 +1198,21 @@ const PARTS = {
   accordion: { frame: [0], dividers: [1, 2], chevron: [3], content: [4] },
   'progress-steps': { current: [0], line: [1, 3], steps: [2, 4] },
   'validation-rules': { pass: [0], rules: [1, 4], fail: [2, 3] },
+  'input-copy': { field: [0], value: [1] },
+  'input-card': { field: [0], caret: [1] },
+  'input-signature': { field: [0], signature: [1] },
+  'input-formula': { field: [0], equals: [1, 2], value: [3] },
+  'textarea-rich': { field: [0], bullets: [1, 3], text: [2, 4], grip: [5, 6] },
+  'select-multiple': { field: [0], divider: [1], chevron: [2], options: [3, 4], mark: [5, 6] },
+  'select-cascade': { first: [0, 1], branch: [2], second: [3, 4] },
+  'radio-group-alert': { radio: [0, 2], labels: [1] },
+  'button-check': { body: [0], mark: [1] },
+  'button-floating-menu': { screen: [0], button: [1], mark: [2, 3], actions: [4, 5] },
+  'fieldset-plus': { frame: [0], legend: [1], fields: [2, 3] },
+  'form-responses': { back: [0], page: [1], chosen: [2], options: [3, 4, 5] },
 };
 for (const name of ['input-check', 'input-alert', 'input-x', 'input-lock', 'input-plus', 'input-required', 'input-time', 'input-currency', 'input-date', 'input-voice']) PARTS[name] = { field: [0], caret: [1] };
-for (const name of ['form-check', 'form-alert', 'form-plus', 'form-lock', 'form-edit', 'form-gear']) PARTS[name] = { labels: [0, 2], fields: [1, 3] };
+for (const name of ['form-check', 'form-alert', 'form-plus', 'form-lock', 'form-edit', 'form-gear', 'form-reset']) PARTS[name] = { labels: [0, 2], fields: [1, 3] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ── Motion ────────────────────────────────────────────────────────────────────────────────
@@ -1109,6 +1229,7 @@ const MOTION = {
   'form-edit': { effect: 'wiggle', parts: ['badge'], origin: [12.5, 21] },
   'form-gear': { effect: 'spin', parts: ['badge'], origin: BC },
   'password-reset': { effect: 'spin', parts: ['badge'], origin: BC },
+  'form-reset': { effect: 'spin', parts: ['badge'], origin: BC },
   'button-loading': { effect: 'spin', parts: ['spinner'], origin: [12, 12] },
   button: { effect: 'bounce', parts: ['badge'], vector: [-1, -1] },
   'slide-to-confirm': { effect: 'slide', parts: ['knob'], vector: [2.5, 0] },
@@ -1139,6 +1260,8 @@ for (const name of [
   'slider-histogram', 'slider-value', 'button-split', 'button-dropdown', 'button-floating', 'segmented-control', 'number-stepper', 'slide-to-confirm',
   'chip', 'chip-selected', 'chip-avatar', 'status-label', 'date-picker', 'rating-emoji', 'rating-scale', 'one-time-code', 'passcode', 'password-strength',
   'password-reveal', 'password-reset', 'validation-rules', 'form-inline', 'input-key-value', 'form-steps', 'form-login', 'survey', 'accordion', 'progress-steps',
+  'input-copy', 'input-card', 'input-signature', 'input-formula', 'textarea-rich', 'select-multiple', 'select-cascade', 'radio-group-alert',
+  'button-floating-menu', 'form-responses',
 ])
   icons[name].mirror = true;
 
@@ -1148,7 +1271,7 @@ const off = (names, v) => {
 };
 // Already enclosed
 off(['time-picker', 'avatar-upload'], { circle: false });
-off(['textarea', 'checkbox-alert', 'select-open', 'listbox', 'accordion'], { square: false });
+off(['textarea', 'checkbox-alert', 'select-open', 'listbox', 'accordion', 'textarea-rich', 'select-multiple'], { square: false });
 // A slash says nothing through loose marks, spinners and switches (as in sistema), or through a
 // field that is already hidden
 off(['passcode', 'ranking', 'validation-rules', 'rating-emoji', 'input-hidden', 'input-loading', 'button-loading', 'toggle-mixed', 'toggle-lock', 'slide-to-confirm'], { slash: false });
@@ -1282,6 +1405,19 @@ const SMALL = {
   survey: sm([pbox(3, 1, 12, 14, 2), pring(6, 5, 3), p1(6, 5), pl([8, 5], [10, 5]), pring(6, 10, 3), pl([8, 10], [10, 10])], { solid: [0], cut: [1, 2, 3, 4, 5] }),
   accordion: sm([pbox(2, 1, 13, 14, 2), pl([2, 6], [13, 6]), pl([2, 11], [13, 11]), pl([9, 3], [10, 4], [11, 3]), pl([5, 8], [9, 8])], { solid: [0], cut: [1, 2, 3, 4] }),
   'progress-steps': sm([dot(px(2), px(7), 0.75), pl([3, 7], [6, 7]), pring(7, 7, 3), pl([8, 7], [11, 7]), pring(12, 7, 3)], null),
+  // ── Round 12 ──
+  'input-copy': sm([F16, pl([3, 7], [6, 7])], { solid: [0], cut: [1] }, { badge: piece16([pl([12, 9], [9, 9], [9, 12]), pbox(11, 11, 14, 14, 1.2)], { solid: [pbox(11, 11, 14, 14, 1.2)], lines: [pl([12, 9], [9, 9], [9, 12])] }) }),
+  'input-card': sm([F16, C16], { solid: [0], cut: [1] }, { badge: piece16([pbox(9, 10, 14, 14, 1.2), pl([9, 12], [14, 12])], { solid: [pbox(9, 10, 14, 14, 1.2)], cut: [pl([9, 12], [14, 12])] }) }),
+  'input-signature': sm([F16, pl([3, 9], [5, 6], [6, 7], [7, 9], [8, 8], [9, 7], [10, 8], [11, 8], [12, 7])], { solid: [0], cut: [1] }),
+  'input-formula': sm([F16, pl([3, 6], [5, 6]), pl([3, 8], [5, 8]), pl([8, 7], [11, 7])], { solid: [0], cut: [1, 2, 3] }),
+  'textarea-rich': sm([pbox(2, 2, 13, 13, 3), p1(4, 5), pl([6, 5], [10, 5]), p1(4, 8), pl([6, 8], [8, 8]), pl([10, 11], [11, 10]), pl([8, 11], [11, 8])], { solid: [0], cut: [1, 2, 3, 4, 5, 6] }),
+  // The divider gives way: two checks and the chevron need every row of the panel
+  'select-multiple': sm([pbox(2, 1, 13, 14, 2), pl([9, 4], [10, 3], [11, 4]), pl([8, 7], [11, 7]), pl([8, 11], [10, 11]), pl([3, 7], [4, 8], [6, 6]), pl([3, 11], [4, 12], [6, 10])], { solid: [0], cut: [1, 2, 3, 4, 5] }),
+  'select-cascade': sm([pbox(1, 1, 9, 6, 1.5), pl([5, 3], [6, 4], [7, 3]), pl([3, 6], [3, 12], [5, 12]), pbox(5, 9, 14, 14, 1.5), pl([10, 11], [11, 12], [12, 11])], { solid: [0, 3], cut: [1, 4], wire: [2] }),
+  'button-check': sm([P16, pl([5, 7], [7, 9], [10, 6])], { solid: [0], cut: [1] }),
+  // The button's ring and its two actions: an x inside six pixels was a blot
+  'button-floating-menu': sm([pl([14, 1], [14, 14], [1, 14]), pring(8.5, 8.5, 6), p2(9, 3), p2(3, 9)], { solid: [1, 2, 3], lines: [0] }),
+  'form-responses': sm([pl([4, 1], [13, 1], [13, 10]), pbox(1, 4, 11, 14, 2), pl([4, 8], [8, 8]), pl([4, 11], [7, 11])], { solid: [1], cut: [2, 3], lines: [0] }),
   'slider-value': sm([pl([1, 11], [7, 11]), pl([11, 11], [14, 11]), pring(9, 11, 5), pbox(6, 2, 12, 6, 1.2), pl([8, 4], [10, 4])], { solid: [2, 3], wire: [0, 1], cut: [4] }),
 };
 // The checked boxes keep their check running out of the corner

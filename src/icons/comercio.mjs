@@ -1449,9 +1449,10 @@ const dashedCard = () => {
 
 // Coin stack: three coins seen from the side, each a capsule 14 × 3.5; the middle one shifted 1.5 to
 // the left and the bottom one 1 to the right. The top coin is whole and each lower one starts at the
-// edge of the coin above it (its rim runs on from that edge), so nothing overlaps.
-function coinStack(x, y) {
-  const [w, h, r] = [14, 3.5, 1.75];
+// edge of the coin above it (its rim runs on from that edge), so nothing overlaps. Narrower coins
+// (`w`, `h`) keep the same construction.
+function coinStack(x, y, w = 14, h = 3.5) {
+  const r = h / 2;
   const A = (to, sweep = 0) => `A${r} ${r} 0 0 ${sweep} ${pt(to)}`;
   const [m, b] = [x - 1.5, x + 1];
   return [
@@ -2174,6 +2175,43 @@ Object.assign(icons, {
   },
 });
 
+// ── Round 12: the states the families lacked, and the hand that receives ──────────────────────
+// Each state is its family's base exactly, with the engine's badge: the card face, the bag, the
+// receipt and invoice under a badge, the price tag, the bank with its columns pulled left.
+/** The coin stack of hand-coins: three coins 9 × 3 (coin-stack's construction), its top at y 2.5. */
+const HAND_STACK = [7.75, 2.5, 9, 3];
+Object.assign(icons, {
+  'card-minus': { tags: ['quitar tarjeta', 'eliminar método de pago', 'desvincular tarjeta', 'remove card', 'unlink card'], d: CARD_FACE, badge: badge('minus') },
+  // Money received: donation's open hand, palm up, under a stack of three coins seen edge-on (the
+  // coin stack's construction, narrower); the stack stands 3 above the palm and clear of the thumb.
+  // loan's single coin seen from the front is lending; the stack on the hand is money taken in
+  'hand-coins': {
+    tags: ['dinero recibido', 'cobro', 'salario', 'pago recibido', 'money received', 'payment received', 'wages'],
+    d: [...coinStack(...HAND_STACK), icons.donation.d[1], icons.donation.d[2]],
+  },
+  // Paid in cash: the banknote high on the left at 0.8 (as rrhh's pay-advance carries it), its corner
+  // under the engine's check
+  'banknote-check': {
+    tags: ['pagado en efectivo', 'cobro en efectivo', 'efectivo recibido', 'paid in cash', 'cash received'],
+    d: icons.banknote.d.map((d) => transform(d, 0.8, 0.5, -1.65)),
+    badge: badge('check'),
+  },
+  'bag-question': { tags: ['ayuda con mi pedido', 'duda del pedido', 'soporte de compra', 'order help', 'order question'], d: bag(), badge: badge('question') },
+  // The receipt as receipt-clock draws it under a badge (its teeth stop where the badge begins)
+  'receipt-x': { tags: ['venta anulada', 'cargo cancelado', 'transacción cancelada', 'voided transaction', 'void sale'], d: icons['receipt-clock'].d, badge: badge('x') },
+  'price-tag-arrow-up': { tags: ['sube el precio', 'aumento de precio', 'más caro', 'price increase', 'price up'], d: [T.body, circ(...T.hole, 1)], badge: badge('arrow-up') },
+  'invoice-x': { tags: ['factura anulada', 'factura cancelada', 'cancelar factura', 'void invoice', 'voided invoice'], d: INVOICE_B, badge: badge('x') },
+  'bank-check': { tags: ['cuenta verificada', 'banco verificado', 'cuenta confirmada', 'verified bank account', 'bank verified'], d: BANK_B(), badge: badge('check') },
+  // Over budget: budget's ring, drawn from the top round to the left, about a coin up and to the left
+  // so the alert takes the ring's lower right. The coin is too small there to carry the sign (its
+  // counters close under r 6.25), so it carries an inner ring, as the set's small coins do
+  'budget-alert': {
+    tags: ['presupuesto excedido', 'sobregiro', 'límite rebasado', 'over budget', 'overspent', 'budget exceeded'],
+    d: [arc(10.25, 10.25, 8.5, -90, 180).d, ...coin([10.25, 10.25], 5.25, 2.25)],
+    badge: badge('alert'),
+  },
+});
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index into d: `solid` is filled and keeps its stroke, `cut` is knocked out at the stroke
 // width, `lines` stays a line with 1.5 of clearance and `wire` stays a line attached to the fill
@@ -2414,7 +2452,26 @@ const FILL = {
   'gift-open': { solid: [0, 2, 4, 5], cut: [1, 3] },
   'trade-in': { solid: [0, 1], cut: [2], lines: [3, 4, 5, 6] },
   'global-payment': { solid: [0], cut: [1, 2] },
+  // Round 12
+  'card-minus': { solid: [0], cut: [1, 2] },
+  'banknote-check': { solid: [0], cut: [1, 2, 3] },
+  'bag-question': { solid: [0], lines: [1] },
+  'receipt-x': { solid: [0], cut: [1, 2] },
+  'price-tag-arrow-up': { solid: [0], cut: [HOLE] },
+  'invoice-x': { solid: [0], cut: [1, 2, 3] },
+  'bank-check': { solid: [0], lines: [1, 2, 3] },
+  // The coin filled with its inner ring knocked out; the ring stays a line, as budget's
+  'budget-alert': { solid: [1], cut: [2], lines: [0] },
 };
+// hand-coins: the coins filled (each lower one closed along the coin above it) and parted by their
+// seams, knocked out, as the coin stacks; the hand as loan's, closed along the cuff
+{
+  const [x, y, w, h] = HAND_STACK;
+  const d = icons['hand-coins'].d;
+  const r = h / 2;
+  const seams = [line([x + r, y + h], [x - 1.5 + w - r, y + h]), line([x + 1 + r, y + 2 * h], [x - 1.5 + w - r, y + 2 * h])];
+  FILL['hand-coins'] = { solid: [0, z(1), z(2), 3, z(4)], cut: seams };
+}
 for (const [name, spec] of Object.entries(FILL)) {
   const d = icons[name].d;
   const pick = (ix) => (ix ?? []).map((i) => (typeof i === 'number' ? d[i] : typeof i === 'object' ? shut(d[i.z]) : i));
@@ -2653,6 +2710,16 @@ const PARTS = {
   'gift-open': { body: [0, 1], lid: [2, 3], bow: [4, 5] },
   'trade-in': { phone: [0], coin: [1, 2], arrows: [3, 4, 5, 6] },
   'global-payment': { globe: [0, 1, 2] },
+  // Round 12
+  'card-minus': { body: [0], stripe: [1, 2] },
+  'hand-coins': { coins: [0, 1, 2], cuff: [3], hand: [4] },
+  'banknote-check': { body: [0], mark: [1, 2, 3] },
+  'bag-question': { body: [0], handle: [1] },
+  'receipt-x': { body: [0], lines: [1, 2] },
+  'price-tag-arrow-up': { body: [0], hole: [1] },
+  'invoice-x': { body: [0], mark: [1, 2, 3] },
+  'bank-check': { roof: [0], columns: [1, 2], base: [3] },
+  'budget-alert': { ring: [0], coin: [1, 2] },
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
@@ -2776,6 +2843,14 @@ icons['clothing-rack'].motion = { effect: 'wiggle', parts: ['hangers'], origin: 
 icons['gift-open'].motion = { effect: 'bounce', parts: ['lid', 'bow'], vector: [0, -1.5] };
 icons['trade-in'].motion = { effect: 'spin', parts: ['arrows'], origin: [12, 12] };
 icons['store-clock'].motion = { effect: 'spin', parts: ['badge'], origin: [17.25, 17.25] };
+
+// ── Round 12: variants and motion ──
+// The budget's ring already encloses the coin
+icons['budget-alert'].variants = { ...icons['budget-alert'].variants, circle: false };
+icons['price-tag-arrow-up'].motion = { effect: 'slide', parts: ['badge'], vector: [0, -1.5] };
+icons['bag-question'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 17.25] };
+icons['budget-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 21.5] };
+icons['hand-coins'].motion = { effect: 'bounce', parts: ['coins'], vector: [0, -1.5] };
 
 // ── 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough ──────────────
 // The engine snaps each icon to the pixel grid with a single adjustment shared by all its strokes
@@ -2964,7 +3039,7 @@ const wave16 = (c, r0, r1) => pl([c - 1, r0], [c, r0 + 1], [c, r1 - 1], [c - 1, 
   {
     const doc = snap(INVOICE_B[0]);
     const sign = dollar16(5, 3);
-    for (const [name, kind] of [['invoice-recurring', 'sync'], ['invoice-minus', 'minus']])
+    for (const [name, kind] of [['invoice-recurring', 'sync'], ['invoice-minus', 'minus'], ['invoice-x', 'x']])
       icons[name].small = { d: [doc, ...sign], fill: { solid: [doc], cut: sign }, badge: badge(kind, { size: 16 }) };
   }
   // The swap: plain pixel coins (their rings clogged) and the arrows of currency-exchange

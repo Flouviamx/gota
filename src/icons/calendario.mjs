@@ -14,6 +14,8 @@
 // at 32 px and QA's ceiling is 28 %.
 import { arc, badge, circ, dot, f, halfChord, head, line, polar, rot, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { transform } from '../../engine/variants.mjs';
+import edicion from './edicion.mjs';
+import lugares from './lugares.mjs';
 import nucleo from './nucleo.mjs';
 
 // ── Local helpers ─────────────────────────────────────────────────────────────────────────
@@ -303,6 +305,10 @@ const GLASS = roundpoly(
 const CAPS = [hl(5.25, 18.75, 3.25), hl(5.25, 18.75, 20.75)];
 /** Where the top bulb's slanted side is at height y (it runs from (17, 6.75) to (13.1, 12)). */
 const bulbX = (y) => 17 - ((y - 6.75) * 3.9) / 5.25;
+
+// ── Round 12 pieces ──────────────────────────────────────────────────────────────────────
+/** navegacion's sort arrow (sort-ascending's, down the left side): what the list is sorted by goes beside it. */
+const SORT_ARROW = [vl(6.75, 4.25, 19.75), head([6.75, 19.75], [0, 1], 3.5 * Math.SQRT2)];
 
 const icons = {
   // ── Views ──
@@ -701,6 +707,50 @@ const icons = {
     tags: ['detener cronómetro', 'guardar tiempo', 'terminar registro', 'stop timer', 'stop tracking', 'stop'],
     d: [...STOPWATCH, sq(9.75, 11, 4.5, 4.5, 1.25)],
   },
+
+  // ── Round 12 ──
+  'stopwatch-reset': {
+    tags: ['reiniciar cronómetro', 'poner en cero', 'restablecer', 'reset timer', 'reset stopwatch', 'zero'],
+    // The fourth control: an arc arrow turning back, counterclockwise, its head at the top
+    d: (() => {
+      const a = arc(12, 13.25, 3.5, 230, -70);
+      return [...STOPWATCH, a.d, head(a.end, a.tangent, 2.25)];
+    })(),
+  },
+  // lugares' alarm clock: alarm-plus without its upright stroke, and the alarm ringing, one wave on
+  // each side of the face, 3 from it and clear of the bells
+  'alarm-minus': {
+    tags: ['quitar alarma', 'eliminar alarma', 'borrar alarma', 'delete alarm', 'remove alarm', 'alarm minus'],
+    d: lugares.icons['alarm-plus'].d.filter((_, i) => i !== 5),
+  },
+  'alarm-ringing': {
+    tags: ['alarma sonando', 'despertador sonando', 'timbre', 'alarm ringing', 'alarm going off', 'wake up'],
+    d: [...lugares.icons['alarm-clock'].d, arc(12, 13.25, 10.25, 160, 187).d, arc(12, 13.25, 10.25, -7, 20).d],
+  },
+  // Sorted by date and by time: the sort arrow, and the calendar (its box, rings and header, at
+  // half size) or the core clock beside it, clear of the arrowhead
+  'calendar-sort': {
+    tags: ['ordenar por fecha', 'más recientes', 'orden cronológico', 'sort by date', 'date order', 'newest first'],
+    d: [...SORT_ARROW, box(12, 6.25, 9, 9, 2.5), vl(15, 5, 7.25), vl(18, 5, 7.25), hl(12, 21, 10.25)],
+  },
+  'clock-sort': {
+    tags: ['ordenar por hora', 'más recientes primero', 'orden por tiempo', 'sort by time', 'time order', 'latest first'],
+    d: [...SORT_ARROW, circ(16.25, 10.75, 5), line([16.25, 8.6], [16.25, 10.75], [17.95, 11.75])],
+  },
+  'calendar-poll': {
+    tags: ['encuesta de horarios', 'votar fecha', 'elegir horario', 'disponibilidad', 'scheduling poll', 'meeting poll', 'find a time'],
+    // social's poll in the body: an option voted (its check) and one open (its circle)
+    d: cal(line([6.25, 15.55], [7.84, 17.16], [11.25, 13.59]), circ(16.25, CY, 2)),
+  },
+  'shift-open': {
+    tags: ['turno abierto', 'turno disponible', 'sin asignar', 'cubrir turno', 'open shift', 'unassigned shift', 'available shift'],
+    // The shift nobody has taken: an empty slot (edicion's dashed selection, as schedules draw an open
+    // shift) and the shifts' clock badge. The dashes the badge's clearance would leave a speck of
+    // (the bottom right corner, the middle of the foot and of the right side) are left out. A dashed
+    // person broke into bits
+    d: edicion.icons.selection.d.filter((_, i) => ![2, 5, 7].includes(i)),
+    badge: badge('clock'),
+  },
 };
 
 // ── Fill (DESIGN.md › Fill) ─────────────────────────────────────────────────────────────────
@@ -739,6 +789,10 @@ Object.assign(FILL, {
   'punch-clock': { solid: [0, 3], cut: [1, 2], close: [3] },
   'chess-clock': { solid: [0], cut: [1, 2, 3, 4], wire: [5, 6] },
   'kitchen-timer': { solid: [0, 1], cut: [2, 3, 4, 5], close: [0] },
+  // Round 12: the sort arrow and the clock's hands stay lines; the calendar beside it as the core's
+  'calendar-sort': { solid: [2], lines: [0, 1, 3, 4], cut: [5] },
+  'clock-sort': { solid: [2], lines: [0, 1], cut: [3] },
+  'stopwatch-reset': { solid: [0], wire: [1, 2, 3], cut: [4, 5] },
 });
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
@@ -748,6 +802,15 @@ for (const [name, spec] of Object.entries(FILL)) {
 }
 // Open rings: filled, their chord would turn them into a bitten disc (as lugares' timer)
 for (const name of ['clock-in', 'clock-out']) icons[name].fill = false;
+// The alarm clock fills as lugares' does: the face and the bells' crescents, the legs attached, the
+// sign knocked out; the ringing waves stay lines
+{
+  const own = lugares.icons['alarm-clock'].fill;
+  icons['alarm-minus'].fill = { ...own, cut: [icons['alarm-minus'].d[5]] };
+  icons['alarm-ringing'].fill = { ...own, lines: icons['alarm-ringing'].d.slice(6) };
+}
+// The dashed slot stays lines: filled, its dashes would close into wedges
+icons['shift-open'].fill = false;
 // Under a lock, a sync, a sparkle, an hourglass or a bell the header stops at 13 in the fill: their
 // clearance comes so near it that at bold weights the two met and split off a sliver of the body.
 // The clearance's top edge then reads as the rest of the header.
@@ -780,6 +843,7 @@ const PARTS = {
   'chess-clock': { body: [0], faces: [1, 2], hands: [3, 4], buttons: [5, 6] },
   'kitchen-timer': { dome: [0], base: [1], dial: [2, 3, 4], pointer: [5] },
 };
+PARTS['calendar-sort'] = { arrow: [0, 1], calendar: [2, 3, 4, 5] };
 for (const name of Object.keys(icons).filter((n) => n.startsWith('calendar-') && !PARTS[n])) {
   const n = icons[name].d.length;
   PARTS[name] = { body: [0], rings: [1, 2], header: [3], ...(n > 4 && { mark: range(4, n) }) };
@@ -787,6 +851,12 @@ for (const name of Object.keys(icons).filter((n) => n.startsWith('calendar-') &&
 for (const name of ['hourly-rate', 'break-time', 'clock-alert', 'clock-edit']) PARTS[name] = { face: [0], hands: [1] };
 for (const name of ['stopwatch-play', 'stopwatch-pause', 'stopwatch-stop']) PARTS[name] = { face: [0], crown: [1, 2], button: [3], mark: range(4, icons[name].d.length) };
 for (const name of ['hourglass-start', 'hourglass-half']) PARTS[name] = { glass: [0], caps: [1, 2], sand: range(3, icons[name].d.length) };
+// Round 12
+PARTS['stopwatch-reset'] = { face: [0], crown: [1, 2], button: [3], arrow: [4, 5] };
+PARTS['alarm-minus'] = { face: [0], bells: [1, 2], legs: [3, 4], mark: [5] };
+PARTS['alarm-ringing'] = { face: [0], bells: [1, 2], legs: [3, 4], hands: [5], waves: [6, 7] };
+PARTS['clock-sort'] = { arrow: [0, 1], face: [2], hands: [3] };
+PARTS['shift-open'] = { slot: [0, 1, 2, 3, 4] };
 for (const [name, p] of Object.entries(PARTS)) icons[name].parts = p;
 
 // ── Motion (DESIGN.md › Motion) ─────────────────────────────────────────────────────────────
@@ -831,6 +901,13 @@ const MOTION = {
   'kitchen-timer': { effect: 'ring', origin: [12, 20.75] },
   'hourglass-start': { effect: 'spin', origin: [12, 12] },
   'hourglass-half': { effect: 'spin', origin: [12, 12] },
+  // Round 12
+  'stopwatch-reset': { effect: 'spin', parts: ['arrow'], origin: [12, 13.25] },
+  'alarm-minus': { effect: 'ring', origin: [12, 13.25] },
+  'alarm-ringing': { effect: 'ring', origin: [12, 13.25] },
+  'calendar-sort': { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] },
+  'clock-sort': { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] },
+  'shift-open': { effect: 'spin', parts: ['badge'], origin: BC },
 };
 for (const [name, m] of Object.entries(MOTION)) icons[name].motion = m;
 

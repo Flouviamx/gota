@@ -721,6 +721,45 @@ function cuboid(x0, y0, x1, y1, k, r = 1.25) {
 /** The point `d` from `p` toward `deg` degrees. */
 const toward = (p, deg, d) => add(p, [Math.cos(rad(deg)) * d, Math.sin(rad(deg)) * d]);
 
+// ── Round 12 ──
+// Square: the regular polygon of four sides on the square keyline, with the polygons' corner (2).
+// A shape, not a container: sistema's checkbox is the continuous box with the signature corner.
+const SQUARE = poly([[3.25, 3.25], [20.75, 3.25], [20.75, 20.75], [3.25, 20.75]]);
+// Squircle: the superellipse |x|⁴ + |y|⁴ = a⁴, halfway between the square and the circle, sampled
+// every 7.5° of its polar angle and drawn through as one smooth closed curve
+const SQUIRCLE = smoothClosed(
+  Array.from({ length: 48 }, (_, k) => {
+    const t = rad(k * 7.5);
+    const r = 8.9 / (Math.abs(Math.cos(t)) ** 4 + Math.abs(Math.sin(t)) ** 4) ** 0.25;
+    return [12 + r * Math.cos(t), 12 + r * Math.sin(t)];
+  }),
+);
+// The acute angle: angle's rays and arc closed to 30°, centered on the canvas's height
+const ACUTE_V = [3.25, 16.375];
+// Radial symmetry: one petal repeated six times around the center (a mandala's rosette), where the
+// mirror figures stand on dashed axes; the petals' inner tips 3.5 from the center keep them apart
+function petal(deg, r0, r1, w) {
+  const [a, b] = [polar(12, 12, r0, deg), polar(12, 12, r1, deg)];
+  const c = (r1 - r0) / 2;
+  const R = (c * c + (w * w) / 4) / w;
+  return `M${xy(a)}A${f(R)} ${f(R)} 0 0 1 ${xy(b)}A${f(R)} ${f(R)} 0 0 1 ${xy(a)}Z`;
+}
+const ROSETTE = [-90, -30, 30, 90, 150, 210].map((a) => petal(a, 3.5, 9.25, 3.5));
+// Dodecahedron seen face on, as the icosahedron: the decagon of its silhouette, the front pentagon
+// (1/φ of it) and the five edges from the pentagon's corners out to the outline
+const DODECA_R = 9.25;
+const DODECA_PTS = regular(10, DODECA_R, -90);
+const DODECA_FRONT = regular(5, DODECA_R / ((1 + Math.sqrt(5)) / 2), -90);
+const DODECAHEDRON = [
+  roundpoly(DODECA_PTS, 1),
+  `${line(...DODECA_FRONT)}Z`,
+  ...DODECA_FRONT.map((p, i) => line(p, cornerMid(DODECA_PTS, 2 * i, 1))),
+];
+// Line ends: a line style's line (from 3, on the middle line) ending in its marker at the right
+const LINE_END_DOT = circ(18, 12, 3);
+const DIAMOND_PTS = [[17.5, 8.5], [21, 12], [17.5, 15.5], [14, 12]];
+const LINE_END_DIAMOND = roundpoly(DIAMOND_PTS, 1);
+
 const icons = {
   // ── 2D primitives ──
   triangle: { tags: ['triángulo', 'forma', 'geometría', 'triangle', 'shape'], d: [TRIANGLE] },
@@ -730,6 +769,8 @@ const icons = {
   heptagon: { tags: ['heptágono', 'polígono', 'siete lados', 'heptagon', 'polygon'], d: [HEPTAGON] },
   octagon: { tags: ['octágono', 'polígono', 'alto', 'octagon', 'polygon'], d: [OCTAGON] },
   rectangle: { tags: ['rectángulo', 'forma', 'marco', 'rectangle', 'shape'], d: [RECT] },
+  square: { tags: ['cuadrado', 'forma', 'cuatro lados', 'square', 'shape'], d: [SQUARE] },
+  squircle: { tags: ['squircle', 'superelipse', 'ícono de app', 'squircle', 'superellipse', 'app icon shape'], d: [SQUIRCLE] },
   rhombus: { tags: ['rombo', 'diamante', 'decisión', 'rhombus', 'diamond'], d: [RHOMBUS] },
   parallelogram: { tags: ['paralelogramo', 'entrada y salida', 'diagrama de flujo', 'parallelogram', 'shape'], d: [PARALLELOGRAM] },
   trapezoid: { tags: ['trapecio', 'forma', 'geometría', 'trapezoid', 'shape'], d: [TRAPEZOID] },
@@ -770,6 +811,7 @@ const icons = {
   cuboid: { tags: ['prisma rectangular', 'caja', '3d', 'cuboid', 'rectangular box'], d: CUBOID },
   octahedron: { tags: ['octaedro', 'poliedro', 'cristal', 'octahedron', 'polyhedron'], d: OCTAHEDRON },
   icosahedron: { tags: ['icosaedro', 'poliedro', 'malla 3d', 'icosahedron', 'low poly'], d: ICOSAHEDRON },
+  dodecahedron: { tags: ['dodecaedro', 'poliedro', 'sólido platónico', 'dodecahedron', 'polyhedron', 'd12'], d: DODECAHEDRON },
   torus: { tags: ['toro', 'dona', '3d', 'torus', 'donut'], d: [TORUS_OUT, TORUS_SMILE, TORUS_FROWN] },
   'cube-transparent': { tags: ['cubo transparente', 'malla', 'aristas ocultas', 'wireframe', 'x-ray'], d: [...CUBE, ...CUBE_HIDDEN] },
   'capsule-3d': { tags: ['cápsula 3d', 'sólido', 'primitiva 3d', '3d capsule', 'solid'], d: [PILL, PILL_BAND, PILL_BACK] },
@@ -815,6 +857,8 @@ const icons = {
     d: [hl(LX0, LX1, 4.25), 'M4.5 8.25H19.5A1.5 1.5 0 0 1 19.5 11.25H4.5A1.5 1.5 0 0 1 4.5 8.25Z', 'M5.75 14.25H18.25A2.75 2.75 0 0 1 18.25 19.75H5.75A2.75 2.75 0 0 1 5.75 14.25Z'],
   },
   'line-styles': { tags: ['estilos de línea', 'continua', 'discontinua', 'line styles', 'dashed'], d: [hl(LX0, LX1, 6), ...DASHED(12), ...DOTTED(18)] },
+  'line-end-dot': { tags: ['extremo de línea', 'punto final', 'conector', 'line end', 'dot marker', 'endpoint'], d: [hl(LX0, 15, 12), LINE_END_DOT] },
+  'line-end-diamond': { tags: ['extremo de línea', 'rombo', 'agregación', 'line end', 'diamond marker', 'aggregation'], d: [hl(LX0, cornerMid(DIAMOND_PTS, 3, 1)[0], 12), LINE_END_DIAMOND] },
 
   // ── Angles ──
   angle: {
@@ -828,6 +872,10 @@ const icons = {
   'obtuse-angle': {
     tags: ['ángulo obtuso', 'ángulo abierto', 'geometría', 'obtuse angle', 'wide angle'],
     d: [line([20.75, OBTUSE_V[1]], OBTUSE_V, polar(...OBTUSE_V, 10.25, 225)), arc(...OBTUSE_V, 4.25, 225, 360).d],
+  },
+  'acute-angle': {
+    tags: ['ángulo agudo', 'ángulo cerrado', 'geometría', 'acute angle', 'sharp angle'],
+    d: [line([20.75, ACUTE_V[1]], ACUTE_V, polar(...ACUTE_V, 17.5, -30)), arc(...ACUTE_V, 7.5, -30, 0).d],
   },
   protractor: {
     tags: ['transportador', 'medir ángulos', 'geometría', 'protractor', 'angle tool'],
@@ -854,6 +902,8 @@ const icons = {
     tags: ['simetría en cuatro', 'cuadrantes', 'espejo', 'four-way symmetry', 'quadrant'],
     d: [quatrefoil(), ...AXIS_DASHES.map(([a, b]) => vl(12, a, b)), ...AXIS_DASHES.map(([a, b]) => hl(a, b, 12))],
   },
+
+  'symmetry-radial': { tags: ['simetría radial', 'mandala', 'caleidoscopio', 'radial symmetry', 'kaleidoscope', 'radial repeat'], d: ROSETTE },
 
   // ── Grids and patterns ──
   grid: { tags: ['cuadrícula', 'rejilla', 'papel cuadriculado', 'grid', 'show grid'], d: [TILE, ...GRID_AT.map(down), ...GRID_AT.map(across)] },
@@ -999,6 +1049,12 @@ const FILL = {
   'dimension-height': { solid: [0], wire: [1, 2, 3] },
   'dimension-depth': { solid: [0], cut: [1, 2], wire: [3, 4, 5] },
   'dimension-diagonal': { solid: [0], cut: [1, 2, 3] },
+  square: { solid: [0] },
+  squircle: { solid: [0] },
+  dodecahedron: { solid: [0], cut: [1, 2, 3, 4, 5, 6] },
+  'line-end-dot': { solid: [1], wire: [0] },
+  'line-end-diamond': { solid: [1], wire: [0] },
+  'symmetry-radial': { solid: [0, 1, 2, 3, 4, 5] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
@@ -1020,7 +1076,7 @@ icons.torus.fill = { solid: [`${TORUS_OUT}${TORUS_HOLE}`] };
   icons.checkerboard.fill = { solid: [cell([4.25, 12], [12, 4.25]), cell([19.75, 12], [12, 19.75])], wire: icons.checkerboard.d.slice(0, 3) };
 }
 // Open lines, dots and placeholders only: their filled version is the outline itself
-for (const name of ['arc', 'spiral', 'circle-dotted', 'triangle-dashed', 'hexagon-dashed', 'rectangle-dashed', 'line-dashed', 'line-dotted', 'line-dash-dot', 'line-wavy', 'line-zigzag', 'line-styles', 'angle', 'right-angle', 'obtuse-angle', 'lines-parallel', 'lines-perpendicular', 'grid-dots'])
+for (const name of ['arc', 'spiral', 'circle-dotted', 'triangle-dashed', 'hexagon-dashed', 'rectangle-dashed', 'line-dashed', 'line-dotted', 'line-dash-dot', 'line-wavy', 'line-zigzag', 'line-styles', 'angle', 'right-angle', 'obtuse-angle', 'acute-angle', 'lines-parallel', 'lines-perpendicular', 'grid-dots'])
   icons[name].fill = false;
 
 // ── Named parts, motion and levels ──
@@ -1066,12 +1122,17 @@ const PARTS = {
   'dimension-height': { shape: [0], dimension: [1, 2, 3] },
   'dimension-depth': { shape: [0, 1, 2], dimension: [3, 4, 5] },
   'dimension-diagonal': { shape: [0], dimension: [1, 2, 3] },
+  'acute-angle': { rays: [0], arc: [1] },
+  'symmetry-radial': { petals: [0, 1, 2, 3, 4, 5] },
+  'line-end-dot': { line: [0], marker: [1] },
+  'line-end-diamond': { line: [0], marker: [1] },
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 icons.spiral.motion = { effect: 'spin', origin: [12, 12] };
 icons.seal.motion = { effect: 'spin', origin: [12, 12] };
 icons.starburst.motion = { effect: 'beat', origin: [12, 12] };
 icons['star-four'].motion = { effect: 'beat', origin: [12, 12] };
+icons['symmetry-radial'].motion = { effect: 'spin', origin: [12, 12] };
 icons.blob.motion = { effect: 'float', vector: [0, -1.5] };
 icons.radius.motion = { effect: 'spin', parts: ['radius'], origin: [12, 12] };
 icons.diameter.motion = { effect: 'spin', parts: ['diameter'], origin: [12, 12] };
@@ -1124,6 +1185,36 @@ icons['dimensions-3d'].small = (() => {
   return small(d, { solid: [d[0]], cut: [d[1], d[2]], wire: d.slice(3) });
 })();
 
+// The squircle with its flat sides on pixel centers (3.75–20.25): on the keyline they fell between
+// two pixels and grayed
+{
+  const q = smoothClosed(
+    Array.from({ length: 48 }, (_, k) => {
+      const t = rad(k * 7.5);
+      const r = 8.25 / (Math.abs(Math.cos(t)) ** 4 + Math.abs(Math.sin(t)) ** 4) ** 0.25;
+      return [12 + r * Math.cos(t), 12 + r * Math.sin(t)];
+    }),
+  );
+  icons.squircle.small = small([q], { solid: [q] });
+}
+// Six petals, narrow and long: at their full width they ran into one blot
+{
+  const d = [-90, -30, 30, 90, 150, 210].map((a) => petal(a, 3.75, 10, 2.4));
+  icons['symmetry-radial'].small = small(d, { solid: d });
+}
+// The silhouette and the front face: the five edges between them clogged
+icons.dodecahedron.small = small(DODECAHEDRON.slice(0, 2), { solid: [DODECAHEDRON[0]], cut: [DODECAHEDRON[1]] });
+// The markers on the pixel grid, centered on a pixel (17.25, 12.75), and the line on that row; the
+// diamond a pixel larger each way (smaller, its hole closed into a cross)
+{
+  const dotEnd = circ(17.25, 12.75, 3);
+  const a = [hl(LX0 + 0.75, 14.25, 12.75), dotEnd];
+  icons['line-end-dot'].small = small(a, { solid: [dotEnd], wire: [a[0]] });
+  const diamond = roundpoly([[17.25, 8.25], [21.75, 12.75], [17.25, 17.25], [12.75, 12.75]], 0.6);
+  const b = [hl(LX0 + 0.75, 12.75, 12.75), diamond];
+  icons['line-end-diamond'].small = small(b, { solid: [diamond], wire: [b[0]] });
+}
+
 // ── Variants (DESIGN.md › Automatic variants) ──
 const off = (names, v) => {
   for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
@@ -1131,11 +1222,13 @@ const off = (names, v) => {
 // Round already, on the circle keyline: they aren't enclosed in a circle again
 off(['annulus', 'circle-dotted', 'sphere', 'grid-polar', 'seal', 'starburst', 'radius', 'diameter'], { circle: false });
 // Square swatches: they aren't enclosed in a square again
-off(['grid', 'checkerboard', 'stripes', 'crosshatch'], { square: false });
+off(['square', 'grid', 'checkerboard', 'stripes', 'crosshatch'], { square: false });
 // Line styles and dots on their own: a slash through them says nothing
 off(['line-dashed', 'line-dotted', 'line-dash-dot', 'line-wavy', 'line-zigzag', 'line-styles', 'line-weight', 'circle-dotted', 'grid-dots'], { slash: false });
 // Angles, constraints and connectors are lines too: a slash along or across them draws another
 // figure (the right angle became a right triangle, the tangent got a parallel)
-off(['angle', 'right-angle', 'obtuse-angle', 'lines-parallel', 'lines-perpendicular', 'tangent', 'line-segment', 'line-curved', 'line-elbow', 'polyline'], { slash: false });
+off(['angle', 'right-angle', 'obtuse-angle', 'lines-parallel', 'lines-perpendicular', 'tangent', 'line-segment', 'line-curved', 'line-elbow', 'polyline', 'acute-angle', 'line-end-dot', 'line-end-diamond'], { slash: false });
+// A line end points the way the line runs: it flips in right-to-left languages
+for (const name of ['line-end-dot', 'line-end-diamond']) icons[name].mirror = true;
 
 export default { category: 'formas', label: 'Formas y geometría', icons };

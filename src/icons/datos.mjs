@@ -2115,6 +2115,53 @@ const icons = {
       line([15.25, 17.75], [15.25, 15.5]),
     ],
   },
+
+  // Round 12 -----------------------------------------------------------------------------------
+  'chart-bar-sorted': {
+    tags: ['barras ordenadas', 'ordenar por valor', 'pareto', 'clasificación', 'sorted bar chart', 'sort by value', 'ranked'],
+    // chart-bar's three columns, each a step taller than the one before it: ordered by value, with no
+    // trend arrow (that is growth's)
+    d: [bar(BX[0], 14.75), bar(BX[1], 9), bar(BX[2], 3.25)],
+  },
+  'chart-bar-stacked-percent': {
+    tags: ['barras apiladas al 100 %', 'proporciones', 'porcentaje', 'participación', '100% stacked bar chart', 'proportions', 'percent'],
+    // chart-bar-stacked's columns, all at full height (each one is the whole), split into their
+    // shares at different heights
+    d: [
+      bar(BX[0], 3.25),
+      bar(BX[1], 3.25),
+      bar(BX[2], 3.25),
+      line([BX[0], 13.75], [BX[0] + BW, 13.75]),
+      line([BX[1], 8.75], [BX[1] + BW, 8.75]),
+      line([BX[2], 11.25], [BX[2] + BW, 11.25]),
+    ],
+  },
+  'database-minus': {
+    tags: ['quitar base de datos', 'desconectar fuente', 'eliminar datos', 'remove database', 'disconnect data source', 'delete database'],
+    d: DB_D,
+    badge: badge('minus'),
+  },
+  'database-pause': {
+    tags: ['base de datos en pausa', 'cómputo suspendido', 'proyecto pausado', 'paused database', 'suspended warehouse', 'auto-pause'],
+    d: DB_D,
+    // The set's pause as a status badge (marketing's, sistema's): the disc with two bars cut out
+    badge: (() => {
+      const ring = circ(...BC, 4.25);
+      const bars = [line([16, 15.5], [16, 19]), line([18.5, 15.5], [18.5, 19])];
+      return { d: [ring, ...bars], knock: ring, fill: { solid: [ring], cut: bars } };
+    })(),
+  },
+  'dashboard-gear': {
+    tags: ['ajustes del tablero', 'configurar dashboard', 'variables', 'actualización', 'dashboard settings', 'configure dashboard', 'refresh settings'],
+    // dashboard-edit's two panels, the gear where the pencil was
+    d: [sq(K0, K0, 7.25, 17.5, 2.25), sq(13.5, K0, 7.25, 5.5, 2.25)],
+    badge: badge('gear'),
+  },
+  'data-pipeline-check': {
+    tags: ['canalización exitosa', 'ejecución completada', 'sincronización correcta', 'successful pipeline', 'pipeline run succeeded', 'sync complete'],
+    d: PIPE.d,
+    badge: badge('check'),
+  },
 };
 
 // ---------------------------------------------------------------------------------------------
@@ -2128,7 +2175,7 @@ const icons = {
 // ---------------------------------------------------------------------------------------------
 const all = (name) => icons[name].d.map((_, i) => i);
 // The round 5 databases with a badge (the engine's, or a custom piece in its corner)
-const DB_R5 = ['database-cloud', 'database-backup', 'database-x', 'database-alert', 'database-lock', 'database-clock', 'database-gear', 'database-edit'];
+const DB_R5 = ['database-cloud', 'database-backup', 'database-x', 'database-alert', 'database-lock', 'database-clock', 'database-gear', 'database-edit', 'database-minus', 'database-pause'];
 const from = (name, i) => all(name).slice(i);
 const FILL = {
   'chart-bar': { solid: [0, 1, 2] },
@@ -2250,6 +2297,9 @@ const FILL = {
   'metric-card': { solid: [0], cut: [1, 2] },
   'dashboard-plus': { solid: [0, 1], lines: [2, 3] },
   'dashboard-edit': { solid: [0, 1] },
+  'dashboard-gear': { solid: [0, 1] },
+  'chart-bar-sorted': { solid: [0, 1, 2] },
+  'chart-bar-stacked-percent': { solid: [0, 1, 2], cut: [3, 4, 5] },
   // The front store filled as the core one; the ones behind stay lines
   'database-cluster': { solid: [1], closed: [0], lines: [2, 3] },
   'database-shard': { solid: [0, 3], cut: [1, 2, 4, 5] },
@@ -2374,7 +2424,7 @@ for (const name of ['data-source', 'data-source-plus']) icons[name].fill.cut.pus
 // two cells stand apart at every weight (ending on the edges, the cells joined at bold)
 icons['primary-key'].fill = { solid: [icons['primary-key'].d[0]], cut: [line([8.5, 2.25], [8.5, 12.75])] };
 // The pipe filled whole, the flow knocked out and the flanges attached
-for (const name of ['data-pipeline', 'data-pipeline-clock', 'data-pipeline-alert']) icons[name].fill = { solid: [PIPE.body], wire: PIPE.d.slice(2, 4), cut: PIPE.d.slice(4) };
+for (const name of ['data-pipeline', 'data-pipeline-clock', 'data-pipeline-alert', 'data-pipeline-check']) icons[name].fill = { solid: [PIPE.body], wire: PIPE.d.slice(2, 4), cut: PIPE.d.slice(4) };
 
 // ---------------------------------------------------------------------------------------------
 // 16 px (DESIGN.md › 16 px): custom drawings where pixel snapping isn't enough. At 16 px a pixel
@@ -2425,6 +2475,10 @@ const pl = (...cells) => line(...cells.map(([c, r]) => g(c, r)));
   // same pixel store, their own piece as drawn
   for (const name of ['database-cloud', 'database-backup', 'metadata'])
     icons[name].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: icons[name].badge };
+  // Round 12: the pause as the engine's pixel badges are, its two bars without the ring (columns 10
+  // and 12, rows 9 to 13)
+  const bars = [pl([10, 9], [10, 13]), pl([12, 9], [12, 13])];
+  icons['database-pause'].small = { d: [body, lid, band], fill: { solid: [`${body}Z`, lid], cut: [band, rim] }, badge: { d: bars, knock: `${circ(...BC, 4.25)}${bars.join('')}` } };
 }
 // The atom: the nucleus stuck to the orbits and at 16 px it was a gray flower. The center goes at
 // the center of pixel (7, 7): the vertical orbit falls crisp (its sides in columns 5 and 9, its
@@ -2555,6 +2609,9 @@ const PARTS = {
   'chart-realtime': { line: [0, 1], signal: [2, 3], axis: [4] },
   'dashboard-plus': { panels: [0, 1], mark: [2, 3] },
   'dashboard-edit': { panels: [0, 1] },
+  'dashboard-gear': { panels: [0, 1] },
+  'chart-bar-sorted': { bars: [0, 1, 2] },
+  'chart-bar-stacked-percent': { bars: [0, 1, 2], split: [3, 4, 5] },
   'gauge-zones': { dial: [0, 1, 2], needle: [3, 4] },
   'database-transfer': { source: [0, 1, 2], target: [3, 4, 5], arrow: [6, 7] },
   'data-source': { store: [0, 1, 2], plug: [3, 4, 5] },
@@ -2564,6 +2621,7 @@ const PARTS = {
   'data-pipeline': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
   'data-pipeline-clock': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
   'data-pipeline-alert': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
+  'data-pipeline-check': { pipe: [0, 1, 2, 3], flow: [4, 5, 6] },
   'primary-key': { table: [0, 1] },
   metadata: { body: [0, 2], lid: [1] },
 };
@@ -2611,6 +2669,8 @@ for (const name of [
   'chart-realtime', 'chart-retention', 'chart-sankey', 'chart-cohort', 'chart-small-multiples', 'chart-axes', 'data-point',
   'drill-down', 'drill-up', 'trend-up-down', 'gauge-linear', 'metric-card', 'database-transfer', 'data-stream', 'data-batch',
   'data-transform', 'data-lineage', 'deduplicate', 'foreign-key', 'relation-one-to-many', 'missing-value', 'data-notebook',
+  // Round 12: the columns that grow toward one side
+  'chart-bar-sorted',
 ])
   icons[name].mirror = true;
 
@@ -2646,6 +2706,7 @@ icons['gauge-zones'].value = { turn: { parts: ['needle'], origin: [12, 14], from
 icons['chart-realtime'].motion = { effect: 'beat', parts: ['signal'], origin: [13.25, 11.5] };
 icons['database-transfer'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
 icons['database-gear'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['dashboard-gear'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
 icons['database-cloud'].motion = { effect: 'float', parts: ['badge'], vector: [0, -1.25] };
 icons['data-stream'].motion = { effect: 'slide', vector: [2, 0] };
 

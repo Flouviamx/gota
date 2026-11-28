@@ -8,6 +8,7 @@
 // front coin) is a custom badge the engine clears with exact clearance: nothing is trimmed by hand.
 import { arc, badge, circ, cursor, dot, drop, f, flipPath, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snapper, transform } from '../../engine/variants.mjs';
+import archivos from './archivos.mjs';
 import comercio from './comercio.mjs';
 import comunicacion from './comunicacion.mjs';
 import dispositivos from './dispositivos.mjs';
@@ -1135,6 +1136,45 @@ const icons = {
     tags: ['escucha social', 'monitoreo de marca', 'menciones', 'social listening', 'brand monitoring'],
     d: [EAR, EAR_IN, drop(4.75, 13.25, 3)],
   },
+
+  // ── Round 12 ──
+  // The attribution models on attribution's journey: each touchpoint's bar as tall as its credit
+  'attribution-linear': {
+    tags: ['atribución lineal', 'crédito igual', 'atribución', 'linear attribution', 'equal credit'],
+    d: attribution([8, 8, 8]),
+  },
+  'attribution-time-decay': {
+    tags: ['atribución por decaimiento', 'crédito creciente', 'atribución', 'time decay attribution', 'time decay'],
+    d: attribution([3.75, 7.25, 10.75]),
+  },
+  'attribution-position-based': {
+    tags: ['atribución en u', 'basada en posición', 'atribución', 'position-based attribution', 'u-shaped'],
+    d: attribution([10.25, 4.5, 10.25]),
+  },
+  'feather-flag': {
+    tags: ['bandera pluma', 'bandera publicitaria', 'banderola', 'feather flag', 'sail flag', 'swooper flag'],
+    // The flexible pole bending over at its top, on its foot, and the tall sail-shaped flag hung
+    // from it: its free edge leaves the pole's tip, swells out and comes back to the pole low down
+    d: ['M8.75 21.25V9C8.75 5.5 11 3.25 14.25 3.25', hl(5.75, 11.75, 21.25), 'M14.25 3.25C18.25 5.25 19.25 11 17 16.25H8.75'],
+  },
+  'advertising-column': {
+    tags: ['columna publicitaria', 'columna morris', 'carteles', 'advertising column', 'morris column', 'poster pillar'],
+    // The round pillar: its domed cap with a short spire, its sides down to the plinth, and the band of
+    // posters wrapped around it, its edges curving with the drum
+    d: ['M5.5 8.75A6.5 4.5 0 0 1 18.5 8.75Z', vl(12, 2.25, 4.25), vl(7, 8.75, 20.75), vl(17, 8.75, 20.75), hl(5, 19, 20.75), 'M7 11.75A5 1.5 0 0 0 17 11.75', 'M7 16.25A5 1.5 0 0 0 17 16.25'],
+  },
+  'print-ad': {
+    tags: ['anuncio impreso', 'publicidad en prensa', 'anuncio en periódico', 'print ad', 'newspaper ad'],
+    // archivos' newspaper (its page, the fold and the headline) with the ad in place of the photo and
+    // its lines: one framed block across the page, its corner folded as display-ad marks its ad
+    d: [...archivos.icons.newspaper.d.slice(0, 3), box(9.75, 11, 8.5, 4.75, 1.5), line([15.5, 11], [18.25, 13.75])],
+  },
+  'upsell': {
+    tags: ['venta adicional', 'mejorar plan', 'producto superior', 'upsell', 'upgrade', 'upsale'],
+    // Núcleo's box small at the bottom left, the arrow rising from it, and the same box larger at the
+    // top right: the bigger product it is offered
+    d: [...N.box.d.map((d) => place(d, 0.38, [12, 12], [5.75, 17.5])), ...arrow([5.75, 11.1], [5.75, 3.25], 2.75), ...N.box.d.map((d) => place(d, 0.6, [12, 12], [15.75, 8.25]))],
+  },
 };
 
 // ── Fill (DESIGN.md › Fill), by index into d ──
@@ -1147,7 +1187,7 @@ const AUDIENCES = ['audience', 'audience-segment', 'audience-plus', 'audience-mi
 const TARGETING = ['targeting-person', 'targeting-location', 'targeting-device', 'targeting-interest', 'targeting-company', 'targeting-time', 'targeting-content'];
 const LEADS = ['lead', 'lead-plus', 'lead-check', 'lead-x'];
 const BILLBOARDS = ['billboard', 'billboard-plus', 'billboard-check', 'billboard-x', 'billboard-clock'];
-const ATTRIBUTION = ['attribution', 'attribution-first-touch', 'attribution-last-touch'];
+const ATTRIBUTION = ['attribution', 'attribution-first-touch', 'attribution-last-touch', 'attribution-linear', 'attribution-time-decay', 'attribution-position-based'];
 const FILL = {
   // The megaphone as comunicacion fills it: the body solid, the handle closed along the body's edge
   ...Object.fromEntries(MEGAPHONES.map((n) => [n, { solid: [0], closed: [1] }])),
@@ -1218,6 +1258,12 @@ const FILL = {
   'trade-show-booth': { solid: [0, 3], wire: [1, 2], cut: [4] },
   // The ear closes along its front edge; the antihelix is knocked out
   'social-listening': { solid: [2], closed: [0], cut: [1] },
+  // Round 12. The flag closes along its pole; pole and foot attached
+  'feather-flag': { closed: [2], wire: [0, 1] },
+  // The ad's folded corner stays out of the fill (cut, it left an island of ink, as display-ad's)
+  'print-ad': { solid: [0], closed: [1], cut: [2, 3] },
+  // The boxes as Núcleo's fills them (the outline filled, its edges knocked out); the arrow a line
+  upsell: { solid: [2, 7], cut: [0, 1, 5, 6], lines: [3, 4] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const { d } = icons[name];
@@ -1231,6 +1277,12 @@ icons['mobile-billboard'].fill.cut.unshift('M14.5 7.5V14');
 // The ribbon runs through the whole gift, lid, bow knot and all, and the lid is parted from the box:
 // cuts that go through at every weight
 icons['rewarded-ad'].fill.cut = [vl(12, 7.25, 17), hl(7, 17, 12.15)];
+// The column: its cap and its pillar filled as one body down to the plinth (a fill-only outline between
+// its sides), the edges of its band of posters knocked out, the spire and the plinth attached
+{
+  const [cap, spire, , , plinth, ...band] = icons['advertising-column'].d;
+  icons['advertising-column'].fill = { solid: [cap, 'M7 8.75H17V20.75H7Z'], cut: band, wire: [spire, plinth] };
+}
 // Lines only: links, the clicks around the pointer, the spreading arrows
 for (const name of ['backlink', 'link-shortener', 'link-tracking', 'click-through', 'viral']) icons[name].fill = false;
 
@@ -1402,6 +1454,10 @@ const PARTS = {
   webinar: { screen: [0], presenter: [1, 2], audience: [3, 4, 5] },
   'trade-show-booth': { header: [0], posts: [1, 2], counter: [3, 4] },
   'social-listening': { ear: [0, 1], bubble: [2] },
+  'feather-flag': { pole: [0, 1], flag: [2] },
+  'advertising-column': { cap: [0, 1], pillar: [2, 3, 4], posters: [5, 6] },
+  'print-ad': { page: [0, 1], headline: [2], ad: [3, 4] },
+  upsell: { product: [0, 1, 2], arrow: [3, 4], upgrade: [5, 6, 7] },
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
@@ -1458,6 +1514,8 @@ icons['lead-score'].motion = { effect: 'wiggle', parts: ['needle'], origin: [16.
 icons.conversion.motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
 icons['web-traffic'].motion = { effect: 'slide', parts: ['arrows'], vector: [1.5, 0] };
 icons['exit-intent'].motion = { effect: 'slide', parts: ['arrow', 'badge'], vector: [0, -1.5] };
+icons['feather-flag'].motion = { effect: 'wiggle', origin: [8.75, 21.25] };
+icons.upsell.motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] };
 icons['click-through'].motion = { effect: 'beat', parts: ['clicks'], origin: [9, 9] };
 icons.seo.motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5] };
 icons['video-ad'].motion = { effect: 'slide', parts: ['badge'], vector: [1.5, 0] };

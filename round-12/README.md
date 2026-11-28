@@ -12,14 +12,14 @@ Unlike rounds 3 to 11, the sweep draws into categories that already exist: 684 n
 ## Status (27 Nov 2026)
 | Group | Categories | Names | Step |
 |---|---|---|---|
-| `interface` | controles, edicion, formas, navegacion, producto, simbolos, ventanas | 111 | Drawing |
-| `work-tech-media` | archivos, calendario, ciberseguridad, comunicacion, datos, desarrollo, dispositivos, hardware, ia, oficina, redes, social | 63 | Drawing |
-| `business` | bienes-raices, comercio, legal, logistica, marketing, negocios, rrhh, soporte | 69 | Drawing |
-| `places-home` | aviacion, camping, comida, conduccion, electrodomesticos, frutas-verduras, hogar, limpieza, lugares, nautica, restaurante, senales, transito, vehiculos, viajes | 104 | Drawing |
-| `people` | anatomia, belleza, bienestar, emociones, fitness, gestos, personas, ropa, salud | 106 | Drawing |
-| `leisure` | arte, deportes, entretenimiento, fiestas, foto-video, juegos, lectura, musica | 80 | Drawing |
-| `science` | agricultura, ciencia, construccion, educacion, energia, espacio, herramientas, industria, seguridad-laboral | 93 | Drawing |
-| `nature` | animales, aves-insectos, clima, mar, medio-ambiente, plantas | 58 | Drawing |
+| `interface` | controles, edicion, formas, navegacion, producto, simbolos, ventanas | 111 | Drawing: 57 of 111 drawn, languages in; cut by the usage limit |
+| `work-tech-media` | archivos, calendario, ciberseguridad, comunicacion, datos, desarrollo, dispositivos, hardware, ia, oficina, redes, social | 63 | Drawing: 58 of 63 drawn, languages in; cut by the usage limit |
+| `business` | bienes-raices, comercio, legal, logistica, marketing, negocios, rrhh, soporte | 69 | Drawing: 64 of 69 drawn, languages in; cut by the usage limit |
+| `places-home` | aviacion, camping, comida, conduccion, electrodomesticos, frutas-verduras, hogar, limpieza, lugares, nautica, restaurante, senales, transito, vehiculos, viajes | 104 | Waiting (cut before it started) |
+| `people` | anatomia, belleza, bienestar, emociones, fitness, gestos, personas, ropa, salud | 106 | Waiting (cut before it started) |
+| `leisure` | arte, deportes, entretenimiento, fiestas, foto-video, juegos, lectura, musica | 80 | Waiting (cut before it started) |
+| `science` | agricultura, ciencia, construccion, educacion, energia, espacio, herramientas, industria, seguridad-laboral | 93 | Waiting (cut before it started) |
+| `nature` | animales, aves-insectos, clima, mar, medio-ambiente, plantas | 58 | Waiting (cut before it started) |
 
 ## Files
 - `approved.json`: the approved names by category, `{ category: [{ name, meaning, drawing, closest, why, source }] }`.

@@ -1,0 +1,3778 @@
+{
+  "group": "interface",
+  "i18n": {
+    "select-multiple": {
+      "label": {
+        "es": "Desplegable de selección múltiple",
+        "en": "Multi-select dropdown",
+        "pt": "Menu suspenso de seleção múltipla",
+        "fr": "Liste déroulante à sélection multiple",
+        "de": "Dropdown mit Mehrfachauswahl",
+        "it": "Menu a tendina a selezione multipla",
+        "ja": "複数選択ドロップダウン",
+        "zh": "多选下拉框",
+        "ko": "다중 선택 드롭다운",
+        "ar": "قائمة منسدلة متعددة الاختيار"
+      },
+      "keywords": {
+        "es": [
+          "multiselect",
+          "elegir varios",
+          "varias opciones",
+          "chips",
+          "valores seleccionados",
+          "filtros",
+          "asignar etiquetas"
+        ],
+        "en": [
+          "multiselect",
+          "pick many",
+          "several values",
+          "chips",
+          "selected values",
+          "filters",
+          "assign tags"
+        ]
+      }
+    },
+    "select-cascade": {
+      "label": {
+        "es": "Selector en cascada",
+        "en": "Cascading select",
+        "pt": "Seletor em cascata",
+        "fr": "Sélecteur en cascade",
+        "de": "Kaskadenauswahl",
+        "it": "Selettore a cascata",
+        "ja": "カスケード選択",
+        "zh": "级联选择器",
+        "ko": "계단식 선택기",
+        "ar": "منتقي متسلسل"
+      },
+      "keywords": {
+        "es": [
+          "cascader",
+          "país, estado y ciudad",
+          "categorías anidadas",
+          "niveles",
+          "jerarquía",
+          "subcategoría",
+          "menú dependiente"
+        ],
+        "en": [
+          "cascader",
+          "country, state, city",
+          "nested categories",
+          "levels",
+          "hierarchy",
+          "subcategory",
+          "dependent dropdown"
+        ]
+      }
+    },
+    "input-copy": {
+      "label": {
+        "es": "Campo con botón de copiar",
+        "en": "Field with copy button",
+        "pt": "Campo com botão de copiar",
+        "fr": "Champ avec bouton de copie",
+        "de": "Feld mit Kopieren-Button",
+        "it": "Campo con pulsante di copia",
+        "ja": "コピーボタン付き入力欄",
+        "zh": "带复制按钮的输入框",
+        "ko": "복사 버튼이 있는 입력란",
+        "ar": "حقل مع زر نسخ"
+      },
+      "keywords": {
+        "es": [
+          "clave de API",
+          "enlace de invitación",
+          "copiar al portapapeles",
+          "token",
+          "solo lectura",
+          "compartir enlace",
+          "código de referido"
+        ],
+        "en": [
+          "API key",
+          "invite link",
+          "copy to clipboard",
+          "token",
+          "read-only",
+          "share link",
+          "referral code"
+        ]
+      }
+    },
+    "input-range": {
+      "label": {
+        "es": "Campos de mínimo y máximo",
+        "en": "Min and max fields",
+        "pt": "Campos de mínimo e máximo",
+        "fr": "Champs minimum et maximum",
+        "de": "Felder für Minimum und Maximum",
+        "it": "Campi minimo e massimo",
+        "ja": "最小値・最大値の入力欄",
+        "zh": "最小值和最大值输入框",
+        "ko": "최솟값·최댓값 입력란",
+        "ar": "حقلا الحد الأدنى والأقصى"
+      },
+      "keywords": {
+        "es": [
+          "rango de precios",
+          "escribir el rango",
+          "filtrar por precio",
+          "valor mínimo",
+          "valor máximo",
+          "intervalo",
+          "entre dos valores"
+        ],
+        "en": [
+          "price range",
+          "typed range",
+          "filter by price",
+          "minimum value",
+          "maximum value",
+          "interval",
+          "between two values"
+        ]
+      }
+    },
+    "input-card": {
+      "label": {
+        "es": "Campo de tarjeta",
+        "en": "Card number field",
+        "pt": "Campo do cartão",
+        "fr": "Champ de carte bancaire",
+        "de": "Kartennummernfeld",
+        "it": "Campo numero di carta",
+        "ja": "カード番号入力欄",
+        "zh": "银行卡号输入框",
+        "ko": "카드 번호 입력란",
+        "ar": "حقل رقم البطاقة"
+      },
+      "keywords": {
+        "es": [
+          "número de tarjeta",
+          "checkout",
+          "pago con tarjeta",
+          "datos de pago",
+          "formulario de pago",
+          "crédito o débito",
+          "cvv"
+        ],
+        "en": [
+          "credit card",
+          "checkout",
+          "card payment",
+          "payment details",
+          "payment form",
+          "debit card",
+          "cvv"
+        ]
+      }
+    },
+    "input-signature": {
+      "label": {
+        "es": "Campo de firma",
+        "en": "Signature field",
+        "pt": "Campo de assinatura",
+        "fr": "Champ de signature",
+        "de": "Unterschriftsfeld",
+        "it": "Campo firma",
+        "ja": "署名欄",
+        "zh": "签名栏",
+        "ko": "서명란",
+        "ar": "حقل التوقيع"
+      },
+      "keywords": {
+        "es": [
+          "firmar con el dedo",
+          "firma electrónica",
+          "rúbrica",
+          "firmar aquí",
+          "contrato",
+          "conformidad",
+          "formulario"
+        ],
+        "en": [
+          "sign with finger",
+          "e-signature",
+          "sign here",
+          "signature pad",
+          "contract",
+          "consent",
+          "form builder"
+        ]
+      }
+    },
+    "input-formula": {
+      "label": {
+        "es": "Campo de fórmula",
+        "en": "Formula field",
+        "pt": "Campo de fórmula",
+        "fr": "Champ de formule",
+        "de": "Formelfeld",
+        "it": "Campo formula",
+        "ja": "数式フィールド",
+        "zh": "公式字段",
+        "ko": "수식 필드",
+        "ar": "حقل صيغة"
+      },
+      "keywords": {
+        "es": [
+          "campo calculado",
+          "valor calculado",
+          "base de datos",
+          "total automático",
+          "fx",
+          "propiedad de fórmula",
+          "cálculo"
+        ],
+        "en": [
+          "calculated field",
+          "computed value",
+          "database",
+          "auto total",
+          "fx",
+          "rollup",
+          "formula property"
+        ]
+      }
+    },
+    "textarea-rich": {
+      "label": {
+        "es": "Campo de texto enriquecido",
+        "en": "Rich text field",
+        "pt": "Campo de texto formatado",
+        "fr": "Champ de texte enrichi",
+        "de": "Rich-Text-Feld",
+        "it": "Campo di testo formattato",
+        "ja": "リッチテキスト欄",
+        "zh": "富文本框",
+        "ko": "서식 있는 텍스트 필드",
+        "ar": "حقل نص منسق"
+      },
+      "keywords": {
+        "es": [
+          "editor",
+          "negritas",
+          "formato",
+          "barra de formato",
+          "WYSIWYG",
+          "descripción",
+          "listas y enlaces"
+        ],
+        "en": [
+          "editor",
+          "bold",
+          "formatting",
+          "formatting toolbar",
+          "WYSIWYG",
+          "description",
+          "markdown"
+        ]
+      }
+    },
+    "button-floating-menu": {
+      "label": {
+        "es": "Menú de botón flotante",
+        "en": "Floating action menu",
+        "pt": "Menu do botão flutuante",
+        "fr": "Menu du bouton flottant",
+        "de": "Speed-Dial-Menü",
+        "it": "Menu del pulsante mobile",
+        "ja": "スピードダイヤル",
+        "zh": "悬浮按钮菜单",
+        "ko": "스피드 다이얼",
+        "ar": "قائمة زر الإجراء العائم"
+      },
+      "keywords": {
+        "es": [
+          "speed dial",
+          "fab",
+          "acciones rápidas",
+          "menú del fab",
+          "crear",
+          "botón redondo",
+          "desplegar acciones"
+        ],
+        "en": [
+          "speed dial",
+          "fab",
+          "quick actions",
+          "fab menu",
+          "create",
+          "round button",
+          "expand actions"
+        ]
+      }
+    },
+    "button-check": {
+      "label": {
+        "es": "Botón completado",
+        "en": "Completed button",
+        "pt": "Botão concluído",
+        "fr": "Bouton terminé",
+        "de": "Schaltfläche abgeschlossen",
+        "it": "Pulsante completato",
+        "ja": "完了したボタン",
+        "zh": "已完成的按钮",
+        "ko": "완료된 버튼",
+        "ar": "زر مكتمل"
+      },
+      "keywords": {
+        "es": [
+          "éxito",
+          "hecho",
+          "enviado",
+          "guardado",
+          "confirmado",
+          "acción terminada",
+          "palomita"
+        ],
+        "en": [
+          "success",
+          "done",
+          "sent",
+          "saved",
+          "confirmed",
+          "action complete",
+          "check mark"
+        ]
+      }
+    },
+    "radio-group-alert": {
+      "label": {
+        "es": "Error en los botones de opción",
+        "en": "Radio button error",
+        "pt": "Erro nos botões de opção",
+        "fr": "Erreur de bouton radio",
+        "de": "Fehler bei Optionsfeldern",
+        "it": "Errore nei pulsanti di opzione",
+        "ja": "ラジオボタンのエラー",
+        "zh": "单选按钮错误",
+        "ko": "라디오 버튼 오류",
+        "ar": "خطأ في أزرار الاختيار"
+      },
+      "keywords": {
+        "es": [
+          "sin seleccionar",
+          "pregunta obligatoria",
+          "validación",
+          "estado de error",
+          "falta elegir",
+          "radio",
+          "opción requerida"
+        ],
+        "en": [
+          "nothing selected",
+          "required question",
+          "validation",
+          "error state",
+          "pick one",
+          "radio group",
+          "required choice"
+        ]
+      }
+    },
+    "fieldset-plus": {
+      "label": {
+        "es": "Agregar grupo de campos",
+        "en": "Add field group",
+        "pt": "Adicionar grupo de campos",
+        "fr": "Ajouter un groupe de champs",
+        "de": "Feldgruppe hinzufügen",
+        "it": "Aggiungi gruppo di campi",
+        "ja": "フィールドグループを追加",
+        "zh": "添加字段组",
+        "ko": "필드 그룹 추가",
+        "ar": "إضافة مجموعة حقول"
+      },
+      "keywords": {
+        "es": [
+          "repetir campos",
+          "otra dirección",
+          "otro invitado",
+          "agregar otro",
+          "campos repetibles",
+          "bloque dinámico",
+          "más registros"
+        ],
+        "en": [
+          "repeat fields",
+          "another address",
+          "another guest",
+          "add another",
+          "repeater",
+          "dynamic fieldset",
+          "add more"
+        ]
+      }
+    },
+    "form-reset": {
+      "label": {
+        "es": "Restablecer formulario",
+        "en": "Reset form",
+        "pt": "Redefinir formulário",
+        "fr": "Réinitialiser le formulaire",
+        "de": "Formular zurücksetzen",
+        "it": "Reimposta modulo",
+        "ja": "フォームをリセット",
+        "zh": "重置表单",
+        "ko": "양식 초기화",
+        "ar": "إعادة تعيين النموذج"
+      },
+      "keywords": {
+        "es": [
+          "limpiar formulario",
+          "limpiar todos los campos",
+          "valores iniciales",
+          "empezar de nuevo",
+          "deshacer cambios",
+          "vaciar campos",
+          "descartar"
+        ],
+        "en": [
+          "clear form",
+          "clear all fields",
+          "initial values",
+          "start over",
+          "discard changes",
+          "empty fields",
+          "undo edits"
+        ]
+      }
+    },
+    "form-responses": {
+      "label": {
+        "es": "Respuestas del formulario",
+        "en": "Form responses",
+        "pt": "Respostas do formulário",
+        "fr": "Réponses au formulaire",
+        "de": "Formularantworten",
+        "it": "Risposte al modulo",
+        "ja": "フォームの回答",
+        "zh": "表单回复",
+        "ko": "양식 응답",
+        "ar": "ردود النموذج"
+      },
+      "keywords": {
+        "es": [
+          "envíos",
+          "respuestas de encuesta",
+          "registros recibidos",
+          "ver envíos",
+          "exportar respuestas",
+          "participantes",
+          "resumen de respuestas"
+        ],
+        "en": [
+          "form submissions",
+          "survey answers",
+          "entries",
+          "received answers",
+          "view responses",
+          "export responses",
+          "respondents"
+        ]
+      }
+    },
+    "justify-start": {
+      "label": {
+        "es": "Justificar al inicio",
+        "en": "Justify start",
+        "pt": "Justificar no início",
+        "fr": "Justifier au début",
+        "de": "Am Zeilenanfang anordnen",
+        "it": "Giustifica all’inizio",
+        "ja": "先頭に詰める",
+        "zh": "主轴起点排列",
+        "ko": "시작 쪽으로 배치",
+        "ar": "ضبط إلى البداية"
+      },
+      "keywords": {
+        "es": [
+          "justify-content",
+          "flex-start",
+          "flexbox",
+          "eje principal",
+          "agrupar al inicio",
+          "auto layout",
+          "maquetación"
+        ],
+        "en": [
+          "justify-content",
+          "flex-start",
+          "flexbox",
+          "main axis",
+          "pack items",
+          "auto layout",
+          "layout"
+        ]
+      }
+    },
+    "justify-center": {
+      "label": {
+        "es": "Justificar al centro",
+        "en": "Justify center",
+        "pt": "Justificar no centro",
+        "fr": "Justifier au centre",
+        "de": "In der Zeilenmitte anordnen",
+        "it": "Giustifica al centro",
+        "ja": "中央に詰める",
+        "zh": "主轴居中排列",
+        "ko": "가운데로 배치",
+        "ar": "ضبط إلى المنتصف"
+      },
+      "keywords": {
+        "es": [
+          "justify-content",
+          "justify-content center",
+          "flexbox",
+          "eje principal",
+          "centrar en la fila",
+          "auto layout",
+          "maquetación"
+        ],
+        "en": [
+          "justify-content",
+          "flexbox",
+          "main axis",
+          "center in row",
+          "pack items",
+          "auto layout",
+          "layout"
+        ]
+      }
+    },
+    "justify-end": {
+      "label": {
+        "es": "Justificar al final",
+        "en": "Justify end",
+        "pt": "Justificar no fim",
+        "fr": "Justifier à la fin",
+        "de": "Am Zeilenende anordnen",
+        "it": "Giustifica alla fine",
+        "ja": "末尾に詰める",
+        "zh": "主轴终点排列",
+        "ko": "끝 쪽으로 배치",
+        "ar": "ضبط إلى النهاية"
+      },
+      "keywords": {
+        "es": [
+          "justify-content",
+          "flex-end",
+          "flexbox",
+          "eje principal",
+          "agrupar al final",
+          "auto layout",
+          "maquetación"
+        ],
+        "en": [
+          "justify-content",
+          "flex-end",
+          "flexbox",
+          "main axis",
+          "push to end",
+          "auto layout",
+          "layout"
+        ]
+      }
+    },
+    "justify-between": {
+      "label": {
+        "es": "Justificar con espacio entre",
+        "en": "Space between",
+        "pt": "Justificar com espaço entre",
+        "fr": "Justifier avec espace entre",
+        "de": "Mit Abstand dazwischen anordnen",
+        "it": "Giustifica con spazio tra",
+        "ja": "両端から均等配置",
+        "zh": "两端分布",
+        "ko": "사이 간격 균등",
+        "ar": "توزيع بمسافات بينية"
+      },
+      "keywords": {
+        "es": [
+          "space-between",
+          "justify-content",
+          "flexbox",
+          "repartir espacio",
+          "de extremo a extremo",
+          "auto layout",
+          "barra de navegación"
+        ],
+        "en": [
+          "justify-content",
+          "flexbox",
+          "spread items",
+          "edge to edge",
+          "auto layout",
+          "distribute",
+          "navbar"
+        ]
+      }
+    },
+    "padding-top": {
+      "label": {
+        "es": "Margen interior superior",
+        "en": "Top padding",
+        "pt": "Espaçamento interno superior",
+        "fr": "Marge intérieure en haut",
+        "de": "Innenabstand oben",
+        "it": "Spaziatura interna superiore",
+        "ja": "上のパディング",
+        "zh": "上内边距",
+        "ko": "위쪽 안쪽 여백",
+        "ar": "الحشو العلوي"
+      },
+      "keywords": {
+        "es": [
+          "relleno superior",
+          "padding",
+          "espacio interno",
+          "auto layout",
+          "modelo de caja",
+          "css",
+          "contenedor"
+        ],
+        "en": [
+          "top inset",
+          "inner spacing",
+          "inset",
+          "auto layout",
+          "box model",
+          "css",
+          "container"
+        ]
+      }
+    },
+    "padding-right": {
+      "label": {
+        "es": "Margen interior derecho",
+        "en": "Right padding",
+        "pt": "Espaçamento interno direito",
+        "fr": "Marge intérieure à droite",
+        "de": "Innenabstand rechts",
+        "it": "Spaziatura interna destra",
+        "ja": "右のパディング",
+        "zh": "右内边距",
+        "ko": "오른쪽 안쪽 여백",
+        "ar": "الحشو الأيمن"
+      },
+      "keywords": {
+        "es": [
+          "relleno derecho",
+          "padding",
+          "espacio interno",
+          "auto layout",
+          "modelo de caja",
+          "css",
+          "contenedor"
+        ],
+        "en": [
+          "right inset",
+          "inner spacing",
+          "inset",
+          "auto layout",
+          "box model",
+          "css",
+          "container"
+        ]
+      }
+    },
+    "padding-bottom": {
+      "label": {
+        "es": "Margen interior inferior",
+        "en": "Bottom padding",
+        "pt": "Espaçamento interno inferior",
+        "fr": "Marge intérieure en bas",
+        "de": "Innenabstand unten",
+        "it": "Spaziatura interna inferiore",
+        "ja": "下のパディング",
+        "zh": "下内边距",
+        "ko": "아래쪽 안쪽 여백",
+        "ar": "الحشو السفلي"
+      },
+      "keywords": {
+        "es": [
+          "relleno inferior",
+          "padding",
+          "espacio interno",
+          "auto layout",
+          "modelo de caja",
+          "css",
+          "contenedor"
+        ],
+        "en": [
+          "bottom inset",
+          "inner spacing",
+          "inset",
+          "auto layout",
+          "box model",
+          "css",
+          "container"
+        ]
+      }
+    },
+    "padding-left": {
+      "label": {
+        "es": "Margen interior izquierdo",
+        "en": "Left padding",
+        "pt": "Espaçamento interno esquerdo",
+        "fr": "Marge intérieure à gauche",
+        "de": "Innenabstand links",
+        "it": "Spaziatura interna sinistra",
+        "ja": "左のパディング",
+        "zh": "左内边距",
+        "ko": "왼쪽 안쪽 여백",
+        "ar": "الحشو الأيسر"
+      },
+      "keywords": {
+        "es": [
+          "relleno izquierdo",
+          "padding",
+          "espacio interno",
+          "auto layout",
+          "modelo de caja",
+          "css",
+          "contenedor"
+        ],
+        "en": [
+          "left inset",
+          "inner spacing",
+          "inset",
+          "auto layout",
+          "box model",
+          "css",
+          "container"
+        ]
+      }
+    },
+    "padding-horizontal": {
+      "label": {
+        "es": "Margen interior horizontal",
+        "en": "Horizontal padding",
+        "pt": "Espaçamento interno horizontal",
+        "fr": "Marge intérieure horizontale",
+        "de": "Horizontaler Innenabstand",
+        "it": "Spaziatura interna orizzontale",
+        "ja": "左右のパディング",
+        "zh": "水平内边距",
+        "ko": "가로 안쪽 여백",
+        "ar": "الحشو الأفقي"
+      },
+      "keywords": {
+        "es": [
+          "padding-inline",
+          "izquierda y derecha",
+          "relleno lateral",
+          "espacio interno",
+          "auto layout",
+          "modelo de caja",
+          "css"
+        ],
+        "en": [
+          "padding-inline",
+          "left and right",
+          "side padding",
+          "inner spacing",
+          "auto layout",
+          "box model",
+          "css"
+        ]
+      }
+    },
+    "padding-vertical": {
+      "label": {
+        "es": "Margen interior vertical",
+        "en": "Vertical padding",
+        "pt": "Espaçamento interno vertical",
+        "fr": "Marge intérieure verticale",
+        "de": "Vertikaler Innenabstand",
+        "it": "Spaziatura interna verticale",
+        "ja": "上下のパディング",
+        "zh": "垂直内边距",
+        "ko": "세로 안쪽 여백",
+        "ar": "الحشو العمودي"
+      },
+      "keywords": {
+        "es": [
+          "padding-block",
+          "arriba y abajo",
+          "relleno superior e inferior",
+          "espacio interno",
+          "auto layout",
+          "modelo de caja",
+          "css"
+        ],
+        "en": [
+          "padding-block",
+          "top and bottom",
+          "inner spacing",
+          "inset",
+          "auto layout",
+          "box model",
+          "css"
+        ]
+      }
+    },
+    "margin-top": {
+      "label": {
+        "es": "Margen superior",
+        "en": "Top margin",
+        "pt": "Margem superior",
+        "fr": "Marge supérieure",
+        "de": "Außenabstand oben",
+        "it": "Margine superiore",
+        "ja": "上の余白",
+        "zh": "上边距",
+        "ko": "위쪽 여백",
+        "ar": "الهامش العلوي"
+      },
+      "keywords": {
+        "es": [
+          "margin",
+          "espacio exterior",
+          "separación",
+          "modelo de caja",
+          "css",
+          "maquetación web",
+          "espaciado"
+        ],
+        "en": [
+          "space above",
+          "outer spacing",
+          "spacing",
+          "box model",
+          "css",
+          "web layout",
+          "margin space"
+        ]
+      }
+    },
+    "margin-right": {
+      "label": {
+        "es": "Margen derecho",
+        "en": "Right margin",
+        "pt": "Margem direita",
+        "fr": "Marge droite",
+        "de": "Außenabstand rechts",
+        "it": "Margine destro",
+        "ja": "右の余白",
+        "zh": "右边距",
+        "ko": "오른쪽 여백",
+        "ar": "الهامش الأيمن"
+      },
+      "keywords": {
+        "es": [
+          "margin",
+          "espacio exterior",
+          "separación",
+          "modelo de caja",
+          "css",
+          "maquetación web",
+          "espaciado"
+        ],
+        "en": [
+          "right side spacing",
+          "outer spacing",
+          "spacing",
+          "box model",
+          "css",
+          "web layout",
+          "margin space"
+        ]
+      }
+    },
+    "margin-bottom": {
+      "label": {
+        "es": "Margen inferior",
+        "en": "Bottom margin",
+        "pt": "Margem inferior",
+        "fr": "Marge inférieure",
+        "de": "Außenabstand unten",
+        "it": "Margine inferiore",
+        "ja": "下の余白",
+        "zh": "下边距",
+        "ko": "아래쪽 여백",
+        "ar": "الهامش السفلي"
+      },
+      "keywords": {
+        "es": [
+          "margin",
+          "espacio exterior",
+          "separación",
+          "modelo de caja",
+          "css",
+          "maquetación web",
+          "espaciado"
+        ],
+        "en": [
+          "space below",
+          "outer spacing",
+          "spacing",
+          "box model",
+          "css",
+          "web layout",
+          "margin space"
+        ]
+      }
+    },
+    "margin-left": {
+      "label": {
+        "es": "Margen izquierdo",
+        "en": "Left margin",
+        "pt": "Margem esquerda",
+        "fr": "Marge gauche",
+        "de": "Außenabstand links",
+        "it": "Margine sinistro",
+        "ja": "左の余白",
+        "zh": "左边距",
+        "ko": "왼쪽 여백",
+        "ar": "الهامش الأيسر"
+      },
+      "keywords": {
+        "es": [
+          "margin",
+          "espacio exterior",
+          "separación",
+          "modelo de caja",
+          "css",
+          "maquetación web",
+          "espaciado"
+        ],
+        "en": [
+          "left side spacing",
+          "outer spacing",
+          "spacing",
+          "box model",
+          "css",
+          "web layout",
+          "margin space"
+        ]
+      }
+    },
+    "margin-horizontal": {
+      "label": {
+        "es": "Margen horizontal",
+        "en": "Horizontal margin",
+        "pt": "Margem horizontal",
+        "fr": "Marge horizontale",
+        "de": "Horizontaler Außenabstand",
+        "it": "Margine orizzontale",
+        "ja": "左右の余白",
+        "zh": "水平边距",
+        "ko": "가로 여백",
+        "ar": "الهامش الأفقي"
+      },
+      "keywords": {
+        "es": [
+          "margin-inline",
+          "izquierda y derecha",
+          "márgenes laterales",
+          "espacio exterior",
+          "centrar con auto",
+          "modelo de caja",
+          "css"
+        ],
+        "en": [
+          "margin-inline",
+          "left and right",
+          "side margins",
+          "outer spacing",
+          "margin auto",
+          "box model",
+          "css"
+        ]
+      }
+    },
+    "margin-vertical": {
+      "label": {
+        "es": "Margen vertical",
+        "en": "Vertical margin",
+        "pt": "Margem vertical",
+        "fr": "Marge verticale",
+        "de": "Vertikaler Außenabstand",
+        "it": "Margine verticale",
+        "ja": "上下の余白",
+        "zh": "垂直边距",
+        "ko": "세로 여백",
+        "ar": "الهامش العمودي"
+      },
+      "keywords": {
+        "es": [
+          "margin-block",
+          "arriba y abajo",
+          "separación entre bloques",
+          "espacio exterior",
+          "modelo de caja",
+          "css",
+          "espaciado"
+        ],
+        "en": [
+          "margin-block",
+          "top and bottom",
+          "space between blocks",
+          "outer spacing",
+          "box model",
+          "css",
+          "spacing"
+        ]
+      }
+    },
+    "layers-plus": {
+      "label": {
+        "es": "Nueva capa",
+        "en": "New layer",
+        "pt": "Nova camada",
+        "fr": "Nouveau calque",
+        "de": "Neue Ebene",
+        "it": "Nuovo livello",
+        "ja": "新規レイヤー",
+        "zh": "新建图层",
+        "ko": "새 레이어",
+        "ar": "طبقة جديدة"
+      },
+      "keywords": {
+        "es": [
+          "agregar capa",
+          "crear capa",
+          "panel de capas",
+          "edición de imagen",
+          "diseño",
+          "superponer",
+          "nivel"
+        ],
+        "en": [
+          "add layer",
+          "create layer",
+          "layers panel",
+          "image editing",
+          "design",
+          "overlay",
+          "stack"
+        ]
+      }
+    },
+    "list-minus": {
+      "label": {
+        "es": "Quitar de la lista",
+        "en": "Remove from list",
+        "pt": "Remover da lista",
+        "fr": "Retirer de la liste",
+        "de": "Aus Liste entfernen",
+        "it": "Rimuovi dall’elenco",
+        "ja": "リストから削除",
+        "zh": "从列表中移除",
+        "ko": "목록에서 삭제",
+        "ar": "إزالة من القائمة"
+      },
+      "keywords": {
+        "es": [
+          "eliminar elemento",
+          "descartar",
+          "borrar entrada",
+          "playlist",
+          "lista de deseos",
+          "colección",
+          "quitar renglón"
+        ],
+        "en": [
+          "remove item",
+          "take off list",
+          "delete entry",
+          "playlist",
+          "wishlist",
+          "collection",
+          "remove row"
+        ]
+      }
+    },
+    "star-plus": {
+      "label": {
+        "es": "Agregar a favoritos",
+        "en": "Add to favorites",
+        "pt": "Adicionar aos favoritos",
+        "fr": "Ajouter aux favoris",
+        "de": "Zu Favoriten hinzufügen",
+        "it": "Aggiungi ai preferiti",
+        "ja": "お気に入りに追加",
+        "zh": "添加到收藏",
+        "ko": "즐겨찾기에 추가",
+        "ar": "إضافة إلى المفضلة"
+      },
+      "keywords": {
+        "es": [
+          "marcar con estrella",
+          "destacar",
+          "guardar",
+          "favorito",
+          "acceso rápido",
+          "colección",
+          "seguir"
+        ],
+        "en": [
+          "star",
+          "mark as favorite",
+          "save",
+          "bookmark",
+          "quick access",
+          "collection",
+          "follow"
+        ]
+      }
+    },
+    "star-minus": {
+      "label": {
+        "es": "Quitar de favoritos",
+        "en": "Remove from favorites",
+        "pt": "Remover dos favoritos",
+        "fr": "Retirer des favoris",
+        "de": "Aus Favoriten entfernen",
+        "it": "Rimuovi dai preferiti",
+        "ja": "お気に入りから削除",
+        "zh": "从收藏中移除",
+        "ko": "즐겨찾기에서 삭제",
+        "ar": "إزالة من المفضلة"
+      },
+      "keywords": {
+        "es": [
+          "quitar estrella",
+          "quitar de destacados",
+          "dejar de destacar",
+          "eliminar favorito",
+          "olvidar",
+          "colección",
+          "limpiar"
+        ],
+        "en": [
+          "unstar",
+          "unfavorite",
+          "remove from starred",
+          "remove star",
+          "forget",
+          "collection",
+          "clean up"
+        ]
+      }
+    },
+    "save-check": {
+      "label": {
+        "es": "Todo guardado",
+        "en": "All changes saved",
+        "pt": "Tudo salvo",
+        "fr": "Tout est enregistré",
+        "de": "Alles gespeichert",
+        "it": "Tutto salvato",
+        "ja": "すべて保存済み",
+        "zh": "已全部保存",
+        "ko": "모두 저장됨",
+        "ar": "تم حفظ كل التغييرات"
+      },
+      "keywords": {
+        "es": [
+          "cambios guardados",
+          "al día",
+          "sin cambios pendientes",
+          "disquete",
+          "documento guardado",
+          "ctrl s",
+          "guardado automático"
+        ],
+        "en": [
+          "changes saved",
+          "up to date",
+          "no unsaved changes",
+          "floppy disk",
+          "document saved",
+          "cmd s",
+          "saved state"
+        ]
+      }
+    },
+    "paste-text": {
+      "label": {
+        "es": "Pegar sin formato",
+        "en": "Paste as plain text",
+        "pt": "Colar sem formatação",
+        "fr": "Coller sans mise en forme",
+        "de": "Als reinen Text einfügen",
+        "it": "Incolla senza formattazione",
+        "ja": "書式なしで貼り付け",
+        "zh": "粘贴为纯文本",
+        "ko": "서식 없이 붙여넣기",
+        "ar": "لصق كنص عادي"
+      },
+      "keywords": {
+        "es": [
+          "texto plano",
+          "pegar texto",
+          "ctrl shift v",
+          "portapapeles",
+          "pegado especial",
+          "solo texto",
+          "sin negritas ni colores"
+        ],
+        "en": [
+          "strip formatting",
+          "cmd shift v",
+          "clipboard",
+          "paste special",
+          "text only",
+          "plain paste",
+          "unformatted"
+        ]
+      }
+    },
+    "text-outline": {
+      "label": {
+        "es": "Convertir texto en contornos",
+        "en": "Convert text to outlines",
+        "pt": "Converter texto em contornos",
+        "fr": "Vectoriser le texte",
+        "de": "Text in Pfade umwandeln",
+        "it": "Converti testo in profili",
+        "ja": "文字をアウトライン化",
+        "zh": "文字转为轮廓",
+        "ko": "텍스트 윤곽선 만들기",
+        "ar": "تحويل النص إلى مسارات"
+      },
+      "keywords": {
+        "es": [
+          "crear contornos",
+          "vectorizar texto",
+          "texto a trazos",
+          "rutas",
+          "ctrl shift o",
+          "logotipo",
+          "listo para imprenta"
+        ],
+        "en": [
+          "create outlines",
+          "vectorize text",
+          "type to paths",
+          "paths",
+          "cmd shift o",
+          "logo",
+          "print ready"
+        ]
+      }
+    },
+    "word-spacing": {
+      "label": {
+        "es": "Espaciado entre palabras",
+        "en": "Word spacing",
+        "pt": "Espaçamento entre palavras",
+        "fr": "Espacement des mots",
+        "de": "Wortabstand",
+        "it": "Spaziatura tra le parole",
+        "ja": "単語間隔",
+        "zh": "词间距",
+        "ko": "단어 간격",
+        "ar": "تباعد الكلمات"
+      },
+      "keywords": {
+        "es": [
+          "separación de palabras",
+          "tipografía",
+          "justificación",
+          "css",
+          "separación",
+          "texto suelto",
+          "composición"
+        ],
+        "en": [
+          "interword space",
+          "typography",
+          "justification",
+          "css",
+          "loose text",
+          "typesetting"
+        ]
+      }
+    },
+    "stroke-variable": {
+      "label": {
+        "es": "Trazo de grosor variable",
+        "en": "Variable-width stroke",
+        "pt": "Contorno de largura variável",
+        "fr": "Contour d’épaisseur variable",
+        "de": "Kontur mit variabler Breite",
+        "it": "Traccia a spessore variabile",
+        "ja": "可変幅の線",
+        "zh": "可变宽度描边",
+        "ko": "가변 두께 획",
+        "ar": "حد متغير السماكة"
+      },
+      "keywords": {
+        "es": [
+          "perfil de ancho",
+          "pincel",
+          "caligrafía",
+          "trazo a mano",
+          "grosor cambiante",
+          "ilustración",
+          "punta afilada"
+        ],
+        "en": [
+          "width profile",
+          "brush",
+          "calligraphy",
+          "hand-drawn stroke",
+          "thickness",
+          "illustration",
+          "taper"
+        ]
+      }
+    },
+    "layout-freeform": {
+      "label": {
+        "es": "Diseño libre",
+        "en": "Freeform layout",
+        "pt": "Layout livre",
+        "fr": "Disposition libre",
+        "de": "Freie Anordnung",
+        "it": "Layout libero",
+        "ja": "自由配置",
+        "zh": "自由布局",
+        "ko": "자유 배치",
+        "ar": "تخطيط حر"
+      },
+      "keywords": {
+        "es": [
+          "posición absoluta",
+          "sin auto layout",
+          "lienzo libre",
+          "colocar a mano",
+          "mover libremente",
+          "maquetación",
+          "capas"
+        ],
+        "en": [
+          "absolute position",
+          "no auto layout",
+          "free canvas",
+          "place by hand",
+          "move freely",
+          "layout",
+          "layers"
+        ]
+      }
+    },
+    "table-x": {
+      "label": {
+        "es": "Eliminar tabla",
+        "en": "Delete table",
+        "pt": "Excluir tabela",
+        "fr": "Supprimer le tableau",
+        "de": "Tabelle löschen",
+        "it": "Elimina tabella",
+        "ja": "表を削除",
+        "zh": "删除表格",
+        "ko": "표 삭제",
+        "ar": "حذف الجدول"
+      },
+      "keywords": {
+        "es": [
+          "borrar tabla",
+          "quitar tabla",
+          "documento",
+          "filas y columnas",
+          "descartar",
+          "quitar cuadrícula",
+          "procesador de texto"
+        ],
+        "en": [
+          "remove table",
+          "erase table",
+          "document",
+          "rows and columns",
+          "discard",
+          "delete grid",
+          "word processor"
+        ]
+      }
+    },
+    "lasso-polygon": {
+      "label": {
+        "es": "Lazo poligonal",
+        "en": "Polygonal lasso",
+        "pt": "Laço poligonal",
+        "fr": "Lasso polygonal",
+        "de": "Polygon-Lasso",
+        "it": "Lazo poligonale",
+        "ja": "多角形選択ツール",
+        "zh": "多边形套索",
+        "ko": "다각형 올가미",
+        "ar": "أداة التحديد المضلع"
+      },
+      "keywords": {
+        "es": [
+          "selección poligonal",
+          "líneas rectas",
+          "recortar",
+          "aislar",
+          "esquinas",
+          "seleccionar por clics",
+          "edición de fotos"
+        ],
+        "en": [
+          "polygon selection",
+          "straight lines",
+          "cut out",
+          "isolate",
+          "corners",
+          "click to select",
+          "photo editing"
+        ]
+      }
+    },
+    "text-rotate": {
+      "label": {
+        "es": "Girar texto",
+        "en": "Rotate text",
+        "pt": "Girar texto",
+        "fr": "Faire pivoter le texte",
+        "de": "Text drehen",
+        "it": "Ruota testo",
+        "ja": "文字の回転",
+        "zh": "文字旋转",
+        "ko": "텍스트 회전",
+        "ar": "تدوير النص"
+      },
+      "keywords": {
+        "es": [
+          "rotación de texto",
+          "orientación",
+          "inclinar",
+          "ángulo",
+          "celda",
+          "hoja de cálculo",
+          "texto diagonal"
+        ],
+        "en": [
+          "turn text",
+          "orientation",
+          "tilt",
+          "angle",
+          "cell",
+          "spreadsheet",
+          "diagonal text"
+        ]
+      }
+    },
+    "circle": {
+      "label": {
+        "es": "Círculo",
+        "en": "Circle",
+        "pt": "Círculo",
+        "fr": "Cercle",
+        "de": "Kreis",
+        "it": "Forma circolare",
+        "ja": "円形",
+        "zh": "圆形",
+        "ko": "원형",
+        "ar": "دائرة"
+      },
+      "keywords": {
+        "es": [
+          "redondo",
+          "forma básica",
+          "figura",
+          "figura redonda",
+          "punto",
+          "geometría",
+          "herramienta de elipse"
+        ],
+        "en": [
+          "disc",
+          "basic shape",
+          "figure",
+          "round shape",
+          "dot",
+          "geometry",
+          "ellipse tool"
+        ]
+      }
+    },
+    "square": {
+      "label": {
+        "es": "Cuadrado",
+        "en": "Square",
+        "pt": "Quadrado",
+        "fr": "Carré",
+        "de": "Quadrat",
+        "it": "Quadrato",
+        "ja": "正方形",
+        "zh": "正方形",
+        "ko": "정사각형",
+        "ar": "مربع"
+      },
+      "keywords": {
+        "es": [
+          "forma básica",
+          "figura",
+          "cuatro lados iguales",
+          "cuadro",
+          "geometría",
+          "proporción 1:1",
+          "herramienta de rectángulo"
+        ],
+        "en": [
+          "basic shape",
+          "figure",
+          "four equal sides",
+          "box",
+          "geometry",
+          "1:1",
+          "rectangle tool"
+        ]
+      }
+    },
+    "squircle": {
+      "label": {
+        "es": "Superelipse",
+        "en": "Squircle",
+        "pt": "Superelipse",
+        "fr": "Superellipse",
+        "de": "Superellipse",
+        "it": "Superellisse",
+        "ja": "超楕円",
+        "zh": "超椭圆",
+        "ko": "슈퍼타원",
+        "ar": "مربع بزوايا ناعمة"
+      },
+      "keywords": {
+        "es": [
+          "cuadrado suave",
+          "forma de ícono de app",
+          "esquinas continuas",
+          "cuadrado redondeado",
+          "contorno de ícono",
+          "ios",
+          "suavizado de esquinas"
+        ],
+        "en": [
+          "superellipse",
+          "app icon shape",
+          "continuous corners",
+          "rounded square",
+          "icon outline",
+          "ios",
+          "corner smoothing"
+        ]
+      }
+    },
+    "acute-angle": {
+      "label": {
+        "es": "Ángulo agudo",
+        "en": "Acute angle",
+        "pt": "Ângulo agudo",
+        "fr": "Angle aigu",
+        "de": "Spitzer Winkel",
+        "it": "Angolo acuto",
+        "ja": "鋭角",
+        "zh": "锐角",
+        "ko": "예각",
+        "ar": "زاوية حادة"
+      },
+      "keywords": {
+        "es": [
+          "menos de 90 grados",
+          "geometría",
+          "triángulo",
+          "medir",
+          "matemáticas",
+          "escuela",
+          "puntiagudo"
+        ],
+        "en": [
+          "less than 90 degrees",
+          "geometry",
+          "triangle",
+          "measure",
+          "math",
+          "school",
+          "sharp"
+        ]
+      }
+    },
+    "symmetry-radial": {
+      "label": {
+        "es": "Simetría radial",
+        "en": "Radial symmetry",
+        "pt": "Simetria radial",
+        "fr": "Symétrie radiale",
+        "de": "Radialsymmetrie",
+        "it": "Simmetria radiale",
+        "ja": "放射対称",
+        "zh": "径向对称",
+        "ko": "방사 대칭",
+        "ar": "تناظر شعاعي"
+      },
+      "keywords": {
+        "es": [
+          "mandala",
+          "caleidoscopio",
+          "rotación",
+          "repetir alrededor",
+          "patrón circular",
+          "dibujo",
+          "espejo"
+        ],
+        "en": [
+          "mandala",
+          "kaleidoscope",
+          "rotation",
+          "repeat around center",
+          "circular pattern",
+          "drawing",
+          "mirror"
+        ]
+      }
+    },
+    "dodecahedron": {
+      "label": {
+        "es": "Dodecaedro",
+        "en": "Dodecahedron",
+        "pt": "Dodecaedro",
+        "fr": "Dodécaèdre",
+        "de": "Dodekaeder",
+        "it": "Dodecaedro",
+        "ja": "十二面体",
+        "zh": "十二面体",
+        "ko": "십이면체",
+        "ar": "اثنا عشري الأوجه"
+      },
+      "keywords": {
+        "es": [
+          "sólido platónico",
+          "doce caras",
+          "pentágonos",
+          "dado de 12 caras",
+          "d12",
+          "geometría",
+          "poliedro"
+        ],
+        "en": [
+          "platonic solid",
+          "twelve faces",
+          "pentagons",
+          "12-sided die",
+          "d12",
+          "geometry",
+          "polyhedron"
+        ]
+      }
+    },
+    "line-end-dot": {
+      "label": {
+        "es": "Extremo de línea con punto",
+        "en": "Dot line end",
+        "pt": "Fim de linha com ponto",
+        "fr": "Extrémité de ligne en point",
+        "de": "Linienende mit Punkt",
+        "it": "Fine linea a punto",
+        "ja": "点の線端",
+        "zh": "圆点线端",
+        "ko": "점 모양 선 끝",
+        "ar": "نهاية خط بنقطة"
+      },
+      "keywords": {
+        "es": [
+          "marcador",
+          "conector",
+          "línea de tiempo",
+          "diagrama",
+          "punta de línea",
+          "nodo",
+          "terminación"
+        ],
+        "en": [
+          "marker",
+          "connector",
+          "timeline",
+          "diagram",
+          "endpoint",
+          "node",
+          "line ending"
+        ]
+      }
+    },
+    "line-end-diamond": {
+      "label": {
+        "es": "Extremo de línea con rombo",
+        "en": "Diamond line end",
+        "pt": "Fim de linha com losango",
+        "fr": "Extrémité de ligne en losange",
+        "de": "Linienende mit Raute",
+        "it": "Fine linea a rombo",
+        "ja": "ひし形の線端",
+        "zh": "菱形线端",
+        "ko": "마름모 모양 선 끝",
+        "ar": "نهاية خط بمعين"
+      },
+      "keywords": {
+        "es": [
+          "marcador",
+          "conector",
+          "agregación",
+          "uml",
+          "diagrama",
+          "punta de línea",
+          "diamante"
+        ],
+        "en": [
+          "marker",
+          "connector",
+          "aggregation",
+          "uml",
+          "diagram",
+          "line ending",
+          "rhombus"
+        ]
+      }
+    },
+    "sort-a-z": {
+      "label": {
+        "es": "Ordenar de la A a la Z",
+        "en": "Sort A to Z",
+        "pt": "Classificar de A a Z",
+        "fr": "Trier de A à Z",
+        "de": "Von A bis Z sortieren",
+        "it": "Ordina dalla A alla Z",
+        "ja": "AからZへ並べ替え",
+        "zh": "按 A 到 Z 排序",
+        "ko": "A부터 Z 순으로 정렬",
+        "ar": "فرز من A إلى Z"
+      },
+      "keywords": {
+        "es": [
+          "orden alfabético",
+          "alfabéticamente",
+          "abecedario",
+          "por nombre",
+          "lista",
+          "tabla",
+          "ascendente"
+        ],
+        "en": [
+          "alphabetical",
+          "alphabetically",
+          "by name",
+          "letters",
+          "list",
+          "table",
+          "ascending"
+        ]
+      }
+    },
+    "sort-z-a": {
+      "label": {
+        "es": "Ordenar de la Z a la A",
+        "en": "Sort Z to A",
+        "pt": "Classificar de Z a A",
+        "fr": "Trier de Z à A",
+        "de": "Von Z bis A sortieren",
+        "it": "Ordina dalla Z alla A",
+        "ja": "ZからAへ並べ替え",
+        "zh": "按 Z 到 A 排序",
+        "ko": "Z부터 A 순으로 정렬",
+        "ar": "فرز من Z إلى A"
+      },
+      "keywords": {
+        "es": [
+          "orden alfabético",
+          "alfabéticamente",
+          "abecedario",
+          "por nombre",
+          "lista",
+          "tabla",
+          "orden inverso"
+        ],
+        "en": [
+          "alphabetical",
+          "alphabetically",
+          "by name",
+          "letters",
+          "list",
+          "table",
+          "reverse alphabetical"
+        ]
+      }
+    },
+    "sort-0-9": {
+      "label": {
+        "es": "Ordenar del 0 al 9",
+        "en": "Sort 0 to 9",
+        "pt": "Classificar de 0 a 9",
+        "fr": "Trier de 0 à 9",
+        "de": "Von 0 bis 9 sortieren",
+        "it": "Ordina da 0 a 9",
+        "ja": "0から9へ並べ替え",
+        "zh": "按 0 到 9 排序",
+        "ko": "0부터 9 순으로 정렬",
+        "ar": "فرز من 0 إلى 9"
+      },
+      "keywords": {
+        "es": [
+          "orden numérico",
+          "números de menor a mayor",
+          "valores numéricos",
+          "cantidad",
+          "precio",
+          "tabla",
+          "ascendente"
+        ],
+        "en": [
+          "numeric order",
+          "lowest number first",
+          "numbers",
+          "amount",
+          "price",
+          "table",
+          "ascending"
+        ]
+      }
+    },
+    "sort-9-0": {
+      "label": {
+        "es": "Ordenar del 9 al 0",
+        "en": "Sort 9 to 0",
+        "pt": "Classificar de 9 a 0",
+        "fr": "Trier de 9 à 0",
+        "de": "Von 9 bis 0 sortieren",
+        "it": "Ordina da 9 a 0",
+        "ja": "9から0へ並べ替え",
+        "zh": "按 9 到 0 排序",
+        "ko": "9부터 0 순으로 정렬",
+        "ar": "فرز من 9 إلى 0"
+      },
+      "keywords": {
+        "es": [
+          "orden numérico",
+          "números de mayor a menor",
+          "valores numéricos",
+          "cantidad",
+          "precio",
+          "tabla",
+          "orden inverso"
+        ],
+        "en": [
+          "numeric order",
+          "highest number first",
+          "numbers",
+          "amount",
+          "price",
+          "table",
+          "reverse numeric"
+        ]
+      }
+    },
+    "arrow-turn-left-down": {
+      "label": {
+        "es": "Girar a la izquierda y bajar",
+        "en": "Turn left and down",
+        "pt": "Virar à esquerda e descer",
+        "fr": "Tourner à gauche puis descendre",
+        "de": "Nach links, dann nach unten",
+        "it": "Svolta a sinistra e scendi",
+        "ja": "左へ曲がって下へ",
+        "zh": "向左再向下",
+        "ko": "왼쪽으로 돌아 아래로",
+        "ar": "يسارًا ثم إلى الأسفل"
+      },
+      "keywords": {
+        "es": [
+          "esquina",
+          "cambio de dirección",
+          "bajar",
+          "flecha en ángulo",
+          "siguiente renglón",
+          "descender",
+          "recorrido"
+        ],
+        "en": [
+          "corner",
+          "change direction",
+          "go down",
+          "angled arrow",
+          "next line",
+          "descend",
+          "path"
+        ]
+      }
+    },
+    "arrow-turn-right-down": {
+      "label": {
+        "es": "Girar a la derecha y bajar",
+        "en": "Turn right and down",
+        "pt": "Virar à direita e descer",
+        "fr": "Tourner à droite puis descendre",
+        "de": "Nach rechts, dann nach unten",
+        "it": "Svolta a destra e scendi",
+        "ja": "右へ曲がって下へ",
+        "zh": "向右再向下",
+        "ko": "오른쪽으로 돌아 아래로",
+        "ar": "يمينًا ثم إلى الأسفل"
+      },
+      "keywords": {
+        "es": [
+          "esquina",
+          "cambio de dirección",
+          "bajar",
+          "flecha en ángulo",
+          "paso siguiente",
+          "continuar abajo",
+          "recorrido"
+        ],
+        "en": [
+          "corner",
+          "change direction",
+          "go down",
+          "angled arrow",
+          "next step",
+          "continue below",
+          "path"
+        ]
+      }
+    },
+    "rows": {
+      "label": {
+        "es": "Diseño en filas",
+        "en": "Rows",
+        "pt": "Layout em linhas",
+        "fr": "Disposition en lignes",
+        "de": "Zeilenlayout",
+        "it": "Layout a righe",
+        "ja": "行レイアウト",
+        "zh": "行布局",
+        "ko": "행 레이아웃",
+        "ar": "تخطيط صفوف"
+      },
+      "keywords": {
+        "es": [
+          "franjas",
+          "bandas horizontales",
+          "filas de contenido",
+          "secciones",
+          "dividir en filas",
+          "tabla",
+          "estructura"
+        ],
+        "en": [
+          "horizontal bands",
+          "one above another",
+          "layout",
+          "sections",
+          "table",
+          "split horizontally",
+          "grid"
+        ]
+      }
+    },
+    "columns-gear": {
+      "label": {
+        "es": "Personalizar columnas",
+        "en": "Customize columns",
+        "pt": "Personalizar colunas",
+        "fr": "Personnaliser les colonnes",
+        "de": "Spalten anpassen",
+        "it": "Personalizza colonne",
+        "ja": "列をカスタマイズ",
+        "zh": "自定义列",
+        "ko": "열 맞춤 설정",
+        "ar": "تخصيص الأعمدة"
+      },
+      "keywords": {
+        "es": [
+          "mostrar columnas",
+          "ocultar columnas",
+          "ordenar columnas",
+          "tabla de datos",
+          "campos visibles",
+          "configurar tabla",
+          "vista"
+        ],
+        "en": [
+          "show columns",
+          "hide columns",
+          "column order",
+          "data table",
+          "visible fields",
+          "table settings",
+          "column picker"
+        ]
+      }
+    },
+    "scale-3d": {
+      "label": {
+        "es": "Escalar en 3D",
+        "en": "Scale in 3D",
+        "pt": "Dimensionar em 3D",
+        "fr": "Mise à l’échelle 3D",
+        "de": "3D-Skalierung",
+        "it": "Scala in 3D",
+        "ja": "3D拡大縮小",
+        "zh": "3D 缩放",
+        "ko": "3D 크기 조정",
+        "ar": "تحجيم ثلاثي الأبعاد"
+      },
+      "keywords": {
+        "es": [
+          "redimensionar",
+          "modelo 3d",
+          "ejes",
+          "agrandar",
+          "reducir",
+          "transformar",
+          "modelado"
+        ],
+        "en": [
+          "resize",
+          "3d model",
+          "axes",
+          "enlarge",
+          "shrink",
+          "transform",
+          "modeling"
+        ]
+      }
+    },
+    "search-check": {
+      "label": {
+        "es": "Coincidencia encontrada",
+        "en": "Match found",
+        "pt": "Correspondência encontrada",
+        "fr": "Correspondance trouvée",
+        "de": "Treffer gefunden",
+        "it": "Corrispondenza trovata",
+        "ja": "一致あり",
+        "zh": "已找到匹配项",
+        "ko": "일치 항목 찾음",
+        "ar": "تم العثور على تطابق"
+      },
+      "keywords": {
+        "es": [
+          "resultado",
+          "encontrado",
+          "búsqueda exitosa",
+          "lupa",
+          "verificado",
+          "disponible",
+          "hay resultados"
+        ],
+        "en": [
+          "result",
+          "found",
+          "successful search",
+          "magnifier",
+          "verified",
+          "available",
+          "results found"
+        ]
+      }
+    },
+    "mouse-middle-click": {
+      "label": {
+        "es": "Clic central",
+        "en": "Middle click",
+        "pt": "Clique do meio",
+        "fr": "Clic du milieu",
+        "de": "Mittelklick",
+        "it": "Clic centrale",
+        "ja": "中クリック",
+        "zh": "中键单击",
+        "ko": "가운데 클릭",
+        "ar": "نقر بالزر الأوسط"
+      },
+      "keywords": {
+        "es": [
+          "botón central",
+          "presionar la rueda",
+          "abrir en pestaña nueva",
+          "ratón",
+          "mouse",
+          "desplazar vista",
+          "atajo"
+        ],
+        "en": [
+          "middle button",
+          "wheel click",
+          "open in new tab",
+          "mouse",
+          "shortcut",
+          "pan view",
+          "instructions"
+        ]
+      }
+    },
+    "tabs-x": {
+      "label": {
+        "es": "Cerrar pestaña",
+        "en": "Close tab",
+        "pt": "Fechar aba",
+        "fr": "Fermer l’onglet",
+        "de": "Tab schließen",
+        "it": "Chiudi scheda",
+        "ja": "タブを閉じる",
+        "zh": "关闭标签页",
+        "ko": "탭 닫기",
+        "ar": "إغلاق علامة التبويب"
+      },
+      "keywords": {
+        "es": [
+          "cerrar otras pestañas",
+          "navegador",
+          "quitar pestaña",
+          "descartar",
+          "ctrl w",
+          "ordenar pestañas",
+          "salir"
+        ],
+        "en": [
+          "close other tabs",
+          "browser",
+          "remove tab",
+          "dismiss",
+          "cmd w",
+          "tidy tabs",
+          "exit"
+        ]
+      }
+    },
+    "filter-star": {
+      "label": {
+        "es": "Filtro guardado",
+        "en": "Saved filter",
+        "pt": "Filtro salvo",
+        "fr": "Filtre enregistré",
+        "de": "Gespeicherter Filter",
+        "it": "Filtro salvato",
+        "ja": "保存済みフィルター",
+        "zh": "已保存的筛选",
+        "ko": "저장된 필터",
+        "ar": "عامل تصفية محفوظ"
+      },
+      "keywords": {
+        "es": [
+          "filtro favorito",
+          "vista guardada",
+          "embudo",
+          "filtro con estrella",
+          "reutilizar filtro",
+          "búsqueda frecuente",
+          "segmento"
+        ],
+        "en": [
+          "favorite filter",
+          "saved view",
+          "funnel",
+          "starred filter",
+          "reuse filter",
+          "frequent search",
+          "segment"
+        ]
+      }
+    },
+    "search-star": {
+      "label": {
+        "es": "Búsqueda guardada",
+        "en": "Saved search",
+        "pt": "Pesquisa salva",
+        "fr": "Recherche enregistrée",
+        "de": "Gespeicherte Suche",
+        "it": "Ricerca salvata",
+        "ja": "保存した検索",
+        "zh": "已保存的搜索",
+        "ko": "저장된 검색",
+        "ar": "بحث محفوظ"
+      },
+      "keywords": {
+        "es": [
+          "alerta de empleo",
+          "alertas",
+          "nuevos resultados",
+          "búsqueda favorita",
+          "lupa",
+          "inmuebles",
+          "seguir búsqueda"
+        ],
+        "en": [
+          "job alert",
+          "alerts",
+          "new matches",
+          "favorite search",
+          "magnifier",
+          "listings",
+          "follow search"
+        ]
+      }
+    },
+    "prototype-mobile": {
+      "label": {
+        "es": "Prototipo móvil",
+        "en": "Mobile prototype",
+        "pt": "Protótipo mobile",
+        "fr": "Prototype mobile",
+        "de": "Mobiler Prototyp",
+        "it": "Prototipo mobile",
+        "ja": "モバイルのプロトタイプ",
+        "zh": "移动端原型",
+        "ko": "모바일 프로토타입",
+        "ar": "نموذج أولي للجوال"
+      },
+      "keywords": {
+        "es": [
+          "app",
+          "celular",
+          "interactivo",
+          "pantallas enlazadas",
+          "probar en el teléfono",
+          "clicable",
+          "demo"
+        ],
+        "en": [
+          "app",
+          "phone",
+          "interactive",
+          "linked screens",
+          "test on device",
+          "clickable",
+          "demo"
+        ]
+      }
+    },
+    "prototype-hotspot": {
+      "label": {
+        "es": "Zona interactiva del prototipo",
+        "en": "Prototype hotspot",
+        "pt": "Área clicável do protótipo",
+        "fr": "Zone cliquable du prototype",
+        "de": "Hotspot im Prototyp",
+        "it": "Area cliccabile del prototipo",
+        "ja": "プロトタイプのホットスポット",
+        "zh": "原型热区",
+        "ko": "프로토타입 핫스팟",
+        "ar": "منطقة تفاعلية في النموذج الأولي"
+      },
+      "keywords": {
+        "es": [
+          "área clicable",
+          "enlace entre pantallas",
+          "conexión",
+          "interacción",
+          "flujo",
+          "vincular",
+          "zona de clic"
+        ],
+        "en": [
+          "clickable area",
+          "link screens",
+          "connection",
+          "interaction",
+          "flow",
+          "tap target",
+          "link"
+        ]
+      }
+    },
+    "affinity-map": {
+      "label": {
+        "es": "Mapa de afinidad",
+        "en": "Affinity map",
+        "pt": "Mapa de afinidade",
+        "fr": "Diagramme d’affinités",
+        "de": "Affinitätsdiagramm",
+        "it": "Mappa di affinità",
+        "ja": "親和図",
+        "zh": "亲和图",
+        "ko": "친화도",
+        "ar": "مخطط التقارب"
+      },
+      "keywords": {
+        "es": [
+          "agrupar notas",
+          "notas adhesivas",
+          "temas",
+          "hallazgos",
+          "investigación",
+          "síntesis",
+          "clústeres"
+        ],
+        "en": [
+          "group notes",
+          "sticky notes",
+          "themes",
+          "findings",
+          "research",
+          "synthesis",
+          "clusters"
+        ]
+      }
+    },
+    "release-check": {
+      "label": {
+        "es": "Versión publicada",
+        "en": "Shipped release",
+        "pt": "Versão lançada",
+        "fr": "Version publiée",
+        "de": "Veröffentlichtes Release",
+        "it": "Versione rilasciata",
+        "ja": "リリース済み",
+        "zh": "已发布版本",
+        "ko": "출시된 릴리스",
+        "ar": "إصدار منشور"
+      },
+      "keywords": {
+        "es": [
+          "lanzado",
+          "en producción",
+          "disponible",
+          "entregado",
+          "versión en vivo",
+          "lanzamiento",
+          "ya salió"
+        ],
+        "en": [
+          "out now",
+          "live",
+          "published",
+          "available",
+          "delivered",
+          "new version",
+          "launch"
+        ]
+      }
+    },
+    "retrospective": {
+      "label": {
+        "es": "Retrospectiva",
+        "en": "Retrospective",
+        "pt": "Retrospectiva",
+        "fr": "Rétrospective",
+        "de": "Retrospektive",
+        "it": "Retrospettiva",
+        "ja": "振り返り",
+        "zh": "回顾会议",
+        "ko": "회고",
+        "ar": "اجتماع المراجعة"
+      },
+      "keywords": {
+        "es": [
+          "retro",
+          "qué salió bien",
+          "qué mejorar",
+          "aprendizajes",
+          "scrum",
+          "reunión de equipo",
+          "mejora continua"
+        ],
+        "en": [
+          "retro",
+          "what went well",
+          "what to improve",
+          "lessons learned",
+          "scrum",
+          "team meeting",
+          "continuous improvement"
+        ]
+      }
+    },
+    "layout-grid": {
+      "label": {
+        "es": "Retícula de columnas",
+        "en": "Layout grid",
+        "pt": "Grade de layout",
+        "fr": "Grille de mise en page",
+        "de": "Layoutraster",
+        "it": "Griglia di layout",
+        "ja": "レイアウトグリッド",
+        "zh": "布局网格",
+        "ko": "레이아웃 그리드",
+        "ar": "شبكة التخطيط"
+      },
+      "keywords": {
+        "es": [
+          "columnas",
+          "columnas y medianiles",
+          "cuadrícula de diseño",
+          "12 columnas",
+          "márgenes",
+          "maquetación",
+          "sistema de diseño"
+        ],
+        "en": [
+          "columns",
+          "gutter",
+          "column grid",
+          "12 columns",
+          "margins",
+          "design system",
+          "frame grid"
+        ]
+      }
+    },
+    "safe-area": {
+      "label": {
+        "es": "Área segura",
+        "en": "Safe area",
+        "pt": "Área segura",
+        "fr": "Zone de sécurité",
+        "de": "Sicherer Bereich",
+        "it": "Area sicura",
+        "ja": "セーフエリア",
+        "zh": "安全区域",
+        "ko": "안전 영역",
+        "ar": "المنطقة الآمنة"
+      },
+      "keywords": {
+        "es": [
+          "muesca de pantalla",
+          "isla dinámica",
+          "barra de estado",
+          "márgenes seguros",
+          "celular",
+          "diseño móvil",
+          "insets"
+        ],
+        "en": [
+          "screen notch",
+          "dynamic island",
+          "status bar",
+          "insets",
+          "phone",
+          "mobile design",
+          "system bars"
+        ]
+      }
+    },
+    "above-the-fold": {
+      "label": {
+        "es": "Por encima del pliegue",
+        "en": "Above the fold",
+        "pt": "Acima da dobra",
+        "fr": "Au-dessus de la ligne de flottaison",
+        "de": "Above the Fold",
+        "it": "Sopra la piega",
+        "ja": "ファーストビュー",
+        "zh": "首屏",
+        "ko": "첫 화면 영역",
+        "ar": "الجزء الظاهر دون تمرير"
+      },
+      "keywords": {
+        "es": [
+          "parte superior de la página",
+          "primera pantalla",
+          "sin hacer scroll",
+          "lo primero que se ve",
+          "hero",
+          "landing",
+          "portada"
+        ],
+        "en": [
+          "first screen",
+          "before scrolling",
+          "hero section",
+          "landing page",
+          "viewport",
+          "initial view",
+          "fold line"
+        ]
+      }
+    },
+    "sprint-play": {
+      "label": {
+        "es": "Iniciar sprint",
+        "en": "Start sprint",
+        "pt": "Iniciar sprint",
+        "fr": "Démarrer le sprint",
+        "de": "Sprint starten",
+        "it": "Avvia sprint",
+        "ja": "スプリントを開始",
+        "zh": "开始冲刺",
+        "ko": "스프린트 시작",
+        "ar": "بدء السبرنت"
+      },
+      "keywords": {
+        "es": [
+          "comenzar iteración",
+          "arrancar",
+          "planeación",
+          "scrum",
+          "nuevo ciclo",
+          "ágil",
+          "kickoff"
+        ],
+        "en": [
+          "begin iteration",
+          "kick off",
+          "planning",
+          "scrum",
+          "new cycle",
+          "agile",
+          "go"
+        ]
+      }
+    },
+    "feature-flag-person": {
+      "label": {
+        "es": "Bandera segmentada",
+        "en": "Targeted flag",
+        "pt": "Sinalizador segmentado",
+        "fr": "Indicateur ciblé",
+        "de": "Zielgerichtetes Feature-Flag",
+        "it": "Flag mirato",
+        "ja": "ターゲット指定のフィーチャーフラグ",
+        "zh": "定向功能开关",
+        "ko": "타기팅된 기능 플래그",
+        "ar": "علامة ميزة مستهدفة"
+      },
+      "keywords": {
+        "es": [
+          "segmentación",
+          "usuarios elegidos",
+          "beta cerrada",
+          "acceso anticipado",
+          "por segmento",
+          "activar para",
+          "lista de usuarios"
+        ],
+        "en": [
+          "targeting",
+          "chosen users",
+          "closed beta",
+          "early access",
+          "by segment",
+          "enable for",
+          "user list"
+        ]
+      }
+    },
+    "ampersand-double": {
+      "label": {
+        "es": "Doble ampersand",
+        "en": "Double ampersand",
+        "pt": "E comercial duplo",
+        "fr": "Double esperluette",
+        "de": "Doppeltes Und-Zeichen",
+        "it": "Doppia e commerciale",
+        "ja": "ダブルアンパサンド",
+        "zh": "双与号",
+        "ko": "이중 앰퍼샌드",
+        "ar": "علامة عطف مزدوجة"
+      },
+      "keywords": {
+        "es": [
+          "y lógico",
+          "operador AND",
+          "y comercial doble",
+          "programación",
+          "condición",
+          "javascript",
+          "booleano"
+        ],
+        "en": [
+          "logical and",
+          "AND operator",
+          "ampersands",
+          "programming",
+          "condition",
+          "javascript",
+          "boolean"
+        ]
+      }
+    },
+    "asterism": {
+      "label": {
+        "es": "Asterismo",
+        "en": "Asterism",
+        "pt": "Asterismo",
+        "fr": "Astérisme",
+        "de": "Asterismus",
+        "it": "Asterismo",
+        "ja": "アステリズム",
+        "zh": "三星号",
+        "ko": "아스테리즘",
+        "ar": "ثلاث نجيمات"
+      },
+      "keywords": {
+        "es": [
+          "tres asteriscos",
+          "separador de sección",
+          "salto de sección",
+          "tipografía",
+          "estrellas",
+          "pausa",
+          "nota"
+        ],
+        "en": [
+          "three asterisks",
+          "section break",
+          "dinkus",
+          "typography",
+          "stars",
+          "pause",
+          "divider"
+        ]
+      }
+    },
+    "interrobang": {
+      "label": {
+        "es": "Interrobang",
+        "en": "Interrobang",
+        "pt": "Interrobang",
+        "fr": "Point exclarrogatif",
+        "de": "Interrobang",
+        "it": "Punto esclarrogativo",
+        "ja": "インテロバング",
+        "zh": "疑问感叹号",
+        "ko": "인터러뱅",
+        "ar": "علامة استفهام تعجبية"
+      },
+      "keywords": {
+        "es": [
+          "interrogación y exclamación",
+          "interrogación exclamativa",
+          "sorpresa",
+          "pregunta exclamativa",
+          "tipografía",
+          "signo combinado",
+          "puntuación"
+        ],
+        "en": [
+          "question and exclamation",
+          "exclamation question mark",
+          "surprise",
+          "rhetorical question",
+          "typography",
+          "combined mark",
+          "punctuation"
+        ]
+      }
+    },
+    "x-bar": {
+      "label": {
+        "es": "Media muestral",
+        "en": "Sample mean",
+        "pt": "Média amostral",
+        "fr": "Moyenne de l’échantillon",
+        "de": "Stichprobenmittelwert",
+        "it": "Media campionaria",
+        "ja": "標本平均",
+        "zh": "样本均值",
+        "ko": "표본 평균",
+        "ar": "متوسط العينة"
+      },
+      "keywords": {
+        "es": [
+          "x barra",
+          "promedio",
+          "media aritmética",
+          "promedio de la muestra",
+          "muestra estadística",
+          "fórmula",
+          "valor medio"
+        ],
+        "en": [
+          "overbar x",
+          "average",
+          "arithmetic mean",
+          "sample average",
+          "sample statistics",
+          "formula",
+          "mean value"
+        ]
+      }
+    },
+    "omega": {
+      "label": {
+        "es": "Omega",
+        "en": "Omega",
+        "pt": "Ômega",
+        "fr": "Oméga",
+        "de": "Omega",
+        "it": "Omega",
+        "ja": "オメガ",
+        "zh": "欧米伽",
+        "ko": "오메가",
+        "ar": "أوميغا"
+      },
+      "keywords": {
+        "es": [
+          "símbolo de ohmio",
+          "resistencia eléctrica",
+          "unidad de resistencia",
+          "letra griega",
+          "alfa y omega",
+          "fin",
+          "unidad SI"
+        ],
+        "en": [
+          "ohm symbol",
+          "electrical resistance",
+          "resistance unit",
+          "Greek letter",
+          "alpha and omega",
+          "the end",
+          "SI unit"
+        ]
+      }
+    },
+    "phi": {
+      "label": {
+        "es": "Fi",
+        "en": "Phi",
+        "pt": "Fi",
+        "fr": "Phi",
+        "de": "Phi",
+        "it": "Fi",
+        "ja": "ファイ",
+        "zh": "斐",
+        "ko": "파이 (φ)",
+        "ar": "فاي"
+      },
+      "keywords": {
+        "es": [
+          "letra fi",
+          "proporción áurea",
+          "número áureo",
+          "1.618",
+          "letra griega",
+          "flujo magnético",
+          "matemáticas"
+        ],
+        "en": [
+          "golden ratio",
+          "golden number",
+          "1.618",
+          "Greek letter",
+          "magnetic flux",
+          "phi ratio",
+          "math"
+        ]
+      }
+    },
+    "mu": {
+      "label": {
+        "es": "Mu",
+        "en": "Mu",
+        "pt": "Mi",
+        "fr": "Mu",
+        "de": "My",
+        "it": "Mu",
+        "ja": "ミュー",
+        "zh": "缪",
+        "ko": "뮤",
+        "ar": "ميو"
+      },
+      "keywords": {
+        "es": [
+          "micro",
+          "micrómetro",
+          "microgramo",
+          "media poblacional",
+          "letra griega",
+          "coeficiente de fricción",
+          "prefijo SI"
+        ],
+        "en": [
+          "micro",
+          "micrometer",
+          "microgram",
+          "population mean",
+          "Greek letter",
+          "friction coefficient",
+          "SI prefix"
+        ]
+      }
+    },
+    "sigma": {
+      "label": {
+        "es": "Sigma minúscula",
+        "en": "Lowercase sigma",
+        "pt": "Sigma minúsculo",
+        "fr": "Sigma minuscule",
+        "de": "Kleines Sigma",
+        "it": "Sigma minuscola",
+        "ja": "小文字のシグマ",
+        "zh": "小写西格玛",
+        "ko": "소문자 시그마",
+        "ar": "سيغما صغيرة"
+      },
+      "keywords": {
+        "es": [
+          "desviación estándar",
+          "desviación de la media",
+          "seis sigma",
+          "medida de dispersión",
+          "letra griega",
+          "variabilidad",
+          "desviación típica"
+        ],
+        "en": [
+          "standard deviation",
+          "deviation from the mean",
+          "six sigma",
+          "spread",
+          "Greek letter",
+          "variability",
+          "sd"
+        ]
+      }
+    },
+    "per-ten-thousand": {
+      "label": {
+        "es": "Por diez mil",
+        "en": "Per ten thousand",
+        "pt": "Por dez mil",
+        "fr": "Pour dix mille",
+        "de": "Pro Zehntausend",
+        "it": "Per diecimila",
+        "ja": "パーミリアド",
+        "zh": "万分率",
+        "ko": "만분율",
+        "ar": "في العشرة آلاف"
+      },
+      "keywords": {
+        "es": [
+          "puntos básicos",
+          "pb",
+          "finanzas",
+          "tasa de interés",
+          "diezmilésimas",
+          "proporción",
+          "bonos"
+        ],
+        "en": [
+          "basis points",
+          "bps",
+          "permyriad",
+          "finance",
+          "interest rate",
+          "ratio",
+          "bonds"
+        ]
+      }
+    },
+    "gender-male": {
+      "label": {
+        "es": "Masculino",
+        "en": "Male",
+        "pt": "Masculino",
+        "fr": "Masculin",
+        "de": "Männlich",
+        "it": "Maschile",
+        "ja": "男性",
+        "zh": "男性",
+        "ko": "남성",
+        "ar": "ذكر"
+      },
+      "keywords": {
+        "es": [
+          "hombre",
+          "sexo",
+          "signo de género",
+          "marte",
+          "opción de formulario",
+          "macho",
+          "biología"
+        ],
+        "en": [
+          "man",
+          "sex",
+          "gender sign",
+          "mars",
+          "form option",
+          "biology",
+          "boy"
+        ]
+      }
+    },
+    "gender-female": {
+      "label": {
+        "es": "Femenino",
+        "en": "Female",
+        "pt": "Feminino",
+        "fr": "Féminin",
+        "de": "Weiblich",
+        "it": "Femminile",
+        "ja": "女性",
+        "zh": "女性",
+        "ko": "여성",
+        "ar": "أنثى"
+      },
+      "keywords": {
+        "es": [
+          "mujer",
+          "sexo",
+          "signo de género",
+          "venus",
+          "opción de formulario",
+          "hembra",
+          "biología"
+        ],
+        "en": [
+          "woman",
+          "sex",
+          "gender sign",
+          "venus",
+          "form option",
+          "biology",
+          "girl"
+        ]
+      }
+    },
+    "gender-transgender": {
+      "label": {
+        "es": "Transgénero",
+        "en": "Transgender",
+        "pt": "Transgênero",
+        "fr": "Transgenre",
+        "de": "Transgender",
+        "it": "Transgender",
+        "ja": "トランスジェンダー",
+        "zh": "跨性别",
+        "ko": "트랜스젠더",
+        "ar": "عابر جنسيًا"
+      },
+      "keywords": {
+        "es": [
+          "trans",
+          "identidad de género",
+          "lgbtq",
+          "diversidad",
+          "opción de formulario",
+          "inclusión",
+          "orgullo"
+        ],
+        "en": [
+          "trans",
+          "gender identity",
+          "lgbtq",
+          "diversity",
+          "form option",
+          "inclusion",
+          "pride"
+        ]
+      }
+    },
+    "gender-nonbinary": {
+      "label": {
+        "es": "No binario",
+        "en": "Non-binary",
+        "pt": "Não binário",
+        "fr": "Non binaire",
+        "de": "Nichtbinär",
+        "it": "Non binario",
+        "ja": "ノンバイナリー",
+        "zh": "非二元性别",
+        "ko": "논바이너리",
+        "ar": "غير ثنائي الجنس"
+      },
+      "keywords": {
+        "es": [
+          "enby",
+          "identidad de género",
+          "lgbtq",
+          "diversidad",
+          "opción de formulario",
+          "inclusión",
+          "género fluido"
+        ],
+        "en": [
+          "enby",
+          "gender identity",
+          "lgbtq",
+          "diversity",
+          "form option",
+          "inclusion",
+          "genderqueer"
+        ]
+      }
+    },
+    "currency-taka": {
+      "label": {
+        "es": "Taka",
+        "en": "Taka",
+        "pt": "Taka",
+        "fr": "Taka",
+        "de": "Taka",
+        "it": "Taka",
+        "ja": "タカ",
+        "zh": "塔卡",
+        "ko": "방글라데시 타카",
+        "ar": "تاكا"
+      },
+      "keywords": {
+        "es": [
+          "BDT",
+          "moneda",
+          "divisa",
+          "Bangladesh",
+          "precio",
+          "dinero",
+          "Daca"
+        ],
+        "en": [
+          "BDT",
+          "currency",
+          "money",
+          "Bangladesh",
+          "price",
+          "Dhaka",
+          "cash"
+        ]
+      }
+    },
+    "currency-dram": {
+      "label": {
+        "es": "Dram armenio",
+        "en": "Armenian dram",
+        "pt": "Dram armênio",
+        "fr": "Dram arménien",
+        "de": "Armenischer Dram",
+        "it": "Dram armeno",
+        "ja": "アルメニア・ドラム",
+        "zh": "亚美尼亚德拉姆",
+        "ko": "아르메니아 드람",
+        "ar": "درام أرميني"
+      },
+      "keywords": {
+        "es": [
+          "AMD",
+          "moneda",
+          "divisa",
+          "Armenia",
+          "precio",
+          "dinero",
+          "Ereván"
+        ],
+        "en": [
+          "AMD",
+          "currency",
+          "money",
+          "Armenia",
+          "price",
+          "Yerevan",
+          "cash"
+        ]
+      }
+    },
+    "currency-lari": {
+      "label": {
+        "es": "Lari georgiano",
+        "en": "Georgian lari",
+        "pt": "Lari georgiano",
+        "fr": "Lari géorgien",
+        "de": "Georgischer Lari",
+        "it": "Lari georgiano",
+        "ja": "ジョージア・ラリ",
+        "zh": "格鲁吉亚拉里",
+        "ko": "조지아 라리",
+        "ar": "لاري جورجي"
+      },
+      "keywords": {
+        "es": [
+          "GEL",
+          "moneda",
+          "divisa",
+          "Georgia",
+          "precio",
+          "dinero",
+          "Tiflis"
+        ],
+        "en": [
+          "GEL",
+          "currency",
+          "money",
+          "Georgia",
+          "price",
+          "Tbilisi",
+          "cash"
+        ]
+      }
+    },
+    "currency-riyal": {
+      "label": {
+        "es": "Riyal saudí",
+        "en": "Saudi riyal",
+        "pt": "Rial saudita",
+        "fr": "Riyal saoudien",
+        "de": "Saudi-Riyal",
+        "it": "Riyal saudita",
+        "ja": "サウジアラビア・リヤル",
+        "zh": "沙特里亚尔",
+        "ko": "사우디 리얄",
+        "ar": "ريال سعودي"
+      },
+      "keywords": {
+        "es": [
+          "SAR",
+          "moneda",
+          "divisa",
+          "Arabia Saudita",
+          "precio",
+          "Riad",
+          "símbolo de 2025"
+        ],
+        "en": [
+          "SAR",
+          "currency",
+          "money",
+          "Saudi Arabia",
+          "price",
+          "Riyadh",
+          "2025 symbol"
+        ]
+      }
+    },
+    "currency-cedi": {
+      "label": {
+        "es": "Cedi ghanés",
+        "en": "Ghanaian cedi",
+        "pt": "Cedi ganês",
+        "fr": "Cedi ghanéen",
+        "de": "Ghanaischer Cedi",
+        "it": "Cedi ghanese",
+        "ja": "ガーナ・セディ",
+        "zh": "加纳塞地",
+        "ko": "가나 세디",
+        "ar": "سيدي غاني"
+      },
+      "keywords": {
+        "es": [
+          "GHS",
+          "moneda",
+          "divisa",
+          "Ghana",
+          "precio",
+          "dinero",
+          "Acra"
+        ],
+        "en": [
+          "GHS",
+          "currency",
+          "money",
+          "Ghana",
+          "price",
+          "Accra",
+          "cash"
+        ]
+      }
+    },
+    "letter-c-cedilla": {
+      "label": {
+        "es": "Letra C con cedilla",
+        "en": "Letter C with cedilla",
+        "pt": "Letra C cedilha",
+        "fr": "Lettre C cédille",
+        "de": "Buchstabe C mit Cedille",
+        "it": "Lettera C con cediglia",
+        "ja": "セディーユ付きの文字 C",
+        "zh": "带软音符的字母 C",
+        "ko": "세디유가 붙은 C",
+        "ar": "الحرف C بعلامة السيديا"
+      },
+      "keywords": {
+        "es": [
+          "cedilla",
+          "teclado en francés",
+          "portugués",
+          "catalán",
+          "turco",
+          "abecedario",
+          "tecla Ç"
+        ],
+        "en": [
+          "c cedilla",
+          "French keyboard",
+          "Portuguese",
+          "Catalan",
+          "Turkish",
+          "alphabet",
+          "Ç key"
+        ]
+      }
+    },
+    "not-element-of": {
+      "label": {
+        "es": "No pertenece a",
+        "en": "Not an element of",
+        "pt": "Não pertence a",
+        "fr": "N’appartient pas à",
+        "de": "Kein Element von",
+        "it": "Non appartiene a",
+        "ja": "属さない",
+        "zh": "不属于",
+        "ko": "속하지 않음",
+        "ar": "لا ينتمي إلى"
+      },
+      "keywords": {
+        "es": [
+          "no está en",
+          "no es miembro de",
+          "excluir",
+          "conjuntos",
+          "filtro",
+          "consulta",
+          "no es ninguno de"
+        ],
+        "en": [
+          "is not in",
+          "not a member of",
+          "exclude",
+          "sets",
+          "filter",
+          "is none of",
+          "query builder"
+        ]
+      }
+    },
+    "not-subset": {
+      "label": {
+        "es": "No es subconjunto de",
+        "en": "Not a subset of",
+        "pt": "Não é subconjunto de",
+        "fr": "N’est pas un sous-ensemble de",
+        "de": "Keine Teilmenge von",
+        "it": "Non è sottoinsieme di",
+        "ja": "部分集合でない",
+        "zh": "不是子集",
+        "ko": "부분집합 아님",
+        "ar": "ليس جزءًا من"
+      },
+      "keywords": {
+        "es": [
+          "no está contenido en",
+          "no incluido en",
+          "conjuntos",
+          "teoría de conjuntos",
+          "filtro",
+          "lógica de conjuntos",
+          "excluir"
+        ],
+        "en": [
+          "not contained in",
+          "not included in",
+          "sets",
+          "set theory",
+          "filter",
+          "set logic",
+          "exclude"
+        ]
+      }
+    },
+    "window-maximize": {
+      "label": {
+        "es": "Maximizar ventana",
+        "en": "Maximize window",
+        "pt": "Maximizar janela",
+        "fr": "Agrandir la fenêtre",
+        "de": "Fenster maximieren",
+        "it": "Ingrandisci finestra",
+        "ja": "ウィンドウを最大化",
+        "zh": "最大化窗口",
+        "ko": "창 최대화",
+        "ar": "تكبير النافذة لملء الشاشة"
+      },
+      "keywords": {
+        "es": [
+          "pantalla completa",
+          "agrandar",
+          "ampliar",
+          "ocupar toda la pantalla",
+          "barra de título",
+          "botón de ventana",
+          "expandir"
+        ],
+        "en": [
+          "full size",
+          "enlarge",
+          "expand",
+          "fill screen",
+          "title bar",
+          "window button",
+          "zoom"
+        ]
+      }
+    },
+    "window-restore": {
+      "label": {
+        "es": "Restaurar ventana",
+        "en": "Restore window",
+        "pt": "Restaurar janela",
+        "fr": "Restaurer la fenêtre",
+        "de": "Fenster wiederherstellen",
+        "it": "Ripristina finestra",
+        "ja": "ウィンドウを元のサイズに戻す",
+        "zh": "还原窗口",
+        "ko": "창 복원",
+        "ar": "استعادة حجم النافذة"
+      },
+      "keywords": {
+        "es": [
+          "tamaño anterior",
+          "restaurar abajo",
+          "reducir",
+          "dos ventanas",
+          "barra de título",
+          "botón de ventana",
+          "salir de maximizado"
+        ],
+        "en": [
+          "previous size",
+          "restore down",
+          "shrink",
+          "overlapping frames",
+          "title bar",
+          "window button",
+          "unmaximize"
+        ]
+      }
+    },
+    "window-center": {
+      "label": {
+        "es": "Centrar ventana",
+        "en": "Center window",
+        "pt": "Centralizar janela",
+        "fr": "Centrer la fenêtre",
+        "de": "Fenster zentrieren",
+        "it": "Centra finestra",
+        "ja": "ウィンドウを中央に配置",
+        "zh": "窗口居中",
+        "ko": "창 가운데 배치",
+        "ar": "توسيط النافذة"
+      },
+      "keywords": {
+        "es": [
+          "en medio",
+          "organizar ventanas",
+          "acomodar",
+          "en el centro de la pantalla",
+          "enfoque",
+          "pantalla",
+          "posición"
+        ],
+        "en": [
+          "middle",
+          "arrange windows",
+          "middle of the screen",
+          "focus",
+          "screen",
+          "position",
+          "window placement"
+        ]
+      }
+    },
+    "window-snap-left-third": {
+      "label": {
+        "es": "Acoplar al tercio izquierdo",
+        "en": "Snap to left third",
+        "pt": "Ajustar ao terço esquerdo",
+        "fr": "Ancrer dans le tiers gauche",
+        "de": "Im linken Drittel andocken",
+        "it": "Disponi nel terzo sinistro",
+        "ja": "左3分の1にスナップ",
+        "zh": "贴靠到左侧三分之一",
+        "ko": "왼쪽 3분의 1에 맞춤",
+        "ar": "إرساء النافذة في الثلث الأيسر"
+      },
+      "keywords": {
+        "es": [
+          "un tercio de pantalla",
+          "tres columnas",
+          "mosaico",
+          "organizar ventanas",
+          "pantalla ultraancha",
+          "lado a lado",
+          "snap"
+        ],
+        "en": [
+          "one third",
+          "three columns",
+          "tile",
+          "arrange windows",
+          "ultrawide",
+          "side by side",
+          "snap layouts"
+        ]
+      }
+    },
+    "window-snap-center-third": {
+      "label": {
+        "es": "Acoplar al tercio central",
+        "en": "Snap to center third",
+        "pt": "Ajustar ao terço central",
+        "fr": "Ancrer dans le tiers central",
+        "de": "Im mittleren Drittel andocken",
+        "it": "Disponi nel terzo centrale",
+        "ja": "中央3分の1にスナップ",
+        "zh": "贴靠到中间三分之一",
+        "ko": "가운데 3분의 1에 맞춤",
+        "ar": "إرساء النافذة في الثلث الأوسط"
+      },
+      "keywords": {
+        "es": [
+          "un tercio de pantalla",
+          "tres columnas",
+          "en medio",
+          "mosaico",
+          "organizar ventanas",
+          "pantalla ultraancha",
+          "snap"
+        ],
+        "en": [
+          "one third",
+          "three columns",
+          "middle",
+          "tile",
+          "arrange windows",
+          "ultrawide",
+          "snap layouts"
+        ]
+      }
+    },
+    "window-snap-right-third": {
+      "label": {
+        "es": "Acoplar al tercio derecho",
+        "en": "Snap to right third",
+        "pt": "Ajustar ao terço direito",
+        "fr": "Ancrer dans le tiers droit",
+        "de": "Im rechten Drittel andocken",
+        "it": "Disponi nel terzo destro",
+        "ja": "右3分の1にスナップ",
+        "zh": "贴靠到右侧三分之一",
+        "ko": "오른쪽 3분의 1에 맞춤",
+        "ar": "إرساء النافذة في الثلث الأيمن"
+      },
+      "keywords": {
+        "es": [
+          "un tercio de pantalla",
+          "tres columnas",
+          "mosaico",
+          "organizar ventanas",
+          "pantalla ultraancha",
+          "lado a lado",
+          "snap"
+        ],
+        "en": [
+          "one third",
+          "three columns",
+          "tile",
+          "arrange windows",
+          "ultrawide",
+          "side by side",
+          "snap layouts"
+        ]
+      }
+    },
+    "window-offline": {
+      "label": {
+        "es": "App sin conexión",
+        "en": "App offline",
+        "pt": "App offline",
+        "fr": "App hors ligne",
+        "de": "App offline",
+        "it": "App offline",
+        "ja": "オフラインのアプリ",
+        "zh": "应用离线",
+        "ko": "앱 오프라인 상태",
+        "ar": "التطبيق غير متصل"
+      },
+      "keywords": {
+        "es": [
+          "sin internet",
+          "fuera de línea",
+          "desconectado",
+          "pantalla sin conexión",
+          "reintentar",
+          "red caída",
+          "estado de la app"
+        ],
+        "en": [
+          "no internet",
+          "disconnected",
+          "no connection",
+          "offline screen",
+          "retry",
+          "network down",
+          "app state"
+        ]
+      }
+    },
+    "window-clock": {
+      "label": {
+        "es": "Sesión expirada",
+        "en": "Session expired",
+        "pt": "Sessão expirada",
+        "fr": "Session expirée",
+        "de": "Sitzung abgelaufen",
+        "it": "Sessione scaduta",
+        "ja": "セッションの有効期限切れ",
+        "zh": "会话已过期",
+        "ko": "세션 만료",
+        "ar": "انتهت الجلسة"
+      },
+      "keywords": {
+        "es": [
+          "tiempo de espera agotado",
+          "volver a iniciar sesión",
+          "inactividad",
+          "cierre de sesión automático",
+          "caducada",
+          "seguridad",
+          "reloj"
+        ],
+        "en": [
+          "session timeout",
+          "sign in again",
+          "inactivity",
+          "auto logout",
+          "log in again",
+          "security",
+          "clock"
+        ]
+      }
+    },
+    "window-update": {
+      "label": {
+        "es": "Actualización obligatoria",
+        "en": "Update required",
+        "pt": "Atualização obrigatória",
+        "fr": "Mise à jour requise",
+        "de": "Update erforderlich",
+        "it": "Aggiornamento obbligatorio",
+        "ja": "アップデートが必要",
+        "zh": "需要更新",
+        "ko": "업데이트 필요",
+        "ar": "التحديث مطلوب"
+      },
+      "keywords": {
+        "es": [
+          "nueva versión",
+          "actualizar app",
+          "versión obsoleta",
+          "forzar actualización",
+          "tienda de apps",
+          "bloqueo",
+          "descargar"
+        ],
+        "en": [
+          "new version",
+          "update app",
+          "outdated version",
+          "force update",
+          "app store",
+          "blocked",
+          "download"
+        ]
+      }
+    },
+    "widgets-plus": {
+      "label": {
+        "es": "Agregar widget",
+        "en": "Add widget",
+        "pt": "Adicionar widget",
+        "fr": "Ajouter un widget",
+        "de": "Widget hinzufügen",
+        "it": "Aggiungi widget",
+        "ja": "ウィジェットを追加",
+        "zh": "添加小组件",
+        "ko": "위젯 추가",
+        "ar": "إضافة أداة مصغّرة"
+      },
+      "keywords": {
+        "es": [
+          "pantalla de inicio",
+          "tablero",
+          "personalizar inicio",
+          "nuevo bloque",
+          "módulo",
+          "complemento",
+          "acomodar"
+        ],
+        "en": [
+          "home screen",
+          "dashboard",
+          "customize home",
+          "new block",
+          "module",
+          "add-on",
+          "arrange"
+        ]
+      }
+    },
+    "apps-minus": {
+      "label": {
+        "es": "Quitar app",
+        "en": "Remove app",
+        "pt": "Remover app",
+        "fr": "Supprimer l’app",
+        "de": "App entfernen",
+        "it": "Rimuovi app",
+        "ja": "アプリを削除",
+        "zh": "移除应用",
+        "ko": "앱 삭제",
+        "ar": "إزالة التطبيق"
+      },
+      "keywords": {
+        "es": [
+          "desinstalar",
+          "eliminar app",
+          "borrar",
+          "quitar de la pantalla de inicio",
+          "desconectar integración",
+          "quitar programa",
+          "lanzador"
+        ],
+        "en": [
+          "uninstall",
+          "delete app",
+          "remove from home",
+          "disconnect integration",
+          "remove program",
+          "launcher",
+          "offload"
+        ]
+      }
+    },
+    "wallpaper": {
+      "label": {
+        "es": "Fondo de pantalla",
+        "en": "Screen wallpaper",
+        "pt": "Plano de fundo da tela",
+        "fr": "Fond d’écran",
+        "de": "Hintergrundbild",
+        "it": "Sfondo dello schermo",
+        "ja": "画面の壁紙",
+        "zh": "屏幕壁纸",
+        "ko": "배경화면",
+        "ar": "خلفية الشاشة"
+      },
+      "keywords": {
+        "es": [
+          "imagen de fondo",
+          "escritorio",
+          "pantalla de inicio",
+          "personalizar",
+          "tema",
+          "foto",
+          "pantalla de bloqueo"
+        ],
+        "en": [
+          "background image",
+          "desktop background",
+          "home screen",
+          "customize",
+          "theme",
+          "photo",
+          "lock screen"
+        ]
+      }
+    },
+    "start-menu": {
+      "label": {
+        "es": "Menú Inicio",
+        "en": "Start menu",
+        "pt": "Menu Iniciar",
+        "fr": "Menu Démarrer",
+        "de": "Startmenü",
+        "it": "Menu Start",
+        "ja": "スタートメニュー",
+        "zh": "开始菜单",
+        "ko": "시작 메뉴",
+        "ar": "قائمة ابدأ"
+      },
+      "keywords": {
+        "es": [
+          "lanzador de apps",
+          "todas las apps",
+          "barra de tareas",
+          "windows",
+          "apps instaladas",
+          "buscar apps",
+          "lista de apps"
+        ],
+        "en": [
+          "app launcher",
+          "all apps",
+          "taskbar",
+          "windows",
+          "installed apps",
+          "search apps",
+          "apps list"
+        ]
+      }
+    },
+    "toolbar-floating": {
+      "label": {
+        "es": "Barra de herramientas flotante",
+        "en": "Floating toolbar",
+        "pt": "Barra de ferramentas flutuante",
+        "fr": "Barre d’outils flottante",
+        "de": "Schwebende Symbolleiste",
+        "it": "Barra degli strumenti mobile",
+        "ja": "フローティングツールバー",
+        "zh": "浮动工具栏",
+        "ko": "플로팅 도구 모음",
+        "ar": "شريط أدوات عائم"
+      },
+      "keywords": {
+        "es": [
+          "menú contextual",
+          "barra de selección",
+          "formato rápido",
+          "sobre el lienzo",
+          "acciones rápidas",
+          "barra flotante",
+          "edición"
+        ],
+        "en": [
+          "contextual menu",
+          "selection toolbar",
+          "bubble menu",
+          "over the canvas",
+          "quick actions",
+          "inline toolbar",
+          "editing"
+        ]
+      }
+    },
+    "dock-hide": {
+      "label": {
+        "es": "Ocultar dock",
+        "en": "Hide dock",
+        "pt": "Ocultar dock",
+        "fr": "Masquer le Dock",
+        "de": "Dock ausblenden",
+        "it": "Nascondi Dock",
+        "ja": "Dockを隠す",
+        "zh": "隐藏程序坞",
+        "ko": "독 숨기기",
+        "ar": "إخفاء شريط التطبيقات"
+      },
+      "keywords": {
+        "es": [
+          "ocultar automáticamente",
+          "barra de tareas",
+          "más espacio en pantalla",
+          "pantalla limpia",
+          "mostrar al pasar el cursor",
+          "escritorio",
+          "macos"
+        ],
+        "en": [
+          "auto-hide",
+          "taskbar",
+          "more screen space",
+          "clean screen",
+          "show on hover",
+          "desktop",
+          "macos"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,2148 @@
+{
+  "group": "work-tech-media",
+  "i18n": {
+    "folder-zip": {
+      "label": {
+        "es": "Carpeta comprimida",
+        "en": "Compressed folder",
+        "pt": "Pasta compactada",
+        "fr": "Dossier compressé",
+        "de": "Komprimierter Ordner",
+        "it": "Cartella compressa",
+        "ja": "圧縮フォルダ",
+        "zh": "压缩文件夹",
+        "ko": "압축 폴더",
+        "ar": "مجلد مضغوط"
+      },
+      "keywords": {
+        "es": [
+          "archivo zip",
+          "comprimir",
+          "descomprimir",
+          "extraer todo",
+          "empaquetar proyecto",
+          "enviar varios archivos",
+          "reducir tamaño"
+        ],
+        "en": [
+          "zip archive",
+          "compress",
+          "unzip",
+          "extract all",
+          "zipped folder",
+          "send many files",
+          "reduce size"
+        ]
+      }
+    },
+    "calendar-sort": {
+      "label": {
+        "es": "Ordenar por fecha",
+        "en": "Sort by date",
+        "pt": "Ordenar por data",
+        "fr": "Trier par date",
+        "de": "Nach Datum sortieren",
+        "it": "Ordina per data",
+        "ja": "日付順に並べ替え",
+        "zh": "按日期排序",
+        "ko": "날짜순 정렬",
+        "ar": "الترتيب حسب التاريخ"
+      },
+      "keywords": {
+        "es": [
+          "más reciente primero",
+          "más antiguo primero",
+          "orden cronológico",
+          "fecha de creación",
+          "fecha de modificación",
+          "por día",
+          "lista"
+        ],
+        "en": [
+          "newest first",
+          "oldest first",
+          "chronological order",
+          "date created",
+          "date modified",
+          "by day",
+          "list"
+        ]
+      }
+    },
+    "clock-sort": {
+      "label": {
+        "es": "Ordenar por hora",
+        "en": "Sort by time",
+        "pt": "Ordenar por horário",
+        "fr": "Trier par heure",
+        "de": "Nach Uhrzeit sortieren",
+        "it": "Ordina per orario",
+        "ja": "時刻順に並べ替え",
+        "zh": "按时间排序",
+        "ko": "시간순 정렬",
+        "ar": "الترتيب حسب الوقت"
+      },
+      "keywords": {
+        "es": [
+          "lo más reciente",
+          "últimos primero",
+          "actividad reciente",
+          "hora de llegada",
+          "cronológico",
+          "recientes",
+          "bandeja"
+        ],
+        "en": [
+          "most recent first",
+          "latest first",
+          "recent activity",
+          "arrival time",
+          "chronological",
+          "recent",
+          "inbox"
+        ]
+      }
+    },
+    "stopwatch-reset": {
+      "label": {
+        "es": "Reiniciar cronómetro",
+        "en": "Reset timer",
+        "pt": "Zerar cronômetro",
+        "fr": "Réinitialiser le chronomètre",
+        "de": "Zeitmessung zurücksetzen",
+        "it": "Azzera cronometro",
+        "ja": "タイマーをリセット",
+        "zh": "重置计时",
+        "ko": "타이머 초기화",
+        "ar": "إعادة ضبط المؤقت"
+      },
+      "keywords": {
+        "es": [
+          "poner en cero",
+          "volver a cero",
+          "empezar de nuevo",
+          "borrar tiempo",
+          "nueva vuelta",
+          "registro de tiempo",
+          "restablecer"
+        ],
+        "en": [
+          "back to zero",
+          "zero out",
+          "start over",
+          "clear time",
+          "new lap",
+          "time tracking",
+          "restart timing"
+        ]
+      }
+    },
+    "alarm-minus": {
+      "label": {
+        "es": "Eliminar alarma",
+        "en": "Delete alarm",
+        "pt": "Excluir alarme",
+        "fr": "Supprimer l’alarme",
+        "de": "Wecker löschen",
+        "it": "Elimina sveglia",
+        "ja": "アラームを削除",
+        "zh": "删除闹钟",
+        "ko": "알람 삭제",
+        "ar": "حذف المنبّه"
+      },
+      "keywords": {
+        "es": [
+          "quitar alarma",
+          "borrar despertador",
+          "descartar",
+          "lista de alarmas",
+          "quitar recordatorio",
+          "limpiar alarmas",
+          "cancelar alarma"
+        ],
+        "en": [
+          "remove alarm",
+          "delete wake-up",
+          "discard",
+          "alarm list",
+          "remove reminder",
+          "clear alarms",
+          "cancel alarm"
+        ]
+      }
+    },
+    "alarm-ringing": {
+      "label": {
+        "es": "Alarma sonando",
+        "en": "Alarm ringing",
+        "pt": "Alarme tocando",
+        "fr": "Alarme qui sonne",
+        "de": "Wecker klingelt",
+        "it": "Sveglia che suona",
+        "ja": "アラーム鳴動中",
+        "zh": "闹钟响铃",
+        "ko": "알람 울림",
+        "ar": "المنبّه يرن"
+      },
+      "keywords": {
+        "es": [
+          "despertador",
+          "hora de levantarse",
+          "posponer",
+          "detener alarma",
+          "timbrando",
+          "suena ahora",
+          "despertar"
+        ],
+        "en": [
+          "wake up",
+          "alarm going off",
+          "snooze",
+          "dismiss",
+          "ringing now",
+          "buzzing",
+          "morning"
+        ]
+      }
+    },
+    "calendar-poll": {
+      "label": {
+        "es": "Encuesta de horarios",
+        "en": "Scheduling poll",
+        "pt": "Enquete de horários",
+        "fr": "Sondage de disponibilités",
+        "de": "Terminumfrage",
+        "it": "Sondaggio sugli orari",
+        "ja": "日程調整アンケート",
+        "zh": "时间投票",
+        "ko": "일정 투표",
+        "ar": "استطلاع المواعيد"
+      },
+      "keywords": {
+        "es": [
+          "votar fechas",
+          "encontrar horario",
+          "disponibilidad",
+          "doodle",
+          "agendar reunión",
+          "proponer horarios",
+          "coordinar agendas"
+        ],
+        "en": [
+          "vote on times",
+          "find a time",
+          "availability",
+          "doodle",
+          "meeting poll",
+          "propose times",
+          "group scheduling"
+        ]
+      }
+    },
+    "calendar-weekend": {
+      "label": {
+        "es": "Fin de semana",
+        "en": "Weekend",
+        "pt": "Fim de semana",
+        "fr": "Week-end",
+        "de": "Wochenende",
+        "it": "Fine settimana",
+        "ja": "週末",
+        "zh": "周末",
+        "ko": "주말",
+        "ar": "عطلة نهاية الأسبوع"
+      },
+      "keywords": {
+        "es": [
+          "sábado y domingo",
+          "días de descanso",
+          "días libres",
+          "descanso semanal",
+          "semana laboral",
+          "días no laborables",
+          "calendario laboral"
+        ],
+        "en": [
+          "saturday and sunday",
+          "days off",
+          "rest days",
+          "work week",
+          "non-working days",
+          "free days",
+          "work calendar"
+        ]
+      }
+    },
+    "shift-open": {
+      "label": {
+        "es": "Turno disponible",
+        "en": "Open shift",
+        "pt": "Turno disponível",
+        "fr": "Poste à pourvoir",
+        "de": "Offene Schicht",
+        "it": "Turno scoperto",
+        "ja": "空きシフト",
+        "zh": "空缺班次",
+        "ko": "미배정 근무",
+        "ar": "وردية متاحة"
+      },
+      "keywords": {
+        "es": [
+          "turno sin asignar",
+          "tomar turno",
+          "cubrir turno",
+          "vacante",
+          "rol de turnos",
+          "horas extra",
+          "quién puede"
+        ],
+        "en": [
+          "unassigned shift",
+          "claim shift",
+          "pick up shift",
+          "vacancy",
+          "shift rota",
+          "extra hours",
+          "available shift"
+        ]
+      }
+    },
+    "qr-phishing": {
+      "label": {
+        "es": "Fraude con código QR",
+        "en": "QR code phishing",
+        "pt": "Golpe por QR code",
+        "fr": "Hameçonnage par QR code",
+        "de": "QR-Code-Phishing",
+        "it": "Phishing tramite QR",
+        "ja": "QRコードフィッシング",
+        "zh": "二维码钓鱼",
+        "ko": "큐싱",
+        "ar": "التصيد عبر رموز QR"
+      },
+      "keywords": {
+        "es": [
+          "quishing",
+          "qr falso",
+          "qr malicioso",
+          "estafa con qr",
+          "parquímetro",
+          "sitio falso",
+          "phishing"
+        ],
+        "en": [
+          "quishing",
+          "fake qr",
+          "malicious qr code",
+          "qr scam",
+          "parking meter",
+          "fake site",
+          "phishing"
+        ]
+      }
+    },
+    "sim-swap": {
+      "label": {
+        "es": "Fraude por cambio de SIM",
+        "en": "SIM swap fraud",
+        "pt": "Golpe da troca de chip",
+        "fr": "Fraude à la carte SIM",
+        "de": "SIM-Swapping",
+        "it": "Frode SIM swap",
+        "ja": "SIMスワップ詐欺",
+        "zh": "SIM 卡劫持",
+        "ko": "심 스와핑",
+        "ar": "احتيال تبديل شريحة SIM"
+      },
+      "keywords": {
+        "es": [
+          "sim swapping",
+          "duplicado de chip",
+          "portabilidad fraudulenta",
+          "robo de número",
+          "secuestro de línea",
+          "códigos por sms",
+          "toma de cuenta"
+        ],
+        "en": [
+          "sim swapping",
+          "port-out fraud",
+          "number hijack",
+          "stolen phone number",
+          "sms codes",
+          "account takeover",
+          "sim hijacking"
+        ]
+      }
+    },
+    "bot-detection": {
+      "label": {
+        "es": "Detección de bots",
+        "en": "Bot detection",
+        "pt": "Detecção de bots",
+        "fr": "Détection des bots",
+        "de": "Bot-Erkennung",
+        "it": "Rilevamento dei bot",
+        "ja": "ボット検出",
+        "zh": "机器人流量检测",
+        "ko": "봇 탐지",
+        "ar": "كشف البوتات"
+      },
+      "keywords": {
+        "es": [
+          "tráfico automatizado",
+          "bots maliciosos",
+          "humano o bot",
+          "gestión de bots",
+          "scraping",
+          "antifraude",
+          "firewall web"
+        ],
+        "en": [
+          "automated traffic",
+          "bad bots",
+          "human or bot",
+          "bot management",
+          "scraping",
+          "anti-fraud",
+          "waf"
+        ]
+      }
+    },
+    "key-pair": {
+      "label": {
+        "es": "Par de claves",
+        "en": "Key pair",
+        "pt": "Par de chaves",
+        "fr": "Paire de clés",
+        "de": "Schlüsselpaar",
+        "it": "Coppia di chiavi",
+        "ja": "鍵ペア",
+        "zh": "密钥对",
+        "ko": "키 쌍",
+        "ar": "زوج المفاتيح"
+      },
+      "keywords": {
+        "es": [
+          "clave pública",
+          "clave privada",
+          "criptografía asimétrica",
+          "pki",
+          "certificado",
+          "rsa",
+          "generar claves"
+        ],
+        "en": [
+          "public key",
+          "private key",
+          "asymmetric cryptography",
+          "pki",
+          "certificate",
+          "rsa",
+          "keygen"
+        ]
+      }
+    },
+    "security-key-plus": {
+      "label": {
+        "es": "Agregar llave de seguridad",
+        "en": "Add security key",
+        "pt": "Adicionar chave de segurança",
+        "fr": "Ajouter une clé de sécurité",
+        "de": "Sicherheitsschlüssel hinzufügen",
+        "it": "Aggiungi chiave di sicurezza",
+        "ja": "セキュリティキーを追加",
+        "zh": "添加安全密钥",
+        "ko": "보안 키 추가",
+        "ar": "إضافة مفتاح أمان"
+      },
+      "keywords": {
+        "es": [
+          "registrar yubikey",
+          "fido2",
+          "nueva llave física",
+          "verificación en dos pasos",
+          "métodos de inicio de sesión",
+          "token usb",
+          "configurar"
+        ],
+        "en": [
+          "register yubikey",
+          "fido2",
+          "new hardware key",
+          "two-factor",
+          "sign-in methods",
+          "usb token",
+          "set up"
+        ]
+      }
+    },
+    "message-draft": {
+      "label": {
+        "es": "Mensaje en borrador",
+        "en": "Draft message",
+        "pt": "Mensagem em rascunho",
+        "fr": "Message en brouillon",
+        "de": "Nachrichtenentwurf",
+        "it": "Messaggio in bozza",
+        "ja": "メッセージの下書き",
+        "zh": "消息草稿",
+        "ko": "메시지 초안",
+        "ar": "مسودة رسالة"
+      },
+      "keywords": {
+        "es": [
+          "sin enviar",
+          "a medio escribir",
+          "guardado en el chat",
+          "pendiente de enviar",
+          "retomar",
+          "conversación",
+          "texto sin mandar"
+        ],
+        "en": [
+          "unsent",
+          "half-written",
+          "saved in chat",
+          "not sent yet",
+          "pick up later",
+          "conversation",
+          "unsent text"
+        ]
+      }
+    },
+    "video-call-missed": {
+      "label": {
+        "es": "Videollamada perdida",
+        "en": "Missed video call",
+        "pt": "Videochamada perdida",
+        "fr": "Appel vidéo manqué",
+        "de": "Verpasster Videoanruf",
+        "it": "Videochiamata persa",
+        "ja": "ビデオ通話の不在着信",
+        "zh": "未接视频通话",
+        "ko": "부재중 영상 통화",
+        "ar": "مكالمة فيديو فائتة"
+      },
+      "keywords": {
+        "es": [
+          "sin contestar",
+          "no atendida",
+          "devolver la llamada",
+          "registro de llamadas",
+          "cámara",
+          "aviso de llamada",
+          "facetime"
+        ],
+        "en": [
+          "unanswered",
+          "not picked up",
+          "call back",
+          "call log",
+          "camera",
+          "call notification",
+          "facetime"
+        ]
+      }
+    },
+    "chart-bar-sorted": {
+      "label": {
+        "es": "Gráfica de barras ordenadas",
+        "en": "Sorted bar chart",
+        "pt": "Gráfico de barras ordenadas",
+        "fr": "Graphique à barres triées",
+        "de": "Sortiertes Balkendiagramm",
+        "it": "Grafico a barre ordinate",
+        "ja": "並べ替えた棒グラフ",
+        "zh": "排序柱状图",
+        "ko": "정렬된 막대 차트",
+        "ar": "مخطط شريطي مرتب"
+      },
+      "keywords": {
+        "es": [
+          "pareto",
+          "ordenar por valor",
+          "de menor a mayor",
+          "valores ascendentes",
+          "ranking",
+          "clasificación",
+          "ordenar gráfica"
+        ],
+        "en": [
+          "pareto",
+          "sort by value",
+          "ascending",
+          "ranked values",
+          "smallest to largest",
+          "ranking",
+          "sort chart"
+        ]
+      }
+    },
+    "database-minus": {
+      "label": {
+        "es": "Quitar base de datos",
+        "en": "Remove database",
+        "pt": "Remover banco de dados",
+        "fr": "Supprimer la base de données",
+        "de": "Datenbank entfernen",
+        "it": "Rimuovi database",
+        "ja": "データベースを削除",
+        "zh": "移除数据库",
+        "ko": "데이터베이스 제거",
+        "ar": "إزالة قاعدة البيانات"
+      },
+      "keywords": {
+        "es": [
+          "desconectar fuente",
+          "eliminar base",
+          "borrar tabla",
+          "quitar conexión",
+          "drop",
+          "borrar datos",
+          "fuente de datos"
+        ],
+        "en": [
+          "disconnect source",
+          "delete database",
+          "drop table",
+          "remove connection",
+          "drop",
+          "delete data",
+          "data source"
+        ]
+      }
+    },
+    "chart-bar-stacked-percent": {
+      "label": {
+        "es": "Gráfica de barras apiladas al 100%",
+        "en": "100% stacked bar chart",
+        "pt": "Gráfico de barras empilhadas 100%",
+        "fr": "Graphique à barres empilées à 100 %",
+        "de": "Gestapeltes 100-%-Balkendiagramm",
+        "it": "Grafico a barre impilate al 100%",
+        "ja": "100%積み上げ棒グラフ",
+        "zh": "百分比堆积柱状图",
+        "ko": "100% 누적 막대 차트",
+        "ar": "مخطط شريطي مكدس بنسبة 100%"
+      },
+      "keywords": {
+        "es": [
+          "proporciones",
+          "porcentajes",
+          "participación",
+          "partes de un total",
+          "composición relativa",
+          "mezcla",
+          "comparar porcentajes"
+        ],
+        "en": [
+          "proportions",
+          "percentages",
+          "share",
+          "part to whole",
+          "relative composition",
+          "mix",
+          "percent stacked"
+        ]
+      }
+    },
+    "dashboard-gear": {
+      "label": {
+        "es": "Configuración del tablero",
+        "en": "Dashboard settings",
+        "pt": "Configurações do painel",
+        "fr": "Paramètres du tableau de bord",
+        "de": "Dashboard-Einstellungen",
+        "it": "Impostazioni dashboard",
+        "ja": "ダッシュボードの設定",
+        "zh": "仪表板设置",
+        "ko": "대시보드 설정",
+        "ar": "إعدادات لوحة المعلومات"
+      },
+      "keywords": {
+        "es": [
+          "variables",
+          "frecuencia de actualización",
+          "permisos",
+          "filtros globales",
+          "zona horaria",
+          "ajustes",
+          "preferencias"
+        ],
+        "en": [
+          "variables",
+          "refresh interval",
+          "permissions",
+          "global filters",
+          "time zone",
+          "preferences",
+          "options"
+        ]
+      }
+    },
+    "data-pipeline-check": {
+      "label": {
+        "es": "Pipeline completado",
+        "en": "Pipeline completed",
+        "pt": "Pipeline concluído",
+        "fr": "Pipeline terminé",
+        "de": "Pipeline abgeschlossen",
+        "it": "Pipeline completata",
+        "ja": "パイプライン完了",
+        "zh": "管道运行成功",
+        "ko": "파이프라인 완료",
+        "ar": "خط معالجة مكتمل"
+      },
+      "keywords": {
+        "es": [
+          "ETL exitoso",
+          "ejecución correcta",
+          "sincronización completa",
+          "datos cargados",
+          "trabajo terminado",
+          "éxito",
+          "última ejecución"
+        ],
+        "en": [
+          "ETL success",
+          "successful run",
+          "sync complete",
+          "data loaded",
+          "job finished",
+          "success",
+          "last run"
+        ]
+      }
+    },
+    "database-pause": {
+      "label": {
+        "es": "Base de datos en pausa",
+        "en": "Database paused",
+        "pt": "Banco de dados pausado",
+        "fr": "Base de données en pause",
+        "de": "Datenbank pausiert",
+        "it": "Database in pausa",
+        "ja": "データベース一時停止中",
+        "zh": "数据库已暂停",
+        "ko": "데이터베이스 일시 중지됨",
+        "ar": "قاعدة البيانات متوقفة مؤقتًا"
+      },
+      "keywords": {
+        "es": [
+          "suspender",
+          "reanudar",
+          "proyecto pausado",
+          "cómputo suspendido",
+          "ahorro de costos",
+          "inactiva",
+          "almacén de datos"
+        ],
+        "en": [
+          "suspend",
+          "resume",
+          "paused project",
+          "suspended compute",
+          "auto-pause",
+          "idle",
+          "warehouse"
+        ]
+      }
+    },
+    "git-branch-minus": {
+      "label": {
+        "es": "Eliminar rama",
+        "en": "Delete branch",
+        "pt": "Excluir branch",
+        "fr": "Supprimer la branche",
+        "de": "Branch löschen",
+        "it": "Elimina branch",
+        "ja": "ブランチを削除",
+        "zh": "删除分支",
+        "ko": "브랜치 삭제",
+        "ar": "حذف الفرع"
+      },
+      "keywords": {
+        "es": [
+          "borrar rama",
+          "branch -d",
+          "limpiar ramas",
+          "rama fusionada",
+          "ramas viejas",
+          "quitar rama",
+          "git"
+        ],
+        "en": [
+          "remove branch",
+          "branch -d",
+          "clean up branches",
+          "merged branch",
+          "stale branches",
+          "prune",
+          "git"
+        ]
+      }
+    },
+    "git-bisect": {
+      "label": {
+        "es": "Bisect",
+        "en": "Bisect",
+        "pt": "Bisect",
+        "fr": "Bisect",
+        "de": "Bisect",
+        "it": "Bisect",
+        "ja": "コミットの二分探索",
+        "zh": "二分查找提交",
+        "ko": "커밋 이진 탐색",
+        "ar": "البحث الثنائي في الإيداعات"
+      },
+      "keywords": {
+        "es": [
+          "búsqueda binaria",
+          "encontrar el commit culpable",
+          "regresión",
+          "qué commit lo rompió",
+          "depurar historial",
+          "commit bueno y malo",
+          "git"
+        ],
+        "en": [
+          "binary search",
+          "find the bad commit",
+          "regression",
+          "which commit broke it",
+          "debug history",
+          "good and bad commit",
+          "git"
+        ]
+      }
+    },
+    "inspect-element": {
+      "label": {
+        "es": "Inspeccionar elemento",
+        "en": "Inspect element",
+        "pt": "Inspecionar elemento",
+        "fr": "Inspecter l’élément",
+        "de": "Element untersuchen",
+        "it": "Ispeziona elemento",
+        "ja": "要素を検証",
+        "zh": "检查元素",
+        "ko": "요소 검사",
+        "ar": "فحص العنصر"
+      },
+      "keywords": {
+        "es": [
+          "herramientas de desarrollo",
+          "devtools",
+          "selector de elementos",
+          "inspector",
+          "html y css",
+          "depurar página",
+          "dom"
+        ],
+        "en": [
+          "devtools",
+          "element picker",
+          "inspector",
+          "html and css",
+          "debug page",
+          "dom",
+          "select element"
+        ]
+      }
+    },
+    "block-code": {
+      "label": {
+        "es": "Programación por bloques",
+        "en": "Block coding",
+        "pt": "Programação em blocos",
+        "fr": "Programmation par blocs",
+        "de": "Blockbasierte Programmierung",
+        "it": "Programmazione a blocchi",
+        "ja": "ブロックプログラミング",
+        "zh": "积木编程",
+        "ko": "블록 코딩",
+        "ar": "البرمجة بالكتل"
+      },
+      "keywords": {
+        "es": [
+          "scratch",
+          "low-code",
+          "sin código",
+          "programación visual",
+          "arrastrar bloques",
+          "niños programando",
+          "blockly"
+        ],
+        "en": [
+          "scratch",
+          "low-code",
+          "no-code",
+          "visual programming",
+          "drag blocks",
+          "kids coding",
+          "blockly"
+        ]
+      }
+    },
+    "globe-code": {
+      "label": {
+        "es": "Desarrollo web",
+        "en": "Web development",
+        "pt": "Desenvolvimento web",
+        "fr": "Développement web",
+        "de": "Webentwicklung",
+        "it": "Sviluppo web",
+        "ja": "ウェブ開発",
+        "zh": "网站开发",
+        "ko": "웹 개발",
+        "ar": "تطوير الويب"
+      },
+      "keywords": {
+        "es": [
+          "código del sitio",
+          "frontend",
+          "html",
+          "programar páginas",
+          "diseño web",
+          "desarrollador web",
+          "hacer una página"
+        ],
+        "en": [
+          "site code",
+          "frontend",
+          "html",
+          "build websites",
+          "web design",
+          "web developer",
+          "web dev"
+        ]
+      }
+    },
+    "dependency-alert": {
+      "label": {
+        "es": "Dependencia vulnerable",
+        "en": "Vulnerable dependency",
+        "pt": "Dependência vulnerável",
+        "fr": "Dépendance vulnérable",
+        "de": "Unsichere Abhängigkeit",
+        "it": "Dipendenza vulnerabile",
+        "ja": "脆弱な依存関係",
+        "zh": "存在漏洞的依赖项",
+        "ko": "취약한 종속성",
+        "ar": "تبعية معرّضة للخطر"
+      },
+      "keywords": {
+        "es": [
+          "alerta de seguridad",
+          "dependabot",
+          "cve",
+          "paquete obsoleto",
+          "npm audit",
+          "vulnerabilidad",
+          "aviso de seguridad"
+        ],
+        "en": [
+          "security alert",
+          "dependabot",
+          "cve",
+          "deprecated package",
+          "npm audit",
+          "vulnerability",
+          "security advisory"
+        ]
+      }
+    },
+    "ssh-key": {
+      "label": {
+        "es": "Clave SSH",
+        "en": "SSH key",
+        "pt": "Chave SSH",
+        "fr": "Clé SSH",
+        "de": "SSH-Schlüssel",
+        "it": "Chiave SSH",
+        "ja": "SSHキー",
+        "zh": "SSH 密钥",
+        "ko": "SSH 키",
+        "ar": "مفتاح SSH"
+      },
+      "keywords": {
+        "es": [
+          "ssh",
+          "llave de despliegue",
+          "deploy key",
+          "acceso al servidor",
+          "conexión segura",
+          "ssh-keygen",
+          "credencial",
+          "repositorio"
+        ],
+        "en": [
+          "deploy key",
+          "server access",
+          "secure shell",
+          "ssh-keygen",
+          "credential",
+          "repository access",
+          "authorized keys"
+        ]
+      }
+    },
+    "desktop-x": {
+      "label": {
+        "es": "Computadora no disponible",
+        "en": "Computer unavailable",
+        "pt": "Computador indisponível",
+        "fr": "Ordinateur indisponible",
+        "de": "Computer nicht verfügbar",
+        "it": "Computer non disponibile",
+        "ja": "コンピューターを利用できません",
+        "zh": "电脑不可用",
+        "ko": "컴퓨터를 사용할 수 없음",
+        "ar": "الحاسوب غير متاح"
+      },
+      "keywords": {
+        "es": [
+          "pantalla no detectada",
+          "sin señal",
+          "equipo fuera de línea",
+          "desconectado",
+          "monitor sin conexión",
+          "dispositivo eliminado",
+          "error"
+        ],
+        "en": [
+          "no display detected",
+          "no signal",
+          "computer offline",
+          "disconnected",
+          "monitor not found",
+          "device removed",
+          "error"
+        ]
+      }
+    },
+    "desktop-gear": {
+      "label": {
+        "es": "Configuración de la computadora",
+        "en": "Computer settings",
+        "pt": "Configurações do computador",
+        "fr": "Paramètres de l’ordinateur",
+        "de": "Computereinstellungen",
+        "it": "Impostazioni del computer",
+        "ja": "コンピューターの設定",
+        "zh": "电脑设置",
+        "ko": "컴퓨터 설정",
+        "ar": "إعدادات الحاسوب"
+      },
+      "keywords": {
+        "es": [
+          "preferencias del sistema",
+          "ajustes de pantalla",
+          "panel de control",
+          "resolución",
+          "configurar equipo",
+          "pc",
+          "monitor"
+        ],
+        "en": [
+          "system preferences",
+          "display settings",
+          "control panel",
+          "resolution",
+          "configure pc",
+          "system settings",
+          "monitor"
+        ]
+      }
+    },
+    "wifi-gear": {
+      "label": {
+        "es": "Configuración de Wi-Fi",
+        "en": "Wi-Fi settings",
+        "pt": "Configurações de Wi-Fi",
+        "fr": "Paramètres Wi-Fi",
+        "de": "WLAN-Einstellungen",
+        "it": "Impostazioni Wi-Fi",
+        "ja": "Wi-Fi設定",
+        "zh": "Wi-Fi 设置",
+        "ko": "Wi-Fi 설정",
+        "ar": "إعدادات الواي فاي"
+      },
+      "keywords": {
+        "es": [
+          "red inalámbrica",
+          "cambiar contraseña",
+          "nombre de la red",
+          "router",
+          "conectar",
+          "ajustes de red",
+          "preferencias"
+        ],
+        "en": [
+          "wireless network",
+          "change password",
+          "network name",
+          "ssid",
+          "router",
+          "connect",
+          "network preferences"
+        ]
+      }
+    },
+    "wifi-sync": {
+      "label": {
+        "es": "Reconectando al Wi-Fi",
+        "en": "Reconnecting to Wi-Fi",
+        "pt": "Reconectando ao Wi-Fi",
+        "fr": "Reconnexion au Wi-Fi",
+        "de": "WLAN wird neu verbunden",
+        "it": "Riconnessione al Wi-Fi",
+        "ja": "Wi-Fiに再接続中",
+        "zh": "正在重新连接 Wi-Fi",
+        "ko": "Wi-Fi 재연결 중",
+        "ar": "جارٍ إعادة الاتصال بالواي فاي"
+      },
+      "keywords": {
+        "es": [
+          "reconectar",
+          "conectando",
+          "actualizar conexión",
+          "recuperando señal",
+          "red inestable",
+          "en progreso",
+          "volver a conectar"
+        ],
+        "en": [
+          "reconnect",
+          "connecting",
+          "refresh connection",
+          "restoring signal",
+          "unstable network",
+          "in progress",
+          "rejoin network"
+        ]
+      }
+    },
+    "tracker-tag": {
+      "label": {
+        "es": "Localizador de objetos",
+        "en": "Item tracker",
+        "pt": "Localizador de objetos",
+        "fr": "Traceur d’objets",
+        "de": "Bluetooth-Tracker",
+        "it": "Localizzatore di oggetti",
+        "ja": "紛失防止タグ",
+        "zh": "防丢器",
+        "ko": "분실 방지 태그",
+        "ar": "متتبع الأغراض"
+      },
+      "keywords": {
+        "es": [
+          "airtag",
+          "encontrar llaves",
+          "cartera perdida",
+          "bluetooth",
+          "rastreador",
+          "objetos perdidos",
+          "mochila"
+        ],
+        "en": [
+          "airtag",
+          "find my keys",
+          "lost wallet",
+          "bluetooth tag",
+          "tile",
+          "lost items",
+          "bag tracker"
+        ]
+      }
+    },
+    "captions-sparkle": {
+      "label": {
+        "es": "Subtítulos con IA",
+        "en": "AI captions",
+        "pt": "Legendas com IA",
+        "fr": "Sous-titres par IA",
+        "de": "KI-Untertitel",
+        "it": "Sottotitoli con IA",
+        "ja": "AI字幕",
+        "zh": "AI 字幕",
+        "ko": "AI 자막",
+        "ar": "ترجمة نصية بالذكاء الاصطناعي"
+      },
+      "keywords": {
+        "es": [
+          "subtítulos automáticos",
+          "transcripción automática",
+          "generar subtítulos",
+          "cc",
+          "editor de video",
+          "traducir video",
+          "accesibilidad"
+        ],
+        "en": [
+          "auto captions",
+          "automatic transcription",
+          "generate subtitles",
+          "cc",
+          "video editor",
+          "translate video",
+          "accessibility"
+        ]
+      }
+    },
+    "sim-card-arrow-down": {
+      "label": {
+        "es": "Instalar eSIM",
+        "en": "Install eSIM",
+        "pt": "Instalar eSIM",
+        "fr": "Installer une eSIM",
+        "de": "eSIM installieren",
+        "it": "Installa eSIM",
+        "ja": "eSIMをインストール",
+        "zh": "安装 eSIM",
+        "ko": "eSIM 설치",
+        "ar": "تثبيت شريحة eSIM"
+      },
+      "keywords": {
+        "es": [
+          "descargar plan",
+          "plan de datos",
+          "esim de viaje",
+          "activar línea",
+          "código qr",
+          "roaming",
+          "operador"
+        ],
+        "en": [
+          "download plan",
+          "data plan",
+          "travel esim",
+          "activate line",
+          "qr code",
+          "roaming",
+          "carrier"
+        ]
+      }
+    },
+    "display-port": {
+      "label": {
+        "es": "Puerto DisplayPort",
+        "en": "DisplayPort",
+        "pt": "Porta DisplayPort",
+        "fr": "Port DisplayPort",
+        "de": "DisplayPort-Anschluss",
+        "it": "Porta DisplayPort",
+        "ja": "DisplayPortポート",
+        "zh": "DisplayPort接口",
+        "ko": "DisplayPort 포트",
+        "ar": "منفذ DisplayPort"
+      },
+      "keywords": {
+        "es": [
+          "dp",
+          "salida de video",
+          "monitor gamer",
+          "tarjeta de video",
+          "mini displayport",
+          "conectar pantalla",
+          "alta tasa de refresco"
+        ],
+        "en": [
+          "dp",
+          "video output",
+          "gaming monitor",
+          "graphics card",
+          "mini displayport",
+          "connect display",
+          "high refresh rate"
+        ]
+      }
+    },
+    "usb-b-port": {
+      "label": {
+        "es": "Puerto USB-B",
+        "en": "USB-B port",
+        "pt": "Porta USB-B",
+        "fr": "Port USB-B",
+        "de": "USB-B-Anschluss",
+        "it": "Porta USB-B",
+        "ja": "USB-Bポート",
+        "zh": "USB-B接口",
+        "ko": "USB-B 포트",
+        "ar": "منفذ USB-B"
+      },
+      "keywords": {
+        "es": [
+          "usb tipo b",
+          "puerto de impresora",
+          "arduino",
+          "interfaz de audio",
+          "cable de impresora",
+          "conector cuadrado",
+          "escáner"
+        ],
+        "en": [
+          "usb type b",
+          "printer cable",
+          "arduino",
+          "audio interface",
+          "square connector",
+          "scanner",
+          "midi controller"
+        ]
+      }
+    },
+    "rocker-switch": {
+      "label": {
+        "es": "Interruptor de balancín",
+        "en": "Rocker switch",
+        "pt": "Chave gangorra",
+        "fr": "Interrupteur à bascule",
+        "de": "Wippschalter",
+        "it": "Interruttore a bilanciere",
+        "ja": "ロッカースイッチ",
+        "zh": "船型开关",
+        "ko": "로커 스위치",
+        "ar": "مفتاح متأرجح"
+      },
+      "keywords": {
+        "es": [
+          "encender y apagar",
+          "fuente de poder",
+          "multicontacto",
+          "switch",
+          "i/o",
+          "botón de encendido",
+          "aparato"
+        ],
+        "en": [
+          "on off",
+          "power supply",
+          "power strip",
+          "i/o switch",
+          "psu switch",
+          "appliance",
+          "mains switch"
+        ]
+      }
+    },
+    "agent-minus": {
+      "label": {
+        "es": "Quitar agente",
+        "en": "Remove agent",
+        "pt": "Remover agente",
+        "fr": "Retirer l’agent",
+        "de": "Agent entfernen",
+        "it": "Rimuovi agente",
+        "ja": "エージェントを削除",
+        "zh": "移除智能体",
+        "ko": "에이전트 제거",
+        "ar": "إزالة الوكيل"
+      },
+      "keywords": {
+        "es": [
+          "eliminar agente",
+          "desactivar bot",
+          "borrar agente",
+          "dar de baja",
+          "quitar bot",
+          "deshabilitar",
+          "retirar agente"
+        ],
+        "en": [
+          "delete agent",
+          "deactivate bot",
+          "remove bot",
+          "disable",
+          "uninstall agent",
+          "retire",
+          "turn off agent"
+        ]
+      }
+    },
+    "brain-gear": {
+      "label": {
+        "es": "Configuración de IA",
+        "en": "AI settings",
+        "pt": "Configurações de IA",
+        "fr": "Paramètres d’IA",
+        "de": "KI-Einstellungen",
+        "it": "Impostazioni IA",
+        "ja": "AI設定",
+        "zh": "AI 设置",
+        "ko": "AI 설정",
+        "ar": "إعدادات الذكاء الاصطناعي"
+      },
+      "keywords": {
+        "es": [
+          "funciones de ia",
+          "preferencias",
+          "activar ia",
+          "modelo",
+          "privacidad de datos",
+          "personalizar asistente",
+          "inteligencia artificial"
+        ],
+        "en": [
+          "ai features",
+          "preferences",
+          "turn on ai",
+          "model",
+          "data privacy",
+          "customize assistant",
+          "artificial intelligence"
+        ]
+      }
+    },
+    "text-to-3d": {
+      "label": {
+        "es": "Generar modelo 3D",
+        "en": "Generate 3D model",
+        "pt": "Gerar modelo 3D",
+        "fr": "Générer un modèle 3D",
+        "de": "3D-Modell generieren",
+        "it": "Genera modello 3D",
+        "ja": "3Dモデルを生成",
+        "zh": "生成 3D 模型",
+        "ko": "3D 모델 생성",
+        "ar": "إنشاء نموذج ثلاثي الأبعاد"
+      },
+      "keywords": {
+        "es": [
+          "texto a 3d",
+          "objeto con ia",
+          "desde un prompt",
+          "asset 3d",
+          "malla",
+          "modelado con ia",
+          "render"
+        ],
+        "en": [
+          "text to 3d",
+          "ai 3d model",
+          "from a prompt",
+          "3d asset",
+          "mesh",
+          "ai modeling",
+          "render"
+        ]
+      }
+    },
+    "decimal-increase": {
+      "label": {
+        "es": "Aumentar decimales",
+        "en": "Increase decimals",
+        "pt": "Aumentar casas decimais",
+        "fr": "Ajouter une décimale",
+        "de": "Dezimalstelle hinzufügen",
+        "it": "Aumenta decimali",
+        "ja": "小数点以下の桁数を増やす",
+        "zh": "增加小数位数",
+        "ko": "자릿수 늘림",
+        "ar": "زيادة المنازل العشرية"
+      },
+      "keywords": {
+        "es": [
+          "más decimales",
+          "precisión",
+          "formato de número",
+          "hoja de cálculo",
+          "excel",
+          "cifras",
+          "mostrar centavos"
+        ],
+        "en": [
+          "more decimal places",
+          "precision",
+          "number format",
+          "spreadsheet",
+          "excel",
+          "digits",
+          "show cents"
+        ]
+      }
+    },
+    "decimal-decrease": {
+      "label": {
+        "es": "Disminuir decimales",
+        "en": "Decrease decimals",
+        "pt": "Diminuir casas decimais",
+        "fr": "Réduire les décimales",
+        "de": "Dezimalstelle löschen",
+        "it": "Riduci decimali",
+        "ja": "小数点以下の桁数を減らす",
+        "zh": "减少小数位数",
+        "ko": "자릿수 줄임",
+        "ar": "إنقاص المنازل العشرية"
+      },
+      "keywords": {
+        "es": [
+          "menos decimales",
+          "redondear",
+          "formato de número",
+          "hoja de cálculo",
+          "excel",
+          "simplificar cifras",
+          "enteros"
+        ],
+        "en": [
+          "fewer decimal places",
+          "round",
+          "number format",
+          "spreadsheet",
+          "excel",
+          "simplify numbers",
+          "whole numbers"
+        ]
+      }
+    },
+    "conditional-format": {
+      "label": {
+        "es": "Formato condicional",
+        "en": "Conditional formatting",
+        "pt": "Formatação condicional",
+        "fr": "Mise en forme conditionnelle",
+        "de": "Bedingte Formatierung",
+        "it": "Formattazione condizionale",
+        "ja": "条件付き書式",
+        "zh": "条件格式",
+        "ko": "조건부 서식",
+        "ar": "التنسيق الشرطي"
+      },
+      "keywords": {
+        "es": [
+          "resaltar celdas",
+          "reglas de color",
+          "escala de colores",
+          "barras de datos",
+          "semáforo",
+          "hoja de cálculo",
+          "excel"
+        ],
+        "en": [
+          "highlight cells",
+          "color rules",
+          "color scale",
+          "data bars",
+          "traffic light",
+          "spreadsheet",
+          "excel"
+        ]
+      }
+    },
+    "data-validation": {
+      "label": {
+        "es": "Validación de datos",
+        "en": "Data validation",
+        "pt": "Validação de dados",
+        "fr": "Validation des données",
+        "de": "Datenüberprüfung",
+        "it": "Convalida dati",
+        "ja": "データの入力規則",
+        "zh": "数据验证",
+        "ko": "데이터 유효성 검사",
+        "ar": "التحقق من صحة البيانات"
+      },
+      "keywords": {
+        "es": [
+          "lista desplegable",
+          "restringir valores",
+          "regla de celda",
+          "rango permitido",
+          "entrada válida",
+          "hoja de cálculo",
+          "excel"
+        ],
+        "en": [
+          "dropdown list",
+          "restrict values",
+          "cell rule",
+          "allowed range",
+          "valid input",
+          "spreadsheet",
+          "excel"
+        ]
+      }
+    },
+    "ballpoint-pen": {
+      "label": {
+        "es": "Bolígrafo",
+        "en": "Ballpoint pen",
+        "pt": "Caneta esferográfica",
+        "fr": "Stylo à bille",
+        "de": "Kugelschreiber",
+        "it": "Penna a sfera",
+        "ja": "ボールペン",
+        "zh": "圆珠笔",
+        "ko": "볼펜",
+        "ar": "قلم حبر جاف"
+      },
+      "keywords": {
+        "es": [
+          "pluma",
+          "pluma de bolita",
+          "escribir",
+          "anotar",
+          "papelería",
+          "firmar",
+          "útiles de oficina"
+        ],
+        "en": [
+          "pen",
+          "click pen",
+          "write",
+          "take notes",
+          "stationery",
+          "sign",
+          "office supplies"
+        ]
+      }
+    },
+    "index-card": {
+      "label": {
+        "es": "Tarjeta de notas",
+        "en": "Index card",
+        "pt": "Ficha pautada",
+        "fr": "Fiche bristol",
+        "de": "Karteikarte",
+        "it": "Cartoncino per appunti",
+        "ja": "情報カード",
+        "zh": "索引卡",
+        "ko": "인덱스 카드",
+        "ar": "بطاقة ملاحظات"
+      },
+      "keywords": {
+        "es": [
+          "ficha de trabajo",
+          "ficha bibliográfica",
+          "tarjeta blanca",
+          "tarjetas de estudio",
+          "repasar",
+          "apuntes",
+          "fichero"
+        ],
+        "en": [
+          "note card",
+          "flashcard",
+          "study cards",
+          "revise",
+          "notes",
+          "card file",
+          "ruled card"
+        ]
+      }
+    },
+    "task-recurring": {
+      "label": {
+        "es": "Tarea recurrente",
+        "en": "Recurring task",
+        "pt": "Tarefa recorrente",
+        "fr": "Tâche récurrente",
+        "de": "Wiederkehrende Aufgabe",
+        "it": "Attività ricorrente",
+        "ja": "繰り返しタスク",
+        "zh": "重复任务",
+        "ko": "반복 작업",
+        "ar": "مهمة متكررة"
+      },
+      "keywords": {
+        "es": [
+          "se repite",
+          "cada semana",
+          "diaria",
+          "rutina",
+          "pendiente periódico",
+          "hábito",
+          "repetir tarea"
+        ],
+        "en": [
+          "repeats",
+          "every week",
+          "daily",
+          "routine",
+          "periodic to-do",
+          "habit",
+          "repeat task"
+        ]
+      }
+    },
+    "printer-plus": {
+      "label": {
+        "es": "Agregar impresora",
+        "en": "Add printer",
+        "pt": "Adicionar impressora",
+        "fr": "Ajouter une imprimante",
+        "de": "Drucker hinzufügen",
+        "it": "Aggiungi stampante",
+        "ja": "プリンターを追加",
+        "zh": "添加打印机",
+        "ko": "프린터 추가",
+        "ar": "إضافة طابعة"
+      },
+      "keywords": {
+        "es": [
+          "instalar impresora",
+          "nueva impresora",
+          "conectar impresora",
+          "dispositivos",
+          "controlador",
+          "impresora en red",
+          "configurar"
+        ],
+        "en": [
+          "install printer",
+          "new printer",
+          "connect printer",
+          "devices",
+          "driver",
+          "network printer",
+          "set up"
+        ]
+      }
+    },
+    "task-clock": {
+      "label": {
+        "es": "Recordatorio de tarea",
+        "en": "Task reminder",
+        "pt": "Lembrete de tarefa",
+        "fr": "Rappel de tâche",
+        "de": "Aufgabenerinnerung",
+        "it": "Promemoria attività",
+        "ja": "タスクのリマインダー",
+        "zh": "任务提醒",
+        "ko": "작업 알림",
+        "ar": "تذكير بالمهمة"
+      },
+      "keywords": {
+        "es": [
+          "hora de entrega",
+          "vence hoy",
+          "recordarme",
+          "pendiente con hora",
+          "avisar",
+          "programar tarea",
+          "to-do"
+        ],
+        "en": [
+          "due time",
+          "due today",
+          "remind me",
+          "timed to-do",
+          "notify",
+          "schedule task",
+          "to-do"
+        ]
+      }
+    },
+    "meeting-room-check": {
+      "label": {
+        "es": "Sala reservada",
+        "en": "Room booked",
+        "pt": "Sala reservada",
+        "fr": "Salle réservée",
+        "de": "Raum gebucht",
+        "it": "Sala prenotata",
+        "ja": "会議室予約済み",
+        "zh": "会议室已预订",
+        "ko": "회의실 예약됨",
+        "ar": "تم حجز القاعة"
+      },
+      "keywords": {
+        "es": [
+          "reserva confirmada",
+          "sala de juntas",
+          "sala apartada",
+          "junta agendada",
+          "sala de reuniones",
+          "check-in",
+          "espacio"
+        ],
+        "en": [
+          "booking confirmed",
+          "meeting room",
+          "room reserved",
+          "meeting scheduled",
+          "conference room",
+          "check in",
+          "space booked"
+        ]
+      }
+    },
+    "topology-star": {
+      "label": {
+        "es": "Topología en estrella",
+        "en": "Star topology",
+        "pt": "Topologia em estrela",
+        "fr": "Topologie en étoile",
+        "de": "Sterntopologie",
+        "it": "Topologia a stella",
+        "ja": "スター型トポロジー",
+        "zh": "星形拓扑",
+        "ko": "스타형 토폴로지",
+        "ar": "طوبولوجيا النجمة"
+      },
+      "keywords": {
+        "es": [
+          "hub and spoke",
+          "nodo central",
+          "concentrador",
+          "switch central",
+          "diagrama de red",
+          "redes de computadoras",
+          "red lan"
+        ],
+        "en": [
+          "hub and spoke",
+          "central node",
+          "hub",
+          "central switch",
+          "network diagram",
+          "computer networking",
+          "lan"
+        ]
+      }
+    },
+    "globe-x": {
+      "label": {
+        "es": "Sitio web caído",
+        "en": "Website down",
+        "pt": "Site fora do ar",
+        "fr": "Site web inaccessible",
+        "de": "Website nicht erreichbar",
+        "it": "Sito web non raggiungibile",
+        "ja": "ウェブサイトダウン",
+        "zh": "网站无法访问",
+        "ko": "웹사이트 다운",
+        "ar": "الموقع متوقف"
+      },
+      "keywords": {
+        "es": [
+          "sin internet",
+          "sitio inaccesible",
+          "no carga",
+          "fuera de línea",
+          "error de conexión",
+          "página no disponible",
+          "caída"
+        ],
+        "en": [
+          "no internet",
+          "site unreachable",
+          "won't load",
+          "offline",
+          "connection error",
+          "page unavailable",
+          "outage"
+        ]
+      }
+    },
+    "post-carousel": {
+      "label": {
+        "es": "Publicación en carrusel",
+        "en": "Carousel post",
+        "pt": "Publicação em carrossel",
+        "fr": "Publication carrousel",
+        "de": "Karussell-Beitrag",
+        "it": "Post a carosello",
+        "ja": "カルーセル投稿",
+        "zh": "轮播帖子",
+        "ko": "캐러셀 게시물",
+        "ar": "منشور دوّار"
+      },
+      "keywords": {
+        "es": [
+          "varias fotos",
+          "deslizar",
+          "álbum",
+          "galería",
+          "instagram",
+          "varias imágenes",
+          "swipe"
+        ],
+        "en": [
+          "multiple photos",
+          "swipe",
+          "album",
+          "gallery",
+          "instagram",
+          "multi-image post",
+          "slides"
+        ]
+      }
+    },
+    "story-highlight": {
+      "label": {
+        "es": "Historias destacadas",
+        "en": "Story highlights",
+        "pt": "Destaques dos stories",
+        "fr": "Stories à la une",
+        "de": "Story-Highlights",
+        "it": "Storie in evidenza",
+        "ja": "ストーリーズハイライト",
+        "zh": "精选快拍",
+        "ko": "스토리 하이라이트",
+        "ar": "القصص المميزة"
+      },
+      "keywords": {
+        "es": [
+          "destacadas",
+          "guardar historias",
+          "perfil",
+          "colección de historias",
+          "portada",
+          "archivo de historias",
+          "fijar"
+        ],
+        "en": [
+          "highlights",
+          "saved stories",
+          "profile",
+          "story collection",
+          "cover",
+          "story archive",
+          "pin"
+        ]
+      }
+    },
+    "friend-suggestions": {
+      "label": {
+        "es": "Personas que quizá conozcas",
+        "en": "People you may know",
+        "pt": "Pessoas que você talvez conheça",
+        "fr": "Vous connaissez peut-être",
+        "de": "Personen, die du kennen könntest",
+        "it": "Persone che potresti conoscere",
+        "ja": "知り合いかも",
+        "zh": "你可能认识的人",
+        "ko": "알 수도 있는 사람",
+        "ar": "أشخاص قد تعرفهم"
+      },
+      "keywords": {
+        "es": [
+          "sugerencias de amistad",
+          "a quién seguir",
+          "cuentas sugeridas",
+          "agregar amigos",
+          "recomendaciones",
+          "conocidos",
+          "descubrir personas"
+        ],
+        "en": [
+          "friend suggestions",
+          "who to follow",
+          "suggested accounts",
+          "add friends",
+          "recommendations",
+          "discover people",
+          "follow suggestions"
+        ]
+      }
+    },
+    "member-requests": {
+      "label": {
+        "es": "Solicitudes para unirse",
+        "en": "Join requests",
+        "pt": "Solicitações de participação",
+        "fr": "Demandes d’adhésion",
+        "de": "Beitrittsanfragen",
+        "it": "Richieste di partecipazione",
+        "ja": "参加リクエスト",
+        "zh": "入群申请",
+        "ko": "가입 요청",
+        "ar": "طلبات الانضمام"
+      },
+      "keywords": {
+        "es": [
+          "aprobar miembros",
+          "rechazar",
+          "solicitudes pendientes",
+          "moderar grupo",
+          "administrador",
+          "aceptar",
+          "lista de espera"
+        ],
+        "en": [
+          "approve members",
+          "decline",
+          "pending requests",
+          "moderate group",
+          "admin",
+          "accept",
+          "waitlist"
+        ]
+      }
+    },
+    "person-alert": {
+      "label": {
+        "es": "Cuenta reportada",
+        "en": "Flagged account",
+        "pt": "Conta denunciada",
+        "fr": "Compte signalé",
+        "de": "Gemeldetes Konto",
+        "it": "Account segnalato",
+        "ja": "報告されたアカウント",
+        "zh": "被举报的账号",
+        "ko": "신고된 계정",
+        "ar": "حساب مُبلَّغ عنه"
+      },
+      "keywords": {
+        "es": [
+          "en revisión",
+          "denunciar usuario",
+          "moderación",
+          "cuenta sospechosa",
+          "advertencia",
+          "perfil marcado",
+          "infracción"
+        ],
+        "en": [
+          "under review",
+          "report user",
+          "moderation",
+          "suspicious account",
+          "warning",
+          "flagged profile",
+          "violation"
+        ]
+      }
+    },
+    "post-hide": {
+      "label": {
+        "es": "Ocultar publicación",
+        "en": "Hide post",
+        "pt": "Ocultar publicação",
+        "fr": "Masquer la publication",
+        "de": "Beitrag ausblenden",
+        "it": "Nascondi post",
+        "ja": "投稿を非表示",
+        "zh": "隐藏帖子",
+        "ko": "게시물 숨기기",
+        "ar": "إخفاء المنشور"
+      },
+      "keywords": {
+        "es": [
+          "ver menos",
+          "no me interesa",
+          "quitar del feed",
+          "ocultar contenido",
+          "preferencias del feed",
+          "dejar de ver",
+          "filtrar"
+        ],
+        "en": [
+          "see less",
+          "not interested",
+          "remove from feed",
+          "hide content",
+          "feed preferences",
+          "show fewer",
+          "filter"
+        ]
+      }
+    },
+    "post-embed": {
+      "label": {
+        "es": "Insertar publicación",
+        "en": "Embed post",
+        "pt": "Incorporar publicação",
+        "fr": "Intégrer la publication",
+        "de": "Beitrag einbetten",
+        "it": "Incorpora post",
+        "ja": "投稿を埋め込む",
+        "zh": "嵌入帖子",
+        "ko": "게시물 삽입",
+        "ar": "تضمين المنشور"
+      },
+      "keywords": {
+        "es": [
+          "código para insertar",
+          "incrustar",
+          "poner en tu sitio",
+          "iframe",
+          "blog",
+          "compartir en página web",
+          "widget"
+        ],
+        "en": [
+          "embed code",
+          "put on your site",
+          "iframe",
+          "blog",
+          "share on website",
+          "html snippet",
+          "widget"
+        ]
+      }
+    },
+    "people-globe": {
+      "label": {
+        "es": "Grupo público",
+        "en": "Public group",
+        "pt": "Grupo público",
+        "fr": "Groupe public",
+        "de": "Öffentliche Gruppe",
+        "it": "Gruppo pubblico",
+        "ja": "公開グループ",
+        "zh": "公开群组",
+        "ko": "공개 그룹",
+        "ar": "مجموعة عامة"
+      },
+      "keywords": {
+        "es": [
+          "abierto",
+          "cualquiera puede unirse",
+          "comunidad abierta",
+          "visible para todos",
+          "sin aprobación",
+          "descubrir grupos",
+          "comunidad"
+        ],
+        "en": [
+          "open",
+          "anyone can join",
+          "open community",
+          "visible to everyone",
+          "no approval",
+          "discover groups",
+          "community"
+        ]
+      }
+    },
+    "review-reply": {
+      "label": {
+        "es": "Responder reseña",
+        "en": "Reply to review",
+        "pt": "Responder avaliação",
+        "fr": "Répondre à l’avis",
+        "de": "Auf Bewertung antworten",
+        "it": "Rispondi alla recensione",
+        "ja": "レビューに返信",
+        "zh": "回复评价",
+        "ko": "리뷰에 답글 달기",
+        "ar": "الرد على المراجعة"
+      },
+      "keywords": {
+        "es": [
+          "respuesta del dueño",
+          "contestar opinión",
+          "atención al cliente",
+          "comentario del negocio",
+          "agradecer reseña",
+          "reseñas de google",
+          "reputación"
+        ],
+        "en": [
+          "owner response",
+          "answer feedback",
+          "customer service",
+          "business reply",
+          "thank reviewer",
+          "google reviews",
+          "reputation"
+        ]
+      }
+    }
+  }
+}

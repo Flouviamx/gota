@@ -506,6 +506,23 @@ const DESK_B = [
   dot(6.25, 10.13),
   dot(6.25, 17),
 ];
+/**
+ * The candidate under a corner badge: the résumé and the person drawn as one drawing (the badge takes
+ * the place of the person in front), the résumé cut 3 around the person. Its two lines go up 0.25 and
+ * 0.5 so the badge's clearance never reaches their ends.
+ */
+const CANDIDATE_B = (() => {
+  const person = personAt(0.82, -3.25, 0.65);
+  const fronts = person.map(shut);
+  const resume = [box(9.75, 2.75, 11.5, 14.5, 3), hl(15.5, 18.25, 6.5), hl(15.5, 18.25, 9.5)].map((d) => behind(d, fronts));
+  return [...resume, ...person];
+})();
+/**
+ * The job offer under a corner badge: comercio's open hand mirrored, 0.5 to the left, so the badge takes
+ * its wrist and cuff whole and leaves its fingers and thumb (unmirrored, the badge took the thumb and
+ * left a stub of a hand), and Núcleo's briefcase held over the thumb, its corner 7.6 from the badge.
+ */
+const JOB_OFFER = [...comercio.icons.donation.d.slice(1).map((d) => transform(flipPath(d), 1, -0.5, 0)), ...briefcaseAt(0.5, [3.25, 11.25])];
 
 const icons = {
   // ── Hiring ──
@@ -1100,6 +1117,53 @@ const icons = {
     tags: ['nuevo ingreso', 'recién contratado', 'nuevo empleado', 'new hire', 'new joiner'],
     d: [...personAt(1, -2.75, 0), star4(18.75, 5.25, 3)],
   },
+
+  // ── Round 12 ──
+  'candidate-x': {
+    tags: ['rechazar candidato', 'candidato descartado', 'no seleccionado', 'reject candidate', 'rejected applicant'],
+    d: CANDIDATE_B,
+    badge: badge('x'),
+  },
+  'candidate-star': {
+    tags: ['candidato preseleccionado', 'finalista', 'candidato destacado', 'shortlisted candidate', 'shortlist'],
+    d: CANDIDATE_B,
+    badge: badge('star'),
+  },
+  'job-offer-check': {
+    tags: ['oferta aceptada', 'propuesta aceptada', 'contratación confirmada', 'offer accepted', 'accepted offer'],
+    d: JOB_OFFER,
+    badge: badge('check'),
+  },
+  'job-offer-x': {
+    tags: ['oferta rechazada', 'propuesta declinada', 'declinó la oferta', 'offer declined', 'declined offer'],
+    d: JOB_OFFER,
+    badge: badge('x'),
+  },
+  'overtime': {
+    tags: ['horas extra', 'tiempo extra', 'jornada extendida', 'overtime', 'extra hours'],
+    // calendario's clock-range (the face and the time as a sector of it) whose sector runs past twelve,
+    // with the engine's plus: the pivot 0.5 up and left, as the set's clocks under a badge
+    d: [circ(12, 12, 9), `M11.5 11.5L${P(polar(11.5, 11.5, 5.75, -165))}A5.75 5.75 0 0 1 ${P(polar(11.5, 11.5, 5.75, -45))}Z`],
+    badge: badge('plus'),
+  },
+  'flexible-hours': {
+    tags: ['horario flexible', 'flexibilidad de horario', 'jornada flexible', 'flexible hours', 'flextime'],
+    // A clock and, around its top, an arc arrow with a head at each end: its hours move either way. The
+    // arc stands 4.75 out from the face, so the heads' inner arms keep 3 from it
+    d: (() => {
+      const c = [12, 14.5];
+      const a = arc(...c, 9.75, 210, 330);
+      const t0 = (210 * Math.PI) / 180;
+      return [circ(...c, 5), line([12, 11.65], c, [13.6, 15.4]), a.d, head(a.end, a.tangent, 2.75), head(polar(...c, 9.75, 210), [Math.sin(t0), -Math.cos(t0)], 2.75)];
+    })(),
+  },
+  'meal-voucher': {
+    tags: ['vales de despensa', 'vale de comida', 'ticket restaurante', 'meal voucher', 'food benefit', 'meal card'],
+    // The core card (as comercio's gift and loyalty cards) carrying a served dish: the cloche on its tray
+    // and its knob, as cocina's meal plan carries it. (A fork and a knife at this size read as letters; on
+    // the coupon's narrow side the dish read as a picture.)
+    d: [sq(2.5, 5, 19, 14, 3.75, { square: ['br'] }), arc(12, 14.75, 4, 180, 360).d, hl(7, 17, 14.75), dot(12, 9.75)],
+  },
 };
 
 
@@ -1180,6 +1244,17 @@ const FILL = {
   // The shoulders close along the top of the screen in front of them
   freelancer: { solid: [0, 2], closed: [1], lines: [3] },
   'new-hire': { solid: [0, 1, 2] },
+  // Round 12. The person filled; the résumé behind, cut around it, stays lines
+  'candidate-x': { solid: [3], closed: [4], lines: [0, 1, 2] },
+  'candidate-star': { solid: [3], closed: [4], lines: [0, 1, 2] },
+  'job-offer-check': { solid: [0, 2], closed: [1], wire: [3], cut: [4] },
+  'job-offer-x': { solid: [0, 2], closed: [1], wire: [3], cut: [4] },
+  // The face filled with the sector knocked out, as calendario's clock-range
+  overtime: { solid: [0], cut: [1] },
+  // The face filled, its hands knocked out; the arc arrow a line apart
+  'flexible-hours': { solid: [0], cut: [1], lines: [2, 3, 4] },
+  // The coupon filled, the dish knocked out
+  'meal-voucher': { solid: [0], cut: [1, 2, 3] },
 };
 for (const name of ['briefcase-plus', 'briefcase-search', 'briefcase-check', 'briefcase-clock', 'briefcase-x', 'hiring-freeze', 'job-training']) FILL[name] = BRIEFCASE_FILL;
 // The briefcase as Núcleo's fills, the plane over it a line apart
@@ -1275,6 +1350,11 @@ for (const name of ['briefcase-plus', 'briefcase-search', 'briefcase-check', 'br
 for (const name of ['time-off', 'time-off-plus', 'time-off-check', 'time-off-x', 'time-off-clock']) PARTS[name] = { canopy: [0], pole: [1], sand: [2] };
 for (const name of ['desk-check', 'desk-plus', 'desk-x']) PARTS[name] = { top: [0], leg: [1], drawers: [2, 3, 4, 5] };
 PARTS['payslip-check'] = { slip: [0, 4, 5], perforation: [1, 2, 3] };
+for (const name of ['candidate-x', 'candidate-star']) PARTS[name] = { resume: [0, 1, 2], person: [3, 4] };
+for (const name of ['job-offer-check', 'job-offer-x']) PARTS[name] = { hand: [0, 1], briefcase: [2, 3, 4] };
+PARTS.overtime = { face: [0], range: [1] };
+PARTS['flexible-hours'] = { face: [0], hands: [1], arrow: [2, 3, 4] };
+PARTS['meal-voucher'] = { body: [0], dish: [1, 2, 3] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ── Levels (DESIGN.md › Levels and values): the pile grows box by box, the bars from short to tall ──
@@ -1287,8 +1367,9 @@ const off = (names, v) => {
 };
 // With a badge or a piece on top: at 58 % it stops reading, and a slash would cut through it
 off(Object.keys(icons).filter((n) => icons[n].badge), { circle: false, square: false, slash: false });
-// Already inside a circular arrow
+// Already inside a circular arrow, or round
 off(['feedback-360', 'turnover'], { circle: false });
+off(['overtime', 'flexible-hours'], { circle: false });
 
 // ── Mirroring (DESIGN.md › Mirroring): what reads in a direction ──────────────────────────────
 // The stages and the steps that advance to the right, the arrows that lead out, back or across, the
@@ -1334,6 +1415,10 @@ const MOTION = {
   'business-trip': { effect: 'slide', parts: ['plane'], vector: [1.5, -1.5] },
   'temp-worker': { effect: 'spin', parts: ['badge'], origin: BC },
   'new-hire': { effect: 'beat', parts: ['sparkle'], origin: [18.75, 5.25] },
+  'candidate-star': { effect: 'beat', parts: ['badge'], origin: BC },
+  'job-offer-check': { effect: 'bounce', parts: ['briefcase'], vector: [0, -1.5] },
+  overtime: { effect: 'beat', parts: ['badge'], origin: BC },
+  'flexible-hours': { effect: 'wiggle', parts: ['arrow'], origin: [12, 14.5] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 

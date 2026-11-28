@@ -191,6 +191,37 @@ const HOME_TILES = [[7.75, 5.75], [13.5, 5.75], [7.75, 11.5], [13.5, 11.5]].map(
 /** The notification card at `y`: its app tile and two lines of text. */
 const notice = (y) => [sq(2.5, y, 19, 9.5, 3.25, BR), sq(5.5, y + 3, 3.5, 3.5, 1, BR), line([12, y + 3.25], [18.5, y + 3.25]), line([12, y + 6.25], [15.5, y + 6.25])];
 
+// ── Round 12 ────────────────────────────────────────────────────────────────────────────────
+// Maximize and restore: a status badge of our own on the engine's ring (r 4.25 at 17.25, solid in
+// every style), its sign a diagonal double arrow, as navegacion's maximize and minimize draw them:
+// the heads out at the ends to fill the screen, in at the middle to give the window its size back
+const BADGE_C = [17.25, 17.25];
+const BADGE_RING = circ(...BADGE_C, 4.25);
+const statusBadge = (marks) => own([BADGE_RING, ...marks], BADGE_RING, { solid: [BADGE_RING], cut: marks });
+const MAXIMIZE_SIGN = [line([15.5, 19], [19, 15.5]), line([17.25, 15.5], [19, 15.5], [19, 17.25]), line([15.5, 17.25], [15.5, 19], [17.25, 19])];
+const RESTORE_SIGN = [
+  line([14.5, 20], [16, 18.5]),
+  line([14.75, 18.5], [16, 18.5], [16, 19.75]),
+  line([20, 14.5], [18.5, 16]),
+  line([19.75, 16], [18.5, 16], [18.5, 14.75]),
+];
+// Thirds: the snap tile a third of the inset screen wide (2.75: its hole stays open at 2.1)
+const THIRD_W = 2.75;
+// Center: a landscape tile in the middle of the screen, the window's proportions
+const CENTER_TILE = sq(7.25, 8.5, 9.5, 7, TILE_R, BR);
+// Wallpaper: dispositivos' monitor with image's sun and mountains in its screen, from edge to edge
+const MONITOR = dispositivos.icons.desktop.d;
+const WALL_Y = (y) => 3.5 + ((y - 5) * 13.25) / 14;
+const WALLPAPER = [
+  ...MONITOR,
+  dot(10.5, WALL_Y(8.75)),
+  rline([[2.89, WALL_Y(17.11)], [7, WALL_Y(13)], [10, WALL_Y(16)], [16, WALL_Y(10)], [21.5, WALL_Y(15.5)]], [0, 1, 1, 1, 0]),
+];
+// Start menu: the square screen (the landscape one leaves no room above the strip for a menu) with
+// the taskbar's strip and its start button, and the menu risen from the button: a panel on
+// the screen's left edge whose top and right sides run up from the strip, two rows of apps in it
+const START_PANEL = cline([[3.25, 6.25], [11.75, 6.25], [11.75, 15.25]], [0, 2, 0]);
+
 const icons = {
   // ── The window and its badges ─────────────────────────────────────────────────────────────
   window: {
@@ -221,6 +252,26 @@ const icons = {
     tags: ['descargar app', 'instalar', 'app de escritorio', 'download app', 'install', 'desktop app'],
     d: WINDOW,
     badge: badge('arrow-down'),
+  },
+  'window-maximize': {
+    tags: ['maximizar', 'pantalla completa', 'agrandar ventana', 'maximize', 'zoom window', 'fill screen'],
+    d: WINDOW,
+    badge: statusBadge(MAXIMIZE_SIGN),
+  },
+  'window-restore': {
+    tags: ['restaurar', 'tamaño anterior', 'reducir ventana', 'restore', 'restore down', 'unmaximize'],
+    d: WINDOW,
+    badge: statusBadge(RESTORE_SIGN),
+  },
+  'window-clock': {
+    tags: ['sesión expirada', 'tiempo agotado', 'volver a entrar', 'session expired', 'timed out', 'sign in again'],
+    d: WINDOW,
+    badge: badge('clock'),
+  },
+  'window-update': {
+    tags: ['actualización requerida', 'actualizar app', 'nueva versión', 'update required', 'update app', 'new version'],
+    d: WINDOW,
+    badge: badge('arrow-up'),
   },
   'window-edit': {
     tags: ['personalizar', 'editar diseño', 'modo edición', 'customize', 'edit layout', 'edit mode'],
@@ -399,6 +450,11 @@ const icons = {
   // Remote desktop: a monitor (screen, stem and foot) in front of the window's corner (a custom
   // badge: the engine clears the window around the screen and the box under it, out to the corner,
   // so no sliver of the corner survives). In the body it came out too small to read.
+  // Floating toolbar: the toolbar, shorter, over two lines of text it acts on
+  'toolbar-floating': {
+    tags: ['barra flotante', 'menú de selección', 'formato de texto', 'floating toolbar', 'selection menu', 'bubble menu'],
+    d: [capsule(4.25, 3.25, 15.5, 6.5), ...[8.5, 12, 15.5].map((x) => tool(x, 6.5)), line([3.25, 14.25], [20.75, 14.25]), line([3.25, 18.25], [14.75, 18.25])],
+  },
   'remote-desktop': {
     tags: ['escritorio remoto', 'control remoto', 'otra computadora', 'remote desktop', 'remote access', 'vnc'],
     d: WINDOW,
@@ -463,6 +519,22 @@ const icons = {
     d: [sq(2.5, 14.25, 19, 6.5, 3, BR), tool(6.25, 17.5)],
     badge: pushpin([12.75, 3.75], 0.7),
   },
+  // Start menu: the taskbar with its menu risen from the start button
+  'start-menu': {
+    tags: ['menú inicio', 'lanzador de apps', 'todas las apps', 'start menu', 'app launcher', 'all apps'],
+    d: [SCREEN, line([3.25, 15.25], [20.75, 15.25]), tool(7.25, 18), START_PANEL, line([6.25, 9.25], [8.75, 9.25]), line([6.25, 12.25], [8.25, 12.25])],
+  },
+  // Hide the dock: dock's screen and bar, its apps given way to a chevron pointing down, where it goes
+  // (above the apps, the chevron and the three dots made a face)
+  'dock-hide': {
+    tags: ['ocultar dock', 'ocultar barra', 'ocultar automáticamente', 'hide dock', 'auto-hide', 'hide taskbar'],
+    d: [DESKTOP],
+    badge: (() => {
+      const bar = sq(5.25, 14.75, 13.5, 5.75, 2, BR);
+      const chevron = line([10, 16.88], [12, 18.38], [14, 16.88]);
+      return own([bar, chevron], bar, { solid: [bar], cut: [chevron] });
+    })(),
+  },
   // Spaces: a row of three small desktops over the one in use.
   workspaces: {
     tags: ['escritorios virtuales', 'espacios', 'cambiar de escritorio', 'workspaces', 'virtual desktops', 'spaces'],
@@ -494,6 +566,11 @@ const icons = {
     badge: badge('plus'),
   },
   // Add an app: Núcleo's apps with a plus where the fourth tile was, 3 from its neighbors.
+  // Remove an app: apps-plus's pair, a minus where the fourth tile was
+  'apps-minus': {
+    tags: ['quitar app', 'desinstalar', 'eliminar del lanzador', 'remove app', 'uninstall', 'remove integration'],
+    d: [...nucleo.icons.apps.d.slice(0, 3), line([13.75, 17], [20.25, 17])],
+  },
   'apps-plus': {
     tags: ['agregar app', 'integración', 'instalar', 'catálogo', 'add app', 'add integration', 'install'],
     d: [...nucleo.icons.apps.d.slice(0, 3), line([17, 13.75], [17, 20.25]), line([13.75, 17], [20.25, 17])],
@@ -511,6 +588,15 @@ const icons = {
   widgets: {
     tags: ['widgets', 'complementos', 'mini apps', 'widgets', 'add-ons', 'gadgets'],
     d: [...nucleo.icons.apps.d.slice(1, 3), nucleo.icons.apps.d[3], turnPath(sq(14.75, 3, 6, 6, 1.75, BR), 45, [17.75, 6])],
+  },
+  // Add a widget: widgets with a plus where its bottom-right tile was, as apps-plus
+  'widgets-plus': {
+    tags: ['agregar widget', 'nuevo widget', 'personalizar inicio', 'add widget', 'new widget', 'customize home'],
+    d: [...nucleo.icons.apps.d.slice(1, 3), turnPath(sq(14.75, 3, 6, 6, 1.75, BR), 45, [17.75, 6]), line([17, 13.75], [17, 20.25]), line([13.75, 17], [20.25, 17])],
+  },
+  wallpaper: {
+    tags: ['fondo de pantalla', 'fondo de escritorio', 'imagen de fondo', 'wallpaper', 'desktop background', 'background image'],
+    d: WALLPAPER,
   },
   'lock-screen': {
     tags: ['pantalla de bloqueo', 'bloqueado', 'fondo de bloqueo', 'lock screen', 'locked', 'wallpaper'],
@@ -652,6 +738,10 @@ const icons = {
   'window-snap-top-left': { tags: ['cuarto superior izquierdo', 'esquina', 'acomodar', 'snap top left', 'quarter', 'corner'], d: snap(QUARTER) },
   'window-snap-top-right': { tags: ['cuarto superior derecho', 'esquina', 'acomodar', 'snap top right', 'quarter', 'corner'], d: snap(QUARTER, { flipX: true }) },
   'window-snap-bottom-left': { tags: ['cuarto inferior izquierdo', 'esquina', 'acomodar', 'snap bottom left', 'quarter', 'corner'], d: snap(QUARTER, { flipY: true }) },
+  'window-snap-left-third': { tags: ['tercio izquierdo', 'acomodar en tercios', 'dividir en tres', 'snap left third', 'tile thirds', 'left third'], d: [SCREEN, sq(6.25, 6.25, THIRD_W, 11.5, TILE_R, BR)] },
+  'window-snap-center-third': { tags: ['tercio central', 'acomodar en tercios', 'dividir en tres', 'snap center third', 'tile thirds', 'middle third'], d: [SCREEN, sq(12 - THIRD_W / 2, 6.25, THIRD_W, 11.5, TILE_R, BR)] },
+  'window-snap-right-third': { tags: ['tercio derecho', 'acomodar en tercios', 'dividir en tres', 'snap right third', 'tile thirds', 'right third'], d: [SCREEN, sq(17.75 - THIRD_W, 6.25, THIRD_W, 11.5, TILE_R, BR)] },
+  'window-center': { tags: ['centrar ventana', 'en medio', 'acomodar al centro', 'center window', 'center', 'middle of screen'], d: [SCREEN, CENTER_TILE] },
   'window-snap-bottom-right': { tags: ['cuarto inferior derecho', 'esquina', 'acomodar', 'snap bottom right', 'quarter', 'corner'], d: snap(QUARTER, { flipX: true, flipY: true }) },
 };
 
@@ -718,9 +808,18 @@ const FILL = {
   'notification-x': { solid: [0], cut: [1, 2, 3] },
   'notification-check': { solid: [0], cut: [1, 2, 3] },
   'push-notification': { solid: [0], cut: [1] },
+  // Round 12
+  'toolbar-floating': { solid: [0], cut: [1, 2, 3], lines: [4, 5] },
+  'start-menu': { solid: [0], cut: [line([1.75, 15.25], [22.25, 15.25]), 2, 3, 4, 5] },
+  // The arrow cut from the screen; the dock below it stays a line
+  'dock-hide': { solid: [0] },
+  'apps-minus': { solid: [0, 1, 2], lines: [3] },
+  'widgets-plus': { solid: [0, 1, 2], lines: [3, 4] },
+  wallpaper: { solid: [0], wire: [1, 2], cut: [3, 4] },
+  'window-center': { solid: [0], cut: [1] },
 };
 // The window and everything drawn in its body
-for (const name of ['window', 'window-plus', 'window-x', 'window-gear', 'window-sync', 'window-arrow-down', 'window-select', 'window-pin', 'window-alert', 'window-block', 'window-check', 'window-construction'])
+for (const name of ['window', 'window-plus', 'window-x', 'window-gear', 'window-sync', 'window-arrow-down', 'window-select', 'window-pin', 'window-alert', 'window-block', 'window-check', 'window-construction', 'window-maximize', 'window-restore', 'window-clock', 'window-update'])
   FILL[name] = { solid: [0], cut: W };
 // The pencil's clearance comes within 1 of the bar on the right edge: there the bar's cut doubles
 // (a second one 0.75 below it, from where the clearance is already that close), so no sliver of
@@ -796,8 +895,16 @@ const PARTS = {
   'notification-x': { card: [0], app: [1], text: [2, 3] },
   'notification-check': { card: [0], app: [1], text: [2, 3] },
   'push-notification': { phone: [0], speaker: [1] },
+  // Round 12
+  'toolbar-floating': { bar: [0], tools: [1, 2, 3], text: [4, 5] },
+  'start-menu': { screen: [0], bar: [1], start: [2], menu: [3, 4, 5] },
+  'dock-hide': { screen: [0] },
+  'apps-minus': { apps: [0, 1, 2], mark: [3] },
+  'widgets-plus': { tiles: [0, 1], widget: [2], mark: [3, 4] },
+  wallpaper: { monitor: [0, 1, 2], sun: [3], landscape: [4] },
+  'window-center': { screen: [0], tile: [1] },
 };
-for (const name of ['window', 'window-plus', 'window-x', 'window-gear', 'window-sync', 'window-arrow-down', 'window-edit', 'window-select', 'window-alert', 'window-block', 'window-check', 'window-pin', 'window-construction', 'remote-desktop'])
+for (const name of ['window', 'window-plus', 'window-x', 'window-gear', 'window-sync', 'window-arrow-down', 'window-edit', 'window-select', 'window-alert', 'window-block', 'window-check', 'window-pin', 'window-construction', 'remote-desktop', 'window-maximize', 'window-restore', 'window-clock', 'window-update'])
   PARTS[name] = FRAME_PARTS;
 for (const name of Object.keys(icons).filter((n) => n.startsWith('window-snap-'))) PARTS[name] = { screen: [0], tile: [1] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
@@ -825,6 +932,13 @@ const MOTION = {
   'bottom-sheet': { effect: 'slide', parts: ['sheet'], vector: [0, -1.5] },
   drawer: { effect: 'slide', parts: ['badge'], vector: [-1.5, 0] },
   'push-notification': { effect: 'beat', parts: ['badge'], origin: [18.75, 5.25] },
+  // Round 12
+  'window-maximize': { effect: 'beat', parts: ['badge'], origin: BC },
+  'window-restore': { effect: 'beat', parts: ['badge'], origin: BC },
+  'window-clock': { effect: 'spin', parts: ['badge'], origin: BC },
+  'window-update': { effect: 'bounce', parts: ['badge'], vector: [0, -1.5] },
+  'dock-hide': { effect: 'slide', parts: ['badge'], vector: [0, 1.5] },
+  'widgets-plus': { effect: 'float', parts: ['widget'], vector: [0, -1.5] },
 };
 for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion;
 
@@ -833,7 +947,7 @@ for (const [name, motion] of Object.entries(MOTION)) icons[name].motion = motion
 // surfaces whose content starts at the left (an avatar, an app's tile, a dot, an accent, a
 // magnifier, the start button, the menu bar's logo, the popover's button); the drawer slides in
 // from the reading end.
-for (const name of ['window-detach', 'window-attach', 'window-move', 'app-shortcut', 'skeleton-screen', 'menu-bar', 'taskbar', 'popover', 'toast', 'inline-alert', 'drawer', 'command-palette', 'notification', 'notification-stack'])
+for (const name of ['window-detach', 'window-attach', 'window-move', 'app-shortcut', 'skeleton-screen', 'menu-bar', 'taskbar', 'popover', 'toast', 'inline-alert', 'drawer', 'command-palette', 'notification', 'notification-stack', 'start-menu', 'toolbar-floating'])
   icons[name].mirror = true;
 
 // ── Variants (DESIGN.md › Automatic variants) ──
@@ -841,7 +955,7 @@ const off = (names, v) => {
   for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
 };
 // Already a square container (the window, the screen, a page): not enclosed in a square again.
-off(['window', 'window-resize', 'window-sheet', 'window-loading', 'window-empty', 'window-maintenance', 'window-crash', 'window-pause', 'status-bar', 'remote-desktop', 'app-shortcut', 'quick-settings', 'modal', 'dialog', 'toast', 'banner', ...Object.keys(icons).filter((n) => n.startsWith('window-snap-'))], { square: false });
+off(['window', 'window-resize', 'window-sheet', 'window-loading', 'window-empty', 'window-maintenance', 'window-crash', 'window-pause', 'status-bar', 'remote-desktop', 'app-shortcut', 'quick-settings', 'modal', 'dialog', 'toast', 'banner', 'window-center', ...Object.keys(icons).filter((n) => n.startsWith('window-snap-'))], { square: false });
 // With a badge: enclosed, the badge stops reading, and the slash would cut through it.
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, circle: false, square: false, slash: false };
 
@@ -1066,6 +1180,46 @@ small('window', WINDOW16, W16_FILL());
     const tile = box16(c0, r0, c1, r1, 1);
     small(name, [FRAME16, tile], { solid: [FRAME16], cut: [tile] });
   }
+}
+
+// Round 12
+{
+  // Maximize and restore: as the engine's pixel badges, no ring and a larger sign on the grid, the
+  // clearance the ring's and the sign's
+  const sign16 = (d) => ({ d, knock: `${BADGE_RING}${d.join('')}` });
+  small('window-maximize', WINDOW16, W16_FILL(), sign16([pl([9, 13], [13, 9]), pl([11, 9], [13, 9], [13, 11]), pl([9, 11], [9, 13], [11, 13])]));
+  small('window-restore', WINDOW16, W16_FILL(), sign16([pl([8, 14], [10, 12]), pl([9, 12], [10, 12], [10, 13]), pl([14, 8], [12, 10]), pl([13, 10], [12, 10], [12, 9])]));
+  for (const kind of ['clock', 'arrow-up']) small(`window-${kind === 'clock' ? 'clock' : 'update'}`, WINDOW16, W16_FILL(), badge(kind, { size: 16 }));
+  // The thirds: two pixel columns each (a half takes three), a column of paper from the frame
+  for (const [name, c0] of [['window-snap-left-third', 4], ['window-snap-center-third', 7], ['window-snap-right-third', 10]]) {
+    const tile = box16(c0, 4, c0 + 1, 11, 0.75);
+    small(name, [FRAME16, tile], { solid: [FRAME16], cut: [tile] });
+  }
+  const center = box16(4, 5, 11, 10, 1);
+  small('window-center', [FRAME16, center], { solid: [FRAME16], cut: [center] });
+  // Widgets and apps: widgets' and apps-plus's pixel tiles, the plus or the minus in the fourth's place
+  const tile = (c, r) => box16(c, r, c + 4, r + 4, 1.5, {});
+  const wp = [tile(2, 2), tile(2, 9), roundpoly([g(11, 2), g(13, 4), g(11, 6), g(9, 4)], [0.4, 0.4, 0, 0.4]), pl([11, 9], [11, 13]), pl([9, 11], [13, 11])];
+  small('widgets-plus', wp, { solid: wp.slice(0, 3), lines: wp.slice(3) });
+  const am = [tile(2, 2), tile(9, 2), tile(2, 9), pl([9, 11], [13, 11])];
+  small('apps-minus', am, { solid: am.slice(0, 3), lines: [am[3]] });
+  // Wallpaper: the monitor centered on a pixel column, its landscape in 45° steps and the sun a pixel
+  const screen = box16(1, 2, 13, 10, 2);
+  const stand = [pl([7, 10], [7, 12]), pl([5, 12], [9, 12])];
+  const land = [dot16(11, 4), pl([1, 8], [4, 5], [6, 7], [9, 4], [13, 8])];
+  small('wallpaper', [screen, ...stand, ...land], { solid: [screen], wire: stand, cut: land });
+  // Start menu: the frame, the strip two rows above the bottom with a one-pixel start button, and
+  // the panel on the left edge with one row of apps
+  const sm = [FRAME16, pl([2, 9], [13, 9]), dot16(5, 11), cline([g(2, 4), g(8, 4), g(8, 9)], [0, 1.5, 0]), pl([4, 6], [6, 6])];
+  small('start-menu', sm, { solid: [FRAME16], cut: [rowCut16(9), ...sm.slice(2)] });
+  // Floating toolbar: the capsule six rows deep, its tools 2 × 2 blocks a pixel apart, and two lines
+  const tf = [capsule(px(2), px(1), 16.5, 7.5), block16(4, 3), block16(7, 3), block16(10, 3), pl([1, 9], [14, 9]), pl([1, 12], [10, 12])];
+  small('toolbar-floating', tf, { solid: [tf[0]], cut: tf.slice(1, 4), lines: tf.slice(4) });
+  // Hide the dock: dock's pixel screen and bar, a two-row chevron in the bar
+  const DESK16 = box16(1, 3, 14, 12, 2.5);
+  const bar = box16(3, 9, 11, 14, 1.5);
+  const chevron = pl([6, 11], [7, 12], [8, 11]);
+  small('dock-hide', [DESK16], { solid: [DESK16] }, own([bar, chevron], bar, { solid: [bar], cut: [chevron] }));
 }
 
 export default { category: 'ventanas', label: 'Ventanas y apps', icons };

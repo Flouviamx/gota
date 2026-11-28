@@ -1525,6 +1525,16 @@ add('journal', ['diario', 'bitácora', 'libreta', 'agenda', 'journal', 'diary', 
   line([9.25, 19], [9.25, 21.75]),
 ]);
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────────────
+// Zipped folder: file-zip's zipper on the folder, down from under the tab (where the top is
+// highest): a tooth to each side of its axis, 2.85 apart, the second one level with the fold so
+// the fold runs on from it past the knockout, and the pull on the front, 3 above the foot.
+add('folder-zip', ['carpeta comprimida', 'zip', 'archivo comprimido', 'cremallera', 'zipped folder', 'compressed folder', 'archive'], onFolder([
+  line([5.75, 7.4], [8, 7.4]),
+  line([8, 10.25], [10.25, 10.25]),
+  sq(6.25, 13.25, 3.5, 3.25, 1.05),
+]));
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index into d: by default the body (the first stroke) is filled and the details are knocked
 // out; the exceptions go here. Only closed shapes go in `solid`: `close` closes the outlines that
@@ -1709,6 +1719,7 @@ const PARTS = {
   'file-optimize': { body: [0], line: [1], arrows: [2, 3, 4, 5] },
   'file-convert': { from: [0], to: [1], arrow: [2, 3] },
   'file-unzip': { body: [0], tapes: [1], teeth: [2], pull: [3] },
+  'folder-zip': { body: [0], fold: [1], teeth: [2, 3], pull: [4] },
   'file-tabs': { body: [0], tabs: [1, 2, 3] },
   'file-database': { body: [0], database: [1, 2, 3] },
   'file-vector': { body: [0], curve: [1], nodes: [2, 3], handles: [4, 5] },
@@ -2042,6 +2053,9 @@ body16('file-restore', [FILE16, `M${pt(g(6, 10))}H${N(px(8))}A3 3 0 0 0 ${pt(g(8
   inFolder('folder-image', fold([1, 8], [12, 14]), [pl([4, 11], [7, 8], [9, 10], [10, 9], [11, 10]), dot16(10, 6)]);
   inFolder('folder-music', fold([1, 14]), [node16(5, 10), pl([7, 11], [7, 8], [9, 9])]);
   inFolder('folder-key', fold([1, 14]), [circ(...g(5, 9), 1.5), pl([7, 9], [11, 9]), pl([10, 9], [10, 11])]);
+  // Round 12: the zipper down column 5, a tooth to each side (the second level with the fold, which
+  // runs on from column 9) and the pull a 3 × 3 pixel ring under them
+  inFolder('folder-zip', fold([9, 14]), [pl([3, 4], [5, 4]), pl([5, 6], [7, 6]), sq(px(4), px(8), 3, 3, 0.75)]);
 }
 // The alias arrow on the pixel diagonal, out of the lower left corner (no badge circle to clear: it
 // is not in the corner badges' place).

@@ -701,6 +701,34 @@ add('audit-log', ['registro de auditoría', 'bitácora', 'eventos de seguridad',
 add('immutable-backup', ['respaldo inmutable', 'copia protegida', 'respaldo inalterable', 'immutable backup', 'locked backup'], archivos.icons.backup.d, { badge: badge('lock') });
 add('incident-response', ['respuesta a incidentes', 'emergencia', 'alarma', 'atender incidente', 'incident response', 'alert'], S.siren.d, { badge: badge('check') });
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────────────
+// Quishing: comercio's QR code as the bait, its three finders, at phishing's scale and place (the
+// alignment square sat where the hook bends, and the hook's clearance left a sliver of the loose
+// module).
+{
+  const qr = comercio.icons['qr-code'].d.filter((_, i) => i !== 3 && i !== 7);
+  add('qr-phishing', ['qr fraudulento', 'quishing', 'código qr falso', 'anzuelo', 'qr phishing', 'malicious qr code', 'qr scam'], bait(qr, 0.71, [2.5, 3.25]), { badge: hooked });
+}
+// SIM swap: the SIM card as dispositivos sets it under a badge, and the swap in the status badge's
+// disc: two arrows, one each way, cut out of it.
+{
+  const [y0, y1] = [15.75, 18.75];
+  const marks = [line([14.75, y0], [19.5, y0]), line([18, y0 - 1.5], [19.5, y0], [18, y0 + 1.5]), line([19.75, y1], [15, y1]), line([16.5, y1 - 1.5], [15, y1], [16.5, y1 + 1.5])];
+  add('sim-swap', ['cambio de sim', 'robo de número', 'portabilidad fraudulenta', 'fraude sim', 'sim swap', 'sim hijacking', 'port-out fraud'], dispositivos.icons['sim-card-arrow-down'].d, {
+    badge: own([RING, ...marks], RING, { solid: [RING], cut: marks }),
+  });
+}
+// Bot detection: datos' robot at 75 % up in the corner, under the engine's magnifier.
+add('bot-detection', ['detección de bots', 'tráfico automatizado', 'humano o bot', 'antibots', 'bot detection', 'bot management', 'bot traffic'], place(D.robot.d, 0.75, [4.75, 3], [2.75, 2.25]), { badge: badge('search') });
+// Key pair: two keys side by side, upright, as the core key draws one: the bow, the shaft and two
+// teeth to one side.
+{
+  const key = (x) => [circ(x, 6.25, 3.25), line([x, 9.5], [x, 21]), line([x, 15.75], [x + 2.75, 15.75]), line([x, 19.25], [x + 2.75, 19.25])];
+  add('key-pair', ['par de llaves', 'llave pública y privada', 'cifrado asimétrico', 'pki', 'key pair', 'public key', 'asymmetric keys'], [...key(7.25), ...key(16.75)]);
+}
+// Register a security key: security-key 2.5 to the left, under the engine's plus.
+add('security-key-plus', ['agregar llave de seguridad', 'registrar llave física', 'fido', 'nueva llave', 'add security key', 'register security key', 'passkey device'], icons['security-key'].d.map((d) => move(d, 1, [12, 12], -2.5, 0)), { badge: badge('plus') });
+
 // ── Fill ──────────────────────────────────────────────────────────────────────────────────────
 // Each icon's fill, from its own strokes (see DESIGN.md › Fill). Numbers are indices into `d`;
 // `n + 'Z'` closes an open stroke that encloses a body (a bug's head, a handle's loop).
@@ -753,6 +781,12 @@ const FILL = {
   'credential-vault': { solid: [0], cut: [1, 2, 3, 4], wire: [5, 6] },
   'supply-chain-attack': { solid: [0], cut: [1], lines: [2, 3, 4] },
   botnet: { solid: [0, 3, 4], wire: [1, 2] },
+  // Round 12
+  'qr-phishing': { solid: [0, 1, 2], cut: [3, 4, 5] },
+  'sim-swap': { solid: [0], cut: [1, 2] },
+  'bot-detection': { solid: [0, 2], wire: [1], cut: [3, 4] },
+  'key-pair': { solid: [0, 4], wire: [1, 2, 3, 5, 6, 7] },
+  'security-key-plus': { solid: [0, '1Z'], cut: [2, 3] },
 };
 for (const name of ['malware', 'malware-blocked', 'bug-bounty']) FILL[name] = { solid: [0, '1Z'], cut: [2], wire: [3, 4] };
 for (const [name, spec] of Object.entries(FILL)) {
@@ -800,6 +834,7 @@ const PARTS = {
   'intrusion-detection': { face: [0, 1, 3], needle: [2] },
   misconfiguration: { gear: [0, 1] },
   'incident-response': { siren: [0, 1], rays: [2, 3, 4] },
+  'key-pair': { bows: [0, 4], shafts: [1, 5], teeth: [2, 3, 6, 7] },
 };
 for (const name of ['malware', 'malware-blocked', 'bug-bounty']) PARTS[name] = { body: [0, 1, 2], legs: [3, 4] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
@@ -809,7 +844,7 @@ for (const icon of Object.values(icons)) if (icon.badge && !icon.parts) icon.par
 // ── Motion ────────────────────────────────────────────────────────────────────────────────────
 for (const name of ['malware', 'malware-blocked', 'bug-bounty']) icons[name].motion = { effect: 'wiggle', parts: ['body', 'legs'], origin: [12, 14] };
 // The hook tugs at its bait
-for (const name of ['phishing', 'smishing', 'vishing', 'spear-phishing', 'identity-theft', 'credential-theft', 'clickjacking', 'session-hijack', 'social-engineering'])
+for (const name of ['phishing', 'smishing', 'vishing', 'spear-phishing', 'identity-theft', 'credential-theft', 'clickjacking', 'session-hijack', 'social-engineering', 'qr-phishing'])
   icons[name].motion = { effect: 'bounce', parts: ['badge'], vector: [0, -2] };
 // The bolt strikes
 for (const name of ['cyberattack', 'exploit', 'threat-map']) icons[name].motion = { effect: 'beat', parts: ['badge'], origin: [17.25, 17.25] };
@@ -829,6 +864,8 @@ icons['data-leak'].motion = { effect: 'bounce', parts: ['badge'], vector: [0, 2]
 icons['privilege-escalation'].motion = { effect: 'slide', parts: ['badge'], vector: [0, -1.5] };
 icons.antivirus.motion = { effect: 'beat', origin: [12, 12] };
 icons.eavesdropping.motion = { effect: 'ring', parts: ['body'], origin: [8.5, 3.5] };
+icons['key-pair'].motion = { effect: 'wiggle', origin: [12, 6.25] };
+icons['bot-detection'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 17.25] };
 
 // ── 16 px ─────────────────────────────────────────────────────────────────────────────────────
 // The keylogger as dispositivos' keyboard draws itself at 16 px (its keys short dashes: its dots ran into

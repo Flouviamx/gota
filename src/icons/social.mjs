@@ -7,6 +7,7 @@
 // custom badge the engine clears with exact clearance: nothing is trimmed by hand.
 import { arc, badge, circ, dot, drop, f, flipPath, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snapper, transform } from '../../engine/variants.mjs';
+import calendario from './calendario.mjs';
 import comercio from './comercio.mjs';
 import comunicacion from './comunicacion.mjs';
 import datos from './datos.mjs';
@@ -1063,6 +1064,60 @@ const icons = {
       return own(d, d.join(''), { solid: d });
     })(),
   },
+
+  // ── Round 12 ──
+  'post-hide': {
+    tags: ['ocultar publicación', 'ver menos', 'no me interesa', 'ocultar', 'hide post', 'show less', 'not interested'],
+    // Show less of it: the engine's minus. An eye with a slash at badge size broke into bits
+    d: POST,
+    badge: badge('minus'),
+  },
+  'post-embed': {
+    tags: ['insertar publicación', 'código para incrustar', 'embeber', 'compartir en sitio', 'embed post', 'embed code', 'iframe'],
+    d: POST,
+    // The code sign at badge size: two chevrons
+    badge: (() => {
+      const d = [line([15.25, 14.5], [12.5, 17.25], [15.25, 20]), line([19.25, 14.5], [22, 17.25], [19.25, 20])];
+      return glyph(d, knockOf(...d));
+    })(),
+  },
+  'story-highlight': {
+    tags: ['historias destacadas', 'destacados', 'guardar historia', 'perfil', 'story highlights', 'highlights', 'saved stories'],
+    // story-ring's ring, a star kept in it where the person was
+    d: [...[0, 90, 180, 270].map((a) => arc(12, 12, 9, a - 90 + 12, a - 12).d), star(12, 12.5, 5.25)],
+  },
+  'friend-suggestions': {
+    tags: ['personas que quizás conozcas', 'sugerencias', 'a quién seguir', 'descubrir', 'people you may know', 'suggested accounts', 'who to follow'],
+    // A row of two profile cards, each with its person (profile-deck's, head and shoulders on the
+    // card's foot): one card is profile-card, a single follow suggestion. With profile-card's avatar
+    // and button, two cards read as a pair of speakers
+    d: [2.5, 13.5].flatMap((x) => [box(x, 6.5, 8, 13.25, 2.75), ...bust(x + 4, 12.8, 1.75, 19.75, 2.75)]),
+  },
+  'member-requests': {
+    tags: ['solicitudes de unión', 'aprobar miembros', 'pendientes', 'moderar grupo', 'join requests', 'member requests', 'approve members'],
+    // member-list's rows: each request with its avatar and name, approved or declined at its end
+    d: [circ(5.5, 7, 2.25), hl(10.75, 13.5, 7), check(18.75, 7, 5), circ(5.5, 17, 2.25), hl(10.75, 13.5, 17), line([16.75, 15], [20.75, 19]), line([20.75, 15], [16.75, 19])],
+  },
+  'person-alert': {
+    tags: ['cuenta reportada', 'usuario en revisión', 'denunciar', 'marcado', 'flagged account', 'reported user', 'under review'],
+    d: PERSON_L,
+    badge: badge('alert'),
+  },
+  'people-globe': {
+    tags: ['grupo público', 'comunidad abierta', 'cualquiera puede unirse', 'público', 'public group', 'open community', 'anyone can join'],
+    d: peopleFlat(0.85, -1.5, 0),
+    // calendario's globe on the status badge's ring, as people-lock has the padlock
+    badge: calendario.icons['calendar-globe'].badge,
+  },
+  'review-reply': {
+    tags: ['responder reseña', 'respuesta del negocio', 'contestar opinión', 'reply to review', 'owner response', 'respond'],
+    d: [CARD, star(8.6, 8.9, 3.75), hl(14.5, 17.75, 8.25), hl(6.25, 17.75, 14.25), hl(7.25, 12.75, 17.75)],
+    // comunicacion's message-reply arrow at badge size: up the side and back over the review
+    badge: (() => {
+      const d = [rline([[20.75, 21.25], [20.75, 16.25], [14.25, 16.25]], [0, 2.5, 0]), head([14.25, 16.25], [-1, 0], 2.75)];
+      return glyph(d, knockOf(...d));
+    })(),
+  },
 };
 
 // ── Fill (DESIGN.md › Fill), by index into d ──
@@ -1070,8 +1125,8 @@ const icons = {
 // filled closed with Z (the feed's second post, which runs off the bottom); `cut` is knocked out at
 // stroke width; `lines` stays a line with a gap of paper; `wire` stays a line flush with the body.
 const range = (a, b) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
-const POSTS = ['post', 'post-quote', 'post-collab', 'post-pin', 'post-sparkle', 'post-shield', 'post-bag', 'post-location', 'post-plus', 'post-clock', 'post-check', 'post-lock'];
-const PERSONS = ['creator', 'person-crown', 'person-gem', 'person-bell', 'person-eye', 'person-link', 'person-mute', 'person-star', 'person-arrow-up'];
+const POSTS = ['post', 'post-quote', 'post-collab', 'post-pin', 'post-sparkle', 'post-shield', 'post-bag', 'post-location', 'post-plus', 'post-clock', 'post-check', 'post-lock', 'post-hide', 'post-embed'];
+const PERSONS = ['creator', 'person-crown', 'person-gem', 'person-bell', 'person-eye', 'person-link', 'person-mute', 'person-star', 'person-arrow-up', 'person-alert'];
 const FILL = {
   // The post: the card filled, the author and the content knocked out
   ...Object.fromEntries(POSTS.map((n) => [n, { solid: [0], cut: [1, 2, 3] }])),
@@ -1140,6 +1195,12 @@ const FILL = {
   fundraiser: { solid: [0, 1], cut: [2] },
   'qr-code-person': { solid: [0, 2, 4, 6, 7], cut: [1, 3, 5] },
   'people-nearby': { solid: [0], lines: [1, 2, 3, 4] },
+  // Round 12
+  'story-highlight': { solid: [4], lines: [0, 1, 2, 3] },
+  'friend-suggestions': { solid: [0, 3], cut: [1, 2, 4, 5] },
+  'member-requests': { solid: [0, 3], lines: [1, 2, 4, 5, 6] },
+  'people-globe': { solid: [4, 5], lines: [0, 1, 2, 3] },
+  'review-reply': { solid: [0], cut: [1, 2, 3, 4] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const { d } = icons[name];
@@ -1282,6 +1343,12 @@ const PARTS = {
   fundraiser: { heart: [0], bar: [1], progress: [2] },
   'qr-code-person': { finders: range(0, 5), person: [6, 7] },
   'people-nearby': { ground: [0] },
+  // Round 12
+  'story-highlight': { ring: [0, 1, 2, 3], star: [4] },
+  'friend-suggestions': { cards: [0, 3], avatars: [1, 4], buttons: [2, 5] },
+  'member-requests': { avatars: [0, 3], names: [1, 4], accept: [2], decline: [5, 6] },
+  'people-globe': { back: [0, 1, 2, 3], front: [4, 5] },
+  'review-reply': { card: [0], star: [1], text: [2, 3, 4] },
 };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
@@ -1297,16 +1364,16 @@ const variants = (names, v) => {
   for (const name of names) icons[name].variants = { ...icons[name].variants, ...v };
 };
 // The square card is already the square enclosure (as Núcleo's project): no square around it
-variants([...POSTS, 'post-text', 'post-audio', 'fact-check', 'link-preview', 'profile', 'review', 'review-edit', 'collection', 'qr-code-person'], { square: false });
+variants([...POSTS, 'post-text', 'post-audio', 'fact-check', 'link-preview', 'profile', 'review', 'review-edit', 'collection', 'qr-code-person', 'review-reply'], { square: false });
 // Already in a circle
-variants(['story-ring', 'community'], { circle: false });
+variants(['story-ring', 'community', 'story-highlight'], { circle: false });
 // No slashed variant on a badge (the slash would cut through it) nor on loose lines
 for (const icon of Object.values(icons)) if (icon.badge) icon.variants = { ...icon.variants, slash: false };
 variants(['trending'], { slash: false });
 
 // ── Mirroring (DESIGN.md › Mirroring): lists and threads that read from the start of the line,
 // arrows and trails that run in the reading direction, charts that grow ──
-for (const name of ['post-thread', 'comment-thread', 'member-list', 'member-list-block', 'forum', 'poll', 'poll-results', 'repost', 'crosspost', 'trending', 'followers'])
+for (const name of ['post-thread', 'comment-thread', 'member-list', 'member-list-block', 'forum', 'poll', 'poll-results', 'repost', 'crosspost', 'trending', 'followers', 'friend-suggestions', 'member-requests', 'review-reply'])
   icons[name].mirror = true;
 
 // ── Motion (DESIGN.md › Motion): each icon's own gesture ──
@@ -1329,5 +1396,8 @@ icons.memories.motion = { effect: 'spin', parts: ['badge'], origin: BC };
 icons.challenge.motion = { effect: 'wiggle', origin: [12, 21.25] };
 icons.fundraiser.motion = { effect: 'beat', parts: ['heart'], origin: [12, 7.5] };
 icons['eye-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 21.5] };
+icons['person-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: [17.25, 21.5] };
+icons['story-highlight'].motion = { effect: 'spin', parts: ['ring'], origin: [12, 12] };
+icons['review-reply'].motion = { effect: 'slide', parts: ['badge'], vector: [-1.5, 0] };
 
 export default { category: 'social', label: 'Social y comunidad', icons };

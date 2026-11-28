@@ -2,6 +2,8 @@
 // user through the interface. Drawn with the engine following the rules in DESIGN.md; the base
 // measurements come from Núcleo (arrow-right: 16 shaft, arms of 6 per axis; chevron-right: arms of 6.75).
 import { arc, badge, circ, cursor, dot, f, flipPath, head, line, polar, roundpoly, sq, turn, turnPath } from '../../engine/geometry.mjs';
+import { transform } from '../../engine/variants.mjs';
+import simbolos from './simbolos.mjs';
 
 const R2 = Math.SQRT2;
 const P = ([x, y]) => `${f(x)} ${f(y)}`;
@@ -335,6 +337,33 @@ const fit = (deg) => {
   return [line(...l1), line(...l2), line(a, b), head(a, [a[0] - b[0], a[1] - b[1]], 3.5 * R2), head(b, [b[0] - a[0], b[1] - a[1]], 3.5 * R2)];
 };
 
+// ── Round 12 ──────────────────────────────────────────────────────────────────────────────
+// Sort by name or by number: sort-ascending's arrow and, where its bars stand, two characters of
+// simbolos' letter grid at 6.5 tall, the first above the second (3.5 between them)
+const SORT_K = 6.5 / 15.5;
+const glyphAt = (name, cy) => simbolos.icons[name].d.map((d) => transform(d, SORT_K, 16.5 - 12 * SORT_K, cy - 12 * SORT_K));
+const sortBy = (a, b) => [...arrow([6.75, 4.25], [6.75, 19.75], 3.5 * R2), ...glyphAt(a, 7), ...glyphAt(b, 17)];
+// Scale in 3D: datos' cube at 0.55 in the bottom-left corner and a diagonal arrow (arms of 4.5 along
+// the axes) leaving its top-right corner for the canvas's
+const CUBE_K = 0.55;
+const cubeAt = ([x, y]) => [3.25 + (x - 3.25) * CUBE_K, 20.75 + (y - 20.75) * CUBE_K];
+const SCALE_3D = [
+  roundpoly([[3.25, 8.5], [8.5, 3.25], [20.75, 3.25], [20.75, 15.5], [15.5, 20.75], [3.25, 20.75]].map(cubeAt), 1.25 * CUBE_K),
+  line(...[[3.25, 8.5], [15.5, 8.5], [20.75, 3.25]].map(cubeAt)),
+  line(...[[15.5, 8.5], [15.5, 20.75]].map(cubeAt)),
+  ...arrow([15.25, 8.75], [20.5, 3.5], 4.5 * R2),
+];
+// Middle click: the left click's mouse centered under its rays, which leave the top of its seam
+const MOUSE_MID = (() => {
+  const c = [12, 13.75];
+  return [capsule(7.25, 8.5, 9.5, 13.25), line([7.25, 13.75], [16.75, 13.75]), line([12, 8.5], [12, 13.75]), ...[240, 270, 300].map((a) => line(polar(...c, 8.25, a), polar(...c, 10.75, a)))];
+})();
+// A five-point star the size of controles' rating stars, in the lens where search-x has its x
+const LENS_STAR = (() => {
+  const [cx, cy, ro, ri] = [10.6, 10.85, 3.75, 1.6];
+  return roundpoly(Array.from({ length: 10 }, (_, i) => polar(cx, cy, i % 2 ? ri : ro, -90 + i * 36)), Array.from({ length: 10 }, (_, i) => (i % 2 ? 0.25 : 0.45)));
+})();
+
 const icons = {
   // ── Straight arrows ───────────────────────────────────────────────────────────────────
   'arrow-left': { tags: ['flecha', 'izquierda', 'atrás', 'arrow', 'left', 'back'], d: arrowR(...BIG, BIG_ARM, 180) },
@@ -429,6 +458,10 @@ const icons = {
   'page-last': { tags: ['última página', 'final', 'paginación', 'last', 'page', 'end'], d: [line([17.5, 5.5], [17.5, 18.5]), line([6.5, 5.5], [13, 12], [6.5, 18.5])] },
   'sort-ascending': { tags: ['ordenar', 'ascendente', 'menor a mayor', 'sort', 'ascending'], d: sortBars([3, 5, 7]) },
   'sort-descending': { tags: ['ordenar', 'descendente', 'mayor a menor', 'sort', 'descending'], d: sortBars([7, 5, 3]) },
+  'sort-a-z': { tags: ['ordenar de la a a la z', 'orden alfabético', 'por nombre', 'sort a to z', 'alphabetical', 'sort by name'], d: sortBy('letter-a', 'letter-z') },
+  'sort-z-a': { tags: ['ordenar de la z a la a', 'orden alfabético inverso', 'por nombre', 'sort z to a', 'reverse alphabetical', 'sort by name'], d: sortBy('letter-z', 'letter-a') },
+  'sort-0-9': { tags: ['ordenar de menor a mayor', 'orden numérico', 'por número', 'sort 0 to 9', 'numeric', 'sort by number'], d: sortBy('number-0', 'number-9') },
+  'sort-9-0': { tags: ['ordenar de mayor a menor', 'orden numérico inverso', 'por número', 'sort 9 to 0', 'numeric descending', 'sort by number'], d: sortBy('number-9', 'number-0') },
   'sort': {
     tags: ['ordenar', 'orden', 'intercambiar vertical', 'sort', 'order', 'swap vertical'],
     d: [...arrow([8, 19.75], [8, 4.25], 3.75 * R2), ...arrow([16, 4.25], [16, 19.75], 3.75 * R2)],
@@ -490,6 +523,14 @@ const icons = {
   },
   'view-list': { tags: ['lista', 'filas', 'vista', 'list', 'view', 'rows'], d: [3.5, 10.25, 17].flatMap((y) => [cell(3.5, y), line([10.25, y + 1.75], [20.5, y + 1.75])]) },
   'view-columns': { tags: ['columnas', 'tablero', 'vista', 'columns', 'view'], d: [SQUARE, line([9.1, 3.25], [9.1, 20.75]), line([14.9, 3.25], [14.9, 20.75])] },
+  // Rows: view-columns turned, its two dividers across the frame
+  'rows': { tags: ['filas', 'franjas', 'diseño en filas', 'rows', 'stacked', 'horizontal bands'], d: [SQUARE, line([3.25, 9.1], [20.75, 9.1]), line([3.25, 14.9], [20.75, 14.9])] },
+  // Customize columns: the core table and the engine's gear
+  'columns-gear': {
+    tags: ['personalizar columnas', 'elegir columnas', 'configurar tabla', 'customize columns', 'column picker', 'table settings'],
+    d: [SQUARE, line([3.25, 9.1], [20.75, 9.1]), line([9.1, 9.1], [9.1, 20.75]), line([14.9, 9.1], [14.9, 20.75])],
+    badge: badge('gear'),
+  },
   'view-cards': {
     tags: ['tarjetas', 'bloques', 'vista', 'cards', 'view', 'feed'],
     d: [sq(3.25, 3.25, 17.5, 7.25, 2.25), sq(3.25, 13.5, 17.5, 7.25, 2.25, { square: ['br'] })],
@@ -556,6 +597,17 @@ const icons = {
     tags: ['sin resultados', 'borrar búsqueda', 'búsqueda vacía', 'no encontrado', 'no results', 'clear search', 'not found'],
     d: [...LENS, line([8.75, 8.75], [12.45, 12.45]), line([12.45, 8.75], [8.75, 12.45])],
   },
+  // Match found: search-x's pair, the check in the lens
+  'search-check': {
+    tags: ['coincidencia', 'encontrado', 'búsqueda con resultados', 'match found', 'found', 'search success'],
+    d: [...LENS, line([8.1, 10.9], [9.85, 12.6], [13.2, 9.1])],
+  },
+  // Saved search: the star in the lens, as search-x's x and search-check's check (a status badge took
+  // the magnifier's handle whole)
+  'search-star': {
+    tags: ['búsqueda guardada', 'alerta de búsqueda', 'búsqueda favorita', 'saved search', 'search alert', 'starred search'],
+    d: [...LENS, LENS_STAR],
+  },
   // Clear filters: the `filter` funnel at 78 %, shifted up and to the left (like the bell in
   // Comunicación's badge icons), so the engine's close badge only takes the tip of the stem.
   'filter-x': {
@@ -579,6 +631,8 @@ const icons = {
 
   // ── Round 3: turns up and arrows into a corner ─────────────────────────────────────────
   'arrow-turn-right-up': { tags: ['girar', 'subir de nivel', 'promover', 'turn', 'right up', 'level up'], d: turnArrow(mirrorX(turn(TURN, -90))) },
+  'arrow-turn-right-down': { tags: ['girar', 'bajar', 'derecha y abajo', 'turn', 'right down', 'corner'], d: turnArrow(turn(TURN, 90)) },
+  'arrow-turn-left-down': { tags: ['girar', 'bajar', 'izquierda y abajo', 'turn', 'left down', 'corner'], d: turnArrow(mirrorX(turn(TURN, 90))) },
   'arrow-turn-left-up': { tags: ['carpeta superior', 'subir un nivel', 'girar', 'turn', 'left up', 'parent folder'], d: turnArrow(turn(TURN, -90)) },
   'arrow-up-right-to-corner': { tags: ['a la esquina', 'acoplar', 'arriba derecha', 'arrow', 'corner', 'snap'], d: toCorner(0) },
   'arrow-down-right-to-corner': { tags: ['a la esquina', 'imagen en imagen', 'abajo derecha', 'arrow', 'corner', 'dock'], d: toCorner(90) },
@@ -617,6 +671,7 @@ const icons = {
   },
 
   // ── Round 3: turning and looping ───────────────────────────────────────────────────────
+  'scale-3d': { tags: ['escalar en 3d', 'redimensionar objeto', 'tamaño 3d', 'scale 3d', 'resize 3d', '3d transform'], d: SCALE_3D },
   'rotate-3d': { tags: ['rotar en 3d', 'girar', 'vista 360', 'rotate 3d', 'orbit', '360 view'], d: ORBIT },
   'arrow-loop': { tags: ['bucle', 'iterar', 'repetir hasta', 'loop', 'iterate', 'repeat'], d: LOOP },
   'arrow-bounce': {
@@ -673,6 +728,7 @@ const icons = {
     d: hand([10.75, 10.25, 10.5, 11], 13.25, [9.5, 18.25], [6.75, 16], -3),
   },
   'mouse-left-click': { tags: ['clic izquierdo', 'botón principal', 'ratón', 'left click', 'primary button', 'mouse'], d: MOUSE },
+  'mouse-middle-click': { tags: ['clic central', 'botón de la rueda', 'abrir en pestaña', 'middle click', 'wheel button', 'mouse'], d: MOUSE_MID },
   'mouse-right-click': { tags: ['clic derecho', 'botón secundario', 'menú contextual', 'right click', 'secondary button', 'mouse'], d: MOUSE.map((p) => flipPath(p)) },
 
   // ── Round 3: menus and trails ──────────────────────────────────────────────────────────
@@ -727,12 +783,14 @@ const icons = {
     tags: ['barra de pestañas', 'navegación inferior', 'app móvil', 'tab bar', 'bottom navigation', 'mobile app'],
     d: [PORTRAIT, line([4.75, 14.5], [19.25, 14.5]), ...[8, 12, 16].map((x) => dot(x, 17.75))],
   },
+  'tabs-x': { tags: ['cerrar pestaña', 'cerrar otras pestañas', 'quitar pestaña', 'close tab', 'close other tabs', 'remove tab'], d: [WIN, line([11.25, 5], [11.25, 9.75], [21.5, 9.75])], badge: badge('x') },
   'tabs-plus': { tags: ['nueva pestaña', 'abrir pestaña', 'agregar', 'new tab', 'add tab', 'open tab'], d: [WIN, line([11.25, 5], [11.25, 9.75], [21.5, 9.75])], badge: badge('plus') },
   // Vertical tabs: a column of three tabs; the chosen one runs on to meet the content.
   'tabs-vertical': {
     tags: ['pestañas verticales', 'secciones', 'navegación lateral', 'vertical tabs', 'side tabs', 'settings sections'],
     d: [WIN, line([11.5, 5], [11.5, 19]), line([6, 8.5], [8.5, 8.5]), line([6, 12], [11.5, 12]), line([6, 15.5], [8.5, 15.5])],
   },
+  'filter-star': { tags: ['filtro guardado', 'filtro favorito', 'vista guardada', 'saved filter', 'starred filter', 'saved view'], d: [FUNNEL_B], badge: badge('star') },
   'filter-plus': { tags: ['agregar filtro', 'nuevo filtro', 'regla', 'add filter', 'new filter', 'filter rule'], d: [FUNNEL_B], badge: badge('plus') },
   // Clear history: history's arrow with the hands at ten, pivot at (11.5, 11.5), clear of the badge.
   'history-x': {
@@ -851,6 +909,12 @@ const FILL = {
   'tabs-plus': { solid: [0], cut: [1] },
   'tabs-vertical': { solid: [0], cut: [1, 2, 3, 4] },
   'filter-plus': { solid: [0] },
+  'filter-star': { solid: [0] },
+  'tabs-x': { solid: [0], cut: [1] },
+  'rows': { solid: [0], cut: [1, 2] },
+  'columns-gear': { solid: [0], cut: [1, 2, 3] },
+  'scale-3d': { solid: [0], cut: [1, 2], lines: [3, 4] },
+  'mouse-middle-click': { solid: [0], cut: [1, 2], lines: [3, 4, 5] },
   'view-masonry': { solid: [0, 1, 2, 3] },
   'view-thumbnails': { solid: [0, 1, 2, 3] },
   'view-stack': { solid: [0], lines: [1, 2] },
@@ -1081,6 +1145,35 @@ icons['arrow-bounce'].small = { d: [line([3.75, 6.75], [12, 15], [20.25, 6.75]),
   icons['fit-height'].small = fit16(90);
 }
 
+// Round 12. The sorts: snapped, the 6.5-tall characters were blots. The arrow on its pixel column and
+// each character five pixels tall on the grid, two rows apart.
+{
+  const px = (k) => 0.75 + 1.5 * k;
+  const pl = (...cr) => line(...cr.map(([c, r]) => [px(c), px(r)]));
+  const ring = (pts) => roundpoly(pts.map(([c, r]) => [px(c), px(r)]), 0.2);
+  const ch = {
+    'letter-a': (r) => [pl([9, r + 4], [9, r + 1], [10, r], [12, r], [13, r + 1], [13, r + 4]), pl([9, r + 2], [13, r + 2])],
+    'letter-z': (r) => [pl([9, r], [13, r], [9, r + 4], [13, r + 4])],
+    'number-0': (r) => [ring([[10, r], [11, r], [12, r + 1], [12, r + 3], [11, r + 4], [10, r + 4], [9, r + 3], [9, r + 1]])],
+    'number-9': (r) => [pl([12, r + 2], [10, r + 2], [9, r + 1], [10, r], [11, r], [12, r + 1], [12, r + 3], [11, r + 4], [9, r + 4])],
+  };
+  const arrow16 = [pl([4, 2], [4, 13]), pl([2, 11], [4, 13], [6, 11])];
+  for (const [name, a, b] of [['sort-a-z', 'letter-a', 'letter-z'], ['sort-z-a', 'letter-z', 'letter-a'], ['sort-0-9', 'number-0', 'number-9'], ['sort-9-0', 'number-9', 'number-0']])
+    icons[name].small = { d: [...arrow16, ...ch[a](2), ...ch[b](9)] };
+  // Match found and saved search: search-x's pixel magnifier with a pixel check, or the engine's
+  // pixel star, centered on its center pixel
+  const lens = [circ(9.75, 9.75, 7.5), line([15.25, 15.25], [20.25, 20.25])];
+  icons['search-check'].small = { d: [...lens, line([6.75, 9.75], [8.25, 11.25], [12.75, 6.75])] };
+  const at = (dc, dr) => [9.75 + 1.5 * dc, 9.75 + 1.5 * dr];
+  icons['search-star'].small = { d: [...lens, roundpoly([at(0, -3), at(1, -1), at(3, -1), at(1.5, 0.5), at(2, 3), at(0, 1.5), at(-2, 3), at(-1.5, 0.5), at(-3, -1), at(-1, -1)], 0.3)] };
+  // Middle click: the mouse 7 pixels wide on the grid (its seam on a pixel column) and three one-step
+  // rays, a pixel clear of its top
+  const body = capsule(6.75, 9.75, 9, 10.5);
+  const seams = [line([6.75, 14.25], [15.75, 14.25]), line([11.25, 9.75], [11.25, 14.25])];
+  const rays = [pl([7, 3], [7, 4]), pl([4, 4], [5, 5]), pl([10, 4], [9, 5])];
+  icons['mouse-middle-click'].small = { d: [body, ...seams, ...rays], fill: { solid: [body], cut: seams, lines: rays } };
+}
+
 // ── Mirroring (DESIGN.md › Mirroring): anything with a reading direction flips in RTL ──
 for (const name of [
   'arrow-left', 'arrow-up-right', 'arrow-down-right', 'arrow-down-left', 'arrow-up-left',
@@ -1099,6 +1192,9 @@ for (const name of [
   'pop-in', 'arrows-converge', 'arrows-diverge', 'arrow-loop', 'arrow-bounce', 'submenu', 'breadcrumb', 'pagination-dots',
   'scrollbar', 'scrollbar-horizontal', 'jump-to', 'tabs-plus', 'tabs-vertical', 'sidebar-right-collapse', 'sidebar-right-expand', 'grip-diagonal',
 ])
+  icons[name].mirror = true;
+// Round 12: the sorts read from their arrow; the turns and tabs as their siblings
+for (const name of ['sort-a-z', 'sort-z-a', 'sort-0-9', 'sort-9-0', 'arrow-turn-right-down', 'arrow-turn-left-down', 'tabs-x', 'search-check', 'search-star'])
   icons[name].mirror = true;
 
 // ── Named parts (DESIGN.md › Named parts): what moves, changes state or is a badge.
@@ -1195,6 +1291,19 @@ parts(['view-carousel-vertical'], { card: [0], previous: [1], next: [2] });
 parts(['grip-diagonal'], { dots: [0, 1, 2, 3, 4, 5] });
 parts(['zoom-selection'], { corners: [0, 1, 2, 3], lens: [4], handle: [5] });
 parts(['fit-width', 'fit-height'], { bars: [0, 1], arrow: [2, 3, 4] });
+// Round 12: each sort names its arrow and its two characters
+for (const [name, a, b] of [['sort-a-z', 'letter-a', 'letter-z'], ['sort-z-a', 'letter-z', 'letter-a'], ['sort-0-9', 'number-0', 'number-9'], ['sort-9-0', 'number-9', 'number-0']]) {
+  const [na, nb] = [simbolos.icons[a].d.length, simbolos.icons[b].d.length];
+  icons[name].parts = { arrow: [0, 1], first: Array.from({ length: na }, (_, i) => 2 + i), last: Array.from({ length: nb }, (_, i) => 2 + na + i) };
+}
+parts(['arrow-turn-right-down', 'arrow-turn-left-down'], { arrow: [0, 1] });
+parts(['rows'], { frame: [0], dividers: [1, 2] });
+parts(['columns-gear'], { frame: [0], header: [1], dividers: [2, 3] });
+parts(['scale-3d'], { cube: [0, 1, 2], arrow: [3, 4] });
+parts(['search-check', 'search-star'], { lens: [0], handle: [1], mark: [2] });
+parts(['mouse-middle-click'], { body: [0], seams: [1, 2], rays: [3, 4, 5] });
+parts(['tabs-x'], { window: [0], tab: [1] });
+parts(['filter-star'], { funnel: [0] });
 
 // ── Motion (DESIGN.md › Motion): arrows slide toward where they point ──
 const DIR = { right: [1, 0], left: [-1, 0], up: [0, -1], down: [0, 1], 'up-right': [0.8, -0.8], 'down-right': [0.8, 0.8], 'down-left': [-0.8, 0.8], 'up-left': [-0.8, -0.8] };
@@ -1283,6 +1392,15 @@ for (const [name, toward] of [['panel-bottom', 'down'], ['panel-top', 'up'], ['s
 icons['zoom-selection'].motion = { effect: 'beat', parts: ['lens', 'handle'], origin: [12, 12] };
 icons['fit-width'].motion = { effect: 'beat', parts: ['arrow'], origin: [12, 12] };
 icons['fit-height'].motion = { effect: 'beat', parts: ['arrow'], origin: [12, 12] };
+// Round 12: the sorts as sort-ascending; the turns slide down; the scale's arrow slides out; the
+// middle click's rays pulse; the found mark and the star pulse in the lens
+for (const name of ['sort-a-z', 'sort-z-a', 'sort-0-9', 'sort-9-0']) icons[name].motion = slide(DIR.down, 1.5, ['arrow']);
+icons['arrow-turn-right-down'].motion = slide(DIR.down, 2);
+icons['arrow-turn-left-down'].motion = slide(DIR.down, 2);
+icons['scale-3d'].motion = slide(DIR['up-right'], 1.5, ['arrow']);
+icons['mouse-middle-click'].motion = { effect: 'beat', parts: ['rays'], origin: [12, 13.75] };
+icons['search-check'].motion = { effect: 'beat', parts: ['mark'], origin: [10.6, 10.6] };
+icons['search-star'].motion = { effect: 'beat', parts: ['mark'], origin: [10.6, 10.85] };
 
 // ── Automatic variants (DESIGN.md › Automatic variants) ──
 const off = (names, v) => {
@@ -1316,5 +1434,9 @@ off(['cursor-block', 'cursor-question', 'cursor-plus', 'cursor-wait', 'tabs-plus
 off(['reset', 'history-x'], { circle: false });
 off(['cursor-block', 'cursor-question', 'cursor-plus', 'cursor-wait', 'cursor-multiplayer', 'menu-context', 'tabs-plus', 'filter-plus', 'history-x'], { circle: false, square: false });
 off(['zoom-selection', 'view-masonry', 'view-thumbnails'], { square: false });
+// Round 12: badges and sorts as their siblings; the framed table and rows aren't framed again
+off(['sort-a-z', 'sort-z-a', 'sort-0-9', 'sort-9-0', 'search-check', 'search-star', 'tabs-x', 'filter-star', 'columns-gear'], { slash: false });
+off(['tabs-x', 'filter-star', 'columns-gear'], { circle: false, square: false });
+off(['rows'], { square: false });
 
 export default { category: 'navegacion', label: 'Navegación', icons };

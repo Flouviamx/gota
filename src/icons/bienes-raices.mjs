@@ -1165,6 +1165,21 @@ addIcon('room', ['habitación', 'cuarto', 'ambientes', 'recámara', 'room', 'roo
   addIcon('dollhouse-view', ['vista de casa de muñecas', 'modelo 3d', 'corte', 'dollhouse view', '3d model'], [hull, eaves, corner], { fill: { solid: [hull], cut: [eaves, corner] } });
 }
 
+// ── Round 12 ──
+// Property tax: the house's roof and walls (no door or window) carrying comercio's compact percent
+// sign on its front, as comercio's mortgage carries the peso sign: two dots and the diagonal, every
+// piece 3 or more from the walls, the floor and the roof.
+addIcon('property-tax', ['impuesto predial', 'predial', 'impuesto a la propiedad', 'property tax', 'real estate tax', 'council tax'], [
+  H.roof,
+  H.walls,
+  dot(9, 11),
+  dot(15, 17),
+  line([8.75, 17.25], [15.25, 10.75]),
+]);
+// Signed lease: the lease (its gable-topped page and three lines) with the engine's check, as its
+// renewal, expiry and application carry theirs
+addIcon('lease-check', ['contrato firmado', 'contrato vigente', 'renta activa', 'signed lease', 'lease signed', 'active lease'], LEASE, { badge: badge('check') });
+
 // ── Fill (DESIGN.md › Fill) ───────────────────────────────────────────────────────────────────
 // By index of `d`: `solid` is filled (closed shapes only; `close` closes the open outlines along
 // their chord, which lands under a roof or on a floor, a ground or a cuff), `cut` knocked out at
@@ -1215,7 +1230,8 @@ const FILL = {
   'floor-level': { solid: [0], cut: [1, 2], lines: [3] },
 };
 for (const name of ['for-sale-sign', 'for-sale-sign-check', 'for-sale-sign-clock']) FILL[name] = { solid: [3], wire: [0, 1, 2] };
-for (const name of ['lease', 'lease-expiring', 'lease-application']) FILL[name] = { solid: [0], cut: [1, 2, 3] };
+for (const name of ['lease', 'lease-expiring', 'lease-application', 'lease-check']) FILL[name] = { solid: [0], cut: [1, 2, 3] };
+FILL['property-tax'] = { solid: [0, 1], cut: [2, 3, 4], close: true };
 // Under the sync badge, whose arrowheads reach past its circle, the last line's stub sat in the
 // clearance's crook and the fill had no clean interpolation between weights: the fill keeps the
 // two lines that run into the clearance whole
@@ -1285,6 +1301,8 @@ const PARTS = {
   'lease-renewal': LEASE_PARTS,
   'lease-expiring': LEASE_PARTS,
   'lease-application': LEASE_PARTS,
+  'lease-check': LEASE_PARTS,
+  'property-tax': { roof: [0], walls: [1], mark: [2, 3, 4] },
   'title-deed': { page: [0], text: [1, 2] },
   'rent-payment': { roof: [0], walls: [1], window: [2] },
   'security-deposit': { key: [0, 1, 2, 3, 4], coins: [5, 6] },

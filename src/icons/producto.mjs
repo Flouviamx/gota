@@ -345,6 +345,53 @@ const statusBadge = (...sign) => {
   return own([ring, ...sign], ring, { solid: [ring], cut: sign });
 };
 
+// ── Round 12 ──
+/**
+ * A closed outline as dashes about `dash` long with gaps of `gap` (1.5 of paper between their round
+ * caps), one dash centered on the outline's point nearest `center` (a square corner stays whole).
+ */
+function dashed(d, { dash = 2.5, gap = 3, center } = {}) {
+  const pts = samples(d, 0.05);
+  const acc = [0];
+  for (let k = 1; k < pts.length; k++) acc.push(acc[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]));
+  const L = acc.at(-1);
+  const n = Math.max(1, Math.round(L / (dash + gap)));
+  const per = L / n;
+  let phase = 0;
+  if (center) {
+    let best = 0;
+    pts.forEach((q, k) => {
+      if (Math.hypot(q[0] - center[0], q[1] - center[1]) < Math.hypot(pts[best][0] - center[0], pts[best][1] - center[1])) best = k;
+    });
+    phase = acc[best] - (per - gap) / 2;
+  }
+  const at = (t) => {
+    const u = ((t % L) + L) % L;
+    let k = 1;
+    while (k < acc.length - 1 && acc[k] < u) k++;
+    const w = (u - acc[k - 1]) / (acc[k] - acc[k - 1] || 1);
+    return [pts[k - 1][0] + (pts[k][0] - pts[k - 1][0]) * w, pts[k - 1][1] + (pts[k][1] - pts[k - 1][1]) * w];
+  };
+  const out = [];
+  for (let q = 0; q < n; q++) {
+    const s0 = phase + q * per;
+    const run = [];
+    for (let t = s0; t < s0 + per - gap; t += 0.25) run.push(at(t));
+    run.push(at(s0 + per - gap));
+    // Straight runs merge into one segment
+    const keep = run.filter((pt, j) => {
+      if (j === 0 || j === run.length - 1) return true;
+      const [a, b] = [run[j - 1], run[j + 1]];
+      return Math.abs((b[0] - a[0]) * (pt[1] - a[1]) - (b[1] - a[1]) * (pt[0] - a[0])) > 1e-3;
+    });
+    out.push(line(...keep));
+  }
+  return out;
+}
+// Retrospective: núcleo's comment holding what went well (a plus) and what to change (a minus), side
+// by side (on a board split in two, with notes under them, it read as a calculator)
+const RETRO = [N.comment.d[0], line([8.5, 10], [8.5, 13.5]), line([6.75, 11.75], [10.25, 11.75]), line([13.75, 11.75], [17.25, 11.75])];
+
 // ---------------------------------------------------------------------------------------------
 // Icons
 // ---------------------------------------------------------------------------------------------
@@ -387,6 +434,24 @@ const icons = {
       const tip = head(to, [1, 0], 3.4);
       return own([hotspot, line(from, to), tip], `${hotspot}${retrace(from, to)}${tip}`);
     })(),
+  },
+  'prototype-mobile': {
+    tags: ['prototipo móvil', 'prototipo de app', 'pantallas de app', 'mobile prototype', 'app prototype', 'clickable app'],
+    // prototype on two phones: its screens as tall as the portrait keyline, the arrow from the hotspot
+    // on the first landing on the second (alone, a phone with an arrow leaving it read as log-out)
+    d: [box(2.5, 2.75, 7.5, 18.5, 2.5), box(14, 2.75, 7.5, 18.5, 2.5)],
+    badge: (() => {
+      const [from, to] = [[6.25, 12], [17.25, 12]];
+      const hotspot = dot(...from);
+      const tip = head(to, [1, 0], 3.4);
+      return own([hotspot, line(from, to), tip], `${hotspot}${retrace(from, to)}${tip}`);
+    })(),
+  },
+  'prototype-hotspot': {
+    tags: ['zona interactiva', 'hotspot', 'área clicable', 'prototype hotspot', 'hotspot', 'clickable area'],
+    // The hotspot a designer draws: a dashed area on the square keyline, and the engine's pointer
+    // clicking inside it, 3 clear of its dashes
+    d: [...dashed(SQUARE, { center: [20.75, 20.75] }), cursor([9, 6.5], 0.58)],
   },
   moodboard: {
     tags: ['moodboard', 'tablero de inspiración', 'referencias', 'mood board', 'inspiration', 'collage'],
@@ -481,6 +546,17 @@ const icons = {
       line([9.5, 2.75], [9.5, 5.75]),
       line([14.5, 2.75], [14.5, 5.75]),
     ],
+  },
+  'safe-area': {
+    tags: ['área segura', 'muesca', 'márgenes del sistema', 'safe area', 'notch', 'safe zone'],
+    // The phone with its notch, and the area clear of it and of the home bar: its four corners, the
+    // dashes of a dashed outline long enough to turn them
+    d: [PORT, pill(9.75, 6.1, 4.5, 0.8), ...dashed(box(7.75, 10.25, 8.5, 8, 2), { dash: 5, gap: 3, center: [16.25, 18.25] })],
+  },
+  'above-the-fold': {
+    tags: ['above the fold', 'primera pantalla', 'pliegue', 'above the fold', 'first screen', 'page fold'],
+    // The page with its content above the fold, a dashed line across it
+    d: [PORT, line([8, 7], [16, 7]), line([8, 10], [13.5, 10]), ...[[4.75, 7.58], [10.58, 13.42], [16.42, 19.25]].map(([a, b]) => line([a, 13.5], [b, 13.5]))],
   },
   'thumb-zone': {
     tags: ['zona del pulgar', 'alcance', 'ergonomía móvil', 'thumb zone', 'reachability', 'one-handed'],
@@ -622,6 +698,15 @@ const icons = {
     d: [box(6.25, 2.75, 13, 18.5, 3), line([3.75, 8.5], [8.75, 8.5]), line([3.75, 12], [8.75, 12]), line([3.75, 15.5], [8.75, 15.5])],
     badge: badge('clock'),
   },
+  'affinity-map': {
+    tags: ['mapa de afinidad', 'agrupar notas', 'síntesis de investigación', 'affinity map', 'affinity diagram', 'clustering'],
+    // Research notes in two clusters: three at the top left, two at the right, 5 apart from them
+    d: [box(2.75, 2.75, 4, 4, 1), box(9.75, 2.75, 4, 4, 1), box(6.25, 9.75, 4, 4, 1), box(17.25, 10.75, 4, 4, 1), box(17.25, 17.75, 4, 4, 1)],
+  },
+  retrospective: {
+    tags: ['retrospectiva', 'qué salió bien', 'qué mejorar', 'retrospective', 'retro', 'sprint review'],
+    d: RETRO,
+  },
   'empathy-map': {
     tags: ['mapa de empatía', 'dice piensa hace siente', 'usuario', 'empathy map', 'user needs', 'says thinks does feels'],
     // Four quadrants (says, thinks, does, feels) around the user: núcleo's person sits on the
@@ -725,6 +810,15 @@ const icons = {
     d: FEATURE_FLAG,
     badge: badge('clock'),
   },
+  'feature-flag-person': {
+    tags: ['flag segmentado', 'usuarios elegidos', 'segmento', 'targeted flag', 'user targeting', 'segment'],
+    // The flag and núcleo's person in the badge's place, as empathy-map carries it
+    d: FEATURE_FLAG,
+    badge: (() => {
+      const person16 = person(0.42, 17.25, 21.25);
+      return own(person16, person16.join(''), { solid: person16 });
+    })(),
+  },
   'kill-switch': {
     tags: ['interruptor de emergencia', 'apagar función', 'kill switch', 'emergency off', 'disable feature', 'shut off'],
     // The flag with a power sign on the badges' ring: a power symbol inside the cloth couldn't keep
@@ -770,6 +864,11 @@ const icons = {
     tags: ['lanzamiento', 'publicar versión', 'nueva versión', 'release', 'ship', 'new version'],
     // An open box (its flaps out) and an arrow rising out of it.
     d: RELEASE,
+  },
+  'release-check': {
+    tags: ['publicado', 'lanzamiento hecho', 'versión lanzada', 'shipped', 'released', 'release done'],
+    d: RELEASE,
+    badge: badge('check'),
   },
   'release-clock': {
     tags: ['lanzamiento programado', 'fecha de versión', 'plan de lanzamiento', 'scheduled release', 'release date', 'release plan'],
@@ -847,6 +946,12 @@ const icons = {
     tags: ['sprint', 'iteración', 'ciclo', 'sprint', 'iteration', 'cycle'],
     // An arrow that curls once and carries on to the right.
     d: SPRINT,
+  },
+  'sprint-play': {
+    tags: ['iniciar sprint', 'comenzar iteración', 'arrancar sprint', 'start sprint', 'begin sprint', 'start iteration'],
+    // A status badge of our own: the disc with a play sign cut out
+    d: SPRINT,
+    badge: statusBadge(roundpoly([[15.85, 14.95], [19.5, 17.25], [15.85, 19.55]], 0.5)),
   },
   'sprint-check': {
     tags: ['sprint completado', 'cerrar sprint', 'iteración terminada', 'complete sprint', 'sprint done', 'finish iteration'],
@@ -948,13 +1053,24 @@ const FILL = {
   epic: { solid: [0], wire: [1, 2, 3] },
   'story-map': { solid: [0, 1, 2], lines: [3, 4, 5, 6, 7, 8] },
   'planning-poker': { solid: [0] },
+  // Round 12
+  'prototype-mobile': { solid: [0, 1] },
+  'prototype-hotspot': (() => {
+    const n = icons['prototype-hotspot'].d.length;
+    return { solid: [n - 1], lines: Array.from({ length: n - 1 }, (_, i) => i) };
+  })(),
+  'feature-flag-person': { solid: [1], wire: [0], cut: [2] },
+  'affinity-map': { solid: [0, 1, 2, 3, 4] },
+  retrospective: { solid: [0], cut: [1, 2, 3] },
+  'safe-area': { solid: [0], cut: [1] },
+  'above-the-fold': { solid: [0], cut: [1, 2, 3, 4, 5] },
 };
 for (const [name, spec] of Object.entries(FILL)) {
   const pick = (ix) => ix.map((i) => icons[name].d[i]);
   icons[name].fill = { solid: pick(spec.solid), ...(spec.cut && { cut: pick(spec.cut) }), ...(spec.lines && { lines: pick(spec.lines) }), ...(spec.wire && { wire: pick(spec.wire) }) };
 }
 // Open lines only (the dots are solid already): their filled version is the outline itself
-for (const name of ['multivariate-test', 'changelog', 'impact-effort', 'sprint', 'sprint-check', 'chart-burndown', 'chart-burnup', 'chart-velocity'])
+for (const name of ['multivariate-test', 'changelog', 'impact-effort', 'sprint', 'sprint-check', 'sprint-play', 'chart-burndown', 'chart-burnup', 'chart-velocity'])
   icons[name].fill = false;
 // What gets filled must be closed: the head closes across the neck, the open trays and the box
 // across their top (the tray's arrows and the snowflake stay lines, with their clearance). The
@@ -963,7 +1079,7 @@ for (const name of ['multivariate-test', 'changelog', 'impact-effort', 'sprint',
 {
   const mm = icons['mental-model'].d;
   icons['mental-model'].fill = { solid: [`${mm[0]}Z`], cut: mm.slice(1) };
-  for (const name of ['release', 'release-clock']) {
+  for (const name of ['release', 'release-clock', 'release-check']) {
     const d = icons[name].d;
     icons[name].fill = { solid: [`${d[0]}Z`], wire: [d[1], d[2], d[3]] };
   }
@@ -1056,6 +1172,31 @@ const PORT16 = pbox(3, 1, 12, 14, 3.5);
   icons['rage-click'].small = { d, fill: { solid: [d[0]], lines: [d[1], d[2]] } };
 }
 
+// Round 12. The phones, the badges of our own and the dashed areas on the pixel grid; the custom
+// badges lose their ring and keep a larger sign, as the engine's pixel badges do
+{
+  const RING16 = circ(17.25, 17.25, 4.25);
+  const sign16 = (d, fill) => ({ d, knock: `${RING16}${d.join('')}`, ...(fill && { fill }) });
+  const phones = [pbox(1, 1, 5, 14, 1.5), pbox(10, 1, 14, 14, 1.5)];
+  const arrow16 = [dot(px(3), px(7), 0.1), pl([3, 7], [11, 7]), pl([10, 6], [11, 7], [10, 8])];
+  icons['prototype-mobile'].small = { d: phones, fill: { solid: phones }, badge: { d: arrow16, knock: `${arrow16[0]}${retrace(g(3, 7), g(11, 7))}${arrow16[2]}` } };
+  const play = roundpoly([g(10, 9), g(13, 11), g(10, 13)], 0.3);
+  icons['sprint-play'].small = { d: icons['sprint-play'].d, badge: sign16([play], { solid: [play] }) };
+  const head16 = circ(px(11), px(9), 1.5);
+  const body16 = roundpoly([g(9, 14), g(9, 13), g(10, 12), g(12, 12), g(13, 13), g(13, 14)], 0.3);
+  icons['feature-flag-person'].small = {
+    d: icons['feature-flag-person'].d,
+    fill: icons['feature-flag-person'].fill,
+    badge: { d: [head16, body16], knock: `${head16}${body16}`, fill: { solid: [head16, body16] } },
+  };
+  const retro = [N.comment.d[0], pl([5, 5], [5, 9]), pl([3, 7], [7, 7]), pl([9, 7], [12, 7])];
+  icons.retrospective.small = { d: retro, fill: { solid: [retro[0]], cut: retro.slice(1) } };
+  const phone = pbox(3, 1, 12, 14, 2.5);
+  const island = pl([6, 3], [9, 3]);
+  const corners = [pl([5, 7], [5, 5], [7, 5]), pl([8, 5], [10, 5], [10, 7]), pl([10, 10], [10, 12], [8, 12]), pl([7, 12], [5, 12], [5, 10])];
+  icons['safe-area'].small = { d: [phone, island, ...corners], fill: { solid: [phone], cut: [island] } };
+}
+
 // ---------------------------------------------------------------------------------------------
 // Named parts (DESIGN.md › Named parts)
 // ---------------------------------------------------------------------------------------------
@@ -1124,13 +1265,20 @@ const PARTS = {
   'chart-burnup': { axis: [0], scope: [1], line: [2] },
   'chart-velocity': { axis: [0], bars: [1, 2, 3, 4, 5, 6] },
   'planning-poker': { back: [0] },
+  // Round 12
+  'prototype-mobile': { screens: [0, 1] },
+  'prototype-hotspot': { hotspot: icons['prototype-hotspot'].d.map((_, i) => i).slice(0, -1), pointer: [icons['prototype-hotspot'].d.length - 1] },
+  'affinity-map': { notes: [0, 1, 2], cluster: [3, 4] },
+  retrospective: { bubble: [0], well: [1, 2], change: [3] },
+  'safe-area': { screen: [0], notch: [1], area: icons['safe-area'].d.map((_, i) => i).slice(2) },
+  'above-the-fold': { page: [0], content: [1, 2], fold: [3, 4, 5] },
 };
 // Families that share a base
-for (const name of ['feature-flag', 'feature-flag-clock', 'kill-switch']) PARTS[name] = { pole: [0], flag: [1], knob: [2] };
+for (const name of ['feature-flag', 'feature-flag-clock', 'kill-switch', 'feature-flag-person']) PARTS[name] = { pole: [0], flag: [1], knob: [2] };
 for (const name of ['lightbulb-question', 'lightbulb-check', 'lightbulb-plus']) PARTS[name] = { bulb: [0], base: [1, 2] };
-for (const name of ['release', 'release-clock']) PARTS[name] = { box: [0, 1, 2], arrow: [3] };
+for (const name of ['release', 'release-clock', 'release-check']) PARTS[name] = { box: [0, 1, 2], arrow: [3] };
 for (const name of ['backlog', 'backlog-plus']) PARTS[name] = { rows: [0, 1, 2], grips: [3, 4, 5] };
-for (const name of ['sprint', 'sprint-check']) PARTS[name] = { arrow: [0, 1] };
+for (const name of ['sprint', 'sprint-check', 'sprint-play']) PARTS[name] = { arrow: [0, 1] };
 for (const [name, parts] of Object.entries(PARTS)) icons[name].parts = parts;
 
 // ---------------------------------------------------------------------------------------------
@@ -1150,6 +1298,8 @@ variants(['product-tour'], { square: false });
 variants(['tree-test'], { circle: false, square: false, slash: false });
 // Loose lines: slashing them says nothing
 variants(['double-diamond', 'multivariate-test', 'impact-effort', 'sprint'], { slash: false });
+// Round 12: square boards and frames aren't enclosed again; a dashed area takes no slash
+variants(['retrospective'], { circle: false });
 
 // ---------------------------------------------------------------------------------------------
 // Mirroring (DESIGN.md › Mirroring): flows that read left to right
@@ -1158,6 +1308,7 @@ for (const name of [
   'wireframe', 'prototype', 'handoff', 'handoff-check', 'easing', 'easing-spring', 'annotation', 'user-flow', 'journey-map', 'persona',
   'use-case', 'tree-test', 'changelog', 'backlog', 'backlog-plus', 'user-story', 'epic', 'story-map', 'sprint', 'sprint-check',
   'chart-burndown', 'chart-burnup', 'chart-velocity', 'impact-effort',
+  'prototype-mobile', 'sprint-play', 'retrospective', 'above-the-fold',
 ])
   icons[name].mirror = true;
 
@@ -1184,6 +1335,12 @@ icons.release.motion = { effect: 'slide', parts: ['arrow'], vector: [0, -2] };
 icons.icebox.motion = { effect: 'spin', parts: ['snowflake'], origin: [12, 7.75] };
 icons.sprint.motion = { effect: 'slide', vector: [2, 0] };
 icons['planning-poker'].motion = { effect: 'wiggle', parts: ['badge'], origin: [14.75, 20.25] };
+// Round 12
+icons['release-check'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, -2] };
+icons['sprint-play'].motion = { effect: 'slide', vector: [2, 0] };
+icons['prototype-mobile'].motion = { effect: 'slide', parts: ['badge'], vector: [1.25, 0] };
+icons['prototype-hotspot'].motion = { effect: 'bounce', parts: ['pointer'], vector: [-1, -1] };
+icons['feature-flag-person'].motion = { effect: 'wiggle', origin: [4.75, 21.25] };
 // A value: the timer's quarter is drawn that far
 icons['five-second-test'].value = { draw: ['timer'] };
 

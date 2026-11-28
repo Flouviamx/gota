@@ -194,6 +194,9 @@ const MOUTH = {
   hdmi: [[[5.5, 9], [18.5, 9], [18.5, 12.5], [16, 15], [8, 15], [5.5, 12.5]], [1, 1, 0.75, 0.75, 0.75, 0.75]],
   dsub: [[[6, 8.25], [18, 8.25], [16, 15.75], [8, 15.75]], 2],
   inlet: [[[9.375, 7.5], [14.625, 7.5], [16.875, 9.75], [16.875, 17.25], [7.125, 17.25], [7.125, 9.75]], [1, 1, 1.5, 2, 2, 1.5]],
+  // Round 12: DisplayPort, HDMI's mouth with only one corner cut; USB-B, squarish, its top corners cut
+  dp: [[[5.5, 9], [18.5, 9], [18.5, 15], [8, 15], [5.5, 12.5]], [1, 1, 1, 0.75, 0.75]],
+  usbB: [[[8.5, 7], [15.5, 7], [17.5, 9], [17.5, 17], [6.5, 17], [6.5, 9]], [0.75, 0.75, 0.75, 1.25, 1.25, 0.75]],
 };
 const mouth = (k) => roundpoly(...MOUTH[k]);
 /**
@@ -1265,6 +1268,25 @@ const icons = {
       return [circ(12, 12, 9), many(front, back(180, lo - 0.5), back(hi + 0.5, 360)), ...state];
     })(),
   },
+
+  // ── Round 12 ──
+  'display-port': {
+    tags: ['puerto displayport', 'displayport', 'salida de video', 'monitor', 'displayport', 'video output', 'dp port'],
+    // hdmi-port's mouth with one corner cut where HDMI has two, and its tongue
+    d: [PLATE, mouth('dp'), line([9.25, 12], [14.75, 12])],
+  },
+  'usb-b-port': {
+    tags: ['puerto usb-b', 'usb b', 'impresora', 'arduino', 'usb-b port', 'printer port', 'usb type b'],
+    // The squarish mouth, its top corners cut, and the square tongue in it, 3 from every side
+    d: [PLATE, mouth('usbB'), sq(9.5, 10, 5, 4, 1)],
+  },
+  'rocker-switch': {
+    tags: ['interruptor basculante', 'encendido y apagado', 'regleta', 'fuente de poder', 'rocker switch', 'power switch', 'on off switch'],
+    // The rocker from the front, as on a power strip: the paddle split at its pivot, the line (on)
+    // on the half that is up and the circle (off) on the other. From the side, its tilted paddle on
+    // the post read as a seesaw
+    d: [box(6.25, 2.75, 11.5, 18.5, 3), line([6.25, 11.5], [17.75, 11.5]), line([12, 5.75], [12, 8.5]), circ(12, 16.375, 1.875)],
+  },
 };
 
 // ── Badges: the base drawn once, the engine's badge on top ──────────────────────────────────
@@ -1324,6 +1346,7 @@ const FILL = {
   'push-button': { solid: [0], cut: [1], wire: [2] },
   'toggle-switch': { solid: [0, 'shut:1', 'shut:2'] },
   'slide-switch': { solid: [0, 'shut:1'], wire: [2] },
+  'rocker-switch': { solid: [0], cut: [1, 2, 3] },
   'mechanical-switch': { solid: [0, 1], wire: [2] },
   'electric-motor': { solid: [MOTOR_SOLID], cut: [1], wire: [2, 3] },
   'servo-motor': { solid: [0, 'each:1'], cut: [2, 3, 4] },
@@ -1409,7 +1432,7 @@ icons['laser-cutter'].fill = fillOf('laser-cutter', { solid: [1, 'shut:3'], wire
 }
 // The ports on the plate: the plate filled with its mouth emptied, as dispositivos' ethernet; what
 // stands in the mouth (a tongue, the pins, the blades) stays in ink
-for (const [name, k] of [['usb-c-port', 'usbC'], ['usb-a-port', 'usbA'], ['micro-usb-port', 'micro'], ['hdmi-port', 'hdmi'], ['serial-port', 'dsub'], ['power-inlet', 'inlet']]) {
+for (const [name, k] of [['usb-c-port', 'usbC'], ['usb-a-port', 'usbA'], ['micro-usb-port', 'micro'], ['hdmi-port', 'hdmi'], ['serial-port', 'dsub'], ['power-inlet', 'inlet'], ['display-port', 'dp'], ['usb-b-port', 'usbB']]) {
   const d = icons[name].d;
   icons[name].fill = { solid: [holed(k)], cut: [d[1]], wire: d.slice(2) };
 }
@@ -1486,6 +1509,9 @@ const PARTS = {
   'hdmi-port': { plate: [0], port: [1, 2] },
   'serial-port': { plate: [0], port: [1, 2, 3, 4, 5, 6] },
   'power-inlet': { plate: [0], port: [1, 2] },
+  'display-port': { plate: [0], port: [1, 2] },
+  'usb-b-port': { plate: [0], port: [1, 2] },
+  'rocker-switch': { paddle: [0], pivot: [1], marks: [2, 3] },
   'audio-jack': { plug: [0, 1, 2], cable: [3] },
   'barrel-connector': { plug: [0, 1, 2, 3], cable: [4] },
   'jumper-wire': { wire: [0], ends: [1, 2, 3], holes: [4, 5, 6, 7] },
@@ -1561,7 +1587,7 @@ const variants = (names, v) => {
 variants(Object.keys(BASE), { circle: false, square: false, slash: false });
 // Already round, or already a square plate: not enclosed again
 variants(['silicon-wafer', 'qubit', 'filament-spool', 'transistor-symbol', 'vibration-motor'], { circle: false });
-variants(['circuit-board', 'led-matrix', 'stepper-motor', 'case-fan', 'usb-c-port', 'usb-a-port', 'micro-usb-port', 'hdmi-port', 'serial-port', 'power-inlet'], { square: false });
+variants(['circuit-board', 'led-matrix', 'stepper-motor', 'case-fan', 'usb-c-port', 'usb-a-port', 'micro-usb-port', 'hdmi-port', 'serial-port', 'power-inlet', 'display-port', 'usb-b-port'], { square: false });
 // Symbols, gates and signals are lines: a slash through them says nothing
 variants(
   [

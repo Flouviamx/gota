@@ -6,7 +6,7 @@
 // on the same rings (r 2.35) and lanes, and every bug and code icon on the existing bug and code.
 // Badges are the engine's; a piece on top of another (a hammer on a cube, a phone in front of a
 // window) is a custom badge the engine clears.
-import { arc, badge, circ, dot, drop, f, flipPath, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
+import { arc, badge, circ, cursor, dot, drop, f, flipPath, head, line, polar, roundpoly, sq, turnPath } from '../../engine/geometry.mjs';
 import { snapper, transform } from '../../engine/variants.mjs';
 import archivos from './archivos.mjs';
 import datos from './datos.mjs';
@@ -277,6 +277,7 @@ for (const [name, base, kind, tags] of [
   ['git-branch-plus', 'git-branch', 'plus', ['nueva rama', 'crear rama', 'ramificar', 'git', 'new branch']],
   ['git-branch-lock', 'git-branch', 'lock', ['rama protegida', 'bloqueada', 'reglas de rama', 'git', 'protected branch']],
   ['git-branch-sync', 'git-branch', 'sync', ['actualizar rama', 'sincronizar', 'traer de la base', 'git', 'update branch', 'sync upstream']],
+  ['git-branch-minus', 'git-branch', 'minus', ['borrar rama', 'eliminar rama', 'quitar rama', 'git', 'delete branch', 'remove branch']],
   ['git-pull-request-check', 'git-pull-request', 'check', ['pull request aprobado', 'listo para fusionar', 'revisión aprobada', 'git', 'approved', 'checks passed']],
   ['git-pull-request-plus', 'git-pull-request', 'plus', ['nuevo pull request', 'abrir pull request', 'proponer cambios', 'git', 'new pull request']],
   ['git-commit-edit', 'git-commit', 'edit', ['editar commit', 'enmendar', 'cambiar mensaje', 'git', 'amend commit']],
@@ -893,6 +894,49 @@ const CACHE = [xf(N.bolt.d[0], 0.6, [12, 12], -6.25, 0), ...[3.25, 10.13, 17].ma
 icons.cache = { tags: ['caché', 'memoria rápida', 'caché de compilación', 'cdn', 'cache'], d: CACHE };
 icons['cache-x'] = { tags: ['limpiar caché', 'borrar caché', 'purgar', 'clear cache', 'purge cache'], d: CACHE, badge: badge('x') };
 
+// Round 12 --------------------------------------------------------------------------------------
+// Bisect: a line of commits (git-submodule's small rings at the ends, a dot for the one between)
+// and the core magnifier's lens on the middle one: the commit being tested.
+{
+  const [y, r] = [10, 4];
+  icons['git-bisect'] = {
+    tags: ['git bisect', 'buscar commit', 'encontrar el error', 'búsqueda binaria', 'git', 'bisect', 'find bad commit'],
+    d: [circ(3.5, y, 1.5), circ(20.5, y, 1.5), line([5, y], [19, y]), dot(12, y), circ(12, y, r), line(polar(12, y, r, 45), [18.75, 16.75])],
+  };
+}
+// Inspect element: edicion's dashed selection and the engine's pointer on its corner, as a piece on
+// top. The selection's bottom right corner and the middle of its foot are left out: the pointer takes
+// that corner, and its clearance left a speck of each.
+{
+  const ptr = cursor([13.25, 13.25], 0.46);
+  icons['inspect-element'] = {
+    tags: ['inspeccionar elemento', 'selector de elementos', 'herramientas de desarrollo', 'devtools', 'inspect element', 'element picker', 'inspector'],
+    d: edicion.icons.selection.d.filter((_, i) => i !== 2 && i !== 5),
+    badge: own([ptr], ptr, { solid: [ptr] }),
+  };
+}
+// Web development: sistema's globe as it sits under a badge, and the code sign in the badge's place
+// (social's post-embed glyph).
+{
+  const code = [line([15.25, 14.5], [12.5, 17.25], [15.25, 20]), line([19.25, 14.5], [22, 17.25], [19.25, 20])];
+  icons['globe-code'] = {
+    tags: ['desarrollo web', 'código web', 'sitio web', 'html', 'web development', 'web code', 'frontend'],
+    d: [...sistema.icons['globe-lock'].d],
+    badge: own(code, `${RING}${code.map((d) => `${d}Z`).join('')}`),
+  };
+}
+// SSH key: sistema's key as it sits under a badge, and the terminal's prompt (a chevron and the
+// cursor's underscore) in the badge's place.
+{
+  const prompt = [line([13.75, 14.25], [16.75, 17.25], [13.75, 20.25]), line([18.25, 20.25], [21.25, 20.25])];
+  icons['ssh-key'] = {
+    tags: ['llave ssh', 'clave de despliegue', 'acceso al servidor', 'clave pública', 'ssh key', 'deploy key', 'ssh'],
+    d: [...sistema.icons['key-plus'].d],
+    badge: own(prompt, `${RING}${prompt[0]}Z${prompt[1]}`),
+  };
+}
+icons['dependency-alert'] = { tags: ['dependencia vulnerable', 'aviso de seguridad', 'dependencia obsoleta', 'vulnerable dependency', 'security advisory', 'dependabot'], d: DEPENDENCY, badge: badge('alert') };
+
 // ---------------------------------------------------------------------------------------------
 // Fill (DESIGN.md › Fill): by index into d. `solid` is filled and keeps its stroke (closed shapes
 // only); `closed` too, but it is an open stroke of the outline closed with Z; `cut` is knocked out;
@@ -959,6 +1003,10 @@ const FILL = {
   'blue-green-deploy': { solid: [2, 5], cut: [0, 1, 3, 4], lines: [6, 7] },
   dependency: { solid: [2, 7], cut: [0, 1, 5, 6], wire: [3, 4] },
   'dependency-arrow-up': { solid: [2, 7], cut: [0, 1, 5, 6], wire: [3, 4] },
+  'dependency-alert': { solid: [2, 7], cut: [0, 1, 5, 6], wire: [3, 4] },
+  'git-bisect': { solid: [0, 1, 3], wire: [2, 4, 5] },
+  'globe-code': { solid: [0], cut: [1, 2] },
+  'ssh-key': { solid: [0], cut: [1], wire: [2, 3, 4] },
   'circular-dependency': { solid: [2, 5], cut: [0, 1, 3, 4], wire: [6, 7, 8, 9] },
   // The toolbox filled with the code sign cut out; the handle stands apart
   sdk: { solid: [0], lines: [1], cut: [2, 3] },
@@ -1030,7 +1078,7 @@ function nudge(name, dx, dy) {
 }
 nudge('braces-alert', 0, -0.75);
 for (const name of ['code-search', 'code-play']) nudge(name, -0.75, 0);
-for (const name of ['git-branch-plus', 'git-branch-lock', 'git-branch-sync']) nudge(name, 0, -0.75);
+for (const name of ['git-branch-plus', 'git-branch-lock', 'git-branch-sync', 'git-branch-minus']) nudge(name, 0, -0.75);
 // The commit's ring stays whole above the pencil (lower, the pencil ate a third of it: a C)
 nudge('git-commit-edit', 0, -3);
 // The deploy siblings shift left until the badge clears the base line's end and nothing else: the
@@ -1039,10 +1087,11 @@ for (const name of ['deploy-check', 'deploy-x']) nudge(name, -3, 0);
 // Upgrading a dependency: the badge takes the dependency's place; the arrowhead and the small
 // package under it are left out (the arrowhead's tips peeked out of the clearance)
 underBadge('dependency-arrow-up', { drop: [4, 5, 6, 7] });
+underBadge('dependency-alert', { drop: [4, 5, 6, 7] });
 
 // Only open lines: their filled version is the outline itself
 // (a dashed outline stays dashed, and a pair of braces stays a pair of lines)
-for (const name of ['recursion', 'step-over', 'step-back', 'step-into', 'step-out', 'run-to-cursor', 'code-coverage', 'code-format', 'multi-cursor', 'lint', 'minify', 'test-results', 'mock-server', 'api-key', 'api-gateway', 'rate-limit', 'websocket'])
+for (const name of ['recursion', 'step-over', 'step-back', 'step-into', 'step-out', 'run-to-cursor', 'code-coverage', 'code-format', 'multi-cursor', 'lint', 'minify', 'test-results', 'mock-server', 'api-key', 'api-gateway', 'rate-limit', 'websocket', 'inspect-element'])
   icons[name].fill = false;
 
 // ---------------------------------------------------------------------------------------------
@@ -1128,6 +1177,11 @@ const PARTS = {
   'blue-green-deploy': { blue: [0, 1, 2], green: [3, 4, 5], arrow: [6, 7] },
   dependency: { package: [0, 1, 2], link: [3, 4], dependency: [5, 6, 7] },
   'dependency-arrow-up': { package: [0, 1, 2], link: [3] },
+  'dependency-alert': { package: [0, 1, 2], link: [3] },
+  'git-bisect': { commits: [0, 1, 2, 3], lens: [4, 5] },
+  'inspect-element': { selection: [0, 1, 2, 3, 4, 5] },
+  'globe-code': { globe: [0, 1, 2] },
+  'ssh-key': { bow: [0, 1], shaft: [2, 3, 4] },
   'circular-dependency': { packages: [0, 1, 2, 3, 4, 5], arrows: [6, 7, 8, 9] },
   sdk: { box: [0], handle: [1], code: [2, 3] },
   microservices: { services: [0, 1, 2, 3], hub: [4], links: [5, 6, 7, 8] },
@@ -1186,6 +1240,10 @@ icons['git-push'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, -1.5
 icons['git-pull'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] };
 icons['git-fetch'].motion = { effect: 'slide', parts: ['arrow'], vector: [0, 1.5] };
 icons['git-branch-sync'].motion = { effect: 'spin', parts: ['badge'], origin: BC };
+icons['dependency-alert'].motion = { effect: 'wiggle', parts: ['badge'], origin: BC };
+icons['git-bisect'].motion = { effect: 'slide', parts: ['lens'], vector: [1.5, 0] };
+icons['inspect-element'].motion = { effect: 'slide', parts: ['badge'], vector: [-1.25, -1.25] };
+icons['ssh-key'].motion = { effect: 'wiggle', parts: ['bow', 'shaft'], origin: [13.51, 6.49] };
 icons['step-over'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.5, 0] };
 icons['step-back'].motion = { effect: 'slide', parts: ['arrow'], vector: [-1.5, 0] };
 icons['step-into'].motion = { effect: 'slide', parts: ['arrow'], vector: [1.25, 0] };
